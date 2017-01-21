@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="121"/>
         <source>Fritzing is made by: </source>
-        <translation>Fritzing es hecho por:</translation>
+        <translation>Fritzing está creado por:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="122"/>
@@ -191,12 +191,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="164"/>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation type="unfinished">Departamento de Bauhaus-Universitario Weimar, </translation>
+        <translation>Departamento de la Universidad de Bauhaus Weimar, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="165"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation type="unfinished">IxDS, un donante anónimo, Parallax, Picaxe, Sparkfun, </translation>
+        <translation>IxDS, un donante anónimo, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="166"/>
@@ -206,17 +206,17 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="170"/>
         <source>Special thanks goes out as well to all the students </source>
-        <translation type="unfinished">Especial gracias también a todo el alumnado </translation>
+        <translation>Un agradecimiento especial a todo el alumnado </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>and alpha testers who were brave enough to give </source>
-        <translation type="unfinished">y alfa testers quién era bastante valiente para dar </translation>
+        <translation>y a los alfa testers que fueron suficientemente valientes como para </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="172"/>
         <source>Fritzing a test spin. </source>
-        <translation type="unfinished">Fritzing un espín de prueba. </translation>
+        <translation>darle a Fritzing una vuelta de prueba. </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="175"/>
@@ -229,12 +229,12 @@
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="98"/>
         <source>zoom and pan controls</source>
-        <translation type="unfinished">control de zoom y paneo</translation>
+        <translation>controles de zoom y paneo</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="142"/>
         <source>Best So Far</source>
-        <translation type="unfinished">Mejor Hasta ahora</translation>
+        <translation type="unfinished">Mejor hasta ahora</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="148"/>
@@ -310,7 +310,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="104"/>
         <source>OK</source>
-        <translation type="unfinished">Aceptar</translation>
+        <translation>Aceptar</translation>
     </message>
 </context>
 <context>
@@ -333,92 +333,92 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="391"/>
         <source>New bin (%1)</source>
-        <translation>Compartimiento nueva (%1)</translation>
+        <translation>Nuevo compartimento (%1)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="402"/>
         <source>Select a Fritzing Parts Bin file to open</source>
-        <translation type="unfinished">Seleccione una componente separada para abrir en Fritzing</translation>
+        <translation>Selecciona un archivo de compartimento de componentes Fritzing que abrir</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="404"/>
         <source>Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos de compartimento Fritzing (*%1 *%2);;Compartimento Fritzing (*%1);;Compartimento compartible Fritzing (*%2)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="914"/>
         <source>Searching...</source>
-        <translation type="unfinished">Buscando...</translation>
+        <translation>Buscando...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="988"/>
         <source>Bin</source>
-        <translation type="unfinished">Compartimiento</translation>
+        <translation>Compartimento</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="990"/>
         <source>Import...</source>
-        <translation type="unfinished">Importar...</translation>
+        <translation>Importar...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="991"/>
         <source>Load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
-        <translation type="unfinished">Cargue una componente de Fritzing (.fzpz), o una componente separada de Fritzing (.fzb.fzbz)</translation>
+        <translation>Cargar un componente de Fritzing (.fzpz), o un compartimento de componentes Fritzing (.fzb.fzbz)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="994"/>
         <source>New Bin...</source>
-        <translation type="unfinished">Nuevo compartimiento</translation>
+        <translation>Nuevo compartimento</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="995"/>
         <source>Create a new parts bin</source>
-        <translation type="unfinished">Crear un componente de componentes nuevo</translation>
+        <translation>Crear un nuevo compartimento de componentes</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="998"/>
         <source>Close Bin</source>
-        <translation type="unfinished">Compartimiento cercana</translation>
+        <translation>Cerrar compartimento</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="999"/>
         <source>Close parts bin</source>
-        <translation type="unfinished">Compartimiento de componentes</translation>
+        <translation>Cerrar compartimento de componentes</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1002"/>
         <source>Delete Bin</source>
-        <translation type="unfinished">Elimina Componente</translation>
+        <translation>Eliminar compartimento</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1003"/>
         <source>Delete parts bin</source>
-        <translation type="unfinished">Elimina componente de componentes</translation>
+        <translation>Eliminar compartimento de componentes</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1006"/>
         <source>Save Bin</source>
-        <translation type="unfinished">Salva Componente</translation>
+        <translation>Guardar compartimento</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1007"/>
         <source>Save parts bin</source>
-        <translation type="unfinished">Salva componente de componentes</translation>
+        <translation>Guardar compartimento de componentes</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1010"/>
         <source>Save Bin As...</source>
-        <translation>Salva Componente Como...</translation>
+        <translation>Guardar compartimento como...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1011"/>
         <source>Save parts bin as...</source>
-        <translation type="unfinished">Salva componente de componentes como...</translation>
+        <translation>Guardar compartimento de componentes como...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1014"/>
         <source>Export Bin...</source>
-        <translation type="unfinished">Exportar componente...</translation>
+        <translation>Exportar compartimento...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1015"/>
@@ -453,37 +453,37 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1027"/>
         <source>Copy all loaded parts to the sketch</source>
-        <translation type="unfinished">Copiar todas las componentes cargadas al esquemático</translation>
+        <translation>Copiar todos los componentes cargados al esquemático</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1030"/>
         <source>Show Bin in List View</source>
-        <translation type="unfinished">Exhibir Componentes en una Lista</translation>
+        <translation>Mostrar compartimentos en la vista de lista</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1032"/>
         <source>Display parts as a list</source>
-        <translation type="unfinished">Exhibir Componentes en una Lista</translation>
+        <translation>Mostrar los componentes como lista</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1035"/>
         <source>Show Bin in Icon View</source>
-        <translation type="unfinished">Componente Vista de Icono</translation>
+        <translation>Mostrar compartimento en la vista de iconos</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1037"/>
         <source>Display parts as icons</source>
-        <translation type="unfinished">Componentes de exhibición como iconos</translation>
+        <translation>Mostrar componentes como iconos</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1058"/>
         <source>Edit Part (new parts editor)...</source>
-        <translation type="unfinished">Edita Componente (editor de componentes nuevos)...</translation>
+        <translation>Editar componente (nuevo editor de componentes)...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1059"/>
         <source>Export Part...</source>
-        <translation type="unfinished">Componente de exportación...</translation>
+        <translation>Exportar componente...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1060"/>
@@ -513,47 +513,47 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1155"/>
         <source>Read-only bin</source>
-        <translation type="unfinished">Solo lectura</translation>
+        <translation>Compartimento de solo lectura</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1155"/>
         <source>This bin cannot be renamed.</source>
-        <translation>Este componente no puede ser rebautizado.</translation>
+        <translation>Este compartimento no puede ser renombrado.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1162"/>
         <source>Rename bin</source>
-        <translation>Renombrar compartimiento</translation>
+        <translation>Renombrar compartimento</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1163"/>
         <source>Please choose a name for the bin:</source>
-        <translation>Por favor selecciona un nombre para esta compartimiento:</translation>
+        <translation>Por favor, selecciona un nombre para el compartimento:</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1233"/>
         <source>Remove from Bin</source>
-        <translation type="unfinished">Saca de Componente</translation>
+        <translation>Eliminar del compartimento</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1233"/>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
-        <translation type="unfinished">Incapaz de sacar &apos;%1&apos;. Esta en uso</translation>
+        <translation>No se pudo eliminar el componente &apos;%1&apos;. Está en uso en un esquemático</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1239"/>
         <source>Remove from bin</source>
-        <translation type="unfinished">Borrar el componente</translation>
+        <translation>Eliminar del compartimento</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1240"/>
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
-        <translation type="unfinished">¿Quiere borrar &apos;%1&apos; de componentes? Esta operación no puede ser deshecha.</translation>
+        <translation>¿Quieres borrar &apos;%1&apos; del compartimento? Esta operación no puede deshacerse.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1337"/>
         <source>Select a Fritzing File to Open</source>
-        <translation type="unfinished">Selecciona un archivo Fritzing para abrir</translation>
+        <translation>Selecciona un archivo Fritzing para abrir</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="497"/>
@@ -572,7 +572,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
 </source>
         <translation>
 
-Un tablero hecho de encargo svg típicamente tiene uno o dos silkscreen las capas y una capa board.
+El svg de una placa personalizada tiene una o dos capas de pantalla serigráfica y una capa de placa.
 </translation>
     </message>
     <message>
@@ -580,19 +580,19 @@ Un tablero hecho de encargo svg típicamente tiene uno o dos silkscreen las capa
         <source>Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.
 
 </source>
-        <translation>Mira el archivo circle_pcb.svg en la carpeta Fritzing de instalación en componentes/svg/core/pcb/.
+        <translation>Échale un vistazo al archivo circle_pcb.svg en la carpeta de instalación de Fritzing en parts/svg/core/pcb/.
 
 </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="129"/>
         <source>one layer (single-sided)</source>
-        <translation>simple faz</translation>
+        <translation>una capa (una cara)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="132"/>
         <source>two layers (double-sided)</source>
-        <translation>doble faz</translation>
+        <translation>dos capas (doble cara)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="214"/>
@@ -602,27 +602,27 @@ Un tablero hecho de encargo svg típicamente tiene uno o dos silkscreen las capa
     <message>
         <location filename="../src/items/resizableboard.cpp" line="233"/>
         <source>load image file</source>
-        <translation type="unfinished">cargar archivo de imagen</translation>
+        <translation>cargar archivo de imagen</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="292"/>
         <source>Images</source>
-        <translation type="unfinished">Imágenes</translation>
+        <translation>Imágenes</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="306"/>
         <source>Select an image file to load</source>
-        <translation type="unfinished">Selecciona un archivo de imagen para cargar</translation>
+        <translation>Selecciona un archivo de imagen para cargar</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="328"/>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
-        <translation type="unfinished">problema de xml: %1 línea:%2 columna:%3</translation>
+        <translation>debido a un error de xml: %1 línea:%2 columna:%3</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="334"/>
         <source>because the xml is not correctly formatted</source>
-        <translation type="unfinished">Porque el xml no esta correctamente formateado</translation>
+        <translation>porque el xml no tiene el formato correcto</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="366"/>
@@ -4163,7 +4163,7 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3110"/>
         <source>Remove Bendpoint</source>
-        <translation>Quitar Punto de Dobles</translation>
+        <translation>Quitar Punto de Doblez</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2752"/>
@@ -6111,13 +6111,13 @@ vamos adelante y salvamos?</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="460"/>
         <source>Cannot find file %1.</source>
-        <translation>Imposible encontrar archivo %1.</translation>
+        <translation>Imposible encontrar el archivo %1.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="467"/>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Imposible leer archivo %1:%2.</translation>
+        <translation>Imposible leer el archivo %1:%2.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="519"/>
@@ -6132,12 +6132,12 @@ vamos adelante y salvamos?</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="516"/>
         <source>Loading...</source>
-        <translation type="unfinished">Cargando...</translation>
+        <translation>Cargando...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="586"/>
         <source>Save bin &quot;%1&quot;</source>
-        <translation type="unfinished">Guarda la compartimiento &quot;%1&quot;</translation>
+        <translation>Guarda el compartimiento &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="587"/>
@@ -6157,7 +6157,7 @@ vamos adelante y salvamos?</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="596"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="699"/>
@@ -6167,17 +6167,17 @@ vamos adelante y salvamos?</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="700"/>
         <source>Do you really want to add the selected part to the bin?</source>
-        <translation>¿Realmente quieres agregar la componente seleccionada al catálogo?</translation>
+        <translation>¿Realmente quieres agregar el componente seleccionado al catálogo?</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="885"/>
         <source>Change icon color...</source>
-        <translation type="unfinished">Color de icono del cambio...</translation>
+        <translation>Cambiar el color del icono...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="886"/>
         <source>Change the color of the icon for this bin.</source>
-        <translation type="unfinished">Cambio el color del icono para este componente.</translation>
+        <translation type="unfinished">Cambiar el color del icono de este componente.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="897"/>
@@ -6217,7 +6217,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/items/perfboard.cpp" line="304"/>
         <source>Set new size</source>
-        <translation type="unfinished">Pone medida nueva</translation>
+        <translation type="unfinished">Establece la nueva medida</translation>
     </message>
     <message>
         <location filename="../src/items/perfboard.cpp" line="305"/>
@@ -9298,12 +9298,12 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/version/updatedialog.cpp" line="248"/>
         <source>New files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos nuevos:</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="249"/>
         <source>Modified Files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos modificados:</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="279"/>
@@ -9328,7 +9328,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/version/updatedialog.cpp" line="382"/>
         <source>&lt;p&gt;Downloading new parts...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Descargando partes nuevas...&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="390"/>
@@ -9381,7 +9381,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="470"/>
         <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
-        <translation>El Fritzing creator kit esta agotado. Para las actualizaciones visitar fritzing.blog</translation>
+        <translation>El Kit de creación de Fritzing está agotado. Para actualizaciones, por favor, visita fritzing.blog</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="480"/>
@@ -9391,7 +9391,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="481"/>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
-        <translation>Fritzing Fab es un servicio fácil y económico para producir PCBs profesional de tu proyecto Fritzing.</translation>
+        <translation>Fritzing Fab es un servicio fácil y económico para producir PCBs profesionales de tu proyecto Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="483"/>
@@ -9401,7 +9401,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="484"/>
         <source>Order your PCB now.</source>
-        <translation>Ordena tu PCB</translation>
+        <translation>Pide ya tu PCB.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="561"/>
@@ -9411,7 +9411,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="580"/>
         <source>Projects</source>
-        <translation>Proyecto</translation>
+        <translation>Proyectos</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="580"/>
@@ -9426,7 +9426,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="588"/>
         <source>Fritzing Projects.</source>
-        <translation>Proyecto Fritzing.</translation>
+        <translation>Proyectos Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="655"/>
@@ -9456,12 +9456,12 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="969"/>
         <source>All Tips</source>
-        <translation>Todos</translation>
+        <translation>Todos los consejos</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="977"/>
         <source>Next Tip</source>
-        <translation>Próximo</translation>
+        <translation>Próximo consejo</translation>
     </message>
 </context>
 <context>

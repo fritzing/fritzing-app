@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="86"/>
         <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
-        <translation></translation>
+        <translation>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="97"/>
@@ -323,7 +323,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="374"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation type="unfinished">BinManager::setdirtyTab: No se pudo marcar el compartimento &apos;%1&apos; como borrador</translation>
+        <translation>BinManager::setdirtyTab: No se pudo marcar el compartimento &apos;%1&apos; como borrador</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="384"/>
@@ -667,12 +667,12 @@ El svg de una placa personalizada tiene una o dos capas de pantalla serigráfica
     <message>
         <location filename="../src/items/resizableboard.cpp" line="438"/>
         <source>&lt;b&gt;The custom shape has been loaded, and you will see the new board shortly.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished">&lt;b&gt;La forma hecha de encargo ha sido cargada, y verás el placa nuevo dentro de poco.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</translation>
+        <translation>&lt;b&gt;La forma personalizada ha sido cargada, pronto verás la nueva placa.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="439"/>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
-        <translation type="unfinished">Antes de real PCB producción  recomendamos que  pruebas vuestra forma hecha de encargo por utilizar el &apos;Archivo &gt; Exportación para Producción &gt;Extendido Gerber&apos; opción. </translation>
+        <translation>Antes de producir el PCB te recomendamos que pruebes tu forma personalizada usando la opción &apos;Archivo &gt; Exportar para producción &gt;Gerber extendido &apos;. </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="440"/>
@@ -1475,7 +1475,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="1034"/>
         <source>rotation</source>
-        <translation type="unfinished">rotación</translation>
+        <translation>rotación</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="1056"/>
@@ -1815,22 +1815,22 @@ Es también posible de escoger un conector como tierra llena semilla por correct
         <location filename="../src/items/logoitem.cpp" line="250"/>
         <location filename="../src/items/logoitem.cpp" line="657"/>
         <source>text</source>
-        <translation type="unfinished">Texto</translation>
+        <translation>texto</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="274"/>
         <source>shape</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>forma</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="349"/>
         <source>due to a rendering error</source>
-        <translation type="unfinished">Debido a un rendering error</translation>
+        <translation>debido a un error de renderización</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="363"/>
         <source>because the svg is empty</source>
-        <translation type="unfinished">Porque el svg es vacío</translation>
+        <translation>porque el svg está vacío</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="368"/>
@@ -4761,18 +4761,18 @@ Reason: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2681"/>
         <source>Show part silkscreen</source>
-        <translation type="unfinished">Componente mostrar silkscreen</translation>
+        <translation>Mostrar pantalla serigráfica del componente</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2681"/>
         <source>Hide part silkscreen</source>
-        <translation type="unfinished">Componente de escondrijo silkscreen</translation>
+        <translation>Ocultar pantalla serigráfica del componente</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2695"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2701"/>
         <source>Fritzing Fab Quote</source>
-        <translation type="unfinished">Fritzing Fab Presupuesto</translation>
+        <translation>Presupuesto Fritzing Fab</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2696"/>
@@ -4787,14 +4787,14 @@ Reason: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2844"/>
         <source>Enter Keepout</source>
-        <translation type="unfinished">Introduzca la distancia minima</translation>
+        <translation>Introduce la distancia mínima</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2845"/>
         <source>Keepout is in mils (.001 inches).
 
 </source>
-        <translation type="unfinished">Distancia minima en mils (.001 pulgadas).
+        <translation>Distancia mínima en mils (.001 pulgadas).
 
 </translation>
     </message>
@@ -4819,14 +4819,14 @@ Reason: %2 (errcode %3)</translation>
         <source>10 mils is a good default choice.
 
 </source>
-        <translation type="unfinished">10 mils es un bueno a elegir.
+        <translation>10 mils es un buen valor por defecto.
 
 </translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2849"/>
         <source>Enter keepout value:</source>
-        <translation type="unfinished">Introduce mantener afuera valor:</translation>
+        <translation>Introduce distancia mínima:</translation>
     </message>
 </context>
 <context>
@@ -4834,12 +4834,12 @@ Reason: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="59"/>
         <source>This is where you edit the connector metadata for the part</source>
-        <translation type="unfinished">Esto es donde  editas el conector Metadata para la componente</translation>
+        <translation>Aquí es donde editas los metadatos del conector del componente</translation>
     </message>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="65"/>
         <source>number of connectors:</source>
-        <translation type="unfinished">Número de conectores:</translation>
+        <translation>número de conectores:</translation>
     </message>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="114"/>
@@ -4849,7 +4849,7 @@ Reason: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="119"/>
         <source>SMD</source>
-        <translation type="unfinished">*SMD</translation>
+        <translation>SMD</translation>
     </message>
 </context>
 <context>
@@ -4866,7 +4866,7 @@ Reason: %2 (errcode %3)</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3441"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3795"/>
         <source>Parts Editor</source>
-        <translation type="unfinished">Editor de Componentes</translation>
+        <translation>Editor de componentes</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="539"/>
@@ -4876,12 +4876,12 @@ Reason: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="375"/>
         <source>There is one last edit still pending.</source>
-        <translation type="unfinished"> Hay uno último editar quieto pendiente.</translation>
+        <translation>Todavía hay un cambio pendiente.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1194"/>
         <source>Duplicate &apos;family&apos; property not allowed</source>
-        <translation type="unfinished">Duplicado &apos;familiar&apos; la propiedad no dejada</translation>
+        <translation>No se permite duplicar la propiedad &apos;familia&apos;</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1199"/>
@@ -4891,43 +4891,43 @@ Reason: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="397"/>
         <source>Close without saving?</source>
-        <translation>¿Cerrar sin salvar?</translation>
+        <translation>¿Cerrar sin guardar?</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="413"/>
         <source>Close without saving</source>
-        <translation>Cerrar sin salvar</translation>
+        <translation>Cerrar sin guardar</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="414"/>
         <source>Keep working</source>
-        <translation type="unfinished">Mantiene trabajar</translation>
+        <translation>Seguir trabajando</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3799"/>
         <source>Exiting the Parts Editor now is fine, as long as you remember to finish the assignments later.</source>
-        <translation type="unfinished">Saliendo el Editor de Componentes ahora es bien, mientras  recuerdas para acabar las asignaciones más tarde.</translation>
+        <translation>Puedes salir del Editor de Componentes, siempre y cuando recuerdes acabar las asignaciones más tarde.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="451"/>
         <source>Icon</source>
-        <translation type="unfinished">Icono</translation>
+        <translation>Icono</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="488"/>
         <source>Metadata</source>
-        <translation type="unfinished">Metadata</translation>
+        <translation>Metadatos</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="495"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="535"/>
         <source>Connectors</source>
-        <translation type="unfinished">Conectores</translation>
+        <translation>Conectores</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="585"/>
         <source>Show in Folder</source>
-        <translation type="unfinished">Mostrar en Carpeta</translation>
+        <translation>Mostrar en carpeta</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="586"/>

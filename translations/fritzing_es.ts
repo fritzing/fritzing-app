@@ -677,12 +677,12 @@ El svg de una placa personalizada tiene una o dos capas de pantalla serigráfica
     <message>
         <location filename="../src/items/resizableboard.cpp" line="440"/>
         <source>Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished">Controlá el resultado del archivo de contorno una aplicación de visualización de Gerber de modo de saber si el resultado es el esperado.&lt;br/&gt;&lt;br/&gt;</translation>
+        <translation>Comprueba el archivo de contornos resultante con el visor Gerber para asegurarte de que la forma es la deseada.&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="442"/>
         <source>The rest of this message concerns &apos;cutouts&apos;. </source>
-        <translation type="unfinished">El resto de estas preocupaciones de mensaje &apos;cutouts&apos;. </translation>
+        <translation>El resto de este mensaje concierne a los &apos;recortes&apos;. </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="443"/>
@@ -1450,27 +1450,27 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="205"/>
         <source>Part version number</source>
-        <translation type="unfinished">Número de versión de la componente</translation>
+        <translation>Número de versión del componente</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="233"/>
         <source>Placement</source>
-        <translation type="unfinished">Disposición</translation>
+        <translation>Disposición</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="243"/>
         <source>pcb layer</source>
-        <translation type="unfinished">capa PCB</translation>
+        <translation>capa PCB</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="964"/>
         <source>Locked</source>
-        <translation type="unfinished">Bloqueado</translation>
+        <translation>Bloqueado</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="984"/>
         <source>location</source>
-        <translation type="unfinished">ubicación</translation>
+        <translation>ubicación</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="1034"/>
@@ -1480,7 +1480,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="1056"/>
         <source>degrees</source>
-        <translation type="unfinished">grados</translation>
+        <translation>grados</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/infoview/htmlinfoview.cpp" line="391"/>
@@ -1493,17 +1493,17 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="432"/>
         <source>Ratsnest wire</source>
-        <translation type="unfinished">Ratsnest Cable</translation>
+        <translation>Cable Ratsnest</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="730"/>
         <source>v. %1 %2</source>
-        <translation type="unfinished">v. %1 %2</translation>
+        <translation>v. %1 %2</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="730"/>
         <source>obsolete</source>
-        <translation type="unfinished">obsoleto</translation>
+        <translation>obsoleto</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="273"/>
@@ -1536,17 +1536,17 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/items/itembase.cpp" line="278"/>
         <source>family</source>
-        <translation>Familia</translation>
+        <translation>familia</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="279"/>
         <source>type</source>
-        <translation type="unfinished">Tipo</translation>
+        <translation>tipo</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="280"/>
         <source>model</source>
-        <translation type="unfinished">Modelo</translation>
+        <translation>modelo</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="281"/>
@@ -1556,22 +1556,22 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/items/itembase.cpp" line="282"/>
         <source>color</source>
-        <translation>Color</translation>
+        <translation>color</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="283"/>
         <source>resistance</source>
-        <translation>Resistencia</translation>
+        <translation>resistencia</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="284"/>
         <source>capacitance</source>
-        <translation type="unfinished">capacitancia</translation>
+        <translation>capacitancia</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="285"/>
         <source>inductance</source>
-        <translation type="unfinished">inductancia</translation>
+        <translation>inductancia</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="286"/>
@@ -1581,12 +1581,12 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/items/itembase.cpp" line="287"/>
         <source>current</source>
-        <translation type="unfinished">actual</translation>
+        <translation>actual</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="288"/>
         <source>power</source>
-        <translation type="unfinished">potencia</translation>
+        <translation>potencia</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="289"/>
@@ -1622,7 +1622,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/items/itembase.cpp" line="295"/>
         <source>shape</source>
-        <translation>figura</translation>
+        <translation>forma</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="296"/>
@@ -1632,7 +1632,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/items/itembase.cpp" line="297"/>
         <source>part number</source>
-        <translation type="unfinished">Número de componente</translation>
+        <translation>número de componente</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="298"/>
@@ -1642,72 +1642,72 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/items/itembase.cpp" line="299"/>
         <source>pins</source>
-        <translation type="unfinished">Alfileres</translation>
+        <translation>pins</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="300"/>
         <source>spacing</source>
-        <translation type="unfinished">Espaciando</translation>
+        <translation>espaciado</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="302"/>
         <source>frequency</source>
-        <translation type="unfinished">Frecuencia</translation>
+        <translation>frecuencia</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="303"/>
         <source>processor</source>
-        <translation type="unfinished">Procesador</translation>
+        <translation>procesador</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="304"/>
         <source>variant</source>
-        <translation type="unfinished">Variante</translation>
+        <translation>variante</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="305"/>
         <source>layers</source>
-        <translation type="unfinished">capas</translation>
+        <translation>capas</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="306"/>
         <source>tolerance</source>
-        <translation type="unfinished">tolerancia</translation>
+        <translation>tolerancia</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="307"/>
         <source>descr</source>
-        <translation type="unfinished">descr</translation>
+        <translation>descr</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="308"/>
         <source>filename</source>
-        <translation type="unfinished">nombre</translation>
+        <translation>nombre de archivo</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="309"/>
         <source>title</source>
-        <translation type="unfinished">título</translation>
+        <translation>título</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="310"/>
         <source>date</source>
-        <translation type="unfinished">fecha</translation>
+        <translation>fecha</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="311"/>
         <source>rev</source>
-        <translation type="unfinished">Rev</translation>
+        <translation>rev</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="312"/>
         <source>sheet</source>
-        <translation type="unfinished">Hoja</translation>
+        <translation>hoja</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="313"/>
         <source>project</source>
-        <translation type="unfinished">Proyecto</translation>
+        <translation>proyecto</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="314"/>
@@ -1717,32 +1717,32 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/items/itembase.cpp" line="315"/>
         <source>top</source>
-        <translation type="unfinished">Superior</translation>
+        <translation>superior</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="316"/>
         <source>bottom</source>
-        <translation type="unfinished">Inferior</translation>
+        <translation>inferior</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="317"/>
         <source>copper bottom</source>
-        <translation type="unfinished">Fondo cobrizo</translation>
+        <translation>inferior de cobre</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="318"/>
         <source>copper top</source>
-        <translation type="unfinished">Componente superior cobre</translation>
+        <translation>superior de cobre</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="319"/>
         <source>silkscreen bottom</source>
-        <translation type="unfinished">silkscreen Fondo</translation>
+        <translation>pantalla serigráfica parte inferior</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="320"/>
         <source>silkscreen top</source>
-        <translation type="unfinished">silkscreen Componente superior</translation>
+        <translation>pantalla serigráfica parte superior</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="326"/>
@@ -1757,12 +1757,12 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/items/itembase.cpp" line="1404"/>
         <source>file for %1 %2 not found</source>
-        <translation type="unfinished">Archivo para %1 %2 no encontrado</translation>
+        <translation>No se ha encontrado el archivo para %1 %2</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="1507"/>
         <source>unable to create renderer for svg %1</source>
-        <translation type="unfinished">Incapaz de crear renderer para svg %1</translation>
+        <translation>Incapaz de crear renderer para svg %1</translation>
     </message>
 </context>
 <context>
@@ -3878,29 +3878,29 @@ Do you want to update now?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2870"/>
         <source>Copper Top layer is active</source>
-        <translation type="unfinished">La primera Capa de Cobre esta activa</translation>
+        <translation>La capa superior de cobre esta activa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2882"/>
         <source>Copper Bottom layer is active</source>
-        <translation type="unfinished">La Última capa de cobre esta activa</translation>
+        <translation>La capa inferior de cobre está activa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2942"/>
         <source>Autorouting Progress...</source>
-        <translation type="unfinished">Progreso del Autoruteo...</translation>
+        <translation>Progreso del Autoruteo...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3720"/>
         <source>Launch %1...</source>
-        <translation type="unfinished">Lanzar %1...</translation>
+        <translation>Lanzar %1...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3801"/>
         <source>No outdated parts found.
 All your parts are up-to-date.</source>
-        <translation type="unfinished">No se encontraron componentes atrasadas.
-Actualiza todas tus componentes.</translation>
+        <translation>No se encontraron componentes sin actualizar.
+Todos tus componentes están actualizados.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3815"/>
@@ -3917,17 +3917,17 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3939"/>
         <source>Update %1 part(s)</source>
-        <translation>%1 componente(s) actualizada(s)</translation>
+        <translation>%1 componente(s) actualizado(s)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1095"/>
         <source>&amp;Zoom In</source>
-        <translation>A&amp;cercar</translation>
+        <translation>&amp;Acercar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="638"/>
         <source>Shell launch %1</source>
-        <translation type="unfinished">Terminal %1</translation>
+        <translation>Terminal %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3581"/>
@@ -3937,7 +3937,7 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3582"/>
         <source>Read-only</source>
-        <translation type="unfinished">Solo lectura</translation>
+        <translation>Solo lectura</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1224"/>
@@ -3967,7 +3967,7 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1107"/>
         <source>&amp;Zoom Out</source>
-        <translation>A&amp;lejar</translation>
+        <translation>&amp;Alejar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1108"/>
@@ -3982,7 +3982,7 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1112"/>
         <source>&amp;Fit in Window</source>
-        <translation>Ajustar a la &amp;ventana</translation>
+        <translation>&amp;Ajustar a la ventana</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1113"/>
@@ -3997,7 +3997,7 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1117"/>
         <source>&amp;Actual Size</source>
-        <translation>Tamaño &amp;Real</translation>
+        <translation>&amp;Tamaño Real</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1122"/>
@@ -4007,7 +4007,7 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1155"/>
         <source>&amp;Show Breadboard</source>
-        <translation>Mostrar &amp;Protoboard</translation>
+        <translation>&amp;Mostrar Protoboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1145"/>
@@ -4022,7 +4022,7 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1161"/>
         <source>&amp;Show Schematic</source>
-        <translation>Mostrar &amp;Esquemático</translation>
+        <translation>&amp;Mostrar Esquemático</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1145"/>
@@ -4037,7 +4037,7 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1167"/>
         <source>&amp;Show PCB</source>
-        <translation>Mostrar PC&amp;B (Circuito Impreso)</translation>
+        <translation>&amp;Mostrar PCB (Circuito Impreso)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1145"/>
@@ -4107,12 +4107,12 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1272"/>
         <source>Report a bug...</source>
-        <translation type="unfinished">Reportar un error...</translation>
+        <translation>Reportar un fallo...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1276"/>
         <source>Enable debugging log</source>
-        <translation>Activar depuración</translation>
+        <translation>Activar registro de depuración</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1345"/>
@@ -4128,12 +4128,12 @@ Complacer comprobar todas las  vistas para lado potencial-efectos.</translation>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="223"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1670"/>
         <source>Choose a folder for exporting</source>
-        <translation type="unfinished">Selecciona un folder para exportar</translation>
+        <translation>Selecciona una carpeta donde exportar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1121"/>
         <source>Export SVG...</source>
-        <translation type="unfinished">Exporta SVG...</translation>
+        <translation>Exportar SVG...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1285"/>
@@ -7828,7 +7828,7 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
         <location filename="../src/version/partschecker.cpp" line="430"/>
         <location filename="../src/version/partschecker.cpp" line="438"/>
         <source>Regenerating parts database</source>
-        <translation type="unfinished"></translation>
+        <translation>Volviendo a generar la base de datos de partes</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="430"/>

@@ -2,7 +2,7 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
-    <name>O programu</name>
+    <name>AboutBox</name>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="70"/>
         <source>Različica %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
@@ -25,7 +25,7 @@
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="121"/>
-        <source>Fritzing is made by: </source>
+        <source>Avtorji Fritzing so: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -739,7 +739,7 @@ Use the file?</source>
     <name>BoardLogoItem</name>
     <message>
         <location filename="../src/items/logoitem.cpp" line="1134"/>
-        <source>shape</source>
+        <source>oblika</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -748,17 +748,17 @@ Use the file?</source>
     <message>
         <location filename="../src/items/logoitem.cpp" line="944"/>
         <location filename="../src/items/logoitem.cpp" line="967"/>
-        <source>color</source>
+        <source>bara</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="947"/>
-        <source>Set text color</source>
+        <source>Nastavite barvo besedila</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="961"/>
-        <source>Select text color</source>
+        <source>Izberite barvo besedila</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -827,12 +827,12 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="79"/>
-        <source>Select Serial Port</source>
+        <source>Izberite serijska vrata</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="88"/>
-        <source>Description:</source>
+        <source>Opis:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -877,7 +877,7 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="89"/>
-        <source>Description: %1</source>
+        <source>Opis: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -965,7 +965,7 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="92"/>
-        <source>Prekini povezavo z serial port</source>
+        <source>Prekini povezavo z serijskimi vrati</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -980,7 +980,7 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="103"/>
-        <source>Nastavi serial port</source>
+        <source>Nastavi serijska vrata</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1015,12 +1015,12 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="149"/>
-        <source>Connected to %1 : %2, %3, %4, %5, %6</source>
+        <source>Povezan z %1 : %2, %3, %4, %5, %6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="153"/>
-        <source>Error</source>
+        <source>Napaka</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1030,7 +1030,7 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="175"/>
-        <source>Disconnected</source>
+        <source>Nepovezan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1045,7 +1045,7 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="201"/>
-        <source>Critical Error</source>
+        <source>Kritična napaka</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

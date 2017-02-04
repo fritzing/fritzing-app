@@ -118,12 +118,12 @@ QDir FolderUtils::getAppPartsSubFolder(QString search) {
 QDir FolderUtils::getAppPartsSubFolder2(QString search) {
 	if (m_partsPath.isEmpty()) {
 		QDir dir = getApplicationSubFolder("fritzing-parts");
-		if (dir.exists()) {
+		if (dir.exists() && dir.dirName().endsWith("fritzing-parts")) {
 			m_partsPath = dir.absolutePath();
 		}
 		else {
 			QDir dir = getApplicationSubFolder("parts");
-			if (dir.exists()) {
+			if (dir.exists() && dir.dirName().endsWith("parts")) {
 				m_partsPath = dir.absolutePath();
 			}
 		}

@@ -53,10 +53,10 @@ public:
     FServer(QObject *parent = 0);
 
 signals:
-    void newConnection(int socketDescriptor);
+    void newConnection(qintptr socketDescriptor);
 
 protected:
-    void incomingConnection(int socketDescriptor);
+    void incomingConnection(qintptr socketDescriptor);
 };
 
 class FServerThread : public QThread
@@ -64,7 +64,7 @@ class FServerThread : public QThread
     Q_OBJECT
 
 public:
-    FServerThread(int socketDescriptor, QObject *parent);
+    FServerThread(qintptr socketDescriptor, QObject *parent);
 
     void run();
     void setDone();
@@ -148,7 +148,7 @@ public slots:
 	void loadedPart(int loaded, int total);
 	void externalProcessSlot(QString & name, QString & path, QStringList & args);
 	void gotOrderFab(QNetworkReply *);
-    void newConnection(int socketDescriptor);
+    void newConnection(qintptr socketDescriptor);
     void doCommand(const QString & command, const QString & params, QString & result, int & status);
     void regeneratePartsDatabase();
     void regenerateDatabaseFinished();

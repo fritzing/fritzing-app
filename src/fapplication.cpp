@@ -128,8 +128,9 @@ FServer::FServer(QObject *parent)
 {
 }
 
-void FServer::incomingConnection(int socketDescriptor)
+void FServer::incomingConnection(qintptr socketDescriptor)
 {
+	DebugDialog::debug("incomingConnection called");
     emit newConnection(socketDescriptor);
 }
 
@@ -137,7 +138,7 @@ void FServer::incomingConnection(int socketDescriptor)
 
 QMutex FServerThread::m_busy;
 
-FServerThread::FServerThread(int socketDescriptor, QObject *parent) : QThread(parent), m_socketDescriptor(socketDescriptor)
+FServerThread::FServerThread(qintptr socketDescriptor, QObject *parent) : QThread(parent), m_socketDescriptor(socketDescriptor)
 {
 }
 
@@ -1890,11 +1891,12 @@ void FApplication::cleanFzzs() {
 void FApplication::initServer() {
     FMessageBox::BlockMessages = true;
     m_fServer = new FServer(this);
-    connect(m_fServer, SIGNAL(newConnection(int)), this, SLOT(newConnection(int)));
+    connect(m_fServer, SIGNAL(newConnection(qintptr)), this, SLOT(newConnection(qintptr)));
+	DebugDialog::debug("Server active");
     m_fServer->listen(QHostAddress::Any, m_portNumber);
 }
 
-void FApplication::newConnection(int socketDescription) {
+void FApplication::newConnection(qintptr socketDescription) {
      FServerThread *thread = new FServerThread(socketDescription, this);
      connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
      connect(thread, SIGNAL(doCommand(const QString &, const QString &, QString &, int &)), 

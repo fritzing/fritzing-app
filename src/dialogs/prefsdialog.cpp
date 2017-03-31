@@ -117,9 +117,9 @@ void PrefsDialog::initGeneral(QWidget * widget, QFileInfoList & languages)
 {
 	QVBoxLayout * vLayout = new QVBoxLayout();
 
-	// TODO: if no translation files found, don't put up the translation part of this dialog
-
-    vLayout->addWidget(createLanguageForm(languages));
+	if (languages.size() > 1) {
+		vLayout->addWidget(createLanguageForm(languages));
+	}
 	vLayout->addWidget(createColorForm());
 	vLayout->addWidget(createZoomerForm());
 	vLayout->addWidget(createAutosaveForm());
@@ -204,10 +204,9 @@ QWidget * PrefsDialog::createAutosaveForm() {
 	zhlayout->setSpacing(SPACING);
 
 	QCheckBox * box = new QCheckBox(tr("Autosave every:"));
+	box->setFixedWidth(FORMLABELWIDTH);
 	box->setChecked(MainWindow::AutosaveEnabled);
 	zhlayout->addWidget(box);
-
-	zhlayout->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Expanding));
 
 	QSpinBox * spinBox = new QSpinBox;
 	spinBox->setMinimum(1);
@@ -218,6 +217,8 @@ QWidget * PrefsDialog::createAutosaveForm() {
 
 	QLabel * label = new QLabel(tr("minutes"));
 	zhlayout->addWidget(label);
+
+	zhlayout->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Expanding));
 
 	autosave->setLayout(zhlayout);
 
@@ -309,12 +310,12 @@ QWidget* PrefsDialog::createOtherForm()
     QHBoxLayout *layout = new QHBoxLayout();
     layout->setSpacing(SPACING);
 
-    QFrame * frame = new QFrame;
     QVBoxLayout * vlayout = new QVBoxLayout();
     vlayout->setMargin(0);
     vlayout->setSpacing(0);
 
     QLabel * clearLabel = new QLabel(QObject::tr("Clear all saved settings and close this dialog immediately."));
+    clearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     clearLabel->setWordWrap(true);
     clearLabel->setFixedWidth(FORMLABELWIDTH);
     vlayout->addWidget(clearLabel);
@@ -322,6 +323,7 @@ QWidget* PrefsDialog::createOtherForm()
     vlayout->addSpacing(SPACING);
 
     clearLabel = new QLabel(QObject::tr("This action does not delete any files; it restores settings to their default values."));
+    clearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     clearLabel->setWordWrap(true);
     clearLabel->setFixedWidth(FORMLABELWIDTH);
     vlayout->addWidget(clearLabel);
@@ -329,15 +331,14 @@ QWidget* PrefsDialog::createOtherForm()
     vlayout->addSpacing(SPACING);
 
     clearLabel = new QLabel(QObject::tr("There is no undo for this action, and no further warning!!!!"));
+    clearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     clearLabel->setWordWrap(true);
     clearLabel->setFixedWidth(FORMLABELWIDTH);
     vlayout->addWidget(clearLabel);
 
-    frame->setLayout(vlayout);
-    layout->addWidget(frame);
+    layout->addLayout(vlayout);
 
 	QPushButton * clear = new QPushButton(QObject::tr("Clear Settings"), this);
-	clear->setMaximumWidth(220);
 	connect(clear, SIGNAL(clicked()), this, SLOT(clear()));
 
 	layout->addWidget(clear);	

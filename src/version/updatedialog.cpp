@@ -380,6 +380,7 @@ void UpdateDialog::updateParts() {
     m_progressBar->setValue(0);
     m_progressBar->setVisible(true);
     m_feedbackLabel->setText(tr("<p>Downloading new parts...</p>"));
+    qApp->processEvents();    // Ensure dialog is drawn before doing I/O
 
     bool result = PartsChecker::updateParts(m_repoPath, m_remoteSha, this);
     m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(false);

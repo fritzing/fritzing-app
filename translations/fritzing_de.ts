@@ -9108,7 +9108,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="115"/>
         <source>Slovenian - %1</source>
-        <translation>Slovenisch - %1</translation>
+        <translation>Slowenisch - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="118"/>

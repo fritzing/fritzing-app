@@ -741,7 +741,7 @@ Trotzdem diese Datei benutzen?</translation>
 <context>
     <name>BoardLogoItem</name>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="1134"/>
+        <location filename="../src/items/logoitem.cpp" line="1135"/>
         <source>shape</source>
         <translation>Form</translation>
     </message>
@@ -749,18 +749,18 @@ Trotzdem diese Datei benutzen?</translation>
 <context>
     <name>BreadboardLogoItem</name>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="944"/>
-        <location filename="../src/items/logoitem.cpp" line="967"/>
+        <location filename="../src/items/logoitem.cpp" line="945"/>
+        <location filename="../src/items/logoitem.cpp" line="968"/>
         <source>color</source>
         <translation>Farbe</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="947"/>
+        <location filename="../src/items/logoitem.cpp" line="948"/>
         <source>Set text color</source>
         <translation>Textfarbe festlegen</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="961"/>
+        <location filename="../src/items/logoitem.cpp" line="962"/>
         <source>Select text color</source>
         <translation>Textfarbe auswählen</translation>
     </message>
@@ -1170,44 +1170,44 @@ Trotzdem diese Datei benutzen?</translation>
 <context>
     <name>FApplication</name>
     <message>
-        <location filename="../src/fapplication.cpp" line="1610"/>
-        <location filename="../src/fapplication.cpp" line="1616"/>
-        <location filename="../src/fapplication.cpp" line="1619"/>
+        <location filename="../src/fapplication.cpp" line="1611"/>
+        <location filename="../src/fapplication.cpp" line="1617"/>
+        <location filename="../src/fapplication.cpp" line="1620"/>
         <source>Fritzing failure</source>
         <translation>Fehler in Fritzing</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1610"/>
+        <location filename="../src/fapplication.cpp" line="1611"/>
         <source>Fritzing caught an exception %1 from %2 in event %3</source>
         <translation>Fritzing-Ausnahme %1 aus %2 im Ereignis %3</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1616"/>
+        <location filename="../src/fapplication.cpp" line="1617"/>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
         <translation>Fritzing-Ausnahme aus %1 in Ereignis %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1619"/>
+        <location filename="../src/fapplication.cpp" line="1620"/>
         <source>Fritzing caught an exception from %1 in event %2</source>
         <translation>Fritzing-Ausnahme aus %1 in Ereignis %2</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1747"/>
+        <location filename="../src/fapplication.cpp" line="1748"/>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
         <translation>Bitte gib einen Dateinamen (.fzz) zum Speichern des Backups an. (Abbrechen führt zum Löschen des Backups)</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1747"/>
+        <location filename="../src/fapplication.cpp" line="1748"/>
         <source>Fritzing (*%1)</source>
         <translation>Fritzing (*%1)</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2018"/>
+        <location filename="../src/fapplication.cpp" line="2020"/>
         <source>Regenerate parts database?</source>
         <translation>Neuerstellung der Bauteil-Datenbank</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2019"/>
+        <location filename="../src/fapplication.cpp" line="2021"/>
         <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
 
 </source>
@@ -1215,23 +1215,23 @@ Trotzdem diese Datei benutzen?</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2020"/>
+        <location filename="../src/fapplication.cpp" line="2022"/>
         <source>Would you like to regenerate the parts database?
 </source>
         <translation>Willst Du die Datenbank neu erstellen lassen?</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2028"/>
+        <location filename="../src/fapplication.cpp" line="2030"/>
         <source>Regenerate</source>
         <translation>Neu erstellen</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2029"/>
+        <location filename="../src/fapplication.cpp" line="2031"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2034"/>
+        <location filename="../src/fapplication.cpp" line="2036"/>
         <source>Regenerating parts database...</source>
         <translation>Bauteil-Datenbank wird neu erstellt...</translation>
     </message>
@@ -1810,60 +1810,50 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
 <context>
     <name>LogoItem</name>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="250"/>
-        <location filename="../src/items/logoitem.cpp" line="657"/>
+        <location filename="../src/items/logoitem.cpp" line="251"/>
+        <location filename="../src/items/logoitem.cpp" line="658"/>
         <source>text</source>
         <translation>Text</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="274"/>
+        <location filename="../src/items/logoitem.cpp" line="275"/>
         <source>shape</source>
         <translation>Form</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="349"/>
+        <location filename="../src/items/logoitem.cpp" line="350"/>
         <source>due to a rendering error</source>
         <translation>aufgrund eines Rendering-Fehlers</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="363"/>
+        <location filename="../src/items/logoitem.cpp" line="364"/>
         <source>because the svg is empty</source>
         <translation>da die SVG-Datei leer ist</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="368"/>
+        <location filename="../src/items/logoitem.cpp" line="369"/>
         <source>because this appears to be a SVG file exported from CorelDRAW without choosing the &apos;presentation attributes&apos; setting</source>
         <translation>da diese SVG-Datei vermutlich aus CorelDRAW ohne die Einstellung &quot;presentation attributes&quot; exportiert wurde </translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="382"/>
+        <location filename="../src/items/logoitem.cpp" line="383"/>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
         <translation>aufgrund eines XML-Problems: %1 Zeile:%2 Spalte:%3</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="388"/>
+        <location filename="../src/items/logoitem.cpp" line="389"/>
         <source>because the file has no root element</source>
         <translation>da diese Datei kein Wurzel-Element enthält</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="393"/>
+        <location filename="../src/items/logoitem.cpp" line="394"/>
         <source>because the file has no &lt;svg&gt; element</source>
         <translation>da diese Datei kein &lt;svg&gt;-Element enthält</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="431"/>
+        <location filename="../src/items/logoitem.cpp" line="432"/>
         <source>for unknown reasons--possibly the image file is corrupted</source>
         <translation>aus unbekannten Gründen--möglicherweise ist die Bilddatei beschädigt</translation>
-    </message>
-    <message>
-        <location filename="../src/items/logoitem.cpp" line="448"/>
-        <source>Unable to display</source>
-        <translation>Nicht anzeigbar</translation>
-    </message>
-    <message>
-        <location filename="../src/items/logoitem.cpp" line="449"/>
-        <source>Unable to display image from %1</source>
-        <translation>Das Bild aus %1 kann nicht angezeigt werden</translation>
     </message>
 </context>
 <context>
@@ -4647,28 +4637,28 @@ Ursache: %2 (Fehlercode %3)</translation>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="300"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1475"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1480"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1515"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1532"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1547"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1570"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1588"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1627"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1632"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1533"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1550"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1565"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1582"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1595"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1634"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1639"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1656"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1679"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1696"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2214"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2219"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2242"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2247"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2421"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1646"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1663"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1686"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1703"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2123"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2128"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2151"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2156"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2330"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1476"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1628"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1635"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use copper fill.</source>
         <translation>Deinem Entwurf fehlt noch die Leiterplatte! Für die Kupferfüllung musst Du erst eine Leiterplatte (PCB) einfügen.</translation>
     </message>
@@ -4688,12 +4678,12 @@ Ursache: %2 (Fehlercode %3)</translation>
         <translation>Kupfer</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1633"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1640"/>
         <source>Copper fill: please select only the board you want to fill.</source>
         <translation>Kupferfüllung: Bitte wähle eine Leiterplatte aus.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1491"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1493"/>
         <source>Please designate one or more ground fill seeds before doing a ground fill.
 
 </source>
@@ -4706,93 +4696,93 @@ Ursache: %2 (Fehlercode %3)</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="301"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2220"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2248"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2129"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2157"/>
         <source>Please click on a PCB first--this selection operation only works for one board at a time.</source>
         <translation>Bitte wähle erst eine Leiterplatte aus. Diese Funktion kann nur auf einer Leiterplatte gleichzeitig ausgeführt werden.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1515"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1656"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1533"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1663"/>
         <source>Fritzing error: unable to render board svg (1).</source>
         <translation>Fehler: Das Leiterplatten-SVG konnte nicht gerendert werden (1).</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1532"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1547"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1679"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1550"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1565"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1686"/>
         <source>Fritzing error: unable to render copper svg (1).</source>
         <translation>Fehler: Das Kupfer-SVG konnte nicht gerendert werden (1).</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1570"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1582"/>
         <source>Fritzing error: unable to write copper fill (1).</source>
         <translation>Fehler: Konnte Kupferfüllung nicht erstellen (1).</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1588"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1595"/>
         <source>Fritzing error: unable to write copper fill (2).</source>
         <translation>Fehler: Konnte Kupferfüllung nicht erstellen (2).</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1639"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1646"/>
         <source>Unable to create copper fill--probably the part wasn&apos;t dropped onto the PCB.</source>
         <translation>Kupferfüllung konnte nicht erzeugt werden--wahrscheinlich wurde das Bauteil nicht auf der Leiterplatte abgelegt.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1696"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1703"/>
         <source>Unable to create copper fill--possibly the part was dropped onto another part or wire rather than the actual PCB.</source>
         <translation>Kupferfüllung konnte nicht erzeugt werden--möglicherweise wurde das Bauteil nicht auf die eigentliche Leiterplatte, sondern auf ein anderes Bauteil oder einen Draht abgelegt.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2076"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1985"/>
         <source>Clear ground fill seeds</source>
         <translation>Massefüllung-Saat zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2215"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2243"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2124"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2152"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use this selection operation.</source>
         <translation>Dein Entwurf enthält noch keine Leiterplatte! Bitte füge eine hinzu, um diese Funktion auszuführen.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2422"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2331"/>
         <source>Unable to convert this via to a bendpoint because it is connected to a part that is only on the bottom layer and another part that is only on the top layer.</source>
         <translation>Dieses Via konnte nicht in einen Biegepunkt konvertiert werden, da es mit Bauteilen auf der Ober- und Unterseite verbunden ist.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2681"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2590"/>
         <source>Show part silkscreen</source>
         <translation>Bauteil-Siebdruck einblenden</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2681"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2590"/>
         <source>Hide part silkscreen</source>
         <translation>Bauteil-Siebdruck ausblenden</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2695"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2701"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2604"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2610"/>
         <source>Fritzing Fab Quote</source>
         <translation>Fritzing Fab Herstellungspreis</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2696"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2605"/>
         <source>Your sketch does not have a board yet. You cannot fabricate this sketch without a PCB part.</source>
         <translation>Dein Entwurf enthält bisher keine Platine. Ohne diese kann Dein Entwurf nicht produziert werden.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2702"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2611"/>
         <source>Sorry, http://fab.fritzing.org is not responding to the quote request. Please check your network connection and/or try again later.</source>
         <translation>Leider antwortet http://fab.fritzing.org nicht auf die Preisanfrage. Bitte überprüfe Deine Internetverbindung oder versuche es später noch einmal.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2844"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2753"/>
         <source>Enter Keepout</source>
         <translation>Abstand eingeben</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2845"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2754"/>
         <source>Keepout is in mils (.001 inches).
 
 </source>
@@ -4801,21 +4791,21 @@ Ursache: %2 (Fehlercode %3)</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2846"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2755"/>
         <source>Note that due to aliasing, distances may be too short by up to 2 mils
 </source>
         <translation>Beachten Sie, dass durch die Kantenglättung der Abstand um ca. 2 tausendstel Zoll kleiner werden kann
 </translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2847"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2756"/>
         <source>so you may want to increase the keepout value by that much.
 
 </source>
         <translation>so dass Du diese entsprechend aufrechnen solltest.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2848"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2757"/>
         <source>10 mils is a good default choice.
 
 </source>
@@ -4824,7 +4814,7 @@ Ursache: %2 (Fehlercode %3)</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2849"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2758"/>
         <source>Enter keepout value:</source>
         <translation>Gib den Abstandswert ein:</translation>
     </message>
@@ -6304,12 +6294,12 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
         <translation>Verhalten des Mausrads</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="494"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="495"/>
         <source>Command</source>
         <translation>Cmd</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="496"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="497"/>
         <source>Control</source>
         <translation>Strg</translation>
     </message>
@@ -6349,73 +6339,73 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
         <translation>Sichern alle:</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="219"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="218"/>
         <source>minutes</source>
         <translation>Minuten</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="233"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="234"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="257"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="258"/>
         <source>Colors</source>
         <translation>Farben</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="272"/>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="292"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="273"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="293"/>
         <source>%1 (click to change...)</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="308"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="309"/>
         <source>Clear Settings</source>
         <translation>Einstellungen zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="350"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="351"/>
         <source>Platform Support</source>
         <translation>Plattform-Unterstützung</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="357"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="358"/>
         <source>&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="366"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="367"/>
         <source>Location:</source>
         <translation>Pfad:</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="375"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="376"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="385"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="386"/>
         <source>You need to have &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (version %3 or newer) installed.</source>
         <translation>Du benötigst &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (Version %3 oder neuer).</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="414"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="415"/>
         <source>Select a programmer (executable) for %1</source>
         <translation>Wähle einen Programmierer (ausführbare Datei) für %1</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="446"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="447"/>
         <source>Connected Highlight</source>
         <translation>Verbunden</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="462"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="463"/>
         <source>Unconnected Highlight</source>
         <translation>Nicht verbunden</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="502"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="503"/>
         <source>no keys down = scroll
 shift key swaps scroll axis
 Alt or %1 key = zoom</source>
@@ -6424,7 +6414,7 @@ Mausrad + Umschalt-Taste = horizontaler Bildlauf
 Mausrad + Alt- oder %1-Taste = Zoom</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="505"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="506"/>
         <source>no keys down = zoom
 Alt or %1 key = scroll
 shift key swaps scroll axis</source>
@@ -6433,22 +6423,22 @@ Mausrad + Alt- oder %1-Taste = vertikaler Bildlauf
 Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="525"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="526"/>
         <source>Curvy vs. straight wires</source>
         <translation>Gebogene vs. gerade Drähte</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="528"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="529"/>
         <source>When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?</source>
         <translation>Wenn Du mit der Maus an einem Draht oder Bauteilbeinchen ziehst, möchtest Du die Biegung ändern oder einen Knick hinzufügen?</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="533"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="534"/>
         <source>This checkbox sets the default behavior. You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag.</source>
         <translation>Dies ist die Standardeinstellung. Du kannst immer das jeweils andere Verhalten erzielen, wenn Du beim Ziehen die &quot;Strg&quot;-Taste (Mac: Cmd) gedrückt hältst. </translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="540"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="541"/>
         <source>Curvy wires and legs</source>
         <translation>Gebogene Drähte und Beinchen</translation>
     </message>
@@ -6772,12 +6762,12 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="266"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="267"/>
         <source>Connected highlight color</source>
         <translation>Hervorhebungsfarbe für &quot;Verbunden&quot;</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="286"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="287"/>
         <source>Unconnected highlight color</source>
         <translation>Hervorhebungsfarbe für &quot;Nicht verbunden&quot;</translation>
     </message>
@@ -6787,17 +6777,17 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <translation>Alle Einstellungen zurücksetzen und dieses Fenster schließen.</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="324"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="325"/>
         <source>This action does not delete any files; it restores settings to their default values.</source>
         <translation>Diese Aktion führt nicht zum Löschen von Dateien, es setzt lediglich alle Einstellungen zurück.</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="331"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="333"/>
         <source>There is no undo for this action, and no further warning!!!!</source>
         <translation>Diese Aktion kann nicht rückgängig gemacht werden, und es gibt keine weitere Warnung!!!</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="339"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="341"/>
         <source>Clear Settings</source>
         <translation>Einstellungen zurücksetzen</translation>
     </message>
@@ -6817,12 +6807,12 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <translation>Alle &quot;Autorutebaren&quot; Leiterbahnen auswählen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2298"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2207"/>
         <source>Convert to Via</source>
         <translation>In Via umwandeln</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2429"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2338"/>
         <source>Convert Via to Bendpoint</source>
         <translation>Via in Biegepunkt umwandeln</translation>
     </message>
@@ -6841,10 +6831,10 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="622"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="665"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="734"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="501"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1380"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1408"/>
-        <location filename="../src/fapplication.cpp" line="1029"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="500"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1379"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1407"/>
+        <location filename="../src/fapplication.cpp" line="1030"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="50"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="143"/>
         <location filename="../src/model/modelbase.cpp" line="80"/>
@@ -6860,7 +6850,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <location filename="../src/model/palettemodel.cpp" line="373"/>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="534"/>
         <location filename="../src/sketch/sketchwidget.cpp" line="949"/>
-        <location filename="../src/svg/gerbergenerator.cpp" line="368"/>
+        <location filename="../src/svg/gerbergenerator.cpp" line="922"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
@@ -6900,17 +6890,17 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <translation>Leiterplattenansicht</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1378"/>
+        <location filename="../src/fapplication.cpp" line="1379"/>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
         <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1384"/>
+        <location filename="../src/fapplication.cpp" line="1385"/>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
         <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2067"/>
+        <location filename="../src/fapplication.cpp" line="2069"/>
         <source>Regenerate database failed</source>
         <translation>Neuerstellung der Datenbank fehlgeschlagen</translation>
     </message>
@@ -7199,7 +7189,7 @@ Versuche, Fritzing neu zu starten. Falls das Problem bestehen bleibt, wende Dich
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="247"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="248"/>
         <source>Please note that a new language setting will not take effect until the next time you run Fritzing.</source>
         <translation>Eine neue Spracheinstellung wird erst nach einem Neustart von Fritzing wirksam.</translation>
     </message>
@@ -7227,7 +7217,7 @@ Versuche, Fritzing neu zu starten. Falls das Problem bestehen bleibt, wende Dich
         <translation>Luftlinien</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2233"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2142"/>
         <location filename="../src/sketch/sketchwidget.cpp" line="7917"/>
         <source>Select all %1</source>
         <translation>Alles auswählen %1</translation>
@@ -7547,115 +7537,14 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <translation>Symbol %1 endet unerwartet (3) in %2</translation>
     </message>
     <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="137"/>
+        <location filename="../src/svg/gerbergenerator.cpp" line="745"/>
         <source>outline is empty</source>
         <translation>Umriss/Kontur ist leer</translation>
     </message>
     <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="158"/>
-        <source>the board outline layer, </source>
-        <translation>Umriss/Kontur-Ebene, </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="159"/>
-        <source>silkscreen layer(s), </source>
-        <translation>Siebdruck-Ebene(n), </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="160"/>
-        <source>copper layer(s), </source>
-        <translation>Kupfer-Ebene(n), </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="161"/>
-        <source>mask layer(s), </source>
-        <translation>Lötstoppmasken-Ebene(n), </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="162"/>
-        <source>paste mask layer(s), </source>
-        <translation>Lötstoppmasken-Ebene(n), </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="164"/>
-        <source>Unable to translate svg curves in %1</source>
-        <translation>Konnte SVG-Kurven nicht in %1 umwandeln</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="174"/>
-        <source>%1 layer export is empty.</source>
-        <translation>%1-Ebenenexport ist leer.</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="245"/>
-        <source>exported drill file is empty</source>
-        <translation>die exportierte Bohrdatei ist leer</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="280"/>
-        <source>exported mask layer %1 is empty</source>
-        <translation>die exportierte Masken-Ebene %1 ist leer</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="317"/>
-        <source>exported paste mask layer is empty</source>
-        <translation>die exportierte Lötstoppmasken-Ebene ist leer</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="353"/>
-        <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation>%1-Ebene: Konnte nicht nach &apos;%2&apos; gespeichert werden</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="914"/>
+        <location filename="../src/svg/gerbergenerator.cpp" line="988"/>
         <source>Unable to save pick and place file: %2</source>
         <translation>Montagedatei konnte nicht gespeichert werden: %2</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="223"/>
-        <source>silk export failure</source>
-        <translation>Fehler beim Exportieren des Siebdrucks</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="192"/>
-        <source>%1 layer export is empty (case 2).</source>
-        <translation>%1-Ebenenexport ist leer (Fall 2).</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="207"/>
-        <source>silk layer %1 export is empty</source>
-        <translation>Siebdruckebene-Export %1 ist leer</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="262"/>
-        <source>drill export failure</source>
-        <translation>Fehler beim Exportieren des Bohrens</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="286"/>
-        <source>%1 mask export failure (2)</source>
-        <translation>%1 Fehler beim Exportieren der Lötstoppmasken-Datei (2)</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="860"/>
-        <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation>Fritzing kann die Ausschnitte in dieser Platine nicht verarbeiten. </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="861"/>
-        <source>You may need to reload the shape SVG. </source>
-        <translation>Versuche, die SVG-Form neu zu laden. </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="862"/>
-        <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation>Fritzing kann Ausschnitte nur korrekt erkennen, wenn sie als &quot;Subtraktion&quot; der Grundform in Deinem Zeichenprogramm erstellt wurden.</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="294"/>
-        <location filename="../src/svg/gerbergenerator.cpp" line="328"/>
-        <source>mask export failure</source>
-        <translation>Fehler beim Exportieren der Lötstoppmasken-Datei</translation>
     </message>
     <message>
         <location filename="../src/dialogs/pinlabeldialog.cpp" line="71"/>
@@ -7683,17 +7572,17 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <translation>Auswahl der Massefüllung-Saat</translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1380"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1379"/>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
         <translation>&apos;%1 konnte nicht nach &apos;%2&apos; kopiert werden.</translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1406"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1405"/>
         <source>%2 ... %1 wires moved from their saved position</source>
         <translation>%2 ... %1 Drähte von ihrer gespeicherten Position verschoben</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1029"/>
+        <location filename="../src/fapplication.cpp" line="1030"/>
         <source>%1 wires moved from their saved position in %2.</source>
         <translation>%1 Drähte wurden von ihrer ursprünglichen Position in %2 bewegt.</translation>
     </message>
@@ -7814,33 +7703,33 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <translation>Der Netzwerkort für &apos;%1&apos; konnte nicht gefunden werden. %2</translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="127"/>
+        <location filename="../src/version/partschecker.cpp" line="134"/>
         <source>Unable to access network site for &apos;%1&apos;. %2</source>
         <translation>Es konnte keine Verbindung zum Netzwerkort für &apos;%1&apos; hergestellt werden. %2</translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="137"/>
+        <location filename="../src/version/partschecker.cpp" line="144"/>
         <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
         <translation>Es konnten keine Netzwerk-Referenzen für &apos;%1&apos; gefunden werden. %2</translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="163"/>
+        <location filename="../src/version/partschecker.cpp" line="170"/>
         <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
         <translation>Es konnte keine &apos;master&apos;-Netzwerkreferenz für &apos;%1&apos; gefunden werden. %2</translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="430"/>
-        <location filename="../src/version/partschecker.cpp" line="438"/>
+        <location filename="../src/version/partschecker.cpp" line="437"/>
+        <location filename="../src/version/partschecker.cpp" line="445"/>
         <source>Regenerating parts database</source>
         <translation>Bauteil-Datenbank wird neu erstellt</translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="430"/>
+        <location filename="../src/version/partschecker.cpp" line="437"/>
         <source>Unable to find parts git repository</source>
         <translation>Git-repository konnte nicht gefunden werden</translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="438"/>
+        <location filename="../src/version/partschecker.cpp" line="445"/>
         <source>Unable to find parts git repository HEAD</source>
         <translation>Git-repository HEAD konnte nicht gefunden werden</translation>
     </message>
@@ -7984,22 +7873,22 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
 <context>
     <name>RegenerateDatabaseThread</name>
     <message>
-        <location filename="../src/fapplication.cpp" line="320"/>
+        <location filename="../src/fapplication.cpp" line="321"/>
         <source>Unable to open temporary file</source>
         <translation>Temporäre Datei konnte nicht geöffnet werden</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="326"/>
+        <location filename="../src/fapplication.cpp" line="327"/>
         <source>Database failure</source>
         <translation>Datenbank-Fehler</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="333"/>
+        <location filename="../src/fapplication.cpp" line="334"/>
         <source>Unable to remove original db file %1</source>
         <translation>Ursprüngliche Datenbank-Datei %1 konnte nicht entfernt werden</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="340"/>
+        <location filename="../src/fapplication.cpp" line="341"/>
         <source>Unable to copy database file %1</source>
         <translation>Datenbank-Datei %1 konnte nicht kopiert werden</translation>
     </message>
@@ -9314,7 +9203,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         <translation>Die Aktualisierung kann nicht fortgesetzt werden, da Fritzing nicht alle Änderungen zurücksetzen konnte.&lt;br/&gt;Vielleicht musst Du Fritzing neu installieren.</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="394"/>
+        <location filename="../src/version/updatedialog.cpp" line="395"/>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Bauteil-Aktualisierungen werden installiert. Dies kann ein paar Minuten daueren.&lt;br/&gt;Bitte diesen Prozess nicht unterbrechen, da Dein Bauteil-Ordner beschädigt werden könnte.&lt;/p&gt;</translation>
     </message>
@@ -9334,17 +9223,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         <translation>&lt;p&gt;Lade aktualisierte Bauteile...&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="390"/>
+        <location filename="../src/version/updatedialog.cpp" line="391"/>
         <source>&lt;p&gt;Sorry, unable to download new parts&lt;/p&gt;</source>
         <translation>&lt;p&gt;Es konnten keine Bauteil-Aktualisierungen heruntergeladen werden&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="410"/>
+        <location filename="../src/version/updatedialog.cpp" line="411"/>
         <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Bauteile erfolgreich aktualisiert!&lt;/p&gt;&lt;p&gt;Fritzing muss nun neu gestartet werden. Durch einen Klick auf &lt;em&gt;Schließen&lt;/em&gt; wird Fritzing beendet.&lt;br/&gt;Die neuen Bauteile sind beim nächsten Start verfügbar.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="415"/>
+        <location filename="../src/version/updatedialog.cpp" line="416"/>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Die Bauteile konnten nicht aktualisiert werden: %1&lt;br/&gt;Fritzing muss trotzdem neu gestartet werden. Ein Klick auf &lt;em&gt;Schließen&lt;/em&gt; beendet Fritzing.&lt;/p&gt;</translation>
     </message>

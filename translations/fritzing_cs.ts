@@ -738,7 +738,7 @@ Použít soubor?</translation>
 <context>
     <name>BoardLogoItem</name>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="1134"/>
+        <location filename="../src/items/logoitem.cpp" line="1135"/>
         <source>shape</source>
         <translation>tvar</translation>
     </message>
@@ -746,18 +746,18 @@ Použít soubor?</translation>
 <context>
     <name>BreadboardLogoItem</name>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="944"/>
-        <location filename="../src/items/logoitem.cpp" line="967"/>
+        <location filename="../src/items/logoitem.cpp" line="945"/>
+        <location filename="../src/items/logoitem.cpp" line="968"/>
         <source>color</source>
         <translation>barva</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="947"/>
+        <location filename="../src/items/logoitem.cpp" line="948"/>
         <source>Set text color</source>
         <translation>Nastavit barvu textu</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="961"/>
+        <location filename="../src/items/logoitem.cpp" line="962"/>
         <source>Select text color</source>
         <translation>Vybrat barvu textu</translation>
     </message>
@@ -1167,44 +1167,44 @@ Použít soubor?</translation>
 <context>
     <name>FApplication</name>
     <message>
-        <location filename="../src/fapplication.cpp" line="1610"/>
-        <location filename="../src/fapplication.cpp" line="1616"/>
-        <location filename="../src/fapplication.cpp" line="1619"/>
+        <location filename="../src/fapplication.cpp" line="1611"/>
+        <location filename="../src/fapplication.cpp" line="1617"/>
+        <location filename="../src/fapplication.cpp" line="1620"/>
         <source>Fritzing failure</source>
         <translation>Aplikace Fritzing selhala</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1610"/>
+        <location filename="../src/fapplication.cpp" line="1611"/>
         <source>Fritzing caught an exception %1 from %2 in event %3</source>
         <translation>Fritzing zachytil vyjímku %1 z %2 v události %3</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1616"/>
+        <location filename="../src/fapplication.cpp" line="1617"/>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
         <translation>Fritzing zachytil vyjímku z %1 v události %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1619"/>
+        <location filename="../src/fapplication.cpp" line="1620"/>
         <source>Fritzing caught an exception from %1 in event %2</source>
         <translation>Fritzing zachytil vyjímku z %1 v události %2</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1747"/>
+        <location filename="../src/fapplication.cpp" line="1748"/>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
         <translation>Zadejte název souboru .fzz pro uložení (Zrušit odstraní zálohu)</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1747"/>
+        <location filename="../src/fapplication.cpp" line="1748"/>
         <source>Fritzing (*%1)</source>
         <translation>Fritzing (*%1)</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2018"/>
+        <location filename="../src/fapplication.cpp" line="2020"/>
         <source>Regenerate parts database?</source>
         <translation>Obnovit databázi součástek ?</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2019"/>
+        <location filename="../src/fapplication.cpp" line="2021"/>
         <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
 
 </source>
@@ -1214,23 +1214,23 @@ Poté bude nutné restartovat Fritzing
 </translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2020"/>
+        <location filename="../src/fapplication.cpp" line="2022"/>
         <source>Would you like to regenerate the parts database?
 </source>
         <translation>Opravdu chcete obnovit databázi součástek?</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2028"/>
+        <location filename="../src/fapplication.cpp" line="2030"/>
         <source>Regenerate</source>
         <translation>Obnovit</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2029"/>
+        <location filename="../src/fapplication.cpp" line="2031"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2034"/>
+        <location filename="../src/fapplication.cpp" line="2036"/>
         <source>Regenerating parts database...</source>
         <translation>Probíhá obnova databáze součástek ...</translation>
     </message>
@@ -1257,19 +1257,6 @@ Poté bude nutné restartovat Fritzing
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
         <translation>Obrazovka &lt;b&gt;DPS&lt;/b&gt; je obrazovka která zobrazuje rozvržení komponentů (součástek) na fyzické desce DPS. DPS desky mohou být vyrobené po domácku (DIY) nebo v továrnách jako je ta naše (Fritzing Fab).
 &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;První věc kterou budete potřebovat je deska na kterou budete umísťovat vaše součástky. Po otevření obrazovky DPS by zde již měla jedna být, jestli není, vložte ji sem přemístěním z panelu součástek.Tato ikona představuje novou desku DPS:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;K rozvržení desky DPS, umisťujte komponenty na vaší desku tak aby na ní přesně seděli. Poté s nimi zkuste manipulovat tak aby jste zmenšily celkovou velikost desky a zkrátily tak délku spojů. Desku DPS můžete taktéž zvětšovat či zmenšovat dle libosti.&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Jakmile máte součástky umístěné musíte je propojit měděnými trasami (propojkami). K vytvoření tras můžete použít funkci AutoRoute nebo je zkusit umístit ručně. Tlačítko autoroutingu vypadá takto:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>FolderUtils</name>
-    <message>
-        <location filename="../src/utils/folderutils.cpp" line="761"/>
-        <source>Moving your custom parts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/utils/folderutils.cpp" line="762"/>
-        <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1824,60 +1811,50 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
 <context>
     <name>LogoItem</name>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="250"/>
-        <location filename="../src/items/logoitem.cpp" line="657"/>
+        <location filename="../src/items/logoitem.cpp" line="251"/>
+        <location filename="../src/items/logoitem.cpp" line="658"/>
         <source>text</source>
         <translation>text</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="274"/>
+        <location filename="../src/items/logoitem.cpp" line="275"/>
         <source>shape</source>
         <translation>tvar</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="349"/>
+        <location filename="../src/items/logoitem.cpp" line="350"/>
         <source>due to a rendering error</source>
         <translation>kvůli chybě renderingu</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="363"/>
+        <location filename="../src/items/logoitem.cpp" line="364"/>
         <source>because the svg is empty</source>
         <translation>protože soubor svg je prázdný</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="368"/>
+        <location filename="../src/items/logoitem.cpp" line="369"/>
         <source>because this appears to be a SVG file exported from CorelDRAW without choosing the &apos;presentation attributes&apos; setting</source>
         <translation>protože se zdá že tento SVG soubor byl exportován z CorelDRAW bez vybrané možnosti &apos;zobrazení vlastností&apos;</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="382"/>
+        <location filename="../src/items/logoitem.cpp" line="383"/>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
         <translation>kvůli problému s XML:%1 řádek:%2 sloupec:%3</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="388"/>
+        <location filename="../src/items/logoitem.cpp" line="389"/>
         <source>because the file has no root element</source>
         <translation>protože soubor nemá root element</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="393"/>
+        <location filename="../src/items/logoitem.cpp" line="394"/>
         <source>because the file has no &lt;svg&gt; element</source>
         <translation>protože soubor nemá žádný &lt;svg&gt; element</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="431"/>
+        <location filename="../src/items/logoitem.cpp" line="432"/>
         <source>for unknown reasons--possibly the image file is corrupted</source>
         <translation>z neznámých důvodů--pravděpodobně je soubor s obrázkem poškozen</translation>
-    </message>
-    <message>
-        <location filename="../src/items/logoitem.cpp" line="448"/>
-        <source>Unable to display</source>
-        <translation>Nelze zobrazit</translation>
-    </message>
-    <message>
-        <location filename="../src/items/logoitem.cpp" line="449"/>
-        <source>Unable to display image from %1</source>
-        <translation>Nelze zobrazit obrázek z %1</translation>
     </message>
 </context>
 <context>
@@ -4654,28 +4631,28 @@ Důvod: %2 (chyb.kód %3)</translation>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="300"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1475"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1480"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1515"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1532"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1547"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1570"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1588"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1627"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1632"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1533"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1550"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1565"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1582"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1595"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1634"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1639"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1656"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1679"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1696"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2214"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2219"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2242"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2247"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2421"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1646"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1663"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1686"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1703"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2123"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2128"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2151"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2156"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2330"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1476"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1628"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1635"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use copper fill.</source>
         <translation>Váš návrh ještě neobsahuje desku! Přidejte PCB Aby bylo možné použít měděnou výplň.</translation>
     </message>
@@ -4695,12 +4672,12 @@ Důvod: %2 (chyb.kód %3)</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1633"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1640"/>
         <source>Copper fill: please select only the board you want to fill.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1491"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1493"/>
         <source>Please designate one or more ground fill seeds before doing a ground fill.
 
 </source>
@@ -4715,120 +4692,120 @@ Důvod: %2 (chyb.kód %3)</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="301"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2220"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2248"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2129"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2157"/>
         <source>Please click on a PCB first--this selection operation only works for one board at a time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1515"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1656"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1533"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1663"/>
         <source>Fritzing error: unable to render board svg (1).</source>
         <translation>Chyba Fritzingu: Nelze renderovat desku v SVG (1).</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1532"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1547"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1679"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1550"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1565"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1686"/>
         <source>Fritzing error: unable to render copper svg (1).</source>
         <translation>Chyba Fritzingu: Nelze renderovat měď v SVG (1).</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1570"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1582"/>
         <source>Fritzing error: unable to write copper fill (1).</source>
         <translation>Chyba Fritzingu: Nelze zapsat měděnou výplň (1).</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1588"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1595"/>
         <source>Fritzing error: unable to write copper fill (2).</source>
         <translation>Chyba Fritzingu: Nelze zapsat měděnou výplň (2).</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1639"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1646"/>
         <source>Unable to create copper fill--probably the part wasn&apos;t dropped onto the PCB.</source>
         <translation>Nelze vytvořit měděnou výplň - pravděpodobně součástka nebyla vloženal na PCB.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1696"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1703"/>
         <source>Unable to create copper fill--possibly the part was dropped onto another part or wire rather than the actual PCB.</source>
         <translation>Nelze vytvořit měděnou výplň - součástka byla pravděpodobně vložena na jinou část nebo propoj, spíše než aktuální PCB.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2076"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="1985"/>
         <source>Clear ground fill seeds</source>
         <translation>Vymazat plochy zemní výplně</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2215"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2243"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2124"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2152"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use this selection operation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2422"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2331"/>
         <source>Unable to convert this via to a bendpoint because it is connected to a part that is only on the bottom layer and another part that is only on the top layer.</source>
         <translation>Nelze změnit tuto  propojovací díru na zlomový bod protože je připojena k součástce která se nachází pouze na spodní vrstvě a další součástka je pouze na vrchní vrstvě.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2681"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2590"/>
         <source>Show part silkscreen</source>
         <translation>Ukázat schématickou značku</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2681"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2590"/>
         <source>Hide part silkscreen</source>
         <translation>Skrýt schématickou značku</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2695"/>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2701"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2604"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2610"/>
         <source>Fritzing Fab Quote</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2696"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2605"/>
         <source>Your sketch does not have a board yet. You cannot fabricate this sketch without a PCB part.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2702"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2611"/>
         <source>Sorry, http://fab.fritzing.org is not responding to the quote request. Please check your network connection and/or try again later.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2844"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2753"/>
         <source>Enter Keepout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2845"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2754"/>
         <source>Keepout is in mils (.001 inches).
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2846"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2755"/>
         <source>Note that due to aliasing, distances may be too short by up to 2 mils
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2847"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2756"/>
         <source>so you may want to increase the keepout value by that much.
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2848"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2757"/>
         <source>10 mils is a good default choice.
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2849"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2758"/>
         <source>Enter keepout value:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6319,12 +6296,12 @@ Poznámka: Během této relace se již toto varování nebude opakovat.</transla
         <translation>Chování kolečka myši</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="494"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="495"/>
         <source>Command</source>
         <translation>Příkaz</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="496"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="497"/>
         <source>Control</source>
         <translation>Řízení</translation>
     </message>
@@ -6349,73 +6326,73 @@ Poznámka: Během této relace se již toto varování nebude opakovat.</transla
         <translation>Automaticky uložit každých:</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="219"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="218"/>
         <source>minutes</source>
         <translation>minut</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="233"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="234"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="257"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="258"/>
         <source>Colors</source>
         <translation>Barvy</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="272"/>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="292"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="273"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="293"/>
         <source>%1 (click to change...)</source>
         <translation>%1 (kliknout pro změnu...)</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="308"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="309"/>
         <source>Clear Settings</source>
         <translation>Výchozí nastavení</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="350"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="351"/>
         <source>Platform Support</source>
         <translation>Platformy</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="357"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="358"/>
         <source>&lt;b&gt;%1&lt;/b&gt;</source>
         <translation>&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="366"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="367"/>
         <source>Location:</source>
         <translation>Adresář:</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="375"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="376"/>
         <source>...</source>
         <translation>Najít...</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="385"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="386"/>
         <source>You need to have &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (version %3 or newer) installed.</source>
         <translation>Vyžaduje &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (ve verzi minimálně %3 nebo novější).</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="414"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="415"/>
         <source>Select a programmer (executable) for %1</source>
         <translation>Vyberte programátor (spustitelný) pro %1</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="446"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="447"/>
         <source>Connected Highlight</source>
         <translation>Zvýraznění propojených</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="462"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="463"/>
         <source>Unconnected Highlight</source>
         <translation>Zvýraznění nepropojených</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="502"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="503"/>
         <source>no keys down = scroll
 shift key swaps scroll axis
 Alt or %1 key = zoom</source>
@@ -6424,7 +6401,7 @@ klávesa SHIFT přepne posun osy
 Klávesa Alt nebo klávesa %1 = zvětšení</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="505"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="506"/>
         <source>no keys down = zoom
 Alt or %1 key = scroll
 shift key swaps scroll axis</source>
@@ -6433,22 +6410,22 @@ klávesa SHIFT přepne posun osy
 Klávesa Alt nebo klávesa %1 = posunout</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="525"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="526"/>
         <source>Curvy vs. straight wires</source>
         <translation>Křivky vs. rovné propojky</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="528"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="529"/>
         <source>When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?</source>
         <translation>Když vytahujete novou drátovou propojku (ze součástky) nebo nožičku součástky, chcete změnit ohyb propojky (či nožičky) nebo vytáhnout nový zlomový bod ?</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="533"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="534"/>
         <source>This checkbox sets the default behavior. You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag.</source>
         <translation>Tento checkbox nastaví defaultní chování. Mužete přepnout na nedefaultní chování držením tlačítka Ctrl (Control) [Mac: Command] při tažení.</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="540"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="541"/>
         <source>Curvy wires and legs</source>
         <translation>Ohýbat propojky a nožičky</translation>
     </message>
@@ -6777,17 +6754,17 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
         <translation>Předvolby</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="247"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="248"/>
         <source>Please note that a new language setting will not take effect until the next time you run Fritzing.</source>
         <translation>Mějte na paměti, že nové nastavení jazyka se projeví až při dalším spuštění Fritzingu.</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="266"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="267"/>
         <source>Connected highlight color</source>
         <translation>Barva zvýraznění spojení</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="286"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="287"/>
         <source>Unconnected highlight color</source>
         <translation>Barva zvýraznění nespojení</translation>
     </message>
@@ -6797,17 +6774,17 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
         <translation>Vymaže veškerá nastavení a okamžitě uzavře toto dialogové okno.</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="324"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="325"/>
         <source>This action does not delete any files; it restores settings to their default values.</source>
         <translation>Tato akce nevymaže žádné soubory; Pouze obnoví výchozí nastavení.</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="331"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="333"/>
         <source>There is no undo for this action, and no further warning!!!!</source>
         <translation>Tento krok nelze vzít zpět !!!</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="339"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="341"/>
         <source>Clear Settings</source>
         <translation>Výchozí nastavení</translation>
     </message>
@@ -6815,10 +6792,10 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="622"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="665"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="734"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="501"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1380"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1408"/>
-        <location filename="../src/fapplication.cpp" line="1029"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="500"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1379"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1407"/>
+        <location filename="../src/fapplication.cpp" line="1030"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="50"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="143"/>
         <location filename="../src/model/modelbase.cpp" line="80"/>
@@ -6834,7 +6811,7 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
         <location filename="../src/model/palettemodel.cpp" line="373"/>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="534"/>
         <location filename="../src/sketch/sketchwidget.cpp" line="949"/>
-        <location filename="../src/svg/gerbergenerator.cpp" line="368"/>
+        <location filename="../src/svg/gerbergenerator.cpp" line="922"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
@@ -6854,17 +6831,17 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1378"/>
+        <location filename="../src/fapplication.cpp" line="1379"/>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1384"/>
+        <location filename="../src/fapplication.cpp" line="1385"/>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2067"/>
+        <location filename="../src/fapplication.cpp" line="2069"/>
         <source>Regenerate database failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7093,12 +7070,12 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2298"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2207"/>
         <source>Convert to Via</source>
         <translation>Změnit na propojovací díru</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2429"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2338"/>
         <source>Convert Via to Bendpoint</source>
         <translation>Změnit propojovací díru na zlomový bod</translation>
     </message>
@@ -7175,7 +7152,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <translation>Vytvoř síť spojů</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2233"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2142"/>
         <location filename="../src/sketch/sketchwidget.cpp" line="7917"/>
         <source>Select all %1</source>
         <translation>Vybrat všechny %1</translation>
@@ -7552,115 +7529,14 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <translation>schéma %1 v %2 nečekaně končí (3)</translation>
     </message>
     <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="137"/>
+        <location filename="../src/svg/gerbergenerator.cpp" line="745"/>
         <source>outline is empty</source>
         <translation>obrys je prázdný</translation>
     </message>
     <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="158"/>
-        <source>the board outline layer, </source>
-        <translation>vrstva obrysu desky, </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="159"/>
-        <source>silkscreen layer(s), </source>
-        <translation>vrstva(y) potisku, </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="160"/>
-        <source>copper layer(s), </source>
-        <translation>vrstva(y) mědi, </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="161"/>
-        <source>mask layer(s), </source>
-        <translation>vrstva(y) masky, </translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="162"/>
-        <source>paste mask layer(s), </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="164"/>
-        <source>Unable to translate svg curves in %1</source>
-        <translation>Nelze převést SVG křivky v %1</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="174"/>
-        <source>%1 layer export is empty.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="245"/>
-        <source>exported drill file is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="280"/>
-        <source>exported mask layer %1 is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="317"/>
-        <source>exported paste mask layer is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="353"/>
-        <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="914"/>
+        <location filename="../src/svg/gerbergenerator.cpp" line="988"/>
         <source>Unable to save pick and place file: %2</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="223"/>
-        <source>silk export failure</source>
-        <translation>export potisku selhal</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="192"/>
-        <source>%1 layer export is empty (case 2).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="207"/>
-        <source>silk layer %1 export is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="262"/>
-        <source>drill export failure</source>
-        <translation>export vrtání selhal</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="286"/>
-        <source>%1 mask export failure (2)</source>
-        <translation>%1 maska exportu selhala (2)</translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="860"/>
-        <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="861"/>
-        <source>You may need to reload the shape SVG. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="862"/>
-        <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/svg/gerbergenerator.cpp" line="294"/>
-        <location filename="../src/svg/gerbergenerator.cpp" line="328"/>
-        <source>mask export failure</source>
-        <translation>export masky selhal</translation>
     </message>
     <message>
         <location filename="../src/dialogs/pinlabeldialog.cpp" line="71"/>
@@ -7688,17 +7564,17 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <translation>Editor plochy zemní výplně</translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1380"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1379"/>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1406"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1405"/>
         <source>%2 ... %1 wires moved from their saved position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1029"/>
+        <location filename="../src/fapplication.cpp" line="1030"/>
         <source>%1 wires moved from their saved position in %2.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7819,33 +7695,33 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="127"/>
+        <location filename="../src/version/partschecker.cpp" line="134"/>
         <source>Unable to access network site for &apos;%1&apos;. %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="137"/>
+        <location filename="../src/version/partschecker.cpp" line="144"/>
         <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="163"/>
+        <location filename="../src/version/partschecker.cpp" line="170"/>
         <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="430"/>
-        <location filename="../src/version/partschecker.cpp" line="438"/>
+        <location filename="../src/version/partschecker.cpp" line="437"/>
+        <location filename="../src/version/partschecker.cpp" line="445"/>
         <source>Regenerating parts database</source>
         <translation>Probíhá obnova databáze součástek </translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="430"/>
+        <location filename="../src/version/partschecker.cpp" line="437"/>
         <source>Unable to find parts git repository</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/version/partschecker.cpp" line="438"/>
+        <location filename="../src/version/partschecker.cpp" line="445"/>
         <source>Unable to find parts git repository HEAD</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7990,22 +7866,22 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
 <context>
     <name>RegenerateDatabaseThread</name>
     <message>
-        <location filename="../src/fapplication.cpp" line="320"/>
+        <location filename="../src/fapplication.cpp" line="321"/>
         <source>Unable to open temporary file</source>
         <translation>Nelze otevřít dočasný soubor</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="326"/>
+        <location filename="../src/fapplication.cpp" line="327"/>
         <source>Database failure</source>
         <translation>Chyba databáze</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="333"/>
+        <location filename="../src/fapplication.cpp" line="334"/>
         <source>Unable to remove original db file %1</source>
         <translation>Nelze odebrat původní soubor databáze %1</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="340"/>
+        <location filename="../src/fapplication.cpp" line="341"/>
         <source>Unable to copy database file %1</source>
         <translation>Nelze zkopírovat soubor databáze %1</translation>
     </message>
@@ -9323,7 +9199,7 @@ Poznámka: Toto okno můžete taktéž zobrazit kliknutím na text stavu autorou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="394"/>
+        <location filename="../src/version/updatedialog.cpp" line="395"/>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9343,17 +9219,17 @@ Poznámka: Toto okno můžete taktéž zobrazit kliknutím na text stavu autorou
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="390"/>
+        <location filename="../src/version/updatedialog.cpp" line="391"/>
         <source>&lt;p&gt;Sorry, unable to download new parts&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="410"/>
+        <location filename="../src/version/updatedialog.cpp" line="411"/>
         <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="415"/>
+        <location filename="../src/version/updatedialog.cpp" line="416"/>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>

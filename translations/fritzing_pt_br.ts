@@ -1468,14 +1468,6 @@ Também é possível escolher um conector como ponto de aterramento clicando com
 <context>
     <name>LogoItem</name>
     <message>
-        <source>Unable to display</source>
-        <translation>Não foi possível exibir</translation>
-    </message>
-    <message>
-        <source>Unable to display image from %1</source>
-        <translation>Não foi possível exibir a imagem do %1</translation>
-    </message>
-    <message>
         <source>shape</source>
         <translation>forma</translation>
     </message>
@@ -5851,38 +5843,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>rebordo está vazio</translation>
     </message>
     <message>
-        <source>the board outline layer, </source>
-        <translation>Camada do rebordo da placa, </translation>
-    </message>
-    <message>
-        <source>silkscreen layer(s), </source>
-        <translation>camada(s) silkscreen, </translation>
-    </message>
-    <message>
-        <source>copper layer(s), </source>
-        <translation>camada(s) de cobre</translation>
-    </message>
-    <message>
-        <source>mask layer(s), </source>
-        <translation>camada(s) de máscara, </translation>
-    </message>
-    <message>
-        <source>Unable to translate svg curves in %1</source>
-        <translation>Não foi possível traduzir as curvas SVG em %1</translation>
-    </message>
-    <message>
-        <source>silk export failure</source>
-        <translation>falha ao exportar silk</translation>
-    </message>
-    <message>
-        <source>drill export failure</source>
-        <translation>falha ao exportar drill</translation>
-    </message>
-    <message>
-        <source>mask export failure</source>
-        <translation>falha ao exportar a máscara</translation>
-    </message>
-    <message>
         <source>Copper Fill Bottom</source>
         <translation>Preenchimento inferior de cobre</translation>
     </message>
@@ -5945,10 +5905,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>Editor de Ponto de Aterramento</translation>
     </message>
     <message>
-        <source>%1 mask export failure (2)</source>
-        <translation>falha de exportação de máscara %1 (2)</translation>
-    </message>
-    <message>
         <source>Select all &apos;Don&apos;t autoroute&apos; traces</source>
         <translation>Selecionar todas as trilhas com &apos;Não autoroteie&apos;</translation>
     </message>
@@ -6005,10 +5961,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>%1 fios movidos de sua posição salva em %2.</translation>
     </message>
     <message>
-        <source>paste mask layer(s), </source>
-        <translation>colar camada(s) de máscara</translation>
-    </message>
-    <message>
         <source>ii</source>
         <translation>ii</translation>
     </message>
@@ -6061,18 +6013,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>Componente %1 &apos;%2&apos;</translation>
     </message>
     <message>
-        <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation>Fritzing não pode processar os cortes nessa forma de PCB personalizada. </translation>
-    </message>
-    <message>
-        <source>You may need to reload the shape SVG. </source>
-        <translation>Você pode precisar recarregar a forma SVG. </translation>
-    </message>
-    <message>
-        <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation>Fritzing requer que você faça cortes utilizando operações de &apos;subtração&apos; ou &apos;diferença&apos; de forma no seu editor de gráficos.</translation>
-    </message>
-    <message>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
         <translation>não foi possível copiar o arquivo &apos;%1&apos; para &apos;%2&apos;.</translation>
     </message>
@@ -6081,40 +6021,12 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>Configurações do Autoroteador</translation>
     </message>
     <message>
-        <source>%1 layer export is empty.</source>
-        <translation>%1 exportação de camada está vazia.</translation>
-    </message>
-    <message>
-        <source>exported drill file is empty</source>
-        <translation>arquivo para furos exportado está vazio</translation>
-    </message>
-    <message>
-        <source>exported mask layer %1 is empty</source>
-        <translation>camada de máscara %1 exportada está vazia</translation>
-    </message>
-    <message>
-        <source>exported paste mask layer is empty</source>
-        <translation>camada de máscara colada exportada está vazia</translation>
-    </message>
-    <message>
-        <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation>%1 camada: não foi possível salvar para &apos;%2&apos;</translation>
-    </message>
-    <message>
         <source>Unable to save pick and place file: %2</source>
         <translation>Não foi possivel salvar arquivo pegue e coloque: %2</translation>
     </message>
     <message>
         <source>Text</source>
         <translation>Texto</translation>
-    </message>
-    <message>
-        <source>%1 layer export is empty (case 2).</source>
-        <translation>exportação da camada %1 está vazia (2º caso).</translation>
-    </message>
-    <message>
-        <source>silk layer %1 export is empty</source>
-        <translation>exportação da camada de impressão %1 está vazia</translation>
     </message>
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>

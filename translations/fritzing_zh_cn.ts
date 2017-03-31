@@ -1464,14 +1464,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
 <context>
     <name>LogoItem</name>
     <message>
-        <source>Unable to display</source>
-        <translation>不能显示</translation>
-    </message>
-    <message>
-        <source>Unable to display image from %1</source>
-        <translation>不能从%1显示图像</translation>
-    </message>
-    <message>
         <source>shape</source>
         <translation>形状</translation>
     </message>
@@ -5844,38 +5836,6 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <translation>轮廓线是空的</translation>
     </message>
     <message>
-        <source>the board outline layer, </source>
-        <translation>板轮廓线层，</translation>
-    </message>
-    <message>
-        <source>silkscreen layer(s), </source>
-        <translation>丝印层，</translation>
-    </message>
-    <message>
-        <source>copper layer(s), </source>
-        <translation>覆铜层，</translation>
-    </message>
-    <message>
-        <source>mask layer(s), </source>
-        <translation>阻焊层，</translation>
-    </message>
-    <message>
-        <source>Unable to translate svg curves in %1</source>
-        <translation>不能改变%1中的svg曲线</translation>
-    </message>
-    <message>
-        <source>silk export failure</source>
-        <translation>丝印导出失败</translation>
-    </message>
-    <message>
-        <source>drill export failure</source>
-        <translation>钻孔导出失败</translation>
-    </message>
-    <message>
-        <source>mask export failure</source>
-        <translation>mask导出失败</translation>
-    </message>
-    <message>
         <source>Copper Fill Bottom</source>
         <translation>底部覆铜</translation>
     </message>
@@ -5938,10 +5898,6 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <translation>接地填充种子编辑器</translation>
     </message>
     <message>
-        <source>%1 mask export failure (2)</source>
-        <translation>%1阻焊层导出失败（2）</translation>
-    </message>
-    <message>
         <source>Select all &apos;Don&apos;t autoroute&apos; traces</source>
         <translation>选择所有&apos;不自动布线&apos;的线</translation>
     </message>
@@ -5998,10 +5954,6 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <translation>%1的线从它%2中保存的位置移动。</translation>
     </message>
     <message>
-        <source>paste mask layer(s), </source>
-        <translation>粘贴遮盖层，</translation>
-    </message>
-    <message>
         <source>ii</source>
         <translation>ii</translation>
     </message>
@@ -6054,18 +6006,6 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <translation>元件%1&apos;%2&apos;</translation>
     </message>
     <message>
-        <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You may need to reload the shape SVG. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6074,39 +6014,11 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 layer export is empty.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>exported drill file is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>exported mask layer %1 is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>exported paste mask layer is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unable to save pick and place file: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 layer export is empty (case 2).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>silk layer %1 export is empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

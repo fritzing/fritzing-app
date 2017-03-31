@@ -1457,14 +1457,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
 <context>
     <name>LogoItem</name>
     <message>
-        <source>Unable to display</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to display image from %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>shape</source>
         <translation type="unfinished">シェイプ</translation>
     </message>
@@ -5810,38 +5802,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>the board outline layer, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>silkscreen layer(s), </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>copper layer(s), </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mask layer(s), </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to translate svg curves in %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>silk export failure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>drill export failure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mask export failure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copper Fill Bottom</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5901,10 +5861,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 mask export failure (2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select all &apos;Don&apos;t autoroute&apos; traces</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5961,10 +5917,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>paste mask layer(s), </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>ii</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6017,18 +5969,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You may need to reload the shape SVG. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6037,39 +5977,11 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 layer export is empty.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>exported drill file is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>exported mask layer %1 is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>exported paste mask layer is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unable to save pick and place file: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 layer export is empty (case 2).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>silk layer %1 export is empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

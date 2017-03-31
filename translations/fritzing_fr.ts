@@ -1472,20 +1472,12 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
         <translation>forme</translation>
     </message>
     <message>
-        <source>Unable to display image from %1</source>
-        <translation>Impossible d&apos;afficher l&apos;image de %1</translation>
-    </message>
-    <message>
         <source>because the file has no &lt;svg&gt; element</source>
         <translation>car le fichier n&apos;a pas d&apos;élément &lt;svg&gt;</translation>
     </message>
     <message>
         <source>because this appears to be a SVG file exported from CorelDRAW without choosing the &apos;presentation attributes&apos; setting</source>
         <translation>parce que cela semble être un fichier SVG exporté à partir de CorelDRAW sans avoir choisi le paramètre &quot;attributs de présentation&quot;</translation>
-    </message>
-    <message>
-        <source>Unable to display</source>
-        <translation>Affichage impossible</translation>
     </message>
     <message>
         <source>due to a rendering error</source>
@@ -5443,10 +5435,6 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Ajouter un point d&apos;articulation/connexion</translation>
     </message>
     <message>
-        <source>copper layer(s), </source>
-        <translation>calque(s) de cuivre</translation>
-    </message>
-    <message>
         <source>Edit link</source>
         <translation>Modifier le lien</translation>
     </message>
@@ -5457,10 +5445,6 @@ Alt ou la touche %1 = zoom</translation>
     <message>
         <source>schem</source>
         <translation>schéma</translation>
-    </message>
-    <message>
-        <source>mask export failure</source>
-        <translation>Echec d&apos;exportation du masque</translation>
     </message>
     <message>
         <source>Microcontroller</source>
@@ -5485,10 +5469,6 @@ Alt ou la touche %1 = zoom</translation>
     <message>
         <source>No parts found.</source>
         <translation>Aucun composant trouvé.</translation>
-    </message>
-    <message>
-        <source>silk layer %1 export is empty</source>
-        <translation>L&apos;exportation du calque de sérigraphie %1 est vide</translation>
     </message>
     <message>
         <source>Convert to Via</source>
@@ -5523,10 +5503,6 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Sélectionner %1</translation>
     </message>
     <message>
-        <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation>Le calque %1 : n&apos;est pas sauvegardable dans &quot;%2&quot;</translation>
-    </message>
-    <message>
         <source>breadboard view</source>
         <translation>vue de la platine d&apos;essai</translation>
     </message>
@@ -5537,10 +5513,6 @@ Alt ou la touche %1 = zoom</translation>
     <message>
         <source>%1 Layer</source>
         <translation>%1</translation>
-    </message>
-    <message>
-        <source>Unable to translate svg curves in %1</source>
-        <translation>Impossible de traduire des courbes svg dans %1</translation>
     </message>
     <message>
         <source>a label</source>
@@ -5599,20 +5571,12 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>impossible d&apos;ouvrir %1</translation>
     </message>
     <message>
-        <source>%1 layer export is empty.</source>
-        <translation>Le calque à exporter %1 est vide.</translation>
-    </message>
-    <message>
         <source>Copper Fill Bottom</source>
         <translation>Remplissage en cuivre (face inférieure)</translation>
     </message>
     <message>
         <source>Copper Top Trace</source>
         <translation>Cuivrer la face supérieure</translation>
-    </message>
-    <message>
-        <source>exported drill file is empty</source>
-        <translation>Le fichier de percage est vide</translation>
     </message>
     <message>
         <source>Connection</source>
@@ -5637,14 +5601,6 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>Part Labels</source>
         <translation>Étiquettes de composant</translation>
-    </message>
-    <message>
-        <source>silkscreen layer(s), </source>
-        <translation>Calque(s) de la sérigraphie</translation>
-    </message>
-    <message>
-        <source>mask layer(s), </source>
-        <translation>calque(s) de masque,</translation>
     </message>
     <message>
         <source>Rulers</source>
@@ -5677,14 +5633,6 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>Part Image</source>
         <translation>Images des composants</translation>
-    </message>
-    <message>
-        <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation>Fritzing nécessite que vous faire les découpes à l&apos;aide d&apos;une forme de &apos;soustraction&apos; ou par &apos;différentes&apos; opération de graphiques vectoriels votre éditeur.</translation>
-    </message>
-    <message>
-        <source>%1 layer export is empty (case 2).</source>
-        <translation>Le calqueà exporter %1 (case2) est vide.</translation>
     </message>
     <message>
         <source>outline is empty</source>
@@ -5811,10 +5759,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>Modifier les pattes de %1,%2</translation>
     </message>
     <message>
-        <source>silk export failure</source>
-        <translation>échec de l&apos;exportation de la sérigraphie</translation>
-    </message>
-    <message>
         <source>schematic part %1 not found in %2</source>
         <translation>Le schéma du composant %1 n&apos;a pas été trouvé dans %2</translation>
     </message>
@@ -5829,10 +5773,6 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>File %1 already exists: it won&apos;t be overwritten</source>
         <translation>Le fichier%1 existe déjà : il ne sera pas remplacé</translation>
-    </message>
-    <message>
-        <source>You may need to reload the shape SVG. </source>
-        <translation>Il se peut que vous deviez recharger la forme SVG.</translation>
     </message>
     <message>
         <source>The file &apos;%1&apos; is read-only; please use a different filename.</source>
@@ -5857,14 +5797,6 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>footprint %1 not found in %2</source>
         <translation>Empreinte %1 introuvable dans%2</translation>
-    </message>
-    <message>
-        <source>drill export failure</source>
-        <translation>L&apos;exportation des données de perçage a échoué</translation>
-    </message>
-    <message>
-        <source>exported mask layer %1 is empty</source>
-        <translation>Le calque de masquage exporté %1 est vide</translation>
     </message>
     <message>
         <source>Parse error (2) at line %1, column %2:
@@ -5907,10 +5839,6 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>Silkscreen Top</source>
         <translation>Sérigraphie de la face supérieure</translation>
-    </message>
-    <message>
-        <source>the board outline layer, </source>
-        <translation>le calque de contour de carte</translation>
     </message>
     <message>
         <source>Unknown Layer</source>
@@ -5979,14 +5907,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>Réinitialiser les paramètres</translation>
     </message>
     <message>
-        <source>exported paste mask layer is empty</source>
-        <translation>le calque de masquage de l&apos;export est vide</translation>
-    </message>
-    <message>
-        <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation>Fritzing est incapable de traiter les découpes dans cette forme de circuit imprimé personnalisée.</translation>
-    </message>
-    <message>
         <source>pad shape missing params</source>
         <translation>paramètres de pad manquants</translation>
     </message>
@@ -6033,14 +5953,6 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>Sorry, Fritzing can&apos;t yet handle both pins and pads together (in %1 in %2)</source>
         <translation>Désolé, Fritzing ne peut pas (encore) gérer simultanément des broches et des pads (dans%1 dans%2)</translation>
-    </message>
-    <message>
-        <source>paste mask layer(s), </source>
-        <translation>calque(s) du masque de soudure</translation>
-    </message>
-    <message>
-        <source>%1 mask export failure (2)</source>
-        <translation>Echec de l&apos;exportation du masque %1 (2)</translation>
     </message>
     <message>
         <source>Sorry, we have a problem with the swapping mechanism.

@@ -1469,14 +1469,6 @@ Het is ook mogelijk om op een connector rechts te klikken en kies &apos;Maak gro
 <context>
     <name>LogoItem</name>
     <message>
-        <source>Unable to display</source>
-        <translation>Niet mogelijk om te tonen</translation>
-    </message>
-    <message>
-        <source>Unable to display image from %1</source>
-        <translation>Niet mogelijk om de afbeeldeing te tonen van %1</translation>
-    </message>
-    <message>
         <source>shape</source>
         <translation>vorm</translation>
     </message>
@@ -5854,38 +5846,6 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <translation>outline is leeg</translation>
     </message>
     <message>
-        <source>the board outline layer, </source>
-        <translation>de bord outline laag</translation>
-    </message>
-    <message>
-        <source>silkscreen layer(s), </source>
-        <translation>silkscreen laag/lagen, </translation>
-    </message>
-    <message>
-        <source>copper layer(s), </source>
-        <translation>Koper laag/lagen, </translation>
-    </message>
-    <message>
-        <source>mask layer(s), </source>
-        <translation>masker laag/lagen, </translation>
-    </message>
-    <message>
-        <source>Unable to translate svg curves in %1</source>
-        <translation>Niet mogelijk om SVG curves te vertalen in %1</translation>
-    </message>
-    <message>
-        <source>silk export failure</source>
-        <translation>silk export fout</translation>
-    </message>
-    <message>
-        <source>drill export failure</source>
-        <translation>boor export fout</translation>
-    </message>
-    <message>
-        <source>mask export failure</source>
-        <translation>masker export fout</translation>
-    </message>
-    <message>
         <source>Copper Fill Bottom</source>
         <translation>Kopervulling Onderkant</translation>
     </message>
@@ -5948,10 +5908,6 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <translation>Ground Vulling Seed Bewerker</translation>
     </message>
     <message>
-        <source>%1 mask export failure (2)</source>
-        <translation>%1 masker export fout (2)</translation>
-    </message>
-    <message>
         <source>Select all &apos;Don&apos;t autoroute&apos; traces</source>
         <translation>Selecteer aan &apos;Geen autoroute&apos; banen</translation>
     </message>
@@ -6008,10 +5964,6 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <translation>%1 draden zijn verschoven vanaf hun opgeslagen positie in %2.</translation>
     </message>
     <message>
-        <source>paste mask layer(s), </source>
-        <translation>plak masker laag/lagen,</translation>
-    </message>
-    <message>
         <source>ii</source>
         <translation>ii</translation>
     </message>
@@ -6064,18 +6016,6 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <translation>Onderdeel %1 &apos;%2&apos;</translation>
     </message>
     <message>
-        <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation>Fritzing is niet in staat om de uitsnedes in de aangepast PCB vorm te verwerken. </translation>
-    </message>
-    <message>
-        <source>You may need to reload the shape SVG. </source>
-        <translation>Mogelijk moet je de SVG vorm opnieuw inladen. </translation>
-    </message>
-    <message>
-        <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation>Fritzing verlangt dat je de uitsnedes maakt door middel van een vorm via de &apos;substractie&apos; of &apos;verschil&apos; uitvoer binnen je vector programma.</translation>
-    </message>
-    <message>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
         <translation>Niet mogelijk bestand &apos;%1&apos; naar &apos;%2&apos; te kopieren.</translation>
     </message>
@@ -6084,40 +6024,12 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <translation>Autorouter Instellingen</translation>
     </message>
     <message>
-        <source>%1 layer export is empty.</source>
-        <translation>%1 laag export is leeg.</translation>
-    </message>
-    <message>
-        <source>exported drill file is empty</source>
-        <translation>het geëxporteerde boorbestand is leeg</translation>
-    </message>
-    <message>
-        <source>exported mask layer %1 is empty</source>
-        <translation>de geëxporteerde masker laag %1 is leeg</translation>
-    </message>
-    <message>
-        <source>exported paste mask layer is empty</source>
-        <translation>de geëxporteerde soldeerpasta masker laag is leeg</translation>
-    </message>
-    <message>
-        <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation>%1 laag: niet mogelijk om naar &apos;%2&apos; op te slaan</translation>
-    </message>
-    <message>
         <source>Unable to save pick and place file: %2</source>
         <translation>Niet mogelijk om pick and place bestand op te slaan:%2</translation>
     </message>
     <message>
         <source>Text</source>
         <translation>Tekst</translation>
-    </message>
-    <message>
-        <source>%1 layer export is empty (case 2).</source>
-        <translation>%1 laag export is leeg (case 2).</translation>
-    </message>
-    <message>
-        <source>silk layer %1 export is empty</source>
-        <translation>silkscreen laag %1 export is leeg</translation>
     </message>
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>

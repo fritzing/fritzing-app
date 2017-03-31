@@ -46,6 +46,8 @@ public:
 	void showEvent(QShowEvent * event);
 	double getWireStrokeWidth(Wire *, double wireWidth);
 	void getBendpointWidths(class Wire *, double w, double & w1, double & w2, bool & negativeOffsetRect);
+    void colorWiresByLength(bool);
+    bool coloringWiresByLength();
 
 protected:
 	void setWireVisible(Wire * wire);
@@ -61,6 +63,8 @@ protected:
 	ViewLayer::ViewLayerID getLabelViewLayerID(ItemBase *);
 	double getTraceWidth();
 	const QString & traceColor(ViewLayer::ViewLayerPlacement);
+
+    bool m_colorWiresByLength;
 };
 
 #endif

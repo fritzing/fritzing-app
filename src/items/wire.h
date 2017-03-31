@@ -167,6 +167,7 @@ public:
     void setConnector1Rect();
     QRectF connector0Rect(const QLineF & line);
     QRectF connector1Rect(const QLineF & line);
+    void colorByLength(bool);
 
 protected slots:
 	void colorEntry(const QString & text);
@@ -220,6 +221,8 @@ protected:
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
 	void updateCursor(Qt::KeyboardModifiers);
     ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+    QColor colorForLength();
+    bool coloredByLength();
 
 protected:
 	QLineF	m_line;
@@ -249,12 +252,14 @@ protected:
 	class Bezier * m_bezier;
 	bool m_displayBendpointCursor;
     bool m_banded;
+    bool m_colorByLength;
 
 public:
 	static QStringList colorNames;
 	static QHash<QString, QString> colorTrans;
 	static QHash<int, QString> widthTrans;
 	static QList<int> widths;
+    static QList<QColor> lengthColorTrans;
 
 signals:
 	void wireChangedSignal(Wire* me, const QLineF & oldLine, const QLineF & newLine, QPointF oldPos, QPointF newPos, ConnectorItem * from, ConnectorItem * to);

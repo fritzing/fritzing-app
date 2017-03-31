@@ -125,59 +125,59 @@
     </message>
     <message>
         <source>to Josef Dustira for the Czech translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>ao Josef Dustira para a tradução Checa, </translation>
     </message>
     <message>
         <source>to Jinbuhm Kim for the Korean translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>ao Jinbuhm Kim para a tradução Coreana,</translation>
     </message>
     <message>
         <source>to Alexander Kaltsas for the Greek translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>ao Alexander Kaltsas para a tradução Grega, </translation>
     </message>
     <message>
         <source>to &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; for the Slovak translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>ao &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; para a tradução Eslovaca, </translation>
     </message>
     <message>
         <source>to Steven Noppe and Davy Uittenbogerd for the Dutch translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>a Steven Noppe e Davy Uittenbogerd pela tradução Holandesa, </translation>
     </message>
     <message>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>a Cihan Mete Bahad&amp;#x0131;r para a tradução Turca, </translation>
     </message>
     <message>
         <source>to Nikolay Stankov for the Bulgarian translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>ao Nikolay Stankov para a tradução Búlgara, </translation>
     </message>
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
+        <translation>e para cada compra de um Fritzing Starter Kit ou um PCB do Fritzing Fab.</translation>
     </message>
     <message>
         <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>ao Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux para a tradução Francesa.</translation>
     </message>
     <message>
         <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Versão %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
     </message>
     <message>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
-        <translation type="unfinished"></translation>
+        <source>to Nuno Pessanha Santos and Bruno Ramalhete for the Portuguese (European) translation, </source>
+        <translation>ao Nuno Pessanha Santos e ao Bruno Ramalhete pela tradução do Português (Europeu), </translation>
     </message>
     <message>
-        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
-        <translation type="unfinished"></translation>
+        <source>and to Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
+        <translation>e ao Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, e Gabriel Ferreira para a tradução do Português (Brasileiro).</translation>
     </message>
 </context>
 <context>
@@ -196,14 +196,14 @@
     </message>
     <message>
         <source>Best So Far</source>
-        <translation type="unfinished"></translation>
+        <translation>Melhor Até Hoje</translation>
     </message>
 </context>
 <context>
     <name>Autorouter</name>
     <message>
         <source>Routing canceled! Now cleaning up...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rota cancelada! Agora a limpar...</translation>
     </message>
 </context>
 <context>
@@ -970,30 +970,30 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>Regenerate parts database?</source>
-        <translation type="unfinished"></translation>
+        <translation>Regenerar a base de dados das peças</translation>
     </message>
     <message>
         <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Regenerando a base de dados irá levar alguns minutos e você terá que reiniciar o Fritzing</translation>
     </message>
     <message>
         <source>Would you like to regenerate the parts database?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Deseja regenerar a base de dados das peças?</translation>
     </message>
     <message>
         <source>Regenerate</source>
-        <translation type="unfinished"></translation>
+        <translation>Regenerar</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Regenerating parts database...</source>
-        <translation type="unfinished"></translation>
+        <translation>Regenerando a base de dados das peças...</translation>
     </message>
 </context>
 <context>
@@ -1012,18 +1012,18 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>A &lt;b&gt;Vista PCB&lt;/b&gt; é onde você etiqueta os componentes numa PCB física (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs podem ser feitos em casa ou num pequeno laboratório usando processos de gravura DIY. Eles podem também ser enviados para um fabricante de PCB para um fabrico preciso. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;A primeira coisa que irá precisar é uma placa para colocar as suas peças. Lá poderá estar um no seu esboço, mas se não, arraste para o ícone da placa na seleção das Peças. O ícone encaixa na imagem na direita: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Para dispor o seu PCB, arrume todos os componenetes para que encaixem bem na placa. Depois tente movimentá-los para minimizar o comprimento e a confusão das ligações. Pode também redimensionar placas retangulares. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Assim que as peças estão postas, pode ligá-las com traços de cobre. Pode também arrastar um traço de ligações individuais ou utilizar o autorouter para gerá-las. O botão Autoroute está em baixo na janela. O botão corresponde à imagem na direita:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source></translation>
     </message>
 </context>
 <context>
     <name>FolderUtils</name>
     <message>
         <source>Moving your custom parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover as peças peronalizadas</translation>
     </message>
     <message>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;As suas peças personalizadas e caixas são movidas da pasta da app escondida para a sua pasta de documentos fritzing em &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;Desta forma esperemos que fique mais fácil para poder encontrar e editá-las manualmente.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1204,7 +1204,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>v. %1 %2</source>
-        <translation type="unfinished">v. %1 %2</translation>
+        <translation>v. %1 %2</translation>
     </message>
     <message>
         <source>obsolete</source>
@@ -2896,27 +2896,27 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Set the grid size for %1.</source>
-        <translation type="unfinished">Definir o tamanho da grelha para %1.</translation>
+        <translation>Definir o tamanho da grelha para %1.</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation type="unfinished">Tamanho da Grelha:</translation>
+        <translation>Tamanho da Grelha:</translation>
     </message>
     <message>
         <source>in</source>
-        <translation type="unfinished">polegadas</translation>
+        <translation>polegadas</translation>
     </message>
     <message>
         <source>mm</source>
-        <translation type="unfinished">mm</translation>
+        <translation>mm</translation>
     </message>
     <message>
         <source>Restore Default</source>
-        <translation type="unfinished">Restaurar padrão</translation>
+        <translation>Restaurar padrão</translation>
     </message>
     <message>
         <source>Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)</source>
@@ -4020,51 +4020,51 @@ Razão: %2 (código do erro %3)</translation>
         <source>
 
 Go ahead and save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Continuar e guardar?</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Guardar</translation>
+        <translation>Guardar</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Move terminal point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover o ponto terminal</translation>
     </message>
     <message>
         <source>Remove connector</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover conector</translation>
     </message>
     <message>
         <source>Remove %1 connectors</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover %1 conectores</translation>
     </message>
     <message>
         <source>Save &quot;%1&quot;</source>
-        <translation type="unfinished">Guardar &quot;%1&quot;</translation>
+        <translation>Guardar &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Do you want to save the changes you made in the part &quot;%1&quot;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Queres guardar as modificações que fizeste na peça &quot;%1&quot;?</translation>
     </message>
     <message>
         <source>Your changes will be lost if you don&apos;t save them.</source>
-        <translation type="unfinished">As tuas modificações vão ser perdidas se não as guardares.</translation>
+        <translation>As tuas modificações vão ser perdidas se não as guardares.</translation>
     </message>
     <message>
         <source>untitled part</source>
-        <translation type="unfinished"></translation>
+        <translation>parte sem titulo</translation>
     </message>
     <message>
         <source>Add connector</source>
-        <translation type="unfinished">Adicionar um conector</translation>
+        <translation>Adicionar um conector</translation>
     </message>
     <message>
         <source>Add %1 connectors</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar %1 conectores</translation>
     </message>
     <message>
         <source>There is one last edit still pending.</source>
@@ -7184,7 +7184,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Portuguese (Brazilian) - %1</source>
-        <translation>Português (Brasill)- %1</translation>
+        <translation>Português (Brasil)- %1</translation>
     </message>
     <message>
         <source>Hungarian - %1</source>
@@ -7236,55 +7236,55 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Galician - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Galego - %1</translation>
     </message>
     <message>
         <source>Korean - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Coreano - %1</translation>
     </message>
     <message>
         <source>Indonesian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Indonésio - %1</translation>
     </message>
     <message>
         <source>Slovak - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Eslováquio - %1</translation>
     </message>
     <message>
         <source>Bengali - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bengali - %1</translation>
     </message>
     <message>
         <source>Persian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Persa - %1</translation>
     </message>
     <message>
         <source>Slovenian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Eslovenio - %1</translation>
     </message>
     <message>
         <source>Marathi - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Marathi - %1</translation>
     </message>
     <message>
         <source>Ukrainian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ucraniano - %1</translation>
     </message>
     <message>
         <source>Danish - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dinamarquês - %1</translation>
     </message>
     <message>
         <source>Macedonian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Macedónio - %1</translation>
     </message>
     <message>
         <source>Serbian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sérvio - %1</translation>
     </message>
     <message>
         <source>Urdu - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Urdu - %1</translation>
     </message>
 </context>
 <context>

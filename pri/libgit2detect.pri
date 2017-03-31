@@ -13,7 +13,7 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************
 
-LIBGIT2INCLUDE = $$_PRO_FILE_PWD_/../libgit2/include
+LIBGIT2INCLUDE = "$$_PRO_FILE_PWD_/../libgit2/include"
 exists($$LIBGIT2INCLUDE/git2.h) {
     message("found libgit2 include path at $$LIBGIT2INCLUDE")
 } else {
@@ -28,9 +28,9 @@ INCLUDEPATH += $$LIBGIT2INCLUDE
 
 win32 {
     contains(QMAKE_TARGET.arch, x86_64) {
-        LIBGIT2LIB = ../libgit2/build64
+        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build64"
     } else {
-        LIBGIT2LIB = ../libgit2/build32
+        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build32"
     }
 
     exists($$LIBGIT2LIB/git2.lib) {

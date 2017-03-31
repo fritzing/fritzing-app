@@ -5,7 +5,7 @@
     <name>AboutBox</name>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="70"/>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <source>Različica %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -25,7 +25,7 @@
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="121"/>
-        <source>Fritzing is made by: </source>
+        <source>Avtorji Fritzing so: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -228,22 +228,22 @@
     <name>AutorouteProgressDialog</name>
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="98"/>
-        <source>zoom and pan controls</source>
+        <source>nadzor povečave</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="138"/>
-        <source>Stop Now</source>
+        <source>Ustavi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="142"/>
-        <source>Best So Far</source>
+        <source>Najboljši doslej</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="148"/>
-        <source>Cancel</source>
+        <source>Prekliči</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -251,7 +251,7 @@
     <name>Autorouter</name>
     <message>
         <location filename="../src/autoroute/autorouter.cpp" line="346"/>
-        <source>Routing canceled! Now cleaning up...</source>
+        <source>Usmerjanje preklicano! Čiščenje...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -259,27 +259,27 @@
     <name>AutorouterSettingsDialog</name>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="75"/>
-        <source>Production type</source>
+        <source>Tip proizvodnje</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="79"/>
-        <source>homebrew</source>
+        <source>domača</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="82"/>
-        <source>professional</source>
+        <source>profesionalna</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="85"/>
-        <source>custom</source>
+        <source>po meri</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="103"/>
-        <source>Cancel</source>
+        <source>Prekliči</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -352,7 +352,7 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="914"/>
-        <source>Searching...</source>
+        <source>Iskanje...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -362,47 +362,47 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="990"/>
-        <source>Import...</source>
+        <source>Uvozi...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="991"/>
-        <source>Load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
+        <source>Uvozi Fritzing del (.fzpz), or a Fritzing del bin (.fzb, .fzbz)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="994"/>
-        <source>New Bin...</source>
+        <source>Nov Bin...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="995"/>
-        <source>Create a new parts bin</source>
+        <source>Ustvari nov bin del</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="998"/>
-        <source>Close Bin</source>
+        <source>Zapri Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="999"/>
-        <source>Close parts bin</source>
+        <source>Zapri dele bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1002"/>
-        <source>Delete Bin</source>
+        <source>Izbriši Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1003"/>
-        <source>Delete parts bin</source>
+        <source>Izbriši dele bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1006"/>
-        <source>Save Bin</source>
+        <source>Shrani Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -412,17 +412,17 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1010"/>
-        <source>Save Bin As...</source>
+        <source>Shrani Bin Kot...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1011"/>
-        <source>Save parts bin as...</source>
+        <source>Shrani Dele Bin Kot...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1014"/>
-        <source>Export Bin...</source>
+        <source>Izvozi Bin...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -432,12 +432,12 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1018"/>
-        <source>Rename Bin...</source>
+        <source>Preimenuj Bin...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1019"/>
-        <source>Rename parts bin...</source>
+        <source>Preimenuj dele bin...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -580,12 +580,12 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="129"/>
-        <source>one layer (single-sided)</source>
+        <source>ena stran (single-sided)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="132"/>
-        <source>two layers (double-sided)</source>
+        <source>dve strani (double-sided)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -739,7 +739,7 @@ Use the file?</source>
     <name>BoardLogoItem</name>
     <message>
         <location filename="../src/items/logoitem.cpp" line="1134"/>
-        <source>shape</source>
+        <source>oblika</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -748,17 +748,17 @@ Use the file?</source>
     <message>
         <location filename="../src/items/logoitem.cpp" line="944"/>
         <location filename="../src/items/logoitem.cpp" line="967"/>
-        <source>color</source>
+        <source>bara</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="947"/>
-        <source>Set text color</source>
+        <source>Nastavite barvo besedila</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="961"/>
-        <source>Select text color</source>
+        <source>Izberite barvo besedila</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -827,12 +827,12 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="79"/>
-        <source>Select Serial Port</source>
+        <source>Izberite serijska vrata</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="88"/>
-        <source>Description:</source>
+        <source>Opis:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -877,7 +877,7 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="89"/>
-        <source>Description: %1</source>
+        <source>Opis: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -920,17 +920,17 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="39"/>
-        <source>Tools</source>
+        <source>Orodja</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="62"/>
-        <source>&amp;About</source>
+        <source>&amp;O programu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="65"/>
-        <source>About program</source>
+        <source>O programu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -940,17 +940,17 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="73"/>
-        <source>About Qt</source>
+        <source>O Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="78"/>
-        <source>C&amp;onnect</source>
+        <source>Poveži</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="81"/>
-        <source>Connect to serial port</source>
+        <source>Poveži na serial port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -960,12 +960,12 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="89"/>
-        <source>&amp;Disconnect</source>
+        <source>&amp;Prekini povezavo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="92"/>
-        <source>Disconnect from serial port</source>
+        <source>Prekini povezavo z serijskimi vrati</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -975,12 +975,12 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="100"/>
-        <source>&amp;Configure</source>
+        <source>&amp;Nastavi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="103"/>
-        <source>Configure serial port</source>
+        <source>Nastavi serijska vrata</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -990,12 +990,12 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="111"/>
-        <source>C&amp;lear</source>
+        <source>Počisti</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="114"/>
-        <source>Clear data</source>
+        <source>Počisti podatke</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1015,12 +1015,12 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="149"/>
-        <source>Connected to %1 : %2, %3, %4, %5, %6</source>
+        <source>Povezan z %1 : %2, %3, %4, %5, %6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="153"/>
-        <source>Error</source>
+        <source>Napaka</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1030,7 +1030,7 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="175"/>
-        <source>Disconnected</source>
+        <source>Nepovezan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1045,7 +1045,7 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="201"/>
-        <source>Critical Error</source>
+        <source>Kritična napaka</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

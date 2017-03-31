@@ -143,7 +143,12 @@ unix {
     bins.files += bins
 
     translations.path = $$PKGDATADIR/translations
-    translations.extra = find $$PWD/translations -name "*.qm" -size +128c -exec cp -pr {} $(INSTALL_ROOT)$$PKGDATADIR/translations \\;
+    isEmpty(LINGUAS) {
+        translations.files += $$system(find $$PWD/translations -name "*.qm" -size +128c)
+    } else {
+        for(lang, LINGUAS):translations.files += $$system(find $$PWD/translations -name "fritzing_$${lang}.qm" -size +128c)
+        isEmpty(translations.files):error("No translations found for $$L10N")
+    }
 
     syntax.path = $$PKGDATADIR/translations/syntax
     syntax.files += translations/syntax/*.xml

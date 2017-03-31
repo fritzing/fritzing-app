@@ -16,12 +16,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="97"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
-        <translation>&lt;b&gt;GNU GPL v3 na kód a CreativeCommons:BY-SA na zbytek</translation>
+        <translation>&lt;b&gt;GNU GPL v3 za kód a CreativeCommons:BY-SA za zbytek</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="108"/>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="121"/>
@@ -136,12 +136,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>to Steven Noppe and Davy Uittenbogerd for the Dutch translation, </source>
-        <translation>Stevenu Noppovi a Davymu Uittenbogerdovi za jejich Holandský překlad</translation>
+        <translation>Stevenu Noppovi a Davymu Uittenbogerdovi za jejich Holandský překlad, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>to Josef Dustira for the Czech translation, </source>
-        <translation>Josefu Duštírovi za Český překlad, </translation>
+        <translation>Josefu Duštírovi a Václavu Dvořákovi za Český překlad, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="151"/>
@@ -229,17 +229,17 @@
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="98"/>
         <source>zoom and pan controls</source>
-        <translation>řízení zvětšení a posunu</translation>
+        <translation>Ovládání zvětšení a posunu</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="138"/>
         <source>Stop Now</source>
-        <translation>Zastavit</translation>
+        <translation>Zastavit nyní</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="142"/>
         <source>Best So Far</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejlepší autorouting</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="148"/>
@@ -591,32 +591,32 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <location filename="../src/items/resizableboard.cpp" line="214"/>
         <source>image file</source>
-        <translation type="unfinished">soubor obrázku</translation>
+        <translation>soubor obrázku</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="233"/>
         <source>load image file</source>
-        <translation type="unfinished">načíst soubor obrázku</translation>
+        <translation>načíst soubor obrázku</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="292"/>
         <source>Images</source>
-        <translation type="unfinished">Obrázky</translation>
+        <translation>Obrázky</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="306"/>
         <source>Select an image file to load</source>
-        <translation type="unfinished">Preferencesyberte soubor obrázku</translation>
+        <translation>Vyberte obrázek k načtení</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="328"/>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
-        <translation type="unfinished">kvůli problému s XML:%1 řádek:%2 sloupec:%3</translation>
+        <translation>kvůli problému s XML:%1 řádek:%2 sloupec:%3</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="334"/>
         <source>because the xml is not correctly formatted</source>
-        <translation type="unfinished"></translation>
+        <translation>z důvodu nesprávného formátu XML souboru</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="366"/>
@@ -715,23 +715,24 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <location filename="../src/items/resizableboard.cpp" line="522"/>
         <source>Unable to load</source>
-        <translation type="unfinished">Nelze načíst</translation>
+        <translation>Nelze načíst</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="523"/>
         <source>Unable to load image from %1 %2</source>
-        <translation type="unfinished">Nelze načíst obrázek z %1 %2</translation>
+        <translation>Nelze načíst obrázek z %1 %2</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="530"/>
         <source>Can load, but</source>
-        <translation type="unfinished"></translation>
+        <translation>Lze načíst ale</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="531"/>
         <source>The image from %1 can be loaded, but %2
 Use the file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrázek z %1  lze načíst ale %2
+Použít soubor?</translation>
     </message>
 </context>
 <context>
@@ -1058,7 +1059,7 @@ Use the file?</source>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="272"/>
         <source>Your sketch is ready for production: there are no connectors or traces that overlap or are too close together.</source>
-        <translation type="unfinished">Váš návrh je připraven pro výrobu: nebyly nalezeny žádné překrývající se propojky,ani spoje a současně také nejsou příliš blízko sebe.</translation>
+        <translation>Váš návrh je připraven pro výrobu: nebyly nalezeny žádné překrývající se propojky,ani spoje a současně také nejsou příliš blízko sebe.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="275"/>
@@ -1073,7 +1074,7 @@ Use the file?</source>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="291"/>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="374"/>
@@ -1200,35 +1201,38 @@ Use the file?</source>
     <message>
         <location filename="../src/fapplication.cpp" line="2018"/>
         <source>Regenerate parts database?</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit databázi součástek ?</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2019"/>
         <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovení databáze součástek může trvat několik minut.
+Poté bude nutné restartovat Fritzing
+
+</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2020"/>
         <source>Would you like to regenerate the parts database?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Opravdu chcete obnovit databázi součástek?</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2028"/>
         <source>Regenerate</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2029"/>
         <source>Cancel</source>
-        <translation type="unfinished">Zrušit</translation>
+        <translation>Zrušit</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2034"/>
         <source>Regenerating parts database...</source>
-        <translation type="unfinished"></translation>
+        <translation>Probíhá obnova databáze součástek ...</translation>
     </message>
 </context>
 <context>
@@ -1241,16 +1245,30 @@ Use the file?</source>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="88"/>
         <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Montážní deska&lt;/b&gt; je okno ve kterém vše vypadá jako v běžném životě.&lt;br/&gt;&lt;br/&gt;Začínáte s kontaktním nepájivým polem,kde si můžete vše rozvrhnout tak jak potřebujete.&lt;br/&gt;&lt;br/&gt;Začněte s přetažením vybrané součástky ze zásobníku součástek v pravém horním rohu. Po přetažení všech potřebných součástek je propojte umístěním do nepájivého kontaktního pole nebo kliknutím na jejich &quot;nožičky&quot; (konektory) a tažením drátových propojek k dalším součástkám.&lt;br/&gt;&lt;br/&gt;Tento proces je velmi podobný tomu jak propojujete součástky v běžném životě. Poté co dokončíte váš návrh v záložce &lt;b&gt;montážní deska&lt;/b&gt;, vyzkoušejte i další záložky.&lt;br/&gt;&lt;br/&gt;Pro přepnutí do další záložky klikněte na její název. Každá záložka má jiný účel, součástky v jiných záložkách vypadají samozřejmě jinak.</translation>
     </message>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="101"/>
         <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vítejte v záložce &lt;b&gt;Schéma&lt;/b&gt;.&lt;br/&gt;&lt;br/&gt; V této záložce vidíte elektrické schéma vašeho návrhu (obvodu). &lt;br/&gt;&lt;br/&gt;Všechny položky zobrazené na této záložce se zobrazí i na jiných záložkách a obráceně. Elektrické součástky zde mají obdobu normovaných elektrických značek, tak jak je používají inženýři při návrhu plošných spojů a elektrických spotřebičů.&lt;br/&gt;&lt;br/&gt;Poté co nakreslíte drátové propojky mezi součástkami, můžete toto schéma zpřehlednit stisknutím tlačítka&lt;b&gt; &amp;lt;Shift&amp;gt;&lt;/b&gt; a společně s myší upravit dráhu propojek tak aby byly rovné, pravoúhlé či jinak správně zarovnané dle vašich představ. &lt;br/&gt;&lt;br/&gt;Záložka &lt;b&gt;Schéma&lt;/b&gt; vám umožní zkontrolovat všechny propojení mezi součástkami. &lt;br/&gt;Taktéž si můžete toto schéma vytisknout jako dokumentaci k vašemu návrhu.</translation>
     </message>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="113"/>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation>Obrazovka &lt;b&gt;DPS&lt;/b&gt; je obrazovka která zobrazuje rozvržení komponentů (součástek) na fyzické desce DPS. DPS desky mohou být vyrobené po domácku (DIY) nebo v továrnách jako je ta naše (Fritzing Fab).
+&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;První věc kterou budete potřebovat je deska na kterou budete umísťovat vaše součástky. Po otevření obrazovky DPS by zde již měla jedna být, jestli není, vložte ji sem přemístěním z panelu součástek.Tato ikona představuje novou desku DPS:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;K rozvržení desky DPS, umisťujte komponenty na vaší desku tak aby na ní přesně seděli. Poté s nimi zkuste manipulovat tak aby jste zmenšily celkovou velikost desky a zkrátily tak délku spojů. Desku DPS můžete taktéž zvětšovat či zmenšovat dle libosti.&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Jakmile máte součástky umístěné musíte je propojit měděnými trasami (propojkami). K vytvoření tras můžete použít funkci AutoRoute nebo je zkusit umístit ručně. Tlačítko autoroutingu vypadá takto:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>FolderUtils</name>
+    <message>
+        <location filename="../src/utils/folderutils.cpp" line="761"/>
+        <source>Moving your custom parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/utils/folderutils.cpp" line="762"/>
+        <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2023,7 +2041,7 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2725"/>
         <source>There are no unrouted connections in this view.</source>
-        <translation>Již zde nejsou žádné nezroutované propojky.</translation>
+        <translation>Žádné nezroutované propojky.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow/mainwindow.cpp" line="1972"/>
@@ -2099,7 +2117,7 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1035"/>
         <source>Export for PCB</source>
-        <translation>Export pro PCB</translation>
+        <translation>Export DPS</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1433"/>
@@ -2561,12 +2579,12 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1033"/>
         <source>Export the current sketch to PDF for DIY PCB production (photoresist)</source>
-        <translation>Exportuje aktuální návrh do PDF pro DIY výrobu PCB (fotocesta)</translation>
+        <translation>Exportuje aktuální návrh do PDF pro DIY výrobu DPS (fotocesta)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1038"/>
         <source>Export the current sketch to SVG for DIY PCB production (photoresist)</source>
-        <translation>Exportuje aktuální návrh do SVG pro DIY výrobu PCB (fotocesta)</translation>
+        <translation>Exportuje aktuální návrh do SVG pro DIY výrobu DPS (fotocesta)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1314"/>
@@ -2596,7 +2614,7 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1029"/>
         <source>Export the current sketch to Extended Gerber format (RS-274X) for professional PCB production</source>
-        <translation>Exportuje aktuální návrh do Extended Gerber formátu (RS-274X) pro professionální výrobu PCB</translation>
+        <translation>Exportuje aktuální návrh do Extended Gerber formátu (RS-274X) pro professionální výrobu DPS</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1037"/>
@@ -2651,7 +2669,7 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="657"/>
         <source>&amp;Open Example</source>
-        <translation>&amp;Otevřít příklad</translation>
+        <translation>&amp;Příklady</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="685"/>
@@ -2693,7 +2711,7 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="852"/>
         <source>Cut selection</source>
-        <translation>Vyjme výběr</translation>
+        <translation>Vyjme vybrané</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="855"/>
@@ -2738,17 +2756,17 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="872"/>
         <source>Duplicate selection</source>
-        <translation>Duplikuje výběr</translation>
+        <translation>Duplikuje vybrané</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="875"/>
         <source>&amp;Delete</source>
-        <translation>&amp;Vymazat</translation>
+        <translation>&amp;Odstranit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="876"/>
         <source>Delete selection</source>
-        <translation>Vymaže výběr</translation>
+        <translation>Odstraní vybrané</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="899"/>
@@ -2840,12 +2858,12 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="959"/>
         <source>Rotate the selected parts by 90 degrees clockwise</source>
-        <translation>Otočí vybrané součástkyr o 90 stupňů vpravo</translation>
+        <translation>Otočí aktuální výběr o 90 stupňů vpravo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="963"/>
         <source>Rotate the selected parts by 180 degrees</source>
-        <translation>Otočí vybrané součástkyr o 180 stupňů</translation>
+        <translation>Otočí aktuální výběr o 180 stupňů</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="967"/>
@@ -2902,42 +2920,42 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="892"/>
         <source>&amp;Delete Wire</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Odstranit Propojku</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="919"/>
         <source>Edit (new parts editor)</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit (editor součástek)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="920"/>
         <source>Open the new parts editor on an existing part</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít editor součástek na existující součástce</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="954"/>
         <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Otočit o 135° doprava {45°?}</translation>
+        <translation>Otočit o 45° doprava</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="958"/>
         <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Otočit o 135° doprava {90°?}</translation>
+        <translation>Otočit o 90° doprava</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="962"/>
         <source>Rotate 180°</source>
-        <translation type="unfinished">Otočit o 180° {180°?}</translation>
+        <translation>Otočit o 180°</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="966"/>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Otočit o 45° doleva {90°?}</translation>
+        <translation>Otočit o 90° doleva</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="970"/>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Otočit o 45° doleva {45°?}</translation>
+        <translation>Otočit o 45° doleva</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="974"/>
@@ -3225,12 +3243,12 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1088"/>
         <source>Regenerate parts database ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit databázi součástek ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1089"/>
         <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnoví databázi součástek (Použijte jen když je databáze poškozená)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1096"/>
@@ -3365,17 +3383,17 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1265"/>
         <source>Display First Time Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit první nápovědu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1282"/>
         <source>Parts Editor Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Nápověda editoru součástek</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1283"/>
         <source>Display Parts Editor help in a browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazí nápovědu editoru součástek ve webovém prohlížeči</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1328"/>
@@ -3457,12 +3475,12 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2723"/>
         <source>Show unrouted</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat nezroutované</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2724"/>
         <source>Highlight all unrouted connectors</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvýraznit všechny nezroutované propojky</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2731"/>
@@ -3477,17 +3495,17 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2743"/>
         <source>Select All &quot;Don&apos;t Autoroute&quot; Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat všechny neroutované spoje</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2747"/>
         <source>Select All Autoroutable Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat všechny routované spoje</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2748"/>
         <source>Select all trace wires that can be changed during autorouting</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybere všechny spoje které mohou být upraveny během autoroutingu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2775"/>
@@ -3796,22 +3814,22 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="884"/>
         <source>Delete Minus</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit bez propojek</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="885"/>
         <source>Delete selection without attached wires</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstraní vybrané bez drátových propojek</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="896"/>
         <source>Delete Wire up to bendpoints</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit propojku mezi zlomovými body</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1049"/>
         <source>Show/hide the label for the selected parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit/skrýt popisek vybrané součástky</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1060"/>
@@ -3872,7 +3890,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1167"/>
         <source>&amp;Show PCB</source>
-        <translation>&amp;Zobrazit PCB</translation>
+        <translation>&amp;Zobrazit DPS</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1145"/>
@@ -3887,7 +3905,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1169"/>
         <source>Show the PCB view</source>
-        <translation>Zobrazí pohled na PCB</translation>
+        <translation>Zobrazí DPS</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1174"/>
@@ -4100,7 +4118,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1810"/>
         <source>Delete Wire</source>
-        <translation>Vymazat propojku</translation>
+        <translation>Odstranit propojku</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1858"/>
@@ -4225,7 +4243,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2063"/>
         <source>Delete</source>
-        <translation>Vymazat</translation>
+        <translation>Odstranit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2450"/>
@@ -4283,7 +4301,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2727"/>
         <source>Select All Traces</source>
-        <translation>Vybere všechny spoje</translation>
+        <translation>Vybrat všechny spoje</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2728"/>
@@ -4344,12 +4362,12 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2911"/>
         <source>Order a PCB...</source>
-        <translation>Objednat PCB...</translation>
+        <translation>Objednat DPS</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2912"/>
         <source>Order a PCB created from your sketch--from fabulous Fritzing Fab</source>
-        <translation>Objedná PCB, vytvořené z Vašeho návrhu - v báječném Fritzing Fab</translation>
+        <translation>Objedná DPS, vytvořené z Vašeho návrhu - v báječném Fritzing Fab</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2870"/>
@@ -4409,7 +4427,7 @@ Všechny Vaše součástky jsou aktuální.</translation>
         <source>
 
 Do you want to update now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizovat nyní ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3944"/>
@@ -4431,7 +4449,7 @@ Zkontrolujte, všechny pohledy pro potenciální vedlejší účinky.</translati
     <message>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="70"/>
         <source>Undo History</source>
-        <translation type="unfinished">Historie Zpět</translation>
+        <translation>Historie Zpět</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="595"/>
@@ -4446,7 +4464,7 @@ Zkontrolujte, všechny pohledy pro potenciální vedlejší účinky.</translati
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="613"/>
         <source>PCB</source>
-        <translation>PCB</translation>
+        <translation>DPS</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="73"/>
@@ -6318,7 +6336,7 @@ Poznámka: Během této relace se již toto varování nebude opakovat.</transla
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="89"/>
         <source>Code View</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazení Kód</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="201"/>
@@ -6354,37 +6372,37 @@ Poznámka: Během této relace se již toto varování nebude opakovat.</transla
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="308"/>
         <source>Clear Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí nastavení</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="350"/>
         <source>Platform Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Platformy</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="357"/>
         <source>&lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="366"/>
         <source>Location:</source>
-        <translation type="unfinished">Umístění:</translation>
+        <translation>Adresář:</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="375"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>Najít...</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="385"/>
         <source>You need to have &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (version %3 or newer) installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyžaduje &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (ve verzi minimálně %3 nebo novější).</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="414"/>
         <source>Select a programmer (executable) for %1</source>
-        <translation type="unfinished">Vyberte programátor (spustitelný) pro %1</translation>
+        <translation>Vyberte programátor (spustitelný) pro %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="446"/>
@@ -6401,7 +6419,7 @@ Poznámka: Během této relace se již toto varování nebude opakovat.</transla
         <source>no keys down = scroll
 shift key swaps scroll axis
 Alt or %1 key = zoom</source>
-        <translation>žádné klávesa stlačená = posunout
+        <translation>žádná klávesa stlačená = posunout
 klávesa SHIFT přepne posun osy
 Klávesa Alt nebo klávesa %1 = zvětšení</translation>
     </message>
@@ -6410,7 +6428,7 @@ Klávesa Alt nebo klávesa %1 = zvětšení</translation>
         <source>no keys down = zoom
 Alt or %1 key = scroll
 shift key swaps scroll axis</source>
-        <translation>žádné klávesa stlačená = zvětšení
+        <translation>žádná klávesa stlačená = zvětšení
 klávesa SHIFT přepne posun osy
 Klávesa Alt nebo klávesa %1 = posunout</translation>
     </message>
@@ -6422,17 +6440,17 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="528"/>
         <source>When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?</source>
-        <translation type="unfinished"></translation>
+        <translation>Když vytahujete novou drátovou propojku (ze součástky) nebo nožičku součástky, chcete změnit ohyb propojky (či nožičky) nebo vytáhnout nový zlomový bod ?</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="533"/>
         <source>This checkbox sets the default behavior. You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento checkbox nastaví defaultní chování. Mužete přepnout na nedefaultní chování držením tlačítka Ctrl (Control) [Mac: Command] při tažení.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="540"/>
         <source>Curvy wires and legs</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohýbat propojky a nožičky</translation>
     </message>
 </context>
 <context>
@@ -6766,32 +6784,32 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="266"/>
         <source>Connected highlight color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva zvýraznění spojení</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="286"/>
         <source>Unconnected highlight color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva zvýraznění nespojení</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="317"/>
         <source>Clear all saved settings and close this dialog immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymaže veškerá nastavení a okamžitě uzavře toto dialogové okno.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="324"/>
         <source>This action does not delete any files; it restores settings to their default values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tato akce nevymaže žádné soubory; Pouze obnoví výchozí nastavení.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="331"/>
         <source>There is no undo for this action, and no further warning!!!!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento krok nelze vzít zpět !!!</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="339"/>
         <source>Clear Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí nastavení</translation>
     </message>
     <message>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="622"/>
@@ -6877,7 +6895,7 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3976"/>
         <source>Set Grid Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit velikost mřížky</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="81"/>
@@ -7057,7 +7075,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="52"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="132"/>
         <source>PCB View</source>
-        <translation>Zobrazení PCB</translation>
+        <translation>Zobrazení DPS</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="133"/>
@@ -7819,7 +7837,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <location filename="../src/version/partschecker.cpp" line="430"/>
         <location filename="../src/version/partschecker.cpp" line="438"/>
         <source>Regenerating parts database</source>
-        <translation type="unfinished"></translation>
+        <translation>Probíhá obnova databáze součástek </translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="430"/>
@@ -7974,22 +7992,22 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/fapplication.cpp" line="320"/>
         <source>Unable to open temporary file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze otevřít dočasný soubor</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="326"/>
         <source>Database failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba databáze</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="333"/>
         <source>Unable to remove original db file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze odebrat původní soubor databáze %1</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="340"/>
         <source>Unable to copy database file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze zkopírovat soubor databáze %1</translation>
     </message>
 </context>
 <context>
@@ -8124,12 +8142,12 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/items/ruler.cpp" line="287"/>
         <source>&amp;cm</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;cm</translation>
     </message>
     <message>
         <location filename="../src/items/ruler.cpp" line="288"/>
         <source>&amp;in</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;in</translation>
     </message>
 </context>
 <context>
@@ -8236,27 +8254,27 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="52"/>
         <source>%1 Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Barva...</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="56"/>
         <source>Choose %1 color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte barvu %1:</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="69"/>
         <source>Reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit výchozí</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="73"/>
         <source>Default color (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí barva (%1)</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="83"/>
         <source>Pick custom color ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvolit vlastní barvu...</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="96"/>
@@ -8276,12 +8294,12 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="132"/>
         <source>Pick custom %1 color</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat vlastní %1 barvu</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="151"/>
         <source>Current color (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Současná barva (%1)</translation>
     </message>
 </context>
 <context>
@@ -8384,7 +8402,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="5884"/>
         <source>Note text change</source>
-        <translation type="unfinished"></translation>
+        <translation>Text poznámky pozměněn</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="7149"/>
@@ -8464,12 +8482,12 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="5757"/>
         <source>or alt-drag to move the segment</source>
-        <translation>nebo Alt-přetažení pro přetažení segmentu</translation>
+        <translation>nebo (Alt+pohyb myší) pro posun segmentu propojky</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="5822"/>
         <source>Double-click to delete this bend point</source>
-        <translation>Dvojklik pro odstranění tohoto zlomového bodu</translation>
+        <translation>Dvojklikem odstraníte tento zlomový bod</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="5910"/>
@@ -8584,39 +8602,41 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9396"/>
         <source>Unrouted connections are highlighted in yellow.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezroutované propojky jsou označeny žlutě.</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9397"/>
         <source>There are no unrouted connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádné nezroutované propojky</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9398"/>
         <source>Unrouted connections</source>
-        <translation type="unfinished">Nezroutované propojky</translation>
+        <translation>Nezroutované propojky</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9399"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1
+
+Poznámka: Toto okno můžete taktéž zobrazit kliknutím na text stavu autoroutingu ve status baru (spodní části obrazovky).</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9446"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Součástka %1 nebyla v návrhu nalezena</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9458"/>
         <source>Add %1 parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidáno %1 součástek</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9520"/>
         <source>Deselect all</source>
-        <translation type="unfinished"></translation>
+        <translation>Odznačit vše</translation>
     </message>
 </context>
 <context>
@@ -8725,307 +8745,308 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="75"/>
         <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing ukládá soubory pro vlastní součástky, generované součástky, a soubory pro další dočasné a dlouhotrvající účely v místním adresáři. Na Macu a Linuxu je to obvykle adresář ~/.config/Fritzing/. Na Windows Vista a vyšším, je to obvykle adresář C:\Users\[user name]\AppData\Roaming\Fritzing\; Na Windows XP je to adresář C:\Documents and Settings\[user name]\Application Data\Fritzing\.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="81"/>
         <source>examples</source>
-        <translation type="unfinished"></translation>
+        <translation>Příklady</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="82"/>
         <source>Get a jump start by looking at the example circuits under File &gt; Examples.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podívejte se na naše příklady použití fritzingu. Klikněte na Soubor -&gt; Příklady.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="86"/>
         <source>parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Součástky</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="87"/>
         <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords</source>
-        <translation type="unfinished"></translation>
+        <translation>Nemůžete nalézt nějakou součástku? Vyhledejte ji kliknutím na ikonu lupy v panelu součástek a začněte psát její název</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="88"/>
         <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Jestliže nemůžete najít svoji součástku v panelu součástek, obecné tvary součástek vám pomohou (v angličtině Generic IC). Přesuňte je do vašeho návrhu, poté použijte možnosti přizpůsobení v panelu Inspektor. Máte tyto možnosti: výběr z 25 různých standartních a SMD pouzder; Změnit popisek pinu; pro pouzdra DIP a SIP měnit počet pinů; Změnit názvy pinů můžete také přes editor popisků pinů</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="89"/>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikona v panelu součástek může reprezentovat vícero typů obdobných součástek.Z tohoto důvodu pokud přesunete součástku do vašeho návrhu, by jste měli zkontrolovat panel Inspektor. Panel inspektor zobrazuje mnoho možných variací dané součástky a dává vám možnost upravit podrobné parametry dané součástky.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="90"/>
         <source>The Inspector Window--which lets you change the properties of parts--is only enabled for parts that are in a sketch (not for parts still in a Parts Bin).</source>
-        <translation type="unfinished"></translation>
+        <translation>Panel Inspektor vám dovolí upravit podrobnosti těch součástek které jsou již umístěny ve vašem návrhu (nelze upravovat součástky které jsou stále v panelu součástek).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="94"/>
         <source>moving and selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Přesun a výběr</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="95"/>
         <source>To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>It seems that this function doesnt work properly.</translatorcomment>
+        <translation>K posunu součástky pouze jedním směrem (horizontálním nebo vertikálním) použijte klávesu shift při pohybu součástkou.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="96"/>
         <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud máte problém označit součástku nebo drátovou propojku (segment), zkuste vybrat součástku která vám překáží v cestě a posuňte ji vzad či vpřed v menu &quot;Součástka&quot; nebo v kontextovém menu (pravé tlačítko myši).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="97"/>
         <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
-        <translation type="unfinished"></translation>
+        <translation>K lepšímu a přesnějšímu posunování součástek můžete taktéž využít šipky (na klávesnici). Shift+šipka posune objekt o 10 jednotek.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="98"/>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klikněte na indikátor pozice myši v pravé části spodního status panelu pro přepnutí zobrazovaných jednotek (milimetry [mm],palce [in] nebo pixely [px]).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="109"/>
         <source>rotation</source>
-        <translation type="unfinished">rotace</translation>
+        <translation>Otáčení (rotace)</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="110"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud chcete otáčet danou součástkou,označte ji a najeďte myší na jeden z jejich rohů (čárkované ohraničení součástky). Kurzor šipky se změní na kurzor otáčení a po kliknutí levým tlačítkem myši můžete se součástkou otáčet.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="111"/>
         <source>To free-rotate a logo text or image item in PCB view hold down the Alt (Linux: meta) key and free-rotate as usual.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud chcete otáčet s vloženým Logem, textem nebo obrázkem v obrazovce &quot;DPS&quot;, podržte klávesu Alt (V linuxu: meta), najeďte myší na okraj součástky a otáčejte.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="115"/>
         <source>layers and views</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrstvy a pohledy</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="116"/>
         <source>To drag the canvas, hold down the space bar and drag with the mouse.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud chcete posouvat pohled, stiskněte a držte klávesu mezerník + levé tlačítko myši a myší otáčejte pohled. Pohled lze posouvat taktéž stiskem a držením tlačítka kolečka myši.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
         <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro přepnutí viditelnosti vrstvy v daném pohledu, klikněte na menu &quot;Zobrazení&quot; a vyberte jednu z vrstev .Nebo otevřete panel vrstev, klikněte na menu &quot;Okno&quot; a zvolte &quot;Vrstvy&quot; vpravo dole se zobrazí nový panel vsrtvy, kde můžete dané vrstvy zobrazit či skrýt.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>
         <source>When you export images from Fritzing, you can choose which layers are exported. Before you choose &apos;Export...&apos;, go into the &apos;View&apos; menu and hide the layers you don&apos;t want to be visible.</source>
-        <translation type="unfinished"></translation>
+        <translation>Když exportujete obrázky z Fritzingu, můžete zvolit které vrstvy budou exportovány. Předtím než vyberete položku Exportovat v menu &quot;Soubor&quot;, jděte do menu vrstev a skryjte vrstvy které nechcete exportovat.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="122"/>
         <source>part labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Popisky součástek</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="123"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klepněte dvakrát na popisek součástky, čímž jej upravíte. Nebo můžete použít panel Inspektor, kliknutím na součástku a poté kliknutím na název součástky.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="124"/>
         <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
+        <translation>K zobrazení jiných druhů popisků, úpravu písma, rotaci a další možnosti součástky, klikněte pravým tlačítkem myši na popisek.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="125"/>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud potřebujete posunout popisek součástky nezávisle na poloze součástky, vyberte nejdříve součástku (součástka i popisek budou vybrány najednou), poté klikněte na popisek a posouvejte s ním jak potřebujete.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="129"/>
         <source>wires and bendpoints</source>
-        <translation type="unfinished"></translation>
+        <translation>Propojky a zlomové body</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="130"/>
         <source>To add a bendpoint to a wire, double-click where you want the bendpoint.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro přidání zlomového bodu k propojce, klikněte dvakrát na místo kde chcete mít nový zlomový bod.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="131"/>
         <source>To delete a bendpoint from a wire, double-click it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro odebrání zlomového bodu, klikněte na něj dvakrát.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="132"/>
         <source>In Schematic or PCB view, if you drag from a bendpoint with the Alt (Linux: Meta) key down, you will drag out a new wire from that bendpoint.</source>
-        <translation type="unfinished"></translation>
+        <translation>V obrazovce &quot;Schéma&quot; nebo &quot;DPS&quot;, se stisknutým Altem začnete tahat novou propojku z již vytvořeného zlomového bodu.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="133"/>
         <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
-        <translation type="unfinished"></translation>
+        <translation>K posunu segmentu drátové propojky (sekce mezi 2 zlomovými body), použijte tlačítko Alt + levé tlačítko myši. Pokud s těmito tlačítky podržíte taktéž tlačítko Shift, posun se uzamkne pouze na horizontální nebo vertikální stranu.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="134"/>
         <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud k posuvu propojky nebo zlomového bodu použijete pouze tlačítko Shift, posun se uzamkne na pohyb pouze do úhlu 45 stupňů.Jestli že je drátová propojka připojena k dalším drátovým propojkám, segment se kterým posouváte se bude snažit vytvořit 90 stupňový úhel se sousedící drátovou propojkou.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="138"/>
         <source>connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Spojení</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="139"/>
         <source>To see all the connectors connected to a given connector, hold the mouse down on the connector--all the connections will be highlighted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud chcete vidět všechny propojky spojené s daným spojem (popřípadě zlomovým bodem), podržte zmáčknuté levé tlačítko myši nad daným bodem či spojem, všechny body spojené s tímto bodem se zvýrazní žlutě.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="145"/>
         <source>Check out Parts Editor Help under the &lt;b&gt;Help&lt;/b&gt; Menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledněte si taktéž naši nápovědu k Editoru součástek, v menu &quot;&lt;b&gt;Nápověda&lt;/b&gt;&quot;. Položka &quot;Nápověda editoru součástek&quot;.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="146"/>
         <source>Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.</source>
-        <translation type="unfinished"></translation>
+        <translation>Před použitím &quot;editoru součástek&quot; se nejdříve podívejte zda-li není možné použít obecnou součástku, záhadnou součástku, nebo obecný konektor. (v angličtině: Generic IC, Mystery Part nebo Pin Header).Jakmile použijete jednu z těchto součástek, můžete poté upravit její podrobné vlastnosti, jako je: počet pinů, mezery mezi piny, a další..</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="147"/>
         <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
-        <translation type="unfinished"></translation>
+        <translation>V editoru součástek pokud potřebuje zobrazit grafiku spod jiné grafiky, použijte kolečko myši se stisknutým tlačítkem Shift.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="148"/>
         <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Můžete použít &quot;editor součástek&quot; k nalezení SVG souboru s obrázkem z daného pohledu. V editoru součástek klikněte na záložku daného pohledu a poté použijte &quot;&lt;b&gt;Zobrazit ve Složce&lt;/b&gt;&quot; v menu &quot;&lt;b&gt;Soubor&lt;/b&gt;&quot;</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="150"/>
         <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neukládejte vlastní součástky v instalačním adresáři programu Fritzing. Jestliže časem aktualizujete Fritzing, budou tyto soubory s největší pravděpodobností smazány.Stejně tak soubory v instalačním adresáři nebudou uloženy společně se soubory projektu Fritzing (.fzz), takže je nebudete moci později sdílet s ostatními.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="170"/>
         <source>Have your PCB quickly and easily produced with Fritzing Fab. Hover over the &apos;Fabricate&apos; button to get a quote.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nechte si vyrobit DPS rychle a jednoduše z naší Fritzing Fab. Najeďte myší na tlačítko &quot;Vyrobit&quot; k obdržení nabídky.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="171"/>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Použijete-li naší službu Fritzing Fab, tak pokud jsou ve vašem návrhu DPS oblasti které nechete vyplnit mědí, použijte součástku &quot;Copper Fill Blocker&quot;.Této součástce můžete upravit velikost a zakrýt s ní oblasti ve kterých nechcete aby se nacházela měď.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="175"/>
         <source>notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Poznámky</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="176"/>
         <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud chcete vložit klikatelný odkaz do poznámky, vyberte text v poznámce a zmáčknete tlačítka Ctrl+l (Mac: command+l). (to l značí odkaz na link). Pokud jej chcete upravit klikněte na odkazovaný text a použijte znovu Ctrl+l (command+l).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="180"/>
         <source>local file storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Místní adresář</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="154"/>
         <source>pcb layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Návrh DPS</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="102"/>
         <source>curves and bendable legs</source>
-        <translation type="unfinished"></translation>
+        <translation>Křivky a ohebné nožičky</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
         <source>In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
-        <translation type="unfinished"></translation>
+        <translation>V pohledu &quot;Montážní deska&quot;. Pokud chcete vytvořit novou drátovou propojku ze součástky která má ohebné nožičky a je připojena k nepájitelné desce (BreadBoard), držte klávesu Alt čímž začnete vytvářet novou drátovou propojku (místo ohýbání nožičky dané součástky a k udržení součástky připojené k nepájitelné desce [BreadBoard]).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.</source>
-        <translation type="unfinished"></translation>
+        <translation>V pohledu &quot;Montážní deska&quot;. Pokud chcete vytvořit novou drátovou propojku ze součástky která má ohebné nožičky, držte klávesu Alt čímž začnete vytvářet novou drátovou propojku (místo ohýbání nožičky dané součástky).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
         <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na obrazovce &quot;Montážní deska&quot; nebo &quot;DPS&quot;, pokud chcete přidat zakřivení drátové propojce  nebo ohebné nožicce, začněte posouvat propojku nebo nožičku se stiknutým tlačítkem Ctrl (Control, Mac: Command).Nastavení výchozího ohýbání drátů či nožiček, nalznete v menu &quot;&lt;b&gt;Upravit&lt;/b&gt;&quot; -&gt; &quot;&lt;b&gt;Předvolby&lt;/b&gt;&quot; -&gt; záložky &quot;&lt;b&gt;Zobrazení .....&lt;/b&gt;&quot;.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="155"/>
         <source>Always lead a trace straight out of a pin. This helps to prevent short circuits.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vždy vytvářejte trasy přimo z pinů. Pomáhá to vyhnout se problémům se zkratováním obvodu.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="156"/>
         <source>Through-hole parts can be traced from either side of a PCB.</source>
-        <translation type="unfinished"></translation>
+        <translation>Součástky které jsou tzv.:&quot;Through-hole&quot; (mají díry srkz DPS) mohou být trasovány z obou stran desky DPS.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="157"/>
         <source>It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.</source>
-        <translation type="unfinished"></translation>
+        <translation>Je jednodušší trasovat propoje mezi součástkami na jedné straně DPS horizontálně a na druhé straně DPS vertikálně.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="158"/>
         <source>Route traces in 45-degree angles to reduce noise.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvářejte propoje (na desce DPS) v úhlu 45 stupňů, snížíte tím riziko vytváření šumu.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="159"/>
         <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud v programu Fritzing chybí nějaká speciální součástka a nechcete se s ní vyrábět v &quot;editoru součástek&quot;, poté použijte &quot;Pinheadery&quot; jako konektory a mřížku k jejich uspořádání.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="160"/>
         <source>You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.</source>
-        <translation type="unfinished"></translation>
+        <translation>Můžete do svého návrhu desky DPS použít i vlastní Logo. Jen vyberte součástku Logo z knihovny &quot;CORE&quot; a vyberte vlastní soubor s obrázkem. Nejlepší je použít formát SVG.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="163"/>
         <source>To create a custom shape for your PCB, import an SVG file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud chcete vytvořit vlastní křivku na vaší desce DPS, vložte vlastní soubor SVG.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="164"/>
         <source>To make a stylish Arduino shield in no time, switch the shape of the PCB from a rectangle to the Arduino</source>
-        <translation type="unfinished"></translation>
+        <translation>K vytvoření přehledného Arduino Shieldu, přepněte tvar DPS desky z tvaru obdelník na tvar Arduina</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="168"/>
         <source>pcb production</source>
-        <translation type="unfinished"></translation>
+        <translation>Výroba DPS</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="169"/>
         <source>Smaller PCBs are more affortable than larger ones. Save space and money.</source>
-        <translation type="unfinished"></translation>
+        <translation>Menší desky DPS jsou levnější než ty větší. Šetřete místo a peníze.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="161"/>
         <source>Use copper-blocker parts to mask out areas that you want free of copper fill.</source>
-        <translation type="unfinished"></translation>
+        <translation>Používejte součástky &quot;Copper Fill blocker&quot; k zakrytí oblastí ve kterých nechcete aby se nacházela měď.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="140"/>
         <source>A ratsnest line (very thin &apos;wire&apos;) between connections in one view means that those connections are somehow connected in another view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Slabé linky (u velmi malých propojek) mezi propojkami v jednom pohledu znamenají, že jsou tyto spoje nějakým způsobem spojeny v jiném pohledu.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="162"/>
         <source>To change trace width, select a trace then use the &lt;b&gt;width&lt;/b&gt; combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ke změně šířky  propojky, zvolte propojku a poté použijte parametr &quot;šířka&quot; v panelu Inspektor. Můžete využít vysunovací menu a zvolit z daných možností, nebo vepsat vlastní hodnotu (od 8 do 128).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="144"/>
         <source>parts editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor součástek</translation>
     </message>
 </context>
 <context>
@@ -9033,7 +9054,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/items/tracewire.cpp" line="59"/>
         <source>Select from the dropdown, or type in any value from %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte z vysunovacího menu, nebo napište vlastní hodnotu od %1 do %2</translation>
     </message>
     <message>
         <location filename="../src/items/tracewire.cpp" line="90"/>
@@ -9254,7 +9275,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/version/updatedialog.cpp" line="116"/>
         <source>&lt;p&gt;No new versions found.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Nebyly nalezeny žádné nové verze.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="132"/>
@@ -9372,7 +9393,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="470"/>
         <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Creator Kit není skladem. Pro více informací navštivte fritzing.blog</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="480"/>
@@ -9387,12 +9408,12 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="483"/>
         <source>produce your first pcb now &gt;&gt;</source>
-        <translation>vyrobte si vlastní DPS již nyní &gt;&gt;</translation>
+        <translation>vyrobte si vlastní DPS &gt;&gt;</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="484"/>
         <source>Order your PCB now.</source>
-        <translation>Objednat DPS již teď.</translation>
+        <translation>Objednat DPS.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="561"/>

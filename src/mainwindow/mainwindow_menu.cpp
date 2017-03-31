@@ -1128,7 +1128,12 @@ void MainWindow::createViewMenuActions(bool showWelcome) {
 	m_alignToGridAct->setCheckable(true);
 	connect(m_alignToGridAct, SIGNAL(triggered()), this, SLOT(alignToGrid()));
 
-	m_showGridAct = new QAction(tr("Show Grid"), this);
+    m_colorWiresByLengthAct = new QAction(tr("Color Breadboard Wires By Length"), this);
+    m_colorWiresByLengthAct->setStatusTip(tr("Display breadboard wires using standard color coding by length"));
+    m_colorWiresByLengthAct->setCheckable(true);
+    connect(m_colorWiresByLengthAct, SIGNAL(triggered()), this, SLOT(colorWiresByLength()));
+
+    m_showGridAct = new QAction(tr("Show Grid"), this);
 	m_showGridAct->setStatusTip(tr("Show the grid"));
 	m_showGridAct->setCheckable(true);
 	connect(m_showGridAct, SIGNAL(triggered()), this, SLOT(showGrid()));
@@ -1487,7 +1492,8 @@ void MainWindow::createViewMenu()
     m_viewMenu->addAction(m_showGridAct);
     m_viewMenu->addAction(m_setGridSizeAct);
     m_viewMenu->addAction(m_setBackgroundColorAct);
-	m_viewMenu->addSeparator();
+    m_viewMenu->addAction(m_colorWiresByLengthAct);
+    m_viewMenu->addSeparator();
 
 	if (m_welcomeView) m_viewMenu->addAction(m_showWelcomeAct);
     m_viewMenu->addAction(m_showBreadboardAct);
@@ -1608,7 +1614,8 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 
     QList<QAction *> actions;
     actions << m_zoomInAct << m_zoomOutAct << m_zoomInShortcut << m_fitInWindowAct << m_actualSizeAct << 
-        m_100PercentSizeAct << m_alignToGridAct << m_showGridAct << m_setGridSizeAct << m_setBackgroundColorAct;
+        m_100PercentSizeAct << m_alignToGridAct << m_showGridAct << m_setGridSizeAct << m_setBackgroundColorAct <<
+        m_colorWiresByLengthAct;
 
     bool enabled = (m_currentGraphicsView != NULL);
     foreach (QAction * action, actions) action->setEnabled(enabled);
@@ -1641,7 +1648,9 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 
 	m_alignToGridAct->setChecked(m_currentGraphicsView->alignedToGrid());
 	m_showGridAct->setChecked(m_currentGraphicsView->showingGrid());
-	
+    m_colorWiresByLengthAct->setChecked(m_breadboardGraphicsView->coloringWiresByLength());
+    m_colorWiresByLengthAct->setEnabled(m_currentGraphicsView == m_breadboardGraphicsView);
+
 	LayerHash viewLayers = m_currentGraphicsView->viewLayers();
 	LayerList keys = viewLayers.keys();
 
@@ -3502,7 +3511,10 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
         }
     }
 
-	if (m_linkedProgramFiles.count() > 0) {
+    if (m_breadboardGraphicsView) {
+    }
+
+    if (m_linkedProgramFiles.count() > 0) {
 		streamWriter.writeStartElement("programs");
 		QSettings settings;
 		streamWriter.writeAttribute("pid", settings.value("pid").toString());
@@ -3525,12 +3537,15 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
 		streamWriter.writeAttribute("gridSize", sketchWidget->gridSizeText());
 		streamWriter.writeAttribute("showGrid", sketchWidget->showingGrid() ? "1" : "0");
 		streamWriter.writeAttribute("alignToGrid", sketchWidget->alignedToGrid() ? "1" : "0");
-		streamWriter.writeAttribute("viewFromBelow", sketchWidget->viewFromBelow() ? "1" : "0");
+        streamWriter.writeAttribute("viewFromBelow", sketchWidget->viewFromBelow() ? "1" : "0");
         QHash<QString, QString> autorouterSettings = sketchWidget->getAutorouterSettings();
         foreach (QString key, autorouterSettings.keys()) {
 		    streamWriter.writeAttribute(key, autorouterSettings.value(key));
         }
-		streamWriter.writeEndElement();
+        if (sketchWidget == m_breadboardGraphicsView) {
+            streamWriter.writeAttribute("colorWiresByLength", m_breadboardGraphicsView->coloringWiresByLength() ? "1" : "0");
+        }
+        streamWriter.writeEndElement();
 	}
 	streamWriter.writeEndElement();
 }
@@ -3693,6 +3708,13 @@ void MainWindow::loadedViewsSlot(ModelBase *, QDomElement & views) {
             if (!gridSizeText.isEmpty()) {
                 sketchWidget->setGridSize(gridSizeText);
                 redraw = true;
+            }
+
+            if (sketchWidget == m_breadboardGraphicsView) {
+                QString colorWiresByLengthText = view.attribute("colorWiresByLength", "");
+                if (!colorWiresByLengthText.isEmpty()) {
+                    m_breadboardGraphicsView->colorWiresByLength(colorWiresByLengthText.compare("1") == 0);
+                }
             }
 
             if (!viewFromBelowText.isEmpty()) {
@@ -4067,6 +4089,13 @@ QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 	connect(gridSizeThing->mmButton, SIGNAL(clicked(bool)), this, SLOT(gridUnits(bool)));
 
 	return over;
+}
+
+void MainWindow::colorWiresByLength() {
+    if (m_breadboardGraphicsView == NULL) return;
+
+    m_breadboardGraphicsView->colorWiresByLength(m_colorWiresByLengthAct->isChecked());
+    setWindowModified(true);
 }
 
 

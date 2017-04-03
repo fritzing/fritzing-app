@@ -2,11 +2,12 @@
 Name=Fritzing
 GenericName=Fritzing
 Comment=Electronic Design Automation software
-Exec=Fritzing
+Comment[fi]=Suunnittele elektronisia kytkentöjä ja piirilevyjä
+Comment[ru]=Программа проектирования электроники
+Exec=Fritzing %F
 Icon=fritzing
 Terminal=false
 Type=Application
 Categories=Development;IDE;Electronics;X-EDA;X-PCB;
-X-SuSE-translate=false
 StartupNotify=true
 MimeType=application/x-fritzing-fz;application/x-fritzing-fzz;application/x-fritzing-fzp;application/x-fritzing-fzpz;application/x-fritzing-fzb;application/x-fritzing-fzbz;application/x-fritzing-fzm;

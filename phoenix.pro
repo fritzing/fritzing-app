@@ -147,7 +147,7 @@ unix {
         translations.files += $$system(find $$PWD/translations -name "*.qm" -size +128c)
     } else {
         for(lang, LINGUAS):translations.files += $$system(find $$PWD/translations -name "fritzing_$${lang}.qm" -size +128c)
-        isEmpty(translations.files):error("No translations found for $$L10N")
+        isEmpty(translations.files):error("No translations found for $$LINGUAS")
     }
 
     syntax.path = $$PKGDATADIR/translations/syntax

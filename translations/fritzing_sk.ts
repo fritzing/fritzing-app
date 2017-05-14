@@ -2374,7 +2374,7 @@ Pracujeme na vyhnutí sa tejto správe a práve Vám neostáva iné než zvoliť
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="393"/>
         <source>loading %1 (breadboard)</source>
-        <translation>načítání %1 (montážní deska)</translation>
+        <translation>načítanie %1 (montážna doska)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="402"/>
@@ -6096,12 +6096,12 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="516"/>
         <source>Loading...</source>
-        <translation>Načítánie...</translation>
+        <translation>Načítanie...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="519"/>
         <source>loading bin &apos;%1&apos;</source>
-        <translation>načítánie zásobníku %1</translation>
+        <translation>načítanie zásobníka %1</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="586"/>

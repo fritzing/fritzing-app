@@ -124,7 +124,7 @@ FixedFontsHash fixFontsMapping(const QSet<QString> fontsTofix, const QString & d
 }
 
 bool removeFontFamilySingleQuotes(QString &fileContent) {
-	static QString pattern = "font-family=\"('[^']*')\"";
+	static QString pattern = "font-family(?:=\"|:)('[^']*')\"?";
 	QSet<QString> wrongFontFamilies = TextUtils::getRegexpCaptures(pattern, fileContent);
 
 	foreach(QString ff, wrongFontFamilies) {

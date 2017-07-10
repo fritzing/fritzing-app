@@ -42,7 +42,6 @@ win32 {
 # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
 # release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
     CONFIG -= embed_manifest_exe
-    INCLUDEPATH += $$[QT_INSTALL_HEADERS]/QtZlib
     DEFINES += _CRT_SECURE_NO_DEPRECATE
     DEFINES += _WINDOWS
     RELEASE_SCRIPT = $$(RELEASE_SCRIPT)    # environment variable set from release script
@@ -88,8 +87,6 @@ macx {
     CONFIG += x86_64 # x86 ppc
     QMAKE_INFO_PLIST = FritzingInfo.plist
     #DEFINES += QT_NO_DEBUG                # uncomment this for xcode
-    LIBS += -lz
-    LIBS += /usr/lib/libz.dylib
     LIBS += /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
     LIBS += /System/Library/Frameworks/Carbon.framework/Carbon
     LIBS += /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
@@ -102,9 +99,6 @@ unix {
             DEFINES += LINUX_64
         } else {
             DEFINES += LINUX_32
-        }
-        !contains(DEFINES, QUAZIP_INSTALLED) {
-            LIBS += -lz
         }
     }
 
@@ -217,6 +211,7 @@ contains(DEFINES, QUAZIP_INSTALLED) {
     INCLUDEPATH += /usr/include/quazip
     LIBS += -lquazip
 } else {
+    include(pri/zlib.pri)
     include(pri/quazip.pri)
 }
 

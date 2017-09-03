@@ -3,8 +3,11 @@
 <via holesize="0.9mm" ringthickness="0.508mm" name="Home Etched Via (0.9mm/0.0354in)" via="1" />
 
 <via holesize="2.2mm" ringthickness="0.0mm" name="M2 screw 2.2mm" hole="1"/>
+<via holesize="2.7mm" ringthickness="0.0mm" name="M2.5 screw 2.7mm" hole="1"/>
 <via holesize="3.2mm" ringthickness="0.0mm" name="M3 screw 3.2mm (Arduino mounting hole)"  holedefault="yes" hole="1" holeringthicknesslow="0in" holeringthicknesshigh="10in" holeholediameterlow="0in" holeholediameterhigh="20.0in"/>
 <via holesize="4.2mm" ringthickness="0.0mm" name="M4 screw 4.2mm" viadefault="yes" hole="1"/>
+<via holesize="6.4mm" ringthickness="0.0mm" name="M6 screw 6.4mm" hole="1"/>
+<via holesize="8.4mm" ringthickness="0.0mm" name="M8 screw 8.4mm" hole="1"/>
 
 <via holesize="0.7mm" ringthickness="0.508mm" name="Small (0.7mm/0.0275in)" pinheader="1"  screwterminal="1" mystery="1"/>
 <via holesize="1.0mm" ringthickness="0.508mm" name="Medium (1.0mm/0.0394in)" pinheader="1" screwterminaldefault="yes"  mysterydefault="yes"  pinheaderdefault="yes" screwterminal="1" mystery="1"

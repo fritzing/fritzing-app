@@ -436,8 +436,8 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
     }
 
 
-	delete edges;
-	delete weights;
+	delete [] edges;
+	delete [] weights;
 
 	return retval;
 }

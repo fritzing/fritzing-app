@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="id_ID">
+<TS version="2.0" language="id_ID">
 <context>
     <name>AboutBox</name>
     <message>
@@ -1140,17 +1140,17 @@ Use the file?</source>
     <message>
         <location filename="../src/program/programtab.cpp" line="90"/>
         <source>Also delete the file</source>
-        <translation type="unfinished"></translation>
+        <translation>Juga hapus berkas ini</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="99"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapus</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="100"/>
         <source>Don&apos;t remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Batal hapus</translation>
     </message>
 </context>
 <context>
@@ -1158,7 +1158,7 @@ Use the file?</source>
     <message>
         <location filename="../src/items/dip.cpp" line="61"/>
         <source>chip label</source>
-        <translation type="unfinished"></translation>
+        <translation>label chip</translation>
     </message>
 </context>
 <context>
@@ -1270,67 +1270,67 @@ Use the file?</source>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="73"/>
         <source>&amp;Close Window</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tutup Jendela</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="74"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="75"/>
         <source>Close the current sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutup sketsa saat ini</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="80"/>
         <source>%1 - %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="134"/>
         <source>Specify a file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentukan nama file</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="243"/>
         <source>Save &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Simpan &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="244"/>
         <source>Do you want to save the changes you made in the document &quot;%1&quot;?</source>
-        <translation type="unfinished"></translation>
+        <translation>Apakah Anda ingin menyimpan perubahan pada dokumen &quot;%1&quot;?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="245"/>
         <source>Your changes will be lost if you don&apos;t save them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Perubahan Anda akan hilang jika Anda tidak menyimpannya.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="224"/>
         <source>Save...</source>
-        <translation type="unfinished"></translation>
+        <translation>Simpan...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="227"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Simpan</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="229"/>
         <source>Don&apos;t Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Jangan Simpan</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="231"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Kembali</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="235"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
 </context>
 <context>
@@ -1349,12 +1349,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/dialogs/groundfillseeddialog.cpp" line="90"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Batal</translation>
     </message>
     <message>
         <location filename="../src/dialogs/groundfillseeddialog.cpp" line="94"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Oke</translation>
     </message>
     <message>
         <location filename="../src/dialogs/groundfillseeddialog.cpp" line="123"/>
@@ -1372,7 +1372,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/hole.cpp" line="289"/>
         <source>hole size</source>
-        <translation type="unfinished"></translation>
+        <translation>ukuran lubang</translation>
     </message>
 </context>
 <context>
@@ -1520,27 +1520,27 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="278"/>
         <source>family</source>
-        <translation type="unfinished"></translation>
+        <translation>keluarga</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="279"/>
         <source>type</source>
-        <translation type="unfinished"></translation>
+        <translation>tipe</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="280"/>
         <source>model</source>
-        <translation type="unfinished"></translation>
+        <translation>model</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="281"/>
         <source>size</source>
-        <translation type="unfinished"></translation>
+        <translation>ukuran</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="282"/>
         <source>color</source>
-        <translation type="unfinished"></translation>
+        <translation>warna</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="283"/>
@@ -1560,23 +1560,23 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="286"/>
         <source>voltage</source>
-        <translation type="unfinished"></translation>
+        <translation>tegangan</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="287"/>
         <source>current</source>
-        <translation type="unfinished"></translation>
+        <translation>arus</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="288"/>
         <source>power</source>
-        <translation type="unfinished"></translation>
+        <translation>daya</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="289"/>
         <location filename="../src/items/itembase.cpp" line="301"/>
         <source>pin spacing</source>
-        <translation type="unfinished"></translation>
+        <translation>jarak pin</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="290"/>
@@ -1596,12 +1596,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="293"/>
         <source>version</source>
-        <translation type="unfinished"></translation>
+        <translation>versi</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="294"/>
         <source>package</source>
-        <translation type="unfinished"></translation>
+        <translation>paket</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="295"/>
@@ -1636,7 +1636,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="302"/>
         <source>frequency</source>
-        <translation type="unfinished"></translation>
+        <translation>frekuensi</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="303"/>
@@ -1646,7 +1646,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="304"/>
         <source>variant</source>
-        <translation type="unfinished"></translation>
+        <translation>variasi</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="305"/>
@@ -1656,32 +1656,32 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="306"/>
         <source>tolerance</source>
-        <translation type="unfinished"></translation>
+        <translation>toleransi</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="307"/>
         <source>descr</source>
-        <translation type="unfinished"></translation>
+        <translation>deskripsi</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="308"/>
         <source>filename</source>
-        <translation type="unfinished"></translation>
+        <translation>nama file</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="309"/>
         <source>title</source>
-        <translation type="unfinished"></translation>
+        <translation>judul</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="310"/>
         <source>date</source>
-        <translation type="unfinished"></translation>
+        <translation>tanggal</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="311"/>
         <source>rev</source>
-        <translation type="unfinished"></translation>
+        <translation>revisi</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="312"/>
@@ -1691,7 +1691,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="313"/>
         <source>project</source>
-        <translation type="unfinished"></translation>
+        <translation>proyek</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="314"/>
@@ -1701,12 +1701,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="315"/>
         <source>top</source>
-        <translation type="unfinished"></translation>
+        <translation>atas</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="316"/>
         <source>bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>bawah</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="317"/>
@@ -1754,12 +1754,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/partseditor/kicadmoduledialog.cpp" line="62"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Batal</translation>
     </message>
     <message>
         <location filename="../src/partseditor/kicadmoduledialog.cpp" line="63"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Oke</translation>
     </message>
 </context>
 <context>
@@ -1775,22 +1775,22 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/note.cpp" line="169"/>
         <source>url:</source>
-        <translation type="unfinished"></translation>
+        <translation>url:</translation>
     </message>
     <message>
         <location filename="../src/items/note.cpp" line="174"/>
         <source>text:</source>
-        <translation type="unfinished"></translation>
+        <translation>teks:</translation>
     </message>
     <message>
         <location filename="../src/items/note.cpp" line="181"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Kembali</translation>
     </message>
     <message>
         <location filename="../src/items/note.cpp" line="182"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Oke</translation>
     </message>
 </context>
 <context>
@@ -1799,22 +1799,22 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/items/logoitem.cpp" line="251"/>
         <location filename="../src/items/logoitem.cpp" line="658"/>
         <source>text</source>
-        <translation type="unfinished"></translation>
+        <translation>teks</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="275"/>
         <source>shape</source>
-        <translation type="unfinished"></translation>
+        <translation>bentuk</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="350"/>
         <source>due to a rendering error</source>
-        <translation type="unfinished"></translation>
+        <translation>dikarenakan error pada saat perenderan</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="364"/>
         <source>because the svg is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>karena berkas SVG kosong</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="369"/>
@@ -1848,43 +1848,43 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow.cpp" line="390"/>
         <source>Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="392"/>
         <source>Alt+Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="394"/>
         <source>Meta+Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Meta+Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="397"/>
         <source>Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="399"/>
         <source>Alt+Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Shift+Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="401"/>
         <source>Meta+Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Meta+Shift+Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="404"/>
         <source>Shift+Ctrl+Tab</source>
         <comment>Toggle Active Layer</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+Tab</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="913"/>
@@ -1895,17 +1895,17 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow.cpp" line="926"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1302"/>
         <source>Rotate</source>
-        <translation type="unfinished"></translation>
+        <translation>Putar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="934"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Bagikan</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="944"/>
         <source>Flip</source>
-        <translation type="unfinished"></translation>
+        <translation>Balikkan</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="952"/>
@@ -1931,18 +1931,18 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1007"/>
         <source>View from Above</source>
-        <translation type="unfinished"></translation>
+        <translation>Tampilan dari Atas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1014"/>
         <source>View from Below</source>
-        <translation type="unfinished"></translation>
+        <translation>Tampilan dari Bawah</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1024"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="909"/>
         <source>Add a note</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambahkan catatan</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1035"/>
@@ -1953,12 +1953,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow.cpp" line="1119"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="168"/>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Siap</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1309"/>
         <source>Save %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Simpan %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1415"/>
@@ -1984,13 +1984,13 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow.cpp" line="1755"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="872"/>
         <source>Specify a file name</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentukan nama file</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2668"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="872"/>
         <source>Fritzing (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing (*%1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1414"/>
@@ -2031,7 +2031,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4309"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4314"/>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="954"/>
@@ -4551,12 +4551,12 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/items/mysterypart.cpp" line="216"/>
         <source>label</source>
-        <translation type="unfinished"></translation>
+        <translation>label</translation>
     </message>
     <message>
         <location filename="../src/items/mysterypart.cpp" line="283"/>
         <source>chip label</source>
-        <translation type="unfinished"></translation>
+        <translation>label chip</translation>
     </message>
 </context>
 <context>
@@ -4572,7 +4572,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/items/note.cpp" line="218"/>
         <source>[write your note here]</source>
-        <translation type="unfinished"></translation>
+        <translation>[tuliskan catatan di sini]</translation>
     </message>
 </context>
 <context>
@@ -5608,12 +5608,12 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partseditor/pesvgview.cpp" line="70"/>
         <source>width:</source>
-        <translation type="unfinished"></translation>
+        <translation>lebar:</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pesvgview.cpp" line="76"/>
         <source>height:</source>
-        <translation type="unfinished"></translation>
+        <translation>tinggi:</translation>
     </message>
 </context>
 <context>
@@ -7954,17 +7954,17 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     <message>
         <location filename="../src/items/ruler.cpp" line="267"/>
         <source>width</source>
-        <translation type="unfinished"></translation>
+        <translation>lebar</translation>
     </message>
     <message>
         <location filename="../src/items/ruler.cpp" line="287"/>
         <source>&amp;cm</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;cm</translation>
     </message>
     <message>
         <location filename="../src/items/ruler.cpp" line="288"/>
         <source>&amp;in</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;in</translation>
     </message>
 </context>
 <context>
@@ -9073,7 +9073,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/version/updatedialog.cpp" line="79"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutup</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="80"/>
@@ -9171,17 +9171,17 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="379"/>
         <source>Recent Sketches</source>
-        <translation type="unfinished"></translation>
+        <translation>Sketsa Terbaru</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="412"/>
         <source>New Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Sketsa Baru</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="420"/>
         <source>Open Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Buka Sketsa</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="465"/>
@@ -9256,32 +9256,32 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="696"/>
         <source>No recent sketches found</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak ada sketsa terbaru</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="735"/>
         <source>Unable to reach blog.fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat menjangkau blog.fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="735"/>
         <source>Unable to reach friting.org/projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak dapat menjangkau fritzing.org/projects</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="942"/>
         <source>Tip of the Day:</source>
-        <translation type="unfinished"></translation>
+        <translation>Saran Hari Ini:</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="969"/>
         <source>All Tips</source>
-        <translation type="unfinished"></translation>
+        <translation>Semua Saran</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="977"/>
         <source>Next Tip</source>
-        <translation type="unfinished"></translation>
+        <translation>Saran Selanjutnya</translation>
     </message>
 </context>
 <context>
@@ -9320,55 +9320,55 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/items/wire.cpp" line="1276"/>
         <location filename="../src/items/wire.cpp" line="1291"/>
         <source>blue</source>
-        <translation type="unfinished"></translation>
+        <translation>biru</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1277"/>
         <location filename="../src/items/wire.cpp" line="1292"/>
         <source>red</source>
-        <translation type="unfinished"></translation>
+        <translation>merah</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1278"/>
         <location filename="../src/items/wire.cpp" line="1293"/>
         <source>black</source>
-        <translation type="unfinished"></translation>
+        <translation>hitam</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1279"/>
         <location filename="../src/items/wire.cpp" line="1294"/>
         <source>yellow</source>
-        <translation type="unfinished"></translation>
+        <translation>kuning</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1280"/>
         <location filename="../src/items/wire.cpp" line="1295"/>
         <source>green</source>
-        <translation type="unfinished"></translation>
+        <translation>hijau</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1281"/>
         <location filename="../src/items/wire.cpp" line="1296"/>
         <source>grey</source>
-        <translation type="unfinished"></translation>
+        <translation>abu-abu</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1282"/>
         <location filename="../src/items/wire.cpp" line="1297"/>
         <source>white</source>
-        <translation type="unfinished"></translation>
+        <translation>putih</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1283"/>
         <location filename="../src/items/wire.cpp" line="1298"/>
         <source>orange</source>
-        <translation type="unfinished"></translation>
+        <translation>jingga</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1284"/>
         <location filename="../src/items/wire.cpp" line="1299"/>
         <source>ochre</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1285"/>
@@ -9380,24 +9380,24 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/items/wire.cpp" line="1286"/>
         <location filename="../src/items/wire.cpp" line="1301"/>
         <source>brown</source>
-        <translation type="unfinished"></translation>
+        <translation>coklat</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1287"/>
         <location filename="../src/items/wire.cpp" line="1302"/>
         <source>purple</source>
-        <translation type="unfinished"></translation>
+        <translation>ungu</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1288"/>
         <location filename="../src/items/wire.cpp" line="1303"/>
         <source>pink</source>
-        <translation type="unfinished"></translation>
+        <translation>merah muda</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1591"/>
         <source>color</source>
-        <translation type="unfinished"></translation>
+        <translation>warna</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1615"/>
@@ -9410,7 +9410,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/utils/zoomslider.cpp" line="160"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
 </context>
 </TS>

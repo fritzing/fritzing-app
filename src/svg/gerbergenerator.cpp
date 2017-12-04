@@ -541,10 +541,10 @@ void GerberPaintEngine::collectFile(QTextStream &output, bool mirrorX) {
                 output << "G36*\n";
                 for (size_t j = 0; j < r.polygon.size(); j++)
                     xyd(output, r.polygon[j].X, r.polygon[j].Y, j == 0 ? 2 : 1, mirrorX);
+                output << "G37*\n";
                 if (r.lightPolarity)
                     output << "%LPD*%\n";
             }
-            output << "G37*\n";
         }
     }
     for(QList<RoundAperture>::iterator i = roundAperturesDefs.begin(); i != roundAperturesDefs.end(); ++i) {

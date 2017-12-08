@@ -228,14 +228,14 @@ void ClipableWire::calcClip(QPointF & p1, QPointF & p2, ConnectorItem * c1, Conn
         //qDebug() << "clause 1" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << c2->calcClipRadius() + (m_pen.width() / 2.0);
         //c1->debugInfo("  c1");
         //c2->debugInfo("  c2");
-		GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius() + (m_pen.width() / 2.0), c2->calcClipRadius() + (m_pen.width() / 2.0));
+		GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius(), c2->calcClipRadius());
 		return;
 	}
 
 	if (c1 != NULL && c1->isEffectivelyCircular()) {
         //qDebug() << "clause 2" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << 0;
         //c1->debugInfo("  c1");
-        GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius() + (m_pen.width() / 2.0), 0);
+        GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius(), 0);
 		p2 = findIntersection(c2, p2);
 		return;
 	}
@@ -243,7 +243,7 @@ void ClipableWire::calcClip(QPointF & p1, QPointF & p2, ConnectorItem * c1, Conn
 	if (c2 != NULL && c2->isEffectivelyCircular()) {
         //qDebug() << "clause 3" << p1 << p2 << 0 << c2->calcClipRadius() + (m_pen.width() / 2.0);
         //c2->debugInfo("  c2");
-        GraphicsUtils::shortenLine(p1, p2, 0, c2->calcClipRadius() + (m_pen.width() / 2.0));
+        GraphicsUtils::shortenLine(p1, p2, 0, c2->calcClipRadius());
 		p1 = findIntersection(c1, p1);
 		return;
 	}

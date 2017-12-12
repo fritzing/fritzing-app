@@ -39,6 +39,7 @@ SOURCES += src/svg/svgfilesplitter.cpp \
     src/svg/svgpathgrammar.cpp \
     src/svg/svgpathlexer.cpp \
     src/svg/svgpathrunner.cpp \
+    src/svg/svg2gerber.cpp \
     src/svg/svgflattener.cpp \
     src/svg/gerbergenerator.cpp \
     src/svg/groundplanegenerator.cpp \

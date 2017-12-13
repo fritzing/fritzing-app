@@ -35,7 +35,7 @@ $Date: 2013-03-10 21:27:34 +0100 (So, 10. Mrz 2013) $
 const double GraphicsUtils::IllustratorDPI = 72;
 const double GraphicsUtils::StandardFritzingDPI = 1000;
 const double GraphicsUtils::SVGDPI = 90;
-const double GraphicsUtils::InchesPerMeter = 39.37007874;
+const double GraphicsUtils::InchesPerMeter = 39.370078;
 const double GraphicsUtils::StandardSchematicSeparationMils = 295.275591;   // 7.5mm
 const double GraphicsUtils::StandardSchematicSeparation10thinMils = 100;   // 0.1 inches
 

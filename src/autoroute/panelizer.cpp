@@ -400,9 +400,10 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 
 			QString suffix = layerThingList.at(i).suffix;
 			DebugDialog::debug("converting " + prefix + " " + suffix);
+			QSizeF svgSize(planePair->panelWidth, planePair->panelHeight);
 			SVG2gerber::ForWhy forWhy = layerThingList.at(i).forWhy;
 			if (forWhy == SVG2gerber::ForMask || forWhy == SVG2gerber::ForPasteMask) forWhy = SVG2gerber::ForCopper;
-            GerberGenerator::exportFile(planePair->svgs.at(i), layerThingList.at(i).name, forWhy, gerberDir.absolutePath(), prefix, suffix);
+			GerberGenerator::doEnd(planePair->svgs.at(i), 2, layerThingList.at(i).name, forWhy, svgSize * GraphicsUtils::StandardFritzingDPI, gerberDir.absolutePath(), prefix, suffix, false);
 			DebugDialog::debug("after converting " + prefix + " " + suffix);
 		}
 
@@ -1541,9 +1542,69 @@ void Panelizer::makeSVGs(MainWindow * mainWindow, ItemBase * board, const QStrin
             renderThing.hideTerminalPoints = true;
             renderThing.selectedItems = renderThing.renderBlocker = false;
 			QString one = mainWindow->pcbView()->renderToSVG(renderThing, board, layerThing.layerList);
-            if (one.isEmpty()) continue;
+					
+			QString clipString;
+		    bool wantText = false;	
+			switch (forWhy) {
+				case SVG2gerber::ForOutline:
+					one = GerberGenerator::cleanOutline(one);
+					break;
+				case SVG2gerber::ForPasteMask:
+					mainWindow->pcbView()->restoreCopperLogoItems(copperLogoItems);
+					mainWindow->pcbView()->restoreCopperLogoItems(holes);
+                    one = mainWindow->pcbView()->makePasteMask(one, board, GraphicsUtils::StandardFritzingDPI, layerThing.layerList);
+                    if (one.isEmpty()) continue;
 
-            TextUtils::writeUtf8(filename, one);
+					forWhy = SVG2gerber::ForCopper;
+                    break;
+				case SVG2gerber::ForMask:
+					mainWindow->pcbView()->restoreCopperLogoItems(copperLogoItems);
+					one = TextUtils::expandAndFill(one, "black", GerberGenerator::MaskClearanceMils * 2);
+					forWhy = SVG2gerber::ForCopper;
+					if (name.contains("bottom")) {
+						maskBottom = one;
+					}
+					else {
+						maskTop = one;
+					}
+					break;
+				case SVG2gerber::ForSilk:
+                    wantText = true;
+					if (name.contains("bottom")) {
+						clipString = maskBottom;
+					}
+					else {
+						clipString = maskTop;
+					}
+					break;
+                case SVG2gerber::ForCopper:
+                case SVG2gerber::ForDrill:
+                    treatAsCircle.clear();
+                    foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->collidingItems(board)) {
+                        ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+                        if (connectorItem == NULL) continue;
+                        if (!connectorItem->isPath()) continue;
+                        if (connectorItem->radius() == 0) continue;
+
+                        treatAsCircle.insert(connectorItem->attachedToID(), connectorItem);
+                    }
+                    wantText = true;
+                    break;
+				default:
+                    wantText = true;
+					break;
+			}
+
+            if (wantText) {
+                collectTexts(one, texts);
+                //DebugDialog::debug("one " + one);
+            }
+					
+            QString two = GerberGenerator::clipToBoard(one, board, name, forWhy, clipString, true, treatAsCircle);
+            treatAsCircle.clear();
+            if (two.isEmpty()) continue;
+
+            TextUtils::writeUtf8(filename, two);
 		}
 
         if (texts.count() > 0) {

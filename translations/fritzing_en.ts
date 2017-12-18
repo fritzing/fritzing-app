@@ -170,7 +170,7 @@
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="156"/>
-        <source>to Nikolay Stankov for the Bulgarian translation, </source>
+        <source>to Nikolay Stankov and Lyubomir Vasilev for the Bulgarian translation, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>

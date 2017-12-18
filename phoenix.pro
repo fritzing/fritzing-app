@@ -211,7 +211,6 @@ include(pri/sketch.pri)
 include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
-include(pri/clipper.pri)
 
 contains(DEFINES, QUAZIP_INSTALLED) {
     INCLUDEPATH += /usr/include/quazip

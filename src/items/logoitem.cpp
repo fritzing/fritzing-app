@@ -37,7 +37,6 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../svg/groundplanegenerator.h"
 #include "../utils/cursormaster.h"
 #include "../debugdialog.h"
-#include "../svg/clipperhelpers.h"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -439,20 +438,20 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 		
         double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
         if (this->m_standardizeColors) {
-            QString path = imageToSVGPath(image, 1);
-            QString svgDoc = TextUtils::makeSVGHeader(1, res, image.width() / res, image.height() / res)
-                    +"<g id='"+layerName()+"'>"
-                    + path
-                    +"</g>"
-                    + "</svg>";
-            QDomDocument doc;
-            QStringList exceptions;
-            exceptions << "none" << "";
-            QString toColor(colorString());
-            QDomElement element = doc.documentElement();
-            SvgFileSplitter::changeColors(element, toColor, exceptions);
-            TextUtils::mergeSvg(doc, svgDoc, layerName());
-            svg = TextUtils::mergeSvgFinish(doc);
+		    GroundPlaneGenerator gpg;
+		    gpg.setLayerName(layerName());
+		    gpg.setMinRunSize(1, 1);
+		    gpg.scanImage(image, image.width(), image.height(), 1, res, colorString(), false, false, QSizeF(0, 0), 0, QPointF(0, 0));
+		    if (gpg.newSVGs().count() < 1) {
+			    FMessageBox::information(
+				    NULL,
+				    tr("Unable to display"),
+				    tr("Unable to display image from %1").arg(fileName)
+			    );
+			    return;
+		    }
+
+            svg = gpg.mergeSVGs("", layerName());
         }
         else {
             svg = TextUtils::makeSVGHeader(res, res, image.width(), image.height());

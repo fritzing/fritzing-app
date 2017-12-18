@@ -202,6 +202,7 @@ protected:
 protected slots:
 	void alignJumperItem(class JumperItem *, QPointF &);
     void wireSplitSlot(class Wire*, QPointF newPos, QPointF oldPos, const QLineF & oldLine);
+	void postImageSlot(class GroundPlaneGenerator *, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> *);
     void gotFabQuote(QNetworkReply *);
     void requestQuoteNow();
     void getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);

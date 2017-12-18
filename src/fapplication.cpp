@@ -88,6 +88,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include <QNetworkRequest>
 #include <QMultiHash>
 #include <QTemporaryFile>
+#include <QDir>
 #include <time.h>
 
 #ifdef LINUX_32
@@ -311,7 +312,7 @@ ReferenceModel * RegenerateDatabaseThread::referenceModel() const {
 }
 
 void RegenerateDatabaseThread::run() {
-    QTemporaryFile file("XXXXXX.db");
+    QTemporaryFile file(QString("%1/XXXXXX.db").arg(QDir::tempPath()));
     QString fileName;
     if (file.open()) {
         fileName = file.fileName();

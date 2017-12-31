@@ -21,7 +21,7 @@ echo $builddir
 
 echo ">> building fritzing from working directory"
 $QTBIN/qmake -o Makefile phoenix.pro
-make release  # release is the type of build
+make "-j$(sysctl -n machdep.cpu.thread_count)" release  # release is the type of build
 cp -r $builddir/Fritzing.app $deploydir
 
 echo ">> add .app dependencies"

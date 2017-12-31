@@ -600,7 +600,9 @@ bool FApplication::init() {
 	PaletteModel::initNames();
 	SvgIconWidget::initNames();
 	PinHeader::initNames();
-	CursorMaster::initCursors();
+	if (m_serviceType == NoService) {
+		CursorMaster::initCursors();
+	}
 
 #ifdef Q_OS_MAC
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)) || defined(QT_MAC_USE_COCOA)

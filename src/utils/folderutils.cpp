@@ -152,8 +152,8 @@ QString FolderUtils::getTopLevelDocumentsPath() {
 }
 
 QString FolderUtils::getUserBinsPath() {
-    QDir dir(getTopLevelDocumentsPath());
-    return dir.absoluteFilePath("bins");
+    QDir dir(getTopLevelDocumentsPath() + "/bins");
+    return QFileInfo(dir, "").absoluteFilePath();
 }
 
 QString FolderUtils::getUserPartsPath() {

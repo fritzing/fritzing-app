@@ -1900,7 +1900,17 @@ ModelPart* MainWindow::copyToPartsFolder(const QFileInfo& file, bool addToAlien,
 		}
 	}
 	ModelPart *mp = m_referenceModel->loadPart(destFilePath, true);
-	mp->setAlien(true);
+	if (mp != NULL) {
+		mp->setAlien(true);
+	} else {
+		// Part load failed, remove modified files before proceeding.
+                foreach(QString pathToRemove, m_alienFiles) {
+                        QFile::remove(pathToRemove);
+                }
+                m_alienFiles.clear();
+                recoverBackupedFiles();
+                emit alienPartsDismissed();
+	}
 
 	return mp;
 }

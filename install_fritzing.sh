@@ -190,6 +190,7 @@ echo "Doing final touch..."
 sed -i "s/icons\/fritzing_icon.png/${APP_ICON}/" fritzing.desktop
 cp fritzing.desktop "$APPS"
 cp icons/fritzing_icon.png "$APP_ICON"
+
 # update databases
 echo "Updating databases..."
 update-desktop-database "$APPS"

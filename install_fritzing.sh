@@ -181,6 +181,9 @@ xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/f
 xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzm_icon256.png' application-x-fritzing-fzm
 echo "Installed Fritzing system icons"
 
+echo "Copying fritzing.desktop ..."
+cp fritzing.desktop "$APPS"
+
 echo "Making symlinks..."
 ln -s $(realpath ./Fritzing) "$BIN"/Fritzing
 

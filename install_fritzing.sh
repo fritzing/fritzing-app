@@ -83,6 +83,7 @@ case $MODE in
     'user')
         MIMEDIR=~/.local/share/mime
         APPS=~/.local/share/applications
+        APP_ICON=~/.local/share/icons/hicolor/128x128/apps/fritzing.png
         MIMES=~/.mime.types
         TARGET=~/.local/share/fritzing
         BIN=~/.local/bin
@@ -96,6 +97,7 @@ case $MODE in
         APPS=/usr/share/applications
         MIMES=/etc/mime.types
         TARGET=/usr/share/fritzing
+        APP_ICON=/usr/share/icons/hicolor/128x128/apps/fritzing.png
         BIN=/usr/bin
 
         # Back-up /etc/mime.types
@@ -181,11 +183,13 @@ xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/f
 xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzm_icon256.png' application-x-fritzing-fzm
 echo "Installed Fritzing system icons"
 
-echo "Copying fritzing.desktop ..."
-cp fritzing.desktop "$APPS"
-
 echo "Making symlinks..."
 ln -s $(realpath ./Fritzing) "$BIN"/Fritzing
+
+echo "Doing final touch..."
+sed -i "s/icons\/fritzing_icon.png/${APP_ICON}/" fritzing.desktop
+cp fritzing.desktop "$APPS"
+cp icons/fritzing_icon.png "$APP_ICON"
 
 # update databases
 echo "Updating databases..."

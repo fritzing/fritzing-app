@@ -187,7 +187,8 @@ echo "Making symlinks..."
 ln -s $(realpath ./Fritzing) "$BIN"/Fritzing
 
 echo "Doing final touch..."
-sed -i "s/icons\/fritzing_icon.png/${APP_ICON}/" fritzing.desktop
+APP_ICON_ESC="$(echo "$APP_ICON" | sed 's/\//\\\//g')"
+sed -i "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" fritzing.desktop
 cp fritzing.desktop "$APPS"
 cp icons/fritzing_icon.png "$APP_ICON"
 

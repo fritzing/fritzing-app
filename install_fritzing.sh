@@ -162,43 +162,84 @@ if [[ "$MODE" == "system" ]]; then
     echo -e "\n"
 fi
 
-# install Fritzing into mime directory
+# install Fritzing into MIME directory
 echo "Installing Fritzing MIME types..."
-xdg-mime install --mode "$MODE" 'icons/x-fritzing-fz.xml'
-xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzz.xml'
-xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzp.xml'
-xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzpz.xml'
-xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzb.xml'
-xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzbz.xml'
-xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzm.xml'
+{
+    xdg-mime install --mode "$MODE" 'icons/x-fritzing-fz.xml' && \
+    xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzz.xml' && \
+    xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzp.xml' && \
+    xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzpz.xml' && \
+    xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzb.xml' && \
+    xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzbz.xml' && \
+    xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzm.xml' ;
+}
+case $? in
+    0)
+        echo "-- TASK ENDED SUCCESSFULLY! --"
+        ;;
+    1)
+        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo -e "-*-*-*-*-*-*-*-\n"
+        exit 1
+        ;;
+    esac
+echo -e "-*-*-*-*-*-*-*-\n"
 
 # set the default application to fritzing.desktop
 echo "Setting up default application -> fritzing.desktop"
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fz
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzz
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzp
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzpz
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzb
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzbz
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzm
+echo "-*-*-*-*-*-*-*-"
+{
+    xdg-mime default 'fritzing.desktop' application/x-fritzing-fz && \
+    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzz && \
+    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzp && \
+    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzpz && \
+    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzb && \
+    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzbz && \
+    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzm ;
+}
+case $? in
+    0)
+        echo "-- TASK ENDED SUCCESSFULLY! --"
+        ;;
+    1)
+        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo -e "-*-*-*-*-*-*-*-\n"
+        exit 1
+        ;;
+    esac
+echo -e "-*-*-*-*-*-*-*-\n"
 
 # install image-files into mime system with specified size
 echo "Installing Fritzing system icons..."
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fz_icon128.png' application-x-fritzing-fz
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fz_icon256.png' application-x-fritzing-fz
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzz_icon128.png' application-x-fritzing-fzz
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzz_icon256.png' application-x-fritzing-fzz
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzp_icon128.png' application-x-fritzing-fzp
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzp_icon256.png' application-x-fritzing-fzp
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzpz_icon128.png' application-x-fritzing-fzpz
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzpz_icon256.png' application-x-fritzing-fzpz
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzb_icon128.png' application-x-fritzing-fzb
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzb_icon256.png' application-x-fritzing-fzb
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzbz_icon128.png' application-x-fritzing-fzbz
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzbz_icon256.png' application-x-fritzing-fzbz
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzm_icon128.png' application-x-fritzing-fzm
-xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzm_icon256.png' application-x-fritzing-fzm
-echo "Installed Fritzing system icons."
+echo "-*-*-*-*-*-*-*-"
+
+{
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fz_icon128.png' application-x-fritzing-fz && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fz_icon256.png' application-x-fritzing-fz && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzz_icon128.png' application-x-fritzing-fzz && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzz_icon256.png' application-x-fritzing-fzz && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzp_icon128.png' application-x-fritzing-fzp && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzp_icon256.png' application-x-fritzing-fzp && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzpz_icon128.png' application-x-fritzing-fzpz && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzpz_icon256.png' application-x-fritzing-fzpz && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzb_icon128.png' application-x-fritzing-fzb && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzb_icon256.png' application-x-fritzing-fzb && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzbz_icon128.png' application-x-fritzing-fzbz && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzbz_icon256.png' application-x-fritzing-fzbz && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzm_icon128.png' application-x-fritzing-fzm && \
+    xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzm_icon256.png' application-x-fritzing-fzm ;
+}
+case $? in
+    0)
+        echo "-- TASK ENDED SUCCESSFULLY! --"
+        ;;
+    1)
+        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo -e "-*-*-*-*-*-*-*-\n"
+        exit 1
+        ;;
+    esac
+echo -e "-*-*-*-*-*-*-*-\n"
 
 echo "Making symlinks..."
 ln -s "$(realpath ./Fritzing)" "$BIN"/Fritzing 2>/dev/null
@@ -218,6 +259,7 @@ cat fritzing.desktop | sed "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" > fritz
 # Install Fritzing desktop application
 cp fritzing.use "$APPS"/fritzing.desktop
 cp icons/fritzing_icon.png "$APP_ICON"
+rm -f fritzing.use
 
 # update databases
 echo "Updating databases..."

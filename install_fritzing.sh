@@ -1,8 +1,12 @@
 #!/bin/bash
 #
-# this is a rough beginning of a Linux install script for fritzing
-# sets up document icons and file associations using mime types
+# This is a rough beginning of a Linux install script for Fritzing
+#
+# sets up document icons and file associations using mime types,
+# and installs Fritzing to target.
+#
 
+# Initial variables
 APPDIR="$(dirname "$0")"
 PROG="$(basename "$0")"
 APPVER="0.9.3b"
@@ -67,12 +71,6 @@ elif [[ "$ID" -ne 0 || "$USERMODE" = "true" ]]; then
     MODE="user"
 fi
 
-# Bug-A-Salt! [no copyright strikes pls ;(]
-if [[ "$MODE" == "n/a" ]]; then
-    echo "If you see !!THIS!! message, then you have a bug!" >&2
-    exit 1
-fi
-
 if [[ "$MODE" == "system" && "$ID" -ne 0 ]]; then
     echo "(exit 1) Cannot install in system mode. Must be root!" >&2
     exit 1
@@ -85,24 +83,28 @@ case $MODE in
         APPS=~/.local/share/applications
         APP_ICON=~/.local/share/icons/hicolor/128x128/apps/fritzing.png
         MIMES=~/.mime.types
-        TARGET=~/.local/share/fritzing
+        FRITZ_DIR=~/.local/share/fritzing
         BIN=~/.local/bin
 
         # Back-up ~/.mime.types
-        echo ":: Copying ~/.mime.types -> ~/.mime.types.bak"
+        echo " Copying ~/.mime.types -> ~/.mime.types.bak"
         cp "$MIMES" "${MIMES}.bak";;
 
     'system')
         MIMEDIR=/usr/share/mime
         APPS=/usr/share/applications
         MIMES=/etc/mime.types
-        TARGET=/usr/share/fritzing
+        FRITZ_DIR=/usr/share/fritzing
         APP_ICON=/usr/share/icons/hicolor/128x128/apps/fritzing.png
         BIN=/usr/bin
 
         # Back-up /etc/mime.types
-        echo ":: Copying /etc/mime.types -> /etc/mime.types.bak"
+        echo "Copying /etc/mime.types -> /etc/mime.types.bak"
         cp "$MIMES" "${MIMES}.bak"
+        ;;
+    '')
+        echo "Sorry, but you might have a bug!" >&2
+        exit 1
         ;;
     esac
 
@@ -113,21 +115,25 @@ if [[ ! -f ~/.mime.types && "$MODE" == "user" ]]; then
     touch ~/.mime.types
 fi
 
-if [[ ! -d "$TARGET" ]]; then
-    rm -rf "$TARGET"
-    mkdir -p "$TARGET"
+# Fritzing target directory
+if [[ ! -d "$FRITZ_DIR" ]]; then
+    rm -rf "$FRITZ_DIR"
+    mkdir -p "$FRITZ_DIR"
 fi
 
+# Executable(s) folder
 if [[ ! -d "$BIN" ]]; then
     mkdir -p "$BIN"
 fi
 
 # add mime types for fritzing file formats
-grep -q 'application/x-fritzing' ~/.mime.types
+grep -q 'application/x-fritzing' "$MIMES"
 if [ $? -eq 0 ]; then
-    echo "Fritzing MIME types already registered"
+    echo "Fritzing MIME types already registered!"
 else
     echo "Registering Fritzing MIME types..."
+
+    # This is the "correct" syntax
     {
         echo -e "application/x-fritzing-fz\t\t\tfritzing" ;
         echo -e "application/x-fritzing-fzz\t\t\tfritzing" ;
@@ -136,17 +142,28 @@ else
         echo -e "application/x-fritzing-fzb\t\t\tfritzing" ;
         echo -e "application/x-fritzing-fzbz\t\t\tfritzing" ;
         echo -e "application/x-fritzing-fzm\t\t\tfritzing" ;
-    } >> ~/.mime.types
+    } >> "$MIMES"
 fi
 
+# Install / copy Fritzing to target
 echo "Copying Fritzing data..."
-cp -Rp "$APPDIR" "$TARGET"
+cp -Rp "$APPDIR" "$FRITZ_DIR"
 
-echo "Entering $(basename "$TARGET")/" | tr -s "/"
-cd "$TARGET"
+# Enter installation/Fritzing directory
+echo "Entering $(basename "$FRITZ_DIR")/" | tr -s "/"
+cd "$FRITZ_DIR"
+
+# If installing in system mode, notify user that
+# it will take a long time.
+if [[ "$MODE" == "system" ]]; then
+    echo -e "\n"
+    echo ":: INSTALLING IN SYSTEM MODE. IT WILL TAKE A LONG TIME!"
+    echo "PLEASE BE PATIENT..."
+    echo -e "\n"
+fi
 
 # install Fritzing into mime directory
-echo "Installing Fritzing mime types..."
+echo "Installing Fritzing MIME types..."
 xdg-mime install --mode "$MODE" 'icons/x-fritzing-fz.xml'
 xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzz.xml'
 xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzp.xml'
@@ -181,15 +198,25 @@ xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/f
 xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzbz_icon256.png' application-x-fritzing-fzbz
 xdg-icon-resource install --mode "$MODE" --context mimetypes --size 128 'icons/fzm_icon128.png' application-x-fritzing-fzm
 xdg-icon-resource install --mode "$MODE" --context mimetypes --size 256 'icons/fzm_icon256.png' application-x-fritzing-fzm
-echo "Installed Fritzing system icons"
+echo "Installed Fritzing system icons."
 
 echo "Making symlinks..."
-ln -s $(realpath ./Fritzing) "$BIN"/Fritzing
+ln -s "$(realpath ./Fritzing)" "$BIN"/Fritzing 2>/dev/null
+
+if [ $? -ne 0 ]; then
+    echo "Symlinks already exists! (or linking failed...)" >&2
+fi
 
 echo "Doing final touch..."
+
+# Escape all forward slashes to make `sed` stable
 APP_ICON_ESC="$(echo "$APP_ICON" | sed 's/\//\\\//g')"
-sed -i "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" fritzing.desktop
-cp fritzing.desktop "$APPS"
+
+# Modify Fritzing desktop executable [keep original]
+cat fritzing.desktop | sed "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" > fritzing.use
+
+# Install Fritzing desktop application
+cp fritzing.use "$APPS"/fritzing.desktop
 cp icons/fritzing_icon.png "$APP_ICON"
 
 # update databases

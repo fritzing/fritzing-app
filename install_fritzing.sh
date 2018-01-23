@@ -2,7 +2,7 @@
 #
 # This is a rough beginning of a Linux install script for Fritzing
 #
-# sets up document icons and file associations using mime types,
+# Sets up document icons and file associations (MIME types),
 # and installs Fritzing to target.
 #
 
@@ -39,6 +39,15 @@ arg_err() {
     show_help
     echo "(exit 1) Unknown argument: $*" >&2
     exit 1
+}
+
+esc_path() {
+    if [[ ! "$*" ]]; then
+        sed 's/\//\\\//g'
+        return
+    fi
+
+    echo "$*" | sed 's/\//\\\//g'
 }
 
 # Parse arguments
@@ -251,18 +260,24 @@ fi
 echo "Doing final touch..."
 
 # Escape all forward slashes to make `sed` stable
-APP_ICON_ESC="$(echo "$APP_ICON" | sed 's/\//\\\//g')"
+APP_ICON_ESC="$(esc_path "$APP_ICON")"
 
 # Modify Fritzing desktop executable [keep original]
-cat fritzing.desktop | sed "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" > fritzing.use
+sed -i.use "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" fritzing.desktop
 
 # Install Fritzing desktop application
 cp fritzing.use "$APPS"/fritzing.desktop
 cp icons/fritzing_icon.png "$APP_ICON"
 rm -f fritzing.use
 
-#TODO:  Uninstall script.
+# TODO: Uninstall script.
 
+# Escape all paths [forward slashes] to make `sed` stable
+MIMES_ESC="$(esc_path "$MIMES")"
+MIMEDIR_ESC="$(esc_path "$MIMEDIR")"
+FRITZ_DIR_ESC="$(esc_path "$FRITZ_DIR")"
+APPS_ESC="$(esc_path "$APPS")"
+BIN_ESC="$(esc_path "$BIN")"
 
 # update databases
 echo "Updating databases..."

@@ -54,7 +54,7 @@ for i in $ARGS; do
         '-u' | '--user')
             USERMODE="true"
             ;;
-        '-*' | '--*')
+        -* | --*)
             arg_err "$i"
             exit 1
             ;;
@@ -260,6 +260,9 @@ cat fritzing.desktop | sed "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" > fritz
 cp fritzing.use "$APPS"/fritzing.desktop
 cp icons/fritzing_icon.png "$APP_ICON"
 rm -f fritzing.use
+
+#TODO:  Uninstall script.
+
 
 # update databases
 echo "Updating databases..."

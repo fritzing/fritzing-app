@@ -67,7 +67,10 @@ done
 
 if [[ "$ACTIVATE" != "true" ]]; then
     echo "(exit 1) Uninstall script not yet activated!" >&2
+<<<<<<< HEAD
     exit 1
+=======
+>>>>>>> 59f08c0c4cf25df8c92a89ced1798cf7901dfe8f
 fi
 
 if [[ "$MODE" == "system" && "$ID" -ne 0 ]]; then

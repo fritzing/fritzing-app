@@ -173,6 +173,7 @@ fi
 
 # install Fritzing into MIME directory
 echo "Installing Fritzing MIME types..."
+echo "-*-*-*-*-*-*-*-"
 {
     xdg-mime install --mode "$MODE" 'icons/x-fritzing-fz.xml' && \
     xdg-mime install --mode "$MODE" 'icons/x-fritzing-fzz.xml' && \
@@ -266,9 +267,9 @@ APP_ICON_ESC="$(esc_path "$APP_ICON")"
 sed -i.use "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" fritzing.desktop
 
 # Install Fritzing desktop application
-cp fritzing.use "$APPS"/fritzing.desktop
+cp fritzing.desktop.use "$APPS"/fritzing.desktop
 cp icons/fritzing_icon.png "$APP_ICON"
-rm -f fritzing.use
+rm -f fritzing.desktop.use
 
 # TODO: Uninstall script.
 
@@ -278,6 +279,35 @@ MIMEDIR_ESC="$(esc_path "$MIMEDIR")"
 FRITZ_DIR_ESC="$(esc_path "$FRITZ_DIR")"
 APPS_ESC="$(esc_path "$APPS")"
 BIN_ESC="$(esc_path "$BIN")"
+
+DEVSTAT="$(grep 'DEVSTAT' uninstall_fritzing.sh | cut -d '=' -f 2 | tr -d '"')"
+
+# Substitute all variables
+cp uninstall_fritzing.sh uninstall_fritzing.use
+
+# NOTE: Do not put a '$' before the placeholder brackets!
+# How I did it: sed -i "s/{placeholder}/$VARIABLE/(g if neccessary)" <file>
+#
+sed -i "s/{mode}/$MODE/" uninstall_fritzing.use
+sed -i "s/{fritz-dir}/${FRITZ_DIR_ESC}/" uninstall_fritzing.use
+sed -i "s/{mimedir}/${MIMEDIR_ESC}/" uninstall_fritzing.use
+sed -i "s/{mimes}/${MIMES_ESC}/" uninstall_fritzing.use
+sed -i "s/{app-dir}/${APPS_ESC}/" uninstall_fritzing.use
+sed -i "s/{bin}/${BIN_ESC}/" uninstall_fritzing.use
+
+# Activate/validate uninstall script
+if [[ "$DEVSTAT" == '<in_dev>' ]]; then
+    echo "(warn) Uninstall script still in development!" >&2
+
+    # No-op (do not activate!)
+else
+    echo "Activating uninstall script..."
+    sed -i "s/{stat}/true/" uninstall_fritzing.use
+    echo "Activated!"
+    echo
+fi
+
+cp uninstall_fritzing.use "$BIN"/uninstall_fritzing.sh
 
 # update databases
 echo "Updating databases..."

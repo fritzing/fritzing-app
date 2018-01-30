@@ -2960,9 +2960,17 @@ QString MainWindow::getStyleSheetSuffix() {
     return "fritzing";
 }
 
-void MainWindow::addToMyParts(ModelPart * modelPart)
+void MainWindow::addToMyParts(ModelPart * modelPart, QStringList & m_peAlienFiles)
 {
-    if (modelPart != NULL) m_binManager->addToMyParts(modelPart);
+    if (modelPart != NULL) {
+        foreach(QString pathToAddFromPe, m_peAlienFiles) {
+            // DebugDialog::debug(QString("addToMyParts adding  %1")
+            //.arg(pathToAddFromPe));
+            m_alienFiles << pathToAddFromPe;
+            m_alienPartsMsg = tr("Do you want to keep the imported parts?");
+        }
+    }
+	m_binManager->addToMyParts(modelPart);
 }
 
 bool MainWindow::anyUsePart(const QString & moduleID) {

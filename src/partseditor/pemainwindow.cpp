@@ -2296,6 +2296,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 		setImageAttribute(layers, svgPath);
 
         QString actualPath = m_userPartsFolderSvgPath + svgPath; 
+	m_peAlienFiles << actualPath;
         bool result = writeXml(actualPath, removeGorn(svg), false);
         if (!result) {
             // TODO: warn user
@@ -2306,6 +2307,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 	QString suffix = QString("%1_%2_%3").arg(m_prefix).arg(m_guid).arg(m_fileIndex++);
     QString fzpPath = dir.absoluteFilePath(QString("%1.fzp").arg(suffix));  
 
+    m_peAlienFiles << fzpPath;
     if (overWrite) {
         fzpPath = m_originalFzpPath;
     }
@@ -2344,7 +2346,8 @@ bool PEMainWindow::saveAs(bool overWrite)
     ModelPart * modelPart = m_referenceModel->retrieveModelPart(m_originalModuleID);
     if (modelPart == NULL) {
 	    modelPart = m_referenceModel->loadPart(fzpPath, true);
-        emit addToMyPartsSignal(modelPart);
+	modelPart->setAlien(true);
+        emit addToMyPartsSignal(modelPart, m_peAlienFiles);
 	}
     else {
         m_referenceModel->reloadPart(fzpPath, m_originalModuleID);

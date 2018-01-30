@@ -2357,7 +2357,7 @@ void MainWindow::openNewPartsEditor(PaletteItem * paletteItem)
    if (peMainWindow->setInitialItem(paletteItem)) {   
 	    peMainWindow->show();
 	    peMainWindow->raise();
-        connect(peMainWindow, SIGNAL(addToMyPartsSignal(ModelPart *)), this, SLOT(addToMyParts(ModelPart *)));
+        connect(peMainWindow, SIGNAL(addToMyPartsSignal(ModelPart *, QStringList &)), this, SLOT(addToMyParts(ModelPart *, QStringList &)));
    }
    else {
        delete peMainWindow;

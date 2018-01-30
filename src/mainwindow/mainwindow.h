@@ -456,7 +456,7 @@ protected slots:
 
     void keepMargins();
 	void dockChangeActivation(bool activate, QWidget * originator);
-    void addToMyParts(ModelPart *);
+    void addToMyParts(ModelPart *, QStringList &);
     void hidePartSilkscreen();
     void fabQuote();
     void findPartInSketch();
@@ -905,6 +905,7 @@ protected:
     bool m_restarting;
 
     QStringList m_alienFiles;
+    QStringList m_peAlienFiles;
     QString m_alienPartsMsg;
     QStringList m_filesReplacedByAlienOnes;
 

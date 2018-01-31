@@ -271,8 +271,6 @@ cp fritzing.desktop.use "$APPS"/fritzing.desktop
 cp icons/fritzing_icon.png "$APP_ICON"
 rm -f fritzing.desktop.use
 
-# TODO: Uninstall script.
-
 # Escape all paths [forward slashes] to make `sed` stable
 MIMES_ESC="$(esc_path "$MIMES")"
 MIMEDIR_ESC="$(esc_path "$MIMEDIR")"

@@ -11,7 +11,7 @@ ID="$(id -u)"
 ARGS="$*"
 
 # TODO: remove marker when finished
-DEVSTAT="<in_dev>"
+DEVSTAT=""
 export DEVSTAT
 
 # Variables [template]
@@ -163,6 +163,11 @@ rm -f "$APPS"/fritzing.desktop
 echo "Updating databases..."
 update-desktop-database "$APPS"
 update-mime-database "$MIMEDIR"
+
+echo "-*-*-*-*-*-*-"
+echo "UNINSTALLED!"
+echo "-*-*-*-*-*-*-"
+echo
 
 # -- SCRIPT END-OF-LIFE <you know, self-destruction> -- #
 echo "Removing residues..."

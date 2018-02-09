@@ -1,50 +1,50 @@
 # Fritzing
 
-The Fritzing application is an Electronic Design Automation software with a low entry barrier, suited for the needs of makers and hobbyists. It offers a unique real-life "breadboard" view, and a parts library with many commonly used high-level components. Fritzing makes it very easy to communicate about circuits, as well as to turn them into PCB layouts ready for production. It is particularly popular among Arduino and Raspberry Pi users, and is widely used in education and creative tinkering.
+Ang Fritzing application ay isang Electronic Design Auromation software na madaling pasukin, sakto sa mga manggagawa o hobbyist.ito ay nag ooffer ng isang kakaibang mala buhay na "breadboard", at ang bahaging library na may maraming common na high-level components na magagamit. Ang Fritzing ay nag papadali ng komunikasyon tungkol sa circuits, pati na ang pag lipat nito sa PCB layouts na handa na sa produksyon
 
-* For more information on Fritzing and its related activities, visit [http://fritzing.org](http://fritzing.org). There you can also [download](http://fritzing.org/download) the latest releases for all platforms and get help on getting started.
+* Para sa ibang impormasyon tungkol sa Fritzing at sa mga iba nitong gawain, bisitahin ang[http://fritzing.org](http://fritzing.org). There you can also [download](http://fritzing.org/download) ang bagong labas pra sa lahat ng plataporma at makakuha ng tulong sa pag simula.
 
-* To report a problem or suggest improvements, use the [issue tracker](https://github.com/fritzing/fritzing-app/issues) or the [user forum](http://forum.fritzing.org)
+* Para mag report ng problema or mag bigay ng suhesyon, gamitin ang [issue tracker](https://github.com/fritzing/fritzing-app/issues) or the [user forum](http://forum.fritzing.org)
 
-* If you would like to help with the development, please take a look at the [developer instructions](https://github.com/fritzing/fritzing-app/wiki). This includes information about how to compile and run the Fritzing app in a few steps.
-
+* Kung gusto mong tumulong sa development, paki tignan ang [developer instructions](https://github.com/fritzing/fritzing-app/wiki). Ito ay may impormasyon tungkol sa kung paano mag tala at patakbuhin ang Fritzing app sa iilang hakbang lang.
 
 # Folder Structure
 
-* **bins** - Part bins (.fzb, aka part libraries) are collections of parts, most importantly the "core" parts bin, and vendor-specific collections.
 
-* **help** - End-user documentation included with the app. This should really be moved back to the website.
+* **bins** - Part bins (.fzb, aka part libraries) ay mga coleksyon ng mga parte, lalong-lalo na ang "core" parts bin, at vendor-specific collections.
 
-* **parts** - All the part definitions, including meta data (.fzp) and graphics (.svg), as well as some utility tools. They are kept in a separate repository at [https://github.com/fritzing/fritzing-parts](http://github.com/fritzing/fritzing-parts) and only linked from here.
+* **help** - Tapos-dokyumentasyon ng manggagawa ay kasali sa app. Ito ay kailangang mailipay sa website.
 
-* **pri** - Submodule definitions for Qt
+* **parts** - Ang lahat ng bahaging depenasyon, kasali ang meta data (.fzp) at graphics (.svg), pati na ang ibang utlity tools. Ito ay itinatago sa ibang repository sa https://github.com/fritzing/fritzing-parts](http://github.com/fritzing/fritzing-parts) at dito lang naka link.
 
-* **resources** - Binaries and definitions that are supposed to not be touched by users, such as fonts, images, special parts, etc.
+* **pri** - Depenasyon ng submodule ng Qt
 
-* **sketches** - Example circuits/sketches shipped with the application
+* **resources** - Binaries at depenasyon na di dapat ginagalaw ng users, tulad ng fonts, emahe, special parts, etc.
 
-* **src** - Application logic!
+* **sketches** - Halimbawa circuits/sketches ay dala ng aplikasyon
 
-* **tools** - Utility tools for making releases, converting parts, etc.
+* **src** - Logic ng aplikasyon!
 
-* **translations** - Language translations
+* **tools** - Utility tools para sa pagpapakawala, conbersyon ng bahagi, etc.
+
+* **translations** - Pagsasalin ng lingwahe
 
 
 # Credits
 
-The Fritzing app is maintained by the Friends-of-Fritzing e.V., a non-profit foundation based in Berlin, Germany. The project has grown out of a state-funded research project at the [Interaction Design Lab](http://idl.fh-potsdam.de) at [Potsdam University of Applied Sciences](http://fh-potsdam.de).
+Ang Fritzing app ay pinapanatili ng Friends-of-Fritzing e.V., isang non-profit na pundasyon na naka base sa Berlin, Germany. Ang proyekto ay lumago sa isang state-funded na proyektong pananaliksik sa [Interaction Design Lab](http://idl.fh-potsdam.de) sa [Potsdam University of Applied Sciences](http://fh-potsdam.de).
 
-The core team consists of Prof. Reto Wettach, André Knörig, Jonathan Cohen, and Stefan Hermann. Many [fantastic people](http://fritzing.org/about/people/) have contributed to it over the years.
+Ang core team ay binubuo nila Prof. Reto Wettach, André Knörig, Jonathan Cohen, at Stefan Herman. Maraming [magagaling na tao](http://fritzing.org/about/people/) na nakapag-ambag dito sa buong taon.
 
-The Fritzing app is written on top of the [Qt cross-platform framework](http://qt-project.org).
+Ang Fritzing app ay isinulat sa ibabaw ng [Qt cross-platform framework](http://qt-project.org).
 
 
 # Licensing
 
-The source code of Fritzing is licensed under GNU GPL v3, the documentation and part designs under Creative Commons Attribution-ShareALike 3.0 Unported. The full text of these licenses are shipped with this download.
 
-This means that you can create your own variation of Fritzing, as long as you credit us and also publish it under GPL. Similarly, you may re-publish our documentation, as long as you credit us, and publish it under the same 
-license. You may publish circuits and diagrams that you create with Fritzing and that use our graphics, again as long as you credit us, and 
-publish your works under the same license.  A credit can be as simple as "this image was created with Fritzing."
+Ang pinagmulang ng code ng Fritzing ay lisensydo sa ilalim ng GNU GPL v3, ang dokumentasyon at part design sa ilalim ng Creative Commons Attribution-ShareALike 3.0 Unported. Ang buonf teksto nitong lisensya ay dala kasama nitong download.
 
-Look up [our FAQs](http://fritzing.org/faq/) for more details on licensing.
+Ito nangangahulugang na makakagawa ka ng sarili mong baryasyon ng Fritzing, hanggat nagbibigay ka ng krideto sa amin at pati sa paglathala sa ilalim ng ngGpl. Katulad ng, pwede mong ilathala ulit ang aming dokumentasyon, hanggat nagbibigay ka ng krideto sa amin at pati na sa paglathala sa ilalim ng kaparehong lesinsya. Pwede kang maglathala ng circuits at diagram na iyong ginawa sa Fritzing na gumagamit sa aming graphics, sa ulit, hanggat nagbibigay ka ng kredito sa amin, at maglathala ka ng iyong gwa sa ilalim sa kaparehong lisensya. Ang kredito au maaring kasing simple lang katulad ng "itong imahe at gwa muola sa Fritzing"
+
+
+Hanapin ang [our FAQs](http://fritzing.org/faq/) para sa iba pang mga detalye tungkol sa lisensyang ito.

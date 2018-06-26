@@ -85,7 +85,7 @@ void Ruler::resizeMM(double magnitude, double unitsFlag, const LayerHash & viewL
 
 	bool result = resetRenderer(s);
     if (!result) {
-        // if render error restore orginal prop
+        // if render error restore original prop
         modelPart()->setLocalProp("width", QVariant(originalProp));
 	}
 	//	DebugDialog::debug(QString("fast load result %1 %2").arg(result).arg(s));
@@ -378,7 +378,7 @@ void Ruler::unitsEntry() {
             m_widthValidator->setTop(20);
         }
         else {
-            // if render error restore orginal prop
+            // if render error restore original prop
             modelPart()->setLocalProp("width", QVariant(originalProp));
         }
 	}
@@ -393,7 +393,7 @@ void Ruler::unitsEntry() {
             m_widthValidator->setTop(20 * 2.54);
         }
         else {
-            // if render error restore orginal prop
+            // if render error restore original prop
             modelPart()->setLocalProp("width", QVariant(originalProp));
         }
 	}

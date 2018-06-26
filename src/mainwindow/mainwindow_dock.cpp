@@ -184,7 +184,7 @@ void MainWindow::addTopMargin(FDockWidget* dock) {
 void MainWindow::addBottomMargin(FDockWidget* dock) {
 	if(dock) {
 		if(qobject_cast<BinManager*>(dock->widget())) {
-			// already has enought space
+			// already has enough space
 		} else {
 			dockMarginAux(dock, "bottomMostDock", dock->widget()->styleSheet());
 		}

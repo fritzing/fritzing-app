@@ -108,7 +108,7 @@ case $? in
         echo "-- TASK ENDED SUCCESSFULLY! --"
         ;;
     1)
-        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo "AN ERROR OCCURRED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
         echo -e "-*-*-*-*-*-*-*-\n"
         exit 1
         ;;
@@ -140,7 +140,7 @@ case $? in
         echo "-- TASK ENDED SUCCESSFULLY! --"
         ;;
     1)
-        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo "AN ERROR OCCURRED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
         echo -e "-*-*-*-*-*-*-*-\n"
         exit 1
         ;;

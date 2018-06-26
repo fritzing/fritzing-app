@@ -176,7 +176,7 @@ RESOURCES += phoenixresources.qrc
 
 # Fritzing is using libgit2 since version 0.9.3
 packagesExist(libgit2) {
-    message("allways true on win32. leads to build problems")
+    message("always true on win32. leads to build problems")
 
     PKGCONFIG += libgit2
     win32 {

@@ -1160,7 +1160,7 @@ QRadioButton::indicator:checked:pressed  {
 #fileToolBar QToolButton:pressed,
 #editToolBar QToolButton:pressed {
     background: rgb(242,57,38);
-	color: rgb(214,50,34); /* doesnt work, why ??? */
+	color: rgb(214,50,34); /* doesn't work, why ??? */
 	margin: 0px;
 	width:75px;
 	padding:0px 5px;
@@ -1563,7 +1563,7 @@ HtmlInfoView QScrollBar:vertical {
         font-weight: normal;
         color: #323232;     
 		background: #d9d9d9;   
-		/*just the part discription titel not the part main-titel*/ 
+		/*just the part description title, not the part main-title*/ 
 }
 
 
@@ -1723,7 +1723,7 @@ HtmlInfoView QScrollBar:vertical {
         max-width: 30px;
 }
 
-/* this is the style of buttons - mostly in generic parts like: "edit pin lables"-button */
+/* this is the style of buttons - mostly in generic parts like: "edit pin labels"-button */
 #infoViewButton {
         font-size: 11px;
         /*min-width: 100px;*/

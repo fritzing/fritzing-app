@@ -119,7 +119,7 @@ void FirstTimeHelpDialog::init() {
 		"<table><tr><td>"
 		"The first thing you will need is a board to place your parts on. "
 		"There should already be one in your sketch, but if not, "
-        "drag in the board icon from the Parts Bin. The icon matches thie image to the right: "
+        "drag in the board icon from the Parts Bin. The icon matches the image to the right: "
 		"</td><td>"
 		"<img src=\":resources/parts/svg/core/icon/rectangle_pcb.svg\" />"
 		"</td></tr></table>"

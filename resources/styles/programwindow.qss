@@ -128,12 +128,12 @@
 }
 
 
-/*the closed dropdown menues for platform, board, port */
+/*the closed dropdown menus for platform, board, port */
 #programmingWindow #toolbarSelector QComboBox {
 	margin-top: 5px;
 }
 
-/*the text below the dropdown menus (platfom, board, port)*/
+/*the text below the dropdown menus (platform, board, port)*/
 #programmingWindow #toolbarSelector QLabel {
 	color: #ffffff;
     font-size: 11px;

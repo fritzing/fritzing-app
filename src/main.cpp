@@ -191,7 +191,7 @@ int main(int argc, char *argv[])
 				"The -ep option creates a menu item to launch an external process,\n"
 				"and puts the standard output of that process into a dialog window in Fritzing.\n"
 				"The process path follows the -ep argument; the name of the menu item follows the -epname argument;\n"
-				"and any arguments to pass to the external process are provided in the -eparg argments.";
+				"and any arguments to pass to the external process are provided in the -eparg arguments.";
 		}
 		delete app;
 	}

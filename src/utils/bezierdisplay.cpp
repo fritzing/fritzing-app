@@ -76,7 +76,7 @@ void BezierDisplay::initDisplay(QGraphicsItem * master, Bezier *bezier)
 		parent = master->parentItem();
 	}
 
-	// put the feeback on top
+	// put the feedback on top
 	double z = parent->zValue() + 100;			// (ViewLayer::getZIncrement() / 2)
 	
 	m_itemL0 = new QGraphicsLineItem();

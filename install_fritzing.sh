@@ -188,7 +188,7 @@ case $? in
         echo "-- TASK ENDED SUCCESSFULLY! --"
         ;;
     1)
-        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo "AN ERROR OCCURRED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
         echo -e "-*-*-*-*-*-*-*-\n"
         exit 1
         ;;
@@ -212,7 +212,7 @@ case $? in
         echo "-- TASK ENDED SUCCESSFULLY! --"
         ;;
     1)
-        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo "AN ERROR OCCURRED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
         echo -e "-*-*-*-*-*-*-*-\n"
         exit 1
         ;;
@@ -244,7 +244,7 @@ case $? in
         echo "-- TASK ENDED SUCCESSFULLY! --"
         ;;
     1)
-        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo "AN ERROR OCCURRED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
         echo -e "-*-*-*-*-*-*-*-\n"
         exit 1
         ;;
@@ -284,7 +284,7 @@ DEVSTAT="$(grep 'DEVSTAT' uninstall_fritzing.sh | cut -d '=' -f 2 | tr -d '"')"
 cp uninstall_fritzing.sh uninstall_fritzing.use
 
 # NOTE: Do not put a '$' before the placeholder brackets!
-# How I did it: sed -i "s/{placeholder}/$VARIABLE/(g if neccessary)" <file>
+# How I did it: sed -i "s/{placeholder}/$VARIABLE/(g if necessary)" <file>
 #
 sed -i "s/{mode}/$MODE/" uninstall_fritzing.use
 sed -i "s/{fritz-dir}/${FRITZ_DIR_ESC}/" uninstall_fritzing.use

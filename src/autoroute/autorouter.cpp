@@ -92,7 +92,7 @@ TraceWire * Autorouter::drawOneTrace(QPointF fromPos, QPointF toPos, double widt
 		return NULL;
 	}
 
-	// addItem calls trace->setSelected(true) so unselect it (TODO: this may no longer be necessar)
+	// addItem calls trace->setSelected(true) so unselect it (TODO: this may no longer be necessary)
 	trace->setSelected(false);
 	TraceWire * traceWire = dynamic_cast<TraceWire *>(trace);
 	if (traceWire == NULL) {

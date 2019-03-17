@@ -2647,7 +2647,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="789"/>
         <source>&amp;Open Recent Files</source>
-        <translation>Otwórz ostatnio urzywane</translation>
+        <translation>Otwórz ostatnio używane</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="823"/>

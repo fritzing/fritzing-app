@@ -1,5 +1,5 @@
-#!/bin/bash
-QTBIN=/Users/andre/Qt/5.6/clang_64/bin
+#!/bin/bash -e
+QTBIN=/usr/local/opt/qt5/bin
 
 toolsdir=`dirname $BASH_SOURCE`
 cd $toolsdir
@@ -24,10 +24,6 @@ $QTBIN/qmake -o Makefile phoenix.pro
 make "-j$(sysctl -n machdep.cpu.thread_count)" release  # release is the type of build
 cp -r $builddir/Fritzing.app $deploydir
 
-echo ">> add .app dependencies"
-cd $deploydir
-$QTBIN/macdeployqt Fritzing.app -verbose=2
-
 supportdir=$deploydir/Fritzing.app/Contents/MacOS
 echo ">> support directory"
 echo $supportdir
@@ -38,16 +34,20 @@ cp -rf sketches help translations readme.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENS
 
 echo ">> clean translations"
 cd $supportdir
-rm ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
+rm -f ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
 echo ">> clone parts repository"
 git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git
-echo ">> build parts database and run fritzing"
+echo ">> build parts database"
 ./Fritzing -db "fritzing-parts/parts.db"  # -pp "fritzing-parts" -f "."
+
+echo ">> add .app dependencies"
+cd $deploydir
+$QTBIN/macdeployqt Fritzing.app -verbose=2 -dmg
 
 echo ">> launch Fritzing"
 cd $deploydir
-open Fritzing.app
+open Fritzing.dmg
 
 echo ">> done!"

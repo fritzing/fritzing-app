@@ -1,0 +1,27 @@
+# A new image must to be pushed, to make changes to this file valid:
+# docker build -t registry.gitlab.com/fritzing/fritzing-app_playground/build:bionic docker/build_bionic
+# docker push registry.gitlab.com/fritzing/fritzing-app_playground/build:bionic
+
+FROM ubuntu:bionic-20190307
+
+MAINTAINER Kjell kjell@gmx.de
+
+RUN apt-get update -y && apt-get install -y build-essential cmake wget git libjpeg-dev flex bison libz-dev libpng-dev libncurses5-dev genparse python-dev libssl-dev libudev-dev qt5-default libqt5serialport5-dev libqt5svg5-dev
+
+ENV BOOST_ROOT /usr/local
+
+RUN cd /home && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj
+
+RUN cd /home/boost_1_70_0 \
+  && ./bootstrap.sh --prefix=${BOOST_ROOT} \
+  && ./b2 -j 16 install \
+  && cd /home \
+  && rm -rf boost_1_70_0
+
+RUN cd / && wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1 libgit2
+
+RUN cd /libgit2 \
+  && mkdir build \
+  && cd build \
+  && cmake -D BUILD_SHARED_LIBS=OFF .. \
+  && cmake --build . -- -j16 

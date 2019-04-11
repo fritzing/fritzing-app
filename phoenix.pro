@@ -84,7 +84,7 @@ macx {
     Debug:RCC_DIR = $${DEBDIR}
     Debug:UI_DIR = $${DEBDIR}
 
-    QMAKE_MAC_SDK = macosx10.11            # uncomment/adapt for your version of OSX
+    #QMAKE_MAC_SDK = macosx10.11            # uncomment/adapt for your version of OSX
     CONFIG += x86_64 # x86 ppc
     QMAKE_INFO_PLIST = FritzingInfo.plist
     #DEFINES += QT_NO_DEBUG                # uncomment this for xcode
@@ -93,6 +93,7 @@ macx {
     LIBS += /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
     LIBS += /System/Library/Frameworks/Carbon.framework/Carbon
     LIBS += /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+    LIBS += -liconv
 }
 unix {
     !macx { # unix is defined on mac
@@ -184,7 +185,7 @@ packagesExist(libgit2) {
         message($$PKGCONFIG)
     }
 } else {
-include(pri/libgit2detect.pri)
+    include(pri/libgit2detect.pri)
 }
 
 

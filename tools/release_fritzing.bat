@@ -21,17 +21,17 @@ echo.
 
 IF .%1 == . (
 	echo first parameter--release version--is missing, should be something like 0.8.6b
-	EXIT /B
+	EXIT /B 1
 )
 
 IF .%2 == . (
 	echo second parameter--target architecture--is missing, should be either "32" for a 32-bit build or "64" for a 64-bit build
-	EXIT /B
+	EXIT /B 1
 )
 
 IF .%3 == . (
-	echo third parameter--visual studio version--is missing, should be "2012", "2013", "2015"
-	EXIT /B
+	echo third parameter--visual studio version--is missing, should be "2012", "2013", "2015", "2017"
+	EXIT /B 1
 )
 
 echo add the path for your git installation if it's not already there
@@ -45,6 +45,8 @@ IF %2==64 (
     	set QTBIN=C:\Qt\5.6\msvc2013_64\bin
     ) ELSE IF %3==2015 (
     	set QTBIN=C:\Qt\5.6\msvc2015_64\bin
+    ) ELSE IF %3==2017 (
+        set QTBIN=C:\Qt\5.9.7\msvc2017_64\bin
     )
 	set arch=""QMAKE_TARGET.arch=x86_64""
 ) ELSE (
@@ -55,18 +57,21 @@ IF %2==64 (
 	    	set QTBIN=C:\Qt\5.6\msvc2013\bin
 	    ) ELSE IF %3==2015 (
 	    	set QTBIN=C:\Qt\5.6\msvc2015\bin
+	    ) ELSE IF %3==2017 (
+	    	set QTBIN=C:\Qt\5.9.7\msvc2015\bin
 	    )
 		set arch=.
 	) ELSE (
 		echo second parameter--target architecture--should be either "32" for a 32-bit build or "64" for a 64-bit build
-		EXIT /B
+		dir C:\Qt
+		EXIT /B 1
 	)
 )
 
 set QMAKE=%QTBIN%\qmake.exe
 
 if not exist %QMAKE% echo '%QMAKE%' not found--please change the path to Qt\bin
-if not exist %QMAKE% EXIT /B n
+if not exist %QMAKE% EXIT /B 1
 
 echo found qmake.exe
 echo.

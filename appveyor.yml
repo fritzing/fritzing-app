@@ -1,0 +1,23 @@
+image: Visual Studio 2017
+
+cache:
+  - ../libgit2/build64 -> appveyor.yml
+
+install:
+  - set BOOST_ROOT=C:\Libraries\boost_1_67_0
+  - cd ..
+  - curl -fsSL https://github.com/libgit2/libgit2/archive/maint/v0.28.zip -o libgit2.zip
+  - 7z x libgit2.zip
+  - xcopy libgit2-maint-v0.28 libgit2 /c /d /e /h /i /q /s /y
+  - cd libgit2
+  - if not exist build64 mkdir build64
+  - cd build64
+  - cmake -DBUILD_CLAR=OFF -DTHREADSAFE=ON -G "Visual Studio 15 2017 Win64" ..
+  - cmake --build .  
+  - cd c:\projects\fritzing-app\src\lib
+  - curl -fsSL https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.zip -o boost_1_70_0.zip
+  - 7z x boost_1_70_0.zip
+  - cd ../..
+build_script:
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - tools/release_fritzing.bat 0.9.4ci 64 2017

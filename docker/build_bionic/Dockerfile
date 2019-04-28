@@ -4,7 +4,7 @@
 
 FROM ubuntu:bionic-20190307
 
-MAINTAINER Kjell kjell@gmx.de
+LABEL maintainer="Kjell kjell@gmx.de"
 
 RUN apt-get update -y && apt-get install -y build-essential cmake wget git libjpeg-dev flex bison libz-dev libpng-dev libncurses5-dev genparse python-dev libssl-dev libudev-dev qt5-default libqt5serialport5-dev libqt5svg5-dev
 

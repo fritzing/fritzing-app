@@ -4,7 +4,7 @@
 
 FROM ubuntu:trusty-20190305
 
-MAINTAINER Kjell kjell@gmx.de
+LABEL maintainer="Kjell kjell@gmx.de"
 
 RUN apt-get update -y \
     && apt-get install -y \

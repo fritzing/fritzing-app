@@ -5,18 +5,9 @@ matrix:
     services:
       - docker
     before_install:
-      - docker pull registry.gitlab.com/fritzing/fritzing-app_playground/build:trusty
+      - docker pull fritzing/build:xenial
     script:
-      - TARGET=trusty docker/docker-build.sh
-
-  - os: linux
-    language: generic
-    services:
-      - docker
-    before_install:
-      - docker pull registry.gitlab.com/fritzing/fritzing-app_playground/build:bionic
-    script:
-      - TARGET=bionic docker/docker-build.sh
+      - docker/build-linux.sh
 
   - os: osx
     language: cpp
@@ -41,7 +32,7 @@ matrix:
 
   - os: osx
     language: objective-c
-    osx_image: xcode10.1    
+    osx_image: xcode10.1
     cache:
       directories:
         ../libgit2/build

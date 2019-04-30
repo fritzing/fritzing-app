@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/fritzing/fritzing-app.svg?branch=master)](https://travis-ci.org/fritzing/fritzing-app)
+[![Build status](https://ci.appveyor.com/api/projects/status/0lu0nm71k930nar1/branch/master?svg=true)](https://ci.appveyor.com/project/KjellMorgenstern/fritzing-app/branch/master)
+
+[![Build Status](https://travis-ci.org/KjellMorgenstern/fritzing-app.svg?branch=travis)](https://travis-ci.org/KjellMorgenstern/fritzing-app)
+[![Build status](https://ci.appveyor.com/api/projects/status/0lu0nm71k930nar1/branch/travis?svg=true)](https://ci.appveyor.com/project/KjellMorgenstern/fritzing-app/branch/travis)
+
 # Fritzing
 
 The Fritzing application is an Electronic Design Automation software with a low entry barrier, suited for the needs of makers and hobbyists. It offers a unique real-life "breadboard" view, and a parts library with many commonly used high-level components. Fritzing makes it very easy to communicate about circuits, as well as to turn them into PCB layouts ready for production. It is particularly popular among Arduino and Raspberry Pi users, and is widely used in education and creative tinkering.

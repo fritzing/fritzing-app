@@ -1,0 +1,62 @@
+matrix:
+  include:
+  - os: linux
+    language: minimal
+    services:
+      - docker
+    before_install:
+      - docker pull fritzing/build:xenial
+    script:
+      - docker/build-linux.sh
+
+  - os: osx
+    language: cpp
+    osx_image: xcode10.2
+    cache:
+      directories:
+        ../libgit2/build
+
+    addons:
+      homebrew:
+        packages:
+          - qt5
+
+    before_install:
+      - mkdir -p ../libgit2/build
+      - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
+      - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
+      - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+      - xcrun -sdk macosx --show-sdk-path
+    script:
+      - tools/deploy_fritzing_mac.sh
+
+  - os: osx
+    language: objective-c
+    osx_image: xcode10.1
+    cache:
+      directories:
+        ../libgit2/build
+
+    addons:
+      homebrew:
+        packages:
+          - qt5
+
+    before_install:
+      - mkdir -p ../libgit2/build
+      - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
+      - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
+      - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+      - xcrun -sdk macosx --show-sdk-path
+    script:
+      - tools/deploy_fritzing_mac.sh
+
+
+  # Fails. We did nor find a good way to install qt and start a developer command prompt yet.
+  # - os: windows
+  #   language: cpp
+  #   before_install:
+  #    - choco install -y qtcreator
+
+  #   script:
+  #     - tools/release_fritzing.bat 0.9.4b 64 2017

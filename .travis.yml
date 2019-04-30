@@ -1,7 +1,7 @@
 matrix:
   include:
   - os: linux
-    language: generic
+    language: minimal
     services:
       - docker
     before_install:

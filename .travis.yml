@@ -51,12 +51,16 @@ matrix:
     script:
       - tools/deploy_fritzing_mac.sh
 
+  # Fails. We did not find a good way to install qt and start a developer command prompt yet.
+  - os: windows
+    language: cpp
+    env:
+      - MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
+    before_install:
+      - pwd
+      - curl -L http://download.qt-project.org/official_releases/online_installers/qt-unified-windows-x86-online.exe --output qt-installer.exe
+      - ./qt-installer.exe --script ./tools/qt_installer_noninteractive.qs
 
-  # Fails. We did nor find a good way to install qt and start a developer command prompt yet.
-  # - os: windows
-  #   language: cpp
-  #   before_install:
-  #    - choco install -y qtcreator
-
-  #   script:
-  #     - tools/release_fritzing.bat 0.9.4b 64 2017
+    script:
+      - export PATH=$MSBUILD_PATH:$PATH
+      - tools/release_fritzing.bat 0.9.4b 64 2017

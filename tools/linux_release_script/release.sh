@@ -8,18 +8,35 @@ failure() {
 }
 trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
 
-#TODO Add debug-parameter to temporarily switch this of.
-if [[ -n $(git status -s) ]]; then
-  echo "Build directory is not clean. Check git status."
-  git status -s
-  exit -1
+if [ -z "${1:-}" ] ; then
+  echo "Usage: $0 <need a version string such as '0.6.4b' (without the quotes)>"
+  exit
+else
+  relname=$1  #`date +%Y.%m.%d`
 fi
 
-#TODO Add debug-parameter to temporarily switch this of.
-if [[ -n $(git clean -xdn) ]]; then
-  echo "Build directory is not clean. Check git clean -xdn."
-  git clean -xfn
-  exit -1
+echo ${relname}
+
+if [[ ${relname} == *"debug"* ]]; then
+  echo "Building a debug release"
+  export QT_HASH_SEED=123
+  export QT_DEBUG_PLUGINS=0  # usually to verbose
+  export QML_IMPORT_TRACE=0
+  target="debug"
+else
+  if [[ -n $(git status -s) ]]; then
+    echo "Build directory is not clean. Check git status."
+    git status -s
+    exit -1
+  fi
+
+  #TODO Add debug-parameter to temporarily switch this of.
+  if [[ -n $(git clean -xdn) ]]; then
+    echo "Build directory is not clean. Check git clean -xdn."
+    git clean -xfn
+    exit -1
+  fi
+  target="release"
 fi
 
 arch_aux=`uname -m`
@@ -37,13 +54,6 @@ else
   arch='i386'
 fi
 
-if [ -z "${1:-}"] ; then
-  echo "Usage: $0 <need a version string such as '0.6.4b' (without the quotes)>"
-  exit
-else
-  relname=$1  #`date +%Y.%m.%d`
-fi
-
 quazip='QUAZIP_LIB'
 echo "using src/lib/quazip"
 
@@ -54,23 +64,24 @@ cd $app_folder
 echo "appfolder ${app_folder}"
 
 echo "Compiling."
-qmake CONFIG+=release DEFINES+=$quazip
+qmake CONFIG+=${target} DEFINES+=$quazip
 make -j16
 
 release_name=fritzing-${relname}.linux.${arch}
 release_folder="${current_dir}/${release_name}"
 
-# Archive this for evaluation of crash reports
-cp Fritzing Fritzing_${release_name}
-# Outcomment this if you want a debug release
-strip Fritzing
+if [[ ${relname} != *"debug"* ]] ; then
+  # Archive this for evaluation of crash reports
+  cp Fritzing Fritzing_${release_name}
+  strip Fritzing
+fi
 
 echo "making release folder: ${release_folder}"
-mkdir ${release_folder}
+mkdir -p ${release_folder}
 
 echo "copying release files"
 cp -rf sketches/ help/ translations/ Fritzing.sh Fritzing.1 fritzing.desktop fritzing.rc fritzing.appdata.xml install_fritzing.sh README.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 $release_folder/
-mkdir ${release_folder}/icons
+mkdir -p ${release_folder}/icons
 cp resources/system_icons/linux/* $release_folder/icons/
 mv Fritzing ${release_folder}/
 chmod +x ${release_folder}/install_fritzing.sh
@@ -81,37 +92,28 @@ echo "cleaning translations"
 rm ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
-git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git
+git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git || ([[ ${relname} == *"debug"* ]] && echo "Ignoring git error")
 
 echo "making library folders"
-mkdir lib
-mkdir lib/imageformats
-mkdir lib/sqldrivers
-mkdir lib/platforms
 
-cd lib
-# echo "copying qt libraries"
-# cp -d $QT_HOME/lib/libicudata.so* $QT_HOME/lib/libicui18n.so* $QT_HOME/lib/libicuuc.so.* $QT_HOME/lib/libQt5Concurrent.so* $QT_HOME/lib/libQt5Core.so* $QT_HOME/lib/libQt5DBus.so* $QT_HOME/lib/libQt5Gui.so* $QT_HOME/lib/libQt5Network.so* $QT_HOME/lib/libQt5SerialPort.so* $QT_HOME/lib/libQt5PrintSupport.so* $QT_HOME/lib/libQt5Sql.so* $QT_HOME/lib/libQt5Svg.so* $QT_HOME/lib/libQt5Xml.so* $QT_HOME/lib/libQt5Widgets.so* $QT_HOME/lib/libQt5XmlPatterns.so* $QT_HOME/lib/libQt5XcbQpa.so* .
+mkdir -p lib/imageformats
+mkdir -p lib/sqldrivers
+mkdir -p lib/platforms
 
-# echo "copying qt plugins"
-# cp $QT_HOME/plugins/imageformats/libqjpeg.so imageformats
-# cp $QT_HOME/plugins/sqldrivers/libqsqlite.so sqldrivers
-# cp $QT_HOME/plugins/platforms/libqxcb.so platforms
+mv Fritzing lib  				# hide the executable in the lib folder
+mv Fritzing.sh Fritzing   		# rename Fritzing.sh to Fritzing
+chmod +x Fritzing
 
-mv ../Fritzing .  				# hide the executable in the lib folder
-mv ../Fritzing.sh ../Fritzing   		# rename Fritzing.sh to Fritzing
-chmod +x ../Fritzing
-
-LD_LIBRARY_PATH=$(pwd)
-export LD_LIBRARY_PATH
 ./Fritzing -db "${release_folder}/fritzing-parts/parts.db" -pp "${release_folder}/fritzing-parts" -f "${release_folder}"
 
 cd ${current_dir}
 
-echo "compressing...."
-tar -cjf  ./${release_name}.tar.bz2 ${release_name}
+if [[ ${relname} != *"debug"* ]]; then
+  echo "compressing...."
+  tar -cjf  ./${release_name}.tar.bz2 ${release_name}
 
-echo "cleaning up"
-rm -rf ${release_folder}
+  echo "cleaning up"
+  rm -rf ${release_folder}
+fi
 
 echo "done!"

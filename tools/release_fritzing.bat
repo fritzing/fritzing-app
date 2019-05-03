@@ -1,4 +1,4 @@
-echo off
+REM echo off
 
 echo .
 echo you must start this script from the Visual Studio Command Line Window

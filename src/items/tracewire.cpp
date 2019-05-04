@@ -81,11 +81,11 @@ QComboBox * TraceWire::createWidthComboBox(double m, QWidget * parent)
 bool TraceWire::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (prop.compare("width", Qt::CaseInsensitive) == 0) {
-        if (viewID() != ViewLayer::PCBView) {
-            // only in pcb view for now
-            hide = true;
-            return false;       
-        }
+        	if (viewID() != ViewLayer::PCBView) {
+            		// only in pcb view for now
+            		hide = true;
+            		return false;       
+        	}
 
 		returnProp = tr("width");
 		QComboBox * comboBox = createWidthComboBox(mils(), parent);
@@ -100,19 +100,16 @@ bool TraceWire::collectExtraInfo(QWidget * parent, const QString & family, const
 	}
 
 	bool result =  ClipableWire::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
-    if (prop.compare("layer") == 0 && returnWidget != NULL) {
-        bool disabled = !canSwitchLayers();
-        if (!disabled) {
-            InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-            if (infoGraphicsView == NULL || infoGraphicsView->boardLayers() == 1) disabled = true;
-        }
-        returnWidget->setDisabled(disabled);
-    }
+	if (prop.compare("layer") == 0 && returnWidget != NULL) {
+		bool disabled = !canSwitchLayers();
+		if (!disabled) {
+			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+			if (infoGraphicsView == NULL || infoGraphicsView->boardLayers() == 1) disabled = true;
+		}
+		returnWidget->setDisabled(disabled);
+	}
 
-    return result;
-
-
-    return result;
+	return result;
 }
 
 

@@ -1,6 +1,6 @@
 # /*******************************************************************
 # Part of the Fritzing project - http://fritzing.org
-# Copyright (c) 2007-08 Fritzing
+# Copyright (c) 2007-2019 Fritzing
 # Fritzing is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or

@@ -44,19 +44,14 @@ win32 {
 
 unix {
     LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
+    exists($$LIBGIT2LIB/libgit2.a) {
+        message("found libgit2 library in $$LIBGIT2LIB")
+    } else {
+        error("static libgit2 library not found in $$LIBGIT2LIB")
+    }
     macx {
-        exists($$LIBGIT2LIB/libgit2.a) {
-            message("found libgit2 library in $$LIBGIT2LIB")
-        } else {
-            error("static libgit2 library not found in $$LIBGIT2LIB")
-        }
         LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
     } else {
-        exists($$LIBGIT2LIB/libgit2.a) {
-            message("found libgit2 library in $$LIBGIT2LIB")
-        } else {
-            error("static libgit2 library not found in $$LIBGIT2LIB")
-        }
         LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
     }
 }

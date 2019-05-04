@@ -85,10 +85,10 @@ rem set environment variable for qmake phoenix.pro
 set RELEASE_SCRIPT="release_script"
 
 
-%QMAKE% -o Makefile phoenix.pro %arch%
+%QMAKE% -o Makefile phoenix.pro %arch% || exit /b 1
 
 echo building fritzing
-nmake release
+nmake release || exit /b 2
 
 set DESTDIR=..\release%2
 rem get the absolute path of DESTDIR
@@ -162,7 +162,7 @@ set CURRENTDIR=%cd%
 cd %DESTDIR%
 cd deploy
 
-git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git
+git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git  || exit /b 3
 
 del/s placeholder.txt
 cd translations
@@ -171,7 +171,7 @@ cd %CURRENTDIR%
 
 IF %2==32 (
 	echo make the executable compatible with windows xp
-	"%VCINSTALLDIR%bin\editbin.exe" %DESTDIR%\deploy\Fritzing.exe /SUBSYSTEM:WINDOWS,5.01 /OSVERSION:5.1
+	"%VCINSTALLDIR%bin\editbin.exe" %DESTDIR%\deploy\Fritzing.exe /SUBSYSTEM:WINDOWS,5.01 /OSVERSION:5.1 || exit /b 3
 )
 
 echo copying vc redist files
@@ -193,7 +193,7 @@ IF %3==2012 (
 )
 
 echo run fritzing to create parts.db
-%DESTDIR%\deploy\Fritzing.exe -pp %DESTDIR%\deploy\fritzing-parts -db %DESTDIR%\deploy\fritzing-parts\parts.db
+%DESTDIR%\deploy\Fritzing.exe -pp %DESTDIR%\deploy\fritzing-parts -db %DESTDIR%\deploy\fritzing-parts\parts.db || exit /b 4
 
 echo moving deploy to %RELEASE_NAME%
 move %DESTDIR%\deploy %RELEASE_NAME%
@@ -201,6 +201,6 @@ move %DESTDIR%\deploy %RELEASE_NAME%
 echo create zip file
 FOR /F %%i IN ("%DESTDIR%\forzip") DO SET SRC=%%~fi
 FOR /F %%i IN ("%DESTDIR%\fritzing.%1.%2.pc.zip") DO SET DEST=%%~fi
-CScript .\tools\zip.vbs %SRC% %DEST%
+CScript .\tools\zip.vbs %SRC% %DEST% || exit /b 5
 
 echo done

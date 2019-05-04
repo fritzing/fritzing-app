@@ -188,8 +188,7 @@ packagesExist(libgit2) {
     include(pri/libgit2detect.pri)
 }
 
-
-
+include(pri/boostdetect.pri)
 
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)

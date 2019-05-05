@@ -41,9 +41,6 @@ $Date: 2013-04-29 13:10:59 +0200 (Mo, 29. Apr 2013) $
 #include "../items/moduleidnames.h"
 #include "../items/partfactory.h"
 
-static bool JustAppendAllPartsInstances = false;
-static bool FirstTime = true;
-
 QString PaletteModel::s_fzpOverrideFolder;
 
 const static QString InstanceTemplate(
@@ -119,22 +116,6 @@ void PaletteModel::loadParts(bool dbExists) {
 	QStringList nameFilters;
 	nameFilters << "*" + FritzingPartExtension;
 
-	JustAppendAllPartsInstances = true;   
-	/// !!!!!!!!!!!!!!!!  "JustAppendAllPartsInstances = CreateAllPartsBinFile"
-	/// !!!!!!!!!!!!!!!!  is incorrect
-	/// !!!!!!!!!!!!!!!!  this flag was originally set up because sometimes we were appending a
-	/// !!!!!!!!!!!!!!!!  single instance into an already existing file,
-	/// !!!!!!!!!!!!!!!!  so simply appending new items as text gave us xml errors.
-	/// !!!!!!!!!!!!!!!!  The problem was that there was no easy way to set the flag directly on the actual
-	/// !!!!!!!!!!!!!!!!  function being used:  PaletteModel::LoadPart(), though maybe this deserves another look.
-	/// !!!!!!!!!!!!!!!!  However, since we're starting from scratch in LoadParts, we can use the much faster 
-	/// !!!!!!!!!!!!!!!!  file append method.  Since CreateAllPartsBinFile is false in release mode,
-	/// !!!!!!!!!!!!!!!!  Fritzing was taking forever to start up.
-
-
-	if (FirstTime) {
-	}
-
 	int totalPartCount = 0;
 	emit loadedPart(0, totalPartCount);
 
@@ -172,19 +153,6 @@ void PaletteModel::loadParts(bool dbExists) {
             loadPartsAux(dir4, nameFilters, loadingPart, totalPartCount);
         }
     }
-
-	if (FirstTime) {
-	}
-	
-	JustAppendAllPartsInstances = false;   
-	/// !!!!!!!!!!!!!!!!  "JustAppendAllPartsInstances = !CreateAllPartsBinFile"
-	/// !!!!!!!!!!!!!!!!  is incorrect
-	/// !!!!!!!!!!!!!!!!  See above.  We simply want to restore the default, so that other functions calling
-	/// !!!!!!!!!!!!!!!!  writeInstanceInCommonBin via LoadPart() will use the slower DomDocument methods,
-	/// !!!!!!!!!!!!!!!!  since in that case we are appending to an already existing file.
-
-	FirstTime = false;
-
 }
 
 void PaletteModel::countParts(QDir & dir, QStringList & nameFilters, int & partCount) {

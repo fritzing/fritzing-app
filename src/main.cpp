@@ -35,7 +35,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 QtMessageHandler originalMsgHandler;
-#define ORIGINAL_MESSAGE_HANDLER(TYPE, MSG) originalMsgHandler((TYPE), context, (MSG))
 
 void writeCrashMessage(const char * msg) {
 	QString path = FolderUtils::getTopLevelUserDataStorePath();
@@ -55,21 +54,22 @@ void writeCrashMessage(const QString & msg) {
 void fMessageHandler(QtMsgType type, const QMessageLogContext &context, const QString & msg)
 {
 	switch (type) {
-	case QtDebugMsg:
-		ORIGINAL_MESSAGE_HANDLER(type, msg);
-		break;
-	case QtWarningMsg:
-		ORIGINAL_MESSAGE_HANDLER(type, msg);
-		break;
-	case QtCriticalMsg:
-		ORIGINAL_MESSAGE_HANDLER(type, msg);
-		break;
-	case QtFatalMsg: {
-		writeCrashMessage(msg);
-	}
+		case QtDebugMsg:
+            originalMsgHandler(type, context, msg);
+			break;
+		case QtWarningMsg:
+		originalMsgHandler(type, context, msg);
+			break;
+		case QtCriticalMsg:
+		originalMsgHandler(type, context, msg);
+			break;
+		case QtFatalMsg:
+			{
+				writeCrashMessage(msg);
+			}
 
-		// don't abort
-	ORIGINAL_MESSAGE_HANDLER(QtWarningMsg, msg);
+			// don't abort
+			originalMsgHandler(QtWarningMsg, context, msg);
 	}
 }
 
@@ -89,8 +89,8 @@ int main(int argc, char *argv[])
 	std::wstring wstr = path.toStdWString();
 	LPCWSTR ptr = wstr.c_str();
 	hLogFile = CreateFile(ptr, GENERIC_WRITE,
-	                      FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
-	                      FILE_ATTRIBUTE_NORMAL, NULL);
+						  FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
+						  FILE_ATTRIBUTE_NORMAL, NULL);
 	_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_FILE);
 	_CrtSetReportFile(_CRT_ERROR, hLogFile);
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE);
@@ -106,9 +106,7 @@ int main(int argc, char *argv[])
 	int result = 0;
 	try {
 		//QApplication::setGraphicsSystem("raster");
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
 		QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-#endif
 		FApplication * app = new FApplication(argc, argv);
 		switch (app->init()) {
 		case FInitResultNormal: {

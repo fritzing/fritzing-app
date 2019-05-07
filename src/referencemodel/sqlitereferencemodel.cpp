@@ -91,11 +91,11 @@ void killBuses(QVector<BusShared *> & buses) {
 QStringList FailurePartMessages;
 QStringList FailurePropertyMessages;
 
-void noSwappingMessage()
+void noSwappingMessage(int n)
 {
 	FMessageBox::warning(NULL,
 			QObject::tr("Oops!"),
-			QObject::tr("Sorry, we have a problem with the swapping mechanism.\nFritzing still works, but you won't be able to change parts properties."),
+			QObject::tr("Sorry, we have a problem with the swapping mechanism (Code %1).\nFritzing still works, but you won't be able to change parts properties.").arg(n),
 			QMessageBox::Ok);
 }
 
@@ -128,7 +128,7 @@ bool SqliteReferenceModel::loadAll(const QString & databaseName, bool fullLoad, 
 
     DebugDialog::debug("referenceModel::loadAll completed");
 	if (!m_swappingEnabled) {
-        noSwappingMessage();
+        noSwappingMessage(1);
 	}
     else if (FailurePartMessages.count() > 0) {
         QString message = tr("The swapping mechanism is disabled for:\n\n");
@@ -189,7 +189,7 @@ bool SqliteReferenceModel::loadFromDB(const QString & databaseName)
     if (db.isOpen()) db.close();
     if (!m_swappingEnabled) {
         killParts();
-        noSwappingMessage();
+        noSwappingMessage(2);
     }
 
     return m_swappingEnabled;

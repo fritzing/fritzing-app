@@ -70,8 +70,7 @@ matrix:
       - (cd src/lib && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
 
     script:
-      - |
-        /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/Common7/Tools/VsDevCmd.bat
-        /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/VC/Auxiliary/Build/vcvars64.bat
-        tools/release_fritzing.bat 0.9.4b 64 2017
+        # /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/Common7/Tools/VsDevCmd.bat
+        # /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/VC/Auxiliary/Build/vcvars64.bat
+        - tools/release_fritzing.bat 0.9.4b 64 2017
       # - export PATH="$NMAKE_PATH:$RC_PATH:$PATH"

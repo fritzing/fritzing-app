@@ -397,7 +397,7 @@ bool Board::checkImage(const QString & filename) {
         return false;
     }
 
-    if (layers == 0 || (boardElements.count() == 1 && silk1Layers == 0 && silk1Layers == 0)) {
+    if (layers == 0 || (boardElements.count() == 1 && silk0Layers == 0 && silk1Layers == 0)) {
         bool result = canLoad(filename, tr("but the pcb itself will have no silkscreen layer") + StandardCustomBoardExplanation);
         if (result) moreCheckImage(filename);
         return result;

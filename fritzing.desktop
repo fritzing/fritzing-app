@@ -1,7 +1,11 @@
 [Desktop Entry]
 Name=Fritzing
-GenericName=Fritzing
-Comment=Electronic Design Automation software
+GenericName=Electronic Design Automation software
+GenericName[fi]=Elektroniikan suunnitteluohjelma
+GenericName[ru]=Программа проектирования электроники
+Comment=Create circuits and lay out printed circuit boards
+Comment[fi]=Suunnittele elektronisia kytkentöjä ja piirilevyjä
+Comment[ru]=Создавайте схемы и выкладывайте печатные платы
 Exec=Fritzing
 Icon=fritzing_icon
 Terminal=false

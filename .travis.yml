@@ -63,14 +63,14 @@ matrix:
       # - RC_PATH="/c/Program Files (x86)/Windows Kits/10/bin/x64/"
       # /c/Program Files (x86)/Windows Kits/10/bin/x86/
     before_install:
-      - curl -L http://download.qt-project.org/official_releases/online_installers/qt-unified-windows-x86-online.exe --output qt-installer.exe
-      - ./qt-installer.exe --script ./tools/qt_installer_noninteractive.qs
-      - curl -fsSL https://github.com/libgit2/libgit2/archive/v0.28.1.zip -o libgit2.zip && 7z x libgit2.zip && mv libgit2-0.28.1 ../libgit2
-      - (mkdir ../libgit2/build64 && cd ../libgit2/build64 && cmake -G "Visual Studio 15 2017 Win64" -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
-      - (cd src/lib && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+      # - curl -L http://download.qt-project.org/official_releases/online_installers/qt-unified-windows-x86-online.exe --output qt-installer.exe
+      # - ./qt-installer.exe --script ./tools/qt_installer_noninteractive.qs
+      # - curl -fsSL https://github.com/libgit2/libgit2/archive/v0.28.1.zip -o libgit2.zip && 7z x libgit2.zip && mv libgit2-0.28.1 ../libgit2
+      # - (mkdir ../libgit2/build64 && cd ../libgit2/build64 && cmake -G "Visual Studio 15 2017 Win64" -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
+      # - (cd src/lib && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
 
     script:
-        # /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/Common7/Tools/VsDevCmd.bat
-        # /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/VC/Auxiliary/Build/vcvars64.bat
-        - tools/release_fritzing.bat 0.9.4b 64 2017
+        - cat /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/Common7/Tools/VsDevCmd.bat
+        # - cat /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/VC/Auxiliary/Build/vcvars64.bat
+        # - tools/release_fritzing.bat 0.9.4b 64 2017
       # - export PATH="$NMAKE_PATH:$RC_PATH:$PATH"

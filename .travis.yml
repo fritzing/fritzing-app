@@ -1,57 +1,57 @@
 matrix:
   include:
-  # - os: linux
-  #   language: minimal
-  #   services:
-  #     - docker
-  #   before_install:
-  #     - docker pull fritzing/build:xenial
-  #   script:
-  #     - docker/build-linux.sh
+  - os: linux
+    language: minimal
+    services:
+      - docker
+    before_install:
+      - docker pull fritzing/build:xenial
+    script:
+      - docker/build-linux.sh
 
-  # - os: osx
-  #   language: cpp
-  #   osx_image: xcode10.2
-  #   cache:
-  #     directories:
-  #       ../libgit2/build
+  - os: osx
+    language: cpp
+    osx_image: xcode10.2
+    cache:
+      directories:
+        ../libgit2/build
 
-  #   addons:
-  #     homebrew:
-  #       packages:
-  #         - qt5
+    addons:
+      homebrew:
+        packages:
+          - qt5
 
-  #   before_install:
-  #     - mkdir -p ../libgit2/build
-  #     - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
-  #     - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
-  #     - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
-  #     - xcrun -sdk macosx --show-sdk-path
-  #   script:
-  #     - tools/deploy_fritzing_mac.sh
+    before_install:
+      - mkdir -p ../libgit2/build
+      - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
+      - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
+      - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+      - xcrun -sdk macosx --show-sdk-path
+    script:
+      - tools/deploy_fritzing_mac.sh
 
-  # - os: osx
-  #   language: objective-c
-  #   osx_image: xcode10.1
-  #   cache:
-  #     directories:
-  #       ../libgit2/build
+  - os: osx
+    language: objective-c
+    osx_image: xcode10.1
+    cache:
+      directories:
+        ../libgit2/build
 
-  #   addons:
-  #     homebrew:
-  #       packages:
-  #         - qt5
+    addons:
+      homebrew:
+        packages:
+          - qt5
 
-  #   before_install:
-  #     - mkdir -p ../libgit2/build
-  #     - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
-  #     - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
-  #     - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
-  #     - xcrun -sdk macosx --show-sdk-path
-  #   script:
-  #     - tools/deploy_fritzing_mac.sh
+    before_install:
+      - mkdir -p ../libgit2/build
+      - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
+      - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
+      - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+      - xcrun -sdk macosx --show-sdk-path
+    script:
+      - tools/deploy_fritzing_mac.sh
 
-  # Fails. We did not find a good way to install qt and start a developer command prompt yet.
+  # Fails. We did not find a good way to start a developer command prompt yet.
   - os: windows
     language: cpp
     env:
@@ -65,9 +65,9 @@ matrix:
     before_install:
       - curl -L http://download.qt-project.org/official_releases/online_installers/qt-unified-windows-x86-online.exe --output qt-installer.exe
       - ./qt-installer.exe --script ./tools/qt_installer_noninteractive.qs
-      # - curl -fsSL https://github.com/libgit2/libgit2/archive/v0.28.1.zip -o libgit2.zip && 7z x libgit2.zip && mv libgit2-0.28.1 ../libgit2
-      # - (mkdir ../libgit2/build64 && cd ../libgit2/build64 && cmake -G "Visual Studio 15 2017 Win64" -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
-      # - (cd src/lib && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+      - curl -fsSL https://github.com/libgit2/libgit2/archive/v0.28.1.zip -o libgit2.zip && 7z x libgit2.zip && mv libgit2-0.28.1 ../libgit2
+      - (mkdir ../libgit2/build64 && cd ../libgit2/build64 && cmake -G "Visual Studio 15 2017 Win64" -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
+      - (cd src/lib && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
 
     script:
       - |
@@ -75,5 +75,3 @@ matrix:
         /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/VC/Auxiliary/Build/vcvars64.bat
         tools/release_fritzing.bat 0.9.4b 64 2017
       # - export PATH="$NMAKE_PATH:$RC_PATH:$PATH"
-      # - find /c/ | grep -i vcvars64\.bat$
-      # - find /c/ | grep -i VsDevCmd\.bat$

@@ -793,31 +793,42 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
 {
     QDir dir = FolderUtils::getAppPartsSubFolder("");
     QString dbPath = dir.absoluteFilePath("parts.db");
+    DebugDialog::debug(QString("1 Look for parts.db at %1").arg(dbPath));
+
     QFileInfo info(dbPath);
     bool dbExists = info.exists();
 
     QString sha;
     if (fullLoad) {
+        DebugDialog::debug(QString("1.5 Full load"));
         // fullLoad == true means we are creating the parts database
         // so get the sha for last commit of the parts folder and store it in the database
         // this sha will be used to determine whether the user's parts folder can be updated from the remote repo
         sha = PartsChecker::getSha(dir.absolutePath());
         if (sha.isEmpty()) {
+            DebugDialog::debug(QString("1.6 SHA empty"));
             return false;
         }
-
+        DebugDialog::debug(QString("1.7 set SHA"));
         referenceModel->setSha(sha);
     }
 
     // loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
     bool ok = referenceModel->loadAll(databaseName, fullLoad, dbExists);
+    DebugDialog::debug(QString("1.8 ok %1").arg(ok));
     if (ok && databaseName.isEmpty()) {
-        QFile file(dir.absoluteFilePath("parts.db"));
+        QFile file(dbPath);
         if (file.exists()) {
+            DebugDialog::debug(QString("1.9 %1 exists").arg(dbPath));
             referenceModel->loadFromDB(dbPath);
+        } else {
+            DebugDialog::debug(QString("1.10 %1 does not exist.").arg(dbPath));
         }
+    } else {
+        DebugDialog::debug(QString("1.11 ok %1, empty %2").arg(ok).arg(databaseName.isEmpty()));
     }
 
+    DebugDialog::debug(QString("1.12 Finish"));
     return ok;
 }
 

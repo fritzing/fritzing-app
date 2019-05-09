@@ -138,7 +138,7 @@ copy %QTBIN%\..\plugins\platforms\qwindows.dll %DESTDIR%\deploy\platforms\qwindo
 copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy\lib\printsupport\windowsprintersupport.dll
 
 echo copying git2.dll from %LIBGIT2%
-copy %LIBGIT2%\git2.dll  %DESTDIR%\deploy\git2.dll
+copy %LIBGIT2%\Debug\git2.dll  %DESTDIR%\deploy\git2.dll
 
 echo copying sketches, translations, help, README, LICENSE
 echo.

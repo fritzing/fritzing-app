@@ -796,7 +796,7 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
     DebugDialog::debug(QString("1 Look for parts.db at %1").arg(dbPath));
 
     QFileInfo info(dbPath);
-    bool dbExists = info.exists();
+    bool dbExists = (info.size() > 0);
 
     QString sha;
     if (fullLoad) {
@@ -817,8 +817,7 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
     bool ok = referenceModel->loadAll(databaseName, fullLoad, dbExists);
     DebugDialog::debug(QString("1.8 ok %1").arg(ok));
     if (ok && databaseName.isEmpty()) {
-        QFile file(dbPath);
-        if (file.exists()) {
+        if (dbExists) {
             DebugDialog::debug(QString("1.9 %1 exists").arg(dbPath));
             referenceModel->loadFromDB(dbPath);
         } else {

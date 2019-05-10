@@ -265,7 +265,7 @@ bool FolderUtils::setApplicationPath2(const QString & path)
     QDir dir(path);
     if (!dir.exists()) return false;
 
-    m_appPath = path;
+    m_appPath = dir.canonicalPath();
     return true;
 }
 
@@ -274,7 +274,7 @@ bool FolderUtils::setPartsPath2(const QString & path)
     QDir dir(path);
     if (!dir.exists()) return false;
 
-    m_partsPath = path;
+    m_partsPath = dir.canonicalPath();
     return true;
 }
 

@@ -789,17 +789,17 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
     return loadReferenceModel(databaseName, fullLoad, m_referenceModel);
 }
 
-bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad, ReferenceModel * referenceModel)
+bool FApplication::loadReferenceModel(const QString &  databaseName, bool fullLoad, ReferenceModel * referenceModel)
 {
     QDir dir = FolderUtils::getAppPartsSubFolder("");
     QString dbPath = dir.absoluteFilePath("parts.db");
     DebugDialog::debug(QString("1 Look for parts.db at %1").arg(dbPath));
 
     QFileInfo info(dbPath);
-    bool dbExists = (info.size() > 0);
+    bool dbExists = (info.size() > 0) && !fullLoad;
 
     QString sha;
-    if (fullLoad) {
+    if (!dbExists) {
         DebugDialog::debug(QString("1.5 Full load"));
         // fullLoad == true means we are creating the parts database
         // so get the sha for last commit of the parts folder and store it in the database
@@ -809,22 +809,22 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
             DebugDialog::debug(QString("1.6 SHA empty"));
             return false;
         }
-        DebugDialog::debug(QString("1.7 set SHA"));
+        DebugDialog::debug(QString("1.7 set SHA %1").arg(sha));
         referenceModel->setSha(sha);
     }
 
     // loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
-    bool ok = referenceModel->loadAll(databaseName, fullLoad, dbExists);
+    QString db = databaseName;
+    if (databaseName.isEmpty() && !dbExists) {
+        db = dbPath;
+    }
+    bool ok = referenceModel->loadAll(db, !dbExists, dbExists);
     DebugDialog::debug(QString("1.8 ok %1").arg(ok));
-    if (ok && databaseName.isEmpty()) {
-        if (dbExists) {
-            DebugDialog::debug(QString("1.9 %1 exists").arg(dbPath));
-            referenceModel->loadFromDB(dbPath);
-        } else {
-            DebugDialog::debug(QString("1.10 %1 does not exist.").arg(dbPath));
-        }
+    if (ok && dbExists) {
+        DebugDialog::debug(QString("1.9 %1 exists").arg(dbPath));
+        referenceModel->loadFromDB(dbPath);
     } else {
-        DebugDialog::debug(QString("1.11 ok %1, empty %2").arg(ok).arg(databaseName.isEmpty()));
+        DebugDialog::debug(QString("1.11 ok: %1, databasename: %2").arg(ok).arg(databaseName));
     }
 
     DebugDialog::debug(QString("1.12 Finish"));

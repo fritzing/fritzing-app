@@ -400,11 +400,9 @@ bool FolderUtils::createFZAndSaveTo(const QDir &dirToCompress, const QString &fi
 
 	QFileInfoList files=dirToCompress.entryInfoList();
 	QFile inFile;
-	
-	char c;
 
-	QString currFolderBU = QDir::currentPath();
-	QDir::setCurrent(dirToCompress.path());
+    QString currFolderBU = QDir::currentPath();
+    QDir::setCurrent(dirToCompress.path());
 	foreach(QFileInfo file, files) {
 		if(!file.isFile()||file.fileName()==filepath) continue;
 		if (file.fileName().contains(LockManager::LockedFileName)) continue;

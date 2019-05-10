@@ -15,7 +15,7 @@ else
   relname=$1  #`date +%Y.%m.%d`
 fi
 
-echo ${relname}
+echo "Building release: ${relname}..."
 
 if [[ ${relname} == *"debug"* ]]; then
   echo "Building a debug release"

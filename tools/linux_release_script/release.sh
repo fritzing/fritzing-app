@@ -30,7 +30,6 @@ else
     exit -1
   fi
 
-  #TODO Add debug-parameter to temporarily switch this of.
   if [[ -n $(git clean -xdn) ]]; then
     echo "Build directory is not clean. Check git clean -xdn."
     git clean -xfn
@@ -92,7 +91,11 @@ echo "cleaning translations"
 rm ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
-git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git || ([[ ${relname} == *"debug"* ]] && echo "Ignoring git error")
+if [[ ${relname} == *"debug"* ]] ; then
+  git clone --branch nightlyParts --single-branch https://github.com/fritzing/fritzing-parts.git || echo -e "\n   ####   \033[1;31m Ignoring git error for debug build!  \033[0m ####\n"
+else
+  git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git
+fi
 
 echo "making library folders"
 

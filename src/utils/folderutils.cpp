@@ -41,8 +41,8 @@ $Date: 2013-04-29 13:10:59 +0200 (Mo, 29. Apr 2013) $
 
 #include "../debugdialog.h"
 #ifdef QUAZIP_INSTALLED
-    #include <quazip/quazip.h>
-    #include <quazip/quazipfile.h>
+    #include <quazip5/quazip.h>
+    #include <quazip5/quazipfile.h>
 #else
     #include "../lib/quazip/quazip.h"
     #include "../lib/quazip/quazipfile.h"

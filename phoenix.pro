@@ -177,10 +177,10 @@ RESOURCES += phoenixresources.qrc
 
 # Fritzing is using libgit2 since version 0.9.3
 packagesExist(libgit2) {
-    message("always true on win32. leads to build problems")
-
+    message("using installed libgit2 library")
     PKGCONFIG += libgit2
     win32 {
+        message("always true on win32. leads to build problems")
         include(pri/libgit2detect.pri)
         message($$PKGCONFIG)
     }
@@ -213,6 +213,7 @@ include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
 
 contains(DEFINES, QUAZIP_INSTALLED) {
+    message("using installed QuaZIP library")
     LIBS += -lquazip5
 } else {
     include(pri/quazip.pri)

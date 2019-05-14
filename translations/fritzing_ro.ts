@@ -100,126 +100,151 @@
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
-        <source>Thanks to Kurt Badelt and Miguel Solis for the Spanish translation, </source>
-        <translation>Mulțumiri lui Kurt Badelt și Miguel Solis pentru traducerea în spaniolă, </translation>
+        <source>Thanks for the translations go out to: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
-        <source>to Gianluca Urgese for the Italian translation, </source>
-        <translation>lui Gianluca Urgese pentru traducerea în italiană, </translation>
+        <source>Spanish: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
-        <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
-        <translation>lui Nuno Pessanha Santos pentru traducerea în portugheză (europeană), </translation>
+        <source>Italian: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
-        <source>to Yuelin and Ninjia  for the Chinese (Simplified) translation, </source>
-        <translation>lui Yuelin și Ninjia  pentru traducerea în chineză (simplificată), </translation>
+        <source>Portuguese (European): </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="146"/>
-        <source>to Hiroshi Suzuki for the Japanese translation, </source>
-        <translation>lui Hiroshi Suzuki pentru traducerea în japoneză, </translation>
+        <source>Portuguese (Brazilian): </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="147"/>
-        <source>to Robert Lee for the Chinese (Traditional) translation, </source>
-        <translation>lui Robert Lee pentru traducerea în chineză (tradițională), </translation>
+        <source>Chinese (Simplified): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="147"/>
+        <source>Yuelin and Ninjia </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="148"/>
-        <source>to Vladimir Savinov for the Russian translation, </source>
-        <translation>lui Vladimir Savinov pentru traducerea în rusă, </translation>
+        <source>Chinese (Traditional) </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="148"/>
+        <source>Robert Lee </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>
-        <source>to Steven Noppe and Davy Uittenbogerd for the Dutch translation, </source>
-        <translation>lui Steven Noppe și Davy Uittenbogerd pentru traducerea în olandeză, </translation>
+        <source>Japanese: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="149"/>
+        <source>Hiroshi Suzuki </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="150"/>
-        <source>to Josef Dustira for the Czech translation, </source>
-        <translation>lui Josef Dustira pentru traducerea în cehă, </translation>
+        <source>Russian: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="151"/>
-        <source>to Jinbuhm Kim for the Korean translation, </source>
-        <translation>lui Jinbuhm Kim pentru traducerea în koreeană, </translation>
+        <source>Dutch: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="152"/>
-        <source>to &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; for the Slovak translation, </source>
-        <translation>lui &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; pentru traducerea în slovacă, </translation>
+        <source>Czech: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="153"/>
-        <source>to Alexander Kaltsas for the Greek translation, </source>
-        <translation>lui Alexander Kaltsas pentru traducerea ăn greacă, </translation>
+        <source>Korean: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="153"/>
+        <source>Jinbuhm Kim </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="154"/>
-        <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
-        <translation>lui Lionel Michel, Yvan Kloster, Alexandre Dussart, și Roald Baudoux pentru traducerea în franceză, </translation>
+        <source>Slovak: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="155"/>
-        <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
-        <translation>lui Cihan Mete Bahad&amp;#x0131;r pentru traducerea în turcă, </translation>
+        <source>Greek: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="156"/>
-        <source>to Nikolay Stankov for the Bulgarian translation, </source>
-        <translation>lui Nikolay Stankov pentru traducerea în bulgară, </translation>
+        <source>French: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Turkish: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="158"/>
-        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
-        <translation>și lui Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira pentru traducerea în portugheză (braziliană). </translation>
+        <source>Bulgarian: </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="162"/>
+        <location filename="../src/help/aboutbox.cpp" line="163"/>
         <source>Fritzing is made possible with funding from the </source>
         <translation>Fritzing este făcut posibil cu finanțare de la </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="163"/>
+        <location filename="../src/help/aboutbox.cpp" line="164"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
         <translation>MWFK Brandenburg, sponsorul pentru Design </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="164"/>
+        <location filename="../src/help/aboutbox.cpp" line="165"/>
         <source>Department of Bauhaus-University Weimar, </source>
         <translation>Departamentul universității Weimar din Bauhaus, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
         <translation>IxDS, un donator anonim, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="166"/>
+        <location filename="../src/help/aboutbox.cpp" line="167"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>și pentru toate achizițiile a Kitului de Pornire Fritzing sau a unei PCB de la Fabrica Fritzing.</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="170"/>
+        <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>Special thanks goes out as well to all the students </source>
         <translation>Mulțumiri speciale adresate tuturor studenților </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="171"/>
+        <location filename="../src/help/aboutbox.cpp" line="172"/>
         <source>and alpha testers who were brave enough to give </source>
         <translation>și testerilor care au avut curajul să testeze </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="172"/>
+        <location filename="../src/help/aboutbox.cpp" line="173"/>
         <source>Fritzing a test spin. </source>
         <translation>Fritzing. </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="175"/>
+        <location filename="../src/help/aboutbox.cpp" line="176"/>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
         <translation>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>

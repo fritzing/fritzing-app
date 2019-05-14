@@ -8,18 +8,6 @@
         <translation> Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
     </message>
     <message>
-        <source>to Yuelin and Ninjia  for the Chinese (Simplified) translation, </source>
-        <translation> à Yuelin et Ninjia pour la traduction en Chinois (simplifié),</translation>
-    </message>
-    <message>
-        <source>to Jinbuhm Kim for the Korean translation, </source>
-        <translation> à Jinbuhm Kim pour la traduction en coréen,</translation>
-    </message>
-    <message>
-        <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
-        <translation> à Lionel Michel, Yvan Kloster, Alexandre Dussart et Roald Baudoux pour la traduction française, </translation>
-    </message>
-    <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>et grâce à chaque achat d&apos;un Starter Kit Fritzing ou d&apos;un circuit imprimé Fritzing Fab.</translation>
     </message>
@@ -28,40 +16,16 @@
         <translation> MWFK Brandenburg, le parrainage du Département du Design</translation>
     </message>
     <message>
-        <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
-        <translation> à Cihan Mete Bahad&amp;#x0131;r pour la traduction en turc,</translation>
-    </message>
-    <message>
         <source>Department of Bauhaus-University Weimar, </source>
         <translation> de l&apos;Université Bauhaus de Weimar,</translation>
-    </message>
-    <message>
-        <source>to Vladimir Savinov for the Russian translation, </source>
-        <translation> à Vladimir Savinov pour la traduction en russe,</translation>
     </message>
     <message>
         <source>Michaela Vieser and Julia Werner.</source>
         <translation> Michaela Vieser et Julia Werner.</translation>
     </message>
     <message>
-        <source>to Robert Lee for the Chinese (Traditional) translation, </source>
-        <translation> à Robert Lee pour le chinois (traditionnel),</translation>
-    </message>
-    <message>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
         <translation>Bryant Mairs, Uleshka Asher et Daniel Tzschentke.</translation>
-    </message>
-    <message>
-        <source>to Hiroshi Suzuki for the Japanese translation, </source>
-        <translation> à Hiroshi Suzuki pour la traduction en japonais,</translation>
-    </message>
-    <message>
-        <source>to Nikolay Stankov for the Bulgarian translation, </source>
-        <translation> à Nikolay Stankov pour la traduction bulgare</translation>
-    </message>
-    <message>
-        <source>Thanks to Kurt Badelt and Miguel Solis for the Spanish translation, </source>
-        <translation>Merci à Kurt Badelt et Miguel Solis pour la traduction en espagnol,</translation>
     </message>
     <message>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
@@ -70,10 +34,6 @@
     <message>
         <source>Special thanks goes out to: </source>
         <translation>Remerciements spéciaux à :</translation>
-    </message>
-    <message>
-        <source>to &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; for the Slovak translation, </source>
-        <translation> A &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; pour la traduction en slovaque,</translation>
     </message>
     <message>
         <source>Fritzing a test spin. </source>
@@ -100,28 +60,12 @@
         <translation> Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </translation>
     </message>
     <message>
-        <source>to Josef Dustira for the Czech translation, </source>
-        <translation> à Josef Dustira pour la traduction tchèque,</translation>
-    </message>
-    <message>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
         <translation> Gero Herkenrath, Jeff Hoefs, Tom Hulbert,</translation>
     </message>
     <message>
-        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
-        <translation>et Arthur Zanona, Nuno Santos Pessanha, Leandro Nunes, et Gabriel Ferreira pour la traduction en portugais (Brésil).</translation>
-    </message>
-    <message>
-        <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
-        <translation> à Nuno Santos Pessanha pour la traduction en portugais (européen),</translation>
-    </message>
-    <message>
         <source>and alpha testers who were brave enough to give </source>
         <translation> et aux testeurs alpha qui étaient assez courageux pour faire avec</translation>
-    </message>
-    <message>
-        <source>to Gianluca Urgese for the Italian translation, </source>
-        <translation> à Gianluca Urgese pour la traduction en italien,</translation>
     </message>
     <message>
         <source>Fritzing is made by: </source>
@@ -136,20 +80,12 @@
         <translation>&lt;b&gt;GNU GPL v3 pour le code et CreativeCommons:BY-SA pour le reste</translation>
     </message>
     <message>
-        <source>to Steven Noppe and Davy Uittenbogerd for the Dutch translation, </source>
-        <translation> à Steven Noppe et Davy Uittenbogerd pour la traduction en néerlandais,</translation>
-    </message>
-    <message>
         <source>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </source>
         <translation> Tom Igoe, Hans-Peter Kadel, Till Savelkoul,</translation>
     </message>
     <message>
         <source>Fritzing is made possible with funding from the </source>
         <translation>Fritzing a été rendu possible grâce au financement de</translation>
-    </message>
-    <message>
-        <source>to Alexander Kaltsas for the Greek translation, </source>
-        <translation> à Kaltsas Alexander pour la traduction en grec,</translation>
     </message>
     <message>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
@@ -177,6 +113,90 @@
     </message>
     <message>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thanks for the translations go out to: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spanish: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Italian: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portuguese (European): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portuguese (Brazilian): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese (Simplified): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yuelin and Ninjia </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese (Traditional) </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Robert Lee </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Japanese: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hiroshi Suzuki </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dutch: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Czech: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Korean: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jinbuhm Kim </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Slovak: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Greek: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>French: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Turkish: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bulgarian: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

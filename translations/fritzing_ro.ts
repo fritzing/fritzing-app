@@ -8216,6 +8216,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="316"/>
+        <location filename="../src/utils/s2s.cpp" line="793"/>
         <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
         <translation>Nu se poate încărca schema &apos;%1&apos; pentru &apos;%2&apos;</translation>
     </message>
@@ -8228,11 +8229,6 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <location filename="../src/utils/s2s.cpp" line="581"/>
         <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
         <translation>Conector lipsă %1 în &apos;%2&apos; schema a &apos;%3&apos;</translation>
-    </message>
-    <message>
-        <location filename="../src/utils/s2s.cpp" line="793"/>
-        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
-        <translation>Nu se poate încărca schema &apos;%1&apos; pentru &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="804"/>

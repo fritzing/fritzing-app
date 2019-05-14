@@ -8202,6 +8202,7 @@ Fritzing продовжує роботу, але ви не зможете змі
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="316"/>
+        <location filename="../src/utils/s2s.cpp" line="793"/>
         <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
         <translation type="unfinished">Не вдалось завантажити схему &apos;%1&apos; для &apos;%2&apos;</translation>
     </message>
@@ -8214,11 +8215,6 @@ Fritzing продовжує роботу, але ви не зможете змі
         <location filename="../src/utils/s2s.cpp" line="581"/>
         <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
         <translation type="unfinished">Відсутній роз’єм %1 у &apos;%2&apos; схеми &apos;%3&apos;</translation>
-    </message>
-    <message>
-        <location filename="../src/utils/s2s.cpp" line="793"/>
-        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
-        <translation type="unfinished">Не вдалось завантажити схему &apos;%1&apos; для &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="804"/>

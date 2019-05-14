@@ -1,16 +1,17 @@
 #!/bin/bash
 set -euE -o functrace
 failure() {
+  local err=$?
   local lineno=$1
   local msg=$2
   echo "Failed at $lineno: $msg"
-  exit
+  exit $err
 }
 trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
 
 if [ -z "${1:-}" ] ; then
   echo "Usage: $0 <need a version string such as '0.6.4b' (without the quotes)>"
-  exit
+  exit -1
 else
   relname=$1  #`date +%Y.%m.%d`
 fi
@@ -62,6 +63,9 @@ app_folder=$(dirname "${app_folder}")
 cd "$app_folder"
 echo "appfolder ${app_folder}"
 
+echo "Build lingustics."
+lrelease phoenix.pro
+
 echo "Compiling."
 qmake CONFIG+=${target} DEFINES+=$quazip
 make -j16
@@ -111,11 +115,14 @@ chmod +x Fritzing
 
 cd "${current_dir}"
 
-if [[ ${relname} != *"debug"* ]]; then
+if [[ ${relname} != *"debug"* || ${relname} == *"continuous"* ]]; then
   echo "compressing...."
   tar -cjf  ./"${release_name}".tar.bz2 "${release_name}"
+  pwd
+  echo ./${release_name}.tar.bz2 ${release_name}
+  ls
 
-  echo "cleaning up"
+  echo "cleaning up ${release_folder}"
   rm -rf "${release_folder}"
 fi
 

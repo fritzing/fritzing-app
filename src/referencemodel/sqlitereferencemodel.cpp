@@ -95,7 +95,8 @@ void noSwappingMessage(int n)
 {
 	FMessageBox::warning(NULL,
 			QObject::tr("Oops!"),
-			QObject::tr("Sorry, we have a problem with the swapping mechanism (Code %1).\nFritzing still works, but you won't be able to change parts properties.").arg(n),
+			QObject::tr("Sorry, we have a problem with the swapping mechanism.\nFritzing still works, but you won't be able to change parts properties.") +
+              QObject::tr("Error %1\n").arg(n),
 			QMessageBox::Ok);
 }
 

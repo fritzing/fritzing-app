@@ -8,6 +8,7 @@ matrix:
       - docker pull fritzing/build:xenial
     script:
       - docker/build-linux.sh
+      - docker/release-linux.sh 0.9.4debug-continuous
 
   - os: osx
     language: cpp

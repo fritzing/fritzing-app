@@ -16,16 +16,12 @@ RUN apt-get update \
     libudev-dev \
     libz-dev \
     python-dev \
-    qt5-default
+    qt5-default \
+    xvfb
 
 # No SHA verification for now. Will be automated by Conan in the future.
 RUN set -xe \
-    && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj \
-    && cd boost_1_70_0 \
-    && ./bootstrap.sh --prefix=${BOOST_ROOT} --without-libraries=python \
-    && ./b2 -j4 install \
-    && cd .. \
-    && rm -rf boost_1_70_0
+    && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj
 
 RUN set -xe \
     && wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz \

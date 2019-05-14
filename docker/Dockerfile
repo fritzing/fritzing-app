@@ -17,6 +17,7 @@ RUN apt-get update \
     libz-dev \
     python-dev \
     qt5-default \
+    qttools5-dev-tools \
     xvfb
 
 # No SHA verification for now. Will be automated by Conan in the future.

@@ -173,11 +173,19 @@
     </message>
     <message>
         <source>to Nuno Pessanha Santos and Bruno Ramalhete for the Portuguese (European) translation, </source>
-        <translation>ao Nuno Pessanha Santos e ao Bruno Ramalhete pela tradução do Português (Europeu), </translation>
+        <translation type="vanished">ao Nuno Pessanha Santos e ao Bruno Ramalhete pela tradução do Português (Europeu), </translation>
     </message>
     <message>
         <source>and to Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
-        <translation>e ao Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, e Gabriel Ferreira para a tradução do Português (Brasileiro).</translation>
+        <translation type="vanished">e ao Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, e Gabriel Ferreira para a tradução do Português (Brasileiro).</translation>
+    </message>
+    <message>
+        <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1011,8 +1019,8 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>A &lt;b&gt;Vista PCB&lt;/b&gt; é onde você etiqueta os componentes numa PCB física (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs podem ser feitos em casa ou num pequeno laboratório usando processos de gravura DIY. Eles podem também ser enviados para um fabricante de PCB para um fabrico preciso. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;A primeira coisa que irá precisar é uma placa para colocar as suas peças. Lá poderá estar um no seu esboço, mas se não, arraste para o ícone da placa na seleção das Peças. O ícone encaixa na imagem na direita: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Para dispor o seu PCB, arrume todos os componenetes para que encaixem bem na placa. Depois tente movimentá-los para minimizar o comprimento e a confusão das ligações. Pode também redimensionar placas retangulares. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Assim que as peças estão postas, pode ligá-las com traços de cobre. Pode também arrastar um traço de ligações individuais ou utilizar o autorouter para gerá-las. O botão Autoroute está em baixo na janela. O botão corresponde à imagem na direita:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source></translation>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="unfinished">A &lt;b&gt;Vista PCB&lt;/b&gt; é onde você etiqueta os componentes numa PCB física (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs podem ser feitos em casa ou num pequeno laboratório usando processos de gravura DIY. Eles podem também ser enviados para um fabricante de PCB para um fabrico preciso. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;A primeira coisa que irá precisar é uma placa para colocar as suas peças. Lá poderá estar um no seu esboço, mas se não, arraste para o ícone da placa na seleção das Peças. O ícone encaixa na imagem na direita: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Para dispor o seu PCB, arrume todos os componenetes para que encaixem bem na placa. Depois tente movimentá-los para minimizar o comprimento e a confusão das ligações. Pode também redimensionar placas retangulares. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Assim que as peças estão postas, pode ligá-las com traços de cobre. Pode também arrastar um traço de ligações individuais ou utilizar o autorouter para gerá-las. O botão Autoroute está em baixo na janela. O botão corresponde à imagem na direita:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
@@ -3528,6 +3536,14 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Color Breadboard Wires By Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display breadboard wires using standard color coding by length</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -3599,7 +3615,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Clean files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Limpar ficheiros</translation>
     </message>
     <message>
         <source>Now cleaning files. Please don&apos;t interrupt the process.</source>
@@ -4371,11 +4387,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Set the part&apos;s title</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Título</translation>
     </message>
     <message>
         <source>Set the part&apos;s date</source>
@@ -4415,7 +4431,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Family</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Família</translation>
     </message>
     <message>
         <source>Set the part&apos;s properties</source>
@@ -4454,11 +4470,11 @@ Go ahead and save?</source>
     <name>PESvgView</name>
     <message>
         <source>width:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">largura:</translation>
     </message>
     <message>
         <source>height:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">altura:</translation>
     </message>
 </context>
 <context>
@@ -4904,7 +4920,7 @@ Note: this warning will not be repeated during this session.</source>
     </message>
     <message>
         <source>Set new size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">definir tamanho novo</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -5127,7 +5143,7 @@ tecla shift troca o eixo de scroll</translation>
     </message>
     <message>
         <source>Board</source>
-        <translation type="unfinished">Placa</translation>
+        <translation>Placa</translation>
     </message>
     <message>
         <source>Port</source>
@@ -5226,7 +5242,7 @@ tecla shift troca o eixo de scroll</translation>
     </message>
     <message>
         <source>Code Window - %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fechar Janela - %1</translation>
     </message>
     <message>
         <source>No boards available</source>
@@ -6074,7 +6090,7 @@ já se encontrava lá, não vais adicionar outravez, Ok?!?</translation>
     </message>
     <message>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Texto</translation>
     </message>
     <message>
         <source>%1 layer export is empty (case 2).</source>
@@ -6158,6 +6174,11 @@ já se encontrava lá, não vais adicionar outravez, Ok?!?</translation>
     </message>
     <message>
         <source>Unable to find parts git repository HEAD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error %1
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6398,7 +6419,7 @@ já se encontrava lá, não vais adicionar outravez, Ok?!?</translation>
     </message>
     <message>
         <source>&amp;cm</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;cm</translation>
     </message>
     <message>
         <source>&amp;in</source>
@@ -6836,11 +6857,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>rows</source>
-        <translation type="unfinished">linhas</translation>
+        <translation>linhas</translation>
     </message>
     <message>
         <source>columns</source>
-        <translation type="unfinished">colunas</translation>
+        <translation>colunas</translation>
     </message>
     <message>
         <source>%1 layout</source>
@@ -6859,7 +6880,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Net labels</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Etiqueta do red</translation>
     </message>
     <message>
         <source>Net labels cannot be blank</source>
@@ -7331,7 +7352,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>New files:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ficheiros novos:</translation>
     </message>
     <message>
         <source>Modified Files:</source>

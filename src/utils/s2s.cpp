@@ -790,7 +790,7 @@ bool S2S::ensureTerminalPoints(const QString & fzpFilePath, const QString & svgF
     QSvgRenderer renderer;
     bool loaded = renderer.load(svgFilePath);
     if (!loaded) {
-		message(tr("Uunable to load schematic '%1' for '%2'").arg(svgFilePath).arg(fzpFilePath));
+		message(tr("Unable to load schematic '%1' for '%2'").arg(svgFilePath).arg(fzpFilePath));
         return false;
     }
 

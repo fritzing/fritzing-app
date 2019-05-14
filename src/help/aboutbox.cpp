@@ -139,23 +139,24 @@ QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
 "</p>" +
 
 "<p>" +
-	tr("Thanks to Kurt Badelt and Miguel Solis for the Spanish translation, ") +
-	tr("to Gianluca Urgese for the Italian translation, ") +
-	tr("to Nuno Pessanha Santos for the Portuguese (European) translation, ") +
-	tr("to Yuelin and Ninjia  for the Chinese (Simplified) translation, ") +
-	tr("to Hiroshi Suzuki for the Japanese translation, ") +
-	tr("to Robert Lee for the Chinese (Traditional) translation, ") +
-	tr("to Vladimir Savinov for the Russian translation, " ) +
-	tr("to Steven Noppe and Davy Uittenbogerd for the Dutch translation, " ) +
-	tr("to Josef Dustira for the Czech translation, " ) +
-	tr("to Jinbuhm Kim for the Korean translation, " ) +
-	tr("to &#313;ubom&iacute;r Ducho&#328; for the Slovak translation, " ) + 
-    tr("to Alexander Kaltsas for the Greek translation, " ) +
-    tr("to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, " ) +
-    tr("to Cihan Mete Bahad&#x0131;r for the Turkish translation, " ) +
-    tr("to Nikolay Stankov for the Bulgarian translation, " ) +
-   
-	tr("and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. " ) +
+	tr("Thanks for the translations go out to: ") +
+	tr("Spanish: ") + "Kurt Badelt, Miguel Solis " +
+	tr("Italian: ") + "Gianluca Urgese " +
+	tr("Portuguese (European): ") + "Nuno Pessanha Santos, Bruno Ramalhete " +
+	tr("Portuguese (Brazilian): ") + " Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, Gabriel Ferreira " +
+	tr("Chinese (Simplified): ") + tr("Yuelin and Ninjia ") +
+	tr("Chinese (Traditional) ") + tr("Robert Lee ") +
+	tr("Japanese: ") + tr("Hiroshi Suzuki ") +
+	tr("Russian: ") + "Vladimir Savinov " +
+	tr("Dutch: ") + "Steven Noppe, Davy Uittenbogerd " +
+	tr("Czech: ") + "Josef Dustira " +
+	tr("Korean: ") + tr("Jinbuhm Kim ") +
+	tr("Slovak: ") + " &#313;ubom&iacute;r Ducho&#328; " +
+    tr("Greek: ") + "Alexander Kaltsas " +
+    tr("French: ") + "Lionel Michel, Yvan Kloster, Alexandre Dussart, Roald Baudoux " +
+    tr("Turkish: ") + "Cihan Mete Bahad&#x0131;r " +
+    tr("Bulgarian: ") + "Nikolay Stankov, Lyubomir Vasilev " +
+
 "</p>" +
 
 "<p>" +

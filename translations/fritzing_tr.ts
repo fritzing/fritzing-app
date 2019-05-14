@@ -8187,6 +8187,7 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="316"/>
+        <location filename="../src/utils/s2s.cpp" line="793"/>
         <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
         <translation>&apos;%2&apos; için &apos;%1&apos; şeması yüklenemedi</translation>
     </message>
@@ -8199,11 +8200,6 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <location filename="../src/utils/s2s.cpp" line="581"/>
         <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
         <translation>&apos;%3&apos; şemasının &apos;%2&apos; elemanının %1 bağlantısı eksik</translation>
-    </message>
-    <message>
-        <location filename="../src/utils/s2s.cpp" line="793"/>
-        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
-        <translation>&apos;%2&apos; için &apos;%1&apos; şeması yüklenemedi</translation>
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="804"/>

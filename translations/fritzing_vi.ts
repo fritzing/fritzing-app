@@ -8173,6 +8173,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="316"/>
+        <location filename="../src/utils/s2s.cpp" line="793"/>
         <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
         <translation>Không thể tải sơ đồ nguyên lý %1 cho %2</translation>
     </message>
@@ -8185,11 +8186,6 @@ is already there, we won&apos;t add it again, right?</source>
         <location filename="../src/utils/s2s.cpp" line="581"/>
         <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
         <translation>Thiếu kết nối %1 trong &apos;%2&apos; sơ đồ nguyên lý &apos;% 3&apos;</translation>
-    </message>
-    <message>
-        <location filename="../src/utils/s2s.cpp" line="793"/>
-        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
-        <translation>Không thể tải sơ đồ nguyên lý %1 cho %2</translation>
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="804"/>

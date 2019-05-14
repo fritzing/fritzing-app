@@ -8119,6 +8119,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="316"/>
+        <location filename="../src/utils/s2s.cpp" line="793"/>
         <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8130,11 +8131,6 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/utils/s2s.cpp" line="581"/>
         <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/utils/s2s.cpp" line="793"/>
-        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

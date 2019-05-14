@@ -6465,10 +6465,6 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Failed loading schematic &apos;%1&apos;, %2 line:%3 col:%4</source>
         <translation type="unfinished"></translation>
     </message>

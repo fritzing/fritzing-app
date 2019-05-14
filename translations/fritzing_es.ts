@@ -8170,6 +8170,7 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="316"/>
+        <location filename="../src/utils/s2s.cpp" line="793"/>
         <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
         <translation type="unfinished">Incapaz de cargar esquemático &apos;%1&apos; para &apos;%2&apos;</translation>
     </message>
@@ -8182,11 +8183,6 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
         <location filename="../src/utils/s2s.cpp" line="581"/>
         <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
         <translation type="unfinished">Conector desaparecido %1 en &apos;%2&apos; esquemático de &apos;%3&apos;</translation>
-    </message>
-    <message>
-        <location filename="../src/utils/s2s.cpp" line="793"/>
-        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
-        <translation type="unfinished">*Uunable Para cargar esquemático &apos;%1&apos; para &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="804"/>

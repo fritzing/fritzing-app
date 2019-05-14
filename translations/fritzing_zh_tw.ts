@@ -8122,6 +8122,7 @@ Fritzing 還可以運作，但此時，您無法變更元件的屬性。</transl
     </message>
     <message>
         <location filename="../src/utils/s2s.cpp" line="316"/>
+        <location filename="../src/utils/s2s.cpp" line="793"/>
         <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8133,11 +8134,6 @@ Fritzing 還可以運作，但此時，您無法變更元件的屬性。</transl
     <message>
         <location filename="../src/utils/s2s.cpp" line="581"/>
         <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/utils/s2s.cpp" line="793"/>
-        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

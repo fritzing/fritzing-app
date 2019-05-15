@@ -28,9 +28,9 @@ INCLUDEPATH += $$LIBGIT2INCLUDE
 
 win32 {
     contains(QMAKE_TARGET.arch, x86_64) {
-        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build64/Debug"
+        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build64/Release"
     } else {
-        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build32/Debug"
+        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build32/Release"
     }
 
     exists($$LIBGIT2LIB/git2.lib) {

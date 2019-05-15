@@ -1,7 +1,5 @@
 REM echo off
 
-call C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat
-
 echo .
 echo you must start this script from the Visual Studio Command Line Window
 echo find this under the start menu at (depending on your version of Visual Studio):
@@ -138,7 +136,7 @@ copy %QTBIN%\..\plugins\platforms\qwindows.dll %DESTDIR%\deploy\platforms\qwindo
 copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy\lib\printsupport\windowsprintersupport.dll
 
 echo copying git2.dll from %LIBGIT2%
-copy %LIBGIT2%\Debug\git2.dll  %DESTDIR%\deploy\git2.dll
+copy %LIBGIT2%\Release\git2.dll  %DESTDIR%\deploy\git2.dll
 
 echo copying sketches, translations, help, README, LICENSE
 echo.
@@ -201,8 +199,6 @@ echo moving deploy to %RELEASE_NAME%
 move %DESTDIR%\deploy %RELEASE_NAME%
 
 echo create zip file
-FOR /F %%i IN ("%DESTDIR%\forzip") DO SET SRC=%%~fi
-FOR /F %%i IN ("%DESTDIR%\fritzing.%1.%2.pc.zip") DO SET DEST=%%~fi
-CScript .\tools\zip.vbs %SRC% %DEST% || exit /b 5
+7z a "%DESTDIR%\fritzing.%1.%2.pc.zip" "%DESTDIR%\forzip"
 
 echo done

@@ -139,23 +139,23 @@ QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
 "</p>" +
 
 "<p>" +
-    tr("Thanks for the translations go out to: ") +
-    tr("Spanish: ") + "Kurt Badelt, Miguel Solis " +
-    tr("Italian: ") + "Gianluca Urgese " +
-    tr("Portuguese (European): ") + "Nuno Pessanha Santos, Bruno Ramalhete " +
-    tr("Portuguese (Brazilian): ") + " Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, Gabriel Ferreira " +
-    tr("Chinese (Simplified): ") + tr("Yuelin and Ninjia ") +
-    tr("Chinese (Traditional) ") + tr("Robert Lee ") +
-    tr("Japanese: ") + tr("Hiroshi Suzuki ") +
-    tr("Russian: ") + "Vladimir Savinov " +
-    tr("Dutch: ") + "Steven Noppe, Davy Uittenbogerd " +
-    tr("Czech: ") + "Josef Dustira " +
-    tr("Korean: ") + tr("Jinbuhm Kim ") +
-    tr("Slovak: ") + " &#313;ubom&iacute;r Ducho&#328; " +
-    tr("Greek: ") + "Alexander Kaltsas " +
-    tr("French: ") + "Lionel Michel, Yvan Kloster, Alexandre Dussart, Roald Baudoux " +
-    tr("Turkish: ") + "Cihan Mete Bahad&#x0131;r " +
-    tr("Bulgarian: ") + "Nikolay Stankov, Lyubomir Vasilev " +
+    tr("Thanks for the translations go out to: ") + "<br/>" +
+    tr("Bulgarian: ") + "Nikolay Stankov, Lyubomir Vasilev" + "<br/>" +
+    tr("Chinese (Simplified): ") + tr("Yuelin and Ninjia") + "<br/>" +
+    tr("Chinese (Traditional): ") + tr("Robert Lee") + "<br/>" +
+    tr("Czech: ") + "Josef Dustira" + "<br/>" +
+    tr("Dutch: ") + "Steven Noppe, Davy Uittenbogerd" + "<br/>" +
+    tr("French: ") + "Lionel Michel, Yvan Kloster, Alexandre Dussart, Roald Baudoux" + "<br/>" +
+    tr("Greek: ") + "Alexander Kaltsas" + "<br/>" +
+    tr("Italian: ") + "Gianluca Urgese" + "<br/>" +
+    tr("Japanese: ") + tr("Hiroshi Suzuki") + "<br/>" +
+    tr("Korean: ") + tr("Jinbuhm Kim") + "<br/>" +
+    tr("Portuguese (European): ") + "Nuno Pessanha Santos, Bruno Ramalhete" + "<br/>" +
+    tr("Portuguese (Brazilian): ") + " Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, Gabriel Ferreira" + "<br/>" +
+    tr("Slovak: ") + " &#313;ubom&iacute;r Ducho&#328;" + "<br/>" +
+    tr("Spanish: ") + "Kurt Badelt, Miguel Solis" + "<br/>" +
+    tr("Russian: ") + "Vladimir Savinov" + "<br/>" +
+    tr("Turkish: ") + "Cihan Mete Bahad&#x0131;r" + "<br/>" +
 
 "</p>" +
 
@@ -173,7 +173,7 @@ QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
     tr("Fritzing a test spin. ") +
 "</p>" +
 
-tr("<br /><br /><br /><br /><br /><br /><br /><br />");
+"<br /><br /><br /><br /><br /><br /><br /><br />";
 
     QPixmap fadepixmap(":/resources/images/aboutbox_scrollfade.png");
 

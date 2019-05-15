@@ -1,7 +1,5 @@
 REM echo off
 
-call C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat
-
 echo .
 echo you must start this script from the Visual Studio Command Line Window
 echo find this under the start menu at (depending on your version of Visual Studio):

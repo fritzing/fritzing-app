@@ -199,8 +199,6 @@ echo moving deploy to %RELEASE_NAME%
 move %DESTDIR%\deploy %RELEASE_NAME%
 
 echo create zip file
-FOR /F %%i IN ("%DESTDIR%\forzip") DO SET SRC=%%~fi
-FOR /F %%i IN ("%DESTDIR%\fritzing.%1.%2.pc.zip") DO SET DEST=%%~fi
-CScript .\tools\zip.vbs %SRC% %DEST% || exit /b 5
+7z a "%DESTDIR%\fritzing.%1.%2.pc.zip" "%DESTDIR%\forzip"
 
 echo done

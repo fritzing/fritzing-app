@@ -342,15 +342,21 @@ Grid::Grid(int sx, int sy, int sz) {
     y = sy;
     z = sz;
 
-    data = (GridValue *) malloc(x * y * z * sizeof(GridValue));   // calloc initializes grid to 0
+    data = QVector<GridValue>(x * y * z);
 }
 
 GridValue Grid::at(int sx, int sy, int sz) const {
-    return *(data + (sz * y * x) + (sy * x) + sx);
+    Q_ASSERT (sx < x);
+    Q_ASSERT (sy < y);
+    Q_ASSERT (sz < z);
+    return data.at((sz * y * x) + (sy * x) + sx);
 }
 
 void Grid::setAt(int sx, int sy, int sz, GridValue value) {
-   *(data + (sz * y * x) + (sy * x) + sx) = value;
+    Q_ASSERT (sx < x);
+    Q_ASSERT (sy < y);
+    Q_ASSERT (sz < z);
+    data[(sz * y * x) + (sy * x) + sx] = value;
 }
 
 QList<QPoint> Grid::init(int sx, int sy, int sz, int width, int height, const QImage & image, GridValue value, bool collectPoints) {
@@ -388,23 +394,14 @@ QList<QPoint> Grid::init(int sx, int sy, int sz, int width, int height, const QI
 QList<QPoint> Grid::init4(int sx, int sy, int sz, int width, int height, const QImage * image, GridValue value, bool collectPoints) {
     // pixels are 4 x 4 bits
     QList<QPoint> points;
-    const uchar * bits1 = image->constScanLine(0);
-    int bytesPerLine = image->bytesPerLine();
-	for (int iy = sy; iy < sy + height; iy++) {
-        int offset = iy * bytesPerLine * 4;
-		for (int ix = sx; ix < sx + width; ix++) {
-            int byteOffset = (ix >> 1) + offset;
-            uchar mask = ix & 1 ? 0x0f : 0xf0;
 
-            if ((*(bits1 + byteOffset) & mask) != mask) ;
-            else if ((*(bits1 + byteOffset + bytesPerLine) & mask) != mask) ;
-            else if ((*(bits1 + byteOffset + bytesPerLine + bytesPerLine) & mask) != mask) ;
-            else if ((*(bits1 + byteOffset + bytesPerLine + bytesPerLine + bytesPerLine) & mask) != mask) ;
-            else continue;  // "pixel" is all white
-
-            setAt(ix, iy, sz, value);
-            if (collectPoints) {
-                points.append(QPoint(ix, iy));
+    for (int iy = sy; iy < sy + height; iy++) {
+        for (int ix = sx; ix < sx + width; ix++) {
+            if (image->pixelColor(ix, iy) != QColor(255, 255, 255, 255)) {
+                setAt(ix, iy, sz, value);
+                if (collectPoints) {
+                    points.append(QPoint(ix, iy));
+                }
             }
 		}
 	}
@@ -413,18 +410,14 @@ QList<QPoint> Grid::init4(int sx, int sy, int sz, int width, int height, const Q
 }
 
 void Grid::copy(int fromIndex, int toIndex) {
-    memcpy(((uchar *) data) + toIndex * x * y * sizeof(GridValue), ((uchar *) data) + fromIndex * x * y * sizeof(GridValue), x * y * sizeof(GridValue));
+    std::copy(
+        data.begin() + fromIndex * x * y, 
+        data.begin() + (fromIndex+1) * x * y, 
+        data.begin() + toIndex * x * y);
 }
 
 void Grid::clear() {
-    memset(data, 0, x * y * z * sizeof(GridValue));
-}
-
-void Grid::free() {
-    if (data) {
-        ::free(data);
-        data = NULL;
-    }
+    data.fill(0);
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -600,10 +593,9 @@ MazeRouter::~MazeRouter()
     if (m_temporaryBoard && m_board != NULL) {
         delete m_board;
     }
-    if (m_grid) {
-        m_grid->free();
-        delete m_grid;
-    }
+
+    delete m_grid;
+
     if (m_boardImage) {
         delete m_boardImage;
     }
@@ -730,12 +722,6 @@ void MazeRouter::start()
     QSizeF gridSize(m_maxRect.width() / m_gridPixels, m_maxRect.height() / m_gridPixels);   
     QSize boardImageSize(qCeil(gridSize.width()), qCeil(gridSize.height())); 
     m_grid = new Grid(boardImageSize.width(), boardImageSize.height(), m_bothSidesNow ? 2 : 1);
-    if (m_grid->data == NULL) {
-        QMessageBox::information(NULL, QObject::tr("Fritzing"), "Out of memory--unable to proceed");
-		restoreOriginalState(parentCommand);
-		cleanUpNets(netList);
-		return;
-    }
 
     m_boardImage = new QImage(boardImageSize.width() * 4, boardImageSize.height() * 4, QImage::Format_Mono);
     m_spareImage = new QImage(boardImageSize.width() * 4, boardImageSize.height() * 4, QImage::Format_Mono);
@@ -837,11 +823,9 @@ void MazeRouter::start()
     }    
 	ProcessEventBlocker::processEvents();
 
-    if (m_grid) {
-        m_grid->free();
-        delete m_grid;
-        m_grid = NULL;
-    }
+    delete m_grid;
+    m_grid = nullptr;
+
     if (m_boardImage) {
         delete m_boardImage;
         m_boardImage = NULL;
@@ -2138,7 +2122,7 @@ void MazeRouter::cleanUpNets(NetList & netList) {
 }
 
 void MazeRouter::createTraces(NetList & netList, Score & bestScore, QUndoCommand * parentCommand) {
-    QPointF topLeft = m_maxRect.topLeft();
+
 
     QMultiHash<int, Via *> allVias;
     QMultiHash<int, JumperItem *> allJumperItems;

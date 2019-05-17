@@ -118,7 +118,7 @@ struct Nearest {
 };
 
 struct Grid {
-    GridValue * data;
+    QVector<GridValue> data;
     int x;
     int y;
     int z;

@@ -101,15 +101,11 @@
     </message>
     <message>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Jan Sieber, Yaniv Steiner, Olaf Val,</translation>
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel,</translation>
     </message>
     <message>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
@@ -117,86 +113,106 @@
     </message>
     <message>
         <source>Thanks for the translations go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Merci pour les traductions à:</translation>
     </message>
     <message>
         <source>Spanish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Espanol:</translation>
     </message>
     <message>
         <source>Italian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Italien:</translation>
     </message>
     <message>
         <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <translation>Portugais (européen):</translation>
     </message>
     <message>
         <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
+        <translation>Portugais (Brésilien):</translation>
     </message>
     <message>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chinois simplifié:</translation>
     </message>
     <message>
         <source>Yuelin and Ninjia </source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Yuelin et Ninja</translation>
     </message>
     <message>
         <source>Chinese (Traditional) </source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Chinois traditionnel:</translation>
     </message>
     <message>
         <source>Robert Lee </source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Robert Lee</translation>
     </message>
     <message>
         <source>Japanese: </source>
-        <translation type="unfinished"></translation>
+        <translation>Japonais:</translation>
     </message>
     <message>
         <source>Hiroshi Suzuki </source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Hiroshi Suzuki</translation>
     </message>
     <message>
         <source>Russian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Russe:</translation>
     </message>
     <message>
         <source>Dutch: </source>
-        <translation type="unfinished"></translation>
+        <translation>Néerlandais:</translation>
     </message>
     <message>
         <source>Czech: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tchèque:</translation>
     </message>
     <message>
         <source>Korean: </source>
-        <translation type="unfinished"></translation>
+        <translation>Coréen:</translation>
     </message>
     <message>
         <source>Jinbuhm Kim </source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Jinbuhm Kim</translation>
     </message>
     <message>
         <source>Slovak: </source>
-        <translation type="unfinished"></translation>
+        <translation>Slovaque:</translation>
     </message>
     <message>
         <source>Greek: </source>
-        <translation type="unfinished"></translation>
+        <translation>Grec:</translation>
     </message>
     <message>
         <source>French: </source>
-        <translation type="unfinished"></translation>
+        <translation>Français:</translation>
     </message>
     <message>
         <source>Turkish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Turc:</translation>
     </message>
     <message>
         <source>Bulgarian: </source>
+        <translation>Bulgare:</translation>
+    </message>
+    <message>
+        <source>Yuelin and Ninjia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese (Traditional): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Robert Lee</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hiroshi Suzuki</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jinbuhm Kim</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -270,7 +286,7 @@
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">D&apos;accord</translation>
     </message>
 </context>
 <context>
@@ -614,7 +630,7 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>Images</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Images</translation>
     </message>
 </context>
 <context>
@@ -665,11 +681,11 @@ Utiliser le fichier ?</translation>
     <name>ConsoleSettings</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Réglages</translation>
     </message>
     <message>
         <source>Select Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez les paramètres</translation>
     </message>
     <message>
         <source>BaudRate:</source>
@@ -677,59 +693,59 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>Data bits:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bits de données:</translation>
     </message>
     <message>
         <source>Parity:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parité:</translation>
     </message>
     <message>
         <source>Stop bits:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bits d&apos;arrêt:</translation>
     </message>
     <message>
         <source>Flow control:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Contrôle de flux:</translation>
     </message>
     <message>
         <source>Select Serial Port</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sélectionnez le port série</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>La description:</translation>
     </message>
     <message>
         <source>Manufacturer:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fabricant:</translation>
     </message>
     <message>
         <source>Serial number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numéro de série:</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Emplacement:</translation>
     </message>
     <message>
         <source>Vendor ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fournisseur ID:</translation>
     </message>
     <message>
         <source>Product ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>ID du produit:</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Appliquer</translation>
     </message>
     <message>
         <source>Additional options</source>
-        <translation type="unfinished"></translation>
+        <translation>Options additionelles</translation>
     </message>
     <message>
         <source>Local echo</source>
-        <translation type="unfinished"></translation>
+        <translation>Écho local</translation>
     </message>
     <message>
         <source>Description: %1</source>
@@ -760,23 +776,23 @@ Utiliser le fichier ?</translation>
     <name>ConsoleWindow</name>
     <message>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Moniteur série</translation>
     </message>
     <message>
         <source>Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Moniteur</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished">Outils</translation>
+        <translation>Outils</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;À propos</translation>
+        <translation>&amp;À propos</translation>
     </message>
     <message>
         <source>About program</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -784,7 +800,7 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>C&amp;onnect</source>
@@ -1137,7 +1153,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">D&apos;accord</translation>
     </message>
 </context>
 <context>
@@ -1456,7 +1472,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">D&apos;accord</translation>
     </message>
 </context>
 <context>
@@ -1482,7 +1498,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">D&apos;accord</translation>
     </message>
 </context>
 <context>
@@ -3514,7 +3530,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">D&apos;accord</translation>
     </message>
     <message>
         <source>mm</source>
@@ -5103,7 +5119,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">D&apos;accord</translation>
     </message>
     <message>
         <source>minutes</source>
@@ -5119,7 +5135,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emplacement:</translation>
     </message>
     <message>
         <source>...</source>
@@ -5182,7 +5198,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Moniteur série</translation>
     </message>
     <message>
         <source>Upload</source>
@@ -5361,7 +5377,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Moniteur série</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
@@ -6571,7 +6587,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">D&apos;accord</translation>
     </message>
     <message>
         <source>Pick custom %1 color</source>

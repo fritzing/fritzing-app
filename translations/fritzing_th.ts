@@ -96,10 +96,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -140,23 +136,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Yuelin and Ninjia </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Chinese (Traditional) </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Robert Lee </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Japanese: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hiroshi Suzuki </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -173,10 +153,6 @@
     </message>
     <message>
         <source>Korean: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Jinbuhm Kim </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -197,6 +173,26 @@
     </message>
     <message>
         <source>Bulgarian: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yuelin and Ninjia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese (Traditional): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Robert Lee</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hiroshi Suzuki</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jinbuhm Kim</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

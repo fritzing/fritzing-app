@@ -198,7 +198,7 @@ include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
 
 contains(DEFINES, QUAZIP_INSTALLED) {
-    message("using installed QuaZIP library")
+    !build_pass:message("using installed QuaZIP library")
     LIBS += -lquazip5
 } else {
     include(pri/quazip.pri)
@@ -207,4 +207,4 @@ contains(DEFINES, QUAZIP_INSTALLED) {
 TARGET = Fritzing
 TEMPLATE = app
 
-message("libs $$LIBS")
+!build_pass:message("libs $$LIBS")

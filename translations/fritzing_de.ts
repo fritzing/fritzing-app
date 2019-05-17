@@ -101,107 +101,115 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>Thanks for the translations go out to: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="143"/>
-        <source>Spanish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Vielen Dank für die Übersetzungen geht an:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
-        <source>Italian: </source>
+        <source>Yuelin and Ninjia</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
-        <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <source>Chinese (Traditional): </source>
+        <translation type="unfinished">Chinesisch traditionell:</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="146"/>
-        <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="147"/>
-        <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="147"/>
-        <source>Yuelin and Ninjia </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="148"/>
-        <source>Chinese (Traditional) </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="148"/>
-        <source>Robert Lee </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="149"/>
-        <source>Japanese: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="149"/>
-        <source>Hiroshi Suzuki </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="150"/>
-        <source>Russian: </source>
+        <location filename="../src/help/aboutbox.cpp" line="145"/>
+        <source>Robert Lee</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="151"/>
-        <source>Dutch: </source>
+        <source>Hiroshi Suzuki</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="152"/>
-        <source>Czech: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="153"/>
-        <source>Korean: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="153"/>
-        <source>Jinbuhm Kim </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="154"/>
-        <source>Slovak: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="155"/>
-        <source>Greek: </source>
+        <source>Jinbuhm Kim</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="156"/>
-        <source>French: </source>
-        <translation type="unfinished"></translation>
+        <source>Spanish: </source>
+        <translation>Spanisch:</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="150"/>
+        <source>Italian: </source>
+        <translation>Italienisch:</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="153"/>
+        <source>Portuguese (European): </source>
+        <translation>Portugiesisch (Europäisch):</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="154"/>
+        <source>Portuguese (Brazilian): </source>
+        <translation>Portugiesisch (brasilianisch):</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="144"/>
+        <source>Chinese (Simplified): </source>
+        <translation type="unfinished">Vereinfachtes Chinesisch:</translation>
+    </message>
+    <message>
+        <source>Robert Lee </source>
+        <translation type="vanished">Robert Lee</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="151"/>
+        <source>Japanese: </source>
+        <translation>Japanisch:</translation>
+    </message>
+    <message>
+        <source>Hiroshi Suzuki </source>
+        <translation type="vanished">Hiroshi Suzuki</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="157"/>
-        <source>Turkish: </source>
-        <translation type="unfinished"></translation>
+        <source>Russian: </source>
+        <translation>Russisch:</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="147"/>
+        <source>Dutch: </source>
+        <translation>Niederländisch:</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="146"/>
+        <source>Czech: </source>
+        <translation>Tschechisch:</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="152"/>
+        <source>Korean: </source>
+        <translation>Koreanisch:</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="155"/>
+        <source>Slovak: </source>
+        <translation>Slowakisch:</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="149"/>
+        <source>Greek: </source>
+        <translation>Griechisch:</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="148"/>
+        <source>French: </source>
+        <translation>Französisch:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="158"/>
+        <source>Turkish: </source>
+        <translation>Türkisch:</translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="143"/>
         <source>Bulgarian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Bulgarisch:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="163"/>
@@ -242,11 +250,6 @@
         <location filename="../src/help/aboutbox.cpp" line="173"/>
         <source>Fritzing a test spin. </source>
         <translation>Fritzing auszuprobieren. </translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="176"/>
-        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
-        <translation></translation>
     </message>
 </context>
 <context>
@@ -1272,17 +1275,17 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="88"/>
         <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;br/&gt; Die &lt;b&gt; Breadboard-Ansicht &lt;/ b&gt; soll wie ein &lt;i&gt; realer &lt;/ i&gt; Breadboard-Prototyp aussehen. &lt;br/&gt; &lt;br/&gt; Ziehen Sie zunächst ein Teil aus dem Teilefach , das oben rechts ist. Ziehen Sie dann weitere Teile hinein und verbinden Sie sie, indem Sie sie auf das Steckbrett legen oder auf die Anschlüsse klicken und Drähte ziehen. Der Vorgang ähnelt der Anordnung der Dinge in der physischen Welt. &lt;br/&gt; &lt;br/&gt; Probieren Sie die anderen Ansichten aus, nachdem Sie Ihre Skizze in der Steckbrettansicht erstellt haben. Sie können die Ansicht wechseln, indem Sie auf die Registerkarten oben im Fenster klicken. Da unterschiedliche Ansichten unterschiedliche Zwecke haben, sehen Teile in den anderen Ansichten unterschiedlich aus.</translation>
     </message>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="101"/>
         <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Willkommen in der &lt;b&gt; schematischen Ansicht &lt;/ b&gt; &lt;br/&gt; &lt;br/&gt; Dies ist eine abstraktere Art, Komponenten und Verbindungen zu betrachten, als die Breadboard-Ansicht. Sie haben die gleichen Elemente wie auf Ihrem Steckbrett, sie sehen einfach anders aus. Diese Darstellung ähnelt eher den traditionellen Diagrammen, die von Ingenieuren verwendet werden. &lt;br/&gt; &lt;br/&gt; Nachdem Sie Drähte zwischen Teilen gezogen haben, können Sie mit gedrückter Umschalttaste auf die Maus klicken, um Biegepunkte zu erstellen und Ihre Verbindungen zu ordnen. Mithilfe der schematischen Ansicht können Sie überprüfen, ob Sie die richtigen Verbindungen zwischen Komponenten hergestellt haben. Sie können Ihren Schaltplan auch zur Dokumentation ausdrucken.</translation>
     </message>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="113"/>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2890,7 +2893,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1131"/>
         <source>Color Breadboard Wires By Length</source>
-        <translation type="unfinished">Kabellänge farbig kodieren</translation>
+        <translation>Kabellänge farbig kodieren</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1132"/>
@@ -5234,7 +5237,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2144"/>
         <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt; Geben Sie ein Präfix ein, um die Teiledateien leichter identifizieren zu können. &lt;br/&gt; Die Dateinamen haben die Form &apos;PREFIX_%1&apos;. &lt;br/&gt; (Das vorgeschlagene Präfix muss nicht geändert werden, da ein eindeutiger Suffix immer hinzugefügt wird) &lt;/ p&gt;</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/partseditor/pemainwindow.cpp" line="3796"/>
@@ -5726,7 +5729,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="102"/>
         <source>Set this checkbox to edit internal connections by drawing wires</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="91"/>
@@ -5736,7 +5739,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="116"/>
         <source>Controls for setting the terminal point for a connector. The terminal point is where a wire will attach to the connector. You can also drag the crosshair of the current connector</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="125"/>
@@ -5831,7 +5834,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="450"/>
         <source>Use the cursor location and mouse wheel to navigate to the SVG element which you want to assign to the current connector, then mouse down to select it.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -7601,98 +7604,98 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="159"/>
         <source>silkscreen layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Siebdruckschicht(en)</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="160"/>
         <source>copper layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kupferschicht(en)</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="161"/>
         <source>mask layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maskenschicht(en)</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="162"/>
         <source>paste mask layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maskenebene(n) einfügen</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="164"/>
         <source>Unable to translate svg curves in %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="174"/>
         <source>%1 layer export is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Export Ebene %1 ist leer.</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="192"/>
         <source>%1 layer export is empty (case 2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1  Ebenenexport ist leer (Fall 2).</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="207"/>
         <source>silk layer %1 export is empty</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="223"/>
         <source>silk export failure</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="245"/>
         <source>exported drill file is empty</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="262"/>
         <source>drill export failure</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="280"/>
         <source>exported mask layer %1 is empty</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="286"/>
         <source>%1 mask export failure (2)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="294"/>
         <location filename="../src/svg/gerbergenerator.cpp" line="328"/>
         <source>mask export failure</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="317"/>
         <source>exported paste mask layer is empty</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="353"/>
         <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="860"/>
         <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="861"/>
         <source>You may need to reload the shape SVG. </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="862"/>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="914"/>
@@ -8776,7 +8779,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="75"/>
         <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="81"/>
@@ -8786,7 +8789,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="82"/>
         <source>Get a jump start by looking at the example circuits under File &gt; Examples.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="86"/>
@@ -8796,22 +8799,22 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="87"/>
         <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="88"/>
         <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="89"/>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="90"/>
         <source>The Inspector Window--which lets you change the properties of parts--is only enabled for parts that are in a sketch (not for parts still in a Parts Bin).</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="94"/>
@@ -8821,22 +8824,22 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="95"/>
         <source>To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="96"/>
         <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="97"/>
         <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="98"/>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="109"/>
@@ -8846,12 +8849,12 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="110"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="111"/>
         <source>To free-rotate a logo text or image item in PCB view hold down the Alt (Linux: meta) key and free-rotate as usual.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="115"/>
@@ -8861,17 +8864,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="116"/>
         <source>To drag the canvas, hold down the space bar and drag with the mouse.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
         <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>
         <source>When you export images from Fritzing, you can choose which layers are exported. Before you choose &apos;Export...&apos;, go into the &apos;View&apos; menu and hide the layers you don&apos;t want to be visible.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="122"/>
@@ -8881,17 +8884,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="123"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="124"/>
         <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="125"/>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="129"/>
@@ -8901,7 +8904,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="130"/>
         <source>To add a bendpoint to a wire, double-click where you want the bendpoint.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="131"/>
@@ -8911,17 +8914,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="132"/>
         <source>In Schematic or PCB view, if you drag from a bendpoint with the Alt (Linux: Meta) key down, you will drag out a new wire from that bendpoint.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="133"/>
         <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="134"/>
         <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="138"/>
@@ -8931,42 +8934,42 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="139"/>
         <source>To see all the connectors connected to a given connector, hold the mouse down on the connector--all the connections will be highlighted.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="145"/>
         <source>Check out Parts Editor Help under the &lt;b&gt;Help&lt;/b&gt; Menu.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="146"/>
         <source>Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="147"/>
         <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="148"/>
         <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="150"/>
         <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="170"/>
         <source>Have your PCB quickly and easily produced with Fritzing Fab. Hover over the &apos;Fabricate&apos; button to get a quote.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="171"/>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="175"/>
@@ -8976,7 +8979,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="176"/>
         <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="180"/>
@@ -8996,47 +8999,47 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
         <source>In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
         <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="155"/>
         <source>Always lead a trace straight out of a pin. This helps to prevent short circuits.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="156"/>
         <source>Through-hole parts can be traced from either side of a PCB.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="157"/>
         <source>It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="158"/>
         <source>Route traces in 45-degree angles to reduce noise.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="159"/>
         <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="160"/>
         <source>You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="163"/>
@@ -9061,17 +9064,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="161"/>
         <source>Use copper-blocker parts to mask out areas that you want free of copper fill.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="140"/>
         <source>A ratsnest line (very thin &apos;wire&apos;) between connections in one view means that those connections are somehow connected in another view.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="162"/>
         <source>To change trace width, select a trace then use the &lt;b&gt;width&lt;/b&gt; combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="144"/>

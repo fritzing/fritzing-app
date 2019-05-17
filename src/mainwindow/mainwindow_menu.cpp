@@ -1522,7 +1522,7 @@ void MainWindow::createWindowMenu() {
 void MainWindow::createTraceMenus()
 {
 	m_pcbTraceMenu = menuBar()->addMenu(tr("&Routing"));
-	m_pcbTraceMenu->addAction(m_newAutorouteAct);
+	// m_pcbTraceMenu->addAction(m_newAutorouteAct);
 	m_pcbTraceMenu->addAction(m_newDesignRulesCheckAct);
 	m_pcbTraceMenu->addAction(m_autorouterSettingsAct);
 	m_pcbTraceMenu->addAction(m_fabQuoteAct);
@@ -1560,7 +1560,7 @@ void MainWindow::createTraceMenus()
 	//m_pcbTraceMenu->addAction(m_checkLoadedTracesAct);
 
     m_schematicTraceMenu = menuBar()->addMenu(tr("&Routing"));
-	m_schematicTraceMenu->addAction(m_newAutorouteAct);
+	// m_schematicTraceMenu->addAction(m_newAutorouteAct);
 	m_schematicTraceMenu->addAction(m_excludeFromAutorouteAct);
 	m_schematicTraceMenu->addAction(m_showUnroutedAct);
 	m_schematicTraceMenu->addAction(m_selectAllTracesAct);
@@ -2699,10 +2699,10 @@ void MainWindow::hideShowTraceMenu() {
 }
 
 void MainWindow::createTraceMenuActions() {
-	m_newAutorouteAct = new QAction(tr("Autoroute"), this);
-	m_newAutorouteAct->setStatusTip(tr("Autoroute connections..."));
-	m_newAutorouteAct->setShortcut(tr("Shift+Ctrl+A"));
-	connect(m_newAutorouteAct, SIGNAL(triggered()), this, SLOT(newAutoroute()));
+	// m_newAutorouteAct = new QAction(tr("Autoroute"), this);
+	// m_newAutorouteAct->setStatusTip(tr("Autoroute connections..."));
+	// m_newAutorouteAct->setShortcut(tr("Shift+Ctrl+A"));
+	// connect(m_newAutorouteAct, SIGNAL(triggered()), this, SLOT(newAutoroute()));
 
 	createOrderFabAct();
 	createActiveLayerActions();

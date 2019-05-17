@@ -546,7 +546,7 @@ protected:
 	class SketchToolButton *createRotateButton(SketchAreaWidget *parent);
 	SketchToolButton *createShareButton(SketchAreaWidget *parent);
 	SketchToolButton *createFlipButton(SketchAreaWidget *parent);
-	SketchToolButton *createAutorouteButton(SketchAreaWidget *parent);
+	// SketchToolButton *createAutorouteButton(SketchAreaWidget *parent);
     SketchToolButton *createOrderFabButton(SketchAreaWidget *parent);
 	QWidget *createActiveLayerButton(SketchAreaWidget *parent);
 	QWidget *createViewFromButton(SketchAreaWidget *parent);
@@ -839,7 +839,7 @@ protected:
 	QMenu *m_pcbTraceMenu;
 	QMenu *m_schematicTraceMenu;
 	QMenu *m_breadboardTraceMenu;
-	QAction *m_newAutorouteAct;
+	// QAction *m_newAutorouteAct;
 	QAction *m_orderFabAct;
 	QAction *m_activeLayerTopAct;
 	QAction *m_activeLayerBottomAct;

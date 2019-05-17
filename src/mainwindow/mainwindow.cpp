@@ -947,13 +947,13 @@ SketchToolButton *MainWindow::createFlipButton(SketchAreaWidget *parent) {
 	return flipButton;
 }
 
-SketchToolButton *MainWindow::createAutorouteButton(SketchAreaWidget *parent) {
-	SketchToolButton *autorouteButton = new SketchToolButton("Autoroute",parent, m_newAutorouteAct);
-	autorouteButton->setText(tr("Autoroute"));
-	autorouteButton->setEnabledIcon();					// seems to need this to display button icon first time
+// SketchToolButton *MainWindow::createAutorouteButton(SketchAreaWidget *parent) {
+// 	SketchToolButton *autorouteButton = new SketchToolButton("Autoroute",parent, m_newAutorouteAct);
+// 	autorouteButton->setText(tr("Autoroute"));
+// 	autorouteButton->setEnabledIcon();					// seems to need this to display button icon first time
 
-	return autorouteButton;
-}
+// 	return autorouteButton;
+// }
 
 SketchToolButton *MainWindow::createOrderFabButton(SketchAreaWidget *parent) {
     SketchToolButton *orderFabButton = new SketchToolButton("Order",parent, m_orderFabAct);
@@ -1069,12 +1069,14 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
 			retval << createFlipButton(parent) << createRoutingStatusLabel(parent); 
 			break;
 		case ViewLayer::SchematicView:
-			retval << createFlipButton(parent) <<  createAutorouteButton(parent) << createRoutingStatusLabel(parent);
+			retval << createFlipButton(parent)
+                // << createAutorouteButton(parent) 
+                << createRoutingStatusLabel(parent);
 			break;
 		case ViewLayer::PCBView:
 			retval << createViewFromButton(parent)
 				<< createActiveLayerButton(parent) 
-				<< createAutorouteButton(parent) 
+				// << createAutorouteButton(parent) 
 				<< createExportEtchableButton(parent)
                 << createRoutingStatusLabel(parent)
                 ;

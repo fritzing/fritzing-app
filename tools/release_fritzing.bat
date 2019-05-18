@@ -1,5 +1,3 @@
-REM echo off
-
 echo .
 echo you must start this script from the Visual Studio Command Line Window
 echo find this under the start menu at (depending on your version of Visual Studio):

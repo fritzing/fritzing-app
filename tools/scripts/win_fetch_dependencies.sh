@@ -1,7 +1,8 @@
 #!/bin/bash
 set -xe
 
-if [ ! -d "/c/Qt" ]; then
+echo "Looking for Qt..."
+if [ ! -d "/c/Qt/5.12.3/msvc2017/bin" ]; then
     echo "Qt not found in cache. Downloading..."
     curl -L \
         http://download.qt-project.org/official_releases/online_installers/qt-unified-windows-x86-online.exe \
@@ -11,7 +12,9 @@ if [ ! -d "/c/Qt" ]; then
     "${TRAVIS_BUILD_DIR}/qt-installer.exe" \
         --script "${TRAVIS_BUILD_DIR}/tools/qt_installer_noninteractive.qs"
 fi
+ls -lah "/c/Qt/5.12.3/msvc2017/bin"
 
+echo "Looking for LibGit2..."
 if [ ! -d "${TRAVIS_BUILD_DIR}/../libgit2" ]; then
     echo "LibGit2 not found in cache. Downloading..."
     curl -fsSL \
@@ -27,6 +30,7 @@ if [ ! -d "${TRAVIS_BUILD_DIR}/../libgit2" ]; then
     cmake --build . --config Release
     cd "${TRAVIS_BUILD_DIR}"
 fi
+ls -lah "${TRAVIS_BUILD_DIR}/../libgit2"
 
 # No point in putting Boost in cache since it would be downloading it from the cache server
 # So there is no speed improvement.

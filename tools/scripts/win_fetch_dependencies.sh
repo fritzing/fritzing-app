@@ -15,7 +15,7 @@ fi
 ls -lah "/c/Qt/5.12.3/msvc2017/bin"
 
 echo "Looking for LibGit2..."
-if [ ! -d "${TRAVIS_BUILD_DIR}/../libgit2" ]; then
+if [ ! -d "${TRAVIS_BUILD_DIR}/../libgit2/build64/Release/git2.lib" ]; then
     echo "LibGit2 not found in cache. Downloading..."
     curl -fsSL \
         https://github.com/libgit2/libgit2/archive/v0.28.1.zip \

@@ -15,22 +15,23 @@ fi
 ls -lah "/c/Qt/5.12.3/msvc2017/bin"
 
 echo "Looking for LibGit2..."
-if [ ! -d "${TRAVIS_BUILD_DIR}/../libgit2/build64/Release/git2.lib" ]; then
+LIBGIT2_DIR="${TRAVIS_BUILD_DIR}/../libgit2"
+if [ ! -d "${LIBGIT2_DIR}/build64/Release/git2.lib" ]; then
     echo "LibGit2 not found in cache. Downloading..."
     curl -fsSL \
         https://github.com/libgit2/libgit2/archive/v0.28.1.zip \
         -o libgit2.zip
     7z x libgit2.zip
-    mv libgit2-0.28.1 "${TRAVIS_BUILD_DIR}/../libgit2"
+    mv libgit2-0.28.1 "${LIBGIT2_DIR}"
 
     echo "Building LibGit2..."
-    mkdir "${TRAVIS_BUILD_DIR}/libgit2/build64"
-    cd "${TRAVIS_BUILD_DIR}/libgit2/build64"
-    cmake -G "Visual Studio 15 2017 Win64" "${TRAVIS_BUILD_DIR}"
+    mkdir "${LIBGIT2_DIR}/build64"
+    cd "${LIBGIT2_DIR}/build64"
+    cmake -G "Visual Studio 15 2017 Win64" "${LIBGIT2_DIR}"
     cmake --build . --config Release
     cd "${TRAVIS_BUILD_DIR}"
 fi
-ls -lah "${TRAVIS_BUILD_DIR}/../libgit2"
+ls -lah "${LIBGIT2_DIR}/build64/Release/"
 
 # No point in putting Boost in cache since it would be downloading it from the cache server
 # So there is no speed improvement.

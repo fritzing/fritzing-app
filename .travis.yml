@@ -56,7 +56,7 @@ matrix:
     cache:
       directories:
         - /c/Qt
-        - ../libgit2
+        - ../libgit2/build64
     before_install:
       - ./tools/scripts/win_fetch_dependencies.sh
 

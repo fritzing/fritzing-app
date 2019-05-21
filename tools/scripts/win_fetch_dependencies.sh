@@ -12,7 +12,6 @@ if [ ! -d "/c/Qt/5.12.3/msvc2017/bin" ]; then
     "${TRAVIS_BUILD_DIR}/qt-installer.exe" \
         --script "${TRAVIS_BUILD_DIR}/tools/qt_installer_noninteractive.qs"
 fi
-ls -lah "/c/Qt/5.12.3/msvc2017/bin"
 
 echo "Looking for LibGit2..."
 LIBGIT2_DIR="${TRAVIS_BUILD_DIR}/../libgit2"
@@ -25,7 +24,7 @@ if [ ! -d "${LIBGIT2_DIR}/build64/Release/git2.lib" ]; then
     mv libgit2-0.28.1 "${LIBGIT2_DIR}"
 
     echo "Building LibGit2..."
-    mkdir "${LIBGIT2_DIR}/build64"
+    mkdir -p "${LIBGIT2_DIR}/build64"
     cd "${LIBGIT2_DIR}/build64"
     cmake -G "Visual Studio 15 2017 Win64" "${LIBGIT2_DIR}"
     cmake --build . --config Release

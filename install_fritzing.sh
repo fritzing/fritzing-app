@@ -195,17 +195,17 @@ case $? in
     esac
 echo -e "-*-*-*-*-*-*-*-\n"
 
-# set the default application to fritzing.desktop
-echo "Setting up default application -> fritzing.desktop"
+# set the default application to org.fritzing.Fritzing.desktop
+echo "Setting up default application -> org.fritzing.Fritzing.desktop"
 echo "-*-*-*-*-*-*-*-"
 {
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fz && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzz && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzp && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzpz && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzb && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzbz && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzm ;
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fz && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzz && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzp && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzpz && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzb && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzbz && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzm ;
 }
 case $? in
     0)
@@ -264,12 +264,12 @@ echo "Doing final touch..."
 APP_ICON_ESC="$(esc_path "$APP_ICON")"
 
 # Modify Fritzing desktop executable [keep original]
-sed -i.use "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" fritzing.desktop
+sed -i.use "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" org.fritzing.Fritzing.desktop
 
 # Install Fritzing desktop application
-cp fritzing.desktop.use "$APPS"/fritzing.desktop
+cp org.fritzing.Fritzing.desktop.use "$APPS"/org.fritzing.Fritzing.desktop
 cp icons/fritzing_icon.png "$APP_ICON"
-rm -f fritzing.desktop.use
+rm -f org.fritzing.Fritzing.desktop.use
 
 # Escape all paths [forward slashes] to make `sed` stable
 MIMES_ESC="$(esc_path "$MIMES")"

@@ -21,7 +21,7 @@ if [ ! -d "${LIBGIT2_DIR}/build64/Release/git2.lib" ]; then
         https://github.com/libgit2/libgit2/archive/v0.28.1.zip \
         -o libgit2.zip
     7z x libgit2.zip
-    mv libgit2-0.28.1 "${LIBGIT2_DIR}"
+    mv libgit2-0.28.1/ "${LIBGIT2_DIR}"
     ls -lah "${LIBGIT2_DIR}"
 
     echo "Building LibGit2..."

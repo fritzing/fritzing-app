@@ -613,7 +613,14 @@ bool DRC::makeBoard(QImage * image, QRectF & sourceRes) {
     return true;
 }
 
-void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QImage * minusImage, QImage * plusImage, QRectF & sourceRes, ViewLayer::ViewLayerPlacement viewLayerPlacement, int index, double keepoutMils) {
+void DRC::splitNet(QDomDocument * masterDoc,
+                   QList<ConnectorItem *> & equi,
+                   QImage * minusImage,
+                   QImage * plusImage,
+                   QRectF & sourceRes,
+                   ViewLayer::ViewLayerPlacement viewLayerPlacement,
+                   int index,
+                   double keepoutMils) {
     // deal with connectors on the same part, even though they are not on the same net
     // in other words, make sure there are no overlaps of connectors on the same part
     QList<QDomElement> net;
@@ -670,7 +677,13 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
 
 }
 
-void DRC::splitNetPrep(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, const Markers & markers, QList<QDomElement> & net, QList<QDomElement> & alsoNet, QList<QDomElement> & notNet, bool checkIntersection) 
+void DRC::splitNetPrep(QDomDocument * masterDoc,
+                       QList<ConnectorItem *> & equi,
+                       const Markers & markers,
+                       QList<QDomElement> & net,
+                       QList<QDomElement> & alsoNet,
+                       QList<QDomElement> & notNet,
+                       bool checkIntersection)
 {
     QMultiHash<QString, QString> partSvgIDs;
     QMultiHash<QString, QString> partTerminalIDs;

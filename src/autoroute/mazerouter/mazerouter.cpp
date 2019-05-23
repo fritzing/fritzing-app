@@ -824,7 +824,7 @@ void MazeRouter::start()
 	ProcessEventBlocker::processEvents();
 
     delete m_grid;
-    m_grid = nullptr;
+    m_grid = NULL;
 
     if (m_boardImage) {
         delete m_boardImage;

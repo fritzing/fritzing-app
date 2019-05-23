@@ -2,13 +2,14 @@
 set -xe
 
 echo "Looking for Qt..."
-if [ ! -d "/c/Qt/5.12.3/msvc2017/bin" ]; then
+if [ ! -d "/c/Qt/5.12.3/msvc2017/bin/qmake.exe" ]; then
     echo "Qt not found in cache. Downloading..."
     curl -L \
         http://download.qt-project.org/official_releases/online_installers/qt-unified-windows-x86-online.exe \
         --output "${TRAVIS_BUILD_DIR}/qt-installer.exe"
 
     echo "Running Qt installer in headless mode..."
+    if [ -d "/c/Qt" ]; then rm -rf "/c/Qt"; fi
     "${TRAVIS_BUILD_DIR}/qt-installer.exe" \
         --script "${TRAVIS_BUILD_DIR}/tools/qt_installer_noninteractive.qs"
 fi
@@ -21,7 +22,8 @@ if [ ! -d "${LIBGIT2_DIR}/build64/Release/git2.lib" ]; then
         https://github.com/libgit2/libgit2/archive/v0.28.1.zip \
         -o libgit2.zip
     7z x libgit2.zip
-    mv libgit2-0.28.1/* "${LIBGIT2_DIR}"
+    if [ -d "${LIBGIT2_DIR}" ]; then rm -rf "${LIBGIT2_DIR}"; fi
+    mv libgit2-0.28.1/ "${LIBGIT2_DIR}"
 
     echo "Building LibGit2..."
     mkdir -p "${LIBGIT2_DIR}/build64"

@@ -5,6 +5,7 @@ GenericName[fi]=Elektroniikan suunnitteluohjelma
 GenericName[ru]=Программа проектирования электроники
 Comment=Create circuits and lay out printed circuit boards
 Comment[fi]=Suunnittele elektronisia kytkentöjä ja piirilevyjä
+Comment[ru]=Создавайте схемы и выкладывайте печатные платы
 Exec=Fritzing %F
 Icon=fritzing
 Terminal=false

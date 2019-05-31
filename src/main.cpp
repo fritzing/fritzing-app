@@ -50,13 +50,13 @@ QtMessageHandler originalMsgHandler;
 
 void writeCrashMessage(const char * msg) {
     QString path = FolderUtils::getTopLevelUserDataStorePath();
-	path += "/fritzingcrash.txt";
-	QFile file(path);
-	if (file.open(QIODevice::Append | QIODevice::Text)) {
-		QTextStream out(&file);
-		out << QString(msg) << "\n";
-		file.close();
-	}
+    path += "/fritzingcrash.txt";
+    QFile file(path);
+    if (file.open(QIODevice::Append | QIODevice::Text)) {
+        QTextStream out(&file);
+        out << QString(msg) << "\n";
+        file.close();
+    }
 }
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
@@ -71,26 +71,24 @@ void fMessageHandler(QtMsgType type, const char *msg)
 void fMessageHandler(QtMsgType type, const QMessageLogContext &context, const QString & msg)
 #endif
 {
-	switch (type) {
-		case QtDebugMsg:
-			ORIGINAL_MESSAGE_HANDLER(type, msg);
-			break;
-		case QtWarningMsg:
-			ORIGINAL_MESSAGE_HANDLER(type, msg);
-			break;
-		case QtCriticalMsg:
-			ORIGINAL_MESSAGE_HANDLER(type, msg);
-			break;
-		case QtFatalMsg:
-			{
-				writeCrashMessage(msg);
-			}
+    switch (type) {
+      case QtDebugMsg:
+        ORIGINAL_MESSAGE_HANDLER(type, msg);
+        break;
+      case QtWarningMsg:
+        ORIGINAL_MESSAGE_HANDLER(type, msg);
+        break;
+      case QtCriticalMsg:
+        ORIGINAL_MESSAGE_HANDLER(type, msg);
+        break;
+      case QtFatalMsg: {
+        writeCrashMessage(msg);
+        }
 
-			// don't abort
-			ORIGINAL_MESSAGE_HANDLER(QtWarningMsg, msg);
-	}
- }
-
+        // don't abort
+        ORIGINAL_MESSAGE_HANDLER(QtWarningMsg, msg);
+   }
+}
 
 
 int main(int argc, char *argv[])
@@ -107,54 +105,52 @@ int main(int argc, char *argv[])
 #endif
 #ifndef QT_NO_DEBUG
 #ifdef WIN_CHECK_LEAKS
-	HANDLE hLogFile;
+    HANDLE hLogFile;
     QString path = FolderUtils::getTopLevelUserDataStorePath() + "/fritzing_leak_log.txt";
     std::wstring wstr = path.toStdWString();
     LPCWSTR ptr = wstr.c_str();
-	hLogFile = CreateFile(ptr, GENERIC_WRITE,
-		  FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
-		  FILE_ATTRIBUTE_NORMAL, NULL);
-	_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_FILE);
-	_CrtSetReportFile(_CRT_ERROR, hLogFile);
-	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE);
-	_CrtSetReportFile(_CRT_WARN, hLogFile);
-	_CrtSetReportMode(_CRT_ASSERT, _CRTDBG_MODE_FILE);
-	_CrtSetReportFile(_CRT_ASSERT, hLogFile);
-	_CrtSetDbgFlag ( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
-	//_CrtSetBreakAlloc(323809);					// sets a break when this memory id is allocated
+    hLogFile = CreateFile(ptr, GENERIC_WRITE,
+                          FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
+                          FILE_ATTRIBUTE_NORMAL, NULL);
+    _CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_FILE);
+    _CrtSetReportFile(_CRT_ERROR, hLogFile);
+    _CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE);
+    _CrtSetReportFile(_CRT_WARN, hLogFile);
+    _CrtSetReportMode(_CRT_ASSERT, _CRTDBG_MODE_FILE);
+    _CrtSetReportFile(_CRT_ASSERT, hLogFile);
+    _CrtSetDbgFlag ( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
+    //_CrtSetBreakAlloc(323809);  // sets a break when this memory id is allocated
 #endif
 #endif
 #endif
 
-	int result = 0;
-	try {
-		//QApplication::setGraphicsSystem("raster");
+   int result = 0;
+   try {
+        //QApplication::setGraphicsSystem("raster");
 #if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
-		QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+        QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
-		FApplication * app = new FApplication(argc, argv);
-		switch (app->init()) {
-        case FInitResultNormal:
-        {
-			//DebugDialog::setDebugLevel(DebugDialog::Error);
-			if (app->runAsService()) {
-				// for example: -g C:\Users\jonathan\fritzing2\fz\Test_multiple.fz -go C:\Users\jonathan\fritzing2\fz\gerber
-				result = app->serviceStartup();
+        FApplication * app = new FApplication(argc, argv);
+        switch (app->init()) {
+          case FInitResultNormal: {
+            //DebugDialog::setDebugLevel(DebugDialog::Error);
+            if (app->runAsService()) {
+                // for example: -g C:\Users\jonathan\fritzing2\fz\Test_multiple.fz -go C:\Users\jonathan\fritzing2\fz\gerber
+                result = app->serviceStartup();
                 if (result == 1) {
-					result = app->exec();
+                    result = app->exec();
                 }
-			}
-			else {
-				result = app->startup();
-				if (result == 0) {
-					result = app->exec();
-				}
-			}
-			app->finish();
+            }
+            else {
+                result = app->startup();
+                if (result == 0) {
+                    result = app->exec();
+                }
+            }
+            app->finish();
             break;
-        }
-		case FInitResultHelp:
-        {
+          }
+          case FInitResultHelp: {
             QTextStream cout(stdout);
             cout <<
                 "Fritzing version " << Version::versionString() << " - Qt version " << QT_VERSION_STR << "\n"
@@ -185,36 +181,35 @@ int main(int argc, char *argv[])
                 "  ep path            :  external process at <path>\n"
                 "  eparg args         :  external process arguments\n"
                 "  epname name        :  external process menu item name\n"
-				"\n"
-				"The -geda/-kicad/-kicadschematic/-gerber/svg options all exit Fritzing after the conversion process is complete;\n"
-				"these options are mutually exclusive.\n"
-				"\n"
-				"Usually, the Fritzing executable is stored in the same folder that contains the parts/bins/sketches/translations folders,\n"
-				"or the executable is in a child folder of the p/b/s/t folder.\n"
-				"If this is not the case, use the -f option to point to the p/b/s/t folder.\n"
-				"\n"
-				"The -ep option creates a menu item to launch an external process,\n"
-				"and puts the standard output of that process into a dialog window in Fritzing.\n"
-				"The process path follows the -ep argument; the name of the menu item follows the -epname argument;\n"
-				"and any arguments to pass to the external process are provided in the -eparg arguments.\n";
+                "\n"
+                "The -geda/-kicad/-kicadschematic/-gerber/svg options all exit Fritzing after the conversion process is complete;\n"
+                "these options are mutually exclusive.\n"
+                "\n"
+                "Usually, the Fritzing executable is stored in the same folder that contains the parts/bins/sketches/translations folders,\n"
+                "or the executable is in a child folder of the p/b/s/t folder.\n"
+                "If this is not the case, use the -f option to point to the p/b/s/t folder.\n"
+                "\n"
+                "The -ep option creates a menu item to launch an external process,\n"
+                "and puts the standard output of that process into a dialog window in Fritzing.\n"
+                "The process path follows the -ep argument; the name of the menu item follows the -epname argument;\n"
+                "and any arguments to pass to the external process are provided in the -eparg arguments.\n";
             break;
-		}
-        case FInitResultVersion:
-        {
+          }
+          case FInitResultVersion: {
             QTextStream cout(stdout);
             cout <<
                 "Fritzing " << Version::versionString() << "\n";
             break;
+          }
         }
-        }
-		delete app;
-	}
-	catch (char const *str) {
-		writeCrashMessage(str);
-	}
-	catch (...) {
-		result = -1;
-	}
+        delete app;
+    }
+    catch (char const *str) {
+        writeCrashMessage(str);
+    }
+    catch (...) {
+        result = -1;
+    }
 
-	return result;
+    return result;
 }

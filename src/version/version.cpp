@@ -58,6 +58,7 @@ Version::Version() {
 	}
 
     m_revision = m_gitCommit;
+    m_revision.truncate(8);
 
     QStringList strings;
     strings = m_gitDate.split("T", QString::SkipEmptyParts);

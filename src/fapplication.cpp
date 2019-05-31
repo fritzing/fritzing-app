@@ -361,7 +361,7 @@ FApplication::FApplication( int & argc, char ** argv) : QApplication(argc, argv)
 	m_arguments = arguments();
 }
 
-bool FApplication::init() {
+int FApplication::init() {
 
 	//foreach (QString argument, m_arguments) {
 		//DebugDialog::debug(QString("argument %1").arg(argument));
@@ -375,7 +375,14 @@ bool FApplication::init() {
 			(m_arguments[i].compare("-help", Qt::CaseInsensitive) == 0) || 
 			(m_arguments[i].compare("--help", Qt::CaseInsensitive) == 0)) 
 		{
-			return false;
+			return FInitResultHelp;
+		}
+
+		if ((m_arguments[i].compare("-v", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("-version", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("--version", Qt::CaseInsensitive) == 0))
+		{
+			return FInitResultVersion;
 		}
 
 		if ((m_arguments[i].compare("-e", Qt::CaseInsensitive) == 0) ||
@@ -615,7 +622,7 @@ bool FApplication::init() {
 #endif
     AboutBox::initBuildType(m_buildType);
 
-	return true;
+	return FInitResultNormal;
 }
 
 FApplication::~FApplication(void)

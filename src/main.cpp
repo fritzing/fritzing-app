@@ -133,7 +133,9 @@ int main(int argc, char *argv[])
 		QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
 		FApplication * app = new FApplication(argc, argv);
-		if (app->init()) {
+		switch (app->init()) {
+        case FInitResultNormal:
+        {
 			//DebugDialog::setDebugLevel(DebugDialog::Error);
 			if (app->runAsService()) {
 				// for example: -g C:\Users\jonathan\fritzing2\fz\Test_multiple.fz -go C:\Users\jonathan\fritzing2\fz\gerber
@@ -149,8 +151,9 @@ int main(int argc, char *argv[])
 				}
 			}
 			app->finish();
-		}
-		else
+            break;
+        }
+		case FInitResultHelp:
         {
             QTextStream cout(stdout);
             cout <<
@@ -194,7 +197,16 @@ int main(int argc, char *argv[])
 				"and puts the standard output of that process into a dialog window in Fritzing.\n"
 				"The process path follows the -ep argument; the name of the menu item follows the -epname argument;\n"
 				"and any arguments to pass to the external process are provided in the -eparg arguments.\n";
+            break;
 		}
+        case FInitResultVersion:
+        {
+            QTextStream cout(stdout);
+            cout <<
+                "Fritzing " << Version::versionString() << "\n";
+            break;
+        }
+        }
 		delete app;
 	}
 	catch (char const *str) {

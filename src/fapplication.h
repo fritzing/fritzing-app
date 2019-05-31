@@ -118,7 +118,7 @@ public:
 	~FApplication(void);
 
 public:
-	bool init();
+	int init();
 	int startup();
 	int serviceStartup();
 	void finish();
@@ -238,5 +238,11 @@ protected:
     QString m_buildType;
 };
 
+
+enum FInitResult {
+    FInitResultNormal,
+    FInitResultHelp,
+    FInitResultVersion
+};
 
 #endif

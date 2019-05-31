@@ -168,12 +168,7 @@ macx {
     QMAKE_BUNDLE_DATA += FILE_ICONS
 }
 
-QT += core gui svg xml network sql # opengl
-greaterThan(QT_MAJOR_VERSION, 4) {
-    QT += widgets printsupport concurrent serialport
-} else {
-    include($$QTSERIALPORT_PROJECT_ROOT/src/serialport/qt4support/serialport.prf)
-}
+QT += concurrent core gui network printsupport serialport sql svg widgets xml
 
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc

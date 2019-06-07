@@ -40,13 +40,8 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #endif
 #endif
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-QtMsgHandler originalMsgHandler;
-#define ORIGINAL_MESSAGE_HANDLER(TYPE, MSG) originalMsgHandler((TYPE), (MSG))
-#else
 QtMessageHandler originalMsgHandler;
 #define ORIGINAL_MESSAGE_HANDLER(TYPE, MSG) originalMsgHandler((TYPE), context, (MSG))
-#endif
 
 void writeCrashMessage(const char * msg) {
     QString path = FolderUtils::getTopLevelUserDataStorePath();
@@ -59,17 +54,11 @@ void writeCrashMessage(const char * msg) {
     }
 }
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 void writeCrashMessage(const QString & msg) {
         writeCrashMessage(msg.toStdString().c_str());
 }
-#endif
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-void fMessageHandler(QtMsgType type, const char *msg)
-#else
 void fMessageHandler(QtMsgType type, const QMessageLogContext &context, const QString & msg)
-#endif
 {
     switch (type) {
       case QtDebugMsg:
@@ -98,11 +87,7 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef Q_OS_WIN
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-	originalMsgHandler = qInstallMsgHandler(fMessageHandler);
-#else
     originalMsgHandler = qInstallMessageHandler(fMessageHandler);
-#endif
 #ifndef QT_NO_DEBUG
 #ifdef WIN_CHECK_LEAKS
     HANDLE hLogFile;

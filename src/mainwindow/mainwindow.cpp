@@ -1354,7 +1354,7 @@ bool MainWindow::eventFilter(QObject *object, QEvent *event) {
 		ProcessEventBlocker::processEvents();
 	}
 
-#if defined(Q_OS_MAC) && (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
+#if defined(Q_OS_MAC)
 
     // Need to process Backspace on Mac to workaround bug in Qt5
     // See http://qt-project.org/forums/viewthread/36174

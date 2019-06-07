@@ -76,9 +76,6 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 static QString eagleActionType = ".eagle";
 static QString gerberActionType = ".gerber";
 static QString jpgActionType = ".jpg";
-#if (QT_VERSION < QT_VERSION_CHECK(5, 0, 0))
-static QString psActionType = ".ps";
-#endif
 static QString pdfActionType = ".pdf";
 static QString pngActionType = ".png";
 static QString svgActionType = ".svg";
@@ -139,12 +136,6 @@ void MainWindow::initNames()
 	fileExtFormats[jpgActionType] = tr("JPEG Image (*.jpg)");
 	fileExtFormats[svgActionType] = tr("SVG Image (*.svg)");
 	fileExtFormats[bomActionType] = tr("BoM Text File (*.html)");
-    
-#if (QT_VERSION < QT_VERSION_CHECK(5, 0, 0))
-    OtherKnownExtensions << psActionType;
-	filePrintFormats[psActionType] = QPrinter::PostScriptFormat;
-	fileExtFormats[psActionType] = tr("PostScript (*.ps)");
-#endif
 
 	QSettings settings;
 	AutosaveEnabled = settings.value("autosaveEnabled", QString("%1").arg(AutosaveEnabled)).toBool();
@@ -986,13 +977,6 @@ void MainWindow::createExportActions() {
 	m_exportPngAct->setData(pngActionType);
 	m_exportPngAct->setStatusTip(tr("Export the visible area of the current sketch as a PNG image"));
 	connect(m_exportPngAct, SIGNAL(triggered()), this, SLOT(doExport()));
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-	m_exportPsAct = new QAction(tr("PostScript..."), this);
-	m_exportPsAct->setData(psActionType);
-	m_exportPsAct->setStatusTip(tr("Export the visible area of the current sketch as a PostScript image"));
-	connect(m_exportPsAct, SIGNAL(triggered()), this, SLOT(doExport()));
-#endif
 
 	m_exportPdfAct = new QAction(tr("PDF..."), this);
 	m_exportPdfAct->setData(pdfActionType);

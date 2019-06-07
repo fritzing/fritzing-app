@@ -1403,9 +1403,6 @@ void MainWindow::populateExportMenu() {
 	imageMenu->addSeparator();
 	imageMenu->addAction(m_exportSvgAct);
 	imageMenu->addAction(m_exportPdfAct);
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-	imageMenu->addAction(m_exportPsAct);
-#endif
 
 	QMenu * productionMenu = m_exportMenu->addMenu(tr("for Production"));
 	productionMenu->addAction(m_exportEtchablePdfAct);

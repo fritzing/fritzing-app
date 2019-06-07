@@ -105,11 +105,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #endif
 #endif
 #ifdef Q_OS_MAC
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)) || defined(QT_MAC_USE_COCOA)
 #define PLATFORM_NAME "mac-os-x-105"
-#else
-#define PLATFORM_NAME "mac-os-x-104"
-#endif
 #endif
 
 #ifdef Q_OS_WIN
@@ -612,11 +608,7 @@ int FApplication::init() {
 	}
 
 #ifdef Q_OS_MAC
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)) || defined(QT_MAC_USE_COCOA)
 	m_buildType = " Cocoa";
-#else
-	m_buildType = " Carbon";
-#endif
 #else
     m_buildType = QString(PLATFORM_NAME).contains("64") ? "64" : "32";
 #endif

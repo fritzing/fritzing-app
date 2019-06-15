@@ -905,7 +905,7 @@ protected:
     bool m_restarting;
 
     QStringList m_alienFiles;
-    QStringList m_peAlienFiles;
+    QStringList peAlienFiles;
     QString m_alienPartsMsg;
     QStringList m_filesReplacedByAlienOnes;
 

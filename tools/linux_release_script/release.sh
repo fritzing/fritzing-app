@@ -38,11 +38,11 @@ else
   target="release"
 fi
 
-arch_aux=`uname -m`
+arch_aux=$(uname -m)
 
 echo
 script_path="$(readlink -f "$0")"
-script_folder=$(dirname ${script_path})
+script_folder=$(dirname "${script_path}")
 echo "{script_folder} ${script_folder}"
 
 current_dir=$(pwd)
@@ -57,9 +57,9 @@ quazip='QUAZIP_LIB'
 echo "using src/lib/quazip"
 
 
-app_folder=$(dirname ${script_folder})
-app_folder=$(dirname ${app_folder})
-cd $app_folder
+app_folder=$(dirname "${script_folder}")
+app_folder=$(dirname "${app_folder}")
+cd "$app_folder"
 echo "appfolder ${app_folder}"
 
 echo "Compiling."
@@ -71,28 +71,28 @@ release_folder="${current_dir}/${release_name}"
 
 if [[ ${relname} != *"debug"* ]] ; then
   # Archive this for evaluation of crash reports
-  cp Fritzing Fritzing_${release_name}
+  cp Fritzing "Fritzing_${release_name}"
   strip Fritzing
 fi
 
 echo "making release folder: ${release_folder}"
-mkdir -p ${release_folder}
+mkdir -p "${release_folder}"
 
 echo "copying release files"
-cp -rf sketches/ help/ translations/ Fritzing.sh Fritzing.1 org.fritzing.Fritzing.desktop fritzing.rc org.fritzing.Fritzing.appdata.xml install_fritzing.sh README.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 $release_folder/
-mkdir -p ${release_folder}/icons
-cp resources/system_icons/linux/* $release_folder/icons/
-mv Fritzing ${release_folder}/
-chmod +x ${release_folder}/install_fritzing.sh
+cp -rf sketches/ help/ translations/ Fritzing.sh Fritzing.1 org.fritzing.Fritzing.desktop fritzing.rc org.fritzing.Fritzing.appdata.xml install_fritzing.sh README.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 "$release_folder/"
+mkdir -p "${release_folder}/icons"
+cp resources/system_icons/linux/* "$release_folder/icons/"
+mv Fritzing "${release_folder}/"
+chmod +x "${release_folder}/install_fritzing.sh"
 
-cd ${release_folder}
+cd "${release_folder}"
 
 echo "cleaning translations"
 rm ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
 if [[ ${relname} == *"debug"* ]] ; then
-  git clone --branch nightlyParts --single-branch https://github.com/fritzing/fritzing-parts.git || echo -e "\n   ####   \033[1;31m Ignoring git error for debug build!  \033[0m ####\n"
+  git clone --branch nightlyParts --single-branch https://github.com/fritzing/fritzing-parts.git || echo -e "\\n   ####   \\033[1;31m Ignoring git error for debug build!  \\033[0m ####\\n"
 else
   git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git
 fi
@@ -109,14 +109,14 @@ chmod +x Fritzing
 
 ./Fritzing -db "${release_folder}/fritzing-parts/parts.db" -pp "${release_folder}/fritzing-parts" -f "${release_folder}"
 
-cd ${current_dir}
+cd "${current_dir}"
 
 if [[ ${relname} != *"debug"* ]]; then
   echo "compressing...."
-  tar -cjf  ./${release_name}.tar.bz2 ${release_name}
+  tar -cjf  ./"${release_name}".tar.bz2 "${release_name}"
 
   echo "cleaning up"
-  rm -rf ${release_folder}
+  rm -rf "${release_folder}"
 fi
 
 echo "done!"

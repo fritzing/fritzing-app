@@ -63,7 +63,7 @@ for i in $ARGS; do
         '-u' | '--user')
             USERMODE="true"
             ;;
-        -* | --*)
+        -*)
             arg_err "$i"
             exit 1
             ;;
@@ -136,8 +136,9 @@ if [[ ! -d "$BIN" ]]; then
 fi
 
 # add mime types for fritzing file formats
-grep -q 'application/x-fritzing' "$MIMES"
-if [ $? -eq 0 ]; then
+
+if grep -q 'application/x-fritzing' "$MIMES"
+then
     echo "Fritzing MIME types already registered!"
 else
     echo "Registering Fritzing MIME types..."
@@ -160,7 +161,7 @@ cp -Rp "$APPDIR" "$FRITZ_DIR"
 
 # Enter installation/Fritzing directory
 echo "Entering $(basename "$FRITZ_DIR")/" | tr -s "/"
-cd "$FRITZ_DIR"
+cd "$FRITZ_DIR" || exit $?
 
 # If installing in system mode, notify user that
 # it will take a long time.
@@ -252,9 +253,10 @@ case $? in
 echo -e "-*-*-*-*-*-*-*-\n"
 
 echo "Making symlinks..."
-ln -s "$(realpath ./Fritzing)" "$BIN"/Fritzing 2>/dev/null
 
-if [ $? -ne 0 ]; then
+
+if ! ln -s "$(realpath ./Fritzing)" "$BIN"/Fritzing 2>/dev/null
+then
     echo "Symlinks already exists! (or linking failed...)" >&2
 fi
 

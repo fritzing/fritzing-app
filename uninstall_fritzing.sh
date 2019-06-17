@@ -81,8 +81,9 @@ if [[ "$MODE" == "system" && "$ID" -ne 0 ]]; then
 fi
 
 # ---- UNINSTALL START ---- #
-grep -q 'application/x-fritzing' "$MIMES"
-if [ $? -eq 0 ]; then
+
+if grep -q 'application/x-fritzing' "$MIMES"
+then
     TOWRITE="$(grep -v 'application/x-fritzing' "$MIMES")"
     echo "$TOWRITE" > "$MIMES"
 else
@@ -90,7 +91,7 @@ else
 fi
 
 echo "Entering $(basename "$FRITZ_DIR")/" | tr -s "/"
-cd "$FRITZ_DIR"
+cd "$FRITZ_DIR" || exit $?
 
 # Uninstall Fritzing MIME packages
 echo "Uninstalling Fritzing MIME types..."
@@ -152,7 +153,7 @@ echo "Removing symlinks..."
 rm -f "$BIN"/Fritzing 2>/dev/null
 
 echo "Leaving $(basename "$FRITZ_DIR")/" | tr -s "/"
-cd -
+cd - || exit $?
 
 echo "Deleting $(basename "$FRITZ_DIR")/" | tr -s "/"
 rm -rf "$FRITZ_DIR"

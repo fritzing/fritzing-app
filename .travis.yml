@@ -3,7 +3,7 @@ langauge: minimal
 stages:
   - name: build_and_pack
   - name: deploy_to_github
-    if: branch = develop
+    if: TRAVIS_PULL_REQUEST == false AND branch = develop
 
 env:
   global:
@@ -13,7 +13,9 @@ env:
     - secure: "K2cy5+vb/BbWz92nCDacFwe3chy62qqegNcmwk+69JCuGKDtHiWaEsukm2arp/OiTcwXJgZjw35NhUrbIXzYtIaegc+4ImXOpMsGeOwxPruzNt+a+Yp9uAECs6fs+tI75RrGmVjVZZCx2J4cAYrjYAqLt7wvv9liB4PE+sOZZmzMLBJ1mC5JI1hN5qyRR18Q2xnTcTVfMciEpW3QtpGRSlecdQUUSXryDLTRo4OCgYNpWMDoX5q5XfMqPKkfjcjXuAvJfKjvWD64etSEUguC64/cEUiOsW6culvZimNSlF5Lv5MkrBmrEYCW677MT/R/eIllaaATmuFqoeQ3Dw1Pc2j49PL8pQisggA/tSRt/csUyoPouPEezD4uZitj+oSWX6qOl1sV+AV2Pd/ApR9YRRNXm8Z/bp0ZqobBt5ev5pM9eoDL9qoypGWR5RdLcOwhpiGt5EzhhhW7/oDOR+XD43WK6Rv776jW1RTAMwQuEf8uL62c7HNcBjhNO3sovd4RKnGp6jNz5NTB10T2F2RvapSNJLIuhZjb2MjCGhjD4p6cJdEL84hBcQkGO9aJP4G1oT7y8sCfLTWwvH4xUSIH9X2joMNQMu+Dni9QmH5j9d2iakwo4k1SocCbTkfy1CPwNKLCn81t/mMtXKKgIDJZ3b1SC/ljCAvGRHgvUmIhVdg="
 
 before_install:
-  - ./tools/aws_tasks.sh
+  - mkdir -p ~/"$TRAVIS_BUILD_NUMBER"
+  - ./tools/aws_tasks.sh setup
+
 
 jobs:
   include:
@@ -28,9 +30,8 @@ jobs:
       script:
         - cat ~/$TRAVIS_BUILD_NUMBER/*
       after_success:
-        - aws s3 rm --recursive s3://fritzing/$TRAVIS_BUILD_NUMBER # clean up after ourselves
+        - ./tools/aws_tasks.sh cleanup
 
 
 after_success:
-  - script: if [[ ( $TRAVIS_PULL_REQUEST == false ) && ( $TRAVIS_BRANCH = "develop" ) ]]; then aws s3 sync ~/$TRAVIS_BUILD_NUMBER s3://fritzing/$TRAVIS_BUILD_NUMBER; fi
-    
+  - ./tools/aws_tasks.sh synchronize

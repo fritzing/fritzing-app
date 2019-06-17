@@ -11,7 +11,7 @@ trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
 
 if [ -z "${1:-}" ] ; then
   echo "Usage: $0 <need a version string such as '0.6.4b' (without the quotes)>"
-  exit -1
+  exit 64
 else
   relname=$1  #`date +%Y.%m.%d`
 fi
@@ -28,13 +28,13 @@ else
   if [[ -n $(git status -s) ]]; then
     echo "Build directory is not clean. Check git status."
     git status -s
-    exit -1
+    exit 1
   fi
 
   if [[ -n $(git clean -xdn) ]]; then
     echo "Build directory is not clean. Check git clean -xdn."
     git clean -xfn
-    exit -1
+    exit 1
   fi
   target="release"
 fi

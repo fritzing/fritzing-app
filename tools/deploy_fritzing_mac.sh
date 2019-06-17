@@ -2,7 +2,8 @@
 QTBIN=/usr/local/opt/qt5/bin
 
 # Go to this scripts directory and then one up
-cd "$(dirname "$(realpath "$0")")";
+toolsdir=$(dirname "${BASH_SOURCE[0]}")
+cd "$toolsdir"/..
 workingdir=$(pwd)
 
 echo ">> working directory"

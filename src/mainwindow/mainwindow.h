@@ -52,6 +52,8 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include "../svg/svg2gerber.h"
 #include "../routingstatus.h"
 
+QStringList peAlienFiles;
+
 QT_BEGIN_NAMESPACE
 class QAction;
 class QListWidget;
@@ -456,7 +458,7 @@ protected slots:
 
     void keepMargins();
 	void dockChangeActivation(bool activate, QWidget * originator);
-    void addToMyParts(ModelPart *, QStringList &);
+    void addToMyParts(ModelPart *, const QStringList &);
     void hidePartSilkscreen();
     void fabQuote();
     void findPartInSketch();
@@ -908,7 +910,6 @@ protected:
     bool m_restarting;
 
     QStringList m_alienFiles;
-    QStringList peAlienFiles;
     QString m_alienPartsMsg;
     QStringList m_filesReplacedByAlienOnes;
 

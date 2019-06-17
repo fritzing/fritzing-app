@@ -2960,7 +2960,7 @@ QString MainWindow::getStyleSheetSuffix() {
     return "fritzing";
 }
 
-void MainWindow::addToMyParts(ModelPart * modelPart, QStringList & peAlienFiles)
+void MainWindow::addToMyParts(ModelPart * modelPart, const QStringList & peAlienFiles)
 {
         foreach(QString pathToAddFromPe, peAlienFiles) {
             // DebugDialog::debug(QString("addToMyParts adding  %1")

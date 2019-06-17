@@ -1,5 +1,5 @@
 FROM conanio/gcc5
-# Docherfile for ^ https://github.com/conan-io/conan-docker-tools/blob/master/gcc_5/Dockerfile
+# Dockerfile for ^ https://github.com/conan-io/conan-docker-tools/blob/master/gcc_5/Dockerfile
 
 ENV BOOST_ROOT /usr/local
 

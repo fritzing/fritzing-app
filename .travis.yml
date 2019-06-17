@@ -1,4 +1,4 @@
-langauge: minimal
+language: minimal
 
 stages:
   - name: fast_check
@@ -13,34 +13,29 @@ env:
     - secure: "fn3QWEi/PPcq4CGAVqlWauFn6/yVnb7MtBVWAkcrMDGSty1OdTkXt9LrBLcrnYKMsonxauJJSA3grx0mDqUZ+5vR7TjO3Cg7lcXuMZe/pdWia3DDJ4+Rl/Lw8viCD2rczNzI8E9R/FHBRhepx3T9n4wDQKv5ozoVyqw/4iZaJ+DMxqYRng3o6f541gsYBl6QNIe0ZcGmsy6izaD94IfNemHNS31HOqXtJeVAhwBo59jx/tk1KrMo724s7tr++bkzAJH04T4UlHKKJe/aJpxf592ZEIbahjOk3AwbB6HAr9Nh9ZiQKZW2BYE3S1Me/laZ42bF4+c6HcIlor/UY6WQsjdEoL+MULg0BdSQxuhd/Gc3VIp9pupQM8B+soshOTfLTKVj4nK/gOQxfsoHY4HZXHBAvKnxyOGC7PXwh/hiPdRDKRtWcCwUqY4joo0zd0Mn9Tno7Q4TOfDxWMsiqRyJ6VoDndrLlBqu4USkoLY3mhN2BfXHekCX1G+f4HErOiQDxTPp3GY7o3uAwp0r4Pj+qsGsDeou2cxdFgPexlWQc2NNAfqPoA42TORWV4xqLkNzyWhE6946dC5NUM4sAy3wHShwEUaW0WT/WUoFvDH0VQPSdH2sLjxkx7m+vnkHa4H31JfOUigR3DgZ8MlZFFmJIKPH37F2fb4x7m1d1uwciEg="
     - secure: "K2cy5+vb/BbWz92nCDacFwe3chy62qqegNcmwk+69JCuGKDtHiWaEsukm2arp/OiTcwXJgZjw35NhUrbIXzYtIaegc+4ImXOpMsGeOwxPruzNt+a+Yp9uAECs6fs+tI75RrGmVjVZZCx2J4cAYrjYAqLt7wvv9liB4PE+sOZZmzMLBJ1mC5JI1hN5qyRR18Q2xnTcTVfMciEpW3QtpGRSlecdQUUSXryDLTRo4OCgYNpWMDoX5q5XfMqPKkfjcjXuAvJfKjvWD64etSEUguC64/cEUiOsW6culvZimNSlF5Lv5MkrBmrEYCW677MT/R/eIllaaATmuFqoeQ3Dw1Pc2j49PL8pQisggA/tSRt/csUyoPouPEezD4uZitj+oSWX6qOl1sV+AV2Pd/ApR9YRRNXm8Z/bp0ZqobBt5ev5pM9eoDL9qoypGWR5RdLcOwhpiGt5EzhhhW7/oDOR+XD43WK6Rv776jW1RTAMwQuEf8uL62c7HNcBjhNO3sovd4RKnGp6jNz5NTB10T2F2RvapSNJLIuhZjb2MjCGhjD4p6cJdEL84hBcQkGO9aJP4G1oT7y8sCfLTWwvH4xUSIH9X2joMNQMu+Dni9QmH5j9d2iakwo4k1SocCbTkfy1CPwNKLCn81t/mMtXKKgIDJZ3b1SC/ljCAvGRHgvUmIhVdg="
 
-before_install:
-  - mkdir -p ~/"$TRAVIS_BUILD_NUMBER"
-  - ./tools/aws_tasks.sh setup
 
 jobs:
   include:
-    - stage: fast_check
-      language: shell
-      script:
-        - bash -c 'shopt -s globstar; shellcheck **/*.{sh,ksh,bash}'
-        - touch fritzing-"$TRAVIS_COMMIT"-debug-continuous.linux.AMD64.tar.bz2
-        - touch ~/$TRAVIS_BUILD_NUMBER/blub
-        - ls
-        - ls ~/$TRAVIS_BUILD_NUMBER         
-
-    # - stage: build_and_pack
-    #   os: linux
-    #   # before_install:
-    #   # - openssl aes-256-cbc -K $encrypted_346e8310fcb0_key -iv $encrypted_346e8310fcb0_iv -in travisbuilds.enc -out travisbuilds -d
-
-    #   language: minimal
-    #   services:
-    #     - docker
-    #   before_install:
-    #     - docker pull fritzing/build:xenial
+    # - stage: fast_check
+    #   language: shell
     #   script:
-    #     - docker/release-linux.sh $TRAVIS_COMMIT-debug-continuous
-    #     - cp fritzing-"$TRAVIS_COMMIT"-debug-continuous.linux.AMD64.tar.bz2 ~/$TRAVIS_BUILD_NUMBER/
+    #     - bash -c 'shopt -s globstar; shellcheck -e SC1117 **/*.{sh,ksh,bash}'
+
+    - stage: build_and_pack
+      os: linux
+      # before_install:
+      # - openssl aes-256-cbc -K $encrypted_346e8310fcb0_key -iv $encrypted_346e8310fcb0_iv -in travisbuilds.enc -out travisbuilds -d
+
+      language: minimal
+      services:
+        - docker
+      before_install:
+        - mkdir -p ~/$TRAVIS_BUILD_NUMBER
+        - ./tools/aws_tasks.sh setup
+        - docker pull fritzing/build:xenial
+      script:
+        - docker/release-linux.sh $TRAVIS_COMMIT-debug-continuous
+        - cp fritzing-"$TRAVIS_COMMIT"-debug-continuous.linux.AMD64.tar.bz2 ~/$TRAVIS_BUILD_NUMBER/
 
     # - stage: build_and_pack
     #   os: osx
@@ -112,19 +107,22 @@ jobs:
     #       # - tools/release_fritzing.bat 0.9.4b 64 2017
     #       # - export PATH="$NMAKE_PATH:$RC_PATH:$PATH"
 
-
     - stage: deploy_to_github
+      before_install:
+        - mkdir -p ~/$TRAVIS_BUILD_NUMBER
+        - ./tools/aws_tasks.sh setup
+
       deploy:
         provider: releases
         api_key:
           secure: mC16qH9Jp5a82bhSYwR/AmDFnJpY7XffXzUhQkXXfgRvjmVDrfjTr0/LaQpOb3EWzjA1LbiVdm/9GhJZJ2Sj/Nsawn+anIaJ1mVt4839SsWCC4MsNfvQBawWnug0HXyjCmymNRbtCz38WmONPL0fQaHbC+eAADrpUzqM1jC/Zs7mCkWKNFGwXD4ekbxTNGmhbAbv/yjqC5rapjcMRpGUlIBUqwylYCck59CW4CR3LKI85USLsQMn/vL18jnMucHRfdHcGz2u4SNwYB6H+KKc8J2hCeKhQQbiAbHeN4SAb3ycWW1/hyoP0s7sHnOrMzJsUtKehP9HDfOoHjC1QDT894l8PJMqiLpKVYjP9wYfuTs/1MvAaIOVl6dJuuAlVFVDDno9UDmyHhbqyYDdYuZacqLLdoIHW6kqAmFekf1Ey6Nn7y0MR8g3+G8/R+NOwpnu/O68iYVHvYYDCubss6Ye6VjvTlvXAg/DOtrnDyLjzjATek1K25wN9R5WnFQzkHqELtCMouAq4AtdZquqH89tLlkbaolDuXStstDDFukla0+FcI+Hj5xcwxqae2cwyCgO2wJNgGSDZb7gsRPp0LkYhAtS7I7PvbxsGNxnAq1HlVyEAB5C5S+de1l2dgkXVBE74lo7mj9kA1McYQfvPp8uCt9AWJ5JnAngvGQt05Hi+mw=
+        file_glob: true
         file: ~/$TRAVIS_BUILD_NUMBER/*
         on:
           repo: KjellMorgenstern/fritzing-app
+          branch: develop
         skip_cleanup: true
 
-      script:
-        - cat ~/$TRAVIS_BUILD_NUMBER/*
       after_success:
         - ./tools/aws_tasks.sh cleanup
 

@@ -63,7 +63,7 @@ for ARG in $ARGS; do
             echo "Installation mode: $MODE" >&2
             exit
             ;;
-        -* | --*)
+        -*)
             arg_err "$ARG"
             exit 1
             ;;

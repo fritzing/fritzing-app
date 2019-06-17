@@ -34,8 +34,8 @@ jobs:
         - ./tools/aws_tasks.sh setup
         - docker pull fritzing/build:xenial
       script:
-        - docker/release-linux.sh $TRAVIS_COMMIT-debug-continuous
-        - cp fritzing-"$TRAVIS_COMMIT"-debug-continuous.linux.AMD64.tar.bz2 ~/$TRAVIS_BUILD_NUMBER/
+        - docker/release-linux.sh $TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER
+        - cp fritzing-"$TRAVIS_COMMIT"-debug-continuous-$TRAVIS_BUILD_NUMBER.linux.AMD64.tar.bz2 ~/$TRAVIS_BUILD_NUMBER/
 
     # - stage: build_and_pack
     #   os: osx
@@ -112,18 +112,22 @@ jobs:
         - mkdir -p ~/$TRAVIS_BUILD_NUMBER
         - ./tools/aws_tasks.sh setup
 
+      before_deploy:
+        - git config --local user.name "Travis C.D."
+        - git config --local user.email "travis@fritzing.org"
+        - git tag CD-$TRAVIS_BUILD_NUMBER
       deploy:
         provider: releases
         api_key:
           secure: mC16qH9Jp5a82bhSYwR/AmDFnJpY7XffXzUhQkXXfgRvjmVDrfjTr0/LaQpOb3EWzjA1LbiVdm/9GhJZJ2Sj/Nsawn+anIaJ1mVt4839SsWCC4MsNfvQBawWnug0HXyjCmymNRbtCz38WmONPL0fQaHbC+eAADrpUzqM1jC/Zs7mCkWKNFGwXD4ekbxTNGmhbAbv/yjqC5rapjcMRpGUlIBUqwylYCck59CW4CR3LKI85USLsQMn/vL18jnMucHRfdHcGz2u4SNwYB6H+KKc8J2hCeKhQQbiAbHeN4SAb3ycWW1/hyoP0s7sHnOrMzJsUtKehP9HDfOoHjC1QDT894l8PJMqiLpKVYjP9wYfuTs/1MvAaIOVl6dJuuAlVFVDDno9UDmyHhbqyYDdYuZacqLLdoIHW6kqAmFekf1Ey6Nn7y0MR8g3+G8/R+NOwpnu/O68iYVHvYYDCubss6Ye6VjvTlvXAg/DOtrnDyLjzjATek1K25wN9R5WnFQzkHqELtCMouAq4AtdZquqH89tLlkbaolDuXStstDDFukla0+FcI+Hj5xcwxqae2cwyCgO2wJNgGSDZb7gsRPp0LkYhAtS7I7PvbxsGNxnAq1HlVyEAB5C5S+de1l2dgkXVBE74lo7mj9kA1McYQfvPp8uCt9AWJ5JnAngvGQt05Hi+mw=
-        file_glob: true
+        file_glob: true        
         file: ~/$TRAVIS_BUILD_NUMBER/*
         on:
           repo: KjellMorgenstern/fritzing-app
           branch: develop
         skip_cleanup: true
 
-      after_success:
+      after_deploy:
         - ./tools/aws_tasks.sh cleanup
 
 after_success:

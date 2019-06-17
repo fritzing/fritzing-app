@@ -16,15 +16,13 @@ env:
 
 jobs:
   include:
-    # - stage: fast_check
-    #   language: shell
-    #   script:
-    #     - bash -c 'shopt -s globstar; shellcheck -e SC1117 **/*.{sh,ksh,bash}'
+    - stage: fast_check
+      language: shell
+      script:
+        - bash -c 'shopt -s globstar; shellcheck -e SC1117 **/*.sh'
 
     - stage: build_and_pack
       os: linux
-      # before_install:
-      # - openssl aes-256-cbc -K $encrypted_346e8310fcb0_key -iv $encrypted_346e8310fcb0_iv -in travisbuilds.enc -out travisbuilds -d
 
       language: minimal
       services:
@@ -121,6 +119,9 @@ jobs:
         api_key:
           secure: mC16qH9Jp5a82bhSYwR/AmDFnJpY7XffXzUhQkXXfgRvjmVDrfjTr0/LaQpOb3EWzjA1LbiVdm/9GhJZJ2Sj/Nsawn+anIaJ1mVt4839SsWCC4MsNfvQBawWnug0HXyjCmymNRbtCz38WmONPL0fQaHbC+eAADrpUzqM1jC/Zs7mCkWKNFGwXD4ekbxTNGmhbAbv/yjqC5rapjcMRpGUlIBUqwylYCck59CW4CR3LKI85USLsQMn/vL18jnMucHRfdHcGz2u4SNwYB6H+KKc8J2hCeKhQQbiAbHeN4SAb3ycWW1/hyoP0s7sHnOrMzJsUtKehP9HDfOoHjC1QDT894l8PJMqiLpKVYjP9wYfuTs/1MvAaIOVl6dJuuAlVFVDDno9UDmyHhbqyYDdYuZacqLLdoIHW6kqAmFekf1Ey6Nn7y0MR8g3+G8/R+NOwpnu/O68iYVHvYYDCubss6Ye6VjvTlvXAg/DOtrnDyLjzjATek1K25wN9R5WnFQzkHqELtCMouAq4AtdZquqH89tLlkbaolDuXStstDDFukla0+FcI+Hj5xcwxqae2cwyCgO2wJNgGSDZb7gsRPp0LkYhAtS7I7PvbxsGNxnAq1HlVyEAB5C5S+de1l2dgkXVBE74lo7mj9kA1McYQfvPp8uCt9AWJ5JnAngvGQt05Hi+mw=
         file_glob: true        
+        script:
+          - ls
+          - ls ~/$TRAVIS_BUILD_NUMBER          
         file: ~/$TRAVIS_BUILD_NUMBER/*
         on:
           repo: KjellMorgenstern/fritzing-app

@@ -1,9 +1,10 @@
 langauge: minimal
 
 stages:
+  - name: fast_check
   - name: build_and_pack
   - name: deploy_to_github
-    if: TRAVIS_PULL_REQUEST == false AND branch = develop
+    if: type = push AND branch IN (develop, master)
 
 env:
   global:
@@ -16,22 +17,107 @@ before_install:
   - mkdir -p ~/"$TRAVIS_BUILD_NUMBER"
   - ./tools/aws_tasks.sh setup
 
-
 jobs:
   include:
-    - stage: setup files
-      script: echo one | tee > ~/$TRAVIS_BUILD_NUMBER/one
+    - stage: build_and_pack
+      os: linux
+      # before_install:
+      # - openssl aes-256-cbc -K $encrypted_346e8310fcb0_key -iv $encrypted_346e8310fcb0_iv -in travisbuilds.enc -out travisbuilds -d
 
-    - stage: setup files
-      script: echo two | tee > ~/$TRAVIS_BUILD_NUMBER/two
+      language: minimal
+      services:
+        - docker
+      before_install:
+        - docker pull fritzing/build:xenial
+      script:
+        - docker/release-linux.sh $TRAVIS_COMMIT-debug-continuous
+        - cp fritzing-"$TRAVIS_COMMIT"-debug-continuous.linux.AMD64.tar.bz2 ~/$TRAVIS_BUILD_NUMBER/
+
+    # - stage: build_and_pack
+    #   os: osx
+    #   language: cpp
+    #   osx_image: xcode10.2
+    #   cache:
+    #     directories:
+    #       ../libgit2/build
+
+    #   addons:
+    #     homebrew:
+    #       packages:
+    #         - qt5
+
+    #   before_install:
+    #     - mkdir -p ../libgit2/build
+    #     - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
+    #     - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
+    #     - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+    #     - xcrun -sdk macosx --show-sdk-path
+    #   script:
+    #     - tools/deploy_fritzing_mac.sh
+    #     - echo one | tee > ~/$TRAVIS_BUILD_NUMBER/two
+
+    # - os: osx
+    #   language: objective-c
+    #   osx_image: xcode10.1
+    #   cache:
+    #     directories:
+    #       ../libgit2/build
+
+    #   addons:
+    #     homebrew:
+    #       packages:
+    #         - qt5
+
+    #   before_install:
+    #     - mkdir -p ../libgit2/build
+    #     - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
+    #     - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
+    #     - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+    #     - xcrun -sdk macosx --show-sdk-path
+    #   script:
+    #     - tools/deploy_fritzing_mac.sh
+    #     - echo one | tee > ~/$TRAVIS_BUILD_NUMBER/three
+
+    # # Fails. We did not find a good way to start a developer command prompt yet.
+    # - os: windows
+    #   language: cpp
+    #   env:
+    #     # - NMAKE_PATH="/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/"
+    #     # /c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/nmake.exe
+    #     # /c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/nmake.exe
+    #     # /c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/nmake.exe
+    #     # /c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/VC/Tools/MSVC/14.16.27023/bin/Hostx86/x86/nmake.exe
+    #     # - RC_PATH="/c/Program Files (x86)/Windows Kits/10/bin/x64/"
+    #     # /c/Program Files (x86)/Windows Kits/10/bin/x86/
+    #   before_install:
+    #     - curl -L http://download.qt-project.org/official_releases/online_installers/qt-unified-windows-x86-online.exe --output qt-installer.exe
+    #     - ./qt-installer.exe --script ./tools/qt_installer_noninteractive.qs
+    #     - curl -fsSL https://github.com/libgit2/libgit2/archive/v0.28.1.zip -o libgit2.zip && 7z x libgit2.zip && mv libgit2-0.28.1 ../libgit2
+    #     - (mkdir ../libgit2/build64 && cd ../libgit2/build64 && cmake -G "Visual Studio 15 2017 Win64" .. && cmake --build . --config Release)
+    #     - (cd src/lib && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+
+    #   script:
+    #       - tools/build-windows.bat
+    #       # - /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/Common7/Tools/VsDevCmd.bat
+    #       # - cat /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/2017/BuildTools/VC/Auxiliary/Build/vcvars64.bat
+    #       # - tools/release_fritzing.bat 0.9.4b 64 2017
+    #       # - export PATH="$NMAKE_PATH:$RC_PATH:$PATH"
+
 
     - stage: deploy_to_github
+      deploy:
+        provider: releases
+        api_key:
+          secure: mC16qH9Jp5a82bhSYwR/AmDFnJpY7XffXzUhQkXXfgRvjmVDrfjTr0/LaQpOb3EWzjA1LbiVdm/9GhJZJ2Sj/Nsawn+anIaJ1mVt4839SsWCC4MsNfvQBawWnug0HXyjCmymNRbtCz38WmONPL0fQaHbC+eAADrpUzqM1jC/Zs7mCkWKNFGwXD4ekbxTNGmhbAbv/yjqC5rapjcMRpGUlIBUqwylYCck59CW4CR3LKI85USLsQMn/vL18jnMucHRfdHcGz2u4SNwYB6H+KKc8J2hCeKhQQbiAbHeN4SAb3ycWW1/hyoP0s7sHnOrMzJsUtKehP9HDfOoHjC1QDT894l8PJMqiLpKVYjP9wYfuTs/1MvAaIOVl6dJuuAlVFVDDno9UDmyHhbqyYDdYuZacqLLdoIHW6kqAmFekf1Ey6Nn7y0MR8g3+G8/R+NOwpnu/O68iYVHvYYDCubss6Ye6VjvTlvXAg/DOtrnDyLjzjATek1K25wN9R5WnFQzkHqELtCMouAq4AtdZquqH89tLlkbaolDuXStstDDFukla0+FcI+Hj5xcwxqae2cwyCgO2wJNgGSDZb7gsRPp0LkYhAtS7I7PvbxsGNxnAq1HlVyEAB5C5S+de1l2dgkXVBE74lo7mj9kA1McYQfvPp8uCt9AWJ5JnAngvGQt05Hi+mw=
+        file: ~/$TRAVIS_BUILD_NUMBER/*
+        on:
+          repo: KjellMorgenstern/fritzing-app
+        skip_cleanup: true
 
       script:
         - cat ~/$TRAVIS_BUILD_NUMBER/*
       after_success:
         - ./tools/aws_tasks.sh cleanup
-
 
 after_success:
   - ./tools/aws_tasks.sh synchronize

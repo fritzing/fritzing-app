@@ -19,18 +19,14 @@ EOL
 }
 
 function synchronize {
-    aws s3 sync ~/"$TRAVIS_BUILD_NUMBER" s3://fritzing/"$TRAVIS_BUILD_NUMBER";
+    aws s3 sync ~/"$TRAVIS_BUILD_NUMBER" s3://fritzing/"$TRAVIS_BUILD_NUMBER"
 }
 
 function cleanup {
     aws s3 rm --recursive s3://fritzing/"$TRAVIS_BUILD_NUMBER" # clean up after ourselves
 }
 
-echo "$TRAVIS_PULL_REQUEST"
-echo "$TRAVIS_BRANCH"
-echo "$TRAVIS_REPO_SLUG"
-
 if [[ ( "$TRAVIS_PULL_REQUEST" == false ) && ( "$TRAVIS_BRANCH" == "develop" ) && ( "$TRAVIS_REPO_SLUG" == "KjellMorgenstern/fritzing-app" )]]; then
-    echo "HELLO"
+    echo "Running deploy task '$1'"
     $1;
 fi

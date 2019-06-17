@@ -83,7 +83,7 @@ public:
     void changeOriginalFile(ViewLayer::ViewID viewID, const QString originalFile, int changeCount);
 
 signals:
-    void addToMyPartsSignal(ModelPart *, QStringList &);
+    void addToMyPartsSignal(ModelPart *, const QStringList &);
 
 public slots:
     void metadataChanged(const QString & name, const QString & value);

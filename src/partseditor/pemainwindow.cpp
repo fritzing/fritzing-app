@@ -2137,6 +2137,8 @@ bool PEMainWindow::saveAs() {
 
 bool PEMainWindow::saveAs(bool overWrite)
 {
+    QStringList peAlienFiles;
+
     bool ok = false;
     QString prefix = QInputDialog::getText(
 		    this,
@@ -2297,6 +2299,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 
         QString actualPath = m_userPartsFolderSvgPath + svgPath; 
 	peAlienFiles << actualPath;
+        // DebugDialog::debug(QString("peAlienFiles %1").arg(peAlienFiles));
         bool result = writeXml(actualPath, removeGorn(svg), false);
         if (!result) {
             // TODO: warn user

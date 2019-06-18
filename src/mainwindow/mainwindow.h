@@ -52,7 +52,7 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include "../svg/svg2gerber.h"
 #include "../routingstatus.h"
 
-QStringList peAlienFiles;
+extern QStringList peAlienFiles;
 
 QT_BEGIN_NAMESPACE
 class QAction;

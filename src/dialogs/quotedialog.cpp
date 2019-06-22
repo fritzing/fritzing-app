@@ -84,14 +84,14 @@ void LabelThing::leaveEvent(QEvent * event) {
 void LabelThing::mousePressEvent(QMouseEvent * event) {
     m_state = PRESSED;  
     update();
-	QLabel::mousePressEvent(event);
+    QLabel::mousePressEvent(event);
 }
 
 void LabelThing::mouseReleaseEvent(QMouseEvent * event) {
     m_state = RELEASED;
     update();
-	QLabel::mouseReleaseEvent(event);
-	emit clicked();
+    QLabel::mouseReleaseEvent(event);
+    emit clicked();
 }
 
 void LabelThing::paintEvent(QPaintEvent * event) {
@@ -168,20 +168,20 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
     if (!styleSheet.open(QIODevice::ReadOnly)) {
         DebugDialog::debug("Unable to open :/resources/styles/fritzing.qss");
     } else {
-    	this->setStyleSheet(styleSheet.readAll());
+        this->setStyleSheet(styleSheet.readAll());
     }
 
-	setWindowTitle(tr("Fritzing Fab Quote"));
+    setWindowTitle(tr("Fritzing Fab Quote"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+    QVBoxLayout * vLayout = new QVBoxLayout(this);
 
     QLabel * label = new QLabel(tr("Order your PCB from Fritzing Fab"));
     label->setObjectName("quoteOrder");
     vLayout->addWidget(label);
 
-	m_messageLabel = new QLabel(tr(""));
+    m_messageLabel = new QLabel(tr(""));
     m_messageLabel->setObjectName("quoteMessage");
-	vLayout->addWidget(m_messageLabel);
+    vLayout->addWidget(m_messageLabel);
 
     m_tableWidget = new QTableWidget(3, MessageCount + 1);
     m_tableWidget->setObjectName("quoteTable");
@@ -207,15 +207,16 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
         ix += 1;
     }
 
-	vLayout->addWidget(m_tableWidget);
+    vLayout->addWidget(m_tableWidget);
 
-    QString additional = tr("Please note that prices do not include shipping,<br />");
-    additional += tr("possible additional taxes, or the checking fee.<br />");
+    QString additional = tr("<b>Shipping is free wordlwide</b>.<br />");
+        additional += tr("Documents for local customs control are included.<br />");
+        additional += tr("Some countries might charge additional import taxes or checking fees.<br />");
     additional += tr("For more information on pricing see <a href='http://fab.fritzing.org/pricing'>http://fab.fritzing.org/pricing</a>.");
     label = new QLabel(additional);
     label->setObjectName("quoteAdditional");
     label->setOpenExternalLinks(true);
-	vLayout->addWidget(label);
+    vLayout->addWidget(label);
     if (!full) label->setVisible(false);
 
     QFrame * frame = new QFrame;
@@ -232,14 +233,14 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
     buttonLayout->addWidget(labelThing);
     buttonLayout->addSpacing(90);
     label = new QLabel();
-	QPixmap order(":/resources/images/icons/Toolbar_Icon_Order.png");
-	label->setPixmap(order);
+    QPixmap order(":/resources/images/icons/Toolbar_Icon_Order.png");
+    label->setPixmap(order);
     buttonLayout->addWidget(label);
 
     buttonLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Expanding));
     frame->setLayout(buttonLayout);
 
-	vLayout->addWidget(frame);
+    vLayout->addWidget(frame);
     if (!full) frame->setVisible(false);
 
     vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Expanding));
@@ -315,7 +316,7 @@ void QuoteDialog::setText() {
 }
 
 void QuoteDialog::visitFritzingFab() {
-    QDesktopServices::openUrl(QString("http://fab.fritzing.org/fritzing-fab"));
+    QDesktopServices::openUrl(QString("http://fab.fritzing.org"));
 }
 
 QString QuoteDialog::countArgs() {

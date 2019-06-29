@@ -96,7 +96,7 @@ pushd %DESTDIR%
 set DESTDIR=%CD%
 popd
 
-set RELEASE_NAME=%DESTDIR%\forzip\fritzing.%1.%2.pc
+set RELEASE_NAME=%DESTDIR%\forzip\fritzing-%1.%2.pc
 
 echo setting up deploy folder. ignore any "The system cannot find ..." messages
 rmdir %DESTDIR%\deploy /s /q
@@ -199,6 +199,6 @@ echo moving deploy to %RELEASE_NAME%
 move %DESTDIR%\deploy %RELEASE_NAME%
 
 echo create zip file
-7z a "%DESTDIR%\fritzing.%1.%2.pc.zip" "%DESTDIR%\forzip"
+7z a "%DESTDIR%\fritzing-%1.%2.pc.zip" "%DESTDIR%\forzip"
 
 echo done

@@ -44,7 +44,7 @@ function x_aws_env {
             export PATH=$HOME/Library/Python/3.7/bin:$PATH
             ;;
         windows*)
-            export PATH="$PATH:$USERPROFILE/AppData/Local/Programs/Python/Python37/Scripts:C:/Program Files (x86)/Amazon/AWSCLI\bin"
+            export "PATH=/c/Program Files/Amazon/AWSCLI/bin:$PATH"
             ;;
     esac
 }

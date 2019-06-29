@@ -111,23 +111,14 @@ jobs:
       os: windows
       language: cpp
 
-      env:
-        # - NMAKE_PATH="/c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/"
-        # /c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/nmake.exe
-        # /c/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/nmake.exe
-        # /c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/nmake.exe
-        # /c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/VC/Tools/MSVC/14.16.27023/bin/Hostx86/x86/nmake.exe
-        # - RC_PATH="/c/Program Files (x86)/Windows Kits/10/bin/x64/"
-        # /c/Program Files (x86)/Windows Kits/10/bin/x86/
       before_install:
         - curl -L http://download.qt-project.org/official_releases/online_installers/qt-unified-windows-x86-online.exe --output qt-installer.exe
         - ./qt-installer.exe --script ./tools/qt_installer_noninteractive.qs
         - curl -fsSL https://github.com/libgit2/libgit2/archive/v0.28.1.zip -o libgit2.zip && 7z x libgit2.zip && mv libgit2-0.28.1 ../libgit2
         - (mkdir ../libgit2/build64 && cd ../libgit2/build64 && cmake -G "Visual Studio 15 2017 Win64" .. && cmake --build . --config Release)
         - (cd src/lib && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
-        # - mkdir -p ~/$TRAVIS_BUILD_NUMBER
-        # TODO aws cli can be installed, but PATH is not set correctly. Its more difficult than it sounds.
-        # - ./tools/aws_tasks.sh setup
+        - mkdir -p ~/$TRAVIS_BUILD_NUMBER
+        - ./tools/aws_tasks.sh setup
 
       script:
           - tools/build-windows.bat "$TRAVIS_COMMIT"-debug-continuous-"$TRAVIS_BUILD_NUMBER"

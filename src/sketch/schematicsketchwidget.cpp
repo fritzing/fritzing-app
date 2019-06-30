@@ -150,7 +150,8 @@ void SchematicSketchWidget::setNewPartVisible(ItemBase * itemBase) {
 	switch (itemBase->itemType()) {
 		case ModelPart::Logo:
             if (itemBase->moduleID().contains("schematic", Qt::CaseInsensitive)) break;
-		case ModelPart::Breadboard:
+            [[clang::fallthrough]];
+        case ModelPart::Breadboard:
 		case ModelPart::Jumper:
 		case ModelPart::CopperFill:
 		case ModelPart::Via:
@@ -176,8 +177,8 @@ bool SchematicSketchWidget::canDropModelPart(ModelPart * modelPart) {
 
 	switch (modelPart->itemType()) {
 		case ModelPart::Logo:
-            if (modelPart->moduleID().contains("schematic", Qt::CaseInsensitive)) return true;
-		case ModelPart::Jumper:
+            return modelPart->moduleID().contains("schematic", Qt::CaseInsensitive);
+        case ModelPart::Jumper:
 		case ModelPart::CopperFill:
 		case ModelPart::Board:
 		case ModelPart::ResizableBoard:

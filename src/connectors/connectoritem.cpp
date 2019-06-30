@@ -1396,7 +1396,8 @@ void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<
 			case ModelPart::Symbol:
 			case ModelPart::SchematicSubpart:
 				if (!includeSymbols) break;
-			case ModelPart::Jumper:
+                [[clang::fallthrough]];
+            case ModelPart::Jumper:
 			case ModelPart::Part:
 			case ModelPart::CopperFill:
 			case ModelPart::Board:
@@ -2454,8 +2455,8 @@ bool ConnectorItem::legMousePressEvent(QGraphicsSceneMouseEvent *event) {
 				m_insertBendpointPossible = true;
 			}
 			// must continue on to InBendpoint
-
-		case InBendpoint:
+            [[clang::fallthrough]];
+        case InBendpoint:
 			m_draggingLegIndex = bendpointIndex;
 			m_holdPos = event->scenePos();
 			m_oldPolygon = m_legPolygon;

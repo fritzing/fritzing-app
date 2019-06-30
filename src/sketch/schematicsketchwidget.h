@@ -35,7 +35,7 @@ class SchematicSketchWidget : public PCBSketchWidget
 	Q_OBJECT
 
 public:
-    SchematicSketchWidget(ViewLayer::ViewID, QWidget *parent=0);
+	SchematicSketchWidget(ViewLayer::ViewID, QWidget *parent=0);
 
 	void addViewLayers();
 	ViewLayer::ViewLayerID getWireViewLayerID(const ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
@@ -50,14 +50,14 @@ public:
 	void getBendpointWidths(class Wire *, double w, double & w1, double & w2, bool & negativeOffsetRect);
 	void getLabelFont(QFont &, QColor &, ItemBase *);
 	void setNewPartVisible(ItemBase *);
-	bool canDropModelPart(ModelPart * modelPart); 
+	bool canDropModelPart(ModelPart * modelPart);
 	bool includeSymbols();
 	bool hasBigDots();
 	void changeConnection(long fromID,
 						  const QString & fromConnectorID,
 						  long toID, const QString & toConnectorID,
 						  ViewLayer::ViewLayerPlacement,
-						  bool connect, bool doEmit, 
+						  bool connect, bool doEmit,
 						  bool updateConnections);
 	double defaultGridSizeInches();
 	const QString & traceColor(ConnectorItem * forColor);
@@ -74,21 +74,21 @@ public:
 	double getWireStrokeWidth(Wire *, double wireWidth);
 	Wire * createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 	void rotatePartLabels(double degrees, QTransform &, QPointF center, QUndoCommand * parentCommand);
-	void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand, 
+	void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand,
 							bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs);
-    LayerList routingLayers(ViewLayer::ViewLayerPlacement);
-    bool attachedToTopLayer(ConnectorItem *);
-    bool attachedToBottomLayer(ConnectorItem *);
-    QSizeF jumperItemSize();
-    QHash<QString, QString> getAutorouterSettings();
-    void setAutorouterSettings(QHash<QString, QString> &);
+	LayerList routingLayers(ViewLayer::ViewLayerPlacement);
+	bool attachedToTopLayer(ConnectorItem *);
+	bool attachedToBottomLayer(ConnectorItem *);
+	QSizeF jumperItemSize();
+	QHash<QString, QString> getAutorouterSettings();
+	void setAutorouterSettings(QHash<QString, QString> &);
 	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
-    void setConvertSchematic(bool);
-    void setOldSchematic(bool);
-    bool isOldSchematic();
-    void resizeWires();
-    void resizeLabels();
-    
+	void setConvertSchematic(bool);
+	void setOldSchematic(bool);
+	bool isOldSchematic();
+	void resizeWires();
+	void resizeLabels();
+
 public slots:
 	void setVoltage(double voltage, bool doEmit);
 	void setProp(ItemBase *, const QString & propName, const QString & translatedPropName, const QString & oldValue, const QString & newValue, bool redraw);
@@ -96,7 +96,7 @@ public slots:
 
 protected slots:
 	void updateBigDots();
-    void getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);
+	void getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);
 
 protected:
 	double getRatsnestOpacity();
@@ -105,17 +105,17 @@ protected:
 	void extraRenderSvgStep(ItemBase *, QPointF offset, double dpi, double printerScale, QString & outputSvg);
 	QString makeCircleSVG(QPointF p, double r, QPointF offset, double dpi, double printerScale);
 	ViewLayer::ViewLayerPlacement createWireViewLayerPlacement(ConnectorItem * from, ConnectorItem * to);
-    void selectAllWires(ViewGeometry::WireFlag flag);
-    bool canConnect(Wire * from, ItemBase * to);
-    QString checkDroppedModuleID(const QString & moduleID);
-    void viewGeometryConversionHack(ViewGeometry &, ModelPart *);
+	void selectAllWires(ViewGeometry::WireFlag flag);
+	bool canConnect(Wire * from, ItemBase * to);
+	QString checkDroppedModuleID(const QString & moduleID);
+	void viewGeometryConversionHack(ViewGeometry &, ModelPart *);
 
 protected:
 	QTimer m_updateDotsTimer;
-    bool m_convertSchematic;
-    bool m_oldSchematic;
+	bool m_convertSchematic;
+	bool m_oldSchematic;
 
-    static QSizeF m_jumperItemSize;
+	static QSizeF m_jumperItemSize;
 
 };
 

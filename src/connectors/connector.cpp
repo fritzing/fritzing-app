@@ -66,12 +66,12 @@ void Connector::initNames() {
 
 Connector::ConnectorType Connector::connectorTypeFromName(const QString & name) {
 	QHashIterator<ConnectorType, QString> i(Names);
-    while (i.hasNext()) {
-        i.next();
+	while (i.hasNext()) {
+		i.next();
 		if (name.compare(i.value(), Qt::CaseInsensitive ) == 0) {
 			return i.key();
 		}
-    }
+	}
 
 	return Connector::Unknown;
 }
@@ -94,7 +94,7 @@ ConnectorShared * Connector::connectorShared() {
 
 void Connector::addViewItem(ConnectorItem * item) {
 	//item->debugInfo(QString("add view item c:%1 ci:%2 b:%3").arg((long) this, 0, 16).arg((long) item, 0, 16).arg((long) m_bus.data(), 0, 16));
-	m_connectorItems.insert(QuickHash(item->attachedToViewID(), item->attachedToViewLayerID()), item);	
+	m_connectorItems.insert(QuickHash(item->attachedToViewID(), item->attachedToViewLayerID()), item);
 }
 
 void Connector::removeViewItem(ConnectorItem * item) {
@@ -158,9 +158,9 @@ void Connector::writeSvgIdAttr(QXmlStreamWriter &writer, ViewLayer::ViewID view,
 }
 
 void Connector::writeTerminalIdAttr(QXmlStreamWriter &writer, ViewLayer::ViewID view, QString terminalId) {
-        if((view == ViewLayer::BreadboardView || view == ViewLayer::SchematicView)
-            &&
-           (!terminalId.isNull() && !terminalId.isEmpty()) ) {
+		if((view == ViewLayer::BreadboardView || view == ViewLayer::SchematicView)
+			&&
+		   (!terminalId.isNull() && !terminalId.isEmpty()) ) {
 		writer.writeAttribute("terminalId",terminalId);
 	} else {
 		return;
@@ -177,10 +177,10 @@ ConnectorItem * Connector::connectorItemByViewLayerID(ViewLayer::ViewID viewID, 
 
 ConnectorItem * Connector::connectorItem(ViewLayer::ViewID viewID) {
 	foreach (ConnectorItem * connectorItem, m_connectorItems.values()) {
-        if (connectorItem->attachedToViewID() == viewID) return connectorItem;
-    }
+		if (connectorItem->attachedToViewID() == viewID) return connectorItem;
+	}
 
-    return NULL;
+	return NULL;
 }
 
 bool Connector::connectionIsAllowed(Connector* that)
@@ -297,12 +297,12 @@ const QString & Connector::connectorLocalName() {
 }
 
 const QList<SvgIdLayer *> Connector::svgIdLayers() const {
-    if (m_connectorShared) return m_connectorShared->svgIdLayers();
+	if (m_connectorShared) return m_connectorShared->svgIdLayers();
 
-    return EmptySvgIdLayerList;
+	return EmptySvgIdLayerList;
 }
 
 void Connector::addPin(ViewLayer::ViewID viewID, const QString & svgId, ViewLayer::ViewLayerID viewLayerId, const QString & terminalId, const QString & legId, bool hybrid)
 {
-    if (m_connectorShared) m_connectorShared->addPin(viewID, svgId, viewLayerId, terminalId, legId, hybrid);
+	if (m_connectorShared) m_connectorShared->addPin(viewID, svgId, viewLayerId, terminalId, legId, hybrid);
 }

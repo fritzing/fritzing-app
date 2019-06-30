@@ -548,7 +548,7 @@ void ModelBase::renewModelIndexes(QDomElement & parentElement, const QString & c
 			QDomElement view = views.firstChildElement();
 			while (!view.isNull()) {
                 bool ok;
-                int superpart = view.attribute("superpart").toLong(&ok);
+                long superpart = view.attribute("superpart").toLong(&ok);
                 if (ok) {
                     view.setAttribute("superpart", QString::number(oldToNew.value(superpart)));
                 }

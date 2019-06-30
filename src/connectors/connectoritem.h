@@ -114,16 +114,16 @@ public:
 	double calcClipRadius();
 	bool isEffectivelyCircular();
 	void paint( QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0 );
-    void debugInfo(const QString & msg);
+	void debugInfo(const QString & msg);
 	double minDimension();
 	void setHybrid(bool);
 	bool isHybrid();
 	void setBigDot(bool);
 	bool isBigDot();
 	ConnectorItem * findConnectorUnder(bool useTerminalPoint, bool allowAlready, const QList<ConnectorItem *> & exclude, bool displayDragTooltip, ConnectorItem * other);
-	ConnectorItem * releaseDrag();	
+	ConnectorItem * releaseDrag();
 
-	// rubberBand leg functions	
+	// rubberBand leg functions
 	bool isDraggingLeg();
 	void setRubberBandLeg(QColor color, double strokeWidth, QLineF parentLine);
 	bool hasRubberBandLeg() const;
@@ -169,7 +169,7 @@ protected:
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 	void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
 	void writeOtherElements(QXmlStreamWriter & writer);
-    static class Wire * directlyWiredToAux(ConnectorItem * source, ConnectorItem * target, ViewGeometry::WireFlags flags, QList<ConnectorItem *> & visited);
+	static class Wire * directlyWiredToAux(ConnectorItem * source, ConnectorItem * target, ViewGeometry::WireFlags flags, QList<ConnectorItem *> & visited);
 	bool isEverVisible();
 	void setHiddenOrInactive();
 	bool isConnectedToPart();
@@ -181,7 +181,7 @@ protected:
 	bool legMousePressEvent(QGraphicsSceneMouseEvent *event);
 	void repoly(const QPolygonF & poly, bool relative);
 	QPainterPath shapeAux(double width) const;
-    ViewGeometry::WireFlags getSkipFlags();
+	ViewGeometry::WireFlags getSkipFlags();
 
 	enum CursorLocation {
 		InNotFound = 0,
@@ -233,8 +233,8 @@ protected:
 	double m_connectorDetectT;
 	bool m_groundFillSeed;
 	int m_moveCount;
-	
-protected:	
+
+protected:
 	static QList<ConnectorItem *>  m_equalPotentialDisplayItems;
 
 protected:

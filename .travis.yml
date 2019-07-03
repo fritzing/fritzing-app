@@ -126,6 +126,9 @@ jobs:
           - tools/build-windows.bat "$TRAVIS_COMMIT"-debug-continuous-"$TRAVIS_BUILD_NUMBER"
           - cp $TRAVIS_BUILD_DIR/../release64/fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.64.pc.zip ~/$TRAVIS_BUILD_NUMBER
 
+      after_success:
+        - ./tools/aws_tasks.sh synchronize_up
+
     - stage: deploy_to_github
       before_install:
         - mkdir -p "$HOME/$TRAVIS_BUILD_NUMBER"

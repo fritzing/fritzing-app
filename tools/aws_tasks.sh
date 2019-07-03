@@ -58,7 +58,7 @@ aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}
 EOL
 }
 
-if [[ ( "$TRAVIS_PULL_REQUEST" == false ) && ( "$TRAVIS_BRANCH" == "develop" ) && ( "$TRAVIS_REPO_SLUG" == "fritzing/fritzing-app" )]]; then
+if [[ ( "$TRAVIS_PULL_REQUEST" == false ) && ( "$TRAVIS_BRANCH" == "develop" || "$TRAVIS_BRANCH" == "master" ) && ( "$TRAVIS_REPO_SLUG" == "fritzing/fritzing-app" )]]; then
     x_aws_env
 
     echo "Running deploy task '$1' on $TRAVIS_OS_NAME ( $OSTYPE )"

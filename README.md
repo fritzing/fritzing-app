@@ -1,8 +1,7 @@
 [![Build Status](https://travis-ci.org/fritzing/fritzing-app.svg?branch=master)](https://travis-ci.org/fritzing/fritzing-app)
-[![Build status](https://ci.appveyor.com/api/projects/status/0lu0nm71k930nar1/branch/master?svg=true)](https://ci.appveyor.com/project/KjellMorgenstern/fritzing-app/branch/master)
 
-[![Build Status](https://travis-ci.org/KjellMorgenstern/fritzing-app.svg?branch=travis)](https://travis-ci.org/KjellMorgenstern/fritzing-app)
-[![Build status](https://ci.appveyor.com/api/projects/status/0lu0nm71k930nar1/branch/travis?svg=true)](https://ci.appveyor.com/project/KjellMorgenstern/fritzing-app/branch/travis)
+[![Build Status](https://travis-ci.org/fritzing/fritzing-app.svg?branch=develop)](https://travis-ci.org/fritzing/fritzing-app)
+
 
 # Fritzing
 

@@ -37,10 +37,10 @@ $Date: 2014-06-11 17:47:21 +0200 (We, 11. Jun 2013) $
 
 QString Version::m_majorVersion("0");
 QString Version::m_minorVersion("9");
-QString Version::m_minorSubVersion("3");
+QString Version::m_minorSubVersion("4");
 QString Version::m_modifier("b");
-QString Version::m_gitCommit("5c895d327c44a3114e5fcc9d8260daf0cbb52806");
-QString Version::m_gitDate("2016-04-19T21:25:37Z");  // want standard ISO form
+QString Version::m_gitCommit("872b5cd");
+QString Version::m_gitDate("2019-07-05T15:00:00Z");  // want standard ISO form
 QString Version::m_revision;
 QString Version::m_date;
 QString Version::m_shortDate;

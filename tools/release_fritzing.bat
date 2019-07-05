@@ -199,6 +199,6 @@ echo moving deploy to %RELEASE_NAME%
 move %DESTDIR%\deploy %RELEASE_NAME%
 
 echo create zip file
-7z a "%DESTDIR%\fritzing-%1.%2.pc.zip" "%DESTDIR%\forzip"
+7z a "%DESTDIR%\fritzing-%1.windows.%2.zip" "%DESTDIR%\forzip"
 
 echo done

@@ -83,7 +83,7 @@ echo "making release folder: ${release_folder}"
 mkdir -p "${release_folder}"
 
 echo "copying release files"
-cp -rf sketches/ help/ translations/ Fritzing.sh Fritzing.1 org.fritzing.Fritzing.desktop fritzing.rc org.fritzing.Fritzing.appdata.xml install_fritzing.sh README.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 "$release_folder/"
+cp -rf sketches/ help/ translations/ Fritzing.sh tools/man/Fritzing.1 org.fritzing.Fritzing.desktop fritzing.rc org.fritzing.Fritzing.appdata.xml install_fritzing.sh README.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 "$release_folder/"
 mkdir -p "${release_folder}/icons"
 cp resources/system_icons/linux/* "$release_folder/icons/"
 mv Fritzing "${release_folder}/"

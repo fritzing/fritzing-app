@@ -165,7 +165,7 @@ unix {
     INSTALLS += mimedb
 
     manpage.path = $$DATADIR/man/man1
-    manpage.files += Fritzing.1
+    manpage.files += tools/man/Fritzing.1
     INSTALLS += manpage
 
     icon.path = $$DATADIR/pixmaps

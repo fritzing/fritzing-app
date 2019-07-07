@@ -1,4 +1,4 @@
-# /*******************************************************************
+# ********************************************************************
 #
 # Part of the Fritzing project - http://fritzing.org
 # Copyright (c) 2007-19 Fritzing
@@ -24,8 +24,25 @@
 #
 #********************************************************************/
 
-lessThan(QT_MAJOR_VERSION, 5) {
-    error(Fritzing does not build with Qt 4 or earlier)
+# This is QT project(.pro) file that is used by qmake to convert
+# QT project to XCode, Visual studio projects
+# (see https://doc.qt.io/qt-5/qmake-platform-notes.html for details)
+# or to generate Makefile
+# (see https://doc.qt.io/qt-5/qmake-running.html for details).
+
+# The manual for qmake, that includes the list of built-in functions
+# (lessThan(), load(), include()) as well as of a list of built-in
+# variables (CONFIG, RC_FILE) and the notes on how they are used by
+# qmake can be found here:
+#   https://doc.qt.io/qt-5/qmake-manual.html
+
+message(Qt version $$[QT_VERSION])
+
+# Starting from 0.9.4 Fritzing requires at least 5.9
+# We use equal(QT_MAJOR_VERSION, ...) instead of lessThan(), because
+# change of major version number means the change in API.
+!equals(QT_MAJOR_VERSION, 5) | !greaterThan(QT_MINOR_VERSION, 9) {
+    error("Unsupported Qt version, 5.9+ is required")
 }
 
 # Fritzing requires two Qt-provided plugins in order to run correctly,

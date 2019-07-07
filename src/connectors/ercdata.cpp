@@ -103,17 +103,17 @@ void ErcData::readVoltage(QDomElement & voltageElement) {
 
 bool ErcData::writeToElement(QDomElement & ercElement, QDomDocument & doc) {
 	switch (m_eType) {
-		case Ground:
-			ercElement.setAttribute("etype", "ground");
-			writeCurrent(ercElement, doc);
-			break;
-		case VCC:
-			ercElement.setAttribute("etype", "VCC");
-			writeCurrent(ercElement, doc);
-			writeVoltage(ercElement, doc);
-			break;
-		default:
-			return false;
+	case Ground:
+		ercElement.setAttribute("etype", "ground");
+		writeCurrent(ercElement, doc);
+		break;
+	case VCC:
+		ercElement.setAttribute("etype", "VCC");
+		writeCurrent(ercElement, doc);
+		writeVoltage(ercElement, doc);
+		break;
+	default:
+		return false;
 	}
 
 	return true;
@@ -133,14 +133,14 @@ void ErcData::writeCurrent(QDomElement & parent, QDomDocument & doc) {
 			currentElement.setAttribute("valueMax", QString::number(m_currentMax.value()));
 		}
 		switch (m_currentFlow) {
-			case Source:
-				currentElement.setAttribute("flow", "source");
-				break;
-			case Sink:
-				currentElement.setAttribute("flow", "sink");
-				break;
-			default:
-				break;
+		case Source:
+			currentElement.setAttribute("flow", "source");
+			break;
+		case Sink:
+			currentElement.setAttribute("flow", "sink");
+			break;
+		default:
+			break;
 		}
 	}
 }

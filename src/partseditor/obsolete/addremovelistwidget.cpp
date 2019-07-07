@@ -47,11 +47,11 @@ AddRemoveListWidget::AddRemoveListWidget(QString title, QWidget *parent) : QGrou
 	layout->setSpacing(1);
 	layout->setMargin(3);
 	layout->addWidget(m_label,row,0);
-    layout->addWidget(m_addButton,row,1);
-    layout->addWidget(m_removeButton,row++,2);
-    layout->addWidget(m_list,row,0,row,3);
+	layout->addWidget(m_addButton,row,1);
+	layout->addWidget(m_removeButton,row++,2);
+	layout->addWidget(m_list,row,0,row,3);
 	row++;
-    setLayout(layout);
+	setLayout(layout);
 }
 
 void AddRemoveListWidget::addItem() {

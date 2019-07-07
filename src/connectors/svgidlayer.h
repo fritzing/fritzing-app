@@ -27,7 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 struct PointRect {
-    QRectF rect;
+	QRectF rect;
 	QPointF point;
 	bool processed;
 	bool svgVisible;
@@ -39,18 +39,18 @@ public:
 	SvgIdLayer(ViewLayer::ViewID);
 	SvgIdLayer * copyLayer();
 
-    QPointF point(ViewLayer::ViewLayerPlacement);
-    QRectF rect(ViewLayer::ViewLayerPlacement);
-    bool processed(ViewLayer::ViewLayerPlacement);
-    bool svgVisible(ViewLayer::ViewLayerPlacement);
-    void unprocess();
-    void setInvisible(ViewLayer::ViewLayerPlacement);
-    void setPointRect(ViewLayer::ViewLayerPlacement, QPointF, QRectF, bool svgVisible);
+	QPointF point(ViewLayer::ViewLayerPlacement);
+	QRectF rect(ViewLayer::ViewLayerPlacement);
+	bool processed(ViewLayer::ViewLayerPlacement);
+	bool svgVisible(ViewLayer::ViewLayerPlacement);
+	void unprocess();
+	void setInvisible(ViewLayer::ViewLayerPlacement);
+	void setPointRect(ViewLayer::ViewLayerPlacement, QPointF, QRectF, bool svgVisible);
 
 public:
 	QString m_svgId;
 	QString m_terminalId;
-    ViewLayer::ViewID m_viewID;
+	ViewLayer::ViewID m_viewID;
 	ViewLayer::ViewLayerID m_svgViewLayerID;
 	bool m_hybrid;
 	double m_radius;
@@ -59,11 +59,11 @@ public:
 	QString m_legColor;
 	double m_legStrokeWidth;
 	QLineF m_legLine;
-    bool m_path;
+	bool m_path;
 
 protected:
-    PointRect m_pointRectBottom;
-    PointRect m_pointRectTop;
+	PointRect m_pointRectBottom;
+	PointRect m_pointRectTop;
 
 protected:
 };

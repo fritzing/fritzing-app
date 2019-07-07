@@ -28,10 +28,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class SvgFlattener : public SvgFileSplitter
 {
 public:
-    SvgFlattener();
+	SvgFlattener();
 
-    void flattenChildren(QDomElement & element);
-    void unRotateChild(QDomElement & element,QMatrix transform);
+	void flattenChildren(QDomElement & element);
+	void unRotateChild(QDomElement & element,QMatrix transform);
 
 public:
 	static void flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID, double printerScale, Qt::Orientations);
@@ -39,13 +39,13 @@ public:
 
 protected:
 	static QString flipSMDElement(QDomDocument & domDocument, QDomElement & element, const QString & att, QDomElement altAtt, const QString & altElementID, double printerScale, Qt::Orientations);
-    static bool hasOtherTransform(QDomElement & element);
-    static bool hasTranslate(QDomElement & element);
-    static bool loadDocIf(const QString & filename, const QString & svg, QDomDocument & domDocument);
+	static bool hasOtherTransform(QDomElement & element);
+	static bool hasTranslate(QDomElement & element);
+	static bool loadDocIf(const QString & filename, const QString & svg, QDomDocument & domDocument);
 
 
 protected slots:
-    void rotateCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
+	void rotateCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
 
 };
 

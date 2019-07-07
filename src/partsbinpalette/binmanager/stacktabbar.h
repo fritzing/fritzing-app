@@ -27,27 +27,27 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class StackTabBar : public QTabBar {
 	Q_OBJECT
-	public:
-		StackTabBar(class StackTabWidget *parent);
+public:
+	StackTabBar(class StackTabWidget *parent);
 
-	protected:
-		void dragEnterEvent(QDragEnterEvent* event);
-		void dragLeaveEvent(QDragLeaveEvent* event);
-        void dragMoveEvent(QDragMoveEvent* event);
-		void dropEvent(QDropEvent* event);
-		void paintEvent(QPaintEvent *event);
+protected:
+	void dragEnterEvent(QDragEnterEvent* event);
+	void dragLeaveEvent(QDragLeaveEvent* event);
+	void dragMoveEvent(QDragMoveEvent* event);
+	void dropEvent(QDropEvent* event);
+	void paintEvent(QPaintEvent *event);
 
-		bool mimeIsAction(const class QMimeData* m, const QString& action);
+	bool mimeIsAction(const class QMimeData* m, const QString& action);
 
-	public slots:
-		void setIndex();
+public slots:
+	void setIndex();
 
-	protected slots:
-		void showContextMenu(const QPoint &point);
+protected slots:
+	void showContextMenu(const QPoint &point);
 
-	protected:
-		class StackTabWidget* m_parent;
-		QTimer m_dragMoveTimer;
+protected:
+	class StackTabWidget* m_parent;
+	QTimer m_dragMoveTimer;
 };
 
 #endif /* STACKTABBAR_H_ */

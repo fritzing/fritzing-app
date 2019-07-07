@@ -44,13 +44,13 @@ protected:
 	QByteArray m_loaded;
 
 public:
-    QString error;
-    ViewLayer::ViewID viewID;
-    ViewLayer::ViewLayerID viewLayerID;
-    ViewLayer::ViewLayerPlacement viewLayerPlacement;
-    bool doConnectors;
-    Qt::Orientations orientation;
-    bool createShape;
+	QString error;
+	ViewLayer::ViewID viewID;
+	ViewLayer::ViewLayerID viewLayerID;
+	ViewLayer::ViewLayerPlacement viewLayerPlacement;
+	bool doConnectors;
+	Qt::Orientations orientation;
+	bool createShape;
 };
 
 #endif

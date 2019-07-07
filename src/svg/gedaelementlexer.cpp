@@ -34,12 +34,12 @@ GedaElementLexer::GedaElementLexer(const QString &source)
 	m_stringMatcher.setPattern("\"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\"");
 	m_integerMatcher.setPattern("[-+]?\\d+");
 	m_hexMatcher.setPattern("0[xX][0-9a-fA-F]+");
-    m_source = clean(source);
-    m_chars = m_source.unicode();
-    m_size = m_source.size();
+	m_source = clean(source);
+	m_chars = m_source.unicode();
+	m_size = m_source.size();
 	//qDebug() << m_source;
-    m_pos = 0;
-    m_current = next();
+	m_pos = 0;
+	m_current = next();
 }
 
 GedaElementLexer::~GedaElementLexer()
@@ -79,21 +79,21 @@ QString GedaElementLexer::clean(const QString & source) {
 		if (result <= 0) break;
 
 		switch (result) {
-			case GedaElementGrammar::HEXNUMBER:
-			case GedaElementGrammar::NUMBER:
-			case GedaElementGrammar::STRING:
-				params.append(lexer.m_currentString);
-				break;
-			case GedaElementGrammar::RIGHTBRACKET:
-				nix = lexer.m_pos - 2;
-				done = true;
-				break;
-			case GedaElementGrammar::RIGHTPAREN:
-				nix = lexer.m_pos - 2;
-				done = true;
-				break;
-			default:
-				return s2;
+		case GedaElementGrammar::HEXNUMBER:
+		case GedaElementGrammar::NUMBER:
+		case GedaElementGrammar::STRING:
+			params.append(lexer.m_currentString);
+			break;
+		case GedaElementGrammar::RIGHTBRACKET:
+			nix = lexer.m_pos - 2;
+			done = true;
+			break;
+		case GedaElementGrammar::RIGHTPAREN:
+			nix = lexer.m_pos - 2;
+			done = true;
+			break;
+		default:
+			return s2;
 		}
 	}
 	if (params.count() == 11) {
@@ -240,11 +240,11 @@ int GedaElementLexer::lex()
 
 QChar GedaElementLexer::next()
 {
-    if (m_pos < m_size)
-        m_current = m_chars[m_pos++];
-    else
-        m_current = QChar();
-    return m_current;
+	if (m_pos < m_size)
+		m_current = m_chars[m_pos++];
+	else
+		m_current = QChar();
+	return m_current;
 }
 
 QString GedaElementLexer::currentCommand() {

@@ -46,7 +46,7 @@ protected:
 
 class ConnectorItem : public NonConnectorItem, public CursorKeyListener
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	ConnectorItem(Connector *, ItemBase* attachedTo);

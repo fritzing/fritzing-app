@@ -32,13 +32,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class AutorouterSettingsDialog : public QDialog
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	AutorouterSettingsDialog(QHash<QString, QString> & settings, QWidget *parent = 0);
 	~AutorouterSettingsDialog();
 
-    QHash<QString, QString> getSettings();
+	QHash<QString, QString> getSettings();
 
 protected slots:
 	void production(bool);
@@ -47,19 +47,19 @@ protected slots:
 	void changeHoleSize(const QString &);
 	void changeDiameter();
 	void changeThickness();
-    void toInches();
-    void toMM();
-    void keepoutEntry();
+	void toInches();
+	void toMM();
+	void keepoutEntry();
 
 protected:
 	void enableCustom(bool enable);
 	bool initProductionType();
 	void setTraceWidth(int newWidth);
-    QWidget * createViaWidget();
-    QWidget * createTraceWidget();
-    QWidget * createKeepoutWidget(const QString & keepoutString);
-    QString getKeepoutString();
-    void setDefaultKeepout();
+	QWidget * createViaWidget();
+	QWidget * createTraceWidget();
+	QWidget * createKeepoutWidget(const QString & keepoutString);
+	QString getKeepoutString();
+	void setDefaultKeepout();
 
 protected:
 	QRadioButton * m_homebrewButton;
@@ -69,11 +69,11 @@ protected:
 	QFrame * m_customFrame;
 	QComboBox * m_traceWidthComboBox;
 	int m_traceWidth;
-    double m_keepoutMils;
-    bool m_inches;
-    QDoubleSpinBox * m_keepoutSpinBox;
-    QRadioButton * m_inRadio;
-    QRadioButton * m_mmRadio;
+	double m_keepoutMils;
+	bool m_inches;
+	QDoubleSpinBox * m_keepoutSpinBox;
+	QRadioButton * m_inRadio;
+	QRadioButton * m_mmRadio;
 
 public:
 	static const QString AutorouteTraceWidth;

@@ -34,8 +34,8 @@ ConnectorTypeWidget::ConnectorTypeWidget(Connector::ConnectorType type, QWidget 
 	m_noEditionModeWidget = new QLabel(this);
 	m_editionModeWidget = new QPushButton(this);
 	connect(
-		m_editionModeWidget, SIGNAL(clicked()),
-		this, SLOT(toggleValue())
+	    m_editionModeWidget, SIGNAL(clicked()),
+	    this, SLOT(toggleValue())
 	);
 	m_noEditionModeWidget->setFixedWidth(30);
 	m_editionModeWidget->setFixedWidth(30);

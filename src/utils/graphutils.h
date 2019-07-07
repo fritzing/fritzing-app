@@ -45,7 +45,7 @@ public:
 	static void minCut(QList<ConnectorItem *> & connectorItems, QList<class SketchWidget *> & foreighSketchWidgets, ConnectorItem * source, ConnectorItem * sink, QList<ConnectorEdge *> & cutSet);
 
 protected:
-    static void collectBreadboard(ConnectorItem * connectorItem, QList<ConnectorItem *> & partConnectorItems, QList<ConnectorItem *> & ends);
+	static void collectBreadboard(ConnectorItem * connectorItem, QList<ConnectorItem *> & partConnectorItems, QList<ConnectorItem *> & ends);
 
 };
 

@@ -51,13 +51,13 @@ Version::Version() {
 		m_modifiers << "a" << "b" << "rc" << "";
 	}
 
-    m_revision = m_gitCommit;
-    m_revision.truncate(8);
+	m_revision = m_gitCommit;
+	m_revision.truncate(8);
 
-    QStringList strings;
-    strings = m_gitDate.split("T", QString::SkipEmptyParts);
+	QStringList strings;
+	strings = m_gitDate.split("T", QString::SkipEmptyParts);
 	if (strings.size() >= 2) {
-        m_date = strings[0];
+		m_date = strings[0];
 		strings = m_date.split("-", QString::SkipEmptyParts);
 		if (strings.size() >= 3) {
 			m_shortDate = strings[1] + "." + strings[2];
@@ -93,7 +93,7 @@ const QString & Version::versionString() {
 }
 
 const QString & Version::fullDate() {
-    return m_gitDate;
+	return m_gitDate;
 }
 
 const QString & Version::date() {
@@ -197,8 +197,8 @@ QString Version::makeRequestParamsString(bool withID) {
 		settings.setValue("pid", TextUtils::getRandText());
 	}
 
-    QString id;
-    if (withID) id = QString("&pid=%1").arg(settings.value("pid").toString());
+	QString id;
+	if (withID) id = QString("&pid=%1").arg(settings.value("pid").toString());
 	QtSystemInfo systemInfo(NULL);
 	QString siVersion(QUrl::toPercentEncoding(Version::versionString()));
 	QString siSystemName(QUrl::toPercentEncoding(systemInfo.systemName()));
@@ -206,14 +206,14 @@ QString Version::makeRequestParamsString(bool withID) {
 	QString siKernelName(QUrl::toPercentEncoding(systemInfo.kernelName()));
 	QString siKernelVersion(QUrl::toPercentEncoding(systemInfo.kernelVersion()));
 	QString siArchitecture(QUrl::toPercentEncoding(systemInfo.architectureName()));
-    QString string = QString("?version=%2&sysname=%3&kernname=%4&kernversion=%5&arch=%6&sysversion=%7%8")
-		.arg(siVersion)
-		.arg(siSystemName)
-		.arg(siKernelName)
-		.arg(siKernelVersion)
-		.arg(siArchitecture)
-		.arg(siSystemVersion)
-        .arg(id)
-        ;
+	QString string = QString("?version=%2&sysname=%3&kernname=%4&kernversion=%5&arch=%6&sysversion=%7%8")
+	                 .arg(siVersion)
+	                 .arg(siSystemName)
+	                 .arg(siKernelName)
+	                 .arg(siKernelVersion)
+	                 .arg(siArchitecture)
+	                 .arg(siSystemVersion)
+	                 .arg(id)
+	                 ;
 	return string;
 }

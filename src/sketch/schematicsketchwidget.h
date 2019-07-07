@@ -48,11 +48,11 @@ public:
 	bool includeSymbols();
 	bool hasBigDots();
 	void changeConnection(long fromID,
-						  const QString & fromConnectorID,
-						  long toID, const QString & toConnectorID,
-						  ViewLayer::ViewLayerPlacement,
-						  bool connect, bool doEmit,
-						  bool updateConnections);
+	                      const QString & fromConnectorID,
+	                      long toID, const QString & toConnectorID,
+	                      ViewLayer::ViewLayerPlacement,
+	                      bool connect, bool doEmit,
+	                      bool updateConnections);
 	double defaultGridSizeInches();
 	const QString & traceColor(ConnectorItem * forColor);
 	const QString & traceColor(ViewLayer::ViewLayerPlacement);
@@ -69,7 +69,7 @@ public:
 	Wire * createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 	void rotatePartLabels(double degrees, QTransform &, QPointF center, QUndoCommand * parentCommand);
 	void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand,
-							bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs);
+	                        bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs);
 	LayerList routingLayers(ViewLayer::ViewLayerPlacement);
 	bool attachedToTopLayer(ConnectorItem *);
 	bool attachedToBottomLayer(ConnectorItem *);

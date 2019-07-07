@@ -83,7 +83,7 @@ public:
 	Tile * insertTile(Plane* thePlane, QRectF &tileRect, QList<Tile *> &alreadyTiled, QGraphicsItem *, Tile::TileType type, CMRouter::OverlapType);
 	TileRect boardRect();
 	void setKeepout(double);
-    void drcClean();
+	void drcClean();
 
 protected:
 
@@ -111,11 +111,11 @@ protected:
 	QList<Plane *> m_planes;
 	Plane * m_unionPlane;
 	Plane * m_union90Plane;
-    ItemBase * m_board;
-    QRectF m_maxRect;
+	ItemBase * m_board;
+	QRectF m_maxRect;
 	QString m_error;
-    PCBSketchWidget * m_sketchWidget;
-    double m_keepoutPixels;
+	PCBSketchWidget * m_sketchWidget;
+	double m_keepoutPixels;
 };
 
 #endif

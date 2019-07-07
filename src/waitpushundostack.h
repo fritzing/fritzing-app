@@ -29,17 +29,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class WaitPushUndoStack : public QUndoStack
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
 	WaitPushUndoStack(QObject * parent = 0);
 	~WaitPushUndoStack();
 
 	void waitPush(QUndoCommand *, int delayMS);
 	void waitPushTemporary(QUndoCommand *, int delayMS);
-    void resolveTemporary();
-    void deleteTemporary();
-    void deleteTimer(QTimer *);
-    void addTimer(QTimer *);
+	void resolveTemporary();
+	void deleteTemporary();
+	void deleteTimer(QTimer *);
+	void addTimer(QTimer *);
 	void push(QUndoCommand *);
 	bool hasTimers();
 
@@ -51,7 +51,7 @@ protected:
 	QFile m_file;
 #endif
 
- protected:
+protected:
 	void clearDeadTimers();
 	void clearLiveTimers();
 	void clearTimers(QList<QTimer *> &);
@@ -60,14 +60,14 @@ protected:
 	QList<QTimer *> m_deadTimers;
 	QList<QTimer *> m_liveTimers;
 	QMutex m_mutex;
-    QUndoCommand * m_temporary;
+	QUndoCommand * m_temporary;
 };
 
 
 class CommandTimer : public QTimer
 {
 
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	CommandTimer(QUndoCommand * command, int delayMS, WaitPushUndoStack * undoStack);

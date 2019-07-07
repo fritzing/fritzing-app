@@ -29,28 +29,28 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class ZoomButton : public QLabel {
 	Q_OBJECT
 
-	public:
-		enum ZoomType {ZoomIn, ZoomOut};
+public:
+	enum ZoomType {ZoomIn, ZoomOut};
 
 public:
-		ZoomButton(QBoxLayout::Direction dir, ZoomButton::ZoomType type, ZoomableGraphicsView* view, QWidget *parent);
+	ZoomButton(QBoxLayout::Direction dir, ZoomButton::ZoomType type, ZoomableGraphicsView* view, QWidget *parent);
 
 
 
-	signals:
-		void clicked();
+signals:
+	void clicked();
 
-	protected slots:
-		void zoom();
+protected slots:
+	void zoom();
 
-	protected:
-		void enterEvent(QEvent *event);
-		void leaveEvent(QEvent *event);
-		void mousePressEvent(QMouseEvent *event);
+protected:
+	void enterEvent(QEvent *event);
+	void leaveEvent(QEvent *event);
+	void mousePressEvent(QMouseEvent *event);
 
-		ZoomableGraphicsView *m_owner;
-		double m_step;
-		ZoomButton::ZoomType m_type;
+	ZoomableGraphicsView *m_owner;
+	double m_step;
+	ZoomButton::ZoomType m_type;
 };
 
 class ZoomControlsPrivate : public QFrame {
@@ -69,14 +69,14 @@ protected:
 
 class ZoomControls : public ZoomControlsPrivate {
 	Q_OBJECT
-	public:
-		ZoomControls(ZoomableGraphicsView *view, QWidget *parent);
+public:
+	ZoomControls(ZoomableGraphicsView *view, QWidget *parent);
 
-	protected slots:
-		void updateLabel(double zoom);
+protected slots:
+	void updateLabel(double zoom);
 
-	protected:
-		QLabel *m_zoomLabel;
+protected:
+	QLabel *m_zoomLabel;
 };
 
 #endif /* ZOOMCONTROLS_H_ */

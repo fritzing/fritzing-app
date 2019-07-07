@@ -43,7 +43,7 @@ class PropertyDefMaster
 {
 public:
 	static void initPropertyDefs(class ModelPart *, QHash<PropertyDef *, QString> & propertyDefs);
-    static void cleanup();
+	static void cleanup();
 
 protected:
 	static void loadPropertyDefs();

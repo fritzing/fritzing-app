@@ -37,54 +37,54 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class PEDoubleSpinBox : public QDoubleSpinBox
 {
-Q_OBJECT
+	Q_OBJECT
 public:
-    PEDoubleSpinBox(QWidget * parent = 0);
+	PEDoubleSpinBox(QWidget * parent = 0);
 
-    void stepBy (int steps);
+	void stepBy (int steps);
 
 signals:
-    void getSpinAmount(double &);
+	void getSpinAmount(double &);
 };
 
 class PEToolView : public QFrame
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	PEToolView(QWidget * parent = NULL);
 	~PEToolView();
 
-    void initConnectors(QList<QDomElement> * connectorList);
-    int currentConnectorIndex();
+	void initConnectors(QList<QDomElement> * connectorList);
+	int currentConnectorIndex();
 	void setCurrentConnector(const QDomElement &);
-    void setCurrentConnector(int index);
-    void setTerminalPointCoords(QPointF);
-    void setTerminalPointLimits(QSizeF);
+	void setCurrentConnector(int index);
+	void setTerminalPointCoords(QPointF);
+	void setTerminalPointLimits(QSizeF);
 	void setChildrenVisible(bool vis);
-    void enableConnectorChanges(bool enableTerminalPointDrag, bool enableTerminalPointControls, bool enableInfo, bool enableAssign);
+	void enableConnectorChanges(bool enableTerminalPointDrag, bool enableTerminalPointControls, bool enableInfo, bool enableAssign);
 	void showAssignedConnectors(const QDomDocument * svgDoc, ViewLayer::ViewID);
 
 signals:
-    void switchedConnector(int);
-    void removedConnector(const QDomElement &);
-    void pickModeChanged(bool);
-    void busModeChanged(bool);
-    void terminalPointChanged(const QString & how);
-    void terminalPointChanged(const QString & coord, double value);
-    void getSpinAmount(double &);
-    void connectorMetadataChanged(struct ConnectorMetadata *);
+	void switchedConnector(int);
+	void removedConnector(const QDomElement &);
+	void pickModeChanged(bool);
+	void busModeChanged(bool);
+	void terminalPointChanged(const QString & how);
+	void terminalPointChanged(const QString & coord, double value);
+	void getSpinAmount(double &);
+	void connectorMetadataChanged(struct ConnectorMetadata *);
 
 protected slots:
-    void switchConnector(QTreeWidgetItem * current, QTreeWidgetItem * previous);
-    void pickModeChangedSlot();
-    void busModeChangedSlot(bool);
-    void descriptionEntry();
-    void typeEntry();
-    void nameEntry();
-    void buttonChangeTerminalPoint();
-    void terminalPointEntry();
-    void getSpinAmountSlot(double &);
-    void removeConnector();
+	void switchConnector(QTreeWidgetItem * current, QTreeWidgetItem * previous);
+	void pickModeChangedSlot();
+	void busModeChangedSlot(bool);
+	void descriptionEntry();
+	void typeEntry();
+	void nameEntry();
+	void buttonChangeTerminalPoint();
+	void terminalPointEntry();
+	void getSpinAmountSlot(double &);
+	void removeConnector();
 
 protected:
 	void changeConnector();
@@ -92,20 +92,20 @@ protected:
 
 
 protected:
-    QPointer<QTreeWidget> m_connectorListWidget;
-    QList<QPushButton *> m_buttons;
-    QPointer<class PEGraphicsItem> m_pegi;
-    QList<QDomElement> * m_connectorList;
-    QPointer<QGroupBox> m_connectorInfoGroupBox;
-    QPointer<QBoxLayout> m_connectorInfoLayout;
-    QPointer<QWidget> m_connectorInfoWidget;
+	QPointer<QTreeWidget> m_connectorListWidget;
+	QList<QPushButton *> m_buttons;
+	QPointer<class PEGraphicsItem> m_pegi;
+	QList<QDomElement> * m_connectorList;
+	QPointer<QGroupBox> m_connectorInfoGroupBox;
+	QPointer<QBoxLayout> m_connectorInfoLayout;
+	QPointer<QWidget> m_connectorInfoWidget;
 	QPointer<QCheckBox> m_busModeBox;
-    QPointer<QDoubleSpinBox> m_terminalPointX;
-    QPointer<QDoubleSpinBox> m_terminalPointY;
-    QPointer<QLabel> m_units;
+	QPointer<QDoubleSpinBox> m_terminalPointX;
+	QPointer<QDoubleSpinBox> m_terminalPointY;
+	QPointer<QLabel> m_units;
 	QPointer<QGroupBox> m_terminalPointGroupBox;
 	QPointer<QLabel> m_terminalPointDragState;
-    QPointer<QPushButton> m_assignButton;
+	QPointer<QPushButton> m_assignButton;
 };
 
 #endif

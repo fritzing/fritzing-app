@@ -60,7 +60,7 @@ public:
 	const QString & extensionString();
 	const QStringList & extensions();
 	bool hlCStringChar();
-    bool canProgram();
+	bool canProgram();
 
 public:
 	static QString parseForName(const QString & filename);
@@ -82,7 +82,7 @@ protected:
 	QList<CommentInfo *> m_commentInfo;
 	QChar m_stringDelimiter;
 	bool m_hlCStringChar;
-    bool m_canProgram;
+	bool m_canProgram;
 };
 
 class SyntaxerTrieLeaf : public TrieLeaf

@@ -31,7 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class ConnectorShared : public QObject
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	ConnectorShared();
@@ -54,7 +54,7 @@ public:
 	const QString & legID(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID);
 	const QMultiHash<ViewLayer::ViewID,SvgIdLayer *> &pins();
 	SvgIdLayer * fullPinInfo(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID);
-    const QList<SvgIdLayer *> svgIdLayers() const;
+	const QList<SvgIdLayer *> svgIdLayers() const;
 	void addPin(ViewLayer::ViewID, const QString & svgId, ViewLayer::ViewLayerID, const QString & terminalId, const QString & legId, bool hybrid);
 	void insertPin(ViewLayer::ViewID layer, SvgIdLayer * svgIdLayer);
 	void removePins(ViewLayer::ViewID layer);
@@ -73,7 +73,7 @@ protected:
 	QString m_id;
 	QString m_name;
 	QString m_typeString;
-    QString m_replacedby;
+	QString m_replacedby;
 	Connector::ConnectorType m_type;
 	QString m_ercType;
 	class ErcData * m_ercData;

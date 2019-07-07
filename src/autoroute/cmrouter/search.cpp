@@ -42,18 +42,18 @@
 
 Tile *
 TiSrPoint(Tile * hintTile, Plane * plane, int x, int y)
-    /* Pointer to tile at which to begin search.
-				 * If this is NULL, use the hint tile stored
-				 * with the plane instead.
-				 */
-    /* Plane (containing hint tile pointer) */
-    /* Point for which to search */
+/* Pointer to tile at which to begin search.
+			 * If this is NULL, use the hint tile stored
+			 * with the plane instead.
+			 */
+/* Plane (containing hint tile pointer) */
+/* Point for which to search */
 {
-    Tile *tp = (hintTile) ? hintTile : plane->pl_hint;
+	Tile *tp = (hintTile) ? hintTile : plane->pl_hint;
 
 	TilePoint point;
 	point.xi = x;
 	point.yi = y;
-    plane->pl_hint = tp = gotoPoint(tp, point);
-    return(tp);
+	plane->pl_hint = tp = gotoPoint(tp, point);
+	return(tp);
 }

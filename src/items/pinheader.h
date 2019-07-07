@@ -70,7 +70,7 @@ public:
 	static QString makeSchematicSvg(const QString & expectedFileName);
 	static QString makeBreadboardSvg(const QString & expectedFileName);
 	static QString makeBreadboardShroudedSvg(int pins);
-    static QString makeBreadboardDoubleSvg(const QString & expectedFileName, int pins);
+	static QString makeBreadboardDoubleSvg(const QString & expectedFileName, int pins);
 
 protected:
 	static const QStringList & forms();

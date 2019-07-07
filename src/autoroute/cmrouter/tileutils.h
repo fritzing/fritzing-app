@@ -26,14 +26,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 static const int TILEFACTOR = 1000;
 
 inline int fasterRealToTile(double x) {
-        return qRound(x * TILEFACTOR);
+	return qRound(x * TILEFACTOR);
 }
 
 inline void realsToTile(TileRect & tileRect, double l, double t, double r, double b) {
-        tileRect.xmini = fasterRealToTile(l);
-        tileRect.ymini = fasterRealToTile(t);
-        tileRect.xmaxi = fasterRealToTile(r);
-        tileRect.ymaxi = fasterRealToTile(b);
+	tileRect.xmini = fasterRealToTile(l);
+	tileRect.ymini = fasterRealToTile(t);
+	tileRect.xmaxi = fasterRealToTile(r);
+	tileRect.ymaxi = fasterRealToTile(b);
 }
 
 inline void qrectToTile(QRectF & rect, TileRect & tileRect) {

@@ -36,38 +36,38 @@ QT_FORWARD_DECLARE_CLASS(QToolButton)
 
 class SVGView : public QFrame
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	SVGView(const QString &name, QWidget *parent = 0);
 	QGraphicsView *view() const;
 
 private slots:
-    void print();
+	void print();
 	void importPCBXML();
-    void zoomIn();
-    void zoomOut();
-    void rotateLeft();
-    void rotateRight();
+	void zoomIn();
+	void zoomOut();
+	void rotateLeft();
+	void rotateRight();
 
 private:
-    QGraphicsView *m_graphicsView;
-    QLabel *m_label;
-    QToolButton *m_printButton;
-    QToolButton *m_loadPCBXMLButton;
+	QGraphicsView *m_graphicsView;
+	QLabel *m_label;
+	QToolButton *m_printButton;
+	QToolButton *m_loadPCBXMLButton;
 	QSvgRenderer *m_renderer;
 	QSvgWidget *m_pcbWidget;
 	PcbXML	*m_pcbXML;
 
-    QGraphicsScene m_scene;
+	QGraphicsScene m_scene;
 	QDomDocument *m_domDocument; // footprint xml file
 
 	// graphics layers (svg groups really)
 
-    qreal m_zoom;
-    qreal m_rotation;
+	qreal m_zoom;
+	qreal m_rotation;
 
-    void setupMatrix();
-    void drawPCBXML(QDomElement * pcbDocument);
+	void setupMatrix();
+	void drawPCBXML(QDomElement * pcbDocument);
 
 };
 #endif

@@ -38,10 +38,10 @@ CommandTimer::CommandTimer(QUndoCommand * command, int delayMS, WaitPushUndoStac
 }
 
 void CommandTimer::timedout() {
-    if (m_undoStack) {
-	    m_undoStack->push(m_command);
-	    m_undoStack->deleteTimer(this);
-    }
+	if (m_undoStack) {
+		m_undoStack->push(m_command);
+		m_undoStack->deleteTimer(this);
+	}
 }
 
 /////////////////////////////////
@@ -49,10 +49,10 @@ void CommandTimer::timedout() {
 WaitPushUndoStack::WaitPushUndoStack(QObject * parent) :
 	QUndoStack(parent)
 {
-    m_temporary = NULL;
+	m_temporary = NULL;
 #ifndef QT_NO_DEBUG
-    QString path = FolderUtils::getTopLevelUserDataStorePath();
-    path += "/undostack.txt";
+	QString path = FolderUtils::getTopLevelUserDataStorePath();
+	path += "/undostack.txt";
 
 	m_file.setFileName(path);
 	m_file.remove();
@@ -60,8 +60,8 @@ WaitPushUndoStack::WaitPushUndoStack(QObject * parent) :
 }
 
 WaitPushUndoStack::~WaitPushUndoStack() {
-    clearLiveTimers();
-    clearDeadTimers();
+	clearLiveTimers();
+	clearDeadTimers();
 }
 
 void WaitPushUndoStack::push(QUndoCommand * cmd)
@@ -69,10 +69,10 @@ void WaitPushUndoStack::push(QUndoCommand * cmd)
 #ifndef QT_NO_DEBUG
 	writeUndo(cmd, 0, NULL);
 #endif
-    if (m_temporary == cmd) {
-        m_temporary->redo();
-        return;
-    }
+	if (m_temporary == cmd) {
+		m_temporary->redo();
+		return;
+	}
 
 	QUndoStack::push(cmd);
 }
@@ -80,26 +80,26 @@ void WaitPushUndoStack::push(QUndoCommand * cmd)
 
 void WaitPushUndoStack::waitPush(QUndoCommand * command, int delayMS) {
 	clearDeadTimers();
-    if (delayMS <= 0) {
-        push(command);
-        return;
-    }
+	if (delayMS <= 0) {
+		push(command);
+		return;
+	}
 
 	new CommandTimer(command, delayMS, this);
 }
 
 
 void WaitPushUndoStack::waitPushTemporary(QUndoCommand * command, int delayMS) {
-    m_temporary = command;
+	m_temporary = command;
 	waitPush(command, delayMS);
 }
 
 void WaitPushUndoStack::clearDeadTimers() {
-    clearTimers(m_deadTimers);
+	clearTimers(m_deadTimers);
 }
 
 void WaitPushUndoStack::clearLiveTimers() {
-    clearTimers(m_liveTimers);
+	clearTimers(m_liveTimers);
 }
 
 void WaitPushUndoStack::clearTimers(QList<QTimer *> & timers) {
@@ -127,20 +127,20 @@ bool WaitPushUndoStack::hasTimers() {
 }
 
 void WaitPushUndoStack::resolveTemporary() {
-    TemporaryCommand * tc = dynamic_cast<TemporaryCommand *>(m_temporary);
-    m_temporary = NULL;
-    if (tc) {
-        tc->setEnabled(false);
-        push(tc);
-        tc->setEnabled(true);
-    }
+	TemporaryCommand * tc = dynamic_cast<TemporaryCommand *>(m_temporary);
+	m_temporary = NULL;
+	if (tc) {
+		tc->setEnabled(false);
+		push(tc);
+		tc->setEnabled(true);
+	}
 }
 
 void WaitPushUndoStack::deleteTemporary() {
-    if (m_temporary != NULL) {
-        delete m_temporary;
-        m_temporary = NULL;
-    }
+	if (m_temporary != NULL) {
+		delete m_temporary;
+		m_temporary = NULL;
+	}
 }
 
 #ifndef QT_NO_DEBUG

@@ -38,16 +38,16 @@ QString Kicad2Svg::makeMetadata(const QString & filename, const QString & type, 
 
 	m_title = QString("<title>%1</title>\n").arg(fileInfo.fileName());
 	m_description = QString("<desc>Kicad %3 '%2' from file '%1' converted by Fritzing</desc>\n")
-			.arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(fileInfo.fileName())))
-			.arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(name)))
-			.arg(type);
+	                .arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(fileInfo.fileName())))
+	                .arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(name)))
+	                .arg(type);
 
 	QString metadata("<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n");
 	metadata += "<rdf:RDF>";
 	metadata += "<rdf:Description rdf:about=''>\n";
 	metadata += m_attribute.arg("kicad filename").arg(fileInfo.fileName());
 	metadata += m_attribute.arg(QString("kicad %1").arg(type))
-							.arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(name)));
+	            .arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(name)));
 	metadata += m_attribute.arg("fritzing version").arg(Version::versionString());
 	metadata += m_attribute.arg("conversion date").arg(dt);
 	metadata += m_attribute.arg("dist-license").arg("GPL");

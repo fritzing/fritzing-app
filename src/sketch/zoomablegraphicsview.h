@@ -34,15 +34,15 @@ class ZoomableGraphicsView : public QGraphicsView
 public:
 	ZoomableGraphicsView(QWidget* parent = 0);
 
-    void relativeZoom(double step, bool centerToCursor);
-    void absoluteZoom(double percent);
+	void relativeZoom(double step, bool centerToCursor);
+	void absoluteZoom(double percent);
 	double currentZoom();
 	void setAcceptWheelEvents(bool);
 	virtual void ensureFixedToBottomRightItems() {}
-    bool viewFromBelow();
-    virtual void setViewFromBelow(bool);
+	bool viewFromBelow();
+	virtual void setViewFromBelow(bool);
 
-    static const int MaxScaleValue;
+	static const int MaxScaleValue;
 
 public:
 	enum WheelMapping {
@@ -67,7 +67,7 @@ protected:
 	int m_maxScaleValue;
 	int m_minScaleValue;
 	bool m_acceptWheelEvents;
-    bool m_viewFromBelow;
+	bool m_viewFromBelow;
 
 protected:
 	static WheelMapping m_wheelMapping;

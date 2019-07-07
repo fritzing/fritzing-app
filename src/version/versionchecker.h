@@ -54,13 +54,13 @@ public:
 	void ignore(const QString & version, bool interim);
 
 signals:
-    void httpError(QNetworkReply::NetworkError);
+	void httpError(QNetworkReply::NetworkError);
 	void xmlError(QXmlStreamReader::Error errorCode);
 	void releasesAvailable();
 
 public slots:
-    void fetch();
-    void finished(QNetworkReply *);
+	void fetch();
+	void finished(QNetworkReply *);
 
 protected:
 	void parseXml();
@@ -68,7 +68,7 @@ protected:
 
 protected:
 	QString m_urlString;
-    QXmlStreamReader m_xml;
+	QXmlStreamReader m_xml;
 	QString m_version;
 	int m_depth;
 	bool m_inEntry;
@@ -83,8 +83,8 @@ protected:
 	QString m_currentSummary;
 	VersionThing m_ignoreMainVersion;
 	VersionThing m_ignoreInterimVersion;
-    QNetworkReply * m_networkReply;
-    QMutex m_networkReplyLock;
+	QNetworkReply * m_networkReply;
+	QMutex m_networkReplyLock;
 };
 
 

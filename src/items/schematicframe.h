@@ -32,11 +32,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "resizableboard.h"
 
 struct TemplateThing {
-    QString svgTemplate;
-    QSizeF size;
-    double margin;
-    double fontSize;
-    double strokeWidth;
+	QString svgTemplate;
+	QSizeF size;
+	double margin;
+	double fontSize;
+	double strokeWidth;
 };
 
 class SchematicFrame : public ResizableBoard
@@ -74,14 +74,14 @@ protected:
 	QString makeFirstLayerSvg(double mmW, double mmH, double milsW, double milsH);
 	QString makeNextLayerSvg(ViewLayer::ViewLayerID, double mmW, double mmH, double milsW, double milsH);
 	bool makeLineEdit(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 	void loadTemplates();
 
 protected:
-    static void loadTemplate(const QString & tPath, const QString & fPath, TemplateThing &);
+	static void loadTemplate(const QString & tPath, const QString & fPath, TemplateThing &);
 
 protected:
-    QTextEdit * m_textEdit;
+	QTextEdit * m_textEdit;
 	bool m_wrapInitialized;
 
 protected:

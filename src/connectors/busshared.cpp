@@ -48,10 +48,10 @@ void BusShared::initConnector(QDomElement & connector, const QHash<QString, QPoi
 
 	ConnectorShared * connectorShared = connectorHash.value(id);
 	if (connectorShared == NULL) {
-        QDomDocument document = connector.ownerDocument();
-        DebugDialog::debug(QString("no connector is found for bus nodeMember %1 in %2")
-                           .arg(id)
-                           .arg(TextUtils::elementToString(document.documentElement())));
+		QDomDocument document = connector.ownerDocument();
+		DebugDialog::debug(QString("no connector is found for bus nodeMember %1 in %2")
+		                   .arg(id)
+		                   .arg(TextUtils::elementToString(document.documentElement())));
 		return;
 	}
 

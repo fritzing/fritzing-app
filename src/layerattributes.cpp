@@ -23,8 +23,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 LayerAttributes::LayerAttributes()
 {
-    orientation = Qt::Vertical;
-    createShape = true;
+	orientation = Qt::Vertical;
+	createShape = true;
 }
 
 const QString & LayerAttributes::filename() {

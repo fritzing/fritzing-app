@@ -59,9 +59,9 @@ PartsBinView::~PartsBinView() {
 }
 
 void PartsBinView::cleanup() {
-    foreach (ItemBase * itemBase, ItemBaseHash.values()) {
-        delete itemBase;
-    }
+	foreach (ItemBase * itemBase, ItemBaseHash.values()) {
+		delete itemBase;
+	}
 }
 
 void PartsBinView::setPaletteModel(PaletteModel * model, bool clear) {
@@ -93,10 +93,10 @@ void PartsBinView::removePartReference(const QString & moduleID) {
 
 void PartsBinView::setItem(ModelPart * modelPart) {
 	QList<QObject *>::const_iterator i;
-    for (i = modelPart->children().constBegin(); i != modelPart->children().constEnd(); ++i) {
+	for (i = modelPart->children().constBegin(); i != modelPart->children().constEnd(); ++i) {
 		setItemAux(dynamic_cast<ModelPart *>(*i));
 	}
-    for (i = modelPart->children().constBegin(); i != modelPart->children().constEnd(); ++i) {
+	for (i = modelPart->children().constBegin(); i != modelPart->children().constEnd(); ++i) {
 		setItem(dynamic_cast<ModelPart *>(*i));
 	}
 }
@@ -121,14 +121,14 @@ void PartsBinView::mousePressOnItem(const QPoint &dragStartPos, const QString &m
 	mimeData->setData("action", "part-reordering");
 
 	ItemDrag::setOriginator(this->m_parent);
-    ItemDrag::setOriginatorIsTempBin(m_parent->isTempPartsBin());
+	ItemDrag::setOriginatorIsTempBin(m_parent->isTempPartsBin());
 
 	QDrag * drag = new QDrag(dynamic_cast<QWidget*>(this));
 
 	drag->setMimeData(mimeData);
 
 	/*
-#ifndef Q_OS_LINUX
+	#ifndef Q_OS_LINUX
 	// transparency doesn't seem to work for linux
 	QPixmap pixmap(size);
 	pixmap.fill(Qt::transparent);
@@ -142,10 +142,10 @@ void PartsBinView::mousePressOnItem(const QPoint &dragStartPos, const QString &m
 	painter.end();
 	drag->setPixmap(pixmap);
 	drag->setHotSpot(hotspot);
-#else
+	#else
 	Q_UNUSED(hotspot);
 	Q_UNUSED(size);
-#endif
+	#endif
 	*/
 
 	Q_UNUSED(hotspot);
@@ -154,8 +154,8 @@ void PartsBinView::mousePressOnItem(const QPoint &dragStartPos, const QString &m
 	// can set the pixmap, but can't hide it
 	//QPixmap * pixmap = pitem->pixmap();
 	//if (pixmap != NULL) {
-		//drag.setPixmap(*pixmap);
-		//drag.setHotSpot(mts.toPoint() - pitem->pos().toPoint());
+	//drag.setPixmap(*pixmap);
+	//drag.setHotSpot(mts.toPoint() - pitem->pos().toPoint());
 	//
 
 	// setDragCursor doesn't seem to help

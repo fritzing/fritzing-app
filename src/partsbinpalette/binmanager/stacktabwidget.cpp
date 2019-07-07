@@ -30,12 +30,12 @@ StackTabWidget::StackTabWidget(QWidget *parent) : QTabWidget(parent) {
 	setTabBar(new StackTabBar(this));
 
 	connect(
-		this, SIGNAL(currentChanged(int)),
-		this, SLOT(informCurrentChanged(int))
+	    this, SIGNAL(currentChanged(int)),
+	    this, SLOT(informCurrentChanged(int))
 	);
 	connect(
-		this, SIGNAL(tabCloseRequested(int)),
-		this, SLOT(informTabCloseRequested(int))
+	    this, SIGNAL(tabCloseRequested(int)),
+	    this, SLOT(informTabCloseRequested(int))
 	);
 }
 

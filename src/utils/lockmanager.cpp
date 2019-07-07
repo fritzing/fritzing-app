@@ -67,13 +67,13 @@ LockManager::~LockManager()
 }
 
 void LockManager::cleanup() {
-    foreach (QTimer * timer, TheTimers) {
+	foreach (QTimer * timer, TheTimers) {
 		if (timer) {
 			timer->stop();
 			delete timer;
 		}
-    }
-    TheTimers.clear();
+	}
+	TheTimers.clear();
 }
 
 void LockManager::touchFiles() {
@@ -88,8 +88,8 @@ void LockManager::touchFiles() {
 
 void LockManager::initLockedFiles(const QString & prefix, QString & folder, QHash<QString, LockedFile *> & lockedFiles, long touchFrequency) {
 	// first create our own unique folder and lock it
-    QDir backupDir(FolderUtils::getTopLevelUserDataStorePath());
-    backupDir.cd(prefix);
+	QDir backupDir(FolderUtils::getTopLevelUserDataStorePath());
+	backupDir.cd(prefix);
 	QString lockedSubfolder = TextUtils::getRandText();
 	backupDir.mkdir(lockedSubfolder);
 	folder = backupDir.absoluteFilePath(lockedSubfolder);
@@ -112,7 +112,7 @@ LockedFile * LockManager::makeLockedFile(const QString & path, long touchFrequen
 		timer->setSingleShot(false);
 		QObject::connect(timer, SIGNAL(timeout()), &TheLockManager, SLOT(touchFiles()));
 		timer->start();
-        TheTimers.insert(touchFrequency, timer);
+		TheTimers.insert(touchFrequency, timer);
 	}
 	return lockedFile;
 }
@@ -129,11 +129,11 @@ void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, Lock
 	QDir backupDir(folder);
 	backupDir.cdUp();
 	foreach (QString sub, lockedFiles.keys()) {
-        LockedFile * lockedFile = lockedFiles.value(sub);
+		LockedFile * lockedFile = lockedFiles.value(sub);
 		TheMutex.lock();
 		TheLockedFiles.remove(lockedFile->frequency, lockedFile);
 		TheMutex.unlock();
-        if (remove) {
+		if (remove) {
 			FolderUtils::rmdir(backupDir.absoluteFilePath(sub));
 		}
 		delete lockedFile;
@@ -143,8 +143,8 @@ void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, Lock
 
 void LockManager::checkLockedFiles(const QString & prefix, QFileInfoList & backupList, QHash<QString, LockedFile *> & lockedFiles, bool recurse, long touchFrequency)
 {
-    QDir backupDir(FolderUtils::getTopLevelUserDataStorePath());
-    backupDir.cd(prefix);
+	QDir backupDir(FolderUtils::getTopLevelUserDataStorePath());
+	backupDir.cd(prefix);
 	QFileInfoList dirList = backupDir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::Hidden | QDir::NoSymLinks);
 	foreach (QFileInfo dirInfo, dirList) {
 		QDir dir(dirInfo.filePath());

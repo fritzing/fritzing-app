@@ -30,18 +30,18 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class FileProgressDialog : public QDialog
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	FileProgressDialog(QWidget *parent = 0);
-    FileProgressDialog(const QString & title, int initialMaximum, QWidget *parent);
+	FileProgressDialog(const QString & title, int initialMaximum, QWidget *parent);
 	~FileProgressDialog();
 
 	int value();
 	void setBinLoadingCount(int);
 	void setBinLoadingChunk(int);
-    void setIncValueMod(int);
-    void setIndeterminate();
+	void setIncValueMod(int);
+	void setIndeterminate();
 
 protected:
 	void closeEvent(QCloseEvent *);
@@ -50,7 +50,7 @@ protected:
 public slots:
 	void setMinimum(int);
 	void setMaximum(int);
-    void addMaximum(int);
+	void addMaximum(int);
 	void setValue(int);
 	void incValue();
 	void setMessage(const QString & message);
@@ -61,7 +61,7 @@ public slots:
 	void settingItemSlot();
 
 protected slots:
-    void updateIndeterminate();
+	void updateIndeterminate();
 
 
 signals:
@@ -77,11 +77,11 @@ protected:
 	int m_binLoadingCount;
 	int m_binLoadingIndex;
 	int m_binLoadingStart;
-    int m_binLoadingChunk;
-    int m_incValueMod;
+	int m_binLoadingChunk;
+	int m_incValueMod;
 	double m_binLoadingInc;
 	double m_binLoadingValue;
-    QTimer m_timer;
+	QTimer m_timer;
 };
 
 

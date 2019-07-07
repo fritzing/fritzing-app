@@ -34,25 +34,25 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class PartInfoWidget : public QWidget {
 	Q_OBJECT
-	public:
-		PartInfoWidget(QWidget *parent = 0);
-		ModelPartShared* modelPartShared();
+public:
+	PartInfoWidget(QWidget *parent = 0);
+	ModelPartShared* modelPartShared();
 
-	public slots:
-		void updateInfo(ModelPart *);
+public slots:
+	void updateInfo(ModelPart *);
 
-	protected:
-		QLineEdit *m_version;
-		QLineEdit *m_author;
-		QLineEdit *m_title;
-		//QLineEdit *m_taxonomy;
-		QLineEdit *m_label;
-		QTextEdit *m_description;
+protected:
+	QLineEdit *m_version;
+	QLineEdit *m_author;
+	QLineEdit *m_title;
+	//QLineEdit *m_taxonomy;
+	QLineEdit *m_label;
+	QTextEdit *m_description;
 
-		QDateEdit *m_date;
+	QDateEdit *m_date;
 
-		AddRemoveListWidget * m_tagsList;
-		AddRemoveListWidget * m_propertyList;
+	AddRemoveListWidget * m_tagsList;
+	AddRemoveListWidget * m_propertyList;
 };
 
 #endif /* PARTINFOWIDGET_H_ */

@@ -101,6 +101,6 @@ protected:
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(ViewGeometry::WireFlags)
 
- //Q_DECLARE_METATYPE(ViewGeometry *);
+//Q_DECLARE_METATYPE(ViewGeometry *);
 
 #endif

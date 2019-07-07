@@ -35,14 +35,14 @@ public:
 	Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent);
 	~Stripbit();
 
-    bool horizontal();
+	bool horizontal();
 	void setRemoved(bool);
 	bool removed();
 	void setChanged(bool);
 	bool changed();
 	int y();
 	int x();
-    QString makeRemovedString();
+	QString makeRemovedString();
 
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
@@ -57,15 +57,15 @@ protected:
 	int m_x;
 	int m_y;
 	bool m_changed;
-    bool m_horizontal;
+	bool m_horizontal;
 };
 
 struct StripConnector {
-    ConnectorItem * connectorItem;
-    Stripbit * down;
-    Stripbit * right;
+	ConnectorItem * connectorItem;
+	Stripbit * down;
+	Stripbit * right;
 
-    StripConnector();
+	StripConnector();
 };
 
 class Stripboard : public Perfboard
@@ -85,30 +85,30 @@ public:
 	void initCutting(Stripbit *);
 	void getConnectedColor(ConnectorItem *, QBrush &, QPen &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
 	void restoreRowColors(Stripbit * stripbit);
-    void swapEntry(const QString & text);
-    QStringList collectValues(const QString & family, const QString & prop, QString & value);
+	void swapEntry(const QString & text);
+	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 
 protected:
 	void nextBus(QList<ConnectorItem *> & soFar);
 	QString getRowLabel();
 	QString getColumnLabel();
-    void makeInitialPath();
-    void collectConnected(int x, int y, QList<ConnectorItem *> & connected);
-    StripConnector * getStripConnector(int x, int y);
-    void collectTo(QSet<ConnectorItem *> &);
-    void initStripLayouts();
+	void makeInitialPath();
+	void collectConnected(int x, int y, QList<ConnectorItem *> & connected);
+	StripConnector * getStripConnector(int x, int y);
+	void collectTo(QSet<ConnectorItem *> &);
+	void initStripLayouts();
 
 public:
 	static QString genFZP(const QString & moduleID);
 	static QString genModuleID(QMap<QString, QString> & currPropsMap);
 
 protected:
-    QList<StripConnector *> m_strips;
+	QList<StripConnector *> m_strips;
 	QList<class BusShared *> m_buses;
 	QString m_beforeCut;
-    int m_x;
-    int m_y;
-    QString m_layout;
+	int m_x;
+	int m_y;
+	QString m_layout;
 };
 
 #endif

@@ -29,18 +29,18 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class EditableLabel : public QLabel {
 	Q_OBJECT
 
-	public:
-		EditableLabel(QWidget *parent=0);
-		EditableLabel(const QString & text, QWidget *parent=0);
+public:
+	EditableLabel(QWidget *parent=0);
+	EditableLabel(const QString & text, QWidget *parent=0);
 
-	public slots:
-		void editionCompleted(QString newText);
+public slots:
+	void editionCompleted(QString newText);
 
-	signals:
-		void editionStarted(QString);
+signals:
+	void editionStarted(QString);
 
-	protected:
-		void mousePressEvent(QMouseEvent *event);
+protected:
+	void mousePressEvent(QMouseEvent *event);
 };
 
 #endif /* EDITABLELABEL_H_ */

@@ -55,7 +55,7 @@ public:
 	void setInitialSize();
 	void addedToScene(bool temporary);
 	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    bool copperBlocker();
+	bool copperBlocker();
 
 protected slots:
 	void terminalPointEntry(const QString &);
@@ -73,7 +73,7 @@ protected:
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 
 protected:
-    bool m_copperBlocker;
+	bool m_copperBlocker;
 };
 
 class CopperBlocker : public Pad
@@ -85,9 +85,9 @@ public:
 	CopperBlocker(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~CopperBlocker();
 
-    bool hasPartLabel();
-    QPainterPath shape() const;
-    QPainterPath hoverShape() const;
+	bool hasPartLabel();
+	QPainterPath shape() const;
+	QPainterPath hoverShape() const;
 
 protected:
 	QString makeFirstLayerSvg(double mmW, double mmH, double milsW, double milsH);

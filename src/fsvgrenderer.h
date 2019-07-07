@@ -41,29 +41,29 @@ struct ConnectorInfo {
 	QString legColor;
 	QLineF legLine;
 	double legStrokeWidth;
-    bool gotPath;
+	bool gotPath;
 };
 
 typedef QHash<ViewLayer::ViewLayerID, class FSvgRenderer *> RendererHash;
 
 struct LoadInfo {
-     QString filename;
-     QStringList connectorIDs;
-     QStringList terminalIDs;
-     QStringList legIDs;
-     QString setColor;
-     QString colorElementID;
-     bool findNonConnectors;
-     bool parsePaths;
+	QString filename;
+	QStringList connectorIDs;
+	QStringList terminalIDs;
+	QStringList legIDs;
+	QString setColor;
+	QString colorElementID;
+	bool findNonConnectors;
+	bool parsePaths;
 
-     LoadInfo() {
-         findNonConnectors = parsePaths = false;
-     }
+	LoadInfo() {
+		findNonConnectors = parsePaths = false;
+	}
 };
 
 class FSvgRenderer : public QSvgRenderer
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	FSvgRenderer(QObject * parent = 0);
 	~FSvgRenderer();
@@ -75,7 +75,7 @@ public:
 	bool loadSvgString(const QString & svg);
 	bool loadSvgString(const QString & svg, QString & newSvg);
 	bool fastLoad(const QByteArray & contents);
-    QByteArray finalLoad(QByteArray & cleanContents, const QString & filename);
+	QByteArray finalLoad(QByteArray & cleanContents, const QString & filename);
 	const QString & filename();
 	QSizeF defaultSizeF();
 	bool setUpConnector(class SvgIdLayer * svgIdLayer, bool ignoreTerminalPoint, ViewLayer::ViewLayerPlacement);
@@ -85,7 +85,7 @@ public:
 	static void cleanup();
 	static QSizeF parseForWidthAndHeight(QXmlStreamReader &);
 	static QPixmap * getPixmap(QSvgRenderer * renderer, QSize size);
-    static void initNames();
+	static void initNames();
 
 protected:
 	bool determineDefaultSize(QXmlStreamReader &);
@@ -93,8 +93,8 @@ protected:
 	bool initConnectorInfo(QDomDocument &, const LoadInfo &);
 	ConnectorInfo * initConnectorInfoStruct(QDomElement & connectorElement, const QString & filename, bool parsePaths);
 	bool initConnectorInfoStructAux(QDomElement &, ConnectorInfo * connectorInfo, const QString & filename, bool parsePaths);
-    bool initConnectorInfoCircle(QDomElement & element, ConnectorInfo * connectorInfo, const QString & filename);
-    bool initConnectorInfoPath(QDomElement & element, ConnectorInfo * connectorInfo, const QString & filename);
+	bool initConnectorInfoCircle(QDomElement & element, ConnectorInfo * connectorInfo, const QString & filename);
+	bool initConnectorInfoPath(QDomElement & element, ConnectorInfo * connectorInfo, const QString & filename);
 	void initNonConnectorInfo(QDomDocument & domDocument, const QString & filename);
 	void initNonConnectorInfoAux(QDomElement & element, const QString & filename);
 	void initTerminalInfoAux(QDomElement & element, const LoadInfo &);

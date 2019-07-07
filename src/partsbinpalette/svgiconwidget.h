@@ -46,7 +46,7 @@ protected:
 
 class SvgIconWidget : public QGraphicsWidget
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	SvgIconWidget(ModelPart *, ViewLayer::ViewID, ItemBase *, bool plural);
 	~SvgIconWidget();

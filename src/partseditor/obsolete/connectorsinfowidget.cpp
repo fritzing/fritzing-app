@@ -229,25 +229,25 @@ Connector* ConnectorsInfoWidget::addConnectorInfo(QString id) {
 	connShared->setId(id);
 
 	connShared->addPin(
-		ViewLayer::BreadboardView,
-		m_views->breadboardView()->svgIdForConnector(id),
-		m_views->breadboardView()->connectorsLayerId(),
-		m_views->breadboardView()->terminalIdForConnector(id),
-        "", false
+	    ViewLayer::BreadboardView,
+	    m_views->breadboardView()->svgIdForConnector(id),
+	    m_views->breadboardView()->connectorsLayerId(),
+	    m_views->breadboardView()->terminalIdForConnector(id),
+	    "", false
 	);
 	connShared->addPin(
-		ViewLayer::SchematicView,
-		m_views->schematicView()->svgIdForConnector(id),
-		m_views->schematicView()->connectorsLayerId(),
-		m_views->schematicView()->terminalIdForConnector(id),
-        "", false
+	    ViewLayer::SchematicView,
+	    m_views->schematicView()->svgIdForConnector(id),
+	    m_views->schematicView()->connectorsLayerId(),
+	    m_views->schematicView()->terminalIdForConnector(id),
+	    "", false
 	);
 	connShared->addPin(
-		ViewLayer::PCBView,
-		m_views->pcbView()->svgIdForConnector(id),
-		m_views->pcbView()->connectorsLayerId(),
-		m_views->pcbView()->terminalIdForConnector(id),
-        "", false
+	    ViewLayer::PCBView,
+	    m_views->pcbView()->svgIdForConnector(id),
+	    m_views->pcbView()->connectorsLayerId(),
+	    m_views->pcbView()->terminalIdForConnector(id),
+	    "", false
 	);
 
 	Connector *conn = new Connector(connShared,0); // modelPart =? null
@@ -277,8 +277,8 @@ void ConnectorsInfoWidget::addMismatchingConnectorInfo(ViewLayer::ViewIdentifier
 	MismatchingConnectorWidget *mcw = new MismatchingConnectorWidget(this,viewId,connId,m_mismatchersFrame);
 	addMismatchingConnectorInfo(mcw);
 	connect(
-		mcw, SIGNAL(completeConn(MismatchingConnectorWidget*)),
-		this, SLOT(completeConn(MismatchingConnectorWidget*))
+	    mcw, SIGNAL(completeConn(MismatchingConnectorWidget*)),
+	    this, SLOT(completeConn(MismatchingConnectorWidget*))
 	);
 }
 
@@ -337,11 +337,11 @@ const QList< QPointer<ConnectorShared> > ConnectorsInfoWidget::connectorsShared(
 		QString id = sci->id();
 		Connector *conn = sci->connector();
 		//foreach (ConnectorItem * connectorItem, conn->viewItems()) {
-			//connectorItem->debugInfo("what is this connector");
+		//connectorItem->debugInfo("what is this connector");
 		//}
 		ConnectorShared* cs = conn->connectorShared();
 		//foreach (SvgIdLayer * sil, cs->pins()) {
-			//DebugDialog::debug(QString("what is this pin %1").arg(sil->m_svgViewLayerID));
+		//DebugDialog::debug(QString("what is this pin %1").arg(sil->m_svgViewLayerID));
 		//}
 		cs->setId(id);
 		cs->setSharedName(sci->name());
@@ -380,8 +380,8 @@ void ConnectorsInfoWidget::singleToMismatchingNotInView(ViewLayer::ViewIdentifie
 		if(connIds.indexOf(sci->id()) == -1) {
 			MismatchingConnectorWidget *mcw = sci->toMismatching(viewId);
 			connect(
-				mcw, SIGNAL(completeConn(MismatchingConnectorWidget*)),
-				this, SLOT(completeConn(MismatchingConnectorWidget*))
+			    mcw, SIGNAL(completeConn(MismatchingConnectorWidget*)),
+			    this, SLOT(completeConn(MismatchingConnectorWidget*))
 			);
 			removeConnectorInfo(sci,false);
 			addMismatchingConnectorInfo(mcw);
@@ -530,13 +530,13 @@ void ConnectorsInfoWidget::addConnector() {
 	m_connAdded = true;
 
 	if (m_views->breadboardView()->myItem() == NULL ||
-		m_views->schematicView()->myItem() == NULL ||
-		m_views->pcbView()->myItem() == NULL)
+	        m_views->schematicView()->myItem() == NULL ||
+	        m_views->pcbView()->myItem() == NULL)
 	{
 		QMessageBox::warning(
-			parentWidget(),
-			tr("Couldn't add connector"),
-			tr("Please, first load an image in each view,\nbefore adding any connectors")
+		    parentWidget(),
+		    tr("Couldn't add connector"),
+		    tr("Please, first load an image in each view,\nbefore adding any connectors")
 		);
 
 		return;
@@ -633,9 +633,9 @@ void ConnectorsInfoWidget::completeConn(MismatchingConnectorWidget* mcw) {
 		}
 	} else {
 		QMessageBox::information(
-			parentWidget(),
-			tr("Couldn't fix connector"),
-			tr("Please, first load an image in each view,\nin order to fix this connector")
+		    parentWidget(),
+		    tr("Couldn't fix connector"),
+		    tr("Please, first load an image in each view,\nin order to fix this connector")
 		);
 	}
 }

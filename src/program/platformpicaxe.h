@@ -8,9 +8,9 @@
 class PlatformPicaxe : public Platform
 {
 public:
-    PlatformPicaxe();
+	PlatformPicaxe();
 
-    void upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation);
+	void upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation);
 };
 
 #endif // PLATFORMPICAXE_H

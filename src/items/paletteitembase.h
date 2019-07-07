@@ -53,9 +53,9 @@ public:
 	void connectedMoved(ConnectorItem * from, ConnectorItem * to, QList<ConnectorItem *> & already);
 	bool collectFemaleConnectees(QSet<ItemBase *> & items);
 	void collectWireConnectees(QSet<class Wire *> & wires);
-    virtual bool mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
-    virtual void mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
-    virtual void mouseReleaseEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
+	virtual bool mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
+	virtual void mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
+	virtual void mouseReleaseEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
 	void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 	void hoverEnterEvent(QGraphicsSceneHoverEvent * event );
@@ -83,10 +83,10 @@ public:
 	void setPos(double x, double y);
 	*/
 protected:
-    static QString normalizeSvg(QString & svg, ViewLayer::ViewLayerID viewLayerID, bool blackOnly, double dpi, double & factor);
+	static QString normalizeSvg(QString & svg, ViewLayer::ViewLayerID viewLayerID, bool blackOnly, double dpi, double & factor);
 
 protected:
-    void setUpConnectors(FSvgRenderer *, bool ignoreTerminalPoints);
+	void setUpConnectors(FSvgRenderer *, bool ignoreTerminalPoints);
 	void findConnectorsUnder();
 	virtual bool canFindConnectorsUnder();
 	bool inRotationLocation(QPointF scenePos, Qt::KeyboardModifiers modifiers, QPointF & returnPoint);
@@ -95,8 +95,8 @@ protected:
 	void checkFreeRotation(Qt::KeyboardModifiers modifiers, QPointF scenePos);
 
 	virtual LayerKinPaletteItem * newLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, const ViewGeometry &, long id, QMenu* itemMenu, const LayerHash &, LayerAttributes &);
-    virtual void setInitialTransform(const QTransform &);
-    virtual void cacheLoaded(const LayerAttributes &);
+	virtual void setInitialTransform(const QTransform &);
+	virtual void cacheLoaded(const LayerAttributes &);
 
 protected slots:
 	void partPropertyEntry();

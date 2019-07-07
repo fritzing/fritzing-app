@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class LayerKinPaletteItem : public PaletteItemBase
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	LayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
@@ -48,7 +48,7 @@ public:
 	void resetID();
 	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	bool isSwappable();
-    void setSwappable(bool);
+	void setSwappable(bool);
 	bool inRotation();
 	void setInRotation(bool);
 
@@ -63,43 +63,43 @@ protected:
 protected:
 	QPointer<PaletteItemBase> m_layerKinChief;
 	bool m_ok;
-    bool m_passMouseEvents;
+	bool m_passMouseEvents;
 };
 
 struct TextThing {
-    int minX;
-    int maxX;
-    int minY;
-    int maxY;
-    QRectF newRect;
-    QMatrix flipMatrix;
+	int minX;
+	int maxX;
+	int minY;
+	int maxY;
+	QRectF newRect;
+	QMatrix flipMatrix;
 };
 
 class SchematicTextLayerKinPaletteItem : public LayerKinPaletteItem
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	SchematicTextLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
 
-    void transformItem(const QTransform &, bool includeRatsnest);
-    void clearTextThings();
-    void setTransform2(const QTransform &);
+	void transformItem(const QTransform &, bool includeRatsnest);
+	void clearTextThings();
+	void setTransform2(const QTransform &);
 
 public:
-    static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix &, QRectF & viewBox);
+	static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix &, QRectF & viewBox);
 
 protected:
-    QString makeFlipTextSvg();
-    void positionTexts(QList<QDomElement> & texts);
-    void initTextThings();
-    QString vflip(const QString & svg, bool isFlipped);
-    void setInitialTransform(const QTransform &);
-    void cacheLoaded(const LayerAttributes &);
+	QString makeFlipTextSvg();
+	void positionTexts(QList<QDomElement> & texts);
+	void initTextThings();
+	QString vflip(const QString & svg, bool isFlipped);
+	void setInitialTransform(const QTransform &);
+	void cacheLoaded(const LayerAttributes &);
 
 protected:
-    bool m_flipped;
-    QList<TextThing> m_textThings;
+	bool m_flipped;
+	QList<TextThing> m_textThings;
 };
 
 

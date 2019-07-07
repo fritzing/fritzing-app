@@ -26,15 +26,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class PartSpecificationsWidget : public QScrollArea {
 	Q_OBJECT
-	public:
-		PartSpecificationsWidget(QList<QWidget*> widgets, QWidget *parent=0);
-		QSize sizeHint();
+public:
+	PartSpecificationsWidget(QList<QWidget*> widgets, QWidget *parent=0);
+	QSize sizeHint();
 
-	protected slots:
-		void updateLayout();
+protected slots:
+	void updateLayout();
 
-	protected:
-		QFrame *m_scrollContent;
+protected:
+	QFrame *m_scrollContent;
 };
 
 #endif /* PARTSPECIFICATIONSWIDGET_H_ */

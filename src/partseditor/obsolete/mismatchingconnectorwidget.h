@@ -29,38 +29,38 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class MismatchingConnectorWidget : public AbstractConnectorInfoWidget {
 	Q_OBJECT
-	public:
-		MismatchingConnectorWidget(class ConnectorsInfoWidget *topLevelContainer, ViewLayer::ViewIdentifier viewId, const QString &connId, QWidget *parent, bool isInView = true, Connector* conn = NULL);
-		~MismatchingConnectorWidget();
+public:
+	MismatchingConnectorWidget(class ConnectorsInfoWidget *topLevelContainer, ViewLayer::ViewIdentifier viewId, const QString &connId, QWidget *parent, bool isInView = true, Connector* conn = NULL);
+	~MismatchingConnectorWidget();
 
-		void setSelected(bool selected, bool doEmitChange=true);
-		bool onlyMissingThisView(ViewLayer::ViewIdentifier viewId);
-		void addViewPresence(ViewLayer::ViewIdentifier viewId);
-		void removeViewPresence(ViewLayer::ViewIdentifier viewId);
-		const QString &connId();
-		Connector *prevConn();
-		QList<ViewLayer::ViewIdentifier> views();
-		QList<ViewLayer::ViewIdentifier> missingViews();
-		bool presentInAllViews();
+	void setSelected(bool selected, bool doEmitChange=true);
+	bool onlyMissingThisView(ViewLayer::ViewIdentifier viewId);
+	void addViewPresence(ViewLayer::ViewIdentifier viewId);
+	void removeViewPresence(ViewLayer::ViewIdentifier viewId);
+	const QString &connId();
+	Connector *prevConn();
+	QList<ViewLayer::ViewIdentifier> views();
+	QList<ViewLayer::ViewIdentifier> missingViews();
+	bool presentInAllViews();
 
-	signals:
-		void completeConn(MismatchingConnectorWidget*);
+signals:
+	void completeConn(MismatchingConnectorWidget*);
 
-	protected slots:
-		void emitCompletion();
+protected slots:
+	void emitCompletion();
 
-	protected:
-		void mousePressEvent(QMouseEvent * event);
-		QString viewsString();
+protected:
+	void mousePressEvent(QMouseEvent * event);
+	QString viewsString();
 
-		QList<ViewLayer::ViewIdentifier> m_missingViews;
-		QString m_connId;
-		QPointer<Connector> m_prevConn; // If this connector info used to be a not mismatching one, we save that info here
+	QList<ViewLayer::ViewIdentifier> m_missingViews;
+	QString m_connId;
+	QPointer<Connector> m_prevConn; // If this connector info used to be a not mismatching one, we save that info here
 
-		QLabel *m_connIdLabel;
-		QLabel *m_connMsgLabel;
+	QLabel *m_connIdLabel;
+	QLabel *m_connMsgLabel;
 
-		static QList<ViewLayer::ViewIdentifier> AllViews;
+	static QList<ViewLayer::ViewIdentifier> AllViews;
 };
 
 #endif /* MISMATCHINGCONNECTORWIDGET_H_ */

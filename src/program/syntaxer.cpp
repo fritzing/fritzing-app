@@ -38,7 +38,7 @@ Syntaxer::~Syntaxer() {
 }
 
 bool Syntaxer::loadSyntax(const QString &filename)
- {
+{
 	QFile file(filename);
 
 	QString errorStr;
@@ -79,7 +79,7 @@ bool Syntaxer::loadSyntax(const QString &filename)
 		context = context.nextSiblingElement("context");
 	}
 
-    m_canProgram = root.attribute("canProgram", "").compare("true", Qt::CaseInsensitive) == 0;
+	m_canProgram = root.attribute("canProgram", "").compare("true", Qt::CaseInsensitive) == 0;
 	m_name = root.attribute("name");
 	QStringList extensions = root.attribute("extensions").split(";", QString::SkipEmptyParts);
 	if (extensions.count() > 0) {
@@ -124,17 +124,17 @@ QString Syntaxer::parseForName(const QString & filename)
 	QFile file(filename);
 	file.open(QFile::ReadOnly);
 	QXmlStreamReader xml(&file);
-    xml.setNamespaceProcessing(false);
+	xml.setNamespaceProcessing(false);
 
 	while (!xml.atEnd()) {
-        switch (xml.readNext()) {
-			case QXmlStreamReader::StartElement:
-				if (xml.name().toString().compare("language") == 0) {
-					return xml.attributes().value("name").toString();
-				}
-				break;
-			default:
-				break;
+		switch (xml.readNext()) {
+		case QXmlStreamReader::StartElement:
+			if (xml.name().toString().compare("language") == 0) {
+				return xml.attributes().value("name").toString();
+			}
+			break;
+		default:
+			break;
 		}
 	}
 
@@ -148,8 +148,8 @@ void Syntaxer::loadList(QDomElement & list) {
 	while (!item.isNull()) {
 		QString text;
 		if (TextUtils::findText(item, text)) {
-            QString s = text.trimmed();
-            m_trieRoot->addString(s, false, stf);
+			QString s = text.trimmed();
+			m_trieRoot->addString(s, false, stf);
 		}
 		item = item.nextSiblingElement("item");
 	}
@@ -235,7 +235,7 @@ bool Syntaxer::hlCStringChar() {
 
 
 bool Syntaxer::canProgram() {
-    return m_canProgram;
+	return m_canProgram;
 }
 
 

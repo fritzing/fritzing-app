@@ -28,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class ResizeHandle : public QObject, public QGraphicsPixmapItem
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	ResizeHandle(const QPixmap & pixmap, const QCursor &, bool ignoresTransforms, QGraphicsItem * parent = 0);
@@ -47,7 +47,7 @@ protected:
 	void mouseMoveEvent ( QGraphicsSceneMouseEvent * event );
 	void mouseReleaseEvent ( QGraphicsSceneMouseEvent * event );
 	QVariant itemChange(GraphicsItemChange change, const QVariant &value);
-    bool scaling();
+	bool scaling();
 
 signals:
 	void mousePressSignal(QGraphicsSceneMouseEvent * event, ResizeHandle *);

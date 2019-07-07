@@ -32,13 +32,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 SketchToolButton::SketchToolButton(const QString &imageName, QWidget *parent, QAction* defaultAction)
 	: QToolButton(parent)
 {
-    m_imageName = imageName;			// nice to have for debugging
+	m_imageName = imageName;			// nice to have for debugging
 	setupIcons(imageName);
 
 	//DebugDialog::debug(QString("%1 %2 %3 %4 %5 %6 %7").arg(imageName)
-		//.arg(m_enabledImage.width()).arg(m_enabledImage.height())
-		//.arg(m_disabledImage.width()).arg(m_disabledImage.height())
-		//.arg(m_pressedImage.width()).arg(m_pressedImage.height()));
+	//.arg(m_enabledImage.width()).arg(m_enabledImage.height())
+	//.arg(m_disabledImage.width()).arg(m_disabledImage.height())
+	//.arg(m_pressedImage.width()).arg(m_pressedImage.height()));
 
 	if(defaultAction) {
 		setDefaultAction(defaultAction);
@@ -78,9 +78,9 @@ void SketchToolButton::setImage(const QPixmap & pixmap) {
 }
 
 void SketchToolButton::setupIcons(const QString &imageName, bool hasStates) {
-    setIconSize(QSize(37,24));
+	setIconSize(QSize(37,24));
 	setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-    AbstractStatesButton::setupIcons(imageName, hasStates);
+	AbstractStatesButton::setupIcons(imageName, hasStates);
 }
 
 void SketchToolButton::updateEnabledState() {
@@ -96,13 +96,13 @@ void SketchToolButton::updateEnabledState() {
 
 void SketchToolButton::actionEvent(QActionEvent *event) {
 	switch (event->type()) {
-		case QEvent::ActionChanged:
-			if (event->action() == defaultAction()) {
-				setEnabled(defaultAction()->isEnabled()); // update button state
-			}
-			break;
-		default:
-			QToolButton::actionEvent(event);
+	case QEvent::ActionChanged:
+		if (event->action() == defaultAction()) {
+			setEnabled(defaultAction()->isEnabled()); // update button state
+		}
+		break;
+	default:
+		QToolButton::actionEvent(event);
 	}
 }
 
@@ -128,11 +128,11 @@ void SketchToolButton::changeEvent(QEvent *event) {
 }
 
 void SketchToolButton::enterEvent(QEvent *event) {
-    QToolButton::enterEvent(event);
-    emit entered();
+	QToolButton::enterEvent(event);
+	emit entered();
 }
 
 void SketchToolButton::leaveEvent(QEvent *event) {
-    QToolButton::leaveEvent(event);
-    emit left();
+	QToolButton::leaveEvent(event);
+	emit left();
 }

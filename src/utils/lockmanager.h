@@ -35,7 +35,7 @@ struct LockedFile {
 };
 
 class LockManager : public QObject {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	LockManager();
@@ -45,7 +45,7 @@ public:
 	static void initLockedFiles(const QString & prefix, QString & folder, QHash<QString, LockedFile *> & lockedFiles, long touchFrequency);
 	static void releaseLockedFiles(const QString & folder, QHash<QString, LockedFile *> & lockedFiles);
 	static void checkLockedFiles(const QString & prefix, QFileInfoList & backupList, QHash<QString, LockedFile *> & lockedFiles, bool recurse, long touchFrequency);
-    static void cleanup();
+	static void cleanup();
 
 public:
 	static const QString LockedFileName;

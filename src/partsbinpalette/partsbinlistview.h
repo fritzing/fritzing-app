@@ -30,59 +30,59 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class PartsBinListView : public QListWidget, public PartsBinView {
 	Q_OBJECT
-	public:
-		PartsBinListView(ReferenceModel* referenceModel, PartsBinPaletteWidget *parent);
-		~PartsBinListView();
-		void setInfoView(class HtmlInfoView *);
-        void removePart(const QString &moduleID);
-        void removeParts();
+public:
+	PartsBinListView(ReferenceModel* referenceModel, PartsBinPaletteWidget *parent);
+	~PartsBinListView();
+	void setInfoView(class HtmlInfoView *);
+	void removePart(const QString &moduleID);
+	void removeParts();
 
-		ModelPart *selectedModelPart();
-		ItemBase *selectedItemBase();
-		bool swappingEnabled();
-		int position(const QString &moduleID);
+	ModelPart *selectedModelPart();
+	ItemBase *selectedItemBase();
+	bool swappingEnabled();
+	int position(const QString &moduleID);
 
-		QList<QObject*> orderedChildren();
-		void reloadPart(const QString & moduleID);
+	QList<QObject*> orderedChildren();
+	void reloadPart(const QString & moduleID);
 
-	public slots:
-		void setSelected(int position, bool doEmit=false);
-		void itemMoved(int fromIndex, int toIndex);
+public slots:
+	void setSelected(int position, bool doEmit=false);
+	void itemMoved(int fromIndex, int toIndex);
 
-	protected slots:
-		void showContextMenu(const QPoint& pos);
+protected slots:
+	void showContextMenu(const QPoint& pos);
 
-	signals:
-		void informItemMoved(int fromIndex, int toIndex);
-		void settingItem();
+signals:
+	void informItemMoved(int fromIndex, int toIndex);
+	void settingItem();
 
-	protected:
-		void doClear();
-		void moveItem(int fromIndex, int toIndex);
-		int itemIndexAt(const QPoint& pos, bool &trustIt);
+protected:
+	void doClear();
+	void moveItem(int fromIndex, int toIndex);
+	int itemIndexAt(const QPoint& pos, bool &trustIt);
 
-		void mouseMoveEvent(QMouseEvent *event);
-		void mousePressEvent(QMouseEvent *event);
-		//void dragEnterEvent(QDragEnterEvent* event);
-		void dropEvent(QDropEvent* event);
-		void startDrag(Qt::DropActions supportedActions);
+	void mouseMoveEvent(QMouseEvent *event);
+	void mousePressEvent(QMouseEvent *event);
+	//void dragEnterEvent(QDragEnterEvent* event);
+	void dropEvent(QDropEvent* event);
+	void startDrag(Qt::DropActions supportedActions);
 
-		int setItemAux(ModelPart * modelPart, int position = -1);
+	int setItemAux(ModelPart * modelPart, int position = -1);
 
-		ModelPart *itemModelPart(const QListWidgetItem *item) const;
-		ItemBase *itemItemBase(const QListWidgetItem *item) const;
-		const QString& itemModuleID(const QListWidgetItem *item);
+	ModelPart *itemModelPart(const QListWidgetItem *item) const;
+	ItemBase *itemItemBase(const QListWidgetItem *item) const;
+	const QString& itemModuleID(const QListWidgetItem *item);
 
-		void showInfo(QListWidgetItem * item);
+	void showInfo(QListWidgetItem * item);
 
-		bool dropMimeData(int index, const QMimeData *data, Qt::DropAction action);
-		QMimeData * mimeData(const QList<QListWidgetItem *> items) const;
-		QStringList mimeTypes() const;
-		void loadImage(ModelPart *, QListWidgetItem * lwi, const QString & moduleID);
+	bool dropMimeData(int index, const QMimeData *data, Qt::DropAction action);
+	QMimeData * mimeData(const QList<QListWidgetItem *> items) const;
+	QStringList mimeTypes() const;
+	void loadImage(ModelPart *, QListWidgetItem * lwi, const QString & moduleID);
 
-	protected:
-		class HtmlInfoView * m_infoView;
-		QListWidgetItem * m_hoverItem;
+protected:
+	class HtmlInfoView * m_infoView;
+	QListWidgetItem * m_hoverItem;
 
 };
 #endif /* LISTVIEW_H_ */

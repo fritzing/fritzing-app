@@ -6,9 +6,9 @@
 class PlatformLaunchpad : public Platform
 {
 public:
-    PlatformLaunchpad();
+	PlatformLaunchpad();
 
-    void upload(const QString &port, const QString &board, const QString &fileLocation, QTextEdit *console);
+	void upload(const QString &port, const QString &board, const QString &fileLocation, QTextEdit *console);
 };
 
 #endif // PLATFORMLAUNCHPAD_H

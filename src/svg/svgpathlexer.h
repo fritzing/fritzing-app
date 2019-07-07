@@ -30,9 +30,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class SVGPathLexer
 {
 public:
-    SVGPathLexer(const QString &source);
-    ~SVGPathLexer();
-    int lex();
+	SVGPathLexer(const QString &source);
+	~SVGPathLexer();
+	int lex();
 	QChar currentCommand();
 	double currentNumber();
 
@@ -40,15 +40,15 @@ public:
 	static const char FakeClosePathChar = 'x';
 
 protected:
-    QChar next();
+	QChar next();
 	QString clean(const QString & source);
 
 protected:
-    QString m_source;
-    const QChar *m_chars;
-    int m_size;
-    int m_pos;
-    QChar m_current;
+	QString m_source;
+	const QChar *m_chars;
+	int m_size;
+	int m_pos;
+	QChar m_current;
 	QChar m_currentCommand;
 	double m_currentNumber;
 };

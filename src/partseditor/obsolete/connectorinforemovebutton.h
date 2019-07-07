@@ -26,27 +26,27 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class ConnectorInfoRemoveButton : public BaseRemoveButton {
 	Q_OBJECT
-	public:
-		ConnectorInfoRemoveButton(AbstractConnectorInfoWidget* parent)
-			: BaseRemoveButton(parent)
-		{
-			m_connInfo = parent;
-		}
+public:
+	ConnectorInfoRemoveButton(AbstractConnectorInfoWidget* parent)
+		: BaseRemoveButton(parent)
+	{
+		m_connInfo = parent;
+	}
 
-	signals:
-		void clicked(AbstractConnectorInfoWidget*);
+signals:
+	void clicked(AbstractConnectorInfoWidget*);
 
-	protected:
-		void mousePressEvent(QMouseEvent * event) {
-			Q_UNUSED(event)
-			clicked();
-			//QLabel::mousePressEvent(event);
-		}
-		void clicked() {
-			emit clicked(m_connInfo);
-		}
+protected:
+	void mousePressEvent(QMouseEvent * event) {
+		Q_UNUSED(event)
+		clicked();
+		//QLabel::mousePressEvent(event);
+	}
+	void clicked() {
+		emit clicked(m_connInfo);
+	}
 
-		AbstractConnectorInfoWidget *m_connInfo;
+	AbstractConnectorInfoWidget *m_connInfo;
 };
 
 

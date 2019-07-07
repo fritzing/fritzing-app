@@ -27,7 +27,7 @@ class GroundPlane : public PaletteItem
 {
 
 public:
-	GroundPlane( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool doLabel);
+	GroundPlane( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool doLabel);
 
 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	void saveParams();
@@ -60,12 +60,12 @@ protected:
 	void setSvg(const QString &);
 	void setSvgAux(const QString &);
 	QString generateSvg();
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 protected:
 	ConnectorItem * m_connector0;
 	QPointF m_dropOffset;
-    QPainterPath m_shape;
+	QPainterPath m_shape;
 };
 
 #endif

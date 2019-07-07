@@ -35,13 +35,13 @@ public:
 	void helpEvent(QGraphicsSceneHelpEvent *);
 	void contextMenuEvent(QGraphicsSceneContextMenuEvent *);
 	QPointF lastContextMenuPos();
-    void setDisplayHandles(bool);
-    bool displayHandles();
-    QList<ItemBase *> lockedSelectedItems();
+	void setDisplayHandles(bool);
+	bool displayHandles();
+	QList<ItemBase *> lockedSelectedItems();
 
 protected:
 	QPointF m_lastContextMenuPos;
-    bool m_displayHandles;
+	bool m_displayHandles;
 
 };
 

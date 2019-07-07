@@ -28,11 +28,11 @@ class JumperItem : public PaletteItem
 	Q_OBJECT
 
 public:
-	JumperItem( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool doLabel);
+	JumperItem( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool doLabel);
 	~JumperItem();
 
-    QPainterPath shape() const;
-    QPainterPath hoverShape() const;
+	QPainterPath shape() const;
+	QPainterPath hoverShape() const;
 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	void saveParams();
 	void getParams(QPointF & pos, QPointF & c0, QPointF & c1);
@@ -71,7 +71,7 @@ protected:
 	void initialResize(ViewLayer::ViewID);
 	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	void paintSelected(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 signals:
 	void alignMe(JumperItem *, QPointF & p);
@@ -91,7 +91,7 @@ protected:
 	QPointF m_itemPos;
 	QPointF m_itemC0;
 	QPointF m_itemC1;
-    QPointer<PaletteItemBase> m_originalClickItem;
+	QPointer<PaletteItemBase> m_originalClickItem;
 };
 
 #endif

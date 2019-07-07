@@ -30,17 +30,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 FSplashScreen::FSplashScreen(const QPixmap & pixmap, Qt::WindowFlags f ) : QSplashScreen(pixmap, f)
 {
 	QFile file(":/resources/images/splash/splash.xml");
-    if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        DebugDialog::debug("unable to load splash.xml: " + file.errorString());
-        return;
-    }
+	if (!file.open(QFile::ReadOnly | QFile::Text)) {
+		DebugDialog::debug("unable to load splash.xml: " + file.errorString());
+		return;
+	}
 
-    QString errorStr;
-    int errorLine;
-    int errorColumn;
-    QDomDocument domDocument;
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+	QDomDocument domDocument;
 
-    if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
+	if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
 		DebugDialog::debug(QString("unable to parse splash.xml: %1 %2 %3").arg(errorStr).arg(errorLine).arg(errorColumn));
 		return;
 	}
@@ -142,11 +142,11 @@ void FSplashScreen::drawContents ( QPainter * painter )
 		painter->setPen(messageThing->color);
 		if (Qt::mightBeRichText(messageThing->message)) {
 			QTextDocument doc;
-	#ifdef QT_NO_TEXTHTMLPARSER
+#ifdef QT_NO_TEXTHTMLPARSER
 			doc.setPlainText(messageThing->message);
-	#else
+#else
 			doc.setHtml(messageThing->message);
-	#endif
+#endif
 			doc.setTextWidth(messageThing->rect.width());
 			QTextCursor cursor(&doc);
 			cursor.select(QTextCursor::Document);

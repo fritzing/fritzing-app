@@ -32,35 +32,35 @@ SchematicSubpart::~SchematicSubpart() {
 void SchematicSubpart::hoverEnterEvent (QGraphicsSceneHoverEvent * event)
 {
 	PaletteItem::hoverEnterEvent(event);
-    if (m_superpart) {
-        foreach (ItemBase * itemBase, m_superpart->subparts()) {
-            if (itemBase != this) {
-                SchematicSubpart * subpart = qobject_cast<SchematicSubpart *>(itemBase);
-                if (subpart) subpart->simpleHoverEnterEvent(event);
-            }
-        }
-    }
+	if (m_superpart) {
+		foreach (ItemBase * itemBase, m_superpart->subparts()) {
+			if (itemBase != this) {
+				SchematicSubpart * subpart = qobject_cast<SchematicSubpart *>(itemBase);
+				if (subpart) subpart->simpleHoverEnterEvent(event);
+			}
+		}
+	}
 }
 
 void SchematicSubpart::hoverLeaveEvent (QGraphicsSceneHoverEvent * event)
 {
 	PaletteItem::hoverLeaveEvent(event);
-    if (m_superpart) {
-        foreach (ItemBase * itemBase, m_superpart->subparts()) {
-            if (itemBase != this) {
-                SchematicSubpart * subpart = qobject_cast<SchematicSubpart *>(itemBase);
-                if (subpart) subpart->simpleHoverLeaveEvent(event);
-            }
-        }
-    }
+	if (m_superpart) {
+		foreach (ItemBase * itemBase, m_superpart->subparts()) {
+			if (itemBase != this) {
+				SchematicSubpart * subpart = qobject_cast<SchematicSubpart *>(itemBase);
+				if (subpart) subpart->simpleHoverLeaveEvent(event);
+			}
+		}
+	}
 }
 
 void SchematicSubpart::simpleHoverEnterEvent (QGraphicsSceneHoverEvent * event)
 {
-    PaletteItem::hoverEnterEvent(event);
+	PaletteItem::hoverEnterEvent(event);
 }
 
 void SchematicSubpart::simpleHoverLeaveEvent (QGraphicsSceneHoverEvent * event)
 {
-    PaletteItem::hoverLeaveEvent(event);
+	PaletteItem::hoverLeaveEvent(event);
 }

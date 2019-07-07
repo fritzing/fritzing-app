@@ -53,11 +53,11 @@ PartsBinListView::PartsBinListView(ReferenceModel* referenceModel, PartsBinPalet
 	setDragDropMode(QAbstractItemView::DragDrop);
 	setAcceptDrops(true);
 
-    setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(
-	this, SIGNAL(customContextMenuRequested(const QPoint&)),
-	this, SLOT(showContextMenu(const QPoint&))
-    );
+	setContextMenuPolicy(Qt::CustomContextMenu);
+	connect(
+	    this, SIGNAL(customContextMenuRequested(const QPoint&)),
+	    this, SLOT(showContextMenu(const QPoint&))
+	);
 }
 
 PartsBinListView::~PartsBinListView() {
@@ -137,12 +137,12 @@ void PartsBinListView::showInfo(QListWidgetItem * item) {
 	}
 
 	m_hoverItem = item;
-    if (m_infoView != NULL) {
-	    ItemBase * itemBase = itemItemBase(item);
-	    if (itemBase != NULL) {
-	        m_infoView->hoverEnterItem(NULL, NULL, itemBase, swappingEnabled());
-        }
-    }
+	if (m_infoView != NULL) {
+		ItemBase * itemBase = itemItemBase(item);
+		if (itemBase != NULL) {
+			m_infoView->hoverEnterItem(NULL, NULL, itemBase, swappingEnabled());
+		}
+	}
 }
 
 
@@ -153,7 +153,7 @@ void PartsBinListView::mousePressEvent(QMouseEvent *event) {
 	QListWidgetItem * current = currentItem();
 	if (current == NULL) {
 		m_hoverItem = NULL;
-        if (m_infoView != NULL) m_infoView->viewItemInfo(NULL, NULL, false);
+		if (m_infoView != NULL) m_infoView->viewItemInfo(NULL, NULL, false);
 		return;
 	}
 
@@ -176,10 +176,10 @@ void PartsBinListView::removePart(const QString &moduleID) {
 
 void PartsBinListView::removeParts() {
 	m_hoverItem = NULL;
-    m_itemBaseHash.clear();
-    while (count() > 0) {
-        delete takeItem(0);
-    }
+	m_itemBaseHash.clear();
+	while (count() > 0) {
+		delete takeItem(0);
+	}
 }
 
 int PartsBinListView::position(const QString &moduleID) {
@@ -192,7 +192,7 @@ int PartsBinListView::position(const QString &moduleID) {
 }
 
 ItemBase * PartsBinListView::itemItemBase(const QListWidgetItem *item) const {
-    return item->data(Qt::UserRole).value<ItemBase *>();
+	return item->data(Qt::UserRole).value<ItemBase *>();
 }
 
 ModelPart *PartsBinListView::itemModelPart(const QListWidgetItem *item) const {
@@ -203,11 +203,11 @@ ModelPart *PartsBinListView::itemModelPart(const QListWidgetItem *item) const {
 }
 
 const QString &PartsBinListView::itemModuleID(const QListWidgetItem *item) {
-    ModelPart *modelPart = itemModelPart(item);
-    if (modelPart == NULL) {
-        // this shouldn't happen?
-        return ___emptyString___;
-    }
+	ModelPart *modelPart = itemModelPart(item);
+	if (modelPart == NULL) {
+		// this shouldn't happen?
+		return ___emptyString___;
+	}
 
 	return modelPart->moduleID();
 }
@@ -352,7 +352,7 @@ void PartsBinListView::showContextMenu(const QPoint& pos) {
 	} else {
 		menu = m_parent->combinedMenu();
 	}
-    menu->exec(mapToGlobal(pos));
+	menu->exec(mapToGlobal(pos));
 }
 
 void PartsBinListView::reloadPart(const QString & moduleID) {
@@ -373,20 +373,20 @@ void PartsBinListView::reloadPart(const QString & moduleID) {
 
 void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, const QString & moduleID)
 {
-    ItemBase * itemBase = ItemBaseHash.value(moduleID);
-    if (itemBase == NULL) {
+	ItemBase * itemBase = ItemBaseHash.value(moduleID);
+	if (itemBase == NULL) {
 		itemBase = PartFactory::createPart(modelPart, ViewLayer::NewTop, ViewLayer::IconView, ViewGeometry(), ItemBase::getNextID(), NULL, NULL, false);
 		ItemBaseHash.insert(moduleID, itemBase);
 		LayerAttributes layerAttributes;
-        itemBase->initLayerAttributes(layerAttributes, ViewLayer::IconView, ViewLayer::Icon, itemBase->viewLayerPlacement(), false, false);
+		itemBase->initLayerAttributes(layerAttributes, ViewLayer::IconView, ViewLayer::Icon, itemBase->viewLayerPlacement(), false, false);
 		FSvgRenderer * renderer = itemBase->setUpImage(modelPart, layerAttributes);
 		if (renderer != NULL) {
 			if (itemBase) {
 				itemBase->setFilename(renderer->filename());
 			}
-            itemBase->setSharedRendererEx(renderer);
-        }
-    }
+			itemBase->setSharedRendererEx(renderer);
+		}
+	}
 	lwi->setData(Qt::UserRole, qVariantFromValue( itemBase ) );
 	QSize size(HtmlInfoView::STANDARD_ICON_IMG_WIDTH, HtmlInfoView::STANDARD_ICON_IMG_HEIGHT);
 	QPixmap * pixmap = FSvgRenderer::getPixmap(itemBase->renderer(), size);

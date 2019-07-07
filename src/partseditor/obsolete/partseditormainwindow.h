@@ -39,7 +39,7 @@ QT_FORWARD_DECLARE_CLASS(QSplitter)
 
 class PartsEditorMainWindow : public FritzingWindow
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	PartsEditorMainWindow(QWidget *parent=0);
@@ -65,7 +65,7 @@ public slots:
 
 protected slots:
 	void updateDateAndAuthor();
-    void propertiesChanged();
+	void propertiesChanged();
 
 protected:
 	bool saveAs();
@@ -137,19 +137,19 @@ protected:
 	QPointer<QTabWidget> m_tabWidget;
 
 	QPointer<QFrame> m_mainFrame;
-    QPointer<QFrame> m_headerFrame;
-    QPointer<QFrame> m_centerFrame;
-    QPointer<QFrame> m_footerFrame;
+	QPointer<QFrame> m_headerFrame;
+	QPointer<QFrame> m_centerFrame;
+	QPointer<QFrame> m_footerFrame;
 
-    bool m_updateEnabled;
-    bool m_partUpdated;
-    bool m_savedAsNewPart;
-    bool m_editingAlien;
+	bool m_updateEnabled;
+	bool m_partUpdated;
+	bool m_savedAsNewPart;
+	bool m_editingAlien;
 
-    static QPointer<PartsEditorMainWindow> m_lastOpened;
-    static int m_closedBeforeCount;
-    static QString ___partsEditorName___;
-    static bool m_closeAfterSaving;
+	static QPointer<PartsEditorMainWindow> m_lastOpened;
+	static int m_closedBeforeCount;
+	static QString ___partsEditorName___;
+	static bool m_closeAfterSaving;
 
 public:
 	static QString TitleFreshStartText;

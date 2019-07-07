@@ -53,7 +53,7 @@ public slots:
 	void displaySlice();
 
 protected:
-    QPixmap m_pixmap;
+	QPixmap m_pixmap;
 	QList<MessageThing *> m_messages;
 	QList<PixmapThing *> m_pixmaps;
 	QHash<QString, MessageThing *> m_items;

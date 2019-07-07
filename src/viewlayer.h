@@ -28,10 +28,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDomElement>
 
 struct NamePair {
-    QString xmlName;
-    QString displayName;
+	QString xmlName;
+	QString displayName;
 
-    NamePair(QString xml, QString display);
+	NamePair(QString xml, QString display);
 };
 
 class ViewLayer : public QObject
@@ -50,7 +50,7 @@ public:
 		BreadboardRuler,
 		SchematicFrame,
 		Schematic,
-        SchematicText,
+		SchematicText,
 		SchematicWire,
 		SchematicTrace,
 		SchematicLabel,
@@ -76,29 +76,29 @@ public:
 	};
 
 	enum ViewLayerPlacement {
-        NewTop,
-        NewBottom,
+		NewTop,
+		NewBottom,
 		NewTopAndBottom,
 		UnknownPlacement
 	};
 
-   enum ViewID {
-	IconView,
-	BreadboardView,
-	SchematicView,
-	PCBView,
-	AllViews,
+	enum ViewID {
+		IconView,
+		BreadboardView,
+		SchematicView,
+		PCBView,
+		AllViews,
 		UnknownView,
-	ViewCount
+		ViewCount
 	};
 
 public:
 	static const QString HolesColor;
 	static const QString Copper0Color;
 	static const QString Copper1Color;
-    static const QString Copper0WireColor;
-    static const QString Copper1WireColor;
-    static const QString Silkscreen1Color;
+	static const QString Copper0WireColor;
+	static const QString Copper1WireColor;
+	static const QString Silkscreen1Color;
 	static const QString Silkscreen0Color;
 	static const QString BoardColor;
 
@@ -130,10 +130,10 @@ public:
 	bool isActive();
 	bool includeChildLayers();
 	void setIncludeChildLayers(bool);
-    void setFromBelow(bool);
-    bool fromBelow();
-    void setInitialZFromBelow(double);
-    double getZFromBelow(double currentZ, bool fromBelow);
+	void setFromBelow(bool);
+	bool fromBelow();
+	void setInitialZFromBelow(double);
+	double getZFromBelow(double currentZ, bool fromBelow);
 
 public:
 	static ViewLayerID viewLayerIDFromXmlString(const QString &);
@@ -156,7 +156,7 @@ public:
 	static bool isCopperLayer(ViewLayer::ViewLayerID);
 	static bool isNonCopperLayer(ViewLayer::ViewLayerID viewLayerID);  // for pcb view layers only
 
-    static QString & viewIDName(ViewLayer::ViewID);
+	static QString & viewIDName(ViewLayer::ViewID);
 	static QString & viewIDXmlName(ViewLayer::ViewID);
 	static QString & viewIDNaturalName(ViewLayer::ViewID);
 	static ViewID idFromXmlName(const QString & name);
@@ -164,8 +164,8 @@ public:
 	static const QList<ViewLayer::ViewLayerID> & layersForViewFromBelow(ViewLayer::ViewID);
 	static bool viewHasLayer(ViewID, ViewLayer::ViewLayerID);
 
-    static bool getConnectorSvgIDs(QDomElement & connector, ViewLayer::ViewID, QString & id, QString & terminalID);
-    static QDomElement getConnectorPElement(const QDomElement & connector, ViewLayer::ViewID);
+	static bool getConnectorSvgIDs(QDomElement & connector, ViewLayer::ViewID, QString & id, QString & terminalID);
+	static QDomElement getConnectorPElement(const QDomElement & connector, ViewLayer::ViewID);
 
 protected:
 	bool m_visible;
@@ -178,9 +178,9 @@ protected:
 	ViewLayer * m_parentLayer;
 	bool m_active;
 	bool m_includeChildLayers;
-    bool m_fromBelow;
+	bool m_fromBelow;
 
-    static QHash <ViewID, class NameTriple * > ViewIDNames;
+	static QHash <ViewID, class NameTriple * > ViewIDNames;
 
 };
 

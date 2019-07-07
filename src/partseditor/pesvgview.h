@@ -34,24 +34,24 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class PESvgView : public QFrame
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	PESvgView(QWidget * parent = NULL);
 	~PESvgView();
 
-    void highlightElement(class PEGraphicsItem *);
+	void highlightElement(class PEGraphicsItem *);
 	void setChildrenVisible(bool vis);
-    void setFilename(const QString &);
+	void setFilename(const QString &);
 
 protected:
-    QLabel * m_svgElement;
-    QLabel * m_height;
-    QLabel * m_width;
-    QLabel * m_x;
-    QLabel * m_y;
-    QLabel * m_filename;
-    QLabel * m_units;
-    class PEGraphicsItem * m_pegi;
+	QLabel * m_svgElement;
+	QLabel * m_height;
+	QLabel * m_width;
+	QLabel * m_x;
+	QLabel * m_y;
+	QLabel * m_filename;
+	QLabel * m_units;
+	class PEGraphicsItem * m_pegi;
 
 };
 

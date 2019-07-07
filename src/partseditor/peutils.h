@@ -28,11 +28,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDomElement>
 
 struct ConnectorMetadata {
-    Connector::ConnectorType connectorType;
-    QString connectorName;
-    QString connectorDescription;
-    QString connectorID;
-    int index;
+	Connector::ConnectorType connectorType;
+	QString connectorName;
+	QString connectorDescription;
+	QString connectorID;
+	int index;
 };
 
 class PEUtils
@@ -41,12 +41,12 @@ public:
 	static QString convertUnitsStr(double val);
 	static double convertUnits(double val);
 	static double unconvertUnits(double val);
-    static QWidget * makeConnectorForm(const QDomElement & connector, int index, QObject * slotHolder, bool alternating);
+	static QWidget * makeConnectorForm(const QDomElement & connector, int index, QObject * slotHolder, bool alternating);
 	static bool fillInMetadata(int senderIndex, QWidget * parentWidget, ConnectorMetadata & cmd);
 
 public:
 	static QString Units;
-    const static int Spacing;
+	const static int Spacing;
 
 };
 

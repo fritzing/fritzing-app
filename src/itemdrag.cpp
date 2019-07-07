@@ -27,8 +27,8 @@ ItemDrag * ItemDrag::Singleton = new ItemDrag();
 ItemDrag::ItemDrag(QObject * parent) :
 	QObject(parent)
 {
-    m_originator = NULL;
-    m_originatorIsTempBin = false;
+	m_originator = NULL;
+	m_originatorIsTempBin = false;
 }
 
 void ItemDrag::__dragIsDone() {

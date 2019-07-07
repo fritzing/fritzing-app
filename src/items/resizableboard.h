@@ -52,41 +52,41 @@ public:
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 
 protected:
-    void setupLoadImage(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget);
+	void setupLoadImage(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget);
 	void setFileNameItems();
 	virtual QStringList & getImageNames();
 	virtual QStringList & getNewImageNames();
-    virtual bool checkImage(const QString & filename);
+	virtual bool checkImage(const QString & filename);
 	void unableToLoad(const QString & fileName, const QString & reason);
 	bool canLoad(const QString & fileName, const QString & reason);
 	virtual void prepLoadImageAux(const QString & fileName, bool addName);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 protected:
-    static void moreCheckImage(const QString & filename);
-    static QString setBoardOutline(const QString & svg);
+	static void moreCheckImage(const QString & filename);
+	static QString setBoardOutline(const QString & svg);
 
 public:
 	static QString OneLayerTranslated;
 	static QString TwoLayersTranslated;
 
 public:
-    static bool isBoard(ItemBase *);
-    static bool isBoard(ModelPart *);
-    static QString convertToXmlName(const QString &);
-    static QString convertFromXmlName(const QString &);
+	static bool isBoard(ItemBase *);
+	static bool isBoard(ModelPart *);
+	static QString convertToXmlName(const QString &);
+	static QString convertFromXmlName(const QString &);
 
 protected slots:
 	void prepLoadImage();
 	void fileNameEntry(const QString & filename);
 
 protected:
-    QPointer<QComboBox> m_fileNameComboBox;
-    bool m_svgOnly;
+	QPointer<QComboBox> m_fileNameComboBox;
+	bool m_svgOnly;
 
 protected:
-    static QStringList BoardImageNames;
-    static QStringList NewBoardImageNames;
+	static QStringList BoardImageNames;
+	static QStringList NewBoardImageNames;
 };
 
 class ResizableBoard : public Board
@@ -112,19 +112,19 @@ public:
 	bool hasPartNumberProperty();
 	void paintSelected(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	bool inResize();
-    void figureHover();
+	void figureHover();
 
 public slots:
 	virtual void widthEntry();
 	virtual void heightEntry();
 	void keepAspectRatio(bool checkState);
 	void revertSize(bool);
-    virtual void paperSizeChanged(int);
+	virtual void paperSizeChanged(int);
 
 protected:
 	enum Corner {
 		NO_CORNER = 0,
-		TOP_LEFT ,
+		TOP_LEFT,
 		TOP_RIGHT,
 		BOTTOM_LEFT,
 		BOTTOM_RIGHT
@@ -139,7 +139,7 @@ protected:
 	void hoverMoveEvent(QGraphicsSceneHoverEvent * event );
 	QString makeBoardSvg(double mmW, double mmH, double milsW, double milsH);
 	QString makeSilkscreenSvg(ViewLayer::ViewLayerID, double mmW, double mmH, double milsW, double milsH);
-    QString makeSvg(double mmW, double mmH, const QString & layerTemplate);
+	QString makeSvg(double mmW, double mmH, const QString & layerTemplate);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 	virtual void loadTemplates();
 	virtual double minWidth();
@@ -155,9 +155,9 @@ protected:
 	QFrame * setUpDimEntry(bool includeAspectRatio, bool includeRevert, bool includePaperSizes, QWidget * & returnWidget);
 	void fixWH();
 	void setWidthAndHeight(double w, double h);
-    QString getShapeForRenderer(const QString & svg, ViewLayer::ViewLayerID viewLayerID);
-    void initPaperSizes();
-    void updatePaperSizes(double width, double height);
+	QString getShapeForRenderer(const QString & svg, ViewLayer::ViewLayerID viewLayerID);
+	void initPaperSizes();
+	void updatePaperSizes(double width, double height);
 
 protected:
 	static const double CornerHandleSize;
@@ -171,9 +171,9 @@ protected:
 	QSizeF m_aspectRatio;
 	double m_currentScale;
 	QPointer<QCheckBox> m_aspectRatioCheck;
-    QPointer<QLabel> m_aspectRatioLabel;
-    QPointer<QPushButton> m_revertButton;
-    QPointer<QComboBox> m_paperSizeComboBox;
+	QPointer<QLabel> m_aspectRatioLabel;
+	QPointer<QPushButton> m_revertButton;
+	QPointer<QComboBox> m_paperSizeComboBox;
 
 	QPointF m_resizeMousePos;
 	QSizeF m_resizeStartSize;

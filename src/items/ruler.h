@@ -44,7 +44,7 @@ public:
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	bool hasCustomSVG();
 	bool stickyEnabled();
-    bool hasPartLabel();
+	bool hasPartLabel();
 	PluralType isPlural();
 	void addedToScene(bool temporary);
 	bool hasPartNumberProperty();
@@ -52,15 +52,15 @@ public:
 
 public slots:
 	void widthEntry();
-    void unitsEntry();
+	void unitsEntry();
 
 protected:
 	QString makeSvg(double inches);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 protected:
 	QPointer<QLineEdit> m_widthEditor;
-    QPointer<QRadioButton> m_unitsEditor;
+	QPointer<QRadioButton> m_unitsEditor;
 	QPointer<QDoubleValidator> m_widthValidator;
 };
 

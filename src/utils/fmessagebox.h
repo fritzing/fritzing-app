@@ -25,21 +25,21 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 class FMessageBox : public QMessageBox {
-Q_OBJECT
+	Q_OBJECT
 
 public:
-    FMessageBox ( QWidget * parent = 0 );
+	FMessageBox ( QWidget * parent = 0 );
 
-    int	exec ();
-
-public:
-    static QMessageBox::StandardButton critical ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
-    static QMessageBox::StandardButton information ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
-    static QMessageBox::StandardButton question ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
-    static QMessageBox::StandardButton warning ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
+	int	exec ();
 
 public:
-    static bool BlockMessages;
+	static QMessageBox::StandardButton critical ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
+	static QMessageBox::StandardButton information ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
+	static QMessageBox::StandardButton question ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
+	static QMessageBox::StandardButton warning ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
+
+public:
+	static bool BlockMessages;
 };
 
 

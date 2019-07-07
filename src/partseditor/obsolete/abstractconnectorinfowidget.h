@@ -30,26 +30,26 @@ class ConnectorInfoRemoveButton;
 
 class AbstractConnectorInfoWidget : public QFrame {
 	Q_OBJECT
-	public:
-		AbstractConnectorInfoWidget(class ConnectorsInfoWidget *topLevelContainer, QWidget *parent=0);
-		virtual void setSelected(bool selected, bool doEmitChange=true);
-		bool isSelected();
+public:
+	AbstractConnectorInfoWidget(class ConnectorsInfoWidget *topLevelContainer, QWidget *parent=0);
+	virtual void setSelected(bool selected, bool doEmitChange=true);
+	bool isSelected();
 
-	signals:
-		void tellSistersImNewSelected(AbstractConnectorInfoWidget*); // Meant to be used in the info context
-		void tellViewsMyConnectorIsNewSelected(const QString&); // Meant to be used in the info context
-		void repaintNeeded();
+signals:
+	void tellSistersImNewSelected(AbstractConnectorInfoWidget*); // Meant to be used in the info context
+	void tellViewsMyConnectorIsNewSelected(const QString&); // Meant to be used in the info context
+	void repaintNeeded();
 
-	protected:
-		void reapplyStyle();
+protected:
+	void reapplyStyle();
 
-		ConnectorsInfoWidget *m_topLevelContainer;
-		ConnectorInfoRemoveButton *m_removeButton;
+	ConnectorsInfoWidget *m_topLevelContainer;
+	ConnectorInfoRemoveButton *m_removeButton;
 
-		volatile bool m_isSelected;
+	volatile bool m_isSelected;
 
 
-		static int SingleConnectorHeight;
+	static int SingleConnectorHeight;
 };
 
 #endif /* ABSTRACTCONNECTORINFOWIDGET_H_ */

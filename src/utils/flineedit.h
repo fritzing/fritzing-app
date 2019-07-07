@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMouseEvent>
 
 class FLineEdit : public QLineEdit {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	FLineEdit(QWidget * parent = NULL);

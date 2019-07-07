@@ -33,7 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class Connector : public QObject
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	enum ConnectorType {
 		Male,

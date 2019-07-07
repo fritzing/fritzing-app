@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMouseEvent>
 
 class SearchLineEdit : public QLineEdit {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	SearchLineEdit(QWidget * parent = NULL);
@@ -38,11 +38,11 @@ public:
 	static void cleanup();
 
 signals:
-    void clicked();
+	void clicked();
 
 protected:
 	void paintEvent(QPaintEvent *);
-    void mousePressEvent(QMouseEvent *);
+	void mousePressEvent(QMouseEvent *);
 	void enterEvent( QEvent *);
 	void leaveEvent( QEvent *);
 	void setColors(const QColor & base, const QColor & text);

@@ -32,21 +32,21 @@ class GedaElementLexer;
 class GedaElementParser: public GedaElementGrammar
 {
 public:
-    GedaElementParser();
-    ~GedaElementParser();
+	GedaElementParser();
+	~GedaElementParser();
 
-    bool parse(GedaElementLexer *lexer);
-    QVector<QVariant> & symStack();
-    QString errorMessage() const;
-    QVariant result() const;
+	bool parse(GedaElementLexer *lexer);
+	QVector<QVariant> & symStack();
+	QString errorMessage() const;
+	QVariant result() const;
 
 private:
-    void reallocateStack();
-    int m_tos;
-    QVector<int> m_stateStack;
-    QVector<QVariant> m_symStack;
-    QString m_errorMessage;
-    QVariant m_result;
+	void reallocateStack();
+	int m_tos;
+	QVector<int> m_stateStack;
+	QVector<QVariant> m_symStack;
+	QString m_errorMessage;
+	QVariant m_result;
 };
 
 #endif // GEDAELEMENTPARSER_H

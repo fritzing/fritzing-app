@@ -50,7 +50,7 @@ QComboBox * TraceWire::createWidthComboBox(double m, QWidget * parent)
 	QIntValidator * intValidator = new QIntValidator(comboBox);
 	intValidator->setRange(MinTraceWidthMils, MaxTraceWidthMils);
 	comboBox->setValidator(intValidator);
-    comboBox->setToolTip(tr("Select from the dropdown, or type in any value from %1 to %2").arg(MinTraceWidthMils).arg(MaxTraceWidthMils));
+	comboBox->setToolTip(tr("Select from the dropdown, or type in any value from %1 to %2").arg(MinTraceWidthMils).arg(MaxTraceWidthMils));
 
 	int ix = 0;
 	if (!Wire::widths.contains(m)) {
@@ -138,16 +138,16 @@ int TraceWire::widthEntry(const QString & text, QObject * sender) {
 
 void TraceWire::setColorFromElement(QDomElement & element) {
 	switch (m_viewLayerID) {
-		case ViewLayer::Copper0Trace:
-			element.setAttribute("color", ViewLayer::Copper0WireColor);
-			break;
-		case ViewLayer::Copper1Trace:
-			element.setAttribute("color", ViewLayer::Copper1WireColor);
-			break;
-		case ViewLayer::SchematicTrace:
-			//element.setAttribute("color", "#000000");
-		default:
-			break;
+	case ViewLayer::Copper0Trace:
+		element.setAttribute("color", ViewLayer::Copper0WireColor);
+		break;
+	case ViewLayer::Copper1Trace:
+		element.setAttribute("color", ViewLayer::Copper1WireColor);
+		break;
+	case ViewLayer::SchematicTrace:
+	//element.setAttribute("color", "#000000");
+	default:
+		break;
 	}
 
 	Wire::setColorFromElement(element);
@@ -184,30 +184,30 @@ void TraceWire::setSchematic(bool schematic) {
 
 QHash<QString, QString> TraceWire::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys)
 {
-    QHash<QString, QString> props = ClipableWire::prepareProps(modelPart, wantDebug, keys);
+	QHash<QString, QString> props = ClipableWire::prepareProps(modelPart, wantDebug, keys);
 
-    if (m_viewID != ViewLayer::PCBView) return props;
-    if (!m_viewGeometry.getPCBTrace()) return props;
+	if (m_viewID != ViewLayer::PCBView) return props;
+	if (!m_viewGeometry.getPCBTrace()) return props;
 
-    keys.append("layer");
-    props.insert("layer", ViewLayer::topLayers().contains(m_viewLayerID) ? "top" : "bottom");
-    return props;
+	keys.append("layer");
+	props.insert("layer", ViewLayer::topLayers().contains(m_viewLayerID) ? "top" : "bottom");
+	return props;
 }
 
 QStringList TraceWire::collectValues(const QString & family, const QString & prop, QString & value) {
-    if (prop.compare("layer") == 0) {
-        QStringList values = ClipableWire::collectValues(family, prop, value);
-        if (values.count() == 0) {
-            values << TranslatedPropertyNames.value("bottom") << TranslatedPropertyNames.value("top");
-            if (ViewLayer::bottomLayers().contains(m_viewLayerID)) {
-                value = values.at(0);
-            }
-            else {
-                value = values.at(1);
-            }
-        }
-        return values;
-    }
+	if (prop.compare("layer") == 0) {
+		QStringList values = ClipableWire::collectValues(family, prop, value);
+		if (values.count() == 0) {
+			values << TranslatedPropertyNames.value("bottom") << TranslatedPropertyNames.value("top");
+			if (ViewLayer::bottomLayers().contains(m_viewLayerID)) {
+				value = values.at(0);
+			}
+			else {
+				value = values.at(1);
+			}
+		}
+		return values;
+	}
 
-    return ClipableWire::collectValues(family, prop, value);
+	return ClipableWire::collectValues(family, prop, value);
 }

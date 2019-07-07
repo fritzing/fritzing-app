@@ -42,7 +42,7 @@ public:
 	static const QString PowerModuleIDName;
 	static const QString TwoPowerModuleIDName;
 	static const QString NetLabelModuleIDName;
-    static const QString PowerLabelModuleIDName;
+	static const QString PowerLabelModuleIDName;
 	static const QString LeftNetLabelModuleIDName;
 	static const QString JustPowerModuleIDName;
 	static const QString ResistorModuleIDName;
@@ -77,9 +77,9 @@ public:
 	static const QString Stripboard2ModuleIDName;
 	static const QString SpacerModuleIDName;
 	static const QString SchematicFrameModuleIDName;
-    static const QString CopperBlockerModuleIDName;
-    static const QString Copper1BlockerModuleIDName;
-    static const QString Copper0BlockerModuleIDName;
+	static const QString CopperBlockerModuleIDName;
+	static const QString Copper1BlockerModuleIDName;
+	static const QString Copper0BlockerModuleIDName;
 };
 
 #endif

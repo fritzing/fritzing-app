@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 class ClickableLabel : public QLabel {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	ClickableLabel(const QString & text = "", QWidget * parent = NULL);

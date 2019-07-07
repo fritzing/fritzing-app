@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class SetColorDialog : public QDialog
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	SetColorDialog(const QString & message, QColor & currentColor, QColor & standardColor, bool askPrefs, QWidget *parent = 0);

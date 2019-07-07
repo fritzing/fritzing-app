@@ -26,12 +26,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class CursorKeyListener
 {
-	public:
-		virtual void cursorKeyEvent(Qt::KeyboardModifiers) = 0;
+public:
+	virtual void cursorKeyEvent(Qt::KeyboardModifiers) = 0;
 };
 
 class CursorMaster : public QObject {
-Q_OBJECT
+	Q_OBJECT
 
 protected:
 	CursorMaster();
@@ -42,18 +42,18 @@ public:
 
 	void addCursor(QObject * listener, const QCursor & cursor);
 	void removeCursor(QObject * listener);
-    void block();
-    void unblock();
+	void block();
+	void unblock();
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *event);
+	bool eventFilter(QObject *obj, QEvent *event);
 
 protected slots:
 	void deleteCursor(QObject *);
 	void moveCursor();
 
 public:
-    static void cleanup();
+	static void cleanup();
 
 public:
 	static QCursor * BendpointCursor;
@@ -68,7 +68,7 @@ public:
 
 protected:
 	static CursorMaster TheCursorMaster;
-    bool m_blocked;
+	bool m_blocked;
 };
 
 #endif

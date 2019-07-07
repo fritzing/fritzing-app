@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class AutoCloseMessageBox : public QLabel
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	AutoCloseMessageBox(QWidget * parent);
 

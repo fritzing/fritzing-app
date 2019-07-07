@@ -38,8 +38,12 @@ public:
 		m_brokenFont = brokenFont;
 	}
 
-	const QString &brokenFont() { return m_brokenFont; }
-	void setBrokenFont(const QString &brokenFont) { m_brokenFont = brokenFont; }
+	const QString &brokenFont() {
+		return m_brokenFont;
+	}
+	void setBrokenFont(const QString &brokenFont) {
+		m_brokenFont = brokenFont;
+	}
 
 protected:
 	QString m_brokenFont;
@@ -82,26 +86,26 @@ FixFontsDialog::FixFontsDialog(QWidget *parent, const QSet<QString> fontsTofix)
 	layout->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Minimum,QSizePolicy::Expanding));
 
 	QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, this);
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	QVBoxLayout *mainLO = new QVBoxLayout(this);
 	mainLO->setMargin(8);
 	mainLO->setSpacing(2);
 
 	QLabel *msgLabel = new QLabel(tr(
-			"One or more fonts used in this SVG file are not available in Fritzing.\n"
-			"Please select one of the Fritzing fonts to replace them:"
-			),this);
+	                                  "One or more fonts used in this SVG file are not available in Fritzing.\n"
+	                                  "Please select one of the Fritzing fonts to replace them:"
+	                              ),this);
 	msgLabel->setWordWrap(true);
 	mainLO->addWidget(msgLabel);
 	mainLO->addWidget(container);
 
 	mainLO->addSpacerItem(new QSpacerItem(0,5));
 	QLabel *infoLabel = new QLabel(
-		"For more information, please refer to the "
-		"<a href='http://fritzing.org/learning/tutorials/creating-custom-parts/'>part creation guidelines</a>."
-	, this);
+	    "For more information, please refer to the "
+	    "<a href='http://fritzing.org/learning/tutorials/creating-custom-parts/'>part creation guidelines</a>."
+	    , this);
 	infoLabel->setOpenExternalLinks(true);
 	infoLabel->setWordWrap(true);
 	mainLO->addWidget(infoLabel);

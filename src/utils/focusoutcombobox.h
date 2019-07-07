@@ -27,20 +27,20 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMouseEvent>
 
 class FocusOutComboBox : public QComboBox {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	FocusOutComboBox(QWidget * parent = NULL);
 	~FocusOutComboBox();
 
 protected:
-    void focusInEvent(QFocusEvent *);
-    void focusOutEvent(QFocusEvent *);
-    bool eventFilter( QObject *target, QEvent *event );
-    void checkSelectAll();
+	void focusInEvent(QFocusEvent *);
+	void focusOutEvent(QFocusEvent *);
+	bool eventFilter( QObject *target, QEvent *event );
+	void checkSelectAll();
 
 protected:
-    bool m_wasOut;
+	bool m_wasOut;
 
 };
 

@@ -39,11 +39,11 @@ typedef QString (*GenSvg)(const QString & expectedFileName);
 typedef QString (*GenFzp)(const QString &);
 
 struct HoleClassThing {
-    QString holeSize;
-    QString ringThickness;
-    QString holeSizeValue;
-    QHash<QString, QString> holeSizes;
-    QList<QString> holeSizeKeys;                // need this for menu item ordering purposes
+	QString holeSize;
+	QString ringThickness;
+	QString holeSizeValue;
+	QHash<QString, QString> holeSizes;
+	QList<QString> holeSizeKeys;                // need this for menu item ordering purposes
 	QPointF ringThicknessRange;
 	QPointF holeDiameterRange;
 
@@ -53,7 +53,7 @@ struct HoleSettings
 {
 	QString holeDiameter;
 	QString ringThickness;
-    HoleClassThing * holeThing;
+	HoleClassThing * holeThing;
 	QPointer<QDoubleValidator> diameterValidator;
 	QPointer<QDoubleValidator> thicknessValidator;
 	QPointer<QLineEdit> diameterEdit;
@@ -63,7 +63,7 @@ struct HoleSettings
 	QPointer<QComboBox> sizesComboBox;
 
 	QString currentUnits();
-    QString holeSize();
+	QString holeSize();
 };
 
 class PaletteItem : public PaletteItemBase
@@ -98,7 +98,7 @@ public:
 	bool collectFemaleConnectees(QSet<ItemBase *> & items);
 	void collectWireConnectees(QSet<class Wire *> & wires);
 	void clearModelPart();
-    bool mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
+	bool mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
 	void resetID();
 	void slamZ(double z);
 	void resetImage(class InfoGraphicsView *);
@@ -111,10 +111,10 @@ public:
 	void resetConnectors();
 	void resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLayerRenderer);
 	void resetConnector(ItemBase * itemBase, SvgIdLayer * svgIdLayer);
-    QStringList sipOrDipOrLabels(bool & hasLayout, bool & sip);
-    void resetLayerKin(const QString & svg);
-    QTransform untransform();
-    void retransform(const QTransform &);
+	QStringList sipOrDipOrLabels(bool & hasLayout, bool & sip);
+	void resetLayerKin(const QString & svg);
+	QTransform untransform();
+	void retransform(const QTransform &);
 
 public:
 	static QString genFZP(const QString & moduleid, const QString & templateName, int minPins, int maxPins, int steps, bool smd);
@@ -123,9 +123,9 @@ public:
 	static void updateValidators(HoleSettings &);
 	static void updateEditTexts(HoleSettings &);
 	static void updateSizes(HoleSettings &);
-    static void initHoleSettings(HoleSettings & holeSettings, HoleClassThing *);
+	static void initHoleSettings(HoleSettings & holeSettings, HoleClassThing *);
 	static bool setHoleSize(QString & holeSize, bool force, HoleSettings & holeSettings);
-    static QString changeUnits(HoleSettings &);
+	static QString changeUnits(HoleSettings &);
 	static bool changeDiameter(HoleSettings & holeSettings, QObject * sender);
 	static bool changeThickness(HoleSettings & holeSettings, QObject * sender);
 
@@ -143,22 +143,22 @@ protected:
 	void figureHover();
 	bool isSingleRow(const QList<ConnectorItem *> & connectorItems);
 	QList<Connector *> sortConnectors();
-    QString hackSvgHoleSize(const QString & holeDiameter, const QString & ringThickness);
-    QString hackFzpHoleSize(const QString & moduleID, const QString & pcbFilename, const QString & holeSize);
-    QString appendHoleSize(const QString & moduleID, const QString & holeSize, const QString & ringThickness);
-    void generateSwap(const QString & text, GenModuleID, GenFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
-    bool makeLocalModifications(QByteArray & svg, const QString & filename);
-    void makeOneKin(qint64 & id, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, ViewGeometry &, const LayerHash &);
+	QString hackSvgHoleSize(const QString & holeDiameter, const QString & ringThickness);
+	QString hackFzpHoleSize(const QString & moduleID, const QString & pcbFilename, const QString & holeSize);
+	QString appendHoleSize(const QString & moduleID, const QString & holeSize, const QString & ringThickness);
+	void generateSwap(const QString & text, GenModuleID, GenFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
+	bool makeLocalModifications(QByteArray & svg, const QString & filename);
+	void makeOneKin(qint64 & id, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, ViewGeometry &, const LayerHash &);
 
 protected:
-    void setUpHoleSizes(const QString & type, HoleClassThing &);
+	void setUpHoleSizes(const QString & type, HoleClassThing &);
 	void setUpHoleSizesAux(HoleClassThing &, const QString & type);
-    bool collectHoleSizeInfo(const QString & defaultHoleSizeValue, QWidget * parent, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget);
+	bool collectHoleSizeInfo(const QString & defaultHoleSizeValue, QWidget * parent, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget);
 	static QStringList getSizes(QString & holeSize, HoleSettings &);
-    static QString hackFzpHoleSize(QDomDocument & document, const QString & newModuleID, const QString & pcbFilename, const QString & newSize);
-    static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid, int hsix);
-    static QString hackSvgHoleSize(QDomDocument & domDocument, const QString & holeDiameter, const QString & ringThickness);
-    static QString hackSvgHoleSizeAux(const QString & svg, const QString & expectedFileName);
+	static QString hackFzpHoleSize(QDomDocument & document, const QString & newModuleID, const QString & pcbFilename, const QString & newSize);
+	static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid, int hsix);
+	static QString hackSvgHoleSize(QDomDocument & domDocument, const QString & holeDiameter, const QString & ringThickness);
+	static QString hackSvgHoleSizeAux(const QString & svg, const QString & expectedFileName);
 
 protected slots:
 	virtual void changeHoleSize(const QString &);
@@ -168,12 +168,12 @@ protected slots:
 
 
 public:
-    static const QString HoleSizePrefix;
+	static const QString HoleSizePrefix;
 
 protected:
 	QList<class ItemBase *> m_layerKin;
-    HoleSettings m_holeSettings;
-    int m_flipCount;
+	HoleSettings m_holeSettings;
+	int m_flipCount;
 
 };
 

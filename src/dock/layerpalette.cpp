@@ -51,20 +51,20 @@ LayerPalette::LayerPalette(QWidget * parent) : QScrollArea(parent)
 
 	m_mainLayout = new QVBoxLayout();
 	m_mainLayout->setSizeConstraint( QLayout::SetMinAndMaxSize );
-    m_mainLayout -> setObjectName("LayerWindowFrame");
+	m_mainLayout -> setObjectName("LayerWindowFrame");
 	for (int i = 0; i < ViewLayer::ViewLayerCount; i++) {
 		ViewLayerCheckBox * cb = new ViewLayerCheckBox(this);
 		connect(cb, SIGNAL(clicked(bool)), this, SLOT(setLayerVisibility(bool)));
 		m_checkBoxes.append(cb);
-            cb -> setObjectName("LayerCheckBox");
+		cb -> setObjectName("LayerCheckBox");
 		cb->setVisible(false);
 	}
 
 	m_groupBox = new QGroupBox("");
-    m_groupBox -> setObjectName("LayerWindowList");
+	m_groupBox -> setObjectName("LayerWindowList");
 	QVBoxLayout * groupLayout = new QVBoxLayout();
-    groupLayout -> setObjectName("LayerWindowBoxes");
-    m_showAllWidget = new QCheckBox(tr("show all layers"));
+	groupLayout -> setObjectName("LayerWindowBoxes");
+	m_showAllWidget = new QCheckBox(tr("show all layers"));
 	connect(m_showAllWidget, SIGNAL(clicked(bool)), this, SLOT(setAllLayersVisible(bool)));
 
 	groupLayout->addWidget(m_showAllWidget);

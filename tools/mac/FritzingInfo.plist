@@ -32,7 +32,7 @@ Actually it defines file extensions used by Fritzing files
 
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict
+        <dict>
         <key>NSPrincipalClass</key>
         <string>NSApplication</string>
         <key>CFBundleExecutable</key>

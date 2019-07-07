@@ -63,12 +63,6 @@ RESOURCES += fritzingresources.qrc
 # http://qt.shoutwiki.com/wiki/Using_pkg-config_with_qmake
 unix:CONFIG += link_pkgconfig
 
-# Loads mkspecs/features/configure.prf
-# file from https://github.com/qt/qtbase.
-# This feature file defines test function
-# qtCompileTest() that is used in pri/boostdetect.pri
-load(configure)
-
 # Set directories for Windows and OS X to put different
 # files to(see comments for the variables)
 win32 {

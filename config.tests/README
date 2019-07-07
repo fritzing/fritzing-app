@@ -1,0 +1,11 @@
+These tests are used to determine if the boost is present
+and if it is of version 1.54 or not. The point is that
+1.54 boost has a bug that prevents Fritzing from working properly.
+
+See file [1] and site [2] to find out how these tests are used.
+More interesting is WHY are they used. This is because boost
+doesn't create .pc file when installed, so its presence can not
+be detected by pkg-config as it is done for libgit2.
+
+[1] /pri/boostdetect.pri
+[2] https://doc.qt.io/qt-5/qmake-test-function-reference.html#qtcompiletest-test

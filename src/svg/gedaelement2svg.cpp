@@ -41,7 +41,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 GedaElement2Svg::GedaElement2Svg() : X2Svg() {
 }
 
-QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins) 
+QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins)
 {
 	m_nonConnectorNumber = 0;
 	initLimits();
@@ -91,7 +91,7 @@ QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins
 	QStringList pinIDs;
 	QStringList padIDs;
 
-	for (int ix = 0; ix < stack.size(); ) { 
+	for (int ix = 0; ix < stack.size(); ) {
 		QVariant var = stack[ix];
 		if (var.type() == QVariant::String) {
 			QString thing = var.toString();
@@ -175,7 +175,7 @@ QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins
 		silkscreen = offsetMin("\n<g id='silkscreen'>" + silkscreen + "</g>\n");
 	}
 
-	QString svg = TextUtils::makeSVGHeader(100000, 100000, m_maxX - m_minX, m_maxY - m_minY) 
+	QString svg = TextUtils::makeSVGHeader(100000, 100000, m_maxX - m_minX, m_maxY - m_minY)
 					+ title + description + metadata + copper0 + copper1 + silkscreen + "</svg>";
 
 	return svg;
@@ -268,7 +268,7 @@ QString GedaElement2Svg::convertPin(QVector<QVariant> & stack, int ix, int argCo
 
 QString GedaElement2Svg::convertPad(QVector<QVariant> & stack, int ix, int argCount, bool mils, QString & pinID)
 {
-	QString name; 
+	QString name;
 	QString number;
 
 	int flags = (argCount > 5) ? stack[ix + argCount].toInt() : 0;
@@ -327,7 +327,7 @@ QString GedaElement2Svg::convertPad(QVector<QVariant> & stack, int ix, int argCo
 	checkYLimit(y2 - halft);
 	checkYLimit(y1 + halft);
 	checkYLimit(y2 + halft);
-	  
+
 	QString line = QString("<line fill='none' x1='%1' y1='%2' x2='%3' y2='%4' stroke-width='%5' ")
 					.arg(x1)
 					.arg(y1)
@@ -479,7 +479,7 @@ QString GedaElement2Svg::getPinID(QString & number, QString & name, bool isPad) 
 	if (!number.isEmpty()) {
 		bool ok;
 		int n = number.toInt(&ok);
-		return ok ? QString("connector%1%2").arg(n - 1).arg(suffix) 
+		return ok ? QString("connector%1%2").arg(n - 1).arg(suffix)
 				  : QString("connector%1%2").arg(number).arg(suffix);
 	}
 

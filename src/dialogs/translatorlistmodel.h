@@ -49,4 +49,4 @@ protected:
 	static QHash<QString, QString> m_languages;
 };
 
-#endif 
+#endif

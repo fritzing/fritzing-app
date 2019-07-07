@@ -22,7 +22,7 @@
             </layers>
         </iconView>
         <breadboardView>
-#set $bread_suffix = '_'+$bread_unique if not $gen_to_core else '' 
+#set $bread_suffix = '_'+$bread_unique if not $gen_to_core else ''
             <layers image="breadboard/generic_female_pin_header_${pins}_${mils}mil_bread.svg">
                 <layer layerId="breadboard"></layer>
             </layers>

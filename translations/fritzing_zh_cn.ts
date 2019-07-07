@@ -4196,7 +4196,7 @@ Go ahead and save?</source>
         <translation>Fritzing当前只支持OCRA和Droid字体--这些已经被替换为字体&apos;%1&apos;</translation>
     </message>
     <message>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
         <translation>不能载入图像文件&apos;%1&apos;:

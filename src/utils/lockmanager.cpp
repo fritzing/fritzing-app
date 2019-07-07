@@ -34,7 +34,7 @@ const long LockManager::SlowTime = 240000;
 
 static LockManager TheLockManager;
 static QHash<long, QPointer<QTimer> > TheTimers;
-static QMultiHash<long, LockedFile *> TheLockedFiles; 
+static QMultiHash<long, LockedFile *> TheLockedFiles;
 static QMutex TheMutex;
 
 LockedFile::LockedFile(const QString & filename, long freq) {
@@ -103,7 +103,7 @@ LockedFile * LockManager::makeLockedFile(const QString & path, long touchFrequen
 	LockedFile * lockedFile = new LockedFile(path, touchFrequency);
 	lockedFile->touch();
 	TheMutex.lock();
-	TheLockedFiles.insert(touchFrequency, lockedFile);		
+	TheLockedFiles.insert(touchFrequency, lockedFile);
 	TheMutex.unlock();
 	QTimer * timer = TheTimers.value(touchFrequency, NULL);
 	if (timer == NULL) {
@@ -118,13 +118,13 @@ LockedFile * LockManager::makeLockedFile(const QString & path, long touchFrequen
 }
 
 
-void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, LockedFile *> & lockedFiles) 
+void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, LockedFile *> & lockedFiles)
 {
 	// remove backup files; this is a clean exit
 	releaseLockedFiles(folder, lockedFiles, true);
 }
 
-void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, LockedFile *> & lockedFiles, bool remove) 
+void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, LockedFile *> & lockedFiles, bool remove)
 {
 	QDir backupDir(folder);
 	backupDir.cdUp();
@@ -160,15 +160,15 @@ void LockManager::checkLockedFiles(const QString & prefix, QFileInfoList & backu
 			// could mean this backup folder is just being created by another process
 			// could also mean it's leftover crap.
 			// check the date and only delete if it's old
-			
+
 			QDateTime lastModified = dirInfo.lastModified();
 			if (lastModified < QDateTime::currentDateTime().addMSecs(-2000 - touchFrequency)) {
 				FolderUtils::rmdir(dirInfo.filePath());
 			}
-			
+
 			continue;
 		}
-		
+
 		QFileInfo lockInfo(dir.absoluteFilePath(LockedFileName));
 		if (lockInfo.exists()) {
 			QDateTime lastModified = lockInfo.lastModified();
@@ -181,7 +181,7 @@ void LockManager::checkLockedFiles(const QString & prefix, QFileInfoList & backu
 		// we own the file
 		QString folder;
 		LockedFile * lockedFile = makeLockedFile(dir.absoluteFilePath(LockedFileName), touchFrequency);
-		lockedFiles.insert(dirInfo.fileName(), lockedFile);		
+		lockedFiles.insert(dirInfo.fileName(), lockedFile);
 		foreach (QFileInfo fileInfo, fileInfoList) {
 			backupList << fileInfo;
 		}

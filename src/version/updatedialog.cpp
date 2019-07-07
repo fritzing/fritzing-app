@@ -15,15 +15,15 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-			
+
 ********************************************************************
-		
+
 ********************************************************************/
 
 // much code borrowed from Qt's rsslisting example
 
 
-#include "updatedialog.h"	
+#include "updatedialog.h"
 #include "version.h"
 #include "versionchecker.h"
 #include "modfiledialog.h"
@@ -40,8 +40,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 static const int s_maxProgress = 1000;
 static QString sUpdatePartsMessage;
-								
-UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent) 
+
+UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
 {
 	m_versionChecker = NULL;
     m_doQuit = false;
@@ -122,7 +122,7 @@ bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 	}
 
 	QString text = QString("<html><head><style type='text/css'>%1</style></head><body>").arg(style);
-			
+
     QSettings settings;
     if (mainRelease) {
 		text += genTable(tr("A new main release is available for downloading:"), mainRelease);
@@ -141,7 +141,7 @@ bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 }
 
 
-void UpdateDialog::setVersionChecker(VersionChecker * versionChecker) 
+void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 {
 	if (m_versionChecker != NULL) {
 		m_versionChecker->stop();
@@ -296,7 +296,7 @@ void UpdateDialog::xmlErrorSlot(QXmlStreamReader::Error  errorCode) {
 	handleError();
 }
 
-void UpdateDialog::handleError() 
+void UpdateDialog::handleError()
 {
 	DebugDialog::debug("handle error");
     m_feedbackLabel->setText(tr("<p>Sorry, unable to retrieve update info</p>"));
@@ -319,7 +319,7 @@ void UpdateDialog::handlePartsError(const QString & error) {
     emit enableAgainSignal(true);
 }
 
-void UpdateDialog::setAtUserRequest(bool atUserRequest) 
+void UpdateDialog::setAtUserRequest(bool atUserRequest)
 {
 	m_atUserRequest = atUserRequest;
 }

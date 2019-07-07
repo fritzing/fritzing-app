@@ -52,7 +52,7 @@ void FocusOutTextEdit::focusOutEvent(QFocusEvent * e) {
 
 //////////////////////////////////////
 
-PEMetadataView::PEMetadataView(QWidget * parent) : QScrollArea(parent) 
+PEMetadataView::PEMetadataView(QWidget * parent) : QScrollArea(parent)
 {
     m_mainFrame = NULL;
 	this->setWidgetResizable(true);
@@ -74,7 +74,7 @@ void PEMetadataView::authorEntry() {
 	if (m_authorEdit->isModified()) {
 		emit metadataChanged("author", m_authorEdit->text());
         m_authorEdit->setModified(false);
-	}	
+	}
 }
 
 void PEMetadataView::descriptionEntry() {
@@ -129,7 +129,7 @@ void PEMetadataView::tagsEntry() {
     emit tagsChanged(keys);
 }
 
-void PEMetadataView::initMetadata(const QDomDocument & doc) 
+void PEMetadataView::initMetadata(const QDomDocument & doc)
 {
     QWidget * widget = QApplication::focusWidget();
     if (widget) {
@@ -154,7 +154,7 @@ void PEMetadataView::initMetadata(const QDomDocument & doc)
     QDomElement url = root.firstChildElement("url");
 
 	QStringList readOnlyKeys;
-    QHash<QString, QString> tagHash;    
+    QHash<QString, QString> tagHash;
     QDomElement tags = root.firstChildElement("tags");
     QDomElement tag = tags.firstChildElement("tag");
     while (!tag.isNull()) {
@@ -165,7 +165,7 @@ void PEMetadataView::initMetadata(const QDomDocument & doc)
     QString family;
     QString variant;
 
-    QHash<QString, QString> propertyHash;    
+    QHash<QString, QString> propertyHash;
     QDomElement properties = root.firstChildElement("properties");
     QDomElement prop = properties.firstChildElement("property");
     while (!prop.isNull()) {
@@ -286,4 +286,3 @@ QString PEMetadataView::family() {
 QString PEMetadataView::variant() {
 	return m_variantEdit->text();
 }
-

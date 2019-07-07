@@ -80,7 +80,7 @@ void Hole::setHoleSize(QString newSize, bool force) {
 		setBoth(m_holeSettings.holeDiameter, m_holeSettings.ringThickness);
 		modelPart()->setLocalProp("hole size", newSize);
 
-		if (m_partLabel) m_partLabel->displayTextsIf();	
+		if (m_partLabel) m_partLabel->displayTextsIf();
 	}
 	//DebugDialog::debug(QString("new holesize %1 ").arg(viewID()) + holeSize(), sceneBoundingRect());
 	//foreach (QGraphicsItem * childItem, childItems()) {
@@ -118,7 +118,7 @@ void Hole::setBoth(const QString & holeDiameter, const QString & ringThickness) 
 	}
 }
 
-ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringThickness) 
+ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringThickness)
 {
 	QString svg = makeSvg(holeDiameter, ringThickness, m_viewLayerID, true);
 	resetRenderer(svg);
@@ -144,7 +144,7 @@ ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringTh
 	}
 
 	//DebugDialog::debug("other");
-	
+
 	return otherLayer;
 }
 
@@ -161,7 +161,7 @@ void Hole::setBothNonConnectors(ItemBase * itemBase, SvgIdLayer * svgIdLayer) {
 }
 
 
-QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThickness, ViewLayer::ViewLayerID viewLayerID, bool includeHole) 
+QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThickness, ViewLayer::ViewLayerID viewLayerID, bool includeHole)
 {
 	double offsetDPI = OffsetPixels / GraphicsUtils::SVGDPI;
 	double hd = TextUtils::convertToInches(holeDiameter);
@@ -183,7 +183,7 @@ QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThicknes
 	}
 
 	svg += QString("<g id='%1'>").arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID));
-	
+
 	QString id = makeID();
 	if (hd == 0) {
 		svg += QString("<circle cx='%1' cy='%1' r='%2' fill='%3' id='%4' />")
@@ -207,7 +207,7 @@ QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThicknes
 			    .arg(hd / 2);
         }
 	}
-  		
+
 	svg += "</g></svg>";
 	//DebugDialog::debug("hole svg " + svg);
 	return svg;
@@ -247,10 +247,10 @@ ItemBase::PluralType Hole::isPlural() {
 	return Plural;
 }
 
-QString Hole::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString Hole::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
-	if (m_viewID != ViewLayer::PCBView || 
-		(viewLayerID != ViewLayer::Copper0 && viewLayerID != ViewLayer::Copper1)) 
+	if (m_viewID != ViewLayer::PCBView ||
+		(viewLayerID != ViewLayer::Copper0 && viewLayerID != ViewLayer::Copper1))
 	{
 		return PaletteItemBase::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 	}
@@ -266,7 +266,7 @@ QString Hole::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 	return PaletteItemBase::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 }
 
-bool Hole::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
+bool Hole::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (prop.compare("hole size", Qt::CaseInsensitive) == 0) {
         return collectHoleSizeInfo(TheHoleThing.holeSizeValue, parent, swappingEnabled, returnProp, returnValue, returnWidget);
@@ -305,7 +305,7 @@ bool Hole::canFindConnectorsUnder() {
 	return false;
 }
 
-ViewLayer::ViewID Hole::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID Hole::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
     if (vid == ViewLayer::PCBView) {
         return ViewLayer::IconView;
@@ -314,7 +314,7 @@ ViewLayer::ViewID Hole::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
     return ViewLayer::UnknownView;
 }
 
-void Hole::changeUnits(bool) 
+void Hole::changeUnits(bool)
 {
 	QString newVal = PaletteItem::changeUnits(m_holeSettings);
 	modelPart()->setLocalProp("hole size", newVal);
@@ -324,5 +324,3 @@ QRectF Hole::trueSceneBoundingRect() {
     QRectF r = sceneBoundingRect();
     return r.adjusted(OffsetPixels, OffsetPixels, -OffsetPixels, -OffsetPixels);
 }
-
-

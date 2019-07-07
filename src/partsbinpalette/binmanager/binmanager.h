@@ -114,7 +114,7 @@ class BinManager : public QFrame {
 
 
 	public slots:
-		void updateBinCombinedMenuCurrent();					
+		void updateBinCombinedMenuCurrent();
 		void toIconView();
 		void toListView();
 		void setAsCurrentBin(PartsBinPaletteWidget* bin);
@@ -178,7 +178,7 @@ protected:
 		QString m_defaultSaveFolder;
 
 		QMenu *m_binContextMenu;
-		QMenu *m_combinedMenu;		
+		QMenu *m_combinedMenu;
 
 		QAction *m_openAction;
 		QAction *m_newBinAction;
@@ -195,7 +195,7 @@ protected:
 		QAction *m_showIconViewAction;
 
 		QMenu *m_partContextMenu;
-		QMenu *m_partMenu;	
+		QMenu *m_partMenu;
 		QAction *m_editPartNewAction;
 		QAction *m_exportPartAction;
 		QAction *m_removePartAction;

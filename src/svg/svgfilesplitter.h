@@ -36,7 +36,7 @@ struct PathUserData {
     QMatrix transform;
 	double sNewWidth;
 	double sNewHeight;
-	double vbWidth; 
+	double vbWidth;
 	double vbHeight;
 	double x;
 	double y;
@@ -84,12 +84,12 @@ public:
     static QString showText3(const QString & svg, bool & hasText);
 
 protected:
-	void normalizeChild(QDomElement & childElement, 
+	void normalizeChild(QDomElement & childElement,
 						double sNewWidth, double sNewHeight,
 						double vbWidth, double vbHeight, bool blackOnly);
 	bool normalizeAttribute(QDomElement & element, const char * attributeName, double num, double denom);
 	void painterPathChild(QDomElement & element, QPainterPath & ppath);			// note: only partially implemented
-	void normalizeTranslation(QDomElement & element, 
+	void normalizeTranslation(QDomElement & element,
 							double sNewWidth, double sNewHeight,
 							double vbWidth, double vbHeight);
 	bool shiftTranslation(QDomElement & element, double x, double y);

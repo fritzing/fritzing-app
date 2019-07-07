@@ -36,7 +36,7 @@ E12Set = [100, 120, 150, 180, 220, 270, 330, 390, 470, 560, 680, 820]
 E24Set = [100, 110, 120, 130, 150, 160, 180, 200, 220, 240, 270, 300, 330, 360, 390, 430, 470, 510, 560, 620, 680, 750, 820, 910]
 
 NamedSets = {'e3': E3Set, 'e6': E6Set, 'e12': E12Set, 'e24': E24Set}
- 
+
 SetMultiplication = [0.1, 1, 10, 100, 1000, 10000]
 letterDict = { 'k': 1000, 'M': 1000000, 'G': 1000000000}
 
@@ -105,11 +105,11 @@ def hexColorsForResistorValue(value):
 def main():
 	resistorSet = resistorSetForSetName('E6Set')
 	print resistorSet
-	
+
 	for r in resistorSet:
 		print valueStringFromValue(r)
 		print hexColorsForResistorValue(r)
-	
+
 	print "number of resistors in set: %d" % (len(resistorSet))
 	for r in resistorSet:
 		# Printing the value

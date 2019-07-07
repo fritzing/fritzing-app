@@ -19,11 +19,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 
-#ifdef _MSC_VER 
-#pragma warning(push) 
+#ifdef _MSC_VER
+#pragma warning(push)
 #pragma warning(disable:4503)
 #pragma warning(disable:4100)			// disable scary-looking compiler warnings in Boost library
-#pragma warning(disable:4181)	
+#pragma warning(disable:4181)
 #endif
 
 #include <boost/config.hpp>
@@ -34,7 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <boost/graph/adjacency_list.hpp>
 
 
-#ifdef _MSC_VER 
+#ifdef _MSC_VER
 #pragma warning(pop)					// restore warning state
 #endif
 
@@ -51,7 +51,7 @@ void ConnectorEdge::setHeadTail(int h, int t) {
 	tail = t;
 }
 
-ConnectorEdge * makeConnectorEdge(QList<ConnectorEdge *> & edges, ConnectorItem * ci, ConnectorItem * cj, int weight, Wire * wire) 
+ConnectorEdge * makeConnectorEdge(QList<ConnectorEdge *> & edges, ConnectorItem * ci, ConnectorItem * cj, int weight, Wire * wire)
 {
 	ConnectorEdge * connectorEdge = new ConnectorEdge;
 	connectorEdge->c0 = ci;
@@ -75,10 +75,10 @@ static int LastVertex = 0;
 	LastVertex = ix;						\
 }
 
-void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWidget *> & foreignSketchWidgets, ConnectorItem * source, ConnectorItem * sink, QList<ConnectorEdge *> & minCut) 
+void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWidget *> & foreignSketchWidgets, ConnectorItem * source, ConnectorItem * sink, QList<ConnectorEdge *> & minCut)
 {
 	// this helped:  http://boost.2283326.n4.nabble.com/graph-edmund-karp-max-flow-vs-kolmogorov-max-flow-color-map-td2565611.html
-	
+
 	using namespace boost;
 
 	typedef adjacency_list_traits < vecS, vecS, directedS > Traits;
@@ -216,9 +216,9 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 					ce->c0->debugInfo("missing foreign connector");
 				}
 			}
-		}	
+		}
 	}
-	
+
 	while (originalKeys.count() > 0) {
 		ConnectorItem * key = originalKeys.takeFirst();
 		if (key->attachedToItemType() == ModelPart::Wire) continue;
@@ -281,7 +281,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	foreach(ConnectorEdge * ce, edges) {
 		connectorItems.at(ce->head)->debugInfo(QString("%1").arg(ce->weight));
 	}
-	DebugDialog::debug("");	
+	DebugDialog::debug("");
 	DebugDialog::debug("");
 	foreach(ConnectorEdge * ce, edges) {
 		partConnectorItems.at(ce->tail)->debugInfo(QString("%1").arg(ce->weight));
@@ -289,7 +289,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	*/
 
 	// if color_map parameter not specified, colors are not set
-    long flow = edmonds_karp_max_flow(g, s, t, color_map(color)); 
+    long flow = edmonds_karp_max_flow(g, s, t, color_map(color));
 	Q_UNUSED(flow);
 	//DebugDialog::debug(QString("flow %1, s%2, t%3").arg(flow).arg(index(s)).arg(index(t)));
 	//for (int i = 0; i < verts.count(); ++i) {
@@ -297,7 +297,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	//}
 
 	typedef property_traits<property_map < Graph, vertex_color_t >::type>::value_type tColorValue;
-    typedef boost::color_traits<tColorValue> tColorTraits; 
+    typedef boost::color_traits<tColorValue> tColorTraits;
 	foreach (ConnectorEdge * ce, edges) {
 		bool addIt = false;
 		if (ce->visible) {
@@ -315,7 +315,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 		else {
 			delete ce;
 		}
-	}     
+	}
 }
 
 
@@ -471,10 +471,10 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 				continue;
 			}
 
-            if (from->attachedToItemType() == ModelPart::Symbol && 
-                to->attachedToItemType() == ModelPart::Symbol && 
-                from->attachedTo()->isEverVisible() && 
-                to->attachedTo()->isEverVisible()) 
+            if (from->attachedToItemType() == ModelPart::Symbol &&
+                to->attachedToItemType() == ModelPart::Symbol &&
+                from->attachedTo()->isEverVisible() &&
+                to->attachedTo()->isEverVisible())
            {
                 // equipotential symbols are treated as if they were connected by wires
 				add_edge_d(i, j, G);
@@ -488,7 +488,7 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 				continue;
 			}
 
-			if ((to->bus() != NULL) && (to->bus() == from->bus())) {	
+			if ((to->bus() != NULL) && (to->bus() == from->bus())) {
 				add_edge_d(i, j, G);
 				add_edge_d(j, i, G);
 				continue;
@@ -509,7 +509,7 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 	for (int i = 0; i < num_nodes; i++) {
 		ConnectorItem * fromConnectorItem = partConnectorItems[i];
 		if (fromConnectorItem->attachedToItemType() == ModelPart::Jumper) {
-			routingStatus.m_jumperItemCount++;				
+			routingStatus.m_jumperItemCount++;
 		}
 		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
             switch (toConnectorItem->attachedToItemType()) {
@@ -574,12 +574,12 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 			else {
 				// we can minimally span the set with n-1 wires, so even if multiple connections are missing from a given connector, count it as one
 				anyMissing = missingOne = true;
-				
+
 				//ConnectorItem * ci = partConnectorItems.at(i);
 				//ConnectorItem * cj = partConnectorItems.at(j);
 				//ci->debugInfo("missing one ci");
 				//cj->debugInfo("\t\tcj");
-				
+
 			}
 		}
 		if (missingOne) {
@@ -617,7 +617,7 @@ void GraphUtils::collectBreadboard(ConnectorItem * connectorItem, QList<Connecto
                 }
             }
         }
-        
+
         foreach (ConnectorItem * to, candidate->connectedToItems()) {
             if (!itemsToGo.contains(to)) {
                 itemsToGo.append(to);

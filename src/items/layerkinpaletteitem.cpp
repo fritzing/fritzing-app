@@ -56,22 +56,22 @@ QVariant LayerKinPaletteItem::itemChange(GraphicsItemChange change, const QVaria
 	//DebugDialog::debug(QString("lk item change %1 %2").arg(this->id()).arg(change));
 	if (m_layerKinChief != NULL) {
 	    if (change == ItemSelectedChange) {
-	       	bool selected = value.toBool();
-	    	if (m_blockItemSelectedChange && m_blockItemSelectedValue == selected) {
-	    		m_blockItemSelectedChange = false;
-	   		}
+		bool selected = value.toBool();
+		if (m_blockItemSelectedChange && m_blockItemSelectedValue == selected) {
+			m_blockItemSelectedChange = false;
+			}
 			else {
-	        	m_layerKinChief->syncKinSelection(selected, this);
-	       	}
+			m_layerKinChief->syncKinSelection(selected, this);
+		}
 	    }
 	    //else if (change == ItemVisibleHasChanged && value.toBool()) {
-	    	//this->setSelected(m_layerKinChief->syncSelected());
-	    	//this->setPos(m_offset + m_layerKinChief->syncMoved());
+		//this->setSelected(m_layerKinChief->syncSelected());
+		//this->setPos(m_offset + m_layerKinChief->syncMoved());
 	    //}
 	    else if (change == ItemPositionHasChanged) {
-	    	m_layerKinChief->syncKinMoved(this->m_offset, value.toPointF());
-	   	}
-   	}
+		m_layerKinChief->syncKinMoved(this->m_offset, value.toPointF());
+		}
+	}
     return PaletteItemBase::itemChange(change, value);
 }
 
@@ -105,7 +105,7 @@ void LayerKinPaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
     //ItemBase::mousePressEvent(event);
 }
 
-void LayerKinPaletteItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) { 
+void LayerKinPaletteItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
     if (m_passMouseEvents) {
         m_layerKinChief->mouseMoveEventK(this, event);
         return;
@@ -114,7 +114,7 @@ void LayerKinPaletteItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
     PaletteItemBase::mouseMoveEvent(event);
 }
 
-void LayerKinPaletteItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) { 
+void LayerKinPaletteItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
     if (m_passMouseEvents) {
         m_layerKinChief->mouseReleaseEventK(this, event);
         return;
@@ -149,7 +149,7 @@ bool LayerKinPaletteItem::isBaseSticky() {
 	return m_layerKinChief->isBaseSticky();
 }
 
-void LayerKinPaletteItem::setSticky(bool s) 
+void LayerKinPaletteItem::setSticky(bool s)
 {
 	m_layerKinChief->setSticky(s);
 }
@@ -176,12 +176,12 @@ void LayerKinPaletteItem::resetID() {
 	m_id += offset;
 }
 
-QString LayerKinPaletteItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString LayerKinPaletteItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	return m_layerKinChief->retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 }
 
-ConnectorItem* LayerKinPaletteItem::newConnectorItem(Connector *connector) 
+ConnectorItem* LayerKinPaletteItem::newConnectorItem(Connector *connector)
 {
 	return m_layerKinChief->newConnectorItem(this, connector);
 }
@@ -235,7 +235,7 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
     if (isFlipped) {
         svg = makeFlipTextSvg();
     }
-   
+
     if (svg.isEmpty()) {
         svg = this->property("textSvg").toByteArray();
     }
@@ -256,8 +256,8 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
 
     //QMatrix m1 = chiefTransform.toAffine();
     //layerKinChief()->debugInfo("chief " + TextUtils::svgMatrix(m1));
-        
-    //m1 = transform.toAffine();      
+
+    //m1 = transform.toAffine();
     //debugInfo("\t " + TextUtils::svgMatrix(m1));
 }
 
@@ -303,7 +303,7 @@ QString SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
     }
 
     int ix = 0;
-    foreach (QDomElement text, texts) {  
+    foreach (QDomElement text, texts) {
         QDomElement g = text.ownerDocument().createElement("g");
         text.parentNode().insertAfter(g, text);
         g.appendChild(text);
@@ -318,7 +318,7 @@ QString SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
     if (mx < minX) minX = mx;   \
     if (mx > maxX) maxX = mx;   \
     if (my < minY) minY = my;   \
-    if (my > maxY) maxY = my;  
+    if (my > maxY) maxY = my;
 
 
 void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts) {
@@ -347,12 +347,12 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
         double newX = (image.width() - textThing.maxX) * viewBox.width() / image.width();
         double oldX = textThing.minX * viewBox.width() / image.width();
 
-        QMatrix inv = matrix.inverted();   
+        QMatrix inv = matrix.inverted();
         QMatrix t = QMatrix().translate(newX - oldX, 0);
         textThing.flipMatrix = matrix * t * inv;
 
-        QRectF r(textThing.minX * viewBox.width() / image.width(), 
-                 textThing.minY * viewBox.height() / image.height(), 
+        QRectF r(textThing.minX * viewBox.width() / image.width(),
+                 textThing.minY * viewBox.height() / image.height(),
                  (textThing.maxX - textThing.minX) * viewBox.width() / image.width(),
                  (textThing.maxY - textThing.minY) * viewBox.height() / image.height());
 
@@ -368,7 +368,7 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
 
 }
 
-void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix & matrix, QRectF & viewBox) 
+void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix & matrix, QRectF & viewBox)
 {
     QString oldid = text.attribute("id");
     text.setAttribute("id", IDString);
@@ -468,7 +468,7 @@ QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlip
     }
 
     int ix = 0;
-    foreach (QDomElement text, texts) {  
+    foreach (QDomElement text, texts) {
         QDomElement g = text.ownerDocument().createElement("g");
         text.parentNode().insertAfter(g, text);
         g.appendChild(text);

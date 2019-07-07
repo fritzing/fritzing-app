@@ -64,7 +64,7 @@
 			<obsolete name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#8c3b00"/>
 		</color>
 		<color name="pink" ratsnest="#fa50e6"  wire="#fa50e6" shadow="#dc00dc" />
-	</view>	
+	</view>
 	<view name="pcbView" background="#333">
 		<color name="blue" ratsnest="#157de6" />
 		<color name="red" ratsnest="#cc1414" >
@@ -75,7 +75,7 @@
 			<connector name="gnd" />
 			<connector name="ground" />
 		</color>
-		<!--	
+		<!--
 		<color name="yellow" ratsnest="" >
 			<obsolete name="yellow" ratsnest="#ffe24d" />
 			<obsolete name="yellow" ratsnest="#a09c00" />
@@ -84,7 +84,7 @@
 		</color>
 		<color name="white" ratsnest="">
 		</color>
-		<color name="orange" ratsnest=""> 
+		<color name="orange" ratsnest="">
 			<obsolete name="orange" ratsnest="#ff7033" />
 		</color>
 		-->

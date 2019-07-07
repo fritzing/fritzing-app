@@ -39,7 +39,7 @@ struct TemplateThing {
     double strokeWidth;
 };
 
-class SchematicFrame : public ResizableBoard 
+class SchematicFrame : public ResizableBoard
 {
 	Q_OBJECT
 

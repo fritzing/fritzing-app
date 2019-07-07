@@ -18,7 +18,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
-/* 
+/*
 
 curvy To Do
 
@@ -109,8 +109,8 @@ void debugCompare(ItemBase * it) {
     if (wire) {
         QRectF r0 = wire->connector0()->rect();
         QRectF r1 = wire->connector1()->rect();
-        if (qAbs(r0.left() - r1.left()) < 0.1 && 
-            qAbs(r0.right() - r1.right()) < 0.1 && 
+        if (qAbs(r0.left() - r1.left()) < 0.1 &&
+            qAbs(r0.right() - r1.right()) < 0.1 &&
             qAbs(r0.top() - r1.top()) < 0.1 &&
             qAbs(r0.bottom() - r1.bottom()) < 0.1)
         {
@@ -242,8 +242,8 @@ void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsVie
 	setConnector0Rect();
 	setConnector1Rect();
 	m_viewGeometry.setLine(this->line());
-	
-   	QBrush brush(QColor(0, 0, 0));
+
+	QBrush brush(QColor(0, 0, 0));
 	QPen pen(brush, penWidth, Qt::SolidLine, Qt::RoundCap);
 	this->setPen(pen);
 
@@ -262,7 +262,7 @@ void Wire::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QW
 	ItemBase::paint(painter, option, widget);
 }
 
-void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget ) 
+void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget )
 {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
@@ -272,7 +272,7 @@ void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option
 		QLineF line = this->line();
 		painterPath.moveTo(line.p1());
 		painterPath.cubicTo(m_bezier->cp0(), m_bezier->cp1(), line.p2());
-		
+
 		/*
 		DebugDialog::debug(QString("c0x:%1,c0y:%2 c1x:%3,c1y:%4 p0x:%5,p0y:%6 p1x:%7,p1y:%8 px:%9,py:%10")
 							.arg(m_controlPoints.at(0).x())
@@ -304,7 +304,7 @@ void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option
 		}
 		painter->restore();
 	}
-	   
+
 	// DebugDialog::debug(QString("pen width %1 %2").arg(m_pen.widthF()).arg(m_viewID));
 
     if (m_banded) {
@@ -313,7 +313,7 @@ void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option
         m_pen.setBrush(BandedBrush);
         painter->setPen(m_pen);
 	    if (painterPath.isEmpty()) {
-		    painter->drawLine(getPaintLine());	
+		    painter->drawLine(getPaintLine());
 	    }
 	    else {
 		    painter->drawPath(painterPath);
@@ -334,7 +334,7 @@ void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option
 
     painter->setPen(m_pen);
     if (painterPath.isEmpty()) {
-		painter->drawLine(getPaintLine());	
+		painter->drawLine(getPaintLine());
 	}
 	else {
 		painter->drawPath(painterPath);
@@ -350,7 +350,7 @@ void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option
     }
 }
 
-void Wire::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) 
+void Wire::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 	Q_UNUSED(widget);
 	Q_UNUSED(option);
@@ -382,7 +382,7 @@ QPainterPath Wire::shapeAux(double width) const
 	if (m_line == QLineF()) {
 	    return path;
 	}
-				
+
 	path.moveTo(m_line.p1());
 	if (m_bezier == NULL || m_bezier->isEmpty()) {
 		path.lineTo(m_line.p2());
@@ -480,12 +480,12 @@ void Wire::initDragEnd(ConnectorItem * connectorItem, QPointF scenePos) {
 	m_dragCurve = false;
 	if (m_drag0) {
 		m_wireDragOrigin = line.p2();
- 		//DebugDialog::debug(QString("drag near origin %1 %2").arg(m_wireDragOrigin.x()).arg(m_wireDragOrigin.y()) );
+		//DebugDialog::debug(QString("drag near origin %1 %2").arg(m_wireDragOrigin.x()).arg(m_wireDragOrigin.y()) );
 	}
 	else {
 		m_wireDragOrigin = line.p1();
- 		//DebugDialog::debug(QString("drag far origin %1 %2").arg(m_wireDragOrigin.x()).arg(m_wireDragOrigin.y()) );
- 		//DebugDialog::debug(QString("drag far other %1 %2").arg(line.p2().x()).arg(line.p2().y()) );
+		//DebugDialog::debug(QString("drag far origin %1 %2").arg(m_wireDragOrigin.x()).arg(m_wireDragOrigin.y()) );
+		//DebugDialog::debug(QString("drag far other %1 %2").arg(line.p2().x()).arg(line.p2().y()) );
 	}
 
 	if (connectorItem->chained()) {
@@ -545,7 +545,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 	}
 
 	if ((modifiers & Qt::ShiftModifier) != 0) {
-		QPointF initialPos = mapFromScene(otherConnectorItem->sceneAdjustedTerminalPoint(NULL)); 
+		QPointF initialPos = mapFromScene(otherConnectorItem->sceneAdjustedTerminalPoint(NULL));
 		bool bendpoint = isBendpoint(whichConnectorItem);
 		if (bendpoint) {
 			bendpoint = false;
@@ -567,7 +567,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 					bendpoint = true;
 					eventPos = p1;
 					break;
-				}				
+				}
 			}
 		}
 
@@ -661,7 +661,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
         }
 
 
-        // but allow to restore connections at this end (collect chained above got both ends of this wire) 
+        // but allow to restore connections at this end (collect chained above got both ends of this wire)
 		foreach (ConnectorItem * toConnectorItem, whichConnectorItem->connectedToItems()) {
 			if (ends.contains(toConnectorItem)) exclude.removeAll(toConnectorItem);
 		}
@@ -1016,7 +1016,7 @@ void Wire::connectedMoved(ConnectorItem * from, ConnectorItem * to, QList<Connec
 }
 
 
-FSvgRenderer * Wire::setUpConnectors(ModelPart * modelPart, ViewLayer::ViewID viewID) 
+FSvgRenderer * Wire::setUpConnectors(ModelPart * modelPart, ViewLayer::ViewID viewID)
 {
 	clearConnectorItemCache();
 
@@ -1224,7 +1224,7 @@ void Wire::setColorString(QString colorName, double op, bool restore) {
 	// sets a color using the name (.e. "red")
 	// note: colorName is associated with a Fritzing color, not a Qt color
 
-	QString colorString = RatsnestColors::wireColor(m_viewID, colorName);     
+	QString colorString = RatsnestColors::wireColor(m_viewID, colorName);
 	if (colorString.isEmpty()) {
 		colorString = colorName;
 	}
@@ -1279,7 +1279,7 @@ void Wire::initNames() {
 
 	HALF_STANDARD_TRACE_WIDTH = STANDARD_TRACE_WIDTH / 2.0;
 
-    // need a list because a hash table doesn't guarantee order 
+    // need a list because a hash table doesn't guarantee order
     colorNames.append(tr("blue"));
 	colorNames.append(tr("red"));
     colorNames.append(tr("black"));
@@ -1488,7 +1488,7 @@ QVariant Wire::itemChange(GraphicsItemChange change, const QVariant &value)
 void Wire::cleanup() {
 }
 
-void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) 
+void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect)
 {
 	connectorItem->setBigDot(false);
 	ItemBase::getConnectedColor(connectorItem, brush, pen, opacity, negativePenWidth, negativeOffsetRect);
@@ -1509,7 +1509,7 @@ void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen 
 		else {
 			// for drawing a big dot on the end of a part connector in schematic view if the part is connected to more than one trace
 			bendpoint = false;
-			if (toConnectorItem->connectionsCount() > 1) {	
+			if (toConnectorItem->connectionsCount() > 1) {
 				if (infoGraphicsView->hasBigDots()) {
 					int c = 0;
 					foreach (ConnectorItem * totoConnectorItem, toConnectorItem->connectedToItems()) {
@@ -1535,7 +1535,7 @@ void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen 
 	if (count == 0) {
 		return;
 	}
-	
+
 	// connectorItem is a bendpoint or connects to a multiply connected connector
 
 	//if (!bendpoint) {
@@ -1614,7 +1614,7 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 			comboBox->setEditable(false);
 			comboBox->setEnabled(swappingEnabled);
 			comboBox->setObjectName("infoViewComboBox");
-			
+
 			int ix = 0;
 			QString englishCurrColor = colorString();
 			foreach(QString transColorName, Wire::colorNames) {
@@ -1648,7 +1648,7 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
             else {
 		        returnWidget = comboBox;
             }
-	
+
 			returnValue = comboBox->currentText();
 			return true;
 		}
@@ -1677,7 +1677,7 @@ void Wire::colorEntry(const QString & text) {
 }
 
 bool Wire::hasPartLabel() {
-	
+
 	return false;
 }
 
@@ -1730,13 +1730,13 @@ void Wire::addedToScene(bool temporary) {
 	infoGraphicsView->newWire(this);
 }
 
-void Wire::setConnectorDimensions(double width, double height) 
+void Wire::setConnectorDimensions(double width, double height)
 {
 	setConnectorDimensionsAux(connector0(), width, height);
 	setConnectorDimensionsAux(connector1(), width, height);
 }
 
-void Wire::setConnectorDimensionsAux(ConnectorItem * connectorItem, double width, double height) 
+void Wire::setConnectorDimensionsAux(ConnectorItem * connectorItem, double width, double height)
 {
 	QPointF p = connectorItem->rect().center();
 	QRectF r(p.x() - (width / 2), p.y() - (height / 2), width, height);
@@ -1745,7 +1745,7 @@ void Wire::setConnectorDimensionsAux(ConnectorItem * connectorItem, double width
     //debugCompare(connectorItem->attachedTo());
 }
 
-void Wire::originalConnectorDimensions(double & width, double & height) 
+void Wire::originalConnectorDimensions(double & width, double & height)
 {
 	width = m_originalConnectorRect.width();
 	height = m_originalConnectorRect.height();
@@ -1793,8 +1793,8 @@ void Wire::setLine(const QLineF &line)
 }
 
 void Wire::setLine(double x1, double y1, double x2, double y2)
-{ 
-	setLine(QLineF(x1, y1, x2, y2)); 
+{
+	setLine(QLineF(x1, y1, x2, y2));
 }
 
 /*!
@@ -1910,7 +1910,7 @@ void Wire::updateCursor(Qt::KeyboardModifiers modifiers)
 			}
 		}
 	}
-		
+
 	if (segment) {
 		// dragging a segment of wire between bounded by two other wires
 		CursorMaster::instance()->addCursor(this, *CursorMaster::RubberbandCursor);
@@ -1932,7 +1932,7 @@ bool Wire::canChainMultiple()
 	return m_canChainMultiple;
 }
 
-ViewLayer::ViewID Wire::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID Wire::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
     if (vid == ViewLayer::BreadboardView) {
         return ViewLayer::IconView;
@@ -1961,7 +1961,7 @@ void Wire::setBanded(bool banded) {
 }
 
 void Wire::setBandedProp(bool banded) {
-   	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
 		infoGraphicsView->setProp(this, "banded", ItemBase::TranslatedPropertyNames.value("banded"), m_banded ? "Yes" : "No", banded  ? "Yes" : "No", true);
     }
@@ -2002,4 +2002,3 @@ void Wire::colorByLength(bool colorByLength) {
     m_colorByLength = colorByLength;
     update();
 }
-

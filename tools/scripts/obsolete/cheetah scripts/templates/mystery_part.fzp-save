@@ -4,7 +4,7 @@
 #set $pcbname = "jumper_" + $pins + "_100"
 #set $breadname = "mystery_part_" + $pins + "_sip_100"
 #set $moduleid = $uuid
-#if $package == "Double Row" 
+#if $package == "Double Row"
 #set $pcbname = "dip_" + $pins + "_" + str($mils)
 #set $breadname = "mystery_part_" + $pins + "_dip_" + str($mils)
 #else

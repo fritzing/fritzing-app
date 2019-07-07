@@ -51,7 +51,7 @@ protected slots:
 
 protected:
 	QString m_message;
-	QColor m_currentColor;	
+	QColor m_currentColor;
 	QColor m_standardColor;
 	QColor m_selectedColor;
 	QColor m_customColor;
@@ -63,4 +63,4 @@ protected:
 };
 
 
-#endif 
+#endif

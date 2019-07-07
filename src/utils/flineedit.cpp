@@ -58,4 +58,3 @@ void FLineEdit::leaveEvent(QEvent * event) {
 		emit mouseLeave();
 	}
 }
-

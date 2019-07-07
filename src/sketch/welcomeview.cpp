@@ -228,11 +228,11 @@ void BlogListWidget::itemEnteredSlot(QListWidgetItem * item) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
- 
+
 BlogListDelegate::BlogListDelegate(QObject *parent) : QAbstractItemDelegate(parent)
 {
 }
- 
+
 BlogListDelegate::~BlogListDelegate()
 {
 }
@@ -299,18 +299,18 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
 
     painter->restore();
 }
- 
+
 QSize BlogListDelegate::sizeHint ( const QStyleOptionViewItem & option, const QModelIndex & index ) const
 {
     return QSize(100, ImageSpace); // very dumb value
 }
- 
+
 //////////////////////////////////////
 
-WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent) 
+WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 {
     this->setObjectName("welcomeView");
-        
+
     m_tip = NULL;
     setAcceptDrops(true);
     initLayout();
@@ -401,7 +401,7 @@ QWidget * WelcomeView::initRecent() {
                 widget = new QLabel();
         }
         else if (name == "recentNewSketch") {
-			widget = makeRecentItem(name, 
+			widget = makeRecentItem(name,
                 QString("<a href='new' style='text-decoration:none; color:#666; margin-right:5px;'><img src=':/resources/images/icons/WS-new-icon.png' /></a>"),
                 QString("<a href='new' style='text-decoration:none; color:#666;'>%1</a>").arg(tr("New Sketch")),
                 icon,
@@ -409,7 +409,7 @@ QWidget * WelcomeView::initRecent() {
 
 		}
 		else if (name == "recentOpenSketch") {
-			widget = makeRecentItem(name, 
+			widget = makeRecentItem(name,
                 QString("<a href='open' style='text-decoration:none; color:#666; margin-right:5px;'><img src=':/resources/images/icons/WS-open-icon.png' /></a>"),
                 QString("<a href='open' style='text-decoration:none; color:#666;'>%1</a>").arg(tr("Open Sketch")),
                 icon,
@@ -460,7 +460,7 @@ QWidget * WelcomeView::initShop() {
     frameLayout->addWidget(headerFrame);
 
     m_shopUberFrame = createShopContentFrame(":/resources/images/welcome_kit.png",
-                                                tr("Fritzing CreatorKit"), 
+                                                tr("Fritzing CreatorKit"),
                                                 tr("The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog"),
                                                 "http://creatorkit.fritzing.org/",
                                                 tr(""),
@@ -470,7 +470,7 @@ QWidget * WelcomeView::initShop() {
                                                 );
     frameLayout->addWidget(m_shopUberFrame);
 
-    m_fabUberFrame = createShopContentFrame(":/resources/images/pcbs_2013.png", 
+    m_fabUberFrame = createShopContentFrame(":/resources/images/pcbs_2013.png",
                                                 tr("Fritzing Fab"),
                                                 tr("Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches."),
                                                 "http://fab.fritzing.org/",
@@ -488,7 +488,7 @@ QWidget * WelcomeView::initShop() {
     return frame;
 }
 
-QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const QString & headline, const QString & description, 
+QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const QString & headline, const QString & description,
                                               const QString & url, const QString & urlText, const QString & urlText2, const QString & logoPath, const QString & footerLabelColor )
 {
     QFrame * uberFrame = new QFrame();
@@ -714,7 +714,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
     QDomDocument doc;
 	QString errorStr;
 	int errorLine;
-	int errorColumn;	
+	int errorColumn;
     if (responseCode == 200) {
         QString data(networkReply->readAll());
         //DebugDialog::debug("response data " + data);
@@ -730,7 +730,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
         QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
         if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
 		    readBlog(doc, true, blog, "");
-        }  
+        }
     }
 
     manager->deleteLater();
@@ -767,7 +767,7 @@ void WelcomeView::clickBlog(const QString & url) {
         m_blogLabel->setText(hackColor(m_blogLabel->text(), m_inactiveHeaderLabelColor));
         return;
     }
- 
+
     if (url.toLower() == "blog") {
         m_projectsUberFrame->setVisible(false);
         m_blogUberFrame->setVisible(true);
@@ -775,7 +775,7 @@ void WelcomeView::clickBlog(const QString & url) {
         m_blogLabel->setText(hackColor(m_blogLabel->text(), m_activeHeaderLabelColor));
         return;
     }
- 
+
 	QDesktopServices::openUrl(url);
 }
 
@@ -789,7 +789,7 @@ void WelcomeView::clickBlog(const QString & url) {
         <p class="date">Nov. 15, 2013</p>
         <p class="author">Nushin Isabelle</p>
         <p class="intro">Today, we got a visitor in the Fritzing Lab: Our neighbour, Charles Oleg, came by to show us his new...</p>
-    </li> 
+    </li>
 </ul>
 
 // sample output from http://fritzing.org/projects/snippet/
@@ -850,7 +850,7 @@ void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit, bool blog, con
 
         QListWidgetItem * item = new QListWidgetItem();
         item->setData(TitleRole, stuff.value("title"));
-        item->setData(RefRole, stuff.value("href"));      
+        item->setData(RefRole, stuff.value("href"));
         QString text = stuff.value("intro", "");
         text.replace("\r", " ");
         text.replace("\n", " ");
@@ -880,7 +880,7 @@ void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit, bool blog, con
             if (other == this) continue;
 
             other->readBlog(doc, false, blog, prefix);
-        }     
+        }
     }
 }
 
@@ -919,7 +919,7 @@ void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
 
                 other->setBlogItemImage(scaled, index, blog);
             }
-        }     
+        }
 	}
 
     manager->deleteLater();

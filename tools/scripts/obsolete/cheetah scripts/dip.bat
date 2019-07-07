@@ -15,6 +15,3 @@ C:\Python26\python.exe partomatic.py -c .\deleteme\config\dip_200mil_pcb_svg.cfg
 C:\Python26\python.exe partomatic.py -c .\deleteme\config\dip_500mil_pcb_svg.cfg -t .\templates\dip_pcb.svg -o .\deleteme\pcb
 C:\Python26\python.exe partomatic.py -c .\deleteme\config\dip_700mil_pcb_svg.cfg -t .\templates\dip_pcb.svg -o .\deleteme\pcb
 C:\Python26\python.exe partomatic.py -c .\deleteme\config\dip_800mil_pcb_svg.cfg -t .\templates\dip_pcb.svg -o .\deleteme\pcb
-
-
-

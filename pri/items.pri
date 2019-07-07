@@ -14,8 +14,8 @@
 # ********************************************************************/
 
 HEADERS += \
-    src/items/breadboard.h \    
-    src/items/capacitor.h \    
+    src/items/breadboard.h \
+    src/items/capacitor.h \
     src/items/clipablewire.h \
     src/items/dip.h \
     src/items/groundplane.h \
@@ -51,7 +51,7 @@ HEADERS += \
 
 
 SOURCES += \
-    src/items/breadboard.cpp \    
+    src/items/breadboard.cpp \
     src/items/capacitor.cpp \
     src/items/clipablewire.cpp \
     src/items/dip.cpp \
@@ -81,7 +81,7 @@ SOURCES += \
     src/items/screwterminal.cpp \
     src/items/stripboard.cpp \
     src/items/symbolpaletteitem.cpp \
-    src/items/tracewire.cpp \    
+    src/items/tracewire.cpp \
     src/items/via.cpp \
     src/items/virtualwire.cpp \
     src/items/wire.cpp \

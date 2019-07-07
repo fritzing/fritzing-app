@@ -70,7 +70,7 @@ signals:
 	void setMaximumProgress(int);
 	void setProgressValue(int);
 	void wantTopVisible();
-	void wantBottomVisible();	
+	void wantBottomVisible();
 	void wantBothVisible();
 	void setProgressMessage(const QString &);
 
@@ -95,7 +95,7 @@ protected:
 protected:
     static void markSubs(QDomElement & root, const QString & mark);
     static void splitSubs(QDomDocument *, QDomElement & root, const QString & partID, const Markers &, const QStringList & svgIDs,  const QStringList & terminalIDs, const QList<ItemBase *> &, QHash<QString, QString> & both, bool checkIntersection);
-	
+
 protected:
 	class PCBSketchWidget * m_sketchWidget;
     class ItemBase * m_board;

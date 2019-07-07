@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "paletteitem.h"
 
-class Ruler : public PaletteItem 
+class Ruler : public PaletteItem
 {
 	Q_OBJECT
 
@@ -57,7 +57,7 @@ public slots:
 protected:
 	QString makeSvg(double inches);
     ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
-	
+
 protected:
 	QPointer<QLineEdit> m_widthEditor;
     QPointer<QRadioButton> m_unitsEditor;

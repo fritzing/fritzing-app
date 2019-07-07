@@ -31,7 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 /////////////////////////////////////////////////////////
 
-KicadModuleDialog::KicadModuleDialog(const QString & partType, const QString & filename, const QStringList & modules, QWidget *parent) : QDialog(parent) 
+KicadModuleDialog::KicadModuleDialog(const QString & partType, const QString & filename, const QStringList & modules, QWidget *parent) : QDialog(parent)
 {
 	this->setWindowTitle(QObject::tr("Select %1").arg(partType));
 
@@ -70,4 +70,3 @@ KicadModuleDialog::~KicadModuleDialog() {
 const QString KicadModuleDialog::selectedModule() {
 	return m_comboBox->currentText();
 }
-

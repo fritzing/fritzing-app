@@ -8,7 +8,7 @@
 #set $halfheight = ($height / 2.0) + 1.5
 #set $toppinheight = 2.5
 #set $dt = (0 if $pitch != '0.1' else 2)
-#set $h2 = (($height / 2.0) if $pitch != '0.1' else 8.0 )   
+#set $h2 = (($height / 2.0) if $pitch != '0.1' else 8.0 )
 <svg version="1.2" baseProfile="tiny" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	 width="${widthin}in" height="${heightin}in" viewBox="0 0 ${width} ${height}" xml:space="preserve">
 
@@ -34,7 +34,7 @@
         <rect id="connector${pin}terminal" x="${pinx}" y="${height - 1}" fill="#8C8C8C" width="2.3" height="0"/>
         <rect id="connector${pin}pin" x="${pinx}" y="${height - 4.25}" fill="#8C8C8C" width="2.3" height="4.25"/>
   #end for
-        
+
 
 </g>
 </svg>

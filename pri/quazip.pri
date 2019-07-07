@@ -34,5 +34,4 @@ SOURCES += \
 	src/lib/quazip/quazipfile.cpp \
 	src/lib/quazip/quazipnewinfo.cpp \
 	src/lib/quazip/unzip.c \
-	src/lib/quazip/zip.c 
-
+	src/lib/quazip/zip.c

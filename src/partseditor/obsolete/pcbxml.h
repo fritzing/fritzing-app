@@ -25,14 +25,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSvgGenerator>
 #include "svgdomdocument.h"
 //
-class PcbXML  
+class PcbXML
 {
 
 public:
 	PcbXML(const QDomElement & pcbDocument);
-	
+
 	QString getSvgFile();
-	
+
 private:
 	SVGDomDocument * m_svg;
 	QString m_svgFile;
@@ -51,7 +51,7 @@ private:
 	int m_pinCount;
 	int m_padCount;
 	QString m_units; // length units for the root element coordinates
-	
+
 	void drawNode(QDomNode node);
 	void drawPin(QDomNode node);
 	void drawPad(QDomNode node);

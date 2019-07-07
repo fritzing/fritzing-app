@@ -78,7 +78,7 @@ void ZoomLabel::setImages(const QString & normal, const QString & pressed)
 void ZoomLabel::repeat()
 {
 	if (m_mouseIsIn && m_mouseIsDown) {
-		m_repeated = true;	
+		m_repeated = true;
 		emit clicked();
 	}
 }
@@ -129,7 +129,7 @@ void ZoomLabel::mouseReleaseEvent(QMouseEvent * event)
 
 /////////////////////////////////////////////
 
-ZoomSlider::ZoomSlider(int maxValue, QWidget * parent) : QFrame(parent) 
+ZoomSlider::ZoomSlider(int maxValue, QWidget * parent) : QFrame(parent)
 {
 	// layout doesn't seem to work: the slider appears too far down in the status bar
 	// because the status bar layout is privileged for the message text
@@ -190,8 +190,8 @@ void ZoomSlider::loadFactors() {
 		QString line = stream.readLine();
 		if(lineNumber != 0) {
 			ZoomFactors << line.toDouble();
-		} 
-		else 
+		}
+		else
 		{
 			ZoomStep = line.toDouble();
 		}
@@ -256,7 +256,7 @@ void ZoomSlider::sliderTextEdited(const QString & newText) {
 	sliderTextEdited(newText, true);
 }
 
-void ZoomSlider::sliderTextEdited(const QString & newText, bool doEmit) 
+void ZoomSlider::sliderTextEdited(const QString & newText, bool doEmit)
 {
 	int value = newText.toInt();
 	if (m_slider->value() != value) {
@@ -275,7 +275,7 @@ void ZoomSlider::zoomOut () {
 	minusClicked();
 }
 
-void ZoomSlider::showEvent(QShowEvent * event) 
+void ZoomSlider::showEvent(QShowEvent * event)
 {
 	// can't get QHLayout to work, so shoving widgets into place here
 	// because widths aren't set at constructor time

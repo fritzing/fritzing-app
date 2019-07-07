@@ -30,10 +30,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class SchematicRectConstants {
 
 public:
-    static const double PinWidth;  
+    static const double PinWidth;
     static const double PinSmallTextHeight;
     static const double PinBigTextHeight;
-    static const double PinTextIndent;   
+    static const double PinTextIndent;
     static const double PinTextVert;
     static const double PinSmallTextVert;
     static const double LabelTextHeight;
@@ -46,13 +46,13 @@ public:
     static const QString RectStrokeColor;
     static const QString RectFillColor;
 
-    static const double NewUnit;     
+    static const double NewUnit;
 
     static const QString FontFamily;
 
 public:
     static QString genSchematicDIP(QList<QDomElement> & powers, QList<QDomElement> & grounds, QList<QDomElement> & lefts,
-	            QList<QDomElement> & rights, QList<QDomElement> & vias, QStringList & busNames, 
+	            QList<QDomElement> & rights, QList<QDomElement> & vias, QStringList & busNames,
                 QString & boardName, bool usingParam, bool genericSMD, QString (*getConnectorName)(const QDomElement &));
     static QString simpleGetConnectorName(const QDomElement & element);
 

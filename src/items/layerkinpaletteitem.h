@@ -28,7 +28,7 @@ class LayerKinPaletteItem : public PaletteItemBase
 {
 Q_OBJECT
 
-public:       
+public:
 	LayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
 	void setOffset(double x, double y);
 	ItemBase * layerKinChief();
@@ -79,7 +79,7 @@ class SchematicTextLayerKinPaletteItem : public LayerKinPaletteItem
 {
 Q_OBJECT
 
-public:       
+public:
 	SchematicTextLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
 
     void transformItem(const QTransform &, bool includeRatsnest);
@@ -87,7 +87,7 @@ public:
     void setTransform2(const QTransform &);
 
 public:
-    static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix &, QRectF & viewBox); 
+    static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix &, QRectF & viewBox);
 
 protected:
     QString makeFlipTextSvg();

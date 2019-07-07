@@ -136,7 +136,7 @@ const QUndoCommand * BaseCommand::parentCommand() const {
 }
 
 void BaseCommand::subUndo() {
-	for (int i = m_commands.count() - 1; i >= 0; i--) { 
+	for (int i = m_commands.count() - 1; i >= 0; i--) {
 		m_commands[i]->undo();
 	}
 }
@@ -195,7 +195,7 @@ int BaseCommand::totalChildCount(const QUndoCommand * command) {
 AddDeleteItemCommand::AddDeleteItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QUndoCommand *parent)
     : BaseCommand(crossViewType, sketchWidget, parent)
 {
- 	m_dropOrigin = NULL;
+	m_dropOrigin = NULL;
     m_moduleID = moduleID;
     m_viewGeometry = viewGeometry;
     m_itemID = id;
@@ -204,7 +204,7 @@ AddDeleteItemCommand::AddDeleteItemCommand(SketchWidget* sketchWidget, BaseComma
 }
 
 QString AddDeleteItemCommand::getParamString() const {
-	return BaseCommand::getParamString() + 
+	return BaseCommand::getParamString() +
 		QString(" moduleid:%1 id:%2 modelindex:%3 flags:%4")
 		.arg(m_moduleID)
 		.arg(m_itemID)
@@ -304,8 +304,8 @@ void MoveItemCommand::redo()
 }
 
 QString MoveItemCommand::getParamString() const {
-	return QString("MoveItemCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("MoveItemCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" id:%1 old.x:%2 old.y:%3 old.px:%4 old.py:%5 new.x:%6 new.y:%7 new.px:%8 new.py:%9")
 		.arg(m_itemID)
 		.arg(m_old.loc().x())
@@ -313,7 +313,7 @@ QString MoveItemCommand::getParamString() const {
 		.arg(m_old.line().p2().x())
 		.arg(m_old.line().p2().y())
 		.arg(m_new.loc().x())
-		.arg(m_new.loc().y())		
+		.arg(m_new.loc().y())
 		.arg(m_new.line().p2().x())
 		.arg(m_new.line().p2().y())
 		;
@@ -342,14 +342,14 @@ void SimpleMoveItemCommand::redo()
 }
 
 QString SimpleMoveItemCommand::getParamString() const {
-	return QString("SimpleMoveItemCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("SimpleMoveItemCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" id:%1 old.x:%2 old.y:%3 new.x:%4 new.y:%5")
 		.arg(m_itemID)
 		.arg(m_old.x())
 		.arg(m_old.y())
 		.arg(m_new.x())
-		.arg(m_new.y())		
+		.arg(m_new.y())
 		;
 }
 
@@ -398,8 +398,8 @@ void MoveItemsCommand::addItem(long id, const QPointF & oldPos, const QPointF & 
 }
 
 QString MoveItemsCommand::getParamString() const {
-	return QString("MoveItemsCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("MoveItemsCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" items:%1 wires:%2")
 		.arg(m_items.count())
 		.arg(m_wires.count())
@@ -428,8 +428,8 @@ void RotateItemCommand::redo()
 }
 
 QString RotateItemCommand::getParamString() const {
-	return QString("RotateItemCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("RotateItemCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" id:%1 by:%2")
 		.arg(m_itemID)
 		.arg(m_degrees);
@@ -458,8 +458,8 @@ void FlipItemCommand::redo()
 
 
 QString FlipItemCommand::getParamString() const {
-	return QString("FlipItemCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("FlipItemCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" id:%1 by:%2")
 		.arg(m_itemID)
 		.arg(m_orientation);
@@ -510,8 +510,8 @@ void ChangeConnectionCommand::disable() {
 }
 
 QString ChangeConnectionCommand::getParamString() const {
-	return QString("ChangeConnectionCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("ChangeConnectionCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 connid:%2 toid:%3 connid:%4 vlspec:%5 connect:%6")
 		.arg(m_fromID)
 		.arg(m_fromConnectorID)
@@ -525,7 +525,7 @@ QString ChangeConnectionCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ChangeWireCommand::ChangeWireCommand(SketchWidget* sketchWidget, long fromID,
-									 const QLineF & oldLine, const QLineF & newLine, QPointF oldPos, QPointF newPos, 
+									 const QLineF & oldLine, const QLineF & newLine, QPointF oldPos, QPointF newPos,
 									 bool updateConnections, bool updateRatsnest,
 									 QUndoCommand *parent)
     : BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
@@ -556,14 +556,14 @@ void ChangeWireCommand::redo()
 }
 
 QString ChangeWireCommand::getParamString() const {
-	return QString("ChangeWireCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("ChangeWireCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 oldp:%2,%3 newP:%4,%5 oldr:%7,%8,%9,%10 newr:%11,%12,%13,%14")
 		.arg(m_fromID)
 		.arg(m_oldPos.x()).arg(m_oldPos.y())
 		.arg(m_newPos.x()).arg(m_newPos.y())
-		.arg(m_oldLine.x1()).arg(m_oldLine.y1()).arg(m_oldLine.x2()).arg(m_oldLine.y2())		
-		.arg(m_newLine.x1()).arg(m_newLine.y1()).arg(m_newLine.x2()).arg(m_newLine.y2())		
+		.arg(m_oldLine.x1()).arg(m_oldLine.y1()).arg(m_oldLine.x2()).arg(m_oldLine.y2())
+		.arg(m_newLine.x1()).arg(m_newLine.y1()).arg(m_newLine.x2()).arg(m_newLine.y2())
 		;
 }
 
@@ -620,8 +620,8 @@ QString ChangeWireCurveCommand::getParamString() const {
 		newBezier += QString("(%1,%2)").arg(m_newBezier->cp1().x()).arg(m_newBezier->cp1().y());
 	}
 
-	return QString("ChangeWireCurveCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("ChangeWireCurveCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 oldp:%2 newp:%3")
 		.arg(m_fromID)
 		.arg(oldBezier)
@@ -682,8 +682,8 @@ QString ChangeLegCommand::getParamString() const {
 	foreach (QPointF p, m_newLeg) {
 		newLeg += QString("(%1,%2)").arg(p.x()).arg(p.y());
 	}
-	return QString("ChangeLegCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("ChangeLegCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 fromc:%2 %3 old:%4 new:%5")
 		.arg(m_fromID)
 		.arg(m_fromConnectorID)
@@ -724,8 +724,8 @@ void MoveLegBendpointCommand::redo()
 
 QString MoveLegBendpointCommand::getParamString() const {
 
-	return QString("MoveLegBendpointCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("MoveLegBendpointCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 fromc:%2 ix:%3 old:%4,%5 new:%6,%7")
 		.arg(m_fromID)
 		.arg(m_fromConnectorID)
@@ -787,8 +787,8 @@ QString ChangeLegCurveCommand::getParamString() const {
 		newBezier += QString("(%1,%2)").arg(m_newBezier->cp1().x()).arg(m_newBezier->cp1().y());
 	}
 
-	return QString("ChangeLegCurveCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("ChangeLegCurveCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 oldp:%2 newp:%3")
 		.arg(m_fromID)
 		.arg(oldBezier)
@@ -798,7 +798,7 @@ QString ChangeLegCurveCommand::getParamString() const {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ChangeLegBendpointCommand::ChangeLegBendpointCommand(SketchWidget* sketchWidget, long fromID, const QString & connectorID, 
+ChangeLegBendpointCommand::ChangeLegBendpointCommand(SketchWidget* sketchWidget, long fromID, const QString & connectorID,
 									int oldCount, int newCount, int index, QPointF pos,
 									const Bezier * bezier0, const Bezier * bezier1, const Bezier * bezier2, QUndoCommand *parent)
     : BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
@@ -859,8 +859,8 @@ QString ChangeLegBendpointCommand::getParamString() const {
 		bezier += QString("(%1,%2)").arg(m_bezier0->cp1().x()).arg(m_bezier0->cp1().y());
 	}
 
-	return QString("ChangeLegBendpointCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("ChangeLegBendpointCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 newp:%2")
 		.arg(m_fromID)
 		.arg(bezier)
@@ -896,8 +896,8 @@ QString RotateLegCommand::getParamString() const {
 	foreach (QPointF p, m_oldLeg) {
 		oldLeg += QString("(%1,%2)").arg(p.x()).arg(p.y());
 	}
-	return QString("RotateLegCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("RotateLegCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 fromc:%2 old:%3")
 		.arg(m_fromID)
 		.arg(m_fromConnectorID)
@@ -908,9 +908,9 @@ QString RotateLegCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ChangeLayerCommand::ChangeLayerCommand(SketchWidget *sketchWidget, long fromID,
-									double oldZ, double newZ, 
+									double oldZ, double newZ,
 									ViewLayer::ViewLayerID oldLayer, ViewLayer::ViewLayerID newLayer,
-    								QUndoCommand *parent)
+								QUndoCommand *parent)
     : BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
     m_fromID = fromID;
@@ -933,14 +933,14 @@ void ChangeLayerCommand::redo()
 }
 
 QString ChangeLayerCommand::getParamString() const {
-	return QString("ChangeLayerCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("ChangeLayerCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 oldZ:%2 newZ:%3 oldL:%4 newL:%5")
 		.arg(m_fromID)
 		.arg(m_oldZ)
 		.arg(m_newZ)
-		.arg(m_oldLayer)		
-		.arg(m_newLayer)		
+		.arg(m_oldLayer)
+		.arg(m_newLayer)
 		;
 }
 
@@ -962,17 +962,17 @@ void SelectItemCommand::setSelectItemType(SelectItemType type) {
 }
 
 void SelectItemCommand::copyUndo(SelectItemCommand * sother) {
-   	this->m_undoIDs.clear();
-   	for (int i = 0; i < sother->m_undoIDs.size(); i++) {
-   		this->m_undoIDs.append(sother->m_undoIDs[i]);
-  	}
+	this->m_undoIDs.clear();
+	for (int i = 0; i < sother->m_undoIDs.size(); i++) {
+		this->m_undoIDs.append(sother->m_undoIDs[i]);
+	}
 }
 
 void SelectItemCommand::copyRedo(SelectItemCommand * sother) {
-   	this->m_redoIDs.clear();
-   	for (int i = 0; i < sother->m_redoIDs.size(); i++) {
-   		this->m_redoIDs.append(sother->m_redoIDs[i]);
-  	}
+	this->m_redoIDs.clear();
+	for (int i = 0; i < sother->m_redoIDs.size(); i++) {
+		this->m_redoIDs.append(sother->m_redoIDs[i]);
+	}
 }
 
 void SelectItemCommand::clearRedo() {
@@ -985,7 +985,7 @@ bool SelectItemCommand::mergeWith(const QUndoCommand *other)
 
     if (other->id() != id()) {
         return false;
-   	}
+	}
 
     const SelectItemCommand * sother = dynamic_cast<const SelectItemCommand *>(other);
     if (sother == NULL) return false;
@@ -994,12 +994,12 @@ bool SelectItemCommand::mergeWith(const QUndoCommand *other)
 		return false;
 	}
 
-   	this->m_redoIDs.clear();
-   	for (int i = 0; i < sother->m_redoIDs.size(); i++) {
-   		this->m_redoIDs.append(sother->m_redoIDs[i]);
-  	}
+	this->m_redoIDs.clear();
+	for (int i = 0; i < sother->m_redoIDs.size(); i++) {
+		this->m_redoIDs.append(sother->m_redoIDs[i]);
+	}
 
-  	this->setText(sother->text());
+	this->setText(sother->text());
     return true;
 }
 
@@ -1018,11 +1018,11 @@ void SelectItemCommand::redo()
 		case NormalDeselect:
 			selectAllFromStack(m_redoIDs, false, false);
 			break;
-		case SelectAll: 
-			m_sketchWidget->selectAllItems(true, m_crossViewType == BaseCommand::CrossView); 
+		case SelectAll:
+			m_sketchWidget->selectAllItems(true, m_crossViewType == BaseCommand::CrossView);
 			break;
-		case DeselectAll: 
-			m_sketchWidget->selectAllItems(false, m_crossViewType == BaseCommand::CrossView); 
+		case DeselectAll:
+			m_sketchWidget->selectAllItems(false, m_crossViewType == BaseCommand::CrossView);
 			break;
 	}
     BaseCommand::redo();
@@ -1046,8 +1046,8 @@ void SelectItemCommand::addRedo(long id) {
 }
 
 QString SelectItemCommand::getParamString() const {
-	return QString("SelectItemCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("SelectItemCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" type:%1")
 		.arg(m_type);
 }
@@ -1101,7 +1101,7 @@ double ChangeZCommand::second(RealPair * pair) {
 }
 
 QString ChangeZCommand::getParamString() const {
-	return QString("ChangeZCommand ") 
+	return QString("ChangeZCommand ")
 		+ BaseCommand::getParamString();
 }
 
@@ -1156,9 +1156,9 @@ void CheckStickyCommand::redo()
 }
 
 QString CheckStickyCommand::getParamString() const {
-	return QString("CheckStickyCommand ") 
+	return QString("CheckStickyCommand ")
 		+ BaseCommand::getParamString()
-		+ QString("id:%1") 
+		+ QString("id:%1")
 			.arg(this->m_stickyList.count());
 }
 
@@ -1190,7 +1190,7 @@ void CleanUpWiresCommand::undo()
 	}
 
 	if (m_direction == UndoOnly) {
-		m_sketchWidget->cleanUpWires(m_crossViewType == BaseCommand::CrossView, NULL);  
+		m_sketchWidget->cleanUpWires(m_crossViewType == BaseCommand::CrossView, NULL);
 	}
     BaseCommand::undo();
 }
@@ -1206,7 +1206,7 @@ void CleanUpWiresCommand::redo()
 	}
 
 	if (m_direction == RedoOnly) {
-		m_sketchWidget->cleanUpWires(m_crossViewType == BaseCommand::CrossView, this);  
+		m_sketchWidget->cleanUpWires(m_crossViewType == BaseCommand::CrossView, this);
 	}
     BaseCommand::redo();
 }
@@ -1236,7 +1236,7 @@ CleanUpWiresCommand::Direction CleanUpWiresCommand::direction()
 	return m_direction;
 }
 
-void CleanUpWiresCommand::addTrace(SketchWidget * sketchWidget, Wire * wire) 
+void CleanUpWiresCommand::addTrace(SketchWidget * sketchWidget, Wire * wire)
 {
 	if (m_parentCommand) {
 		for (int i = 0; i < m_parentCommand->childCount(); i++) {
@@ -1245,7 +1245,7 @@ void CleanUpWiresCommand::addTrace(SketchWidget * sketchWidget, Wire * wire)
 			if (command == NULL) continue;
 			if (command->itemID() == wire->id()) {
 				return;
-			}		
+			}
 		}
 	}
 
@@ -1253,16 +1253,16 @@ void CleanUpWiresCommand::addTrace(SketchWidget * sketchWidget, Wire * wire)
 
 	addSubCommand(new WireColorChangeCommand(sketchWidget, wire->id(), wire->colorString(), wire->colorString(), wire->opacity(), wire->opacity(), NULL));
 	addSubCommand(new WireWidthChangeCommand(sketchWidget, wire->id(), wire->width(), wire->width(), NULL));
-	
-	foreach (ConnectorItem * toConnectorItem, wire->connector0()->connectedToItems()) {	
+
+	foreach (ConnectorItem * toConnectorItem, wire->connector0()->connectedToItems()) {
 		addSubCommand(new ChangeConnectionCommand(sketchWidget, BaseCommand::CrossView, toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
-								wire->id(), "connector0", 
+								wire->id(), "connector0",
 								ViewLayer::specFromID(wire->viewLayerID()),
 								false, NULL));
 	}
-	foreach (ConnectorItem * toConnectorItem, wire->connector1()->connectedToItems()) {	
+	foreach (ConnectorItem * toConnectorItem, wire->connector1()->connectedToItems()) {
 		addSubCommand(new ChangeConnectionCommand(sketchWidget, BaseCommand::CrossView, toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
-							wire->id(), "connector1", 
+							wire->id(), "connector1",
 							ViewLayer::specFromID(wire->viewLayerID()),
 							false, NULL));
 	}
@@ -1275,7 +1275,7 @@ bool CleanUpWiresCommand::hasTraces(SketchWidget * sketchWidget) {
 }
 
 QString CleanUpWiresCommand::getParamString() const {
-	return QString("CleanUpWiresCommand ") 
+	return QString("CleanUpWiresCommand ")
 		+ BaseCommand::getParamString()
 		+ QString(" direction %1").arg(m_direction);
 }
@@ -1292,7 +1292,7 @@ CleanUpRatsnestsCommand::CleanUpRatsnestsCommand(SketchWidget* sketchWidget, Cle
 void CleanUpRatsnestsCommand::undo()
 {
 	if (m_undoOnly) {
-		m_sketchWidget->cleanupRatsnests(true);  
+		m_sketchWidget->cleanupRatsnests(true);
 	}
     BaseCommand::undo();
 }
@@ -1300,13 +1300,13 @@ void CleanUpRatsnestsCommand::undo()
 void CleanUpRatsnestsCommand::redo()
 {
 	if (m_redoOnly) {
-		m_sketchWidget->cleanupRatsnests(true);  
+		m_sketchWidget->cleanupRatsnests(true);
 	}
     BaseCommand::redo();
 }
 
 QString CleanUpRatsnestsCommand::getParamString() const {
-	return QString("CleanUpRatsnestsCommand ") 
+	return QString("CleanUpRatsnestsCommand ")
 		+ BaseCommand::getParamString()
     ;
 }
@@ -1334,9 +1334,9 @@ void WireColorChangeCommand::redo() {
 }
 
 QString WireColorChangeCommand::getParamString() const {
-	return QString("WireColorChangeCommand ") 
+	return QString("WireColorChangeCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 oldcolor:%2 oldop:%3 newcolor:%4 newop:%5") 
+		+ QString(" id:%1 oldcolor:%2 oldop:%3 newcolor:%4 newop:%5")
 			.arg(m_wireId).arg(m_oldColor).arg(m_oldOpacity).arg(m_newColor).arg(m_newOpacity);
 
 }
@@ -1363,16 +1363,16 @@ void WireWidthChangeCommand::redo() {
 
 
 QString WireWidthChangeCommand::getParamString() const {
-	return QString("WireWidthChangeCommand ") 
+	return QString("WireWidthChangeCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 oldw:%2 neww:%3") 
+		+ QString(" id:%1 oldw:%2 neww:%3")
 			.arg(m_wireId).arg(m_oldWidth).arg(m_newWidth);
 
 }
 
 ///////////////////////////////////////////
 
-RoutingStatusCommand::RoutingStatusCommand(SketchWidget * sketchWidget, const RoutingStatus & oldRoutingStatus, const RoutingStatus & newRoutingStatus, QUndoCommand * parent)												
+RoutingStatusCommand::RoutingStatusCommand(SketchWidget * sketchWidget, const RoutingStatus & oldRoutingStatus, const RoutingStatus & newRoutingStatus, QUndoCommand * parent)
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
 	m_oldRoutingStatus = oldRoutingStatus;
@@ -1390,9 +1390,9 @@ void RoutingStatusCommand::redo() {
 }
 
 QString RoutingStatusCommand::getParamString() const {
-	return QString("RoutingStatusCommand ") 
+	return QString("RoutingStatusCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" oldnet:%1 oldnetrouted:%2 oldconnectors:%3 oldjumpers:%4 newnet:%51 newnetrouted:%6 newconnectors:%7 newjumpers:%8 ") 
+		+ QString(" oldnet:%1 oldnetrouted:%2 oldconnectors:%3 oldjumpers:%4 newnet:%51 newnetrouted:%6 newconnectors:%7 newjumpers:%8 ")
 			.arg(m_oldRoutingStatus.m_netCount).arg(m_oldRoutingStatus.m_netRoutedCount).arg(m_oldRoutingStatus.m_connectorsLeftToRoute).arg(m_oldRoutingStatus.m_jumperItemCount)
 			.arg(m_newRoutingStatus.m_netCount).arg(m_newRoutingStatus.m_netRoutedCount).arg(m_newRoutingStatus.m_connectorsLeftToRoute).arg(m_newRoutingStatus.m_jumperItemCount);
 
@@ -1420,9 +1420,9 @@ void ShowLabelFirstTimeCommand::redo()
 }
 
 QString ShowLabelFirstTimeCommand::getParamString() const {
-	return QString("ShowLabelFirstTimeCommand ") 
+	return QString("ShowLabelFirstTimeCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 %2 %3") 
+		+ QString(" id:%1 %2 %3")
 			.arg(m_itemID).arg(m_oldVis).arg(m_newVis);
 
 }
@@ -1449,9 +1449,9 @@ void RestoreLabelCommand::redo()
 }
 
 QString RestoreLabelCommand::getParamString() const {
-	return QString("RestoreLabelCommand ") 
+	return QString("RestoreLabelCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1") 
+		+ QString(" id:%1")
 			.arg(m_itemID);
 
 }
@@ -1482,9 +1482,9 @@ void MoveLabelCommand::redo()
 
 
 QString MoveLabelCommand::getParamString() const {
-	return QString("MoveLabelCommand ") 
+	return QString("MoveLabelCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1") 
+		+ QString(" id:%1")
 			.arg(m_itemID);
 
 }
@@ -1513,9 +1513,9 @@ void MoveLockCommand::redo()
 
 
 QString MoveLockCommand::getParamString() const {
-	return QString("MoveLockCommand ") 
+	return QString("MoveLockCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 o:%2 n:%3") 
+		+ QString(" id:%1 o:%2 n:%3")
 			.arg(m_itemID)
 			.arg(m_oldLock)
 			.arg(m_newLock);
@@ -1524,8 +1524,8 @@ QString MoveLockCommand::getParamString() const {
 
 ///////////////////////////////////////////////
 
-ChangeLabelTextCommand::ChangeLabelTextCommand(SketchWidget *sketchWidget, long id, 
-											   const QString & oldText, const QString & newText, 
+ChangeLabelTextCommand::ChangeLabelTextCommand(SketchWidget *sketchWidget, long id,
+											   const QString & oldText, const QString & newText,
 											   QUndoCommand *parent)
 	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
 {
@@ -1545,9 +1545,9 @@ void ChangeLabelTextCommand::redo() {
 }
 
 QString ChangeLabelTextCommand::getParamString() const {
-	return QString("ChangeLabelTextCommand ") 
+	return QString("ChangeLabelTextCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 old:%2 new:%3") 
+		+ QString(" id:%1 old:%2 new:%3")
 			.arg(m_itemID).arg(m_oldText).arg(m_newText);
 
 }
@@ -1560,7 +1560,7 @@ IncLabelTextCommand::IncLabelTextCommand(SketchWidget *sketchWidget, long id,  Q
     m_itemID = id;
 }
 
-void IncLabelTextCommand::undo() { 
+void IncLabelTextCommand::undo() {
 	// only used when creating new parts via paste
     BaseCommand::undo();
 }
@@ -1573,15 +1573,15 @@ void IncLabelTextCommand::redo() {
 }
 
 QString IncLabelTextCommand::getParamString() const {
-	return QString("IncLabelTextCommand ") 
+	return QString("IncLabelTextCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1") 
+		+ QString(" id:%1")
 			.arg(m_itemID);
 
 }///////////////////////////////////////////////
 
-ChangeNoteTextCommand::ChangeNoteTextCommand(SketchWidget *sketchWidget, long id, 
-											   const QString & oldText, const QString & newText, 
+ChangeNoteTextCommand::ChangeNoteTextCommand(SketchWidget *sketchWidget, long id,
+											   const QString & oldText, const QString & newText,
 											   QSizeF oldSize, QSizeF newSize, QUndoCommand *parent)
 	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
 {
@@ -1623,7 +1623,7 @@ bool ChangeNoteTextCommand::mergeWith(const QUndoCommand *other)
 
     if (other->id() != id()) {
         return false;
-   	}
+	}
 
     const ChangeNoteTextCommand * sother = dynamic_cast<const ChangeNoteTextCommand *>(other);
     if (sother == NULL) return false;
@@ -1639,9 +1639,9 @@ bool ChangeNoteTextCommand::mergeWith(const QUndoCommand *other)
 }
 
 QString ChangeNoteTextCommand::getParamString() const {
-	return QString("ChangeNoteTextCommand ") 
+	return QString("ChangeNoteTextCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 old:%2 new:%3") 
+		+ QString(" id:%1 old:%2 new:%3")
 			.arg(m_itemID).arg(m_oldText).arg(m_newText);
 
 }
@@ -1669,9 +1669,9 @@ void RotateFlipLabelCommand::redo()
 }
 
 QString RotateFlipLabelCommand::getParamString() const {
-	return QString("RotateFlipLabelCommand ") 
+	return QString("RotateFlipLabelCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 degrees:%2 orientation:%3") 
+		+ QString(" id:%1 degrees:%2 orientation:%3")
 			.arg(m_itemID).arg(m_degrees).arg(m_orientation);
 
 }
@@ -1699,9 +1699,9 @@ void ResizeNoteCommand::redo()
 }
 
 QString ResizeNoteCommand::getParamString() const {
-	return QString("ResizeNoteCommand ") 
+	return QString("ResizeNoteCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 oldsz:%2 %3 newsz:%4 %5") 
+		+ QString(" id:%1 oldsz:%2 %3 newsz:%4 %5")
 			.arg(m_itemID).arg(m_oldSize.width()).arg(m_oldSize.height()).arg(m_newSize.width()).arg(m_newSize.height());
 
 }
@@ -1735,8 +1735,8 @@ void ResizeBoardCommand::redo() {
 
 QString ResizeBoardCommand::getParamString() const {
 
-	return QString("ResizeBoardCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("ResizeBoardCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" id:%1 ow:%2 oh:%3 nw:%4 nh:%5")
 		.arg(m_itemID)
 		.arg(m_oldWidth)
@@ -1768,8 +1768,8 @@ void TransformItemCommand::redo()
 }
 
 QString TransformItemCommand::getParamString() const {
-	return QString("TransformItemCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("TransformItemCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" id:%1")
 		.arg(m_itemID);
 }
@@ -1798,8 +1798,8 @@ void SetResistanceCommand::redo() {
 
 QString SetResistanceCommand::getParamString() const {
 
-	return QString("SetResistanceCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("SetResistanceCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" id:%1 ov:%2 nv:%3")
 		.arg(m_itemID)
 		.arg(m_oldResistance)
@@ -1830,8 +1830,8 @@ void SetPropCommand::redo() {
 
 QString SetPropCommand::getParamString() const {
 
-	return QString("SetPropCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("SetPropCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" id:%1 p:%2 o:%3 n:%4")
 		.arg(m_itemID)
 		.arg(m_prop)
@@ -1865,8 +1865,8 @@ void ResizeJumperItemCommand::redo() {
 
 QString ResizeJumperItemCommand::getParamString() const {
 
-	return QString("ResizeJumperItemCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("ResizeJumperItemCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" id:%1 op:%2,%3 oc0:%4,%5 oc1:%6,%7 np:%8,%9 nc0:%10,%11 nc1:%12,%13")
 		.arg(m_itemID)
 		.arg(m_oldPos.x()).arg(m_oldPos.y())
@@ -1880,7 +1880,7 @@ QString ResizeJumperItemCommand::getParamString() const {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ShowLabelCommand::ShowLabelCommand(class SketchWidget *sketchWidget, QUndoCommand *parent) 
+ShowLabelCommand::ShowLabelCommand(class SketchWidget *sketchWidget, QUndoCommand *parent)
 : BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
 }
@@ -1912,14 +1912,14 @@ void ShowLabelCommand::add(long id, bool prev, bool post)
 
 QString ShowLabelCommand::getParamString() const {
 
-	return QString("ShowLabelCommand ") 
+	return QString("ShowLabelCommand ")
 		+ BaseCommand::getParamString();
 }
 
 ///////////////////////////////////////////////
 
-LoadLogoImageCommand::LoadLogoImageCommand(SketchWidget *sketchWidget, long id, 
-											   const QString & oldSvg, const QSizeF oldAspectRatio, const QString & oldFilename, 
+LoadLogoImageCommand::LoadLogoImageCommand(SketchWidget *sketchWidget, long id,
+											   const QString & oldSvg, const QSizeF oldAspectRatio, const QString & oldFilename,
 											   const QString & newFilename, bool addName, QUndoCommand *parent)
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
@@ -1948,9 +1948,9 @@ void LoadLogoImageCommand::redo() {
 }
 
 QString LoadLogoImageCommand::getParamString() const {
-	return QString("LoadLogoImageCommand ") 
+	return QString("LoadLogoImageCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 old:%2 new:%3") 
+		+ QString(" id:%1 old:%2 new:%3")
 			.arg(m_itemID).arg(m_oldFilename).arg(m_newFilename);
 
 }
@@ -1981,9 +1981,9 @@ void ChangeBoardLayersCommand::redo() {
 }
 
 QString ChangeBoardLayersCommand::getParamString() const {
-	return QString("ChangeBoardLayersCommand ") 
+	return QString("ChangeBoardLayersCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" old:%1 new:%2") 
+		+ QString(" old:%1 new:%2")
 			.arg(m_oldLayers).arg(m_newLayers);
 
 }
@@ -1998,7 +1998,7 @@ SetDropOffsetCommand::SetDropOffsetCommand(SketchWidget *sketchWidget, long id, 
 	m_dropOffset = dropOffset;
 }
 
-void SetDropOffsetCommand::undo() { 
+void SetDropOffsetCommand::undo() {
 	// only used when creating new parts
     BaseCommand::undo();
 }
@@ -2010,9 +2010,9 @@ void SetDropOffsetCommand::redo() {
 }
 
 QString SetDropOffsetCommand::getParamString() const {
-	return QString("SetDropOffsetCommand ") 
+	return QString("SetDropOffsetCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 %2,%3") 
+		+ QString(" id:%1 %2,%3")
 			.arg(m_itemID).arg(m_dropOffset.x()).arg(m_dropOffset.y());
 
 }
@@ -2039,9 +2039,9 @@ void RenamePinsCommand::redo() {
 }
 
 QString RenamePinsCommand::getParamString() const {
-	return QString("RenamePinsCommand ") 
+	return QString("RenamePinsCommand ")
 		+ BaseCommand::getParamString()
-		+ QString(" id:%1 sr:%2") 
+		+ QString(" id:%1 sr:%2")
 			.arg(m_itemID).arg(m_singleRow);
 
 }
@@ -2080,8 +2080,8 @@ void GroundFillSeedCommand::addItem(long id, const QString & connectorID, bool s
 }
 
 QString GroundFillSeedCommand::getParamString() const {
-	return QString("GroundFillSeedCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("GroundFillSeedCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" items:%1")
 		.arg(m_items.count())
 		;
@@ -2117,8 +2117,8 @@ void WireExtrasCommand::redo()
 }
 
 QString WireExtrasCommand::getParamString() const {
-	return QString("WireExtrasCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("WireExtrasCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 ")
 		.arg(m_fromID)
 		;
@@ -2128,7 +2128,7 @@ QString WireExtrasCommand::getParamString() const {
 
 HidePartLayerCommand::HidePartLayerCommand(SketchWidget *sketchWidget, long fromID,
 									ViewLayer::ViewLayerID layerID, bool wasHidden, bool isHidden,
-    								QUndoCommand *parent)
+								QUndoCommand *parent)
     : BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
     m_fromID = fromID;
@@ -2150,13 +2150,13 @@ void HidePartLayerCommand::redo()
 }
 
 QString HidePartLayerCommand::getParamString() const {
-	return QString("HidePartLayerCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("HidePartLayerCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" fromid:%1 l:%2 was:%3 is:%4")
 		.arg(m_fromID)
 		.arg(m_layerID)
 		.arg(m_wasHidden)
-		.arg(m_isHidden)				
+		.arg(m_isHidden)
 		;
 }
 
@@ -2187,11 +2187,11 @@ void AddSubpartCommand::redo()
 }
 
 QString AddSubpartCommand::getParamString() const {
-	return QString("AddSubpartCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("AddSubpartCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" id:%1 subpart id:%2")
 		.arg(m_itemID)
-		.arg(m_subpartItemID)	
+		.arg(m_subpartItemID)
 		;
 }
 
@@ -2221,11 +2221,11 @@ void PackItemsCommand::redo()
 }
 
 QString PackItemsCommand::getParamString() const {
-	return QString("PackItemsCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("PackItemsCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" columns:%1 count:%2")
 		.arg(m_columns)
-		.arg(m_ids.count())	
+		.arg(m_ids.count())
 		;
 }
 
@@ -2247,4 +2247,3 @@ void TemporaryCommand::setEnabled(bool enabled) {
          QUndoCommand::redo();
      }
 }
-

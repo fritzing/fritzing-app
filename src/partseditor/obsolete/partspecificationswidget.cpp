@@ -68,4 +68,3 @@ QSize PartSpecificationsWidget::sizeHint() {
 	//return QSize(width(),600);
 	return QScrollArea::sizeHint();
 }
-

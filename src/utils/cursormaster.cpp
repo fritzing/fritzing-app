@@ -75,7 +75,7 @@ void CursorMaster::initCursors()
 		QStringList names;
 		QStringList masks;
 
-		names << ":resources/images/cursor/bendpoint.bmp" 
+		names << ":resources/images/cursor/bendpoint.bmp"
 			<< ":resources/images/cursor/new_bendpoint.bmp"
 			<< ":resources/images/cursor/make_wire.bmp"
 			<< ":resources/images/cursor/curve.bmp"
@@ -214,7 +214,7 @@ bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 		case QEvent::KeyRelease:
 			//scene = dynamic_cast<QGraphicsScene *>(object);
 			//DebugDialog::debug(QString("event filter %1").arg(object->metaObject()->className()));
-			//if (scene) 
+			//if (scene)
 			{
 				QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
 				foreach (QObject * listener, Listeners) {
@@ -227,7 +227,7 @@ bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 			break;
 /*
 		case QEvent::GraphicsSceneMouseMove:
-			
+
 			scene = dynamic_cast<QGraphicsScene *>(object);
 			if (scene) {
 				QGraphicsPixmapItem * pixmapItem = CursorItems.value(scene, NULL);
@@ -252,7 +252,7 @@ bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 		default:
 			break;
 	}
-	
+
 
 	return false;
 }

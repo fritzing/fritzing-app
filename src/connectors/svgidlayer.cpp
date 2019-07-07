@@ -85,4 +85,3 @@ void SvgIdLayer::setPointRect(ViewLayer::ViewLayerPlacement viewLayerPlacement, 
     m_pointRectTop.point = point;
     m_pointRectTop.rect = rect;
 }
-

@@ -27,9 +27,9 @@ class GroundPlane : public PaletteItem
 {
 
 public:
-	GroundPlane( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool doLabel); 
+	GroundPlane( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool doLabel);
 
- 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	void saveParams();
 	void getParams();
 	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
@@ -53,7 +53,7 @@ public:
 public:
 	static QString fillTypeIndividual;
 	static QString fillTypeGround;
-	static QString fillTypePlain;	
+	static QString fillTypePlain;
 	static QString fillTypeNone;
 
 protected:

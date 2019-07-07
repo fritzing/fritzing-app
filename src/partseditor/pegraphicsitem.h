@@ -31,7 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTime>
 #include <QBrush>
 
-class PEGraphicsItem : public QObject, public QGraphicsRectItem 
+class PEGraphicsItem : public QObject, public QGraphicsRectItem
 {
     Q_OBJECT
 public:

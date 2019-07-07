@@ -36,15 +36,15 @@ import valuesAndColors_forResistors
 help_message = """
 Usage:
 	resistorSetGenerator.py -s [Resistor Set] -o [Output Dir] -b [Existing Resistor Bin]
-	
+
 	Resistor Set          - the named set of standard resistors that should be generated
 					        Possible values are: E3, E6, E12, E24 for the E3Set, E6Set etc.
-					
+
 	Output Dir            - the location where the output files are written
-	
+
 	Existing Resistor Bin - the Fritzing bin file (.fzb) from which this script should try
 	                        to find the matching moduleID's. If no bin is given, all new
-	                        resistors with new moduleID's will be generated. 
+	                        resistors with new moduleID's will be generated.
 """
 
 
@@ -118,7 +118,7 @@ def getExistingResistorsFromBin(filename):
 	else:
 		print >> sys.stderr, "No Fritzing bin file: %s found" % (fileName)
 		sys.exit(2)
-	
+
 
 def writeOutFileInSubDirectoryWithData(outputDir,  subDirectory, fileName, data):
 	outputDir = os.path.join(outputDir, subDirectory)
@@ -136,12 +136,12 @@ def main(argv=None):
 			opts, args = getopt.getopt(argv[1:], "ho:s:b:", ["help", "output=", "set=", "bin="])
 		except getopt.error, msg:
 			raise Usage(msg)
-		
+
 		output = "."
 		verbose = False
 		namedSet = None
 		existingBin = None
-	
+
 		# option processing
 		for option, value in opts:
 			if option in ("-h", "--help"):
@@ -152,24 +152,24 @@ def main(argv=None):
 				namedSet = value
 			if option in ("-b", "--bin"):
 				existingBin = value
-		
+
 		if(not(namedSet) or not(output)):
 			# print >> sys.stderr, "No Resistor Set or Output Dir specified"
 			raise Usage("Error: No Resistor Set or Output Dir specified")
-		
+
 		config = ConfigParser.ConfigParser()
 		config.readfp(open(getConfigFile('defaults.cfg')))
-		
+
 		resistorSet = valuesAndColors_forResistors.resistorSetForSetName(namedSet)
 		print "number of resistors in set: %d" % (len(resistorSet))
-		
+
 		# Analyzing bin for existing resistor moduleID's
 		existingResistors = []
 		if existingBin:
 			print "analyzing bin for existing resistor moduleID's ..."
 			existingResistors = getExistingResistorsFromBin(existingBin)
 			existingResistorsValues = [r['value'] for r in existingResistors]
-			
+
 		resistorBin = []
 		skipThisResistor = False
 		for r in resistorSet:
@@ -177,7 +177,7 @@ def main(argv=None):
 			metaData = {}
 			resistorInBin = {}
 			resistanceString = valuesAndColors_forResistors.valueStringFromValue(r)
-			# check if this resistor doesn't have a moduleID already 
+			# check if this resistor doesn't have a moduleID already
 			if existingResistors and (resistanceString in existingResistorsValues):
 				if (not config.getboolean('ExistingResistors', 'regenerateExitsingParts')):
 					# Don't regnerate this resistor (leave it out the new set)
@@ -220,7 +220,7 @@ def main(argv=None):
 			sL['resistors'] = resistorBin
 			fzb = Template(file=getTemplatefile("bin_fzb.tmpl"), searchList = [sL])
 			writeOutFileInSubDirectoryWithData(output, "bin", "%sBin.fzb" % (namedSet), fzb)
-	
+
 	except Usage, err:
 		print >> sys.stderr, sys.argv[0].split("/")[-1] + ": " + str(err.msg)
 		print >> sys.stderr, "\t for help use --help"
@@ -229,4 +229,3 @@ def main(argv=None):
 
 if __name__ == "__main__":
 	sys.exit(main())
-	

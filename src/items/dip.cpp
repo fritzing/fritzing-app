@@ -103,7 +103,7 @@ QStringList Dip::collectValues(const QString & family, const QString & prop, QSt
 				values << QString::number(i);
 			}
 		}
-		
+
 		return values;
 	}
 
@@ -145,7 +145,7 @@ QString Dip::retrieveSchematicSvg(QString & svg) {
 	return TextUtils::replaceTextElement(svg, "label", m_chipLabel);
 }
 
-QString Dip::makeSchematicSvg(const QString & expectedFileName) 
+QString Dip::makeSchematicSvg(const QString & expectedFileName)
 {
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() != 5) return "";
@@ -156,11 +156,11 @@ QString Dip::makeSchematicSvg(const QString & expectedFileName)
 	for (int i = 0; i < pins; i++) {
 		labels << QString::number(i + 1);
 	}
-    
+
     if (expectedFileName.contains("sip", Qt::CaseInsensitive)) {
         if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
             return MysteryPart::obsoleteMakeSchematicSvg(labels, true);
-        }       
+        }
 
         return MysteryPart::makeSchematicSvg(labels, true);
     }
@@ -172,7 +172,7 @@ QString Dip::makeSchematicSvg(const QString & expectedFileName)
 	return makeSchematicSvg(labels);
 }
 
-QString Dip::makeSchematicSvg(const QStringList & labels) 
+QString Dip::makeSchematicSvg(const QStringList & labels)
 {
     QDomDocument fakeDoc;
 
@@ -195,10 +195,10 @@ QString Dip::makeSchematicSvg(const QStringList & labels)
     return SchematicRectConstants::genSchematicDIP(empty, empty, lefts, rights, empty, busNames, ic, false, false, SchematicRectConstants::simpleGetConnectorName);
 }
 
-QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels) 
+QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels)
 {
 	int pins = labels.count();
-	int increment = GraphicsUtils::StandardSchematicSeparationMils;  
+	int increment = GraphicsUtils::StandardSchematicSeparationMils;
 	int border = 30;
 	double totalHeight = (pins * increment / 2) + increment + border;
 	int pinWidth = increment + increment + border;
@@ -237,13 +237,13 @@ QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels)
 				.arg(centralWidth)
 				.arg(totalWidth / 2.0)
 				;
-  
+
 	QString repeatL("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='30' x1='15' y1='%1' x2='300' y2='%1'  />\n"
 					"<rect x='0' y='%2' fill='none' width='300' height='30' stroke='none' id='connector%3pin' stroke-width='0' />\n"
 					"<rect x='0' y='%2' fill='none' width='30' height='30' stroke='none' id='connector%3terminal' stroke-width='0' />\n"
 					"<text id='label%3' x='390' y='%4' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='start' font-size='%6' >%5</text>\n");
 
-	
+
 	QString repeatR("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='30' x1='%7' y1='%1' x2='%8' y2='%1'  />\n"
 					"<rect x='%9' y='%2' fill='none' width='300' height='30' id='connector%3pin' stroke='none' stroke-width='0' />\n"
 					"<rect x='%10' y='%2' fill='none' width='30' height='30' id='connector%3terminal' stroke='none' stroke-width='0' />\n"
@@ -265,7 +265,7 @@ QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels)
 				.arg(totalWidth - 15)
 				.arg(totalWidth - 300)
 				.arg(totalWidth - 30)
-				.arg(totalWidth - 390)								
+				.arg(totalWidth - 390)
 				;
 		y += increment;
 	}
@@ -275,15 +275,15 @@ QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels)
 
 	return svg;
 }
- 
-QString Dip::makeBreadboardSvg(const QString & expectedFileName) 
+
+QString Dip::makeBreadboardSvg(const QString & expectedFileName)
 {
 	if (expectedFileName.contains("_sip_")) return makeBreadboardSipSvg(expectedFileName);
 	if (expectedFileName.contains("_dip_")) return makeBreadboardDipSvg(expectedFileName);
 	return "";
 }
 
-QString Dip::makeBreadboardSipSvg(const QString & expectedFileName) 
+QString Dip::makeBreadboardSipSvg(const QString & expectedFileName)
 {
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() != 5) return "";
@@ -296,7 +296,7 @@ QString Dip::makeBreadboardSipSvg(const QString & expectedFileName)
 
 	QString repeat("<rect id='connector%1pin' x='[13.5]' y='25.66' fill='#8C8C8C' width='3' height='4.34'/>\n"
 					"<rect id='connector%1terminal' x='[13.5]' y='27.0' fill='#8C8C8C' width='3' height='3'/>\n"
-					"<polygon fill='#8C8C8C' points='[11.5],25.66 [11.5],26.74 [13.5],27.66 [16.5],27.66 [18.5],26.74 [18.5],25.66'/>\n"); 
+					"<polygon fill='#8C8C8C' points='[11.5],25.66 [11.5],26.74 [13.5],27.66 [16.5],27.66 [18.5],26.74 [18.5],25.66'/>\n");
 
 	QString repeats;
 	if (pins > 2) {
@@ -307,7 +307,7 @@ QString Dip::makeBreadboardSipSvg(const QString & expectedFileName)
 
 }
 
-QString Dip::makeBreadboardDipSvg(const QString & expectedFileName) 
+QString Dip::makeBreadboardDipSvg(const QString & expectedFileName)
 {
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() != 6) return "";
@@ -318,7 +318,7 @@ QString Dip::makeBreadboardDipSvg(const QString & expectedFileName)
 
 	QString repeatB("<rect id='connector%1pin' x='{13.5}' y='[28.66]' fill='#8C8C8C' width='3' height='4.34'/>\n"
 					"<rect id='connector%1terminal' x='{13.5}' y='[30.0]' fill='#8C8C8C' width='3' height='3'/>\n"
-					"<polygon fill='#8C8C8C' points='{11.5},[28.66] {11.5},[29.74] {13.5},[30.66] {16.5},[30.66] {18.5},[29.74] {18.5},[28.66]'/> \n"); 
+					"<polygon fill='#8C8C8C' points='{11.5},[28.66] {11.5},[29.74] {13.5},[30.66] {16.5},[30.66] {18.5},[29.74] {18.5},[28.66]'/> \n");
 
 	QString repeatT("<rect id='connector%1pin' x='[13.5]' y='0' fill='#8C8C8C' width='3' height='4.34'/>\n"
 					"<rect id='connector%1terminal' x='[13.5]' fill='#8C8C8C' width='3' height='3'/>\n"
@@ -351,11 +351,11 @@ QString Dip::makeBreadboardDipSvg(const QString & expectedFileName)
 					"<rect id='connector%3pin' x='{13.5}' y='[28.66]' fill='#8C8C8C' width='3' height='4.34'/>\n"
 					"<rect id='connector%3terminal' x='{13.5}' y='[30.0]' fill='#8C8C8C' width='3' height='3'/>\n"
 					"<polygon fill='#8C8C8C' points='{11.5},[28.66] {11.5},[29.74] {13.5},[30.66] {16.5},[30.66] {16.5},[28.66]'/>\n"
-					
+
 					"<rect id='connector%4pin' x='{13.5}' y='0' fill='#8C8C8C' width='3' height='4.34'/>\n"
 					"<rect id='connector%4terminal' x='{13.5}' y='0' fill='#8C8C8C' width='3' height='3'/>\n"
 					"<polygon fill='#8C8C8C' points='{16.5},4.34 {16.5},2.34 {13.5},2.34 {11.5},3.26 {11.5},4.34 '/>\n"
- 
+
 					".percent.2\n"
 					".percent.3\n"
 
@@ -459,4 +459,3 @@ void Dip::swapEntry(const QString & text) {
     }
     PaletteItem::swapEntry(text);
 }
-

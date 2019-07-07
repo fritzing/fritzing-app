@@ -39,7 +39,7 @@ QMessageBox::StandardButton FMessageBox::critical( QWidget * parent, const QStri
         return QMessageBox::Cancel;
     }
 
-    return QMessageBox::critical(parent, title, text, buttons, defaultButton); 
+    return QMessageBox::critical(parent, title, text, buttons, defaultButton);
 }
 
 QMessageBox::StandardButton FMessageBox::information( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons, StandardButton defaultButton) {
@@ -49,7 +49,7 @@ QMessageBox::StandardButton FMessageBox::information( QWidget * parent, const QS
         return QMessageBox::Cancel;
     }
 
-    return QMessageBox::information(parent, title, text, buttons, defaultButton); 
+    return QMessageBox::information(parent, title, text, buttons, defaultButton);
 }
 
 QMessageBox::StandardButton FMessageBox::question( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons, StandardButton defaultButton) {
@@ -59,7 +59,7 @@ QMessageBox::StandardButton FMessageBox::question( QWidget * parent, const QStri
         return QMessageBox::Cancel;
     }
 
-    return QMessageBox::question(parent, title, text, buttons, defaultButton); 
+    return QMessageBox::question(parent, title, text, buttons, defaultButton);
 }
 
 QMessageBox::StandardButton FMessageBox::warning( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons, StandardButton defaultButton) {
@@ -69,6 +69,5 @@ QMessageBox::StandardButton FMessageBox::warning( QWidget * parent, const QStrin
         return QMessageBox::Cancel;
     }
 
-    return QMessageBox::warning(parent, title, text, buttons, defaultButton); 
+    return QMessageBox::warning(parent, title, text, buttons, defaultButton);
 }
-

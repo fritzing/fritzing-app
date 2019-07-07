@@ -20,7 +20,7 @@ HEADERS += src/dialogs/prefsdialog.h \
 	src/dialogs/recoverydialog.h \
 	src/dialogs/setcolordialog.h \
 	src/dialogs/translatorlistmodel.h
- 
+
 SOURCES += src/dialogs/prefsdialog.cpp \
 	src/dialogs/pinlabeldialog.cpp \
 	src/dialogs/groundfillseeddialog.cpp \

@@ -95,7 +95,7 @@ bool Syntaxer::loadSyntax(const QString &filename)
 		m_extensionString.chop(1);
 		m_extensionString += ")";
 	}
-	
+
 	m_trieRoot = new TrieNode('\0');
 
 	QDomElement list = highlighting.firstChildElement("list");

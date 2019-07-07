@@ -31,7 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "resizableboard.h"
 
-class Pad : public ResizableBoard 
+class Pad : public ResizableBoard
 {
 	Q_OBJECT
 
@@ -49,8 +49,8 @@ public:
 	PluralType isPlural();
 	bool rotationAllowed();
 	bool rotation45Allowed();
-	bool freeRotationAllowed(Qt::KeyboardModifiers);	
-	bool freeRotationAllowed();	
+	bool freeRotationAllowed(Qt::KeyboardModifiers);
+	bool freeRotationAllowed();
 	bool hasPartNumberProperty();
 	void setInitialSize();
 	void addedToScene(bool temporary);
@@ -76,7 +76,7 @@ protected:
     bool m_copperBlocker;
 };
 
-class CopperBlocker : public Pad 
+class CopperBlocker : public Pad
 {
 	Q_OBJECT
 
@@ -93,7 +93,7 @@ protected:
 	QString makeFirstLayerSvg(double mmW, double mmH, double milsW, double milsH);
 
 
-	
+
 };
 
 

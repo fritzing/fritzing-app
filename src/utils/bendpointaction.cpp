@@ -53,4 +53,3 @@ ItemBase * BendpointAction::lastHoverEnterItem() {
 QPointF BendpointAction::lastLocation() {
 	return m_lastLocation;
 }
-

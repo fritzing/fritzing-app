@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 typedef double (*Converter)(const QString &, const QString & symbol);
 
-class BoundedRegExpValidator : public QRegExpValidator 
+class BoundedRegExpValidator : public QRegExpValidator
 {
 public:
 	BoundedRegExpValidator(QObject * parent) : QRegExpValidator(parent) {

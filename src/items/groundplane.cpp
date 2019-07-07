@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QPainterPathStroker>
 
-// TODO: 
+// TODO:
 //
 //	delete part if copper fill fails, and remove item from undo stack
 //	maybe that means the generator has to kick in on the dropped item, and if it fails then
@@ -47,7 +47,7 @@ QString GroundPlane::fillTypeNone = "none";
 
 static QString IconSvg;
 
-void loadIconSvg() 
+void loadIconSvg()
 {
 	if (IconSvg.isEmpty()) {
 		QFile f(":resources/parts/svg/core/icon/groundplane.svg");
@@ -60,7 +60,7 @@ void loadIconSvg()
 
 /////////////////////////////////////////////////////////
 
-GroundPlane::GroundPlane( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel) 
+GroundPlane::GroundPlane( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: PaletteItem(modelPart, viewID,  viewGeometry,  id, itemMenu, doLabel)
 {
 	m_connector0 = NULL;
@@ -87,7 +87,7 @@ void GroundPlane::saveParams() {
 void GroundPlane::getParams() {
 }
 
-QString GroundPlane::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString GroundPlane::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	QString xml = "";
 	if (viewLayerID == ViewLayer::GroundPlane0 || viewLayerID == ViewLayer::GroundPlane1) {
@@ -123,7 +123,7 @@ void GroundPlane::setProp(const QString & prop, const QString & value) {
 	PaletteItemBase::setProp(prop, value);
 }
 
-void GroundPlane::addedToScene(bool temporary) 
+void GroundPlane::addedToScene(bool temporary)
 {
 	if (m_viewLayerID == ViewLayer::GroundPlane0 || m_viewLayerID == ViewLayer::GroundPlane1) {
 		if (this->scene()) {
@@ -166,7 +166,7 @@ void GroundPlane::setSvgAux(const QString & svg) {
 			m_connector0->setShape(painterPath);
 		}
 		//QPainterPath painterPath = splitter.painterPath(GraphicsUtils::SVGDPI, xmlName);
-		//this->setShape(painterPath);  
+		//this->setShape(painterPath);
 	}
 }
 
@@ -175,7 +175,7 @@ QString GroundPlane::svg() {
 }
 
 bool GroundPlane::hasPartLabel() {
-	
+
 	return false;
 }
 
@@ -212,14 +212,14 @@ QString GroundPlane::generateSvg() {
 
 	QPointF q = this->boundingRect().center() + this->pos();
 	//QPointF r = this->pos() + m_dropOffset;
-	return infoGraphicsView->generateCopperFillUnit(this, q);   
+	return infoGraphicsView->generateCopperFillUnit(this, q);
 }
 
-void GroundPlane::setDropOffset(QPointF offset) 
+void GroundPlane::setDropOffset(QPointF offset)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView == NULL) return;
-    
+
     m_dropOffset = offset;
 	modelPart()->setLocalProp("fillType", fillTypeIndividual);
 	QString svg = generateSvg();
@@ -231,7 +231,7 @@ void GroundPlane::setDropOffset(QPointF offset)
 	}
 	setSvg(svg);
 
-	infoGraphicsView->resolveTemporary(resolve, this);   
+	infoGraphicsView->resolveTemporary(resolve, this);
 }
 
 void GroundPlane::setShape(QPainterPath & pp) {
@@ -244,11 +244,11 @@ QPainterPath GroundPlane::shape() const
 	if (!m_shape.isEmpty()) {
 		return m_shape;
 	}
-    
+
     return PaletteItemBase::shape();
 }
 
-ViewLayer::ViewID GroundPlane::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID GroundPlane::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
     if (vid == ViewLayer::PCBView) {
         return ViewLayer::IconView;

@@ -28,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "capacitor.h"
 
-class LED : public Capacitor 
+class LED : public Capacitor
 {
 	Q_OBJECT
 
@@ -43,7 +43,7 @@ public:
 	PluralType isPlural();
 	void addedToScene(bool temporary);
 	void setProp(const QString & prop, const QString & value);
- 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	const QString & title();
     ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 

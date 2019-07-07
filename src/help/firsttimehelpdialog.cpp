@@ -141,5 +141,3 @@ void FirstTimeHelpDialog::init() {
         Singleton = new FirstTimeHelpDialog();
     }
 }
-
-

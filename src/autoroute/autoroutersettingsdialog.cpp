@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ///////////////////////////////////////
 
-// todo: 
+// todo:
 //	save and reload as settings
 //	enable/disable custom on radio presses
 //	change wording on custom via
@@ -53,7 +53,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 const QString AutorouterSettingsDialog::AutorouteTraceWidth = "autorouteTraceWidth";
 
-AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & settings, QWidget *parent) : QDialog(parent) 
+AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & settings, QWidget *parent) : QDialog(parent)
 {
     m_traceWidth = settings.value(AutorouteTraceWidth).toInt();
 
@@ -70,13 +70,13 @@ AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & set
 	QVBoxLayout * prodLayout = new QVBoxLayout();
 	prodGroupBox->setLayout(prodLayout);
 
-	m_homebrewButton = new QRadioButton(tr("homebrew"), this); 
+	m_homebrewButton = new QRadioButton(tr("homebrew"), this);
 	connect(m_homebrewButton, SIGNAL(clicked(bool)), this, SLOT(production(bool)));
 
-	m_professionalButton = new QRadioButton(tr("professional"), this); 
+	m_professionalButton = new QRadioButton(tr("professional"), this);
 	connect(m_professionalButton, SIGNAL(clicked(bool)), this, SLOT(production(bool)));
 
-	m_customButton = new QRadioButton(tr("custom"), this); 
+	m_customButton = new QRadioButton(tr("custom"), this);
 	connect(m_customButton, SIGNAL(clicked(bool)), this, SLOT(production(bool)));
 
 	m_customFrame = new QFrame(this);
@@ -117,7 +117,7 @@ AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & set
 
 	windowLayout->addWidget(buttonBox);
 
-	enableCustom(initProductionType());	
+	enableCustom(initProductionType());
 }
 
 AutorouterSettingsDialog::~AutorouterSettingsDialog() {
@@ -141,15 +141,15 @@ void AutorouterSettingsDialog::production(bool checked) {
 	}
 	else if (sender() == m_customButton) {
 		enableCustom(true);
-	}	
+	}
 }
 
-void AutorouterSettingsDialog::enableCustom(bool enable) 
+void AutorouterSettingsDialog::enableCustom(bool enable)
 {
 	m_customFrame->setVisible(enable);
 }
 
-bool AutorouterSettingsDialog::initProductionType() 
+bool AutorouterSettingsDialog::initProductionType()
 {
     m_homebrewButton->setChecked(false);
     m_professionalButton->setChecked(false);
@@ -186,13 +186,13 @@ bool AutorouterSettingsDialog::initProductionType()
                 double khs = TextUtils::convertToInches(holeSize);
 				if (qAbs(rt - krt) < 0.001 && qAbs(hs - khs) < 0.001) {
                     // holesize/ringthickness match after all
-                    if (--custom == 0) {  
+                    if (--custom == 0) {
 					    button->setChecked(true);
                     }
 				}
 			}
 		}
-	}	
+	}
 
     m_customButton->setChecked(custom > 0);
 	return custom > 0;
@@ -210,12 +210,12 @@ void AutorouterSettingsDialog::changeHoleSize(const QString & newSize) {
 	PaletteItem::setHoleSize(s, false, m_holeSettings);
 }
 
-void AutorouterSettingsDialog::changeUnits(bool) 
+void AutorouterSettingsDialog::changeUnits(bool)
 {
 	QString newVal = PaletteItem::changeUnits(m_holeSettings);
 }
 
-void AutorouterSettingsDialog::changeDiameter() 
+void AutorouterSettingsDialog::changeDiameter()
 {
 	if (PaletteItem::changeDiameter(m_holeSettings, sender())) {
 		QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
@@ -223,12 +223,12 @@ void AutorouterSettingsDialog::changeDiameter()
 	}
 }
 
-void AutorouterSettingsDialog::changeThickness() 
+void AutorouterSettingsDialog::changeThickness()
 {
 	if (PaletteItem::changeThickness(m_holeSettings, sender())) {
 		QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
 		changeHoleSize(m_holeSettings.holeDiameter + "," + edit->text() + m_holeSettings.currentUnits());
-	}	
+	}
 }
 
 
@@ -369,7 +369,7 @@ QHash<QString, QString> AutorouterSettingsDialog::getSettings() {
     return settings;
 }
 
-QString AutorouterSettingsDialog::getKeepoutString() 
+QString AutorouterSettingsDialog::getKeepoutString()
 {
     double k = m_keepoutSpinBox->value();
     if (m_inRadio->isChecked()) {

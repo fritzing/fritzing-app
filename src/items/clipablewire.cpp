@@ -134,7 +134,7 @@ register int	line_flag ;
 
 /////////////////////////////////////////////////////////
 
-ClipableWire::ClipableWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool initLabel ) 
+ClipableWire::ClipableWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool initLabel )
 	: Wire(modelPart, viewID,  viewGeometry,  id, itemMenu, initLabel)
 {
 	m_clipEnds = false;
@@ -143,7 +143,7 @@ ClipableWire::ClipableWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  co
 	m_cachedOriginalLine.setPoints(QPointF(-99999,-99999), QPointF(-99999,-99999));
 }
 
-const QLineF & ClipableWire::getPaintLine() {	
+const QLineF & ClipableWire::getPaintLine() {
 	if (!m_clipEnds) {
 		return Wire::getPaintLine();
 	}
@@ -418,7 +418,7 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 	}
 }
 
-bool ClipableWire::insideInnerCircle(ConnectorItem * connectorItem, QPointF scenePos) 
+bool ClipableWire::insideInnerCircle(ConnectorItem * connectorItem, QPointF scenePos)
 {
 	QPointF localPos = connectorItem->mapFromScene(scenePos);
 	double rad = connectorItem->radius();
@@ -436,7 +436,7 @@ bool ClipableWire::insideInnerCircle(ConnectorItem * connectorItem, QPointF scen
 	return false;
 }
 
-bool ClipableWire::insideSpoke(ClipableWire * wire, QPointF scenePos) 
+bool ClipableWire::insideSpoke(ClipableWire * wire, QPointF scenePos)
 {
 	QLineF l = wire->line();
 	QLineF normal = l.normalVector();

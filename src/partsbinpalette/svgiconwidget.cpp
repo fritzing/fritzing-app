@@ -47,7 +47,7 @@ static QPixmap * SingularImage = NULL;
 
 ////////////////////////////////////////////////////////////
 
-SvgIconPixmapItem::SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent) : QGraphicsPixmapItem(pixmap, parent) 
+SvgIconPixmapItem::SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent) : QGraphicsPixmapItem(pixmap, parent)
 {
 }
 
@@ -55,7 +55,7 @@ void  SvgIconPixmapItem::setPlural(bool plural) {
 	m_plural = plural;
 }
 
-void SvgIconPixmapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) 
+void SvgIconPixmapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 	QGraphicsPixmapItem::paint(painter, option, widget);
 
@@ -65,18 +65,18 @@ void SvgIconPixmapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
 		pen.setColor(QColor(122, 15, 49));
 		pen.setWidth(SELECTION_THICKNESS);
 		painter->setPen(pen);
-		painter->drawRect(m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1, 
-						  m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1, 
+		painter->drawRect(m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1,
+						  m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1,
 						  ICON_SIZE + SELECTION_THICKNESS, ICON_SIZE + SELECTION_THICKNESS);
 		painter->restore();
-	} 
+	}
 
 }
 
 ////////////////////////////////////////////////////////////
 
 SvgIconWidget::SvgIconWidget(ModelPart * modelPart, ViewLayer::ViewID viewID, ItemBase * itemBase, bool plural)
-	: QGraphicsWidget() 
+	: QGraphicsWidget()
 {
 	m_moduleId = modelPart->moduleID();
 	m_itemBase = itemBase;
@@ -155,7 +155,7 @@ void SvgIconWidget::hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) {
 	}
 }
 
-void SvgIconWidget::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) 
+void SvgIconWidget::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 	if (m_moduleId.compare(ModuleIDNames::SpacerModuleIDName) == 0) {
 		QString text = data(Qt::UserRole).toString();
@@ -174,8 +174,8 @@ void SvgIconWidget::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 			//r.setLeft(r.left() + fm.width(text));
 			//r.setBottom(r.bottom() + 2);
 			//painter->drawLine(r.left(), r.bottom(), scene()->width(), r.bottom());
-			painter->restore();	
-		}		
+			painter->restore();
+		}
 		return;
 	}
 

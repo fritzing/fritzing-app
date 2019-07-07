@@ -64,7 +64,7 @@ Via::~Via() {
 	//DebugDialog::debug(QString("deleting via %1 %2 %3").arg((long) this, 0, 16).arg(m_id).arg(m_viewID));
 }
 
-void Via::initHoleSettings(HoleSettings & holeSettings) 
+void Via::initHoleSettings(HoleSettings & holeSettings)
 {
     // called only by AutorouterSettingsDialog
     PaletteItem::initHoleSettings(holeSettings, &TheHoleThing);

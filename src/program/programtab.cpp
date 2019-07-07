@@ -600,8 +600,8 @@ void ProgramTab::deleteTab() {
 								  !FolderUtils::isEmptyFileName(m_filename, "Untitled"),
 								  NULL, 0);
 		int reply = deleteDialog.exec();
- 		if (reply != QMessageBox::Yes) {
-     		return;
+		if (reply != QMessageBox::Yes) {
+		return;
 		}
 
 		deleteFile = deleteDialog.deleteFileChecked();

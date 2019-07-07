@@ -42,7 +42,7 @@ ViewLayer * ViewLayerCheckBox::viewLayer() {
 
 //////////////////////////////////////
 
-LayerPalette::LayerPalette(QWidget * parent) : QScrollArea(parent) 
+LayerPalette::LayerPalette(QWidget * parent) : QScrollArea(parent)
 {
 
 	m_hideAllLayersAct = m_showAllLayersAct = NULL;
@@ -80,7 +80,7 @@ LayerPalette::LayerPalette(QWidget * parent) : QScrollArea(parent)
 
 }
 
-LayerPalette::~LayerPalette() 
+LayerPalette::~LayerPalette()
 {
 }
 
@@ -134,12 +134,12 @@ void LayerPalette::setLayerVisibility(bool) {
 	cb->viewLayer()->setIncludeChildLayers(true);
 }
 
-void LayerPalette::setShowAllLayersAction(QAction * action) 
+void LayerPalette::setShowAllLayersAction(QAction * action)
 {
 	m_showAllLayersAct = action;
 }
 
-void LayerPalette::setHideAllLayersAction(QAction * action) 
+void LayerPalette::setHideAllLayersAction(QAction * action)
 {
 	m_hideAllLayersAct = action;
 }
@@ -156,4 +156,3 @@ void LayerPalette::setAllLayersVisible(bool vis) {
 		}
 	}
 }
-

@@ -64,4 +64,3 @@ void SchematicSubpart::simpleHoverLeaveEvent (QGraphicsSceneHoverEvent * event)
 {
     PaletteItem::hoverLeaveEvent(event);
 }
-

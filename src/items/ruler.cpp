@@ -86,7 +86,7 @@ void Ruler::resizeMM(double magnitude, double unitsFlag, const LayerHash & viewL
 
 }
 
-QString Ruler::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString Ruler::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	double w = TextUtils::convertToInches(m_modelPart->localProp("width").toString());
 	if (w != 0) {
@@ -434,7 +434,7 @@ bool Ruler::canFindConnectorsUnder() {
 	return false;
 }
 
-ViewLayer::ViewID Ruler::useViewIDForPixmap(ViewLayer::ViewID, bool) 
+ViewLayer::ViewID Ruler::useViewIDForPixmap(ViewLayer::ViewID, bool)
 {
     return ViewLayer::IconView;
 }

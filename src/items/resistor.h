@@ -28,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "capacitor.h"
 
-class Resistor : public Capacitor 
+class Resistor : public Capacitor
 {
 	Q_OBJECT
 
@@ -49,7 +49,7 @@ public:
 	PluralType isPlural();
 	void addedToScene(bool temporary);
 	void setProp(const QString & prop, const QString & value);
- 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 
 protected:
 	QString makeSvg(const QString & ohms, ViewLayer::ViewLayerID viewLayerID);

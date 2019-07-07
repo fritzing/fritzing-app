@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "capacitor.h"
 
-class Perfboard : public Capacitor 
+class Perfboard : public Capacitor
 {
 	Q_OBJECT
 
@@ -45,7 +45,7 @@ public:
 	void addedToScene(bool temporary);
 	void setProp(const QString & prop, const QString & value);
 	void hoverUpdate();
-	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget); 
+	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	bool stickyEnabled();
 	bool canFindConnectorsUnder();
 	bool rotation45Allowed();

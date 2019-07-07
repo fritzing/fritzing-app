@@ -68,7 +68,7 @@ struct StripConnector {
     StripConnector();
 };
 
-class Stripboard : public Perfboard 
+class Stripboard : public Perfboard
 {
 	Q_OBJECT
 

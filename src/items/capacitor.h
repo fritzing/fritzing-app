@@ -24,7 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "paletteitem.h"
 #include "propertydef.h"
 
-class Capacitor : public PaletteItem 
+class Capacitor : public PaletteItem
 {
 	Q_OBJECT
 

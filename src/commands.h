@@ -316,9 +316,9 @@ class ChangeWireCommand : public BaseCommand
 {
 public:
     ChangeWireCommand(class SketchWidget *sketchWidget, long fromID,
-    					const QLineF & oldLine, const QLineF & newLine, QPointF oldPos, QPointF newPos,
-    					bool updateConnections, bool updateRatsnest,
-    					QUndoCommand *parent);
+					const QLineF & oldLine, const QLineF & newLine, QPointF oldPos, QPointF newPos,
+					bool updateConnections, bool updateRatsnest,
+					QUndoCommand *parent);
     void undo();
     void redo();
 
@@ -341,8 +341,8 @@ class ChangeWireCurveCommand : public BaseCommand
 {
 public:
     ChangeWireCurveCommand(class SketchWidget *sketchWidget, long fromID,
-    					const class Bezier * oldBezier, const class Bezier * newBezier, bool wasAutoroutable,
-    					QUndoCommand *parent);
+					const class Bezier * oldBezier, const class Bezier * newBezier, bool wasAutoroutable,
+					QUndoCommand *parent);
     void undo();
     void redo();
 
@@ -362,7 +362,7 @@ class ChangeLegCommand : public BaseCommand
 {
 public:
     ChangeLegCommand(class SketchWidget *sketchWidget, long fromID, const QString & fromConnectorID,
-    					const QPolygonF & oldLeg, const QPolygonF & newLeg, bool relative, bool active, const QString & why, QUndoCommand *parent);
+					const QPolygonF & oldLeg, const QPolygonF & newLeg, bool relative, bool active, const QString & why, QUndoCommand *parent);
     void undo();
     void redo();
 
@@ -388,7 +388,7 @@ class MoveLegBendpointCommand : public BaseCommand
 {
 public:
     MoveLegBendpointCommand(class SketchWidget *sketchWidget, long fromID, const QString & fromConnectorID,
-    						 int index, QPointF oldPos, QPointF newPos, QUndoCommand *parent);
+						 int index, QPointF oldPos, QPointF newPos, QUndoCommand *parent);
     void undo();
     void redo();
 
@@ -408,8 +408,8 @@ class ChangeLegCurveCommand : public BaseCommand
 {
 public:
     ChangeLegCurveCommand(class SketchWidget *sketchWidget, long fromID, const QString & fromConnectorID, int index,
-    					const class Bezier * oldBezier, const class Bezier * newBezier,
-    					QUndoCommand *parent);
+					const class Bezier * oldBezier, const class Bezier * newBezier,
+					QUndoCommand *parent);
     void undo();
     void redo();
 
@@ -430,7 +430,7 @@ class ChangeLegBendpointCommand : public BaseCommand
 {
 public:
     ChangeLegBendpointCommand(class SketchWidget *sketchWidget, long fromID, const QString & fromConnectorID,
-    					int oldCount, int newCount, int index, QPointF pos, 
+					int oldCount, int newCount, int index, QPointF pos,
 						const class Bezier *, const class Bezier *, const class Bezier *, QUndoCommand *parent);
     void undo();
     void redo();
@@ -456,7 +456,7 @@ class RotateLegCommand : public BaseCommand
 {
 public:
     RotateLegCommand(class SketchWidget *sketchWidget, long fromID, const QString & fromConnectorID,
-    					const QPolygonF & oldLeg, bool active, QUndoCommand *parent);
+					const QPolygonF & oldLeg, bool active, QUndoCommand *parent);
     void undo();
     void redo();
 
@@ -476,9 +476,9 @@ class ChangeLayerCommand : public BaseCommand
 {
 public:
     ChangeLayerCommand(class SketchWidget *sketchWidget, long fromID,
-					  double oldZ, double newZ, 
+					  double oldZ, double newZ,
 					  ViewLayer::ViewLayerID oldLayer, ViewLayer::ViewLayerID newLayer,
-    				  QUndoCommand *parent);
+				  QUndoCommand *parent);
     void undo();
     void redo();
 
@@ -579,7 +579,7 @@ public:
 public:
 	CheckStickyCommand(class SketchWidget *sketchWidget, BaseCommand::CrossViewType, long itemID, bool checkCurrent, CheckType, QUndoCommand *parent);
 	~CheckStickyCommand();
-	
+
 	void undo();
     void redo();
 	void stick(SketchWidget *, long fromID, long toID, bool stickem);
@@ -643,7 +643,7 @@ protected:
 
 /////////////////////////////////////////////
 
-class RoutingStatusCommand : public BaseCommand 
+class RoutingStatusCommand : public BaseCommand
 {
 public:
 	RoutingStatusCommand(class SketchWidget *, const RoutingStatus & oldRoutingStatus, const RoutingStatus & newRoutingStatus, QUndoCommand * parent);
@@ -1081,8 +1081,8 @@ class WireExtrasCommand : public BaseCommand
 {
 public:
     WireExtrasCommand(class SketchWidget *sketchWidget, long fromID,
-    					const QDomElement & oldExtras, const QDomElement & newExtras,
-    					QUndoCommand *parent);
+					const QDomElement & oldExtras, const QDomElement & newExtras,
+					QUndoCommand *parent);
     void undo();
     void redo();
 
@@ -1103,7 +1103,7 @@ class HidePartLayerCommand : public BaseCommand
 public:
     HidePartLayerCommand(class SketchWidget *sketchWidget, long fromID,
 					  ViewLayer::ViewLayerID layerID, bool wasHidden, bool isHidden,
-    				  QUndoCommand *parent);
+				  QUndoCommand *parent);
     void undo();
     void redo();
 

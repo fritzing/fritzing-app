@@ -414,4 +414,3 @@ void SingleConnectorInfoWidget::setName(const QString & name)
 		m_nameEdit->setText(name);
 	}
 }
-

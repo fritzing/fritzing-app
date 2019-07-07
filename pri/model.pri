@@ -17,11 +17,11 @@ HEADERS += \
     src/model/modelpart.h \
     src/model/modelpartshared.h \
     src/model/palettemodel.h \
-    src/model/sketchmodel.h 
-    
+    src/model/sketchmodel.h
+
 SOURCES += \
     src/model/modelbase.cpp \
     src/model/modelpart.cpp \
     src/model/modelpartshared.cpp \
     src/model/palettemodel.cpp \
-    src/model/sketchmodel.cpp 
+    src/model/sketchmodel.cpp

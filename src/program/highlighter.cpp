@@ -80,7 +80,7 @@ void Highlighter::loadStyles(const QString & filename) {
 		}
 
 		m_styleFormats.insert(style.attribute("name"), tcf);
-		
+
 		style = style.nextSiblingElement("style");
 	}
 }
@@ -96,7 +96,7 @@ Syntaxer * Highlighter::syntaxer() {
 void Highlighter::highlightBlock(const QString &text)
 {
 	if (!m_syntaxer) return;
-	
+
 	if (text.isEmpty()) {
 		setCurrentBlockState(previousBlockState());
 		return;
@@ -126,7 +126,7 @@ void Highlighter::highlightBlock(const QString &text)
 		if (endIndex == -1) {
 			setCurrentBlockState(currentCommentInfo->m_index + COMMENTOFFSET);
 			commentLength = text.length() - startCommentIndex;
-		} 
+		}
 		else {
 			commentLength = endIndex - startCommentIndex + currentCommentInfo->m_end.length();
 		}
@@ -154,7 +154,7 @@ void Highlighter::highlightStrings(int startStringIndex, QString & text) {
 		while (true) {
 			endIndex = m_syntaxer->matchStringEnd(text, ssi + 1);
 			if (!m_syntaxer->hlCStringChar()) {
-				// only some languages use \ to escape 
+				// only some languages use \ to escape
 				break;
 			}
 
@@ -172,7 +172,7 @@ void Highlighter::highlightStrings(int startStringIndex, QString & text) {
 		if (endIndex == -1) {
 			setCurrentBlockState(STRINGOFFSET);
 			stringLength = text.length() - startStringIndex;
-		} 
+		}
 		else {
 			stringLength = endIndex - startStringIndex + 1;
 		}
@@ -193,7 +193,7 @@ void Highlighter::highlightTerms(const QString & text) {
 		for (b = lastWordBreak; b < textLength; b++) {
 			if (!isWordChar(text.at(b))) break;
 		}
-		
+
 		if (b > lastWordBreak) {
 			TrieLeaf * leaf = NULL;
 			if (m_syntaxer->matches(text.mid(lastWordBreak, b - lastWordBreak), leaf)) {
@@ -207,7 +207,7 @@ void Highlighter::highlightTerms(const QString & text) {
 				}
 			}
 		}
-		
+
 		lastWordBreak = b + 1;
 	}
 }

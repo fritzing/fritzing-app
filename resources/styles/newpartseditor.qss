@@ -33,7 +33,7 @@
 
 
 
-/*try to change tab-menu without luck ... 
+/*try to change tab-menu without luck ...
 
 QTabWidget#peTabs ::item {
 	background-image:none;
@@ -46,43 +46,43 @@ QTabWidget#peTabs{
 	color:#00f;
 	font-weight:bold;
 		background-image:none;
-	}	
-	
+	}
+
 QTabWidget#peTabs ::pane {
 	border: 10px solid #f0f;
 		background-image:none;
 	}
-	
+
 QWidget#peTabs ::pane {
 	border: 10px solid #f0f;
 		background-image:none;
 	}
-	
+
 #peTabs QMenu {
 	background:#f0f;
 	background-image:none;
 	font-size: 10px;
 	font-weight: bold;
-	
-	} 
-	
+
+	}
+
 QMenu#peTabs  {
 	background:#f0f;
 	background-image:none;
 	font-size: 10px;
 	font-weight: bold;
-	
-	} 
+
+	}
 	 */
-	
+
 /* the Infos in the right window. */
 
 QLabel{
 	background:transparent;
 	background-image:none;
 	font-size: 11px;
-	} 
-	
+	}
+
 QComboBox,
 QPushButton,
 QPushButton:enabled,
@@ -106,9 +106,9 @@ QPushButton:hover{
 	background:#666;
 	font-size:11px;
 	}
-	
 
-QComboBox:pressed,	
+
+QComboBox:pressed,
 QPushButton:pressed{
 	background-image:none;
 	color: #d9d9d9;
@@ -127,7 +127,7 @@ QPushButton:disabled{
 	}
 
 /* drop-down buton of the combobox */
-	
+
 QComboBox::drop-down:button {
         background: transparent;
 		border:none;
@@ -172,7 +172,7 @@ QSplitter::handle {
      width: 4px;
      color: #666666;
      background-color: #666666;
-} 
+}
 
 /* spinbox styling for connector position */
 QDoubleSpinBox {
@@ -180,7 +180,7 @@ QDoubleSpinBox {
         font-size: 11px;
         color: #000;
         border: none;
-		
+
 }
 
 QDoubleSpinBox::down-button {
@@ -215,11 +215,11 @@ QTableView {
 	 background-image:none;
 	 image:none;
  }
- 
+
 QTreeWidgetItem {
      selection-background-color: #f0f;
 	 background-image:none;
 	 image:none;
 	 }
-	 
+
 */

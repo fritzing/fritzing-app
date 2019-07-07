@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #set $ipins = int($pins)
 #set $width = $ipins * 100
 <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" width="${width / 1000.0}in" height="0.17in" viewBox="0 0 ${width} 170" >

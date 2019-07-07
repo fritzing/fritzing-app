@@ -4,7 +4,7 @@
   * kurz-kurz-kurz = S
   * lang-lang-lang = O
   * kurz-kurz-kurz = S
-  
+
   Dieses Beispiel aus dem Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
@@ -12,7 +12,7 @@ int led = 13;                               // ganzzahlige Variable led wird dek
 char signals[] = {'.','.','.','-','-','-','.','.','.'}; // variable speichert die Signale: . = kurz, - = lang
 
 void setup() {                              // die setup()-Methode wird einmal ausgeführt
-  pinMode(led, OUTPUT);     
+  pinMode(led, OUTPUT);
 }
 
 void loop() {                               // die loop()-Methode wird immer wiederholt
@@ -24,5 +24,5 @@ void loop() {                               // die loop()-Methode wird immer wie
     if (signals[i]=='.') delay(200);        // wenn signals an der Stelle i einen Punkt hat, warte kurz
     if (signals[i]=='-') delay(500);        // wenn signals an der Stelle i einen Strich hat, warte lang
   }
-  delay(2000);                              // hält das Programm für 2000 Millisekunden an  
+  delay(2000);                              // hält das Programm für 2000 Millisekunden an
 }

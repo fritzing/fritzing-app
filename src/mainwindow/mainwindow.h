@@ -117,7 +117,7 @@ struct GridSizeThing
     QString gridSizeText;
 	QString viewName;
 	QString shortName;
-    
+
     GridSizeThing(const QString & viewName, const QString & shortName, double defaultSize, const QString & gridSizeText);
 };
 
@@ -195,7 +195,7 @@ public:
 	bool loadBundledNonAtomicEntity(const QString &filename, Bundler *bundler, bool addToBin, bool dontAsk);
 	void saveAsShareable(const QString & path, bool saveModel);
 
-	
+
 	void setCurrentFile(const QString &fileName, bool addToRecent, bool setAsLastOpened);
 	void setReportMissingModules(bool);
 	QList<class SketchWidget *> sketchWidgets();
@@ -251,7 +251,7 @@ public slots:
 	void removeGroundFill();
 	void copperFill();
 	void setOneGroundFillSeed();
-	void setGroundFillSeeds();	
+	void setGroundFillSeeds();
 	void clearGroundFillSeeds();
 	void changeBoardLayers(int layers, bool doEmit);
 	void selectAllObsolete();
@@ -925,7 +925,7 @@ protected:
 	bool m_backingUp;
 	QString m_bundledSketchName;
 	RoutingStatus m_routingStatus;
-	bool m_orderFabEnabled;		
+	bool m_orderFabEnabled;
 	bool m_closeSilently;
 	QString m_fzzFolder;
 	QHash<QString, struct LockedFile *> m_fzzFiles;

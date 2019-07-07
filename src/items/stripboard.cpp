@@ -61,7 +61,7 @@ static QString VerticalString("vertical strips");
 
 /////////////////////////////////////////////////////////////////////
 
-Stripbit::Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent = 0) 
+Stripbit::Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent = 0)
 	: QGraphicsPathItem(path, parent)
 {
 	if (SpotFaceCutterCursor == NULL) {
@@ -116,14 +116,14 @@ void Stripbit::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 
 }
 
-void Stripbit::mousePressEvent(QGraphicsSceneMouseEvent *event) 
+void Stripbit::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL && infoGraphicsView->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
-		
+
 	if (!event->buttons() && Qt::LeftButton) {
 		event->ignore();
 		return;
@@ -217,7 +217,7 @@ void Stripbit::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 }
 
-void Stripbit::hoverEnterEvent( QGraphicsSceneHoverEvent * event ) 
+void Stripbit::hoverEnterEvent( QGraphicsSceneHoverEvent * event )
 {
 	if (dynamic_cast<ItemBase *>(this->parentItem())->moveLock()) return;
 
@@ -234,7 +234,7 @@ void Stripbit::hoverEnterEvent( QGraphicsSceneHoverEvent * event )
 	update();
 }
 
-void Stripbit::hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) 
+void Stripbit::hoverLeaveEvent ( QGraphicsSceneHoverEvent * event )
 {
 	if (dynamic_cast<ItemBase *>(this->parentItem())->moveLock()) return;
 	if (SpaceBarWasPressed) return;
@@ -331,7 +331,7 @@ Stripboard::~Stripboard() {
     m_strips.clear();
 }
 
-QString Stripboard::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString Stripboard::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	QString svg = Perfboard::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 	if (svg.isEmpty()) return svg;
@@ -357,13 +357,13 @@ QString Stripboard::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QStrin
 		QPointF p = stripbit->pos();
 		QRectF r = stripbit->boundingRect();
 
-		stripSvg += QString("<path stroke='none' stroke-width='0' fill='%6' " 
+		stripSvg += QString("<path stroke='none' stroke-width='0' fill='%6' "
 						"d='m%1,%2 %3,0 0,%4 -%3,0z m0,%4a%5,%5  0,1,0 0,-%4z  m%3,-%4a%5,%5 0,1,0 0,%4z'/>\n")
 					.arg(p.x() * dpi / GraphicsUtils::SVGDPI)
 					.arg(p.y() * dpi / GraphicsUtils::SVGDPI)
 					.arg(r.width() * dpi / GraphicsUtils::SVGDPI )
 					.arg(r.height() * dpi / GraphicsUtils::SVGDPI)
-					.arg(r.height() * dpi * .5 / GraphicsUtils::SVGDPI) 
+					.arg(r.height() * dpi * .5 / GraphicsUtils::SVGDPI)
 					.arg(blackOnly ? "black" : "#c49c59")
 				;
 	}
@@ -485,13 +485,13 @@ QString Stripboard::genModuleID(QMap<QString, QString> & currPropsMap)
 	return size + ModuleIDNames::Stripboard2ModuleIDName;
 }
 
-void Stripboard::initCutting(Stripbit *) 
+void Stripboard::initCutting(Stripbit *)
 {
 	m_beforeCut.clear();
 	foreach (QGraphicsItem * item, childItems()) {
 		Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
 		if (stripbit == NULL) continue;
-		
+
 		stripbit->setChanged(false);
 		if (stripbit->removed()) {
             m_beforeCut += stripbit->makeRemovedString();
@@ -507,7 +507,7 @@ void appendConnectors(QList<ConnectorItem *> & connectorItems, ConnectorItem * c
 	}
 }
 
-void Stripboard::reinitBuses(bool triggerUndo) 
+void Stripboard::reinitBuses(bool triggerUndo)
 {
 	if (triggerUndo) {
 		QString afterCut;
@@ -557,7 +557,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 	foreach (QGraphicsItem * item, childItems()) {
 		Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
 		if (stripbit == NULL) continue;
-		
+
 		if (stripbit->removed()) {
             busPropertyString += stripbit->makeRemovedString();
 		}
@@ -598,7 +598,7 @@ void Stripboard::collectConnected(int ix, int iy, QList<ConnectorItem *> & conne
 
     if (sc->right != NULL && !sc->right->removed()) {
         collectConnected(ix + 1, iy, connected);
-        
+
     }
     if (sc->down != NULL && !sc->down->removed()) {
         collectConnected(ix, iy + 1, connected);
@@ -627,7 +627,7 @@ void Stripboard::nextBus(QList<ConnectorItem *> & soFar)
 	soFar.clear();
 }
 
-void Stripboard::setProp(const QString & prop, const QString & value) 
+void Stripboard::setProp(const QString & prop, const QString & value)
 {
     if (prop.compare("buses") == 0) {
 	    QStringList removed = value.split(" ", QString::SkipEmptyParts);

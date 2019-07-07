@@ -272,7 +272,7 @@ void SvgFileSplitter::painterPathChild(QDomElement & element, QPainterPath & ppa
 		double stroke = element.attribute("stroke-width").toDouble();
 		double rx = element.attribute("rx").toDouble();
 		double ry = element.attribute("ry").toDouble();
-		if (rx != 0 || ry != 0) { 
+		if (rx != 0 || ry != 0) {
 			ppath.addRoundedRect(x - (stroke / 2), y - (stroke / 2), width + stroke, height + stroke, rx, ry);
 		}
 		else {
@@ -549,7 +549,7 @@ bool SvgFileSplitter::shiftTranslation(QDomElement & element, double x, double y
 	double cosTheta = m0.m11();
 	double cosThetaMinusOne = cosTheta - 1;
 
-	double cx = (m0.dx() + (sinTheta * m0.dy() / cosThetaMinusOne)) / 
+	double cx = (m0.dx() + (sinTheta * m0.dy() / cosThetaMinusOne)) /
 			    (cosThetaMinusOne + (sinTheta * sinTheta / cosThetaMinusOne));
 	double cy = (m0.dy() - (sinTheta * cx)) / cosThetaMinusOne;
 
@@ -815,7 +815,7 @@ void SvgFileSplitter::standardArgs(bool relative, bool starting, QList<double> &
 
 QVector<QVariant> SvgFileSplitter::simpleParsePath(const QString & data) {
 	static QVector<QVariant> emptyStack;
-	
+
 	QString dataCopy(data);
 
 	if (!dataCopy.startsWith('M', Qt::CaseInsensitive)) {
@@ -844,14 +844,14 @@ QVector<QVariant> SvgFileSplitter::simpleParsePath(const QString & data) {
 bool SvgFileSplitter::parsePath(const QString & dataString, const char * slot, PathUserData & pathUserData, QObject * slotTarget, bool convertHV) {
 	QVector<QVariant> symStack = simpleParsePath(dataString);
 
-	if (convertHV && (dataString.contains("h", Qt::CaseInsensitive) || dataString.contains("v",  Qt::CaseInsensitive))) 
-	{  
+	if (convertHV && (dataString.contains("h", Qt::CaseInsensitive) || dataString.contains("v",  Qt::CaseInsensitive)))
+	{
 		SVGPathRunner svgPathRunner;
 		HVConvertData data;
 		data.x = data.y = data.subX = data.subY = 0;
 		data.path = "";
-		connect(&svgPathRunner, SIGNAL(commandSignal(QChar, bool, QList<double> &, void *)), 
-				this, SLOT(convertHVSlot(QChar, bool, QList<double> &, void *)), 
+		connect(&svgPathRunner, SIGNAL(commandSignal(QChar, bool, QList<double> &, void *)),
+				this, SLOT(convertHVSlot(QChar, bool, QList<double> &, void *)),
 				Qt::DirectConnection);
 		svgPathRunner.runPath(symStack, &data);
 		return parsePath(data.path, slot, pathUserData, slotTarget, false);
@@ -1087,7 +1087,7 @@ void SvgFileSplitter::fixColorRecurse(QDomElement & element, const QString & new
 				}
 			}
 		}
-		else {		
+		else {
 			if (f.isEmpty()) {
 				if (exceptions.contains(s)) {
 					gotException = true;
@@ -1103,7 +1103,7 @@ void SvgFileSplitter::fixColorRecurse(QDomElement & element, const QString & new
 		}
 	}
 	if (!gotException) {
-		setStrokeOrFill(element, true, newColor, !id.isEmpty()); 
+		setStrokeOrFill(element, true, newColor, !id.isEmpty());
 	}
 
 	QDomElement childElement = element.firstChildElement();
@@ -1125,7 +1125,7 @@ bool SvgFileSplitter::getSvgSizeAttributes(const QString & svg, QString & width,
 				width = xml.attributes().value("width").toString();
 				height = xml.attributes().value("height").toString();
 				viewBox = xml.attributes().value("viewBox").toString();
-				return true;	
+				return true;
 			}
 		default:
 			break;
@@ -1442,4 +1442,3 @@ void SvgFileSplitter::showTextAux(QDomElement & parent, bool & hasText, bool roo
         child = child.nextSiblingElement();
     }
 }
-

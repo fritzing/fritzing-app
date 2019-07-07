@@ -89,7 +89,7 @@ struct RenderThing {
 class SizeItem : public QObject, public QGraphicsLineItem
 {
 	Q_OBJECT
-	
+
 public:
 	SizeItem();
 	~SizeItem();
@@ -126,10 +126,10 @@ public:
     void selectItemsWithModuleID(ModelPart *);
     void addToSketch(QList<ModelPart *> &);
     void selectDeselectAllCommand(bool state);
-    void changeWire(long fromID, QLineF line, QPointF pos, bool updateConnections, bool updateRatsnest);   
-    void changeLeg(long fromID, const QString & connectorID, const QPolygonF &, bool relative, const QString & why);   
-    void recalcLeg(long fromID, const QString & connectorID, const QPolygonF &, bool relative, bool active, const QString & why);   
-    void rotateLeg(long fromID, const QString & connectorID, const QPolygonF &, bool active);   
+    void changeWire(long fromID, QLineF line, QPointF pos, bool updateConnections, bool updateRatsnest);
+    void changeLeg(long fromID, const QString & connectorID, const QPolygonF &, bool relative, const QString & why);
+    void recalcLeg(long fromID, const QString & connectorID, const QPolygonF &, bool relative, bool active, const QString & why);
+    void rotateLeg(long fromID, const QString & connectorID, const QPolygonF &, bool active);
     void cut();
     void copy();
     void setReferenceModel(class ReferenceModel *referenceModel);
@@ -137,7 +137,7 @@ public:
     void setSketchModel(SketchModel *);
     void setUndoStack(class WaitPushUndoStack *);
     void clearSelection();
-	virtual void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand, 
+	virtual void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand,
 									bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs);
     void changeZ(QHash<long, RealPair * >, double (*pairAccessor)(RealPair *) );
 	void sendToBack();
@@ -163,21 +163,21 @@ public:
     bool layerIsVisible(ViewLayer::ViewLayerID);
     bool layerIsActive(ViewLayer::ViewLayerID);
 	void sortAnyByZ(const QList<QGraphicsItem *> & items, QList<ItemBase *> & bases);
- 	void mousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
- 	void setBackground(QColor);
+	void mousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
+	void setBackground(QColor);
     void setBackgroundColor(QColor, bool setPref);
- 	const QColor& background();
+	const QColor& background();
 	QColor standardBackground();
- 	void setItemMenu(QMenu*);
- 	void setWireMenu(QMenu*);
+	void setItemMenu(QMenu*);
+	void setWireMenu(QMenu*);
 	virtual void changeConnection(long fromID,
 						  const QString & fromConnectorID,
 						  long toID, const QString & toConnectorID,
 						  ViewLayer::ViewLayerPlacement,
-						  bool connect, bool doEmit, 
+						  bool connect, bool doEmit,
 						  bool updateConnections);
 
- 	ItemCount calcItemCount();
+	ItemCount calcItemCount();
 
 	ViewLayer::ViewID viewID();
 	void setViewLayerIDs(ViewLayer::ViewLayerID part, ViewLayer::ViewLayerID wire, ViewLayer::ViewLayerID connector, ViewLayer::ViewLayerID ruler, ViewLayer::ViewLayerID note);
@@ -430,7 +430,7 @@ protected:
 	virtual const QString & hoverEnterPartConnectorMessage(QGraphicsSceneHoverEvent * event, ConnectorItem * item);
 	void partLabelChangedAux(ItemBase * pitem,const QString & oldText, const QString &newText);
 	void drawBackground( QPainter * painter, const QRectF & rect );
-	void handleConnect(QDomElement & connect, ModelPart *, const QString & fromConnectorID, ViewLayer::ViewLayerID, QStringList & alreadyConnected, 
+	void handleConnect(QDomElement & connect, ModelPart *, const QString & fromConnectorID, ViewLayer::ViewLayerID, QStringList & alreadyConnected,
 						QHash<long, ItemBase *> & newItems, QUndoCommand * parentCommand, bool seekOutsideConnections);
 	void setUpSwapReconnect(SwapThing &, ItemBase * itemBase, long newID, bool master);
     void makeSwapWire(SketchWidget *, ItemBase *, long newID, ConnectorItem * fromConnectorItem, ConnectorItem * toConnectorItem, Connector * newConnector, QUndoCommand * parentCommand);
@@ -447,7 +447,7 @@ protected:
 	QPointF calcNewLoc(ItemBase * moveBase, ItemBase * detachFrom);
 	long findPartOrWire(long itemID);
 	AddItemCommand * newAddItemCommand(BaseCommand::CrossViewType crossViewType, ModelPart *,
-											   QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, 
+											   QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry & viewGeometry, qint64 id,
 											   bool updateInfoView, long modelIndex, bool addSubparts, QUndoCommand *parent);
 	int selectAllItems(QSet<ItemBase *> & itemBases, const QString & msg);
 	bool moveByArrow(double dx, double dy, QKeyEvent * );
@@ -463,7 +463,7 @@ protected:
 	QString makeWireSVG(Wire * wire, QPointF offset, double dpi, double printerscale, bool blackOnly);
 	QString makeWireSVGAux(Wire * wire, double width, const QString & color, QPointF offset, double dpi, double printerScale, bool blackOnly, bool dashed);
 
-	QString makeMoveSVG(double printerScale, double dpi, QPointF & offset); 
+	QString makeMoveSVG(double printerScale, double dpi, QPointF & offset);
 	void prepDeleteProps(ItemBase * itemBase, long id, const QString & newModuleID, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand);
 	void prepDeleteOtherProps(ItemBase * itemBase, long id, const QString & newModuleID, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand);
 	virtual ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
@@ -495,7 +495,7 @@ protected:
 	void moveLegBendpointsAux(ConnectorItem * connectorItem, bool undoOnly, QUndoCommand * parentCommand);
 	virtual void rotatePartLabels(double degrees, QTransform &, QPointF center, QUndoCommand * parentCommand);
 	bool checkUpdateRatsnest(QList<ConnectorItem *> & connectorItems);
-	void makeRatsnestViewGeometry(ViewGeometry & viewGeometry, ConnectorItem * source, ConnectorItem * dest); 
+	void makeRatsnestViewGeometry(ViewGeometry & viewGeometry, ConnectorItem * source, ConnectorItem * dest);
 	virtual double getTraceWidth();
 	virtual const QString & traceColor(ViewLayer::ViewLayerPlacement);
 	void createTrace(Wire * fromWire, const QString & commandString, ViewGeometry::WireFlag, bool useLastWireColor);
@@ -558,7 +558,7 @@ signals:
 	void updatePartLabelInstanceTitleSignal(long itemID);
 	void filenameIfSignal(QString & filename);
 	void collectRatsnestSignal(QList<SketchWidget *> & foreignSketchWidgets);
-	void removeRatsnestSignal(QList<struct ConnectorEdge *> & cutSet, QUndoCommand * parentCommand); 
+	void removeRatsnestSignal(QList<struct ConnectorEdge *> & cutSet, QUndoCommand * parentCommand);
 	void updateLayerMenuSignal();
     void swapBoardImageSignal(SketchWidget * sketchWidget, ItemBase * itemBase, const QString & filename, const QString & moduleID, bool addName);
     void canConnectSignal(Wire * from, ItemBase * to, bool & connect);
@@ -616,7 +616,7 @@ protected slots:
 public slots:
 	void changeWireColor(const QString newColor);
 	void changeWireWidthMils(const QString newWidth);
- 	void selectAllItems(bool state, bool doEmit);
+	void selectAllItems(bool state, bool doEmit);
 	void setNoteText(long itemID, const QString & newText);
 	void setInstanceTitle(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit);
 	void incInstanceTitle(long id);

@@ -68,7 +68,7 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
     if (!styleSheet.open(QIODevice::ReadOnly)) {
         DebugDialog::debug("Unable to open :/resources/styles/newpartseditor.qss");
     } else {
-    	this->setStyleSheet(styleSheet.readAll());
+	this->setStyleSheet(styleSheet.readAll());
     }
 */
     m_pegi = NULL;
@@ -104,7 +104,7 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
     m_connectorInfoLayout = new QVBoxLayout;
 
     m_connectorInfoWidget = new QFrame;             // a placeholder for PEUtils::connectorForm
-    m_connectorInfoLayout->addWidget(m_connectorInfoWidget);             
+    m_connectorInfoLayout->addWidget(m_connectorInfoWidget);
 
 	m_terminalPointGroupBox = new QGroupBox("Terminal point");
 	m_terminalPointGroupBox->setToolTip(tr("Controls for setting the terminal point for a connector. The terminal point is where a wire will attach to the connector. You can also drag the crosshair of the current connector"));
@@ -192,7 +192,7 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 
 }
 
-PEToolView::~PEToolView() 
+PEToolView::~PEToolView()
 {
 }
 

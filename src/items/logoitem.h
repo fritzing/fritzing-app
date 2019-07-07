@@ -31,7 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "resizableboard.h"
 
-class LogoItem : public ResizableBoard 
+class LogoItem : public ResizableBoard
 {
 	Q_OBJECT
 
@@ -100,7 +100,7 @@ protected:
 class CopperLogoItem : public LogoItem
 {
 Q_OBJECT
-	
+
 public:
 	CopperLogoItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~CopperLogoItem();
@@ -115,7 +115,7 @@ protected:
 class SchematicLogoItem : public LogoItem
 {
 Q_OBJECT
-	
+
 public:
 	SchematicLogoItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~SchematicLogoItem();
@@ -129,7 +129,7 @@ protected:
 class BreadboardLogoItem : public LogoItem
 {
 Q_OBJECT
-	
+
 public:
 	BreadboardLogoItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~BreadboardLogoItem();

@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 #include <QMatrix>
 #include <QRegExp>
-#include <QTextStream>   
+#include <QTextStream>
 #include <qmath.h>
 
 SvgFlattener::SvgFlattener() : SvgFileSplitter()
@@ -224,7 +224,7 @@ void SvgFlattener::rotateCommandSlot(QChar command, bool relative, QList<double>
 			case 'V':
 				DebugDialog::debug("'v' and 'V' are now removed by preprocessing; shouldn't be here");
 				/*
-				y = args[i];			
+				y = args[i];
 				x = 0; // what is x, really?
 				DebugDialog::debug("Warning! Can't rotate path with V");
 				*/
@@ -275,7 +275,7 @@ void SvgFlattener::rotateCommandSlot(QChar command, bool relative, QList<double>
 	}
 }
 
-void SvgFlattener::replaceElementID(const QString & filename, const QString & svg, QDomDocument & domDocument, const QString & elementID, const QString & altElementID) 
+void SvgFlattener::replaceElementID(const QString & filename, const QString & svg, QDomDocument & domDocument, const QString & elementID, const QString & altElementID)
 {
     if (!loadDocIf(filename, svg, domDocument)) return;
 
@@ -286,7 +286,7 @@ void SvgFlattener::replaceElementID(const QString & filename, const QString & sv
     }
 }
 
-void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID, double printerScale, Qt::Orientations orientation) 
+void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID, double printerScale, Qt::Orientations orientation)
 {
     QDomDocument domDocument;
     if (!loadDocIf(filename, svg, domDocument)) return;
@@ -303,7 +303,7 @@ void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDo
 
 }
 
-QString SvgFlattener::flipSMDElement(QDomDocument & domDocument, QDomElement & element, const QString & att, QDomElement altElement, const QString & altAtt, double printerScale, Qt::Orientations orientation) 
+QString SvgFlattener::flipSMDElement(QDomDocument & domDocument, QDomElement & element, const QString & att, QDomElement altElement, const QString & altAtt, double printerScale, Qt::Orientations orientation)
 {
 	Q_UNUSED(printerScale);
 	Q_UNUSED(att);
@@ -352,7 +352,7 @@ QString SvgFlattener::flipSMDElement(QDomDocument & domDocument, QDomElement & e
 		tElementChild.appendChild(altElement);
 		altElement.removeAttribute("id");
 	}
- 
+
 	domDocument.documentElement().appendChild(pElement);
     return domDocument.toString();
 }

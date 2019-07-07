@@ -49,7 +49,7 @@ static QHash<QString, QString> ___emptyStringHash___;
 static QDir ___emptyDir___;
 static QByteArray ___emptyByteArray___;
 
-static const QString OCRAFontName("OCRA"); 
+static const QString OCRAFontName("OCRA");
 
 static const QString ResourcePath(":/resources/");
 

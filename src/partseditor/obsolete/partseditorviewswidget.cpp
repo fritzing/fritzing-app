@@ -113,7 +113,7 @@ void PartsEditorViewsWidget::init() {
 PartsEditorView * PartsEditorViewsWidget::createViewImageWidget(
 		SketchModel* sketchModel, WaitPushUndoStack *undoStack,
 		ViewLayer::ViewIdentifier viewId, QString iconFileName, QString startText,
-		ConnectorsInfoWidget* info, ViewLayer::ViewLayerID viewLayerId, ItemBase * fromItem) 
+		ConnectorsInfoWidget* info, ViewLayer::ViewLayerID viewLayerId, ItemBase * fromItem)
 {
 
 	PartsEditorView * viw = new PartsEditorView(viewId,tempDir(),showingTerminalPoints(),PartsEditorMainWindow::emptyViewItem(iconFileName,startText),this, 150, false, fromItem);
@@ -326,7 +326,7 @@ bool PartsEditorViewsWidget::connectorsPosOrSizeChanged() {
 			|| m_pcbView->connsPosOrSizeChanged();
 }
 
-void PartsEditorViewsWidget::setViewItems(ItemBase* bbItem, ItemBase* schemItem, ItemBase* pcbItem) 
+void PartsEditorViewsWidget::setViewItems(ItemBase* bbItem, ItemBase* schemItem, ItemBase* pcbItem)
 {
 	m_breadView->setViewItem(bbItem);
 	m_schemView->setViewItem(schemItem);

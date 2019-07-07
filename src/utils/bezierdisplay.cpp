@@ -58,7 +58,7 @@ BezierDisplay::~BezierDisplay()
 void BezierDisplay::initDisplay(QGraphicsItem * master, Bezier *bezier)
 {
 	//DebugDialog::debug("adding bezier display");
-		
+
 	static int activeColor =   0xffffff;
 	static int inactiveColor = 0xb0b0b0;
 
@@ -72,7 +72,7 @@ void BezierDisplay::initDisplay(QGraphicsItem * master, Bezier *bezier)
 
 	// put the feedback on top
 	double z = parent->zValue() + 100;			// (ViewLayer::getZIncrement() / 2)
-	
+
 	m_itemL0 = new QGraphicsLineItem();
 	pen.setColor(QColor(bezier->drag0() ? activeColor : inactiveColor));
 	m_itemL0->setPen(pen);
@@ -156,5 +156,3 @@ void BezierDisplay::updateDisplay(QGraphicsItem * master, Bezier *bezier)
 	m_itemL0->setVisible(true);
 	m_itemL1->setVisible(true);
 }
-
-

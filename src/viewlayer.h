@@ -83,14 +83,14 @@ public:
 	};
 
    enum ViewID {
-    	IconView,
-    	BreadboardView,
-    	SchematicView,
-    	PCBView,
-    	AllViews,
+	IconView,
+	BreadboardView,
+	SchematicView,
+	PCBView,
+	AllViews,
 		UnknownView,
-    	ViewCount
-   	};
+	ViewCount
+	};
 
 public:
 	static const QString HolesColor;

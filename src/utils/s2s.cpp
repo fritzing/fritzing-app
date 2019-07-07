@@ -28,7 +28,7 @@
 #include <limits>
 
 /////////////////////////////////
- 
+
 bool xLessThan(ConnectorLocation * cl1, ConnectorLocation * cl2)
 {
     return cl1->terminalPoint.x() < cl2->terminalPoint.x();
@@ -110,14 +110,14 @@ QString makePinNumber(const ConnectorLocation * connectorLocation, double x1, do
     double ty = 0;
     if (x1 == x2) {
         text += QString("<g transform='translate(%1,%2)'><g transform='rotate(%3)'>\n")
-			        .arg(x2 - SchematicRectConstants::PinWidth + SchematicRectConstants::PinSmallTextVert)  
-			        .arg((y2 + y1) / 2)      
+			        .arg(x2 - SchematicRectConstants::PinWidth + SchematicRectConstants::PinSmallTextVert)
+			        .arg((y2 + y1) / 2)
 			        .arg(270)
                     ;
     }
     else {
-        tx = (x2 + x1) / 2;       
-        ty =  y2 - SchematicRectConstants::PinWidth + SchematicRectConstants::PinSmallTextVert;      
+        tx = (x2 + x1) / 2;
+        ty =  y2 - SchematicRectConstants::PinWidth + SchematicRectConstants::PinSmallTextVert;
     }
 
     text += QString("<text class='text' font-family=\"%8\" stroke='none' stroke-width='%6' fill='%7' font-size='%1' x='%2' y='%3' text-anchor='%4'>%5</text>\n")
@@ -127,9 +127,9 @@ QString makePinNumber(const ConnectorLocation * connectorLocation, double x1, do
 					.arg("middle")
 					.arg(connectorLocation->id)
 					.arg(0)  // SW(width)
-					.arg(SchematicRectConstants::PinTextColor) 
+					.arg(SchematicRectConstants::PinTextColor)
                     .arg(SchematicRectConstants::FontFamily)
-                    ; 
+                    ;
 
     if (x1 == x2) {
 		text += "</g></g>\n";
@@ -139,7 +139,7 @@ QString makePinNumber(const ConnectorLocation * connectorLocation, double x1, do
     return text;
 }
 
-QString makePinText(const ConnectorLocation * connectorLocation, double x1, double y1, double x2, double y2, bool anchorAtStart) 
+QString makePinText(const ConnectorLocation * connectorLocation, double x1, double y1, double x2, double y2, bool anchorAtStart)
 {
     if (connectorLocation->hidden) return "";
 
@@ -178,9 +178,9 @@ QString makePinText(const ConnectorLocation * connectorLocation, double x1, doub
 						.arg(anchorAtStart ? "start" : "end")
 						.arg(TextUtils::escapeAnd(connectorLocation->name))
 						.arg(0)  // SW(width)
-						.arg(SchematicRectConstants::PinTextColor) 
+						.arg(SchematicRectConstants::PinTextColor)
                         .arg(SchematicRectConstants::FontFamily)
-                        ;  
+                        ;
 
     if (rotate) {
 		text += "</g></g>\n";
@@ -229,7 +229,7 @@ void S2S::message(const QString & msg) {
     emit messageSignal(msg);
 }
 
-void S2S::saveFile(const QString & content, const QString & path) 
+void S2S::saveFile(const QString & content, const QString & path)
 {
 	QFile file(path);
 	if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -394,7 +394,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 
     double labelTextMax = spaceTitle(titles, hUnits - leftTextUnits - rightTextUnits - 2);
 
-    double textWidth = hPinTextMax + hPinTextMax + labelTextMax + (6 * SchematicRectConstants::PinTextIndent);   // PTI text PTI PTI title PTI PTI text PTI           
+    double textWidth = hPinTextMax + hPinTextMax + labelTextMax + (6 * SchematicRectConstants::PinTextIndent);   // PTI text PTI PTI title PTI PTI text PTI
     double hTextUnits = qCeil(textWidth / SchematicRectConstants::NewUnit);
     if (hTextUnits > hUnits) hUnits = hTextUnits;
 
@@ -501,10 +501,10 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 				    .arg(((hUnits * SchematicRectConstants::NewUnit) / 2) + rectL)
 				    .arg(y)
 				    .arg(0)  // SW(width)
-				    .arg(SchematicRectConstants::TitleColor) 
+				    .arg(SchematicRectConstants::TitleColor)
                     .arg(TextUtils::escapeAnd(subTitle))
                     .arg(SchematicRectConstants::FontFamily)
-                    ; 
+                    ;
             y += (SchematicRectConstants::LabelTextHeight + SchematicRectConstants::LabelTextSpace);
         }
 
@@ -562,7 +562,7 @@ double S2S::stringWidthMM(double fontSize, const QString & string) {
     return bestX / ImageFactor;
 }
 
-QList<ConnectorLocation *> S2S::initConnectors(const QDomElement & root, const QSvgRenderer & renderer, const QString & fzpFilename, const QString & svgFilename) 
+QList<ConnectorLocation *> S2S::initConnectors(const QDomElement & root, const QSvgRenderer & renderer, const QString & fzpFilename, const QString & svgFilename)
 {
     QList<ConnectorLocation *> connectorLocations;
     m_minLeft = std::numeric_limits<int>::max();
@@ -659,7 +659,7 @@ QList<ConnectorLocation *> S2S::initConnectors(const QDomElement & root, const Q
     return connectorLocations;
 }
 
-double S2S::lrtb(QList<ConnectorLocation *> & connectorLocations, const QRectF & viewBox) 
+double S2S::lrtb(QList<ConnectorLocation *> & connectorLocations, const QRectF & viewBox)
 {
     m_fudge = qMax(m_maxRight - m_minLeft, m_maxBottom - m_minTop) / FudgeDivisor;
 
@@ -761,7 +761,7 @@ double S2S::lrtb(QList<ConnectorLocation *> & connectorLocations, const QRectF &
 }
 
 
-void S2S::setHidden(QList<ConnectorLocation *> & connectorLocations) 
+void S2S::setHidden(QList<ConnectorLocation *> & connectorLocations)
 {
     setHiddenAux(connectorLocations, m_lefts, getY, m_fudge);
     setHiddenAux(connectorLocations, m_rights, getY, m_fudge);
@@ -882,7 +882,7 @@ double S2S::spaceTitle(QStringList & titles, int openUnits)
     }
 
     if (!changed) return labelTextMax;
-     
+
     labelTextMax = 0;
     foreach (QString title, titles) {
 		double w = stringWidthMM(SchematicRectConstants::LabelTextHeight, title);
@@ -895,4 +895,3 @@ void S2S::setSvgDirs(QDir & oldDir, QDir & newDir) {
     m_oldSvgDir = oldDir;
     m_newSvgDir = newDir;
 }
-

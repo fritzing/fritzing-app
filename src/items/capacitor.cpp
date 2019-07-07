@@ -60,7 +60,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
             if (propertyDef->editable) {
                 focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value").arg(returnProp));
             }
-		
+
 			if (propertyDef->numeric) {
 				if (!current.isEmpty()) {
 					double val = TextUtils::convertFromPowerPrefixU(current, propertyDef->symbol);
@@ -109,9 +109,9 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 			}
 
 			this->m_comboBoxes.insert(propertyDef, focusOutComboBox);
-				
+
 			returnValue = focusOutComboBox->currentText();
-			returnWidget = focusOutComboBox;	
+			returnWidget = focusOutComboBox;
 
 			return true;
 		}
@@ -164,7 +164,7 @@ void Capacitor::setProp(const QString & prop, const QString & value) {
 }
 
 void Capacitor::simplePropertyEntry(const QString & text) {
-	
+
 	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
 	if (focusOutComboBox == NULL) return;
 

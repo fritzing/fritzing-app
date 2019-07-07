@@ -30,14 +30,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 class ItemDrag : public QObject {
-	
+
 Q_OBJECT
-	
-	
-protected:	
+
+
+protected:
 	ItemDrag(QObject * parent = 0);
 	void __dragIsDone();
-	
+
 public:
 	static ItemDrag * singleton();
 	static QHash<QObject *, QObject *> & cache();
@@ -55,7 +55,7 @@ protected:
 	QHash<QObject *, QObject *> m_cache;
 	QPointer<QWidget> m_originator;
     bool m_originatorIsTempBin;
-	
+
 protected:
 	static ItemDrag * Singleton;
 };

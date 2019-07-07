@@ -75,11 +75,11 @@ const double InactiveOpacity = 0.5;
 
 QString Note::initialTextString;
 
-QRegExp UrlTag("<a.*href=[\"']([^\"]+[.\\s]*)[\"'].*>");    
+QRegExp UrlTag("<a.*href=[\"']([^\"]+[.\\s]*)[\"'].*>");
 
 ///////////////////////////////////////
 
-void findA(QDomElement element, QList<QDomElement> & aElements) 
+void findA(QDomElement element, QList<QDomElement> & aElements)
 {
 	if (element.tagName().compare("a", Qt::CaseInsensitive) == 0) {
 		aElements.append(element);
@@ -95,7 +95,7 @@ void findA(QDomElement element, QList<QDomElement> & aElements)
 }
 
 
-QString addText(const QString & text, bool inUrl) 
+QString addText(const QString & text, bool inUrl)
 {
 	if (text.isEmpty()) return "";
 
@@ -147,7 +147,7 @@ void NoteGraphicsTextItem::focusOutEvent(QFocusEvent * event) {
 
 //////////////////////////////////////////
 
-LinkDialog::LinkDialog(QWidget *parent) : QDialog(parent) 
+LinkDialog::LinkDialog(QWidget *parent) : QDialog(parent)
 {
 	this->setWindowTitle(QObject::tr("Edit link"));
 
@@ -342,7 +342,7 @@ QPainterPath Note::shape() const
 
 void Note::positionGrip() {
 	QSizeF gripSize = m_resizeGrip->boundingRect().size();
-	QSizeF sz = this->boundingRect().size(); 
+	QSizeF sz = this->boundingRect().size();
 	QPointF p(sz.width() - gripSize.width(), sz.height() - gripSize.height());
 	m_resizeGrip->setPos(p);
 	m_graphicsTextItem->setPos(TriangleOffset / 2, TriangleOffset / 2);
@@ -565,7 +565,7 @@ void Note::linkDialog() {
 	bool gotUrl = false;
 	if (textCursor.anchor() == textCursor.selectionStart()) {
 		// the selection returns empty since we're between characters
-		// so select one character forward or one character backward 
+		// so select one character forward or one character backward
 		// to see whether we're in a url
 		int wasAnchor = textCursor.anchor();
 		bool atEnd = textCursor.atEnd();
@@ -709,12 +709,12 @@ void Note::handleMouseMoveSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * 
 	}
 	if (newY - oldY1 < minHeight) {
 		newY = oldY1 + minHeight;
-	}	
+	}
 	newR.setRect(0, 0, newX - oldX1, newY - oldY1);
 
 	prepareGeometryChange();
 	m_rect = newR;
-	positionGrip();	
+	positionGrip();
 }
 
 void Note::handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * resizeHandle) {
@@ -731,7 +731,7 @@ void Note::handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, ResizeHandle
 }
 
 bool Note::hasPartLabel() {
-	
+
 	return false;
 }
 
@@ -806,7 +806,7 @@ QString Note::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 				.arg((left + r.left()) * dpi / GraphicsUtils::SVGDPI)
 				.arg((top + r.top() + line.ascent()) * dpi / GraphicsUtils::SVGDPI)
 				.arg("Droid Sans")
-				.arg(line.ascent() * dpi / GraphicsUtils::SVGDPI) 
+				.arg(line.ascent() * dpi / GraphicsUtils::SVGDPI)
 				;
 
 
@@ -839,16 +839,16 @@ QString Note::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 			svg += addText(soFar, inUrl && !blackOnly);
 			svg += "</text>";
 		}
-	}	
+	}
 
 
 	svg += "</g>";
 
 
-	return svg;	
+	return svg;
 }
 
-ViewLayer::ViewID Note::useViewIDForPixmap(ViewLayer::ViewID, bool) 
+ViewLayer::ViewID Note::useViewIDForPixmap(ViewLayer::ViewID, bool)
 {
     return ViewLayer::IconView;
 }

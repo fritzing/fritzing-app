@@ -81,6 +81,3 @@ void ProcessEventBlocker::_inc(int i) {
 	m_count += i;
 	m_mutex.unlock();
 }
-
-
-

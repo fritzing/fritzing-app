@@ -75,4 +75,3 @@ public:
 
 
 #endif // SVGPATHGRAMMAR_P_H
-

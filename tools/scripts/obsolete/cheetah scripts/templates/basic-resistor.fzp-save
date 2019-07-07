@@ -20,7 +20,7 @@
     <description>A generic resistor (0.25W)</description>
     <views>
         <iconView>
-            <layers image="icon/resistor_icon_${resistance}.svg" >   
+            <layers image="icon/resistor_icon_${resistance}.svg" >
                 <layer layerId="icon" />
             </layers>
         </iconView>

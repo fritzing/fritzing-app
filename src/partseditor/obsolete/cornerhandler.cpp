@@ -60,11 +60,11 @@ void CornerHandler::initPixmapHash() {
 		pixmapHash[Qt::TopLeftCorner] =
 			QPixmap(":/resources/images/itemselection/cornerHandlerActiveTopLeft.png");
 		pixmapHash[Qt::TopRightCorner] =
-		 	QPixmap(":/resources/images/itemselection/cornerHandlerActiveTopRight.png");
+			QPixmap(":/resources/images/itemselection/cornerHandlerActiveTopRight.png");
 		pixmapHash[Qt::BottomRightCorner] =
-		 	QPixmap(":/resources/images/itemselection/cornerHandlerActiveBottomRight.png");
+			QPixmap(":/resources/images/itemselection/cornerHandlerActiveBottomRight.png");
 		pixmapHash[Qt::BottomLeftCorner] =
-		 	QPixmap(":/resources/images/itemselection/cornerHandlerActiveBottomLeft.png");
+			QPixmap(":/resources/images/itemselection/cornerHandlerActiveBottomLeft.png");
 	}
 }
 
@@ -152,7 +152,7 @@ Qt::CursorShape CornerHandler::cursorForCorner(Qt::Corner corner) {
 		case Qt::BottomLeftCorner:
 			cursorShape = Qt::SizeBDiagCursor;
 			break;
-		default: 
+		default:
 			throw "CornerHandler::cursorForCorner unknown corner";
 	}
 	return cursorShape;

@@ -99,7 +99,7 @@ void SVGView::importPCBXML(){
          tr("Fritzing Footprint XML Files (*.fzfp);;All Files (*)"));
 	QFile file(path);
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
-    	QMessageBox::warning(NULL, QObject::tr("Fritzing"),
+	QMessageBox::warning(NULL, QObject::tr("Fritzing"),
                      QObject::tr("Cannot read file %1:\n%2.")
                      .arg(path)
                      .arg(file.errorString()));
@@ -120,9 +120,9 @@ void SVGView::importPCBXML(){
     }
 
     QDomElement root = m_domDocument->documentElement();
-   	if (root.isNull()) {
+	if (root.isNull()) {
         QMessageBox::critical(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (12).").arg(path));
-   		return;
+		return;
 	}
 
     if (root.tagName().toLower() != "element") {

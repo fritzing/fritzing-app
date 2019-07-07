@@ -94,9 +94,9 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
     }
 
     QDomElement root = domDocument.documentElement();
-   	if (root.isNull()) {
+	if (root.isNull()) {
         FMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (2).").arg(fileName));
-   		return false;
+		return false;
 	}
 
 	emit loadedRoot(fileName, this, root);
@@ -144,7 +144,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
         m_checkForReversedWires = !Version::greaterThan(versionThingRats, versionThingFz);
 
 	}
-    
+
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();
 
     QDomElement title = root.firstChildElement("title");
@@ -183,28 +183,28 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
 	// delete any aready-existing model parts
     for (int i = m_root->children().count() - 1; i >= 0; i--) {
-    	QObject* child = m_root->children()[i];
-    	child->setParent(NULL);
-    	delete child;
-   	}
+	QObject* child = m_root->children()[i];
+	child->setParent(NULL);
+	delete child;
+	}
 
 	emit loadingInstances(this, instances);
 
 	if (checkForRats) {
 		QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			QDomElement nextInstance = instance.nextSiblingElement("instance");
 			if (isRatsnest(instance)) {
 				instances.removeChild(instance);
 			}
-			
+
 			instance = nextInstance;
 		}
 	}
 
 	if (checkForTraces) {
 		QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			checkTraces(instance);
 			instance = instance.nextSiblingElement("instance");
 		}
@@ -212,7 +212,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
 	if (checkForMysteryParts) {
 		QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			checkMystery(instance);
 			instance = instance.nextSiblingElement("instance");
 		}
@@ -220,7 +220,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
     if (checkForObsoleteSMDOrientation) {
 		QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			if (checkObsoleteOrientation(instance)) {
                 emit obsoleteSMDOrientationSignal();
                 break;
@@ -232,13 +232,13 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
     m_useOldSchematics = false;
     if (checkForOldSchematics) {
         QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			if (checkOldSchematics(instance)) {
                 emit oldSchematicsSignal(fileName, m_useOldSchematics);
                 break;
             }
 			instance = instance.nextSiblingElement("instance");
-		}    
+		}
     }
 
 	bool result = loadInstances(domDocument, instances, modelParts, checkViews);
@@ -253,9 +253,9 @@ ModelPart * ModelBase::fixObsoleteModuleID(QDomDocument & domDocument, QDomEleme
 bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instances, QList<ModelPart *> & modelParts, bool checkViews)
 {
 	QHash<QString, QString> missingModules;
-   	QDomElement instance = instances.firstChildElement("instance");
-   	ModelPart* modelPart = NULL;
-   	while (!instance.isNull()) {
+	QDomElement instance = instances.firstChildElement("instance");
+	ModelPart* modelPart = NULL;
+	while (!instance.isNull()) {
 		emit loadingInstance(this, instance);
 
         if (checkViews) {
@@ -272,8 +272,8 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
             }
         }
 
-   		// for now assume all parts are in the palette
-   		QString moduleIDRef = instance.attribute("moduleIdRef");
+		// for now assume all parts are in the palette
+		QString moduleIDRef = instance.attribute("moduleIdRef");
 
         //DebugDialog::debug("loading " + moduleIDRef);
 		if (moduleIDRef.compare(ModuleIDNames::SpacerModuleIDName) == 0) {
@@ -288,7 +288,7 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 		}
 
         bool generated = false;
-   		modelPart = m_referenceModel->retrieveModelPart(moduleIDRef);
+		modelPart = m_referenceModel->retrieveModelPart(moduleIDRef);
         if (modelPart == NULL) {
 			DebugDialog::debug(QString("module id %1 not found in database").arg(moduleIDRef));
 			modelPart = fixObsoleteModuleID(domDocument, instance, moduleIDRef);
@@ -301,26 +301,26 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 				}
 				if (modelPart == NULL) {
 					missingModules.insert(moduleIDRef, instance.attribute("path"));
-   					instance = instance.nextSiblingElement("instance");
-   					continue;
+					instance = instance.nextSiblingElement("instance");
+					continue;
 				}
 			}
-   		}
+		}
 
         if (modelPart->isCore() && m_useOldSchematics) {
             modelPart = createOldSchematicPart(modelPart, moduleIDRef);
         }
 
         modelPart->setInBin(true);
-   		modelPart = addModelPart(m_root, modelPart);
-   		modelPart->setInstanceDomElement(instance);
+		modelPart = addModelPart(m_root, modelPart);
+		modelPart->setInstanceDomElement(instance);
 		modelParts.append(modelPart);
 
-   		// TODO Mariano: i think this is not the way
-   		QString instanceTitle = instance.firstChildElement("title").text();
-   		if(!instanceTitle.isNull() && !instanceTitle.isEmpty()) {
-   			modelPart->setInstanceTitle(instanceTitle, false);
-   		}
+		// TODO Mariano: i think this is not the way
+		QString instanceTitle = instance.firstChildElement("title").text();
+		if(!instanceTitle.isNull() && !instanceTitle.isEmpty()) {
+			modelPart->setInstanceTitle(instanceTitle, false);
+		}
 
 		QDomElement localConnectors = instance.firstChildElement("localConnectors");
 		QDomElement localConnector = localConnectors.firstChildElement("localConnector");
@@ -329,17 +329,17 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 			localConnector = localConnector.nextSiblingElement("localConnector");
 		}
 
-   		QString instanceText = instance.firstChildElement("text").text();
-   		if(!instanceText.isNull() && !instanceText.isEmpty()) {
-   			modelPart->setInstanceText(instanceText);
-   		}
+		QString instanceText = instance.firstChildElement("text").text();
+		if(!instanceText.isNull() && !instanceText.isEmpty()) {
+			modelPart->setInstanceText(instanceText);
+		}
 
-   		bool ok;
-   		long index = instance.attribute("modelIndex").toLong(&ok);
-   		if (ok) {
+		bool ok;
+		long index = instance.attribute("modelIndex").toLong(&ok);
+		if (ok) {
 			// set the index so we can find the same model part later, as we continue loading
 			modelPart->setModelIndex(index);
-  		}
+		}
 
 		// note: this QDomNamedNodeMap loop is obsolete, but leaving it here so that old sketches don't get broken (jc, 22 Oct 2009)
 		QDomNamedNodeMap map = instance.attributes();
@@ -370,8 +370,8 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 			prop = prop.nextSiblingElement("property");
 		}
 
-   		instance = instance.nextSiblingElement("instance");
-  	}
+		instance = instance.nextSiblingElement("instance");
+	}
 
 	if (m_reportMissingModules && missingModules.count() > 0) {
 		QString unableToFind = QString("<html><body><b>%1</b><br/><table style='border-spacing: 0px 12px;'>")
@@ -465,9 +465,9 @@ void ModelBase::save(const QString & fileName, bool asPart) {
 void ModelBase::save(const QString & fileName, QXmlStreamWriter & streamWriter, bool asPart) {
     streamWriter.setAutoFormatting(true);
     if(asPart) {
-    	m_root->saveAsPart(streamWriter, true);
+	m_root->saveAsPart(streamWriter, true);
     } else {
-    	m_root->saveInstances(fileName, streamWriter, true);
+	m_root->saveInstances(fileName, streamWriter, true);
     }
 }
 
@@ -507,8 +507,8 @@ bool ModelBase::paste(ModelBase * referenceModel, QByteArray & data, QList<Model
 	}
 
 	QDomElement instances = module.firstChildElement("instances");
-   	if (instances.isNull()) {
-   		return false;
+	if (instances.isNull()) {
+		return false;
 	}
 
 	if (!preserveIndex) {
@@ -722,7 +722,7 @@ void ModelBase::checkTraces(QDomElement & instance) {
 		views.appendChild(pcbView);
 		return;
 	}
-	
+
 	if (!pcbView.isNull()) {
 		schView = pcbView.cloneNode(true).toElement();
 		bbView = pcbView.cloneNode(true).toElement();
@@ -740,7 +740,7 @@ void ModelBase::checkTraces(QDomElement & instance) {
 	QTextStream stream(&string);
 	instance.save(stream, 0);
 	stream.flush();
-	DebugDialog::debug(QString("no wire view elements in fz file %1").arg(string));	
+	DebugDialog::debug(QString("no wire view elements in fz file %1").arg(string));
 }
 
 const QString & ModelBase::fritzingVersion() {
@@ -751,14 +751,14 @@ void ModelBase::setReferenceModel(ModelBase * modelBase) {
     m_referenceModel = modelBase;
 }
 
-void ModelBase::checkMystery(QDomElement & instance) 
+void ModelBase::checkMystery(QDomElement & instance)
 {
 	QString moduleIDRef = instance.attribute("moduleIdRef");
     bool mystery = false;
     bool sip = false;
     bool dip = false;
-	if (moduleIDRef.contains("mystery", Qt::CaseInsensitive)) mystery = true;	
-    else if (moduleIDRef.contains("sip", Qt::CaseInsensitive)) sip = true;    
+	if (moduleIDRef.contains("mystery", Qt::CaseInsensitive)) mystery = true;
+    else if (moduleIDRef.contains("sip", Qt::CaseInsensitive)) sip = true;
     else if (moduleIDRef.contains("dip", Qt::CaseInsensitive)) dip = true;
     else return;
 
@@ -833,9 +833,9 @@ ModelPart * ModelBase::createOldSchematicPart(ModelPart * modelPart, QString & m
         if (oldModelPart) {
             moduleIDRef = oldModuleIDRef;
             return oldModelPart;
-        }    
+        }
     }
-    
+
     return modelPart;
 }
 

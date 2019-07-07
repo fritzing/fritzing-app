@@ -55,7 +55,7 @@ struct LinkedFile {
 	FileFlags fileFlags;
 };
 
-class PTabWidget : public QTabWidget 
+class PTabWidget : public QTabWidget
 {
 	Q_OBJECT
 

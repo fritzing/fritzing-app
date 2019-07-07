@@ -52,8 +52,8 @@ QChar ThinSpaceSymbol(0x2009);
 
 //////////////////////////////////////////////////////
 
-LabelThing::LabelThing(const QString & text, const QString & released, const QString & pressed, const QString & hover, QWidget * parent) : 
-            QLabel(text, parent) 
+LabelThing::LabelThing(const QString & text, const QString & released, const QString & pressed, const QString & hover, QWidget * parent) :
+            QLabel(text, parent)
 {
     m_state = RELEASED;
     m_releasedImage = QPixmap(released);
@@ -76,7 +76,7 @@ void LabelThing::leaveEvent(QEvent * event) {
 }
 
 void LabelThing::mousePressEvent(QMouseEvent * event) {
-    m_state = PRESSED;  
+    m_state = PRESSED;
     update();
     QLabel::mousePressEvent(event);
 }
@@ -90,7 +90,7 @@ void LabelThing::mouseReleaseEvent(QMouseEvent * event) {
 
 void LabelThing::paintEvent(QPaintEvent * event) {
     // use 'new QPainter()' so that delete is invoked before the QLabel::paintEvent call, otherwise the label isn't painted on mac
-    QPainter * painter = new QPainter(this);              
+    QPainter * painter = new QPainter(this);
     switch (m_state) {
         case PRESSED:
             painter->drawPixmap(0, 0, m_pressedImage);
@@ -116,46 +116,46 @@ void LabelThing::paintEvent(QPaintEvent * event) {
 
 // from http://qt.onyou.ch/2010/07/08/hide-vertical-grid-lines-in-qtableview/
 
-// custom item delegate to draw grid lines around cells 
-class CustomDelegate : public QStyledItemDelegate 
-{ 
-public: 
-    CustomDelegate(QTableView* tableView); 
-protected: 
-    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const; 
-private: 
-    QPen _gridPen; 
-}; 
- 
-CustomDelegate::CustomDelegate(QTableView* tableView) 
-{ 
-    // create grid pen 
-    int gridHint = tableView->style()->styleHint(QStyle::SH_Table_GridLineColor, new QStyleOptionViewItemV4()); 
-    QColor gridColor(gridHint); 
-    _gridPen = QPen(gridColor, 0, tableView->gridStyle()); 
-} 
- 
-void CustomDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const 
-{ 
-    QStyledItemDelegate::paint(painter, option, index); 
- 
-    if (index.row() < 2) {
-        QPen oldPen = painter->pen(); 
-        painter->setPen(_gridPen); 
- 
+// custom item delegate to draw grid lines around cells
+class CustomDelegate : public QStyledItemDelegate
+{
+public:
+    CustomDelegate(QTableView* tableView);
+protected:
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+private:
+    QPen _gridPen;
+};
 
-        // paint vertical lines 
+CustomDelegate::CustomDelegate(QTableView* tableView)
+{
+    // create grid pen
+    int gridHint = tableView->style()->styleHint(QStyle::SH_Table_GridLineColor, new QStyleOptionViewItemV4());
+    QColor gridColor(gridHint);
+    _gridPen = QPen(gridColor, 0, tableView->gridStyle());
+}
+
+void CustomDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
+{
+    QStyledItemDelegate::paint(painter, option, index);
+
+    if (index.row() < 2) {
+        QPen oldPen = painter->pen();
+        painter->setPen(_gridPen);
+
+
+        // paint vertical lines
         //painter->drawLine(option.rect.topRight(), option.rect.bottomRight()); //vertical lines are disabled
-        // paint horizontal lines  
+        // paint horizontal lines
         painter->drawLine(option.rect.bottomLeft(), option.rect.bottomRight()); //draw only horizontal line
- 
+
         painter->setPen(oldPen);
     }
-} 
+}
 
 //////////////////////////////////////////////////////
 
-QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent) 
+QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 {
     initCounts();
     QFile styleSheet(":/resources/styles/fritzing.qss");
@@ -183,10 +183,10 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 
     m_tableWidget->verticalHeader()->setVisible(false);
     m_tableWidget->horizontalHeader()->setVisible(false);
-    
+
     m_tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     m_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    
+
     m_tableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
@@ -216,7 +216,7 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
     QFrame * frame = new QFrame;
     QHBoxLayout * buttonLayout = new QHBoxLayout();
 
-    LabelThing * labelThing = new LabelThing(tr("Visit Fritzing Fab"), 
+    LabelThing * labelThing = new LabelThing(tr("Visit Fritzing Fab"),
                                 ":/resources/images/icons/fabquote_button_release.png",
                                 ":/resources/images/icons/fabquote_button_press.png",
                                 ":/resources/images/icons/fabquote_button_hover.png"
@@ -272,8 +272,8 @@ void QuoteDialog::setText() {
         ;
     msg += tr("Use Fritzing Fab to produce a PCB from your sketch.<br />");
     msg += tr("Take advantage of our quantity discount:");
-    m_messageLabel->setText(msg);    
- 
+    m_messageLabel->setText(msg);
+
     for (int i = 0; i < MessageCount; i++) {
         int count = TheCountCost[i].count;
         double cost = TheCountCost[i].cost;
@@ -288,7 +288,7 @@ void QuoteDialog::setText() {
         item->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         item->setFlags(0);
         m_tableWidget->setItem(1, i + 1, item);
-        item = new QTableWidgetItem(QString("%1%2%3").arg(hundredths(cost), 13, 'F', 2).arg(ThinSpaceSymbol).arg(EuroSymbol));   
+        item = new QTableWidgetItem(QString("%1%2%3").arg(hundredths(cost), 13, 'F', 2).arg(ThinSpaceSymbol).arg(EuroSymbol));
         item->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QFont font = item->font();
         font.setBold(true);
@@ -300,7 +300,7 @@ void QuoteDialog::setText() {
 
     // this is some bullshit because QTableWidget seems to allocate a huge amount of whitespace at right and bottom of the table
     int w = 10;
-    for (int i = 0; i < m_tableWidget->columnCount(); i++) w += m_tableWidget->columnWidth(i); 
+    for (int i = 0; i < m_tableWidget->columnCount(); i++) w += m_tableWidget->columnWidth(i);
     int h = 4;
     for (int i = 0; i < m_tableWidget->rowCount(); i++) h += m_tableWidget->rowHeight(i);
     m_tableWidget->setMaximumSize(QSize(w, h));

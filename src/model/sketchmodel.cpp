@@ -46,7 +46,7 @@ ModelPart * SketchModel::findModelPart(const QString & moduleID, long id) {
 	return findModelPartAux(m_root, moduleID, id);
 }
 
-ModelPart * SketchModel::findModelPartAux(ModelPart * modelPart, const QString & moduleID, long id) 
+ModelPart * SketchModel::findModelPartAux(ModelPart * modelPart, const QString & moduleID, long id)
 {
 	if (modelPart->moduleID().compare(moduleID) == 0) {
 		if (modelPart->hasViewID(id)) {
@@ -69,6 +69,3 @@ ModelPart * SketchModel::findModelPartAux(ModelPart * modelPart, const QString &
 
 	return NULL;
 }
-
-
-

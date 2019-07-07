@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "paletteitem.h"
 
-class SchematicSubpart : public PaletteItem 
+class SchematicSubpart : public PaletteItem
 {
 	Q_OBJECT
 

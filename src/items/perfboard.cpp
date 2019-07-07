@@ -64,7 +64,7 @@ Perfboard::Perfboard( ModelPart * modelPart, ViewLayer::ViewID viewID, const Vie
 Perfboard::~Perfboard() {
 }
 
-void Perfboard::setProp(const QString & prop, const QString & value) 
+void Perfboard::setProp(const QString & prop, const QString & value)
 {
 	if (prop.compare("size") != 0) {
 		Capacitor::setProp(prop, value);
@@ -90,7 +90,7 @@ void Perfboard::setProp(const QString & prop, const QString & value)
     if (m_partLabel) m_partLabel->displayTextsIf();
 }
 
-QString Perfboard::makeBreadboardSvg(const QString & size) 
+QString Perfboard::makeBreadboardSvg(const QString & size)
 {
 	QString BreadboardLayerTemplate = "";
 	QString ConnectorTemplate = "";
@@ -121,7 +121,7 @@ QString Perfboard::makeBreadboardSvg(const QString & size)
 		int left = 100;
 		for (int jx = 0; jx < x; jx++) {
 			middle += ConnectorTemplate.arg(left).arg(top).arg(jx).arg(iy).arg(QString::number((iy * ConnectorIDJump) + jx));
-			holes += OneHole				
+			holes += OneHole
 				.arg(left - radius)
 				.arg(top)
 				.arg(radius)
@@ -201,14 +201,14 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		hboxLayout1->setContentsMargins(0, 0, 0, 0);
 		hboxLayout1->setSpacing(2);
 
-		QLabel * l1 = new QLabel(getColumnLabel());	
+		QLabel * l1 = new QLabel(getColumnLabel());
 		l1->setMargin(0);
-		l1->setObjectName("infoViewLabel");	
+		l1->setObjectName("infoViewLabel");
 		m_xEdit = new QLineEdit();
 		m_xEdit->setEnabled(swappingEnabled);
 		QIntValidator * validator = new QIntValidator(m_xEdit);
 		validator->setRange(MinXDimension, MaxXDimension);
-		m_xEdit->setObjectName("infoViewLineEdit");	
+		m_xEdit->setObjectName("infoViewLineEdit");
 		m_xEdit->setValidator(validator);
 		m_xEdit->setMaxLength(5);
 		m_xEdit->setText(QString::number(x));
@@ -221,12 +221,12 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 
 		QLabel * l2 = new QLabel(getRowLabel());
 		l2->setMargin(0);
-		l2->setObjectName("infoViewLabel");	
+		l2->setObjectName("infoViewLabel");
 		m_yEdit = new QLineEdit();
 		m_yEdit->setEnabled(swappingEnabled);
 		validator = new QIntValidator(m_yEdit);
 		validator->setRange(MinYDimension, MaxYDimension);
-		m_yEdit->setObjectName("infoViewLineEdit");	
+		m_yEdit->setObjectName("infoViewLineEdit");
 		m_yEdit->setValidator(validator);
 		m_yEdit->setMaxLength(5);
 		m_yEdit->setText(QString::number(y));
@@ -279,7 +279,7 @@ bool Perfboard::canEditPart() {
 	return false;
 }
 
-void Perfboard::changeBoardSize() 
+void Perfboard::changeBoardSize()
 {
 	if (!m_gotWarning) {
 		int x = m_xEdit->text().toInt();
@@ -344,7 +344,7 @@ QString Perfboard::genModuleID(QMap<QString, QString> & currPropsMap)
 	return size + ModuleIDNames::PerfboardModuleIDName;
 }
 
-bool Perfboard::getXY(int & x, int & y, const QString & s) 
+bool Perfboard::getXY(int & x, int & y, const QString & s)
 {
 	QRegExp re("(\\d+)\\.(\\d+)");
 

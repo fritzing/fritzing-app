@@ -51,7 +51,7 @@ FSvgRenderer::~FSvgRenderer()
 }
 
 void FSvgRenderer::initNames() {
-    VanillaConnectorInfo.gotPath = VanillaConnectorInfo.gotCircle = false;	
+    VanillaConnectorInfo.gotPath = VanillaConnectorInfo.gotCircle = false;
 }
 
 void FSvgRenderer::clearConnectorInfoHash(QHash<QString, ConnectorInfo *> & hash) {
@@ -114,7 +114,7 @@ QByteArray FSvgRenderer::loadSvg(const QByteArray & contents, const LoadInfo & l
 	return loadAux(contents, loadInfo);
 }
 
-QByteArray FSvgRenderer::loadAux(const QByteArray & theContents, const LoadInfo & loadInfo) 
+QByteArray FSvgRenderer::loadAux(const QByteArray & theContents, const LoadInfo & loadInfo)
 {
 	QByteArray cleanContents(theContents);
 	bool cleaned = false;
@@ -207,7 +207,7 @@ const QString & FSvgRenderer::filename() {
 	return m_filename;
 }
 
-QPixmap * FSvgRenderer::getPixmap(QSvgRenderer * renderer, QSize size) 
+QPixmap * FSvgRenderer::getPixmap(QSvgRenderer * renderer, QSize size)
 {
 	QPixmap *pixmap = new QPixmap(size);
 	pixmap->fill(Qt::transparent);
@@ -339,7 +339,7 @@ void FSvgRenderer::initLegInfoAux(QDomElement & element, const LoadInfo & loadIn
 	}
 }
 
-bool FSvgRenderer::initLegInfoAux(QDomElement & element, ConnectorInfo * connectorInfo) 
+bool FSvgRenderer::initLegInfoAux(QDomElement & element, ConnectorInfo * connectorInfo)
 {
 	bool ok;
 	double sw = element.attribute("stroke-width").toDouble(&ok);
@@ -413,7 +413,7 @@ ConnectorInfo * FSvgRenderer::initConnectorInfoStruct(QDomElement & connectorEle
 	return connectorInfo;
 }
 
-bool FSvgRenderer::initConnectorInfoStructAux(QDomElement & element, ConnectorInfo * connectorInfo, const QString & filename, bool parsePaths) 
+bool FSvgRenderer::initConnectorInfoStructAux(QDomElement & element, ConnectorInfo * connectorInfo, const QString & filename, bool parsePaths)
 {
     if (element.nodeName().compare("circle") == 0) {
         return initConnectorInfoCircle(element, connectorInfo, filename);
@@ -434,7 +434,7 @@ bool FSvgRenderer::initConnectorInfoStructAux(QDomElement & element, ConnectorIn
     return false;
 }
 
-bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * connectorInfo, const QString & filename) 
+bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * connectorInfo, const QString & filename)
 {
     QString id = element.attribute("id");
     if (id.isEmpty()) return false;         // shouldn't be here
@@ -454,7 +454,7 @@ bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * 
     FSvgRenderer renderer;
     QByteArray byteArray = doc.toByteArray();
     renderer.finalLoad(byteArray, filename);
-    QRectF bounds = renderer.boundsOnElement(id);	
+    QRectF bounds = renderer.boundsOnElement(id);
 
     static const int dim = 101;
     int width = dim;
@@ -497,7 +497,7 @@ bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * 
         }
         else break;
     }
-    if (lxEnd < 0) return false;         
+    if (lxEnd < 0) return false;
     if (lxEnd > width / 2) return false;       // not an ellipse
 
     for (int x = lxEnd + 1; x < width; x++) {
@@ -514,7 +514,7 @@ bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * 
         }
         else break;
     }
-    if (rxEnd < 0) return false; 
+    if (rxEnd < 0) return false;
     if (qAbs(rxEnd - rxStart - (lxEnd - lxStart)) > 1) return false;   // sides are not symmetric
 
 
@@ -533,7 +533,7 @@ bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * 
         }
         else break;
     }
-    if (lyEnd < 0) return false;         
+    if (lyEnd < 0) return false;
     if (lyEnd > height / 2) return false;       // not an ellipse
 
     for (int y = lyEnd + 1; y < height; y++) {
@@ -550,7 +550,7 @@ bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * 
         }
         else break;
     }
-    if (ryEnd < 0) return false;         
+    if (ryEnd < 0) return false;
     if (qAbs((ryEnd - ryStart) - (lyEnd - lyStart)) > 1) return false;  // tops not symmetric
 
     if (qAbs((rxStart - lxEnd) - (ryStart - lyEnd)) > 1) return false;  // inner drill hole is not circular
@@ -576,7 +576,7 @@ bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * 
     return true;
 }
 
-bool FSvgRenderer::initConnectorInfoCircle(QDomElement & element, ConnectorInfo * connectorInfo, const QString & filename) 
+bool FSvgRenderer::initConnectorInfoCircle(QDomElement & element, ConnectorInfo * connectorInfo, const QString & filename)
 {
     Q_UNUSED(filename);
 
@@ -631,10 +631,10 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 
 	// boundsOnElement seems to include any matrix on the element itself.
 	// I would swear this wasn't true before Qt4.7, but maybe I am crazy
-	QRectF bounds = this->boundsOnElement(connectorID);	
+	QRectF bounds = this->boundsOnElement(connectorID);
 
 	if (bounds.isNull() && !svgIdLayer->m_hybrid) {		// hybrids can have zero size
-		svgIdLayer->setInvisible(viewLayerPlacement);		
+		svgIdLayer->setInvisible(viewLayerPlacement);
 		DebugDialog::debug("renderer::setupconnector: null bounds");
 		return false;
 	}
@@ -642,7 +642,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 	QSizeF defaultSizeF = this->defaultSizeF();
 	QRectF viewBox = this->viewBoxF();
 
-	ConnectorInfo * connectorInfo = getConnectorInfo(connectorID);	
+	ConnectorInfo * connectorInfo = getConnectorInfo(connectorID);
 
 	/*
 	DebugDialog::debug(QString("connectorid:%1 m11:%2 m12:%3 m21:%4 m22:%5 dx:%6 dy:%7")
@@ -656,7 +656,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 				bounds);
 	*/
 
-	
+
 	/*DebugDialog::debug(QString("identity matrix %11 %1 %2, viewbox: %3 %4 %5 %6, bounds: %7 %8 %9 %10, size: %12 %13").arg(m_modelPart->title()).arg(connectorSharedID())
 					   .arg(viewBox.x()).arg(viewBox.y()).arg(viewBox.width()).arg(viewBox.height())
 					   .arg(bounds.x()).arg(bounds.y()).arg(bounds.width()).arg(bounds.height())
@@ -667,7 +667,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 
 	// some strangeness in the way that svg items and non-svg items map to screen space
 	// might be a qt problem.
-	//QMatrix matrix0 = connectorInfo->matrix * this->matrixForElement(connectorID);  
+	//QMatrix matrix0 = connectorInfo->matrix * this->matrixForElement(connectorID);
 	//QRectF r1 = matrix0.mapRect(bounds);
 
     QMatrix elementMatrix = this->matrixForElement(connectorID);
@@ -691,15 +691,15 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 
 
 	/*
-	svgIdLayer->m_rect.setRect(r1.x() * defaultSize.width() / viewBox.width(), 
-							   r1.y() * defaultSize.height() / viewBox.height(), 
-							   r1.width() * defaultSize.width() / viewBox.width(), 
+	svgIdLayer->m_rect.setRect(r1.x() * defaultSize.width() / viewBox.width(),
+							   r1.y() * defaultSize.height() / viewBox.height(),
+							   r1.width() * defaultSize.width() / viewBox.width(),
 							   r1.height() * defaultSize.height() / viewBox.height());
 	*/
 
-    QRectF svgRect(r1.x() * defaultSizeF.width() / viewBox.width(), 
-							   r1.y() * defaultSizeF.height() / viewBox.height(), 
-							   r1.width() * defaultSizeF.width() / viewBox.width(), 
+    QRectF svgRect(r1.x() * defaultSizeF.width() / viewBox.width(),
+							   r1.y() * defaultSizeF.height() / viewBox.height(),
+							   r1.width() * defaultSizeF.width() / viewBox.width(),
 							   r1.height() * defaultSizeF.height() / viewBox.height());
 
 	//if (!svgIdLayer->m_svgVisible) {
@@ -709,7 +709,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 
     svgIdLayer->setPointRect(viewLayerPlacement, terminal, svgRect, !bounds.isNull());
 	calcLeg(svgIdLayer, viewBox, connectorInfo);
-	
+
 	return true;
 }
 
@@ -818,7 +818,7 @@ QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors(ViewLayer::ViewLayerPlaceme
 
 		QRectF viewBox = this->viewBoxF();
 
-		ConnectorInfo * connectorInfo = m_nonConnectorInfoHash.value(nonConnectorID, NULL);		
+		ConnectorInfo * connectorInfo = m_nonConnectorInfoHash.value(nonConnectorID, NULL);
 		if (connectorInfo && connectorInfo->gotCircle) {
 			svgIdLayer->m_radius = connectorInfo->radius * defaultSizeF.width() / viewBox.width();
 			svgIdLayer->m_strokeWidth = connectorInfo->strokeWidth * defaultSizeF.width() / viewBox.width();
@@ -826,7 +826,7 @@ QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors(ViewLayer::ViewLayerPlaceme
 		}
 
 		// matrixForElement only grabs parent matrices, not any transforms in the element itself
-		//QMatrix matrix0 = connectorInfo->matrix * this->matrixForElement(nonConnectorID);  
+		//QMatrix matrix0 = connectorInfo->matrix * this->matrixForElement(nonConnectorID);
 		//QRectF r1 = matrix0.mapRect(bounds);
 		QRectF r1 = this->matrixForElement(nonConnectorID).mapRect(bounds);
         QRectF svgRect(r1.x() * defaultSize.width() / viewBox.width(), r1.y() * defaultSize.height() / viewBox.height(), r1.width() * defaultSize.width() / viewBox.width(), r1.height() * defaultSize.height() / viewBox.height());
@@ -838,5 +838,3 @@ QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors(ViewLayer::ViewLayerPlaceme
 	return list;
 
 }
-
-

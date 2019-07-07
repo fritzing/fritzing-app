@@ -80,7 +80,7 @@ struct Trace {
     int order;
     uchar flags;
     QList<GridPoint> gridPoints;
-    
+
     Trace() {
         flags = 0;
     }
@@ -172,7 +172,7 @@ struct ConnectionThing {
     void add(ConnectorItem * s, ConnectorItem * d);
     void remove(ConnectorItem * s);
     void remove(ConnectorItem * s, ConnectorItem * d);
-    bool multi(ConnectorItem * s);  
+    bool multi(ConnectorItem * s);
     QList<ConnectorItem *> values(ConnectorItem * s);
 };
 
@@ -211,7 +211,7 @@ protected:
     void updateDisplay(Grid *, int iz);
     void updateDisplay(GridPoint &);
     void clearExpansion(Grid * grid);
-    void prepSourceAndTarget(QDomDocument * masterdoc, RouteThing &, QList< QList<ConnectorItem *> > & subnets, int z, ViewLayer::ViewLayerPlacement); 
+    void prepSourceAndTarget(QDomDocument * masterdoc, RouteThing &, QList< QList<ConnectorItem *> > & subnets, int z, ViewLayer::ViewLayerPlacement);
     bool moveBack(Score & currentScore, int index, QList<NetOrdering> & allOrderings);
     void displayTrace(Trace &);
     void initTraceDisplay();

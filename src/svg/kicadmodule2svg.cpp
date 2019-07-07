@@ -87,7 +87,7 @@ QStringList KicadModule2Svg::listModules(const QString & filename) {
 	return modules;
 }
 
-QString KicadModule2Svg::convert(const QString & filename, const QString & moduleName, bool allowPadsAndPins) 
+QString KicadModule2Svg::convert(const QString & filename, const QString & moduleName, bool allowPadsAndPins)
 {
 	m_nonConnectorNumber = 0;
 	initLimits();
@@ -190,7 +190,7 @@ QString KicadModule2Svg::convert(const QString & filename, const QString & modul
 			default:
 				break;
 		}
-	
+
 		line = textStream.readLine();
 		if (line.isNull()) {
 			throw QObject::tr("unexpected end of file in footprint %1 in file %2").arg(moduleName).arg(filename);
@@ -264,7 +264,7 @@ QString KicadModule2Svg::convert(const QString & filename, const QString & modul
 		silkscreen0 = offsetMin("\n<g id='silkscreen0'>" + silkscreen0 + "</g>\n");
 	}
 
-	QString svg = TextUtils::makeSVGHeader(10000, 10000, m_maxX - m_minX, m_maxY - m_minY) 
+	QString svg = TextUtils::makeSVGHeader(10000, 10000, m_maxX - m_minX, m_maxY - m_minY)
 					+ m_title + m_description + metadata + copper0 + copper1 + silkscreen0 + silkscreen1 + "</svg>";
 
 	return svg;
@@ -581,21 +581,21 @@ KicadModule2Svg::PadLayer KicadModule2Svg::convertPad(QTextStream & stream, QStr
 		checkLimits(posX, xSize, posY, ySize);
 		QString id = getID(padNumber, padLayer);
 		pad += QString("<g %1 connectorname='%2'>")
-			.arg(id).arg(padName) 
-			+ drawOblong(posX, posY, xSize, ySize, drillX, drillY, padType, padLayer) 
+			.arg(id).arg(padName)
+			+ drawOblong(posX, posY, xSize, ySize, drillX, drillY, padType, padLayer)
 			+ "</g>";
 	}
 	else {
 		throw QObject::tr("unable to handle pad shape %1").arg(shapeIdentifier);
 	}
-		
+
 	if (orientation != 0) {
 		if (orientation < 0) {
 			orientation = (orientation % 3600) + 3600;
 		}
 		orientation = 3600 - (orientation % 3600);
-		QTransform t = QTransform().translate(-posX, -posY) * 
-						QTransform().rotate(orientation / 10.0) * 
+		QTransform t = QTransform().translate(-posX, -posY) *
+						QTransform().rotate(orientation / 10.0) *
 						QTransform().translate(posX, posY);
 		pad = TextUtils::svgTransform(pad, t, true, QString("_x='%1' _y='%2' _r='%3'").arg(posX).arg(posY).arg(orientation / 10.0));
 	}
@@ -774,7 +774,7 @@ void KicadModule2Svg::checkLimits(int posX, int xSize, int posY, int ySize) {
 	checkYLimit(posY + (ySize / 2.0));
 }
 
-QString KicadModule2Svg::drawCPad(int posX, int posY, int xSize, int ySize, int drillX, int drillY, const QString & padName, int padNumber, const QString & padType, KicadModule2Svg::PadLayer padLayer) 
+QString KicadModule2Svg::drawCPad(int posX, int posY, int xSize, int ySize, int drillX, int drillY, const QString & padName, int padNumber, const QString & padType, KicadModule2Svg::PadLayer padLayer)
 {
 	QString color = getColor(padLayer);
 	QString id = getID(padNumber, padLayer);
@@ -867,7 +867,7 @@ QString KicadModule2Svg::drawCPad(int posX, int posY, int xSize, int ySize, int 
 	return pad;
 }
 
-QString KicadModule2Svg::drawRPad(int posX, int posY, int xSize, int ySize, int drillX, int drillY, const QString & padName, int padNumber, const QString & padType, KicadModule2Svg::PadLayer padLayer) 
+QString KicadModule2Svg::drawRPad(int posX, int posY, int xSize, int ySize, int drillX, int drillY, const QString & padName, int padNumber, const QString & padType, KicadModule2Svg::PadLayer padLayer)
 {
 	QString color = getColor(padLayer);
 	QString id = getID(padNumber, padLayer);
@@ -903,7 +903,7 @@ QString KicadModule2Svg::drawRPad(int posX, int posY, int xSize, int ySize, int 
 							.arg(color);
 		pad += drawOblong(posX, posY, drillX + w, drillY + w, drillX, drillY, "", padLayer);
 	}
-			
+
 	// draw 4 lines otherwise there may be gaps if one pair of sides is much longer than the other pair of sides
 
 	double w = (ySize - drillY) / 2.0;
@@ -948,7 +948,7 @@ QString KicadModule2Svg::drawOblong(int posX, int posY, double xSize, double ySi
 	}
 }
 
-QString KicadModule2Svg::getID(int padNumber, KicadModule2Svg::PadLayer padLayer) {	
+QString KicadModule2Svg::getID(int padNumber, KicadModule2Svg::PadLayer padLayer) {
 	if (padNumber < 0) {
 		return QString("id='%1%2'").arg(FSvgRenderer::NonConnectorName).arg(m_nonConnectorNumber++);
 	}

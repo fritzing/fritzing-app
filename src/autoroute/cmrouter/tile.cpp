@@ -3,16 +3,16 @@
  *
  * Basic tile manipulation
  *
- *     ********************************************************************* 
- *     * Copyright (C) 1985, 1990 Regents of the University of California. * 
- *     * Permission to use, copy, modify, and distribute this              * 
- *     * software and its documentation for any purpose and without        * 
- *     * fee is hereby granted, provided that the above copyright          * 
- *     * notice appear in all copies.  The University of California        * 
- *     * makes no representations about the suitability of this            * 
- *     * software for any purpose.  It is provided "as is" without         * 
- *     * express or implied warranty.  Export of this software outside     * 
- *     * of the United States of America may require an export license.    * 
+ *     *********************************************************************
+ *     * Copyright (C) 1985, 1990 Regents of the University of California. *
+ *     * Permission to use, copy, modify, and distribute this              *
+ *     * software and its documentation for any purpose and without        *
+ *     * fee is hereby granted, provided that the above copyright          *
+ *     * notice appear in all copies.  The University of California        *
+ *     * makes no representations about the suitability of this            *
+ *     * software for any purpose.  It is provided "as is" without         *
+ *     * express or implied warranty.  Export of this software outside     *
+ *     * of the United States of America may require an export license.    *
  *     *********************************************************************
  */
 
@@ -632,7 +632,7 @@ TiJoinY(Tile *tile1, Tile *tile2, Plane *plane)
     //ASSERT(YMIN(tile1) != YMIN(tile2), "TiJoinY");
     if (YMIN(tile1) < YMIN(tile2))
     {
-		for (tp = RT(tile2); LB(tp) == tile2; tp = BL(tp)) 
+		for (tp = RT(tile2); LB(tp) == tile2; tp = BL(tp))
 			SETLB(tp, tile1);
 
 	SETRT(tile1, RT(tile2));
@@ -640,7 +640,7 @@ TiJoinY(Tile *tile1, Tile *tile2, Plane *plane)
     }
     else
     {
-		for (tp = LB(tile2); RT(tp) == tile2; tp = TR(tp)) 
+		for (tp = LB(tile2); RT(tp) == tile2; tp = TR(tp))
 			SETRT(tp, tile1);
 	SETLB(tile1, LB(tile2));
 	SETBL(tile1, BL(tile2));
@@ -678,9 +678,9 @@ TiAlloc()
 
 	//qDebug() << "alloc" << (long) newtile;
 
-	SETLB(newtile, 0); 
+	SETLB(newtile, 0);
 	SETBL(newtile, 0);
-	SETRT(newtile, 0); 
+	SETRT(newtile, 0);
 	SETTR(newtile, 0);
 
     return (newtile);
@@ -705,34 +705,34 @@ TiFree(Tile *tp)
     delete tp;
 }
 
-Tile* gotoPoint(Tile * tp, TilePoint p) 
-{ 
-	if (p.yi < YMIN(tp)) 
-	    do tp = LB(tp); while (p.yi < YMIN(tp)); 
-	else 
-	    while (p.yi >= YMAX(tp)) tp = RT(tp); 
-	if (p.xi < LEFT(tp)) 
-	    do  
-	    { 
-		do tp = BL(tp); while (p.xi < LEFT(tp)); 
-		if (p.yi < YMAX(tp)) break; 
-		do tp = RT(tp); while (p.yi >= YMAX(tp)); 
-	    } 
-	    while (p.xi < LEFT(tp)); 
-	else 
-	    while (p.xi >= RIGHT(tp)) 
-	    { 
-		do tp = TR(tp); while (p.xi >= RIGHT(tp)); 
-		if (p.yi >= YMIN(tp)) break; 
-		do tp = LB(tp); while (p.yi < YMIN(tp)); 
-	    } 
+Tile* gotoPoint(Tile * tp, TilePoint p)
+{
+	if (p.yi < YMIN(tp))
+	    do tp = LB(tp); while (p.yi < YMIN(tp));
+	else
+	    while (p.yi >= YMAX(tp)) tp = RT(tp);
+	if (p.xi < LEFT(tp))
+	    do
+	    {
+		do tp = BL(tp); while (p.xi < LEFT(tp));
+		if (p.yi < YMAX(tp)) break;
+		do tp = RT(tp); while (p.yi >= YMAX(tp));
+	    }
+	    while (p.xi < LEFT(tp));
+	else
+	    while (p.xi >= RIGHT(tp))
+	    {
+		do tp = TR(tp); while (p.xi >= RIGHT(tp));
+		if (p.yi >= YMIN(tp)) break;
+		do tp = LB(tp); while (p.yi < YMIN(tp));
+	    }
 
 	return tp;
 }
 
 /*
  * ----------------------------------------------------------------------------
- * dupTileBody -- 
+ * dupTileBody --
  *
  * Duplicate the body of an old tile as the body for a new tile.
  *

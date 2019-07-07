@@ -45,7 +45,7 @@ QString PEBaseCommand::getParamString() const {
 ChangeMetadataCommand::ChangeMetadataCommand(PEMainWindow * peMainWindow, const QString & name, const QString  & oldValue, const QString & newValue, QUndoCommand *parent)
     : PEBaseCommand(peMainWindow, parent)
 {
- 	m_name = name;
+	m_name = name;
 	m_oldValue = oldValue;
 	m_newValue = newValue;
 }
@@ -66,7 +66,7 @@ void ChangeMetadataCommand::redo()
 }
 
 QString ChangeMetadataCommand::getParamString() const {
-	return "ChangeMetadataCommand " + 
+	return "ChangeMetadataCommand " +
         QString(" name:%1, old:%2, new:%3")
             .arg(m_name)
             .arg(m_oldValue)
@@ -99,7 +99,7 @@ void ChangeTagsCommand::redo()
 }
 
 QString ChangeTagsCommand::getParamString() const {
-	return "ChangeTagsCommand " + 
+	return "ChangeTagsCommand " +
         QString(" old:%1, new:%2")
             .arg(m_old.count())
             .arg(m_new.count())
@@ -131,7 +131,7 @@ void ChangePropertiesCommand::redo()
 }
 
 QString ChangePropertiesCommand::getParamString() const {
-	return "ChangePropertiesCommand " + 
+	return "ChangePropertiesCommand " +
         QString(" old:%1, new:%2")
             .arg(m_old.count())
             .arg(m_new.count())
@@ -163,7 +163,7 @@ void ChangeConnectorMetadataCommand::redo()
 }
 
 QString ChangeConnectorMetadataCommand::getParamString() const {
-	return "ChangeConnectorMetadataCommand " + 
+	return "ChangeConnectorMetadataCommand " +
         QString(" name:%1, old:%2, new:%3")
             .arg(m_oldcm.connectorName)
             .arg(m_newcm.connectorName)
@@ -193,7 +193,7 @@ void ChangeFzpCommand::redo()
 }
 
 QString ChangeFzpCommand::getParamString() const {
-	return "ChangeFzpCommand " + 
+	return "ChangeFzpCommand " +
         QString(" old:%1 new:%2")
             .arg(m_oldFzpFile)
             .arg(m_newFzpFile)
@@ -205,7 +205,7 @@ QString ChangeFzpCommand::getParamString() const {
 ChangeSvgCommand::ChangeSvgCommand(PEMainWindow * peMainWindow, SketchWidget * sketchWidget, const QString  & oldFilename, const QString & newFilename, QUndoCommand *parent)
     : PEBaseCommand(peMainWindow, parent)
 {
- 	m_sketchWidget = sketchWidget;
+	m_sketchWidget = sketchWidget;
 	m_oldFilename = oldFilename;
 	m_newFilename = newFilename;
 
@@ -222,7 +222,7 @@ void ChangeSvgCommand::redo()
 }
 
 QString ChangeSvgCommand::getParamString() const {
-	return "ChangeSvgCommand " + 
+	return "ChangeSvgCommand " +
         QString(" id:%1, old:%2, new:%3")
             .arg(m_sketchWidget->viewID())
             .arg(m_oldFilename)
@@ -232,12 +232,12 @@ QString ChangeSvgCommand::getParamString() const {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-RelocateConnectorSvgCommand::RelocateConnectorSvgCommand(PEMainWindow * peMainWindow, SketchWidget * sketchWidget, const QString  & id, const QString & terminalID, 
-        const QString & oldGorn, const QString & oldGornTerminal, const QString & newGorn, const QString & newGornTerminal, 
+RelocateConnectorSvgCommand::RelocateConnectorSvgCommand(PEMainWindow * peMainWindow, SketchWidget * sketchWidget, const QString  & id, const QString & terminalID,
+        const QString & oldGorn, const QString & oldGornTerminal, const QString & newGorn, const QString & newGornTerminal,
         QUndoCommand *parent)
     : PEBaseCommand(peMainWindow, parent)
 {
- 	m_sketchWidget = sketchWidget;
+	m_sketchWidget = sketchWidget;
 	m_id = id;
 	m_terminalID = terminalID;
 	m_oldGorn = oldGorn;
@@ -257,7 +257,7 @@ void RelocateConnectorSvgCommand::redo()
 }
 
 QString RelocateConnectorSvgCommand::getParamString() const {
-	return "RelocateConnectorSvgCommand " + 
+	return "RelocateConnectorSvgCommand " +
         QString(" vid:%1 id:%2, terminalid:%3, oldgorn:%4, oldgornterminal:%5, newgorn:%6, newgornterminal:%7")
             .arg(m_sketchWidget->viewID())
             .arg(m_id)
@@ -271,11 +271,11 @@ QString RelocateConnectorSvgCommand::getParamString() const {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-MoveTerminalPointCommand::MoveTerminalPointCommand(PEMainWindow * peMainWindow, SketchWidget * sketchWidget, const QString  & id, 
+MoveTerminalPointCommand::MoveTerminalPointCommand(PEMainWindow * peMainWindow, SketchWidget * sketchWidget, const QString  & id,
                 QSizeF size, QPointF oldLocation, QPointF newLocation, QUndoCommand *parent)
     : PEBaseCommand(peMainWindow, parent)
 {
- 	m_sketchWidget = sketchWidget;
+	m_sketchWidget = sketchWidget;
 	m_id = id;
     m_size = size;
 	m_oldLocation = oldLocation;
@@ -293,7 +293,7 @@ void MoveTerminalPointCommand::redo()
 }
 
 QString MoveTerminalPointCommand::getParamString() const {
-	return "RelocateConnectorSvgCommand " + 
+	return "RelocateConnectorSvgCommand " +
         QString(" vid:%1, id:%2, old:%3,%4, new:%5,%6")
             .arg(m_sketchWidget->viewID())
             .arg(m_id)
@@ -309,7 +309,7 @@ QString MoveTerminalPointCommand::getParamString() const {
 RemoveBusConnectorCommand::RemoveBusConnectorCommand(PEMainWindow * peMainWindow, const QString & busID, const QString  & connectorID, bool inverted, QUndoCommand *parent)
     : PEBaseCommand(peMainWindow, parent)
 {
- 	m_busID = busID;
+	m_busID = busID;
 	m_connectorID = connectorID;
 	m_inverted = inverted;
 }
@@ -327,7 +327,7 @@ void RemoveBusConnectorCommand::redo()
 }
 
 QString RemoveBusConnectorCommand::getParamString() const {
-	return "RemoveBusConnectorCommand " + 
+	return "RemoveBusConnectorCommand " +
         QString(" busID:%1, connectorID:%2 inv:%3")
             .arg(m_busID)
             .arg(m_connectorID)
@@ -336,12 +336,12 @@ QString RemoveBusConnectorCommand::getParamString() const {
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ChangeSMDCommand::ChangeSMDCommand(PEMainWindow * peMainWindow, const QString & before, const QString & after, 
-									const QString  & oldFilename, const QString & newFilename, 
+ChangeSMDCommand::ChangeSMDCommand(PEMainWindow * peMainWindow, const QString & before, const QString & after,
+									const QString  & oldFilename, const QString & newFilename,
 									QUndoCommand *parent)
     : PEBaseCommand(peMainWindow, parent)
 {
- 	m_before = before;
+	m_before = before;
 	m_after = after;
 	m_oldFilename = oldFilename;
 	m_newFilename = newFilename;
@@ -358,7 +358,7 @@ void ChangeSMDCommand::redo()
 }
 
 QString ChangeSMDCommand::getParamString() const {
-	return "ChangeSMDCommand " + 
+	return "ChangeSMDCommand " +
         QString(" before:%1, after:%2 oldpath:%3, newPath:%4, oldorig:%5, neworig:%6")
             .arg(m_before)
             .arg(m_after)

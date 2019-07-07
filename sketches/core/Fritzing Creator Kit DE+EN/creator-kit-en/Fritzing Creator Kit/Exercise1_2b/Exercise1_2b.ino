@@ -4,7 +4,7 @@
   * short-short-short = S
   * long-long-long = O
   * short-short-short = S
-  
+
   This example is part of the Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 

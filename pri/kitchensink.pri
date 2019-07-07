@@ -26,8 +26,8 @@ HEADERS += \
     src/sketchtoolbutton.h \
     src/viewgeometry.h \
     src/viewlayer.h \
-    src/waitpushundostack.h 
-    
+    src/waitpushundostack.h
+
 SOURCES += \
     src/commands.cpp \
     src/debugdialog.cpp \
@@ -41,6 +41,4 @@ SOURCES += \
     src/sketchtoolbutton.cpp \
     src/viewgeometry.cpp \
     src/viewlayer.cpp \
-    src/waitpushundostack.cpp 
-    
-
+    src/waitpushundostack.cpp

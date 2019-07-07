@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "paletteitem.h"
 
-class Breadboard : public PaletteItem 
+class Breadboard : public PaletteItem
 {
 	Q_OBJECT
 
@@ -34,7 +34,7 @@ public:
 
 	PluralType isPlural();
 	void hoverUpdate();
-	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget); 
+	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	bool stickyEnabled();
 	bool canFindConnectorsUnder();
 

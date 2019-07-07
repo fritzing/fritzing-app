@@ -24,7 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QCursor>
 #include <QObject>
 
-class CursorKeyListener 
+class CursorKeyListener
 {
 	public:
 		virtual void cursorKeyEvent(Qt::KeyboardModifiers) = 0;
@@ -61,10 +61,10 @@ public:
 	static QCursor * MakeWireCursor;
 	static QCursor * MakeCurveCursor;
 	static QCursor * RubberbandCursor;
-	static QCursor * MoveCursor;	
-	static QCursor * BendlegCursor;	
-	static QCursor * RotateCursor;	
-	static QCursor * ScaleCursor;	
+	static QCursor * MoveCursor;
+	static QCursor * BendlegCursor;
+	static QCursor * RotateCursor;
+	static QCursor * ScaleCursor;
 
 protected:
 	static CursorMaster TheCursorMaster;

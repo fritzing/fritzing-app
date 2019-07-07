@@ -12,4 +12,3 @@
     <p layer="copper1" svgId="connector%1pin"/></pcbView>
    </views>
   </connector>
-  

@@ -4208,10 +4208,10 @@ Vá em frente e salve?</translation>
         <translation>Fritzing atualmente suporta apenas as fontes OCRA e Droid--estas foram substituidas pelas fontes &apos;%1&apos;</translation>
     </message>
     <message>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
-        <translation>Não foi possivel carregar o arquivo de imagem &apos;%1&apos;: 
+        <translation>Não foi possivel carregar o arquivo de imagem &apos;%1&apos;:
 
 %2</translation>
     </message>

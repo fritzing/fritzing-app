@@ -38,13 +38,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 QString PaletteModel::s_fzpOverrideFolder;
 
 const static QString InstanceTemplate(
-        		"\t\t<instance moduleIdRef=\"%1\" path=\"%2\">\n"
+			"\t\t<instance moduleIdRef=\"%1\" path=\"%2\">\n"
 				"\t\t\t<views>\n"
-        		"\t\t\t\t<iconView layer=\"icon\">\n"
-        		"\t\t\t\t\t<geometry z=\"-1\" x=\"-1\" y=\"-1\"></geometry>\n"
-        		"\t\t\t\t</iconView>\n"
-        		"\t\t\t</views>\n"
-        		"\t\t</instance>\n");
+			"\t\t\t\t<iconView layer=\"icon\">\n"
+			"\t\t\t\t\t<geometry z=\"-1\" x=\"-1\" y=\"-1\"></geometry>\n"
+			"\t\t\t\t</iconView>\n"
+			"\t\t\t</views>\n"
+			"\t\t</instance>\n");
 
 
 void setFlip(ViewLayer::ViewID viewID, QXmlStreamReader & xml, QHash<ViewLayer::ViewID, ViewImage *> & viewImages)
@@ -155,11 +155,11 @@ void PaletteModel::countParts(QDir & dir, QStringList & nameFilters, int & partC
 
     QStringList dirs = dir.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
     for (int i = 0; i < dirs.size(); ++i) {
-    	QString temp2 = dirs[i];
-       	dir.cd(temp2);
+	QString temp2 = dirs[i];
+	dir.cd(temp2);
 
-    	countParts(dir, nameFilters, partCount);
-    	dir.cdUp();
+	countParts(dir, nameFilters, partCount);
+	dir.cdUp();
     }
 }
 
@@ -177,18 +177,18 @@ void PaletteModel::loadPartsAux(QDir & dir, QStringList & nameFilters, int & loa
 
     QStringList dirs = dir.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
     for (int i = 0; i < dirs.size(); ++i) {
-    	QString temp2 = dirs[i];
-       	dir.cd(temp2);
+	QString temp2 = dirs[i];
+	dir.cd(temp2);
 
 		m_loadingContrib = (temp2 == "contrib");
 
-    	loadPartsAux(dir, nameFilters, loadingPart, totalPartCount);
-    	dir.cdUp();
+	loadPartsAux(dir, nameFilters, loadingPart, totalPartCount);
+	dir.cdUp();
     }
 }
 
 ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
-  
+
     QFile file(path);
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
         FMessageBox::warning(NULL, QObject::tr("Fritzing"),
@@ -220,9 +220,9 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	}
 
 	QDomElement root = domDocument.documentElement();
-   	if (root.isNull()) {
+	if (root.isNull()) {
 		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (8)."));
-   		return NULL;
+		return NULL;
 	}
 
 	if (root.tagName() != "module") {
@@ -349,8 +349,8 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		 m_root = modelPart;
 	}
 	else {
-    	modelPart->setParent(m_root);
-   	}
+	modelPart->setParent(m_root);
+	}
 
     return modelPart;
 }

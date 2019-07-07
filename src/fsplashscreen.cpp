@@ -189,4 +189,3 @@ void FSplashScreen::displaySlice()
 	showPixmap(bar, "logoBar");
 	showPixmap(slice, "slice");
 }
-

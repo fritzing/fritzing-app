@@ -424,7 +424,7 @@ void ConnectorsInfoWidget::syncNewConnectors(ViewLayer::ViewIdentifier viewId, c
 					} else {
 						addConnectorInfo(connId);
 					}
-					
+
 					SingleConnectorInfoWidget * sci = findSCI(connId);
 					resetType(viewId, sci, conn);
 					resetName(viewId, sci, conn);
@@ -531,14 +531,14 @@ void ConnectorsInfoWidget::addConnector() {
 
 	if (m_views->breadboardView()->myItem() == NULL ||
 		m_views->schematicView()->myItem() == NULL ||
-		m_views->pcbView()->myItem() == NULL) 
+		m_views->pcbView()->myItem() == NULL)
 	{
 		QMessageBox::warning(
 			parentWidget(),
 			tr("Couldn't add connector"),
 			tr("Please, first load an image in each view,\nbefore adding any connectors")
 		);
-		
+
 		return;
 	}
 
@@ -677,7 +677,7 @@ void ConnectorsInfoWidget::resetType(ViewLayer::ViewIdentifier viewId, SingleCon
 }
 
 
-void ConnectorsInfoWidget::resetName(ViewLayer::ViewIdentifier viewId, SingleConnectorInfoWidget * sci, Connector * conn) 
+void ConnectorsInfoWidget::resetName(ViewLayer::ViewIdentifier viewId, SingleConnectorInfoWidget * sci, Connector * conn)
 {
 	Q_UNUSED(viewId);
 

@@ -4180,7 +4180,7 @@ Go ahead and save?</source>
         <translation>Impossible d&apos;analyser le fichier fzp %1</translation>
     </message>
     <message>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
         <translation>Impossible de charger le fichier d&apos;images &apos;%1&apos;

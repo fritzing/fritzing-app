@@ -151,7 +151,7 @@ QStringList PinHeader::collectValues(const QString & family, const QString & pro
 		for (int i = minP; i <= MaxPins; i += step) {
 			values << QString::number(i);
 		}
-		
+
 		return values;
 	}
 
@@ -168,7 +168,7 @@ QStringList PinHeader::collectValues(const QString & family, const QString & pro
 			    values.append(Spacings.value(key));
             }
 		}
-		
+
 		return values;
 	}
 
@@ -219,7 +219,7 @@ QString PinHeader::genFZP(const QString & moduleID)
 	QStringList pieces = useModuleID.split("_");
 	QString spacing = pieces.at(pieces.count() - 1);
 
-	QString result = PaletteItem::genFZP(useModuleID, "generic_female_pin_header_fzpTemplate", MinPins, MaxPins, 1, useModuleID.contains("smd")); 
+	QString result = PaletteItem::genFZP(useModuleID, "generic_female_pin_header_fzpTemplate", MinPins, MaxPins, 1, useModuleID.contains("smd"));
 	result.replace(".percent.", "%");
 	QString form = MaleFormString;
 	QString formBread = "male";
@@ -321,7 +321,7 @@ QString PinHeader::genFZP(const QString & moduleID)
         .arg(formRow)
         .arg(formPackage)
         .arg(formPosition);
-        ; 
+        ;
 	if (useModuleID.contains("smd")) {
 		result.replace("nsjumper", QString("smd_%1_row_pin_header").arg(formRow));
 		result.replace("jumper", QString("smd_%1_row_pin_header").arg(formRow));
@@ -371,7 +371,7 @@ QString PinHeader::genModuleID(QMap<QString, QString> & currPropsMap)
 		if (p < MinShroudedPins) {
 			pins = QString::number(p = MinShroudedPins);
 		}
-		isDouble = true; 
+		isDouble = true;
 		spacing = ShroudedSpacing;
 		formWord = "shrouded";
 	}
@@ -438,7 +438,7 @@ QString PinHeader::genModuleID(QMap<QString, QString> & currPropsMap)
 	return "";
 }
 
-QString PinHeader::makePcbSvg(const QString & originalExpectedFileName) 
+QString PinHeader::makePcbSvg(const QString & originalExpectedFileName)
 {
     QString expectedFileName = originalExpectedFileName;
     int hsix = expectedFileName.indexOf(HoleSizePrefix);
@@ -495,7 +495,7 @@ QString PinHeader::makePcbSvg(const QString & originalExpectedFileName)
 	    double copperStrokeWidth = 20;
 	    double totalWidth = (outerBorder * 2) + (silkStrokeWidth * 2) + (innerBorder * 2) + (standardRadius * 2) + copperStrokeWidth;
 	    double center = totalWidth / 2;
-	    double spacing = TextUtils::convertToInches(spacingString) * GraphicsUtils::StandardFritzingDPI; 
+	    double spacing = TextUtils::convertToInches(spacingString) * GraphicsUtils::StandardFritzingDPI;
 
 	    QString middle;
 
@@ -531,7 +531,7 @@ QString PinHeader::makePcbSvg(const QString & originalExpectedFileName)
 	        for (int i = 0; i < pins / 2; i++) {
 		        middle += circle
 					        .arg(center)
-					        .arg(center + (i * spacing)) 
+					        .arg(center + (i * spacing))
 					        .arg(i)
 					        .arg(radius)
 					        .arg(copperStrokeWidth);
@@ -539,7 +539,7 @@ QString PinHeader::makePcbSvg(const QString & originalExpectedFileName)
 	        for (int i = 0; i < pins / 2; i++) {
 		        middle += circle
 					        .arg(center)
-					        .arg(center + (i * spacing)) 
+					        .arg(center + (i * spacing))
 					        .arg(i)
 					        .arg(radius)
 					        .arg(copperStrokeWidth);
@@ -547,7 +547,7 @@ QString PinHeader::makePcbSvg(const QString & originalExpectedFileName)
 	        for (int i = pins / 2; i < pins; i++) {
 		        middle += circle
 					        .arg(center + 100)
-					        .arg(center + ((pins - i - 1) * spacing)) 
+					        .arg(center + ((pins - i - 1) * spacing))
 					        .arg(i)
 					        .arg(radius)
 					        .arg(copperStrokeWidth);
@@ -558,7 +558,7 @@ QString PinHeader::makePcbSvg(const QString & originalExpectedFileName)
 	        for (int i = 0; i < pins; i++) {
 		        middle += circle
 					        .arg(center + (i % 2 == 0 ? useLock : -useLock))
-					        .arg(center + (i * spacing)) 
+					        .arg(center + (i * spacing))
 					        .arg(i)
 					        .arg(radius)
 					        .arg(copperStrokeWidth);
@@ -611,7 +611,7 @@ void PinHeader::initSpacings() {
 	}
 }
 
-QString PinHeader::makeSchematicSvg(const QString & expectedFileName) 
+QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
 {
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() < 7) return "";
@@ -661,14 +661,14 @@ QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
     else {
 	    svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
     }
-		
+
 
 	svg += "</g>\n</svg>";
 
 	return svg;
 }
 
-QString PinHeader::makeBreadboardSvg(const QString & expectedFileName) 
+QString PinHeader::makeBreadboardSvg(const QString & expectedFileName)
 {
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() < 7) return "";
@@ -752,7 +752,7 @@ QString PinHeader::makeBreadboardDoubleSvg(const QString & expectedFileName, int
 }
 
 
-QString PinHeader::makeBreadboardShroudedSvg(int pins) 
+QString PinHeader::makeBreadboardShroudedSvg(int pins)
 {
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 					"<svg version='1.2' baseProfile='tiny' "
@@ -782,7 +782,7 @@ QString PinHeader::makeBreadboardShroudedSvg(int pins)
 					"<path id='upper connector left inset' d='M[184.03472],106.3892 [184.03472],138.31976 [191.7847],130.56976 [191.7847],114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />\n"
 					"<path id='upper connector right inset' d='M[215.96522],106.3892 [215.96522],138.31976 [208.21522],130.56976 [208.21522],114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />\n"
 				);
-					
+
 	QString repeatB("<rect id='lower connector bgnd' x='[173.618055]' y='195.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />\n"
 					"<rect id='connector%1pin' x='[184.03472]' y='206.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />\n"
 					"<rect id='lower connector top inset' x='[184.03472]' y='206.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />\n"
@@ -808,22 +808,22 @@ QString PinHeader::makeBreadboardShroudedSvg(int pins)
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 2) / 1000.0).arg(repeatTs).arg(repeatBs);
 }
 
-QString PinHeader::makePcbShroudedSvg(int pins) 
+QString PinHeader::makePcbShroudedSvg(int pins)
 {
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 					"<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
 					"x='0in' y='0in' width='0.3542in' height='%1in' viewBox='0 0 3542 [3952]'>"
-					"<g id='copper0' >\n"					
+					"<g id='copper0' >\n"
 					"<g id='copper1' >\n"
 					"<rect id='square' x='936' y='1691' width='570' height='570' stroke='#ff9400' r='285' fill='none' stroke-width='170'/>\n"
 					"%2\n"
 					"%3\n"
 					"</g>\n"
 					"</g>\n"
-					"<g id='silkscreen' >\n"					
-					"<rect x='40' y='40' width='3462' height='[3872]' fill='none' stroke='#ffffff' stroke-width='80'/>\n"	
-					"<path d='m473,{1150} 0,-{677} 2596,0 0,[3076] -2596,0 0,-{677}' fill='none' stroke='#ffffff' stroke-width='80'/>\n"	
-					"<rect x='40' y='{1150}' width='550' height='1652' fill='none' stroke='#ffffff' stroke-width='80'/>\n"	
+					"<g id='silkscreen' >\n"
+					"<rect x='40' y='40' width='3462' height='[3872]' fill='none' stroke='#ffffff' stroke-width='80'/>\n"
+					"<path d='m473,{1150} 0,-{677} 2596,0 0,[3076] -2596,0 0,-{677}' fill='none' stroke='#ffffff' stroke-width='80'/>\n"
+					"<rect x='40' y='{1150}' width='550' height='1652' fill='none' stroke='#ffffff' stroke-width='80'/>\n"
 					"</g>\n"
 					"</svg>\n"
 				);
@@ -849,7 +849,7 @@ QString PinHeader::makePcbShroudedSvg(int pins)
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 3) / 10000.0).arg(repeatLs).arg(repeatRs);
 }
 
-QString PinHeader::makePcbLongPadSvg(int pins, bool lock) 
+QString PinHeader::makePcbLongPadSvg(int pins, bool lock)
 {
     if (lock) return makePcbLongPadLockSvg(pins);
 
@@ -859,19 +859,19 @@ QString PinHeader::makePcbLongPadSvg(int pins, bool lock)
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 					"<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
                     "x='0in' y='0in' width='0.148in' height='%1in' viewBox='0 0 3.7592 %2'>\n"
-					"<g id='copper0' >\n"					
+					"<g id='copper0' >\n"
 					"<g id='copper1' >\n"
 					"%3\n"
 					"</g>\n"
 					"</g>\n"
-					"<g id='silkscreen' >\n"	
+					"<g id='silkscreen' >\n"
                     "<line class='other' x1='1.2446' y1='0.1016' x2='2.5146' y2='0.1016' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n"
                     "<line class='other' x1='1.2446' y1='%4' x2='2.5146' y2='%4' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n"
 					"</g>\n"
 					"</svg>\n"
 				);
 
-   
+
     double cy = 1.3716;
     double cy2 = 0.8128;
 	QString repeat = "<circle id='connector%1pin' cx='1.8796' cy='%2' r='0.7493' stroke='#F7BD13' stroke-width='0.381' fill='none' />\n"
@@ -892,7 +892,7 @@ QString PinHeader::makePcbLongPadSvg(int pins, bool lock)
     return header.arg(totalHeight).arg(totalHeight * dpi).arg(repeats).arg(totalHeight * dpi - lineOffset);
 }
 
-QString PinHeader::makePcbLongPadLockSvg(int pins) 
+QString PinHeader::makePcbLongPadLockSvg(int pins)
 {
     double dpi = 25.4;
     double originalHeight = 0.108;           // inches
@@ -900,12 +900,12 @@ QString PinHeader::makePcbLongPadLockSvg(int pins)
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 					"<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
                     "x='0in' y='0in' width='0.13in' height='%1in' viewBox='0 0 3.302 %2'>\n"
-					"<g id='copper0' >\n"					
+					"<g id='copper0' >\n"
 					"<g id='copper1' >\n"
 					"%3\n"
 					"</g>\n"
 					"</g>\n"
-					"<g id='silkscreen' >\n"	
+					"<g id='silkscreen' >\n"
                     "<line class='other' x1='1.651' y1='0.1016' x2='1.651' y2='0.3556' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n"
                     "<line class='other' x1='1.651' y1='0.1016' x2='0.6604' y2='0.1016' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n"
                     "<line class='other' x1='0.6604' y1='0.1016' x2='0.381' y2='0.381' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n"
@@ -927,7 +927,7 @@ QString PinHeader::makePcbLongPadLockSvg(int pins)
 
     QString between("<line class='other' x1='1.651' y1='[2.8956]' x2='1.651' y2='[2.3876]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n");
     QString betweens = TextUtils::incrementTemplateString(between, pins - 1, increment * dpi, TextUtils::standardMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
-   
+
     double ncy = 1.3716;
     double ncx = 1.524;
     double ncy2 = 0.8636;
@@ -952,7 +952,7 @@ QString PinHeader::makePcbLongPadLockSvg(int pins)
     return header.arg(totalHeight).arg(totalHeight * dpi).arg(repeats).arg(bottom).arg(betweens);
 }
 
-QString PinHeader::makePcbMolexSvg(int pins, const QString & spacingString) 
+QString PinHeader::makePcbMolexSvg(int pins, const QString & spacingString)
 {
     double dpi = 25.4;
     double originalHeight = 0.105;           // inches
@@ -963,20 +963,20 @@ QString PinHeader::makePcbMolexSvg(int pins, const QString & spacingString)
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 					"<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
                     "x='0in' y='0in' width='0.225in' height='%1in' viewBox='0 0 5.715 %2'>\n"
-					"<g id='copper0' >\n"					
+					"<g id='copper0' >\n"
 					"<g id='copper1' >\n"
                     "<rect id='square' stroke='#F7BD13' stroke-width='0.4318' fill='none' x='2.3876' y='.6096' width='1.4478' height='1.4478' />\n"
 					"%3\n"
 					"</g>\n"
 					"</g>\n"
-					"<g id='silkscreen' >\n"	
+					"<g id='silkscreen' >\n"
                     "<rect class='other' stroke='#f0f0f0' stroke-width='0.127' fill='none' stroke-linecap='round' x='0.0635' y='0.0635'  width='5.588' height='%4' />\n"
-                    "<rect class='other' stroke='#f0f0f0' stroke-width='0.127' fill='none' stroke-linecap='round' x='4.3815' y='1.3335'  width='1.27' height='%5' />\n"                
+                    "<rect class='other' stroke='#f0f0f0' stroke-width='0.127' fill='none' stroke-linecap='round' x='4.3815' y='1.3335'  width='1.27' height='%5' />\n"
                     "</g>\n"
 					"</svg>\n"
 				);
 
-   
+
     double cy = 1.3335;         // already in dpi
 	QString repeat = "<circle id='connector%1pin' cx='3.1115' cy='%2' r='0.7239' stroke='#F7BD13' stroke-width='0.4318' fill='none' />\n";
 
@@ -991,7 +991,7 @@ QString PinHeader::makePcbMolexSvg(int pins, const QString & spacingString)
     return header.arg(totalHeight).arg(totalHeight * dpi).arg(repeats).arg((totalHeight * dpi) - strokeWidth).arg(qMax(h, (totalHeight * dpi) - cy - cy));
 }
 
-QString PinHeader::makePcbSMDSvg(const QString & expectedFileName) 
+QString PinHeader::makePcbSMDSvg(const QString & expectedFileName)
 {
 	QStringList pieces = expectedFileName.split("_");
 
@@ -1000,7 +1000,7 @@ QString PinHeader::makePcbSMDSvg(const QString & expectedFileName)
 
 	bool singleRow = expectedFileName.contains("single");
 
-	double spacing = TextUtils::convertToInches(spacingString) * GraphicsUtils::StandardFritzingDPI;   
+	double spacing = TextUtils::convertToInches(spacingString) * GraphicsUtils::StandardFritzingDPI;
 
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 				"<svg version='1.2' baseProfile='tiny' xmlns:svg='http://www.w3.org/2000/svg' "
@@ -1011,7 +1011,7 @@ QString PinHeader::makePcbSMDSvg(const QString & expectedFileName)
 				"</g>\n"
 				"<g id='copper1'>\n");
 
-	
+
 	double baseWidth = 152.7559;			// mils
 	double totalHeight = 283.4646;
 	double totalWidth = baseWidth + ((pins - 1) * spacing);
@@ -1056,7 +1056,7 @@ QString PinHeader::makePcbSMDSvg(const QString & expectedFileName)
 	return svg;
 }
 
-bool PinHeader::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
+bool PinHeader::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (prop.compare("hole size", Qt::CaseInsensitive) == 0) {
         if (moduleID().contains("smd", Qt::CaseInsensitive)) {

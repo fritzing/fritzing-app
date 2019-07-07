@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "paletteitem.h"
 
 
-class Hole : public PaletteItem 
+class Hole : public PaletteItem
 {
 	Q_OBJECT
 
@@ -46,9 +46,9 @@ public:
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	bool hasCustomSVG();
 	PluralType isPlural();
-	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor); 
+	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	bool canEditPart();
-	void addedToScene(bool temporary);	
+	void addedToScene(bool temporary);
 	bool hasPartNumberProperty();
 	QString holeSize();
 	bool rotationAllowed();
@@ -63,7 +63,7 @@ protected slots:
 protected:
 	QString makeSvg(const QString & holeDiameter, const QString & ringThickness, ViewLayer::ViewLayerID, bool includeHole);
 	virtual QString makeID();
-	ItemBase * setBothSvg(const QString & holeDiameter, const QString & ringThickness); 
+	ItemBase * setBothSvg(const QString & holeDiameter, const QString & ringThickness);
 	void setBothNonConnectors(ItemBase * itemBase, SvgIdLayer * svgIdLayer);
 	virtual void setBoth(const QString & holeDiameter, const QString &  thickness);
 	QRectF getRect(const QString & newSize);

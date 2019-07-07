@@ -37,7 +37,7 @@ const int ModelPart::indexMultiplier = 10;
 QStringList ModelPart::m_possibleFolders;
 
 typedef QHash<QString, ModelPartList*> InstanceTitleIncrementHash;
-static QHash<QObject *, InstanceTitleIncrementHash *> AllInstanceTitleIncrements; 
+static QHash<QObject *, InstanceTitleIncrementHash *> AllInstanceTitleIncrements;
 InstanceTitleIncrementHash NullInstanceTitleIncrements;
 
 static const QRegExp InstanceTitleRegExp("^(.*[^\\d])(\\d+)$");
@@ -162,7 +162,7 @@ ModelPartSharedRoot * ModelPart::modelPartSharedRoot() {
 }
 
 void ModelPart::setModelPartShared(ModelPartShared * modelPartShared) {
-	m_modelPartShared = modelPartShared;    
+	m_modelPartShared = modelPartShared;
     if (modelPartShared) m_modelPartShared->addOwner(this);
 }
 
@@ -193,7 +193,7 @@ ItemBase * ModelPart::viewItem(ViewLayer::ViewID viewID) {
 void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & streamWriter, bool startDocument) {
 	if (startDocument) {
 		streamWriter.writeStartDocument();
-    	streamWriter.writeStartElement("module");
+	streamWriter.writeStartElement("module");
 		streamWriter.writeAttribute("fritzingVersion", Version::versionString());
 		ModelPartSharedRoot * root = modelPartSharedRoot();
 		if (root) {
@@ -208,7 +208,7 @@ void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & strea
 		if(!title.isNull() && !title.isEmpty()) {
 			streamWriter.writeTextElement("title",title);
 		}
-		
+
 		emit startSaveInstances(fileName, this, streamWriter);
 
 		streamWriter.writeStartElement("instances");
@@ -239,7 +239,7 @@ void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & strea
 	}
 }
 
-void ModelPart::saveInstance(QXmlStreamWriter & streamWriter) 
+void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 {
 	if (localProp("ratsnest").toBool()) {
 		return;				// don't save virtual wires
@@ -337,22 +337,22 @@ void ModelPart::writeNestedTag(QXmlStreamWriter & streamWriter, QString tagName,
 void ModelPart::saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument) {
 	if (startDocument) {
 		streamWriter.writeStartDocument();
-    	streamWriter.writeStartElement("module");
+	streamWriter.writeStartElement("module");
 		streamWriter.writeAttribute("fritzingVersion", Version::versionString());
         QString moduleID = m_modelPartShared->moduleID();
         moduleID.remove(PartFactory::OldSchematicPrefix);
 		streamWriter.writeAttribute("moduleId", moduleID);
-    	writeTag(streamWriter,"version",m_modelPartShared->version());
-    	writeTag(streamWriter,"author",m_modelPartShared->author());
-    	writeTag(streamWriter,"title",title());
-    	writeTag(streamWriter,"label",m_modelPartShared->label());
-    	writeTag(streamWriter,"date",m_modelPartShared->dateAsStr());
+	writeTag(streamWriter,"version",m_modelPartShared->version());
+	writeTag(streamWriter,"author",m_modelPartShared->author());
+	writeTag(streamWriter,"title",title());
+	writeTag(streamWriter,"label",m_modelPartShared->label());
+	writeTag(streamWriter,"date",m_modelPartShared->dateAsStr());
 
-    	writeNestedTag(streamWriter,"tags",m_modelPartShared->tags(),"tag");
-    	writeNestedTag(streamWriter,"properties",m_modelPartShared->properties(),"property","name");
+	writeNestedTag(streamWriter,"tags",m_modelPartShared->tags(),"tag");
+	writeNestedTag(streamWriter,"properties",m_modelPartShared->properties(),"property","name");
 
-    	writeTag(streamWriter,"taxonomy",m_modelPartShared->taxonomy());
-    	writeTag(streamWriter,"description",m_modelPartShared->description());
+	writeTag(streamWriter,"taxonomy",m_modelPartShared->taxonomy());
+	writeTag(streamWriter,"description",m_modelPartShared->description());
 
         QString spice = m_modelPartShared->spice();
         if (!spice.isEmpty()) {
@@ -372,8 +372,8 @@ void ModelPart::saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument) 
         }
 
 
-    	writeTag(streamWriter,"spice",m_modelPartShared->spice());
-    	writeTag(streamWriter,"url",m_modelPartShared->url());
+	writeTag(streamWriter,"spice",m_modelPartShared->spice());
+	writeTag(streamWriter,"url",m_modelPartShared->url());
 	}
 
 	if (m_viewItems.size() > 0) {
@@ -423,7 +423,7 @@ void ModelPart::initConnectors(bool force) {
 			// m_deletedConnectors.append(connector);
 			delete connector;
 		}
-		m_connectorHash.clear();		
+		m_connectorHash.clear();
 		clearBuses();
 	}
 	if(m_connectorHash.count() > 0) return;		// already done
@@ -732,7 +732,7 @@ void ModelPart::setInstanceText(QString text) {
 	m_instanceText = text;
 }
 
-void ModelPart::clearOldInstanceTitle(const QString & title) 
+void ModelPart::clearOldInstanceTitle(const QString & title)
 {
 	InstanceTitleIncrementHash * itih = NULL;
 	if (parent() == NULL) {
@@ -757,7 +757,7 @@ void ModelPart::clearOldInstanceTitle(const QString & title)
 	}
 }
 
-ModelPartList * ModelPart::ensureInstanceTitleIncrements(const QString & prefix) 
+ModelPartList * ModelPart::ensureInstanceTitleIncrements(const QString & prefix)
 {
 	InstanceTitleIncrementHash * itih = NULL;
 	if (parent() == NULL) {
@@ -815,7 +815,7 @@ bool ModelPart::setSubpartInstanceTitle() {
     if (m_modelPartShared == NULL) return false;
     if (m_modelPartShared->superpart() == NULL) return false;
     if (m_viewItems.count() <= 0) return false;
-                
+
     ItemBase * itemBase = m_viewItems.last();
     if (itemBase == NULL) return false;
 
@@ -851,7 +851,7 @@ QString ModelPart::getNextTitle(const QString & title) {
 		}
 	}
 
-	// TODO: if this were a sorted list, 
+	// TODO: if this were a sorted list,
 	ModelPartList * modelParts = ensureInstanceTitleIncrements(prefix);
 	int highestSoFar = 0;
 	bool gotNull = false;
@@ -960,9 +960,9 @@ const QStringList & ModelPart::displayKeys() {
 	return m_modelPartShared->displayKeys();
 }
 
-ModelPart::ItemType ModelPart::itemType() const 
-{ 
-	return m_type; 
+ModelPart::ItemType ModelPart::itemType() const
+{
+	return m_type;
 };
 
 void ModelPart::setConnectorLocalName(const QString & id, const QString & name)

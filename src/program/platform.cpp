@@ -166,5 +166,3 @@ void Platform::setIdeName(const QString &ideName)
 {
     m_ideName = ideName;
 }
-
-

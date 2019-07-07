@@ -13,7 +13,7 @@ install:
   - if not exist build64 mkdir build64
   - cd build64
   - cmake -DBUILD_CLAR=OFF -DTHREADSAFE=ON -G "Visual Studio 15 2017 Win64" ..
-  - cmake --build .  
+  - cmake --build .
   - cd c:\projects\fritzing-app\src\lib
   - curl -fsSL https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.zip -o boost_1_70_0.zip
   - 7z x boost_1_70_0.zip

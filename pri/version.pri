@@ -23,10 +23,9 @@ HEADERS += \
 SOURCES += \
         src/version/modfiledialog.cpp \
 	src/version/updatedialog.cpp \
-    	src/version/version.cpp \
-    	src/version/versionchecker.cpp \ 
+	src/version/version.cpp \
+	src/version/versionchecker.cpp \
         src/version/partschecker.cpp
 
 FORMS += \
     src/version/modfiledialog.ui
-

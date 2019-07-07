@@ -136,4 +136,3 @@ void SketchToolButton::leaveEvent(QEvent *event) {
     QToolButton::leaveEvent(event);
     emit left();
 }
-

@@ -34,7 +34,7 @@ struct GPGParams {
     QString boardSvg;
     QSizeF boardImageSize;
     QString svg;
-    QSizeF copperImageSize; 
+    QSizeF copperImageSize;
 	QStringList exceptions;
     QGraphicsItem * board;
     double res;
@@ -49,15 +49,15 @@ public:
 	GroundPlaneGenerator();
 	~GroundPlaneGenerator();
 
-	bool generateGroundPlane(const QString & boardSvg, QSizeF boardImageSize, const QString & svg, QSizeF copperImageSize, QStringList & exceptions, 
-							 QGraphicsItem * board, double res, const QString & color, double keepoutMils); 
-	bool generateGroundPlaneUnit(const QString & boardSvg, QSizeF boardImageSize, const QString & svg, QSizeF copperImageSize, QStringList & exceptions, 
-							 QGraphicsItem * board, double res, const QString & color, QPointF whereToStart, double keepoutMils); 
-	void scanImage(QImage & image, double bWidth, double bHeight, double pixelFactor, double res, 
-					const QString & colorString, bool makeConnector, 
-					bool makeOffset, QSizeF minAreaInches, double minDimensionInches, QPointF offsetPolygons);  
-	void scanOutline(QImage & image, double bWidth, double bHeight, double pixelFactor, double res, 
-					const QString & colorString, bool makeConnector, bool makeOffset, QSizeF minAreaInches, double minDimensionInches);  
+	bool generateGroundPlane(const QString & boardSvg, QSizeF boardImageSize, const QString & svg, QSizeF copperImageSize, QStringList & exceptions,
+							 QGraphicsItem * board, double res, const QString & color, double keepoutMils);
+	bool generateGroundPlaneUnit(const QString & boardSvg, QSizeF boardImageSize, const QString & svg, QSizeF copperImageSize, QStringList & exceptions,
+							 QGraphicsItem * board, double res, const QString & color, QPointF whereToStart, double keepoutMils);
+	void scanImage(QImage & image, double bWidth, double bHeight, double pixelFactor, double res,
+					const QString & colorString, bool makeConnector,
+					bool makeOffset, QSizeF minAreaInches, double minDimensionInches, QPointF offsetPolygons);
+	void scanOutline(QImage & image, double bWidth, double bHeight, double pixelFactor, double res,
+					const QString & colorString, bool makeConnector, bool makeOffset, QSizeF minAreaInches, double minDimensionInches);
 	void scanLines(QImage & image, int bWidth, int bHeight, QList<QRect> & rects);
 	bool getBoardRects(const QByteArray & boardByteArray, QGraphicsItem * board, double res, double keepoutSpace, QList<QRect> & rects);
 	const QStringList & newSVGs();
@@ -77,20 +77,20 @@ signals:
 protected:
 	void splitScanLines(QList<QRect> & rects, QList< QList<int> * > & pieces);
 	void joinScanLines(QList<QRect> & rects, QList<QPolygon> & polygons);
-	QString makePolySvg(QList<QPolygon> & polygons, double res, double bWidth, double bHeight, double pixelFactor, const QString & colorString, 
+	QString makePolySvg(QList<QPolygon> & polygons, double res, double bWidth, double bHeight, double pixelFactor, const QString & colorString,
 							bool makeConnectorFlag, QPointF * offset, QSizeF minAreaInches, double minDimensionInches, QPointF polygonOffset);
-    void makePolySvg(QList<QPolygon> & polygons, double res, double bWidth, double bHeight, double pixelFactor, 
-										const QString & colorString, bool makeConnectorFlag, bool makeOffset, 
+    void makePolySvg(QList<QPolygon> & polygons, double res, double bWidth, double bHeight, double pixelFactor,
+										const QString & colorString, bool makeConnectorFlag, bool makeOffset,
 										QSizeF minAreaInches, double minDimensionInches, QPointF polygonOffset);
 
 	QString makeOnePoly(const QPolygon & poly, const QString & colorString, const QString & id, int minX, int minY);
 	double calcArea(QPolygon & poly);
-	QImage * generateGroundPlaneAux(GPGParams &, double & bWidth, double & bHeight, QList<QRectF> &); 
+	QImage * generateGroundPlaneAux(GPGParams &, double & bWidth, double & bHeight, QList<QRectF> &);
 	void makeConnector(QList<QPolygon> & polygons, double res, double pixelFactor, const QString & colorString, int minX, int minY, QString & svg);
 	bool tryNextPoint(int x, int y, QImage & image, QList<QPoint> & points);
 	bool collectBorderPoints(QImage & image, QList<QPoint> & points);
     bool try8(int x, int y, QImage & image, QList<QPoint> & points);
-    bool generateGroundPlaneFn(GPGParams &); 
+    bool generateGroundPlaneFn(GPGParams &);
 
 
 protected:

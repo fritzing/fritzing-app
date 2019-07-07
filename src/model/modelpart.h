@@ -133,9 +133,9 @@ public:
 	void setCore(bool core);
 	bool isContrib();
 	void setContrib(bool contrib);
-	bool isAlien(); // from "outside" 
+	bool isAlien(); // from "outside"
 	void setAlien(bool alien);
-	bool isFzz(); // from "outside" 
+	bool isFzz(); // from "outside"
 	void setFzz(bool alien);
 	void setLocationFlag(bool setting, LocationFlag flag);
     bool isInBin();
@@ -169,7 +169,7 @@ public:
     void setTag(const QString &tag);
 	void setProperty(const QString & key, const QString & value, bool showInLabel);
     bool showInLabel(const QString & key);
-    
+
 	const QString & replacedby();
 	bool isObsolete();
 

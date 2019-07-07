@@ -150,28 +150,28 @@ QWidget * PEUtils::makeConnectorForm(const QDomElement & connector, int index, Q
 	justLabel->setObjectName("NewPartsEditorLabel");
     idLayout->addWidget(justLabel);
 
-    QRadioButton * radioButton = new QRadioButton(MaleSymbolString); 
+    QRadioButton * radioButton = new QRadioButton(MaleSymbolString);
 	QObject::connect(radioButton, SIGNAL(clicked()), slotHolder, SLOT(typeEntry()));
     radioButton->setObjectName("NewPartsEditorRadio");
-    if (ctype == Connector::Male) radioButton->setChecked(true); 
+    if (ctype == Connector::Male) radioButton->setChecked(true);
     radioButton->setProperty("value", Connector::Male);
     radioButton->setProperty("index", index);
     radioButton->setProperty("type", "radio");
     idLayout->addWidget(radioButton);
 
-    radioButton = new QRadioButton(FemaleSymbolString); 
+    radioButton = new QRadioButton(FemaleSymbolString);
 	QObject::connect(radioButton, SIGNAL(clicked()), slotHolder, SLOT(typeEntry()));
     radioButton->setObjectName("NewPartsEditorRadio");
-    if (ctype == Connector::Female) radioButton->setChecked(true); 
+    if (ctype == Connector::Female) radioButton->setChecked(true);
     radioButton->setProperty("value", Connector::Female);
     radioButton->setProperty("index", index);
     radioButton->setProperty("type", "radio");
     idLayout->addWidget(radioButton);
 
-    radioButton = new QRadioButton(QObject::tr("Pad")); 
+    radioButton = new QRadioButton(QObject::tr("Pad"));
 	QObject::connect(radioButton, SIGNAL(clicked()), slotHolder, SLOT(typeEntry()));
     radioButton->setObjectName("NewPartsEditorRadio");
-    if (ctype == Connector::Pad) radioButton->setChecked(true); 
+    if (ctype == Connector::Pad) radioButton->setChecked(true);
     radioButton->setProperty("value", Connector::Pad);
     idLayout->addWidget(radioButton);
     radioButton->setProperty("index", index);
@@ -220,6 +220,5 @@ bool PEUtils::fillInMetadata(int senderIndex, QWidget * parent, ConnectorMetadat
         }
 
     }
-    return result;   
+    return result;
 }
-

@@ -74,7 +74,7 @@ public:
 	QByteArray loadSvg( const QByteArray & contents, const QString & filename, bool findNonConnectors);						// for SvgSplitter loads
 	bool loadSvgString(const QString & svg);
 	bool loadSvgString(const QString & svg, QString & newSvg);
-	bool fastLoad(const QByteArray & contents);	
+	bool fastLoad(const QByteArray & contents);
     QByteArray finalLoad(QByteArray & cleanContents, const QString & filename);
 	const QString & filename();
 	QSizeF defaultSizeF();

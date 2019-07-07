@@ -64,7 +64,7 @@ WaitPushUndoStack::~WaitPushUndoStack() {
     clearDeadTimers();
 }
 
-void WaitPushUndoStack::push(QUndoCommand * cmd) 
+void WaitPushUndoStack::push(QUndoCommand * cmd)
 {
 #ifndef QT_NO_DEBUG
 	writeUndo(cmd, 0, NULL);
@@ -73,7 +73,7 @@ void WaitPushUndoStack::push(QUndoCommand * cmd)
         m_temporary->redo();
         return;
     }
-	
+
 	QUndoStack::push(cmd);
 }
 
@@ -144,10 +144,10 @@ void WaitPushUndoStack::deleteTemporary() {
 }
 
 #ifndef QT_NO_DEBUG
-void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const BaseCommand * parent) 
+void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const BaseCommand * parent)
 {
 	const BaseCommand * bcmd = dynamic_cast<const BaseCommand *>(cmd);
-	QString cmdString; 
+	QString cmdString;
 	QString indexString;
 	if (bcmd == NULL) {
 		cmdString = cmd->text();
@@ -157,9 +157,9 @@ void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const Ba
 		indexString = QString::number(bcmd->index()) + " ";
 	}
 
-   	if (m_file.open(QIODevice::Append | QIODevice::Text)) {
-   		QTextStream out(&m_file);
-		QString indentString(indent, QChar(' '));	
+	if (m_file.open(QIODevice::Append | QIODevice::Text)) {
+		QTextStream out(&m_file);
+		QString indentString(indent, QChar(' '));
 		if (parent) {
 			indentString += QString("(%1) ").arg(parent->index());
 		}
@@ -179,4 +179,3 @@ void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const Ba
 	}
 }
 #endif
-

@@ -35,7 +35,7 @@ TrieLeaf::~TrieLeaf()
 {
 }
 
-TrieNode::TrieNode(QChar c) 
+TrieNode::TrieNode(QChar c)
 {
 	m_char = c;
 	m_leafData = NULL;
@@ -43,7 +43,7 @@ TrieNode::TrieNode(QChar c)
 	m_caseInsensitive = false;
 }
 
-TrieNode::~TrieNode() 
+TrieNode::~TrieNode()
 {
 	foreach (TrieNode * node, m_children) {
 		delete node;
@@ -96,7 +96,7 @@ bool TrieNode::matchesChar(QChar c) {
 	return (c == m_char);
 }
 
-bool TrieNode::matches(QString & string, TrieLeaf * & leaf) 
+bool TrieNode::matches(QString & string, TrieLeaf * & leaf)
 {
 	if (string.isEmpty()) {
 		if (m_isLeaf) {

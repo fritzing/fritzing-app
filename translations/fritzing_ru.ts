@@ -5196,7 +5196,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1612"/>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
         <translation>Не удалось загрузить файл изображения &apos;%1&apos;:
@@ -7070,7 +7070,7 @@ shift key swaps scroll axis</source>
         <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="98"/>
         <source>Sorry, we have a problem with the swapping mechanism.
 Fritzing still works, but you won&apos;t be able to change parts properties.</source>
-        <translation>К сожалению, у нас есть проблема с механизмом подкачки. 
+        <translation>К сожалению, у нас есть проблема с механизмом подкачки.
 Fritzing по-прежнему работает, но вы не сможете изменить свойства компонентов.</translation>
     </message>
     <message>
@@ -7380,7 +7380,7 @@ Fritzing по-прежнему работает, но вы не сможете �
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="223"/>
         <source>The part that you have just added,
 is already there, we won&apos;t add it again, right?</source>
-        <translation>Компонент, который Вы только что добавили, 
+        <translation>Компонент, который Вы только что добавили,
 уже там есть, мы не можем добавить его снова, верно?</translation>
     </message>
     <message>

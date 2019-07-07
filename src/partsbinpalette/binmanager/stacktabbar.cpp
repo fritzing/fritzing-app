@@ -46,7 +46,7 @@ StackTabBar::StackTabBar(StackTabWidget *parent) : QTabBar(parent) {
 	setIconSize(QSize(32, 32));
 
 	setContextMenuPolicy(Qt::CustomContextMenu);
- 
+
 	connect(this, SIGNAL(customContextMenuRequested(const QPoint &)), SLOT(showContextMenu(const QPoint &)));
 
 	m_dragMoveTimer.setSingleShot(true);
@@ -106,11 +106,11 @@ void StackTabBar::dropEvent(QDropEvent* event) {
 
 	event->acceptProposedAction();
 }
- 
+
 void StackTabBar::showContextMenu(const QPoint &point)
 {
 	if (point.isNull()) return;
- 
+
 	int tabIndex = this->tabAt(point);
 	PartsBinPaletteWidget* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(tabIndex));
 	if (bin == NULL) return;
@@ -126,7 +126,7 @@ void StackTabBar::showContextMenu(const QPoint &point)
 
 
 void StackTabBar::paintEvent(QPaintEvent *event)
-{    
+{
 	Q_UNUSED(event);
 
     QStylePainter painter(this);

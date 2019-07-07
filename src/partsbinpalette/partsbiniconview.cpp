@@ -57,8 +57,8 @@ PartsBinIconView::PartsBinIconView(ReferenceModel* referenceModel, PartsBinPalet
 
     setContextMenuPolicy(Qt::CustomContextMenu);
     connect(
-    	this, SIGNAL(customContextMenuRequested(const QPoint&)),
-    	this, SLOT(showContextMenu(const QPoint&))
+	this, SIGNAL(customContextMenuRequested(const QPoint&)),
+	this, SLOT(showContextMenu(const QPoint&))
     );
 }
 
@@ -195,7 +195,7 @@ int PartsBinIconView::setItemAux(ModelPart * modelPart, int position) {
 	if (contains(moduleID)) {
 		return position;
 	}
-	
+
 	SvgIconWidget* svgicon = NULL;
 	if (modelPart->itemType() != ModelPart::Space) {
 		ItemBase::PluralType plural;

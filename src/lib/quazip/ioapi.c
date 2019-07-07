@@ -74,7 +74,7 @@ voidpf ZCALLBACK fopen_file_func (opaque, filename, mode)
    const char* filename;
    int mode;
 {
-	#ifndef _WINDOWS 
+	#ifndef _WINDOWS
     (void) opaque; /* avoid "unused parameter" warning */
 	#endif
 
@@ -101,7 +101,7 @@ uLong ZCALLBACK fread_file_func (opaque, stream, buf, size)
    void* buf;
    uLong size;
 {
-	#ifndef _WINDOWS 
+	#ifndef _WINDOWS
     (void) opaque; /* avoid "unused parameter" warning */
 	#endif
 
@@ -117,7 +117,7 @@ uLong ZCALLBACK fwrite_file_func (opaque, stream, buf, size)
    const void* buf;
    uLong size;
 {
-	#ifndef _WINDOWS 
+	#ifndef _WINDOWS
     (void) opaque; /* avoid "unused parameter" warning */
 	#endif
 
@@ -130,7 +130,7 @@ long ZCALLBACK ftell_file_func (opaque, stream)
    voidpf opaque;
    voidpf stream;
 {
-	#ifndef _WINDOWS 
+	#ifndef _WINDOWS
     (void) opaque; /* avoid "unused parameter" warning */
 	#endif
     long ret;
@@ -144,7 +144,7 @@ long ZCALLBACK fseek_file_func (opaque, stream, offset, origin)
    uLong offset;
    int origin;
 {
-	#ifndef _WINDOWS 
+	#ifndef _WINDOWS
     (void) opaque; /* avoid "unused parameter" warning */
 	#endif
 
@@ -172,7 +172,7 @@ int ZCALLBACK fclose_file_func (opaque, stream)
    voidpf opaque;
    voidpf stream;
 {
-	#ifndef _WINDOWS 
+	#ifndef _WINDOWS
 	(void) opaque; /* avoid "unused parameter" warning */
 	#endif
 
@@ -185,7 +185,7 @@ int ZCALLBACK ferror_file_func (opaque, stream)
    voidpf opaque;
    voidpf stream;
 {
-	#ifndef _WINDOWS 
+	#ifndef _WINDOWS
     (void) opaque; /* avoid "unused parameter" warning */
 	#endif
 

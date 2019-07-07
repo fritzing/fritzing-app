@@ -220,56 +220,56 @@ bool GedaElementParser::parse(GedaElementLexer *lexer)
 } break;  case 90: {
 } break;  case 91: {
 } break;  case 92: {
-} break;  
+} break;
 case 93: {
     //qDebug() << "        got NUMBER " << lexer->currentNumber();
     m_symStack.append(lexer->currentNumber());
-} break; 
- 
+} break;
+
 case 94: {
     //qDebug() << "        got HEXNUMBER " << lexer->currentNumber();
     m_symStack.append(lexer->currentNumber());
-} break; 
- 
+} break;
+
 case 95: {
     //qDebug() << "        got STRING " << lexer->currentString();
     m_symStack.append(lexer->currentString());
-} break; 
- 
+} break;
+
 case 96: {
     //qDebug() << "got ELEMENT command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 97: {
     //qDebug() << "got PIN command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 98: {
     //qDebug() << "got PAD command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 99: {
     //qDebug() << "got MARK command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 100: {
     //qDebug() << "got ELEMENTLINE command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 101: {
     //qDebug() << "got ELEMENTARC command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 102: {
     //qDebug() << "got ATTRIBUTE command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 
           } // switch
 

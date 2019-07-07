@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "trienode.h"
 
-class CommentInfo 
+class CommentInfo
 {
 public:
 	CommentInfo(const QString & start, const QString & end, Qt::CaseSensitivity);

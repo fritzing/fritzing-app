@@ -1,6 +1,6 @@
 # usage:
 #    svnremove.py -d [directory]
-#    
+#
 #    directory is a folder containing .svn directories.
 #    recursively delete all .svn folders
 
@@ -11,13 +11,13 @@ def usage():
     print """
 usage:
     svnremove.py -d [directory]
-    
-    directory is a folder containing .svn directories.  
+
+    directory is a folder containing .svn directories.
     recursively delete all .svn folders
     """
-    
-    
-       
+
+
+
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hd:", ["help", "directory"])
@@ -29,7 +29,7 @@ def main():
     outputDir = None
     findtext = ""
     gotnot = 0
-    
+
     for o, a in opts:
         #print o
         #print a
@@ -40,19 +40,19 @@ def main():
             sys.exit(2)
         else:
             assert False, "unhandled option"
-    
+
     if(not(outputDir)):
         usage()
         sys.exit(2)
-     
-    
+
+
     for root, dirs, files in os.walk(outputDir, topdown=False):
         for dirname in dirs:
-            if dirname == ".svn":  
+            if dirname == ".svn":
                 removeall(os.path.join(root, dirname))
                 print "removing", os.path.join(root, dirname)
 
-               
+
 def removeall(top):
     for root, dirs, files in os.walk(top, topdown=False):
         for name in files:
@@ -63,9 +63,8 @@ def removeall(top):
                 os.chmod(fullname, stat.S_IWRITE)
             os.remove(fullname)
         for name in dirs:
-            os.rmdir(os.path.join(root, name))	
+            os.rmdir(os.path.join(root, name))
     os.rmdir(top)
-    
+
 if __name__ == "__main__":
     main()
-

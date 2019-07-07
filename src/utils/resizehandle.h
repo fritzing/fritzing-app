@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 // currently used by Note.cpp
 
-class ResizeHandle : public QObject, public QGraphicsPixmapItem 
+class ResizeHandle : public QObject, public QGraphicsPixmapItem
 {
 Q_OBJECT
 

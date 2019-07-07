@@ -28,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "paletteitem.h"
 
-class MysteryPart : public PaletteItem 
+class MysteryPart : public PaletteItem
 {
 	Q_OBJECT
 
@@ -74,7 +74,7 @@ protected:
 	virtual QString retrieveSchematicSvg(QString & svg);
 
 protected:
-    static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid); 
+    static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid);
     static QString genxFZP(const QString & moduleid, const QString & templateName, int minPins, int maxPins, int step);
 
 protected:

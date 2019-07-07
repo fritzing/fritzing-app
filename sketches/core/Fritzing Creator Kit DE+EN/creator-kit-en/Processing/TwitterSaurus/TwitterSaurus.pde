@@ -4,9 +4,9 @@ import ddf.minim.*;                                                             
 
 /*
   TwitterSaurus
-  Dieses Programm sucht nach einem Suchbegriff auf Twitter. Wenn ein neuer Beitrag geschrieben wird, 
+  Dieses Programm sucht nach einem Suchbegriff auf Twitter. Wenn ein neuer Beitrag geschrieben wird,
   wird ein Sound ausgelöst und ein Servo dreht sich. Er bewegt das Maul des Dinosauriers des Fritzing Creator Kits.
-  
+
   Dieses Beispiel aus dem Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
@@ -30,7 +30,7 @@ TwitterFactory twitterFactory;                                                  
 
 int servoPin=10;                                                                // Servo an Arduino-Pin
 
-void setup(){              
+void setup(){
   size(400,200);                                                                // legt die Größe des Programmfensters fest
   ConfigurationBuilder cb = new ConfigurationBuilder();                         // ConfigurationBuilder für Twitter
   cb.setOAuthConsumerKey("uzr17kGYqhgNDjTBNQd1qA");                             // Hier muss Dein ConsumerKey eingegeben werden
@@ -40,12 +40,12 @@ void setup(){
 
   twitterFactory = new TwitterFactory(cb.build());                              // öffnet eine Verbindung zu Twitter
   twitter = twitterFactory.getInstance();
-  
+
   minim = new Minim(this);                                                      // Minim (Bibliothek für die Soundausgabe) wird initialisiert
   sound1 = minim.loadSample("sound1.wav");                                      // Sounddatei wird geladen
   font = loadFont("OCRAStd-14.vlw");                                            // Font-Datei wird geladen
   textFont(font);                                                               // Font wird initialisiert
-  println(Arduino.list());                                                      // Alle seriellen Geräte werden in einer Liste ausgegeben, die Nummer für das Arduino muss 
+  println(Arduino.list());                                                      // Alle seriellen Geräte werden in einer Liste ausgegeben, die Nummer für das Arduino muss
   arduino = new Arduino(this, Arduino.list()[4]);                               // hier übergeben werden: Arduino.list()[nummer]
   arduino.pinMode(servoPin, Arduino.OUTPUT);                                    // Servo Pin wird im Arduino als Output festgelegt
 }
@@ -54,7 +54,7 @@ void alertMe(){                                                                 
   sound1.trigger();                                                             // Soundsample wird abgespielt
   arduino.analogWrite(servoPin, 120);                                           // Servo wird gedreht
   delay(500);                                                                   // warten
-  arduino.analogWrite(servoPin, 20);                                            // Servo wird gedreht 
+  arduino.analogWrite(servoPin, 20);                                            // Servo wird gedreht
   delay(500);                                                                   // warten
 }
 
@@ -65,7 +65,7 @@ void twitterConnect(){                                                          
     for (Status status : result.getTweets()) {
         println("@" + status.getUser().getScreenName() + ":" + status.getText());
         currentMessage="@" + status.getUser().getScreenName() + ":" + status.getText();
-    }    
+    }
   }
   catch (TwitterException e) {                                                  // bei Fehler
     println("Couldn't connect: " + e);                                          // Fehlermeldung wird ausgegeben
@@ -78,11 +78,10 @@ void draw(){                                                                    
     timer=millis();                                                             // timer wird neu gestartet
   }
 
-  if (currentMessage.equals(lastMessage) == false) {                            // wenn aktuelle Nachricht anders als letzte Nachricht ist 
+  if (currentMessage.equals(lastMessage) == false) {                            // wenn aktuelle Nachricht anders als letzte Nachricht ist
     background(0);                                                              // Hindergrund füllen
     text(currentMessage, 10, 20,width-20,height-40);                            // Tweet als Text ausgeben
     alertMe();                                                                  // Methodenaufruf
     lastMessage=currentMessage;                                                 // letzteNachricht auf aktuelle Nachricht senden
   }
 }
-

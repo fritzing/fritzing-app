@@ -34,7 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPainter>
 #include <QAbstractItemDelegate>
 
-class BlogListWidget : public QListWidget 
+class BlogListWidget : public QListWidget
 {
     Q_OBJECT
     Q_PROPERTY(QColor titleTextColor READ titleTextColor WRITE setTitleTextColor DESIGNABLE true)
@@ -102,7 +102,7 @@ protected:
 
     QStringList m_imageRequestList;
 };
- 
+
 class WelcomeView : public QFrame
 {
 Q_OBJECT
@@ -125,7 +125,7 @@ protected:
     QWidget * makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text);
     void getNextBlogImage(int ix, bool blog);
     void setBlogItemImage(QPixmap &, int index, bool blog) ;
-    QWidget * createShopContentFrame(const QString & imagePath, const QString & headline, const QString & description, 
+    QWidget * createShopContentFrame(const QString & imagePath, const QString & headline, const QString & description,
                                      const QString & url, const QString & urlText, const QString & urlText2, const QString & logoPath, const QString & footerLabelColor);
     BlogListWidget * createBlogContentFrame(const QString & url, const QString & urlText, const QString & logoPath, const QString & footerLabelColor);
 
@@ -169,7 +169,7 @@ class BlogListDelegate : public QAbstractItemDelegate
 {
 	public:
 		BlogListDelegate(QObject *parent = 0);
-		virtual ~BlogListDelegate(); 
+		virtual ~BlogListDelegate();
 
 		void paint ( QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index ) const;
 		QSize sizeHint ( const QStyleOptionViewItem & option, const QModelIndex & index ) const;

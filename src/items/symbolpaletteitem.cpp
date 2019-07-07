@@ -41,7 +41,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define FROMVOLTAGE(v) ((long) (v * VOLTAGE_HASH_CONVERSION))
 
 static QMultiHash<long, QPointer<ConnectorItem> > LocalVoltages;			// Qt doesn't do Hash keys with double
-static QMultiHash<QString, QPointer<ConnectorItem> > LocalNetLabels;			
+static QMultiHash<QString, QPointer<ConnectorItem> > LocalNetLabels;
 static QList< QPointer<ConnectorItem> > LocalGrounds;
 static QList<double> Voltages;
 double SymbolPaletteItem::DefaultVoltage = 5;
@@ -168,7 +168,7 @@ void SymbolPaletteItem::removeMeFromBus(double v) {
 	LocalGrounds.removeOne(NULL);  // keep cleaning these out
 }
 
-ConnectorItem* SymbolPaletteItem::newConnectorItem(Connector *connector) 
+ConnectorItem* SymbolPaletteItem::newConnectorItem(Connector *connector)
 {
 	ConnectorItem * connectorItem = PaletteItemBase::newConnectorItem(connector);
 
@@ -358,7 +358,7 @@ void SymbolPaletteItem::addedToScene(bool temporary)
     return PaletteItem::addedToScene(temporary);
 }
 
-QString SymbolPaletteItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString SymbolPaletteItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	QString svg = PaletteItem::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 	if (m_voltageReference) {
@@ -370,13 +370,13 @@ QString SymbolPaletteItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash
 		}
 	}
 
-	return svg; 
+	return svg;
 }
 
 bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
-	if ((prop.compare("voltage", Qt::CaseInsensitive) == 0) && 
-		(moduleID().compare(ModuleIDNames::GroundModuleIDName) != 0)) 
+	if ((prop.compare("voltage", Qt::CaseInsensitive) == 0) &&
+		(moduleID().compare(ModuleIDNames::GroundModuleIDName) != 0))
 	{
 		FocusOutComboBox * edit = new FocusOutComboBox(parent);
 		edit->setEnabled(swappingEnabled);
@@ -400,14 +400,14 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 
 
 		connect(edit, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(voltageEntry(const QString &)));
-		returnWidget = edit;	
+		returnWidget = edit;
 
 		returnValue = m_voltage;
 		returnProp = tr("voltage");
 		return true;
 	}
 
-	if (prop.compare("label", Qt::CaseInsensitive) == 0 && m_isNetLabel) 
+	if (prop.compare("label", Qt::CaseInsensitive) == 0 && m_isNetLabel)
 	{
 		QLineEdit * edit = new QLineEdit(parent);
 		edit->setEnabled(swappingEnabled);
@@ -415,7 +415,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 		edit->setObjectName("infoViewLineEdit");
 
 		connect(edit, SIGNAL(editingFinished()), this, SLOT(labelEntry()));
-		returnWidget = edit;	
+		returnWidget = edit;
 
 		returnValue = getLabel();
 		returnProp = tr("label");
@@ -459,7 +459,7 @@ bool SymbolPaletteItem::hasPartNumberProperty()
 	return false;
 }
 
-ViewLayer::ViewID SymbolPaletteItem::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID SymbolPaletteItem::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
     if (vid == ViewLayer::SchematicView) {
         return ViewLayer::IconView;
@@ -606,7 +606,7 @@ QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
     }
 
     svg += "</g>\n</svg>\n";
- 
+
     return svg;
 }
 
@@ -627,8 +627,8 @@ void NetLabel::addedToScene(bool temporary)
 
             QTransform chiefTransform = this->transform();
             QTransform local;
-            local.setMatrix(chiefTransform.m11(), chiefTransform.m12(), chiefTransform.m13(), chiefTransform.m21(), chiefTransform.m22(), chiefTransform.m23(), 0, 0, chiefTransform.m33()); 
-            if (!local.isIdentity()) {    
+            local.setMatrix(chiefTransform.m11(), chiefTransform.m12(), chiefTransform.m13(), chiefTransform.m21(), chiefTransform.m22(), chiefTransform.m23(), 0, 0, chiefTransform.m33());
+            if (!local.isIdentity()) {
                 double x = r.width() / 2.0;
 	            double y = r.height() / 2.0;
 	            QTransform transf = QTransform().translate(-x, -y) * local * QTransform().translate(x, y);
@@ -673,4 +673,3 @@ void NetLabel::setInspectorTitle(const QString & oldText, const QString & newTex
 
     infoGraphicsView->setProp(this, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
 }
-

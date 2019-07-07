@@ -184,7 +184,7 @@ protected:
 	void mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers);
 	void dragCurve(QPointF eventPos, Qt::KeyboardModifiers);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
-	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget); 
+	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void initEnds(const ViewGeometry &, QRectF defaultRect, class InfoGraphicsView *);
 	void connectionChange(ConnectorItem * onMe, ConnectorItem * onIt, bool connect);
 	void mousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
@@ -194,7 +194,7 @@ protected:
 	bool acceptsMouseDoubleClickConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
 	bool acceptsMouseMoveConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
 	bool acceptsMouseReleaseConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
- 	virtual class FSvgRenderer * setUpConnectors(class ModelPart *, ViewLayer::ViewID);
+	virtual class FSvgRenderer * setUpConnectors(class ModelPart *, ViewLayer::ViewID);
 	void collectChained(ConnectorItem * connectorItem, QList<Wire *> & chained, QList<ConnectorItem *> & ends);
 	void collectWiresAux(QList<Wire *> & wires, ConnectorItem * start);
 	void setShadowColor(QColor &, bool restore);
@@ -220,7 +220,7 @@ protected:
 
 protected:
 	QLineF	m_line;
-	QPen	m_pen;		
+	QPen	m_pen;
 	QPointF m_wireDragOrigin;
 	bool m_dragEnd;
 	bool m_dragCurve;

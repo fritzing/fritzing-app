@@ -99,5 +99,3 @@ void PartInfoWidget::updateInfo(ModelPart * modelPart) {
 	m_tagsList->setItemsText(mps->tags());
 	//m_propertiesList->setItemsText(mps->properties());
 }
-
-

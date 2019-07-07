@@ -15,9 +15,9 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-			
+
 ********************************************************************
-		
+
 ********************************************************************/
 
 // much code borrowed from Qt's rsslisting example
@@ -31,8 +31,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QUrl>
 #include <QNetworkAccessManager>
 #include <QMutexLocker>
-								
-VersionChecker::VersionChecker() : QObject() 
+
+VersionChecker::VersionChecker() : QObject()
 {
     m_networkReply = NULL;
 	m_depth = 0;
@@ -64,7 +64,7 @@ void VersionChecker::fetch()
 
 
 void VersionChecker::finished(QNetworkReply * networkReply)
-{	
+{
     int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     if (responseCode == 200) {
         m_xml.addData(networkReply->readAll());
@@ -124,7 +124,7 @@ void VersionChecker::parseXml()
 			//foreach (QXmlStreamAttribute attribute, m_xml.attributes()) {
 				//DebugDialog::debug(QString("%1%2: %3").arg(QString((m_depth + 1) * 4, ' ')).arg(attribute.name().toString()).arg(attribute.value().toString()));
 			//}
-		} 
+		}
 		else if (m_xml.isEndElement()) {
 			QString elementName = m_xml.name().toString();
 			if (m_inEntry && elementName.compare("entry") == 0) {
@@ -142,7 +142,7 @@ void VersionChecker::parseXml()
 			}
 			m_depth--;
 			//DebugDialog::debug(QString("%1</%2>").arg(QString(m_depth * 4, ' ')).arg(elementName));
-        } 
+        }
 		else if (m_xml.isCharacters() && !m_xml.isWhitespace()) {
 			QString t = m_xml.text().toString();
 			t.replace(QRegExp("[\\s]+"), " ");
@@ -220,7 +220,7 @@ void VersionChecker::parseEntry() {
 	availableRelease->interim = interim;
 	availableRelease->summary = m_currentSummary;
 	QStringList temp = m_currentUpdated.split('+');											// conversion is confused by the +timezone suffix from the site xml
-	availableRelease->dateTime = QDateTime::fromString(temp[0], "yyyy-MM-ddThh:mm:ss");     
+	availableRelease->dateTime = QDateTime::fromString(temp[0], "yyyy-MM-ddThh:mm:ss");
 	m_availableReleases.append(availableRelease);
 }
 
@@ -246,4 +246,3 @@ void VersionChecker::ignore(const QString & version, bool interim) {
 		Version::toVersionThing(version, m_ignoreMainVersion);
 	}
 }
-

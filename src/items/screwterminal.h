@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "paletteitem.h"
 
-class ScrewTerminal : public PaletteItem 
+class ScrewTerminal : public PaletteItem
 {
 	Q_OBJECT
 

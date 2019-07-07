@@ -47,9 +47,10 @@ message(Qt version $$[QT_VERSION])
 
 CONFIG += debug_and_release
 
-unix:!macx {
-    CONFIG += link_pkgconfig
-}
+# Use pkg-config on UNIXes. See the link below for details.
+# This is used to link libgit2.
+# http://qt.shoutwiki.com/wiki/Using_pkg-config_with_qmake
+unix:CONFIG += link_pkgconfig
 
 load(configure)
 
@@ -188,15 +189,14 @@ QT += concurrent core gui network printsupport serialport sql svg widgets xml
 RC_FILE = fritzing.rc
 RESOURCES += fritzingresources.qrc
 
-# Fritzing is using libgit2 since version 0.9.3
-packagesExist(libgit2) {
-    message("always true on win32. leads to build problems")
-
+# packageExist() is always true on win32
+# (lookup link_pkgconfig above), so we
+# need to use libgit2detect.pri script to
+# add it to include path if either OS
+# is Windows or package wasn't found by
+# pkg-config.
+!win32:packagesExist(libgit2) {
     PKGCONFIG += libgit2
-    win32 {
-        include(pri/libgit2detect.pri)
-        message($$PKGCONFIG)
-    }
 } else {
     include(pri/libgit2detect.pri)
 }

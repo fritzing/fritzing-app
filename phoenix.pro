@@ -17,12 +17,6 @@
 # along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #
 # ********************************************************************
-#
-# $Revision: 6960 $:
-# $Author: irascibl@gmail.com $:
-# $Date: 2013-04-10 12:15:14 +0200 (Mi, 10. Apr 2013) $
-#
-#********************************************************************/
 
 lessThan(QT_MAJOR_VERSION, 5) {
     error(Fritzing does not build with Qt 4 or earlier)

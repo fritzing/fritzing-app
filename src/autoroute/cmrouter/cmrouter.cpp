@@ -27,12 +27,6 @@ http://www.cis.nctu.edu.tw/~ylli/paper/f69-li.pdf
 The corner stitching code is a modified version of code from the Magic VLSI Layout Tool
 http://opencircuitdesign.com/magic/
 
-********************************************************************
-
-$Revision: 6976 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
-
 ********************************************************************/
 
 // TODO:

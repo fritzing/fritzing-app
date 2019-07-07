@@ -16,12 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #
-# ********************************************************************
-#
-# $Revision: 5721 $:
-# $Author: cohen@irascible.com $:
-# $Date: 2012-01-03 16:53:58 +0100 (Di, 03. Jan 2012) $
-#
 #********************************************************************/
 
 HEADERS += \

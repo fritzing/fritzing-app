@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6565 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-10-15 12:10:48 +0200 (Mo, 15. Okt 2012) $
-
 ********************************************************************/
 
 #ifndef MODELBASE_H

@@ -18,12 +18,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 3442 $:
-$Author: cohen@irascible.com $:
-$Date: 2009-09-10 04:49:21 +0200 (Do, 10. Sep 2009) $
-
 ********************************************************************/
 
 #ifndef SVGPATHPARSER_H

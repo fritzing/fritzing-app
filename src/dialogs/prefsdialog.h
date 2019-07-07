@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6732 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-12-27 08:26:48 +0100 (Do, 27. Dez 2012) $
-
 ********************************************************************/
 
 

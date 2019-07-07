@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6570 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-10-16 06:25:29 +0200 (Di, 16. Okt 2012) $
-
 ********************************************************************/
 
 #ifndef PECOMMANDS_H

@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 4067 $:
-$Author: cohen@irascible.com $:
-$Date: 2010-03-27 00:21:20 +0100 (Sa, 27. Mrz 2010) $
-
 ********************************************************************/
 
 #ifndef GEDAELEMENTLEXER_H

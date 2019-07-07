@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6954 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-05 10:22:00 +0200 (Fr, 05. Apr 2013) $
-
 ********************************************************************/
 
 #ifndef PALETTEMODEL_H

@@ -17,12 +17,6 @@
 # along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #
 # ********************************************************************
-#
-# $Revision: 6960 $:
-# $Author: irascibl@gmail.com $:
-# $Date: 2013-04-10 12:15:14 +0200 (Mi, 10. Apr 2013) $
-#
-#********************************************************************/
 
 # This is QT project(.pro) file that is used by qmake to convert
 # QT project to XCode, Visual studio projects

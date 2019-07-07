@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6975 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
-
 ********************************************************************/
 
 #include "fapplication.h"

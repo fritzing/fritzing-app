@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6435 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-09-16 23:31:00 +0200 (So, 16. Sep 2012) $
-
 ********************************************************************/
 
 #include "svgflattener.h"

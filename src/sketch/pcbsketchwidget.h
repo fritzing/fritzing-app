@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6979 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-21 23:20:35 +0200 (So, 21. Apr 2013) $
-
 ********************************************************************/
 
 #ifndef PCBSKETCHWIDGET_H

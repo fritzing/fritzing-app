@@ -1,8 +1,9 @@
 #!/bin/bash -e
 QTBIN=/usr/local/opt/qt5/bin
 
-# Go to this scripts directory and then one up
-toolsdir=$(dirname "${BASH_SOURCE[0]}")
+# Go to this scripts directory and then two up
+mactoolsdir=$(dirname "${BASH_SOURCE[0]}")
+toolsdir=$(dirname "$mactoolsdir")
 cd "$toolsdir"/..
 workingdir=$(pwd)
 

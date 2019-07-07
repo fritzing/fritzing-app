@@ -69,7 +69,7 @@ jobs:
         - tools/ci/aws_tasks.sh setup
       script:
         - ls /usr/local/opt
-        - tools/deploy_fritzing_mac.sh
+        - tools/mac/deploy_fritzing_mac.sh
         - mv ../deploy-app/Fritzing.dmg fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.mojave.10.2.dmg
         - tools/ci/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.mojave.10.2.dmg
 
@@ -100,7 +100,7 @@ jobs:
 
       script:
         - ls /usr/local/opt
-        - tools/deploy_fritzing_mac.sh
+        - tools/mac/deploy_fritzing_mac.sh
         - mv ../deploy-app/Fritzing.dmg fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.high_sierra.10.1.dmg
         - tools/ci/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.high_sierra.10.1.dmg
 

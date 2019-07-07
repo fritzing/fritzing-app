@@ -25,6 +25,11 @@ $Date: 2009-01-03 18:55:48 +0100 (Sat, 03 Jan 2009) $
 ******************************************************
 -->
 
+<!--
+This is so called 'properties file' used on MacOS.
+Actually it defines file extensions used by Fritzing files
+-->
+
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
     <dict

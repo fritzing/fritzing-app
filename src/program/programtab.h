@@ -180,6 +180,9 @@ protected:
 
 	QPointer<class Highlighter> m_highlighter;
 	QString m_filename;
+
+private:
+    void initWithSettings();
 };
 
 

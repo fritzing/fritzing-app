@@ -277,11 +277,6 @@ void ProgramTab::initMenus() {
     foreach (Platform * platform, m_programWindow->getAvailablePlatforms()) {
         m_platformComboBox->addItem(platform->getName());
     }
-    QSettings settings;
-    QString currentPlatform = settings.value("programwindow/platform", "").toString();
-    if (currentPlatform.isEmpty()) {
-        currentPlatform = m_platformComboBox->currentText(); // TODO
-    }
 
     platformSelectionContainer->addWidget(m_platformComboBox);
     platformSelectionContainer->addWidget(platformLabel);
@@ -289,7 +284,6 @@ void ProgramTab::initMenus() {
 
     connect(this, SIGNAL(platformChanged(Platform *)), m_programWindow, SLOT(updateBoards()));
     connect(this, SIGNAL(platformChanged(Platform *)), this, SLOT(updateBoards()));
-    setPlatform(currentPlatform, false);
 
     // Board selection
 
@@ -304,16 +298,6 @@ void ProgramTab::initMenus() {
     m_boardComboBox->setObjectName("toolBarComboBox");
     m_boardComboBox->setEditable(false);
     m_boardComboBox->setEnabled(true);
-    updateBoards();
-
-    QString currentBoard = settings.value("programwindow/board", "").toString();
-    if (currentBoard.isEmpty()) {
-        currentBoard = m_boardComboBox->currentText();
-    }
-    else if (!m_programWindow->getBoards().contains(currentBoard)) {
-        currentBoard = m_boardComboBox->currentText();
-    }
-    setBoard(currentBoard);
 
     boardSelectionContainer->addWidget(m_boardComboBox);
     boardSelectionContainer->addWidget(boardLabel);
@@ -336,14 +320,6 @@ void ProgramTab::initMenus() {
     foreach (const QSerialPortInfo port, ports)
         m_portComboBox->addItem(port.portName(), port.systemLocation());
 
-    QString currentPort = settings.value("programwindow/port", "").toString();
-    if (currentPort.isEmpty()) {
-        currentPort = m_portComboBox->currentText();
-    }
-    else if (!m_programWindow->hasPort(currentPort)) {
-        currentPort = m_portComboBox->currentText();
-    }
-    setPort(currentPort);
 
     portSelectionContainer->addWidget(m_portComboBox);
     portSelectionContainer->addWidget(portLabel);
@@ -378,8 +354,30 @@ void ProgramTab::initMenus() {
     //    superLayout->addWidget(m_unableToProgramLabel);
     //    superFrame->setLayout(superLayout);
 
-    setPlatform(currentPlatform, false);
+    initWithSettings();
+}
 
+void ProgramTab::initWithSettings() {
+    QSettings settings;
+
+    QString currentPlatform = settings.value("programwindow/platform", "").toString();
+    if (currentPlatform.isEmpty()) {
+        currentPlatform = m_platformComboBox->currentText(); // TODO
+    }
+
+    QString currentBoard = settings.value("programwindow/board", "").toString();
+    if (currentBoard.isEmpty()) {
+        currentBoard = m_boardComboBox->currentText();
+    }
+
+    QString currentPort = settings.value("programwindow/port", "").toString();
+    if (currentPort.isEmpty()) {
+        currentPort = m_portComboBox->currentText();
+    }
+
+    setPlatform(currentPlatform, true);
+    setBoard(currentBoard);
+    setPort(currentPort);
 }
 
 void ProgramTab::setPlatform(const QString & newPlatformName) {

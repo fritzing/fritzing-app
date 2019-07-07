@@ -20,4 +20,4 @@ install:
   - cd ../..
 build_script:
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
-  - tools/release_fritzing.bat 0.9.4ci 64 2017
+  - tools/windows/release_fritzing.bat 0.9.4ci 64 2017

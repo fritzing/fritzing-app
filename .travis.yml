@@ -120,7 +120,7 @@ jobs:
         - tools/ci/aws_tasks.sh setup
 
       script:
-          - tools/build-windows.bat "$TRAVIS_COMMIT"-debug-continuous-"$TRAVIS_BUILD_NUMBER"
+          - tools/windows/build-windows.bat "$TRAVIS_COMMIT"-debug-continuous-"$TRAVIS_BUILD_NUMBER"
           - tools/ci/aws_tasks.sh store_with_md5 $TRAVIS_BUILD_DIR/../release64 fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.windows.64.zip
 
       after_success:

@@ -45,12 +45,6 @@ message(Qt version $$[QT_VERSION])
     error("Unsupported Qt version, 5.9+ is required")
 }
 
-# Fritzing requires two Qt-provided plugins in order to run correctly,
-# however the QTPLUGIN syntax only seems to work if Qt is built statically,
-# so QTPLUGIN is included here only for information purposes:
-#
-# QTPLUGIN  += qjpeg qsqlite
-
 CONFIG += debug_and_release
 
 unix:!macx {

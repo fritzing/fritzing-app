@@ -19,6 +19,7 @@ exists($$LIBGIT2INCLUDE/git2.h) {
 } else {
     message("Fritzing requires libgit2")
     message("Build it from the repo at https://github.com/libgit2")
+    unix:message("Alternatively, if you have it installed, try installing pkg-config")
     message("See https://github.com/fritzing/fritzing-app/wiki for details.")
 
     error("libgit2 include path not found in $$LIBGIT2INCLUDE")

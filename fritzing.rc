@@ -1,4 +1,13 @@
-IDI_ICON1               ICON    DISCARDABLE     "resources/system_icons/win/fritzing_icon.ico"
+/*
+ * This file is Windows-specific.
+ * See the following link to understand its contents:
+ * https://docs.microsoft.com/en-us/windows/win32/menurc/about-resource-files
+ */
+
+// This line sets application icon
+// See https://docs.microsoft.com/en-us/windows/win32/menurc/icon-resource
+// and https://doc.qt.io/qt-5/appicon.html
+IDI_ICON1 ICON DISCARDABLE "resources/system_icons/win/fritzing_icon.ico"
 
 #include <windows.h>
 

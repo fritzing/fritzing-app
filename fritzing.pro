@@ -45,24 +45,33 @@ message(Qt version $$[QT_VERSION])
     error("Unsupported Qt version, 5.9+ is required")
 }
 
+# The project will be processed three times: one time to produce a
+# "meta" Makefile, and two more times to produce a Makefile.Debug and
+# a Makefile.Release. Also the build mode could be chosen in VS and
+# XCode if this is the case.
 CONFIG += debug_and_release
+
+TARGET   = Fritzing
+TEMPLATE = app
+
+# Specify the name of resource collection files
+# See https://doc.qt.io/qt-5/resources.html for details
+RESOURCES += fritzingresources.qrc
 
 # Use pkg-config on UNIXes. See the link below for details.
 # This is used to link libgit2.
 # http://qt.shoutwiki.com/wiki/Using_pkg-config_with_qmake
 unix:CONFIG += link_pkgconfig
 
+# Loads mkspecs/features/configure.prf
+# file from https://github.com/qt/qtbase.
+# This feature file defines test function
+# qtCompileTest() that is used in pri/boostdetect.pri
 load(configure)
 
+# Set directories for Windows and OS X to put different
+# files to(see comments for the variables)
 win32 {
-# release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
-# release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
-    CONFIG -= embed_manifest_exe
-    INCLUDEPATH += $$[QT_INSTALL_HEADERS]/QtZlib
-    DEFINES += _CRT_SECURE_NO_DEPRECATE
-    DEFINES += _WINDOWS
-    RELEASE_SCRIPT = $$(RELEASE_SCRIPT)    # environment variable set from release script
-
     message("target arch: $${QMAKE_TARGET.arch}")
     contains(QMAKE_TARGET.arch, x86_64) {
         RELDIR = ../release64
@@ -72,38 +81,44 @@ win32 {
         RELDIR = ../release32
         DEBDIR = ../debug32
     }
-
-    Release:DESTDIR = $${RELDIR}
-    Release:OBJECTS_DIR = $${RELDIR}
-    Release:MOC_DIR = $${RELDIR}
-    Release:RCC_DIR = $${RELDIR}
-    Release:UI_DIR = $${RELDIR}
-
-    Debug:DESTDIR = $${DEBDIR}
-    Debug:OBJECTS_DIR = $${DEBDIR}
-    Debug:MOC_DIR = $${DEBDIR}
-    Debug:RCC_DIR = $${DEBDIR}
-    Debug:UI_DIR = $${DEBDIR}
 }
 macx {
     RELDIR = ../release64
     DEBDIR = ../debug64
-    Release:DESTDIR = $${RELDIR}
-    Release:OBJECTS_DIR = $${RELDIR}
-    Release:MOC_DIR = $${RELDIR}
-    Release:RCC_DIR = $${RELDIR}
-    Release:UI_DIR = $${RELDIR}
+}
+win32 | macx {
+    Release {
+        DESTDIR     = $${RELDIR} # Executable(target) file
+        OBJECTS_DIR = $${RELDIR} # Object files
+        MOC_DIR     = $${RELDIR} # Intermediate MOC files
+        RCC_DIR     = $${RELDIR} # Resource compiler output files
+        UI_DIR      = $${RELDIR} # Intermediate files from UI compiler
+    }
+    Debug {
+        DESTDIR     = $${DEBDIR} # Executable(target) file
+        OBJECTS_DIR = $${DEBDIR} # Object files
+        MOC_DIR     = $${DEBDIR} # Intermediate MOC files
+        RCC_DIR     = $${DEBDIR} # Resource compiler output files
+        UI_DIR      = $${DEBDIR} # Intermediate files from UI compiler
+    }
+}
 
-    Debug:DESTDIR = $${DEBDIR}
-    Debug:OBJECTS_DIR = $${DEBDIR}
-    Debug:MOC_DIR = $${DEBDIR}
-    Debug:RCC_DIR = $${DEBDIR}
-    Debug:UI_DIR = $${DEBDIR}
+# Some magic os-specific libs linking and defines
+win32 {
+    CONFIG -= embed_manifest_exe
+    INCLUDEPATH += $$[QT_INSTALL_HEADERS]/QtZlib
+    DEFINES += _CRT_SECURE_NO_DEPRECATE
+    DEFINES += _WINDOWS
+    RELEASE_SCRIPT = $$(RELEASE_SCRIPT)    # environment variable set from release script
+}
+macx {
+    # Only set this for deployment. By default qmake will use sdk version installed on
+    # building machine.
+    # QMAKE_MAC_SDK = macosx10.11
 
-    #QMAKE_MAC_SDK = macosx10.11            # uncomment/adapt for your version of OSX
+    # DEFINES += QT_NO_DEBUG # uncomment this for xcode
     CONFIG += x86_64 # x86 ppc
     QMAKE_INFO_PLIST = FritzingInfo.plist
-    #DEFINES += QT_NO_DEBUG                # uncomment this for xcode
     LIBS += -lz
     LIBS += /usr/lib/libz.dylib
     LIBS += /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
@@ -111,56 +126,74 @@ macx {
     LIBS += /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
     LIBS += -liconv
 }
+unix : !macx {
+    HARDWARE_PLATFORM = $$system(uname -m)
+    contains(HARDWARE_PLATFORM, x86_64) {
+        DEFINES += LINUX_64
+    } else {
+        DEFINES += LINUX_32
+    }
+    !contains(DEFINES, QUAZIP_INSTALLED) {
+        LIBS += -lz
+    }
+}
+
+# Install application-related files to the
+# (by default) /usr/{bin,share,share/fritzing}
+# directories on UNIX and Mac OS
 unix {
-    !macx { # unix is defined on mac
-        HARDWARE_PLATFORM = $$system(uname -m)
-        contains(HARDWARE_PLATFORM, x86_64) {
-            DEFINES += LINUX_64
-        } else {
-            DEFINES += LINUX_32
-        }
-        !contains(DEFINES, QUAZIP_INSTALLED) {
-            LIBS += -lz
-        }
-    }
+    isEmpty(PREFIX):PREFIX = /usr
 
-    isEmpty(PREFIX) {
-        PREFIX = /usr
-    }
     BINDIR = $$PREFIX/bin
+    DEFINES += BINDIR=\\\"$$BINDIR\\\"
+
     DATADIR = $$PREFIX/share
-    PKGDATADIR = $$DATADIR/fritzing
+    DEFINES += DATADIR=\\\"$$DATADIR\\\"
 
-    DEFINES += DATADIR=\\\"$$DATADIR\\\" PKGDATADIR=\\\"$$PKGDATADIR\\\"
+    PKGDATADIR = $$PREFIX/share/fritzing
+    DEFINES += PKGDATADIR=\\\"$$PKGDATADIR\\\"
 
+    # See the following link to understand the way INSTALLS variable is used:
+    # https://doc.qt.io/qt-5/qmake-advanced-usage.html#installing-files
     target.path = $$BINDIR
+    INSTALLS += target
 
     desktop.path = $$DATADIR/applications
     desktop.files += org.fritzing.Fritzing.desktop
+    INSTALLS += desktop
 
     appdata.path = $$DATADIR/metainfo
     appdata.files += org.fritzing.Fritzing.appdata.xml
+    INSTALLS += appdata
 
     mimedb.path = $$DATADIR/mime/packages
     mimedb.files += resources/system_icons/linux/fritzing.xml
+    INSTALLS += mimedb
 
     manpage.path = $$DATADIR/man/man1
     manpage.files += Fritzing.1
+    INSTALLS += manpage
 
     icon.path = $$DATADIR/pixmaps
-    icon.extra = install -D -m 0644 $$PWD/resources/images/fritzing_icon.png $(INSTALL_ROOT)$$DATADIR/pixmaps/fritzing.png
+    icon.extra = install -D -m 0644 $$PWD/resources/images/fritzing_icon.png \
+                               $(INSTALL_ROOT)$$DATADIR/pixmaps/fritzing.png
+    INSTALLS += icon
 
     parts.path = $$PKGDATADIR
     parts.files += parts
+    INSTALLS += parts
 
     help.path = $$PKGDATADIR
     help.files += help
+    INSTALLS += help
 
     sketches.path = $$PKGDATADIR
     sketches.files += sketches
+    INSTALLS += sketches
 
     bins.path = $$PKGDATADIR
     bins.files += bins
+    INSTALLS += bins
 
     translations.path = $$PKGDATADIR/translations
     isEmpty(LINGUAS) {
@@ -169,25 +202,42 @@ unix {
         for(lang, LINGUAS):translations.files += $$system(find $$PWD/translations -name "fritzing_$${lang}.qm" -size +128c)
         isEmpty(translations.files):error("No translations found for $$LINGUAS")
     }
+    INSTALLS += translations
 
     syntax.path = $$PKGDATADIR/translations/syntax
     syntax.files += translations/syntax/*.xml
-
-    INSTALLS += target desktop appdata mimedb manpage icon parts sketches bins translations syntax help
+    INSTALLS += syntax
 }
 
-ICON = resources/system_icons/macosx/fritzing_icon.icns
-
+# Sets application icon for macos and windows.
+# For linux it is set above.
+# See https://doc.qt.io/qt-5/appicon.html
 macx {
-    FILE_ICONS.files = resources/system_icons/macosx/mac_fz_icon.icns resources/system_icons/macosx/mac_fzz_icon.icns resources/system_icons/macosx/mac_fzb_icon.icns resources/system_icons/macosx/mac_fzp_icon.icns resources/system_icons/macosx/mac_fzm_icon.icns resources/system_icons/macosx/mac_fzpz_icon.icns
+    ICON = resources/system_icons/macosx/fritzing_icon.icns
+    FILE_ICONS.files = resources/system_icons/macosx/mac_fz_icon.icns \
+                       resources/system_icons/macosx/mac_fzz_icon.icns \
+                       resources/system_icons/macosx/mac_fzb_icon.icns \
+                       resources/system_icons/macosx/mac_fzp_icon.icns \
+                       resources/system_icons/macosx/mac_fzm_icon.icns \
+                       resources/system_icons/macosx/mac_fzpz_icon.icns
     FILE_ICONS.path = Contents/Resources
     QMAKE_BUNDLE_DATA += FILE_ICONS
 }
+win32 {
+    RC_FILE = fritzing.rc
+}
 
-QT += concurrent core gui network printsupport serialport sql svg widgets xml
-
-RC_FILE = fritzing.rc
-RESOURCES += fritzingresources.qrc
+# Specify QT modules that are in use
+QT += concurrent   \
+      core         \
+      gui          \
+      network      \
+      printsupport \
+      serialport   \
+      sql          \
+      svg          \
+      widgets      \
+      xml
 
 # packageExist() is always true on win32
 # (lookup link_pkgconfig above), so we
@@ -201,8 +251,12 @@ RESOURCES += fritzingresources.qrc
     include(pri/libgit2detect.pri)
 }
 
+# Check if we have boost
 include(pri/boostdetect.pri)
 
+# These pri files mostly just
+# append to HEADERS and SOURCES
+# variables
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)
 include(pri/partsbinpalette.pri)
@@ -231,8 +285,5 @@ contains(DEFINES, QUAZIP_INSTALLED) {
 } else {
     include(pri/quazip.pri)
 }
-
-TARGET = Fritzing
-TEMPLATE = app
 
 message("libs $$LIBS")

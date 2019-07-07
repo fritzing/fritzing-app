@@ -1,6 +1,7 @@
 # Temporary build files
 .qmake.cache
 .qmake.stash
+*.qm
 
 Makefile*
 

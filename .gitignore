@@ -1,7 +1,9 @@
+# Temporary build files
+.qmake.cache
 .qmake.stash
 
-# QtCreator folders and files #
-#####################
+Makefile*
+
 phoenix.pro.user
 /phoenix-build-*
 /release*
@@ -10,28 +12,14 @@ phoenix.pro.user
 *.user
 *.user*
 
-
-# FritzingTools folder
-#####################
-#/tools
-
-# visual studio folders and files #
-#####################
+# Visual Studio files
 *.sdf
 *.opensdf
 *.sln
 *.vcxproj
 *.vcxproj.*
 
-
-Makefile*
-
-# no longer keep boost library in the source #
-/src/lib/boost*
-
-
-# Compiled source #
-###################
+# Compiled source
 *.pyc
 *.com
 *.class
@@ -42,29 +30,25 @@ Makefile*
 *.suo
 *.pdb
 
-# Temporary files #
-###############
+# Temporary files
 *.py~
 *.xml~
 
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-#*.7z
-#*.dmg
-#*.gz
-#*.iso
-#*.jar
-#*.rar
-#*.tar
-#*.zip
+# Vim temporary files
+*.swp
+*.swo
 
-# Logs and databases #
-######################
-#*.log
-#*.sql
-#*.sqlite
+/fritzing-parts/
+
+# Packages and archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
 # OS generated files #
 ######################

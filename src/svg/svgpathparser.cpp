@@ -18,12 +18,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 4147 $:
-$Author: cohen@irascible.com $:
-$Date: 2010-04-25 19:00:40 +0200 (So, 25. Apr 2010) $
-
 ********************************************************************/
 
 #include <QDebug>

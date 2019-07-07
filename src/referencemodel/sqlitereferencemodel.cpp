@@ -16,12 +16,6 @@ GNU General Public License for more details.floadfrom
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6956 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-07 12:14:50 +0200 (So, 07. Apr 2013) $
-
 ********************************************************************/
 
 // copying a table from one SQWL database to another http://sqlite.phxsoftware.com/forums/t/285.aspx

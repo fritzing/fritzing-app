@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6976 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
-
 ********************************************************************/
 
 #include "schematicsketchwidget.h"

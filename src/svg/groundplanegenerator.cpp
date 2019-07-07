@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6941 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-26 15:03:18 +0100 (Di, 26. Mrz 2013) $
-
 ********************************************************************/
 
 #include "groundplanegenerator.h"

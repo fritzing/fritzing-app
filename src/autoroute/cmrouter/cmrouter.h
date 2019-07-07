@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6705 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-12-12 15:36:22 +0100 (Mi, 12. Dez 2012) $
-
 ********************************************************************/
 
 #ifndef JROUTER_H

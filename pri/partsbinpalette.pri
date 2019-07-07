@@ -11,10 +11,6 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-# ********************************************************************
-# $Revision: 6486 $:
-# $Author: irascibl@gmail.com $:
-# $Date: 2012-09-27 10:12:47 +0200 (Do, 27. Sep 2012) $
 # ********************************************************************/
 HEADERS += \
     src/partsbinpalette/partsbinpalettewidget.h \

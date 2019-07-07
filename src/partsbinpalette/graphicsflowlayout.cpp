@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6924 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-10 16:58:25 +0100 (So, 10. Mrz 2013) $
-
 ********************************************************************/
 
 #include "graphicsflowlayout.h"

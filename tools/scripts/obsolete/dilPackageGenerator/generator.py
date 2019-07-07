@@ -19,12 +19,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 1595 $:
-$Author: dirk@fritzing.org $:
-$Date: 2008-11-21 11:04:36 +0100 (Fri, 21 Nov 2008) $
-
 ********************************************************************/
 
 generator.py

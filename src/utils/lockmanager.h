@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6141 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-07-04 21:20:05 +0200 (Mi, 04. Jul 2012) $
-
 ********************************************************************/
 
 #ifndef LOCKMANAGER_H

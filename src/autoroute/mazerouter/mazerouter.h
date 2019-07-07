@@ -211,7 +211,7 @@ protected:
     void updateDisplay(Grid *, int iz);
     void updateDisplay(GridPoint &);
     void clearExpansion(Grid * grid);
-    void prepSourceAndTarget(QDomDocument * masterdoc, RouteThing &, QList< QList<ConnectorItem *> > & subnets, int z, ViewLayer::ViewLayerPlacement); 
+    void prepSourceAndTarget(QDomDocument * masterdoc, RouteThing &, QList< QList<ConnectorItem *> > & subnets, int z, ViewLayer::ViewLayerPlacement);
     bool moveBack(Score & currentScore, int index, QList<NetOrdering> & allOrderings);
     void displayTrace(Trace &);
     void initTraceDisplay();

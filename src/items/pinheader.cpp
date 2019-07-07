@@ -952,7 +952,7 @@ QString PinHeader::makePcbLongPadLockSvg(int pins)
     return header.arg(totalHeight).arg(totalHeight * dpi).arg(repeats).arg(bottom).arg(betweens);
 }
 
-QString PinHeader::makePcbMolexSvg(int pins, const QString & spacingString) 
+QString PinHeader::makePcbMolexSvg(int pins, const QString & spacingString)
 {
     double dpi = 25.4;
     double originalHeight = 0.105;           // inches

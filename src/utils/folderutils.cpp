@@ -714,7 +714,7 @@ void FolderUtils::showInFolder(const QString & path)
                << QLatin1String("tell application \"Finder\" to activate");
     QProcess::execute("/usr/bin/osascript", scriptArgs);
 #else
-    QDesktopServices::openUrl( QUrl::fromLocalFile( QFileInfo(path).absolutePath() ) );   
+    QDesktopServices::openUrl( QUrl::fromLocalFile( QFileInfo(path).absolutePath() ) );
 #endif
 }
 

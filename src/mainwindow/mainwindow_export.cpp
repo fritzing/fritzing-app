@@ -1425,7 +1425,7 @@ void MainWindow::exportSpiceNetlist() {
 
         QString output2;
         foreach (QString line, lines) {
-            int ix = line.toLower().indexOf(incl); 
+            int ix = line.toLower().indexOf(incl);
             if (ix < 0) {
                 output2 += line + "\n";
                 continue;
@@ -1434,7 +1434,7 @@ void MainWindow::exportSpiceNetlist() {
             QString temp = line;
             temp.replace(ix, incl.length(), "");
             QString filename = temp.trimmed();
-            
+
             bool gotOne = false;
             foreach (QDir dir, paths) {
                 foreach (QString folder, ModelPart::possibleFolders()) {

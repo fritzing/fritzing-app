@@ -871,7 +871,7 @@ void ItemBase::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 }
 
 void ItemBase::mouseMoveEvent(QGraphicsSceneMouseEvent *)
-{   
+{
 }
 
 void ItemBase::setItemPos(QPointF & loc) {
@@ -1314,7 +1314,7 @@ void ItemBase::transformItem(const QTransform & currTransf, bool includeRatsnest
     QTransform trns = getViewGeometry().transform();
     //debugInfo("\t" + TextUtils::svgMatrix(trns));
 
-    
+
 
 	if (m_hasRubberBandLeg) {
 		prepareGeometryChange();
@@ -1368,7 +1368,7 @@ void ItemBase::saveLocAndTransform(QXmlStreamWriter & streamWriter)
 
 FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & layerAttributes)
 {
-    // at this point "this" has not yet been added to the scene, so one cannot get back to the InfoGraphicsView 
+    // at this point "this" has not yet been added to the scene, so one cannot get back to the InfoGraphicsView
 
     ModelPartShared * modelPartShared = modelPart->modelPartShared();
 
@@ -1840,7 +1840,7 @@ bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewL
 		    }
             return false;
         }
-       
+
         if (modelPart->itemType() == ModelPart::Part) {
 		    if (viewLayerID == ViewLayer::Copper0) {
                 SvgFlattener::replaceElementID(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), "");
@@ -2307,7 +2307,7 @@ const QList< QPointer<ItemBase> > & ItemBase::subparts()
     return m_subparts;
 }
 
-QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys) 
+QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys)
 {
     m_propsMap.clear();
 
@@ -2323,7 +2323,7 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
 	// ensure part number  is last
 	QString partNumber = props.value(ModelPartShared::PartNumberPropertyName, "").toLower();
 	keys.removeOne(ModelPartShared::PartNumberPropertyName);
-		
+
 	if (wantDebug) {
 		props.insert("id", QString("%1 %2 %3")
 			.arg(QString::number(id()))
@@ -2344,7 +2344,7 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
         if (modelPart->modelPartShared()) {
 			props.insert("fzp",  modelPart->path());
 			keys.insert(insertAt++, "fzp");
-		}	
+		}
 	}
 
 	// ensure part number is last
@@ -2436,7 +2436,7 @@ void ItemBase::initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer:
 		layerAttributes.orientation = infoGraphicsView->smdOrientation();
 	}
 }
-	
+
 void ItemBase::showInFolder() {
     QString path = sender()->property("path").toString();
     if (!path.isEmpty()) {

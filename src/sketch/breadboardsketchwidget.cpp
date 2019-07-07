@@ -184,7 +184,7 @@ void BreadboardSketchWidget::setNewPartVisible(ItemBase * itemBase) {
 		default:
 			if (itemBase->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName) || 
 				itemBase->moduleID().endsWith(ModuleIDNames::PadModuleIDName) ||
-                itemBase->moduleID().endsWith(ModuleIDNames::PowerModuleIDName)) 
+                itemBase->moduleID().endsWith(ModuleIDNames::PowerModuleIDName))
 			{
 				itemBase->setVisible(false);
 				itemBase->setEverVisible(false);
@@ -269,4 +269,3 @@ void BreadboardSketchWidget::colorWiresByLength(bool colorByLength) {
 bool BreadboardSketchWidget::coloringWiresByLength() {
     return m_colorWiresByLength;
 }
-

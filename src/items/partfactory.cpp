@@ -270,7 +270,7 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
     {
         ModelPartShared * superpart = modelPart->modelPartShared();
         QString schematicName = superpart->imageFileName(ViewLayer::SchematicView);
-        QString originalPath = getSvgFilename(modelPart, schematicName, true, false);  
+        QString originalPath = getSvgFilename(modelPart, schematicName, true, false);
         foreach (ModelPartShared * mps, superpart->subparts()) {
             QString schematicFileName = mps->imageFileName(ViewLayer::SchematicView);
             if (schematicFileName.isEmpty()) continue;
@@ -303,7 +303,7 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
     return filename;
 }
 
-QString PartFactory::getSvgFilename(const QString & fileName) 
+QString PartFactory::getSvgFilename(const QString & fileName)
 {
     QString osFileName(fileName);
     osFileName.remove(OldSchematicPrefix);
@@ -396,17 +396,17 @@ QString PartFactory::getSvgFilename(const QString & fileName)
 			return getSvgFilenameAux(fileName, &PinHeader::makeSchematicSvg);
 		}
 		else if (osFileName.contains("bread", Qt::CaseInsensitive)) {
-			return getSvgFilenameAux(fileName, &PinHeader::makeBreadboardSvg);		
+			return getSvgFilenameAux(fileName, &PinHeader::makeBreadboardSvg);
 		}
 		else if (osFileName.contains("pcb", Qt::CaseInsensitive)) {
-			return getSvgFilenameAux(fileName, &PinHeader::makePcbSvg);		
+			return getSvgFilenameAux(fileName, &PinHeader::makePcbSvg);
 		}
 	}
 
 	if (osFileName.contains("perfboard", Qt::CaseInsensitive) || osFileName.contains("stripboard", Qt::CaseInsensitive)) {
 		if (osFileName.contains("icon")) return fileName;
 
-		return getSvgFilenameAux(fileName, &Perfboard::makeBreadboardSvg);		
+		return getSvgFilenameAux(fileName, &Perfboard::makeBreadboardSvg);
 	}
 
 	return "";
@@ -601,12 +601,12 @@ QDomElement PartFactory::showSubpart(QDomElement & root, const QString & subpart
     if (root.tagName() != "g" && root.tagName() != "svg") {
         root.setTagName("g");
     }
-    
+
     return top;
 }
 
 void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
-{    
+{
     if (top.isNull()) return;
 
     QString transform = top.attribute("transform", "");
@@ -658,9 +658,9 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
         int minX, minY, maxX, maxY;
         QMatrix matrix;
         QRectF viewBox2;
-        SchematicTextLayerKinPaletteItem::renderText(image, text, minX, minY, maxX, maxY, matrix, viewBox2);  
-        QRectF r(minX * viewBox.width() / image.width(), 
-                minY * viewBox.height() / image.height(), 
+        SchematicTextLayerKinPaletteItem::renderText(image, text, minX, minY, maxX, maxY, matrix, viewBox2);
+        QRectF r(minX * viewBox.width() / image.width(),
+                minY * viewBox.height() / image.height(),
                 (maxX - minX) * viewBox.width() / image.width(),
                 (maxY - minY) * viewBox.height() / image.height());
         bounds |= r;
@@ -686,5 +686,3 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
 
     mps->setSubpartOffset(QPointF(bounds.left() * sWidth / vbWidth, bounds.top() * sHeight / vbHeight));
 }
-
-

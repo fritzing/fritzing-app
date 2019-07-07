@@ -112,7 +112,7 @@ void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, 
 	QString original = file2.readAll();
 	file2.close();
     templateThing.size = QSizeF(TextUtils::getViewBoxCoord(original, 2), TextUtils::getViewBoxCoord(original, 3));
-    
+
     QFile file(tPath);
 	file.open(QFile::ReadOnly);
 	templateThing.svgTemplate = file.readAll();
@@ -134,7 +134,7 @@ void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, 
             if (SchematicTemplate.indexOf("version", ix - 7) < 0) {
                 SchematicTemplate.replace(ix + NumberFinder.cap(1).count(), NumberFinder.cap(2).count(), d3);
                 offset += d3.count() - NumberFinder.cap(2).count();
-            } 
+            }
 
             pos = ix + offset;
         }
@@ -191,7 +191,7 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 		font.setWeight(QFont::Normal);
 		font.setPointSizeF(72.0 * templateThing.fontSize / GraphicsUtils::StandardFritzingDPI);
 		m_textEdit->setFont(font);
-		m_textEdit->setLineWrapColumnOrWidth(GraphicsUtils::SVGDPI * (templateThing.size.width() - templateThing.margin) / GraphicsUtils::StandardFritzingDPI);  
+		m_textEdit->setLineWrapColumnOrWidth(GraphicsUtils::SVGDPI * (templateThing.size.width() - templateThing.margin) / GraphicsUtils::StandardFritzingDPI);
 	}
 
 	if (milsW < templateThing.size.width()) milsW = templateThing.size.width();
@@ -430,8 +430,8 @@ void SchematicFrame::setInitialSize() {
         QSizeF size = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size : SchematicTemplate.size;
 
 		// set the size so the infoGraphicsView will display the size as you drag
-		modelPart()->setLocalProp("width", 25.4 * size.width() / GraphicsUtils::StandardFritzingDPI); 
-		modelPart()->setLocalProp("height", 25.4 * size.height() / GraphicsUtils::StandardFritzingDPI); 
+		modelPart()->setLocalProp("width", 25.4 * size.width() / GraphicsUtils::StandardFritzingDPI);
+		modelPart()->setLocalProp("height", 25.4 * size.height() / GraphicsUtils::StandardFritzingDPI);
 	}
 }
 

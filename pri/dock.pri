@@ -21,5 +21,3 @@ src/dock/layerpalette.h \
 SOURCES += \
 src/dock/layerpalette.cpp \
 
-
-

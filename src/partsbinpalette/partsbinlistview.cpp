@@ -371,7 +371,7 @@ void PartsBinListView::reloadPart(const QString & moduleID) {
 	}
 }
 
-void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, const QString & moduleID) 
+void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, const QString & moduleID)
 {
     ItemBase * itemBase = ItemBaseHash.value(moduleID);
     if (itemBase == NULL) {

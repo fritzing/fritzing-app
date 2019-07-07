@@ -61,7 +61,7 @@ static QString VerticalString("vertical strips");
 
 /////////////////////////////////////////////////////////////////////
 
-Stripbit::Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent = 0) 
+Stripbit::Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent = 0)
 	: QGraphicsPathItem(path, parent)
 {
 	if (SpotFaceCutterCursor == NULL) {
@@ -557,7 +557,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 	foreach (QGraphicsItem * item, childItems()) {
 		Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
 		if (stripbit == NULL) continue;
-		
+
 		if (stripbit->removed()) {
             busPropertyString += stripbit->makeRemovedString();
 		}
@@ -598,7 +598,7 @@ void Stripboard::collectConnected(int ix, int iy, QList<ConnectorItem *> & conne
 
     if (sc->right != NULL && !sc->right->removed()) {
         collectConnected(ix + 1, iy, connected);
-        
+
     }
     if (sc->down != NULL && !sc->down->removed()) {
         collectConnected(ix, iy + 1, connected);

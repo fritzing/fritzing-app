@@ -93,7 +93,7 @@ FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
     setTabBar(tabBar);
 }
 
-//int FTabWidget::addTab(QWidget * page, const QIcon & icon, const QIcon & hoverIcon, const QIcon & inactiveIcon, const QString & label) 
+//int FTabWidget::addTab(QWidget * page, const QIcon & icon, const QIcon & hoverIcon, const QIcon & inactiveIcon, const QString & label)
 //{
  //   // assumes tabs are not deleted or reordered
 //    m_inactiveIcons << inactiveIcon;
@@ -191,7 +191,7 @@ void FTabBar::paintEvent(QPaintEvent * event) {
 }
 
 /*
-void FTabBar::drawTab(QStylePainter & p, QStyleOptionTabV3 & tabV3, int index) 
+void FTabBar::drawTab(QStylePainter & p, QStyleOptionTabV3 & tabV3, int index)
 {
     //tabV3.iconSize = m_pixmaps.at(index).size();
     p.drawControl(QStyle::CE_TabBarTabShape, tabV3);
@@ -713,11 +713,11 @@ void MainWindow::connectPairs() {
 	
 
 
-    succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(getDroppedItemViewLayerPlacementSignal(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
-                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
+    succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(getDroppedItemViewLayerPlacementSignal(ModelPart *, ViewLayer::ViewLayerPlacement &)),
+                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement &)),
                                         Qt::DirectConnection);
-    succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(getDroppedItemViewLayerPlacementSignal(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
-                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
+    succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(getDroppedItemViewLayerPlacementSignal(ModelPart *, ViewLayer::ViewLayerPlacement &)),
+                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement &)),
                                         Qt::DirectConnection);
 
 
@@ -1060,17 +1060,17 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
 	retval << createRotateButton(parent);
 	switch (viewId) {
 		case ViewLayer::BreadboardView:
-			retval << createFlipButton(parent) << createRoutingStatusLabel(parent); 
+			retval << createFlipButton(parent) << createRoutingStatusLabel(parent);
 			break;
 		case ViewLayer::SchematicView:
 			retval << createFlipButton(parent)
-                // << createAutorouteButton(parent) 
+                // << createAutorouteButton(parent)
                 << createRoutingStatusLabel(parent);
 			break;
 		case ViewLayer::PCBView:
 			retval << createViewFromButton(parent)
 				<< createActiveLayerButton(parent) 
-				// << createAutorouteButton(parent) 
+				// << createAutorouteButton(parent)
 				<< createExportEtchableButton(parent)
                 << createRoutingStatusLabel(parent)
                 ;
@@ -1279,7 +1279,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 	QSettings settings;
 	settings.setValue(m_settingsPrefix + "state",saveState());
 	settings.setValue(m_settingsPrefix + "geometry",saveGeometry());
-    
+
     saveLastTabList();
 
 	QMainWindow::closeEvent(event);
@@ -2136,7 +2136,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 
     bool swapLayer = false;
     ViewLayer::ViewLayerPlacement newViewLayerPlacement = ViewLayer::UnknownPlacement;
-    if (prop.compare("layer") == 0 && !logoPadBlocker) {  
+    if (prop.compare("layer") == 0 && !logoPadBlocker) {
         if (itemBase->modelPart()->flippedSMD() || itemBase->itemType() == ModelPart::Part) {
             ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
             if (viewItem) {
@@ -2317,7 +2317,7 @@ void MainWindow::subSwapSlot(SketchWidget * sketchWidget, ItemBase * itemBase, c
 	newID = swapSelectedAuxAux(itemBase, newModuleID, viewLayerPlacement, propsMap, parentCommand);
 }
 
-long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID,  ViewLayer::ViewLayerPlacement viewLayerPlacement, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand) 
+long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID,  ViewLayer::ViewLayerPlacement viewLayerPlacement, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand)
 {
 	long modelIndex = ModelPart::nextIndex();
 
@@ -3112,7 +3112,7 @@ void MainWindow::fireQuote() {
     QRect q = m_rolloverQuoteDialog->geometry();
 
     // I don't understand why--perhaps due to the windowFlags--but q is already in global coordinates
-    q.moveBottom(gt.y() - 20); 
+    q.moveBottom(gt.y() - 20);
     q.moveRight(bt.x());
     m_rolloverQuoteDialog->setGeometry(q);
 }
@@ -3133,7 +3133,7 @@ void MainWindow::initWelcomeView() {
 }
 
 void MainWindow::setInitialView() {
-    	// do this the first time, since the current_changed signal wasn't sent
+	// do this the first time, since the current_changed signal wasn't sent
 	int tab = 0;
 
 	tabWidget_currentChanged(tab+1);
@@ -3171,11 +3171,11 @@ void MainWindow::initZoom() {
         parts = true;
         break;
     }
-			
+
     if (parts) {
         m_currentGraphicsView->fitInWindow();
     }
-		
+
     m_currentGraphicsView->setEverZoomed(true);
 }
 

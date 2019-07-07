@@ -5203,7 +5203,7 @@ Reason: %2 (errcode %3)</source>
         <source>Unable to load image file &apos;%1&apos;: 
 
 %2</source>
-        <translation>Файлът с изображение „%1“ не може да бъде зареден: 
+        <translation>Файлът с изображение „%1“ не може да бъде зареден:
 
 %2
 </translation>

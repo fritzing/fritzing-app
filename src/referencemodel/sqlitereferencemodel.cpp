@@ -533,7 +533,7 @@ bool SqliteReferenceModel::createDatabase(const QString & databaseName, bool ful
 	m_database.setDatabaseName(databaseName.isEmpty() ? ":memory:" : databaseName);
 	if (!m_database.open()) {
 		m_swappingEnabled = false;
-	} 
+	}
     else {
         m_keepGoing = false;
         bool gotTransaction = m_database.transaction();
@@ -635,7 +635,7 @@ bool SqliteReferenceModel::createDatabase(const QString & databaseName, bool ful
 
 		    foreach(ModelPart* mp, m_partHash.values()) {
 			    mp->initConnectors(false);
-            }                      
+            }
 		}
 
 		foreach(ModelPart* mp, m_partHash.values()) {
@@ -1263,7 +1263,7 @@ bool SqliteReferenceModel::createProperties(QSqlDatabase & db) {
 }
 
 bool SqliteReferenceModel::createParts(QSqlDatabase & db, bool fullLoad) 
-{  
+{
     QString extra;
     if (fullLoad) {
         extra = "version TEXT,\n"
@@ -1426,4 +1426,3 @@ bool SqliteReferenceModel::removex(qulonglong id, const QString & tableName, con
 
     return result;
 }
-

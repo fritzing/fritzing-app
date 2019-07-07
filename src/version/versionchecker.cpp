@@ -246,4 +246,3 @@ void VersionChecker::ignore(const QString & version, bool interim) {
 		Version::toVersionThing(version, m_ignoreMainVersion);
 	}
 }
-

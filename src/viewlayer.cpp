@@ -332,7 +332,7 @@ void ViewLayer::setActive(bool a) {
 	m_active = a;
 }
 
-ViewLayer::ViewLayerPlacement ViewLayer::specFromID(ViewLayer::ViewLayerID viewLayerID) 
+ViewLayer::ViewLayerPlacement ViewLayer::specFromID(ViewLayer::ViewLayerID viewLayerID)
 {
 	switch (viewLayerID) {
 		case Copper1:
@@ -352,7 +352,7 @@ bool ViewLayer::isCopperLayer(ViewLayer::ViewLayerID viewLayerID) {
 }
 
 
-const LayerList & ViewLayer::copperLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement) 
+const LayerList & ViewLayer::copperLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement)
 {
 	if (viewLayerPlacement == ViewLayer::NewTop) return CopperTopLayers;
 	
@@ -410,7 +410,7 @@ const LayerList & ViewLayer::silkLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen1;
 	}
-	
+
 	return layerList;
 }
 
@@ -419,7 +419,7 @@ const LayerList & ViewLayer::topLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Copper1 << ViewLayer::Copper1Trace << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label << ViewLayer::GroundPlane1;
 	}
-	
+
 	return layerList;
 }
 
@@ -428,7 +428,7 @@ const LayerList & ViewLayer::bottomLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Copper0 << ViewLayer::Copper0Trace << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label << ViewLayer::GroundPlane0;
 	}
-	
+
 	return layerList;
 }
 

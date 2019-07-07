@@ -606,7 +606,7 @@ QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
     }
 
     svg += "</g>\n</svg>\n";
- 
+
     return svg;
 }
 
@@ -627,8 +627,8 @@ void NetLabel::addedToScene(bool temporary)
 
             QTransform chiefTransform = this->transform();
             QTransform local;
-            local.setMatrix(chiefTransform.m11(), chiefTransform.m12(), chiefTransform.m13(), chiefTransform.m21(), chiefTransform.m22(), chiefTransform.m23(), 0, 0, chiefTransform.m33()); 
-            if (!local.isIdentity()) {    
+            local.setMatrix(chiefTransform.m11(), chiefTransform.m12(), chiefTransform.m13(), chiefTransform.m21(), chiefTransform.m22(), chiefTransform.m23(), 0, 0, chiefTransform.m33());
+            if (!local.isIdentity()) {
                 double x = r.width() / 2.0;
 	            double y = r.height() / 2.0;
 	            QTransform transf = QTransform().translate(-x, -y) * local * QTransform().translate(x, y);
@@ -673,4 +673,3 @@ void NetLabel::setInspectorTitle(const QString & oldText, const QString & newTex
 
     infoGraphicsView->setProp(this, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
 }
-

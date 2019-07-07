@@ -151,11 +151,11 @@ QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName)
 {
     if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
         return obsoleteMakeSchematicSvg(expectedFileName);
-    }     
+    }
 
 	QStringList pieces = expectedFileName.split("_");
 
-	int pins = pieces.at(2).toInt();			
+	int pins = pieces.at(2).toInt();
 	double increment = SchematicRectConstants::NewUnit / 25.4;
     double incrementPoints = 72 * increment;		// 72 dpi
     double pinWidthPoints = 72 * SchematicRectConstants::PinWidth / 25.4;
@@ -174,7 +174,7 @@ QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName)
 					"<rect id='connectorpercent1terminal' x='0' y='[%6]' width='0' height='%2'/>\n"
 					"<circle fill='none' stroke-width='%2' stroke='%1' cx='%7' cy='[%5]' r='%8' />\n"
 					);
-    
+
     repeat = repeat
                 .arg(SchematicRectConstants::PinColor)
                 .arg(pinWidthPoints)
@@ -193,7 +193,7 @@ QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName)
 
 	return svg;
 }
-QString ScrewTerminal::obsoleteMakeSchematicSvg(const QString & expectedFileName) 
+QString ScrewTerminal::obsoleteMakeSchematicSvg(const QString & expectedFileName)
 {
 	QStringList pieces = expectedFileName.split("_");
 

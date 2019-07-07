@@ -38,7 +38,7 @@ static inline void initializeExtensionList() {
 			<< FritzingBundleExtension << FritzingBundledPartExtension
 			<< FritzingBundledBinExtension;
                 p_fritzingBundleExtensions
-			<< FritzingBundleExtension 
+			<< FritzingBundleExtension
                         << FritzingBundledPartExtension
 			<< FritzingBundledBinExtension;
 	}

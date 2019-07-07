@@ -1120,7 +1120,7 @@ double TextUtils::getStrokeWidth(QDomElement & element, double defaultValue)
     //QTextStream stream(&text);
     //element.save(stream, 0);
     //DebugDialog::debug(QString("no circle stroke width set in %1: %2").arg(filename).arg(text));
-    
+
     // default if there is no value to inherit
     element.setAttribute("stroke-width", defaultValue);
     return defaultValue;

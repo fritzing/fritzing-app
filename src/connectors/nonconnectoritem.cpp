@@ -112,7 +112,7 @@ void NonConnectorItem::paint( QPainter * painter, const QStyleOptionGraphicsItem
 	else if (m_effectively == EffectivelyCircular) {
 		QRectF r = rect();
         if (r.width() > 0 && r.height() > 0) {
-		    painter->setBrush(brush());  
+		    painter->setBrush(brush());
 		    painter->setPen(pen());
 		    double delta = r.width() * EffectiveAdjustmentFactor;
 		    painter->drawEllipse(r.adjusted(delta, delta, -delta, -delta));
@@ -121,7 +121,7 @@ void NonConnectorItem::paint( QPainter * painter, const QStyleOptionGraphicsItem
 	else if (m_effectively == EffectivelyRectangular) {
 		QRectF r = rect();
         if (r.width() > 0 && r.height() > 0) {
-		    painter->setBrush(brush());  
+		    painter->setBrush(brush());
 		    painter->setPen(pen());
 		    double delta = qMin(r.width(), r.height()) * EffectiveAdjustmentFactor;
 		    painter->drawRect(r.adjusted(delta, delta, -delta, -delta));

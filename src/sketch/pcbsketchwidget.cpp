@@ -181,7 +181,7 @@ void PCBSketchWidget::addViewLayers() {
 
 
 
-ViewLayer::ViewLayerID PCBSketchWidget::multiLayerGetViewLayerID(ModelPart * modelPart, ViewLayer::ViewID viewID, ViewLayer::ViewLayerPlacement viewLayerPlacement, LayerList & layerList) 
+ViewLayer::ViewLayerID PCBSketchWidget::multiLayerGetViewLayerID(ModelPart * modelPart, ViewLayer::ViewID viewID, ViewLayer::ViewLayerPlacement viewLayerPlacement, LayerList & layerList)
 {
     if (modelPart->itemType() == ModelPart::CopperFill) {
         if (viewLayerPlacement == ViewLayer::NewBottom) return ViewLayer::GroundPlane0;
@@ -192,7 +192,7 @@ ViewLayer::ViewLayerID PCBSketchWidget::multiLayerGetViewLayerID(ModelPart * mod
     ViewLayer::ViewLayerID wantLayer = (modelPart->flippedSMD() && viewLayerPlacement == ViewLayer::NewTop) ? ViewLayer::Copper1 : ViewLayer::Copper0;
     if (layerList.contains(wantLayer)) return wantLayer;
 
-    return SketchWidget::multiLayerGetViewLayerID(modelPart, viewID, viewLayerPlacement, layerList);   
+    return SketchWidget::multiLayerGetViewLayerID(modelPart, viewID, viewLayerPlacement, layerList);
 }
 
 bool PCBSketchWidget::canDeleteItem(QGraphicsItem * item, int count)
@@ -224,7 +224,7 @@ bool PCBSketchWidget::canChainWire(Wire * wire) {
         ConnectorItem * c1 = wire->connector1()->firstConnectedToIsh();
         if (c1 == NULL) return false;
 
-        return !c0->wiredTo(c1, (ViewGeometry::NormalFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::RatsnestFlag | ViewGeometry::SchematicTraceFlag) ^ getTraceFlag()); 
+        return !c0->wiredTo(c1, (ViewGeometry::NormalFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::RatsnestFlag | ViewGeometry::SchematicTraceFlag) ^ getTraceFlag());
     }
 
     return result;
@@ -241,7 +241,7 @@ void PCBSketchWidget::excludeFromAutoroute(bool exclude)
 {
     foreach (QGraphicsItem * item, scene()->selectedItems()) {
         TraceWire * wire = dynamic_cast<TraceWire *>(item);
-        
+
         if (wire) {
             if (!wire->isTraceType(getTraceFlag())) continue;
 
@@ -444,7 +444,7 @@ const QString & PCBSketchWidget::traceColor(ConnectorItem * forColor) {
             return PCBTraceColor1;
         default:
             return PCBTraceColor;
-    }   
+    }
 }
 
 const QString & PCBSketchWidget::traceColor(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
@@ -480,11 +480,11 @@ bool PCBSketchWidget::canChainMultiple() {
 }
 
 void PCBSketchWidget::setNewPartVisible(ItemBase * itemBase) {
-    if (itemBase->itemType() == ModelPart::Breadboard  || 
-        itemBase->itemType() == ModelPart::Symbol || 
-        itemBase->itemType() == ModelPart::SchematicSubpart || 
+    if (itemBase->itemType() == ModelPart::Breadboard  ||
+        itemBase->itemType() == ModelPart::Symbol ||
+        itemBase->itemType() == ModelPart::SchematicSubpart ||
         itemBase->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName) ||
-        itemBase->moduleID().endsWith(ModuleIDNames::PowerModuleIDName)) 
+        itemBase->moduleID().endsWith(ModuleIDNames::PowerModuleIDName))
     {
         // don't need to see the breadboard in the other views
         // but it's there so connections can be more easily synched between views
@@ -636,7 +636,7 @@ int PCBSketchWidget::calcDistanceAux(ConnectorItem * from, ConnectorItem * to, i
 int PCBSketchWidget::calcDistance(Wire * wire, ConnectorItem * end, int distance, QList<Wire *> & distanceWires, bool & fromConnector0) {
     //DebugDialog::debug(QString("calc distance wire: %1 rat:%2 to %3 %4, %5").arg(wire->id()).arg(wire->getRatsnest())
         //.arg(end->attachedToTitle()).arg(end->connectorSharedID()).arg(distance));
-    
+
     distanceWires.append(wire);
     int d0 = calcDistanceAux(wire->connector0(), end, distance, distanceWires);
     if (d0 == distance) {
@@ -667,7 +667,7 @@ void PCBSketchWidget::showGroundTraces(QList<ConnectorItem *> & connectorItems, 
 }
 
 void PCBSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase * itemBase) {
-    font.setFamily(OCRAFontName);       
+    font.setFamily(OCRAFontName);
     font.setPointSize(getLabelFontSizeSmall());
     font.setBold(false);
     font.setItalic(false);
@@ -722,7 +722,7 @@ void PCBSketchWidget::resizeBoard(double mmW, double mmH, bool doEmit)
             handle = true;
             break;
         case ModelPart::Part:
-            handle = item->moduleID().endsWith(ModuleIDNames::PadModuleIDName) || 
+            handle = item->moduleID().endsWith(ModuleIDNames::PadModuleIDName) ||
                     item->moduleID().endsWith(ModuleIDNames::CopperBlockerModuleIDName) ||
                     item->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName);
             break;
@@ -892,9 +892,9 @@ void PCBSketchWidget::swapLayers(ItemBase *, int newLayers, QUndoCommand * paren
         if (pad == NULL) continue;
 
         long newID;
-        emit subSwapSignal(this, pad, 
+        emit subSwapSignal(this, pad,
                 (newLayers == 1) ? ModuleIDNames::Copper0PadModuleIDName : ModuleIDNames::PadModuleIDName, 
-                (newLayers == 1) ? ViewLayer::NewBottom : ViewLayer::NewTop, 
+                (newLayers == 1) ? ViewLayer::NewBottom : ViewLayer::NewTop,
                 newID, changeBoardCommand);
 
         double w = pad->modelPart()->localProp("width").toDouble();
@@ -905,7 +905,7 @@ void PCBSketchWidget::swapLayers(ItemBase *, int newLayers, QUndoCommand * paren
 }
 
 bool PCBSketchWidget::isBoardLayerChange(ItemBase * itemBase, const QString & newModuleID, int & newLayers)
-{   
+{
     newLayers = m_boardLayers;
     if (!Board::isBoard(itemBase)) {
         // no change
@@ -947,7 +947,7 @@ void PCBSketchWidget::changeBoardLayers(int layers, bool doEmit) {
 
 void PCBSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType crossViewType, QUndoCommand * parentCommand, 
                         bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs) {
-    
+
     int layers = 1;
     if (parentCommand == NULL) {
         foreach (ModelPart * modelPart, modelParts) {
@@ -1102,7 +1102,7 @@ void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCom
 
             extendChangeConnectionCommand(BaseCommand::SingleView,
                                 targetConnectorItem, end,
-                                ViewLayer::specFromID(end->attachedToViewLayerID()), 
+                                ViewLayer::specFromID(end->attachedToViewLayerID()),
                                 false, parentCommand);
         }
 
@@ -1125,7 +1125,7 @@ void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCom
             new ChangeConnectionCommand(this, BaseCommand::SingleView,
                                 targetConnectorItem->attachedToID(), targetConnectorItem->connectorSharedID(),
                                 end->attachedToID(), end->connectorSharedID(),
-                                ViewLayer::specFromID(newViewLayerID), 
+                                ViewLayer::specFromID(newViewLayerID),
                                 true, parentCommand);
         }
     }
@@ -1239,7 +1239,7 @@ void PCBSketchWidget::wireSplitSlot(Wire* wire, QPointF newPos, QPointF oldPos, 
 }
 
 
-ItemBase * PCBSketchWidget::addCopperLogoItem(ViewLayer::ViewLayerPlacement viewLayerPlacement) 
+ItemBase * PCBSketchWidget::addCopperLogoItem(ViewLayer::ViewLayerPlacement viewLayerPlacement)
 {
     long newID = ItemBase::getNextID();
     ViewGeometry viewGeometry;
@@ -1299,7 +1299,7 @@ bool PCBSketchWidget::acceptsTrace(const ViewGeometry & viewGeometry) {
     return !viewGeometry.getSchematicTrace();
 }
 
-ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin) 
+ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin)
 {
     ItemBase * newItem = SketchWidget::placePartDroppedInOtherView(modelPart, viewLayerPlacement, viewGeometry, id, dropOrigin);
     if (newItem == NULL) return newItem;
@@ -1314,17 +1314,17 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
     else {
         boards << NULL;
     }
-    
+
     foreach (ItemBase * board, boards) {
 
-        // This is a 2d bin-packing problem. We can use our tile datastructure for this.  
+        // This is a 2d bin-packing problem. We can use our tile datastructure for this.
         // Use a simple best-fit approach for now.  No idea how optimal a solution it is.
 
         CMRouter router(this, board, false);
         int keepout = 10;
         router.setKeepout(keepout);
         Plane * plane = router.initPlane(false);
-        QList<Tile *> alreadyTiled; 
+        QList<Tile *> alreadyTiled;
 
         foreach (QGraphicsItem * item, (board) ? scene()->collidingItems(board) : scene()->items()) {
             ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
@@ -1333,7 +1333,7 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
             if (itemBase->layerKinChief() != itemBase) continue;
 
             if (itemBase->layerKinChief() == board) continue;
-            if (itemBase->layerKinChief() == newItem) continue;    
+            if (itemBase->layerKinChief() == newItem) continue;
 
             Wire * wire = qobject_cast<Wire *>(itemBase);
             if (wire != NULL) {
@@ -1482,7 +1482,7 @@ bool PCBSketchWidget::groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID v
         bool gotTrueSeeds = collectGroundFillSeeds(seeds, false);
 
         if (!gotTrueSeeds && (seeds.count() != 1)) {
-            QString message =  tr("Please designate one or more ground fill seeds before doing a ground fill.\n\n");                            
+            QString message =  tr("Please designate one or more ground fill seeds before doing a ground fill.\n\n");
             setGroundFillSeeds(message);
             return false;
         }
@@ -1553,7 +1553,7 @@ bool PCBSketchWidget::groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID v
         gpg0.setStrokeWidthIncrement(StrokeWidthIncrement);
         gpg0.setMinRunSize(10, 10);
         if (fillGroundTraces) {
-            connect(&gpg0, SIGNAL(postImageSignal(GroundPlaneGenerator *, QImage *, QImage *, QGraphicsItem *, QList<QRectF> *)), 
+            connect(&gpg0, SIGNAL(postImageSignal(GroundPlaneGenerator *, QImage *, QImage *, QGraphicsItem *, QList<QRectF> *)),
                     this, SLOT(postImageSlot(GroundPlaneGenerator *, QImage *, QImage *, QGraphicsItem *, QList<QRectF> *)),
                     Qt::DirectConnection);
         }
@@ -1572,7 +1572,7 @@ bool PCBSketchWidget::groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID v
         gpg1.setStrokeWidthIncrement(StrokeWidthIncrement);
         gpg1.setMinRunSize(10, 10);
         if (fillGroundTraces) {
-            connect(&gpg1, SIGNAL(postImageSignal(GroundPlaneGenerator *, QImage *, QImage *, QGraphicsItem *, QList<QRectF> *)), 
+            connect(&gpg1, SIGNAL(postImageSignal(GroundPlaneGenerator *, QImage *, QImage *, QGraphicsItem *, QList<QRectF> *)),
                     this, SLOT(postImageSlot(GroundPlaneGenerator *, QImage *, QImage *, QGraphicsItem *, QList<QRectF> *)),
                     Qt::DirectConnection);
         }
@@ -1683,7 +1683,7 @@ QString PCBSketchWidget::generateCopperFillUnit(ItemBase * itemBase, QPointF whe
     gpg.setStrokeWidthIncrement(StrokeWidthIncrement);
     gpg.setLayerName(gpLayerName);
     gpg.setMinRunSize(10, 10);
-    bool result = gpg.generateGroundPlaneUnit(boardSvg, boardImageRect.size(), svg, copperImageRect.size(), exceptions, board, GraphicsUtils::StandardFritzingDPI / 2.0  /* 2 MIL */, 
+    bool result = gpg.generateGroundPlaneUnit(boardSvg, boardImageRect.size(), svg, copperImageRect.size(), exceptions, board, GraphicsUtils::StandardFritzingDPI / 2.0  /* 2 MIL */,
                                                 color, whereToStart, getKeepoutMils());
 
     if (result == false || gpg.newSVGs().count() < 1) {
@@ -1737,7 +1737,7 @@ double PCBSketchWidget::getWireStrokeWidth(Wire * wire, double wireWidth)
     return wireWidth + 6;
 }
 
-Wire * PCBSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec) 
+Wire * PCBSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec)
 {
     if (spec == ViewLayer::UnknownPlacement) {
         spec = wireViewLayerPlacement(connectorItem);
@@ -1749,7 +1749,7 @@ Wire * PCBSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * w
         double traceWidth = getTraceWidth();
         double minDim = connectorItem->minDimension();
         if (minDim < traceWidth) {
-            traceWidth = getSmallerTraceWidth(minDim);  
+            traceWidth = getSmallerTraceWidth(minDim);
         }
         wire->setWireWidth(traceWidth, this, getWireStrokeWidth(wire, traceWidth));
         wire->setProperty(FakeTraceProperty, true);
@@ -1861,7 +1861,7 @@ void PCBSketchWidget::setUpColor(ConnectorItem * fromConnectorItem, ConnectorIte
         if (autorouteTypePCB()) {
             double minDim = qMin(fromConnectorItem->minDimension(), toConnectorItem->minDimension());
             if (minDim < traceWidth) {
-                traceWidth = getSmallerTraceWidth(minDim);  
+                traceWidth = getSmallerTraceWidth(minDim);
             }
         }
         new WireWidthChangeCommand(this, wire->id(), traceWidth, traceWidth, parentCommand);
@@ -2162,7 +2162,7 @@ bool PCBSketchWidget::collectGroundFillSeeds(QList<ConnectorItem *> & seeds, boo
     if (trueSeeds.count() == 0 || includePotential) {
         seeds.append(potentialSeeds);
     }
-    
+
     return trueSeeds.count() > 0;
 }
 
@@ -2191,7 +2191,7 @@ void PCBSketchWidget::shiftHoles() {
 
             default:
                 continue;
-        }       
+        }
     }
 }
 
@@ -2335,7 +2335,7 @@ void PCBSketchWidget::convertToVia(ConnectorItem * lastHoverEnterConnectorItem) 
         new ChangeConnectionCommand(this, BaseCommand::CrossView, from->attachedToID(), from->connectorSharedID(),
             newID, "connector0",
             ViewLayer::specFromID(wire->viewLayerID()),
-            true, parentCommand);   
+            true, parentCommand);
 
     }
 
@@ -2606,7 +2606,7 @@ bool PCBSketchWidget::hasCustomBoardShape() {
     return false;
 }
 
-ViewLayer::ViewLayerPlacement PCBSketchWidget::getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry & viewGeometry) 
+ViewLayer::ViewLayerPlacement PCBSketchWidget::getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry & viewGeometry)
 {
     if (modelPart->flippedSMD()) {
         ViewLayer::ViewLayerID viewLayerID = ViewLayer::viewLayerIDFromXmlString(view.attribute("layer"));
@@ -2886,14 +2886,14 @@ void PCBSketchWidget::setViewFromBelow(bool viewFromBelow) {
 
 void PCBSketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement & viewLayerPlacement) {
     if (ResizableBoard::isBoard(modelPart)) {
-        viewLayerPlacement = ViewLayer::NewTop;   
+        viewLayerPlacement = ViewLayer::NewTop;
         return;
     }
 
     viewLayerPlacement = defaultViewLayerPlacement(modelPart);   // top for a two layer board
     if (boardLayers() == 2) {
         if (dropOnBottom()) {
-            viewLayerPlacement = ViewLayer::NewBottom;   
+            viewLayerPlacement = ViewLayer::NewBottom;
         }
         return;
     }

@@ -285,7 +285,7 @@ void LogoItem::prepLoadImageAux(const QString & fileName, bool addName)
 	}
 }
 
-bool LogoItem::reloadImage(const QString & incomingSvg, const QSizeF & aspectRatio, const QString & fileName, bool addName) 
+bool LogoItem::reloadImage(const QString & incomingSvg, const QSizeF & aspectRatio, const QString & fileName, bool addName)
 {
     QString svg = incomingSvg;
 	if (isBottom()) {
@@ -429,7 +429,7 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 		if (image.format() != QImage::Format_RGB32 && image.format() != QImage::Format_ARGB32) {
 			image = image.convertToFormat(QImage::Format_Mono);
 		}
-		
+
         double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
         if (this->m_standardizeColors) {
 		    GroundPlaneGenerator gpg;
@@ -1135,5 +1135,3 @@ bool BoardLogoItem::collectExtraInfo(QWidget * parent, const QString & family, c
 bool BoardLogoItem::isBottom() {
     return false;
 }
-
-

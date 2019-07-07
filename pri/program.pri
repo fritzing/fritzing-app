@@ -23,7 +23,7 @@ HEADERS += \
     src/program/programtab.h \
     src/program/programwindow.h \
     src/program/syntaxer.h \
-    src/program/trienode.h \ 
+    src/program/trienode.h \
     src/program/console.h \
     src/program/consolewindow.h \
     src/program/consolesettings.h \

@@ -359,13 +359,13 @@ QString MysteryPart::makeSchematicSvg(const QString & expectedFileName)
 
     if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
         return obsoleteMakeSchematicSvg(labels, sip);
-    }     
+    }
 
 	return makeSchematicSvg(labels, sip);
 }
 
 QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip) 
-{	
+{
     QDomDocument fakeDoc;
 
     QList<QDomElement> lefts;
@@ -381,7 +381,7 @@ QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip)
     QString titleText = sip ? "IC" : "?";
     QString svg = SchematicRectConstants::genSchematicDIP(empty, empty, lefts, empty, empty, busNames, titleText, false, false, SchematicRectConstants::simpleGetConnectorName);
     if (sip) return svg;
-    
+
     // add the mystery part graphic
     QDomDocument doc;
     if (!doc.setContent(svg)) return svg;
@@ -417,7 +417,7 @@ QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip)
     return doc.toString(1);
 }
 
-QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool sip) 
+QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool sip)
 {	
 	int increment = GraphicsUtils::StandardSchematicSeparationMils;   // 7.5mm;
 	int border = 30;
@@ -583,7 +583,7 @@ QString MysteryPart::makeBreadboardSipSvg(const QString & expectedFileName)
 					"<rect width='[6.0022]' x='0' y='22' fill='#404040' height='3.096' id='lower' stroke-width='0' />\n"
 					"<text id='label' x='2.5894' y='13' fill='#e6e6e6' stroke='none' font-family='Droid Sans' text-anchor='start' font-size='7.3' >?</text>\n"
 					"<circle fill='#8C8C8C' cx='[1.0022]' cy='5' r='3' stroke-width='0' />\n"
-					"<text x='[1.0022]' y='6.7' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"      
+					"<text x='[1.0022]' y='6.7' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"
 					"%2\n"
 					"</g>\n"
 					"</svg>\n");

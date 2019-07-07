@@ -13,7 +13,7 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
-HEADERS += src/eagle/fritzing2eagle.h 
- 
-SOURCES += src/eagle/fritzing2eagle.cpp 
+HEADERS += src/eagle/fritzing2eagle.h
+
+SOURCES += src/eagle/fritzing2eagle.cpp
 

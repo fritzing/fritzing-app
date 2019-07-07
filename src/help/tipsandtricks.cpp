@@ -46,7 +46,7 @@ TipsAndTricks::TipsAndTricks(QWidget *parent)
 		html += "</ul></li>";
 	}
 	html += "</ul>";
-	html += "</body></html>"; 
+	html += "</body></html>";
 
 	Singleton = this;
 	setWindowTitle(tr("Tips and Tricks"));
@@ -98,7 +98,7 @@ void TipsAndTricks::initTipSets() {
 	ts->tips << tr("In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.");
 	ts->tips << tr("In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.");
 	TipSets.append(ts);
-	
+
 	ts = new TipSet;
 	ts->heading = tr("rotation");
 	ts->tips << tr("To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.");
@@ -161,10 +161,10 @@ void TipsAndTricks::initTipSets() {
 	ts = new TipSet;
 	ts->heading = tr("pcb production");
     ts->tips << tr("Smaller PCBs are more affortable than larger ones. Save space and money.");
-    ts->tips << tr("Have your PCB quickly and easily produced with Fritzing Fab. Hover over the 'Fabricate' button to get a quote.");  
-    ts->tips << tr("When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.");  
+    ts->tips << tr("Have your PCB quickly and easily produced with Fritzing Fab. Hover over the 'Fabricate' button to get a quote.");
+    ts->tips << tr("When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.");
     TipSets.append(ts);
-    
+
     ts = new TipSet;
 	ts->heading = tr("notes");
     ts->tips << tr("To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That's 'l' as in the first letter of 'link'.) To modify an existing link select the linked text and use ctrl-l (command-l) again.");

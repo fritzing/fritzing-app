@@ -448,7 +448,7 @@ void PaletteItem::resetImage(InfoGraphicsView * infoGraphicsView) {
 	foreach (Connector * connector, modelPart()->connectors()) {
 		connector->unprocess(this->viewID(), this->viewLayerID());
 	}
-    
+
 	LayerAttributes layerAttributes;
     initLayerAttributes(layerAttributes, viewID(), viewLayerID(), viewLayerPlacement(), true, !m_selectionShape.isEmpty());
 	this->setUpImage(modelPart(), infoGraphicsView->viewLayers(), layerAttributes);
@@ -1561,5 +1561,3 @@ void PaletteItem::retransform(const QTransform & chiefTransform) {
         }
     }
 }
-
-

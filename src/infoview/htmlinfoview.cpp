@@ -340,7 +340,7 @@ void HtmlInfoView::cleanup() {
 	}
 }
 
-void HtmlInfoView::viewItemInfo(InfoGraphicsView *, ItemBase* item, bool swappingEnabled) 
+void HtmlInfoView::viewItemInfo(InfoGraphicsView *, ItemBase* item, bool swappingEnabled)
 {
 	m_setContentTimer.stop();
 	m_lastItemBase = m_pendingItemBase = item;
@@ -754,7 +754,7 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
         keys.removeOne("layer");
         sl = (itemBase->viewID() == ViewLayer::PCBView);
     }
-    
+
     showLayers(sl, itemBase, family, properties.value("layer", ""), swappingEnabled);
 
 	int ix = 0;
@@ -925,7 +925,7 @@ void HtmlInfoView::showLayers(bool show, ItemBase * itemBase, const QString & fa
 
     if (m_layerWidget) {
 	    m_layerLayout->removeWidget(m_layerWidget);
-        m_layerWidget->blockSignals(true);     
+        m_layerWidget->blockSignals(true);
 	    m_layerWidget->setVisible(false);          // seems to trigger an unwanted focus out signal
 	    m_layerWidget->deleteLater();
         m_layerWidget = NULL;
@@ -1208,4 +1208,3 @@ void HtmlInfoView::rotEntry() {
         infoGraphicsView->rotateX(newAngle - angle, false, m_lastItemBase);
     }
 }
-

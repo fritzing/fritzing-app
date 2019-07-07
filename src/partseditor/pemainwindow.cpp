@@ -471,7 +471,7 @@ void PEMainWindow::initSketchWidgets(bool whatever)
 		connect(viewThing->sketchWidget, SIGNAL(itemMovedSignal(ItemBase *)), this, SLOT(itemMovedSlot(ItemBase *)));
 		connect(viewThing->sketchWidget, SIGNAL(resizedSignal(ItemBase *)), this, SLOT(resizedSlot(ItemBase *)));
 		connect(viewThing->sketchWidget, SIGNAL(clickedItemCandidateSignal(QGraphicsItem *, bool &)), this, SLOT(clickedItemCandidateSlot(QGraphicsItem *, bool &)), Qt::DirectConnection);
-    	connect(viewThing->sketchWidget, SIGNAL(itemAddedSignal(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long, SketchWidget *)),
+	connect(viewThing->sketchWidget, SIGNAL(itemAddedSignal(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long, SketchWidget *)),
 							 this, SLOT(itemAddedSlot(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long, SketchWidget *)));
 
 
@@ -969,15 +969,15 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 void PEMainWindow::initZoom() {
     if (m_peToolView == NULL) return;
     if (m_currentGraphicsView == NULL) return;
-	
+
 	ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
 	if (viewThing->itemBase == NULL) return;
-			
+
     if (!viewThing->everZoomed) {
         viewThing->everZoomed = true;
         m_currentGraphicsView->fitInWindow();
     }
-		
+
 	m_peSvgView->setFilename(viewThing->referenceFile);
 }
 
@@ -1776,7 +1776,7 @@ QString PEMainWindow::saveFzp() {
     QString dirName = makeDirName();
     dir.mkdir(dirName);
     dir.cd(dirName);
-    QString fzpPath = dir.absoluteFilePath(QString("%1_%2_%3.fzp").arg(m_prefix).arg(m_guid).arg(m_fileIndex++));   
+    QString fzpPath = dir.absoluteFilePath(QString("%1_%2_%3.fzp").arg(m_prefix).arg(m_guid).arg(m_fileIndex++));
     DebugDialog::debug("temp path " + fzpPath);
     writeXml(fzpPath, m_fzpDocument.toString(), true);
     return fzpPath;
@@ -2288,7 +2288,7 @@ bool PEMainWindow::saveAs(bool overWrite)
         QString svg = writeDoc.toString();
         insertDesc(viewThing->referenceFile, svg);
 
-        QString svgPath = makeSvgPath2(viewThing->sketchWidget);  
+        QString svgPath = makeSvgPath2(viewThing->sketchWidget);
 		setImageAttribute(layers, svgPath);
 
         QString actualPath = m_userPartsFolderSvgPath + svgPath; 
@@ -2302,7 +2302,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 
     QDir dir(m_userPartsFolderPath);
 	QString suffix = QString("%1_%2_%3").arg(m_prefix).arg(m_guid).arg(m_fileIndex++);
-    QString fzpPath = dir.absoluteFilePath(QString("%1.fzp").arg(suffix));  
+    QString fzpPath = dir.absoluteFilePath(QString("%1.fzp").arg(suffix));
 
     peAlienFiles << fzpPath;
     if (overWrite) {
@@ -3925,7 +3925,7 @@ void PEMainWindow::initWelcomeView() {
 }
 
 void PEMainWindow::setInitialView() {
-    	// do this the first time, since the current_changed signal wasn't sent
+	// do this the first time, since the current_changed signal wasn't sent
 	int tab = 0;
 	tabWidget_currentChanged(tab+1);
 	tabWidget_currentChanged(tab);
@@ -3969,4 +3969,3 @@ void PEMainWindow::updateEditMenu() {
     MainWindow::updateEditMenu();
     m_convertToTenthAct->setEnabled(m_currentGraphicsView != NULL && m_currentGraphicsView->viewID() == ViewLayer::SchematicView);
 }
-

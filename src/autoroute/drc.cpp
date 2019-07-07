@@ -376,7 +376,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
     if (bothSidesNow) layerSpecs << ViewLayer::NewTop;
 
     int emptyMasterCount = 0;
-    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {  
+    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {
         if (viewLayerPlacement == ViewLayer::NewTop) {
             emit wantTopVisible();
             m_plusImage->fill(0xffffffff);
@@ -472,7 +472,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
     }
 
     int index = 0;
-    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {    
+    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {
         if (viewLayerPlacement == ViewLayer::NewTop) emit wantTopVisible();
         else emit wantBottomVisible();
 
@@ -1069,7 +1069,7 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 
         QSet<ConnectorItem *> missing;
         QDomElement root = doc.documentElement();
-    
+
         if (copper1) {
             foreach(ConnectorItem * ci, missingCopper("copper1", ViewLayer::Copper1, itemBase, root)) {
                 missing << ci;
@@ -1117,11 +1117,11 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 
 }
 
-QList<ConnectorItem *> DRC::missingCopper(const QString & layerName, ViewLayer::ViewLayerID viewLayerID, ItemBase * itemBase, const QDomElement & root) 
+QList<ConnectorItem *> DRC::missingCopper(const QString & layerName, ViewLayer::ViewLayerID viewLayerID, ItemBase * itemBase, const QDomElement & root)
 {
     QDomElement copperElement = TextUtils::findElementWithAttribute(root, "id", layerName);
     QList<ConnectorItem *> missing;
-    
+
     foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
         SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(itemBase->viewID(), viewLayerID);
         if (svgIdLayer == NULL) {

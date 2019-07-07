@@ -478,9 +478,9 @@ void BinManager::currentChanged(int index) {
 
     }
 
-        
 
-    
+
+
 
 	PartsBinPaletteWidget *bin = getBin(index);
 	if (bin) setAsCurrentBin(bin);
@@ -1382,4 +1382,3 @@ void BinManager::copyAllToSketch() {
         m_mainWindow->addToSketch(modelParts);
     }
 }
-

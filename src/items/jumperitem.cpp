@@ -166,7 +166,7 @@ bool JumperItem::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers,
 			}
 		}
 
-        m_connectorTL = m_connector0->rect().topLeft();			
+        m_connectorTL = m_connector0->rect().topLeft();
 		m_connectorBR = boundingRect().bottomRight() - m_connector1->rect().bottomRight();
 
 		initialResize(layerAttributes.viewID);

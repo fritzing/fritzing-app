@@ -21,7 +21,7 @@ HEADERS += \
     src/sketch/sketchwidget.h \
     src/sketch/welcomeview.h \
     src/sketch/zoomablegraphicsview.h \
-    
+
     
 SOURCES += \
     src/sketch/fgraphicsscene.cpp \
@@ -30,5 +30,5 @@ SOURCES += \
     src/sketch/pcbsketchwidget.cpp \
     src/sketch/schematicsketchwidget.cpp \
     src/sketch/sketchwidget.cpp \
-    src/sketch/welcomeview.cpp \ 
+    src/sketch/welcomeview.cpp \
     src/sketch/zoomablegraphicsview.cpp \

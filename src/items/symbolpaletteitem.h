@@ -99,7 +99,7 @@ protected:
 };
 
 
-class NetLabel : public SymbolPaletteItem 
+class NetLabel : public SymbolPaletteItem
 {
 Q_OBJECT
 

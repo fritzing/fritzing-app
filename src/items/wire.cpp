@@ -109,8 +109,8 @@ void debugCompare(ItemBase * it) {
     if (wire) {
         QRectF r0 = wire->connector0()->rect();
         QRectF r1 = wire->connector1()->rect();
-        if (qAbs(r0.left() - r1.left()) < 0.1 && 
-            qAbs(r0.right() - r1.right()) < 0.1 && 
+        if (qAbs(r0.left() - r1.left()) < 0.1 &&
+            qAbs(r0.right() - r1.right()) < 0.1 &&
             qAbs(r0.top() - r1.top()) < 0.1 &&
             qAbs(r0.bottom() - r1.bottom()) < 0.1)
         {
@@ -1488,7 +1488,7 @@ QVariant Wire::itemChange(GraphicsItemChange change, const QVariant &value)
 void Wire::cleanup() {
 }
 
-void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) 
+void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect)
 {
 	connectorItem->setBigDot(false);
 	ItemBase::getConnectedColor(connectorItem, brush, pen, opacity, negativePenWidth, negativeOffsetRect);
@@ -2002,4 +2002,3 @@ void Wire::colorByLength(bool colorByLength) {
     m_colorByLength = colorByLength;
     update();
 }
-

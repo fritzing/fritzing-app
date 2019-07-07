@@ -214,7 +214,7 @@ void MainWindow::mainLoadAux(const QString & fileName)
     }
 
     if (!fileName.endsWith(FritzingSketchExtension) && !fileName.endsWith(FritzingBundleExtension)) {
-        loadWhich(fileName, false, false, true, "");  
+        loadWhich(fileName, false, false, true, "");
         return;
     }
 
@@ -398,7 +398,7 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 
 	newIDs.clear();
 	m_pcbGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, NULL, false, NULL, false, newIDs);
-                
+
 
 	ProcessEventBlocker::processEvents();
 	if (m_fileProgressDialog) {
@@ -577,7 +577,7 @@ void MainWindow::tipsAndTricks()
 
 void MainWindow::firstTimeHelp()
 {
-    if (m_currentGraphicsView == NULL) return;	
+    if (m_currentGraphicsView == NULL) return;
 
     FirstTimeHelpDialog::setViewID(m_currentGraphicsView->viewID());
     FirstTimeHelpDialog::showFirstTimeHelp();
@@ -1604,7 +1604,7 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
     if (m_showAllLayersAct == NULL) return;
 
     QList<QAction *> actions;
-    actions << m_zoomInAct << m_zoomOutAct << m_zoomInShortcut << m_fitInWindowAct << m_actualSizeAct << 
+    actions << m_zoomInAct << m_zoomOutAct << m_zoomInShortcut << m_fitInWindowAct << m_actualSizeAct <<
         m_100PercentSizeAct << m_alignToGridAct << m_showGridAct << m_setGridSizeAct << m_setBackgroundColorAct <<
         m_colorWiresByLengthAct;
 
@@ -1817,7 +1817,7 @@ void MainWindow::updatePartMenu() {
     if (m_currentGraphicsView == NULL) {
         foreach (QAction * action, m_partMenu->actions()) {
             action->setEnabled(false);
-        }  
+        }
         return;
     }
 
@@ -3370,7 +3370,7 @@ QMenu *MainWindow::pcbWireMenu() {
    // createZOrderWireSubmenu(menu);
     createZOrderSubmenu(menu);
     menu->addSeparator();
-	menu->addAction(m_changeTraceLayerWireAct);	
+	menu->addAction(m_changeTraceLayerWireAct);
 	menu->addAction(m_createTraceWireAct);
 	menu->addAction(m_excludeFromAutorouteWireAct);
 	menu->addSeparator();
@@ -3542,7 +3542,7 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
 }
 
 void MainWindow::obsoleteSMDOrientationSlot() {
-    m_obsoleteSMDOrientation = true;    
+    m_obsoleteSMDOrientation = true;
 }
 
 void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchematics) {
@@ -3558,7 +3558,7 @@ void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchemat
 	if (answer == QMessageBox::No) {
         useOldSchematics = m_useOldSchematic = true;
         this->setReadOnly(true);
-	} 
+	}
     else {
         m_convertedSchematic = true;
     }
@@ -3570,12 +3570,12 @@ QMessageBox::StandardButton MainWindow::oldSchematicMessage(const QString & file
     FMessageBox messageBox(NULL);
 	messageBox.setWindowTitle(tr("Schematic view update"));
 	messageBox.setText(tr("There is a new graphics standard for schematic-view part images, beginning with version 0.8.6.\n\n") +
-                        tr("Would you like to convert '%1' to the new standard now or open the file read-only?\n").arg(info.fileName())                  
+                        tr("Would you like to convert '%1' to the new standard now or open the file read-only?\n").arg(info.fileName())
                         );
-	messageBox.setInformativeText("<ul><li>" +  
+	messageBox.setInformativeText("<ul><li>" +
                                     tr("The conversion process will not modify '%1', until you save the file. ").arg(info.fileName()) +
                                     + "</li><li>" +
-                                    tr("You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. ") + 
+                                    tr("You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. ") +
                                     + "</li><li>" +
                                     tr("Note that any custom parts will not be converted. A tool for converting 'rectangular' schematic images is available in the Parts Editor.") +
                                     + "</li></ul>"
@@ -4157,12 +4157,12 @@ void MainWindow::linkToProgramFile(const QString & filename, Platform * platform
 	}
 }
 
-QStringList MainWindow::newDesignRulesCheck() 
+QStringList MainWindow::newDesignRulesCheck()
 {
     return newDesignRulesCheck(true);
 }
 
-QStringList MainWindow::newDesignRulesCheck(bool showOkMessage) 
+QStringList MainWindow::newDesignRulesCheck(bool showOkMessage)
 {
     QStringList results;
 
@@ -4515,4 +4515,3 @@ void MainWindow::testConnectors() {
 
     m_currentGraphicsView->testConnectors();
 }
-

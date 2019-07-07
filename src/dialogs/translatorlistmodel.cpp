@@ -26,7 +26,7 @@ QHash<QString, QString> TranslatorListModel::m_languages;
 QList<QLocale *> TranslatorListModel::m_localeList;
 
 // More languages written in their own language can be found
-// at http://www.mozilla.com/en-US/firefox/all.html 
+// at http://www.mozilla.com/en-US/firefox/all.html
 
 // recipe for translating from mozilla strings into source code via windows:
 //		1. copy the string from the mozilla page into wordpad and save it as a unicode text file

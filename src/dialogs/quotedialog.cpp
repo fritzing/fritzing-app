@@ -90,7 +90,7 @@ void LabelThing::mouseReleaseEvent(QMouseEvent * event) {
 
 void LabelThing::paintEvent(QPaintEvent * event) {
     // use 'new QPainter()' so that delete is invoked before the QLabel::paintEvent call, otherwise the label isn't painted on mac
-    QPainter * painter = new QPainter(this);              
+    QPainter * painter = new QPainter(this);
     switch (m_state) {
         case PRESSED:
             painter->drawPixmap(0, 0, m_pressedImage);
@@ -183,10 +183,10 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 
     m_tableWidget->verticalHeader()->setVisible(false);
     m_tableWidget->horizontalHeader()->setVisible(false);
-    
+
     m_tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     m_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    
+
     m_tableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 

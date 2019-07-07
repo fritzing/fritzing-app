@@ -5213,7 +5213,7 @@ Motivul: %2 (cod eroare %3)</translation>
         <source>Unable to load image file &apos;%1&apos;: 
 
 %2</source>
-        <translation>Nu se poate încărca fișierul imagine &apos;%1&apos;: 
+        <translation>Nu se poate încărca fișierul imagine &apos;%1&apos;:
 
 %2</translation>
     </message>

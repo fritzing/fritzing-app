@@ -85,7 +85,7 @@ AboutBox::AboutBox(QWidget *parent)
 
 
     // Copyright messages
-    
+
 
     QLabel *copyrightGNU = new QLabel(this);
     copyrightGNU->setText(tr("<b>GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest"));
@@ -108,9 +108,9 @@ AboutBox::AboutBox(QWidget *parent)
     // Scrolling Credits Text
 
     // moved data out of credits.txt so we could apply translation
-    QString data = 
+    QString data =
 QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
-    
+
 "<p>" +
     tr("Fritzing is made by: ") +
     tr("Prof. Reto Wettach, Andr&eacute; Kn&ouml;rig, Myriel Milicevic, ") +
@@ -176,7 +176,7 @@ QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
     m_expandingLabel->setLabelText(data);
     m_expandingLabel->setFont(smallFont);
     m_expandingLabel->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
-    
+
     // setAlignment only aligns the "current paragraph"
     // the QTextCursor code aligns all paragraphs
     QTextCursor cursor(m_expandingLabel->document());
@@ -184,13 +184,13 @@ QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
     QTextBlockFormat fmt;
     fmt.setAlignment(Qt::AlignCenter);
     cursor.mergeBlockFormat(fmt);
-    
+
     // Add a fade out and a fade in the scrollArea
     QLabel *scrollFade = new QLabel(this);
     scrollFade->setPixmap(fadepixmap);
     scrollFade->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
     scrollFade->setStyleSheet("background-color: none");
-    
+
 
     // auto scroll timer initialization
     m_restartAtTop = false;

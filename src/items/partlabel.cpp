@@ -456,7 +456,7 @@ void PartLabel::initMenu()
 		rotate135cwAct->setStatusTip(tr("Rotate the label by 135 degrees clockwise"));
 	}
 
- 	QAction *rotate180Act = rlmenu->addAction(tr("Rotate 180°"));
+	QAction *rotate180Act = rlmenu->addAction(tr("Rotate 180°"));
 	rotate180Act->setData(QVariant(PartLabelRotate180));
 	rotate180Act->setStatusTip(tr("Rotate the label by 180 degrees"));
   

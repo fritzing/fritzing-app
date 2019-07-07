@@ -1250,7 +1250,7 @@ void Panelizer::addOptional(int optionalCount, QList<PanelItem *> & refPanelItem
 
 /////////////////////////////////////////////////////////////////////////////////
 
-void Panelizer::inscribe(FApplication * app, const QString & panelFilename, bool drc, bool noMessages) 
+void Panelizer::inscribe(FApplication * app, const QString & panelFilename, bool drc, bool noMessages)
 {
     initPanelizerOutput(panelFilename, "inscribe");
 
@@ -1401,7 +1401,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
         if (!noMessages) {
             QMessageBox::warning(NULL, QObject::tr("Fritzing"), message);
         }
-        writePanelizerOutput(message); 
+        writePanelizerOutput(message);
         collectFilenames(info.fileName());
     }
 

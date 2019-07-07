@@ -1146,7 +1146,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <source>connected to %n item(s)</source>
         <translation type="unfinished">
             <numerusform>connesso a %n elemento(i)
-        
+
         </numerusform>
             <numerusform></numerusform>
         </translation>

@@ -160,7 +160,7 @@ QString Dip::makeSchematicSvg(const QString & expectedFileName)
     if (expectedFileName.contains("sip", Qt::CaseInsensitive)) {
         if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
             return MysteryPart::obsoleteMakeSchematicSvg(labels, true);
-        }       
+        }
 
         return MysteryPart::makeSchematicSvg(labels, true);
     }
@@ -195,7 +195,7 @@ QString Dip::makeSchematicSvg(const QStringList & labels)
     return SchematicRectConstants::genSchematicDIP(empty, empty, lefts, rights, empty, busNames, ic, false, false, SchematicRectConstants::simpleGetConnectorName);
 }
 
-QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels) 
+QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels)
 {
 	int pins = labels.count();
 	int increment = GraphicsUtils::StandardSchematicSeparationMils;  

@@ -2221,11 +2221,11 @@ void PackItemsCommand::redo()
 }
 
 QString PackItemsCommand::getParamString() const {
-	return QString("PackItemsCommand ") 
-		+ BaseCommand::getParamString() + 
+	return QString("PackItemsCommand ")
+		+ BaseCommand::getParamString() +
 		QString(" columns:%1 count:%2")
 		.arg(m_columns)
-		.arg(m_ids.count())	
+		.arg(m_ids.count())
 		;
 }
 

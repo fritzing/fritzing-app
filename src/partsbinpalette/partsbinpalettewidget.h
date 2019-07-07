@@ -85,7 +85,7 @@ class PartsBinPaletteWidget : public QFrame, public Bundler {
         QIcon icon();
 		QIcon monoIcon();
 		bool hasMonoIcon();
-        void saveBundledBin();	
+        void saveBundledBin();
 		QMenu * combinedMenu();
 		QMenu * binContextMenu();
 		QMenu * partContextMenu();

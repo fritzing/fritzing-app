@@ -201,7 +201,7 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		hboxLayout1->setContentsMargins(0, 0, 0, 0);
 		hboxLayout1->setSpacing(2);
 
-		QLabel * l1 = new QLabel(getColumnLabel());	
+		QLabel * l1 = new QLabel(getColumnLabel());
 		l1->setMargin(0);
 		l1->setObjectName("infoViewLabel");	
 		m_xEdit = new QLineEdit();

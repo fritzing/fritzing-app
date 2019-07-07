@@ -984,5 +984,3 @@ QList<ModelPart *> PartsBinPaletteWidget::getAllParts() {
 
     return m_model->root()->getAllParts();
 }
-
-

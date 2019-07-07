@@ -144,7 +144,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
         m_checkForReversedWires = !Version::greaterThan(versionThingRats, versionThingFz);
 
 	}
-    
+
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();
 
     QDomElement title = root.firstChildElement("title");
@@ -220,7 +220,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
     if (checkForObsoleteSMDOrientation) {
 		QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			if (checkObsoleteOrientation(instance)) {
                 emit obsoleteSMDOrientationSignal();
                 break;
@@ -232,13 +232,13 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
     m_useOldSchematics = false;
     if (checkForOldSchematics) {
         QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			if (checkOldSchematics(instance)) {
                 emit oldSchematicsSignal(fileName, m_useOldSchematics);
                 break;
             }
 			instance = instance.nextSiblingElement("instance");
-		}    
+		}
     }
 
 	bool result = loadInstances(domDocument, instances, modelParts, checkViews);
@@ -833,9 +833,9 @@ ModelPart * ModelBase::createOldSchematicPart(ModelPart * modelPart, QString & m
         if (oldModelPart) {
             moduleIDRef = oldModuleIDRef;
             return oldModelPart;
-        }    
+        }
     }
-    
+
     return modelPart;
 }
 

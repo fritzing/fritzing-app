@@ -953,7 +953,7 @@ bool MazeRouter::makeMasters(QString & message) {
     layerSpecs << ViewLayer::NewBottom;
     if (m_bothSidesNow) layerSpecs << ViewLayer::NewTop;
 
-    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {  
+    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {
 	    LayerList viewLayerIDs = m_sketchWidget->routingLayers(viewLayerPlacement);
 	    RenderThing renderThing;
         renderThing.printerScale = GraphicsUtils::SVGDPI;
@@ -1080,7 +1080,7 @@ bool MazeRouter::routeNets(NetList & netList, bool makeJumper, Score & currentSc
             traceAvoids(traces, netIndex, routeThing);
         }
 
-        foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, routeThing.layerSpecs) {  
+        foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, routeThing.layerSpecs) {
             int z = viewLayerPlacement == ViewLayer::NewBottom ? 0 : 1;
 
             QDomDocument * masterDoc = m_masterDocs.value(viewLayerPlacement);
@@ -1253,7 +1253,7 @@ bool MazeRouter::routeNext(bool makeJumper, RouteThing & routeThing, QList< QLis
         traceAvoids(traces, netIndex, routeThing);
     }
 
-    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, routeThing.layerSpecs) {  
+    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, routeThing.layerSpecs) {
         int z = viewLayerPlacement == ViewLayer::NewBottom ? 0 : 1;
         QDomDocument * masterDoc = m_masterDocs.value(viewLayerPlacement);
         prepSourceAndTarget(masterDoc, routeThing, subnets, z, viewLayerPlacement);
@@ -1334,7 +1334,7 @@ bool MazeRouter::moveBack(Score & currentScore, int index, QList<NetOrdering> & 
     return false;
 }
 
-void MazeRouter::prepSourceAndTarget(QDomDocument * masterDoc, RouteThing & routeThing, QList< QList<ConnectorItem *> > & subnets, int z, ViewLayer::ViewLayerPlacement viewLayerPlacement) 
+void MazeRouter::prepSourceAndTarget(QDomDocument * masterDoc, RouteThing & routeThing, QList< QList<ConnectorItem *> > & subnets, int z, ViewLayer::ViewLayerPlacement viewLayerPlacement)
 {
     foreach (QDomElement element, routeThing.netElements[z].notNet) {
         element.setTagName("g");
@@ -2773,7 +2773,7 @@ void MazeRouter::setMaxCycles(int maxCycles)
 
 SymbolPaletteItem * MazeRouter::makeNetLabel(GridPoint & center, SymbolPaletteItem * pairedNetLabel, uchar traceFlags) {
     // flags & JumperLeft means position the netlabel to the left of center, the netlabel points right
-    
+
     if (m_netLabelIndex < 0) {
         m_netLabelIndex = 0;
         foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {

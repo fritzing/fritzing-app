@@ -709,12 +709,12 @@ void Note::handleMouseMoveSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * 
 	}
 	if (newY - oldY1 < minHeight) {
 		newY = oldY1 + minHeight;
-	}	
+	}
 	newR.setRect(0, 0, newX - oldX1, newY - oldY1);
 
 	prepareGeometryChange();
 	m_rect = newR;
-	positionGrip();	
+	positionGrip();
 }
 
 void Note::handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * resizeHandle) {

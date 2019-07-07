@@ -634,7 +634,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 	QRectF bounds = this->boundsOnElement(connectorID);	
 
 	if (bounds.isNull() && !svgIdLayer->m_hybrid) {		// hybrids can have zero size
-		svgIdLayer->setInvisible(viewLayerPlacement);		
+		svgIdLayer->setInvisible(viewLayerPlacement);
 		DebugDialog::debug("renderer::setupconnector: null bounds");
 		return false;
 	}
@@ -697,7 +697,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 							   r1.height() * defaultSize.height() / viewBox.height());
 	*/
 
-    QRectF svgRect(r1.x() * defaultSizeF.width() / viewBox.width(), 
+    QRectF svgRect(r1.x() * defaultSizeF.width() / viewBox.width(),
 							   r1.y() * defaultSizeF.height() / viewBox.height(), 
 							   r1.width() * defaultSizeF.width() / viewBox.width(), 
 							   r1.height() * defaultSizeF.height() / viewBox.height());

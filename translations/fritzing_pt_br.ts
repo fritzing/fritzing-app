@@ -4211,7 +4211,7 @@ Vá em frente e salve?</translation>
         <source>Unable to load image file &apos;%1&apos;: 
 
 %2</source>
-        <translation>Não foi possivel carregar o arquivo de imagem &apos;%1&apos;: 
+        <translation>Não foi possivel carregar o arquivo de imagem &apos;%1&apos;:
 
 %2</translation>
     </message>

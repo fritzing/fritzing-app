@@ -75,7 +75,7 @@
 			<connector name="gnd" />
 			<connector name="ground" />
 		</color>
-		<!--	
+		<!--
 		<color name="yellow" ratsnest="" >
 			<obsolete name="yellow" ratsnest="#ffe24d" />
 			<obsolete name="yellow" ratsnest="#a09c00" />
@@ -84,7 +84,7 @@
 		</color>
 		<color name="white" ratsnest="">
 		</color>
-		<color name="orange" ratsnest=""> 
+		<color name="orange" ratsnest="">
 			<obsolete name="orange" ratsnest="#ff7033" />
 		</color>
 		-->

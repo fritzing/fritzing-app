@@ -27,13 +27,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 struct PointRect {
-    QRectF rect;		
-	QPointF point;	
+    QRectF rect;
+	QPointF point;
 	bool processed;
 	bool svgVisible;
 };
 
-class SvgIdLayer 
+class SvgIdLayer
 {
 public:
 	SvgIdLayer(ViewLayer::ViewID);

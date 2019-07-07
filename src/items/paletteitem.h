@@ -78,7 +78,7 @@ public:
 	void removeLayerKin();
 	void addLayerKin(class LayerKinPaletteItem * lkpi);
 	const QList<class ItemBase *> & layerKin();
- 	virtual void loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement);
+	virtual void loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement);
 	void rotateItem(double degrees, bool includeRatsnest);
 	void flipItem(Qt::Orientations orientation);
 	void moveItem(ViewGeometry & viewGeometry);

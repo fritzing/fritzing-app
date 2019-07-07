@@ -153,11 +153,11 @@ unix {
     INSTALLS += target
 
     desktop.path = $$DATADIR/applications
-    desktop.files += org.fritzing.Fritzing.desktop
+    desktop.files += tools/linux/org.fritzing.Fritzing.desktop
     INSTALLS += desktop
 
     appdata.path = $$DATADIR/metainfo
-    appdata.files += org.fritzing.Fritzing.appdata.xml
+    appdata.files += tools/linux/org.fritzing.Fritzing.appdata.xml
     INSTALLS += appdata
 
     mimedb.path = $$DATADIR/mime/packages

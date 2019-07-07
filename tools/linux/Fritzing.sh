@@ -1,4 +1,8 @@
 #!/bin/sh
+
+# This tiny wrapper script is used to actually
+# execute Fritzing
+
 appname="Fritzing"
 # dirname=`dirname "${0}"`
 

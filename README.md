@@ -14,15 +14,15 @@ Please provide steps, what operating system you are on, including the version. A
 
 * If you would like to help with the development, please take a look at the [developer instructions](https://github.com/fritzing/fritzing-app/wiki). This includes information about how to compile and run the Fritzing app in a few steps.
 
-## Folder Structure
-
-* **bins** - Part bins (.fzb, aka part libraries) are collections of parts, most importantly the "core" parts bin, and vendor-specific collections.
+## Project Structure
 
 * **help** - End-user documentation included with the app. This should really be moved back to the website.
 
 * **parts** - All the part definitions, including meta data (.fzp) and graphics (.svg), as well as some utility tools. They are kept in a separate repository at [https://github.com/fritzing/fritzing-parts](http://github.com/fritzing/fritzing-parts) and only linked from here.
 
 * **pri** - Submodule definitions for Qt
+
+* **config.tests** - Files needed by Qt to determine if the boost is installed. See README there.
 
 * **resources** - Binaries and definitions that are supposed to not be touched by users, such as fonts, images, special parts, etc.
 
@@ -37,6 +37,8 @@ Please provide steps, what operating system you are on, including the version. A
 ## Credits
 
 The Fritzing app is maintained by the Friends-of-Fritzing e.V., a non-profit foundation based in Berlin, Germany. The project has grown out of a state-funded research project at the [Interaction Design Lab](http://idl.fh-potsdam.de) at [Potsdam University of Applied Sciences](http://fh-potsdam.de).
+
+Currently [Open Collective page](https://opencollective.com/fritzing) is available for those willing to support development of the project.
 
 The core team consists of Prof. Reto Wettach, André Knörig, Jonathan Cohen, and Stefan Hermann. Many [fantastic people](http://fritzing.org/about/people/) have contributed to it over the years.
 

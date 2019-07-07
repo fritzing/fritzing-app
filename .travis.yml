@@ -88,6 +88,7 @@ jobs:
         homebrew:
           packages:
           - qt5
+          - md5sha1sum
           update: true
 
       before_install:

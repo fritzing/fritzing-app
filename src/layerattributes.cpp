@@ -46,4 +46,3 @@ void LayerAttributes::clearLoaded() {
 void LayerAttributes::setLoaded(const QByteArray & loaded) {
 	m_loaded = loaded;
 }
-

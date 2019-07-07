@@ -32,10 +32,10 @@ This script generates the image svg files and a Fritzing part (.fzp) file for IC
 
 Run it in the commandline with this:
 	python generator.py [-f] [-n numberOfPins] [--narrow|--medium|--wide|--extrawide] TITLE ["text on chip"]
-	
+
 To get the full help about these options and arguments use
 	python generator.py --help
-	
+
 
 """
 
@@ -54,9 +54,9 @@ SVG_ICON_TEMPLATE_FILE = 'dilpackage_icon_svg.tmpl'
 SVG_SCHEMATIC_TEMPLATE_FILE = 'dilpackage_schematic_svg.tmpl'
 PARTFILE_TEMPLATE_FILE = 'dilpackage_fzp.tmpl'
 FOOTPRINTS_DIRECTORY = "pcb"
-availablePackages = {'narrow': [4, 6, 8, 14, 16, 18, 20, 22, 24, 28], 
-					'medium': [8, 14, 16, 18, 20, 22, 24, 28], 
-					'wide': [28, 32, 36, 40, 42, 44, 48], 
+availablePackages = {'narrow': [4, 6, 8, 14, 16, 18, 20, 22, 24, 28],
+					'medium': [8, 14, 16, 18, 20, 22, 24, 28],
+					'wide': [28, 32, 36, 40, 42, 44, 48],
 					'extra': [64]
 					}
 letterAppendixForType = {'narrow': 'N', 'medium': 'M', 'wide': 'W', 'extra': 'X'}
@@ -86,7 +86,7 @@ Arguments:
 	Default number of pins is 6.
 
 --narrow, --medium, --wide, --extrawide
- 	argument indicating is whether to create a wide or narrow package.
+	argument indicating is whether to create a wide or narrow package.
 	Has to be '--narrow', '--medium', '--wide' or '--extrawide'.
 	Narrow means bridging 3 pins.     (300 mil)
 	Medium means bridging 4 pins.     (400 mil)
@@ -98,7 +98,7 @@ TITLE
 	the title of the IC Package (e.g. 555Timer)
 	A folder named TITLE will be created and all images and xml will be created therein.
 	This argument must be given.
-	
+
 "text on chip"
 	the text which is printed on the chip
 	If more than one word is used, it needs to be in quotes. (")
@@ -194,7 +194,7 @@ def main(argv=None):
 				numberOfPins = value
 			if option in ("--narrow", "--medium", "--wide", "--extrawide"):
 				wideOrNarrow = option[2:]
-				
+
 		# argument processing
 		if args:
 			packageName = args.pop(0)
@@ -207,7 +207,7 @@ def main(argv=None):
 		if args:
 			# More arguments than we are able to handle
 			print >> sys.stderr, "\nWarning: Superfluous arguments are discarded: %s" % (args)
-		
+
 		# Check validity of number of pins
 		pinsPattern = re.compile(r'\d+')
 		if numberOfPins and pinsPattern.match(numberOfPins):
@@ -220,13 +220,13 @@ def main(argv=None):
 		# Get the config
 		config = ConfigParser.ConfigParser()
 		config.readfp(open(getConfigFile('defaults.cfg')))
-		
+
 		print "packageName : %s" % packageName
 		print "numberOfPins: %s" % numberOfPins
 		print "forceFlag   : %s" % forceFlag
 		print "textOnChip  : %s" % textOnChip
 		print "wideMediumOrNarrow: %s" % wideOrNarrow
-	
+
 		# Test if the number of pins is an existing DIL Package
 		if not (numberOfPins in availablePackages[wideOrNarrow]):
 			print >> sys.stderr, """\nWarning: Number of pins is wrong for DIL Package:\n\tDIL packages with %d pins do not exits in the %s package.\n\tThe script will continue, but you might not be able to create a correct PCB\n\twith the resulting part.""" % (numberOfPins, wideOrNarrow)
@@ -234,7 +234,7 @@ def main(argv=None):
 		if (ARGUMENT_DEBUG):
 			# Exit For debugging:
 			sys.exit()
-	
+
 		# Check if the directory did not already exist
 		try:
 			os.mkdir(packageName)
@@ -243,7 +243,7 @@ def main(argv=None):
 				print >> sys.stderr, "\nError: The directory %s already exists. Script aborted. Use -f to override\n\t for help use --help" % (packageName)
 				return 2
 		output = packageName
-		
+
 		# Setup default values
 		metaData = {}
 		metaData['moduleID'] = makeUUID()
@@ -271,8 +271,8 @@ def main(argv=None):
 		else:
 			# extra wide
 			sL['height'] = 93
-		sL['heightInch'] = "%.2fin" % (sL['height'] / 100.0) # the template svg is 100 ppi 
-		
+		sL['heightInch'] = "%.2fin" % (sL['height'] / 100.0) # the template svg is 100 ppi
+
 		# For schematic
 		sL['schematicWidth'] = 110
 		# Prepare the pins for the breadboard and schematic
@@ -287,7 +287,7 @@ def main(argv=None):
 			aPin['connectorPadName'] = "connector%dpad" % (num)
 			aPin['connectorTerminalName'] = "connector%dterminal" % (num)
 			if num < (numberOfPins / 2):
-				# Bottom row (breadboard) 
+				# Bottom row (breadboard)
 				aPin['startX'] = (num * 10) + 3.5
 				aPin['startPinY'] = sL['height'] - 4.34 # 28.66
 				aPin['startTermY'] = sL['height'] - 3 # 30
@@ -304,7 +304,7 @@ def main(argv=None):
 				aPin['schematicTextAnchor'] = "end"
 			else:
 				# Top row (breadboard)
-				aPin['startX'] = ((numberOfPins - num) * 10) - 6.5 # 3.5 
+				aPin['startX'] = ((numberOfPins - num) * 10) - 6.5 # 3.5
 				aPin['startPinY'] = 0
 				aPin['startTermY'] = 0
 				aPin['startLegY'] = 0
@@ -318,20 +318,20 @@ def main(argv=None):
 				aPin['schematicLegX2'] = sL['schematicWidth'] + 63.15
 				aPin['schematicTextX'] = sL['schematicWidth'] + 36
 				aPin['schematicTextAnchor'] = "start"
-			pinList.append(aPin) 
+			pinList.append(aPin)
 		sL['pinList'] = pinList
 
 		# Breadboard & Icon Measurements
 		sL['width'] = 10 * (numberOfPins / 2)
-		sL['widthInch'] = "%.2fin" % (sL['width'] / 100.0) # the template svg is 100 ppi 
+		sL['widthInch'] = "%.2fin" % (sL['width'] / 100.0) # the template svg is 100 ppi
 		sL['nMiddlePins'] = (numberOfPins / 2) - 2
 		# Schematic Measurements
 		sL['schematicWidthViewBox'] = sL['schematicWidth'] + 64.3 # 84.3px
 		sL['schematicWidthPx'] = "%.1fpx" % (sL['schematicWidthViewBox'])
 		sL['schematicHeightViewBox'] = (26 * (numberOfPins / 2)) + 6.3 # 174.3px
-		sL['schematicHeightPx'] = "%.1fpx" % (sL['schematicHeightViewBox']) 
+		sL['schematicHeightPx'] = "%.1fpx" % (sL['schematicHeightViewBox'])
 		sL['schematicHeight'] = (26 * (numberOfPins / 2)) + 4 # 82
-		sL['schematicMiddleX'] = (sL['schematicWidth'] / 2) + 32.15 # 87.15 
+		sL['schematicMiddleX'] = (sL['schematicWidth'] / 2) + 32.15 # 87.15
 		sL['schematicMiddleY'] = (sL['schematicHeight'] / 2) + 7 # 48
 		# General
 		sL['textOnChip'] = textOnChip
@@ -364,7 +364,7 @@ def main(argv=None):
 			t = Template(file=getTemplatefile(PARTFILE_TEMPLATE_FILE), searchList = [sL])
 			# TODO make this fzp
 			writeOutFileInSubDirectoryWithData(output, "", "%s.fzp" % (shortFileName), t)
-	
+
 		print "Ready"
 		print """----------------------------------------------------------------
 

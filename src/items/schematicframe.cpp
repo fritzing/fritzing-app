@@ -112,7 +112,7 @@ void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, 
 	QString original = file2.readAll();
 	file2.close();
     templateThing.size = QSizeF(TextUtils::getViewBoxCoord(original, 2), TextUtils::getViewBoxCoord(original, 3));
-    
+
     QFile file(tPath);
 	file.open(QFile::ReadOnly);
 	templateThing.svgTemplate = file.readAll();
@@ -134,7 +134,7 @@ void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, 
             if (SchematicTemplate.indexOf("version", ix - 7) < 0) {
                 SchematicTemplate.replace(ix + NumberFinder.cap(1).count(), NumberFinder.cap(2).count(), d3);
                 offset += d3.count() - NumberFinder.cap(2).count();
-            } 
+            }
 
             pos = ix + offset;
         }
@@ -168,7 +168,7 @@ void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, 
     }
 }
 
-QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH) 
+QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH)
 {
 	Q_UNUSED(mmW);
 	Q_UNUSED(mmH);
@@ -191,7 +191,7 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 		font.setWeight(QFont::Normal);
 		font.setPointSizeF(72.0 * templateThing.fontSize / GraphicsUtils::StandardFritzingDPI);
 		m_textEdit->setFont(font);
-		m_textEdit->setLineWrapColumnOrWidth(GraphicsUtils::SVGDPI * (templateThing.size.width() - templateThing.margin) / GraphicsUtils::StandardFritzingDPI);  
+		m_textEdit->setLineWrapColumnOrWidth(GraphicsUtils::SVGDPI * (templateThing.size.width() - templateThing.margin) / GraphicsUtils::StandardFritzingDPI);
 	}
 
 	if (milsW < templateThing.size.width()) milsW = templateThing.size.width();
@@ -233,7 +233,7 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 	return TextUtils::convertExtendedChars(TextUtils::replaceTextElements(svg, hash));
 }
 
-QString SchematicFrame::makeNextLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH) 
+QString SchematicFrame::makeNextLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH)
 {
 	Q_UNUSED(mmW);
 	Q_UNUSED(mmH);
@@ -279,7 +279,7 @@ QString SchematicFrame::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QS
 	return ResizableBoard::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 }
 
-bool SchematicFrame::makeLineEdit(QWidget * parent, const QString & family, const QString & propp, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget) 
+bool SchematicFrame::makeLineEdit(QWidget * parent, const QString & family, const QString & propp, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget)
 {
 	Q_UNUSED(value);
 	Q_UNUSED(family);
@@ -301,7 +301,7 @@ bool SchematicFrame::makeLineEdit(QWidget * parent, const QString & family, cons
 	return true;
 }
 
-bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, const QString & propp, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
+bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, const QString & propp, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (propp.compare("shape", Qt::CaseInsensitive) == 0) {
 		returnWidget = setUpDimEntry(false, false, true, returnWidget);
@@ -384,8 +384,8 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 	return PaletteItem::collectExtraInfo(parent, family, propp, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 }
 
-void SchematicFrame::setProp(const QString & prop, const QString & value) 
-{	
+void SchematicFrame::setProp(const QString & prop, const QString & value)
+{
 	ResizableBoard::setProp(prop, value);
 
 	if (FrameProps.keys().contains(prop)) {
@@ -430,8 +430,8 @@ void SchematicFrame::setInitialSize() {
         QSizeF size = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size : SchematicTemplate.size;
 
 		// set the size so the infoGraphicsView will display the size as you drag
-		modelPart()->setLocalProp("width", 25.4 * size.width() / GraphicsUtils::StandardFritzingDPI); 
-		modelPart()->setLocalProp("height", 25.4 * size.height() / GraphicsUtils::StandardFritzingDPI); 
+		modelPart()->setLocalProp("width", 25.4 * size.width() / GraphicsUtils::StandardFritzingDPI);
+		modelPart()->setLocalProp("height", 25.4 * size.height() / GraphicsUtils::StandardFritzingDPI);
 	}
 }
 
@@ -481,7 +481,7 @@ void SchematicFrame::sheetEntry(int value) {
 	}
 }
 
-ViewLayer::ViewID SchematicFrame::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID SchematicFrame::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
     if (vid == ViewLayer::SchematicView) {
         return ViewLayer::IconView;

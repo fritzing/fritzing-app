@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 Kicad2Svg::Kicad2Svg() {
 }
 
-QString Kicad2Svg::makeMetadata(const QString & filename, const QString & type, const QString & name) 
+QString Kicad2Svg::makeMetadata(const QString & filename, const QString & type, const QString & name)
 {
 	QFileInfo fileInfo(filename);
 
@@ -64,6 +64,3 @@ QString Kicad2Svg::endMetadata() {
 	metadata += "</metadata>";
 	return metadata;
 }
-
-
-

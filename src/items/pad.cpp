@@ -65,12 +65,12 @@ Pad::~Pad() {
 
 }
 
-QString Pad::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH) 
+QString Pad::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH)
 {
 	Q_UNUSED(milsW);
 	Q_UNUSED(milsH);
 
- 	switch (viewLayerID) {
+	switch (viewLayerID) {
 		case ViewLayer::Copper0:
 		case ViewLayer::Copper1:
 			break;
@@ -152,7 +152,7 @@ QString Pad::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double
 	return svg;
 }
 
-QString Pad::makeNextLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH) 
+QString Pad::makeNextLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH)
 {
 	Q_UNUSED(mmW);
 	Q_UNUSED(mmH);
@@ -199,7 +199,7 @@ QStringList Pad::collectValues(const QString & family, const QString & prop, QSt
     return values;
 }
 
-bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
+bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (prop.compare("shape", Qt::CaseInsensitive) == 0) {
 		returnWidget = setUpDimEntry(false, false, false, returnWidget);
@@ -247,8 +247,8 @@ bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QStri
     return result;
 }
 
-void Pad::setProp(const QString & prop, const QString & value) 
-{	
+void Pad::setProp(const QString & prop, const QString & value)
+{
 	if (prop.compare("connect to", Qt::CaseInsensitive) == 0) {
 		modelPart()->setLocalProp("connect", value);
 		resizeMMAux(m_modelPart->localProp("width").toDouble(), m_modelPart->localProp("height").toDouble());
@@ -302,9 +302,9 @@ void Pad::setInitialSize() {
 	double w = m_modelPart->localProp("width").toDouble();
 	if (w == 0) {
 		// set the size so the infoGraphicsView will display the size as you drag
-		modelPart()->setLocalProp("width", GraphicsUtils::pixels2mm(OriginalWidth, GraphicsUtils::SVGDPI)); 
-		modelPart()->setLocalProp("height", GraphicsUtils::pixels2mm(OriginalHeight, GraphicsUtils::SVGDPI)); 
-		modelPart()->setLocalProp("connect", "center"); 
+		modelPart()->setLocalProp("width", GraphicsUtils::pixels2mm(OriginalWidth, GraphicsUtils::SVGDPI));
+		modelPart()->setLocalProp("height", GraphicsUtils::pixels2mm(OriginalHeight, GraphicsUtils::SVGDPI));
+		modelPart()->setLocalProp("connect", "center");
 	}
 }
 
@@ -383,7 +383,7 @@ QPainterPath CopperBlocker::hoverShape() const
 
     QRectF r = boundingRect();
 
-	QPainterPath path; 
+	QPainterPath path;
     double half = TheOffset / 2;
     path.moveTo(half, half);
     path.lineTo(r.width() - half, half);

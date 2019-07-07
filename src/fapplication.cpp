@@ -235,7 +235,7 @@ FServerThread::FServerThread(qintptr socketDescriptor, QObject *parent) : QThrea
 			QString response = QString("HTTP/1.0 %1 %2\r\n").arg(200).arg("ok");
 			response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(mimeType);
 			response += QString("Content-Length: %1\r\n").arg(file.size());
-			response += QString("\r\n");    
+			response += QString("\r\n");
 			socket->write(response.toUtf8());
 			int buffersize = 8192;
 			long remaining = file.size();
@@ -266,7 +266,7 @@ FServerThread::FServerThread(qintptr socketDescriptor, QObject *parent) : QThrea
 	}
 }
 
-void FServerThread::writeResponse(QTcpSocket * socket, int code, const QString & codeString, const QString & mimeType, const QString & message) 
+void FServerThread::writeResponse(QTcpSocket * socket, int code, const QString & codeString, const QString & mimeType, const QString & message)
 {
     QString type = mimeType;
     if (type.isEmpty()) type = "text/plain";
@@ -274,7 +274,7 @@ void FServerThread::writeResponse(QTcpSocket * socket, int code, const QString &
     response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type);
     response += QString("Content-Length: %1\r\n").arg(message.count());
     response += QString("\r\n%1").arg(message);
-       
+
     socket->write(response.toUtf8());
     socket->disconnectFromHost();
     socket->waitForDisconnected();
@@ -361,9 +361,9 @@ int FApplication::init() {
 
 	QList<int> toRemove;
 	for (int i = 0; i < m_arguments.length(); i++) {
-		if ((m_arguments[i].compare("-h", Qt::CaseInsensitive) == 0) || 
-			(m_arguments[i].compare("-help", Qt::CaseInsensitive) == 0) || 
-			(m_arguments[i].compare("--help", Qt::CaseInsensitive) == 0)) 
+		if ((m_arguments[i].compare("-h", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("-help", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("--help", Qt::CaseInsensitive) == 0))
 		{
 			return FInitResultHelp;
 		}
@@ -568,7 +568,7 @@ int FApplication::init() {
 
 	// tell app where to search for plugins (jpeg export and sql lite)
 	m_libPath = FolderUtils::getLibraryPath();
-	QApplication::addLibraryPath(m_libPath);	
+	QApplication::addLibraryPath(m_libPath);
 
 	/*QFile file("libpath.txt");
 	if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -614,7 +614,7 @@ int FApplication::init() {
 FApplication::~FApplication(void)
 {
 	cleanupBackups();
-		
+
 	clearModels();
 
     if (m_updateDialog) {
@@ -761,9 +761,9 @@ void FApplication::registerFonts() {
 	registerFont(":/resources/fonts/DroidSansMono.ttf", false);
 	registerFont(":/resources/fonts/OCRA.ttf", true);
 
-    // "Droid Sans" 
-    // "Droid Sans Mono" 
-		
+    // "Droid Sans"
+    // "Droid Sans Mono"
+
     /*
 		QFontDatabase database;
 		QStringList families = database.families (  );
@@ -846,15 +846,15 @@ int FApplication::serviceStartup() {
 		case GedaService:
 			runGedaService();
 			return 0;
-	
+
 		case DRCService:
 			runDRCService();
 			return 0;
-	
+
 		case DatabaseService:
 			runDatabaseService();
 			return 0;
-	
+
 		case KicadFootprintService:
 			runKicadFootprintService();
 			return 0;
@@ -906,7 +906,7 @@ void FApplication::runGerberServiceAux()
 		QString filepath = dir.absoluteFilePath(filename);
 		MainWindow * mainWindow = openWindowForService(false, 3);
 		m_started = true;
-        
+
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
 		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
             QFileInfo info(filepath);
@@ -918,7 +918,7 @@ void FApplication::runGerberServiceAux()
 	}
 }
 
-void FApplication::initService() 
+void FApplication::initService()
 {
     createUserDataStoreFolderStructures();
 	registerFonts();
@@ -942,7 +942,7 @@ void FApplication::runSvgServiceAux()
 		QString filepath = dir.absoluteFilePath(filename);
         MainWindow * mainWindow = openWindowForService(false, -1);
 		m_started = true;
-        
+
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
 		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
             QFileInfo info(filepath);
@@ -1025,14 +1025,14 @@ void FApplication::runDRCService() {
             int moved = mainWindow->pcbView()->checkLoadedTraces();
             if (moved > 0) {
                 QMessageBox::warning(NULL, QObject::tr("Fritzing"), QObject::tr("%1 wires moved from their saved position in %2.").arg(moved).arg(filepath));
-                DebugDialog::debug(QString("\ncheckloadedtraces %1\n").arg(filepath)); 
+                DebugDialog::debug(QString("\ncheckloadedtraces %1\n").arg(filepath));
             }
-	
+
 
             Panelizer::checkDonuts(mainWindow, true);
             Panelizer::checkText(mainWindow, true);
 
-            QList<ItemBase *> boards = mainWindow->pcbView()->findBoard();	
+            QList<ItemBase *> boards = mainWindow->pcbView()->findBoard();
 	        foreach (ItemBase * boardItem, boards) {
                 mainWindow->pcbView()->selectAllItems(false, false);
                 boardItem->setSelected(true);
@@ -1112,7 +1112,7 @@ void FApplication::runKicadSchematicService() {
 
 				QString newFilePath = dir.absoluteFilePath(defName + "_" + filename);
 				newFilePath.replace(".lib", ".svg");
-                
+
 				QFile file(newFilePath);
 				if (!TextUtils::writeUtf8(newFilePath, svg)) {
 					DebugDialog::debug("unable to open file " + newFilePath);
@@ -1281,7 +1281,7 @@ void FApplication::preferences() {
     QTimer::singleShot(30, this, SLOT(preferencesAfter()));
 }
 
-void FApplication::preferencesAfter() 
+void FApplication::preferencesAfter()
 {
 	QDir dir(m_translationPath);
 	QStringList nameFilters;
@@ -1304,7 +1304,7 @@ void FApplication::preferencesAfter()
 	PrefsDialog prefsDialog(language, NULL);			// TODO: use the topmost MainWindow as parent
 	int ix = 0;
 	foreach (SketchWidget * sketchWidget, mainWindow->sketchWidgets()) {
-		prefsDialog.initViewInfo(ix++,  sketchWidget->viewName(), sketchWidget->getShortName(), 
+		prefsDialog.initViewInfo(ix++,  sketchWidget->viewName(), sketchWidget->getShortName(),
 									sketchWidget->curvyWires());
 	}
 
@@ -1483,7 +1483,7 @@ void FApplication::changeActivation(bool activate, QWidget * originator) {
 void FApplication::updateActivation() {
 	//DebugDialog::debug("updating activation");
 
-	FritzingWindow * prior = m_lastTopmostWindow; 
+	FritzingWindow * prior = m_lastTopmostWindow;
 	m_lastTopmostWindow = NULL;
 	if (m_orderedTopLevelWidgets.count() > 0) {
 		m_lastTopmostWindow = qobject_cast<FritzingWindow *>(m_orderedTopLevelWidgets.at(0));
@@ -1497,7 +1497,7 @@ void FApplication::updateActivation() {
 	//DebugDialog::debug(QString("last:%1, new:%2").arg((long) prior, 0, 16).arg((long) m_lastTopmostWindow.data(), 0, 16));
 
 	MainWindow * priorMainWindow = qobject_cast<MainWindow *>(prior);
-	if (priorMainWindow != NULL) {			
+	if (priorMainWindow != NULL) {
 		priorMainWindow->saveDocks();
 	}
 
@@ -1520,17 +1520,17 @@ void FApplication::topLevelWidgetDestroyed(QObject * object) {
 
 void FApplication::closeAllWindows2() {
 /*
-Ok, near as I can tell, here's what's going on.  When you quit fritzing, the function 
-QApplication::closeAllWindows() is invoked.  This goes through the top-level window 
-list in random order and calls close() on each window, until some window says "no".  
-The QGraphicsProxyWidgets must contain top-level windows, and at least on the mac, their response to close() 
-seems to be setVisible(false).  The random order explains why different icons 
-disappear, or sometimes none at all.  
+Ok, near as I can tell, here's what's going on.  When you quit fritzing, the function
+QApplication::closeAllWindows() is invoked.  This goes through the top-level window
+list in random order and calls close() on each window, until some window says "no".
+The QGraphicsProxyWidgets must contain top-level windows, and at least on the mac, their response to close()
+seems to be setVisible(false).  The random order explains why different icons
+disappear, or sometimes none at all.
 
 So the hack for now is to call the windows in non-random order.
 
-Eventually, maybe the SvgIconWidget class could be rewritten so that it's not using QGraphicsProxyWidget, 
-which is really not intended for hundreds of widgets. 
+Eventually, maybe the SvgIconWidget class could be rewritten so that it's not using QGraphicsProxyWidget,
+which is really not intended for hundreds of widgets.
 
 (SvgIconWidget has been rewritten)
 */
@@ -1717,7 +1717,7 @@ QList<MainWindow *> FApplication::loadLastOpenSketch() {
 }
 
 QList<MainWindow *> FApplication::recoverBackups()
-{	
+{
 	QFileInfoList backupList;
 	LockManager::checkLockedFiles("backup", backupList, m_lockedFiles, false, LockManager::FastTime);
 	for (int i = backupList.size() - 1; i >=0; i--) {
@@ -1739,13 +1739,13 @@ QList<MainWindow *> FApplication::recoverBackups()
         if (result == QDialog::Accepted && item->isSelected()) {
 			QString originalBaseName = item->text(0);
             DebugDialog::debug(QString("Loading recovered sketch %1").arg(originalBaseName));
-			
+
 			QString originalPath = item->data(1, Qt::UserRole).value<QString>();
 			QString fileExt;
 			QString bundledFileName = FolderUtils::getSaveFileName(NULL, tr("Please specify an .fzz file name to save to (cancel will delete the backup)"), originalPath, tr("Fritzing (*%1)").arg(FritzingBundleExtension), &fileExt);
 			if (!bundledFileName.isEmpty()) {
 				MainWindow *currentRecoveredSketch = MainWindow::newMainWindow(m_referenceModel, originalBaseName, true, true, -1);
-    			currentRecoveredSketch->mainLoad(backupName, bundledFileName, true);
+			currentRecoveredSketch->mainLoad(backupName, bundledFileName, true);
 				currentRecoveredSketch->saveAsShareable(bundledFileName, true);
 				currentRecoveredSketch->setCurrentFile(bundledFileName, true, true);
 				recoveredSketches << currentRecoveredSketch;
@@ -1802,13 +1802,13 @@ void FApplication::gotOrderFab(QNetworkReply * networkReply) {
 }
 
 void FApplication::runPanelizerService()
-{	
+{
 	m_started = true;
 	Panelizer::panelize(this, m_panelFilename, m_panelizerCustom);
 }
 
 void FApplication::runInscriptionService()
-{	
+{
 	m_started = true;
     bool drc = false;
     bool noMessages = false;
@@ -1833,7 +1833,7 @@ QList<MainWindow *> FApplication::orderedTopLevelMainWindows() {
 }
 
 void FApplication::runExampleService()
-{	
+{
 	m_started = true;
 
 	initService();
@@ -1896,7 +1896,7 @@ void FApplication::initServer() {
 void FApplication::newConnection(qintptr socketDescription) {
      FServerThread *thread = new FServerThread(socketDescription, this);
      connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
-     connect(thread, SIGNAL(doCommand(const QString &, const QString &, QString &, int &)), 
+     connect(thread, SIGNAL(doCommand(const QString &, const QString &, QString &, int &)),
 			this, SLOT(doCommand(const QString &, const QString &, QString &, int &)), Qt::BlockingQueuedConnection);
      thread->start();
 }

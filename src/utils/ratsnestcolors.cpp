@@ -87,7 +87,7 @@ bool RatsnestColor::matchColor(const QString & string) {
 
 //////////////////////////////////////////////////////
 
-RatsnestColors::RatsnestColors(const QDomElement & view) 
+RatsnestColors::RatsnestColors(const QDomElement & view)
 {
 	m_viewID = ViewLayer::idFromXmlName(view.attribute("name"));
 	m_backgroundColor.setNamedColor(view.attribute("background"));
@@ -184,7 +184,7 @@ const QColor & RatsnestColors::getNextColor() {
 	}
 }
 
-	
+
 bool RatsnestColors::findConnectorColor(const QStringList & names, QColor & color) {
 	foreach (QString name, names) {
 		RatsnestColor * ratsnestColor = m_allNames.value(name.toLower(), NULL);
@@ -217,7 +217,7 @@ void RatsnestColors::reset(ViewLayer::ViewID m_viewID) {
 	ratsnestColors->m_index = 0;
 }
 
-QColor RatsnestColors::backgroundColor(ViewLayer::ViewID viewID) 
+QColor RatsnestColors::backgroundColor(ViewLayer::ViewID viewID)
 {
 	RatsnestColors * ratsnestColors = m_viewList.value(viewID, NULL);
 	if (ratsnestColors == NULL) return QColor();
@@ -258,4 +258,3 @@ QString RatsnestColors::wireColor(ViewLayer::ViewID viewID, QString & string)
 
 	return ___emptyString___;
 }
-

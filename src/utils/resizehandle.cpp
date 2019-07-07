@@ -63,7 +63,7 @@ QPointF ResizeHandle::resizeOffset()
 QVariant ResizeHandle::itemChange(GraphicsItemChange change, const QVariant &value)
 {
 	switch (change) {
-		case QGraphicsItem::ItemSceneHasChanged: 
+		case QGraphicsItem::ItemSceneHasChanged:
 			if (scaling()) {
 				ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
 				if (sw) {
@@ -74,7 +74,7 @@ QVariant ResizeHandle::itemChange(GraphicsItemChange change, const QVariant &val
 			break;
 		default:
 			break;
-   	}
+	}
 
     return QGraphicsPixmapItem::itemChange(change, value);
 }
@@ -106,4 +106,3 @@ void ResizeHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
 bool ResizeHandle::scaling() {
     return (this->flags() & QGraphicsItem::ItemIgnoresTransformations) && (scene() != NULL);
 }
-

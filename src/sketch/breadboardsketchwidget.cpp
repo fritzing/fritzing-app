@@ -111,7 +111,7 @@ BaseCommand::CrossViewType BreadboardSketchWidget::wireSplitCrossView()
 	return BaseCommand::CrossView;
 }
 
-bool BreadboardSketchWidget::canDropModelPart(ModelPart * modelPart) {	
+bool BreadboardSketchWidget::canDropModelPart(ModelPart * modelPart) {
 	if (!SketchWidget::canDropModelPart(modelPart)) return false;
 
     if (Board::isBoard(modelPart)) {
@@ -182,9 +182,9 @@ void BreadboardSketchWidget::setNewPartVisible(ItemBase * itemBase) {
 			itemBase->setEverVisible(false);
 			return;
 		default:
-			if (itemBase->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName) || 
+			if (itemBase->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName) ||
 				itemBase->moduleID().endsWith(ModuleIDNames::PadModuleIDName) ||
-                itemBase->moduleID().endsWith(ModuleIDNames::PowerModuleIDName)) 
+                itemBase->moduleID().endsWith(ModuleIDNames::PowerModuleIDName))
 			{
 				itemBase->setVisible(false);
 				itemBase->setEverVisible(false);
@@ -269,4 +269,3 @@ void BreadboardSketchWidget::colorWiresByLength(bool colorByLength) {
 bool BreadboardSketchWidget::coloringWiresByLength() {
     return m_colorWiresByLength;
 }
-

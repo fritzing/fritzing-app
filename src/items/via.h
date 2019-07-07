@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "hole.h"
 
-class Via : public Hole 
+class Via : public Hole
 {
 	Q_OBJECT
 

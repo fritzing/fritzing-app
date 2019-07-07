@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPointer>
 
 class BusShared {
-	
+
 public:
 	BusShared(const QDomElement & busElement, const QHash<QString, QPointer<class ConnectorShared> > & connectorHash);
 	BusShared(const QString & id);

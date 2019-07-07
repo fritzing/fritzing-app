@@ -59,7 +59,7 @@ public:
 	ConnectorItem * connectorItem(ViewLayer::ViewID);
 	bool connectionIsAllowed(Connector* that);
 	const QString & connectorSharedID() const;
-	const QString & connectorSharedName() const;	
+	const QString & connectorSharedName() const;
 	const QString & connectorSharedDescription() const;
 	const QString & connectorSharedReplacedby() const;
 	class ErcData * connectorSharedErcData();

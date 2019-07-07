@@ -152,68 +152,68 @@ bool SVGPathParser::parse(SVGPathLexer *lexer)
     //qDebug() << " got comma_wsp 3 ";
 } break;  case 68: {
     //qDebug() << " got wspplus ";
-} break;  
+} break;
 case 69: {
     //qDebug() << " got coordinate ";
     m_symStack.append(lexer->currentNumber());
-} break; 
- 
+} break;
+
 case 70: {
     //qDebug() << " got nonnegative_number ";
     //not presently checking this is non-negative
     m_symStack.append(lexer->currentNumber());
-} break; 
- 
+} break;
+
 case 71: {
     //qDebug() << " got number ";
     m_symStack.append(lexer->currentNumber());
-} break; 
- 
+} break;
+
 case 72: {
     //qDebug() << " got flag ";
     //not presently checking this is only 0 or 1
     m_symStack.append(lexer->currentNumber());
-} break; 
- 
+} break;
+
 case 73: {
     //qDebug() << "							got moveto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 74: {
     //qDebug() << "							got lineto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 75: {
     //qDebug() << "							got horizontal_lineto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 76: {
     //qDebug() << "							got vertical_lineto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 77: {
     //qDebug() << "							got curveto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 78: {
     //qDebug() << "							got smooth curveto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 79: {
     //qDebug() << "							got quadratic_bezier_curveto_command command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
- 
+} break;
+
 case 80: {
     //qDebug() << "							got smooth_quadratic_bezier_curveto_command command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
  case 81: {
     //qDebug() << "							got elliptical_arc_command ";
     m_symStack.append(lexer->currentCommand());
@@ -222,7 +222,7 @@ case 80: {
     m_symStack.append(lexer->currentCommand());
 } break;  case 83: {
     //qDebug() << "							got fakeclosepath ";
-} break; 
+} break;
           } // switch
 
           m_stateStack[m_tos] = nt_action(act, lhs[r] - TERMINAL_COUNT);

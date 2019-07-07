@@ -29,10 +29,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "viewlayer.h"
 
 class LayerAttributes {
-	
+
 public:
 	LayerAttributes();
-	
+
 	const QString & filename();
 	void setFilename(const QString &);
 	const QByteArray & loaded() const;

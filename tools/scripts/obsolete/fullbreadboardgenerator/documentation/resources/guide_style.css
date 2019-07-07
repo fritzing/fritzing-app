@@ -22,11 +22,11 @@ body {
 }
 
 #content {
-	max-width: 55em;	
+	max-width: 55em;
 }
 
 p {
-max-width: 45em;	
+max-width: 45em;
 }
 
 a, a.hover, a.link, a.visited {
@@ -97,4 +97,3 @@ pre.textmate-source span.selected {
 	background: #0F0F0F;
 	color: #FFF356;
 }
-

@@ -182,8 +182,8 @@ bool ModelPartShared::setDomDocument(QDomDocument & domDocument) {
 				while (!layer.isNull()) {
 					ViewLayer::ViewLayerID viewLayerID = ViewLayer::viewLayerIDFromXmlString(layer.attribute("layerId"));
                     qulonglong sticky = (layer.attribute("sticky", "").compare("true") == 0) ? 1 : 0;
-                    viewImage->layers |= (one << viewLayerID); 
-                    viewImage->sticky |= (sticky << viewLayerID); 
+                    viewImage->layers |= (one << viewLayerID);
+                    viewImage->sticky |= (sticky << viewLayerID);
 					layer = layer.nextSiblingElement("layer");
 				}
 			}
@@ -537,7 +537,7 @@ void ModelPartShared::flipSMDAnd() {
             // fill in missing copper1 layer
             m_needsCopper1 = true;
             viewImage->layers |= (one << ViewLayer::Copper1);
-            copyPins(ViewLayer::Copper0, ViewLayer::Copper1);            
+            copyPins(ViewLayer::Copper0, ViewLayer::Copper1);
         }
 
         // prep for placing on the bottom
@@ -586,7 +586,7 @@ void ModelPartShared::flipSMDAnd() {
     //    DebugDialog::debug("alive in here");
     //}
 
-    copyPins(ViewLayer::Copper1, ViewLayer::Copper0);   
+    copyPins(ViewLayer::Copper1, ViewLayer::Copper0);
 }
 
 bool ModelPartShared::hasViewFor(ViewLayer::ViewID viewID) {
@@ -824,7 +824,7 @@ void ModelPartShared::addSchematicText(ViewImage * viewImage) {
     if ((viewImage->layers & (one << ViewLayer::Schematic)) == 0) return;
 
     viewImage->canFlipHorizontal = viewImage->canFlipVertical = true;
-    viewImage->layers |= (one << ViewLayer::SchematicText); 
+    viewImage->layers |= (one << ViewLayer::SchematicText);
 }
 
 bool ModelPartShared::showInLabel(const QString & propertyName) {

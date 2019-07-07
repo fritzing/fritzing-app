@@ -34,7 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "paletteitem.h"
 
-class Board : public PaletteItem 
+class Board : public PaletteItem
 {
 	Q_OBJECT
 
@@ -89,7 +89,7 @@ protected:
     static QStringList NewBoardImageNames;
 };
 
-class ResizableBoard : public Board 
+class ResizableBoard : public Board
 {
 	Q_OBJECT
 
@@ -100,7 +100,7 @@ public:
 
 	virtual bool resizeMM(double w, double h, const LayerHash & viewLayers);
 	void resizePixels(double w, double h, const LayerHash & viewLayers);
- 	void loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement);
+	void loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement);
 	virtual void setInitialSize();
 	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);

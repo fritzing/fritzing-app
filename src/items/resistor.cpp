@@ -51,7 +51,7 @@ Resistor::Resistor( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 {
 	m_changingPinSpacing = false;
 	if (Resistances.count() == 0) {
-		Resistances 
+		Resistances
 		 << QString("0") + OhmSymbol
 		 << QString("1") + OhmSymbol << QString("1.5") + OhmSymbol << QString("2.2") + OhmSymbol << QString("3.3") + OhmSymbol << QString("4.7") + OhmSymbol << QString("6.8") + OhmSymbol
 		 << QString("10") + OhmSymbol << QString("15") + OhmSymbol << QString("22") + OhmSymbol << QString("33") + OhmSymbol << QString("47") + OhmSymbol << QString("68") + OhmSymbol
@@ -143,7 +143,7 @@ void Resistor::setResistance(QString resistance, QString pinSpacing, bool force)
 				InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 				if (infoGraphicsView == NULL) break;
 
-				if (modelPart()->properties().value("package").compare("tht", Qt::CaseInsensitive) == 0) 
+				if (modelPart()->properties().value("package").compare("tht", Qt::CaseInsensitive) == 0)
 				{
                     // pinspacing is irrelevant for SMD resistors
 					QString filename = PinSpacings.value(pinSpacing, "");
@@ -175,7 +175,7 @@ void Resistor::setResistance(QString resistance, QString pinSpacing, bool force)
     if (m_partLabel) m_partLabel->displayTextsIf();
 }
 
-QString Resistor::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString Resistor::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	switch (viewLayerID) {
 		case ViewLayer::Breadboard:
@@ -215,7 +215,7 @@ QString Resistor::makeSvg(const QString & resistance, ViewLayer::ViewLayerID vie
 		DebugDialog::debug(QString("makesvg failed %1 %2 %3").arg(errorStr).arg(errorLine).arg(errorColumn));
 		return "";
 	}
-	 
+
 	QDomElement root = domDocument.documentElement();
 	setBands(root, firstband, secondband, thirdband, multiplier, tolerance);
 	return domDocument.toString();
@@ -241,7 +241,7 @@ void Resistor::setBands(QDomElement & element, int firstband, int secondband, in
 		}
 		else if (id.compare("gold_band") == 0) {
 			element.setAttribute("fill", Tolerances.value(tolerance, QColor(173, 159, 78)).name());
-		}		
+		}
 	}
 
 	QDomElement child = element.firstChildElement();
@@ -273,8 +273,8 @@ bool Resistor::collectExtraInfo(QWidget * parent, const QString & family, const 
 		focusOutComboBox->setObjectName("infoViewComboBox");
         focusOutComboBox->setToolTip(tr("You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of 'umkMG'"));
 
-		returnValue = current;			
-		returnWidget = focusOutComboBox;	
+		returnValue = current;
+		returnWidget = focusOutComboBox;
 
 		return true;
 	}
@@ -378,7 +378,7 @@ ItemBase::PluralType Resistor::isPlural() {
 	return Plural;
 }
 
-void Resistor::setProp(const QString & prop, const QString & value) 
+void Resistor::setProp(const QString & prop, const QString & value)
 {
 	Capacitor::setProp(prop, value);
 

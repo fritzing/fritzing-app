@@ -23,7 +23,7 @@ HEADERS += \
     src/program/programtab.h \
     src/program/programwindow.h \
     src/program/syntaxer.h \
-    src/program/trienode.h \ 
+    src/program/trienode.h \
     src/program/console.h \
     src/program/consolewindow.h \
     src/program/consolesettings.h \
@@ -31,7 +31,7 @@ HEADERS += \
     src/program/platformarduino.h \
     src/program/platformpicaxe.h \
     src/program/platformlaunchpad.h
- 
+
 SOURCES += \
     src/program/highlighter.cpp \
     src/program/programtab.cpp \

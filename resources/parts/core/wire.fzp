@@ -10,7 +10,7 @@
   <tag>fritzing core</tag>
  </tags>
  <properties>
-  <property name="family" >wire</property>  
+  <property name="family" >wire</property>
   <property name="color" ></property>
   <property name="width" ></property>
  </properties>

@@ -34,7 +34,7 @@ const double GraphicsUtils::StandardSchematicSeparationMils = 295.275591;   // 7
 const double GraphicsUtils::StandardSchematicSeparation10thinMils = 100;   // 0.1 inches
 
 
-void GraphicsUtils::distanceFromLine(double cx, double cy, double ax, double ay, double bx, double by, 
+void GraphicsUtils::distanceFromLine(double cx, double cy, double ax, double ay, double bx, double by,
 									 double & dx, double & dy, double &distanceSegment, bool & atEndpoint)
 {
 
@@ -48,7 +48,7 @@ void GraphicsUtils::distanceFromLine(double cx, double cy, double ax, double ay,
 	double r_numerator = (cx-ax)*(bx-ax) + (cy-ay)*(by-ay);
 	double r_denomenator = (bx-ax)*(bx-ax) + (by-ay)*(by-ay);
 	double r = r_numerator / r_denomenator;
-     
+
 	if ( (r >= 0) && (r <= 1) )
 	{
 		dx = ax + r*(bx-ax);
@@ -112,7 +112,7 @@ QPointF GraphicsUtils::calcConstraint(QPointF initial, QPointF current) {
 	pd->p.setY(dy);
 	pd->d = d;
 	pds.append(pd);
-		
+
 	QLineF minus45(initial.x() + 10000, initial.y() - 10000, initial.x() - 10000, initial.y() + 10000);
 	distanceFromLine(current.x(), current.y(), minus45.p1().x(), minus45.p1().y(), minus45.p2().x(), minus45.p2().y(), dx, dy, d, atEndpoint);
 	pd = new PD;
@@ -226,7 +226,7 @@ double GraphicsUtils::getNearestOrdinate(double ordinate, double units) {
 
 void GraphicsUtils::shortenLine(QPointF & p1, QPointF & p2, double d1, double d2) {
 	double angle1 = atan2(p2.y() - p1.y(), p2.x() - p1.x());
-	double angle2 = angle1 - M_PI;  
+	double angle2 = angle1 - M_PI;
 	double dx1 = d1 * cos(angle1);
 	double dy1 = d1 * sin(angle1);
 	double dx2 = d2 * cos(angle2);
@@ -243,12 +243,12 @@ bool GraphicsUtils::isRect(const QPolygonF & poly) {
 
 	// either we start running across top or running along side
 
-	if (poly.at(0).x() == poly.at(1).x() && 
+	if (poly.at(0).x() == poly.at(1).x() &&
 		poly.at(1).y() == poly.at(2).y() &&
 		poly.at(2).x() == poly.at(3).x() &&
 		poly.at(3).y() == poly.at(4).y()) return true;
 
-	if (poly.at(0).y() == poly.at(1).y() && 
+	if (poly.at(0).y() == poly.at(1).y() &&
 		poly.at(1).x() == poly.at(2).x() &&
 		poly.at(2).y() == poly.at(3).y() &&
 		poly.at(3).x() == poly.at(4).x()) return true;
@@ -256,7 +256,7 @@ bool GraphicsUtils::isRect(const QPolygonF & poly) {
 	return false;
 }
 
-QRectF GraphicsUtils::getRect(const QPolygonF & poly) 
+QRectF GraphicsUtils::getRect(const QPolygonF & poly)
 {
 	// assumes poly is known to be a rect
 	double minX, maxX, minY, maxY;
@@ -277,16 +277,16 @@ QRectF GraphicsUtils::getRect(const QPolygonF & poly)
 }
 
 // based on code from http://code-heaven.blogspot.com/2009/05/c-program-for-liang-barsky-line.html
-bool GraphicsUtils::liangBarskyLineClip(double x1, double y1, double x2, double y2, double wxmin, double wxmax, double wymin, double wymax, 
+bool GraphicsUtils::liangBarskyLineClip(double x1, double y1, double x2, double y2, double wxmin, double wxmax, double wymin, double wymax,
 							double & x11, double & y11, double & x22, double & y22)
 {
-	double p1 = -(x2 - x1 ); 
+	double p1 = -(x2 - x1 );
 	double q1 = x1 - wxmin;
-	double p2 = ( x2 - x1 ); 
+	double p2 = ( x2 - x1 );
 	double q2 = wxmax - x1;
-	double p3 = - ( y2 - y1 ); 
+	double p3 = - ( y2 - y1 );
 	double q3 = y1 - wymin;
-	double p4 = ( y2 - y1 ); 
+	double p4 = ( y2 - y1 );
 	double q4 = wymax - y1;
 
 	x11 = x1;
@@ -388,7 +388,7 @@ QPainterPath GraphicsUtils::shapeFromPath(const QPainterPath &path, const QPen &
 }
 
 void GraphicsUtils::qt_graphicsItem_highlightSelected(QPainter *painter, const QStyleOptionGraphicsItem *option, const QRectF & boundingRect, const QPainterPath & path)
-{	
+{
     const QRectF murect = painter->transform().mapRect(QRectF(0, 0, 1, 1));
     if (qFuzzyCompare(qMax(murect.width(), murect.height()) + 1, 1))
         return;
@@ -423,10 +423,10 @@ void GraphicsUtils::qt_graphicsItem_highlightSelected(QPainter *painter, const Q
 	}
 	else {
 		painter->drawPath(path);
-	} 
+	}
 }
 
-QPointF GraphicsUtils::calcRotation(QTransform & rotation, QPointF rCenter, QPointF p, QPointF pCenter) 
+QPointF GraphicsUtils::calcRotation(QTransform & rotation, QPointF rCenter, QPointF p, QPointF pCenter)
 {
 	QPointF dp = rCenter - p;
 	QTransform tp = QTransform().translate(-dp.x(), -dp.y()) * rotation * QTransform().translate(dp.x(), dp.y());
@@ -510,7 +510,7 @@ bool GraphicsUtils::isFlipped(const QMatrix & matrix, double & rotation) {
             return true;
         }
 
-        rotation = 135;            
+        rotation = 135;
         return true;
     }
     if (almostEqual(matrix.m11(), -halfSqrt2)) {
@@ -519,11 +519,11 @@ bool GraphicsUtils::isFlipped(const QMatrix & matrix, double & rotation) {
                 rotation = 225;
                 return false;
             }
-                
+
             rotation = 135;
             return false;
         }
-      
+
         if (almostEqual(matrix.m12(), -halfSqrt2)) {
             rotation = 45;
             return true;
@@ -537,4 +537,3 @@ bool GraphicsUtils::isFlipped(const QMatrix & matrix, double & rotation) {
     rotation = 0;
     return false;
 }
-

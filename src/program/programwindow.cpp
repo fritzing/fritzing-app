@@ -350,7 +350,7 @@ void ProgramWindow::linkFiles(const QList<LinkedFile *> & linkedFiles, const QSt
         QDir dir(alternativePath);
         QFileInfo fileInfo(linkedFile->linkedFilename);
         programTab->loadProgramFile(linkedFile->linkedFilename, dir.absoluteFilePath(fileInfo.fileName()), false);
-		if ((linkedFile->fileFlags & LinkedFile::InBundleFlag) && ((linkedFile->fileFlags & LinkedFile::ReadOnlyFlag) == 0)) { 
+		if ((linkedFile->fileFlags & LinkedFile::InBundleFlag) && ((linkedFile->fileFlags & LinkedFile::ReadOnlyFlag) == 0)) {
 			if (linkedFile->fileFlags & LinkedFile::SameMachineFlag) {
 				programTab->appendToConsole(tr("File '%1' was restored from the .fzz file; the local copy was not found.").arg(fileInfo.fileName()));
 			}
@@ -489,9 +489,9 @@ ProgramTab * ProgramWindow::addTab() {
     connect(programTab, SIGNAL(wantToSaveAs(int)), this, SLOT(tabSaveAs(int)));
     connect(programTab, SIGNAL(wantToRename(int)), this, SLOT(tabRename(int)));
     connect(programTab, SIGNAL(wantToDelete(int, bool)), this, SLOT(tabDelete(int, bool)), Qt::DirectConnection);
-    connect(programTab, 
+    connect(programTab,
         SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &)),
-		this, 
+		this,
         SLOT(updateMenu(bool, bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &)));
 	int ix = m_tabWidget->addTab(programTab, name);
     m_tabWidget->setCurrentIndex(ix);
@@ -575,7 +575,7 @@ bool ProgramWindow::beforeClosing(bool showCancel, bool & discard) {
 	return true;
 }
 
-bool ProgramWindow::beforeClosingTab(int index, bool showCancel) 
+bool ProgramWindow::beforeClosingTab(int index, bool showCancel)
 {
 	ProgramTab * programTab = indexWidget(index);
 	if (programTab == NULL) return true;
@@ -585,12 +585,12 @@ bool ProgramWindow::beforeClosingTab(int index, bool showCancel)
 	QMessageBox::StandardButton reply = beforeClosingMessage(programTab->filename(), showCancel);
 	if (reply == QMessageBox::Save) {
 		return prepSave(programTab, false);
-	} 
-	
+	}
+
 	if (reply == QMessageBox::Discard) {
 		return true;
 	}
- 		
+
 	return false;
 }
 
@@ -600,7 +600,7 @@ void ProgramWindow::print() {
     QPrintDialog printDialog(&printer, this);
     if (printDialog.exec() == QDialog::Accepted) {
         currentWidget()->print(printer);
-    } 
+    }
 #endif
 }
 
@@ -680,12 +680,12 @@ void ProgramWindow::tabBeforeClosing(int index, bool & ok) {
 	ok = beforeClosingTab(index, true);
 }
 
-bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag) 
+bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag)
 {
 	m_savingProgramTab = programTab;				// need this for the saveAsAux call
     if (!programTab->isModified()) return false;
 
-	bool result = (saveAsFlag) 
+	bool result = (saveAsFlag)
 		? saveAs(programTab->filename(), programTab->readOnly())
 		: save(programTab->filename(), programTab->readOnly());
 
@@ -760,7 +760,7 @@ void ProgramWindow::updateBoards() {
 void ProgramWindow::loadProgramFile() {
     DebugDialog::debug("loading program file");
 	currentWidget()->loadProgramFile();
-	
+
 }
 
 void ProgramWindow::loadProgramFileNew() {

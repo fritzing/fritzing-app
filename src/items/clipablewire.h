@@ -29,10 +29,10 @@ class ClipableWire : public Wire
 {
 
 public:
-	ClipableWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool initLabel); 
-	
+	ClipableWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool initLabel);
+
 	void setClipEnds(bool);
-	const QLineF & getPaintLine();	
+	const QLineF & getPaintLine();
 	bool filterMousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	void hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, class ConnectorItem * item);
@@ -41,7 +41,7 @@ public:
 
 protected:
 	bool insideInnerCircle(ConnectorItem * connectorItem, QPointF localPos);
-	bool insideSpoke(ClipableWire * wire, QPointF scenePos); 
+	bool insideSpoke(ClipableWire * wire, QPointF scenePos);
 	void dispatchHover(QPointF scenePos);
 	void dispatchHoverAux(bool inInner, Wire * inWire);
 	QPointF findIntersection(ConnectorItem * connectorItem, const QPointF & p);

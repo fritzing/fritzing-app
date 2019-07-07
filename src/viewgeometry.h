@@ -46,7 +46,7 @@ public:
 		RatsnestFlag = 16,
 		AutoroutableFlag = 32,
 		NormalFlag = 64,
-		SchematicTraceFlag = 128		
+		SchematicTraceFlag = 128
 	};
 	Q_DECLARE_FLAGS(WireFlags, WireFlag)
 

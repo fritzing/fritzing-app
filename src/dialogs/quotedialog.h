@@ -90,4 +90,4 @@ protected:
     QTableWidget * m_tableWidget;
 };
 
-#endif 
+#endif

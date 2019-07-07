@@ -174,7 +174,7 @@ bool FritzingWindow::alreadyHasExtension(const QString &fileName, const QString 
 		foreach (QString extension, OtherKnownExtensions) {
 			if (fileName.endsWith(extension)) return true;
 		}
-		
+
 		return false;
 	}
 }
@@ -187,23 +187,23 @@ bool FritzingWindow::beforeClosing(bool showCancel, bool & discard) {
 	discard = false;
 	if (anyModified()) {
 		QMessageBox::StandardButton reply = beforeClosingMessage(m_fwFilename, showCancel);
-     	if (reply == QMessageBox::Save) {
-     		return save();
-    	} 
+	if (reply == QMessageBox::Save) {
+		return save();
+	}
 		else if (reply == QMessageBox::Discard) {
 			discard = true;
-     		return true;
+		return true;
         }
-     	else {
-         	return false;
+	else {
+		return false;
         }
-	} 
+	}
 	else {
 		return true;
 	}
 }
 
-QMessageBox::StandardButton FritzingWindow::beforeClosingMessage(const QString & filename, bool showCancel) 
+QMessageBox::StandardButton FritzingWindow::beforeClosingMessage(const QString & filename, bool showCancel)
 {
 
     QMessageBox messageBox(this);

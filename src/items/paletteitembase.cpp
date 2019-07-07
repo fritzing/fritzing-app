@@ -54,7 +54,7 @@ PaletteItemBase::PaletteItemBase(ModelPart * modelPart, ViewLayer::ViewID viewID
 	m_syncSelected = false;
 	m_offset.setX(0);
 	m_offset.setY(0);
- 	m_blockItemSelectedChange = false;
+	m_blockItemSelectedChange = false;
 	this->setPos(viewGeometry.loc());
     setFlag(QGraphicsItem::ItemIsSelectable, true);
 	setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
@@ -212,7 +212,7 @@ void PaletteItemBase::mousePressConnectorEvent(ConnectorItem * connectorItem, QG
 
 bool PaletteItemBase::acceptsMousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent * event) {
 	Q_UNUSED(event);
-	
+
 	//if (m_viewID != ViewLayer::PCBView) {
 		return true;
 	//}
@@ -230,7 +230,7 @@ bool PaletteItemBase::mousePressEventK(PaletteItemBase * originalItem, QGraphics
 		this->saveGeometry();
 		setInRotation(true);
 		RotationCenter = mapToScene(this->boundingRectWithoutLegs().center());
-		RotationAxis = event->scenePos(); 
+		RotationAxis = event->scenePos();
 		OriginalTransform = this->transform();
 		/*
 		DebugDialog::debug(QString("%11:in rotation:%1,%2 a:%3,%4 t:%5,%6,%7,%8 %9,%10")
@@ -431,7 +431,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 	if (m_viewID == ViewLayer::PCBView && ViewLayer::isNonCopperLayer(m_viewLayerID)) {
 		//DebugDialog::debug(QString("skip connectors: %1 vid:%2 vlid:%3")
 		//				   .arg(this->title())
-		//				   .arg(m_viewID) 
+		//				   .arg(m_viewID)
 		//				   .arg(m_viewLayerID)
 		//	);
 		// don't waste time
@@ -443,7 +443,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 
 		//DebugDialog::debug(QString("id:%1 vid:%2 vlid:%3")
 		//				   .arg(connector->connectorSharedID())
-		//				   .arg(m_viewID) 
+		//				   .arg(m_viewID)
 		//				   .arg(m_viewLayerID)
 		//	);
 
@@ -591,7 +591,7 @@ void PaletteItemBase::contextMenuEvent(QGraphicsSceneContextMenuEvent *event) {
 }
 
 
-LayerKinPaletteItem *PaletteItemBase::newLayerKinPaletteItem(PaletteItemBase * chief, ModelPart * modelPart, 
+LayerKinPaletteItem *PaletteItemBase::newLayerKinPaletteItem(PaletteItemBase * chief, ModelPart * modelPart,
 															 const ViewGeometry & viewGeometry, long id,
 															 QMenu* itemMenu, const LayerHash & viewLayers, LayerAttributes & layerAttributes)
 {
@@ -606,7 +606,7 @@ LayerKinPaletteItem *PaletteItemBase::newLayerKinPaletteItem(PaletteItemBase * c
 	return lk;
 }
 
-QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	QString xmlName = ViewLayer::viewLayerXmlNameFromID(viewLayerID);
 	QString path = filename();
@@ -619,7 +619,7 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<Q
 
 	QDomDocument flipDoc;
     getFlipDoc(modelPart(), path, viewLayerID, m_viewLayerPlacement, flipDoc, orientation);
-	
+
 	//DebugDialog::debug(QString("path: %1").arg(path));
 
 	QString svg = svgHash.value(path + xmlName, "");
@@ -632,7 +632,7 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<Q
 		result = splitter.split(path, xmlName);
 	}
 	else {
-		QString f = flipDoc.toString(); 
+		QString f = flipDoc.toString();
 		result = splitter.splitString(f, xmlName);
 	}
 
@@ -672,9 +672,9 @@ bool PaletteItemBase::collectExtraInfo(QWidget * parent, const QString & family,
 		lineEdit->setEnabled(swappingEnabled);
 		QString current = m_modelPart->localProp(ModelPartShared::PartNumberPropertyName).toString();
 		lineEdit->setText(current);
-		connect(lineEdit, SIGNAL(editingFinished()), this, SLOT(partPropertyEntry()));	
-		lineEdit->setObjectName("infoViewLineEdit");		
-		returnWidget = lineEdit;	
+		connect(lineEdit, SIGNAL(editingFinished()), this, SLOT(partPropertyEntry()));
+		lineEdit->setObjectName("infoViewLineEdit");
+		returnWidget = lineEdit;
 		returnValue = current;
 		return true;
 	}
@@ -682,8 +682,8 @@ bool PaletteItemBase::collectExtraInfo(QWidget * parent, const QString & family,
 	return ItemBase::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 }
 
-void PaletteItemBase::setProp(const QString & prop, const QString & value) 
-{	
+void PaletteItemBase::setProp(const QString & prop, const QString & value)
+{
 	if (prop.compare(ModelPartShared::PartNumberPropertyName) == 0) {
 		modelPart()->setLocalProp(ModelPartShared::PartNumberPropertyName, value);
 		if (m_partLabel) m_partLabel->displayTextsIf();
@@ -809,4 +809,3 @@ void PaletteItemBase::setPos(double x, double y) {
 
 
 */
-

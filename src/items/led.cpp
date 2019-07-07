@@ -40,7 +40,7 @@ LED::LED( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & 
 LED::~LED() {
 }
 
-QString LED::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString LED::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	switch (viewLayerID) {
 		case ViewLayer::Breadboard:
@@ -83,7 +83,7 @@ ItemBase::PluralType LED::isPlural() {
 	return Plural;
 }
 
-void LED::setProp(const QString & prop, const QString & value) 
+void LED::setProp(const QString & prop, const QString & value)
 {
 	Capacitor::setProp(prop, value);
 
@@ -106,7 +106,7 @@ void LED::slamColor(QDomElement & element, const QString & colorString)
 	}
 }
 
-void LED::setColor(const QString & color) 
+void LED::setColor(const QString & color)
 {
 	switch (m_viewLayerID) {
 		case ViewLayer::Breadboard:
@@ -131,7 +131,7 @@ void LED::setColor(const QString & color)
 	}
 }
 
-QString LED::getColorSVG(const QString & color, ViewLayer::ViewLayerID viewLayerID) 
+QString LED::getColorSVG(const QString & color, ViewLayer::ViewLayerID viewLayerID)
 {
 	QString errorStr;
 	int errorLine;
@@ -180,4 +180,3 @@ ViewLayer::ViewID LED::useViewIDForPixmap(ViewLayer::ViewID vid, bool swappingEn
 
     return ItemBase::useViewIDForPixmap(vid, swappingEnabled);
 }
-

@@ -66,7 +66,7 @@ struct HoleSettings
     QString holeSize();
 };
 
-class PaletteItem : public PaletteItemBase 
+class PaletteItem : public PaletteItemBase
 {
 	Q_OBJECT
 
@@ -78,7 +78,7 @@ public:
 	void removeLayerKin();
 	void addLayerKin(class LayerKinPaletteItem * lkpi);
 	const QList<class ItemBase *> & layerKin();
- 	virtual void loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement);
+	virtual void loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement);
 	void rotateItem(double degrees, bool includeRatsnest);
 	void flipItem(Qt::Orientations orientation);
 	void moveItem(ViewGeometry & viewGeometry);
@@ -137,7 +137,7 @@ protected slots:
 
 protected:
 	void syncKinSelection(bool selected, PaletteItemBase * originator);
- 	QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+	QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 	void updateConnections(bool includeRatsnest, QList<ConnectorItem *> & already);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	void figureHover();
@@ -156,9 +156,9 @@ protected:
     bool collectHoleSizeInfo(const QString & defaultHoleSizeValue, QWidget * parent, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget);
 	static QStringList getSizes(QString & holeSize, HoleSettings &);
     static QString hackFzpHoleSize(QDomDocument & document, const QString & newModuleID, const QString & pcbFilename, const QString & newSize);
-    static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid, int hsix); 
+    static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid, int hsix);
     static QString hackSvgHoleSize(QDomDocument & domDocument, const QString & holeDiameter, const QString & ringThickness);
-    static QString hackSvgHoleSizeAux(const QString & svg, const QString & expectedFileName);	
+    static QString hackSvgHoleSizeAux(const QString & svg, const QString & expectedFileName);
 
 protected slots:
 	virtual void changeHoleSize(const QString &);
@@ -171,7 +171,7 @@ public:
     static const QString HoleSizePrefix;
 
 protected:
- 	QList<class ItemBase *> m_layerKin;
+	QList<class ItemBase *> m_layerKin;
     HoleSettings m_holeSettings;
     int m_flipCount;
 

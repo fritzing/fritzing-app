@@ -24,7 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "mysterypart.h"
 
-class Dip : public MysteryPart 
+class Dip : public MysteryPart
 {
 	Q_OBJECT
 

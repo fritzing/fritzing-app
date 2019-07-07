@@ -17,31 +17,31 @@
      id="desc4">Fritzing footprint SVG</desc>
   <g
      id="silkscreen">
-    <line id="vertical-left" 
+    <line id="vertical-left"
        y1="20"
        x1="20"
        y2="${height - 10}"
        x2="20"
        stroke="white" stroke-width="20" />
-    <line id="bottom" 
+    <line id="bottom"
        y1="${height - 10}"
        x1="20"
        y2="${height - 10}"
        x2="${fwidth - 20}"
        stroke="white" stroke-width="20" />
-    <line id="vertical-right" 
+    <line id="vertical-right"
        y1="${height - 10}"
        x1="${fwidth - 20}"
        y2="20"
        x2="${fwidth - 20}"
        stroke="white" stroke-width="20" />
-    <line id="top" 
+    <line id="top"
        y1="20"
        x1="${fwidth - 20}"
        y2="20"
        x2="20"
        stroke="white" stroke-width="20" />
-    <line id="mid-vertical" 
+    <line id="mid-vertical"
        y1="${height - 10}"
        x1="${fwidth - 20 - fvoffset}"
        y2="20"

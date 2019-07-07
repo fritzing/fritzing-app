@@ -84,7 +84,7 @@ struct QuaZipNewInfo {
    * is inaccessible (e. g. you do not have read permission for the
    * directory file in), uses current date and time. Attributes are
    * initialized with zeros, comment and extra field with null values.
-   * 
+   *
    * \sa setFileDateTime()
    **/
   QuaZipNewInfo(const QString& name, const QString& file);

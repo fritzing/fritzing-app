@@ -56,7 +56,7 @@ PartsBinView::PartsBinView(ReferenceModel *referenceModel, PartsBinPaletteWidget
 }
 
 PartsBinView::~PartsBinView() {
-}	
+}
 
 void PartsBinView::cleanup() {
     foreach (ItemBase * itemBase, ItemBaseHash.values()) {
@@ -108,7 +108,7 @@ void PartsBinView::addPart(ModelPart * model, int position) {
 
 void PartsBinView::mousePressOnItem(const QPoint &dragStartPos, const QString &moduleId, const QSize &size, const QPointF &dataPoint, const QPoint &hotspot) {
 	if (moduleId.isEmpty()) return;
-	
+
 	m_dragStartPos = dragStartPos;
 
 	QByteArray itemData;

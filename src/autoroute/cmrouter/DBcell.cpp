@@ -3,16 +3,16 @@
  *
  * Place and Delete subcells
  *
- *     ********************************************************************* 
- *     * Copyright (C) 1985, 1990 Regents of the University of California. * 
- *     * Permission to use, copy, modify, and distribute this              * 
- *     * software and its documentation for any purpose and without        * 
- *     * fee is hereby granted, provided that the above copyright          * 
- *     * notice appear in all copies.  The University of California        * 
- *     * makes no representations about the suitability of this            * 
- *     * software for any purpose.  It is provided "as is" without         * 
- *     * express or implied warranty.  Export of this software outside     * 
- *     * of the United States of America may require an export license.    * 
+ *     *********************************************************************
+ *     * Copyright (C) 1985, 1990 Regents of the University of California. *
+ *     * Permission to use, copy, modify, and distribute this              *
+ *     * software and its documentation for any purpose and without        *
+ *     * fee is hereby granted, provided that the above copyright          *
+ *     * notice appear in all copies.  The University of California        *
+ *     * makes no representations about the suitability of this            *
+ *     * software for any purpose.  It is provided "as is" without         *
+ *     * express or implied warranty.  Export of this software outside     *
+ *     * of the United States of America may require an export license.    *
  *     *********************************************************************
  */
 
@@ -25,7 +25,7 @@
 int placeCellFunc(Tile *, UserData);
 int deleteCellFunc(Tile *, UserData);
 Tile * clipCellTile(Tile * tile, Plane * plane, TileRect * rect);
-void cellTileMerge(Tile  * tile, Plane * plane, int direction); 
+void cellTileMerge(Tile  * tile, Plane * plane, int direction);
 bool ctbListMatch (Tile *tp1, Tile *tp2);
 
 struct searchArg
@@ -146,7 +146,7 @@ placeCellFunc (Tile * tile, UserData data)
     else if (YMIN(tp) == arg->rect->ymini)
             cellTileMerge (tp, arg->plane, TOPBOTTOMLEFT);
     else
-    	    cellTileMerge (tp, arg->plane, TOPLEFT);
+	    cellTileMerge (tp, arg->plane, TOPLEFT);
     return 0;
 }
 
@@ -185,13 +185,13 @@ deleteCellFunc (Tile * tile, UserData data)
     else if (YMIN(tile) == arg->rect->ymini)
             cellTileMerge (tile, arg->plane, TOPBOTTOMLEFT);
     else
-    	    cellTileMerge (tile, arg->plane, TOPLEFT);
+	    cellTileMerge (tile, arg->plane, TOPLEFT);
     return (0);
 }
 
 /*
  * ----------------------------------------------------------------------------
- * clipCellTile -- 
+ * clipCellTile --
  *
  * Clip the given tile against the given rectangle.
  *
@@ -235,7 +235,7 @@ clipCellTile (Tile * tile, Plane * plane, TileRect * rect)
 
 /*
  * ----------------------------------------------------------------------------
- * cellTileMerge -- 
+ * cellTileMerge --
  *
  * Merge the given tile with its plane in the directions specified.
  *
@@ -248,7 +248,7 @@ clipCellTile (Tile * tile, Plane * plane, TileRect * rect)
  */
 
 void
-cellTileMerge (Tile  * tile, Plane * plane, int direction) 
+cellTileMerge (Tile  * tile, Plane * plane, int direction)
 /* YMAX = 8, YMIN = 4, LEFT = 2, RIGHT = 1 */
 {
     TilePoint       topleft, bottomright;
@@ -330,7 +330,7 @@ cellTileMerge (Tile  * tile, Plane * plane, int direction)
 		}
 		else if (YMAX(tpleft) > YMAX(tpright))
 		{
-   		    dummy = TiSplitY (tpleft, YMAX(tpright));
+		    dummy = TiSplitY (tpleft, YMAX(tpright));
 		}
 
 		// if (plane->pl_hint == tpright) plane->pl_hint = tpleft;
@@ -391,7 +391,7 @@ cellTileMerge (Tile  * tile, Plane * plane, int direction)
 
 /*
  * ----------------------------------------------------------------------------
- * ctbListMatch -- 
+ * ctbListMatch --
  *
  * Compare two linked lists of CellTileBodies, assuming that they are
  * sorted in ascending order by celluse pointers.
@@ -410,10 +410,10 @@ ctbListMatch (Tile *tp1, Tile *tp2)
 {
 	return (tp1->ti_body == tp2->ti_body) && (tp1->ti_type == tp2->ti_type);
 }
-	
+
 /*
  * ----------------------------------------------------------------------------
- * TiInsertTile -- 
+ * TiInsertTile --
  *
  * create a tile with the given rect and insert it into the plane.
  *
@@ -423,7 +423,7 @@ ctbListMatch (Tile *tp1, Tile *tp2)
  * Side effects:
  *	Modifies the database plane that contains the given tile.
  * ----------------------------------------------------------------------------
- */	
+ */
 
 Tile* TiInsertTile(Plane * plane, TileRect * rect, QGraphicsItem * body, Tile::TileType type) {
 

@@ -45,27 +45,27 @@ lineProps = {}
 def setup():
 	# Edit these variables below to generate different breadboards
 	#
-	# sL = searchList, a dict to use with the template 
+	# sL = searchList, a dict to use with the template
 	sL['title'] = "Half-Breadboard"
 	sL['moduleID'] = "HalfBreadboardModuleID"
 	sL['svgFile'] = "halfBreadboard.svg"
 
 	sL['label'] = "Bread"
 	sL['taxonomy'] = "prototyping.breadboard.breadboard.halfbreadboard"
-	
+
 	# Most breadboards have rows and lines.
 	# Rows are 5 holes verticaly
 	# Lines are power/ground lines running horizontaly
-	
-	# Rows 
+
+	# Rows
 	rowHeight = 5 # You probably never need to change this, but who knows
 	rowsInterBlockSpacing = 2
 	rowProps['startsAtX'] = -1
 	rowProps['startsAtYWithLetter'] = 'A'
 	rowProps['segmentLength'] = 32
 	rowProps['interSegmentSpacing'] = 2
-	rowProps['numberOfSegments'] = 1	
-		
+	rowProps['numberOfSegments'] = 1
+
 	# Lines
 	numberOfLinesPerSet = 2
 	interRowsLinesSpacing = 2
@@ -76,7 +76,7 @@ def setup():
 	lineProps['interSegmentSpacing'] = 2
 	lineProps['numberOfSegments'] = 1
 	lineProps['endsAtYWithLetter'] = 'Z'
-	
+
 	# Layout
 	boardLayout.append( ("lines", numberOfLinesPerSet) )
 	boardLayout.append( ("spacing", interRowsLinesSpacing) )
@@ -85,7 +85,7 @@ def setup():
 	boardLayout.append( ("rows", rowHeight) )
 	boardLayout.append( ("spacing", interRowsLinesSpacing) )
 	boardLayout.append( ("lines", numberOfLinesPerSet) )
-	
+
 	return
 
 def displayUsage():
@@ -118,7 +118,7 @@ http://fritzing.org/learning/parts
 def makeUUID():
     "creates an 8 character hex UUID"
     return str(uuid.uuid1())
-    
+
 def makeDate():
     "creates a date formatted as YYYY-MM-DD"
     return date.today().isoformat()
@@ -160,7 +160,7 @@ def main():
 		if (numberOfRowCols + numberOfLines) > 26:
 			print "TO MUCH LINES OR ROWS. The script does not know how to name them right. Aborting generation of part"
 			sys.exit()
-	
+
 		# Make Nets
 		maxSizeX = 0
 		incrementalY = 0
@@ -215,7 +215,7 @@ def main():
 							maxSizeX = incrementalX - lineProps['interSegmentSpacing'] + lineProps['startAtX']
 				incrLineYLetterOrd += line + 1
 			incrementalY += item[1]
-		
+
 		# Add these nets to the searchList
 		sL['rows'] = rowNets
 		sL['lines'] = lineNets
@@ -228,7 +228,7 @@ def main():
 		sizeDict['realWidth'] = "%.4fin" % (totalX / 90.0)
 		sizeDict['realHeight'] = "%.4fin" % (totalY / 90.0)
 		sL['size'] = sizeDict
-		
+
 		if len(sys.argv) >= 3 and sys.argv[2] == 'fzp':
 			metaData = {}
 			metaData['moduleID'] = makeUUID()

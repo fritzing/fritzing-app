@@ -44,12 +44,12 @@ public:
 	void moveItem(ViewGeometry &);
 	virtual void syncKinSelection(bool selected, PaletteItemBase *originator);
 	virtual void syncKinMoved(QPointF offset, QPointF loc);
- 	void blockItemSelectedChange(bool selected);
- 	bool syncSelected();
- 	QPointF syncMoved();
+	void blockItemSelectedChange(bool selected);
+	bool syncSelected();
+	QPointF syncMoved();
 	void mousePressConnectorEvent(class ConnectorItem *, QGraphicsSceneMouseEvent *);
 	bool acceptsMousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
- 	virtual bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	virtual bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	void connectedMoved(ConnectorItem * from, ConnectorItem * to, QList<ConnectorItem *> & already);
 	bool collectFemaleConnectees(QSet<ItemBase *> & items);
 	void collectWireConnectees(QSet<class Wire *> & wires);
@@ -102,12 +102,12 @@ protected slots:
 	void partPropertyEntry();
 
 protected:
- 	bool m_blockItemSelectedChange;
- 	bool m_blockItemSelectedValue;
- 	QPointF m_offset;
- 	bool m_syncSelected;
- 	QPointF m_syncMoved;
- 	bool m_svg;
+	bool m_blockItemSelectedChange;
+	bool m_blockItemSelectedValue;
+	QPointF m_offset;
+	bool m_syncSelected;
+	QPointF m_syncMoved;
+	bool m_svg;
 };
 
 

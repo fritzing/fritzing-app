@@ -1,7 +1,7 @@
 /*
   Synthesizer
   creating sound from electronics
-  
+
   This example is part of the Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
@@ -20,15 +20,15 @@ void setup() {
 
 void play(int myToneHeight) {                  // play method
     digitalWrite(buzzerPin, HIGH);             // piezo is switched on
-    delayMicroseconds(myToneHeight);           // stopping time influenced by toneHeight 
+    delayMicroseconds(myToneHeight);           // stopping time influenced by toneHeight
     digitalWrite(buzzerPin, LOW);              // piezo is switched off
-    delayMicroseconds(myToneHeight);           // stopping time influenced by toneHeight 
+    delayMicroseconds(myToneHeight);           // stopping time influenced by toneHeight
 }
 
 void loop() {
   toneHeight=analogRead(potPin1);              // toneheight is value of potentiometer 1
   lfo=analogRead(potPin2);                     // lfo is value of potentiometer 2
-  
+
   for (int i = (lfo/10); i > 0; i--) {         // toneheight rising depending on lfo
     play(toneHeight);                          // execute play method
   }

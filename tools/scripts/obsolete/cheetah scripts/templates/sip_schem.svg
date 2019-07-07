@@ -14,11 +14,11 @@
    id="svg2">
   <g id="schematic">
     <rect x="${rectx}" y="15" fill="none" width="${rectwidth}" height="${height - 30}" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="30" />
-    <text id="label" x="${(rectwidth / 2) + rectx}" y="${texty}" fill="#000000" stroke="none" font-family="Droid Sans" text-anchor="middle" font-size="235" >${label}</text> 
+    <text id="label" x="${(rectwidth / 2) + rectx}" y="${texty}" fill="#000000" stroke="none" font-family="Droid Sans" text-anchor="middle" font-size="235" >${label}</text>
       #for $pin in range(int($pins))
       #set $incpin = $pin + 1
       #set $ly = 15 + ($incpin * 300)
-  	<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="30" x1="15" y1="${ly}" x2="300" y2="${ly}"  />
+	<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="30" x1="15" y1="${ly}" x2="300" y2="${ly}"  />
       <rect x="0" y="${300 * incpin}" fill="none" width="300" height="30" id="connector${pin}pin" stroke-width="0" />
       <rect x="0" y="${300 * incpin}" fill="none" width="30" height="30" id="connector${pin}terminal" stroke-width="0" />
       <text id="label${pin}" x="390" y="${(300 * incpin) + 50}" font-family="Droid Sans" stroke="none" fill="#000000" text-anchor="start" font-size="130" >${pin + 1}</text>

@@ -40,7 +40,7 @@ PESvgView::PESvgView(QWidget * parent) : QFrame(parent)
     this->setObjectName("peSVG");
 
     m_pegi = NULL;
-  
+
     QVBoxLayout * mainLayout = new QVBoxLayout;
 
     m_filename = new QLabel();
@@ -94,7 +94,7 @@ PESvgView::PESvgView(QWidget * parent) : QFrame(parent)
 
 }
 
-PESvgView::~PESvgView() 
+PESvgView::~PESvgView()
 {
 }
 

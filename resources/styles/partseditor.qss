@@ -7,7 +7,7 @@
 }
 
 PartSpecificationsWidget {
- 	padding: 0px;
+	padding: 0px;
 	margin: 0px;
 	border: 0px;
 	border-top: 2px solid #52182C;
@@ -85,14 +85,14 @@ ConnectorsInfoWidget #title {
 }
 
 PartEditorViewsWidget {
-	
+
 }
 
 PartSpecificationsWidget HashPopulateWidget,
 PartSpecificationsWidget PartEditorViewsWidget,
 PartSpecificationsWidget AbstractEditableLabelWidget,
 ConnectorsInfoWidget {
- 	background-color: #B2B2B2;
+	background-color: #B2B2B2;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 }
@@ -133,15 +133,15 @@ AbstractEditableLabelWidget QLabel {
 }
 
 #partsEditor QTabWidget::pane {
- 	padding: 0px;
+	padding: 0px;
 	margin: 0px;
 	border: 0px;
-	
+
 	position: absolute;
 }
 
 #partsEditor QTabWidget::tab-bar {
- 	left: 5px;
+	left: 5px;
 	top: 5px;
 }
 
@@ -153,11 +153,11 @@ AbstractEditableLabelWidget QLabel {
 	padding-bottom: 4px;
 	padding-left: 6px;
 	padding-right: 6px;
-	color: #821F09; 
+	color: #821F09;
 	border-bottom: 0px;
 	min-width: 6.5em;
 	max-width: 6.5em;
-	
+
 	margin: 0;
 	padding: 0;
 	min-height: 1.5em;
@@ -177,7 +177,7 @@ AbstractEditableLabelWidget QLabel {
 #partsEditor QTabBar::tab:!selected:hover {
 	border: #F23926;
 
-} 
+}
 
 
 #scroll_test {
@@ -248,11 +248,11 @@ PartsEditorViewsWidget {
 	font-size:12px;
 	border:none;
 	height: 34px;
-	
-	}
-	
 
-#partsEditor QComboBox:pressed,	
+	}
+
+
+#partsEditor QComboBox:pressed,
 #partsEditor QPushButton:pressed{
 	background-image:none;
 	color: #d9d9d9;
@@ -261,7 +261,7 @@ PartsEditorViewsWidget {
 	border:none;
 	height: 34px;
 	}
-	
+
 #partsEditor QComboBox:disabled,
 #partsEditor QPushButton:disabled{
 	background-image:none;

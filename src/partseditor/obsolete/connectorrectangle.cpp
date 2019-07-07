@@ -143,7 +143,7 @@ QRectF ConnectorRectangle::handlerRect(Qt::Corner corner) {
 		case Qt::BottomLeftCorner:
 			cornerPoint=rect.bottomLeft();
 			break;
-		default: 
+		default:
 			throw "ConnectorRectangle::handlerRect: unknown corner";
 	}
 	return QRectF(cornerPoint-offset,cornerPoint+offset);
@@ -176,4 +176,3 @@ void ConnectorRectangle::setMinSize(double minWidth, double minHeight) {
 	m_minWidth = minWidth;
 	m_minHeight = minHeight;
 }
-

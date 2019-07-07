@@ -5,16 +5,16 @@
  * The definitions in this file are all that is visible to
  * the Ti (tile) modules.
  *
- *     ********************************************************************* 
- *     * Copyright (C) 1985, 1990 Regents of the University of California. * 
- *     * Permission to use, copy, modify, and distribute this              * 
- *     * software and its documentation for any purpose and without        * 
- *     * fee is hereby granted, provided that the above copyright          * 
- *     * notice appear in all copies.  The University of California        * 
- *     * makes no representations about the suitability of this            * 
- *     * software for any purpose.  It is provided "as is" without         * 
- *     * express or implied warranty.  Export of this software outside     * 
- *     * of the United States of America may require an export license.    * 
+ *     *********************************************************************
+ *     * Copyright (C) 1985, 1990 Regents of the University of California. *
+ *     * Permission to use, copy, modify, and distribute this              *
+ *     * software and its documentation for any purpose and without        *
+ *     * fee is hereby granted, provided that the above copyright          *
+ *     * notice appear in all copies.  The University of California        *
+ *     * makes no representations about the suitability of this            *
+ *     * software for any purpose.  It is provided "as is" without         *
+ *     * express or implied warranty.  Export of this software outside     *
+ *     * of the United States of America may require an export license.    *
  *     *********************************************************************
  *
  * rcsid "$Header: /usr/cvsroot/magic-7.5/tiles/tile.h,v 1.7 2010/05/03 15:16:57 tim Exp $"
@@ -83,7 +83,7 @@ struct Tile
 		DUMMYRIGHT,
 		DUMMYBOTTOM
 	};
-	
+
     struct Tile	*ti_lb;		/* Left bottom corner stitch */
     struct Tile	*ti_bl;		/* Bottom left corner stitch */
     struct Tile	*ti_tr;		/* Top right corner stitch */
@@ -104,25 +104,25 @@ inline	Tile* LB(Tile* tileP) { return tileP->ti_lb; }
 inline	Tile* BL(Tile* tileP) { return tileP->ti_bl; }
 inline	Tile* TR(Tile* tileP) { return tileP->ti_tr; }
 inline	Tile* RT(Tile* tileP) { return tileP->ti_rt; }
-inline void SETLB(Tile* tileP, Tile * val) { tileP->ti_lb = val; 
+inline void SETLB(Tile* tileP, Tile * val) { tileP->ti_lb = val;
 	if (val == tileP) {
 		int a = 0;
 		a = a + 1;
 	return;
 }}
-inline void SETBL(Tile* tileP, Tile * val) { tileP->ti_bl = val; 
+inline void SETBL(Tile* tileP, Tile * val) { tileP->ti_bl = val;
 	if (val == tileP) {
 		int a = 0;
 		a = a + 1;
 	return;
 }}
-inline void SETTR(Tile* tileP, Tile * val) { tileP->ti_tr = val; 
+inline void SETTR(Tile* tileP, Tile * val) { tileP->ti_tr = val;
 	if (val == tileP) {
 		int a = 0;
 		a = a + 1;
 	return;
 }}
-inline void SETRT(Tile* tileP, Tile * val) { tileP->ti_rt = val; 
+inline void SETRT(Tile* tileP, Tile * val) { tileP->ti_rt = val;
 	if (val == tileP) {
 		int a = 0;
 		a = a + 1;
@@ -255,10 +255,10 @@ void TiFree(Tile *);
 					 ((point)->p_y  <=  YMAX(tile)  ))
 */
 
-/* The four macros below are for finding next tile RIGHT, UP, LEFT or DOWN 
+/* The four macros below are for finding next tile RIGHT, UP, LEFT or DOWN
  * from current tile at a given coordinate value.
  *
- * For example, NEXT_TILE_RIGHT points tResult to tile to right of t 
+ * For example, NEXT_TILE_RIGHT points tResult to tile to right of t
  * at y-coordinate y.
  */
 
@@ -274,7 +274,7 @@ void TiFree(Tile *);
 #define NEXT_TILE_LEFT(tResult, t, y) \
     for ((tResult) = BL(t); YMAX(tResult) <= (y); (tResult) = RT(tResult)) \
         /* Nothing */;
- 
+
 #define NEXT_TILE_DOWN(tResult, t, x) \
     for ((tResult) = LB(t); RIGHT(tResult) <= (x); (tResult) = TR(tResult)) \
         /* Nothing */;

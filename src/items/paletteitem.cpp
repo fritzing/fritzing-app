@@ -133,7 +133,7 @@ PaletteItem::~PaletteItem() {
 }
 
 bool PaletteItem::renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID viewLayerID, bool doConnectors,  QString & error) {
-	LayerAttributes layerAttributes; 
+	LayerAttributes layerAttributes;
     initLayerAttributes(layerAttributes, viewID, viewLayerID, viewLayerPlacement(), doConnectors, true);
 	bool result = setUpImage(modelPart, viewLayers, layerAttributes);
     error = layerAttributes.error;
@@ -199,7 +199,7 @@ void PaletteItem::makeOneKin(qint64 & id, ViewLayer::ViewLayerID viewLayerID, Vi
     LayerKinPaletteItem * lkpi = newLayerKinPaletteItem(this, m_modelPart, viewGeometry, id, m_itemMenu, viewLayers, layerAttributes);
 	if (lkpi->ok()) {
 		DebugDialog::debug(QString("adding layer kin %1 %2 %3 %4")
-            .arg(id).arg(m_viewID).arg(viewLayerID) 
+            .arg(id).arg(m_viewID).arg(viewLayerID)
             .arg((long) lkpi, 0, 16)
         );
 		addLayerKin(lkpi);
@@ -247,27 +247,27 @@ QVariant PaletteItem::itemChange(GraphicsItemChange change, const QVariant &valu
 	//DebugDialog::debug(QString("chief item change %1 %2").arg(this->id()).arg(change));
 	if (m_layerKin.count() > 0) {
 	    if (change == ItemSelectedChange) {
-	       	bool selected = value.toBool();
-	    	if (m_blockItemSelectedChange && m_blockItemSelectedValue == selected) {
-	    		m_blockItemSelectedChange = false;
-	   		}
+		bool selected = value.toBool();
+		if (m_blockItemSelectedChange && m_blockItemSelectedValue == selected) {
+			m_blockItemSelectedChange = false;
+			}
 			else {
-	       		syncKinSelection(selected, this);
+			syncKinSelection(selected, this);
 			}
 	    }
 	    //else if (change == ItemVisibleHasChanged && value.toBool()) {
-	    	//this->setSelected(syncSelected());
-	    	//this->setPos(m_offset + syncMoved());
+		//this->setSelected(syncSelected());
+		//this->setPos(m_offset + syncMoved());
 	    //}
 	    else if (change == ItemPositionHasChanged) {
-	    	this->syncKinMoved(this->m_offset, value.toPointF());
-	   	}
-   	}
+		this->syncKinMoved(this->m_offset, value.toPointF());
+		}
+	}
 
 	if (m_partLabel && m_partLabel->initialized()) {
 		if (change == ItemPositionHasChanged) {
-	    	m_partLabel->ownerMoved(value.toPointF());
-	   	}
+		m_partLabel->ownerMoved(value.toPointF());
+		}
 		else if (change == ItemSelectedChange) {
 			m_partLabel->update();
 		}
@@ -375,7 +375,7 @@ bool PaletteItem::mousePressEventK(PaletteItemBase * originalItem, QGraphicsScen
 void PaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics != NULL && infographics->spaceBarIsPressed()) { 
+	if (infographics != NULL && infographics->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
@@ -448,17 +448,17 @@ void PaletteItem::resetImage(InfoGraphicsView * infoGraphicsView) {
 	foreach (Connector * connector, modelPart()->connectors()) {
 		connector->unprocess(this->viewID(), this->viewLayerID());
 	}
-    
+
 	LayerAttributes layerAttributes;
     initLayerAttributes(layerAttributes, viewID(), viewLayerID(), viewLayerPlacement(), true, !m_selectionShape.isEmpty());
 	this->setUpImage(modelPart(), infoGraphicsView->viewLayers(), layerAttributes);
-	
+
 	foreach (ItemBase * layerKin, m_layerKin) {
 		resetKinImage(layerKin, infoGraphicsView);
 	}
 }
 
-void PaletteItem::resetKinImage(ItemBase * layerKin, InfoGraphicsView * infoGraphicsView) 
+void PaletteItem::resetKinImage(ItemBase * layerKin, InfoGraphicsView * infoGraphicsView)
 {
 	foreach (Connector * connector, modelPart()->connectors()) {
 		connector->unprocess(layerKin->viewID(), layerKin->viewLayerID());
@@ -595,8 +595,8 @@ void PaletteItem::openPinLabelDialog() {
 			NULL,
 			tr("Fritzing"),
 			tr("Unable to proceed; unable to find top level view.")
-		);		
-		return;	
+		);
+		return;
 	}
 
 	QStringList labels;
@@ -630,7 +630,7 @@ void PaletteItem::openPinLabelDialog() {
 			NULL,
 			tr("Fritzing"),
 			tr("Label mismatch.  Nothing was saved.")
-		);	
+		);
 		return;
 	}
 
@@ -657,10 +657,10 @@ bool PaletteItem::isSingleRow(const QList<ConnectorItem *> & connectorItems) {
 	else if (connectorItems.count() % 2 == 0) {
 		QPointF p = connectorItems.at(0)->sceneAdjustedTerminalPoint(NULL);
 		double slope = 0;
-		for (int i = 1; i < connectorItems.count(); i++) { 
+		for (int i = 1; i < connectorItems.count(); i++) {
 			QPointF q = connectorItems.at(i)->sceneAdjustedTerminalPoint(NULL);
 			if (p == q) continue;
-			
+
 			double newSlope = q.x() == p.x() ? std::numeric_limits<double>::max() : (q.y()  - p.y()) / (q.x() - p.x());
 			if (i == 1) {
 				slope = newSlope;
@@ -677,14 +677,14 @@ bool PaletteItem::isSingleRow(const QList<ConnectorItem *> & connectorItems) {
 	return true;
 }
 
-QList<Connector *> PaletteItem::sortConnectors() { 
+QList<Connector *> PaletteItem::sortConnectors() {
 	QList<Connector *> sortedConnectors;
     foreach (Connector * connector, modelPart()->connectors().values()) {
         sortedConnectors.append(connector);
     }
 	ByIDParseSuccessful = true;
 	qSort(sortedConnectors.begin(), sortedConnectors.end(), byID);
-	if (!ByIDParseSuccessful || sortedConnectors.count() == 0) {		
+	if (!ByIDParseSuccessful || sortedConnectors.count() == 0) {
 		sortedConnectors.clear();
 	}
 
@@ -770,7 +770,7 @@ void PaletteItem::resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLay
 
 }
 
-void PaletteItem::resetConnector(ItemBase * itemBase, SvgIdLayer * svgIdLayer) 
+void PaletteItem::resetConnector(ItemBase * itemBase, SvgIdLayer * svgIdLayer)
 {
     QList<ConnectorItem *> already;
 	foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
@@ -785,7 +785,7 @@ void PaletteItem::resetConnector(ItemBase * itemBase, SvgIdLayer * svgIdLayer)
 	}
 }
 
-bool PaletteItem::collectHoleSizeInfo(const QString & defaultHoleSizeValue, QWidget * parent, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget) 
+bool PaletteItem::collectHoleSizeInfo(const QString & defaultHoleSizeValue, QWidget * parent, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget)
 {
 	returnProp = tr("hole size");
 
@@ -795,7 +795,7 @@ bool PaletteItem::collectHoleSizeInfo(const QString & defaultHoleSizeValue, QWid
     }
 	QWidget * frame = createHoleSettings(parent, m_holeSettings, swappingEnabled, returnValue, true);
 
-	connect(m_holeSettings.sizesComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(changeHoleSize(const QString &)));	
+	connect(m_holeSettings.sizesComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(changeHoleSize(const QString &)));
 	connect(m_holeSettings.mmRadioButton, SIGNAL(toggled(bool)), this, SLOT(changeUnits(bool)));
 	connect(m_holeSettings.inRadioButton, SIGNAL(toggled(bool)), this, SLOT(changeUnits(bool)));
 	connect(m_holeSettings.diameterEdit, SIGNAL(editingFinished()), this, SLOT(changeDiameter()));
@@ -805,9 +805,9 @@ bool PaletteItem::collectHoleSizeInfo(const QString & defaultHoleSizeValue, QWid
 	return true;
 }
 
-void PaletteItem::setUpHoleSizes(const QString & type, HoleClassThing & holeThing) 
+void PaletteItem::setUpHoleSizes(const QString & type, HoleClassThing & holeThing)
 {
-	if (holeThing.holeSizes.count() == 0) {       
+	if (holeThing.holeSizes.count() == 0) {
 		setUpHoleSizesAux(holeThing, type);
 	}
 
@@ -1081,7 +1081,7 @@ void PaletteItem::updateValidators(HoleSettings & holeSettings)
 	holeSettings.thicknessValidator->setRange(holeSettings.holeThing->ringThicknessRange.x() * multiplier, holeSettings.holeThing->ringThicknessRange.y() * multiplier, 3);
 }
 
-void PaletteItem::initHoleSettings(HoleSettings & holeSettings, HoleClassThing * holeThing) 
+void PaletteItem::initHoleSettings(HoleSettings & holeSettings, HoleClassThing * holeThing)
 {
     holeSettings.holeThing = holeThing;
 	holeSettings.diameterEdit = holeSettings.thicknessEdit = NULL;
@@ -1096,7 +1096,7 @@ bool PaletteItem::setHoleSize(QString & holeSize, bool force, HoleSettings & hol
 	QStringList sizes = getSizes(holeSize, holeSettings);
 	if (sizes.count() < 2) return false;
 
-	if (!force && (holeSettings.holeDiameter.compare(sizes.at(0)) == 0) && (holeSettings.ringThickness.compare(sizes.at(1)) == 0)) 
+	if (!force && (holeSettings.holeDiameter.compare(sizes.at(0)) == 0) && (holeSettings.ringThickness.compare(sizes.at(1)) == 0))
 	{
 		return false;
 	}
@@ -1141,12 +1141,12 @@ void PaletteItem::changeHoleSize(const QString & newSize) {
 
     // figure out the new filename
     QString newModuleID = appendHoleSize(moduleID(), sizes.at(0), sizes.at(1));
-    QString newFzpFilename = newModuleID + ".fzp"; 
+    QString newFzpFilename = newModuleID + ".fzp";
     QString newSvgFilename = "pcb/" + newModuleID + ".svg";
 
-    QString fzp = hackFzpHoleSize(newModuleID, newSvgFilename, sizes.at(0) + "," + sizes.at(1));    
+    QString fzp = hackFzpHoleSize(newModuleID, newSvgFilename, sizes.at(0) + "," + sizes.at(1));
     if (fzp.isEmpty()) return;
-   
+
     if (!TextUtils::writeUtf8(PartFactory::fzpPath() + newFzpFilename, fzp)) {
         return;
     }
@@ -1164,7 +1164,7 @@ void PaletteItem::changeHoleSize(const QString & newSize) {
     }
 }
 
-QString PaletteItem::hackFzpHoleSize(const QString & fzp, const QString & moduleid, int hsix) 
+QString PaletteItem::hackFzpHoleSize(const QString & fzp, const QString & moduleid, int hsix)
 {
     QString errorStr;
     int errorLine;
@@ -1175,7 +1175,7 @@ QString PaletteItem::hackFzpHoleSize(const QString & fzp, const QString & module
         DebugDialog::debug(QString("bad fzp in %1:%2").arg(moduleid).arg(fzp));
     }
     QStringList strings = moduleid.mid(hsix).split("_");
-    return hackFzpHoleSize(document, moduleid, "pcb/" + moduleid + ".svg", strings.at(2) + "," + strings.at(3)); 
+    return hackFzpHoleSize(document, moduleid, "pcb/" + moduleid + ".svg", strings.at(2) + "," + strings.at(3));
 }
 
 
@@ -1185,7 +1185,7 @@ QString PaletteItem::hackFzpHoleSize(const QString & newModuleID, const QString 
     int errorLine;
     int errorColumn;
     QDomDocument document;
-    bool result = document.setContent(&file, &errorStr, &errorLine, &errorColumn);    
+    bool result = document.setContent(&file, &errorStr, &errorLine, &errorColumn);
     if (!result) {
         DebugDialog::debug(QString("bad doc fzp in %1:%2 %3 %4").arg(newModuleID).arg(errorStr).arg(errorLine).arg(errorColumn));
     }
@@ -1193,7 +1193,7 @@ QString PaletteItem::hackFzpHoleSize(const QString & newModuleID, const QString 
     return hackFzpHoleSize(document, newModuleID, pcbFilename, newSize);
 }
 
-QString PaletteItem::hackFzpHoleSize(QDomDocument & document, const QString & newModuleID, const QString & pcbFilename, const QString & newSize) 
+QString PaletteItem::hackFzpHoleSize(QDomDocument & document, const QString & newModuleID, const QString & pcbFilename, const QString & newSize)
 {
     QDomElement root = document.documentElement();
     root.setAttribute("moduleId", newModuleID);
@@ -1226,7 +1226,7 @@ QString PaletteItem::hackFzpHoleSize(QDomDocument & document, const QString & ne
 }
 
 
-QString PaletteItem::hackSvgHoleSizeAux(const QString & svg, const QString & expectedFileName) 
+QString PaletteItem::hackSvgHoleSizeAux(const QString & svg, const QString & expectedFileName)
 {
     QDomDocument document;
     document.setContent(svg);
@@ -1252,7 +1252,7 @@ QString PaletteItem::hackSvgHoleSize(const QString & holeDiameter, const QString
     return hackSvgHoleSize(domDocument, holeDiameter, ringThickness);
 }
 
-QString PaletteItem::hackSvgHoleSize(QDomDocument & domDocument, const QString & holeDiameter, const QString & ringThickness) 
+QString PaletteItem::hackSvgHoleSize(QDomDocument & domDocument, const QString & holeDiameter, const QString & ringThickness)
 {
     QDomElement root = domDocument.documentElement();
     double w = TextUtils::convertToInches(root.attribute("width"));
@@ -1309,7 +1309,7 @@ QString PaletteItem::appendHoleSize(const QString & moduleid, const QString & ho
     return baseName + QString("%1%2_%3").arg(HoleSizePrefix).arg(holeSize).arg(ringThickness);
 }
 
-void PaletteItem::generateSwap(const QString & text, GenModuleID genModuleID, GenFzp genFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg) 
+void PaletteItem::generateSwap(const QString & text, GenModuleID genModuleID, GenFzp genFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg)
 {
     FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
     if (comboBox == NULL) return;
@@ -1359,20 +1359,20 @@ void PaletteItem::generateSwap(const QString & text, GenModuleID genModuleID, Ge
         if (!PartFactory::svgFileExists(name, path)) {
             QString svg = makePcbSvg(name);
 	        TextUtils::writeUtf8(path, svg);
-        } 
+        }
     }
 
     m_propsMap.insert("moduleID", newModuleID);
 
 }
 
-void PaletteItem::changeUnits(bool) 
+void PaletteItem::changeUnits(bool)
 {
 	QString newVal = changeUnits(m_holeSettings);
 	changeHoleSize(newVal);
 }
 
-QString PaletteItem::changeUnits(HoleSettings & holeSettings) 
+QString PaletteItem::changeUnits(HoleSettings & holeSettings)
 {
 	double hd = TextUtils::convertToInches(holeSettings.holeDiameter);
 	double rt = TextUtils::convertToInches(holeSettings.ringThickness);
@@ -1395,15 +1395,15 @@ QString PaletteItem::changeUnits(HoleSettings & holeSettings)
 	return newVal;
 }
 
-void PaletteItem::changeThickness() 
+void PaletteItem::changeThickness()
 {
 	if (changeThickness(m_holeSettings, sender())) {
 		QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
 		changeHoleSize(m_holeSettings.holeDiameter + "," + edit->text() + m_holeSettings.currentUnits());
-	}	
+	}
 }
 
-bool PaletteItem::changeThickness(HoleSettings & holeSettings, QObject * sender) 
+bool PaletteItem::changeThickness(HoleSettings & holeSettings, QObject * sender)
 {
 	QLineEdit * edit = qobject_cast<QLineEdit *>(sender);
 	if (edit == NULL) return false;
@@ -1415,7 +1415,7 @@ bool PaletteItem::changeThickness(HoleSettings & holeSettings, QObject * sender)
 	return (newValue != oldValue);
 }
 
-void PaletteItem::changeDiameter() 
+void PaletteItem::changeDiameter()
 {
 	if (changeDiameter(m_holeSettings, sender())) {
 		QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
@@ -1423,7 +1423,7 @@ void PaletteItem::changeDiameter()
 	}
 }
 
-bool PaletteItem::changeDiameter(HoleSettings & holeSettings, QObject * sender) 
+bool PaletteItem::changeDiameter(HoleSettings & holeSettings, QObject * sender)
 {
 	QLineEdit * edit = qobject_cast<QLineEdit *>(sender);
 	if (edit == NULL) return false;
@@ -1439,11 +1439,11 @@ bool PaletteItem::makeLocalModifications(QByteArray & svg, const QString & filen
     // a bottleneck for modifying part svg xml at setupImage time
 
     // for saved-as-new-part parts (i.e. that are no longer MysteryParts) that still have a chip-label or custom pin names
-    // also handles adding a title if there is a label id in the 
+    // also handles adding a title if there is a label id in the
     switch (m_viewID) {
         case ViewLayer::PCBView:
             return false;
-            
+
         default:
             if (itemType() != ModelPart::Part) return false;
             if (filename.startsWith("icon")) return false;
@@ -1452,7 +1452,7 @@ bool PaletteItem::makeLocalModifications(QByteArray & svg, const QString & filen
     }
 
     bool gotChipLabel = false;
-    QString chipLabel = modelPart()->properties().value("chip label", ""); 
+    QString chipLabel = modelPart()->properties().value("chip label", "");
     if (!chipLabel.isEmpty()) {
         svg = TextUtils::replaceTextElement(svg, "label", chipLabel);
         gotChipLabel = true;
@@ -1512,7 +1512,7 @@ QStringList PaletteItem::sipOrDipOrLabels(bool & hasLayout, bool & sip) {
 
 		if (key.compare("package") == 0) {
 			// was a generic ic
-			sip = value.contains("sip", Qt::CaseInsensitive);		
+			sip = value.contains("sip", Qt::CaseInsensitive);
 		}
 	}
 
@@ -1539,12 +1539,12 @@ void PaletteItem::resetLayerKin(const QString & svg) {
 QTransform PaletteItem::untransform() {
     //DebugDialog::debug("untransform");
     QTransform chiefTransform = this->transform();
-    chiefTransform.setMatrix(chiefTransform.m11(), chiefTransform.m12(), chiefTransform.m13(), chiefTransform.m21(), chiefTransform.m22(), chiefTransform.m23(), 0, 0, chiefTransform.m33()); 
+    chiefTransform.setMatrix(chiefTransform.m11(), chiefTransform.m12(), chiefTransform.m13(), chiefTransform.m21(), chiefTransform.m22(), chiefTransform.m23(), 0, 0, chiefTransform.m33());
     bool identity = chiefTransform.isIdentity();
-    if (!identity) {    
+    if (!identity) {
         QTransform invert = chiefTransform.inverted();
         transformItem(invert, false);
-        foreach (ItemBase * lkpi, layerKin()) {    
+        foreach (ItemBase * lkpi, layerKin()) {
             lkpi->transformItem(invert, false);
         }
     }
@@ -1556,10 +1556,8 @@ void PaletteItem::retransform(const QTransform & chiefTransform) {
     //DebugDialog::debug("retransform");
     if (!chiefTransform.isIdentity()) {
         transformItem(chiefTransform, false);
-        foreach (ItemBase * lkpi, layerKin()) {    
+        foreach (ItemBase * lkpi, layerKin()) {
             lkpi->transformItem(chiefTransform, false);
         }
     }
 }
-
-

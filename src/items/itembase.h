@@ -307,8 +307,8 @@ public:
 protected:
 	void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent *event );
-	virtual void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget); 
-	virtual void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget, const QPainterPath & shape); 
+	virtual void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+	virtual void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget, const QPainterPath & shape);
     virtual void paintSelected(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	virtual void paintBody(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
@@ -331,7 +331,7 @@ protected:
 	static bool fixCopper1(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement, QDomDocument &);
 
 protected:
- 	QSizeF m_size;
+	QSizeF m_size;
 	qint64 m_id;
 	ViewGeometry m_viewGeometry;
 	QPointer<ModelPart> m_modelPart;
@@ -365,12 +365,12 @@ protected:
     FSvgRenderer * m_fsvgRenderer;
 	bool m_acceptsMousePressLegEvent;
     bool m_swappable;
- 	bool m_inRotation;
+	bool m_inRotation;
     QPointer<ItemBase> m_superpart;
     QList< QPointer<ItemBase> > m_subparts;
     bool m_squashShape;
     QPainterPath m_selectionShape;
-      
+
  protected:
 	static long nextID;
 	static QPointer<class ReferenceModel> TheReferenceModel;

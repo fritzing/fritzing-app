@@ -29,7 +29,7 @@ HEADERS += src/svg/svgfilesplitter.h \
     src/svg/gedaelementparser.h \
     src/svg/gedaelementgrammar_p.h \
     src/svg/gedaelementlexer.h
-    
+
 SOURCES += src/svg/svgfilesplitter.cpp \
     src/svg/svgpathparser.cpp \
     src/svg/svgpathgrammar.cpp \

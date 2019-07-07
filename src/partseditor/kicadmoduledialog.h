@@ -39,4 +39,4 @@ protected:
 	QComboBox * m_comboBox;
 };
 
-#endif 
+#endif

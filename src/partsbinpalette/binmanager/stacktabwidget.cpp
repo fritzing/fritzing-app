@@ -50,4 +50,3 @@ void StackTabWidget::informCurrentChanged(int index) {
 void StackTabWidget::informTabCloseRequested(int index) {
 	emit tabCloseRequested(this, index);
 }
-

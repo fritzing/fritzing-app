@@ -34,7 +34,7 @@ public:
 public:
 	static void showOutputInfo(PCBSketchWidget m_pcbGraphicsView);
 */
-	
+
 protected:
 	static Fritzing2Eagle* singleton;
 };

@@ -33,7 +33,7 @@ public:
 	void setWidth(int, QString);
 	void setViewBox(int, int, int, int);
 	void save(QString fileName);
-	
-	
+
+
 };
 #endif

@@ -5191,10 +5191,10 @@ Ursache: %2 (Fehlercode %3)</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1612"/>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
-        <translation>Bilddatei &apos;%1&apos; konnte nicht geladen werden: 
+        <translation>Bilddatei &apos;%1&apos; konnte nicht geladen werden:
 
 %2</translation>
     </message>

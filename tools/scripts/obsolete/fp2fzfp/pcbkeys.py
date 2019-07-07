@@ -19,7 +19,7 @@ tagMap["Pad"] = [["rX1","rY1","rX2","rY2","Thickness","Clearance","Mask",\
 tagMap["ElementLine"] = [["X1","Y1","X2","Y2","Thickness"]]
 tagMap["ElementArc"] = [["X","Y","Width","Height","StartAngle","DeltaAngle",\
         "Thickness"]]
-tagMap["Attribute"] = [["Name","Value"]] 
+tagMap["Attribute"] = [["Name","Value"]]
 tagMap["Mark"] = [["Y","X"]]
 
 def getNextAttr(attributes):
@@ -42,41 +42,41 @@ def getNextAttr(attributes):
 
 def makeDict(tag, attributes):
     """
-    splits a list of attributes given a tag and returns a dict with 
+    splits a list of attributes given a tag and returns a dict with
     attributed names as keys.
     If the tag is not in the lookup table, an empty dict is returned.
     """
     if(not(tagMap.has_key(tag))):
         return {}
-        
+
     #attrList = attributes.split()
-    
+
     attrList = []
     while(attributes != ""):
         attr, attributes = getNextAttr(attributes)
         attrList.append(attr)
-    
+
     tagList = None
     for selection in tagMap[tag]:
         if len(selection) == len(attrList):
             tagList = selection
-    
+
     #no possible mapping found - should throw an exeption actually
     if(not(tagList)):
         return {}
-    
+
     #attrListCleaned = []
-    
+
     #strip quotes
     #for attr in attrList:
     #    if attr[0] == '"':
     #        tmp1, tmp2, attr = attr.partition('"')
     #        attr, tmp1, tmp2 = attr.rpartition('"')
     #    attrListCleaned.append(attr)
-    
+
     #merge the two into a dictionary
     rtn = {}
     for i in xrange(len(tagList)):
         rtn[tagList[i]] = attrList[i]
-    
+
     return rtn

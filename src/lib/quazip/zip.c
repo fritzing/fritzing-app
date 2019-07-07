@@ -324,7 +324,7 @@ local uLong ziplocal_TmzDateToDosDate(ptm,dosDate)
     const tm_zip* ptm;
     uLong dosDate;
 {
-	#ifndef _WINDOWS 
+	#ifndef _WINDOWS
     (void) dosDate; /* avoid "unused parameter" warning */
 	#endif
 

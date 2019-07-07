@@ -84,9 +84,9 @@ QDir  FolderUtils::getApplicationSubFolder(QString search) {
         }
 
         dir.setPath(dir.absolutePath() + "/" + search);
-   	}
+	}
 
-   	return dir;
+	return dir;
 }
 
 QString FolderUtils::getApplicationSubFolderPath(QString search) {
@@ -190,7 +190,7 @@ void FolderUtils::cleanup() {
 	}
 }
 
-const QString FolderUtils::getLibraryPath() 
+const QString FolderUtils::getLibraryPath()
 {
 	if (singleton == NULL) {
 		singleton = new FolderUtils();
@@ -200,14 +200,14 @@ const QString FolderUtils::getLibraryPath()
 }
 
 
-const QString FolderUtils::libraryPath() 
+const QString FolderUtils::libraryPath()
 {
 #ifdef Q_OS_MAC
 	// mac plugins are always in the bundle
 	return QDir::cleanPath(QCoreApplication::applicationDirPath() + "/../lib");
 #endif
 
-	return QDir::cleanPath(applicationDirPath() + "/lib");		
+	return QDir::cleanPath(applicationDirPath() + "/lib");
 }
 
 const QString FolderUtils::applicationDirPath() {
@@ -228,7 +228,7 @@ const QString FolderUtils::applicationDirPath() {
 				}
 			}
 		}
-		
+
 #ifdef PKGDATADIR
 		candidates.append(QLatin1String(PKGDATADIR));
 #else
@@ -281,7 +281,7 @@ void FolderUtils::setOpenSaveFolder(const QString& path) {
 	settings.setValue("openSaveFolder", m_openSaveFolder);
 }
 
-void FolderUtils::setOpenSaveFolderAux(const QString& path) 
+void FolderUtils::setOpenSaveFolderAux(const QString& path)
 {
 	QFileInfo fileInfo(path);
 	if(fileInfo.isDir()) {
@@ -714,7 +714,7 @@ void FolderUtils::showInFolder(const QString & path)
                << QLatin1String("tell application \"Finder\" to activate");
     QProcess::execute("/usr/bin/osascript", scriptArgs);
 #else
-    QDesktopServices::openUrl( QUrl::fromLocalFile( QFileInfo(path).absolutePath() ) );   
+    QDesktopServices::openUrl( QUrl::fromLocalFile( QFileInfo(path).absolutePath() ) );
 #endif
 }
 

@@ -64,7 +64,7 @@ FileProgressDialog::FileProgressDialog(const QString & title, int initialMaximum
 	ProcessEventBlocker::processEvents();
 }
 
-FileProgressDialog::FileProgressDialog(QWidget *parent) : QDialog(parent) 
+FileProgressDialog::FileProgressDialog(QWidget *parent) : QDialog(parent)
 {
 	init(QObject::tr("File Progress..."), 0);
 }
@@ -112,13 +112,13 @@ void FileProgressDialog::setMinimum(int minimum) {
 
 void FileProgressDialog::setMaximum(int maximum) {
 	m_progressBar->setMaximum(maximum);
-	//DebugDialog::debug(QString("set maximum:%1").arg(maximum)); 
+	//DebugDialog::debug(QString("set maximum:%1").arg(maximum));
 }
 
 void FileProgressDialog::addMaximum(int maximum) {
     if (maximum != 0) {
 	    m_progressBar->setMaximum(m_progressBar->maximum() + maximum);
-	    //DebugDialog::debug(QString("set maximum:%1").arg(maximum)); 
+	    //DebugDialog::debug(QString("set maximum:%1").arg(maximum));
     }
 }
 
@@ -152,14 +152,14 @@ void FileProgressDialog::setMessage(const QString & message) {
 	ProcessEventBlocker::processEvents();
 }
 
-void FileProgressDialog::setBinLoadingCount(int count) 
+void FileProgressDialog::setBinLoadingCount(int count)
 {
 	m_binLoadingCount = count;
 	m_binLoadingIndex = -1;
 	m_binLoadingStart = value();
 }
 
-void FileProgressDialog::setBinLoadingChunk(int chunk) 
+void FileProgressDialog::setBinLoadingChunk(int chunk)
 {
 	m_binLoadingChunk = chunk;
 }
@@ -174,10 +174,10 @@ void FileProgressDialog::loadingInstancesSlot(class ModelBase *, QDomElement & i
 	// * 3 comes from: once for model part load, once for list view, once for icon view
 	m_binLoadingInc = m_binLoadingChunk / (double) (m_binLoadingCount * 3 * count);
 }
-		
+
 void FileProgressDialog::loadingInstanceSlot(class ModelBase *, QDomElement & instance)
 {
-	Q_UNUSED(instance); 
+	Q_UNUSED(instance);
 	//QString text;
 	//QTextStream textStream(&text);
 	//instance.save(textStream, 0);

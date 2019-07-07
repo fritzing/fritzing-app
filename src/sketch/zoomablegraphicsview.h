@@ -36,15 +36,15 @@ public:
 
     void relativeZoom(double step, bool centerToCursor);
     void absoluteZoom(double percent);
- 	double currentZoom();
+	double currentZoom();
 	void setAcceptWheelEvents(bool);
 	virtual void ensureFixedToBottomRightItems() {}
     bool viewFromBelow();
     virtual void setViewFromBelow(bool);
 
     static const int MaxScaleValue;
-	
-public:	
+
+public:
 	enum WheelMapping {
 		ScrollPrimary,
 		ZoomPrimary,

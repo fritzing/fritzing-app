@@ -35,7 +35,7 @@ struct ConnectorMetadata {
     int index;
 };
 
-class PEUtils 
+class PEUtils
 {
 public:
 	static QString convertUnitsStr(double val);
@@ -50,4 +50,4 @@ public:
 
 };
 
-#endif 
+#endif

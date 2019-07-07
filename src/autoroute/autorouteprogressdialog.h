@@ -63,7 +63,7 @@ protected slots:
 	void internalSpinChange(int);
 
 protected:
-	QProgressBar * m_progressBar;	
+	QProgressBar * m_progressBar;
 	QLabel * m_spinLabel;
 	QLabel * m_message;
 	QLabel * m_message2;
@@ -87,4 +87,4 @@ protected:
 };
 
 
-#endif 
+#endif

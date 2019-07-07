@@ -1146,7 +1146,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <source>connected to %n item(s)</source>
         <translation type="unfinished">
             <numerusform>connesso a %n elemento(i)
-        
+
         </numerusform>
             <numerusform></numerusform>
         </translation>
@@ -1581,7 +1581,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
         <translation type="unfinished">
             <numerusform>%1 di %2 reti instradate - %n connettore(i) ancora da instradare
-        
+
         </numerusform>
             <numerusform></numerusform>
         </translation>
@@ -4182,7 +4182,7 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
         <translation type="unfinished"></translation>
@@ -5561,7 +5561,7 @@ Fritzing continuerà a funzionare, ma non sarà possibile cambiare le proprietà
     <message>
         <source>The part that you have just added,
 is already there, we won&apos;t add it again, right?</source>
-        <translation>Il componente che hai appena aggiunto, 
+        <translation>Il componente che hai appena aggiunto,
 &amp;egrave; gi&amp;agrave; stato inserito, non vuoi aggiungerne un&apos;altro, giusto?</translation>
     </message>
     <message>

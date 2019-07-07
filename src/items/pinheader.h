@@ -28,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "paletteitem.h"
 
-class PinHeader : public PaletteItem 
+class PinHeader : public PaletteItem
 {
 	Q_OBJECT
 

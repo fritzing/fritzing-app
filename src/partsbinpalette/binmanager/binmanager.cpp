@@ -68,7 +68,7 @@ BinLocation::Location BinLocation::fromString(const QString & locationString) {
 	return BinLocation::Outside;
 }
 
-BinLocation::Location BinLocation::findLocation(const QString & filename) 
+BinLocation::Location BinLocation::findLocation(const QString & filename)
 {
 
     if (filename.startsWith(FolderUtils::getUserBinsPath())) {
@@ -120,7 +120,7 @@ BinManager::BinManager(class ReferenceModel *referenceModel, class HtmlInfoView 
 
 	QVBoxLayout *lo = new QVBoxLayout(this);
 
-	m_stackTabWidget = new StackTabWidget(this);   
+	m_stackTabWidget = new StackTabWidget(this);
 	m_stackTabWidget->setTabPosition(QTabWidget::West);
 	lo->addWidget(m_stackTabWidget);
 
@@ -156,7 +156,7 @@ void BinManager::initStandardBins()
 
 	//DebugDialog::debug("open core bin");
 	openCoreBinIn();
-		
+
 	//DebugDialog::debug("after core bin");
     currentChanged(m_stackTabWidget->currentIndex());
 
@@ -423,7 +423,7 @@ PartsBinPaletteWidget* BinManager::openBinIn(QString fileName, bool fastLoad) {
 			// to force the user to take a decision of what to do with the imported parts
 			if(fileName.endsWith(FritzingBundledBinExtension)) {
 				setDirtyTab(bin);
-			} 
+			}
 		}
 	}
 	if (!fastLoad) {
@@ -478,9 +478,9 @@ void BinManager::currentChanged(int index) {
 
     }
 
-        
 
-    
+
+
 
 	PartsBinPaletteWidget *bin = getBin(index);
 	if (bin) setAsCurrentBin(bin);
@@ -574,10 +574,10 @@ void BinManager::restoreStateAndGeometry(QList<BinLocation *> & actualLocations)
 	QSettings settings;
 	settings.beginGroup("bins2");
 	int size = settings.childGroups().size();
-	if (size == 0) { 
+	if (size == 0) {
 		// first time
 		readTheoreticalLocations(theoreticalLocations);
-	} 
+	}
 	else {
 		for (int i = 0; i < size; ++i) {
 			settings.beginGroup(QString::number(i));
@@ -641,7 +641,7 @@ void BinManager::restoreStateAndGeometry(QList<BinLocation *> & actualLocations)
                 //DebugDialog::debug("adding loc 3 " + tLocation->path);
 				actualLocations.append(tLocation);
                 tLocation->marked = true;
-			}		
+			}
 		}
 	}
 
@@ -660,7 +660,7 @@ void BinManager::restoreStateAndGeometry(QList<BinLocation *> & actualLocations)
 
 }
 
-void BinManager::readTheoreticalLocations(QList<BinLocation *> & theoreticalLocations) 
+void BinManager::readTheoreticalLocations(QList<BinLocation *> & theoreticalLocations)
 {
 	QFile file(":/resources/bins/order.xml");
 	QString errorStr;
@@ -683,7 +683,7 @@ void BinManager::readTheoreticalLocations(QList<BinLocation *> & theoreticalLoca
 	}
 }
 
-void BinManager::hackLocalContrib(QList<BinLocation *> & locations) 
+void BinManager::hackLocalContrib(QList<BinLocation *> & locations)
 {
     // with release 0.7.12, there is no more local contrib bin
     // so clear out existing local contrib bins by copying parts to mine bin
@@ -770,7 +770,7 @@ void BinManager::hackLocalContrib(QList<BinLocation *> & locations)
     }
 }
 
-void BinManager::findAllBins(QList<BinLocation *> & locations) 
+void BinManager::findAllBins(QList<BinLocation *> & locations)
 {
 	BinLocation * location = new BinLocation;
 	location->location = BinLocation::App;
@@ -825,7 +825,7 @@ bool BinManager::getBinTitle(const QString & filename, QString & binName, QStrin
 				return true;
 			}
 			break;
-			
+
 		default:
 			break;
 		}
@@ -925,14 +925,14 @@ void BinManager::search(const QString & searchText) {
         }
         progress.incValue();
     }
- 
+
     setDirtyTab(searchBin);
 }
 
 bool BinManager::currentViewIsIconView() {
 	PartsBinPaletteWidget * bin = currentBin();
 	if (bin == NULL) return true;
-	
+
 	return bin->currentViewIsIconView();
 }
 
@@ -977,7 +977,7 @@ void BinManager::updateBinCombinedMenu(PartsBinPaletteWidget * bin) {
 	m_findPartAction->setEnabled(enabled);
 }
 
-void BinManager::createCombinedMenu() 
+void BinManager::createCombinedMenu()
 {
 	m_combinedMenu = new QMenu(tr("Bin"), this);
 
@@ -1274,7 +1274,7 @@ void BinManager::saveBundledBin() {
 	bin->saveBundledBin();
 }
 
-void BinManager::setTabIcon(PartsBinPaletteWidget* w, QIcon * icon) 
+void BinManager::setTabIcon(PartsBinPaletteWidget* w, QIcon * icon)
 {
 	if (m_stackTabWidget != NULL) {
 		int tabIdx = m_stackTabWidget->indexOf(w);
@@ -1293,7 +1293,7 @@ void BinManager::copyFilesToContrib(ModelPart * mp, QWidget * originator) {
 
 	QFileInfo info(path);
 	QFile fzp(path);
-	
+
     QString parts = FolderUtils::getUserPartsPath();
     FolderUtils::slamCopy(fzp, parts + "/contrib/" + info.fileName());
 	QString prefix = parts + "/svg/contrib/";
@@ -1382,4 +1382,3 @@ void BinManager::copyAllToSketch() {
         m_mainWindow->addToSketch(modelParts);
     }
 }
-

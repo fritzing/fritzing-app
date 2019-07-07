@@ -81,7 +81,7 @@ class PartsBinView {
 		bool m_infoViewOnHover;
 
 		QPoint m_dragStartPos;
-        
+
 		QHash<QString, class ItemBase *> m_itemBaseHash;
         static QHash<QString, class ItemBase *> ItemBaseHash;
 };

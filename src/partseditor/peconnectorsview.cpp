@@ -44,12 +44,12 @@ PEConnectorsView::PEConnectorsView(QWidget * parent) : QFrame(parent)
     if (!styleSheet.open(QIODevice::ReadOnly)) {
         DebugDialog::debug("Unable to open :/resources/styles/newpartseditor.qss");
     } else {
-    	this->setStyleSheet(styleSheet.readAll());
+	this->setStyleSheet(styleSheet.readAll());
     }
 */
 	QVBoxLayout *mainLayout = new QVBoxLayout();
     mainLayout->setSizeConstraint( QLayout::SetMinAndMaxSize );
-	
+
     QLabel *explanation = new QLabel(tr("This is where you edit the connector metadata for the part"));
     mainLayout->addWidget(explanation);
 
@@ -77,21 +77,21 @@ PEConnectorsView::PEConnectorsView(QWidget * parent) : QFrame(parent)
     typeLayout->addWidget(label);
 
 	m_radios.clear();
-    QRadioButton * radioButton = new QRadioButton(MaleSymbolString); 
+    QRadioButton * radioButton = new QRadioButton(MaleSymbolString);
 	QObject::connect(radioButton, SIGNAL(clicked()), this, SLOT(allTypeEntry()));
     radioButton->setObjectName("NewPartsEditorRadio");
     radioButton->setProperty("value", Connector::Male);
     typeLayout->addWidget(radioButton);
 	m_radios.append(radioButton);
 
-    radioButton = new QRadioButton(FemaleSymbolString); 
+    radioButton = new QRadioButton(FemaleSymbolString);
 	QObject::connect(radioButton, SIGNAL(clicked()), this, SLOT(allTypeEntry()));
     radioButton->setObjectName("NewPartsEditorRadio");
     radioButton->setProperty("value", Connector::Female);
     typeLayout->addWidget(radioButton);
 	m_radios.append(radioButton);
 
-    radioButton = new QRadioButton(QObject::tr("Pad")); 
+    radioButton = new QRadioButton(QObject::tr("Pad"));
 	QObject::connect(radioButton, SIGNAL(clicked()), this, SLOT(allTypeEntry()));
     radioButton->setObjectName("NewPartsEditorRadio");
     radioButton->setProperty("value", Connector::Pad);
@@ -105,12 +105,12 @@ PEConnectorsView::PEConnectorsView(QWidget * parent) : QFrame(parent)
     QFrame * smdFrame = new QFrame();
     QHBoxLayout * smdLayout = new QHBoxLayout();
 
-    m_tht = new QRadioButton(tr("Through-hole")); 
+    m_tht = new QRadioButton(tr("Through-hole"));
 	QObject::connect(m_tht, SIGNAL(clicked()), this, SLOT(smdEntry()));
     m_tht->setObjectName("NewPartsEditorRadio");
     smdLayout->addWidget(m_tht);
 
-    m_smd = new QRadioButton(tr("SMD")); 
+    m_smd = new QRadioButton(tr("SMD"));
 	QObject::connect(m_smd, SIGNAL(clicked()), this, SLOT(smdEntry()));
     m_smd->setObjectName("NewPartsEditorRadio");
     smdLayout->addWidget(m_smd);
@@ -135,7 +135,7 @@ PEConnectorsView::~PEConnectorsView() {
 
 }
 
-void PEConnectorsView::initConnectors(QList<QDomElement> * connectorList) 
+void PEConnectorsView::initConnectors(QList<QDomElement> * connectorList)
 {
     QWidget * widget = QApplication::focusWidget();
     if (widget) {
@@ -192,7 +192,7 @@ void PEConnectorsView::descriptionEntry() {
 
 void PEConnectorsView::connectorCountEntry() {
     if (!m_mutex.tryLock(1)) return;            // need the mutex because multiple editingFinished() signals can be triggered more-or-less at once
-   
+
     QLineEdit * lineEdit = qobject_cast<QLineEdit *>(sender());
     if (lineEdit != NULL && lineEdit->isModified()) {
         int newCount = lineEdit->text().toInt();

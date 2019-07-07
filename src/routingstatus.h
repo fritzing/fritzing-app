@@ -35,7 +35,7 @@ public:
 	}
 
 	bool operator!=(const RoutingStatus &other) const {
-		return 
+		return
 			(m_netCount != other.m_netCount) ||
 			(m_netRoutedCount != other.m_netRoutedCount) ||
 			(m_connectorsLeftToRoute != other.m_connectorsLeftToRoute) ||

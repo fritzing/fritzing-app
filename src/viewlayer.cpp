@@ -91,7 +91,7 @@ ViewLayer::ViewLayer(ViewLayerID viewLayerID, bool visible, double initialZ)
 	m_viewLayerID = viewLayerID;
 	m_visible = visible;
 	m_action = NULL;
-	m_initialZFromBelow = m_initialZ = initialZ;	
+	m_initialZFromBelow = m_initialZ = initialZ;
     m_nextZ = 0;
 	m_parentLayer = NULL;
 	m_active = true;
@@ -110,7 +110,7 @@ void ViewLayer::initNames() {
 	}
 	if (NonCopperLayers.isEmpty()) {
 		NonCopperLayers << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label
-						<< ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label 
+						<< ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label
 						<< ViewLayer::PartImage;
 	}
 
@@ -182,33 +182,33 @@ void ViewLayer::initNames() {
 
 	if (BreadboardViewLayerList.count() == 0) {
 		IconViewLayerList << ViewLayer::Icon;
-		BreadboardViewLayerList << ViewLayer::BreadboardBreadboard << ViewLayer::Breadboard 
-			<< ViewLayer::BreadboardWire << ViewLayer::BreadboardLabel 
-			<< ViewLayer::BreadboardRatsnest 
+		BreadboardViewLayerList << ViewLayer::BreadboardBreadboard << ViewLayer::Breadboard
+			<< ViewLayer::BreadboardWire << ViewLayer::BreadboardLabel
+			<< ViewLayer::BreadboardRatsnest
 			<< ViewLayer::BreadboardNote << ViewLayer::BreadboardRuler;
 		SchematicViewLayerList << ViewLayer::SchematicFrame << ViewLayer::Schematic
-			<< ViewLayer::SchematicText << ViewLayer::SchematicWire 
-			<< ViewLayer::SchematicTrace << ViewLayer::SchematicLabel 
+			<< ViewLayer::SchematicText << ViewLayer::SchematicWire
+			<< ViewLayer::SchematicTrace << ViewLayer::SchematicLabel
 			<< ViewLayer::SchematicNote <<  ViewLayer::SchematicRuler;
-		PCBViewLayerList << ViewLayer::Board 
-            << ViewLayer::GroundPlane0 
+		PCBViewLayerList << ViewLayer::Board
+            << ViewLayer::GroundPlane0
 			<< ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label
-			<< ViewLayer::Copper0  << ViewLayer::Copper0Trace 
-            << ViewLayer::GroundPlane1 
-			<< ViewLayer::Copper1 << ViewLayer::Copper1Trace 
-			<< ViewLayer::PcbRatsnest 
-			<< ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label 
-			<< ViewLayer::PartImage 
+			<< ViewLayer::Copper0  << ViewLayer::Copper0Trace
+            << ViewLayer::GroundPlane1
+			<< ViewLayer::Copper1 << ViewLayer::Copper1Trace
+			<< ViewLayer::PcbRatsnest
+			<< ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label
+			<< ViewLayer::PartImage
 			<< ViewLayer::PcbNote << ViewLayer::PcbRuler;
-		PCBViewFromBelowLayerList << ViewLayer::Board 
-            << ViewLayer::GroundPlane1 
-			<< ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label 
-			<< ViewLayer::Copper1 << ViewLayer::Copper1Trace 
-            << ViewLayer::GroundPlane0 
-			<< ViewLayer::Copper0 << ViewLayer::Copper0Trace 
-			<< ViewLayer::PcbRatsnest 
+		PCBViewFromBelowLayerList << ViewLayer::Board
+            << ViewLayer::GroundPlane1
+			<< ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label
+			<< ViewLayer::Copper1 << ViewLayer::Copper1Trace
+            << ViewLayer::GroundPlane0
+			<< ViewLayer::Copper0 << ViewLayer::Copper0Trace
+			<< ViewLayer::PcbRatsnest
 			<< ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label
-			<< ViewLayer::PartImage 
+			<< ViewLayer::PartImage
 			<< ViewLayer::PcbNote << ViewLayer::PcbRuler;
 	}
 }
@@ -320,7 +320,7 @@ LayerList ViewLayer::findAlternativeLayers(ViewLayer::ViewLayerID id)
 bool ViewLayer::canConnect(ViewLayer::ViewLayerID v1, ViewLayer::ViewLayerID v2) {
 	if (v1 == v2) return true;
 
- 	LayerList uncs = unconnectables.values(v1);
+	LayerList uncs = unconnectables.values(v1);
 	return (!uncs.contains(v2));
 }
 
@@ -332,7 +332,7 @@ void ViewLayer::setActive(bool a) {
 	m_active = a;
 }
 
-ViewLayer::ViewLayerPlacement ViewLayer::specFromID(ViewLayer::ViewLayerID viewLayerID) 
+ViewLayer::ViewLayerPlacement ViewLayer::specFromID(ViewLayer::ViewLayerID viewLayerID)
 {
 	switch (viewLayerID) {
 		case Copper1:
@@ -347,15 +347,15 @@ ViewLayer::ViewLayerPlacement ViewLayer::specFromID(ViewLayer::ViewLayerID viewL
 bool ViewLayer::isCopperLayer(ViewLayer::ViewLayerID viewLayerID) {
 	if (CopperTopLayers.contains(viewLayerID)) return true;
 	if (CopperBottomLayers.contains(viewLayerID)) return true;
-	
+
 	return false;
 }
 
 
-const LayerList & ViewLayer::copperLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement) 
+const LayerList & ViewLayer::copperLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement)
 {
 	if (viewLayerPlacement == ViewLayer::NewTop) return CopperTopLayers;
-	
+
 	return CopperBottomLayers;
 }
 
@@ -369,7 +369,7 @@ const LayerList & ViewLayer::maskLayers(ViewLayer::ViewLayerPlacement viewLayerP
 		top << ViewLayer::Copper1;
 	}
 	if (viewLayerPlacement == ViewLayer::NewTop) return top;
-	
+
 	return bottom;
 }
 
@@ -383,7 +383,7 @@ const LayerList & ViewLayer::silkLayers(ViewLayer::ViewLayerPlacement viewLayerP
 		top << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label;
 	}
 	if (viewLayerPlacement == ViewLayer::NewTop) return top;
-	
+
 	return bottom;
 }
 
@@ -392,7 +392,7 @@ const LayerList & ViewLayer::outlineLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Board;
 	}
-	
+
 	return layerList;
 }
 
@@ -401,7 +401,7 @@ const LayerList & ViewLayer::drillLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Copper0 << ViewLayer::Copper1;
 	}
-	
+
 	return layerList;
 }
 
@@ -410,7 +410,7 @@ const LayerList & ViewLayer::silkLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen1;
 	}
-	
+
 	return layerList;
 }
 
@@ -419,7 +419,7 @@ const LayerList & ViewLayer::topLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Copper1 << ViewLayer::Copper1Trace << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label << ViewLayer::GroundPlane1;
 	}
-	
+
 	return layerList;
 }
 
@@ -428,7 +428,7 @@ const LayerList & ViewLayer::bottomLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Copper0 << ViewLayer::Copper0Trace << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label << ViewLayer::GroundPlane0;
 	}
-	
+
 	return layerList;
 }
 
@@ -444,7 +444,7 @@ bool ViewLayer::isNonCopperLayer(ViewLayer::ViewLayerID viewLayerID) {
 
 bool ViewLayer::includeChildLayers() {
 	return m_includeChildLayers;
-} 
+}
 
 void ViewLayer::setIncludeChildLayers(bool incl) {
 	m_includeChildLayers = incl;
@@ -564,4 +564,3 @@ double ViewLayer::getZFromBelow(double currentZ, bool fromBelow) {
     }
     return frac + (fromBelow ? m_initialZFromBelow : m_initialZ);
 }
-

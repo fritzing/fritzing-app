@@ -40,20 +40,18 @@ Fritzing2Eagle* Fritzing2Eagle::singleton = NULL;
 Fritzing2Eagle::Fritzing2Eagle(PCBSketchWidget *m_pcbGraphicsView)
 {
 	QList <ItemBase*> partList;
-	
+
 	m_pcbGraphicsView->collectParts(partList);
-	
+
 	singleton = this;
 }
 
 /*
-void Fritzing2Eagle::showOutputInfo(PCBSketchWidget m_pcbGraphicsView) 
+void Fritzing2Eagle::showOutputInfo(PCBSketchWidget m_pcbGraphicsView)
 {
 	if (singleton == NULL) {
 		new Fritzing2Eagle();
 	}
-	
+
 }
 */
-
-

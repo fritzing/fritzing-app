@@ -31,7 +31,7 @@ const int TraceWire::MaxTraceWidthMils = 128;
 
 /////////////////////////////////////////////////////////
 
-TraceWire::TraceWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu  ) 
+TraceWire::TraceWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu  )
 	: ClipableWire(modelPart, viewID,  viewGeometry,  id, itemMenu, true)
 {
 	m_canChainMultiple = true;
@@ -39,11 +39,11 @@ TraceWire::TraceWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const Vi
 }
 
 
-TraceWire::~TraceWire() 	
+TraceWire::~TraceWire()
 {
 }
 
-QComboBox * TraceWire::createWidthComboBox(double m, QWidget * parent) 
+QComboBox * TraceWire::createWidthComboBox(double m, QWidget * parent)
 {
 	QComboBox * comboBox = new FocusOutComboBox(parent);  // new QComboBox(parent);
 	comboBox->setEditable(true);
@@ -75,11 +75,11 @@ QComboBox * TraceWire::createWidthComboBox(double m, QWidget * parent)
 bool TraceWire::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (prop.compare("width", Qt::CaseInsensitive) == 0) {
-        	if (viewID() != ViewLayer::PCBView) {
-            		// only in pcb view for now
-            		hide = true;
-            		return false;       
-        	}
+		if (viewID() != ViewLayer::PCBView) {
+			// only in pcb view for now
+			hide = true;
+			return false;
+		}
 
 		returnProp = tr("width");
 		QComboBox * comboBox = createWidthComboBox(mils(), parent);
@@ -150,7 +150,7 @@ void TraceWire::setColorFromElement(QDomElement & element) {
 			break;
 	}
 
-	Wire::setColorFromElement(element);	
+	Wire::setColorFromElement(element);
 }
 
 bool TraceWire::canSwitchLayers() {
@@ -182,7 +182,7 @@ void TraceWire::setSchematic(bool schematic) {
 	m_viewGeometry.setSchematicTrace(schematic);
 }
 
-QHash<QString, QString> TraceWire::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys) 
+QHash<QString, QString> TraceWire::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys)
 {
     QHash<QString, QString> props = ClipableWire::prepareProps(modelPart, wantDebug, keys);
 

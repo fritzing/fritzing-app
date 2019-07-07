@@ -36,7 +36,7 @@ static const int BUTTON_WIDTH = 150;
 
 /////////////////////////////////////
 
-SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, QColor & standardColor, bool askPrefs, QWidget *parent) : QDialog(parent) 
+SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, QColor & standardColor, bool askPrefs, QWidget *parent) : QDialog(parent)
 {
 	m_prefsCheckBox = NULL;
 	m_message = message;
@@ -146,4 +146,3 @@ void SetColorDialog::setColor(const QColor & color) {
 	m_selectedColorLabel->setPalette(QPalette(color));
 	m_selectedColorLabel->setAutoFillBackground(true);
 }
-

@@ -39,14 +39,14 @@ signals:
 
 protected slots:
 	void editingFinishedSlot();
-	
+
 protected:
-	QTime m_lastEditingFinishedEmit; 					
+	QTime m_lastEditingFinishedEmit;
 
 };
 */
 
-class SymbolPaletteItem : public PaletteItem 
+class SymbolPaletteItem : public PaletteItem
 {
 	Q_OBJECT
 
@@ -99,7 +99,7 @@ protected:
 };
 
 
-class NetLabel : public SymbolPaletteItem 
+class NetLabel : public SymbolPaletteItem
 {
 Q_OBJECT
 

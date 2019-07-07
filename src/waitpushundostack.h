@@ -50,7 +50,7 @@ public:
 protected:
 	QFile m_file;
 #endif
-   
+
  protected:
 	void clearDeadTimers();
 	void clearLiveTimers();

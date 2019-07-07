@@ -61,7 +61,7 @@ public:
 		Always,
 		IfUnconnected
 	};
-	
+
 public:
 	ErcData(const QDomElement & ercElement);
 
@@ -74,7 +74,7 @@ protected:
 	void readCurrent(QDomElement &);
 	void writeVoltage(QDomElement &, QDomDocument &);
 	void writeCurrent(QDomElement &, QDomDocument &);
-	
+
 protected:
 	EType m_eType;
 	Ignore m_ignore;

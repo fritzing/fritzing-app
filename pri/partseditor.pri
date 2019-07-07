@@ -55,7 +55,7 @@ HEADERS += \
     src/partseditor/kicadmoduledialog.h \
     src/partseditor/hashpopulatewidget.h \
     src/partseditor/baseremovebutton.h \
-    
+
 
 SOURCES += \
  #   src/partseditor/editabledatewidget.cpp \

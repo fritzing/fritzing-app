@@ -63,7 +63,7 @@ QStringList KicadSchematic2Svg::listDefs(const QString & filename) {
 	return defs;
 }
 
-QString KicadSchematic2Svg::convert(const QString & filename, const QString & defName) 
+QString KicadSchematic2Svg::convert(const QString & filename, const QString & defName)
 {
 	initLimits();
 
@@ -195,7 +195,7 @@ QString KicadSchematic2Svg::convert(const QString & filename, const QString & de
 
 	contents += "</g>\n";
 
-	QString svg = TextUtils::makeSVGHeader(GraphicsUtils::StandardFritzingDPI, GraphicsUtils::StandardFritzingDPI, m_maxX - m_minX, m_maxY - m_minY) 
+	QString svg = TextUtils::makeSVGHeader(GraphicsUtils::StandardFritzingDPI, GraphicsUtils::StandardFritzingDPI, m_maxX - m_minX, m_maxY - m_minY)
 					+ m_title + m_description + metadata + offsetMin(contents) + "</svg>";
 
 	return svg;
@@ -230,7 +230,7 @@ QString KicadSchematic2Svg::convertField(const QString & line) {
 	return convertField(fs[2], fs[3], fs[4], fs[5], fs[7], fs[8], fs[1]);
 }
 
-QString KicadSchematic2Svg::convertField(const QString & xString, const QString & yString, const QString & fontSizeString, const QString &orientation, 
+QString KicadSchematic2Svg::convertField(const QString & xString, const QString & yString, const QString & fontSizeString, const QString &orientation,
 					 const QString & hjustify, const QString & vjustify, const QString & t)
 {
 	QString text = t;
@@ -286,7 +286,7 @@ QString KicadSchematic2Svg::convertField(const QString & xString, const QString 
 
 	// convert back to 1000 dpi
 	QRectF brf(0, 0,
-			   bri.width() * GraphicsUtils::StandardFritzingDPI / GraphicsUtils::SVGDPI, 
+			   bri.width() * GraphicsUtils::StandardFritzingDPI / GraphicsUtils::SVGDPI,
 			   bri.height() * GraphicsUtils::StandardFritzingDPI / GraphicsUtils::SVGDPI);
 
 	if (anchor == "start") {
@@ -309,15 +309,15 @@ QString KicadSchematic2Svg::convertField(const QString & xString, const QString 
 	checkYLimit(brf.bottom());
 
 	QString s = QString("<text x='%1' y='%2' font-size='%3' font-family='%8' stroke='none' fill='#000000' text-anchor='%4' %5 %6>%7</text>\n")
-					.arg(x)		
-					.arg(y + (fontSize / 3))		
-					.arg(fontSize)		
+					.arg(x)
+					.arg(y + (fontSize / 3))
+					.arg(fontSize)
 					.arg(anchor)
 					.arg(style)
 					.arg(rotation)
 					.arg(TextUtils::escapeAnd(unquote(text)))
                     .arg(OCRAFontName)
-                    ;		
+                    ;
 	if (notName) {
 		s += QString("<line fill='none' stroke='#000000' x1='%1' y1='%2' x2='%3' y2='%4' stroke-width='2' />\n")
 			.arg(brf.left())
@@ -328,7 +328,7 @@ QString KicadSchematic2Svg::convertField(const QString & xString, const QString 
 	return s;
 }
 
-QString KicadSchematic2Svg::convertRect(const QString & line) 
+QString KicadSchematic2Svg::convertRect(const QString & line)
 {
 	QStringList s = splitLine(line);
 	if (s.count() < 8) {
@@ -361,7 +361,7 @@ QString KicadSchematic2Svg::convertRect(const QString & line)
 	return rect;
 }
 
-QString KicadSchematic2Svg::convertPin(const QString & line, int textOffset, bool drawPinName, bool drawPinNumber, int pinIndex) 
+QString KicadSchematic2Svg::convertPin(const QString & line, int textOffset, bool drawPinName, bool drawPinNumber, int pinIndex)
 {
 	QStringList l = splitLine(line);
 	if (l.count() < 12) {
@@ -480,7 +480,7 @@ QString KicadSchematic2Svg::convertPin(const QString & line, int textOffset, boo
 	checkYLimit(y2);
 
 	int thickness = 1;
-	
+
 	QString pin = QString("<line fill='none' stroke='#000000' x1='%1' y1='%2' x2='%3' y2='%4' stroke-width='%5' id='connector%6pin' connectorname='%7' />\n")
 			.arg(x1)
 			.arg(y1)
@@ -506,7 +506,7 @@ QString KicadSchematic2Svg::convertPin(const QString & line, int textOffset, boo
 	return pin;
 }
 
-QString KicadSchematic2Svg::convertCircle(const QString & line) 
+QString KicadSchematic2Svg::convertCircle(const QString & line)
 {
 	QStringList s = splitLine(line);
 	if (s.count() < 8) {
@@ -533,7 +533,7 @@ QString KicadSchematic2Svg::convertCircle(const QString & line)
 	return circle;
 }
 
-QString KicadSchematic2Svg::convertArc(const QString & line) 
+QString KicadSchematic2Svg::convertArc(const QString & line)
 {
 	QStringList s = splitLine(line);
 	if (s.count() == 9) {
@@ -589,7 +589,7 @@ QString KicadSchematic2Svg::convertArc(const QString & line)
 			.arg(y1)
 			.arg(r)
 			.arg(r)
-			.arg(qAbs(diffAngle) >= 180 ? 1 : 0)  
+			.arg(qAbs(diffAngle) >= 180 ? 1 : 0)
 			.arg(diffAngle > 0 ? 0 : 1)
 			.arg(x2 - x1)
 			.arg(y2 - y1);
@@ -599,7 +599,7 @@ QString KicadSchematic2Svg::convertArc(const QString & line)
 	return arc;
 }
 
-QString KicadSchematic2Svg::convertPoly(const QString & line) 
+QString KicadSchematic2Svg::convertPoly(const QString & line)
 {
 	QStringList s = splitLine(line);
 	if (s.count() < 6) {
@@ -677,7 +677,7 @@ QStringList KicadSchematic2Svg::splitLine(const QString & line) {
 	for (int i = strs.count() - 1; i > 0; i--) {
 		QString s = strs[i];
 		if (s[s.length() - 1] != '"') continue;
-		
+
 		if (s[0] == '"' && s.length() > 1) continue;
 
 		// space in a quoted string: combine

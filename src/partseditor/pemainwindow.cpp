@@ -22,11 +22,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
     ///////////////////////////////// first release ///////////////////////////////
-		        							       
+
     clicking set bus mode fucks up anchor points
 
     terminal point area is not highlighting properly
-   
+
     ////////////////////// second release /////////////////////////////////
 
 		icon editor?
@@ -57,7 +57,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 		restore parts bin
 
-        buses 
+        buses
 			secondary representation (list view)
 				display during bus mode instead of connector list
 				allow to delete bus, delete nodemember, add nodemember using right-click for now
@@ -95,7 +95,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 			use a radio buttons to distinguish?
 
         set flippable
-        
+
         connector duplicate op
 
         add layers:  put everything in silkscreen, then give copper1, copper0 checkbox
@@ -107,7 +107,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
         swap connector metadata op
 
         delete op
-    
+
         move connectors with arrow keys, or typed coordinates
 	    drag and drop later
 
@@ -115,11 +115,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
             eagle lbr
             eagle brd
 
-        for schematic view 
+        for schematic view
             offer lines-or-pins, rects, and a selection of standard schematic icons in the parts bin
 
         for breadboard view
-            import 
+            import
             generate ICs, dips, sips, breakouts
 
         for pcb view
@@ -141,7 +141,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
         matrix problem with move and duplicate (i.e. if element inherits a matrix from far above)
             even a problem when inserting hole, pad, or pin
             eliminate internal transforms, then insert inverted matrix, then use untransformed coords based on viewbox
-            
+
 
 ***************************************************/
 
@@ -252,7 +252,7 @@ bool byID(QDomElement & c1, QDomElement & c2)
     if (ix >= 0) c2id = IntegerFinder.cap(0).toInt();
 
     if (c1id == 0 || c2id == 0) GotZeroConnector = true;
-	
+
 	return c1id <= c2id;
 }
 
@@ -336,7 +336,7 @@ PEMainWindow::~PEMainWindow()
     dir.rmdir(makeDirName());
 }
 
-void PEMainWindow::closeEvent(QCloseEvent *event) 
+void PEMainWindow::closeEvent(QCloseEvent *event)
 {
 	qDebug() << "close event";
 
@@ -389,7 +389,7 @@ void PEMainWindow::closeEvent(QCloseEvent *event)
 	if (messages.count() > 0) {
 	    QMessageBox messageBox(this);
 	    messageBox.setWindowTitle(tr("Close without saving?"));
-		
+
 		QString message = tr("This part can not be saved as-is:\n\n");
 		foreach (QString string, messages) {
 			message.append('\t');
@@ -460,7 +460,7 @@ void PEMainWindow::initSketchWidgets(bool whatever)
 	viewThing = m_viewThings.value(m_iconGraphicsView->viewID());
 	viewThing->sketchWidget = m_iconGraphicsView;
 	viewThing->document = &m_iconDocument;
-	
+
     foreach (ViewThing * viewThing, m_viewThings.values()) {
         viewThing->sketchWidget->setAcceptWheelEvents(true);
 		viewThing->sketchWidget->setChainDrag(false);				// no bendpoints
@@ -471,7 +471,7 @@ void PEMainWindow::initSketchWidgets(bool whatever)
 		connect(viewThing->sketchWidget, SIGNAL(itemMovedSignal(ItemBase *)), this, SLOT(itemMovedSlot(ItemBase *)));
 		connect(viewThing->sketchWidget, SIGNAL(resizedSignal(ItemBase *)), this, SLOT(resizedSlot(ItemBase *)));
 		connect(viewThing->sketchWidget, SIGNAL(clickedItemCandidateSignal(QGraphicsItem *, bool &)), this, SLOT(clickedItemCandidateSlot(QGraphicsItem *, bool &)), Qt::DirectConnection);
-    	connect(viewThing->sketchWidget, SIGNAL(itemAddedSignal(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long, SketchWidget *)),
+	connect(viewThing->sketchWidget, SIGNAL(itemAddedSignal(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long, SketchWidget *)),
 							 this, SLOT(itemAddedSlot(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long, SketchWidget *)));
 
 
@@ -702,7 +702,7 @@ QMenu *PEMainWindow::breadboardWireMenu() {
     connect( menu, SIGNAL(aboutToShow()), this, SLOT(updateWireMenu()));
 	return menu;
 }
-    
+
 QMenu *PEMainWindow::breadboardItemMenu() {
     return NULL;
 }
@@ -710,7 +710,7 @@ QMenu *PEMainWindow::breadboardItemMenu() {
 QMenu *PEMainWindow::schematicWireMenu() {
     return breadboardWireMenu();
 }
-    
+
 QMenu *PEMainWindow::schematicItemMenu() {
     return NULL;
 }
@@ -718,12 +718,12 @@ QMenu *PEMainWindow::schematicItemMenu() {
 QMenu *PEMainWindow::pcbWireMenu() {
     return breadboardWireMenu();
 }
-    
+
 QMenu *PEMainWindow::pcbItemMenu() {
     return NULL;
 }
 
-bool PEMainWindow::setInitialItem(PaletteItem * paletteItem) 
+bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 {
     m_pcbGraphicsView->setBoardLayers(2, true);
 	m_pcbGraphicsView->setLayerActive(ViewLayer::Copper1, true);
@@ -825,7 +825,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 
     if (hasLegID && !RubberBandLegWarning) {
         RubberBandLegWarning = true;
-        QMessageBox::warning(NULL, tr("Parts Editor"), 
+        QMessageBox::warning(NULL, tr("Parts Editor"),
                                     tr("This part has bendable legs. ") +
                                     tr("This version of the Parts Editor does not yet support editing bendable legs, and the legs may not be displayed correctly in breadboard view . ") +
                                     tr("If you make changes to breadboard view, or change connector metadata, the legs may no longer work. ") +
@@ -969,15 +969,15 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 void PEMainWindow::initZoom() {
     if (m_peToolView == NULL) return;
     if (m_currentGraphicsView == NULL) return;
-	
+
 	ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
 	if (viewThing->itemBase == NULL) return;
-			
+
     if (!viewThing->everZoomed) {
         viewThing->everZoomed = true;
         m_currentGraphicsView->fitInWindow();
     }
-		
+
 	m_peSvgView->setFilename(viewThing->referenceFile);
 }
 
@@ -1017,7 +1017,7 @@ void PEMainWindow::createViewMenuActions(bool showWelcome) {
 	connect(m_hideOtherViewsAct, SIGNAL(triggered()), this, SLOT(hideOtherViews()));
 
 }
- 
+
 void PEMainWindow::createViewMenu() {
     MainWindow::createViewMenu();
 
@@ -1032,7 +1032,7 @@ void PEMainWindow::createViewMenu() {
             break;
         }
     }
-	
+
     afterNext = false;
     foreach (QAction * action, m_viewMenu->actions()) {
         if (action == m_showPCBAct) {
@@ -1076,7 +1076,7 @@ void PEMainWindow::changeSpecialProperty(const QString & name, const QString & v
 
     QHash<QString, QString> newProperties(oldProperties);
     newProperties.insert(name, value);
-    
+
     ChangePropertiesCommand * cpc = new ChangePropertiesCommand(this, oldProperties, newProperties, NULL);
     cpc->setText(tr("Change %1 to %2").arg(name).arg(value));
     cpc->setSkipFirstRedo();
@@ -1180,7 +1180,7 @@ void PEMainWindow::changeTags(const QStringList & newTags, bool updateDisplay)
 }
 
 void PEMainWindow::propertiesChanged(const QHash<QString, QString> & newProperties)
-{	
+{
 	qDebug() << "properties changed";
 
 	QStringList keys = newProperties.keys();
@@ -1236,7 +1236,7 @@ void PEMainWindow::changeProperties(const QHash<QString, QString> & newPropertie
     }
 }
 
-QHash<QString, QString> PEMainWindow::getOldProperties() 
+QHash<QString, QString> PEMainWindow::getOldProperties()
 {
     QDomElement root = m_fzpDocument.documentElement();
     QDomElement properties = root.firstChildElement("properties");
@@ -1272,7 +1272,7 @@ void PEMainWindow::connectorMetadataChanged(ConnectorMetadata * cmd)
     m_undoStack->waitPush(ccmc, SketchWidget::PropChangeDelay);
 }
 
-QDomElement PEMainWindow::findConnector(const QString & id, int & index) 
+QDomElement PEMainWindow::findConnector(const QString & id, int & index)
 {
     QDomElement root = m_fzpDocument.documentElement();
     QDomElement connectors = root.firstChildElement("connectors");
@@ -1317,7 +1317,7 @@ void PEMainWindow::changeConnectorElement(QDomElement & connector, ConnectorMeta
 
 }
 
-void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase, QDomDocument & svgDocument) 
+void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase, QDomDocument & svgDocument)
 {
     QString errorStr;
     int errorLine;
@@ -1340,7 +1340,7 @@ void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase,
 			if (parent0.attribute("id") == "copper1") ;
 			else if (parent1.attribute("id") == "copper0") ;
 			else {
-    			QMessageBox::warning(NULL, tr("SVG problem"), 
+			QMessageBox::warning(NULL, tr("SVG problem"),
 					tr("This version of the new Parts Editor can not deal with separate copper0 and copper1 layers in '%1'. ").arg(itemBase->filename()) +
 					tr("So editing may produce an invalid PCB view image"));
 			}
@@ -1357,10 +1357,10 @@ void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase,
         return;
 	}
 
-    TextUtils::gornTree(svgDocument);  
+    TextUtils::gornTree(svgDocument);
     FSvgRenderer renderer;
     renderer.loadSvg(svgDocument.toByteArray(), "", false);
-	
+
 	QHash<QString, PEGraphicsItem *> pegiHash;
 
     QList<QDomElement> traverse;
@@ -1404,7 +1404,7 @@ void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase,
             PEGraphicsItem * pegi = makePegi(bounds.size(), bounds.topLeft(), itemBase, element, z++);
 			pegiHash.insert(element.attribute("id"), pegi);
 
-            /* 
+            /*
             QString string;
             QTextStream stream(&string);
             element.save(stream, 0);
@@ -1424,7 +1424,7 @@ void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase,
 			PEGraphicsItem * terminalItem = pegiHash.value(terminalID, NULL);
 			PEGraphicsItem * pegi = pegiHash.value(svgID);
 			if (pegi == NULL) {
-				DebugDialog::debug(QString("missing pegi for svg id %1").arg(svgID)); 
+				DebugDialog::debug(QString("missing pegi for svg id %1").arg(svgID));
 			}
 			else {
 				QPointF terminalPoint = pegi->rect().center();
@@ -1505,12 +1505,12 @@ void PEMainWindow::switchedConnector(int ix, SketchWidget * sketchWidget)
     if (!gotOne) {
         foreach (PEGraphicsItem * pegi, pegiList) {
             pegi->showMarquee(false);
-            pegi->setHighlighted(false);        
+            pegi->setHighlighted(false);
         }
     }
 }
 
-void PEMainWindow::loadImage() 
+void PEMainWindow::loadImage()
 {
     if (m_currentGraphicsView == NULL) return;
 
@@ -1519,7 +1519,7 @@ void PEMainWindow::loadImage()
 	extras.append("");
 	QString imageFiles;
 	if (m_currentGraphicsView->viewID() == ViewLayer::PCBView) {
-		imageFiles = tr("Image & Footprint Files (%1 %2 %3 %4 %5);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;gEDA Footprint Files (%4);;Kicad Module Files (%5)");   // 
+		imageFiles = tr("Image & Footprint Files (%1 %2 %3 %4 %5);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;gEDA Footprint Files (%4);;Kicad Module Files (%5)");   //
 		extras[0] = "*.fp";
 		extras[1] = "*.mod";
 	}
@@ -1530,7 +1530,7 @@ void PEMainWindow::loadImage()
     /*
 	if (m_currentGraphicsView->viewID() == ViewLayer::SchematicView) {
 		extras[0] = "*.lib";
-		imageFiles = tr("Image & Footprint Files (%1 %2 %3 %4);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;Kicad Schematic Files (%4)%5");   // 
+		imageFiles = tr("Image & Footprint Files (%1 %2 %3 %4);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;Kicad Schematic Files (%4)%5");   //
 	}
     */
 
@@ -1548,22 +1548,22 @@ void PEMainWindow::loadImage()
 
 	if (origPath.isEmpty()) {
 		return; // Cancel pressed
-	} 
+	}
 
     QString newReferenceFile;
-    QString svg; 
+    QString svg;
 	if (origPath.endsWith(".svg")) {
         newReferenceFile = getSvgReferenceFile(origPath);
 		QFile origFile(origPath);
 		if (!origFile.open(QFile::ReadOnly)) {
-    		QMessageBox::warning(NULL, tr("Conversion problem"), tr("Unable to load '%1'").arg(origPath));
+		QMessageBox::warning(NULL, tr("Conversion problem"), tr("Unable to load '%1'").arg(origPath));
 			return;
 		}
 
 		svg = origFile.readAll();
 		origFile.close();
 		if (svg.contains("coreldraw", Qt::CaseInsensitive) && svg.contains("cdata", Qt::CaseInsensitive)) {
-    		QMessageBox::warning(NULL, tr("Conversion problem"), 
+		QMessageBox::warning(NULL, tr("Conversion problem"),
 				tr("The SVG file '%1' appears to have been exported from CorelDRAW without the 'presentation attributes' setting. ").arg(origPath) +
 				tr("Please re-export the SVG file using that setting, and try loading again.")
 			);
@@ -1582,20 +1582,20 @@ void PEMainWindow::loadImage()
             bool reallyFixed = false;
             TextUtils::fixFonts(svg, destFont, reallyFixed);
 			if (reallyFixed) {
-    			QMessageBox::information(NULL, tr("Fonts"), 
+			QMessageBox::information(NULL, tr("Fonts"),
 					tr("Fritzing currently only supports OCRA and Droid fonts--these have been substituted in for the fonts in '%1'").arg(origPath));
 			}
-		}	
+		}
     }
     else {
         newReferenceFile = origPath;
         if (origPath.endsWith("png") || origPath.endsWith("jpg") || origPath.endsWith("jpeg")) {
                 QString message = tr("You may use a PNG or JPG image to construct your part, but it is better to use an SVG. ") +
-                                tr("PNG and JPG images retain their nature as bitmaps and do not look good when scaled--") +                        
-                                tr("so for Fritzing parts it is best to use PNG and JPG only as placeholders.")                       
+                                tr("PNG and JPG images retain their nature as bitmaps and do not look good when scaled--") +
+                                tr("so for Fritzing parts it is best to use PNG and JPG only as placeholders.")
                  ;
-                
-    		    QMessageBox::information(NULL, tr("Use of PNG and JPG discouraged"), message);
+
+		    QMessageBox::information(NULL, tr("Use of PNG and JPG discouraged"), message);
 
         }
 
@@ -1603,7 +1603,7 @@ void PEMainWindow::loadImage()
 			svg = createSvgFromImage(origPath);
 		}
 		catch (const QString & msg) {
-    		QMessageBox::warning(NULL, tr("Conversion problem"), tr("Unable to load image file '%1': \n\n%2").arg(origPath).arg(msg));
+		QMessageBox::warning(NULL, tr("Conversion problem"), tr("Unable to load image file '%1': \n\n%2").arg(origPath).arg(msg));
 			return;
 		}
 	}
@@ -1619,7 +1619,7 @@ void PEMainWindow::loadImage()
     QDomDocument doc;
 	bool result = doc.setContent(svg.toUtf8(), &errorStr, &errorLine, &errorColumn);
     if (!result) {
-    	QMessageBox::warning(NULL, tr("SVG problem"), tr("Unable to parse '%1': %2 line:%3 column:%4").arg(origPath).arg(errorStr).arg(errorLine).arg(errorColumn));
+	QMessageBox::warning(NULL, tr("SVG problem"), tr("Unable to parse '%1': %2 line:%3 column:%4").arg(origPath).arg(errorStr).arg(errorLine).arg(errorColumn));
         return;
     }
 
@@ -1633,10 +1633,10 @@ void PEMainWindow::loadImage()
             QString message = tr("There are no copper layers defined in: %1. ").arg(origPath) +
                             tr("See <a href=\"http://fritzing.org/learning/tutorials/creating-custom-parts/providing-part-graphics/\">this explanation</a>.") +
                             tr("<br/><br/>This will not be a problem in the next release of the Parts Editor, ") +
-                            tr("but for now please modify the file according to the instructions in the link.")                         
+                            tr("but for now please modify the file according to the instructions in the link.")
                 ;
-                
-    		QMessageBox::warning(NULL, tr("SVG problem"), message);
+
+		QMessageBox::warning(NULL, tr("SVG problem"), message);
             return;
         }
     }
@@ -1646,7 +1646,7 @@ void PEMainWindow::loadImage()
     QString newPath = m_userPartsFolderSvgPath + makeSvgPath2(m_currentGraphicsView);
     bool success = writeXml(newPath, removeGorn(svg), true);
     if (!success) {
-    	QMessageBox::warning(NULL, tr("Copy problem"), tr("Unable to make a local copy of: '%1'").arg(origPath));
+	QMessageBox::warning(NULL, tr("Copy problem"), tr("Unable to make a local copy of: '%1'").arg(origPath));
 		return;
     }
 
@@ -1776,13 +1776,13 @@ QString PEMainWindow::saveFzp() {
     QString dirName = makeDirName();
     dir.mkdir(dirName);
     dir.cd(dirName);
-    QString fzpPath = dir.absoluteFilePath(QString("%1_%2_%3.fzp").arg(m_prefix).arg(m_guid).arg(m_fileIndex++));   
+    QString fzpPath = dir.absoluteFilePath(QString("%1_%2_%3.fzp").arg(m_prefix).arg(m_guid).arg(m_fileIndex++));
     DebugDialog::debug("temp path " + fzpPath);
     writeXml(fzpPath, m_fzpDocument.toString(), true);
     return fzpPath;
 }
 
-void PEMainWindow::reload(bool firstTime) 
+void PEMainWindow::reload(bool firstTime)
 {
 	Q_UNUSED(firstTime);
 
@@ -1817,7 +1817,7 @@ void PEMainWindow::reload(bool firstTime)
     itemBases <<  m_breadboardGraphicsView->addItem(modelPart, m_breadboardGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
     itemBases <<  m_schematicGraphicsView->addItem(modelPart, m_schematicGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
     itemBases <<  m_pcbGraphicsView->addItem(modelPart, m_pcbGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
-  
+
 	foreach (ItemBase * itemBase, itemBases) {
 		ViewThing * viewThing = m_viewThings.value(itemBase->viewID());
 		viewThing->itemBase = itemBase;
@@ -1869,7 +1869,7 @@ void PEMainWindow::reload(bool firstTime)
 
 }
 
-void PEMainWindow::busModeChanged(bool state) {  
+void PEMainWindow::busModeChanged(bool state) {
 	if (m_currentGraphicsView == NULL) return;
 
 	if (!state) {
@@ -1913,7 +1913,7 @@ void PEMainWindow::busModeChanged(bool state) {
 			    }
 		    }
 		    connector = connector.nextSiblingElement("connector");
-	    }	
+	    }
 
 	    if (connectorIDs.count() > 0) {
 		    viewThing->itemBase->showConnectors(connectorIDs);
@@ -1924,12 +1924,12 @@ void PEMainWindow::busModeChanged(bool state) {
 	m_peToolView->enableConnectorChanges(false, false, m_connectorList.count() > 0, false);
 }
 
-void PEMainWindow::pickModeChanged(bool state) {  
+void PEMainWindow::pickModeChanged(bool state) {
 	if (m_currentGraphicsView == NULL) return;
 
 	// never actually get state == false;
 	m_inPickMode = state;
-	if (m_inPickMode) {		
+	if (m_inPickMode) {
 		QApplication::setOverrideCursor(Qt::PointingHandCursor);
 		foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 			PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
@@ -2033,7 +2033,7 @@ void PEMainWindow::relocateConnector(PEGraphicsItem * pegi)
 }
 
 void PEMainWindow::relocateConnectorSvg(SketchWidget * sketchWidget, const QString & svgID, const QString & terminalID,
-                const QString & oldGorn, const QString & oldGornTerminal, const QString & newGorn, const QString & newGornTerminal, 
+                const QString & oldGorn, const QString & oldGornTerminal, const QString & newGorn, const QString & newGornTerminal,
                 int changeDirection)
 {
     ViewLayer::ViewID viewID = sketchWidget->viewID();
@@ -2109,7 +2109,7 @@ void PEMainWindow::relocateConnectorSvg(SketchWidget * sketchWidget, const QStri
         }
         else if (element.attribute("gorn").compare(oldGorn) == 0) {
 			pegi->showTerminalPoint(false);
-            pegi->showMarquee(false);         
+            pegi->showMarquee(false);
         }
     }
 
@@ -2157,7 +2157,7 @@ bool PEMainWindow::saveAs(bool overWrite)
         foreach (QWidget *widget, QApplication::topLevelWidgets()) {
             MainWindow *mainWindow = qobject_cast<MainWindow *>(widget);
 		    if (mainWindow == NULL) continue;
-			    
+
 		    if (qobject_cast<PEMainWindow *>(mainWindow) != NULL) continue;
 
 			allWindows.append(mainWindow);
@@ -2216,7 +2216,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 
 		QMultiHash<ViewLayer::ViewLayerID, QString> extraSvg;
         QDomDocument writeDoc = viewThing->document->cloneNode(true).toDocument();
-        QDomElement svgRoot = writeDoc.documentElement();    
+        QDomElement svgRoot = writeDoc.documentElement();
         double svgWidth, svgHeight, vbWidth, vbHeight;
         bool svgOK = TextUtils::getSvgSizes(writeDoc, svgWidth, svgHeight, vbWidth, vbHeight);
         if (svgOK) {
@@ -2267,14 +2267,14 @@ bool PEMainWindow::saveAs(bool overWrite)
 
         foreach (ViewLayer::ViewLayerID viewLayerID, extraSvg.uniqueKeys()) {
             QStringList svgList = extraSvg.values(viewLayerID);
-            QDomElement svgViewElement = (viewLayerID == ViewLayer::Copper0 && !copperChild.isNull()) 
-                        ? copperChild 
+            QDomElement svgViewElement = (viewLayerID == ViewLayer::Copper0 && !copperChild.isNull())
+                        ? copperChild
                         : TextUtils::findElementWithAttribute(svgRoot, "id", ViewLayer::viewLayerXmlNameFromID(viewLayerID));
             if (svgViewElement.isNull()) {
                 svgViewElement = svgRoot;
             }
 
-            foreach (QString svg, svgList) { 
+            foreach (QString svg, svgList) {
                 QDomDocument doc;
                 doc.setContent(svg, true);
                 QDomElement root = doc.documentElement();
@@ -2288,10 +2288,10 @@ bool PEMainWindow::saveAs(bool overWrite)
         QString svg = writeDoc.toString();
         insertDesc(viewThing->referenceFile, svg);
 
-        QString svgPath = makeSvgPath2(viewThing->sketchWidget);  
+        QString svgPath = makeSvgPath2(viewThing->sketchWidget);
 		setImageAttribute(layers, svgPath);
 
-        QString actualPath = m_userPartsFolderSvgPath + svgPath; 
+        QString actualPath = m_userPartsFolderSvgPath + svgPath;
 	peAlienFiles << actualPath;
         // DebugDialog::debug(QString("peAlienFiles %1").arg(peAlienFiles));
         bool result = writeXml(actualPath, removeGorn(svg), false);
@@ -2302,7 +2302,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 
     QDir dir(m_userPartsFolderPath);
 	QString suffix = QString("%1_%2_%3").arg(m_prefix).arg(m_guid).arg(m_fileIndex++);
-    QString fzpPath = dir.absoluteFilePath(QString("%1.fzp").arg(suffix));  
+    QString fzpPath = dir.absoluteFilePath(QString("%1.fzp").arg(suffix));
 
     peAlienFiles << fzpPath;
     if (overWrite) {
@@ -2427,7 +2427,7 @@ void PEMainWindow::terminalPointChanged(const QString & coord, double value)
     else {
         p.setY(qMax(0.0, qMin(value, pegi->rect().height())));
     }
-    
+
     terminalPointChangedAux(pegi, pegi->terminalPoint(), p);
 }
 
@@ -2461,7 +2461,7 @@ void PEMainWindow::getSpinAmount(double & amount) {
 
 void PEMainWindow::moveTerminalPoint(SketchWidget * sketchWidget, const QString & connectorID, QSizeF size, QPointF p, int changeDirection)
 {
-    // TODO: assumes these IDs are unique--need to check if they are not 
+    // TODO: assumes these IDs are unique--need to check if they are not
 
     QPointF center(size.width() / 2, size.height() / 2);
     bool centered = qAbs(center.x() - p.x()) < .05 && qAbs(center.y() - p.y()) < .05;
@@ -2485,7 +2485,7 @@ void PEMainWindow::moveTerminalPoint(SketchWidget * sketchWidget, const QString 
     foreach (PEGraphicsItem * pegi, pegiList) {
         QDomElement pegiElement = pegi->element();
         if (pegiElement.attribute("id").compare(svgID) == 0) {
-            connectorPegi = pegi;        
+            connectorPegi = pegi;
         }
     }
     if (connectorPegi == NULL) return;
@@ -2599,7 +2599,7 @@ void PEMainWindow::showInOS() {
     showInOS(this, viewThing->itemBase->filename());
 }
 
-PEGraphicsItem * PEMainWindow::makePegi(QSizeF size, QPointF topLeft, ItemBase * itemBase, QDomElement & element, double z) 
+PEGraphicsItem * PEMainWindow::makePegi(QSizeF size, QPointF topLeft, ItemBase * itemBase, QDomElement & element, double z)
 {
     PEGraphicsItem * pegiItem = new PEGraphicsItem(0, 0, size.width(), size.height(), itemBase);
 	pegiItem->showTerminalPoint(false);
@@ -2630,9 +2630,9 @@ QRectF PEMainWindow::getPixelBounds(FSvgRenderer & renderer, QDomElement & eleme
         element.removeAttribute("oldid");
     }
     QRectF bounds = matrix.mapRect(r);
-	bounds.setRect(bounds.x() * defaultSizeF.width() / viewBox.width(), 
-						bounds.y() * defaultSizeF.height() / viewBox.height(), 
-						bounds.width() * defaultSizeF.width() / viewBox.width(), 
+	bounds.setRect(bounds.x() * defaultSizeF.width() / viewBox.width(),
+						bounds.y() * defaultSizeF.height() / viewBox.height(),
+						bounds.width() * defaultSizeF.width() / viewBox.width(),
 						bounds.height() * defaultSizeF.height() / viewBox.height());
     return bounds;
 }
@@ -2717,7 +2717,7 @@ void PEMainWindow::removedConnectorsAux(QList<QDomElement> & connectors)
     m_undoStack->waitPush(cfc, SketchWidget::PropChangeDelay);
 }
 
-void PEMainWindow::restoreFzp(const QString & fzpPath) 
+void PEMainWindow::restoreFzp(const QString & fzpPath)
 {
     if (!loadFzp(fzpPath)) return;
 
@@ -2760,7 +2760,7 @@ void PEMainWindow::killPegi() {
             PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
             if (pegi) delete pegi;
         }
-    }   
+    }
 }
 
 bool PEMainWindow::loadFzp(const QString & path) {
@@ -2800,10 +2800,10 @@ void PEMainWindow::connectorCountChanged(int newCount) {
         return;
     }
 
-    // add connectors 
+    // add connectors
     int id = 0;
     foreach (QDomElement connector, connectorList) {
-    	int ix = IntegerFinder.indexIn(connector.attribute("id"));
+	int ix = IntegerFinder.indexIn(connector.attribute("id"));
         if (ix >= 0) {
             int candidate = IntegerFinder.cap(0).toInt();
             if (candidate > id) id = candidate;
@@ -2813,7 +2813,7 @@ void PEMainWindow::connectorCountChanged(int newCount) {
         if (ix >= 0) {
             int candidate = IntegerFinder.cap(0).toInt();
             if (candidate > id) id = candidate;
-        }    
+        }
     }
 
     QString originalPath = saveFzp();
@@ -2831,7 +2831,7 @@ void PEMainWindow::connectorCountChanged(int newCount) {
     }
     for (int i = connectorList.count(); i < newCount; i++) {
         id++;
-        QDomElement element = connectorModel.cloneNode(true).toElement();         
+        QDomElement element = connectorModel.cloneNode(true).toElement();
         connectors.appendChild(element);
         QString newName = QString("pin %1").arg(id);
         element.setAttribute("name", newName);
@@ -2916,7 +2916,7 @@ QString PEMainWindow::getSvgReferenceFile(const QString & filename) {
 			        }
                 }
 			    break;
-			
+
 		    default:
 			    break;
 		}
@@ -2925,7 +2925,7 @@ QString PEMainWindow::getSvgReferenceFile(const QString & filename) {
     return referenceFile;
 }
 
-QString PEMainWindow::makeDesc(const QString & referenceFile) 
+QString PEMainWindow::makeDesc(const QString & referenceFile)
 {
     return QString("\n<desc><%2>%1</%2></desc>\n").arg(referenceFile).arg(ReferenceFileString);
 }
@@ -3034,7 +3034,7 @@ void PEMainWindow::deleteBusConnection() {
 		QMessageBox::critical(NULL, tr("Parts Editor"), tr("Internal connections are very messed up."));
 		return;
 	}
-	
+
 	QUndoCommand * parentCommand = new QUndoCommand();
 	QStringList names;
 	names << ends.at(0)->connectorSharedName() << ends.at(1)->connectorSharedName() ;
@@ -3085,7 +3085,7 @@ void PEMainWindow::wireChangedSlot(Wire* wire, const QLineF &, const QLineF &, Q
 
 	QString busID = fromBusID.isEmpty() ? toBusID : fromBusID;
 	if (busID.isEmpty()) {
-		int theMax = std::numeric_limits<int>::max(); 
+		int theMax = std::numeric_limits<int>::max();
 		for (int ix = 1; ix < theMax; ix++) {
 			QString candidate = QString("internal%1").arg(ix);
 			QDomElement busElement = findBus(buses, candidate);
@@ -3205,7 +3205,7 @@ void PEMainWindow::replaceProperty(const QString & key, const QString & value, Q
 
         prop = prop.nextSiblingElement("property");
     }
-    
+
 	prop = m_fzpDocument.createElement("property");
     properties.appendChild(prop);
     prop.setAttribute("name", key);
@@ -3350,7 +3350,7 @@ QList<PEGraphicsItem *> PEMainWindow::getPegiList(SketchWidget * sketchWidget) {
     foreach (QGraphicsItem * item, sketchWidget->scene()->items()) {
         PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
         if (pegi == NULL) continue;
-		
+
 		pegiList.append(pegi);
         /*
         if (pegi->showingTerminalPoint() || pegi->showingMarquee() || !pegi->element().attribute("id").isEmpty()) {
@@ -3383,7 +3383,7 @@ void PEMainWindow::deleteBuses() {
 	}
 }
 
-void PEMainWindow::connectorsTypeChanged(Connector::ConnectorType ct) 
+void PEMainWindow::connectorsTypeChanged(Connector::ConnectorType ct)
 {
 	QUndoCommand * parentCommand = NULL;
 
@@ -3410,7 +3410,7 @@ void PEMainWindow::connectorsTypeChanged(Connector::ConnectorType ct)
 	}
 }
 
-void PEMainWindow::fillInMetadata(const QDomElement & connector, ConnectorMetadata & cmd) 
+void PEMainWindow::fillInMetadata(const QDomElement & connector, ConnectorMetadata & cmd)
 {
     cmd.connectorID = connector.attribute("id");
     cmd.connectorType = Connector::connectorTypeFromName(connector.attribute("type"));
@@ -3702,7 +3702,7 @@ void PEMainWindow::hideOtherViews() {
 	while (!connector.isNull()) {
 		QDomElement views = connector.firstChildElement("views");
 		QDomElement afterView = views.firstChildElement(afterViewName);
-		
+
 		foreach (QString name, beforeViewNames) {
 			QDomElement toRemove = views.firstChildElement(name);
 			if (!toRemove.isNull()) {
@@ -3727,7 +3727,7 @@ void PEMainWindow::hideOtherViews() {
 		toReplace.setTagName(name);
 		views.appendChild(toReplace);
 	}
-	
+
     QString newPath = saveFzp();
 	ChangeFzpCommand * cfc = new ChangeFzpCommand(this, originalPath, newPath, NULL);
 	cfc->setText(tr("Make only %1 view visible").arg(m_currentGraphicsView->viewName()));
@@ -3737,7 +3737,7 @@ void PEMainWindow::hideOtherViews() {
 QString PEMainWindow::makeNewVariant(const QString & family)
 {
 	QStringList variants = m_referenceModel->propValues(family, "variant", true);
-	int theMax = std::numeric_limits<int>::max(); 
+	int theMax = std::numeric_limits<int>::max();
 	QString candidate;
 	for (int i = 1; i < theMax; i++) {
 		candidate = QString("variant %1").arg(i);
@@ -3765,7 +3765,7 @@ void PEMainWindow::connectorWarning() {
 	QDomElement connectors = fzpRoot.firstChildElement("connectors");
 	foreach (ViewLayer::ViewID viewID, m_viewThings.keys()) {
 		if (viewID == ViewLayer::IconView) continue;
-	
+
 		QDomDocument * svgDoc = m_viewThings.value(viewID)->document;
 		QDomElement svgRoot = svgDoc->documentElement();
 		QDomElement connector = connectors.firstChildElement("connector");
@@ -3792,7 +3792,7 @@ void PEMainWindow::connectorWarning() {
 		foreach (ViewLayer::ViewID viewID, unassigned.keys()) {
 			if (unassigned.value(viewID) > 0) viewCount++;
 		}
-		QMessageBox::warning(NULL, tr("Parts Editor"), 
+		QMessageBox::warning(NULL, tr("Parts Editor"),
 			tr("This part has %n unassigned connectors ", "", unassignedTotal) +
 			tr("across %n views. ", "", viewCount) +
 			tr("Until all connectors are assigned to SVG elements, the part will not work correctly. ") +
@@ -3814,7 +3814,7 @@ void PEMainWindow::showing(SketchWidget * sketchWidget) {
 				pegi->setOffset(pegi->offset() + offset);
 			}
 		}
-	}	
+	}
 }
 
 bool PEMainWindow::anyMarquee() {
@@ -3836,7 +3836,7 @@ bool PEMainWindow::anyVisible() {
     foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
         PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
         if (pegi == NULL) continue;
-		
+
 		return pegi->isVisible();
     }
 
@@ -3886,7 +3886,7 @@ void PEMainWindow::itemAddedSlot(ModelPart *, ItemBase * itemBase, ViewLayer::Vi
 void PEMainWindow::itemMovedSlot(ItemBase * itemBase) {
     if (itemBase == NULL) return;
     if (itemBase->viewID() != m_currentGraphicsView->viewID()) return;
-  
+
     foreach (PEGraphicsItem * pegi, getPegiList(m_currentGraphicsView)) {
         if (pegi->itemBase() == itemBase) {
             pegi->setPos(itemBase->pos() + pegi->offset());
@@ -3898,7 +3898,7 @@ void PEMainWindow::itemMovedSlot(ItemBase * itemBase) {
 void PEMainWindow::resizedSlot(ItemBase * itemBase) {
     if (itemBase == NULL) return;
     if (itemBase->viewID() != m_currentGraphicsView->viewID()) return;
-  
+
     foreach (PEGraphicsItem * pegi, getPegiList(m_currentGraphicsView)) {
         if (pegi->itemBase() == itemBase) {
             pegi->setPos(itemBase->pos() + pegi->offset());
@@ -3925,7 +3925,7 @@ void PEMainWindow::initWelcomeView() {
 }
 
 void PEMainWindow::setInitialView() {
-    	// do this the first time, since the current_changed signal wasn't sent
+	// do this the first time, since the current_changed signal wasn't sent
 	int tab = 0;
 	tabWidget_currentChanged(tab+1);
 	tabWidget_currentChanged(tab);
@@ -3969,4 +3969,3 @@ void PEMainWindow::updateEditMenu() {
     MainWindow::updateEditMenu();
     m_convertToTenthAct->setEnabled(m_currentGraphicsView != NULL && m_currentGraphicsView->viewID() == ViewLayer::SchematicView);
 }
-

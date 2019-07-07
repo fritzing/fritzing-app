@@ -23,7 +23,7 @@
         <rect id="connector${pin}terminal" x="${pinx}" y="${height - 2}" fill="#8C8C8C" width="2.3" height="2.0"/>
         <rect id="connector${pin}pin" x="${pinx}" y="${height - 4.25}" fill="#8C8C8C" width="2.3" height="4.25"/>
   #end for
-        
+
 
 </g>
 </svg>

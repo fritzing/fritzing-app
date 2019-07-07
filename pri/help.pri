@@ -15,7 +15,7 @@
 HEADERS += src/help/aboutbox.h \
     src/help/firsttimehelpdialog.h \
     src/help/tipsandtricks.h
-    
+
 SOURCES += src/help/aboutbox.cpp \
     src/help/firsttimehelpdialog.cpp \
     src/help/tipsandtricks.cpp

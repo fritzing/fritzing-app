@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 #include "../utils/misc.h"
 
-HashLineEdit::HashLineEdit(const QString &text, bool defaultValue, QWidget *parent) : QLineEdit(text, parent) 
+HashLineEdit::HashLineEdit(const QString &text, bool defaultValue, QWidget *parent) : QLineEdit(text, parent)
 {
     connect(this, SIGNAL(editingFinished()), parent, SLOT(lineEditChanged()));
 	m_firstText = text;
@@ -113,7 +113,7 @@ HashPopulateWidget::HashPopulateWidget(const QString & title, const QHash<QStrin
 	addRow(layout);
 
 
-	this->setLayout(layout);  
+	this->setLayout(layout);
 }
 
 HashRemoveButton *HashPopulateWidget::createRemoveButton(HashLineEdit* label, HashLineEdit* value) {
@@ -205,7 +205,7 @@ void HashPopulateWidget::removeRow(HashRemoveButton* button) {
 	QList<QWidget*> widgs;
 	widgs << button->label() << button->value() << button;
 	foreach(QWidget* w, widgs) {
-		lo->removeWidget(w);   
+		lo->removeWidget(w);
 		//w->hide();
         //delete w;
 	}

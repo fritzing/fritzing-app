@@ -89,9 +89,9 @@ QString schematicPinNumber(qreal x, qreal y, qreal pinSmallTextHeight, const QSt
 					.arg("middle")
 					.arg(id)
 					.arg(0)  // SW(width)
-					.arg(SchematicRectConstants::PinTextColor) 
+					.arg(SchematicRectConstants::PinTextColor)
                     .arg(SchematicRectConstants::FontFamily)
-                    ; 
+                    ;
 
     if (rotate) {
         text += "</g></g>\n";
@@ -142,8 +142,8 @@ QString SchematicRectConstants::simpleGetConnectorName(const QDomElement & eleme
 }
 
 QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QList<QDomElement> & grounds, QList<QDomElement> & lefts,
-	            QList<QDomElement> & rights, QList<QDomElement> & vias, QStringList & busNames, 
-                QString & boardName, bool usingParam, bool genericSMD, QString (*getConnectorName)(const QDomElement &)) 
+	            QList<QDomElement> & rights, QList<QDomElement> & vias, QStringList & busNames,
+                QString & boardName, bool usingParam, bool genericSMD, QString (*getConnectorName)(const QDomElement &))
 {
 
 	int powersBuses = 0, groundsBuses = 0, leftsBuses = 0, rightsBuses = 0;
@@ -263,7 +263,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	topWidth = 1000 * topWidth / 72.0;
 	bottomWidth = 1000 * bottomWidth / 72.0;
 
-	qreal textWidth = (leftWidth + rightWidth + titleWidth + (rightWidth > 0 ? pinTextIndent : 0) + (leftWidth > 0 ? pinTextIndent : 0)); 
+	qreal textWidth = (leftWidth + rightWidth + titleWidth + (rightWidth > 0 ? pinTextIndent : 0) + (leftWidth > 0 ? pinTextIndent : 0));
     qreal width = (qCeil(textWidth / unitLength) * unitLength);
     if (lefts.count() > 0) width += pinLength;
     if (rights.count() > 0) width += pinLength;
@@ -314,7 +314,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 						.arg(rectTop)
 						.arg(rectLeft)
 						.arg(SW(rectThickness));
-	
+
 	qreal y = qFloor((height / 2) / unitLength) * unitLength;
     y -= bigFontSize * qCeil(titles.count() / 2.0);
     if (y < startTitle) y = startTitle;
@@ -339,7 +339,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	foreach (QDomElement contact, vias) {
 		QString signal = getConnectorName(contact);
 		svg += QString("<rect viax='' viay='' fill='none' width='0' height='0' id='connector%1pin' connectorName='%2' stroke-width='0' stroke='none'/>\n")
-					.arg(contact.attribute("connectorIndex")).arg(signal);	
+					.arg(contact.attribute("connectorIndex")).arg(signal);
 		svg += QString("<rect viax='' viay='' fill='none' width='0' height='0' id='connector%1terminal' stroke-width='0' stroke='none'/>\n")
 					.arg(contact.attribute("connectorIndex"));
 	}
@@ -355,7 +355,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 			viaX = halfPinThickness;
 
 			QString mid = QString("<rect x='0' y='%1' fill='none' width='%3' height='%4' id='connector%2pin' connectorName='%5' stroke-width='0' />\n")
-						.arg(ly - halfPinThickness).arg(contact.attribute("connectorIndex")).arg(pinLength).arg(pinThickness).arg(signal);	
+						.arg(ly - halfPinThickness).arg(contact.attribute("connectorIndex")).arg(pinLength).arg(pinThickness).arg(signal);
 			mid += QString("<rect x='0' y='%1' fill='none' width='0' height='%3' id='connector%2terminal' stroke-width='0' />\n")
 						.arg(ly - halfPinThickness).arg(contact.attribute("connectorIndex")).arg(pinThickness);
 			svg += mid;
@@ -368,7 +368,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 
 		if (!bus) ly += unitLength;
 	}
-	
+
 	ly = startTitle;
 	foreach (QDomElement contact, rights) {
 		bool bus = contact.attribute("bus", 0).compare("1") == 0;
@@ -391,7 +391,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 						.arg(contact.attribute("connectorIndex"))
 						.arg(pinLength)
 						.arg(pinThickness)
-						.arg(signal);	
+						.arg(signal);
 			mid += QString("<rect x='%1' y='%2' fill='none' width='0' height='%4' id='connector%3terminal' stroke-width='0' />\n")
 						.arg(width)
 						.arg(ly - halfPinThickness)
@@ -423,7 +423,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 			viaX = lx;
 
 			QString mid = QString("<rect x='%1' y='%2' fill='none' width='%4' height='%5' id='connector%3pin' connectorname='%6' stroke-width='0' />\n")
-						.arg(lx - halfPinThickness).arg(0).arg(contact.attribute("connectorIndex")).arg(pinThickness).arg(pinLength).arg(signal);	
+						.arg(lx - halfPinThickness).arg(0).arg(contact.attribute("connectorIndex")).arg(pinThickness).arg(pinLength).arg(signal);
 			mid += QString("<rect x='%1' y='%2' fill='none' width='%4' height='0' id='connector%3terminal' stroke-width='0' />\n")
 						.arg(lx - halfPinThickness).arg(0).arg(contact.attribute("connectorIndex")).arg(pinThickness);
 			svg += mid;
@@ -452,7 +452,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 			viaX = lx;
 
 			QString mid = QString("<rect x='%1' y='%2' fill='none' width='%4' height='%5' id='connector%3pin' connectorname='%6' stroke-width='0' />\n")
-						.arg(lx - halfPinThickness).arg(height - pinLength).arg(contact.attribute("connectorIndex")).arg(pinThickness).arg(pinLength).arg(signal);	
+						.arg(lx - halfPinThickness).arg(height - pinLength).arg(contact.attribute("connectorIndex")).arg(pinThickness).arg(pinLength).arg(signal);
 			mid += QString("<rect x='%1' y='%2' fill='none' width='%4' height='0' id='connector%3terminal' stroke-width='0' />\n")
 						.arg(lx - halfPinThickness).arg(height).arg(contact.attribute("connectorIndex")).arg(pinThickness);
 			svg += mid;
@@ -488,4 +488,3 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	return svg;
 
 }
-

@@ -102,4 +102,4 @@ protected:
     ViewInfoThing m_viewInfoThings[3];
 };
 
-#endif 
+#endif

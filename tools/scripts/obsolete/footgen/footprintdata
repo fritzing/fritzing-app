@@ -248,7 +248,7 @@ part "SFP-base"    # incomplete, needs mounting holes and more
         ep = 3 mm
 	rect = 6 mm
 part "SFP-base"    # incomplete, needs mounting holes and more
-     	rect = 0
+	rect = 0
 	ep = 0
 	skew = 0
 # end SOIC

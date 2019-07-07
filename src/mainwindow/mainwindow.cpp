@@ -93,7 +93,7 @@ FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
     setTabBar(tabBar);
 }
 
-//int FTabWidget::addTab(QWidget * page, const QIcon & icon, const QIcon & hoverIcon, const QIcon & inactiveIcon, const QString & label) 
+//int FTabWidget::addTab(QWidget * page, const QIcon & icon, const QIcon & hoverIcon, const QIcon & inactiveIcon, const QString & label)
 //{
  //   // assumes tabs are not deleted or reordered
 //    m_inactiveIcons << inactiveIcon;
@@ -191,7 +191,7 @@ void FTabBar::paintEvent(QPaintEvent * event) {
 }
 
 /*
-void FTabBar::drawTab(QStylePainter & p, QStyleOptionTabV3 & tabV3, int index) 
+void FTabBar::drawTab(QStylePainter & p, QStyleOptionTabV3 & tabV3, int index)
 {
     //tabV3.iconSize = m_pixmaps.at(index).size();
     p.drawControl(QStyle::CE_TabBarTabShape, tabV3);
@@ -239,7 +239,7 @@ bool byConnectorCount(MissingSvgInfo & m1, MissingSvgInfo & m2)
 
 // SwapTimer explained: http://code.google.com/p/fritzing/issues/detail?id=1431
 
-SwapTimer::SwapTimer() : QTimer() 
+SwapTimer::SwapTimer() : QTimer()
 {
 }
 
@@ -402,7 +402,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	connect(this, SIGNAL(changeActivationSignal(bool, QWidget *)), qApp, SLOT(changeActivation(bool, QWidget *)), Qt::DirectConnection);
 	connect(this, SIGNAL(destroyed(QObject *)), qApp, SLOT(topLevelWidgetDestroyed(QObject *)));
 	connect(this, SIGNAL(externalProcessSignal(QString &, QString &, QStringList &)),
-			qApp, SLOT(externalProcessSlot(QString &, QString &, QStringList &)), 
+			qApp, SLOT(externalProcessSlot(QString &, QString &, QStringList &)),
 			Qt::DirectConnection);
 }
 
@@ -553,8 +553,8 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 MainWindow::~MainWindow()
 {
     // Delete backup of this sketch if one exists.
-    QFile::remove(m_backupFileNameAndPath);	
-	
+    QFile::remove(m_backupFileNameAndPath);
+
 	delete m_sketchModel;
 
 	dontKeepMargins();
@@ -569,7 +569,7 @@ MainWindow::~MainWindow()
 		LockManager::releaseLockedFiles(m_fzzFolder, m_fzzFiles);
 		FolderUtils::rmdir(m_fzzFolder);
 	}
-}	
+}
 
 void MainWindow::initLockedFiles(bool lockFiles) {
 	LockManager::initLockedFiles("fzz", m_fzzFolder, m_fzzFiles, lockFiles ? LockManager::SlowTime : 0);
@@ -676,20 +676,20 @@ void MainWindow::connectPairs() {
 	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(routingStatusSignal(SketchWidget *, const RoutingStatus &)),
 						this, SLOT(routingStatusSlot(SketchWidget *, const RoutingStatus &)));
 
-	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)), 
+	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)),
 						this, SLOT(swapSelectedDelay(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)));
-	succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)), 
+	succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)),
 						this, SLOT(swapSelectedDelay(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)));
-	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)), 
+	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)),
 						this, SLOT(swapSelectedDelay(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)));
 
-	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(dropPasteSignal(SketchWidget *)), 
+	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(dropPasteSignal(SketchWidget *)),
 						this, SLOT(dropPaste(SketchWidget *)));
-	succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(dropPasteSignal(SketchWidget *)), 
+	succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(dropPasteSignal(SketchWidget *)),
 						this, SLOT(dropPaste(SketchWidget *)));
-	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(dropPasteSignal(SketchWidget *)), 
+	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(dropPasteSignal(SketchWidget *)),
 						this, SLOT(dropPaste(SketchWidget *)));
-	
+
 	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(subSwapSignal(SketchWidget *, ItemBase *, const QString &, ViewLayer::ViewLayerPlacement, long &, QUndoCommand *)),
 						this, SLOT(subSwapSlot(SketchWidget *, ItemBase *, const QString &, ViewLayer::ViewLayerPlacement, long &, QUndoCommand *)),
 						Qt::DirectConnection);
@@ -710,14 +710,14 @@ void MainWindow::connectPairs() {
 	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(filenameIfSignal(QString &)), this, SLOT(filenameIfSlot(QString &)), Qt::DirectConnection);
 	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(filenameIfSignal(QString &)), this, SLOT(filenameIfSlot(QString &)), Qt::DirectConnection);
 	succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(filenameIfSignal(QString &)), this, SLOT(filenameIfSlot(QString &)), Qt::DirectConnection);
-	
 
 
-    succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(getDroppedItemViewLayerPlacementSignal(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
-                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
+
+    succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(getDroppedItemViewLayerPlacementSignal(ModelPart *, ViewLayer::ViewLayerPlacement &)),
+                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement &)),
                                         Qt::DirectConnection);
-    succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(getDroppedItemViewLayerPlacementSignal(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
-                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
+    succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(getDroppedItemViewLayerPlacementSignal(ModelPart *, ViewLayer::ViewLayerPlacement &)),
+                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement &)),
                                         Qt::DirectConnection);
 
 
@@ -960,7 +960,7 @@ SketchToolButton *MainWindow::createOrderFabButton(SketchAreaWidget *parent) {
 	return orderFabButton;
 }
 
-QWidget *MainWindow::createActiveLayerButton(SketchAreaWidget *parent) 
+QWidget *MainWindow::createActiveLayerButton(SketchAreaWidget *parent)
 {
 	QList<QAction *> actions;
 	actions << m_activeLayerBothAct << m_activeLayerBottomAct << m_activeLayerTopAct;
@@ -987,7 +987,7 @@ QWidget *MainWindow::createActiveLayerButton(SketchAreaWidget *parent)
 	return m_activeLayerButtonWidget;
 }
 
-QWidget *MainWindow::createViewFromButton(SketchAreaWidget *parent) 
+QWidget *MainWindow::createViewFromButton(SketchAreaWidget *parent)
 {
 	QList<QAction *> actions;
 	actions << m_viewFromAboveAct << m_viewFromBelowAct;
@@ -1053,24 +1053,24 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
 		case ViewLayer::BreadboardView:
 		case ViewLayer::SchematicView:
 			retval << createNoteButton(parent);
-		default: 
+		default:
 			break;
 	}
-	
+
 	retval << createRotateButton(parent);
 	switch (viewId) {
 		case ViewLayer::BreadboardView:
-			retval << createFlipButton(parent) << createRoutingStatusLabel(parent); 
+			retval << createFlipButton(parent) << createRoutingStatusLabel(parent);
 			break;
 		case ViewLayer::SchematicView:
 			retval << createFlipButton(parent)
-                // << createAutorouteButton(parent) 
+                // << createAutorouteButton(parent)
                 << createRoutingStatusLabel(parent);
 			break;
 		case ViewLayer::PCBView:
 			retval << createViewFromButton(parent)
-				<< createActiveLayerButton(parent) 
-				// << createAutorouteButton(parent) 
+				<< createActiveLayerButton(parent)
+				// << createAutorouteButton(parent)
 				<< createExportEtchableButton(parent)
                 << createRoutingStatusLabel(parent)
                 ;
@@ -1182,9 +1182,9 @@ void MainWindow::tabWidget_currentChanged(int index) {
 
 	m_currentGraphicsView->setCurrent(true);
 
-	// !!!!!! hack alert  !!!!!!!  
+	// !!!!!! hack alert  !!!!!!!
 	// this item update loop seems to deal with a qt update bug:
-	// if one view is visible and you change something in another view, 
+	// if one view is visible and you change something in another view,
 	// the change might not appear when you switch views until you move the item in question
 	foreach(QGraphicsItem * item, m_currentGraphicsView->items()) {
 		item->update();
@@ -1279,7 +1279,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 	QSettings settings;
 	settings.setValue(m_settingsPrefix + "state",saveState());
 	settings.setValue(m_settingsPrefix + "geometry",saveGeometry());
-    
+
     saveLastTabList();
 
 	QMainWindow::closeEvent(event);
@@ -1514,7 +1514,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
                 view = view.nextSiblingElement();
             }
 
-        	mp->setFzz(true);
+		mp->setFzz(true);
         }
 
         if (!missingModelParts.contains(mp)) {
@@ -1587,7 +1587,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 	setCurrentFile(fileName, addToRecent, setAsLastOpened);
 }
 
-bool MainWindow::copySvg(const QString & path, QFileInfoList & svgEntryInfoList) 
+bool MainWindow::copySvg(const QString & path, QFileInfoList & svgEntryInfoList)
 {
     int slash = path.indexOf("/");
     QString subpath = path.mid(slash + 1);
@@ -1827,7 +1827,7 @@ QList<ModelPart*> MainWindow::moveToPartsFolder(QDir &unzipDir, MainWindow* mw, 
 	}
 
     namefilters.clear();
-	namefilters << ZIP_PART+"*"; 
+	namefilters << ZIP_PART+"*";
     QList<QFileInfo> partEntryInfoList = unzipDir.entryInfoList(namefilters);
 
     if (importingSinglePart && partEntryInfoList.count() > 0) {
@@ -2072,7 +2072,7 @@ void MainWindow::enableCheckUpdates(bool enabled)
     }
 }
 
-void MainWindow::swapSelectedDelay(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase) 
+void MainWindow::swapSelectedDelay(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase)
 {
     //DebugDialog::debug("swap selected delay");
 	m_swapTimer.stop();
@@ -2088,7 +2088,7 @@ void MainWindow::swapSelectedTimeout()
 	}
 }
 
-void MainWindow::swapSelectedMap(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase) 
+void MainWindow::swapSelectedMap(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase)
 {
 	if (itemBase == NULL) return;
 
@@ -2136,7 +2136,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 
     bool swapLayer = false;
     ViewLayer::ViewLayerPlacement newViewLayerPlacement = ViewLayer::UnknownPlacement;
-    if (prop.compare("layer") == 0 && !logoPadBlocker) {  
+    if (prop.compare("layer") == 0 && !logoPadBlocker) {
         if (itemBase->modelPart()->flippedSMD() || itemBase->itemType() == ModelPart::Part) {
             ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
             if (viewItem) {
@@ -2291,7 +2291,7 @@ void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, 
     }
 
 	swapSelectedAuxAux(itemBase, moduleID, viewLayerPlacement, propsMap, parentCommand);
-    
+
 	// need to defer execution so the content of the info view doesn't change during an event that started in the info view
 	m_undoStack->waitPush(parentCommand, SketchWidget::PropChangeDelay);
 
@@ -2305,7 +2305,7 @@ void MainWindow::swapBoardImageSlot(SketchWidget * sketchWidget, ItemBase * item
 
     LoadLogoImageCommand * cmd = new LoadLogoImageCommand(sketchWidget, newID, "", QSizeF(0,0), filename, filename, addName, parentCommand);
     cmd->setRedoOnly();
-   
+
 	// need to defer execution so the content of the info view doesn't change during an event that started in the info view
 	m_undoStack->waitPush(parentCommand, SketchWidget::PropChangeDelay);
 }
@@ -2317,7 +2317,7 @@ void MainWindow::subSwapSlot(SketchWidget * sketchWidget, ItemBase * itemBase, c
 	newID = swapSelectedAuxAux(itemBase, newModuleID, viewLayerPlacement, propsMap, parentCommand);
 }
 
-long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID,  ViewLayer::ViewLayerPlacement viewLayerPlacement, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand) 
+long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID,  ViewLayer::ViewLayerPlacement viewLayerPlacement, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand)
 {
 	long modelIndex = ModelPart::nextIndex();
 
@@ -2534,7 +2534,7 @@ void MainWindow::updateActiveLayerButtons() {
     }
 }
 
-int MainWindow::activeLayerIndex() 
+int MainWindow::activeLayerIndex()
 {
 	if (m_currentGraphicsView == NULL) return -1;
 
@@ -2637,7 +2637,7 @@ void MainWindow::setAutosave(int minutes, bool enabled) {
 	}
 }
 
-bool MainWindow::hasLinkedProgramFiles(const QString & filename, QStringList & linkedProgramFiles) 
+bool MainWindow::hasLinkedProgramFiles(const QString & filename, QStringList & linkedProgramFiles)
 {
 	QFile file(filename);
 	file.open(QFile::ReadOnly);
@@ -2727,7 +2727,7 @@ void MainWindow::routingStatusLabelMouse(QMouseEvent*, bool show) {
 	}
 
     if (!show && toShow.count() == 0) {
-            QMessageBox::information(this, tr("Unrouted connections"), 
+            QMessageBox::information(this, tr("Unrouted connections"),
             tr("There are no unrouted connections in this view."));
     }
 }
@@ -2738,7 +2738,7 @@ void MainWindow::setReportMissingModules(bool b) {
 	}
 }
 
-void MainWindow::boardDeletedSlot() 
+void MainWindow::boardDeletedSlot()
 {
 	activeLayerBottom();
 }
@@ -2818,7 +2818,7 @@ void MainWindow::locationLabelClicked()
 			cursorLocationSlot(0.0, 0.0);
 		}
 	}
-		
+
 	QSettings settings;
 	settings.setValue("LocationInches", QVariant(m_locationLabelUnits));
 }
@@ -2828,7 +2828,7 @@ void MainWindow::filenameIfSlot(QString & filename)
 	filename = QFileInfo(fileName()).fileName();
 }
 
-QList<SketchWidget *> MainWindow::sketchWidgets() 
+QList<SketchWidget *> MainWindow::sketchWidgets()
 {
 	QList<SketchWidget *> list;
 	list << m_breadboardGraphicsView << m_schematicGraphicsView << m_pcbGraphicsView;
@@ -2871,11 +2871,11 @@ const QString & MainWindow::fritzingVersion() {
 void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 {
     const QMimeData* mimeData = event->mimeData();
- 
+
     if (mimeData->hasUrls()) {
         QStringList pathList;
         QList<QUrl> urlList = mimeData->urls();
- 
+
         // extract the local paths of the files
         for (int i = 0; i < urlList.size() && i < 32; ++i) {
             QString fn = urlList.at(i).toLocalFile();
@@ -2909,11 +2909,11 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 void MainWindow::dropEvent(QDropEvent *event)
 {
     const QMimeData* mimeData = event->mimeData();
- 
+
     if (mimeData->hasUrls()) {
         QStringList pathList;
         QList<QUrl> urlList = mimeData->urls();
- 
+
         // extract the local paths of the files
         for (int i = 0; i < urlList.size() && i < 32; ++i) {
             mainLoadAux(urlList.at(i).toLocalFile());
@@ -2927,7 +2927,7 @@ bool MainWindow::hasAnyAlien() {
     return m_addedToTemp;
 }
 
-void MainWindow::initStyleSheet() 
+void MainWindow::initStyleSheet()
 {
     QString suffix = getStyleSheetSuffix();
 	QFile styleSheet(QString(":/resources/styles/%1.qss").arg(suffix));
@@ -2981,7 +2981,7 @@ bool MainWindow::anyUsePart(const QString & moduleID) {
     foreach (QWidget *widget, QApplication::topLevelWidgets()) {
         MainWindow *mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow == NULL) continue;
-			    
+
         if (mainWindow->usesPart(moduleID)) {
             return true;
         }
@@ -3009,7 +3009,7 @@ bool MainWindow::updateParts(const QString & moduleID, QUndoCommand * parentComm
     QSet<ItemBase *> itemBases;
     foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
         ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-        if (itemBase == NULL) continue;       
+        if (itemBase == NULL) continue;
         if (itemBase->moduleID().compare(moduleID) != 0) continue;
 
         itemBases.insert(itemBase->layerKinChief());
@@ -3112,7 +3112,7 @@ void MainWindow::fireQuote() {
     QRect q = m_rolloverQuoteDialog->geometry();
 
     // I don't understand why--perhaps due to the windowFlags--but q is already in global coordinates
-    q.moveBottom(gt.y() - 20); 
+    q.moveBottom(gt.y() - 20);
     q.moveRight(bt.x());
     m_rolloverQuoteDialog->setGeometry(q);
 }
@@ -3133,7 +3133,7 @@ void MainWindow::initWelcomeView() {
 }
 
 void MainWindow::setInitialView() {
-    	// do this the first time, since the current_changed signal wasn't sent
+	// do this the first time, since the current_changed signal wasn't sent
 	int tab = 0;
 
 	tabWidget_currentChanged(tab+1);
@@ -3171,11 +3171,11 @@ void MainWindow::initZoom() {
         parts = true;
         break;
     }
-			
+
     if (parts) {
         m_currentGraphicsView->fitInWindow();
     }
-		
+
     m_currentGraphicsView->setEverZoomed(true);
 }
 

@@ -113,7 +113,7 @@ def ballpos(ball_name):
                 count = count +1
     col = int(col)
     return [col,row]
-    
+
 # expand B1:C5 to list of balls
 def expandexpr(inputbuf):
     # single ball has no :
@@ -123,7 +123,7 @@ def expandexpr(inputbuf):
     expanded = ""
     pos1 = ballpos(inputbuf[:inputbuf.find(":")])
     pos2 = ballpos(inputbuf[inputbuf.find(":")+1:])
-    # Make sure order is increasing 
+    # Make sure order is increasing
     if pos1[0]>pos2[0]:
         tmp = pos1[0]
         pos1[0] = pos2[0]
@@ -153,7 +153,7 @@ def expandomitlist(omitlist):
     expandedlist = expandedlist + expandexpr(tmpbuf)
     # debug: print expandedlist
     return expandedlist
-    
+
 def findattr(attrlist, name):
     for attribute in attrlist:
         if attribute[0]==name:
@@ -197,7 +197,7 @@ def padctr(x,y,height,width,clear,mask,pinname):
         x2 = x + linelength/2
         y1 = y
         y2 = y
-    return pad(x1,y1,x2,y2,linewidth,clear,mask,pinname,"square")        
+    return pad(x1,y1,x2,y2,linewidth,clear,mask,pinname,"square")
 
 # ball is a zero length round pad
 def ball(x, y, dia, clear, mask, name):
@@ -398,7 +398,7 @@ def so(attrlist):
     soelt = soelt + rowofpads([-rowpos,-skew], pitch, "down", padwidth, padheight, 1, pins/2, maskclear, polyclear)
     soelt = soelt + rowofpads([rowpos,skew], pitch, "up", padwidth, padheight, 1+pins/2, pins/2, maskclear, polyclear)
     silkboxheight = max(pitch*(pins-2)/2+padheight+2*silkoffset,silkboxheight)
-    
+
     silky = silkboxheight/2
     len = 0
     print "EP" + str(ep)
@@ -407,7 +407,7 @@ def so(attrlist):
         len = (rect - ep) / 2
     if ep:
         soelt = soelt + pad(0,len,0,-len,ep,polyclear,maskclear,str(pins+1),"rect")
-                                      
+
     # Inside box with notched corner as submitted in patch by PRB
     if(silkstyle == "inside"):
         silkx = width/2 - silkoffset
@@ -570,7 +570,7 @@ def genpart(attributes):
     else:
         print "Unknown type "+parttype
     print ""
-    return ""                                                                                                           
+    return ""
 
 def inquotes(origstring):
     quotepos = re.search("\".*\"", origstring)
@@ -590,7 +590,7 @@ def str2pcbunits(dist):
         return int(0.5 + val * 100)
     elif dist[number.end():].find("in")!=-1:
         return int(0.5 + val * 100000)
-    return int(val+0.5)	
+    return int(val+0.5)
 
 import sys
 #import string
@@ -645,6 +645,6 @@ while 1:
         validline = 1
     if not validline:
         print "Ignoring garbage at line %d :%s" % (linenum, line)
-			
+
 print "%d lines read" % linenum
 sys.exit(0)

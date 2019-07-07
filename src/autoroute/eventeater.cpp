@@ -29,9 +29,9 @@ bool EventEater::eventFilter(QObject *obj, QEvent *event)
 {
 	switch (event->type()) {
 		case QEvent::KeyPress:
-		case QEvent::KeyRelease:			
+		case QEvent::KeyRelease:
 		case QEvent::MouseButtonPress:
-		case QEvent::MouseButtonRelease:			
+		case QEvent::MouseButtonRelease:
 		case QEvent::MouseButtonDblClick:
 		case QEvent::HoverEnter:
 		case QEvent::HoverLeave:

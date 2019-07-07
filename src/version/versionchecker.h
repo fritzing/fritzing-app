@@ -56,7 +56,7 @@ public:
 signals:
     void httpError(QNetworkReply::NetworkError);
 	void xmlError(QXmlStreamReader::Error errorCode);
-	void releasesAvailable(); 
+	void releasesAvailable();
 
 public slots:
     void fetch();

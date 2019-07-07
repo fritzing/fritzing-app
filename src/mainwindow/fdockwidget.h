@@ -33,7 +33,7 @@ public:
 	FDockWidget(const QString & title, QWidget * parent = 0);
 
 	void saveState();
-	
+
 public slots:
 	void restoreState();
 

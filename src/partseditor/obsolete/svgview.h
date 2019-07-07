@@ -57,12 +57,12 @@ private:
 	QSvgRenderer *m_renderer;
 	QSvgWidget *m_pcbWidget;
 	PcbXML	*m_pcbXML;
-    
+
     QGraphicsScene m_scene;
 	QDomDocument *m_domDocument; // footprint xml file
-	
+
 	// graphics layers (svg groups really)
-    
+
     qreal m_zoom;
     qreal m_rotation;
 

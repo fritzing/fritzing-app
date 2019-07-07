@@ -40,7 +40,7 @@ Q_OBJECT
 
 public:
 	Note(class ModelPart*, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu);
-	
+
 	void saveGeometry();
 	bool itemMoved();
 	void saveInstanceLocation(QXmlStreamWriter &);

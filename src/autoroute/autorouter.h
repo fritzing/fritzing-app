@@ -49,7 +49,7 @@ public:
 public:
     static const QString MaxCyclesName;
 
-	
+
 protected:
 	virtual void cleanUpNets();
 	virtual void updateRoutingStatus();
@@ -77,7 +77,7 @@ signals:
 	void setMaximumProgress(int);
 	void setProgressValue(int);
 	void wantTopVisible();
-	void wantBottomVisible();	
+	void wantBottomVisible();
 	void wantBothVisible();
 	void setProgressMessage(const QString &);
 	void setProgressMessage2(const QString &);

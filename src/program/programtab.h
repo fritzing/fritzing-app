@@ -60,7 +60,7 @@ signals:
 
 
 
-class ProgramTab : public QFrame 
+class ProgramTab : public QFrame
 {
 	Q_OBJECT
 

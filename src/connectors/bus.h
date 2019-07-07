@@ -29,20 +29,20 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGraphicsScene>
 #include <QPointer>
 
-class Bus : public QObject 
+class Bus : public QObject
 {
 	Q_OBJECT
-	
+
 public:
 	Bus(class BusShared *, class ModelPart *);
-	
+
 	const QString & id() const;
 	void addConnector(class Connector *);
 	class ModelPart * modelPart();
 	const QList<Connector *> & connectors() const;
 	Connector * subConnector() const;
     void addSubConnector(Connector *);
-	
+
 protected:
 	QList<class Connector *> m_connectors;
 	class Connector * m_subConnector;

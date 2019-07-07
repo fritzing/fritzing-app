@@ -84,7 +84,7 @@ protected:
 	bool m_negativeOffsetRect;
 	QPainterPath m_shape;
     bool m_isPath;
-	
+
 };
 
 #endif

@@ -71,7 +71,7 @@ protected:
 	void init(const QString & title, int initialMaximum);
 
 protected:
-	QProgressBar * m_progressBar;	
+	QProgressBar * m_progressBar;
 	QLabel * m_message;
 
 	int m_binLoadingCount;
@@ -85,4 +85,4 @@ protected:
 };
 
 
-#endif 
+#endif

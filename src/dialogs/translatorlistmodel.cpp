@@ -26,7 +26,7 @@ QHash<QString, QString> TranslatorListModel::m_languages;
 QList<QLocale *> TranslatorListModel::m_localeList;
 
 // More languages written in their own language can be found
-// at http://www.mozilla.com/en-US/firefox/all.html 
+// at http://www.mozilla.com/en-US/firefox/all.html
 
 // recipe for translating from mozilla strings into source code via windows:
 //		1. copy the string from the mozilla page into wordpad and save it as a unicode text file
@@ -41,7 +41,7 @@ QList<QLocale *> TranslatorListModel::m_localeList;
 
 
 TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* parent)
-: QAbstractListModel(parent) 
+: QAbstractListModel(parent)
 {
 
     if (m_languages.count() == 0) {
@@ -63,7 +63,7 @@ TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* 
 		ushort t2[] = { 0x0420, 0x0443, 0x0441, 0x0441, 0x043a, 0x0438, 0x0439, 0 };
         m_languages.insert("russian", tr("Russian - %1").arg(QString::fromUtf16(t2)));
 
- 		ushort t3[] = { 0x05e2, 0x05d1, 0x05e8, 0x05d9, 0x05ea, 0 };
+		ushort t3[] = { 0x05e2, 0x05d1, 0x05e8, 0x05d9, 0x05ea, 0 };
         m_languages.insert("hebrew", tr("Hebrew - %1").arg(QString::fromUtf16(t3)));
 
 		ushort t4[] = { 0x0639, 0x0631, 0x0628, 0x064a, 0 };
@@ -165,7 +165,7 @@ void TranslatorListModel::cleanup() {
 	m_localeList.clear();
 }
 
-QVariant TranslatorListModel::data ( const QModelIndex & index, int role) const 
+QVariant TranslatorListModel::data ( const QModelIndex & index, int role) const
 {
 	if (role == Qt::DisplayRole && index.row() >= 0 && index.row() < m_localeList.count()) {
 		QString languageString = QLocale::languageToString(m_localeList.at(index.row())->language());
@@ -173,7 +173,7 @@ QVariant TranslatorListModel::data ( const QModelIndex & index, int role) const
 
         //DebugDialog::debug(QString("language %1 %2").arg(languageString).arg(countryString));
 
-		// QLocale::languageToString() only returns an English string, 
+		// QLocale::languageToString() only returns an English string,
 		// so put it through a language-dependent hash table.
 		QString trLanguageString = m_languages.value(languageString.toLower(), "");
 		if (trLanguageString.isEmpty()) {
@@ -194,21 +194,21 @@ QVariant TranslatorListModel::data ( const QModelIndex & index, int role) const
 	}
 
 	return emptyVariant;
-	
+
 }
 
-int TranslatorListModel::rowCount ( const QModelIndex & parent) const 
+int TranslatorListModel::rowCount ( const QModelIndex & parent) const
 {
 	Q_UNUSED(parent);
 
 	return m_localeList.count();
 }
 
-const QLocale * TranslatorListModel::locale( int index) 
+const QLocale * TranslatorListModel::locale( int index)
 {
 	if (index < 0 || index >= m_localeList.count()) return NULL;
 
-	return m_localeList.at(index);	
+	return m_localeList.at(index);
 }
 
 int TranslatorListModel::findIndex(const QString & language) {
@@ -228,4 +228,3 @@ int TranslatorListModel::findIndex(const QString & language) {
 	return 0;
 
 }
-

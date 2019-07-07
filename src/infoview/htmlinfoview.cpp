@@ -70,7 +70,7 @@ QString format3(double d) {
 //////////////////////////////////////
 
 
-TagLabel::TagLabel(QWidget * parent) : QLabel(parent) 
+TagLabel::TagLabel(QWidget * parent) : QLabel(parent)
 {
 }
 
@@ -100,7 +100,7 @@ QSize TagLabel::sizeHint() const
 
 //////////////////////////////////////
 
-HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent) 
+HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 {
     this->setWidgetResizable(true);
 
@@ -168,7 +168,7 @@ void HtmlInfoView::init(bool tinyMode) {
 
 	setInstanceTitleColors(m_titleEdit, QColor(0xaf, 0xaf, 0xb4), QColor(0x00, 0x00, 0x00)); //b3b3b3, 575757
 	m_titleEdit->setAutoFillBackground(true);
-	
+
     vlo->addWidget(m_titleEdit);
     if (tinyMode) m_titleEdit->setVisible(false);
 
@@ -205,7 +205,7 @@ void HtmlInfoView::init(bool tinyMode) {
 	versionLayout->addLayout(subVersionLayout);
 
 	hboxLayout->addLayout(versionLayout);
-	
+
 	hboxLayout->addSpacerItem(new QSpacerItem(IconSpace, 1, QSizePolicy::Expanding));
 	iconFrame->setLayout(hboxLayout);
 	vlo->addWidget(iconFrame);
@@ -340,7 +340,7 @@ void HtmlInfoView::cleanup() {
 	}
 }
 
-void HtmlInfoView::viewItemInfo(InfoGraphicsView *, ItemBase* item, bool swappingEnabled) 
+void HtmlInfoView::viewItemInfo(InfoGraphicsView *, ItemBase* item, bool swappingEnabled)
 {
 	m_setContentTimer.stop();
 	m_lastItemBase = m_pendingItemBase = item;
@@ -424,10 +424,10 @@ void HtmlInfoView::appendWireStuff(Wire* wire, bool swappingEnabled) {
 	if (swappingEnabled) {
 		if (wire->getRatsnest()) {
 			nameString = tr("Ratsnest wire");
-		} 
+		}
 		else if(wire->getTrace()) {
 			nameString = tr("Trace wire %1").arg(autoroutable);
-		} 
+		}
 	}
 	else {
 		 nameString = modelPart->description();
@@ -624,7 +624,7 @@ void HtmlInfoView::setInstanceTitleColors(FLineEdit * edit, const QColor & base,
 		.arg(text.red()).arg(text.green()).arg(text.blue()) );
 }
 
-void HtmlInfoView::setUpTitle(ItemBase * itemBase) 
+void HtmlInfoView::setUpTitle(ItemBase * itemBase)
 {
 	if (itemBase == m_lastTitleItemBase) {
         if (itemBase == NULL) return;
@@ -655,7 +655,7 @@ void HtmlInfoView::setUpTitle(ItemBase * itemBase)
 
 void HtmlInfoView::setUpIcons(ItemBase * itemBase, bool swappingEnabled) {
 	if (m_lastIconItemBase == itemBase) return;
-	
+
 	m_lastIconItemBase = itemBase;
 
 	QPixmap *pixmap1 = NULL;
@@ -710,7 +710,7 @@ void HtmlInfoView::partTitle(const QString & title, const QString & version, con
 
     if (!m_tinyMode) {
 	    if (url.isEmpty()) {
-		    m_partUrl->setVisible(false);	
+		    m_partUrl->setVisible(false);
 		    m_partUrl->setText("");
 	    }
 	    else {
@@ -726,7 +726,7 @@ void HtmlInfoView::partTitle(const QString & title, const QString & version, con
 	else m_partVersion->setText("");
 }
 
-void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool swappingEnabled) 
+void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool swappingEnabled)
 {
 	bool repeatPossible = (modelPart == m_lastPropsModelPart && itemBase == m_lastPropsItemBase && swappingEnabled == m_lastPropsSwappingEnabled);
 	if (repeatPossible && modelPart == NULL && itemBase == NULL) {
@@ -754,7 +754,7 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
         keys.removeOne("layer");
         sl = (itemBase->viewID() == ViewLayer::PCBView);
     }
-    
+
     showLayers(sl, itemBase, family, properties.value("layer", ""), swappingEnabled);
 
 	int ix = 0;
@@ -826,7 +826,7 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 			newName = translatedName;
 			newValue = value;
 		}
-		
+
 		if (oldPlugin) {
 			clearPropThingPlugin(propThing, oldPlugin);
 		}
@@ -866,27 +866,27 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 	*/
 }
 
-void HtmlInfoView::clearPropThingPlugin(PropThing * propThing) 
+void HtmlInfoView::clearPropThingPlugin(PropThing * propThing)
 {
 
 	if (propThing->m_plugin) {
 		clearPropThingPlugin(propThing, propThing->m_plugin);
-		propThing->m_plugin = NULL;		
+		propThing->m_plugin = NULL;
 	}
 }
 
-void HtmlInfoView::clearPropThingPlugin(PropThing * propThing, QWidget * plugin) 
+void HtmlInfoView::clearPropThingPlugin(PropThing * propThing, QWidget * plugin)
 {
     //DebugDialog::debug(QString("clearing %1").arg((long) plugin, 0, 16));
 
 	propThing->m_layout->removeWidget(plugin);
-    plugin->blockSignals(true);     
+    plugin->blockSignals(true);
 	plugin->setVisible(false);          // seems to trigger an unwanted focus out signal
 	plugin->deleteLater();
 }
 
 
-QHash<QString, QString> HtmlInfoView::getPartProperties(ModelPart * modelPart, ItemBase * itemBase, bool wantDebug, QStringList & keys) 
+QHash<QString, QString> HtmlInfoView::getPartProperties(ModelPart * modelPart, ItemBase * itemBase, bool wantDebug, QStringList & keys)
 {
 	QHash<QString, QString> properties;
 	QString family;
@@ -925,7 +925,7 @@ void HtmlInfoView::showLayers(bool show, ItemBase * itemBase, const QString & fa
 
     if (m_layerWidget) {
 	    m_layerLayout->removeWidget(m_layerWidget);
-        m_layerWidget->blockSignals(true);     
+        m_layerWidget->blockSignals(true);
 	    m_layerWidget->setVisible(false);          // seems to trigger an unwanted focus out signal
 	    m_layerWidget->deleteLater();
         m_layerWidget = NULL;
@@ -1208,4 +1208,3 @@ void HtmlInfoView::rotEntry() {
         infoGraphicsView->rotateX(newAngle - angle, false, m_lastItemBase);
     }
 }
-

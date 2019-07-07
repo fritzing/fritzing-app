@@ -70,7 +70,7 @@ class PinLabelUndoCommand : public QUndoCommand {
 
 public:
 	PinLabelUndoCommand(PinLabelDialog *, int index, QLineEdit *, const QString & previous, const QString & next);
-	
+
 	void undo();
 	void redo();
 
@@ -83,4 +83,4 @@ protected:
 
 };
 
-#endif 
+#endif

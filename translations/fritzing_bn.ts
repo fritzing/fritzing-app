@@ -812,7 +812,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <location filename="../src/items/resizableboard.cpp" line="531"/>
         <source>The image from %1 can be loaded, but %2
 Use the file?</source>
-        <translatorcomment>% 1 থেকে চিত্র %2&apos;লোড&apos; করতে পারেন, কিন্ত 
+        <translatorcomment>% 1 থেকে চিত্র %2&apos;লোড&apos; করতে পারেন, কিন্ত
 এই ফাইল ব্যবহার করে </translatorcomment>
         <translation>ইমেজ %1 ধারন সম্ভব,কিন্তু%2
 এইফাইল ব্যবহাের?</translation>
@@ -2257,7 +2257,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow.cpp" line="2189"/>
         <source>No part with those characteristics.
 We&apos;re working to avoid this message, and only let you choose between properties that do exist</source>
-        <translation>ঐসব কোনো পার্টসে  নাই।  
+        <translation>ঐসব কোনো পার্টসে  নাই।
 
     আমরা এই বার্তা বাদ দেবার চেষ্টা করছি এবং শুধু যেসব ধর্ম যোগ করা আছে  সেইগুলাই পছন্দ করতে দিব।</translation>
     </message>
@@ -5513,7 +5513,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1612"/>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
         <translation type="unfinished"></translation>

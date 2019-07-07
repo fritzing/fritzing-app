@@ -32,8 +32,8 @@ GedaElementLexer::GedaElementLexer(const QString &source)
 	m_elementMatcher.setPattern("Element\\s*([\\(\\[])");
 	//m_stringMatcher.setPattern("\"([^\"]*)\"");
 	m_stringMatcher.setPattern("\"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\"");
-	m_integerMatcher.setPattern("[-+]?\\d+");			
-	m_hexMatcher.setPattern("0[xX][0-9a-fA-F]+");			
+	m_integerMatcher.setPattern("[-+]?\\d+");
+	m_hexMatcher.setPattern("0[xX][0-9a-fA-F]+");
     m_source = clean(source);
     m_chars = m_source.unicode();
     m_size = m_source.size();
@@ -173,67 +173,67 @@ int GedaElementLexer::lex()
 		}
 		else if (m_current.isNull()) {
 			return GedaElementGrammar::EOF_SYMBOL;
-		} 
+		}
 		else if (m_current == QLatin1Char('(')) {
 			next();
 			return GedaElementGrammar::LEFTPAREN;
-		} 
+		}
 		else if (m_current == QLatin1Char(')')) {
 			next();
 			return GedaElementGrammar::RIGHTPAREN;
-		} 
+		}
 		else if (m_current == QLatin1Char('[')) {
 			next();
 			return GedaElementGrammar::LEFTBRACKET;
-		} 
+		}
 		else if (m_current == QLatin1Char(']')) {
 			next();
 			return GedaElementGrammar::RIGHTBRACKET;
-		} 
+		}
 		else if (m_source.indexOf("elementline", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "elementline";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::ELEMENTLINE;
-		} 
+		}
 		else if (m_source.indexOf("elementarc", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "elementarc";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::ELEMENTARC;
-		} 
+		}
 		else if (m_source.indexOf("attribute", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "attribute";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::ATTRIBUTE;
-		} 
+		}
 		else if (m_source.indexOf("element", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "element";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::ELEMENT;
-		} 
+		}
 		else if (m_source.indexOf("pad", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "pad";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::PAD;
-		} 
+		}
 		else if (m_source.indexOf("pin", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "pin";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::PIN;
-		} 
+		}
 		else if (m_source.indexOf("mark", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "mark";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::MARK;
-		} 
+		}
 
-		
+
 		return -1;
 	}
 }

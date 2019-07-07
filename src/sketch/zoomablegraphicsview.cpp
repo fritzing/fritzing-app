@@ -203,4 +203,3 @@ void ZoomableGraphicsView::setViewFromBelow(bool viewFromBelow) {
     transform.scale(-1, 1);
     this->setTransform(transform, true);
 }
-

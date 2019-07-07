@@ -52,7 +52,7 @@ void ArrowButton::mousePressEvent(QMouseEvent *event) {
 
 /////////////////////////////////////
 
-AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoomAndPan, bool stopButton, bool bestButton, bool spin, ZoomableGraphicsView * view, QWidget *parent) : QDialog(parent) 
+AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoomAndPan, bool stopButton, bool bestButton, bool spin, ZoomableGraphicsView * view, QWidget *parent) : QDialog(parent)
 {
 	Qt::WindowFlags flags = windowFlags();
 	flags ^= Qt::WindowCloseButtonHint;
@@ -87,7 +87,7 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 	vLayout->addWidget(m_message);
 	m_message2 = new QLabel(this);
 	vLayout->addWidget(m_message2);
-	
+
 	if (zoomAndPan) {
 		QGroupBox * groupBox = new QGroupBox(tr("zoom and pan controls"));
 		QHBoxLayout *lo2 = new QHBoxLayout(groupBox);

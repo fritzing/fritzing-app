@@ -52,7 +52,7 @@ class GridEntry : public QGraphicsRectItem {
 public:
 
 public:
-	GridEntry(QRectF &, QGraphicsItem * parent); 
+	GridEntry(QRectF &, QGraphicsItem * parent);
 	bool drawn();
 	void setDrawn(bool);
 
@@ -94,7 +94,7 @@ protected:
 	Tile * addTile(class NonConnectorItem * nci, Tile::TileType type, Plane *, QList<Tile *> & alreadyTiled, CMRouter::OverlapType);
 	Tile * insertTile(Plane* thePlane, TileRect &tileRect, QList<Tile *> &alreadyTiled, QGraphicsItem *, Tile::TileType type, CMRouter::OverlapType);
 	void clearGridEntries();
-	void cleanPoints(QList<QPointF> & allPoints, Plane *); 
+	void cleanPoints(QList<QPointF> & allPoints, Plane *);
 	bool insideV(const QPointF & check, const QPointF & vertex);
 	void makeAlignTiles(QMultiHash<Tile *, TileRect *> &, Plane * thePlane);
 	bool overlapsOnly(QGraphicsItem * item, QList<Tile *> & alreadyTiled);

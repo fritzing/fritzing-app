@@ -48,7 +48,7 @@ void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 		}
 
 	}
-	else {		
+	else {
 		itemBase->updateTooltip();
 	}
 

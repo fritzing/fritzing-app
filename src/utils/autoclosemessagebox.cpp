@@ -26,7 +26,7 @@ static const int Interval = 30;
 static const int Steps = 7;
 static const int Wait = 100;
 
-AutoCloseMessageBox::AutoCloseMessageBox( QWidget * parent ) 
+AutoCloseMessageBox::AutoCloseMessageBox( QWidget * parent )
 	: QLabel(parent)
 {
 	setWordWrap(true);
@@ -128,7 +128,7 @@ void AutoCloseMessageBox::prepMoveBack() {
 	m_animationTimer.start();
 }
 
-void AutoCloseMessageBox::showMessage(QWidget *window, const QString &message) 
+void AutoCloseMessageBox::showMessage(QWidget *window, const QString &message)
 {
 	MainWindow * mainWindow = qobject_cast<MainWindow *>(window);
 	if (mainWindow == NULL) return;
@@ -147,5 +147,3 @@ void AutoCloseMessageBox::showMessage(QWidget *window, const QString &message)
 	acmb->setEndPos(p.x(), p.y());
 	acmb->start();
 }
-
-

@@ -143,7 +143,7 @@ PartsBinPaletteWidget::~PartsBinPaletteWidget() {
 		delete m_model;
 		m_model = NULL;
 	}
-   
+
     if (m_icon) delete m_icon;
     if (m_monoIcon) delete m_monoIcon;
 }
@@ -210,7 +210,7 @@ void PartsBinPaletteWidget::setView(PartsBinView *view) {
 	if(m_currentView == m_iconView) {
 		m_stackedWidget->setCurrentIndex(0);
 		m_manager->updateViewChecks(true);
-	} 
+	}
 	else {
 		m_stackedWidget->setCurrentIndex(1);
 		m_manager->updateViewChecks(false);
@@ -313,7 +313,7 @@ void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilen
 	else if (iconFilename.isEmpty()) {
 		iconFilename = CustomIconName;
 	}
-	
+
 	if (isCustomSvg(iconFilename)) {
 		// convert to image
 		int w = TextUtils::getViewBoxCoord(iconFilename, 2);
@@ -325,7 +325,7 @@ void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilen
 		QPainter painter;
 		painter.begin(&image);
 		renderer.render(&painter, target);
-		painter.end();	
+		painter.end();
 		//image.save(FolderUtils::getUserDataStorePath("") + "/test icon.png");
 		m_icon = new QIcon(QPixmap::fromImage(image));
         m_monoIcon = new QIcon(":resources/bins/icons/Custom1-mono.png");
@@ -467,10 +467,10 @@ bool PartsBinPaletteWidget::open(QString fileName, QWidget * progressTarget, boo
     file.close();
 
     if(fileName.endsWith(FritzingBinExtension)) {
-    	load(fileName, progressTarget, fastLoad);
-    	m_isDirty = false;
+	load(fileName, progressTarget, fastLoad);
+	m_isDirty = false;
     } else if(fileName.endsWith(FritzingBundledBinExtension)) {
-    	return m_manager->mainWindow()->loadBundledNonAtomicEntity(fileName,this,false, false);
+	return m_manager->mainWindow()->loadBundledNonAtomicEntity(fileName,this,false, false);
     }
 
     return true;
@@ -513,7 +513,7 @@ void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarg
 		    m_loadingProgressDialog->setMessage(tr("loading bin '%1'").arg(name));
 		    m_loadingProgressDialog->show();
 	    }
-	
+
 	    if (progressTarget) {
 		    connect(paletteBinModel, SIGNAL(loadingInstances(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstancesSlot(ModelBase *, QDomElement &)));
 		    connect(paletteBinModel, SIGNAL(loadingInstance(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstanceSlot(ModelBase *, QDomElement &)));
@@ -592,12 +592,12 @@ bool PartsBinPaletteWidget::beforeClosing() {
 			reply = (QMessageBox::StandardButton)messageBox.exec();
 		}
 
-     	if (reply == QMessageBox::Save) {
-     		retval = save();
-    	} else if (reply == QMessageBox::Discard) {
-    		retval = true;
+	if (reply == QMessageBox::Save) {
+		retval = save();
+	} else if (reply == QMessageBox::Discard) {
+		retval = true;
         } else {
-         	retval = false;
+		retval = false;
         }
 	} else {
 		retval = true;
@@ -944,8 +944,8 @@ bool PartsBinPaletteWidget::canClose() {
 	case BinLocation::User:
 		if (m_fileName.compare(BinManager::SearchBinLocation) == 0) return false;
 		if (m_fileName.compare(BinManager::ContribPartsBinLocation) == 0) return false;
-		if (m_fileName.compare(BinManager::MyPartsBinLocation) == 0) return false;	
-		if (m_manager->isTempPartsBin(this)) return false;	
+		if (m_fileName.compare(BinManager::MyPartsBinLocation) == 0) return false;
+		if (m_manager->isTempPartsBin(this)) return false;
 		return true;
 	case BinLocation::More:
 		return false;
@@ -984,5 +984,3 @@ QList<ModelPart *> PartsBinPaletteWidget::getAllParts() {
 
     return m_model->root()->getAllParts();
 }
-
-

@@ -88,7 +88,7 @@ void PEGraphicsItem::wheelEvent(QGraphicsSceneWheelEvent * event) {
 
 
     // delta one click forward = 120; delta one click backward = -120
-    
+
     int magDelta = qAbs(event->delta());
     int sign = event->delta() / magDelta;
     int delta = sign * qMin(magDelta, 120);
@@ -134,7 +134,7 @@ void PEGraphicsItem::wheelEvent(QGraphicsSceneWheelEvent * event) {
     // don't wrap
     if (ix < 0) ix = 0;
     else if (ix >= items.count()) ix = items.count() - 1;
-    
+
     PEGraphicsItem * theItem = items.at(ix);
     if (theItem->highlighted()) {
         theItem->flash();
@@ -153,7 +153,7 @@ void PEGraphicsItem::setHighlighted(bool highlighted) {
             if (pegi == NULL) continue;
             if (pegi == this) continue;
             if (!pegi->highlighted()) continue;
-             
+
             pegi->setHighlighted(false);
         }
         emit highlightSignal(this);
@@ -186,7 +186,7 @@ QPointF PEGraphicsItem::offset() {
     return m_offset;
 }
 
-void PEGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) 
+void PEGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 	QGraphicsRectItem::paint(painter, option, widget);
 
@@ -213,7 +213,7 @@ void PEGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 	    painter->setPen(QPen(QColor(255, 255, 255), 0, Qt::DashLine));
         painter->setBrush(Qt::NoBrush);
         painter->drawLine(l1);
-        painter->drawLine(l2);        
+        painter->drawLine(l2);
     }
 
 	if (m_showMarquee) {
@@ -234,7 +234,7 @@ void PEGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 	if (save) painter->restore();
 }
 
-void PEGraphicsItem::showTerminalPoint(bool show) 
+void PEGraphicsItem::showTerminalPoint(bool show)
 {
     m_showTerminalPoint = show;
     update();
@@ -253,7 +253,7 @@ void PEGraphicsItem::showMarquee(bool show) {
             if (pegi == NULL) continue;
             if (pegi == this) continue;
             if (!pegi->showingMarquee()) continue;
-             
+
             pegi->showMarquee(false);
 		}
     }

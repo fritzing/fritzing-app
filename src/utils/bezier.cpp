@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 // borrowed liberally from the following sources:
 //
 // http://processingjs.nihongoresources.com/bezierinfo/
-// http://www.tinaja.com/text/bezmath.html, 
+// http://www.tinaja.com/text/bezmath.html,
 // http://www.lemoda.net/maths/bezier-length/index.html,
 // http://www.flong.com/texts/code/shapers_bez/
 // http://steve.hollasch.net/cgindex/curves/cbezarclen.html
@@ -180,7 +180,7 @@ void Bezier::set_endpoints(QPointF ep0, QPointF ep1)
 	m_endpoint1 = ep1;
 }
 
-Bezier Bezier::fromElement(QDomElement & element) 
+Bezier Bezier::fromElement(QDomElement & element)
 {
 	Bezier bezier;
 	if (element.tagName().compare("bezier") != 0) return bezier;
@@ -214,7 +214,7 @@ void Bezier::write(QXmlStreamWriter & streamWriter)
 	streamWriter.writeAttribute("x", QString::number(m_cp1.x()));
 	streamWriter.writeAttribute("y", QString::number(m_cp1.y()));
 	streamWriter.writeEndElement();
-		
+
 	streamWriter.writeEndElement();
 }
 
@@ -255,7 +255,7 @@ void Bezier::recalc(QPointF p)
 		double y = (p.y() - m_endpoint0.y() * B0(t1) - m_cp0.y() * B1(t1) - m_endpoint1.y() * B3(t1)) /  B2(t1);
 		m_cp1 = QPointF(x, y);
 	}
-	
+
 	/*
 	DebugDialog::debug(QString("ix:%1 p0x:%2,p0y:%3 p1x:%4,p1y:%5 px:%6,py:%7")
 							.arg(m_drag_cp0)
@@ -271,7 +271,7 @@ void Bezier::recalc(QPointF p)
 	m_isEmpty = false;
 }
 
-void Bezier::initToEnds(QPointF cp0, QPointF cp1) 
+void Bezier::initToEnds(QPointF cp0, QPointF cp1)
 {
 	m_endpoint0 = m_cp0 = cp0;
 	m_endpoint1 = m_cp1 = cp1;
@@ -323,7 +323,7 @@ void Bezier::split(double t, Bezier & left, Bezier & right) const
 	right.m_cp1 = p7;
 	right.m_endpoint1 = m_endpoint1;
 	left.m_isEmpty = right.m_isEmpty = false;
-} 
+}
 
 void Bezier::initControlIndex(QPointF p, double width)
 {
@@ -346,7 +346,7 @@ double Bezier::computeCubicCurveLength(double z, int n) const
 	double sum = 0;
 	for (int i = 0; i < n; i++) {
 		double corrected_t = z2 * Tvalues[n][i] + z2;
-		sum += Cvalues[n][i] * cubicF(corrected_t); 
+		sum += Cvalues[n][i] * cubicF(corrected_t);
 	}
 	return z2 * sum;
 }
@@ -394,7 +394,7 @@ double Bezier::findSplit(QPointF p, double minDistance) const
 		bestT = t;
 		lastDistance = d;
 	}
-	
+
 	return bestT;
 }
 

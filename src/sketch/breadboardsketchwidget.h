@@ -50,7 +50,7 @@ protected:
 	bool checkUnder();
 	bool disconnectFromFemale(ItemBase * item, QHash<long, ItemBase *> & savedItems, ConnectorPairHash &, bool doCommand, bool rubberBandLegEnabled, QUndoCommand * parentCommand);
 	BaseCommand::CrossViewType wireSplitCrossView();
-	bool canDropModelPart(ModelPart * modelPart); 
+	bool canDropModelPart(ModelPart * modelPart);
 	void getLabelFont(QFont &, QColor &, ItemBase *);
 	void setNewPartVisible(ItemBase *);
 	double defaultGridSizeInches();

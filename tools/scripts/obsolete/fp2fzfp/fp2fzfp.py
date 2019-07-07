@@ -1,8 +1,8 @@
 #pcb object reader - loads gEDA PCB files into python tree structure
 # caveats:
-#   1. comments are escaped except for the case where the # characer appears 
-#       in a quoted string... probably need to fix the regex 
-#   2. currently this parser assumes proper line breaks - this may choke on 
+#   1. comments are escaped except for the case where the # characer appears
+#       in a quoted string... probably need to fix the regex
+#   2. currently this parser assumes proper line breaks - this may choke on
 #      some poorly formatted files - need to use a different tokenizer than string.splitlines()
 
 import re
@@ -33,18 +33,18 @@ for line in stripped:
 def findBrackets(obj):
     cIndex = obj.find('[')
     mIndex = obj.find('(')
-    
+
     #TODO use an exception
     #both are -1 - parse error
     if((cIndex == -1) and (mIndex == -1)):
         print "PCB Parse Error on string: " + obj
         return None, None
-        
+
     if(((cIndex < mIndex) and (cIndex != -1)) or (mIndex == -1)):
         return "[", "]"
     else:
         return "(", ")"
-        
+
 def splitObj(obj):
     lBracket, rBracket = findBrackets(obj)
     if not(lBracket):
@@ -54,7 +54,7 @@ def splitObj(obj):
     tag = tag.strip()
     params = params.rstrip(rBracket)
     return tag, sep, params
-     
+
 def toXML(tag, attrDict, sep):
     rtn = "<" + tag
     if(sep == "["):
@@ -64,12 +64,12 @@ def toXML(tag, attrDict, sep):
     for key in attrDict.keys():
         rtn = rtn + " " + key + '="' + attrDict[key] + '"'
     rtn = rtn + ">"
-    return rtn 
-    
+    return rtn
+
 def tokenize(instr, index=0, depth=0):
     pcbObj = instr[index].strip()
     sp = depth*"  "
-    
+
     if pcbObj == "(":
         #print "decending..."
         index = index + 1
@@ -85,15 +85,14 @@ def tokenize(instr, index=0, depth=0):
         outfile.write(sp + toXML(tag, paramdict, sep) + "\n")
         if (instr[index+1].strip() != "("):
             outfile.write(sp + "</" + tag + ">\n")
-    
+
     return index + 1
-            
+
 
 
 idx = 0
-outfile = open(sys.argv[2],"w") 
+outfile = open(sys.argv[2],"w")
 while(idx < len(cleaned)-1):
     idx = tokenize(cleaned, index=idx)
-    
+
 outfile.close()
-    

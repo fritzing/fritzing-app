@@ -61,7 +61,7 @@ struct PanelItem {
 
 	PanelItem();
 
-	PanelItem(PanelItem * from); 
+	PanelItem(PanelItem * from);
 };
 
 struct BestPlace

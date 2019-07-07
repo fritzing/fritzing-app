@@ -113,7 +113,7 @@ void PartsEditorMainWindow::setup(long id, ModelPart *modelPart, bool fromTempla
     if (!styleSheet.open(QIODevice::ReadOnly)) {
         qWarning("Unable to open :/resources/styles/partseditor.qss");
     } else {
-    	m_mainFrame->setStyleSheet(styleSheet.readAll());
+	m_mainFrame->setStyleSheet(styleSheet.readAll());
     }
 
     resize(500,700);
@@ -202,7 +202,7 @@ void PartsEditorMainWindow::setup(long id, ModelPart *modelPart, bool fromTempla
 
     if(fromTemplate) {
 		m_views->setViewItems(m_breadboardItem, m_schematicItem, m_pcbItem);
-    	m_views->loadViewsImagesFromModel(m_paletteModel, m_sketchModel->root());
+	m_views->loadViewsImagesFromModel(m_paletteModel, m_sketchModel->root());
     }
 
     setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
@@ -510,7 +510,7 @@ bool PartsEditorMainWindow::saveAs() {
 	bool firstTime = true; // Perhaps the user wants to use the default file name, confirm first
 	while(m_fwFilename.isEmpty()
 			|| QFileInfo(userPartsFolderPath+m_fwFilename).exists()
-			|| (FolderUtils::isEmptyFileName(m_fwFilename,untitledFileName()) && firstTime) ) 
+			|| (FolderUtils::isEmptyFileName(m_fwFilename,untitledFileName()) && firstTime) )
 	{
 		bool ok;
 		m_fwFilename = QInputDialog::getText(
@@ -606,9 +606,9 @@ bool PartsEditorMainWindow::saveAsAux(const QString & fileName) {
     setTitle();
 
     if(m_editingAlien) {
-    	// FIXME: this will keep ALL the external files, not just the ones that this part uses
-    	emit alienPartUsed();
-    	m_editingAlien = false;
+	// FIXME: this will keep ALL the external files, not just the ones that this part uses
+	emit alienPartUsed();
+	m_editingAlien = false;
     }
 
 	return true;
@@ -644,7 +644,7 @@ ModelPartShared* PartsEditorMainWindow::createModelPartShared() {
 	m_views->aboutToSave();
 
 	// the deal seems to be that an original modelpart is created and becomes the official sketch model (root).
-	// the ConnectorsShared from that model are used to seed the PartsEditorConnectorsConnectorItems. 
+	// the ConnectorsShared from that model are used to seed the PartsEditorConnectorsConnectorItems.
 	// When a new image is loaded into a view, the sketch model's ConnectorsShared are replaced with newly constructed ones.
 	// So now the sketch model points to one set of ConnectorsShared, but the original ones are still sitting
 	// back in the PartsEditorConnectorsConnectorItems.  So now we replace the new ones with the old ones.

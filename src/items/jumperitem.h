@@ -28,16 +28,16 @@ class JumperItem : public PaletteItem
 	Q_OBJECT
 
 public:
-	JumperItem( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool doLabel); 
+	JumperItem( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool doLabel);
 	~JumperItem();
 
     QPainterPath shape() const;
     QPainterPath hoverShape() const;
- 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	void saveParams();
 	void getParams(QPointF & pos, QPointF & c0, QPointF & c1);
 	void resize(QPointF pos, QPointF c0, QPointF c1);
-	void resize(QPointF p0, QPointF p1);   
+	void resize(QPointF p0, QPointF p1);
 	QSizeF footprintSize();
 	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	bool getAutoroutable();
@@ -66,7 +66,7 @@ protected:
 	void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 	void resizeAux(double r0x, double r0y, double r1x, double r1y);
-	void rotateEnds(QTransform & rotation, QPointF & tc0, QPointF & tc1); 
+	void rotateEnds(QTransform & rotation, QPointF & tc0, QPointF & tc1);
 	QPointF calcPos(QPointF p0, QPointF p1);
 	void initialResize(ViewLayer::ViewID);
 	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
@@ -74,7 +74,7 @@ protected:
     ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 signals:
-	void alignMe(JumperItem *, QPointF & p); 
+	void alignMe(JumperItem *, QPointF & p);
 
 protected:
 	QPointer<ConnectorItem> m_dragItem;

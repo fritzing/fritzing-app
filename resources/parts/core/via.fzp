@@ -54,7 +54,7 @@
           <p svgId="connector0pin" layer="copper1" />
         </pcbView>
       </views>
-    </connector>  
+    </connector>
   </connectors>
   <buses/>
 </module>

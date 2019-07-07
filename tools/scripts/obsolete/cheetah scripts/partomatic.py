@@ -1,10 +1,10 @@
 # generic wrapper for cheetah templates
 # usage:
 #    partomatic.py -c <configfile> -o <output dir> -t <template file>
-#    
-#    where 
+#
+#    where
 #    <config file> is the name of the file containing a list of variables and values
-#                   specified on separate lines separated by colons.  
+#                   specified on separate lines separated by colons.
 #                   ex:
 #                      [file1.fz]
 #                      value: 12345
@@ -19,14 +19,14 @@ from datetime import date
 from Cheetah.Template import Template
 
 letterDict = { 'k': 1000, 'M': 1000000, 'G': 1000000000}
-    
+
 def usage():
     print """
 usage:
     partomatic.py -c [Config File] -o [Output Dir] -t [Template File] -s [file Suffix]
-    
+
     Config File - the name of the file containing a list of variables and values
-                   specified on separate lines separated by colons.  
+                   specified on separate lines separated by colons.
                    ex:
                       [file1]
                       value: 12345
@@ -35,19 +35,19 @@ usage:
    Output Dir - the location where the output files are written
 
    Template File - the Cheetah template used to generate the output
-   
+
    file Suffix - the file suffix to use for output files (i.e. .svg or .fzp)
     """
-    
+
 def makeUUID():
     "creates an 8 character hex UUID"
     print "making new uuid"
     return str(uuid.uuid1())
-    
+
 def makeDate():
     "creates a date formatted as YYYY-MM-DD"
     return date.today().isoformat()
- 
+
 def makeResistance(r):
     "multiplies out k,M,g values"
     for letter in letterDict.keys():
@@ -56,8 +56,8 @@ def makeResistance(r):
             r = r[0:ix] + r[ix+1:]
             return str(int(float(r) * letterDict[letter]))
     return(r)
-	
-	   
+
+
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "ho:c:t:s:", ["help", "output="])
@@ -72,7 +72,7 @@ def main():
     outputDir = None
     templateFile = None
     suffix = ""
-    
+
     for o, a in opts:
         if o in ("-c", "--config"):
             configFile = a
@@ -87,15 +87,15 @@ def main():
             suffix = a.lstrip(".")
         else:
             assert False, "unhandled option"
-    
+
     if(not(configFile) or not(outputDir) or not(templateFile)):
         usage()
         sys.exit(2)
-        
+
     cfgParser = ConfigParser.ConfigParser()
-    
+
     cfgParser.readfp(open(configFile))
-    
+
     for section in cfgParser.sections():
         nameStub = section + "." + suffix
         outfile = open(os.path.join(outputDir, nameStub), "w")
@@ -111,7 +111,7 @@ def main():
                 resistance = makeResistance(cfgValue)
             cfgDict[cfgItem] = cfgValue
         if (resistance):
-            cfgDict["RESISTANCE"] = resistance                
+            cfgDict["RESISTANCE"] = resistance
         print "config dict: " + str(cfgDict)
         page = Template(file=templateFile, searchList=[cfgDict])
         outfile.write(str(page))
@@ -119,4 +119,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

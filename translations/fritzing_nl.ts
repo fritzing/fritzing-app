@@ -557,7 +557,7 @@
     <message>
         <source>The image from %1 can be loaded, but %2
 Use the file?</source>
-        <translation>De afbeelding van %1 kan geladen worden, maar %2 
+        <translation>De afbeelding van %1 kan geladen worden, maar %2
 Wil je het bestand gebruiken?</translation>
     </message>
     <message>
@@ -4212,10 +4212,10 @@ Doorgaan en opslaan?</translation>
         <translation>Fritzing ondersteunt momenteel alleen OCRA en Droid lettertypen--de lettertypen in &apos;%1&apos; zijn hierdoor vervangen</translation>
     </message>
     <message>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
-        <translation>Niet mogelijk om afbeeldingsbestand &apos;%1&apos; te laden: 
+        <translation>Niet mogelijk om afbeeldingsbestand &apos;%1&apos; te laden:
 
 %2</translation>
     </message>

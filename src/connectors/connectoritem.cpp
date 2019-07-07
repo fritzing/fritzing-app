@@ -61,7 +61,7 @@ rubberBand TODO:
 	* put legItem back into connector item
 
 	* export: retrieve svg must remove the rubberBand <line> element
-	
+
 	* make it a polygon instead of a line
 
 	* what to do when line length is zero
@@ -108,13 +108,13 @@ rubberBand TODO:
 		* no-yes
 		* yes-no
 		* yes-yes
-			
+
 	* rotate rubberBand, swap rubberBand, undo: crash of the item being undone.  it's a prepareGeometryChange() bug
 
 	* swapping when original is rotated
 
 	crash swapping 3v battery for 4.8 when 3v is rotated 45
-					
+
 	* click selection behavior should be as if selecting the part
 		click on leg should select part
 
@@ -130,9 +130,9 @@ rubberBand TODO:
 	* curve: save/load
 
 	* curve: copy/paste
-		
+
 	* curve:export
-		
+
 	* curve: make straight function
 
 	* curve: fix connector indicator
@@ -140,17 +140,17 @@ rubberBand TODO:
 	* curve: fix connector click region
 
 	* curve: connector region is not following when dragging connector
-	
+
 	when dragging to breadboard from parts bin, don't get final alignment to breadboard
 
 	survival in parts editor
 
 	swapping: keep bends?
-	
+
 	bendpoints: align to grid?
 
 	resistor: leg y-coordinate is slightly off
-	
+
 	parts to modify
 		** LEDs (obsolete 5 colors and 15 SMD versions)
 			maintain color when switching from obsolete
@@ -831,7 +831,7 @@ void ConnectorItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
 		connectorItem->showEqualPotential(true, visited);
 		//connectorItem->debugInfo("display eqp");
 	}
-	
+
 	if (m_rubberBandLeg && this->m_attachedTo != NULL && m_attachedTo->acceptsMousePressLegEvent(this, event)) {
 		if (legMousePressEvent(event)) return;
 	}
@@ -892,7 +892,7 @@ ConnectorItem * ConnectorItem::firstConnectedToIsh() {
 
 	foreach (ConnectorItem * connectorItem, m_connectedTo) {
 		if (connectorItem->attachedTo()->getRatsnest()) continue;
-		
+
 		return connectorItem;
 	}
 
@@ -1388,7 +1388,7 @@ void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<
 			viewLayerPlacement = ViewLayer::NewTopAndBottom;
 			break;
 	}
-	
+
 	foreach (ConnectorItem * connectorItem, connectorItems) {
 		if (connectorItem->isHybrid()) {
 			continue;
@@ -1416,16 +1416,16 @@ void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<
 
 void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorItem *> & partsConnectors, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 	if (partsConnectors.contains(connectorItem)) return;
-				
+
 	ConnectorItem * crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
 	if (crossConnectorItem != NULL) {
 		if (partsConnectors.contains(crossConnectorItem)) {
 			return;
 		}
-		
+
 		if (viewLayerPlacement == ViewLayer::NewTopAndBottom) {
 			partsConnectors.append(crossConnectorItem);
-			
+
 			/*
 			DebugDialog::debug(QString("collecting both: %1 %2 %3 %4")
 				.arg(crossConnectorItem->attachedToID())
@@ -1433,7 +1433,7 @@ void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorIt
 				.arg(crossConnectorItem->attachedToViewLayerID())
 				.arg((long)crossConnectorItem->attachedTo(), 0, 16) );
 			*/
-				
+
 		}
 		else if (viewLayerPlacement == ViewLayer::NewTop) {
 			if (connectorItem->attachedToViewLayerID() == ViewLayer::Copper1) {
@@ -1457,7 +1457,7 @@ void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorIt
 		.arg(connectorItem->connectorSharedID())
 		.arg(connectorItem->attachedToViewLayerID())
 		.arg((long) connectorItem->attachedTo(), 0, 16) );
-	*/	
+	*/
 
 	partsConnectors.append(connectorItem);
 }
@@ -1635,7 +1635,7 @@ bool isGrey(QColor color) {
 	return true;
 }
 
-void ConnectorItem::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget) 
+void ConnectorItem::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
 {
 	if (m_hybrid) return;
 	if (doNotPaint()) return;
@@ -1658,7 +1658,7 @@ void ConnectorItem::paint(QPainter * painter, const QStyleOptionGraphicsItem * o
 	NonConnectorItem::paint(painter, option, widget);
 }
 
-void ConnectorItem::paintLeg(QPainter * painter) 
+void ConnectorItem::paintLeg(QPainter * painter)
 {
 	QPen lpen = legPen();
 	painter->setPen(lpen);
@@ -1886,7 +1886,7 @@ void ConnectorItem::clearRatsnestDisplay(QList<ConnectorItem *> & connectorItems
 }
 
 
-void ConnectorItem::collectConnectorNames(QList<ConnectorItem *> & connectorItems, QStringList & connectorNames) 
+void ConnectorItem::collectConnectorNames(QList<ConnectorItem *> & connectorItems, QStringList & connectorNames)
 {
 	foreach(ConnectorItem * connectorItem, connectorItems) {
 		if (!connectorNames.contains(connectorItem->connectorSharedName())) {
@@ -2241,9 +2241,9 @@ QPainterPath ConnectorItem::shapeAux(double width) const
 			path.lineTo(m_legPolygon.at(i));
 		}
 	}
-	
+
 	QPen pen = legPen();
-	
+
 	return GraphicsUtils::shapeFromPath(path, pen, width, false);
 }
 
@@ -2659,7 +2659,7 @@ void ConnectorItem::removeBendpoint(int bendpointIndex)
 
 	Bezier b2 = b0.join(&b1);
 	replaceBezier(bendpointIndex - 1, &b2);
-	
+
 	Bezier * bezier = m_legCurves.at(bendpointIndex);
 	m_legCurves.remove(bendpointIndex);
 	if (bezier) delete bezier;

@@ -54,4 +54,3 @@ void ExpandingLabel::mouseReleaseEvent(QMouseEvent *event) {
 	emit mouseReleaseSignal(event);
 	QAbstractScrollArea::mouseReleaseEvent(event);
 }
-

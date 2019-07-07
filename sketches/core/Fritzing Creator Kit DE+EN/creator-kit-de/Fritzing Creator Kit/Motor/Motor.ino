@@ -1,7 +1,7 @@
 /*
   Motor
   dreht einen Motor erst rechts, dann links herum
-  
+
   Dieses Beispiel aus dem Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
@@ -15,18 +15,18 @@ void setup(){
 }
 
 void loop(){
-  digitalWrite(motor_A,HIGH); 
+  digitalWrite(motor_A,HIGH);
   digitalWrite(motor_B,LOW);
   for (int i=0; i<256; i+=5){
-    analogWrite(motor_Speed,i); 
+    analogWrite(motor_Speed,i);
     delay(20);
   }
   for (int i=255; i>0; i-=5){
-    analogWrite(motor_Speed,i); 
+    analogWrite(motor_Speed,i);
     delay(20);
   }
 
-  digitalWrite(motor_A,LOW); 
+  digitalWrite(motor_A,LOW);
   digitalWrite(motor_B,HIGH);
   for (int i=0; i<256; i+=5){
     analogWrite(motor_Speed,i);
@@ -37,5 +37,3 @@ void loop(){
     delay(20);
   }
 }
-
-

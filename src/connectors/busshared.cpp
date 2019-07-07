@@ -32,10 +32,10 @@ BusShared::BusShared(const QString & id)
 BusShared::BusShared(const QDomElement & busElement, const QHash<QString, QPointer<ConnectorShared> > & connectorHash)
 {
 	m_id = busElement.attribute("id");
-	
+
 	QDomElement connector = busElement.firstChildElement("nodeMember");
 	while (!connector.isNull()) {
-		initConnector(connector, connectorHash);		
+		initConnector(connector, connectorHash);
 		connector = connector.nextSiblingElement("nodeMember");
 	}
 }
@@ -45,7 +45,7 @@ void BusShared::initConnector(QDomElement & connector, const QHash<QString, QPoi
 	QString id = connector.attribute("connectorId");
 	if (id.isNull()) return;
 	if (id.isEmpty()) return;
-				
+
 	ConnectorShared * connectorShared = connectorHash.value(id);
 	if (connectorShared == NULL) {
         QDomDocument document = connector.ownerDocument();
@@ -54,12 +54,12 @@ void BusShared::initConnector(QDomElement & connector, const QHash<QString, QPoi
                            .arg(TextUtils::elementToString(document.documentElement())));
 		return;
 	}
-		
+
 	m_connectors.append(connectorShared);
 	connectorShared->setBus(this);
 }
 
-void BusShared::addConnectorShared(ConnectorShared * connectorShared) 
+void BusShared::addConnectorShared(ConnectorShared * connectorShared)
 {
 	m_connectors.append(connectorShared);
 	connectorShared->setBus(this);
@@ -73,7 +73,3 @@ const QString & BusShared::id() const {
 const QList<ConnectorShared *> & BusShared::connectors() {
 	return m_connectors;
 }
-
-
-
-	

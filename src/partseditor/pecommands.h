@@ -33,9 +33,9 @@ class PEBaseCommand : public BaseCommand
 public:
 	PEBaseCommand(class PEMainWindow *, QUndoCommand* parent);
 	~PEBaseCommand();
-	
+
 	QString getParamString() const;
-	
+
 protected:
 	class PEMainWindow * m_peMainWindow;
 };

@@ -32,7 +32,7 @@ class MismatchingConnectorWidget : public AbstractConnectorInfoWidget {
 	public:
 		MismatchingConnectorWidget(class ConnectorsInfoWidget *topLevelContainer, ViewLayer::ViewIdentifier viewId, const QString &connId, QWidget *parent, bool isInView = true, Connector* conn = NULL);
 		~MismatchingConnectorWidget();
-		
+
 		void setSelected(bool selected, bool doEmitChange=true);
 		bool onlyMissingThisView(ViewLayer::ViewIdentifier viewId);
 		void addViewPresence(ViewLayer::ViewIdentifier viewId);

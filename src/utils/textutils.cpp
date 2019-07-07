@@ -52,7 +52,7 @@ static const QRegExp SodipodiElementDetector("</{0,1}(inkscape|sodipodi):[^>]+>"
 const QString TextUtils::SMDFlipSuffix("___");
 
 const QString TextUtils::RegexFloatDetector = "[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?";
-const QRegExp TextUtils::floatingPointMatcher(RegexFloatDetector);		
+const QRegExp TextUtils::floatingPointMatcher(RegexFloatDetector);
 
 static const QRegExp HexExpr("&#x[0-9a-fA-F];");   // &#x9; &#xa; &#xd;
 static const QRegExp Xmlns("xmlns=([\"|'])[^\"']*\\1");
@@ -253,7 +253,7 @@ void TextUtils::chopNotDigits(QString & string) {
         QChar ch = string.at(ix);
 		if (ch.isDigit()) return;
         if (ch == '.') return;
-			
+
 		string.chop(1);
 	}
 }
@@ -300,7 +300,7 @@ QString TextUtils::replaceTextElement(const QString & svg, const QString & id, c
 		replaceChildText(node, newValue);
 		return doc.toString();
 	}
-		
+
 	return svg;
 }
 
@@ -322,7 +322,7 @@ QByteArray TextUtils::replaceTextElement(const QByteArray & svg, const QString &
 		replaceChildText(node, newValue);
 		return doc.toByteArray();
 	}
-		
+
 	return svg;
 }
 
@@ -347,7 +347,7 @@ QString TextUtils::replaceTextElements(const QString & svg, const QHash<QString,
 			break;
 		}
 	}
-		
+
 	if (!changed) return svg;
 
 	return doc.toString();
@@ -380,7 +380,7 @@ void TextUtils::replaceChildText(QDomNode & node, const QString & text) {
 	node.appendChild(t);
 }
 
-bool TextUtils::mergeSvg(QDomDocument & doc1, const QString & svg, const QString & id) 
+bool TextUtils::mergeSvg(QDomDocument & doc1, const QString & svg, const QString & id)
 {
 	QString errorStr;
 	int errorLine;
@@ -455,7 +455,7 @@ QString TextUtils::makeSVGHeader(double printerScale, double dpi, double width, 
 	double trueWidth = width / printerScale;
 	double trueHeight = height / printerScale;
 
-	return 
+	return
 		QString("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n%5"
 							 "<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' "
 							 "version='1.2' baseProfile='tiny' "
@@ -609,13 +609,13 @@ QString TextUtils::svgTransform(const QString & svg, QTransform & transform, boo
 			.arg(transform.m12())
 			.arg(transform.m21())
 			.arg(transform.m22())
-			.arg(translate ? transform.dx() : 0.0)   			
-			.arg(translate ? transform.dy() : 0.0)  		
+			.arg(translate ? transform.dx() : 0.0)
+			.arg(translate ? transform.dy() : 0.0)
 			.arg(svg)
 			.arg(extras);
 }
 
-bool TextUtils::getSvgSizes(QDomDocument & doc, double & sWidth, double & sHeight, double & vbWidth, double & vbHeight) 
+bool TextUtils::getSvgSizes(QDomDocument & doc, double & sWidth, double & sHeight, double & vbWidth, double & vbHeight)
 {
 	bool isIllustrator = isIllustratorDoc(doc);
 
@@ -682,7 +682,7 @@ bool TextUtils::findText(const QDomNode & node, QString & text) {
 }
 
 double TextUtils::convertToInches(const QString & string) {
-	bool ok; 
+	bool ok;
 	double retval = TextUtils::convertToInches(string, &ok, false);
 	if (!ok) return 0;
 
@@ -695,7 +695,7 @@ QString TextUtils::escapeAnd(const QString & string) {
 	return s;
 }
 
-QString TextUtils::convertExtendedChars(const QString & str) 
+QString TextUtils::convertExtendedChars(const QString & str)
 {
 	QString result;
     foreach (QChar c, str) {
@@ -710,7 +710,7 @@ QString TextUtils::convertExtendedChars(const QString & str)
 	return result;
 }
 
-QString TextUtils::stripNonValidXMLCharacters(const QString & str) 
+QString TextUtils::stripNonValidXMLCharacters(const QString & str)
 {
 	QString result;
 	QChar hs;
@@ -726,7 +726,7 @@ QString TextUtils::stripNonValidXMLCharacters(const QString & str)
             (c == 0xA) ||
             (c == 0xD) ||
             ((c >= 0x20) && (c <= 0xD7FF)) ||
-            ((c >= 0xE000) && (c <= 0xFFFD))) 
+            ((c >= 0xE000) && (c <= 0xFFFD)))
 		{
 			if (in_hs) {
 				result.append(hs);
@@ -744,7 +744,7 @@ QString TextUtils::stripNonValidXMLCharacters(const QString & str)
 		}
     }
     return result;
-}    
+}
 
 bool TextUtils::addCopper1(const QString & filename, QDomDocument & domDocument, const QString & srcAtt, const QString & destAtt) {
 	QString errorStr;
@@ -812,13 +812,13 @@ QString TextUtils::convertToPowerPrefix(double q) {
 	return QString::number(q);
 }
 
-double TextUtils::convertFromPowerPrefixU(QString & val, const QString & symbol) 
+double TextUtils::convertFromPowerPrefixU(QString & val, const QString & symbol)
 {
 	val.replace('u', MicroSymbol);
 	return convertFromPowerPrefix(val, symbol);
 }
 
-double TextUtils::convertFromPowerPrefix(const QString & val, const QString & symbol) 
+double TextUtils::convertFromPowerPrefix(const QString & val, const QString & symbol)
 {
 	initPowerPrefixes();
 
@@ -959,7 +959,7 @@ void TextUtils::gWrap(QDomDocument & domDocument, const QHash<QString, QString> 
 	}
 }
 
-bool TextUtils::fixInternalUnits(QString & svg) 
+bool TextUtils::fixInternalUnits(QString & svg)
 {
 	// float detector is a little weak
 	static QRegExp findInternalUnits("[\"']([\\d,\\.]+)(px|mm|cm|in|pt|pc)[\"']");
@@ -991,7 +991,7 @@ bool TextUtils::fixInternalUnits(QString & svg)
             firstTime = false;
 		}
 
-		QString old = findInternalUnits.cap(1) + findInternalUnits.cap(2); 
+		QString old = findInternalUnits.cap(1) + findInternalUnits.cap(2);
 		double in = convertToInches(old);
 		double replacement = in * viewBox.width() / size.width();
 		svg.replace(iu + 1, old.length(), QString::number(replacement));
@@ -1011,7 +1011,7 @@ bool TextUtils::fixInternalUnits(QString & svg)
 			}
 		}
 
-		QString old = findStrokeWidth.cap(1) + findStrokeWidth.cap(2); 
+		QString old = findStrokeWidth.cap(1) + findStrokeWidth.cap(2);
 		double in = convertToInches(old);
 		double replacement = in * viewBox.width() / size.width();
 		svg.replace(sw + 13, old.length(), QString::number(replacement));
@@ -1071,7 +1071,7 @@ bool TextUtils::fixViewBox(QDomElement & root) {
 
 	QStringList coords = viewBox.split(QRegExp(" |,"));
 	if (coords.length() != 4) return false;
-    
+
     if (coords[0] == "0" && coords[1] == "0") return false;
 
     bool ok;
@@ -1120,7 +1120,7 @@ double TextUtils::getStrokeWidth(QDomElement & element, double defaultValue)
     //QTextStream stream(&text);
     //element.save(stream, 0);
     //DebugDialog::debug(QString("no circle stroke width set in %1: %2").arg(filename).arg(text));
-    
+
     // default if there is no value to inherit
     element.setAttribute("stroke-width", defaultValue);
     return defaultValue;
@@ -1170,7 +1170,7 @@ bool TextUtils::fixStrokeWidth(QDomDocument & svgDoc) {
 }
 
 
-bool TextUtils::noPatternAux(QDomDocument & svgDom, const QString & tag) 
+bool TextUtils::noPatternAux(QDomDocument & svgDom, const QString & tag)
 {
     bool result = false;
 	QDomNodeList nodeList = svgDom.elementsByTagName(tag);
@@ -1338,7 +1338,7 @@ struct MatchThing
 	double val;
 };
 
-QString TextUtils::incrementTemplate(const QString & filename, int pins, double increment, MultiplyPinFunction multiFun, CopyPinFunction copyFun, void * userData) 
+QString TextUtils::incrementTemplate(const QString & filename, int pins, double increment, MultiplyPinFunction multiFun, CopyPinFunction copyFun, void * userData)
 {
 	QFile file(filename);
 	file.open(QFile::ReadOnly);
@@ -1369,7 +1369,7 @@ QString TextUtils::incrementTemplateString(const QString & templateString, int p
 		QString argCopy(templateString);
 		for (int j = matchThingIndex - 1; j >= 0; j--) {
 			MatchThing * mt = &matchThings[j];
-			argCopy.replace(mt->pos, mt->len, (*multiFun)(i, increment, mt->val));   
+			argCopy.replace(mt->pos, mt->len, (*multiFun)(i, increment, mt->val));
 		}
 		string += (*copyFun)(i, argCopy, userData);
 	}
@@ -1388,26 +1388,26 @@ QString TextUtils::standardMultiplyPinFunction(int pin, double increment, double
 }
 
 
-QString TextUtils::incMultiplyPinFunction(int pin, double increment, double value) 
+QString TextUtils::incMultiplyPinFunction(int pin, double increment, double value)
 {
 	return QString::number(value + ((pin + 1) * increment));
 }
 
-QString TextUtils::incCopyPinFunction(int pin, const QString & argString, void *) 
-{ 
-	return argString.arg(pin + 1); 
+QString TextUtils::incCopyPinFunction(int pin, const QString & argString, void *)
+{
+	return argString.arg(pin + 1);
 }
 
-QString TextUtils::noCopyPinFunction(int, const QString & argString, void *) 
-{ 
-	return argString; 
+QString TextUtils::noCopyPinFunction(int, const QString & argString, void *)
+{
+	return argString;
 }
 
-QString TextUtils::negIncCopyPinFunction(int pin, const QString & argString, void * userData) 
-{ 
+QString TextUtils::negIncCopyPinFunction(int pin, const QString & argString, void * userData)
+{
 	int pins = *((int *) userData);
 	int offset = *(((int *) userData) + 1);
-	return argString.arg(pins - (pin + offset)); 
+	return argString.arg(pins - (pin + offset));
 }
 
 double TextUtils::getViewBoxCoord(const QString & svg, int coord)
@@ -1422,7 +1422,7 @@ double TextUtils::getViewBoxCoord(const QString & svg, int coord)
 	return c.toDouble();
 }
 
-QString TextUtils::makeLineSVG(QPointF p1, QPointF p2, double width, QString colorString, double dpi, double printerScale, bool blackOnly, bool dashed, const QVector<qreal> & pattern) 
+QString TextUtils::makeLineSVG(QPointF p1, QPointF p2, double width, QString colorString, double dpi, double printerScale, bool blackOnly, bool dashed, const QVector<qreal> & pattern)
 {
 	p1.setX(p1.x() * dpi / printerScale);
 	p1.setY(p1.y() * dpi / printerScale);
@@ -1439,11 +1439,11 @@ QString TextUtils::makeLineSVG(QPointF p1, QPointF p2, double width, QString col
 					.arg(p2.y())
 					.arg(width * dpi / printerScale)
 					.arg(stroke)
-                    .arg(dash)                
+                    .arg(dash)
                    ;
 }
 
-QString TextUtils::makeCubicBezierSVG(const QPolygonF & poly, double width, QString colorString, double dpi, double printerScale, bool blackOnly, bool dashed, const QVector<qreal> & pattern) 
+QString TextUtils::makeCubicBezierSVG(const QPolygonF & poly, double width, QString colorString, double dpi, double printerScale, bool blackOnly, bool dashed, const QVector<qreal> & pattern)
 {
     QString dash = makeDashString(dashed, pattern, dpi, printerScale);
     QString stroke = (blackOnly) ? "black" : colorString;
@@ -1482,7 +1482,7 @@ QString TextUtils::makeRectSVG(QRectF r, QPointF offset, double dpi, double prin
 }
 
 
-QString TextUtils::makePolySVG(const QPolygonF & poly, QPointF offset, double width, QString colorString, double dpi, double printerScale, bool blackOnly) 
+QString TextUtils::makePolySVG(const QPolygonF & poly, QPointF offset, double width, QString colorString, double dpi, double printerScale, bool blackOnly)
 {
 	QString polyString = QString("<polyline stroke-linecap='round' stroke-linejoin='round' fill='none' stroke='%1' stroke-width='%2' points='\n").arg(blackOnly ? "black" : colorString).arg(width);
 	int space = 0;
@@ -1496,7 +1496,7 @@ QString TextUtils::makePolySVG(const QPolygonF & poly, QPointF offset, double wi
 	return polyString;
 }
 
-QPolygonF TextUtils::polygonFromElement(QDomElement & element) 
+QPolygonF TextUtils::polygonFromElement(QDomElement & element)
 {
 	QPolygonF poly;
 	QDomElement point = element.firstChildElement("point");
@@ -1572,7 +1572,7 @@ void TextUtils::expandAndFillAux(QDomElement & element, const QString & color, d
 		gotChildren = true;
 		expandAndFillAux(child, color, expandBy);
 		child = child.nextSiblingElement();
-	}	
+	}
 
 	if (gotChildren) return;
 
@@ -1582,7 +1582,7 @@ void TextUtils::expandAndFillAux(QDomElement & element, const QString & color, d
 	if (stroke.isEmpty() && fill.isEmpty()) {
 		return;
 	}
-		
+
 	element.setAttribute("fill", color);
 	element.setAttribute("stroke", color);
 
@@ -1610,7 +1610,7 @@ bool TextUtils::writeUtf8(const QString & fileName, const QString & text)
     return false;
 }
 
-int TextUtils::getPinsAndSpacing(const QString & expectedFileName, QString & spacingString) 
+int TextUtils::getPinsAndSpacing(const QString & expectedFileName, QString & spacingString)
 {
     QStringList pieces = expectedFileName.split("_");
     int pix = 0;
@@ -1758,9 +1758,9 @@ QSizeF TextUtils::parseForWidthAndHeight(QXmlStreamReader & svg, QRectF & viewBo
 
 				return size;
 			}
-			break;		
+			break;
 		default:
-			break;		
+			break;
 		}
 	}
 

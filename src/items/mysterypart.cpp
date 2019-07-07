@@ -89,7 +89,7 @@ void MysteryPart::setChipLabel(QString chipLabel, bool force) {
 			svg = makeSvg(chipLabel, true);
             if (!svg.isEmpty()) {
 	            resetRenderer(svg);
-            }			
+            }
             break;
 		case ViewLayer::SchematicView:
             {
@@ -109,7 +109,7 @@ void MysteryPart::setChipLabel(QString chipLabel, bool force) {
     if (m_partLabel) m_partLabel->displayTextsIf();
 }
 
-QString MysteryPart::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString MysteryPart::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	QString svg = PaletteItem::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 	switch (viewLayerID) {
@@ -125,14 +125,14 @@ QString MysteryPart::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QStri
 			break;
 	}
 
-	return svg; 
+	return svg;
 }
 
 QString MysteryPart::retrieveSchematicSvg(QString & svg) {
 
 	bool hasLocal = false;
 	QStringList labels = getPinLabels(hasLocal);
-		
+
 	if (hasLocal) {
 		svg = makeSchematicSvg(labels, false);
 	}
@@ -196,7 +196,7 @@ QStringList MysteryPart::collectValues(const QString & family, const QString & p
 				values << QString::number(i);
 			}
 		}
-		
+
 		return values;
 	}
 
@@ -314,7 +314,7 @@ QString MysteryPart::genxFZP(const QString & moduleid, const QString & templateN
     QString spacingString;
     TextUtils::getPinsAndSpacing(moduleid, spacingString);
     QString result = PaletteItem::genFZP(moduleid, templateName, minPins, maxPins, step, false);
-   	result.replace(".percent.", "%");
+	result.replace(".percent.", "%");
 	result = result.arg(spacingString);
 	return hackFzpHoleSize(result, moduleid);
 }
@@ -345,7 +345,7 @@ QString MysteryPart::genModuleID(QMap<QString, QString> & currPropsMap)
 	}
 }
 
-QString MysteryPart::makeSchematicSvg(const QString & expectedFileName) 
+QString MysteryPart::makeSchematicSvg(const QString & expectedFileName)
 {
 	bool sip = expectedFileName.contains("sip", Qt::CaseInsensitive);
 
@@ -359,13 +359,13 @@ QString MysteryPart::makeSchematicSvg(const QString & expectedFileName)
 
     if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
         return obsoleteMakeSchematicSvg(labels, sip);
-    }     
+    }
 
 	return makeSchematicSvg(labels, sip);
 }
 
-QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip) 
-{	
+QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip)
+{
     QDomDocument fakeDoc;
 
     QList<QDomElement> lefts;
@@ -381,7 +381,7 @@ QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip)
     QString titleText = sip ? "IC" : "?";
     QString svg = SchematicRectConstants::genSchematicDIP(empty, empty, lefts, empty, empty, busNames, titleText, false, false, SchematicRectConstants::simpleGetConnectorName);
     if (sip) return svg;
-    
+
     // add the mystery part graphic
     QDomDocument doc;
     if (!doc.setContent(svg)) return svg;
@@ -417,8 +417,8 @@ QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip)
     return doc.toString(1);
 }
 
-QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool sip) 
-{	
+QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool sip)
+{
 	int increment = GraphicsUtils::StandardSchematicSeparationMils;   // 7.5mm;
 	int border = 30;
 	double totalHeight = (labels.count() * increment) + increment + border;
@@ -482,7 +482,7 @@ QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool s
 					"<rect x='0' y='%2' fill='none' width='300' height='30' id='connector%3pin' stroke-width='0' />\n"
 					"<rect x='0' y='%2' fill='none' width='30' height='30' id='connector%3terminal' stroke-width='0' />\n"
 					"<text id='label%3' x='390' y='%4' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='start' font-size='%6' >%5</text>\n");
-  
+
 	for (int i = 0; i < labels.count(); i++) {
 		svg += repeat
 			.arg(increment + (border / 2) + (i * increment))
@@ -499,7 +499,7 @@ QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool s
 }
 
 
-QString MysteryPart::makeBreadboardSvg(const QString & expectedFileName) 
+QString MysteryPart::makeBreadboardSvg(const QString & expectedFileName)
 {
 	if (expectedFileName.contains("_sip_")) return makeBreadboardSipSvg(expectedFileName);
 	if (expectedFileName.contains("_dip_")) return makeBreadboardDipSvg(expectedFileName);
@@ -507,7 +507,7 @@ QString MysteryPart::makeBreadboardSvg(const QString & expectedFileName)
 	return "";
 }
 
-QString MysteryPart::makeBreadboardDipSvg(const QString & expectedFileName) 
+QString MysteryPart::makeBreadboardDipSvg(const QString & expectedFileName)
 {
     QString spacingString;
     int pins = TextUtils::getPinsAndSpacing(expectedFileName, spacingString);
@@ -567,7 +567,7 @@ QString MysteryPart::makeBreadboardDipSvg(const QString & expectedFileName)
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 2) / 100).arg(repeatTs).arg(repeatBs);
 }
 
-QString MysteryPart::makeBreadboardSipSvg(const QString & expectedFileName) 
+QString MysteryPart::makeBreadboardSipSvg(const QString & expectedFileName)
 {
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() != 6) return "";
@@ -583,7 +583,7 @@ QString MysteryPart::makeBreadboardSipSvg(const QString & expectedFileName)
 					"<rect width='[6.0022]' x='0' y='22' fill='#404040' height='3.096' id='lower' stroke-width='0' />\n"
 					"<text id='label' x='2.5894' y='13' fill='#e6e6e6' stroke='none' font-family='Droid Sans' text-anchor='start' font-size='7.3' >?</text>\n"
 					"<circle fill='#8C8C8C' cx='[1.0022]' cy='5' r='3' stroke-width='0' />\n"
-					"<text x='[1.0022]' y='6.7' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"      
+					"<text x='[1.0022]' y='6.7' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"
 					"%2\n"
 					"</g>\n"
 					"</svg>\n");
@@ -649,11 +649,11 @@ void MysteryPart::swapEntry(const QString & text) {
     PaletteItem::swapEntry(text);
 }
 
-QString MysteryPart::makePcbDipSvg(const QString & expectedFileName) 
+QString MysteryPart::makePcbDipSvg(const QString & expectedFileName)
 {
     QString spacingString;
 	int pins = TextUtils::getPinsAndSpacing(expectedFileName, spacingString);
-    if (pins == 0) return "";  
+    if (pins == 0) return "";
 
 	QString header("<?xml version='1.0' encoding='UTF-8'?>\n"
 				    "<svg baseProfile='tiny' version='1.2' width='%1in' height='%2in' viewBox='0 0 %3 %4' xmlns='http://www.w3.org/2000/svg'>\n"
@@ -672,7 +672,7 @@ QString MysteryPart::makePcbDipSvg(const QString & expectedFileName)
 	double silkSplitTop = 100;
 	double offsetX = 60;
 	double offsetY = 60;
-	double spacing = TextUtils::convertToInches(spacingString) * GraphicsUtils::StandardFritzingDPI; 
+	double spacing = TextUtils::convertToInches(spacingString) * GraphicsUtils::StandardFritzingDPI;
 	double totalWidth = 120 + spacing;
 	double totalHeight = (100 * pins / 2) + (outerBorder * 2);
 	double center = totalWidth / 2;

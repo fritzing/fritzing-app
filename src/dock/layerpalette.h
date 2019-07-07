@@ -31,7 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../viewlayer.h"
 
-class ViewLayerCheckBox : public QCheckBox 
+class ViewLayerCheckBox : public QCheckBox
 {
 Q_OBJECT
 public:

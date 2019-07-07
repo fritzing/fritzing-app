@@ -125,7 +125,7 @@ public:
 
 
 	void initConnectors();
-    void setConnectorsInitialized(bool); 
+    void setConnectorsInitialized(bool);
 	ConnectorShared * getConnectorShared(const QString & id);
 	bool ignoreTerminalPoints();
 
@@ -136,7 +136,7 @@ public:
 
 	void flipSMDAnd();
 	void setFlippedSMD(bool);
-	bool flippedSMD();	
+	bool flippedSMD();
 	bool needsCopper1();
 	bool hasViewFor(ViewLayer::ViewID);
 	bool hasViewFor(ViewLayer::ViewID, ViewLayer::ViewLayerID);

@@ -216,7 +216,7 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 
     QRectF r = board->sceneBoundingRect();
     QSizeF boardImageSize(r.width(), r.height());
-  
+
 	QStringList fileNames;
 
 	fileNames.append(exportDir + "/" + constructFileName(prefix + "etch_copper_bottom%1", suffix));
@@ -278,7 +278,7 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
             renderThing.hideTerminalPoints = true;
             renderThing.selectedItems = renderThing.renderBlocker = false;
 			QString svg = m_pcbGraphicsView->renderToSVG(renderThing, board, viewLayerIDs);
-			massageOutput(svg, doMask, doSilk, doPaste, maskTop, maskBottom, fileName, board, GraphicsUtils::IllustratorDPI, viewLayerIDs);		
+			massageOutput(svg, doMask, doSilk, doPaste, maskTop, maskBottom, fileName, board, GraphicsUtils::IllustratorDPI, viewLayerIDs);
 			QString merged = mergeBoardSvg(svg, board, GraphicsUtils::IllustratorDPI, false, viewLayerIDs);
             TextUtils::writeUtf8(fileName.arg(""), merged);
 			merged = mergeBoardSvg(svg, board, GraphicsUtils::IllustratorDPI, true, viewLayerIDs);
@@ -305,9 +305,9 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 			        svg = m_pcbGraphicsView->renderToSVG(renderThing, board, viewLayerIDs);
 			        massageOutput(svg, doMask, doSilk, doPaste, maskTop, maskBottom, fileName, board, res, viewLayerIDs);
                 }
-			
+
                 QString merged = mergeBoardSvg(svg, board, res, flip, viewLayerIDs);
-			
+
 			    // now convert to pdf
 			    QSvgRenderer svgRenderer;
 			    svgRenderer.load(merged.toLatin1());
@@ -315,7 +315,7 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 			    double trueHeight = boardImageSize.height() / GraphicsUtils::SVGDPI;
 			    QRectF target(0, 0, trueWidth * res, trueHeight * res);
 
-			    QSizeF psize((target.width() + printer.paperRect().width() - printer.width()) / res, 
+			    QSizeF psize((target.width() + printer.paperRect().width() - printer.width()) / res,
 						     (target.height() + printer.paperRect().height() - printer.height()) / res);
 			    printer.setPaperSize(psize, QPrinter::Inch);
 
@@ -428,7 +428,7 @@ QString MainWindow::mergeBoardSvg(QString & svg, ItemBase * board, int res, bool
     else if (boardSvg.isEmpty()) {
         boardSvg = outlineSvg;
     }
-	
+
 	return TextUtils::convertExtendedChars(TextUtils::mergeSvg(boardSvg, svg, "", flip));
 }
 
@@ -553,7 +553,7 @@ void MainWindow::doExport() {
 	#endif
 }
 
-void MainWindow::exportAux(QString fileName, QImage::Format format, int quality, bool removeBackground) 
+void MainWindow::exportAux(QString fileName, QImage::Format format, int quality, bool removeBackground)
 {
     if (m_currentGraphicsView == NULL) return;
 
@@ -664,7 +664,7 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 	QRectF target(0, 0, source.width() * scale2, source.height() * scale2);
 
 	if (!paginate) {
-		QSizeF psize((target.width() + printer.paperRect().width() - printer.width()) / res, 
+		QSizeF psize((target.width() + printer.paperRect().width() - printer.width()) / res,
 					 (target.height() + printer.paperRect().height() - printer.height()) / res);
 		printer.setPaperSize(psize, QPrinter::Inch);
 	}
@@ -701,9 +701,9 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 		for (int iy = 0; iy < yPages; iy++) {
 			for (int ix = 0; ix < xPages; ix++) {
 				// render to printer:
-				QRectF pSource((ix * xSourcePage) + source.left(), 
-							   (iy * ySourcePage) + source.top(), 
-							   qMin(xSourcePage, (int) source.width() - (ix * xSourcePage)), 
+				QRectF pSource((ix * xSourcePage) + source.left(),
+							   (iy * ySourcePage) + source.top(),
+							   qMin(xSourcePage, (int) source.width() - (ix * xSourcePage)),
 							   qMin(ySourcePage, (int) source.height() - (iy * ySourcePage)));
 				QRectF pTarget(0, 0, pSource.width() * scale2, pSource.height() * scale2);
 				m_currentGraphicsView->scene()->render(&painter, pTarget, pSource, Qt::KeepAspectRatio);
@@ -737,7 +737,7 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 	//#ifndef QT_NO_CONCURRENT
 		//QProgressDialog dialog;
 		//dialog.setLabelText(message);
- 	//
+	//
 		// Create a QFutureWatcher and conncect signals and slots.
 		//QFutureWatcher<void> futureWatcher;
 		//QObject::connect(&futureWatcher, SIGNAL(finished()), &dialog, SLOT(reset()));
@@ -811,7 +811,7 @@ void MainWindow::saveAsAuxAux(const QString & fileName) {
 		file.remove();
 	}
 
-	QString fzName = dir.absoluteFilePath(QFileInfo(fileName).completeBaseName() + FritzingSketchExtension); 
+	QString fzName = dir.absoluteFilePath(QFileInfo(fileName).completeBaseName() + FritzingSketchExtension);
 	m_sketchModel->save(fzName, false);
 
     saveLastTabList();
@@ -836,7 +836,7 @@ void MainWindow::saveAsShareable(const QString & path, bool saveModel)
         }
 		if (itemBase->modelPart()->isCore()) continue;
         if (itemBase->moduleID().contains(PartFactory::OldSchematicPrefix)) continue;
-	
+
 		saveParts.insert(itemBase->moduleID(), itemBase->modelPart());
 	}
 	if(alreadyHasExtension(filename, FritzingSketchExtension)) {
@@ -853,7 +853,7 @@ void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 
 	QString fileExt;
 	QString path = defaultSaveFolder() + "/" + QFileInfo(filename).fileName()+"z";
-	QString bundledFileName = askForFilename 
+	QString bundledFileName = askForFilename
 		? FolderUtils::getSaveFileName(this, tr("Specify a file name"), path, tr("Fritzing (*%1)").arg(extension), &fileExt)
 		: filename;
 
@@ -914,7 +914,7 @@ void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 
 	if (deleteLeftovers) {
 		QStringList nameFilters;
-		nameFilters << ("*" + FritzingPartExtension) << "*.svg";   
+		nameFilters << ("*" + FritzingPartExtension) << "*.svg";
 		QDir dir(destFolder);
 		QStringList fileList = dir.entryList(nameFilters, QDir::Files | QDir::NoSymLinks);
 		foreach (QString fileName, fileList) {
@@ -1107,7 +1107,7 @@ void MainWindow::exportSvg(double res, bool selectedItems, bool flatten) {
     exportSvg(res, selectedItems, flatten, fileName);
 }
 
-void MainWindow::exportSvg(double res, bool selectedItems, bool flatten, const QString & fileName) 
+void MainWindow::exportSvg(double res, bool selectedItems, bool flatten, const QString & fileName)
 {
 	FileProgressDialog * fileProgressDialog = exportProgress();
 	LayerList viewLayerIDs;
@@ -1259,7 +1259,7 @@ void MainWindow::exportBOM() {
 		fileName += bomActionType;
     }
 
-   	if (!TextUtils::writeUtf8(fileName, bom)) {
+	if (!TextUtils::writeUtf8(fileName, bom)) {
 		QMessageBox::warning(this, tr("Fritzing"), tr("Unable to save BOM file, but the text is on the clipboard."));
 	}
 
@@ -1278,7 +1278,7 @@ void MainWindow::exportBOM() {
 void MainWindow::exportSpiceNetlist() {
     if (m_schematicGraphicsView == NULL) return;
 
-    // examples: 
+    // examples:
     // http://www.allaboutcircuits.com/vol_5/chpt_7/8.html
     // http://cutler.eecs.berkeley.edu/classes/icbook/spice/UserGuide/elements_fr.html
     // http://www.csd.uoc.gr/~hy422/2011s/datasheets/ngspice-user-manual.pdf
@@ -1396,7 +1396,7 @@ void MainWindow::exportSpiceNetlist() {
             DebugDialog::debug("spice " + spice);
         }
 
-        output += spice;  
+        output += spice;
     }
 
     output += "\n";
@@ -1425,7 +1425,7 @@ void MainWindow::exportSpiceNetlist() {
 
         QString output2;
         foreach (QString line, lines) {
-            int ix = line.toLower().indexOf(incl); 
+            int ix = line.toLower().indexOf(incl);
             if (ix < 0) {
                 output2 += line + "\n";
                 continue;
@@ -1434,7 +1434,7 @@ void MainWindow::exportSpiceNetlist() {
             QString temp = line;
             temp.replace(ix, incl.length(), "");
             QString filename = temp.trimmed();
-            
+
             bool gotOne = false;
             foreach (QDir dir, paths) {
                 foreach (QString folder, ModelPart::possibleFolders()) {

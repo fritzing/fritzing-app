@@ -209,7 +209,7 @@ class QuaZipFile: public QIODevice {
      * Returns null string if there is no file name set yet. This is the
      * case when this QuaZipFile operates on the existing QuaZip object
      * (constructor QuaZipFile(QuaZip*,QObject*) or setZip() was used).
-     * 
+     *
      * \sa getActualFileName
      **/
     QString getFileName()const {return fileName;}

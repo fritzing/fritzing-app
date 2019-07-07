@@ -65,7 +65,7 @@ ErcData::ErcData(const QDomElement & ercElement)
 	else if (ig.compare("always", Qt::CaseInsensitive) == 0) {
 		m_ignore = Always;
 	}
-		
+
 	QDomElement ercChild = ercElement.firstChildElement();
 	while (!ercChild.isNull()) {
 		QString nodeName = ercChild.nodeName();
@@ -168,6 +168,3 @@ ErcData::EType ErcData::eType() {
 ErcData::Ignore ErcData::ignore() {
 	return m_ignore;
 }
-
-
-	

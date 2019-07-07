@@ -57,7 +57,7 @@ QStringList ScrewTerminal::collectValues(const QString & family, const QString &
 		for (int i = MinPins; i <= MaxPins; i++) {
 			values << QString::number(i);
 		}
-		
+
 		return values;
 	}
 
@@ -65,7 +65,7 @@ QStringList ScrewTerminal::collectValues(const QString & family, const QString &
 		QStringList values;
 		value = modelPart()->properties().value("pin spacing");
 
-		initSpacings();		
+		initSpacings();
 		return Spacings.values();
 	}
 
@@ -123,7 +123,7 @@ void ScrewTerminal::initSpacings() {
 	}
 }
 
-QString ScrewTerminal::makeBreadboardSvg(const QString & expectedFileName) 
+QString ScrewTerminal::makeBreadboardSvg(const QString & expectedFileName)
 {
 	QStringList pieces = expectedFileName.split("_");
 
@@ -147,15 +147,15 @@ QString ScrewTerminal::makeBreadboardSvg(const QString & expectedFileName)
 	return svg;
 }
 
-QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName) 
+QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName)
 {
     if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
         return obsoleteMakeSchematicSvg(expectedFileName);
-    }     
+    }
 
 	QStringList pieces = expectedFileName.split("_");
 
-	int pins = pieces.at(2).toInt();			
+	int pins = pieces.at(2).toInt();
 	double increment = SchematicRectConstants::NewUnit / 25.4;
     double incrementPoints = 72 * increment;		// 72 dpi
     double pinWidthPoints = 72 * SchematicRectConstants::PinWidth / 25.4;
@@ -174,7 +174,7 @@ QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName)
 					"<rect id='connectorpercent1terminal' x='0' y='[%6]' width='0' height='%2'/>\n"
 					"<circle fill='none' stroke-width='%2' stroke='%1' cx='%7' cy='[%5]' r='%8' />\n"
 					);
-    
+
     repeat = repeat
                 .arg(SchematicRectConstants::PinColor)
                 .arg(pinWidthPoints)
@@ -193,12 +193,12 @@ QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName)
 
 	return svg;
 }
-QString ScrewTerminal::obsoleteMakeSchematicSvg(const QString & expectedFileName) 
+QString ScrewTerminal::obsoleteMakeSchematicSvg(const QString & expectedFileName)
 {
 	QStringList pieces = expectedFileName.split("_");
 
 	int pins = pieces.at(2).toInt();
-	double increment = GraphicsUtils::StandardSchematicSeparationMils / 1000;				
+	double increment = GraphicsUtils::StandardSchematicSeparationMils / 1000;
 	double incrementPoints = increment * 72;		// 72 dpi
 
 
@@ -220,7 +220,7 @@ QString ScrewTerminal::obsoleteMakeSchematicSvg(const QString & expectedFileName
 	return svg;
 }
 
-QString ScrewTerminal::makePcbSvg(const QString & originalExpectedFileName) 
+QString ScrewTerminal::makePcbSvg(const QString & originalExpectedFileName)
 {
     QString expectedFileName = originalExpectedFileName;
     int hsix = expectedFileName.indexOf(HoleSizePrefix);
@@ -277,7 +277,7 @@ QString ScrewTerminal::makePcbSvg(const QString & originalExpectedFileName)
 	return svg;
 }
 
-bool ScrewTerminal::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
+bool ScrewTerminal::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (prop.compare("hole size", Qt::CaseInsensitive) == 0) {
         return collectHoleSizeInfo(TheHoleThing.holeSizeValue, parent, swappingEnabled, returnProp, returnValue, returnWidget);

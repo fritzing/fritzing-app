@@ -55,8 +55,8 @@ PartsBinListView::PartsBinListView(ReferenceModel* referenceModel, PartsBinPalet
 
     setContextMenuPolicy(Qt::CustomContextMenu);
     connect(
-    	this, SIGNAL(customContextMenuRequested(const QPoint&)),
-    	this, SLOT(showContextMenu(const QPoint&))
+	this, SIGNAL(customContextMenuRequested(const QPoint&)),
+	this, SLOT(showContextMenu(const QPoint&))
     );
 }
 
@@ -102,7 +102,7 @@ int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
 	}
 
 	return position;
-	
+
 }
 
 void PartsBinListView::mouseMoveEvent(QMouseEvent *event) {
@@ -371,7 +371,7 @@ void PartsBinListView::reloadPart(const QString & moduleID) {
 	}
 }
 
-void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, const QString & moduleID) 
+void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, const QString & moduleID)
 {
     ItemBase * itemBase = ItemBaseHash.value(moduleID);
     if (itemBase == NULL) {

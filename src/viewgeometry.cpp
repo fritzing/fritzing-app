@@ -99,12 +99,12 @@ QRectF ViewGeometry::rect() const {
 	return m_rect;
 }
 
-void ViewGeometry::setRect(double x, double y, double width, double height) 
+void ViewGeometry::setRect(double x, double y, double width, double height)
 {
 	m_rect.setRect(x, y, width, height);
 }
 
-void ViewGeometry::setRect(const QRectF & r) 
+void ViewGeometry::setRect(const QRectF & r)
 {
 	setRect(r.x(), r.y(), r.width(), r.height());
 }
@@ -151,12 +151,12 @@ void ViewGeometry::setAutoroutable(bool autoroutable) {
 }
 
 bool ViewGeometry::getRouted() const {
-	
+
 	return m_wireFlags.testFlag(RoutedFlag);
 }
 
 bool ViewGeometry::getNormal() const {
-	
+
 	return m_wireFlags.testFlag(NormalFlag);
 }
 

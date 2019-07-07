@@ -1,7 +1,7 @@
 /*
   Synthesizer
   erzeugt eine Frequenzschema aus den Werten zweier Potientiometer
-  
+
   Dieses Beispiel aus dem Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
@@ -28,7 +28,7 @@ void play(int myToneHeight) {                  // play-Methode
 void loop() {
   toneHeight=analogRead(potPin1);              // Tonhöhe ist Wert vom Potentiometer 1
   lfo=analogRead(potPin2);                     // lfo ist Wert vom Potentiometer 1
-  
+
   for (int i = (lfo/10); i > 0; i--) {         // Tonhöhe steigend in Abhängigkeit des lfo Wertes
     play(toneHeight);
   }

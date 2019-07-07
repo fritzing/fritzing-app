@@ -149,7 +149,7 @@ QStringList Board::collectValues(const QString & family, const QString & prop, Q
 
 }
 
-bool Board::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
+bool Board::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (prop.compare("filename", Qt::CaseInsensitive) == 0 && isBoard(this)) {
         setupLoadImage(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget);
@@ -197,7 +197,7 @@ bool Board::isBoard(ModelPart * modelPart) {
     }
 }
 
-void Board::setupLoadImage(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget) 
+void Board::setupLoadImage(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget)
 {
     Q_UNUSED(returnValue);
     Q_UNUSED(value);
@@ -311,7 +311,7 @@ void Board::prepLoadImage() {
 
 bool Board::checkImage(const QString & filename) {
     QFile file(filename);
-    
+
 	QString errorStr;
 	int errorLine;
 	int errorColumn;
@@ -488,7 +488,7 @@ QString Board::setBoardOutline(const QString & svg) {
     QSvgRenderer renderer(domDocument.toByteArray());
 
     ix = 0;
-    foreach (QDomElement leaf, leaves) {    
+    foreach (QDomElement leaf, leaves) {
         leaf.setAttribute("id", ids.at(ix++));
     }
 
@@ -537,7 +537,7 @@ void Board::prepLoadImageAux(const QString & fileName, bool addName)
 	}
 }
 
-ViewLayer::ViewID Board::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID Board::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
     if (vid == ViewLayer::PCBView) {
         return ViewLayer::IconView;
@@ -616,7 +616,7 @@ double ResizableBoard::minHeight() {
 	return 0.25 * GraphicsUtils::SVGDPI;
 }
 
-void ResizableBoard::mousePressEvent(QGraphicsSceneMouseEvent * event) 
+void ResizableBoard::mousePressEvent(QGraphicsSceneMouseEvent * event)
 {
 	m_corner = ResizableBoard::NO_CORNER;
 
@@ -735,7 +735,7 @@ void ResizableBoard::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 				.arg(oldSize.width()).arg(oldSize.height()));
 
 			double sw = size.width() / 2;
-			double sh = size.height() / 2;	
+			double sh = size.height() / 2;
 			QMatrix m(oldT.m11(), oldT.m12(), oldT.m21(), oldT.m22(), 0, 0);
 			ds = m.inverted().map(ds);
 			QTransform newT = QTransform().translate(-sw, -sh) * QTransform(m) * QTransform().translate(sw, sh);
@@ -749,14 +749,14 @@ void ResizableBoard::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 				itemBase->getViewGeometry().setTransform(newT);
 				itemBase->setTransform(newT);
 			}
-			
+
 			QTransform t = transform();
 			DebugDialog::debug(QString("t new m:%1 p:%2,%3 sz:%4,%5")
 				.arg(TextUtils::svgMatrix(t))
 				.arg(pos().x()).arg(pos().y())
 				.arg(size.width()).arg(size.height()));
 		}
-	
+
 		QPointF actual;
 		QPointF desired;
 		switch (m_corner) {
@@ -774,7 +774,7 @@ void ResizableBoard::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 				break;
                         default:
                                 break;
-		}	
+		}
 
 		setPos(pos() + desired - actual);
 	}
@@ -817,7 +817,7 @@ bool ResizableBoard::resizeMM(double mmW, double mmH, const LayerHash & viewLaye
 
 	QRectF r = this->boundingRect();
 	if (qAbs(GraphicsUtils::pixels2mm(r.width(), GraphicsUtils::SVGDPI) - mmW) < .001 &&
-		qAbs(GraphicsUtils::pixels2mm(r.height(), GraphicsUtils::SVGDPI) - mmH) < .001) 
+		qAbs(GraphicsUtils::pixels2mm(r.height(), GraphicsUtils::SVGDPI) - mmH) < .001)
 	{
 		return false;
 	}
@@ -860,7 +860,7 @@ void ResizableBoard::resizeMMAux(double mmW, double mmH)
 
 void ResizableBoard::loadLayerKin( const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
-	loadTemplates();				
+	loadTemplates();
 	Board::loadLayerKin(viewLayers, viewLayerPlacement);
 	double w =  m_modelPart->localProp("width").toDouble();
 	if (w != 0) {
@@ -873,8 +873,8 @@ void ResizableBoard::setInitialSize() {
 	if (w == 0) {
 		// set the size so the infoGraphicsView will display the size as you drag
 		QSizeF sz = this->boundingRect().size();
-		modelPart()->setLocalProp("width", GraphicsUtils::pixels2mm(sz.width(), GraphicsUtils::SVGDPI)); 
-		modelPart()->setLocalProp("height", GraphicsUtils::pixels2mm(sz.height(), GraphicsUtils::SVGDPI)); 
+		modelPart()->setLocalProp("width", GraphicsUtils::pixels2mm(sz.width(), GraphicsUtils::SVGDPI));
+		modelPart()->setLocalProp("height", GraphicsUtils::pixels2mm(sz.height(), GraphicsUtils::SVGDPI));
 	}
 }
 
@@ -898,7 +898,7 @@ QSizeF ResizableBoard::getSizeMM() {
 	return QSizeF(w, h);
 }
 
-QString ResizableBoard::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH) 
+QString ResizableBoard::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH)
 {
 	switch (viewLayerID) {
 		case ViewLayer::Board:
@@ -969,7 +969,7 @@ QString ResizableBoard::makeSvg(double mmW, double mmH, const QString & layerTem
         leaf.setAttribute("width", QString::number(mmW - strokeWidth));
         leaf.setAttribute("height", QString::number(mmH - strokeWidth));
     }
-    
+
     return doc.toString();
 }
 
@@ -997,10 +997,10 @@ bool ResizableBoard::collectExtraInfo(QWidget * parent, const QString & family, 
 
 		returnProp = tr("shape");
 
-		if (!m_modelPart->localProp("height").isValid()) { 
+		if (!m_modelPart->localProp("height").isValid()) {
 			// display uneditable width and height
 			QFrame * frame = new QFrame();
-			frame->setObjectName("infoViewPartFrame");		
+			frame->setObjectName("infoViewPartFrame");
 
 			QVBoxLayout * vboxLayout = new QVBoxLayout();
 			vboxLayout->setAlignment(Qt::AlignLeft);
@@ -1011,14 +1011,14 @@ bool ResizableBoard::collectExtraInfo(QWidget * parent, const QString & family, 
 			double tens = pow(10.0, m_decimalsAfter);
 			QRectF r = this->boundingRect();
 			double w = qRound(GraphicsUtils::pixels2mm(r.width(), GraphicsUtils::SVGDPI) * tens) / tens;
-			QLabel * l1 = new QLabel(tr("width: %1mm").arg(w));	
+			QLabel * l1 = new QLabel(tr("width: %1mm").arg(w));
 			l1->setMargin(0);
-			l1->setObjectName("infoViewLabel");		
+			l1->setObjectName("infoViewLabel");
 
 			double h = qRound(GraphicsUtils::pixels2mm(r.height(), GraphicsUtils::SVGDPI) * tens) / tens;
 			QLabel * l2 = new QLabel(tr("height: %1mm").arg(h));
 			l2->setMargin(0);
-			l2->setObjectName("infoViewLabel");		
+			l2->setObjectName("infoViewLabel");
 
 			if (returnWidget) vboxLayout->addWidget(qobject_cast<QWidget *>(returnWidget));
 			vboxLayout->addWidget(l1);
@@ -1047,7 +1047,7 @@ void ResizableBoard::paperSizeChanged(int index) {
     QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
     if (comboBox == NULL) return;
 
-    QModelIndex modelIndex = comboBox->model()->index(index,0);  
+    QModelIndex modelIndex = comboBox->model()->index(index,0);
     QSizeF size = comboBox->model()->data(modelIndex, Qt::UserRole).toSizeF();
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
@@ -1107,7 +1107,7 @@ void ResizableBoard::paintSelected(QPainter *painter, const QStyleOptionGraphics
 	double scalehalf = scalefull / 2;
 	double bottom = m_size.height();
 	double right = m_size.width();
-	
+
 	QPen pen;
 	pen.setWidthF(1.0 / scale);
 	pen.setColor(QColor(0, 0, 0));
@@ -1198,13 +1198,13 @@ void ResizableBoard::hoverMoveEvent( QGraphicsSceneHoverEvent * event ) {
 
 void ResizableBoard::hoverLeaveEvent( QGraphicsSceneHoverEvent * event ) {
 	setKinCursor(Qt::ArrowCursor);
-	//DebugDialog::debug("setting arrow cursor");		
+	//DebugDialog::debug("setting arrow cursor");
 	Board::hoverLeaveEvent(event);
 }
 
 ResizableBoard::Corner ResizableBoard::findCorner(QPointF scenePos, Qt::KeyboardModifiers modifiers) {
 	Q_UNUSED(modifiers);
-		
+
 	if (!this->isSelected()) return ResizableBoard::NO_CORNER;
     if (this->moveLock()) return ResizableBoard::NO_CORNER;
 
@@ -1274,7 +1274,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 	hboxLayout2->setContentsMargins(0, 0, 0, 0);
 	hboxLayout2->setSpacing(2);
 
-	QLabel * l1 = new QLabel(tr("width(mm)"));	
+	QLabel * l1 = new QLabel(tr("width(mm)"));
 	l1->setMargin(0);
 	l1->setObjectName("infoViewLabel");
 	QLineEdit * e1 = new QLineEdit();
@@ -1324,7 +1324,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 		hboxLayout3->setAlignment(Qt::AlignLeft);
 		hboxLayout3->setContentsMargins(0, 0, 0, 0);
 		hboxLayout3->setSpacing(0);
-	
+
 		if (includeAspectRatio) {
 			QLabel * l3 = new QLabel(tr("keep aspect ratio"));
 			l3->setMargin(0);
@@ -1368,7 +1368,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
                 m_paperSizeComboBox->addItem(PaperSizeNames.at(i), dim);
             }
 
-            QModelIndex modelIndex = m_paperSizeComboBox->model()->index(0,0);  
+            QModelIndex modelIndex = m_paperSizeComboBox->model()->index(0,0);
             m_paperSizeComboBox->model()->setData(modelIndex, 0, Qt::UserRole - 1);           // to make it selectable again use Qt::ItemIsSelectable | Qt::ItemIsEnabled)
 
             updatePaperSizes(w, h);
@@ -1420,7 +1420,7 @@ void ResizableBoard::setWidthAndHeight(double w, double h)
     updatePaperSizes(w, h);
 }
 
-QString ResizableBoard::getShapeForRenderer(const QString & svg, ViewLayer::ViewLayerID viewLayerID) 
+QString ResizableBoard::getShapeForRenderer(const QString & svg, ViewLayer::ViewLayerID viewLayerID)
 {
     QString xmlName = ViewLayer::viewLayerXmlNameFromID(viewLayerID);
 	SvgFileSplitter splitter;
@@ -1483,9 +1483,9 @@ void ResizableBoard::updatePaperSizes(double w, double h) {
 
 void ResizableBoard::initPaperSizes() {
     if (PaperSizeNames.count() == 0) {
-        PaperSizeNames << tr("A0 (1030x1456)") << tr("A1 (728x1030)") << tr("A2 (515x728)") << tr("A3 (364x515)") << tr("A4 (257x364)") << tr("A5 (182x257)") << tr("A6 (128x182)") 
+        PaperSizeNames << tr("A0 (1030x1456)") << tr("A1 (728x1030)") << tr("A2 (515x728)") << tr("A3 (364x515)") << tr("A4 (257x364)") << tr("A5 (182x257)") << tr("A6 (128x182)")
             << tr("Letter (8.5x11)") << tr("Legal (8.5x14)") << tr("Ledger (17x11)") << tr("Tabloid (11x17)");
-        PaperSizeDimensions << QSizeF(1030,1456) << QSizeF(728,1030) << QSizeF(515,728) << QSizeF(364,515) << QSizeF(257,364) << QSizeF(182,257) << QSizeF(128,182) 
+        PaperSizeDimensions << QSizeF(1030,1456) << QSizeF(728,1030) << QSizeF(515,728) << QSizeF(364,515) << QSizeF(257,364) << QSizeF(182,257) << QSizeF(128,182)
             << QSizeF(215.9,279.4) << QSizeF(215.9,355.6) << QSizeF(432,279) << QSizeF(279,432);
     }
 }

@@ -2,7 +2,7 @@
 <module fritzingVersion="0.4.3b.0.0" icon="Core.png">
 	<title>Parts Editor Parts</title>
      <instances>
-     
+
        <instance moduleIdRef="__spacer__" modelIndex="3" path="Breadboard View">
         <views>
           <iconView layer="icon">
@@ -24,8 +24,8 @@
             <geometry z="-1" x="-1" y="-1"/>
           </iconView>
         </views>
-      </instance>     
-      
+      </instance>
+
        <instance moduleIdRef="__spacer__" modelIndex="3" path="Schematic View">
         <views>
           <iconView layer="icon">

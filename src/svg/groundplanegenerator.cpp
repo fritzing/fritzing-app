@@ -42,14 +42,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 static const double BORDERINCHES = 0.04;
 
 const QString GroundPlaneGenerator::KeepoutSettingName("GPG_Keepout");
-const double GroundPlaneGenerator::KeepoutDefaultMils = 10;  
+const double GroundPlaneGenerator::KeepoutDefaultMils = 10;
 
 inline int OFFSET(int x, int y, QImage * image) { return (y * image->width()) + x; }
 
 QString GroundPlaneGenerator::ConnectorName = "connector0pad";
 
 //  !!!!!!!!!!!!!!!!!!!
-//  !!!!!!!!!!!!!!!!!!!  IMPORTANT NOTE:  QRect::right() and QRect::bottom() are off by one--this is a known Qt problem 
+//  !!!!!!!!!!!!!!!!!!!  IMPORTANT NOTE:  QRect::right() and QRect::bottom() are off by one--this is a known Qt problem
 //  !!!!!!!!!!!!!!!!!!!
 //  !!!!!!!!!!!!!!!!!!!					  one workaround might be to switch to QRectF
 //  !!!!!!!!!!!!!!!!!!!
@@ -69,7 +69,7 @@ bool GroundPlaneGenerator::getBoardRects(const QByteArray & boardByteArray, QGra
 	QRectF br = board->sceneBoundingRect();
 	double bWidth = res * br.width() / GraphicsUtils::SVGDPI;
 	double bHeight = res * br.height() / GraphicsUtils::SVGDPI;
-	QImage image(bWidth, bHeight, QImage::Format_Mono);  
+	QImage image(bWidth, bHeight, QImage::Format_Mono);
 	image.setDotsPerMeterX(res * GraphicsUtils::InchesPerMeter);
 	image.setDotsPerMeterY(res * GraphicsUtils::InchesPerMeter);
 	image.fill(0xffffffff);
@@ -99,7 +99,7 @@ bool GroundPlaneGenerator::getBoardRects(const QByteArray & boardByteArray, QGra
 	for (int y = 0; y < image.height(); y++) {
 		for (int x = 0; x < image.width(); x++) {
 			QRgb current = image.pixel(x, y);
-			if (current != 0xffffffff) {			
+			if (current != 0xffffffff) {
 				continue;
 			}
 
@@ -144,9 +144,9 @@ bool GroundPlaneGenerator::getBoardRects(const QByteArray & boardByteArray, QGra
 	return true;
 }
 
-bool GroundPlaneGenerator::generateGroundPlaneUnit(const QString & boardSvg, QSizeF boardImageSize, const QString & svg, QSizeF copperImageSize, 
+bool GroundPlaneGenerator::generateGroundPlaneUnit(const QString & boardSvg, QSizeF boardImageSize, const QString & svg, QSizeF copperImageSize,
 												   QStringList & exceptions, QGraphicsItem * board, double res, const QString & color,
-												   QPointF whereToStart, double keepoutMils) 
+												   QPointF whereToStart, double keepoutMils)
 {
     GPGParams params;
     params.boardSvg = boardSvg;
@@ -234,8 +234,8 @@ bool GroundPlaneGenerator::generateGroundPlaneUnit(const QString & boardSvg, QSi
 	return true;
 }
 
-bool GroundPlaneGenerator::generateGroundPlane(const QString & boardSvg, QSizeF boardImageSize, const QString & svg, QSizeF copperImageSize, 
-												QStringList & exceptions, QGraphicsItem * board, double res, const QString & color, double keepoutMils) 
+bool GroundPlaneGenerator::generateGroundPlane(const QString & boardSvg, QSizeF boardImageSize, const QString & svg, QSizeF copperImageSize,
+												QStringList & exceptions, QGraphicsItem * board, double res, const QString & color, double keepoutMils)
 {
     GPGParams params;
     params.boardSvg = boardSvg;
@@ -254,7 +254,7 @@ bool GroundPlaneGenerator::generateGroundPlane(const QString & boardSvg, QSizeF 
     return future.result();
 }
 
-bool GroundPlaneGenerator::generateGroundPlaneFn(GPGParams & params) 
+bool GroundPlaneGenerator::generateGroundPlaneFn(GPGParams & params)
 {
 
 	double bWidth, bHeight;
@@ -269,9 +269,9 @@ bool GroundPlaneGenerator::generateGroundPlaneFn(GPGParams & params)
             // add the rects separately as tiny SVGs which don't get clipped (since they are connected)
             QList<QPolygon> polygons;
             QPolygon polygon;
-            polygon << QPoint(r.left() * pixelFactor, r.top() * pixelFactor) 
-                    << QPoint(r.right() * pixelFactor, r.top() * pixelFactor)  
-                    << QPoint(r.right() * pixelFactor, r.bottom() * pixelFactor) 
+            polygon << QPoint(r.left() * pixelFactor, r.top() * pixelFactor)
+                    << QPoint(r.right() * pixelFactor, r.top() * pixelFactor)
+                    << QPoint(r.right() * pixelFactor, r.bottom() * pixelFactor)
                     << QPoint(r.left() * pixelFactor, r.bottom() * pixelFactor);
             polygons.append(polygon);
             makePolySvg(polygons, params.res, bWidth, bHeight, pixelFactor, params.color, false, true, QSizeF(0, 0), 0, QPointF(0, 0));
@@ -282,7 +282,7 @@ bool GroundPlaneGenerator::generateGroundPlaneFn(GPGParams & params)
 	return true;
 }
 
-QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double & bWidth, double & bHeight, QList<QRectF> & rects) 
+QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double & bWidth, double & bHeight, QList<QRectF> & rects)
 {
 	QByteArray boardByteArray;
     QString tempColor("#ffffff");
@@ -290,13 +290,13 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 		return NULL;
 	}
 
-	
+
 	//QFile file0("testGroundFillBoard.svg");
 	//file0.open(QIODevice::WriteOnly);
 	//QTextStream out0(&file0);
 	//out0 << boardByteArray;
 	//file0.close();
-	
+
 
     /*
     QByteArray copperByteArray;
@@ -313,13 +313,13 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
     QDomElement root = doc.documentElement();
     SvgFileSplitter::forceStrokeWidth(root, 2 * params.keepoutMils, "#000000", true, true);
     QByteArray copperByteArray = doc.toByteArray(0);
-	
+
 	//QFile file1("testGroundFillCopper.svg");
 	//file1.open(QIODevice::WriteOnly);
 	//QTextStream out1(&file1);
 	//out1 << copperByteArray;
 	//file1.close();
-	
+
 
 	double svgWidth = params.res * qMax(params.boardImageSize.width(), params.copperImageSize.width()) / GraphicsUtils::SVGDPI;
 	double svgHeight = params.res * qMax(params.boardImageSize.height(), params.copperImageSize.height()) / GraphicsUtils::SVGDPI;
@@ -336,7 +336,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	QPainter painter;
 	painter.begin(image);
 	painter.setRenderHint(QPainter::Antialiasing, false);
-	QRectF boardBounds(0, 0, params.res * params.boardImageSize.width() / GraphicsUtils::SVGDPI, params.res * params.boardImageSize.height() / GraphicsUtils::SVGDPI); 
+	QRectF boardBounds(0, 0, params.res * params.boardImageSize.width() / GraphicsUtils::SVGDPI, params.res * params.boardImageSize.height() / GraphicsUtils::SVGDPI);
 	DebugDialog::debug("boardbounds", boardBounds);
 	renderer.render(&painter, boardBounds);
 	painter.end();
@@ -369,7 +369,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 		//QPointF offset;
 		//this
 		//QString pSvg = makePolySvg(polygons, res, bWidth, bHeight, pixelFactor, "#ffffff", false,  NULL, QSizeF(0,0), 0, QPointF(0, 0));
-		
+
 #endif
 
 		foreach (QPoint p, points) image->setPixel(p, 0);
@@ -379,7 +379,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 #ifndef QT_NO_DEBUG
     image->save(FolderUtils::getTopLevelUserDataStorePath() + "/testGroundFillBoardBorder.png");
 #endif
-	
+
 	QSvgRenderer renderer2(copperByteArray);
 	painter.begin(image);
 	painter.setRenderHint(QPainter::Antialiasing, false);
@@ -392,14 +392,14 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
     image->save(FolderUtils::getTopLevelUserDataStorePath() + "/testGroundFillCopper.png");
 #endif
 
-	emit postImageSignal(this, image, &boardImage, params.board, &rects);	
+	emit postImageSignal(this, image, &boardImage, params.board, &rects);
 
 	return image;
 }
 
-void GroundPlaneGenerator::scanImage(QImage & image, double bWidth, double bHeight, double pixelFactor, double res, 
-									 const QString & colorString, bool makeConnectorFlag, 
-									 bool makeOffset, QSizeF minAreaInches, double minDimensionInches, QPointF polygonOffset)  
+void GroundPlaneGenerator::scanImage(QImage & image, double bWidth, double bHeight, double pixelFactor, double res,
+									 const QString & colorString, bool makeConnectorFlag,
+									 bool makeOffset, QSizeF minAreaInches, double minDimensionInches, QPointF polygonOffset)
 {
 	QList<QRect> rects;
 	scanLines(image, bWidth, bHeight, rects);
@@ -468,7 +468,7 @@ void GroundPlaneGenerator::scanLines(QImage & image, int bWidth, int bHeight, QL
 
 				}
 				else {
-					if (current != 0xffffffff) {		// qBlue(current) != 0xff				
+					if (current != 0xffffffff) {		// qBlue(current) != 0xff
 						// another black pixel, keep moving
 						continue;
 					}
@@ -482,7 +482,7 @@ void GroundPlaneGenerator::scanLines(QImage & image, int bWidth, int bHeight, QL
 				if (bHeight - whiteStart < m_minRiseSize) {
 					for (int j = whiteStart; j <= bHeight; j++) {
 						image.setPixel(x, j, 0);
-					}			
+					}
 				}
 			}
 		}
@@ -514,7 +514,7 @@ void GroundPlaneGenerator::scanLines(QImage & image, int bWidth, int bHeight, QL
 				rects.append(QRect(whiteStart, y, x - whiteStart, 1));
 			}
 			else {
-				if (current != 0xffffffff) {		// qBlue(current) != 0xff				
+				if (current != 0xffffffff) {		// qBlue(current) != 0xff
 					// another black pixel, keep moving
 					continue;
 				}
@@ -532,7 +532,7 @@ void GroundPlaneGenerator::scanLines(QImage & image, int bWidth, int bHeight, QL
 	}
 }
 
-void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int> * > & pieces) 
+void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int> * > & pieces)
 {
 	// combines vertically adjacent scanlines into "pieces"
 	int ix = 0;
@@ -645,7 +645,7 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 				break;
 			}
 		}
-		int last = ix - 1;  
+		int last = ix - 1;
 		if (prevFirst >= 0) {
 			QVector<int> holdPrevs(last - first + 1);
 			QVector<int> gotCounts(last - first + 1);
@@ -691,7 +691,7 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 							if (piece->contains(holdPrevs[index])) {
 								piece->append(i);
 								break;
-							
+
 							}
 						}
 					}
@@ -725,7 +725,7 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 		//}
 
 		// no need to close polygon; SVG automatically closes path
-		
+
 		QPolygon poly;
 
 		// left side
@@ -751,16 +751,16 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 			poly.append(QPoint(r.right(), r.top()));
 		}
 
-		
+
 
 		polygons.append(poly);
 		delete piece;
 	}
 }
 
-void GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res, double bWidth, double bHeight, double pixelFactor, 
-										const QString & colorString, bool makeConnectorFlag, bool makeOffset, 
-										QSizeF minAreaInches, double minDimensionInches, QPointF polygonOffset) 
+void GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res, double bWidth, double bHeight, double pixelFactor,
+										const QString & colorString, bool makeConnectorFlag, bool makeOffset,
+										QSizeF minAreaInches, double minDimensionInches, QPointF polygonOffset)
 {
 	QPointF offset;
 	QString pSvg = makePolySvg(polygons, res, bWidth, bHeight, pixelFactor, colorString, makeConnectorFlag, makeOffset ? &offset : NULL, minAreaInches, minDimensionInches, polygonOffset);
@@ -781,9 +781,9 @@ void GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res, d
 	*/
 }
 
-QString GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res, double bWidth, double bHeight, double pixelFactor, 
-										const QString & colorString, bool makeConnectorFlag, QPointF * offset, 
-										QSizeF minAreaInches, double minDimensionInches, QPointF polygonOffset) 
+QString GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res, double bWidth, double bHeight, double pixelFactor,
+										const QString & colorString, bool makeConnectorFlag, QPointF * offset,
+										QSizeF minAreaInches, double minDimensionInches, QPointF polygonOffset)
 {
 	int minX = 0;
 	int minY = 0;
@@ -844,7 +844,7 @@ void GroundPlaneGenerator::makeConnector(QList<QPolygon> & polygons, double res,
 {
 	//	see whether the standard circular connector will fit somewhere inside a polygon:
 	//	http://stackoverflow.com/questions/4279478/maximum-circle-inside-a-non-convex-polygon
-	//	or maybe this is useful, e.g. treating the circle as a square:  
+	//	or maybe this is useful, e.g. treating the circle as a square:
 	//	http://stackoverflow.com/questions/4833802/check-if-polygon-is-inside-a-polygon
 
 	//	code presently uses a version of the Poles of Inaccessibility algorithm:
@@ -856,7 +856,7 @@ void GroundPlaneGenerator::makeConnector(QList<QPolygon> & polygons, double res,
 	double targetRadiusAnd = targetDiameterAnd / 2;
 	double targetRadiusAndSquared = targetRadiusAnd * targetRadiusAnd;
 	foreach (QPolygon poly, polygons) {
-		QRect boundingRect = poly.boundingRect(); 
+		QRect boundingRect = poly.boundingRect();
 		if (boundingRect.width() < targetDiameterAnd) continue;
 		if (boundingRect.height() < targetDiameterAnd) continue;
 
@@ -885,7 +885,7 @@ void GroundPlaneGenerator::makeConnector(QList<QPolygon> & polygons, double res,
 				foreach (QLineF line, polyLines) {
 					double distance, dx, dy;
 					bool atEndpoint;
-					GraphicsUtils::distanceFromLine(x, y, line.p1().x(), line.p1().y(), line.p2().x(), line.p2().y(), 
+					GraphicsUtils::distanceFromLine(x, y, line.p1().x(), line.p1().y(), line.p2().x(), line.p2().y(),
 													dx, dy, distance, atEndpoint);
 					if (distance <= targetRadiusAndSquared) {
 						gotOne = false;
@@ -920,7 +920,7 @@ void GroundPlaneGenerator::makeConnector(QList<QPolygon> & polygons, double res,
 	foreach (QPolygon poly, polygons) {
 		areas.append(calcArea(poly) / divisor);
 	}
-		
+
 	for (int i = 0; i < areas.count(); i++) {
 		if (areas.at(i) > 0.1 && areas.at(i) < 0.25) {
 			useIndex = i;
@@ -1019,7 +1019,7 @@ bool GroundPlaneGenerator::collectBorderPoints(QImage & image, QList<QPoint> & p
 	for (int y = 0; y < image.height(); y++) {
 		for (int x = 0; x < image.width(); x++) {
 			QRgb current = image.pixel(x, y);
-			if (current != 0xffffffff) {				
+			if (current != 0xffffffff) {
 				// another black pixel, keep moving
 				continue;
 			}
@@ -1043,7 +1043,7 @@ bool GroundPlaneGenerator::collectBorderPoints(QImage & image, QList<QPoint> & p
     long maxPoints = image.height() * image.width() / 2;
 	for (long inc = 0; inc < maxPoints; inc++) {
         if (try8(currentX, currentY, image, points)) ;
-		else {            
+		else {
             QPoint p = points.first();
             if (qAbs(p.x() - currentX) < 4 && qAbs(p.y() - currentY) < 4) {
                 // we're near the beginning again
@@ -1055,7 +1055,7 @@ bool GroundPlaneGenerator::collectBorderPoints(QImage & image, QList<QPoint> & p
             for (int ix = points.count() - 2; ix >= 0; ix--) {
                 QPoint p = points.at(ix);
                 if (try8(p.x(), p.y(), image, points)) {
-                    keepGoing = true; 
+                    keepGoing = true;
                     break;
                 }
             }
@@ -1074,9 +1074,9 @@ bool GroundPlaneGenerator::collectBorderPoints(QImage & image, QList<QPoint> & p
     return done;
 }
 
-void GroundPlaneGenerator::scanOutline(QImage & image, double bWidth, double bHeight, double pixelFactor, double res, 
-									 const QString & colorString, bool makeConnectorFlag, 
-									 bool makeOffset, QSizeF minAreaInches, double minDimensionInches)  
+void GroundPlaneGenerator::scanOutline(QImage & image, double bWidth, double bHeight, double pixelFactor, double res,
+									 const QString & colorString, bool makeConnectorFlag,
+									 bool makeOffset, QSizeF minAreaInches, double minDimensionInches)
 {
 	QList<QPoint> points;
 
@@ -1154,7 +1154,7 @@ bool GroundPlaneGenerator::tryNextPoint(int x, int y, QImage & image, QList<QPoi
 
 	QRgb pixel = image.pixel(x, y);
     //DebugDialog::debug(QString("pixel %1,%2 %3").arg(x).arg(y).arg(pixel, 0, 16));
-	if (pixel != 0xffffffff) {						
+	if (pixel != 0xffffffff) {
 		// empty pixel, not on the border
 		return false;
 	}
@@ -1165,7 +1165,7 @@ bool GroundPlaneGenerator::tryNextPoint(int x, int y, QImage & image, QList<QPoi
 	}
 
 	pixel = image.pixel(x + 1, y);
-	if (pixel != 0xffffffff) {						
+	if (pixel != 0xffffffff) {
 		points.append(QPoint(x, y));
 		return true;
 	}
@@ -1176,7 +1176,7 @@ bool GroundPlaneGenerator::tryNextPoint(int x, int y, QImage & image, QList<QPoi
 	}
 
 	pixel = image.pixel(x, y + 1);
-	if (pixel != 0xffffffff) {						
+	if (pixel != 0xffffffff) {
 		points.append(QPoint(x, y));
 		return true;
 	}
@@ -1187,7 +1187,7 @@ bool GroundPlaneGenerator::tryNextPoint(int x, int y, QImage & image, QList<QPoi
 	}
 
 	pixel = image.pixel(x - 1, y);
-	if (pixel != 0xffffffff) {						
+	if (pixel != 0xffffffff) {
 		points.append(QPoint(x, y));
 		return true;
 	}
@@ -1198,7 +1198,7 @@ bool GroundPlaneGenerator::tryNextPoint(int x, int y, QImage & image, QList<QPoi
 	}
 
 	pixel = image.pixel(x, y - 1);
-	if (pixel != 0xffffffff) {						
+	if (pixel != 0xffffffff) {
 		points.append(QPoint(x, y));
 		return true;
 	}
@@ -1226,11 +1226,10 @@ void GroundPlaneGenerator::setMinRunSize(int mrus, int mris) {
 QString GroundPlaneGenerator::mergeSVGs(const QString & initialSVG, const QString & layerName) {
     QDomDocument doc;
     if (!initialSVG.isEmpty()) {
-		TextUtils::mergeSvg(doc, initialSVG, layerName);        
+		TextUtils::mergeSvg(doc, initialSVG, layerName);
     }
 	foreach (QString newSvg, m_newSVGs) {
 		TextUtils::mergeSvg(doc, newSvg, layerName);
 	}
 	return TextUtils::mergeSvgFinish(doc);
 }
-

@@ -41,7 +41,7 @@ public:
 	static const QString GroundModuleIDName;
 	static const QString PowerModuleIDName;
 	static const QString TwoPowerModuleIDName;
-	static const QString NetLabelModuleIDName;	
+	static const QString NetLabelModuleIDName;
     static const QString PowerLabelModuleIDName;
 	static const QString LeftNetLabelModuleIDName;
 	static const QString JustPowerModuleIDName;

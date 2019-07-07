@@ -34,7 +34,7 @@
  */
 static int decrypt_byte(unsigned long* pkeys, const unsigned long* pcrc_32_tab)
 {
-	#ifndef _WINDOWS 
+	#ifndef _WINDOWS
     (void) pcrc_32_tab; /* avoid "unused parameter" warning */
 	#endif
 

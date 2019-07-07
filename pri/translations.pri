@@ -51,6 +51,3 @@ TRANSLATIONS += translations/fritzing_de.ts \
         translations/fritzing_vi.ts \
 	translations/fritzing_zh_cn.ts \
 	translations/fritzing_zh_tw.ts \
-
-
-

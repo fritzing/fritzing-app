@@ -58,7 +58,7 @@ PrefsDialog::~PrefsDialog()
 {
 }
 
-void PrefsDialog::initViewInfo(int index, const QString & viewName, const QString & shortName, bool curvy) 
+void PrefsDialog::initViewInfo(int index, const QString & viewName, const QString & shortName, bool curvy)
 {
 	m_viewInfoThings[index].index = index;
 	m_viewInfoThings[index].viewName = viewName;
@@ -227,14 +227,14 @@ QWidget * PrefsDialog::createLanguageForm(QFileInfoList & languages)
 {
 	QGroupBox * formGroupBox = new QGroupBox(tr("Language"));
     QVBoxLayout *layout = new QVBoxLayout();
-	
+
 	QComboBox* comboBox = new QComboBox(this);
     m_translatorListModel = new TranslatorListModel(languages, this);
 	comboBox->setModel(m_translatorListModel);
 	comboBox->setCurrentIndex(m_translatorListModel->findIndex(m_name));
 	connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(changeLanguage(int)));
 
-	layout->addWidget(comboBox);	
+	layout->addWidget(comboBox);
 
 	QLabel * ll = new QLabel();
 	ll->setMinimumHeight(45);
@@ -247,7 +247,7 @@ QWidget * PrefsDialog::createLanguageForm(QFileInfoList & languages)
 	return formGroupBox;
 }
 
-QWidget* PrefsDialog::createColorForm() 
+QWidget* PrefsDialog::createColorForm()
 {
 	QGroupBox * formGroupBox = new QGroupBox(tr("Colors"));
     QVBoxLayout *layout = new QVBoxLayout();
@@ -298,7 +298,7 @@ QWidget* PrefsDialog::createColorForm()
 	return formGroupBox;
 }
 
-QWidget* PrefsDialog::createOtherForm() 
+QWidget* PrefsDialog::createOtherForm()
 {
 	QGroupBox * formGroupBox = new QGroupBox(tr("Clear Settings"));
     QHBoxLayout *layout = new QHBoxLayout();
@@ -335,7 +335,7 @@ QWidget* PrefsDialog::createOtherForm()
 	QPushButton * clear = new QPushButton(QObject::tr("Clear Settings"), this);
 	connect(clear, SIGNAL(clicked()), this, SLOT(clear()));
 
-	layout->addWidget(clear);	
+	layout->addWidget(clear);
 
 	formGroupBox->setLayout(layout);
 	return formGroupBox;
@@ -416,7 +416,7 @@ void PrefsDialog::chooseProgrammer()
     }
 }
 
-void PrefsDialog::changeLanguage(int index) 
+void PrefsDialog::changeLanguage(int index)
 {
 	const QLocale * locale = m_translatorListModel->locale(index);
 	if (locale) {
@@ -515,7 +515,7 @@ void PrefsDialog::changeAutosavePeriod(int value) {
 	m_settings.insert("autosavePeriod", QString("%1").arg(value));
 }
 
-QWidget* PrefsDialog::createCurvyForm(ViewInfoThing * viewInfoThing) 
+QWidget* PrefsDialog::createCurvyForm(ViewInfoThing * viewInfoThing)
 {
 	QGroupBox * groupBox = new QGroupBox(tr("Curvy vs. straight wires"));
     QVBoxLayout *layout = new QVBoxLayout;

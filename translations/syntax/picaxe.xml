@@ -823,7 +823,7 @@
         <keyword attribute="Data Types" context="#stay" String="datatype"/>
         <keyword attribute="Functions" context="#stay" String="variable"/>
         <keyword attribute="Preprocessor" context="#stay" String="preproc"/>
-        <keyword attribute="Constant" context="#stay" String="constant"/>      
+        <keyword attribute="Constant" context="#stay" String="constant"/>
         <RegExpr attribute="Constant" context="#stay" String="\#+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*"/>
         <Float attribute="Number" context="#stay"/>
         <Int attribute="Number" context="#stay"/>

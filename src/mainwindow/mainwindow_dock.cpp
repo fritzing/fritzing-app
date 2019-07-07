@@ -254,4 +254,3 @@ void MainWindow::restoreDocks() {
 		dock->restoreState();
 	}
 }
-

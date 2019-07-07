@@ -5190,7 +5190,7 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1612"/>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
         <translation>&apos;%1&apos; görüntü dosyası yüklenemiyor:

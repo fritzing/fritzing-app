@@ -377,7 +377,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
         else {
             standardAperture(circle, apertureMap, current_dcode, dcode_index, 0);
 
-            // create circle outline 
+            // create circle outline
             m_gerber_paths += QString("G01X%1Y%2D02*\n"
                                       "G75*\n"
                                       "G03X%1Y%2I%3J0D01*\n")
@@ -469,12 +469,12 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
                 m_gerber_paths += "D02*\n";
             }
         }
-    
+
         // lines - NOTE: this assumes a circular aperture
         for(int k = 0; k < lineList.length(); k++){
             QDomElement line = lineList.item(k).toElement();
 
-            // Note: should be no forWhy == ForMask cases 
+            // Note: should be no forWhy == ForMask cases
 
             double x1 = line.attribute("x1").toDouble();
             double y1 = line.attribute("y1").toDouble();
@@ -547,7 +547,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
             DebugDialog::debug("flattener.parsePath failed");
             invalid = true;
         }
-        
+
 
         // only add paths if they contained gerber-izable path commands (NO CURVES!)
         // TODO: display some informative error for the user
@@ -617,7 +617,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 }
 
 void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
-                    QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index) 
+                    QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index)
 {
 
     //QString temp;
@@ -648,11 +648,11 @@ void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
         pointString += "X" + QString::number(flipx(startx)) + "Y" + QString::number(flipy(starty)) + "D01*\n";
     }
 
-    standardAperture(polygon, apertureMap, current_dcode, dcode_index, 0);		
+    standardAperture(polygon, apertureMap, current_dcode, dcode_index, 0);
 
     bool polyFill = fillNotStroke(polygon, forWhy);
     // set poly fill if this is actually a filled in shape
-    if (polyFill) {							
+    if (polyFill) {
         // start poly fill
         m_gerber_paths += "G36*\n";
     }
@@ -716,7 +716,7 @@ void SVG2gerber::handleOblongPath(QDomElement & path, int & dcode_index) {
 
     QDomElement nextLine = nextPath.nextSiblingElement("line");
     if (nextLine.isNull()) return;
-                
+
     double diameter = parent.attribute("stroke-width").toDouble();
     double cx1 = nextLine.attribute("x1").toDouble();
     double cy1 = nextLine.attribute("y1").toDouble();

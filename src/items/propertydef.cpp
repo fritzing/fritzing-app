@@ -94,7 +94,7 @@ void PropertyDefMaster::cleanup() {
     PropertyDefs.clear();
 }
 
-void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDef *, QString> & propertyDefs) 
+void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDef *, QString> & propertyDefs)
 {
 	if (PropertyDefs.count() == 0) {
 		loadPropertyDefs();
@@ -126,6 +126,3 @@ void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDe
 		}
 	}
 }
-
-
-

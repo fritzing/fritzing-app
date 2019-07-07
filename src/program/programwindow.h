@@ -176,7 +176,6 @@ protected:
 
 public:
 	static const QString LocateName;
-    static QString NoBoardName;
     QAction *m_newAction;
     QAction *m_openAction;
     QAction *m_saveAction;

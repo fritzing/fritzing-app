@@ -175,7 +175,7 @@ macx {
 QT += concurrent core gui network printsupport serialport sql svg widgets xml
 
 RC_FILE = fritzing.rc
-RESOURCES += phoenixresources.qrc
+RESOURCES += fritzingresources.qrc
 
 # Fritzing is using libgit2 since version 0.9.3
 packagesExist(libgit2) {

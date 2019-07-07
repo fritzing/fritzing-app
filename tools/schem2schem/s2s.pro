@@ -22,7 +22,7 @@ HEADERS += s2sapplication.h \
     ../../src/utils/textutils.h \
     ../../src/utils/schematicrectconstants.h \
 
-RESOURCES +=  ../../phoenixresources.qrc
+RESOURCES +=  ../../fritzingresources.qrc
 
 win32 {
 	DEFINES += _CRT_SECURE_NO_DEPRECATE

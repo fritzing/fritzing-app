@@ -20,7 +20,7 @@ echo ">> build directory"
 echo "$builddir"
 
 echo ">> building fritzing from working directory"
-$QTBIN/qmake -o Makefile phoenix.pro
+$QTBIN/qmake -o Makefile fritzing.pro
 make "-j$(sysctl -n machdep.cpu.thread_count)" release  # release is the type of build
 cp -r "$builddir/Fritzing.app" "$deploydir"
 

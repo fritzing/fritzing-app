@@ -2,8 +2,8 @@
 
 # QtCreator folders and files #
 #####################
-phoenix.pro.user
-/phoenix-build-*
+fritzing.pro.user
+/fritzing-build-*
 /release*
 /build*
 /debug*

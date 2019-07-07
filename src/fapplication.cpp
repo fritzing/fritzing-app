@@ -589,7 +589,7 @@ int FApplication::init() {
 	bool loaded = findTranslator(m_translationPath);
 	Q_UNUSED(loaded);
 
-	Q_INIT_RESOURCE(phoenixresources);
+	Q_INIT_RESOURCE(fritzingresources);
 
 	MainWindow::initNames();
 	FSvgRenderer::initNames();

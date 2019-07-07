@@ -4891,7 +4891,7 @@ PaletteItem * SketchWidget::getSelectedPart(){
 
 void SketchWidget::setBackground(QColor color) {
 	/*QBrush brush(color);
-	brush.setTexture(QPixmap("/home/merun/workspace/fritzing_trunk/phoenix/resources/images/schematic_grid_tile.png"));
+	brush.setTexture(QPixmap("/home/merun/workspace/fritzing_trunk/fritzing/resources/images/schematic_grid_tile.png"));
 	scene()->setBackgroundBrush(brush);*/
 	scene()->setBackgroundBrush(QBrush(color));
 }

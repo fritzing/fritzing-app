@@ -64,7 +64,7 @@ cd "$app_folder"
 echo "appfolder ${app_folder}"
 
 echo "Build lingustics."
-lrelease phoenix.pro
+lrelease fritzing.pro
 
 echo "Compiling."
 qmake CONFIG+=${target} DEFINES+=$quazip

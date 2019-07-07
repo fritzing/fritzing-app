@@ -28,12 +28,6 @@ lessThan(QT_MAJOR_VERSION, 5) {
     error(Fritzing does not build with Qt 4 or earlier)
 }
 
-# Fritzing requires two Qt-provided plugins in order to run correctly,
-# however the QTPLUGIN syntax only seems to work if Qt is built statically,
-# so QTPLUGIN is included here only for information purposes:
-#
-# QTPLUGIN  += qjpeg qsqlite
-
 CONFIG += debug_and_release
 
 unix:!macx {

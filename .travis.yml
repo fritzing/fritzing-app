@@ -38,14 +38,14 @@ jobs:
       services:
         - docker
       before_install:
-        - tools/aws_tasks.sh setup
+        - tools/ci/aws_tasks.sh setup
         - docker pull fritzing/build:xenial
       script:
         - docker/release-linux.sh $TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER
-        - tools/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.linux.AMD64.tar.bz2
+        - tools/ci/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.linux.AMD64.tar.bz2
 
       after_success:
-        - tools/aws_tasks.sh synchronize_up
+        - tools/ci/aws_tasks.sh synchronize_up
 
     - stage: build_and_pack
       os: osx
@@ -66,15 +66,15 @@ jobs:
         - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
         - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
         - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
-        - tools/aws_tasks.sh setup
+        - tools/ci/aws_tasks.sh setup
       script:
         - ls /usr/local/opt
         - tools/deploy_fritzing_mac.sh
         - mv ../deploy-app/Fritzing.dmg fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.mojave.10.2.dmg
-        - tools/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.mojave.10.2.dmg
+        - tools/ci/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.mojave.10.2.dmg
 
       after_success:
-        - tools/aws_tasks.sh synchronize_up
+        - tools/ci/aws_tasks.sh synchronize_up
 
     - stage: build_and_pack
       os: osx
@@ -96,16 +96,16 @@ jobs:
         - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
         - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
         - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
-        - tools/aws_tasks.sh setup
+        - tools/ci/aws_tasks.sh setup
 
       script:
         - ls /usr/local/opt
         - tools/deploy_fritzing_mac.sh
         - mv ../deploy-app/Fritzing.dmg fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.high_sierra.10.1.dmg
-        - tools/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.high_sierra.10.1.dmg
+        - tools/ci/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.high_sierra.10.1.dmg
 
       after_success:
-        - tools/aws_tasks.sh synchronize_up
+        - tools/ci/aws_tasks.sh synchronize_up
 
     - stage: build_and_pack
       os: windows
@@ -117,19 +117,19 @@ jobs:
         - curl -fsSL https://github.com/libgit2/libgit2/archive/v0.28.1.zip -o libgit2.zip && 7z x libgit2.zip && mv libgit2-0.28.1 ../libgit2
         - (mkdir ../libgit2/build64 && cd ../libgit2/build64 && cmake -G "Visual Studio 15 2017 Win64" .. && cmake --build . --config Release)
         - (cd src/lib && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
-        - tools/aws_tasks.sh setup
+        - tools/ci/aws_tasks.sh setup
 
       script:
           - tools/build-windows.bat "$TRAVIS_COMMIT"-debug-continuous-"$TRAVIS_BUILD_NUMBER"
-          - tools/aws_tasks.sh store_with_md5 $TRAVIS_BUILD_DIR/../release64 fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.windows.64.zip
+          - tools/ci/aws_tasks.sh store_with_md5 $TRAVIS_BUILD_DIR/../release64 fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.windows.64.zip
 
       after_success:
-        - tools/aws_tasks.sh synchronize_up
+        - tools/ci/aws_tasks.sh synchronize_up
 
     - stage: deploy_to_github
       before_install:
-        - tools/aws_tasks.sh setup
-        - tools/aws_tasks.sh synchronize_down
+        - tools/ci/aws_tasks.sh setup
+        - tools/ci/aws_tasks.sh synchronize_down
       before_deploy:
         - git config --local user.name "Travis C.D."
         - git config --local user.email "travis@fritzing.org"
@@ -147,4 +147,4 @@ jobs:
         skip_cleanup: true
 
       after_deploy:
-        - tools/aws_tasks.sh cleanup
+        - tools/ci/aws_tasks.sh cleanup

@@ -81,10 +81,13 @@ QDir  FolderUtils::getApplicationSubFolder(QString search) {
 	//DebugDialog::debug(QString("path %1").arg(path) );
     QDir dir(path);
     while (!dir.exists()) {
-    	// if we're running from the debug or release folder, go up one to find things
+        // if we're running from the debug or release folder, try go up one to find things
         dir.cdUp();
         dir.cdUp();
-        if (dir.isRoot()) return QDir();   // didn't find the search folder
+        if (dir.isRoot()) {
+            DebugDialog::debug(QObject::tr("Application folder %1 not found").arg(search));
+            return QDir();   // didn't find the search folder
+        }
 
         dir.setPath(dir.absolutePath() + "/" + search);
    	}

@@ -104,7 +104,6 @@ void PTabWidget::tabChanged(int index) {
 
 static int UntitledIndex = 1;
 QList<Platform *> ProgramWindow::m_platforms;
-QString ProgramWindow::NoBoardName;
 
 ProgramWindow::ProgramWindow(QWidget *parent)
     : FritzingWindow("", untitledFileCount(), "", parent)
@@ -130,10 +129,6 @@ ProgramWindow::ProgramWindow(QWidget *parent)
     if (m_platforms.count() == 0) {
         initPlatforms();
 	}
-
-    if (NoBoardName.isEmpty()) {
-        NoBoardName = tr("No boards available");
-    }
 
 	m_savingProgramTab = NULL;
 	UntitledIndex--;						// incremented by FritzingWindow
@@ -272,7 +267,7 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
     m_platformMenu = new QMenu(tr("Platform"), this);
     m_programMenu->addMenu(m_platformMenu);
     QSettings settings;
-    QString currentPlatform = settings.value("programwindow/platform", "").toString();
+
     QList<Platform *> platforms = getAvailablePlatforms();
     m_platformActionGroup = new QActionGroup(this);
     foreach (Platform * platform, platforms) {
@@ -281,24 +276,18 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
         m_platformActions.insert(platform, currentAction);
         m_platformActionGroup->addAction(currentAction);
         m_platformMenu->addAction(currentAction);
-        if (!currentPlatform.isEmpty()) {
-            if (platform->getName().compare(currentPlatform) == 0) {
-				currentAction->setChecked(true);
-			}
-		}
     }
     connect(m_platformMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPlatform(QAction*)));
 
     m_boardMenu = new QMenu(tr("Board"), this);
     m_programMenu->addMenu(m_boardMenu);
     m_boardActionGroup = new QActionGroup(this);
-    updateBoards();
     connect(m_boardMenu, SIGNAL(triggered(QAction*)), this, SLOT(setBoard(QAction*)));
 
     m_serialPortMenu = new QMenu(tr("Port"), this);
     m_programMenu->addMenu(m_serialPortMenu);
     m_serialPortActionGroup = new QActionGroup(this);
-    updateSerialPorts();
+
     connect(m_serialPortMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPort(QAction*)));
     connect(m_serialPortMenu, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
 
@@ -403,7 +392,7 @@ QFrame * ProgramWindow::createCenter() {
     m_tabWidget->setTabsClosable(true);
 	m_tabWidget->setUsesScrollButtons(false);
 	m_tabWidget->setElideMode(Qt::ElideLeft);
-     connect(m_tabWidget, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
+    connect(m_tabWidget, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
 
     //addTab();
 
@@ -740,8 +729,10 @@ const QMap<QString, QString> ProgramWindow::getBoards() {
     if (currentWidget() && currentWidget()->platform())
         return currentWidget()->platform()->getBoards();
 
+
     QMap<QString, QString> boards;
-    boards.insert(NoBoardName, NoBoardName);
+    QString noBoardName(tr("No boards available"));
+    boards.insert(noBoardName, noBoardName);
     return boards;
 }
 
@@ -760,15 +751,16 @@ void ProgramWindow::updateBoards() {
     QMap<QString, QString> boards = getBoards();
 
     m_boardActions.clear();
-    foreach (QAction * action, m_boardActionGroup->actions())
+    foreach (QAction * action, m_boardActionGroup->actions()) {
         m_boardActionGroup->removeAction(action);
+    }
     m_boardMenu->clear();
 
     QMapIterator<QString, QString> i(boards);
-     while (i.hasNext()) {
-         i.next();
-         addBoard(i.key(), i.value());
-     }
+    while (i.hasNext()) {
+        i.next();
+        addBoard(i.key(), i.value());
+    }
 }
 
 void ProgramWindow::loadProgramFile() {

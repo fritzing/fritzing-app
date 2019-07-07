@@ -42,58 +42,58 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class PEMetadataView : public QScrollArea
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	PEMetadataView(QWidget * parent = 0);
 	~PEMetadataView();
 
-    void initMetadata(const QDomDocument &);
+	void initMetadata(const QDomDocument &);
 	void resetProperty(const QString & name, const QString & value);
 	QString family();
 	QString variant();
 	const QHash<QString, QString> & properties();
 
 signals:
-    void metadataChanged(const QString & name, const QString & value);
-    void propertiesChanged(const QHash<QString, QString> &);
-    void tagsChanged(const QStringList &);
+	void metadataChanged(const QString & name, const QString & value);
+	void propertiesChanged(const QHash<QString, QString> &);
+	void tagsChanged(const QStringList &);
 
 protected slots:
-    void titleEntry();
-    void authorEntry();
-    void descriptionEntry();
-    void labelEntry();
-    void familyEntry();
-    void variantEntry();
-    void dateEntry();
+	void titleEntry();
+	void authorEntry();
+	void descriptionEntry();
+	void labelEntry();
+	void familyEntry();
+	void variantEntry();
+	void dateEntry();
 	void urlEntry();
-    void propertiesEntry();
-    void tagsEntry();
+	void propertiesEntry();
+	void tagsEntry();
 
 protected:
-    QPointer<QLineEdit> m_titleEdit;
-    QPointer<QLineEdit> m_dateEdit;
-    QPointer<QLineEdit> m_authorEdit;
-    QPointer<QLineEdit> m_familyEdit;
-    QPointer<QLineEdit> m_variantEdit;
-    QPointer<QLineEdit> m_labelEdit;
-    QPointer<QLineEdit> m_urlEdit;
-    QPointer<QTextEdit> m_descriptionEdit;
-    QPointer<class HashPopulateWidget> m_propertiesEdit;
-    QPointer<class HashPopulateWidget> m_tagsEdit;
-    QPointer<QFrame> m_mainFrame;
+	QPointer<QLineEdit> m_titleEdit;
+	QPointer<QLineEdit> m_dateEdit;
+	QPointer<QLineEdit> m_authorEdit;
+	QPointer<QLineEdit> m_familyEdit;
+	QPointer<QLineEdit> m_variantEdit;
+	QPointer<QLineEdit> m_labelEdit;
+	QPointer<QLineEdit> m_urlEdit;
+	QPointer<QTextEdit> m_descriptionEdit;
+	QPointer<class HashPopulateWidget> m_propertiesEdit;
+	QPointer<class HashPopulateWidget> m_tagsEdit;
+	QPointer<QFrame> m_mainFrame;
 };
 
 
 class FocusOutTextEdit :public QTextEdit
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-    FocusOutTextEdit(QWidget * parent = 0);
-    ~FocusOutTextEdit();
+	FocusOutTextEdit(QWidget * parent = 0);
+	~FocusOutTextEdit();
 
 signals:
-    void focusOut();
+	void focusOut();
 
 protected:
 	void focusOutEvent(QFocusEvent *);

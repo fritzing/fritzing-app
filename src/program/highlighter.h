@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class Highlighter : public QSyntaxHighlighter
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	Highlighter(QTextEdit * parent);

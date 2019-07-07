@@ -43,9 +43,9 @@ ViewGeometry::ViewGeometry(QDomElement & geometry) {
 	QString x1 = geometry.attribute("x1");
 	if (!x1.isEmpty()) {
 		m_line.setLine( geometry.attribute("x1").toDouble(),
-						geometry.attribute("y1").toDouble(),
-						geometry.attribute("x2").toDouble(),
-						geometry.attribute("y2").toDouble() );
+		                geometry.attribute("y1").toDouble(),
+		                geometry.attribute("x2").toDouble(),
+		                geometry.attribute("y2").toDouble() );
 	}
 	QString w = geometry.attribute("width");
 	if (!w.isEmpty()) {

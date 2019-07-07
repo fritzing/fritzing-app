@@ -43,17 +43,17 @@ LED::~LED() {
 QString LED::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	switch (viewLayerID) {
-		case ViewLayer::Breadboard:
-		case ViewLayer::Icon:
-			break;
-		default:
-			return Capacitor::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
+	case ViewLayer::Breadboard:
+	case ViewLayer::Icon:
+		break;
+	default:
+		return Capacitor::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 	}
 
 	QString svg = getColorSVG(prop("color"), viewLayerID);
 	if (svg.isEmpty()) return "";
 
-    return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
+	return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
 }
 
 void LED::addedToScene(bool temporary)
@@ -62,16 +62,16 @@ void LED::addedToScene(bool temporary)
 		setColor(prop("color"));
 	}
 
-    return Capacitor::addedToScene(temporary);
+	return Capacitor::addedToScene(temporary);
 }
 
 bool LED::hasCustomSVG() {
 	switch (m_viewID) {
-		case ViewLayer::BreadboardView:
-		case ViewLayer::IconView:
-			return true;
-		default:
-			return ItemBase::hasCustomSVG();
+	case ViewLayer::BreadboardView:
+	case ViewLayer::IconView:
+		return true;
+	default:
+		return ItemBase::hasCustomSVG();
 	}
 }
 
@@ -109,11 +109,11 @@ void LED::slamColor(QDomElement & element, const QString & colorString)
 void LED::setColor(const QString & color)
 {
 	switch (m_viewLayerID) {
-		case ViewLayer::Breadboard:
-		case ViewLayer::Icon:
-			break;
-		default:
-			return;
+	case ViewLayer::Breadboard:
+	case ViewLayer::Icon:
+		break;
+	default:
+		return;
 	}
 
 	reloadRenderer(getColorSVG(color, m_viewLayerID),true);
@@ -174,9 +174,9 @@ const QString & LED::title() {
 }
 
 ViewLayer::ViewID LED::useViewIDForPixmap(ViewLayer::ViewID vid, bool swappingEnabled) {
-    if (swappingEnabled && vid == ViewLayer::BreadboardView) {
-        return vid;
-    }
+	if (swappingEnabled && vid == ViewLayer::BreadboardView) {
+		return vid;
+	}
 
-    return ItemBase::useViewIDForPixmap(vid, swappingEnabled);
+	return ItemBase::useViewIDForPixmap(vid, swappingEnabled);
 }

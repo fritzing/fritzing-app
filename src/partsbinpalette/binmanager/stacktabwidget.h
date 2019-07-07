@@ -30,17 +30,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 // originally extracted from http://wiki.qtcentre.org/index.php?title=Movable_Tabs
 class StackTabWidget : public QTabWidget {
 	Q_OBJECT
-	public:
-		StackTabWidget(QWidget *parent);
-		class StackTabBar *stackTabBar();
+public:
+	StackTabWidget(QWidget *parent);
+	class StackTabBar *stackTabBar();
 
-	public slots:
-		void informCurrentChanged(int index);
-		void informTabCloseRequested(int index);
+public slots:
+	void informCurrentChanged(int index);
+	void informTabCloseRequested(int index);
 
-	signals:
-		void currentChanged(StackTabWidget *, int index);
-		void tabCloseRequested(StackTabWidget *, int index);
+signals:
+	void currentChanged(StackTabWidget *, int index);
+	void tabCloseRequested(StackTabWidget *, int index);
 
 };
 

@@ -100,9 +100,9 @@ SchematicFrame::~SchematicFrame() {
 
 void SchematicFrame::loadTemplates() {
 	if (SchematicTemplate.svgTemplate.isEmpty()) {
-        loadTemplate(":/resources/templates/schematic_frame_template.txt", ":/resources/parts/svg/core/schematic/frame.svg", SchematicTemplate);
-        loadTemplate(":/resources/templates/0.3.schem.schematic_frame_template.txt", ":/resources/parts/svg/obsolete/schematic/0.3.schem.frame.svg", OldSchematicTemplate);
-    }
+		loadTemplate(":/resources/templates/schematic_frame_template.txt", ":/resources/parts/svg/core/schematic/frame.svg", SchematicTemplate);
+		loadTemplate(":/resources/templates/0.3.schem.schematic_frame_template.txt", ":/resources/parts/svg/obsolete/schematic/0.3.schem.frame.svg", OldSchematicTemplate);
+	}
 }
 
 void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, TemplateThing & templateThing)
@@ -111,37 +111,37 @@ void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, 
 	file2.open(QFile::ReadOnly);
 	QString original = file2.readAll();
 	file2.close();
-    templateThing.size = QSizeF(TextUtils::getViewBoxCoord(original, 2), TextUtils::getViewBoxCoord(original, 3));
+	templateThing.size = QSizeF(TextUtils::getViewBoxCoord(original, 2), TextUtils::getViewBoxCoord(original, 3));
 
-    QFile file(tPath);
+	QFile file(tPath);
 	file.open(QFile::ReadOnly);
 	templateThing.svgTemplate = file.readAll();
 	file.close();
 
 
-        /*
+	/*
 
-        static QRegExp NumberFinder("(=['\"][\\[\\{]{0,1})(\\d+(\\.\\d){0,1})[\\]\\}]{0,1}['\"]");
-        SchematicTemplate = OldSchematicTemplate;
-        int pos = 0;
-        while (true) {
-            int ix = NumberFinder.indexIn(SchematicTemplate, pos);
-            if (ix < 0) break;
+	static QRegExp NumberFinder("(=['\"][\\[\\{]{0,1})(\\d+(\\.\\d){0,1})[\\]\\}]{0,1}['\"]");
+	SchematicTemplate = OldSchematicTemplate;
+	int pos = 0;
+	while (true) {
+	    int ix = NumberFinder.indexIn(SchematicTemplate, pos);
+	    if (ix < 0) break;
 
-            double d = NumberFinder.cap(2).toDouble();
-            QString d3 = QString("%1").arg(d / 3, 0, 'g', 5);
-            int offset = NumberFinder.cap(0).count();
-            if (SchematicTemplate.indexOf("version", ix - 7) < 0) {
-                SchematicTemplate.replace(ix + NumberFinder.cap(1).count(), NumberFinder.cap(2).count(), d3);
-                offset += d3.count() - NumberFinder.cap(2).count();
-            }
+	    double d = NumberFinder.cap(2).toDouble();
+	    QString d3 = QString("%1").arg(d / 3, 0, 'g', 5);
+	    int offset = NumberFinder.cap(0).count();
+	    if (SchematicTemplate.indexOf("version", ix - 7) < 0) {
+	        SchematicTemplate.replace(ix + NumberFinder.cap(1).count(), NumberFinder.cap(2).count(), d3);
+	        offset += d3.count() - NumberFinder.cap(2).count();
+	    }
 
-            pos = ix + offset;
-        }
+	    pos = ix + offset;
+	}
 
-        DebugDialog::debug("schematic template " + SchematicTemplate);
+	DebugDialog::debug("schematic template " + SchematicTemplate);
 
-        */
+	*/
 
 
 	QString errorStr;
@@ -153,19 +153,19 @@ void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, 
 		return;
 	}
 
-    QDomElement root = domDocument.documentElement();
+	QDomElement root = domDocument.documentElement();
 	QDomElement descr =TextUtils::findElementWithAttribute(root, "id", "descr");
 	QString xString = descr.attribute("x");
 	xString = xString.mid(1, xString.length() - 2); // remove the brackets;
 	templateThing.margin = xString.toInt() * 2;
 	templateThing.fontSize = descr.attribute("font-size").toDouble();
 
-    QDomNodeList nodeList = root.elementsByTagName("rect");
-    for (int i = 0; i < nodeList.count(); i++) {
-        double sw = nodeList.at(i).toElement().attribute("stroke-width").toDouble();
-        if (sw != 0) templateThing.strokeWidth = sw;
-        break;
-    }
+	QDomNodeList nodeList = root.elementsByTagName("rect");
+	for (int i = 0; i < nodeList.count(); i++) {
+		double sw = nodeList.at(i).toElement().attribute("stroke-width").toDouble();
+		if (sw != 0) templateThing.strokeWidth = sw;
+		break;
+	}
 }
 
 QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH)
@@ -176,13 +176,13 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 	if (SchematicTemplate.svgTemplate.isEmpty()) return "";
 
 	switch (viewLayerID) {
-		case ViewLayer::SchematicFrame:
-			break;
-		default:
-			return "";
+	case ViewLayer::SchematicFrame:
+		break;
+	default:
+		return "";
 	}
 
-    TemplateThing & templateThing =  moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate : SchematicTemplate;
+	TemplateThing & templateThing =  moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate : SchematicTemplate;
 
 	if (!m_wrapInitialized) {
 		m_wrapInitialized = true;
@@ -228,7 +228,7 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 	dt.setTime_t(modelPart()->localProp("date").toUInt());
 	hash.insert("date", dt.toString(DisplayFormat));
 
-    DebugDialog::debug("svg " + svg);
+	DebugDialog::debug("svg " + svg);
 
 	return TextUtils::convertExtendedChars(TextUtils::replaceTextElements(svg, hash));
 }
@@ -253,12 +253,12 @@ ViewLayer::ViewID SchematicFrame::theViewID() {
 }
 
 double SchematicFrame::minWidth() {
-    double w = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size.width() : SchematicTemplate.size.width();
+	double w = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size.width() : SchematicTemplate.size.width();
 	return w * GraphicsUtils::SVGDPI / GraphicsUtils::StandardFritzingDPI;
 }
 
 double SchematicFrame::minHeight() {
-    double h = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size.height() : SchematicTemplate.size.height();
+	double h = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size.height() : SchematicTemplate.size.height();
 	return h * GraphicsUtils::SVGDPI / GraphicsUtils::StandardFritzingDPI;
 }
 
@@ -270,7 +270,7 @@ void SchematicFrame::addedToScene(bool temporary)
 			modelPart()->setLocalProp("filename", infoGraphicsView->filenameIf());
 		}
 	}
-    ResizableBoard::addedToScene(temporary);
+	ResizableBoard::addedToScene(temporary);
 	resizeMMAux(m_modelPart->localProp("width").toDouble(), m_modelPart->localProp("height").toDouble());
 }
 
@@ -305,12 +305,12 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 {
 	if (propp.compare("shape", Qt::CaseInsensitive) == 0) {
 		returnWidget = setUpDimEntry(false, false, true, returnWidget);
-        returnWidget->setEnabled(swappingEnabled);
+		returnWidget->setEnabled(swappingEnabled);
 		returnProp = tr("shape");
 		return true;
 	}
 
-    if (propp.compare("date", Qt::CaseInsensitive) == 0) {
+	if (propp.compare("date", Qt::CaseInsensitive) == 0) {
 		QDateTimeEdit * dateTimeEdit = new QDateTimeEdit(QDateTime::currentDateTime(), parent);
 		QString d = prop("date");
 		if (!d.isEmpty()) {
@@ -427,7 +427,7 @@ bool SchematicFrame::hasPartNumberProperty()
 void SchematicFrame::setInitialSize() {
 	double w = m_modelPart->localProp("width").toDouble();
 	if (w == 0) {
-        QSizeF size = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size : SchematicTemplate.size;
+		QSizeF size = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size : SchematicTemplate.size;
 
 		// set the size so the infoGraphicsView will display the size as you drag
 		modelPart()->setLocalProp("width", 25.4 * size.width() / GraphicsUtils::StandardFritzingDPI);
@@ -483,9 +483,9 @@ void SchematicFrame::sheetEntry(int value) {
 
 ViewLayer::ViewID SchematicFrame::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
-    if (vid == ViewLayer::SchematicView) {
-        return ViewLayer::IconView;
-    }
+	if (vid == ViewLayer::SchematicView) {
+		return ViewLayer::IconView;
+	}
 
-    return ViewLayer::UnknownView;
+	return ViewLayer::UnknownView;
 }

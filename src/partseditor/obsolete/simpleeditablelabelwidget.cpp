@@ -68,9 +68,9 @@ void SimpleEditableLabelWidget::toStandardMode(bool markAsEdited) {
 
 void SimpleEditableLabelWidget::toEditionMode() {
 	//if(m_hasBeenEdited) {
-		m_lineEdit->setText(m_label->text());
+	m_lineEdit->setText(m_label->text());
 	//} else { // Remove this part of the branch if we want the lineedit to remember what was typed the last time
-		//m_lineEdit->setText("");
+	//m_lineEdit->setText("");
 	//}
 	swapWidgets(m_lineEdit, m_label);
 	m_lineEdit->setFocus();

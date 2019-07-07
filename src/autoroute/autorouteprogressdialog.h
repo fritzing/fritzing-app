@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class AutorouteProgressDialog : public QDialog
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	AutorouteProgressDialog(const QString & title, bool zoomAndPan, bool stopButton, bool bestButton, bool spin, class ZoomableGraphicsView * view, QWidget *parent = 0);
@@ -49,14 +49,14 @@ public slots:
 	void setMessage(const QString &);
 	void setMessage2(const QString &);
 	void setSpinValue(int);
-    void disableButtons();
-    void sendBest();
+	void disableButtons();
+	void sendBest();
 
 signals:
 	void skip();
 	void cancel();
 	void stop();
-    void best();
+	void best();
 	void spinChange(int);
 
 protected slots:
@@ -68,7 +68,7 @@ protected:
 	QLabel * m_message;
 	QLabel * m_message2;
 	QSpinBox * m_spinBox;
-    QDialogButtonBox * m_buttonBox;
+	QDialogButtonBox * m_buttonBox;
 };
 
 class ArrowButton : public QLabel {

@@ -32,11 +32,11 @@ public:
 	SchematicSubpart(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~SchematicSubpart();
 
-    void hoverEnterEvent(QGraphicsSceneHoverEvent * event );
+	void hoverEnterEvent(QGraphicsSceneHoverEvent * event );
 	void hoverLeaveEvent( QGraphicsSceneHoverEvent * event );
 
 protected:
-    void simpleHoverEnterEvent(QGraphicsSceneHoverEvent * event );
+	void simpleHoverEnterEvent(QGraphicsSceneHoverEvent * event );
 	void simpleHoverLeaveEvent( QGraphicsSceneHoverEvent * event );
 
 };

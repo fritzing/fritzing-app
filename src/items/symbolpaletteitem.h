@@ -71,9 +71,9 @@ public:
 	bool hasPartLabel();
 	bool getAutoroutable();
 	void setAutoroutable(bool);
-    void setLabel(const QString &);
-    QString getLabel();
-    QString getDirection();
+	void setLabel(const QString &);
+	QString getLabel();
+	QString getDirection();
 
 public:
 	static double DefaultVoltage;
@@ -87,8 +87,8 @@ protected:
 	double useVoltage(ConnectorItem * connectorItem);
 	virtual QString makeSvg(ViewLayer::ViewLayerID);
 	QString replaceTextElement(QString svg);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
-    void resetLayerKin();
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	void resetLayerKin();
 
 protected:
 	double m_voltage;
@@ -101,21 +101,21 @@ protected:
 
 class NetLabel : public SymbolPaletteItem
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	NetLabel(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~NetLabel();
 
-    void addedToScene(bool temporary);
+	void addedToScene(bool temporary);
 	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	PluralType isPlural();
 	bool isOnlyNetLabel();
-    QString getInspectorTitle();
-    void setInspectorTitle(const QString & oldText, const QString & newText);
+	QString getInspectorTitle();
+	void setInspectorTitle(const QString & oldText, const QString & newText);
 
 protected:
-    QString makeSvg(ViewLayer::ViewLayerID);
+	QString makeSvg(ViewLayer::ViewLayerID);
 
 };
 

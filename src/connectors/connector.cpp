@@ -152,9 +152,9 @@ void Connector::writeSvgIdAttr(QXmlStreamWriter &writer, ViewLayer::ViewID view,
 }
 
 void Connector::writeTerminalIdAttr(QXmlStreamWriter &writer, ViewLayer::ViewID view, QString terminalId) {
-		if((view == ViewLayer::BreadboardView || view == ViewLayer::SchematicView)
-			&&
-		   (!terminalId.isNull() && !terminalId.isEmpty()) ) {
+	if((view == ViewLayer::BreadboardView || view == ViewLayer::SchematicView)
+	        &&
+	        (!terminalId.isNull() && !terminalId.isEmpty()) ) {
 		writer.writeAttribute("terminalId",terminalId);
 	} else {
 		return;

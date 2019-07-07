@@ -41,7 +41,7 @@ public:
 	class ModelPart * modelPart();
 	const QList<Connector *> & connectors() const;
 	Connector * subConnector() const;
-    void addSubConnector(Connector *);
+	void addSubConnector(Connector *);
 
 protected:
 	QList<class Connector *> m_connectors;

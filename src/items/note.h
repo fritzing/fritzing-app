@@ -36,7 +36,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class Note : public ItemBase
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	Note(class ModelPart*, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu);
@@ -58,7 +58,7 @@ public:
 	bool hasPartNumberProperty();
 	bool rotationAllowed();
 	bool rotation45Allowed();
-    void addedToScene(bool temporary);
+	void addedToScene(bool temporary);
 
 protected:
 	QRectF boundingRect() const;
@@ -72,7 +72,7 @@ protected:
 	void disconnectSlots();
 	void forceFormat(int position, int charsAdded);
 	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 protected slots:
 	void contentsChangeSlot(int position, int charsAdded, int charsRemoved);
@@ -92,8 +92,8 @@ public:
 
 protected:
 	QRectF m_rect;
-    QPen m_pen;
-    QBrush m_brush;
+	QPen m_pen;
+	QBrush m_brush;
 	class ResizeHandle * m_resizeGrip;
 	class ResizeHandle * m_inResize;
 	QGraphicsTextItem * m_graphicsTextItem;
@@ -104,7 +104,7 @@ protected:
 
 class LinkDialog : public QDialog
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	LinkDialog(QWidget *parent = 0);

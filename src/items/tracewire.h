@@ -25,9 +25,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class TraceWire : public ClipableWire
 {
-Q_OBJECT
+	Q_OBJECT
 public:
-	TraceWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu  );
+	TraceWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu  );
 	~TraceWire();
 
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
@@ -38,7 +38,7 @@ public:
 	static TraceWire * getTrace(ConnectorItem *);
 	static class QComboBox * createWidthComboBox(double currentMils, QWidget * parent);
 	static int widthEntry(const QString & text, QObject * sender);
-    QHash<QString, QString> prepareProps(ModelPart *, bool wantDebug, QStringList & keys);
+	QHash<QString, QString> prepareProps(ModelPart *, bool wantDebug, QStringList & keys);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 
 public:
@@ -58,7 +58,7 @@ public:
 
 
 protected:
-    void setColorFromElement(QDomElement & element);
+	void setColorFromElement(QDomElement & element);
 
 protected slots:
 	void widthEntry(const QString & text);

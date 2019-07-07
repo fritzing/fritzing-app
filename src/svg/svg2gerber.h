@@ -29,10 +29,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class SVG2gerber : public QObject
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    SVG2gerber();
+	SVG2gerber();
 
 public:
 	enum ForWhy {
@@ -41,38 +41,38 @@ public:
 		ForOutline,
 		ForMask,
 		ForDrill,
-        ForPasteMask
+		ForPasteMask
 	};
 
 	int convert(const QString & svgStr, bool doubleSided, const QString & mainLayerName, ForWhy, QSizeF boardSize);
-    QString getGerber();
+	QString getGerber();
 
 protected:
-    QDomDocument m_SVGDom;
-    QString m_gerber_header;
-    QString m_gerber_paths;
-    QString m_drill_slots;
+	QDomDocument m_SVGDom;
+	QString m_gerber_header;
+	QString m_gerber_paths;
+	QString m_drill_slots;
 	QSizeF m_boardSize;
-    QMultiHash<QString, QString> m_platedApertures;
-    QMultiHash<QString, QString> m_holeApertures;
+	QMultiHash<QString, QString> m_platedApertures;
+	QMultiHash<QString, QString> m_holeApertures;
 
-    double m_pathstart_x;
-    double m_pathstart_y;
+	double m_pathstart_x;
+	double m_pathstart_y;
 
 protected:
 
-    void normalizeSVG();
-    void convertShapes2paths(QDomNode);
-    void flattenSVG(QDomNode);
-    QMatrix parseTransform(QDomElement);
+	void normalizeSVG();
+	void convertShapes2paths(QDomNode);
+	void flattenSVG(QDomNode);
+	QMatrix parseTransform(QDomElement);
 
-    QDomElement ellipse2path(QDomElement);
+	QDomElement ellipse2path(QDomElement);
 
-    void copyStyles(QDomElement, QDomElement);
+	void copyStyles(QDomElement, QDomElement);
 
-    int renderGerber(bool doubleSided, const QString & mainLayerName, ForWhy);
-    int allPaths2gerber(ForWhy);
-    QString path2gerber(QDomElement);
+	int renderGerber(bool doubleSided, const QString & mainLayerName, ForWhy);
+	int allPaths2gerber(ForWhy);
+	QString path2gerber(QDomElement);
 	void handleOblongPath(QDomElement & path, int & dcode_index);
 	QString standardAperture(QDomElement & element, QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index, double stroke_width);
 	int flipx(double x);
@@ -80,12 +80,12 @@ protected:
 	double flipxNoRound(double x);
 	double flipyNoRound(double y);
 	void doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
-				QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index);
+	            QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index);
 
 
 
 protected slots:
-    void path2gerbCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
+	void path2gerbCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
 
 
 };

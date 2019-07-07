@@ -29,7 +29,7 @@ class ClipableWire : public Wire
 {
 
 public:
-	ClipableWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool initLabel);
+	ClipableWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool initLabel);
 
 	void setClipEnds(bool);
 	const QLineF & getPaintLine();

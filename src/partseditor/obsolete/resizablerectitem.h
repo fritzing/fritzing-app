@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class ConnectorRectangle;
 
 class ResizableRectItem {
-friend class ConnectorRectangle;
+	friend class ConnectorRectangle;
 public:
 	ResizableRectItem();
 	virtual ~ResizableRectItem() {}

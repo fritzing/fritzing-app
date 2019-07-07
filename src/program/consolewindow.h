@@ -62,33 +62,33 @@ class ConsoleSettings;
 
 class ConsoleWindow : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit ConsoleWindow(QWidget *parent = 0);
-    ~ConsoleWindow();
-    void openSerialPort(const QString portName);
-    void closeSerialPort(const QString portName);
+	explicit ConsoleWindow(QWidget *parent = 0);
+	~ConsoleWindow();
+	void openSerialPort(const QString portName);
+	void closeSerialPort(const QString portName);
 
 protected:
-    void closeEvent(QCloseEvent *event);
+	void closeEvent(QCloseEvent *event);
 
 private slots:
-    void openSerialPort();
-    void closeSerialPort();
-    void about();
-    void writeData(const QByteArray &data);
-    void readData();
-    void handleError(QSerialPort::SerialPortError error);
+	void openSerialPort();
+	void closeSerialPort();
+	void about();
+	void writeData(const QByteArray &data);
+	void readData();
+	void handleError(QSerialPort::SerialPortError error);
 
 private:
-    void initActionsConnections();
+	void initActionsConnections();
 
 private:
-    Ui::ConsoleWindow *ui;
-    Console *console;
-    ConsoleSettings *settings;
-    QSerialPort *serial;
+	Ui::ConsoleWindow *ui;
+	Console *console;
+	ConsoleSettings *settings;
+	QSerialPort *serial;
 };
 
 #endif // CONSOLEWINDOW_H

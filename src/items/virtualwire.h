@@ -28,7 +28,7 @@ class VirtualWire : public ClipableWire
 	Q_OBJECT
 
 public:
-	VirtualWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu  );
+	VirtualWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu  );
 	~VirtualWire();
 
 	void setHidden(bool hidden);
@@ -36,7 +36,7 @@ public:
 	void tempRemoveAllConnections();
 	void setColorWasNamed(bool);
 	bool colorWasNamed();
-    QPainterPath shape() const;
+	QPainterPath shape() const;
 
 protected:
 	void paint (QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget );
@@ -47,7 +47,7 @@ protected:
 	void inactivateConnectors();
 
 public:
-    static const double ShapeWidthExtra;
+	static const double ShapeWidthExtra;
 
 protected:
 	bool m_colorWasNamed;

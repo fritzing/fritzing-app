@@ -54,7 +54,7 @@ public:
 	bool rotationAllowed();
 	bool rotation45Allowed();
 	bool canFindConnectorsUnder();
-    QRectF trueSceneBoundingRect();
+	QRectF trueSceneBoundingRect();
 
 protected slots:
 	void changeHoleSize(const QString &);
@@ -67,7 +67,7 @@ protected:
 	void setBothNonConnectors(ItemBase * itemBase, SvgIdLayer * svgIdLayer);
 	virtual void setBoth(const QString & holeDiameter, const QString &  thickness);
 	QRectF getRect(const QString & newSize);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 public:
 	static const double OffsetPixels;

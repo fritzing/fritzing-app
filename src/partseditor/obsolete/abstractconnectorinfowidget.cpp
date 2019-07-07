@@ -36,8 +36,8 @@ AbstractConnectorInfoWidget::AbstractConnectorInfoWidget(ConnectorsInfoWidget *t
 	m_removeButton = new ConnectorInfoRemoveButton(this);
 
 	connect(
-		m_removeButton, SIGNAL(clicked(AbstractConnectorInfoWidget*)),
-		topLevelContainer, SLOT(removeConnector(AbstractConnectorInfoWidget*))
+	    m_removeButton, SIGNAL(clicked(AbstractConnectorInfoWidget*)),
+	    topLevelContainer, SLOT(removeConnector(AbstractConnectorInfoWidget*))
 	);
 
 	setMinimumWidth(100);

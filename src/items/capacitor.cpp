@@ -57,9 +57,9 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 			focusOutComboBox->setEditable(propertyDef->editable);
 			focusOutComboBox->setObjectName("infoViewComboBox");
 			QString current = m_propertyDefs.value(propertyDef);
-            if (propertyDef->editable) {
-                focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value").arg(returnProp));
-            }
+			if (propertyDef->editable) {
+				focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value").arg(returnProp));
+			}
 
 			if (propertyDef->numeric) {
 				if (!current.isEmpty()) {
@@ -98,8 +98,8 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 					validator->setBounds(propertyDef->minValue, propertyDef->maxValue);
 				}
 				QString pattern = QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d{1,2}))[%1]{0,1}[%2]{0,1}")
-												.arg(TextUtils::PowerPrefixesString)
-												.arg(propertyDef->symbol);
+				                  .arg(TextUtils::PowerPrefixesString)
+				                  .arg(propertyDef->symbol);
 				validator->setRegExp(QRegExp(pattern));
 				focusOutComboBox->setValidator(validator);
 				connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(propertyEntry(const QString &)));

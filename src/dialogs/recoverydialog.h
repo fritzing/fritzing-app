@@ -38,21 +38,21 @@ protected:
 };
 
 class RecoveryDialog : public QDialog {
-        Q_OBJECT
+	Q_OBJECT
 public:
-        RecoveryDialog(QFileInfoList fileList, QWidget *parent = 0, Qt::WindowFlags flags = 0);
-        QList<QTreeWidgetItem*> getFileList();
+	RecoveryDialog(QFileInfoList fileList, QWidget *parent = 0, Qt::WindowFlags flags = 0);
+	QList<QTreeWidgetItem*> getFileList();
 
 protected:
-        QString getOriginalFileName(const QString & path);
+	QString getOriginalFileName(const QString & path);
 
-        QList<QTreeWidgetItem*> m_fileList;
-        QTreeWidget *m_recoveryList;
-        QPushButton *m_recover;
-        QPushButton *m_ignore;
+	QList<QTreeWidgetItem*> m_fileList;
+	QTreeWidget *m_recoveryList;
+	QPushButton *m_recover;
+	QPushButton *m_ignore;
 
 protected slots:
-        void updateRecoverButton();
+	void updateRecoverButton();
 };
 
 #endif // RECOVERYDIALOG_H

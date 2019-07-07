@@ -87,11 +87,11 @@ void PropertyDefMaster::loadPropertyDefs() {
 }
 
 void PropertyDefMaster::cleanup() {
-    foreach (PropertyDef * propertyDef, PropertyDefs) {
-        delete propertyDef;
-    }
+	foreach (PropertyDef * propertyDef, PropertyDefs) {
+		delete propertyDef;
+	}
 
-    PropertyDefs.clear();
+	PropertyDefs.clear();
 }
 
 void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDef *, QString> & propertyDefs)

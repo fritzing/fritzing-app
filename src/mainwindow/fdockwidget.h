@@ -28,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class FDockWidget : public QDockWidget
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	FDockWidget(const QString & title, QWidget * parent = 0);
 

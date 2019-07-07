@@ -29,12 +29,12 @@ static const QRegExp findWhitespaceAtEnd(" $");
 
 SVGPathLexer::SVGPathLexer(const QString &source)
 {
-    m_source = clean(source);
-    m_chars = m_source.unicode();
-    m_size = m_source.size();
+	m_source = clean(source);
+	m_chars = m_source.unicode();
+	m_size = m_source.size();
 	//qDebug() << m_source;
-    m_pos = 0;
-    m_current = next();
+	m_pos = 0;
+	m_current = next();
 }
 
 SVGPathLexer::~SVGPathLexer()
@@ -73,116 +73,116 @@ int SVGPathLexer::lex()
 	}
 	else if (m_current.isNull()) {
 		return SVGPathGrammar::EOF_SYMBOL;
-    }
+	}
 	else if (m_current == QLatin1Char('V')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::VEE;
-    }
+		next();
+		return SVGPathGrammar::VEE;
+	}
 	else if (m_current == QLatin1Char('v')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::VEE;
-    }
+		next();
+		return SVGPathGrammar::VEE;
+	}
 	else if (m_current == QLatin1Char('T')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::TEE;
-    }
+		next();
+		return SVGPathGrammar::TEE;
+	}
 	else if (m_current == QLatin1Char('t')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::TEE;
-    }
+		next();
+		return SVGPathGrammar::TEE;
+	}
 	else if (m_current == QLatin1Char(FakeClosePathChar)) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::EKS;
-    }
+		next();
+		return SVGPathGrammar::EKS;
+	}
 	else if (m_current == QLatin1Char('C')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::CEE;
-    }
+		next();
+		return SVGPathGrammar::CEE;
+	}
 	else if (m_current == QLatin1Char('c')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::CEE;
-    }
+		next();
+		return SVGPathGrammar::CEE;
+	}
 	else if (m_current == QLatin1Char('Q')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::KYU;
-    }
+		next();
+		return SVGPathGrammar::KYU;
+	}
 	else if (m_current == QLatin1Char('q')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::KYU;
-    }
+		next();
+		return SVGPathGrammar::KYU;
+	}
 	else if (m_current == QLatin1Char('S')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::ESS;
-    }
+		next();
+		return SVGPathGrammar::ESS;
+	}
 	else if (m_current == QLatin1Char('s')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::ESS;
-    }
+		next();
+		return SVGPathGrammar::ESS;
+	}
 	else if (m_current == QLatin1Char('H')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::AITCH;
-    }
+		next();
+		return SVGPathGrammar::AITCH;
+	}
 	else if (m_current == QLatin1Char('h')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::AITCH;
-    }
+		next();
+		return SVGPathGrammar::AITCH;
+	}
 	else if (m_current == QLatin1Char('L')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::EL;
-    }
+		next();
+		return SVGPathGrammar::EL;
+	}
 	else if (m_current == QLatin1Char('l')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::EL;
-    }
+		next();
+		return SVGPathGrammar::EL;
+	}
 	else if (m_current == QLatin1Char('M')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::EM;
-    }
+		next();
+		return SVGPathGrammar::EM;
+	}
 	else if (m_current == QLatin1Char('m')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::EM;
-    }
+		next();
+		return SVGPathGrammar::EM;
+	}
 	else if (m_current == QLatin1Char('A')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::AE;
-    }
+		next();
+		return SVGPathGrammar::AE;
+	}
 	else if (m_current == QLatin1Char('a')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::AE;
-    }
+		next();
+		return SVGPathGrammar::AE;
+	}
 	else if (m_current == QLatin1Char('Z')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::ZEE;
-    }
+		next();
+		return SVGPathGrammar::ZEE;
+	}
 	else if (m_current == QLatin1Char('z')) {
 		m_currentCommand = m_current;
-        next();
-        return SVGPathGrammar::ZEE;
-    }
+		next();
+		return SVGPathGrammar::ZEE;
+	}
 	else if (m_current == QLatin1Char(',')) {
-        next();
-        return SVGPathGrammar::COMMA;
-    }
+		next();
+		return SVGPathGrammar::COMMA;
+	}
 
 
 	return -1;
@@ -190,11 +190,11 @@ int SVGPathLexer::lex()
 
 QChar SVGPathLexer::next()
 {
-    if (m_pos < m_size)
-        m_current = m_chars[m_pos++];
-    else
-        m_current = QChar();
-    return m_current;
+	if (m_pos < m_size)
+		m_current = m_chars[m_pos++];
+	else
+		m_current = QChar();
+	return m_current;
 }
 
 QChar SVGPathLexer::currentCommand() {

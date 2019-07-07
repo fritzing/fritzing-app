@@ -32,9 +32,9 @@ const int ZoomableGraphicsView::MaxScaleValue = 3000;
 
 ZoomableGraphicsView::WheelMapping ZoomableGraphicsView::m_wheelMapping =
 #ifdef Q_OS_WIN
-	ZoomPrimary;
+    ZoomPrimary;
 #else
-	ScrollPrimary;
+    ScrollPrimary;
 #endif
 
 bool FirstTime = true;
@@ -42,7 +42,7 @@ bool FirstTime = true;
 ZoomableGraphicsView::ZoomableGraphicsView( QWidget * parent )
 	: QGraphicsView(parent)
 {
-    m_viewFromBelow = false;
+	m_viewFromBelow = false;
 	m_scaleValue = 100;
 	m_maxScaleValue = MaxScaleValue;
 	m_minScaleValue = 1;
@@ -63,10 +63,10 @@ void ZoomableGraphicsView::wheelEvent(QWheelEvent* event) {
 		QGraphicsView::wheelEvent(event);
 		return;
 	}
-    if ((event->modifiers() & Qt::ShiftModifier) != 0) {
+	if ((event->modifiers() & Qt::ShiftModifier) != 0) {
 		QGraphicsView::wheelEvent(event);
 		return;
-    }
+	}
 
 	bool doZoom = false;
 	bool doHorizontal = false;
@@ -77,31 +77,31 @@ void ZoomableGraphicsView::wheelEvent(QWheelEvent* event) {
 	bool shift = event->modifiers() & Qt::ShiftModifier;
 
 	switch (m_wheelMapping) {
-		case ScrollPrimary:
-			if (control || alt) doZoom = true;
+	case ScrollPrimary:
+		if (control || alt) doZoom = true;
+		else {
+			if (event->orientation() == Qt::Horizontal) {
+				doHorizontal = true;
+			}
 			else {
-				if (event->orientation() == Qt::Horizontal) {
-					doHorizontal = true;
-				}
-				else {
-					doVertical = true;
-				}
+				doVertical = true;
 			}
-			break;
-		case ZoomPrimary:
-			if (control || alt) {
-				if (event->orientation() == Qt::Horizontal) {
-					doHorizontal = true;
-				}
-				else {
-					doVertical = true;
-				}
+		}
+		break;
+	case ZoomPrimary:
+		if (control || alt) {
+			if (event->orientation() == Qt::Horizontal) {
+				doHorizontal = true;
 			}
-			else doZoom = true;
-			break;
-		default:
-			// shouldn't happen
-			return;
+			else {
+				doVertical = true;
+			}
+		}
+		else doZoom = true;
+		break;
+	default:
+		// shouldn't happen
+		return;
 	}
 
 	if (shift && (doVertical || doHorizontal)) {
@@ -154,12 +154,12 @@ void ZoomableGraphicsView::relativeZoom(double step, bool centerOnCursor) {
 	//QPointF r = this->mapToScene(q);
 
 	QMatrix matrix;
-    double multiplier = 1;
-    if (m_viewFromBelow) multiplier = -1;
+	double multiplier = 1;
+	if (m_viewFromBelow) multiplier = -1;
 	matrix.scale(multiplier * tempScaleValue, tempScaleValue);
 	if (centerOnCursor) {
 		//this->setMatrix(QMatrix().translate(-r.x(), -r.y()) * matrix * QMatrix().translate(r.x(), r.y()));
-        this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+		this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
 	}
 	else {
 		this->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
@@ -190,16 +190,16 @@ ZoomableGraphicsView::WheelMapping ZoomableGraphicsView::wheelMapping() {
 }
 
 bool ZoomableGraphicsView::viewFromBelow() {
-    return m_viewFromBelow;
+	return m_viewFromBelow;
 }
 
 void ZoomableGraphicsView::setViewFromBelow(bool viewFromBelow) {
-    if (m_viewFromBelow == viewFromBelow) return;
+	if (m_viewFromBelow == viewFromBelow) return;
 
-    m_viewFromBelow = viewFromBelow;
+	m_viewFromBelow = viewFromBelow;
 
-    this->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
-    QTransform transform;
-    transform.scale(-1, 1);
-    this->setTransform(transform, true);
+	this->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
+	QTransform transform;
+	transform.scale(-1, 1);
+	this->setTransform(transform, true);
 }

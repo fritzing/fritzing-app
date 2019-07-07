@@ -68,8 +68,8 @@ DebugDialog::DebugDialog(QWidget *parent)
 	m_textEdit = new QTextEdit(this);
 	m_textEdit->setGeometry(QRect(10, 10, 381, 281));
 
-    QString path = FolderUtils::getTopLevelUserDataStorePath();
-    path += "/debug.txt";
+	QString path = FolderUtils::getTopLevelUserDataStorePath();
+	path += "/debug.txt";
 
 	m_file.setFileName(path);
 	m_file.remove();
@@ -113,7 +113,7 @@ void DebugDialog::debug(QString prefix, const QPointF &point, DebugLevel debug, 
 
 void DebugDialog::debug(QString prefix, const QRectF &rect, DebugLevel debug, QObject *ancestor) {
 	QString msg = prefix+QString(" rect: x=%1 y=%2 w=%3 h=%4")
-		.arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
+	              .arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
 	DebugDialog::debug(msg,debug,ancestor);
 }
 
@@ -124,7 +124,7 @@ void DebugDialog::debug(QString prefix, const QPoint &point, DebugLevel debug, Q
 
 void DebugDialog::debug(QString prefix, const QRect &rect, DebugLevel debug, QObject *ancestor) {
 	QString msg = prefix+QString(" rect: x=%1 y=%2 w=%3 h=%4")
-		.arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
+	              .arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
 	DebugDialog::debug(msg,debug,ancestor);
 }
 

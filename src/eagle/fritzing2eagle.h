@@ -30,10 +30,10 @@ class Fritzing2Eagle {
 public:
 	Fritzing2Eagle(PCBSketchWidget *m_pcbGraphicsView);
 
-/*
-public:
-	static void showOutputInfo(PCBSketchWidget m_pcbGraphicsView);
-*/
+	/*
+	public:
+		static void showOutputInfo(PCBSketchWidget m_pcbGraphicsView);
+	*/
 
 protected:
 	static Fritzing2Eagle* singleton;

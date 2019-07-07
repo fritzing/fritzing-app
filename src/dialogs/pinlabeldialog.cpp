@@ -78,10 +78,10 @@ PinLabelDialog::PinLabelDialog(const QStringList & labels, bool singleRow, const
 	QVBoxLayout * textLayout = new QVBoxLayout(frame);
 
 	QLabel * label = new QLabel("<html><body>" +
-								tr("<p><h2>Pin Label Editor</h2></p>") +
-								tr("<p>Click on a label next to a pin number to rename that pin.") + " " +
-								tr("You can use the tab key to move through the labels in order.</p>") +
-								"</body></html>");
+	                            tr("<p><h2>Pin Label Editor</h2></p>") +
+	                            tr("<p>Click on a label next to a pin number to rename that pin.") + " " +
+	                            tr("You can use the tab key to move through the labels in order.</p>") +
+	                            "</body></html>");
 	label->setMaximumWidth(150);
 	label->setWordWrap(true);
 
@@ -115,11 +115,11 @@ PinLabelDialog::PinLabelDialog(const QStringList & labels, bool singleRow, const
 	m_redoButton->setEnabled(false);
 	m_redoButton->setDefault(false);
 
-    buttonBox->addButton(m_undoButton, QDialogButtonBox::ResetRole);
-    buttonBox->addButton(m_redoButton, QDialogButtonBox::ResetRole);
+	buttonBox->addButton(m_undoButton, QDialogButtonBox::ResetRole);
+	buttonBox->addButton(m_redoButton, QDialogButtonBox::ResetRole);
 
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	vLayout->addWidget(scrollArea);
 	vLayout->addWidget(buttonBox);
@@ -290,11 +290,11 @@ void PinLabelDialog::undoChanged(bool)
 void PinLabelDialog::keyPressEvent(QKeyEvent *e)
 {
 	switch (e->key()) {
-		case Qt::Key_Escape:
-		case Qt::Key_Enter:
-		case Qt::Key_Return:
-			return;
-		default:
-			QDialog::keyPressEvent(e);
+	case Qt::Key_Escape:
+	case Qt::Key_Enter:
+	case Qt::Key_Return:
+		return;
+	default:
+		QDialog::keyPressEvent(e);
 	}
 }

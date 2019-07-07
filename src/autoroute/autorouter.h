@@ -47,14 +47,14 @@ public:
 	virtual void start()=0;
 
 public:
-    static const QString MaxCyclesName;
+	static const QString MaxCyclesName;
 
 
 protected:
 	virtual void cleanUpNets();
 	virtual void updateRoutingStatus();
 	virtual class TraceWire * drawOneTrace(QPointF fromPos, QPointF toPos, double width, ViewLayer::ViewLayerPlacement);
-    void initUndo(QUndoCommand * parentCommand);
+	void initUndo(QUndoCommand * parentCommand);
 	void addUndoConnection(bool connect, class SymbolPaletteItem *, QUndoCommand * parentCommand);
 	void addUndoConnection(bool connect, class JumperItem *, QUndoCommand * parentCommand);
 	void addUndoConnection(bool connect, class Via *, QUndoCommand * parentCommand);
@@ -70,7 +70,7 @@ public slots:
 	virtual void cancel();
 	virtual void cancelTrace();
 	virtual void stopTracing();
-    virtual void useBest();
+	virtual void useBest();
 	virtual void setMaxCycles(int);
 
 signals:
@@ -83,7 +83,7 @@ signals:
 	void setProgressMessage2(const QString &);
 	void setCycleMessage(const QString &);
 	void setCycleCount(int);
-    void disableButtons();
+	void disableButtons();
 
 protected:
 	class PCBSketchWidget * m_sketchWidget;
@@ -91,15 +91,15 @@ protected:
 	bool m_cancelled;
 	bool m_cancelTrace;
 	bool m_stopTracing;
-    bool m_useBest;
+	bool m_useBest;
 	bool m_bothSidesNow;
 	int m_maximumProgressPart;
 	int m_currentProgressPart;
 	QGraphicsItem * m_board;
 	int m_maxCycles;
-    double m_keepoutPixels;
+	double m_keepoutPixels;
 	QRectF m_maxRect;
-    bool m_pcbType;
+	bool m_pcbType;
 };
 
 #endif

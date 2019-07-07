@@ -31,25 +31,25 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class AddRemoveListWidget : public QGroupBox {
 	Q_OBJECT
 
-	public:
-		AddRemoveListWidget(QString title, QWidget *parent=0);
-		int count();
-		QListWidgetItem* itemAt(int rowIdx);
-		QStringList& getItemsText();
-		void setItemsText(const QStringList& texts);
+public:
+	AddRemoveListWidget(QString title, QWidget *parent=0);
+	int count();
+	QListWidgetItem* itemAt(int rowIdx);
+	QStringList& getItemsText();
+	void setItemsText(const QStringList& texts);
 
-	protected slots:
-		void addItem();
-		void addItem(QString itemText);
-		void removeSelectedItems();
+protected slots:
+	void addItem();
+	void addItem(QString itemText);
+	void removeSelectedItems();
 
-	protected:
-		QLabel *m_label;
+protected:
+	QLabel *m_label;
 
-		QPushButton *m_addButton;
-		QPushButton *m_removeButton;
+	QPushButton *m_addButton;
+	QPushButton *m_removeButton;
 
-		QListWidget *m_list;
+	QListWidget *m_list;
 };
 
 #endif /* ADDREMOVELISTWIDGET_H_ */

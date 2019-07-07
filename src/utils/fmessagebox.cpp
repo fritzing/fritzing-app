@@ -27,47 +27,47 @@ FMessageBox::FMessageBox(QWidget * parent) : QMessageBox(parent) {
 }
 
 int FMessageBox::exec() {
-    if (BlockMessages) return QMessageBox::Cancel;
+	if (BlockMessages) return QMessageBox::Cancel;
 
-    return QMessageBox::exec();
+	return QMessageBox::exec();
 }
 
 QMessageBox::StandardButton FMessageBox::critical( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons, StandardButton defaultButton) {
-    if (BlockMessages) {
-        DebugDialog::debug("critcal " + title);
-        DebugDialog::debug(text);
-        return QMessageBox::Cancel;
-    }
+	if (BlockMessages) {
+		DebugDialog::debug("critcal " + title);
+		DebugDialog::debug(text);
+		return QMessageBox::Cancel;
+	}
 
-    return QMessageBox::critical(parent, title, text, buttons, defaultButton);
+	return QMessageBox::critical(parent, title, text, buttons, defaultButton);
 }
 
 QMessageBox::StandardButton FMessageBox::information( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons, StandardButton defaultButton) {
-    if (BlockMessages) {
-        DebugDialog::debug("information " + title);
-        DebugDialog::debug(text);
-        return QMessageBox::Cancel;
-    }
+	if (BlockMessages) {
+		DebugDialog::debug("information " + title);
+		DebugDialog::debug(text);
+		return QMessageBox::Cancel;
+	}
 
-    return QMessageBox::information(parent, title, text, buttons, defaultButton);
+	return QMessageBox::information(parent, title, text, buttons, defaultButton);
 }
 
 QMessageBox::StandardButton FMessageBox::question( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons, StandardButton defaultButton) {
-    if (BlockMessages) {
-        DebugDialog::debug("question " + title);
-        DebugDialog::debug(text);
-        return QMessageBox::Cancel;
-    }
+	if (BlockMessages) {
+		DebugDialog::debug("question " + title);
+		DebugDialog::debug(text);
+		return QMessageBox::Cancel;
+	}
 
-    return QMessageBox::question(parent, title, text, buttons, defaultButton);
+	return QMessageBox::question(parent, title, text, buttons, defaultButton);
 }
 
 QMessageBox::StandardButton FMessageBox::warning( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons, StandardButton defaultButton) {
-    if (BlockMessages) {
-        DebugDialog::debug("warning " + title);
-        DebugDialog::debug(text);
-        return QMessageBox::Cancel;
-    }
+	if (BlockMessages) {
+		DebugDialog::debug("warning " + title);
+		DebugDialog::debug(text);
+		return QMessageBox::Cancel;
+	}
 
-    return QMessageBox::warning(parent, title, text, buttons, defaultButton);
+	return QMessageBox::warning(parent, title, text, buttons, defaultButton);
 }

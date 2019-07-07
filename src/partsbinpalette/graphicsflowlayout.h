@@ -28,18 +28,18 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QWidgetItem>
 
 class GraphicsFlowLayout : public QGraphicsLinearLayout {
-	public:
-		GraphicsFlowLayout(QGraphicsLayoutItem *parent, int spacing);
-		void setGeometry(const QRectF &rect);
-		int heightForWidth(int width);
-		void clear();
-		int indexOf(const QGraphicsLayoutItem *item);
+public:
+	GraphicsFlowLayout(QGraphicsLayoutItem *parent, int spacing);
+	void setGeometry(const QRectF &rect);
+	int heightForWidth(int width);
+	void clear();
+	int indexOf(const QGraphicsLayoutItem *item);
 
-	protected:
-		void widgetEvent(QEvent * e);
-		int doLayout(const QRectF &rect);
+protected:
+	void widgetEvent(QEvent * e);
+	int doLayout(const QRectF &rect);
 
-		double m_lastWidth;
+	double m_lastWidth;
 };
 
 #endif /* GRAPHICSFLOWLAYOUT_H_ */

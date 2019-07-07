@@ -71,23 +71,23 @@ void Perfboard::setProp(const QString & prop, const QString & value)
 		return;
 	}
 	switch (this->m_viewID) {
-		case ViewLayer::BreadboardView:
-			if (value.compare(m_size) != 0) {
-                QString temp = value;
-				QString svg = makeBreadboardSvg(temp);
-				reloadRenderer(svg, false);
-				//DebugDialog::debug(svg);
-			}
-			break;
+	case ViewLayer::BreadboardView:
+		if (value.compare(m_size) != 0) {
+			QString temp = value;
+			QString svg = makeBreadboardSvg(temp);
+			reloadRenderer(svg, false);
+			//DebugDialog::debug(svg);
+		}
+		break;
 
-		default:
-			break;
+	default:
+		break;
 	}
 
 	m_size = value;
 	modelPart()->setLocalProp("size", value);
 
-    if (m_partLabel) m_partLabel->displayTextsIf();
+	if (m_partLabel) m_partLabel->displayTextsIf();
 }
 
 QString Perfboard::makeBreadboardSvg(const QString & size)
@@ -122,11 +122,11 @@ QString Perfboard::makeBreadboardSvg(const QString & size)
 		for (int jx = 0; jx < x; jx++) {
 			middle += ConnectorTemplate.arg(left).arg(top).arg(jx).arg(iy).arg(QString::number((iy * ConnectorIDJump) + jx));
 			holes += OneHole
-				.arg(left - radius)
-				.arg(top)
-				.arg(radius)
-				.arg(2 * radius)
-				.arg(sweepflag);
+			         .arg(left - radius)
+			         .arg(top)
+			         .arg(radius)
+			         .arg(2 * radius)
+			         .arg(sweepflag);
 
 			left += 100;
 		}
@@ -134,14 +134,14 @@ QString Perfboard::makeBreadboardSvg(const QString & size)
 	}
 
 	QString svg = BreadboardLayerTemplate
-					.arg((x / 10.0) + 0.1)
-					.arg((y / 10.0) + 0.1)
-					.arg((x * 100) + 100)
-					.arg((y * 100) + 100)
-					.arg(holes)
-					.arg(x * 100 - 8 + 100)
-					.arg(y * 100 - 8 + 100)
-					.arg(middle);
+	              .arg((x / 10.0) + 0.1)
+	              .arg((y / 10.0) + 0.1)
+	              .arg((x * 100) + 100)
+	              .arg((y * 100) + 100)
+	              .arg(holes)
+	              .arg(x * 100 - 8 + 100)
+	              .arg(y * 100 - 8 + 100)
+	              .arg(middle);
 
 	return svg;
 }
@@ -272,7 +272,7 @@ void Perfboard::addedToScene(bool temporary)
 		m_size = "";
 		setProp("size", temp);
 	}
-    return Capacitor::addedToScene(temporary);
+	return Capacitor::addedToScene(temporary);
 }
 
 bool Perfboard::canEditPart() {
@@ -289,8 +289,8 @@ void Perfboard::changeBoardSize()
 			QMessageBox messageBox(NULL);
 			messageBox.setWindowTitle(tr("Performance Warning"));
 			messageBox.setText(tr("Performance of perfboards and stripboards with more than approximately 2000 holes can be slow. Are you sure ?\n"
-				"\nNote: this warning will not be repeated during this session."
-				));
+			                      "\nNote: this warning will not be repeated during this session."
+			                     ));
 			messageBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
 			messageBox.setDefaultButton(QMessageBox::Cancel);
 			messageBox.setIcon(QMessageBox::Warning);
@@ -309,16 +309,16 @@ void Perfboard::changeBoardSize()
 	}
 
 	QString newSize = QString("%1.%2").arg(m_xEdit->text()).arg(m_yEdit->text());
-    m_propsMap.insert("size", newSize);
+	m_propsMap.insert("size", newSize);
 
-    foreach (QString key, m_propsMap.keys()) {
-        DebugDialog::debug("prop " + key + " " + m_propsMap.value(key));
-    }
+	foreach (QString key, m_propsMap.keys()) {
+		DebugDialog::debug("prop " + key + " " + m_propsMap.value(key));
+	}
 
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-    if (infoGraphicsView != NULL) {
-        infoGraphicsView->swap(family(), "size", m_propsMap, this);
-    }
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infoGraphicsView != NULL) {
+		infoGraphicsView->swap(family(), "size", m_propsMap, this);
+	}
 }
 
 ItemBase::PluralType Perfboard::isPlural() {

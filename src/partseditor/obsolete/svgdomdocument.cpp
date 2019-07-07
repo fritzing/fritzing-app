@@ -38,14 +38,14 @@ SVGDomDocument::SVGDomDocument(  )
 	svgroot.appendChild(desc);
 }
 
-void SVGDomDocument::setWidth(int width, QString units){
+void SVGDomDocument::setWidth(int width, QString units) {
 	QDomElement svgroot = documentElement();
 	float scaled = 1;
-	if(units == "mils"){
+	if(units == "mils") {
 		scaled = qreal(width)/1000.0;
 		units = "in";
 	}
-	if(units == "cmil"){
+	if(units == "cmil") {
 		scaled = qreal(width)/100000.0;
 		units = "in";
 	}
@@ -54,14 +54,14 @@ void SVGDomDocument::setWidth(int width, QString units){
 	svgroot.setAttribute("width",strwidth);
 }
 
-void SVGDomDocument::setHeight(int height, QString units){
+void SVGDomDocument::setHeight(int height, QString units) {
 	QDomElement svgroot = documentElement();
 	float scaled = 1;
-	if(units == "mils"){
+	if(units == "mils") {
 		scaled = qreal(height)/1000.0;
 		units = "in";
 	}
-	if(units == "cmil"){
+	if(units == "cmil") {
 		scaled = qreal(height)/100000.0;
 		units = "in";
 	}
@@ -69,32 +69,32 @@ void SVGDomDocument::setHeight(int height, QString units){
 	svgroot.setAttribute("height",strheight);
 }
 
-void SVGDomDocument::setViewBox(int minx, int miny, int maxx, int maxy){
+void SVGDomDocument::setViewBox(int minx, int miny, int maxx, int maxy) {
 	QDomElement svgroot = documentElement();
 
 	QString viewBox = QString::number(minx) + " " + QString::number(miny) + " " + QString::number(maxx) + " " + QString::number(maxy);
 	svgroot.setAttribute("viewBox", viewBox);
 }
 
-void SVGDomDocument::save(QString fileName){
+void SVGDomDocument::save(QString fileName) {
 	QFile file(fileName);
 
 	if (!file.open(QFile::WriteOnly | QFile::Text)) {
-	QMessageBox::warning(NULL, QObject::tr("Parts Editor"),
-                     QObject::tr("Cannot write to file %1:\n%2.")
-                     .arg(fileName)
-                     .arg(file.errorString()));
-    }
+		QMessageBox::warning(NULL, QObject::tr("Parts Editor"),
+		                     QObject::tr("Cannot write to file %1:\n%2.")
+		                     .arg(fileName)
+		                     .arg(file.errorString()));
+	}
 
-    QTextStream out(&file);
-    // This is kinda naughty but QDom seem to have no other way set the header!
-    QString xmlDeclaration = "<?xml version='1.0' encoding='UTF-8'?>\n";
-    out << xmlDeclaration << toString();
+	QTextStream out(&file);
+	// This is kinda naughty but QDom seem to have no other way set the header!
+	QString xmlDeclaration = "<?xml version='1.0' encoding='UTF-8'?>\n";
+	out << xmlDeclaration << toString();
 
-    file.close();
+	file.close();
 }
 
-QDomElement SVGDomDocument::createGroup(QString id){
+QDomElement SVGDomDocument::createGroup(QString id) {
 	QDomElement group = createElement("g");
 	group.setAttribute("id", id);
 	documentElement().appendChild(group);

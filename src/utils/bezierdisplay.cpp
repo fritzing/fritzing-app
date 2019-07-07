@@ -118,9 +118,9 @@ void BezierDisplay::updateDisplay(QGraphicsItem * master, Bezier *bezier)
 		return;
 	}
 
-        //static double minD = 5;
-        //static double radius = 6;
-        //static double minDSqd = minD * minD;
+	//static double minD = 5;
+	//static double radius = 6;
+	//static double minDSqd = minD * minD;
 
 	QRectF sr = master->scene()->sceneRect();
 	double x1, y1, x2, y2;
@@ -130,13 +130,13 @@ void BezierDisplay::updateDisplay(QGraphicsItem * master, Bezier *bezier)
 	GraphicsUtils::liangBarskyLineClip(p0.x(), p0.y(), p1.x(), p1.y(), sr.left(), sr.right(), sr.top(), sr.bottom(), x1, y1, x2, y2);
 	m_itemL0->setLine(x1, y1, x2, y2);
 	//if (GraphicsUtils::distanceSqd(bezier->endpoint0(), bezier->cp0()) > minDSqd) {
-		//m_itemE0->setVisible(false);
+	//m_itemE0->setVisible(false);
 	//}
 	//else {
-		//QRectF r(master->mapToScene(bezier->endpoint0()), QSizeF(0,0));
-		//r.adjust(-radius, -radius, radius, radius);
-		//m_itemE0->setRect(r);
-		//m_itemE0->setVisible(true);
+	//QRectF r(master->mapToScene(bezier->endpoint0()), QSizeF(0,0));
+	//r.adjust(-radius, -radius, radius, radius);
+	//m_itemE0->setRect(r);
+	//m_itemE0->setVisible(true);
 	//}
 
 	p0 = master->mapToScene(bezier->endpoint1());

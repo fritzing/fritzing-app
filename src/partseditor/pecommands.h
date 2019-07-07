@@ -89,7 +89,7 @@ protected:
 
 protected:
 	QString m_oldFzpFile;
-    QString m_newFzpFile;
+	QString m_newFzpFile;
 };
 
 /////////////////////////////////////////////
@@ -156,8 +156,8 @@ protected:
 	QString getParamString() const;
 
 protected:
-    QString m_id;
-    QString m_terminalID;
+	QString m_id;
+	QString m_terminalID;
 	QString m_oldGorn;
 	QString m_oldGornTerminal;
 	QString m_newGorn;
@@ -177,10 +177,10 @@ protected:
 	QString getParamString() const;
 
 protected:
-    QString m_id;
-    QSizeF m_size;
-    QPointF m_oldLocation;
-    QPointF m_newLocation;
+	QString m_id;
+	QSizeF m_size;
+	QPointF m_oldLocation;
+	QPointF m_newLocation;
 };
 
 /////////////////////////////////////////////

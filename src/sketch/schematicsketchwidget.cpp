@@ -142,27 +142,27 @@ void SchematicSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase 
 
 void SchematicSketchWidget::setNewPartVisible(ItemBase * itemBase) {
 	switch (itemBase->itemType()) {
-		case ModelPart::Logo:
-			if (itemBase->moduleID().contains("schematic", Qt::CaseInsensitive)) break;
-			[[clang::fallthrough]];
-		case ModelPart::Breadboard:
-		case ModelPart::Jumper:
-		case ModelPart::CopperFill:
-		case ModelPart::Via:
-		case ModelPart::Hole:
-			// don't need to see the breadboard in the other views
-			// but it's there so connections can be more easily synched between views
+	case ModelPart::Logo:
+		if (itemBase->moduleID().contains("schematic", Qt::CaseInsensitive)) break;
+		[[clang::fallthrough]];
+	case ModelPart::Breadboard:
+	case ModelPart::Jumper:
+	case ModelPart::CopperFill:
+	case ModelPart::Via:
+	case ModelPart::Hole:
+		// don't need to see the breadboard in the other views
+		// but it's there so connections can be more easily synched between views
+		itemBase->setVisible(false);
+		itemBase->setEverVisible(false);
+		return;
+	default:
+		if (itemBase->moduleID().endsWith(ModuleIDNames::PadModuleIDName)) {
 			itemBase->setVisible(false);
 			itemBase->setEverVisible(false);
 			return;
-		default:
-			if (itemBase->moduleID().endsWith(ModuleIDNames::PadModuleIDName)) {
-				itemBase->setVisible(false);
-				itemBase->setEverVisible(false);
-				return;
-			}
+		}
 
-			break;
+		break;
 	}
 }
 
@@ -170,21 +170,21 @@ bool SchematicSketchWidget::canDropModelPart(ModelPart * modelPart) {
 	if (!SketchWidget::canDropModelPart(modelPart)) return false;
 
 	switch (modelPart->itemType()) {
-		case ModelPart::Logo:
-			return modelPart->moduleID().contains("schematic", Qt::CaseInsensitive);
-		case ModelPart::Jumper:
-		case ModelPart::CopperFill:
-		case ModelPart::Board:
-		case ModelPart::ResizableBoard:
-		case ModelPart::Breadboard:
-		case ModelPart::Via:
-		case ModelPart::Hole:
-			return false;
-		case ModelPart::Symbol:
-		case ModelPart::SchematicSubpart:
-			return true;
-		default:
-			break;
+	case ModelPart::Logo:
+		return modelPart->moduleID().contains("schematic", Qt::CaseInsensitive);
+	case ModelPart::Jumper:
+	case ModelPart::CopperFill:
+	case ModelPart::Board:
+	case ModelPart::ResizableBoard:
+	case ModelPart::Breadboard:
+	case ModelPart::Via:
+	case ModelPart::Hole:
+		return false;
+	case ModelPart::Symbol:
+	case ModelPart::SchematicSubpart:
+		return true;
+	default:
+		break;
 	}
 
 	if (modelPart->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName)) return true;
@@ -225,9 +225,9 @@ void SchematicSketchWidget::updateBigDots()
 }
 
 void SchematicSketchWidget::changeConnection(long fromID, const QString & fromConnectorID,
-									long toID, const QString & toConnectorID,
-									ViewLayer::ViewLayerPlacement viewLayerPlacement,
-									bool connect, bool doEmit, bool updateConnections)
+        long toID, const QString & toConnectorID,
+        ViewLayer::ViewLayerPlacement viewLayerPlacement,
+        bool connect, bool doEmit, bool updateConnections)
 {
 	m_updateDotsTimer.stop();
 	SketchWidget::changeConnection(fromID, fromConnectorID, toID, toConnectorID, viewLayerPlacement, connect,  doEmit,  updateConnections);
@@ -407,9 +407,9 @@ QString SchematicSketchWidget::makeCircleSVG(QPointF p, double r, QPointF offset
 
 	QString stroke = "black";
 	return QString("<circle  fill=\"black\" cx=\"%1\" cy=\"%2\" r=\"%3\" stroke-width=\"0\" stroke=\"none\" />")
-			.arg(cx)
-			.arg(cy)
-			.arg(rr);
+	       .arg(cx)
+	       .arg(cy)
+	       .arg(rr);
 }
 
 QString SchematicSketchWidget::generateCopperFillUnit(ItemBase * itemBase, QPointF whereToStart)
@@ -448,7 +448,7 @@ void SchematicSketchWidget::rotatePartLabels(double degrees, QTransform & transf
 }
 
 void SchematicSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType crossViewType, QUndoCommand * parentCommand,
-						bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs)
+        bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs)
 {
 	SketchWidget::loadFromModelParts(modelParts, crossViewType, parentCommand, offsetPaste, boundingRect, seekOutsideConnections, newIDs);
 }
@@ -474,7 +474,7 @@ LayerList SchematicSketchWidget::routingLayers(ViewLayer::ViewLayerPlacement) {
 
 bool SchematicSketchWidget::attachedToBottomLayer(ConnectorItem * connectorItem) {
 	return (connectorItem->attachedToViewLayerID() == ViewLayer::Schematic) ||
-		   (connectorItem->attachedToViewLayerID() == ViewLayer::SchematicTrace);
+	       (connectorItem->attachedToViewLayerID() == ViewLayer::SchematicTrace);
 }
 
 bool SchematicSketchWidget::attachedToTopLayer(ConnectorItem *) {

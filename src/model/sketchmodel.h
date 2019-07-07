@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class SketchModel : public ModelBase
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	SketchModel(bool makeRoot);
 	SketchModel(ModelPart * root);

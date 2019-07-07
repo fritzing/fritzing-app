@@ -66,8 +66,8 @@ void SvgIconPixmapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
 		pen.setWidth(SELECTION_THICKNESS);
 		painter->setPen(pen);
 		painter->drawRect(m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1,
-						  m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1,
-						  ICON_SIZE + SELECTION_THICKNESS, ICON_SIZE + SELECTION_THICKNESS);
+		                  m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1,
+		                  ICON_SIZE + SELECTION_THICKNESS, ICON_SIZE + SELECTION_THICKNESS);
 		painter->restore();
 	}
 
@@ -139,7 +139,7 @@ const QString &SvgIconWidget::moduleID() const {
 	return m_moduleId;
 }
 
-void SvgIconWidget::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ){
+void SvgIconWidget::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) {
 	QGraphicsWidget::hoverEnterEvent(event);
 	InfoGraphicsView * igv = InfoGraphicsView::getInfoGraphicsView(this);
 	if (igv) {
@@ -191,12 +191,12 @@ void SvgIconWidget::setItemBase(ItemBase * itemBase, bool plural)
 void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 {
 	LayerAttributes layerAttributes;
-    m_itemBase->initLayerAttributes(layerAttributes, viewID, ViewLayer::Icon, ViewLayer::NewTop, false, false);
+	m_itemBase->initLayerAttributes(layerAttributes, viewID, ViewLayer::Icon, ViewLayer::NewTop, false, false);
 	ModelPart * modelPart = m_itemBase->modelPart();
 	FSvgRenderer * renderer = m_itemBase->setUpImage(modelPart, layerAttributes);
-    if (renderer == NULL) {
-        DebugDialog::debug(QString("missing renderer for icon %1").arg(modelPart->moduleID()));
-    }
+	if (renderer == NULL) {
+		DebugDialog::debug(QString("missing renderer for icon %1").arg(modelPart->moduleID()));
+	}
 	if (renderer && m_itemBase) {
 		m_itemBase->setFilename(renderer->filename());
 	}
@@ -227,7 +227,7 @@ void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 		setToolTip(m_itemBase->toolTip());
 	}
 
-    if (renderer) {
-        m_itemBase->setSharedRendererEx(renderer);
-    }
+	if (renderer) {
+		m_itemBase->setSharedRendererEx(renderer);
+	}
 }

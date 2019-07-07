@@ -27,35 +27,35 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class AbstractImageButton : public QLabel, public AbstractStatesButton {
 	Q_OBJECT
-	public:
-		AbstractImageButton(QWidget *parent=0)
-			: QLabel(parent)
-		{
-		};
-		virtual ~AbstractImageButton() {}
+public:
+	AbstractImageButton(QWidget *parent=0)
+		: QLabel(parent)
+	{
+	};
+	virtual ~AbstractImageButton() {}
 
-	signals:
-		void clicked();
+signals:
+	void clicked();
 
-	protected:
-		virtual QString imagePrefix() = 0;
+protected:
+	virtual QString imagePrefix() = 0;
 
-		void setImage(const QPixmap & pixmap) {
-			setPixmap(pixmap);
+	void setImage(const QPixmap & pixmap) {
+		setPixmap(pixmap);
+	}
+
+	void mousePressEvent(QMouseEvent * event) {
+		setPressedIcon();
+		QLabel::mousePressEvent(event);
+	}
+
+	void mouseReleaseEvent(QMouseEvent * event) {
+		if(isEnabled()) {
+			emit clicked();
+			setEnabledIcon();
 		}
-
-		void mousePressEvent(QMouseEvent * event) {
-			setPressedIcon();
-			QLabel::mousePressEvent(event);
-		}
-
-		void mouseReleaseEvent(QMouseEvent * event) {
-			if(isEnabled()) {
-				emit clicked();
-				setEnabledIcon();
-			}
-			QLabel::mouseReleaseEvent(event);
-		}
+		QLabel::mouseReleaseEvent(event);
+	}
 };
 
 #endif /* ABSTRACTIMAGEBUTTON_H_ */

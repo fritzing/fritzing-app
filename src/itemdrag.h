@@ -31,7 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class ItemDrag : public QObject {
 
-Q_OBJECT
+	Q_OBJECT
 
 
 protected:
@@ -45,8 +45,8 @@ public:
 	static void cleanup();
 	static void setOriginator(QWidget *);
 	static QWidget * originator();
-    static bool originatorIsTempBin();
-    static void setOriginatorIsTempBin(bool);
+	static bool originatorIsTempBin();
+	static void setOriginatorIsTempBin(bool);
 
 signals:
 	void dragIsDoneSignal(ItemDrag *);
@@ -54,7 +54,7 @@ signals:
 protected:
 	QHash<QObject *, QObject *> m_cache;
 	QPointer<QWidget> m_originator;
-    bool m_originatorIsTempBin;
+	bool m_originatorIsTempBin;
 
 protected:
 	static ItemDrag * Singleton;

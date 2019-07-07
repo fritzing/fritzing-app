@@ -54,23 +54,23 @@ public:
 	bool cleared();
 	QHash<QString, QString> & settings();
 	QHash<QString, QString> & tempSettings();
-    void initLayout(QFileInfoList & languages, QList<Platform *> platforms);
+	void initLayout(QFileInfoList & languages, QList<Platform *> platforms);
 	void initViewInfo(int index, const QString & viewName, const QString & shortName, bool curvy);
 
 protected:
-    QWidget * createLanguageForm(QFileInfoList & languages);
+	QWidget * createLanguageForm(QFileInfoList & languages);
 	QWidget* createOtherForm();
 	QWidget* createColorForm();
 	QWidget * createZoomerForm();
 	QWidget * createAutosaveForm();
-    QWidget *createProgrammerForm(QList<Platform *> platforms);
+	QWidget *createProgrammerForm(QList<Platform *> platforms);
 	void updateWheelText();
-    void initGeneral(QWidget * general, QFileInfoList & languages);
+	void initGeneral(QWidget * general, QFileInfoList & languages);
 	void initBreadboard(QWidget *, ViewInfoThing *);
 	void initSchematic(QWidget *, ViewInfoThing *);
 	void initPCB(QWidget *, ViewInfoThing *);
-    void initCode(QWidget *widget, QList<Platform *> platforms);
-    QWidget * createCurvyForm(ViewInfoThing *);
+	void initCode(QWidget *widget, QList<Platform *> platforms);
+	QWidget * createCurvyForm(ViewInfoThing *);
 
 protected slots:
 	void changeLanguage(int);
@@ -81,7 +81,7 @@ protected slots:
 	void toggleAutosave(bool);
 	void changeAutosavePeriod(int);
 	void curvyChanged();
-    void chooseProgrammer();
+	void chooseProgrammer();
 
 protected:
 	QPointer<QTabWidget> m_tabWidget;
@@ -89,17 +89,17 @@ protected:
 	QPointer<QWidget> m_breadboard;
 	QPointer<QWidget> m_schematic;
 	QPointer<QWidget> m_pcb;
-    QPointer<QWidget> m_code;
+	QPointer<QWidget> m_code;
 	QPointer<QLabel> m_wheelLabel[3];
-    QList<Platform *> m_platforms;
-    QHash<QString, QLineEdit *> m_programmerLEs;
+	QList<Platform *> m_platforms;
+	QHash<QString, QLineEdit *> m_programmerLEs;
 	QHash<QString, QString> m_settings;
 	QHash<QString, QString> m_tempSettings;
 	QString m_name;
 	class TranslatorListModel * m_translatorListModel;
 	bool m_cleared;
 	int m_wheelMapping;
-    ViewInfoThing m_viewInfoThings[3];
+	ViewInfoThing m_viewInfoThings[3];
 };
 
 #endif

@@ -94,7 +94,7 @@ QString GroundPlane::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QStri
 		xml = prop("svg");
 
 		if (!xml.isEmpty()) {
-            return PaletteItemBase::normalizeSvg(xml, viewLayerID, blackOnly, dpi, factor);
+			return PaletteItemBase::normalizeSvg(xml, viewLayerID, blackOnly, dpi, factor);
 		}
 	}
 
@@ -107,10 +107,10 @@ ConnectorItem * GroundPlane::connector0() {
 
 bool GroundPlane::hasCustomSVG() {
 	switch (m_viewID) {
-		case ViewLayer::PCBView:
-			return true;
-		default:
-			return ItemBase::hasCustomSVG();
+	case ViewLayer::PCBView:
+		return true;
+	default:
+		return ItemBase::hasCustomSVG();
 	}
 }
 
@@ -220,14 +220,14 @@ void GroundPlane::setDropOffset(QPointF offset)
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView == NULL) return;
 
-    m_dropOffset = offset;
+	m_dropOffset = offset;
 	modelPart()->setLocalProp("fillType", fillTypeIndividual);
 	QString svg = generateSvg();
-    bool resolve = true;
+	bool resolve = true;
 	if (svg.isEmpty()) {
 		loadIconSvg();
 		svg = IconSvg;
-        resolve = false;
+		resolve = false;
 	}
 	setSvg(svg);
 
@@ -245,14 +245,14 @@ QPainterPath GroundPlane::shape() const
 		return m_shape;
 	}
 
-    return PaletteItemBase::shape();
+	return PaletteItemBase::shape();
 }
 
 ViewLayer::ViewID GroundPlane::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
-    if (vid == ViewLayer::PCBView) {
-        return ViewLayer::IconView;
-    }
+	if (vid == ViewLayer::PCBView) {
+		return ViewLayer::IconView;
+	}
 
-    return ViewLayer::UnknownView;
+	return ViewLayer::UnknownView;
 }

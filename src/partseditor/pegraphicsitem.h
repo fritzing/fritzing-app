@@ -33,63 +33,63 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class PEGraphicsItem : public QObject, public QGraphicsRectItem
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
 	PEGraphicsItem(double x, double y, double width, double height, class ItemBase *);
 	~PEGraphicsItem();
 
 	void hoverEnterEvent(QGraphicsSceneHoverEvent *);
 	void hoverLeaveEvent(QGraphicsSceneHoverEvent *);
-    void wheelEvent(QGraphicsSceneWheelEvent *);
+	void wheelEvent(QGraphicsSceneWheelEvent *);
 	void mousePressEvent(QGraphicsSceneMouseEvent *);
 	void mouseMoveEvent(QGraphicsSceneMouseEvent *);
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent *);
-    void setHighlighted(bool);
-    bool highlighted();
-    void setElement(QDomElement &);
-    QDomElement & element();
-    void setOffset(QPointF);
-    QPointF offset();
-    void showTerminalPoint(bool);
-    bool showingTerminalPoint();
+	void setHighlighted(bool);
+	bool highlighted();
+	void setElement(QDomElement &);
+	QDomElement & element();
+	void setOffset(QPointF);
+	QPointF offset();
+	void showTerminalPoint(bool);
+	bool showingTerminalPoint();
 	void showMarquee(bool);
 	bool showingMarquee();
-    void setTerminalPoint(QPointF);
-    QPointF terminalPoint();
-    void setPendingTerminalPoint(QPointF);
-    QPointF pendingTerminalPoint();
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+	void setTerminalPoint(QPointF);
+	QPointF terminalPoint();
+	void setPendingTerminalPoint(QPointF);
+	QPointF pendingTerminalPoint();
+	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	void setPickAppearance(bool);
-    void flash();
-    class ItemBase * itemBase();
+	void flash();
+	class ItemBase * itemBase();
 
 signals:
-    void highlightSignal(PEGraphicsItem *);
-    void mousePressedSignal(PEGraphicsItem *, bool & ignore);
-    void mouseReleasedSignal(PEGraphicsItem *);
-    void terminalPointMoved(PEGraphicsItem *, QPointF);
-    void terminalPointChanged(PEGraphicsItem *, QPointF before, QPointF after);
+	void highlightSignal(PEGraphicsItem *);
+	void mousePressedSignal(PEGraphicsItem *, bool & ignore);
+	void mouseReleasedSignal(PEGraphicsItem *);
+	void terminalPointMoved(PEGraphicsItem *, QPointF);
+	void terminalPointChanged(PEGraphicsItem *, QPointF before, QPointF after);
 
 protected slots:
-    void restoreColor();
+	void restoreColor();
 
 protected:
-    bool m_highlighted;
-    bool m_flash;
-    QDomElement  m_element;
-    QPointF m_offset;
-    bool m_showTerminalPoint;
-    bool m_showMarquee;
-    QPointF m_terminalPoint;
-    QPointF m_pendingTerminalPoint;
-    bool m_dragTerminalPoint;
-    QPointF m_dragTerminalOrigin;
-    QPointF m_terminalPointOrigin;
-    bool m_drawHighlight;
-    int m_wheelAccum;
-    qreal m_savedOpacity;
-    bool m_pick;
-    class ItemBase * m_itemBase;
+	bool m_highlighted;
+	bool m_flash;
+	QDomElement  m_element;
+	QPointF m_offset;
+	bool m_showTerminalPoint;
+	bool m_showMarquee;
+	QPointF m_terminalPoint;
+	QPointF m_pendingTerminalPoint;
+	bool m_dragTerminalPoint;
+	QPointF m_dragTerminalOrigin;
+	QPointF m_terminalPointOrigin;
+	bool m_drawHighlight;
+	int m_wheelAccum;
+	qreal m_savedOpacity;
+	bool m_pick;
+	class ItemBase * m_itemBase;
 };
 
 #endif /* PEGRAPHICSITEM_H_ */

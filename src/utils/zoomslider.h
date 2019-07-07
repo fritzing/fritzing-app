@@ -31,37 +31,37 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTimer>
 
 class ZoomLabel : public QLabel {
-        Q_OBJECT
+	Q_OBJECT
 
 public:
-        ZoomLabel(QWidget * parent);
-        ~ZoomLabel();
+	ZoomLabel(QWidget * parent);
+	~ZoomLabel();
 
-		void setImages(const QString & normal, const QString & pressed);
-		void setAutoRepeat(bool);
+	void setImages(const QString & normal, const QString & pressed);
+	void setAutoRepeat(bool);
 
-        void mousePressEvent(QMouseEvent *);
-        void mouseMoveEvent(QMouseEvent *);
-        void mouseReleaseEvent(QMouseEvent *);
+	void mousePressEvent(QMouseEvent *);
+	void mouseMoveEvent(QMouseEvent *);
+	void mouseReleaseEvent(QMouseEvent *);
 
 signals:
-        void clicked();
+	void clicked();
 
 protected slots:
-		void repeat();
+	void repeat();
 
 protected:
-		QTimer m_timer;
-		QPixmap m_pressed;
-		QPixmap m_normal;
-		bool m_autoRepeat;
-		bool m_mouseIsDown;
-		bool m_mouseIsIn;
-		bool m_repeated;
+	QTimer m_timer;
+	QPixmap m_pressed;
+	QPixmap m_normal;
+	bool m_autoRepeat;
+	bool m_mouseIsDown;
+	bool m_mouseIsIn;
+	bool m_repeated;
 };
 
 class ZoomSlider: public QFrame {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	ZoomSlider(int maxValue, QWidget * parent=0);
@@ -96,8 +96,8 @@ protected:
 	//int m_indexBackup;
 	QSlider * m_slider;
 	QLineEdit * m_lineEdit;
-    ZoomLabel * m_plusButton;
-    ZoomLabel * m_minusButton;
+	ZoomLabel * m_plusButton;
+	ZoomLabel * m_minusButton;
 	QLabel * m_suffix;
 	bool m_firstTime;
 

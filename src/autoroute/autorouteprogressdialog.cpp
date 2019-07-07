@@ -132,11 +132,11 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 		m_buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Stop Now"));
 		connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(sendStop()));
 	}
-    if (bestButton) {
-        QPushButton * best = new QPushButton(tr("Best So Far"));
-        m_buttonBox->addButton(best, QDialogButtonBox::ActionRole);
-        connect(best, SIGNAL(clicked()), this, SLOT(sendBest()));
-    }
+	if (bestButton) {
+		QPushButton * best = new QPushButton(tr("Best So Far"));
+		m_buttonBox->addButton(best, QDialogButtonBox::ActionRole);
+		connect(best, SIGNAL(clicked()), this, SLOT(sendBest()));
+	}
 
 
 	m_buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));

@@ -51,7 +51,7 @@ protected:
 
 class Wire : public ItemBase, public CursorKeyListener
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	Wire(class ModelPart *, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu, bool initLabel);
@@ -62,11 +62,11 @@ public:
 	//void setPos(const QPointF & pos);
 	// for debugging
 
-    QLineF line() const;
-    virtual void setLine(const QLineF &line);
-    inline void setLine(double x1, double y1, double x2, double y2);
-    QPen pen() const;
-    void setPen(const QPen &pen);
+	QLineF line() const;
+	virtual void setLine(const QLineF &line);
+	inline void setLine(double x1, double y1, double x2, double y2);
+	QPen pen() const;
+	void setPen(const QPen &pen);
 
 	void saveGeometry();
 	bool itemMoved();
@@ -84,7 +84,7 @@ public:
 	ConnectorItem * otherConnector(ConnectorItem *);
 	ConnectorItem * connector0();
 	ConnectorItem * connector1();
-    virtual class FSvgRenderer * setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash & viewLayers, class InfoGraphicsView *);
+	virtual class FSvgRenderer * setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash & viewLayers, class InfoGraphicsView *);
 	void findConnectorsUnder();
 	void collectChained(QList<Wire *> &, QList<ConnectorItem *> & ends);
 	void collectWires(QList<Wire *> & wires);
@@ -117,7 +117,7 @@ public:
 	double width();
 	double shadowWidth();
 	double mils();
-    void setExtras(QDomElement &, InfoGraphicsView *);
+	void setExtras(QDomElement &, InfoGraphicsView *);
 	Wire * findTraced(ViewGeometry::WireFlags flags, QList<ConnectorItem *>  & ends);
 	bool draggingEnd();
 	void simpleConnectedMoved(ConnectorItem * to);
@@ -140,8 +140,8 @@ public:
 	void setConnectorDimensions(double width, double height);
 	void originalConnectorDimensions(double & width, double & height);
 	double hoverStrokeWidth();
-    QPainterPath hoverShape() const;
-    QPainterPath shape() const;
+	QPainterPath hoverShape() const;
+	QPainterPath shape() const;
 	QRectF boundingRect() const;
 	virtual const QLineF & getPaintLine();
 	bool canHaveCurve();
@@ -154,18 +154,18 @@ public:
 	bool canChainMultiple();
 	void cursorKeyEvent(Qt::KeyboardModifiers modifiers);
 	void setDisplayBendpointCursor(bool);
-    bool banded();
-    void setBanded(bool);
+	bool banded();
+	void setBanded(bool);
 	void setProp(const QString & prop, const QString & value);
-    void setConnector0Rect();
-    void setConnector1Rect();
-    QRectF connector0Rect(const QLineF & line);
-    QRectF connector1Rect(const QLineF & line);
-    void colorByLength(bool);
+	void setConnector0Rect();
+	void setConnector1Rect();
+	QRectF connector0Rect(const QLineF & line);
+	QRectF connector1Rect(const QLineF & line);
+	void colorByLength(bool);
 
 protected slots:
 	void colorEntry(const QString & text);
-    void setBandedProp(bool);
+	void setBandedProp(bool);
 
 public:
 	static double STANDARD_TRACE_WIDTH;
@@ -175,7 +175,7 @@ public:
 public:
 	static void initNames();
 	static void cleanup();
-    static QVector<qreal> TheDash;
+	static QVector<qreal> TheDash;
 
 protected:
 	void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
@@ -185,7 +185,7 @@ protected:
 	void dragCurve(QPointF eventPos, Qt::KeyboardModifiers);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    void initEnds(const ViewGeometry &, QRectF defaultRect, class InfoGraphicsView *);
+	void initEnds(const ViewGeometry &, QRectF defaultRect, class InfoGraphicsView *);
 	void connectionChange(ConnectorItem * onMe, ConnectorItem * onIt, bool connect);
 	void mousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
 	void mouseDoubleClickConnectorEvent(ConnectorItem *);
@@ -205,18 +205,18 @@ protected:
 	bool connectionIsAllowed(ConnectorItem *);
 	bool releaseDrag();
 	void setIgnoreSelectionChange(bool);
-    virtual void setColorFromElement(QDomElement & element);
+	virtual void setColorFromElement(QDomElement & element);
 	void checkVisibility(ConnectorItem * onMe, ConnectorItem * onIt, bool connect);
 	void setConnectorDimensionsAux(ConnectorItem *, double width, double height);
 	bool isBendpoint(ConnectorItem * connectorItem);
 	QPainterPath shapeAux(double width) const;
 	void hoverLeaveEvent( QGraphicsSceneHoverEvent * event );
 	void hoverEnterEvent( QGraphicsSceneHoverEvent * event );
-    void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
+	void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
 	void updateCursor(Qt::KeyboardModifiers);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
-    QColor colorForLength();
-    bool coloredByLength();
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	QColor colorForLength();
+	bool coloredByLength();
 
 protected:
 	QLineF	m_line;
@@ -245,15 +245,15 @@ protected:
 	bool m_canHaveCurve;
 	class Bezier * m_bezier;
 	bool m_displayBendpointCursor;
-    bool m_banded;
-    bool m_colorByLength;
+	bool m_banded;
+	bool m_colorByLength;
 
 public:
 	static QStringList colorNames;
 	static QHash<QString, QString> colorTrans;
 	static QHash<int, QString> widthTrans;
 	static QList<int> widths;
-    static QList<QColor> lengthColorTrans;
+	static QList<QColor> lengthColorTrans;
 
 signals:
 	void wireChangedSignal(Wire* me, const QLineF & oldLine, const QLineF & newLine, QPointF oldPos, QPointF newPos, ConnectorItem * from, ConnectorItem * to);

@@ -32,21 +32,21 @@ class SVGPathLexer;
 class SVGPathParser: public SVGPathGrammar
 {
 public:
-    SVGPathParser();
-    ~SVGPathParser();
+	SVGPathParser();
+	~SVGPathParser();
 
-    bool parse(SVGPathLexer *lexer);
-    QVector<QVariant> & symStack();
-    QString errorMessage() const;
-    QVariant result() const;
+	bool parse(SVGPathLexer *lexer);
+	QVector<QVariant> & symStack();
+	QString errorMessage() const;
+	QVariant result() const;
 
 private:
-    void reallocateStack();
-    int m_tos;
-    QVector<int> m_stateStack;
-    QVector<QVariant> m_symStack;
-    QString m_errorMessage;
-    QVariant m_result;
+	void reallocateStack();
+	int m_tos;
+	QVector<int> m_stateStack;
+	QVector<QVariant> m_symStack;
+	QString m_errorMessage;
+	QVariant m_result;
 };
 
 #endif // SVGPATHPARSER_H

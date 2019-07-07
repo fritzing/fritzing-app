@@ -49,7 +49,7 @@ PartsBinAddRemoveCommand::PartsBinAddRemoveCommand(class PartsBinPaletteWidget* 
 	: PartsBinAddRemoveArrangeCommand(bin, moduleID, parent)
 {
 	m_index = index;
-    m_path = path;
+	m_path = path;
 }
 
 void PartsBinAddRemoveCommand::add() {

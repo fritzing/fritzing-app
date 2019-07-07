@@ -33,7 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class ViewLayerCheckBox : public QCheckBox
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	ViewLayerCheckBox(QWidget * parent = NULL);
 	~ViewLayerCheckBox();
@@ -47,7 +47,7 @@ protected:
 
 class LayerPalette : public QScrollArea
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	LayerPalette(QWidget * parent = NULL);
 	~LayerPalette();
@@ -67,7 +67,7 @@ protected:
 	QVBoxLayout * m_mainLayout;
 	QGroupBox * m_groupBox;
 
-    QAction *m_showAllLayersAct;
+	QAction *m_showAllLayersAct;
 	QAction *m_hideAllLayersAct;
 };
 

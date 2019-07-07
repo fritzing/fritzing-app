@@ -35,8 +35,8 @@ class SVGPathRunner : public QObject
 	Q_OBJECT
 
 public:
-    SVGPathRunner();
-    ~SVGPathRunner();
+	SVGPathRunner();
+	~SVGPathRunner();
 
 public:
 	bool runPath(QVector<QVariant> & pathData, void * userData);

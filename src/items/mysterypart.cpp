@@ -61,7 +61,7 @@ MysteryPart::MysteryPart( ModelPart * modelPart, ViewLayer::ViewID viewID, const
 		modelPart->setLocalProp("chip label", m_chipLabel);
 	}
 
-    setUpHoleSizes("mystery", TheHoleThing);
+	setUpHoleSizes("mystery", TheHoleThing);
 
 }
 
@@ -85,44 +85,44 @@ void MysteryPart::setChipLabel(QString chipLabel, bool force) {
 
 	QString svg;
 	switch (this->m_viewID) {
-		case ViewLayer::BreadboardView:
-			svg = makeSvg(chipLabel, true);
-            if (!svg.isEmpty()) {
-	            resetRenderer(svg);
-            }
-            break;
-		case ViewLayer::SchematicView:
-            {
-                QTransform  transform = untransform();
-			    svg = makeSvg(chipLabel, false);
-			    svg = retrieveSchematicSvg(svg);
-                resetLayerKin(svg);
-                retransform(transform);
-            }
-			break;
-		default:
-			break;
+	case ViewLayer::BreadboardView:
+		svg = makeSvg(chipLabel, true);
+		if (!svg.isEmpty()) {
+			resetRenderer(svg);
+		}
+		break;
+	case ViewLayer::SchematicView:
+	{
+		QTransform  transform = untransform();
+		svg = makeSvg(chipLabel, false);
+		svg = retrieveSchematicSvg(svg);
+		resetLayerKin(svg);
+		retransform(transform);
+	}
+	break;
+	default:
+		break;
 	}
 
 	modelPart()->setLocalProp("chip label", chipLabel);
 
-    if (m_partLabel) m_partLabel->displayTextsIf();
+	if (m_partLabel) m_partLabel->displayTextsIf();
 }
 
 QString MysteryPart::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	QString svg = PaletteItem::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 	switch (viewLayerID) {
-		case ViewLayer::Breadboard:
-		case ViewLayer::Icon:
-			return TextUtils::replaceTextElement(svg, "label", m_chipLabel);
+	case ViewLayer::Breadboard:
+	case ViewLayer::Icon:
+		return TextUtils::replaceTextElement(svg, "label", m_chipLabel);
 
-		case ViewLayer::Schematic:
-			svg = retrieveSchematicSvg(svg);
-			return TextUtils::removeSVGHeader(svg);
+	case ViewLayer::Schematic:
+		svg = retrieveSchematicSvg(svg);
+		return TextUtils::removeSVGHeader(svg);
 
-		default:
-			break;
+	default:
+		break;
 	}
 
 	return svg;
@@ -158,17 +158,17 @@ QString MysteryPart::makeSvg(const QString & chipLabel, bool replace) {
 
 QStringList MysteryPart::collectValues(const QString & family, const QString & prop, QString & value) {
 	if (prop.compare("layout", Qt::CaseInsensitive) == 0) {
-        // TODO: translate these
-        QStringList values;
-        values << "Single Row" << "Double Row";
-        value = values.at(moduleID().contains("sip", Qt::CaseInsensitive) ? 0 : 1);
-        return values;
-    }
+		// TODO: translate these
+		QStringList values;
+		values << "Single Row" << "Double Row";
+		value = values.at(moduleID().contains("sip", Qt::CaseInsensitive) ? 0 : 1);
+		return values;
+	}
 
 	if (prop.compare("pin spacing", Qt::CaseInsensitive) == 0) {
 		QStringList values;
-        QString spacing;
-        TextUtils::getPinsAndSpacing(moduleID(), spacing);
+		QString spacing;
+		TextUtils::getPinsAndSpacing(moduleID(), spacing);
 		if (isDIP()) {
 			foreach (QString f, spacings()) {
 				values.append(f);
@@ -222,8 +222,8 @@ bool MysteryPart::collectExtraInfo(QWidget * parent, const QString & family, con
 		return true;
 	}
 
-    if (prop.compare("hole size", Qt::CaseInsensitive) == 0) {
-        return collectHoleSizeInfo(TheHoleThing.holeSizeValue, parent, swappingEnabled, returnProp, returnValue, returnWidget);
+	if (prop.compare("hole size", Qt::CaseInsensitive) == 0) {
+		return collectHoleSizeInfo(TheHoleThing.holeSizeValue, parent, swappingEnabled, returnProp, returnValue, returnWidget);
 	}
 
 	return PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
@@ -247,7 +247,7 @@ void MysteryPart::addedToScene(bool temporary)
 		setChipLabel(m_chipLabel, true);
 	}
 
-    PaletteItem::addedToScene(temporary);
+	PaletteItem::addedToScene(temporary);
 }
 
 const QString & MysteryPart::title() {
@@ -256,13 +256,13 @@ const QString & MysteryPart::title() {
 
 bool MysteryPart::hasCustomSVG() {
 	switch (m_viewID) {
-		case ViewLayer::BreadboardView:
-		case ViewLayer::SchematicView:
-		case ViewLayer::IconView:
-		case ViewLayer::PCBView:
-			return true;
-		default:
-			return ItemBase::hasCustomSVG();
+	case ViewLayer::BreadboardView:
+	case ViewLayer::SchematicView:
+	case ViewLayer::IconView:
+	case ViewLayer::PCBView:
+		return true;
+	default:
+		return ItemBase::hasCustomSVG();
 	}
 }
 
@@ -301,39 +301,39 @@ ItemBase::PluralType MysteryPart::isPlural() {
 
 QString MysteryPart::genSipFZP(const QString & moduleid)
 {
-    return genxFZP(moduleid, "mystery_part_sipFzpTemplate", MinSipPins, MaxSipPins, 1);
+	return genxFZP(moduleid, "mystery_part_sipFzpTemplate", MinSipPins, MaxSipPins, 1);
 }
 
 QString MysteryPart::genDipFZP(const QString & moduleid)
 {
-    return genxFZP(moduleid, "mystery_part_dipFzpTemplate", MinDipPins, MaxDipPins, 2);
+	return genxFZP(moduleid, "mystery_part_dipFzpTemplate", MinDipPins, MaxDipPins, 2);
 
 }
 
 QString MysteryPart::genxFZP(const QString & moduleid, const QString & templateName, int minPins, int maxPins, int step) {
-    QString spacingString;
-    TextUtils::getPinsAndSpacing(moduleid, spacingString);
-    QString result = PaletteItem::genFZP(moduleid, templateName, minPins, maxPins, step, false);
+	QString spacingString;
+	TextUtils::getPinsAndSpacing(moduleid, spacingString);
+	QString result = PaletteItem::genFZP(moduleid, templateName, minPins, maxPins, step, false);
 	result.replace(".percent.", "%");
 	result = result.arg(spacingString);
 	return hackFzpHoleSize(result, moduleid);
 }
 
 QString MysteryPart::hackFzpHoleSize(const QString & fzp, const QString & moduleid) {
-    int hsix = moduleid.lastIndexOf(HoleSizePrefix);
-    if (hsix >= 0) {
-        return PaletteItem::hackFzpHoleSize(fzp, moduleid, hsix);
-    }
+	int hsix = moduleid.lastIndexOf(HoleSizePrefix);
+	if (hsix >= 0) {
+		return PaletteItem::hackFzpHoleSize(fzp, moduleid, hsix);
+	}
 
-    return fzp;
+	return fzp;
 }
 
 QString MysteryPart::genModuleID(QMap<QString, QString> & currPropsMap)
 {
 	QString value = currPropsMap.value("layout");
-    bool single = value.contains("single", Qt::CaseInsensitive);
+	bool single = value.contains("single", Qt::CaseInsensitive);
 	QString pins = currPropsMap.value("pins");
-    QString spacing = currPropsMap.value("pin spacing", "300mil");
+	QString spacing = currPropsMap.value("pin spacing", "300mil");
 	if (single) {
 		return QString("mystery_part_sip_%1_100mil").arg(pins);
 	}
@@ -357,64 +357,64 @@ QString MysteryPart::makeSchematicSvg(const QString & expectedFileName)
 		labels << QString::number(i + 1);
 	}
 
-    if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
-        return obsoleteMakeSchematicSvg(labels, sip);
-    }
+	if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
+		return obsoleteMakeSchematicSvg(labels, sip);
+	}
 
 	return makeSchematicSvg(labels, sip);
 }
 
 QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip)
 {
-    QDomDocument fakeDoc;
+	QDomDocument fakeDoc;
 
-    QList<QDomElement> lefts;
-    for (int i = 0; i < labels.count(); i++) {
-        QDomElement element = fakeDoc.createElement("contact");
-        element.setAttribute("connectorIndex", i);
-        element.setAttribute("name", labels.at(i));
-        lefts.append(element);
-    }
-    QList<QDomElement> empty;
-    QStringList busNames;
+	QList<QDomElement> lefts;
+	for (int i = 0; i < labels.count(); i++) {
+		QDomElement element = fakeDoc.createElement("contact");
+		element.setAttribute("connectorIndex", i);
+		element.setAttribute("name", labels.at(i));
+		lefts.append(element);
+	}
+	QList<QDomElement> empty;
+	QStringList busNames;
 
-    QString titleText = sip ? "IC" : "?";
-    QString svg = SchematicRectConstants::genSchematicDIP(empty, empty, lefts, empty, empty, busNames, titleText, false, false, SchematicRectConstants::simpleGetConnectorName);
-    if (sip) return svg;
+	QString titleText = sip ? "IC" : "?";
+	QString svg = SchematicRectConstants::genSchematicDIP(empty, empty, lefts, empty, empty, busNames, titleText, false, false, SchematicRectConstants::simpleGetConnectorName);
+	if (sip) return svg;
 
-    // add the mystery part graphic
-    QDomDocument doc;
-    if (!doc.setContent(svg)) return svg;
+	// add the mystery part graphic
+	QDomDocument doc;
+	if (!doc.setContent(svg)) return svg;
 
-    QRectF viewBox;
-    double w, h;
-    TextUtils::ensureViewBox(doc, GraphicsUtils::StandardFritzingDPI, viewBox, false, w, h, false);
+	QRectF viewBox;
+	double w, h;
+	TextUtils::ensureViewBox(doc, GraphicsUtils::StandardFritzingDPI, viewBox, false, w, h, false);
 
-    double newUnit = 1000 * SchematicRectConstants::NewUnit / 25.4;
-    double rectStroke = 2 * 1000 * SchematicRectConstants::RectStrokeWidth / 25.4;
-    QString circle = QString("<circle cx='%1' cy='%2' r='%3' fill='black' stroke-width='0' stroke='none' />\n");
+	double newUnit = 1000 * SchematicRectConstants::NewUnit / 25.4;
+	double rectStroke = 2 * 1000 * SchematicRectConstants::RectStrokeWidth / 25.4;
+	QString circle = QString("<circle cx='%1' cy='%2' r='%3' fill='black' stroke-width='0' stroke='none' />\n");
 	circle += QString("<text x='%1' fill='#FFFFFF' y='%4' font-family=\"%5\" text-anchor='middle' font-weight='bold' stroke='none' stroke-width='0' font-size='%6' >?</text>\n");
-    circle = circle
-                .arg(viewBox.width() - rectStroke - (newUnit / 2))
-                .arg(rectStroke + (newUnit / 2))
-                .arg(newUnit / 2)
+	circle = circle
+	         .arg(viewBox.width() - rectStroke - (newUnit / 2))
+	         .arg(rectStroke + (newUnit / 2))
+	         .arg(newUnit / 2)
 
-                .arg(rectStroke + (newUnit / 2) + (newUnit / 3))   // offset so the text appears in the center of the circle
-                .arg(SchematicRectConstants::FontFamily)
-                .arg(newUnit)
-                ;
+	         .arg(rectStroke + (newUnit / 2) + (newUnit / 3))   // offset so the text appears in the center of the circle
+	         .arg(SchematicRectConstants::FontFamily)
+	         .arg(newUnit)
+	         ;
 
-    QDomDocument temp;
-    temp.setContent(QString("<g>" + circle + "</g>"));
+	QDomDocument temp;
+	temp.setContent(QString("<g>" + circle + "</g>"));
 
-    QDomElement root = doc.documentElement();
-    QDomElement schematic = TextUtils::findElementWithAttribute(root, "id", "schematic");
-    if (schematic.isNull()) return svg;
+	QDomElement root = doc.documentElement();
+	QDomElement schematic = TextUtils::findElementWithAttribute(root, "id", "schematic");
+	if (schematic.isNull()) return svg;
 
-    QDomElement tempRoot = temp.documentElement();
-    schematic.appendChild(tempRoot);
+	QDomElement tempRoot = temp.documentElement();
+	schematic.appendChild(tempRoot);
 
-    return doc.toString(1);
+	return doc.toString(1);
 }
 
 QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool sip)
@@ -445,17 +445,17 @@ QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool s
 	}
 
 	QString header("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n"
-					"<svg xmlns:svg='http://www.w3.org/2000/svg' \n"
-					"xmlns='http://www.w3.org/2000/svg' \n"
-					"version='1.2' baseProfile='tiny' \n"
-					"width='%7in' height='%1in' viewBox='0 0 %8 %2'>\n"
-					"<g id='schematic'>\n"
-					"<rect x='315' y='15' fill='none' width='%9' height='%3' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='30' />\n"
-					"<text id='label' x='%11' y='%4' fill='#000000' stroke='none' font-family='Droid Sans' text-anchor='middle' font-size='%5' >%6</text>\n");
+	               "<svg xmlns:svg='http://www.w3.org/2000/svg' \n"
+	               "xmlns='http://www.w3.org/2000/svg' \n"
+	               "version='1.2' baseProfile='tiny' \n"
+	               "width='%7in' height='%1in' viewBox='0 0 %8 %2'>\n"
+	               "<g id='schematic'>\n"
+	               "<rect x='315' y='15' fill='none' width='%9' height='%3' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='30' />\n"
+	               "<text id='label' x='%11' y='%4' fill='#000000' stroke='none' font-family='Droid Sans' text-anchor='middle' font-size='%5' >%6</text>\n");
 
 	if (!sip) {
 		header +=	"<circle fill='#000000' cx='%10' cy='200' r='150' stroke-width='0' />\n"
-					"<text x='%10' fill='#FFFFFF' y='305' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='275' >?</text>\n";
+		            "<text x='%10' fill='#FFFFFF' y='305' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='275' >?</text>\n";
 	}
 	else {
 		labelText = "IC";
@@ -464,33 +464,33 @@ QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool s
 	}
 
 	QString svg = header
-		.arg(totalHeight / GraphicsUtils::StandardFritzingDPI)
-		.arg(totalHeight)
-		.arg(totalHeight - border)
-		.arg((totalHeight / 2) + textOffset)
-		.arg(fontSize)
-		.arg(labelText)
-		.arg(totalWidth / 1000.0)
-		.arg(totalWidth)
-		.arg(innerWidth)
-		.arg(totalWidth - 200)
-		.arg(increment + textMax + ((totalWidth - increment - textMax) / 2.0))
-		;
+	              .arg(totalHeight / GraphicsUtils::StandardFritzingDPI)
+	              .arg(totalHeight)
+	              .arg(totalHeight - border)
+	              .arg((totalHeight / 2) + textOffset)
+	              .arg(fontSize)
+	              .arg(labelText)
+	              .arg(totalWidth / 1000.0)
+	              .arg(totalWidth)
+	              .arg(innerWidth)
+	              .arg(totalWidth - 200)
+	              .arg(increment + textMax + ((totalWidth - increment - textMax) / 2.0))
+	              ;
 
 
 	QString repeat("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='30' x1='15' y1='%1' x2='300' y2='%1'  />\n"
-					"<rect x='0' y='%2' fill='none' width='300' height='30' id='connector%3pin' stroke-width='0' />\n"
-					"<rect x='0' y='%2' fill='none' width='30' height='30' id='connector%3terminal' stroke-width='0' />\n"
-					"<text id='label%3' x='390' y='%4' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='start' font-size='%6' >%5</text>\n");
+	               "<rect x='0' y='%2' fill='none' width='300' height='30' id='connector%3pin' stroke-width='0' />\n"
+	               "<rect x='0' y='%2' fill='none' width='30' height='30' id='connector%3terminal' stroke-width='0' />\n"
+	               "<text id='label%3' x='390' y='%4' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='start' font-size='%6' >%5</text>\n");
 
 	for (int i = 0; i < labels.count(); i++) {
 		svg += repeat
-			.arg(increment + (border / 2) + (i * increment))
-			.arg(increment + (i * increment))
-			.arg(i)
-			.arg(increment + repeatTextOffset + (i * increment))
-			.arg(labels.at(i))
-			.arg(labelFontSize);
+		       .arg(increment + (border / 2) + (i * increment))
+		       .arg(increment + (i * increment))
+		       .arg(i)
+		       .arg(increment + repeatTextOffset + (i * increment))
+		       .arg(labels.at(i))
+		       .arg(labelFontSize);
 	}
 
 	svg += "</g>\n";
@@ -509,31 +509,31 @@ QString MysteryPart::makeBreadboardSvg(const QString & expectedFileName)
 
 QString MysteryPart::makeBreadboardDipSvg(const QString & expectedFileName)
 {
-    QString spacingString;
-    int pins = TextUtils::getPinsAndSpacing(expectedFileName, spacingString);
+	QString spacingString;
+	int pins = TextUtils::getPinsAndSpacing(expectedFileName, spacingString);
 	double spacing = TextUtils::convertToInches(spacingString) * 100;
 
 	int increment = 10;
 
 	QString repeatT("<rect id='connector%1terminal' x='[1.87]' y='1' fill='#8C8C8C' stroke='none' stroke-width='0' width='2.3' height='0'/>\n"
-					"<rect id='connector%1pin' x='[1.87]' y='0' fill='#8C8C8C' stroke='none' stroke-width='0' width='2.3' height='3.5'/>\n");
+	                "<rect id='connector%1pin' x='[1.87]' y='0' fill='#8C8C8C' stroke='none' stroke-width='0' width='2.3' height='3.5'/>\n");
 
 	QString repeatB("<rect id='connector%1terminal' x='{1.87}' y='[11.0]' fill='#8C8C8C' stroke='none' stroke-width='0' width='2.3' height='0'/>\n"
-					"<rect id='connector%1pin' x='{1.87}' y='[7.75]' fill='#8C8C8C' stroke='none' stroke-width='0' width='2.3' height='4.25'/>\n");
+	                "<rect id='connector%1pin' x='{1.87}' y='[7.75]' fill='#8C8C8C' stroke='none' stroke-width='0' width='2.3' height='4.25'/>\n");
 
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
-					"<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
-					"width='.percent.1in' height='%1in' viewBox='0 0 {16.0022} [12.0]'>\n"
-					"<g id='breadboard'>\n"
-					".percent.2\n"
-					"<rect width='{16.0022}' x='0' y='2.5' height='[6.5]' fill='#000000' id='upper' stroke-width='0' />\n"
-					"<rect width='{16.0022}' x='0' y='[6.5]' fill='#404040' height='3.096' id='lower' stroke-width='0' />\n"
-					"<text id='label' x='2.5894' y='{{6.0}}' fill='#e6e6e6' stroke='none' font-family='Droid Sans' text-anchor='start' font-size='7.3' >?</text>\n"
-					"<circle fill='#8C8C8C' cx='11.0022' cy='{{7.5}}' r='3' stroke-width='0' />\n"
-					"<text x='11.0022' y='{{9.2}}' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"
-					".percent.3\n"
-					"</g>\n"
-					"</svg>\n");
+	               "<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
+	               "width='.percent.1in' height='%1in' viewBox='0 0 {16.0022} [12.0]'>\n"
+	               "<g id='breadboard'>\n"
+	               ".percent.2\n"
+	               "<rect width='{16.0022}' x='0' y='2.5' height='[6.5]' fill='#000000' id='upper' stroke-width='0' />\n"
+	               "<rect width='{16.0022}' x='0' y='[6.5]' fill='#404040' height='3.096' id='lower' stroke-width='0' />\n"
+	               "<text id='label' x='2.5894' y='{{6.0}}' fill='#e6e6e6' stroke='none' font-family='Droid Sans' text-anchor='start' font-size='7.3' >?</text>\n"
+	               "<circle fill='#8C8C8C' cx='11.0022' cy='{{7.5}}' r='3' stroke-width='0' />\n"
+	               "<text x='11.0022' y='{{9.2}}' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"
+	               ".percent.3\n"
+	               "</g>\n"
+	               "</svg>\n");
 
 
 	header = TextUtils::incrementTemplateString(header, 1, spacing - increment, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
@@ -576,22 +576,22 @@ QString MysteryPart::makeBreadboardSipSvg(const QString & expectedFileName)
 	int increment = 10;
 
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
-					"<svg version='1.2' baseProfile='tiny' id='svg2' xmlns='http://www.w3.org/2000/svg' \n"
-					"width='%1in' height='0.27586in' viewBox='0 0 [6.0022] 27.586'>\n"
-					"<g id='breadboard'>\n"
-					"<rect width='[6.0022]' x='0' y='0' height='24.17675' fill='#000000' id='upper' stroke-width='0' />\n"
-					"<rect width='[6.0022]' x='0' y='22' fill='#404040' height='3.096' id='lower' stroke-width='0' />\n"
-					"<text id='label' x='2.5894' y='13' fill='#e6e6e6' stroke='none' font-family='Droid Sans' text-anchor='start' font-size='7.3' >?</text>\n"
-					"<circle fill='#8C8C8C' cx='[1.0022]' cy='5' r='3' stroke-width='0' />\n"
-					"<text x='[1.0022]' y='6.7' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"
-					"%2\n"
-					"</g>\n"
-					"</svg>\n");
+	               "<svg version='1.2' baseProfile='tiny' id='svg2' xmlns='http://www.w3.org/2000/svg' \n"
+	               "width='%1in' height='0.27586in' viewBox='0 0 [6.0022] 27.586'>\n"
+	               "<g id='breadboard'>\n"
+	               "<rect width='[6.0022]' x='0' y='0' height='24.17675' fill='#000000' id='upper' stroke-width='0' />\n"
+	               "<rect width='[6.0022]' x='0' y='22' fill='#404040' height='3.096' id='lower' stroke-width='0' />\n"
+	               "<text id='label' x='2.5894' y='13' fill='#e6e6e6' stroke='none' font-family='Droid Sans' text-anchor='start' font-size='7.3' >?</text>\n"
+	               "<circle fill='#8C8C8C' cx='[1.0022]' cy='5' r='3' stroke-width='0' />\n"
+	               "<text x='[1.0022]' y='6.7' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"
+	               "%2\n"
+	               "</g>\n"
+	               "</svg>\n");
 
 	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
 
 	QString repeat("<rect id='connector%1terminal' stroke='none' stroke-width='0' x='[1.87]' y='25.586' fill='#8C8C8C' width='2.3' height='2.0'/>\n"
-					"<rect id='connector%1pin' stroke='none' stroke-width='0' x='[1.87]' y='23.336' fill='#8C8C8C' width='2.3' height='4.25'/>\n");
+	               "<rect id='connector%1pin' stroke='none' stroke-width='0' x='[1.87]' y='23.336' fill='#8C8C8C' width='2.3' height='4.25'/>\n");
 
 	QString repeats = TextUtils::incrementTemplateString(repeat, pins, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
 
@@ -607,66 +607,66 @@ bool MysteryPart::changePinLabels(bool singleRow, bool sip) {
 	QStringList labels = getPinLabels(hasLocal);
 	if (labels.count() == 0) return true;
 
-    QTransform  transform = untransform();
+	QTransform  transform = untransform();
 
 	QString svg = MysteryPart::makeSchematicSvg(labels, sip);
 
-    QString chipLabel = modelPart()->localProp("chip label").toString();
-    if (!chipLabel.isEmpty()) {
-        svg =TextUtils::replaceTextElement(svg, "label", chipLabel);
-    }
+	QString chipLabel = modelPart()->localProp("chip label").toString();
+	if (!chipLabel.isEmpty()) {
+		svg =TextUtils::replaceTextElement(svg, "label", chipLabel);
+	}
 
-    resetLayerKin(svg);
+	resetLayerKin(svg);
 
-    retransform(transform);
+	retransform(transform);
 
 	return true;
 }
 
 void MysteryPart::swapEntry(const QString & text) {
 
-    FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
-    if (comboBox == NULL) return;
+	FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
+	if (comboBox == NULL) return;
 
-    QString layout = m_propsMap.value("layout");
+	QString layout = m_propsMap.value("layout");
 
-    if (comboBox->prop().contains("layout", Qt::CaseInsensitive)) {
-        layout = text;
-    }
+	if (comboBox->prop().contains("layout", Qt::CaseInsensitive)) {
+		layout = text;
+	}
 
-    if (layout.isEmpty()) {
-        if (moduleID().contains("sip", Qt::CaseInsensitive)) {
-            layout = "single";
-        }
-    }
+	if (layout.isEmpty()) {
+		if (moduleID().contains("sip", Qt::CaseInsensitive)) {
+			layout = "single";
+		}
+	}
 
-    if (layout.contains("single", Qt::CaseInsensitive)) {
-        generateSwap(text, genModuleID, genSipFZP, makeBreadboardSvg, makeSchematicSvg, PinHeader::makePcbSvg);
-    }
-    else {
-        generateSwap(text, genModuleID, genDipFZP, makeBreadboardSvg, makeSchematicSvg, makePcbDipSvg);
-    }
-    PaletteItem::swapEntry(text);
+	if (layout.contains("single", Qt::CaseInsensitive)) {
+		generateSwap(text, genModuleID, genSipFZP, makeBreadboardSvg, makeSchematicSvg, PinHeader::makePcbSvg);
+	}
+	else {
+		generateSwap(text, genModuleID, genDipFZP, makeBreadboardSvg, makeSchematicSvg, makePcbDipSvg);
+	}
+	PaletteItem::swapEntry(text);
 }
 
 QString MysteryPart::makePcbDipSvg(const QString & expectedFileName)
 {
-    QString spacingString;
+	QString spacingString;
 	int pins = TextUtils::getPinsAndSpacing(expectedFileName, spacingString);
-    if (pins == 0) return "";
+	if (pins == 0) return "";
 
 	QString header("<?xml version='1.0' encoding='UTF-8'?>\n"
-				    "<svg baseProfile='tiny' version='1.2' width='%1in' height='%2in' viewBox='0 0 %3 %4' xmlns='http://www.w3.org/2000/svg'>\n"
-				    "<desc>Fritzing footprint SVG</desc>\n"
-					"<g id='silkscreen'>\n"
-					"<line stroke='white' stroke-width='10' x1='10' x2='10' y1='10' y2='%5'/>\n"
-					"<line stroke='white' stroke-width='10' x1='10' x2='%6' y1='%5' y2='%5'/>\n"
-					"<line stroke='white' stroke-width='10' x1='%6' x2='%6' y1='%5' y2='10'/>\n"
-					"<line stroke='white' stroke-width='10' x1='10' x2='%7' y1='10' y2='10'/>\n"
-					"<line stroke='white' stroke-width='10' x1='%8' x2='%6' y1='10' y2='10'/>\n"
-					"</g>\n"
-					"<g id='copper1'><g id='copper0'>\n"
-					"<rect id='square' fill='none' height='55' stroke='rgb(255, 191, 0)' stroke-width='20' width='55' x='32.5' y='32.5'/>\n");
+	               "<svg baseProfile='tiny' version='1.2' width='%1in' height='%2in' viewBox='0 0 %3 %4' xmlns='http://www.w3.org/2000/svg'>\n"
+	               "<desc>Fritzing footprint SVG</desc>\n"
+	               "<g id='silkscreen'>\n"
+	               "<line stroke='white' stroke-width='10' x1='10' x2='10' y1='10' y2='%5'/>\n"
+	               "<line stroke='white' stroke-width='10' x1='10' x2='%6' y1='%5' y2='%5'/>\n"
+	               "<line stroke='white' stroke-width='10' x1='%6' x2='%6' y1='%5' y2='10'/>\n"
+	               "<line stroke='white' stroke-width='10' x1='10' x2='%7' y1='10' y2='10'/>\n"
+	               "<line stroke='white' stroke-width='10' x1='%8' x2='%6' y1='10' y2='10'/>\n"
+	               "</g>\n"
+	               "<g id='copper1'><g id='copper0'>\n"
+	               "<rect id='square' fill='none' height='55' stroke='rgb(255, 191, 0)' stroke-width='20' width='55' x='32.5' y='32.5'/>\n");
 
 	double outerBorder = 10;
 	double silkSplitTop = 100;
@@ -678,8 +678,8 @@ QString MysteryPart::makePcbDipSvg(const QString & expectedFileName)
 	double center = totalWidth / 2;
 
 	QString svg = header.arg(totalWidth / GraphicsUtils::StandardFritzingDPI).arg(totalHeight / GraphicsUtils::StandardFritzingDPI).arg(totalWidth).arg(totalHeight)
-							.arg(totalHeight - outerBorder).arg(totalWidth - outerBorder)
-							.arg(center - (silkSplitTop / 2)).arg(center + (silkSplitTop / 2));
+	              .arg(totalHeight - outerBorder).arg(totalWidth - outerBorder)
+	              .arg(center - (silkSplitTop / 2)).arg(center + (silkSplitTop / 2));
 
 	QString circle("<circle cx='%1' cy='%2' fill='none' id='connector%3pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>\n");
 
@@ -693,10 +693,10 @@ QString MysteryPart::makePcbDipSvg(const QString & expectedFileName)
 	svg += "</g></g>\n";
 	svg += "</svg>\n";
 
-    int hsix = expectedFileName.indexOf(HoleSizePrefix);
-    if (hsix >= 0) {
-        return hackSvgHoleSizeAux(svg, expectedFileName);
-    }
+	int hsix = expectedFileName.indexOf(HoleSizePrefix);
+	if (hsix >= 0) {
+		return hackSvgHoleSizeAux(svg, expectedFileName);
+	}
 
 	return svg;
 }

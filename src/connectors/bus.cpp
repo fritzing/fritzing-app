@@ -50,7 +50,7 @@ ModelPart * Bus::modelPart() {
 }
 
 void Bus::addSubConnector(Connector * subConnector) {
-    m_subConnector = subConnector;
+	m_subConnector = subConnector;
 }
 
 Connector * Bus::subConnector() const {

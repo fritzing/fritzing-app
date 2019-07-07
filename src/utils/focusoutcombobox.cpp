@@ -23,22 +23,22 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 FocusOutComboBox::FocusOutComboBox(QWidget * parent) : QComboBox(parent) {
 	setEditable(true);
-    m_wasOut = true;
-    lineEdit()->installEventFilter( this );
+	m_wasOut = true;
+	lineEdit()->installEventFilter( this );
 }
 
 FocusOutComboBox::~FocusOutComboBox() {
 }
 
 void FocusOutComboBox::focusInEvent(QFocusEvent * e) {
-    //DebugDialog::debug("focus in");
-    QComboBox::focusInEvent(e);
-    checkSelectAll();
+	//DebugDialog::debug("focus in");
+	QComboBox::focusInEvent(e);
+	checkSelectAll();
 }
 
 void FocusOutComboBox::focusOutEvent(QFocusEvent * e) {
-    //DebugDialog::debug("focus out");
-    m_wasOut = true;
+	//DebugDialog::debug("focus out");
+	m_wasOut = true;
 	QComboBox::focusOutEvent(e);
 	QString t = this->currentText();
 	QString it = this->itemText(this->currentIndex());
@@ -53,20 +53,20 @@ void FocusOutComboBox::focusOutEvent(QFocusEvent * e) {
 }
 
 bool FocusOutComboBox::eventFilter( QObject *target, QEvent *event ) {
-    // subclassing mouseReleaseEvent doesn't seem to work so use eventfilter instead
-    if( target == lineEdit() && event->type() == QEvent::MouseButtonRelease ) {
-        if (m_wasOut) {
-            // only select all the first time the focused lineEdit is clicked, not every time,
-            // otherwise you can't move the selection point with the mouse
-            checkSelectAll();
-            m_wasOut = false;
-        }
-    }
-    return false;
+	// subclassing mouseReleaseEvent doesn't seem to work so use eventfilter instead
+	if( target == lineEdit() && event->type() == QEvent::MouseButtonRelease ) {
+		if (m_wasOut) {
+			// only select all the first time the focused lineEdit is clicked, not every time,
+			// otherwise you can't move the selection point with the mouse
+			checkSelectAll();
+			m_wasOut = false;
+		}
+	}
+	return false;
 }
 
 void FocusOutComboBox::checkSelectAll() {
-    if(lineEdit() && !lineEdit()->hasSelectedText() && isEnabled()) {
-        lineEdit()->selectAll();
-    }
+	if(lineEdit() && !lineEdit()->hasSelectedText() && isEnabled()) {
+		lineEdit()->selectAll();
+	}
 }

@@ -28,17 +28,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDateEdit>
 
 class EditableDateWidget : public AbstractEditableLabelWidget {
-Q_OBJECT
-	public:
-		EditableDateWidget(QDate date, WaitPushUndoStack *undoStack, QWidget *parent=0, QString title="", bool noSpacing=false, bool edited=false);
+	Q_OBJECT
+public:
+	EditableDateWidget(QDate date, WaitPushUndoStack *undoStack, QWidget *parent=0, QString title="", bool noSpacing=false, bool edited=false);
 
-	protected:
-		QString editionText();
-		void setEditionText(QString text);
-		QWidget* myEditionWidget();
-		void setEmptyTextToEdit();
+protected:
+	QString editionText();
+	void setEditionText(QString text);
+	QWidget* myEditionWidget();
+	void setEmptyTextToEdit();
 
-		QDateEdit *m_dateEdit;
+	QDateEdit *m_dateEdit;
 };
 
 #endif /* EDITABLEDATEWIDGET_H_ */

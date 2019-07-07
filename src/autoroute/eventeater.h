@@ -28,15 +28,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class EventEater : public QObject
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	EventEater(QObject * parent = 0);
 
 	void allowEventsIn(QWidget *);
 
- protected:
-     bool eventFilter(QObject *obj, QEvent *event);
+protected:
+	bool eventFilter(QObject *obj, QEvent *event);
 
 protected:
 	QList<QWidget *> m_allowedWidgets;

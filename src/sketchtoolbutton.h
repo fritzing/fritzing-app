@@ -30,33 +30,33 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class SketchToolButton : public QToolButton, public AbstractStatesButton {
 	Q_OBJECT
-	public:
-		SketchToolButton(const QString &imageName, QWidget *parent, QAction* defaultAction);
-		SketchToolButton(const QString &imageName, QWidget *parent, QList<QAction*> menuActions);
+public:
+	SketchToolButton(const QString &imageName, QWidget *parent, QAction* defaultAction);
+	SketchToolButton(const QString &imageName, QWidget *parent, QList<QAction*> menuActions);
 
-		void updateEnabledState();
+	void updateEnabledState();
 
-	protected slots:
-		void setEnabledIconAux();
+protected slots:
+	void setEnabledIconAux();
 
-    signals:
-        void entered();
-        void left();
+signals:
+	void entered();
+	void left();
 
-	protected:
-		QString imagePrefix();
-		void setImage(const QPixmap & pixmap);
-        void setupIcons(const QString &imageName, bool hasStates=true);
+protected:
+	QString imagePrefix();
+	void setImage(const QPixmap & pixmap);
+	void setupIcons(const QString &imageName, bool hasStates=true);
 
-		void actionEvent(QActionEvent *);
-		void mousePressEvent(QMouseEvent *);
-		void mouseReleaseEvent(QMouseEvent *);
-		void enterEvent(QEvent *);
-		void leaveEvent(QEvent *);
-		void changeEvent(QEvent *);
+	void actionEvent(QActionEvent *);
+	void mousePressEvent(QMouseEvent *);
+	void mouseReleaseEvent(QMouseEvent *);
+	void enterEvent(QEvent *);
+	void leaveEvent(QEvent *);
+	void changeEvent(QEvent *);
 
-	protected:
-		QString m_imageName;
+protected:
+	QString m_imageName;
 
 };
 

@@ -32,11 +32,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class PaletteModel : public ModelBase
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	PaletteModel();
 	PaletteModel(bool makeRoot, bool doInit);
-    ~PaletteModel();
+	~PaletteModel();
 	ModelPart * retrieveModelPart(const QString & moduleID);
 	virtual bool containsModelPart(const QString & moduleID);
 	virtual ModelPart * loadPart(const QString & path, bool update);
@@ -46,14 +46,14 @@ public:
 	bool loadFromFile(const QString & fileName, ModelBase* referenceModel, bool checkViews);
 	ModelPart * addPart(QString newPartPath, bool addToReference, bool updateIdAlreadyExists);
 	void removePart(const QString &moduleID);
-    void removeParts();
-    QList<ModelPart *> search(const QString & searchText, bool allowObsolete);
+	void removeParts();
+	QList<ModelPart *> search(const QString & searchText, bool allowObsolete);
 
 	void clearPartHash();
 	void setOrdererChildren(QList<QObject*> children);
-    void search(ModelPart * modelPart, const QStringList & searchStrings, QList<ModelPart *> & modelParts, bool allowObsolete);
-    QList<ModelPart *> findContribNoBin();
-    QList<ModelPart *> allParts();
+	void search(ModelPart * modelPart, const QStringList & searchStrings, QList<ModelPart *> & modelParts, bool allowObsolete);
+	QList<ModelPart *> findContribNoBin();
+	QList<ModelPart *> allParts();
 
 protected:
 	QHash<QString, ModelPart *> m_partHash;
@@ -61,27 +61,27 @@ protected:
 	QString m_loadedFrom; // The file this was loaded from, only if m_loadedFromFile == true
 
 	bool m_loadingContrib;
-    bool m_fullLoad;
+	bool m_fullLoad;
 
 signals:
 	void loadedPart(int i, int total);
-    void incSearch();
-    void addSearchMaximum(int);
-    void partsToLoad(int total);
+	void incSearch();
+	void addSearchMaximum(int);
+	void partsToLoad(int total);
 
 protected:
 	virtual void initParts(bool dbExists);
 	void loadParts(bool dbExists);
 	void loadPartsAux(QDir & dir, QStringList & nameFilters, int & loadedPart, int totalParts);
 	void countParts(QDir & dir, QStringList & nameFilters, int & partCount);
-    ModelPart * makeSubpart(ModelPart * originalModelPart, const QDomElement & originalSubparth);
+	ModelPart * makeSubpart(ModelPart * originalModelPart, const QDomElement & originalSubparth);
 
 public:
 	static void initNames();
-    static void setFzpOverrideFolder(const QString &);
+	static void setFzpOverrideFolder(const QString &);
 
 protected:
-    static QString s_fzpOverrideFolder;
+	static QString s_fzpOverrideFolder;
 
 };
 #endif

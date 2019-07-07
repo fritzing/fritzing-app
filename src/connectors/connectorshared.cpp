@@ -73,10 +73,10 @@ ConnectorShared::~ConnectorShared() {
 	foreach (SvgIdLayer * svgIdLayer, m_pins.values()) {
 		delete svgIdLayer;
 	}
-	 m_pins.clear();
-	 if (m_ercData) {
-		 delete m_ercData;
-	 }
+	m_pins.clear();
+	if (m_ercData) {
+		delete m_ercData;
+	}
 }
 
 
@@ -143,8 +143,8 @@ void ConnectorShared::addPin(ViewLayer::ViewID viewID, const QString & svgId, Vi
 	svgIdLayer->m_svgViewLayerID = viewLayerID;
 	svgIdLayer->m_svgId = svgId;
 	svgIdLayer->m_terminalId = terminalId;
-    svgIdLayer->m_hybrid = hybrid;
-    svgIdLayer->m_legId = legId;
+	svgIdLayer->m_hybrid = hybrid;
+	svgIdLayer->m_legId = legId;
 	m_pins.insert(viewID, svgIdLayer);
 	// DebugDialog::debug(QString("insert a %1 %2 %3").arg(layer).arg(connectorId).arg(viewLayerID));
 }
@@ -231,7 +231,7 @@ BusShared * ConnectorShared::bus() {
 
 const QString & ConnectorShared::busID() {
 	if (m_bus == NULL) return ___emptyString___;
-		return m_bus->id();
+	return m_bus->id();
 }
 
 ErcData * ConnectorShared::ercData() {
@@ -240,5 +240,5 @@ ErcData * ConnectorShared::ercData() {
 
 const QList<SvgIdLayer *> ConnectorShared::svgIdLayers() const
 {
-    return m_pins.values();
+	return m_pins.values();
 }

@@ -115,14 +115,14 @@ static const double LoadProgressEnd = 0.6;
 ////////////////////////////////////////////////////
 
 FServer::FServer(QObject *parent)
-    : QTcpServer(parent)
+	: QTcpServer(parent)
 {
 }
 
 void FServer::incomingConnection(qintptr socketDescriptor)
 {
 	DebugDialog::debug("incomingConnection called");
-    emit newConnection(socketDescriptor);
+	emit newConnection(socketDescriptor);
 }
 
 ////////////////////////////////////////////////////
@@ -133,65 +133,65 @@ FServerThread::FServerThread(qintptr socketDescriptor, QObject *parent) : QThrea
 {
 }
 
- void FServerThread::run()
- {
-    QTcpSocket * socket = new QTcpSocket();
-    if (!socket->setSocketDescriptor(m_socketDescriptor)) {
-        emit error(socket->error());
-        DebugDialog::debug(QString("Socket error %1 %2").arg(socket->error()).arg(socket->errorString()));
-        socket->deleteLater();
-        return;
-    }
+void FServerThread::run()
+{
+	QTcpSocket * socket = new QTcpSocket();
+	if (!socket->setSocketDescriptor(m_socketDescriptor)) {
+		emit error(socket->error());
+		DebugDialog::debug(QString("Socket error %1 %2").arg(socket->error()).arg(socket->errorString()));
+		socket->deleteLater();
+		return;
+	}
 
-    socket->waitForReadyRead();
-    QString header;
-    while (socket->canReadLine()) {
-        header += socket->readLine();
-    }
+	socket->waitForReadyRead();
+	QString header;
+	while (socket->canReadLine()) {
+		header += socket->readLine();
+	}
 
-    DebugDialog::debug("header " + header);
+	DebugDialog::debug("header " + header);
 
-    QStringList tokens = header.split(QRegExp("[ \r\n][ \r\n]*"), QString::SkipEmptyParts);
-    if (tokens.count() <= 0) {
-        writeResponse(socket, 400, "Bad Request", "", "");
-        return;
-    }
+	QStringList tokens = header.split(QRegExp("[ \r\n][ \r\n]*"), QString::SkipEmptyParts);
+	if (tokens.count() <= 0) {
+		writeResponse(socket, 400, "Bad Request", "", "");
+		return;
+	}
 
-    if (tokens[0] != "GET") {
-        writeResponse(socket, 405, "Method Not Allowed", "", "");
-        return;
-    }
+	if (tokens[0] != "GET") {
+		writeResponse(socket, 405, "Method Not Allowed", "", "");
+		return;
+	}
 
-    if (tokens.count() < 2) {
-        writeResponse(socket, 400, "Bad Request", "", "");
-        return;
-    }
+	if (tokens.count() < 2) {
+		writeResponse(socket, 400, "Bad Request", "", "");
+		return;
+	}
 
-    QStringList params = tokens.at(1).split("/", QString::SkipEmptyParts);
-    QString command = params.takeFirst();
-    if (params.count() == 0) {
-        writeResponse(socket, 400, "Bad Request", "", "");
-        return;
-    }
+	QStringList params = tokens.at(1).split("/", QString::SkipEmptyParts);
+	QString command = params.takeFirst();
+	if (params.count() == 0) {
+		writeResponse(socket, 400, "Bad Request", "", "");
+		return;
+	}
 
-    QString subFolder = params.join("/");
+	QString subFolder = params.join("/");
 	bool fixSubFolder = false;
-    QString mimeType;
-    if (command == "svg") {
-		 mimeType = "image/svg+xml";
-    }
-    else if (command == "gerber") {
-    }
-    else if (command == "svg-tcp") {
+	QString mimeType;
+	if (command == "svg") {
+		mimeType = "image/svg+xml";
+	}
+	else if (command == "gerber") {
+	}
+	else if (command == "svg-tcp") {
 		fixSubFolder = true;
-    }
-    else if (command == "gerber-tcp") {
+	}
+	else if (command == "gerber-tcp") {
 		fixSubFolder = true;
-    }
-    else {
-        writeResponse(socket, 400, "Bad Request", "", "");
-        return;
-    }
+	}
+	else {
+		writeResponse(socket, 400, "Bad Request", "", "");
+		return;
+	}
 
 	if (fixSubFolder) {
 		// replace "/" that was removed from "http:/blah" above
@@ -201,28 +201,28 @@ FServerThread::FServerThread(qintptr socketDescriptor, QObject *parent) : QThrea
 		}
 	}
 
-    int waitInterval = 100;     // 100ms to wait
-    int timeoutSeconds = 2 * 60;    // timeout after 2 minutes
-    int attempts = timeoutSeconds * 1000 / waitInterval;  // timeout a
-    bool gotLock = false;
-    for (int i = 0; i < attempts; i++) {
-        if (m_busy.tryLock()) {
-            gotLock = true;
-            break;
-        }
-    }
+	int waitInterval = 100;     // 100ms to wait
+	int timeoutSeconds = 2 * 60;    // timeout after 2 minutes
+	int attempts = timeoutSeconds * 1000 / waitInterval;  // timeout a
+	bool gotLock = false;
+	for (int i = 0; i < attempts; i++) {
+		if (m_busy.tryLock()) {
+			gotLock = true;
+			break;
+		}
+	}
 
-    if (!gotLock) {
-        writeResponse(socket, 503, "Service Unavailable", "", "Server busy.");
-        return;
-    }
+	if (!gotLock) {
+		writeResponse(socket, 503, "Service Unavailable", "", "Server busy.");
+		return;
+	}
 
-    DebugDialog::debug(QString("emitting do command %1 %2").arg(command).arg(subFolder));
-    QString result;
+	DebugDialog::debug(QString("emitting do command %1 %2").arg(command).arg(subFolder));
+	QString result;
 	int status;
-    emit doCommand(command, subFolder, result, status);
+	emit doCommand(command, subFolder, result, status);
 
-    m_busy.unlock();
+	m_busy.unlock();
 
 	if (status != 200) {
 		writeResponse(socket, status, "failed", "", result);
@@ -268,77 +268,77 @@ FServerThread::FServerThread(qintptr socketDescriptor, QObject *parent) : QThrea
 
 void FServerThread::writeResponse(QTcpSocket * socket, int code, const QString & codeString, const QString & mimeType, const QString & message)
 {
-    QString type = mimeType;
-    if (type.isEmpty()) type = "text/plain";
-    QString response = QString("HTTP/1.0 %1 %2\r\n").arg(code).arg(codeString);
-    response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type);
-    response += QString("Content-Length: %1\r\n").arg(message.count());
-    response += QString("\r\n%1").arg(message);
+	QString type = mimeType;
+	if (type.isEmpty()) type = "text/plain";
+	QString response = QString("HTTP/1.0 %1 %2\r\n").arg(code).arg(codeString);
+	response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type);
+	response += QString("Content-Length: %1\r\n").arg(message.count());
+	response += QString("\r\n%1").arg(message);
 
-    socket->write(response.toUtf8());
-    socket->disconnectFromHost();
-    socket->waitForDisconnected();
-    socket->deleteLater();
+	socket->write(response.toUtf8());
+	socket->disconnectFromHost();
+	socket->waitForDisconnected();
+	socket->deleteLater();
 }
 
 ////////////////////////////////////////////////////
 
 RegenerateDatabaseThread::RegenerateDatabaseThread(const QString & dbFileName, QDialog * progressDialog, ReferenceModel * referenceModel) {
-    m_dbFileName = dbFileName;
-    m_referenceModel = referenceModel;
-    m_progressDialog = progressDialog;
+	m_dbFileName = dbFileName;
+	m_referenceModel = referenceModel;
+	m_progressDialog = progressDialog;
 }
 
 const QString RegenerateDatabaseThread::error() const {
-    return m_error;
+	return m_error;
 }
 
 QDialog * RegenerateDatabaseThread::progressDialog() const {
-    return m_progressDialog;
+	return m_progressDialog;
 }
 
 ReferenceModel * RegenerateDatabaseThread::referenceModel() const {
-    return m_referenceModel;
+	return m_referenceModel;
 }
 
 void RegenerateDatabaseThread::run() {
-    QTemporaryFile file(QString("%1/XXXXXX.db").arg(QDir::tempPath()));
-    QString fileName;
-    if (file.open()) {
-        fileName = file.fileName();
-        file.close();
-    }
-    else {
-        m_error = tr("Unable to open temporary file");
-        return;
-    }
+	QTemporaryFile file(QString("%1/XXXXXX.db").arg(QDir::tempPath()));
+	QString fileName;
+	if (file.open()) {
+		fileName = file.fileName();
+		file.close();
+	}
+	else {
+		m_error = tr("Unable to open temporary file");
+		return;
+	}
 
-    bool ok = ((FApplication *) qApp)->loadReferenceModel(fileName, true, m_referenceModel);
-    if (!ok) {
-        m_error = tr("Database failure");
-        return;
-    }
+	bool ok = ((FApplication *) qApp)->loadReferenceModel(fileName, true, m_referenceModel);
+	if (!ok) {
+		m_error = tr("Database failure");
+		return;
+	}
 
-    if (QFile::exists(m_dbFileName)) {
-        ok = QFile::remove(m_dbFileName);
-        if (!ok) {
-            m_error = tr("Unable to remove original db file %1").arg(m_dbFileName);
-            return;
-        }
-    }
+	if (QFile::exists(m_dbFileName)) {
+		ok = QFile::remove(m_dbFileName);
+		if (!ok) {
+			m_error = tr("Unable to remove original db file %1").arg(m_dbFileName);
+			return;
+		}
+	}
 
-    ok = QFile::copy(fileName, m_dbFileName);
-    if (!ok) {
-        m_error = tr("Unable to copy database file %1").arg(m_dbFileName);
-        return;
-    }
+	ok = QFile::copy(fileName, m_dbFileName);
+	if (!ok) {
+		m_error = tr("Unable to copy database file %1").arg(m_dbFileName);
+		return;
+	}
 }
 
 ////////////////////////////////////////////////////
 
 FApplication::FApplication( int & argc, char ** argv) : QApplication(argc, argv)
 {
-    m_fServer = NULL;
+	m_fServer = NULL;
 	m_spaceBarIsPressed = false;
 	m_mousePressed = false;
 	m_referenceModel = NULL;
@@ -354,7 +354,7 @@ FApplication::FApplication( int & argc, char ** argv) : QApplication(argc, argv)
 int FApplication::init() {
 
 	//foreach (QString argument, m_arguments) {
-		//DebugDialog::debug(QString("argument %1").arg(argument));
+	//DebugDialog::debug(QString("argument %1").arg(argument));
 	//}
 
 	m_serviceType = NoService;
@@ -362,73 +362,73 @@ int FApplication::init() {
 	QList<int> toRemove;
 	for (int i = 0; i < m_arguments.length(); i++) {
 		if ((m_arguments[i].compare("-h", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("-help", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("--help", Qt::CaseInsensitive) == 0))
+		        (m_arguments[i].compare("-help", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("--help", Qt::CaseInsensitive) == 0))
 		{
 			return FInitResultHelp;
 		}
 
 		if ((m_arguments[i].compare("-v", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("-version", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("--version", Qt::CaseInsensitive) == 0))
+		        (m_arguments[i].compare("-version", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("--version", Qt::CaseInsensitive) == 0))
 		{
 			return FInitResultVersion;
 		}
 
 		if ((m_arguments[i].compare("-e", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("-examples", Qt::CaseInsensitive) == 0)||
-			(m_arguments[i].compare("--examples", Qt::CaseInsensitive) == 0)) {
-            DebugDialog::setEnabled(true);
+		        (m_arguments[i].compare("-examples", Qt::CaseInsensitive) == 0)||
+		        (m_arguments[i].compare("--examples", Qt::CaseInsensitive) == 0)) {
+			DebugDialog::setEnabled(true);
 			m_serviceType = ExampleService;
 			m_outputFolder = " ";					// otherwise program will bail out
 			toRemove << i;
 		}
 
 		if ((m_arguments[i].compare("-d", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("-debug", Qt::CaseInsensitive) == 0)||
-			(m_arguments[i].compare("--debug", Qt::CaseInsensitive) == 0)) {
+		        (m_arguments[i].compare("-debug", Qt::CaseInsensitive) == 0)||
+		        (m_arguments[i].compare("--debug", Qt::CaseInsensitive) == 0)) {
 			DebugDialog::setEnabled(true);
 			toRemove << i;
 		}
 
 		if (i + 1 >= m_arguments.length()) continue;
 
-        if ((m_arguments[i].compare("-f", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("-folder", Qt::CaseInsensitive) == 0)||
-            (m_arguments[i].compare("--folder", Qt::CaseInsensitive) == 0))
-        {
-            FolderUtils::setApplicationPath(m_arguments[i + 1]);
-            // delete these so we don't try to process them as files later
-            toRemove << i << i + 1;
-        }
+		if ((m_arguments[i].compare("-f", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("-folder", Qt::CaseInsensitive) == 0)||
+		        (m_arguments[i].compare("--folder", Qt::CaseInsensitive) == 0))
+		{
+			FolderUtils::setApplicationPath(m_arguments[i + 1]);
+			// delete these so we don't try to process them as files later
+			toRemove << i << i + 1;
+		}
 
-        if ((m_arguments[i].compare("-pp", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("-pa", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("-parts", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("--parts", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("--partsparent", Qt::CaseInsensitive) == 0))
-        {
-            FolderUtils::setAppPartsPath(m_arguments[i + 1]);
-            // delete these so we don't try to process them as files later
-            toRemove << i << i + 1;
-        }
+		if ((m_arguments[i].compare("-pp", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("-pa", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("-parts", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("--parts", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("--partsparent", Qt::CaseInsensitive) == 0))
+		{
+			FolderUtils::setAppPartsPath(m_arguments[i + 1]);
+			// delete these so we don't try to process them as files later
+			toRemove << i << i + 1;
+		}
 
-        if ((m_arguments[i].compare("-ov", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("-ow", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("-of", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("--ov", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("--ow", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("--of", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("--overridefolder", Qt::CaseInsensitive) == 0)
-           )
-        {
-            PaletteModel::setFzpOverrideFolder(m_arguments[i + 1]);
-            // delete these so we don't try to process them as files later
-            toRemove << i << i + 1;
-        }
+		if ((m_arguments[i].compare("-ov", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("-ow", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("-of", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("--ov", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("--ow", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("--of", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("--overridefolder", Qt::CaseInsensitive) == 0)
+		   )
+		{
+			PaletteModel::setFzpOverrideFolder(m_arguments[i + 1]);
+			// delete these so we don't try to process them as files later
+			toRemove << i << i + 1;
+		}
 
-        if ((m_arguments[i].compare("-geda", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("--geda", Qt::CaseInsensitive) == 0)) {
+		if ((m_arguments[i].compare("-geda", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("--geda", Qt::CaseInsensitive) == 0)) {
 			m_serviceType = GedaService;
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
@@ -442,53 +442,53 @@ int FApplication::init() {
 		//}
 
 		if ((m_arguments[i].compare("-db", Qt::CaseInsensitive) == 0) ||
-            (m_arguments[i].compare("-database", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("--database", Qt::CaseInsensitive) == 0)) {
+		        (m_arguments[i].compare("-database", Qt::CaseInsensitive) == 0) ||
+		        (m_arguments[i].compare("--database", Qt::CaseInsensitive) == 0)) {
 			m_serviceType = DatabaseService;
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
 		}
 
 		if ((m_arguments[i].compare("-kicad", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("--kicad", Qt::CaseInsensitive) == 0)) {
+		        (m_arguments[i].compare("--kicad", Qt::CaseInsensitive) == 0)) {
 			m_serviceType = KicadFootprintService;
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
 		}
 
 		if ((m_arguments[i].compare("-kicadschematic", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("--kicadschematic", Qt::CaseInsensitive) == 0)) {
+		        (m_arguments[i].compare("--kicadschematic", Qt::CaseInsensitive) == 0)) {
 			m_serviceType = KicadSchematicService;
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
 		}
 
 		if ((m_arguments[i].compare("-svg", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("--svg", Qt::CaseInsensitive) == 0)) {
+		        (m_arguments[i].compare("--svg", Qt::CaseInsensitive) == 0)) {
 			m_serviceType = SvgService;
-            DebugDialog::setEnabled(true);
+			DebugDialog::setEnabled(true);
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
 		}
 
 		if ((m_arguments[i].compare("-port", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("--port", Qt::CaseInsensitive) == 0)) {
-            DebugDialog::setEnabled(true);
-            bool ok;
-            int p = m_arguments[i + 1].toInt(&ok);
-            if (ok) {
-                m_portNumber = p;
-            }
+		        (m_arguments[i].compare("--port", Qt::CaseInsensitive) == 0)) {
+			DebugDialog::setEnabled(true);
+			bool ok;
+			int p = m_arguments[i + 1].toInt(&ok);
+			if (ok) {
+				m_portNumber = p;
+			}
 
-            toRemove << i << i + 1;
+			toRemove << i << i + 1;
 
-            if (i + 2 < m_arguments.count()) {
-                if (ok) {
-                    m_portRootFolder = m_arguments[i + 2];
-                    m_serviceType = PortService;
-                }
-                toRemove << i + 2;
-            }
+			if (i + 2 < m_arguments.count()) {
+				if (ok) {
+					m_portRootFolder = m_arguments[i + 2];
+					m_serviceType = PortService;
+				}
+				toRemove << i + 2;
+			}
 
 			m_outputFolder = m_arguments[i + 1];
 		}
@@ -496,21 +496,21 @@ int FApplication::init() {
 
 
 		if ((m_arguments[i].compare("-g", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("-gerber", Qt::CaseInsensitive) == 0)||
-			(m_arguments[i].compare("--gerber", Qt::CaseInsensitive) == 0)) {
+		        (m_arguments[i].compare("-gerber", Qt::CaseInsensitive) == 0)||
+		        (m_arguments[i].compare("--gerber", Qt::CaseInsensitive) == 0)) {
 			m_serviceType = GerberService;
-            DebugDialog::setEnabled(true);
+			DebugDialog::setEnabled(true);
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
 		}
 
 		if ((m_arguments[i].compare("-p", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("-panel", Qt::CaseInsensitive) == 0)||
-			(m_arguments[i].compare("--panel", Qt::CaseInsensitive) == 0)) {
+		        (m_arguments[i].compare("-panel", Qt::CaseInsensitive) == 0)||
+		        (m_arguments[i].compare("--panel", Qt::CaseInsensitive) == 0)) {
 			m_serviceType = PanelizerService;
 			m_panelFilename = m_arguments[i + 1];
 			m_outputFolder = " ";					// otherwise program will bail out
-            m_panelizerCustom = false;
+			m_panelizerCustom = false;
 			toRemove << i << i + 1;
 		}
 
@@ -518,13 +518,13 @@ int FApplication::init() {
 			m_serviceType = PanelizerService;
 			m_panelFilename = m_arguments[i + 1];
 			m_outputFolder = " ";					// otherwise program will bail out
-            m_panelizerCustom = true;
+			m_panelizerCustom = true;
 			toRemove << i << i + 1;
 		}
 
 		if ((m_arguments[i].compare("-i", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("-inscription", Qt::CaseInsensitive) == 0)||
-			(m_arguments[i].compare("--inscription", Qt::CaseInsensitive) == 0)) {
+		        (m_arguments[i].compare("-inscription", Qt::CaseInsensitive) == 0)||
+		        (m_arguments[i].compare("--inscription", Qt::CaseInsensitive) == 0)) {
 			m_serviceType = InscriptionService;
 			m_panelFilename = m_arguments[i + 1];
 			m_outputFolder = " ";					// otherwise program will bail out
@@ -604,9 +604,9 @@ int FApplication::init() {
 #ifdef Q_OS_MAC
 	m_buildType = " Cocoa";
 #else
-    m_buildType = QString(PLATFORM_NAME).contains("64") ? "64" : "32";
+	m_buildType = QString(PLATFORM_NAME).contains("64") ? "64" : "32";
 #endif
-    AboutBox::initBuildType(m_buildType);
+	AboutBox::initBuildType(m_buildType);
 
 	return FInitResultNormal;
 }
@@ -617,11 +617,11 @@ FApplication::~FApplication(void)
 
 	clearModels();
 
-    if (m_updateDialog) {
-        delete m_updateDialog;
-    }
+	if (m_updateDialog) {
+		delete m_updateDialog;
+	}
 
-    FSvgRenderer::cleanup();
+	FSvgRenderer::cleanup();
 	ViewLayer::cleanup();
 	ViewLayer::cleanup();
 	ItemBase::cleanup();
@@ -638,11 +638,11 @@ FApplication::~FApplication(void)
 	HtmlInfoView::cleanup();
 	SvgIconWidget::cleanup();
 	PartFactory::cleanup();
-    PartsBinView::cleanup();
-    PropertyDefMaster::cleanup();
-    CursorMaster::cleanup();
-    LockManager::cleanup();
-    PartsBinPaletteWidget::cleanup();
+	PartsBinView::cleanup();
+	PropertyDefMaster::cleanup();
+	CursorMaster::cleanup();
+	LockManager::cleanup();
+	PartsBinPaletteWidget::cleanup();
 }
 
 void FApplication::clearModels() {
@@ -660,55 +660,55 @@ bool FApplication::spaceBarIsPressed() {
 bool FApplication::eventFilter(QObject *obj, QEvent *event)
 {
 	// check whether the space bar is down.
-    //qDebug() << "event" << event->type();
+	//qDebug() << "event" << event->type();
 
 	Q_UNUSED(obj);
 
 	switch (event->type()) {
-		case QEvent::MouseButtonPress:
-            //DebugDialog::debug("button press");
-			m_mousePressed = true;
-			break;
-		case QEvent::MouseButtonRelease:
-            //DebugDialog::debug("button release");
-			m_mousePressed = false;
-			break;
-        case QEvent::Drop:
-            // at least under Windows, the MouseButtonRelease event is not triggered if the Drop event is triggered
-            m_mousePressed = false;
-            break;
-		case QEvent::KeyPress:
-			{
-                //DebugDialog::debug(QString("key pressed %1 %2").arg(m_mousePressed).arg(QApplication::mouseButtons()));
-				if (!m_mousePressed && !m_spaceBarIsPressed) {
-					QKeyEvent * kevent = static_cast<QKeyEvent *>(event);
-					if (!kevent->isAutoRepeat() && (kevent->key() == Qt::Key_Space)) {
-						m_spaceBarIsPressed = true;
-                        //DebugDialog::debug("spacebar pressed");
-                        CursorMaster::instance()->block();
-                        setOverrideCursor(Qt::OpenHandCursor);
-						emit spaceBarIsPressedSignal(true);
-					}
-				}
+	case QEvent::MouseButtonPress:
+		//DebugDialog::debug("button press");
+		m_mousePressed = true;
+		break;
+	case QEvent::MouseButtonRelease:
+		//DebugDialog::debug("button release");
+		m_mousePressed = false;
+		break;
+	case QEvent::Drop:
+		// at least under Windows, the MouseButtonRelease event is not triggered if the Drop event is triggered
+		m_mousePressed = false;
+		break;
+	case QEvent::KeyPress:
+	{
+		//DebugDialog::debug(QString("key pressed %1 %2").arg(m_mousePressed).arg(QApplication::mouseButtons()));
+		if (!m_mousePressed && !m_spaceBarIsPressed) {
+			QKeyEvent * kevent = static_cast<QKeyEvent *>(event);
+			if (!kevent->isAutoRepeat() && (kevent->key() == Qt::Key_Space)) {
+				m_spaceBarIsPressed = true;
+				//DebugDialog::debug("spacebar pressed");
+				CursorMaster::instance()->block();
+				setOverrideCursor(Qt::OpenHandCursor);
+				emit spaceBarIsPressedSignal(true);
 			}
-			break;
-		case QEvent::KeyRelease:
-			{
-                //DebugDialog::debug(QString("key released %1 %2").arg(m_mousePressed).arg(QApplication::mouseButtons()));
-				if (m_spaceBarIsPressed) {
-					QKeyEvent * kevent = static_cast<QKeyEvent *>(event);
-					if (!kevent->isAutoRepeat() && (kevent->key() == Qt::Key_Space)) {
-						m_spaceBarIsPressed = false;
-                        //DebugDialog::debug("spacebar pressed");
-                        restoreOverrideCursor();
-                        CursorMaster::instance()->unblock();
-						emit spaceBarIsPressedSignal(false);
-					}
-				}
+		}
+	}
+	break;
+	case QEvent::KeyRelease:
+	{
+		//DebugDialog::debug(QString("key released %1 %2").arg(m_mousePressed).arg(QApplication::mouseButtons()));
+		if (m_spaceBarIsPressed) {
+			QKeyEvent * kevent = static_cast<QKeyEvent *>(event);
+			if (!kevent->isAutoRepeat() && (kevent->key() == Qt::Key_Space)) {
+				m_spaceBarIsPressed = false;
+				//DebugDialog::debug("spacebar pressed");
+				restoreOverrideCursor();
+				CursorMaster::instance()->unblock();
+				emit spaceBarIsPressedSignal(false);
 			}
-			break;
-		default:
-			break;
+		}
+	}
+	break;
+	default:
+		break;
 	}
 
 	return false;
@@ -717,23 +717,23 @@ bool FApplication::eventFilter(QObject *obj, QEvent *event)
 
 bool FApplication::event(QEvent *event)
 {
-    switch (event->type()) {
-		case QEvent::FileOpen:
-			{
-				QString path = static_cast<QFileOpenEvent *>(event)->file();
-				DebugDialog::debug(QString("file open %1").arg(path));
-				if (m_started) {
-					loadNew(path);
-				}
-				else {
-					m_filesToLoad.append(path);
-				}
+	switch (event->type()) {
+	case QEvent::FileOpen:
+	{
+		QString path = static_cast<QFileOpenEvent *>(event)->file();
+		DebugDialog::debug(QString("file open %1").arg(path));
+		if (m_started) {
+			loadNew(path);
+		}
+		else {
+			m_filesToLoad.append(path);
+		}
 
-			}
-			return true;
-		default:
-			return QApplication::event(event);
-    }
+	}
+	return true;
+	default:
+		return QApplication::event(event);
+	}
 }
 
 bool FApplication::findTranslator(const QString & translationsPath) {
@@ -746,8 +746,8 @@ bool FApplication::findTranslator(const QString & translationsPath) {
 		QLocale::setDefault(QLocale(suffix));
 	}
 
-    bool loaded = m_translator.load(QString("fritzing_") + suffix.toLower(), translationsPath);
-    DebugDialog::debug(QString("translation %1 loaded %2 from %3").arg(suffix).arg(loaded).arg(translationsPath));
+	bool loaded = m_translator.load(QString("fritzing_") + suffix.toLower(), translationsPath);
+	DebugDialog::debug(QString("translation %1 loaded %2 from %3").arg(suffix).arg(loaded).arg(translationsPath));
 	if (loaded) {
 		QApplication::installTranslator(&m_translator);
 	}
@@ -761,66 +761,66 @@ void FApplication::registerFonts() {
 	registerFont(":/resources/fonts/DroidSansMono.ttf", false);
 	registerFont(":/resources/fonts/OCRA.ttf", true);
 
-    // "Droid Sans"
-    // "Droid Sans Mono"
+	// "Droid Sans"
+	// "Droid Sans Mono"
 
-    /*
+	/*
 		QFontDatabase database;
 		QStringList families = database.families (  );
 		foreach (QString string, families) {
 			DebugDialog::debug(string);			// should print out the name of the fonts you loaded
 		}
-*/
+	*/
 
 
 }
 
 bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad) {
-    m_referenceModel = new CurrentReferenceModel();
-    ItemBase::setReferenceModel(m_referenceModel);
-    connect(m_referenceModel, SIGNAL(loadedPart(int, int)), this, SLOT(loadedPart(int, int)));
-    return loadReferenceModel(databaseName, fullLoad, m_referenceModel);
+	m_referenceModel = new CurrentReferenceModel();
+	ItemBase::setReferenceModel(m_referenceModel);
+	connect(m_referenceModel, SIGNAL(loadedPart(int, int)), this, SLOT(loadedPart(int, int)));
+	return loadReferenceModel(databaseName, fullLoad, m_referenceModel);
 }
 
 bool FApplication::loadReferenceModel(const QString &  databaseName, bool fullLoad, ReferenceModel * referenceModel)
 {
-    QDir dir = FolderUtils::getAppPartsSubFolder("");
-    QString dbPath = dir.absoluteFilePath("parts.db");
+	QDir dir = FolderUtils::getAppPartsSubFolder("");
+	QString dbPath = dir.absoluteFilePath("parts.db");
 
-    QFileInfo info(dbPath);
-    bool dbExists = (info.size() > 0) && !fullLoad;
+	QFileInfo info(dbPath);
+	bool dbExists = (info.size() > 0) && !fullLoad;
 
-    QString sha;
-    if (!dbExists) {
-        // fullLoad == true means we are creating the parts database
-        // so get the sha for last commit of the parts folder and store it in the database
-        // this sha will be used to determine whether the user's parts folder can be updated from the remote repo
-        sha = PartsChecker::getSha(dir.absolutePath());
-        if (sha.isEmpty()) {
-            DebugDialog::debug(QString("1.6 SHA empty"));
-            return false;
-        }
-        referenceModel->setSha(sha);
-    }
+	QString sha;
+	if (!dbExists) {
+		// fullLoad == true means we are creating the parts database
+		// so get the sha for last commit of the parts folder and store it in the database
+		// this sha will be used to determine whether the user's parts folder can be updated from the remote repo
+		sha = PartsChecker::getSha(dir.absolutePath());
+		if (sha.isEmpty()) {
+			DebugDialog::debug(QString("1.6 SHA empty"));
+			return false;
+		}
+		referenceModel->setSha(sha);
+	}
 
-    // loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
-    QString db = databaseName;
-    if (databaseName.isEmpty() && !dbExists) {
-        db = dbPath;
-    }
-    bool ok = referenceModel->loadAll(db, !dbExists, dbExists);
-    if (ok && dbExists) {
-        referenceModel->loadFromDB(dbPath);
-    }
-    return ok;
+	// loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
+	QString db = databaseName;
+	if (databaseName.isEmpty() && !dbExists) {
+		db = dbPath;
+	}
+	bool ok = referenceModel->loadAll(db, !dbExists, dbExists);
+	if (ok && dbExists) {
+		referenceModel->loadFromDB(dbPath);
+	}
+	return ok;
 }
 
 MainWindow * FApplication::openWindowForService(bool lockFiles, int initialTab) {
 	// our MainWindows use WA_DeleteOnClose so this has to be added to the heap (via new) rather than the stack (for local vars)
 	MainWindow * mainWindow = MainWindow::newMainWindow(m_referenceModel, "", false, lockFiles, initialTab);   // this is also slow
 	mainWindow->setReportMissingModules(false);
-    mainWindow->noBackup();
-    mainWindow->noSchematicConversion();
+	mainWindow->noBackup();
+	mainWindow->noSchematicConversion();
 
 	return mainWindow;
 }
@@ -832,67 +832,67 @@ int FApplication::serviceStartup() {
 	}
 
 	switch (m_serviceType) {
-        case PortService:
-            initService();
-            {
-                MainWindow * sketch = MainWindow::newMainWindow(m_referenceModel, "", true, true, -1);
-                if (sketch) {
-                    sketch->show();
-                    sketch->clearFileProgressDialog();
-                }
-            }
-            return 1;
+	case PortService:
+		initService();
+		{
+			MainWindow * sketch = MainWindow::newMainWindow(m_referenceModel, "", true, true, -1);
+			if (sketch) {
+				sketch->show();
+				sketch->clearFileProgressDialog();
+			}
+		}
+		return 1;
 
-		case GedaService:
-			runGedaService();
-			return 0;
+	case GedaService:
+		runGedaService();
+		return 0;
 
-		case DRCService:
-			runDRCService();
-			return 0;
+	case DRCService:
+		runDRCService();
+		return 0;
 
-		case DatabaseService:
-			runDatabaseService();
-			return 0;
+	case DatabaseService:
+		runDatabaseService();
+		return 0;
 
-		case KicadFootprintService:
-			runKicadFootprintService();
-			return 0;
+	case KicadFootprintService:
+		runKicadFootprintService();
+		return 0;
 
-		case KicadSchematicService:
-			runKicadSchematicService();
-			return 0;
+	case KicadSchematicService:
+		runKicadSchematicService();
+		return 0;
 
-		case GerberService:
-			runGerberService();
-			return 0;
+	case GerberService:
+		runGerberService();
+		return 0;
 
-		case SvgService:
-			runSvgService();
-			return 0;
+	case SvgService:
+		runSvgService();
+		return 0;
 
-		case PanelizerService:
-			runPanelizerService();
-			return 0;
+	case PanelizerService:
+		runPanelizerService();
+		return 0;
 
-		case InscriptionService:
-			runInscriptionService();
-			return 0;
+	case InscriptionService:
+		runInscriptionService();
+		return 0;
 
-		case ExampleService:
-			runExampleService();
-			return 0;
+	case ExampleService:
+		runExampleService();
+		return 0;
 
-		default:
-			DebugDialog::debug("unknown service");
-			return -1;
+	default:
+		DebugDialog::debug("unknown service");
+		return -1;
 	}
 }
 
 void FApplication::runGerberService()
 {
 	initService();
-    runGerberServiceAux();
+	runGerberServiceAux();
 }
 
 void FApplication::runGerberServiceAux()
@@ -909,8 +909,8 @@ void FApplication::runGerberServiceAux()
 
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
 		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
-            QFileInfo info(filepath);
-            GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, NULL, mainWindow->pcbView(), false);
+			QFileInfo info(filepath);
+			GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, NULL, mainWindow->pcbView(), false);
 		}
 
 		mainWindow->setCloseSilently(true);
@@ -920,15 +920,15 @@ void FApplication::runGerberServiceAux()
 
 void FApplication::initService()
 {
-    createUserDataStoreFolderStructures();
+	createUserDataStoreFolderStructures();
 	registerFonts();
 	loadReferenceModel("", false);
 }
 
 void FApplication::runSvgService()
 {
-    initService();
-    runSvgServiceAux();
+	initService();
+	runSvgServiceAux();
 }
 
 void FApplication::runSvgServiceAux()
@@ -940,20 +940,20 @@ void FApplication::runSvgServiceAux()
 	QStringList filenames = dir.entryList(filters, QDir::Files);
 	foreach (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
-        MainWindow * mainWindow = openWindowForService(false, -1);
+		MainWindow * mainWindow = openWindowForService(false, -1);
 		m_started = true;
 
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
 		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
-            QFileInfo info(filepath);
-            QList<ViewLayer::ViewID> ids;
-            ids << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
-            foreach (ViewLayer::ViewID id, ids) {
-                QString fn = QString("%1_%2.svg").arg(info.completeBaseName()).arg(ViewLayer::viewIDNaturalName(id));
-                QString svgPath = dir.absoluteFilePath(fn);
-                mainWindow->setCurrentView(id);
-                mainWindow->exportSvg(GraphicsUtils::StandardFritzingDPI, false, false, svgPath);
-            }
+			QFileInfo info(filepath);
+			QList<ViewLayer::ViewID> ids;
+			ids << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
+			foreach (ViewLayer::ViewID id, ids) {
+				QString fn = QString("%1_%2.svg").arg(info.completeBaseName()).arg(ViewLayer::viewIDNaturalName(id));
+				QString svgPath = dir.absoluteFilePath(fn);
+				mainWindow->setCurrentView(id);
+				mainWindow->exportSvg(GraphicsUtils::StandardFritzingDPI, false, false, svgPath);
+			}
 		}
 
 		mainWindow->setCloseSilently(true);
@@ -963,13 +963,13 @@ void FApplication::runSvgServiceAux()
 
 void FApplication::runDatabaseService()
 {
-    createUserDataStoreFolderStructures();
+	createUserDataStoreFolderStructures();
 
-    DebugDialog::setEnabled(true);
+	DebugDialog::setEnabled(true);
 
-    QString partsDB = m_outputFolder;  // m_outputFolder is actually a full path ending in ".db"
-    QFile::remove(partsDB);
-    loadReferenceModel(partsDB, true);
+	QString partsDB = m_outputFolder;  // m_outputFolder is actually a full path ending in ".db"
+	QFile::remove(partsDB);
+	loadReferenceModel(partsDB, true);
 }
 
 void FApplication::runGedaService() {
@@ -984,7 +984,7 @@ void FApplication::runGedaService() {
 			newfilepath.replace(".fp", ".svg");
 			GedaElement2Svg geda;
 			QString svg = geda.convert(filepath, false);
-            TextUtils::writeUtf8(newfilepath, svg);
+			TextUtils::writeUtf8(newfilepath, svg);
 		}
 	}
 	catch (const QString & msg) {
@@ -997,50 +997,50 @@ void FApplication::runGedaService() {
 
 
 void FApplication::runDRCService() {
-    m_started = true;
-    initService();
-    DebugDialog::setEnabled(true);
+	m_started = true;
+	initService();
+	DebugDialog::setEnabled(true);
 
-    try {
+	try {
 		QDir dir(m_outputFolder);
 		QStringList filters;
 		filters << "*.fzz";
 		QStringList filenames = dir.entryList(filters, QDir::Files);
 		foreach (QString filename, filenames) {
 			QString filepath = dir.absoluteFilePath(filename);
-	        MainWindow * mainWindow = openWindowForService(false, 3);
-            if (mainWindow == NULL) continue;
+			MainWindow * mainWindow = openWindowForService(false, 3);
+			if (mainWindow == NULL) continue;
 
-            mainWindow->setCloseSilently(true);
+			mainWindow->setCloseSilently(true);
 
-	        if (!mainWindow->loadWhich(filepath, false, false, false, "")) {
-		        DebugDialog::debug(QString("failed to load '%1'").arg(filepath));
-		        mainWindow->close();
-                delete mainWindow;
-                continue;
-	        }
+			if (!mainWindow->loadWhich(filepath, false, false, false, "")) {
+				DebugDialog::debug(QString("failed to load '%1'").arg(filepath));
+				mainWindow->close();
+				delete mainWindow;
+				continue;
+			}
 
-	        mainWindow->showPCBView();
+			mainWindow->showPCBView();
 
-            int moved = mainWindow->pcbView()->checkLoadedTraces();
-            if (moved > 0) {
-                QMessageBox::warning(NULL, QObject::tr("Fritzing"), QObject::tr("%1 wires moved from their saved position in %2.").arg(moved).arg(filepath));
-                DebugDialog::debug(QString("\ncheckloadedtraces %1\n").arg(filepath));
-            }
+			int moved = mainWindow->pcbView()->checkLoadedTraces();
+			if (moved > 0) {
+				QMessageBox::warning(NULL, QObject::tr("Fritzing"), QObject::tr("%1 wires moved from their saved position in %2.").arg(moved).arg(filepath));
+				DebugDialog::debug(QString("\ncheckloadedtraces %1\n").arg(filepath));
+			}
 
 
-            Panelizer::checkDonuts(mainWindow, true);
-            Panelizer::checkText(mainWindow, true);
+			Panelizer::checkDonuts(mainWindow, true);
+			Panelizer::checkText(mainWindow, true);
 
-            QList<ItemBase *> boards = mainWindow->pcbView()->findBoard();
-	        foreach (ItemBase * boardItem, boards) {
-                mainWindow->pcbView()->selectAllItems(false, false);
-                boardItem->setSelected(true);
-                mainWindow->newDesignRulesCheck(false);
-            }
+			QList<ItemBase *> boards = mainWindow->pcbView()->findBoard();
+			foreach (ItemBase * boardItem, boards) {
+				mainWindow->pcbView()->selectAllItems(false, false);
+				boardItem->setSelected(true);
+				mainWindow->newDesignRulesCheck(false);
+			}
 
-            mainWindow->close();
-            delete mainWindow;
+			mainWindow->close();
+			delete mainWindow;
 		}
 	}
 	catch (const QString & msg) {
@@ -1157,31 +1157,31 @@ int FApplication::startup()
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, LoadProgressStart);
 	ProcessEventBlocker::processEvents();
 
-	#ifdef Q_OS_WIN
-		// associate .fz file with fritzing app on windows (xp only--vista is different)
-		// TODO: don't change settings if they're already set?
-		// TODO: only do this at install time?
-		QSettings settings1("HKEY_CLASSES_ROOT\\Fritzing", QSettings::NativeFormat);
-		settings1.setValue(".", "Fritzing Application");
-		foreach (QString extension, fritzingExtensions()) {
-			QSettings settings2("HKEY_CLASSES_ROOT\\" + extension, QSettings::NativeFormat);
-			settings2.setValue(".", "Fritzing");
-		}
-		QSettings settings3("HKEY_CLASSES_ROOT\\Fritzing\\shell\\open\\command", QSettings::NativeFormat);
-		settings3.setValue(".", QString("\"%1\" \"%2\"")
-							.arg(QDir::toNativeSeparators(QApplication::applicationFilePath()))
-							.arg("%1") );
-	#endif
+#ifdef Q_OS_WIN
+	// associate .fz file with fritzing app on windows (xp only--vista is different)
+	// TODO: don't change settings if they're already set?
+	// TODO: only do this at install time?
+	QSettings settings1("HKEY_CLASSES_ROOT\\Fritzing", QSettings::NativeFormat);
+	settings1.setValue(".", "Fritzing Application");
+	foreach (QString extension, fritzingExtensions()) {
+		QSettings settings2("HKEY_CLASSES_ROOT\\" + extension, QSettings::NativeFormat);
+		settings2.setValue(".", "Fritzing");
+	}
+	QSettings settings3("HKEY_CLASSES_ROOT\\Fritzing\\shell\\open\\command", QSettings::NativeFormat);
+	settings3.setValue(".", QString("\"%1\" \"%2\"")
+	                   .arg(QDir::toNativeSeparators(QApplication::applicationFilePath()))
+	                   .arg("%1") );
+#endif
 
 	cleanFzzs();
 
-    createUserDataStoreFolderStructures();
+	createUserDataStoreFolderStructures();
 
-    ProcessEventBlocker::processEvents();
+	ProcessEventBlocker::processEvents();
 
-    loadReferenceModel("", false);
+	loadReferenceModel("", false);
 
-    ProcessEventBlocker::processEvents();
+	ProcessEventBlocker::processEvents();
 
 	QString prevVersion;
 	{
@@ -1191,7 +1191,7 @@ int FApplication::startup()
 		QString currVersion = Version::versionString();
 		if(prevVersion != currVersion) {
 			QVariant pid = settings.value("pid");
-            QVariant language = settings.value("language");
+			QVariant language = settings.value("language");
 			settings.clear();
 			if (!pid.isNull()) {
 				settings.setValue("pid", pid);
@@ -1204,9 +1204,9 @@ int FApplication::startup()
 
 	//bool fabEnabled = settings.value(ORDERFABENABLED, QVariant(false)).toBool();
 	//if (!fabEnabled) {
-		QNetworkAccessManager * manager = new QNetworkAccessManager(this);
-		connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotOrderFab(QNetworkReply *)));
-		manager->get(QNetworkRequest(QUrl(QString("http://fab.fritzing.org/launched%1").arg(Version::makeRequestParamsString(true)))));
+	QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotOrderFab(QNetworkReply *)));
+	manager->get(QNetworkRequest(QUrl(QString("http://fab.fritzing.org/launched%1").arg(Version::makeRequestParamsString(true)))));
 	//}
 
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, LoadProgressEnd);
@@ -1225,14 +1225,14 @@ int FApplication::startup()
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.99);
 	ProcessEventBlocker::processEvents();
 
-    splash.hide();
+	splash.hide();
 	m_splash = NULL;
 
-    m_updateDialog = new UpdateDialog();
-    m_updateDialog->setRepoPath(FolderUtils::getAppPartsSubFolderPath(""), m_referenceModel->sha());
-    connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
-    connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
-    checkForUpdates(false);
+	m_updateDialog = new UpdateDialog();
+	m_updateDialog->setRepoPath(FolderUtils::getAppPartsSubFolderPath(""), m_referenceModel->sha());
+	connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
+	connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
+	checkForUpdates(false);
 
 	return 0;
 }
@@ -1254,7 +1254,7 @@ void FApplication::finish()
 {
 	QString currVersion = Version::versionString();
 	QSettings settings;
-    settings.setValue("version", currVersion);
+	settings.setValue("version", currVersion);
 }
 
 void FApplication::loadNew(QString path) {
@@ -1276,9 +1276,9 @@ void FApplication::loadOne(MainWindow * mw, QString path, int loaded) {
 }
 
 void FApplication::preferences() {
-    // delay keeps OS 7 from crashing?
+	// delay keeps OS 7 from crashing?
 
-    QTimer::singleShot(30, this, SLOT(preferencesAfter()));
+	QTimer::singleShot(30, this, SLOT(preferencesAfter()));
 }
 
 void FApplication::preferencesAfter()
@@ -1286,7 +1286,7 @@ void FApplication::preferencesAfter()
 	QDir dir(m_translationPath);
 	QStringList nameFilters;
 	nameFilters << "*.qm";
-    QFileInfoList languages = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+	QFileInfoList languages = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
 	QSettings settings;
 	QString language = settings.value("language").toString();
 	if (language.isEmpty()) {
@@ -1305,12 +1305,12 @@ void FApplication::preferencesAfter()
 	int ix = 0;
 	foreach (SketchWidget * sketchWidget, mainWindow->sketchWidgets()) {
 		prefsDialog.initViewInfo(ix++,  sketchWidget->viewName(), sketchWidget->getShortName(),
-									sketchWidget->curvyWires());
+		                         sketchWidget->curvyWires());
 	}
 
-    QList<Platform *> platforms = mainWindow->programmingWidget()->getAvailablePlatforms();
+	QList<Platform *> platforms = mainWindow->programmingWidget()->getAvailablePlatforms();
 
-    prefsDialog.initLayout(languages, platforms);
+	prefsDialog.initLayout(languages, platforms);
 	if (QDialog::Accepted == prefsDialog.exec()) {
 		updatePrefs(prefsDialog);
 	}
@@ -1374,35 +1374,35 @@ void FApplication::initSplash(FSplashScreen & splash) {
 	// put this above the progress indicator
 
 	QString msg1 = QObject::tr("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
-                               "&#169; 2007-%1 Fritzing"
-							   "</font>")
-                            .arg(Version::year());
-    splash.showMessage(msg1, "fritzingText", Qt::AlignLeft | Qt::AlignTop);
+	                           "&#169; 2007-%1 Fritzing"
+	                           "</font>")
+	               .arg(Version::year());
+	splash.showMessage(msg1, "fritzingText", Qt::AlignLeft | Qt::AlignTop);
 
 	QString msg2 = QObject::tr("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
-							   "Version %1.%2.%3 (%4%5) %6"
-							   "</font>")
-						.arg(Version::majorVersion())
-						.arg(Version::minorVersion())
-						.arg(Version::minorSubVersion())
-						.arg(Version::modifier())
-						.arg(Version::shortDate())
-						.arg(m_buildType);
-    splash.showMessage(msg2, "versionText", Qt::AlignRight | Qt::AlignTop);
+	                           "Version %1.%2.%3 (%4%5) %6"
+	                           "</font>")
+	               .arg(Version::majorVersion())
+	               .arg(Version::minorVersion())
+	               .arg(Version::minorSubVersion())
+	               .arg(Version::modifier())
+	               .arg(Version::shortDate())
+	               .arg(m_buildType);
+	splash.showMessage(msg2, "versionText", Qt::AlignRight | Qt::AlignTop);
 
 #ifdef Q_OS_MAC
-            // remove the splash screen flag on OS-X as workaround for the reported bug
-            // https://bugreports.qt.io/browse/QTBUG-49576
-            splash.setWindowFlags(splash.windowFlags() & (~Qt::SplashScreen));
+	// remove the splash screen flag on OS-X as workaround for the reported bug
+	// https://bugreports.qt.io/browse/QTBUG-49576
+	splash.setWindowFlags(splash.windowFlags() & (~Qt::SplashScreen));
 #endif
 
-    splash.show();
+	splash.show();
 }
 
 struct Thing {
-        QString moduleID;
-        ViewLayer::ViewID viewID;
-        ViewLayer::ViewLayerID viewLayerID;
+	QString moduleID;
+	ViewLayer::ViewID viewID;
+	ViewLayer::ViewLayerID viewLayerID;
 };
 
 
@@ -1412,7 +1412,7 @@ void FApplication::checkForUpdates() {
 
 void FApplication::checkForUpdates(bool atUserRequest)
 {
-    enableCheckUpdates(false);
+	enableCheckUpdates(false);
 
 	VersionChecker * versionChecker = new VersionChecker();
 
@@ -1429,24 +1429,24 @@ void FApplication::checkForUpdates(bool atUserRequest)
 		}
 	}
 
-    QString atom = QString("http://fritzing.org/download/feed/atom/%1/%2")
-		.arg(PLATFORM_NAME)
-		.arg(Version::makeRequestParamsString(true));
-    DebugDialog::debug(atom);
-    versionChecker->setUrl(atom);
+	QString atom = QString("http://fritzing.org/download/feed/atom/%1/%2")
+	               .arg(PLATFORM_NAME)
+	               .arg(Version::makeRequestParamsString(true));
+	DebugDialog::debug(atom);
+	versionChecker->setUrl(atom);
 	m_updateDialog->setAtUserRequest(atUserRequest);
 	m_updateDialog->setVersionChecker(versionChecker);
 
 	if (atUserRequest) {
-        m_updateDialog->exec();
+		m_updateDialog->exec();
 	}
 }
 
 void FApplication::enableCheckUpdates(bool enabled)
 {
 	//DebugDialog::debug("before enable check updates");
-    foreach (QWidget *widget, QApplication::topLevelWidgets()) {
-        MainWindow *mainWindow = qobject_cast<MainWindow *>(widget);
+	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+		MainWindow *mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow) {
 			mainWindow->enableCheckUpdates(enabled);
 		}
@@ -1455,9 +1455,9 @@ void FApplication::enableCheckUpdates(bool enabled)
 }
 
 void FApplication::createUserDataStoreFolderStructures() {
-    FolderUtils::createUserDataStoreFolders();
-    FolderUtils::copyBin(BinManager::MyPartsBinLocation, BinManager::MyPartsBinTemplateLocation);
-    FolderUtils::copyBin(BinManager::SearchBinLocation, BinManager::SearchBinTemplateLocation);
+	FolderUtils::createUserDataStoreFolders();
+	FolderUtils::copyBin(BinManager::MyPartsBinLocation, BinManager::MyPartsBinTemplateLocation);
+	FolderUtils::copyBin(BinManager::SearchBinLocation, BinManager::SearchBinTemplateLocation);
 	PartFactory::initFolder();
 }
 
@@ -1519,67 +1519,67 @@ void FApplication::topLevelWidgetDestroyed(QObject * object) {
 }
 
 void FApplication::closeAllWindows2() {
-/*
-Ok, near as I can tell, here's what's going on.  When you quit fritzing, the function
-QApplication::closeAllWindows() is invoked.  This goes through the top-level window
-list in random order and calls close() on each window, until some window says "no".
-The QGraphicsProxyWidgets must contain top-level windows, and at least on the mac, their response to close()
-seems to be setVisible(false).  The random order explains why different icons
-disappear, or sometimes none at all.
+	/*
+	Ok, near as I can tell, here's what's going on.  When you quit fritzing, the function
+	QApplication::closeAllWindows() is invoked.  This goes through the top-level window
+	list in random order and calls close() on each window, until some window says "no".
+	The QGraphicsProxyWidgets must contain top-level windows, and at least on the mac, their response to close()
+	seems to be setVisible(false).  The random order explains why different icons
+	disappear, or sometimes none at all.
 
-So the hack for now is to call the windows in non-random order.
+	So the hack for now is to call the windows in non-random order.
 
-Eventually, maybe the SvgIconWidget class could be rewritten so that it's not using QGraphicsProxyWidget,
-which is really not intended for hundreds of widgets.
+	Eventually, maybe the SvgIconWidget class could be rewritten so that it's not using QGraphicsProxyWidget,
+	which is really not intended for hundreds of widgets.
 
-(SvgIconWidget has been rewritten)
-*/
+	(SvgIconWidget has been rewritten)
+	*/
 
 
 // this code modified from QApplication::closeAllWindows()
 
 
-    bool did_close = true;
-    QWidget *w;
-    while((w = QApplication::activeModalWidget()) && did_close) {
-        if(!w->isVisible())
-            break;
-        did_close = w->close();
-    }
+	bool did_close = true;
+	QWidget *w;
+	while((w = QApplication::activeModalWidget()) && did_close) {
+		if(!w->isVisible())
+			break;
+		did_close = w->close();
+	}
 	if (!did_close) return;
 
-    QWidgetList list = QApplication::topLevelWidgets();
-    for (int i = 0; did_close && i < list.size(); ++i) {
-        w = list.at(i);
-        FritzingWindow *fWindow = qobject_cast<FritzingWindow *>(w);
+	QWidgetList list = QApplication::topLevelWidgets();
+	for (int i = 0; did_close && i < list.size(); ++i) {
+		w = list.at(i);
+		FritzingWindow *fWindow = qobject_cast<FritzingWindow *>(w);
 		if (fWindow == NULL) continue;
 
-        if (w->isVisible() && w->windowType() != Qt::Desktop) {
-            did_close = w->close();
-            list = QApplication::topLevelWidgets();
-            i = -1;
-        }
-    }
+		if (w->isVisible() && w->windowType() != Qt::Desktop) {
+			did_close = w->close();
+			list = QApplication::topLevelWidgets();
+			i = -1;
+		}
+	}
 	if (!did_close) return;
 
-    list = QApplication::topLevelWidgets();
-    for (int i = 0; did_close && i < list.size(); ++i) {
-        w = list.at(i);
-        if (w->isVisible() && w->windowType() != Qt::Desktop) {
-            did_close = w->close();
-            list = QApplication::topLevelWidgets();
-            i = -1;
-        }
-    }
+	list = QApplication::topLevelWidgets();
+	for (int i = 0; did_close && i < list.size(); ++i) {
+		w = list.at(i);
+		if (w->isVisible() && w->windowType() != Qt::Desktop) {
+			did_close = w->close();
+			list = QApplication::topLevelWidgets();
+			i = -1;
+		}
+	}
 
 }
 
 bool FApplication::runAsService() {
-    if (m_serviceType == PortService) {
-        DebugDialog::setEnabled(true);
-        initServer();
-        //return false;
-    }
+	if (m_serviceType == PortService) {
+		DebugDialog::setEnabled(true);
+		initServer();
+		//return false;
+	}
 
 	return m_serviceType != NoService;
 }
@@ -1600,73 +1600,73 @@ void FApplication::externalProcessSlot(QString &name, QString &path, QStringList
 
 bool FApplication::notify(QObject *receiver, QEvent *e)
 {
-    try {
-        //qDebug() << QString("notify %1 %2").arg(receiver->metaObject()->className()).arg(e->type());
-        return QApplication::notify(receiver, e);
-    }
-	catch (char const *str) {
-        FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception %1 from %2 in event %3")
-			.arg(str).arg(receiver->objectName()).arg(e->type()));
+	try {
+		//qDebug() << QString("notify %1 %2").arg(receiver->metaObject()->className()).arg(e->type());
+		return QApplication::notify(receiver, e);
 	}
-    catch (std::exception& exp) {
-        // suggested in https://code.google.com/p/fritzing/issues/detail?id=2698
-        qDebug() << QString("notify %1 %2").arg(receiver->metaObject()->className()).arg(e->type());
-        FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2: %3").arg(receiver->objectName()).arg(e->type()).arg(exp.what()));
-    }
-    catch (...) {
-        FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2").arg(receiver->objectName()).arg(e->type()));
-    }
+	catch (char const *str) {
+		FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception %1 from %2 in event %3")
+		                      .arg(str).arg(receiver->objectName()).arg(e->type()));
+	}
+	catch (std::exception& exp) {
+		// suggested in https://code.google.com/p/fritzing/issues/detail?id=2698
+		qDebug() << QString("notify %1 %2").arg(receiver->metaObject()->className()).arg(e->type());
+		FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2: %3").arg(receiver->objectName()).arg(e->type()).arg(exp.what()));
+	}
+	catch (...) {
+		FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2").arg(receiver->objectName()).arg(e->type()));
+	}
 	closeAllWindows2();
 	QApplication::exit(-1);
 	abort();
-    return false;
+	return false;
 }
 
 void FApplication::loadSomething(const QString & prevVersion) {
-    // At this point we're trying to determine what sketches to load from one of the following sources:
-    // Only one of these sources will actually provide sketches to load and they're listed in order of priority:
+	// At this point we're trying to determine what sketches to load from one of the following sources:
+	// Only one of these sources will actually provide sketches to load and they're listed in order of priority:
 
-    //		We found sketch backups to recover
-    //		Files were double-clicked
-    //		The last opened sketch (obsolete)
-    //		A new blank sketch
+	//		We found sketch backups to recover
+	//		Files were double-clicked
+	//		The last opened sketch (obsolete)
+	//		A new blank sketch
 
 
-    Q_UNUSED(prevVersion);
+	Q_UNUSED(prevVersion);
 
 	initFilesToLoad();   // sets up m_filesToLoad from the command line on PC and Linux; mac uses a FileOpen event instead
 
 	initBackups();
 
 	DebugDialog::debug("checking for backups");
-    QList<MainWindow*> sketchesToLoad = recoverBackups();
+	QList<MainWindow*> sketchesToLoad = recoverBackups();
 
 
-    if (sketchesToLoad.isEmpty()) {
+	if (sketchesToLoad.isEmpty()) {
 		// Check for double-clicked files to load
 		DebugDialog::debug(QString("check files to load %1").arg(m_filesToLoad.count()));
 
-        foreach (QString filename, m_filesToLoad) {
-            DebugDialog::debug(QString("Loading non-service file %1").arg(filename));
-            MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, filename, true, true, -1);
-            mainWindow->loadWhich(filename, true, true, true, "");
-            if (filename.endsWith(FritzingSketchExtension) || filename.endsWith(FritzingBundleExtension)) {
-            }
-            else {
-                mainWindow->addDefaultParts();
-            }
-            sketchesToLoad << mainWindow;
-        }
+		foreach (QString filename, m_filesToLoad) {
+			DebugDialog::debug(QString("Loading non-service file %1").arg(filename));
+			MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, filename, true, true, -1);
+			mainWindow->loadWhich(filename, true, true, true, "");
+			if (filename.endsWith(FritzingSketchExtension) || filename.endsWith(FritzingBundleExtension)) {
+			}
+			else {
+				mainWindow->addDefaultParts();
+			}
+			sketchesToLoad << mainWindow;
+		}
 	}
 
-    ProcessEventBlocker::processEvents();
+	ProcessEventBlocker::processEvents();
 
-    // Find any previously open sketches to reload
-    if (sketchesToLoad.isEmpty()) {
-        // new logic here, we no longer open the most recent sketch, since it can be reached in one click from the welcome page
+	// Find any previously open sketches to reload
+	if (sketchesToLoad.isEmpty()) {
+		// new logic here, we no longer open the most recent sketch, since it can be reached in one click from the welcome page
 
-        // DebugDialog::debug(QString("load last open"));
-        //sketchesToLoad = loadLastOpenSketch();
+		// DebugDialog::debug(QString("load last open"));
+		//sketchesToLoad = loadLastOpenSketch();
 	}
 
 	MainWindow * newBlankSketch = NULL;
@@ -1680,19 +1680,19 @@ void FApplication::loadSomething(const QString & prevVersion) {
 		}
 	}
 
-    ProcessEventBlocker::processEvents();
+	ProcessEventBlocker::processEvents();
 	DebugDialog::debug(QString("finish up sketch loading"));
 
-    // Finish loading the sketches and show them to the user
+	// Finish loading the sketches and show them to the user
 	foreach (MainWindow* sketch, sketchesToLoad) {
 		sketch->show();
 		sketch->clearFileProgressDialog();
 	}
 
-    if (newBlankSketch) {
+	if (newBlankSketch) {
 		newBlankSketch->hideTempPartsBin();
-        // new empty sketch defaults to welcome view
-        newBlankSketch->showWelcomeView();
+		// new empty sketch defaults to welcome view
+		newBlankSketch->showWelcomeView();
 	}
 }
 
@@ -1707,12 +1707,12 @@ QList<MainWindow *> FApplication::loadLastOpenSketch() {
 		return sketches;
 	}
 
-    DebugDialog::debug(QString("Loading last open sketch %1").arg(lastSketchPath));
-    settings.remove("lastOpenSketch");				// clear the preference, in case the load crashes
-    MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, lastSketchPath, true, true, -1);
-    mainWindow->loadWhich(lastSketchPath, true, true, true, "");
-    sketches << mainWindow;
-    settings.setValue("lastOpenSketch", lastSketchPath);	// the load works, so restore the preference
+	DebugDialog::debug(QString("Loading last open sketch %1").arg(lastSketchPath));
+	settings.remove("lastOpenSketch");				// clear the preference, in case the load crashes
+	MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, lastSketchPath, true, true, -1);
+	mainWindow->loadWhich(lastSketchPath, true, true, true, "");
+	sketches << mainWindow;
+	settings.setValue("lastOpenSketch", lastSketchPath);	// the load works, so restore the preference
 	return sketches;
 }
 
@@ -1728,24 +1728,24 @@ QList<MainWindow *> FApplication::recoverBackups()
 	}
 
 	QList<MainWindow*> recoveredSketches;
-    if (backupList.size() == 0) return recoveredSketches;
+	if (backupList.size() == 0) return recoveredSketches;
 
-    RecoveryDialog recoveryDialog(backupList);
+	RecoveryDialog recoveryDialog(backupList);
 	int result = (QMessageBox::StandardButton)recoveryDialog.exec();
-    QList<QTreeWidgetItem*> fileItems = recoveryDialog.getFileList();
-    DebugDialog::debug(QString("Recovering %1 files from recoveryDialog").arg(fileItems.size()));
-    foreach (QTreeWidgetItem * item, fileItems) {
+	QList<QTreeWidgetItem*> fileItems = recoveryDialog.getFileList();
+	DebugDialog::debug(QString("Recovering %1 files from recoveryDialog").arg(fileItems.size()));
+	foreach (QTreeWidgetItem * item, fileItems) {
 		QString backupName = item->data(0, Qt::UserRole).value<QString>();
-        if (result == QDialog::Accepted && item->isSelected()) {
+		if (result == QDialog::Accepted && item->isSelected()) {
 			QString originalBaseName = item->text(0);
-            DebugDialog::debug(QString("Loading recovered sketch %1").arg(originalBaseName));
+			DebugDialog::debug(QString("Loading recovered sketch %1").arg(originalBaseName));
 
 			QString originalPath = item->data(1, Qt::UserRole).value<QString>();
 			QString fileExt;
 			QString bundledFileName = FolderUtils::getSaveFileName(NULL, tr("Please specify an .fzz file name to save to (cancel will delete the backup)"), originalPath, tr("Fritzing (*%1)").arg(FritzingBundleExtension), &fileExt);
 			if (!bundledFileName.isEmpty()) {
 				MainWindow *currentRecoveredSketch = MainWindow::newMainWindow(m_referenceModel, originalBaseName, true, true, -1);
-			currentRecoveredSketch->mainLoad(backupName, bundledFileName, true);
+				currentRecoveredSketch->mainLoad(backupName, bundledFileName, true);
 				currentRecoveredSketch->saveAsShareable(bundledFileName, true);
 				currentRecoveredSketch->setCurrentFile(bundledFileName, true, true);
 				recoveredSketches << currentRecoveredSketch;
@@ -1765,10 +1765,10 @@ QList<MainWindow *> FApplication::recoverBackups()
 
 
 			}
-        }
+		}
 
 		QFile::remove(backupName);
-    }
+	}
 
 	return recoveredSketches;
 }
@@ -1797,8 +1797,8 @@ void FApplication::gotOrderFab(QNetworkReply * networkReply) {
 		QSettings settings;
 		settings.setValue(ORDERFABENABLED, QVariant(true));
 	}
-    networkReply->manager()->deleteLater();
-    networkReply->deleteLater();
+	networkReply->manager()->deleteLater();
+	networkReply->deleteLater();
 }
 
 void FApplication::runPanelizerService()
@@ -1810,16 +1810,16 @@ void FApplication::runPanelizerService()
 void FApplication::runInscriptionService()
 {
 	m_started = true;
-    bool drc = false;
-    bool noMessages = false;
-    foreach (QString arg, m_arguments) {
-        if (arg.compare("-drc", Qt::CaseInsensitive) == 0) {
-            drc = true;
-        }
-        if (arg.compare("-nm", Qt::CaseInsensitive) == 0) {
-            noMessages = true;
-        }
-    }
+	bool drc = false;
+	bool noMessages = false;
+	foreach (QString arg, m_arguments) {
+		if (arg.compare("-drc", Qt::CaseInsensitive) == 0) {
+			drc = true;
+		}
+		if (arg.compare("-nm", Qt::CaseInsensitive) == 0) {
+			noMessages = true;
+		}
+	}
 	Panelizer::inscribe(this, m_panelFilename, drc, noMessages);
 }
 
@@ -1861,8 +1861,8 @@ void FApplication::runExampleService(QDir & dir) {
 		else {
 			QList<ItemBase *> items = mainWindow->selectAllObsolete(false);
 			if (items.count() > 0) {
-                mainWindow->swapObsolete(false, items);
-            }
+				mainWindow->swapObsolete(false, items);
+			}
 			mainWindow->saveAsAux(path);    //   path + "z"
 			mainWindow->setCloseSilently(true);
 			mainWindow->close();
@@ -1886,19 +1886,19 @@ void FApplication::cleanFzzs() {
 }
 
 void FApplication::initServer() {
-    FMessageBox::BlockMessages = true;
-    m_fServer = new FServer(this);
-    connect(m_fServer, SIGNAL(newConnection(qintptr)), this, SLOT(newConnection(qintptr)));
+	FMessageBox::BlockMessages = true;
+	m_fServer = new FServer(this);
+	connect(m_fServer, SIGNAL(newConnection(qintptr)), this, SLOT(newConnection(qintptr)));
 	DebugDialog::debug("Server active");
-    m_fServer->listen(QHostAddress::Any, m_portNumber);
+	m_fServer->listen(QHostAddress::Any, m_portNumber);
 }
 
 void FApplication::newConnection(qintptr socketDescription) {
-     FServerThread *thread = new FServerThread(socketDescription, this);
-     connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
-     connect(thread, SIGNAL(doCommand(const QString &, const QString &, QString &, int &)),
-			this, SLOT(doCommand(const QString &, const QString &, QString &, int &)), Qt::BlockingQueuedConnection);
-     thread->start();
+	FServerThread *thread = new FServerThread(socketDescription, this);
+	connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+	connect(thread, SIGNAL(doCommand(const QString &, const QString &, QString &, int &)),
+	        this, SLOT(doCommand(const QString &, const QString &, QString &, int &)), Qt::BlockingQueuedConnection);
+	thread->start();
 }
 
 
@@ -1906,7 +1906,7 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 	status = 200;
 	result = "";
 
-    QDir dir(m_portRootFolder);
+	QDir dir(m_portRootFolder);
 
 	QString subfolder = params;
 	if (command.endsWith("tcp")) {
@@ -1914,8 +1914,8 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 		dir.mkdir(subfolder);
 	}
 
-    dir.cd(subfolder);
-    m_outputFolder = dir.absolutePath();
+	dir.cd(subfolder);
+	m_outputFolder = dir.absolutePath();
 
 	if (command.endsWith("tcp")) {
 		QEventLoop loop;
@@ -1972,29 +1972,29 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 	}
 
 	if (command.startsWith("svg")) {
-        runSvgServiceAux();
-	    QStringList nameFilters;
-	    nameFilters << ("*.svg");
-	    QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-        if (fileList.count() > 0) {
-            QFile file(fileList.at(0).absoluteFilePath());
-            if (file.open(QFile::ReadOnly)) {
-                result = file.readAll();
-            }
-        }
-    }
-    else if (command.startsWith("gerber")) {
-        runGerberServiceAux();
-	    QStringList nameFilters;
-	    nameFilters << ("*.txt");
-	    QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-        if (fileList.count() > 0) {
-            QFile file(fileList.at(0).absoluteFilePath());
-            if (file.open(QFile::ReadOnly)) {
-                result = file.readAll();
-            }
-        }
-    }
+		runSvgServiceAux();
+		QStringList nameFilters;
+		nameFilters << ("*.svg");
+		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+		if (fileList.count() > 0) {
+			QFile file(fileList.at(0).absoluteFilePath());
+			if (file.open(QFile::ReadOnly)) {
+				result = file.readAll();
+			}
+		}
+	}
+	else if (command.startsWith("gerber")) {
+		runGerberServiceAux();
+		QStringList nameFilters;
+		nameFilters << ("*.txt");
+		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+		if (fileList.count() > 0) {
+			QFile file(fileList.at(0).absoluteFilePath());
+			if (file.open(QFile::ReadOnly)) {
+				result = file.readAll();
+			}
+		}
+	}
 
 
 	if (command.endsWith("tcp")) {
@@ -2009,72 +2009,72 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 			status = 500;
 			result = "local zip failure";
 		}
-    }
+	}
 }
 
 void FApplication::regeneratePartsDatabase() {
-    QMessageBox messageBox(NULL);
-    messageBox.setWindowTitle(tr("Regenerate parts database?"));
-    messageBox.setText(tr("Regenerating the parts database will take some minutes and you will have to restart Fritzing\n\n") +
-                        tr("Would you like to regenerate the parts database?\n")
-                        );
-    messageBox.setInformativeText("This option is a last resort in case Fritzing's is more-or-less unable to display parts. "
-                                  "You may be better off downloading the latest Fritzing release.");
-    messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    messageBox.setDefaultButton(QMessageBox::Yes);
-    messageBox.setIcon(QMessageBox::Question);
-    messageBox.setWindowModality(Qt::WindowModal);
-    messageBox.setButtonText(QMessageBox::Yes, tr("Regenerate"));
-    messageBox.setButtonText(QMessageBox::No, tr("Cancel"));
-    if ((QMessageBox::StandardButton) messageBox.exec() != QMessageBox::Yes) {
-        return;
-    }
+	QMessageBox messageBox(NULL);
+	messageBox.setWindowTitle(tr("Regenerate parts database?"));
+	messageBox.setText(tr("Regenerating the parts database will take some minutes and you will have to restart Fritzing\n\n") +
+	                   tr("Would you like to regenerate the parts database?\n")
+	                  );
+	messageBox.setInformativeText("This option is a last resort in case Fritzing's is more-or-less unable to display parts. "
+	                              "You may be better off downloading the latest Fritzing release.");
+	messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+	messageBox.setDefaultButton(QMessageBox::Yes);
+	messageBox.setIcon(QMessageBox::Question);
+	messageBox.setWindowModality(Qt::WindowModal);
+	messageBox.setButtonText(QMessageBox::Yes, tr("Regenerate"));
+	messageBox.setButtonText(QMessageBox::No, tr("Cancel"));
+	if ((QMessageBox::StandardButton) messageBox.exec() != QMessageBox::Yes) {
+		return;
+	}
 
-    FileProgressDialog * fileProgressDialog = new FileProgressDialog(tr("Regenerating parts database..."), 0, NULL);
-    // these don't seem very accurate (i.e. when progress is at 100%, there is still a lot of work pending)
-    // so we are leaving progress indeterminate at present
-    //connect(referenceModel, SIGNAL(partsToLoad(int)), fileProgressDialog, SLOT(setMaximum(int)));
-    //connect(referenceModel, SIGNAL(loadedPart(int,int)), fileProgressDialog, SLOT(setValue(int)));
+	FileProgressDialog * fileProgressDialog = new FileProgressDialog(tr("Regenerating parts database..."), 0, NULL);
+	// these don't seem very accurate (i.e. when progress is at 100%, there is still a lot of work pending)
+	// so we are leaving progress indeterminate at present
+	//connect(referenceModel, SIGNAL(partsToLoad(int)), fileProgressDialog, SLOT(setMaximum(int)));
+	//connect(referenceModel, SIGNAL(loadedPart(int,int)), fileProgressDialog, SLOT(setValue(int)));
 
-    regeneratePartsDatabaseAux(fileProgressDialog);
+	regeneratePartsDatabaseAux(fileProgressDialog);
 }
 
 void FApplication::regeneratePartsDatabaseAux(QDialog * progressDialog) {
-    ReferenceModel * referenceModel = new CurrentReferenceModel();
-    QDir dir = FolderUtils::getAppPartsSubFolder("");
-    QString dbPath = dir.absoluteFilePath("parts.db");
-    RegenerateDatabaseThread *thread = new RegenerateDatabaseThread(dbPath, progressDialog, referenceModel);
-    connect(thread, SIGNAL(finished()), this, SLOT(regenerateDatabaseFinished()));
-    FMessageBox::BlockMessages = true;
-    thread->start();
+	ReferenceModel * referenceModel = new CurrentReferenceModel();
+	QDir dir = FolderUtils::getAppPartsSubFolder("");
+	QString dbPath = dir.absoluteFilePath("parts.db");
+	RegenerateDatabaseThread *thread = new RegenerateDatabaseThread(dbPath, progressDialog, referenceModel);
+	connect(thread, SIGNAL(finished()), this, SLOT(regenerateDatabaseFinished()));
+	FMessageBox::BlockMessages = true;
+	thread->start();
 }
 
 void FApplication::regenerateDatabaseFinished() {
-   RegenerateDatabaseThread * thread = qobject_cast<RegenerateDatabaseThread *>(sender());
-   if (thread == NULL) return;
+	RegenerateDatabaseThread * thread = qobject_cast<RegenerateDatabaseThread *>(sender());
+	if (thread == NULL) return;
 
-   QDialog * progressDialog = thread->progressDialog();
-   if (progressDialog == m_updateDialog) {
-       m_updateDialog->installFinished(thread->error());
-   }
-   else {
-       if (thread->error().isEmpty()) {
-            QTimer::singleShot(50, Qt::PreciseTimer, this, SLOT(quit()));
-       }
-       else {
-           thread->referenceModel()->deleteLater();
-           QMessageBox::warning(NULL, QObject::tr("Regenerate database failed"), thread->error());
-       }
+	QDialog * progressDialog = thread->progressDialog();
+	if (progressDialog == m_updateDialog) {
+		m_updateDialog->installFinished(thread->error());
+	}
+	else {
+		if (thread->error().isEmpty()) {
+			QTimer::singleShot(50, Qt::PreciseTimer, this, SLOT(quit()));
+		}
+		else {
+			thread->referenceModel()->deleteLater();
+			QMessageBox::warning(NULL, QObject::tr("Regenerate database failed"), thread->error());
+		}
 
-       if (progressDialog) {
-           thread->progressDialog()->close();
-           thread->progressDialog()->deleteLater();
-       }
-   }
+		if (progressDialog) {
+			thread->progressDialog()->close();
+			thread->progressDialog()->deleteLater();
+		}
+	}
 
-   thread->deleteLater();
+	thread->deleteLater();
 }
 
 void FApplication::installNewParts() {
-    regeneratePartsDatabaseAux(m_updateDialog);
+	regeneratePartsDatabaseAux(m_updateDialog);
 }

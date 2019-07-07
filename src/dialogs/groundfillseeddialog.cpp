@@ -48,17 +48,17 @@ GroundFillSeedDialog::GroundFillSeedDialog(PCBSketchWidget * sketchWidget, QList
 	}
 
 	QLabel * label = new QLabel(tr("The difference between a 'ground fill' and plain 'copper fill' is that in a ground fill, "
-								 "the flooded area includes traces and connectors that are connected to 'ground' connectors. "
-								 "Ground connectors are usually labeled 'GND' or 'ground' but sometimes this is not the case. "
-								 "It also may be that there are multiple nets with a ground connector, "
-								 "and you might only want one of the nets to be filled.\n\n"
+	                               "the flooded area includes traces and connectors that are connected to 'ground' connectors. "
+	                               "Ground connectors are usually labeled 'GND' or 'ground' but sometimes this is not the case. "
+	                               "It also may be that there are multiple nets with a ground connector, "
+	                               "and you might only want one of the nets to be filled.\n\n"
 
-								 "This dialog collects only connectors labeled 'GND' or 'ground', as well as connectors already chosen as seeds.\n\n"
+	                               "This dialog collects only connectors labeled 'GND' or 'ground', as well as connectors already chosen as seeds.\n\n"
 
-								 "Click an item to highlight its connections in the sketch.\n\n"
+	                               "Click an item to highlight its connections in the sketch.\n\n"
 
-								 "It is also possible to choose a connector as a ground fill seed by right-clicking a connector and "
-								 "choosing the 'Set Ground Fill Seed' context menu option."));
+	                               "It is also possible to choose a connector as a ground fill seed by right-clicking a connector and "
+	                               "choosing the 'Set Ground Fill Seed' context menu option."));
 	label->setWordWrap(true);
 	vLayout->addWidget(label);
 
@@ -92,8 +92,8 @@ GroundFillSeedDialog::GroundFillSeedDialog(PCBSketchWidget * sketchWidget, QList
 	m_doFillButton->setDefault(false);
 	connect(m_doFillButton, SIGNAL(clicked(bool)), this, SLOT(doFill(bool)));
 
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	vLayout->addWidget(buttonBox);
 	this->setLayout(vLayout);
@@ -135,7 +135,7 @@ void GroundFillSeedDialog::showEqualPotential(ConnectorItem * connectorItem, boo
 		QList<ConnectorItem *> connectorItems;
 		connectorItems.append(connectorItem);
 		ConnectorItem::collectEqualPotential(connectorItems, true, ViewGeometry::NoFlag);
-	    QList<ConnectorItem *> visited;
+		QList<ConnectorItem *> visited;
 		foreach (ConnectorItem * ci, connectorItems) {
 			ci->showEqualPotential(show, visited);
 		}

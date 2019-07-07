@@ -29,72 +29,72 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "connectorsinfowidget.h"
 
 class PartsEditorViewsWidget : public QFrame {
-Q_OBJECT
-	public:
-		PartsEditorViewsWidget(SketchModel *sketchModel, class WaitPushUndoStack *undoStack, ConnectorsInfoWidget* info, QWidget *parent, class ItemBase * fromItem);
-		~PartsEditorViewsWidget();
+	Q_OBJECT
+public:
+	PartsEditorViewsWidget(SketchModel *sketchModel, class WaitPushUndoStack *undoStack, ConnectorsInfoWidget* info, QWidget *parent, class ItemBase * fromItem);
+	~PartsEditorViewsWidget();
 
-		void copySvgFilesToDestiny(const QString &partFileName);
-		void loadViewsImagesFromModel(PaletteModel *paletteModel, ModelPart *modelPart);
-		const QDir& tempDir();
-		void aboutToSave();
-		void updatePinsInfo(QList< QPointer<ConnectorShared> > connsShared);
-		QCheckBox *showTerminalPointsCheckBox();
+	void copySvgFilesToDestiny(const QString &partFileName);
+	void loadViewsImagesFromModel(PaletteModel *paletteModel, ModelPart *modelPart);
+	const QDir& tempDir();
+	void aboutToSave();
+	void updatePinsInfo(QList< QPointer<ConnectorShared> > connsShared);
+	QCheckBox *showTerminalPointsCheckBox();
 
-		bool imagesLoadedInAllViews();
-		void setViewItems(class ItemBase *, class ItemBase *, class ItemBase *);
+	bool imagesLoadedInAllViews();
+	void setViewItems(class ItemBase *, class ItemBase *, class ItemBase *);
 
-		PartsEditorView *breadboardView();
-		PartsEditorView *schematicView();
-		PartsEditorView *pcbView();
+	PartsEditorView *breadboardView();
+	PartsEditorView *schematicView();
+	PartsEditorView *pcbView();
 
-		void connectTerminalRemoval(const ConnectorsInfoWidget* connsInfo);
-		bool connectorsPosOrSizeChanged();
+	void connectTerminalRemoval(const ConnectorsInfoWidget* connsInfo);
+	bool connectorsPosOrSizeChanged();
 
-	public slots:
-		void repaint();
-		void drawConnector(Connector*);
-		void drawConnector(ViewLayer::ViewIdentifier, Connector*);
-		void removeConnectorFrom(const QString&,ViewLayer::ViewIdentifier);
-		void showHideTerminalPoints(int checkState);
-		void informConnectorSelection(const QString &connId);
-		void setMismatching(ViewLayer::ViewIdentifier viewId, const QString &id, bool mismatching);
+public slots:
+	void repaint();
+	void drawConnector(Connector*);
+	void drawConnector(ViewLayer::ViewIdentifier, Connector*);
+	void removeConnectorFrom(const QString&,ViewLayer::ViewIdentifier);
+	void showHideTerminalPoints(int checkState);
+	void informConnectorSelection(const QString &connId);
+	void setMismatching(ViewLayer::ViewIdentifier viewId, const QString &id, bool mismatching);
 
-	signals:
-		void connectorsFoundSignal(QList< QPointer<Connector> >);
-		void connectorSelectedInView(const QString& connId);
+signals:
+	void connectorsFoundSignal(QList< QPointer<Connector> >);
+	void connectorSelectedInView(const QString& connId);
 
-	protected:
-		PartsEditorView * createViewImageWidget(
-			SketchModel* sketchModel, class WaitPushUndoStack *undoStack,
-			ViewLayer::ViewIdentifier viewId, QString iconFileName, QString startText,
-			ConnectorsInfoWidget* info, ViewLayer::ViewLayerID viewLayerId, class ItemBase * fromItem
-		);
-		void init();
+protected:
+	PartsEditorView * createViewImageWidget(
+	    SketchModel* sketchModel, class WaitPushUndoStack *undoStack,
+	    ViewLayer::ViewIdentifier viewId, QString iconFileName, QString startText,
+	    ConnectorsInfoWidget* info, ViewLayer::ViewLayerID viewLayerId, class ItemBase * fromItem
+	);
+	void init();
 
-		QWidget *addZoomControlsAndBrowseButton(PartsEditorView *view);
+	QWidget *addZoomControlsAndBrowseButton(PartsEditorView *view);
 
-		bool showingTerminalPoints();
-		bool checkStateToBool(int checkState);
+	bool showingTerminalPoints();
+	bool checkStateToBool(int checkState);
 
-		void connectPair(PartsEditorView *v1, PartsEditorView *v2);
-		void connectToThis(PartsEditorView *v);
+	void connectPair(PartsEditorView *v1, PartsEditorView *v2);
+	void connectToThis(PartsEditorView *v);
 
-		QPointer<PartsEditorView> m_breadView;
-		QPointer<PartsEditorView> m_schemView;
-		QPointer<PartsEditorView> m_pcbView;
-		QHash<ViewLayer::ViewIdentifier,PartsEditorView*> m_views;
-		QSplitter *m_viewsContainter;
+	QPointer<PartsEditorView> m_breadView;
+	QPointer<PartsEditorView> m_schemView;
+	QPointer<PartsEditorView> m_pcbView;
+	QHash<ViewLayer::ViewIdentifier,PartsEditorView*> m_views;
+	QSplitter *m_viewsContainter;
 
-		QPointer<QCheckBox> m_showTerminalPointsCheckBox;
-		QPointer<QLabel> m_guidelines;
+	QPointer<QCheckBox> m_showTerminalPointsCheckBox;
+	QPointer<QLabel> m_guidelines;
 
-		bool m_connsPosChanged;
+	bool m_connsPosChanged;
 
-	protected:
-		static QString EmptyBreadViewText;
-		static QString EmptySchemViewText;
-		static QString EmptyPcbViewText;
+protected:
+	static QString EmptyBreadViewText;
+	static QString EmptySchemViewText;
+	static QString EmptyPcbViewText;
 };
 
 #endif /* PARTSEDITORVIEWSWIDGET_H_ */

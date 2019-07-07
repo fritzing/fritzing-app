@@ -33,16 +33,16 @@ static QStringList p_fritzingBundleExtensions;
 static inline void initializeExtensionList() {
 	if (p_fritzingExtensions.count() == 0) {
 		p_fritzingExtensions
-			<< FritzingSketchExtension << FritzingBinExtension
-			<< FritzingPartExtension
-			<< FritzingBundleExtension << FritzingBundledPartExtension
-			<< FritzingBundledBinExtension;
-                p_fritzingBundleExtensions
-			<< FritzingBundleExtension
-                        << FritzingBundledPartExtension
-			<< FritzingBundledBinExtension;
+		        << FritzingSketchExtension << FritzingBinExtension
+		        << FritzingPartExtension
+		        << FritzingBundleExtension << FritzingBundledPartExtension
+		        << FritzingBundledBinExtension;
+		p_fritzingBundleExtensions
+		        << FritzingBundleExtension
+		        << FritzingBundledPartExtension
+		        << FritzingBundledBinExtension;
 	}
-        return;
+	return;
 }
 
 const QStringList & fritzingExtensions() {

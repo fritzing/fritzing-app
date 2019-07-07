@@ -43,7 +43,7 @@ public:
 	void setProp(const QString & prop, const QString & value);
 	void setChipLabel(QString label, bool force);
 	QString chipLabel();
-    const QString & title();
+	const QString & title();
 	bool hasCustomSVG();
 	PluralType isPlural();
 	void addedToScene(bool temporary);
@@ -74,8 +74,8 @@ protected:
 	virtual QString retrieveSchematicSvg(QString & svg);
 
 protected:
-    static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid);
-    static QString genxFZP(const QString & moduleid, const QString & templateName, int minPins, int maxPins, int step);
+	static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid);
+	static QString genxFZP(const QString & moduleid, const QString & templateName, int minPins, int maxPins, int step);
 
 protected:
 	static int NoExcusePins;

@@ -42,10 +42,10 @@ Via::Via( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & 
 	QString ringThickness = settings.value(AutorouteViaRingThickness, "").toString();
 	QString holeSize = settings.value(AutorouteViaHoleSize, "").toString();
 
-    bool holeSizeWasEmpty = holeSize.isEmpty();
-    bool ringThicknessWasEmpty = holeSize.isEmpty();
+	bool holeSizeWasEmpty = holeSize.isEmpty();
+	bool ringThicknessWasEmpty = holeSize.isEmpty();
 
-    PaletteItem::setUpHoleSizes("via", TheHoleThing);
+	PaletteItem::setUpHoleSizes("via", TheHoleThing);
 
 	if (ringThicknessWasEmpty) {
 		settings.setValue(AutorouteViaRingThickness, TheHoleThing.ringThickness);
@@ -66,8 +66,8 @@ Via::~Via() {
 
 void Via::initHoleSettings(HoleSettings & holeSettings)
 {
-    // called only by AutorouterSettingsDialog
-    PaletteItem::initHoleSettings(holeSettings, &TheHoleThing);
+	// called only by AutorouterSettingsDialog
+	PaletteItem::initHoleSettings(holeSettings, &TheHoleThing);
 }
 
 void Via::setBoth(const QString & holeDiameter, const QString & ringThickness) {
@@ -76,11 +76,11 @@ void Via::setBoth(const QString & holeDiameter, const QString & ringThickness) {
 	ItemBase * otherLayer = setBothSvg(holeDiameter, ringThickness);
 	resetConnectors(otherLayer, otherLayer->fsvgRenderer());
 
-    double hd = TextUtils::convertToInches(holeDiameter) * GraphicsUtils::SVGDPI;
-    double rt = TextUtils::convertToInches(ringThickness) * GraphicsUtils::SVGDPI;
-    ConnectorItem * ci = connectorItem();
-    ci->setRadius((hd / 2) + (rt / 2), rt);
-    ci->getCrossLayerConnectorItem()->setRadius((hd / 2) + (rt / 2), rt);
+	double hd = TextUtils::convertToInches(holeDiameter) * GraphicsUtils::SVGDPI;
+	double rt = TextUtils::convertToInches(ringThickness) * GraphicsUtils::SVGDPI;
+	ConnectorItem * ci = connectorItem();
+	ci->setRadius((hd / 2) + (rt / 2), rt);
+	ci->getCrossLayerConnectorItem()->setRadius((hd / 2) + (rt / 2), rt);
 }
 
 

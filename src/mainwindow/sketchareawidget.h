@@ -29,10 +29,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMainWindow>
 
 class SketchAreaWidget : public QFrame {
-    Q_OBJECT
+	Q_OBJECT
 public:
 	SketchAreaWidget(QWidget *contentView, QMainWindow *parent);
-    SketchAreaWidget(QWidget *contentView, QMainWindow *parent, bool hasToolBar, bool hasStatusBar);
+	SketchAreaWidget(QWidget *contentView, QMainWindow *parent, bool hasToolBar, bool hasStatusBar);
 	virtual ~SketchAreaWidget();
 
 	QWidget* contentView();
@@ -45,7 +45,7 @@ public:
 	QFrame * toolbar();
 
 protected:
-    void init(QWidget *contentView, QMainWindow *parent, bool hasToolBar, bool hasStatusBar);
+	void init(QWidget *contentView, QMainWindow *parent, bool hasToolBar, bool hasStatusBar);
 	void createLayout();
 
 public:

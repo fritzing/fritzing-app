@@ -27,8 +27,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class PartConnectorsWidget : public QFrame {
 	Q_OBJECT
-	public:
-		PartConnectorsWidget(QWidget* info, QWidget *parent=0);
+public:
+	PartConnectorsWidget(QWidget* info, QWidget *parent=0);
 };
 
 #endif /* PARTCONNECTORSWIDGET_H_ */

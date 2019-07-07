@@ -35,16 +35,16 @@ private:
 	~FirstTimeHelpDialog();
 
 protected:
-    static void init();
+	static void init();
 
 public:
-    static void setViewID(ViewLayer::ViewID);
-    static void showFirstTimeHelp();
-    static void hideFirstTimeHelp();
-    static void cleanup();
+	static void setViewID(ViewLayer::ViewID);
+	static void showFirstTimeHelp();
+	static void hideFirstTimeHelp();
+	static void cleanup();
 
 protected:
-    QLabel * m_label;
+	QLabel * m_label;
 };
 
 #endif

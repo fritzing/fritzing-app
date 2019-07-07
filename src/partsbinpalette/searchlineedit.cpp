@@ -29,7 +29,7 @@ static QPixmap * SearchFieldPixmap;
 
 SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent)
 {
-    SearchFieldPixmap = NULL;
+	SearchFieldPixmap = NULL;
 	setDecoy(true);
 }
 
@@ -46,23 +46,23 @@ void SearchLineEdit::cleanup() {
 }
 
 void SearchLineEdit::mousePressEvent(QMouseEvent * event) {
-    QLineEdit::mousePressEvent(event);
-    emit clicked();
+	QLineEdit::mousePressEvent(event);
+	emit clicked();
 }
 
 void SearchLineEdit::paintEvent(QPaintEvent * event) {
 	QLineEdit::paintEvent(event);
-    if (SearchFieldPixmap == NULL) {
-        SearchFieldPixmap = new QPixmap(":/resources/images/icons/searchField.png");
-    }
-    if (SearchFieldPixmap == NULL) return;
-    if (SearchFieldPixmap->isNull()) return;
+	if (SearchFieldPixmap == NULL) {
+		SearchFieldPixmap = new QPixmap(":/resources/images/icons/searchField.png");
+	}
+	if (SearchFieldPixmap == NULL) return;
+	if (SearchFieldPixmap->isNull()) return;
 
-    QPainter painter(this);
-    QSize sz = size();
-    int x = sz.width() - SearchFieldPixmap->width() - 2;
-    int y = (sz.height() - SearchFieldPixmap->height()) / 2;
-    painter.drawPixmap(x, y, SearchFieldPixmap->width(), SearchFieldPixmap->height(), *SearchFieldPixmap);
+	QPainter painter(this);
+	QSize sz = size();
+	int x = sz.width() - SearchFieldPixmap->width() - 2;
+	int y = (sz.height() - SearchFieldPixmap->height()) / 2;
+	painter.drawPixmap(x, y, SearchFieldPixmap->width(), SearchFieldPixmap->height(), *SearchFieldPixmap);
 
 }
 
@@ -82,8 +82,8 @@ void SearchLineEdit::leaveEvent(QEvent * event) {
 
 void SearchLineEdit::setColors(const QColor & base, const QColor & text) {
 	setStyleSheet(QString("background: rgb(%1,%2,%3); color: rgb(%4,%5,%6);")
-		.arg(base.red()).arg(base.green()).arg(base.blue())
-		.arg(text.red()).arg(text.green()).arg(text.blue()) );
+	              .arg(base.red()).arg(base.green()).arg(base.blue())
+	              .arg(text.red()).arg(text.green()).arg(text.blue()) );
 }
 
 void SearchLineEdit::setDecoy(bool d) {

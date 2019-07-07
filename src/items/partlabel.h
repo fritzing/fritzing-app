@@ -59,11 +59,11 @@ public:
 	void rotateFlipLabel(double degrees, Qt::Orientations orientation);
 	QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value);
 	void ownerSelected(bool selected);
-    void displayTexts();
-    void displayTextsIf();
+	void displayTexts();
+	void displayTextsIf();
 	QString makeSvg(bool blackOnly, double dpi, double printerScale, bool includeTransform);
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    void setFontPointSize(double pointSize);
+	void setFontPointSize(double pointSize);
 
 protected:
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
@@ -98,7 +98,7 @@ protected:
 	QString m_text;
 	QString m_displayText;
 	QStringList m_displayKeys;
-    QAction * m_tinyAct;
+	QAction * m_tinyAct;
 	QAction * m_smallAct;
 	QAction * m_mediumAct;
 	QAction * m_largeAct;

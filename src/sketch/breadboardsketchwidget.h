@@ -30,7 +30,7 @@ class BreadboardSketchWidget : public SketchWidget
 	Q_OBJECT
 
 public:
-    BreadboardSketchWidget(ViewLayer::ViewID, QWidget *parent=0);
+	BreadboardSketchWidget(ViewLayer::ViewID, QWidget *parent=0);
 
 	void addViewLayers();
 	void initWire(Wire *, int penWidth);
@@ -40,8 +40,8 @@ public:
 	void showEvent(QShowEvent * event);
 	double getWireStrokeWidth(Wire *, double wireWidth);
 	void getBendpointWidths(class Wire *, double w, double & w1, double & w2, bool & negativeOffsetRect);
-    void colorWiresByLength(bool);
-    bool coloringWiresByLength();
+	void colorWiresByLength(bool);
+	bool coloringWiresByLength();
 
 protected:
 	void setWireVisible(Wire * wire);
@@ -58,7 +58,7 @@ protected:
 	double getTraceWidth();
 	const QString & traceColor(ViewLayer::ViewLayerPlacement);
 
-    bool m_colorWiresByLength;
+	bool m_colorWiresByLength;
 };
 
 #endif

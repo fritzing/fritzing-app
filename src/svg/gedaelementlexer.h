@@ -29,24 +29,24 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class GedaElementLexer
 {
 public:
-    GedaElementLexer(const QString &source);
-    ~GedaElementLexer();
-    int lex();
+	GedaElementLexer(const QString &source);
+	~GedaElementLexer();
+	int lex();
 	QString currentCommand();
 	double currentNumber();
 	QString currentString();
 	const QStringList & comments();
 
 protected:
-    QChar next();
+	QChar next();
 	QString clean(const QString & source);
 
 protected:
-    QString m_source;
-    const QChar *m_chars;
-    int m_size;
-    int m_pos;
-    QChar m_current;
+	QString m_source;
+	const QChar *m_chars;
+	int m_size;
+	int m_pos;
+	QChar m_current;
 	QString m_currentCommand;
 	long m_currentNumber;
 	long m_currentHexString;

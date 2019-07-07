@@ -28,19 +28,19 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "abstracteditablelabelwidget.h"
 
 class EditableLineWidget : public AbstractEditableLabelWidget {
-Q_OBJECT
-	public:
-		EditableLineWidget(QString text, WaitPushUndoStack *undoStack, QWidget *parent=0, QString title="", bool edited=false, bool noSpacing=false);
-		void setValidator(const QValidator * v );
-		void setText(const QString &text);
+	Q_OBJECT
+public:
+	EditableLineWidget(QString text, WaitPushUndoStack *undoStack, QWidget *parent=0, QString title="", bool edited=false, bool noSpacing=false);
+	void setValidator(const QValidator * v );
+	void setText(const QString &text);
 
-	protected:
-		QString editionText();
-		void setEditionText(QString text);
-		QWidget* myEditionWidget();
-		void setEmptyTextToEdit();
+protected:
+	QString editionText();
+	void setEditionText(QString text);
+	QWidget* myEditionWidget();
+	void setEmptyTextToEdit();
 
-		QLineEdit *m_lineEdit;
+	QLineEdit *m_lineEdit;
 };
 
 #endif /* EDITABLELINEWIDGET_H_ */

@@ -27,7 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class KicadModuleDialog : public QDialog
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	KicadModuleDialog(const QString & partType, const QString & filename, const QStringList & moduleNames, QWidget *parent = 0);

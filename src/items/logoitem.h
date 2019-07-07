@@ -55,10 +55,10 @@ public:
 	void addedToScene(bool temporary);
 	void setHeight(double h);
 	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    bool hasLogo();
-    QString getNewLayerFileName(const QString & newLayer);
-    QString getInspectorTitle();
-    void setInspectorTitle(const QString & oldText, const QString & newText);
+	bool hasLogo();
+	QString getNewLayerFileName(const QString & newLayer);
+	QString getInspectorTitle();
+	void setInspectorTitle(const QString & oldText, const QString & newText);
 
 protected slots:
 	void logoEntry();
@@ -78,28 +78,28 @@ protected:
 	bool freeRotationAllowed(Qt::KeyboardModifiers modifiers);
 	bool freeRotationAllowed();
 	ResizableBoard::Corner findCorner(QPointF p, Qt::KeyboardModifiers);
-    virtual QString getShapeForRenderer(const QString & svg);
-    virtual bool canRetrieveLayer(ViewLayer::ViewLayerID viewLayerID);
-    bool checkImage(const QString & filename);
+	virtual QString getShapeForRenderer(const QString & svg);
+	virtual bool canRetrieveLayer(ViewLayer::ViewLayerID viewLayerID);
+	bool checkImage(const QString & filename);
 	QStringList & getImageNames();
 	QStringList & getNewImageNames();
 	virtual bool isBottom();
 	virtual QString flipSvg(const QString & svg);
 	QString flipSvgAux(QString & newSvg);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
-    void logoEntryAux(const QString & newText);
+	void logoEntryAux(const QString & newText);
 
 protected:
 	QString m_logo;
 	bool m_hasLogo;
 	QString m_originalFilename;
 	QTime m_inLogoEntry;
-    bool m_standardizeColors;
+	bool m_standardizeColors;
 };
 
 class CopperLogoItem : public LogoItem
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	CopperLogoItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
@@ -114,7 +114,7 @@ protected:
 
 class SchematicLogoItem : public LogoItem
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	SchematicLogoItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
@@ -123,40 +123,40 @@ public:
 protected:
 	ViewLayer::ViewLayerID layer();
 	QString colorString();
-    bool isBottom();
+	bool isBottom();
 };
 
 class BreadboardLogoItem : public LogoItem
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	BreadboardLogoItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~BreadboardLogoItem();
 
-    bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
+	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	void setProp(const QString & prop, const QString & value);
 
 public slots:
-    void changeTextColor();
+	void changeTextColor();
 
 protected:
 	ViewLayer::ViewLayerID layer();
 	QString colorString();
-    bool isBottom();
+	bool isBottom();
 
 protected:
-    QString m_color;
+	QString m_color;
 };
 
 class BoardLogoItem : public LogoItem
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	BoardLogoItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~BoardLogoItem();
 
-    bool resizeMM(double w, double h, const LayerHash & viewLayers);
+	bool resizeMM(double w, double h, const LayerHash & viewLayers);
 	bool reloadImage(const QString & svg, const QSizeF & aspectRatio, const QString & fileName, bool addName);
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 
@@ -165,11 +165,11 @@ protected:
 	QString colorString();
 	QStringList & getImageNames();
 	QStringList & getNewImageNames();
-    QString getShapeForRenderer(const QString & svg);
-    bool canRetrieveLayer(ViewLayer::ViewLayerID viewLayerID);
-    void reloadLayerKin(double mmW, double mmH);
-    bool checkImage(const QString & filename);
-    bool isBottom();
+	QString getShapeForRenderer(const QString & svg);
+	bool canRetrieveLayer(ViewLayer::ViewLayerID viewLayerID);
+	void reloadLayerKin(double mmW, double mmH);
+	bool checkImage(const QString & filename);
+	bool isBottom();
 };
 
 

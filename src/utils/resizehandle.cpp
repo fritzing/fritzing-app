@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QCursor>
 
 ResizeHandle::ResizeHandle(const QPixmap &pixmap, const QCursor & cursor, bool ignoresTransforms, QGraphicsItem *parent)
-: QGraphicsPixmapItem(pixmap, parent)
+	: QGraphicsPixmapItem(pixmap, parent)
 {
 	setCursor(cursor);
 	setVisible(true);
@@ -63,20 +63,20 @@ QPointF ResizeHandle::resizeOffset()
 QVariant ResizeHandle::itemChange(GraphicsItemChange change, const QVariant &value)
 {
 	switch (change) {
-		case QGraphicsItem::ItemSceneHasChanged:
-			if (scaling()) {
-				ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
-				if (sw) {
-					connect(sw, SIGNAL(zoomChanged(double)), this, SLOT(zoomChangedSlot(double)));
-				}
-
+	case QGraphicsItem::ItemSceneHasChanged:
+		if (scaling()) {
+			ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
+			if (sw) {
+				connect(sw, SIGNAL(zoomChanged(double)), this, SLOT(zoomChangedSlot(double)));
 			}
-			break;
-		default:
-			break;
+
+		}
+		break;
+	default:
+		break;
 	}
 
-    return QGraphicsPixmapItem::itemChange(change, value);
+	return QGraphicsPixmapItem::itemChange(change, value);
 }
 
 void ResizeHandle::zoomChangedSlot(double scale) {
@@ -96,13 +96,13 @@ double ResizeHandle::currentScale() {
 void ResizeHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 	if(scene()) {
-        FGraphicsScene * fscene = qobject_cast<FGraphicsScene *>(scene());
-        if (fscene != NULL && fscene->displayHandles()) {
-            QGraphicsPixmapItem::paint(painter, option, widget);
+		FGraphicsScene * fscene = qobject_cast<FGraphicsScene *>(scene());
+		if (fscene != NULL && fscene->displayHandles()) {
+			QGraphicsPixmapItem::paint(painter, option, widget);
 		}
 	}
 }
 
 bool ResizeHandle::scaling() {
-    return (this->flags() & QGraphicsItem::ItemIgnoresTransformations) && (scene() != NULL);
+	return (this->flags() & QGraphicsItem::ItemIgnoresTransformations) && (scene() != NULL);
 }

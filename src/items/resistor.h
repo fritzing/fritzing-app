@@ -43,7 +43,7 @@ public:
 	void setResistance(QString resistance, QString pinSpacing, bool force);
 	QString resistance();
 	QString pinSpacing();
-    const QString & title();
+	const QString & title();
 	bool hasCustomSVG();
 	bool canEditPart();
 	PluralType isPlural();
@@ -58,7 +58,7 @@ protected:
 	ConnectorItem* newConnectorItem(ItemBase * layerkin, Connector *connector);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 	void setBands(QDomElement & element, int firstband, int secondband, int thirdband, int multiplier, const QString & tolerance);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 public slots:
 	void resistanceEntry(const QString & text);

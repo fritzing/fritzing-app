@@ -34,7 +34,7 @@ public:
 	static QString clipToBoard(QString svgString, QRectF & boardRect, const QString & layerName, SVG2gerber::ForWhy, const QString & clipString, bool displayMessageBoxes, QMultiHash<long, class ConnectorItem *> & treatAsCircle);
 	static QString clipToBoard(QString svgString, ItemBase * board, const QString & layerName, SVG2gerber::ForWhy, const QString & clipString, bool displayMessageBoxes, QMultiHash<long, class ConnectorItem *> & treatAsCircle);
 	static int doEnd(const QString & svg, int boardLayers, const QString & layerName, SVG2gerber::ForWhy forWhy, QSizeF svgSize,
-						const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes);
+	                 const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes);
 	static QString cleanOutline(const QString & svgOutline);
 
 public:
@@ -51,7 +51,7 @@ public:
 	static const QString MagicBoardOutlineID;
 
 	static const double MaskClearanceMils;
-    static const QRegExp MultipleZs;
+	static const QRegExp MultipleZs;
 
 
 protected:
@@ -62,12 +62,12 @@ protected:
 	static int doDrill(ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes);
 	static void displayMessage(const QString & message, bool displayMessageBoxes);
 	static bool saveEnd(const QString & layerName, const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes, SVG2gerber & gerber);
-    static void mergeOutlineElement(QImage & image, QRectF & target, double res, QDomDocument & document, QString & svgString, int ix, const QString & layerName);
-    static QString makePath(QImage & image, double unit, const QString & colorString);
-    static bool dealWithMultipleContours(QDomElement & root, bool displayMessageBoxes);
-    static void exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes);
-    static void handleDonuts(QDomElement & root1, QMultiHash<long, ConnectorItem *> & treatAsCircle);
-    static QString renderTo(const LayerList &, ItemBase * board, PCBSketchWidget * sketchWidget, bool & empty);
+	static void mergeOutlineElement(QImage & image, QRectF & target, double res, QDomDocument & document, QString & svgString, int ix, const QString & layerName);
+	static QString makePath(QImage & image, double unit, const QString & colorString);
+	static bool dealWithMultipleContours(QDomElement & root, bool displayMessageBoxes);
+	static void exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes);
+	static void handleDonuts(QDomElement & root1, QMultiHash<long, ConnectorItem *> & treatAsCircle);
+	static QString renderTo(const LayerList &, ItemBase * board, PCBSketchWidget * sketchWidget, bool & empty);
 
 };
 

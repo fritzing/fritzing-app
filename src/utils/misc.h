@@ -63,19 +63,19 @@ static const QString FritzingPartExtension(".fzp");
 static const QString FritzingBundledPartExtension(".fzpz");
 
 inline double qMin(float f, double d) {
-    return qMin((double) f, d);
+	return qMin((double) f, d);
 }
 
 inline double qMin(double d, float f) {
-    return qMin((double) f, d);
+	return qMin((double) f, d);
 }
 
 inline double qMax(float f, double d) {
-    return qMax((double) f, d);
+	return qMax((double) f, d);
 }
 
 inline double qMax(double d, float f) {
-    return qMax((double) f, d);
+	return qMax((double) f, d);
 }
 
 const QStringList & fritzingExtensions();

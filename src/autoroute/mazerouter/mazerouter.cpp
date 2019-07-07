@@ -684,9 +684,16 @@ void MazeRouter::start()
 			QList<ConnectorItem *> equi;
 			equi.append(first);
 			ConnectorItem::collectEqualPotential(equi, m_bothSidesNow, (ViewGeometry::RatsnestFlag | ViewGeometry::NormalFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::SchematicTraceFlag) ^ m_sketchWidget->getTraceFlag());
-			foreach (ConnectorItem * equ, equi) {
-				todo.removeOne(equ);
-				//equ->debugInfo("equi");
+			for (int j = equi.count() - 1; j >= 0; j--) {
+				ConnectorItem * equ = equi.at(j);
+				int isInTodo = todo.removeOne(equ);
+				// If connector item is not in todo,
+				// this means that we excluded it from
+				// todo in removeOffBoardAnd(), so don't
+				// add it to subnets
+				if (!isInTodo) {
+					equi.removeOne(equ);
+				}
 			}
 			net->subnets.append(equi);
 		}
@@ -1472,6 +1479,11 @@ QList<QPoint> MazeRouter::renderSource(QDomDocument * masterDoc, int z, ViewLaye
 		}
 	}
 
+	if (!m_maxRect.contains(itemsBoundingRect)) {
+		qWarning("autorouter: m_maxRect does not contain itemsBoundingRect");
+		// Don't allow memory corruption
+		itemsBoundingRect = m_maxRect;
+	}
 	int x1 = qFloor((itemsBoundingRect.left() - m_maxRect.left()) / m_gridPixels);
 	int y1 = qFloor((itemsBoundingRect.top() - m_maxRect.top()) / m_gridPixels);
 	int x2 = qCeil((itemsBoundingRect.right() - m_maxRect.left()) / m_gridPixels);
@@ -2986,7 +2998,7 @@ void MazeRouter::removeOffBoardAnd(bool isPCBType, bool removeSingletons, bool b
 			}
 			if (!bothSides && connectorItem->attachedToViewLayerID() == ViewLayer::Copper1) doRemove = true;
 			if (!doRemove && isPCBType) {
-				if (!connectorItem->sceneBoundingRect().intersects(boardRect)) {
+				if (!boardRect.contains(connectorItem->sceneBoundingRect())) {
 					doRemove = true;
 				}
 			}

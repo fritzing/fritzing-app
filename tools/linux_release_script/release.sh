@@ -96,7 +96,7 @@ rm ./translations/*.ts  			# remove translation xml files, since we only need th
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
 if [[ ${relname} == *"debug"* ]] ; then
-  git clone --branch nightlyParts --single-branch https://github.com/fritzing/fritzing-parts.git || echo -e "\\n   ####   \\033[1;31m Ignoring git error for debug build!  \\033[0m ####\\n"
+  git clone --branch develop --single-branch https://github.com/fritzing/fritzing-parts.git || echo -e "\\n   ####   \\033[1;31m Ignoring git error for debug build!  \\033[0m ####\\n"
 else
   git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git
 fi

@@ -340,10 +340,16 @@ Grid::Grid(int sx, int sy, int sz) {
 }
 
 GridValue Grid::at(int sx, int sy, int sz) const {
+    Q_ASSERT (sx < x);
+    Q_ASSERT (sy < y);
+    Q_ASSERT (sz < z);
 	return *(data + (sz * y * x) + (sy * x) + sx);
 }
 
 void Grid::setAt(int sx, int sy, int sz, GridValue value) {
+    Q_ASSERT (sx < x);
+    Q_ASSERT (sy < y);
+    Q_ASSERT (sz < z);
 	*(data + (sz * y * x) + (sy * x) + sx) = value;
 }
 

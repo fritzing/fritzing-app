@@ -63,7 +63,7 @@ for ARG in $ARGS; do
             echo "Installation mode: $MODE" >&2
             exit
             ;;
-        -* | --*)
+        -*)
             arg_err "$ARG"
             exit 1
             ;;
@@ -81,8 +81,9 @@ if [[ "$MODE" == "system" && "$ID" -ne 0 ]]; then
 fi
 
 # ---- UNINSTALL START ---- #
-grep -q 'application/x-fritzing' "$MIMES"
-if [ $? -eq 0 ]; then
+
+if grep -q 'application/x-fritzing' "$MIMES"
+then
     TOWRITE="$(grep -v 'application/x-fritzing' "$MIMES")"
     echo "$TOWRITE" > "$MIMES"
 else
@@ -90,7 +91,7 @@ else
 fi
 
 echo "Entering $(basename "$FRITZ_DIR")/" | tr -s "/"
-cd "$FRITZ_DIR"
+cd "$FRITZ_DIR" || exit $?
 
 # Uninstall Fritzing MIME packages
 echo "Uninstalling Fritzing MIME types..."
@@ -108,7 +109,7 @@ case $? in
         echo "-- TASK ENDED SUCCESSFULLY! --"
         ;;
     1)
-        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo "AN ERROR OCCURRED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
         echo -e "-*-*-*-*-*-*-*-\n"
         exit 1
         ;;
@@ -140,7 +141,7 @@ case $? in
         echo "-- TASK ENDED SUCCESSFULLY! --"
         ;;
     1)
-        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo "AN ERROR OCCURRED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
         echo -e "-*-*-*-*-*-*-*-\n"
         exit 1
         ;;
@@ -152,13 +153,13 @@ echo "Removing symlinks..."
 rm -f "$BIN"/Fritzing 2>/dev/null
 
 echo "Leaving $(basename "$FRITZ_DIR")/" | tr -s "/"
-cd -
+cd - || exit $?
 
 echo "Deleting $(basename "$FRITZ_DIR")/" | tr -s "/"
 rm -rf "$FRITZ_DIR"
 
 echo "Removing desktop file..."
-rm -f "$APPS"/fritzing.desktop
+rm -f "$APPS"/org.fritzing.Fritzing.desktop
 
 echo "Updating databases..."
 update-desktop-database "$APPS"

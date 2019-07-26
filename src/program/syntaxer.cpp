@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6112 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 
 ********************************************************************/
 
@@ -44,7 +38,7 @@ Syntaxer::~Syntaxer() {
 }
 
 bool Syntaxer::loadSyntax(const QString &filename)
- {
+{
 	QFile file(filename);
 
 	QString errorStr;
@@ -85,7 +79,7 @@ bool Syntaxer::loadSyntax(const QString &filename)
 		context = context.nextSiblingElement("context");
 	}
 
-    m_canProgram = root.attribute("canProgram", "").compare("true", Qt::CaseInsensitive) == 0;
+	m_canProgram = root.attribute("canProgram", "").compare("true", Qt::CaseInsensitive) == 0;
 	m_name = root.attribute("name");
 	QStringList extensions = root.attribute("extensions").split(";", QString::SkipEmptyParts);
 	if (extensions.count() > 0) {
@@ -101,7 +95,7 @@ bool Syntaxer::loadSyntax(const QString &filename)
 		m_extensionString.chop(1);
 		m_extensionString += ")";
 	}
-	
+
 	m_trieRoot = new TrieNode('\0');
 
 	QDomElement list = highlighting.firstChildElement("list");
@@ -130,17 +124,17 @@ QString Syntaxer::parseForName(const QString & filename)
 	QFile file(filename);
 	file.open(QFile::ReadOnly);
 	QXmlStreamReader xml(&file);
-    xml.setNamespaceProcessing(false);
+	xml.setNamespaceProcessing(false);
 
 	while (!xml.atEnd()) {
-        switch (xml.readNext()) {
-			case QXmlStreamReader::StartElement:
-				if (xml.name().toString().compare("language") == 0) {
-					return xml.attributes().value("name").toString();
-				}
-				break;
-			default:
-				break;
+		switch (xml.readNext()) {
+		case QXmlStreamReader::StartElement:
+			if (xml.name().toString().compare("language") == 0) {
+				return xml.attributes().value("name").toString();
+			}
+			break;
+		default:
+			break;
 		}
 	}
 
@@ -154,8 +148,8 @@ void Syntaxer::loadList(QDomElement & list) {
 	while (!item.isNull()) {
 		QString text;
 		if (TextUtils::findText(item, text)) {
-            QString s = text.trimmed();
-            m_trieRoot->addString(s, false, stf);
+			QString s = text.trimmed();
+			m_trieRoot->addString(s, false, stf);
 		}
 		item = item.nextSiblingElement("item");
 	}
@@ -241,7 +235,7 @@ bool Syntaxer::hlCStringChar() {
 
 
 bool Syntaxer::canProgram() {
-    return m_canProgram;
+	return m_canProgram;
 }
 
 

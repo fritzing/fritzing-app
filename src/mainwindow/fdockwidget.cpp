@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -52,14 +46,14 @@ void FDockWidget::restoreState() {
 
 bool FDockWidget::event(QEvent * e) {
 	switch (e->type()) {
-		case QEvent::WindowActivate:
-			emit dockChangeActivationSignal(true, this);
-			break;
-		case QEvent::WindowDeactivate:
-			emit dockChangeActivationSignal(false, this);
-			break;
-		default:
-			break;
+	case QEvent::WindowActivate:
+		emit dockChangeActivationSignal(true, this);
+		break;
+	case QEvent::WindowDeactivate:
+		emit dockChangeActivationSignal(false, this);
+		break;
+	default:
+		break;
 	}
 	return QDockWidget::event(e);
 }
@@ -68,4 +62,3 @@ void FDockWidget::moveEvent(QMoveEvent *event) {
 	QDockWidget::moveEvent(event);
 	emit positionChanged();
 }
-

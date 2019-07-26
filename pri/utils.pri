@@ -11,36 +11,7 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
-# ********************************************************************
-# $Revision: 6796 $:
-# $Author: irascibl@gmail.com $:
-# $Date: 2013-01-12 07:45:08 +0100 (Sa, 12. Jan 2013) $
 # ********************************************************************/
-
-# boost_1_54_0 is buggy
-BOOSTS = 43 44 45 46 47 48 49 50 51 52 53 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99
-LATESTBOOST = 0
-for(boost, BOOSTS) {
-    exists(../src/lib/boost_1_$${boost}_0) {
-        LATESTBOOST = $$boost
-    }
-}
-
-contains(LATESTBOOST, 0) {
-    qtCompileTest(boost)
-    config_boost {
-        LATESTBOOST = installed
-        message("using installed Boost library")
-    } else {
-        message("Boost 1.54 has a bug in a function that Fritzing uses, so download or install some other version")
-        error("Easiest to copy the Boost library to .../src/lib/, so that you have .../src/lib/boost_1_xx_0")
-    }
-}
-
-!contains(LATESTBOOST, installed) {
-    message("using Boost from src/lib/boost_1_$${LATESTBOOST}_0")
-    INCLUDEPATH += src/lib/boost_1_$${LATESTBOOST}_0
-}
 
 HEADERS += \
 src/utils/abstractstatesbutton.h \
@@ -69,8 +40,8 @@ src/utils/ratsnestcolors.h \
 src/utils/schematicrectconstants.h \
 src/utils/s2s.h \
 src/utils/textutils.h \
-src/utils/zoomslider.h 
- 
+src/utils/zoomslider.h
+
 SOURCES += \
 src/utils/autoclosemessagebox.cpp \
 src/utils/bendpointaction.cpp \
@@ -94,4 +65,4 @@ src/utils/ratsnestcolors.cpp \
 src/utils/schematicrectconstants.cpp \
 src/utils/s2s.cpp \
 src/utils/textutils.cpp \
-src/utils/zoomslider.cpp 
+src/utils/zoomslider.cpp

@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 4067 $:
-$Author: cohen@irascible.com $:
-$Date: 2010-03-27 00:21:20 +0100 (Sa, 27. Mrz 2010) $
-
 ********************************************************************/
 
 #ifndef GEDAELEMENTLEXER_H
@@ -35,24 +29,24 @@ $Date: 2010-03-27 00:21:20 +0100 (Sa, 27. Mrz 2010) $
 class GedaElementLexer
 {
 public:
-    GedaElementLexer(const QString &source);
-    ~GedaElementLexer();
-    int lex();
+	GedaElementLexer(const QString &source);
+	~GedaElementLexer();
+	int lex();
 	QString currentCommand();
 	double currentNumber();
 	QString currentString();
 	const QStringList & comments();
 
 protected:
-    QChar next();
+	QChar next();
 	QString clean(const QString & source);
 
 protected:
-    QString m_source;
-    const QChar *m_chars;
-    int m_size;
-    int m_pos;
-    QChar m_current;
+	QString m_source;
+	const QChar *m_chars;
+	int m_size;
+	int m_pos;
+	QChar m_current;
 	QString m_currentCommand;
 	long m_currentNumber;
 	long m_currentHexString;

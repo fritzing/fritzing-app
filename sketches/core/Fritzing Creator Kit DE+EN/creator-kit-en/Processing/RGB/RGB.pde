@@ -1,7 +1,7 @@
-import processing.serial.*; 
-import cc.arduino.*; 
+import processing.serial.*;
+import cc.arduino.*;
 
-Arduino meinArduino; 
+Arduino meinArduino;
 
 int potPin=0;
 int value;
@@ -21,7 +21,7 @@ int oldBlue;
 void setup() {
   size(255,300,P3D);
   println(Serial.list()); // List all the available serial ports:
-  meinArduino = new Arduino(this, Arduino.list()[4], 57600); 
+  meinArduino = new Arduino(this, Arduino.list()[4], 57600);
   noStroke();
 }
 
@@ -31,12 +31,12 @@ void graphics(int theValue){
   fill(100);
   rect(0,20,width,20);
   rect(0,60,width,20);
-  rect(0,100,width,20);  
+  rect(0,100,width,20);
   fill(255,0,0); rect(0,20,redX,20);
   fill(0,255,0); rect(0,60,greenX,20);
   fill(0,0,255); rect(0,100,blueX,20);
   colorMode(HSB, 100);
-  fill(value,100,100);  
+  fill(value,100,100);
   rect(0,160,width,height);
 }
 
@@ -58,7 +58,7 @@ void draw(){
   }
 
   graphics(value);
-  
+
   if (redX!=oldRed){
     meinArduino.analogWrite(redPin,redX);
     oldRed=redX;

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6998 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 
 ********************************************************************/
 
@@ -43,16 +37,16 @@ static QHash<ViewLayer::ViewLayerID, QString> Colors;
 
 QString makeWireImage(double w, double h, double r0x, double r0y, double r1x, double r1y, const QString & layerName, const QString & color, double thickness) {
 	return JumperWireLayerTemplate
-				.arg(w).arg(h)
-				.arg(w * 1000).arg(h * 1000)			
-				.arg(r0x).arg(r0y).arg(r1x).arg(r1y)
-				.arg(layerName)
-				.arg(color)
-				.arg(thickness);
+	       .arg(w).arg(h)
+	       .arg(w * 1000).arg(h * 1000)
+	       .arg(r0x).arg(r0y).arg(r1x).arg(r1y)
+	       .arg(layerName)
+	       .arg(color)
+	       .arg(thickness);
 }
 
 
-void shorten(QRectF r0, QPointF r0c, QPointF r1c, double & r0x, double & r0y, double & r1x, double & r1y) 
+void shorten(QRectF r0, QPointF r0c, QPointF r1c, double & r0x, double & r0y, double & r1x, double & r1y)
 {
 	double radius = r0.width() / 2.0;
 	GraphicsUtils::shortenLine(r0c, r1c, radius, radius);
@@ -63,18 +57,18 @@ void shorten(QRectF r0, QPointF r0c, QPointF r1c, double & r0x, double & r0y, do
 }
 
 
-// TODO: 
+// TODO:
 //	ignore during autoroute?
 //	ignore during other connections?
 //	don't let footprints overlap during dragging
 
 /////////////////////////////////////////////////////////
 
-JumperItem::JumperItem( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel) 
+JumperItem::JumperItem( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: PaletteItem(modelPart, viewID,  viewGeometry,  id, itemMenu, doLabel)
 {
-    m_originalClickItem = NULL;
-    if (Colors.isEmpty()) {
+	m_originalClickItem = NULL;
+	if (Colors.isEmpty()) {
 		Colors.insert(ViewLayer::Copper0, ViewLayer::Copper0Color);
 		Colors.insert(ViewLayer::Copper1, ViewLayer::Copper1Color);
 		Colors.insert(ViewLayer::PartImage, JumperColor);
@@ -103,44 +97,44 @@ JumperItem::~JumperItem() {
 
 QRectF JumperItem::boundingRect() const
 {
-    if (m_viewID != ViewLayer::PCBView) {
-        return PaletteItem::boundingRect();
-    }
+	if (m_viewID != ViewLayer::PCBView) {
+		return PaletteItem::boundingRect();
+	}
 
 	return shape().controlPointRect();
 }
 
 void JumperItem::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    if (m_viewID != ViewLayer::PCBView) {
-       PaletteItem::paintHover(painter, option, widget);
-	   return;
-    }
+	if (m_viewID != ViewLayer::PCBView) {
+		PaletteItem::paintHover(painter, option, widget);
+		return;
+	}
 
 	ItemBase::paintHover(painter, option, widget, hoverShape());
 }
 
 void JumperItem::paintSelected(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    if (m_viewID != ViewLayer::PCBView) {
-       PaletteItem::paintSelected(painter, option, widget);
-	   return;
-    }
+	if (m_viewID != ViewLayer::PCBView) {
+		PaletteItem::paintSelected(painter, option, widget);
+		return;
+	}
 
 	GraphicsUtils::qt_graphicsItem_highlightSelected(painter, option, boundingRect(), hoverShape());
 }
 
 QPainterPath JumperItem::hoverShape() const
 {
-    if (m_viewID != ViewLayer::PCBView) {
-        return PaletteItem::hoverShape();
-     }
+	if (m_viewID != ViewLayer::PCBView) {
+		return PaletteItem::hoverShape();
+	}
 
-	QPainterPath path; 
-    QPointF c0 = m_connector0->rect().center();
-    QPointF c1 = m_connector1->rect().center();
-    path.moveTo(c0);
-    path.lineTo(c1);
+	QPainterPath path;
+	QPointF c0 = m_connector0->rect().center();
+	QPointF c1 = m_connector1->rect().center();
+	path.moveTo(c0);
+	path.lineTo(c1);
 
 	QRectF rect = m_connector0->rect();
 	double dx = m_connectorTL.x();
@@ -172,7 +166,7 @@ bool JumperItem::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers,
 			}
 		}
 
-        m_connectorTL = m_connector0->rect().topLeft();			
+		m_connectorTL = m_connector0->rect().topLeft();
 		m_connectorBR = boundingRect().bottomRight() - m_connector1->rect().bottomRight();
 
 		initialResize(layerAttributes.viewID);
@@ -190,45 +184,45 @@ void JumperItem::initialResize(ViewLayer::ViewID viewID) {
 
 	double r0y = m_modelPart->localProp("r0y").toDouble(&ok);
 	if (!ok) return;
-					
+
 	double r1x = m_modelPart->localProp("r1x").toDouble(&ok);
 	if (!ok) return;
-						
+
 	double r1y = m_modelPart->localProp("r1y").toDouble(&ok);
 	if (!ok) return;
-							
-	resizeAux(GraphicsUtils::mils2pixels(r0x, GraphicsUtils::SVGDPI), 
-				GraphicsUtils::mils2pixels(r0y, GraphicsUtils::SVGDPI),
-				GraphicsUtils::mils2pixels(r1x, GraphicsUtils::SVGDPI), 
-				GraphicsUtils::mils2pixels(r1y, GraphicsUtils::SVGDPI));
+
+	resizeAux(GraphicsUtils::mils2pixels(r0x, GraphicsUtils::SVGDPI),
+	          GraphicsUtils::mils2pixels(r0y, GraphicsUtils::SVGDPI),
+	          GraphicsUtils::mils2pixels(r1x, GraphicsUtils::SVGDPI),
+	          GraphicsUtils::mils2pixels(r1y, GraphicsUtils::SVGDPI));
 
 }
 
 bool JumperItem::mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
 {
-    m_originalClickItem = originalItem;
-    mousePressEvent(event);
-    return (m_dragItem != NULL);
+	m_originalClickItem = originalItem;
+	mousePressEvent(event);
+	return (m_dragItem != NULL);
 }
 
 void JumperItem::mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
 {
-    Q_UNUSED(originalItem);
-    mouseMoveEvent(event);
+	Q_UNUSED(originalItem);
+	mouseMoveEvent(event);
 }
 
 void JumperItem::mouseReleaseEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
 {
-    Q_UNUSED(originalItem);
-    mouseReleaseEvent(event);
+	Q_UNUSED(originalItem);
+	mouseReleaseEvent(event);
 }
 
 void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    PaletteItemBase * originalItem = m_originalClickItem;
-    m_originalClickItem = NULL;
+	PaletteItemBase * originalItem = m_originalClickItem;
+	m_originalClickItem = NULL;
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics != NULL && infographics->spaceBarIsPressed()) { 
+	if (infographics != NULL && infographics->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
@@ -252,7 +246,7 @@ void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 			m_otherItem = m_connector0;
 		}
 		else {
-            if (originalItem) return ItemBase::mousePressEvent(event);
+			if (originalItem) return ItemBase::mousePressEvent(event);
 			return PaletteItem::mousePressEvent(event);
 		}
 	}
@@ -273,8 +267,8 @@ void JumperItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 	QPointF d = event->scenePos() - m_dragStartScenePos;
 	QPointF p = m_dragStartConnectorPos + d;
 	emit alignMe(this, p);
-	QPointF myPos(qMin(p.x(), m_otherPos.x()) - m_connectorTL.x(), 
-				  qMin(p.y(), m_otherPos.y()) - m_connectorTL.y());
+	QPointF myPos(qMin(p.x(), m_otherPos.x()) - m_connectorTL.x(),
+	              qMin(p.y(), m_otherPos.y()) - m_connectorTL.y());
 	this->setPos(myPos);
 	QRectF r = m_otherItem->rect();
 	r.moveTo(mapFromScene(m_otherPos));
@@ -290,8 +284,8 @@ void JumperItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 	if (cross) cross->setRect(r);
 
 	resize();
-    QList<ConnectorItem *> already;
-	ItemBase::updateConnections(m_dragItem, true, already);	
+	QList<ConnectorItem *> already;
+	ItemBase::updateConnections(m_dragItem, true, already);
 }
 
 void JumperItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -301,7 +295,7 @@ void JumperItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 }
 
 
-QString JumperItem::makeSvg(ViewLayer::ViewLayerID viewLayerID) 
+QString JumperItem::makeSvg(ViewLayer::ViewLayerID viewLayerID)
 {
 	QRectF r0 = m_connector0->rect();
 	QRectF r1 = m_connector1->rect();
@@ -322,35 +316,35 @@ QString JumperItem::makeSvg(ViewLayer::ViewLayerID viewLayerID)
 	modelPart()->setLocalProp("r1y", r1y);
 
 	switch (viewLayerID) {
-		case ViewLayer::Copper0:
-		case ViewLayer::Copper1:
-			return Copper0LayerTemplate
-				.arg(w).arg(h)
-				.arg(w * GraphicsUtils::StandardFritzingDPI).arg(h * GraphicsUtils::StandardFritzingDPI)			
-				.arg(r0x).arg(r0y).arg(r1x).arg(r1y)
-				.arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID))
-				.arg(Colors.value(viewLayerID));
+	case ViewLayer::Copper0:
+	case ViewLayer::Copper1:
+		return Copper0LayerTemplate
+		       .arg(w).arg(h)
+		       .arg(w * GraphicsUtils::StandardFritzingDPI).arg(h * GraphicsUtils::StandardFritzingDPI)
+		       .arg(r0x).arg(r0y).arg(r1x).arg(r1y)
+		       .arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID))
+		       .arg(Colors.value(viewLayerID));
 
-		//case ViewLayer::Silkscreen0:
-		case ViewLayer::Silkscreen1:
-			shorten(r0, r0c, r1c, r0x, r0y, r1x, r1y);
-			return makeWireImage(w, h, r0x, r0y, r1x, r1y, ViewLayer::viewLayerXmlNameFromID(viewLayerID), Colors.value(viewLayerID), 21);
-			
-		case ViewLayer::PartImage:
-			{
-				shorten(r0, r0c, r1c, r0x, r0y, r1x, r1y);
-				QString svg = makeWireImage(w, h, r0x, r0y, r1x, r1y, ViewLayer::viewLayerXmlNameFromID(viewLayerID), ShadowColor, 40);
-				QString svg2 = makeWireImage(w, h, r0x, r0y, r1x, r1y, "", Colors.value(viewLayerID), 20);
-				int ix1 = svg.indexOf("<line");
-				int ix2 = svg.indexOf(">", ix1);
-				int ix3 = svg2.indexOf("<line");
-				int ix4 = svg2.indexOf(">", ix3);
-				svg.insert(ix2 + 1, svg2.mid(ix3, ix4 - ix3 + 1));
-				return svg;
-			}
-			
-        default:
-			break;
+	//case ViewLayer::Silkscreen0:
+	case ViewLayer::Silkscreen1:
+		shorten(r0, r0c, r1c, r0x, r0y, r1x, r1y);
+		return makeWireImage(w, h, r0x, r0y, r1x, r1y, ViewLayer::viewLayerXmlNameFromID(viewLayerID), Colors.value(viewLayerID), 21);
+
+	case ViewLayer::PartImage:
+	{
+		shorten(r0, r0c, r1c, r0x, r0y, r1x, r1y);
+		QString svg = makeWireImage(w, h, r0x, r0y, r1x, r1y, ViewLayer::viewLayerXmlNameFromID(viewLayerID), ShadowColor, 40);
+		QString svg2 = makeWireImage(w, h, r0x, r0y, r1x, r1y, "", Colors.value(viewLayerID), 20);
+		int ix1 = svg.indexOf("<line");
+		int ix2 = svg.indexOf(">", ix1);
+		int ix3 = svg2.indexOf("<line");
+		int ix4 = svg2.indexOf(">", ix3);
+		svg.insert(ix2 + 1, svg2.mid(ix3, ix4 - ix3 + 1));
+		return svg;
+	}
+
+	default:
+		break;
 	}
 
 	return ___emptyString___;
@@ -375,17 +369,17 @@ void JumperItem::resize() {
 
 	foreach (ItemBase * itemBase, m_layerKin) {
 		switch(itemBase->viewLayerID()) {
-			case ViewLayer::PartImage:
-			case ViewLayer::Copper1:
-			case ViewLayer::Silkscreen1:
+		case ViewLayer::PartImage:
+		case ViewLayer::Copper1:
+		case ViewLayer::Silkscreen1:
 			//case ViewLayer::Silkscreen0:
-                {
-					s = makeSvg(itemBase->viewLayerID());
-					itemBase->resetRenderer(s);
-                }
-				break;
-            default:
-				break;
+		{
+			s = makeSvg(itemBase->viewLayerID());
+			itemBase->resetRenderer(s);
+		}
+		break;
+		default:
+			break;
 		}
 	}
 
@@ -405,7 +399,7 @@ void JumperItem::getParams(QPointF & p, QPointF & c0, QPointF & c1) {
 }
 
 void JumperItem::resize(QPointF p, QPointF nc0, QPointF nc1) {
-	resizeAux(nc0.x(), nc0.y(), nc1.x(), nc1.y());	
+	resizeAux(nc0.x(), nc0.y(), nc1.x(), nc1.y());
 
 	DebugDialog::debug(QString("jumper item set pos %1 %2, %3").arg(this->id()).arg(p.x()).arg(p.y()) );
 	setPos(p);
@@ -438,22 +432,22 @@ QSizeF JumperItem::footprintSize() {
 	return r0.size();
 }
 
-QString JumperItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString JumperItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	QString xml = "";
 	switch (viewLayerID) {
-		case ViewLayer::Copper0:
-		case ViewLayer::Copper1:
-		case ViewLayer::PartImage:
-		//case ViewLayer::Silkscreen0:
-		case ViewLayer::Silkscreen1:
-			xml = makeSvg(viewLayerID);
-        default:
-			break;
+	case ViewLayer::Copper0:
+	case ViewLayer::Copper1:
+	case ViewLayer::PartImage:
+	//case ViewLayer::Silkscreen0:
+	case ViewLayer::Silkscreen1:
+		xml = makeSvg(viewLayerID);
+	default:
+		break;
 	}
 
 	if (!xml.isEmpty()) {
-        return PaletteItemBase::normalizeSvg(xml, viewLayerID, blackOnly, dpi, factor);
+		return PaletteItemBase::normalizeSvg(xml, viewLayerID, blackOnly, dpi, factor);
 	}
 
 	return PaletteItemBase::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
@@ -477,10 +471,10 @@ ConnectorItem * JumperItem::connector1() {
 
 bool JumperItem::hasCustomSVG() {
 	switch (m_viewID) {
-		case ViewLayer::PCBView:
-			return true;
-		default:
-			return ItemBase::hasCustomSVG();
+	case ViewLayer::PCBView:
+		return true;
+	default:
+		return ItemBase::hasCustomSVG();
 	}
 }
 
@@ -515,15 +509,15 @@ void JumperItem::addedToScene(bool temporary) {
 }
 
 void JumperItem::rotateItem(double degrees, bool updateRatsnest) {
-    Q_UNUSED(updateRatsnest);
+	Q_UNUSED(updateRatsnest);
 	QPointF tc0, tc1;
 	QTransform rotation;
 	rotation.rotate(degrees);
 	rotateEnds(rotation, tc0, tc1);
-	resize(tc0, tc1);	
+	resize(tc0, tc1);
 }
 
-void JumperItem::calcRotation(QTransform & rotation, QPointF center, ViewGeometry & vg2) 
+void JumperItem::calcRotation(QTransform & rotation, QPointF center, ViewGeometry & vg2)
 {
 	QPointF tc0, tc1;
 	rotateEnds(rotation, tc0, tc1);
@@ -534,7 +528,7 @@ void JumperItem::calcRotation(QTransform & rotation, QPointF center, ViewGeometr
 	vg2.setLoc(p + q - myCenter);
 }
 
-void JumperItem::rotateEnds(QTransform & rotation, QPointF & tc0, QPointF & tc1) 
+void JumperItem::rotateEnds(QTransform & rotation, QPointF & tc0, QPointF & tc1)
 {
 	ConnectorItem * cc0 = m_connector0;
 	QRectF r0 = cc0->rect();
@@ -550,8 +544,8 @@ void JumperItem::rotateEnds(QTransform & rotation, QPointF & tc0, QPointF & tc1)
 
 QPointF JumperItem::calcPos(QPointF p0, QPointF p1) {
 	QRectF r0 = m_connector0->rect();
-	QPointF p(qMin(p0.x(), p1.x()) - (r0.width() / 2) - m_connectorTL.x(), 
-			  qMin(p0.y(), p1.y()) - (r0.height() / 2) - m_connectorTL.y());
+	QPointF p(qMin(p0.x(), p1.x()) - (r0.width() / 2) - m_connectorTL.x(),
+	          qMin(p0.y(), p1.y()) - (r0.height() / 2) - m_connectorTL.y());
 	return p;
 }
 
@@ -572,11 +566,11 @@ bool JumperItem::hasPartNumberProperty()
 	return false;
 }
 
-ViewLayer::ViewID JumperItem::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID JumperItem::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
-    if (vid == ViewLayer::PCBView) {
-        return ViewLayer::IconView;
-    }
+	if (vid == ViewLayer::PCBView) {
+		return ViewLayer::IconView;
+	}
 
-    return ViewLayer::UnknownView;
+	return ViewLayer::UnknownView;
 }

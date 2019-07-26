@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -51,128 +45,122 @@ QStyleOptionViewItem CenteredTreeWidget::viewOptions() const {
 
 RecoveryDialog::RecoveryDialog(QFileInfoList fileInfoList, QWidget *parent, Qt::WindowFlags flags) : QDialog(parent, flags)
 {
-    m_recoveryList = new CenteredTreeWidget(this);
-    m_recoveryList->setColumnCount(3);
-    m_recoveryList->setSelectionMode(QAbstractItemView::ExtendedSelection);
-    m_recoveryList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_recoveryList->setSortingEnabled(false);
-    m_recoveryList->setDragEnabled(false);
-    m_recoveryList->setUniformRowHeights(true); // Small optimization
-    m_recoveryList->setIconSize(QSize(0,0));
-    m_recoveryList->setRootIsDecorated(false);
+	m_recoveryList = new CenteredTreeWidget(this);
+	m_recoveryList->setColumnCount(3);
+	m_recoveryList->setSelectionMode(QAbstractItemView::ExtendedSelection);
+	m_recoveryList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	m_recoveryList->setSortingEnabled(false);
+	m_recoveryList->setDragEnabled(false);
+	m_recoveryList->setUniformRowHeights(true); // Small optimization
+	m_recoveryList->setIconSize(QSize(0,0));
+	m_recoveryList->setRootIsDecorated(false);
 
-    QStringList headerLabels;
-    headerLabels << tr("File") << tr("Last backup") << tr("Last saved");
-    m_recoveryList->setHeaderLabels(headerLabels);
-    m_recoveryList->header()->setDefaultAlignment(Qt::AlignCenter);
-    m_recoveryList->header()->setDragEnabled(false);
-    m_recoveryList->header()->setDragDropMode(QAbstractItemView::NoDragDrop);
-    
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-    m_recoveryList->header()->setResizeMode(QHeaderView::ResizeToContents);
-    m_recoveryList->header()->setMovable(false);
-#else
-    m_recoveryList->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    m_recoveryList->header()->setSectionsMovable(false);
-#endif
+	QStringList headerLabels;
+	headerLabels << tr("File") << tr("Last backup") << tr("Last saved");
+	m_recoveryList->setHeaderLabels(headerLabels);
+	m_recoveryList->header()->setDefaultAlignment(Qt::AlignCenter);
+	m_recoveryList->header()->setDragEnabled(false);
+	m_recoveryList->header()->setDragDropMode(QAbstractItemView::NoDragDrop);
+	m_recoveryList->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+	m_recoveryList->header()->setSectionsMovable(false);
 
-    connect(m_recoveryList, SIGNAL(itemSelectionChanged()), this, SLOT(updateRecoverButton()));
+	connect(m_recoveryList, SIGNAL(itemSelectionChanged()), this, SLOT(updateRecoverButton()));
 
-    QTreeWidgetItem *item;
-    foreach (QFileInfo fileInfo, fileInfoList) {
-        item = new QTreeWidgetItem;
-        QString originalFileName = getOriginalFileName(fileInfo.absoluteFilePath());
-        DebugDialog::debug(QString("Creating option for recoveryDialog file %1").arg(originalFileName));
-        QFileInfo originalFileInfo(originalFileName);
-        item->setData(0, Qt::UserRole, fileInfo.absoluteFilePath());
-        if (originalFileInfo.exists()) {
-            item->setText(0, originalFileInfo.fileName());
-            item->setToolTip(0, originalFileInfo.absoluteFilePath());
-            item->setData(1, Qt::UserRole, originalFileInfo.absoluteFilePath());
-            item->setText(2, originalFileInfo.lastModified().toString());
-        }
-        else {
-            item->setText(0, originalFileName);
-            item->setText(2, tr("file not saved"));
-            item->setData(1, Qt::UserRole, originalFileName);
-        }
-        item->setText(1, fileInfo.lastModified().toString());
-        DebugDialog::debug(QString("Displaying recoveryDialog text %1 and data %2").arg(item->text(0)).arg(item->data(0,Qt::UserRole).value<QString>()));
-        m_recoveryList->addTopLevelItem(item);
-        m_fileList << item;
-    }
+	QTreeWidgetItem *item;
+	foreach (QFileInfo fileInfo, fileInfoList) {
+		item = new QTreeWidgetItem;
+		QString originalFileName = getOriginalFileName(fileInfo.absoluteFilePath());
+		DebugDialog::debug(QString("Creating option for recoveryDialog file %1").arg(originalFileName));
+		QFileInfo originalFileInfo(originalFileName);
+		item->setData(0, Qt::UserRole, fileInfo.absoluteFilePath());
+		if (originalFileInfo.exists()) {
+			item->setText(0, originalFileInfo.fileName());
+			item->setToolTip(0, originalFileInfo.absoluteFilePath());
+			item->setData(1, Qt::UserRole, originalFileInfo.absoluteFilePath());
+			item->setText(2, originalFileInfo.lastModified().toString());
+		}
+		else {
+			item->setText(0, originalFileName);
+			item->setText(2, tr("file not saved"));
+			item->setData(1, Qt::UserRole, originalFileName);
+		}
+		item->setText(1, fileInfo.lastModified().toString());
+		DebugDialog::debug(QString("Displaying recoveryDialog text %1 and data %2").arg(item->text(0)).arg(item->data(0,Qt::UserRole).value<QString>()));
+		m_recoveryList->addTopLevelItem(item);
+		m_fileList << item;
+	}
 
-    QVBoxLayout *layout = new QVBoxLayout();
+	QVBoxLayout *layout = new QVBoxLayout();
 
 	QLabel * label = new QLabel;
 	label->setWordWrap(true);
 	label->setText(tr("<p><b>Fritzing may have crashed, but some of the changes to the following files may be recovered.</b></p>"
-					  "<p>The date and time each file was backed-up is displayed. "
-					  "If the file was saved, that date and time is also listed for comparison.</p>"
-					  "<p>The original files are still on your disk, if they were ever saved. "
-					  "You can choose whether to overwrite the original file after you load its recovery file.</p>"
-					  "<p><b>Select any files you want to recover from the list below.</b></p>"
-					  ));
+	                  "<p>The date and time each file was backed-up is displayed. "
+	                  "If the file was saved, that date and time is also listed for comparison.</p>"
+	                  "<p>The original files are still on your disk, if they were ever saved. "
+	                  "You can choose whether to overwrite the original file after you load its recovery file.</p>"
+	                  "<p><b>Select any files you want to recover from the list below.</b></p>"
+	                 ));
 
 	layout->addWidget(label);
-    layout->addWidget(m_recoveryList);
+	layout->addWidget(m_recoveryList);
 
-    QHBoxLayout *buttonLayout = new QHBoxLayout();
-    layout->addLayout(buttonLayout);
+	QHBoxLayout *buttonLayout = new QHBoxLayout();
+	layout->addLayout(buttonLayout);
 
-    m_recover = new QPushButton(tr("&Recover"));
-    m_recover->setDefault(true);
-    m_recover->setEnabled(false);
-    m_recover->setMaximumWidth(130);
-    connect(m_recover, SIGNAL(clicked()), this, SLOT(accept()));
+	m_recover = new QPushButton(tr("&Recover"));
+	m_recover->setDefault(true);
+	m_recover->setEnabled(false);
+	m_recover->setMaximumWidth(130);
+	connect(m_recover, SIGNAL(clicked()), this, SLOT(accept()));
 
-    m_ignore = new QPushButton(tr("&Ignore"));
-    m_ignore->setMaximumWidth(130);
-    connect(m_ignore, SIGNAL(clicked()), this, SLOT(reject()));
+	m_ignore = new QPushButton(tr("&Ignore"));
+	m_ignore->setMaximumWidth(130);
+	connect(m_ignore, SIGNAL(clicked()), this, SLOT(reject()));
 
 	buttonLayout->addSpacerItem(new QSpacerItem(0,0, QSizePolicy::Expanding));
-    buttonLayout->addWidget(m_recover);
-    buttonLayout->addWidget(m_ignore);
+	buttonLayout->addWidget(m_recover);
+	buttonLayout->addWidget(m_ignore);
 	buttonLayout->addSpacerItem(new QSpacerItem(0,0, QSizePolicy::Expanding));
 
-    setLayout(layout);
+	setLayout(layout);
 	layout->setSizeConstraint(QLayout::SetMinAndMaxSize);
 }
 
- QList<QTreeWidgetItem*> RecoveryDialog::getFileList() {
-    return m_fileList;
+QList<QTreeWidgetItem*> RecoveryDialog::getFileList() {
+	return m_fileList;
 }
 
- QString RecoveryDialog::getOriginalFileName(const QString & path)
- {
-    QString originalName;
-    QFile file(path);
+QString RecoveryDialog::getOriginalFileName(const QString & path)
+{
+	QString originalName;
+	QFile file(path);
 	if (!file.open(QFile::ReadOnly)) {
 		// TODO: not sure how else to handle this...
 		DebugDialog::debug(QString("unable to open recovery file %1").arg(path));
 		return originalName;
 	}
 
-    QXmlStreamReader xml(&file);
-    xml.setNamespaceProcessing(false);
-    while (!xml.atEnd()) {
-        if (xml.readNext() == QXmlStreamReader::StartElement) {
-            QString name = xml.name().toString();
-            if (name == "originalFileName") {
-                originalName = xml.readElementText();
-                break;
-            }
-        }
-    }
-    file.close();
-    return originalName;
- }
+	QXmlStreamReader xml(&file);
+	xml.setNamespaceProcessing(false);
+	while (!xml.atEnd()) {
+		if (xml.readNext() == QXmlStreamReader::StartElement) {
+			QString name = xml.name().toString();
+			if (name == "originalFileName") {
+				originalName = xml.readElementText();
+				break;
+			}
+		}
+	}
+	file.close();
+	return originalName;
+}
 
- void RecoveryDialog::updateRecoverButton() {
-     if (m_recoveryList->selectedItems().isEmpty()) {
-            m_recover->setEnabled(false);
-     }
-     else {
-         m_recover->setEnabled(true);
-     }
- }
+void RecoveryDialog::updateRecoverButton() {
+	if (m_recoveryList->selectedItems().isEmpty()) {
+		m_recover->setEnabled(false);
+	}
+	else {
+		m_recover->setEnabled(true);
+	}
+}

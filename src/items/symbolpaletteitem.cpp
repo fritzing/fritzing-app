@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6984 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -47,7 +41,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #define FROMVOLTAGE(v) ((long) (v * VOLTAGE_HASH_CONVERSION))
 
 static QMultiHash<long, QPointer<ConnectorItem> > LocalVoltages;			// Qt doesn't do Hash keys with double
-static QMultiHash<QString, QPointer<ConnectorItem> > LocalNetLabels;			
+static QMultiHash<QString, QPointer<ConnectorItem> > LocalNetLabels;
 static QList< QPointer<ConnectorItem> > LocalGrounds;
 static QList<double> Voltages;
 double SymbolPaletteItem::DefaultVoltage = 5;
@@ -95,8 +89,8 @@ SymbolPaletteItem::SymbolPaletteItem( ModelPart * modelPart, ViewLayer::ViewID v
 	m_voltageReference = (modelPart->properties().value("type").compare("voltage reference") == 0);
 
 	if (modelPart->moduleID().endsWith(ModuleIDNames::NetLabelModuleIDName)) {
-	    m_isNetLabel = true;
-    }
+		m_isNetLabel = true;
+	}
 	else {
 		m_isNetLabel = modelPart->moduleID().endsWith(ModuleIDNames::PowerLabelModuleIDName);
 
@@ -164,9 +158,9 @@ void SymbolPaletteItem::removeMeFromBus(double v) {
 
 				if (count == 0 && !gotOne) {
 					DebugDialog::debug(QString("removeMeFromBus failed %1 %2 %3 %4")
-						.arg(this->id())
-						.arg(connectorItem->connectorSharedID())
-						.arg(v).arg(nv));
+					                   .arg(this->id())
+					                   .arg(connectorItem->connectorSharedID())
+					                   .arg(v).arg(nv));
 				}
 			}
 		}
@@ -174,7 +168,7 @@ void SymbolPaletteItem::removeMeFromBus(double v) {
 	LocalGrounds.removeOne(NULL);  // keep cleaning these out
 }
 
-ConnectorItem* SymbolPaletteItem::newConnectorItem(Connector *connector) 
+ConnectorItem* SymbolPaletteItem::newConnectorItem(Connector *connector)
 {
 	ConnectorItem * connectorItem = PaletteItemBase::newConnectorItem(connector);
 
@@ -208,7 +202,7 @@ void SymbolPaletteItem::busConnectorItems(Bus * bus, ConnectorItem * fromConnect
 	PaletteItem::busConnectorItems(bus, fromConnectorItem, items);
 
 	//foreach (ConnectorItem * bc, items) {
-		//bc->debugInfo(QString("bc %1").arg(bus->id()));
+	//bc->debugInfo(QString("bc %1").arg(bus->id()));
 	//}
 
 	QList< QPointer<ConnectorItem> > mitems;
@@ -257,14 +251,14 @@ void SymbolPaletteItem::setLabel(const QString & label) {
 		LocalNetLabels.insert(label, connectorItem);
 	}
 
-    QTransform  transform = untransform();
+	QTransform  transform = untransform();
 
 	QString svg = makeSvg(this->viewLayerID());
 	resetRenderer(svg);
-    resetLayerKin();
-    resetConnectors(NULL, NULL);
+	resetLayerKin();
+	resetConnectors(NULL, NULL);
 
-    retransform(transform);
+	retransform(transform);
 }
 
 void SymbolPaletteItem::setVoltage(double v) {
@@ -276,38 +270,38 @@ void SymbolPaletteItem::setVoltage(double v) {
 		Voltages.append(v);
 	}
 
-    if (m_isNetLabel) {
-	    foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
-		    LocalNetLabels.insert(QString::number(m_voltage), connectorItem);
-	    }
-    }
-    else {
-	    foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
-		    if (connectorItem->isGrounded()) {
-			    LocalGrounds.append(connectorItem);
-			    //connectorItem->debugInfo("ground insert");
+	if (m_isNetLabel) {
+		foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+			LocalNetLabels.insert(QString::number(m_voltage), connectorItem);
+		}
+	}
+	else {
+		foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+			if (connectorItem->isGrounded()) {
+				LocalGrounds.append(connectorItem);
+				//connectorItem->debugInfo("ground insert");
 
-		    }
-		    else {
-			    LocalVoltages.insert(FROMVOLTAGE(v), connectorItem);
-			    //connectorItem->debugInfo(QString("voltage insert %1").arg(useVoltage(connectorItem)));
-		    }
-	    }
-    }
+			}
+			else {
+				LocalVoltages.insert(FROMVOLTAGE(v), connectorItem);
+				//connectorItem->debugInfo(QString("voltage insert %1").arg(useVoltage(connectorItem)));
+			}
+		}
+	}
 
-    if (m_viewID == ViewLayer::SchematicView) {
-        if (m_voltageReference || m_isNetLabel) {
-            QTransform transform = untransform();
-	        QString svg = makeSvg(viewLayerID());
-	        reloadRenderer(svg, false);
+	if (m_viewID == ViewLayer::SchematicView) {
+		if (m_voltageReference || m_isNetLabel) {
+			QTransform transform = untransform();
+			QString svg = makeSvg(viewLayerID());
+			reloadRenderer(svg, false);
 
-            resetLayerKin();
+			resetLayerKin();
 
-            retransform(transform);
+			retransform(transform);
 
-            if (m_partLabel) m_partLabel->displayTextsIf();
-        }
-    }
+			if (m_partLabel) m_partLabel->displayTextsIf();
+		}
+	}
 }
 
 QString SymbolPaletteItem::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
@@ -318,13 +312,13 @@ QString SymbolPaletteItem::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
 		svg = file.readAll();
 		file.close();
 		svg = replaceTextElement(svg);
-        if (viewLayerID == ViewLayer::SchematicText) {
-            bool hasText;
-            return SvgFileSplitter::showText3(svg, hasText);
-        }
-        else {
-            return SvgFileSplitter::hideText3(svg);
-        }
+		if (viewLayerID == ViewLayer::SchematicText) {
+			bool hasText;
+			return SvgFileSplitter::showText3(svg, hasText);
+		}
+		else {
+			return SvgFileSplitter::hideText3(svg);
+		}
 	}
 
 	return "";
@@ -361,28 +355,28 @@ void SymbolPaletteItem::addedToScene(bool temporary)
 		setVoltage(m_voltage);
 	}
 
-    return PaletteItem::addedToScene(temporary);
+	return PaletteItem::addedToScene(temporary);
 }
 
-QString SymbolPaletteItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString SymbolPaletteItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	QString svg = PaletteItem::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 	if (m_voltageReference) {
 		switch (viewLayerID) {
-			case ViewLayer::Schematic:
-				return replaceTextElement(svg);
-			default:
-				break;
+		case ViewLayer::Schematic:
+			return replaceTextElement(svg);
+		default:
+			break;
 		}
 	}
 
-	return svg; 
+	return svg;
 }
 
 bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
-	if ((prop.compare("voltage", Qt::CaseInsensitive) == 0) && 
-		(moduleID().compare(ModuleIDNames::GroundModuleIDName) != 0)) 
+	if ((prop.compare("voltage", Qt::CaseInsensitive) == 0) &&
+	        (moduleID().compare(ModuleIDNames::GroundModuleIDName) != 0))
 	{
 		FocusOutComboBox * edit = new FocusOutComboBox(parent);
 		edit->setEnabled(swappingEnabled);
@@ -397,23 +391,23 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 
 		QDoubleValidator * validator = new QDoubleValidator(edit);
 		validator->setRange(-9999.99, 9999.99, 2);
-        validator->setLocale(QLocale::C);
-        validator->setNotation(QDoubleValidator::StandardNotation);
-        validator->setLocale(QLocale::C);
+		validator->setLocale(QLocale::C);
+		validator->setNotation(QDoubleValidator::StandardNotation);
+		validator->setLocale(QLocale::C);
 		edit->setValidator(validator);
 
 		edit->setObjectName("infoViewComboBox");
 
 
 		connect(edit, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(voltageEntry(const QString &)));
-		returnWidget = edit;	
+		returnWidget = edit;
 
 		returnValue = m_voltage;
 		returnProp = tr("voltage");
 		return true;
 	}
 
-	if (prop.compare("label", Qt::CaseInsensitive) == 0 && m_isNetLabel) 
+	if (prop.compare("label", Qt::CaseInsensitive) == 0 && m_isNetLabel)
 	{
 		QLineEdit * edit = new QLineEdit(parent);
 		edit->setEnabled(swappingEnabled);
@@ -421,7 +415,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 		edit->setObjectName("infoViewLineEdit");
 
 		connect(edit, SIGNAL(editingFinished()), this, SLOT(labelEntry()));
-		returnWidget = edit;	
+		returnWidget = edit;
 
 		returnValue = getLabel();
 		returnProp = tr("label");
@@ -445,10 +439,10 @@ void SymbolPaletteItem::labelEntry() {
 	QString current = getLabel();
 	if (edit->text().compare(current) == 0) return;
 
-    if (edit->text().isEmpty()) {
+	if (edit->text().isEmpty()) {
 		QMessageBox::warning(NULL, tr("Net labels"), tr("Net labels cannot be blank"));
-        return;
-    }
+		return;
+	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
@@ -465,13 +459,13 @@ bool SymbolPaletteItem::hasPartNumberProperty()
 	return false;
 }
 
-ViewLayer::ViewID SymbolPaletteItem::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID SymbolPaletteItem::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
-    if (vid == ViewLayer::SchematicView) {
-        return ViewLayer::IconView;
-    }
+	if (vid == ViewLayer::SchematicView) {
+		return ViewLayer::IconView;
+	}
 
-    return ViewLayer::UnknownView;
+	return ViewLayer::UnknownView;
 }
 
 bool SymbolPaletteItem::hasPartLabel() {
@@ -483,14 +477,14 @@ bool SymbolPaletteItem::isOnlyNetLabel() {
 }
 
 QString SymbolPaletteItem::getLabel() {
-    if (m_voltageReference) {
-        return QString::number(m_voltage);
-    }
-    return  modelPart()->localProp("label").toString();
+	if (m_voltageReference) {
+		return QString::number(m_voltage);
+	}
+	return  modelPart()->localProp("label").toString();
 }
 
 QString SymbolPaletteItem::getDirection() {
-    return  modelPart()->localProp("direction").toString();
+	return  modelPart()->localProp("direction").toString();
 }
 
 void SymbolPaletteItem::setAutoroutable(bool ar) {
@@ -503,15 +497,15 @@ bool SymbolPaletteItem::getAutoroutable() {
 
 void SymbolPaletteItem::resetLayerKin() {
 
-    foreach (ItemBase * lkpi, layerKin()) {
-        if (lkpi->viewLayerID() == ViewLayer::SchematicText) {
-	        QString svg = makeSvg(lkpi->viewLayerID());
-	        lkpi->resetRenderer(svg);
-            lkpi->setProperty("textSvg", svg);
-            qobject_cast<SchematicTextLayerKinPaletteItem *>(lkpi)->clearTextThings();
-            break;
-        }
-    }
+	foreach (ItemBase * lkpi, layerKin()) {
+		if (lkpi->viewLayerID() == ViewLayer::SchematicText) {
+			QString svg = makeSvg(lkpi->viewLayerID());
+			lkpi->resetRenderer(svg);
+			lkpi->setProperty("textSvg", svg);
+			qobject_cast<SchematicTextLayerKinPaletteItem *>(lkpi)->clearTextThings();
+			break;
+		}
+	}
 }
 
 ///////////////////////////////////////////////////////////////
@@ -527,9 +521,9 @@ NetLabel::NetLabel( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 		}
 		modelPart->setLocalProp("label", label);
 	}
-    setInstanceTitle(label, true);
+	setInstanceTitle(label, true);
 
-    // direction is now obsolete, new netlabels use flip
+	// direction is now obsolete, new netlabels use flip
 	QString direction = getDirection();
 	if (direction.isEmpty()) {
 		direction = modelPart->properties().value("direction");
@@ -545,119 +539,119 @@ NetLabel::~NetLabel() {
 
 QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
 
-    DebugDialog::debug("moduleid " + this->moduleID());
-    double divisor = moduleID().contains(PartFactory::OldSchematicPrefix) ? 1 : 3;
+	DebugDialog::debug("moduleid " + this->moduleID());
+	double divisor = moduleID().contains(PartFactory::OldSchematicPrefix) ? 1 : 3;
 
-    double labelFontSize = 200 /divisor;
-    double totalHeight = 300 / divisor;
-    double arrowWidth = totalHeight / 2;
-    double strokeWidth = 10 / divisor;
-    double halfStrokeWidth = strokeWidth / 2;
-    double labelOffset = 20 / divisor;
-    double labelBaseLine = 220 / divisor;
+	double labelFontSize = 200 /divisor;
+	double totalHeight = 300 / divisor;
+	double arrowWidth = totalHeight / 2;
+	double strokeWidth = 10 / divisor;
+	double halfStrokeWidth = strokeWidth / 2;
+	double labelOffset = 20 / divisor;
+	double labelBaseLine = 220 / divisor;
 
-    QFont font("Droid Sans", labelFontSize * 72 / GraphicsUtils::StandardFritzingDPI, QFont::Normal);
+	QFont font("Droid Sans", labelFontSize * 72 / GraphicsUtils::StandardFritzingDPI, QFont::Normal);
 	QFontMetricsF fm(font);
-    double textWidth = fm.width(getLabel()) * GraphicsUtils::StandardFritzingDPI / 72;
-    double totalWidth = textWidth + arrowWidth + labelOffset;
+	double textWidth = fm.width(getLabel()) * GraphicsUtils::StandardFritzingDPI / 72;
+	double totalWidth = textWidth + arrowWidth + labelOffset;
 
 	QString header("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n"
-					"<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' \n"
-					"width='%1in' height='%2in' viewBox='0 0 %3 %4' >\n"
-					"<g id='%5' >\n"
-                    );
+	               "<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' \n"
+	               "width='%1in' height='%2in' viewBox='0 0 %3 %4' >\n"
+	               "<g id='%5' >\n"
+	              );
 
-    bool goLeft = (getDirection() == "left");  // direction is now obsolete; this is left over from 0.7.12 and earlier
-    double offset = goLeft ? arrowWidth : 0;
+	bool goLeft = (getDirection() == "left");  // direction is now obsolete; this is left over from 0.7.12 and earlier
+	double offset = goLeft ? arrowWidth : 0;
 
-    QString svg = header.arg(totalWidth / 1000)
-            .arg(totalHeight / 1000)
-            .arg(totalWidth)
-            .arg(totalHeight)
-            .arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID))
-            ;
+	QString svg = header.arg(totalWidth / 1000)
+	              .arg(totalHeight / 1000)
+	              .arg(totalWidth)
+	              .arg(totalHeight)
+	              .arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID))
+	              ;
 
-    if (viewLayerID == ViewLayer::SchematicText) {
-        svg += QString("<text id='label' x='%1' y='%2' fill='#000000' font-family='Droid Sans' font-size='%3'>%4</text>\n")
-                .arg(labelOffset + offset)
-                .arg(labelBaseLine)
-                .arg(labelFontSize)
-                .arg(getLabel());
-    }
-    else {
-        QString pin = QString("<rect id='connector0pin' x='%1' y='%2' width='%3' height='%4' fill='none' stroke='none' stroke-width='0' />\n");
-        QString terminal = QString("<rect id='connector0terminal' x='%1' y='%2' width='0.1' height='0.1' fill='none' stroke='none' stroke-width='0' />\n");
+	if (viewLayerID == ViewLayer::SchematicText) {
+		svg += QString("<text id='label' x='%1' y='%2' fill='#000000' font-family='Droid Sans' font-size='%3'>%4</text>\n")
+		       .arg(labelOffset + offset)
+		       .arg(labelBaseLine)
+		       .arg(labelFontSize)
+		       .arg(getLabel());
+	}
+	else {
+		QString pin = QString("<rect id='connector0pin' x='%1' y='%2' width='%3' height='%4' fill='none' stroke='none' stroke-width='0' />\n");
+		QString terminal = QString("<rect id='connector0terminal' x='%1' y='%2' width='0.1' height='0.1' fill='none' stroke='none' stroke-width='0' />\n");
 
-        QString points = QString("%1,%2 %3,%4 %5,%4 %5,%6 %3,%6");
-        if (goLeft) {
-            points = points.arg(halfStrokeWidth).arg(totalHeight / 2)
-                            .arg(arrowWidth).arg(halfStrokeWidth)
-                            .arg(totalWidth - halfStrokeWidth).arg(totalHeight - halfStrokeWidth);
-            terminal = terminal.arg(0).arg(totalHeight / 2);
-            pin = pin.arg(0).arg(0).arg(arrowWidth).arg(totalHeight);
-        }
-        else {
-            points = points.arg(totalWidth - halfStrokeWidth).arg(totalHeight / 2)
-                            .arg(totalWidth - arrowWidth).arg(halfStrokeWidth)
-                            .arg(halfStrokeWidth).arg(totalHeight - halfStrokeWidth);
-            terminal = terminal.arg(totalWidth).arg(totalHeight / 2);
-            pin = pin.arg(totalWidth - arrowWidth - 0.1).arg(0).arg(arrowWidth).arg(totalHeight);
-        }
+		QString points = QString("%1,%2 %3,%4 %5,%4 %5,%6 %3,%6");
+		if (goLeft) {
+			points = points.arg(halfStrokeWidth).arg(totalHeight / 2)
+			         .arg(arrowWidth).arg(halfStrokeWidth)
+			         .arg(totalWidth - halfStrokeWidth).arg(totalHeight - halfStrokeWidth);
+			terminal = terminal.arg(0).arg(totalHeight / 2);
+			pin = pin.arg(0).arg(0).arg(arrowWidth).arg(totalHeight);
+		}
+		else {
+			points = points.arg(totalWidth - halfStrokeWidth).arg(totalHeight / 2)
+			         .arg(totalWidth - arrowWidth).arg(halfStrokeWidth)
+			         .arg(halfStrokeWidth).arg(totalHeight - halfStrokeWidth);
+			terminal = terminal.arg(totalWidth).arg(totalHeight / 2);
+			pin = pin.arg(totalWidth - arrowWidth - 0.1).arg(0).arg(arrowWidth).arg(totalHeight);
+		}
 
-        svg += pin;
-        svg += terminal;
-        svg += QString("<polygon fill='white' stroke='#000000' stroke-width='%1' points='%2' />\n")
-                        .arg(strokeWidth)
-                        .arg(points);
-    }
+		svg += pin;
+		svg += terminal;
+		svg += QString("<polygon fill='white' stroke='#000000' stroke-width='%1' points='%2' />\n")
+		       .arg(strokeWidth)
+		       .arg(points);
+	}
 
-    svg += "</g>\n</svg>\n";
- 
-    return svg;
+	svg += "</g>\n</svg>\n";
+
+	return svg;
 }
 
 void NetLabel::addedToScene(bool temporary)
 {
 	if (this->scene() && m_viewID == ViewLayer::SchematicView) {
-        // do not understand why plan setLabel() doesn't work the same as the Mystery Part setChipLabel() in addedToScene()
+		// do not understand why plan setLabel() doesn't work the same as the Mystery Part setChipLabel() in addedToScene()
 
-        if (!this->transform().isIdentity()) {
-            // need to establish correct bounding rect here or setLabel will screw up alignment
-            // this seems to solve half of the cases
-	        QString svg = makeSvg(this->viewLayerID());
-	        resetRenderer(svg);
-            resetLayerKin();
-            QRectF r = boundingRect();
-            //debugInfo(QString("added to scene %1,%2").arg(r.width()).arg(r.height()));
+		if (!this->transform().isIdentity()) {
+			// need to establish correct bounding rect here or setLabel will screw up alignment
+			// this seems to solve half of the cases
+			QString svg = makeSvg(this->viewLayerID());
+			resetRenderer(svg);
+			resetLayerKin();
+			QRectF r = boundingRect();
+			//debugInfo(QString("added to scene %1,%2").arg(r.width()).arg(r.height()));
 
 
-            QTransform chiefTransform = this->transform();
-            QTransform local;
-            local.setMatrix(chiefTransform.m11(), chiefTransform.m12(), chiefTransform.m13(), chiefTransform.m21(), chiefTransform.m22(), chiefTransform.m23(), 0, 0, chiefTransform.m33()); 
-            if (!local.isIdentity()) {    
-                double x = r.width() / 2.0;
-	            double y = r.height() / 2.0;
-	            QTransform transf = QTransform().translate(-x, -y) * local * QTransform().translate(x, y);
-                if (qAbs(chiefTransform.dx() - transf.dx()) > .01 || qAbs(chiefTransform.dy() - transf.dy()) > .01) {
-                    DebugDialog::debug("got the translation bug here");
-                    this->getViewGeometry().setTransform(transf);
-                    this->setTransform2(transf);
-                }
-            }
-        }
+			QTransform chiefTransform = this->transform();
+			QTransform local;
+			local.setMatrix(chiefTransform.m11(), chiefTransform.m12(), chiefTransform.m13(), chiefTransform.m21(), chiefTransform.m22(), chiefTransform.m23(), 0, 0, chiefTransform.m33());
+			if (!local.isIdentity()) {
+				double x = r.width() / 2.0;
+				double y = r.height() / 2.0;
+				QTransform transf = QTransform().translate(-x, -y) * local * QTransform().translate(x, y);
+				if (qAbs(chiefTransform.dx() - transf.dx()) > .01 || qAbs(chiefTransform.dy() - transf.dy()) > .01) {
+					DebugDialog::debug("got the translation bug here");
+					this->getViewGeometry().setTransform(transf);
+					this->setTransform2(transf);
+				}
+			}
+		}
 
 		setLabel(getLabel());
 
 	}
 
-    // deliberately skip SymbolPaletteItem::addedToScene()
-    return PaletteItem::addedToScene(temporary);
+	// deliberately skip SymbolPaletteItem::addedToScene()
+	return PaletteItem::addedToScene(temporary);
 }
 
 QString NetLabel::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) {
-    Q_UNUSED(svgHash);
-    QString svg = makeSvg(viewLayerID);
-    return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
+	Q_UNUSED(svgHash);
+	QString svg = makeSvg(viewLayerID);
+	return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
 }
 
 ItemBase::PluralType NetLabel::isPlural() {
@@ -669,14 +663,13 @@ bool NetLabel::isOnlyNetLabel() {
 }
 
 QString NetLabel::getInspectorTitle() {
-   return getLabel();
+	return getLabel();
 
 }
 
 void NetLabel::setInspectorTitle(const QString & oldText, const QString & newText) {
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-    if (infoGraphicsView == NULL) return;
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infoGraphicsView == NULL) return;
 
-    infoGraphicsView->setProp(this, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
+	infoGraphicsView->setProp(this, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
 }
-

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6947 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-03 06:45:22 +0200 (Mi, 03. Apr 2013) $
 
 ********************************************************************/
 
@@ -84,4 +78,3 @@ const QString ModuleIDNames::SchematicFrameModuleIDName = "SchematicFrameModuleI
 const QString ModuleIDNames::CopperBlockerModuleIDName = "BlockerModuleID";
 const QString ModuleIDNames::Copper0BlockerModuleIDName = "Copper0BlockerModuleID";
 const QString ModuleIDNames::Copper1BlockerModuleIDName = "Copper1BlockerModuleID";
-

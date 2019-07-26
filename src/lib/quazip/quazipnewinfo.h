@@ -43,67 +43,67 @@ QuaZIP as long as you respect either GPL or LGPL for QuaZIP code.
  * QuaZipFile::open(OpenMode,const QuaZipNewInfo&,int,int,bool).
  **/
 struct QuaZipNewInfo {
-  /// File name.
-  /** This field holds file name inside archive, including path relative
-   * to archive root.
-   **/
-  QString name;
-  /// File timestamp.
-  /** This is the last file modification date and time. Will be stored
-   * in the archive central directory. It is a good practice to set it
-   * to the source file timestamp instead of archive creating time. Use
-   * setFileDateTime() or QuaZipNewInfo(const QString&, const QString&).
-   **/
-  QDateTime dateTime;
-  /// File internal attributes.
-  quint16 internalAttr;
-  /// File external attributes.
-  quint32 externalAttr;
-  /// File comment.
-  /** Will be encoded using QuaZip::getCommentCodec().
-   **/
-  QString comment;
-  /// File local extra field.
-  QByteArray extraLocal;
-  /// File global extra field.
-  QByteArray extraGlobal;
-  /// Uncompressed file size.
-  /** This is only needed if you are using raw file zipping mode, i. e.
-   * adding precompressed file in the zip archive.
-   **/
-  ulong uncompressedSize;
-  /// Constructs QuaZipNewInfo instance.
-  /** Initializes name with \a name, dateTime with current date and
-   * time. Attributes are initialized with zeros, comment and extra
-   * field with null values.
-   **/
-  QuaZipNewInfo(const QString& name);
-  /// Constructs QuaZipNewInfo instance.
-  /** Initializes name with \a name and dateTime with timestamp of the
-   * file named \a file. If the \a file does not exists or its timestamp
-   * is inaccessible (e. g. you do not have read permission for the
-   * directory file in), uses current date and time. Attributes are
-   * initialized with zeros, comment and extra field with null values.
-   * 
-   * \sa setFileDateTime()
-   **/
-  QuaZipNewInfo(const QString& name, const QString& file);
-  /// Sets the file timestamp from the existing file.
-  /** Use this function to set the file timestamp from the existing
-   * file. Use it like this:
-   * \code
-   * QuaZipFile zipFile(&zip);
-   * QFile file("file-to-add");
-   * file.open(QIODevice::ReadOnly);
-   * QuaZipNewInfo info("file-name-in-archive");
-   * info.setFileDateTime("file-to-add"); // take the timestamp from file
-   * zipFile.open(QIODevice::WriteOnly, info);
-   * \endcode
-   *
-   * This function does not change dateTime if some error occured (e. g.
-   * file is inaccessible).
-   **/
-  void setFileDateTime(const QString& file);
+	/// File name.
+	/** This field holds file name inside archive, including path relative
+	 * to archive root.
+	 **/
+	QString name;
+	/// File timestamp.
+	/** This is the last file modification date and time. Will be stored
+	 * in the archive central directory. It is a good practice to set it
+	 * to the source file timestamp instead of archive creating time. Use
+	 * setFileDateTime() or QuaZipNewInfo(const QString&, const QString&).
+	 **/
+	QDateTime dateTime;
+	/// File internal attributes.
+	quint16 internalAttr;
+	/// File external attributes.
+	quint32 externalAttr;
+	/// File comment.
+	/** Will be encoded using QuaZip::getCommentCodec().
+	 **/
+	QString comment;
+	/// File local extra field.
+	QByteArray extraLocal;
+	/// File global extra field.
+	QByteArray extraGlobal;
+	/// Uncompressed file size.
+	/** This is only needed if you are using raw file zipping mode, i. e.
+	 * adding precompressed file in the zip archive.
+	 **/
+	ulong uncompressedSize;
+	/// Constructs QuaZipNewInfo instance.
+	/** Initializes name with \a name, dateTime with current date and
+	 * time. Attributes are initialized with zeros, comment and extra
+	 * field with null values.
+	 **/
+	QuaZipNewInfo(const QString& name);
+	/// Constructs QuaZipNewInfo instance.
+	/** Initializes name with \a name and dateTime with timestamp of the
+	 * file named \a file. If the \a file does not exists or its timestamp
+	 * is inaccessible (e. g. you do not have read permission for the
+	 * directory file in), uses current date and time. Attributes are
+	 * initialized with zeros, comment and extra field with null values.
+	 *
+	 * \sa setFileDateTime()
+	 **/
+	QuaZipNewInfo(const QString& name, const QString& file);
+	/// Sets the file timestamp from the existing file.
+	/** Use this function to set the file timestamp from the existing
+	 * file. Use it like this:
+	 * \code
+	 * QuaZipFile zipFile(&zip);
+	 * QFile file("file-to-add");
+	 * file.open(QIODevice::ReadOnly);
+	 * QuaZipNewInfo info("file-name-in-archive");
+	 * info.setFileDateTime("file-to-add"); // take the timestamp from file
+	 * zipFile.open(QIODevice::WriteOnly, info);
+	 * \endcode
+	 *
+	 * This function does not change dateTime if some error occured (e. g.
+	 * file is inaccessible).
+	 **/
+	void setFileDateTime(const QString& file);
 };
 
 #endif

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
-
 ********************************************************************/
 
 #ifndef CLIPABLEWIRE_H
@@ -35,10 +29,10 @@ class ClipableWire : public Wire
 {
 
 public:
-	ClipableWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool initLabel); 
-	
+	ClipableWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool initLabel);
+
 	void setClipEnds(bool);
-	const QLineF & getPaintLine();	
+	const QLineF & getPaintLine();
 	bool filterMousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	void hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, class ConnectorItem * item);
@@ -47,7 +41,7 @@ public:
 
 protected:
 	bool insideInnerCircle(ConnectorItem * connectorItem, QPointF localPos);
-	bool insideSpoke(ClipableWire * wire, QPointF scenePos); 
+	bool insideSpoke(ClipableWire * wire, QPointF scenePos);
 	void dispatchHover(QPointF scenePos);
 	void dispatchHoverAux(bool inInner, Wire * inWire);
 	QPointF findIntersection(ConnectorItem * connectorItem, const QPointF & p);

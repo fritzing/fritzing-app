@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6980 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -81,11 +75,11 @@ const double InactiveOpacity = 0.5;
 
 QString Note::initialTextString;
 
-QRegExp UrlTag("<a.*href=[\"']([^\"]+[.\\s]*)[\"'].*>");    
+QRegExp UrlTag("<a.*href=[\"']([^\"]+[.\\s]*)[\"'].*>");
 
 ///////////////////////////////////////
 
-void findA(QDomElement element, QList<QDomElement> & aElements) 
+void findA(QDomElement element, QList<QDomElement> & aElements)
 {
 	if (element.tagName().compare("a", Qt::CaseInsensitive) == 0) {
 		aElements.append(element);
@@ -101,14 +95,14 @@ void findA(QDomElement element, QList<QDomElement> & aElements)
 }
 
 
-QString addText(const QString & text, bool inUrl) 
+QString addText(const QString & text, bool inUrl)
 {
 	if (text.isEmpty()) return "";
 
 	return QString("<tspan fill='%1' >%2</tspan>\n")
-				.arg(inUrl ? "#0000ff" : "#000000")
-				.arg(TextUtils::convertExtendedChars(TextUtils::escapeAnd(text)))
-				;
+	       .arg(inUrl ? "#0000ff" : "#000000")
+	       .arg(TextUtils::convertExtendedChars(TextUtils::escapeAnd(text)))
+	       ;
 }
 
 ///////////////////////////////////////
@@ -153,7 +147,7 @@ void NoteGraphicsTextItem::focusOutEvent(QFocusEvent * event) {
 
 //////////////////////////////////////////
 
-LinkDialog::LinkDialog(QWidget *parent) : QDialog(parent) 
+LinkDialog::LinkDialog(QWidget *parent) : QDialog(parent)
 {
 	this->setWindowTitle(QObject::tr("Edit link"));
 
@@ -177,12 +171,12 @@ LinkDialog::LinkDialog(QWidget *parent) : QDialog(parent)
 
 	vLayout->addWidget(formGroupBox);
 
-    QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 	buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	vLayout->addWidget(buttonBox);
 
@@ -221,7 +215,7 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 	m_inResize = NULL;
 	this->setCursor(Qt::ArrowCursor);
 
-    setFlag(QGraphicsItem::ItemIsSelectable, true);
+	setFlag(QGraphicsItem::ItemIsSelectable, true);
 
 	if (viewGeometry.rect().width() == 0 || viewGeometry.rect().height() == 0) {
 		m_rect.setRect(0, 0, Note::initialMinWidth, Note::initialMinHeight);
@@ -231,9 +225,9 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 	}
 	m_pen.setWidth(borderWidth);
 	m_pen.setCosmetic(false);
-    m_pen.setBrush(QColor(0xfa, 0xbc, 0x4f));
+	m_pen.setBrush(QColor(0xfa, 0xbc, 0x4f));
 
-    m_brush.setColor(QColor(0xff, 0xe9, 0xc8));
+	m_brush.setColor(QColor(0xff, 0xe9, 0xc8));
 	m_brush.setStyle(Qt::SolidPattern);
 
 	setPos(m_viewGeometry.loc());
@@ -304,30 +298,30 @@ void Note::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 
 	painter->setPen(Qt::NoPen);
 	painter->setBrush(m_brush);
-    QPolygonF poly;
-    poly.append(m_rect.topLeft());
-    poly.append(m_rect.topRight() + QPointF(-TriangleOffset, 0));
-    poly.append(m_rect.topRight() + QPointF(0, TriangleOffset));
-    poly.append(m_rect.bottomRight());
-    poly.append(m_rect.bottomLeft());
-    painter->drawPolygon(poly);
+	QPolygonF poly;
+	poly.append(m_rect.topLeft());
+	poly.append(m_rect.topRight() + QPointF(-TriangleOffset, 0));
+	poly.append(m_rect.topRight() + QPointF(0, TriangleOffset));
+	poly.append(m_rect.bottomRight());
+	poly.append(m_rect.bottomLeft());
+	painter->drawPolygon(poly);
 
-    painter->setBrush(m_pen.brush());
-    poly.clear();
-    poly.append(m_rect.topRight() + QPointF(-TriangleOffset, 0));
-    poly.append(m_rect.topRight() + QPointF(0, TriangleOffset));
-    poly.append(m_rect.topRight() + QPointF(-TriangleOffset, TriangleOffset));
-    painter->drawPolygon(poly);
+	painter->setBrush(m_pen.brush());
+	poly.clear();
+	poly.append(m_rect.topRight() + QPointF(-TriangleOffset, 0));
+	poly.append(m_rect.topRight() + QPointF(0, TriangleOffset));
+	poly.append(m_rect.topRight() + QPointF(-TriangleOffset, TriangleOffset));
+	painter->drawPolygon(poly);
 
-    painter->setPen(m_pen);
-    poly.clear();
-    poly.append(QPointF(0, m_rect.bottom() - borderWidth / 2.0));
-    poly.append(QPointF(m_rect.right(), m_rect.bottom() - borderWidth / 2.0));
-    painter->drawPolygon(poly);
+	painter->setPen(m_pen);
+	poly.clear();
+	poly.append(QPointF(0, m_rect.bottom() - borderWidth / 2.0));
+	poly.append(QPointF(m_rect.right(), m_rect.bottom() - borderWidth / 2.0));
+	painter->drawPolygon(poly);
 
 	if (option->state & QStyle::State_Selected) {
 		GraphicsUtils::qt_graphicsItem_highlightSelected(painter, option, boundingRect(), QPainterPath());
-    }
+	}
 
 	if (m_inactive) {
 		painter->restore();
@@ -341,14 +335,14 @@ QRectF Note::boundingRect() const
 
 QPainterPath Note::shape() const
 {
-    QPainterPath path;
-    path.addRect(boundingRect());
-    return path;
+	QPainterPath path;
+	path.addRect(boundingRect());
+	return path;
 }
 
 void Note::positionGrip() {
 	QSizeF gripSize = m_resizeGrip->boundingRect().size();
-	QSizeF sz = this->boundingRect().size(); 
+	QSizeF sz = this->boundingRect().size();
 	QPointF p(sz.width() - gripSize.width(), sz.height() - gripSize.height());
 	m_resizeGrip->setPos(p);
 	m_graphicsTextItem->setPos(TriangleOffset / 2, TriangleOffset / 2);
@@ -414,8 +408,8 @@ void Note::forceFormat(int position, int charsAdded) {
 	//textCursor.setCharFormat(f);
 	textCursor.mergeCharFormat(f);
 	//DebugDialog::debug(QString("setting font tc:%1,%2 params:%3,%4")
-		//.arg(textCursor.anchor()).arg(textCursor.position())
-		//.arg(position).arg(position + charsAdded));
+	//.arg(textCursor.anchor()).arg(textCursor.position())
+	//.arg(position).arg(position + charsAdded));
 
 	/*
 	textCursor = m_graphicsTextItem->textCursor();
@@ -437,7 +431,7 @@ void Note::forceFormat(int position, int charsAdded) {
 
 void Note::contentsChangedSlot() {
 
-    //DebugDialog::debug(QString("contents changed ") + m_graphicsTextItem->document()->toPlainText());
+	//DebugDialog::debug(QString("contents changed ") + m_graphicsTextItem->document()->toPlainText());
 	if (m_charsAdded > 0) {
 		forceFormat(m_charsPosition, m_charsAdded);
 	}
@@ -474,16 +468,16 @@ void Note::checkSize(QSizeF & newSize) {
 
 void Note::disconnectSlots() {
 	disconnect(m_graphicsTextItem->document(), SIGNAL(contentsChanged()),
-			this, SLOT(contentsChangedSlot()));
+	           this, SLOT(contentsChangedSlot()));
 	disconnect(m_graphicsTextItem->document(), SIGNAL(contentsChange(int, int, int)),
-			this, SLOT(contentsChangeSlot(int, int, int)));
+	           this, SLOT(contentsChangeSlot(int, int, int)));
 }
 
 void Note::connectSlots() {
 	connect(m_graphicsTextItem->document(), SIGNAL(contentsChanged()),
-		this, SLOT(contentsChangedSlot()), Qt::DirectConnection);
+	        this, SLOT(contentsChangedSlot()), Qt::DirectConnection);
 	connect(m_graphicsTextItem->document(), SIGNAL(contentsChange(int, int, int)),
-		this, SLOT(contentsChangeSlot(int, int, int)), Qt::DirectConnection);
+	        this, SLOT(contentsChangeSlot(int, int, int)), Qt::DirectConnection);
 }
 
 void Note::setText(const QString & text, bool check) {
@@ -571,7 +565,7 @@ void Note::linkDialog() {
 	bool gotUrl = false;
 	if (textCursor.anchor() == textCursor.selectionStart()) {
 		// the selection returns empty since we're between characters
-		// so select one character forward or one character backward 
+		// so select one character forward or one character backward
 		// to see whether we're in a url
 		int wasAnchor = textCursor.anchor();
 		bool atEnd = textCursor.atEnd();
@@ -691,9 +685,9 @@ void Note::handleMousePressSlot(QGraphicsSceneMouseEvent * event, ResizeHandle *
 }
 
 void Note::handleMouseMoveSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * resizeHandle) {
-    Q_UNUSED(resizeHandle);
+	Q_UNUSED(resizeHandle);
 
-    if (!m_inResize) return;
+	if (!m_inResize) return;
 
 	double minWidth = emptyMinWidth;
 	double minHeight = emptyMinHeight;
@@ -715,29 +709,29 @@ void Note::handleMouseMoveSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * 
 	}
 	if (newY - oldY1 < minHeight) {
 		newY = oldY1 + minHeight;
-	}	
+	}
 	newR.setRect(0, 0, newX - oldX1, newY - oldY1);
 
 	prepareGeometryChange();
 	m_rect = newR;
-	positionGrip();	
+	positionGrip();
 }
 
 void Note::handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * resizeHandle) {
-    Q_UNUSED(resizeHandle);
-    Q_UNUSED(event);
+	Q_UNUSED(resizeHandle);
+	Q_UNUSED(event);
 
 	if (!m_inResize) return;
 
 	m_inResize = NULL;
 	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
-        infoGraphicsView->noteSizeChanged(this, m_viewGeometry.rect().size(), m_rect.size());
+		infoGraphicsView->noteSizeChanged(this, m_viewGeometry.rect().size(), m_rect.size());
 	}
 }
 
 bool Note::hasPartLabel() {
-	
+
 	return false;
 }
 
@@ -761,20 +755,20 @@ bool Note::rotation45Allowed() {
 QString Note::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	Q_UNUSED(svgHash);
-    factor = 1;
+	factor = 1;
 
 	switch (viewLayerID) {
-		case ViewLayer::BreadboardNote:
-			if (viewID() != ViewLayer::BreadboardView) return "";
-			break;
-		case ViewLayer::PcbNote:
-			if (viewID() != ViewLayer::PCBView) return "";
-			break;
-		case ViewLayer::SchematicNote:
-			if (viewID() != ViewLayer::SchematicView) return "";
-			break;
-		default:
-			return "";
+	case ViewLayer::BreadboardNote:
+		if (viewID() != ViewLayer::BreadboardView) return "";
+		break;
+	case ViewLayer::PcbNote:
+		if (viewID() != ViewLayer::PCBView) return "";
+		break;
+	case ViewLayer::SchematicNote:
+		if (viewID() != ViewLayer::SchematicView) return "";
+		break;
+	default:
+		return "";
 	}
 
 	QString svg = "<g>";
@@ -783,14 +777,14 @@ QString Note::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 	double penWidth = m_pen.widthF() * dpi / GraphicsUtils::SVGDPI;
 	QString brushColor = blackOnly ? "none" : m_brush.color().name();
 	svg += QString("<rect x='%1' y='%2' width='%3' height='%4' fill='%5' stroke='%6' stroke-width='%7' />")
-		.arg(penWidth / 2)
-		.arg(penWidth / 2)
-		.arg((m_rect.width() * dpi / GraphicsUtils::SVGDPI) - penWidth)
-		.arg((m_rect.height() * dpi / GraphicsUtils::SVGDPI) - penWidth)
-		.arg(brushColor)
-		.arg(penColor)
-		.arg(penWidth)
-		;
+	       .arg(penWidth / 2)
+	       .arg(penWidth / 2)
+	       .arg((m_rect.width() * dpi / GraphicsUtils::SVGDPI) - penWidth)
+	       .arg((m_rect.height() * dpi / GraphicsUtils::SVGDPI) - penWidth)
+	       .arg(brushColor)
+	       .arg(penColor)
+	       .arg(penWidth)
+	       ;
 
 	QTextCursor textCursor = m_graphicsTextItem->textCursor();
 	QSizeF gripSize = m_resizeGrip->boundingRect().size();
@@ -809,11 +803,11 @@ QString Note::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 			QString soFar;
 
 			svg += QString("<text  x='%1' y='%2' font-family='%3' stroke='none' fill='#000000' text-anchor='left' font-size='%4' >\n")
-				.arg((left + r.left()) * dpi / GraphicsUtils::SVGDPI)
-				.arg((top + r.top() + line.ascent()) * dpi / GraphicsUtils::SVGDPI)
-				.arg("Droid Sans")
-				.arg(line.ascent() * dpi / GraphicsUtils::SVGDPI) 
-				;
+			       .arg((left + r.left()) * dpi / GraphicsUtils::SVGDPI)
+			       .arg((top + r.top() + line.ascent()) * dpi / GraphicsUtils::SVGDPI)
+			       .arg("Droid Sans")
+			       .arg(line.ascent() * dpi / GraphicsUtils::SVGDPI)
+			       ;
 
 
 			bool inUrl = false;
@@ -845,23 +839,23 @@ QString Note::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 			svg += addText(soFar, inUrl && !blackOnly);
 			svg += "</text>";
 		}
-	}	
+	}
 
 
 	svg += "</g>";
 
 
-	return svg;	
+	return svg;
 }
 
-ViewLayer::ViewID Note::useViewIDForPixmap(ViewLayer::ViewID, bool) 
+ViewLayer::ViewID Note::useViewIDForPixmap(ViewLayer::ViewID, bool)
 {
-    return ViewLayer::IconView;
+	return ViewLayer::IconView;
 }
 
 void Note::addedToScene(bool temporary)
 {
 	positionGrip();
 
-    return ItemBase::addedToScene(temporary);
+	return ItemBase::addedToScene(temporary);
 }

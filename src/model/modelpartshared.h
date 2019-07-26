@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6955 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-06 23:14:37 +0200 (Sa, 06. Apr 2013) $
 
 ********************************************************************/
 
@@ -38,20 +32,20 @@ $Date: 2013-04-06 23:14:37 +0200 (Sa, 06. Apr 2013) $
 #include "../viewlayer.h"
 
 struct ViewImage {
-    ViewLayer::ViewID viewID;
-    qulonglong layers;
-    qulonglong sticky;
-    qulonglong flipped;
-    QString image;
-    bool canFlipHorizontal;
-    bool canFlipVertical;
+	ViewLayer::ViewID viewID;
+	qulonglong layers;
+	qulonglong sticky;
+	qulonglong flipped;
+	QString image;
+	bool canFlipHorizontal;
+	bool canFlipVertical;
 
-    ViewImage(ViewLayer::ViewID);
+	ViewImage(ViewLayer::ViewID);
 };
 
 class ModelPartShared : public QObject
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	ModelPartShared();
 	ModelPartShared(QDomDocument &, const QString & path);
@@ -85,29 +79,29 @@ public:
 	void setDate(QDate);
 	const QString & dateAsStr();
 	void setDate(QString);
-    void setDBID(qulonglong);
-    qulonglong dbid();
-    const QString & fritzingVersion();
-    void setFritzingVersion(const QString &);
+	void setDBID(qulonglong);
+	qulonglong dbid();
+	const QString & fritzingVersion();
+	void setFritzingVersion(const QString &);
 
-    const QList<ViewImage *> viewImages();
-    QString imageFileName(ViewLayer::ViewID, ViewLayer::ViewLayerID);
-    void setImageFileName(ViewLayer::ViewID, const QString & filename);
-    QString imageFileName(ViewLayer::ViewID);
-    const QList< QPointer<ModelPartShared> > & subparts();
-    void addSubpart(ModelPartShared * subpart);
-    bool hasSubparts();
-    void setSubpartID(const QString &);
-    const QString & subpartID() const;
-    ModelPartShared * superpart();
-    void setSuperpart(ModelPartShared *);
-    bool anySticky(ViewLayer::ViewID);
-    bool hasMultipleLayers(ViewLayer::ViewID);
-    bool canFlipHorizontal(ViewLayer::ViewID);
-    bool canFlipVertical(ViewLayer::ViewID);
-    bool hasViewID(ViewLayer::ViewID viewID);
-    LayerList viewLayers(ViewLayer::ViewID viewID);
-    LayerList viewLayersFlipped(ViewLayer::ViewID viewID);
+	const QList<ViewImage *> viewImages();
+	QString imageFileName(ViewLayer::ViewID, ViewLayer::ViewLayerID);
+	void setImageFileName(ViewLayer::ViewID, const QString & filename);
+	QString imageFileName(ViewLayer::ViewID);
+	const QList< QPointer<ModelPartShared> > & subparts();
+	void addSubpart(ModelPartShared * subpart);
+	bool hasSubparts();
+	void setSubpartID(const QString &);
+	const QString & subpartID() const;
+	ModelPartShared * superpart();
+	void setSuperpart(ModelPartShared *);
+	bool anySticky(ViewLayer::ViewID);
+	bool hasMultipleLayers(ViewLayer::ViewID);
+	bool canFlipHorizontal(ViewLayer::ViewID);
+	bool canFlipVertical(ViewLayer::ViewID);
+	bool hasViewID(ViewLayer::ViewID viewID);
+	LayerList viewLayers(ViewLayer::ViewID viewID);
+	LayerList viewLayersFlipped(ViewLayer::ViewID viewID);
 
 	const QString & path();
 	void setPath(QString path);
@@ -131,30 +125,30 @@ public:
 
 
 	void initConnectors();
-    void setConnectorsInitialized(bool); 
+	void setConnectorsInitialized(bool);
 	ConnectorShared * getConnectorShared(const QString & id);
 	bool ignoreTerminalPoints();
 
 	void setProperty(const QString & key, const QString & value, bool showInLabel);
-    bool showInLabel(const QString & key);
+	bool showInLabel(const QString & key);
 	const QString & replacedby();
 	void setReplacedby(const QString & replacedby);
 
 	void flipSMDAnd();
 	void setFlippedSMD(bool);
-	bool flippedSMD();	
+	bool flippedSMD();
 	bool needsCopper1();
 	bool hasViewFor(ViewLayer::ViewID);
 	bool hasViewFor(ViewLayer::ViewID, ViewLayer::ViewLayerID);
 	QString hasBaseNameFor(ViewLayer::ViewID);
-    void setViewImage(ViewImage *);
-    void addConnector(ConnectorShared *);
-    void insertBus(class BusShared *);
-    void lookForZeroConnector();
-    bool hasZeroConnector();
-    void addOwner(QObject *);
-    void setSubpartOffset(QPointF);
-    QPointF subpartOffset() const;
+	void setViewImage(ViewImage *);
+	void addConnector(ConnectorShared *);
+	void insertBus(class BusShared *);
+	void lookForZeroConnector();
+	bool hasZeroConnector();
+	void addOwner(QObject *);
+	void setSubpartOffset(QPointF);
+	QPointF subpartOffset() const;
 
 protected:
 	void loadTagText(QDomElement parent, QString tagName, QString &field);
@@ -163,13 +157,13 @@ protected:
 	void populateProperties(QDomElement parent, QHash<QString,QString> &hash, QStringList & displayKeys);
 	void commonInit();
 	void ensurePartNumberProperty();
-    void copyPins(ViewLayer::ViewLayerID from, ViewLayer::ViewLayerID to);
-    LayerList viewLayersAux(ViewLayer::ViewID viewID, qulonglong (*accessor)(ViewImage *));
-    void addSchematicText(ViewImage *);
+	void copyPins(ViewLayer::ViewLayerID from, ViewLayer::ViewLayerID to);
+	LayerList viewLayersAux(ViewLayer::ViewID viewID, qulonglong (*accessor)(ViewImage *));
+	void addSchematicText(ViewImage *);
 	bool setDomDocument(QDomDocument &);
 
 protected slots:
-    void removeOwner();
+	void removeOwner();
 
 public:
 	static const QString PartNumberPropertyName;
@@ -180,14 +174,14 @@ protected:
 
 	QString m_uri;
 	QString m_moduleID;
-    QString m_fritzingVersion;
+	QString m_fritzingVersion;
 	QString m_version;
 	QString m_author;
 	QString m_title;
 	QString m_label;
 	QString m_description;
-    QString m_spice;
-    QString m_spiceModel;
+	QString m_spice;
+	QString m_spiceModel;
 	QString m_url;
 	QString m_date;
 	QString m_replacedby;
@@ -201,20 +195,20 @@ protected:
 
 	QHash<QString, QPointer<class ConnectorShared> > m_connectorSharedHash;
 	QHash<QString, class BusShared *> m_buses;
-    QHash<ViewLayer::ViewID, ViewImage *> m_viewImages;
+	QHash<ViewLayer::ViewID, ViewImage *> m_viewImages;
 
 	bool m_connectorsInitialized;
 	bool m_ignoreTerminalPoints;
 
 	bool m_flippedSMD;
 	bool m_needsCopper1;				// for converting pre-two-layer parts
-    qulonglong m_dbid;
-    bool m_hasZeroConnector;
-    int m_ownerCount;
-    QList< QPointer<ModelPartShared> > m_subparts;
-    QPointer<ModelPartShared> m_superpart;
-    QString m_subpartID;
-    QPointF m_subpartOffset;
+	qulonglong m_dbid;
+	bool m_hasZeroConnector;
+	int m_ownerCount;
+	QList< QPointer<ModelPartShared> > m_subparts;
+	QPointer<ModelPartShared> m_superpart;
+	QString m_subpartID;
+	QPointF m_subpartOffset;
 };
 
 class ModelPartSharedRoot : public ModelPartShared

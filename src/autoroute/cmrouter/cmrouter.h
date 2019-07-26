@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6705 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-12-12 15:36:22 +0100 (Mi, 12. Dez 2012) $
 
 ********************************************************************/
 
@@ -58,7 +52,7 @@ class GridEntry : public QGraphicsRectItem {
 public:
 
 public:
-	GridEntry(QRectF &, QGraphicsItem * parent); 
+	GridEntry(QRectF &, QGraphicsItem * parent);
 	bool drawn();
 	void setDrawn(bool);
 
@@ -89,7 +83,7 @@ public:
 	Tile * insertTile(Plane* thePlane, QRectF &tileRect, QList<Tile *> &alreadyTiled, QGraphicsItem *, Tile::TileType type, CMRouter::OverlapType);
 	TileRect boardRect();
 	void setKeepout(double);
-    void drcClean();
+	void drcClean();
 
 protected:
 
@@ -100,7 +94,7 @@ protected:
 	Tile * addTile(class NonConnectorItem * nci, Tile::TileType type, Plane *, QList<Tile *> & alreadyTiled, CMRouter::OverlapType);
 	Tile * insertTile(Plane* thePlane, TileRect &tileRect, QList<Tile *> &alreadyTiled, QGraphicsItem *, Tile::TileType type, CMRouter::OverlapType);
 	void clearGridEntries();
-	void cleanPoints(QList<QPointF> & allPoints, Plane *); 
+	void cleanPoints(QList<QPointF> & allPoints, Plane *);
 	bool insideV(const QPointF & check, const QPointF & vertex);
 	void makeAlignTiles(QMultiHash<Tile *, TileRect *> &, Plane * thePlane);
 	bool overlapsOnly(QGraphicsItem * item, QList<Tile *> & alreadyTiled);
@@ -117,11 +111,11 @@ protected:
 	QList<Plane *> m_planes;
 	Plane * m_unionPlane;
 	Plane * m_union90Plane;
-    ItemBase * m_board;
-    QRectF m_maxRect;
+	ItemBase * m_board;
+	QRectF m_maxRect;
 	QString m_error;
-    PCBSketchWidget * m_sketchWidget;
-    double m_keepoutPixels;
+	PCBSketchWidget * m_sketchWidget;
+	double m_keepoutPixels;
 };
 
 #endif

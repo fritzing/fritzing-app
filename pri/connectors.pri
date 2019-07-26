@@ -11,10 +11,6 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
-# ********************************************************************
-# $Revision: 2948 $:
-# $Author: cohen@irascible.com $:
-# $Date: 2009-05-15 17:05:14 +0200 (Fri, 15 May 2009) $
 # ********************************************************************/
 
 HEADERS += \
@@ -25,14 +21,14 @@ src/connectors/connectoritem.h \
 src/connectors/nonconnectoritem.h \
 src/connectors/connectorshared.h \
 src/connectors/ercdata.h \
-src/connectors/svgidlayer.h 
- 
+src/connectors/svgidlayer.h
+
 SOURCES += \
 src/connectors/bus.cpp \
 src/connectors/busshared.cpp \
 src/connectors/connector.cpp \
-src/connectors/connectoritem.cpp \ 
-src/connectors/nonconnectoritem.cpp \ 
+src/connectors/connectoritem.cpp \
+src/connectors/nonconnectoritem.cpp \
 src/connectors/connectorshared.cpp \
 src/connectors/ercdata.cpp \
-src/connectors/svgidlayer.cpp 
+src/connectors/svgidlayer.cpp

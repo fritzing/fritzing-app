@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -64,7 +58,7 @@ BezierDisplay::~BezierDisplay()
 void BezierDisplay::initDisplay(QGraphicsItem * master, Bezier *bezier)
 {
 	//DebugDialog::debug("adding bezier display");
-		
+
 	static int activeColor =   0xffffff;
 	static int inactiveColor = 0xb0b0b0;
 
@@ -76,9 +70,9 @@ void BezierDisplay::initDisplay(QGraphicsItem * master, Bezier *bezier)
 		parent = master->parentItem();
 	}
 
-	// put the feeback on top
+	// put the feedback on top
 	double z = parent->zValue() + 100;			// (ViewLayer::getZIncrement() / 2)
-	
+
 	m_itemL0 = new QGraphicsLineItem();
 	pen.setColor(QColor(bezier->drag0() ? activeColor : inactiveColor));
 	m_itemL0->setPen(pen);
@@ -124,9 +118,9 @@ void BezierDisplay::updateDisplay(QGraphicsItem * master, Bezier *bezier)
 		return;
 	}
 
-        //static double minD = 5;
-        //static double radius = 6;
-        //static double minDSqd = minD * minD;
+	//static double minD = 5;
+	//static double radius = 6;
+	//static double minDSqd = minD * minD;
 
 	QRectF sr = master->scene()->sceneRect();
 	double x1, y1, x2, y2;
@@ -136,13 +130,13 @@ void BezierDisplay::updateDisplay(QGraphicsItem * master, Bezier *bezier)
 	GraphicsUtils::liangBarskyLineClip(p0.x(), p0.y(), p1.x(), p1.y(), sr.left(), sr.right(), sr.top(), sr.bottom(), x1, y1, x2, y2);
 	m_itemL0->setLine(x1, y1, x2, y2);
 	//if (GraphicsUtils::distanceSqd(bezier->endpoint0(), bezier->cp0()) > minDSqd) {
-		//m_itemE0->setVisible(false);
+	//m_itemE0->setVisible(false);
 	//}
 	//else {
-		//QRectF r(master->mapToScene(bezier->endpoint0()), QSizeF(0,0));
-		//r.adjust(-radius, -radius, radius, radius);
-		//m_itemE0->setRect(r);
-		//m_itemE0->setVisible(true);
+	//QRectF r(master->mapToScene(bezier->endpoint0()), QSizeF(0,0));
+	//r.adjust(-radius, -radius, radius, radius);
+	//m_itemE0->setRect(r);
+	//m_itemE0->setVisible(true);
 	//}
 
 	p0 = master->mapToScene(bezier->endpoint1());
@@ -162,5 +156,3 @@ void BezierDisplay::updateDisplay(QGraphicsItem * master, Bezier *bezier)
 	m_itemL0->setVisible(true);
 	m_itemL1->setVisible(true);
 }
-
-

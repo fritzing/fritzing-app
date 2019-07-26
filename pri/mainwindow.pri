@@ -11,24 +11,18 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
-# ********************************************************************
-# $Revision: 6370 $:
-# $Author: cohen@irascible.com $:
-# $Date: 2012-09-05 17:51:33 +0200 (Wed, 05 Sep 2012) $
 # ********************************************************************/
 HEADERS += \
     src/mainwindow/fdockwidget.h \
     src/mainwindow/fritzingwindow.h \
     src/mainwindow/mainwindow.h \
     src/mainwindow/sketchareawidget.h \
-    
+
 SOURCES += \
     src/mainwindow/fdockwidget.cpp \
     src/mainwindow/fritzingwindow.cpp \
     src/mainwindow/mainwindow.cpp \
-    src/mainwindow/mainwindow_export.cpp \    
+    src/mainwindow/mainwindow_export.cpp \
     src/mainwindow/mainwindow_menu.cpp \
     src/mainwindow/mainwindow_dock.cpp \
     src/mainwindow/sketchareawidget.cpp \
-    
-

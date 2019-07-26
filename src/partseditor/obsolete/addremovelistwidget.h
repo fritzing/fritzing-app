@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -37,25 +31,25 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 class AddRemoveListWidget : public QGroupBox {
 	Q_OBJECT
 
-	public:
-		AddRemoveListWidget(QString title, QWidget *parent=0);
-		int count();
-		QListWidgetItem* itemAt(int rowIdx);
-		QStringList& getItemsText();
-		void setItemsText(const QStringList& texts);
+public:
+	AddRemoveListWidget(QString title, QWidget *parent=0);
+	int count();
+	QListWidgetItem* itemAt(int rowIdx);
+	QStringList& getItemsText();
+	void setItemsText(const QStringList& texts);
 
-	protected slots:
-		void addItem();
-		void addItem(QString itemText);
-		void removeSelectedItems();
+protected slots:
+	void addItem();
+	void addItem(QString itemText);
+	void removeSelectedItems();
 
-	protected:
-		QLabel *m_label;
+protected:
+	QLabel *m_label;
 
-		QPushButton *m_addButton;
-		QPushButton *m_removeButton;
+	QPushButton *m_addButton;
+	QPushButton *m_removeButton;
 
-		QListWidget *m_list;
+	QListWidget *m_list;
 };
 
 #endif /* ADDREMOVELISTWIDGET_H_ */

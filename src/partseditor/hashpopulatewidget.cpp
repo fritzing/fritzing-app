@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 
@@ -32,9 +26,9 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include "../debugdialog.h"
 #include "../utils/misc.h"
 
-HashLineEdit::HashLineEdit(const QString &text, bool defaultValue, QWidget *parent) : QLineEdit(text, parent) 
+HashLineEdit::HashLineEdit(const QString &text, bool defaultValue, QWidget *parent) : QLineEdit(text, parent)
 {
-    connect(this, SIGNAL(editingFinished()), parent, SLOT(lineEditChanged()));
+	connect(this, SIGNAL(editingFinished()), parent, SLOT(lineEditChanged()));
 	m_firstText = text;
 	m_isDefaultValue = defaultValue;
 	if(defaultValue) {
@@ -82,28 +76,28 @@ void HashLineEdit::focusOutEvent(QFocusEvent * event) {
 }
 
 HashPopulateWidget::HashPopulateWidget(const QString & title, const QHash<QString,QString> &initValues, const QStringList &readOnlyKeys, bool keysOnly, QWidget *parent) : QFrame(parent) {
-    m_keysOnly = keysOnly;
+	m_keysOnly = keysOnly;
 	m_lastLabel = NULL;
 	m_lastValue = NULL;
 
-    QGridLayout *layout = new QGridLayout();
+	QGridLayout *layout = new QGridLayout();
 	layout->setColumnStretch(0,0);
 	layout->setColumnStretch(1,1);
 	layout->setColumnStretch(2,0);
 
-    if (!title.isEmpty()) {
-	    layout->addWidget(new QLabel(title),0,0,0);
-    }
+	if (!title.isEmpty()) {
+		layout->addWidget(new QLabel(title),0,0,0);
+	}
 
 	QList<QString> keys = initValues.keys();
 	qSort(keys);
 
 	for(int i=0; i < keys.count(); i++) {
 		HashLineEdit *name = new HashLineEdit(keys[i],false,this);
-        HashLineEdit *value = new HashLineEdit(initValues[keys[i]],false,this);
-        if (m_keysOnly) value->hide();
+		HashLineEdit *value = new HashLineEdit(initValues[keys[i]],false,this);
+		if (m_keysOnly) value->hide();
 
-        int ix = layout->rowCount();
+		int ix = layout->rowCount();
 
 		if(readOnlyKeys.contains(keys[i])) {
 			name->setEnabled(false);
@@ -119,7 +113,7 @@ HashPopulateWidget::HashPopulateWidget(const QString & title, const QHash<QStrin
 	addRow(layout);
 
 
-	this->setLayout(layout);  
+	this->setLayout(layout);
 }
 
 HashRemoveButton *HashPopulateWidget::createRemoveButton(HashLineEdit* label, HashLineEdit* value) {
@@ -170,7 +164,7 @@ void HashPopulateWidget::addRow(QGridLayout *layout) {
 		disconnect(m_lastValue,SIGNAL(editingFinished()),this,SLOT(lastRowEditionCompleted()));
 	}
 
-    int ix = layout->rowCount();
+	int ix = layout->rowCount();
 
 	m_lastLabel = new HashLineEdit(QObject::tr("a label"),true,this);
 	layout->addWidget(m_lastLabel,ix,0);
@@ -179,7 +173,7 @@ void HashPopulateWidget::addRow(QGridLayout *layout) {
 	m_lastValue = new HashLineEdit(QObject::tr("a value"),true,this);
 	layout->addWidget(m_lastValue,ix,1,1,2);
 	connect(m_lastValue,SIGNAL(editingFinished()),this,SLOT(lastRowEditionCompleted()));
-    if (m_keysOnly) m_lastValue->hide();
+	if (m_keysOnly) m_lastValue->hide();
 
 	emit editionStarted();
 }
@@ -194,13 +188,13 @@ void HashPopulateWidget::lastRowEditionCompleted() {
 			// removeRow() ?;
 		} else {
 			HashRemoveButton *button = createRemoveButton(m_lastLabel, m_lastValue);
-            for (int i = 0; i < gridLayout()->rowCount(); i++) {
-                HashLineEdit * label = lineEditAt(i, 0);
-                if (m_lastLabel == label) {
-                    gridLayout()->addWidget(button,i,3);
-                    break;
-                }
-            }
+			for (int i = 0; i < gridLayout()->rowCount(); i++) {
+				HashLineEdit * label = lineEditAt(i, 0);
+				if (m_lastLabel == label) {
+					gridLayout()->addWidget(button,i,3);
+					break;
+				}
+			}
 			addRow();
 		}
 	}
@@ -211,14 +205,14 @@ void HashPopulateWidget::removeRow(HashRemoveButton* button) {
 	QList<QWidget*> widgs;
 	widgs << button->label() << button->value() << button;
 	foreach(QWidget* w, widgs) {
-		lo->removeWidget(w);   
+		lo->removeWidget(w);
 		//w->hide();
-        //delete w;
+		//delete w;
 	}
 	lo->update();
-    emit changed();
+	emit changed();
 }
 
 void HashPopulateWidget::lineEditChanged() {
-    emit changed();
+	emit changed();
 }

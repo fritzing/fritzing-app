@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6984 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -70,13 +64,13 @@ QLabel * addLabel(QHBoxLayout * hboxLayout, QPixmap * pixmap) {
 }
 
 QString format3(double d) {
-    return QString("%1").arg(d, 0, 'f', 3);
+	return QString("%1").arg(d, 0, 'f', 3);
 }
 
 //////////////////////////////////////
 
 
-TagLabel::TagLabel(QWidget * parent) : QLabel(parent) 
+TagLabel::TagLabel(QWidget * parent) : QLabel(parent)
 {
 }
 
@@ -106,9 +100,9 @@ QSize TagLabel::sizeHint() const
 
 //////////////////////////////////////
 
-HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent) 
+HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 {
-    this->setWidgetResizable(true);
+	this->setWidgetResizable(true);
 
 	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
@@ -119,7 +113,7 @@ HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 	m_lastPropsModelPart = NULL;
 	m_lastPropsItemBase = NULL;
 
-    m_tinyMode = false;
+	m_tinyMode = false;
 
 	m_partTitle = NULL;
 	m_partUrl = NULL;
@@ -137,7 +131,7 @@ HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 	m_currentItem = NULL;
 	m_currentSwappingEnabled = false;
 
-    m_layerWidget = NULL;
+	m_layerWidget = NULL;
 
 }
 
@@ -150,17 +144,17 @@ HtmlInfoView::~HtmlInfoView() {
 }
 
 void HtmlInfoView::init(bool tinyMode) {
-    m_tinyMode = tinyMode;
+	m_tinyMode = tinyMode;
 
-    QFrame * mainFrame = new QFrame(this);
+	QFrame * mainFrame = new QFrame(this);
 	mainFrame->setObjectName("infoViewMainFrame");
 
-    QVBoxLayout *vlo = new QVBoxLayout(mainFrame);
+	QVBoxLayout *vlo = new QVBoxLayout(mainFrame);
 	vlo->setSpacing(0);
 	vlo->setContentsMargins(0, 0, 0, 0);
 	vlo->setSizeConstraint( QLayout::SetMinAndMaxSize );
 
-        /* Part Title */
+	/* Part Title */
 
 	m_titleEdit = new FLineEdit(mainFrame);
 	m_titleEdit->setObjectName("instanceTitleEditor");
@@ -174,11 +168,11 @@ void HtmlInfoView::init(bool tinyMode) {
 
 	setInstanceTitleColors(m_titleEdit, QColor(0xaf, 0xaf, 0xb4), QColor(0x00, 0x00, 0x00)); //b3b3b3, 575757
 	m_titleEdit->setAutoFillBackground(true);
-	
-    vlo->addWidget(m_titleEdit);
-    if (tinyMode) m_titleEdit->setVisible(false);
 
-    /* Part Icons */
+	vlo->addWidget(m_titleEdit);
+	if (tinyMode) m_titleEdit->setVisible(false);
+
+	/* Part Icons */
 
 	if (NoIcon == NULL) {
 		NoIcon = new QPixmap(":/resources/images/icons/noicon.png");
@@ -203,15 +197,15 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_partVersion = new QLabel();
 	m_partVersion->setObjectName("infoViewPartVersion");
 	m_partVersion->setToolTip(tr("Part version number"));
-    m_partVersion->setOpenExternalLinks(false);
-    m_partVersion->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    connect(m_partVersion, SIGNAL(linkActivated(const QString &)), this, SLOT(clickObsolete(const QString &)));
+	m_partVersion->setOpenExternalLinks(false);
+	m_partVersion->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+	connect(m_partVersion, SIGNAL(linkActivated(const QString &)), this, SLOT(clickObsolete(const QString &)));
 	subVersionLayout->addWidget(m_partVersion, 0, Qt::AlignLeft);
 	subVersionLayout->addStretch(1);
 	versionLayout->addLayout(subVersionLayout);
 
 	hboxLayout->addLayout(versionLayout);
-	
+
 	hboxLayout->addSpacerItem(new QSpacerItem(IconSpace, 1, QSizePolicy::Expanding));
 	iconFrame->setLayout(hboxLayout);
 	vlo->addWidget(iconFrame);
@@ -221,20 +215,20 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_partUrl->setObjectName("infoViewPartUrl");
 	m_partUrl->setOpenExternalLinks(true);
 	vlo->addWidget(m_partUrl);
-    if (tinyMode) m_partUrl->setVisible(false);
+	if (tinyMode) m_partUrl->setVisible(false);
 
 	m_partTitle = new TagLabel(this);
 	m_partTitle->setWordWrap(true);
 	m_partTitle->setObjectName("infoViewPartTitle");
 	m_partTitle->setOpenExternalLinks(true);
 	vlo->addWidget(m_partTitle);
-    if (tinyMode) m_partTitle->setVisible(false);
+	if (tinyMode) m_partTitle->setVisible(false);
 
-    m_placementLabel = new QLabel(tr("Placement"), NULL);
+	m_placementLabel = new QLabel(tr("Placement"), NULL);
 	m_placementLabel->setObjectName("expandableViewLabel");
 	vlo->addWidget(m_placementLabel);
 
-    m_placementFrame = new QFrame(this);
+	m_placementFrame = new QFrame(this);
 	m_placementFrame->setObjectName("infoViewPropertyFrame");
 	m_placementLayout = new QGridLayout(m_placementFrame);
 	m_placementLayout->setSpacing(0);
@@ -250,21 +244,21 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_layerLayout = new QVBoxLayout(m_layerFrame);
 	m_layerLayout->setSpacing(0);
 	m_layerLayout->setContentsMargins(0, 0, 0, 0);
-    m_layerFrame->setLayout(m_layerLayout);
+	m_layerFrame->setLayout(m_layerLayout);
 
-    m_placementLayout->addWidget(m_layerFrame, 0, 1);
+	m_placementLayout->addWidget(m_layerFrame, 0, 1);
 
-    makeLocationFrame();
-    m_placementLayout->addWidget(m_locationLabel, 1, 0);
-    m_placementLayout->addWidget(m_locationFrame, 1, 1);
+	makeLocationFrame();
+	m_placementLayout->addWidget(m_locationLabel, 1, 0);
+	m_placementLayout->addWidget(m_locationFrame, 1, 1);
 
-    makeRotationFrame();
-    m_placementLayout->addWidget(m_rotationLabel, 2, 0);
-    m_placementLayout->addWidget(m_rotationFrame, 2, 1);
+	makeRotationFrame();
+	m_placementLayout->addWidget(m_rotationLabel, 2, 0);
+	m_placementLayout->addWidget(m_rotationFrame, 2, 1);
 
-    makeLockFrame();
-    m_placementLayout->addWidget(m_lockLabel, 3, 0);
-    m_placementLayout->addWidget(m_lockFrame, 3, 1);
+	makeLockFrame();
+	m_placementLayout->addWidget(m_lockLabel, 3, 0);
+	m_placementLayout->addWidget(m_lockFrame, 3, 1);
 
 
 	m_placementFrame->setLayout(m_placementLayout);
@@ -285,23 +279,23 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_tagLabel = new QLabel(tr("Tags"), NULL);
 	m_tagLabel->setObjectName("expandableViewLabel");
 	vlo->addWidget(m_tagLabel);
-    if (tinyMode) m_tagLabel->setVisible(false);
+	if (tinyMode) m_tagLabel->setVisible(false);
 
 	m_tagsTextLabel = new TagLabel(this);
 	m_tagsTextLabel->setWordWrap(true);
 	m_tagsTextLabel->setObjectName("tagsValue");
 	vlo->addWidget(m_tagsTextLabel);
-    if (tinyMode) m_tagsTextLabel->setVisible(false);
+	if (tinyMode) m_tagsTextLabel->setVisible(false);
 
 	m_connLabel = new QLabel(tr("Connections"), NULL);
 	m_connLabel->setObjectName("expandableViewLabel");
 	vlo->addWidget(m_connLabel);
-    if (tinyMode) m_connLabel->setVisible(false);
+	if (tinyMode) m_connLabel->setVisible(false);
 
 	m_connFrame = new QFrame(this);
 	m_connFrame->setObjectName("connectionsFrame");
 
-    QGridLayout * connLayout = new QGridLayout(m_connFrame);
+	QGridLayout * connLayout = new QGridLayout(m_connFrame);
 	connLayout->setSpacing(0);
 	connLayout->setContentsMargins(0, 0, 0, 0);
 	m_connFrame->setLayout(connLayout);
@@ -310,26 +304,26 @@ void HtmlInfoView::init(bool tinyMode) {
 	descrLabel->setObjectName("connectionsLabel");
 	m_connDescr = new QLabel(this);
 	m_connDescr->setObjectName("connectionsValue");
-    connLayout->addWidget(descrLabel, 0, 0);
-    connLayout->addWidget(m_connDescr, 0, 1);
+	connLayout->addWidget(descrLabel, 0, 0);
+	connLayout->addWidget(m_connDescr, 0, 1);
 
 	QLabel * nameLabel = new QLabel(tr("name"), this);
 	nameLabel->setObjectName("connectionsLabel");
 	m_connName = new QLabel(this);
 	m_connName->setObjectName("connectionsValue");
-    connLayout->addWidget(nameLabel, 1, 0);
-    connLayout->addWidget(m_connName, 1, 1);
+	connLayout->addWidget(nameLabel, 1, 0);
+	connLayout->addWidget(m_connName, 1, 1);
 
 	QLabel * typeLabel = new QLabel(tr("type"), this);
 	typeLabel->setObjectName("connectionsLabel");
 	m_connType = new QLabel(this);
 	m_connType->setObjectName("connectionsValue");
 	connLayout->addWidget(typeLabel, 2, 0);
-    connLayout->addWidget(m_connType, 2, 1);
+	connLayout->addWidget(m_connType, 2, 1);
 
 	vlo->addWidget(m_connFrame);
 
-    if (m_tinyMode) m_connFrame->setVisible(false);
+	if (m_tinyMode) m_connFrame->setVisible(false);
 
 	vlo->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
@@ -346,7 +340,7 @@ void HtmlInfoView::cleanup() {
 	}
 }
 
-void HtmlInfoView::viewItemInfo(InfoGraphicsView *, ItemBase* item, bool swappingEnabled) 
+void HtmlInfoView::viewItemInfo(InfoGraphicsView *, ItemBase* item, bool swappingEnabled)
 {
 	m_setContentTimer.stop();
 	m_lastItemBase = m_pendingItemBase = item;
@@ -361,7 +355,7 @@ void HtmlInfoView::hoverEnterItem(InfoGraphicsView *, QGraphicsSceneHoverEvent *
 	m_setContentTimer.start();
 }
 
-void HtmlInfoView::hoverLeaveItem(InfoGraphicsView *, QGraphicsSceneHoverEvent *, ItemBase * itemBase){
+void HtmlInfoView::hoverLeaveItem(InfoGraphicsView *, QGraphicsSceneHoverEvent *, ItemBase * itemBase) {
 	Q_UNUSED(itemBase);
 	//DebugDialog::debug(QString("hoverLeaveItem itembase %1").arg(itemBase ? itemBase->instanceTitle() : "NULL"));
 	m_setContentTimer.stop();
@@ -430,29 +424,29 @@ void HtmlInfoView::appendWireStuff(Wire* wire, bool swappingEnabled) {
 	if (swappingEnabled) {
 		if (wire->getRatsnest()) {
 			nameString = tr("Ratsnest wire");
-		} 
+		}
 		else if(wire->getTrace()) {
 			nameString = tr("Trace wire %1").arg(autoroutable);
-		} 
+		}
 	}
 	else {
-		 nameString = modelPart->description();
+		nameString = modelPart->description();
 	}
 	partTitle(nameString, modelPart->version(), modelPart->url(), modelPart->isObsolete());
-    m_lockFrame->setVisible(false);
-    m_lockLabel->setVisible(false);
-    m_locationFrame->setVisible(false);
-    m_locationLabel->setVisible(false);
-    m_rotationFrame->setVisible(false);
-    m_rotationLabel->setVisible(false);
+	m_lockFrame->setVisible(false);
+	m_lockLabel->setVisible(false);
+	m_locationFrame->setVisible(false);
+	m_locationLabel->setVisible(false);
+	m_rotationFrame->setVisible(false);
+	m_rotationLabel->setVisible(false);
 
 	setUpTitle(wire);
 	setUpIcons(wire, swappingEnabled);
 
 	displayProps(modelPart, wire, swappingEnabled);
 
-    bool hasLayer = (wire->viewID() == ViewLayer::PCBView) && wire->getViewGeometry().getPCBTrace();
-    m_placementFrame->setVisible(hasLayer);
+	bool hasLayer = (wire->viewID() == ViewLayer::PCBView) && wire->getViewGeometry().getPCBTrace();
+	m_placementFrame->setVisible(hasLayer);
 	m_placementLabel->setVisible(hasLayer);
 
 	addTags(modelPart);
@@ -480,34 +474,34 @@ void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, b
 		nameString = modelPart->description();
 	}
 	partTitle(nameString, modelPart->version(), modelPart->url(), modelPart->isObsolete());
-    m_lockFrame->setVisible(swappingEnabled);
-    m_lockLabel->setVisible(swappingEnabled);
+	m_lockFrame->setVisible(swappingEnabled);
+	m_lockLabel->setVisible(swappingEnabled);
 	m_lockCheckbox->setChecked(itemBase->moveLock());
 
-    m_locationFrame->setVisible(swappingEnabled);
-    m_locationLabel->setVisible(swappingEnabled);
-    m_locationFrame->setDisabled(itemBase->moveLock());
+	m_locationFrame->setVisible(swappingEnabled);
+	m_locationLabel->setVisible(swappingEnabled);
+	m_locationFrame->setDisabled(itemBase->moveLock());
 
-    m_rotationFrame->setVisible(swappingEnabled);
-    m_rotationLabel->setVisible(swappingEnabled);
-    m_rotationFrame->setEnabled(itemBase->rotationAllowed());
+	m_rotationFrame->setVisible(swappingEnabled);
+	m_rotationLabel->setVisible(swappingEnabled);
+	m_rotationFrame->setEnabled(itemBase->rotationAllowed());
 
-    setLocation(itemBase);
-    setRotation(itemBase);
+	setLocation(itemBase);
+	setRotation(itemBase);
 
-    if (itemBase->isBaseSticky()) {
-	    m_stickyCheckbox->setVisible(true);
-        m_stickyCheckbox->setChecked(itemBase->isSticky());
-    }
-    else {
-	    m_stickyCheckbox->setVisible(false);
-    }
+	if (itemBase->isBaseSticky()) {
+		m_stickyCheckbox->setVisible(true);
+		m_stickyCheckbox->setChecked(itemBase->isSticky());
+	}
+	else {
+		m_stickyCheckbox->setVisible(false);
+	}
 
 	displayProps(modelPart, itemBase, swappingEnabled);
 	addTags(modelPart);
 
-    m_placementLabel->setVisible(swappingEnabled);
-    m_placementFrame->setVisible(swappingEnabled);
+	m_placementLabel->setVisible(swappingEnabled);
+	m_placementFrame->setVisible(swappingEnabled);
 
 }
 
@@ -527,11 +521,11 @@ void HtmlInfoView::setContent()
 	appendStuff(m_pendingItemBase, m_pendingSwappingEnabled);
 	setCurrentItem(m_pendingItemBase);
 
-    if (!m_tinyMode) {
-	    m_connFrame->setVisible(m_pendingSwappingEnabled);
-	    m_tagLabel->setVisible(true);
-	    m_connLabel->setVisible(m_pendingSwappingEnabled);
-    }
+	if (!m_tinyMode) {
+		m_connFrame->setVisible(m_pendingSwappingEnabled);
+		m_tagLabel->setVisible(true);
+		m_connLabel->setVisible(m_pendingSwappingEnabled);
+	}
 	m_propLabel->setVisible(true);
 	m_propFrame->setVisible(true);
 
@@ -549,10 +543,10 @@ void HtmlInfoView::setCurrentItem(ItemBase * item) {
 }
 
 void HtmlInfoView::unregisterCurrentItem() {
-        m_setContentTimer.stop();
+	m_setContentTimer.stop();
 	setCurrentItem(NULL);
-        m_pendingItemBase = NULL;
-        m_setContentTimer.start();
+	m_pendingItemBase = NULL;
+	m_setContentTimer.start();
 }
 
 void HtmlInfoView::unregisterCurrentItemIf(long id) {
@@ -597,7 +591,7 @@ void HtmlInfoView::setInstanceTitle() {
 	if (!edit->isEnabled()) return;
 	if (m_currentItem == NULL) return;
 
-    m_currentItem->setInspectorTitle(m_partTitle->text(), edit->text());
+	m_currentItem->setInspectorTitle(m_partTitle->text(), edit->text());
 }
 
 void HtmlInfoView::instanceTitleEnter() {
@@ -626,19 +620,19 @@ void HtmlInfoView::instanceTitleEditable(bool editable) {
 
 void HtmlInfoView::setInstanceTitleColors(FLineEdit * edit, const QColor & base, const QColor & text) {
 	edit->setStyleSheet(QString("background: rgb(%1,%2,%3); color: rgb(%4,%5,%6);")
-		.arg(base.red()).arg(base.green()).arg(base.blue())
-		.arg(text.red()).arg(text.green()).arg(text.blue()) );
+	                    .arg(base.red()).arg(base.green()).arg(base.blue())
+	                    .arg(text.red()).arg(text.green()).arg(text.blue()) );
 }
 
-void HtmlInfoView::setUpTitle(ItemBase * itemBase) 
+void HtmlInfoView::setUpTitle(ItemBase * itemBase)
 {
 	if (itemBase == m_lastTitleItemBase) {
-        if (itemBase == NULL) return;
-        if (itemBase->instanceTitle().compare(m_titleEdit->text()) == 0) return;
-    }
+		if (itemBase == NULL) return;
+		if (itemBase->instanceTitle().compare(m_titleEdit->text()) == 0) return;
+	}
 
 	m_lastTitleItemBase = itemBase;
-    bool titleEnabled = true;
+	bool titleEnabled = true;
 	if (itemBase != NULL) {
 		QString title = itemBase->getInspectorTitle();
 		if (title.isEmpty()) {
@@ -646,14 +640,14 @@ void HtmlInfoView::setUpTitle(ItemBase * itemBase)
 			titleEnabled = false;
 			title = itemBase->title();
 		}
-        if (itemBase->viewID() == ViewLayer::IconView) titleEnabled = false;
+		if (itemBase->viewID() == ViewLayer::IconView) titleEnabled = false;
 		m_titleEdit->setText(title);
 	}
 	else {
 		titleEnabled = false;
 		m_titleEdit->setText("");
 	}
-    m_titleEdit->setEnabled(titleEnabled);
+	m_titleEdit->setEnabled(titleEnabled);
 	// helps keep it left aligned?
 	m_titleEdit->setCursorPosition(0);
 
@@ -661,18 +655,18 @@ void HtmlInfoView::setUpTitle(ItemBase * itemBase)
 
 void HtmlInfoView::setUpIcons(ItemBase * itemBase, bool swappingEnabled) {
 	if (m_lastIconItemBase == itemBase) return;
-	
+
 	m_lastIconItemBase = itemBase;
 
 	QPixmap *pixmap1 = NULL;
 	QPixmap *pixmap2 = NULL;
 	QPixmap *pixmap3 = NULL;
 
-    QSize size = NoIcon->size();
+	QSize size = NoIcon->size();
 
-    if (itemBase) {
-        itemBase->getPixmaps(pixmap1, pixmap2, pixmap3, swappingEnabled, size);
-    }
+	if (itemBase) {
+		itemBase->getPixmaps(pixmap1, pixmap2, pixmap3, swappingEnabled, size);
+	}
 
 	QPixmap* use1 = pixmap1;
 	QPixmap* use2 = pixmap2;
@@ -686,9 +680,9 @@ void HtmlInfoView::setUpIcons(ItemBase * itemBase, bool swappingEnabled) {
 	m_icon2->setPixmap(*use2);
 	m_icon3->setPixmap(*use3);
 
-    if (pixmap1 != NULL) delete pixmap1;
-    if (pixmap2 != NULL) delete pixmap2;
-    if (pixmap3 != NULL) delete pixmap3;
+	if (pixmap1 != NULL) delete pixmap1;
+	if (pixmap2 != NULL) delete pixmap2;
+	if (pixmap3 != NULL) delete pixmap3;
 }
 
 void HtmlInfoView::addTags(ModelPart * modelPart) {
@@ -714,16 +708,16 @@ void HtmlInfoView::partTitle(const QString & title, const QString & version, con
 	m_lastPartTitle = title;
 	m_lastPartVersion = version;
 
-    if (!m_tinyMode) {
-	    if (url.isEmpty()) {
-		    m_partUrl->setVisible(false);	
-		    m_partUrl->setText("");
-	    }
-	    else {
-		    m_partUrl->setText(QString("<a href=\"%1\">%1</a>").arg(url));
-		    m_partUrl->setVisible(true);
-	    }
-    }
+	if (!m_tinyMode) {
+		if (url.isEmpty()) {
+			m_partUrl->setVisible(false);
+			m_partUrl->setText("");
+		}
+		else {
+			m_partUrl->setText(QString("<a href=\"%1\">%1</a>").arg(url));
+			m_partUrl->setVisible(true);
+		}
+	}
 
 	m_partTitle->setText(title);
 	if (!version.isEmpty()) {
@@ -732,7 +726,7 @@ void HtmlInfoView::partTitle(const QString & title, const QString & version, con
 	else m_partVersion->setText("");
 }
 
-void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool swappingEnabled) 
+void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool swappingEnabled)
 {
 	bool repeatPossible = (modelPart == m_lastPropsModelPart && itemBase == m_lastPropsItemBase && swappingEnabled == m_lastPropsSwappingEnabled);
 	if (repeatPossible && modelPart == NULL && itemBase == NULL) {
@@ -755,13 +749,13 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 	QHash<QString, QString> properties = getPartProperties(modelPart, itemBase, wantDebug, keys);
 	QString family = properties.value("family", "").toLower();
 
-    bool sl = false;
-    if (keys.contains("layer")) {
-        keys.removeOne("layer");
-        sl = (itemBase->viewID() == ViewLayer::PCBView);
-    }
-    
-    showLayers(sl, itemBase, family, properties.value("layer", ""), swappingEnabled);
+	bool sl = false;
+	if (keys.contains("layer")) {
+		keys.removeOne("layer");
+		sl = (itemBase->viewID() == ViewLayer::PCBView);
+	}
+
+	showLayers(sl, itemBase, family, properties.value("layer", ""), swappingEnabled);
 
 	int ix = 0;
 	foreach(QString key, keys) {
@@ -803,7 +797,7 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 		QString resultKey, resultValue;
 		QWidget * resultWidget = oldPlugin;
 		bool result = false;
-        bool hide = false;
+		bool hide = false;
 		if (itemBase != NULL) {
 			result = itemBase->collectExtraInfo(propThing->m_name->parentWidget(), family, key, value, swappingEnabled, resultKey, resultValue, resultWidget, hide);
 		}
@@ -821,7 +815,7 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 				else {
 					oldPlugin = NULL;
 				}
-                //DebugDialog::debug(QString("adding %1 %2").arg(newName).arg((long) resultWidget, 0, 16));
+				//DebugDialog::debug(QString("adding %1 %2").arg(newName).arg((long) resultWidget, 0, 16));
 				propThing->m_plugin = resultWidget;
 			}
 			else {
@@ -832,7 +826,7 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 			newName = translatedName;
 			newValue = value;
 		}
-		
+
 		if (oldPlugin) {
 			clearPropThingPlugin(propThing, oldPlugin);
 		}
@@ -872,33 +866,33 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 	*/
 }
 
-void HtmlInfoView::clearPropThingPlugin(PropThing * propThing) 
+void HtmlInfoView::clearPropThingPlugin(PropThing * propThing)
 {
 
 	if (propThing->m_plugin) {
 		clearPropThingPlugin(propThing, propThing->m_plugin);
-		propThing->m_plugin = NULL;		
+		propThing->m_plugin = NULL;
 	}
 }
 
-void HtmlInfoView::clearPropThingPlugin(PropThing * propThing, QWidget * plugin) 
+void HtmlInfoView::clearPropThingPlugin(PropThing * propThing, QWidget * plugin)
 {
-    //DebugDialog::debug(QString("clearing %1").arg((long) plugin, 0, 16));
+	//DebugDialog::debug(QString("clearing %1").arg((long) plugin, 0, 16));
 
 	propThing->m_layout->removeWidget(plugin);
-    plugin->blockSignals(true);     
+	plugin->blockSignals(true);
 	plugin->setVisible(false);          // seems to trigger an unwanted focus out signal
 	plugin->deleteLater();
 }
 
 
-QHash<QString, QString> HtmlInfoView::getPartProperties(ModelPart * modelPart, ItemBase * itemBase, bool wantDebug, QStringList & keys) 
+QHash<QString, QString> HtmlInfoView::getPartProperties(ModelPart * modelPart, ItemBase * itemBase, bool wantDebug, QStringList & keys)
 {
 	QHash<QString, QString> properties;
 	QString family;
 	QString partNumber;
 	if (modelPart != NULL && itemBase != NULL) {
-        properties = itemBase->prepareProps(modelPart, wantDebug, keys);
+		properties = itemBase->prepareProps(modelPart, wantDebug, keys);
 	}
 
 	return properties;
@@ -910,8 +904,8 @@ void HtmlInfoView::changeLock(bool lockState)
 	if (m_currentItem->itemType() == ModelPart::Wire) return;
 
 	m_currentItem->setMoveLock(lockState);
-    m_locationFrame->setDisabled(lockState);
-    m_rotationFrame->setDisabled(lockState);
+	m_locationFrame->setDisabled(lockState);
+	m_rotationFrame->setDisabled(lockState);
 }
 
 
@@ -924,30 +918,30 @@ void HtmlInfoView::changeSticky(bool lockState)
 }
 
 void HtmlInfoView::clickObsolete(const QString &) {
-    emit clickObsoleteSignal();
+	emit clickObsoleteSignal();
 }
 
 void HtmlInfoView::showLayers(bool show, ItemBase * itemBase, const QString & family, const QString & value, bool swappingEnabled) {
 
-    if (m_layerWidget) {
-	    m_layerLayout->removeWidget(m_layerWidget);
-        m_layerWidget->blockSignals(true);     
-	    m_layerWidget->setVisible(false);          // seems to trigger an unwanted focus out signal
-	    m_layerWidget->deleteLater();
-        m_layerWidget = NULL;
-    }
+	if (m_layerWidget) {
+		m_layerLayout->removeWidget(m_layerWidget);
+		m_layerWidget->blockSignals(true);
+		m_layerWidget->setVisible(false);          // seems to trigger an unwanted focus out signal
+		m_layerWidget->deleteLater();
+		m_layerWidget = NULL;
+	}
 
-    if (itemBase == NULL) show = false;
-    m_layerFrame->setVisible(show);
-    m_layerLabel->setVisible(show);
-    if (!show) return;
+	if (itemBase == NULL) show = false;
+	m_layerFrame->setVisible(show);
+	m_layerLabel->setVisible(show);
+	if (!show) return;
 
-    QString resultKey, resultValue;
-    bool hide;
-    bool result = itemBase->collectExtraInfo(m_layerLabel->parentWidget(), family, "layer", value, swappingEnabled, resultKey, resultValue, m_layerWidget, hide);
-    if (result && m_layerWidget != NULL) {
-        m_layerLayout->addWidget(m_layerWidget);
-    }
+	QString resultKey, resultValue;
+	bool hide;
+	bool result = itemBase->collectExtraInfo(m_layerLabel->parentWidget(), family, "layer", value, swappingEnabled, resultKey, resultValue, m_layerWidget, hide);
+	if (result && m_layerWidget != NULL) {
+		m_layerLayout->addWidget(m_layerWidget);
+	}
 }
 
 void HtmlInfoView::makeLockFrame() {
@@ -955,11 +949,11 @@ void HtmlInfoView::makeLockFrame() {
 	m_lockLabel->setObjectName("propNameLabel");
 	m_lockLabel->setWordWrap(true);
 
-    m_lockFrame = new QFrame(this);
-    QHBoxLayout * lockLayout = new QHBoxLayout();
+	m_lockFrame = new QFrame(this);
+	QHBoxLayout * lockLayout = new QHBoxLayout();
 	lockLayout->setSpacing(0);
 	lockLayout->setContentsMargins(0, 0, 0, 0);
-    m_lockFrame->setObjectName("propValueFrame");
+	m_lockFrame->setObjectName("propValueFrame");
 
 	m_lockCheckbox = new QCheckBox(tr("Locked"));
 	m_lockCheckbox->setObjectName("infoViewLockCheckbox");
@@ -967,7 +961,7 @@ void HtmlInfoView::makeLockFrame() {
 	connect(m_lockCheckbox, SIGNAL(clicked(bool)), this, SLOT(changeLock(bool)));
 	lockLayout->addWidget(m_lockCheckbox);
 
-    lockLayout->addSpacing(10);
+	lockLayout->addSpacing(10);
 
 	m_stickyCheckbox = new QCheckBox(tr("Sticky"));
 	m_stickyCheckbox->setObjectName("infoViewLockCheckbox");
@@ -975,9 +969,9 @@ void HtmlInfoView::makeLockFrame() {
 	connect(m_stickyCheckbox, SIGNAL(clicked(bool)), this, SLOT(changeSticky(bool)));
 	lockLayout->addWidget(m_stickyCheckbox);
 
-    lockLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
+	lockLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
 
-    m_lockFrame->setLayout(lockLayout);
+	m_lockFrame->setLayout(lockLayout);
 }
 
 void HtmlInfoView::makeLocationFrame() {
@@ -985,49 +979,49 @@ void HtmlInfoView::makeLocationFrame() {
 	m_locationLabel->setObjectName("propNameLabel");
 	m_locationLabel->setWordWrap(true);
 
-    m_locationFrame = new QFrame(this);
-    QHBoxLayout * locationLayout = new QHBoxLayout();
+	m_locationFrame = new QFrame(this);
+	QHBoxLayout * locationLayout = new QHBoxLayout();
 	locationLayout->setSpacing(0);
 	locationLayout->setContentsMargins(0, 0, 0, 0);
-    m_locationFrame->setObjectName("propValueFrame");
+	m_locationFrame->setObjectName("propValueFrame");
 
 	m_xEdit = new QDoubleSpinBox;
-    m_xEdit->setDecimals(3);
-    m_xEdit->setRange(-99999.999, 99999.999);
-    m_xEdit->setKeyboardTracking(false);
-    m_xEdit->setObjectName("infoViewDoubleSpinBox");
-    m_xEdit->setMaximumWidth(MaxSpinBoxWidth);
-    m_xEdit->setMinimumWidth(MaxSpinBoxWidth);
-    m_xEdit->setLocale(QLocale::C);
-    locationLayout->addWidget(m_xEdit);
+	m_xEdit->setDecimals(3);
+	m_xEdit->setRange(-99999.999, 99999.999);
+	m_xEdit->setKeyboardTracking(false);
+	m_xEdit->setObjectName("infoViewDoubleSpinBox");
+	m_xEdit->setMaximumWidth(MaxSpinBoxWidth);
+	m_xEdit->setMinimumWidth(MaxSpinBoxWidth);
+	m_xEdit->setLocale(QLocale::C);
+	locationLayout->addWidget(m_xEdit);
 
-    locationLayout->addSpacing(AfterSpinBoxWidth);
+	locationLayout->addSpacing(AfterSpinBoxWidth);
 
 	m_yEdit = new QDoubleSpinBox;
-    m_yEdit->setDecimals(3);
-    m_yEdit->setRange(-99999.999, 99999.999);
-    m_yEdit->setKeyboardTracking(false);
-    m_yEdit->setObjectName("infoViewDoubleSpinBox");
-    m_yEdit->setMaximumWidth(MaxSpinBoxWidth);
-    m_yEdit->setMinimumWidth(MaxSpinBoxWidth);
-    m_yEdit->setLocale(QLocale::C);
-    locationLayout->addWidget(m_yEdit);
+	m_yEdit->setDecimals(3);
+	m_yEdit->setRange(-99999.999, 99999.999);
+	m_yEdit->setKeyboardTracking(false);
+	m_yEdit->setObjectName("infoViewDoubleSpinBox");
+	m_yEdit->setMaximumWidth(MaxSpinBoxWidth);
+	m_yEdit->setMinimumWidth(MaxSpinBoxWidth);
+	m_yEdit->setLocale(QLocale::C);
+	locationLayout->addWidget(m_yEdit);
 
-    locationLayout->addSpacing(3);
+	locationLayout->addSpacing(3);
 
 	m_unitsLabel = new ClickableLabel("px", this);
-    m_unitsLabel->setObjectName("infoViewSpinBoxLabel");
-    m_unitsLabel->setCursor(Qt::PointingHandCursor);
-    locationLayout->addWidget(m_unitsLabel);
+	m_unitsLabel->setObjectName("infoViewSpinBoxLabel");
+	m_unitsLabel->setCursor(Qt::PointingHandCursor);
+	locationLayout->addWidget(m_unitsLabel);
 
-    locationLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
+	locationLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
 
-    m_locationFrame->setLayout(locationLayout);
+	m_locationFrame->setLayout(locationLayout);
 
-    connect(m_xEdit, SIGNAL(valueChanged(double)), this, SLOT(xyEntry()));
-    connect(m_yEdit, SIGNAL(valueChanged(double)), this, SLOT(xyEntry()));
+	connect(m_xEdit, SIGNAL(valueChanged(double)), this, SLOT(xyEntry()));
+	connect(m_yEdit, SIGNAL(valueChanged(double)), this, SLOT(xyEntry()));
 	connect(m_unitsLabel, SIGNAL(clicked()), this, SLOT(unitsClicked()));
-    unitsClicked();   // increments from px so that default is inches
+	unitsClicked();   // increments from px so that default is inches
 }
 
 void HtmlInfoView::makeRotationFrame() {
@@ -1035,183 +1029,182 @@ void HtmlInfoView::makeRotationFrame() {
 	m_rotationLabel->setObjectName("propNameLabel");
 	m_rotationLabel->setWordWrap(true);
 
-    m_rotationFrame = new QFrame(this);
-    QHBoxLayout * rotationLayout = new QHBoxLayout();
+	m_rotationFrame = new QFrame(this);
+	QHBoxLayout * rotationLayout = new QHBoxLayout();
 	rotationLayout->setSpacing(0);
 	rotationLayout->setContentsMargins(0, 0, 0, 0);
-    m_rotationFrame->setObjectName("propValueFrame");
+	m_rotationFrame->setObjectName("propValueFrame");
 
 	m_rotEdit = new QDoubleSpinBox;
-    m_rotEdit->setDecimals(1);
-    m_rotEdit->setRange(-360, 360);
-    m_rotEdit->setKeyboardTracking(false);
-    m_rotEdit->setObjectName("infoViewDoubleSpinBox");
-    m_rotEdit->setMaximumWidth(MaxSpinBoxWidth);
-    m_rotEdit->setMinimumWidth(MaxSpinBoxWidth);
-    m_rotEdit->setLocale(QLocale::C);
-    rotationLayout->addWidget(m_rotEdit);
+	m_rotEdit->setDecimals(1);
+	m_rotEdit->setRange(-360, 360);
+	m_rotEdit->setKeyboardTracking(false);
+	m_rotEdit->setObjectName("infoViewDoubleSpinBox");
+	m_rotEdit->setMaximumWidth(MaxSpinBoxWidth);
+	m_rotEdit->setMinimumWidth(MaxSpinBoxWidth);
+	m_rotEdit->setLocale(QLocale::C);
+	rotationLayout->addWidget(m_rotEdit);
 
-    rotationLayout->addSpacing(AfterSpinBoxWidth);
+	rotationLayout->addSpacing(AfterSpinBoxWidth);
 
 	QLabel * label = new QLabel(tr("degrees"), this);
-    label->setObjectName("infoViewSpinBoxLabel");
-    rotationLayout->addWidget(label);
+	label->setObjectName("infoViewSpinBoxLabel");
+	rotationLayout->addWidget(label);
 
-    rotationLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
+	rotationLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
 
-    m_rotationFrame->setLayout(rotationLayout);
+	m_rotationFrame->setLayout(rotationLayout);
 
-    connect(m_rotEdit, SIGNAL(valueChanged(double)), this, SLOT(rotEntry()));
+	connect(m_rotEdit, SIGNAL(valueChanged(double)), this, SLOT(rotEntry()));
 }
 
 void HtmlInfoView::unitsClicked() {
-    QString units = m_unitsLabel->text();
+	QString units = m_unitsLabel->text();
 
-    QString xs = m_xEdit->text();
-    QString ys = m_yEdit->text();
-    double x = TextUtils::convertToInches(xs + units);
-    double y = TextUtils::convertToInches(ys + units);
+	QString xs = m_xEdit->text();
+	QString ys = m_yEdit->text();
+	double x = TextUtils::convertToInches(xs + units);
+	double y = TextUtils::convertToInches(ys + units);
 
-    double dpi = 1;
-    double step = 1;
+	double dpi = 1;
+	double step = 1;
 	if (units.compare("mm") == 0) {
 		units = "px";
-        dpi = 90;
-        step = 1;
+		dpi = 90;
+		step = 1;
 	}
 	else if (units.compare("px") == 0) {
 		units = "in";
-        dpi = 1;
-        step = 0.1;
+		dpi = 1;
+		step = 0.1;
 	}
 	else if (units.compare("in") == 0) {
 		units = "mm";
-        dpi = 25.4;
-        step = 1;
+		dpi = 25.4;
+		step = 1;
 	}
 	else {
 		units = "in";
-        dpi = 1;
-        step = 0.1;
+		dpi = 1;
+		step = 0.1;
 	}
-    m_unitsLabel->setText(units);
+	m_unitsLabel->setText(units);
 
-    m_xEdit->blockSignals(true);
-    m_yEdit->blockSignals(true);
-    m_xEdit->setSingleStep(step);
-    m_yEdit->setSingleStep(step);
-    if (!xs.isEmpty()) m_xEdit->setValue(x * dpi);
-    if (!ys.isEmpty()) m_yEdit->setValue(y * dpi);
-    m_xEdit->blockSignals(false);
-    m_yEdit->blockSignals(false);
+	m_xEdit->blockSignals(true);
+	m_yEdit->blockSignals(true);
+	m_xEdit->setSingleStep(step);
+	m_yEdit->setSingleStep(step);
+	if (!xs.isEmpty()) m_xEdit->setValue(x * dpi);
+	if (!ys.isEmpty()) m_yEdit->setValue(y * dpi);
+	m_xEdit->blockSignals(false);
+	m_yEdit->blockSignals(false);
 }
 
 void HtmlInfoView::setLocation(ItemBase * itemBase) {
-    if (itemBase == NULL) {
-        m_xEdit->blockSignals(true);
-        m_yEdit->blockSignals(true);
-        m_xEdit->setEnabled(false);
-        m_yEdit->setEnabled(false);
-        m_xEdit->setValue(0);
-        m_yEdit->setValue(0);
-        m_xEdit->blockSignals(false);
-        m_yEdit->blockSignals(false);
-        return;
-    }
+	if (itemBase == NULL) {
+		m_xEdit->blockSignals(true);
+		m_yEdit->blockSignals(true);
+		m_xEdit->setEnabled(false);
+		m_yEdit->setEnabled(false);
+		m_xEdit->setValue(0);
+		m_yEdit->setValue(0);
+		m_xEdit->blockSignals(false);
+		m_yEdit->blockSignals(false);
+		return;
+	}
 
-    m_xEdit->setEnabled(!itemBase->moveLock());
-    m_yEdit->setEnabled(!itemBase->moveLock());
+	m_xEdit->setEnabled(!itemBase->moveLock());
+	m_yEdit->setEnabled(!itemBase->moveLock());
 
-    QString units = m_unitsLabel->text();
-    QPointF loc = itemBase->pos();
-    if (units == "px") {
-    }
-    else if (units == "in") {
-        loc /= 90;
-    }
-    else if (units == "mm") {
-        loc /= (90 / 25.4);
-    }
+	QString units = m_unitsLabel->text();
+	QPointF loc = itemBase->pos();
+	if (units == "px") {
+	}
+	else if (units == "in") {
+		loc /= 90;
+	}
+	else if (units == "mm") {
+		loc /= (90 / 25.4);
+	}
 
-    m_xEdit->blockSignals(true);
-    m_yEdit->blockSignals(true);
-    m_xEdit->setValue(loc.x());
-    m_yEdit->setValue(loc.y());
-    m_xEdit->blockSignals(false);
-    m_yEdit->blockSignals(false);
+	m_xEdit->blockSignals(true);
+	m_yEdit->blockSignals(true);
+	m_xEdit->setValue(loc.x());
+	m_yEdit->setValue(loc.y());
+	m_xEdit->blockSignals(false);
+	m_yEdit->blockSignals(false);
 }
 
 void HtmlInfoView::setRotation(ItemBase * itemBase) {
-    if (itemBase == NULL) {
-        m_rotEdit->blockSignals(true);
-        m_rotEdit->setEnabled(false);
-        m_rotEdit->setValue(0);
-        m_rotEdit->blockSignals(false);
-        return;
-    }
+	if (itemBase == NULL) {
+		m_rotEdit->blockSignals(true);
+		m_rotEdit->setEnabled(false);
+		m_rotEdit->setValue(0);
+		m_rotEdit->blockSignals(false);
+		return;
+	}
 
-    double step = 90;
-    bool enabled = true;
-    if (itemBase->moveLock()) enabled = false;
-    else if (!itemBase->rotationAllowed()) enabled = false;
-    else {
-        if (itemBase->rotation45Allowed()) step = 45;
-        if (itemBase->freeRotationAllowed()) step = 1;
-    }
+	double step = 90;
+	bool enabled = true;
+	if (itemBase->moveLock()) enabled = false;
+	else if (!itemBase->rotationAllowed()) enabled = false;
+	else {
+		if (itemBase->rotation45Allowed()) step = 45;
+		if (itemBase->freeRotationAllowed()) step = 1;
+	}
 
-    m_rotEdit->setEnabled(enabled);
-    m_rotEdit->setSingleStep(step);
+	m_rotEdit->setEnabled(enabled);
+	m_rotEdit->setSingleStep(step);
 
-    QTransform transform = itemBase->transform();
-    double angle = atan2(transform.m12(), transform.m11()) * 180 / M_PI;
+	QTransform transform = itemBase->transform();
+	double angle = atan2(transform.m12(), transform.m11()) * 180 / M_PI;
 
-    m_rotEdit->blockSignals(true);
-    m_rotEdit->setValue(angle);
-    m_rotEdit->blockSignals(false);
+	m_rotEdit->blockSignals(true);
+	m_rotEdit->setValue(angle);
+	m_rotEdit->blockSignals(false);
 }
 
 void HtmlInfoView::updateLocation(ItemBase * itemBase) {
-    if (itemBase == NULL) return;
-    if (itemBase != m_lastItemBase) return;
+	if (itemBase == NULL) return;
+	if (itemBase != m_lastItemBase) return;
 
-    setLocation(itemBase);
+	setLocation(itemBase);
 }
 
 void HtmlInfoView::updateRotation(ItemBase * itemBase) {
-    if (itemBase == NULL) return;
-    if (itemBase != m_lastItemBase) return;
+	if (itemBase == NULL) return;
+	if (itemBase != m_lastItemBase) return;
 
-    setRotation(itemBase);
+	setRotation(itemBase);
 }
 
 void HtmlInfoView::xyEntry() {
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(m_lastItemBase);
-    if (infoGraphicsView == NULL) return;
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(m_lastItemBase);
+	if (infoGraphicsView == NULL) return;
 
-    DebugDialog::debug(QString("xedit %1 %2 %3").arg(m_xEdit->text()).arg(m_yEdit->text()).arg(sender() == m_xEdit));
-    double x = TextUtils::convertToInches(m_xEdit->text() + m_unitsLabel->text());
-    double y = TextUtils::convertToInches(m_yEdit->text() + m_unitsLabel->text());
-    if (infoGraphicsView != NULL && m_lastItemBase != NULL) {
-        infoGraphicsView->moveItem(m_lastItemBase, x * 90, y * 90);
-    }
+	DebugDialog::debug(QString("xedit %1 %2 %3").arg(m_xEdit->text()).arg(m_yEdit->text()).arg(sender() == m_xEdit));
+	double x = TextUtils::convertToInches(m_xEdit->text() + m_unitsLabel->text());
+	double y = TextUtils::convertToInches(m_yEdit->text() + m_unitsLabel->text());
+	if (infoGraphicsView != NULL && m_lastItemBase != NULL) {
+		infoGraphicsView->moveItem(m_lastItemBase, x * 90, y * 90);
+	}
 }
 
 void HtmlInfoView::rotEntry() {
-    if (m_lastItemBase != NULL) {
-        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(m_lastItemBase);
-        if (infoGraphicsView == NULL) return;
+	if (m_lastItemBase != NULL) {
+		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(m_lastItemBase);
+		if (infoGraphicsView == NULL) return;
 
-        double newAngle = m_rotEdit->value();
+		double newAngle = m_rotEdit->value();
 
-        if (m_rotEdit->singleStep() == 1) {
-        }
-        else {
-            newAngle = qFloor(newAngle / m_rotEdit->singleStep()) * m_rotEdit->singleStep();
-        }
+		if (m_rotEdit->singleStep() == 1) {
+		}
+		else {
+			newAngle = qFloor(newAngle / m_rotEdit->singleStep()) * m_rotEdit->singleStep();
+		}
 
-        QTransform transform = m_lastItemBase->transform();
-        double angle = atan2(transform.m12(), transform.m11()) * 180 / M_PI;
-        infoGraphicsView->rotateX(newAngle - angle, false, m_lastItemBase);
-    }
+		QTransform transform = m_lastItemBase->transform();
+		double angle = atan2(transform.m12(), transform.m11()) * 180 / M_PI;
+		infoGraphicsView->rotateX(newAngle - angle, false, m_lastItemBase);
+	}
 }
-

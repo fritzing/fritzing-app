@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -47,7 +41,7 @@ NonConnectorItem::NonConnectorItem(ItemBase * attachedTo) : QGraphicsRectItem(at
 	m_radius = m_strokeWidth = 0;
 	m_layerHidden = m_isPath = m_inactive = m_hidden = false;
 	m_attachedTo = attachedTo;
-    setAcceptHoverEvents(false);
+	setAcceptHoverEvents(false);
 	setAcceptedMouseButtons(Qt::NoButton);
 	setFlag(QGraphicsItem::ItemIsMovable, false);
 	setFlag(QGraphicsItem::ItemIsSelectable, false);
@@ -77,7 +71,7 @@ void NonConnectorItem::paint( QPainter * painter, const QStyleOptionGraphicsItem
 		.arg(attachedToID())
 		.arg(attachedToTitle())
 		.arg(pen().width())
-		.arg(pen().color().name()) 
+		.arg(pen().color().name())
 		.arg(m_circular)
 		.arg(m_effectivelyCircular)
 		.arg(m_effectivelyRectangular)
@@ -103,35 +97,35 @@ void NonConnectorItem::paint( QPainter * painter, const QStyleOptionGraphicsItem
 		{
 			// for parts
 			QRectF r = rect();
-            if (r.width() > 0 && r.height() > 0) {
-			    double delta = .66 * m_strokeWidth;
-			    painter->setPen(pen());
-			    painter->drawEllipse(r.adjusted(delta, delta, -delta, -delta));
-            }
+			if (r.width() > 0 && r.height() > 0) {
+				double delta = .66 * m_strokeWidth;
+				painter->setPen(pen());
+				painter->drawEllipse(r.adjusted(delta, delta, -delta, -delta));
+			}
 		}
 	}
 	else if (!m_shape.isEmpty()) {
-		painter->setBrush(brush());  
+		painter->setBrush(brush());
 		painter->setPen(pen());
 		painter->drawPath(m_shape);
 	}
 	else if (m_effectively == EffectivelyCircular) {
 		QRectF r = rect();
-        if (r.width() > 0 && r.height() > 0) {
-		    painter->setBrush(brush());  
-		    painter->setPen(pen());
-		    double delta = r.width() * EffectiveAdjustmentFactor;
-		    painter->drawEllipse(r.adjusted(delta, delta, -delta, -delta));
-        }
+		if (r.width() > 0 && r.height() > 0) {
+			painter->setBrush(brush());
+			painter->setPen(pen());
+			double delta = r.width() * EffectiveAdjustmentFactor;
+			painter->drawEllipse(r.adjusted(delta, delta, -delta, -delta));
+		}
 	}
 	else if (m_effectively == EffectivelyRectangular) {
 		QRectF r = rect();
-        if (r.width() > 0 && r.height() > 0) {
-		    painter->setBrush(brush());  
-		    painter->setPen(pen());
-		    double delta = qMin(r.width(), r.height()) * EffectiveAdjustmentFactor;
-		    painter->drawRect(r.adjusted(delta, delta, -delta, -delta));
-        }
+		if (r.width() > 0 && r.height() > 0) {
+			painter->setBrush(brush());
+			painter->setPen(pen());
+			double delta = qMin(r.width(), r.height()) * EffectiveAdjustmentFactor;
+			painter->drawRect(r.adjusted(delta, delta, -delta, -delta));
+		}
 	}
 	else {
 		QGraphicsRectItem::paint(painter, option, widget);
@@ -192,11 +186,11 @@ void NonConnectorItem::setRadius(double radius, double strokeWidth) {
 }
 
 void NonConnectorItem::setIsPath(bool path) {
-    m_isPath = path;
+	m_isPath = path;
 }
 
 bool NonConnectorItem::isPath() {
-    return m_isPath;
+	return m_isPath;
 }
 
 double NonConnectorItem::radius() {

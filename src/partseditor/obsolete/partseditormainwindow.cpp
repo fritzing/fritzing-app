@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6417 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-09-14 23:34:09 +0200 (Fr, 14. Sep 2012) $
 
 ********************************************************************/
 
@@ -65,9 +59,9 @@ int PartsEditorMainWindow::m_closedBeforeCount = 0;
 bool PartsEditorMainWindow::m_closeAfterSaving = true;
 
 #ifdef QT_NO_DEBUG
-	#define CORE_EDITION_ENABLED false
+#define CORE_EDITION_ENABLED false
 #else
-	#define CORE_EDITION_ENABLED false
+#define CORE_EDITION_ENABLED false
 #endif
 
 
@@ -110,19 +104,19 @@ void PartsEditorMainWindow::initText() {
 void PartsEditorMainWindow::setup(long id, ModelPart *modelPart, bool fromTemplate, ItemBase * fromItem)
 {
 	ModelPart * originalModelPart = NULL;
-    QFile styleSheet(":/resources/styles/partseditor.qss");
-    m_mainFrame = new QFrame(this);
-    m_mainFrame->setObjectName("partsEditor");
+	QFile styleSheet(":/resources/styles/partseditor.qss");
+	m_mainFrame = new QFrame(this);
+	m_mainFrame->setObjectName("partsEditor");
 
-    m_editingAlien = modelPart? modelPart->isAlien(): false;
+	m_editingAlien = modelPart? modelPart->isAlien(): false;
 
-    if (!styleSheet.open(QIODevice::ReadOnly)) {
-        qWarning("Unable to open :/resources/styles/partseditor.qss");
-    } else {
-    	m_mainFrame->setStyleSheet(styleSheet.readAll());
-    }
+	if (!styleSheet.open(QIODevice::ReadOnly)) {
+		qWarning("Unable to open :/resources/styles/partseditor.qss");
+	} else {
+		m_mainFrame->setStyleSheet(styleSheet.readAll());
+	}
 
-    resize(500,700);
+	resize(500,700);
 
 	m_id = id;
 	m_partUpdated = false;
@@ -132,14 +126,14 @@ void PartsEditorMainWindow::setup(long id, ModelPart *modelPart, bool fromTempla
 
 	m_paletteModel = new PaletteModel(false, false);
 
-	if(modelPart == NULL){
+	if(modelPart == NULL) {
 		m_lastOpened = this;
 		m_updateEnabled = true;
 	} else {
 		// user only allowed to save parts, once he has saved it as a new one
 		m_updateEnabled = modelPart->isCore()?
-							CORE_EDITION_ENABLED:
-							(modelPart->isContrib() || modelPart->isAlien()? false: true);
+		                  CORE_EDITION_ENABLED:
+		                  (modelPart->isContrib() || modelPart->isAlien()? false: true);
 		m_fwFilename = modelPart->path();
 		setTitle();
 		UntitledPartIndex--; // TODO Mariano: not good enough
@@ -149,11 +143,11 @@ void PartsEditorMainWindow::setup(long id, ModelPart *modelPart, bool fromTempla
 		m_sketchModel = new SketchModel(true);
 	} else {
 		ModelPart * mp = m_paletteModel->loadPart(m_fwFilename, false);
-	    // this seems hacky but maybe it's ok
+		// this seems hacky but maybe it's ok
 		if (mp == NULL || mp->modelPartShared() == NULL) {
 			QMessageBox::critical(this, tr("Parts Editor"),
-	                           tr("Error! Cannot load part.\n"),
-	                           QMessageBox::Close);
+			                      tr("Error! Cannot load part.\n"),
+			                      QMessageBox::Close);
 			QTimer::singleShot(60, this, SLOT(close()));
 			return;
 		}
@@ -206,12 +200,12 @@ void PartsEditorMainWindow::setup(long id, ModelPart *modelPart, bool fromTempla
 	layout->addWidget(m_footerFrame,2,0);
 	setCentralWidget(m_mainFrame);
 
-    if(fromTemplate) {
+	if(fromTemplate) {
 		m_views->setViewItems(m_breadboardItem, m_schematicItem, m_pcbItem);
-    	m_views->loadViewsImagesFromModel(m_paletteModel, m_sketchModel->root());
-    }
+		m_views->loadViewsImagesFromModel(m_paletteModel, m_sketchModel->root());
+	}
 
-    setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+	setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 
 	QSettings settings;
 	if (!settings.value("peditor/state").isNull()) {
@@ -234,7 +228,7 @@ void PartsEditorMainWindow::createHeader(ModelPart *modelPart) {
 	int iconViewSize = 50;
 	QGraphicsProxyWidget *startItem = modelPart? NULL: PartsEditorMainWindow::emptyViewItem("icon_icon.png",___emptyString___);
 	m_iconViewImage = new PartsEditorView(
-		ViewLayer::IconView, createTempFolderIfNecessary(), false, startItem, m_headerFrame, iconViewSize
+	    ViewLayer::IconView, createTempFolderIfNecessary(), false, startItem, m_headerFrame, iconViewSize
 	);
 	m_iconViewImage->setViewItem(m_iconItem);
 	m_iconViewImage->setFixedSize(iconViewSize,iconViewSize);
@@ -249,10 +243,10 @@ void PartsEditorMainWindow::createHeader(ModelPart *modelPart) {
 
 	QString linkStyle = "font-size: 10px; color: #7070ff;";
 	QLabel *button = new QLabel(
-						QString("<a style='%2' href='#'>%1</a>")
-							.arg(tr("Load icon.."))
-							.arg(linkStyle),
-						this);
+	    QString("<a style='%2' href='#'>%1</a>")
+	    .arg(tr("Load icon.."))
+	    .arg(linkStyle),
+	    this);
 	button->setObjectName("iconBrowseButton");
 	//button->setFixedWidth(iconViewSize);
 	button->setFixedHeight(20);
@@ -310,25 +304,25 @@ void PartsEditorMainWindow::createCenter(ModelPart *modelPart, ItemBase * fromIt
 	}
 
 	m_properties = new HashPopulateWidget(tr("Properties"),initValues,readOnlyKeys,false, this);
-    connect(m_properties, SIGNAL(changed()), this, SLOT(propertiesChanged()));
+	connect(m_properties, SIGNAL(changed()), this, SLOT(propertiesChanged()));
 
 	QString tags = modelPart ? modelPart->tags().join(", ") : TagsFreshStartText;
 	m_tags = new EditableLineWidget(tags,m_undoStack,this,tr("Tags"),modelPart);
 
 
 	m_author = new EditableLineWidget(
-		modelPart ? modelPart->author() : QString(getenvUser()),
-		m_undoStack, this, tr("Author"),true);
+	    modelPart ? modelPart->author() : QString(getenvUser()),
+	    m_undoStack, this, tr("Author"),true);
 	connect(
-		m_author,SIGNAL(editionCompleted(QString)),
-		this,SLOT(updateDateAndAuthor()));
+	    m_author,SIGNAL(editionCompleted(QString)),
+	    this,SLOT(updateDateAndAuthor()));
 
 	m_createdOn = new EditableDateWidget(
-		modelPart ? modelPart->date() : QDate::currentDate(),
-		m_undoStack,this, tr("Created/Updated on"),true);
+	    modelPart ? modelPart->date() : QDate::currentDate(),
+	    m_undoStack,this, tr("Created/Updated on"),true);
 	connect(
-		m_createdOn,SIGNAL(editionCompleted(QString)),
-		this,SLOT(updateDateAndAuthor()));
+	    m_createdOn,SIGNAL(editionCompleted(QString)),
+	    this,SLOT(updateDateAndAuthor()));
 
 	m_createdByText = new QLabel(FooterText.arg(m_author->text()).arg(m_createdOn->text()));
 	m_createdByText->setObjectName("createdBy");
@@ -340,24 +334,24 @@ void PartsEditorMainWindow::createCenter(ModelPart *modelPart, ItemBase * fromIt
 	connect(m_connsInfo, SIGNAL(repaintNeeded()), m_views, SLOT(repaint()));
 	connect(m_connsInfo, SIGNAL(drawConnector(Connector*)), m_views, SLOT(drawConnector(Connector*)));
 	connect(
-		m_connsInfo, SIGNAL(drawConnector(ViewLayer::ViewIdentifier, Connector*)),
-		m_views, SLOT(drawConnector(ViewLayer::ViewIdentifier, Connector*))
+	    m_connsInfo, SIGNAL(drawConnector(ViewLayer::ViewIdentifier, Connector*)),
+	    m_views, SLOT(drawConnector(ViewLayer::ViewIdentifier, Connector*))
 	);
 	connect(
-		m_connsInfo, SIGNAL(setMismatching(ViewLayer::ViewIdentifier, const QString&, bool)),
-		m_views, SLOT(setMismatching(ViewLayer::ViewIdentifier, const QString&, bool))
+	    m_connsInfo, SIGNAL(setMismatching(ViewLayer::ViewIdentifier, const QString&, bool)),
+	    m_views, SLOT(setMismatching(ViewLayer::ViewIdentifier, const QString&, bool))
 	);
 	connect(m_connsInfo, SIGNAL(removeConnectorFrom(const QString&,ViewLayer::ViewIdentifier)),
-			m_views, SLOT(removeConnectorFrom(const QString&,ViewLayer::ViewIdentifier)));
+	        m_views, SLOT(removeConnectorFrom(const QString&,ViewLayer::ViewIdentifier)));
 	connect(m_views, SIGNAL(connectorSelectedInView(const QString&)),
-			m_connsInfo, SLOT(connectorSelectedInView(const QString&)));
+	        m_connsInfo, SLOT(connectorSelectedInView(const QString&)));
 	m_views->showTerminalPointsCheckBox()->setChecked(false);
 
 	m_views->connectTerminalRemoval(m_connsInfo);
 
 	connect(
-		m_views, SIGNAL(connectorsFoundSignal(QList< QPointer<Connector> >)),
-		m_connsInfo, SLOT(connectorsFound(QList< QPointer<Connector> >))
+	    m_views, SIGNAL(connectorsFoundSignal(QList< QPointer<Connector> >)),
+	    m_connsInfo, SLOT(connectorsFound(QList< QPointer<Connector> >))
 	);
 
 	m_tabWidget = new QTabWidget(m_centerFrame);
@@ -470,7 +464,7 @@ const QDir& PartsEditorMainWindow::createTempFolderIfNecessary() {
 		QString randext = FolderUtils::getRandText();
 		m_tempDir = QDir(QDir::tempPath());
 		bool dirCreation = m_tempDir.mkdir(randext);
-                if (!dirCreation) {
+		if (!dirCreation) {
 			throw "PartsEditorMainWindow::createTempFolderIfNecessary creation failure";
 		}
 		if(dirCreation) {
@@ -515,18 +509,18 @@ bool PartsEditorMainWindow::saveAs() {
 
 	bool firstTime = true; // Perhaps the user wants to use the default file name, confirm first
 	while(m_fwFilename.isEmpty()
-			|| QFileInfo(userPartsFolderPath+m_fwFilename).exists()
-			|| (FolderUtils::isEmptyFileName(m_fwFilename,untitledFileName()) && firstTime) ) 
+	        || QFileInfo(userPartsFolderPath+m_fwFilename).exists()
+	        || (FolderUtils::isEmptyFileName(m_fwFilename,untitledFileName()) && firstTime) )
 	{
 		bool ok;
 		m_fwFilename = QInputDialog::getText(
-			this,
-			tr("Save as new part"),
-			tr("There's already a file with this name.\nPlease, specify a new filename"),
-			QLineEdit::Normal,
-			m_fwFilename,
-			&ok
-		);
+		                   this,
+		                   tr("Save as new part"),
+		                   tr("There's already a file with this name.\nPlease, specify a new filename"),
+		                   QLineEdit::Normal,
+		                   m_fwFilename,
+		                   &ok
+		               );
 		firstTime = false;
 		if (!ok) {
 			m_moduleId = moduleIdBU;
@@ -545,9 +539,9 @@ bool PartsEditorMainWindow::saveAs() {
 #endif
 
 	QString filename = !m_fwFilename.startsWith(userPartsFolderPath, cs)
-					&& !m_fwFilename.startsWith(partsFolderPath, cs)
-			? userPartsFolderPath+m_fwFilename
-			: m_fwFilename;
+	                   && !m_fwFilename.startsWith(partsFolderPath, cs)
+	                   ? userPartsFolderPath+m_fwFilename
+	                   : m_fwFilename;
 	QString guid = "__"+FolderUtils::getRandText()+FritzingPartExtension;
 	if(!alreadyHasExtension(filename, FritzingPartExtension)) {
 		filename += guid;
@@ -576,21 +570,21 @@ void PartsEditorMainWindow::makeNonCore() {
 }
 
 bool PartsEditorMainWindow::saveAsAux(const QString & fileName) {
-    QFile file(fileName);
-    if (!file.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Fritzing"),
-                             tr("Cannot write file %1:\n%2.")
-                             .arg(fileName)
-                             .arg(file.errorString()));
-        return false;
-    }
-    file.close();
+	QFile file(fileName);
+	if (!file.open(QFile::WriteOnly | QFile::Text)) {
+		QMessageBox::warning(this, tr("Fritzing"),
+		                     tr("Cannot write file %1:\n%2.")
+		                     .arg(fileName)
+		                     .arg(file.errorString()));
+		return false;
+	}
+	file.close();
 
-    updateDateAndAuthor();
+	updateDateAndAuthor();
 
-    QApplication::setOverrideCursor(Qt::WaitCursor);
+	QApplication::setOverrideCursor(Qt::WaitCursor);
 
-    m_sketchModel->root()->setModelPartShared(createModelPartShared());
+	m_sketchModel->root()->setModelPartShared(createModelPartShared());
 
 	QString fileNameAux = QFileInfo(fileName).fileName();
 	m_views->copySvgFilesToDestiny(fileNameAux);
@@ -598,24 +592,24 @@ bool PartsEditorMainWindow::saveAsAux(const QString & fileName) {
 
 	m_sketchModel->save(fileName, true);
 
-    QApplication::restoreOverrideCursor();
+	QApplication::restoreOverrideCursor();
 
-    statusBar()->showMessage(tr("Saved '%1'").arg(fileName), 2000);
+	statusBar()->showMessage(tr("Saved '%1'").arg(fileName), 2000);
 
-    m_partUpdated = true;
+	m_partUpdated = true;
 
-    setFileName(fileName);
-    //setCurrentFile(fileName);
+	setFileName(fileName);
+	//setCurrentFile(fileName);
 
-   // mark the stack clean so we update the window dirty flag
-    m_undoStack->setClean();
-    setTitle();
+	// mark the stack clean so we update the window dirty flag
+	m_undoStack->setClean();
+	setTitle();
 
-    if(m_editingAlien) {
-    	// FIXME: this will keep ALL the external files, not just the ones that this part uses
-    	emit alienPartUsed();
-    	m_editingAlien = false;
-    }
+	if(m_editingAlien) {
+		// FIXME: this will keep ALL the external files, not just the ones that this part uses
+		emit alienPartUsed();
+		m_editingAlien = false;
+	}
 
 	return true;
 }
@@ -650,7 +644,7 @@ ModelPartShared* PartsEditorMainWindow::createModelPartShared() {
 	m_views->aboutToSave();
 
 	// the deal seems to be that an original modelpart is created and becomes the official sketch model (root).
-	// the ConnectorsShared from that model are used to seed the PartsEditorConnectorsConnectorItems. 
+	// the ConnectorsShared from that model are used to seed the PartsEditorConnectorsConnectorItems.
 	// When a new image is loaded into a view, the sketch model's ConnectorsShared are replaced with newly constructed ones.
 	// So now the sketch model points to one set of ConnectorsShared, but the original ones are still sitting
 	// back in the PartsEditorConnectorsConnectorItems.  So now we replace the new ones with the old ones.
@@ -692,8 +686,8 @@ void PartsEditorMainWindow::closeEvent(QCloseEvent *event) {
 		QMainWindow::closeEvent(event);
 		if(m_partUpdated) {
 			emit partUpdated(m_fwFilename, m_id, !m_savedAsNewPart &&
-				(m_connsInfo->connectorsCountChanged() || m_views->connectorsPosOrSizeChanged())
-			);
+			                 (m_connsInfo->connectorsCountChanged() || m_views->connectorsPosOrSizeChanged())
+			                );
 		}
 		emit closed(m_id);
 	} else {
@@ -736,22 +730,22 @@ bool PartsEditorMainWindow::wannaSaveAfterWarning(bool savingAsNew) {
 	if(!m_savedAsNewPart && !savingAsNew && m_connsInfo->connectorsRemoved()) {
 		errorFound = true;
 		msg += "- The connectors defined in this part have changed.\n"
-				"If you save it, you may break other sketches that already use it.\n";
+		       "If you save it, you may break other sketches that already use it.\n";
 	}
 
 	if(m_connsInfo->hasMismatchingConnectors()) {
 		errorFound = true;
 		msg += "- Some connectors are not present in all views."
-				"If you save now, they will be removed.\n";
+		       "If you save now, they will be removed.\n";
 	}
 
 	if(errorFound) {
 		msg += "\nDo you want to save anyway?";
 		QMessageBox::StandardButton btn = QMessageBox::question(this,
-			tr("Updating existing part"),
-			msg,
-			QMessageBox::Yes|QMessageBox::No
-		);
+		                                  tr("Updating existing part"),
+		                                  msg,
+		                                  QMessageBox::Yes|QMessageBox::No
+		                                                       );
 		doEmit = (btn == QMessageBox::Yes);
 	}
 
@@ -791,14 +785,14 @@ const QString PartsEditorMainWindow::fritzingTitle() {
 
 bool PartsEditorMainWindow::event(QEvent * e) {
 	switch (e->type()) {
-		case QEvent::WindowActivate:
-			emit changeActivationSignal(true, this);
-			break;
-		case QEvent::WindowDeactivate:
-			emit changeActivationSignal(false, this);
-			break;
-		default:
-			break;
+	case QEvent::WindowActivate:
+		emit changeActivationSignal(true, this);
+		break;
+	case QEvent::WindowDeactivate:
+		emit changeActivationSignal(false, this);
+		break;
+	default:
+		break;
 	}
 	return FritzingWindow::event(e);
 }
@@ -830,7 +824,7 @@ QStringList PartsEditorMainWindow::getExtensions() {
 }
 
 void PartsEditorMainWindow::propertiesChanged() {
-    if (m_undoStack) {
-	    m_undoStack->push(new QUndoCommand("dummy parts editor command"));
-    }
+	if (m_undoStack) {
+		m_undoStack->push(new QUndoCommand("dummy parts editor command"));
+	}
 }

@@ -1,7 +1,7 @@
 /*
   Matrix Übung
   LED-Matrix zeigt eine kleine Animation
-  
+
   Dieses Beispiel aus dem Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
@@ -20,8 +20,8 @@ long timer=0;                                  // Timervariable
 int timeOut=200;                               // wie lange soll jedes Bild angezeigt werden (ms)
 
 int image[2][8][8]={{           // erstes Bild, das auf der Matrix gezeigt wird
-  
-{0,1,0,0,0,0,1,0},  
+
+{0,1,0,0,0,0,1,0},
 {1,1,1,0,0,1,1,1},
 {0,1,0,0,0,0,1,0},
 {0,0,0,1,1,0,0,0},
@@ -31,8 +31,8 @@ int image[2][8][8]={{           // erstes Bild, das auf der Matrix gezeigt wird
 {0,0,1,1,1,1,0,0}
 
 },{                              // zweites Bild, das auf der Matrix gezeigt wird
-  
-{1,0,1,0,0,1,0,1},  
+
+{1,0,1,0,0,1,0,1},
 {0,1,0,0,0,0,1,0},
 {1,0,1,0,0,1,0,1},
 {0,0,0,1,1,0,0,0},
@@ -42,10 +42,10 @@ int image[2][8][8]={{           // erstes Bild, das auf der Matrix gezeigt wird
 {0,0,1,1,1,1,0,0}
 
 }
-};                                              
+};
 
 void setup(){
-  for (int i=0; i<8; i++){                       // Alle Pins werden als OUTPUT deklariert 
+  for (int i=0; i<8; i++){                       // Alle Pins werden als OUTPUT deklariert
     pinMode(reihenPins[i],OUTPUT);
     pinMode(spaltenPins[i],OUTPUT);
   }
@@ -57,7 +57,7 @@ void loop(){
     if (imageNr==0) imageNr=1;                   // wenn Bild 0 angezeigt wird, soll nur Bild 1 angezeigt werden
     else imageNr=0;                              // wenn Bild 1 angezeigt wird, soll nur Bild 0 angezeigt werden
   }
-  for (int y=0; y<8; y++){                       // zeilenweise werden 
+  for (int y=0; y<8; y++){                       // zeilenweise werden
     for (int x=0; x<8; x++){                     // von links nach rechts alle Einträge des Arrays geprüft
       if (image[imageNr][x][y]==1){              // ist der Eintrag = 1
         digitalWrite(spaltenPins[x],HIGH);       // wird der Spaltenpin eingeschalten

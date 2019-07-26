@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,18 +16,12 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 
 ///////////////////////////////////////
 
-// todo: 
+// todo:
 //	save and reload as settings
 //	enable/disable custom on radio presses
 //	change wording on custom via
@@ -59,13 +53,13 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 const QString AutorouterSettingsDialog::AutorouteTraceWidth = "autorouteTraceWidth";
 
-AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & settings, QWidget *parent) : QDialog(parent) 
+AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & settings, QWidget *parent) : QDialog(parent)
 {
-    m_traceWidth = settings.value(AutorouteTraceWidth).toInt();
+	m_traceWidth = settings.value(AutorouteTraceWidth).toInt();
 
 	Via::initHoleSettings(m_holeSettings);
-    m_holeSettings.ringThickness = settings.value(Via::AutorouteViaRingThickness);
-    m_holeSettings.holeDiameter = settings.value(Via::AutorouteViaHoleSize);
+	m_holeSettings.ringThickness = settings.value(Via::AutorouteViaRingThickness);
+	m_holeSettings.holeDiameter = settings.value(Via::AutorouteViaHoleSize);
 
 	this->setWindowTitle(QObject::tr("Autorouter Settings"));
 
@@ -76,13 +70,13 @@ AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & set
 	QVBoxLayout * prodLayout = new QVBoxLayout();
 	prodGroupBox->setLayout(prodLayout);
 
-	m_homebrewButton = new QRadioButton(tr("homebrew"), this); 
+	m_homebrewButton = new QRadioButton(tr("homebrew"), this);
 	connect(m_homebrewButton, SIGNAL(clicked(bool)), this, SLOT(production(bool)));
 
-	m_professionalButton = new QRadioButton(tr("professional"), this); 
+	m_professionalButton = new QRadioButton(tr("professional"), this);
 	connect(m_professionalButton, SIGNAL(clicked(bool)), this, SLOT(production(bool)));
 
-	m_customButton = new QRadioButton(tr("custom"), this); 
+	m_customButton = new QRadioButton(tr("custom"), this);
 	connect(m_customButton, SIGNAL(clicked(bool)), this, SLOT(production(bool)));
 
 	m_customFrame = new QFrame(this);
@@ -95,16 +89,16 @@ AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & set
 	QVBoxLayout * innerFrameLayout = new QVBoxLayout(this);
 	innerFrame->setLayout(innerFrameLayout);
 
-    QWidget * traceWidget = createTraceWidget();
-    QWidget * keepoutWidget = createKeepoutWidget(settings.value(DRC::KeepoutSettingName));
-    QWidget * viaWidget = createViaWidget();
+	QWidget * traceWidget = createTraceWidget();
+	QWidget * keepoutWidget = createKeepoutWidget(settings.value(DRC::KeepoutSettingName));
+	QWidget * viaWidget = createViaWidget();
 
-    QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 	buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	innerFrameLayout->addWidget(traceWidget);
 	innerFrameLayout->addWidget(keepoutWidget);
@@ -123,7 +117,7 @@ AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & set
 
 	windowLayout->addWidget(buttonBox);
 
-	enableCustom(initProductionType());	
+	enableCustom(initProductionType());
 }
 
 AutorouterSettingsDialog::~AutorouterSettingsDialog() {
@@ -137,47 +131,47 @@ void AutorouterSettingsDialog::production(bool checked) {
 		enableCustom(false);
 		changeHoleSize(sender()->property("holesize").toString() + "," + sender()->property("ringthickness").toString());
 		setTraceWidth(16);
-        setDefaultKeepout();
+		setDefaultKeepout();
 	}
 	else if (sender() == m_professionalButton) {
 		enableCustom(false);
 		changeHoleSize(sender()->property("holesize").toString() + "," + sender()->property("ringthickness").toString());
 		setTraceWidth(24);
-        setDefaultKeepout();
+		setDefaultKeepout();
 	}
 	else if (sender() == m_customButton) {
 		enableCustom(true);
-	}	
+	}
 }
 
-void AutorouterSettingsDialog::enableCustom(bool enable) 
+void AutorouterSettingsDialog::enableCustom(bool enable)
 {
 	m_customFrame->setVisible(enable);
 }
 
-bool AutorouterSettingsDialog::initProductionType() 
+bool AutorouterSettingsDialog::initProductionType()
 {
-    m_homebrewButton->setChecked(false);
-    m_professionalButton->setChecked(false);
+	m_homebrewButton->setChecked(false);
+	m_professionalButton->setChecked(false);
 
-    int custom = 0;
+	int custom = 0;
 
-    QString keepoutString = getKeepoutString();
-    double mils = TextUtils::convertToInches(keepoutString) * 1000;
-    if (qAbs(mils - DRC::KeepoutDefaultMils) >= 1) {
-        custom++;
-    }
+	QString keepoutString = getKeepoutString();
+	double mils = TextUtils::convertToInches(keepoutString) * 1000;
+	if (qAbs(mils - DRC::KeepoutDefaultMils) >= 1) {
+		custom++;
+	}
 
-    double standard = GraphicsUtils::pixels2mils(Wire::STANDARD_TRACE_WIDTH, GraphicsUtils::SVGDPI);
-    if (qAbs(m_traceWidth - standard) >= 1) {
-        custom++;
-    }
+	double standard = GraphicsUtils::pixels2mils(Wire::STANDARD_TRACE_WIDTH, GraphicsUtils::SVGDPI);
+	if (qAbs(m_traceWidth - standard) >= 1) {
+		custom++;
+	}
 
-    custom++;  // assume the holesize/ringthickness won't match
-    double rt = TextUtils::convertToInches(m_holeSettings.ringThickness);
-    double hs = TextUtils::convertToInches(m_holeSettings.holeDiameter);
+	custom++;  // assume the holesize/ringthickness won't match
+	double rt = TextUtils::convertToInches(m_holeSettings.ringThickness);
+	double hs = TextUtils::convertToInches(m_holeSettings.holeDiameter);
 	foreach (QString name, m_holeSettings.holeThing->holeSizeKeys) {
-        // have to loop through all values to set up the two buttons
+		// have to loop through all values to set up the two buttons
 		QStringList values = m_holeSettings.holeThing->holeSizes.value(name).split(",");
 		QString ringThickness = values[1];
 		QString holeSize = values[0];
@@ -188,19 +182,19 @@ bool AutorouterSettingsDialog::initProductionType()
 			if (button) {
 				button->setProperty("ringthickness", ringThickness);
 				button->setProperty("holesize", holeSize);
-                double krt = TextUtils::convertToInches(ringThickness);
-                double khs = TextUtils::convertToInches(holeSize);
+				double krt = TextUtils::convertToInches(ringThickness);
+				double khs = TextUtils::convertToInches(holeSize);
 				if (qAbs(rt - krt) < 0.001 && qAbs(hs - khs) < 0.001) {
-                    // holesize/ringthickness match after all
-                    if (--custom == 0) {  
-					    button->setChecked(true);
-                    }
+					// holesize/ringthickness match after all
+					if (--custom == 0) {
+						button->setChecked(true);
+					}
 				}
 			}
 		}
-	}	
+	}
 
-    m_customButton->setChecked(custom > 0);
+	m_customButton->setChecked(custom > 0);
 	return custom > 0;
 }
 
@@ -216,12 +210,12 @@ void AutorouterSettingsDialog::changeHoleSize(const QString & newSize) {
 	PaletteItem::setHoleSize(s, false, m_holeSettings);
 }
 
-void AutorouterSettingsDialog::changeUnits(bool) 
+void AutorouterSettingsDialog::changeUnits(bool)
 {
 	QString newVal = PaletteItem::changeUnits(m_holeSettings);
 }
 
-void AutorouterSettingsDialog::changeDiameter() 
+void AutorouterSettingsDialog::changeDiameter()
 {
 	if (PaletteItem::changeDiameter(m_holeSettings, sender())) {
 		QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
@@ -229,12 +223,12 @@ void AutorouterSettingsDialog::changeDiameter()
 	}
 }
 
-void AutorouterSettingsDialog::changeThickness() 
+void AutorouterSettingsDialog::changeThickness()
 {
 	if (PaletteItem::changeThickness(m_holeSettings, sender())) {
 		QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
 		changeHoleSize(m_holeSettings.holeDiameter + "," + edit->text() + m_holeSettings.currentUnits());
-	}	
+	}
 }
 
 
@@ -253,48 +247,48 @@ QWidget * AutorouterSettingsDialog::createKeepoutWidget(const QString & keepoutS
 	QVBoxLayout * vLayout = new QVBoxLayout();
 
 	QLabel * label = new QLabel(tr("<b>Keepout</b> is the minimum distance between copper elements on different nets."));
-    //label->setWordWrap(true);  // setting wordwrap here seems to break the layout
+	//label->setWordWrap(true);  // setting wordwrap here seems to break the layout
 	vLayout->addWidget(label);
 
-    label = new QLabel(tr("A keepout of 0.01 inch (0.254 mm) is a good default."));
+	label = new QLabel(tr("A keepout of 0.01 inch (0.254 mm) is a good default."));
 	vLayout->addWidget(label);
 
 	label = new QLabel(tr("Note: the smaller the keepout, the slower the DRC and Autorouter will run."));
 	vLayout->addWidget(label);
 
-    QFrame * frame = new QFrame;
-    QHBoxLayout * frameLayout = new QHBoxLayout;
+	QFrame * frame = new QFrame;
+	QHBoxLayout * frameLayout = new QHBoxLayout;
 
-    m_keepoutSpinBox = new QDoubleSpinBox;
-    m_keepoutSpinBox->setDecimals(4);
-    m_keepoutSpinBox->setLocale(QLocale::C);
-    connect(m_keepoutSpinBox, SIGNAL(valueChanged(double)), this, SLOT(keepoutEntry()));
-    frameLayout->addWidget(m_keepoutSpinBox);
+	m_keepoutSpinBox = new QDoubleSpinBox;
+	m_keepoutSpinBox->setDecimals(4);
+	m_keepoutSpinBox->setLocale(QLocale::C);
+	connect(m_keepoutSpinBox, SIGNAL(valueChanged(double)), this, SLOT(keepoutEntry()));
+	frameLayout->addWidget(m_keepoutSpinBox);
 
-    m_inRadio = new QRadioButton("in");
-    frameLayout->addWidget(m_inRadio);
-    connect(m_inRadio, SIGNAL(clicked()), this, SLOT(toInches()));
+	m_inRadio = new QRadioButton("in");
+	frameLayout->addWidget(m_inRadio);
+	connect(m_inRadio, SIGNAL(clicked()), this, SLOT(toInches()));
 
-    m_mmRadio = new QRadioButton("mm");
-    frameLayout->addWidget(m_mmRadio);
-    connect(m_mmRadio, SIGNAL(clicked()), this, SLOT(toMM()));
+	m_mmRadio = new QRadioButton("mm");
+	frameLayout->addWidget(m_mmRadio);
+	connect(m_mmRadio, SIGNAL(clicked()), this, SLOT(toMM()));
 
-    m_keepoutMils = TextUtils::convertToInches(keepoutString) * 1000;
-    if (keepoutString.endsWith("mm")) {
-        toMM();
-        m_mmRadio->setChecked(true);
-    }
-    else {
-        toInches();
-        m_inRadio->setChecked(true);
-    }
+	m_keepoutMils = TextUtils::convertToInches(keepoutString) * 1000;
+	if (keepoutString.endsWith("mm")) {
+		toMM();
+		m_mmRadio->setChecked(true);
+	}
+	else {
+		toInches();
+		m_inRadio->setChecked(true);
+	}
 
-    frame->setLayout(frameLayout);
-    vLayout->addWidget(frame);
+	frame->setLayout(frameLayout);
+	vLayout->addWidget(frame);
 
 	keepoutGroupBox->setLayout(vLayout);
 
-    return keepoutGroupBox;
+	return keepoutGroupBox;
 }
 
 QWidget * AutorouterSettingsDialog::createTraceWidget() {
@@ -302,12 +296,12 @@ QWidget * AutorouterSettingsDialog::createTraceWidget() {
 	QBoxLayout * traceLayout = new QVBoxLayout();
 
 	m_traceWidthComboBox = TraceWire::createWidthComboBox(m_traceWidth, traceGroupBox);
-    connect(m_traceWidthComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(widthEntry(const QString &)));
+	connect(m_traceWidthComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(widthEntry(const QString &)));
 
-    traceLayout->addWidget(m_traceWidthComboBox);
+	traceLayout->addWidget(m_traceWidthComboBox);
 	traceGroupBox->setLayout(traceLayout);
 
-    return traceGroupBox;
+	return traceGroupBox;
 }
 
 QWidget * AutorouterSettingsDialog::createViaWidget() {
@@ -322,66 +316,66 @@ QWidget * AutorouterSettingsDialog::createViaWidget() {
 	connect(m_holeSettings.diameterEdit, SIGNAL(editingFinished()), this, SLOT(changeDiameter()));
 	connect(m_holeSettings.thicknessEdit, SIGNAL(editingFinished()), this, SLOT(changeThickness()));
 
-    viaLayout->addWidget(viaWidget);
+	viaLayout->addWidget(viaWidget);
 	viaGroupBox->setLayout(viaLayout);
 
-    return viaGroupBox;
+	return viaGroupBox;
 }
 
 void AutorouterSettingsDialog::toInches() {
-    m_keepoutSpinBox->blockSignals(true);
-    m_keepoutSpinBox->setRange(.001, 1);
-    m_keepoutSpinBox->setSingleStep(.001);
-    m_keepoutSpinBox->setValue(m_keepoutMils / 1000);
-    m_keepoutSpinBox->blockSignals(false);
+	m_keepoutSpinBox->blockSignals(true);
+	m_keepoutSpinBox->setRange(.001, 1);
+	m_keepoutSpinBox->setSingleStep(.001);
+	m_keepoutSpinBox->setValue(m_keepoutMils / 1000);
+	m_keepoutSpinBox->blockSignals(false);
 }
 
 void AutorouterSettingsDialog::toMM() {
-    m_keepoutSpinBox->blockSignals(true);
-    m_keepoutSpinBox->setRange(.001 * 25.4, 1);
-    m_keepoutSpinBox->setSingleStep(.01);
-    m_keepoutSpinBox->setValue(m_keepoutMils * 25.4 / 1000);
-    m_keepoutSpinBox->blockSignals(false);
+	m_keepoutSpinBox->blockSignals(true);
+	m_keepoutSpinBox->setRange(.001 * 25.4, 1);
+	m_keepoutSpinBox->setSingleStep(.01);
+	m_keepoutSpinBox->setValue(m_keepoutMils * 25.4 / 1000);
+	m_keepoutSpinBox->blockSignals(false);
 }
 
 void AutorouterSettingsDialog::keepoutEntry() {
-    double k = m_keepoutSpinBox->value();
-    if (m_inRadio->isChecked()) {
-        m_keepoutMils = k * 1000;
-    }
-    else {
-        m_keepoutMils = k * 1000 / 25.4;
-    }
+	double k = m_keepoutSpinBox->value();
+	if (m_inRadio->isChecked()) {
+		m_keepoutMils = k * 1000;
+	}
+	else {
+		m_keepoutMils = k * 1000 / 25.4;
+	}
 }
 
 void AutorouterSettingsDialog::setDefaultKeepout() {
-    m_keepoutMils = DRC::KeepoutDefaultMils;
-    double inches = DRC::KeepoutDefaultMils / 1000;
-    if (m_inRadio->isChecked()) {
-        m_keepoutSpinBox->setValue(inches);
-    }
-    else {
-        m_keepoutSpinBox->setValue(inches * 25.4);
-    }
+	m_keepoutMils = DRC::KeepoutDefaultMils;
+	double inches = DRC::KeepoutDefaultMils / 1000;
+	if (m_inRadio->isChecked()) {
+		m_keepoutSpinBox->setValue(inches);
+	}
+	else {
+		m_keepoutSpinBox->setValue(inches * 25.4);
+	}
 }
 
 QHash<QString, QString> AutorouterSettingsDialog::getSettings() {
-    QHash<QString, QString> settings;
-    settings.insert(DRC::KeepoutSettingName, getKeepoutString());
+	QHash<QString, QString> settings;
+	settings.insert(DRC::KeepoutSettingName, getKeepoutString());
 	settings.insert(Via::AutorouteViaHoleSize, m_holeSettings.holeDiameter);
 	settings.insert(Via::AutorouteViaRingThickness, m_holeSettings.ringThickness);
 	settings.insert(AutorouteTraceWidth, QString::number(m_traceWidth));
 
-    return settings;
+	return settings;
 }
 
-QString AutorouterSettingsDialog::getKeepoutString() 
+QString AutorouterSettingsDialog::getKeepoutString()
 {
-    double k = m_keepoutSpinBox->value();
-    if (m_inRadio->isChecked()) {
-        return QString("%1in").arg(k);
-    }
-    else {
-        return QString("%1mm").arg(k);
-    }
+	double k = m_keepoutSpinBox->value();
+	if (m_inRadio->isChecked()) {
+		return QString("%1in").arg(k);
+	}
+	else {
+		return QString("%1mm").arg(k);
+	}
 }

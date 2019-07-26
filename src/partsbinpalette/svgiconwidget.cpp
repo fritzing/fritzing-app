@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6934 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-22 08:35:24 +0100 (Fr, 22. Mrz 2013) $
 
 ********************************************************************/
 
@@ -53,7 +47,7 @@ static QPixmap * SingularImage = NULL;
 
 ////////////////////////////////////////////////////////////
 
-SvgIconPixmapItem::SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent) : QGraphicsPixmapItem(pixmap, parent) 
+SvgIconPixmapItem::SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent) : QGraphicsPixmapItem(pixmap, parent)
 {
 }
 
@@ -61,7 +55,7 @@ void  SvgIconPixmapItem::setPlural(bool plural) {
 	m_plural = plural;
 }
 
-void SvgIconPixmapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) 
+void SvgIconPixmapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 	QGraphicsPixmapItem::paint(painter, option, widget);
 
@@ -71,18 +65,18 @@ void SvgIconPixmapItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
 		pen.setColor(QColor(122, 15, 49));
 		pen.setWidth(SELECTION_THICKNESS);
 		painter->setPen(pen);
-		painter->drawRect(m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1, 
-						  m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1, 
-						  ICON_SIZE + SELECTION_THICKNESS, ICON_SIZE + SELECTION_THICKNESS);
+		painter->drawRect(m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1,
+		                  m_plural ? HALF_SELECTION_THICKNESS : HALF_SELECTION_THICKNESS + 1,
+		                  ICON_SIZE + SELECTION_THICKNESS, ICON_SIZE + SELECTION_THICKNESS);
 		painter->restore();
-	} 
+	}
 
 }
 
 ////////////////////////////////////////////////////////////
 
 SvgIconWidget::SvgIconWidget(ModelPart * modelPart, ViewLayer::ViewID viewID, ItemBase * itemBase, bool plural)
-	: QGraphicsWidget() 
+	: QGraphicsWidget()
 {
 	m_moduleId = modelPart->moduleID();
 	m_itemBase = itemBase;
@@ -145,7 +139,7 @@ const QString &SvgIconWidget::moduleID() const {
 	return m_moduleId;
 }
 
-void SvgIconWidget::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ){
+void SvgIconWidget::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) {
 	QGraphicsWidget::hoverEnterEvent(event);
 	InfoGraphicsView * igv = InfoGraphicsView::getInfoGraphicsView(this);
 	if (igv) {
@@ -161,7 +155,7 @@ void SvgIconWidget::hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) {
 	}
 }
 
-void SvgIconWidget::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) 
+void SvgIconWidget::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 	if (m_moduleId.compare(ModuleIDNames::SpacerModuleIDName) == 0) {
 		QString text = data(Qt::UserRole).toString();
@@ -180,8 +174,8 @@ void SvgIconWidget::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 			//r.setLeft(r.left() + fm.width(text));
 			//r.setBottom(r.bottom() + 2);
 			//painter->drawLine(r.left(), r.bottom(), scene()->width(), r.bottom());
-			painter->restore();	
-		}		
+			painter->restore();
+		}
 		return;
 	}
 
@@ -197,12 +191,12 @@ void SvgIconWidget::setItemBase(ItemBase * itemBase, bool plural)
 void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 {
 	LayerAttributes layerAttributes;
-    m_itemBase->initLayerAttributes(layerAttributes, viewID, ViewLayer::Icon, ViewLayer::NewTop, false, false);
+	m_itemBase->initLayerAttributes(layerAttributes, viewID, ViewLayer::Icon, ViewLayer::NewTop, false, false);
 	ModelPart * modelPart = m_itemBase->modelPart();
 	FSvgRenderer * renderer = m_itemBase->setUpImage(modelPart, layerAttributes);
-    if (renderer == NULL) {
-        DebugDialog::debug(QString("missing renderer for icon %1").arg(modelPart->moduleID()));
-    }
+	if (renderer == NULL) {
+		DebugDialog::debug(QString("missing renderer for icon %1").arg(modelPart->moduleID()));
+	}
 	if (renderer && m_itemBase) {
 		m_itemBase->setFilename(renderer->filename());
 	}
@@ -233,7 +227,7 @@ void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 		setToolTip(m_itemBase->toolTip());
 	}
 
-    if (renderer) {
-        m_itemBase->setSharedRendererEx(renderer);
-    }
+	if (renderer) {
+		m_itemBase->setSharedRendererEx(renderer);
+	}
 }

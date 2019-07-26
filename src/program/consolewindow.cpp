@@ -51,165 +51,165 @@
 #include <QtSerialPort/QSerialPort>
 
 ConsoleWindow::ConsoleWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::ConsoleWindow)
+	QMainWindow(parent),
+	ui(new Ui::ConsoleWindow)
 {
-    QFile styleSheet(":/resources/styles/programwindow.qss");
+	QFile styleSheet(":/resources/styles/programwindow.qss");
 
-    this->setObjectName("consoleWindow");
-    if (!styleSheet.open(QIODevice::ReadOnly)) {
-        qWarning("Unable to open :/resources/styles/programwindow.qss");
-    } else {
-        QString ss = styleSheet.readAll();
+	this->setObjectName("consoleWindow");
+	if (!styleSheet.open(QIODevice::ReadOnly)) {
+		qWarning("Unable to open :/resources/styles/programwindow.qss");
+	} else {
+		QString ss = styleSheet.readAll();
 #ifdef Q_OS_MAC
-                int paneLoc = 4;
-                int tabBarLoc = 0;
+		int paneLoc = 4;
+		int tabBarLoc = 0;
 #else
-                int paneLoc = -1;
-                int tabBarLoc = 5;
+		int paneLoc = -1;
+		int tabBarLoc = 5;
 #endif
-                ss = ss.arg(paneLoc).arg(tabBarLoc);
-        this->setStyleSheet(ss);
-    }
+		ss = ss.arg(paneLoc).arg(tabBarLoc);
+		this->setStyleSheet(ss);
+	}
 
-    ui->setupUi(this);
-    console = new Console;
-    console->setEnabled(false);
-    setCentralWidget(console);
-    serial = new QSerialPort(this);
-    settings = new ConsoleSettings;
+	ui->setupUi(this);
+	console = new Console;
+	console->setEnabled(false);
+	setCentralWidget(console);
+	serial = new QSerialPort(this);
+	settings = new ConsoleSettings;
 
-    QSettings settings;
-    if (!settings.value("consolewindow/state").isNull()) {
-        restoreState(settings.value("consolewindow/state").toByteArray());
-    }
-    if (!settings.value("consolewindow/geometry").isNull()) {
-        restoreGeometry(settings.value("consolewindow/geometry").toByteArray());
-    }
+	QSettings settings;
+	if (!settings.value("consolewindow/state").isNull()) {
+		restoreState(settings.value("consolewindow/state").toByteArray());
+	}
+	if (!settings.value("consolewindow/geometry").isNull()) {
+		restoreGeometry(settings.value("consolewindow/geometry").toByteArray());
+	}
 
-    ui->actionConnect->setEnabled(true);
-    ui->actionDisconnect->setEnabled(false);
-    ui->actionQuit->setEnabled(true);
-    ui->actionConfigure->setEnabled(true);
+	ui->actionConnect->setEnabled(true);
+	ui->actionDisconnect->setEnabled(false);
+	ui->actionQuit->setEnabled(true);
+	ui->actionConfigure->setEnabled(true);
 
-    initActionsConnections();
+	initActionsConnections();
 
-    connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this,
-            SLOT(handleError(QSerialPort::SerialPortError)));
+	connect(serial, SIGNAL(error(QSerialPort::SerialPortError)), this,
+	        SLOT(handleError(QSerialPort::SerialPortError)));
 
-    connect(serial, SIGNAL(readyRead()), this, SLOT(readData()));
-    connect(console, SIGNAL(getData(QByteArray)), this, SLOT(writeData(QByteArray)));
+	connect(serial, SIGNAL(readyRead()), this, SLOT(readData()));
+	connect(console, SIGNAL(getData(QByteArray)), this, SLOT(writeData(QByteArray)));
 }
 
 ConsoleWindow::~ConsoleWindow()
 {
-    delete settings;
-    delete ui;
+	delete settings;
+	delete ui;
 }
 
 void ConsoleWindow::closeEvent(QCloseEvent *event)
- {
-     closeSerialPort();
-     QSettings settings;
-     settings.setValue("consolewindow/geometry", saveGeometry());
-     settings.setValue("consolewindow/tate", saveState());
-     QMainWindow::closeEvent(event);
- }
+{
+	closeSerialPort();
+	QSettings settings;
+	settings.setValue("consolewindow/geometry", saveGeometry());
+	settings.setValue("consolewindow/tate", saveState());
+	QMainWindow::closeEvent(event);
+}
 
 void ConsoleWindow::openSerialPort(const QString portName)
 {
-    if (portName.isEmpty()) return;
+	if (portName.isEmpty()) return;
 
-    settings->selectPortName(portName);
-    if (serial->isOpen()) {
-        if (serial->portName().compare(portName) != 0) {
-            closeSerialPort();
-            openSerialPort();
-        }
-    } else {
-        openSerialPort();
-    }
+	settings->selectPortName(portName);
+	if (serial->isOpen()) {
+		if (serial->portName().compare(portName) != 0) {
+			closeSerialPort();
+			openSerialPort();
+		}
+	} else {
+		openSerialPort();
+	}
 }
 
 void ConsoleWindow::openSerialPort()
 {
-    ConsoleSettings::Settings p = settings->settings();
-    serial->setPortName(p.name);
-    if (serial->open(QIODevice::ReadWrite)) {
-        serial->setBaudRate(p.baudRate);
-        serial->setDataBits(p.dataBits);
-        serial->setParity(p.parity);
-        serial->setStopBits(p.stopBits);
-        serial->setFlowControl(p.flowControl);
-        console->setEnabled(true);
-        console->setLocalEchoEnabled(p.localEchoEnabled);
-        ui->actionConnect->setEnabled(false);
-        ui->actionDisconnect->setEnabled(true);
-        ui->actionConfigure->setEnabled(false);
-        ui->statusBar->showMessage(tr("Connected to %1 : %2, %3, %4, %5, %6")
-                                   .arg(p.name).arg(p.stringBaudRate).arg(p.stringDataBits)
-                                   .arg(p.stringParity).arg(p.stringStopBits).arg(p.stringFlowControl));
-    } else {
-        QMessageBox::critical(this, tr("Error"), serial->errorString());
+	ConsoleSettings::Settings p = settings->settings();
+	serial->setPortName(p.name);
+	if (serial->open(QIODevice::ReadWrite)) {
+		serial->setBaudRate(p.baudRate);
+		serial->setDataBits(p.dataBits);
+		serial->setParity(p.parity);
+		serial->setStopBits(p.stopBits);
+		serial->setFlowControl(p.flowControl);
+		console->setEnabled(true);
+		console->setLocalEchoEnabled(p.localEchoEnabled);
+		ui->actionConnect->setEnabled(false);
+		ui->actionDisconnect->setEnabled(true);
+		ui->actionConfigure->setEnabled(false);
+		ui->statusBar->showMessage(tr("Connected to %1 : %2, %3, %4, %5, %6")
+		                           .arg(p.name).arg(p.stringBaudRate).arg(p.stringDataBits)
+		                           .arg(p.stringParity).arg(p.stringStopBits).arg(p.stringFlowControl));
+	} else {
+		QMessageBox::critical(this, tr("Error"), serial->errorString());
 
-        ui->statusBar->showMessage(tr("Serial port open error"));
-    }
+		ui->statusBar->showMessage(tr("Serial port open error"));
+	}
 }
 
 void ConsoleWindow::closeSerialPort(const QString portName)
 {
-    if (portName.isEmpty()) return;
-    if (portName.compare(serial->portName()) == 0) {
-        closeSerialPort();
-    }
+	if (portName.isEmpty()) return;
+	if (portName.compare(serial->portName()) == 0) {
+		closeSerialPort();
+	}
 }
 
 void ConsoleWindow::closeSerialPort()
 {
-    if (serial->isOpen()) {
-        serial->close();
-        console->setEnabled(false);
-        ui->actionConnect->setEnabled(true);
-        ui->actionDisconnect->setEnabled(false);
-        ui->actionConfigure->setEnabled(true);
-        ui->statusBar->showMessage(tr("Disconnected"));
-    }
+	if (serial->isOpen()) {
+		serial->close();
+		console->setEnabled(false);
+		ui->actionConnect->setEnabled(true);
+		ui->actionDisconnect->setEnabled(false);
+		ui->actionConfigure->setEnabled(true);
+		ui->statusBar->showMessage(tr("Disconnected"));
+	}
 }
 
 void ConsoleWindow::about()
 {
-    QMessageBox::about(this, tr("About Serial Monitor"),
-                       tr("This terminal displays the serial communication on the "
-                          "selected port, usually between your computer and the "
-                          "connected microcontroller."));
+	QMessageBox::about(this, tr("About Serial Monitor"),
+	                   tr("This terminal displays the serial communication on the "
+	                      "selected port, usually between your computer and the "
+	                      "connected microcontroller."));
 }
 
 void ConsoleWindow::writeData(const QByteArray &data)
 {
-    serial->write(data);
+	serial->write(data);
 }
 
 void ConsoleWindow::readData()
 {
-    QByteArray data = serial->readAll();
-    console->putData(data);
+	QByteArray data = serial->readAll();
+	console->putData(data);
 }
 
 void ConsoleWindow::handleError(QSerialPort::SerialPortError error)
 {
-    if (error == QSerialPort::ResourceError) {
-        QMessageBox::critical(this, tr("Critical Error"), serial->errorString());
-        closeSerialPort();
-    }
+	if (error == QSerialPort::ResourceError) {
+		QMessageBox::critical(this, tr("Critical Error"), serial->errorString());
+		closeSerialPort();
+	}
 }
 
 void ConsoleWindow::initActionsConnections()
 {
-    connect(ui->actionConnect, SIGNAL(triggered()), this, SLOT(openSerialPort()));
-    connect(ui->actionDisconnect, SIGNAL(triggered()), this, SLOT(closeSerialPort()));
-    connect(ui->actionQuit, SIGNAL(triggered()), this, SLOT(close()));
-    connect(ui->actionConfigure, SIGNAL(triggered()), settings, SLOT(show()));
-    connect(ui->actionClear, SIGNAL(triggered()), console, SLOT(clear()));
-    connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(about()));
-    connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+	connect(ui->actionConnect, SIGNAL(triggered()), this, SLOT(openSerialPort()));
+	connect(ui->actionDisconnect, SIGNAL(triggered()), this, SLOT(closeSerialPort()));
+	connect(ui->actionQuit, SIGNAL(triggered()), this, SLOT(close()));
+	connect(ui->actionConfigure, SIGNAL(triggered()), settings, SLOT(show()));
+	connect(ui->actionClear, SIGNAL(triggered()), console, SLOT(clear()));
+	connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(about()));
+	connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 }

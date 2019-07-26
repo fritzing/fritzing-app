@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 ********************************************************************/
 
@@ -52,7 +46,7 @@ protected:
 
 class SvgIconWidget : public QGraphicsWidget
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	SvgIconWidget(ModelPart *, ViewLayer::ViewID, ItemBase *, bool plural);
 	~SvgIconWidget();

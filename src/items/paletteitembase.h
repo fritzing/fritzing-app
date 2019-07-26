@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6998 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 
 ********************************************************************/
 
@@ -50,18 +44,18 @@ public:
 	void moveItem(ViewGeometry &);
 	virtual void syncKinSelection(bool selected, PaletteItemBase *originator);
 	virtual void syncKinMoved(QPointF offset, QPointF loc);
- 	void blockItemSelectedChange(bool selected);
- 	bool syncSelected();
- 	QPointF syncMoved();
+	void blockItemSelectedChange(bool selected);
+	bool syncSelected();
+	QPointF syncMoved();
 	void mousePressConnectorEvent(class ConnectorItem *, QGraphicsSceneMouseEvent *);
 	bool acceptsMousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
- 	virtual bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	virtual bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	void connectedMoved(ConnectorItem * from, ConnectorItem * to, QList<ConnectorItem *> & already);
 	bool collectFemaleConnectees(QSet<ItemBase *> & items);
 	void collectWireConnectees(QSet<class Wire *> & wires);
-    virtual bool mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
-    virtual void mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
-    virtual void mouseReleaseEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
+	virtual bool mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
+	virtual void mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
+	virtual void mouseReleaseEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
 	void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 	void hoverEnterEvent(QGraphicsSceneHoverEvent * event );
@@ -89,10 +83,10 @@ public:
 	void setPos(double x, double y);
 	*/
 protected:
-    static QString normalizeSvg(QString & svg, ViewLayer::ViewLayerID viewLayerID, bool blackOnly, double dpi, double & factor);
+	static QString normalizeSvg(QString & svg, ViewLayer::ViewLayerID viewLayerID, bool blackOnly, double dpi, double & factor);
 
 protected:
-    void setUpConnectors(FSvgRenderer *, bool ignoreTerminalPoints);
+	void setUpConnectors(FSvgRenderer *, bool ignoreTerminalPoints);
 	void findConnectorsUnder();
 	virtual bool canFindConnectorsUnder();
 	bool inRotationLocation(QPointF scenePos, Qt::KeyboardModifiers modifiers, QPointF & returnPoint);
@@ -101,19 +95,19 @@ protected:
 	void checkFreeRotation(Qt::KeyboardModifiers modifiers, QPointF scenePos);
 
 	virtual LayerKinPaletteItem * newLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, const ViewGeometry &, long id, QMenu* itemMenu, const LayerHash &, LayerAttributes &);
-    virtual void setInitialTransform(const QTransform &);
-    virtual void cacheLoaded(const LayerAttributes &);
+	virtual void setInitialTransform(const QTransform &);
+	virtual void cacheLoaded(const LayerAttributes &);
 
 protected slots:
 	void partPropertyEntry();
 
 protected:
- 	bool m_blockItemSelectedChange;
- 	bool m_blockItemSelectedValue;
- 	QPointF m_offset;
- 	bool m_syncSelected;
- 	QPointF m_syncMoved;
- 	bool m_svg;
+	bool m_blockItemSelectedChange;
+	bool m_blockItemSelectedValue;
+	QPointF m_offset;
+	bool m_syncSelected;
+	QPointF m_syncMoved;
+	bool m_svg;
 };
 
 

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6984 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
-
 ********************************************************************/
 
 #ifndef MYSTERYPART_H
@@ -34,7 +28,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 #include "paletteitem.h"
 
-class MysteryPart : public PaletteItem 
+class MysteryPart : public PaletteItem
 {
 	Q_OBJECT
 
@@ -49,7 +43,7 @@ public:
 	void setProp(const QString & prop, const QString & value);
 	void setChipLabel(QString label, bool force);
 	QString chipLabel();
-    const QString & title();
+	const QString & title();
 	bool hasCustomSVG();
 	PluralType isPlural();
 	void addedToScene(bool temporary);
@@ -80,8 +74,8 @@ protected:
 	virtual QString retrieveSchematicSvg(QString & svg);
 
 protected:
-    static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid); 
-    static QString genxFZP(const QString & moduleid, const QString & templateName, int minPins, int maxPins, int step);
+	static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid);
+	static QString genxFZP(const QString & moduleid, const QString & templateName, int minPins, int maxPins, int step);
 
 protected:
 	static int NoExcusePins;

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6469 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-09-23 00:54:30 +0200 (So, 23. Sep 2012) $
-
 ********************************************************************/
 
 #ifndef WAITPUSHUNDOSTACK_H
@@ -35,17 +29,17 @@ $Date: 2012-09-23 00:54:30 +0200 (So, 23. Sep 2012) $
 
 class WaitPushUndoStack : public QUndoStack
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
 	WaitPushUndoStack(QObject * parent = 0);
 	~WaitPushUndoStack();
 
 	void waitPush(QUndoCommand *, int delayMS);
 	void waitPushTemporary(QUndoCommand *, int delayMS);
-    void resolveTemporary();
-    void deleteTemporary();
-    void deleteTimer(QTimer *);
-    void addTimer(QTimer *);
+	void resolveTemporary();
+	void deleteTemporary();
+	void deleteTimer(QTimer *);
+	void addTimer(QTimer *);
 	void push(QUndoCommand *);
 	bool hasTimers();
 
@@ -56,8 +50,8 @@ public:
 protected:
 	QFile m_file;
 #endif
-   
- protected:
+
+protected:
 	void clearDeadTimers();
 	void clearLiveTimers();
 	void clearTimers(QList<QTimer *> &);
@@ -66,14 +60,14 @@ protected:
 	QList<QTimer *> m_deadTimers;
 	QList<QTimer *> m_liveTimers;
 	QMutex m_mutex;
-    QUndoCommand * m_temporary;
+	QUndoCommand * m_temporary;
 };
 
 
 class CommandTimer : public QTimer
 {
 
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	CommandTimer(QUndoCommand * command, int delayMS, WaitPushUndoStack * undoStack);

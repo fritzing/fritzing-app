@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify\
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6570 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-10-16 06:25:29 +0200 (Di, 16. Okt 2012) $
 
 ********************************************************************/
 
@@ -39,9 +33,9 @@ class PEBaseCommand : public BaseCommand
 public:
 	PEBaseCommand(class PEMainWindow *, QUndoCommand* parent);
 	~PEBaseCommand();
-	
+
 	QString getParamString() const;
-	
+
 protected:
 	class PEMainWindow * m_peMainWindow;
 };
@@ -95,7 +89,7 @@ protected:
 
 protected:
 	QString m_oldFzpFile;
-    QString m_newFzpFile;
+	QString m_newFzpFile;
 };
 
 /////////////////////////////////////////////
@@ -162,8 +156,8 @@ protected:
 	QString getParamString() const;
 
 protected:
-    QString m_id;
-    QString m_terminalID;
+	QString m_id;
+	QString m_terminalID;
 	QString m_oldGorn;
 	QString m_oldGornTerminal;
 	QString m_newGorn;
@@ -183,10 +177,10 @@ protected:
 	QString getParamString() const;
 
 protected:
-    QString m_id;
-    QSizeF m_size;
-    QPointF m_oldLocation;
-    QPointF m_newLocation;
+	QString m_id;
+	QSizeF m_size;
+	QPointF m_oldLocation;
+	QPointF m_newLocation;
 };
 
 /////////////////////////////////////////////

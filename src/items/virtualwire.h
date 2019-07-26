@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
-
 ********************************************************************/
 
 #ifndef VIRTUALWIRE_H
@@ -34,26 +28,26 @@ class VirtualWire : public ClipableWire
 	Q_OBJECT
 
 public:
-	VirtualWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu  ); 
+	VirtualWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu  );
 	~VirtualWire();
-	
+
 	void setHidden(bool hidden);
 	void setInactive(bool inactivate);
 	void tempRemoveAllConnections();
 	void setColorWasNamed(bool);
 	bool colorWasNamed();
-    QPainterPath shape() const;
-	
+	QPainterPath shape() const;
+
 protected:
-	void paint (QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget );	
+	void paint (QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget );
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	void connectionChange(ConnectorItem * onMe, ConnectorItem * onIt, bool connect);
- 	class FSvgRenderer * setUpConnectors(class ModelPart *, ViewLayer::ViewID);
-	void hideConnectors();	
+	class FSvgRenderer * setUpConnectors(class ModelPart *, ViewLayer::ViewID);
+	void hideConnectors();
 	void inactivateConnectors();
 
 public:
-    static const double ShapeWidthExtra;
+	static const double ShapeWidthExtra;
 
 protected:
 	bool m_colorWasNamed;

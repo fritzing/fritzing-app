@@ -31,10 +31,10 @@
 
 /////////////////////////////////
 //
-//	TODO:  
+//	TODO:
 //
 //      pin numbers in brd2svg--something to add to params files?
-//	
+//
 //      copy old schematics to obsolete (with prefix)
 //      readonly old style vs. read/write new style
 //
@@ -47,7 +47,7 @@
 //      update brd2svg schematics generator
 //
 
- 
+
 ///////////////////////////////////////////////////////
 
 S2SApplication::S2SApplication(int argc, char *argv[]) : QCoreApplication(argc, argv)
@@ -91,7 +91,7 @@ void S2SApplication::start() {
     {
         QString line = in.readLine().trimmed();
         QString schematicFileName;
-        s2s.onefzp(m_fzpDir.absoluteFilePath(line), schematicFileName);   
+        s2s.onefzp(m_fzpDir.absoluteFilePath(line), schematicFileName);
     }
 }
 
@@ -195,4 +195,3 @@ void S2SApplication::message(const QString & msg) {
 
 	qDebug() << msg;
 }
-

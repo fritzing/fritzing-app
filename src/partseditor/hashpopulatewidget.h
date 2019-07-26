@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -38,71 +32,75 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 class HashLineEdit : public QLineEdit {
 	Q_OBJECT
-	public:
-		HashLineEdit(const QString &text, bool defaultValue = false, QWidget *parent = 0);
-		bool hasChanged();
-		QString textIfSetted();
+public:
+	HashLineEdit(const QString &text, bool defaultValue = false, QWidget *parent = 0);
+	bool hasChanged();
+	QString textIfSetted();
 
-	protected slots:
-		void updateObjectName();
+protected slots:
+	void updateObjectName();
 
-	protected:
-		void mousePressEvent(QMouseEvent * event);
-		void focusOutEvent(QFocusEvent * event);
+protected:
+	void mousePressEvent(QMouseEvent * event);
+	void focusOutEvent(QFocusEvent * event);
 
-		QString m_firstText;
-		bool m_isDefaultValue;
+	QString m_firstText;
+	bool m_isDefaultValue;
 };
 
 class HashRemoveButton : public BaseRemoveButton {
 	Q_OBJECT
-	public:
-		HashRemoveButton(QWidget* label, QWidget* value, QWidget *parent)
-			: BaseRemoveButton(parent)
-		{
-			m_label = label;
-			m_value = value;
-		}
+public:
+	HashRemoveButton(QWidget* label, QWidget* value, QWidget *parent)
+		: BaseRemoveButton(parent)
+	{
+		m_label = label;
+		m_value = value;
+	}
 
-		QWidget *label() {return m_label;}
-		QWidget *value() {return m_value;}
+	QWidget *label() {
+		return m_label;
+	}
+	QWidget *value() {
+		return m_value;
+	}
 
-	signals:
-		void clicked(HashRemoveButton*);
+signals:
+	void clicked(HashRemoveButton*);
 
-	protected:
-		void clicked() {
-			emit clicked(this);
-		}
-		QWidget *m_label;
-		QWidget *m_value;
+protected:
+	void clicked() {
+		emit clicked(this);
+	}
+	QWidget *m_label;
+	QWidget *m_value;
 };
 
 class HashPopulateWidget : public QFrame {
 	Q_OBJECT
-	public:
-		HashPopulateWidget(const QString & title, const QHash<QString,QString> &initValues, const QStringList &readOnlyKeys, bool keysOnly, QWidget *parent);
-		const QHash<QString,QString> & hash();
-		HashLineEdit* lineEditAt(int row, int col);
+public:
+	HashPopulateWidget(const QString & title, const QHash<QString,QString> &initValues, const QStringList &readOnlyKeys, bool keysOnly, QWidget *parent);
+	const QHash<QString,QString> & hash();
+	HashLineEdit* lineEditAt(int row, int col);
 
-	protected slots:
-		void lastRowEditionCompleted();
-		void removeRow(HashRemoveButton*);
-        void lineEditChanged();
+protected slots:
+	void lastRowEditionCompleted();
+	void removeRow(HashRemoveButton*);
+	void lineEditChanged();
 
-	signals:
-		void editionStarted();
-        void changed();
+signals:
+	void editionStarted();
+	void changed();
 
-	protected:
-		void addRow(QGridLayout *layout = 0);
-		QGridLayout* gridLayout();
-		HashRemoveButton *createRemoveButton(HashLineEdit* label, HashLineEdit* value);
+protected:
+	void addRow(QGridLayout *layout = 0);
+	QGridLayout* gridLayout();
+	HashRemoveButton *createRemoveButton(HashLineEdit* label, HashLineEdit* value);
 
-		HashLineEdit *m_lastLabel;
-		HashLineEdit *m_lastValue;
+	HashLineEdit *m_lastLabel;
+	HashLineEdit *m_lastValue;
 
-        bool m_keysOnly;
+	bool m_keysOnly;
 };
 
 #endif /* HASHPOPULATEWIDGET_H_ */

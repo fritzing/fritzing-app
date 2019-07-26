@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.old
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6963 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-14 10:13:52 +0200 (So, 14. Apr 2013) $
 
 ********************************************************************/
 
@@ -42,7 +36,7 @@ QList<QString> ModelBase::CoreList;
 
 ModelBase::ModelBase( bool makeRoot )
 {
-    m_checkForReversedWires = m_useOldSchematics = false;
+	m_checkForReversedWires = m_useOldSchematics = false;
 	m_reportMissingModules = true;
 	m_referenceModel = NULL;
 	m_root = NULL;
@@ -54,11 +48,11 @@ ModelBase::ModelBase( bool makeRoot )
 
 ModelBase::~ModelBase() {
 	if (m_root) {
-        ModelPartShared * modelPartShared = m_root->modelPartShared();
-        if (modelPartShared) {
-            m_root->setModelPartShared(NULL);
-            delete modelPartShared;
-        }
+		ModelPartShared * modelPartShared = m_root->modelPartShared();
+		if (modelPartShared) {
+			m_root->setModelPartShared(NULL);
+			delete modelPartShared;
+		}
 		delete m_root;
 	}
 }
@@ -75,48 +69,48 @@ ModelPart * ModelBase::retrieveModelPart(const QString & /* moduleID */)  {
 bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceModel, QList<ModelPart *> & modelParts, bool checkViews) {
 	m_referenceModel = referenceModel;
 
-    QFile file(fileName);
-    if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        FMessageBox::warning(NULL, QObject::tr("Fritzing"),
-                             QObject::tr("Cannot read file %1:\n%2.")
-                             .arg(fileName)
-                             .arg(file.errorString()));
-        return false;
-    }
+	QFile file(fileName);
+	if (!file.open(QFile::ReadOnly | QFile::Text)) {
+		FMessageBox::warning(NULL, QObject::tr("Fritzing"),
+		                     QObject::tr("Cannot read file %1:\n%2.")
+		                     .arg(fileName)
+		                     .arg(file.errorString()));
+		return false;
+	}
 
-    QString errorStr;
-    int errorLine;
-    int errorColumn;
-    QDomDocument domDocument;
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+	QDomDocument domDocument;
 
-    if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-        FMessageBox::information(NULL, QObject::tr("Fritzing"),
-                                 QObject::tr("Parse error (1) at line %1, column %2:\n%3\n%4")
-                                 .arg(errorLine)
-                                 .arg(errorColumn)
-                                 .arg(errorStr)
-								 .arg(fileName));
-        return false;
-    }
+	if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
+		FMessageBox::information(NULL, QObject::tr("Fritzing"),
+		                         QObject::tr("Parse error (1) at line %1, column %2:\n%3\n%4")
+		                         .arg(errorLine)
+		                         .arg(errorColumn)
+		                         .arg(errorStr)
+		                         .arg(fileName));
+		return false;
+	}
 
-    QDomElement root = domDocument.documentElement();
-   	if (root.isNull()) {
-        FMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (2).").arg(fileName));
-   		return false;
+	QDomElement root = domDocument.documentElement();
+	if (root.isNull()) {
+		FMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (2).").arg(fileName));
+		return false;
 	}
 
 	emit loadedRoot(fileName, this, root);
 
-    if (root.tagName() != "module") {
-        FMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (4).").arg(fileName));
-        return false;
-    }
+	if (root.tagName() != "module") {
+		FMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (4).").arg(fileName));
+		return false;
+	}
 
-    bool checkForOldSchematics = true;
+	bool checkForOldSchematics = true;
 	bool checkForRats = true;
 	bool checkForTraces = true;
-    bool checkForMysteryParts = true;
-    bool checkForObsoleteSMDOrientation = true;
+	bool checkForMysteryParts = true;
+	bool checkForObsoleteSMDOrientation = true;
 	m_fritzingVersion = root.attribute("fritzingVersion");
 	if (m_fritzingVersion.length() > 0) {
 		// with version 0.4.3 ratsnests in fz files are obsolete
@@ -132,36 +126,36 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		versionThingRats.minorVersion = 6;
 		versionThingRats.minorSubVersion = 4;
 		checkForTraces = !Version::greaterThan(versionThingRats, versionThingFz);
-        // with version 0.7.6 mystery part spacing implementation changes
+		// with version 0.7.6 mystery part spacing implementation changes
 		versionThingRats.minorVersion = 7;
 		versionThingRats.minorSubVersion = 5;
 		checkForMysteryParts = !Version::greaterThan(versionThingRats, versionThingFz);
-        // with version 0.8.0 flipSMD is horizontal
-	    versionThingRats.minorVersion = 7;
-	    versionThingRats.minorSubVersion = 13;
-	    checkForObsoleteSMDOrientation = !Version::greaterThan(versionThingRats, versionThingFz);
-        // with version 0.8.6 we get a new schematic template
-        versionThingRats.minorVersion = 8;
-        versionThingRats.minorSubVersion = 5;
-        checkForOldSchematics = !Version::greaterThan(versionThingRats, versionThingFz);
-        // with version 0.9.3 we don't have to worry about reversed wires
-        versionThingRats.minorVersion = 9;
-        versionThingRats.minorSubVersion = 2;
-        m_checkForReversedWires = !Version::greaterThan(versionThingRats, versionThingFz);
+		// with version 0.8.0 flipSMD is horizontal
+		versionThingRats.minorVersion = 7;
+		versionThingRats.minorSubVersion = 13;
+		checkForObsoleteSMDOrientation = !Version::greaterThan(versionThingRats, versionThingFz);
+		// with version 0.8.6 we get a new schematic template
+		versionThingRats.minorVersion = 8;
+		versionThingRats.minorSubVersion = 5;
+		checkForOldSchematics = !Version::greaterThan(versionThingRats, versionThingFz);
+		// with version 0.9.3 we don't have to worry about reversed wires
+		versionThingRats.minorVersion = 9;
+		versionThingRats.minorSubVersion = 2;
+		m_checkForReversedWires = !Version::greaterThan(versionThingRats, versionThingFz);
 
 	}
-    
+
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();
 
-    QDomElement title = root.firstChildElement("title");
+	QDomElement title = root.firstChildElement("title");
 	if (!title.isNull()) {
 		if (modelPartSharedRoot) {
 			modelPartSharedRoot->setTitle(title.text());
 		}
 	}
 
-    // ensures changeBinIcon() is not available
-    // this may be a bug?
+	// ensures changeBinIcon() is not available
+	// this may be a bug?
 	QString iconFilename = root.attribute("icon");
 	if (iconFilename.isEmpty()) {
 		iconFilename = title.text() + ".png";
@@ -178,39 +172,39 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		modelPartSharedRoot->setSearchTerm(searchTerm);
 	}
 
-    QDomElement views = root.firstChildElement("views");
+	QDomElement views = root.firstChildElement("views");
 	emit loadedViews(this, views);
 
 	QDomElement instances = root.firstChildElement("instances");
 	if (instances.isNull()) {
-        FMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (3).").arg(fileName));
-        return false;
+		FMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (3).").arg(fileName));
+		return false;
 	}
 
 	// delete any aready-existing model parts
-    for (int i = m_root->children().count() - 1; i >= 0; i--) {
-    	QObject* child = m_root->children()[i];
-    	child->setParent(NULL);
-    	delete child;
-   	}
+	for (int i = m_root->children().count() - 1; i >= 0; i--) {
+		QObject* child = m_root->children()[i];
+		child->setParent(NULL);
+		delete child;
+	}
 
 	emit loadingInstances(this, instances);
 
 	if (checkForRats) {
 		QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			QDomElement nextInstance = instance.nextSiblingElement("instance");
 			if (isRatsnest(instance)) {
 				instances.removeChild(instance);
 			}
-			
+
 			instance = nextInstance;
 		}
 	}
 
 	if (checkForTraces) {
 		QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			checkTraces(instance);
 			instance = instance.nextSiblingElement("instance");
 		}
@@ -218,34 +212,34 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
 	if (checkForMysteryParts) {
 		QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			checkMystery(instance);
 			instance = instance.nextSiblingElement("instance");
 		}
 	}
 
-    if (checkForObsoleteSMDOrientation) {
+	if (checkForObsoleteSMDOrientation) {
 		QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+		while (!instance.isNull()) {
 			if (checkObsoleteOrientation(instance)) {
-                emit obsoleteSMDOrientationSignal();
-                break;
-            }
+				emit obsoleteSMDOrientationSignal();
+				break;
+			}
 			instance = instance.nextSiblingElement("instance");
 		}
-    }
+	}
 
-    m_useOldSchematics = false;
-    if (checkForOldSchematics) {
-        QDomElement instance = instances.firstChildElement("instance");
-   		while (!instance.isNull()) {
+	m_useOldSchematics = false;
+	if (checkForOldSchematics) {
+		QDomElement instance = instances.firstChildElement("instance");
+		while (!instance.isNull()) {
 			if (checkOldSchematics(instance)) {
-                emit oldSchematicsSignal(fileName, m_useOldSchematics);
-                break;
-            }
+				emit oldSchematicsSignal(fileName, m_useOldSchematics);
+				break;
+			}
 			instance = instance.nextSiblingElement("instance");
-		}    
-    }
+		}
+	}
 
 	bool result = loadInstances(domDocument, instances, modelParts, checkViews);
 	emit loadedInstances(this, instances);
@@ -259,74 +253,74 @@ ModelPart * ModelBase::fixObsoleteModuleID(QDomDocument & domDocument, QDomEleme
 bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instances, QList<ModelPart *> & modelParts, bool checkViews)
 {
 	QHash<QString, QString> missingModules;
-   	QDomElement instance = instances.firstChildElement("instance");
-   	ModelPart* modelPart = NULL;
-   	while (!instance.isNull()) {
+	QDomElement instance = instances.firstChildElement("instance");
+	ModelPart* modelPart = NULL;
+	while (!instance.isNull()) {
 		emit loadingInstance(this, instance);
 
-        if (checkViews) {
-            QDomElement views = instance.firstChildElement("views");
-            QDomElement view = views.firstChildElement();
-            if (views.isNull() || view.isNull()) {
-                // do not load a part with no views
-                //QString text;
-                //QTextStream stream(&text);
-                //instance.save(stream, 0);
-                //DebugDialog::debug(text);
-                instance = instance.nextSiblingElement("instance");
-                continue;
-            }
-        }
+		if (checkViews) {
+			QDomElement views = instance.firstChildElement("views");
+			QDomElement view = views.firstChildElement();
+			if (views.isNull() || view.isNull()) {
+				// do not load a part with no views
+				//QString text;
+				//QTextStream stream(&text);
+				//instance.save(stream, 0);
+				//DebugDialog::debug(text);
+				instance = instance.nextSiblingElement("instance");
+				continue;
+			}
+		}
 
-   		// for now assume all parts are in the palette
-   		QString moduleIDRef = instance.attribute("moduleIdRef");
+		// for now assume all parts are in the palette
+		QString moduleIDRef = instance.attribute("moduleIdRef");
 
-        //DebugDialog::debug("loading " + moduleIDRef);
+		//DebugDialog::debug("loading " + moduleIDRef);
 		if (moduleIDRef.compare(ModuleIDNames::SpacerModuleIDName) == 0) {
 			ModelPart * mp = new ModelPart(ModelPart::Space);
 			mp->setInstanceText(instance.attribute("path"));
 			mp->setParent(m_root);
-            mp->modelPartShared()->setModuleID(ModuleIDNames::SpacerModuleIDName);
-            mp->modelPartShared()->setPath(instance.attribute("path"));
+			mp->modelPartShared()->setModuleID(ModuleIDNames::SpacerModuleIDName);
+			mp->modelPartShared()->setPath(instance.attribute("path"));
 			modelParts.append(mp);
 			instance = instance.nextSiblingElement("instance");
 			continue;
 		}
 
-        bool generated = false;
-   		modelPart = m_referenceModel->retrieveModelPart(moduleIDRef);
-        if (modelPart == NULL) {
+		bool generated = false;
+		modelPart = m_referenceModel->retrieveModelPart(moduleIDRef);
+		if (modelPart == NULL) {
 			DebugDialog::debug(QString("module id %1 not found in database").arg(moduleIDRef));
 			modelPart = fixObsoleteModuleID(domDocument, instance, moduleIDRef);
 			if (modelPart == NULL) {
-                modelPart = genFZP(moduleIDRef, m_referenceModel);
+				modelPart = genFZP(moduleIDRef, m_referenceModel);
 				if (modelPart != NULL) {
-                    instance.setAttribute("moduleIdRef", modelPart->moduleID());
-                    moduleIDRef = modelPart->moduleID();
-                    generated = true;
+					instance.setAttribute("moduleIdRef", modelPart->moduleID());
+					moduleIDRef = modelPart->moduleID();
+					generated = true;
 				}
 				if (modelPart == NULL) {
 					missingModules.insert(moduleIDRef, instance.attribute("path"));
-   					instance = instance.nextSiblingElement("instance");
-   					continue;
+					instance = instance.nextSiblingElement("instance");
+					continue;
 				}
 			}
-   		}
+		}
 
-        if (modelPart->isCore() && m_useOldSchematics) {
-            modelPart = createOldSchematicPart(modelPart, moduleIDRef);
-        }
+		if (modelPart->isCore() && m_useOldSchematics) {
+			modelPart = createOldSchematicPart(modelPart, moduleIDRef);
+		}
 
-        modelPart->setInBin(true);
-   		modelPart = addModelPart(m_root, modelPart);
-   		modelPart->setInstanceDomElement(instance);
+		modelPart->setInBin(true);
+		modelPart = addModelPart(m_root, modelPart);
+		modelPart->setInstanceDomElement(instance);
 		modelParts.append(modelPart);
 
-   		// TODO Mariano: i think this is not the way
-   		QString instanceTitle = instance.firstChildElement("title").text();
-   		if(!instanceTitle.isNull() && !instanceTitle.isEmpty()) {
-   			modelPart->setInstanceTitle(instanceTitle, false);
-   		}
+		// TODO Mariano: i think this is not the way
+		QString instanceTitle = instance.firstChildElement("title").text();
+		if(!instanceTitle.isNull() && !instanceTitle.isEmpty()) {
+			modelPart->setInstanceTitle(instanceTitle, false);
+		}
 
 		QDomElement localConnectors = instance.firstChildElement("localConnectors");
 		QDomElement localConnector = localConnectors.firstChildElement("localConnector");
@@ -335,17 +329,17 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 			localConnector = localConnector.nextSiblingElement("localConnector");
 		}
 
-   		QString instanceText = instance.firstChildElement("text").text();
-   		if(!instanceText.isNull() && !instanceText.isEmpty()) {
-   			modelPart->setInstanceText(instanceText);
-   		}
+		QString instanceText = instance.firstChildElement("text").text();
+		if(!instanceText.isNull() && !instanceText.isEmpty()) {
+			modelPart->setInstanceText(instanceText);
+		}
 
-   		bool ok;
-   		long index = instance.attribute("modelIndex").toLong(&ok);
-   		if (ok) {
+		bool ok;
+		long index = instance.attribute("modelIndex").toLong(&ok);
+		if (ok) {
 			// set the index so we can find the same model part later, as we continue loading
 			modelPart->setModelIndex(index);
-  		}
+		}
 
 		// note: this QDomNamedNodeMap loop is obsolete, but leaving it here so that old sketches don't get broken (jc, 22 Oct 2009)
 		QDomNamedNodeMap map = instance.attributes();
@@ -376,15 +370,15 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 			prop = prop.nextSiblingElement("property");
 		}
 
-   		instance = instance.nextSiblingElement("instance");
-  	}
+		instance = instance.nextSiblingElement("instance");
+	}
 
 	if (m_reportMissingModules && missingModules.count() > 0) {
 		QString unableToFind = QString("<html><body><b>%1</b><br/><table style='border-spacing: 0px 12px;'>")
-			.arg(tr("Unable to find the following %n part(s):", "", missingModules.count()));
+		                       .arg(tr("Unable to find the following %n part(s):", "", missingModules.count()));
 		foreach (QString key, missingModules.keys()) {
 			unableToFind += QString("<tr><td>'%1'</td><td><b>%2</b></td><td>'%3'</td></tr>")
-				.arg(key).arg(tr("at")).arg(missingModules.value(key, ""));
+			                .arg(key).arg(tr("at")).arg(missingModules.value(key, ""));
 		}
 		unableToFind += "</table></body></html>";
 		FMessageBox::warning(NULL, QObject::tr("Fritzing"), unableToFind);
@@ -396,15 +390,15 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 
 ModelPart * ModelBase::addModelPart(ModelPart * parent, ModelPart * copyChild) {
 
-    //if (copyChild->moduleID() == "df9d072afa2b594ac67b60b4153ff57b_29") {
-    //    DebugDialog::debug("alive in here");
-    //}
+	//if (copyChild->moduleID() == "df9d072afa2b594ac67b60b4153ff57b_29") {
+	//    DebugDialog::debug("alive in here");
+	//}
 
 	ModelPart * modelPart = new ModelPart();
 	modelPart->copyNew(copyChild);
 	modelPart->setParent(parent);
 	modelPart->initConnectors();
-    modelPart->flipSMDAnd();
+	modelPart->flipSMDAnd();
 	return modelPart;
 }
 
@@ -438,43 +432,43 @@ void ModelBase::save(const QString & fileName, bool asPart) {
 	QDir dir = info.absoluteDir();
 
 	QString temp = dir.absoluteFilePath("temp.xml");
-    QFile file1(temp);
-    if (!file1.open(QFile::WriteOnly | QFile::Text)) {
-        FMessageBox::warning(NULL, QObject::tr("Fritzing"),
-                             QObject::tr("Cannot write file temp:\n%1\n%2\n%3.")
-							  .arg(temp)
-							  .arg(fileName)
-                              .arg(file1.errorString())
-							  );
-        return;
-    }
+	QFile file1(temp);
+	if (!file1.open(QFile::WriteOnly | QFile::Text)) {
+		FMessageBox::warning(NULL, QObject::tr("Fritzing"),
+		                     QObject::tr("Cannot write file temp:\n%1\n%2\n%3.")
+		                     .arg(temp)
+		                     .arg(fileName)
+		                     .arg(file1.errorString())
+		                    );
+		return;
+	}
 
-    QXmlStreamWriter streamWriter(&file1);
+	QXmlStreamWriter streamWriter(&file1);
 	save(fileName, streamWriter, asPart);
 	file1.close();
 	QFile original(fileName);
 	if(original.exists() && !original.remove()) {
 		file1.remove();
 		FMessageBox::warning(
-			NULL,
-			tr("File save failed!"),
-			tr("Couldn't overwrite file '%1'.\nReason: %2 (errcode %3)")
-				.arg(fileName)
-				.arg(original.errorString())
-				.arg(original.error())
-			);
+		    NULL,
+		    tr("File save failed!"),
+		    tr("Couldn't overwrite file '%1'.\nReason: %2 (errcode %3)")
+		    .arg(fileName)
+		    .arg(original.errorString())
+		    .arg(original.error())
+		);
 		return;
 	}
 	file1.rename(fileName);
 }
 
 void ModelBase::save(const QString & fileName, QXmlStreamWriter & streamWriter, bool asPart) {
-    streamWriter.setAutoFormatting(true);
-    if(asPart) {
-    	m_root->saveAsPart(streamWriter, true);
-    } else {
-    	m_root->saveInstances(fileName, streamWriter, true);
-    }
+	streamWriter.setAutoFormatting(true);
+	if(asPart) {
+		m_root->saveAsPart(streamWriter, true);
+	} else {
+		m_root->saveInstances(fileName, streamWriter, true);
+	}
 }
 
 bool ModelBase::paste(ModelBase * referenceModel, QByteArray & data, QList<ModelPart *> & modelParts, QHash<QString, QRectF> & boundingRects, bool preserveIndex)
@@ -513,8 +507,8 @@ bool ModelBase::paste(ModelBase * referenceModel, QByteArray & data, QList<Model
 	}
 
 	QDomElement instances = module.firstChildElement("instances");
-   	if (instances.isNull()) {
-   		return false;
+	if (instances.isNull()) {
+		return false;
 	}
 
 	if (!preserveIndex) {
@@ -547,11 +541,11 @@ void ModelBase::renewModelIndexes(QDomElement & parentElement, const QString & c
 		if (!views.isNull()) {
 			QDomElement view = views.firstChildElement();
 			while (!view.isNull()) {
-                bool ok;
-                int superpart = view.attribute("superpart").toLong(&ok);
-                if (ok) {
-                    view.setAttribute("superpart", QString::number(oldToNew.value(superpart)));
-                }
+				bool ok;
+				long superpart = view.attribute("superpart").toLong(&ok);
+				if (ok) {
+					view.setAttribute("superpart", QString::number(oldToNew.value(superpart)));
+				}
 				QDomElement connectors = view.firstChildElement("connectors");
 				if (!connectors.isNull()) {
 					QDomElement connector = connectors.firstChildElement("connector");
@@ -635,16 +629,16 @@ bool ModelBase::isRatsnest(QDomElement & instance) {
 bool ModelBase::checkOldSchematics(QDomElement & instance)
 {
 	if (instance.attribute("moduleIdRef").compare(ModuleIDNames::WireModuleIDName) != 0) {
-        return false;
-    }
+		return false;
+	}
 
-    QDomElement views = instance.firstChildElement("views");
-    QDomElement schematicView = views.firstChildElement("schematicView");
-    QDomElement geometry = schematicView.firstChildElement("geometry");
-    if (geometry.isNull()) return false;
+	QDomElement views = instance.firstChildElement("views");
+	QDomElement schematicView = views.firstChildElement("schematicView");
+	QDomElement geometry = schematicView.firstChildElement("geometry");
+	if (geometry.isNull()) return false;
 
-    int flags = geometry.attribute("wireFlags", "0").toInt();
-    return (flags & ViewGeometry::SchematicTraceFlag) != 0;
+	int flags = geometry.attribute("wireFlags", "0").toInt();
+	return (flags & ViewGeometry::SchematicTraceFlag) != 0;
 }
 
 
@@ -655,7 +649,7 @@ bool ModelBase::checkObsoleteOrientation(QDomElement & instance)
 
 	QDomElement views = instance.firstChildElement("views");
 	QDomElement pcbView = views.firstChildElement("pcbView");
-    return (pcbView.attribute("layer", "") == "copper0");
+	return (pcbView.attribute("layer", "") == "copper0");
 }
 
 void ModelBase::checkTraces(QDomElement & instance) {
@@ -728,7 +722,7 @@ void ModelBase::checkTraces(QDomElement & instance) {
 		views.appendChild(pcbView);
 		return;
 	}
-	
+
 	if (!pcbView.isNull()) {
 		schView = pcbView.cloneNode(true).toElement();
 		bbView = pcbView.cloneNode(true).toElement();
@@ -746,7 +740,7 @@ void ModelBase::checkTraces(QDomElement & instance) {
 	QTextStream stream(&string);
 	instance.save(stream, 0);
 	stream.flush();
-	DebugDialog::debug(QString("no wire view elements in fz file %1").arg(string));	
+	DebugDialog::debug(QString("no wire view elements in fz file %1").arg(string));
 }
 
 const QString & ModelBase::fritzingVersion() {
@@ -754,134 +748,134 @@ const QString & ModelBase::fritzingVersion() {
 }
 
 void ModelBase::setReferenceModel(ModelBase * modelBase) {
-    m_referenceModel = modelBase;
+	m_referenceModel = modelBase;
 }
 
-void ModelBase::checkMystery(QDomElement & instance) 
+void ModelBase::checkMystery(QDomElement & instance)
 {
 	QString moduleIDRef = instance.attribute("moduleIdRef");
-    bool mystery = false;
-    bool sip = false;
-    bool dip = false;
-	if (moduleIDRef.contains("mystery", Qt::CaseInsensitive)) mystery = true;	
-    else if (moduleIDRef.contains("sip", Qt::CaseInsensitive)) sip = true;    
-    else if (moduleIDRef.contains("dip", Qt::CaseInsensitive)) dip = true;
-    else return;
+	bool mystery = false;
+	bool sip = false;
+	bool dip = false;
+	if (moduleIDRef.contains("mystery", Qt::CaseInsensitive)) mystery = true;
+	else if (moduleIDRef.contains("sip", Qt::CaseInsensitive)) sip = true;
+	else if (moduleIDRef.contains("dip", Qt::CaseInsensitive)) dip = true;
+	else return;
 
-    QString spacing;
-    int pins = TextUtils::getPinsAndSpacing(moduleIDRef, spacing);
+	QString spacing;
+	int pins = TextUtils::getPinsAndSpacing(moduleIDRef, spacing);
 
-    QDomElement prop = instance.firstChildElement("property");
-    while (!prop.isNull()) {
-        if (prop.attribute("name", "").compare("spacing") == 0) {
-            QString trueSpacing = prop.attribute("value", "");
-            if (trueSpacing.isEmpty()) trueSpacing = "300mil";
+	QDomElement prop = instance.firstChildElement("property");
+	while (!prop.isNull()) {
+		if (prop.attribute("name", "").compare("spacing") == 0) {
+			QString trueSpacing = prop.attribute("value", "");
+			if (trueSpacing.isEmpty()) trueSpacing = "300mil";
 
-            if (moduleIDRef.contains(spacing)) {
-                moduleIDRef.replace(spacing, trueSpacing);
-                instance.setAttribute("moduleIdRef", moduleIDRef);
-                return;
-            }
+			if (moduleIDRef.contains(spacing)) {
+				moduleIDRef.replace(spacing, trueSpacing);
+				instance.setAttribute("moduleIdRef", moduleIDRef);
+				return;
+			}
 
-            // if we're here, it's a single sided mystery part.
-            moduleIDRef = QString("mystery_part_sip_%1_100mil").arg(pins);
-            instance.setAttribute("moduleIdRef", moduleIDRef);
-            return;
-        }
-        prop = prop.nextSiblingElement("property");
-    }
+			// if we're here, it's a single sided mystery part.
+			moduleIDRef = QString("mystery_part_sip_%1_100mil").arg(pins);
+			instance.setAttribute("moduleIdRef", moduleIDRef);
+			return;
+		}
+		prop = prop.nextSiblingElement("property");
+	}
 }
 
 bool ModelBase::onCoreList(const QString & moduleID) {
-    // CoreList contains db entries that are (presumably) overridden by an fzp in the parts folder
-    return CoreList.contains(moduleID);
+	// CoreList contains db entries that are (presumably) overridden by an fzp in the parts folder
+	return CoreList.contains(moduleID);
 
 }
 
 ModelPart * ModelBase::createOldSchematicPart(ModelPart * modelPart, QString & moduleIDRef) {
-    QString schematicFilename = modelPart->imageFileName(ViewLayer::SchematicView, ViewLayer::Schematic);
-    if (!schematicFilename.startsWith("schematic")) {
-        schematicFilename = modelPart->imageFileName(ViewLayer::SchematicView, ViewLayer::SchematicFrame);
-        if (!schematicFilename.startsWith("schematic")) {
-            return modelPart;
-        }
-    }
+	QString schematicFilename = modelPart->imageFileName(ViewLayer::SchematicView, ViewLayer::Schematic);
+	if (!schematicFilename.startsWith("schematic")) {
+		schematicFilename = modelPart->imageFileName(ViewLayer::SchematicView, ViewLayer::SchematicFrame);
+		if (!schematicFilename.startsWith("schematic")) {
+			return modelPart;
+		}
+	}
 
-    DebugDialog::debug("schematic " + schematicFilename);
-    QString oldModuleIDRef = PartFactory::OldSchematicPrefix + moduleIDRef;
-    ModelPart * oldModelPart = m_referenceModel->retrieveModelPart(oldModuleIDRef);         // cached after the first time it's created
-    if (oldModelPart) {
-        moduleIDRef = oldModuleIDRef;
-        return oldModelPart;
-    }
+	DebugDialog::debug("schematic " + schematicFilename);
+	QString oldModuleIDRef = PartFactory::OldSchematicPrefix + moduleIDRef;
+	ModelPart * oldModelPart = m_referenceModel->retrieveModelPart(oldModuleIDRef);         // cached after the first time it's created
+	if (oldModelPart) {
+		moduleIDRef = oldModuleIDRef;
+		return oldModelPart;
+	}
 
-    int ix = schematicFilename.indexOf("/");
-    schematicFilename.insert(ix + 1, PartFactory::OldSchematicPrefix);
-    QString oldSvgPath = FolderUtils::getAppPartsSubFolderPath("") + "/svg/obsolete/"+ schematicFilename;
-    oldModelPart = createOldSchematicPartAux(modelPart, oldModuleIDRef, schematicFilename, oldSvgPath);
-    if (oldModelPart) {
-        moduleIDRef = oldModuleIDRef;
-        return oldModelPart;
-    }
+	int ix = schematicFilename.indexOf("/");
+	schematicFilename.insert(ix + 1, PartFactory::OldSchematicPrefix);
+	QString oldSvgPath = FolderUtils::getAppPartsSubFolderPath("") + "/svg/obsolete/"+ schematicFilename;
+	oldModelPart = createOldSchematicPartAux(modelPart, oldModuleIDRef, schematicFilename, oldSvgPath);
+	if (oldModelPart) {
+		moduleIDRef = oldModuleIDRef;
+		return oldModelPart;
+	}
 
-    oldSvgPath = ":resources/parts/svg/obsolete/"+ schematicFilename;
-    oldModelPart = createOldSchematicPartAux(modelPart, oldModuleIDRef, schematicFilename, oldSvgPath);
-    if (oldModelPart) {
-        moduleIDRef = oldModuleIDRef;
-        return oldModelPart;
-    }
+	oldSvgPath = ":resources/parts/svg/obsolete/"+ schematicFilename;
+	oldModelPart = createOldSchematicPartAux(modelPart, oldModuleIDRef, schematicFilename, oldSvgPath);
+	if (oldModelPart) {
+		moduleIDRef = oldModuleIDRef;
+		return oldModelPart;
+	}
 
 
-    // see whether it's a generated part
-    oldSvgPath = PartFactory::getSvgFilename(schematicFilename);
-    if (!oldSvgPath.isEmpty()) {
-        oldModelPart = createOldSchematicPartAux(modelPart, oldModuleIDRef, schematicFilename, oldSvgPath);
-        if (oldModelPart) {
-            moduleIDRef = oldModuleIDRef;
-            return oldModelPart;
-        }    
-    }
-    
-    return modelPart;
+	// see whether it's a generated part
+	oldSvgPath = PartFactory::getSvgFilename(schematicFilename);
+	if (!oldSvgPath.isEmpty()) {
+		oldModelPart = createOldSchematicPartAux(modelPart, oldModuleIDRef, schematicFilename, oldSvgPath);
+		if (oldModelPart) {
+			moduleIDRef = oldModuleIDRef;
+			return oldModelPart;
+		}
+	}
+
+	return modelPart;
 }
 
 ModelPart * ModelBase::createOldSchematicPartAux(ModelPart * modelPart, const QString & oldModuleIDRef, const QString & oldSchematicFileName, const QString & oldSvgPath)
 {
-    if (!QFile::exists(oldSvgPath)) return NULL;
+	if (!QFile::exists(oldSvgPath)) return NULL;
 
-    // create oldModelPart, set up the new image file name, add it to refmodel
-    QFile newFzp(modelPart->path());
-    QDomDocument oldDoc;
-    bool ok = oldDoc.setContent(&newFzp);
-    if (!ok) {
-        // this shouldn't happen
-        return NULL;
-    }
+	// create oldModelPart, set up the new image file name, add it to refmodel
+	QFile newFzp(modelPart->path());
+	QDomDocument oldDoc;
+	bool ok = oldDoc.setContent(&newFzp);
+	if (!ok) {
+		// this shouldn't happen
+		return NULL;
+	}
 
-    QDomElement root = oldDoc.documentElement();
-    root.setAttribute("moduleId", oldModuleIDRef);
-    QDomElement views = root.firstChildElement("views");
-    QDomElement schematicView = views.firstChildElement("schematicView");
-    QDomElement layers = schematicView.firstChildElement("layers");
-    if (layers.isNull()) {
-        // this shouldn't happen
-        return NULL;
-    }
+	QDomElement root = oldDoc.documentElement();
+	root.setAttribute("moduleId", oldModuleIDRef);
+	QDomElement views = root.firstChildElement("views");
+	QDomElement schematicView = views.firstChildElement("schematicView");
+	QDomElement layers = schematicView.firstChildElement("layers");
+	if (layers.isNull()) {
+		// this shouldn't happen
+		return NULL;
+	}
 
-    layers.setAttribute("image", oldSchematicFileName);
+	layers.setAttribute("image", oldSchematicFileName);
 
-    QString oldFzpPath = PartFactory::fzpPath() + oldModuleIDRef + ".fzp";
-    if (!TextUtils::writeUtf8(oldFzpPath, oldDoc.toString())) {
-        // this shouldn't happen
-        return NULL;
-    }
+	QString oldFzpPath = PartFactory::fzpPath() + oldModuleIDRef + ".fzp";
+	if (!TextUtils::writeUtf8(oldFzpPath, oldDoc.toString())) {
+		// this shouldn't happen
+		return NULL;
+	}
 
-    ModelPart * oldModelPart = m_referenceModel->addPart(oldFzpPath, true, true);
-    oldModelPart->setCore(modelPart->isCore());
-    oldModelPart->setContrib(modelPart->isContrib());
-    return oldModelPart;
+	ModelPart * oldModelPart = m_referenceModel->addPart(oldFzpPath, true, true);
+	oldModelPart->setCore(modelPart->isCore());
+	oldModelPart->setContrib(modelPart->isContrib());
+	return oldModelPart;
 }
 
 bool ModelBase::checkForReversedWires() {
-    return m_checkForReversedWires;
+	return m_checkForReversedWires;
 }

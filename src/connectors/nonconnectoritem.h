@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -38,7 +32,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 class NonConnectorItem : public QObject, public QGraphicsRectItem
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	NonConnectorItem(ItemBase* attachedTo);
@@ -50,7 +44,7 @@ public:
 	virtual void setInactive(bool inactivate);
 	bool inactive();
 	virtual void setLayerHidden(bool hidden);
-    bool layerHidden();
+	bool layerHidden();
 	long attachedToID();
 	const QString & attachedToTitle();
 	const QString & attachedToInstanceTitle();
@@ -61,8 +55,8 @@ public:
 	void setShape(QPainterPath &);
 	void paint( QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0 );
 	QPainterPath shape() const;
-    void setIsPath(bool);
-    bool isPath();
+	void setIsPath(bool);
+	bool isPath();
 	int attachedToItemType();
 
 protected:
@@ -78,7 +72,7 @@ protected:
 protected:
 	QPointer<ItemBase> m_attachedTo;
 	bool m_hidden;
-    bool m_layerHidden;
+	bool m_layerHidden;
 	bool m_inactive;
 	bool m_paint;
 	double m_opacity;
@@ -89,8 +83,8 @@ protected:
 	double m_negativePenWidth;
 	bool m_negativeOffsetRect;
 	QPainterPath m_shape;
-    bool m_isPath;
-	
+	bool m_isPath;
+
 };
 
 #endif

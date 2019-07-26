@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -60,13 +54,13 @@ public:
 	void ignore(const QString & version, bool interim);
 
 signals:
-    void httpError(QNetworkReply::NetworkError);
+	void httpError(QNetworkReply::NetworkError);
 	void xmlError(QXmlStreamReader::Error errorCode);
-	void releasesAvailable(); 
+	void releasesAvailable();
 
 public slots:
-    void fetch();
-    void finished(QNetworkReply *);
+	void fetch();
+	void finished(QNetworkReply *);
 
 protected:
 	void parseXml();
@@ -74,7 +68,7 @@ protected:
 
 protected:
 	QString m_urlString;
-    QXmlStreamReader m_xml;
+	QXmlStreamReader m_xml;
 	QString m_version;
 	int m_depth;
 	bool m_inEntry;
@@ -89,8 +83,8 @@ protected:
 	QString m_currentSummary;
 	VersionThing m_ignoreMainVersion;
 	VersionThing m_ignoreInterimVersion;
-    QNetworkReply * m_networkReply;
-    QMutex m_networkReplyLock;
+	QNetworkReply * m_networkReply;
+	QMutex m_networkReplyLock;
 };
 
 

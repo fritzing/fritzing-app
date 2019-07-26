@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -117,9 +111,9 @@ void PartsEditorViewsWidget::init() {
 }
 
 PartsEditorView * PartsEditorViewsWidget::createViewImageWidget(
-		SketchModel* sketchModel, WaitPushUndoStack *undoStack,
-		ViewLayer::ViewIdentifier viewId, QString iconFileName, QString startText,
-		ConnectorsInfoWidget* info, ViewLayer::ViewLayerID viewLayerId, ItemBase * fromItem) 
+    SketchModel* sketchModel, WaitPushUndoStack *undoStack,
+    ViewLayer::ViewIdentifier viewId, QString iconFileName, QString startText,
+    ConnectorsInfoWidget* info, ViewLayer::ViewLayerID viewLayerId, ItemBase * fromItem)
 {
 
 	PartsEditorView * viw = new PartsEditorView(viewId,tempDir(),showingTerminalPoints(),PartsEditorMainWindow::emptyViewItem(iconFileName,startText),this, 150, false, fromItem);
@@ -131,21 +125,21 @@ PartsEditorView * PartsEditorViewsWidget::createViewImageWidget(
 	m_views[viewId] = viw;
 
 	connect(
-		info, SIGNAL(connectorSelected(const QString&)),
-		viw, SLOT(informConnectorSelection(const QString&))
+	    info, SIGNAL(connectorSelected(const QString&)),
+	    viw, SLOT(informConnectorSelection(const QString&))
 	);
 	connect(
-		viw, SIGNAL(connectorsFoundSignal(ViewLayer::ViewIdentifier, const QList< QPointer<Connector> > &)),
-		info, SLOT(syncNewConnectors(ViewLayer::ViewIdentifier, const QList< QPointer<Connector> > &))
+	    viw, SIGNAL(connectorsFoundSignal(ViewLayer::ViewIdentifier, const QList< QPointer<Connector> > &)),
+	    info, SLOT(syncNewConnectors(ViewLayer::ViewIdentifier, const QList< QPointer<Connector> > &))
 	);
 	connect(
-		info, SIGNAL(existingConnectorSignal(ViewLayer::ViewIdentifier, const QString &, Connector*, Connector*)),
-		viw, SLOT(checkConnectorLayers(ViewLayer::ViewIdentifier, const QString &, Connector*, Connector*))
+	    info, SIGNAL(existingConnectorSignal(ViewLayer::ViewIdentifier, const QString &, Connector*, Connector*)),
+	    viw, SLOT(checkConnectorLayers(ViewLayer::ViewIdentifier, const QString &, Connector*, Connector*))
 	);
 
 	connect(
-		info, SIGNAL(setMismatching(ViewLayer::ViewIdentifier, const QString &, bool)),
-		viw, SLOT(setMismatching(ViewLayer::ViewIdentifier, const QString &, bool))
+	    info, SIGNAL(setMismatching(ViewLayer::ViewIdentifier, const QString &, bool)),
+	    viw, SLOT(setMismatching(ViewLayer::ViewIdentifier, const QString &, bool))
 	);
 
 	return viw;
@@ -181,19 +175,19 @@ const QDir& PartsEditorViewsWidget::tempDir() {
 
 void PartsEditorViewsWidget::connectPair(PartsEditorView *v1, PartsEditorView *v2) {
 	connect(
-		v1, SIGNAL(connectorSelected(const QString &)),
-		v2, SLOT(informConnectorSelection(const QString &))
+	    v1, SIGNAL(connectorSelected(const QString &)),
+	    v2, SLOT(informConnectorSelection(const QString &))
 	);
 	connect(
-		v2, SIGNAL(connectorSelected(const QString &)),
-		v1, SLOT(informConnectorSelection(const QString &))
+	    v2, SIGNAL(connectorSelected(const QString &)),
+	    v1, SLOT(informConnectorSelection(const QString &))
 	);
 }
 
 void PartsEditorViewsWidget::connectToThis(PartsEditorView *v) {
 	connect(
-		v, SIGNAL(connectorSelected(const QString &)),
-		this, SLOT(informConnectorSelection(const QString &))
+	    v, SIGNAL(connectorSelected(const QString &)),
+	    this, SLOT(informConnectorSelection(const QString &))
 	);
 }
 
@@ -307,32 +301,32 @@ PartsEditorView *PartsEditorViewsWidget::pcbView() {
 
 bool PartsEditorViewsWidget::imagesLoadedInAllViews() {
 	return m_breadView->imageLoaded()
-		&& m_schemView->imageLoaded()
-		&& m_pcbView->imageLoaded();
+	       && m_schemView->imageLoaded()
+	       && m_pcbView->imageLoaded();
 }
 
 void PartsEditorViewsWidget::connectTerminalRemoval(const ConnectorsInfoWidget* connsInfo) {
 	connect(
-		m_breadView, SIGNAL(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier)),
-		connsInfo, SLOT(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier))
+	    m_breadView, SIGNAL(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier)),
+	    connsInfo, SLOT(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier))
 	);
 	connect(
-		m_schemView, SIGNAL(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier)),
-		connsInfo, SLOT(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier))
+	    m_schemView, SIGNAL(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier)),
+	    connsInfo, SLOT(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier))
 	);
 	connect(
-		m_pcbView, SIGNAL(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier)),
-		connsInfo, SLOT(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier))
+	    m_pcbView, SIGNAL(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier)),
+	    connsInfo, SLOT(removeTerminalPoint(const QString&, ViewLayer::ViewIdentifier))
 	);
 }
 
 bool PartsEditorViewsWidget::connectorsPosOrSizeChanged() {
 	return m_breadView->connsPosOrSizeChanged()
-			|| m_schemView->connsPosOrSizeChanged()
-			|| m_pcbView->connsPosOrSizeChanged();
+	       || m_schemView->connsPosOrSizeChanged()
+	       || m_pcbView->connsPosOrSizeChanged();
 }
 
-void PartsEditorViewsWidget::setViewItems(ItemBase* bbItem, ItemBase* schemItem, ItemBase* pcbItem) 
+void PartsEditorViewsWidget::setViewItems(ItemBase* bbItem, ItemBase* schemItem, ItemBase* pcbItem)
 {
 	m_breadView->setViewItem(bbItem);
 	m_schemView->setViewItem(schemItem);

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6947 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-03 06:45:22 +0200 (Mi, 03. Apr 2013) $
 
 ********************************************************************/
 
@@ -69,12 +63,12 @@ void Autorouter::updateRoutingStatus() {
 
 TraceWire * Autorouter::drawOneTrace(QPointF fromPos, QPointF toPos, double width, ViewLayer::ViewLayerPlacement viewLayerPlacement)
 {
-    //DebugDialog::debug(QString("trace %1,%2 %3,%4").arg(fromPos.x()).arg(fromPos.y()).arg(toPos.x()).arg(toPos.y()));
+	//DebugDialog::debug(QString("trace %1,%2 %3,%4").arg(fromPos.x()).arg(fromPos.y()).arg(toPos.x()).arg(toPos.y()));
 #ifndef QT_NO_DEBUG
-    if (qAbs(fromPos.x() - toPos.x()) < 0.01 && qAbs(fromPos.y() - toPos.y()) < 0.01) {
-        DebugDialog::debug("zero length trace", fromPos);
-    }
-#endif    
+	if (qAbs(fromPos.x() - toPos.x()) < 0.01 && qAbs(fromPos.y() - toPos.y()) < 0.01) {
+		DebugDialog::debug("zero length trace", fromPos);
+	}
+#endif
 
 	long newID = ItemBase::getNextID();
 	ViewGeometry viewGeometry;
@@ -84,15 +78,15 @@ TraceWire * Autorouter::drawOneTrace(QPointF fromPos, QPointF toPos, double widt
 	QLineF line(0, 0, toPos.x() - fromPos.x(), toPos.y() - fromPos.y());
 	viewGeometry.setLine(line);
 
-	ItemBase * trace = m_sketchWidget->addItem(m_sketchWidget->referenceModel()->retrieveModelPart(ModuleIDNames::WireModuleIDName), 
-		                                 viewLayerPlacement, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+	ItemBase * trace = m_sketchWidget->addItem(m_sketchWidget->referenceModel()->retrieveModelPart(ModuleIDNames::WireModuleIDName),
+	                   viewLayerPlacement, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
 	if (trace == NULL) {
 		// we're in trouble
 		DebugDialog::debug("autorouter unable to draw one trace");
 		return NULL;
 	}
 
-	// addItem calls trace->setSelected(true) so unselect it (TODO: this may no longer be necessar)
+	// addItem calls trace->setSelected(true) so unselect it (TODO: this may no longer be necessary)
 	trace->setSelected(false);
 	TraceWire * traceWire = dynamic_cast<TraceWire *>(trace);
 	if (traceWire == NULL) {
@@ -124,15 +118,15 @@ void Autorouter::useBest() {
 	m_useBest = m_stopTracing = true;
 }
 
-void Autorouter::initUndo(QUndoCommand * parentCommand) 
+void Autorouter::initUndo(QUndoCommand * parentCommand)
 {
 	// autoroutable traces, jumpers and vias are saved on the undo command and deleted
 	// non-autoroutable traces, jumpers and via are not deleted
 
 	QList<ItemBase *> toDelete;
-    QList<QGraphicsItem *> collidingItems;
+	QList<QGraphicsItem *> collidingItems;
 	if (m_pcbType) {
-        collidingItems = m_sketchWidget->scene()->collidingItems(m_board);
+		collidingItems = m_sketchWidget->scene()->collidingItems(m_board);
 		foreach (QGraphicsItem * item, collidingItems) {
 			JumperItem * jumperItem = dynamic_cast<JumperItem *>(item);
 			if (jumperItem == NULL) continue;
@@ -190,12 +184,12 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 			}
 		}
 	}
-    else {
-        collidingItems = m_sketchWidget->scene()->items();
+	else {
+		collidingItems = m_sketchWidget->scene()->items();
 		foreach (QGraphicsItem * item, collidingItems) {
 			SymbolPaletteItem * netLabel = dynamic_cast<SymbolPaletteItem *>(item);
 			if (netLabel == NULL) continue;
-            if (!netLabel->isOnlyNetLabel()) continue;
+			if (!netLabel->isOnlyNetLabel()) continue;
 
 			if (netLabel->getAutoroutable()) {
 				addUndoConnection(false, netLabel, parentCommand);
@@ -218,26 +212,26 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 				}
 			}
 		}
-    }
+	}
 
-    QList<TraceWire *> visited;
+	QList<TraceWire *> visited;
 	foreach (QGraphicsItem * item, collidingItems) {
 		TraceWire * traceWire = dynamic_cast<TraceWire *>(item);
 		if (traceWire == NULL) continue;
 		if (!traceWire->isTraceType(m_sketchWidget->getTraceFlag())) continue;
 		if (traceWire->getAutoroutable()) continue;
-        if (visited.contains(traceWire)) continue;
+		if (visited.contains(traceWire)) continue;
 
-        QList<Wire *> wires;
-        QList<ConnectorItem *> ends;
-        traceWire->collectChained(wires, ends);
-        foreach (Wire * wire, wires) {
-            visited << qobject_cast<TraceWire *>(wire);
-            if (wire->getAutoroutable()) {
-                wire->setAutoroutable(false);
-            }
-        }
-    }
+		QList<Wire *> wires;
+		QList<ConnectorItem *> ends;
+		traceWire->collectChained(wires, ends);
+		foreach (Wire * wire, wires) {
+			visited << qobject_cast<TraceWire *>(wire);
+			if (wire->getAutoroutable()) {
+				wire->setAutoroutable(false);
+			}
+		}
+	}
 
 	foreach (QGraphicsItem * item, collidingItems) {
 		TraceWire * traceWire = dynamic_cast<TraceWire *>(item);
@@ -252,7 +246,7 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 	foreach (ItemBase * itemBase, toDelete) {
 		m_sketchWidget->makeDeleteItemCommand(itemBase, BaseCommand::CrossView, parentCommand);
 	}
-	
+
 	foreach (ItemBase * itemBase, toDelete) {
 		m_sketchWidget->deleteItem(itemBase, true, true, false);
 	}
@@ -277,17 +271,17 @@ void Autorouter::addUndoConnection(bool connect, TraceWire * traceWire, QUndoCom
 	addUndoConnection(connect, traceWire->connector1(), BaseCommand::CrossView, parentCommand);
 }
 
-void Autorouter::addUndoConnection(bool connect, ConnectorItem * connectorItem, BaseCommand::CrossViewType crossView, QUndoCommand * parentCommand) 
+void Autorouter::addUndoConnection(bool connect, ConnectorItem * connectorItem, BaseCommand::CrossViewType crossView, QUndoCommand * parentCommand)
 {
 	foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 		VirtualWire * vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
 		if (vw != NULL) continue;
 
-		ChangeConnectionCommand * ccc = new ChangeConnectionCommand(m_sketchWidget, crossView, 
-												toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
-												connectorItem->attachedToID(), connectorItem->connectorSharedID(),
-												ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID()),
-												connect, parentCommand);
+		ChangeConnectionCommand * ccc = new ChangeConnectionCommand(m_sketchWidget, crossView,
+		        toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
+		        connectorItem->attachedToID(), connectorItem->connectorSharedID(),
+		        ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID()),
+		        connect, parentCommand);
 		ccc->setUpdateConnections(false);
 	}
 }
@@ -318,7 +312,7 @@ void Autorouter::clearTracesAndJumpers() {
 				continue;
 			}
 		}
-        else {
+		else {
 			SymbolPaletteItem * netLabel = dynamic_cast<SymbolPaletteItem *>(item);
 			if (netLabel != NULL && netLabel->isOnlyNetLabel()) {
 				if (netLabel->getAutoroutable()) {
@@ -326,7 +320,7 @@ void Autorouter::clearTracesAndJumpers() {
 				}
 				continue;
 			}
-        }
+		}
 
 		TraceWire * traceWire = dynamic_cast<TraceWire *>(item);
 		if (traceWire != NULL) {
@@ -343,16 +337,16 @@ void Autorouter::clearTracesAndJumpers() {
 }
 
 void Autorouter::doCancel(QUndoCommand * parentCommand) {
-    emit setProgressMessage(tr("Routing canceled! Now cleaning up..."));
+	emit setProgressMessage(tr("Routing canceled! Now cleaning up..."));
 	ProcessEventBlocker::processEvents();
 	restoreOriginalState(parentCommand);
 	cleanUpNets();
 }
 
-void Autorouter::addToUndo(QUndoCommand * parentCommand) 
+void Autorouter::addToUndo(QUndoCommand * parentCommand)
 {
 	QList<TraceWire *> wires;
-	QList<JumperItem *> jumperItems;	
+	QList<JumperItem *> jumperItems;
 	QList<Via *> vias;
 	QList<SymbolPaletteItem *> netLabels;
 	foreach (QGraphicsItem * item, (m_board  == NULL) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
@@ -368,7 +362,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 			continue;
 		}
 		if (m_pcbType) {
-			JumperItem * jumperItem = dynamic_cast<JumperItem *>(item);	
+			JumperItem * jumperItem = dynamic_cast<JumperItem *>(item);
 			if (jumperItem != NULL) {
 				jumperItems.append(jumperItem);
 				if (!jumperItem->getAutoroutable()) {
@@ -385,7 +379,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 
 				continue;
 			}
-			Via * via = dynamic_cast<Via *>(item);	
+			Via * via = dynamic_cast<Via *>(item);
 			if (via != NULL) {
 				vias.append(via);
 				if (!via->getAutoroutable()) {
@@ -399,8 +393,8 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 				continue;
 			}
 		}
-        else {
-			SymbolPaletteItem * netLabel = dynamic_cast<SymbolPaletteItem *>(item);	
+		else {
+			SymbolPaletteItem * netLabel = dynamic_cast<SymbolPaletteItem *>(item);
 			if (netLabel != NULL && netLabel->isOnlyNetLabel()) {
 				netLabels.append(netLabel);
 				if (!netLabel->getAutoroutable()) {
@@ -413,7 +407,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 				continue;
 			}
 
-        }
+		}
 	}
 
 	foreach (TraceWire * traceWire, wires) {
@@ -431,21 +425,20 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 	}
 }
 
-void Autorouter::addWireToUndo(Wire * wire, QUndoCommand * parentCommand) 
-{  
-    if (wire == NULL) return;
+void Autorouter::addWireToUndo(Wire * wire, QUndoCommand * parentCommand)
+{
+	if (wire == NULL) return;
 
 	new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, wire->viewLayerPlacement(), wire->getViewGeometry(), wire->id(), false, -1, parentCommand);
 	new CheckStickyCommand(m_sketchWidget, BaseCommand::SingleView, wire->id(), false, CheckStickyCommand::RemoveOnly, parentCommand);
-	
+
 	new WireWidthChangeCommand(m_sketchWidget, wire->id(), wire->width(), wire->width(), parentCommand);
 	new WireColorChangeCommand(m_sketchWidget, wire->id(), wire->colorString(), wire->colorString(), wire->opacity(), wire->opacity(), parentCommand);
 }
 
-void Autorouter::setMaxCycles(int maxCycles) 
+void Autorouter::setMaxCycles(int maxCycles)
 {
 	m_maxCycles = maxCycles;
 	QSettings settings;
 	settings.setValue(MaxCyclesName, maxCycles);
 }
-

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6112 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 
 ********************************************************************/
 
@@ -74,8 +68,8 @@ DebugDialog::DebugDialog(QWidget *parent)
 	m_textEdit = new QTextEdit(this);
 	m_textEdit->setGeometry(QRect(10, 10, 381, 281));
 
-    QString path = FolderUtils::getTopLevelUserDataStorePath();
-    path += "/debug.txt";
+	QString path = FolderUtils::getTopLevelUserDataStorePath();
+	path += "/debug.txt";
 
 	m_file.setFileName(path);
 	m_file.remove();
@@ -119,7 +113,7 @@ void DebugDialog::debug(QString prefix, const QPointF &point, DebugLevel debug, 
 
 void DebugDialog::debug(QString prefix, const QRectF &rect, DebugLevel debug, QObject *ancestor) {
 	QString msg = prefix+QString(" rect: x=%1 y=%2 w=%3 h=%4")
-		.arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
+	              .arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
 	DebugDialog::debug(msg,debug,ancestor);
 }
 
@@ -130,7 +124,7 @@ void DebugDialog::debug(QString prefix, const QPoint &point, DebugLevel debug, Q
 
 void DebugDialog::debug(QString prefix, const QRect &rect, DebugLevel debug, QObject *ancestor) {
 	QString msg = prefix+QString(" rect: x=%1 y=%2 w=%3 h=%4")
-		.arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
+	              .arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
 	DebugDialog::debug(msg,debug,ancestor);
 }
 
@@ -150,10 +144,10 @@ void DebugDialog::debug(QString message, DebugLevel debugLevel, QObject * ancest
 
 	qDebug() << message;
 
-   	if (m_file.open(QIODevice::Append | QIODevice::Text)) {
-   		QTextStream out(&m_file);
+	if (m_file.open(QIODevice::Append | QIODevice::Text)) {
+		QTextStream out(&m_file);
 		out.setCodec("UTF-8");
-   		out << message << "\n";
+		out << message << "\n";
 		m_file.close();
 	}
 	DebugEvent* de = new DebugEvent(message, debugLevel, ancestor);
@@ -218,4 +212,3 @@ bool DebugDialog::enabled() {
 void DebugDialog::setEnabled(bool enabled) {
 	m_enabled = enabled;
 }
-

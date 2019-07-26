@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
-
 ********************************************************************/
 
 #include "virtualwire.h"
@@ -30,7 +24,7 @@ $Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 const double VirtualWire::ShapeWidthExtra = 4;
 
-VirtualWire::VirtualWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu  ) 
+VirtualWire::VirtualWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu  )
 	: ClipableWire(modelPart, viewID,  viewGeometry,  id, itemMenu, false)
 {
 	// note: at this point in fritzing development, the VirtualWire class is only ever used for ratsnest wires
@@ -42,9 +36,9 @@ VirtualWire::VirtualWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  cons
 VirtualWire::~VirtualWire() {
 }
 
-void VirtualWire::paint (QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget ) {	
+void VirtualWire::paint (QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget ) {
 	if (m_hidden) return;
-	
+
 	m_hoverCount = m_connectorHoverCount = 0;			// kills any highlighting
 	Wire::paint(painter, option, widget);
 }
@@ -75,7 +69,7 @@ void VirtualWire::inactivateConnectors() {
 
 void VirtualWire::setInactive(bool inactivate) {
 	ItemBase::setInactive(inactivate);
-	
+
 	if (!inactivate) {
 		inactivateConnectors();
 	}
@@ -83,7 +77,7 @@ void VirtualWire::setInactive(bool inactivate) {
 
 void VirtualWire::setHidden(bool hide) {
 	ItemBase::setHidden(hide);
-	
+
 	if (!hide) {
 		hideConnectors();
 	}
@@ -100,7 +94,7 @@ void VirtualWire::tempRemoveAllConnections() {
 		connectorItem->connectedToItems()[j]->tempRemove(connectorItem, false);
 		connectorItem->tempRemove(connectorItem->connectedToItems()[j], false);
 	}
-}	
+}
 
 void VirtualWire::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {

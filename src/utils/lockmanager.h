@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6141 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-07-04 21:20:05 +0200 (Mi, 04. Jul 2012) $
 
 ********************************************************************/
 
@@ -41,7 +35,7 @@ struct LockedFile {
 };
 
 class LockManager : public QObject {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	LockManager();
@@ -51,7 +45,7 @@ public:
 	static void initLockedFiles(const QString & prefix, QString & folder, QHash<QString, LockedFile *> & lockedFiles, long touchFrequency);
 	static void releaseLockedFiles(const QString & folder, QHash<QString, LockedFile *> & lockedFiles);
 	static void checkLockedFiles(const QString & prefix, QFileInfoList & backupList, QHash<QString, LockedFile *> & lockedFiles, bool recurse, long touchFrequency);
-    static void cleanup();
+	static void cleanup();
 
 public:
 	static const QString LockedFileName;

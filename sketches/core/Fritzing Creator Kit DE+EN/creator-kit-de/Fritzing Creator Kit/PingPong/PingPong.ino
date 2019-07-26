@@ -1,7 +1,7 @@
 /*
   Ping Pong Spiel
   LED-Matrix und zwei Potis für ein Pingpong Spiel
-  
+
   Dieses Beispiel aus dem Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
@@ -18,7 +18,7 @@ int pot1Pin=18;                                        // Pin an dem das Potenti
 int pot2Pin=19;                                        // Pin an dem das Potentiometer von Spieler 2 angeschlossen ist
 
 int image[8][8]={                                      // Bild, das auf der Matrix gezeigt wird. 1 = LED an, 0 = LED aus
-{0,0,0,0,0,0,0,0},  
+{0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0},
@@ -26,21 +26,21 @@ int image[8][8]={                                      // Bild, das auf der Matr
 {0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0}
-};                                              
+};
 
 int death[8][8]={                                      // Alles an
-{1,1,1,1,1,1,1,1},  
-{1,1,1,1,1,1,1,1}, 
-{1,1,1,1,1,1,1,1}, 
-{1,1,1,1,1,1,1,1}, 
-{1,1,1,1,1,1,1,1},  
-{1,1,1,1,1,1,1,1}, 
-{1,1,1,1,1,1,1,1}, 
+{1,1,1,1,1,1,1,1},
+{1,1,1,1,1,1,1,1},
+{1,1,1,1,1,1,1,1},
+{1,1,1,1,1,1,1,1},
+{1,1,1,1,1,1,1,1},
+{1,1,1,1,1,1,1,1},
+{1,1,1,1,1,1,1,1},
 {1,1,1,1,1,1,1,1}
-};   
+};
 
 int death2[8][8]={                                      // Totenkopf
-{0,1,1,1,1,1,0,0},  
+{0,1,1,1,1,1,0,0},
 {1,1,1,1,1,1,1,0},
 {1,0,0,1,0,0,1,0},
 {1,1,1,1,1,1,1,0},
@@ -48,10 +48,10 @@ int death2[8][8]={                                      // Totenkopf
 {0,1,0,1,0,1,0,0},
 {0,1,0,1,0,1,0,0},
 {0,0,0,0,0,0,0,0}
-};   
+};
 
 int blank[8][8]={                                      // alles aus
-{0,0,0,0,0,0,0,0},  
+{0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0},
@@ -59,14 +59,14 @@ int blank[8][8]={                                      // alles aus
 {0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0}
-};    
+};
 
 long theTimer;                                           // Timervariable
 
 int gameState=0;                                         // speichert den Spielmodus
 int animations=300;                                      // speichert die Dauer der Zwischenbilder
 
-float ballXSpeed = 1;                                    // speichert die Beschleunigung in X-Richtung   
+float ballXSpeed = 1;                                    // speichert die Beschleunigung in X-Richtung
 float ballXPosition=4;                                   // speichert die Ballposition als reale Zahl
 
 float ballYSpeed = 0;                                    // speichert die Beschleunigung in Y-Richtung
@@ -81,14 +81,14 @@ int player2Position=3;                                   // speichert die Paddel
 int gameSpeed;                                           // speichert die aktuelle Spielgeschwindigkeit
 
 void setup(){
-  for (int i=0; i<8; i++){                               // Alle Pins werden als OUTPUT deklariert 
+  for (int i=0; i<8; i++){                               // Alle Pins werden als OUTPUT deklariert
     pinMode(reihenPins[i],OUTPUT);
     pinMode(spaltenPins[i],OUTPUT);
   }
 }
 
 void draw(){
-  for (int y=0; y<8; y++){                               // zeilenweise werden 
+  for (int y=0; y<8; y++){                               // zeilenweise werden
     for (int x=0; x<8; x++){                             // von links nach rechts alle Einträge des Arrays geprüft
       if (image[x][y]==1){                               // ist der Eintrag = 1
         digitalWrite(spaltenPins[x],HIGH);               // wird der Spaltenpin eingeschalten
@@ -114,8 +114,8 @@ void update(){
       ballXSpeed=1;
     } else {
       ballXSpeed=-1;
-    }     
-    theTimer=millis(); 
+    }
+    theTimer=millis();
     gameState=1;
     break;
   case 1:                                                // Spiel aktiv
@@ -126,27 +126,27 @@ void update(){
 
     player1Position=map(analogRead(pot1Pin),0,1023,0,6); // liest die Position von Spieler 1 aus
     player2Position=map(analogRead(pot2Pin),0,1023,0,6); // liest die Position von Spieler 2 aus
-    
-    image[player1Position][0]=1;                         // Paddel Player 1 darstellen              
-    image[player1Position+1][0]=1;                       // Paddel Player 1 darstellen    
-    image[player2Position][7]=1;                         // Paddel Player 2 darstellen              
-    image[player2Position+1][7]=1;                       // Paddel Player 2 darstellen        
-  
+
+    image[player1Position][0]=1;                         // Paddel Player 1 darstellen
+    image[player1Position+1][0]=1;                       // Paddel Player 1 darstellen
+    image[player2Position][7]=1;                         // Paddel Player 2 darstellen
+    image[player2Position+1][7]=1;                       // Paddel Player 2 darstellen
+
     if (millis()>theTimer+gameSpeed){                    // timer für Spielgeschwindigkeit
-      if (gameSpeed>50) gameSpeed-=3;                    // spiel wird beschleunigt    
+      if (gameSpeed>50) gameSpeed-=3;                    // spiel wird beschleunigt
       theTimer=millis();                                 // neuer Timer wird gesetzt
-      image[imageYPosition][imageXPosition]=0;           // alte Position wird überschrieben    
+      image[imageYPosition][imageXPosition]=0;           // alte Position wird überschrieben
       ballXPosition+=ballXSpeed;                         // Update der Position
-      ballYPosition+=ballYSpeed;                         // Update der Position      
-      
+      ballYPosition+=ballYSpeed;                         // Update der Position
+
       if (ballYPosition>=7) ballYSpeed*=-1;              // Koolision unterer Rand
       if (ballYPosition<=0) ballYSpeed*=-1;              // Koolision oberer Rand
 
       ballYPosition=constrain(ballYPosition,0,7);        // verhindert, dass Werte kleiner 0 oder größer 7 erreicht werden
-      ballXPosition=constrain(ballXPosition,0,7);        // verhindert, dass Werte kleiner 0 oder größer 7 erreicht werden      
+      ballXPosition=constrain(ballXPosition,0,7);        // verhindert, dass Werte kleiner 0 oder größer 7 erreicht werden
       imageYPosition=round(ballYPosition);
-      imageXPosition=round(ballXPosition);      
-      
+      imageXPosition=round(ballXPosition);
+
       if ((ballXPosition>=6)&&(image[imageYPosition][7]==1)) {  // wenn der Ball den Rand erreicht und das Paddel trifft
         ballXSpeed*=-1;                                    // Ball wird reflektiert
         ballYSpeed=random(-2,3);                           // Abprallwinkel bekommt Zufallskomponente
@@ -161,12 +161,12 @@ void update(){
       }
 
       if (ballXPosition<=0){                               // Ball im Aus
-        gameState=2;                                       // Spiel verloren Modus wird aktiviert      
+        gameState=2;                                       // Spiel verloren Modus wird aktiviert
         theTimer=millis();                                 // neuer Timer wird gesetzt
       }
 
       image[imageYPosition][imageXPosition]=1;             // neue Position wird eingeschalten
-      
+
     }
     break;
   case 2:                                                  // Spiel verloren, kurze Nachleuchtzeit

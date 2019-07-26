@@ -11,14 +11,8 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
-# ********************************************************************
-# $Revision: 2740 $:
-# $Author: cohen@irascible.com $:
-# $Date: 2009-03-28 07:54:52 +0100 (Sat, 28 Mar 2009) $
 # ********************************************************************/
 
-HEADERS += src/infoview/htmlinfoview.h 
+HEADERS += src/infoview/htmlinfoview.h
 
-SOURCES += src/infoview/htmlinfoview.cpp 
-
-
+SOURCES += src/infoview/htmlinfoview.cpp

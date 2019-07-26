@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public Licensetriple
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6947 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-03 06:45:22 +0200 (Mi, 03. Apr 2013) $
 
 ********************************************************************/
 
@@ -47,8 +41,8 @@ public:
 	static const QString GroundModuleIDName;
 	static const QString PowerModuleIDName;
 	static const QString TwoPowerModuleIDName;
-	static const QString NetLabelModuleIDName;	
-    static const QString PowerLabelModuleIDName;
+	static const QString NetLabelModuleIDName;
+	static const QString PowerLabelModuleIDName;
 	static const QString LeftNetLabelModuleIDName;
 	static const QString JustPowerModuleIDName;
 	static const QString ResistorModuleIDName;
@@ -83,9 +77,9 @@ public:
 	static const QString Stripboard2ModuleIDName;
 	static const QString SpacerModuleIDName;
 	static const QString SchematicFrameModuleIDName;
-    static const QString CopperBlockerModuleIDName;
-    static const QString Copper1BlockerModuleIDName;
-    static const QString Copper0BlockerModuleIDName;
+	static const QString CopperBlockerModuleIDName;
+	static const QString Copper1BlockerModuleIDName;
+	static const QString Copper0BlockerModuleIDName;
 };
 
 #endif

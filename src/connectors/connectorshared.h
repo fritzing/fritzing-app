@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6955 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-06 23:14:37 +0200 (Sa, 06. Apr 2013) $
 
 ********************************************************************/
 
@@ -37,7 +31,7 @@ $Date: 2013-04-06 23:14:37 +0200 (Sa, 06. Apr 2013) $
 
 class ConnectorShared : public QObject
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	ConnectorShared();
@@ -60,7 +54,7 @@ public:
 	const QString & legID(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID);
 	const QMultiHash<ViewLayer::ViewID,SvgIdLayer *> &pins();
 	SvgIdLayer * fullPinInfo(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID);
-    const QList<SvgIdLayer *> svgIdLayers() const;
+	const QList<SvgIdLayer *> svgIdLayers() const;
 	void addPin(ViewLayer::ViewID, const QString & svgId, ViewLayer::ViewLayerID, const QString & terminalId, const QString & legId, bool hybrid);
 	void insertPin(ViewLayer::ViewID layer, SvgIdLayer * svgIdLayer);
 	void removePins(ViewLayer::ViewID layer);
@@ -79,7 +73,7 @@ protected:
 	QString m_id;
 	QString m_name;
 	QString m_typeString;
-    QString m_replacedby;
+	QString m_replacedby;
 	Connector::ConnectorType m_type;
 	QString m_ercType;
 	class ErcData * m_ercData;

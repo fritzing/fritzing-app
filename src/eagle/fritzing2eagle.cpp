@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6469 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-09-23 00:54:30 +0200 (So, 23. Sep 2012) $
 
 ********************************************************************/
 
@@ -46,20 +40,18 @@ Fritzing2Eagle* Fritzing2Eagle::singleton = NULL;
 Fritzing2Eagle::Fritzing2Eagle(PCBSketchWidget *m_pcbGraphicsView)
 {
 	QList <ItemBase*> partList;
-	
+
 	m_pcbGraphicsView->collectParts(partList);
-	
+
 	singleton = this;
 }
 
 /*
-void Fritzing2Eagle::showOutputInfo(PCBSketchWidget m_pcbGraphicsView) 
+void Fritzing2Eagle::showOutputInfo(PCBSketchWidget m_pcbGraphicsView)
 {
 	if (singleton == NULL) {
 		new Fritzing2Eagle();
 	}
-	
+
 }
 */
-
-

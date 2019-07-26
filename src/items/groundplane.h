@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6980 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
-
 ********************************************************************/
 
 #ifndef GROUNDPLANE_H
@@ -33,9 +27,9 @@ class GroundPlane : public PaletteItem
 {
 
 public:
-	GroundPlane( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool doLabel); 
+	GroundPlane( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool doLabel);
 
- 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	void saveParams();
 	void getParams();
 	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
@@ -59,19 +53,19 @@ public:
 public:
 	static QString fillTypeIndividual;
 	static QString fillTypeGround;
-	static QString fillTypePlain;	
+	static QString fillTypePlain;
 	static QString fillTypeNone;
 
 protected:
 	void setSvg(const QString &);
 	void setSvgAux(const QString &);
 	QString generateSvg();
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 protected:
 	ConnectorItem * m_connector0;
 	QPointF m_dropOffset;
-    QPainterPath m_shape;
+	QPainterPath m_shape;
 };
 
 #endif

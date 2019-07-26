@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6145 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-07-05 19:17:11 +0200 (Do, 05. Jul 2012) $
 
 ********************************************************************/
 
@@ -48,10 +42,10 @@ class GraphUtils
 public:
 	static bool chooseRatsnestGraph(const QList<ConnectorItem *> * equipotentials, ViewGeometry::WireFlags, ConnectorPairHash & result);
 	static bool scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGeometry::WireFlags, RoutingStatus & routingStatus);
-	static void minCut(QList<ConnectorItem *> & connectorItems, QList<class SketchWidget *> & foreighSketchWidgets, ConnectorItem * source, ConnectorItem * sink, QList<ConnectorEdge *> & cutSet); 
+	static void minCut(QList<ConnectorItem *> & connectorItems, QList<class SketchWidget *> & foreighSketchWidgets, ConnectorItem * source, ConnectorItem * sink, QList<ConnectorEdge *> & cutSet);
 
 protected:
-    static void collectBreadboard(ConnectorItem * connectorItem, QList<ConnectorItem *> & partConnectorItems, QList<ConnectorItem *> & ends);
+	static void collectBreadboard(ConnectorItem * connectorItem, QList<ConnectorItem *> & partConnectorItems, QList<ConnectorItem *> & ends);
 
 };
 

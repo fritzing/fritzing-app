@@ -11,10 +11,6 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
-# ********************************************************************
-# $Revision: 6409 $:
-# $Author: cohen@irascible.com $:
-# $Date: 2012-09-13 05:05:28 +0200 (Do, 13. Sep 2012) $
 # ********************************************************************/
 HEADERS += \
     src/commands.h \
@@ -30,8 +26,8 @@ HEADERS += \
     src/sketchtoolbutton.h \
     src/viewgeometry.h \
     src/viewlayer.h \
-    src/waitpushundostack.h 
-    
+    src/waitpushundostack.h
+
 SOURCES += \
     src/commands.cpp \
     src/debugdialog.cpp \
@@ -45,6 +41,4 @@ SOURCES += \
     src/sketchtoolbutton.cpp \
     src/viewgeometry.cpp \
     src/viewlayer.cpp \
-    src/waitpushundostack.cpp 
-    
-
+    src/waitpushundostack.cpp

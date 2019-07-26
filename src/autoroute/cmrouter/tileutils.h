@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 2979 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 #ifndef TILEUTILS
@@ -32,14 +26,14 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 static const int TILEFACTOR = 1000;
 
 inline int fasterRealToTile(double x) {
-        return qRound(x * TILEFACTOR);
+	return qRound(x * TILEFACTOR);
 }
 
 inline void realsToTile(TileRect & tileRect, double l, double t, double r, double b) {
-        tileRect.xmini = fasterRealToTile(l);
-        tileRect.ymini = fasterRealToTile(t);
-        tileRect.xmaxi = fasterRealToTile(r);
-        tileRect.ymaxi = fasterRealToTile(b);
+	tileRect.xmini = fasterRealToTile(l);
+	tileRect.ymini = fasterRealToTile(t);
+	tileRect.xmaxi = fasterRealToTile(r);
+	tileRect.ymaxi = fasterRealToTile(b);
 }
 
 inline void qrectToTile(QRectF & rect, TileRect & tileRect) {

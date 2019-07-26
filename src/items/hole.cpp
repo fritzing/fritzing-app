@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6984 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -86,7 +80,7 @@ void Hole::setHoleSize(QString newSize, bool force) {
 		setBoth(m_holeSettings.holeDiameter, m_holeSettings.ringThickness);
 		modelPart()->setLocalProp("hole size", newSize);
 
-		if (m_partLabel) m_partLabel->displayTextsIf();	
+		if (m_partLabel) m_partLabel->displayTextsIf();
 	}
 	//DebugDialog::debug(QString("new holesize %1 ").arg(viewID()) + holeSize(), sceneBoundingRect());
 	//foreach (QGraphicsItem * childItem, childItems()) {
@@ -124,7 +118,7 @@ void Hole::setBoth(const QString & holeDiameter, const QString & ringThickness) 
 	}
 }
 
-ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringThickness) 
+ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringThickness)
 {
 	QString svg = makeSvg(holeDiameter, ringThickness, m_viewLayerID, true);
 	resetRenderer(svg);
@@ -150,7 +144,7 @@ ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringTh
 	}
 
 	//DebugDialog::debug("other");
-	
+
 	return otherLayer;
 }
 
@@ -167,7 +161,7 @@ void Hole::setBothNonConnectors(ItemBase * itemBase, SvgIdLayer * svgIdLayer) {
 }
 
 
-QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThickness, ViewLayer::ViewLayerID viewLayerID, bool includeHole) 
+QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThickness, ViewLayer::ViewLayerID viewLayerID, bool includeHole)
 {
 	double offsetDPI = OffsetPixels / GraphicsUtils::SVGDPI;
 	double hd = TextUtils::convertToInches(holeDiameter);
@@ -189,31 +183,31 @@ QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThicknes
 	}
 
 	svg += QString("<g id='%1'>").arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID));
-	
+
 	QString id = makeID();
 	if (hd == 0) {
 		svg += QString("<circle cx='%1' cy='%1' r='%2' fill='%3' id='%4' />")
-					.arg(rt + offsetDPI)
-					.arg(rt)
-					.arg(setColor)
-					.arg(id);
+		       .arg(rt + offsetDPI)
+		       .arg(rt)
+		       .arg(setColor)
+		       .arg(id);
 	}
 	else {
 		svg += QString("<circle fill='%6' cx='%1' cy='%1' r='%2' stroke-width='%3' stroke='%4' id='%5' />")
-			.arg((hd / 2) + rt + offsetDPI)
-			.arg((hd / 2) + (rt / 2))
-			.arg(rt)
-			.arg(setColor)
-			.arg(id)
-            .arg(rt == 0 ? "black" : "none")
-            ;
-        if (includeHole) {
-		    svg += QString("<circle drill='0' fill='black' cx='%1' cy='%1' r='%2' stroke-width='0'  />")   // set the drill attribute to 0 for gerber translation
-			    .arg((hd / 2) + rt + offsetDPI)
-			    .arg(hd / 2);
-        }
+		       .arg((hd / 2) + rt + offsetDPI)
+		       .arg((hd / 2) + (rt / 2))
+		       .arg(rt)
+		       .arg(setColor)
+		       .arg(id)
+		       .arg(rt == 0 ? "black" : "none")
+		       ;
+		if (includeHole) {
+			svg += QString("<circle drill='0' fill='black' cx='%1' cy='%1' r='%2' stroke-width='0'  />")   // set the drill attribute to 0 for gerber translation
+			       .arg((hd / 2) + rt + offsetDPI)
+			       .arg(hd / 2);
+		}
 	}
-  		
+
 	svg += "</g></svg>";
 	//DebugDialog::debug("hole svg " + svg);
 	return svg;
@@ -237,15 +231,15 @@ void Hole::addedToScene(bool temporary)
 		setHoleSize(m_holeSettings.holeSize(), true);
 	}
 
-    return PaletteItem::addedToScene(temporary);
+	return PaletteItem::addedToScene(temporary);
 }
 
 bool Hole::hasCustomSVG() {
 	switch (m_viewID) {
-		case ViewLayer::PCBView:
-			return true;
-		default:
-			return ItemBase::hasCustomSVG();
+	case ViewLayer::PCBView:
+		return true;
+	default:
+		return ItemBase::hasCustomSVG();
 	}
 }
 
@@ -253,10 +247,10 @@ ItemBase::PluralType Hole::isPlural() {
 	return Plural;
 }
 
-QString Hole::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString Hole::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
-	if (m_viewID != ViewLayer::PCBView || 
-		(viewLayerID != ViewLayer::Copper0 && viewLayerID != ViewLayer::Copper1)) 
+	if (m_viewID != ViewLayer::PCBView ||
+	        (viewLayerID != ViewLayer::Copper0 && viewLayerID != ViewLayer::Copper1))
 	{
 		return PaletteItemBase::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 	}
@@ -265,17 +259,17 @@ QString Hole::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 	if (holeSize.length() == 2) {
 		QString svg = makeSvg(holeSize.at(0), holeSize.at(1), viewLayerID, false);
 		if (!svg.isEmpty()) {
-            return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
+			return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
 		}
 	}
 
 	return PaletteItemBase::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 }
 
-bool Hole::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
+bool Hole::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (prop.compare("hole size", Qt::CaseInsensitive) == 0) {
-        return collectHoleSizeInfo(TheHoleThing.holeSizeValue, parent, swappingEnabled, returnProp, returnValue, returnWidget);
+		return collectHoleSizeInfo(TheHoleThing.holeSizeValue, parent, swappingEnabled, returnProp, returnValue, returnWidget);
 	}
 
 	return PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
@@ -284,9 +278,9 @@ bool Hole::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 void Hole::changeHoleSize(const QString & newSize) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
-        QRectF holeRect = getRect(holeSize());
-        QRectF newHoleRect = getRect(newSize);
-        infoGraphicsView->setHoleSize(this, "hole size", tr("hole size"), holeSize(), newSize, holeRect, newHoleRect, true);
+		QRectF holeRect = getRect(holeSize());
+		QRectF newHoleRect = getRect(newSize);
+		infoGraphicsView->setHoleSize(this, "hole size", tr("hole size"), holeSize(), newSize, holeRect, newHoleRect, true);
 	}
 }
 
@@ -311,24 +305,22 @@ bool Hole::canFindConnectorsUnder() {
 	return false;
 }
 
-ViewLayer::ViewID Hole::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID Hole::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
-    if (vid == ViewLayer::PCBView) {
-        return ViewLayer::IconView;
-    }
+	if (vid == ViewLayer::PCBView) {
+		return ViewLayer::IconView;
+	}
 
-    return ViewLayer::UnknownView;
+	return ViewLayer::UnknownView;
 }
 
-void Hole::changeUnits(bool) 
+void Hole::changeUnits(bool)
 {
 	QString newVal = PaletteItem::changeUnits(m_holeSettings);
 	modelPart()->setLocalProp("hole size", newVal);
 }
 
 QRectF Hole::trueSceneBoundingRect() {
-    QRectF r = sceneBoundingRect();
-    return r.adjusted(OffsetPixels, OffsetPixels, -OffsetPixels, -OffsetPixels);
+	QRectF r = sceneBoundingRect();
+	return r.adjusted(OffsetPixels, OffsetPixels, -OffsetPixels, -OffsetPixels);
 }
-
-

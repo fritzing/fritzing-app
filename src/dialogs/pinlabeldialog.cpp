@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6112 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 
 ********************************************************************/
 
@@ -43,7 +37,7 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 //			undo would require a lot of work to implement and would require saving the old dom document
 //			every instance of the part in all open documents would have to be updated
 
-PinLabelUndoCommand::PinLabelUndoCommand(PinLabelDialog * pinLabelDialog, int index, QLineEdit * lineEdit, const QString & previous, const QString & next) : QUndoCommand() 
+PinLabelUndoCommand::PinLabelUndoCommand(PinLabelDialog * pinLabelDialog, int index, QLineEdit * lineEdit, const QString & previous, const QString & next) : QUndoCommand()
 {
 	m_pinLabelDialog = pinLabelDialog;
 	m_previous = previous;
@@ -84,10 +78,10 @@ PinLabelDialog::PinLabelDialog(const QStringList & labels, bool singleRow, const
 	QVBoxLayout * textLayout = new QVBoxLayout(frame);
 
 	QLabel * label = new QLabel("<html><body>" +
-								tr("<p><h2>Pin Label Editor</h2></p>") +
-								tr("<p>Click on a label next to a pin number to rename that pin.") + " " +
-								tr("You can use the tab key to move through the labels in order.</p>") +
-								"</body></html>");
+	                            tr("<p><h2>Pin Label Editor</h2></p>") +
+	                            tr("<p>Click on a label next to a pin number to rename that pin.") + " " +
+	                            tr("You can use the tab key to move through the labels in order.</p>") +
+	                            "</body></html>");
 	label->setMaximumWidth(150);
 	label->setWordWrap(true);
 
@@ -100,14 +94,14 @@ PinLabelDialog::PinLabelDialog(const QStringList & labels, bool singleRow, const
 	hLayout->addWidget(textFrame);
 	frame->setLayout(hLayout);
 
-	scrollArea->setWidget(frame);	
+	scrollArea->setWidget(frame);
 
 	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Save | QDialogButtonBox::Cancel);
-	
+
 	QPushButton * cancelButton = buttonBox->button(QDialogButtonBox::Cancel);
 	cancelButton->setText(tr("Cancel"));
 	cancelButton->setDefault(false);
-	
+
 	m_saveAsButton = buttonBox->button(QDialogButtonBox::Save);
 	m_saveAsButton->setText(tr("Save"));
 	m_saveAsButton->setEnabled(false);
@@ -121,11 +115,11 @@ PinLabelDialog::PinLabelDialog(const QStringList & labels, bool singleRow, const
 	m_redoButton->setEnabled(false);
 	m_redoButton->setDefault(false);
 
-    buttonBox->addButton(m_undoButton, QDialogButtonBox::ResetRole);
-    buttonBox->addButton(m_redoButton, QDialogButtonBox::ResetRole);
+	buttonBox->addButton(m_undoButton, QDialogButtonBox::ResetRole);
+	buttonBox->addButton(m_redoButton, QDialogButtonBox::ResetRole);
 
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	vLayout->addWidget(scrollArea);
 	vLayout->addWidget(buttonBox);
@@ -198,7 +192,7 @@ QFrame * PinLabelDialog::initLabels(const QStringList & labels, bool singleRow, 
 	return frame;
 }
 
-void PinLabelDialog::makeOnePinEntry(int index, const QString & text, Qt::Alignment alignment, int row, QGridLayout * gridLayout) 
+void PinLabelDialog::makeOnePinEntry(int index, const QString & text, Qt::Alignment alignment, int row, QGridLayout * gridLayout)
 {
 	QLineEdit * label = new QLineEdit();
 	label->setText(QString::number(index + 1));
@@ -245,7 +239,7 @@ void PinLabelDialog::labelChanged() {
 	m_undoStack.push(pluc);
 }
 
-void PinLabelDialog::labelEdited(const QString &) 
+void PinLabelDialog::labelEdited(const QString &)
 {
 	m_saveAsButton->setEnabled(true);
 }
@@ -254,7 +248,7 @@ const QStringList & PinLabelDialog::labels() {
 	return m_labels;
 }
 
-void PinLabelDialog::setLabelText(int index, QLineEdit * lineEdit, const QString & text) 
+void PinLabelDialog::setLabelText(int index, QLineEdit * lineEdit, const QString & text)
 {
 	m_labels.replace(index, text);
 	lineEdit->setText(text);
@@ -275,7 +269,7 @@ bool PinLabelDialog::doSaveAs() {
 	return m_doSaveAs;
 }
 
-void PinLabelDialog::undoChanged(bool) 
+void PinLabelDialog::undoChanged(bool)
 {
 	bool redo = false;
 	bool undo = false;
@@ -296,11 +290,11 @@ void PinLabelDialog::undoChanged(bool)
 void PinLabelDialog::keyPressEvent(QKeyEvent *e)
 {
 	switch (e->key()) {
-		case Qt::Key_Escape:
-		case Qt::Key_Enter:
-		case Qt::Key_Return:
-			return;
-		default:
-			QDialog::keyPressEvent(e);
+	case Qt::Key_Escape:
+	case Qt::Key_Enter:
+	case Qt::Key_Return:
+		return;
+	default:
+		QDialog::keyPressEvent(e);
 	}
 }

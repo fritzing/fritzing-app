@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 #ifndef ABSTRACTIMAGEBUTTON_H_
@@ -33,35 +27,35 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 class AbstractImageButton : public QLabel, public AbstractStatesButton {
 	Q_OBJECT
-	public:
-		AbstractImageButton(QWidget *parent=0)
-			: QLabel(parent)
-		{
-		};
-		virtual ~AbstractImageButton() {}
+public:
+	AbstractImageButton(QWidget *parent=0)
+		: QLabel(parent)
+	{
+	};
+	virtual ~AbstractImageButton() {}
 
-	signals:
-		void clicked();
+signals:
+	void clicked();
 
-	protected:
-		virtual QString imagePrefix() = 0;
+protected:
+	virtual QString imagePrefix() = 0;
 
-		void setImage(const QPixmap & pixmap) {
-			setPixmap(pixmap);
+	void setImage(const QPixmap & pixmap) {
+		setPixmap(pixmap);
+	}
+
+	void mousePressEvent(QMouseEvent * event) {
+		setPressedIcon();
+		QLabel::mousePressEvent(event);
+	}
+
+	void mouseReleaseEvent(QMouseEvent * event) {
+		if(isEnabled()) {
+			emit clicked();
+			setEnabledIcon();
 		}
-
-		void mousePressEvent(QMouseEvent * event) {
-			setPressedIcon();
-			QLabel::mousePressEvent(event);
-		}
-
-		void mouseReleaseEvent(QMouseEvent * event) {
-			if(isEnabled()) {
-				emit clicked();
-				setEnabledIcon();
-			}
-			QLabel::mouseReleaseEvent(event);
-		}
+		QLabel::mouseReleaseEvent(event);
+	}
 };
 
 #endif /* ABSTRACTIMAGEBUTTON_H_ */

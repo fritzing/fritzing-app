@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 ********************************************************************/
 
@@ -40,7 +34,7 @@ class RatsnestColor {
 	RatsnestColor(const QDomElement &);
 	~RatsnestColor();
 
-    bool matchColor(const QString &);
+	bool matchColor(const QString &);
 
 	friend class RatsnestColors;
 
@@ -51,7 +45,7 @@ protected:
 	QColor m_ratsnest;
 	QString m_shadow;
 	QStringList m_connectorNames;
-    QList<RatsnestColor *> m_obsoleteList;
+	QList<RatsnestColor *> m_obsoleteList;
 };
 
 //////////////////////////////////////////////////////
@@ -67,33 +61,33 @@ RatsnestColor::RatsnestColor(const QDomElement & color) {
 		m_connectorNames.append(connector.attribute("name"));
 		connector = connector.nextSiblingElement("connector");
 	}
-    QDomElement obsolete = color.firstChildElement("obsolete");
-    while (!obsolete.isNull()) {
-        m_obsoleteList << new RatsnestColor(obsolete);
-        obsolete = obsolete.nextSiblingElement("obsolete");
-    }
+	QDomElement obsolete = color.firstChildElement("obsolete");
+	while (!obsolete.isNull()) {
+		m_obsoleteList << new RatsnestColor(obsolete);
+		obsolete = obsolete.nextSiblingElement("obsolete");
+	}
 }
 
 RatsnestColor::~RatsnestColor() {
-    foreach (RatsnestColor * ratsnestColor, m_obsoleteList) {
-        delete ratsnestColor;
-    }
-    m_obsoleteList.clear();
+	foreach (RatsnestColor * ratsnestColor, m_obsoleteList) {
+		delete ratsnestColor;
+	}
+	m_obsoleteList.clear();
 }
 
 bool RatsnestColor::matchColor(const QString & string) {
-    if (m_wire.compare(string, Qt::CaseInsensitive) == 0) return true;
+	if (m_wire.compare(string, Qt::CaseInsensitive) == 0) return true;
 
-    foreach (RatsnestColor * obsolete, m_obsoleteList) {
-        if (obsolete->m_wire.compare(string, Qt::CaseInsensitive) == 0) return true;
-    }
+	foreach (RatsnestColor * obsolete, m_obsoleteList) {
+		if (obsolete->m_wire.compare(string, Qt::CaseInsensitive) == 0) return true;
+	}
 
-    return false;
+	return false;
 }
 
 //////////////////////////////////////////////////////
 
-RatsnestColors::RatsnestColors(const QDomElement & view) 
+RatsnestColors::RatsnestColors(const QDomElement & view)
 {
 	m_viewID = ViewLayer::idFromXmlName(view.attribute("name"));
 	m_backgroundColor.setNamedColor(view.attribute("background"));
@@ -181,7 +175,7 @@ const QColor & RatsnestColors::getNextColor() {
 			continue;
 		}
 
-		if (!ratsnestColor->m_ratsnest.isValid()){
+		if (!ratsnestColor->m_ratsnest.isValid()) {
 			m_index++;
 			continue;
 		}
@@ -190,7 +184,7 @@ const QColor & RatsnestColors::getNextColor() {
 	}
 }
 
-	
+
 bool RatsnestColors::findConnectorColor(const QStringList & names, QColor & color) {
 	foreach (QString name, names) {
 		RatsnestColor * ratsnestColor = m_allNames.value(name.toLower(), NULL);
@@ -223,7 +217,7 @@ void RatsnestColors::reset(ViewLayer::ViewID m_viewID) {
 	ratsnestColors->m_index = 0;
 }
 
-QColor RatsnestColors::backgroundColor(ViewLayer::ViewID viewID) 
+QColor RatsnestColors::backgroundColor(ViewLayer::ViewID viewID)
 {
 	RatsnestColors * ratsnestColors = m_viewList.value(viewID, NULL);
 	if (ratsnestColors == NULL) return QColor();
@@ -255,13 +249,12 @@ QString RatsnestColors::wireColor(ViewLayer::ViewID viewID, QString & string)
 
 	// reverse lookup
 	foreach (QString cname, ratsnestColors->m_ratsnestColorHash.keys()) {
-        RatsnestColor * candidate = ratsnestColors->m_ratsnestColorHash.value(cname);
-        if (candidate->matchColor(string)) {
-	        string = cname;
+		RatsnestColor * candidate = ratsnestColors->m_ratsnestColorHash.value(cname);
+		if (candidate->matchColor(string)) {
+			string = cname;
 			return candidate->m_wire;
-        }
+		}
 	}
 
 	return ___emptyString___;
 }
-

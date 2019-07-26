@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6955 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-06 23:14:37 +0200 (Sa, 06. Apr 2013) $
 
 ********************************************************************/
 
@@ -39,8 +33,8 @@ public:
 	static void exportToGerber(const QString & prefix, const QString & exportDir, class ItemBase * board, class PCBSketchWidget *, bool displayMessageBoxes);
 	static QString clipToBoard(QString svgString, QRectF & boardRect, const QString & layerName, SVG2gerber::ForWhy, const QString & clipString, bool displayMessageBoxes, QMultiHash<long, class ConnectorItem *> & treatAsCircle);
 	static QString clipToBoard(QString svgString, ItemBase * board, const QString & layerName, SVG2gerber::ForWhy, const QString & clipString, bool displayMessageBoxes, QMultiHash<long, class ConnectorItem *> & treatAsCircle);
-	static int doEnd(const QString & svg, int boardLayers, const QString & layerName, SVG2gerber::ForWhy forWhy, QSizeF svgSize, 
-						const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes);
+	static int doEnd(const QString & svg, int boardLayers, const QString & layerName, SVG2gerber::ForWhy forWhy, QSizeF svgSize,
+	                 const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes);
 	static QString cleanOutline(const QString & svgOutline);
 
 public:
@@ -56,8 +50,8 @@ public:
 	static const QString OutlineSuffix;
 	static const QString MagicBoardOutlineID;
 
-	static const double MaskClearanceMils;	
-    static const QRegExp MultipleZs;
+	static const double MaskClearanceMils;
+	static const QRegExp MultipleZs;
 
 
 protected:
@@ -68,12 +62,12 @@ protected:
 	static int doDrill(ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes);
 	static void displayMessage(const QString & message, bool displayMessageBoxes);
 	static bool saveEnd(const QString & layerName, const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes, SVG2gerber & gerber);
-    static void mergeOutlineElement(QImage & image, QRectF & target, double res, QDomDocument & document, QString & svgString, int ix, const QString & layerName);
-    static QString makePath(QImage & image, double unit, const QString & colorString);
-    static bool dealWithMultipleContours(QDomElement & root, bool displayMessageBoxes);
-    static void exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes);
-    static void handleDonuts(QDomElement & root1, QMultiHash<long, ConnectorItem *> & treatAsCircle);
-    static QString renderTo(const LayerList &, ItemBase * board, PCBSketchWidget * sketchWidget, bool & empty);
+	static void mergeOutlineElement(QImage & image, QRectF & target, double res, QDomDocument & document, QString & svgString, int ix, const QString & layerName);
+	static QString makePath(QImage & image, double unit, const QString & colorString);
+	static bool dealWithMultipleContours(QDomElement & root, bool displayMessageBoxes);
+	static void exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes);
+	static void handleDonuts(QDomElement & root1, QMultiHash<long, ConnectorItem *> & treatAsCircle);
+	static QString renderTo(const LayerList &, ItemBase * board, PCBSketchWidget * sketchWidget, bool & empty);
 
 };
 

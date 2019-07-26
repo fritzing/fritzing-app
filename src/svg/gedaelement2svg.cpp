@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -47,7 +41,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 GedaElement2Svg::GedaElement2Svg() : X2Svg() {
 }
 
-QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins) 
+QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins)
 {
 	m_nonConnectorNumber = 0;
 	initLimits();
@@ -76,7 +70,7 @@ QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins
 
 	QString title = QString("<title>%1</title>").arg(fileInfo.fileName());
 	QString description = QString("<desc>Geda footprint file '%1' converted by Fritzing</desc>")
-			.arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(fileInfo.fileName())));
+	                      .arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(fileInfo.fileName())));
 
 
 	QString metadata("<metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>");
@@ -97,7 +91,7 @@ QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins
 	QStringList pinIDs;
 	QStringList padIDs;
 
-	for (int ix = 0; ix < stack.size(); ) { 
+	for (int ix = 0; ix < stack.size(); ) {
 		QVariant var = stack[ix];
 		if (var.type() == QVariant::String) {
 			QString thing = var.toString();
@@ -181,8 +175,8 @@ QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins
 		silkscreen = offsetMin("\n<g id='silkscreen'>" + silkscreen + "</g>\n");
 	}
 
-	QString svg = TextUtils::makeSVGHeader(100000, 100000, m_maxX - m_minX, m_maxY - m_minY) 
-					+ title + description + metadata + copper0 + copper1 + silkscreen + "</svg>";
+	QString svg = TextUtils::makeSVGHeader(100000, 100000, m_maxX - m_minX, m_maxY - m_minY)
+	              + title + description + metadata + copper0 + copper1 + silkscreen + "</svg>";
 
 	return svg;
 }
@@ -262,19 +256,19 @@ QString GedaElement2Svg::convertPin(QVector<QVariant> & stack, int ix, int argCo
 
 
 	QString circle = QString("<circle fill='none' cx='%1' cy='%2' r='%3' id='%4' connectorname='%5' stroke-width='%6' stroke='%7' />")
-					.arg(cx)
-					.arg(cy)
-					.arg(r - (w / 2))
-					.arg(pinID)
-					.arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(name)))
-					.arg(w)
-					.arg(ViewLayer::Copper0Color);
+	                 .arg(cx)
+	                 .arg(cy)
+	                 .arg(r - (w / 2))
+	                 .arg(pinID)
+	                 .arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(name)))
+	                 .arg(w)
+	                 .arg(ViewLayer::Copper0Color);
 	return circle;
 }
 
 QString GedaElement2Svg::convertPad(QVector<QVariant> & stack, int ix, int argCount, bool mils, QString & pinID)
 {
-	QString name; 
+	QString name;
 	QString number;
 
 	int flags = (argCount > 5) ? stack[ix + argCount].toInt() : 0;
@@ -333,24 +327,24 @@ QString GedaElement2Svg::convertPad(QVector<QVariant> & stack, int ix, int argCo
 	checkYLimit(y2 - halft);
 	checkYLimit(y1 + halft);
 	checkYLimit(y2 + halft);
-	  
+
 	QString line = QString("<line fill='none' x1='%1' y1='%2' x2='%3' y2='%4' stroke-width='%5' ")
-					.arg(x1)
-					.arg(y1)
-					.arg(x2)
-					.arg(y2)
-					.arg(thickness);
+	               .arg(x1)
+	               .arg(y1)
+	               .arg(x2)
+	               .arg(y2)
+	               .arg(thickness);
 	if (!isPad) {
 		// elementline
 		line += "stroke='white' ";
 	}
 	else {
 		line += QString("stroke-linecap='%1' stroke-linejoin='%2' id='%3' connectorname='%4' stroke='%5' ")
-					.arg(square ? "square" : "round")
-					.arg(square ? "miter" : "round")
-					.arg(pinID)
-					.arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(name)))
-					.arg(ViewLayer::Copper1Color);
+		        .arg(square ? "square" : "round")
+		        .arg(square ? "miter" : "round")
+		        .arg(pinID)
+		        .arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(name)))
+		        .arg(ViewLayer::Copper1Color);
 	}
 
 	line += "/>";
@@ -391,20 +385,20 @@ QString GedaElement2Svg::convertArc(QVector<QVariant> & stack, int ix, int argCo
 	if (deltaAngle == 360) {
 		if (w == h) {
 			QString circle = QString("<circle fill='none' cx='%1' cy='%2' stroke='white' r='%3' stroke-width='%4' />")
-							.arg(x)
-							.arg(y)
-							.arg(w)
-							.arg(thickness);
+			                 .arg(x)
+			                 .arg(y)
+			                 .arg(w)
+			                 .arg(thickness);
 
 			return circle;
 		}
 
 		QString ellipse = QString("<ellipse fill='none' cx='%1' cy='%2' stroke='white' rx='%3' ry='%4' stroke-width='%5' />")
-						.arg(x)
-						.arg(y)
-						.arg(w)
-						.arg(h)
-						.arg(thickness);
+		                  .arg(x)
+		                  .arg(y)
+		                  .arg(w)
+		                  .arg(h)
+		                  .arg(thickness);
 
 		return ellipse;
 	}
@@ -422,33 +416,33 @@ QString GedaElement2Svg::convertArc(QVector<QVariant> & stack, int ix, int argCo
 	fixQuad(quad, qx, qy);
 
 	QString arc = QString("<path fill='none' stroke-width='%1' stroke='white' d='M%2,%3a%4,%5 0 %6,%7 %8,%9' />")
-			.arg(thickness)
-			.arg(px + x)
-			.arg(py + y)
-			.arg(w)
-			.arg(h)
-			.arg(qAbs(deltaAngle) >= 180 ? 1 : 0)
-			.arg(deltaAngle > 0 ? 0 : 1)
-			.arg(qx - px)
-			.arg(qy - py);
+	              .arg(thickness)
+	              .arg(px + x)
+	              .arg(py + y)
+	              .arg(w)
+	              .arg(h)
+	              .arg(qAbs(deltaAngle) >= 180 ? 1 : 0)
+	              .arg(deltaAngle > 0 ? 0 : 1)
+	              .arg(qx - px)
+	              .arg(qy - py);
 
 	return arc;
 }
 
 void GedaElement2Svg::fixQuad(int quad, double & px, double & py) {
 	switch (quad) {
-		case 0:
-			break;
-		case 1:
-			px = -px;
-			break;
-		case 2:
-			px = -px;
-			py = -py;
-			break;
-		case 3:
-			py = -py;
-			break;
+	case 0:
+		break;
+	case 1:
+		px = -px;
+		break;
+	case 2:
+		px = -px;
+		py = -py;
+		break;
+	case 3:
+		py = -py;
+		break;
 	}
 }
 
@@ -457,14 +451,14 @@ int GedaElement2Svg::reflectQuad(int angle, int & quad) {
 	if (angle < 0) angle += 360;
 	quad = angle / 90;
 	switch (quad) {
-		case 0:
-			return angle;
-		case 1:
-			return 180 - angle;
-		case 2:
-			return angle - 180;
-		case 3:
-			return 360 - angle;
+	case 0:
+		return angle;
+	case 1:
+		return 180 - angle;
+	case 2:
+		return angle - 180;
+	case 3:
+		return 360 - angle;
 	}
 
 	// never gets here, but keeps compiler happy
@@ -485,8 +479,8 @@ QString GedaElement2Svg::getPinID(QString & number, QString & name, bool isPad) 
 	if (!number.isEmpty()) {
 		bool ok;
 		int n = number.toInt(&ok);
-		return ok ? QString("connector%1%2").arg(n - 1).arg(suffix) 
-				  : QString("connector%1%2").arg(number).arg(suffix);
+		return ok ? QString("connector%1%2").arg(n - 1).arg(suffix)
+		       : QString("connector%1%2").arg(number).arg(suffix);
 	}
 
 	if (!name.isEmpty()) {

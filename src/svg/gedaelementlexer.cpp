@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 4067 $:
-$Author: cohen@irascible.com $:
-$Date: 2010-03-27 00:21:20 +0100 (Sa, 27. Mrz 2010) $
-
 ********************************************************************/
 
 #include "gedaelementlexer.h"
@@ -38,14 +32,14 @@ GedaElementLexer::GedaElementLexer(const QString &source)
 	m_elementMatcher.setPattern("Element\\s*([\\(\\[])");
 	//m_stringMatcher.setPattern("\"([^\"]*)\"");
 	m_stringMatcher.setPattern("\"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\"");
-	m_integerMatcher.setPattern("[-+]?\\d+");			
-	m_hexMatcher.setPattern("0[xX][0-9a-fA-F]+");			
-    m_source = clean(source);
-    m_chars = m_source.unicode();
-    m_size = m_source.size();
+	m_integerMatcher.setPattern("[-+]?\\d+");
+	m_hexMatcher.setPattern("0[xX][0-9a-fA-F]+");
+	m_source = clean(source);
+	m_chars = m_source.unicode();
+	m_size = m_source.size();
 	//qDebug() << m_source;
-    m_pos = 0;
-    m_current = next();
+	m_pos = 0;
+	m_current = next();
 }
 
 GedaElementLexer::~GedaElementLexer()
@@ -85,21 +79,21 @@ QString GedaElementLexer::clean(const QString & source) {
 		if (result <= 0) break;
 
 		switch (result) {
-			case GedaElementGrammar::HEXNUMBER:
-			case GedaElementGrammar::NUMBER:
-			case GedaElementGrammar::STRING:
-				params.append(lexer.m_currentString);
-				break;
-			case GedaElementGrammar::RIGHTBRACKET:
-				nix = lexer.m_pos - 2;
-				done = true;
-				break;
-			case GedaElementGrammar::RIGHTPAREN:
-				nix = lexer.m_pos - 2;
-				done = true;
-				break;
-			default:
-				return s2;
+		case GedaElementGrammar::HEXNUMBER:
+		case GedaElementGrammar::NUMBER:
+		case GedaElementGrammar::STRING:
+			params.append(lexer.m_currentString);
+			break;
+		case GedaElementGrammar::RIGHTBRACKET:
+			nix = lexer.m_pos - 2;
+			done = true;
+			break;
+		case GedaElementGrammar::RIGHTPAREN:
+			nix = lexer.m_pos - 2;
+			done = true;
+			break;
+		default:
+			return s2;
 		}
 	}
 	if (params.count() == 11) {
@@ -179,78 +173,78 @@ int GedaElementLexer::lex()
 		}
 		else if (m_current.isNull()) {
 			return GedaElementGrammar::EOF_SYMBOL;
-		} 
+		}
 		else if (m_current == QLatin1Char('(')) {
 			next();
 			return GedaElementGrammar::LEFTPAREN;
-		} 
+		}
 		else if (m_current == QLatin1Char(')')) {
 			next();
 			return GedaElementGrammar::RIGHTPAREN;
-		} 
+		}
 		else if (m_current == QLatin1Char('[')) {
 			next();
 			return GedaElementGrammar::LEFTBRACKET;
-		} 
+		}
 		else if (m_current == QLatin1Char(']')) {
 			next();
 			return GedaElementGrammar::RIGHTBRACKET;
-		} 
+		}
 		else if (m_source.indexOf("elementline", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "elementline";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::ELEMENTLINE;
-		} 
+		}
 		else if (m_source.indexOf("elementarc", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "elementarc";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::ELEMENTARC;
-		} 
+		}
 		else if (m_source.indexOf("attribute", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "attribute";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::ATTRIBUTE;
-		} 
+		}
 		else if (m_source.indexOf("element", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "element";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::ELEMENT;
-		} 
+		}
 		else if (m_source.indexOf("pad", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "pad";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::PAD;
-		} 
+		}
 		else if (m_source.indexOf("pin", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "pin";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::PIN;
-		} 
+		}
 		else if (m_source.indexOf("mark", m_pos - 1, Qt::CaseInsensitive) == m_pos - 1) {
 			m_currentCommand = "mark";
 			m_pos += m_currentCommand.length() - 1;
 			next();
 			return GedaElementGrammar::MARK;
-		} 
+		}
 
-		
+
 		return -1;
 	}
 }
 
 QChar GedaElementLexer::next()
 {
-    if (m_pos < m_size)
-        m_current = m_chars[m_pos++];
-    else
-        m_current = QChar();
-    return m_current;
+	if (m_pos < m_size)
+		m_current = m_chars[m_pos++];
+	else
+		m_current = QChar();
+	return m_current;
 }
 
 QString GedaElementLexer::currentCommand() {

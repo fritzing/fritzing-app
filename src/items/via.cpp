@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 ********************************************************************/
 
@@ -48,10 +42,10 @@ Via::Via( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & 
 	QString ringThickness = settings.value(AutorouteViaRingThickness, "").toString();
 	QString holeSize = settings.value(AutorouteViaHoleSize, "").toString();
 
-    bool holeSizeWasEmpty = holeSize.isEmpty();
-    bool ringThicknessWasEmpty = holeSize.isEmpty();
+	bool holeSizeWasEmpty = holeSize.isEmpty();
+	bool ringThicknessWasEmpty = holeSize.isEmpty();
 
-    PaletteItem::setUpHoleSizes("via", TheHoleThing);
+	PaletteItem::setUpHoleSizes("via", TheHoleThing);
 
 	if (ringThicknessWasEmpty) {
 		settings.setValue(AutorouteViaRingThickness, TheHoleThing.ringThickness);
@@ -70,10 +64,10 @@ Via::~Via() {
 	//DebugDialog::debug(QString("deleting via %1 %2 %3").arg((long) this, 0, 16).arg(m_id).arg(m_viewID));
 }
 
-void Via::initHoleSettings(HoleSettings & holeSettings) 
+void Via::initHoleSettings(HoleSettings & holeSettings)
 {
-    // called only by AutorouterSettingsDialog
-    PaletteItem::initHoleSettings(holeSettings, &TheHoleThing);
+	// called only by AutorouterSettingsDialog
+	PaletteItem::initHoleSettings(holeSettings, &TheHoleThing);
 }
 
 void Via::setBoth(const QString & holeDiameter, const QString & ringThickness) {
@@ -82,11 +76,11 @@ void Via::setBoth(const QString & holeDiameter, const QString & ringThickness) {
 	ItemBase * otherLayer = setBothSvg(holeDiameter, ringThickness);
 	resetConnectors(otherLayer, otherLayer->fsvgRenderer());
 
-    double hd = TextUtils::convertToInches(holeDiameter) * GraphicsUtils::SVGDPI;
-    double rt = TextUtils::convertToInches(ringThickness) * GraphicsUtils::SVGDPI;
-    ConnectorItem * ci = connectorItem();
-    ci->setRadius((hd / 2) + (rt / 2), rt);
-    ci->getCrossLayerConnectorItem()->setRadius((hd / 2) + (rt / 2), rt);
+	double hd = TextUtils::convertToInches(holeDiameter) * GraphicsUtils::SVGDPI;
+	double rt = TextUtils::convertToInches(ringThickness) * GraphicsUtils::SVGDPI;
+	ConnectorItem * ci = connectorItem();
+	ci->setRadius((hd / 2) + (rt / 2), rt);
+	ci->getCrossLayerConnectorItem()->setRadius((hd / 2) + (rt / 2), rt);
 }
 
 

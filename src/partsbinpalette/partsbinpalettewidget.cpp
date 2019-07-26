@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -66,7 +60,7 @@ static QIcon EmptyIcon;
 PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, HtmlInfoView *infoView, WaitPushUndoStack *undoStack, BinManager* manager) :
 	QFrame(manager)
 {
-    m_binLabel = NULL;
+	m_binLabel = NULL;
 	m_monoIcon = m_icon = NULL;
 	m_searchLineEdit = NULL;
 	m_saveQuietly = false;
@@ -100,21 +94,21 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 	m_stackedWidget->addWidget(m_listView);
 
 	QVBoxLayout * vbl = new QVBoxLayout(this);
-    vbl->setMargin(3);
-    vbl->setSpacing(0);
+	vbl->setMargin(3);
+	vbl->setSpacing(0);
 
-    m_header = NULL;
-    setupHeader();
-    if (m_header) {
-	    vbl->addWidget(m_header);
+	m_header = NULL;
+	setupHeader();
+	if (m_header) {
+		vbl->addWidget(m_header);
 
-	    QFrame * separator = new QFrame();
-	    separator->setMaximumHeight(1);
-	    separator->setObjectName("partsBinHeaderSeparator");
-        separator->setFrameShape(QFrame::HLine);
-        separator->setFrameShadow(QFrame::Plain);
-	    vbl->addWidget(separator);
-    }
+		QFrame * separator = new QFrame();
+		separator->setMaximumHeight(1);
+		separator->setObjectName("partsBinHeaderSeparator");
+		separator->setFrameShape(QFrame::HLine);
+		separator->setFrameShadow(QFrame::Plain);
+		vbl->addWidget(separator);
+	}
 
 	vbl->addWidget(m_stackedWidget);
 	this->setLayout(vbl);
@@ -122,7 +116,7 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 	setObjectName("partsBinContainer");
 	toIconView();
 
-    m_defaultSaveFolder = FolderUtils::getUserBinsPath();
+	m_defaultSaveFolder = FolderUtils::getUserBinsPath();
 	m_untitledFileName = tr("Untitled Bin");
 
 	connect(m_listView, SIGNAL(currentRowChanged(int)), m_iconView, SLOT(setSelected(int)));
@@ -149,16 +143,16 @@ PartsBinPaletteWidget::~PartsBinPaletteWidget() {
 		delete m_model;
 		m_model = NULL;
 	}
-   
-    if (m_icon) delete m_icon;
-    if (m_monoIcon) delete m_monoIcon;
+
+	if (m_icon) delete m_icon;
+	if (m_monoIcon) delete m_monoIcon;
 }
 
 void PartsBinPaletteWidget::cleanup() {
-    foreach (PaletteModel * paletteModel, PaletteBinModels) {
-        delete paletteModel;
-    }
-    PaletteBinModels.clear();
+	foreach (PaletteModel * paletteModel, PaletteBinModels) {
+		delete paletteModel;
+	}
+	PaletteBinModels.clear();
 }
 
 
@@ -179,8 +173,8 @@ void PartsBinPaletteWidget::setTitle(const QString &title) {
 
 void PartsBinPaletteWidget::setupHeader()
 {
-    QMenu * combinedMenu = m_manager->combinedMenu();
-    if (combinedMenu == NULL) return;
+	QMenu * combinedMenu = m_manager->combinedMenu();
+	if (combinedMenu == NULL) return;
 
 	m_combinedBinMenuButton = newToolButton("partsBinCombinedMenuButton", ___emptyString___, ___emptyString___);
 	m_combinedBinMenuButton->setMenu(combinedMenu);
@@ -190,7 +184,7 @@ void PartsBinPaletteWidget::setupHeader()
 	m_binLabel->setWordWrap(false);
 
 	m_searchLineEdit = new SearchLineEdit(this);
-    m_searchLineEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+	m_searchLineEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 	connect(m_searchLineEdit, SIGNAL(returnPressed()), this, SLOT(search()));
 
 	m_searchStackedWidget = new QStackedWidget(this);
@@ -202,8 +196,8 @@ void PartsBinPaletteWidget::setupHeader()
 	m_header = new QFrame(this);
 	m_header->setObjectName("partsBinHeader");
 	QHBoxLayout * hbl = new QHBoxLayout();
-    hbl->setSpacing(0);
-    hbl->setMargin(0);
+	hbl->setSpacing(0);
+	hbl->setMargin(0);
 
 	hbl->addWidget(m_searchStackedWidget);
 	hbl->addWidget(m_combinedBinMenuButton);
@@ -216,7 +210,7 @@ void PartsBinPaletteWidget::setView(PartsBinView *view) {
 	if(m_currentView == m_iconView) {
 		m_stackedWidget->setCurrentIndex(0);
 		m_manager->updateViewChecks(true);
-	} 
+	}
 	else {
 		m_stackedWidget->setCurrentIndex(1);
 		m_manager->updateViewChecks(false);
@@ -235,7 +229,7 @@ void PartsBinPaletteWidget::toListView() {
 }
 
 bool PartsBinPaletteWidget::saveAsAux(const QString &filename) {
-    FileProgressDialog progress("Saving...", 0, this);
+	FileProgressDialog progress("Saving...", 0, this);
 
 	QString oldFilename = m_fileName;
 	setFilename(filename);
@@ -263,13 +257,13 @@ bool PartsBinPaletteWidget::saveAsAux(const QString &filename) {
 	}
 	emit saved(hasAlienParts());
 
-    foreach (QString path, m_removed) {
-        bool result = QFile::remove(path);
-        if (!result) {
-            DebugDialog::debug("unable to delete '" + path + "' from bin");
-        }
-    }
-    m_removed.clear();
+	foreach (QString path, m_removed) {
+		bool result = QFile::remove(path);
+		if (!result) {
+			DebugDialog::debug("unable to delete '" + path + "' from bin");
+		}
+	}
+	m_removed.clear();
 
 	return true;
 }
@@ -319,7 +313,7 @@ void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilen
 	else if (iconFilename.isEmpty()) {
 		iconFilename = CustomIconName;
 	}
-	
+
 	if (isCustomSvg(iconFilename)) {
 		// convert to image
 		int w = TextUtils::getViewBoxCoord(iconFilename, 2);
@@ -331,44 +325,44 @@ void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilen
 		QPainter painter;
 		painter.begin(&image);
 		renderer.render(&painter, target);
-		painter.end();	
+		painter.end();
 		//image.save(FolderUtils::getUserDataStorePath("") + "/test icon.png");
 		m_icon = new QIcon(QPixmap::fromImage(image));
-        m_monoIcon = new QIcon(":resources/bins/icons/Custom1-mono.png");
+		m_monoIcon = new QIcon(":resources/bins/icons/Custom1-mono.png");
 
-        // TODO: hack svg to make a mono icon
+		// TODO: hack svg to make a mono icon
 	}
 	else {
-        QFileInfo info(m_fileName);
-        QDir dir = info.absoluteDir();
-        QString path = dir.absoluteFilePath(iconFilename);
-        QFile file1(path);
-        if (file1.exists()) {
-            m_icon = new QIcon(path);
-        }
-        else {
-            path = ":resources/bins/icons/" + iconFilename;
-		    QFile file2(path);
-		    if (file2.exists()) {
-			    m_icon = new QIcon(path);
-		    }
-        }
+		QFileInfo info(m_fileName);
+		QDir dir = info.absoluteDir();
+		QString path = dir.absoluteFilePath(iconFilename);
+		QFile file1(path);
+		if (file1.exists()) {
+			m_icon = new QIcon(path);
+		}
+		else {
+			path = ":resources/bins/icons/" + iconFilename;
+			QFile file2(path);
+			if (file2.exists()) {
+				m_icon = new QIcon(path);
+			}
+		}
 
-        if (m_icon) {
-            int ix = path.lastIndexOf(".");
-            path.insert(ix, "-mono");
-            QFile file3(path);
-            if (file3.exists()) {
-                m_monoIcon = new QIcon(path);
-            }
-        }
+		if (m_icon) {
+			int ix = path.lastIndexOf(".");
+			path.insert(ix, "-mono");
+			QFile file3(path);
+			if (file3.exists()) {
+				m_monoIcon = new QIcon(path);
+			}
+		}
 	}
 }
 
 void PartsBinPaletteWidget::addPart(ModelPart *modelPart, int position) {
-    if (m_model == NULL) {
-        return;
-    }
+	if (m_model == NULL) {
+		return;
+	}
 
 	ModelPart *mp = m_model->addModelPart(m_model->root(),modelPart);
 
@@ -409,30 +403,30 @@ bool PartsBinPaletteWidget::save() {
 
 bool PartsBinPaletteWidget::saveAs() {
 	QString fileExt;
-    QString fileName = QFileDialog::getSaveFileName(
-		this,
-		tr("Specify a file name"),
-		(m_fileName.isNull() || m_fileName.isEmpty() || /* it's a resource */ m_fileName.startsWith(":"))?
-				m_defaultSaveFolder+"/"+title()+FritzingBinExtension:
-				m_fileName,
-		tr("Fritzing Bin (*%1)").arg(FritzingBinExtension),
-		&fileExt
-	  );
+	QString fileName = QFileDialog::getSaveFileName(
+	                       this,
+	                       tr("Specify a file name"),
+	                       (m_fileName.isNull() || m_fileName.isEmpty() || /* it's a resource */ m_fileName.startsWith(":"))?
+	                       m_defaultSaveFolder+"/"+title()+FritzingBinExtension:
+	                       m_fileName,
+	                       tr("Fritzing Bin (*%1)").arg(FritzingBinExtension),
+	                       &fileExt
+	                   );
 
-    if (fileName.isEmpty()) return false; // Cancel pressed
+	if (fileName.isEmpty()) return false; // Cancel pressed
 
-    if(!FritzingWindow::alreadyHasExtension(fileName, FritzingBinExtension)) {
+	if(!FritzingWindow::alreadyHasExtension(fileName, FritzingBinExtension)) {
 		fileName += FritzingBinExtension;
 	}
-    saveAsAux(fileName);
-    return true;
+	saveAsAux(fileName);
+	return true;
 }
 
 void PartsBinPaletteWidget::saveBundledBin() {
 	bool wasModified = m_isDirty;
 	m_manager->mainWindow()->saveBundledNonAtomicEntity(
-		m_fileName, FritzingBundledBinExtension, this,
-		m_model->root()->getAllNonCoreParts(), true, "", true, false
+	    m_fileName, FritzingBundledBinExtension, this,
+	    m_model->root()->getAllNonCoreParts(), true, "", true, false
 	);
 	setDirty(wasModified);
 }
@@ -456,30 +450,30 @@ bool PartsBinPaletteWidget::loadBundledAux(QDir &unzipDir, QList<ModelPart*> mps
 bool PartsBinPaletteWidget::open(QString fileName, QWidget * progressTarget, bool fastLoad) {
 	QFile file(fileName);
 	if (!file.exists()) {
-       QMessageBox::warning(NULL, tr("Fritzing"),
-                             tr("Cannot find file %1.")
-                             .arg(fileName));
+		QMessageBox::warning(NULL, tr("Fritzing"),
+		                     tr("Cannot find file %1.")
+		                     .arg(fileName));
 		return false;
 	}
 
-    if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(NULL, tr("Fritzing"),
-                             tr("Cannot read file %1:\n%2.")
-                             .arg(fileName)
-                             .arg(file.errorString()));
-        return false;
-    }
+	if (!file.open(QFile::ReadOnly | QFile::Text)) {
+		QMessageBox::warning(NULL, tr("Fritzing"),
+		                     tr("Cannot read file %1:\n%2.")
+		                     .arg(fileName)
+		                     .arg(file.errorString()));
+		return false;
+	}
 
-    file.close();
+	file.close();
 
-    if(fileName.endsWith(FritzingBinExtension)) {
-    	load(fileName, progressTarget, fastLoad);
-    	m_isDirty = false;
-    } else if(fileName.endsWith(FritzingBundledBinExtension)) {
-    	return m_manager->mainWindow()->loadBundledNonAtomicEntity(fileName,this,false, false);
-    }
+	if(fileName.endsWith(FritzingBinExtension)) {
+		load(fileName, progressTarget, fastLoad);
+		m_isDirty = false;
+	} else if(fileName.endsWith(FritzingBundledBinExtension)) {
+		return m_manager->mainWindow()->loadBundledNonAtomicEntity(fileName,this,false, false);
+	}
 
-    return true;
+	return true;
 }
 
 void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarget, bool fastLoad) {
@@ -501,61 +495,61 @@ void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarg
 	}
 
 	m_fastLoaded = false;
-    PaletteModel * paletteBinModel = PaletteBinModels.value(filename);
-    if (paletteBinModel == NULL) {
-	    paletteBinModel = new PaletteModel(true, false);
-	    //DebugDialog::debug("after palette model");
+	PaletteModel * paletteBinModel = PaletteBinModels.value(filename);
+	if (paletteBinModel == NULL) {
+		paletteBinModel = new PaletteModel(true, false);
+		//DebugDialog::debug("after palette model");
 
-	    QString name = m_title;
-	    if (name.isEmpty()) name = QFileInfo(filename).completeBaseName();
+		QString name = m_title;
+		if (name.isEmpty()) name = QFileInfo(filename).completeBaseName();
 
-	    bool deleteWhenDone = false;
-        if (progressTarget != NULL) {
-            //DebugDialog::debug("open progress " + filename);
-		    deleteWhenDone = true;
-            progressTarget = m_loadingProgressDialog = new FileProgressDialog(tr("Loading..."), 200, progressTarget);
-		    m_loadingProgressDialog->setBinLoadingChunk(200);
-		    m_loadingProgressDialog->setBinLoadingCount(1);
-		    m_loadingProgressDialog->setMessage(tr("loading bin '%1'").arg(name));
-		    m_loadingProgressDialog->show();
-	    }
-	
-	    if (progressTarget) {
-		    connect(paletteBinModel, SIGNAL(loadingInstances(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstancesSlot(ModelBase *, QDomElement &)));
-		    connect(paletteBinModel, SIGNAL(loadingInstance(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstanceSlot(ModelBase *, QDomElement &)));
-		    connect(m_iconView, SIGNAL(settingItem()), progressTarget, SLOT(settingItemSlot()));
-		    connect(m_listView, SIGNAL(settingItem()), progressTarget, SLOT(settingItemSlot()));
-	    }
-	    DebugDialog::debug(QString("loading bin '%1'").arg(name));
-	    bool result = paletteBinModel->loadFromFile(filename, m_referenceModel, false);
-	    //DebugDialog::debug(QString("done loading bin '%1'").arg(name));
+		bool deleteWhenDone = false;
+		if (progressTarget != NULL) {
+			//DebugDialog::debug("open progress " + filename);
+			deleteWhenDone = true;
+			progressTarget = m_loadingProgressDialog = new FileProgressDialog(tr("Loading..."), 200, progressTarget);
+			m_loadingProgressDialog->setBinLoadingChunk(200);
+			m_loadingProgressDialog->setBinLoadingCount(1);
+			m_loadingProgressDialog->setMessage(tr("loading bin '%1'").arg(name));
+			m_loadingProgressDialog->show();
+		}
 
-	    if (!result) {
-		    QMessageBox::warning(NULL, QObject::tr("Fritzing"), QObject::tr("Fritzing cannot load the parts bin"));
-	    }
-	    else {
-		    m_fileName = filename;
-		    setPaletteModel(paletteBinModel,true);
-            PaletteBinModels.insert(filename, paletteBinModel);
-	    }
+		if (progressTarget) {
+			connect(paletteBinModel, SIGNAL(loadingInstances(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstancesSlot(ModelBase *, QDomElement &)));
+			connect(paletteBinModel, SIGNAL(loadingInstance(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstanceSlot(ModelBase *, QDomElement &)));
+			connect(m_iconView, SIGNAL(settingItem()), progressTarget, SLOT(settingItemSlot()));
+			connect(m_listView, SIGNAL(settingItem()), progressTarget, SLOT(settingItemSlot()));
+		}
+		DebugDialog::debug(QString("loading bin '%1'").arg(name));
+		bool result = paletteBinModel->loadFromFile(filename, m_referenceModel, false);
+		//DebugDialog::debug(QString("done loading bin '%1'").arg(name));
 
-	    if (progressTarget) {
-            //DebugDialog::debug("close progress " + filename);
-		    disconnect(paletteBinModel, SIGNAL(loadingInstances(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstancesSlot(ModelBase *, QDomElement &)));
-		    disconnect(paletteBinModel, SIGNAL(loadingInstance(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstanceSlot(ModelBase *, QDomElement &)));
-		    disconnect(m_iconView, SIGNAL(settingItem()), progressTarget, SLOT(settingItemSlot()));
-		    disconnect(m_listView, SIGNAL(settingItem()), progressTarget, SLOT(settingItemSlot()));
-		    if (deleteWhenDone) {
-			    m_loadingProgressDialog->close();
-			    delete m_loadingProgressDialog;
-		    }
-		    m_loadingProgressDialog = NULL;
-	    }
-    }
-    else {
+		if (!result) {
+			QMessageBox::warning(NULL, QObject::tr("Fritzing"), QObject::tr("Fritzing cannot load the parts bin"));
+		}
+		else {
+			m_fileName = filename;
+			setPaletteModel(paletteBinModel,true);
+			PaletteBinModels.insert(filename, paletteBinModel);
+		}
+
+		if (progressTarget) {
+			//DebugDialog::debug("close progress " + filename);
+			disconnect(paletteBinModel, SIGNAL(loadingInstances(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstancesSlot(ModelBase *, QDomElement &)));
+			disconnect(paletteBinModel, SIGNAL(loadingInstance(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstanceSlot(ModelBase *, QDomElement &)));
+			disconnect(m_iconView, SIGNAL(settingItem()), progressTarget, SLOT(settingItemSlot()));
+			disconnect(m_listView, SIGNAL(settingItem()), progressTarget, SLOT(settingItemSlot()));
+			if (deleteWhenDone) {
+				m_loadingProgressDialog->close();
+				delete m_loadingProgressDialog;
+			}
+			m_loadingProgressDialog = NULL;
+		}
+	}
+	else {
 		m_fileName = filename;
 		setPaletteModel(paletteBinModel,true);
-    }
+	}
 
 
 	//DebugDialog::debug("done loading bin");
@@ -571,7 +565,7 @@ void PartsBinPaletteWidget::undoStackCleanChanged(bool isClean) {
 }
 
 bool PartsBinPaletteWidget::currentBinIsCore() {
-    return m_fileName == BinManager::CorePartsBinLocation;
+	return m_fileName == BinManager::CorePartsBinLocation;
 }
 
 bool PartsBinPaletteWidget::beforeClosing() {
@@ -582,29 +576,29 @@ bool PartsBinPaletteWidget::beforeClosing() {
 			reply = QMessageBox::Save;
 		}
 		else {
-            QMessageBox messageBox(this);
-            messageBox.setWindowTitle(tr("Save bin \"%1\"").arg(title()));
-            messageBox.setText(tr("Do you want to save the changes you made in the bin \"%1\"?").arg(title()));
-            messageBox.setInformativeText(tr("Your changes will be lost if you don't save them."));
-            messageBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
-            messageBox.setDefaultButton(QMessageBox::Save);
-            messageBox.setIcon(QMessageBox::Warning);
-            messageBox.setWindowModality(Qt::WindowModal);
-            messageBox.setButtonText(QMessageBox::Save, tr("Save"));
-            messageBox.setButtonText(QMessageBox::Discard, tr("Don't Save"));
-            messageBox.button(QMessageBox::Discard)->setShortcut(tr("Ctrl+D"));
-            messageBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
+			QMessageBox messageBox(this);
+			messageBox.setWindowTitle(tr("Save bin \"%1\"").arg(title()));
+			messageBox.setText(tr("Do you want to save the changes you made in the bin \"%1\"?").arg(title()));
+			messageBox.setInformativeText(tr("Your changes will be lost if you don't save them."));
+			messageBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+			messageBox.setDefaultButton(QMessageBox::Save);
+			messageBox.setIcon(QMessageBox::Warning);
+			messageBox.setWindowModality(Qt::WindowModal);
+			messageBox.setButtonText(QMessageBox::Save, tr("Save"));
+			messageBox.setButtonText(QMessageBox::Discard, tr("Don't Save"));
+			messageBox.button(QMessageBox::Discard)->setShortcut(tr("Ctrl+D"));
+			messageBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
 
 			reply = (QMessageBox::StandardButton)messageBox.exec();
 		}
 
-     	if (reply == QMessageBox::Save) {
-     		retval = save();
-    	} else if (reply == QMessageBox::Discard) {
-    		retval = true;
-        } else {
-         	retval = false;
-        }
+		if (reply == QMessageBox::Save) {
+			retval = save();
+		} else if (reply == QMessageBox::Discard) {
+			retval = true;
+		} else {
+			retval = false;
+		}
 	} else {
 		retval = true;
 	}
@@ -648,19 +642,19 @@ void PartsBinPaletteWidget::removePart(const QString & moduleID, const QString &
 	// remove the model part from the model last, as this deletes it,
 	// and the removePart calls above still need the modelpart
 	m_model->removePart(moduleID);
-    if (path.contains(FolderUtils::getUserPartsPath())) {
-        m_removed << path;
-    }
+	if (path.contains(FolderUtils::getUserPartsPath())) {
+		m_removed << path;
+	}
 }
 
 
 void PartsBinPaletteWidget::removeParts() {
-    m_iconView->removeParts();
-    m_listView->removeParts();
+	m_iconView->removeParts();
+	m_listView->removeParts();
 
-    // remove the model part from the model last, as this deletes it,
-    // and the removePart calls above still need the modelpart
-    m_model->removeParts();
+	// remove the model part from the model last, as this deletes it,
+	// and the removePart calls above still need the modelpart
+	m_model->removeParts();
 }
 
 void PartsBinPaletteWidget::removeAlienParts() {
@@ -695,12 +689,12 @@ void PartsBinPaletteWidget::addPartCommand(const QString& moduleID) {
 	m_undoStack->push(parentCmd);*/
 
 	QMessageBox::StandardButton answer = QMessageBox::question(
-		this,
-		tr("Add to bin"),
-		tr("Do you really want to add the selected part to the bin?"),
-		QMessageBox::Yes | QMessageBox::No,
-		QMessageBox::Yes
-	);
+	        this,
+	        tr("Add to bin"),
+	        tr("Do you really want to add the selected part to the bin?"),
+	        QMessageBox::Yes | QMessageBox::No,
+	        QMessageBox::Yes
+	                                     );
 	// TODO: make button texts translatable
 	if(answer == QMessageBox::Yes) {
 		int index = m_listView->position(moduleID);
@@ -726,10 +720,10 @@ const QString &PartsBinPaletteWidget::fileName() {
 bool PartsBinPaletteWidget::eventFilter(QObject *obj, QEvent *event) {
 	if (obj == this) {
 		if (event->type() == QEvent::MouseButtonPress ||
-			event->type() == QEvent::GraphicsSceneDragMove ||
-			event->type() == QEvent::GraphicsSceneDrop ||
-			event->type() == QEvent::GraphicsSceneMousePress
-		) {
+		        event->type() == QEvent::GraphicsSceneDragMove ||
+		        event->type() == QEvent::GraphicsSceneDrop ||
+		        event->type() == QEvent::GraphicsSceneMousePress
+		   ) {
 			emit focused(this);
 		}
 	}
@@ -762,9 +756,9 @@ QAction *PartsBinPaletteWidget::addPartToMeAction() {
 }
 
 void PartsBinPaletteWidget::addSketchPartToMe() {
-    m_manager->openBinIn(this->m_fileName, false);
+	m_manager->openBinIn(this->m_fileName, false);
 	QString moduleID = m_manager->getSelectedModuleIDFromSketch();
-    if (moduleID.isEmpty()) return;
+	if (moduleID.isEmpty()) return;
 
 	bool wasAlreadyIn = contains(moduleID);
 	addPart(moduleID, -1);
@@ -796,7 +790,7 @@ void PartsBinPaletteWidget::search() {
 		root->setSearchTerm(searchText);
 	}
 
-    m_manager->search(searchText);
+	m_manager->search(searchText);
 }
 
 bool PartsBinPaletteWidget::allowsChanges() {
@@ -846,7 +840,7 @@ QIcon PartsBinPaletteWidget::icon() {
 }
 
 bool PartsBinPaletteWidget::hasMonoIcon() {
-    return m_monoIcon != NULL;
+	return m_monoIcon != NULL;
 }
 
 QIcon PartsBinPaletteWidget::monoIcon() {
@@ -908,8 +902,8 @@ void PartsBinPaletteWidget::changeIconColor() {
 	}
 
 #ifndef QT_NO_DEBUG
-    //QFileInfo info(m_fileName);
-    //image.save(FolderUtils::getUserDataStorePath("") + "/" + info.completeBaseName() + ".png");
+	//QFileInfo info(m_fileName);
+	//image.save(FolderUtils::getUserDataStorePath("") + "/" + info.completeBaseName() + ".png");
 #endif
 
 	delete m_icon;
@@ -950,8 +944,8 @@ bool PartsBinPaletteWidget::canClose() {
 	case BinLocation::User:
 		if (m_fileName.compare(BinManager::SearchBinLocation) == 0) return false;
 		if (m_fileName.compare(BinManager::ContribPartsBinLocation) == 0) return false;
-		if (m_fileName.compare(BinManager::MyPartsBinLocation) == 0) return false;	
-		if (m_manager->isTempPartsBin(this)) return false;	
+		if (m_fileName.compare(BinManager::MyPartsBinLocation) == 0) return false;
+		if (m_manager->isTempPartsBin(this)) return false;
 		return true;
 	case BinLocation::More:
 		return false;
@@ -968,13 +962,13 @@ void PartsBinPaletteWidget::copyFilesToContrib(ModelPart * mp, QWidget * origina
 }
 
 ModelPart * PartsBinPaletteWidget::root() {
-    if (m_model == NULL) return NULL;
+	if (m_model == NULL) return NULL;
 
-    return m_model->root();
+	return m_model->root();
 }
 
 bool PartsBinPaletteWidget::isTempPartsBin() {
-    return m_manager->isTempPartsBin(this);
+	return m_manager->isTempPartsBin(this);
 }
 
 void PartsBinPaletteWidget::reloadPart(const QString & moduleID) {
@@ -983,12 +977,10 @@ void PartsBinPaletteWidget::reloadPart(const QString & moduleID) {
 }
 
 QList<ModelPart *> PartsBinPaletteWidget::getAllParts() {
-    QList<ModelPart*> empty;
-    if (m_model == NULL) return empty;
+	QList<ModelPart*> empty;
+	if (m_model == NULL) return empty;
 
-    if (m_model->root() == NULL) return empty;
+	if (m_model->root() == NULL) return empty;
 
-    return m_model->root()->getAllParts();
+	return m_model->root()->getAllParts();
 }
-
-

@@ -119,7 +119,7 @@ void handleFile(const QString & filename) {
 			if (!pin.isNull()) {
 				pin.setTagName("p");
 				QString id = pin.attribute("svgId");
-				QString image = viewImages.value(view.tagName());	
+				QString image = viewImages.value(view.tagName());
 				QFile imageFile;
 				if (findFile(globalDir, imageFile, image)) {
 					if (imageFile.open(QIODevice::ReadOnly)) {
@@ -178,4 +178,3 @@ int main(int argc, char * argv[])
 	globalDir.setPath(argv[1]);
 	runDir(globalDir);
 }
-

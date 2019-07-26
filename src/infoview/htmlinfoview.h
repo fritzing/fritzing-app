@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6609 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-10-30 14:21:08 +0100 (Di, 30. Okt 2012) $
 
 ********************************************************************/
 
@@ -46,11 +40,11 @@ $Date: 2012-10-30 14:21:08 +0100 (Di, 30. Okt 2012) $
 #include "../referencemodel/referencemodel.h"
 
 struct PropThing {
-        QPointer<QLabel> m_name;
-        QPointer<QFrame> m_frame;
-        QPointer<QLabel> m_value;
-        QPointer<QWidget> m_plugin;
-        QPointer<QVBoxLayout> m_layout;
+	QPointer<QLabel> m_name;
+	QPointer<QFrame> m_frame;
+	QPointer<QLabel> m_value;
+	QPointer<QWidget> m_plugin;
+	QPointer<QVBoxLayout> m_layout;
 };
 
 class TagLabel : public QLabel {
@@ -65,7 +59,7 @@ protected:
 
 class HtmlInfoView : public QScrollArea
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	HtmlInfoView(QWidget * parent = 0);
 	~HtmlInfoView();
@@ -77,8 +71,8 @@ public:
 	void reloadContent(class InfoGraphicsView *);
 
 	void viewItemInfo(class InfoGraphicsView *, ItemBase* item, bool swappingEnabled);
-    void updateLocation(ItemBase *);
-    void updateRotation(ItemBase *);
+	void updateLocation(ItemBase *);
+	void updateRotation(ItemBase *);
 
 	void hoverEnterItem(class InfoGraphicsView *, QGraphicsSceneHoverEvent * event, ItemBase * item, bool swappingEnabled);
 	void hoverLeaveItem(class InfoGraphicsView *, QGraphicsSceneHoverEvent * event, ItemBase * item);
@@ -89,7 +83,7 @@ public:
 	void unregisterCurrentItem();
 	void unregisterCurrentItemIf(long id);
 
-    void init(bool tinyMode);
+	void init(bool tinyMode);
 
 public:
 	static const int STANDARD_ICON_IMG_WIDTH;
@@ -99,7 +93,7 @@ public:
 	static QHash<QString, QString> getPartProperties(ModelPart * modelPart, ItemBase * itemBase, bool wantDebug, QStringList & keys);
 
 signals:
-    void clickObsoleteSignal();
+	void clickObsoleteSignal();
 
 protected slots:
 	void setContent();
@@ -109,10 +103,10 @@ protected slots:
 	void instanceTitleEditable(bool editable);
 	void changeLock(bool);
 	void changeSticky(bool);
-    void clickObsolete(const QString &);
-    void xyEntry();
-    void unitsClicked();
-    void rotEntry();
+	void clickObsolete(const QString &);
+	void xyEntry();
+	void unitsClicked();
+	void rotEntry();
 
 protected:
 	void appendStuff(ItemBase* item, bool swappingEnabled); //finds out if it's a wire or something else
@@ -132,12 +126,12 @@ protected:
 	void clearPropThingPlugin(PropThing * propThing);
 	void clearPropThingPlugin(PropThing * propThing, QWidget * plugin);
 	void viewConnectorItemInfo(QGraphicsSceneHoverEvent * event, ConnectorItem* item);
-    void showLayers(bool show, ItemBase *, const QString & family, const QString & value, bool swappingEnabled);
-    void makeLockFrame();
-    void makeLocationFrame();
-    void makeRotationFrame();
-    void setLocation(ItemBase *);
-    void setRotation(ItemBase *);
+	void showLayers(bool show, ItemBase *, const QString & family, const QString & value, bool swappingEnabled);
+	void makeLockFrame();
+	void makeLocationFrame();
+	void makeRotationFrame();
+	void setLocation(ItemBase *);
+	void setRotation(ItemBase *);
 
 protected:
 	QPointer<ItemBase> m_currentItem;
@@ -161,30 +155,30 @@ protected:
 	QLabel * m_placementLabel;
 	QLabel * m_tagLabel;
 	QLabel * m_connLabel;
-    QLabel * m_layerLabel;
-    QLabel * m_lockLabel;
-    QLabel * m_locationLabel;
-    QLabel * m_rotationLabel;
+	QLabel * m_layerLabel;
+	QLabel * m_lockLabel;
+	QLabel * m_locationLabel;
+	QLabel * m_rotationLabel;
 	QFrame * m_connFrame;
 	QFrame * m_propFrame;
 	QFrame * m_placementFrame;
-    QFrame * m_layerFrame;
-    QFrame * m_lockFrame;
-    QFrame * m_locationFrame;
-    QFrame * m_rotationFrame;
+	QFrame * m_layerFrame;
+	QFrame * m_lockFrame;
+	QFrame * m_locationFrame;
+	QFrame * m_rotationFrame;
 	QCheckBox * m_lockCheckbox;
 	QCheckBox * m_stickyCheckbox;
 	QGridLayout * m_propLayout;
 	QGridLayout * m_placementLayout;
-    QVBoxLayout * m_layerLayout;
+	QVBoxLayout * m_layerLayout;
 	QList <PropThing *> m_propThings;
 	QPointer<ItemBase> m_pendingItemBase;
 	bool m_pendingSwappingEnabled;
-    QWidget * m_layerWidget;
-    QDoubleSpinBox * m_xEdit;
-    QDoubleSpinBox * m_yEdit;
-    QLabel * m_unitsLabel;
-    QDoubleSpinBox * m_rotEdit;
+	QWidget * m_layerWidget;
+	QDoubleSpinBox * m_xEdit;
+	QDoubleSpinBox * m_yEdit;
+	QLabel * m_unitsLabel;
+	QDoubleSpinBox * m_rotEdit;
 
 	// note: these m_last items should only be checked for equality and not otherwise accessed
 	ItemBase * m_lastTitleItemBase;
@@ -197,7 +191,7 @@ protected:
 	ModelPart * m_lastPropsModelPart;
 	ItemBase * m_lastPropsItemBase;
 	bool m_lastPropsSwappingEnabled;
-    bool m_tinyMode;
+	bool m_tinyMode;
 };
 
 #endif

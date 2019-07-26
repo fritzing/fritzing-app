@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 ********************************************************************/
 
@@ -38,7 +32,7 @@ InfoGraphicsView::InfoGraphicsView( QWidget * parent )
 	m_infoView = NULL;
 	m_boardLayers = 1;
 	m_hoverEnterMode = m_hoverEnterConnectorMode = false;
-    m_smdOrientation = Qt::Vertical;
+	m_smdOrientation = Qt::Vertical;
 }
 
 void InfoGraphicsView::viewItemInfo(ItemBase * item) {
@@ -74,7 +68,7 @@ void InfoGraphicsView::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event,
 	}
 }
 
-void InfoGraphicsView::hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item){
+void InfoGraphicsView::hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item) {
 	if (m_infoView == NULL) return;
 
 	if (m_hoverEnterConnectorMode) {
@@ -121,7 +115,7 @@ QGraphicsItem *InfoGraphicsView::selectedAux() {
 	}
 }
 
-void InfoGraphicsView::partLabelMoved(ItemBase * itemBase, QPointF oldPos, QPointF oldOffset, QPointF newPos, QPointF newOffset) 
+void InfoGraphicsView::partLabelMoved(ItemBase * itemBase, QPointF oldPos, QPointF oldOffset, QPointF newPos, QPointF newOffset)
 {
 	Q_UNUSED(itemBase);
 	Q_UNUSED(oldPos);
@@ -138,8 +132,8 @@ void InfoGraphicsView::rotateFlipPartLabel(ItemBase * itemBase, double degrees, 
 
 void InfoGraphicsView::noteSizeChanged(ItemBase * itemBase, const QSizeF & oldSize, const QSizeF & newSize) {
 	Q_UNUSED(itemBase);
-    Q_UNUSED(oldSize);
-    Q_UNUSED(newSize);
+	Q_UNUSED(oldSize);
+	Q_UNUSED(newSize);
 }
 
 bool InfoGraphicsView::spaceBarIsPressed() {
@@ -172,7 +166,7 @@ void InfoGraphicsView::getLabelFont(QFont &, QColor &, ItemBase *) {
 }
 
 double InfoGraphicsView::getLabelFontSizeTiny() {
-        return 5;
+	return 5;
 }
 
 double InfoGraphicsView::getLabelFontSizeSmall() {
@@ -286,7 +280,7 @@ VirtualWire * InfoGraphicsView::makeOneRatsnestWire(ConnectorItem * source, Conn
 	return NULL;
 }
 
-void InfoGraphicsView::getRatsnestColor(QColor & color) 
+void InfoGraphicsView::getRatsnestColor(QColor & color)
 {
 	Q_UNUSED(color);
 }
@@ -297,8 +291,8 @@ void InfoGraphicsView::changeBus(ItemBase *, bool connect, const QString & oldBu
 	Q_UNUSED(oldBus);
 	Q_UNUSED(newBus);
 	Q_UNUSED(message);
-    Q_UNUSED(oldLayout);
-    Q_UNUSED(newLayout);
+	Q_UNUSED(oldLayout);
+	Q_UNUSED(newLayout);
 }
 
 const QString & InfoGraphicsView::filenameIf()
@@ -313,23 +307,23 @@ QString InfoGraphicsView::generateCopperFillUnit(ItemBase * itemBase, QPointF wh
 	return "";
 }
 
-void InfoGraphicsView::prepLegSelection(ItemBase *) 
+void InfoGraphicsView::prepLegSelection(ItemBase *)
 {
 }
 
 void InfoGraphicsView::prepLegBendpointMove(ConnectorItem * from, int index, QPointF oldPos, QPointF newPos, ConnectorItem * to, bool changeConnections)
 {
-	Q_UNUSED(from);	
+	Q_UNUSED(from);
 	Q_UNUSED(index);
-	Q_UNUSED(oldPos);	
-	Q_UNUSED(newPos);	
+	Q_UNUSED(oldPos);
+	Q_UNUSED(newPos);
 	Q_UNUSED(to);
 	Q_UNUSED(changeConnections);
 }
 
-void InfoGraphicsView::prepLegCurveChange(ConnectorItem * from, int index, const class Bezier *, const class Bezier *, bool triggerFirstTime) 
+void InfoGraphicsView::prepLegCurveChange(ConnectorItem * from, int index, const class Bezier *, const class Bezier *, bool triggerFirstTime)
 {
-	Q_UNUSED(from);	
+	Q_UNUSED(from);
 	Q_UNUSED(index);
 	Q_UNUSED(triggerFirstTime);
 }
@@ -392,18 +386,18 @@ void InfoGraphicsView::setActiveConnectorItem(ConnectorItem * connectorItem)
 void InfoGraphicsView::resolveTemporary(bool, ItemBase *)
 {
 }
-void InfoGraphicsView::newWire(Wire * wire) 
+void InfoGraphicsView::newWire(Wire * wire)
 {
-	bool succeeded = connect(wire, SIGNAL(wireChangedSignal(Wire*, const QLineF & , const QLineF & , QPointF, QPointF, ConnectorItem *, ConnectorItem *)	),
-			this, SLOT(wireChangedSlot(Wire*, const QLineF & , const QLineF & , QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
-			Qt::DirectConnection);		// DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
+	bool succeeded = connect(wire, SIGNAL(wireChangedSignal(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
+	                         this, SLOT(wireChangedSlot(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
+	                         Qt::DirectConnection); // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
 	succeeded = connect(wire, SIGNAL(wireChangedCurveSignal(Wire*, const Bezier *, const Bezier *, bool)),
-			this, SLOT(wireChangedCurveSlot(Wire*, const Bezier *, const Bezier *, bool)),
-			Qt::DirectConnection);		// DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
+	                    this, SLOT(wireChangedCurveSlot(Wire*, const Bezier *, const Bezier *, bool)),
+	                    Qt::DirectConnection); // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
 	succeeded = succeeded && connect(wire, SIGNAL(wireSplitSignal(Wire*, QPointF, QPointF, const QLineF & )),
-			this, SLOT(wireSplitSlot(Wire*, QPointF, QPointF, const QLineF & )));
+	                                 this, SLOT(wireSplitSlot(Wire*, QPointF, QPointF, const QLineF & )));
 	succeeded = succeeded && connect(wire, SIGNAL(wireJoinSignal(Wire*, ConnectorItem *)),
-			this, SLOT(wireJoinSlot(Wire*, ConnectorItem*)));
+	                                 this, SLOT(wireJoinSlot(Wire*, ConnectorItem*)));
 	if (!succeeded) {
 		DebugDialog::debug("wire signal connect failed");
 	}
@@ -412,26 +406,25 @@ void InfoGraphicsView::newWire(Wire * wire)
 }
 
 void InfoGraphicsView::setSMDOrientation(Qt::Orientations orientation) {
-    m_smdOrientation = orientation;
+	m_smdOrientation = orientation;
 }
 
 Qt::Orientations InfoGraphicsView::smdOrientation() {
-    return m_smdOrientation;
+	return m_smdOrientation;
 }
 
 void InfoGraphicsView::moveItem(ItemBase *, double x, double y) {
-    Q_UNUSED(x);
-    Q_UNUSED(y);
+	Q_UNUSED(x);
+	Q_UNUSED(y);
 }
 
 void InfoGraphicsView::updateRotation(ItemBase * itemBase) {
-    if (m_infoView) m_infoView->updateRotation(itemBase);
+	if (m_infoView) m_infoView->updateRotation(itemBase);
 }
 
-void InfoGraphicsView::rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem) 
+void InfoGraphicsView::rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem)
 {
-    Q_UNUSED(degrees);
-    Q_UNUSED(rubberBandLegEnabled);
-    Q_UNUSED(originatingItem);
+	Q_UNUSED(degrees);
+	Q_UNUSED(rubberBandLegEnabled);
+	Q_UNUSED(originatingItem);
 }
-

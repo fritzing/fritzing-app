@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6998 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 
 ********************************************************************/
 
@@ -145,17 +139,17 @@ static QHash<QString, QStringList> CachedValues;
 ItemBase::ItemBase( ModelPart* modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu )
 	: QGraphicsSvgItem()
 {
-    m_fsvgRenderer = NULL;
-    m_superpart = NULL;
+	m_fsvgRenderer = NULL;
+	m_superpart = NULL;
 	m_acceptsMousePressLegEvent = true;
 
-    m_squashShape = false;
+	m_squashShape = false;
 
-    //DebugDialog::debug(QString("itembase %1 %2").arg(id).arg((long) static_cast<QGraphicsItem *>(this), 0, 16));
+	//DebugDialog::debug(QString("itembase %1 %2").arg(id).arg((long) static_cast<QGraphicsItem *>(this), 0, 16));
 	m_hasRubberBandLeg = m_moveLock = m_hoverEnterSpaceBarWasPressed = m_spaceBarWasPressed = false;
 
 	m_moveLockItem = NULL;
-    m_stickyItem = NULL;
+	m_stickyItem = NULL;
 
 	m_swappable = m_everVisible = true;
 
@@ -174,7 +168,7 @@ ItemBase::ItemBase( ModelPart* modelPart, ViewLayer::ViewID viewID, const ViewGe
 
 	setCursor(*CursorMaster::MoveCursor);
 
-   	m_viewGeometry.set(viewGeometry);
+	m_viewGeometry.set(viewGeometry);
 	setAcceptHoverEvents ( true );
 	m_zUninitialized = true;
 }
@@ -200,9 +194,9 @@ ItemBase::~ItemBase() {
 		m_modelPart->removeViewItem(this);
 	}
 
-    if (m_fsvgRenderer) {
-        delete m_fsvgRenderer;
-    }
+	if (m_fsvgRenderer) {
+		delete m_fsvgRenderer;
+	}
 
 }
 
@@ -244,7 +238,7 @@ QSizeF ItemBase::size() {
 }
 
 qint64 ItemBase::id() const {
- 	return m_id;
+	return m_id;
 }
 
 void ItemBase::resetID() {
@@ -348,12 +342,12 @@ void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
 	if (m_moveLock) {
 		streamWriter.writeAttribute("locked", "true");
 	}
-    if (m_superpart) {
-        streamWriter.writeAttribute("superpart", QString::number(m_superpart->modelPart()->modelIndex()));
-    }
-    if (m_viewLayerPlacement == ViewLayer::NewBottom && m_viewID == ViewLayer::PCBView) {
-        streamWriter.writeAttribute("bottom", "true");
-    }
+	if (m_superpart) {
+		streamWriter.writeAttribute("superpart", QString::number(m_superpart->modelPart()->modelIndex()));
+	}
+	if (m_viewLayerPlacement == ViewLayer::NewBottom && m_viewID == ViewLayer::PCBView) {
+		streamWriter.writeAttribute("bottom", "true");
+	}
 
 	this->saveGeometry();
 	writeGeometry(streamWriter);
@@ -361,16 +355,16 @@ void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
 		m_partLabel->saveInstance(streamWriter);
 	}
 
-    QList<ItemBase *> itemBases;
-    itemBases.append(this);
-    itemBases.append(layerKinChief()->layerKin());
-    foreach (ItemBase * itemBase, itemBases) {
-        if (itemBase->layerHidden()) {
-            streamWriter.writeStartElement("layerHidden");
-            streamWriter.writeAttribute("layer", ViewLayer::viewLayerXmlNameFromID(itemBase->viewLayerID()));
-            streamWriter.writeEndElement();
-        }
-    }
+	QList<ItemBase *> itemBases;
+	itemBases.append(this);
+	itemBases.append(layerKinChief()->layerKin());
+	foreach (ItemBase * itemBase, itemBases) {
+		if (itemBase->layerHidden()) {
+			streamWriter.writeStartElement("layerHidden");
+			streamWriter.writeAttribute("layer", ViewLayer::viewLayerXmlNameFromID(itemBase->viewLayerID()));
+			streamWriter.writeEndElement();
+		}
+	}
 
 
 	bool saveConnectorItems = false;
@@ -425,22 +419,22 @@ void ItemBase::setViewLayerID(const QString & layerName, const LayerHash & viewL
 void ItemBase::setViewLayerID(ViewLayer::ViewLayerID viewLayerID, const LayerHash & viewLayers) {
 	m_viewLayerID = viewLayerID;
 	if (m_zUninitialized) {
-   		ViewLayer * viewLayer = viewLayers.value(m_viewLayerID);
-   		if (viewLayer != NULL) {
+		ViewLayer * viewLayer = viewLayers.value(m_viewLayerID);
+		if (viewLayer != NULL) {
 			m_zUninitialized = false;
 			if (!viewLayer->alreadyInLayer(m_viewGeometry.z())) {
-   				m_viewGeometry.setZ(viewLayer->nextZ());
+				m_viewGeometry.setZ(viewLayer->nextZ());
 			}
-  		}
-  	}
+		}
+	}
 
-    //DebugDialog::debug(QString("using z: %1 z:%2 lid:%3").arg(title()).arg(m_viewGeometry.z()).arg(m_viewLayerID) );
+	//DebugDialog::debug(QString("using z: %1 z:%2 lid:%3").arg(title()).arg(m_viewGeometry.z()).arg(m_viewLayerID) );
 }
 
 void ItemBase::removeLayerKin() {
 }
 
-void ItemBase::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * , ConnectorItem * ) {
+void ItemBase::hoverEnterConnectorItem(QGraphicsSceneHoverEvent *, ConnectorItem * ) {
 	//DebugDialog::debug(QString("hover enter c %1").arg(instanceTitle()));
 	hoverEnterConnectorItem();
 }
@@ -451,11 +445,11 @@ void ItemBase::hoverEnterConnectorItem() {
 	hoverUpdate();
 }
 
-void ItemBase::hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * , ConnectorItem * ) {
+void ItemBase::hoverLeaveConnectorItem(QGraphicsSceneHoverEvent *, ConnectorItem * ) {
 	hoverLeaveConnectorItem();
 }
 
-void ItemBase::hoverMoveConnectorItem(QGraphicsSceneHoverEvent * , ConnectorItem * ) {
+void ItemBase::hoverMoveConnectorItem(QGraphicsSceneHoverEvent *, ConnectorItem * ) {
 }
 
 void ItemBase::hoverLeaveConnectorItem() {
@@ -534,9 +528,9 @@ void ItemBase::connectionChange(ConnectorItem * onMe, ConnectorItem * onIt, bool
 }
 
 void ItemBase::connectedMoved(ConnectorItem * from, ConnectorItem * to,  QList<ConnectorItem *> & already) {
-    Q_UNUSED(from);
-    Q_UNUSED(to);
-    Q_UNUSED(already);
+	Q_UNUSED(from);
+	Q_UNUSED(to);
+	Q_UNUSED(already);
 }
 
 ItemBase * ItemBase::extractTopLevelItemBase(QGraphicsItem * item) {
@@ -555,7 +549,7 @@ bool ItemBase::topLevel() {
 void ItemBase::setHidden(bool hide) {
 
 	m_hidden = hide;
-    updateHidden();
+	updateHidden();
 	foreach (QGraphicsItem * item, childItems()) {
 		NonConnectorItem * nonconnectorItem = dynamic_cast<NonConnectorItem *>(item);
 		if (nonconnectorItem == NULL) continue;
@@ -632,16 +626,16 @@ void ItemBase::collectConnectors(ConnectorPairHash & connectorHash, SkipCheckFun
 }
 
 ConnectorItem * ItemBase::findConnectorItemWithSharedID(const QString & connectorID)  {
-    Connector * connector = modelPart()->getConnector(connectorID);
-    if (connector) {
-        return connector->connectorItem(m_viewID);
+	Connector * connector = modelPart()->getConnector(connectorID);
+	if (connector) {
+		return connector->connectorItem(m_viewID);
 	}
 
 	return NULL;
 }
 
 ConnectorItem * ItemBase::findConnectorItemWithSharedID(const QString & connectorID, ViewLayer::ViewLayerPlacement viewLayerPlacement)  {
-    ConnectorItem * connectorItem = findConnectorItemWithSharedID(connectorID);
+	ConnectorItem * connectorItem = findConnectorItemWithSharedID(connectorID);
 	if (connectorItem) {
 		return connectorItem->chooseFromSpec(viewLayerPlacement);
 	}
@@ -660,7 +654,7 @@ void ItemBase::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) {
 
 	m_hoverEnterSpaceBarWasPressed = false;
 	m_hoverCount++;
-    //debugInfo(QString("inc hover %1").arg(m_hoverCount));
+	//debugInfo(QString("inc hover %1").arg(m_hoverCount));
 	hoverUpdate();
 	if (infoGraphicsView != NULL) {
 		infoGraphicsView->hoverEnterItem(event, this);
@@ -675,7 +669,7 @@ void ItemBase::hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) {
 	}
 
 	m_hoverCount--;
-    //debugInfo(QString("dec hover %1").arg(m_hoverCount));
+	//debugInfo(QString("dec hover %1").arg(m_hoverCount));
 	hoverUpdate();
 
 
@@ -686,30 +680,30 @@ void ItemBase::hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) {
 }
 
 void ItemBase::updateConnections(bool includeRatsnest, QList<ConnectorItem *> & already) {
-    Q_UNUSED(already)
-    Q_UNUSED(includeRatsnest);
+	Q_UNUSED(already)
+	Q_UNUSED(includeRatsnest);
 }
 
 void ItemBase::updateConnections(ConnectorItem * connectorItem, bool includeRatsnest, QList<ConnectorItem *> & already) {
-    if (!already.contains(connectorItem)) {
-        already << connectorItem;
-	    connectorItem->attachedMoved(includeRatsnest, already);
-    }
-    else {
-        connectorItem->debugInfo("already");
-    }
+	if (!already.contains(connectorItem)) {
+		already << connectorItem;
+		connectorItem->attachedMoved(includeRatsnest, already);
+	}
+	else {
+		connectorItem->debugInfo("already");
+	}
 }
 
 const QString & ItemBase::title() {
-    if (m_modelPart == NULL) return ___emptyString___;
+	if (m_modelPart == NULL) return ___emptyString___;
 
-    return m_modelPart->title();
+	return m_modelPart->title();
 }
 
 const QString & ItemBase::constTitle() const {
-    if (m_modelPart == NULL) return ___emptyString___;
+	if (m_modelPart == NULL) return ___emptyString___;
 
-    return m_modelPart->title();
+	return m_modelPart->title();
 }
 
 const QString & ItemBase::spice() const {
@@ -740,7 +734,7 @@ QList<Bus *> ItemBase::buses() {
 }
 
 void ItemBase::busConnectorItems(class Bus * bus, ConnectorItem * fromConnectorItem, QList<class ConnectorItem *> & items) {
-    Q_UNUSED(fromConnectorItem)
+	Q_UNUSED(fromConnectorItem)
 
 	if (bus == NULL) return;
 
@@ -755,29 +749,29 @@ void ItemBase::busConnectorItems(class Bus * bus, ConnectorItem * fromConnectorI
 		}
 	}
 
-    if (m_superpart || m_subparts.count() > 0) {
-	    Connector * connector = bus->subConnector();
-        if (connector) {
-		    foreach (ConnectorItem * connectorItem, connector->viewItems()) {
-			    if (connectorItem != NULL) {
-				    //connectorItem->debugInfo(QString("on the bus %1").arg((long) connector, 0, 16));
-				    if (connectorItem->attachedToViewID() == m_viewID) {
-					    items.append(connectorItem);
-				    }
-			    }
-		    }
-        }  
-    }
+	if (m_superpart || m_subparts.count() > 0) {
+		Connector * connector = bus->subConnector();
+		if (connector) {
+			foreach (ConnectorItem * connectorItem, connector->viewItems()) {
+				if (connectorItem != NULL) {
+					//connectorItem->debugInfo(QString("on the bus %1").arg((long) connector, 0, 16));
+					if (connectorItem->attachedToViewID() == m_viewID) {
+						items.append(connectorItem);
+					}
+				}
+			}
+		}
+	}
 
 
-    /*
-    if (items.count() > 0) {
-        fromConnectorItem->debugInfo("bus");
-        foreach (ConnectorItem * ci, items) {
-            ci->debugInfo("\t");
-        }
-    }
-    */
+	/*
+	if (items.count() > 0) {
+	    fromConnectorItem->debugInfo("bus");
+	    foreach (ConnectorItem * ci, items) {
+	        ci->debugInfo("\t");
+	    }
+	}
+	*/
 }
 
 int ItemBase::itemType() const
@@ -797,7 +791,7 @@ void ItemBase::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 		layerKinChief()->paintHover(painter, option, widget);
 	}
 	//else {
-		//DebugDialog::debug("no hover");
+	//DebugDialog::debug("no hover");
 	//}
 
 	if (m_inactive) {
@@ -807,9 +801,9 @@ void ItemBase::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 
 	paintBody(painter, option, widget);
 
-	if (option->state & QStyle::State_Selected) {	
+	if (option->state & QStyle::State_Selected) {
 		layerKinChief()->paintSelected(painter, option, widget);
-    }	
+	}
 
 	if (m_inactive) {
 		painter->restore();
@@ -877,7 +871,7 @@ void ItemBase::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 }
 
 void ItemBase::mouseMoveEvent(QGraphicsSceneMouseEvent *)
-{   
+{
 }
 
 void ItemBase::setItemPos(QPointF & loc) {
@@ -889,12 +883,12 @@ bool ItemBase::stickyEnabled() {
 }
 
 bool ItemBase::isSticky() {
-	return isBaseSticky() && isLocalSticky();                      
+	return isBaseSticky() && isLocalSticky();
 }
 
 
 bool ItemBase::isBaseSticky() {
-	return m_sticky;   // to cancel sticky return false; 
+	return m_sticky;   // to cancel sticky return false;
 }
 
 void ItemBase::setSticky(bool s)
@@ -903,43 +897,43 @@ void ItemBase::setSticky(bool s)
 }
 
 bool ItemBase::isLocalSticky() {
-    if (layerKinChief() != this) {
-        return layerKinChief()->isLocalSticky();
-    }
-    QString stickyVal = modelPart()->localProp("sticky").toString();
-	// return (stickyVal.compare("false") != 0);       // defaults to true               
-	return (stickyVal.compare("true") == 0);           // defaults to false                  
+	if (layerKinChief() != this) {
+		return layerKinChief()->isLocalSticky();
+	}
+	QString stickyVal = modelPart()->localProp("sticky").toString();
+	// return (stickyVal.compare("false") != 0);       // defaults to true
+	return (stickyVal.compare("true") == 0);           // defaults to false
 }
 
 void ItemBase::setLocalSticky(bool s)
 {
-    // dirty the window?
-    // undo command?
-    if (layerKinChief() != this) {
-        layerKinChief()->setLocalSticky(s);
-        return;
-    }
+	// dirty the window?
+	// undo command?
+	if (layerKinChief() != this) {
+		layerKinChief()->setLocalSticky(s);
+		return;
+	}
 
-    modelPart()->setLocalProp("sticky", s ? "true" : "false");
+	modelPart()->setLocalProp("sticky", s ? "true" : "false");
 
 	if (s) {
-        if (m_stickyItem == NULL) {
-		    if (!StickyRenderer.isValid()) {
-			    QString fn(":resources/images/part_sticky.svg");
-			    bool success = StickyRenderer.load(fn);
-                Q_UNUSED(success);
-			    //DebugDialog::debug(QString("sticky load success %1").arg(success));
-		    }
+		if (m_stickyItem == NULL) {
+			if (!StickyRenderer.isValid()) {
+				QString fn(":resources/images/part_sticky.svg");
+				bool success = StickyRenderer.load(fn);
+				Q_UNUSED(success);
+				//DebugDialog::debug(QString("sticky load success %1").arg(success));
+			}
 
-		    m_stickyItem = new QGraphicsSvgItem();
-		    m_stickyItem->setAcceptHoverEvents(false);
-		    m_stickyItem->setAcceptedMouseButtons(Qt::NoButton);
-		    m_stickyItem->setSharedRenderer(&StickyRenderer);
-		    m_stickyItem->setPos(m_moveLockItem == NULL ? 0 : m_moveLockItem->boundingRect().width() + 1, 0);
-		    m_stickyItem->setZValue(-99999);
-		    m_stickyItem->setParentItem(this);
-		    m_stickyItem->setVisible(true);
-        }
+			m_stickyItem = new QGraphicsSvgItem();
+			m_stickyItem->setAcceptHoverEvents(false);
+			m_stickyItem->setAcceptedMouseButtons(Qt::NoButton);
+			m_stickyItem->setSharedRenderer(&StickyRenderer);
+			m_stickyItem->setPos(m_moveLockItem == NULL ? 0 : m_moveLockItem->boundingRect().width() + 1, 0);
+			m_stickyItem->setZValue(-99999);
+			m_stickyItem->setParentItem(this);
+			m_stickyItem->setVisible(true);
+		}
 	}
 	else {
 		if (m_stickyItem) {
@@ -992,12 +986,12 @@ bool ItemBase::alreadySticking(ItemBase * itemBase) {
 	return m_stickyList.value(itemBase->layerKinChief()->id(), NULL) != NULL;
 }
 
-ConnectorItem* ItemBase::newConnectorItem(Connector *connector) 
+ConnectorItem* ItemBase::newConnectorItem(Connector *connector)
 {
 	return newConnectorItem(this, connector);
 }
 
-ConnectorItem* ItemBase::newConnectorItem(ItemBase * layerKin, Connector *connector) 
+ConnectorItem* ItemBase::newConnectorItem(ItemBase * layerKin, Connector *connector)
 {
 	return new ConnectorItem(connector, layerKin);
 }
@@ -1098,10 +1092,10 @@ void ItemBase::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 		return;
 	}
 
-    scene()->clearSelection();
-    setSelected(true);
+	scene()->clearSelection();
+	setSelected(true);
 
-    if (m_itemMenu != NULL) {
+	if (m_itemMenu != NULL) {
 		m_rightClickedConnector = NULL;
 		foreach (QGraphicsItem * item, scene()->items(event->scenePos())) {
 			ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
@@ -1113,7 +1107,7 @@ void ItemBase::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 			}
 		}
 
-     	m_itemMenu->exec(event->screenPos());
+		m_itemMenu->exec(event->screenPos());
 	}
 }
 
@@ -1172,7 +1166,7 @@ void ItemBase::clearModelPart() {
 	m_modelPart = NULL;
 }
 
-void ItemBase::hidePartLabel() 
+void ItemBase::hidePartLabel()
 {
 	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView) infoGraphicsView->hidePartLabel(this);
@@ -1269,14 +1263,14 @@ void ItemBase::ensureUniqueTitle(const QString & title, bool force) {
 QVariant ItemBase::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value)
 {
 	switch (change) {
-		case QGraphicsItem::ItemSelectedChange:
-			if (m_partLabel) {
-				m_partLabel->ownerSelected(value.toBool());
-			}
-			
-			break;
-		default:
-			break;
+	case QGraphicsItem::ItemSelectedChange:
+		if (m_partLabel) {
+			m_partLabel->ownerSelected(value.toBool());
+		}
+
+		break;
+	default:
+		break;
 	}
 
 	return QGraphicsSvgItem::itemChange(change, value);
@@ -1299,7 +1293,8 @@ void ItemBase::rotateItem(double degrees, bool includeRatsnest) {
 }
 
 void ItemBase::flipItem(Qt::Orientations orientation) {
-	int xScale; int yScale;
+	int xScale;
+	int yScale;
 	if(orientation == Qt::Vertical) {
 		xScale = 1;
 		yScale = -1;
@@ -1315,31 +1310,31 @@ void ItemBase::flipItem(Qt::Orientations orientation) {
 }
 
 void ItemBase::transformItem(const QTransform & currTransf, bool includeRatsnest) {
-    //debugInfo("transform item " + TextUtils::svgMatrix(currTransf));
+	//debugInfo("transform item " + TextUtils::svgMatrix(currTransf));
 
-    QTransform trns = getViewGeometry().transform();
-    //debugInfo("\t" + TextUtils::svgMatrix(trns));
+	QTransform trns = getViewGeometry().transform();
+	//debugInfo("\t" + TextUtils::svgMatrix(trns));
 
-    
+
 
 	if (m_hasRubberBandLeg) {
 		prepareGeometryChange();
 	}
 	QRectF rect = this->boundingRectWithoutLegs();
 
-    //debugInfo(QString("\t bounding rect w:%1, h:%2").arg(rect.width()).arg(rect.height()));
+	//debugInfo(QString("\t bounding rect w:%1, h:%2").arg(rect.width()).arg(rect.height()));
 	double x = rect.width() / 2.0;
 	double y = rect.height() / 2.0;
 	QTransform transf = QTransform().translate(-x, -y) * currTransf * QTransform().translate(x, y);
 	getViewGeometry().setTransform(getViewGeometry().transform()*transf);
 	this->setTransform(getViewGeometry().transform());
 	if (!m_hasRubberBandLeg) {
-        QList<ConnectorItem *> already;
+		QList<ConnectorItem *> already;
 		updateConnections(includeRatsnest, already);
 	}
 
-    trns = getViewGeometry().transform();
-    //debugInfo("\t" + TextUtils::svgMatrix(trns));
+	trns = getViewGeometry().transform();
+	//debugInfo("\t" + TextUtils::svgMatrix(trns));
 
 	update();
 }
@@ -1374,22 +1369,22 @@ void ItemBase::saveLocAndTransform(QXmlStreamWriter & streamWriter)
 
 FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & layerAttributes)
 {
-    // at this point "this" has not yet been added to the scene, so one cannot get back to the InfoGraphicsView 
+	// at this point "this" has not yet been added to the scene, so one cannot get back to the InfoGraphicsView
 
-    ModelPartShared * modelPartShared = modelPart->modelPartShared();
+	ModelPartShared * modelPartShared = modelPart->modelPartShared();
 
 	if (modelPartShared == NULL) {
 		layerAttributes.error = tr("model part problem");
 		return NULL;
 	}
 
-    //if (modelPartShared->moduleID() == "df9d072afa2b594ac67b60b4153ff57b_29" && viewID == ViewLayer::PCBView) {
-    //    DebugDialog::debug("here i am now");
-    //}
+	//if (modelPartShared->moduleID() == "df9d072afa2b594ac67b60b4153ff57b_29" && viewID == ViewLayer::PCBView) {
+	//    DebugDialog::debug("here i am now");
+	//}
 
 	//DebugDialog::debug(QString("setting z %1 %2")
-		//.arg(this->z())
-		//.arg(ViewLayer::viewLayerNameFromID(viewLayerID))  );
+	//.arg(this->z())
+	//.arg(ViewLayer::viewLayerNameFromID(viewLayerID))  );
 
 
 	//DebugDialog::debug(QString("set up image elapsed (1) %1").arg(t.elapsed()) );
@@ -1402,58 +1397,58 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 	if (filename.isEmpty()) {
 		//QString deleteme = modelPartShared->domDocument()->toString();
 		layerAttributes.error = tr("file for %1 %2 not found").arg(modelPartShared->title()).arg(modelPartShared->moduleID());
-        return NULL;
+		return NULL;
 	}
 
-    LoadInfo loadInfo;
+	LoadInfo loadInfo;
 	switch (layerAttributes.viewID) {
-		case ViewLayer::PCBView:
-			loadInfo.colorElementID = ViewLayer::viewLayerXmlNameFromID(layerAttributes.viewLayerID);
-			switch (layerAttributes.viewLayerID) {
-				case ViewLayer::Copper0:
-					modelPartShared->connectorIDs(layerAttributes.viewID, layerAttributes.viewLayerID, loadInfo.connectorIDs, loadInfo.terminalIDs, loadInfo.legIDs);
-					loadInfo.setColor = ViewLayer::Copper0Color;
-                    loadInfo.findNonConnectors = loadInfo.parsePaths = true;
-					break;
-				case ViewLayer::Copper1:
-					modelPartShared->connectorIDs(layerAttributes.viewID, layerAttributes.viewLayerID, loadInfo.connectorIDs, loadInfo.terminalIDs, loadInfo.legIDs);
-					loadInfo.setColor = ViewLayer::Copper1Color;
-                    loadInfo.findNonConnectors = loadInfo.parsePaths = true;
-					break;
-				case ViewLayer::Silkscreen1:
-					loadInfo.setColor = ViewLayer::Silkscreen1Color;
-					break;
-				case ViewLayer::Silkscreen0:
-					loadInfo.setColor = ViewLayer::Silkscreen0Color;
-					break;
-				default:
-					break;
-			}
-			break;
-		case ViewLayer::BreadboardView:
+	case ViewLayer::PCBView:
+		loadInfo.colorElementID = ViewLayer::viewLayerXmlNameFromID(layerAttributes.viewLayerID);
+		switch (layerAttributes.viewLayerID) {
+		case ViewLayer::Copper0:
 			modelPartShared->connectorIDs(layerAttributes.viewID, layerAttributes.viewLayerID, loadInfo.connectorIDs, loadInfo.terminalIDs, loadInfo.legIDs);
+			loadInfo.setColor = ViewLayer::Copper0Color;
+			loadInfo.findNonConnectors = loadInfo.parsePaths = true;
 			break;
-        default:
-            // don't need connectorIDs() for schematic view since these parts do not have bendable legs or connectors with drill holes
-            break;
+		case ViewLayer::Copper1:
+			modelPartShared->connectorIDs(layerAttributes.viewID, layerAttributes.viewLayerID, loadInfo.connectorIDs, loadInfo.terminalIDs, loadInfo.legIDs);
+			loadInfo.setColor = ViewLayer::Copper1Color;
+			loadInfo.findNonConnectors = loadInfo.parsePaths = true;
+			break;
+		case ViewLayer::Silkscreen1:
+			loadInfo.setColor = ViewLayer::Silkscreen1Color;
+			break;
+		case ViewLayer::Silkscreen0:
+			loadInfo.setColor = ViewLayer::Silkscreen0Color;
+			break;
+		default:
+			break;
+		}
+		break;
+	case ViewLayer::BreadboardView:
+		modelPartShared->connectorIDs(layerAttributes.viewID, layerAttributes.viewLayerID, loadInfo.connectorIDs, loadInfo.terminalIDs, loadInfo.legIDs);
+		break;
+	default:
+		// don't need connectorIDs() for schematic view since these parts do not have bendable legs or connectors with drill holes
+		break;
 	}
 
 	FSvgRenderer * newRenderer = new FSvgRenderer();
 	QDomDocument flipDoc;
 	getFlipDoc(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc, layerAttributes.orientation);
-    QByteArray bytesToLoad;
-    if (layerAttributes.viewLayerID == ViewLayer::Schematic) {
-        bytesToLoad = SvgFileSplitter::hideText(filename);
-    }
-    else if (layerAttributes.viewLayerID == ViewLayer::SchematicText) {
-        bool hasText = false;
-        bytesToLoad = SvgFileSplitter::showText(filename, hasText);
-        if (!hasText) {
-            return NULL;
-        }
-    }
+	QByteArray bytesToLoad;
+	if (layerAttributes.viewLayerID == ViewLayer::Schematic) {
+		bytesToLoad = SvgFileSplitter::hideText(filename);
+	}
+	else if (layerAttributes.viewLayerID == ViewLayer::SchematicText) {
+		bool hasText = false;
+		bytesToLoad = SvgFileSplitter::showText(filename, hasText);
+		if (!hasText) {
+			return NULL;
+		}
+	}
 	else if ((layerAttributes.viewID != ViewLayer::IconView) && modelPartShared->hasMultipleLayers(layerAttributes.viewID)) {
-        QString layerName = ViewLayer::viewLayerXmlNameFromID(layerAttributes.viewLayerID);
+		QString layerName = ViewLayer::viewLayerXmlNameFromID(layerAttributes.viewLayerID);
 		// need to treat create "virtual" svg file for each layer
 		SvgFileSplitter svgFileSplitter;
 		bool result;
@@ -1461,42 +1456,42 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 			result = svgFileSplitter.split(filename, layerName);
 		}
 		else {
-			QString f = flipDoc.toString(); 
+			QString f = flipDoc.toString();
 			result = svgFileSplitter.splitString(f, layerName);
 		}
 		if (result) {
-            bytesToLoad = svgFileSplitter.byteArray();
+			bytesToLoad = svgFileSplitter.byteArray();
 		}
 	}
 	else {
 		// only one layer, just load it directly
 		if (flipDoc.isNull()) {
-            QFile file(filename);
-            file.open(QFile::ReadOnly);
-            bytesToLoad = file.readAll();
+			QFile file(filename);
+			file.open(QFile::ReadOnly);
+			bytesToLoad = file.readAll();
 		}
 		else {
-            bytesToLoad = flipDoc.toByteArray();
+			bytesToLoad = flipDoc.toByteArray();
 		}
-    }
+	}
 
-    QByteArray resultBytes; 
-    if (!bytesToLoad.isEmpty()) {
-        if (makeLocalModifications(bytesToLoad, filename)) {
-            if (layerAttributes.viewLayerID == ViewLayer::Schematic) {
-                bytesToLoad = SvgFileSplitter::hideText2(bytesToLoad);
-            }
-            else if (layerAttributes.viewLayerID == ViewLayer::SchematicText) {
-                bool hasText;
-                bytesToLoad = SvgFileSplitter::showText2(bytesToLoad, hasText);
-            }
-        }
+	QByteArray resultBytes;
+	if (!bytesToLoad.isEmpty()) {
+		if (makeLocalModifications(bytesToLoad, filename)) {
+			if (layerAttributes.viewLayerID == ViewLayer::Schematic) {
+				bytesToLoad = SvgFileSplitter::hideText2(bytesToLoad);
+			}
+			else if (layerAttributes.viewLayerID == ViewLayer::SchematicText) {
+				bool hasText;
+				bytesToLoad = SvgFileSplitter::showText2(bytesToLoad, hasText);
+			}
+		}
 
-        loadInfo.filename = filename;
-        resultBytes = newRenderer->loadSvg(bytesToLoad, loadInfo);
-    }
+		loadInfo.filename = filename;
+		resultBytes = newRenderer->loadSvg(bytesToLoad, loadInfo);
+	}
 
-    layerAttributes.setLoaded(resultBytes);
+	layerAttributes.setLoaded(resultBytes);
 
 #ifndef QT_NO_DEBUG
 //	DebugDialog::debug(QString("set up image elapsed (2.3) %1").arg(t.elapsed()) );
@@ -1511,9 +1506,9 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 	if (newRenderer) {
 		layerAttributes.setFilename(newRenderer->filename());
-        if (layerAttributes.createShape) {
-            createShape(layerAttributes);
-        }
+		if (layerAttributes.createShape) {
+			createShape(layerAttributes);
+		}
 	}
 
 	return newRenderer;
@@ -1535,7 +1530,7 @@ QString ItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 	Q_UNUSED(svgHash);
 	Q_UNUSED(blackOnly);
 	Q_UNUSED(dpi);
-    factor = 1;
+	factor = 1;
 	return "";
 }
 
@@ -1567,7 +1562,7 @@ void ItemBase::getNormalColor(ConnectorItem *, QBrush &brush, QPen &pen, double 
 void ItemBase::getUnconnectedColor(ConnectorItem *, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
 	brush = UnconnectedBrush;
 	pen = UnconnectedPen;
-    opacity = 0.3;
+	opacity = 0.3;
 	negativePenWidth = 0;
 	negativeOffsetRect = true;
 }
@@ -1609,7 +1604,7 @@ bool ItemBase::connectionIsAllowed(ConnectorItem * other) {
 QString ItemBase::getProperty(const QString & key) {
 	if (m_modelPart == NULL) return "";
 
-    QString result = m_modelPart->localProp(key).toString();
+	QString result = m_modelPart->localProp(key).toString();
 	if (!result.isEmpty()) return result;
 
 	return m_modelPart->properties().value(key, "");
@@ -1660,7 +1655,7 @@ bool ItemBase::hasCustomSVG() {
 void ItemBase::setProp(const QString & prop, const QString & value) {
 	if (!m_modelPart) return;
 
-    //DebugDialog::debug(QString("setting prop %1 %2").arg(prop).arg(value));
+	//DebugDialog::debug(QString("setting prop %1 %2").arg(prop).arg(value));
 	m_modelPart->setLocalProp(prop, value);
 }
 
@@ -1679,10 +1674,10 @@ bool ItemBase::isObsolete() {
 
 bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
-    Q_UNUSED(hide);                 // assume this is set by the caller (HtmlInfoView)
+	Q_UNUSED(hide);                 // assume this is set by the caller (HtmlInfoView)
 	returnWidget = NULL;
 	returnProp = ItemBase::translatePropertyName(prop);
-	returnValue = value;	
+	returnValue = value;
 
 	if (prop.compare("family", Qt::CaseInsensitive) == 0) {
 		return true;
@@ -1691,17 +1686,17 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 		return true;
 	}
 #ifndef QT_NO_DEBUG
-    if (prop.compare("svg", Qt::CaseInsensitive) == 0 || prop.compare("fzp" , Qt::CaseInsensitive) == 0) {
-        QFileInfo fileInfo(value);
-        if (fileInfo.exists()) {
-            ClickableLabel * label = new ClickableLabel(fileInfo.fileName(), parent);
-            label->setProperty("path", value);
-            label->setToolTip(value);
-            connect(label, SIGNAL(clicked()), this, SLOT(showInFolder()));
-            returnWidget = label;
-        }
-        return true;
-    }
+	if (prop.compare("svg", Qt::CaseInsensitive) == 0 || prop.compare("fzp", Qt::CaseInsensitive) == 0) {
+		QFileInfo fileInfo(value);
+		if (fileInfo.exists()) {
+			ClickableLabel * label = new ClickableLabel(fileInfo.fileName(), parent);
+			label->setProperty("path", value);
+			label->setToolTip(value);
+			connect(label, SIGNAL(clicked()), this, SLOT(showInFolder()));
+			returnWidget = label;
+		}
+		return true;
+	}
 #endif
 
 	QString tempValue = value;
@@ -1713,27 +1708,27 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 		comboBox->addItems(values);
 		comboBox->setCurrentIndex(comboBox->findText(tempValue));
 		comboBox->setEnabled(swappingEnabled);
-        comboBox->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+		comboBox->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
 		connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(swapEntry(const QString &)));
 
 		returnWidget = comboBox;
 		m_propsMap.insert(prop, tempValue);
 		return true;
 	}
-		
+
 	return true;
 }
 
 void ItemBase::swapEntry(const QString & text) {
-    FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
-    if (comboBox == NULL) return;
+	FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
+	if (comboBox == NULL) return;
 
-    m_propsMap.insert(comboBox->prop(), text);
+	m_propsMap.insert(comboBox->prop(), text);
 
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-    if (infoGraphicsView != NULL) {
-        infoGraphicsView->swap(comboBox->family(), comboBox->prop(), m_propsMap, this);
-    }
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infoGraphicsView != NULL) {
+		infoGraphicsView->swap(comboBox->family(), comboBox->prop(), m_propsMap, this);
+	}
 }
 
 void ItemBase::setReferenceModel(ReferenceModel * rm) {
@@ -1768,10 +1763,10 @@ QStringList ItemBase::collectValues(const QString & family, const QString & prop
 	}
 
 	CachedValues.insert(family + prop, values);
-    //debugInfo("cached " + prop);
-    //foreach(QString v, values) {
-    //    DebugDialog::debug("\t" + v);
-    //}
+	//debugInfo("cached " + prop);
+	//foreach(QString v, values) {
+	//    DebugDialog::debug("\t" + v);
+	//}
 	return values;
 }
 
@@ -1829,44 +1824,44 @@ QRectF ItemBase::partLabelSceneBoundingRect() {
 
 bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, QDomDocument & flipDoc, Qt::Orientations orientation)
 {
-    if (!modelPart->flippedSMD()) {
-        // add copper1 layer to THT if it is missing
-        fixCopper1(modelPart, filename, viewLayerID, viewLayerPlacement, flipDoc);
-    }
+	if (!modelPart->flippedSMD()) {
+		// add copper1 layer to THT if it is missing
+		fixCopper1(modelPart, filename, viewLayerID, viewLayerPlacement, flipDoc);
+	}
 
 	if (viewLayerPlacement == ViewLayer::NewBottom) {
-        if (modelPart->flippedSMD()) {
-		    if (viewLayerID == ViewLayer::Copper0) {
-			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI, orientation);
-			    return true;
-		    }
-		    else if (viewLayerID == ViewLayer::Silkscreen0) {
-			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI, orientation);
-			    return true;
-		    }
-            return false;
-        }
-       
-        if (modelPart->itemType() == ModelPart::Part) {
-		    if (viewLayerID == ViewLayer::Copper0) {
-                SvgFlattener::replaceElementID(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), "");
-			    //QString t1 = flipDoc.toString();
-                SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI, orientation);
-			    //QString t2 = flipDoc.toString();
-			    return true;
-		    }
-		    if (viewLayerID == ViewLayer::Copper1) {
-			    SvgFlattener::replaceElementID(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), "");
-			    //QString t1 = flipDoc.toString();
-			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), GraphicsUtils::SVGDPI, orientation);
-			    //QString t2 = flipDoc.toString();
-			    return true;
-		    }
-		    else if (viewLayerID == ViewLayer::Silkscreen0) {
-			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI, orientation);
-			    return true;
-		    }
-        }
+		if (modelPart->flippedSMD()) {
+			if (viewLayerID == ViewLayer::Copper0) {
+				SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI, orientation);
+				return true;
+			}
+			else if (viewLayerID == ViewLayer::Silkscreen0) {
+				SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI, orientation);
+				return true;
+			}
+			return false;
+		}
+
+		if (modelPart->itemType() == ModelPart::Part) {
+			if (viewLayerID == ViewLayer::Copper0) {
+				SvgFlattener::replaceElementID(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), "");
+				//QString t1 = flipDoc.toString();
+				SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI, orientation);
+				//QString t2 = flipDoc.toString();
+				return true;
+			}
+			if (viewLayerID == ViewLayer::Copper1) {
+				SvgFlattener::replaceElementID(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), "");
+				//QString t1 = flipDoc.toString();
+				SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), GraphicsUtils::SVGDPI, orientation);
+				//QString t2 = flipDoc.toString();
+				return true;
+			}
+			else if (viewLayerID == ViewLayer::Silkscreen0) {
+				SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI, orientation);
+				return true;
+			}
+		}
 	}
 
 	return false;
@@ -1881,7 +1876,7 @@ bool ItemBase::fixCopper1(ModelPart * modelPart, const QString & filename, ViewL
 	return TextUtils::addCopper1(filename, doc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1));
 }
 
-void ItemBase::calcRotation(QTransform & rotation, QPointF center, ViewGeometry & vg2) 
+void ItemBase::calcRotation(QTransform & rotation, QPointF center, ViewGeometry & vg2)
 {
 	vg2.setLoc(GraphicsUtils::calcRotation(rotation, center, pos(), boundingRectWithoutLegs().center()));
 }
@@ -1890,7 +1885,7 @@ void ItemBase::updateConnectors()
 {
 	if (!isEverVisible()) return;
 
-    QList<ConnectorItem *> visited;
+	QList<ConnectorItem *> visited;
 	foreach(ConnectorItem * connectorItem, cachedConnectorItems()) {
 		connectorItem->restoreColor(visited);
 	}
@@ -1907,26 +1902,26 @@ bool ItemBase::moveLock() {
 	return m_moveLock;
 }
 
-void ItemBase::setMoveLock(bool moveLock) 
+void ItemBase::setMoveLock(bool moveLock)
 {
 	m_moveLock = moveLock;
 	if (moveLock) {
-        if (m_moveLockItem == NULL) {
-		    if (!MoveLockRenderer.isValid()) {
-			    QString fn(":resources/images/part_lock.svg");
-			    bool success = MoveLockRenderer.load(fn);
-			    DebugDialog::debug(QString("movelock load success %1").arg(success));
-		    }
+		if (m_moveLockItem == NULL) {
+			if (!MoveLockRenderer.isValid()) {
+				QString fn(":resources/images/part_lock.svg");
+				bool success = MoveLockRenderer.load(fn);
+				DebugDialog::debug(QString("movelock load success %1").arg(success));
+			}
 
-		    m_moveLockItem = new QGraphicsSvgItem();
-		    m_moveLockItem->setAcceptHoverEvents(false);
-		    m_moveLockItem->setAcceptedMouseButtons(Qt::NoButton);
-		    m_moveLockItem->setSharedRenderer(&MoveLockRenderer);
-		    m_moveLockItem->setPos(0,0);
-		    m_moveLockItem->setZValue(-99999);
-		    m_moveLockItem->setParentItem(this);
-		    m_moveLockItem->setVisible(true);
-        }
+			m_moveLockItem = new QGraphicsSvgItem();
+			m_moveLockItem->setAcceptHoverEvents(false);
+			m_moveLockItem->setAcceptedMouseButtons(Qt::NoButton);
+			m_moveLockItem->setSharedRenderer(&MoveLockRenderer);
+			m_moveLockItem->setPos(0,0);
+			m_moveLockItem->setZValue(-99999);
+			m_moveLockItem->setParentItem(this);
+			m_moveLockItem->setVisible(true);
+		}
 
 	}
 	else {
@@ -1936,9 +1931,9 @@ void ItemBase::setMoveLock(bool moveLock)
 		}
 	}
 
-    if (m_stickyItem) {
+	if (m_stickyItem) {
 		m_stickyItem->setPos(m_moveLockItem == NULL ? 0 : m_moveLockItem->boundingRect().width() + 1, 0);
-    }
+	}
 
 	update();
 }
@@ -1947,7 +1942,7 @@ void ItemBase::debugInfo(const QString & msg) const
 {
 
 #ifndef QT_NO_DEBUG
-    debugInfo2(msg);
+	debugInfo2(msg);
 #else
 	Q_UNUSED(msg);
 #endif
@@ -1956,19 +1951,19 @@ void ItemBase::debugInfo(const QString & msg) const
 void ItemBase::debugInfo2(const QString & msg) const
 {
 	DebugDialog::debug(QString("%1 ti:'%2' id:%3 it:'%4' vid:%9 vlid:%5 spec:%6 x:%11 y:%12 z:%10 flg:%7 gi:%8")
-		.arg(msg)
-        .arg(this->constTitle())
-		.arg(this->id())
-		.arg(this->instanceTitle())
-		.arg(this->viewLayerID())
-		.arg(this->viewLayerPlacement())
-		.arg(this->wireFlags())
-		.arg((long) dynamic_cast<const QGraphicsItem *const>(this), 0, 16)
-		.arg(m_viewID)
-        .arg(this->zValue())
-        .arg(this->pos().x())
-        .arg(this->pos().y())
-	);
+	                   .arg(msg)
+	                   .arg(this->constTitle())
+	                   .arg(this->id())
+	                   .arg(this->instanceTitle())
+	                   .arg(this->viewLayerID())
+	                   .arg(this->viewLayerPlacement())
+	                   .arg(this->wireFlags())
+	                   .arg((long) dynamic_cast<const QGraphicsItem *const>(this), 0, 16)
+	                   .arg(m_viewID)
+	                   .arg(this->zValue())
+	                   .arg(this->pos().x())
+	                   .arg(this->pos().y())
+	                  );
 
 	/*
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
@@ -1980,10 +1975,10 @@ void ItemBase::debugInfo2(const QString & msg) const
 void ItemBase::addedToScene(bool temporary) {
 	if (this->scene() && instanceTitle().isEmpty() && !temporary) {
 		setTooltip();
-        if (isBaseSticky() && isLocalSticky()) {
-            // ensure icon is visible
-            setLocalSticky(true);
-        }
+		if (isBaseSticky() && isLocalSticky()) {
+			// ensure icon is visible
+			setLocalSticky(true);
+		}
 	}
 }
 
@@ -2008,7 +2003,7 @@ void ItemBase::collectPropsMap(QString & family, QMap<QString, QString> & propsM
 	}
 }
 
-void ItemBase::setDropOffset(QPointF) 
+void ItemBase::setDropOffset(QPointF)
 {
 }
 
@@ -2022,7 +2017,7 @@ bool ItemBase::sceneEvent(QEvent *event)
 	return QGraphicsSvgItem::sceneEvent(event);
 }
 
-const QList<ConnectorItem *> & ItemBase::cachedConnectorItems() 
+const QList<ConnectorItem *> & ItemBase::cachedConnectorItems()
 {
 	if (m_cachedConnectorItems.isEmpty()) {
 		foreach (QGraphicsItem * childItem, childItems()) {
@@ -2034,12 +2029,12 @@ const QList<ConnectorItem *> & ItemBase::cachedConnectorItems()
 	return m_cachedConnectorItems;
 }
 
-const QList<ConnectorItem *> & ItemBase::cachedConnectorItemsConst() const 
+const QList<ConnectorItem *> & ItemBase::cachedConnectorItemsConst() const
 {
 	return m_cachedConnectorItems;
 }
 
-void ItemBase::clearConnectorItemCache() 
+void ItemBase::clearConnectorItemCache()
 {
 	m_cachedConnectorItems.clear();
 }
@@ -2064,7 +2059,7 @@ QRectF ItemBase::boundingRectWithoutLegs() const
 }
 
 QRectF ItemBase::boundingRect() const
-{    
+{
 	FSvgRenderer * frenderer = fsvgRenderer();
 	if (frenderer == NULL) {
 		return QGraphicsSvgItem::boundingRect();
@@ -2076,7 +2071,7 @@ QRectF ItemBase::boundingRect() const
 }
 
 QPainterPath ItemBase::hoverShape() const
-{	
+{
 	return shape();
 }
 
@@ -2097,30 +2092,30 @@ QString ItemBase::family() {
 }
 
 QPixmap * ItemBase::getPixmap(QSize size) {
-    return FSvgRenderer::getPixmap(renderer(), size);
+	return FSvgRenderer::getPixmap(renderer(), size);
 }
 
 FSvgRenderer * ItemBase::fsvgRenderer() const {
-    if (m_fsvgRenderer) return m_fsvgRenderer;
+	if (m_fsvgRenderer) return m_fsvgRenderer;
 
-    FSvgRenderer * f = qobject_cast<FSvgRenderer *>(renderer());
-    if (f == NULL) {
-        DebugDialog::debug("shouldn't happen: missing fsvgRenderer");
-    }
-    return f;
+	FSvgRenderer * f = qobject_cast<FSvgRenderer *>(renderer());
+	if (f == NULL) {
+		DebugDialog::debug("shouldn't happen: missing fsvgRenderer");
+	}
+	return f;
 }
 
 void ItemBase::setSharedRendererEx(FSvgRenderer * newRenderer) {
 	if (newRenderer != m_fsvgRenderer) {
 		setSharedRenderer(newRenderer);  // original renderer is deleted if it is not shared
-        if (m_fsvgRenderer) delete m_fsvgRenderer;
-        m_fsvgRenderer = newRenderer;
+		if (m_fsvgRenderer) delete m_fsvgRenderer;
+		m_fsvgRenderer = newRenderer;
 	}
 	else {
 		update();
 	}
 	m_size = newRenderer->defaultSizeF();
-    //debugInfo(QString("set size %1, %2").arg(m_size.width()).arg(m_size.height()));
+	//debugInfo(QString("set size %1, %2").arg(m_size.width()).arg(m_size.height()));
 }
 
 bool ItemBase::reloadRenderer(const QString & svg, bool fastLoad) {
@@ -2129,7 +2124,7 @@ bool ItemBase::reloadRenderer(const QString & svg, bool fastLoad) {
 		prepareGeometryChange();
 		bool result = fastLoad ? fsvgRenderer()->fastLoad(svg.toUtf8()) : fsvgRenderer()->loadSvgString(svg.toUtf8());
 		if (result) {
-            update();
+			update();
 		}
 
 		return result;
@@ -2139,59 +2134,59 @@ bool ItemBase::reloadRenderer(const QString & svg, bool fastLoad) {
 }
 
 bool ItemBase::resetRenderer(const QString & svg) {
-    // use resetRenderer instead of reloadRender because if the svg size changes, with reloadRenderer the new image seems to be scaled to the old bounds
-    // what I don't understand is why the old renderer causes a crash if it is deleted here
-    
-    QString nothing;
-    return resetRenderer(svg, nothing);
+	// use resetRenderer instead of reloadRender because if the svg size changes, with reloadRenderer the new image seems to be scaled to the old bounds
+	// what I don't understand is why the old renderer causes a crash if it is deleted here
+
+	QString nothing;
+	return resetRenderer(svg, nothing);
 }
 
 bool ItemBase::resetRenderer(const QString & svg, QString & newSvg) {
-    // use resetRenderer instead of reloadRender because if the svg size changes, with reloadRenderer the new image seems to be scaled to the old bounds
-    // what I don't understand is why the old renderer causes a crash if it is deleted here
-    
-    FSvgRenderer * newRenderer = new FSvgRenderer();
-    bool result = newRenderer->loadSvgString(svg, newSvg);
-    if (result) {
-        //DebugDialog::debug("reloaded");
-        //DebugDialog::debug(newSvg);
-        setSharedRendererEx(newRenderer);
-    }
-    else {
-        delete newRenderer;
-    }
-    return result;
+	// use resetRenderer instead of reloadRender because if the svg size changes, with reloadRenderer the new image seems to be scaled to the old bounds
+	// what I don't understand is why the old renderer causes a crash if it is deleted here
+
+	FSvgRenderer * newRenderer = new FSvgRenderer();
+	bool result = newRenderer->loadSvgString(svg, newSvg);
+	if (result) {
+		//DebugDialog::debug("reloaded");
+		//DebugDialog::debug(newSvg);
+		setSharedRendererEx(newRenderer);
+	}
+	else {
+		delete newRenderer;
+	}
+	return result;
 }
 
-void ItemBase::getPixmaps(QPixmap * & pixmap1, QPixmap * & pixmap2, QPixmap * & pixmap3, bool swappingEnabled, QSize size) 
+void ItemBase::getPixmaps(QPixmap * & pixmap1, QPixmap * & pixmap2, QPixmap * & pixmap3, bool swappingEnabled, QSize size)
 {
-    pixmap1 = getPixmap(ViewLayer::BreadboardView, swappingEnabled, size);
-    pixmap2 = getPixmap(ViewLayer::SchematicView, swappingEnabled, size);
-    pixmap3 = getPixmap(ViewLayer::PCBView, swappingEnabled, size);
+	pixmap1 = getPixmap(ViewLayer::BreadboardView, swappingEnabled, size);
+	pixmap2 = getPixmap(ViewLayer::SchematicView, swappingEnabled, size);
+	pixmap3 = getPixmap(ViewLayer::PCBView, swappingEnabled, size);
 }
 
 QPixmap * ItemBase::getPixmap(ViewLayer::ViewID vid, bool swappingEnabled, QSize size)
 {
-    ItemBase * vItemBase = NULL;
+	ItemBase * vItemBase = NULL;
 
-    if (viewID() == vid) {
-        if (!isEverVisible()) return NULL;
-    }
-    else {
-        vItemBase = modelPart()->viewItem(vid);
-        if (vItemBase && !vItemBase->isEverVisible()) return NULL;
-    }
+	if (viewID() == vid) {
+		if (!isEverVisible()) return NULL;
+	}
+	else {
+		vItemBase = modelPart()->viewItem(vid);
+		if (vItemBase && !vItemBase->isEverVisible()) return NULL;
+	}
 
-    vid = useViewIDForPixmap(vid, swappingEnabled);
-    if (vid == ViewLayer::UnknownView) return NULL;
+	vid = useViewIDForPixmap(vid, swappingEnabled);
+	if (vid == ViewLayer::UnknownView) return NULL;
 
-    if (viewID() == vid) {
-        return getPixmap(size);
-    }
+	if (viewID() == vid) {
+		return getPixmap(size);
+	}
 
-    if (vItemBase) {
-        return vItemBase->getPixmap(size);
-    }
+	if (vItemBase) {
+		return vItemBase->getPixmap(size);
+	}
 
 
 	if (!modelPart()->hasViewFor(vid)) return NULL;
@@ -2224,18 +2219,18 @@ QPixmap * ItemBase::getPixmap(ViewLayer::ViewID vid, bool swappingEnabled, QSize
 	return pixmap;
 }
 
-ViewLayer::ViewID ItemBase::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID ItemBase::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
-    if (vid == ViewLayer::BreadboardView) {
-        return ViewLayer::IconView;
-    }
+	if (vid == ViewLayer::BreadboardView) {
+		return ViewLayer::IconView;
+	}
 
-    return vid;
+	return vid;
 }
 
 bool ItemBase::makeLocalModifications(QByteArray &, const QString & ) {
-    // a bottleneck for modifying part svg xml at setupImage time
-    return false;
+	// a bottleneck for modifying part svg xml at setupImage time
+	return false;
 }
 
 void ItemBase::showConnectors(const QStringList & connectorIDs) {
@@ -2260,68 +2255,68 @@ void ItemBase::setInRotation(bool val) {
 
 void ItemBase::addSubpart(ItemBase * sub)
 {
-    this->debugInfo("super");
-    sub->debugInfo("\t");
-    m_subparts.append(sub);
-    sub->setSuperpart(this);
-    foreach (ConnectorItem * connectorItem, sub->cachedConnectorItems()) {
-        Bus * subbus = connectorItem->bus();
-        Connector * subconnector = NULL;
-        if (subbus == NULL) {
-            subconnector = connectorItem->connector();
-            if (subconnector) {
-                subbus = new Bus(NULL, NULL);
-                subconnector->setBus(subbus);
-            }
-        }
+	this->debugInfo("super");
+	sub->debugInfo("\t");
+	m_subparts.append(sub);
+	sub->setSuperpart(this);
+	foreach (ConnectorItem * connectorItem, sub->cachedConnectorItems()) {
+		Bus * subbus = connectorItem->bus();
+		Connector * subconnector = NULL;
+		if (subbus == NULL) {
+			subconnector = connectorItem->connector();
+			if (subconnector) {
+				subbus = new Bus(NULL, NULL);
+				subconnector->setBus(subbus);
+			}
+		}
 
-        Connector * connector = modelPart()->getConnector(connectorItem->connectorSharedID());
-        if (connector) {
-            if (subbus) subbus->addSubConnector(connector);
-            if (subconnector) {
-                Bus * bus = connector->bus();
-                if (bus == NULL) {
-                    bus = new Bus(NULL, NULL);
-                    connector->setBus(bus);
-                }
+		Connector * connector = modelPart()->getConnector(connectorItem->connectorSharedID());
+		if (connector) {
+			if (subbus) subbus->addSubConnector(connector);
+			if (subconnector) {
+				Bus * bus = connector->bus();
+				if (bus == NULL) {
+					bus = new Bus(NULL, NULL);
+					connector->setBus(bus);
+				}
 
-                bus->addSubConnector(subconnector);
-            }
-        }
-    }
+				bus->addSubConnector(subconnector);
+			}
+		}
+	}
 }
 
 void ItemBase::setSuperpart(ItemBase * super) {
-    m_superpart = super;
+	m_superpart = super;
 }
 
 ItemBase * ItemBase::superpart() {
-    return m_superpart;
+	return m_superpart;
 }
 
 ItemBase * ItemBase::findSubpart(const QString & connectorID, ViewLayer::ViewLayerPlacement spec) {
-    foreach (ItemBase * itemBase, m_subparts) {
-        ConnectorItem * connectorItem = itemBase->findConnectorItemWithSharedID(connectorID, spec);
-        if (connectorItem) return itemBase;
-    }
+	foreach (ItemBase * itemBase, m_subparts) {
+		ConnectorItem * connectorItem = itemBase->findConnectorItemWithSharedID(connectorID, spec);
+		if (connectorItem) return itemBase;
+	}
 
-    return NULL;
+	return NULL;
 }
 
 const QList< QPointer<ItemBase> > & ItemBase::subparts()
 {
-    return m_subparts;
+	return m_subparts;
 }
 
-QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys) 
+QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys)
 {
-    m_propsMap.clear();
+	m_propsMap.clear();
 
-    // TODO: someday get local props
+	// TODO: someday get local props
 	QHash<QString, QString> props = modelPart->properties();
 	QString family = props.value("family", "").toLower();
 
-    // ensure family is first;
+	// ensure family is first;
 	keys = props.keys();
 	keys.removeOne("family");
 	keys.push_front("family");
@@ -2329,13 +2324,13 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
 	// ensure part number  is last
 	QString partNumber = props.value(ModelPartShared::PartNumberPropertyName, "").toLower();
 	keys.removeOne(ModelPartShared::PartNumberPropertyName);
-		
+
 	if (wantDebug) {
 		props.insert("id", QString("%1 %2 %3")
-			.arg(QString::number(id()))
-			.arg(modelPart->moduleID())
-			.arg(ViewLayer::viewLayerNameFromID(viewLayerID()))
-		);
+		             .arg(QString::number(id()))
+		             .arg(modelPart->moduleID())
+		             .arg(ViewLayer::viewLayerNameFromID(viewLayerID()))
+		            );
 		keys.insert(1, "id");
 
 		int insertAt = 2;
@@ -2347,10 +2342,10 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
 		props.insert("class", this->metaObject()->className());
 		keys.insert(insertAt++, "class");
 
-        if (modelPart->modelPartShared()) {
+		if (modelPart->modelPartShared()) {
 			props.insert("fzp",  modelPart->path());
 			keys.insert(insertAt++, "fzp");
-		}	
+		}
 	}
 
 	// ensure part number is last
@@ -2358,112 +2353,112 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
 		keys.append(ModelPartShared::PartNumberPropertyName);
 	}
 
-    return props;
+	return props;
 }
 
 void ItemBase::setSquashShape(bool squashShape) {
-    m_squashShape = squashShape;
+	m_squashShape = squashShape;
 }
 
 void ItemBase::createShape(LayerAttributes & layerAttributes) {
-    switch (layerAttributes.viewID) {
-        case ViewLayer::SchematicView:
-        case ViewLayer::PCBView:
-            break;
-        default:
-            return;
-    }
+	switch (layerAttributes.viewID) {
+	case ViewLayer::SchematicView:
+	case ViewLayer::PCBView:
+		break;
+	default:
+		return;
+	}
 
-    if (!isEverVisible()) return;
+	if (!isEverVisible()) return;
 
 	QString errorStr;
 	int errorLine;
 	int errorColumn;
-    QDomDocument doc;
+	QDomDocument doc;
 	if (!doc.setContent(layerAttributes.loaded(), &errorStr, &errorLine, &errorColumn)) {
 		return;
 	}
 
-    QDomElement root = doc.documentElement();
+	QDomElement root = doc.documentElement();
 
-    QRectF viewBox;
-    double w, h;
-    TextUtils::ensureViewBox(doc, 1, viewBox, true, w, h, true);
-    double svgDPI = viewBox.width() / w;
-    int selectionExtra = layerAttributes.viewID == ViewLayer::SchematicView ? 20 : 10;
-    SvgFileSplitter::forceStrokeWidth(root, svgDPI * selectionExtra / GraphicsUtils::SVGDPI, "#000000", true, false);
+	QRectF viewBox;
+	double w, h;
+	TextUtils::ensureViewBox(doc, 1, viewBox, true, w, h, true);
+	double svgDPI = viewBox.width() / w;
+	int selectionExtra = layerAttributes.viewID == ViewLayer::SchematicView ? 20 : 10;
+	SvgFileSplitter::forceStrokeWidth(root, svgDPI * selectionExtra / GraphicsUtils::SVGDPI, "#000000", true, false);
 
-    double imageDPI = GraphicsUtils::SVGDPI;
-    QRectF sourceRes(0, 0, w * imageDPI, h * imageDPI);
-    QSize imgSize(qCeil(sourceRes.width()), qCeil(sourceRes.height()));
-    QImage image(imgSize, QImage::Format_Mono);
-    image.fill(0xffffffff);
-    renderOne(&doc, &image, sourceRes);
-    QBitmap bitmap = QBitmap::fromImage(image);
-    QRegion region(bitmap);
-    m_selectionShape.addRegion(region);
+	double imageDPI = GraphicsUtils::SVGDPI;
+	QRectF sourceRes(0, 0, w * imageDPI, h * imageDPI);
+	QSize imgSize(qCeil(sourceRes.width()), qCeil(sourceRes.height()));
+	QImage image(imgSize, QImage::Format_Mono);
+	image.fill(0xffffffff);
+	renderOne(&doc, &image, sourceRes);
+	QBitmap bitmap = QBitmap::fromImage(image);
+	QRegion region(bitmap);
+	m_selectionShape.addRegion(region);
 
 #ifndef QT_NODEBUG
-    //QFileInfo info(layerAttributes.filename());
-    //bitmap.save(FolderUtils::getUserDataStorePath("") + "/bitmap." + info.completeBaseName() + "." + QString::number(layerAttributes.viewLayerID) + ".png");
-    //image.save(FolderUtils::getUserDataStorePath("") + "/image." + info.completeBaseName() + "." + QString::number(layerAttributes.viewLayerID) + ".png");
+	//QFileInfo info(layerAttributes.filename());
+	//bitmap.save(FolderUtils::getUserDataStorePath("") + "/bitmap." + info.completeBaseName() + "." + QString::number(layerAttributes.viewLayerID) + ".png");
+	//image.save(FolderUtils::getUserDataStorePath("") + "/image." + info.completeBaseName() + "." + QString::number(layerAttributes.viewLayerID) + ".png");
 #endif
 }
 
 const QPainterPath & ItemBase::selectionShape() {
-    return m_selectionShape;
+	return m_selectionShape;
 }
 
 void ItemBase::setTransform2(const QTransform & transform)
 {
-    setTransform(transform);
+	setTransform(transform);
 }
 
 void ItemBase::renderOne(QDomDocument * masterDoc, QImage * image, const QRectF & renderRect) {
-    QByteArray byteArray = masterDoc->toByteArray();
+	QByteArray byteArray = masterDoc->toByteArray();
 	QSvgRenderer renderer(byteArray);
 	QPainter painter;
 	painter.begin(image);
 	painter.setRenderHint(QPainter::Antialiasing, false);
-    painter.setRenderHint(QPainter::SmoothPixmapTransform, false);
+	painter.setRenderHint(QPainter::SmoothPixmapTransform, false);
 	renderer.render(&painter, renderRect);
 	painter.end();
 }
 
 
 void ItemBase::initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, bool doConnectors, bool doCreateShape) {
-    layerAttributes.viewID = viewID;
-    layerAttributes.viewLayerID = viewLayerID;
-    layerAttributes.viewLayerPlacement = viewLayerPlacement;
-    layerAttributes.doConnectors = doConnectors;
-    layerAttributes.createShape = doCreateShape;
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	layerAttributes.viewID = viewID;
+	layerAttributes.viewLayerID = viewLayerID;
+	layerAttributes.viewLayerPlacement = viewLayerPlacement;
+	layerAttributes.doConnectors = doConnectors;
+	layerAttributes.createShape = doCreateShape;
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
 		layerAttributes.orientation = infoGraphicsView->smdOrientation();
 	}
 }
-	
+
 void ItemBase::showInFolder() {
-    QString path = sender()->property("path").toString();
-    if (!path.isEmpty()) {
-        FolderUtils::showInFolder(path);
-        QClipboard *clipboard = QApplication::clipboard();
-	    if (clipboard != NULL) {
-		    clipboard->setText(path);
-	    }
-    }
+	QString path = sender()->property("path").toString();
+	if (!path.isEmpty()) {
+		FolderUtils::showInFolder(path);
+		QClipboard *clipboard = QApplication::clipboard();
+		if (clipboard != NULL) {
+			clipboard->setText(path);
+		}
+	}
 }
 
 QString ItemBase::getInspectorTitle() {
-    QString t = instanceTitle();
-    if (!t.isEmpty()) return t;
+	QString t = instanceTitle();
+	if (!t.isEmpty()) return t;
 
-    return title();
+	return title();
 }
 
 void ItemBase::setInspectorTitle(const QString & oldText, const QString & newText) {
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-    if (infoGraphicsView == NULL) return;
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infoGraphicsView == NULL) return;
 
 	DebugDialog::debug(QString("set instance title to %1").arg(newText));
 	infoGraphicsView->setInstanceTitle(id(), oldText, newText, true, false);

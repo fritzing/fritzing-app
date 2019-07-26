@@ -1,7 +1,7 @@
 /*
   Matrix Exercise
   LED-Matrix displaying a different image
-  
+
   This example is part of the Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
@@ -16,7 +16,7 @@ int colPins[8] = {13,8,17,10,5,16,4,14};   // matrix columns connected to the Ar
 
 int image[8][8]={                              // the image shown on the matrix : 1 = LED on, 0 = LED off
 
-{0,0,1,1,0,1,1,0},  
+{0,0,1,1,0,1,1,0},
 {0,1,0,0,1,0,0,1},
 {0,1,0,0,0,0,0,1},
 {0,0,1,0,0,0,1,0},
@@ -25,18 +25,18 @@ int image[8][8]={                              // the image shown on the matrix 
 {0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0}
 
-};                                              
+};
 
 void setup(){
-  for (int i=0; i<8; i++){                       // all pins are declared as outputs 
+  for (int i=0; i<8; i++){                       // all pins are declared as outputs
     pinMode(rowPins[i],OUTPUT);
     pinMode(colPins[i],OUTPUT);
   }
 }
 
 void loop(){
-  for (int y=0; y<8; y++){                       // rowwise 
-    for (int x=0; x<8; x++){                     // check all entries of the array from left to right 
+  for (int y=0; y<8; y++){                       // rowwise
+    for (int x=0; x<8; x++){                     // check all entries of the array from left to right
       if (image[x][y]==1){                       // is the entry 1
         digitalWrite(colPins[x],HIGH);           // switch on column pin
       } else {                                   // else

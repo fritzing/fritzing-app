@@ -11,10 +11,6 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
-# ********************************************************************
-# $Revision: 2846 $:
-# $Author: cohen@irascible.com $:
-# $Date: 2009-04-21 16:23:36 +0200 (Tue, 21 Apr 2009) $
 # ********************************************************************/
 
 TRANSLATIONS += translations/fritzing_de.ts \
@@ -55,6 +51,3 @@ TRANSLATIONS += translations/fritzing_de.ts \
         translations/fritzing_vi.ts \
 	translations/fritzing_zh_cn.ts \
 	translations/fritzing_zh_tw.ts \
-
-
-

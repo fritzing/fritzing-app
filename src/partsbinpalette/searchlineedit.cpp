@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 #include "searchlineedit.h"
@@ -35,7 +29,7 @@ static QPixmap * SearchFieldPixmap;
 
 SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent)
 {
-    SearchFieldPixmap = NULL;
+	SearchFieldPixmap = NULL;
 	setDecoy(true);
 }
 
@@ -52,23 +46,23 @@ void SearchLineEdit::cleanup() {
 }
 
 void SearchLineEdit::mousePressEvent(QMouseEvent * event) {
-    QLineEdit::mousePressEvent(event);
-    emit clicked();
+	QLineEdit::mousePressEvent(event);
+	emit clicked();
 }
 
 void SearchLineEdit::paintEvent(QPaintEvent * event) {
 	QLineEdit::paintEvent(event);
-    if (SearchFieldPixmap == NULL) {
-        SearchFieldPixmap = new QPixmap(":/resources/images/icons/searchField.png");
-    }
-    if (SearchFieldPixmap == NULL) return;
-    if (SearchFieldPixmap->isNull()) return;
+	if (SearchFieldPixmap == NULL) {
+		SearchFieldPixmap = new QPixmap(":/resources/images/icons/searchField.png");
+	}
+	if (SearchFieldPixmap == NULL) return;
+	if (SearchFieldPixmap->isNull()) return;
 
-    QPainter painter(this);
-    QSize sz = size();
-    int x = sz.width() - SearchFieldPixmap->width() - 2;
-    int y = (sz.height() - SearchFieldPixmap->height()) / 2;
-    painter.drawPixmap(x, y, SearchFieldPixmap->width(), SearchFieldPixmap->height(), *SearchFieldPixmap);
+	QPainter painter(this);
+	QSize sz = size();
+	int x = sz.width() - SearchFieldPixmap->width() - 2;
+	int y = (sz.height() - SearchFieldPixmap->height()) / 2;
+	painter.drawPixmap(x, y, SearchFieldPixmap->width(), SearchFieldPixmap->height(), *SearchFieldPixmap);
 
 }
 
@@ -88,8 +82,8 @@ void SearchLineEdit::leaveEvent(QEvent * event) {
 
 void SearchLineEdit::setColors(const QColor & base, const QColor & text) {
 	setStyleSheet(QString("background: rgb(%1,%2,%3); color: rgb(%4,%5,%6);")
-		.arg(base.red()).arg(base.green()).arg(base.blue())
-		.arg(text.red()).arg(text.green()).arg(text.blue()) );
+	              .arg(base.red()).arg(base.green()).arg(base.blue())
+	              .arg(text.red()).arg(text.green()).arg(text.blue()) );
 }
 
 void SearchLineEdit::setDecoy(bool d) {

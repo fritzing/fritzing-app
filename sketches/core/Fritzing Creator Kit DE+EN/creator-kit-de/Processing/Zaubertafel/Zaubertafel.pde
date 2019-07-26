@@ -1,7 +1,7 @@
-import processing.serial.*;         
-import cc.arduino.*;                
+import processing.serial.*;
+import cc.arduino.*;
 
-Arduino meinArduino;                
+Arduino meinArduino;
 
 float theta;
 float theX, theY, oldX, oldY;
@@ -32,7 +32,7 @@ void draw() {
     firstRun=false;
   }
 
-  line(theX, theY, oldX, oldY);  
+  line(theX, theY, oldX, oldY);
 
   oldX=theX;
   oldY=theY;
@@ -42,4 +42,3 @@ void draw() {
     firstRun=true;
   }
 }
-

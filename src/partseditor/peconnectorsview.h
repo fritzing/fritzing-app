@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6499 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-10-02 07:21:40 +0200 (Di, 02. Okt 2012) $
 
 ********************************************************************/
 
@@ -49,41 +43,41 @@ $Date: 2012-10-02 07:21:40 +0200 (Di, 02. Okt 2012) $
 
 class PEConnectorsView : public QFrame
 {
-Q_OBJECT
+	Q_OBJECT
 public:
 	PEConnectorsView(QWidget * parent = 0);
 	~PEConnectorsView();
 
-    void initConnectors(QList<QDomElement> * connectorList);
+	void initConnectors(QList<QDomElement> * connectorList);
 	bool anyModified();
 	void setSMD(bool);
 
 signals:
-    void connectorMetadataChanged(struct ConnectorMetadata *);
-    void removedConnectors(QList<struct ConnectorMetadata *> &);
-    void connectorCountChanged(int);
-    void connectorsTypeChanged(Connector::ConnectorType);
+	void connectorMetadataChanged(struct ConnectorMetadata *);
+	void removedConnectors(QList<struct ConnectorMetadata *> &);
+	void connectorCountChanged(int);
+	void connectorsTypeChanged(Connector::ConnectorType);
 	void smdChanged(const QString &);
 
 protected slots:
-    void nameEntry();
-    void descriptionEntry();
-    void typeEntry();
-    void connectorCountEntry();
-    void removeConnector();
+	void nameEntry();
+	void descriptionEntry();
+	void typeEntry();
+	void connectorCountEntry();
+	void removeConnector();
 	void allTypeEntry();
 	void smdEntry();
 	void uncheckRadios();
 
 protected:
-    void changeConnector();
+	void changeConnector();
 
 protected:
-    QFrame * m_scrollFrame;
+	QFrame * m_scrollFrame;
 	QScrollArea * m_scrollArea;
 	QLineEdit * m_numberEdit;
-    int m_connectorCount;
-    QMutex m_mutex;
+	int m_connectorCount;
+	QMutex m_mutex;
 	QList<QRadioButton *> m_radios;
 	QRadioButton * m_smd;
 	QRadioButton * m_tht;

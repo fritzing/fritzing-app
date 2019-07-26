@@ -1,7 +1,7 @@
 # /*******************************************************************
 #
 # Part of the Fritzing project - http://fritzing.org
-# Copyright (c) 2007-16 Fritzing
+# Copyright (c) 2007-19 Fritzing
 #
 # Fritzing is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,18 +17,10 @@
 # along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #
 # ********************************************************************
-#
-# $Revision: 6960 $:
-# $Author: irascibl@gmail.com $:
-# $Date: 2013-04-10 12:15:14 +0200 (Mi, 10. Apr 2013) $
-#
-#********************************************************************/
 
-# Fritzing requires two Qt-provided plugins in order to run correctly,
-# however the QTPLUGIN syntax only seems to work if Qt is built statically,
-# so QTPLUGIN is included here only for information purposes:
-#
-# QTPLUGIN  += qjpeg qsqlite
+lessThan(QT_MAJOR_VERSION, 5) {
+    error(Fritzing does not build with Qt 4 or earlier)
+}
 
 CONFIG += debug_and_release
 
@@ -84,7 +76,7 @@ macx {
     Debug:RCC_DIR = $${DEBDIR}
     Debug:UI_DIR = $${DEBDIR}
 
-    QMAKE_MAC_SDK = macosx10.11            # uncomment/adapt for your version of OSX
+    #QMAKE_MAC_SDK = macosx10.11            # uncomment/adapt for your version of OSX
     CONFIG += x86_64 # x86 ppc
     QMAKE_INFO_PLIST = FritzingInfo.plist
     #DEFINES += QT_NO_DEBUG                # uncomment this for xcode
@@ -93,6 +85,7 @@ macx {
     LIBS += /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
     LIBS += /System/Library/Frameworks/Carbon.framework/Carbon
     LIBS += /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+    LIBS += -liconv
 }
 unix {
     !macx { # unix is defined on mac
@@ -119,7 +112,10 @@ unix {
     target.path = $$BINDIR
 
     desktop.path = $$DATADIR/applications
-    desktop.files += fritzing.desktop
+    desktop.files += org.fritzing.Fritzing.desktop
+
+    appdata.path = $$DATADIR/metainfo
+    appdata.files += org.fritzing.Fritzing.appdata.xml
 
     mimedb.path = $$DATADIR/mime/packages
     mimedb.files += resources/system_icons/linux/fritzing.xml
@@ -127,8 +123,8 @@ unix {
     manpage.path = $$DATADIR/man/man1
     manpage.files += Fritzing.1
 
-    icon.path = $$DATADIR/icons
-    icon.extra = install -D -m 0644 $$PWD/resources/images/fritzing_icon.png $(INSTALL_ROOT)$$DATADIR/icons/fritzing.png
+    icon.path = $$DATADIR/pixmaps
+    icon.extra = install -D -m 0644 $$PWD/resources/images/fritzing_icon.png $(INSTALL_ROOT)$$DATADIR/pixmaps/fritzing.png
 
     parts.path = $$PKGDATADIR
     parts.files += parts
@@ -147,13 +143,13 @@ unix {
         translations.files += $$system(find $$PWD/translations -name "*.qm" -size +128c)
     } else {
         for(lang, LINGUAS):translations.files += $$system(find $$PWD/translations -name "fritzing_$${lang}.qm" -size +128c)
-        isEmpty(translations.files):error("No translations found for $$L10N")
+        isEmpty(translations.files):error("No translations found for $$LINGUAS")
     }
 
     syntax.path = $$PKGDATADIR/translations/syntax
     syntax.files += translations/syntax/*.xml
 
-    INSTALLS += target desktop mimedb manpage icon parts sketches bins translations syntax help
+    INSTALLS += target desktop appdata mimedb manpage icon parts sketches bins translations syntax help
 }
 
 ICON = resources/system_icons/macosx/fritzing_icon.icns
@@ -164,19 +160,14 @@ macx {
     QMAKE_BUNDLE_DATA += FILE_ICONS
 }
 
-QT += core gui svg xml network sql # opengl
-greaterThan(QT_MAJOR_VERSION, 4) {
-    QT += widgets printsupport concurrent serialport
-} else {
-    include($$QTSERIALPORT_PROJECT_ROOT/src/serialport/qt4support/serialport.prf)
-}
+QT += concurrent core gui network printsupport serialport sql svg widgets xml
 
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
 
 # Fritzing is using libgit2 since version 0.9.3
 packagesExist(libgit2) {
-    message("allways true on win32. leads to build problems")
+    message("always true on win32. leads to build problems")
 
     PKGCONFIG += libgit2
     win32 {
@@ -184,11 +175,10 @@ packagesExist(libgit2) {
         message($$PKGCONFIG)
     }
 } else {
-include(pri/libgit2detect.pri)
+    include(pri/libgit2detect.pri)
 }
 
-
-
+include(pri/boostdetect.pri)
 
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)

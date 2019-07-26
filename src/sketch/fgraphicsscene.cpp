@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 #include "fgraphicsscene.h"
@@ -34,18 +28,18 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 FGraphicsScene::FGraphicsScene( QObject * parent) : QGraphicsScene(parent)
 {
-    m_displayHandles = true;
+	m_displayHandles = true;
 	//setItemIndexMethod(QGraphicsScene::NoIndex);
 }
 
 void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 {
-    // TODO: how do we get a QTransform?
-    QGraphicsItem * item = this->itemAt(helpEvent->scenePos(), QTransform());
-    if (item == NULL) return;
+	// TODO: how do we get a QTransform?
+	QGraphicsItem * item = this->itemAt(helpEvent->scenePos(), QTransform());
+	if (item == NULL) return;
 
-    QString text;
-    QPoint point;
+	QString text;
+	QPoint point;
 	ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
 	if (itemBase == NULL) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
@@ -54,7 +48,7 @@ void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 		}
 
 	}
-	else {		
+	else {
 		itemBase->updateTooltip();
 	}
 
@@ -63,8 +57,8 @@ void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 		point = helpEvent->screenPos();
 	}
 
-    // Show or hide the tooltip
-    QToolTip::showText(point, text);
+	// Show or hide the tooltip
+	QToolTip::showText(point, text);
 }
 
 void FGraphicsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *contextMenuEvent)
@@ -78,21 +72,21 @@ QPointF FGraphicsScene::lastContextMenuPos() {
 }
 
 void FGraphicsScene::setDisplayHandles(bool displayHandles) {
-    m_displayHandles = displayHandles;
+	m_displayHandles = displayHandles;
 }
 
 bool FGraphicsScene::displayHandles() {
-    return m_displayHandles;
+	return m_displayHandles;
 }
 
 QList<ItemBase *> FGraphicsScene::lockedSelectedItems() {
-    QList<ItemBase *> items;
-    foreach (QGraphicsItem * gitem,  this->selectedItems()) {
-        ItemBase *itemBase = dynamic_cast<ItemBase *>(gitem);
-        if (itemBase == NULL) continue;
-        if (itemBase->moveLock()) {
-            items.append(itemBase);
-        }
-    }
-    return items;
+	QList<ItemBase *> items;
+	foreach (QGraphicsItem * gitem,  this->selectedItems()) {
+		ItemBase *itemBase = dynamic_cast<ItemBase *>(gitem);
+		if (itemBase == NULL) continue;
+		if (itemBase->moveLock()) {
+			items.append(itemBase);
+		}
+	}
+	return items;
 }

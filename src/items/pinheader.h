@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6984 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
-
 ********************************************************************/
 
 #ifndef PINHEADER_H
@@ -34,7 +28,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 #include "paletteitem.h"
 
-class PinHeader : public PaletteItem 
+class PinHeader : public PaletteItem
 {
 	Q_OBJECT
 
@@ -76,7 +70,7 @@ public:
 	static QString makeSchematicSvg(const QString & expectedFileName);
 	static QString makeBreadboardSvg(const QString & expectedFileName);
 	static QString makeBreadboardShroudedSvg(int pins);
-    static QString makeBreadboardDoubleSvg(const QString & expectedFileName, int pins);
+	static QString makeBreadboardDoubleSvg(const QString & expectedFileName, int pins);
 
 protected:
 	static const QStringList & forms();

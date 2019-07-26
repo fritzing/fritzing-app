@@ -1,7 +1,7 @@
 /*
   Lichtautomatik
   schaltet die Lichter eines Autos ja nach Helligkeit an und ab
-  
+
   Dieses Beispiel aus dem Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 

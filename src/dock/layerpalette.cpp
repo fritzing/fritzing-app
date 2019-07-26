@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -48,7 +42,7 @@ ViewLayer * ViewLayerCheckBox::viewLayer() {
 
 //////////////////////////////////////
 
-LayerPalette::LayerPalette(QWidget * parent) : QScrollArea(parent) 
+LayerPalette::LayerPalette(QWidget * parent) : QScrollArea(parent)
 {
 
 	m_hideAllLayersAct = m_showAllLayersAct = NULL;
@@ -57,20 +51,20 @@ LayerPalette::LayerPalette(QWidget * parent) : QScrollArea(parent)
 
 	m_mainLayout = new QVBoxLayout();
 	m_mainLayout->setSizeConstraint( QLayout::SetMinAndMaxSize );
-    m_mainLayout -> setObjectName("LayerWindowFrame");
+	m_mainLayout -> setObjectName("LayerWindowFrame");
 	for (int i = 0; i < ViewLayer::ViewLayerCount; i++) {
 		ViewLayerCheckBox * cb = new ViewLayerCheckBox(this);
 		connect(cb, SIGNAL(clicked(bool)), this, SLOT(setLayerVisibility(bool)));
 		m_checkBoxes.append(cb);
-            cb -> setObjectName("LayerCheckBox");
+		cb -> setObjectName("LayerCheckBox");
 		cb->setVisible(false);
 	}
 
 	m_groupBox = new QGroupBox("");
-    m_groupBox -> setObjectName("LayerWindowList");
+	m_groupBox -> setObjectName("LayerWindowList");
 	QVBoxLayout * groupLayout = new QVBoxLayout();
-    groupLayout -> setObjectName("LayerWindowBoxes");
-    m_showAllWidget = new QCheckBox(tr("show all layers"));
+	groupLayout -> setObjectName("LayerWindowBoxes");
+	m_showAllWidget = new QCheckBox(tr("show all layers"));
 	connect(m_showAllWidget, SIGNAL(clicked(bool)), this, SLOT(setAllLayersVisible(bool)));
 
 	groupLayout->addWidget(m_showAllWidget);
@@ -86,7 +80,7 @@ LayerPalette::LayerPalette(QWidget * parent) : QScrollArea(parent)
 
 }
 
-LayerPalette::~LayerPalette() 
+LayerPalette::~LayerPalette()
 {
 }
 
@@ -140,12 +134,12 @@ void LayerPalette::setLayerVisibility(bool) {
 	cb->viewLayer()->setIncludeChildLayers(true);
 }
 
-void LayerPalette::setShowAllLayersAction(QAction * action) 
+void LayerPalette::setShowAllLayersAction(QAction * action)
 {
 	m_showAllLayersAct = action;
 }
 
-void LayerPalette::setHideAllLayersAction(QAction * action) 
+void LayerPalette::setHideAllLayersAction(QAction * action)
 {
 	m_hideAllLayersAct = action;
 }
@@ -162,4 +156,3 @@ void LayerPalette::setAllLayersVisible(bool vis) {
 		}
 	}
 }
-

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6549 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-10-11 06:54:26 +0200 (Do, 11. Okt 2012) $
 
 ********************************************************************/
 
@@ -42,9 +36,9 @@ $Date: 2012-10-11 06:54:26 +0200 (Do, 11. Okt 2012) $
 StackTabBar::StackTabBar(StackTabWidget *parent) : QTabBar(parent) {
 	setAcceptDrops(true);
 	this->setUsesScrollButtons(true);
-    //this->setContentsMargins(0,0,0,0);
-    //this->setTabsClosable(true);
-    setMovable(true);
+	//this->setContentsMargins(0,0,0,0);
+	//this->setTabsClosable(true);
+	setMovable(true);
 	m_parent = parent;
 	setProperty("current","false");
 	setExpanding(false);
@@ -52,7 +46,7 @@ StackTabBar::StackTabBar(StackTabWidget *parent) : QTabBar(parent) {
 	setIconSize(QSize(32, 32));
 
 	setContextMenuPolicy(Qt::CustomContextMenu);
- 
+
 	connect(this, SIGNAL(customContextMenuRequested(const QPoint &)), SLOT(showContextMenu(const QPoint &)));
 
 	m_dragMoveTimer.setSingleShot(true);
@@ -70,9 +64,9 @@ bool StackTabBar::mimeIsAction(const QMimeData* m, const QString& action) {
 }
 
 void StackTabBar::dragEnterEvent(QDragEnterEvent* event) {
-    // Only accept if it's an part-reordering request
+	// Only accept if it's an part-reordering request
 	const QMimeData *m = event->mimeData();
-    if (mimeIsAction(m, "part-reordering")) {
+	if (mimeIsAction(m, "part-reordering")) {
 		event->acceptProposedAction();
 	}
 }
@@ -85,13 +79,13 @@ void StackTabBar::dragLeaveEvent(QDragLeaveEvent *event) {
 void StackTabBar::dragMoveEvent(QDragMoveEvent* event) {
 	const QMimeData *m = event->mimeData();
 	int index = tabAt(event->pos());
-    if ((event->source() != this) && mimeIsAction(m,"part-reordering")) {
+	if ((event->source() != this) && mimeIsAction(m,"part-reordering")) {
 		PartsBinPaletteWidget* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(index));
 		if(bin && bin->allowsChanges()) {
 			event->acceptProposedAction();
 			m_dragMoveTimer.setProperty("index", index);
 			if (!m_dragMoveTimer.isActive()) {
-                DebugDialog::debug("starting drag move timer");
+				DebugDialog::debug("starting drag move timer");
 				m_dragMoveTimer.start();
 			}
 			//DebugDialog::debug(QString("setting index %1").arg(index));
@@ -103,7 +97,7 @@ void StackTabBar::dropEvent(QDropEvent* event) {
 	int toIndex = tabAt(event->pos());
 
 	const QMimeData *m = event->mimeData();
-    if(mimeIsAction(m, "part-reordering")) {
+	if(mimeIsAction(m, "part-reordering")) {
 		PartsBinPaletteWidget* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(toIndex));
 		if(bin && bin->allowsChanges()) {
 			bin->currentView()->dropEventAux(event,true);
@@ -112,11 +106,11 @@ void StackTabBar::dropEvent(QDropEvent* event) {
 
 	event->acceptProposedAction();
 }
- 
+
 void StackTabBar::showContextMenu(const QPoint &point)
 {
 	if (point.isNull()) return;
- 
+
 	int tabIndex = this->tabAt(point);
 	PartsBinPaletteWidget* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(tabIndex));
 	if (bin == NULL) return;
@@ -132,19 +126,19 @@ void StackTabBar::showContextMenu(const QPoint &point)
 
 
 void StackTabBar::paintEvent(QPaintEvent *event)
-{    
+{
 	Q_UNUSED(event);
 
-    QStylePainter painter(this);
+	QStylePainter painter(this);
 
-    for(int i = 0; i < this->count(); ++i)
-    {
-        QStyleOptionTabV2 option;
-        initStyleOption(&option, i);
+	for(int i = 0; i < this->count(); ++i)
+	{
+		QStyleOptionTabV2 option;
+		initStyleOption(&option, i);
 		option.shape = RoundedNorth;
 		option.text = "";
-        painter.drawControl(QStyle::CE_TabBarTab, option);
-    }
+		painter.drawControl(QStyle::CE_TabBarTab, option);
+	}
 }
 
 void StackTabBar::setIndex() {

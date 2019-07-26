@@ -1,7 +1,7 @@
 /*
   Matrix
   LED-Matrix displaying a little animation
-  
+
   This example is part of the Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
@@ -20,8 +20,8 @@ long timer=0;                                  // timer variable
 int timeOut=200;                               // time an image should be displayed (ms)
 
 int image[2][8][8]={{                          // the first image displayed on the matrix
-  
-{0,1,0,0,0,0,1,0},  
+
+{0,1,0,0,0,0,1,0},
 {1,1,1,0,0,1,1,1},
 {0,1,0,0,0,0,1,0},
 {0,0,0,1,1,0,0,0},
@@ -31,8 +31,8 @@ int image[2][8][8]={{                          // the first image displayed on t
 {0,0,1,1,1,1,0,0}
 
 },{                                            // the second image displayed on the matrix
-  
-{1,0,1,0,0,1,0,1},  
+
+{1,0,1,0,0,1,0,1},
 {0,1,0,0,0,0,1,0},
 {1,0,1,0,0,1,0,1},
 {0,0,0,1,1,0,0,0},
@@ -42,10 +42,10 @@ int image[2][8][8]={{                          // the first image displayed on t
 {0,0,1,1,1,1,0,0}
 
 }
-};                                              
+};
 
 void setup(){
-  for (int i=0; i<8; i++){                       // all pins are declared as outputs 
+  for (int i=0; i<8; i++){                       // all pins are declared as outputs
     pinMode(rowPins[i],OUTPUT);
     pinMode(colPins[i],OUTPUT);
   }
@@ -57,8 +57,8 @@ void loop(){
     if (imageNr==0) imageNr=1;                   // if image 0 was displayed, display image 1
     else imageNr=0;                              // if image 1 was displayed, display image 0
   }
-  for (int y=0; y<8; y++){                       // rowwise 
-    for (int x=0; x<8; x++){                     // check all entries of the array from left to right 
+  for (int y=0; y<8; y++){                       // rowwise
+    for (int x=0; x<8; x++){                     // check all entries of the array from left to right
       if (image[imageNr][x][y]==1){              // is the entry 1
         digitalWrite(colPins[x],HIGH);           // switch on column pin
       } else {                                   // else

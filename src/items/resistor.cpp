@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6998 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 
 ********************************************************************/
 
@@ -57,15 +51,15 @@ Resistor::Resistor( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 {
 	m_changingPinSpacing = false;
 	if (Resistances.count() == 0) {
-		Resistances 
-		 << QString("0") + OhmSymbol
-		 << QString("1") + OhmSymbol << QString("1.5") + OhmSymbol << QString("2.2") + OhmSymbol << QString("3.3") + OhmSymbol << QString("4.7") + OhmSymbol << QString("6.8") + OhmSymbol
-		 << QString("10") + OhmSymbol << QString("15") + OhmSymbol << QString("22") + OhmSymbol << QString("33") + OhmSymbol << QString("47") + OhmSymbol << QString("68") + OhmSymbol
-		 << QString("100") + OhmSymbol << QString("150") + OhmSymbol << QString("220") + OhmSymbol << QString("330") + OhmSymbol << QString("470") + OhmSymbol << QString("680") + OhmSymbol
-		 << QString("1k") + OhmSymbol << QString("1.5k") + OhmSymbol << QString("2.2k") + OhmSymbol << QString("3.3k") + OhmSymbol << QString("4.7k") + OhmSymbol << QString("6.8k") + OhmSymbol
-		 << QString("10k") + OhmSymbol << QString("15k") + OhmSymbol << QString("22k") + OhmSymbol << QString("33k") + OhmSymbol << QString("47k") + OhmSymbol << QString("68k") + OhmSymbol
-		 << QString("100k") + OhmSymbol << QString("150k") + OhmSymbol << QString("220k") + OhmSymbol << QString("330k") + OhmSymbol << QString("470k") + OhmSymbol << QString("680k") + OhmSymbol
-		 << QString("1M") + OhmSymbol;
+		Resistances
+		        << QString("0") + OhmSymbol
+		        << QString("1") + OhmSymbol << QString("1.5") + OhmSymbol << QString("2.2") + OhmSymbol << QString("3.3") + OhmSymbol << QString("4.7") + OhmSymbol << QString("6.8") + OhmSymbol
+		        << QString("10") + OhmSymbol << QString("15") + OhmSymbol << QString("22") + OhmSymbol << QString("33") + OhmSymbol << QString("47") + OhmSymbol << QString("68") + OhmSymbol
+		        << QString("100") + OhmSymbol << QString("150") + OhmSymbol << QString("220") + OhmSymbol << QString("330") + OhmSymbol << QString("470") + OhmSymbol << QString("680") + OhmSymbol
+		        << QString("1k") + OhmSymbol << QString("1.5k") + OhmSymbol << QString("2.2k") + OhmSymbol << QString("3.3k") + OhmSymbol << QString("4.7k") + OhmSymbol << QString("6.8k") + OhmSymbol
+		        << QString("10k") + OhmSymbol << QString("15k") + OhmSymbol << QString("22k") + OhmSymbol << QString("33k") + OhmSymbol << QString("47k") + OhmSymbol << QString("68k") + OhmSymbol
+		        << QString("100k") + OhmSymbol << QString("150k") + OhmSymbol << QString("220k") + OhmSymbol << QString("330k") + OhmSymbol << QString("470k") + OhmSymbol << QString("680k") + OhmSymbol
+		        << QString("1M") + OhmSymbol;
 	}
 
 	if (PinSpacings.count() == 0) {
@@ -136,39 +130,39 @@ void Resistor::setResistance(QString resistance, QString pinSpacing, bool force)
 	modelPart()->setLocalTitle(resistance + " " + OhmSymbol + " " + tr("Resistor"));
 
 	switch (this->m_viewID) {
-		case ViewLayer::BreadboardView:
-			if (force || resistance.compare(m_ohms) != 0) {
-				QString svg = makeSvg(resistance, m_viewLayerID);
-				//DebugDialog::debug(svg);
-				reloadRenderer(svg, false);
+	case ViewLayer::BreadboardView:
+		if (force || resistance.compare(m_ohms) != 0) {
+			QString svg = makeSvg(resistance, m_viewLayerID);
+			//DebugDialog::debug(svg);
+			reloadRenderer(svg, false);
+		}
+		break;
+	case ViewLayer::PCBView:
+		if (force || pinSpacing.compare(m_pinSpacing) != 0) {
+
+			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+			if (infoGraphicsView == NULL) break;
+
+			if (modelPart()->properties().value("package").compare("tht", Qt::CaseInsensitive) == 0)
+			{
+				// pinspacing is irrelevant for SMD resistors
+				QString filename = PinSpacings.value(pinSpacing, "");
+				if (filename.isEmpty()) break;
+
+				QString original = modelPart()->imageFileName(m_viewID);
+				modelPart()->setImageFileName(m_viewID, filename);
+				m_changingPinSpacing = true;
+				resetImage(infoGraphicsView);
+				m_changingPinSpacing = false;
+				modelPart()->setImageFileName(m_viewID, original);
+				QList<ConnectorItem *> already;
+				updateConnections(false, already);
 			}
-			break;
-		case ViewLayer::PCBView:
-			if (force || pinSpacing.compare(m_pinSpacing) != 0) {
 
-				InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-				if (infoGraphicsView == NULL) break;
-
-				if (modelPart()->properties().value("package").compare("tht", Qt::CaseInsensitive) == 0) 
-				{
-                    // pinspacing is irrelevant for SMD resistors
-					QString filename = PinSpacings.value(pinSpacing, "");
-					if (filename.isEmpty()) break;
-
-                    QString original = modelPart()->imageFileName(m_viewID);
-                    modelPart()->setImageFileName(m_viewID, filename);
-					m_changingPinSpacing = true;
-					resetImage(infoGraphicsView);
-					m_changingPinSpacing = false;
-                    modelPart()->setImageFileName(m_viewID, original);
-                    QList<ConnectorItem *> already;
-					updateConnections(false, already);
-				}
-
-			}
-			break;
-		default:
-			break;
+		}
+		break;
+	default:
+		break;
 	}
 
 	m_ohms = resistance;
@@ -178,21 +172,21 @@ void Resistor::setResistance(QString resistance, QString pinSpacing, bool force)
 	modelPart()->setLocalProp("tolerance", tolerance);
 
 	updateResistances(m_ohms);
-    if (m_partLabel) m_partLabel->displayTextsIf();
+	if (m_partLabel) m_partLabel->displayTextsIf();
 }
 
-QString Resistor::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString Resistor::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	switch (viewLayerID) {
-		case ViewLayer::Breadboard:
-		case ViewLayer::Icon:
-			break;
-		default:
-			return Capacitor::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
+	case ViewLayer::Breadboard:
+	case ViewLayer::Icon:
+		break;
+	default:
+		return Capacitor::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 	}
 
 	QString svg = makeSvg(m_ohms, viewLayerID);
-    return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
+	return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
 }
 
 QString Resistor::makeSvg(const QString & resistance, ViewLayer::ViewLayerID viewLayerID) {
@@ -221,7 +215,7 @@ QString Resistor::makeSvg(const QString & resistance, ViewLayer::ViewLayerID vie
 		DebugDialog::debug(QString("makesvg failed %1 %2 %3").arg(errorStr).arg(errorLine).arg(errorColumn));
 		return "";
 	}
-	 
+
 	QDomElement root = domDocument.documentElement();
 	setBands(root, firstband, secondband, thirdband, multiplier, tolerance);
 	return domDocument.toString();
@@ -247,7 +241,7 @@ void Resistor::setBands(QDomElement & element, int firstband, int secondband, in
 		}
 		else if (id.compare("gold_band") == 0) {
 			element.setAttribute("fill", Tolerances.value(tolerance, QColor(173, 159, 78)).name());
-		}		
+		}
 	}
 
 	QDomElement child = element.firstChildElement();
@@ -277,10 +271,10 @@ bool Resistor::collectExtraInfo(QWidget * parent, const QString & family, const 
 		connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(resistanceEntry(const QString &)));
 
 		focusOutComboBox->setObjectName("infoViewComboBox");
-        focusOutComboBox->setToolTip(tr("You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of 'umkMG'"));
+		focusOutComboBox->setToolTip(tr("You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of 'umkMG'"));
 
-		returnValue = current;			
-		returnWidget = focusOutComboBox;	
+		returnValue = current;
+		returnWidget = focusOutComboBox;
 
 		return true;
 	}
@@ -314,7 +308,7 @@ void Resistor::addedToScene(bool temporary)
 		setResistance(m_ohms, m_pinSpacing, true);
 	}
 
-    return Capacitor::addedToScene(temporary);
+	return Capacitor::addedToScene(temporary);
 }
 
 const QString & Resistor::title() {
@@ -346,11 +340,11 @@ ConnectorItem* Resistor::newConnectorItem(ItemBase * layerKin, Connector *connec
 
 bool Resistor::hasCustomSVG() {
 	switch (m_viewID) {
-		case ViewLayer::BreadboardView:
-		case ViewLayer::IconView:
-			return true;
-		default:
-			return ItemBase::hasCustomSVG();
+	case ViewLayer::BreadboardView:
+	case ViewLayer::IconView:
+		return true;
+	default:
+		return ItemBase::hasCustomSVG();
 	}
 }
 
@@ -372,19 +366,19 @@ QStringList Resistor::collectValues(const QString & family, const QString & prop
 }
 
 void Resistor::resistanceEntry(const QString & text) {
-    //DebugDialog::debug(QString("resistance entry %1").arg(text));
+	//DebugDialog::debug(QString("resistance entry %1").arg(text));
 
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-    if (infoGraphicsView != NULL) {
-            infoGraphicsView->setResistance(text, "");
-    }
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infoGraphicsView != NULL) {
+		infoGraphicsView->setResistance(text, "");
+	}
 }
 
 ItemBase::PluralType Resistor::isPlural() {
 	return Plural;
 }
 
-void Resistor::setProp(const QString & prop, const QString & value) 
+void Resistor::setProp(const QString & prop, const QString & value)
 {
 	Capacitor::setProp(prop, value);
 
@@ -406,9 +400,9 @@ bool Resistor::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers, L
 }
 
 ViewLayer::ViewID Resistor::useViewIDForPixmap(ViewLayer::ViewID vid, bool swappingEnabled) {
-    if (swappingEnabled && vid == ViewLayer::BreadboardView) {
-        return vid;
-    }
+	if (swappingEnabled && vid == ViewLayer::BreadboardView) {
+		return vid;
+	}
 
-    return ItemBase::useViewIDForPixmap(vid, swappingEnabled);
+	return ItemBase::useViewIDForPixmap(vid, swappingEnabled);
 }

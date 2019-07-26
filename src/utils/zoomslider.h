@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -37,37 +31,37 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QTimer>
 
 class ZoomLabel : public QLabel {
-        Q_OBJECT
+	Q_OBJECT
 
 public:
-        ZoomLabel(QWidget * parent);
-        ~ZoomLabel();
+	ZoomLabel(QWidget * parent);
+	~ZoomLabel();
 
-		void setImages(const QString & normal, const QString & pressed);
-		void setAutoRepeat(bool);
+	void setImages(const QString & normal, const QString & pressed);
+	void setAutoRepeat(bool);
 
-        void mousePressEvent(QMouseEvent *);
-        void mouseMoveEvent(QMouseEvent *);
-        void mouseReleaseEvent(QMouseEvent *);
+	void mousePressEvent(QMouseEvent *);
+	void mouseMoveEvent(QMouseEvent *);
+	void mouseReleaseEvent(QMouseEvent *);
 
 signals:
-        void clicked();
+	void clicked();
 
 protected slots:
-		void repeat();
+	void repeat();
 
 protected:
-		QTimer m_timer;
-		QPixmap m_pressed;
-		QPixmap m_normal;
-		bool m_autoRepeat;
-		bool m_mouseIsDown;
-		bool m_mouseIsIn;
-		bool m_repeated;
+	QTimer m_timer;
+	QPixmap m_pressed;
+	QPixmap m_normal;
+	bool m_autoRepeat;
+	bool m_mouseIsDown;
+	bool m_mouseIsIn;
+	bool m_repeated;
 };
 
 class ZoomSlider: public QFrame {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	ZoomSlider(int maxValue, QWidget * parent=0);
@@ -102,8 +96,8 @@ protected:
 	//int m_indexBackup;
 	QSlider * m_slider;
 	QLineEdit * m_lineEdit;
-    ZoomLabel * m_plusButton;
-    ZoomLabel * m_minusButton;
+	ZoomLabel * m_plusButton;
+	ZoomLabel * m_minusButton;
 	QLabel * m_suffix;
 	bool m_firstTime;
 

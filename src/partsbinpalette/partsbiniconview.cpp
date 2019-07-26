@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 ********************************************************************/
 
@@ -41,31 +35,31 @@ $Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 #define ICON_SPACING 5
 
 PartsBinIconView::PartsBinIconView(ReferenceModel* referenceModel, PartsBinPaletteWidget *parent)
-    : InfoGraphicsView((QWidget*)parent), PartsBinView(referenceModel, parent)
+	: InfoGraphicsView((QWidget*)parent), PartsBinView(referenceModel, parent)
 {
 	setAcceptWheelEvents(false);
-    setFrameStyle(QFrame::Raised | QFrame::StyledPanel);
+	setFrameStyle(QFrame::Raised | QFrame::StyledPanel);
 	setAlignment(Qt::AlignLeft | Qt::AlignTop);
 	setAcceptDrops(true);
 
-    QGraphicsScene* scene = new QGraphicsScene(this);
-    this->setScene(scene);
+	QGraphicsScene* scene = new QGraphicsScene(this);
+	this->setScene(scene);
 
-    m_layouter = NULL;
-    m_layout = NULL;
-    setupLayout();
+	m_layouter = NULL;
+	m_layout = NULL;
+	setupLayout();
 
-    //connect(scene, SIGNAL(selectionChanged()), this, SLOT(informNewSelection()));
-    //connect(scene, SIGNAL(changed(const QList<QRectF>&)), this, SLOT(informNewSelection()));
+	//connect(scene, SIGNAL(selectionChanged()), this, SLOT(informNewSelection()));
+	//connect(scene, SIGNAL(changed(const QList<QRectF>&)), this, SLOT(informNewSelection()));
 
-    m_noSelectionChangeEmition = false;
-    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	m_noSelectionChangeEmition = false;
+	setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(
-    	this, SIGNAL(customContextMenuRequested(const QPoint&)),
-    	this, SLOT(showContextMenu(const QPoint&))
-    );
+	setContextMenuPolicy(Qt::CustomContextMenu);
+	connect(
+	    this, SIGNAL(customContextMenuRequested(const QPoint&)),
+	    this, SLOT(showContextMenu(const QPoint&))
+	);
 }
 
 void PartsBinIconView::setupLayout() {
@@ -77,9 +71,9 @@ void PartsBinIconView::setupLayout() {
 	//delete m_layout;
 
 
-    m_layouter = new QGraphicsWidget;
-    m_layout = new GraphicsFlowLayout(m_layouter, ICON_SPACING);
-    scene()->addItem(m_layouter);
+	m_layouter = new QGraphicsWidget;
+	m_layout = new GraphicsFlowLayout(m_layouter, ICON_SPACING);
+	scene()->addItem(m_layouter);
 }
 
 void PartsBinIconView::updateSize(QSize newSize) {
@@ -147,47 +141,47 @@ void PartsBinIconView::addPart(ModelPart * model, int position) {
 }
 
 void PartsBinIconView::removePart(const QString &moduleID) {
-    SvgIconWidget *itemToRemove = NULL;
-    int position = 0;
-    foreach(QGraphicsItem *gIt, m_layouter->childItems()) {
-        SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(gIt);
-        if(it && it->moduleID() == moduleID) {
-            itemToRemove = it;
-            break;
-        } else {
-            position++;
-        }
-    }
-    if(itemToRemove) {
-        m_itemBaseHash.remove(moduleID);
-        itemToRemove->setParentItem(NULL);
-        m_noSelectionChangeEmition = true;
-        m_layout->removeItem(itemToRemove);
-        delete itemToRemove;
-    }
+	SvgIconWidget *itemToRemove = NULL;
+	int position = 0;
+	foreach(QGraphicsItem *gIt, m_layouter->childItems()) {
+		SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(gIt);
+		if(it && it->moduleID() == moduleID) {
+			itemToRemove = it;
+			break;
+		} else {
+			position++;
+		}
+	}
+	if(itemToRemove) {
+		m_itemBaseHash.remove(moduleID);
+		itemToRemove->setParentItem(NULL);
+		m_noSelectionChangeEmition = true;
+		m_layout->removeItem(itemToRemove);
+		delete itemToRemove;
+	}
 
-    setSelected(position, true);
-    updateSize();
+	setSelected(position, true);
+	updateSize();
 }
 
 void PartsBinIconView::removeParts() {
-    QList<SvgIconWidget *> itemsToRemove;
-    foreach(QGraphicsItem *gIt, m_layouter->childItems()) {
-        SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(gIt);
-        if(it) {
-            itemsToRemove.append(it);
-        }
-    }
-    m_itemBaseHash.clear();
+	QList<SvgIconWidget *> itemsToRemove;
+	foreach(QGraphicsItem *gIt, m_layouter->childItems()) {
+		SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(gIt);
+		if(it) {
+			itemsToRemove.append(it);
+		}
+	}
+	m_itemBaseHash.clear();
 
-    foreach (SvgIconWidget * itemToRemove, itemsToRemove) {
-        m_noSelectionChangeEmition = true;
-        itemToRemove->setParentItem(NULL);
-        m_layout->removeItem(itemToRemove);
-        delete itemToRemove;
-    }
+	foreach (SvgIconWidget * itemToRemove, itemsToRemove) {
+		m_noSelectionChangeEmition = true;
+		itemToRemove->setParentItem(NULL);
+		m_layout->removeItem(itemToRemove);
+		delete itemToRemove;
+	}
 
-    updateSize();
+	updateSize();
 }
 
 int PartsBinIconView::setItemAux(ModelPart * modelPart, int position) {
@@ -201,12 +195,12 @@ int PartsBinIconView::setItemAux(ModelPart * modelPart, int position) {
 	if (contains(moduleID)) {
 		return position;
 	}
-	
+
 	SvgIconWidget* svgicon = NULL;
 	if (modelPart->itemType() != ModelPart::Space) {
 		ItemBase::PluralType plural;
 		ItemBase * itemBase = loadItemBase(moduleID, plural);
-        svgicon = new SvgIconWidget(modelPart, ViewLayer::IconView, itemBase, plural == ItemBase::Plural);
+		svgicon = new SvgIconWidget(modelPart, ViewLayer::IconView, itemBase, plural == ItemBase::Plural);
 	}
 	else {
 		svgicon = new SvgIconWidget(modelPart, ViewLayer::IconView, NULL, false);
@@ -232,7 +226,7 @@ void PartsBinIconView::setPaletteModel(PaletteModel *model, bool clear) {
 void PartsBinIconView::loadFromModel(PaletteModel * model) {
 	ModelPart* root = model->root();
 	QList<QObject *>::const_iterator i;
-    for (i = root->children().constBegin(); i != root->children().constEnd(); ++i) {
+	for (i = root->children().constBegin(); i != root->children().constEnd(); ++i) {
 		ModelPart* mp = qobject_cast<ModelPart *>(*i);
 		if (mp == NULL) continue;
 
@@ -356,25 +350,25 @@ int PartsBinIconView::itemIndexAt(const QPoint& pos, bool &trustIt) {
 }
 
 bool PartsBinIconView::inEmptyArea(const QPoint& pos) {
-    // used only by internal drag and drop
+	// used only by internal drag and drop
 	if(m_layout->count() == 0) {
 		return true;
 	} else {
 		QGraphicsLayoutItem *lastItem = m_layout->itemAt(m_layout->count()-1);
 		QPointF itemBottomRightPoint =
-			lastItem->graphicsItem()->mapToScene(lastItem->contentsRect().bottomRight());
+		    lastItem->graphicsItem()->mapToScene(lastItem->contentsRect().bottomRight());
 
 		return itemBottomRightPoint.y() < pos.y()
-			|| ( itemBottomRightPoint.y() >= pos.y()
-				&& itemBottomRightPoint.x() < pos.x()
-				);
+		       || ( itemBottomRightPoint.y() >= pos.y()
+		            && itemBottomRightPoint.x() < pos.x()
+		          );
 	}
 }
 
 QGraphicsWidget* PartsBinIconView::closestItemTo(const QPoint& pos) {
 	QPointF realPos = mapToScene(pos);
 	SvgIconWidget *item = NULL;
-    this -> setObjectName("partsIcon");
+	this -> setObjectName("partsIcon");
 	if((item = svgIconWidgetAt(realPos.x()+ICON_SPACING,realPos.y()+ICON_SPACING))) {
 		return item;
 	}
@@ -397,7 +391,7 @@ QList<QObject*> PartsBinIconView::orderedChildren() {
 		SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(m_layout->itemAt(i));
 		if(it) {
 			result << it->modelPart();
-        }
+		}
 	}
 	return result;
 }
@@ -413,7 +407,7 @@ void PartsBinIconView::showContextMenu(const QPoint& pos) {
 	} else {
 		menu = m_parent->combinedMenu();
 	}
-    menu->exec(mapToGlobal(pos));
+	menu->exec(mapToGlobal(pos));
 }
 
 SvgIconWidget * PartsBinIconView::svgIconWidgetAt(int x, int y) {
@@ -454,13 +448,13 @@ void PartsBinIconView::reloadPart(const QString & moduleID) {
 ItemBase * PartsBinIconView::loadItemBase(const QString & moduleID, ItemBase::PluralType & plural) {
 	ItemBase * itemBase = ItemBaseHash.value(moduleID);
 	ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
-    if (itemBase == NULL) {
+	if (itemBase == NULL) {
 		itemBase = PartFactory::createPart(modelPart, ViewLayer::NewTop, ViewLayer::IconView, ViewGeometry(), ItemBase::getNextID(), NULL, NULL, false);
 		ItemBaseHash.insert(moduleID, itemBase);
 	}
 	m_itemBaseHash.insert(moduleID, itemBase);
 
-    plural = itemBase->isPlural();
+	plural = itemBase->isPlural();
 	if (plural == ItemBase::NotSure) {
 		QHash<QString,QString> properties = modelPart->properties();
 		QString family = properties.value("family", "").toLower();

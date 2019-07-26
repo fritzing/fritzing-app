@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -71,7 +65,7 @@ ErcData::ErcData(const QDomElement & ercElement)
 	else if (ig.compare("always", Qt::CaseInsensitive) == 0) {
 		m_ignore = Always;
 	}
-		
+
 	QDomElement ercChild = ercElement.firstChildElement();
 	while (!ercChild.isNull()) {
 		QString nodeName = ercChild.nodeName();
@@ -109,17 +103,17 @@ void ErcData::readVoltage(QDomElement & voltageElement) {
 
 bool ErcData::writeToElement(QDomElement & ercElement, QDomDocument & doc) {
 	switch (m_eType) {
-		case Ground:
-			ercElement.setAttribute("etype", "ground");
-			writeCurrent(ercElement, doc);
-			break;
-		case VCC:
-			ercElement.setAttribute("etype", "VCC");
-			writeCurrent(ercElement, doc);
-			writeVoltage(ercElement, doc);
-			break;
-		default:
-			return false;
+	case Ground:
+		ercElement.setAttribute("etype", "ground");
+		writeCurrent(ercElement, doc);
+		break;
+	case VCC:
+		ercElement.setAttribute("etype", "VCC");
+		writeCurrent(ercElement, doc);
+		writeVoltage(ercElement, doc);
+		break;
+	default:
+		return false;
 	}
 
 	return true;
@@ -139,14 +133,14 @@ void ErcData::writeCurrent(QDomElement & parent, QDomDocument & doc) {
 			currentElement.setAttribute("valueMax", QString::number(m_currentMax.value()));
 		}
 		switch (m_currentFlow) {
-			case Source:
-				currentElement.setAttribute("flow", "source");
-				break;
-			case Sink:
-				currentElement.setAttribute("flow", "sink");
-				break;
-			default:
-				break;
+		case Source:
+			currentElement.setAttribute("flow", "source");
+			break;
+		case Sink:
+			currentElement.setAttribute("flow", "sink");
+			break;
+		default:
+			break;
 		}
 	}
 }
@@ -174,6 +168,3 @@ ErcData::EType ErcData::eType() {
 ErcData::Ignore ErcData::ignore() {
 	return m_ignore;
 }
-
-
-	

@@ -65,6 +65,22 @@ jobs:
         - tools/aws_tasks.sh synchronize_up
 
     - stage: build_and_pack
+      name: Fedora
+      os: linux
+      language: minimal
+      services:
+        - docker
+      before_install:
+        - tools/aws_tasks.sh setup
+        - docker pull fritzing/build:fedora-31
+      script:
+        - docker/release-linux.sh fedora-31 $TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.fedora-31
+        - tools/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.fedora-31.linux.AMD64.tar.bz2
+
+      after_success:
+        - tools/aws_tasks.sh synchronize_up
+
+    - stage: build_and_pack
       os: osx
       language: cpp
       osx_image: xcode10.2

@@ -1,0 +1,23 @@
+FROM fedora:31
+
+ARG user_id=1000
+ENV env_user_id=${user_id}
+
+RUN groupadd -g ${env_user_id} conan && \
+    useradd -r -u ${env_user_id} -g conan conan
+
+USER root
+WORKDIR /home/conan
+
+RUN dnf -y install cmake wget git flex bison libudev-devel
+RUN dnf -y install make gcc gcc-c++ kernel-devel ncurses-devel
+
+RUN dnf -y install openssl-devel zlib-devel libjpeg-devel libpng-devel bzip2 libgit2-devel boost-devel
+RUN dnf -y install xorg-x11-server-Xvfb qt-creator qt5-devel
+
+RUN ln -s /usr/bin/qmake-qt5 /usr/bin/qmake
+RUN ln -s /usr/bin/lrelease-qt5 /usr/bin/lrelease
+
+RUN dnf clean all
+
+USER conan

@@ -1,4 +1,4 @@
 #!/bin/bash
 set -xe
 
-docker run -v "$(pwd):/home/conan/fritzing" -w /home/conan/fritzing fritzing/build:xenial docker/xvfb-release-helper.sh "$1"
+docker run -v "$(pwd):/home/conan/fritzing" -w /home/conan/fritzing fritzing/build:"$1" docker/xvfb-release-helper.sh "$2"

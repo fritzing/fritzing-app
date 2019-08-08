@@ -33,6 +33,7 @@ jobs:
         - docker/build-linux.sh
 
     - stage: build_and_pack
+      name: Xenial
       os: linux
       language: minimal
       services:
@@ -41,8 +42,24 @@ jobs:
         - tools/aws_tasks.sh setup
         - docker pull fritzing/build:xenial
       script:
-        - docker/release-linux.sh $TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER
-        - tools/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.linux.AMD64.tar.bz2
+        - docker/release-linux.sh xenial $TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.xenial
+        - tools/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.xenial.linux.AMD64.tar.bz2
+
+      after_success:
+        - tools/aws_tasks.sh synchronize_up
+
+    - stage: build_and_pack
+      name: Bionic
+      os: linux
+      language: minimal
+      services:
+        - docker
+      before_install:
+        - tools/aws_tasks.sh setup
+        - docker pull fritzing/build:bionic
+      script:
+        - docker/release-linux.sh bionic $TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.bionic
+        - tools/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-debug-continuous-$TRAVIS_BUILD_NUMBER.bionic.linux.AMD64.tar.bz2
 
       after_success:
         - tools/aws_tasks.sh synchronize_up

@@ -690,17 +690,10 @@ void MazeRouter::start()
 			QList<ConnectorItem *> equi;
 			equi.append(first);
 			ConnectorItem::collectEqualPotential(equi, m_bothSidesNow, (ViewGeometry::RatsnestFlag | ViewGeometry::NormalFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::SchematicTraceFlag) ^ m_sketchWidget->getTraceFlag());
-			for (int j = equi.count() - 1; j >= 0; j--) {
-				ConnectorItem * equ = equi.at(j);
-				int isInTodo = todo.removeOne(equ);
-				// If connector item is not in todo,
-				// this means that we excluded it from
-				// todo in removeOffBoardAnd(), so don't
-				// add it to subnets
-				if (!isInTodo) {
-					equi.removeOne(equ);
-				}
-			}
+            foreach (ConnectorItem * equ, equi) {
+                todo.removeOne(equ);
+                //equ->debugInfo("equi");
+            }
 			net->subnets.append(equi);
 		}
 
@@ -714,7 +707,7 @@ void MazeRouter::start()
 		totalToRoute += net->net->count() - 1;
 	}
 
-	qSort(netList.nets.begin(), netList.nets.end(), byPinsWithin);
+    qSort(netList.nets.begin(), netList.nets.end(), byPinsWithin);
 	NetOrdering initialOrdering;
 	int ix = 0;
 	foreach (Net * net, netList.nets) {

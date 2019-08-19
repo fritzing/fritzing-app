@@ -1,0 +1,42 @@
+# HOWTO work with fritzing docker containers.
+# Docker containers are used for Fritzing's official linux builds.
+# It'd be good to have Windows and MacOS containers too, but that's not achieved yet.
+
+# Improving the docker configuration
+
+## To improve and test locally.
+
+copy Dockerfile.fedora Dockerfile
+docker build --tag fritzing/build:fedora-31 .
+
+## To publish it
+# Note: These tags are used by the CI/CD build system,
+# and will be effective immediately.
+# For testing purposes, use your own docker namespace.
+# If you would like to improve the official Fritzing docker
+# build containers, please ask Kjell or Ovidiu-Florin
+#
+
+docker push fritzing/build:fedora-31
+
+
+
+# Using docker for local builds
+
+release-linux.sh
+
+To create release (or debug) versions, use the script release-linux.sh < platform > < release name>.
+
+If the releasename includes the magic keyword "debug", debug information will be added to
+the binary, and the "develop" branch of fritzing-parts will be used for the parts database.
+For examples, see the file travis.yml.
+
+xvfb-release-helper.sh
+
+This script is not thought to be called directly. It is required to enable automated
+CLI calls to Fritzing on headless systems (without GUI.
+
+
+build-linux.sh
+
+Just do a quick build. This script is not an essential part of the toolchain.

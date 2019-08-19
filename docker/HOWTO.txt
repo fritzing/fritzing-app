@@ -4,10 +4,24 @@
 
 # Improving the docker configuration
 
-## To improve and test locally.
+## To build the docker container locally.
 
-copy Dockerfile.fedora Dockerfile
-docker build --tag fritzing/build:fedora-31 .
+cp Dockerfile.fedora Dockerfile
+docker build --tag fritzing/build:fedora-30 .
+
+## To build a release in this docker container
+docker/release-linux.sh fedora-30 debug-001.fedora-30
+
+## To verify the build
+# During the release step above, Fritzing is already run to create the parts database.
+# Assuming you used the build name "debug-001.fedora-30", the file command should recognize
+# it as an sqlite database. If the file does not exist, there was a problem with the build.
+# (Note: in debug mode, the script will *not* ensure a clean repo, so the file might be
+# an older version)
+
+file fritzing-debug-001.fedora-30.linux.AMD64/fritzing-parts/parts.db
+> fritzing-debug-001.fedora-30.linux.AMD64/fritzing-parts/parts.db: SQLite 3.x database, last written using SQLite version 3026000
+
 
 ## To publish it
 # Note: These tags are used by the CI/CD build system,
@@ -16,9 +30,10 @@ docker build --tag fritzing/build:fedora-31 .
 # If you would like to improve the official Fritzing docker
 # build containers, please ask Kjell or Ovidiu-Florin
 #
+docker push fritzing/build:fedora-30
 
-docker push fritzing/build:fedora-31
-
+# You can test the new docker container online by re-triggering an old travis-ci build.
+# Alternatively you can make a pull request to develop branch, which triggers a build on travis-ci.
 
 
 # Using docker for local builds

@@ -1,4 +1,4 @@
-FROM fedora:31
+FROM fedora:30
 
 ARG user_id=1000
 ENV env_user_id=${user_id}

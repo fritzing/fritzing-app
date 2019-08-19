@@ -4,9 +4,8 @@ ARG user_id=1000
 ENV env_user_id=${user_id}
 
 RUN groupadd -g ${env_user_id} conan && \
-    useradd -r -u ${env_user_id} -g conan conan
+    useradd -m -r -u ${env_user_id} -g conan conan
 
-USER root
 WORKDIR /home/conan
 
 RUN dnf -y install cmake wget git flex bison libudev-devel

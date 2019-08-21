@@ -1,5 +1,5 @@
 FROM conanio/gcc8
-# Dockerfile for ^ https://github.com/conan-io/conan-docker-tools/blob/master/gcc_5/Dockerfile
+# Dockerfile for ^ https://github.com/conan-io/conan-docker-tools/blob/master/gcc_8/Dockerfile
 
 ENV BOOST_ROOT /usr/local
 
@@ -20,6 +20,8 @@ RUN apt-get update \
     qttools5-dev-tools \
     xvfb
 
+USER conan
+
 # No SHA verification for now. Will be automated by Conan in the future.
 RUN set -xe \
     && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj
@@ -34,4 +36,4 @@ RUN set -xe \
     && cd ../../
 
 
-USER conan
+

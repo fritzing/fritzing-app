@@ -22,6 +22,7 @@
         <file>resources/images/aboutbox_scrollfade.png</file>
         <file>resources/images/watermark_fritzing_outline.svg</file>
         <file>resources/images/welcome_kit.png</file>
+        <file>resources/images/donate_zoom.png</file>
         <file>resources/images/pcbs_2013.png</file>
         <file>resources/images/dot.png</file>
         <file>resources/images/fritzing_icon.png</file>
@@ -143,6 +144,7 @@
         <file>resources/images/icons/WS-galleryLogo.png</file>
         <file>resources/images/icons/WS-shopLogo.png</file>
         <file>resources/images/icons/WS-fabLogo.png</file>
+        <file>resources/images/icons/WS-donateLogo.png</file>
         <file>resources/images/icons/arrowButtonUp.png</file>
         <file>resources/images/icons/arrowButtonDown.png</file>
         <file>resources/images/icons/arrowButtonLeft.png</file>

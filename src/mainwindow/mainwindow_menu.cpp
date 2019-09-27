@@ -2287,23 +2287,23 @@ void MainWindow::showPartsBinListView() {
 }
 
 void MainWindow::openHelp() {
-	QDesktopServices::openUrl(QString("http://fritzing.org/learning/"));
+	QDesktopServices::openUrl(QString("https://fritzing.org/learning/"));
 }
 
 void MainWindow::openDonate() {
-	QDesktopServices::openUrl(QString("http://fritzing.org/shop/donations/"));
+	QDesktopServices::openUrl(QString("https://fritzing.org/shop/donations/"));
 }
 
 void MainWindow::openExamples() {
-	QDesktopServices::openUrl(QString("http://fritzing.org/projects/"));
+	QDesktopServices::openUrl(QString("https://fritzing.org/projects/"));
 }
 
 void MainWindow::openPartsReference() {
-	QDesktopServices::openUrl(QString("http://fritzing.org/parts/"));
+	QDesktopServices::openUrl(QString("https://fritzing.org/parts/"));
 }
 
 void MainWindow::visitFritzingDotOrg() {
-	QDesktopServices::openUrl(QString("http://www.fritzing.org"));
+	QDesktopServices::openUrl(QString("https://www.fritzing.org"));
 }
 
 void MainWindow::reportBug() {

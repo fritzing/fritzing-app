@@ -119,7 +119,8 @@ AboutBox::AboutBox(QWidget *parent)
 	    tr("Travis Robertson, Stefan Hermann, Brendan Howell, ") +
 	    tr("Mariano Crowe, Johannes Landstorfer, ") +
 	    tr("Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, ") +
-	    tr("Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. ") +
+	    tr("Bryant Mairs, Uleshka Asher, Daniel Tzschentke, ") +
+        tr("and Kjell Morgenstern ") +
 	    "</p>" +
 
 	    "<p>" +

@@ -456,24 +456,35 @@ QWidget * WelcomeView::initShop() {
 	QVBoxLayout * frameLayout = new QVBoxLayout;
 	zeroMargin(frameLayout);
 
-	QWidget * headerFrame = createHeaderFrame( tr("Shop"), "Shop", tr("Fab"), "Fab", m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_shopLabel, m_fabLabel);
+	QWidget * headerFrame = createHeaderFrame( tr("Donate"), "Donate", tr("Fab"), "Fab", m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_donateLabel, m_fabLabel);
 	frameLayout->addWidget(headerFrame);
 
-	m_shopUberFrame = createShopContentFrame(":/resources/images/welcome_kit.png",
-	                  tr("Fritzing CreatorKit"),
-	                  tr("The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog"),
-	                  "http://creatorkit.fritzing.org/",
-	                  tr(""),
-	                  tr(""),
-	                  ":/resources/images/icons/WS-shopLogo.png",
-	                  "#f5a400"
-	                                        );
-	frameLayout->addWidget(m_shopUberFrame);
+	m_donateUberFrame = createShopContentFrame(":/resources/images/donate_zoom.png",
+                                           tr("Fritzing development needs you"),
+                                           tr("Software development and maintenance is a lot of work. Without your support, it is not possible to keep that up."),
+                                           "https://fritzing.org/shop/donations/",
+                                           tr("Donate and leave a comment."),
+                                           tr("Donate now"),
+                                           ":/resources/images/icons/WS-donateLogo.png",
+                                           "#2D81C5");
+
+    frameLayout->addWidget(m_donateUberFrame);
+
+//	m_shopUberFrame = createShopContentFrame(":/resources/images/welcome_kit.png",
+//	                  tr("Fritzing CreatorKit"),
+//                      tr("The Fritzing Creator Kit is out of Stock."),
+//                      "https://fritzing.org/creatorkit",
+//	                  tr(""),
+//	                  tr(""),
+//	                  ":/resources/images/icons/WS-shopLogo.png",
+//	                  "#f5a400"
+//                                                                                       );
+//	frameLayout->addWidget(m_shopUberFrame);
 
 	m_fabUberFrame = createShopContentFrame(":/resources/images/pcbs_2013.png",
 	                                        tr("Fritzing Fab"),
 	                                        tr("Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches."),
-	                                        "http://fab.fritzing.org/",
+                                            "http://fab.fritzing.org/",
 	                                        tr("produce your first pcb now >>"),
 	                                        tr("Order your PCB now."),
 	                                        ":/resources/images/icons/WS-fabLogo.png",
@@ -483,7 +494,12 @@ QWidget * WelcomeView::initShop() {
 
 	frame->setLayout(frameLayout);
 
-	clickBlog("fab");
+    QDate cd = QDate::currentDate();
+    if (cd.day()<3) {
+        clickBlog("donate");
+    } else {
+        clickBlog("fab");
+    }
 
 	return frame;
 }
@@ -515,6 +531,7 @@ QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const Q
 	contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Fixed, QSizePolicy::Expanding));
 
 	label = new QLabel(headline);
+    label->setTextFormat(Qt::RichText);
 	label->setObjectName("shopContentTextHeadline");
 	//label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 	contentTextFrameLayout->addWidget(label);
@@ -524,11 +541,11 @@ QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const Q
 	//label->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 	contentTextFrameLayout->addWidget(label);
 
-	label = new QLabel(QString("<a href='%1'  style='text-decoration:none; color:#802742;'>%2</a>").arg(url).arg(urlText));
+	label = new QLabel(QString("<a href='%1' style='text-decoration:none; color:#802742;'>%2</a>").arg(url).arg(urlText));
 	label->setObjectName("shopContentTextCaption");
 	contentTextFrameLayout->addWidget(label);
 	//label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-	connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+    connect(label, &QLabel::linkActivated, this, &WelcomeView::clickBlog);
 
 	contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Fixed, QSizePolicy::Expanding));
 
@@ -547,15 +564,15 @@ QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const Q
 	zeroMargin(footerFrameLayout);
 	footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-	QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText2).arg(footerLabelColor));
+	QLabel * footerLabel = new QLabel(QString("<a href='%1' style='text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText2).arg(footerLabelColor));
 	footerLabel->setObjectName("shopLogoText");
 	footerFrameLayout->addWidget(footerLabel);
-	connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+    connect(footerLabel, &QLabel::linkActivated, this, &WelcomeView::clickBlog);
 
 	QLabel * footerLogoLabel = new QLabel(tr("<a href='%1'><img src='%2'/></a>").arg(url).arg(logoPath));
 	footerLogoLabel->setObjectName("shopLogo");
 	footerFrameLayout->addWidget(footerLogoLabel);
-	connect(footerLogoLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+    connect(footerLogoLabel, &QLabel::linkActivated, this, &WelcomeView::clickBlog);
 
 	shopFooterFrame->setLayout(footerFrameLayout);
 
@@ -574,12 +591,12 @@ QWidget * WelcomeView::initBlog() {
 	QWidget * headerFrame = createHeaderFrame(tr("Projects"), "Projects", tr("Blog"), "Blog", m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_projectsLabel, m_blogLabel);
 	frameLayout->addWidget(headerFrame);
 
-	m_blogListWidget = createBlogContentFrame("http://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png", "#802742");
+	m_blogListWidget = createBlogContentFrame("https://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png", "#802742");
 	m_blogUberFrame = m_blogListWidget;
 	while (m_blogUberFrame->parentWidget()) m_blogUberFrame = m_blogUberFrame->parentWidget();
 	frameLayout->addWidget(m_blogUberFrame);
 
-	m_projectListWidget = createBlogContentFrame("http://fritzing.org/projects/", tr("Fritzing Projects."), ":/resources/images/icons/WS-galleryLogo.png", "#00a55b");
+	m_projectListWidget = createBlogContentFrame("https://fritzing.org/projects/", tr("Fritzing Projects."), ":/resources/images/icons/WS-galleryLogo.png", "#00a55b");
 	m_projectsUberFrame = m_projectListWidget;
 	while (m_projectsUberFrame->parentWidget()) m_projectsUberFrame = m_projectsUberFrame->parentWidget();
 	frameLayout->addWidget(m_projectsUberFrame);
@@ -641,13 +658,13 @@ BlogListWidget * WelcomeView::createBlogContentFrame(const QString & url, const 
 	zeroMargin(footerFrameLayout);
 	footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-	QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='font-family:Droid Sans; text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText).arg(footerLabelColor));
+    QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='font-family:Droid Sans; text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText).arg(footerLabelColor));
 	footerLabel->setObjectName("blogLogoText");
 	footerFrameLayout->addWidget(footerLabel);
 	connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-
 	footerLabel = new QLabel(tr("<a href='%1'><img src='%2' /></a>").arg(url).arg(logoPath));
 	footerLabel->setObjectName("blogLogo");
+
 	footerFrameLayout->addWidget(footerLabel);
 	connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
@@ -739,21 +756,35 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 
 void WelcomeView::clickBlog(const QString & url) {
 	if (url.toLower() == "fab") {
-		m_shopUberFrame->setVisible(false);
+//		m_shopUberFrame->setVisible(false);
 		m_fabUberFrame->setVisible(true);
+        m_donateUberFrame->setVisible(false);
 		m_fabLabel->setText(hackColor(m_fabLabel->text(), m_activeHeaderLabelColor));
-		m_shopLabel->setText(hackColor(m_shopLabel->text(), m_inactiveHeaderLabelColor));
+//		m_shopLabel->setText(hackColor(m_shopLabel->text(), m_inactiveHeaderLabelColor));
+        m_donateLabel->setText(hackColor(m_donateLabel->text(), m_inactiveHeaderLabelColor));
 
 		return;
 	}
 
 	if (url.toLower() == "shop") {
-		m_shopUberFrame->setVisible(true);
+//		m_shopUberFrame->setVisible(true);
 		m_fabUberFrame->setVisible(false);
+        m_donateUberFrame->setVisible(false);
 		m_fabLabel->setText(hackColor(m_fabLabel->text(), m_inactiveHeaderLabelColor));
-		m_shopLabel->setText(hackColor(m_shopLabel->text(), m_activeHeaderLabelColor));
+//		m_shopLabel->setText(hackColor(m_shopLabel->text(), m_activeHeaderLabelColor));
+        m_donateLabel->setText(hackColor(m_donateLabel->text(), m_inactiveHeaderLabelColor));
 		return;
 	}
+
+    if (url.toLower() == "donate") {
+//        m_shopUberFrame->setVisible(false);
+        m_fabUberFrame->setVisible(false);
+        m_donateUberFrame->setVisible(true);
+        m_fabLabel->setText(hackColor(m_fabLabel->text(), m_inactiveHeaderLabelColor));
+//        m_shopLabel->setText(hackColor(m_shopLabel->text(), m_inactiveHeaderLabelColor));
+        m_donateLabel->setText(hackColor(m_donateLabel->text(), m_activeHeaderLabelColor));
+        return;
+    }
 
 	if (url.toLower() == "nexttip") {
 		nextTip();

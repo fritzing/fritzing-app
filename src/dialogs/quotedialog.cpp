@@ -336,6 +336,6 @@ bool QuoteDialog::quoteSucceeded() {
 
 void QuoteDialog::initCounts() {
 	if (Counts.isEmpty()) {
-		Counts << 1 << 2 << 5 << 10;
+		Counts << 1 << 3 << 12 ;
 	}
 }

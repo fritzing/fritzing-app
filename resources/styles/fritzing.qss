@@ -891,7 +891,7 @@ background:transparent;
 #blogLogo {
 	background:#fff;
 	min-height:22px;
-	max-height:22px;
+	max-height:44px;
 }
 
 
@@ -1012,7 +1012,8 @@ background:transparent;
 #fabContentTextHeadline {
 	font-size:16px;
 	font-weight:bold;
-	max-height:20px;
+	qproperty-wordWrap: true;
+	max-height:40px;
 	font-family: Droid Sans;
 	background:#fff;
 	}
@@ -1032,8 +1033,8 @@ background:transparent;
 {
 font-weight: regular;
 font-family: Droid Sans;
-font-size:11px;
-max-height:14px;
+font-size:14px;
+max-height:16px;
 background:#fff;
 }
 
@@ -1050,7 +1051,7 @@ background:#fff;
 		padding-right:5px;
 	/*	padding:8px 0px 8px 0px; */
 		min-height:25px;
-		max-height:25px;
+		max-height:100px;
 
 }
 
@@ -1058,6 +1059,7 @@ background:#fff;
 #shopLogoText,
 #fabLogoText {
 	margin-right:5px;
+	font-size:14px;
 }
 
 

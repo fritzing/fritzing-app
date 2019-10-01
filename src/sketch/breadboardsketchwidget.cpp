@@ -175,7 +175,9 @@ void BreadboardSketchWidget::setNewPartVisible(ItemBase * itemBase) {
 	case ModelPart::CopperFill:
 	case ModelPart::Logo:
 		if (itemBase->moduleID().contains("breadboard", Qt::CaseInsensitive)) return;
-		[[clang::fallthrough]];
+#if __GNUC__ >= 7
+			[[clang::fallthrough]];
+#endif
 	case ModelPart::Hole:
 	case ModelPart::Via:
 		itemBase->setVisible(false);

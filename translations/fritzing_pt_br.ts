@@ -68,34 +68,6 @@
         <translation>Michaela Vieser e Julia Werner.</translation>
     </message>
     <message>
-        <source>Thanks to Kurt Badelt and Miguel Solis for the Spanish translation, </source>
-        <translation>Agradecimentos para Kurt Badelt e Miguel Solis pela tradução para Espanhol, </translation>
-    </message>
-    <message>
-        <source>to Gianluca Urgese for the Italian translation, </source>
-        <translation>ao  Gianluca Urgese pela tradução para Italiano, </translation>
-    </message>
-    <message>
-        <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
-        <translation>ao Nuno Pessanha Santos pela tradução para Português (Europeu), </translation>
-    </message>
-    <message>
-        <source>to Yuelin and Ninjia  for the Chinese (Simplified) translation, </source>
-        <translation>ao Yuelin e Ninjia pela tradução para Chinês (Simplificado), </translation>
-    </message>
-    <message>
-        <source>to Hiroshi Suzuki for the Japanese translation, </source>
-        <translation>ao Hiroshi Suzuki pela tradução para Japonês, </translation>
-    </message>
-    <message>
-        <source>to Robert Lee for the Chinese (Traditional) translation, </source>
-        <translation>ao Robert Lee pela tradução para chinês (Tradicional), </translation>
-    </message>
-    <message>
-        <source>to Vladimir Savinov for the Russian translation, </source>
-        <translation>ao Vladimir Savinov pela tradução para Russo, </translation>
-    </message>
-    <message>
         <source>Fritzing is made possible with funding from the </source>
         <translation>Fritzing foi possível com o financiamento proveniente da </translation>
     </message>
@@ -125,46 +97,10 @@
     </message>
     <message>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
-        <translation>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
-    </message>
-    <message>
-        <source>to Josef Dustira for the Czech translation, </source>
-        <translation>ao Josef Dustira pela tradução para o Tcheco, </translation>
-    </message>
-    <message>
-        <source>to Jinbuhm Kim for the Korean translation, </source>
-        <translation>ao Jinbuhm Kim pela tradução para o Coreano, </translation>
-    </message>
-    <message>
-        <source>to Alexander Kaltsas for the Greek translation, </source>
-        <translation>ao Alexander Kaltsas pela tradução para o Grego, </translation>
-    </message>
-    <message>
-        <source>to &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; for the Slovak translation, </source>
-        <translation>ao &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; pela tradução para o Slovaco, </translation>
-    </message>
-    <message>
-        <source>to Steven Noppe and Davy Uittenbogerd for the Dutch translation, </source>
-        <translation>ao Steven Noppe e Davy Uittenbogerd pela traduçãao para o Holandês, </translation>
-    </message>
-    <message>
-        <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
-        <translation>ao Cihan Mete Bahad&amp;#x0131;r pela tradução para o Turco, </translation>
-    </message>
-    <message>
-        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>to Nikolay Stankov for the Bulgarian translation, </source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -177,6 +113,90 @@
     </message>
     <message>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thanks for the translations go out to: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spanish: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Italian: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portuguese (European): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portuguese (Brazilian): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese (Simplified): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Japanese: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Russian: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dutch: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Czech: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Korean: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Slovak: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Greek: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>French: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Turkish: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bulgarian: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yuelin and Ninjia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinese (Traditional): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Robert Lee</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hiroshi Suzuki</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jinbuhm Kim</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1015,7 +1035,7 @@ Um svg de placa personalizada tipicamente tem uma ou mais camadas de impressão 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1501,6 +1521,14 @@ Também é possível escolher um conector como ponto de aterramento clicando com
     </message>
     <message>
         <source>text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to display image from %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3532,6 +3560,14 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>Fritzing uncompressed (*%1)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Color Breadboard Wires By Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display breadboard wires using standard color coding by length</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -4172,10 +4208,10 @@ Vá em frente e salve?</translation>
         <translation>Fritzing atualmente suporta apenas as fontes OCRA e Droid--estas foram substituidas pelas fontes &apos;%1&apos;</translation>
     </message>
     <message>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
-        <translation>Não foi possivel carregar o arquivo de imagem &apos;%1&apos;: 
+        <translation>Não foi possivel carregar o arquivo de imagem &apos;%1&apos;:
 
 %2</translation>
     </message>
@@ -6104,6 +6140,91 @@ is already there, we won&apos;t add it again, right?</source>
         <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error %1
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the board outline layer, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>silkscreen layer(s), </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>copper layer(s), </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mask layer(s), </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>paste mask layer(s), </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to translate svg curves in %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 layer export is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 layer export is empty (case 2).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>silk layer %1 export is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>silk export failure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exported drill file is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>drill export failure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exported mask layer %1 is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 mask export failure (2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mask export failure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exported paste mask layer is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 layer: unable to save to &apos;%2&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may need to reload the shape SVG. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -6373,10 +6494,6 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

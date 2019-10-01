@@ -23,7 +23,7 @@
       <item> union </item>
       <item> while </item>
     </list>
-    
+
     <list name="keyword1">
      <item> boolean </item>
      <item> byte </item>
@@ -50,7 +50,7 @@
      <item> void </item>
      <item> word </item>
      </list>
-     
+
      <list name="keyword2-3">
      <item> abs </item>
      <item> acos </item>
@@ -177,7 +177,7 @@
         <keyword attribute="Keyword" context="#stay" String="keywords"/>
         <keyword attribute="Keyword" context="#stay" String="keyword1"/>
         <keyword attribute="Data Types" context="#stay" String="types"/>
-        <keyword attribute="Constant" context="#stay" String="constant"/>      
+        <keyword attribute="Constant" context="#stay" String="constant"/>
 	      <keyword attribute="Functions" context="#stay" String="keyword2-3"/>
         <DetectIdentifier />
         <DetectChar attribute="Symbol" context="#stay" char="{" beginRegion="Brace1" />

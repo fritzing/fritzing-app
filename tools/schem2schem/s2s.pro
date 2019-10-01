@@ -3,7 +3,7 @@
 # -------------------------------------------------
 
 
-QT += xml \  
+QT += xml \
     gui \
     svg \
 
@@ -16,7 +16,7 @@ SOURCES += main.cpp \
     ../../src/utils/s2s.cpp \
     ../../src/utils/textutils.cpp \
     ../../src/utils/schematicrectconstants.cpp \
-   
+
 HEADERS += s2sapplication.h \
     ../../src/utils/s2s.h \
     ../../src/utils/textutils.h \

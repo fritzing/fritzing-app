@@ -38,12 +38,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 1671 $:
-$Author: cohen@irascible.com $:
-$Date: 2008-11-28 12:20:31 +0100 (Fri, 28 Nov 2008) $
-
 ********************************************************************/
 
 #ifndef GEDAELEMENTPARSER_H
@@ -96,12 +90,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 1671 $:
-$Author: cohen@irascible.com $:
-$Date: 2008-11-28 12:20:31 +0100 (Fri, 28 Nov 2008) $
 
 ********************************************************************/
 
@@ -531,83 +519,83 @@ text_scale ::= number_value ;
 } break; ./
 
 number_value ::= NUMBER ;
-/. 
+/.
 case $rule_number: {
     qDebug() << "        got NUMBER " << lexer->currentNumber();
     m_symStack.append(lexer->currentNumber());
-} break; 
+} break;
 ./
 
 hex_number_value ::= HEXNUMBER ;
-/. 
+/.
 case $rule_number: {
     qDebug() << "        got HEXNUMBER " << lexer->currentNumber();
     m_symStack.append(lexer->currentNumber());
-} break; 
+} break;
 ./
 
 string_value ::= STRING ;
-/. 
+/.
 case $rule_number: {
     qDebug() << "        got STRING " << lexer->currentString();
     m_symStack.append(lexer->currentString());
-} break; 
+} break;
 ./
 
 element_command ::= ELEMENT ;
-/. 
+/.
 case $rule_number: {
     qDebug() << "got ELEMENT command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 pin_command ::= PIN ;
-/. 
+/.
 case $rule_number: {
     qDebug() << "got PIN command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 pad_command ::= PAD ;
-/. 
+/.
 case $rule_number: {
     qDebug() << "got PAD command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 mark_command::= MARK ;
-/. 
+/.
 case $rule_number: {
     qDebug() << "got MARK command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 element_line_command ::= ELEMENTLINE ;
-/. 
+/.
 case $rule_number: {
     qDebug() << "got ELEMENTLINE command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 element_arc_command ::= ELEMENTARC ;
-/. 
+/.
 case $rule_number: {
     qDebug() << "got ELEMENTARC command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 attribute_command ::= ATTRIBUTE ;
-/. 
+/.
 case $rule_number: {
     qDebug() << "got ATTRIBUTE command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 
@@ -659,30 +647,3 @@ case $rule_number: {
     return false;
 }
 ./
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

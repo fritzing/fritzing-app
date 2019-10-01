@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6984 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -36,7 +30,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "paletteitem.h"
 
 
-class Hole : public PaletteItem 
+class Hole : public PaletteItem
 {
 	Q_OBJECT
 
@@ -52,15 +46,15 @@ public:
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	bool hasCustomSVG();
 	PluralType isPlural();
-	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor); 
+	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	bool canEditPart();
-	void addedToScene(bool temporary);	
+	void addedToScene(bool temporary);
 	bool hasPartNumberProperty();
 	QString holeSize();
 	bool rotationAllowed();
 	bool rotation45Allowed();
 	bool canFindConnectorsUnder();
-    QRectF trueSceneBoundingRect();
+	QRectF trueSceneBoundingRect();
 
 protected slots:
 	void changeHoleSize(const QString &);
@@ -69,11 +63,11 @@ protected slots:
 protected:
 	QString makeSvg(const QString & holeDiameter, const QString & ringThickness, ViewLayer::ViewLayerID, bool includeHole);
 	virtual QString makeID();
-	ItemBase * setBothSvg(const QString & holeDiameter, const QString & ringThickness); 
+	ItemBase * setBothSvg(const QString & holeDiameter, const QString & ringThickness);
 	void setBothNonConnectors(ItemBase * itemBase, SvgIdLayer * svgIdLayer);
 	virtual void setBoth(const QString & holeDiameter, const QString &  thickness);
 	QRectF getRect(const QString & newSize);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 public:
 	static const double OffsetPixels;

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 #ifndef SVGFLATTENER_H
@@ -34,10 +28,10 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 class SvgFlattener : public SvgFileSplitter
 {
 public:
-    SvgFlattener();
+	SvgFlattener();
 
-    void flattenChildren(QDomElement & element);
-    void unRotateChild(QDomElement & element,QMatrix transform);
+	void flattenChildren(QDomElement & element);
+	void unRotateChild(QDomElement & element,QMatrix transform);
 
 public:
 	static void flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID, double printerScale, Qt::Orientations);
@@ -45,13 +39,13 @@ public:
 
 protected:
 	static QString flipSMDElement(QDomDocument & domDocument, QDomElement & element, const QString & att, QDomElement altAtt, const QString & altElementID, double printerScale, Qt::Orientations);
-    static bool hasOtherTransform(QDomElement & element);
-    static bool hasTranslate(QDomElement & element);
-    static bool loadDocIf(const QString & filename, const QString & svg, QDomDocument & domDocument);
+	static bool hasOtherTransform(QDomElement & element);
+	static bool hasTranslate(QDomElement & element);
+	static bool loadDocIf(const QString & filename, const QString & svg, QDomDocument & domDocument);
 
 
 protected slots:
-    void rotateCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
+	void rotateCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
 
 };
 

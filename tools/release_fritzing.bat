@@ -1,4 +1,4 @@
-echo off
+REM echo off
 
 echo .
 echo you must start this script from the Visual Studio Command Line Window
@@ -21,17 +21,17 @@ echo.
 
 IF .%1 == . (
 	echo first parameter--release version--is missing, should be something like 0.8.6b
-	EXIT /B
+	EXIT /B 1
 )
 
 IF .%2 == . (
 	echo second parameter--target architecture--is missing, should be either "32" for a 32-bit build or "64" for a 64-bit build
-	EXIT /B
+	EXIT /B 1
 )
 
 IF .%3 == . (
-	echo third parameter--visual studio version--is missing, should be "2012", "2013", "2015"
-	EXIT /B
+	echo third parameter--visual studio version--is missing, should be "2012", "2013", "2015", "2017"
+	EXIT /B 1
 )
 
 echo add the path for your git installation if it's not already there
@@ -40,33 +40,38 @@ set PATH=%PATH%;"C:\Program Files (x86)\Git\bin";
 echo set the path to the qt sdk bin folder
 IF %2==64 (
 	IF %3==2012 (
-    	set QTBIN=C:\Qt\5.6\msvc2012_64\bin
+	set QTBIN=C:\Qt\5.6\msvc2012_64\bin
     ) ELSE IF %3==2013 (
-    	set QTBIN=C:\Qt\5.6\msvc2013_64\bin
+	set QTBIN=C:\Qt\5.6\msvc2013_64\bin
     ) ELSE IF %3==2015 (
-    	set QTBIN=C:\Qt\5.6\msvc2015_64\bin
+	set QTBIN=C:\Qt\5.6\msvc2015_64\bin
+    ) ELSE IF %3==2017 (
+        set QTBIN=C:\Qt\5.12.3\msvc2017_64\bin
     )
 	set arch=""QMAKE_TARGET.arch=x86_64""
 ) ELSE (
 	IF %2==32 (
 		IF %3==2012 (
-	    	set QTBIN=C:\Qt\5.6\msvc2012\bin
+		set QTBIN=C:\Qt\5.6\msvc2012\bin
 	    ) ELSE IF %3==2013 (
-	    	set QTBIN=C:\Qt\5.6\msvc2013\bin
+		set QTBIN=C:\Qt\5.6\msvc2013\bin
 	    ) ELSE IF %3==2015 (
-	    	set QTBIN=C:\Qt\5.6\msvc2015\bin
+		set QTBIN=C:\Qt\5.6\msvc2015\bin
+	    ) ELSE IF %3==2017 (
+		set QTBIN=C:\Qt\5.12.3\msvc2017\bin
 	    )
 		set arch=.
 	) ELSE (
 		echo second parameter--target architecture--should be either "32" for a 32-bit build or "64" for a 64-bit build
-		EXIT /B
+		dir C:\Qt
+		EXIT /B 1
 	)
 )
 
 set QMAKE=%QTBIN%\qmake.exe
 
 if not exist %QMAKE% echo '%QMAKE%' not found--please change the path to Qt\bin
-if not exist %QMAKE% EXIT /B n
+if not exist %QMAKE% EXIT /B 1
 
 echo found qmake.exe
 echo.
@@ -80,10 +85,10 @@ rem set environment variable for qmake phoenix.pro
 set RELEASE_SCRIPT="release_script"
 
 
-%QMAKE% -o Makefile phoenix.pro %arch%
+%QMAKE% -o Makefile phoenix.pro %arch% || exit /b 1
 
 echo building fritzing
-nmake release
+nmake release || exit /b 2
 
 set DESTDIR=..\release%2
 rem get the absolute path of DESTDIR
@@ -91,7 +96,7 @@ pushd %DESTDIR%
 set DESTDIR=%CD%
 popd
 
-set RELEASE_NAME=%DESTDIR%\forzip\fritzing.%1.%2.pc
+set RELEASE_NAME=%DESTDIR%\forzip\fritzing-%1.%2.pc
 
 echo setting up deploy folder. ignore any "The system cannot find ..." messages
 rmdir %DESTDIR%\deploy /s /q
@@ -131,7 +136,7 @@ copy %QTBIN%\..\plugins\platforms\qwindows.dll %DESTDIR%\deploy\platforms\qwindo
 copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy\lib\printsupport\windowsprintersupport.dll
 
 echo copying git2.dll from %LIBGIT2%
-copy %LIBGIT2%\git2.dll  %DESTDIR%\deploy\git2.dll
+copy %LIBGIT2%\Release\git2.dll  %DESTDIR%\deploy\git2.dll
 
 echo copying sketches, translations, help, README, LICENSE
 echo.
@@ -144,7 +149,7 @@ xcopy /q .\sketches %DESTDIR%\deploy\sketches /E  /I
 
 xcopy /q .\help %DESTDIR%\deploy\help /E  /I
 
-copy .\readme.md %DESTDIR%\deploy\readme.md
+copy .\README.md %DESTDIR%\deploy\README.md
 copy .\LICENSE.GPL2 %DESTDIR%\deploy\LICENSE.GPL2
 copy .\LICENSE.GPL3 %DESTDIR%\deploy\LICENSE.GPL3
 copy .\LICENSE.CC-BY-SA %DESTDIR%\deploy\LICENSE.CC-BY-SA
@@ -157,7 +162,7 @@ set CURRENTDIR=%cd%
 cd %DESTDIR%
 cd deploy
 
-git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git
+git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git  || exit /b 3
 
 del/s placeholder.txt
 cd translations
@@ -166,7 +171,7 @@ cd %CURRENTDIR%
 
 IF %2==32 (
 	echo make the executable compatible with windows xp
-	"%VCINSTALLDIR%bin\editbin.exe" %DESTDIR%\deploy\Fritzing.exe /SUBSYSTEM:WINDOWS,5.01 /OSVERSION:5.1
+	"%VCINSTALLDIR%bin\editbin.exe" %DESTDIR%\deploy\Fritzing.exe /SUBSYSTEM:WINDOWS,5.01 /OSVERSION:5.1 || exit /b 3
 )
 
 echo copying vc redist files
@@ -188,14 +193,12 @@ IF %3==2012 (
 )
 
 echo run fritzing to create parts.db
-%DESTDIR%\deploy\Fritzing.exe -pp %DESTDIR%\deploy\fritzing-parts -db %DESTDIR%\deploy\fritzing-parts\parts.db
+%DESTDIR%\deploy\Fritzing.exe -pp %DESTDIR%\deploy\fritzing-parts -db %DESTDIR%\deploy\fritzing-parts\parts.db || exit /b 4
 
 echo moving deploy to %RELEASE_NAME%
 move %DESTDIR%\deploy %RELEASE_NAME%
 
 echo create zip file
-FOR /F %%i IN ("%DESTDIR%\forzip") DO SET SRC=%%~fi
-FOR /F %%i IN ("%DESTDIR%\fritzing.%1.%2.pc.zip") DO SET DEST=%%~fi
-CScript .\tools\zip.vbs %SRC% %DEST%
+7z a "%DESTDIR%\fritzing-%1.windows.%2.zip" "%DESTDIR%\forzip"
 
 echo done

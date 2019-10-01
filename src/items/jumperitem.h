@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6994 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-27 14:25:24 +0200 (Sa, 27. Apr 2013) $
-
 ********************************************************************/
 
 #ifndef JUMPERITEM_H
@@ -34,16 +28,16 @@ class JumperItem : public PaletteItem
 	Q_OBJECT
 
 public:
-	JumperItem( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry & , long id, QMenu* itemMenu, bool doLabel); 
+	JumperItem( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool doLabel);
 	~JumperItem();
 
-    QPainterPath shape() const;
-    QPainterPath hoverShape() const;
- 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	QPainterPath shape() const;
+	QPainterPath hoverShape() const;
+	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	void saveParams();
 	void getParams(QPointF & pos, QPointF & c0, QPointF & c1);
 	void resize(QPointF pos, QPointF c0, QPointF c1);
-	void resize(QPointF p0, QPointF p1);   
+	void resize(QPointF p0, QPointF p1);
 	QSizeF footprintSize();
 	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	bool getAutoroutable();
@@ -72,15 +66,15 @@ protected:
 	void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 	void resizeAux(double r0x, double r0y, double r1x, double r1y);
-	void rotateEnds(QTransform & rotation, QPointF & tc0, QPointF & tc1); 
+	void rotateEnds(QTransform & rotation, QPointF & tc0, QPointF & tc1);
 	QPointF calcPos(QPointF p0, QPointF p1);
 	void initialResize(ViewLayer::ViewID);
 	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	void paintSelected(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 signals:
-	void alignMe(JumperItem *, QPointF & p); 
+	void alignMe(JumperItem *, QPointF & p);
 
 protected:
 	QPointer<ConnectorItem> m_dragItem;
@@ -97,7 +91,7 @@ protected:
 	QPointF m_itemPos;
 	QPointF m_itemC0;
 	QPointF m_itemC1;
-    QPointer<PaletteItemBase> m_originalClickItem;
+	QPointer<PaletteItemBase> m_originalClickItem;
 };
 
 #endif

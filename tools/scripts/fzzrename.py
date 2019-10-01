@@ -1,19 +1,19 @@
 # usage:
-#	fzzrename.py -f [fzz original path] -t [fzz new path] 
+#	fzzrename.py -f [fzz original path] -t [fzz new path]
 #	renames fzz file as well as internal fz file.  if the -t parameter is not a directory, the fzz is renamed but not copied
 
 # lots of borrowing from http://code.activestate.com/recipes/252508-file-unzip/
 
 import getopt, sys, os, os.path, re, zipfile, shutil
-    
+
 def usage():
     print """
 usage:
-    fzzrename.py -f [fzz original path] -t [fzz new path] 
+    fzzrename.py -f [fzz original path] -t [fzz new path]
     renames fzz file as well as internal fz file.  if the -t parameter is not a directory, the fzz is renamed but not copied
     """
-    
-           
+
+
 def main():
     try:
         opts, args = getopt.getopt(sys.argv[1:], "hf:t:", ["help", "from", "to"])
@@ -24,7 +24,7 @@ def main():
         sys.exit(2)
     fromName = None
     toName = None
-    
+
     for o, a in opts:
         #print o
         #print a
@@ -37,16 +37,16 @@ def main():
             sys.exit(2)
         else:
             assert False, "unhandled option"
-    
+
     if(not(fromName)):
         usage()
         sys.exit(2)
-        
+
     if not(fromName.endswith(".fzz")):
         print "-f is not .fzz"
         usage()
         sys.exit(2)
-        
+
     if(not(toName)):
         usage()
         sys.exit(2)
@@ -63,23 +63,23 @@ def main():
     else:
         if not outputDir.endswith(':') and not os.path.exists(outputDir):
             os.mkdir(outputDir)
-   
+
     tempDir = outputDir + "/" + "___temp___"
     shutil.rmtree(tempDir, 1)
     os.mkdir(tempDir)
-    
+
     zf = zipfile.ZipFile(fromName)
     zf.extractall(tempDir)
-    
+
     fromBaseName = os.path.basename(fromName)
     toBaseName = os.path.basename(toName)
-    
+
     fromFzName = os.path.splitext(fromBaseName)[0] + ".fz"
     toFzName = os.path.splitext(toBaseName)[0] + ".fz"
-    
+
     print os.path.join(tempDir, fromFzName), os.path.join(tempDir, toFzName)
     os.rename(os.path.join(tempDir, fromFzName), os.path.join(tempDir, toFzName))
-    
+
     # helpful examples in http://www.doughellmann.com/PyMOTW/zipfile/
     try:
         import zlib
@@ -97,6 +97,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6565 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-10-15 12:10:48 +0200 (Mo, 15. Okt 2012) $
-
 ********************************************************************/
 
 #ifndef MODELBASE_H
@@ -32,7 +26,7 @@ $Date: 2012-10-15 12:10:48 +0200 (Mo, 15. Okt 2012) $
 
 class ModelBase : public QObject
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	ModelBase(bool makeRoot);
@@ -42,7 +36,7 @@ public:
 	ModelPartSharedRoot * rootModelPartShared();
 	virtual ModelPart* retrieveModelPart(const QString & moduleID);
 	virtual ModelPart * addModelPart(ModelPart * parent, ModelPart * copyChild);
-    bool loadFromFile(const QString & fileName, ModelBase* referenceModel, QList<ModelPart *> & modelParts, bool checkInstances);
+	bool loadFromFile(const QString & fileName, ModelBase* referenceModel, QList<ModelPart *> & modelParts, bool checkInstances);
 	void save(const QString & fileName, bool asPart);
 	void save(const QString & fileName, class QXmlStreamWriter &, bool asPart);
 	virtual ModelPart * addPart(QString newPartPath, bool addToReference);
@@ -52,11 +46,11 @@ public:
 	void setReportMissingModules(bool);
 	ModelPart * genFZP(const QString & moduleID, ModelBase * referenceModel);
 	const QString & fritzingVersion();
-    void setReferenceModel(ModelBase *);
-    bool checkForReversedWires();
+	void setReferenceModel(ModelBase *);
+	bool checkForReversedWires();
 
 public:
-    static bool onCoreList(const QString & moduleID);
+	static bool onCoreList(const QString & moduleID);
 
 signals:
 	void loadedViews(ModelBase *, QDomElement & views);
@@ -64,8 +58,8 @@ signals:
 	void loadingInstances(ModelBase *, QDomElement & instances);
 	void loadingInstance(ModelBase *, QDomElement & instance);
 	void loadedInstances(ModelBase *, QDomElement & instances);
-    void obsoleteSMDOrientationSignal();
-    void oldSchematicsSignal(const QString & filename, bool & useOldSchematics);
+	void obsoleteSMDOrientationSignal();
+	void oldSchematicsSignal(const QString & filename, bool & useOldSchematics);
 
 protected:
 	void renewModelIndexes(QDomElement & root, const QString & childName, QHash<long, long> & oldToNew);
@@ -76,19 +70,19 @@ protected:
 	static void checkMystery(QDomElement & instance);
 	static bool checkObsoleteOrientation(QDomElement & instance);
 	static bool checkOldSchematics(QDomElement & instance);
-    ModelPart * createOldSchematicPart(ModelPart *, QString & moduleIDRef);
-    ModelPart * createOldSchematicPartAux(ModelPart *, const QString & oldModuleIDRef, const QString & oldSchematicFileName, const QString & oldSvgPath);
+	ModelPart * createOldSchematicPart(ModelPart *, QString & moduleIDRef);
+	ModelPart * createOldSchematicPartAux(ModelPart *, const QString & oldModuleIDRef, const QString & oldSchematicFileName, const QString & oldSvgPath);
 
 protected:
 	QPointer<ModelPart> m_root;
 	QPointer<ModelBase> m_referenceModel;
 	bool m_reportMissingModules;
 	QString m_fritzingVersion;
-    bool m_useOldSchematics;
-    bool m_checkForReversedWires;
+	bool m_useOldSchematics;
+	bool m_checkForReversedWires;
 
 protected:
-    static QList<QString> CoreList;
+	static QList<QString> CoreList;
 
 };
 

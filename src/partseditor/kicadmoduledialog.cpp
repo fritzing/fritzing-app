@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6385 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-09-08 21:21:20 +0200 (Sa, 08. Sep 2012) $
 
 ********************************************************************/
 
@@ -37,7 +31,7 @@ $Date: 2012-09-08 21:21:20 +0200 (Sa, 08. Sep 2012) $
 
 /////////////////////////////////////////////////////////
 
-KicadModuleDialog::KicadModuleDialog(const QString & partType, const QString & filename, const QStringList & modules, QWidget *parent) : QDialog(parent) 
+KicadModuleDialog::KicadModuleDialog(const QString & partType, const QString & filename, const QStringList & modules, QWidget *parent) : QDialog(parent)
 {
 	this->setWindowTitle(QObject::tr("Select %1").arg(partType));
 
@@ -58,12 +52,12 @@ KicadModuleDialog::KicadModuleDialog(const QString & partType, const QString & f
 
 	vLayout->addWidget(frame);
 
-    QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 	buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	vLayout->addWidget(buttonBox);
 
@@ -76,4 +70,3 @@ KicadModuleDialog::~KicadModuleDialog() {
 const QString KicadModuleDialog::selectedModule() {
 	return m_comboBox->currentText();
 }
-

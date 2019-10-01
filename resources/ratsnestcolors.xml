@@ -22,7 +22,6 @@
 		<color name="white" ratsnest=""  wire="#ffffff" shadow="#999999" />
 		<color name="orange" ratsnest="#ef6100"  wire="#ef6100" shadow="#ad6a38" >
 			<obsolete name="orange" ratsnest="#ff7033"  wire="#ff7033" shadow="#d95821" />
-			<obsolete name="orange" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#d95821" />
 		</color>
 		<color name="ochre" ratsnest="#a37911"  wire="#a37911" shadow="#846521" />
 		<color name="cyan" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#00a0c6" />
@@ -55,7 +54,6 @@
 		<color name="orange" ratsnest="#ff7300"  wire="#ff7300" shadow="#d65b00" >
 			<obsolete name="orange" ratsnest="#ef6100"  wire="#ef6100" shadow="#ad6a38" />
 			<obsolete name="orange" ratsnest="#ff7033"  wire="#ff7033" shadow="#ff7033"/>
-			<obsolete name="orange" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#33ffc5"/>
 		</color>
 		<color name="ochre" ratsnest="#a37911"  wire="#a37911" shadow="#846521" />
 		<color name="cyan" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#00a0c6" />
@@ -66,7 +64,7 @@
 			<obsolete name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#8c3b00"/>
 		</color>
 		<color name="pink" ratsnest="#fa50e6"  wire="#fa50e6" shadow="#dc00dc" />
-	</view>	
+	</view>
 	<view name="pcbView" background="#333">
 		<color name="blue" ratsnest="#157de6" />
 		<color name="red" ratsnest="#cc1414" >
@@ -77,7 +75,7 @@
 			<connector name="gnd" />
 			<connector name="ground" />
 		</color>
-		<!--	
+		<!--
 		<color name="yellow" ratsnest="" >
 			<obsolete name="yellow" ratsnest="#ffe24d" />
 			<obsolete name="yellow" ratsnest="#a09c00" />
@@ -86,9 +84,8 @@
 		</color>
 		<color name="white" ratsnest="">
 		</color>
-		<color name="orange" ratsnest=""> 
+		<color name="orange" ratsnest="">
 			<obsolete name="orange" ratsnest="#ff7033" />
-			<obsolete name="orange" ratsnest="#33ffc5" />
 		</color>
 		-->
 		<color name="green" ratsnest="#1fb551">

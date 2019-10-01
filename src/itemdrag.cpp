@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6264 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-08-07 17:59:08 +0200 (Di, 07. Aug 2012) $
-
 ********************************************************************/
 
 
@@ -33,8 +27,8 @@ ItemDrag * ItemDrag::Singleton = new ItemDrag();
 ItemDrag::ItemDrag(QObject * parent) :
 	QObject(parent)
 {
-    m_originator = NULL;
-    m_originatorIsTempBin = false;
+	m_originator = NULL;
+	m_originatorIsTempBin = false;
 }
 
 void ItemDrag::__dragIsDone() {

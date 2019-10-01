@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 ********************************************************************/
 
@@ -56,91 +50,92 @@ static double connectorRectClipInset = 0.5;
 int CrossingsTest( double pgon[][2], int numverts, double point[2] )
 {
 #ifdef	WINDING
-register int	crossings ;
+	register int	crossings ;
 #endif
-register int	j, yflag0, yflag1, inside_flag, xflag0 ;
-register double ty, tx, *vtx0, *vtx1 ;
+	register int	j, yflag0, yflag1, inside_flag, xflag0 ;
+	register double ty, tx, *vtx0, *vtx1 ;
 #ifdef	CONVEX
-register int	line_flag ;
+	register int	line_flag ;
 #endif
 
-    tx = point[XCOORD] ;
-    ty = point[YCOORD] ;
+	tx = point[XCOORD] ;
+	ty = point[YCOORD] ;
 
-    vtx0 = pgon[numverts-1] ;
-    /* get test bit for above/below X axis */
-    yflag0 = ( vtx0[YCOORD] >= ty ) ;
-    vtx1 = pgon[0] ;
+	vtx0 = pgon[numverts-1] ;
+	/* get test bit for above/below X axis */
+	yflag0 = ( vtx0[YCOORD] >= ty ) ;
+	vtx1 = pgon[0] ;
 
 #ifdef	WINDING
-    crossings = 0 ;
+	crossings = 0 ;
 #else
-    inside_flag = 0 ;
+	inside_flag = 0 ;
 #endif
 #ifdef	CONVEX
-    line_flag = 0 ;
+	line_flag = 0 ;
 #endif
-    for ( j = numverts+1 ; --j ; ) {
+	for ( j = numverts+1 ; --j ; ) {
 
-	yflag1 = ( vtx1[YCOORD] >= ty ) ;
-	/* check if endpoints straddle (are on opposite sides) of X axis
-	 * (i.e. the Y's differ); if so, +X ray could intersect this edge.
-	 */
-	if ( yflag0 != yflag1 ) {
-	    xflag0 = ( vtx0[XCOORD] >= tx ) ;
-	    /* check if endpoints are on same side of the Y axis (i.e. X's
-	     * are the same); if so, it's easy to test if edge hits or misses.
-	     */
-	    if ( xflag0 == ( vtx1[XCOORD] >= tx ) ) {
-
-		/* if edge's X values both right of the point, must hit */
-#ifdef	WINDING
-		if ( xflag0 ) crossings += ( yflag0 ? -1 : 1 ) ;
-#else
-		if ( xflag0 ) inside_flag = !inside_flag ;
-#endif
-	    } else {
-		/* compute intersection of pgon segment with +X ray, note
-		 * if >= point's X; if so, the ray hits it.
+		yflag1 = ( vtx1[YCOORD] >= ty ) ;
+		/* check if endpoints straddle (are on opposite sides) of X axis
+		 * (i.e. the Y's differ); if so, +X ray could intersect this edge.
 		 */
-		if ( (vtx1[XCOORD] - (vtx1[YCOORD]-ty)*
-		     ( vtx0[XCOORD]-vtx1[XCOORD])/(vtx0[YCOORD]-vtx1[YCOORD])) >= tx ) {
+		if ( yflag0 != yflag1 ) {
+			xflag0 = ( vtx0[XCOORD] >= tx ) ;
+			/* check if endpoints are on same side of the Y axis (i.e. X's
+			 * are the same); if so, it's easy to test if edge hits or misses.
+			 */
+			if ( xflag0 == ( vtx1[XCOORD] >= tx ) ) {
+
+				/* if edge's X values both right of the point, must hit */
 #ifdef	WINDING
-		    crossings += ( yflag0 ? -1 : 1 ) ;
+				if ( xflag0 ) crossings += ( yflag0 ? -1 : 1 ) ;
 #else
-		    inside_flag = !inside_flag ;
+				if ( xflag0 ) inside_flag = !inside_flag ;
+#endif
+			} else {
+				/* compute intersection of pgon segment with +X ray, note
+				 * if >= point's X; if so, the ray hits it.
+				 */
+				if ( (vtx1[XCOORD] - (vtx1[YCOORD]-ty)*
+				        ( vtx0[XCOORD]-vtx1[XCOORD])/(vtx0[YCOORD]-vtx1[YCOORD])) >= tx ) {
+#ifdef	WINDING
+					crossings += ( yflag0 ? -1 : 1 ) ;
+#else
+					inside_flag = !inside_flag ;
+#endif
+				}
+			}
+#ifdef	CONVEX
+			/* if this is second edge hit, then done testing */
+			if ( line_flag ) goto Exit ;
+
+			/* note that one edge has been hit by the ray's line */
+			line_flag = true;
 #endif
 		}
-	    }
-#ifdef	CONVEX
-	    /* if this is second edge hit, then done testing */
-	    if ( line_flag ) goto Exit ;
 
-	    /* note that one edge has been hit by the ray's line */
-	    line_flag = true;
-#endif
+		/* move to next pair of vertices, retaining info as possible */
+		yflag0 = yflag1 ;
+		vtx0 = vtx1 ;
+		vtx1 += 2 ;
 	}
-
-	/* move to next pair of vertices, retaining info as possible */
-	yflag0 = yflag1 ;
-	vtx0 = vtx1 ;
-	vtx1 += 2 ;
-    }
 #ifdef	CONVEX
-    Exit: ;
+Exit:
+	;
 #endif
 #ifdef	WINDING
-    /* test if crossings is not zero */
-    inside_flag = (crossings != 0) ;
+	/* test if crossings is not zero */
+	inside_flag = (crossings != 0) ;
 #endif
 
-    return( inside_flag ) ;
+	return( inside_flag ) ;
 }
 
 
 /////////////////////////////////////////////////////////
 
-ClipableWire::ClipableWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool initLabel ) 
+ClipableWire::ClipableWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool initLabel )
 	: Wire(modelPart, viewID,  viewGeometry,  id, itemMenu, initLabel)
 {
 	m_clipEnds = false;
@@ -149,16 +144,16 @@ ClipableWire::ClipableWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  co
 	m_cachedOriginalLine.setPoints(QPointF(-99999,-99999), QPointF(-99999,-99999));
 }
 
-const QLineF & ClipableWire::getPaintLine() {	
+const QLineF & ClipableWire::getPaintLine() {
 	if (!m_clipEnds) {
 		return Wire::getPaintLine();
 	}
 
 	QLineF originalLine = this->line();
-    //qDebug() << "line" << originalLine.p1() + pos() << originalLine.p2() + pos() << pos();
+	//qDebug() << "line" << originalLine.p1() + pos() << originalLine.p2() + pos() << pos();
 	if (m_cachedOriginalLine == originalLine) {
-        // qDebug() << "  cachedline a" << m_cachedLine.p1() + pos() << m_cachedLine.p2() + pos() << pos();
-        return m_cachedLine;
+		// qDebug() << "  cachedline a" << m_cachedLine.p1() + pos() << m_cachedLine.p2() + pos() << pos();
+		return m_cachedLine;
 	}
 
 	int t0c = 0;
@@ -182,36 +177,36 @@ const QLineF & ClipableWire::getPaintLine() {
 	}
 
 	if ((to0 == NULL && to1 == NULL) ||		// no need to clip an unconnected wire
-		(to0 == NULL && t0c == 0) ||		// dragging out a wire, no need to clip
-		(to1 == NULL && t1c == 0) ||		// dragging out a wire, no need to clip
-		m_dragEnd)							// dragging out a wire, no need to clip
+	        (to0 == NULL && t0c == 0) ||		// dragging out a wire, no need to clip
+	        (to1 == NULL && t1c == 0) ||		// dragging out a wire, no need to clip
+	        m_dragEnd)							// dragging out a wire, no need to clip
 	{
 		return Wire::getPaintLine();
 	}
 
-    QPointF p1 = originalLine.p1();
-    QPointF p2 = originalLine.p2();
+	QPointF p1 = originalLine.p1();
+	QPointF p2 = originalLine.p2();
 
-    //if (this->viewID() == ViewLayer::PCBView) {
-    //    qDebug() << "before" << "p1:" <<  p1 << "p2:" << p2 << "pos:" << pos() << "pp1:" << pos() + p1 << "pp2:" << pos() + p2;
-    //    m_connector0->debugInfo("  c0");
-    //    m_connector1->debugInfo("  c1");
-    //    if (to0) to0->debugInfo("  to0");
-    //    if (to1) to1->debugInfo("  to1");
-    //}
+	//if (this->viewID() == ViewLayer::PCBView) {
+	//    qDebug() << "before" << "p1:" <<  p1 << "p2:" << p2 << "pos:" << pos() << "pp1:" << pos() + p1 << "pp2:" << pos() + p2;
+	//    m_connector0->debugInfo("  c0");
+	//    m_connector1->debugInfo("  c1");
+	//    if (to0) to0->debugInfo("  to0");
+	//    if (to1) to1->debugInfo("  to1");
+	//}
 
-    calcClip(p1, p2, to0, to1);
+	calcClip(p1, p2, to0, to1);
 
-    //if (this->viewID() == ViewLayer::PCBView) {
-    //    qDebug() << "after" << p1 << p2 << this->pos();
-    //    if (to0) to0->debugInfo("  to0");
-    //    if (to1) to1->debugInfo("  to1");
-    //}
+	//if (this->viewID() == ViewLayer::PCBView) {
+	//    qDebug() << "after" << p1 << p2 << this->pos();
+	//    if (to0) to0->debugInfo("  to0");
+	//    if (to1) to1->debugInfo("  to1");
+	//}
 
 	m_cachedOriginalLine = originalLine;
 	m_cachedLine.setPoints(p1, p2);
-    //qDebug() << "  cachedline b" << m_cachedLine.p1() + pos() << m_cachedLine.p2() + pos() << pos();
-    return m_cachedLine;
+	//qDebug() << "  cachedline b" << m_cachedLine.p1() + pos() << m_cachedLine.p2() + pos() << pos();
+	return m_cachedLine;
 
 }
 
@@ -225,32 +220,32 @@ void ClipableWire::setClipEnds(bool clipEnds ) {
 void ClipableWire::calcClip(QPointF & p1, QPointF & p2, ConnectorItem * c1, ConnectorItem * c2) {
 
 	if (c1 != NULL && c2 != NULL && c1->isEffectivelyCircular() && c2->isEffectivelyCircular()) {
-        //qDebug() << "clause 1" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << c2->calcClipRadius() + (m_pen.width() / 2.0);
-        //c1->debugInfo("  c1");
-        //c2->debugInfo("  c2");
+		//qDebug() << "clause 1" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << c2->calcClipRadius() + (m_pen.width() / 2.0);
+		//c1->debugInfo("  c1");
+		//c2->debugInfo("  c2");
 		GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius() + (m_pen.width() / 2.0), c2->calcClipRadius() + (m_pen.width() / 2.0));
 		return;
 	}
 
 	if (c1 != NULL && c1->isEffectivelyCircular()) {
-        //qDebug() << "clause 2" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << 0;
-        //c1->debugInfo("  c1");
-        GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius() + (m_pen.width() / 2.0), 0);
+		//qDebug() << "clause 2" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << 0;
+		//c1->debugInfo("  c1");
+		GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius() + (m_pen.width() / 2.0), 0);
 		p2 = findIntersection(c2, p2);
 		return;
 	}
 
 	if (c2 != NULL && c2->isEffectivelyCircular()) {
-        //qDebug() << "clause 3" << p1 << p2 << 0 << c2->calcClipRadius() + (m_pen.width() / 2.0);
-        //c2->debugInfo("  c2");
-        GraphicsUtils::shortenLine(p1, p2, 0, c2->calcClipRadius() + (m_pen.width() / 2.0));
+		//qDebug() << "clause 3" << p1 << p2 << 0 << c2->calcClipRadius() + (m_pen.width() / 2.0);
+		//c2->debugInfo("  c2");
+		GraphicsUtils::shortenLine(p1, p2, 0, c2->calcClipRadius() + (m_pen.width() / 2.0));
 		p1 = findIntersection(c1, p1);
 		return;
 	}
 
-    //qDebug() << "clause 4" << p1 << p2;
-    //if (c1) c1->debugInfo("  c1");
-    //if (c2) c2->debugInfo("  c2");
+	//qDebug() << "clause 4" << p1 << p2;
+	//if (c1) c1->debugInfo("  c1");
+	//if (c2) c2->debugInfo("  c2");
 
 	p1 = findIntersection(c1, p1);
 	p2 = findIntersection(c2, p2);
@@ -310,7 +305,7 @@ void ClipableWire::mousePressEvent(QGraphicsSceneMouseEvent *event)
 	Wire::mousePressEvent(event);
 }
 
-void ClipableWire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event , ConnectorItem * item) {
+void ClipableWire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item) {
 
 	//Wire::hoverEnterConnectorItem(event, item);
 
@@ -398,7 +393,7 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 			return;
 		}
 		if (m_trackHoverLastItem) {
-            QList<ConnectorItem *> visited;
+			QList<ConnectorItem *> visited;
 			m_trackHoverLastItem->restoreColor(visited);
 			m_trackHoverLastItem->attachedTo()->hoverLeaveConnectorItem();
 			m_trackHoverLastItem = NULL;
@@ -412,7 +407,7 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 	else {
 		//DebugDialog::debug("got none");
 		if (m_trackHoverLastItem != NULL) {
-            QList<ConnectorItem *> visited;
+			QList<ConnectorItem *> visited;
 			m_trackHoverLastItem->restoreColor(visited);
 			m_trackHoverLastItem->attachedTo()->hoverLeaveConnectorItem();
 			m_trackHoverLastItem = NULL;
@@ -424,7 +419,7 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 	}
 }
 
-bool ClipableWire::insideInnerCircle(ConnectorItem * connectorItem, QPointF scenePos) 
+bool ClipableWire::insideInnerCircle(ConnectorItem * connectorItem, QPointF scenePos)
 {
 	QPointF localPos = connectorItem->mapFromScene(scenePos);
 	double rad = connectorItem->radius();
@@ -442,7 +437,7 @@ bool ClipableWire::insideInnerCircle(ConnectorItem * connectorItem, QPointF scen
 	return false;
 }
 
-bool ClipableWire::insideSpoke(ClipableWire * wire, QPointF scenePos) 
+bool ClipableWire::insideSpoke(ClipableWire * wire, QPointF scenePos)
 {
 	QLineF l = wire->line();
 	QLineF normal = l.normalVector();

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6980 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -91,7 +85,7 @@ bool SvgFileSplitter::splitString(QString & contents, const QString & elementID)
 	int errorColumn;
 
 	if (!m_domDocument.setContent(contents, true, &errorStr, &errorLine, &errorColumn)) {
-        //DebugDialog::debug(QString("parse error: %1 l:%2 c:%3\n\n%4").arg(errorStr).arg(errorLine).arg(errorColumn).arg(contents));
+		//DebugDialog::debug(QString("parse error: %1 l:%2 c:%3\n\n%4").arg(errorStr).arg(errorLine).arg(errorColumn).arg(contents));
 		return false;
 	}
 
@@ -138,9 +132,9 @@ bool SvgFileSplitter::splitString(QString & contents, const QString & elementID)
 			elementText = QString("<g transform='%1'>%2</g>").arg(superTransforms[i]).arg(elementText);
 		}
 		elementText = QString("<g id='%1' transform='%2'>%3</g>")
-			.arg(elementID)
-			.arg(superTransforms[superTransforms.count() - 1])
-			.arg(elementText);
+		              .arg(elementID)
+		              .arg(superTransforms[superTransforms.count() - 1])
+		              .arg(elementText);
 	}
 
 	while (!root.firstChild().isNull()) {
@@ -196,7 +190,7 @@ bool SvgFileSplitter::normalize(double dpi, const QString & elementID, bool blac
 	// then normalize all the internal stuff
 	// if there are translations, we're probably ok
 
-    factor = 1;
+	factor = 1;
 
 	QDomElement root = m_domDocument.documentElement();
 	if (root.isNull()) return false;
@@ -217,7 +211,7 @@ bool SvgFileSplitter::normalize(double dpi, const QString & elementID, bool blac
 
 	normalizeChild(mainElement, sWidth * dpi, sHeight * dpi, vbWidth, vbHeight, blackOnly);
 
-    factor = sWidth * dpi / vbWidth;
+	factor = sWidth * dpi / vbWidth;
 
 	return true;
 }
@@ -228,7 +222,7 @@ QPainterPath SvgFileSplitter::painterPath(double dpi, const QString & elementID)
 
 	QPainterPath ppath;
 
-    double factor;
+	double factor;
 	bool result = normalize(dpi, elementID, false, factor);
 	if (!result) return ppath;
 
@@ -278,7 +272,7 @@ void SvgFileSplitter::painterPathChild(QDomElement & element, QPainterPath & ppa
 		double stroke = element.attribute("stroke-width").toDouble();
 		double rx = element.attribute("rx").toDouble();
 		double ry = element.attribute("ry").toDouble();
-		if (rx != 0 || ry != 0) { 
+		if (rx != 0 || ry != 0) {
 			ppath.addRoundedRect(x - (stroke / 2), y - (stroke / 2), width + stroke, height + stroke, rx, ry);
 		}
 		else {
@@ -300,7 +294,7 @@ void SvgFileSplitter::painterPathChild(QDomElement & element, QPainterPath & ppa
 			PathUserData pathUserData;
 			pathUserData.pathStarting = true;
 			pathUserData.painterPath = &ppath;
-            if (parsePath(data, slot, pathUserData, this, false)) {
+			if (parsePath(data, slot, pathUserData, this, false)) {
 			}
 		}
 	}
@@ -315,7 +309,7 @@ void SvgFileSplitter::painterPathChild(QDomElement & element, QPainterPath & ppa
 			pathUserData.sNewWidth = sNewWidth;
 			pathUserData.vbHeight = vbHeight;
 			pathUserData.vbWidth = vbWidth;
-            if (parsePath(data, slot, pathUserData, this, true)) {
+		    if (parsePath(data, slot, pathUserData, this, true)) {
 				element.setAttribute("d", pathUserData.string);
 			}
 		}
@@ -331,8 +325,8 @@ void SvgFileSplitter::painterPathChild(QDomElement & element, QPainterPath & ppa
 }
 
 void SvgFileSplitter::normalizeTranslation(QDomElement & element,
-											double sNewWidth, double sNewHeight,
-											double vbWidth, double vbHeight)
+        double sNewWidth, double sNewHeight,
+        double vbWidth, double vbHeight)
 {
 	QString attr = element.attribute("transform");
 	if (attr.isEmpty()) return;
@@ -351,8 +345,8 @@ void SvgFileSplitter::normalizeTranslation(QDomElement & element,
 
 
 void SvgFileSplitter::normalizeChild(QDomElement & element,
-									 double sNewWidth, double sNewHeight,
-									 double vbWidth, double vbHeight, bool blackOnly)
+                                     double sNewWidth, double sNewHeight,
+                                     double vbWidth, double vbHeight, bool blackOnly)
 {
 	normalizeTranslation(element, sNewWidth, sNewHeight, vbWidth, vbHeight);
 
@@ -420,7 +414,7 @@ void SvgFileSplitter::normalizeChild(QDomElement & element,
 			pathUserData.sNewWidth = sNewWidth;
 			pathUserData.vbHeight = vbHeight;
 			pathUserData.vbWidth = vbWidth;
-            if (parsePath(data, slot, pathUserData, this, false)) {
+			if (parsePath(data, slot, pathUserData, this, false)) {
 				pathUserData.string.remove(0, 1);			// get rid of the "M"
 				element.setAttribute("points", pathUserData.string);
 			}
@@ -440,7 +434,7 @@ void SvgFileSplitter::normalizeChild(QDomElement & element,
 			pathUserData.sNewWidth = sNewWidth;
 			pathUserData.vbHeight = vbHeight;
 			pathUserData.vbWidth = vbWidth;
-            if (parsePath(data, slot, pathUserData, this, true)) {
+			if (parsePath(data, slot, pathUserData, this, true)) {
 				element.setAttribute("d", pathUserData.string);
 			}
 		}
@@ -491,17 +485,17 @@ void SvgFileSplitter::normalizeChild(QDomElement & element,
 
 bool SvgFileSplitter::normalizeAttribute(QDomElement & element, const char * attributeName, double num, double denom)
 {
-    QString attributeValue = element.attribute(attributeName);
-    if (attributeValue.isEmpty()) return true;
+	QString attributeValue = element.attribute(attributeName);
+	if (attributeValue.isEmpty()) return true;
 
-    bool ok;
+	bool ok;
 	double n = attributeValue.toDouble(&ok) * num / denom;
-    if (!ok) {
-        QString string;
-        QTextStream stream(&string);
-        element.save(stream, 0);
-        //DebugDialog::debug("bad attribute " + string);
-    }
+	if (!ok) {
+		QString string;
+		QTextStream stream(&string);
+		element.save(stream, 0);
+		//DebugDialog::debug("bad attribute " + string);
+	}
 
 	element.setAttribute(attributeName, QString::number(n));
 	return ok;
@@ -555,8 +549,8 @@ bool SvgFileSplitter::shiftTranslation(QDomElement & element, double x, double y
 	double cosTheta = m0.m11();
 	double cosThetaMinusOne = cosTheta - 1;
 
-	double cx = (m0.dx() + (sinTheta * m0.dy() / cosThetaMinusOne)) / 
-			    (cosThetaMinusOne + (sinTheta * sinTheta / cosThetaMinusOne));
+	double cx = (m0.dx() + (sinTheta * m0.dy() / cosThetaMinusOne)) /
+	            (cosThetaMinusOne + (sinTheta * sinTheta / cosThetaMinusOne));
 	double cy = (m0.dy() - (sinTheta * cx)) / cosThetaMinusOne;
 
 	cx += x;
@@ -603,7 +597,7 @@ void SvgFileSplitter::shiftChild(QDomElement & element, double x, double y, bool
 			pathUserData.pathStarting = true;
 			pathUserData.x = x;
 			pathUserData.y = y;
-            if (parsePath(data, slot, pathUserData, this, false)) {
+			if (parsePath(data, slot, pathUserData, this, false)) {
 				pathUserData.string.remove(0, 1);			// get rid of the "M"
 				element.setAttribute("points", pathUserData.string);
 			}
@@ -617,7 +611,7 @@ void SvgFileSplitter::shiftChild(QDomElement & element, double x, double y, bool
 			pathUserData.pathStarting = true;
 			pathUserData.x = x;
 			pathUserData.y = y;
-            if (parsePath(data, slot, pathUserData, this, true)) {
+			if (parsePath(data, slot, pathUserData, this, true)) {
 				element.setAttribute("d", pathUserData.string);
 			}
 		}
@@ -640,70 +634,70 @@ void SvgFileSplitter::normalizeCommandSlot(QChar command, bool relative, QList<d
 	double d;
 	pathUserData->string.append(command);
 	switch(command.toLatin1()) {
-		case 'v':
-		case 'V':
-			//DebugDialog::debug("'v' and 'V' are now removed by preprocessing; shouldn't be here");
-			/*
-			for (int i = 0; i < args.count(); i++) {
-				d = args[i] * pathUserData->sNewHeight / pathUserData->vbHeight;
-				pathUserData->string.append(QString::number(d));
-				if (i < args.count() - 1) {
-					pathUserData->string.append(',');
-				}
+	case 'v':
+	case 'V':
+		//DebugDialog::debug("'v' and 'V' are now removed by preprocessing; shouldn't be here");
+		/*
+		for (int i = 0; i < args.count(); i++) {
+			d = args[i] * pathUserData->sNewHeight / pathUserData->vbHeight;
+			pathUserData->string.append(QString::number(d));
+			if (i < args.count() - 1) {
+				pathUserData->string.append(',');
 			}
-			*/
-			break;
-		case 'h':
-		case 'H':
-			//DebugDialog::debug("'h' and 'H' are now removed by preprocessing; shouldn't be here");
-			/*
-			for (int i = 0; i < args.count(); i++) {
+		}
+		*/
+		break;
+	case 'h':
+	case 'H':
+		//DebugDialog::debug("'h' and 'H' are now removed by preprocessing; shouldn't be here");
+		/*
+		for (int i = 0; i < args.count(); i++) {
+			d = args[i] * pathUserData->sNewWidth / pathUserData->vbWidth;
+			pathUserData->string.append(QString::number(d));
+			if (i < args.count() - 1) {
+				pathUserData->string.append(',');
+			}
+		}
+		*/
+		break;
+	case 'a':
+	case 'A':
+		for (int i = 0; i < args.count(); i++) {
+			switch (i % 7) {
+			case 0:
+			case 5:
 				d = args[i] * pathUserData->sNewWidth / pathUserData->vbWidth;
-				pathUserData->string.append(QString::number(d));
-				if (i < args.count() - 1) {
-					pathUserData->string.append(',');
-				}
+				break;
+			case 1:
+			case 6:
+				d = args[i] * pathUserData->sNewHeight / pathUserData->vbHeight;
+				break;
+			default:
+				d = args[i];
+				break;
 			}
-			*/
-			break;
-		case 'a':
-		case 'A':
-			for (int i = 0; i < args.count(); i++) {
-				switch (i % 7) {
-					case 0:
-					case 5:
-						d = args[i] * pathUserData->sNewWidth / pathUserData->vbWidth;
-						break;
-					case 1:
-					case 6:
-						d = args[i] * pathUserData->sNewHeight / pathUserData->vbHeight;
-						break;
-					default:
-						d = args[i];
-						break;
-				}
-				pathUserData->string.append(QString::number(d));
-				if (i < args.count() - 1) {
-					pathUserData->string.append(',');
-				}
+			pathUserData->string.append(QString::number(d));
+			if (i < args.count() - 1) {
+				pathUserData->string.append(',');
 			}
-			break;
-		case SVGPathLexer::FakeClosePathChar:
-			break;
-		default:
-			for (int i = 0; i < args.count(); i++) {
-				if (i % 2 == 0) {
-					d = args[i] * pathUserData->sNewWidth / pathUserData->vbWidth;
-				}
-				else {
-					d = args[i] * pathUserData->sNewHeight / pathUserData->vbHeight;
-				}
-				pathUserData->string.append(QString::number(d));
-				if (i < args.count() - 1) {
-					pathUserData->string.append(',');
-				}
+		}
+		break;
+	case SVGPathLexer::FakeClosePathChar:
+		break;
+	default:
+		for (int i = 0; i < args.count(); i++) {
+			if (i % 2 == 0) {
+				d = args[i] * pathUserData->sNewWidth / pathUserData->vbWidth;
 			}
-			break;
+			else {
+				d = args[i] * pathUserData->sNewHeight / pathUserData->vbHeight;
+			}
+			pathUserData->string.append(QString::number(d));
+			if (i < args.count() - 1) {
+				pathUserData->string.append(',');
+			}
+		}
+		break;
 	}
 }
 
@@ -739,63 +733,63 @@ void SvgFileSplitter::shiftCommandSlot(QChar command, bool relative, QList<doubl
 	double d;
 	pathUserData->string.append(command);
 	switch(command.toLatin1()) {
-		case 'v':
-		case 'V':
-			//DebugDialog::debug("'v' and 'V' are now removed by preprocessing; shouldn't be here");
-			/*
-			d = args[0];
-			if (!relative) {
-				 d += pathUserData->y;
+	case 'v':
+	case 'V':
+		//DebugDialog::debug("'v' and 'V' are now removed by preprocessing; shouldn't be here");
+		/*
+		d = args[0];
+		if (!relative) {
+			 d += pathUserData->y;
+		}
+		pathUserData->string.append(QString::number(d));
+		*/
+		break;
+	case 'h':
+	case 'H':
+		//DebugDialog::debug("'h' and 'H' are now removed by preprocessing; shouldn't be here");
+		/*
+		d = args[0];
+		if (!relative) {
+			 d += pathUserData->x;
+		}
+		pathUserData->string.append(QString::number(d));
+		*/
+		break;
+	case 'z':
+	case 'Z':
+		pathUserData->pathStarting = true;
+		break;
+	case SVGPathLexer::FakeClosePathChar:
+		pathUserData->pathStarting = true;
+		break;
+	case 'a':
+	case 'A':
+		for (int i = 0; i < args.count(); i++) {
+			d = args[i];
+			if (i % 7 == 5) {
+				if (!relative) {
+					d += pathUserData->x;
+				}
+			}
+			else if (i % 7 == 6) {
+				if (!relative) {
+					d += pathUserData->y;
+				}
 			}
 			pathUserData->string.append(QString::number(d));
-			*/
-			break;
-		case 'h':
-		case 'H':
-			//DebugDialog::debug("'h' and 'H' are now removed by preprocessing; shouldn't be here");
-			/*
-			d = args[0];
-			if (!relative) {
-				 d += pathUserData->x;
+			if (i < args.count() - 1) {
+				pathUserData->string.append(',');
 			}
-			pathUserData->string.append(QString::number(d));
-			*/
-			break;
-		case 'z':
-		case 'Z':
-			pathUserData->pathStarting = true;
-			break;
-		case SVGPathLexer::FakeClosePathChar:
-			pathUserData->pathStarting = true;
-			break;
-		case 'a':
-		case 'A':
-			for (int i = 0; i < args.count(); i++) {
-				d = args[i];
-				if (i % 7 == 5) {
-					if (!relative) {
-						d += pathUserData->x;
-					}
-				}
-				else if (i % 7 == 6) {
-					if (!relative) {
-						d += pathUserData->y;
-					}
-				}
-				pathUserData->string.append(QString::number(d));
-				if (i < args.count() - 1) {
-					pathUserData->string.append(',');
-				}
-			}
-			break;
-		case 'm':
-		case'M':
-			standardArgs(relative, pathUserData->pathStarting, args, pathUserData);
-			pathUserData->pathStarting = false;
-			break;
-		default:
-			standardArgs(relative, false, args, pathUserData);
-			break;
+		}
+		break;
+	case 'm':
+	case'M':
+		standardArgs(relative, pathUserData->pathStarting, args, pathUserData);
+		pathUserData->pathStarting = false;
+		break;
+	default:
+		standardArgs(relative, false, args, pathUserData);
+		break;
 	}
 }
 
@@ -821,7 +815,7 @@ void SvgFileSplitter::standardArgs(bool relative, bool starting, QList<double> &
 
 QVector<QVariant> SvgFileSplitter::simpleParsePath(const QString & data) {
 	static QVector<QVariant> emptyStack;
-	
+
 	QString dataCopy(data);
 
 	if (!dataCopy.startsWith('M', Qt::CaseInsensitive)) {
@@ -850,21 +844,21 @@ QVector<QVariant> SvgFileSplitter::simpleParsePath(const QString & data) {
 bool SvgFileSplitter::parsePath(const QString & dataString, const char * slot, PathUserData & pathUserData, QObject * slotTarget, bool convertHV) {
 	QVector<QVariant> symStack = simpleParsePath(dataString);
 
-	if (convertHV && (dataString.contains("h", Qt::CaseInsensitive) || dataString.contains("v",  Qt::CaseInsensitive))) 
-	{  
+	if (convertHV && (dataString.contains("h", Qt::CaseInsensitive) || dataString.contains("v",  Qt::CaseInsensitive)))
+	{
 		SVGPathRunner svgPathRunner;
 		HVConvertData data;
 		data.x = data.y = data.subX = data.subY = 0;
 		data.path = "";
-		connect(&svgPathRunner, SIGNAL(commandSignal(QChar, bool, QList<double> &, void *)), 
-				this, SLOT(convertHVSlot(QChar, bool, QList<double> &, void *)), 
-				Qt::DirectConnection);
+		connect(&svgPathRunner, SIGNAL(commandSignal(QChar, bool, QList<double> &, void *)),
+		        this, SLOT(convertHVSlot(QChar, bool, QList<double> &, void *)),
+		        Qt::DirectConnection);
 		svgPathRunner.runPath(symStack, &data);
 		return parsePath(data.path, slot, pathUserData, slotTarget, false);
 	}
 
 	SVGPathRunner svgPathRunner;
-    connect(&svgPathRunner, SIGNAL(commandSignal(QChar, bool, QList<double> &, void *)), slotTarget, slot, Qt::DirectConnection);
+	connect(&svgPathRunner, SIGNAL(commandSignal(QChar, bool, QList<double> &, void *)), slotTarget, slot, Qt::DirectConnection);
 	return svgPathRunner.runPath(symStack, &pathUserData);
 }
 
@@ -874,176 +868,176 @@ void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> 
 
 	double x, y;
 	switch(command.toLatin1()) {
-		case 'M':
-			data->path.append(command);
-			for (int i = 0; i < args.count(); i += 2) {
-				data->x = data->subX = args[i];
-				data->y = data->subY = args[i + 1];
-				appendPair(data->path, args[i], args[i + 1]);
-			}
-			data->path.chop(1);
-			break;
-		case 'm':
-			data->path.append(command);
-			x = data->x;
-			y = data->y;
-			for (int i = 0; i < args.count(); i += 2) {
-				data->subX = data->x = (x + args[i]);
-				data->subY = data->y = (y + args[i + 1]);
-				appendPair(data->path, args[i], args[i + 1]);
-			}
-			data->path.chop(1);
-			break;
-		case 'L':
-		case 'T':
-			data->path.append(command);
-			for (int i = 0; i < args.count(); i += 2) {
-				data->x = args[i];
-				data->y = args[i + 1];
-				appendPair(data->path, args[i], args[i + 1]);
-			}
-			data->path.chop(1);
-			break;
-		case 'l':
-		case 't':
-			data->path.append(command);
-			x = data->x;
-			y = data->y;
-			for (int i = 0; i < args.count(); i += 2) {
-				data->x = x + args[i];
-				data->y = y + args[i + 1];
-				appendPair(data->path, args[i], args[i + 1]);
-			}
-			data->path.chop(1);
-			break;
-		case 'C':
-			data->path.append(command);
-			for (int i = 0; i < args.count(); i += 6) {
-				data->x = args[i + 4];
-				data->y = args[i + 5];
-				appendPair(data->path, args[i], args[i + 1]);
-				appendPair(data->path, args[i + 2], args[i + 3]);
-				appendPair(data->path, args[i + 4], args[i + 5]);
-			}
-			data->path.chop(1);
-			break;
-		case 'c':
-			data->path.append(command);
-			x = data->x;
-			y = data->y;
-			for (int i = 0; i < args.count(); i += 6) {
-				data->x = x + args[i + 4];
-				data->y = y + args[i + 5];
-				appendPair(data->path, args[i], args[i + 1]);
-				appendPair(data->path, args[i + 2], args[i + 3]);
-				appendPair(data->path, args[i + 4], args[i + 5]);
-			}
-			data->path.chop(1);
-			break;
-		case 'S':
-		case 'Q':
-			data->path.append(command);
-			for (int i = 0; i < args.count(); i += 4) {
-				data->x = args[i + 2];
-				data->y = args[i + 3];
-				appendPair(data->path, args[i], args[i + 1]);
-				appendPair(data->path, args[i + 2], args[i + 3]);
-			}
-			data->path.chop(1);
-			break;
-		case 's':
-		case 'q':
-			data->path.append(command);
-			x = data->x;
-			y = data->y;
-			for (int i = 0; i < args.count(); i += 4) {
-				data->x = x + args[i + 2];
-				data->y = y + args[i + 3];
-				appendPair(data->path, args[i], args[i + 1]);
-				appendPair(data->path, args[i + 2], args[i + 3]);
-			}
-			data->path.chop(1);
-			break;
-		case 'Z':
-		case 'z':
-			data->path.append(command);
-			data->x = data->subX;
-			data->y = data->subY;
-			break;
-		case SVGPathLexer::FakeClosePathChar:
-			data->path.append(command);
-			break;
-		case 'A':
-			data->path.append(command);
-			for (int i = 0; i < args.count(); i += 7) {
-				data->x = args[i + 5];
-				data->y = args[i + 6];
-				appendPair(data->path, args[i], args[i + 1]);
-				appendPair(data->path, args[i + 2], args[i + 3]);
-				appendPair(data->path, args[i + 4], args[i + 5]);
-				data->path.append(QString::number(args[i + 6]));
-				data->path.append(',');
-			}
-			data->path.chop(1);
-			break;
-		case 'a':
-			data->path.append(command);
-			x = data->x;
-			y = data->y;
-			for (int i = 0; i < args.count(); i += 7) {
-				data->x = x + args[i + 5];
-				data->y = y + args[i + 6];
-				appendPair(data->path, args[i], args[i + 1]);
-				appendPair(data->path, args[i + 2], args[i + 3]);
-				appendPair(data->path, args[i + 4], args[i + 5]);
-				data->path.append(QString::number(args[i + 6]));
-				data->path.append(',');
-			}
-			data->path.chop(1);
-			break;
-		case 'v':
-			data->path.append('l');
-			y = data->y;
-			for (int i = 0; i < args.count(); i++) {
-				data->y = y + args[i];
-				appendPair(data->path, 0, args[i]);
-			}
-			data->path.chop(1);
-			break;
-		case 'h':
-			data->path.append('l');
-			x = data->x;
-			for (int i = 0; i < args.count(); i++) {
-				data->x = x + args[i];
-				appendPair(data->path, args[i], 0);
-			}
-			data->path.chop(1);
-			break;
-		case 'H':
-			data->path.append('L');
-			for (int i = 0; i < args.count(); i++) {
-				data->x = args[i];
-				appendPair(data->path, args[i], data->y);
-			}
-			data->path.chop(1);
-			break;
-		case 'V':
-			data->path.append('L');
-			for (int i = 0; i < args.count(); i++) {
-				data->y = args[i];
-				appendPair(data->path, data->x, args[i]);
-			}
-			data->path.chop(1);
-			break;
-		default:
-			//DebugDialog::debug(QString("unknown path command %1").arg(command));
-			data->path.append(command);
-			for (int i = 0; i < args.count(); i++) {
-				data->path.append(QString::number(args[i]));
-				data->path.append(',');
-			}
-			data->path.chop(1);
-			break;
+	case 'M':
+		data->path.append(command);
+		for (int i = 0; i < args.count(); i += 2) {
+			data->x = data->subX = args[i];
+			data->y = data->subY = args[i + 1];
+			appendPair(data->path, args[i], args[i + 1]);
+		}
+		data->path.chop(1);
+		break;
+	case 'm':
+		data->path.append(command);
+		x = data->x;
+		y = data->y;
+		for (int i = 0; i < args.count(); i += 2) {
+			data->subX = data->x = (x + args[i]);
+			data->subY = data->y = (y + args[i + 1]);
+			appendPair(data->path, args[i], args[i + 1]);
+		}
+		data->path.chop(1);
+		break;
+	case 'L':
+	case 'T':
+		data->path.append(command);
+		for (int i = 0; i < args.count(); i += 2) {
+			data->x = args[i];
+			data->y = args[i + 1];
+			appendPair(data->path, args[i], args[i + 1]);
+		}
+		data->path.chop(1);
+		break;
+	case 'l':
+	case 't':
+		data->path.append(command);
+		x = data->x;
+		y = data->y;
+		for (int i = 0; i < args.count(); i += 2) {
+			data->x = x + args[i];
+			data->y = y + args[i + 1];
+			appendPair(data->path, args[i], args[i + 1]);
+		}
+		data->path.chop(1);
+		break;
+	case 'C':
+		data->path.append(command);
+		for (int i = 0; i < args.count(); i += 6) {
+			data->x = args[i + 4];
+			data->y = args[i + 5];
+			appendPair(data->path, args[i], args[i + 1]);
+			appendPair(data->path, args[i + 2], args[i + 3]);
+			appendPair(data->path, args[i + 4], args[i + 5]);
+		}
+		data->path.chop(1);
+		break;
+	case 'c':
+		data->path.append(command);
+		x = data->x;
+		y = data->y;
+		for (int i = 0; i < args.count(); i += 6) {
+			data->x = x + args[i + 4];
+			data->y = y + args[i + 5];
+			appendPair(data->path, args[i], args[i + 1]);
+			appendPair(data->path, args[i + 2], args[i + 3]);
+			appendPair(data->path, args[i + 4], args[i + 5]);
+		}
+		data->path.chop(1);
+		break;
+	case 'S':
+	case 'Q':
+		data->path.append(command);
+		for (int i = 0; i < args.count(); i += 4) {
+			data->x = args[i + 2];
+			data->y = args[i + 3];
+			appendPair(data->path, args[i], args[i + 1]);
+			appendPair(data->path, args[i + 2], args[i + 3]);
+		}
+		data->path.chop(1);
+		break;
+	case 's':
+	case 'q':
+		data->path.append(command);
+		x = data->x;
+		y = data->y;
+		for (int i = 0; i < args.count(); i += 4) {
+			data->x = x + args[i + 2];
+			data->y = y + args[i + 3];
+			appendPair(data->path, args[i], args[i + 1]);
+			appendPair(data->path, args[i + 2], args[i + 3]);
+		}
+		data->path.chop(1);
+		break;
+	case 'Z':
+	case 'z':
+		data->path.append(command);
+		data->x = data->subX;
+		data->y = data->subY;
+		break;
+	case SVGPathLexer::FakeClosePathChar:
+		data->path.append(command);
+		break;
+	case 'A':
+		data->path.append(command);
+		for (int i = 0; i < args.count(); i += 7) {
+			data->x = args[i + 5];
+			data->y = args[i + 6];
+			appendPair(data->path, args[i], args[i + 1]);
+			appendPair(data->path, args[i + 2], args[i + 3]);
+			appendPair(data->path, args[i + 4], args[i + 5]);
+			data->path.append(QString::number(args[i + 6]));
+			data->path.append(',');
+		}
+		data->path.chop(1);
+		break;
+	case 'a':
+		data->path.append(command);
+		x = data->x;
+		y = data->y;
+		for (int i = 0; i < args.count(); i += 7) {
+			data->x = x + args[i + 5];
+			data->y = y + args[i + 6];
+			appendPair(data->path, args[i], args[i + 1]);
+			appendPair(data->path, args[i + 2], args[i + 3]);
+			appendPair(data->path, args[i + 4], args[i + 5]);
+			data->path.append(QString::number(args[i + 6]));
+			data->path.append(',');
+		}
+		data->path.chop(1);
+		break;
+	case 'v':
+		data->path.append('l');
+		y = data->y;
+		for (int i = 0; i < args.count(); i++) {
+			data->y = y + args[i];
+			appendPair(data->path, 0, args[i]);
+		}
+		data->path.chop(1);
+		break;
+	case 'h':
+		data->path.append('l');
+		x = data->x;
+		for (int i = 0; i < args.count(); i++) {
+			data->x = x + args[i];
+			appendPair(data->path, args[i], 0);
+		}
+		data->path.chop(1);
+		break;
+	case 'H':
+		data->path.append('L');
+		for (int i = 0; i < args.count(); i++) {
+			data->x = args[i];
+			appendPair(data->path, args[i], data->y);
+		}
+		data->path.chop(1);
+		break;
+	case 'V':
+		data->path.append('L');
+		for (int i = 0; i < args.count(); i++) {
+			data->y = args[i];
+			appendPair(data->path, data->x, args[i]);
+		}
+		data->path.chop(1);
+		break;
+	default:
+		//DebugDialog::debug(QString("unknown path command %1").arg(command));
+		data->path.append(command);
+		for (int i = 0; i < args.count(); i++) {
+			data->path.append(QString::number(args[i]));
+			data->path.append(',');
+		}
+		data->path.chop(1);
+		break;
 	}
 }
 
@@ -1093,7 +1087,7 @@ void SvgFileSplitter::fixColorRecurse(QDomElement & element, const QString & new
 				}
 			}
 		}
-		else {		
+		else {
 			if (f.isEmpty()) {
 				if (exceptions.contains(s)) {
 					gotException = true;
@@ -1109,7 +1103,7 @@ void SvgFileSplitter::fixColorRecurse(QDomElement & element, const QString & new
 		}
 	}
 	if (!gotException) {
-		setStrokeOrFill(element, true, newColor, !id.isEmpty()); 
+		setStrokeOrFill(element, true, newColor, !id.isEmpty());
 	}
 
 	QDomElement childElement = element.firstChildElement();
@@ -1125,13 +1119,13 @@ bool SvgFileSplitter::getSvgSizeAttributes(const QString & svg, QString & width,
 	xml.setNamespaceProcessing(false);
 
 	while (!xml.atEnd()) {
-        switch (xml.readNext()) {
-        case QXmlStreamReader::StartElement:
+		switch (xml.readNext()) {
+		case QXmlStreamReader::StartElement:
 			if (xml.name().toString().compare("svg") == 0) {
 				width = xml.attributes().value("width").toString();
 				height = xml.attributes().value("height").toString();
 				viewBox = xml.attributes().value("viewBox").toString();
-				return true;	
+				return true;
 			}
 		default:
 			break;
@@ -1173,17 +1167,17 @@ void SvgFileSplitter::changeStrokeWidth(QDomElement & element, double delta, boo
 		element.setAttribute("stroke-width", QString::number((absolute) ? delta : sw + delta));
 	}
 
-    if (changeOpacity) {
-	    QString fillo = element.attribute("fill-opacity");
-	    if (!fillo.isEmpty()) {
-		    element.setAttribute("fill-opacity", "1.0");
-	    }
+	if (changeOpacity) {
+		QString fillo = element.attribute("fill-opacity");
+		if (!fillo.isEmpty()) {
+			element.setAttribute("fill-opacity", "1.0");
+		}
 
-	    QString sillo = element.attribute("stroke-opacity");
-	    if (!sillo.isEmpty()) {
-		    element.setAttribute("stroke-opacity", "1.0");
-	    }
-    }
+		QString sillo = element.attribute("stroke-opacity");
+		if (!sillo.isEmpty()) {
+			element.setAttribute("stroke-opacity", "1.0");
+		}
+	}
 
 	QDomElement child = element.firstChildElement();
 	while (!child.isNull()) {
@@ -1195,19 +1189,19 @@ void SvgFileSplitter::changeStrokeWidth(QDomElement & element, double delta, boo
 void SvgFileSplitter::forceStrokeWidth(QDomElement & element, double delta, const QString & stroke, bool recurse, bool fill) {
 	bool ok;
 	double sw = element.attribute("stroke-width").toDouble(&ok);
-    if (!ok) sw = 0;
+	if (!ok) sw = 0;
 
 	element.setAttribute("stroke-width", QString::number(qMax(0, sw + delta)));
 	element.setAttribute("stroke", stroke);
-    if (fill) element.setAttribute("fill", stroke);
+	if (fill) element.setAttribute("fill", stroke);
 
-    if (recurse) {
-	    QDomElement child = element.firstChildElement();
-	    while (!child.isNull()) {
-		    forceStrokeWidth(child, delta, stroke, recurse, fill);
-		    child = child.nextSiblingElement();
-	    }
-    }
+	if (recurse) {
+		QDomElement child = element.firstChildElement();
+		while (!child.isNull()) {
+			forceStrokeWidth(child, delta, stroke, recurse, fill);
+			child = child.nextSiblingElement();
+		}
+	}
 }
 
 bool SvgFileSplitter::changeColors(const QString & svg, QString & toColor, QStringList & exceptions, QByteArray & byteArray) {
@@ -1312,140 +1306,139 @@ void SvgFileSplitter::gReplace(const QString & id)
 }
 
 QByteArray SvgFileSplitter::hideText(const QString & filename) {
-    QString errorStr;
+	QString errorStr;
 	int errorLine;
 	int errorColumn;
-    QDomDocument doc;
+	QDomDocument doc;
 
-    QFile file(filename);
+	QFile file(filename);
 	if (!doc.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-        return QByteArray();
-    }
+		return QByteArray();
+	}
 
-    QDomElement root = doc.documentElement();
-    hideTextAux(root, false);
+	QDomElement root = doc.documentElement();
+	hideTextAux(root, false);
 
-    return TextUtils::removeXMLEntities(doc.toString()).toUtf8();
+	return TextUtils::removeXMLEntities(doc.toString()).toUtf8();
 }
 
 QByteArray SvgFileSplitter::hideText2(const QByteArray & svg) {
-    QString errorStr;
+	QString errorStr;
 	int errorLine;
 	int errorColumn;
-    QDomDocument doc;
+	QDomDocument doc;
 
 	if (!doc.setContent(svg, &errorStr, &errorLine, &errorColumn)) {
-        return QByteArray();
-    }
+		return QByteArray();
+	}
 
-    QDomElement root = doc.documentElement();
-    hideTextAux(root, false);
+	QDomElement root = doc.documentElement();
+	hideTextAux(root, false);
 
-    return TextUtils::removeXMLEntities(doc.toString()).toUtf8();
+	return TextUtils::removeXMLEntities(doc.toString()).toUtf8();
 }
 
 QString SvgFileSplitter::hideText3(const QString & svg) {
-    QString errorStr;
+	QString errorStr;
 	int errorLine;
 	int errorColumn;
-    QDomDocument doc;
+	QDomDocument doc;
 
 	if (!doc.setContent(svg, &errorStr, &errorLine, &errorColumn)) {
-        return "";
-    }
+		return "";
+	}
 
-    QDomElement root = doc.documentElement();
-    hideTextAux(root, false);
+	QDomElement root = doc.documentElement();
+	hideTextAux(root, false);
 
-    return TextUtils::removeXMLEntities(doc.toString());
+	return TextUtils::removeXMLEntities(doc.toString());
 }
 
 
 void SvgFileSplitter::hideTextAux(QDomElement & parent, bool hideChildren) {
-    if (hideChildren || parent.tagName() == "text") {
-        parent.setTagName("g");
-        hideChildren = true;
-    }
+	if (hideChildren || parent.tagName() == "text") {
+		parent.setTagName("g");
+		hideChildren = true;
+	}
 
-    QDomElement child = parent.firstChildElement();
-    while (!child.isNull()) {
-        hideTextAux(child, hideChildren);
-        child = child.nextSiblingElement();
-    }
+	QDomElement child = parent.firstChildElement();
+	while (!child.isNull()) {
+		hideTextAux(child, hideChildren);
+		child = child.nextSiblingElement();
+	}
 }
 
 QByteArray SvgFileSplitter::showText(const QString & filename, bool & hasText) {
-    QString errorStr;
+	QString errorStr;
 	int errorLine;
 	int errorColumn;
-    QDomDocument doc;
+	QDomDocument doc;
 
-    QFile file(filename);
+	QFile file(filename);
 	if (!doc.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-        return QByteArray();
-    }
+		return QByteArray();
+	}
 
-    QDomElement root = doc.documentElement();
-    showTextAux(root, hasText, true);
-    if (!hasText) {
-        return QByteArray();
-    }
+	QDomElement root = doc.documentElement();
+	showTextAux(root, hasText, true);
+	if (!hasText) {
+		return QByteArray();
+	}
 
-    return TextUtils::removeXMLEntities(doc.toString()).toUtf8();
+	return TextUtils::removeXMLEntities(doc.toString()).toUtf8();
 }
 
 QByteArray SvgFileSplitter::showText2(const QByteArray & svg, bool & hasText) {
-    QString errorStr;
+	QString errorStr;
 	int errorLine;
 	int errorColumn;
-    QDomDocument doc;
+	QDomDocument doc;
 
 	if (!doc.setContent(svg, &errorStr, &errorLine, &errorColumn)) {
-        return QByteArray();
-    }
+		return QByteArray();
+	}
 
-    QDomElement root = doc.documentElement();
-    showTextAux(root, hasText, true);
-    if (!hasText) {
-        return QByteArray();
-    }
+	QDomElement root = doc.documentElement();
+	showTextAux(root, hasText, true);
+	if (!hasText) {
+		return QByteArray();
+	}
 
-    return TextUtils::removeXMLEntities(doc.toString()).toUtf8();
+	return TextUtils::removeXMLEntities(doc.toString()).toUtf8();
 }
 
 QString SvgFileSplitter::showText3(const QString & svg, bool & hasText) {
-    QString errorStr;
+	QString errorStr;
 	int errorLine;
 	int errorColumn;
-    QDomDocument doc;
+	QDomDocument doc;
 
 	if (!doc.setContent(svg, &errorStr, &errorLine, &errorColumn)) {
-        return "";
-    }
+		return "";
+	}
 
-    QDomElement root = doc.documentElement();
-    showTextAux(root, hasText, true);
-    if (!hasText) {
-        return "";
-    }
+	QDomElement root = doc.documentElement();
+	showTextAux(root, hasText, true);
+	if (!hasText) {
+		return "";
+	}
 
-    return TextUtils::removeXMLEntities(doc.toString());
+	return TextUtils::removeXMLEntities(doc.toString());
 }
 
 void SvgFileSplitter::showTextAux(QDomElement & parent, bool & hasText, bool root) {
-    if (parent.tagName() == "text") {
-        hasText = true;
-        return;
-    }
+	if (parent.tagName() == "text") {
+		hasText = true;
+		return;
+	}
 
-    if (!root) {
-        parent.setTagName("g");
-    }
+	if (!root) {
+		parent.setTagName("g");
+	}
 
-    QDomElement child = parent.firstChildElement();
-    while (!child.isNull()) {
-        showTextAux(child, hasText, false);
-        child = child.nextSiblingElement();
-    }
+	QDomElement child = parent.firstChildElement();
+	while (!child.isNull()) {
+		showTextAux(child, hasText, false);
+		child = child.nextSiblingElement();
+	}
 }
-

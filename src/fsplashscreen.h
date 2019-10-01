@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,13 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision$:
-$Author$:
-$Date$
-
 ********************************************************************/
 
 #ifndef FSPLASHSCREEN_H
@@ -60,7 +53,7 @@ public slots:
 	void displaySlice();
 
 protected:
-    QPixmap m_pixmap;
+	QPixmap m_pixmap;
 	QList<MessageThing *> m_messages;
 	QList<PixmapThing *> m_pixmaps;
 	QHash<QString, MessageThing *> m_items;

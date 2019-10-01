@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6141 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-07-04 21:20:05 +0200 (Mi, 04. Jul 2012) $
-
 ********************************************************************/
 
 #ifndef CURSORMASTER_H
@@ -30,14 +24,14 @@ $Date: 2012-07-04 21:20:05 +0200 (Mi, 04. Jul 2012) $
 #include <QCursor>
 #include <QObject>
 
-class CursorKeyListener 
+class CursorKeyListener
 {
-	public:
-		virtual void cursorKeyEvent(Qt::KeyboardModifiers) = 0;
+public:
+	virtual void cursorKeyEvent(Qt::KeyboardModifiers) = 0;
 };
 
 class CursorMaster : public QObject {
-Q_OBJECT
+	Q_OBJECT
 
 protected:
 	CursorMaster();
@@ -48,18 +42,18 @@ public:
 
 	void addCursor(QObject * listener, const QCursor & cursor);
 	void removeCursor(QObject * listener);
-    void block();
-    void unblock();
+	void block();
+	void unblock();
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *event);
+	bool eventFilter(QObject *obj, QEvent *event);
 
 protected slots:
 	void deleteCursor(QObject *);
 	void moveCursor();
 
 public:
-    static void cleanup();
+	static void cleanup();
 
 public:
 	static QCursor * BendpointCursor;
@@ -67,14 +61,14 @@ public:
 	static QCursor * MakeWireCursor;
 	static QCursor * MakeCurveCursor;
 	static QCursor * RubberbandCursor;
-	static QCursor * MoveCursor;	
-	static QCursor * BendlegCursor;	
-	static QCursor * RotateCursor;	
-	static QCursor * ScaleCursor;	
+	static QCursor * MoveCursor;
+	static QCursor * BendlegCursor;
+	static QCursor * RotateCursor;
+	static QCursor * ScaleCursor;
 
 protected:
 	static CursorMaster TheCursorMaster;
-    bool m_blocked;
+	bool m_blocked;
 };
 
 #endif

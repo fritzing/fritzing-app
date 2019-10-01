@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,13 +15,9 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-			
+
 ********************************************************************
-																		
-$Revision: 6112 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
-		
+
 ********************************************************************/
 
 // much code borrowed from Qt's rsslisting example
@@ -35,10 +31,10 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include <QUrl>
 #include <QNetworkAccessManager>
 #include <QMutexLocker>
-								
-VersionChecker::VersionChecker() : QObject() 
+
+VersionChecker::VersionChecker() : QObject()
 {
-    m_networkReply = NULL;
+	m_networkReply = NULL;
 	m_depth = 0;
 	m_inSummary = m_inUpdated = m_inTitle = m_inEntry = false;
 	m_ignoreInterimVersion.ok = m_ignoreMainVersion.ok = false;
@@ -56,46 +52,46 @@ VersionChecker::~VersionChecker() {
 void VersionChecker::fetch()
 {
 	DebugDialog::debug("http check new version");
-    m_xml.clear();
-    QUrl url(m_urlString);
+	m_xml.clear();
+	QUrl url(m_urlString);
 
-    QNetworkAccessManager * manager = new QNetworkAccessManager(this);
-    connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(finished(QNetworkReply *)));
-    QNetworkReply * reply = manager->get(QNetworkRequest(url));
-    QMutexLocker locker(&m_networkReplyLock);
-    m_networkReply = reply;
+	QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(finished(QNetworkReply *)));
+	QNetworkReply * reply = manager->get(QNetworkRequest(url));
+	QMutexLocker locker(&m_networkReplyLock);
+	m_networkReply = reply;
 }
 
 
 void VersionChecker::finished(QNetworkReply * networkReply)
-{	
-    int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-    if (responseCode == 200) {
-        m_xml.addData(networkReply->readAll());
-        parseXml();
-        DebugDialog::debug("http check new version no error");
-        emit releasesAvailable();
-    }
-    else {
-        DebugDialog::debug(QString("http check new version error %1").arg(networkReply->errorString()));
-        emit httpError(networkReply->error());
-    }
+{
+	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+	if (responseCode == 200) {
+		m_xml.addData(networkReply->readAll());
+		parseXml();
+		DebugDialog::debug("http check new version no error");
+		emit releasesAvailable();
+	}
+	else {
+		DebugDialog::debug(QString("http check new version error %1").arg(networkReply->errorString()));
+		emit httpError(networkReply->error());
+	}
 
-    QMutexLocker locker(&m_networkReplyLock);
-    if (networkReply == m_networkReply) {
-        m_networkReply = NULL;
-    }
+	QMutexLocker locker(&m_networkReplyLock);
+	if (networkReply == m_networkReply) {
+		m_networkReply = NULL;
+	}
 
-    networkReply->manager()->deleteLater();
-    networkReply->deleteLater();
+	networkReply->manager()->deleteLater();
+	networkReply->deleteLater();
 }
 
 void VersionChecker::parseXml()
 {
 	//DebugDialog::debug("parsing xml");
-    while (!m_xml.atEnd()) {
-        m_xml.readNext();
-        if (m_xml.isStartElement()) {
+	while (!m_xml.atEnd()) {
+		m_xml.readNext();
+		if (m_xml.isStartElement()) {
 			QString elementName = m_xml.name().toString();
 			if (elementName.compare("entry") == 0) {
 				m_inEntry = true;
@@ -126,9 +122,9 @@ void VersionChecker::parseXml()
 			//DebugDialog::debug(QString("%1<%2>").arg(QString(m_depth * 4, ' ')).arg(elementName));
 			m_depth++;
 			//foreach (QXmlStreamAttribute attribute, m_xml.attributes()) {
-				//DebugDialog::debug(QString("%1%2: %3").arg(QString((m_depth + 1) * 4, ' ')).arg(attribute.name().toString()).arg(attribute.value().toString()));
+			//DebugDialog::debug(QString("%1%2: %3").arg(QString((m_depth + 1) * 4, ' ')).arg(attribute.name().toString()).arg(attribute.value().toString()));
 			//}
-		} 
+		}
 		else if (m_xml.isEndElement()) {
 			QString elementName = m_xml.name().toString();
 			if (m_inEntry && elementName.compare("entry") == 0) {
@@ -146,7 +142,7 @@ void VersionChecker::parseXml()
 			}
 			m_depth--;
 			//DebugDialog::debug(QString("%1</%2>").arg(QString(m_depth * 4, ' ')).arg(elementName));
-        } 
+		}
 		else if (m_xml.isCharacters() && !m_xml.isWhitespace()) {
 			QString t = m_xml.text().toString();
 			t.replace(QRegExp("[\\s]+"), " ");
@@ -160,12 +156,12 @@ void VersionChecker::parseXml()
 			else if (m_inSummary) {
 				m_currentSummary = m_xml.text().toString();
 			}
-        }
-    }
-    if (m_xml.error() && m_xml.error() != QXmlStreamReader::PrematureEndOfDocumentError) {
+		}
+	}
+	if (m_xml.error() && m_xml.error() != QXmlStreamReader::PrematureEndOfDocumentError) {
 		emit xmlError(m_xml.error());
 		return;
-    }
+	}
 
 }
 
@@ -224,7 +220,7 @@ void VersionChecker::parseEntry() {
 	availableRelease->interim = interim;
 	availableRelease->summary = m_currentSummary;
 	QStringList temp = m_currentUpdated.split('+');											// conversion is confused by the +timezone suffix from the site xml
-	availableRelease->dateTime = QDateTime::fromString(temp[0], "yyyy-MM-ddThh:mm:ss");     
+	availableRelease->dateTime = QDateTime::fromString(temp[0], "yyyy-MM-ddThh:mm:ss");
 	m_availableReleases.append(availableRelease);
 }
 
@@ -234,12 +230,12 @@ const QList<AvailableRelease *> & VersionChecker::availableReleases()
 }
 
 void VersionChecker::stop() {
-    if (m_networkReplyLock.tryLock(1)) {
-        if (m_networkReply) {
-            m_networkReply = NULL;
-        }
-        m_networkReplyLock.unlock();
-    }
+	if (m_networkReplyLock.tryLock(1)) {
+		if (m_networkReply) {
+			m_networkReply = NULL;
+		}
+		m_networkReplyLock.unlock();
+	}
 }
 
 void VersionChecker::ignore(const QString & version, bool interim) {
@@ -250,4 +246,3 @@ void VersionChecker::ignore(const QString & version, bool interim) {
 		Version::toVersionThing(version, m_ignoreMainVersion);
 	}
 }
-

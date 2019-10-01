@@ -37,11 +37,11 @@
 			<language country="en" name="Color Fader (RGB LED)" src="core/color-fader.fzz"/>
 		</sketch>
 		<sketch id="CosmicRayGun" >
-			<language country="en" name="Cosmic Ray Gun" src="core/CosmicRayGun.fzz"/>		
+			<language country="en" name="Cosmic Ray Gun" src="core/CosmicRayGun.fzz"/>
 		</sketch>
 		<sketch id="Countdown" >
 			<language country="en" name="Countdown (Rotary Encoder + 7 Segment Displays)" src="core/Countdown.fzz"/>
-		</sketch>	
+		</sketch>
 		<sketch id="DC_motor_control" >
 			<language country="en" name="DC Motor" src="core/DC_motor_control.fzz"/>
 		</sketch>
@@ -109,7 +109,7 @@
 			<language country="en" name="Tilt Switch" src="core/TiltSwitch.fzz"/>
 		</sketch>
 		<sketch id="Timer" >
-			<language country="en" name="Timer" src="core/Timer.fzz"/>		
+			<language country="en" name="Timer" src="core/Timer.fzz"/>
 		</sketch>
 		<sketch id="Touch_Switch" >
 			<language country="en" name="Touch Switch" src="core/TouchSwitch.fzz"/>
@@ -142,8 +142,8 @@
 			<language country="de" name="Flip Flop" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/FlipFlop.fzz"/>
 		</sketch>
 		<sketch id="H-Bridge" >
-			<language country="en" name="H-Bridge" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/H-Bridge.fzz"/>		
-			<language country="de" name="H-Bridge" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/H-Bridge.fzz"/>		
+			<language country="en" name="H-Bridge" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/H-Bridge.fzz"/>
+			<language country="de" name="H-Bridge" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/H-Bridge.fzz"/>
 		</sketch>
 		<sketch id="Chaserlights" >
 			<language country="en" name="Chaser lights" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/ChaserLights.fzz"/>
@@ -174,8 +174,8 @@
 			<language country="de" name="Processing RGB" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/ProcessingRGB.fzz"/>
 		</sketch>
 		<sketch id="Servo" >
-			<language country="en" name="Servo" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Servo.fzz"/>	
-			<language country="de" name="Servo" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Servo.fzz"/>	
+			<language country="en" name="Servo" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Servo.fzz"/>
+			<language country="de" name="Servo" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Servo.fzz"/>
 		</sketch>
 		<sketch id="Synthesizer" >
 			<language country="en" name="Synthesizer" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Synthesizer.fzz"/>
@@ -194,8 +194,8 @@
 			<language country="de" name="Wahrsager" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Wahrsager.fzz"/>
 		</sketch>
 		<sketch id="MagicBoard" >
-			<language country="en" name="Magic Board" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/MagicBoard.fzz"/>	
-			<language country="de" name="Zaubertafel" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Zaubertafel.fzz"/>	
+			<language country="en" name="Magic Board" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/MagicBoard.fzz"/>
+			<language country="de" name="Zaubertafel" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Zaubertafel.fzz"/>
 		</sketch>
 		<sketch id="Workshop01" >
 			<language country="en" name="01 Blink" src="core/Fritzing Workshop/Workshop_01_Blink.fzz"/>
@@ -220,11 +220,11 @@
 		</sketch>
 </sketches>
 	<categories>
-		<category> 
+		<category>
 			<language country="en" name="Arduino"/>
-			<category> 
+			<category>
 				<language country="en" name="Digital"/>
-				<category> 
+				<category>
 					<language country="en" name="Output" />
 					<language country="de" name="Aus" />
 					<sketch id="Blink"/>
@@ -233,20 +233,20 @@
 					<sketch id="Shift_Register"/>
 					<sketch id="Shift_Register_2x"/>
 					<sketch id="LEDmatrix_simple"/>
-					<sketch id="LEDmatrix"/>	
-					<sketch id="7segment_direct"/>	
-					<sketch id="Timer"/>			
+					<sketch id="LEDmatrix"/>
+					<sketch id="7segment_direct"/>
+					<sketch id="Timer"/>
 				</category>
-				<category> 
+				<category>
 					<language country="en" name="Input"/>
 					<language country="de" name="In"/>
 					<sketch id="Button"/>
 					<sketch id="TiltSwitch"/>
 				</category>
 			</category>
-			<category> 
+			<category>
 				<language country="en" name="Analog"/>
-				<category> 
+				<category>
 					<language country="en" name="Input"/>
 					<language country="de" name="In"/>
 					<sketch id="AnalogInputPot"/>
@@ -260,7 +260,7 @@
 					<sketch id="TemperaturSensorLM35"/>
 					<sketch id="AnalogInputOutput"/>
 				</category>
-				<category> 
+				<category>
 					<language country="en" name="Output"/>
 					<language country="de" name="Aus"/>
 					<sketch id="AnalogInputOutput"/>
@@ -270,51 +270,51 @@
 					<sketch id="Mood-Light"/>
 				</category>
 			</category>
-			<category> 
+			<category>
 				<language country="en" name="Sensors"/>
-				<category> 
+				<category>
 					<language country="en" name="Force"/>
 					<language country="de" name="Energie"/>
 					<sketch id="AnalogInputFSR"/>
 					<sketch id="Knock"/>
 				</category>
-				<category> 
+				<category>
 					<language country="en" name="Light"/>
 					<language country="de" name="Licht"/>
 					<sketch id="Photocell"/>
 				</category>
-				<category> 
+				<category>
 					<language country="en" name="Motion"/>
 					<language country="de" name="Motion"/>
 					<sketch id="TiltSwitch"/>
 					<sketch id="Sabotage-Detection"/>
 				</category>
-				<category> 
+				<category>
 					<language country="en" name="Proximity"/>
 					<language country="de" name="Lage"/>
 					<sketch id="Parking"/>
 					<!-- <sketch id="CurvyParking"/> -->
 					<sketch id="Photocell"/>
 				</category>
-				<category> 
+				<category>
 					<language country="en" name="Rotary"/>
 					<language country="de" name="Rotary"/>
 					<sketch id="AnalogInputPot"/>
 				</category>
-				<category> 
+				<category>
 					<language country="en" name="Sound"/>
 					<language country="de" name="Sound"/>
 					<sketch id="Knock"/>
 					<sketch id="MidiDrumKit"/>
 					<sketch id="CosmicRayGun"/>
 				</category>
-				<category> 
+				<category>
 					<language country="en" name="Temperature"/>
 					<language country="de" name="Temperatur"/>
 					<sketch id="AnalogInputThermistor"/>
 					<sketch id="TemperaturSensorLM35"/>
 				</category>
-				<category> 
+				<category>
 					<language country="en" name="Touch"/>
 					<language country="de" name="Touch"/>
 					<sketch id="555TouchSwitch"/>
@@ -322,10 +322,10 @@
 					<sketch id="MidiDrumKit"/>
 				</category>
 			</category>
-			<category> 
+			<category>
 				<language country="en" name="Light"/>
 				<language country="de" name="Licht"/>
-				<category> 
+				<category>
 					<language country="en" name="LED"/>
 					<sketch id="Blink"/>
 					<sketch id="Loop"/>
@@ -338,16 +338,16 @@
 					<sketch id="Shift_Register_2x"/>
 					<sketch id="AnalogInputOutput"/>
 				</category>
-				<category> 
+				<category>
 					<language country="en" name="Display"/>
 					<language country="de" name="Blick"/>
 					<sketch id="LCD"/>
 				</category>
 			</category>
-			<category> 
+			<category>
 				<language country="en" name="Motion"/>
 				<language country="de" name="Motion"/>
-				<category> 
+				<category>
 					<language country="en" name="Motors"/>
 					<sketch id="AnalogInputToServo"/>
 					<sketch id="DC_motor_control"/>
@@ -355,20 +355,20 @@
 					<!-- <sketch id="EDGY-motor-control"/> -->
 				</category>
 			</category>
-			<category> 
+			<category>
 				<language country="en" name="Sound"/>
 				<language country="de" name="Sound"/>
 				<sketch id="MidiDrumKit"/>
 				<sketch id="Melody"/>
 				<sketch id="Window_Alarm"/>
 			</category>
-			<category> 
+			<category>
 				<language country="en" name="Communication"/>
 				<language country="de" name="Kommunikation"/>
 				<sketch id="MidiDrumKit"/>
 				<sketch id="VirtualColorMixer"/>
 			</category>
-			<category> 
+			<category>
 				<language country="en" name="Power"/>
 				<language country="de" name="Power"/>
 				<sketch id="npnPowerTransistor"/>
@@ -388,7 +388,7 @@
 				<sketch id="ArduinoISP"/>
 			</category>
 		</category>
-		<category> 
+		<category>
 			<language country="en" name="Fritzing Creator Kit"/>
 			<sketch id="Amplification"/>
 			<sketch id="AutomaticLightingSystem"/>
@@ -408,12 +408,12 @@
 			<sketch id="Synthesizer"/>
 			<sketch id="TwitterSaurus"/>
 			<separator />
-			<url> 
+			<url>
 				<language country="en" name="Get your own Fritzing Creator Kit" href="http://fritzing.myshopify.com/products/fritzing-creator-kit" />
 				<language country="de" name="Erhalten Sie Ihre eigene Fritzing Creator Kit" href="http://fritzing.myshopify.com/products/fritzing-creator-kit" />
 			</url>
 		</category>
-		<category> 
+		<category>
 			<language country="en" name="Fritzing Starter Kit"/>
 			<language country="de" name="Fritzing Starter Kit"/>
 			<sketch id="Blink"/>
@@ -433,12 +433,12 @@
 			<sketch id="TemperaturSensorLM35"/>
 			<sketch id="CosmicRayGun"/>
 			<separator />
-			<url> 
+			<url>
 				<language country="en" name="Get your own Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
 				<language country="de" name="Erhalten Sie Ihre eigene Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
 			</url>
 		</category>
-		<category> 
+		<category>
 			<language country="en" name="Fritzing Workshop"/>
 			<language country="de" name="Fritzing Workshop"/>
 			<sketch id="Workshop01"/>
@@ -449,9 +449,9 @@
 			<sketch id="Workshop06"/>
 			<sketch id="Workshop07"/>
 		</category>
-	
+
 		<!--
-		<category> 
+		<category>
 			<language country="en" name="Fritzing EDGY"/>
 			<language country="de" name="Fritzing EDGY"/>
 			<sketch id="EDGY-motor-control"/>

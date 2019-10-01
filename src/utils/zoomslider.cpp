@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -60,10 +54,8 @@ ZoomLabel::ZoomLabel(QWidget * parent) : QLabel(parent)
 	m_autoRepeat = m_mouseIsDown = m_mouseIsIn = m_repeated = false;
 	m_timer.setSingleShot(false);
 	m_timer.setInterval(AutoRepeatInterval);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-    m_timer.setTimerType(Qt::PreciseTimer);
-#endif
-    connect(&m_timer, SIGNAL(timeout()), this, SLOT(repeat()));
+	m_timer.setTimerType(Qt::PreciseTimer);
+	connect(&m_timer, SIGNAL(timeout()), this, SLOT(repeat()));
 }
 
 ZoomLabel::~ZoomLabel()
@@ -86,7 +78,7 @@ void ZoomLabel::setImages(const QString & normal, const QString & pressed)
 void ZoomLabel::repeat()
 {
 	if (m_mouseIsIn && m_mouseIsDown) {
-		m_repeated = true;	
+		m_repeated = true;
 		emit clicked();
 	}
 }
@@ -137,7 +129,7 @@ void ZoomLabel::mouseReleaseEvent(QMouseEvent * event)
 
 /////////////////////////////////////////////
 
-ZoomSlider::ZoomSlider(int maxValue, QWidget * parent) : QFrame(parent) 
+ZoomSlider::ZoomSlider(int maxValue, QWidget * parent) : QFrame(parent)
 {
 	// layout doesn't seem to work: the slider appears too far down in the status bar
 	// because the status bar layout is privileged for the message text
@@ -151,32 +143,32 @@ ZoomSlider::ZoomSlider(int maxValue, QWidget * parent) : QFrame(parent)
 
 
 	m_lineEdit = new QLineEdit(this);
-    m_lineEdit->setObjectName("ZoomSliderValue");
+	m_lineEdit->setObjectName("ZoomSliderValue");
 	m_lineEdit->setText(QString("%1").arg(STARTING_VALUE));
 	m_lineEdit->setValidator(new QIntValidator(MIN_VALUE, maxValue + MIN_VALUE, this));
 	m_lineEdit->setAttribute(Qt::WA_MacShowFocusRect, 0);
 	m_lineEdit->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
 
-    m_suffix = new QLabel(tr("%"), this);
-    m_suffix->setObjectName("ZoomSliderLabel");
+	m_suffix = new QLabel(tr("%"), this);
+	m_suffix->setObjectName("ZoomSliderLabel");
 
-    m_minusButton = new ZoomLabel(this);
+	m_minusButton = new ZoomLabel(this);
 	m_minusButton->setImages(":/resources/images/icons/zoomSliderMinus.png", ":/resources/images/icons/zoomSliderMinusPressed.png");
-    m_minusButton->setAutoRepeat(true);
+	m_minusButton->setAutoRepeat(true);
 	m_minusButton->setObjectName("ZoomSliderButton");
 	connect(m_minusButton, SIGNAL(clicked()), this, SLOT(minusClicked()));
 
-    m_slider = new QSlider(this);
+	m_slider = new QSlider(this);
 	m_slider->setObjectName("ZoomSliderSlider");
 	m_slider->setOrientation(Qt::Horizontal);
 	m_slider->setRange(MIN_VALUE, maxValue + MIN_VALUE);
 	m_slider->setValue(STARTING_VALUE);
-    m_slider->setTickPosition(QSlider::TicksBelow);
-    m_slider->setTickInterval(500);
+	m_slider->setTickPosition(QSlider::TicksBelow);
+	m_slider->setTickInterval(500);
 
-    m_plusButton = new ZoomLabel(this);
+	m_plusButton = new ZoomLabel(this);
 	m_plusButton->setImages(":/resources/images/icons/zoomSliderPlus.png", ":/resources/images/icons/zoomSliderPlusPressed.png");
-    m_plusButton->setAutoRepeat(true);
+	m_plusButton->setAutoRepeat(true);
 	m_plusButton->setObjectName("ZoomSliderButton");
 	connect(m_plusButton, SIGNAL(clicked()), this, SLOT(plusClicked()));
 
@@ -198,8 +190,8 @@ void ZoomSlider::loadFactors() {
 		QString line = stream.readLine();
 		if(lineNumber != 0) {
 			ZoomFactors << line.toDouble();
-		} 
-		else 
+		}
+		else
 		{
 			ZoomStep = line.toDouble();
 		}
@@ -264,7 +256,7 @@ void ZoomSlider::sliderTextEdited(const QString & newText) {
 	sliderTextEdited(newText, true);
 }
 
-void ZoomSlider::sliderTextEdited(const QString & newText, bool doEmit) 
+void ZoomSlider::sliderTextEdited(const QString & newText, bool doEmit)
 {
 	int value = newText.toInt();
 	if (m_slider->value() != value) {
@@ -283,7 +275,7 @@ void ZoomSlider::zoomOut () {
 	minusClicked();
 }
 
-void ZoomSlider::showEvent(QShowEvent * event) 
+void ZoomSlider::showEvent(QShowEvent * event)
 {
 	// can't get QHLayout to work, so shoving widgets into place here
 	// because widths aren't set at constructor time

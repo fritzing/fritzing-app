@@ -63,7 +63,7 @@ for i in $ARGS; do
         '-u' | '--user')
             USERMODE="true"
             ;;
-        -* | --*)
+        -*)
             arg_err "$i"
             exit 1
             ;;
@@ -136,8 +136,9 @@ if [[ ! -d "$BIN" ]]; then
 fi
 
 # add mime types for fritzing file formats
-grep -q 'application/x-fritzing' "$MIMES"
-if [ $? -eq 0 ]; then
+
+if grep -q 'application/x-fritzing' "$MIMES"
+then
     echo "Fritzing MIME types already registered!"
 else
     echo "Registering Fritzing MIME types..."
@@ -160,7 +161,7 @@ cp -Rp "$APPDIR" "$FRITZ_DIR"
 
 # Enter installation/Fritzing directory
 echo "Entering $(basename "$FRITZ_DIR")/" | tr -s "/"
-cd "$FRITZ_DIR"
+cd "$FRITZ_DIR" || exit $?
 
 # If installing in system mode, notify user that
 # it will take a long time.
@@ -188,31 +189,31 @@ case $? in
         echo "-- TASK ENDED SUCCESSFULLY! --"
         ;;
     1)
-        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo "AN ERROR OCCURRED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
         echo -e "-*-*-*-*-*-*-*-\n"
         exit 1
         ;;
     esac
 echo -e "-*-*-*-*-*-*-*-\n"
 
-# set the default application to fritzing.desktop
-echo "Setting up default application -> fritzing.desktop"
+# set the default application to org.fritzing.Fritzing.desktop
+echo "Setting up default application -> org.fritzing.Fritzing.desktop"
 echo "-*-*-*-*-*-*-*-"
 {
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fz && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzz && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzp && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzpz && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzb && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzbz && \
-    xdg-mime default 'fritzing.desktop' application/x-fritzing-fzm ;
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fz && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzz && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzp && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzpz && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzb && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzbz && \
+    xdg-mime default 'org.fritzing.Fritzing.desktop' application/x-fritzing-fzm ;
 }
 case $? in
     0)
         echo "-- TASK ENDED SUCCESSFULLY! --"
         ;;
     1)
-        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo "AN ERROR OCCURRED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
         echo -e "-*-*-*-*-*-*-*-\n"
         exit 1
         ;;
@@ -244,7 +245,7 @@ case $? in
         echo "-- TASK ENDED SUCCESSFULLY! --"
         ;;
     1)
-        echo "AN ERROR OCCURED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
+        echo "AN ERROR OCCURRED! PLEASE FIX THE PROBLEMS ABOVE, THEN TRY AGAIN" >&2
         echo -e "-*-*-*-*-*-*-*-\n"
         exit 1
         ;;
@@ -252,9 +253,10 @@ case $? in
 echo -e "-*-*-*-*-*-*-*-\n"
 
 echo "Making symlinks..."
-ln -s "$(realpath ./Fritzing)" "$BIN"/Fritzing 2>/dev/null
 
-if [ $? -ne 0 ]; then
+
+if ! ln -s "$(realpath ./Fritzing)" "$BIN"/Fritzing 2>/dev/null
+then
     echo "Symlinks already exists! (or linking failed...)" >&2
 fi
 
@@ -264,12 +266,12 @@ echo "Doing final touch..."
 APP_ICON_ESC="$(esc_path "$APP_ICON")"
 
 # Modify Fritzing desktop executable [keep original]
-sed -i.use "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" fritzing.desktop
+sed -i.use "s/icons\/fritzing_icon.png/${APP_ICON_ESC}/" org.fritzing.Fritzing.desktop
 
 # Install Fritzing desktop application
-cp fritzing.desktop.use "$APPS"/fritzing.desktop
+cp org.fritzing.Fritzing.desktop.use "$APPS"/org.fritzing.Fritzing.desktop
 cp icons/fritzing_icon.png "$APP_ICON"
-rm -f fritzing.desktop.use
+rm -f org.fritzing.Fritzing.desktop.use
 
 # Escape all paths [forward slashes] to make `sed` stable
 MIMES_ESC="$(esc_path "$MIMES")"
@@ -284,7 +286,7 @@ DEVSTAT="$(grep 'DEVSTAT' uninstall_fritzing.sh | cut -d '=' -f 2 | tr -d '"')"
 cp uninstall_fritzing.sh uninstall_fritzing.use
 
 # NOTE: Do not put a '$' before the placeholder brackets!
-# How I did it: sed -i "s/{placeholder}/$VARIABLE/(g if neccessary)" <file>
+# How I did it: sed -i "s/{placeholder}/$VARIABLE/(g if necessary)" <file>
 #
 sed -i "s/{mode}/$MODE/" uninstall_fritzing.use
 sed -i "s/{fritz-dir}/${FRITZ_DIR_ESC}/" uninstall_fritzing.use

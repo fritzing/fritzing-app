@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,20 +16,14 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6954 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-05 10:22:00 +0200 (Fr, 05. Apr 2013) $
-
 ********************************************************************/
 
 
-#ifdef _MSC_VER 
-#pragma warning(push) 
+#ifdef _MSC_VER
+#pragma warning(push)
 #pragma warning(disable:4503)
 #pragma warning(disable:4100)			// disable scary-looking compiler warnings in Boost library
-#pragma warning(disable:4181)	
+#pragma warning(disable:4181)
 #endif
 
 #include <boost/config.hpp>
@@ -40,7 +34,7 @@ $Date: 2013-04-05 10:22:00 +0200 (Fr, 05. Apr 2013) $
 #include <boost/graph/adjacency_list.hpp>
 
 
-#ifdef _MSC_VER 
+#ifdef _MSC_VER
 #pragma warning(pop)					// restore warning state
 #endif
 
@@ -57,7 +51,7 @@ void ConnectorEdge::setHeadTail(int h, int t) {
 	tail = t;
 }
 
-ConnectorEdge * makeConnectorEdge(QList<ConnectorEdge *> & edges, ConnectorItem * ci, ConnectorItem * cj, int weight, Wire * wire) 
+ConnectorEdge * makeConnectorEdge(QList<ConnectorEdge *> & edges, ConnectorItem * ci, ConnectorItem * cj, int weight, Wire * wire)
 {
 	ConnectorEdge * connectorEdge = new ConnectorEdge;
 	connectorEdge->c0 = ci;
@@ -81,17 +75,17 @@ static int LastVertex = 0;
 	LastVertex = ix;						\
 }
 
-void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWidget *> & foreignSketchWidgets, ConnectorItem * source, ConnectorItem * sink, QList<ConnectorEdge *> & minCut) 
+void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWidget *> & foreignSketchWidgets, ConnectorItem * source, ConnectorItem * sink, QList<ConnectorEdge *> & minCut)
 {
 	// this helped:  http://boost.2283326.n4.nabble.com/graph-edmund-karp-max-flow-vs-kolmogorov-max-flow-color-map-td2565611.html
-	
+
 	using namespace boost;
 
 	typedef adjacency_list_traits < vecS, vecS, directedS > Traits;
-    typedef property < vertex_color_t, boost::default_color_type > COLOR;
+	typedef property < vertex_color_t, boost::default_color_type > COLOR;
 	typedef property < vertex_index_t, long, COLOR > VERTEX;
-    typedef property < edge_reverse_t, Traits::edge_descriptor > REVERSE;
-    typedef property < edge_residual_capacity_t, long, REVERSE > RESIDUAL;
+	typedef property < edge_reverse_t, Traits::edge_descriptor > REVERSE;
+	typedef property < edge_residual_capacity_t, long, REVERSE > RESIDUAL;
 	typedef property < edge_capacity_t, long, RESIDUAL > EDGE;
 	typedef adjacency_list < listS, vecS, directedS, VERTEX, EDGE > Graph;
 
@@ -222,9 +216,9 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 					ce->c0->debugInfo("missing foreign connector");
 				}
 			}
-		}	
+		}
 	}
-	
+
 	while (originalKeys.count() > 0) {
 		ConnectorItem * key = originalKeys.takeFirst();
 		if (key->attachedToItemType() == ModelPart::Wire) continue;
@@ -287,7 +281,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	foreach(ConnectorEdge * ce, edges) {
 		connectorItems.at(ce->head)->debugInfo(QString("%1").arg(ce->weight));
 	}
-	DebugDialog::debug("");	
+	DebugDialog::debug("");
 	DebugDialog::debug("");
 	foreach(ConnectorEdge * ce, edges) {
 		partConnectorItems.at(ce->tail)->debugInfo(QString("%1").arg(ce->weight));
@@ -295,7 +289,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	*/
 
 	// if color_map parameter not specified, colors are not set
-    long flow = edmonds_karp_max_flow(g, s, t, color_map(color)); 
+	long flow = edmonds_karp_max_flow(g, s, t, color_map(color));
 	Q_UNUSED(flow);
 	//DebugDialog::debug(QString("flow %1, s%2, t%3").arg(flow).arg(index(s)).arg(index(t)));
 	//for (int i = 0; i < verts.count(); ++i) {
@@ -303,7 +297,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	//}
 
 	typedef property_traits<property_map < Graph, vertex_color_t >::type>::value_type tColorValue;
-    typedef boost::color_traits<tColorValue> tColorTraits; 
+	typedef boost::color_traits<tColorValue> tColorTraits;
 	foreach (ConnectorEdge * ce, edges) {
 		bool addIt = false;
 		if (ce->visible) {
@@ -321,7 +315,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 		else {
 			delete ce;
 		}
-	}     
+	}
 }
 
 
@@ -395,7 +389,7 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 				ConnectorItem::collectEqualPotential(cwConnectorItems, true, flags);
 				wiredTo.append(cwConnectorItems);
 				//foreach (ConnectorItem * cx, cwConnectorItems) {
-					//cx->debugInfo("\t\tcx");
+				//cx->debugInfo("\t\tcx");
 				//}
 				if (cwConnectorItems.contains(c2)) {
 					weights[ix++] = 0;
@@ -410,34 +404,34 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 		}
 	}
 
-    bool retval = false;
-    try {
-	    Graph g(edges, edges + num_edges, weights, num_nodes);
-	    property_map<Graph, edge_weight_t>::type weightmap = get(edge_weight, g);
+	bool retval = false;
+	try {
+		Graph g(edges, edges + num_edges, weights, num_nodes);
+		property_map<Graph, edge_weight_t>::type weightmap = get(edge_weight, g);
 
-	    std::vector < graph_traits < Graph >::vertex_descriptor > p(num_vertices(g));
+		std::vector < graph_traits < Graph >::vertex_descriptor > p(num_vertices(g));
 
-	    prim_minimum_spanning_tree(g, &p[0]);
+		prim_minimum_spanning_tree(g, &p[0]);
 
-        for (std::size_t i = 0; i != p.size(); ++i) {
-		    if (i == p[i]) continue;
-            if (reverseWeights[(int) i][(int) p[i]] == 0) continue;
+		for (std::size_t i = 0; i != p.size(); ++i) {
+			if (i == p[i]) continue;
+			if (reverseWeights[(int) i][(int) p[i]] == 0) continue;
 
-            result.insert(temp[(int) i], temp[(int) p[i]]);
-	    }
-        retval = true;
-    }
-    catch ( const std::exception& e ) {
-        // catch an error in boost 1.54
-        DebugDialog::debug(QString("boost spanning tree failure: %1").arg(e.what()));
-    }
-    catch(...) {
-        DebugDialog::debug("boost spanning tree failure");
-    }
+			result.insert(temp[(int) i], temp[(int) p[i]]);
+		}
+		retval = true;
+	}
+	catch ( const std::exception& e ) {
+		// catch an error in boost 1.54
+		DebugDialog::debug(QString("boost spanning tree failure: %1").arg(e.what()));
+	}
+	catch(...) {
+		DebugDialog::debug("boost spanning tree failure");
+	}
 
 
-	delete edges;
-	delete weights;
+	delete [] edges;
+	delete [] weights;
 
 	return retval;
 }
@@ -445,7 +439,7 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 #define add_edge_d(i, j, g) \
 	add_edge(verts[i], verts[j], g); \
     //partConnectorItems[i]->debugInfo(QString("edge from %1").arg(i));
-	//partConnectorItems[j]->debugInfo(QString("\tto %1").arg(j));
+//partConnectorItems[j]->debugInfo(QString("\tto %1").arg(j));
 
 bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGeometry::WireFlags myTrace, RoutingStatus & routingStatus) {
 	using namespace boost;
@@ -477,12 +471,12 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 				continue;
 			}
 
-            if (from->attachedToItemType() == ModelPart::Symbol && 
-                to->attachedToItemType() == ModelPart::Symbol && 
-                from->attachedTo()->isEverVisible() && 
-                to->attachedTo()->isEverVisible()) 
-           {
-                // equipotential symbols are treated as if they were connected by wires
+			if (from->attachedToItemType() == ModelPart::Symbol &&
+			        to->attachedToItemType() == ModelPart::Symbol &&
+			        from->attachedTo()->isEverVisible() &&
+			        to->attachedTo()->isEverVisible())
+			{
+				// equipotential symbols are treated as if they were connected by wires
 				add_edge_d(i, j, G);
 				add_edge_d(j, i, G);
 				gotUserConnection = true;
@@ -494,7 +488,7 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 				continue;
 			}
 
-			if ((to->bus() != NULL) && (to->bus() == from->bus())) {	
+			if ((to->bus() != NULL) && (to->bus() == from->bus())) {
 				add_edge_d(i, j, G);
 				add_edge_d(j, i, G);
 				continue;
@@ -515,28 +509,28 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 	for (int i = 0; i < num_nodes; i++) {
 		ConnectorItem * fromConnectorItem = partConnectorItems[i];
 		if (fromConnectorItem->attachedToItemType() == ModelPart::Jumper) {
-			routingStatus.m_jumperItemCount++;				
+			routingStatus.m_jumperItemCount++;
 		}
 		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
-            switch (toConnectorItem->attachedToItemType()) {
-                case ModelPart::Wire:
-                    break;
-                case ModelPart::Breadboard:
-                    if (toConnectorItem->attachedTo()->isEverVisible()) {
-                        QList<ConnectorItem *> ends;
-                        collectBreadboard(toConnectorItem, partConnectorItems, ends);
-                        foreach (ConnectorItem * end, ends) {
-				            if (end == fromConnectorItem) continue;
+			switch (toConnectorItem->attachedToItemType()) {
+			case ModelPart::Wire:
+				break;
+			case ModelPart::Breadboard:
+				if (toConnectorItem->attachedTo()->isEverVisible()) {
+					QList<ConnectorItem *> ends;
+					collectBreadboard(toConnectorItem, partConnectorItems, ends);
+					foreach (ConnectorItem * end, ends) {
+						if (end == fromConnectorItem) continue;
 
-				            int j = partConnectorItems.indexOf(end);
-				            if (j >= 0) {
-					            add_edge_d(i, j, G);
-					            add_edge_d(j, i, G);
-				            }
-			            }
-                    }
-                    continue;
-            }
+						int j = partConnectorItems.indexOf(end);
+						if (j >= 0) {
+							add_edge_d(i, j, G);
+							add_edge_d(j, i, G);
+						}
+					}
+				}
+				continue;
+			}
 
 			Wire * wire = qobject_cast<Wire *>(toConnectorItem->attachedTo());
 			if (wire == NULL) continue;
@@ -580,12 +574,12 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 			else {
 				// we can minimally span the set with n-1 wires, so even if multiple connections are missing from a given connector, count it as one
 				anyMissing = missingOne = true;
-				
+
 				//ConnectorItem * ci = partConnectorItems.at(i);
 				//ConnectorItem * cj = partConnectorItems.at(j);
 				//ci->debugInfo("missing one ci");
 				//cj->debugInfo("\t\tcj");
-				
+
 			}
 		}
 		if (missingOne) {
@@ -602,32 +596,32 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 
 void GraphUtils::collectBreadboard(ConnectorItem * connectorItem, QList<ConnectorItem *> & partConnectorItems, QList<ConnectorItem *> & ends)
 {
-    QList<ConnectorItem *> itemsToGo;
-    itemsToGo.append(connectorItem);
-    for (int i = 0; i < itemsToGo.count(); i++) {
-        ConnectorItem * candidate = itemsToGo.at(i);
-        if (partConnectorItems.contains(candidate)) {
-            if (!ends.contains(candidate)) {
-                ends.append(candidate);
-            }
-            continue;
-        }
+	QList<ConnectorItem *> itemsToGo;
+	itemsToGo.append(connectorItem);
+	for (int i = 0; i < itemsToGo.count(); i++) {
+		ConnectorItem * candidate = itemsToGo.at(i);
+		if (partConnectorItems.contains(candidate)) {
+			if (!ends.contains(candidate)) {
+				ends.append(candidate);
+			}
+			continue;
+		}
 
-        Bus * bus = candidate->bus();
-        if (bus) {
-            QList<ConnectorItem *> busConnectorItems;
-            candidate->attachedTo()->busConnectorItems(bus, candidate, busConnectorItems);
-            foreach (ConnectorItem * bci, busConnectorItems) {
-                if (!itemsToGo.contains(bci)) {
-                    itemsToGo.append(bci);
-                }
-            }
-        }
-        
-        foreach (ConnectorItem * to, candidate->connectedToItems()) {
-            if (!itemsToGo.contains(to)) {
-                itemsToGo.append(to);
-            }
-        }
-    }
+		Bus * bus = candidate->bus();
+		if (bus) {
+			QList<ConnectorItem *> busConnectorItems;
+			candidate->attachedTo()->busConnectorItems(bus, candidate, busConnectorItems);
+			foreach (ConnectorItem * bci, busConnectorItems) {
+				if (!itemsToGo.contains(bci)) {
+					itemsToGo.append(bci);
+				}
+			}
+		}
+
+		foreach (ConnectorItem * to, candidate->connectedToItems()) {
+			if (!itemsToGo.contains(to)) {
+				itemsToGo.append(to);
+			}
+		}
+	}
 }

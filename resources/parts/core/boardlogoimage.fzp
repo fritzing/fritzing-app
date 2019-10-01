@@ -38,7 +38,7 @@
   </schematicView>
   <pcbView>
    <layers image="pcb/circle_pcb.svg" >
-     <layer layerId="board" sticky="true"/>   
+     <layer layerId="board" sticky="true"/>
      <layer layerId="silkscreen" sticky="true"/>
      <layer layerId="silkscreen0" sticky="true"/>
    </layers>

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,15 +16,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 7000 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-29 07:24:08 +0200 (Mo, 29. Apr 2013) $
-
 ********************************************************************/
 
-/* 
+/*
 
 curvy To Do
 
@@ -111,21 +105,21 @@ bool alphaLessThan(QColor * c1, QColor * c2)
 }
 
 void debugCompare(ItemBase * it) {
-    Wire * wire = dynamic_cast<Wire *>(it);
-    if (wire) {
-        QRectF r0 = wire->connector0()->rect();
-        QRectF r1 = wire->connector1()->rect();
-        if (qAbs(r0.left() - r1.left()) < 0.1 && 
-            qAbs(r0.right() - r1.right()) < 0.1 && 
-            qAbs(r0.top() - r1.top()) < 0.1 &&
-            qAbs(r0.bottom() - r1.bottom()) < 0.1)
-        {
-            wire->debugInfo("zero wire");
-            if (wire->viewID() == ViewLayer::PCBView) {
-                DebugDialog::debug("in pcb");
-            }
-        }
-    }
+	Wire * wire = dynamic_cast<Wire *>(it);
+	if (wire) {
+		QRectF r0 = wire->connector0()->rect();
+		QRectF r1 = wire->connector1()->rect();
+		if (qAbs(r0.left() - r1.left()) < 0.1 &&
+		        qAbs(r0.right() - r1.right()) < 0.1 &&
+		        qAbs(r0.top() - r1.top()) < 0.1 &&
+		        qAbs(r0.bottom() - r1.bottom()) < 0.1)
+		{
+			wire->debugInfo("zero wire");
+			if (wire->viewID() == ViewLayer::PCBView) {
+				DebugDialog::debug("in pcb");
+			}
+		}
+	}
 }
 
 /////////////////////////////////////////////////////////////
@@ -154,25 +148,25 @@ Wire * WireAction::wire() {
 Wire::Wire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu* itemMenu, bool initLabel)
 	: ItemBase(modelPart, viewID, viewGeometry, id, itemMenu)
 {
-    m_banded = false;
-    m_colorByLength = false;
+	m_banded = false;
+	m_colorByLength = false;
 	m_bezier = NULL;
 	m_displayBendpointCursor = m_canHaveCurve = true;
 	m_hoverStrokeWidth = DefaultHoverStrokeWidth;
 	m_connector0 = m_connector1 = NULL;
 	m_partLabel = initLabel ? new PartLabel(this, NULL) : NULL;
 	m_canChainMultiple = false;
-    setFlag(QGraphicsItem::ItemIsSelectable, true );
+	setFlag(QGraphicsItem::ItemIsSelectable, true );
 	m_connectorHover = NULL;
 	m_opacity = 1.0;
 	m_ignoreSelectionChange = false;
 
 	//DebugDialog::debug(QString("aix line %1 %2 %3 %4").arg(this->viewGeometry().line().x1())
-													//.arg(this->viewGeometry().line().y1())
-													//.arg(this->viewGeometry().line().x2())
-													//.arg(this->viewGeometry().line().y2()) );
+	//.arg(this->viewGeometry().line().y1())
+	//.arg(this->viewGeometry().line().x2())
+	//.arg(this->viewGeometry().line().y2()) );
 	//DebugDialog::debug(QString("aix loc %1 %2").arg(this->viewGeometry().loc().x())
-														//.arg(this->viewGeometry().loc().y()) );
+	//.arg(this->viewGeometry().loc().y()) );
 
 	setPos(m_viewGeometry.loc());
 
@@ -189,8 +183,8 @@ FSvgRenderer * Wire::setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash &
 	ItemBase::setViewLayerID(viewLayerID, viewLayers);
 	FSvgRenderer * svgRenderer = setUpConnectors(m_modelPart, m_viewID);
 	if (svgRenderer != NULL) {
-        initEnds(m_viewGeometry, svgRenderer->viewBox(), infoGraphicsView);
-        //debugCompare(this);
+		initEnds(m_viewGeometry, svgRenderer->viewBox(), infoGraphicsView);
+		//debugCompare(this);
 	}
 	setZValue(this->z());
 
@@ -222,19 +216,19 @@ void Wire::moveItem(ViewGeometry & viewGeometry) {
 void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsView * infoGraphicsView) {
 	double penWidth = 1;
 	foreach (ConnectorItem * item, cachedConnectorItems()) {
-        if (item->connectorSharedID().endsWith("0")) {
-            penWidth = item->rect().width();
-            m_connector0 = item;
-            //item->debugInfo("connector 0");
-        }
-        else {
-            //item->debugInfo("connector 1");
+		if (item->connectorSharedID().endsWith("0")) {
+			penWidth = item->rect().width();
+			m_connector0 = item;
+			//item->debugInfo("connector 0");
+		}
+		else {
+			//item->debugInfo("connector 1");
 			m_connector1 = item;
 		}
 	}
 
-    if (m_connector0 == NULL || m_connector1 == NULL) {
-        // should never happen
+	if (m_connector0 == NULL || m_connector1 == NULL) {
+		// should never happen
 		return;
 	}
 
@@ -242,14 +236,14 @@ void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsVie
 		this->setLine(defaultRect.left(), defaultRect.top(), defaultRect.right(), defaultRect.bottom());
 	}
 	else {
-        this->setLine(vg.line());
+		this->setLine(vg.line());
 	}
 
 	setConnector0Rect();
 	setConnector1Rect();
 	m_viewGeometry.setLine(this->line());
-	
-   	QBrush brush(QColor(0, 0, 0));
+
+	QBrush brush(QColor(0, 0, 0));
 	QPen pen(brush, penWidth, Qt::SolidLine, Qt::RoundCap);
 	this->setPen(pen);
 
@@ -268,7 +262,7 @@ void Wire::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QW
 	ItemBase::paint(painter, option, widget);
 }
 
-void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget ) 
+void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget )
 {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
@@ -278,7 +272,7 @@ void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option
 		QLineF line = this->line();
 		painterPath.moveTo(line.p1());
 		painterPath.cubicTo(m_bezier->cp0(), m_bezier->cp1(), line.p2());
-		
+
 		/*
 		DebugDialog::debug(QString("c0x:%1,c0y:%2 c1x:%3,c1y:%4 p0x:%5,p0y:%6 p1x:%7,p1y:%8 px:%9,py:%10")
 							.arg(m_controlPoints.at(0).x())
@@ -310,53 +304,53 @@ void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option
 		}
 		painter->restore();
 	}
-	   
+
 	// DebugDialog::debug(QString("pen width %1 %2").arg(m_pen.widthF()).arg(m_viewID));
 
-    if (m_banded) {
-        QBrush brush = m_pen.brush();
-        m_pen.setStyle(Qt::SolidLine);
-        m_pen.setBrush(BandedBrush);
-        painter->setPen(m_pen);
-	    if (painterPath.isEmpty()) {
-		    painter->drawLine(getPaintLine());	
-	    }
-	    else {
-		    painter->drawPath(painterPath);
-	    }
-        m_pen.setBrush(brush);
-        m_pen.setDashPattern(TheDash);
-        m_pen.setCapStyle(Qt::FlatCap);
-    }
+	if (m_banded) {
+		QBrush brush = m_pen.brush();
+		m_pen.setStyle(Qt::SolidLine);
+		m_pen.setBrush(BandedBrush);
+		painter->setPen(m_pen);
+		if (painterPath.isEmpty()) {
+			painter->drawLine(getPaintLine());
+		}
+		else {
+			painter->drawPath(painterPath);
+		}
+		m_pen.setBrush(brush);
+		m_pen.setDashPattern(TheDash);
+		m_pen.setCapStyle(Qt::FlatCap);
+	}
 
-    if (getRatsnest()) {
-        m_pen.setDashPattern(RatDash);
-    }
+	if (getRatsnest()) {
+		m_pen.setDashPattern(RatDash);
+	}
 
-    QColor realColor = color();
-    if (coloredByLength()) {
-        m_pen.setColor(colorForLength());
-    }
+	QColor realColor = color();
+	if (coloredByLength()) {
+		m_pen.setColor(colorForLength());
+	}
 
-    painter->setPen(m_pen);
-    if (painterPath.isEmpty()) {
-		painter->drawLine(getPaintLine());	
+	painter->setPen(m_pen);
+	if (painterPath.isEmpty()) {
+		painter->drawLine(getPaintLine());
 	}
 	else {
 		painter->drawPath(painterPath);
 	}
 
-    if (m_banded) {
-        m_pen.setStyle(Qt::SolidLine);
-        m_pen.setCapStyle(Qt::RoundCap);
-    }
+	if (m_banded) {
+		m_pen.setStyle(Qt::SolidLine);
+		m_pen.setCapStyle(Qt::RoundCap);
+	}
 
-    if (coloredByLength()) {
-        m_pen.setColor(realColor);
-    }
+	if (coloredByLength()) {
+		m_pen.setColor(realColor);
+	}
 }
 
-void Wire::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) 
+void Wire::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 	Q_UNUSED(widget);
 	Q_UNUSED(option);
@@ -386,9 +380,9 @@ QPainterPath Wire::shapeAux(double width) const
 {
 	QPainterPath path;
 	if (m_line == QLineF()) {
-	    return path;
+		return path;
 	}
-				
+
 	path.moveTo(m_line.p1());
 	if (m_bezier == NULL || m_bezier->isEmpty()) {
 		path.lineTo(m_line.p2());
@@ -403,15 +397,15 @@ QPainterPath Wire::shapeAux(double width) const
 QRectF Wire::boundingRect() const
 {
 	if (m_pen.widthF() == 0.0) {
-	    const double x1 = m_line.p1().x();
-	    const double x2 = m_line.p2().x();
-	    const double y1 = m_line.p1().y();
-	    const double y2 = m_line.p2().y();
-	    double lx = qMin(x1, x2);
-	    double rx = qMax(x1, x2);
-	    double ty = qMin(y1, y2);
-	    double by = qMax(y1, y2);
-	    return QRectF(lx, ty, rx - lx, by - ty);
+		const double x1 = m_line.p1().x();
+		const double x2 = m_line.p2().x();
+		const double y1 = m_line.p1().y();
+		const double y2 = m_line.p2().y();
+		double lx = qMin(x1, x2);
+		double rx = qMax(x1, x2);
+		double ty = qMin(y1, y2);
+		double by = qMax(y1, y2);
+		return QRectF(lx, ty, rx - lx, by - ty);
 	}
 	return hoverShape().controlPointRect();
 }
@@ -481,17 +475,17 @@ void Wire::initDragEnd(ConnectorItem * connectorItem, QPointF scenePos) {
 	saveGeometry();
 	QLineF line = this->line();
 	m_drag0 = (connectorItem == m_connector0);
-    //debugInfo("setting drag end to true");
+	//debugInfo("setting drag end to true");
 	m_dragEnd = true;
 	m_dragCurve = false;
 	if (m_drag0) {
 		m_wireDragOrigin = line.p2();
- 		//DebugDialog::debug(QString("drag near origin %1 %2").arg(m_wireDragOrigin.x()).arg(m_wireDragOrigin.y()) );
+		//DebugDialog::debug(QString("drag near origin %1 %2").arg(m_wireDragOrigin.x()).arg(m_wireDragOrigin.y()) );
 	}
 	else {
 		m_wireDragOrigin = line.p1();
- 		//DebugDialog::debug(QString("drag far origin %1 %2").arg(m_wireDragOrigin.x()).arg(m_wireDragOrigin.y()) );
- 		//DebugDialog::debug(QString("drag far other %1 %2").arg(line.p2().x()).arg(line.p2().y()) );
+		//DebugDialog::debug(QString("drag far origin %1 %2").arg(m_wireDragOrigin.x()).arg(m_wireDragOrigin.y()) );
+		//DebugDialog::debug(QString("drag far other %1 %2").arg(line.p2().x()).arg(line.p2().y()) );
 	}
 
 	if (connectorItem->chained()) {
@@ -537,7 +531,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 		return;
 	}
 
-    //debugInfo("dragging wire");
+	//debugInfo("dragging wire");
 
 	ConnectorItem * whichConnectorItem;
 	ConnectorItem * otherConnectorItem;
@@ -551,7 +545,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 	}
 
 	if ((modifiers & Qt::ShiftModifier) != 0) {
-		QPointF initialPos = mapFromScene(otherConnectorItem->sceneAdjustedTerminalPoint(NULL)); 
+		QPointF initialPos = mapFromScene(otherConnectorItem->sceneAdjustedTerminalPoint(NULL));
 		bool bendpoint = isBendpoint(whichConnectorItem);
 		if (bendpoint) {
 			bendpoint = false;
@@ -573,7 +567,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 					bendpoint = true;
 					eventPos = p1;
 					break;
-				}				
+				}
 			}
 		}
 
@@ -587,7 +581,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 		QPointF p = this->mapToScene(eventPos);
 		QGraphicsSvgItem::setPos(p.x(), p.y());
 		this->setLine(0, 0, m_wireDragOrigin.x() - p.x() + m_viewGeometry.loc().x(),
-							m_wireDragOrigin.y() - p.y() + m_viewGeometry.loc().y() );
+		              m_wireDragOrigin.y() - p.y() + m_viewGeometry.loc().y() );
 		//DebugDialog::debug(QString("drag0 wdo:(%1,%2) p:(%3,%4) vg:(%5,%6) l:(%7,%8)")
 		//			.arg(m_wireDragOrigin.x()).arg(m_wireDragOrigin.y())
 		//			.arg(p.x()).arg(p.y())
@@ -607,120 +601,120 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 	setConnector1Rect();
 
 
-    QSet<ConnectorItem *> allTo;
-    allTo.insert(whichConnectorItem);
+	QSet<ConnectorItem *> allTo;
+	allTo.insert(whichConnectorItem);
 	foreach (ConnectorItem * toConnectorItem, whichConnectorItem->connectedToItems()) {
 		Wire * chainedWire = qobject_cast<Wire *>(toConnectorItem->attachedTo());
 		if (chainedWire == NULL) continue;
 
-        allTo.insert(toConnectorItem);
-        foreach (ConnectorItem * subTo, toConnectorItem->connectedToItems()) {
-            allTo.insert(subTo);
-        }
+		allTo.insert(toConnectorItem);
+		foreach (ConnectorItem * subTo, toConnectorItem->connectedToItems()) {
+			allTo.insert(subTo);
+		}
 	}
-    allTo.remove(whichConnectorItem);
+	allTo.remove(whichConnectorItem);
 
-    // TODO: this could all be determined once at mouse press time
+	// TODO: this could all be determined once at mouse press time
 
 	if (allTo.count() == 0) {
-        // dragging one end of the wire
+		// dragging one end of the wire
 
 		// don't allow wire to connect back to something the other end is already directly connected to
-        // an alternative would be to exclude all connectors in the net connected by the same kind of trace
+		// an alternative would be to exclude all connectors in the net connected by the same kind of trace
 		QList<Wire *> wires;
 		QList<ConnectorItem *> ends;
 		collectChained(wires, ends);
 
-        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-        //DebugDialog::debug("------------------------");
+		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+		//DebugDialog::debug("------------------------");
 
-        QList<ConnectorItem *> exclude;
-        foreach (ConnectorItem * end, ends) {
-            exclude << end;
-            foreach (ConnectorItem * ci, end->connectedToItems()) {
-                // if there is a wire growing out of one of the excluded ends, exclude the attached end
-                exclude << ci;
-            }
-            foreach (ConnectorItem * toConnectorItem, end->connectedToItems()) {
-                if (toConnectorItem->attachedToItemType() != ModelPart::Wire) continue;
+		QList<ConnectorItem *> exclude;
+		foreach (ConnectorItem * end, ends) {
+			exclude << end;
+			foreach (ConnectorItem * ci, end->connectedToItems()) {
+				// if there is a wire growing out of one of the excluded ends, exclude the attached end
+				exclude << ci;
+			}
+			foreach (ConnectorItem * toConnectorItem, end->connectedToItems()) {
+				if (toConnectorItem->attachedToItemType() != ModelPart::Wire) continue;
 
-                Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-                if (w->getRatsnest()) continue;
-                if (!w->isTraceType(infoGraphicsView->getTraceFlag())) continue;
+				Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
+				if (w->getRatsnest()) continue;
+				if (!w->isTraceType(infoGraphicsView->getTraceFlag())) continue;
 
-                //w->debugInfo("what wire");
+				//w->debugInfo("what wire");
 
-                QList<ConnectorItem *> ends2;
-                QList<Wire *> wires2;
-                w->collectChained(wires2, ends2);
-                exclude.append(ends2);
-                foreach (ConnectorItem * e2, ends2) {
-                    foreach (ConnectorItem * ci, e2->connectedToItems()) {
-                        // if there is a wire growing out of one of the excluded ends, exclude that end of the wire
-                        exclude << ci;
-                    }
-                }
-                foreach (Wire * w2, wires2) {
-			        exclude.append(w2->cachedConnectorItems());
-		        }
-            }
-        }
+				QList<ConnectorItem *> ends2;
+				QList<Wire *> wires2;
+				w->collectChained(wires2, ends2);
+				exclude.append(ends2);
+				foreach (ConnectorItem * e2, ends2) {
+					foreach (ConnectorItem * ci, e2->connectedToItems()) {
+						// if there is a wire growing out of one of the excluded ends, exclude that end of the wire
+						exclude << ci;
+					}
+				}
+				foreach (Wire * w2, wires2) {
+					exclude.append(w2->cachedConnectorItems());
+				}
+			}
+		}
 
 
-        // but allow to restore connections at this end (collect chained above got both ends of this wire) 
+		// but allow to restore connections at this end (collect chained above got both ends of this wire)
 		foreach (ConnectorItem * toConnectorItem, whichConnectorItem->connectedToItems()) {
 			if (ends.contains(toConnectorItem)) exclude.removeAll(toConnectorItem);
 		}
 
-        //DebugDialog::debug("");
-        //DebugDialog::debug("__________________");
-        //foreach (ConnectorItem * end, exclude) end->debugInfo("exclude");
+		//DebugDialog::debug("");
+		//DebugDialog::debug("__________________");
+		//foreach (ConnectorItem * end, exclude) end->debugInfo("exclude");
 
-        ConnectorItem * originatingConnector = NULL;
+		ConnectorItem * originatingConnector = NULL;
 		if (otherConnectorItem) {
 			foreach (ConnectorItem * toConnectorItem, otherConnectorItem->connectedToItems()) {
-			    if (ends.contains(toConnectorItem)) {
-                    originatingConnector = toConnectorItem;
-                    break;
-                }
-		    }
+				if (ends.contains(toConnectorItem)) {
+					originatingConnector = toConnectorItem;
+					break;
+				}
+			}
 		}
 
 		whichConnectorItem->findConnectorUnder(false, true, exclude, true, originatingConnector);
 	}
-    else {
-        // dragging a bendpoint
-        foreach (ConnectorItem * toConnectorItem, allTo) {
-            Wire * chained = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-            if (chained) {
-                chained->simpleConnectedMoved(whichConnectorItem, toConnectorItem);
-            }
-        }
-    }
+	else {
+		// dragging a bendpoint
+		foreach (ConnectorItem * toConnectorItem, allTo) {
+			Wire * chained = qobject_cast<Wire *>(toConnectorItem->attachedTo());
+			if (chained) {
+				chained->simpleConnectedMoved(whichConnectorItem, toConnectorItem);
+			}
+		}
+	}
 }
 
 QRectF Wire::connector0Rect(const QLineF & line) {
-    QRectF rect = m_connector0->rect();
-    rect.moveTo(0 - (rect.width()  / 2.0),
-                0 - (rect.height()  / 2.0) );
-    return rect;
+	QRectF rect = m_connector0->rect();
+	rect.moveTo(0 - (rect.width()  / 2.0),
+	            0 - (rect.height()  / 2.0) );
+	return rect;
 }
 
 QRectF Wire::connector1Rect(const QLineF & line) {
 
-    QRectF rect = m_connector1->rect();
-    rect.moveTo(line.dx() - (rect.width()  / 2.0),
-                line.dy() - (rect.height()  / 2.0) );
-    return rect;
+	QRectF rect = m_connector1->rect();
+	rect.moveTo(line.dx() - (rect.width()  / 2.0),
+	            line.dy() - (rect.height()  / 2.0) );
+	return rect;
 }
 
 void Wire::setConnector0Rect() {
 	QRectF rect = m_connector0->rect();
 	rect.moveTo(0 - (rect.width()  / 2.0),
-				0 - (rect.height()  / 2.0) );
+	            0 - (rect.height()  / 2.0) );
 	m_connector0->setRect(rect);
 
-    //debugCompare(this);
+	//debugCompare(this);
 
 //	QPointF p = m_connector0->mapToScene(m_connector0->rect().center());
 //	m_connector0->debugInfo(QString("c0:%1 %2").arg(p.x()).arg(p.y()));
@@ -733,10 +727,10 @@ void Wire::setConnector0Rect() {
 void Wire::setConnector1Rect() {
 	QRectF rect = m_connector1->rect();
 	rect.moveTo(this->line().dx() - (rect.width()  / 2.0),
-				this->line().dy() - (rect.height()  / 2.0) );
+	            this->line().dy() - (rect.height()  / 2.0) );
 	m_connector1->setRect(rect);
 
-    //debugCompare(this);
+	//debugCompare(this);
 
 //	QPointF p = m_connector0->mapToScene(m_connector0->rect().center());
 //	m_connector0->debugInfo(QString("c0:%1 %2").arg(p.x()).arg(p.y()));
@@ -749,7 +743,7 @@ void Wire::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
 		return;
 	}
 
-    //debugInfo("wire release drag");
+	//debugInfo("wire release drag");
 	if (releaseDrag()) return;
 
 	ItemBase::mouseReleaseEvent(event);
@@ -769,7 +763,7 @@ bool Wire::releaseDrag() {
 		return true;
 	}
 
-    //debugInfo("clearing drag end");
+	//debugInfo("clearing drag end");
 	m_dragEnd = false;
 
 	ConnectorItem * from = (m_drag0) ? m_connector0 : m_connector1;
@@ -828,7 +822,7 @@ void Wire::setExtras(QDomElement & element, InfoGraphicsView * infoGraphicsView)
 		}
 	}
 
-    m_banded = (element.attribute("banded", "") == "1");
+	m_banded = (element.attribute("banded", "") == "1");
 
 	setColorFromElement(element);
 	QDomElement bElement = element.firstChildElement("bezier");
@@ -857,7 +851,7 @@ void Wire::setColorFromElement(QDomElement & element) {
 	setColorString(colorString, op, false);
 }
 
-void Wire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event , ConnectorItem * item) {
+void Wire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item) {
 	m_connectorHover = item;
 	ItemBase::hoverEnterConnectorItem(event, item);
 }
@@ -947,8 +941,8 @@ void Wire::simpleConnectedMoved(ConnectorItem * from, ConnectorItem * to)
 {
 	if (from == NULL) return;
 
-    //if (from) from->debugInfo("connected moved from");
-    //if (to) to->debugInfo("\tto");
+	//if (from) from->debugInfo("connected moved from");
+	//if (to) to->debugInfo("\tto");
 
 	// to is this wire, from is something else
 	QPointF p1, p2;
@@ -1004,30 +998,30 @@ void Wire::calcNewLine(ConnectorItem * from, ConnectorItem * to, QPointF & p1, Q
 }
 
 void Wire::connectedMoved(ConnectorItem * from, ConnectorItem * to, QList<ConnectorItem *> & already) {
-    Q_UNUSED(already);
+	Q_UNUSED(already);
 
 	// "from" is the connector on the part
 	// "to" is the connector on the wire
 
-    //from->debugInfo("connected moved");
-    //to->debugInfo("\tconnected moved");
+	//from->debugInfo("connected moved");
+	//to->debugInfo("\tconnected moved");
 
-    if (from->connectedToItems().contains(to) || to->connectedToItems().contains(from)) {
-	    simpleConnectedMoved(from, to);
-    }
-    else {
-        //from->debugInfo("not connected");
-        //to->debugInfo("\t");
-    }
+	if (from->connectedToItems().contains(to) || to->connectedToItems().contains(from)) {
+		simpleConnectedMoved(from, to);
+	}
+	else {
+		//from->debugInfo("not connected");
+		//to->debugInfo("\t");
+	}
 }
 
 
-FSvgRenderer * Wire::setUpConnectors(ModelPart * modelPart, ViewLayer::ViewID viewID) 
+FSvgRenderer * Wire::setUpConnectors(ModelPart * modelPart, ViewLayer::ViewID viewID)
 {
 	clearConnectorItemCache();
 
 	LayerAttributes layerAttributes;
-    this->initLayerAttributes(layerAttributes, viewID, m_viewLayerID, m_viewLayerPlacement, false, false);
+	this->initLayerAttributes(layerAttributes, viewID, m_viewLayerID, m_viewLayerPlacement, false, false);
 	FSvgRenderer * renderer = ItemBase::setUpImage(modelPart, layerAttributes);
 	if (renderer == NULL) {
 		return NULL;
@@ -1191,11 +1185,11 @@ void Wire::setShadowColor(QColor & color, bool restore) {
 	m_shadowPen.setBrush(m_shadowBrush);
 	m_bendpointPen.setBrush(m_shadowBrush);
 	m_bendpoint2Pen.setBrush(m_shadowBrush);
-    QList<ConnectorItem *> visited;
-    if (restore) {
-	    if (m_connector0) m_connector0->restoreColor(visited);
-	    if (m_connector1) m_connector1->restoreColor(visited);
-    }
+	QList<ConnectorItem *> visited;
+	if (restore) {
+		if (m_connector0) m_connector0->restoreColor(visited);
+		if (m_connector1) m_connector1->restoreColor(visited);
+	}
 	this->update();
 }
 
@@ -1208,7 +1202,7 @@ void Wire::setWireWidth(double width, InfoGraphicsView * infoGraphicsView, doubl
 
 	prepareGeometryChange();
 	setPenWidth(width, infoGraphicsView, hoverStrokeWidth);
-    QList<ConnectorItem *> visited;
+	QList<ConnectorItem *> visited;
 	if (m_connector0) m_connector0->restoreColor(visited);
 	if (m_connector1) m_connector1->restoreColor(visited);
 	update();
@@ -1230,7 +1224,7 @@ void Wire::setColorString(QString colorName, double op, bool restore) {
 	// sets a color using the name (.e. "red")
 	// note: colorName is associated with a Fritzing color, not a Qt color
 
-	QString colorString = RatsnestColors::wireColor(m_viewID, colorName);     
+	QString colorString = RatsnestColors::wireColor(m_viewID, colorName);
 	if (colorString.isEmpty()) {
 		colorString = colorName;
 	}
@@ -1264,13 +1258,13 @@ QString Wire::colorString() {
 void Wire::initNames() {
 	if (colorNames.count() > 0) return;
 
-    TheDash.clear();
-    TheDash << 10 << 8;
-    RatDash.clear();
-    RatDash << 2 << 2;
+	TheDash.clear();
+	TheDash << 10 << 8;
+	RatDash.clear();
+	RatDash << 2 << 2;
 
 	widths << 8 << 12 << 16 << 24 << 32 << 48;
-    int i = 0;
+	int i = 0;
 	widthTrans.insert(widths[i++], tr("super fine (8 mil)"));
 	widthTrans.insert(widths[i++], tr("extra thin (12 mil)"));
 
@@ -1285,47 +1279,47 @@ void Wire::initNames() {
 
 	HALF_STANDARD_TRACE_WIDTH = STANDARD_TRACE_WIDTH / 2.0;
 
-    // need a list because a hash table doesn't guarantee order 
-    colorNames.append(tr("blue"));
+	// need a list because a hash table doesn't guarantee order
+	colorNames.append(tr("blue"));
 	colorNames.append(tr("red"));
-    colorNames.append(tr("black"));
+	colorNames.append(tr("black"));
 	colorNames.append(tr("yellow"));
 	colorNames.append(tr("green"));
 	colorNames.append(tr("grey"));
 	colorNames.append(tr("white"));
-    colorNames.append(tr("orange"));
-    colorNames.append(tr("ochre"));
-    colorNames.append(tr("cyan"));
-    colorNames.append(tr("brown"));
-    colorNames.append(tr("purple"));
-    colorNames.append(tr("pink"));
+	colorNames.append(tr("orange"));
+	colorNames.append(tr("ochre"));
+	colorNames.append(tr("cyan"));
+	colorNames.append(tr("brown"));
+	colorNames.append(tr("purple"));
+	colorNames.append(tr("pink"));
 
 	// need this hash table to translate from user's language to internal color name
-    colorTrans.insert(tr("blue"), "blue");
+	colorTrans.insert(tr("blue"), "blue");
 	colorTrans.insert(tr("red"), "red");
-    colorTrans.insert(tr("black"), "black");
+	colorTrans.insert(tr("black"), "black");
 	colorTrans.insert(tr("yellow"), "yellow");
 	colorTrans.insert(tr("green"), "green");
 	colorTrans.insert(tr("grey"), "grey");
 	colorTrans.insert(tr("white"), "white");
-    colorTrans.insert(tr("orange"), "orange");
-    colorTrans.insert(tr("ochre"), "ochre");
-    colorTrans.insert(tr("cyan"), "cyan");
+	colorTrans.insert(tr("orange"), "orange");
+	colorTrans.insert(tr("ochre"), "ochre");
+	colorTrans.insert(tr("cyan"), "cyan");
 	colorTrans.insert(tr("brown"), "brown");
-    colorTrans.insert(tr("purple"), "purple");
-    colorTrans.insert(tr("pink"), "pink");
+	colorTrans.insert(tr("purple"), "purple");
+	colorTrans.insert(tr("pink"), "pink");
 
-    // List of standard breadboard jumper colors, as seen in various kits
-    lengthColorTrans.append(QColor(192, 192, 192)); // 100 mil -> silver (no insulator)
-    lengthColorTrans.append(QColor(209, 0, 0)); // 200mil -> red
-    lengthColorTrans.append(QColor(255, 102, 34)); // 300mil -> orange
-    lengthColorTrans.append(QColor(255, 218, 33)); // 400mil -> yellow
-    lengthColorTrans.append(QColor(51, 221, 0)); // 500mil -> green
-    lengthColorTrans.append(QColor(17, 51, 204)); // 600mil -> blue
-    lengthColorTrans.append(QColor(75, 0, 130)); // 700mil -> purple
-    lengthColorTrans.append(QColor(169, 169, 169)); // 800mil -> gray
-    lengthColorTrans.append(QColor(245, 245, 245)); // 900mil -> white
-    lengthColorTrans.append(QColor(139, 69, 19)); // 1000mil -> brown
+	// List of standard breadboard jumper colors, as seen in various kits
+	lengthColorTrans.append(QColor(192, 192, 192)); // 100 mil -> silver (no insulator)
+	lengthColorTrans.append(QColor(209, 0, 0)); // 200mil -> red
+	lengthColorTrans.append(QColor(255, 102, 34)); // 300mil -> orange
+	lengthColorTrans.append(QColor(255, 218, 33)); // 400mil -> yellow
+	lengthColorTrans.append(QColor(51, 221, 0)); // 500mil -> green
+	lengthColorTrans.append(QColor(17, 51, 204)); // 600mil -> blue
+	lengthColorTrans.append(QColor(75, 0, 130)); // 700mil -> purple
+	lengthColorTrans.append(QColor(169, 169, 169)); // 800mil -> gray
+	lengthColorTrans.append(QColor(245, 245, 245)); // 900mil -> white
+	lengthColorTrans.append(QColor(139, 69, 19)); // 1000mil -> brown
 
 }
 
@@ -1383,74 +1377,74 @@ bool Wire::canChangeColor() {
 }
 
 void Wire::collectDirectWires(QList<Wire *> & wires) {
-    bool firstRound = false;
+	bool firstRound = false;
 	if (!wires.contains(this)) {
 		wires.append(this);
-        firstRound = true;
+		firstRound = true;
 	}
 
-    QList<ConnectorItem *> junctions;
-    if (firstRound) {
-        // collect up to any junction
-	    collectDirectWires(m_connector0, wires, junctions);
-	    collectDirectWires(m_connector1, wires, junctions);
-        return;
-    }
+	QList<ConnectorItem *> junctions;
+	if (firstRound) {
+		// collect up to any junction
+		collectDirectWires(m_connector0, wires, junctions);
+		collectDirectWires(m_connector1, wires, junctions);
+		return;
+	}
 
-    // second round: deal with junctions
-    foreach (Wire * wire, wires) {
-        junctions << wire->connector0() << wire->connector1();
-    }
+	// second round: deal with junctions
+	foreach (Wire * wire, wires) {
+		junctions << wire->connector0() << wire->connector1();
+	}
 
-    int ix = 0;
-    while (ix < junctions.count()) {
-        ConnectorItem * junction = junctions.at(ix++);
+	int ix = 0;
+	while (ix < junctions.count()) {
+		ConnectorItem * junction = junctions.at(ix++);
 
-        QSet<Wire *> jwires;
-        foreach (ConnectorItem * toConnectorItem, junction->connectedToItems()) {
-            if (toConnectorItem->attachedToItemType() != ModelPart::Wire) break;
+		QSet<Wire *> jwires;
+		foreach (ConnectorItem * toConnectorItem, junction->connectedToItems()) {
+			if (toConnectorItem->attachedToItemType() != ModelPart::Wire) break;
 
-            Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-            if (!wires.contains(w)) jwires << w;
+			Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
+			if (!wires.contains(w)) jwires << w;
 
-            bool onlyWiresConnected = true;
-            foreach (ConnectorItem * toToConnectorItem, toConnectorItem->connectedToItems()) {
-                if (toToConnectorItem->attachedToItemType() != ModelPart::Wire) {
-                    onlyWiresConnected = false;
-                    break;
-                }
+			bool onlyWiresConnected = true;
+			foreach (ConnectorItem * toToConnectorItem, toConnectorItem->connectedToItems()) {
+				if (toToConnectorItem->attachedToItemType() != ModelPart::Wire) {
+					onlyWiresConnected = false;
+					break;
+				}
 
-                w = qobject_cast<Wire *>(toToConnectorItem->attachedTo());
-                if (!wires.contains(w)) jwires << w;
-            }
-            if (!onlyWiresConnected) break;
-        }
+				w = qobject_cast<Wire *>(toToConnectorItem->attachedTo());
+				if (!wires.contains(w)) jwires << w;
+			}
+			if (!onlyWiresConnected) break;
+		}
 
-        if (jwires.count() == 1) {
-            // there is a junction of > 2 wires and all wires leading to it except one are already on the delete list
-            Wire * w = jwires.values().at(0);
-            wires << w;
-            w->collectDirectWires(w->connector0(), wires, junctions);
-            w->collectDirectWires(w->connector1(), wires, junctions);
-        }
-    }
+		if (jwires.count() == 1) {
+			// there is a junction of > 2 wires and all wires leading to it except one are already on the delete list
+			Wire * w = jwires.values().at(0);
+			wires << w;
+			w->collectDirectWires(w->connector0(), wires, junctions);
+			w->collectDirectWires(w->connector1(), wires, junctions);
+		}
+	}
 }
 
 
 void Wire::collectDirectWires(ConnectorItem * connectorItem, QList<Wire *> & wires, QList<ConnectorItem *> & junctions) {
 	if (connectorItem->connectionsCount() == 0) return;
-    if (connectorItem->connectionsCount() > 1) {
-        if (!junctions.contains(connectorItem)) junctions.append(connectorItem);
-        return;
-    }
+	if (connectorItem->connectionsCount() > 1) {
+		if (!junctions.contains(connectorItem)) junctions.append(connectorItem);
+		return;
+	}
 
 	ConnectorItem * toConnectorItem = connectorItem->connectedToItems().at(0);
 	if (toConnectorItem->attachedToItemType() != ModelPart::Wire) return;
 
-    if (toConnectorItem->connectionsCount() != 1) {
-        if (!junctions.contains(connectorItem)) junctions.append(connectorItem);
-        return;
-    }
+	if (toConnectorItem->connectionsCount() != 1) {
+		if (!junctions.contains(connectorItem)) junctions.append(connectorItem);
+		return;
+	}
 
 	Wire * nextWire = qobject_cast<Wire *>(toConnectorItem->attachedTo());
 	if (wires.contains(nextWire)) return;
@@ -1461,7 +1455,7 @@ void Wire::collectDirectWires(ConnectorItem * connectorItem, QList<Wire *> & wir
 
 QVariant Wire::itemChange(GraphicsItemChange change, const QVariant &value)
 {
-    if (change == ItemSelectedChange) {
+	if (change == ItemSelectedChange) {
 		if (m_partLabel) {
 			m_partLabel->update();
 		}
@@ -1487,14 +1481,14 @@ QVariant Wire::itemChange(GraphicsItemChange change, const QVariant &value)
 				infoGraphicsView->setIgnoreSelectionChangeEvents(false);
 			}
 		}
-    }
-    return ItemBase::itemChange(change, value);
+	}
+	return ItemBase::itemChange(change, value);
 }
 
 void Wire::cleanup() {
 }
 
-void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) 
+void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect)
 {
 	connectorItem->setBigDot(false);
 	ItemBase::getConnectedColor(connectorItem, brush, pen, opacity, negativePenWidth, negativeOffsetRect);
@@ -1503,7 +1497,7 @@ void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView == NULL) {
 		return;
-    }
+	}
 
 	foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() == ModelPart::Wire) {
@@ -1515,7 +1509,7 @@ void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen 
 		else {
 			// for drawing a big dot on the end of a part connector in schematic view if the part is connected to more than one trace
 			bendpoint = false;
-			if (toConnectorItem->connectionsCount() > 1) {	
+			if (toConnectorItem->connectionsCount() > 1) {
 				if (infoGraphicsView->hasBigDots()) {
 					int c = 0;
 					foreach (ConnectorItem * totoConnectorItem, toConnectorItem->connectedToItems()) {
@@ -1541,11 +1535,11 @@ void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen 
 	if (count == 0) {
 		return;
 	}
-	
+
 	// connectorItem is a bendpoint or connects to a multiply connected connector
 
 	//if (!bendpoint) {
-		//DebugDialog::debug(QString("big dot %1 %2 %3").arg(this->id()).arg(connectorItem->connectorSharedID()).arg(count));
+	//DebugDialog::debug(QString("big dot %1 %2 %3").arg(this->id()).arg(connectorItem->connectorSharedID()).arg(count));
 	//}
 
 	brush = m_shadowBrush;
@@ -1609,7 +1603,7 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 {
 	if (prop.compare("width", Qt::CaseInsensitive) == 0) {
 		// don't display width property
-        hide = true;
+		hide = true;
 		return false;
 	}
 
@@ -1620,7 +1614,7 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 			comboBox->setEditable(false);
 			comboBox->setEnabled(swappingEnabled);
 			comboBox->setObjectName("infoViewComboBox");
-			
+
 			int ix = 0;
 			QString englishCurrColor = colorString();
 			foreach(QString transColorName, Wire::colorNames) {
@@ -1637,24 +1631,24 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 
 			connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(colorEntry(const QString &)));
 
-            if (this->hasShadow()) {
-                QCheckBox * checkBox = new QCheckBox(tr("Banded"));
-		        checkBox->setChecked(m_banded);
-		        checkBox->setObjectName("infoViewCheckBox");
-                connect(checkBox, SIGNAL(clicked(bool)), this, SLOT(setBandedProp(bool)));
+			if (this->hasShadow()) {
+				QCheckBox * checkBox = new QCheckBox(tr("Banded"));
+				checkBox->setChecked(m_banded);
+				checkBox->setObjectName("infoViewCheckBox");
+				connect(checkBox, SIGNAL(clicked(bool)), this, SLOT(setBandedProp(bool)));
 
-                QFrame * frame = new QFrame(parent);
-                QHBoxLayout * hboxLayout = new QHBoxLayout;
-                hboxLayout->addWidget(comboBox);
-                hboxLayout->addWidget(checkBox);
-                frame->setLayout(hboxLayout);
+				QFrame * frame = new QFrame(parent);
+				QHBoxLayout * hboxLayout = new QHBoxLayout;
+				hboxLayout->addWidget(comboBox);
+				hboxLayout->addWidget(checkBox);
+				frame->setLayout(hboxLayout);
 
-                returnWidget = frame;
-            }
-            else {
-		        returnWidget = comboBox;
-            }
-	
+				returnWidget = frame;
+			}
+			else {
+				returnWidget = comboBox;
+			}
+
 			returnValue = comboBox->currentText();
 			return true;
 		}
@@ -1683,7 +1677,7 @@ void Wire::colorEntry(const QString & text) {
 }
 
 bool Wire::hasPartLabel() {
-	
+
 	return false;
 }
 
@@ -1736,22 +1730,22 @@ void Wire::addedToScene(bool temporary) {
 	infoGraphicsView->newWire(this);
 }
 
-void Wire::setConnectorDimensions(double width, double height) 
+void Wire::setConnectorDimensions(double width, double height)
 {
 	setConnectorDimensionsAux(connector0(), width, height);
 	setConnectorDimensionsAux(connector1(), width, height);
 }
 
-void Wire::setConnectorDimensionsAux(ConnectorItem * connectorItem, double width, double height) 
+void Wire::setConnectorDimensionsAux(ConnectorItem * connectorItem, double width, double height)
 {
 	QPointF p = connectorItem->rect().center();
 	QRectF r(p.x() - (width / 2), p.y() - (height / 2), width, height);
 	connectorItem->setRect(r);
 	connectorItem->setTerminalPoint(r.center() - r.topLeft());
-    //debugCompare(connectorItem->attachedTo());
+	//debugCompare(connectorItem->attachedTo());
 }
 
-void Wire::originalConnectorDimensions(double & width, double & height) 
+void Wire::originalConnectorDimensions(double & width, double & height)
 {
 	width = m_originalConnectorRect.width();
 	height = m_originalConnectorRect.height();
@@ -1776,7 +1770,7 @@ const QLineF & Wire::getPaintLine() {
 */
 QLineF Wire::line() const
 {
-    return m_line;
+	return m_line;
 }
 
 /*!
@@ -1787,20 +1781,20 @@ QLineF Wire::line() const
 void Wire::setLine(const QLineF &line)
 {
 
-    //if (line.length() < 0.5) {
-    //    debugInfo("zero line");
-    //}
+	//if (line.length() < 0.5) {
+	//    debugInfo("zero line");
+	//}
 
-    if (m_line == line)
-        return;
-    prepareGeometryChange();
-    m_line = line;
-    update();
+	if (m_line == line)
+		return;
+	prepareGeometryChange();
+	m_line = line;
+	update();
 }
 
 void Wire::setLine(double x1, double y1, double x2, double y2)
-{ 
-	setLine(QLineF(x1, y1, x2, y2)); 
+{
+	setLine(QLineF(x1, y1, x2, y2));
 }
 
 /*!
@@ -1811,7 +1805,7 @@ void Wire::setLine(double x1, double y1, double x2, double y2)
 */
 QPen Wire::pen() const
 {
-    return m_pen;
+	return m_pen;
 }
 
 /*!
@@ -1825,8 +1819,8 @@ void Wire::setPen(const QPen &pen)
 	if (pen.widthF() != m_pen.widthF()) {
 		prepareGeometryChange();
 	}
-    m_pen = pen;
-    update();
+	m_pen = pen;
+	update();
 }
 
 bool Wire::canHaveCurve() {
@@ -1916,7 +1910,7 @@ void Wire::updateCursor(Qt::KeyboardModifiers modifiers)
 			}
 		}
 	}
-		
+
 	if (segment) {
 		// dragging a segment of wire between bounded by two other wires
 		CursorMaster::instance()->addCursor(this, *CursorMaster::RubberbandCursor);
@@ -1938,13 +1932,13 @@ bool Wire::canChainMultiple()
 	return m_canChainMultiple;
 }
 
-ViewLayer::ViewID Wire::useViewIDForPixmap(ViewLayer::ViewID vid, bool) 
+ViewLayer::ViewID Wire::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 {
-    if (vid == ViewLayer::BreadboardView) {
-        return ViewLayer::IconView;
-    }
+	if (vid == ViewLayer::BreadboardView) {
+		return ViewLayer::IconView;
+	}
 
-    return ViewLayer::UnknownView;
+	return ViewLayer::UnknownView;
 }
 
 void Wire::setDisplayBendpointCursor(bool dbc) {
@@ -1952,25 +1946,25 @@ void Wire::setDisplayBendpointCursor(bool dbc) {
 }
 
 bool Wire::banded() {
-    return m_banded;
+	return m_banded;
 }
 
 void Wire::setBanded(bool banded) {
-    m_banded = banded;
+	m_banded = banded;
 	QList<Wire *> chained;
 	QList<ConnectorItem *> ends;
 	collectChained(chained, ends);
-    foreach (Wire * w, chained) {
-        w->m_banded = banded;
-        w->update();
-    }
+	foreach (Wire * w, chained) {
+		w->m_banded = banded;
+		w->update();
+	}
 }
 
 void Wire::setBandedProp(bool banded) {
-   	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
 		infoGraphicsView->setProp(this, "banded", ItemBase::TranslatedPropertyNames.value("banded"), m_banded ? "Yes" : "No", banded  ? "Yes" : "No", true);
-    }
+	}
 }
 
 void Wire::setProp(const QString & prop, const QString & value) {
@@ -1983,29 +1977,28 @@ void Wire::setProp(const QString & prop, const QString & value) {
 }
 
 QColor Wire::colorForLength() {
-    // No point in recoloring bent breadboard wires
-    if (m_bezier) {
-        return color();
-    }
-    qreal length = m_line.length();
-    qint32 wireLength = qRound(.111 * length); // I have no idea what units this is in
-    if (wireLength < 1) {
-        wireLength = 1;
-    }
-    wireLength -= 1;
-    if (wireLength < lengthColorTrans.count()) {
-        return lengthColorTrans[wireLength];
-    }
+	// No point in recoloring bent breadboard wires
+	if (m_bezier) {
+		return color();
+	}
+	qreal length = m_line.length();
+	qint32 wireLength = qRound(.111 * length); // I have no idea what units this is in
+	if (wireLength < 1) {
+		wireLength = 1;
+	}
+	wireLength -= 1;
+	if (wireLength < lengthColorTrans.count()) {
+		return lengthColorTrans[wireLength];
+	}
 
-    return color();
+	return color();
 }
 
 bool Wire::coloredByLength() {
-    return m_colorByLength;
+	return m_colorByLength;
 }
 
 void Wire::colorByLength(bool colorByLength) {
-    m_colorByLength = colorByLength;
-    update();
+	m_colorByLength = colorByLength;
+	update();
 }
-

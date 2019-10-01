@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6976 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 
 ********************************************************************/
 
@@ -46,20 +40,20 @@ static const double TraceHoverStrokeFactor = 3;
 static const double TraceWidthMils = 9.7222;
 static const double TraceWidthMilsOld = 33.3333;
 
-bool sameGround(ConnectorItem * c1, ConnectorItem * c2) 
+bool sameGround(ConnectorItem * c1, ConnectorItem * c2)
 {
 	bool c1Grounded = c1->isGrounded();
 	bool c2Grounded = c2->isGrounded();
-			
+
 	return (c1Grounded == c2Grounded);
 }
 
 ///////////////////////////////////////////////////
 
 SchematicSketchWidget::SchematicSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
-    : PCBSketchWidget(viewID, parent)
+	: PCBSketchWidget(viewID, parent)
 {
-    m_oldSchematic = m_convertSchematic = false;
+	m_oldSchematic = m_convertSchematic = false;
 	m_shortName = QObject::tr("schem");
 	m_viewName = QObject::tr("Schematic View");
 	initBackgroundColor();
@@ -129,7 +123,7 @@ void SchematicSketchWidget::setClipEnds(ClipableWire * vw, bool) {
 	vw->setClipEnds(false);
 }
 
-void SchematicSketchWidget::getBendpointWidths(Wire * wire, double width, double & bendpointWidth, double & bendpoint2Width, bool & negativeOffsetRect) 
+void SchematicSketchWidget::getBendpointWidths(Wire * wire, double width, double & bendpointWidth, double & bendpoint2Width, bool & negativeOffsetRect)
 {
 	Q_UNUSED(wire);
 	bendpointWidth = -width - 1;
@@ -148,26 +142,27 @@ void SchematicSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase 
 
 void SchematicSketchWidget::setNewPartVisible(ItemBase * itemBase) {
 	switch (itemBase->itemType()) {
-		case ModelPart::Logo:
-            if (itemBase->moduleID().contains("schematic", Qt::CaseInsensitive)) break;
-		case ModelPart::Breadboard:
-		case ModelPart::Jumper:
-		case ModelPart::CopperFill:
-		case ModelPart::Via:
-		case ModelPart::Hole:
-			// don't need to see the breadboard in the other views
-			// but it's there so connections can be more easily synched between views
+	case ModelPart::Logo:
+		if (itemBase->moduleID().contains("schematic", Qt::CaseInsensitive)) break;
+		[[clang::fallthrough]];
+	case ModelPart::Breadboard:
+	case ModelPart::Jumper:
+	case ModelPart::CopperFill:
+	case ModelPart::Via:
+	case ModelPart::Hole:
+		// don't need to see the breadboard in the other views
+		// but it's there so connections can be more easily synched between views
+		itemBase->setVisible(false);
+		itemBase->setEverVisible(false);
+		return;
+	default:
+		if (itemBase->moduleID().endsWith(ModuleIDNames::PadModuleIDName)) {
 			itemBase->setVisible(false);
 			itemBase->setEverVisible(false);
 			return;
-		default:
-		    if (itemBase->moduleID().endsWith(ModuleIDNames::PadModuleIDName)) {
-				itemBase->setVisible(false);
-				itemBase->setEverVisible(false);
-				return;
-			}
+		}
 
-			break;
+		break;
 	}
 }
 
@@ -175,21 +170,21 @@ bool SchematicSketchWidget::canDropModelPart(ModelPart * modelPart) {
 	if (!SketchWidget::canDropModelPart(modelPart)) return false;
 
 	switch (modelPart->itemType()) {
-		case ModelPart::Logo:
-            if (modelPart->moduleID().contains("schematic", Qt::CaseInsensitive)) return true;
-		case ModelPart::Jumper:
-		case ModelPart::CopperFill:
-		case ModelPart::Board:
-		case ModelPart::ResizableBoard:
-		case ModelPart::Breadboard:
-		case ModelPart::Via:
-		case ModelPart::Hole:
-			return false;
-		case ModelPart::Symbol:
-		case ModelPart::SchematicSubpart:
-			return true;
-		default:
-			break;
+	case ModelPart::Logo:
+		return modelPart->moduleID().contains("schematic", Qt::CaseInsensitive);
+	case ModelPart::Jumper:
+	case ModelPart::CopperFill:
+	case ModelPart::Board:
+	case ModelPart::ResizableBoard:
+	case ModelPart::Breadboard:
+	case ModelPart::Via:
+	case ModelPart::Hole:
+		return false;
+	case ModelPart::Symbol:
+	case ModelPart::SchematicSubpart:
+		return true;
+	default:
+		break;
 	}
 
 	if (modelPart->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName)) return true;
@@ -207,8 +202,8 @@ bool SchematicSketchWidget::hasBigDots() {
 	return true;
 }
 
-void SchematicSketchWidget::updateBigDots() 
-{	
+void SchematicSketchWidget::updateBigDots()
+{
 	QList<ConnectorItem *> connectorItems;
 	foreach (QGraphicsItem * item, scene()->items()) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
@@ -223,16 +218,16 @@ void SchematicSketchWidget::updateBigDots()
 		connectorItems.append(connectorItem);
 	}
 
-    QList<ConnectorItem *> visited;
+	QList<ConnectorItem *> visited;
 	foreach (ConnectorItem * connectorItem, connectorItems) {
-	    connectorItem->restoreColor(visited);
+		connectorItem->restoreColor(visited);
 	}
 }
 
 void SchematicSketchWidget::changeConnection(long fromID, const QString & fromConnectorID,
-									long toID, const QString & toConnectorID,
-									ViewLayer::ViewLayerPlacement viewLayerPlacement,
-									bool connect, bool doEmit, bool updateConnections)
+        long toID, const QString & toConnectorID,
+        ViewLayer::ViewLayerPlacement viewLayerPlacement,
+        bool connect, bool doEmit, bool updateConnections)
 {
 	m_updateDotsTimer.stop();
 	SketchWidget::changeConnection(fromID, fromConnectorID, toID, toConnectorID, viewLayerPlacement, connect,  doEmit,  updateConnections);
@@ -240,56 +235,56 @@ void SchematicSketchWidget::changeConnection(long fromID, const QString & fromCo
 }
 
 void SchematicSketchWidget::setInstanceTitle(long itemID, const QString & oldText, const QString & newText, bool isUndoable, bool doEmit) {
-	// isUndoable is true when setInstanceTitle is called from the infoview 
+	// isUndoable is true when setInstanceTitle is called from the infoview
 
-    if (isUndoable) {
-	    SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(findItem(itemID));
-	    if (sitem && sitem->isOnlyNetLabel()) {
-            setProp(sitem, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
-            return;
-        }
-    }
+	if (isUndoable) {
+		SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(findItem(itemID));
+		if (sitem && sitem->isOnlyNetLabel()) {
+			setProp(sitem, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
+			return;
+		}
+	}
 
-    SketchWidget::setInstanceTitle(itemID, oldText, newText, isUndoable, doEmit);
+	SketchWidget::setInstanceTitle(itemID, oldText, newText, isUndoable, doEmit);
 }
 
 void SchematicSketchWidget::setProp(ItemBase * itemBase, const QString & prop, const QString & trProp, const QString & oldValue, const QString & newValue, bool redraw)
 {
-    if (prop =="label") {
-        SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(itemBase);
-        if (sitem != NULL && sitem->isOnlyNetLabel()) {
-            if (sitem->getLabel() == newValue) {
-                return;
-            }
+	if (prop =="label") {
+		SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(itemBase);
+		if (sitem != NULL && sitem->isOnlyNetLabel()) {
+			if (sitem->getLabel() == newValue) {
+				return;
+			}
 
-            QUndoCommand * parentCommand =  new QUndoCommand();
-	        parentCommand->setText(tr("Change label from %1 to %2").arg(oldValue).arg(newValue));
+			QUndoCommand * parentCommand =  new QUndoCommand();
+			parentCommand->setText(tr("Change label from %1 to %2").arg(oldValue).arg(newValue));
 
-	        new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
-	        new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+			new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+			new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
 
-	        QList<Wire *> done;
-	        foreach (ConnectorItem * toConnectorItem, sitem->connector0()->connectedToItems()) {
-		        Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-		        if (w == NULL) continue;
-		        if (done.contains(w)) continue;
+			QList<Wire *> done;
+			foreach (ConnectorItem * toConnectorItem, sitem->connector0()->connectedToItems()) {
+				Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
+				if (w == NULL) continue;
+				if (done.contains(w)) continue;
 
-		        QList<ConnectorItem *> ends;
-		        removeWire(w, ends, done, parentCommand);
-	        }
+				QList<ConnectorItem *> ends;
+				removeWire(w, ends, done, parentCommand);
+			}
 
-	        new SetPropCommand(this, itemBase->id(), "label", oldValue, newValue, true, parentCommand);
-            new ChangeLabelTextCommand(this, itemBase->id(), oldValue, newValue, parentCommand);
+			new SetPropCommand(this, itemBase->id(), "label", oldValue, newValue, true, parentCommand);
+			new ChangeLabelTextCommand(this, itemBase->id(), oldValue, newValue, parentCommand);
 
-	        new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
-	        new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+			new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+			new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
 
-	        m_undoStack->waitPush(parentCommand, PropChangeDelay);
-            return;
-        }
-    }
+			m_undoStack->waitPush(parentCommand, PropChangeDelay);
+			return;
+		}
+	}
 
-    SketchWidget::setProp(itemBase, prop, trProp, oldValue, newValue, redraw);
+	SketchWidget::setProp(itemBase, prop, trProp, oldValue, newValue, redraw);
 }
 
 void SchematicSketchWidget::setVoltage(double v, bool doEmit)
@@ -412,9 +407,9 @@ QString SchematicSketchWidget::makeCircleSVG(QPointF p, double r, QPointF offset
 
 	QString stroke = "black";
 	return QString("<circle  fill=\"black\" cx=\"%1\" cy=\"%2\" r=\"%3\" stroke-width=\"0\" stroke=\"none\" />")
-			.arg(cx)
-			.arg(cy)
-			.arg(rr);
+	       .arg(cx)
+	       .arg(cy)
+	       .arg(rr);
 }
 
 QString SchematicSketchWidget::generateCopperFillUnit(ItemBase * itemBase, QPointF whereToStart)
@@ -433,7 +428,7 @@ double SchematicSketchWidget::getWireStrokeWidth(Wire *, double wireWidth)
 	return wireWidth * TraceHoverStrokeFactor;
 }
 
-Wire * SchematicSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec) 
+Wire * SchematicSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec)
 {
 	viewGeometry.setSchematicTrace(true);
 	Wire * wire =  SketchWidget::createTempWireForDragging(fromWire, wireModel, connectorItem, viewGeometry, spec);
@@ -442,7 +437,7 @@ Wire * SchematicSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPa
 	}
 	else {
 		wire->setProperty(PCBSketchWidget::FakeTraceProperty, true);
-	    wire->setColorString(traceColor(connectorItem), 1.0, false);
+		wire->setColorString(traceColor(connectorItem), 1.0, false);
 	}
 	return wire;
 }
@@ -452,127 +447,127 @@ void SchematicSketchWidget::rotatePartLabels(double degrees, QTransform & transf
 	PCBSketchWidget::rotatePartLabels(degrees, transform, center, parentCommand);
 }
 
-void SchematicSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType crossViewType, QUndoCommand * parentCommand, 
-						bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs)
+void SchematicSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType crossViewType, QUndoCommand * parentCommand,
+        bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs)
 {
 	SketchWidget::loadFromModelParts(modelParts, crossViewType, parentCommand, offsetPaste, boundingRect, seekOutsideConnections, newIDs);
 }
 
-void SchematicSketchWidget::selectAllWires(ViewGeometry::WireFlag flag) 
+void SchematicSketchWidget::selectAllWires(ViewGeometry::WireFlag flag)
 {
-   SketchWidget::selectAllWires(flag);
+	SketchWidget::selectAllWires(flag);
 }
 
 bool SchematicSketchWidget::canConnect(Wire *, ItemBase *) {
-    return true;
+	return true;
 }
 
 QString SchematicSketchWidget::checkDroppedModuleID(const QString & moduleID) {
-    return moduleID;
+	return moduleID;
 }
 
 LayerList SchematicSketchWidget::routingLayers(ViewLayer::ViewLayerPlacement) {
-    LayerList layerList;
-    layerList << ViewLayer::Schematic;
-    return layerList;
+	LayerList layerList;
+	layerList << ViewLayer::Schematic;
+	return layerList;
 }
 
 bool SchematicSketchWidget::attachedToBottomLayer(ConnectorItem * connectorItem) {
-    return (connectorItem->attachedToViewLayerID() == ViewLayer::Schematic) ||
-           (connectorItem->attachedToViewLayerID() == ViewLayer::SchematicTrace);
+	return (connectorItem->attachedToViewLayerID() == ViewLayer::Schematic) ||
+	       (connectorItem->attachedToViewLayerID() == ViewLayer::SchematicTrace);
 }
 
 bool SchematicSketchWidget::attachedToTopLayer(ConnectorItem *) {
-    return false;
+	return false;
 }
 
 QSizeF SchematicSketchWidget::jumperItemSize() {
-    if (SchematicSketchWidget::m_jumperItemSize.width() == 0) {
-	    long newID = ItemBase::getNextID();
-	    ViewGeometry viewGeometry;
-	    viewGeometry.setLoc(QPointF(0, 0));
-	    ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(NULL), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
-	    if (itemBase) {
-		    SymbolPaletteItem * netLabel = qobject_cast<SymbolPaletteItem *>(itemBase);
-            netLabel->setLabel("00");
-            SchematicSketchWidget::m_jumperItemSize = netLabel->boundingRect().size();
-            deleteItem(itemBase, true, false, false);
-        }
-    }
+	if (SchematicSketchWidget::m_jumperItemSize.width() == 0) {
+		long newID = ItemBase::getNextID();
+		ViewGeometry viewGeometry;
+		viewGeometry.setLoc(QPointF(0, 0));
+		ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(NULL), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+		if (itemBase) {
+			SymbolPaletteItem * netLabel = qobject_cast<SymbolPaletteItem *>(itemBase);
+			netLabel->setLabel("00");
+			SchematicSketchWidget::m_jumperItemSize = netLabel->boundingRect().size();
+			deleteItem(itemBase, true, false, false);
+		}
+	}
 
 	return SchematicSketchWidget::m_jumperItemSize;
 }
 
 QHash<QString, QString> SchematicSketchWidget::getAutorouterSettings() {
-    return SketchWidget::getAutorouterSettings();
+	return SketchWidget::getAutorouterSettings();
 }
 
 void SchematicSketchWidget::setAutorouterSettings(QHash<QString, QString> & autorouterSettings) {
-    SketchWidget::setAutorouterSettings(autorouterSettings);
+	SketchWidget::setAutorouterSettings(autorouterSettings);
 }
 
 void SchematicSketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement & viewLayerPlacement) {
-    SketchWidget::getDroppedItemViewLayerPlacement(modelPart, viewLayerPlacement);
+	SketchWidget::getDroppedItemViewLayerPlacement(modelPart, viewLayerPlacement);
 }
 
-ViewLayer::ViewLayerPlacement SchematicSketchWidget::getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry & viewGeometry) 
+ViewLayer::ViewLayerPlacement SchematicSketchWidget::getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry & viewGeometry)
 {
-    return SketchWidget::getViewLayerPlacement(modelPart, instance, view, viewGeometry);
+	return SketchWidget::getViewLayerPlacement(modelPart, instance, view, viewGeometry);
 }
 
 
 void SchematicSketchWidget::viewGeometryConversionHack(ViewGeometry & viewGeometry, ModelPart * modelPart) {
-    if (!m_convertSchematic) return;
-    if (modelPart->itemType() == ModelPart::Wire) return;
-    if (viewGeometry.transform().isIdentity()) return;
+	if (!m_convertSchematic) return;
+	if (modelPart->itemType() == ModelPart::Wire) return;
+	if (viewGeometry.transform().isIdentity()) return;
 
 	ViewGeometry vg;
-    ItemBase * itemBase = addItemAuxTemp(modelPart, ViewLayer::NewTop, vg, 0, true, viewID(), true);
-    double rotation;
-    if (GraphicsUtils::isFlipped(viewGeometry.transform().toAffine(), rotation)) {
-        itemBase->flipItem(Qt::Horizontal);
-    }
-    itemBase->rotateItem(rotation, false);
-    itemBase->saveGeometry();
-    viewGeometry.setTransform(itemBase->getViewGeometry().transform());
+	ItemBase * itemBase = addItemAuxTemp(modelPart, ViewLayer::NewTop, vg, 0, true, viewID(), true);
+	double rotation;
+	if (GraphicsUtils::isFlipped(viewGeometry.transform().toAffine(), rotation)) {
+		itemBase->flipItem(Qt::Horizontal);
+	}
+	itemBase->rotateItem(rotation, false);
+	itemBase->saveGeometry();
+	viewGeometry.setTransform(itemBase->getViewGeometry().transform());
 
-    foreach (ItemBase * kin, itemBase->layerKin()) delete kin;
-    delete itemBase;
+	foreach (ItemBase * kin, itemBase->layerKin()) delete kin;
+	delete itemBase;
 }
 
 void SchematicSketchWidget::setOldSchematic(bool old) {
-    m_oldSchematic = old;
+	m_oldSchematic = old;
 }
 
 bool SchematicSketchWidget::isOldSchematic() {
-    return m_oldSchematic;
+	return m_oldSchematic;
 }
 
 void SchematicSketchWidget::setConvertSchematic(bool convert) {
-    m_convertSchematic = convert;
+	m_convertSchematic = convert;
 }
 
 void SchematicSketchWidget::resizeWires() {
-    double tw = getTraceWidth();
-    double sw = getWireStrokeWidth(NULL, tw);
-    foreach (QGraphicsItem * item, scene()->items()) {
-        Wire * wire = dynamic_cast<Wire *>(item);
-        if (wire == NULL) continue;
-        if (!wire->isTraceType(getTraceFlag())) continue;
+	double tw = getTraceWidth();
+	double sw = getWireStrokeWidth(NULL, tw);
+	foreach (QGraphicsItem * item, scene()->items()) {
+		Wire * wire = dynamic_cast<Wire *>(item);
+		if (wire == NULL) continue;
+		if (!wire->isTraceType(getTraceFlag())) continue;
 
-        wire->setWireWidth(tw, this, sw);
-    }
+		wire->setWireWidth(tw, this, sw);
+	}
 }
 
 void SchematicSketchWidget::resizeLabels() {
 
-    double fontSize = getLabelFontSizeSmall();
-    foreach (QGraphicsItem * item, scene()->items()) {
-        ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-        if (itemBase == NULL) continue;
+	double fontSize = getLabelFontSizeSmall();
+	foreach (QGraphicsItem * item, scene()->items()) {
+		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		if (itemBase == NULL) continue;
 
-        if (itemBase->hasPartLabel() && itemBase->partLabel() != NULL) {
-            itemBase->partLabel()->setFontPointSize(fontSize);
-        }
-    }
+		if (itemBase->hasPartLabel() && itemBase->partLabel() != NULL) {
+			itemBase->partLabel()->setFontPointSize(fontSize);
+		}
+	}
 }

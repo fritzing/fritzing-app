@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 ********************************************************************/
 
@@ -48,7 +42,7 @@ $Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 //		** select a part, highlight its label; click a label, highlight its part
 //		** viewinfo update when selected
 //		** viewinfo for wires
-//		** graphics (esp. drag area vs. edit area) 
+//		** graphics (esp. drag area vs. edit area)
 //		** html info box needs to update when view switches
 //		** undo delete text
 //		** undo change text
@@ -62,9 +56,9 @@ $Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 //		** delete owner: delete label
 //		** make label single-line (ignore enter key)
 
-//		** rotate/flip 
+//		** rotate/flip
 //		** undo rotate/flip
-//		format: bold, italic, size (small normal large huge), color?, 
+//		format: bold, italic, size (small normal large huge), color?,
 //		undo format
 //		heads-up controls
 
@@ -92,7 +86,7 @@ enum PartLabelAction {
 	PartLabelFlipHorizontal,
 	PartLabelFlipVertical,
 	PartLabelEdit,
-    PartLabelFontSizeTiny,
+	PartLabelFontSizeTiny,
 	PartLabelFontSizeSmall,
 	PartLabelFontSizeMedium,
 	PartLabelFontSizeLarge,
@@ -130,7 +124,7 @@ PartLabel::PartLabel(ItemBase * owner, QGraphicsItem * parent)
 	AllPartLabels.insert(m_owner->id(), this);
 }
 
-PartLabel::~PartLabel() 
+PartLabel::~PartLabel()
 {
 	AllPartLabels.remove(m_owner->id(), this);
 	if (m_owner) {
@@ -164,9 +158,9 @@ void PartLabel::showLabel(bool showIt, ViewLayer * viewLayer) {
 
 		QRectF obr = m_owner->boundingRect();
 		QRectF tbr = QGraphicsSvgItem::boundingRect();
-		QPointF initial = (flipped) 
-			? m_owner->pos() + QPointF(-tbr.width(), -tbr.height())
-			: m_owner->pos() + QPointF(obr.width(), -tbr.height());
+		QPointF initial = (flipped)
+		                  ? m_owner->pos() + QPointF(-tbr.width(), -tbr.height())
+		                  : m_owner->pos() + QPointF(obr.width(), -tbr.height());
 		this->setPos(initial);
 		m_offset = initial - m_owner->pos();
 		if (flipped) {
@@ -183,7 +177,7 @@ QPainterPath PartLabel::shape() const
 	QRectF t = boundingRect();
 	QPainterPath path;
 	path.addRect(t);
-    return path;
+	return path;
 }
 
 void PartLabel::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -255,7 +249,7 @@ void PartLabel::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 }
 
 
-void PartLabel::setPlainText(const QString & text) 
+void PartLabel::setPlainText(const QString & text)
 {
 	m_text = text;
 	displayTexts();
@@ -357,7 +351,7 @@ void PartLabel::saveInstance(QXmlStreamWriter & streamWriter) {
 	streamWriter.writeEndElement();
 }
 
-void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID viewLayerID) 
+void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID viewLayerID)
 {
 	m_viewLayerID = viewLayerID;
 	m_initialized = true;
@@ -388,7 +382,7 @@ void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID
 	if (!ok) {
 		InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
 		if (infographics != NULL) {
-            fs = infographics->getLabelFontSizeMedium();
+			fs = infographics->getLabelFontSizeMedium();
 			ok = true;
 		}
 	}
@@ -416,7 +410,7 @@ void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID
 	}
 }
 
-void PartLabel::moveLabel(QPointF newPos, QPointF newOffset) 
+void PartLabel::moveLabel(QPointF newPos, QPointF newOffset)
 {
 	this->setPos(newPos);
 	m_offset = newOffset;
@@ -426,15 +420,15 @@ ItemBase * PartLabel::owner() {
 	return m_owner;
 }
 
-void PartLabel::initMenu() 
+void PartLabel::initMenu()
 {
 	// todo: make this a static var?
 
-    QAction *editAct = m_menu.addAction(tr("Edit"));
+	QAction *editAct = m_menu.addAction(tr("Edit"));
 	editAct->setData(QVariant(PartLabelEdit));
 	editAct->setStatusTip(tr("Edit label text"));
 
-    QAction *hideAct = m_menu.addAction(tr("Hide"));
+	QAction *hideAct = m_menu.addAction(tr("Hide"));
 	hideAct->setData(QVariant(PartLabelHide));
 	hideAct->setStatusTip(tr("Hide part label"));
 
@@ -452,7 +446,7 @@ void PartLabel::initMenu()
 		rotate45cwAct->setStatusTip(tr("Rotate the label by 45 degrees clockwise"));
 	}
 
-    QAction *rotate90cwAct = rlmenu->addAction(tr("Rotate 90° Clockwise"));
+	QAction *rotate90cwAct = rlmenu->addAction(tr("Rotate 90° Clockwise"));
 	rotate90cwAct->setData(QVariant(PartLabelRotate90CW));
 	rotate90cwAct->setStatusTip(tr("Rotate the label by 90 degrees clockwise"));
 
@@ -462,10 +456,10 @@ void PartLabel::initMenu()
 		rotate135cwAct->setStatusTip(tr("Rotate the label by 135 degrees clockwise"));
 	}
 
- 	QAction *rotate180Act = rlmenu->addAction(tr("Rotate 180°"));
+	QAction *rotate180Act = rlmenu->addAction(tr("Rotate 180°"));
 	rotate180Act->setData(QVariant(PartLabelRotate180));
 	rotate180Act->setStatusTip(tr("Rotate the label by 180 degrees"));
-  
+
 	if (include45) {
 		QAction *rotate135ccwAct = rlmenu->addAction(tr("Rotate 135° Counter Clockwise"));
 		rotate135ccwAct->setData(QVariant(PartLabelRotate135CCW));
@@ -475,7 +469,7 @@ void PartLabel::initMenu()
 	QAction *rotate90ccwAct = rlmenu->addAction(tr("Rotate 90° Counter Clockwise"));
 	rotate90ccwAct->setData(QVariant(PartLabelRotate90CCW));
 	rotate90ccwAct->setStatusTip(tr("Rotate current selection 90 degrees counter clockwise"));
-		
+
 	if (include45) {
 		QAction *rotate45ccwAct = rlmenu->addAction(tr("Rotate 45° Counter Clockwise"));
 		rotate45ccwAct->setData(QVariant(PartLabelRotate45CCW));
@@ -490,31 +484,31 @@ void PartLabel::initMenu()
 	flipVerticalAct->setData(QVariant(PartLabelFlipVertical));
 	flipVerticalAct->setStatusTip(tr("Flip label vertically"));
 
-    m_tinyAct = fsmenu->addAction(tr("Tiny"));
-        m_tinyAct->setData(QVariant(PartLabelFontSizeTiny));
-        m_tinyAct->setStatusTip(tr("Set font size to tiny"));
-        m_tinyAct->setCheckable(true);
-        m_tinyAct->setChecked(false);
+	m_tinyAct = fsmenu->addAction(tr("Tiny"));
+	m_tinyAct->setData(QVariant(PartLabelFontSizeTiny));
+	m_tinyAct->setStatusTip(tr("Set font size to tiny"));
+	m_tinyAct->setCheckable(true);
+	m_tinyAct->setChecked(false);
 
-    m_smallAct = fsmenu->addAction(tr("Small"));
+	m_smallAct = fsmenu->addAction(tr("Small"));
 	m_smallAct->setData(QVariant(PartLabelFontSizeSmall));
 	m_smallAct->setStatusTip(tr("Set font size to small"));
 	m_smallAct->setCheckable(true);
 	m_smallAct->setChecked(false);
 
-    m_mediumAct = fsmenu->addAction(tr("Medium"));
+	m_mediumAct = fsmenu->addAction(tr("Medium"));
 	m_mediumAct->setData(QVariant(PartLabelFontSizeMedium));
 	m_mediumAct->setStatusTip(tr("Set font size to medium"));
 	m_mediumAct->setCheckable(true);
 	m_mediumAct->setChecked(false);
 
-    m_largeAct = fsmenu->addAction(tr("Large"));
+	m_largeAct = fsmenu->addAction(tr("Large"));
 	m_largeAct->setData(QVariant(PartLabelFontSizeLarge));
 	m_largeAct->setStatusTip(tr("Set font size to large"));
 	m_largeAct->setCheckable(true);
 	m_largeAct->setChecked(false);
 
-    m_labelAct = dvmenu->addAction(tr("Label text"));
+	m_labelAct = dvmenu->addAction(tr("Label text"));
 	m_labelAct->setData(QVariant(PartLabelDisplayLabelText));
 	m_labelAct->setCheckable(true);
 	m_labelAct->setChecked(true);
@@ -543,7 +537,7 @@ void PartLabel::rotateFlipLabel(double degrees, Qt::Orientations orientation) {
 		if (orientation == Qt::Vertical) {
 			xScale = 1;
 			yScale = -1;
-		} 
+		}
 		else if(orientation == Qt::Horizontal) {
 			xScale = -1;
 			yScale = 1;
@@ -554,7 +548,7 @@ void PartLabel::rotateFlipLabel(double degrees, Qt::Orientations orientation) {
 	}
 }
 
-void PartLabel::transformLabel(QTransform currTransf) 
+void PartLabel::transformLabel(QTransform currTransf)
 {
 	QRectF rect = this->boundingRect();
 	double x = rect.width() / 2.0;
@@ -573,18 +567,18 @@ void PartLabel::setUpText() {
 QVariant PartLabel::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value)
 {
 	switch (change) {
-		case QGraphicsItem::ItemSceneHasChanged:
-			if (this->scene()) {
-			}
-			break;
-		default:
-			break;
+	case QGraphicsItem::ItemSceneHasChanged:
+		if (this->scene()) {
+		}
+		break;
+	default:
+		break;
 	}
 
 	return QGraphicsSvgItem::itemChange(change, value);
 }
 
-void PartLabel::ownerSelected(bool selected) 
+void PartLabel::ownerSelected(bool selected)
 {
 	bool hide = !selected;
 	if (m_hidden || m_inactive) {
@@ -611,7 +605,7 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 		displayAct->setChecked(m_displayKeys.contains(data));
 	}
 
-    m_tinyAct->setChecked(false);
+	m_tinyAct->setChecked(false);
 	m_smallAct->setChecked(false);
 	m_mediumAct->setChecked(false);
 	m_largeAct->setChecked(false);
@@ -622,8 +616,8 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 			m_tinyAct->setChecked(true);
 		}
 		else if (fs == infographics->getLabelFontSizeSmall()) {
-            m_smallAct->setChecked(true);
-        }
+			m_smallAct->setChecked(true);
+		}
 		else if (fs == infographics->getLabelFontSizeMedium()) {
 			m_mediumAct->setChecked(true);
 		}
@@ -631,42 +625,42 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 			m_largeAct->setChecked(true);
 		}
 	}
-    
+
 	QAction *selectedAction = m_menu.exec(event->screenPos());
 	if (selectedAction == NULL) return;
 
 	PartLabelAction action = (PartLabelAction) selectedAction->data().toInt();
 	switch (action) {
-		case PartLabelRotate45CW:
-		case PartLabelRotate45CCW:
-		case PartLabelRotate90CW:
-		case PartLabelRotate90CCW:
-		case PartLabelRotate135CW:
-		case PartLabelRotate135CCW:
-		case PartLabelRotate180:
-		case PartLabelFlipHorizontal:
-		case PartLabelFlipVertical:
-			rotateFlip(action);
-			break;
-		case PartLabelEdit:
-			partLabelEdit();
-			break;
-		case PartLabelHide:
-			partLabelHide();
-			break;
-                case PartLabelFontSizeTiny:
-		case PartLabelFontSizeSmall:
-		case PartLabelFontSizeMedium:
-		case PartLabelFontSizeLarge:
-			setFontSize(action);
-			resetSvg();
-			break;
-		case PartLabelDisplayLabelText:
-			setLabelDisplay(LabelTextKey);
-			break;
-		default:
-			setLabelDisplay(selectedAction->data().toString());
-			break;
+	case PartLabelRotate45CW:
+	case PartLabelRotate45CCW:
+	case PartLabelRotate90CW:
+	case PartLabelRotate90CCW:
+	case PartLabelRotate135CW:
+	case PartLabelRotate135CCW:
+	case PartLabelRotate180:
+	case PartLabelFlipHorizontal:
+	case PartLabelFlipVertical:
+		rotateFlip(action);
+		break;
+	case PartLabelEdit:
+		partLabelEdit();
+		break;
+	case PartLabelHide:
+		partLabelHide();
+		break;
+	case PartLabelFontSizeTiny:
+	case PartLabelFontSizeSmall:
+	case PartLabelFontSizeMedium:
+	case PartLabelFontSizeLarge:
+		setFontSize(action);
+		resetSvg();
+		break;
+	case PartLabelDisplayLabelText:
+		setLabelDisplay(LabelTextKey);
+		break;
+	default:
+		setLabelDisplay(selectedAction->data().toString());
+		break;
 	}
 }
 
@@ -674,35 +668,35 @@ void PartLabel::rotateFlip(int action) {
 	double degrees = 0;
 	Qt::Orientations orientation = 0;
 	switch (action) {
-		case PartLabelRotate45CW:
-			degrees = 45;
-			break;
-		case PartLabelRotate90CW:
-			degrees = 90;
-			break;
-		case PartLabelRotate135CW:
-			degrees = 135;
-			break;
-		case PartLabelRotate90CCW:
-			degrees = 270;
-			break;
-		case PartLabelRotate135CCW:
-			degrees = 225;
-			break;
-		case PartLabelRotate180:
-			degrees = 180;
-			break;
-		case PartLabelRotate45CCW:
-			degrees = 315;
-			break;
-		case PartLabelFlipHorizontal:
-			orientation = Qt::Horizontal;
-			break;
-		case PartLabelFlipVertical:
-			orientation = Qt::Vertical;
-			break;
-		default:
-			break;
+	case PartLabelRotate45CW:
+		degrees = 45;
+		break;
+	case PartLabelRotate90CW:
+		degrees = 90;
+		break;
+	case PartLabelRotate135CW:
+		degrees = 135;
+		break;
+	case PartLabelRotate90CCW:
+		degrees = 270;
+		break;
+	case PartLabelRotate135CCW:
+		degrees = 225;
+		break;
+	case PartLabelRotate180:
+		degrees = 180;
+		break;
+	case PartLabelRotate45CCW:
+		degrees = 315;
+		break;
+	case PartLabelFlipHorizontal:
+		orientation = Qt::Horizontal;
+		break;
+	case PartLabelFlipVertical:
+		orientation = Qt::Vertical;
+		break;
+	default:
+		break;
 	}
 
 	m_owner->rotateFlipPartLabel(degrees, orientation);
@@ -719,24 +713,24 @@ void PartLabel::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) {
 	partLabelEdit();
 }
 
-void PartLabel::partLabelHide() 
+void PartLabel::partLabelHide()
 {
 	m_owner->hidePartLabel();
 }
 
-void PartLabel::partLabelEdit() 
+void PartLabel::partLabelEdit()
 {
 	bool ok;
 	QString oldText = m_text;
-    QString text = QInputDialog::getText((QGraphicsView *) this->scene()->parent(), tr("Set label for %1").arg(m_owner->title()),
-                                          tr("Label text:"), QLineEdit::Normal, oldText, &ok);
+	QString text = QInputDialog::getText((QGraphicsView *) this->scene()->parent(), tr("Set label for %1").arg(m_owner->title()),
+	                                     tr("Label text:"), QLineEdit::Normal, oldText, &ok);
 	if (ok && (oldText.compare(text) != 0)) {
 		if (m_owner) {
 			m_owner->partLabelChanged(text);
 			foreach (PartLabel * p, AllPartLabels.values(m_owner->id())) {
 				p->setPlainText(text);
 			}
-		}	
+		}
 	}
 }
 
@@ -751,9 +745,9 @@ void PartLabel::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
 	if (m_owner->isSelected()) {
 		GraphicsUtils::qt_graphicsItem_highlightSelected(painter, option, boundingRect(), shape());
-    }
+	}
 
-    QGraphicsSvgItem::paint(painter, option, widget);
+	QGraphicsSvgItem::paint(painter, option, widget);
 
 	if (m_inactive) {
 		painter->restore();
@@ -766,27 +760,27 @@ void PartLabel::setFontSize(int action) {
 
 	double fs = 0;
 	switch (action) {
-        case PartLabelFontSizeTiny:
-            fs = infographics->getLabelFontSizeTiny();
-            break;
-		case PartLabelFontSizeSmall:
-			fs = infographics->getLabelFontSizeSmall();
-			break;
-		case PartLabelFontSizeMedium:
-			fs = infographics->getLabelFontSizeMedium();
-			break;
-		case PartLabelFontSizeLarge:
-			fs = infographics->getLabelFontSizeLarge();
-			break;
-		default:
-			return;
+	case PartLabelFontSizeTiny:
+		fs = infographics->getLabelFontSizeTiny();
+		break;
+	case PartLabelFontSizeSmall:
+		fs = infographics->getLabelFontSizeSmall();
+		break;
+	case PartLabelFontSizeMedium:
+		fs = infographics->getLabelFontSizeMedium();
+		break;
+	case PartLabelFontSizeLarge:
+		fs = infographics->getLabelFontSizeLarge();
+		break;
+	default:
+		return;
 	}
 	m_font.setPointSize(fs);
 }
 
 void PartLabel::setFontPointSize(double pointSize) {
-    m_font.setPointSize(pointSize);
-    resetSvg();
+	m_font.setPointSize(pointSize);
+	resetSvg();
 }
 
 void PartLabel::setLabelDisplay(const QString & key) {
@@ -802,21 +796,21 @@ void PartLabel::setLabelDisplay(const QString & key) {
 QString mapToSVGWeight(int w) {
 	int percent = 50;
 	switch (w) {
-		case QFont::Light: 
-			percent = 25; 
-			break;
-		case QFont::Normal:	
-			return "normal";    // 50
-		case QFont::DemiBold: 
-			percent = 63;
-			break;
-		case QFont::Bold: 
-			return "bold";		// 75
-		case QFont::Black: 
-			percent = 87; 
-			break;
-		default:
-			return "normal";
+	case QFont::Light:
+		percent = 25;
+		break;
+	case QFont::Normal:
+		return "normal";    // 50
+	case QFont::DemiBold:
+		percent = 63;
+		break;
+	case QFont::Bold:
+		return "bold";		// 75
+	case QFont::Black:
+		percent = 87;
+		break;
+	default:
+		return "normal";
 	}
 
 	return QString::number((qRound(8 * percent / 100.0) * 100) + 100);   // 	normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit
@@ -824,10 +818,14 @@ QString mapToSVGWeight(int w) {
 
 QString mapToSVGStyle(QFont::Style style) {
 	switch (style) {
-		case QFont::StyleNormal: return "normal";
-		case QFont::StyleOblique: return "oblique";
-		case QFont::StyleItalic: return "italic";
-		default: return "normal";
+	case QFont::StyleNormal:
+		return "normal";
+	case QFont::StyleOblique:
+		return "oblique";
+	case QFont::StyleItalic:
+		return "italic";
+	default:
+		return "normal";
 	}
 }
 
@@ -844,30 +842,30 @@ QString PartLabel::makeSvg(bool blackOnly, double dpi, double printerScale, bool
 }
 
 
-QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, double & w, double & h) 
+QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, double & w, double & h)
 {
 	if (m_displayText.isEmpty()) return "";
 
 	double pixels = m_font.pointSizeF() * printerScale / 72;
 	double y = pixels * 0.75;
 	//DebugDialog::debug(QString("initial y:%1").arg(y));
-	
+
 	QString svg = QString("<g font-size='%1' font-style='%2' font-weight='%3' fill='%4' font-family=\"'%5'\" id='%6' fill-opacity='1' stroke='none' >")
-		.arg(m_font.pointSizeF() * dpi / 72)
-		.arg(mapToSVGStyle(m_font.style()))
-		.arg(mapToSVGWeight(m_font.weight()))
-		.arg(blackOnly ? "#000000" : m_color.name())
-		.arg(InstalledFonts::InstalledFontsNameMapper.value(m_font.family()))
-		.arg(ViewLayer::viewLayerXmlNameFromID(m_viewLayerID)
-		);
+	              .arg(m_font.pointSizeF() * dpi / 72)
+	              .arg(mapToSVGStyle(m_font.style()))
+	              .arg(mapToSVGWeight(m_font.weight()))
+	              .arg(blackOnly ? "#000000" : m_color.name())
+	              .arg(InstalledFonts::InstalledFontsNameMapper.value(m_font.family()))
+	              .arg(ViewLayer::viewLayerXmlNameFromID(m_viewLayerID)
+	                  );
 
 	w = 0;
 	QStringList texts = m_displayText.split("\n");
 	foreach (QString t, texts) {
 		QString t1 = TextUtils::convertExtendedChars(TextUtils::escapeAnd(t));
 		svg += QString("<text x='0' y='%1'>%2</text>")
-			.arg(y * dpi / printerScale)
-			.arg(t1);
+		       .arg(y * dpi / printerScale)
+		       .arg(t1);
 		y += pixels;
 		w = qMax(w, t.length() * pixels * 0.75);
 		//DebugDialog::debug(QString("\t%1, %2").arg(w).arg(y));
@@ -889,7 +887,7 @@ QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, d
 	return svg;
 
 	//DebugDialog::debug(QString("final:%1 %2 %3").arg(w).arg(h).arg(m_font.toString()));
-    
+
 }
 
 void PartLabel::resetSvg()

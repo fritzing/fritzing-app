@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6715 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-12-17 11:27:32 +0100 (Mo, 17. Dez 2012) $
 
 ********************************************************************/
 
@@ -45,7 +39,7 @@ public:
 	virtual void viewItemInfo(ItemBase *);
 	virtual void hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase *);
 	virtual void hoverLeaveItem(QGraphicsSceneHoverEvent * event, ItemBase *);
-    void updateRotation(ItemBase *);
+	void updateRotation(ItemBase *);
 
 	virtual bool swappingEnabled(ItemBase *) = 0;
 
@@ -57,19 +51,19 @@ public:
 
 	virtual void mousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
 
-	
+
 	virtual void hidePartLabel(ItemBase * item);
 	virtual void partLabelMoved(ItemBase *, QPointF oldPos, QPointF oldOffset, QPointF newPos, QPointF newOffset);
 	virtual void rotateFlipPartLabel(ItemBase *, double degrees, Qt::Orientations flipDirection);
-    virtual void noteSizeChanged(ItemBase * itemBase, const QSizeF & oldSize, const QSizeF & newSize);
+	virtual void noteSizeChanged(ItemBase * itemBase, const QSizeF & oldSize, const QSizeF & newSize);
 
-	virtual bool spaceBarIsPressed(); 
+	virtual bool spaceBarIsPressed();
 	virtual void initWire(class Wire *, int penWidth);
 
 	virtual void setIgnoreSelectionChangeEvents(bool) {}
 	virtual void getBendpointWidths(class Wire *, double w, double & w1, double & w2, bool & negativeOffsetRect);
 	virtual void getLabelFont(QFont &, QColor &, ItemBase *);
-    virtual double getLabelFontSizeTiny();
+	virtual double getLabelFontSizeTiny();
 	virtual double getLabelFontSizeSmall();
 	virtual double getLabelFontSizeMedium();
 	virtual double getLabelFontSizeLarge();
@@ -108,14 +102,14 @@ public:
 	virtual void changeWireWidthMils(const QString newWidth);
 	virtual void changeWireColor(const QString newColor);
 	virtual void swap(const QString & family, const QString & prop, QMap<QString, QString> & propsMap, ItemBase *);
-    virtual void resolveTemporary(bool, ItemBase *);
+	virtual void resolveTemporary(bool, ItemBase *);
 	virtual void newWire(Wire *);
 
 	void setActiveWire(Wire *);
 	void setActiveConnectorItem(ConnectorItem *);
-    void setSMDOrientation(Qt::Orientations);
-    Qt::Orientations smdOrientation();
-    virtual void moveItem(ItemBase *, double x, double y);
+	void setSMDOrientation(Qt::Orientations);
+	Qt::Orientations smdOrientation();
+	virtual void moveItem(ItemBase *, double x, double y);
 	virtual void rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem);
 
 public slots:
@@ -140,7 +134,7 @@ protected:
 	int m_boardLayers;
 	bool m_hoverEnterMode;
 	bool m_hoverEnterConnectorMode;
-    Qt::Orientations m_smdOrientation;
+	Qt::Orientations m_smdOrientation;
 };
 
 #endif

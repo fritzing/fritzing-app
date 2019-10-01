@@ -8,19 +8,19 @@
 
 #programmingWindow QTabWidget::tab-bar {
 	/*top: %2px;*/
- 	left: 10px;
+	left: 10px;
 	right: 10px;
-	/*top: 5px;*/		
+	/*top: 5px;*/
 	background-color: #ff0;
 	color: #f0f;
 }
 
 
 /*this is the background around the tab-frames*/
-#programmingWindow QTabWidget::pane { 
+#programmingWindow QTabWidget::pane {
 	/*top: %1px;  	 the value is swapped in at runtime in ProgramWindow::setup() */
- 	padding: 0px;
-	margin-top: 0px; 
+	padding: 0px;
+	margin-top: 0px;
 	border: 0px;
 	background: none;
 }
@@ -42,7 +42,7 @@
 }
 
 /*the active tab*/
-#programmingWindow QTabBar::tab:selected { 
+#programmingWindow QTabBar::tab:selected {
 	background-color: #1c1a18;
     border: none;
 	font-weight: book;
@@ -50,7 +50,7 @@
 }
 
 /*the inactive tabs*/
-#programmingWindow QTabBar::tab:!selected { 
+#programmingWindow QTabBar::tab:!selected {
 		border: none;
 		color: #999999;
 		font-weight: book;
@@ -59,7 +59,7 @@
 
 /*the inactive and active tab-hover-effect */
 #programmingWindow QTabBar::tab:!selected:hover
-{  
+{
         background-color: #474141;
 		border:none;
 		color: #c1c1c1;
@@ -85,7 +85,7 @@
 
 
 /*the actual code area */
-#programmingWindow #code { 	
+#programmingWindow #code {
 	color: #ede0ce;
 	background-color: #1c1a18;
 	padding-top: 8px;
@@ -96,7 +96,7 @@
 
 /* the splitter/drag handle between code and console */
 #programmingWindow QSplitterHandle,
-#programmingWindow #splitter { 
+#programmingWindow #splitter {
 	background: #5f5453;
 	background-color: #5f5453;
 	color: #5f5453;
@@ -105,7 +105,7 @@
 /* console output window */
 #programmingWindow #console {
 	background-color: #8c8686;
-	color: #3c3936; 
+	color: #3c3936;
 	border: 0px;
 	padding-top: 8px;
 	padding-left: 8px;
@@ -128,12 +128,12 @@
 }
 
 
-/*the closed dropdown menues for platform, board, port */
+/*the closed dropdown menus for platform, board, port */
 #programmingWindow #toolbarSelector QComboBox {
 	margin-top: 5px;
 }
 
-/*the text below the dropdown menus (platfom, board, port)*/
+/*the text below the dropdown menus (platform, board, port)*/
 #programmingWindow #toolbarSelector QLabel {
 	color: #ffffff;
     font-size: 11px;
@@ -174,11 +174,11 @@
 	font-size:12px;
 	border:none;
 	height: 34px;
-	
-	}
-	
 
-#programmingWindow QComboBox:pressed,	
+	}
+
+
+#programmingWindow QComboBox:pressed,
 #programmingWindow QPushButton:pressed{
 	color: #d9d9d9;
 	background:#821f09;
@@ -186,7 +186,7 @@
 	border:none;
 	height: 34px;
 	}
-	
+
 
 #programmingWindow QComboBox:disabled,
 #programmingWindow QPushButton:disabled{
@@ -199,17 +199,17 @@
 
 /* drop-down button of the combobox */
 #programmingWindow QComboBox::drop-down:button {
-      	border:none;
+	border:none;
 }
 #programmingWindow QComboBox::drop-down:hover {
-      	border:none;
+	border:none;
 }
 #programmingWindow QComboBox::drop-down:on {
-      	border:none;
+	border:none;
 }
 
 #programmingWindow QComboBox::drop-down:selected {
-      	border:none;
+	border:none;
 }
 #programmingWindow QComboBox::down-arrow {
         image: url(:/resources/images/icons/combobox-arrow.png);
@@ -225,41 +225,41 @@
 
 #toolBarComboBox QAbstractItemView::item {
 		color: #000;
-    	border-bottom: 5px solid white; margin:3px;
+	border-bottom: 5px solid white; margin:3px;
 }
 #toolBarComboBox QAbstractItemView::item:selected {
-    	border-bottom: 5px solid black; margin:3px;
+	border-bottom: 5px solid black; margin:3px;
 }
 
 
 /* scroll bars */
-#programmingWindow QScrollBar:vertical {               
-        border: 0px; 
-        background:rgba(255,255,255,10); 
-        width:10px;     
-        margin: 0px 0px 0px 0px; 
-     } 
-	 
-#programmingWindow QScrollBar::handle:vertical { 
+#programmingWindow QScrollBar:vertical {
+        border: 0px;
+        background:rgba(255,255,255,10);
+        width:10px;
+        margin: 0px 0px 0px 0px;
+     }
+
+#programmingWindow QScrollBar::handle:vertical {
 		border: 2px solid #b2b2b2;
 		border-radius: 2px;
         background: #b2b2b2;
-        min-height: 5px; 
+        min-height: 5px;
      }
-	 
-#programmingWindow QScrollBar::add-line:vertical { 
-        background: none; 
-        height: 1px; 
-        subcontrol-position: bottom; 
-        subcontrol-origin: margin; 
+
+#programmingWindow QScrollBar::add-line:vertical {
+        background: none;
+        height: 1px;
+        subcontrol-position: bottom;
+        subcontrol-origin: margin;
      }
-	 
-#programmingWindow QScrollBar::sub-line:vertical { 
-        background:none; 
-        height: 1px; 
-        subcontrol-position: top; 
-        subcontrol-origin: margin; 
-     } 
+
+#programmingWindow QScrollBar::sub-line:vertical {
+        background:none;
+        height: 1px;
+        subcontrol-position: top;
+        subcontrol-origin: margin;
+     }
 
 
 /* Serial Monitor Console */
@@ -270,7 +270,7 @@
 }
 
 
-/* not used styling 
+/* not used styling
 
  */
 
@@ -300,5 +300,3 @@
 /*
 
 */
-
-

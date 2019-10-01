@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6385 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-09-08 21:21:20 +0200 (Sa, 08. Sep 2012) $
-
 ********************************************************************/
 
 
@@ -33,7 +27,7 @@ $Date: 2012-09-08 21:21:20 +0200 (Sa, 08. Sep 2012) $
 
 class KicadModuleDialog : public QDialog
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	KicadModuleDialog(const QString & partType, const QString & filename, const QStringList & moduleNames, QWidget *parent = 0);
@@ -45,4 +39,4 @@ protected:
 	QComboBox * m_comboBox;
 };
 
-#endif 
+#endif

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6998 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 
 ********************************************************************/
 
@@ -52,7 +46,7 @@ protected:
 
 class ConnectorItem : public NonConnectorItem, public CursorKeyListener
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	ConnectorItem(Connector *, ItemBase* attachedTo);
@@ -114,16 +108,16 @@ public:
 	double calcClipRadius();
 	bool isEffectivelyCircular();
 	void paint( QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0 );
-    void debugInfo(const QString & msg);
+	void debugInfo(const QString & msg);
 	double minDimension();
 	void setHybrid(bool);
 	bool isHybrid();
 	void setBigDot(bool);
 	bool isBigDot();
 	ConnectorItem * findConnectorUnder(bool useTerminalPoint, bool allowAlready, const QList<ConnectorItem *> & exclude, bool displayDragTooltip, ConnectorItem * other);
-	ConnectorItem * releaseDrag();	
+	ConnectorItem * releaseDrag();
 
-	// rubberBand leg functions	
+	// rubberBand leg functions
 	bool isDraggingLeg();
 	void setRubberBandLeg(QColor color, double strokeWidth, QLineF parentLine);
 	bool hasRubberBandLeg() const;
@@ -169,7 +163,7 @@ protected:
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 	void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event);
 	void writeOtherElements(QXmlStreamWriter & writer);
-    static class Wire * directlyWiredToAux(ConnectorItem * source, ConnectorItem * target, ViewGeometry::WireFlags flags, QList<ConnectorItem *> & visited);
+	static class Wire * directlyWiredToAux(ConnectorItem * source, ConnectorItem * target, ViewGeometry::WireFlags flags, QList<ConnectorItem *> & visited);
 	bool isEverVisible();
 	void setHiddenOrInactive();
 	bool isConnectedToPart();
@@ -181,7 +175,7 @@ protected:
 	bool legMousePressEvent(QGraphicsSceneMouseEvent *event);
 	void repoly(const QPolygonF & poly, bool relative);
 	QPainterPath shapeAux(double width) const;
-    ViewGeometry::WireFlags getSkipFlags();
+	ViewGeometry::WireFlags getSkipFlags();
 
 	enum CursorLocation {
 		InNotFound = 0,
@@ -233,8 +227,8 @@ protected:
 	double m_connectorDetectT;
 	bool m_groundFillSeed;
 	int m_moveCount;
-	
-protected:	
+
+protected:
 	static QList<ConnectorItem *>  m_equalPotentialDisplayItems;
 
 protected:

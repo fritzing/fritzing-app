@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09 Mrz 2013) $
 
 ********************************************************************/
 
@@ -38,36 +32,35 @@ SchematicSubpart::~SchematicSubpart() {
 void SchematicSubpart::hoverEnterEvent (QGraphicsSceneHoverEvent * event)
 {
 	PaletteItem::hoverEnterEvent(event);
-    if (m_superpart) {
-        foreach (ItemBase * itemBase, m_superpart->subparts()) {
-            if (itemBase != this) {
-                SchematicSubpart * subpart = qobject_cast<SchematicSubpart *>(itemBase);
-                if (subpart) subpart->simpleHoverEnterEvent(event);
-            }
-        }
-    }
+	if (m_superpart) {
+		foreach (ItemBase * itemBase, m_superpart->subparts()) {
+			if (itemBase != this) {
+				SchematicSubpart * subpart = qobject_cast<SchematicSubpart *>(itemBase);
+				if (subpart) subpart->simpleHoverEnterEvent(event);
+			}
+		}
+	}
 }
 
 void SchematicSubpart::hoverLeaveEvent (QGraphicsSceneHoverEvent * event)
 {
 	PaletteItem::hoverLeaveEvent(event);
-    if (m_superpart) {
-        foreach (ItemBase * itemBase, m_superpart->subparts()) {
-            if (itemBase != this) {
-                SchematicSubpart * subpart = qobject_cast<SchematicSubpart *>(itemBase);
-                if (subpart) subpart->simpleHoverLeaveEvent(event);
-            }
-        }
-    }
+	if (m_superpart) {
+		foreach (ItemBase * itemBase, m_superpart->subparts()) {
+			if (itemBase != this) {
+				SchematicSubpart * subpart = qobject_cast<SchematicSubpart *>(itemBase);
+				if (subpart) subpart->simpleHoverLeaveEvent(event);
+			}
+		}
+	}
 }
 
 void SchematicSubpart::simpleHoverEnterEvent (QGraphicsSceneHoverEvent * event)
 {
-    PaletteItem::hoverEnterEvent(event);
+	PaletteItem::hoverEnterEvent(event);
 }
 
 void SchematicSubpart::simpleHoverLeaveEvent (QGraphicsSceneHoverEvent * event)
 {
-    PaletteItem::hoverLeaveEvent(event);
+	PaletteItem::hoverLeaveEvent(event);
 }
-

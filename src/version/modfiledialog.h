@@ -9,26 +9,26 @@ class ModFileDialog;
 
 class ModFileDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit ModFileDialog(QWidget *parent = 0);
-    ~ModFileDialog();
+	explicit ModFileDialog(QWidget *parent = 0);
+	~ModFileDialog();
 
-    void setText(const QString & text);
-    void addList(const QString & header, const QStringList & list);
+	void setText(const QString & text);
+	void addList(const QString & header, const QStringList & list);
 
 protected slots:
-    /**
-     * override the default closing behavior to send the cleanRepo signal
-     */
-    void accept();
+	/**
+	 * override the default closing behavior to send the cleanRepo signal
+	 */
+	void accept();
 
 signals:
-    void cleanRepo(ModFileDialog * modFileDialog);
+	void cleanRepo(ModFileDialog * modFileDialog);
 
 private:
-    Ui::ModFileDialog *ui;
+	Ui::ModFileDialog *ui;
 };
 
 #endif // MODFILEDIALOG_H

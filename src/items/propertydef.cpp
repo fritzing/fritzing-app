@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6141 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-07-04 21:20:05 +0200 (Mi, 04. Jul 2012) $
 
 ********************************************************************/
 
@@ -93,14 +87,14 @@ void PropertyDefMaster::loadPropertyDefs() {
 }
 
 void PropertyDefMaster::cleanup() {
-    foreach (PropertyDef * propertyDef, PropertyDefs) {
-        delete propertyDef;
-    }
+	foreach (PropertyDef * propertyDef, PropertyDefs) {
+		delete propertyDef;
+	}
 
-    PropertyDefs.clear();
+	PropertyDefs.clear();
 }
 
-void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDef *, QString> & propertyDefs) 
+void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDef *, QString> & propertyDefs)
 {
 	if (PropertyDefs.count() == 0) {
 		loadPropertyDefs();
@@ -132,6 +126,3 @@ void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDe
 		}
 	}
 }
-
-
-

@@ -16,12 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #
-# ********************************************************************
-#
-# $Revision: 6448 $:
-# $Author: cohen@irascible.com $:
-# $Date: 2012-09-17 23:36:33 +0200 (Mo, 17. Sep 2012) $
-#
 #********************************************************************/
 
 HEADERS += \
@@ -61,7 +55,7 @@ HEADERS += \
     src/partseditor/kicadmoduledialog.h \
     src/partseditor/hashpopulatewidget.h \
     src/partseditor/baseremovebutton.h \
-    
+
 
 SOURCES += \
  #   src/partseditor/editabledatewidget.cpp \

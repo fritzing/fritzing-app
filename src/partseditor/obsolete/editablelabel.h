@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 
@@ -35,18 +29,18 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 class EditableLabel : public QLabel {
 	Q_OBJECT
 
-	public:
-		EditableLabel(QWidget *parent=0);
-		EditableLabel(const QString & text, QWidget *parent=0);
+public:
+	EditableLabel(QWidget *parent=0);
+	EditableLabel(const QString & text, QWidget *parent=0);
 
-	public slots:
-		void editionCompleted(QString newText);
+public slots:
+	void editionCompleted(QString newText);
 
-	signals:
-		void editionStarted(QString);
+signals:
+	void editionStarted(QString);
 
-	protected:
-		void mousePressEvent(QMouseEvent *event);
+protected:
+	void mousePressEvent(QMouseEvent *event);
 };
 
 #endif /* EDITABLELABEL_H_ */

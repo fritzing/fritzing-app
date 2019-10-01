@@ -601,8 +601,8 @@ M2682.5,2000a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z
 M2782.5,2000a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z
 M2882.5,2000a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z
 M2982.5,2000a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z
-" /> 
-<path stroke-width="8" stroke="#deb675" fill="none" stroke-opacity="1" d="M4,4L3092,4 3092,2092 4,2092z" /> 
+" />
+<path stroke-width="8" stroke="#deb675" fill="none" stroke-opacity="1" d="M4,4L3092,4 3092,2092 4,2092z" />
 <circle fill="none" cx="100" cy="100" connectorname="0.0" stroke="#c49c59" r="27.5" id="connector0pin" stroke-width="20"/>
 <circle fill="none" cx="200" cy="100" connectorname="1.0" stroke="#c49c59" r="27.5" id="connector1pin" stroke-width="20"/>
 <circle fill="none" cx="300" cy="100" connectorname="2.0" stroke="#c49c59" r="27.5" id="connector2pin" stroke-width="20"/>

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 #include <QPainter>
 #include <QHash>
@@ -34,7 +28,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 double ConnectorRectangle::ErrorIconSize = 6;
 
 ConnectorRectangle::ConnectorRectangle(QGraphicsItem* owner, bool withHandlers)
-: QObject()
+	: QObject()
 {
 	m_minWidth = m_minHeight = 0;
 	m_owner = owner;
@@ -47,13 +41,13 @@ ConnectorRectangle::ConnectorRectangle(QGraphicsItem* owner, bool withHandlers)
 		m_bottomLeftHandler  = new CornerHandler(this, owner, Qt::BottomLeftCorner);
 
 		m_cornerHandlers
-			<< m_topLeftHandler << m_topRightHandler
-			<< m_bottomRightHandler << m_bottomLeftHandler;
+		        << m_topLeftHandler << m_topRightHandler
+		        << m_bottomRightHandler << m_bottomLeftHandler;
 
 		setHandlersVisible(false);
 	} else {
 		m_topLeftHandler = m_topRightHandler =
-		m_bottomRightHandler = m_bottomLeftHandler = NULL;
+		                       m_bottomRightHandler = m_bottomLeftHandler = NULL;
 	}
 }
 
@@ -137,20 +131,20 @@ QRectF ConnectorRectangle::handlerRect(Qt::Corner corner) {
 	QPointF offset(CornerHandler::Size/scale,CornerHandler::Size/scale);
 	QPointF cornerPoint;
 	switch(corner) {
-		case Qt::TopLeftCorner:
-			cornerPoint=rect.topLeft();
-			break;
-		case Qt::TopRightCorner:
-			cornerPoint=rect.topRight();
-			break;
-		case Qt::BottomRightCorner:
-			cornerPoint=rect.bottomRight();
-			break;
-		case Qt::BottomLeftCorner:
-			cornerPoint=rect.bottomLeft();
-			break;
-		default: 
-			throw "ConnectorRectangle::handlerRect: unknown corner";
+	case Qt::TopLeftCorner:
+		cornerPoint=rect.topLeft();
+		break;
+	case Qt::TopRightCorner:
+		cornerPoint=rect.topRight();
+		break;
+	case Qt::BottomRightCorner:
+		cornerPoint=rect.bottomRight();
+		break;
+	case Qt::BottomLeftCorner:
+		cornerPoint=rect.bottomLeft();
+		break;
+	default:
+		throw "ConnectorRectangle::handlerRect: unknown corner";
 	}
 	return QRectF(cornerPoint-offset,cornerPoint+offset);
 }
@@ -182,4 +176,3 @@ void ConnectorRectangle::setMinSize(double minWidth, double minHeight) {
 	m_minWidth = minWidth;
 	m_minHeight = minHeight;
 }
-

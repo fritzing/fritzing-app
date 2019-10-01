@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 #include "resizehandle.h"
@@ -32,7 +26,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QCursor>
 
 ResizeHandle::ResizeHandle(const QPixmap &pixmap, const QCursor & cursor, bool ignoresTransforms, QGraphicsItem *parent)
-: QGraphicsPixmapItem(pixmap, parent)
+	: QGraphicsPixmapItem(pixmap, parent)
 {
 	setCursor(cursor);
 	setVisible(true);
@@ -69,20 +63,20 @@ QPointF ResizeHandle::resizeOffset()
 QVariant ResizeHandle::itemChange(GraphicsItemChange change, const QVariant &value)
 {
 	switch (change) {
-		case QGraphicsItem::ItemSceneHasChanged: 
-			if (scaling()) {
-				ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
-				if (sw) {
-					connect(sw, SIGNAL(zoomChanged(double)), this, SLOT(zoomChangedSlot(double)));
-				}
-
+	case QGraphicsItem::ItemSceneHasChanged:
+		if (scaling()) {
+			ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
+			if (sw) {
+				connect(sw, SIGNAL(zoomChanged(double)), this, SLOT(zoomChangedSlot(double)));
 			}
-			break;
-		default:
-			break;
-   	}
 
-    return QGraphicsPixmapItem::itemChange(change, value);
+		}
+		break;
+	default:
+		break;
+	}
+
+	return QGraphicsPixmapItem::itemChange(change, value);
 }
 
 void ResizeHandle::zoomChangedSlot(double scale) {
@@ -102,14 +96,13 @@ double ResizeHandle::currentScale() {
 void ResizeHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 	if(scene()) {
-        FGraphicsScene * fscene = qobject_cast<FGraphicsScene *>(scene());
-        if (fscene != NULL && fscene->displayHandles()) {
-            QGraphicsPixmapItem::paint(painter, option, widget);
+		FGraphicsScene * fscene = qobject_cast<FGraphicsScene *>(scene());
+		if (fscene != NULL && fscene->displayHandles()) {
+			QGraphicsPixmapItem::paint(painter, option, widget);
 		}
 	}
 }
 
 bool ResizeHandle::scaling() {
-    return (this->flags() & QGraphicsItem::ItemIgnoresTransformations) && (scene() != NULL);
+	return (this->flags() & QGraphicsItem::ItemIgnoresTransformations) && (scene() != NULL);
 }
-

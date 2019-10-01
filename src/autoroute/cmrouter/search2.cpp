@@ -3,16 +3,16 @@
  *
  * Area searching.
  *
- *     ********************************************************************* 
- *     * Copyright (C) 1985, 1990 Regents of the University of California. * 
- *     * Permission to use, copy, modify, and distribute this              * 
- *     * software and its documentation for any purpose and without        * 
- *     * fee is hereby granted, provided that the above copyright          * 
- *     * notice appear in all copies.  The University of California        * 
- *     * makes no representations about the suitability of this            * 
- *     * software for any purpose.  It is provided "as is" without         * 
- *     * express or implied warranty.  Export of this software outside     * 
- *     * of the United States of America may require an export license.    * 
+ *     *********************************************************************
+ *     * Copyright (C) 1985, 1990 Regents of the University of California. *
+ *     * Permission to use, copy, modify, and distribute this              *
+ *     * software and its documentation for any purpose and without        *
+ *     * fee is hereby granted, provided that the above copyright          *
+ *     * notice appear in all copies.  The University of California        *
+ *     * makes no representations about the suitability of this            *
+ *     * software for any purpose.  It is provided "as is" without         *
+ *     * express or implied warranty.  Export of this software outside     *
+ *     * of the United States of America may require an export license.    *
  *     *********************************************************************
  */
 
@@ -81,64 +81,64 @@ int tiSrAreaEnum(Tile *enumRT, int enumBottom,  TileRect *rect, TileCallback, Us
 
 int
 TiSrArea(Tile *hintTile, Plane *plane, TileRect *rect, TileCallback tileCallback, UserData arg)
-    /* Tile at which to begin search, if not NULL.
-			 * If this is NULL, use the hint tile supplied
-			 * with plane.
-			 */
-    /* Plane in which tiles lie.  This is used to
-			 * provide a hint tile in case hintTile == NULL.
-			 * The hint tile in the plane is updated to be
-			 * the last tile visited in the area enumeration.
-			 */
-    /* Area to search */
-    /* Function to apply at each tile */
-    /* Additional argument to pass to (*func)() */
+/* Tile at which to begin search, if not NULL.
+		 * If this is NULL, use the hint tile supplied
+		 * with plane.
+		 */
+/* Plane in which tiles lie.  This is used to
+		 * provide a hint tile in case hintTile == NULL.
+		 * The hint tile in the plane is updated to be
+		 * the last tile visited in the area enumeration.
+		 */
+/* Area to search */
+/* Function to apply at each tile */
+/* Additional argument to pass to (*func)() */
 {
-    TilePoint here;
-    Tile *tp, *enumTR, *enumTile;
-    int enumRight, enumBottom;
-
-    /*
-     * We will scan from top to bottom along the left hand edge
-     * of the search area, searching for tiles.  Each tile we
-     * find in this search will be enumerated.
-     */
-
-    here.xi = rect->xmini;
-    here.yi = rect->ymaxi - MINDIFF;
-    enumTile = hintTile ? hintTile : plane->pl_hint;
-    plane->pl_hint = enumTile = gotoPoint(enumTile, here);
-
-    while (here.yi >= rect->ymini)
-    {
-	/*
-	 * Find the tile (tp) immediately below the one to be
-	 * enumerated (enumTile).  This must be done before we enumerate
-	 * the tile, as the filter function applied to enumerate
-	 * it can result in its deallocation or modification in
-	 * some other way.
-	 */
-	here.yi = YMIN(enumTile) - MINDIFF;
-	tp = enumTile;
-	plane->pl_hint = tp = gotoPoint(tp, here);
-
-	enumRight = RIGHT(enumTile);
-	enumBottom = YMIN(enumTile);
-	enumTR = TR(enumTile);
-	if ((*tileCallback)(enumTile, arg)) return 1;
+	TilePoint here;
+	Tile *tp, *enumTR, *enumTile;
+	int enumRight, enumBottom;
 
 	/*
-	 * If the right boundary of the tile being enumerated is
-	 * inside of the search area, recursively enumerate
-	 * tiles to its right.
+	 * We will scan from top to bottom along the left hand edge
+	 * of the search area, searching for tiles.  Each tile we
+	 * find in this search will be enumerated.
 	 */
 
-	if (enumRight < rect->xmaxi)
-	    if (tiSrAreaEnum(enumTR, enumBottom, rect, tileCallback, arg))
-		return 1;
-	enumTile = tp;
-    }
-    return 0;
+	here.xi = rect->xmini;
+	here.yi = rect->ymaxi - MINDIFF;
+	enumTile = hintTile ? hintTile : plane->pl_hint;
+	plane->pl_hint = enumTile = gotoPoint(enumTile, here);
+
+	while (here.yi >= rect->ymini)
+	{
+		/*
+		 * Find the tile (tp) immediately below the one to be
+		 * enumerated (enumTile).  This must be done before we enumerate
+		 * the tile, as the filter function applied to enumerate
+		 * it can result in its deallocation or modification in
+		 * some other way.
+		 */
+		here.yi = YMIN(enumTile) - MINDIFF;
+		tp = enumTile;
+		plane->pl_hint = tp = gotoPoint(tp, here);
+
+		enumRight = RIGHT(enumTile);
+		enumBottom = YMIN(enumTile);
+		enumTR = TR(enumTile);
+		if ((*tileCallback)(enumTile, arg)) return 1;
+
+		/*
+		 * If the right boundary of the tile being enumerated is
+		 * inside of the search area, recursively enumerate
+		 * tiles to its right.
+		 */
+
+		if (enumRight < rect->xmaxi)
+			if (tiSrAreaEnum(enumTR, enumBottom, rect, tileCallback, arg))
+				return 1;
+		enumTile = tp;
+	}
+	return 0;
 }
 
 /*
@@ -165,63 +165,63 @@ TiSrArea(Tile *hintTile, Plane *plane, TileRect *rect, TileCallback tileCallback
 
 int
 tiSrAreaEnum( Tile *enumRT, int enumBottom, TileRect *rect, TileCallback tileCallback, UserData arg)
-   /* TR corner stitch of tile just enumerated */
-   /* Bottom coordinate of tile just enumerated */
-   /* Area to search */
-   /* Function to apply at each tile */
-   /* Additional argument to pass to (*func)() */
+/* TR corner stitch of tile just enumerated */
+/* Bottom coordinate of tile just enumerated */
+/* Area to search */
+/* Function to apply at each tile */
+/* Additional argument to pass to (*func)() */
 {
-    Tile *tp, *tpLB, *tpTR;
-    int tpRight, tpNextTop, tpBottom, srchBottom;
-    int atBottom = (enumBottom <= rect->ymini);
+	Tile *tp, *tpLB, *tpTR;
+	int tpRight, tpNextTop, tpBottom, srchBottom;
+	int atBottom = (enumBottom <= rect->ymini);
 
-
-    /*
-     * Begin examination of tiles along right edge.
-     * A tile to the right of the one being enumerated is enumerable if:
-     *	- its bottom lies at or above that of the tile being enumerated, or,
-     *	- the bottom of the tile being enumerated lies at or below the
-     *	  bottom of the search rectangle.
-     */
-
-    if ((srchBottom = enumBottom) < rect->ymini)
-	srchBottom = rect->ymini;
-
-    for (tp = enumRT, tpNextTop = YMAX(tp); tpNextTop > srchBottom; tp = tpLB)
-    {
 
 	/*
-	 * Since the client's filter function may result in this tile
-	 * being deallocated or otherwise modified, we must extract
-	 * all the information we will need from the tile before we
-	 * apply the filter function.
+	 * Begin examination of tiles along right edge.
+	 * A tile to the right of the one being enumerated is enumerable if:
+	 *	- its bottom lies at or above that of the tile being enumerated, or,
+	 *	- the bottom of the tile being enumerated lies at or below the
+	 *	  bottom of the search rectangle.
 	 */
 
-	tpLB = LB(tp);
-	tpNextTop = YMAX(tpLB);	/* Since YMAX(tpLB) comes from tp */
+	if ((srchBottom = enumBottom) < rect->ymini)
+		srchBottom = rect->ymini;
 
-	if (YMIN(tp) < rect->ymaxi && (atBottom || YMIN(tp) >= enumBottom))
+	for (tp = enumRT, tpNextTop = YMAX(tp); tpNextTop > srchBottom; tp = tpLB)
 	{
-	    /*
-	     * We extract more information from the tile, which we will use
-	     * after applying the filter function.
-	     */
 
-	    tpRight = RIGHT(tp);
-	    tpBottom = YMIN(tp);
-	    tpTR = TR(tp);
-	    if ((*tileCallback)(tp, arg)) return 1;
+		/*
+		 * Since the client's filter function may result in this tile
+		 * being deallocated or otherwise modified, we must extract
+		 * all the information we will need from the tile before we
+		 * apply the filter function.
+		 */
 
-	    /*
-	     * If the right boundary of the tile being enumerated is
-	     * inside of the search area, recursively enumerate
-	     * tiles to its right.
-	     */
+		tpLB = LB(tp);
+		tpNextTop = YMAX(tpLB);	/* Since YMAX(tpLB) comes from tp */
 
-	    if (tpRight < rect->xmaxi)
-		if (tiSrAreaEnum(tpTR, tpBottom, rect, tileCallback, arg))
-		    return 1;
+		if (YMIN(tp) < rect->ymaxi && (atBottom || YMIN(tp) >= enumBottom))
+		{
+			/*
+			 * We extract more information from the tile, which we will use
+			 * after applying the filter function.
+			 */
+
+			tpRight = RIGHT(tp);
+			tpBottom = YMIN(tp);
+			tpTR = TR(tp);
+			if ((*tileCallback)(tp, arg)) return 1;
+
+			/*
+			 * If the right boundary of the tile being enumerated is
+			 * inside of the search area, recursively enumerate
+			 * tiles to its right.
+			 */
+
+			if (tpRight < rect->xmaxi)
+				if (tiSrAreaEnum(tpTR, tpBottom, rect, tileCallback, arg))
+					return 1;
+		}
 	}
-    }
-    return 0;
+	return 0;
 }

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6912 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
-
 ********************************************************************/
 
 #ifndef SVGIDLAYER_H
@@ -33,30 +27,30 @@ $Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 
 struct PointRect {
-    QRectF rect;		
-	QPointF point;	
+	QRectF rect;
+	QPointF point;
 	bool processed;
 	bool svgVisible;
 };
 
-class SvgIdLayer 
+class SvgIdLayer
 {
 public:
 	SvgIdLayer(ViewLayer::ViewID);
 	SvgIdLayer * copyLayer();
 
-    QPointF point(ViewLayer::ViewLayerPlacement);
-    QRectF rect(ViewLayer::ViewLayerPlacement);
-    bool processed(ViewLayer::ViewLayerPlacement);
-    bool svgVisible(ViewLayer::ViewLayerPlacement);
-    void unprocess();
-    void setInvisible(ViewLayer::ViewLayerPlacement);
-    void setPointRect(ViewLayer::ViewLayerPlacement, QPointF, QRectF, bool svgVisible);
+	QPointF point(ViewLayer::ViewLayerPlacement);
+	QRectF rect(ViewLayer::ViewLayerPlacement);
+	bool processed(ViewLayer::ViewLayerPlacement);
+	bool svgVisible(ViewLayer::ViewLayerPlacement);
+	void unprocess();
+	void setInvisible(ViewLayer::ViewLayerPlacement);
+	void setPointRect(ViewLayer::ViewLayerPlacement, QPointF, QRectF, bool svgVisible);
 
 public:
 	QString m_svgId;
 	QString m_terminalId;
-    ViewLayer::ViewID m_viewID;
+	ViewLayer::ViewID m_viewID;
 	ViewLayer::ViewLayerID m_svgViewLayerID;
 	bool m_hybrid;
 	double m_radius;
@@ -65,11 +59,11 @@ public:
 	QString m_legColor;
 	double m_legStrokeWidth;
 	QLineF m_legLine;
-    bool m_path;
+	bool m_path;
 
 protected:
-    PointRect m_pointRectBottom;
-    PointRect m_pointRectTop;
+	PointRect m_pointRectBottom;
+	PointRect m_pointRectTop;
 
 protected:
 };

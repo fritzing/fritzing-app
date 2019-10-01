@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6924 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-03-10 16:58:25 +0100 (So, 10. Mrz 2013) $
 
 ********************************************************************/
 
@@ -60,7 +54,7 @@ int GraphicsFlowLayout::doLayout(const QRectF &rect) {
 		QGraphicsLayoutItem* item = itemAt(i);
 		int nextX = x + item->preferredSize().width() + spacing();
 
-		if (item->sizePolicy().horizontalPolicy() == QSizePolicy::Expanding) { 
+		if (item->sizePolicy().horizontalPolicy() == QSizePolicy::Expanding) {
 			int myY = y + lineHeight + spacing() + SpaceBefore;
 			QRectF r(QPoint(rect.x(), myY), item->preferredSize());
 			item->setGeometry(r);
@@ -68,7 +62,7 @@ int GraphicsFlowLayout::doLayout(const QRectF &rect) {
 			y = myY + item->preferredSize().height() + spacing() + SpaceAfter;
 			continue;
 		}
-		
+
 		if (nextX - spacing() > rect.right() && lineHeight > 0) {
 			x = rect.x();
 			y = y + lineHeight + spacing();

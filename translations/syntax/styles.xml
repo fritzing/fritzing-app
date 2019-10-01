@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- inspired by Peacock style for Sublime -->
 <styles>
-      <style name="Normal Text" color="#d7d8d8" /> 
+      <style name="Normal Text" color="#d7d8d8" />
       <style name="Keyword"  color="#f9bb4e" /> <!-- e.g. for -->
       <style name="Functions"  color="#ff3b28" /> <!-- e.g. setup, loop -->
       <style name="Data Types"  color="#6dba82" /> <!-- e.g. int, void -->
@@ -14,4 +14,5 @@
       <style name="Comment"  color="#808080" italic="1" /> <!-- e.g. this  -->
       <style name="Region Marker"  color="#dddddd" /> <!-- e.g. ? -->
       <style name="Preprocessor"  color="#b7b1a9" /> <!-- e.g. #ifdef -->
+      <style name="Symbol" color="#dddddd" />
 </styles>

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6417 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-09-14 23:34:09 +0200 (Fr, 14. Sep 2012) $
 
 ********************************************************************/
 
@@ -62,13 +56,13 @@ int PartsEditorView::ConnDefaultWidth = 5;
 int PartsEditorView::ConnDefaultHeight = ConnDefaultWidth;
 
 PartsEditorView::PartsEditorView(
-		ViewLayer::ViewIdentifier viewId, QDir tempDir,
-		bool showingTerminalPoints, QGraphicsProxyWidget *startItem,
-		QWidget *parent, int size, bool deleteModelPartOnClearScene,
-		ItemBase * fromItem)
+    ViewLayer::ViewIdentifier viewId, QDir tempDir,
+    bool showingTerminalPoints, QGraphicsProxyWidget *startItem,
+    QWidget *parent, int size, bool deleteModelPartOnClearScene,
+    ItemBase * fromItem)
 	: SketchWidget(viewId, parent, size, size)
 {
-    m_alignToGrid = m_showGrid = false;
+	m_alignToGrid = m_showGrid = false;
 	m_viewItem = NULL;
 	m_item = NULL;
 	m_connsLayerID = ViewLayer::UnknownLayer;
@@ -79,7 +73,7 @@ PartsEditorView::PartsEditorView(
 	setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setDefaultBackground();
 
-	
+
 
 	//spec
 	m_svgFilePath = new SvgAndPartFilePath;
@@ -111,8 +105,8 @@ PartsEditorView::PartsEditorView(
 
 	m_terminalPointsTimer = new QTimer(this);
 	connect(
-		m_terminalPointsTimer,SIGNAL(timeout()),
-		this,SLOT(recoverTerminalPointsState())
+	    m_terminalPointsTimer,SIGNAL(timeout()),
+	    this,SLOT(recoverTerminalPointsState())
 	);
 	m_showingTerminalPointsBackup = m_showingTerminalPoints;
 
@@ -130,24 +124,24 @@ PartsEditorView::~PartsEditorView() {
 
 void PartsEditorView::addDefaultLayers(ItemBase * fromItem) {
 	switch( m_viewIdentifier ) {
-		case ViewLayer::BreadboardView: 
-			addBreadboardViewLayers(); 
-			break;
-		case ViewLayer::SchematicView: 
-			addSchematicViewLayers(); 
-			break;
-		case ViewLayer::PCBView: 
-			addPcbViewLayers(); 
-			if (fromItem && fromItem->modelPart()->flippedSMD()) {
-				DebugDialog::debug("editing an SMD part");
-				setViewLayerIDs(ViewLayer::Silkscreen1, ViewLayer::Copper1Trace, ViewLayer::Copper1, ViewLayer::PcbRuler, ViewLayer::PcbNote);
-				this->m_viewLayers.remove(ViewLayer::Copper0);
-				this->m_viewLayers.remove(ViewLayer::Silkscreen0);
-				this->m_viewLayers.remove(ViewLayer::Copper0Trace);
-			}
-			break;
-		default: 
-			break;
+	case ViewLayer::BreadboardView:
+		addBreadboardViewLayers();
+		break;
+	case ViewLayer::SchematicView:
+		addSchematicViewLayers();
+		break;
+	case ViewLayer::PCBView:
+		addPcbViewLayers();
+		if (fromItem && fromItem->modelPart()->flippedSMD()) {
+			DebugDialog::debug("editing an SMD part");
+			setViewLayerIDs(ViewLayer::Silkscreen1, ViewLayer::Copper1Trace, ViewLayer::Copper1, ViewLayer::PcbRuler, ViewLayer::PcbNote);
+			this->m_viewLayers.remove(ViewLayer::Copper0);
+			this->m_viewLayers.remove(ViewLayer::Silkscreen0);
+			this->m_viewLayers.remove(ViewLayer::Copper0Trace);
+		}
+		break;
+	default:
+		break;
 	}
 }
 
@@ -177,7 +171,7 @@ void PartsEditorView::addItemInPartsEditor(ModelPart * modelPart, SvgAndPartFile
 ItemBase * PartsEditorView::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerSpec viewLayerSpec, const ViewGeometry &, long id, PaletteItem * paletteItemAux, bool doConnectors, ViewLayer::ViewIdentifier, bool temporary) {
 	Q_UNUSED(id);
 	Q_UNUSED(temporary);
-	
+
 	if(paletteItemAux == NULL) {
 		paletteItemAux = newPartsEditorPaletteItem(modelPart);
 	}
@@ -193,9 +187,9 @@ ItemBase * PartsEditorView::addItemAux(ModelPart * modelPart, ViewLayer::ViewLay
 			if(paletteItem->createSvgPath(modelPart->path(), layerFileName)) {
 				paletteItem->createSvgFile(paletteItem->svgFilePath()->absolutePath());
 				ViewLayer::ViewLayerID viewLayerID =
-					ViewLayer::viewLayerIDFromXmlString(
-						findConnectorsLayerId(paletteItem->svgDom())
-					);
+				    ViewLayer::viewLayerIDFromXmlString(
+				        findConnectorsLayerId(paletteItem->svgDom())
+				    );
 				if(viewLayerID == ViewLayer::UnknownLayer) {
 					viewLayerID = getViewLayerID(modelPart, m_viewIdentifier, viewLayerSpec);
 				}
@@ -297,46 +291,47 @@ ModelPart *PartsEditorView::createFakeModelPart(const QHash<QString,ConnectorTer
 	int errorLine;
 	int errorColumn;
 	QString fakeFzFile =
-		QString("<module><views>\n")+
-			QString("<%1><layers image='%2' >\n").arg(ViewLayer::viewIdentifierXmlName(m_viewIdentifier)).arg(svgFilePath);
-		foreach(QString layer, layers) { fakeFzFile +=
-			QString("    <layer layerId='%1' />\n").arg(layer);
-		}
+	    QString("<module><views>\n")+
+	    QString("<%1><layers image='%2' >\n").arg(ViewLayer::viewIdentifierXmlName(m_viewIdentifier)).arg(svgFilePath);
+	foreach(QString layer, layers) {
+		fakeFzFile +=
+		    QString("    <layer layerId='%1' />\n").arg(layer);
+	}
 	fakeFzFile +=
-			QString("</layers></%1>\n").arg(ViewLayer::viewIdentifierXmlName(m_viewIdentifier))+
-			QString("</views><connectors>\n");
+	    QString("</layers></%1>\n").arg(ViewLayer::viewIdentifierXmlName(m_viewIdentifier))+
+	    QString("</views><connectors>\n");
 
 	QStringList defaultLayers = defaultLayerAsStringlist();
 
 	foreach(QString id, conns.keys()) {
 		QString terminalAttr = conns[id].terminalId.isEmpty() ? "" : QString("terminalId='%1'").arg(conns[id].terminalId);
-		QString name = conns[id].connectorName.isEmpty() ? "" : QString("name='%1'").arg(conns[id].connectorName);		
+		QString name = conns[id].connectorName.isEmpty() ? "" : QString("name='%1'").arg(conns[id].connectorName);
 		fakeFzFile += QString("<connector id='%1' %2><views>\n").arg(id).arg(name) +
-							QString("<%1>\n").arg(ViewLayer::viewIdentifierXmlName(m_viewIdentifier));
+		              QString("<%1>\n").arg(ViewLayer::viewIdentifierXmlName(m_viewIdentifier));
 		foreach (QString layer, defaultLayers) {
 			if (layers.contains(layer)) {
 				fakeFzFile += QString("<p layer='%1' svgId='%2' %3/>\n")
-									.arg(layer)
-									.arg(conns[id].connectorId)
-									.arg(terminalAttr);
+				              .arg(layer)
+				              .arg(conns[id].connectorId)
+				              .arg(terminalAttr);
 			}
 		}
 		fakeFzFile += QString("</%1>\n").arg(ViewLayer::viewIdentifierXmlName(m_viewIdentifier))+
-						QString("</views></connector>\n");
+		              QString("</views></connector>\n");
 	}
 	fakeFzFile += QString("</connectors></module>\n");
 
-    QString path = m_tempFolder.absolutePath()+"/"+FolderUtils::getRandText()+".fz";
-    TextUtils::writeUtf8(path, fakeFzFile);
+	QString path = m_tempFolder.absolutePath()+"/"+FolderUtils::getRandText()+".fz";
+	TextUtils::writeUtf8(path, fakeFzFile);
 
-  	domDoc->setContent(fakeFzFile, &errorStr, &errorLine, &errorColumn);
+	domDoc->setContent(fakeFzFile, &errorStr, &errorLine, &errorColumn);
 
-  	ModelPart *retval = m_sketchModel->root();
-  	retval->modelPartShared()->setDomDocument(domDoc);
-  	retval->modelPartShared()->resetConnectorsInitialization();
+	ModelPart *retval = m_sketchModel->root();
+	retval->modelPartShared()->setDomDocument(domDoc);
+	retval->modelPartShared()->resetConnectorsInitialization();
 	retval->modelPartShared()->setPath(path);
-  	retval->initConnectors(true /*redo connectors*/);
-	
+	retval->initConnectors(true /*redo connectors*/);
+
 	return retval;
 }
 
@@ -388,7 +383,7 @@ const QStringList PartsEditorView::getLayers(const QString &path) {
 
 const QStringList PartsEditorView::getLayers(const QDomDocument *dom, bool fakeDefaultIfNone) {
 	QStringList retval;
-	
+
 	QDomNodeList nodeList = dom->elementsByTagName("g");
 	for (uint i = 0; i < nodeList.length(); i++) {
 		QDomElement e = nodeList.item(i).toElement();
@@ -492,8 +487,8 @@ void PartsEditorView::findConnectorsLayerId() {
 	if(m_connsLayerID == ViewLayer::UnknownLayer) {
 		if (m_item != NULL) {
 			m_connsLayerID = ViewLayer::viewLayerIDFromXmlString(
-				findConnectorsLayerId(m_item->svgDom())
-			);
+			                     findConnectorsLayerId(m_item->svgDom())
+			                 );
 		}
 		if(m_connsLayerID == ViewLayer::UnknownLayer) {
 			m_connsLayerID = SketchWidget::defaultConnectorLayer(m_viewIdentifier);
@@ -520,7 +515,7 @@ void PartsEditorView::findConnectorsLayerIdsAux(QStringList &result, QDomElement
 			if (!id.isEmpty() && (ViewLayer::viewLayerIDFromXmlString(id) != ViewLayer::UnknownLayer)) {
 				result << id;
 			}
-		} 
+		}
 		else if(e.hasChildNodes()) {
 			findConnectorsLayerIdsAux(result, e);
 		}
@@ -568,7 +563,7 @@ bool PartsEditorView::findConnectorsLayerIdAux(QString &result, QDomElement &doc
 }
 
 QString PartsEditorView::getLayerFileName(ModelPart * modelPart) {
-    return modelPart->imageFileName(m_viewIdentifier);
+	return modelPart->imageFileName(m_viewIdentifier);
 }
 
 
@@ -588,8 +583,8 @@ void PartsEditorView::copySvgFileToDestiny(const QString &partFileName) {
 		ensureFilePath(origFile);
 		QFile tempFile(origFile);
 		DebugDialog::debug(QString("copying from %1 to %2")
-				.arg(origFile)
-				.arg(destFile));
+		                   .arg(origFile)
+		                   .arg(destFile));
 		tempFile.copy(destFile);
 		tempFile.close();
 
@@ -604,7 +599,7 @@ void PartsEditorView::loadFile() {
 	extras.append("");
 	QString imageFiles;
 	if (m_viewIdentifier == ViewLayer::PCBView) {
-		imageFiles = tr("Image & Footprint Files (%1 %2 %3 %4 %5);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;gEDA Footprint Files (%4);;Kicad Module Files (%5)");   // 
+		imageFiles = tr("Image & Footprint Files (%1 %2 %3 %4 %5);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;gEDA Footprint Files (%4);;Kicad Module Files (%5)");   //
 		extras[0] = "*.fp";
 		extras[1] = "*.mod";
 	}
@@ -614,29 +609,29 @@ void PartsEditorView::loadFile() {
 
 	if (m_viewIdentifier == ViewLayer::SchematicView) {
 		extras[0] = "*.lib";
-		imageFiles = tr("Image & Footprint Files (%1 %2 %3 %4);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;Kicad Schematic Files (%4)%5");   // 
+		imageFiles = tr("Image & Footprint Files (%1 %2 %3 %4);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;Kicad Schematic Files (%4)%5");   //
 	}
 
 	QString origPath = FolderUtils::getOpenFileName(this,
-		tr("Open Image"),
-		m_originalSvgFilePath.isEmpty() ? FolderUtils::openSaveFolder() /* FolderUtils::getUserDataStorePath("parts")+"/parts/svg/" */ : m_originalSvgFilePath,
-		imageFiles.arg("*.svg").arg("*.jpg *.jpeg").arg("*.png").arg(extras[0]).arg(extras[1])
-	);
+	                   tr("Open Image"),
+	                   m_originalSvgFilePath.isEmpty() ? FolderUtils::openSaveFolder() /* FolderUtils::getUserDataStorePath("parts")+"/parts/svg/" */ : m_originalSvgFilePath,
+	                   imageFiles.arg("*.svg").arg("*.jpg *.jpeg").arg("*.png").arg(extras[0]).arg(extras[1])
+	                                               );
 
 	if(origPath.isEmpty()) {
 		return; // Cancel pressed
-	} 
+	}
 
 	if(!origPath.endsWith(".svg")) {
 		try {
 			origPath = createSvgFromImage(origPath);
 		}
 		catch (const QString & msg) {
-    		QMessageBox::warning(
-    			NULL,
-    			tr("Conversion problem"),
-    			tr("Unable to load image file: \n%1").arg(msg)
-    		);
+			QMessageBox::warning(
+			    NULL,
+			    tr("Conversion problem"),
+			    tr("Unable to load image file: \n%1").arg(msg)
+			);
 			return;
 		}
 	}
@@ -680,7 +675,7 @@ void PartsEditorView::loadSvgFile(const QString& origPath) {
 
 		// TODO: this code reuses the current modelpart and replaces its connectors,
 		// it would be better to delete the modelpart and create a new one
-		// however, one would have to tidy up the various objects that rely on pointers 
+		// however, one would have to tidy up the various objects that rely on pointers
 		// to the original modelpart and its connectors
 		ModelPart * mp = createFakeModelPart(m_svgFilePath);
 		loadSvgFile(mp);
@@ -688,21 +683,21 @@ void PartsEditorView::loadSvgFile(const QString& origPath) {
 }
 
 void PartsEditorView::beforeSVGLoading(const QString &filename, bool &canceled) {
-    QFile file(filename);
-    if(!file.open(QIODevice::ReadOnly )) {
-    	QMessageBox::warning(
-    		NULL,
-    		tr("Couldn't open svg file"),
-    		tr(
-    		"The file couldn't be opened. If this file defines its dimensions \n"
-    		"in non-real-world units (e.g. pixels), then they won't be translated \n"
-    		"into real life ones.\n"
-    		"Malformed font-family definitions won't be fixed either.")
-    	);
-        return;
-    }
+	QFile file(filename);
+	if(!file.open(QIODevice::ReadOnly )) {
+		QMessageBox::warning(
+		    NULL,
+		    tr("Couldn't open svg file"),
+		    tr(
+		        "The file couldn't be opened. If this file defines its dimensions \n"
+		        "in non-real-world units (e.g. pixels), then they won't be translated \n"
+		        "into real life ones.\n"
+		        "Malformed font-family definitions won't be fixed either.")
+		);
+		return;
+	}
 
-    QString fileContent(file.readAll());
+	QString fileContent(file.readAll());
 	bool fileHasChanged = (m_viewIdentifier == ViewLayer::IconView) ? false : TextUtils::fixPixelDimensionsIn(fileContent);
 	fileHasChanged |= TextUtils::cleanSodipodi(fileContent);
 	fileHasChanged |= TextUtils::fixViewboxOrigin(fileContent);
@@ -713,18 +708,18 @@ void PartsEditorView::beforeSVGLoading(const QString &filename, bool &canceled) 
 		file.close();
 		if(!TextUtils::writeUtf8(filename, fileContent)) {
 			QMessageBox::warning(
-				NULL,
-				tr("Couldn't write into file"),
-				tr(
-				"This file needs to be fixed to fit fritzing needs, but it couldn't\n"
-				"be written.\n"
-				"Fritzing is not compatible with this kind of svg files. Please \n"
-				"check your permissions, and try again.\n\n"
+			    NULL,
+			    tr("Couldn't write into file"),
+			    tr(
+			        "This file needs to be fixed to fit fritzing needs, but it couldn't\n"
+			        "be written.\n"
+			        "Fritzing is not compatible with this kind of svg files. Please \n"
+			        "check your permissions, and try again.\n\n"
 
-				"More information at http://fritzing.org/using-svg-images-new-parts/"
-				)
+			        "More information at http://fritzing.org/using-svg-images-new-parts/"
+			    )
 			);
-		} 
+		}
 	}
 
 }
@@ -745,8 +740,8 @@ bool PartsEditorView::removeFontFamilySingleQuotes(QString &fileContent, const Q
 		QString fixedFF = ff.remove('\'');
 		fileContent.replace(wrongFF,fixedFF);
 		DebugDialog::debug(
-			QString("removing font-family single quotes: \"%1\" to \"%2\" in file '%3'")
-				.arg(wrongFF).arg(fixedFF).arg(filename)
+		    QString("removing font-family single quotes: \"%1\" to \"%2\" in file '%3'")
+		    .arg(wrongFF).arg(fixedFF).arg(filename)
 		);
 	}
 
@@ -765,8 +760,8 @@ bool PartsEditorView::fixUnavailableFontFamilies(QString &fileContent, const QSt
 			QString newF = fixedFonts[oldF];
 			fileContent.replace(oldF,newF);
 			DebugDialog::debug(
-				QString("replacing font-family: \"%1\" to \"%2\" in file '%3'")
-					.arg(oldF).arg(newF).arg(filename)
+			    QString("replacing font-family: \"%1\" to \"%2\" in file '%3'")
+			    .arg(oldF).arg(newF).arg(filename)
 			);
 		}
 	}
@@ -778,9 +773,9 @@ QSet<QString> PartsEditorView::getAttrFontFamilies(const QString &fileContent) {
 	/*
 	 * font-family defined as attr example:
 
-<text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans"
-id="text2732" transform="matrix(1 0 0 1 32.2012 236.969)"
-font-size="9.9771" >A0</text>
+	<text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans"
+	id="text2732" transform="matrix(1 0 0 1 32.2012 236.969)"
+	font-size="9.9771" >A0</text>
 
 	 */
 
@@ -793,9 +788,9 @@ QSet<QString> PartsEditorView::getFontFamiliesInsideStyleTag(const QString &file
 	 * regexp: font-family\s*:\s*(.|[^;"]*).*"
 	 * font-family defined in a style attr example:
 
-style="font-size:9;-inkscape-font-specification:Droid Sans;font-family:Droid Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+	style="font-size:9;-inkscape-font-specification:Droid Sans;font-family:Droid Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
 
-style="font-size:144px;font-style:normal;font-weight:normal;line-height:100%;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" x="18.000002"
+	style="font-size:144px;font-style:normal;font-weight:normal;line-height:100%;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" x="18.000002"
 
 	 */
 
@@ -839,18 +834,18 @@ void PartsEditorView::copyToTempAndRenameIfNecessary(SvgAndPartFilePath *filePat
 	m_originalSvgFilePath = filePathOrig->absolutePath();
 	QString userSvgFolderPath = FolderUtils::getUserDataStorePath("parts")+"/svg";
 	QString coreSvgFolderPath = FolderUtils::getApplicationSubFolderPath("parts")+"/svg";
-	QString pfSvgFolderPath = PartFactory::folderPath()+"/svg"; 
+	QString pfSvgFolderPath = PartFactory::folderPath()+"/svg";
 
 	if(!(filePathOrig->absolutePath().startsWith(userSvgFolderPath)
-		|| filePathOrig->absolutePath().startsWith(coreSvgFolderPath)
-		|| filePathOrig->absolutePath().startsWith(pfSvgFolderPath))
-		) 
-	{ // it's outside the parts folder
+	        || filePathOrig->absolutePath().startsWith(coreSvgFolderPath)
+	        || filePathOrig->absolutePath().startsWith(pfSvgFolderPath))
+	  )
+	{	// it's outside the parts folder
 		DebugDialog::debug(QString("copying from %1").arg(m_originalSvgFilePath));
 		QString viewFolder = ViewLayer::viewIdentifierNaturalName(m_viewIdentifier);
 
 		if(!QFileInfo(m_tempFolder.path()+"/"+viewFolder).exists()
-		   && !m_tempFolder.mkdir(viewFolder)) return;
+		        && !m_tempFolder.mkdir(viewFolder)) return;
 		if(!m_tempFolder.cd(viewFolder)) return;
 
 		QString destFilePath = FolderUtils::getRandText()+".svg";
@@ -876,10 +871,10 @@ void PartsEditorView::copyToTempAndRenameIfNecessary(SvgAndPartFilePath *filePat
 
 		if(relPathAux.count("/") == 2) { // this means that core/user/contrib is still in the file name
 			m_svgFilePath->setRelativePath(
-				relPathAux.right(// remove user/core/contrib
-					relPathAux.size() -
-					relPathAux.indexOf("/") - 1
-				)
+			    relPathAux.right(// remove user/core/contrib
+			        relPathAux.size() -
+			        relPathAux.indexOf("/") - 1
+			    )
 			);
 		} else { //otherwise, just leave it as it is
 			m_svgFilePath->setRelativePath(relPathAux);
@@ -998,55 +993,55 @@ QString PartsEditorView::createSvgFromImage(const QString &origFilePath) {
 	// deal with png, jpg, etc.:
 
 
-/* %1=witdh in mm
- * %2=height in mm
- * %3=width in local coords
- * %4=height in local coords
- * %5=binary data
- */
-/*	QString svgTemplate =
-"<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n"
-"	<svg width='%1mm' height='%2mm' viewBox='0 0 %3 %4' xmlns='http://www.w3.org/2000/svg'\n"
-"		xmlns:xlink='http://www.w3.org/1999/xlink' version='1.2' baseProfile='tiny'>\n"
-"		<g fill='none' stroke='black' vector-effect='non-scaling-stroke' stroke-width='1'\n"
-"			fill-rule='evenodd' stroke-linecap='square' stroke-linejoin='bevel' >\n"
-"			<image x='0' y='0' width='%3' height='%4'\n"
-"				xlink:href='data:image/png;base64,%5' />\n"
-"		</g>\n"
-"	</svg>";
+	/* %1=witdh in mm
+	 * %2=height in mm
+	 * %3=width in local coords
+	 * %4=height in local coords
+	 * %5=binary data
+	 */
+	/*	QString svgTemplate =
+	"<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n"
+	"	<svg width='%1mm' height='%2mm' viewBox='0 0 %3 %4' xmlns='http://www.w3.org/2000/svg'\n"
+	"		xmlns:xlink='http://www.w3.org/1999/xlink' version='1.2' baseProfile='tiny'>\n"
+	"		<g fill='none' stroke='black' vector-effect='non-scaling-stroke' stroke-width='1'\n"
+	"			fill-rule='evenodd' stroke-linecap='square' stroke-linejoin='bevel' >\n"
+	"			<image x='0' y='0' width='%3' height='%4'\n"
+	"				xlink:href='data:image/png;base64,%5' />\n"
+	"		</g>\n"
+	"	</svg>";
 
-	QPixmap pixmap(origFilePath);
-	QByteArray bytes;
-	QBuffer buffer(&bytes);
-	buffer.open(QIODevice::WriteOnly);
-	pixmap.save(&buffer,"png"); // writes pixmap into bytes in PNG format
+		QPixmap pixmap(origFilePath);
+		QByteArray bytes;
+		QBuffer buffer(&bytes);
+		buffer.open(QIODevice::WriteOnly);
+		pixmap.save(&buffer,"png"); // writes pixmap into bytes in PNG format
 
-	QString svgDom = svgTemplate
-		.arg(pixmap.widthMM()).arg(pixmap.heightMM())
-		.arg(pixmap.width()).arg(pixmap.height())
-		.arg(QString("data:image/png;base64,%2").arg(QString(bytes.toBase64())));
+		QString svgDom = svgTemplate
+			.arg(pixmap.widthMM()).arg(pixmap.heightMM())
+			.arg(pixmap.width()).arg(pixmap.height())
+			.arg(QString("data:image/png;base64,%2").arg(QString(bytes.toBase64())));
 
-	QFile destFile(newFilePath);
-	if(!destFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-		QMessageBox::information(NULL, "", "file not created");
+		QFile destFile(newFilePath);
 		if(!destFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-				QMessageBox::information(NULL, "", "file not created 2");
-			}
-	}
-	QTextStream out(&destFile);
-	out << svgDom;
-	destFile.close();
-	qDebug() << newFilePath;
-	bool existsResult = QFileInfo(newFilePath).exists();
-	Q_ASSERT(existsResult);
-*/
+			QMessageBox::information(NULL, "", "file not created");
+			if(!destFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+					QMessageBox::information(NULL, "", "file not created 2");
+				}
+		}
+		QTextStream out(&destFile);
+		out << svgDom;
+		destFile.close();
+		qDebug() << newFilePath;
+		bool existsResult = QFileInfo(newFilePath).exists();
+		Q_ASSERT(existsResult);
+	*/
 
 	QImage img(origFilePath);
 	QSvgGenerator svgGenerator;
 	svgGenerator.setResolution(90);
 	svgGenerator.setFileName(newFilePath);
 	QSize sz = img.size();
-    svgGenerator.setSize(sz);
+	svgGenerator.setSize(sz);
 	svgGenerator.setViewBox(QRect(0, 0, sz.width(), sz.height()));
 	QPainter svgPainter(&svgGenerator);
 	svgPainter.drawImage(QPoint(0,0), img);
@@ -1058,12 +1053,12 @@ QString PartsEditorView::createSvgFromImage(const QString &origFilePath) {
 QString PartsEditorView::setFriendlierSvgFileName(const QString &partFileName) {
 	QString aux = partFileName;
 	aux = aux
-		.remove(FritzingPartExtension)
-		.replace(" ","_");
+	      .remove(FritzingPartExtension)
+	      .replace(" ","_");
 	if(aux.length()>40) aux.truncate(40);
 	aux+=QString("__%1__%2.svg")
-			.arg(ViewLayer::viewIdentifierNaturalName(m_viewIdentifier))
-			.arg(FolderUtils::getRandText());
+	     .arg(ViewLayer::viewIdentifierNaturalName(m_viewIdentifier))
+	     .arg(FolderUtils::getRandText());
 	int slashIdx = m_svgFilePath->relativePath().indexOf("/");
 	QString relpath = m_svgFilePath->relativePath();
 	QString relpath2 = relpath;
@@ -1120,16 +1115,16 @@ void PartsEditorView::createConnector(Connector *conn, const QSize &connSize, bo
 	QString connId = conn->connectorSharedID();
 
 	QRectF bounds = m_item
-			? QRectF(m_item->boundingRect().center(),connSize)
-			: QRectF(scene()->itemsBoundingRect().center(),connSize);
+	                ? QRectF(m_item->boundingRect().center(),connSize)
+	                : QRectF(scene()->itemsBoundingRect().center(),connSize);
 	PartsEditorConnectorsConnectorItem *connItem = new PartsEditorConnectorsConnectorItem(conn, m_item, m_showingTerminalPoints, bounds);
 	m_drawnConns[connId] = connItem;
 	connItem->setShowTerminalPoint(showTerminalPoint);
 
 	m_undoStack->push(new QUndoCommand(
-		QString("connector '%1' added to %2 view")
-		.arg(connId).arg(ViewLayer::viewIdentifierName(m_viewIdentifier))
-	));
+	                      QString("connector '%1' added to %2 view")
+	                      .arg(connId).arg(ViewLayer::viewIdentifierName(m_viewIdentifier))
+	                  ));
 }
 
 void PartsEditorView::removeConnector(const QString &connId) {
@@ -1146,9 +1141,9 @@ void PartsEditorView::removeConnector(const QString &connId) {
 		scene()->removeItem(connToRemove);
 		scene()->update();
 		m_undoStack->push(new QUndoCommand(
-			QString("connector '%1' removed from %2 view")
-			.arg(connId).arg(ViewLayer::viewIdentifierName(m_viewIdentifier))
-		));
+		                      QString("connector '%1' removed from %2 view")
+		                      .arg(connId).arg(ViewLayer::viewIdentifierName(m_viewIdentifier))
+		                  ));
 
 		PartsEditorConnectorsConnectorItem *connToRemoveAux = dynamic_cast<PartsEditorConnectorsConnectorItem*>(connToRemove);
 		m_drawnConns.remove(connToRemoveAux->connectorSharedID());
@@ -1191,7 +1186,7 @@ void PartsEditorView::setMismatching(ViewLayer::ViewIdentifier viewId, const QSt
 	if(m_item && viewId == m_viewIdentifier) {
 		for (int i = 0; i < m_item->childItems().count(); i++) {
 			PartsEditorConnectorsConnectorItem * connectorItem
-				= dynamic_cast<PartsEditorConnectorsConnectorItem *>(m_item->childItems()[i]);
+			    = dynamic_cast<PartsEditorConnectorsConnectorItem *>(m_item->childItems()[i]);
 			if(connectorItem == NULL) continue;
 
 			if(connectorItem->connector()->connectorSharedID() == id) {
@@ -1236,7 +1231,7 @@ void PartsEditorView::aboutToSave(bool fakeDefaultIfNone) {
 						QString("Couldn't open file for update, after drawing connectors: '%1'")
 							.arg(tempFile)
 					);*/
-                    DebugDialog::debug(QString("Couldn't open file for update, after drawing connectors: '%1'").arg(tempFile));
+					DebugDialog::debug(QString("Couldn't open file for update, after drawing connectors: '%1'").arg(tempFile));
 				}
 			}
 		} else {
@@ -1266,7 +1261,7 @@ bool PartsEditorView::addConnectorsIfNeeded(QDomDocument *svgDom, const QSizeF &
 }
 
 
-bool PartsEditorView::addDefaultLayerIfNotInSvg(QDomDocument *svgDom, bool fakeDefaultIfNone) 
+bool PartsEditorView::addDefaultLayerIfNotInSvg(QDomDocument *svgDom, bool fakeDefaultIfNone)
 {
 	QStringList defaultLayers = defaultLayerAsStringlist();
 	QStringList layers = getLayers(svgDom, fakeDefaultIfNone);
@@ -1301,21 +1296,21 @@ bool PartsEditorView::addDefaultLayerIfNotInSvg(QDomDocument *svgDom, bool fakeD
 LayerList PartsEditorView::defaultLayers() {
 	LayerList layers;
 	switch( m_viewIdentifier ) {
-		case ViewLayer::IconView: 
-			layers << ViewLayer::Icon; 
-			break;
-		case ViewLayer::BreadboardView: 
-			layers << ViewLayer::Breadboard; 
-			break;
-		case ViewLayer::SchematicView: 
-			layers << ViewLayer::Schematic; 
-			break;
-		case ViewLayer::PCBView: 
-			layers << ViewLayer::Copper0 << ViewLayer::Copper1;
-			break;
-		default: 
-			layers << ViewLayer::UnknownLayer;
-			break;
+	case ViewLayer::IconView:
+		layers << ViewLayer::Icon;
+		break;
+	case ViewLayer::BreadboardView:
+		layers << ViewLayer::Breadboard;
+		break;
+	case ViewLayer::SchematicView:
+		layers << ViewLayer::Schematic;
+		break;
+	case ViewLayer::PCBView:
+		layers << ViewLayer::Copper0 << ViewLayer::Copper1;
+		break;
+	default:
+		layers << ViewLayer::UnknownLayer;
+		break;
 	}
 	return layers;
 }
@@ -1339,17 +1334,17 @@ QString PartsEditorView::svgIdForConnector(const QString &connId) {
 	QDomElement elem = m_item->svgDom()->documentElement();
 	if(terminalIdForConnectorIdAux(result, connId, elem, false)) {
 		return result;
-	} 
-
-/*
-	foreach(Connector* conn, m_item->connectors()) {
-		QString svgId = svgIdForConnector(conn, connId);
-		if(connId != svgId) {
-			return svgId;
-		}
 	}
 
-*/
+	/*
+		foreach(Connector* conn, m_item->connectors()) {
+			QString svgId = svgIdForConnector(conn, connId);
+			if(connId != svgId) {
+				return svgId;
+			}
+		}
+
+	*/
 
 	return connId;
 }
@@ -1366,7 +1361,7 @@ QString PartsEditorView::svgIdForConnector(Connector* conn, const QString &connI
 bool PartsEditorView::updateTerminalPoints(QDomDocument *svgDom, const QSizeF &sceneViewBox, const QRectF &svgViewBox, const QString &connectorsLayerId) {
 	QList<PartsEditorConnectorsConnectorItem*> connsWithNewTPs;
 	QStringList tpIdsToRemove;
-	foreach(QGraphicsItem *item, items()) { 
+	foreach(QGraphicsItem *item, items()) {
 		PartsEditorConnectorsConnectorItem *citem = dynamic_cast<PartsEditorConnectorsConnectorItem*>(item);
 		if(citem) {
 			TerminalPointItem *tp = citem->terminalPointItem();
@@ -1413,7 +1408,7 @@ void PartsEditorView::updateSvgIdLayer(const QString &connId, const QString &ter
 		foreach(SvgIdLayer *sil, conn->connectorShared()->pins().values(m_viewIdentifier)) {
 			if(conn->connectorSharedID() == connId) {
 				sil->m_terminalId = terminalId;
-				
+
 				if(viewLayerID != ViewLayer::UnknownLayer) {
 					sil->m_svgViewLayerID = viewLayerID;
 				}
@@ -1444,8 +1439,8 @@ void PartsEditorView::removeTerminalPoints(const QStringList &tpIdsToRemove, QDo
 }
 
 void PartsEditorView::addNewTerminalPoints(
-			const QList<PartsEditorConnectorsConnectorItem*> &connsWithNewTPs, QDomDocument *svgDom,
-			const QSizeF &sceneViewBox, const QRectF &svgViewBox, const QString &connectorsLayerId
+    const QList<PartsEditorConnectorsConnectorItem*> &connsWithNewTPs, QDomDocument *svgDom,
+    const QSizeF &sceneViewBox, const QRectF &svgViewBox, const QString &connectorsLayerId
 ) {
 	foreach(PartsEditorConnectorsConnectorItem* citem, connsWithNewTPs) {
 		QString connId = citem->connector()->connectorSharedID();
@@ -1464,10 +1459,10 @@ void PartsEditorView::addNewTerminalPoints(
 			addRectToSvg(svgDom,connId+"terminal",svgTpRect, connectorsLayerId);
 		} else {
 			qWarning() << tr(
-				"Parts Editor: couldn't save terminal "
-				"point for connector %1 in %2 view")
-				.arg(citem->connector()->connectorSharedID())
-				.arg(ViewLayer::viewIdentifierNaturalName(m_viewIdentifier));
+			               "Parts Editor: couldn't save terminal "
+			               "point for connector %1 in %2 view")
+			           .arg(citem->connector()->connectorSharedID())
+			           .arg(ViewLayer::viewIdentifierNaturalName(m_viewIdentifier));
 		}
 	}
 }
@@ -1550,7 +1545,7 @@ bool PartsEditorView::isSupposedToBeRemoved(const QString& id) {
 			temp = temp.remove(0, toBeRemoved.length());
 			if (temp.length() == 0) return true;
 
-			// assumes svg id is always prefixDsuffix where D is some string of decimal digits 
+			// assumes svg id is always prefixDsuffix where D is some string of decimal digits
 			// and prefixD matches toBeRemoved
 			if (!temp.at(0).isDigit()) {
 				return true;
@@ -1568,7 +1563,7 @@ void PartsEditorView::showTerminalPoints(bool show) {
 	m_showingTerminalPoints = show;
 	foreach(QGraphicsItem *item, items()) {
 		PartsEditorConnectorsConnectorItem *connItem
-			= dynamic_cast<PartsEditorConnectorsConnectorItem*>(item);
+		    = dynamic_cast<PartsEditorConnectorsConnectorItem*>(item);
 		if(connItem) {
 			connItem->setShowTerminalPoint(show);
 		}
@@ -1643,7 +1638,7 @@ void PartsEditorView::recoverTerminalPointsState() {
 bool PartsEditorView::connsPosOrSizeChanged() {
 	foreach(QGraphicsItem *item, items()) {
 		PartsEditorConnectorsConnectorItem *citem =
-			dynamic_cast<PartsEditorConnectorsConnectorItem*>(item);
+		    dynamic_cast<PartsEditorConnectorsConnectorItem*>(item);
 		if(citem) {
 			TerminalPointItem *tp = citem->terminalPointItem();
 			if((tp && tp->hasBeenMoved()) || citem->hasBeenMoved() || citem->hasBeenResized()) {
@@ -1685,7 +1680,7 @@ void PartsEditorView::checkConnectorLayers(ViewLayer::ViewIdentifier viewIdentif
 		}
 	}
 
-	
+
 	foreach (SvgIdLayer * svgIdLayer, changes) {
 		SvgIdLayer * cpy = svgIdLayer->copyLayer();
 		existingConnector->connectorShared()->insertPin(viewIdentifier, cpy);
@@ -1725,7 +1720,7 @@ void PartsEditorView::updatePinsInfo(QList< QPointer<ConnectorShared> > connsSha
 		else if(!m_svgIds[connId].connectorId.isEmpty()) {
 			pinInfo->m_svgId = m_svgIds[connId].connectorId;
 			// terminal points are already updated (by the function updateTerminalPoints)
-				// pinInfo->m_terminalId = m_svgIds[connId].terminalId;
+			// pinInfo->m_terminalId = m_svgIds[connId].terminalId;
 		}
 	}
 
@@ -1755,9 +1750,9 @@ void PartsEditorView::updatePinsInfo(QList< QPointer<ConnectorShared> > connsSha
 }
 
 QString PartsEditorView::saveSvg(const QString & svg, const QString & newFilePath) {
-    if (!TextUtils::writeUtf8(newFilePath, svg)) {
-        throw tr("unable to open temp file %1").arg(newFilePath);
-    }
+	if (!TextUtils::writeUtf8(newFilePath, svg)) {
+		throw tr("unable to open temp file %1").arg(newFilePath);
+	}
 	return newFilePath;
 }
 
@@ -1989,5 +1984,5 @@ void PartsEditorView::deleteItem(ItemBase * itemBase, bool deleteModelPart, bool
 
 void PartsEditorView::setPaletteModel(PaletteModel * paletteModel)
 {
-    m_paletteModel = paletteModel;
+	m_paletteModel = paletteModel;
 }

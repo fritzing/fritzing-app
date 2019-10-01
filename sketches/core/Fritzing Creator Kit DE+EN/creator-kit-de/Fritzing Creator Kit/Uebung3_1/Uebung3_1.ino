@@ -1,7 +1,7 @@
 /*
   Matrix Übung
   LED-Matrix zeigt ein anderes Bild
-  
+
   Dieses Beispiel aus dem Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
@@ -15,8 +15,8 @@ int spaltenPins[8] = {13,8,17,10,5,16,4,14};   // Anschlüsse der Spaltenpins am
 // int spaltenPins[8] = {13,8,57,10,5,56,4,54};   // Anschlüsse der Spaltenpins am Arduino
 
 int image[8][8]={                              // Bild, das auf der Matrix gezeigt wird. 1 = LED an, 0 = LED aus
-  
-{0,0,1,1,0,1,1,0},  
+
+{0,0,1,1,0,1,1,0},
 {0,1,0,0,1,0,0,1},
 {0,1,0,0,0,0,0,1},
 {0,0,1,0,0,0,1,0},
@@ -25,17 +25,17 @@ int image[8][8]={                              // Bild, das auf der Matrix gezei
 {0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0}
 
-};                                              
+};
 
 void setup(){
-  for (int i=0; i<8; i++){                       // Alle Pins werden als OUTPUT declariert 
+  for (int i=0; i<8; i++){                       // Alle Pins werden als OUTPUT declariert
     pinMode(reihenPins[i],OUTPUT);
     pinMode(spaltenPins[i],OUTPUT);
   }
 }
 
 void loop(){
-  for (int y=0; y<8; y++){                       // zeilenweise werden 
+  for (int y=0; y<8; y++){                       // zeilenweise werden
     for (int x=0; x<8; x++){                     // von links nach rechts alle Einträge des Arrays geprüft
       if (image[x][y]==1){                       // ist der Eintrag = 1
         digitalWrite(spaltenPins[x],HIGH);       // wird der Spaltenpin eingeschalten

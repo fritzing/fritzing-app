@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6496 $:
-$Author: irascibl@gmail.com $:
-$Date: 2012-09-30 02:00:34 +0200 (So, 30. Sep 2012) $
 
 ********************************************************************/
 
@@ -37,7 +31,7 @@ $Date: 2012-09-30 02:00:34 +0200 (So, 30. Sep 2012) $
 #include "../utils/misc.h"
 #include "../utils/bundler.h"
 
-class FritzingWindow : public QMainWindow, public Bundler 
+class FritzingWindow : public QMainWindow, public Bundler
 {
 	Q_OBJECT
 
@@ -71,8 +65,8 @@ protected:
 
 	virtual bool saveAsAux(const QString & fileName) = 0;
 	virtual bool beforeClosing(bool showCancel, bool & discard);			// returns true if close, false if cancel
-    QMessageBox::StandardButton beforeClosingMessage(const QString & filename, bool showCancel);
-    virtual void setBeforeClosingText(const QString & filename, QMessageBox & messageBox);
+	QMessageBox::StandardButton beforeClosingMessage(const QString & filename, bool showCancel);
+	virtual void setBeforeClosingText(const QString & filename, QMessageBox & messageBox);
 
 	void createCloseAction();
 

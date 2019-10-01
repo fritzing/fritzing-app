@@ -16,12 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #
-# ********************************************************************
-#
-# $Revision: 3854 $:
-# $Author: cohen@irascible.com $:
-# $Date: 2009-12-10 17:42:28 +0100 (Thu, 10 Dec 2009) $
-#
 #********************************************************************/
 
 HEADERS += \
@@ -29,7 +23,7 @@ HEADERS += \
     src/program/programtab.h \
     src/program/programwindow.h \
     src/program/syntaxer.h \
-    src/program/trienode.h \ 
+    src/program/trienode.h \
     src/program/console.h \
     src/program/consolewindow.h \
     src/program/consolesettings.h \
@@ -37,7 +31,7 @@ HEADERS += \
     src/program/platformarduino.h \
     src/program/platformpicaxe.h \
     src/program/platformlaunchpad.h
- 
+
 SOURCES += \
     src/program/highlighter.cpp \
     src/program/programtab.cpp \

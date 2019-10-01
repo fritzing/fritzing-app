@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -64,13 +58,13 @@ void CornerHandler::doSetVisible(bool visible) {
 void CornerHandler::initPixmapHash() {
 	if(pixmapHash.isEmpty()) {
 		pixmapHash[Qt::TopLeftCorner] =
-			QPixmap(":/resources/images/itemselection/cornerHandlerActiveTopLeft.png");
+		    QPixmap(":/resources/images/itemselection/cornerHandlerActiveTopLeft.png");
 		pixmapHash[Qt::TopRightCorner] =
-		 	QPixmap(":/resources/images/itemselection/cornerHandlerActiveTopRight.png");
+		    QPixmap(":/resources/images/itemselection/cornerHandlerActiveTopRight.png");
 		pixmapHash[Qt::BottomRightCorner] =
-		 	QPixmap(":/resources/images/itemselection/cornerHandlerActiveBottomRight.png");
+		    QPixmap(":/resources/images/itemselection/cornerHandlerActiveBottomRight.png");
 		pixmapHash[Qt::BottomLeftCorner] =
-		 	QPixmap(":/resources/images/itemselection/cornerHandlerActiveBottomLeft.png");
+		    QPixmap(":/resources/images/itemselection/cornerHandlerActiveBottomLeft.png");
 	}
 }
 
@@ -85,15 +79,20 @@ void CornerHandler::resize(const QPointF &mousePos) {
 	double newY = mapToItem(m_parent->owner(),mousePos).y();
 
 	switch(m_corner) {
-		case Qt::TopLeftCorner:
-			m_parent->resizeRect(newX,newY,oldX2,oldY2); break;
-		case Qt::TopRightCorner:
-			m_parent->resizeRect(oldX1,newY,newX,oldY2); break;
-		case Qt::BottomRightCorner:
-			m_parent->resizeRect(oldX1,oldY1,newX,newY); break;
-		case Qt::BottomLeftCorner:
-			m_parent->resizeRect(newX,oldY1,oldX2,newY); break;
-		default: break;
+	case Qt::TopLeftCorner:
+		m_parent->resizeRect(newX,newY,oldX2,oldY2);
+		break;
+	case Qt::TopRightCorner:
+		m_parent->resizeRect(oldX1,newY,newX,oldY2);
+		break;
+	case Qt::BottomRightCorner:
+		m_parent->resizeRect(oldX1,oldY1,newX,newY);
+		break;
+	case Qt::BottomLeftCorner:
+		m_parent->resizeRect(newX,oldY1,oldX2,newY);
+		break;
+	default:
+		break;
 	}
 }
 
@@ -150,16 +149,16 @@ void CornerHandler::hoverLeaveEvent(QGraphicsSceneHoverEvent * event) {
 Qt::CursorShape CornerHandler::cursorForCorner(Qt::Corner corner) {
 	Qt::CursorShape cursorShape = Qt::SizeFDiagCursor;
 	switch(corner) {
-		case Qt::TopLeftCorner:
-		case Qt::BottomRightCorner:
-			cursorShape = Qt::SizeFDiagCursor;
-			break;
-		case Qt::TopRightCorner:
-		case Qt::BottomLeftCorner:
-			cursorShape = Qt::SizeBDiagCursor;
-			break;
-		default: 
-			throw "CornerHandler::cursorForCorner unknown corner";
+	case Qt::TopLeftCorner:
+	case Qt::BottomRightCorner:
+		cursorShape = Qt::SizeFDiagCursor;
+		break;
+	case Qt::TopRightCorner:
+	case Qt::BottomLeftCorner:
+		cursorShape = Qt::SizeBDiagCursor;
+		break;
+	default:
+		throw "CornerHandler::cursorForCorner unknown corner";
 	}
 	return cursorShape;
 }

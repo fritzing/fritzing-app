@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6976 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 
 ********************************************************************/
 
@@ -38,18 +32,18 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 static const double WireHoverStrokeFactor = 4.0;
 
 BreadboardSketchWidget::BreadboardSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
-    : SketchWidget(viewID, parent)
+	: SketchWidget(viewID, parent)
 {
 	m_shortName = QObject::tr("bb");
 	m_viewName = QObject::tr("Breadboard View");
 	initBackgroundColor();
 
-    m_colorWiresByLength = false;
-    QSettings settings;
-    QString colorWiresByLength = settings.value(QString("%1ColorWiresByLength").arg(getShortName())).toString();
-    if (!colorWiresByLength.isEmpty()) {
-        m_colorWiresByLength = (colorWiresByLength.compare("1") == 0);
-    }
+	m_colorWiresByLength = false;
+	QSettings settings;
+	QString colorWiresByLength = settings.value(QString("%1ColorWiresByLength").arg(getShortName())).toString();
+	if (!colorWiresByLength.isEmpty()) {
+		m_colorWiresByLength = (colorWiresByLength.compare("1") == 0);
+	}
 }
 
 void BreadboardSketchWidget::setWireVisible(Wire * wire)
@@ -117,28 +111,28 @@ BaseCommand::CrossViewType BreadboardSketchWidget::wireSplitCrossView()
 	return BaseCommand::CrossView;
 }
 
-bool BreadboardSketchWidget::canDropModelPart(ModelPart * modelPart) {	
+bool BreadboardSketchWidget::canDropModelPart(ModelPart * modelPart) {
 	if (!SketchWidget::canDropModelPart(modelPart)) return false;
 
-    if (Board::isBoard(modelPart)) {
-        return matchesLayer(modelPart);
-    }
+	if (Board::isBoard(modelPart)) {
+		return matchesLayer(modelPart);
+	}
 
 	switch (modelPart->itemType()) {
-		case ModelPart::Logo:
-             if (modelPart->moduleID().contains("breadboard", Qt::CaseInsensitive)) return true;
-		case ModelPart::Symbol:
-		case ModelPart::SchematicSubpart:
-		case ModelPart::Jumper:
-		case ModelPart::CopperFill:
-		case ModelPart::Hole:
-		case ModelPart::Via:
-			return false;
-		default:
-			if (modelPart->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName)) return false;
-			if (modelPart->moduleID().endsWith(ModuleIDNames::PadModuleIDName)) return false;
-			if (modelPart->moduleID().endsWith(ModuleIDNames::CopperBlockerModuleIDName)) return false;
-			return true;
+	case ModelPart::Logo:
+		return modelPart->moduleID().contains("breadboard", Qt::CaseInsensitive);
+	case ModelPart::Symbol:
+	case ModelPart::SchematicSubpart:
+	case ModelPart::Jumper:
+	case ModelPart::CopperFill:
+	case ModelPart::Hole:
+	case ModelPart::Via:
+		return false;
+	default:
+		if (modelPart->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName)) return false;
+		if (modelPart->moduleID().endsWith(ModuleIDNames::PadModuleIDName)) return false;
+		if (modelPart->moduleID().endsWith(ModuleIDNames::CopperBlockerModuleIDName)) return false;
+		return true;
 	}
 }
 
@@ -149,7 +143,7 @@ void BreadboardSketchWidget::initWire(Wire * wire, int penWidth) {
 	}
 	wire->setPenWidth(penWidth - 2, this, (penWidth - 2) * WireHoverStrokeFactor);
 	wire->setColorString("blue", 1.0, false);
-    wire->colorByLength(m_colorWiresByLength);
+	wire->colorByLength(m_colorWiresByLength);
 }
 
 const QString & BreadboardSketchWidget::traceColor(ViewLayer::ViewLayerPlacement) {
@@ -175,27 +169,28 @@ void BreadboardSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase
 
 void BreadboardSketchWidget::setNewPartVisible(ItemBase * itemBase) {
 	switch (itemBase->itemType()) {
-		case ModelPart::Symbol:
-		case ModelPart::SchematicSubpart:
-		case ModelPart::Jumper:
-		case ModelPart::CopperFill:
-		case ModelPart::Logo:
-            if (itemBase->moduleID().contains("breadboard", Qt::CaseInsensitive)) return;
-		case ModelPart::Hole:
-		case ModelPart::Via:
+	case ModelPart::Symbol:
+	case ModelPart::SchematicSubpart:
+	case ModelPart::Jumper:
+	case ModelPart::CopperFill:
+	case ModelPart::Logo:
+		if (itemBase->moduleID().contains("breadboard", Qt::CaseInsensitive)) return;
+		[[clang::fallthrough]];
+	case ModelPart::Hole:
+	case ModelPart::Via:
+		itemBase->setVisible(false);
+		itemBase->setEverVisible(false);
+		return;
+	default:
+		if (itemBase->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName) ||
+		        itemBase->moduleID().endsWith(ModuleIDNames::PadModuleIDName) ||
+		        itemBase->moduleID().endsWith(ModuleIDNames::PowerModuleIDName))
+		{
 			itemBase->setVisible(false);
 			itemBase->setEverVisible(false);
 			return;
-		default:
-			if (itemBase->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName) || 
-				itemBase->moduleID().endsWith(ModuleIDNames::PadModuleIDName) ||
-                itemBase->moduleID().endsWith(ModuleIDNames::PowerModuleIDName)) 
-			{
-				itemBase->setVisible(false);
-				itemBase->setEverVisible(false);
-				return;
-			}
-			break;
+		}
+		break;
 	}
 }
 
@@ -219,7 +214,7 @@ void BreadboardSketchWidget::addDefaultParts() {
 	long newID = ItemBase::getNextID();
 	ViewGeometry viewGeometry;
 	viewGeometry.setLoc(QPointF(0, 0));
-    ModelPart * modelPart = referenceModel()->retrieveModelPart(ModuleIDNames::FullPlusBreadboardModuleIDName);
+	ModelPart * modelPart = referenceModel()->retrieveModelPart(ModuleIDNames::FullPlusBreadboardModuleIDName);
 	m_addedDefaultPart = addItem(modelPart, defaultViewLayerPlacement(modelPart), BaseCommand::CrossView, viewGeometry, newID, -1, NULL);
 	m_addDefaultParts = true;
 	// have to put this off until later, because positioning the item doesn't work correctly until the view is visible
@@ -232,7 +227,7 @@ void BreadboardSketchWidget::showEvent(QShowEvent * event) {
 		QSizeF partSize = m_addedDefaultPart->size();
 		QSizeF vpSize = this->viewport()->size();
 		//if (vpSize.height() < helpSize.height() + 50 + partSize.height()) {
-			//vpSize.setWidth(vpSize.width() - verticalScrollBar()->width());
+		//vpSize.setWidth(vpSize.width() - verticalScrollBar()->width());
 		//}
 
 		QPointF p;
@@ -258,20 +253,19 @@ void BreadboardSketchWidget::getBendpointWidths(Wire * wire, double width, doubl
 }
 
 void BreadboardSketchWidget::colorWiresByLength(bool colorByLength) {
-    m_colorWiresByLength = colorByLength;
-    QSettings settings;
-    settings.setValue(QString("%1ColorWiresByLength").arg(viewName()), colorByLength);
+	m_colorWiresByLength = colorByLength;
+	QSettings settings;
+	settings.setValue(QString("%1ColorWiresByLength").arg(viewName()), colorByLength);
 
-    QList<Wire *> wires;
-    QList<Wire *> visited;
-    foreach (QGraphicsItem * item, scene()->items()) {
-        Wire * wire = dynamic_cast<Wire *>(item);
-        if (wire == NULL) continue;
-        wire->colorByLength(colorByLength);
-    }
+	QList<Wire *> wires;
+	QList<Wire *> visited;
+	foreach (QGraphicsItem * item, scene()->items()) {
+		Wire * wire = dynamic_cast<Wire *>(item);
+		if (wire == NULL) continue;
+		wire->colorByLength(colorByLength);
+	}
 }
 
 bool BreadboardSketchWidget::coloringWiresByLength() {
-    return m_colorWiresByLength;
+	return m_colorWiresByLength;
 }
-

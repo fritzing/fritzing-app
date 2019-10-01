@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6984 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -63,10 +57,10 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 			focusOutComboBox->setEditable(propertyDef->editable);
 			focusOutComboBox->setObjectName("infoViewComboBox");
 			QString current = m_propertyDefs.value(propertyDef);
-            if (propertyDef->editable) {
-                focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value").arg(returnProp));
-            }
-		
+			if (propertyDef->editable) {
+				focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value").arg(returnProp));
+			}
+
 			if (propertyDef->numeric) {
 				if (!current.isEmpty()) {
 					double val = TextUtils::convertFromPowerPrefixU(current, propertyDef->symbol);
@@ -104,8 +98,8 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 					validator->setBounds(propertyDef->minValue, propertyDef->maxValue);
 				}
 				QString pattern = QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d{1,2}))[%1]{0,1}[%2]{0,1}")
-												.arg(TextUtils::PowerPrefixesString)
-												.arg(propertyDef->symbol);
+				                  .arg(TextUtils::PowerPrefixesString)
+				                  .arg(propertyDef->symbol);
 				validator->setRegExp(QRegExp(pattern));
 				focusOutComboBox->setValidator(validator);
 				connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(propertyEntry(const QString &)));
@@ -115,9 +109,9 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 			}
 
 			this->m_comboBoxes.insert(propertyDef, focusOutComboBox);
-				
+
 			returnValue = focusOutComboBox->currentText();
-			returnWidget = focusOutComboBox;	
+			returnWidget = focusOutComboBox;
 
 			return true;
 		}
@@ -170,7 +164,7 @@ void Capacitor::setProp(const QString & prop, const QString & value) {
 }
 
 void Capacitor::simplePropertyEntry(const QString & text) {
-	
+
 	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
 	if (focusOutComboBox == NULL) return;
 

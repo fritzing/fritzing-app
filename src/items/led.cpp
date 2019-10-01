@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6980 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -46,20 +40,20 @@ LED::LED( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & 
 LED::~LED() {
 }
 
-QString LED::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
+QString LED::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
 {
 	switch (viewLayerID) {
-		case ViewLayer::Breadboard:
-		case ViewLayer::Icon:
-			break;
-		default:
-			return Capacitor::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
+	case ViewLayer::Breadboard:
+	case ViewLayer::Icon:
+		break;
+	default:
+		return Capacitor::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 	}
 
 	QString svg = getColorSVG(prop("color"), viewLayerID);
 	if (svg.isEmpty()) return "";
 
-    return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
+	return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
 }
 
 void LED::addedToScene(bool temporary)
@@ -68,16 +62,16 @@ void LED::addedToScene(bool temporary)
 		setColor(prop("color"));
 	}
 
-    return Capacitor::addedToScene(temporary);
+	return Capacitor::addedToScene(temporary);
 }
 
 bool LED::hasCustomSVG() {
 	switch (m_viewID) {
-		case ViewLayer::BreadboardView:
-		case ViewLayer::IconView:
-			return true;
-		default:
-			return ItemBase::hasCustomSVG();
+	case ViewLayer::BreadboardView:
+	case ViewLayer::IconView:
+		return true;
+	default:
+		return ItemBase::hasCustomSVG();
 	}
 }
 
@@ -89,7 +83,7 @@ ItemBase::PluralType LED::isPlural() {
 	return Plural;
 }
 
-void LED::setProp(const QString & prop, const QString & value) 
+void LED::setProp(const QString & prop, const QString & value)
 {
 	Capacitor::setProp(prop, value);
 
@@ -112,14 +106,14 @@ void LED::slamColor(QDomElement & element, const QString & colorString)
 	}
 }
 
-void LED::setColor(const QString & color) 
+void LED::setColor(const QString & color)
 {
 	switch (m_viewLayerID) {
-		case ViewLayer::Breadboard:
-		case ViewLayer::Icon:
-			break;
-		default:
-			return;
+	case ViewLayer::Breadboard:
+	case ViewLayer::Icon:
+		break;
+	default:
+		return;
 	}
 
 	reloadRenderer(getColorSVG(color, m_viewLayerID),true);
@@ -137,7 +131,7 @@ void LED::setColor(const QString & color)
 	}
 }
 
-QString LED::getColorSVG(const QString & color, ViewLayer::ViewLayerID viewLayerID) 
+QString LED::getColorSVG(const QString & color, ViewLayer::ViewLayerID viewLayerID)
 {
 	QString errorStr;
 	int errorLine;
@@ -180,10 +174,9 @@ const QString & LED::title() {
 }
 
 ViewLayer::ViewID LED::useViewIDForPixmap(ViewLayer::ViewID vid, bool swappingEnabled) {
-    if (swappingEnabled && vid == ViewLayer::BreadboardView) {
-        return vid;
-    }
+	if (swappingEnabled && vid == ViewLayer::BreadboardView) {
+		return vid;
+	}
 
-    return ItemBase::useViewIDForPixmap(vid, swappingEnabled);
+	return ItemBase::useViewIDForPixmap(vid, swappingEnabled);
 }
-

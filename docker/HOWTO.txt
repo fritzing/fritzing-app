@@ -1,0 +1,57 @@
+# HOWTO work with fritzing docker containers.
+# Docker containers are used for Fritzing's official linux builds.
+# It'd be good to have Windows and MacOS containers too, but that's not achieved yet.
+
+# Improving the docker configuration
+
+## To build the docker container locally.
+
+cp Dockerfile.fedora Dockerfile
+docker build --tag fritzing/build:fedora-30 .
+
+## To build a release in this docker container
+docker/release-linux.sh fedora-30 debug-001.fedora-30
+
+## To verify the build
+# During the release step above, Fritzing is already run to create the parts database.
+# Assuming you used the build name "debug-001.fedora-30", the file command should recognize
+# it as an sqlite database. If the file does not exist, there was a problem with the build.
+# (Note: in debug mode, the script will *not* ensure a clean repo, so the file might be
+# an older version)
+
+file fritzing-debug-001.fedora-30.linux.AMD64/fritzing-parts/parts.db
+> fritzing-debug-001.fedora-30.linux.AMD64/fritzing-parts/parts.db: SQLite 3.x database, last written using SQLite version 3026000
+
+
+## To publish it
+# Note: These tags are used by the CI/CD build system,
+# and will be effective immediately.
+# For testing purposes, use your own docker namespace.
+# If you would like to improve the official Fritzing docker
+# build containers, please ask Kjell or Ovidiu-Florin
+#
+docker push fritzing/build:fedora-30
+
+# You can test the new docker container online by re-triggering an old travis-ci build.
+# Alternatively you can make a pull request to develop branch, which triggers a build on travis-ci.
+
+
+# Using docker for local builds
+
+release-linux.sh
+
+To create release (or debug) versions, use the script release-linux.sh < platform > < release name>.
+
+If the releasename includes the magic keyword "debug", debug information will be added to
+the binary, and the "develop" branch of fritzing-parts will be used for the parts database.
+For examples, see the file travis.yml.
+
+xvfb-release-helper.sh
+
+This script is not thought to be called directly. It is required to enable automated
+CLI calls to Fritzing on headless systems (without GUI.
+
+
+build-linux.sh
+
+Just do a quick build. This script is not an essential part of the toolchain.

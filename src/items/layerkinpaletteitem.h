@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6998 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
-
 ********************************************************************/
 
 #ifndef LAYERKINPALETTEITEM_H
@@ -32,9 +26,9 @@ $Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 
 class LayerKinPaletteItem : public PaletteItemBase
 {
-Q_OBJECT
+	Q_OBJECT
 
-public:       
+public:
 	LayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
 	void setOffset(double x, double y);
 	ItemBase * layerKinChief();
@@ -54,7 +48,7 @@ public:
 	void resetID();
 	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	bool isSwappable();
-    void setSwappable(bool);
+	void setSwappable(bool);
 	bool inRotation();
 	void setInRotation(bool);
 
@@ -69,43 +63,43 @@ protected:
 protected:
 	QPointer<PaletteItemBase> m_layerKinChief;
 	bool m_ok;
-    bool m_passMouseEvents;
+	bool m_passMouseEvents;
 };
 
 struct TextThing {
-    int minX;
-    int maxX;
-    int minY;
-    int maxY;
-    QRectF newRect;
-    QMatrix flipMatrix;
+	int minX;
+	int maxX;
+	int minY;
+	int maxY;
+	QRectF newRect;
+	QMatrix flipMatrix;
 };
 
 class SchematicTextLayerKinPaletteItem : public LayerKinPaletteItem
 {
-Q_OBJECT
-
-public:       
-	SchematicTextLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
-
-    void transformItem(const QTransform &, bool includeRatsnest);
-    void clearTextThings();
-    void setTransform2(const QTransform &);
+	Q_OBJECT
 
 public:
-    static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix &, QRectF & viewBox); 
+	SchematicTextLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
+
+	void transformItem(const QTransform &, bool includeRatsnest);
+	void clearTextThings();
+	void setTransform2(const QTransform &);
+
+public:
+	static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix &, QRectF & viewBox);
 
 protected:
-    QString makeFlipTextSvg();
-    void positionTexts(QList<QDomElement> & texts);
-    void initTextThings();
-    QString vflip(const QString & svg, bool isFlipped);
-    void setInitialTransform(const QTransform &);
-    void cacheLoaded(const LayerAttributes &);
+	QString makeFlipTextSvg();
+	void positionTexts(QList<QDomElement> & texts);
+	void initTextThings();
+	QString vflip(const QString & svg, bool isFlipped);
+	void setInitialTransform(const QTransform &);
+	void cacheLoaded(const LayerAttributes &);
 
 protected:
-    bool m_flipped;
-    QList<TextThing> m_textThings;
+	bool m_flipped;
+	QList<TextThing> m_textThings;
 };
 
 

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6958 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-07 22:56:44 +0200 (So, 07. Apr 2013) $
 
 ********************************************************************/
 
@@ -46,22 +40,22 @@ public:
 	static QString folderPath();
 	static QString fzpPath();
 	static QString partPath();
-    static bool svgFileExists(const QString & expectedFileName, QString & path);
-    static bool fzpFileExists(const QString & moduleID, QString & path);
-    static QString makeSchematicSipOrDipOr(const QStringList & labels, bool hasLayout, bool sip);
+	static bool svgFileExists(const QString & expectedFileName, QString & path);
+	static bool fzpFileExists(const QString & moduleID, QString & path);
+	static QString makeSchematicSipOrDipOr(const QStringList & labels, bool hasLayout, bool sip);
 	static QString getSvgFilename(const QString & filename);
 
 protected:
 	static QString getFzpFilenameAux(const QString & moduleID, GenFzp);
 	static QString getSvgFilenameAux(const QString & expectedFileName, GenSvg);
 	static class ItemBase * createPartAux(class ModelPart *, ViewLayer::ViewID, const class ViewGeometry & viewGeometry, long id, QMenu * itemMenu, QMenu * wireMenu, bool doLabel);
-    static QDomElement showSubpart(QDomElement & root, const QString & subpart);
-    static void fixSubpartBounds(QDomElement &, ModelPartShared *);
+	static QDomElement showSubpart(QDomElement & root, const QString & subpart);
+	static void fixSubpartBounds(QDomElement &, ModelPartShared *);
 
 
 
 public:
-    static const QString OldSchematicPrefix;
+	static const QString OldSchematicPrefix;
 };
 
 #endif

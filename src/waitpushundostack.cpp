@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -44,10 +38,10 @@ CommandTimer::CommandTimer(QUndoCommand * command, int delayMS, WaitPushUndoStac
 }
 
 void CommandTimer::timedout() {
-    if (m_undoStack) {
-	    m_undoStack->push(m_command);
-	    m_undoStack->deleteTimer(this);
-    }
+	if (m_undoStack) {
+		m_undoStack->push(m_command);
+		m_undoStack->deleteTimer(this);
+	}
 }
 
 /////////////////////////////////
@@ -55,10 +49,10 @@ void CommandTimer::timedout() {
 WaitPushUndoStack::WaitPushUndoStack(QObject * parent) :
 	QUndoStack(parent)
 {
-    m_temporary = NULL;
+	m_temporary = NULL;
 #ifndef QT_NO_DEBUG
-    QString path = FolderUtils::getTopLevelUserDataStorePath();
-    path += "/undostack.txt";
+	QString path = FolderUtils::getTopLevelUserDataStorePath();
+	path += "/undostack.txt";
 
 	m_file.setFileName(path);
 	m_file.remove();
@@ -66,46 +60,46 @@ WaitPushUndoStack::WaitPushUndoStack(QObject * parent) :
 }
 
 WaitPushUndoStack::~WaitPushUndoStack() {
-    clearLiveTimers();
-    clearDeadTimers();
+	clearLiveTimers();
+	clearDeadTimers();
 }
 
-void WaitPushUndoStack::push(QUndoCommand * cmd) 
+void WaitPushUndoStack::push(QUndoCommand * cmd)
 {
 #ifndef QT_NO_DEBUG
 	writeUndo(cmd, 0, NULL);
 #endif
-    if (m_temporary == cmd) {
-        m_temporary->redo();
-        return;
-    }
-	
+	if (m_temporary == cmd) {
+		m_temporary->redo();
+		return;
+	}
+
 	QUndoStack::push(cmd);
 }
 
 
 void WaitPushUndoStack::waitPush(QUndoCommand * command, int delayMS) {
 	clearDeadTimers();
-    if (delayMS <= 0) {
-        push(command);
-        return;
-    }
+	if (delayMS <= 0) {
+		push(command);
+		return;
+	}
 
 	new CommandTimer(command, delayMS, this);
 }
 
 
 void WaitPushUndoStack::waitPushTemporary(QUndoCommand * command, int delayMS) {
-    m_temporary = command;
+	m_temporary = command;
 	waitPush(command, delayMS);
 }
 
 void WaitPushUndoStack::clearDeadTimers() {
-    clearTimers(m_deadTimers);
+	clearTimers(m_deadTimers);
 }
 
 void WaitPushUndoStack::clearLiveTimers() {
-    clearTimers(m_liveTimers);
+	clearTimers(m_liveTimers);
 }
 
 void WaitPushUndoStack::clearTimers(QList<QTimer *> & timers) {
@@ -133,27 +127,27 @@ bool WaitPushUndoStack::hasTimers() {
 }
 
 void WaitPushUndoStack::resolveTemporary() {
-    TemporaryCommand * tc = dynamic_cast<TemporaryCommand *>(m_temporary);
-    m_temporary = NULL;
-    if (tc) {
-        tc->setEnabled(false);
-        push(tc);
-        tc->setEnabled(true);
-    }
+	TemporaryCommand * tc = dynamic_cast<TemporaryCommand *>(m_temporary);
+	m_temporary = NULL;
+	if (tc) {
+		tc->setEnabled(false);
+		push(tc);
+		tc->setEnabled(true);
+	}
 }
 
 void WaitPushUndoStack::deleteTemporary() {
-    if (m_temporary != NULL) {
-        delete m_temporary;
-        m_temporary = NULL;
-    }
+	if (m_temporary != NULL) {
+		delete m_temporary;
+		m_temporary = NULL;
+	}
 }
 
 #ifndef QT_NO_DEBUG
-void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const BaseCommand * parent) 
+void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const BaseCommand * parent)
 {
 	const BaseCommand * bcmd = dynamic_cast<const BaseCommand *>(cmd);
-	QString cmdString; 
+	QString cmdString;
 	QString indexString;
 	if (bcmd == NULL) {
 		cmdString = cmd->text();
@@ -163,9 +157,9 @@ void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const Ba
 		indexString = QString::number(bcmd->index()) + " ";
 	}
 
-   	if (m_file.open(QIODevice::Append | QIODevice::Text)) {
-   		QTextStream out(&m_file);
-		QString indentString(indent, QChar(' '));	
+	if (m_file.open(QIODevice::Append | QIODevice::Text)) {
+		QTextStream out(&m_file);
+		QString indentString(indent, QChar(' '));
 		if (parent) {
 			indentString += QString("(%1) ").arg(parent->index());
 		}
@@ -185,4 +179,3 @@ void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const Ba
 	}
 }
 #endif
-

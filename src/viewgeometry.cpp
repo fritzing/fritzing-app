@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6112 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 
 ********************************************************************/
 
@@ -49,9 +43,9 @@ ViewGeometry::ViewGeometry(QDomElement & geometry) {
 	QString x1 = geometry.attribute("x1");
 	if (!x1.isEmpty()) {
 		m_line.setLine( geometry.attribute("x1").toDouble(),
-						geometry.attribute("y1").toDouble(),
-						geometry.attribute("x2").toDouble(),
-						geometry.attribute("y2").toDouble() );
+		                geometry.attribute("y1").toDouble(),
+		                geometry.attribute("x2").toDouble(),
+		                geometry.attribute("y2").toDouble() );
 	}
 	QString w = geometry.attribute("width");
 	if (!w.isEmpty()) {
@@ -105,12 +99,12 @@ QRectF ViewGeometry::rect() const {
 	return m_rect;
 }
 
-void ViewGeometry::setRect(double x, double y, double width, double height) 
+void ViewGeometry::setRect(double x, double y, double width, double height)
 {
 	m_rect.setRect(x, y, width, height);
 }
 
-void ViewGeometry::setRect(const QRectF & r) 
+void ViewGeometry::setRect(const QRectF & r)
 {
 	setRect(r.x(), r.y(), r.width(), r.height());
 }
@@ -157,12 +151,12 @@ void ViewGeometry::setAutoroutable(bool autoroutable) {
 }
 
 bool ViewGeometry::getRouted() const {
-	
+
 	return m_wireFlags.testFlag(RoutedFlag);
 }
 
 bool ViewGeometry::getNormal() const {
-	
+
 	return m_wireFlags.testFlag(NormalFlag);
 }
 

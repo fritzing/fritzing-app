@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6976 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 
 ********************************************************************/
 
@@ -56,8 +50,8 @@ static LayerList PCBViewFromBelowLayerList;
 
 NamePair::NamePair(QString xml, QString display)
 {
-    xmlName = xml;
-    displayName = display;
+	xmlName = xml;
+	displayName = display;
 }
 
 //////////////////////////////////////////////
@@ -93,12 +87,12 @@ protected:
 
 ViewLayer::ViewLayer(ViewLayerID viewLayerID, bool visible, double initialZ)
 {
-    m_fromBelow = false;
+	m_fromBelow = false;
 	m_viewLayerID = viewLayerID;
 	m_visible = visible;
 	m_action = NULL;
-	m_initialZFromBelow = m_initialZ = initialZ;	
-    m_nextZ = 0;
+	m_initialZFromBelow = m_initialZ = initialZ;
+	m_nextZ = 0;
 	m_parentLayer = NULL;
 	m_active = true;
 	m_includeChildLayers = true;
@@ -116,8 +110,8 @@ void ViewLayer::initNames() {
 	}
 	if (NonCopperLayers.isEmpty()) {
 		NonCopperLayers << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label
-						<< ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label 
-						<< ViewLayer::PartImage;
+		                << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label
+		                << ViewLayer::PartImage;
 	}
 
 	if (names.count() == 0) {
@@ -168,15 +162,15 @@ void ViewLayer::initNames() {
 		alternatives.insert(ViewLayer::Copper0, ViewLayer::Copper1);
 		alternatives.insert(ViewLayer::Copper1, ViewLayer::Copper0);
 
-        LayerList l0, l1;
-        l0 << ViewLayer::Copper0 << ViewLayer::Copper0Trace << ViewLayer::GroundPlane0;
-        l1 << ViewLayer::Copper1 << ViewLayer::Copper1Trace << ViewLayer::GroundPlane1;
-        foreach (ViewLayer::ViewLayerID viewLayerID0, l0) {
-            foreach (ViewLayer::ViewLayerID viewLayerID1, l1) {
-                unconnectables.insert(viewLayerID0, viewLayerID1);
-                unconnectables.insert(viewLayerID1, viewLayerID0);
-            }
-        }
+		LayerList l0, l1;
+		l0 << ViewLayer::Copper0 << ViewLayer::Copper0Trace << ViewLayer::GroundPlane0;
+		l1 << ViewLayer::Copper1 << ViewLayer::Copper1Trace << ViewLayer::GroundPlane1;
+		foreach (ViewLayer::ViewLayerID viewLayerID0, l0) {
+			foreach (ViewLayer::ViewLayerID viewLayerID1, l1) {
+				unconnectables.insert(viewLayerID0, viewLayerID1);
+				unconnectables.insert(viewLayerID1, viewLayerID0);
+			}
+		}
 	}
 
 	if (ViewIDNames.count() == 0) {
@@ -188,34 +182,34 @@ void ViewLayer::initNames() {
 
 	if (BreadboardViewLayerList.count() == 0) {
 		IconViewLayerList << ViewLayer::Icon;
-		BreadboardViewLayerList << ViewLayer::BreadboardBreadboard << ViewLayer::Breadboard 
-			<< ViewLayer::BreadboardWire << ViewLayer::BreadboardLabel 
-			<< ViewLayer::BreadboardRatsnest 
-			<< ViewLayer::BreadboardNote << ViewLayer::BreadboardRuler;
+		BreadboardViewLayerList << ViewLayer::BreadboardBreadboard << ViewLayer::Breadboard
+		                        << ViewLayer::BreadboardWire << ViewLayer::BreadboardLabel
+		                        << ViewLayer::BreadboardRatsnest
+		                        << ViewLayer::BreadboardNote << ViewLayer::BreadboardRuler;
 		SchematicViewLayerList << ViewLayer::SchematicFrame << ViewLayer::Schematic
-			<< ViewLayer::SchematicText << ViewLayer::SchematicWire 
-			<< ViewLayer::SchematicTrace << ViewLayer::SchematicLabel 
-			<< ViewLayer::SchematicNote <<  ViewLayer::SchematicRuler;
-		PCBViewLayerList << ViewLayer::Board 
-            << ViewLayer::GroundPlane0 
-			<< ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label
-			<< ViewLayer::Copper0  << ViewLayer::Copper0Trace 
-            << ViewLayer::GroundPlane1 
-			<< ViewLayer::Copper1 << ViewLayer::Copper1Trace 
-			<< ViewLayer::PcbRatsnest 
-			<< ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label 
-			<< ViewLayer::PartImage 
-			<< ViewLayer::PcbNote << ViewLayer::PcbRuler;
-		PCBViewFromBelowLayerList << ViewLayer::Board 
-            << ViewLayer::GroundPlane1 
-			<< ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label 
-			<< ViewLayer::Copper1 << ViewLayer::Copper1Trace 
-            << ViewLayer::GroundPlane0 
-			<< ViewLayer::Copper0 << ViewLayer::Copper0Trace 
-			<< ViewLayer::PcbRatsnest 
-			<< ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label
-			<< ViewLayer::PartImage 
-			<< ViewLayer::PcbNote << ViewLayer::PcbRuler;
+		                       << ViewLayer::SchematicText << ViewLayer::SchematicWire
+		                       << ViewLayer::SchematicTrace << ViewLayer::SchematicLabel
+		                       << ViewLayer::SchematicNote <<  ViewLayer::SchematicRuler;
+		PCBViewLayerList << ViewLayer::Board
+		                 << ViewLayer::GroundPlane0
+		                 << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label
+		                 << ViewLayer::Copper0  << ViewLayer::Copper0Trace
+		                 << ViewLayer::GroundPlane1
+		                 << ViewLayer::Copper1 << ViewLayer::Copper1Trace
+		                 << ViewLayer::PcbRatsnest
+		                 << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label
+		                 << ViewLayer::PartImage
+		                 << ViewLayer::PcbNote << ViewLayer::PcbRuler;
+		PCBViewFromBelowLayerList << ViewLayer::Board
+		                          << ViewLayer::GroundPlane1
+		                          << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label
+		                          << ViewLayer::Copper1 << ViewLayer::Copper1Trace
+		                          << ViewLayer::GroundPlane0
+		                          << ViewLayer::Copper0 << ViewLayer::Copper0Trace
+		                          << ViewLayer::PcbRatsnest
+		                          << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label
+		                          << ViewLayer::PartImage
+		                          << ViewLayer::PcbNote << ViewLayer::PcbRuler;
 	}
 }
 
@@ -294,9 +288,9 @@ const QList<ViewLayer *> & ViewLayer::childLayers() {
 }
 
 bool ViewLayer::alreadyInLayer(double z) {
-    if (m_fromBelow) {
-	    return (z >= m_initialZFromBelow && z <= m_initialZFromBelow + m_nextZ);
-    }
+	if (m_fromBelow) {
+		return (z >= m_initialZFromBelow && z <= m_initialZFromBelow + m_nextZ);
+	}
 
 	return (z >= m_initialZ && z <= m_initialZ + m_nextZ);
 }
@@ -326,7 +320,7 @@ LayerList ViewLayer::findAlternativeLayers(ViewLayer::ViewLayerID id)
 bool ViewLayer::canConnect(ViewLayer::ViewLayerID v1, ViewLayer::ViewLayerID v2) {
 	if (v1 == v2) return true;
 
- 	LayerList uncs = unconnectables.values(v1);
+	LayerList uncs = unconnectables.values(v1);
 	return (!uncs.contains(v2));
 }
 
@@ -338,30 +332,30 @@ void ViewLayer::setActive(bool a) {
 	m_active = a;
 }
 
-ViewLayer::ViewLayerPlacement ViewLayer::specFromID(ViewLayer::ViewLayerID viewLayerID) 
+ViewLayer::ViewLayerPlacement ViewLayer::specFromID(ViewLayer::ViewLayerID viewLayerID)
 {
 	switch (viewLayerID) {
-		case Copper1:
-		case Copper1Trace:
-		case GroundPlane1:
-			return ViewLayer::NewTop;
-		default:
-			return ViewLayer::NewBottom;
+	case Copper1:
+	case Copper1Trace:
+	case GroundPlane1:
+		return ViewLayer::NewTop;
+	default:
+		return ViewLayer::NewBottom;
 	}
 }
 
 bool ViewLayer::isCopperLayer(ViewLayer::ViewLayerID viewLayerID) {
 	if (CopperTopLayers.contains(viewLayerID)) return true;
 	if (CopperBottomLayers.contains(viewLayerID)) return true;
-	
+
 	return false;
 }
 
 
-const LayerList & ViewLayer::copperLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement) 
+const LayerList & ViewLayer::copperLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement)
 {
 	if (viewLayerPlacement == ViewLayer::NewTop) return CopperTopLayers;
-	
+
 	return CopperBottomLayers;
 }
 
@@ -375,7 +369,7 @@ const LayerList & ViewLayer::maskLayers(ViewLayer::ViewLayerPlacement viewLayerP
 		top << ViewLayer::Copper1;
 	}
 	if (viewLayerPlacement == ViewLayer::NewTop) return top;
-	
+
 	return bottom;
 }
 
@@ -389,7 +383,7 @@ const LayerList & ViewLayer::silkLayers(ViewLayer::ViewLayerPlacement viewLayerP
 		top << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label;
 	}
 	if (viewLayerPlacement == ViewLayer::NewTop) return top;
-	
+
 	return bottom;
 }
 
@@ -398,7 +392,7 @@ const LayerList & ViewLayer::outlineLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Board;
 	}
-	
+
 	return layerList;
 }
 
@@ -407,7 +401,7 @@ const LayerList & ViewLayer::drillLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Copper0 << ViewLayer::Copper1;
 	}
-	
+
 	return layerList;
 }
 
@@ -416,7 +410,7 @@ const LayerList & ViewLayer::silkLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen1;
 	}
-	
+
 	return layerList;
 }
 
@@ -425,7 +419,7 @@ const LayerList & ViewLayer::topLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Copper1 << ViewLayer::Copper1Trace << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label << ViewLayer::GroundPlane1;
 	}
-	
+
 	return layerList;
 }
 
@@ -434,7 +428,7 @@ const LayerList & ViewLayer::bottomLayers() {
 	if (layerList.isEmpty()) {
 		layerList << ViewLayer::Copper0 << ViewLayer::Copper0Trace << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label << ViewLayer::GroundPlane0;
 	}
-	
+
 	return layerList;
 }
 
@@ -450,7 +444,7 @@ bool ViewLayer::isNonCopperLayer(ViewLayer::ViewLayerID viewLayerID) {
 
 bool ViewLayer::includeChildLayers() {
 	return m_includeChildLayers;
-} 
+}
 
 void ViewLayer::setIncludeChildLayers(bool incl) {
 	m_includeChildLayers = incl;
@@ -495,31 +489,31 @@ ViewLayer::ViewID ViewLayer::idFromXmlName(const QString & name) {
 
 const LayerList & ViewLayer::layersForView(ViewLayer::ViewID viewID) {
 	switch(viewID) {
-		case IconView:
-			return IconViewLayerList;
-		case BreadboardView:
-			return BreadboardViewLayerList;
-		case SchematicView:
-			return SchematicViewLayerList;
-		case PCBView:
-			return PCBViewLayerList;
-		default:
-			return EmptyLayerList;
+	case IconView:
+		return IconViewLayerList;
+	case BreadboardView:
+		return BreadboardViewLayerList;
+	case SchematicView:
+		return SchematicViewLayerList;
+	case PCBView:
+		return PCBViewLayerList;
+	default:
+		return EmptyLayerList;
 	}
 }
 
 const LayerList & ViewLayer::layersForViewFromBelow(ViewLayer::ViewID viewID) {
 	switch(viewID) {
-		case IconView:
-			return IconViewLayerList;
-		case BreadboardView:
-			return BreadboardViewLayerList;
-		case SchematicView:
-			return SchematicViewLayerList;
-		case PCBView:
-			return PCBViewFromBelowLayerList;
-		default:
-			return EmptyLayerList;
+	case IconView:
+		return IconViewLayerList;
+	case BreadboardView:
+		return BreadboardViewLayerList;
+	case SchematicView:
+		return SchematicViewLayerList;
+	case PCBView:
+		return PCBViewFromBelowLayerList;
+	default:
+		return EmptyLayerList;
 	}
 }
 
@@ -530,44 +524,43 @@ bool ViewLayer::viewHasLayer(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID vi
 
 QDomElement ViewLayer::getConnectorPElement(const QDomElement & element, ViewLayer::ViewID viewID)
 {
-    QString viewName = ViewLayer::viewIDXmlName(viewID);
-    QDomElement views = element.firstChildElement("views");
-    QDomElement view = views.firstChildElement(viewName);
-    return view.firstChildElement("p");
+	QString viewName = ViewLayer::viewIDXmlName(viewID);
+	QDomElement views = element.firstChildElement("views");
+	QDomElement view = views.firstChildElement(viewName);
+	return view.firstChildElement("p");
 }
 
 bool ViewLayer::getConnectorSvgIDs(QDomElement & element, ViewLayer::ViewID viewID, QString & id, QString & terminalID) {
-    QDomElement p = getConnectorPElement(element, viewID);
-    if (p.isNull()) {
+	QDomElement p = getConnectorPElement(element, viewID);
+	if (p.isNull()) {
 		return false;
 	}
 
-    id = p.attribute("svgId");
-    if (id.isEmpty()) {
+	id = p.attribute("svgId");
+	if (id.isEmpty()) {
 		return false;
 	}
 
-    terminalID = p.attribute("terminalId");
-    return true;
+	terminalID = p.attribute("terminalId");
+	return true;
 }
 
 bool ViewLayer::fromBelow() {
-    return m_fromBelow;
+	return m_fromBelow;
 }
 
 void ViewLayer::setFromBelow(bool fromBelow) {
-    m_fromBelow = fromBelow;
+	m_fromBelow = fromBelow;
 }
 
 void ViewLayer::setInitialZFromBelow(double initialZ) {
-    m_initialZFromBelow = initialZ;
+	m_initialZFromBelow = initialZ;
 }
 
 double ViewLayer::getZFromBelow(double currentZ, bool fromBelow) {
-    double frac = currentZ - m_initialZ;
-    if (qAbs(frac) > 1) {
-        frac = currentZ - m_initialZFromBelow;
-    }
-    return frac + (fromBelow ? m_initialZFromBelow : m_initialZ);
+	double frac = currentZ - m_initialZ;
+	if (qAbs(frac) > 1) {
+		frac = currentZ - m_initialZFromBelow;
+	}
+	return frac + (fromBelow ? m_initialZFromBelow : m_initialZ);
 }
-

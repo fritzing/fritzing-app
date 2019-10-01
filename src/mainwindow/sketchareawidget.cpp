@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 
@@ -35,13 +29,13 @@ const QString SketchAreaWidget::RoutingStateLabelName = "routingStateLabel";
 SketchAreaWidget::SketchAreaWidget(QWidget *contentView, QMainWindow *parent)
 	: QFrame(parent)
 {
-    init(contentView, parent, true, true);
+	init(contentView, parent, true, true);
 }
 
 SketchAreaWidget::SketchAreaWidget(QWidget *contentView, QMainWindow *parent, bool hasToolBar, bool hasStatusBar)
-    : QFrame(parent)
+	: QFrame(parent)
 {
-    init (contentView, parent, hasToolBar, hasStatusBar);
+	init (contentView, parent, hasToolBar, hasStatusBar);
 }
 
 SketchAreaWidget::~SketchAreaWidget() {
@@ -49,20 +43,20 @@ SketchAreaWidget::~SketchAreaWidget() {
 }
 
 void SketchAreaWidget::init(QWidget *contentView, QMainWindow *parent, bool hasToolBar, bool hasStatusBar) {
-    m_contentView = contentView;
-    contentView->setParent(this);
+	m_contentView = contentView;
+	contentView->setParent(this);
 
-    createLayout();
+	createLayout();
 
-    QVBoxLayout *layout = new QVBoxLayout(this);
-    layout->setMargin(0);
-    layout->setSpacing(0);
-    layout->addWidget(contentView);
-    layout->addWidget(m_toolbar);
-    if (!hasToolBar) m_toolbar->hide();
-    layout->addWidget(m_statusBarArea);
-    if (!hasStatusBar) m_statusBarArea->hide();
-    m_statusBarArea->setFixedHeight(parent->statusBar()->height()*3/4);
+	QVBoxLayout *layout = new QVBoxLayout(this);
+	layout->setMargin(0);
+	layout->setSpacing(0);
+	layout->addWidget(contentView);
+	layout->addWidget(m_toolbar);
+	if (!hasToolBar) m_toolbar->hide();
+	layout->addWidget(m_statusBarArea);
+	if (!hasStatusBar) m_statusBarArea->hide();
+	m_statusBarArea->setFixedHeight(parent->statusBar()->height()*3/4);
 }
 
 QWidget *SketchAreaWidget::contentView() {
@@ -72,26 +66,26 @@ QWidget *SketchAreaWidget::contentView() {
 void SketchAreaWidget::createLayout() {
 	m_toolbar = new QFrame(this);
 	m_toolbar->setObjectName("sketchAreaToolbar");
-    m_toolbar->setFixedHeight(66);
+	m_toolbar->setFixedHeight(66);
 
 	QFrame *leftButtons = new QFrame(m_toolbar);
 	m_leftButtonsContainer = new QHBoxLayout(leftButtons);
-    m_leftButtonsContainer->setMargin(0);
-    m_leftButtonsContainer->setSpacing(0);
+	m_leftButtonsContainer->setMargin(0);
+	m_leftButtonsContainer->setSpacing(0);
 
 	QFrame *middleButtons = new QFrame(m_toolbar);
 	middleButtons->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::MinimumExpanding);
 	m_middleButtonsContainer = new QVBoxLayout(middleButtons);
 	m_middleButtonsContainer->setSpacing(0);
-    m_middleButtonsContainer->setMargin(0);
+	m_middleButtonsContainer->setMargin(0);
 
 	QFrame *rightButtons = new QFrame(m_toolbar);
 	m_rightButtonsContainer = new QHBoxLayout(rightButtons);
-    m_rightButtonsContainer->setMargin(0);
-    m_rightButtonsContainer->setSpacing(0);
+	m_rightButtonsContainer->setMargin(0);
+	m_rightButtonsContainer->setSpacing(0);
 
 	QHBoxLayout *toolbarLayout = new QHBoxLayout(m_toolbar);
-    toolbarLayout->setMargin(0);
+	toolbarLayout->setMargin(0);
 	toolbarLayout->setSpacing(0);
 	toolbarLayout->addWidget(leftButtons);
 	toolbarLayout->addWidget(middleButtons);
@@ -105,16 +99,16 @@ void SketchAreaWidget::createLayout() {
 }
 
 void SketchAreaWidget::setToolbarWidgets(QList<QWidget*> widgets) {
-    bool goLeft = true;
+	bool goLeft = true;
 	foreach(QWidget* widget, widgets) {
 		if(widget->objectName() != RoutingStateLabelName) {
-            if (goLeft) m_leftButtonsContainer->addWidget(widget);
-            else m_rightButtonsContainer->addWidget(widget);
+			if (goLeft) m_leftButtonsContainer->addWidget(widget);
+			else m_rightButtonsContainer->addWidget(widget);
 		} else {
-            m_middleButtonsContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
+			m_middleButtonsContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
 			m_middleButtonsContainer->addWidget(widget);
-            m_middleButtonsContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
-            goLeft = false;
+			m_middleButtonsContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
+			goLeft = false;
 		}
 	}
 }
@@ -126,8 +120,8 @@ void SketchAreaWidget::addStatusBar(QStatusBar *statusBar) {
 QWidget *SketchAreaWidget::separator(QWidget* parent) {
 	QLabel *separator = new QLabel(parent);
 	separator->setPixmap(QPixmap(":/resources/images/toolbar_icons/toolbar_separator.png"));
-    separator->setStyleSheet("margin-left: 1px; margin-right: 1px;");
-    separator->setObjectName("ToolBarSeparator");
+	separator->setStyleSheet("margin-left: 1px; margin-right: 1px;");
+	separator->setObjectName("ToolBarSeparator");
 	return separator;
 }
 

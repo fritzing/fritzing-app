@@ -38,12 +38,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 3454 $:
-$Author: cohen@irascible.com $:
-$Date: 2009-09-11 19:39:43 +0200 (Fr, 11. Sep 2009) $
-
 ********************************************************************/
 
 #ifndef SVGPATHPARSER_H
@@ -96,12 +90,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 3454 $:
-$Author: cohen@irascible.com $:
-$Date: 2009-09-11 19:39:43 +0200 (Fr, 11. Sep 2009) $
 
 ********************************************************************/
 
@@ -246,10 +234,10 @@ curveto ::= curveto_command curveto_argument_sequence ;
     qDebug() << "							got curveto ";
 } break; ./
 
-curveto_argument_sequence ::= curveto_argument | curveto_argument curveto_argument_sequence | curveto_argument comma_wsp curveto_argument_sequence ; 
+curveto_argument_sequence ::= curveto_argument | curveto_argument curveto_argument_sequence | curveto_argument comma_wsp curveto_argument_sequence ;
 /. case $rule_number: {
     //qDebug() << " got curveto_argument_sequence 3 ";
-} break; ./  
+} break; ./
 
 curveto_argument ::= coordinate_pair comma_wsp coordinate_pair comma_wsp coordinate_pair | coordinate_pair comma_wsp coordinate_pair coordinate_pair | coordinate_pair coordinate_pair comma_wsp coordinate_pair | coordinate_pair coordinate_pair coordinate_pair ;
 /. case $rule_number: {
@@ -306,7 +294,7 @@ smooth_quadratic_bezier_curveto ::= smooth_quadratic_bezier_curveto_command smoo
     qDebug() << "							got smooth_quadratic_bezier_curveto ";
 } break; ./
 
-smooth_quadratic_bezier_curveto_argument_sequence ::= coordinate_pair | coordinate_pair comma_wsp smooth_quadratic_bezier_curveto_argument_sequence | coordinate_pair smooth_quadratic_bezier_curveto_argument_sequence ; 
+smooth_quadratic_bezier_curveto_argument_sequence ::= coordinate_pair | coordinate_pair comma_wsp smooth_quadratic_bezier_curveto_argument_sequence | coordinate_pair smooth_quadratic_bezier_curveto_argument_sequence ;
 /. case $rule_number: {
     //qDebug() << " got smooth_quadratic_bezier_curveto_argument_sequence 3 ";
 } break; ./
@@ -337,101 +325,101 @@ wspplus ::= WHITESPACE ;
 } break; ./
 
 coordinate ::= NUMBER ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << " got coordinate ";
     m_symStack.append(lexer->currentNumber());
-} break; 
+} break;
 ./
 
 nonnegative_number ::= NUMBER ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << " got nonnegative_number ";
     //not presently checking this is non-negative
     m_symStack.append(lexer->currentNumber());
-} break; 
+} break;
 ./
 
 number ::= NUMBER ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << " got number ";
     m_symStack.append(lexer->currentNumber());
-} break; 
+} break;
 ./
 
 flag ::= NUMBER ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << " got flag ";
     //not presently checking this is only 0 or 1
     m_symStack.append(lexer->currentNumber());
-} break; 
+} break;
 ./
 
 moveto_command ::= EM ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << "							got moveto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 lineto_command ::= EL ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << "							got lineto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 horizontal_lineto_command ::= AITCH ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << "							got horizontal_lineto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 vertical_lineto_command ::= VEE ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << "							got vertical_lineto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 curveto_command ::= CEE ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << "							got curveto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 smooth_curveto_command ::= ESS ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << "							got smooth curveto command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 quadratic_bezier_curveto_command ::= KYU ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << "							got quadratic_bezier_curveto_command command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 smooth_quadratic_bezier_curveto_command ::= TEE ;
-/. 
+/.
 case $rule_number: {
     //qDebug() << "							got smooth_quadratic_bezier_curveto_command command ";
     m_symStack.append(lexer->currentCommand());
-} break; 
+} break;
 ./
 
 elliptical_arc_command ::= AE ;
@@ -503,30 +491,3 @@ fakeclosepath ::= EKS ;
     return false;
 }
 ./
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

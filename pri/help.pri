@@ -11,15 +11,11 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
-# ********************************************************************
-# $Revision: 5721 $:
-# $Author: cohen@irascible.com $:
-# $Date: 2012-01-03 16:53:58 +0100 (Di, 03. Jan 2012) $
 # ********************************************************************/
 HEADERS += src/help/aboutbox.h \
     src/help/firsttimehelpdialog.h \
     src/help/tipsandtricks.h
-    
+
 SOURCES += src/help/aboutbox.cpp \
     src/help/firsttimehelpdialog.cpp \
     src/help/tipsandtricks.cpp

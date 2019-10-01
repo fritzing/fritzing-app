@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6984 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -58,7 +52,7 @@ static const QRegExp SodipodiElementDetector("</{0,1}(inkscape|sodipodi):[^>]+>"
 const QString TextUtils::SMDFlipSuffix("___");
 
 const QString TextUtils::RegexFloatDetector = "[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?";
-const QRegExp TextUtils::floatingPointMatcher(RegexFloatDetector);		
+const QRegExp TextUtils::floatingPointMatcher(RegexFloatDetector);
 
 static const QRegExp HexExpr("&#x[0-9a-fA-F];");   // &#x9; &#xa; &#xd;
 static const QRegExp Xmlns("xmlns=([\"|'])[^\"']*\\1");
@@ -80,9 +74,9 @@ QSet<QString> getAttrFontFamilies(const QString &fileContent) {
 	/*
 	 * font-family defined as attr example:
 
-<text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans"
-id="text2732" transform="matrix(1 0 0 1 32.2012 236.969)"
-font-size="9.9771" >A0</text>
+	<text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans"
+	id="text2732" transform="matrix(1 0 0 1 32.2012 236.969)"
+	font-size="9.9771" >A0</text>
 
 	 */
 
@@ -95,9 +89,9 @@ QSet<QString> getFontFamiliesInsideStyleTag(const QString &fileContent) {
 	 * regexp: font-family\s*:\s*(.|[^;"]*).*"
 	 * font-family defined in a style attr example:
 
-style="font-size:9;-inkscape-font-specification:Droid Sans;font-family:Droid Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+	style="font-size:9;-inkscape-font-specification:Droid Sans;font-family:Droid Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
 
-style="font-size:144px;font-style:normal;font-weight:normal;line-height:100%;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" x="18.000002"
+	style="font-size:144px;font-style:normal;font-weight:normal;line-height:100%;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" x="18.000002"
 
 	 */
 
@@ -152,18 +146,18 @@ bool fixUnavailableFontFamilies(QString &fileContent, const QString & destFont) 
 
 QString  makeDashString(bool dashed, const QVector<qreal> & pattern, double dpi, double printerScale)
 {
-    QString dash;
-    if (dashed && pattern.count() > 0) {
-        dash = "stroke-dasharray='";
-        foreach (qreal p, pattern) {
-            dash += QString::number(p * dpi / printerScale);
-            dash += ",";
-        }
-        dash.chop(1);
-        dash.append("'");
-    }
+	QString dash;
+	if (dashed && pattern.count() > 0) {
+		dash = "stroke-dasharray='";
+		foreach (qreal p, pattern) {
+			dash += QString::number(p * dpi / printerScale);
+			dash += ",";
+		}
+		dash.chop(1);
+		dash.append("'");
+	}
 
-    return dash;
+	return dash;
 }
 
 ///////////////////////////////////////
@@ -186,11 +180,11 @@ QDomElement TextUtils::findElementWithAttribute(QDomElement element, const QStri
 		if (element.attribute(attributeName).compare(attributeValue) == 0) return element;
 	}
 
-     for(QDomElement e = element.firstChildElement(); !e.isNull(); e = e.nextSiblingElement())
-     {
-		 QDomElement result = findElementWithAttribute(e, attributeName, attributeValue);
-		 if (!result.isNull()) return result;
-     }
+	for(QDomElement e = element.firstChildElement(); !e.isNull(); e = e.nextSiblingElement())
+	{
+		QDomElement result = findElementWithAttribute(e, attributeName, attributeValue);
+		if (!result.isNull()) return result;
+	}
 
 	return ___emptyElement___;
 }
@@ -236,7 +230,7 @@ double TextUtils::convertToInches(const QString & s, bool * ok, bool isIllustrat
 		divisor = 6.0;
 	}
 	else {
-        chopNotDigits(string);
+		chopNotDigits(string);
 		divisor = 90.0;			// default to Qt's standard internal units if all else fails
 		chop = 0;
 	}
@@ -256,36 +250,36 @@ double TextUtils::convertToInches(const QString & s, bool * ok, bool isIllustrat
 
 void TextUtils::chopNotDigits(QString & string) {
 	for (int ix = string.count() - 1; ix >= 0; ix--) {
-        QChar ch = string.at(ix);
+		QChar ch = string.at(ix);
 		if (ch.isDigit()) return;
-        if (ch == '.') return;
-			
+		if (ch == '.') return;
+
 		string.chop(1);
 	}
 }
 
 bool TextUtils::squashElement(QDomDocument & doc, const QString & elementName, const QString &attName, const QRegExp &matchContent) {
-    bool result = false;
-    QDomElement root = doc.documentElement();
-    QDomNodeList domNodeList = root.elementsByTagName(elementName);
-    for (int i = 0; i < domNodeList.count(); i++) {
-        QDomElement node = domNodeList.item(i).toElement();
-        if (node.isNull()) continue;
+	bool result = false;
+	QDomElement root = doc.documentElement();
+	QDomNodeList domNodeList = root.elementsByTagName(elementName);
+	for (int i = 0; i < domNodeList.count(); i++) {
+		QDomElement node = domNodeList.item(i).toElement();
+		if (node.isNull()) continue;
 
-        if (!attName.isEmpty()) {
-            QString att = node.attribute(attName);
-            if (att.isEmpty()) continue;
+		if (!attName.isEmpty()) {
+			QString att = node.attribute(attName);
+			if (att.isEmpty()) continue;
 
-            if (!matchContent.isEmpty()) {
-                if (matchContent.indexIn(att) < 0) continue;
-            }
-        }
+			if (!matchContent.isEmpty()) {
+				if (matchContent.indexIn(att) < 0) continue;
+			}
+		}
 
-        node.setTagName("g");
-        result = true;
-    }
+		node.setTagName("g");
+		result = true;
+	}
 
-    return result;
+	return result;
 }
 
 QString TextUtils::replaceTextElement(const QString & svg, const QString & id, const QString & newValue) {
@@ -306,7 +300,7 @@ QString TextUtils::replaceTextElement(const QString & svg, const QString & id, c
 		replaceChildText(node, newValue);
 		return doc.toString();
 	}
-		
+
 	return svg;
 }
 
@@ -328,7 +322,7 @@ QByteArray TextUtils::replaceTextElement(const QByteArray & svg, const QString &
 		replaceChildText(node, newValue);
 		return doc.toByteArray();
 	}
-		
+
 	return svg;
 }
 
@@ -353,7 +347,7 @@ QString TextUtils::replaceTextElements(const QString & svg, const QHash<QString,
 			break;
 		}
 	}
-		
+
 	if (!changed) return svg;
 
 	return doc.toString();
@@ -386,7 +380,7 @@ void TextUtils::replaceChildText(QDomNode & node, const QString & text) {
 	node.appendChild(t);
 }
 
-bool TextUtils::mergeSvg(QDomDocument & doc1, const QString & svg, const QString & id) 
+bool TextUtils::mergeSvg(QDomDocument & doc1, const QString & svg, const QString & id)
 {
 	QString errorStr;
 	int errorLine;
@@ -433,9 +427,9 @@ QString TextUtils::mergeSvgFinish(QDomDocument & doc) {
 QString TextUtils::mergeSvg(const QString & svg1, const QString & svg2, const QString & id, bool flip) {
 
 	QDomDocument doc1;
-    if (!svg1.isEmpty()) {
-	    if (!TextUtils::mergeSvg(doc1, svg1, id)) return ___emptyString___;
-    }
+	if (!svg1.isEmpty()) {
+		if (!TextUtils::mergeSvg(doc1, svg1, id)) return ___emptyString___;
+	}
 
 	if (!TextUtils::mergeSvg(doc1, svg2, id)) return ___emptyString___;
 
@@ -461,18 +455,18 @@ QString TextUtils::makeSVGHeader(double printerScale, double dpi, double width, 
 	double trueWidth = width / printerScale;
 	double trueHeight = height / printerScale;
 
-	return 
-		QString("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n%5"
-							 "<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' "
-							 "version='1.2' baseProfile='tiny' "
-							 "x='0in' y='0in' width='%1in' height='%2in' "
-							 "viewBox='0 0 %3 %4' >\n"
-							 )
-						.arg(trueWidth)
-						.arg(trueHeight)
-						.arg(trueWidth * dpi)
-						.arg(trueHeight * dpi)
-						.arg(TextUtils::CreatedWithFritzingXmlComment);
+	return
+	    QString("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n%5"
+	            "<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' "
+	            "version='1.2' baseProfile='tiny' "
+	            "x='0in' y='0in' width='%1in' height='%2in' "
+	            "viewBox='0 0 %3 %4' >\n"
+	           )
+	    .arg(trueWidth)
+	    .arg(trueHeight)
+	    .arg(trueWidth * dpi)
+	    .arg(trueHeight * dpi)
+	    .arg(TextUtils::CreatedWithFritzingXmlComment);
 }
 
 bool TextUtils::isIllustratorFile(const QString &fileContent) {
@@ -504,17 +498,17 @@ QString TextUtils::removeXMLEntities(QString svgContent) {
 QString TextUtils::killXMLNS(QString svgContent) {
 	// TODO: this is a bug in Qt, it would be nice to fix it there
 
-    svgContent.remove(Xmlns);
-    return svgContent;
+	svgContent.remove(Xmlns);
+	return svgContent;
 }
 
 QString TextUtils::svgNSOnly(QString svgContent) {
-    svgContent.remove(Xmlns);
-    int ix = svgContent.indexOf("<svg");
-    if (ix >= 0) {
-        svgContent.insert(ix + 5, "xmlns=\"http://www.w3.org/2000/svg\" ");
-    }
-    return svgContent;
+	svgContent.remove(Xmlns);
+	int ix = svgContent.indexOf("<svg");
+	if (ix >= 0) {
+		svgContent.insert(ix + 5, "xmlns=\"http://www.w3.org/2000/svg\" ");
+	}
+	return svgContent;
 }
 
 bool TextUtils::cleanSodipodi(QString &content)
@@ -611,17 +605,17 @@ QString TextUtils::svgTransform(const QString & svg, QTransform & transform, boo
 	if (transform.isIdentity()) return svg;
 
 	return QString("<g transform='matrix(%1,%2,%3,%4,%5,%6)' %8 >%7</g>")
-			.arg(transform.m11())
-			.arg(transform.m12())
-			.arg(transform.m21())
-			.arg(transform.m22())
-			.arg(translate ? transform.dx() : 0.0)   			
-			.arg(translate ? transform.dy() : 0.0)  		
-			.arg(svg)
-			.arg(extras);
+	       .arg(transform.m11())
+	       .arg(transform.m12())
+	       .arg(transform.m21())
+	       .arg(transform.m22())
+	       .arg(translate ? transform.dx() : 0.0)
+	       .arg(translate ? transform.dy() : 0.0)
+	       .arg(svg)
+	       .arg(extras);
 }
 
-bool TextUtils::getSvgSizes(QDomDocument & doc, double & sWidth, double & sHeight, double & vbWidth, double & vbHeight) 
+bool TextUtils::getSvgSizes(QDomDocument & doc, double & sWidth, double & sHeight, double & vbWidth, double & vbHeight)
 {
 	bool isIllustrator = isIllustratorDoc(doc);
 
@@ -688,7 +682,7 @@ bool TextUtils::findText(const QDomNode & node, QString & text) {
 }
 
 double TextUtils::convertToInches(const QString & string) {
-	bool ok; 
+	bool ok;
 	double retval = TextUtils::convertToInches(string, &ok, false);
 	if (!ok) return 0;
 
@@ -696,19 +690,15 @@ double TextUtils::convertToInches(const QString & string) {
 }
 
 QString TextUtils::escapeAnd(const QString & string) {
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-	QString s = Qt::escape(string);
-#else
-    QString s = string.toHtmlEscaped();
-#endif
+	QString s = string.toHtmlEscaped();
 	s.replace('\'', "&apos;");
 	return s;
 }
 
-QString TextUtils::convertExtendedChars(const QString & str) 
+QString TextUtils::convertExtendedChars(const QString & str)
 {
 	QString result;
-    foreach (QChar c, str) {
+	foreach (QChar c, str) {
 		if (c < 128) {
 			result.append(c);
 		}
@@ -720,23 +710,23 @@ QString TextUtils::convertExtendedChars(const QString & str)
 	return result;
 }
 
-QString TextUtils::stripNonValidXMLCharacters(const QString & str) 
+QString TextUtils::stripNonValidXMLCharacters(const QString & str)
 {
 	QString result;
 	QChar hs;
 	bool in_hs = false;
-    foreach (QChar c, str) {
+	foreach (QChar c, str) {
 		if (c.isHighSurrogate()) {
 			hs = c;
 			in_hs = true;
 			continue;
 		}
 
-        if ((c == 0x9) ||
-            (c == 0xA) ||
-            (c == 0xD) ||
-            ((c >= 0x20) && (c <= 0xD7FF)) ||
-            ((c >= 0xE000) && (c <= 0xFFFD))) 
+		if ((c == 0x9) ||
+		        (c == 0xA) ||
+		        (c == 0xD) ||
+		        ((c >= 0x20) && (c <= 0xD7FF)) ||
+		        ((c >= 0xE000) && (c <= 0xFFFD)))
 		{
 			if (in_hs) {
 				result.append(hs);
@@ -752,9 +742,9 @@ QString TextUtils::stripNonValidXMLCharacters(const QString & str)
 		else {
 			in_hs = false;
 		}
-    }
-    return result;
-}    
+	}
+	return result;
+}
 
 bool TextUtils::addCopper1(const QString & filename, QDomDocument & domDocument, const QString & srcAtt, const QString & destAtt) {
 	QString errorStr;
@@ -767,27 +757,27 @@ bool TextUtils::addCopper1(const QString & filename, QDomDocument & domDocument,
 		return false;
 	}
 
-    QDomElement root = domDocument.documentElement();
+	QDomElement root = domDocument.documentElement();
 	QList<QDomElement> elements;
 	findElementsWithAttribute(root, "id", elements);
-    for (int i = 0; i < elements.count(); i++) {
-        QDomElement node = elements.at(i);
-        if (node.isNull()) continue;
+	for (int i = 0; i < elements.count(); i++) {
+		QDomElement node = elements.at(i);
+		if (node.isNull()) continue;
 
-        QString att = node.attribute("id");
+		QString att = node.attribute("id");
 		if (att == destAtt) {
 			// already have copper1
 			domDocument.clear();
 			return false;
 		}
-    }
+	}
 
 	result = false;
-    for (int i = 0; i < elements.count(); i++) {
-        QDomElement node = elements.at(i);
-        if (node.isNull()) continue;
+	for (int i = 0; i < elements.count(); i++) {
+		QDomElement node = elements.at(i);
+		if (node.isNull()) continue;
 
-        QString att = node.attribute("id");
+		QString att = node.attribute("id");
 		if (att == srcAtt) {
 			QDomElement g = domDocument.createElement("g");
 			g.setAttribute("id", destAtt);
@@ -795,14 +785,14 @@ bool TextUtils::addCopper1(const QString & filename, QDomDocument & domDocument,
 			g.appendChild(node);
 			result = true;
 		}
-    }
+	}
 
 	if (!result) {
 		domDocument.clear();
 	}
 	//else {
-		//QString test = domDocument.toString();
-		//DebugDialog::debug("test " + test);
+	//QString test = domDocument.toString();
+	//DebugDialog::debug("test " + test);
 	//}
 
 	return result;
@@ -822,13 +812,13 @@ QString TextUtils::convertToPowerPrefix(double q) {
 	return QString::number(q);
 }
 
-double TextUtils::convertFromPowerPrefixU(QString & val, const QString & symbol) 
+double TextUtils::convertFromPowerPrefixU(QString & val, const QString & symbol)
 {
 	val.replace('u', MicroSymbol);
 	return convertFromPowerPrefix(val, symbol);
 }
 
-double TextUtils::convertFromPowerPrefix(const QString & val, const QString & symbol) 
+double TextUtils::convertFromPowerPrefix(const QString & val, const QString & symbol)
 {
 	initPowerPrefixes();
 
@@ -854,7 +844,7 @@ double TextUtils::convertFromPowerPrefix(const QString & val, const QString & sy
 void TextUtils::initPowerPrefixes() {
 	if (PowerPrefixes.count() == 0) {
 		PowerPrefixes << "p" << "n" << MicroSymbol  << "u" << "m" << "" << "k" << "M" << "G" << "T";
-        PowerPrefixValues << 0.000000000001 << 0.000000001 << 0.000001 << 0.000001 << 0.001 << 1 << 1000 << 1000000 << 1000000000. << 1000000000000.;
+		PowerPrefixValues << 0.000000000001 << 0.000000001 << 0.000001 << 0.000001 << 0.001 << 1 << 1000 << 1000000 << 1000000000. << 1000000000000.;
 	}
 }
 
@@ -910,7 +900,7 @@ QMatrix TextUtils::transformStringToMatrix(const QString & transform) {
 		}
 	}
 	else if (transform.startsWith("matrix")) {
-        return QMatrix(floats[0], floats[1], floats[2], floats[3], floats[4], floats[5]);
+		return QMatrix(floats[0], floats[1], floats[2], floats[3], floats[4], floats[5]);
 	}
 	else if (transform.startsWith("scale")) {
 		return QMatrix().scale(floats[0], floats[1]);
@@ -925,29 +915,29 @@ QMatrix TextUtils::transformStringToMatrix(const QString & transform) {
 	return QMatrix();
 }
 
-QList<double> TextUtils::getTransformFloats(QDomElement & element){
+QList<double> TextUtils::getTransformFloats(QDomElement & element) {
 	return getTransformFloats(element.attribute("transform"));
 }
 
-QList<double> TextUtils::getTransformFloats(const QString & transform){
-    QList<double> list;
-    int pos = 0;
+QList<double> TextUtils::getTransformFloats(const QString & transform) {
+	QList<double> list;
+	int pos = 0;
 
 	while ((pos = TextUtils::floatingPointMatcher.indexIn(transform, pos)) != -1) {
 		list << transform.mid(pos, TextUtils::floatingPointMatcher.matchedLength()).toDouble();
-        pos += TextUtils::floatingPointMatcher.matchedLength();
-    }
+		pos += TextUtils::floatingPointMatcher.matchedLength();
+	}
 
 #ifndef QT_NO_DEBUG
-   // QString dbg = "got transform params: \n";
-    //dbg += transform + "\n";
-    //for(int i=0; i < list.size(); i++){
-        //dbg += QString::number(list.at(i)) + " ";
-    // }
-    //DebugDialog::debug(dbg);
+	// QString dbg = "got transform params: \n";
+	//dbg += transform + "\n";
+	//for(int i=0; i < list.size(); i++){
+	//dbg += QString::number(list.at(i)) + " ";
+	// }
+	//DebugDialog::debug(dbg);
 #endif
 
-    return list;
+	return list;
 }
 
 void TextUtils::gWrap(QDomDocument & domDocument, const QHash<QString, QString> & attributes)
@@ -969,7 +959,7 @@ void TextUtils::gWrap(QDomDocument & domDocument, const QHash<QString, QString> 
 	}
 }
 
-bool TextUtils::fixInternalUnits(QString & svg) 
+bool TextUtils::fixInternalUnits(QString & svg)
 {
 	// float detector is a little weak
 	static QRegExp findInternalUnits("[\"']([\\d,\\.]+)(px|mm|cm|in|pt|pc)[\"']");
@@ -998,10 +988,10 @@ bool TextUtils::fixInternalUnits(QString & svg)
 				// svg is messed up
 				return false;
 			}
-            firstTime = false;
+			firstTime = false;
 		}
 
-		QString old = findInternalUnits.cap(1) + findInternalUnits.cap(2); 
+		QString old = findInternalUnits.cap(1) + findInternalUnits.cap(2);
 		double in = convertToInches(old);
 		double replacement = in * viewBox.width() / size.width();
 		svg.replace(iu + 1, old.length(), QString::number(replacement));
@@ -1021,7 +1011,7 @@ bool TextUtils::fixInternalUnits(QString & svg)
 			}
 		}
 
-		QString old = findStrokeWidth.cap(1) + findStrokeWidth.cap(2); 
+		QString old = findStrokeWidth.cap(1) + findStrokeWidth.cap(2);
 		double in = convertToInches(old);
 		double replacement = in * viewBox.width() / size.width();
 		svg.replace(sw + 13, old.length(), QString::number(replacement));
@@ -1032,7 +1022,7 @@ bool TextUtils::fixInternalUnits(QString & svg)
 
 bool TextUtils::fixMuch(QString &svg, bool fixStrokeWidthFlag)
 {
-    bool result = cleanSodipodi(svg);
+	bool result = cleanSodipodi(svg);
 	result |= fixInternalUnits(svg);
 
 	QDomDocument svgDom;
@@ -1043,153 +1033,153 @@ bool TextUtils::fixMuch(QString &svg, bool fixStrokeWidthFlag)
 		return result;
 	}
 
-    QDomElement root = svgDom.documentElement();
-    result |= fixViewBox(root);
+	QDomElement root = svgDom.documentElement();
+	result |= fixViewBox(root);
 
-    QStringList strings;
-    strings << "pattern" << "marker" << "clipPath";
-    foreach (QString string, strings) {
-        if (svg.contains("<" + string)) {
-            result |= noPatternAux(svgDom, string);
-        }
-    }
+	QStringList strings;
+	strings << "pattern" << "marker" << "clipPath";
+	foreach (QString string, strings) {
+		if (svg.contains("<" + string)) {
+			result |= noPatternAux(svgDom, string);
+		}
+	}
 
-    if (svg.contains("<use")) {
-        result |= noUseAux(svgDom);
-    }
+	if (svg.contains("<use")) {
+		result |= noUseAux(svgDom);
+	}
 
-    if (svg.contains("<tspan")) {
-        result |= tspanRemoveAux(svgDom);
-    }
+	if (svg.contains("<tspan")) {
+		result |= tspanRemoveAux(svgDom);
+	}
 
-    if (fixStrokeWidthFlag) {
-        result |= fixStrokeWidth(svgDom);
-    }
+	if (fixStrokeWidthFlag) {
+		result |= fixStrokeWidth(svgDom);
+	}
 
-    result |= elevateTransform(root);
+	result |= elevateTransform(root);
 
-    if (result) {
-        svg = removeXMLEntities(svgDom.toString());
-    }
+	if (result) {
+		svg = removeXMLEntities(svgDom.toString());
+	}
 
-    return result;
+	return result;
 }
 
 bool TextUtils::fixViewBox(QDomElement & root) {
 	QString viewBox = root.attribute("viewBox");
-    if (viewBox.isEmpty()) return false;
+	if (viewBox.isEmpty()) return false;
 
 	QStringList coords = viewBox.split(QRegExp(" |,"));
 	if (coords.length() != 4) return false;
-    
-    if (coords[0] == "0" && coords[1] == "0") return false;
 
-    bool ok;
-    double x = coords.at(0).toDouble(&ok);
-    if (!ok) return false;
+	if (coords[0] == "0" && coords[1] == "0") return false;
 
-    double y = coords.at(1).toDouble(&ok);
-    if (!ok) return false;
+	bool ok;
+	double x = coords.at(0).toDouble(&ok);
+	if (!ok) return false;
+
+	double y = coords.at(1).toDouble(&ok);
+	if (!ok) return false;
 
 	QString newValue = QString("0 0 %1 %2").arg(coords[2]).arg(coords[3]);
 	root.setAttribute("viewBox", newValue);
 
-    QDomElement transformElement = root.ownerDocument().createElement("g");
-    transformElement.setAttribute("transform", QString("translate(%1,%2)").arg(-x).arg(-y));
-    transformElement = root.insertBefore(transformElement, QDomElement()).toElement();
-    QDomElement nextElement = transformElement.nextSiblingElement();
-    while (!nextElement.isNull()) {
-        transformElement.appendChild(nextElement);
-        nextElement = transformElement.nextSiblingElement();
-    }
+	QDomElement transformElement = root.ownerDocument().createElement("g");
+	transformElement.setAttribute("transform", QString("translate(%1,%2)").arg(-x).arg(-y));
+	transformElement = root.insertBefore(transformElement, QDomElement()).toElement();
+	QDomElement nextElement = transformElement.nextSiblingElement();
+	while (!nextElement.isNull()) {
+		transformElement.appendChild(nextElement);
+		nextElement = transformElement.nextSiblingElement();
+	}
 
 	return true;
 }
 
 double TextUtils::getStrokeWidth(QDomElement & element, double defaultValue)
 {
-    bool ok;
+	bool ok;
 	double sw = element.attribute("stroke-width").toDouble(&ok);
-    if (ok) return sw;
+	if (ok) return sw;
 
-    QString stroke = element.attribute("stroke");
-    if (stroke == "none") return 0;
+	QString stroke = element.attribute("stroke");
+	if (stroke == "none") return 0;
 
-    QDomElement parent = element.parentNode().toElement();
-    while (!parent.isNull()) {
-        sw = parent.attribute("stroke-width").toDouble(&ok);
-        if (ok) return sw;
+	QDomElement parent = element.parentNode().toElement();
+	while (!parent.isNull()) {
+		sw = parent.attribute("stroke-width").toDouble(&ok);
+		if (ok) return sw;
 
-        stroke = parent.attribute("stroke");
-        if (stroke == "none") return 0;
+		stroke = parent.attribute("stroke");
+		if (stroke == "none") return 0;
 
-        parent = parent.parentNode().toElement();
-    }
+		parent = parent.parentNode().toElement();
+	}
 
-    //QString text;
-    //QTextStream stream(&text);
-    //element.save(stream, 0);
-    //DebugDialog::debug(QString("no circle stroke width set in %1: %2").arg(filename).arg(text));
-    
-    // default if there is no value to inherit
-    element.setAttribute("stroke-width", defaultValue);
-    return defaultValue;
+	//QString text;
+	//QTextStream stream(&text);
+	//element.save(stream, 0);
+	//DebugDialog::debug(QString("no circle stroke width set in %1: %2").arg(filename).arg(text));
+
+	// default if there is no value to inherit
+	element.setAttribute("stroke-width", defaultValue);
+	return defaultValue;
 
 	//QString strokewidth("stroke-width");
 	//QString s = element.attribute("style");
 	//SvgFileSplitter::fixStyleAttribute(connectorElement, s, strokewidth);
 	//sw = connectorElement.attribute("stroke-width").toDouble(&ok);
 	//if (!ok) {
-		//return false;
+	//return false;
 	//}
 }
 
 bool TextUtils::fixStrokeWidth(QDomDocument & svgDoc) {
-    bool result = false;
+	bool result = false;
 
-    QList<QDomElement> todo;
-    todo << svgDoc.documentElement();
-    while (todo.count() > 0) {
-        QDomElement element = todo.takeFirst();
-        QDomElement child = element.firstChildElement();
-        while (!child.isNull()) {
-            todo.append(child);
-            child = child.nextSiblingElement();
-        }
+	QList<QDomElement> todo;
+	todo << svgDoc.documentElement();
+	while (todo.count() > 0) {
+		QDomElement element = todo.takeFirst();
+		QDomElement child = element.firstChildElement();
+		while (!child.isNull()) {
+			todo.append(child);
+			child = child.nextSiblingElement();
+		}
 
-        QString stroke, strokeWidth;
-        stroke = element.attribute("stroke");
-        if (stroke.isEmpty()) {
-            QString style = element.attribute("style");
-            if (style.contains("stroke")) {
-                fixStyleAttribute(element);
-                stroke = element.attribute("stroke");
-            }
-        }
-        strokeWidth = element.attribute("stroke-width");
+		QString stroke, strokeWidth;
+		stroke = element.attribute("stroke");
+		if (stroke.isEmpty()) {
+			QString style = element.attribute("style");
+			if (style.contains("stroke")) {
+				fixStyleAttribute(element);
+				stroke = element.attribute("stroke");
+			}
+		}
+		strokeWidth = element.attribute("stroke-width");
 
-        if (stroke.isEmpty()) continue;
-        if (stroke == "none") continue;
-        if (!strokeWidth.isEmpty()) continue;
+		if (stroke.isEmpty()) continue;
+		if (stroke == "none") continue;
+		if (!strokeWidth.isEmpty()) continue;
 
-        getStrokeWidth(element, 1);
-        result = true;
-    }
+		getStrokeWidth(element, 1);
+		result = true;
+	}
 
-    return result;
+	return result;
 }
 
 
-bool TextUtils::noPatternAux(QDomDocument & svgDom, const QString & tag) 
+bool TextUtils::noPatternAux(QDomDocument & svgDom, const QString & tag)
 {
-    bool result = false;
+	bool result = false;
 	QDomNodeList nodeList = svgDom.elementsByTagName(tag);
-    for (int i = 0; i < nodeList.count(); i++) {
-        QDomNode pattern = nodeList.at(i);
-        pattern.parentNode().removeChild(pattern);
-        result = true;
+	for (int i = 0; i < nodeList.count(); i++) {
+		QDomNode pattern = nodeList.at(i);
+		pattern.parentNode().removeChild(pattern);
+		result = true;
 	}
-    return result;
+	return result;
 }
 
 
@@ -1197,15 +1187,15 @@ bool TextUtils::tspanRemoveAux(QDomDocument & svgDom)
 {
 	QList<QDomElement> texts;
 	QDomNodeList textNodeList = svgDom.elementsByTagName("text");
-    for (int i = 0; i < textNodeList.count(); i++) {
-        QDomElement text = textNodeList.item(i).toElement();
+	for (int i = 0; i < textNodeList.count(); i++) {
+		QDomElement text = textNodeList.item(i).toElement();
 		QDomElement tspan = text.firstChildElement("tspan");
 		if (tspan.isNull()) continue;
 
 		texts.append(text);
 	}
 
-    if (texts.count() == 0) return false;
+	if (texts.count() == 0) return false;
 
 	foreach (QDomElement text, texts) {
 		QDomElement g = svgDom.createElement("g");
@@ -1235,44 +1225,44 @@ bool TextUtils::tspanRemoveAux(QDomDocument & svgDom)
 bool TextUtils::noUseAux(QDomDocument & svgDom)
 {
 
-    QDomElement root = svgDom.documentElement();
-    if (root.isNull()) return false;
+	QDomElement root = svgDom.documentElement();
+	if (root.isNull()) return false;
 
 	QList<QDomElement> uses;
 	QDomNodeList useNodeList = svgDom.elementsByTagName("use");
-    for (int i = 0; i < useNodeList.count(); i++) {
-        QDomElement use = useNodeList.item(i).toElement();
-        QString refid = use.attribute("href");
-        if (refid.isEmpty()) continue;
+	for (int i = 0; i < useNodeList.count(); i++) {
+		QDomElement use = useNodeList.item(i).toElement();
+		QString refid = use.attribute("href");
+		if (refid.isEmpty()) continue;
 
-        QString id = use.attribute("id");
-        if (id.isEmpty()) continue;
+		QString id = use.attribute("id");
+		if (id.isEmpty()) continue;
 
 		uses.append(use);
 	}
 
-    if (uses.count() == 0) return false;
+	if (uses.count() == 0) return false;
 
 	foreach (QDomElement use, uses) {
 		QString transform = use.attribute("transform");
-        QString refid = use.attribute("href");
-        QString id = use.attribute("id");
+		QString refid = use.attribute("href");
+		QString id = use.attribute("id");
 
-        QDomElement g = svgDom.createElement("g");
+		QDomElement g = svgDom.createElement("g");
 		use.parentNode().replaceChild(g, use);
-        g.setAttribute("transform", transform);
+		g.setAttribute("transform", transform);
 
-        if (refid.startsWith("#")) {
-            refid.remove(0, 1);
-            if (refid.isEmpty()) continue;
-        }
+		if (refid.startsWith("#")) {
+			refid.remove(0, 1);
+			if (refid.isEmpty()) continue;
+		}
 
-        QDomElement toCopy = findElementWithAttribute(root, "id", refid);
-        if (toCopy.isNull()) continue;
+		QDomElement toCopy = findElementWithAttribute(root, "id", refid);
+		if (toCopy.isNull()) continue;
 
-        QDomElement copy = toCopy.cloneNode(true).toElement();
-        g.appendChild(copy);
-        copy.setAttribute("id", id);
+		QDomElement copy = toCopy.cloneNode(true).toElement();
+		g.appendChild(copy);
+		copy.setAttribute("id", id);
 	}
 
 	return true;
@@ -1312,13 +1302,13 @@ QDomElement TextUtils::copyText(QDomDocument & svgDom, QDomElement & parent, QDo
 QString TextUtils::slamStrokeAndFill(const QString & svg, const QString & stroke, const QString & strokeWidth, const QString & fill)
 {
 	QDomDocument doc;
-    if (doc.setContent(svg)) {
-        QDomElement root = doc.documentElement();
-        slamStrokeAndFill(root, stroke, strokeWidth, fill);
-        return doc.toString();
-    }
+	if (doc.setContent(svg)) {
+		QDomElement root = doc.documentElement();
+		slamStrokeAndFill(root, stroke, strokeWidth, fill);
+		return doc.toString();
+	}
 
-    return svg;
+	return svg;
 }
 
 void TextUtils::slamStrokeAndFill(QDomElement & element, const QString & stroke, const QString & strokeWidth, const QString & fill)
@@ -1348,7 +1338,7 @@ struct MatchThing
 	double val;
 };
 
-QString TextUtils::incrementTemplate(const QString & filename, int pins, double increment, MultiplyPinFunction multiFun, CopyPinFunction copyFun, void * userData) 
+QString TextUtils::incrementTemplate(const QString & filename, int pins, double increment, MultiplyPinFunction multiFun, CopyPinFunction copyFun, void * userData)
 {
 	QFile file(filename);
 	file.open(QFile::ReadOnly);
@@ -1379,7 +1369,7 @@ QString TextUtils::incrementTemplateString(const QString & templateString, int p
 		QString argCopy(templateString);
 		for (int j = matchThingIndex - 1; j >= 0; j--) {
 			MatchThing * mt = &matchThings[j];
-			argCopy.replace(mt->pos, mt->len, (*multiFun)(i, increment, mt->val));   
+			argCopy.replace(mt->pos, mt->len, (*multiFun)(i, increment, mt->val));
 		}
 		string += (*copyFun)(i, argCopy, userData);
 	}
@@ -1398,26 +1388,26 @@ QString TextUtils::standardMultiplyPinFunction(int pin, double increment, double
 }
 
 
-QString TextUtils::incMultiplyPinFunction(int pin, double increment, double value) 
+QString TextUtils::incMultiplyPinFunction(int pin, double increment, double value)
 {
 	return QString::number(value + ((pin + 1) * increment));
 }
 
-QString TextUtils::incCopyPinFunction(int pin, const QString & argString, void *) 
-{ 
-	return argString.arg(pin + 1); 
+QString TextUtils::incCopyPinFunction(int pin, const QString & argString, void *)
+{
+	return argString.arg(pin + 1);
 }
 
-QString TextUtils::noCopyPinFunction(int, const QString & argString, void *) 
-{ 
-	return argString; 
+QString TextUtils::noCopyPinFunction(int, const QString & argString, void *)
+{
+	return argString;
 }
 
-QString TextUtils::negIncCopyPinFunction(int pin, const QString & argString, void * userData) 
-{ 
+QString TextUtils::negIncCopyPinFunction(int pin, const QString & argString, void * userData)
+{
 	int pins = *((int *) userData);
 	int offset = *(((int *) userData) + 1);
-	return argString.arg(pins - (pin + offset)); 
+	return argString.arg(pins - (pin + offset));
 }
 
 double TextUtils::getViewBoxCoord(const QString & svg, int coord)
@@ -1432,44 +1422,44 @@ double TextUtils::getViewBoxCoord(const QString & svg, int coord)
 	return c.toDouble();
 }
 
-QString TextUtils::makeLineSVG(QPointF p1, QPointF p2, double width, QString colorString, double dpi, double printerScale, bool blackOnly, bool dashed, const QVector<qreal> & pattern) 
+QString TextUtils::makeLineSVG(QPointF p1, QPointF p2, double width, QString colorString, double dpi, double printerScale, bool blackOnly, bool dashed, const QVector<qreal> & pattern)
 {
 	p1.setX(p1.x() * dpi / printerScale);
 	p1.setY(p1.y() * dpi / printerScale);
 	p2.setX(p2.x() * dpi / printerScale);
 	p2.setY(p2.y() * dpi / printerScale);
 
-    QString dash = makeDashString(dashed, pattern, dpi, printerScale);
+	QString dash = makeDashString(dashed, pattern, dpi, printerScale);
 
 	QString stroke = (blackOnly) ? "black" : colorString;
 	return QString("<line stroke-linecap='round' stroke='%6' x1='%1' y1='%2' x2='%3' y2='%4' stroke-width='%5' %7/>")
-					.arg(p1.x())
-					.arg(p1.y())
-					.arg(p2.x())
-					.arg(p2.y())
-					.arg(width * dpi / printerScale)
-					.arg(stroke)
-                    .arg(dash)                
-                   ;
+	       .arg(p1.x())
+	       .arg(p1.y())
+	       .arg(p2.x())
+	       .arg(p2.y())
+	       .arg(width * dpi / printerScale)
+	       .arg(stroke)
+	       .arg(dash)
+	       ;
 }
 
-QString TextUtils::makeCubicBezierSVG(const QPolygonF & poly, double width, QString colorString, double dpi, double printerScale, bool blackOnly, bool dashed, const QVector<qreal> & pattern) 
+QString TextUtils::makeCubicBezierSVG(const QPolygonF & poly, double width, QString colorString, double dpi, double printerScale, bool blackOnly, bool dashed, const QVector<qreal> & pattern)
 {
-    QString dash = makeDashString(dashed, pattern, dpi, printerScale);
-    QString stroke = (blackOnly) ? "black" : colorString;
+	QString dash = makeDashString(dashed, pattern, dpi, printerScale);
+	QString stroke = (blackOnly) ? "black" : colorString;
 	return QString("<path stroke-linecap='round' fill='none' stroke-width='%1' stroke='%2' d='M%3,%4C%5,%6, %7,%8 %9,%10' %11/>")
-					.arg(width * dpi / printerScale)
-					.arg(stroke)
-					.arg(poly.at(0).x() * dpi / printerScale)
-					.arg(poly.at(0).y() * dpi / printerScale)
-					.arg(poly.at(1).x() * dpi / printerScale)
-					.arg(poly.at(1).y() * dpi / printerScale)
-					.arg(poly.at(2).x() * dpi / printerScale)
-					.arg(poly.at(2).y() * dpi / printerScale)
-					.arg(poly.at(3).x() * dpi / printerScale)
-					.arg(poly.at(3).y() * dpi / printerScale)
-                    .arg(dash)
-					;
+	       .arg(width * dpi / printerScale)
+	       .arg(stroke)
+	       .arg(poly.at(0).x() * dpi / printerScale)
+	       .arg(poly.at(0).y() * dpi / printerScale)
+	       .arg(poly.at(1).x() * dpi / printerScale)
+	       .arg(poly.at(1).y() * dpi / printerScale)
+	       .arg(poly.at(2).x() * dpi / printerScale)
+	       .arg(poly.at(2).y() * dpi / printerScale)
+	       .arg(poly.at(3).x() * dpi / printerScale)
+	       .arg(poly.at(3).y() * dpi / printerScale)
+	       .arg(dash)
+	       ;
 }
 
 
@@ -1483,30 +1473,30 @@ QString TextUtils::makeRectSVG(QRectF r, QPointF offset, double dpi, double prin
 
 	QString stroke = "black";
 	return QString("<rect stroke-linecap='round' stroke='%6' x='%1' y='%2' width='%3' height='%4' stroke-width='%5' fill='none' />")
-			.arg(l)
-			.arg(t)
-			.arg(w)
-			.arg(h)
-			.arg(1 * dpi / printerScale)
-			.arg(stroke);
+	       .arg(l)
+	       .arg(t)
+	       .arg(w)
+	       .arg(h)
+	       .arg(1 * dpi / printerScale)
+	       .arg(stroke);
 }
 
 
-QString TextUtils::makePolySVG(const QPolygonF & poly, QPointF offset, double width, QString colorString, double dpi, double printerScale, bool blackOnly) 
+QString TextUtils::makePolySVG(const QPolygonF & poly, QPointF offset, double width, QString colorString, double dpi, double printerScale, bool blackOnly)
 {
 	QString polyString = QString("<polyline stroke-linecap='round' stroke-linejoin='round' fill='none' stroke='%1' stroke-width='%2' points='\n").arg(blackOnly ? "black" : colorString).arg(width);
 	int space = 0;
 	foreach (QPointF p, poly) {
 		polyString += QString("%1,%2 %3")
-			.arg((p.x() - offset.x()) * dpi / printerScale)
-			.arg((p.y() - offset.y()) * dpi / printerScale)
-			.arg((++space % 8 == 0) ?  "\n" : "");
+		              .arg((p.x() - offset.x()) * dpi / printerScale)
+		              .arg((p.y() - offset.y()) * dpi / printerScale)
+		              .arg((++space % 8 == 0) ?  "\n" : "");
 	}
 	polyString += "'/>\n";
 	return polyString;
 }
 
-QPolygonF TextUtils::polygonFromElement(QDomElement & element) 
+QPolygonF TextUtils::polygonFromElement(QDomElement & element)
 {
 	QPolygonF poly;
 	QDomElement point = element.firstChildElement("point");
@@ -1582,7 +1572,7 @@ void TextUtils::expandAndFillAux(QDomElement & element, const QString & color, d
 		gotChildren = true;
 		expandAndFillAux(child, color, expandBy);
 		child = child.nextSiblingElement();
-	}	
+	}
 
 	if (gotChildren) return;
 
@@ -1592,7 +1582,7 @@ void TextUtils::expandAndFillAux(QDomElement & element, const QString & color, d
 	if (stroke.isEmpty() && fill.isEmpty()) {
 		return;
 	}
-		
+
 	element.setAttribute("fill", color);
 	element.setAttribute("stroke", color);
 
@@ -1614,105 +1604,105 @@ bool TextUtils::writeUtf8(const QString & fileName, const QString & text)
 		out.setCodec("UTF-8");
 		out << text;
 		file.close();
-        return true;
-    }
+		return true;
+	}
 
-    return false;
+	return false;
 }
 
-int TextUtils::getPinsAndSpacing(const QString & expectedFileName, QString & spacingString) 
+int TextUtils::getPinsAndSpacing(const QString & expectedFileName, QString & spacingString)
 {
-    QStringList pieces = expectedFileName.split("_");
-    int pix = 0;
-    foreach (QString piece, pieces) {
-        bool ok;
-        piece.toInt(&ok);
-        if (ok) break;
+	QStringList pieces = expectedFileName.split("_");
+	int pix = 0;
+	foreach (QString piece, pieces) {
+		bool ok;
+		piece.toInt(&ok);
+		if (ok) break;
 
-        pix++;
-    }
-    if (pix >= pieces.count()) return 0;
+		pix++;
+	}
+	if (pix >= pieces.count()) return 0;
 
 	int pins = pieces.at(pix).toInt();
 
 	spacingString = "100mil";
-    for (++pix; pix < pieces.count(); pix++) {
-        if (QRegExp("\\d").indexIn(pieces.at(pix)) == 0) {
-            spacingString = pieces.at(pix);
-            return pins;
-        }
-    }
+	for (++pix; pix < pieces.count(); pix++) {
+		if (QRegExp("\\d").indexIn(pieces.at(pix)) == 0) {
+			spacingString = pieces.at(pix);
+			return pins;
+		}
+	}
 
-    return pins;
+	return pins;
 }
 
 QSizeF TextUtils::parseForWidthAndHeight(const QString & svg)
 {
 	QRectF viewBox;
-    return parseForWidthAndHeight(svg, viewBox, false);
+	return parseForWidthAndHeight(svg, viewBox, false);
 }
 
 QString TextUtils::parseForModuleID(const QString & fzpXmlString)
 {
-    QXmlStreamReader streamReader(fzpXmlString);
-    streamReader.setNamespaceProcessing(false);
+	QXmlStreamReader streamReader(fzpXmlString);
+	streamReader.setNamespaceProcessing(false);
 
-    while (!streamReader.atEnd()) {
-        switch (streamReader.readNext()) {
-            case QXmlStreamReader::StartElement:
-                if (streamReader.name().toString().compare("module") == 0) {
-                    return streamReader.attributes().value("moduleId").toString();
-                }
-                break;
-            default:
-                break;
-        }
-    }
+	while (!streamReader.atEnd()) {
+		switch (streamReader.readNext()) {
+		case QXmlStreamReader::StartElement:
+			if (streamReader.name().toString().compare("module") == 0) {
+				return streamReader.attributes().value("moduleId").toString();
+			}
+			break;
+		default:
+			break;
+		}
+	}
 
-    return "";
+	return "";
 }
 
 QString TextUtils::parseFileForModuleID(const QString & fzpPath)
 {
-    QString moduleId;
-    QFile file(fzpPath);
-    if (!file.open(QFile::ReadOnly)) return moduleId;
+	QString moduleId;
+	QFile file(fzpPath);
+	if (!file.open(QFile::ReadOnly)) return moduleId;
 
-    QXmlStreamReader streamReader(&file);
-    streamReader.setNamespaceProcessing(false);
+	QXmlStreamReader streamReader(&file);
+	streamReader.setNamespaceProcessing(false);
 
-    while (!streamReader.atEnd()) {
-        switch (streamReader.readNext()) {
-            case QXmlStreamReader::StartElement:
-                if (streamReader.name().toString().compare("module") == 0) {
-                    file.close();
-                    return streamReader.attributes().value("moduleId").toString();
-                }
-                break;
-            default:
-                break;
-        }
-    }
+	while (!streamReader.atEnd()) {
+		switch (streamReader.readNext()) {
+		case QXmlStreamReader::StartElement:
+			if (streamReader.name().toString().compare("module") == 0) {
+				file.close();
+				return streamReader.attributes().value("moduleId").toString();
+			}
+			break;
+		default:
+			break;
+		}
+	}
 
-    file.close();
-    return moduleId;
+	file.close();
+	return moduleId;
 }
 
 QSizeF TextUtils::parseForWidthAndHeight(const QString & svg, QRectF & viewBox, bool getViewBox)
 {
 	QXmlStreamReader streamReader(svg);
-    return parseForWidthAndHeight(streamReader, viewBox, getViewBox);
+	return parseForWidthAndHeight(streamReader, viewBox, getViewBox);
 }
 
 QSizeF TextUtils::parseForWidthAndHeight(QXmlStreamReader & svg)
 {
 	QRectF viewBox;
-    return parseForWidthAndHeight(svg, viewBox, false);
+	return parseForWidthAndHeight(svg, viewBox, false);
 }
 
 QSizeF TextUtils::parseForWidthAndHeight(QXmlStreamReader & svg, QRectF & viewBox, bool getViewBox)
 {
-    svg.setNamespaceProcessing(false);
+	svg.setNamespaceProcessing(false);
 
 	QSizeF size(0, 0);
 	viewBox.setRect(0, 0, 0, 0);
@@ -1721,13 +1711,13 @@ QSizeF TextUtils::parseForWidthAndHeight(QXmlStreamReader & svg, QRectF & viewBo
 	bool bad = false;
 
 	while (!svg.atEnd() && !bad) {
-        switch (svg.readNext()) {
+		switch (svg.readNext()) {
 		case QXmlStreamReader::Comment:
 			if (!isIllustrator) {
 				isIllustrator = TextUtils::isIllustratorFile(svg.text().toString());
 			}
 			break;
-        case QXmlStreamReader::StartElement:
+		case QXmlStreamReader::StartElement:
 			if (svg.name().toString().compare("svg") == 0) {
 				QString ws = svg.attributes().value("width").toString();
 				QString hs = svg.attributes().value("height").toString();
@@ -1742,99 +1732,99 @@ QSizeF TextUtils::parseForWidthAndHeight(QXmlStreamReader & svg, QRectF & viewBo
 				size.setWidth(w);
 				size.setHeight(h);
 
-                if (getViewBox) {
-                    bool gotViewBox = false;
-				    QString vb = svg.attributes().value("viewBox").toString();
-				    QStringList vbs = vb.split(QRegExp(",| "));
-				    if (vbs.count() == 4) {
-					    bool ok = false;
-					    double d[4];
-					    for (int i = 0; i < 4; i++) {
-						    d[i] = vbs.at(i).toDouble(&ok);
-						    if (!ok) break;
-					    }
-					    if (ok) {
-                            gotViewBox = true;
-						    viewBox.setRect(d[0], d[1], d[2], d[3]);
-					    }
-				    }
+				if (getViewBox) {
+					bool gotViewBox = false;
+					QString vb = svg.attributes().value("viewBox").toString();
+					QStringList vbs = vb.split(QRegExp(",| "));
+					if (vbs.count() == 4) {
+						bool ok = false;
+						double d[4];
+						for (int i = 0; i < 4; i++) {
+							d[i] = vbs.at(i).toDouble(&ok);
+							if (!ok) break;
+						}
+						if (ok) {
+							gotViewBox = true;
+							viewBox.setRect(d[0], d[1], d[2], d[3]);
+						}
+					}
 
-                    if (!gotViewBox) {
-                        chopNotDigits(hs);
-                        chopNotDigits(ws);
-                        viewBox.setRect(0, 0, ws.toDouble(), hs.toDouble());
-                    }
-                }
+					if (!gotViewBox) {
+						chopNotDigits(hs);
+						chopNotDigits(ws);
+						viewBox.setRect(0, 0, ws.toDouble(), hs.toDouble());
+					}
+				}
 
 				return size;
 			}
-			break;		
+			break;
 		default:
-			break;		
+			break;
 		}
 	}
 
-    return size;
+	return size;
 }
 
 void TextUtils::gornTree(QDomDocument & doc)
 {
-    QDomElement root = doc.documentElement();
-    QString oldid = root.attribute("id");
-    root.setAttribute("id", "0");
-    root.setAttribute("gorn", "0");
-    root.setAttribute("oldid", oldid);
-    gornTreeAux(root);
+	QDomElement root = doc.documentElement();
+	QString oldid = root.attribute("id");
+	root.setAttribute("id", "0");
+	root.setAttribute("gorn", "0");
+	root.setAttribute("oldid", oldid);
+	gornTreeAux(root);
 }
 
 void TextUtils::gornTreeAux(QDomElement & root) {
-    QString prefix = root.attribute("id");
-    QDomElement child = root.firstChildElement();
-    int index = 0;
-    while (!child.isNull()) {
-        QString oldid = child.attribute("id");
-        QString newid = QString("%1.%2").arg(prefix).arg(index++);
-        child.setAttribute("id", newid);
-        child.setAttribute("gorn", newid);
-        child.setAttribute("oldid", oldid);
-        gornTreeAux(child);
-        child = child.nextSiblingElement();
-    }
+	QString prefix = root.attribute("id");
+	QDomElement child = root.firstChildElement();
+	int index = 0;
+	while (!child.isNull()) {
+		QString oldid = child.attribute("id");
+		QString newid = QString("%1.%2").arg(prefix).arg(index++);
+		child.setAttribute("id", newid);
+		child.setAttribute("gorn", newid);
+		child.setAttribute("oldid", oldid);
+		gornTreeAux(child);
+		child = child.nextSiblingElement();
+	}
 }
 
 bool TextUtils::elevateTransform(QDomElement & root) {
-    QList<QDomElement> transforms;
-    collectTransforms(root, transforms);
-    if (transforms.length() == 0) return false;
+	QList<QDomElement> transforms;
+	collectTransforms(root, transforms);
+	if (transforms.length() == 0) return false;
 
-    foreach (QDomElement element, transforms) {
-        QString transform = element.attribute("transform");
-        element.removeAttribute("transform");
-        QDomElement g = element.ownerDocument().createElement("g");
-        g.setAttribute("transform", transform);
-        element.parentNode().insertBefore(g, element);
-        g.appendChild(element);
-    }
+	foreach (QDomElement element, transforms) {
+		QString transform = element.attribute("transform");
+		element.removeAttribute("transform");
+		QDomElement g = element.ownerDocument().createElement("g");
+		g.setAttribute("transform", transform);
+		element.parentNode().insertBefore(g, element);
+		g.appendChild(element);
+	}
 
-    return true;
+	return true;
 }
 
 void TextUtils::collectTransforms(QDomElement & root, QList<QDomElement> & transforms) {
-    QString transform = root.attribute("transform");
-    if (!transform.isEmpty()) {
-        transforms.append(root);
-    }
+	QString transform = root.attribute("transform");
+	if (!transform.isEmpty()) {
+		transforms.append(root);
+	}
 
-    QDomElement child = root.firstChildElement();
-    while (!child.isNull()) {
-        collectTransforms(child, transforms);
-        child = child.nextSiblingElement();
-    }
+	QDomElement child = root.firstChildElement();
+	while (!child.isNull()) {
+		collectTransforms(child, transforms);
+		child = child.nextSiblingElement();
+	}
 }
 
 bool TextUtils::fixFonts(QString & svg, const QString & destFont, bool & reallyFixed) {
 	bool changed = removeFontFamilySingleQuotes(svg);
-    reallyFixed = fixUnavailableFontFamilies(svg, destFont);
+	reallyFixed = fixUnavailableFontFamilies(svg, destFont);
 	changed |= reallyFixed;
 	return changed;
 }
@@ -1866,7 +1856,7 @@ void TextUtils::fixStyleAttribute(QDomElement & element)
 
 void TextUtils::fixStyleAttribute(QDomElement & element, QString & style, const QString & attributeName)
 {
-    static const QString findStyle("%1[\\s]*:[\\s]*([^;]*)[;]?");
+	static const QString findStyle("%1[\\s]*:[\\s]*([^;]*)[;]?");
 
 	QString str = findStyle.arg(attributeName);
 	QRegExp sw(str);
@@ -1891,71 +1881,71 @@ QString TextUtils::getRandText() {
 
 
 bool TextUtils::ensureViewBox(QDomDocument doc, double dpi, QRectF & rect, bool convert, double & w, double & h, bool getwh) {
-    bool isIllustrator = TextUtils::isIllustratorDoc(doc);
+	bool isIllustrator = TextUtils::isIllustratorDoc(doc);
 
-    QDomElement root = doc.documentElement();
+	QDomElement root = doc.documentElement();
 	QString viewBox = root.attribute("viewBox");
 	if (viewBox.isEmpty() || getwh) {
 		bool ok1, ok2;
-        if (convert) {
-		    w = TextUtils::convertToInches(root.attribute("width"), &ok1, isIllustrator) * dpi;
-		    h = TextUtils::convertToInches(root.attribute("height"), &ok2, isIllustrator) * dpi;
-        }
-        else {
-		    w = root.attribute("width").toDouble(&ok1);
-		    h = root.attribute("height").toDouble(&ok2);
-        }
+		if (convert) {
+			w = TextUtils::convertToInches(root.attribute("width"), &ok1, isIllustrator) * dpi;
+			h = TextUtils::convertToInches(root.attribute("height"), &ok2, isIllustrator) * dpi;
+		}
+		else {
+			w = root.attribute("width").toDouble(&ok1);
+			h = root.attribute("height").toDouble(&ok2);
+		}
 		if (!ok1 || !ok2) {
 			return false;
 		}
-    }
+	}
 
 	if (viewBox.isEmpty()) {
 		root.setAttribute("viewBox", QString("0 0 %1 %2").arg(w).arg(h));
-        rect.setRect(0, 0, w, h);
-        return true;
+		rect.setRect(0, 0, w, h);
+		return true;
 	}
 
-    QStringList coords = viewBox.split(QRegExp(" |,"));
-    if (coords.count() != 4) return false;
+	QStringList coords = viewBox.split(QRegExp(" |,"));
+	if (coords.count() != 4) return false;
 
-    rect.setRect(coords.at(0).toDouble(), coords.at(1).toDouble(), coords.at(2).toDouble(), coords.at(3).toDouble());
-    return true;
+	rect.setRect(coords.at(0).toDouble(), coords.at(1).toDouble(), coords.at(2).toDouble(), coords.at(3).toDouble());
+	return true;
 }
 
 QString TextUtils::findAnchor(const QDomElement & text) {
-    if (text.isNull()) return "start";
+	if (text.isNull()) return "start";
 
-    QString anchor = text.attribute("text-anchor");
-    if (!anchor.isEmpty()) return anchor;
+	QString anchor = text.attribute("text-anchor");
+	if (!anchor.isEmpty()) return anchor;
 
-    return findAnchor(text.parentNode().toElement());
+	return findAnchor(text.parentNode().toElement());
 }
 
 void TextUtils::resplit(QStringList & names, const QString & split) {
-    QStringList result;
-    QString appender = split;
-    if (appender == " ") appender = "";
-    foreach (QString name, names) {
-        QStringList sub = name.split(split, QString::SkipEmptyParts);
-        for (int i = 0; i < sub.count(); i++) {
-            QString s = sub.at(i);
-            if (i < sub.count() - 1) s.append(appender);
-            result.append(s);
-        }
-    }
-    names.clear();
-    names.append(result);
+	QStringList result;
+	QString appender = split;
+	if (appender == " ") appender = "";
+	foreach (QString name, names) {
+		QStringList sub = name.split(split, QString::SkipEmptyParts);
+		for (int i = 0; i < sub.count(); i++) {
+			QString s = sub.at(i);
+			if (i < sub.count() - 1) s.append(appender);
+			result.append(s);
+		}
+	}
+	names.clear();
+	names.append(result);
 }
 
 QString TextUtils::elementToString(const QDomElement & element) {
-    QString string = "<";
-    string += element.tagName();
-    QDomNamedNodeMap attributes = element.attributes();
-    for (int i = 0; i < attributes.count(); i++) {
-        QDomNode attribute = attributes.item(i);
-        string += QString(" %1='%2'").arg(attribute.nodeName()).arg(attribute.nodeValue());
-    }
-    string +="/>";
-    return string;
+	QString string = "<";
+	string += element.tagName();
+	QDomNamedNodeMap attributes = element.attributes();
+	for (int i = 0; i < attributes.count(); i++) {
+		QDomNode attribute = attributes.item(i);
+		string += QString(" %1='%2'").arg(attribute.nodeName()).arg(attribute.nodeValue());
+	}
+	string +="/>";
+	return string;
 }

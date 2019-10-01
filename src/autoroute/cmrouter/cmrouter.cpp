@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -27,12 +27,6 @@ http://www.cis.nctu.edu.tw/~ylli/paper/f69-li.pdf
 The corner stitching code is a modified version of code from the Magic VLSI Layout Tool
 http://opencircuitdesign.com/magic/
 
-********************************************************************
-
-$Revision: 6976 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
-
 ********************************************************************/
 
 // TODO:
@@ -46,12 +40,12 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 //	option to turn off propagation feedback?
 //	remove debugging output and extra calls to processEvents
 //
-//	still seeing a few thin tiles going across the board: 
+//	still seeing a few thin tiles going across the board:
 //		this is because the thick tiles above and below are wider than the thin tile
 //
 //	slide corner: if dogleg is too close to other connectors, slide it more towards the middle
 //
-//	bugs: 
+//	bugs:
 //		why does the same routing task give different results (qSort?)
 //			especially annoying in schematic view when sometimes wires flow along wires and sometimes don't, for the same routing task
 //		border seems asymmetric
@@ -65,11 +59,11 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 //
 //		catching 1st repeat to end rip-up-and-reroute is not valid
 //
-//  longer route than expected:  
-//		It is possible that the shortest tile route is actually longer than the shortest crow-fly route.  
+//  longer route than expected:
+//		It is possible that the shortest tile route is actually longer than the shortest crow-fly route.
 //		For example, in the following case, route ABC will reach goal before ABDEF:
 //                                   -------
-//                                   |  A  |  
+//                                   |  A  |
 //      ------------------------------------
 //      |               B                  |
 //		------------------------------------
@@ -109,7 +103,7 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 #include <qmath.h>
 #include <limits>
 #include <QApplication>
-#include <QMessageBox> 
+#include <QMessageBox>
 //#include <QElapsedTimer>			// forces a dependency on qt 4.7
 #include <QSettings>
 #include <QCryptographicHash>
@@ -160,33 +154,33 @@ static inline void infoTile(const QString & message, Tile * tile)
 	}
 
 	DebugDialog::debug(QString("tile:%1 lb:%2 bl:%3 tr:%4 rt%5")
-		.arg((long) tile, 0, 16)
-		.arg((long) tile->ti_lb, 0, 16)
-		.arg((long) tile->ti_bl, 0, 16)
-		.arg((long) tile->ti_tr, 0, 16)
-		.arg((long) tile->ti_rt, 0, 16));
+	                   .arg((long) tile, 0, 16)
+	                   .arg((long) tile->ti_lb, 0, 16)
+	                   .arg((long) tile->ti_bl, 0, 16)
+	                   .arg((long) tile->ti_tr, 0, 16)
+	                   .arg((long) tile->ti_rt, 0, 16));
 
 	DebugDialog::debug(QString("%1 tile:%2 l:%3 t:%4 w:%5 h:%6 type:%7 body:%8")
-		.arg(message)
-		.arg((long) tile, 0, 16)
-		.arg(LEFT(tile))
-		.arg(YMIN(tile))
-		.arg(WIDTH(tile))
-		.arg(HEIGHT(tile))
-		.arg(TiGetType(tile))
-		.arg((long) TiGetBody(tile), 0, 16)
-	);
+	                   .arg(message)
+	                   .arg((long) tile, 0, 16)
+	                   .arg(LEFT(tile))
+	                   .arg(YMIN(tile))
+	                   .arg(WIDTH(tile))
+	                   .arg(HEIGHT(tile))
+	                   .arg(TiGetType(tile))
+	                   .arg((long) TiGetBody(tile), 0, 16)
+	                  );
 }
 
 static inline void infoTileRect(const QString & message, const TileRect & tileRect)
 {
 	DebugDialog::debug(QString("%1 l:%2 t:%3 w:%4 h:%5")
-		.arg(message)
-		.arg(tileRect.xmini)
-		.arg(tileRect.ymini)
-		.arg(tileRect.xmaxi - tileRect.xmini)
-		.arg(tileRect.ymaxi - tileRect.ymini)
-	);
+	                   .arg(message)
+	                   .arg(tileRect.xmini)
+	                   .arg(tileRect.ymini)
+	                   .arg(tileRect.xmaxi - tileRect.xmini)
+	                   .arg(tileRect.ymaxi - tileRect.ymini)
+	                  );
 }
 
 static inline int manhattan(TileRect & tr1, TileRect & tr2) {
@@ -201,7 +195,9 @@ static inline int manhattan(TileRect & tr1, TileRect & tr2) {
 	return dx + dy;
 }
 
-static inline GridEntry * TiGetGridEntry(Tile * tile) { return dynamic_cast<GridEntry *>(TiGetClient(tile)); }
+static inline GridEntry * TiGetGridEntry(Tile * tile) {
+	return dynamic_cast<GridEntry *>(TiGetClient(tile));
+}
 
 void extendToBounds(TileRect & from, TileRect & to) {
 	// bail if it already extends to or past the bounds
@@ -225,20 +221,20 @@ void extendToBounds(TileRect & from, TileRect & to) {
 		dmin = to.ymaxi - from.ymaxi;
 	}
 	switch(which) {
-		case 0:
-			from.xmini = to.xmini;
-			return;
-		case 1:
-			from.xmaxi = to.xmaxi;
-			return;
-		case 2:
-			from.ymini = to.ymini;
-			return;
-		case 3:
-			from.ymaxi = to.ymaxi;
-			return;
-		default:
-			break;
+	case 0:
+		from.xmini = to.xmini;
+		return;
+	case 1:
+		from.xmaxi = to.xmaxi;
+		return;
+	case 2:
+		from.ymini = to.ymini;
+		return;
+	case 3:
+		from.ymaxi = to.ymaxi;
+		return;
+	default:
+		break;
 	}
 }
 
@@ -249,13 +245,13 @@ void extendToBounds(TileRect & from, TileRect & to) {
 
 int checkAlready(Tile * tile, UserData userData) {
 	switch (TiGetType(tile)) {
-		case Tile::SPACE:		
-		case Tile::SPACE2:		
-		case Tile::SCHEMATICWIRESPACE:		
-		case Tile::BUFFER:
-			return 0;
-		default:
-			break;
+	case Tile::SPACE:
+	case Tile::SPACE2:
+	case Tile::SCHEMATICWIRESPACE:
+	case Tile::BUFFER:
+		return 0;
+	default:
+		break;
 	}
 
 	QList<Tile *> * tiles = (QList<Tile *> *) userData;
@@ -265,13 +261,13 @@ int checkAlready(Tile * tile, UserData userData) {
 
 int prepDeleteTile(Tile * tile, UserData userData) {
 	switch(TiGetType(tile)) {
-		case Tile::DUMMYLEFT:
-		case Tile::DUMMYRIGHT:
-		case Tile::DUMMYTOP:
-		case Tile::DUMMYBOTTOM:
-			return 0;
-		default:
-			break;
+	case Tile::DUMMYLEFT:
+	case Tile::DUMMYRIGHT:
+	case Tile::DUMMYTOP:
+	case Tile::DUMMYBOTTOM:
+		return 0;
+	default:
+		break;
 	}
 
 	//infoTile("prep delete", tile);
@@ -303,7 +299,7 @@ void GridEntry::setDrawn(bool d) {
 CMRouter::CMRouter(PCBSketchWidget * sketchWidget, ItemBase * board, bool adjustIf) : QObject()
 {
 	m_board = board;
-	m_sketchWidget = sketchWidget;	
+	m_sketchWidget = sketchWidget;
 
 	m_unionPlane = m_union90Plane = NULL;
 
@@ -312,16 +308,16 @@ CMRouter::CMRouter(PCBSketchWidget * sketchWidget, ItemBase * board, bool adjust
 	}
 	else {
 		m_maxRect = m_sketchWidget->scene()->itemsBoundingRect();
-        if (adjustIf) {
-		    m_maxRect.adjust(-m_maxRect.width() / 2, -m_maxRect.height() / 2, m_maxRect.width() / 2, m_maxRect.height() / 2);
-        }
+		if (adjustIf) {
+			m_maxRect.adjust(-m_maxRect.width() / 2, -m_maxRect.height() / 2, m_maxRect.width() / 2, m_maxRect.height() / 2);
+		}
 	}
 
 	QMatrix matrix90;
 	matrix90.rotate(90);
 	m_maxRect90 = matrix90.mapRect(m_maxRect);
 
-	qrectToTile(m_maxRect, m_tileMaxRect); 
+	qrectToTile(m_maxRect, m_tileMaxRect);
 
 	setUpWidths(m_sketchWidget->getAutorouterTraceWidth());
 }
@@ -337,29 +333,29 @@ Plane * CMRouter::initPlane(bool rotate90) {
 
 	QRectF bufferRect(rotate90 ? m_maxRect90 : m_maxRect);
 
-    TileRect br;
-    qrectToTile(bufferRect, br);
+	TileRect br;
+	qrectToTile(bufferRect, br);
 
 	bufferRect.adjust(-bufferRect.width(), -bufferRect.height(), bufferRect.width(), bufferRect.height());
-    //DebugDialog::debug("max rect", m_maxRect);
-    //DebugDialog::debug("max rect 90", m_maxRect90);
+	//DebugDialog::debug("max rect", m_maxRect);
+	//DebugDialog::debug("max rect 90", m_maxRect90);
 
 
-    int l = fasterRealToTile(bufferRect.left());
-    int t = fasterRealToTile(bufferRect.top());
-    int r = fasterRealToTile(bufferRect.right());
-    int b = fasterRealToTile(bufferRect.bottom());
-    SETLEFT(bufferTile, l);
-    SETYMIN(bufferTile, t);		// TILE is Math Y-axis not computer-graphic Y-axis
+	int l = fasterRealToTile(bufferRect.left());
+	int t = fasterRealToTile(bufferRect.top());
+	int r = fasterRealToTile(bufferRect.right());
+	int b = fasterRealToTile(bufferRect.bottom());
+	SETLEFT(bufferTile, l);
+	SETYMIN(bufferTile, t);		// TILE is Math Y-axis not computer-graphic Y-axis
 
 	Plane * thePlane = TiNewPlane(bufferTile, br.xmini, br.ymini, br.xmaxi, br.ymaxi);
 
-    SETRIGHT(bufferTile, r);
+	SETRIGHT(bufferTile, r);
 	SETYMAX(bufferTile, b);		// TILE is Math Y-axis not computer-graphic Y-axis
 
 	// do not use InsertTile here
-	TiInsertTile(thePlane, &thePlane->maxRect, NULL, Tile::SPACE); 
-    //infoTileRect("insert", thePlane->maxRect);
+	TiInsertTile(thePlane, &thePlane->maxRect, NULL, Tile::SPACE);
+	//infoTileRect("insert", thePlane->maxRect);
 
 	return thePlane;
 }
@@ -367,7 +363,7 @@ Plane * CMRouter::initPlane(bool rotate90) {
 /*
 void CMRouter::shortenUs(QList<QPointF> & allPoints, JSubedge * subedge)
 {
-	// TODO: this could be implemented recursively as a child tile space 
+	// TODO: this could be implemented recursively as a child tile space
 	//		with the goals being the sides of the U-shape and the obstacles copied in from the parent tile space
 	// for now just look for a straight line
 	int ix = 0;
@@ -434,7 +430,7 @@ void CMRouter::shortenUs(QList<QPointF> & allPoints, JSubedge * subedge)
 
 GridEntry * CMRouter::drawGridItem(Tile * tile)
 {
-    return NULL; 
+	return NULL;
 
 	if (tile == NULL) return NULL;
 
@@ -459,27 +455,27 @@ GridEntry * CMRouter::drawGridItem(Tile * tile)
 
 	QColor c;
 	switch (TiGetType(tile)) {
-		case Tile::SPACE:
-			c = QColor(255, 255, 0, GridEntryAlpha);
-			break;
-		case Tile::SPACE2:
-			c = QColor(200, 200, 0, GridEntryAlpha);
-			break;
-		case Tile::SOURCE:
-			c = QColor(0, 255, 0, GridEntryAlpha);
-			break;
-		case Tile::DESTINATION:
-			c = QColor(0, 0, 255, GridEntryAlpha);
-			break;
-		case Tile::SCHEMATICWIRESPACE:
-			c = QColor(255, 192, 203, GridEntryAlpha);
-			break;
-		case Tile::OBSTACLE:
-			c = QColor(60, 60, 60, GridEntryAlpha);
-			break;
-		default:
-			c = QColor(255, 0, 0, GridEntryAlpha);
-			break;
+	case Tile::SPACE:
+		c = QColor(255, 255, 0, GridEntryAlpha);
+		break;
+	case Tile::SPACE2:
+		c = QColor(200, 200, 0, GridEntryAlpha);
+		break;
+	case Tile::SOURCE:
+		c = QColor(0, 255, 0, GridEntryAlpha);
+		break;
+	case Tile::DESTINATION:
+		c = QColor(0, 0, 255, GridEntryAlpha);
+		break;
+	case Tile::SCHEMATICWIRESPACE:
+		c = QColor(255, 192, 203, GridEntryAlpha);
+		break;
+	case Tile::OBSTACLE:
+		c = QColor(60, 60, 60, GridEntryAlpha);
+		break;
+	default:
+		c = QColor(255, 0, 0, GridEntryAlpha);
+		break;
 	}
 
 	gridEntry->setPen(c);
@@ -493,7 +489,7 @@ GridEntry * CMRouter::drawGridItem(Tile * tile)
 	return gridEntry;
 }
 
-Tile * CMRouter::addTile(NonConnectorItem * nci, Tile::TileType type, Plane * thePlane, QList<Tile *> & alreadyTiled, CMRouter::OverlapType overlapType) 
+Tile * CMRouter::addTile(NonConnectorItem * nci, Tile::TileType type, Plane * thePlane, QList<Tile *> & alreadyTiled, CMRouter::OverlapType overlapType)
 {
 	QRectF r = nci->attachedTo()->mapRectToScene(nci->rect());
 	TileRect tileRect;
@@ -503,7 +499,7 @@ Tile * CMRouter::addTile(NonConnectorItem * nci, Tile::TileType type, Plane * th
 	return tile;
 }
 
-void CMRouter::hideTiles() 
+void CMRouter::hideTiles()
 {
 	foreach (QGraphicsItem * item, m_sketchWidget->items()) {
 		GridEntry * gridEntry = dynamic_cast<GridEntry *>(item);
@@ -511,13 +507,13 @@ void CMRouter::hideTiles()
 	}
 }
 
-void CMRouter::clearPlane(Plane * thePlane) 
+void CMRouter::clearPlane(Plane * thePlane)
 {
 	if (thePlane == NULL) return;
 
 	QSet<Tile *> tiles;
 
-                    //infoTileRect("clear", thePlane->maxRect);
+	//infoTileRect("clear", thePlane->maxRect);
 
 	TiSrArea(NULL, thePlane, &thePlane->maxRect, prepDeleteTile, &tiles);
 	foreach (Tile * tile, tiles) {
@@ -551,14 +547,14 @@ void CMRouter::displayBadTileRect(TileRect & tileRect) {
 }
 
 
-Tile * CMRouter::insertTile(Plane * thePlane, QRectF & rect, QList<Tile *> & alreadyTiled, QGraphicsItem * item, Tile::TileType tileType, CMRouter::OverlapType overlapType) 
+Tile * CMRouter::insertTile(Plane * thePlane, QRectF & rect, QList<Tile *> & alreadyTiled, QGraphicsItem * item, Tile::TileType tileType, CMRouter::OverlapType overlapType)
 {
 	TileRect tileRect;
 	qrectToTile(rect, tileRect);
 	return insertTile(thePlane, tileRect, alreadyTiled, item, tileType, overlapType);
 }
 
-Tile * CMRouter::insertTile(Plane * thePlane, TileRect & tileRect, QList<Tile *> &, QGraphicsItem * item, Tile::TileType tileType, CMRouter::OverlapType overlapType) 
+Tile * CMRouter::insertTile(Plane * thePlane, TileRect & tileRect, QList<Tile *> &, QGraphicsItem * item, Tile::TileType tileType, CMRouter::OverlapType overlapType)
 {
 	//infoTileRect("insert tile", tileRect);
 	if (tileRect.xmaxi - tileRect.xmini <= 0 || tileRect.ymaxi - tileRect.ymini <= 0) {
@@ -566,21 +562,21 @@ Tile * CMRouter::insertTile(Plane * thePlane, TileRect & tileRect, QList<Tile *>
 		return NULL;
 	}
 
-    if (tileRect.xmaxi > thePlane->maxRect.xmaxi) {
-        tileRect.xmaxi = thePlane->maxRect.xmaxi;
-    }
-    if (tileRect.xmini < thePlane->maxRect.xmini) {
-        tileRect.xmini = thePlane->maxRect.xmini;
-    }
+	if (tileRect.xmaxi > thePlane->maxRect.xmaxi) {
+		tileRect.xmaxi = thePlane->maxRect.xmaxi;
+	}
+	if (tileRect.xmini < thePlane->maxRect.xmini) {
+		tileRect.xmini = thePlane->maxRect.xmini;
+	}
 
-    if (tileRect.ymaxi > thePlane->maxRect.ymaxi) {
-        tileRect.ymaxi = thePlane->maxRect.ymaxi;
-    }
-    if (tileRect.ymini < thePlane->maxRect.ymini) {
-        tileRect.ymini = thePlane->maxRect.ymini;
-    }
+	if (tileRect.ymaxi > thePlane->maxRect.ymaxi) {
+		tileRect.ymaxi = thePlane->maxRect.ymaxi;
+	}
+	if (tileRect.ymini < thePlane->maxRect.ymini) {
+		tileRect.ymini = thePlane->maxRect.ymini;
+	}
 
-    if (tileRect.xmaxi - tileRect.xmini <= 0 || tileRect.ymaxi - tileRect.ymini <= 0) {
+	if (tileRect.xmaxi - tileRect.xmini <= 0 || tileRect.ymaxi - tileRect.ymini <= 0) {
 		return NULL;
 	}
 
@@ -629,7 +625,7 @@ bool CMRouter::allowEquipotentialOverlaps(QGraphicsItem * item, QList<Tile *> & 
 		ConnectorItem * ci = dynamic_cast<ConnectorItem *>(item);
 		equipotential.append(ci);
 	}
-		
+
 	foreach (Tile * intersectingTile, alreadyTiled) {
 		QGraphicsItem * bodyItem = TiGetBody(intersectingTile);
 		ConnectorItem * ci = dynamic_cast<ConnectorItem *>(bodyItem);
@@ -714,21 +710,21 @@ void CMRouter::insertUnion(TileRect & tileRect, QGraphicsItem *, Tile::TileType 
 	TileRect tileRect90;
 	tileRotate90(tileRect, tileRect90);
 
-    if (tileRect90.xmaxi > m_union90Plane->maxRect.xmaxi) {
-        tileRect90.xmaxi = m_union90Plane->maxRect.xmaxi;
-    }
-    if (tileRect90.xmini < m_union90Plane->maxRect.xmini) {
-        tileRect90.xmini = m_union90Plane->maxRect.xmini;
-    }
+	if (tileRect90.xmaxi > m_union90Plane->maxRect.xmaxi) {
+		tileRect90.xmaxi = m_union90Plane->maxRect.xmaxi;
+	}
+	if (tileRect90.xmini < m_union90Plane->maxRect.xmini) {
+		tileRect90.xmini = m_union90Plane->maxRect.xmini;
+	}
 
-    if (tileRect90.ymaxi > m_union90Plane->maxRect.ymaxi) {
-        tileRect90.ymaxi = m_union90Plane->maxRect.ymaxi;
-    }
-    if (tileRect90.ymini < m_union90Plane->maxRect.ymini) {
-        tileRect90.ymini = m_union90Plane->maxRect.ymini;
-    }
+	if (tileRect90.ymaxi > m_union90Plane->maxRect.ymaxi) {
+		tileRect90.ymaxi = m_union90Plane->maxRect.ymaxi;
+	}
+	if (tileRect90.ymini < m_union90Plane->maxRect.ymini) {
+		tileRect90.ymini = m_union90Plane->maxRect.ymini;
+	}
 
-    if (tileRect90.xmaxi - tileRect90.xmini <= 0 || tileRect90.ymaxi - tileRect90.ymini <= 0) {
+	if (tileRect90.xmaxi - tileRect90.xmini <= 0 || tileRect90.ymaxi - tileRect90.ymini <= 0) {
 		return;
 	}
 
@@ -755,9 +751,9 @@ TileRect CMRouter::boardRect() {
 void CMRouter::setUpWidths(double width)
 {
 	StandardWireWidth = width;
-    TileStandardWireWidth = fasterRealToTile(StandardWireWidth);						
-	HalfStandardWireWidth = StandardWireWidth / 2;										
-    TileHalfStandardWireWidth = fasterRealToTile(HalfStandardWireWidth);
+	TileStandardWireWidth = fasterRealToTile(StandardWireWidth);
+	HalfStandardWireWidth = StandardWireWidth / 2;
+	TileHalfStandardWireWidth = fasterRealToTile(HalfStandardWireWidth);
 }
 
 void CMRouter::setKeepout(double keepout)
@@ -765,7 +761,7 @@ void CMRouter::setKeepout(double keepout)
 	m_keepoutPixels = keepout;
 }
 
-void CMRouter::drcClean() 
+void CMRouter::drcClean()
 {
 	clearGridEntries();
 	if (m_unionPlane) {
@@ -777,4 +773,3 @@ void CMRouter::drcClean()
 		m_union90Plane = NULL;
 	}
 }
-

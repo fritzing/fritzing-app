@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6980 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -42,11 +36,11 @@ $Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 
 class Note : public ItemBase
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	Note(class ModelPart*, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu);
-	
+
 	void saveGeometry();
 	bool itemMoved();
 	void saveInstanceLocation(QXmlStreamWriter &);
@@ -64,7 +58,7 @@ public:
 	bool hasPartNumberProperty();
 	bool rotationAllowed();
 	bool rotation45Allowed();
-    void addedToScene(bool temporary);
+	void addedToScene(bool temporary);
 
 protected:
 	QRectF boundingRect() const;
@@ -78,7 +72,7 @@ protected:
 	void disconnectSlots();
 	void forceFormat(int position, int charsAdded);
 	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 protected slots:
 	void contentsChangeSlot(int position, int charsAdded, int charsRemoved);
@@ -98,8 +92,8 @@ public:
 
 protected:
 	QRectF m_rect;
-    QPen m_pen;
-    QBrush m_brush;
+	QPen m_pen;
+	QBrush m_brush;
 	class ResizeHandle * m_resizeGrip;
 	class ResizeHandle * m_inResize;
 	QGraphicsTextItem * m_graphicsTextItem;
@@ -110,7 +104,7 @@ protected:
 
 class LinkDialog : public QDialog
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	LinkDialog(QWidget *parent = 0);

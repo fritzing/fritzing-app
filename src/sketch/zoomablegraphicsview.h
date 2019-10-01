@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6976 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 
 ********************************************************************/
 
@@ -40,17 +34,17 @@ class ZoomableGraphicsView : public QGraphicsView
 public:
 	ZoomableGraphicsView(QWidget* parent = 0);
 
-    void relativeZoom(double step, bool centerToCursor);
-    void absoluteZoom(double percent);
- 	double currentZoom();
+	void relativeZoom(double step, bool centerToCursor);
+	void absoluteZoom(double percent);
+	double currentZoom();
 	void setAcceptWheelEvents(bool);
 	virtual void ensureFixedToBottomRightItems() {}
-    bool viewFromBelow();
-    virtual void setViewFromBelow(bool);
+	bool viewFromBelow();
+	virtual void setViewFromBelow(bool);
 
-    static const int MaxScaleValue;
-	
-public:	
+	static const int MaxScaleValue;
+
+public:
 	enum WheelMapping {
 		ScrollPrimary,
 		ZoomPrimary,
@@ -73,7 +67,7 @@ protected:
 	int m_maxScaleValue;
 	int m_minScaleValue;
 	bool m_acceptWheelEvents;
-    bool m_viewFromBelow;
+	bool m_viewFromBelow;
 
 protected:
 	static WheelMapping m_wheelMapping;

@@ -60,44 +60,44 @@ QT_END_NAMESPACE
 
 class ConsoleSettings : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    struct Settings {
-        QString name;
-        qint32 baudRate;
-        QString stringBaudRate;
-        QSerialPort::DataBits dataBits;
-        QString stringDataBits;
-        QSerialPort::Parity parity;
-        QString stringParity;
-        QSerialPort::StopBits stopBits;
-        QString stringStopBits;
-        QSerialPort::FlowControl flowControl;
-        QString stringFlowControl;
-        bool localEchoEnabled;
-    };
+	struct Settings {
+		QString name;
+		qint32 baudRate;
+		QString stringBaudRate;
+		QSerialPort::DataBits dataBits;
+		QString stringDataBits;
+		QSerialPort::Parity parity;
+		QString stringParity;
+		QSerialPort::StopBits stopBits;
+		QString stringStopBits;
+		QSerialPort::FlowControl flowControl;
+		QString stringFlowControl;
+		bool localEchoEnabled;
+	};
 
-    explicit ConsoleSettings(QWidget *parent = 0);
-    ~ConsoleSettings();
+	explicit ConsoleSettings(QWidget *parent = 0);
+	~ConsoleSettings();
 
-    Settings settings() const;
-    void selectPortName(const QString portName);
+	Settings settings() const;
+	void selectPortName(const QString portName);
 
 private slots:
-    void showPortInfo(int idx);
-    void apply();
-    void checkCustomBaudRatePolicy(int idx);
+	void showPortInfo(int idx);
+	void apply();
+	void checkCustomBaudRatePolicy(int idx);
 
 private:
-    void fillPortsParameters();
-    void fillPortsInfo();
-    void updateSettings();
+	void fillPortsParameters();
+	void fillPortsInfo();
+	void updateSettings();
 
 private:
-    Ui::ConsoleSettings *ui;
-    Settings currentSettings;
-    QIntValidator *intValidator;
+	Ui::ConsoleSettings *ui;
+	Settings currentSettings;
+	QIntValidator *intValidator;
 };
 
 #endif // CONSOLESETTINGS_H

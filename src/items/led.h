@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6980 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
-
 ********************************************************************/
 
 #ifndef LED_H
@@ -34,7 +28,7 @@ $Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 
 #include "capacitor.h"
 
-class LED : public Capacitor 
+class LED : public Capacitor
 {
 	Q_OBJECT
 
@@ -49,9 +43,9 @@ public:
 	PluralType isPlural();
 	void addedToScene(bool temporary);
 	void setProp(const QString & prop, const QString & value);
- 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	const QString & title();
-    ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 protected:
 	void setColor(const QString & color);

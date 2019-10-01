@@ -1,13 +1,13 @@
 /*
   Lauflicht
-  
+
   Dieses Beispiel aus dem Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
 int pinsGesamt=8;                        // deklariert die ganzzahlige Variable pinsGesamt
 int pins[] = {2,3,4,5,6,7,8,9};          // deklariert das Array pins[]
 
-void setup() {                
+void setup() {
   for (int i=0; i<pinsGesamt; i=i+1){    // zählt die Variable i von 0 bis 7
     pinMode(pins[i], OUTPUT);            // initialisiert den Pin an der pins-Array-Stelle i als OUTPUT
   }
@@ -25,4 +25,3 @@ void loop() {
     digitalWrite(pins[i], LOW);          // LED an der Stelle i ausschalten
   }
 }
-

@@ -7,14 +7,14 @@
 	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
 <g>
 	<g>
-		
+
 			<polyline fill="none" stroke="#777777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			27.25,12.875 19.25,12.875 19.25,4.875 		"/>
-		
+
 			<polyline fill="none" stroke="#777777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 			27.25,13.041 27.25,26.91 5.25,26.91 5.25,4.91 19.25,4.91 		"/>
 	</g>
-	
+
 		<line fill="none" stroke="#777777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="19.25" y1="4.875" x2="27.25" y2="12.875"/>
 </g>
 </svg>

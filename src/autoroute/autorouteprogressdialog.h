@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,12 +16,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
-
 ********************************************************************/
 
 #ifndef AUTOROUTEPROGRESSDIALOG_H
@@ -35,7 +29,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 class AutorouteProgressDialog : public QDialog
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	AutorouteProgressDialog(const QString & title, bool zoomAndPan, bool stopButton, bool bestButton, bool spin, class ZoomableGraphicsView * view, QWidget *parent = 0);
@@ -55,26 +49,26 @@ public slots:
 	void setMessage(const QString &);
 	void setMessage2(const QString &);
 	void setSpinValue(int);
-    void disableButtons();
-    void sendBest();
+	void disableButtons();
+	void sendBest();
 
 signals:
 	void skip();
 	void cancel();
 	void stop();
-    void best();
+	void best();
 	void spinChange(int);
 
 protected slots:
 	void internalSpinChange(int);
 
 protected:
-	QProgressBar * m_progressBar;	
+	QProgressBar * m_progressBar;
 	QLabel * m_spinLabel;
 	QLabel * m_message;
 	QLabel * m_message2;
 	QSpinBox * m_spinBox;
-    QDialogButtonBox * m_buttonBox;
+	QDialogButtonBox * m_buttonBox;
 };
 
 class ArrowButton : public QLabel {
@@ -93,4 +87,4 @@ protected:
 };
 
 
-#endif 
+#endif

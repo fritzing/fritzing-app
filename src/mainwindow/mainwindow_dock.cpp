@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -14,12 +14,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -65,39 +59,39 @@ void MainWindow::createDockWindows()
 
 	makeDock(BinManager::Title, m_binManager, PartsBinMinHeight, PartsBinHeightDefault/*, Qt::LeftDockWidgetArea*/);
 
-    makeDock(tr("Inspector"), m_infoView, InfoViewMinHeight, InfoViewHeightDefault);
+	makeDock(tr("Inspector"), m_infoView, InfoViewMinHeight, InfoViewHeightDefault);
 
 	makeDock(tr("Undo History"), m_undoView, UndoHistoryMinHeight, UndoHistoryDefaultHeight)->hide();
-    m_undoView->setMinimumSize(DockMinWidth, UndoHistoryMinHeight);
+	m_undoView->setMinimumSize(DockMinWidth, UndoHistoryMinHeight);
 
-    makeDock(tr("Layers"), m_layerPalette, DockMinWidth, DockMinHeight)->hide();
-    m_layerPalette->setMinimumSize(DockMinWidth, DockMinHeight);
+	makeDock(tr("Layers"), m_layerPalette, DockMinWidth, DockMinHeight)->hide();
+	m_layerPalette->setMinimumSize(DockMinWidth, DockMinHeight);
 	m_layerPalette->setShowAllLayersAction(m_showAllLayersAct);
 	m_layerPalette->setHideAllLayersAction(m_hideAllLayersAct);
 
-    if (m_programView == NULL) {
-        m_windowMenu->addSeparator();
-        m_windowMenu->addAction(m_openProgramWindowAct);
-    }
+	if (m_programView == NULL) {
+		m_windowMenu->addSeparator();
+		m_windowMenu->addAction(m_openProgramWindowAct);
+	}
 
 #ifndef QT_NO_DEBUG
-    m_windowMenu->addSeparator();
-    m_windowMenu->addAction(m_toggleDebuggerOutputAct);
+	m_windowMenu->addSeparator();
+	m_windowMenu->addAction(m_toggleDebuggerOutputAct);
 #endif
 
-    m_windowMenuSeparator = m_windowMenu->addSeparator();
+	m_windowMenuSeparator = m_windowMenu->addSeparator();
 }
 
 FDockWidget * MainWindow::makeDock(const QString & title, QWidget * widget, int dockMinHeight, int dockDefaultHeight, Qt::DockWidgetArea area, DockFactory dockFactory) {
 	FDockWidget * dock = ((dockFactory) ? dockFactory(title, this) : new FDockWidget(title, this));
-    dock->setObjectName(title);
-    dock->setWidget(widget);
-    widget->setParent(dock);
-    widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+	dock->setObjectName(title);
+	dock->setWidget(widget);
+	widget->setParent(dock);
+	widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    connect(dock, SIGNAL(positionChanged()), this, SLOT(keepMargins()));
-    connect(dock, SIGNAL(topLevelChanged(bool)), this, SLOT(keepMargins()));
-    connect(dock, SIGNAL(visibilityChanged(bool)), this, SLOT(keepMargins()));
+	connect(dock, SIGNAL(positionChanged()), this, SLOT(keepMargins()));
+	connect(dock, SIGNAL(topLevelChanged(bool)), this, SLOT(keepMargins()));
+	connect(dock, SIGNAL(visibilityChanged(bool)), this, SLOT(keepMargins()));
 
 	return dockIt(dock, dockMinHeight, dockDefaultHeight, area);
 }
@@ -105,20 +99,20 @@ FDockWidget * MainWindow::makeDock(const QString & title, QWidget * widget, int 
 FDockWidget *MainWindow::dockIt(FDockWidget* dock, int dockMinHeight, int dockDefaultHeight, Qt::DockWidgetArea area) {
 	dock->setAllowedAreas(area);
 	addDockWidget(area, dock);
-    if (m_windowMenu) {
-        m_windowMenu->addAction(dock->toggleViewAction());
-    }
+	if (m_windowMenu) {
+		m_windowMenu->addAction(dock->toggleViewAction());
+	}
 
-    dock->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+	dock->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 	dock->setMinimumSize(DockMinWidth, dockMinHeight);
 	dock->resize(DockWidthDefault, dockDefaultHeight);
 	connect(dock, SIGNAL(dockChangeActivationSignal(bool, QWidget *)), this, SLOT(dockChangeActivation(bool, QWidget *)));
 	connect(dock, SIGNAL(destroyed(QObject *)), qApp, SLOT(topLevelWidgetDestroyed(QObject *)));
-    connect(dock, SIGNAL(dockChangeActivationSignal(bool, QWidget *)), qApp, SLOT(changeActivation(bool, QWidget *)), Qt::DirectConnection);
+	connect(dock, SIGNAL(dockChangeActivationSignal(bool, QWidget *)), qApp, SLOT(changeActivation(bool, QWidget *)), Qt::DirectConnection);
 
-    m_docks << dock;
+	m_docks << dock;
 
-    return dock;
+	return dock;
 }
 
 FDockWidget *MainWindow::newTopWidget() {
@@ -126,8 +120,8 @@ FDockWidget *MainWindow::newTopWidget() {
 	FDockWidget *topWidget = NULL;
 	foreach(FDockWidget* dock, m_docks) {
 		if(/*!dock->isFloating() && dock->isVisible() &&*/
-			dockWidgetArea(dock) == Qt::RightDockWidgetArea
-			&& dock->pos().y() < topMostY) {
+		    dockWidgetArea(dock) == Qt::RightDockWidgetArea
+		    && dock->pos().y() < topMostY) {
 			topMostY = dock->pos().y();
 			topWidget = dock;
 		}
@@ -140,8 +134,8 @@ FDockWidget *MainWindow::newBottomWidget() {
 	FDockWidget *bottomWidget = NULL;
 	foreach(FDockWidget* dock, m_docks) {
 		if(!dock->isFloating() && dock->isVisible() &&
-			dockWidgetArea(dock) == Qt::RightDockWidgetArea
-			&& dock->pos().y() > bottomMostY) {
+		        dockWidgetArea(dock) == Qt::RightDockWidgetArea
+		        && dock->pos().y() > bottomMostY) {
 			bottomMostY = dock->pos().y();
 			bottomWidget = dock;
 		}
@@ -184,7 +178,7 @@ void MainWindow::addTopMargin(FDockWidget* dock) {
 void MainWindow::addBottomMargin(FDockWidget* dock) {
 	if(dock) {
 		if(qobject_cast<BinManager*>(dock->widget())) {
-			// already has enought space
+			// already has enough space
 		} else {
 			dockMarginAux(dock, "bottomMostDock", dock->widget()->styleSheet());
 		}
@@ -211,12 +205,12 @@ void MainWindow::initDock() {
 	m_layerPalette = new LayerPalette(this);
 
 	m_infoView = new HtmlInfoView();
-    m_infoView->init(false);
-    connect(m_infoView, SIGNAL(clickObsoleteSignal()), this, SLOT(selectAllObsolete()));
+	m_infoView->init(false);
+	connect(m_infoView, SIGNAL(clickObsoleteSignal()), this, SLOT(selectAllObsolete()));
 	//DebugDialog::debug("after html view");
 
 	m_binManager = new BinManager(m_referenceModel, m_infoView, m_undoStack, this);
-    m_binManager->initStandardBins();
+	m_binManager->initStandardBins();
 
 	//DebugDialog::debug("after creating bins");
 	if (m_fileProgressDialog) {
@@ -227,7 +221,7 @@ void MainWindow::initDock() {
 void MainWindow::moreInitDock() {
 	//DebugDialog::debug("create view switcher");
 
-    createDockWindows();
+	createDockWindows();
 
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setValue(93);
@@ -260,4 +254,3 @@ void MainWindow::restoreDocks() {
 		dock->restoreState();
 	}
 }
-

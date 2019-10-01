@@ -86,19 +86,19 @@ QuaZIP as long as you respect either GPL or LGPL for QuaZIP code.
  * it?
  **/
 class QuaZip {
-  public:
-    /// Useful constants.
-    enum Constants {
-      MAX_FILE_NAME_LENGTH=256 /**< Maximum file name length. Taken from
+public:
+	/// Useful constants.
+	enum Constants {
+		MAX_FILE_NAME_LENGTH=256 /**< Maximum file name length. Taken from
                                  \c UNZ_MAXFILENAMEINZIP constant in
                                  unzip.c. */
-    };
-    /// Open mode of the ZIP file.
-    enum Mode {
-      mdNotOpen, ///< ZIP file is not open. This is the initial mode.
-      mdUnzip, ///< ZIP file is open for reading files inside it.
-      mdCreate, ///< ZIP file was created with open() call.
-      mdAppend, /**< ZIP file was opened in append mode. This refers to
+	};
+	/// Open mode of the ZIP file.
+	enum Mode {
+		mdNotOpen, ///< ZIP file is not open. This is the initial mode.
+		mdUnzip, ///< ZIP file is open for reading files inside it.
+		mdCreate, ///< ZIP file was created with open() call.
+		mdAppend, /**< ZIP file was opened in append mode. This refers to
                   * \c APPEND_STATUS_CREATEAFTER mode in ZIP/UNZIP package
                   * and means that zip is appended to some existing file
                   * what is useful when that file contains
@@ -106,241 +106,269 @@ class QuaZip {
                   * you whant to use to add files to the existing ZIP
                   * archive.
                   **/
-      mdAdd ///< ZIP file was opened for adding files in the archive.
-    };
-    /// Case sensitivity for the file names.
-    /** This is what you specify when accessing files in the archive.
-     * Works perfectly fine with any characters thanks to Qt's great
-     * unicode support. This is different from ZIP/UNZIP API, where
-     * only US-ASCII characters was supported.
-     **/
-    enum CaseSensitivity {
-      csDefault=0, ///< Default for platform. Case sensitive for UNIX, not for Windows.
-      csSensitive=1, ///< Case sensitive.
-      csInsensitive=2 ///< Case insensitive.
-    };
-  private:
-    QTextCodec *fileNameCodec, *commentCodec;
-    QString zipName;
-    QString comment;
-    Mode mode;
-    union {
-      unzFile unzFile_f;
-      zipFile zipFile_f;
-    };
-    bool hasCurrentFile_f;
-    int zipError;
-    // not (and will not be) implemented
-    QuaZip(const QuaZip& that);
-    // not (and will not be) implemented
-    QuaZip& operator=(const QuaZip& that);
-  public:
-    /// Constructs QuaZip object.
-    /** Call setName() before opening constructed object. */
-    QuaZip();
-    /// Constructs QuaZip object associated with ZIP file \a zipName.
-    QuaZip(const QString& zipName);
-    /// Destroys QuaZip object.
-    /** Calls close() if necessary. */
-    ~QuaZip();
-    /// Opens ZIP file.
-    /** Argument \a ioApi specifies IO function set for ZIP/UNZIP
-     * package to use. See unzip.h, zip.h and ioapi.h for details. By
-     * passing NULL (the default) you just tell package to use the
-     * default API which works just fine on UNIX platforms. I have tried
-     * it on win32-g++ platform too and it seems it works fine there
-     * too, so I see no reason to use win32 IO API included in original
-     * ZIP/UNZIP package.
-     *
-     * ZIP archive file name will be converted to 8-bit encoding using
-     * Qt's QFile::encodeName() function before passing it to the
-     * ZIP/UNZIP package API.
-     *
-     * Returns \c true if successful, \c false otherwise.
-     *
-     * Argument \a mode specifies open mode of the ZIP archive. See Mode
-     * for details. Note that there is zipOpen2() function in the
-     * ZIP/UNZIP API which accepts \a globalcomment argument, but it
-     * does not use it anywhere, so this open() function does not have this
-     * argument. See setComment() if you need to set global comment.
-     *
-     * \note ZIP/UNZIP API open calls do not return error code - they
-     * just return \c NULL indicating an error. But to make things
-     * easier, quazip.h header defines additional error code \c
-     * UNZ_ERROROPEN and getZipError() will return it if the open call
-     * of the ZIP/UNZIP API returns \c NULL.
-     **/
-    bool open(Mode mode, zlib_filefunc_def *ioApi =NULL);
-    /// Closes ZIP file.
-    /** Call getZipError() to determine if the close was successful. */
-    void close();
-    /// Sets the codec used to encode/decode file names inside archive.
-    /** This is necessary to access files in the ZIP archive created
-     * under Windows with non-latin characters in file names. For
-     * example, file names with cyrillic letters will be in \c IBM866
-     * encoding.
-     **/
-    void setFileNameCodec(QTextCodec *fileNameCodec)
-    {this->fileNameCodec=fileNameCodec;}
-    /// Sets the codec used to encode/decode file names inside archive.
-    /** \overload
-     * Equivalent to calling setFileNameCodec(QTextCodec::codecForName(codecName));
-     **/
-    void setFileNameCodec(const char *fileNameCodecName)
-    {fileNameCodec=QTextCodec::codecForName(fileNameCodecName);}
-    /// Returns the codec used to encode/decode comments inside archive.
-    QTextCodec* getFileNameCodec()const {return fileNameCodec;}
-    /// Sets the codec used to encode/decode comments inside archive.
-    /** This codec defaults to locale codec, which is probably ok.
-     **/
-    void setCommentCodec(QTextCodec *commentCodec)
-    {this->commentCodec=commentCodec;}
-    /// Sets the codec used to encode/decode comments inside archive.
-    /** \overload
-     * Equivalent to calling setCommentCodec(QTextCodec::codecForName(codecName));
-     **/
-    void setCommentCodec(const char *commentCodecName)
-    {commentCodec=QTextCodec::codecForName(commentCodecName);}
-    /// Returns the codec used to encode/decode comments inside archive.
-    QTextCodec* getCommentCodec()const {return commentCodec;}
-    /// Returns the name of the ZIP file.
-    /** Returns null string if no ZIP file name has been set.
-     * \sa setZipName()
-     **/
-    QString getZipName()const {return zipName;}
-    /// Sets the name of the ZIP file.
-    /** Does nothing if the ZIP file is open.
-     *
-     * Does not reset error code returned by getZipError().
-     **/
-    void setZipName(const QString& zipName);
-    /// Returns the mode in which ZIP file was opened.
-    Mode getMode()const {return mode;}
-    /// Returns \c true if ZIP file is open, \c false otherwise.
-    bool isOpen()const {return mode!=mdNotOpen;}
-    /// Returns the error code of the last operation.
-    /** Returns \c UNZ_OK if the last operation was successful.
-     *
-     * Error code resets to \c UNZ_OK every time you call any function
-     * that accesses something inside ZIP archive, even if it is \c
-     * const (like getEntriesCount()). open() and close() calls reset
-     * error code too. See documentation for the specific functions for
-     * details on error detection.
-     **/
-    int getZipError()const {return zipError;}
-    /// Returns number of the entries in the ZIP central directory.
-    /** Returns negative error code in the case of error. The same error
-     * code will be returned by subsequent getZipError() call.
-     **/
-    int getEntriesCount()const;
-    /// Returns global comment in the ZIP file.
-    QString getComment()const;
-    /// Sets global comment in the ZIP file.
-    /** Comment will be written to the archive on close operation.
-     *
-     * \sa open()
-     **/
-    void setComment(const QString& comment) {this->comment=comment;}
-    /// Sets the current file to the first file in the archive.
-    /** Returns \c true on success, \c false otherwise. Call
-     * getZipError() to get the error code.
-     **/
-    bool goToFirstFile();
-    /// Sets the current file to the next file in the archive.
-    /** Returns \c true on success, \c false otherwise. Call
-     * getZipError() to determine if there was an error.
-     *
-     * Should be used only in QuaZip::mdUnzip mode.
-     *
-     * \note If the end of file was reached, getZipError() will return
-     * \c UNZ_OK instead of \c UNZ_END_OF_LIST_OF_FILE. This is to make
-     * things like this easier:
-     * \code
-     * for(bool more=zip.goToFirstFile(); more; more=zip.goToNextFile()) {
-     *   // do something
-     * }
-     * if(zip.getZipError()==UNZ_OK) {
-     *   // ok, there was no error
-     * }
-     * \endcode
-     **/
-    bool goToNextFile();
-    /// Sets current file by its name.
-    /** Returns \c true if successful, \c false otherwise. Argument \a
-     * cs specifies case sensitivity of the file name. Call
-     * getZipError() in the case of a failure to get error code.
-     *
-     * This is not a wrapper to unzLocateFile() function. That is
-     * because I had to implement locale-specific case-insensitive
-     * comparison.
-     *
-     * Here are the differences from the original implementation:
-     *
-     * - If the file was not found, error code is \c UNZ_OK, not \c
-     *   UNZ_END_OF_LIST_OF_FILE (see also goToNextFile()).
-     * - If this function fails, it unsets the current file rather than
-     *   resetting it back to what it was before the call.
-     *
-     * If \a fileName is null string then this function unsets the
-     * current file and return \c true. Note that you should close the
-     * file first if it is open! See
-     * QuaZipFile::QuaZipFile(QuaZip*,QObject*) for the details.
-     *
-     * Should be used only in QuaZip::mdUnzip mode.
-     *
-     * \sa setFileNameCodec(), CaseSensitivity
-     **/
-    bool setCurrentFile(const QString& fileName, CaseSensitivity cs =csDefault);
-    /// Returns \c true if the current file has been set.
-    bool hasCurrentFile()const {return hasCurrentFile_f;}
-    /// Retrieves information about the current file.
-    /** Fills the structure pointed by \a info. Returns \c true on
-     * success, \c false otherwise. In the latter case structure pointed
-     * by \a info remains untouched. If there was an error,
-     * getZipError() returns error code.
-     *
-     * Should be used only in QuaZip::mdUnzip mode.
-     *
-     * Does nothing and returns \c false in any of the following cases.
-     * - ZIP is not open;
-     * - ZIP does not have current file;
-     * - \a info is \c NULL;
-     *
-     * In all these cases getZipError() returns \c UNZ_OK since there
-     * is no ZIP/UNZIP API call.
-     **/
-    bool getCurrentFileInfo(QuaZipFileInfo* info)const;
-    /// Returns the current file name.
-    /** Equivalent to calling getCurrentFileInfo() and then getting \c
-     * name field of the QuaZipFileInfo structure, but faster and more
-     * convenient.
-     *
-     * Should be used only in QuaZip::mdUnzip mode.
-     **/
-    QString getCurrentFileName()const;
-    /// Returns \c unzFile handle.
-    /** You can use this handle to directly call UNZIP part of the
-     * ZIP/UNZIP package functions (see unzip.h).
-     *
-     * \warning When using the handle returned by this function, please
-     * keep in mind that QuaZip class is unable to detect any changes
-     * you make in the ZIP file state (e. g. changing current file, or
-     * closing the handle). So please do not do anything with this
-     * handle that is possible to do with the functions of this class.
-     * Or at least return the handle in the original state before
-     * calling some another function of this class (including implicit
-     * destructor calls and calls from the QuaZipFile objects that refer
-     * to this QuaZip instance!). So if you have changed the current
-     * file in the ZIP archive - then change it back or you may
-     * experience some strange behavior or even crashes.
-     **/
-    unzFile getUnzFile() {return unzFile_f;}
-    /// Returns \c zipFile handle.
-    /** You can use this handle to directly call ZIP part of the
-     * ZIP/UNZIP package functions (see zip.h). Warnings about the
-     * getUnzFile() function also apply to this function.
-     **/
-    zipFile getZipFile() {return zipFile_f;}
+		mdAdd ///< ZIP file was opened for adding files in the archive.
+	};
+	/// Case sensitivity for the file names.
+	/** This is what you specify when accessing files in the archive.
+	 * Works perfectly fine with any characters thanks to Qt's great
+	 * unicode support. This is different from ZIP/UNZIP API, where
+	 * only US-ASCII characters was supported.
+	 **/
+	enum CaseSensitivity {
+		csDefault=0, ///< Default for platform. Case sensitive for UNIX, not for Windows.
+		csSensitive=1, ///< Case sensitive.
+		csInsensitive=2 ///< Case insensitive.
+	};
+private:
+	QTextCodec *fileNameCodec, *commentCodec;
+	QString zipName;
+	QString comment;
+	Mode mode;
+	union {
+		unzFile unzFile_f;
+		zipFile zipFile_f;
+	};
+	bool hasCurrentFile_f;
+	int zipError;
+	// not (and will not be) implemented
+	QuaZip(const QuaZip& that);
+	// not (and will not be) implemented
+	QuaZip& operator=(const QuaZip& that);
+public:
+	/// Constructs QuaZip object.
+	/** Call setName() before opening constructed object. */
+	QuaZip();
+	/// Constructs QuaZip object associated with ZIP file \a zipName.
+	QuaZip(const QString& zipName);
+	/// Destroys QuaZip object.
+	/** Calls close() if necessary. */
+	~QuaZip();
+	/// Opens ZIP file.
+	/** Argument \a ioApi specifies IO function set for ZIP/UNZIP
+	 * package to use. See unzip.h, zip.h and ioapi.h for details. By
+	 * passing NULL (the default) you just tell package to use the
+	 * default API which works just fine on UNIX platforms. I have tried
+	 * it on win32-g++ platform too and it seems it works fine there
+	 * too, so I see no reason to use win32 IO API included in original
+	 * ZIP/UNZIP package.
+	 *
+	 * ZIP archive file name will be converted to 8-bit encoding using
+	 * Qt's QFile::encodeName() function before passing it to the
+	 * ZIP/UNZIP package API.
+	 *
+	 * Returns \c true if successful, \c false otherwise.
+	 *
+	 * Argument \a mode specifies open mode of the ZIP archive. See Mode
+	 * for details. Note that there is zipOpen2() function in the
+	 * ZIP/UNZIP API which accepts \a globalcomment argument, but it
+	 * does not use it anywhere, so this open() function does not have this
+	 * argument. See setComment() if you need to set global comment.
+	 *
+	 * \note ZIP/UNZIP API open calls do not return error code - they
+	 * just return \c NULL indicating an error. But to make things
+	 * easier, quazip.h header defines additional error code \c
+	 * UNZ_ERROROPEN and getZipError() will return it if the open call
+	 * of the ZIP/UNZIP API returns \c NULL.
+	 **/
+	bool open(Mode mode, zlib_filefunc_def *ioApi =NULL);
+	/// Closes ZIP file.
+	/** Call getZipError() to determine if the close was successful. */
+	void close();
+	/// Sets the codec used to encode/decode file names inside archive.
+	/** This is necessary to access files in the ZIP archive created
+	 * under Windows with non-latin characters in file names. For
+	 * example, file names with cyrillic letters will be in \c IBM866
+	 * encoding.
+	 **/
+	void setFileNameCodec(QTextCodec *fileNameCodec)
+	{
+		this->fileNameCodec=fileNameCodec;
+	}
+	/// Sets the codec used to encode/decode file names inside archive.
+	/** \overload
+	 * Equivalent to calling setFileNameCodec(QTextCodec::codecForName(codecName));
+	 **/
+	void setFileNameCodec(const char *fileNameCodecName)
+	{
+		fileNameCodec=QTextCodec::codecForName(fileNameCodecName);
+	}
+	/// Returns the codec used to encode/decode comments inside archive.
+	QTextCodec* getFileNameCodec()const {
+		return fileNameCodec;
+	}
+	/// Sets the codec used to encode/decode comments inside archive.
+	/** This codec defaults to locale codec, which is probably ok.
+	 **/
+	void setCommentCodec(QTextCodec *commentCodec)
+	{
+		this->commentCodec=commentCodec;
+	}
+	/// Sets the codec used to encode/decode comments inside archive.
+	/** \overload
+	 * Equivalent to calling setCommentCodec(QTextCodec::codecForName(codecName));
+	 **/
+	void setCommentCodec(const char *commentCodecName)
+	{
+		commentCodec=QTextCodec::codecForName(commentCodecName);
+	}
+	/// Returns the codec used to encode/decode comments inside archive.
+	QTextCodec* getCommentCodec()const {
+		return commentCodec;
+	}
+	/// Returns the name of the ZIP file.
+	/** Returns null string if no ZIP file name has been set.
+	 * \sa setZipName()
+	 **/
+	QString getZipName()const {
+		return zipName;
+	}
+	/// Sets the name of the ZIP file.
+	/** Does nothing if the ZIP file is open.
+	 *
+	 * Does not reset error code returned by getZipError().
+	 **/
+	void setZipName(const QString& zipName);
+	/// Returns the mode in which ZIP file was opened.
+	Mode getMode()const {
+		return mode;
+	}
+	/// Returns \c true if ZIP file is open, \c false otherwise.
+	bool isOpen()const {
+		return mode!=mdNotOpen;
+	}
+	/// Returns the error code of the last operation.
+	/** Returns \c UNZ_OK if the last operation was successful.
+	 *
+	 * Error code resets to \c UNZ_OK every time you call any function
+	 * that accesses something inside ZIP archive, even if it is \c
+	 * const (like getEntriesCount()). open() and close() calls reset
+	 * error code too. See documentation for the specific functions for
+	 * details on error detection.
+	 **/
+	int getZipError()const {
+		return zipError;
+	}
+	/// Returns number of the entries in the ZIP central directory.
+	/** Returns negative error code in the case of error. The same error
+	 * code will be returned by subsequent getZipError() call.
+	 **/
+	int getEntriesCount()const;
+	/// Returns global comment in the ZIP file.
+	QString getComment()const;
+	/// Sets global comment in the ZIP file.
+	/** Comment will be written to the archive on close operation.
+	 *
+	 * \sa open()
+	 **/
+	void setComment(const QString& comment) {
+		this->comment=comment;
+	}
+	/// Sets the current file to the first file in the archive.
+	/** Returns \c true on success, \c false otherwise. Call
+	 * getZipError() to get the error code.
+	 **/
+	bool goToFirstFile();
+	/// Sets the current file to the next file in the archive.
+	/** Returns \c true on success, \c false otherwise. Call
+	 * getZipError() to determine if there was an error.
+	 *
+	 * Should be used only in QuaZip::mdUnzip mode.
+	 *
+	 * \note If the end of file was reached, getZipError() will return
+	 * \c UNZ_OK instead of \c UNZ_END_OF_LIST_OF_FILE. This is to make
+	 * things like this easier:
+	 * \code
+	 * for(bool more=zip.goToFirstFile(); more; more=zip.goToNextFile()) {
+	 *   // do something
+	 * }
+	 * if(zip.getZipError()==UNZ_OK) {
+	 *   // ok, there was no error
+	 * }
+	 * \endcode
+	 **/
+	bool goToNextFile();
+	/// Sets current file by its name.
+	/** Returns \c true if successful, \c false otherwise. Argument \a
+	 * cs specifies case sensitivity of the file name. Call
+	 * getZipError() in the case of a failure to get error code.
+	 *
+	 * This is not a wrapper to unzLocateFile() function. That is
+	 * because I had to implement locale-specific case-insensitive
+	 * comparison.
+	 *
+	 * Here are the differences from the original implementation:
+	 *
+	 * - If the file was not found, error code is \c UNZ_OK, not \c
+	 *   UNZ_END_OF_LIST_OF_FILE (see also goToNextFile()).
+	 * - If this function fails, it unsets the current file rather than
+	 *   resetting it back to what it was before the call.
+	 *
+	 * If \a fileName is null string then this function unsets the
+	 * current file and return \c true. Note that you should close the
+	 * file first if it is open! See
+	 * QuaZipFile::QuaZipFile(QuaZip*,QObject*) for the details.
+	 *
+	 * Should be used only in QuaZip::mdUnzip mode.
+	 *
+	 * \sa setFileNameCodec(), CaseSensitivity
+	 **/
+	bool setCurrentFile(const QString& fileName, CaseSensitivity cs =csDefault);
+	/// Returns \c true if the current file has been set.
+	bool hasCurrentFile()const {
+		return hasCurrentFile_f;
+	}
+	/// Retrieves information about the current file.
+	/** Fills the structure pointed by \a info. Returns \c true on
+	 * success, \c false otherwise. In the latter case structure pointed
+	 * by \a info remains untouched. If there was an error,
+	 * getZipError() returns error code.
+	 *
+	 * Should be used only in QuaZip::mdUnzip mode.
+	 *
+	 * Does nothing and returns \c false in any of the following cases.
+	 * - ZIP is not open;
+	 * - ZIP does not have current file;
+	 * - \a info is \c NULL;
+	 *
+	 * In all these cases getZipError() returns \c UNZ_OK since there
+	 * is no ZIP/UNZIP API call.
+	 **/
+	bool getCurrentFileInfo(QuaZipFileInfo* info)const;
+	/// Returns the current file name.
+	/** Equivalent to calling getCurrentFileInfo() and then getting \c
+	 * name field of the QuaZipFileInfo structure, but faster and more
+	 * convenient.
+	 *
+	 * Should be used only in QuaZip::mdUnzip mode.
+	 **/
+	QString getCurrentFileName()const;
+	/// Returns \c unzFile handle.
+	/** You can use this handle to directly call UNZIP part of the
+	 * ZIP/UNZIP package functions (see unzip.h).
+	 *
+	 * \warning When using the handle returned by this function, please
+	 * keep in mind that QuaZip class is unable to detect any changes
+	 * you make in the ZIP file state (e. g. changing current file, or
+	 * closing the handle). So please do not do anything with this
+	 * handle that is possible to do with the functions of this class.
+	 * Or at least return the handle in the original state before
+	 * calling some another function of this class (including implicit
+	 * destructor calls and calls from the QuaZipFile objects that refer
+	 * to this QuaZip instance!). So if you have changed the current
+	 * file in the ZIP archive - then change it back or you may
+	 * experience some strange behavior or even crashes.
+	 **/
+	unzFile getUnzFile() {
+		return unzFile_f;
+	}
+	/// Returns \c zipFile handle.
+	/** You can use this handle to directly call ZIP part of the
+	 * ZIP/UNZIP package functions (see zip.h). Warnings about the
+	 * getUnzFile() function also apply to this function.
+	 **/
+	zipFile getZipFile() {
+		return zipFile_f;
+	}
 };
 
 #endif

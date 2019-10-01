@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6984 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
@@ -63,14 +57,14 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 	: ResizableBoard(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
 	if (LogoImageNames.count() == 0) {
-        // TODO: load these names from somewhere
+		// TODO: load these names from somewhere
 
 		LogoImageNames << "new Made with Fritzing" << "new Fritzing icon" << "OHANDA logo" << "OSHW logo";
 		Logo0ImageNames << "new Made with Fritzing 0" << "new Fritzing icon 0" << "OHANDA logo 0" << "OSHW logo 0";
 	}
 
-    m_svgOnly = false;
-    m_standardizeColors = true;
+	m_svgOnly = false;
+	m_standardizeColors = true;
 	m_inLogoEntry = QTime::currentTime().addSecs(-10);
 	m_aspectRatioCheck = NULL;
 	m_keepAspectRatio = true;
@@ -81,35 +75,35 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 		modelPart->setLocalProp("logo", m_logo);
 	}
 
-    if (m_modelPart->moduleID() == ModuleIDNames::LogoImageModuleIDName) {
-        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::LogoImageModuleIDName);
-    }
-    else if (m_modelPart->moduleID() == ModuleIDNames::Silkscreen0LogoImageModuleIDName) {
-        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Silkscreen0LogoImageModuleIDName);
-    }
-    else if (m_modelPart->moduleID() == ModuleIDNames::Copper1LogoImageModuleIDName) {
-        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Copper1LogoImageModuleIDName);
-    }
-    else if (m_modelPart->moduleID() == ModuleIDNames::Copper0LogoImageModuleIDName) {
-        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Copper0LogoImageModuleIDName);
-    }
-    else if (m_modelPart->moduleID() == ModuleIDNames::SchematicLogoImageModuleIDName) {
-        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::SchematicLogoImageModuleIDName);
-    }
-    else if (m_modelPart->moduleID() == ModuleIDNames::BreadboardLogoImageModuleIDName) {
-        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::BreadboardLogoImageModuleIDName);
-    }
+	if (m_modelPart->moduleID() == ModuleIDNames::LogoImageModuleIDName) {
+		m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::LogoImageModuleIDName);
+	}
+	else if (m_modelPart->moduleID() == ModuleIDNames::Silkscreen0LogoImageModuleIDName) {
+		m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Silkscreen0LogoImageModuleIDName);
+	}
+	else if (m_modelPart->moduleID() == ModuleIDNames::Copper1LogoImageModuleIDName) {
+		m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Copper1LogoImageModuleIDName);
+	}
+	else if (m_modelPart->moduleID() == ModuleIDNames::Copper0LogoImageModuleIDName) {
+		m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Copper0LogoImageModuleIDName);
+	}
+	else if (m_modelPart->moduleID() == ModuleIDNames::SchematicLogoImageModuleIDName) {
+		m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::SchematicLogoImageModuleIDName);
+	}
+	else if (m_modelPart->moduleID() == ModuleIDNames::BreadboardLogoImageModuleIDName) {
+		m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::BreadboardLogoImageModuleIDName);
+	}
 }
 
 LogoItem::~LogoItem() {
 }
 
 bool LogoItem::hasLogo() {
-    return m_hasLogo;
+	return m_hasLogo;
 }
 
 QString LogoItem::getShapeForRenderer(const QString & svg) {
-    return svg;
+	return svg;
 }
 
 void LogoItem::addedToScene(bool temporary)
@@ -121,18 +115,18 @@ void LogoItem::addedToScene(bool temporary)
 		m_originalFilename = filename();
 		QString svg = prop("shape");
 		if (!svg.isEmpty()) {
-            QString arString = modelPart()->localProp("aspectratio").toString();
-            if (!arString.isEmpty()) {
-			    m_aspectRatio =  modelPart()->localProp("aspectratio").toSizeF();
-            }
-            else {
-                bool okw, okh;
-                double w = m_modelPart->localProp("width").toDouble(&okw);
-		        double h = m_modelPart->localProp("height").toDouble(&okh);
-                if (okw && okh) {
-                    m_aspectRatio = QSizeF(w, h);
-                }
-            }
+			QString arString = modelPart()->localProp("aspectratio").toString();
+			if (!arString.isEmpty()) {
+				m_aspectRatio =  modelPart()->localProp("aspectratio").toSizeF();
+			}
+			else {
+				bool okw, okh;
+				double w = m_modelPart->localProp("width").toDouble(&okw);
+				double h = m_modelPart->localProp("height").toDouble(&okh);
+				if (okw && okh) {
+					m_aspectRatio = QSizeF(w, h);
+				}
+			}
 			if (resetRenderer(getShapeForRenderer(svg))) {
 			}
 			else {
@@ -151,11 +145,11 @@ void LogoItem::addedToScene(bool temporary)
 		}
 	}
 
-    return ResizableBoard::addedToScene(temporary);
+	return ResizableBoard::addedToScene(temporary);
 }
 
 bool LogoItem::canRetrieveLayer(ViewLayer::ViewLayerID viewLayerID) {
-    return viewLayerID == layer();
+	return viewLayerID == layer();
 }
 
 QStringList & LogoItem::getImageNames() {
@@ -188,7 +182,7 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 
 				// TODO: this is really a hack and resizing should change a scale factor rather than the <text> coordinates
 				// but it's not clear how to deal with existing sketches
-	
+
 				QString viewBox = root.attribute("viewBox");
 				double w = TextUtils::convertToInches(root.attribute("width"));
 				double h = TextUtils::convertToInches(root.attribute("height"));
@@ -222,28 +216,28 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 }
 
 QStringList LogoItem::collectValues(const QString & family, const QString & prop, QString & value) {
-    QStringList values = ResizableBoard::collectValues(family, prop, value);
+	QStringList values = ResizableBoard::collectValues(family, prop, value);
 
-    bool copperTopOK = true;
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-    if (infoGraphicsView == NULL) copperTopOK = false;
-    else if (infoGraphicsView->boardLayers() == 1) copperTopOK = false;
+	bool copperTopOK = true;
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infoGraphicsView == NULL) copperTopOK = false;
+	else if (infoGraphicsView->boardLayers() == 1) copperTopOK = false;
 
-    QStringList newValues;
+	QStringList newValues;
 	if (prop.compare("layer", Qt::CaseInsensitive) == 0) {
-        foreach (QString xmlName, values) {
-            if (xmlName == ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1) && copperTopOK == false) continue;
+		foreach (QString xmlName, values) {
+			if (xmlName == ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1) && copperTopOK == false) continue;
 
-            newValues << Board::convertFromXmlName(xmlName);
-        }
-        value = Board::convertFromXmlName(value);
-        return newValues;
-    }
+			newValues << Board::convertFromXmlName(xmlName);
+		}
+		value = Board::convertFromXmlName(value);
+		return newValues;
+	}
 
-    return values;
+	return values;
 }
 
-bool LogoItem::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
+bool LogoItem::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (m_hasLogo) {
 		if (prop.compare("logo", Qt::CaseInsensitive) == 0) {
@@ -263,14 +257,14 @@ bool LogoItem::collectExtraInfo(QWidget * parent, const QString & family, const 
 	}
 	else {
 		if (prop.compare("filename", Qt::CaseInsensitive) == 0) {
-            setupLoadImage(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget);
+			setupLoadImage(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget);
 			return true;
 		}
 	}
 
 	if (prop.compare("shape", Qt::CaseInsensitive) == 0) {
 		returnWidget = setUpDimEntry(true, !m_hasLogo, false, returnWidget);
-        returnWidget->setEnabled(swappingEnabled);
+		returnWidget->setEnabled(swappingEnabled);
 		returnProp = tr("shape");
 		return true;
 	}
@@ -279,8 +273,8 @@ bool LogoItem::collectExtraInfo(QWidget * parent, const QString & family, const 
 }
 
 bool LogoItem::checkImage(const QString & filename) {
-    Q_UNUSED(filename);
-    return true;
+	Q_UNUSED(filename);
+	return true;
 }
 
 void LogoItem::prepLoadImageAux(const QString & fileName, bool addName)
@@ -291,16 +285,16 @@ void LogoItem::prepLoadImageAux(const QString & fileName, bool addName)
 	}
 }
 
-bool LogoItem::reloadImage(const QString & incomingSvg, const QSizeF & aspectRatio, const QString & fileName, bool addName) 
+bool LogoItem::reloadImage(const QString & incomingSvg, const QSizeF & aspectRatio, const QString & fileName, bool addName)
 {
-    QString svg = incomingSvg;
+	QString svg = incomingSvg;
 	if (isBottom()) {
 		if (!svg.contains("_flipped_")) {
 			svg = flipSvg(svg);
 		}
 	}
 
-    QString shape = getShapeForRenderer(svg);
+	QString shape = getShapeForRenderer(svg);
 	bool result = resetRenderer(shape);
 	if (result) {
 		if (aspectRatio == QSizeF(0, 0)) {
@@ -316,38 +310,38 @@ bool LogoItem::reloadImage(const QString & incomingSvg, const QSizeF & aspectRat
 		modelPart()->setLocalProp("logo", "");
 		modelPart()->setLocalProp("lastfilename", fileName);
 
-        QSizeF size = fsvgRenderer()->defaultSizeF();
+		QSizeF size = fsvgRenderer()->defaultSizeF();
 
-        double mmW = GraphicsUtils::pixels2mm(size.width(), GraphicsUtils::SVGDPI);
-        double mmH = GraphicsUtils::pixels2mm(size.height(), GraphicsUtils::SVGDPI);
-        modelPart()->setLocalProp("width", mmW);
+		double mmW = GraphicsUtils::pixels2mm(size.width(), GraphicsUtils::SVGDPI);
+		double mmH = GraphicsUtils::pixels2mm(size.height(), GraphicsUtils::SVGDPI);
+		modelPart()->setLocalProp("width", mmW);
 		modelPart()->setLocalProp("height", mmH);
-        modelPart()->setLocalProp("originalWidth", mmW);
+		modelPart()->setLocalProp("originalWidth", mmW);
 		modelPart()->setLocalProp("originalHeight", mmH);
 
 		if (addName) {
 			if (!getNewImageNames().contains(fileName, Qt::CaseInsensitive)) {
 				getNewImageNames().append(fileName);
-                if (m_fileNameComboBox) {
-				    bool wasBlocked = m_fileNameComboBox->blockSignals(true);
-				    while (m_fileNameComboBox->count() > 0) {
-					    m_fileNameComboBox->removeItem(0);
-				    }
-				    setFileNameItems();
-				    m_fileNameComboBox->blockSignals(wasBlocked);
-                }
+				if (m_fileNameComboBox) {
+					bool wasBlocked = m_fileNameComboBox->blockSignals(true);
+					while (m_fileNameComboBox->count() > 0) {
+						m_fileNameComboBox->removeItem(0);
+					}
+					setFileNameItems();
+					m_fileNameComboBox->blockSignals(wasBlocked);
+				}
 			}
 		}
 		m_logo = "";
 
-        setWidthAndHeight(qRound(mmW * 10) / 10.0, qRound(mmH * 10) / 10.0);
-        return true;
+		setWidthAndHeight(qRound(mmW * 10) / 10.0, qRound(mmH * 10) / 10.0);
+		return true;
 	}
 	else {
 		// restore previous (not sure whether this is necessary)
 		resetRenderer(getShapeForRenderer(prop("shape")));
 		unableToLoad(fileName, tr("due to a rendering error"));
-        return false;
+		return false;
 	}
 }
 
@@ -369,7 +363,7 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			return;
 		}
 
-        TextUtils::fixMuch(svg, true);
+		TextUtils::fixMuch(svg, true);
 		TextUtils::fixPixelDimensionsIn(svg);
 
 		QString errorStr;
@@ -394,34 +388,34 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			return;
 		}
 
-        if (m_standardizeColors) {
-		    QStringList exceptions;
-		    exceptions << "none" << "";
-		    QString toColor(colorString());
-		    SvgFileSplitter::changeColors(root, toColor, exceptions);
-            // todo: change opacity?
-        }
+		if (m_standardizeColors) {
+			QStringList exceptions;
+			exceptions << "none" << "";
+			QString toColor(colorString());
+			SvgFileSplitter::changeColors(root, toColor, exceptions);
+			// todo: change opacity?
+		}
 
-        QRectF vb;
-        double w, h;
+		QRectF vb;
+		double w, h;
 		TextUtils::ensureViewBox(domDocument, GraphicsUtils::SVGDPI, vb, true, w, h, false);
 
-        QDomElement layerElement = TextUtils::findElementWithAttribute(root, "id", layerName());
-        if (layerElement.isNull()) {
-		    QList<QDomNode> rootChildren;
-		    QDomNode rootChild = root.firstChild();
-		    while (!rootChild.isNull()) {
-			    rootChildren.append(rootChild);
-			    rootChild = rootChild.nextSibling();
-		    }
+		QDomElement layerElement = TextUtils::findElementWithAttribute(root, "id", layerName());
+		if (layerElement.isNull()) {
+			QList<QDomNode> rootChildren;
+			QDomNode rootChild = root.firstChild();
+			while (!rootChild.isNull()) {
+				rootChildren.append(rootChild);
+				rootChild = rootChild.nextSibling();
+			}
 
-		    QDomElement topG = domDocument.createElement("g");
-		    topG.setAttribute("id", layerName());
-		    root.appendChild(topG);
-		    foreach (QDomNode node, rootChildren) {
-			    topG.appendChild(node);
-		    }
-        }
+			QDomElement topG = domDocument.createElement("g");
+			topG.setAttribute("id", layerName());
+			root.appendChild(topG);
+			foreach (QDomNode node, rootChildren) {
+				topG.appendChild(node);
+			}
+		}
 
 		svg = TextUtils::removeXMLEntities(domDocument.toString());
 	}
@@ -435,64 +429,64 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 		if (image.format() != QImage::Format_RGB32 && image.format() != QImage::Format_ARGB32) {
 			image = image.convertToFormat(QImage::Format_Mono);
 		}
-		
-        double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
-        if (this->m_standardizeColors) {
-		    GroundPlaneGenerator gpg;
-		    gpg.setLayerName(layerName());
-		    gpg.setMinRunSize(1, 1);
-		    gpg.scanImage(image, image.width(), image.height(), 1, res, colorString(), false, false, QSizeF(0, 0), 0, QPointF(0, 0));
-		    if (gpg.newSVGs().count() < 1) {
-			    FMessageBox::information(
+
+		double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
+		if (this->m_standardizeColors) {
+			GroundPlaneGenerator gpg;
+			gpg.setLayerName(layerName());
+			gpg.setMinRunSize(1, 1);
+			gpg.scanImage(image, image.width(), image.height(), 1, res, colorString(), false, false, QSizeF(0, 0), 0, QPointF(0, 0));
+			if (gpg.newSVGs().count() < 1) {
+				FMessageBox::information(
 				    NULL,
 				    tr("Unable to display"),
 				    tr("Unable to display image from %1").arg(fileName)
-			    );
-			    return;
-		    }
+				);
+				return;
+			}
 
-            svg = gpg.mergeSVGs("", layerName());
-        }
-        else {
-            svg = TextUtils::makeSVGHeader(res, res, image.width(), image.height());
-            int ix = svg.lastIndexOf(">");
-            svg.replace(ix, 1, "xmlns:xlink='http://www.w3.org/1999/xlink'>");
-            QString type = "png";
-            QByteArray bytes;
-            if (fileName.endsWith(".png") || fileName.endsWith(".jpg") || fileName.endsWith("jpeg")) {
-                if (!fileName.endsWith(".png")) type = "jpg";
-                QFile file(fileName);
-                file.open(QFile::ReadOnly);
-                bytes = file.readAll();
-            }
-            else {
-                QBuffer buffer(&bytes);
-                buffer.open(QIODevice::WriteOnly);
-                image.save(&buffer, "PNG"); // writes image into bytes in PNG format
-            }
+			svg = gpg.mergeSVGs("", layerName());
+		}
+		else {
+			svg = TextUtils::makeSVGHeader(res, res, image.width(), image.height());
+			int ix = svg.lastIndexOf(">");
+			svg.replace(ix, 1, "xmlns:xlink='http://www.w3.org/1999/xlink'>");
+			QString type = "png";
+			QByteArray bytes;
+			if (fileName.endsWith(".png") || fileName.endsWith(".jpg") || fileName.endsWith("jpeg")) {
+				if (!fileName.endsWith(".png")) type = "jpg";
+				QFile file(fileName);
+				file.open(QFile::ReadOnly);
+				bytes = file.readAll();
+			}
+			else {
+				QBuffer buffer(&bytes);
+				buffer.open(QIODevice::WriteOnly);
+				image.save(&buffer, "PNG"); // writes image into bytes in PNG format
+			}
 
-            svg += QString("<image x='0' y='0' width='%1' height='%2' xlink:href='data:image/%3;base64,")
-                .arg(image.width()).arg(image.height()).arg(type);
+			svg += QString("<image x='0' y='0' width='%1' height='%2' xlink:href='data:image/%3;base64,")
+			       .arg(image.width()).arg(image.height()).arg(type);
 
-            int remaining = bytes.count();
-            ix = 0;
-            while (remaining > 0) {
-                QByteArray sixty = bytes.mid(ix, qMin(remaining, 60));
-                svg += QString(sixty.toBase64());
-                svg += "\n";
-                ix += 60;
-                remaining -= 60;
-            }
+			int remaining = bytes.count();
+			ix = 0;
+			while (remaining > 0) {
+				QByteArray sixty = bytes.mid(ix, qMin(remaining, 60));
+				svg += QString(sixty.toBase64());
+				svg += "\n";
+				ix += 60;
+				remaining -= 60;
+			}
 
-            svg += "'/>\n";
-            svg += "</svg>";
-        }
+			svg += "'/>\n";
+			svg += "</svg>";
+		}
 	}
 
 	reloadImage(svg, QSizeF(0, 0), fileName, addName);
 }
 
-bool LogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayers) 
+bool LogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayers)
 {
 	Q_UNUSED(viewLayers);
 
@@ -504,7 +498,7 @@ bool LogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayers)
 
 	QRectF r = this->boundingRect();
 	if (qAbs(GraphicsUtils::pixels2mm(r.width(), GraphicsUtils::SVGDPI) - mmW) < .001 &&
-		qAbs(GraphicsUtils::pixels2mm(r.height(), GraphicsUtils::SVGDPI) - mmH) < .001) 
+	        qAbs(GraphicsUtils::pixels2mm(r.height(), GraphicsUtils::SVGDPI) - mmH) < .001)
 	{
 		return false;
 	}
@@ -538,8 +532,8 @@ bool LogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayers)
 	root.setAttribute("width", QString::number(inW) + "in");
 	root.setAttribute("height", QString::number(inH) + "in");
 
-	svg = TextUtils::removeXMLEntities(domDocument.toString());	
-    QString shape = getShapeForRenderer(svg);
+	svg = TextUtils::removeXMLEntities(domDocument.toString());
+	QString shape = getShapeForRenderer(svg);
 
 	bool result = resetRenderer(shape);
 	if (result) {
@@ -549,7 +543,7 @@ bool LogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayers)
 	}
 
 	setWidthAndHeight(qRound(mmW * 10) / 10.0, qRound(mmH * 10) / 10.0);
-    return true;
+	return true;
 }
 
 void LogoItem::setProp(const QString & prop, const QString & value) {
@@ -564,9 +558,9 @@ void LogoItem::setProp(const QString & prop, const QString & value) {
 void LogoItem::setLogo(QString logo, bool force) {
 	if (!force && m_logo.compare(logo) == 0) return;
 
-    if (!isEverVisible()) {
-        return;
-    }
+	if (!isEverVisible()) {
+		return;
+	}
 
 	QString svg;
 	QFile f(m_originalFilename);
@@ -579,7 +573,7 @@ void LogoItem::setLogo(QString logo, bool force) {
 	QSizeF oldSize = m_size;
 	QXmlStreamReader streamReader(svg);
 	QSizeF oldSvgSize = fsvgRenderer() ? fsvgRenderer()->viewBoxF().size() : QSizeF(0, 0);
-	
+
 	DebugDialog::debug(QString("size %1 %2, %3 %4").arg(m_size.width()).arg(m_size.height()).arg(oldSvgSize.width()).arg(oldSvgSize.height()));
 
 	svg = hackSvg(svg, logo);
@@ -594,20 +588,20 @@ void LogoItem::setLogo(QString logo, bool force) {
 		QSizeF newSvgSize = fsvgRenderer()->viewBoxF().size();
 		QSizeF newSize = newSvgSize * oldSize.height() / oldSvgSize.height();
 		DebugDialog::debug(QString("size %1 %2, %3 %4").arg(m_size.width()).arg(m_size.height()).arg(newSize.width()).arg(newSize.height()));
-		
+
 		// set the new text to approximately the same height as the original
 		// if the text is non-proportional that will be lost
 		LayerHash layerHash;
 		resizeMM(GraphicsUtils::pixels2mm(newSize.width(), GraphicsUtils::SVGDPI),
-				 GraphicsUtils::pixels2mm(newSize.height(), GraphicsUtils::SVGDPI),
-				 layerHash);
+		         GraphicsUtils::pixels2mm(newSize.height(), GraphicsUtils::SVGDPI),
+		         layerHash);
 		//DebugDialog::debug(QString("size %1 %2").arg(m_size.width()).arg(m_size.height()));
 	}
 }
 
 bool LogoItem::rerender(const QString & svg)
 {
-    QString newSvg;
+	QString newSvg;
 	bool result = resetRenderer(svg);
 	if (result) {
 		QRectF r = fsvgRenderer()->viewBoxF();
@@ -641,7 +635,7 @@ void LogoItem::logoEntry() {
 	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
-    logoEntryAux(edit->text());
+	logoEntryAux(edit->text());
 }
 
 void LogoItem::logoEntryAux(const QString & text)
@@ -667,7 +661,7 @@ void LogoItem::initImage() {
 	loadImage(m_originalFilename, false);
 }
 
-QString LogoItem::hackSvg(const QString & svg, const QString & logo) 
+QString LogoItem::hackSvg(const QString & svg, const QString & logo)
 {
 	QString errorStr;
 	int errorLine;
@@ -677,13 +671,13 @@ QString LogoItem::hackSvg(const QString & svg, const QString & logo)
 
 	QDomElement root = doc.documentElement();
 	root.setAttribute("width", QString::number(logo.length() * 0.1) + "in");
-	
+
 	QString viewBox = root.attribute("viewBox");
 	QStringList coords = viewBox.split(" ", QString::SkipEmptyParts);
 	coords[2] = QString::number(logo.length() * 10);
 	root.setAttribute("viewBox", coords.join(" "));
 
-    QStringList exceptions;
+	QStringList exceptions;
 	exceptions << "none" << "";
 	QString toColor(colorString());
 	SvgFileSplitter::changeColors(root, toColor, exceptions);
@@ -707,13 +701,13 @@ QString LogoItem::hackSvg(const QString & svg, const QString & logo)
 				QString h = root.attribute("height");
 				bool ok;
 				modelPart()->setLocalProp("height", TextUtils::convertToInches(h, &ok, false) * 25.4);
-                if (!isBottom()) return  doc.toString();
-                return flipSvg(doc.toString());
+				if (!isBottom()) return  doc.toString();
+				return flipSvg(doc.toString());
 			}
 		}
 	}
 
-    if (!isBottom()) return svg;
+	if (!isBottom()) return svg;
 
 	return flipSvg(svg);
 }
@@ -778,31 +772,31 @@ ViewLayer::ViewLayerID LogoItem::layer() {
 }
 
 QString LogoItem::colorString() {
-    return isBottom() ? ViewLayer::Silkscreen0Color :  ViewLayer::Silkscreen1Color;
+	return isBottom() ? ViewLayer::Silkscreen0Color :  ViewLayer::Silkscreen1Color;
 }
 
-QString LogoItem::layerName() 
+QString LogoItem::layerName()
 {
 	return ViewLayer::viewLayerXmlNameFromID(layer());
 }
 
 double LogoItem::minWidth() {
-    double zoom = 1;
+	double zoom = 1;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
 		zoom = infoGraphicsView->currentZoom() / 100;
-        if (zoom == 0) zoom = 1;
+		if (zoom == 0) zoom = 1;
 	}
-    
+
 	return ResizableBoard::CornerHandleSize * 2 / zoom;
 }
 
 double LogoItem::minHeight() {
-    double zoom = 1;
+	double zoom = 1;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
 		zoom = infoGraphicsView->currentZoom() / 100;
-        if (zoom == 0) zoom = 1;
+		if (zoom == 0) zoom = 1;
 	}
 
 	return ResizableBoard::CornerHandleSize * 2 / zoom;
@@ -839,18 +833,18 @@ void LogoItem::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *opt
 }
 
 bool LogoItem::isBottom() {
-    QString layer = modelPart()->properties().value("layer");
+	QString layer = modelPart()->properties().value("layer");
 	return layer.contains("0") || layer.contains("bottom");
 }
 
 QString LogoItem::flipSvg(const QString & svg)
 {
 	QString newSvg = svg;
-    // need the end quote in the replace since the xml for silkscreen1 is just "silkscreen"
+	// need the end quote in the replace since the xml for silkscreen1 is just "silkscreen"
 	newSvg.replace("\"" + ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1) + "\"", "\"" + ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0) + "\"");
 	newSvg.replace("'" + ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1) + "'", "'" + ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0) + "'");
 	newSvg.replace(ViewLayer::Silkscreen1Color, ViewLayer::Silkscreen0Color, Qt::CaseInsensitive);
-    return flipSvgAux(newSvg);
+	return flipSvgAux(newSvg);
 }
 
 QString LogoItem::flipSvgAux(QString & newSvg)
@@ -860,32 +854,32 @@ QString LogoItem::flipSvgAux(QString & newSvg)
 	QRectF bounds = renderer.viewBoxF();
 	m.translate(bounds.center().x(), bounds.center().y());
 	QMatrix mMinus = m.inverted();
-    QMatrix cm = mMinus * QMatrix().scale(-1, 1) * m;
+	QMatrix cm = mMinus * QMatrix().scale(-1, 1) * m;
 	int gix = newSvg.indexOf("<g");
 	newSvg.replace(gix, 2, "<g _flipped_='1' transform='" + TextUtils::svgMatrix(cm) + "'");
 	return newSvg;
 }
 
 QString LogoItem::getNewLayerFileName(const QString & newLayerName) {
-    if (newLayerName.isEmpty()) return "";
+	if (newLayerName.isEmpty()) return "";
 
-    QString lastfilename = this->prop("lastfilename");
-    if (QFile::exists(lastfilename)) return lastfilename;
+	QString lastfilename = this->prop("lastfilename");
+	if (QFile::exists(lastfilename)) return lastfilename;
 
-    DebugDialog::debug(QString("logo item image '%1' doesn't exist").arg(lastfilename));
-    return "";
+	DebugDialog::debug(QString("logo item image '%1' doesn't exist").arg(lastfilename));
+	return "";
 }
 
 QString LogoItem::getInspectorTitle() {
-    if (hasLogo()) return m_logo;
+	if (hasLogo()) return m_logo;
 
-    return ResizableBoard::getInspectorTitle();
+	return ResizableBoard::getInspectorTitle();
 }
 
 void LogoItem::setInspectorTitle(const QString & oldText, const QString & newText) {
-    if (!hasLogo()) return ResizableBoard::setInspectorTitle(oldText, newText);
+	if (!hasLogo()) return ResizableBoard::setInspectorTitle(oldText, newText);
 
-    logoEntryAux(newText);
+	logoEntryAux(newText);
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -903,11 +897,11 @@ ViewLayer::ViewLayerID SchematicLogoItem::layer() {
 }
 
 QString SchematicLogoItem::colorString() {
-    return "black";
+	return "black";
 }
 
 bool SchematicLogoItem::isBottom() {
-    return false;
+	return false;
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -915,15 +909,15 @@ bool SchematicLogoItem::isBottom() {
 BreadboardLogoItem::BreadboardLogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: LogoItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
-    m_color = "#787878";
+	m_color = "#787878";
 	QString color = modelPart->localProp("color").toString();
-    if (color.isEmpty()) {
-	    color = modelPart->properties().value("color");
-        if (color.isEmpty()) color = m_color;
+	if (color.isEmpty()) {
+		color = modelPart->properties().value("color");
+		if (color.isEmpty()) color = m_color;
 		modelPart->setLocalProp("color", color);
 	}
-    m_color = color;
-    m_standardizeColors = false;
+	m_color = color;
+	m_standardizeColors = false;
 }
 
 BreadboardLogoItem::~BreadboardLogoItem() {
@@ -934,19 +928,19 @@ ViewLayer::ViewLayerID BreadboardLogoItem::layer() {
 }
 
 QString BreadboardLogoItem::colorString() {
-    return m_color;
+	return m_color;
 }
 
-bool BreadboardLogoItem::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
+bool BreadboardLogoItem::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (m_hasLogo) {
 		if (prop.compare("color", Qt::CaseInsensitive) == 0) {
 			returnProp = tr("color");
 			returnValue = m_color;
 
-		    QPushButton * button = new QPushButton(tr("Set text color"));
-		    button->setObjectName("infoViewButton");
-		    connect(button, SIGNAL(pressed()), this, SLOT(changeTextColor()));
+			QPushButton * button = new QPushButton(tr("Set text color"));
+			button->setObjectName("infoViewButton");
+			connect(button, SIGNAL(pressed()), this, SLOT(changeTextColor()));
 
 			returnWidget = button;
 			return true;
@@ -957,12 +951,12 @@ bool BreadboardLogoItem::collectExtraInfo(QWidget * parent, const QString & fami
 }
 
 void BreadboardLogoItem::changeTextColor() {
-    QColor color(m_color);
-    QColor newColor = QColorDialog::getColor(color, NULL, tr("Select text color"));
-    if (!newColor.isValid()) return;
-    if (newColor.name().compare(m_color, Qt::CaseInsensitive) == 0) return;
+	QColor color(m_color);
+	QColor newColor = QColorDialog::getColor(color, NULL, tr("Select text color"));
+	if (!newColor.isValid()) return;
+	if (newColor.name().compare(m_color, Qt::CaseInsensitive) == 0) return;
 
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
 		infoGraphicsView->setProp(this, "color", tr("color"), m_color, newColor.name(), true);
 	}
@@ -970,8 +964,8 @@ void BreadboardLogoItem::changeTextColor() {
 
 void BreadboardLogoItem::setProp(const QString & prop, const QString & value) {
 	if (m_hasLogo && prop.compare("color", Qt::CaseInsensitive) == 0) {
-        m_color = value;
-        modelPart()->setLocalProp("color", m_color);
+		m_color = value;
+		modelPart()->setLocalProp("color", m_color);
 		setLogo(m_logo, true);
 		return;
 	}
@@ -980,7 +974,7 @@ void BreadboardLogoItem::setProp(const QString & prop, const QString & value) {
 }
 
 bool BreadboardLogoItem::isBottom() {
-    return false;
+	return false;
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -988,7 +982,7 @@ bool BreadboardLogoItem::isBottom() {
 CopperLogoItem::CopperLogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: LogoItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
-    // TODO: load these names from somewhere
+	// TODO: load these names from somewhere
 
 	if (Copper1ImageNames.count() == 0) {
 		Copper1ImageNames << "new Made with Fritzing copper1" << "new Fritzing icon copper1" << "OHANDA logo copper1" << "OSHW logo copper1";
@@ -1026,7 +1020,7 @@ QString CopperLogoItem::flipSvg(const QString & svg)
 	QString newSvg = svg;
 	newSvg.replace(ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0));
 	newSvg.replace(ViewLayer::Copper1Color, ViewLayer::Copper0Color, Qt::CaseInsensitive);
-    return flipSvgAux(newSvg);
+	return flipSvgAux(newSvg);
 }
 
 ////////////////////////////////////////////
@@ -1035,12 +1029,12 @@ QString CopperLogoItem::flipSvg(const QString & svg)
 //
 // don't mess with colors at all?
 
-BoardLogoItem::BoardLogoItem(ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel) 
-    : LogoItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
+BoardLogoItem::BoardLogoItem(ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
+	: LogoItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
-    m_hasLogo = false;
-    m_svgOnly = true;
-    m_standardizeColors = false;
+	m_hasLogo = false;
+	m_svgOnly = true;
+	m_standardizeColors = false;
 	if (BoardImageNames.count() == 0) {
 		BoardImageNames << "circle_pcb";
 	}
@@ -1049,9 +1043,9 @@ BoardLogoItem::BoardLogoItem(ModelPart * modelPart, ViewLayer::ViewID viewID, co
 BoardLogoItem::~BoardLogoItem() {
 }
 
-QString BoardLogoItem::getShapeForRenderer(const QString & svg) 
+QString BoardLogoItem::getShapeForRenderer(const QString & svg)
 {
-    return ResizableBoard::getShapeForRenderer(svg, m_viewLayerID);
+	return ResizableBoard::getShapeForRenderer(svg, m_viewLayerID);
 }
 
 ViewLayer::ViewLayerID BoardLogoItem::layer() {
@@ -1070,76 +1064,74 @@ QStringList & BoardLogoItem::getNewImageNames() {
 	return NewBoardImageNames;
 }
 
-bool BoardLogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayers) 
+bool BoardLogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayers)
 {
 	bool result = LogoItem::resizeMM(mmW, mmH, viewLayers);
-    if (!result) return result;
+	if (!result) return result;
 
-    reloadLayerKin(mmW, mmH);
-    return result;
+	reloadLayerKin(mmW, mmH);
+	return result;
 }
 
 void BoardLogoItem::reloadLayerKin(double mmW, double mmH)
 {
 	foreach (ItemBase * itemBase, m_layerKin) {
-        if (itemBase->viewLayerID() == ViewLayer::Silkscreen1 || itemBase->viewLayerID() == ViewLayer::Silkscreen0) {
-		    QString svg = ResizableBoard::getShapeForRenderer(prop("shape"), itemBase->viewLayerID());
-		    if (!svg.isEmpty()) {
-			    itemBase->prepareGeometryChange();
-			    if (itemBase->resetRenderer(svg)) {
-				    itemBase->modelPart()->setLocalProp("width", mmW);
-				    itemBase->modelPart()->setLocalProp("height", mmH);
-			    }
-		    }
-	    }
-    }
+		if (itemBase->viewLayerID() == ViewLayer::Silkscreen1 || itemBase->viewLayerID() == ViewLayer::Silkscreen0) {
+			QString svg = ResizableBoard::getShapeForRenderer(prop("shape"), itemBase->viewLayerID());
+			if (!svg.isEmpty()) {
+				itemBase->prepareGeometryChange();
+				if (itemBase->resetRenderer(svg)) {
+					itemBase->modelPart()->setLocalProp("width", mmW);
+					itemBase->modelPart()->setLocalProp("height", mmH);
+				}
+			}
+		}
+	}
 }
 
 bool BoardLogoItem::canRetrieveLayer(ViewLayer::ViewLayerID viewLayerID) {
-    return LogoItem::canRetrieveLayer(viewLayerID) || viewLayerID == LogoItem::layer() || viewLayerID == ViewLayer::Silkscreen0 || viewLayerID == ViewLayer::Silkscreen1;
+	return LogoItem::canRetrieveLayer(viewLayerID) || viewLayerID == LogoItem::layer() || viewLayerID == ViewLayer::Silkscreen0 || viewLayerID == ViewLayer::Silkscreen1;
 }
 
-bool BoardLogoItem::reloadImage(const QString & svg, const QSizeF & aspectRatio, const QString & fileName, bool addName) 
+bool BoardLogoItem::reloadImage(const QString & svg, const QSizeF & aspectRatio, const QString & fileName, bool addName)
 {
-    bool result;
-    if (!svg.contains(GerberGenerator::MagicBoardOutlineID, Qt::CaseInsensitive)) {
-        QString nsvg = setBoardOutline(svg);
-        result = LogoItem::reloadImage(nsvg, aspectRatio, fileName, addName);
-    }
-    else {
-        result = LogoItem::reloadImage(svg, aspectRatio, fileName, addName);
-    }
-    if (!result) return result;
+	bool result;
+	if (!svg.contains(GerberGenerator::MagicBoardOutlineID, Qt::CaseInsensitive)) {
+		QString nsvg = setBoardOutline(svg);
+		result = LogoItem::reloadImage(nsvg, aspectRatio, fileName, addName);
+	}
+	else {
+		result = LogoItem::reloadImage(svg, aspectRatio, fileName, addName);
+	}
+	if (!result) return result;
 
-    reloadLayerKin(prop("width").toDouble(), prop("height").toDouble());
-    return result;
+	reloadLayerKin(prop("width").toDouble(), prop("height").toDouble());
+	return result;
 }
 
 bool BoardLogoItem::checkImage(const QString & filename) {
-    // override logoitem
-    return ResizableBoard::checkImage(filename);
+	// override logoitem
+	return ResizableBoard::checkImage(filename);
 }
 
-bool BoardLogoItem::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
+bool BoardLogoItem::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
 	if (prop.compare("shape", Qt::CaseInsensitive) == 0) {
-        Board::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
-		returnWidget = setUpDimEntry(true, true, false, returnWidget);  
-        returnWidget->setEnabled(swappingEnabled);
+		Board::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+		returnWidget = setUpDimEntry(true, true, false, returnWidget);
+		returnWidget->setEnabled(swappingEnabled);
 
-        m_aspectRatioCheck->setEnabled(false);
-        m_aspectRatioCheck->setChecked(true);
-        m_aspectRatioCheck->setVisible(false);
-        m_aspectRatioLabel->setVisible(false);
+		m_aspectRatioCheck->setEnabled(false);
+		m_aspectRatioCheck->setChecked(true);
+		m_aspectRatioCheck->setVisible(false);
+		m_aspectRatioLabel->setVisible(false);
 		returnProp = tr("shape");
 		return true;
 	}
 
-    return LogoItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+	return LogoItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 }
 
 bool BoardLogoItem::isBottom() {
-    return false;
+	return false;
 }
-
-

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -36,18 +30,18 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 class FileProgressDialog : public QDialog
 {
-Q_OBJECT
+	Q_OBJECT
 
 public:
 	FileProgressDialog(QWidget *parent = 0);
-    FileProgressDialog(const QString & title, int initialMaximum, QWidget *parent);
+	FileProgressDialog(const QString & title, int initialMaximum, QWidget *parent);
 	~FileProgressDialog();
 
 	int value();
 	void setBinLoadingCount(int);
 	void setBinLoadingChunk(int);
-    void setIncValueMod(int);
-    void setIndeterminate();
+	void setIncValueMod(int);
+	void setIndeterminate();
 
 protected:
 	void closeEvent(QCloseEvent *);
@@ -56,7 +50,7 @@ protected:
 public slots:
 	void setMinimum(int);
 	void setMaximum(int);
-    void addMaximum(int);
+	void addMaximum(int);
 	void setValue(int);
 	void incValue();
 	void setMessage(const QString & message);
@@ -67,7 +61,7 @@ public slots:
 	void settingItemSlot();
 
 protected slots:
-    void updateIndeterminate();
+	void updateIndeterminate();
 
 
 signals:
@@ -77,18 +71,18 @@ protected:
 	void init(const QString & title, int initialMaximum);
 
 protected:
-	QProgressBar * m_progressBar;	
+	QProgressBar * m_progressBar;
 	QLabel * m_message;
 
 	int m_binLoadingCount;
 	int m_binLoadingIndex;
 	int m_binLoadingStart;
-    int m_binLoadingChunk;
-    int m_incValueMod;
+	int m_binLoadingChunk;
+	int m_incValueMod;
 	double m_binLoadingInc;
 	double m_binLoadingValue;
-    QTimer m_timer;
+	QTimer m_timer;
 };
 
 
-#endif 
+#endif

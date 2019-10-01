@@ -11,21 +11,17 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
-# ********************************************************************
-# $Revision: 3727 $:
-# $Author: cohen@irascible.com $:
-# $Date: 2009-11-14 12:36:34 +0100 (Sat, 14 Nov 2009) $
 # ********************************************************************/
 HEADERS += \
     src/model/modelbase.h \
     src/model/modelpart.h \
     src/model/modelpartshared.h \
     src/model/palettemodel.h \
-    src/model/sketchmodel.h 
-    
+    src/model/sketchmodel.h
+
 SOURCES += \
     src/model/modelbase.cpp \
     src/model/modelpart.cpp \
     src/model/modelpartshared.cpp \
     src/model/palettemodel.cpp \
-    src/model/sketchmodel.cpp 
+    src/model/sketchmodel.cpp

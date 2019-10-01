@@ -28,9 +28,9 @@ INCLUDEPATH += $$LIBGIT2INCLUDE
 
 win32 {
     contains(QMAKE_TARGET.arch, x86_64) {
-        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build64"
+        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build64/Release"
     } else {
-        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build32"
+        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build32/Release"
     }
 
     exists($$LIBGIT2LIB/git2.lib) {
@@ -38,23 +38,20 @@ win32 {
     } else {
         error("libgit2 library not found in $$LIBGIT2LIB")
     }
+
+    LIBS += -L$$LIBGIT2LIB -lgit2
 }
 
 unix {
     LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
-    macx {
-        exists($$LIBGIT2LIB/libgit2.dylib) {
-            message("found libgit2 library in $$LIBGIT2LIB")
-        } else {
-            error("libgit2 library not found in $$LIBGIT2LIB")
-        }
+    exists($$LIBGIT2LIB/libgit2.a) {
+        message("found libgit2 library in $$LIBGIT2LIB")
     } else {
-        exists($$LIBGIT2LIB/libgit2.so) {
-            message("found libgit2 library in $$LIBGIT2LIB")
-        } else {
-            error("libgit2 library not found in $$LIBGIT2LIB")
-        }
+        error("static libgit2 library not found in $$LIBGIT2LIB")
+    }
+    macx {
+        LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
+    } else {
+        LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
     }
 }
-
-LIBS += -L$$LIBGIT2LIB -lgit2

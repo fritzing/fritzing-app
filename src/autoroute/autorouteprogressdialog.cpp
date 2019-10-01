@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2016 Fritzing
+Copyright (c) 2007-2019 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,12 +15,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
-
-********************************************************************
-
-$Revision: 6904 $:
-$Author: irascibl@gmail.com $:
-$Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
@@ -58,7 +52,7 @@ void ArrowButton::mousePressEvent(QMouseEvent *event) {
 
 /////////////////////////////////////
 
-AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoomAndPan, bool stopButton, bool bestButton, bool spin, ZoomableGraphicsView * view, QWidget *parent) : QDialog(parent) 
+AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoomAndPan, bool stopButton, bool bestButton, bool spin, ZoomableGraphicsView * view, QWidget *parent) : QDialog(parent)
 {
 	Qt::WindowFlags flags = windowFlags();
 	flags ^= Qt::WindowCloseButtonHint;
@@ -93,7 +87,7 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 	vLayout->addWidget(m_message);
 	m_message2 = new QLabel(this);
 	vLayout->addWidget(m_message2);
-	
+
 	if (zoomAndPan) {
 		QGroupBox * groupBox = new QGroupBox(tr("zoom and pan controls"));
 		QHBoxLayout *lo2 = new QHBoxLayout(groupBox);
@@ -138,11 +132,11 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 		m_buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Stop Now"));
 		connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(sendStop()));
 	}
-    if (bestButton) {
-        QPushButton * best = new QPushButton(tr("Best So Far"));
-        m_buttonBox->addButton(best, QDialogButtonBox::ActionRole);
-        connect(best, SIGNAL(clicked()), this, SLOT(sendBest()));
-    }
+	if (bestButton) {
+		QPushButton * best = new QPushButton(tr("Best So Far"));
+		m_buttonBox->addButton(best, QDialogButtonBox::ActionRole);
+		connect(best, SIGNAL(clicked()), this, SLOT(sendBest()));
+	}
 
 
 	m_buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));

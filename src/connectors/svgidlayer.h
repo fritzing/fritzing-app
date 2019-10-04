@@ -26,47 +26,69 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../viewlayer.h"
 
 
-struct PointRect {
-	QRectF rect;
-	QPointF point;
-	bool processed = false;
-	bool svgVisible = false;
-
-    void unprocess();
-    void setInvisible();
-    PointRect();
-    PointRect(bool svgVisible, bool processed, QRectF, QPointF);
-    PointRect(const PointRect& other);
+class PointRect {
+    public:
+        PointRect() = default;
+        PointRect(bool _svgVisible, bool _processed, QRectF _rect, QPointF _point) noexcept : 
+            rect(_rect),
+            point(_point),
+            processed(_processed),
+            svgVisible(_svgVisible) { }
+        PointRect(const PointRect& other);
+        void unprocess() noexcept;
+        void setInvisible() noexcept;
+        constexpr QPointF getPoint() const noexcept { return point; }
+        constexpr QRectF getRect() const noexcept { return rect; }
+        constexpr bool isProcessed() const noexcept { return processed; }
+        constexpr bool isSvgVisible() const noexcept { return svgVisible; }
+        void setPoint(QPointF other) noexcept {
+            this->point = other;
+        }
+        void setRect(QRectF other) noexcept {
+            this->rect = other;
+        }
+    private:
+        QRectF rect;
+        QPointF point;
+        bool processed = false;
+        bool svgVisible = false;
 };
 
 class SvgIdLayer
 {
 public:
 	SvgIdLayer(ViewLayer::ViewID);
+    SvgIdLayer(const SvgIdLayer&);
 	SvgIdLayer * copyLayer();
 
 	QPointF point(ViewLayer::ViewLayerPlacement);
 	QRectF rect(ViewLayer::ViewLayerPlacement);
 	bool processed(ViewLayer::ViewLayerPlacement);
 	bool svgVisible(ViewLayer::ViewLayerPlacement);
-	void unprocess();
-	void setInvisible(ViewLayer::ViewLayerPlacement);
+	void unprocess() noexcept;
+	inline void setInvisible(ViewLayer::ViewLayerPlacement placement) noexcept {
+        if (placement == ViewLayer::ViewLayerPlacement::NewBottom) {
+            m_pointRectBottom.setInvisible();
+        } else {
+            m_pointRectTop.setInvisible();
+        }
+    }
 	void setPointRect(ViewLayer::ViewLayerPlacement, QPointF, QRectF, bool svgVisible);
     void setPointRect(ViewLayer::ViewLayerPlacement, const PointRect& newPointRect);
 
 public:
 	ViewLayer::ViewID m_viewID;
+	ViewLayer::ViewLayerID m_svgViewLayerID;
 	QString m_svgId;
 	QString m_terminalId;
-	ViewLayer::ViewLayerID m_svgViewLayerID;
 	QString m_legId;
 	QString m_legColor;
 	QLineF m_legLine;
-	double m_radius = 0.0;
-	double m_strokeWidth = 0.0;
-	double m_legStrokeWidth = 0.0;
-	bool m_hybrid = false;
-	bool m_path = false;
+	double m_radius;
+	double m_strokeWidth;
+	double m_legStrokeWidth;
+	bool m_hybrid;
+	bool m_path;
 
 protected:
 	PointRect m_pointRectBottom;

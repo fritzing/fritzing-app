@@ -31,13 +31,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "zoomslider.h"
 #include "../debugdialog.h"
 
-double ZoomSlider::ZoomStep;
+double ZoomSlider::ZoomStep = 0.0;
 QList<double> ZoomSlider::ZoomFactors;
 
-static const int MIN_VALUE = 10;
-static const int STARTING_VALUE = 100;
-static const int HEIGHT = 16;
-static const int STEP = 100;
+
+constexpr auto MIN_VALUE = 10;
+constexpr auto STARTING_VALUE = 100;
+constexpr auto HEIGHT = 16;
+constexpr auto STEP = 100;
 
 static int AutoRepeatDelay = 0;
 static int AutoRepeatInterval = 0;

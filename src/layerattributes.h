@@ -31,26 +31,25 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class LayerAttributes {
 
 public:
-	LayerAttributes();
-
-	const QString & filename();
+	LayerAttributes() noexcept : orientation(Qt::Vertical), createShape(true), doConnectors(false) { }
+	const QString & filename() const noexcept { return m_filename; }
 	void setFilename(const QString &);
-	const QByteArray & loaded() const;
+	const QByteArray & loaded() const noexcept { return m_loaded; }
 	void clearLoaded();
 	void setLoaded(const QByteArray &);
 
-protected:
-	QString m_filename;
-	QByteArray m_loaded;
 
 public:
+	Qt::Orientations orientation;
+	bool createShape;
+	bool doConnectors;
 	QString error;
 	ViewLayer::ViewID viewID;
 	ViewLayer::ViewLayerID viewLayerID;
 	ViewLayer::ViewLayerPlacement viewLayerPlacement;
-	bool doConnectors;
-	Qt::Orientations orientation;
-	bool createShape;
+protected:
+	QString m_filename;
+	QByteArray m_loaded;
 };
 
 #endif

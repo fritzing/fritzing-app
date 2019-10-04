@@ -88,11 +88,11 @@ QStringList Wire::colorNames;
 QHash<int, QString> Wire::widthTrans;
 QList<int> Wire::widths;
 QList<QColor> Wire::lengthColorTrans;
-double Wire::STANDARD_TRACE_WIDTH;
-double Wire::HALF_STANDARD_TRACE_WIDTH;
-double Wire::THIN_TRACE_WIDTH;
+double Wire::STANDARD_TRACE_WIDTH = 0.0;
+double Wire::HALF_STANDARD_TRACE_WIDTH = 0.0;
+double Wire::THIN_TRACE_WIDTH = 0.0;
 
-const double DefaultHoverStrokeWidth = 4;
+constexpr double DefaultHoverStrokeWidth = 4;
 
 static Bezier UndoBezier;
 static BezierDisplay * TheBezierDisplay = NULL;

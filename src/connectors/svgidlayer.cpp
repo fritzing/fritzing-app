@@ -98,5 +98,5 @@ void SvgIdLayer::setPointRect(ViewLayer::ViewLayerPlacement viewLayerPlacement, 
     }
 }
 void SvgIdLayer::setPointRect(ViewLayer::ViewLayerPlacement viewLayerPlacement, QPointF point, QRectF rect, bool svgVisible) {
-    setPointRect(viewLayerPlacement, PointRect(svgVisible, true, point, rect));
+    setPointRect(viewLayerPlacement, PointRect(svgVisible, true, rect, point));
 }

@@ -20,7 +20,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ercdata.h"
 
-void ValidReal::setValue(double v) {
+void ValidReal::setValue(double v) noexcept {
 	m_value = v;
 	m_ok = true;
 }

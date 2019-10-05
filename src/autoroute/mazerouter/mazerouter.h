@@ -45,9 +45,9 @@ typedef quint64 GridValue;
 
 struct GridPoint {
 	int x, y, z;
-	GridValue baseCost;
-	double qCost;
-	uchar flags;
+	GridValue baseCost = 0;
+	double qCost = 0.0;
+	uchar flags = 0;
 
 	bool operator<(const GridPoint&) const;
 	GridPoint(QPoint, int);
@@ -56,19 +56,16 @@ struct GridPoint {
 
 struct PointZ {
 	QPointF p;
-	int z;
+	int z = 0;
 
-	PointZ(QPointF _p, int _z) {
-		p = _p;
-		z = _z;
-	}
+	PointZ(QPointF _p, int _z) : p(_p), z(_z) { }
 };
 
 struct Net {
-	QList<class ConnectorItem *>* net;
+	QList<class ConnectorItem *>* net = nullptr;
 	QList< QList<ConnectorItem *> > subnets;
-	int pinsWithin;
-	int id;
+	int pinsWithin = 0;
+	int id = 0;
 };
 
 struct NetList {
@@ -76,14 +73,12 @@ struct NetList {
 };
 
 struct Trace {
-	int netIndex;
-	int order;
-	uchar flags;
+	int netIndex = 0;
+	int order = 0;
+	uchar flags = 0;
 	QList<GridPoint> gridPoints;
 
-	Trace() {
-		flags = 0;
-	}
+	Trace() = default;
 };
 
 struct NetOrdering {
@@ -95,36 +90,36 @@ struct Score {
 	QMultiHash<int, Trace> traces;
 	QHash<int, int> routedCount;
 	QHash<int, int> viaCount;
-	int totalRoutedCount;
-	int totalViaCount;
-	int reorderNet;
-	bool anyUnrouted;
+	int totalRoutedCount = 0;
+	int totalViaCount = 0;
+	int reorderNet = -1;
+	bool anyUnrouted = false;
 
-	Score();
+	Score() = default;
 	void setOrdering(const NetOrdering &);
 };
 
 struct Nearest {
-	int i, j;
-	double distance;
-	ConnectorItem * ic;
-	ConnectorItem * jc;
+	int i = 0, j = 0;
+	double distance = 0.0;
+	ConnectorItem * ic = nullptr;
+	ConnectorItem * jc = nullptr;
 };
 
 struct Grid {
-	GridValue * data;
-	int x;
-	int y;
-	int z;
+	GridValue * data = nullptr;
+	int x = 0;
+	int y = 0;
+	int z = 0;
 
 	Grid(int x, int y, int layers);
+    ~Grid();
 
 	GridValue at(int x, int y, int z) const;
 	void setAt(int x, int y, int z, GridValue value);
 	QList<QPoint> init(int x, int y, int z, int width, int height, const QImage &, GridValue value, bool collectPoints);
 	QList<QPoint> init4(int x, int y, int z, int width, int height, const QImage *, GridValue value, bool collectPoints);
 	void clear();
-	void free();
 	void copy(int fromIndex, int toIndex);
 };
 

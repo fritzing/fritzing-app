@@ -317,27 +317,21 @@ bool GridPoint::operator<(const GridPoint& other) const {
 	return qCost > other.qCost;
 }
 
-GridPoint::GridPoint(QPoint p, int zed) {
-	z = zed;
-	x = p.x();
-	y = p.y();
-	flags = 0;
+GridPoint::GridPoint(QPoint p, int zed) :
+    x(p.x()),
+    y(p.y()),
+    z(zed)
+{
+
 }
 
-GridPoint::GridPoint()
-{
-	flags = 0;
-}
+GridPoint::GridPoint() : x(0), y(0), z(0) { }
 
 ////////////////////////////////////////////////////////////////////
 
-Grid::Grid(int sx, int sy, int sz) {
-	x = sx;
-	y = sy;
-	z = sz;
-
-	data = (GridValue *) malloc(x * y * z * sizeof(GridValue));   // calloc initializes grid to 0
-}
+Grid::Grid(int sx, int sy, int sz) : 
+    data(new GridValue[sx * sy * sz]()), // initialize to zero
+    x(sx), y(sy), z(sz) { }
 
 GridValue Grid::at(int sx, int sy, int sz) const {
     Q_ASSERT (sx < x);
@@ -417,23 +411,19 @@ void Grid::copy(int fromIndex, int toIndex) {
 }
 
 void Grid::clear() {
-	memset(data, 0, x * y * z * sizeof(GridValue));
+    // memset can be very dangerous, clear out memory this way
+    std::fill_n(data, x * y * z, 0);
 }
 
-void Grid::free() {
-	if (data) {
-		::free(data);
-		data = NULL;
-	}
+Grid::~Grid() {
+    if (data) {
+        delete [] data;
+        data = nullptr;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////
 
-Score::Score() {
-	totalRoutedCount = totalViaCount = 0;
-	anyUnrouted = false;
-	reorderNet = -1;
-}
 
 void Score::setOrdering(const NetOrdering & _ordering) {
 	reorderNet = -1;
@@ -601,7 +591,6 @@ MazeRouter::~MazeRouter()
 		delete m_board;
 	}
 	if (m_grid) {
-		m_grid->free();
 		delete m_grid;
 	}
 	if (m_boardImage) {
@@ -838,7 +827,6 @@ void MazeRouter::start()
 	ProcessEventBlocker::processEvents();
 
 	if (m_grid) {
-		m_grid->free();
 		delete m_grid;
 		m_grid = NULL;
 	}
@@ -2143,8 +2131,6 @@ void MazeRouter::cleanUpNets(NetList & netList) {
 }
 
 void MazeRouter::createTraces(NetList & netList, Score & bestScore, QUndoCommand * parentCommand) {
-	QPointF topLeft = m_maxRect.topLeft();
-
 	QMultiHash<int, Via *> allVias;
 	QMultiHash<int, JumperItem *> allJumperItems;
 	QMultiHash<int, SymbolPaletteItem *> allNetLabels;

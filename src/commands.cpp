@@ -1166,9 +1166,9 @@ void CheckStickyCommand::stick(SketchWidget * sketchWidget, long fromID, long to
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 CleanUpWiresCommand::CleanUpWiresCommand(SketchWidget* sketchWidget, CleanUpWiresCommand::Direction direction, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+    m_direction(direction)
 {
-	m_direction = direction;
 }
 
 void CleanUpWiresCommand::undo()
@@ -1770,11 +1770,11 @@ QString TransformItemCommand::getParamString() const {
 
 SetResistanceCommand::SetResistanceCommand(SketchWidget * sketchWidget, long itemID, QString oldResistance, QString newResistance, QString oldPinSpacing, QString newPinSpacing, QUndoCommand * parent)
 	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
-    m_itemID(itemID),
     m_oldResistance(oldResistance),
     m_newResistance(newResistance),
     m_oldPinSpacing(oldPinSpacing),
-    m_newPinSpacing(newPinSpacing)
+    m_newPinSpacing(newPinSpacing),
+    m_itemID(itemID)
 {
 }
 
@@ -1803,10 +1803,10 @@ QString SetResistanceCommand::getParamString() const {
 SetPropCommand::SetPropCommand(SketchWidget * sketchWidget, long itemID, QString prop, QString oldValue, QString newValue, bool redraw, QUndoCommand * parent)
 	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
     m_redraw(redraw),
-    m_itemID(itemID),
     m_prop(prop),
     m_oldValue(oldValue),
-    m_newValue(newValue)
+    m_newValue(newValue),
+    m_itemID(itemID)
 {
 }
 
@@ -1835,13 +1835,13 @@ QString SetPropCommand::getParamString() const {
 
 ResizeJumperItemCommand::ResizeJumperItemCommand(SketchWidget * sketchWidget, long itemID, QPointF oldPos, QPointF oldC0, QPointF oldC1, QPointF newPos, QPointF newC0, QPointF newC1, QUndoCommand * parent)
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
-    m_itemID(itemID),
     m_oldPos(oldPos),
-    m_newPos(newPos),
     m_oldC0(oldC0),
-    m_newC0(newC0),
     m_oldC1(oldC1),
-    m_newC1(newC1)
+    m_newPos(newPos),
+    m_newC0(newC0),
+    m_newC1(newC1),
+    m_itemID(itemID)
 {
 }
 
@@ -1872,7 +1872,7 @@ QString ResizeJumperItemCommand::getParamString() const {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ShowLabelCommand::ShowLabelCommand(class SketchWidget *sketchWidget, QUndoCommand *parent)
+ShowLabelCommand::ShowLabelCommand(SketchWidget *sketchWidget, QUndoCommand *parent)
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
 }
@@ -1913,14 +1913,14 @@ QString ShowLabelCommand::getParamString() const {
 LoadLogoImageCommand::LoadLogoImageCommand(SketchWidget *sketchWidget, long id,
         const QString & oldSvg, const QSizeF oldAspectRatio, const QString & oldFilename,
         const QString & newFilename, bool addName, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_itemID(id),
+    m_oldSvg(oldSvg),
+    m_oldAspectRatio(oldAspectRatio),
+    m_oldFilename(oldFilename),
+    m_newFilename(newFilename),
+    m_addName(addName)
 {
-	m_itemID = id;
-	m_oldFilename = oldFilename;
-	m_newFilename = newFilename;
-	m_oldAspectRatio = oldAspectRatio;
-	m_oldSvg = oldSvg;
-	m_addName = addName;
 }
 
 void LoadLogoImageCommand::undo() {
@@ -1950,10 +1950,10 @@ QString LoadLogoImageCommand::getParamString() const {
 ///////////////////////////////////////////////
 
 ChangeBoardLayersCommand::ChangeBoardLayersCommand(SketchWidget *sketchWidget, int oldLayers, int newLayers, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_oldLayers(oldLayers),
+    m_newLayers(newLayers)
 {
-	m_oldLayers = oldLayers;
-	m_newLayers = newLayers;
 }
 
 void ChangeBoardLayersCommand::undo() {
@@ -1984,10 +1984,10 @@ QString ChangeBoardLayersCommand::getParamString() const {
 ///////////////////////////////////////////////
 
 SetDropOffsetCommand::SetDropOffsetCommand(SketchWidget *sketchWidget, long id,  QPointF dropOffset, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+    m_itemID(id),
+    m_dropOffset(dropOffset)
 {
-	m_itemID = id;
-	m_dropOffset = dropOffset;
 }
 
 void SetDropOffsetCommand::undo() {
@@ -2012,12 +2012,12 @@ QString SetDropOffsetCommand::getParamString() const {
 ///////////////////////////////////////////////
 
 RenamePinsCommand::RenamePinsCommand(SketchWidget *sketchWidget, long id, const QStringList & oldOnes, const QStringList & newOnes, bool singleRow, QUndoCommand *parent) :
-	BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+    m_itemID(id),
+    m_oldLabels(oldOnes),
+    m_newLabels(newOnes),
+    m_singleRow(singleRow)
 {
-	m_oldLabels = oldOnes;
-	m_newLabels = newOnes;
-	m_itemID = id;
-	m_singleRow = singleRow;
 }
 
 void RenamePinsCommand::undo() {
@@ -2084,12 +2084,12 @@ QString GroundFillSeedCommand::getParamString() const {
 WireExtrasCommand::WireExtrasCommand(SketchWidget* sketchWidget, long fromID,
                                      const QDomElement & oldExtras, const QDomElement & newExtras,
                                      QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_fromID(fromID),
+    m_oldExtras(oldExtras),
+    m_newExtras(newExtras)
 {
 
-	m_fromID = fromID;
-	m_newExtras = newExtras;
-	m_oldExtras = oldExtras;
 }
 
 void WireExtrasCommand::undo()
@@ -2121,12 +2121,12 @@ QString WireExtrasCommand::getParamString() const {
 HidePartLayerCommand::HidePartLayerCommand(SketchWidget *sketchWidget, long fromID,
         ViewLayer::ViewLayerID layerID, bool wasHidden, bool isHidden,
         QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_fromID(fromID),
+    m_wasHidden(wasHidden),
+    m_isHidden(isHidden),
+    m_layerID(layerID)
 {
-	m_fromID = fromID;
-	m_wasHidden = wasHidden;
-	m_isHidden = isHidden;
-	m_layerID = layerID;
 }
 
 void HidePartLayerCommand::undo()
@@ -2155,10 +2155,10 @@ QString HidePartLayerCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 AddSubpartCommand::AddSubpartCommand(SketchWidget *sketchWidget,  CrossViewType crossView, long id, long subpartID, QUndoCommand *parent)
-	: BaseCommand(crossView, sketchWidget, parent)
+	: BaseCommand(crossView, sketchWidget, parent),
+    m_itemID(id),
+    m_subpartItemID(subpartID)
 {
-	m_itemID = id;
-	m_subpartItemID = subpartID;
 
 }
 
@@ -2190,11 +2190,11 @@ QString AddSubpartCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 PackItemsCommand::PackItemsCommand(SketchWidget *sketchWidget, int columns, const QList<long> & ids, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+    m_columns(columns),
+    m_ids(ids),
+    m_firstTime(true)
 {
-	m_ids = ids;
-	m_columns = columns;
-	m_firstTime = true;
 }
 
 void PackItemsCommand::undo()
@@ -2223,9 +2223,7 @@ QString PackItemsCommand::getParamString() const {
 
 ////////////////////////////////////
 
-TemporaryCommand::TemporaryCommand(const QString & text) : QUndoCommand(text) {
-	m_enabled = true;
-}
+TemporaryCommand::TemporaryCommand(const QString & text) : QUndoCommand(text), m_enabled(true) { }
 
 TemporaryCommand::~TemporaryCommand() {
 }

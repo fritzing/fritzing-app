@@ -2125,7 +2125,8 @@ HidePartLayerCommand::HidePartLayerCommand(SketchWidget *sketchWidget, long from
     m_fromID(fromID),
     m_wasHidden(wasHidden),
     m_isHidden(isHidden),
-    m_layerID(layerID)
+    m_layerID(layerID),
+    m_oldLayer(ViewLayer::ViewLayerID::UnknownLayer)
 {
 }
 

@@ -71,16 +71,16 @@ QuaZIP as long as you respect either GPL or LGPL for QuaZIP code.
 class QuaZipFile: public QIODevice {
 	Q_OBJECT
 private:
-	QuaZip *zip;
+	QuaZip *zip = nullptr;
 	QString fileName;
-	QuaZip::CaseSensitivity caseSensitivity;
-	bool raw;
-	qint64 writePos;
+	QuaZip::CaseSensitivity caseSensitivity = QuaZip::CaseSensitivity::csDefault;
+	bool raw = false;
+	qint64 writePos = 0;
 	// these two are for writing raw files
-	ulong uncompressedSize;
-	quint32 crc;
-	bool internal;
-	int zipError;
+	ulong uncompressedSize = 0l;
+	quint32 crc = 0;
+	bool internal = false;
+	int zipError = 0;
 	// these are not supported nor implemented
 	QuaZipFile(const QuaZipFile& that);
 	QuaZipFile& operator=(const QuaZipFile& that);

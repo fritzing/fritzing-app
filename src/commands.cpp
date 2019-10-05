@@ -29,16 +29,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-CommandProgress::CommandProgress() {
-	m_active = false;
-}
-
 void CommandProgress::setActive(bool active) {
 	m_active = active;
-}
-
-bool CommandProgress::active() {
-	return m_active;
 }
 
 void CommandProgress::emitUndo() {
@@ -60,13 +52,12 @@ CommandProgress BaseCommand::m_commandProgress;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 BaseCommand::BaseCommand(BaseCommand::CrossViewType crossViewType, SketchWidget* sketchWidget, QUndoCommand *parent)
-	: QUndoCommand(parent)
+	: QUndoCommand(parent),
+    m_crossViewType(crossViewType),
+    m_sketchWidget(sketchWidget),
+    m_parentCommand(parent),
+    m_index(BaseCommand::nextIndex++)
 {
-	m_skipFirstRedo = m_undoOnly = m_redoOnly = false;
-	m_crossViewType = crossViewType;
-	m_sketchWidget = sketchWidget;
-	m_parentCommand = parent;
-	m_index = BaseCommand::nextIndex++;
 }
 
 BaseCommand::~BaseCommand() {
@@ -76,7 +67,7 @@ BaseCommand::~BaseCommand() {
 	m_commands.clear();
 }
 
-BaseCommand::CrossViewType BaseCommand::crossViewType() const {
+BaseCommand::CrossViewType BaseCommand::crossViewType() const noexcept {
 	return m_crossViewType;
 }
 
@@ -193,14 +184,14 @@ int BaseCommand::totalChildCount(const QUndoCommand * command) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 AddDeleteItemCommand::AddDeleteItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QUndoCommand *parent)
-	: BaseCommand(crossViewType, sketchWidget, parent)
+	: BaseCommand(crossViewType, sketchWidget, parent),
+    m_moduleID(moduleID),
+    m_itemID(id),
+    m_viewGeometry(viewGeometry),
+    m_modelIndex(modelIndex),
+    m_dropOrigin(nullptr),
+    m_viewLayerPlacement(viewLayerPlacement)
 {
-	m_dropOrigin = NULL;
-	m_moduleID = moduleID;
-	m_viewGeometry = viewGeometry;
-	m_itemID = id;
-	m_modelIndex = modelIndex;
-	m_viewLayerPlacement = viewLayerPlacement;
 }
 
 QString AddDeleteItemCommand::getParamString() const {
@@ -227,10 +218,11 @@ SketchWidget * AddDeleteItemCommand::dropOrigin() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 AddItemCommand::AddItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, bool updateInfoView, long modelIndex, QUndoCommand *parent)
-	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, parent)
+	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, parent),
+    m_updateInfoView(updateInfoView),
+    m_module(false),
+    m_restoreIndexesCommand(nullptr)
 {
-	m_module = false;
-	m_updateInfoView = updateInfoView;
 }
 
 void AddItemCommand::undo()
@@ -283,12 +275,12 @@ QString DeleteItemCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 MoveItemCommand::MoveItemCommand(SketchWidget* sketchWidget, long itemID, ViewGeometry & oldG, ViewGeometry & newG, bool updateRatsnest, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_updateRatsnest(updateRatsnest),
+    m_itemID(itemID),
+    m_old(oldG),
+    m_new(newG)
 {
-	m_updateRatsnest = updateRatsnest;
-	m_itemID = itemID;
-	m_old = oldG;
-	m_new = newG;
 }
 
 void MoveItemCommand::undo()
@@ -322,11 +314,11 @@ QString MoveItemCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 SimpleMoveItemCommand::SimpleMoveItemCommand(SketchWidget* sketchWidget, long itemID, QPointF & oldP, QPointF & newP, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_itemID(itemID),
+    m_old(oldP),
+    m_new(newP)
 {
-	m_itemID = itemID;
-	m_old = oldP;
-	m_new = newP;
 }
 
 void SimpleMoveItemCommand::undo()
@@ -356,9 +348,9 @@ QString SimpleMoveItemCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 MoveItemsCommand::MoveItemsCommand(SketchWidget* sketchWidget, bool updateRatsnest, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_updateRatsnest(updateRatsnest)
 {
-	m_updateRatsnest = updateRatsnest;
 }
 
 void MoveItemsCommand::undo()
@@ -409,10 +401,10 @@ QString MoveItemsCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 RotateItemCommand::RotateItemCommand(SketchWidget* sketchWidget, long itemID, double degrees, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_itemID(itemID),
+    m_degrees(degrees)
 {
-	m_itemID = itemID;
-	m_degrees = degrees;
 }
 
 void RotateItemCommand::undo()
@@ -438,10 +430,10 @@ QString RotateItemCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 FlipItemCommand::FlipItemCommand(SketchWidget* sketchWidget, long itemID, Qt::Orientations orientation, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_itemID(itemID),
+    m_orientation(orientation)
 {
-	m_itemID = itemID;
-	m_orientation = orientation;
 }
 
 void FlipItemCommand::undo()
@@ -1748,11 +1740,11 @@ QString ResizeBoardCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 TransformItemCommand::TransformItemCommand(SketchWidget *sketchWidget, long id, const QMatrix & oldMatrix, const QMatrix & newMatrix, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_itemID(id),
+    m_oldMatrix(oldMatrix),
+    m_newMatrix(newMatrix)
 {
-	m_itemID = id;
-	m_oldMatrix = oldMatrix;
-	m_newMatrix = newMatrix;
 }
 
 void TransformItemCommand::undo()
@@ -1777,13 +1769,13 @@ QString TransformItemCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 SetResistanceCommand::SetResistanceCommand(SketchWidget * sketchWidget, long itemID, QString oldResistance, QString newResistance, QString oldPinSpacing, QString newPinSpacing, QUndoCommand * parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+    m_itemID(itemID),
+    m_oldResistance(oldResistance),
+    m_newResistance(newResistance),
+    m_oldPinSpacing(oldPinSpacing),
+    m_newPinSpacing(newPinSpacing)
 {
-	m_itemID = itemID;
-	m_oldResistance = oldResistance;
-	m_newResistance = newResistance;
-	m_oldPinSpacing = oldPinSpacing;
-	m_newPinSpacing = newPinSpacing;
 }
 
 void SetResistanceCommand::undo() {
@@ -1809,13 +1801,13 @@ QString SetResistanceCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 SetPropCommand::SetPropCommand(SketchWidget * sketchWidget, long itemID, QString prop, QString oldValue, QString newValue, bool redraw, QUndoCommand * parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+    m_redraw(redraw),
+    m_itemID(itemID),
+    m_prop(prop),
+    m_oldValue(oldValue),
+    m_newValue(newValue)
 {
-	m_redraw = redraw;
-	m_itemID = itemID;
-	m_prop = prop;
-	m_oldValue = oldValue;
-	m_newValue = newValue;
 }
 
 void SetPropCommand::undo() {
@@ -1842,15 +1834,15 @@ QString SetPropCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ResizeJumperItemCommand::ResizeJumperItemCommand(SketchWidget * sketchWidget, long itemID, QPointF oldPos, QPointF oldC0, QPointF oldC1, QPointF newPos, QPointF newC0, QPointF newC1, QUndoCommand * parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+    m_itemID(itemID),
+    m_oldPos(oldPos),
+    m_newPos(newPos),
+    m_oldC0(oldC0),
+    m_newC0(newC0),
+    m_oldC1(oldC1),
+    m_newC1(newC1)
 {
-	m_itemID = itemID;
-	m_oldPos = oldPos;
-	m_newPos = newPos;
-	m_oldC0 = oldC0;
-	m_newC0 = newC0;
-	m_oldC1 = oldC1;
-	m_newC1 = newC1;
 }
 
 void ResizeJumperItemCommand::undo() {

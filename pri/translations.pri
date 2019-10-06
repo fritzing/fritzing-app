@@ -18,7 +18,7 @@ TRANSLATIONS += translations/fritzing_de.ts \
 	translations/fritzing_bg.ts \
 	translations/fritzing_bn.ts \
 	translations/fritzing_cs.ts \
-        translations/fritzing_da.ts \
+	translations/fritzing_da.ts \
 	translations/fritzing_el.ts \
 	translations/fritzing_en.ts \
 	translations/fritzing_es.ts \
@@ -32,7 +32,7 @@ TRANSLATIONS += translations/fritzing_de.ts \
 	translations/fritzing_it.ts \
 	translations/fritzing_ja.ts \
 	translations/fritzing_ko.ts \
-        translations/fritzing_mk.ts \
+	translations/fritzing_mk.ts \
 	translations/fritzing_mr.ts \
 	translations/fritzing_nl.ts \
 	translations/fritzing_pl.ts \
@@ -42,12 +42,12 @@ TRANSLATIONS += translations/fritzing_de.ts \
 	translations/fritzing_ru.ts \
 	translations/fritzing_sk.ts \
 	translations/fritzing_sl.ts \
-        translations/fritzing_sr.ts \
+	translations/fritzing_sr.ts \
 	translations/fritzing_sv.ts \
 	translations/fritzing_th.ts \
 	translations/fritzing_tr.ts \
 	translations/fritzing_uk.ts \
-        translations/fritzing_ur.ts \
-        translations/fritzing_vi.ts \
+	translations/fritzing_ur.ts \
+	translations/fritzing_vi.ts \
 	translations/fritzing_zh_cn.ts \
 	translations/fritzing_zh_tw.ts \

@@ -34,7 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 AboutBox* AboutBox::Singleton = NULL;
 
 static const int AboutWidth = 390;
-static const int AboutText = 210;
+static const int AboutText = 220;
 QString AboutBox::BuildType;
 
 AboutBox::AboutBox(QWidget *parent)
@@ -44,7 +44,7 @@ AboutBox::AboutBox(QWidget *parent)
 	// To make the application not quit when the window closes
 	this->setAttribute(Qt::WA_QuitOnClose, false);
 
-	setFixedSize(AboutWidth, 430);
+    setFixedSize(AboutWidth, 466);
 
 	// the background color
 	setStyleSheet("background-color: #E8E8E8");
@@ -61,17 +61,17 @@ AboutBox::AboutBox(QWidget *parent)
 
 	// Version String
 	QLabel *versionMain = new QLabel(this);
-	versionMain->setText(tr("Version %1.%2.%3 <small>(%4%5 %6) %7 [Qt %8]</small>")
+    versionMain->setText(tr("Version %1.%2.%3 <br><small>(%4%5 %6) %7 [Qt %8]</small>")
 	                     .arg(Version::majorVersion())
 	                     .arg(Version::minorVersion())
 	                     .arg(Version::minorSubVersion())
 	                     .arg(Version::modifier())
-	                     .arg(Version::revision())
+                         .arg(Version::gitVersion())
 	                     .arg(Version::date())
 	                     .arg(BuildType)
 	                     .arg(QT_VERSION_STR) );
 	versionMain->setFont(smallFont);
-	versionMain->setGeometry(45, 150, 300, 20);
+    versionMain->setGeometry(45, 142, 300, 42);
 	versionMain->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
 	versionMain->setTextInteractionFlags(Qt::TextSelectableByMouse);
 
@@ -80,7 +80,7 @@ AboutBox::AboutBox(QWidget *parent)
 	linkToFritzing->setText(tr("<a href=\"http://www.fritzing.org\">www.fritzing.org</a>"));
 	linkToFritzing->setOpenExternalLinks(true);
 	linkToFritzing->setFont(smallFont);
-	linkToFritzing->setGeometry(45, 168, 300, 18);
+    linkToFritzing->setGeometry(45, 188, 300, 18);
 	linkToFritzing->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
 
 
@@ -90,7 +90,7 @@ AboutBox::AboutBox(QWidget *parent)
 	QLabel *copyrightGNU = new QLabel(this);
 	copyrightGNU->setText(tr("<b>GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest"));
 	copyrightGNU->setFont(extraSmallFont);
-	copyrightGNU->setGeometry(0, 398, AboutWidth, 16);
+    copyrightGNU->setGeometry(0, 410, AboutWidth, 16);
 	copyrightGNU->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
 
 	QLabel *CC = new QLabel(this);
@@ -101,7 +101,7 @@ AboutBox::AboutBox(QWidget *parent)
 	QLabel *copyrightFritzing = new QLabel(this);
 	copyrightFritzing->setText(tr("<b>2007-%1 Fritzing</b>").arg(Version::year()));
 	copyrightFritzing->setFont(extraSmallFont);
-	copyrightFritzing->setGeometry(30, 414, AboutWidth - 30 - 30, 16);
+    copyrightFritzing->setGeometry(30, 426, AboutWidth - 30 - 30, 16);
 	copyrightFritzing->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
 
 

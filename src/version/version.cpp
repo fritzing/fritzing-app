@@ -29,13 +29,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../lib/qtsysteminfo/QtSystemInfo.h"
 
+
 QString Version::m_majorVersion("0");
 QString Version::m_minorVersion("9");
 QString Version::m_minorSubVersion("4");
-QString Version::m_modifier("b");
-QString Version::m_gitCommit("872b5cd");
-QString Version::m_gitDate("2019-07-05T15:00:00Z");  // want standard ISO form
-QString Version::m_revision;
+QString Version::m_modifier("");
+QString Version::m_gitVersion(GIT_VERSION);
+QString Version::m_gitDate(GIT_DATE);  // want standard ISO form
 QString Version::m_date;
 QString Version::m_shortDate;
 QString Version::m_versionString;
@@ -51,9 +51,6 @@ Version::Version() {
 		m_modifiers << "a" << "b" << "rc" << "";
 	}
 
-	m_revision = m_gitCommit;
-	m_revision.truncate(8);
-
 	QStringList strings;
 	strings = m_gitDate.split("T", QString::SkipEmptyParts);
 	if (strings.size() >= 2) {
@@ -65,7 +62,7 @@ Version::Version() {
 		}
 	}
 
-	m_versionString = QString("%1.%2.%3%4.%5.%6").arg(m_majorVersion).arg(m_minorVersion).arg(m_minorSubVersion).arg(m_modifier).arg(m_shortDate).arg(m_revision);
+    m_versionString = QString("%1.%2.%3%4.%5.%6").arg(m_majorVersion).arg(m_minorVersion).arg(m_minorSubVersion).arg(m_modifier).arg(m_date).arg(m_gitVersion);
 }
 
 const QString & Version::majorVersion() {
@@ -80,16 +77,16 @@ const QString & Version::minorSubVersion() {
 	return m_minorSubVersion;
 }
 
-const QString & Version::revision() {
-	return m_revision;
-}
-
 const QString & Version::modifier() {
 	return m_modifier;
 }
 
 const QString & Version::versionString() {
 	return m_versionString;
+}
+
+const QString & Version::gitVersion() {
+	return m_gitVersion;
 }
 
 const QString & Version::fullDate() {

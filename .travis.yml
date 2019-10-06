@@ -1,7 +1,7 @@
 language: minimal
 
 stages:
-#  - name: fast_check
+  - name: fast_check
   - name: build_and_pack
     # Avoid duplicate builds for pull requests
     if: type = push OR (type = pull_request AND slug != "fritzing/fritzing-app")

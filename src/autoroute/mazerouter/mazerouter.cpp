@@ -316,22 +316,11 @@ bool GridPoint::operator<(const GridPoint& other) const {
 	// make sure lower cost is first
 	return qCost > other.qCost;
 }
-
-GridPoint::GridPoint(QPoint p, int zed) :
-    x(p.x()),
-    y(p.y()),
-    z(zed)
-{
-
-}
-
-GridPoint::GridPoint() : x(0), y(0), z(0) { }
-
 ////////////////////////////////////////////////////////////////////
 
 Grid::Grid(int sx, int sy, int sz) : 
-    data(new GridValue[sx * sy * sz]()), // initialize to zero
-    x(sx), y(sy), z(sz) { }
+	data(new GridValue[sx * sy * sz]()), // initialize to zero
+	x(sx), y(sy), z(sz) { }
 
 GridValue Grid::at(int sx, int sy, int sz) const {
     Q_ASSERT (sx < x);

@@ -50,8 +50,8 @@ struct GridPoint {
 	uchar flags = 0;
 
 	bool operator<(const GridPoint&) const;
-	GridPoint(QPoint, int);
-	GridPoint();
+	GridPoint(QPoint p, int zed) : x(p.x()), y(p.y()), z(zed) { }
+	constexpr GridPoint() : x(0), y(0), z(0) { }
 };
 
 struct PointZ {

@@ -24,20 +24,18 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "connectoritem.h"
 #include "../model/modelpart.h"
 
-Bus::Bus(BusShared * busShared, ModelPart * modelPart) : QObject(),
-    m_connectors(),
-    m_subConnector(nullptr),
-    m_busShared(busShared),
-    m_modelPart(modelPart)
+Bus::Bus(BusShared * busShared, ModelPart * modelPart) 
+	: QObject(),
+	m_connectors(),
+	m_subConnector(nullptr),
+	m_busShared(busShared),
+	m_modelPart(modelPart)
 {
 }
 
 const QString & Bus::id() const noexcept {
-	if (!m_busShared) { 
-        return ___emptyString___;
-    } else {
-	    return m_busShared->id();
-    }
+	if (!m_busShared) return ___emptyString___;
+	return m_busShared->id();
 }
 
 const QList<Connector *> & Bus::connectors() const noexcept {

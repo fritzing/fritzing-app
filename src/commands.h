@@ -566,7 +566,7 @@ struct StickyThing {
 };
 
 /////////////////////////////////////////////
-
+class SketchWidget;
 class CheckStickyCommand : public BaseCommand
 {
 public:
@@ -577,7 +577,7 @@ public:
 	};
 
 public:
-	CheckStickyCommand(class SketchWidget *sketchWidget, BaseCommand::CrossViewType, long itemID, bool checkCurrent, CheckType, QUndoCommand *parent);
+	CheckStickyCommand(SketchWidget *sketchWidget, BaseCommand::CrossViewType, long itemID, bool checkCurrent, CheckType, QUndoCommand *parent);
 	~CheckStickyCommand();
 
 	void undo();
@@ -589,9 +589,9 @@ protected:
 	QString getParamString() const;
 
 protected:
-	long m_itemID;
+	long m_itemID = 0;
 	QList<StickyThing *> m_stickyList;
-	bool m_checkCurrent;
+	bool m_checkCurrent = false;
 	CheckType m_checkType;
 };
 

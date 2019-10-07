@@ -21,30 +21,30 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "viewgeometry.h"
 #include "utils/graphicsutils.h"
 
-ViewGeometry::ViewGeometry(  ) :
-    m_z(-1),
-    m_loc(-1, -1),
-    m_line(-1, -1, -1, -1),
-    m_rect(),
-    m_selected(false),
-    m_wireFlags(WireFlag::NoFlag)
+ViewGeometry::ViewGeometry(  ) 
+	: m_z(-1),
+	m_loc(-1, -1),
+	m_line(-1, -1, -1, -1),
+	m_rect(),
+	m_selected(false),
+	m_wireFlags(WireFlag::NoFlag)
 {
 }
 
-ViewGeometry::ViewGeometry(const ViewGeometry& that) :
-    m_z(that.m_z),
-    m_loc(that.m_loc),
-    m_line(that.m_line),
-    m_rect(that.m_rect),
-    m_selected(false),
-    m_wireFlags(that.m_wireFlags),
-    m_transform(that.m_transform) { }
+ViewGeometry::ViewGeometry(const ViewGeometry& that) 
+	: m_z(that.m_z),
+	m_loc(that.m_loc),
+	m_line(that.m_line),
+	m_rect(that.m_rect),
+	m_selected(false),
+	m_wireFlags(that.m_wireFlags),
+	m_transform(that.m_transform) { }
 
-ViewGeometry::ViewGeometry(QDomElement & geometry) :
-    m_z(geometry.attribute("z").toDouble()),
-    m_loc(geometry.attribute("x").toDouble(),
-          geometry.attribute("y").toDouble()),
-    m_wireFlags(static_cast<WireFlags>(geometry.attribute("wireFlags").toInt()))
+ViewGeometry::ViewGeometry(QDomElement & geometry) 
+	: m_z(geometry.attribute("z").toDouble()),
+	m_loc(geometry.attribute("x").toDouble(),
+	      geometry.attribute("y").toDouble()),
+	m_wireFlags(static_cast<WireFlags>(geometry.attribute("wireFlags").toInt()))
 {
 
 	QString x1 = geometry.attribute("x1");

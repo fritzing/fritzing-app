@@ -28,13 +28,13 @@ constexpr auto Wait = 100;
 
 AutoCloseMessageBox::AutoCloseMessageBox( QWidget * parent )
 	: QLabel(parent),
-    m_movingState(MovingState::MovingOut),
-    m_endX(0),
-    m_endY(0),
-    m_startX(0),
-    m_startY(0),
-    m_animationTimer(),
-    m_counter(0) 
+	m_movingState(MovingState::MovingOut),
+	m_endX(0),
+	m_endY(0),
+	m_startX(0),
+	m_startY(0),
+	m_animationTimer(),
+	m_counter(0) 
 {
 	setWordWrap(true);
 }

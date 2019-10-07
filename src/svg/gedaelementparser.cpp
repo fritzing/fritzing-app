@@ -24,10 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "gedaelementparser.h"
 #include "gedaelementlexer.h"
 
-GedaElementParser::GedaElementParser() :
-    m_tos(0)
-{
-}
+GedaElementParser::GedaElementParser() : m_tos(0) { }
 
 QVector<QVariant> & GedaElementParser::symStack() {
 	return m_symStack;

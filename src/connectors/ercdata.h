@@ -29,12 +29,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class ValidReal {
 public:
 	constexpr ValidReal() noexcept : m_ok(false), m_value(0.0) { }
-    constexpr ValidReal(double value) noexcept : m_ok(true), m_value(value) { }
+	constexpr ValidReal(double value) noexcept : m_ok(true), m_value(value) { }
 	constexpr bool isValid() const noexcept { return m_ok; }
 	constexpr double value() const noexcept { return m_value; }
 	void setValue(double value) noexcept;
 	bool setValue(const QString &);
-    explicit constexpr operator bool() const { return m_ok; }
+	explicit constexpr operator bool() const { return m_ok; }
 private:
 	bool m_ok;
 	double m_value;

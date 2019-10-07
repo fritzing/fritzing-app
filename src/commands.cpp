@@ -1101,11 +1101,11 @@ QString ChangeZCommand::getParamString() const {
 
 CheckStickyCommand::CheckStickyCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, long itemID, bool checkCurrent, CheckType checkType, QUndoCommand *parent)
 	: BaseCommand(crossViewType, sketchWidget, parent),
-	m_itemId(itemID),
-	m_skipFirstRedo(true),
-	m_checkType(checkType),
-	m_checkCurrent(checkCurrent)
+	m_itemID(itemID),
+	m_checkCurrent(checkCurrent),
+	m_checkType(checkType)
 {
+	m_skipFirstRedo = true;
 }
 
 CheckStickyCommand::~CheckStickyCommand() {
@@ -1306,13 +1306,13 @@ QString CleanUpRatsnestsCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 WireColorChangeCommand::WireColorChangeCommand(SketchWidget* sketchWidget, long wireId, const QString &oldColor, const QString &newColor, double oldOpacity, double newOpacity, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_wireId(wireId),
+	m_oldColor(oldColor),
+	m_newColor(newColor),
+	m_oldOpacity(oldOpacity),
+	m_newOpacity(newOpacity)
 {
-	m_wireId = wireId;
-	m_oldColor = oldColor;
-	m_newColor = newColor;
-	m_oldOpacity = oldOpacity;
-	m_newOpacity = newOpacity;
 }
 
 void WireColorChangeCommand::undo() {
@@ -1336,11 +1336,11 @@ QString WireColorChangeCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 WireWidthChangeCommand::WireWidthChangeCommand(SketchWidget* sketchWidget, long wireId, double oldWidth, double newWidth, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_wireId(wireId),
+	m_oldWidth(oldWidth),
+	m_newWidth(newWidth)
 {
-	m_wireId = wireId;
-	m_oldWidth = oldWidth;
-	m_newWidth = newWidth;
 }
 
 void WireWidthChangeCommand::undo() {

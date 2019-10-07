@@ -26,13 +26,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ViewLayerCheckBox::ViewLayerCheckBox(QWidget * parent) : QCheckBox(parent), m_viewLayer(nullptr) { } 
 //////////////////////////////////////
 
-LayerPalette::LayerPalette(QWidget * parent) : QScrollArea(parent),
-    m_showAllWidget(new QCheckBox(tr("show all layers"))),
-    m_checkBoxes(),
-    m_mainLayout(new QVBoxLayout()),
-    m_groupBox(new QGroupBox("")),
-    m_showAllLayersAct(nullptr),
-    m_hideAllLayersAct(nullptr)
+LayerPalette::LayerPalette(QWidget * parent) 
+	: QScrollArea(parent),
+	m_showAllWidget(new QCheckBox(tr("show all layers"))),
+	m_checkBoxes(),
+	m_mainLayout(new QVBoxLayout()),
+	m_groupBox(new QGroupBox("")),
+	m_showAllLayersAct(nullptr),
+	m_hideAllLayersAct(nullptr)
 {
 
 	auto frame = new QFrame(this);

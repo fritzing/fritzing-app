@@ -400,15 +400,15 @@ void Grid::copy(int fromIndex, int toIndex) {
 }
 
 void Grid::clear() {
-    // memset can be very dangerous, clear out memory this way
-    std::fill_n(data, x * y * z, 0);
+	// memset can be very dangerous, clear out memory this way
+	std::fill_n(data, x * y * z, 0);
 }
 
 Grid::~Grid() {
-    if (data) {
-        delete [] data;
-        data = nullptr;
-    }
+	if (data) {
+		delete [] data;
+		data = nullptr;
+	}
 }
 
 ////////////////////////////////////////////////////////////////////

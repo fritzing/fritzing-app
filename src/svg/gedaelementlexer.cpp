@@ -31,19 +31,18 @@ GedaElementLexer::GedaElementLexer(const QString &source) :
 	m_elementMatcher("Element\\s*([\\(\\[])"),
 	m_stringMatcher("\"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\""),
 	m_integerMatcher("[-+]?\\d+"),
-    m_hexMatcher("0[xX][0-9a-fA-F]+"),
-    m_source(),
-    m_chars(nullptr),
-    m_size(0),
-    m_pos(0),
-    m_current(0),
-    m_currentCommand(),
-    m_currentNumber(0l),
-    m_currentHexString(0l),
-    m_currentString(),
-    m_comments()
+	m_hexMatcher("0[xX][0-9a-fA-F]+"),
+	m_source(),
+	m_chars(nullptr),
+	m_size(0),
+	m_pos(0),
+	m_current(0),
+	m_currentCommand(),
+	m_currentNumber(0l),
+	m_currentHexString(0l),
+	m_currentString(),
+	m_comments()
 {
-    /// @todo figure out how to do inplace initialization of a cleaned source string.
 	m_source = clean(source);
 	m_chars = m_source.unicode();
 	m_size = m_source.size();

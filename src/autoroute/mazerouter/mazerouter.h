@@ -107,6 +107,7 @@ struct Nearest {
 };
 
 struct Grid {
+	/// @todo replace this with std::unique_ptr<GridValue[]>
 	GridValue * data = nullptr;
 	int x = 0;
 	int y = 0;

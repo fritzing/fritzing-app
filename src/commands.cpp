@@ -53,10 +53,10 @@ CommandProgress BaseCommand::m_commandProgress;
 
 BaseCommand::BaseCommand(BaseCommand::CrossViewType crossViewType, SketchWidget* sketchWidget, QUndoCommand *parent)
 	: QUndoCommand(parent),
-    m_crossViewType(crossViewType),
-    m_sketchWidget(sketchWidget),
-    m_parentCommand(parent),
-    m_index(BaseCommand::nextIndex++)
+	m_crossViewType(crossViewType),
+	m_sketchWidget(sketchWidget),
+	m_parentCommand(parent),
+	m_index(BaseCommand::nextIndex++)
 {
 }
 

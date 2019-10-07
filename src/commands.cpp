@@ -1422,10 +1422,10 @@ QString ShowLabelFirstTimeCommand::getParamString() const {
 ///////////////////////////////////////////////
 
 RestoreLabelCommand::RestoreLabelCommand(SketchWidget *sketchWidget,long id, QDomElement & element, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_itemID(id),
+	m_element(element)
 {
-	m_itemID = id;
-	m_element = element;
 	// seems to be safe to keep a copy of the element even though the document may no longer exist
 }
 
@@ -1451,13 +1451,13 @@ QString RestoreLabelCommand::getParamString() const {
 ///////////////////////////////////////////////
 
 MoveLabelCommand::MoveLabelCommand(SketchWidget *sketchWidget, long id, QPointF oldPos, QPointF oldOffset, QPointF newPos, QPointF newOffset, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_itemID(id),
+	m_oldPos(oldPos),
+	m_newPos(newPos),
+	m_oldOffset(oldOffset),
+	m_newOffset(newOffset)
 {
-	m_itemID = id;
-	m_oldPos = oldPos;
-	m_newPos = newPos;
-	m_oldOffset = oldOffset;
-	m_newOffset = newOffset;
 }
 
 void MoveLabelCommand::undo()
@@ -1484,11 +1484,11 @@ QString MoveLabelCommand::getParamString() const {
 ///////////////////////////////////////////////
 
 MoveLockCommand::MoveLockCommand(SketchWidget *sketchWidget, long id, bool oldLock, bool newLock, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_itemID(id),
+	m_oldLock(oldLock),
+	m_newLock(newLock)
 {
-	m_itemID = id;
-	m_oldLock = oldLock;
-	m_newLock = newLock;
 }
 
 void MoveLockCommand::undo()
@@ -1519,11 +1519,11 @@ QString MoveLockCommand::getParamString() const {
 ChangeLabelTextCommand::ChangeLabelTextCommand(SketchWidget *sketchWidget, long id,
         const QString & oldText, const QString & newText,
         QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+	m_itemID(id),
+	m_oldText(oldText),
+	m_newText(newText)
 {
-	m_itemID = id;
-	m_oldText = oldText;
-	m_newText = newText;
 }
 
 void ChangeLabelTextCommand::undo() {
@@ -1547,9 +1547,9 @@ QString ChangeLabelTextCommand::getParamString() const {
 ///////////////////////////////////////////////
 
 IncLabelTextCommand::IncLabelTextCommand(SketchWidget *sketchWidget, long id,  QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+	m_itemID(id)
 {
-	m_itemID = id;
 }
 
 void IncLabelTextCommand::undo() {
@@ -1575,13 +1575,13 @@ QString IncLabelTextCommand::getParamString() const {
 ChangeNoteTextCommand::ChangeNoteTextCommand(SketchWidget *sketchWidget, long id,
         const QString & oldText, const QString & newText,
         QSizeF oldSize, QSizeF newSize, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+	m_itemID(id),
+	m_oldText(oldText),
+	m_newText(newText),
+	m_oldSize(oldSize),
+	m_newSize(newSize)
 {
-	m_itemID = id;
-	m_oldText = oldText;
-	m_newText = newText;
-	m_oldSize = oldSize;
-	m_newSize = newSize;
 }
 
 void ChangeNoteTextCommand::undo() {
@@ -1641,11 +1641,11 @@ QString ChangeNoteTextCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 RotateFlipLabelCommand::RotateFlipLabelCommand(SketchWidget* sketchWidget, long itemID, double degrees, Qt::Orientations orientation, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_itemID(itemID),
+	m_degrees(degrees),
+	m_orientation(orientation)
 {
-	m_itemID = itemID;
-	m_degrees = degrees;
-	m_orientation = orientation;
 }
 
 void RotateFlipLabelCommand::undo()
@@ -1671,11 +1671,11 @@ QString RotateFlipLabelCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ResizeNoteCommand::ResizeNoteCommand(SketchWidget* sketchWidget, long itemID, const QSizeF & oldSize, const QSizeF & newSize, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_itemID(itemID),
+	m_oldSize(oldSize),
+	m_newSize(newSize)
 {
-	m_itemID = itemID;
-	m_oldSize = oldSize;
-	m_newSize = newSize;
 }
 
 void ResizeNoteCommand::undo()
@@ -1702,13 +1702,13 @@ QString ResizeNoteCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ResizeBoardCommand::ResizeBoardCommand(SketchWidget * sketchWidget, long itemID, double oldWidth, double oldHeight, double newWidth, double newHeight, QUndoCommand * parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_oldWidth(oldWidth),
+	m_oldHeight(oldHeight),
+	m_newWidth(newWidth),
+	m_newHeight(newHeight),
+	m_itemID(itemID)
 {
-	m_itemID = itemID;
-	m_oldWidth = oldWidth;
-	m_newWidth = newWidth;
-	m_oldHeight = oldHeight;
-	m_newHeight = newHeight;
 }
 
 void ResizeBoardCommand::undo() {
@@ -1741,9 +1741,9 @@ QString ResizeBoardCommand::getParamString() const {
 
 TransformItemCommand::TransformItemCommand(SketchWidget *sketchWidget, long id, const QMatrix & oldMatrix, const QMatrix & newMatrix, QUndoCommand *parent)
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
-    m_itemID(id),
-    m_oldMatrix(oldMatrix),
-    m_newMatrix(newMatrix)
+	m_itemID(id),
+	m_oldMatrix(oldMatrix),
+	m_newMatrix(newMatrix)
 {
 }
 

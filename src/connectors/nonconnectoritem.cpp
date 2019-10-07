@@ -35,18 +35,19 @@ constexpr double EffectiveAdjustmentFactor = 5.0 / 15.0;
 
 /////////////////////////////////////////////////////////
 
-NonConnectorItem::NonConnectorItem(ItemBase * attachedTo) : QGraphicsRectItem(attachedTo),
-    m_attachedTo(attachedTo),
-    m_hidden(false),
-    m_inactive(false),
-    m_paint(false),
-    m_opacity(0.0),
-    m_effectively(Effectively::EffectivelyUnknown),
-    m_radius(0),
-    m_strokeWidth(0),
-    m_negativeOffsetRect(false),
-    m_shape(),
-    m_isPath(false)
+NonConnectorItem::NonConnectorItem(ItemBase * attachedTo) 
+	: QGraphicsRectItem(attachedTo),
+	m_attachedTo(attachedTo),
+	m_hidden(false),
+	m_inactive(false),
+	m_paint(false),
+	m_opacity(0.0),
+	m_effectively(Effectively::EffectivelyUnknown),
+	m_radius(0),
+	m_strokeWidth(0),
+	m_negativeOffsetRect(false),
+	m_shape(),
+	m_isPath(false)
 {
 	setAcceptHoverEvents(false);
 	setAcceptedMouseButtons(Qt::NoButton);
@@ -166,27 +167,18 @@ bool NonConnectorItem::inactive() const {
 }
 
 long NonConnectorItem::attachedToID() {
-    if (!attachedTo()) {
-        return -1;
-    } else {
-        return attachedTo()->id();
-    }
+	if (!attachedTo()) return -1;
+	return attachedTo()->id();
 }
 
 const QString & NonConnectorItem::attachedToTitle() {
-    if (!attachedTo()) {
-        return ___emptyString___;
-    } else {
-	    return attachedTo()->title();
-    }
+	if (!attachedTo()) return ___emptyString___;
+	return attachedTo()->title();
 }
 
 const QString & NonConnectorItem::attachedToInstanceTitle() {
-	if (!attachedTo()) { 
-        return ___emptyString___;
-    } else {
-	    return attachedTo()->instanceTitle();
-    }
+	if (!attachedTo()) return ___emptyString___; 
+	return attachedTo()->instanceTitle();
 }
 
 void NonConnectorItem::setCircular(bool circular) {
@@ -235,9 +227,6 @@ void NonConnectorItem::setShape(QPainterPath & pp) {
 }
 
 int NonConnectorItem::attachedToItemType() {
-    if (!m_attachedTo) {
-        return ModelPart::Unknown;
-    } else {
-	    return m_attachedTo->itemType();
-    }
+	if (!m_attachedTo) return ModelPart::Unknown;
+	return m_attachedTo->itemType();
 }

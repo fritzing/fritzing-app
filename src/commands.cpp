@@ -185,12 +185,12 @@ int BaseCommand::totalChildCount(const QUndoCommand * command) {
 
 AddDeleteItemCommand::AddDeleteItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QUndoCommand *parent)
 	: BaseCommand(crossViewType, sketchWidget, parent),
-    m_moduleID(moduleID),
-    m_itemID(id),
-    m_viewGeometry(viewGeometry),
-    m_modelIndex(modelIndex),
-    m_dropOrigin(nullptr),
-    m_viewLayerPlacement(viewLayerPlacement)
+	m_moduleID(moduleID),
+	m_itemID(id),
+	m_viewGeometry(viewGeometry),
+	m_modelIndex(modelIndex),
+	m_dropOrigin(nullptr),
+	m_viewLayerPlacement(viewLayerPlacement)
 {
 }
 
@@ -219,9 +219,9 @@ SketchWidget * AddDeleteItemCommand::dropOrigin() {
 
 AddItemCommand::AddItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, bool updateInfoView, long modelIndex, QUndoCommand *parent)
 	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, parent),
-    m_updateInfoView(updateInfoView),
-    m_module(false),
-    m_restoreIndexesCommand(nullptr)
+	m_updateInfoView(updateInfoView),
+	m_module(false),
+	m_restoreIndexesCommand(nullptr)
 {
 }
 
@@ -276,10 +276,10 @@ QString DeleteItemCommand::getParamString() const {
 
 MoveItemCommand::MoveItemCommand(SketchWidget* sketchWidget, long itemID, ViewGeometry & oldG, ViewGeometry & newG, bool updateRatsnest, QUndoCommand *parent)
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
-    m_updateRatsnest(updateRatsnest),
-    m_itemID(itemID),
-    m_old(oldG),
-    m_new(newG)
+	m_updateRatsnest(updateRatsnest),
+	m_itemID(itemID),
+	m_old(oldG),
+	m_new(newG)
 {
 }
 
@@ -315,9 +315,9 @@ QString MoveItemCommand::getParamString() const {
 
 SimpleMoveItemCommand::SimpleMoveItemCommand(SketchWidget* sketchWidget, long itemID, QPointF & oldP, QPointF & newP, QUndoCommand *parent)
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
-    m_itemID(itemID),
-    m_old(oldP),
-    m_new(newP)
+	m_itemID(itemID),
+	m_old(oldP),
+	m_new(newP)
 {
 }
 
@@ -402,8 +402,8 @@ QString MoveItemsCommand::getParamString() const {
 
 RotateItemCommand::RotateItemCommand(SketchWidget* sketchWidget, long itemID, double degrees, QUndoCommand *parent)
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
-    m_itemID(itemID),
-    m_degrees(degrees)
+	m_itemID(itemID),
+	m_degrees(degrees)
 {
 }
 
@@ -431,8 +431,8 @@ QString RotateItemCommand::getParamString() const {
 
 FlipItemCommand::FlipItemCommand(SketchWidget* sketchWidget, long itemID, Qt::Orientations orientation, QUndoCommand *parent)
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
-    m_itemID(itemID),
-    m_orientation(orientation)
+	m_itemID(itemID),
+	m_orientation(orientation)
 {
 }
 
@@ -626,16 +626,16 @@ QString ChangeWireCurveCommand::getParamString() const {
 ChangeLegCommand::ChangeLegCommand(SketchWidget* sketchWidget, long fromID, const QString & fromConnectorID,
                                    const QPolygonF & oldLeg, const QPolygonF & newLeg, bool relative, bool active,
                                    const QString & why, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_fromConnectorID(fromConnectorID),
+	m_fromID(fromID),
+	m_newLeg(newLeg),
+	m_oldLeg(oldLeg),
+	m_relative(relative),
+	m_active(active),
+	m_simple(false),
+	m_why(why)
 {
-	m_why = why;
-	m_simple = false;
-	m_fromID = fromID;
-	m_oldLeg = oldLeg;
-	m_newLeg = newLeg;
-	m_relative = relative;
-	m_fromConnectorID = fromConnectorID;
-	m_active = active;
 }
 
 void ChangeLegCommand::undo()

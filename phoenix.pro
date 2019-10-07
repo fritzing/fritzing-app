@@ -194,6 +194,7 @@ include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
 
+message("using installed QuaZIP library")
 LIBS += -lquazip5
 
 TARGET = Fritzing

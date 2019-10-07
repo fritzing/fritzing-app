@@ -1365,10 +1365,10 @@ QString WireWidthChangeCommand::getParamString() const {
 ///////////////////////////////////////////
 
 RoutingStatusCommand::RoutingStatusCommand(SketchWidget * sketchWidget, const RoutingStatus & oldRoutingStatus, const RoutingStatus & newRoutingStatus, QUndoCommand * parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_oldRoutingStatus(oldRoutingStatus),
+	m_newRoutingStatus(newRoutingStatus)
 {
-	m_oldRoutingStatus = oldRoutingStatus;
-	m_newRoutingStatus = newRoutingStatus;
 }
 
 void RoutingStatusCommand::undo() {
@@ -1393,11 +1393,11 @@ QString RoutingStatusCommand::getParamString() const {
 ///////////////////////////////////////////////
 
 ShowLabelFirstTimeCommand::ShowLabelFirstTimeCommand(SketchWidget *sketchWidget, CrossViewType crossView, long id, bool oldVis, bool newVis, QUndoCommand *parent)
-	: BaseCommand(crossView, sketchWidget, parent)
+	: BaseCommand(crossView, sketchWidget, parent),
+	m_itemID(id),
+	m_oldVis(oldVis),
+	m_newVis(newVis)
 {
-	m_itemID = id;
-	m_oldVis = oldVis;
-	m_newVis = newVis;
 }
 
 void ShowLabelFirstTimeCommand::undo()

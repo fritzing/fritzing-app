@@ -12,6 +12,7 @@ RUN apt-get update \
     libpng-dev \
     libqt5serialport5-dev \
     libqt5svg5-dev \
+    libquazip5-dev \
     libssl-dev \
     libudev-dev \
     libz-dev \

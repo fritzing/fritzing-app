@@ -30,5 +30,3 @@ win32 {
 DEFINES += GIT_VERSION=\\\"$$GIT_VERSION\\\"
 DEFINES += GIT_DATE=\\\"$$GIT_DATE\\\"
 DEFINES += BUILD_DATE=\\\"$$BUILD_DATE\\\"
-warning($$GIT_VERSION)
-warning($$(TRAVIS))

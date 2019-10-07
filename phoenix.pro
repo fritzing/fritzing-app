@@ -125,7 +125,8 @@ unix {
     mimedb.files += resources/system_icons/linux/fritzing.xml
 
     manpage.path = $$DATADIR/man/man1
-    manpage.files += Fritzing.1
+    manpage.extra = help2man -n \"electronics made easy\" -N -o $$PWD/Fritzing.1 $$PWD/Fritzing;
+    manpage.extra += install -D -m 0644 $$PWD/Fritzing.1 $(INSTALL_ROOT)$$DATADIR/man/man1/
 
     icon.path = $$DATADIR/pixmaps
     icon.extra = install -D -m 0644 $$PWD/resources/images/fritzing_icon.png $(INSTALL_ROOT)$$DATADIR/pixmaps/fritzing.png

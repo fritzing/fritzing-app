@@ -33,7 +33,7 @@ class PartsBinView {
 
 public:
 	PartsBinView(ReferenceModel *referenceModel, PartsBinPaletteWidget *parent);
-	virtual ~PartsBinView();				// removes compiler warnings
+	virtual ~PartsBinView() = default;				// removes compiler warnings
 
 	virtual void setPaletteModel(PaletteModel * model, bool clear = false);
 	void reloadParts(PaletteModel * model);

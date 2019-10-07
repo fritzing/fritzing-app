@@ -175,6 +175,9 @@ jobs:
         file_glob: true
         file: $HOME/$TRAVIS_BUILD_NUMBER/*
         skip_cleanup: true
+        # We already check the branch in the stage condition
+        on:
+          all_branches: true
 
       after_deploy:
         - tools/aws_tasks.sh cleanup

@@ -25,7 +25,8 @@ constexpr auto SpaceBefore = 5;
 constexpr auto SpaceAfter = 3;
 
 GraphicsFlowLayout::GraphicsFlowLayout(QGraphicsLayoutItem *parent, int spacing)
-	: QGraphicsLinearLayout(parent), m_lastWidth(0.0)
+	: QGraphicsLinearLayout(parent), 
+	m_lastWidth(0.0)
 {
 	setSpacing(spacing);
 }
@@ -45,9 +46,9 @@ int GraphicsFlowLayout::heightForWidth(int width) {
 
 
 int GraphicsFlowLayout::doLayout(const QRectF &rect) {
-    auto x = rect.x();
-    auto y = rect.y();
-    auto lineHeight = 0.0;
+	auto x = rect.x();
+	auto y = rect.y();
+	auto lineHeight = 0.0;
 
 	for(int i=0; i < count(); ++i) {
 		QGraphicsLayoutItem* item = itemAt(i);

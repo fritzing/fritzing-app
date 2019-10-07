@@ -33,9 +33,9 @@ bool ValidReal::setValue(const QString & v) {
 //////////////////////////////////////////////////////////
 
 ErcData::ErcData(const QDomElement & ercElement) : 
-    m_eType(UnknownEType),
-    m_ignore(Never),
-    m_currentFlow(UnknownFlow)
+	m_eType(UnknownEType),
+	m_ignore(Never),
+	m_currentFlow(UnknownFlow)
 {
 	QString eType = ercElement.attribute("etype");
 	if (eType.compare("VCC", Qt::CaseInsensitive) == 0) {
@@ -109,10 +109,10 @@ bool ErcData::writeToElement(QDomElement & ercElement, QDomDocument & doc) {
 }
 
 void ErcData::writeCurrent(QDomElement & parent, QDomDocument & doc) {
-    if (m_current || m_currentMin || m_currentMax || m_currentFlow != UnknownFlow) {
+	if (m_current || m_currentMin || m_currentMax || m_currentFlow != UnknownFlow) {
 		QDomElement currentElement = doc.createElement("current");
 		parent.appendChild(currentElement);
-        if (m_current) {
+		if (m_current) {
 			currentElement.setAttribute("value", QString::number(m_current.value()));
 		}
 		if (m_currentMin) {
@@ -135,16 +135,16 @@ void ErcData::writeCurrent(QDomElement & parent, QDomDocument & doc) {
 }
 
 void ErcData::writeVoltage(QDomElement & parent, QDomDocument & doc) {
-    if (m_voltage || m_voltageMin || m_voltageMax) {
+	if (m_voltage || m_voltageMin || m_voltageMax) {
 		QDomElement voltageElement = doc.createElement("voltage");
 		parent.appendChild(voltageElement);
-        if (m_voltage) {
+		if (m_voltage) {
 			voltageElement.setAttribute("value", QString::number(m_voltage.value()));
 		}
-        if (m_voltageMin) {
+		if (m_voltageMin) {
 			voltageElement.setAttribute("valueMin", QString::number(m_voltageMin.value()));
 		}
-        if (m_voltageMax) {
+		if (m_voltageMax) {
 			voltageElement.setAttribute("valueMax", QString::number(m_voltageMax.value()));
 		}
 	}

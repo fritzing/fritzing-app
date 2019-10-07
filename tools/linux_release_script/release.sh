@@ -115,7 +115,7 @@ chmod +x Fritzing
 
 cd "${current_dir}"
 
-if [[ ${relname} != *"develop"* ]]; then
+if [[ "${TRAVIS}" == "true" ]]; then
   echo "compressing...."
   tar -cjf  ./"${release_name}".tar.bz2 "${release_name}"
 

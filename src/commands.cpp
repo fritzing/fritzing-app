@@ -1100,12 +1100,12 @@ QString ChangeZCommand::getParamString() const {
 //////////////////////////////////////////singlev///////////////////////////////////////////////////////////////////////
 
 CheckStickyCommand::CheckStickyCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, long itemID, bool checkCurrent, CheckType checkType, QUndoCommand *parent)
-	: BaseCommand(crossViewType, sketchWidget, parent)
+	: BaseCommand(crossViewType, sketchWidget, parent),
+	m_itemId(itemID),
+	m_skipFirstRedo(true),
+	m_checkType(checkType),
+	m_checkCurrent(checkCurrent)
 {
-	m_itemID = itemID;
-	m_skipFirstRedo = true;
-	m_checkType = checkType;
-	m_checkCurrent = checkCurrent;
 }
 
 CheckStickyCommand::~CheckStickyCommand() {
@@ -1167,7 +1167,7 @@ void CheckStickyCommand::stick(SketchWidget * sketchWidget, long fromID, long to
 
 CleanUpWiresCommand::CleanUpWiresCommand(SketchWidget* sketchWidget, CleanUpWiresCommand::Direction direction, QUndoCommand *parent)
 	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
-    m_direction(direction)
+	m_direction(direction)
 {
 }
 

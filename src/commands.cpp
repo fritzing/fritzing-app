@@ -939,10 +939,10 @@ QString ChangeLayerCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 SelectItemCommand::SelectItemCommand(SketchWidget* sketchWidget, SelectItemType type, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+	m_type(type),
+	m_updated(false)
 {
-	m_type = type;
-	m_updated = false;
 }
 
 int SelectItemCommand::id() const {

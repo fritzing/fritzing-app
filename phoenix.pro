@@ -99,9 +99,6 @@ unix {
         } else {
             DEFINES += LINUX_32
         }
-        !contains(DEFINES, QUAZIP_INSTALLED) {
-            LIBS += -lz
-        }
     }
 
     isEmpty(PREFIX) {
@@ -197,11 +194,7 @@ include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
 
-contains(DEFINES, QUAZIP_INSTALLED) {
-    LIBS += -lquazip5
-} else {
-    include(pri/quazip.pri)
-}
+LIBS += -lquazip5
 
 TARGET = Fritzing
 TEMPLATE = app

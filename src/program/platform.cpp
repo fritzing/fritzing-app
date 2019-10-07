@@ -26,18 +26,19 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDir>
 #include <QSettings>
 
-Platform::Platform(const QString &name) : QObject(),
-    m_name(name),
-    m_commandLocation(QSettings().value(QString("programwindow/programmer.%1").  arg(getName())).toString()),
-    m_canProgram(false),
-    m_extensions(),
-    m_boards(),
-    m_defaultBoardName(),
-    m_referenceUrl(),
-    m_ideName(),
-    m_downloadUrl(),
-    m_minVersion(),
-    m_syntaxer(new Syntaxer())
+Platform::Platform(const QString &name) 
+	: QObject(),
+	m_name(name),
+	m_commandLocation(QSettings().value(QString("programwindow/programmer.%1").  arg(getName())).toString()),
+	m_canProgram(false),
+	m_extensions(),
+	m_boards(),
+	m_defaultBoardName(),
+	m_referenceUrl(),
+	m_ideName(),
+	m_downloadUrl(),
+	m_minVersion(),
+	m_syntaxer(new Syntaxer())
 {
 	initSyntaxer();
 }

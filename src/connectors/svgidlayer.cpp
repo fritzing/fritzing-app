@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "svgidlayer.h"
 
 SvgIdLayer::SvgIdLayer(ViewLayer::ViewID viewID) : 
-    m_viewID(viewID),
+	m_viewID(viewID),
 	m_svgViewLayerID(),
 	m_svgId(),
 	m_terminalId(),
@@ -36,7 +36,7 @@ SvgIdLayer::SvgIdLayer(ViewLayer::ViewID viewID) :
 { }
 
 SvgIdLayer::SvgIdLayer(const SvgIdLayer& other) : 
-    m_viewID(other.m_viewID),
+	m_viewID(other.m_viewID),
 	m_svgViewLayerID(other.m_svgViewLayerID),
 	m_svgId(other.m_svgId),
 	m_terminalId(other.m_terminalId),
@@ -50,63 +50,51 @@ SvgIdLayer::SvgIdLayer(const SvgIdLayer& other) :
 	m_path(other.m_path) { }
 
 SvgIdLayer * SvgIdLayer::copyLayer() {
-    return new SvgIdLayer(*this);
+	return new SvgIdLayer(*this);
 }
 
 QPointF SvgIdLayer::point(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
-    if (viewLayerPlacement == ViewLayer::NewBottom) {
-        return m_pointRectBottom.getPoint();
-    } else {
-        return m_pointRectTop.getPoint();
-    }
+	if (viewLayerPlacement == ViewLayer::NewBottom) return m_pointRectBottom.getPoint();
+	return m_pointRectTop.getPoint();
 }
 
 QRectF SvgIdLayer::rect(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
-	if (viewLayerPlacement == ViewLayer::NewBottom) {
-        return m_pointRectBottom.getRect();
-    } else {
-        return m_pointRectTop.getRect();
-    }
+	if (viewLayerPlacement == ViewLayer::NewBottom) return m_pointRectBottom.getRect();
+	return m_pointRectTop.getRect();
 }
 
 bool SvgIdLayer::processed(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
-	if (viewLayerPlacement == ViewLayer::NewBottom) {
-        return m_pointRectBottom.isProcessed();
-    } else {
-        return m_pointRectTop.isProcessed();
-    }
+	if (viewLayerPlacement == ViewLayer::NewBottom) return m_pointRectBottom.isProcessed();
+	return m_pointRectTop.isProcessed();
 }
 
 bool SvgIdLayer::svgVisible(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
-	if (viewLayerPlacement == ViewLayer::NewBottom) {
-        return m_pointRectBottom.isSvgVisible();
-    } else {
+	if (viewLayerPlacement == ViewLayer::NewBottom) return m_pointRectBottom.isSvgVisible();
 	    return m_pointRectTop.isSvgVisible();
-    }
 }
 
 
 void SvgIdLayer::setPointRect(ViewLayer::ViewLayerPlacement viewLayerPlacement, const PointRect& other) {
-    if (viewLayerPlacement == ViewLayer::NewBottom) {
-        m_pointRectBottom = other;
-    } else {
-        m_pointRectTop = other;
-    }
+	if (viewLayerPlacement == ViewLayer::NewBottom) {
+		m_pointRectBottom = other;
+	} else {
+		m_pointRectTop = other;
+	}
 }
 void SvgIdLayer::setPointRect(ViewLayer::ViewLayerPlacement viewLayerPlacement, QPointF point, QRectF rect, bool svgVisible) {
-    setPointRect(viewLayerPlacement, PointRect(svgVisible, true, rect, point));
+	setPointRect(viewLayerPlacement, PointRect(svgVisible, true, rect, point));
 }
 
 void PointRect::unprocess() noexcept {
-    processed = false;
+	processed = false;
 }
 
 void PointRect::setInvisible() noexcept {
-    svgVisible = false;
-    processed = true;
+	svgVisible = false;
+	processed = true;
 }
 
 void SvgIdLayer::unprocess() noexcept {
-    m_pointRectTop.unprocess();
-    m_pointRectBottom.unprocess();
+	m_pointRectTop.unprocess();
+	m_pointRectBottom.unprocess();
 }

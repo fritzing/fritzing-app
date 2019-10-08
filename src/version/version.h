@@ -38,8 +38,8 @@ public:
 	static const QString & minorVersion();
 	static const QString & minorSubVersion();
 	static const QString & modifier();
-	static const QString & revision();
 	static const QString & versionString();
+	static const QString & gitVersion();
 	static const QString & date();
 	static const QString & fullDate();
 	static const QString & shortDate();
@@ -64,9 +64,9 @@ protected:
 	static QString m_minorVersion;
 	static QString m_minorSubVersion;
 	static QString m_gitCommit;
-	static QString m_revision;
 	static QString m_modifier;
 	static QString m_versionString;
+	static QString m_gitVersion;
 	static QString m_gitDate;
 	static QString m_date;
 	static QString m_shortDate;

@@ -13,19 +13,21 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
+include(gitversion.pri)
+
 HEADERS += \
-        src/version/modfiledialog.h \
+	src/version/modfiledialog.h \
 	src/version/updatedialog.h \
 	src/version/version.h \
 	src/version/versionchecker.h \
-        src/version/partschecker.h
+	src/version/partschecker.h
 
 SOURCES += \
-        src/version/modfiledialog.cpp \
+	src/version/modfiledialog.cpp \
 	src/version/updatedialog.cpp \
 	src/version/version.cpp \
 	src/version/versionchecker.cpp \
-        src/version/partschecker.cpp
+	src/version/partschecker.cpp
 
 FORMS += \
-    src/version/modfiledialog.ui
+	src/version/modfiledialog.ui

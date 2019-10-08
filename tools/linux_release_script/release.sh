@@ -18,8 +18,8 @@ fi
 
 echo "Building release: ${relname}..."
 
-if [[ ${relname} == *"debug"* ]]; then
-  echo "Building a debug release"
+if [[ ${relname} == *"develop"* ]]; then
+  echo "Building a development version"
   export QT_HASH_SEED=123
   export QT_DEBUG_PLUGINS=0  # usually to verbose
   export QML_IMPORT_TRACE=0
@@ -73,7 +73,7 @@ make -j16
 release_name=fritzing-${relname}.linux.${arch}
 release_folder="${current_dir}/${release_name}"
 
-if [[ ${relname} != *"debug"* ]] ; then
+if [[ ${relname} != *"develop"* ]] ; then
   # Archive this for evaluation of crash reports
   cp Fritzing "Fritzing_${release_name}"
   strip Fritzing
@@ -95,8 +95,8 @@ echo "cleaning translations"
 rm ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
-if [[ ${relname} == *"debug"* ]] ; then
-  git clone --branch develop --single-branch https://github.com/fritzing/fritzing-parts.git || echo -e "\\n   ####   \\033[1;31m Ignoring git error for debug build!  \\033[0m ####\\n"
+if [[ ${relname} == *"develop"* ]] ; then
+  git clone --branch develop --single-branch https://github.com/fritzing/fritzing-parts.git || echo -e "\\n   ####   \\033[1;31m Ignoring git error for development build!  \\033[0m ####\\n"
 else
   git clone --branch master --single-branch https://github.com/fritzing/fritzing-parts.git
 fi
@@ -115,7 +115,7 @@ chmod +x Fritzing
 
 cd "${current_dir}"
 
-if [[ ${relname} != *"debug"* || ${relname} == *"continuous"* ]]; then
+if [[ "${TRAVIS:-}" == "true" ]]; then
   echo "compressing...."
   tar -cjf  ./"${release_name}".tar.bz2 "${release_name}"
 

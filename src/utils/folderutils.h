@@ -60,7 +60,7 @@ public:
 	static void cleanup();
 	static void collectFiles(const QDir & parent, QStringList & filters, QStringList & files, bool recursive);
 	static void makePartFolderHierarchy(const QString & prefixFolder, const QString & destFolder);
-	static void copyBin(const QString & source, const QString & dest);
+  	static void copyBin(const QString & dest, const QString & source);
 	static bool slamCopy(QFile &, const QString & dest);
 	static void showInFolder(const QString & path);
 	static void createUserDataStoreFolders();

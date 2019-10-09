@@ -33,19 +33,6 @@ jobs:
       script:
         - docker/build-linux.sh
 
-    - stage: build_and_pack
-      name: Xenial
-      os: linux
-      language: minimal
-      services:
-        - docker
-      before_install:
-        - tools/aws_tasks.sh setup
-        - docker pull fritzing/build:xenial
-      script:
-        - docker/release-linux.sh xenial $TRAVIS_COMMIT-$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER.xenial
-        - tools/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER.xenial.linux.AMD64.tar.bz2
-
       after_success:
         - tools/aws_tasks.sh synchronize_up
 
@@ -106,37 +93,6 @@ jobs:
         - tools/deploy_fritzing_mac.sh
         - mv ../deploy-app/Fritzing.dmg fritzing-$TRAVIS_COMMIT-$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER.mojave.10.2.dmg
         - tools/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER.mojave.10.2.dmg
-
-      after_success:
-        - tools/aws_tasks.sh synchronize_up
-
-    - stage: build_and_pack
-      os: osx
-      language: cpp
-      osx_image: xcode10.1
-      cache:
-        directories:
-          ../libgit2/build
-
-      addons:
-        homebrew:
-          packages:
-          - qt5
-          - md5sha1sum
-          update: true
-
-      before_install:
-        - mkdir -p ../libgit2/build
-        - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
-        - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
-        - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
-        - tools/aws_tasks.sh setup
-
-      script:
-        - ls /usr/local/opt
-        - tools/deploy_fritzing_mac.sh
-        - mv ../deploy-app/Fritzing.dmg fritzing-$TRAVIS_COMMIT-$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER.high_sierra.10.1.dmg
-        - tools/aws_tasks.sh store_with_md5 . fritzing-$TRAVIS_COMMIT-$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER.high_sierra.10.1.dmg
 
       after_success:
         - tools/aws_tasks.sh synchronize_up

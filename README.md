@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/fritzing/fritzing-app.svg?branch=master)](https://travis-ci.org/fritzing/fritzing-app)
-
-[![Build Status](https://travis-ci.org/fritzing/fritzing-app.svg?branch=develop)](https://travis-ci.org/fritzing/fritzing-app)
+Legacy build status: [![Build Status](https://travis-ci.org/fritzing/fritzing-app.svg?branch=legacy_builds)](https://travis-ci.org/fritzing/fritzing-app)
 
 
 # Fritzing

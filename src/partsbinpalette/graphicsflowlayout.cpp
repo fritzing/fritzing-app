@@ -55,7 +55,7 @@ int GraphicsFlowLayout::doLayout(const QRectF &rect) {
 		auto nextX = x + item->preferredSize().width() + spacing();
 
 		if (item->sizePolicy().horizontalPolicy() == QSizePolicy::Expanding) {
-			int myY = y + lineHeight + spacing() + SpaceBefore;
+			auto myY = y + lineHeight + spacing() + SpaceBefore;
 			QRectF r(QPoint(rect.x(), myY), item->preferredSize());
 			item->setGeometry(r);
 			x = rect.x();

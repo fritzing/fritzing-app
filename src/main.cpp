@@ -51,26 +51,12 @@ void writeCrashMessage(const QString & msg) {
 	writeCrashMessage(msg.toStdString().c_str());
 }
 
-void fMessageHandler(QtMsgType type, const QMessageLogContext &context, const QString & msg)
+void fMessageHandler(QtMsgType type, const QMessageLogContext & context, const QString & msg)
 {
-	switch (type) {
-		case QtDebugMsg:
-            originalMsgHandler(type, context, msg);
-			break;
-		case QtWarningMsg:
-		originalMsgHandler(type, context, msg);
-			break;
-		case QtCriticalMsg:
-		originalMsgHandler(type, context, msg);
-			break;
-		case QtFatalMsg:
-			{
-				writeCrashMessage(msg);
-			}
-
-			// don't abort
-			originalMsgHandler(QtWarningMsg, context, msg);
+	if (type == QtFatalMsg) {
+		writeCrashMessage(msg);
 	}
+	originalMsgHandler(type, context, msg);
 }
 
 

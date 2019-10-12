@@ -36,11 +36,11 @@ Please provide steps, what operating system you are on, including the version. A
 
 ## Credits
 
-The Fritzing app is maintained by the Friends-of-Fritzing e.V., a non-profit foundation based in Berlin, Germany. The project has grown out of a state-funded research project at the [Interaction Design Lab](http://idl.fh-potsdam.de) at [Potsdam University of Applied Sciences](http://fh-potsdam.de).
+The Fritzing app was maintained by the Friends-of-Fritzing e.V., a non-profit foundation based in Berlin, Germany. The project has grown out of a state-funded research project at the [Interaction Design Lab](http://idl.fh-potsdam.de) at [Potsdam University of Applied Sciences](http://fh-potsdam.de). 
 
-Currently [Open Collective page](https://opencollective.com/fritzing) is available for those willing to support development of the project.
+The founding team consists of Prof. Reto Wettach, André Knörig, Jonathan Cohen, and Stefan Hermann. Many [fantastic people](http://fritzing.org/about/people/) have contributed to it over the years.
 
-The core team consists of Prof. Reto Wettach, André Knörig, Jonathan Cohen, and Stefan Hermann. Many [fantastic people](http://fritzing.org/about/people/) have contributed to it over the years.
+A [Fritzing Donorbox](https://donorbox.org/fritzing) is available for those willing to support development of the project.
 
 The Fritzing app is written on top of the [Qt cross-platform framework](http://qt-project.org).
 

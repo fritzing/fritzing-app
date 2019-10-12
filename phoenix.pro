@@ -207,4 +207,7 @@ contains(DEFINES, QUAZIP_INSTALLED) {
 TARGET = Fritzing
 TEMPLATE = app
 
+LIBS += -lcurl
+LIBS += -lssh2
+LIBS += -lhttp_parser
 message("libs $$LIBS")

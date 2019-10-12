@@ -40,7 +40,7 @@ The Fritzing app was maintained by the Friends-of-Fritzing e.V., a non-profit fo
 
 The founding team consists of Prof. Reto Wettach, André Knörig, Jonathan Cohen, and Stefan Hermann. Many [fantastic people](http://fritzing.org/about/people/) have contributed to it over the years.
 
-A [Fritzing Donorbox](https://donorbox.org/fritzing) is available for those willing to support development of the project.
+Since 2019, the project is maintained by Kjell Morgenstern, with great support from Peter Van Epp, André Knörig and AISLER.
 
 The Fritzing app is written on top of the [Qt cross-platform framework](http://qt-project.org).
 

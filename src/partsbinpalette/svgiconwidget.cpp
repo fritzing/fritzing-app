@@ -23,11 +23,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "svgiconwidget.h"
 #include "../sketch/infographicsview.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../utils/misc.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../items/moduleidnames.h"
-#include "../layerattributes.h"
+#include "kitchensink/layerattributes.h"
 
 #include "partsbinview.h"
 

@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QScrollBar>
 
 #include "partspecificationswidget.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 PartSpecificationsWidget::PartSpecificationsWidget(QList<QWidget*> widgets, QWidget *parent)
 	: QScrollArea(parent)

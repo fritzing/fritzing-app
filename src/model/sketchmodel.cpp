@@ -19,7 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "sketchmodel.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 #include <QDir>
 #include <QMessageBox>

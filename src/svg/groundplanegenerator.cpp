@@ -20,15 +20,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "groundplanegenerator.h"
 #include "svgfilesplitter.h"
-#include "../fsvgrenderer.h"
-#include "../debugdialog.h"
-#include "../version/version.h"
-#include "../utils/folderutils.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
-#include "../items/wire.h"
-#include "../processeventblocker.h"
-#include "../autoroute/drc.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "kitchensink/debugdialog.h"
+#include "version/version.h"
+#include "utils/folderutils.h"
+#include "utils/graphicsutils.h"
+#include "utils/textutils.h"
+#include "items/wire.h"
+#include "kitchensink/processeventblocker.h"
+#include "autoroute/drc.h"
 
 #include <QBitArray>
 #include <QPainter>

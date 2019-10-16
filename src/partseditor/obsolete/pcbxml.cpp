@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPainter>
 #include <QTextStream>
 
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 // this module converts fritzing footprint xml files to svg
 

@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef ROUTINGSTATUS_H
 #define ROUTINGSTATUS_H
 
-#include "items/itembase.h"
+// #include "items/itembase.h"
 
 struct RoutingStatus {
 	int m_netCount;

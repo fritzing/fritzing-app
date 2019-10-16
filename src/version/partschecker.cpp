@@ -20,9 +20,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "partschecker.h"
 #include "version.h"
-#include "../debugdialog.h"
+
+#include "kitchensink/debugdialog.h"
 #include "../utils/fmessagebox.h"
 
+#include <QDir>
 #include <QJsonDocument>
 #include <QJsonParseError>
 #include <QJsonArray>

@@ -18,20 +18,23 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
+
 #include "paletteitembase.h"
-#include "../sketch/infographicsview.h"
-#include "../debugdialog.h"
-#include "../fsvgrenderer.h"
-#include "../svg/svgfilesplitter.h"
-#include "../layerattributes.h"
-#include "layerkinpaletteitem.h"
-#include "../connectors/connectoritem.h"
-#include "../connectors/svgidlayer.h"
 #include "wire.h"
 #include "partlabel.h"
-#include "../utils/textutils.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/cursormaster.h"
+
+#include "sketch/infographicsview.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "kitchensink/layerattributes.h"
+#include "svg/svgfilesplitter.h"
+#include "layerkinpaletteitem.h"
+#include "connectors/connectoritem.h"
+#include "connectors/svgidlayer.h"
+#include "utils/textutils.h"
+#include "utils/graphicsutils.h"
+#include "utils/cursormaster.h"
+#include "utils/misc.h"
 
 #include <QBrush>
 #include <QPen>

@@ -19,7 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "prefsdialog.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "translatorlistmodel.h"
 #include "../items/itembase.h"
 #include "../utils/clickablelabel.h"

@@ -19,8 +19,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "infographicsview.h"
-#include "../debugdialog.h"
-#include "../infoview/htmlinfoview.h"
+#include "kitchensink/debugdialog.h"
+#include "infoview/htmlinfoview.h"
+#include "utils/misc.h"
 
 #include <QMessageBox>
 

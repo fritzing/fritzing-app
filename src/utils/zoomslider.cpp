@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <limits>
 
 #include "zoomslider.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 double ZoomSlider::ZoomStep = 0.0;
 QList<double> ZoomSlider::ZoomFactors;

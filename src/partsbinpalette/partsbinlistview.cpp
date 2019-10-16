@@ -19,19 +19,21 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 
-#include <QMenu>
-#include <QMimeData>
-
-#include "../debugdialog.h"
-#include "../infoview/htmlinfoview.h"
-#include "../items/itembase.h"
-#include "../fsvgrenderer.h"
-#include "../itemdrag.h"
-#include "../items/partfactory.h"
-#include "../layerattributes.h"
+#include "partsbinlistview.h"
 #include "partsbinpalettewidget.h"
 
-#include "partsbinlistview.h"
+#include "kitchensink/debugdialog.h"
+#include "../infoview/htmlinfoview.h"
+#include "../items/itembase.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "kitchensink/itemdrag.h"
+#include "../items/partfactory.h"
+#include "kitchensink/layerattributes.h"
+#include "utils/misc.h"
+
+
+#include <QMenu>
+#include <QMimeData>
 
 static const QColor SectionHeaderBackgroundColor(128, 128, 128);
 static const QColor SectionHeaderForegroundColor(32, 32, 32);

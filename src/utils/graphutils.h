@@ -21,8 +21,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef GRAPHUTILS_H
 #define GRAPHUTILS_H
 
-#include "../connectors/connectoritem.h"
-#include "../routingstatus.h"
+#include "kitchensink/viewgeometry.h"
+#include "items/itembase.h"
+#include <QList>
+
+class ConnectorItem;
+struct RoutingStatus;
 
 struct ConnectorEdge {
 	int head;

@@ -19,10 +19,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "connectorshared.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "connector.h"
 #include "busshared.h"
 #include "ercdata.h"
+
+#include "utils/misc.h"
 
 #include <QTextStream>
 

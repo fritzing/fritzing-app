@@ -169,48 +169,14 @@ macx {
     QMAKE_BUNDLE_DATA += FILE_ICONS
 }
 
-QT += concurrent core gui network printsupport serialport sql svg widgets xml
-
 RC_FILE = fritzing.rc
-RESOURCES += phoenixresources.qrc
 
 # Disable this if you have (and want) libgit2 dynamically
-LIBGIT_STATIC = true
-include(pri/libgit2detect.pri)
-
-include(pri/boostdetect.pri)
-
-include(pri/kitchensink.pri)
-include(pri/mainwindow.pri)
-include(pri/partsbinpalette.pri)
-include(pri/partseditor.pri)
-include(pri/referencemodel.pri)
-include(pri/svg.pri)
-include(pri/help.pri)
-include(pri/version.pri)
-include(pri/eagle.pri)
-include(pri/utils.pri)
-include(pri/dock.pri)
-include(pri/items.pri)
-include(pri/autoroute.pri)
-include(pri/dialogs.pri)
-include(pri/connectors.pri)
-include(pri/infoview.pri)
-include(pri/model.pri)
-include(pri/sketch.pri)
-include(pri/translations.pri)
-include(pri/program.pri)
-include(pri/qtsysteminfo.pri)
-include(test/version.pri)
-
-contains(DEFINES, QUAZIP_INSTALLED) {
-    !build_pass:message("using installed QuaZIP library")
-    LIBS += -lquazip5
-} else {
-    include(pri/quazip.pri)
-}
-
-TARGET = Fritzing
-TEMPLATE = app
+#LIBGIT_STATIC = true
+#include(pri/libgit2detect.pri)
 
 !build_pass:message("libs $$LIBS")
+
+TEMPLATE = subdirs
+SUBDIRS = src test translations
+

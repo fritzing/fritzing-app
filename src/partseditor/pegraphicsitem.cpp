@@ -20,7 +20,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #include "pegraphicsitem.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../sketch/infographicsview.h"
 #include "../items/itembase.h"
 

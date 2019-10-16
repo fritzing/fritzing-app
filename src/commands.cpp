@@ -19,11 +19,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "commands.h"
-#include "debugdialog.h"
-#include "sketch/sketchwidget.h"
-#include "waitpushundostack.h"
-#include "items/wire.h"
+
 #include "connectors/connectoritem.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/waitpushundostack.h"
+#include "sketch/sketchwidget.h"
+#include "items/wire.h"
 #include "items/moduleidnames.h"
 #include "utils/bezier.h"
 

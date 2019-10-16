@@ -19,13 +19,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "note.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../sketch/infographicsview.h"
 #include "../model/modelpart.h"
 #include "../utils/resizehandle.h"
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 
 #include <QTextFrame>
 #include <QTextLayout>

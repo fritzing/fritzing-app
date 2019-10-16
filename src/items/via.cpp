@@ -19,10 +19,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "via.h"
+
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../utils/textutils.h"
-#include "../viewlayer.h"
+#include "kitchensink/viewlayer.h"
 #include "../connectors/connectoritem.h"
 #include "../connectors/svgidlayer.h"
 

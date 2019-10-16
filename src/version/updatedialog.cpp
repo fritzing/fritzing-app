@@ -27,8 +27,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "version.h"
 #include "versionchecker.h"
 #include "modfiledialog.h"
-#include "../debugdialog.h"
 
+#include "kitchensink/debugdialog.h"
+
+#include <QDir>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QSettings>

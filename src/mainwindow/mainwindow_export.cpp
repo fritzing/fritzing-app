@@ -31,14 +31,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QApplication>
 
 #include "mainwindow.h"
-#include "../debugdialog.h"
-#include "../waitpushundostack.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/waitpushundostack.h"
 #include "../help/aboutbox.h"
 #include "../autoroute/autorouteprogressdialog.h"
 #include "../items/virtualwire.h"
 #include "../items/jumperitem.h"
 #include "../items/via.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../items/note.h"
 #include "../items/partfactory.h"
 #include "../eagle/fritzing2eagle.h"
@@ -65,7 +65,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../program/programwindow.h"
 #include "../utils/autoclosemessagebox.h"
 #include "../svg/gerbergenerator.h"
-#include "../processeventblocker.h"
+#include "kitchensink/processeventblocker.h"
 
 static QString eagleActionType = ".eagle";
 static QString gerberActionType = ".gerber";

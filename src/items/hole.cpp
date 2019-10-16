@@ -19,14 +19,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "hole.h"
+#include "partlabel.h"
+
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
 #include "../svg/svgfilesplitter.h"
-#include "../commands.h"
+#include "kitchensink/commands.h"
 #include "../utils/textutils.h"
-#include "../viewlayer.h"
-#include "partlabel.h"
+#include "kitchensink/viewlayer.h"
 #include "../connectors/nonconnectoritem.h"
 #include "../connectors/svgidlayer.h"
 

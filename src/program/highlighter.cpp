@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "highlighter.h"
 #include "syntaxer.h"
 
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 #include <QRegExp>
 #include <stdlib.h>

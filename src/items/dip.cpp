@@ -19,15 +19,19 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "dip.h"
-#include "../utils/textutils.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/familypropertycombobox.h"
-#include "../utils/schematicrectconstants.h"
-#include "../connectors/connectoritem.h"
-#include "../sketch/infographicsview.h"
-#include "../fsvgrenderer.h"
 #include "pinheader.h"
 #include "partfactory.h"
+
+#include "utils/textutils.h"
+#include "utils/graphicsutils.h"
+#include "utils/familypropertycombobox.h"
+#include "utils/schematicrectconstants.h"
+#include "utils/misc.h"
+
+#include "connectors/connectoritem.h"
+#include "sketch/infographicsview.h"
+#include "kitchensink/fsvgrenderer.h"
+
 
 #include <QFontMetricsF>
 

@@ -21,11 +21,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "connector.h"
 #include "connectorshared.h"
 #include "connectoritem.h"
-#include "../debugdialog.h"
-#include "../model/modelpart.h"
 #include "bus.h"
-#include "../fsvgrenderer.h"
 #include "ercdata.h"
+
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "model/modelpart.h"
+#include "utils/misc.h"
+
 
 QHash <Connector::ConnectorType, QString > Connector::Names;
 static const QList<SvgIdLayer *> EmptySvgIdLayerList;

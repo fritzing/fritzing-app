@@ -28,8 +28,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFile>
 #include <QPointer>
 
-#include "utils/misc.h"
-
 class DebugDialog : public QDialog
 {
 	Q_OBJECT

@@ -19,8 +19,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "fileprogressdialog.h"
-#include "../debugdialog.h"
-#include "../processeventblocker.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/processeventblocker.h"
 
 #include <QVBoxLayout>
 #include <QTextStream>

@@ -34,8 +34,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "platformarduino.h"
 #include "platformpicaxe.h"
 
-#include "../debugdialog.h"
-#include "../waitpushundostack.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/waitpushundostack.h"
 #include "../utils/folderutils.h"
 
 #include <QFileInfoList>

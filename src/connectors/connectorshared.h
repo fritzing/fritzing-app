@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDomElement>
 #include <QMultiHash>
 
-#include "../viewlayer.h"
+#include "kitchensink/viewlayer.h"
 #include "connector.h"
 #include "svgidlayer.h"
 

@@ -23,6 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QUndoView>
 #include <QUndoGroup>
+#include <QUndoCommand>
 #include <QRadioButton>
 #include <QLineEdit>
 #include <QToolButton>
@@ -38,13 +39,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStyle>
 #include <QStylePainter>
 #include <QPrinter>
+#include <QTimer>
+#include <QGraphicsItem>
 
 #include "fritzingwindow.h"
 #include "sketchareawidget.h"
-#include "../viewlayer.h"
-#include "../program/programwindow.h"
-#include "../svg/svg2gerber.h"
-#include "../routingstatus.h"
+#include "kitchensink/viewlayer.h"
+#include "program/programwindow.h"
+#include "svg/svg2gerber.h"
+#include "kitchensink/routingstatus.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;

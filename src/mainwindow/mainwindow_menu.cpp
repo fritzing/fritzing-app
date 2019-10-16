@@ -31,8 +31,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMimeData>
 
 #include "mainwindow.h"
-#include "../debugdialog.h"
-#include "../waitpushundostack.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/waitpushundostack.h"
 #include "../partseditor/pemainwindow.h"
 #include "../help/aboutbox.h"
 #include "../autoroute/mazerouter/mazerouter.h"
@@ -42,7 +42,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/resizableboard.h"
 #include "../items/jumperitem.h"
 #include "../items/via.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../items/note.h"
 #include "../eagle/fritzing2eagle.h"
 #include "../sketch/breadboardsketchwidget.h"
@@ -69,8 +69,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../dock/layerpalette.h"
 #include "../program/programwindow.h"
 #include "../utils/autoclosemessagebox.h"
-#include "../processeventblocker.h"
-#include "../sketchtoolbutton.h"
+#include "kitchensink/processeventblocker.h"
+#include "kitchensink/sketchtoolbutton.h"
 #include "../help/firsttimehelpdialog.h"
 
 ////////////////////////////////////////////////////////

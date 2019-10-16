@@ -22,7 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QGridLayout>
 #include "partinfowidget.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 PartInfoWidget::PartInfoWidget(QWidget *parent) : QWidget(parent) {
 	m_version = new QLineEdit(this);

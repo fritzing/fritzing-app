@@ -22,7 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define FAMILYPROPERTYCOMBOBOX_H
 
 #include <QComboBox>
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "focusoutcombobox.h"
 
 class FamilyPropertyComboBox : public FocusOutComboBox

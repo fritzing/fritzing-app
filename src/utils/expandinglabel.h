@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QScrollBar>
 #include <QAbstractTextDocumentLayout>
 
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 class ExpandingLabel : public QTextEdit {
 	Q_OBJECT

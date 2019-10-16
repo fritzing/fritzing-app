@@ -30,7 +30,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "peconnectorsview.h"
 #include "peutils.h"
 #include "hashpopulatewidget.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
+#include "utils/misc.h"
 
 //////////////////////////////////////
 

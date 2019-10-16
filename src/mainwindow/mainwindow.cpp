@@ -19,6 +19,55 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
+#include "mainwindow.h"
+#include "fdockwidget.h"
+
+
+
+
+#include "sketch/breadboardsketchwidget.h"
+#include "sketch/schematicsketchwidget.h"
+#include "sketch/pcbsketchwidget.h"
+#include "sketch/welcomeview.h"
+#include "svg/svgfilesplitter.h"
+#include "utils/folderutils.h"
+#include "utils/fmessagebox.h"
+#include "utils/lockmanager.h"
+#include "utils/textutils.h"
+#include "utils/graphicsutils.h"
+#include "items/mysterypart.h"
+#include "items/moduleidnames.h"
+#include "items/pinheader.h"
+#include "items/perfboard.h"
+#include "items/stripboard.h"
+#include "items/partfactory.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "kitchensink/layerattributes.h"
+#include "kitchensink/processeventblocker.h"
+#include "kitchensink/sketchtoolbutton.h"
+#include "kitchensink/waitpushundostack.h"
+#include "dock/layerpalette.h"
+#include "connectors/connector.h"
+#include "infoview/htmlinfoview.h"
+#include "items/paletteitem.h"
+#include "items/virtualwire.h"
+#include "items/screwterminal.h"
+#include "items/dip.h"
+#include "utils/fsizegrip.h"
+#include "utils/expandinglabel.h"
+#include "utils/autoclosemessagebox.h"
+#include "utils/fileprogressdialog.h"
+#include "utils/clickablelabel.h"
+#include "items/resizableboard.h"
+#include "items/resistor.h"
+#include "items/logoitem.h"
+#include "utils/zoomslider.h"
+#include "partsbinpalette/binmanager/binmanager.h"
+#include "partsbinpalette/partsbinpalettewidget.h"
+#include "partseditor/pemainwindow.h"
+#include "help/firsttimehelpdialog.h"
+
 #include <QtXml>
 #include <QList>
 #include <QFileInfo>
@@ -38,52 +87,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStyle>
 #include <QFontMetrics>
 #include <QApplication>
-
-
-#include "mainwindow.h"
-#include "../debugdialog.h"
-#include "../connectors/connector.h"
-#include "../partsbinpalette/partsbinpalettewidget.h"
-#include "fdockwidget.h"
-#include "../infoview/htmlinfoview.h"
-#include "../waitpushundostack.h"
-#include "../layerattributes.h"
-#include "../sketch/breadboardsketchwidget.h"
-#include "../sketch/schematicsketchwidget.h"
-#include "../sketch/pcbsketchwidget.h"
-#include "../sketch/welcomeview.h"
-#include "../svg/svgfilesplitter.h"
-#include "../utils/folderutils.h"
-#include "../utils/fmessagebox.h"
-#include "../utils/lockmanager.h"
-#include "../utils/textutils.h"
-#include "../utils/graphicsutils.h"
-#include "../items/mysterypart.h"
-#include "../items/moduleidnames.h"
-#include "../items/pinheader.h"
-#include "../items/perfboard.h"
-#include "../items/stripboard.h"
-#include "../items/partfactory.h"
-#include "../dock/layerpalette.h"
-#include "../items/paletteitem.h"
-#include "../items/virtualwire.h"
-#include "../items/screwterminal.h"
-#include "../items/dip.h"
-#include "../processeventblocker.h"
-#include "../sketchtoolbutton.h"
-#include "../partsbinpalette/binmanager/binmanager.h"
-#include "../fsvgrenderer.h"
-#include "../utils/fsizegrip.h"
-#include "../utils/expandinglabel.h"
-#include "../utils/autoclosemessagebox.h"
-#include "../utils/fileprogressdialog.h"
-#include "../utils/clickablelabel.h"
-#include "../items/resizableboard.h"
-#include "../items/resistor.h"
-#include "../items/logoitem.h"
-#include "../utils/zoomslider.h"
-#include "../partseditor/pemainwindow.h"
-#include "../help/firsttimehelpdialog.h"
 
 FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 {

@@ -200,6 +200,22 @@ parts editor support
 ///////////////////////////////////////////////////////
 
 #include "connectoritem.h"
+#include "bus.h"
+#include "ercdata.h"
+
+#include "sketch/infographicsview.h"
+#include "kitchensink/debugdialog.h"
+#include "items/wire.h"
+#include "items/virtualwire.h"
+#include "model/modelpart.h"
+#include "utils/graphicsutils.h"
+#include "utils/graphutils.h"
+#include "utils/textutils.h"
+#include "utils/ratsnestcolors.h"
+#include "utils/bezier.h"
+#include "utils/bezierdisplay.h"
+#include "utils/cursormaster.h"
+#include "utils/misc.h"
 
 #include <QBrush>
 #include <QPen>
@@ -210,21 +226,6 @@ parts editor support
 #include <QBitmap>
 #include <QApplication>
 #include <qmath.h>
-
-#include "../sketch/infographicsview.h"
-#include "../debugdialog.h"
-#include "bus.h"
-#include "../items/wire.h"
-#include "../items/virtualwire.h"
-#include "../model/modelpart.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/graphutils.h"
-#include "../utils/textutils.h"
-#include "../utils/ratsnestcolors.h"
-#include "../utils/bezier.h"
-#include "../utils/bezierdisplay.h"
-#include "../utils/cursormaster.h"
-#include "ercdata.h"
 
 /////////////////////////////////////////////////////////
 

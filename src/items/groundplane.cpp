@@ -20,13 +20,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "groundplane.h"
 #include "../connectors/connectoritem.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../model/modelpart.h"
 #include "../utils/graphicsutils.h"
 #include "../svg/svgfilesplitter.h"
 #include "../svg/groundplanegenerator.h"
 #include "../sketch/infographicsview.h"
-#include "../layerattributes.h"
+#include "kitchensink/layerattributes.h"
 
 #include <QPainterPathStroker>
 

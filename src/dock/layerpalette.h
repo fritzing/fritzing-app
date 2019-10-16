@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSpacerItem>
 #include <QScrollArea>
 
-#include "../viewlayer.h"
+#include "kitchensink/viewlayer.h"
 
 class ViewLayerCheckBox : public QCheckBox
 {

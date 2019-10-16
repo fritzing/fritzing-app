@@ -19,7 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "svg2gerber.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "svgflattener.h"
 #include <QTextStream>
 #include <QSet>

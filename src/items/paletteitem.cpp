@@ -19,25 +19,26 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "paletteitem.h"
-#include "../debugdialog.h"
-#include "../viewgeometry.h"
-#include "../sketch/infographicsview.h"
-#include "layerkinpaletteitem.h"
-#include "../fsvgrenderer.h"
 #include "partlabel.h"
 #include "partfactory.h"
-#include "../commands.h"
+#include "wire.h"
+
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/viewgeometry.h"
+#include "../sketch/infographicsview.h"
+#include "layerkinpaletteitem.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "kitchensink/commands.h"
 #include "../connectors/connectoritem.h"
 #include "../connectors/connector.h"
 #include "../connectors/svgidlayer.h"
-#include "../layerattributes.h"
+#include "kitchensink/layerattributes.h"
 #include "../dialogs/pinlabeldialog.h"
 #include "../utils/folderutils.h"
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/familypropertycombobox.h"
 #include "../svg/svgfilesplitter.h"
-#include "wire.h"
 
 #include <QGraphicsSceneMouseEvent>
 #include <QSvgRenderer>

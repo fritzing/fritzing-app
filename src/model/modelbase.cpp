@@ -19,14 +19,16 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "modelbase.h"
-#include "../debugdialog.h"
+
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/viewgeometry.h"
 #include "../items/partfactory.h"
 #include "../items/moduleidnames.h"
 #include "../utils/textutils.h"
 #include "../utils/folderutils.h"
 #include "../utils/fmessagebox.h"
 #include "../version/version.h"
-#include "../viewgeometry.h"
+
 
 #include <QMessageBox>
 

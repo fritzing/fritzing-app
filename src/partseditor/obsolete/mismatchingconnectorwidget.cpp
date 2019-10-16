@@ -24,7 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPushButton>
 #include "mismatchingconnectorwidget.h"
 #include "connectorinforemovebutton.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 QList<ViewLayer::ViewIdentifier> MismatchingConnectorWidget::AllViews;
 

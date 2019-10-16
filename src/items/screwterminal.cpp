@@ -20,9 +20,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "screwterminal.h"
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../commands.h"
+#include "kitchensink/commands.h"
 #include "../utils/textutils.h"
 #include "../utils/schematicrectconstants.h"
 #include "partlabel.h"

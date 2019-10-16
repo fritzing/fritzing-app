@@ -28,7 +28,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QAbstractButton>
 
 #include "fritzingwindow.h"
-#include "../debugdialog.h"
+#include "../kitchensink/debugdialog.h"
+#include "../kitchensink/waitpushundostack.h"
 #include "../utils/misc.h"
 #include "../utils/folderutils.h"
 #include "../utils/fileprogressdialog.h"

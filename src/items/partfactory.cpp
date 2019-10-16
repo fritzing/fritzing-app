@@ -19,10 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "partfactory.h"
-#include "../debugdialog.h"
-#include "../viewgeometry.h"
-#include "../model/modelpart.h"
-#include "../model/modelbase.h"
 #include "paletteitem.h"
 #include "symbolpaletteitem.h"
 #include "wire.h"
@@ -51,6 +47,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "led.h"
 #include "schematicsubpart.h"
 #include "layerkinpaletteitem.h"
+
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/viewgeometry.h"
+#include "../model/modelpart.h"
+#include "../model/modelbase.h"
 #include "../utils/folderutils.h"
 #include "../utils/lockmanager.h"
 #include "../utils/textutils.h"

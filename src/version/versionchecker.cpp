@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "versionchecker.h"
 #include "version.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 #include <QUrl>
 #include <QNetworkAccessManager>

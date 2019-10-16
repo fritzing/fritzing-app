@@ -21,6 +21,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PARTLABEL_H
 #define PARTLABEL_H
 
+#include "kitchensink/viewlayer.h"
+
 #include <QGraphicsSvgItem>
 #include <QPainter>
 #include <QStyleOptionGraphicsItem>
@@ -32,8 +34,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPointer>
 #include <QTimer>
 #include <QMenu>
-
-#include "../viewlayer.h"
 
 class PartLabel : public QGraphicsSvgItem
 {

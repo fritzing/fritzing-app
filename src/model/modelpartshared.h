@@ -21,6 +21,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef MODELPARTSHARED_H
 #define MODELPARTSHARED_H
 
+#include "kitchensink/viewlayer.h"
+
 #include <QDomDocument>
 #include <QDomElement>
 #include <QList>
@@ -28,8 +30,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QHash>
 #include <QDate>
 #include <QPointer>
-
-#include "../viewlayer.h"
 
 struct ViewImage {
 	ViewLayer::ViewID viewID;

@@ -27,6 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMenu>
 #include <QLabel>
 #include <QDir>
+#include <QFrame>
 
 class ModelPart;
 class PaletteModel;

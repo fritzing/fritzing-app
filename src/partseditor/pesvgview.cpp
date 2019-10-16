@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "peutils.h"
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 #include <QHBoxLayout>
 #include <QTextStream>

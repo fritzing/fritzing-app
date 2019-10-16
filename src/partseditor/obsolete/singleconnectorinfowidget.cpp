@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "singleconnectorinfowidget.h"
 #include "connectorinforemovebutton.h"
 #include "../connectors/connectorshared.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 static const QString PadString = "Pad";
 

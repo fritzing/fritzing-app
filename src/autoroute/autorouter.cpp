@@ -20,7 +20,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "autorouter.h"
 #include "../sketch/pcbsketchwidget.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../items/symbolpaletteitem.h"
 #include "../items/virtualwire.h"
 #include "../items/tracewire.h"
@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/graphicsutils.h"
 #include "../connectors/connectoritem.h"
 #include "../items/moduleidnames.h"
-#include "../processeventblocker.h"
+#include "kitchensink/processeventblocker.h"
 #include "../referencemodel/referencemodel.h"
 
 #include <qmath.h>

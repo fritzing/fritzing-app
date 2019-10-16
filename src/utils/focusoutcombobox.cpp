@@ -19,7 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "focusoutcombobox.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 FocusOutComboBox::FocusOutComboBox(QWidget * parent) : QComboBox(parent) {
 	setEditable(true);

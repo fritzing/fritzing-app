@@ -24,8 +24,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../version/version.h"
 #include "../items/wire.h"
-#include "../debugdialog.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/fsvgrenderer.h"
 
 #include <QFile>
 #include <QFileInfo>

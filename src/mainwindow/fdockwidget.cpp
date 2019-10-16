@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTimer>
 
 #include "fdockwidget.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 FDockWidget::FDockWidget( const QString & title, QWidget * parent)
 	: QDockWidget(title, parent)

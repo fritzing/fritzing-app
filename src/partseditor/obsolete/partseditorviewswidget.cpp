@@ -27,8 +27,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "partseditormainwindow.h"
 #include "zoomcontrols.h"
 #include "../utils/misc.h"
-#include "../waitpushundostack.h"
-#include "../debugdialog.h"
+#include "kitchensink/waitpushundostack.h"
+#include "kitchensink/debugdialog.h"
 
 QString PartsEditorViewsWidget::EmptyBreadViewText;
 QString PartsEditorViewsWidget::EmptySchemViewText;

@@ -22,7 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "svgpathlexer.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include <QMatrix>
 #include <QRegExp>
 #include <QTextStream>

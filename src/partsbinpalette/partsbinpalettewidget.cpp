@@ -36,7 +36,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "partsbinlistview.h"
 #include "searchlineedit.h"
 #include "../utils/misc.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../infoview/htmlinfoview.h"
 #include "../utils/fileprogressdialog.h"
 #include "../utils/folderutils.h"

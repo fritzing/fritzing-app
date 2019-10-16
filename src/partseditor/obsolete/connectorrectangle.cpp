@@ -22,7 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "connectorrectangle.h"
 #include "../sketch/zoomablegraphicsview.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 
 double ConnectorRectangle::ErrorIconSize = 6;

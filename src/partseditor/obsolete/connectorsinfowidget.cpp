@@ -28,9 +28,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "connectorsinfowidget.h"
 #include "addremoveconnectorbutton.h"
 #include "partseditorviewswidget.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../connectors/connectorshared.h"
-#include "../processeventblocker.h"
+#include "kitchensink/processeventblocker.h"
 
 ConnectorsInfoWidget::ConnectorsInfoWidget(WaitPushUndoStack *undoStack, QWidget *parent)
 	: QFrame(parent)

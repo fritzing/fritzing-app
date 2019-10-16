@@ -39,11 +39,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #include "graphutils.h"
-#include "../fsvgrenderer.h"
-#include "../items/wire.h"
-#include "../items/jumperitem.h"
-#include "../sketch/sketchwidget.h"
-#include "../debugdialog.h"
+#include "connectors/connectoritem.h"
+#include "items/wire.h"
+#include "items/jumperitem.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "kitchensink/debugdialog.h"
+#include "sketch/sketchwidget.h"
+
 
 
 void ConnectorEdge::setHeadTail(int h, int t) {

@@ -20,9 +20,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "bus.h"
 #include "busshared.h"
-#include "../debugdialog.h"
 #include "connectoritem.h"
-#include "../model/modelpart.h"
+
+#include "kitchensink/debugdialog.h"
+#include "model/modelpart.h"
+#include "utils/misc.h"
 
 Bus::Bus(BusShared * busShared, ModelPart * modelPart) 
 	: QObject(),

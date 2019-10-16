@@ -33,15 +33,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QUrl>
 #include <QFileInfo>
 
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #ifdef QUAZIP_INSTALLED
 #include <quazip5/quazip.h>
 #include <quazip5/quazipfile.h>
 #else
-#include "../lib/quazip/quazip.h"
-#include "../lib/quazip/quazipfile.h"
+#include "lib/quazip/quazip.h"
+#include "lib/quazip/quazipfile.h"
 #endif
-#include "../lib/qtsysteminfo/QtSystemInfo.h"
+#include "lib/qtsysteminfo/QtSystemInfo.h"
 
 
 FolderUtils* FolderUtils::singleton = NULL;

@@ -153,7 +153,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "pesvgview.h"
 #include "pegraphicsitem.h"
 #include "kicadmoduledialog.h"
-#include "../debugdialog.h"
+
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "kitchensink/sketchtoolbutton.h"
+#include "kitchensink/installedfonts.h"
+#include "kitchensink/waitpushundostack.h"
 #include "../sketch/breadboardsketchwidget.h"
 #include "../sketch/schematicsketchwidget.h"
 #include "../sketch/pcbsketchwidget.h"
@@ -164,16 +169,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/folderutils.h"
 #include "../utils/s2s.h"
 #include "../mainwindow/fdockwidget.h"
-#include "../fsvgrenderer.h"
 #include "../partsbinpalette/binmanager/binmanager.h"
 #include "../svg/gedaelement2svg.h"
 #include "../svg/kicadmodule2svg.h"
 #include "../svg/kicadschematic2svg.h"
-#include "../sketchtoolbutton.h"
 #include "../items/virtualwire.h"
 #include "../connectors/connectoritem.h"
 #include "../connectors/bus.h"
-#include "../installedfonts.h"
 #include "../dock/layerpalette.h"
 #include "../utils/cursormaster.h"
 #include "../infoview/htmlinfoview.h"
@@ -188,6 +190,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QUrl>
 #include <QBuffer>
 #include <QClipboard>
+#include <QSettings>
 #include <limits>
 
 ////////////////////////////////////////////////////

@@ -42,7 +42,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "programwindow.h"
 #include "consolewindow.h"
 
-#include "../sketchtoolbutton.h"
+#include "kitchensink/sketchtoolbutton.h"
 
 class SerialPortComboBox : public QComboBox
 {

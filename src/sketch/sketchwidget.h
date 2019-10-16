@@ -22,6 +22,16 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef SKETCHWIDGET_H
 #define SKETCHWIDGET_H
 
+#include "infographicsview.h"
+
+#include "../items/paletteitem.h"
+#include "../referencemodel/referencemodel.h"
+#include "../model/sketchmodel.h"
+#include "kitchensink/viewgeometry.h"
+#include "kitchensink/viewlayer.h"
+#include "kitchensink/commands.h"
+#include "../utils/misc.h"
+
 #include <QGraphicsView>
 #include <QGraphicsItem>
 #include <QUndoStack>
@@ -31,15 +41,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QHash>
 #include <QMap>
 #include <QTimer>
-
-#include "../items/paletteitem.h"
-#include "../referencemodel/referencemodel.h"
-#include "../model/sketchmodel.h"
-#include "../viewgeometry.h"
-#include "infographicsview.h"
-#include "../viewlayer.h"
-#include "../utils/misc.h"
-#include "../commands.h"
 
 struct ItemCount {
 	int selCount;

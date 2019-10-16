@@ -21,6 +21,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PETOOLVIEW_H
 #define PETOOLVIEW_H
 
+#include "kitchensink/viewlayer.h"
+
 #include <QFrame>
 #include <QRadioButton>
 #include <QPushButton>
@@ -32,8 +34,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDomDocument>
 #include <QDoubleSpinBox>
 #include <QPointer>
-
-#include "../viewlayer.h"
 
 class PEDoubleSpinBox : public QDoubleSpinBox
 {

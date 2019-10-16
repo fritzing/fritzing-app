@@ -19,7 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "fsplashscreen.h"
 #include "utils/misc.h"
-#include "debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 #include <QTextDocument>
 #include <QTextCursor>

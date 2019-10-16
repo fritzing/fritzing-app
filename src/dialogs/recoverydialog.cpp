@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "recoverydialog.h"
 #include "../utils/folderutils.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 CenteredTreeWidget::CenteredTreeWidget(QWidget * parent) : QTreeWidget(parent) {
 	// no luck getting this styling to work from fritzing.qss

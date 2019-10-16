@@ -25,10 +25,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDir>
 #include <QDomElement>
 
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "modelpart.h"
 #include "../version/version.h"
-#include "../layerattributes.h"
+#include "kitchensink/layerattributes.h"
 #include "../utils/folderutils.h"
 #include "../utils/fmessagebox.h"
 #include "../utils/textutils.h"

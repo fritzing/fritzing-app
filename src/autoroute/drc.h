@@ -32,8 +32,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QListWidgetItem>
 #include <QPointer>
 
-#include "../svg/svgfilesplitter.h"
-#include "../viewlayer.h"
+#include "svg/svgfilesplitter.h"
+#include "kitchensink/viewlayer.h"
 
 struct CollidingThing {
 	QPointer<class NonConnectorItem> nonConnectorItem;

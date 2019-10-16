@@ -20,8 +20,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "pinheader.h"
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
-#include "../commands.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "kitchensink/commands.h"
 #include "../utils/textutils.h"
 #include "partlabel.h"
 #include "partfactory.h"

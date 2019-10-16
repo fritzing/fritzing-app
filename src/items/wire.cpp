@@ -61,20 +61,21 @@ later:
 #include <QCheckBox>
 #include <QHBoxLayout>
 
-#include "../debugdialog.h"
-#include "../sketch/infographicsview.h"
-#include "../connectors/connectoritem.h"
-#include "../connectors/svgidlayer.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/debugdialog.h"
+#include "sketch/infographicsview.h"
+#include "connectors/connectoritem.h"
+#include "connectors/svgidlayer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "partlabel.h"
-#include "../model/modelpart.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
-#include "../utils/bezier.h"
-#include "../utils/bezierdisplay.h"
-#include "../utils/cursormaster.h"
-#include "../utils/ratsnestcolors.h"
-#include "../layerattributes.h"
+#include "model/modelpart.h"
+#include "utils/graphicsutils.h"
+#include "utils/textutils.h"
+#include "utils/bezier.h"
+#include "utils/bezierdisplay.h"
+#include "utils/cursormaster.h"
+#include "utils/ratsnestcolors.h"
+#include "utils/misc.h"
+#include "kitchensink/layerattributes.h"
 
 #include <stdlib.h>
 

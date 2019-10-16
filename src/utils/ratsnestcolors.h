@@ -21,11 +21,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef RATSNESTCOLORS_H
 #define RATSNESTCOLORS_H
 
+#include "kitchensink/viewlayer.h"
+
 #include <QColor>
 #include <QDomElement>
 #include <QHash>
 #include <QStringList>
-#include "../viewlayer.h"
 
 class RatsnestColors {
 

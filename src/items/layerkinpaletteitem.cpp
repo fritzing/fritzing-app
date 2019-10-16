@@ -20,8 +20,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "layerkinpaletteitem.h"
 #include "../sketch/infographicsview.h"
-#include "../debugdialog.h"
-#include "../layerattributes.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/layerattributes.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
 #include "../utils/folderutils.h"

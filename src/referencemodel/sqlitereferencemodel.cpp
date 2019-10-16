@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <limits>
 
 #include "sqlitereferencemodel.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../connectors/svgidlayer.h"
 #include "../connectors/connector.h"
 #include "../connectors/connectorshared.h"

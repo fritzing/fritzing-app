@@ -21,11 +21,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PARTFACTORY_H
 #define PARTFACTORY_H
 
+#include "paletteitem.h"
+
+#include "kitchensink/viewlayer.h"
+
 #include <QMenu>
 #include <QDomDocument>
 #include <QDomElement>
-#include "../viewlayer.h"
-#include "paletteitem.h"
 
 
 class PartFactory

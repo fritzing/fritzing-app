@@ -23,14 +23,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/folderutils.h"
 #include "../utils/textutils.h"
 #include "../utils/fmessagebox.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
 #include "../svg/svgfilesplitter.h"
 #include "../svg/gerbergenerator.h"
 #include "moduleidnames.h"
 #include "../svg/groundplanegenerator.h"
 #include "../utils/cursormaster.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>

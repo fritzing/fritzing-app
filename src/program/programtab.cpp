@@ -22,9 +22,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "highlighter.h"
 #include "syntaxer.h"
 #include "consolewindow.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../utils/folderutils.h"
-#include "../sketchtoolbutton.h"
+#include "kitchensink/sketchtoolbutton.h"
 
 
 #include <QFileInfoList>

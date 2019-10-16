@@ -36,8 +36,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <limits>
 
-#include "../../viewgeometry.h"
-#include "../../viewlayer.h"
+#include "kitchensink/viewgeometry.h"
+#include "kitchensink/viewlayer.h"
 #include "../autorouter.h"
 #include "tile.h"
 

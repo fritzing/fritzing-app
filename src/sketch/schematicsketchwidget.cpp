@@ -19,15 +19,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "schematicsketchwidget.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../items/virtualwire.h"
 #include "../items/symbolpaletteitem.h"
 #include "../items/tracewire.h"
 #include "../items/partlabel.h"
 #include "../connectors/connectoritem.h"
-#include "../waitpushundostack.h"
+#include "kitchensink/waitpushundostack.h"
 #include "../items/moduleidnames.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../utils/graphicsutils.h"
 #include "../version/version.h"
 

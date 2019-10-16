@@ -19,15 +19,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "partlabel.h"
-#include "../items/itembase.h"
-#include "../viewgeometry.h"
-#include "../debugdialog.h"
-#include "../sketch/infographicsview.h"
-#include "../model/modelpart.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
-#include "../installedfonts.h"
-#include "../fsvgrenderer.h"
+
+#include "items/itembase.h"
+#include "kitchensink/viewgeometry.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/installedfonts.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "sketch/infographicsview.h"
+#include "model/modelpart.h"
+#include "utils/graphicsutils.h"
+#include "utils/textutils.h"
+#include "utils/misc.h"
 
 #include <QGraphicsScene>
 #include <QMenu>

@@ -31,10 +31,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QProgressDialog>
 #include <QUndoCommand>
 
-#include "../viewgeometry.h"
-#include "../viewlayer.h"
-#include "../connectors/connectoritem.h"
-#include "../commands.h"
+#include "connectors/connectoritem.h"
+#include "kitchensink/viewgeometry.h"
+#include "kitchensink/viewlayer.h"
+#include "kitchensink/commands.h"
 
 class PCBSketchWidget;
 class SymbolPaletteItem;

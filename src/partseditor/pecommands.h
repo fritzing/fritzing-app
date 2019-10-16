@@ -21,8 +21,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PECOMMANDS_H
 #define PECOMMANDS_H
 
-#include "../commands.h"
 #include "peutils.h"
+
+#include "kitchensink/commands.h"
 
 
 /////////////////////////////////////////////

@@ -21,10 +21,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef GERBERGENERATOR_H
 #define GERBERGENERATOR_H
 
-#include <QString>
-
-#include "../viewlayer.h"
 #include "svg2gerber.h"
+
+#include "kitchensink/viewlayer.h"
+
+#include <QString>
 
 class GerberGenerator
 {

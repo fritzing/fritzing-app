@@ -19,10 +19,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "bezierdisplay.h"
-#include "../viewlayer.h"
-#include "../debugdialog.h"
-#include "../processeventblocker.h"
 #include "graphicsutils.h"
+
+#include "kitchensink/viewlayer.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/processeventblocker.h"
 
 #include <QPen>
 #include <QGraphicsScene>

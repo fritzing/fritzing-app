@@ -22,9 +22,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef FIRSTTIMEHELPDIALOG_H
 #define FIRSTTIMEHELPDIALOG_H
 
+#include "kitchensink/viewlayer.h"
+
 #include <QDialog>
 #include <QLabel>
-#include "../viewlayer.h"
 
 class FirstTimeHelpDialog : public QDialog
 {

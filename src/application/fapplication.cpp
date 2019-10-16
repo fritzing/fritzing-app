@@ -19,52 +19,67 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "fapplication.h"
-#include "debugdialog.h"
-#include "utils/misc.h"
-#include "mainwindow/mainwindow.h"
+
 #include "fsplashscreen.h"
-#include "version/version.h"
-#include "dialogs/prefsdialog.h"
-#include "fsvgrenderer.h"
-#include "version/versionchecker.h"
-#include "version/updatedialog.h"
-#include "itemdrag.h"
-#include "items/wire.h"
-#include "partsbinpalette/binmanager/binmanager.h"
-#include "help/tipsandtricks.h"
+
+#include "utils/misc.h"
 #include "utils/folderutils.h"
 #include "utils/lockmanager.h"
 #include "utils/fmessagebox.h"
-#include "dialogs/translatorlistmodel.h"
-#include "partsbinpalette/partsbinview.h"
-#include "partsbinpalette/svgiconwidget.h"
-#include "partsbinpalette/partsbinpalettewidget.h"
-#include "items/moduleidnames.h"
-#include "partsbinpalette/searchlineedit.h"
 #include "utils/ratsnestcolors.h"
 #include "utils/cursormaster.h"
 #include "utils/textutils.h"
 #include "utils/graphicsutils.h"
+
+#include "autoroute/panelizer.h"
+
+
+#include "dialogs/prefsdialog.h"
+#include "dialogs/recoverydialog.h"
+#include "dialogs/translatorlistmodel.h"
+
+#include "help/tipsandtricks.h"
+#include "help/firsttimehelpdialog.h"
+#include "help/aboutbox.h"
+
+#include "items/wire.h"
+#include "items/moduleidnames.h"
+#include "items/pinheader.h"
+#include "items/partfactory.h"
+#include "items/propertydef.h"
+
 #include "infoview/htmlinfoview.h"
+
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/itemdrag.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "kitchensink/installedfonts.h"
+#include "kitchensink/processeventblocker.h"
+
+#include "mainwindow/mainwindow.h"
+
+#include "partsbinpalette/binmanager/binmanager.h"
+#include "partsbinpalette/partsbinview.h"
+#include "partsbinpalette/svgiconwidget.h"
+#include "partsbinpalette/partsbinpalettewidget.h"
+#include "partsbinpalette/searchlineedit.h"
+
+#include "referencemodel/sqlitereferencemodel.h"
+
 #include "svg/gedaelement2svg.h"
 #include "svg/kicadmodule2svg.h"
 #include "svg/kicadschematic2svg.h"
 #include "svg/gerbergenerator.h"
-#include "installedfonts.h"
-#include "items/pinheader.h"
-#include "items/partfactory.h"
-#include "items/propertydef.h"
-#include "dialogs/recoverydialog.h"
-#include "processeventblocker.h"
-#include "autoroute/panelizer.h"
+
 #include "sketch/sketchwidget.h"
 #include "sketch/pcbsketchwidget.h"
-#include "help/firsttimehelpdialog.h"
-#include "help/aboutbox.h"
+
 #include "version/partschecker.h"
+#include "version/version.h"
+#include "version/versionchecker.h"
+#include "version/updatedialog.h"
 
 // dependency injection :P
-#include "referencemodel/sqlitereferencemodel.h"
 #define CurrentReferenceModel SqliteReferenceModel
 
 #include <QSettings>
@@ -573,7 +588,7 @@ int FApplication::init() {
 	bool loaded = findTranslator(m_translationPath);
 	Q_UNUSED(loaded);
 
-	Q_INIT_RESOURCE(phoenixresources);
+	Q_INIT_RESOURCE(fritzingresources);
 
 	MainWindow::initNames();
 	FSvgRenderer::initNames();

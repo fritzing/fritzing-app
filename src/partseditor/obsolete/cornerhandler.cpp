@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "cornerhandler.h"
 #include "connectorrectangle.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 QHash<Qt::Corner,QPixmap> CornerHandler::pixmapHash;
 double CornerHandler::Size = 4;

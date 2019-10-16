@@ -22,17 +22,18 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PARTSBINPALETTEWIDGET_H_
 #define PARTSBINPALETTEWIDGET_H_
 
+#include "binmanager/binmanager.h"
+
+#include "model/palettemodel.h"
+#include "model/modelpart.h"
+#include "kitchensink/waitpushundostack.h"
+#include "utils/fileprogressdialog.h"
+#include "utils/bundler.h"
+
 #include <QFrame>
 #include <QToolButton>
 #include <QLineEdit>
 #include <QStackedWidget>
-
-#include "../model/palettemodel.h"
-#include "../model/modelpart.h"
-#include "../waitpushundostack.h"
-#include "../utils/fileprogressdialog.h"
-#include "../utils/bundler.h"
-#include "binmanager/binmanager.h"
 
 class PartsBinPaletteWidget : public QFrame, public Bundler {
 	Q_OBJECT

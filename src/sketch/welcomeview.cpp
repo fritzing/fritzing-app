@@ -19,7 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "welcomeview.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../help/tipsandtricks.h"
 
 #include <QTextEdit>

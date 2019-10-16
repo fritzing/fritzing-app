@@ -23,7 +23,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QDockWidget>
 #include <QEvent>
-#include <QSettings>
 #include <QMouseEvent>
 
 class FDockWidget : public QDockWidget

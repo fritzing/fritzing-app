@@ -24,9 +24,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "textutils.h"
 #include "misc.h"
-#include "../installedfonts.h"
+#include "kitchensink/installedfonts.h"
 
-//#include "../debugdialog.h"
+//#include "kitchensink/debugdialog.h"
 
 #include <QRegExp>
 #include <QBuffer>

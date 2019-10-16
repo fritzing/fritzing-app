@@ -20,13 +20,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "jumperitem.h"
 #include "../connectors/connectoritem.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../model/modelpart.h"
-#include "../utils/graphicsutils.h"
+#include "utils/graphicsutils.h"
+#include "utils/misc.h"
 #include "../svg/svgfilesplitter.h"
 #include "../sketch/infographicsview.h"
-#include "../debugdialog.h"
-#include "../layerattributes.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/layerattributes.h"
 
 static QString Copper0LayerTemplate = "";
 static QString JumperWireLayerTemplate = "";

@@ -23,13 +23,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../utils/familypropertycombobox.h"
 #include "../svg/gerbergenerator.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
 #include "moduleidnames.h"
 #include "../connectors/connectoritem.h"
 #include "../connectors/busshared.h"
 #include "../connectors/connectorshared.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 #include <QCursor>
 #include <QBitmap>

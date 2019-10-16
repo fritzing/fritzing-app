@@ -20,7 +20,7 @@ packagesExist(libgit2) {
 }
 
 if ($$LIBGIT_STATIC) {
-    LIBGIT2INCLUDE = "$$_PRO_FILE_PWD_/../libgit2/include"
+    LIBGIT2INCLUDE = "$$_PRO_FILE_PWD_/../../../libgit2/include"
     exists($$LIBGIT2INCLUDE/git2.h) {
         message("found libgit2 include path at $$LIBGIT2INCLUDE")
     } else {
@@ -34,39 +34,39 @@ if ($$LIBGIT_STATIC) {
     INCLUDEPATH += $$LIBGIT2INCLUDE
 }
 
-win32 {
-    contains(QMAKE_TARGET.arch, x86_64) {
-        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build64/Release"
-    } else {
-        LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build32/Release"
-    }
+# win32 {
+#     contains(QMAKE_TARGET.arch, x86_64) {
+#         LIBGIT2LIB = "$$_PRO_FILE_PWD_/../../../libgit2/build64/Release"
+#     } else {
+#         LIBGIT2LIB = "$$_PRO_FILE_PWD_/../../../libgit2/build32/Release"
+#     }
 
-    exists($$LIBGIT2LIB/git2.lib) {
-        message("found libgit2 library in $$LIBGIT2LIB")
-    } else {
-        error("libgit2 library not found in $$LIBGIT2LIB")
-    }
+#     exists($$LIBGIT2LIB/git2.lib) {
+#         message("found libgit2 library in $$LIBGIT2LIB")
+#     } else {
+#         error("libgit2 library not found in $$LIBGIT2LIB")
+#     }
 
-    LIBS += -L$$LIBGIT2LIB -lgit2
-    message($$PKGCONFIG)
-}
+#     LIBS += -L$$LIBGIT2LIB -lgit2
+#     message($$PKGCONFIG)
+# }
 
-unix {
-    if ($$LIBGIT_STATIC) {
-        LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
-        exists($$LIBGIT2LIB/libgit2.a) {
-            message("found libgit2 library in $$LIBGIT2LIB")
-        } else {
-            error("static libgit2 library not found in $$LIBGIT2LIB")
-        }
-        macx {
-            LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
-        } else {
-            LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
-        }
-    } else {
-        !build_pass:warning("Using dynamic linking for libgit2.")
-        #message("Enabled dynamic linking of libgit2")
-        PKGCONFIG += libgit2
-    }
-}
+# unix {
+#     if ($$LIBGIT_STATIC) {
+#         LIBGIT2LIB = $$_PRO_FILE_PWD_/../../../libgit2/build
+#         exists($$LIBGIT2LIB/libgit2.a) {
+#             message("found libgit2 library in $$LIBGIT2LIB")
+#         } else {
+#             error("static libgit2 library not found in $$LIBGIT2LIB")
+#         }
+#         macx {
+#             LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
+#         } else {
+#             LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
+#         }
+#     } else {
+#         !build_pass:warning("Using dynamic linking for libgit2.")
+#         #message("Enabled dynamic linking of libgit2")
+#         PKGCONFIG += libgit2
+#     }
+# }

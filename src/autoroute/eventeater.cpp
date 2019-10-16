@@ -19,7 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "eventeater.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 
 
 EventEater::EventEater(QObject * parent) : QObject(parent) {

@@ -21,6 +21,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef CONNECTOR_H
 #define CONNECTOR_H
 
+#include "kitchensink/viewlayer.h"
+
 #include <QHash>
 #include <QString>
 #include <QList>
@@ -29,7 +31,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSvgRenderer>
 #include <QPointer>
 
-#include "../viewlayer.h"
 
 class Connector : public QObject
 {

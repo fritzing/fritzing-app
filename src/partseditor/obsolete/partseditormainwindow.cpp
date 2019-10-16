@@ -22,9 +22,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "partseditormainwindow.h"
 #include "pcbxml.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../mainwindow/fdockwidget.h"
-#include "../waitpushundostack.h"
+#include "kitchensink/waitpushundostack.h"
 #include "editabletextwidget.h"
 #include "partseditorview.h"
 #include "partseditorviewswidget.h"
@@ -35,7 +35,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../model/palettemodel.h"
 #include "../model/sketchmodel.h"
 #include "../utils/folderutils.h"
-#include "../processeventblocker.h"
+#include "kitchensink/processeventblocker.h"
 
 #include <QtGui>
 #include <QCryptographicHash>

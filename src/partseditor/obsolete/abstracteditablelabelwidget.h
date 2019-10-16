@@ -27,7 +27,7 @@ along with Fritzing.  If not,AbstractEditableLabelWidget see <http://www.gnu.org
 #include <QGridLayout>
 
 #include "editablelabel.h"
-#include "../waitpushundostack.h"
+#include "kitchensink/waitpushundostack.h"
 
 #ifndef ABSTRACTEDITABLELABELWIDGET_H_
 #define ABSTRACTEDITABLELABELWIDGET_H_

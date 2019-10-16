@@ -22,6 +22,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PALETTEITEM_H
 #define PALETTEITEM_H
 
+#include "paletteitembase.h"
+
+#include "kitchensink/viewlayer.h"
+
 #include <QRectF>
 #include <QPainterPath>
 #include <QPixmap>
@@ -31,8 +35,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDoubleValidator>
 #include <QLineEdit>
 
-#include "paletteitembase.h"
-#include "../viewlayer.h"
 
 typedef QString (*GenModuleID)(QMap<QString, QString> & currPropsMap);
 typedef QString (*GenSvg)(const QString & expectedFileName);

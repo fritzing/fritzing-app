@@ -20,7 +20,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "resizehandle.h"
 #include "../sketch/zoomablegraphicsview.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../sketch/fgraphicsscene.h"
 
 #include <QCursor>

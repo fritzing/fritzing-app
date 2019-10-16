@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtAlgorithms>
 
 #include "hashpopulatewidget.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../utils/misc.h"
 
 HashLineEdit::HashLineEdit(const QString &text, bool defaultValue, QWidget *parent) : QLineEdit(text, parent)

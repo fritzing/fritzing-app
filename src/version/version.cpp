@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSettings>
 #include <QUrl>
 
-#include "../debugdialog.h"
+
 #include "../utils/textutils.h"
 #include "../lib/qtsysteminfo/QtSystemInfo.h"
 

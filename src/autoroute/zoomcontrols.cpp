@@ -19,7 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "zoomcontrols.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../utils/zoomslider.h"
 
 ZoomButton::ZoomButton(QBoxLayout::Direction dir, ZoomButton::ZoomType type, ZoomableGraphicsView* view, QWidget *parent) : QLabel(parent)

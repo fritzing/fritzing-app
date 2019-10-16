@@ -19,10 +19,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "modelpartshared.h"
-#include "../connectors/connectorshared.h"
-#include "../debugdialog.h"
-#include "../connectors/busshared.h"
 
+#include "connectors/connectorshared.h"
+#include "connectors/busshared.h"
+#include "kitchensink/debugdialog.h"
+#include "utils/misc.h"
 
 #include <QHash>
 #include <QMessageBox>

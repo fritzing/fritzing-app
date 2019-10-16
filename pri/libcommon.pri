@@ -1,0 +1,3 @@
+CONFIG += staticlib
+
+TEMPLATE = lib

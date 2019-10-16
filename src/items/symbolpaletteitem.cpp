@@ -19,11 +19,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "symbolpaletteitem.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../connectors/connectoritem.h"
 #include "../connectors/bus.h"
 #include "moduleidnames.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../utils/textutils.h"
 #include "../utils/focusoutcombobox.h"
 #include "../utils/graphicsutils.h"

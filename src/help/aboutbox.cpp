@@ -27,7 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QScrollBar>
 
 #include "aboutbox.h"
-#include "../debugdialog.h"
+#include "kitchensink/debugdialog.h"
 #include "../version/version.h"
 #include "../utils/expandinglabel.h"
 

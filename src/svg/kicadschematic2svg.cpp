@@ -22,9 +22,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
 #include "../version/version.h"
-#include "../debugdialog.h"
-#include "../viewlayer.h"
-#include "../fsvgrenderer.h"
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/viewlayer.h"
+#include "kitchensink/fsvgrenderer.h"
 #include "../utils/misc.h"
 
 #include <QFile>

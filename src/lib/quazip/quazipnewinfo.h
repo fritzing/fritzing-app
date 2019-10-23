@@ -56,9 +56,9 @@ struct QuaZipNewInfo {
 	 **/
 	QDateTime dateTime;
 	/// File internal attributes.
-	quint16 internalAttr;
+	quint16 internalAttr = 0;
 	/// File external attributes.
-	quint32 externalAttr;
+	quint32 externalAttr = 0;
 	/// File comment.
 	/** Will be encoded using QuaZip::getCommentCodec().
 	 **/
@@ -71,7 +71,7 @@ struct QuaZipNewInfo {
 	/** This is only needed if you are using raw file zipping mode, i. e.
 	 * adding precompressed file in the zip archive.
 	 **/
-	ulong uncompressedSize;
+	ulong uncompressedSize = 0;
 	/// Constructs QuaZipNewInfo instance.
 	/** Initializes name with \a name, dateTime with current date and
 	 * time. Attributes are initialized with zeros, comment and extra

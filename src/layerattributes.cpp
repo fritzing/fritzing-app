@@ -21,22 +21,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "layerattributes.h"
 #include "debugdialog.h"
 
-LayerAttributes::LayerAttributes()
-{
-	orientation = Qt::Vertical;
-	createShape = true;
-}
-
-const QString & LayerAttributes::filename() {
-	return m_filename;
-}
-
 void LayerAttributes::setFilename(const QString & filename) {
 	m_filename = filename;
-}
-
-const QByteArray & LayerAttributes::loaded() const {
-	return m_loaded;
 }
 
 void LayerAttributes::clearLoaded() {

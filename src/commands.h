@@ -37,10 +37,10 @@ class CommandProgress : public QObject {
 	Q_OBJECT
 
 public:
-	CommandProgress();
+	CommandProgress() = default;
 
 	void setActive(bool);
-	bool active();
+	constexpr bool active() const noexcept { return m_active; }
 	void emitUndo();
 	void emitRedo();
 
@@ -49,11 +49,11 @@ signals:
 	void incRedo();
 
 protected:
-	bool m_active;
+	bool m_active = false;
 };
 
 /////////////////////////////////////////////
-
+class SketchWidget;
 class BaseCommand : public QUndoCommand
 {
 public:
@@ -63,12 +63,12 @@ public:
 	};
 
 public:
-	BaseCommand(BaseCommand::CrossViewType, class SketchWidget*, QUndoCommand* parent);
+	BaseCommand(BaseCommand::CrossViewType, SketchWidget*, QUndoCommand* parent);
 	~BaseCommand();
 
-	BaseCommand::CrossViewType crossViewType() const;
+	BaseCommand::CrossViewType crossViewType() const noexcept;
 	void setCrossViewType(BaseCommand::CrossViewType);
-	class SketchWidget* sketchWidget() const;
+	SketchWidget* sketchWidget() const;
 	int subCommandCount() const;
 	const BaseCommand * subCommand(int index) const;
 	virtual QString getDebugString() const;
@@ -96,13 +96,13 @@ protected:
 
 protected:
 	BaseCommand::CrossViewType m_crossViewType;
-	class SketchWidget *m_sketchWidget;
+	SketchWidget *m_sketchWidget = nullptr;
 	QList<BaseCommand *> m_commands;
-	QUndoCommand * m_parentCommand;
-	int m_index;
-	bool m_undoOnly;
-	bool m_redoOnly;
-	bool m_skipFirstRedo;
+	QUndoCommand * m_parentCommand = nullptr;
+	int m_index = 0;
+	bool m_undoOnly = false;
+	bool m_redoOnly = false;
+	bool m_skipFirstRedo = false;
 
 	static CommandProgress m_commandProgress;
 };
@@ -112,11 +112,11 @@ protected:
 class AddDeleteItemCommand : public BaseCommand
 {
 public:
-	AddDeleteItemCommand(class SketchWidget * sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QUndoCommand *parent);
+	AddDeleteItemCommand(SketchWidget * sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QUndoCommand *parent);
 
 	long itemID() const;
-	void setDropOrigin(class SketchWidget *);
-	class SketchWidget * dropOrigin();
+	void setDropOrigin(SketchWidget *);
+	SketchWidget * dropOrigin();
 
 protected:
 	QString getParamString() const;
@@ -126,7 +126,7 @@ protected:
 	long m_itemID;
 	ViewGeometry m_viewGeometry;
 	long m_modelIndex;
-	class SketchWidget * m_dropOrigin;
+	SketchWidget * m_dropOrigin;
 	ViewLayer::ViewLayerPlacement m_viewLayerPlacement;
 };
 
@@ -144,9 +144,9 @@ protected:
 	QString getParamString() const;
 
 protected:
-	bool m_updateInfoView;
-	bool m_module;
-	RestoreIndexesCommand * m_restoreIndexesCommand;
+	bool m_updateInfoView = false;
+	bool m_module = false;
+	RestoreIndexesCommand * m_restoreIndexesCommand = nullptr;
 };
 
 /////////////////////////////////////////////
@@ -154,7 +154,7 @@ protected:
 class DeleteItemCommand : public AddDeleteItemCommand
 {
 public:
-	DeleteItemCommand(class SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QUndoCommand *parent);
+	DeleteItemCommand(SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QUndoCommand *parent);
 	void undo();
 	void redo();
 
@@ -168,7 +168,7 @@ protected:
 class MoveItemCommand : public BaseCommand
 {
 public:
-	MoveItemCommand(class SketchWidget *sketchWidget, long id, ViewGeometry & oldG, ViewGeometry & newG, bool updateRatsnest, QUndoCommand *parent);
+	MoveItemCommand(SketchWidget *sketchWidget, long id, ViewGeometry & oldG, ViewGeometry & newG, bool updateRatsnest, QUndoCommand *parent);
 	void undo();
 	void redo();
 
@@ -176,8 +176,8 @@ protected:
 	QString getParamString() const;
 
 protected:
-	bool m_updateRatsnest;
-	long m_itemID;
+	bool m_updateRatsnest = false;
+	long m_itemID = 0;
 	ViewGeometry m_old;
 	ViewGeometry m_new;
 };
@@ -187,7 +187,7 @@ protected:
 class SimpleMoveItemCommand : public BaseCommand
 {
 public:
-	SimpleMoveItemCommand(class SketchWidget *sketchWidget, long id, QPointF & oldP, QPointF & newP, QUndoCommand *parent);
+	SimpleMoveItemCommand(SketchWidget *sketchWidget, long id, QPointF & oldP, QPointF & newP, QUndoCommand *parent);
 	void undo();
 	void redo();
 
@@ -195,7 +195,7 @@ protected:
 	QString getParamString() const;
 
 protected:
-	long m_itemID;
+	long m_itemID = 0;
 	QPointF m_old;
 	QPointF m_new;
 };
@@ -203,7 +203,7 @@ protected:
 /////////////////////////////////////////////
 
 struct MoveItemThing {
-	long id;
+	long id = 0;
 	QPointF oldPos;
 	QPointF newPos;
 };
@@ -211,7 +211,7 @@ struct MoveItemThing {
 class MoveItemsCommand : public BaseCommand
 {
 public:
-	MoveItemsCommand(class SketchWidget *sketchWidget, bool updateRatsnest, QUndoCommand *parent);
+	MoveItemsCommand(SketchWidget *sketchWidget, bool updateRatsnest, QUndoCommand *parent);
 	void undo();
 	void redo();
 	void addItem(long id, const QPointF & oldPos, const QPointF & newPos);
@@ -231,7 +231,7 @@ protected:
 class RotateItemCommand : public BaseCommand
 {
 public:
-	RotateItemCommand(class SketchWidget *sketchWidget, long id, double degrees, QUndoCommand *parent);
+	RotateItemCommand(SketchWidget *sketchWidget, long id, double degrees, QUndoCommand *parent);
 	void undo();
 	void redo();
 
@@ -249,7 +249,7 @@ class FlipItemCommand : public BaseCommand
 {
 
 public:
-	FlipItemCommand(class SketchWidget *sketchWidget, long id, Qt::Orientations orientation, QUndoCommand *parent);
+	FlipItemCommand(SketchWidget *sketchWidget, long id, Qt::Orientations orientation, QUndoCommand *parent);
 	void undo();
 	void redo();
 
@@ -262,12 +262,12 @@ protected:
 };
 
 /////////////////////////////////////////////
-
+class QMatrix;
 class TransformItemCommand : public BaseCommand
 {
 
 public:
-	TransformItemCommand(class SketchWidget *sketchWidget, long id, const class QMatrix & oldMatrix, const class QMatrix & newMatrix, QUndoCommand *parent);
+	TransformItemCommand(SketchWidget *sketchWidget, long id, const QMatrix & oldMatrix, const class QMatrix & newMatrix, QUndoCommand *parent);
 	void undo();
 	void redo();
 
@@ -566,7 +566,7 @@ struct StickyThing {
 };
 
 /////////////////////////////////////////////
-
+class SketchWidget;
 class CheckStickyCommand : public BaseCommand
 {
 public:
@@ -577,7 +577,7 @@ public:
 	};
 
 public:
-	CheckStickyCommand(class SketchWidget *sketchWidget, BaseCommand::CrossViewType, long itemID, bool checkCurrent, CheckType, QUndoCommand *parent);
+	CheckStickyCommand(SketchWidget *sketchWidget, BaseCommand::CrossViewType, long itemID, bool checkCurrent, CheckType, QUndoCommand *parent);
 	~CheckStickyCommand();
 
 	void undo();
@@ -589,9 +589,9 @@ protected:
 	QString getParamString() const;
 
 protected:
-	long m_itemID;
+	long m_itemID = 0;
 	QList<StickyThing *> m_stickyList;
-	bool m_checkCurrent;
+	bool m_checkCurrent = false;
 	CheckType m_checkType;
 };
 

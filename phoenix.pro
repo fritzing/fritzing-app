@@ -19,7 +19,11 @@
 # ********************************************************************
 
 lessThan(QT_MAJOR_VERSION, 5) {
-    error(Fritzing does not build with Qt 4 or earlier)
+    error(Fritzing does not build with Qt 4 or earlier. 5.12 is recommended.)
+}
+
+lessThan(QT_MINOR_VERSION, 9) {
+    error(Fritzing does not build with Qt 5.8 or earlier. 5.12 is recommended.)
 }
 
 CONFIG += debug_and_release
@@ -194,8 +198,8 @@ include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
 
 contains(DEFINES, QUAZIP_INSTALLED) {
-    INCLUDEPATH += /usr/include/quazip
-    LIBS += -lquazip
+    !build_pass:message("using installed QuaZIP library")
+    LIBS += -lquazip5
 } else {
     include(pri/quazip.pri)
 }
@@ -203,4 +207,4 @@ contains(DEFINES, QUAZIP_INSTALLED) {
 TARGET = Fritzing
 TEMPLATE = app
 
-message("libs $$LIBS")
+!build_pass:message("libs $$LIBS")

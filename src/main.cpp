@@ -35,7 +35,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 QtMessageHandler originalMsgHandler;
-#define ORIGINAL_MESSAGE_HANDLER(TYPE, MSG) originalMsgHandler((TYPE), context, (MSG))
 
 void writeCrashMessage(const char * msg) {
 	QString path = FolderUtils::getTopLevelUserDataStorePath();
@@ -52,25 +51,12 @@ void writeCrashMessage(const QString & msg) {
 	writeCrashMessage(msg.toStdString().c_str());
 }
 
-void fMessageHandler(QtMsgType type, const QMessageLogContext &context, const QString & msg)
+void fMessageHandler(QtMsgType type, const QMessageLogContext & context, const QString & msg)
 {
-	switch (type) {
-	case QtDebugMsg:
-		ORIGINAL_MESSAGE_HANDLER(type, msg);
-		break;
-	case QtWarningMsg:
-		ORIGINAL_MESSAGE_HANDLER(type, msg);
-		break;
-	case QtCriticalMsg:
-		ORIGINAL_MESSAGE_HANDLER(type, msg);
-		break;
-	case QtFatalMsg: {
+	if (type == QtFatalMsg) {
 		writeCrashMessage(msg);
 	}
-
-		// don't abort
-	ORIGINAL_MESSAGE_HANDLER(QtWarningMsg, msg);
-	}
+	originalMsgHandler(type, context, msg);
 }
 
 
@@ -89,8 +75,8 @@ int main(int argc, char *argv[])
 	std::wstring wstr = path.toStdWString();
 	LPCWSTR ptr = wstr.c_str();
 	hLogFile = CreateFile(ptr, GENERIC_WRITE,
-	                      FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
-	                      FILE_ATTRIBUTE_NORMAL, NULL);
+						  FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
+						  FILE_ATTRIBUTE_NORMAL, NULL);
 	_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_FILE);
 	_CrtSetReportFile(_CRT_ERROR, hLogFile);
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE);
@@ -106,9 +92,7 @@ int main(int argc, char *argv[])
 	int result = 0;
 	try {
 		//QApplication::setGraphicsSystem("raster");
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
 		QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-#endif
 		FApplication * app = new FApplication(argc, argv);
 		switch (app->init()) {
 		case FInitResultNormal: {
@@ -132,46 +116,53 @@ int main(int argc, char *argv[])
 		case FInitResultHelp: {
 			QTextStream cout(stdout);
 			cout <<
-			     "Fritzing version " << Version::versionString() << " - Qt version " << QT_VERSION_STR << "\n"
+			     "Usage: Fritzing [-f FOLDER] [OPTION]... [FILE]\n"
 			     "\n"
-			     "usage: fritzing [-d] [-f path] filename\n"
-			     "       fritzing [-f path] -geda folder\n"
-			     "       fritzing [-f path] -gerber folder\n"
-			     "       fritzing [-f path] -kicad folder\n"
-			     "       fritzing [-f path] -kicadschematic folder\n"
-			     "       fritzing [-f path] -svg folder\n"
-			     "       fritzing [-f path] -port number\n"
+			     "Fritzing is an open-source hardware initiative that makes electronics accessible as a creative material for anyone. "
+			     "We offer this software tool, a community website and services in the spirit of Processing and Arduino, "
+			     "fostering a creative ecosystem that allows users to document their prototypes, share them with others, "
+			     "teach electronics in a classroom, and layout and manufacture professional PCBs.\n"
 			     "\n"
-			     "user options:\n"
-			     "  d,debug            :  runs Fritzing in debug mode, providing additional debug information\n"
-			     //"  drc filename       :  runs a design rule check on the given sketch file\n"
-			     "  f,folder           :  path to folder containing Fritzing parts, sketches, bins, & translations folders\n"
-			     "  geda path          :  converts all gEDA footprint (.fp) files in folder <path> to Fritzing SVGs\n"
-			     "  g,gerber path      :  exports all sketches in folder <path> to Gerber, in the same folder\n"
-			     "  h,help             :  print this help message\n"
-			     "  kicad path         :  converts all Kicad footprint (.mod) files in folder <path> to Fritzing SVGs\n"
-			     "  kicadschematic path:  converts all Kicad schematic (.lib) files in folder <path> to Fritzing SVGs\n"
-			     "  port               :  runs Fritzing as a server process under <port>\n"
-			     "  svg path           :  exports all sketches in folder <path> to SVGs of all views, in the same folder\n"
+			     "For more information on Fritzing and its related activities visit <https://fritzing.org>.\n"
 			     "\n"
-			     "developer options:\n"
-			     "  db path            :  rebuilds the internal parts database at the given path\n"
-			     "  e,examples path    :  prepares all sketches in the folder to be included as examples\n"
-			     "  ep path            :  external process at <path>\n"
-			     "  eparg args         :  external process arguments\n"
-			     "  epname name        :  external process menu item name\n"
+			     "Options:\n"
 			     "\n"
-			     "The -geda/-kicad/-kicadschematic/-gerber/svg options all exit Fritzing after the conversion process is complete;\n"
+			     "User options:\n"
+			     "  -d, -debug                    run Fritzing in debug mode, providing additional debug information\n"
+			     //" drc filename : runs a design rule check on the given sketch file\n"
+			     "  -f, -folder FOLDER            use Fritzing parts, sketches, bins and translations in folders under FOLDER\n"
+			     "  -geda FOLDER                  convert all gEDA footprint (.fp) files in FOLDER to Fritzing SVGs\n"
+			     "  -g, -gerber FOLDER            export all sketches in FOLDER to Gerber, in the same folder\n"
+			     "  -h, -help                     print this help message\n"
+			     "  -kicad FOLDER                 convert all Kicad footprint (.mod) files in FOLDER to Fritzing SVGs\n"
+			     "  -kicadschematic FOLDER        convert all Kicad schematic (.lib) files in FOLDER to Fritzing SVGs\n"
+			     "  -port NUMBER                  run Fritzing as a server process on port NUMBER\n"
+			     "  -svg FOLDER                   export all sketches in FOLDER to SVGs of all views, in the same folder\n"
+			     "\n"
+			     "Administrator option:\n"
+			     "  -db, -database FILE           rebuild the internal parts database FILE\n"
+			     "\n"
+			     "Developer options:\n"
+			     "  -e, -examples FOLDER          prepare all sketches in FOLDER to be included as examples\n"
+			     "  -ep FILE                      add menu item for external process using executable FILE\n"
+			     "  -eparg ARGS                   with -ep, external process arguments ARGS\n"
+			     "  -epname NAME                  with -ep, external process menu item NAME\n"
+			     "\n"
+			     "The -geda, -kicad, -kicadschematic, -gerber SVG options all exit Fritzing after the conversion process is complete;\n"
 			     "these options are mutually exclusive.\n"
 			     "\n"
+#ifndef PKGDATADIR
 			     "Usually, the Fritzing executable is stored in the same folder that contains the parts/bins/sketches/translations folders,\n"
 			     "or the executable is in a child folder of the p/b/s/t folder.\n"
 			     "If this is not the case, use the -f option to point to the p/b/s/t folder.\n"
 			     "\n"
+#endif
 			     "The -ep option creates a menu item to launch an external process,\n"
 			     "and puts the standard output of that process into a dialog window in Fritzing.\n"
 			     "The process path follows the -ep argument; the name of the menu item follows the -epname argument;\n"
-			     "and any arguments to pass to the external process are provided in the -eparg arguments.\n";
+			     "and any arguments to pass to the external process are provided in the -eparg arguments.\n"
+			     "\n"
+			     "Report bugs or suggest improvements using the issue tracker <https://github.com/fritzing/fritzing-app/issues> or the user forum <https://forum.fritzing.org>.\n";
 			break;
 		}
 		case FInitResultVersion: {

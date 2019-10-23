@@ -24,13 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "svgpathparser.h"
 #include "svgpathlexer.h"
 
-SVGPathParser::SVGPathParser()
-{
-}
-
-SVGPathParser::~SVGPathParser()
-{
-}
+SVGPathParser::SVGPathParser() : m_tos(0) { }
 
 QVector<QVariant> & SVGPathParser::symStack() {
 	return m_symStack;
@@ -47,12 +41,12 @@ void SVGPathParser::reallocateStack()
 	m_stateStack.resize(size);
 }
 
-QString SVGPathParser::errorMessage() const
+QString SVGPathParser::errorMessage() const noexcept
 {
 	return m_errorMessage;
 }
 
-QVariant SVGPathParser::result() const
+QVariant SVGPathParser::result() const noexcept
 {
 	return m_result;
 }

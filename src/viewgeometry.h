@@ -54,20 +54,20 @@ protected:
 	void setWireFlag(bool setting, WireFlag flag);
 
 public:
-	void setZ(double);
-	double z() const;
+	void setZ(double) noexcept;
+	constexpr double z() const noexcept { return m_z; }
 	void setLoc(QPointF);
-	QPointF loc() const;
+	constexpr QPointF loc() const noexcept { return m_loc; }
 	void setLine(QLineF);
-	QLineF line() const;
+	constexpr QLineF line() const noexcept { return m_line; }
 	void offset(double x, double y);
-	bool selected();
+	bool selected() const noexcept { return m_selected; }
 	void setSelected(bool);
-	QRectF rect() const;
+	constexpr QRectF rect() const noexcept { return m_rect; }
 	void setRect(double x, double y, double width, double height);
 	void setRect(const QRectF &);
 	void setTransform(QTransform);
-	QTransform transform() const;
+	QTransform transform() const noexcept { return m_transform; }
 	void set(const ViewGeometry &);
 	void setRouted(bool);
 	bool getRouted() const;

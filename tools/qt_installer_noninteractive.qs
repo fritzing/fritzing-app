@@ -63,3 +63,9 @@ Controller.prototype.FinishedPageCallback = function() {
   }
   gui.clickButton(buttons.FinishButton);
 }
+
+Controller.prototype.DynamicTelemetryPluginFormCallback = function() {
+    var widget = gui.currentPageWidget();
+    widget.TelemetryPluginForm.statisticGroupBox.disableStatisticRadioButton.checked = true;
+    gui.clickButton(buttons.NextButton);
+}

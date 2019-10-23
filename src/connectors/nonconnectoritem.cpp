@@ -31,16 +31,24 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../model/modelpart.h"
 
 //static const double EffectiveAdjustment = 1.25;
-static const double EffectiveAdjustmentFactor = 5.0 / 15.0;
+constexpr double EffectiveAdjustmentFactor = 5.0 / 15.0;
 
 /////////////////////////////////////////////////////////
 
-NonConnectorItem::NonConnectorItem(ItemBase * attachedTo) : QGraphicsRectItem(attachedTo)
+NonConnectorItem::NonConnectorItem(ItemBase * attachedTo) 
+	: QGraphicsRectItem(attachedTo),
+	m_attachedTo(attachedTo),
+	m_hidden(false),
+	m_inactive(false),
+	m_paint(false),
+	m_opacity(0.0),
+	m_effectively(Effectively::EffectivelyUnknown),
+	m_radius(0),
+	m_strokeWidth(0),
+	m_negativeOffsetRect(false),
+	m_shape(),
+	m_isPath(false)
 {
-	m_effectively = EffectivelyUnknown;
-	m_radius = m_strokeWidth = 0;
-	m_layerHidden = m_isPath = m_inactive = m_hidden = false;
-	m_attachedTo = attachedTo;
 	setAcceptHoverEvents(false);
 	setAcceptedMouseButtons(Qt::NoButton);
 	setFlag(QGraphicsItem::ItemIsMovable, false);
@@ -48,8 +56,6 @@ NonConnectorItem::NonConnectorItem(ItemBase * attachedTo) : QGraphicsRectItem(at
 	setFlag(QGraphicsItem::ItemIsFocusable, false);
 }
 
-NonConnectorItem::~NonConnectorItem() {
-}
 
 ItemBase * NonConnectorItem::attachedTo() {
 	return m_attachedTo;
@@ -138,7 +144,7 @@ void NonConnectorItem::setHidden(bool hide) {
 	this->update();
 }
 
-bool NonConnectorItem::hidden() {
+bool NonConnectorItem::hidden() const {
 	return m_hidden;
 }
 
@@ -147,7 +153,7 @@ void NonConnectorItem::setLayerHidden(bool hide) {
 	this->update();
 }
 
-bool NonConnectorItem::layerHidden() {
+bool NonConnectorItem::layerHidden() const {
 	return m_layerHidden;
 }
 
@@ -156,22 +162,22 @@ void NonConnectorItem::setInactive(bool inactivate) {
 	this->update();
 }
 
-bool NonConnectorItem::inactive() {
+bool NonConnectorItem::inactive() const {
 	return m_inactive;
 }
 
 long NonConnectorItem::attachedToID() {
-	if (attachedTo() == NULL) return -1;
+	if (!attachedTo()) return -1;
 	return attachedTo()->id();
 }
 
 const QString & NonConnectorItem::attachedToTitle() {
-	if (attachedTo() == NULL) return ___emptyString___;
+	if (!attachedTo()) return ___emptyString___;
 	return attachedTo()->title();
 }
 
 const QString & NonConnectorItem::attachedToInstanceTitle() {
-	if (attachedTo() == NULL) return ___emptyString___;
+	if (!attachedTo()) return ___emptyString___; 
 	return attachedTo()->instanceTitle();
 }
 
@@ -189,15 +195,15 @@ void NonConnectorItem::setIsPath(bool path) {
 	m_isPath = path;
 }
 
-bool NonConnectorItem::isPath() {
+bool NonConnectorItem::isPath() const {
 	return m_isPath;
 }
 
-double NonConnectorItem::radius() {
+double NonConnectorItem::radius() const {
 	return m_radius;
 }
 
-double NonConnectorItem::strokeWidth() {
+double NonConnectorItem::strokeWidth() const {
 	return m_strokeWidth;
 }
 
@@ -221,7 +227,6 @@ void NonConnectorItem::setShape(QPainterPath & pp) {
 }
 
 int NonConnectorItem::attachedToItemType() {
-	if (m_attachedTo == NULL) return ModelPart::Unknown;
-
+	if (!m_attachedTo) return ModelPart::Unknown;
 	return m_attachedTo->itemType();
 }

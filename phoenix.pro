@@ -27,6 +27,7 @@ lessThan(QT_MINOR_VERSION, 9) {
 }
 
 CONFIG += debug_and_release
+CONFIG += c++14
 
 unix:!macx {
     CONFIG += link_pkgconfig
@@ -196,6 +197,7 @@ include(pri/sketch.pri)
 include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
+include(test/version.pri)
 
 contains(DEFINES, QUAZIP_INSTALLED) {
     !build_pass:message("using installed QuaZIP library")

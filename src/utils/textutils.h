@@ -55,7 +55,7 @@ public:
 	static bool isIllustratorFile(const QString &fileContent);
 	static bool isIllustratorFile(const QByteArray &fileContent);
 	static bool isIllustratorDoc(const QDomDocument & doc);
-	static QString removeXMLEntities(QString svgContent);
+    static QString removeXMLEntities(QString && svgContent);
 	static bool cleanSodipodi(QString &bytes);
 	static bool fixPixelDimensionsIn(QString &fileContent);
 	static bool addCopper1(const QString & filename, QDomDocument & doc, const QString & srcAtt, const QString & destAtt);
@@ -107,6 +107,7 @@ public:
 	static void gornTree(QDomDocument &);
 	static bool elevateTransform(QDomElement &);
 	static bool fixMuch(QString &svg, bool fixStrokeWidth);
+    static bool fixPixelDimensionsInAndMore(QString &svg, bool fixStrokeWidthFlag);
 	static bool fixInternalUnits(QString & svg);
 	static bool fixFonts(QString & svg, const QString & destFont, bool & reallyFixed);
 	static void fixStyleAttribute(QDomElement & element);

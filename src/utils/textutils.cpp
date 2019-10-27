@@ -492,14 +492,20 @@ bool TextUtils::isIllustratorDoc(const QDomDocument & doc) {
 	return false;
 }
 
-QString TextUtils::removeXMLEntities(QString svgContent) {
-	return svgNSOnly(svgContent.remove(HexExpr));
+QString TextUtils::removeXMLEntities(QString && svgContent) {
+    svgContent.remove(HexExpr);
+    svgContent.remove(Xmlns);
+    int ix = svgContent.indexOf("<svg");
+    if (ix >= 0) {
+        svgContent.insert(ix + 5, "xmlns=\"http://www.w3.org/2000/svg\" ");
+    }
+    return std::move(svgContent);
 }
 
 QString TextUtils::killXMLNS(QString svgContent) {
 	// TODO: this is a bug in Qt, it would be nice to fix it there
 
-	svgContent.remove(Xmlns);
+    svgContent.remove(Xmlns);
 	return svgContent;
 }
 
@@ -559,14 +565,12 @@ bool TextUtils::fixPixelDimensionsIn(QString &fileContent) {
 
 	bool fileHasChanged = false;
 
-	if(isIllustrator) {
-		QDomElement elem = svgDom.firstChildElement("svg");
-		fileHasChanged = pxToInches(elem,"width",isIllustrator);
-		fileHasChanged |= pxToInches(elem,"height",isIllustrator);
-	}
+    QDomElement elem = svgDom.firstChildElement("svg");
+    fileHasChanged = pxToInches(elem,"width",isIllustrator);
+    fileHasChanged |= pxToInches(elem,"height",isIllustrator);
 
 	if (fileHasChanged) {
-		fileContent = removeXMLEntities(svgDom.toString());
+        fileContent = removeXMLEntities(svgDom.toString());
 	}
 
 	return fileHasChanged;
@@ -1064,12 +1068,69 @@ bool TextUtils::fixMuch(QString &svg, bool fixStrokeWidthFlag)
 
 	result |= elevateTransform(root);
 
-	if (result) {
-		svg = removeXMLEntities(svgDom.toString());
-	}
+    if (result) {
+        svg = removeXMLEntities(svgDom.toString());
+    }
 
 	return result;
 }
+
+bool TextUtils::fixPixelDimensionsInAndMore(QString &svg, bool fixStrokeWidthFlag)
+{
+    bool result = cleanSodipodi(svg);
+    result |= fixInternalUnits(svg);
+
+    QDomDocument svgDom;
+    QString errorMsg;
+    int errorLine;
+    int errorCol;
+    if(!svgDom.setContent(svg, true, &errorMsg, &errorLine, &errorCol)) {
+        return result;
+    }
+
+    QDomElement root = svgDom.documentElement();
+    result |= fixViewBox(root);
+
+    QStringList strings;
+    strings << "pattern" << "marker" << "clipPath";
+    foreach (QString string, strings) {
+        if (svg.contains("<" + string)) {
+            result |= noPatternAux(svgDom, string);
+        }
+    }
+
+    if (svg.contains("<use")) {
+        result |= noUseAux(svgDom);
+    }
+
+    if (svg.contains("<tspan")) {
+        result |= tspanRemoveAux(svgDom);
+    }
+
+    if (fixStrokeWidthFlag) {
+        result |= fixStrokeWidth(svgDom);
+    }
+
+    result |= elevateTransform(root);
+
+    bool isIllustrator = isIllustratorFile(svg);
+    if (isIllustrator) {
+        QDomElement elem = svgDom.firstChildElement("svg");
+        result |= pxToInches(elem,"width",isIllustrator);
+        result |= pxToInches(elem,"height",isIllustrator);
+    }
+
+    if (result) {
+        svg = removeXMLEntities(svgDom.toString());
+    }
+
+    return result;
+}
+
+
+
+
+
 
 bool TextUtils::fixViewBox(QDomElement & root) {
 	QString viewBox = root.attribute("viewBox");

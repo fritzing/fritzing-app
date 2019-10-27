@@ -125,7 +125,7 @@ void allGs(QDomElement & element) {
 ///////////////////////////////////////////////
 
 DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & messages, const QList<CollidingThing *> & collidingThings,
-                                   QGraphicsPixmapItem * displayItem, QImage * displayImage, PCBSketchWidget * sketchWidget, QWidget *parent)
+								   QGraphicsPixmapItem * displayItem, QImage * displayImage, PCBSketchWidget * sketchWidget, QWidget *parent)
 	: QDialog(parent)
 {
 	setAttribute(Qt::WA_DeleteOnClose, true);
@@ -267,7 +267,7 @@ QStringList DRC::start(bool showOkMessage, double keepoutMils) {
 		}
 		else {
 			message = tr("The areas on your board highlighted in red are connectors and traces which may overlap or be too close together. ") +
-			          tr("Reposition them and run the DRC again to find more problems");
+					  tr("Reposition them and run the DRC again to find more problems");
 		}
 	}
 
@@ -347,8 +347,8 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 	double dpi = qMax((double) 250, 1000 / keepoutMils);  // turns out making a variable dpi doesn't work due to vector-to-raster issues
 	QRectF boardRect = m_board->sceneBoundingRect();
 	QRectF sourceRes(0, 0,
-	                 boardRect.width() * dpi / GraphicsUtils::SVGDPI,
-	                 boardRect.height() * dpi / GraphicsUtils::SVGDPI);
+					 boardRect.width() * dpi / GraphicsUtils::SVGDPI,
+					 boardRect.height() * dpi / GraphicsUtils::SVGDPI);
 
 	QSize imgSize(qCeil(sourceRes.width()), qCeil(sourceRes.height()));
 
@@ -434,8 +434,8 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 		if (pixelsCollide(m_plusImage, m_minusImage, m_displayImage, 0, 0, imgSize.width(), imgSize.height(), 1 /* 0x80ff0000 */, atPixels)) {
 			CollidingThing * collidingThing = findItemsAt(atPixels, m_board, viewLayerIDs, keepoutMils, dpi, true, NULL);
 			QString msg = tr("Too close to a border (%1 layer)")
-			              .arg(viewLayerPlacement == ViewLayer::NewTop ? ItemBase::TranslatedPropertyNames.value("top") : ItemBase::TranslatedPropertyNames.value("bottom"))
-			              ;
+						  .arg(viewLayerPlacement == ViewLayer::NewTop ? ItemBase::TranslatedPropertyNames.value("top") : ItemBase::TranslatedPropertyNames.value("bottom"))
+						  ;
 			emit setProgressMessage(msg);
 			messages << msg;
 			collidingThings << collidingThing;
@@ -544,9 +544,9 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 					QStringList names = getNames(collidingThing);
 					QString name0 = names.at(0);
 					QString msg = tr("%1 is overlapping (%2 layer)")
-					              .arg(name0)
-					              .arg(viewLayerPlacement == ViewLayer::NewTop ? ItemBase::TranslatedPropertyNames.value("top") : ItemBase::TranslatedPropertyNames.value("bottom"))
-					              ;
+								  .arg(name0)
+								  .arg(viewLayerPlacement == ViewLayer::NewTop ? ItemBase::TranslatedPropertyNames.value("top") : ItemBase::TranslatedPropertyNames.value("bottom"))
+								  ;
 					messages << msg;
 					collidingThings << collidingThing;
 					emit setProgressMessage(msg);
@@ -860,9 +860,9 @@ void DRC::splitSubs(QDomDocument * doc, QDomElement & root, const QString & part
 		// such as a rect which overlaps a circle
 		QDomElement masterRoot = doc->documentElement();
 		QString svg = QString("<svg width='%1' height='%2' viewBox='%3'>\n")
-		              .arg(masterRoot.attribute("width"))
-		              .arg(masterRoot.attribute("height"))
-		              .arg(masterRoot.attribute("viewBox"));
+					  .arg(masterRoot.attribute("width"))
+					  .arg(masterRoot.attribute("height"))
+					  .arg(masterRoot.attribute("viewBox"));
 		QString string;
 		QTextStream stream(&string);
 		root.save(stream, 0);
@@ -941,42 +941,52 @@ CollidingThing * DRC::findItemsAt(QList<QPointF> & atPixels, ItemBase * board, c
 	return collidingThing;
 }
 
-void DRC::extendBorder(double keepout, QImage * image) {
-	// TODO: scanlines
-
+void DRC::extendBorder(const double keepout, QImage * image) {
+	Q_ASSERT(image->format() == QImage::Format_Mono);
 	// keepout in terms of the board grid size
-
 	QImage copy = image->copy();
 
-	int h = image->height();
-	int w = image->width();
-	int ikeepout = qCeil(keepout);
+	const int h = image->height();
+	const int w = image->width();
+	const int ikeepout = qCeil(keepout);
 	for (int y = 0; y < h; y++) {
+		uchar * s = copy.scanLine(y);
 		for (int x = 0; x < w; x++) {
-			if (copy.pixel(x, y) != 0xff000000) {
+			if ((*(s + (x >> 3)) >> (~x & 7)) & 1) {  // if (copy.pixel(x, y) != 1)
 				continue;
 			}
 
-			for (int dy = y - ikeepout; dy <= y + ikeepout; dy++) {
-				if (dy < 0) continue;
-				if (dy >= h) continue;
-				for (int dx = x - ikeepout; dx <= x + ikeepout; dx++) {
-					if (dx < 0) continue;
-					if (dx >= w) continue;
-
-					// extend border by keepout
-					image->setPixel(dx, dy, 0);
+			const int y1 = std::max(y - ikeepout, 0);
+			const int y2 = std::min(y + ikeepout, h);
+			const int x1 = std::max(x - ikeepout, 0);
+			const int x2 = std::min(x + ikeepout, w);
+			// extend border by keepout
+			int dx;
+			for (int dy = y1; dy < y2; ++dy) {
+				uchar * r = image->scanLine(dy);
+				// This section is often the hotspot for creating copper layers,
+				// especially if shapes are irregular.
+				// We apply a kernel of size 'ikeepout' to the image just
+				// to get the *board* border (not an offset around traces)
+				// Directly calculating this on the vector graphic would be
+				// a thousand times faster: Minkowski sum on a polygon with a small
+				// number of vertices. This is work in progress, using the
+				// Clipper library. However that is a major change, therefore
+				// we are happy with replacing setPixel() for now.
+				for (dx = x1; dx < x2; ++dx) {
+					*(r + (dx >> 3)) &= ~(1 << (7-(dx & 7))); //image->setPixel(dx, dy, 0);
 				}
 			}
 		}
 	}
 }
 
+
 void DRC::checkHoles(QStringList & messages, QList<CollidingThing *> & collidingThings, double dpi) {
 	QRectF boardRect = m_board->sceneBoundingRect();
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->collidingItems(m_board)) {
 		NonConnectorItem * nci = dynamic_cast<NonConnectorItem *>(item);
-		if (nci == NULL) continue;
+		if (nci == nullptr) continue;
 
 		QRectF ncibr = nci->sceneBoundingRect();
 		if (boardRect.contains(ncibr)) continue;
@@ -1008,8 +1018,8 @@ void DRC::checkHoles(QStringList & messages, QList<CollidingThing *> & colliding
 		QStringList names = getNames(collidingThing);
 		QString name0 = names.at(0);
 		QString msg = tr("A hole in %1 may lie outside the border of the board and would be clipped.")
-		              .arg(name0)
-		              ;
+					  .arg(name0)
+					  ;
 		messages << msg;
 		collidingThings << collidingThing;
 		emit setProgressMessage(msg);
@@ -1022,7 +1032,7 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 	QList<ItemBase *> visited;
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 		if (!itemBase->isEverVisible()) continue;
 		if (itemBase->modelPart()->isCore()) continue;
 
@@ -1105,9 +1115,9 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 			QStringList names = getNames(collidingThing);
 			QString name0 = names.at(0);
 			QString msg = tr("Connector %1 on %2 should have both copper top and bottom layers, but the svg only specifies one layer.")
-			              .arg(ci->connectorSharedName())
-			              .arg(name0)
-			              ;
+						  .arg(ci->connectorSharedName())
+						  .arg(name0)
+						  ;
 			messages << msg;
 			collidingThings << collidingThing;
 			emit setProgressMessage(msg);

@@ -29,6 +29,10 @@ lessThan(QT_MINOR_VERSION, 9) {
 CONFIG += debug_and_release
 CONFIG += c++14
 
+# TODO: Omit frame pointers for release builds
+# TODO: Verify flags for clang and msvc builds
+QMAKE_CXXFLAGS += -O3 -fno-omit-frame-pointer
+
 unix:!macx {
     CONFIG += link_pkgconfig
 }

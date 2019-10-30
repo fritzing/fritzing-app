@@ -303,7 +303,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	/*
 	QByteArray copperByteArray;
 	if (!SvgFileSplitter::changeStrokeWidth(params.svg, m_strokeWidthIncrement, false, true, copperByteArray)) {
-		return NULL;
+		return nullptr;
 	}
 	*/
 
@@ -370,7 +370,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 		//polygons.append(polygon);
 		//QPointF offset;
 		//this
-		//QString pSvg = makePolySvg(polygons, res, bWidth, bHeight, pixelFactor, "#ffffff", false,  NULL, QSizeF(0,0), 0, QPointF(0, 0));
+		//QString pSvg = makePolySvg(polygons, res, bWidth, bHeight, pixelFactor, "#ffffff", false,  nullptr, QSizeF(0,0), 0, QPointF(0, 0));
 
 	#endif
 
@@ -552,8 +552,8 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 					}
 
 					if (++gotCount > 1) {
-						QList<int> * piecei = NULL;
-						QList<int> * piecej = NULL;
+						QList<int> * piecei = nullptr;
+						QList<int> * piecej = nullptr;
 						foreach (QList<int> * piece, pieces) {
 							if (piece->contains(j)) {
 								piecej = piece;
@@ -566,7 +566,7 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 								break;
 							}
 						}
-						if (piecei != NULL && piecej != NULL) {
+						if (piecei != nullptr && piecej != nullptr) {
 							if (piecei != piecej) {
 								foreach (int b, *piecej) {
 									piecei->append(b);
@@ -750,7 +750,7 @@ void GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res, d
 									   QSizeF minAreaInches, double minDimensionInches, QPointF polygonOffset)
 {
 	QPointF offset;
-	QString pSvg = makePolySvg(polygons, res, bWidth, bHeight, pixelFactor, colorString, makeConnectorFlag, makeOffset ? &offset : NULL, minAreaInches, minDimensionInches, polygonOffset);
+	QString pSvg = makePolySvg(polygons, res, bWidth, bHeight, pixelFactor, colorString, makeConnectorFlag, makeOffset ? &offset : nullptr, minAreaInches, minDimensionInches, polygonOffset);
 	if (pSvg.isEmpty()) return;
 
 	m_newSVGs.append(pSvg);
@@ -774,7 +774,7 @@ QString GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res
 {
 	int minX = 0;
 	int minY = 0;
-	if (offset != NULL) {
+	if (offset != nullptr) {
 		minY = std::numeric_limits<int>::max();
 		int maxY = std::numeric_limits<int>::min();
 		minX = minY;

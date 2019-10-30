@@ -36,8 +36,16 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDate>
 #include <QTextStream>
 #include <qmath.h>
+
+#include <boost/math/special_functions/relative_difference.hpp>
+using boost::math::epsilon_difference;
+
 #include <limits>
 #include <QtConcurrentRun>
+
+// factor for epsion to compare floating point numbers
+// 5 was arbitrary choosen
+static const double reldif = 5.0;
 
 static const double BORDERINCHES = 0.04;
 
@@ -530,7 +538,7 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 		QRectF firstR = rects.at(ix);
 		while (++ix < rects.count()) {
 			QRectF nextR = rects.at(ix);
-			if (nextR.y() != firstR.y()) {
+			if (epsilon_difference(nextR.y(), firstR.y()) > reldif) {
 				break;
 			}
 		}
@@ -541,7 +549,7 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 				int gotCount = 0;
 				for (int j = prevFirst; j <= prevLast; j++) {
 					QRectF prev = rects.at(j);
-					if (prev.y() + 1 != candidate.y()) {
+					if (epsilon_difference(prev.y() + 1.0, candidate.y()) > reldif) {
 						// skipped a line; no intersection possible
 						break;
 					}
@@ -628,7 +636,7 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 		QRectF firstR = rects.at(ix);
 		while (++ix < rects.count()) {
 			QRectF nextR = rects.at(ix);
-			if (nextR.y() != firstR.y()) {
+			if (epsilon_difference(nextR.y(), firstR.y()) > reldif) {
 				break;
 			}
 		}
@@ -774,6 +782,7 @@ QString GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res
 {
 	int minX = 0;
 	int minY = 0;
+
 	if (offset != nullptr) {
 		minY = std::numeric_limits<int>::max();
 		int maxY = std::numeric_limits<int>::min();
@@ -809,7 +818,7 @@ QString GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res
 				   .arg(bWidth * pixelFactor)
 				   .arg(bHeight * pixelFactor);
 	QString transform;
-	if (polygonOffset.x() != 0 || polygonOffset.y() != 0) {
+	if ((epsilon_difference(polygonOffset.x(), 0) > reldif) || (epsilon_difference(polygonOffset.y(), 0) > reldif)) {
 		transform = QString("transform='translate(%1, %2)'").arg(polygonOffset.x()).arg(polygonOffset.y());
 	}
 	pSvg += QString("<g id='%1' %2>\n").arg(m_layerName).arg(transform);

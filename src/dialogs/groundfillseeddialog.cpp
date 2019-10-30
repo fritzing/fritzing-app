@@ -34,7 +34,7 @@ GroundFillSeedDialog::GroundFillSeedDialog(PCBSketchWidget * sketchWidget, QList
 {
 	m_sketchWidget = sketchWidget;
 	m_connectorItems = connectorItems;
-	m_activeConnectorItem = NULL;
+    m_activeConnectorItem = nullptr;
 	m_doFill = false;
 
 	this->setWindowTitle(QObject::tr("Ground Fill Seed Editor"));
@@ -98,7 +98,13 @@ GroundFillSeedDialog::GroundFillSeedDialog(PCBSketchWidget * sketchWidget, QList
 	vLayout->addWidget(buttonBox);
 	this->setLayout(vLayout);
 
-	changedSlot(NULL);
+    changedSlot(nullptr);
+    for (int i = 0; i < m_listWidget->count(); ++i) {
+        if (m_listWidget->item(i)->checkState() == Qt::Checked) {
+            clickedSlot(m_listWidget->item(i));
+            break;
+        }
+    }
 }
 
 GroundFillSeedDialog::~GroundFillSeedDialog()
@@ -120,13 +126,13 @@ void GroundFillSeedDialog::changedSlot(QListWidgetItem *) {
 
 void GroundFillSeedDialog::clickedSlot(QListWidgetItem * item) {
 	int ix = -1;
-	if (item != NULL) {
+    if (item != nullptr) {
 		ix = item->data(Qt::UserRole).toInt();
 	}
 
 	showEqualPotential(m_activeConnectorItem, false);
-	m_activeConnectorItem = (ix >= 0 && ix < m_connectorItems.count()) ? m_connectorItems.at(ix) : NULL;
-	showEqualPotential(m_activeConnectorItem, true);
+    m_activeConnectorItem = (ix >= 0 && ix < m_connectorItems.count()) ? m_connectorItems.at(ix) : nullptr;
+    showEqualPotential(m_activeConnectorItem, item->checkState() == Qt::Checked);
 }
 
 void GroundFillSeedDialog::showEqualPotential(ConnectorItem * connectorItem, bool show)

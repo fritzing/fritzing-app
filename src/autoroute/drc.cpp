@@ -173,10 +173,10 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 }
 
 DRCResultsDialog::~DRCResultsDialog() {
-	if (m_displayItem != NULL && m_sketchWidget != NULL) {
+	if (m_displayItem != nullptr && m_sketchWidget != nullptr) {
 		delete m_displayItem;
 	}
-	if (m_displayImage != NULL) {
+	if (m_displayImage != nullptr) {
 		delete m_displayImage;
 	}
 	foreach (CollidingThing * collidingThing, m_collidingThings) {
@@ -186,7 +186,7 @@ DRCResultsDialog::~DRCResultsDialog() {
 }
 
 void DRCResultsDialog::pressedSlot(QListWidgetItem * item) {
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	int ix = item->data(Qt::UserRole).toInt();
 	CollidingThing * collidingThing = m_collidingThings.at(ix);
@@ -201,7 +201,7 @@ void DRCResultsDialog::pressedSlot(QListWidgetItem * item) {
 }
 
 void DRCResultsDialog::releasedSlot(QListWidgetItem * item) {
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	int ix = item->data(Qt::UserRole).toInt();
 	CollidingThing * collidingThing = m_collidingThings.at(ix);
@@ -230,10 +230,10 @@ DRC::DRC(PCBSketchWidget * sketchWidget, ItemBase * board)
 	m_cancelled = false;
 	m_sketchWidget = sketchWidget;
 	m_board = board;
-	m_displayItem = NULL;
-	m_displayImage = NULL;
-	m_plusImage = NULL;
-	m_minusImage = NULL;
+	m_displayItem = nullptr;
+	m_displayImage = nullptr;
+	m_plusImage = nullptr;
+	m_minusImage = nullptr;
 }
 
 DRC::~DRC(void)
@@ -291,8 +291,8 @@ QStringList DRC::start(bool showOkMessage, double keepoutMils) {
 	}
 	else {}
 
-	m_displayItem = NULL;
-	m_displayImage = NULL;
+	m_displayItem = nullptr;
+	m_displayImage = nullptr;
 
 	return messages;
 }
@@ -305,7 +305,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 	QList< QList<ConnectorItem *> > singletons;
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem == NULL) continue;
+		if (connectorItem == nullptr) continue;
 		if (!connectorItem->attachedTo()->isEverVisible()) continue;
 		if (connectorItem->attachedTo()->getRatsnest()) continue;
 		if (visited.contains(connectorItem)) continue;
@@ -432,7 +432,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 
 		QList<QPointF> atPixels;
 		if (pixelsCollide(m_plusImage, m_minusImage, m_displayImage, 0, 0, imgSize.width(), imgSize.height(), 1 /* 0x80ff0000 */, atPixels)) {
-			CollidingThing * collidingThing = findItemsAt(atPixels, m_board, viewLayerIDs, keepoutMils, dpi, true, NULL);
+			CollidingThing * collidingThing = findItemsAt(atPixels, m_board, viewLayerIDs, keepoutMils, dpi, true, nullptr);
 			QString msg = tr("Too close to a border (%1 layer)")
 						  .arg(viewLayerPlacement == ViewLayer::NewTop ? ItemBase::TranslatedPropertyNames.value("top") : ItemBase::TranslatedPropertyNames.value("bottom"))
 						  ;
@@ -476,8 +476,8 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 		if (viewLayerPlacement == ViewLayer::NewTop) emit wantTopVisible();
 		else emit wantBottomVisible();
 
-		QDomDocument * masterDoc = m_masterDocs.value(viewLayerPlacement, NULL);
-		if (masterDoc == NULL) continue;
+		QDomDocument * masterDoc = m_masterDocs.value(viewLayerPlacement, nullptr);
+		if (masterDoc == nullptr) continue;
 
 		LayerList viewLayerIDs = ViewLayer::copperLayers(viewLayerPlacement);
 		viewLayerIDs.removeOne(ViewLayer::GroundPlane0);
@@ -673,13 +673,13 @@ void DRC::splitNetPrep(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, 
 	QSet<QString> wireIDs;
 	foreach (ConnectorItem * equ, equi) {
 		ItemBase * itemBase = equ->attachedTo();
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 
 		if (itemBase->itemType() == ModelPart::Wire) {
 			wireIDs.insert(QString::number(itemBase->id()));
 		}
 
-		if (equ->connector() == NULL) {
+		if (equ->connector() == nullptr) {
 			// this shouldn't happen
 			itemBase->debugInfo("!!!!!!!!!!!!!!!!!!!!!!!!!!!!! missing connector !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			equ->debugInfo("missing connector");
@@ -909,7 +909,7 @@ void DRC::splitSubs(QDomDocument * doc, QDomElement & root, const QString & part
 
 void DRC::updateDisplay() {
 	QPixmap pixmap = QPixmap::fromImage(*m_displayImage);
-	if (m_displayItem == NULL) {
+	if (m_displayItem == nullptr) {
 		m_displayItem = new QGraphicsPixmapItem(pixmap);
 		m_displayItem->setPos(m_board->sceneBoundingRect().topLeft());
 		m_sketchWidget->scene()->addItem(m_displayItem);
@@ -1134,7 +1134,7 @@ QList<ConnectorItem *> DRC::missingCopper(const QString & layerName, ViewLayer::
 
 	foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
 		SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(itemBase->viewID(), viewLayerID);
-		if (svgIdLayer == NULL) {
+		if (svgIdLayer == nullptr) {
 			DebugDialog::debug(QString("missing pin info for %1").arg(itemBase->id()));
 			missing << connectorItem;
 			continue;

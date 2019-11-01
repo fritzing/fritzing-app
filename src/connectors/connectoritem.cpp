@@ -1902,11 +1902,11 @@ double ConnectorItem::calcClipRadius() {
 	}
 
 	if (m_effectively == EffectivelyCircular) {
-		double rad = rect().width() / 2;
-		return rad - (rad / 5);
+		double rad = rect().width() / 2.0;
+		return rad - (rad / 5.0);
 	}
 
-	return 0;
+	return 0.0;
 }
 
 bool ConnectorItem::isEffectivelyCircular() {

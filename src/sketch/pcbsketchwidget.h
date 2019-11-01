@@ -163,7 +163,12 @@ protected:
 	Wire * createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 	void prereleaseTempWireForDragging(Wire*);
 	void rotatePartLabels(double degrees, QTransform &, QPointF center, QUndoCommand * parentCommand);
-	bool hasNeighbor(ConnectorItem * connectorItem, ViewLayer::ViewLayerID viewLayerID, const QRectF & r);
+	bool hasNeighbor(ConnectorItem * connectorItem, ViewLayer::ViewLayerID viewLayerID, const QRectF & r);	
+	bool canConnectSeed(QRectF boardRect,
+					 QImage * copperImage,
+					 ConnectorItem * connectorItem,
+					 ViewLayer::ViewLayerID viewLayerID,
+					 QRectF s);
 	void setGroundFillSeeds(const QString & intro);
 	bool collectGroundFillSeeds(QList<ConnectorItem *> & seeds, bool includePotential);
 	void shiftHoles();

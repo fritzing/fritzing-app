@@ -37,8 +37,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../version/version.h"
 
 static const QRegExp AaCc("[aAcCqQtTsS]");
-static const QRegExp MFinder("([mM])\\s*([0-9.]*)[\\s,]*([0-9.]*)");
-const QRegExp GerberGenerator::MultipleZs("z\\s*[^\\s]");
+//static const QRegExp MFinder("([mM])\\s*([0-9.]*)[\\s,]*([0-9.]*)");
+static const QRegExp MFinder("([mM])\\s*([+-\\.\\d]+)[\\s,]+([+-\\.\\d]+)");
+const QRegExp GerberGenerator::MultipleZs("[zZ]\\s*[^\\s]");
 
 const QString GerberGenerator::SilkTopSuffix = "_silkTop.gto";
 const QString GerberGenerator::SilkBottomSuffix = "_silkBottom.gbo";
@@ -862,7 +863,7 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 		QDomElement path = paths.at(p).toElement();
 		QString originalPath = path.attribute("d", "").trimmed();
 		if (MultipleZs.indexIn(originalPath) >= 0) {
-			QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts);
+			QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts, Qt::CaseInsensitive);
 			QString priorM;
 			MFinder.indexIn(subpaths.at(0).trimmed());
 			priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
@@ -874,7 +875,11 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 				if (d.startsWith("m", Qt::CaseSensitive)) {
 					d = priorM + d;
 				}
-				priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+				if (MFinder.cap(1) == "M") {
+					priorM = MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+				} else {
+					priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+				}
 				newPath.setAttribute("d",  d);
 				path.parentNode().appendChild(newPath);
 			}

@@ -7222,7 +7222,7 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, const LayerList & l
 	if (renderThing.selectedItems) {
 		items = scene()->selectedItems();
 	}
-	else if (renderThing.board == NULL) {
+	else if (renderThing.board == nullptr) {
 		items = scene()->items();
 	}
 	else {
@@ -7231,11 +7231,11 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, const LayerList & l
 	}
 	foreach (QGraphicsItem * item, items) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 		if (itemBase->hidden() || itemBase->layerHidden()) continue;
 		if (!renderThing.renderBlocker) {
 			Pad * pad = qobject_cast<Pad *>(itemBase);
-			if (pad != NULL && pad->copperBlocker()) {
+			if (pad != nullptr && pad->copperBlocker()) {
 				continue;
 			}
 		}
@@ -7295,9 +7295,9 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem
 	QList<ItemBase *> gotLabel;
 	foreach (QGraphicsItem * item, itemsAndLabels) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) {
+		if (itemBase == nullptr) {
 			PartLabel * partLabel = dynamic_cast<PartLabel *>(item);
-			if (partLabel == NULL) continue;
+			if (partLabel == nullptr) continue;
 
 			QString labelSvg = partLabel->owner()->makePartLabelSvg(renderThing.blackOnly, renderThing.dpi, renderThing.printerScale);
 			if (labelSvg.isEmpty()) continue;
@@ -7372,7 +7372,7 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem
 		}
 		else {
 			Wire * wire = qobject_cast<Wire *>(itemBase);
-			if (wire == NULL) continue;
+			if (wire == nullptr) continue;
 
 			//if (wire->getTrace()) {
 			//	DebugDialog::debug(QString("trace %1 %2,%3 %4,%5")

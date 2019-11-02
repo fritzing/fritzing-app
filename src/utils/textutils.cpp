@@ -903,7 +903,12 @@ QMatrix TextUtils::transformStringToMatrix(const QString & transform) {
 		return QMatrix(floats[0], floats[1], floats[2], floats[3], floats[4], floats[5]);
 	}
 	else if (transform.startsWith("scale")) {
-		return QMatrix().scale(floats[0], floats[1]);
+		if (floats.size() == 2) {
+			return QMatrix().scale(floats[0], floats[1]);
+		} else {
+			Q_ASSERT(floats.size() == 1);
+			return QMatrix().scale(floats[0], floats[0]);
+		}
 	}
 	else if (transform.startsWith("skewX")) {
 		return QMatrix().shear(floats[0], 0);

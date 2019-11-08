@@ -90,10 +90,10 @@ ViewLayer::ViewLayer(ViewLayerID viewLayerID, bool visible, double initialZ)
 	m_fromBelow = false;
 	m_viewLayerID = viewLayerID;
 	m_visible = visible;
-	m_action = NULL;
+	m_action = nullptr;
 	m_initialZFromBelow = m_initialZ = initialZ;
 	m_nextZ = 0;
-	m_parentLayer = NULL;
+	m_parentLayer = nullptr;
 	m_active = true;
 	m_includeChildLayers = true;
 }
@@ -260,14 +260,14 @@ double ViewLayer::getZIncrement() {
 
 const QString & ViewLayer::viewLayerNameFromID(ViewLayerID viewLayerID) {
 	NamePair * sp = names.value(viewLayerID);
-	if (sp == NULL) return ___emptyString___;
+	if (sp == nullptr) return ___emptyString___;
 
 	return sp->displayName;
 }
 
 const QString & ViewLayer::viewLayerXmlNameFromID(ViewLayerID viewLayerID) {
 	NamePair * sp = names.value(viewLayerID);
-	if (sp == NULL) return ___emptyString___;
+	if (sp == nullptr) return ___emptyString___;
 
 	return sp->xmlName;
 }

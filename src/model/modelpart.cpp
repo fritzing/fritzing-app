@@ -50,7 +50,7 @@ ModelPart::ModelPart(ItemType type)
 	: QObject()
 {
 	commonInit(type);
-	m_modelPartShared = NULL;
+	m_modelPartShared = nullptr;
 	m_index = m_nextIndex++;
 }
 
@@ -91,37 +91,37 @@ ModelPart::~ModelPart() {
 }
 
 const QString & ModelPart::moduleID() const {
-	if (m_modelPartShared != NULL) return m_modelPartShared->moduleID();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->moduleID();
 
 	return ___emptyString___;
 }
 
 const QString & ModelPart::label() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->label();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->label();
 
 	return ___emptyString___;
 }
 
 const QString & ModelPart::author() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->author();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->author();
 
 	return ___emptyString___;
 }
 
 const QString & ModelPart::taxonomy() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->taxonomy();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->taxonomy();
 
 	return ___emptyString___;
 }
 
 const QString & ModelPart::uri() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->uri();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->uri();
 
 	return ___emptyString___;
 }
 
 const QDate & ModelPart::date() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->date();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->date();
 
 	static QDate tempDate;
 	tempDate = QDate::currentDate();
@@ -133,7 +133,7 @@ void ModelPart::setItemType(ItemType t) {
 }
 
 void ModelPart::copy(ModelPart * modelPart) {
-	if (modelPart == NULL) return;
+	if (modelPart == nullptr) return;
 
 	m_type = modelPart->itemType();
 	m_modelPartShared = modelPart->modelPartShared();
@@ -179,7 +179,7 @@ ItemBase * ModelPart::viewItem(QGraphicsScene * scene) {
 		if (itemBase->scene() == scene) return itemBase;
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 ItemBase * ModelPart::viewItem(ViewLayer::ViewID viewID) {
@@ -187,7 +187,7 @@ ItemBase * ModelPart::viewItem(ViewLayer::ViewID viewID) {
 		if (itemBase->viewID() == viewID) return itemBase;
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & streamWriter, bool startDocument) {
@@ -214,7 +214,7 @@ void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & strea
 		streamWriter.writeStartElement("instances");
 	}
 
-	if (parent() != NULL) {  // m_viewItems.size() > 0
+	if (parent() != nullptr) {  // m_viewItems.size() > 0
 		saveInstance(streamWriter);
 	}
 
@@ -226,7 +226,7 @@ void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & strea
 	QList<QObject *>::const_iterator i;
 	for (i = children.constBegin(); i != children.constEnd(); ++i) {
 		ModelPart* mp = qobject_cast<ModelPart *>(*i);
-		if (mp == NULL) continue;
+		if (mp == nullptr) continue;
 
 		mp->saveInstances(fileName, streamWriter, false);
 	}
@@ -246,7 +246,7 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 	}
 
 	streamWriter.writeStartElement("instance");
-	if (m_modelPartShared != NULL) {
+	if (m_modelPartShared != nullptr) {
 		QString moduleIdRef = m_modelPartShared->moduleID();
 		moduleIdRef.remove(PartFactory::OldSchematicPrefix);
 		streamWriter.writeAttribute("moduleIdRef", moduleIdRef);
@@ -402,7 +402,7 @@ void ModelPart::saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument) 
 	QList<QObject *>::const_iterator i;
 	for (i = children().constBegin(); i != children().constEnd(); ++i) {
 		ModelPart * mp = qobject_cast<ModelPart *>(*i);
-		if (mp == NULL) continue;
+		if (mp == nullptr) continue;
 
 		mp->saveAsPart(streamWriter, false);
 	}
@@ -415,7 +415,7 @@ void ModelPart::saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument) 
 }
 
 void ModelPart::initConnectors(bool force) {
-	if(m_modelPartShared == NULL) return;
+	if(m_modelPartShared == nullptr) return;
 
 	if(force) {
 		foreach (Connector * connector, m_connectorHash.values()) {
@@ -446,9 +446,9 @@ void ModelPart::clearBuses() {
 void ModelPart::initBuses() {
 	foreach (Connector * connector, m_connectorHash.values()) {
 		BusShared * busShared = connector->connectorShared()->bus();
-		if (busShared != NULL) {
+		if (busShared != nullptr) {
 			Bus * bus = m_busHash.value(busShared->id());
-			if (bus == NULL) {
+			if (bus == nullptr) {
 				bus = new Bus(busShared, this);
 				m_busHash.insert(busShared->id(), bus);
 			}
@@ -509,7 +509,7 @@ const QDomElement & ModelPart::instanceDomElement() {
 
 const QString & ModelPart::fritzingVersion() {
 
-	if (m_modelPartShared != NULL) return m_modelPartShared->fritzingVersion();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->fritzingVersion();
 
 	return ___emptyString___;
 }
@@ -517,7 +517,7 @@ const QString & ModelPart::fritzingVersion() {
 const QString & ModelPart::title() {
 	if (!m_localTitle.isEmpty()) return m_localTitle;
 
-	if (m_modelPartShared != NULL) return m_modelPartShared->title();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->title();
 
 	return m_localTitle;
 }
@@ -527,49 +527,49 @@ void ModelPart::setLocalTitle(const QString & localTitle) {
 }
 
 const QString & ModelPart::version() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->version();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->version();
 
 	return ___emptyString___;
 }
 
 const QString & ModelPart::path() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->path();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->path();
 
 	return ___emptyString___;
 }
 
 const QString & ModelPart::description() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->description();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->description();
 
 	return ___emptyString___;
 }
 
 const QString & ModelPart::spice() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->spice();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->spice();
 
 	return ___emptyString___;
 }
 
 const QString & ModelPart::spiceModel() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->spiceModel();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->spiceModel();
 
 	return ___emptyString___;
 }
 
 const QString & ModelPart::url() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->url();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->url();
 
 	return ___emptyString___;
 }
 
 const QStringList & ModelPart::tags() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->tags();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->tags();
 
 	return ___emptyStringList___;
 }
 
 const QHash<QString,QString> & ModelPart::properties() const {
-	if (m_modelPartShared != NULL) return m_modelPartShared->properties();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->properties();
 
 	return ___emptyStringHash___;
 }
@@ -587,7 +587,7 @@ Bus * ModelPart::bus(const QString & busID) {
 }
 
 bool ModelPart::ignoreTerminalPoints() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->ignoreTerminalPoints();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->ignoreTerminalPoints();
 
 	return true;
 }
@@ -690,7 +690,7 @@ QList<ModelPart*> ModelPart::getAllParts() {
 	QList<QObject *>::const_iterator i;
 	for (i = children().constBegin(); i != children().constEnd(); ++i) {
 		ModelPart* mp = qobject_cast<ModelPart *>(*i);
-		if (mp == NULL) continue;
+		if (mp == nullptr) continue;
 		retval << mp;
 	}
 
@@ -702,7 +702,7 @@ QList<ModelPart*> ModelPart::getAllNonCoreParts() {
 	QList<QObject *>::const_iterator i;
 	for (i = children().constBegin(); i != children().constEnd(); ++i) {
 		ModelPart* mp = qobject_cast<ModelPart *>(*i);
-		if (mp == NULL) continue;
+		if (mp == nullptr) continue;
 
 		if(!mp->isCore()) {
 			retval << mp;
@@ -734,15 +734,15 @@ void ModelPart::setInstanceText(QString text) {
 
 void ModelPart::clearOldInstanceTitle(const QString & title)
 {
-	InstanceTitleIncrementHash * itih = NULL;
-	if (parent() == NULL) {
+	InstanceTitleIncrementHash * itih = nullptr;
+	if (parent() == nullptr) {
 		itih = &NullInstanceTitleIncrements;
 	}
 	else {
-		itih = AllInstanceTitleIncrements.value(parent(), NULL);
+		itih = AllInstanceTitleIncrements.value(parent(), nullptr);
 	}
 
-	if (itih == NULL) return;
+	if (itih == nullptr) return;
 
 	//DebugDialog::debug(QString("clearing title:%1 ix:%2").arg(title).arg(modelPart->modelIndex()));
 	QString prefix = title;
@@ -750,7 +750,7 @@ void ModelPart::clearOldInstanceTitle(const QString & title)
 	if (ix >= 0) {
 		prefix = InstanceTitleRegExp.cap(1);
 	}
-	ModelPartList * modelParts = itih->value(prefix, NULL);
+	ModelPartList * modelParts = itih->value(prefix, nullptr);
 	if (modelParts) {
 		modelParts->removeOne(this);
 		//DebugDialog::debug(QString("\tc:%1").arg(modelParts->count()));
@@ -759,20 +759,20 @@ void ModelPart::clearOldInstanceTitle(const QString & title)
 
 ModelPartList * ModelPart::ensureInstanceTitleIncrements(const QString & prefix)
 {
-	InstanceTitleIncrementHash * itih = NULL;
-	if (parent() == NULL) {
+	InstanceTitleIncrementHash * itih = nullptr;
+	if (parent() == nullptr) {
 		itih = &NullInstanceTitleIncrements;
 	}
 	else {
-		itih = AllInstanceTitleIncrements.value(parent(), NULL);
-		if (itih == NULL) {
+		itih = AllInstanceTitleIncrements.value(parent(), nullptr);
+		if (itih == nullptr) {
 			itih = new InstanceTitleIncrementHash;
 			AllInstanceTitleIncrements.insert(parent(), itih);
 		}
 	}
 
-	ModelPartList * modelParts = itih->value(prefix, NULL);
-	if (modelParts == NULL) {
+	ModelPartList * modelParts = itih->value(prefix, nullptr);
+	if (modelParts == nullptr) {
 		modelParts =  new ModelPartList;
 		itih->insert(prefix, modelParts);
 	}
@@ -812,15 +812,15 @@ void ModelPart::setInstanceTitle(QString title, bool initial) {
 }
 
 bool ModelPart::setSubpartInstanceTitle() {
-	if (m_modelPartShared == NULL) return false;
-	if (m_modelPartShared->superpart() == NULL) return false;
+	if (m_modelPartShared == nullptr) return false;
+	if (m_modelPartShared->superpart() == nullptr) return false;
 	if (m_viewItems.count() <= 0) return false;
 
 	ItemBase * itemBase = m_viewItems.last();
-	if (itemBase == NULL) return false;
+	if (itemBase == nullptr) return false;
 
 	itemBase = itemBase->superpart();
-	if (itemBase == NULL) return false;
+	if (itemBase == nullptr) return false;
 
 	QString superTitle = itemBase->instanceTitle();
 	if (superTitle.isEmpty()) return false;
@@ -856,7 +856,7 @@ QString ModelPart::getNextTitle(const QString & title) {
 	int highestSoFar = 0;
 	bool gotNull = false;
 	foreach (ModelPart * modelPart, *modelParts) {
-		if (modelPart == NULL) {
+		if (modelPart == nullptr) {
 			gotNull = true;
 			continue;
 		}
@@ -870,7 +870,7 @@ QString ModelPart::getNextTitle(const QString & title) {
 	}
 
 	if (gotNull) {
-		modelParts->removeAll(NULL);
+		modelParts->removeAll(nullptr);
 	}
 
 	//DebugDialog::debug(QString("returning increment %1, %2").arg(prefix).arg(highestSoFar + 1));
@@ -909,19 +909,19 @@ const QStringList & ModelPart::possibleFolders() {
 }
 
 const QString & ModelPart::replacedby() {
-	if (m_modelPartShared != NULL) return m_modelPartShared->replacedby();
+	if (m_modelPartShared != nullptr) return m_modelPartShared->replacedby();
 
 	return ___emptyString___;
 }
 
 bool ModelPart::isObsolete() {
-	if (m_modelPartShared != NULL) return !m_modelPartShared->replacedby().isEmpty();
+	if (m_modelPartShared != nullptr) return !m_modelPartShared->replacedby().isEmpty();
 
 	return false;
 }
 
 bool ModelPart::flippedSMD() {
-	if (m_modelPartShared != NULL) {
+	if (m_modelPartShared != nullptr) {
 		return m_modelPartShared->flippedSMD();
 	}
 
@@ -929,7 +929,7 @@ bool ModelPart::flippedSMD() {
 }
 
 bool ModelPart::needsCopper1() {
-	if (m_modelPartShared != NULL) {
+	if (m_modelPartShared != nullptr) {
 		return m_modelPartShared->needsCopper1();
 	}
 
@@ -937,25 +937,25 @@ bool ModelPart::needsCopper1() {
 }
 
 bool ModelPart::hasViewFor(ViewLayer::ViewID viewID) {
-	if (m_modelPartShared == NULL) return false;
+	if (m_modelPartShared == nullptr) return false;
 
 	return m_modelPartShared->hasViewFor(viewID);
 }
 
 bool ModelPart::hasViewFor(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
-	if (m_modelPartShared == NULL) return false;
+	if (m_modelPartShared == nullptr) return false;
 
 	return m_modelPartShared->hasViewFor(viewID, viewLayerID);
 }
 
 QString ModelPart::hasBaseNameFor(ViewLayer::ViewID viewID) {
-	if (m_modelPartShared == NULL) return ___emptyString___;
+	if (m_modelPartShared == nullptr) return ___emptyString___;
 
 	return m_modelPartShared->hasBaseNameFor(viewID);
 }
 
 const QStringList & ModelPart::displayKeys() {
-	if (m_modelPartShared == NULL) return ___emptyStringList___;
+	if (m_modelPartShared == nullptr) return ___emptyStringList___;
 
 	return m_modelPartShared->displayKeys();
 }
@@ -968,7 +968,7 @@ ModelPart::ItemType ModelPart::itemType() const
 void ModelPart::setConnectorLocalName(const QString & id, const QString & name)
 {
 	if (id.isEmpty()) return;
-	Connector * connector = m_connectorHash.value(id, NULL);
+	Connector * connector = m_connectorHash.value(id, nullptr);
 	if (connector) {
 		connector->setConnectorLocalName(name);
 	}
@@ -978,7 +978,7 @@ QString ModelPart::connectorLocalName(const QString & id)
 {
 	if (id.isEmpty()) return "";
 
-	Connector * connector = m_connectorHash.value(id, NULL);
+	Connector * connector = m_connectorHash.value(id, nullptr);
 	if (connector) {
 		return connector->connectorLocalName();
 	}

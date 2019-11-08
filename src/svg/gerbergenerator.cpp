@@ -79,14 +79,14 @@ bool pixelsCollide(QImage * image1, QImage * image2, int x1, int y1, int x2, int
 
 void GerberGenerator::exportToGerber(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes)
 {
-	if (board == NULL) {
+	if (board == nullptr) {
 		int boardCount;
 		board = sketchWidget->findSelectedBoard(boardCount);
 		if (boardCount == 0) {
 			DebugDialog::debug("board not found");
 			return;
 		}
-		if (board == NULL) {
+		if (board == nullptr) {
 			DebugDialog::debug("multiple boards found");
 			return;
 		}
@@ -173,7 +173,7 @@ int GerberGenerator::doCopper(ItemBase * board, PCBSketchWidget * sketchWidget, 
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
 	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem == NULL) continue;
+		if (connectorItem == nullptr) continue;
 		if (!connectorItem->isPath()) continue;
 		if (connectorItem->radius() == 0) continue;
 
@@ -245,7 +245,7 @@ int GerberGenerator::doDrill(ItemBase * board, PCBSketchWidget * sketchWidget, c
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
 	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem == NULL) continue;
+		if (connectorItem == nullptr) continue;
 		if (!connectorItem->isPath()) continue;
 		if (connectorItem->radius() == 0) continue;
 
@@ -360,7 +360,7 @@ bool GerberGenerator::saveEnd(const QString & layerName, const QString & exportD
 void GerberGenerator::displayMessage(const QString & message, bool displayMessageBoxes) {
 	// don't use QMessageBox if running conversion as a service
 	if (displayMessageBoxes) {
-		QMessageBox::warning(NULL, QObject::tr("Fritzing"), message);
+		QMessageBox::warning(nullptr, QObject::tr("Fritzing"), message);
 		return;
 	}
 
@@ -489,7 +489,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 	QSize imgSize(twidth + 2, theight + 2);
 	QRectF target(0, 0, twidth, theight);
 
-	QImage * clipImage = NULL;
+	QImage * clipImage = nullptr;
 	if (!clipString.isEmpty()) {
 		clipImage = new QImage(imgSize, QImage::Format_Mono);
 		clipImage->fill(0xffffffff);
@@ -685,7 +685,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 			image.save(FolderUtils::getTopLevelUserDataStorePath() + "/preclip_output.png");
 #endif
 
-			if (clipImage != NULL) {
+			if (clipImage != nullptr) {
 				// can this be done with a single blt using composition mode
 				// if not, grab a scanline instead of testing every pixel
 				for (int y = 0; y < theight; y++) {
@@ -896,7 +896,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 	QSet<ItemBase *> itemBases;
 	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 		if (itemBase == board) continue;
 		if (itemBase->itemType() == ModelPart::Wire) continue;
 
@@ -994,7 +994,7 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
 			if (!ids.contains(id)) continue;
 
 			QString pid;
-			ConnectorItem * connectorItem = NULL;
+			ConnectorItem * connectorItem = nullptr;
 			for (QDomElement parent = path.parentNode().toElement(); !parent.isNull(); parent = parent.parentNode().toElement()) {
 				pid = parent.attribute("partID");
 				if (pid.isEmpty()) continue;
@@ -1013,7 +1013,7 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
 
 				if (connectorItem) break;
 			}
-			if (connectorItem == NULL) continue;
+			if (connectorItem == nullptr) continue;
 
 			//QString string;
 			//QTextStream stream(&string);

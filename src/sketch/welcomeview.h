@@ -109,7 +109,7 @@ class WelcomeView : public QFrame
 
 public:
 	WelcomeView(QWidget * parent = 0);
-	~WelcomeView();
+	~WelcomeView() = default;
 
 	void showEvent(QShowEvent * event);
 	void dragEnterEvent(QDragEnterEvent *event);
@@ -147,20 +147,20 @@ protected slots:
 	void nextTip();
 
 protected:
-	BlogListWidget * m_blogListWidget;
-	BlogListWidget * m_projectListWidget;
-	QWidget * m_blogUberFrame;
-	QWidget * m_projectsUberFrame;
-	QLabel * m_tip;
-	QListWidget * m_recentListWidget;
-	QWidget * m_fabUberFrame;
-	QWidget * m_shopUberFrame;
-    QWidget * m_donateUberFrame;
-	QLabel * m_projectsLabel;
-	QLabel * m_blogLabel;
-	QLabel * m_fabLabel;
-	QLabel * m_shopLabel;
-    QLabel * m_donateLabel;
+	BlogListWidget * m_blogListWidget = nullptr;
+	BlogListWidget * m_projectListWidget = nullptr;
+	QWidget * m_blogUberFrame = nullptr;
+	QWidget * m_projectsUberFrame = nullptr;
+	QLabel * m_tip = nullptr;
+	QListWidget * m_recentListWidget = nullptr;
+	QWidget * m_fabUberFrame = nullptr;
+	QWidget * m_shopUberFrame = nullptr;
+    QWidget * m_donateUberFrame = nullptr;
+	QLabel * m_projectsLabel = nullptr;
+	QLabel * m_blogLabel = nullptr;
+	QLabel * m_fabLabel = nullptr;
+	QLabel * m_shopLabel = nullptr;
+    QLabel * m_donateLabel = nullptr;
 
 	static QString m_activeHeaderLabelColor;
 	static QString m_inactiveHeaderLabelColor;

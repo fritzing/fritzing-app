@@ -36,11 +36,9 @@ static QString IDString("-_-_-text-_-_-%1");
 ////////////////////////////////////////////////
 
 LayerKinPaletteItem::LayerKinPaletteItem(PaletteItemBase * chief, ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu* itemMenu)
-	: PaletteItemBase(modelPart, viewID, viewGeometry, id, itemMenu)
-
+	: PaletteItemBase(modelPart, viewID, viewGeometry, id, itemMenu), 
+    m_layerKinChief(chief), m_ok(false), m_passMouseEvents(false)
 {
-	m_passMouseEvents = false;
-	m_layerKinChief = chief;
 	setFlag(QGraphicsItem::ItemIsSelectable, true);
 	m_modelPart->removeViewItem(this);  // we don't need to save layerkin
 }

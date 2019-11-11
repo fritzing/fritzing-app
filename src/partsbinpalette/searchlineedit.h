@@ -31,8 +31,8 @@ public:
 	SearchLineEdit(QWidget * parent = nullptr);
 	~SearchLineEdit() = default;
 
-	void setDecoy(bool value) noexcept { m_decoy = value; }
-	constexpr bool decoy() noexcept { return m_decoy; }
+	void setDecoy(bool value);
+	constexpr bool decoy() const noexcept { return m_decoy; }
 
 public:
 	static void cleanup();

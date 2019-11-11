@@ -37,11 +37,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 /////////////////////////////////////
 
-FileProgressDialog::FileProgressDialog(const QString & title, int initialMaximum, QWidget * parent) : QDialog(parent)
+FileProgressDialog::FileProgressDialog(const QString & title, int initialMaximum, QWidget * parent) : QDialog(parent),
+    m_incValueMod(2)
 {
-	m_incValueMod = 2;
-
-	QSplashScreen *splash = NULL;
+	QSplashScreen *splash = nullptr;
 	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
 		splash = qobject_cast<QSplashScreen *>(widget);
 		if (splash) {
@@ -50,7 +49,7 @@ FileProgressDialog::FileProgressDialog(const QString & title, int initialMaximum
 	}
 
 	init(title, initialMaximum);
-	setModal(splash == NULL);			// OS X Lion doesn't seem to like modal dialogs during splash time
+	setModal(splash == nullptr);			// OS X Lion doesn't seem to like modal dialogs during splash time
 
 	show();
 	if (splash) {

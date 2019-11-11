@@ -511,6 +511,8 @@ MazeRouter::MazeRouter(PCBSketchWidget * sketchWidget, QGraphicsItem * board, bo
     m_spareImage(nullptr),
     m_spareImage2(nullptr),
     m_temporaryBoard(false),
+    m_costFunction(nullptr),
+    m_jumperWillFitFunction(nullptr),
     m_grid(nullptr),
     m_cleanupCount(0),
     m_netLabelIndex(-1),
@@ -2586,7 +2588,7 @@ ConnectorItem * MazeRouter::findAnchor(GridPoint gp, const QRectF & gridRect, Tr
 		double d0 = GraphicsUtils::distanceSqd(p0, center);
 		double d1 = GraphicsUtils::distanceSqd(p1, center);
 		double dx, dy, distanceSegment;
-		bool atEndpoint;
+		bool atEndpoint = false;
 		GraphicsUtils::distanceFromLine(center.x(), center.y(), p0.x(), p0.y(), p1.x(), p1.y(), dx, dy, distanceSegment, atEndpoint);
 		if (atEndpoint) {
 			DebugDialog::debug("at endpoint shouldn't happen");

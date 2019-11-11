@@ -224,7 +224,7 @@ static QString CancelledMessage;
 ///////////////////////////////////////////
 
 DRC::DRC(PCBSketchWidget * sketchWidget, ItemBase * board) :
-    m_sketchWidget(widget),
+    m_sketchWidget(sketchWidget),
     m_board(board),
     m_keepout(0.0),
     m_plusImage(nullptr),

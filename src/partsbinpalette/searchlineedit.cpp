@@ -24,25 +24,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPainter>
 #include <QImage>
 #include <QPixmap>
+#include <memory>
+std::unique_ptr<QPixmap> SearchFieldPixmap;
 
-static QPixmap * SearchFieldPixmap;
-
-SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent)
+SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent), m_decoy(true)
 {
-	SearchFieldPixmap = NULL;
-	setDecoy(true);
+	SearchFieldPixmap.reset();
 }
 
-SearchLineEdit::~SearchLineEdit()
-{
-}
 
 void SearchLineEdit::cleanup() {
-	if (SearchFieldPixmap != NULL) {
-		delete SearchFieldPixmap;
-		SearchFieldPixmap = NULL;
-	}
-
+	SearchFieldPixmap.reset();
 }
 
 void SearchLineEdit::mousePressEvent(QMouseEvent * event) {
@@ -52,8 +44,8 @@ void SearchLineEdit::mousePressEvent(QMouseEvent * event) {
 
 void SearchLineEdit::paintEvent(QPaintEvent * event) {
 	QLineEdit::paintEvent(event);
-	if (SearchFieldPixmap == NULL) {
-		SearchFieldPixmap = new QPixmap(":/resources/images/icons/searchField.png");
+	if (!SearchFieldPixmap) {
+		SearchFieldPixmap.reset(new QPixmap(":/resources/images/icons/searchField.png"));
 	}
 	if (SearchFieldPixmap == NULL) return;
 	if (SearchFieldPixmap->isNull()) return;
@@ -99,6 +91,3 @@ void SearchLineEdit::setDecoy(bool d) {
 	setCursor(Qt::IBeamCursor);
 }
 
-bool SearchLineEdit::decoy() {
-	return m_decoy;
-}

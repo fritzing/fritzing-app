@@ -36,15 +36,19 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../connectors/connectoritem.h"
 #include "../commands.h"
 
+class PCBSketchWidget;
+class SymbolPaletteItem;
+class JumperItem;
+class Via;
 class Autorouter : public QObject
 {
 	Q_OBJECT
 
 public:
-	Autorouter(class PCBSketchWidget *);
-	virtual ~Autorouter(void);
+	Autorouter(PCBSketchWidget *);
+	virtual ~Autorouter() = default;
 
-	virtual void start()=0;
+	virtual void start() = 0;
 
 public:
 	static const QString MaxCyclesName;
@@ -55,9 +59,9 @@ protected:
 	virtual void updateRoutingStatus();
 	virtual class TraceWire * drawOneTrace(QPointF fromPos, QPointF toPos, double width, ViewLayer::ViewLayerPlacement);
 	void initUndo(QUndoCommand * parentCommand);
-	void addUndoConnection(bool connect, class SymbolPaletteItem *, QUndoCommand * parentCommand);
-	void addUndoConnection(bool connect, class JumperItem *, QUndoCommand * parentCommand);
-	void addUndoConnection(bool connect, class Via *, QUndoCommand * parentCommand);
+	void addUndoConnection(bool connect, SymbolPaletteItem *, QUndoCommand * parentCommand);
+	void addUndoConnection(bool connect, JumperItem *, QUndoCommand * parentCommand);
+	void addUndoConnection(bool connect, Via *, QUndoCommand * parentCommand);
 	void addUndoConnection(bool connect, TraceWire *, QUndoCommand * parentCommand);
 	void addUndoConnection(bool connect, ConnectorItem *, BaseCommand::CrossViewType, QUndoCommand * parentCommand);
 	void restoreOriginalState(QUndoCommand * parentCommand);
@@ -86,20 +90,20 @@ signals:
 	void disableButtons();
 
 protected:
-	class PCBSketchWidget * m_sketchWidget;
-	QList< QList<class ConnectorItem *>* > m_allPartConnectorItems;
-	bool m_cancelled;
-	bool m_cancelTrace;
-	bool m_stopTracing;
-	bool m_useBest;
-	bool m_bothSidesNow;
-	int m_maximumProgressPart;
-	int m_currentProgressPart;
-	QGraphicsItem * m_board;
-	int m_maxCycles;
-	double m_keepoutPixels;
+	PCBSketchWidget * m_sketchWidget = nullptr;
+	QList< QList<ConnectorItem*>* > m_allPartConnectorItems;
+	bool m_cancelled = false;
+	bool m_cancelTrace = false;
+	bool m_stopTracing = false;
+	bool m_useBest = false;
+	bool m_bothSidesNow = false;
+	int m_maximumProgressPart = 0;
+	int m_currentProgressPart = 0;
+	QGraphicsItem * m_board = nullptr;
+	int m_maxCycles = 0;
+	double m_keepoutPixels = 0.0;
 	QRectF m_maxRect;
-	bool m_pcbType;
+	bool m_pcbType = false;
 };
 
 #endif

@@ -183,7 +183,7 @@ class MazeRouter : public Autorouter
 
 public:
 	MazeRouter(class PCBSketchWidget *, QGraphicsItem * board, bool adjustIf);
-	~MazeRouter(void);
+	~MazeRouter();
 
 	void start();
 
@@ -249,15 +249,15 @@ protected:
 	int m_halfGridJumperSize;
 	double m_gridPixels;
 	double m_standardWireWidth;
-	QImage * m_displayImage[2];
+	QImage * m_displayImage[2] = { nullptr, nullptr };
 	QImage * m_boardImage;
 	QImage * m_spareImage;
 	QImage * m_spareImage2;
-	QGraphicsPixmapItem * m_displayItem[2];
+	QGraphicsPixmapItem * m_displayItem[2] = { nullptr, nullptr };
 	bool m_temporaryBoard;
 	CostFunction m_costFunction;
 	JumperWillFitFunction m_jumperWillFitFunction;
-	uint m_traceColors[2];
+	uint m_traceColors[2] = { 0 };
 	Grid * m_grid;
 	int m_cleanupCount;
 	int m_netLabelIndex;

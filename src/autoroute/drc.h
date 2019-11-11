@@ -54,7 +54,7 @@ class DRC : public QObject
 
 public:
 	DRC(class PCBSketchWidget *, class ItemBase * board);
-	virtual ~DRC(void);
+	virtual ~DRC();
 
 	QStringList start(bool showOkMessage, double keepoutMils);
 

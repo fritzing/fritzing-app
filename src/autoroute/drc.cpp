@@ -237,7 +237,7 @@ DRC::DRC(PCBSketchWidget * sketchWidget, ItemBase * board) :
 	CancelledMessage = tr("DRC was cancelled.");
 }
 
-DRC::~DRC(void)
+DRC::~DRC()
 {
 	if (m_displayItem) {
 		delete m_displayItem;

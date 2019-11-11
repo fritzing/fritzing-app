@@ -927,8 +927,10 @@ QPointF ConnectorItem::sceneAdjustedTerminalPoint(ConnectorItem * connectee) {
 				}
 				else {
 					QPointF current = this->mapToScene(QPointF(el));
-					double candidateX, candidateY, candidateDistance;
-					bool atEndpoint;
+					double candidateX = 0.0;
+                    double candidateY = 0.0;
+                    double candidateDistance = 0.0;
+					bool atEndpoint = false;
 					GraphicsUtils::distanceFromLine(anchor.x(), anchor.y(), prev.x(), prev.y(), current.x(), current.y(),
 					                                candidateX, candidateY, candidateDistance, atEndpoint);
 					if (candidateDistance < newDistance) {
@@ -2781,7 +2783,7 @@ void ConnectorItem::updateWireCursor(Qt::KeyboardModifiers modifiers)
 
 void ConnectorItem::updateLegCursor(QPointF p, Qt::KeyboardModifiers modifiers)
 {
-	int bendpointIndex;
+	int bendpointIndex = 0;
 	CursorLocation cursorLocation = findLocation(p, bendpointIndex);
 	QCursor cursor;
 	switch (cursorLocation) {

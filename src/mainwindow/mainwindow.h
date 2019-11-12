@@ -674,124 +674,124 @@ protected:
 	//QToolBar *m_fileToolBar;
 	//QToolBar *m_editToolBar;
 
-	QAction *m_raiseWindowAct;
+	QAction *m_raiseWindowAct = nullptr;
 
 	// Fritzing Menu
-	QMenu *m_fritzingMenu;
-	QAction *m_aboutAct;
-	QAction *m_preferencesAct;
-	QAction *m_quitAct;
-	QAction *m_exceptionAct;
+	QMenu *m_fritzingMenu = nullptr;
+	QAction *m_aboutAct = nullptr;
+	QAction *m_preferencesAct = nullptr;
+	QAction *m_quitAct = nullptr;
+	QAction *m_exceptionAct = nullptr;
 
 	// File Menu
 	enum { MaxRecentFiles = 10 };
 
-	QMenu *m_fileMenu;
-	QAction *m_newAct;
-	QAction *m_openAct;
-	QAction *m_revertAct;
-	QMenu *m_openRecentFileMenu;
-	QAction *m_openRecentFileActs[MaxRecentFiles];
-	QMenu *m_openExampleMenu;
-	QAction *m_saveAct;
-	QAction *m_saveAsAct;
-	QAction *m_pageSetupAct;
-	QAction *m_printAct;
-	QAction *m_shareOnlineAct;
+	QMenu *m_fileMenu = nullptr;
+	QAction *m_newAct = nullptr;
+	QAction *m_openAct = nullptr;
+	QAction *m_revertAct = nullptr;
+	QMenu *m_openRecentFileMenu = nullptr;
+	QAction *m_openRecentFileActs[MaxRecentFiles] = { nullptr };
+	QMenu *m_openExampleMenu = nullptr;
+	QAction *m_saveAct = nullptr;
+	QAction *m_saveAsAct = nullptr;
+	QAction *m_pageSetupAct = nullptr;
+	QAction *m_printAct = nullptr;
+	QAction *m_shareOnlineAct = nullptr;
 
-	QAction * m_launchExternalProcessAct;
+	QAction * m_launchExternalProcessAct = nullptr;
 
-	QMenu *m_zOrderMenu;
-	QMenu *m_zOrderWireMenu;
-	QAction *m_bringToFrontAct;
-	QAction *m_bringForwardAct;
-	QAction *m_sendBackwardAct;
-	QAction *m_sendToBackAct;
-	class WireAction *m_bringToFrontWireAct;
-	class WireAction *m_bringForwardWireAct;
-	class WireAction *m_sendBackwardWireAct;
-	class WireAction *m_sendToBackWireAct;
+	QMenu *m_zOrderMenu = nullptr;
+	QMenu *m_zOrderWireMenu = nullptr;
+	QAction *m_bringToFrontAct = nullptr;
+	QAction *m_bringForwardAct = nullptr;
+	QAction *m_sendBackwardAct = nullptr;
+	QAction *m_sendToBackAct = nullptr;
+	class WireAction *m_bringToFrontWireAct = nullptr;
+	class WireAction *m_bringForwardWireAct = nullptr;
+	class WireAction *m_sendBackwardWireAct = nullptr;
+	class WireAction *m_sendToBackWireAct = nullptr;
 
-	QMenu *m_alignMenu;
-	QAction * m_alignVerticalCenterAct;
-	QAction * m_alignHorizontalCenterAct;
-	QAction * m_alignTopAct;
-	QAction * m_alignLeftAct;
-	QAction * m_alignBottomAct;
-	QAction * m_alignRightAct;
+	QMenu *m_alignMenu = nullptr;
+	QAction * m_alignVerticalCenterAct = nullptr;
+	QAction * m_alignHorizontalCenterAct = nullptr;
+	QAction * m_alignTopAct = nullptr;
+	QAction * m_alignLeftAct = nullptr;
+	QAction * m_alignBottomAct = nullptr;
+	QAction * m_alignRightAct = nullptr;
 
 	// Export Menu
-	QMenu *m_exportMenu;
-	QAction *m_exportJpgAct;
-	QAction *m_exportPngAct;
-	QAction *m_exportPdfAct;
-	QAction *m_exportEagleAct;
-	QAction *m_exportGerberAct;
-	QAction *m_exportEtchablePdfAct;
-	QAction *m_exportEtchableSvgAct;
-	QAction *m_exportBomAct;
-	QAction *m_exportNetlistAct;
-	QAction *m_exportSpiceNetlistAct;
-	QAction *m_exportSvgAct;
+	QMenu *m_exportMenu = nullptr;
+	QAction *m_exportJpgAct = nullptr;
+	QAction *m_exportPngAct = nullptr;
+	QAction *m_exportPdfAct = nullptr;
+	QAction *m_exportEagleAct = nullptr;
+	QAction *m_exportGerberAct = nullptr;
+	QAction *m_exportEtchablePdfAct = nullptr;
+	QAction *m_exportEtchableSvgAct = nullptr;
+	QAction *m_exportBomAct = nullptr;
+	QAction *m_exportNetlistAct = nullptr;
+	QAction *m_exportSpiceNetlistAct = nullptr;
+	QAction *m_exportSvgAct = nullptr;
 
 	// Edit Menu
-	QMenu *m_editMenu;
-	QAction *m_undoAct;
-	QAction *m_redoAct;
-	QAction *m_cutAct;
-	QAction *m_copyAct;
-	QAction *m_pasteAct;
-	QAction *m_pasteInPlaceAct;
-	QAction *m_duplicateAct;
-	QAction *m_deleteAct;
-	QAction *m_deleteMinusAct;
-	class WireAction *m_deleteWireAct;
-	class WireAction *m_deleteWireMinusAct;
-	QAction *m_selectAllAct;
-	QAction *m_deselectAct;
-	QAction *m_addNoteAct;
+	QMenu *m_editMenu = nullptr;
+	QAction *m_undoAct = nullptr;
+	QAction *m_redoAct = nullptr;
+	QAction *m_cutAct = nullptr;
+	QAction *m_copyAct = nullptr;
+	QAction *m_pasteAct = nullptr;
+	QAction *m_pasteInPlaceAct = nullptr;
+	QAction *m_duplicateAct = nullptr;
+	QAction *m_deleteAct = nullptr;
+	QAction *m_deleteMinusAct = nullptr;
+	class WireAction *m_deleteWireAct = nullptr;
+	class WireAction *m_deleteWireMinusAct = nullptr;
+	QAction *m_selectAllAct = nullptr;
+	QAction *m_deselectAct = nullptr;
+	QAction *m_addNoteAct = nullptr;
 
 	// Part Menu
-	QMenu *m_partMenu;
-	QAction *m_infoViewOnHoverAction;
-	QAction *m_exportNormalizedSvgAction;
-	QAction *m_exportNormalizedFlattenedSvgAction;
-	QAction *m_dumpAllPartsAction;
-	QAction *m_testConnectorsAction;
-	QAction *m_openInPartsEditorNewAct;
-	QMenu *m_addToBinMenu;
+	QMenu *m_partMenu = nullptr;
+	QAction *m_infoViewOnHoverAction = nullptr;
+	QAction *m_exportNormalizedSvgAction = nullptr;
+	QAction *m_exportNormalizedFlattenedSvgAction = nullptr;
+	QAction *m_dumpAllPartsAction = nullptr;
+	QAction *m_testConnectorsAction = nullptr;
+	QAction *m_openInPartsEditorNewAct = nullptr;
+	QMenu *m_addToBinMenu = nullptr;
 
 
-	QMenu *m_rotateMenu;
-	QAction *m_rotate90cwAct;
-	QAction *m_rotate180Act;
-	QAction *m_rotate90ccwAct;
-	QAction *m_rotate45ccwAct;
-	QAction *m_rotate45cwAct;
+	QMenu *m_rotateMenu = nullptr;
+	QAction *m_rotate90cwAct = nullptr;
+	QAction *m_rotate180Act = nullptr;
+	QAction *m_rotate90ccwAct = nullptr;
+	QAction *m_rotate45ccwAct = nullptr;
+	QAction *m_rotate45cwAct = nullptr;
 
-	QAction *m_moveLockAct;
-	QAction *m_stickyAct;
-	QAction *m_selectMoveLockAct;
-	QAction *m_flipHorizontalAct;
-	QAction *m_flipVerticalAct;
-	QAction *m_showPartLabelAct;
-	QAction *m_saveBundledPart;
-	QAction *m_disconnectAllAct;
-	QAction *m_selectAllObsoleteAct;
-	QAction *m_swapObsoleteAct;
-	QAction *m_findPartInSketchAct;
-	QAction * m_openProgramWindowAct;
+	QAction *m_moveLockAct = nullptr;
+	QAction *m_stickyAct = nullptr;
+	QAction *m_selectMoveLockAct = nullptr;
+	QAction *m_flipHorizontalAct = nullptr;
+	QAction *m_flipVerticalAct = nullptr;
+	QAction *m_showPartLabelAct = nullptr;
+	QAction *m_saveBundledPart = nullptr;
+	QAction *m_disconnectAllAct = nullptr;
+	QAction *m_selectAllObsoleteAct = nullptr;
+	QAction *m_swapObsoleteAct = nullptr;
+	QAction *m_findPartInSketchAct = nullptr;
+	QAction * m_openProgramWindowAct = nullptr;
 
-	QAction *m_addBendpointAct;
-	QAction *m_convertToViaAct;
-	QAction *m_convertToBendpointAct;
-	QAction * m_convertToBendpointSeparator;
-	QAction *m_flattenCurveAct;
-	QAction *m_showAllLayersAct;
-	QAction *m_hideAllLayersAct;
+	QAction *m_addBendpointAct = nullptr;
+	QAction *m_convertToViaAct = nullptr;
+	QAction *m_convertToBendpointAct = nullptr;
+	QAction * m_convertToBendpointSeparator = nullptr;
+	QAction *m_flattenCurveAct = nullptr;
+	QAction *m_showAllLayersAct = nullptr;
+	QAction *m_hideAllLayersAct = nullptr;
 
-	QAction *m_hidePartSilkscreenAct;
-	QAction *m_regeneratePartsDatabaseAct;
+	QAction *m_hidePartSilkscreenAct = nullptr;
+	QAction *m_regeneratePartsDatabaseAct = nullptr;
 
 
 	// View Menu
@@ -818,73 +818,73 @@ protected:
 	int m_numFixedActionsInViewMenu;
 
 	// Window Menu
-	QMenu *m_windowMenu;
-	QAction *m_minimizeAct;
-	QAction *m_togglePartLibraryAct;
-	QAction *m_toggleInfoAct;
-	QAction *m_toggleUndoHistoryAct;
-	QAction *m_toggleDebuggerOutputAct;
-	QAction *m_windowMenuSeparator;
+	QMenu *m_windowMenu = nullptr;
+	QAction *m_minimizeAct = nullptr;
+	QAction *m_togglePartLibraryAct = nullptr;
+	QAction *m_toggleInfoAct = nullptr;
+	QAction *m_toggleUndoHistoryAct = nullptr;
+	QAction *m_toggleDebuggerOutputAct = nullptr;
+	QAction *m_windowMenuSeparator = nullptr;
 
 	// Trace Menu
-	QMenu *m_pcbTraceMenu;
-	QMenu *m_schematicTraceMenu;
-	QMenu *m_breadboardTraceMenu;
-	QAction *m_newAutorouteAct;
-	QAction *m_orderFabAct;
-	QAction *m_activeLayerTopAct;
-	QAction *m_activeLayerBottomAct;
-	QAction *m_activeLayerBothAct;
-	QAction *m_viewFromBelowToggleAct;
-	QAction *m_viewFromBelowAct;
-	QAction *m_viewFromAboveAct;
-	class WireAction *m_createTraceWireAct;
-	class WireAction *m_createWireWireAct;
-	QAction *m_createJumperAct;
-	QAction *m_changeTraceLayerAct;
-	class WireAction *m_changeTraceLayerWireAct;
-	QAction *m_excludeFromAutorouteAct;
-	class WireAction *m_excludeFromAutorouteWireAct;
-	QAction * m_showUnroutedAct;
-	QAction *m_selectAllTracesAct;
-	QAction *m_selectAllWiresAct;
-	QAction *m_selectAllCopperFillAct;
-	QAction *m_updateRoutingStatusAct;
-	QAction *m_selectAllExcludedTracesAct;
-	QAction *m_selectAllIncludedTracesAct;
-	QAction *m_selectAllJumperItemsAct;
-	QAction *m_selectAllViasAct;
-	QAction *m_groundFillAct;
-	QAction *m_removeGroundFillAct;
-	QAction *m_copperFillAct;
-	class ConnectorItemAction *m_setOneGroundFillSeedAct;
-	QAction *m_setGroundFillSeedsAct;
-	QAction *m_clearGroundFillSeedsAct;
-	QAction *m_setGroundFillKeepoutAct;
-	QAction *m_newDesignRulesCheckAct;
-	QAction *m_autorouterSettingsAct;
-	QAction *m_fabQuoteAct;
-	QAction *m_tidyWiresAct;
-	QAction *m_checkLoadedTracesAct;
+	QMenu *m_pcbTraceMenu = nullptr;
+	QMenu *m_schematicTraceMenu = nullptr;
+	QMenu *m_breadboardTraceMenu = nullptr;
+	QAction *m_newAutorouteAct = nullptr;
+	QAction *m_orderFabAct = nullptr;
+	QAction *m_activeLayerTopAct = nullptr;
+	QAction *m_activeLayerBottomAct = nullptr;
+	QAction *m_activeLayerBothAct = nullptr;
+	QAction *m_viewFromBelowToggleAct = nullptr;
+	QAction *m_viewFromBelowAct = nullptr;
+	QAction *m_viewFromAboveAct = nullptr;
+	class WireAction *m_createTraceWireAct = nullptr;
+	class WireAction *m_createWireWireAct = nullptr;
+	QAction *m_createJumperAct = nullptr;
+	QAction *m_changeTraceLayerAct = nullptr;
+	class WireAction *m_changeTraceLayerWireAct = nullptr;
+	QAction *m_excludeFromAutorouteAct = nullptr;
+	class WireAction *m_excludeFromAutorouteWireAct = nullptr;
+	QAction * m_showUnroutedAct = nullptr;
+	QAction *m_selectAllTracesAct = nullptr;
+	QAction *m_selectAllWiresAct = nullptr;
+	QAction *m_selectAllCopperFillAct = nullptr;
+	QAction *m_updateRoutingStatusAct = nullptr;
+	QAction *m_selectAllExcludedTracesAct = nullptr;
+	QAction *m_selectAllIncludedTracesAct = nullptr;
+	QAction *m_selectAllJumperItemsAct = nullptr;
+	QAction *m_selectAllViasAct = nullptr;
+	QAction *m_groundFillAct = nullptr;
+	QAction *m_removeGroundFillAct = nullptr;
+	QAction *m_copperFillAct = nullptr;
+	class ConnectorItemAction *m_setOneGroundFillSeedAct = nullptr;
+	QAction *m_setGroundFillSeedsAct = nullptr;
+	QAction *m_clearGroundFillSeedsAct = nullptr;
+	QAction *m_setGroundFillKeepoutAct = nullptr;
+	QAction *m_newDesignRulesCheckAct = nullptr;
+	QAction *m_autorouterSettingsAct = nullptr;
+	QAction *m_fabQuoteAct = nullptr;
+	QAction *m_tidyWiresAct = nullptr;
+	QAction *m_checkLoadedTracesAct = nullptr;
 
 	// Help Menu
-	QMenu *m_helpMenu;
-	QAction *m_openHelpAct;
-	QAction *m_openDonateAct;
-	QAction *m_examplesAct;
-	QAction *m_partsRefAct;
-	QAction *m_visitFritzingDotOrgAct;
-	QAction *m_checkForUpdatesAct;
-	QAction *m_aboutQtAct;
-	QAction *m_reportBugAct;
-	QAction *m_enableDebugAct;
-	QAction *m_partsEditorHelpAct;
-	QAction *m_tipsAndTricksAct;
-	QAction *m_firstTimeHelpAct;
+	QMenu *m_helpMenu = nullptr;
+	QAction *m_openHelpAct = nullptr;
+	QAction *m_openDonateAct = nullptr;
+	QAction *m_examplesAct = nullptr;
+	QAction *m_partsRefAct = nullptr;
+	QAction *m_visitFritzingDotOrgAct = nullptr;
+	QAction *m_checkForUpdatesAct = nullptr;
+	QAction *m_aboutQtAct = nullptr;
+	QAction *m_reportBugAct = nullptr;
+	QAction *m_enableDebugAct = nullptr;
+	QAction *m_partsEditorHelpAct = nullptr;
+	QAction *m_tipsAndTricksAct = nullptr;
+	QAction *m_firstTimeHelpAct = nullptr;
 
 	// Wire Color Menu
-	QMenu * m_breadboardWireColorMenu;
-	QMenu * m_schematicWireColorMenu;
+	QMenu * m_breadboardWireColorMenu = nullptr;
+	QMenu * m_schematicWireColorMenu = nullptr;
 
 	// Dot icons
 	QIcon m_dotIcon;

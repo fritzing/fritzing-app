@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSet>
 #include <qmath.h>
 
-static const double MaskClearance = 0.005;  // 5 mils clearance
+constexpr double MaskClearance = 0.005;  // 5 mils clearance
 
 bool fillNotStroke(QDomElement & element, SVG2gerber::ForWhy forWhy) {
 	if (forWhy == SVG2gerber::ForOutline) return false;
@@ -46,10 +46,6 @@ bool fillNotStroke(QDomElement & element, SVG2gerber::ForWhy forWhy) {
 }
 
 //TODO: currently only supports one board per sketch (i.e. multiple board outlines will mess you up)
-
-SVG2gerber::SVG2gerber()
-{
-}
 
 int SVG2gerber::convert(const QString & svgStr, bool doubleSided, const QString & mainLayerName, ForWhy forWhy, QSizeF boardSize)
 {

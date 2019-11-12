@@ -892,11 +892,11 @@ protected:
 
 	QList<SketchToolButton*> m_rotateButtons;
 	QList<SketchToolButton*> m_flipButtons;
-	QStackedWidget * m_activeLayerButtonWidget;
-	QStackedWidget * m_viewFromButtonWidget;
+	QStackedWidget * m_activeLayerButtonWidget = nullptr;
+	QStackedWidget * m_viewFromButtonWidget = nullptr;
 
-	bool m_comboboxChanged;
-	bool m_restarting;
+	bool m_comboboxChanged = false;
+	bool m_restarting = false;
 
 	QStringList m_alienFiles;
 	QString m_alienPartsMsg;
@@ -921,35 +921,35 @@ protected:
 	QString m_backupFileNameAndPath;
 	QTimer m_autosaveTimer;
 	QTimer m_fireQuoteTimer;
-	bool m_autosaveNeeded;
-	bool m_backingUp;
+	bool m_autosaveNeeded = false;
+	bool m_backingUp = false;
 	QString m_bundledSketchName;
 	RoutingStatus m_routingStatus;
-	bool m_orderFabEnabled;
-	bool m_closeSilently;
+	bool m_orderFabEnabled = false;
+	bool m_closeSilently = false;
 	QString m_fzzFolder;
 	QHash<QString, struct LockedFile *> m_fzzFiles;
 	SwapTimer m_swapTimer;
 	QPointer<Wire> m_activeWire;
 	QPointer<ConnectorItem> m_activeConnectorItem;
-	bool m_addedToTemp;
+	bool m_addedToTemp = false;
 	QString m_settingsPrefix;
-	bool m_convertedSchematic;
-	bool m_useOldSchematic;
-	bool m_noSchematicConversion;
-	int m_initialTab;
+	bool m_convertedSchematic = false;
+	bool m_useOldSchematic = false;
+	bool m_noSchematicConversion = false;
+	int m_initialTab = 0;
 
 	// dock management
 	QList<FDockWidget*> m_docks;
-	FDockWidget* m_topDock;
-	FDockWidget* m_bottomDock;
+	FDockWidget* m_topDock = nullptr;
+	FDockWidget* m_bottomDock = nullptr;
 	QString m_oldTopDockStyle;
 	QString m_oldBottomDockStyle;
-	bool m_dontKeepMargins;
+	bool m_dontKeepMargins = false;
 	QPointer<QDialog> m_rolloverQuoteDialog;
-	bool m_obsoleteSMDOrientation;
-	QWidget * m_orderFabButton;
-	int m_fireQuoteDelay;
+	bool m_obsoleteSMDOrientation = false;
+	QWidget * m_orderFabButton = nullptr;
+	int m_fireQuoteDelay = 0;
 
 public:
 	static int AutosaveTimeoutMinutes;

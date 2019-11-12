@@ -795,25 +795,25 @@ protected:
 
 
 	// View Menu
-	QMenu *m_viewMenu;
-	QAction *m_zoomInAct;
-	QAction *m_zoomInShortcut;
-	QAction *m_zoomOutAct;
-	QAction *m_fitInWindowAct;
-	QAction *m_actualSizeAct;
-	QAction *m_100PercentSizeAct;
-	QAction *m_alignToGridAct;
-	QAction *m_showGridAct;
-	QAction *m_setGridSizeAct;
-	QAction *m_setBackgroundColorAct;
-	QAction *m_colorWiresByLengthAct;
-	QAction *m_showWelcomeAct;
-	QAction *m_showBreadboardAct;
-	QAction *m_showSchematicAct;
-	QAction *m_showProgramAct;
-	QAction *m_showPCBAct;
-	QAction *m_showPartsBinIconViewAct;
-	QAction *m_showPartsBinListViewAct;
+	QMenu *m_viewMenu = nullptr;
+	QAction *m_zoomInAct = nullptr;
+	QAction *m_zoomInShortcut = nullptr;
+	QAction *m_zoomOutAct = nullptr;
+	QAction *m_fitInWindowAct = nullptr;
+	QAction *m_actualSizeAct = nullptr;
+	QAction *m_100PercentSizeAct = nullptr;
+	QAction *m_alignToGridAct = nullptr;
+	QAction *m_showGridAct = nullptr;
+	QAction *m_setGridSizeAct = nullptr;
+	QAction *m_setBackgroundColorAct = nullptr;
+	QAction *m_colorWiresByLengthAct = nullptr;
+	QAction *m_showWelcomeAct = nullptr;
+	QAction *m_showBreadboardAct = nullptr;
+	QAction *m_showSchematicAct = nullptr;
+	QAction *m_showProgramAct = nullptr;
+	QAction *m_showPCBAct = nullptr;
+	QAction *m_showPartsBinIconViewAct = nullptr;
+	QAction *m_showPartsBinListViewAct = nullptr;
 	//QAction *m_toggleToolbarAct;
 	int m_numFixedActionsInViewMenu;
 

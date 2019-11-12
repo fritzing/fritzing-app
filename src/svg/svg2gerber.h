@@ -32,7 +32,7 @@ class SVG2gerber : public QObject
 	Q_OBJECT
 
 public:
-	SVG2gerber();
+	SVG2gerber() = default;
 
 public:
 	enum ForWhy {
@@ -56,8 +56,8 @@ protected:
 	QMultiHash<QString, QString> m_platedApertures;
 	QMultiHash<QString, QString> m_holeApertures;
 
-	double m_pathstart_x;
-	double m_pathstart_y;
+	double m_pathstart_x = 0.0;
+	double m_pathstart_y = 0.0;
 
 protected:
 

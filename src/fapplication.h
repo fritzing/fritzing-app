@@ -71,8 +71,8 @@ protected:
 	void writeResponse(QTcpSocket *, int code, const QString & codeString, const QString & mimeType, const QString & message);
 
 protected:
-	int m_socketDescriptor;
-	bool m_done;
+	int m_socketDescriptor = 0;
+	bool m_done = false;
 
 protected:
 	static QMutex m_busy;

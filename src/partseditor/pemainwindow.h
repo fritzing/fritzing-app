@@ -235,23 +235,23 @@ protected:
 	QDomDocument m_schematicDocument;
 	QDomDocument m_pcbDocument;
 
-	QAction * m_showMetadataViewAct;
-	QAction * m_showConnectorsViewAct;
-	QAction * m_showIconAct;
-	QAction * m_showInOSAct;
-	WireAction * m_deleteBusConnectionAct;
-	QAction * m_reuseBreadboardAct;
-	QAction * m_reuseSchematicAct;
-	QAction * m_reusePCBAct;
-	QAction * m_hideOtherViewsAct;
-	QAction * m_convertToTenthAct;
+	QAction * m_showMetadataViewAct = nullptr;
+	QAction * m_showConnectorsViewAct = nullptr;
+	QAction * m_showIconAct = nullptr;
+	QAction * m_showInOSAct = nullptr;
+	WireAction * m_deleteBusConnectionAct = nullptr;
+	QAction * m_reuseBreadboardAct = nullptr;
+	QAction * m_reuseSchematicAct = nullptr;
+	QAction * m_reusePCBAct = nullptr;
+	QAction * m_hideOtherViewsAct = nullptr;
+	QAction * m_convertToTenthAct = nullptr;
 
 	QPointer<SketchAreaWidget> m_iconWidget;
 	QPointer<IconSketchWidget> m_iconGraphicsView;
-	PEMetadataView * m_metadataView;
-	PEConnectorsView * m_connectorsView;
-	PEToolView * m_peToolView;
-	PESvgView * m_peSvgView;
+	PEMetadataView * m_metadataView = nullptr;
+	PEConnectorsView * m_connectorsView = nullptr;
+	PEToolView * m_peToolView = nullptr;
+	PESvgView * m_peSvgView = nullptr;
 	QString m_guid;
 	QString m_prefix;
 	int m_fileIndex;

@@ -40,7 +40,7 @@ public:
 	void set_cp0(QPointF);
 	void set_cp1(QPointF);
 	void set_endpoints(QPointF, QPointF);
-	bool isEmpty() const;
+	constexpr bool isEmpty() const noexcept { return m_isEmpty; }
 	void clear();
 	void write(QXmlStreamWriter &);
 	bool operator==(const Bezier &) const;
@@ -58,7 +58,7 @@ public:
 	void translateToZero();
 	void translate(QPointF);
 	Bezier join(const Bezier * other) const;
-	bool drag0();
+	constexpr bool drag0() const noexcept { return m_drag_cp0; }
 
 protected:
 	double cubicF(double t) const;
@@ -73,7 +73,7 @@ protected:
 	QPointF m_cp0;
 	QPointF m_cp1;
 	bool m_isEmpty;
-	bool m_drag_cp0;
+	bool m_drag_cp0 = false;
 };
 
 #endif

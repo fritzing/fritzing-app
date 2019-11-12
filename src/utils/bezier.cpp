@@ -122,22 +122,11 @@ double Cvalues[25][24] = {
 
 /////////////////////////////////////////////
 
-Bezier::Bezier(QPointF cp0, QPointF cp1)
+Bezier::Bezier(QPointF cp0, QPointF cp1) : m_cp0(cp0), m_cp1(cp1), m_isEmpty(false)
 {
-	m_cp0 = cp0;
-	m_cp1 = cp1;
-	m_isEmpty = false;
 }
 
-Bezier::Bezier()
-{
-	m_isEmpty = true;
-}
-
-bool Bezier::isEmpty() const
-{
-	return m_isEmpty;
-}
+Bezier::Bezier() : m_isEmpty(true) { }
 
 void Bezier::clear()
 {
@@ -438,9 +427,4 @@ Bezier Bezier::join(const Bezier * other) const
 	}
 
 	return bezier;
-}
-
-bool Bezier::drag0()
-{
-	return m_drag_cp0;
 }

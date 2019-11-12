@@ -642,8 +642,8 @@ protected:
 
 protected:
 
-	QUndoGroup *m_undoGroup;
-	QUndoView *m_undoView;
+	QUndoGroup *m_undoGroup = nullptr;
+	QUndoView *m_undoView = nullptr;
 
 	QPointer<SketchAreaWidget> m_breadboardWidget;
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;
@@ -655,7 +655,7 @@ protected:
 	QPointer<class PCBSketchWidget> m_pcbGraphicsView;
 
 	QPointer<SketchAreaWidget> m_welcomeWidget;
-	class WelcomeView * m_welcomeView;
+	class WelcomeView * m_welcomeView = nullptr;
 
 	QPointer<class BinManager> m_binManager;
 	QPointer<QWidget> m_tabWidget;
@@ -664,9 +664,9 @@ protected:
 	QPointer<class HtmlInfoView> m_infoView;
 	QPointer<QToolBar> m_toolbar;
 
-	bool m_closing;
-	bool m_dontClose;
-	bool m_firstOpen;
+	bool m_closing = false;
+	bool m_dontClose = false;
+	bool m_firstOpen = false;
 
 	QPointer<SketchAreaWidget> m_currentWidget;
 	QPointer<SketchWidget> m_currentGraphicsView;
@@ -815,7 +815,7 @@ protected:
 	QAction *m_showPartsBinIconViewAct = nullptr;
 	QAction *m_showPartsBinListViewAct = nullptr;
 	//QAction *m_toggleToolbarAct;
-	int m_numFixedActionsInViewMenu;
+	int m_numFixedActionsInViewMenu = 0;
 
 	// Window Menu
 	QMenu *m_windowMenu = nullptr;

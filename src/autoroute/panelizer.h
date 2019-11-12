@@ -28,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/itembase.h"
 #include "cmrouter/tile.h"
 
-
+constexpr double Worst = std::numeric_limits<double>::max() / 4;
 struct PlanePair
 {
 	Plane * thePlane;
@@ -46,51 +46,50 @@ struct PanelItem {
 	// per window
 	QString boardName;
 	QString path;
-	int required;
-	int maxOptional;
-	int optionalPriority;
-	int produced;
+	int required = 0;
+	int maxOptional = 0;
+	int optionalPriority = 0;
+	int produced = 0;
 	QSizeF boardSizeInches;
-	long boardID;
-	PanelItem * refPanelItem;
+	long boardID = 0;
+	PanelItem * refPanelItem = nullptr;
 
 	// per instance
-	double x, y;
-	bool rotate90;
-	PlanePair * planePair;
+	double x = 0.0, y = 0.0;
+	bool rotate90 = false;
+	PlanePair * planePair = nullptr;
 
-	PanelItem();
+	PanelItem() = default;
+    PanelItem(const PanelItem& item);
 
-	PanelItem(PanelItem * from);
+	PanelItem(PanelItem * from) : PanelItem(*from) { }
 };
 
 struct BestPlace
 {
-	Tile * bestTile;
+	Tile * bestTile = nullptr;
 	TileRect bestTileRect;
 	TileRect maxRect;
-	int width;
-	int height;
-	double bestArea;
-	bool rotate90;
-	Plane* plane;
-
-	BestPlace();
+	int width = 0;
+	int height = 0;
+	double bestArea = Worst;
+	bool rotate90 = false;
+	Plane* plane = nullptr;
 };
 
 struct PanelType {
-	double width;
-	double height;
-	double c1;
-	double c2;
+	double width = 0.0;
+	double height = 0.0;
+	double c1 = 0.0;
+	double c2 = 0.0;
 	QString name;
 };
 
 struct PanelParams
 {
 	QList<PanelType *> panelTypes;
-	double panelSpacing;
-	double panelBorder;
+	double panelSpacing = 0.0;
+	double panelBorder = 0.0;
 	QString prefix;
 };
 
@@ -100,11 +99,9 @@ struct LayerThing {
 	SVG2gerber::ForWhy forWhy;
 	QString suffix;
 
-	LayerThing(const QString & n, LayerList ll, SVG2gerber::ForWhy fw, const QString & s) {
-		layerList = ll;
-		name = n;
-		forWhy = fw;
-		suffix = s;
+	LayerThing(const QString & n, LayerList ll, SVG2gerber::ForWhy fw, const QString & s) 
+        : layerList(ll), name(n), forWhy(fw), suffix(s)
+    {
 	}
 };
 

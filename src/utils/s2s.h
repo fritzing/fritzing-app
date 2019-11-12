@@ -55,15 +55,15 @@ protected:
 protected:
 	bool m_fzpzStyle;
 	QString m_andPath;
-	double m_minLeft;
-	double m_minTop;
-	double m_maxRight;
-	double m_maxBottom;
+	double m_minLeft = 0.0;
+	double m_minTop = 0.0;
+	double m_maxRight = 0.0;
+	double m_maxBottom = 0.0;
 	QList<ConnectorLocation *> m_lefts;
 	QList<ConnectorLocation *> m_tops;
 	QList<ConnectorLocation *> m_rights;
 	QList<ConnectorLocation *> m_bottoms;
-	double m_fudge;
+	double m_fudge = 0.0;
 	QDir m_oldSvgDir;
 	QDir m_newSvgDir;
 	QImage * m_image;

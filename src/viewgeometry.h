@@ -61,7 +61,7 @@ public:
 	void setLine(QLineF);
 	constexpr QLineF line() const noexcept { return m_line; }
 	void offset(double x, double y);
-	bool selected() const noexcept { return m_selected; }
+	constexpr bool selected() const noexcept { return m_selected; }
 	void setSelected(bool);
 	constexpr QRectF rect() const noexcept { return m_rect; }
 	void setRect(double x, double y, double width, double height);
@@ -89,11 +89,11 @@ public:
 	ViewGeometry::WireFlags wireFlags() const;
 
 protected:
-	double m_z;
+	double m_z = -1;
 	QPointF m_loc;
 	QLineF m_line;
 	QRectF m_rect;
-	bool m_selected;
+	bool m_selected = false;
 	WireFlags m_wireFlags;
 	QTransform m_transform;
 };

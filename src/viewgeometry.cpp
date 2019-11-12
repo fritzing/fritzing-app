@@ -22,11 +22,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "utils/graphicsutils.h"
 
 ViewGeometry::ViewGeometry(  ) 
-	: m_z(-1),
-	m_loc(-1, -1),
+	: m_loc(-1, -1),
 	m_line(-1, -1, -1, -1),
-	m_rect(),
-	m_selected(false),
 	m_wireFlags(WireFlag::NoFlag)
 {
 }
@@ -36,7 +33,6 @@ ViewGeometry::ViewGeometry(const ViewGeometry& that)
 	m_loc(that.m_loc),
 	m_line(that.m_line),
 	m_rect(that.m_rect),
-	m_selected(false),
 	m_wireFlags(that.m_wireFlags),
 	m_transform(that.m_transform) { }
 

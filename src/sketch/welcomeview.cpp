@@ -718,10 +718,10 @@ void WelcomeView::clickRecent(const QString & url) {
 }
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
-	auto blog = networkReply->url().toString().contains("blog");
-	auto prefix = networkReply->url().scheme() + "://" + networkReply->url().authority();
-	auto manager = networkReply->manager();
-	auto responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+	bool blog = networkReply->url().toString().contains("blog");
+	QString prefix = networkReply->url().scheme() + "://" + networkReply->url().authority();
+	QNetworkAccessManager * manager = networkReply->manager();
+	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
 	auto goodBlog = false;
 	QDomDocument doc;
@@ -937,7 +937,7 @@ void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
 		QByteArray data(networkReply->readAll());
 		QPixmap pixmap;
 		if (pixmap.loadFromData(data)) {
-			auto scaled = pixmap.scaled(QSize(ImageSpace, ImageSpace), Qt::KeepAspectRatio);
+			QPixmap scaled = pixmap.scaled(QSize(ImageSpace, ImageSpace), Qt::KeepAspectRatio);
 			setBlogItemImage(scaled, index, blog);
 			foreach (QWidget *widget, QApplication::topLevelWidgets()) {
 				auto other = widget->findChild<WelcomeView *>();

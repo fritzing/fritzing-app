@@ -182,7 +182,7 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 		collidingItems = m_sketchWidget->scene()->items();
 		foreach (QGraphicsItem * item, collidingItems) {
 			auto netLabel = dynamic_cast<SymbolPaletteItem *>(item);
-			if (netLabel == NULL) continue;
+			if (!netLabel) continue;
 			if (!netLabel->isOnlyNetLabel()) continue;
 
 			if (netLabel->getAutoroutable()) {
@@ -271,11 +271,11 @@ void Autorouter::addUndoConnection(bool connect, ConnectorItem * connectorItem, 
 		auto vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
 		if (vw) continue;
 
-        auto ccc = new ChangeConnectionCommand(m_sketchWidget, crossView,
-                toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
-                connectorItem->attachedToID(), connectorItem->connectorSharedID(),
-                ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID()),
-                connect, parentCommand);
+		auto ccc = new ChangeConnectionCommand(m_sketchWidget, crossView,
+				toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
+				connectorItem->attachedToID(), connectorItem->connectorSharedID(),
+				ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID()),
+				connect, parentCommand);
 		ccc->setUpdateConnections(false);
 	}
 }

@@ -63,7 +63,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "items/resistor.h"
 #include "items/logoitem.h"
 #include "utils/zoomslider.h"
-#include "partsbinpalette/binmanager/binmanager.h"
+#include "partsbinpalette/binmanager.h"
 #include "partsbinpalette/partsbinpalettewidget.h"
 #include "partseditor/pemainwindow.h"
 #include "help/firsttimehelpdialog.h"

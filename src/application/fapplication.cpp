@@ -58,7 +58,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "mainwindow/mainwindow.h"
 
-#include "partsbinpalette/binmanager/binmanager.h"
+#include "partsbinpalette/binmanager.h"
 #include "partsbinpalette/partsbinview.h"
 #include "partsbinpalette/svgiconwidget.h"
 #include "partsbinpalette/partsbinpalettewidget.h"

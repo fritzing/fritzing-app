@@ -22,7 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PARTSBINPALETTEWIDGET_H_
 #define PARTSBINPALETTEWIDGET_H_
 
-#include "binmanager/binmanager.h"
+#include "binmanager.h"
 
 #include "model/palettemodel.h"
 #include "model/modelpart.h"

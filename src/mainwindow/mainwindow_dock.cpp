@@ -23,13 +23,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QApplication>
 
 #include "mainwindow.h"
-#include "../utils/fsizegrip.h"
-#include "../utils/misc.h"
-#include "../partsbinpalette/binmanager/binmanager.h"
-#include "../infoview/htmlinfoview.h"
-#include "../dock/layerpalette.h"
-#include "../mainwindow/fdockwidget.h"
-#include "../utils/fileprogressdialog.h"
+#include "utils/fsizegrip.h"
+#include "utils/misc.h"
+#include "partsbinpalette/binmanager.h"
+#include "infoview/htmlinfoview.h"
+#include "dock/layerpalette.h"
+#include "mainwindow/fdockwidget.h"
+#include "utils/fileprogressdialog.h"
 #include "kitchensink/debugdialog.h"
 
 /////////////////////////////////////

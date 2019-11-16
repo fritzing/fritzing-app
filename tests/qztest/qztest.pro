@@ -49,10 +49,10 @@ MOC_DIR = .moc
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../quazip/release/ -lquazip
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../quazip/debug/ -lquazipd
 else:mac:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../quazip/ -lquazip_debug
-else:unix: LIBS += $$[QUAZIP_LIBS]/libquazip.a
+else:unix: LIBS += $$quazip_dir/quazip/libquazip.a
 
-INCLUDEPATH += $$[QUAZIP_INCLUDES]
+
+message(HELLO)
+message($$quazip_dir)
+INCLUDEPATH += $$quazip_dir
 # DEPENDPATH += $$QUAZIP_LIBS
-
-RESOURCES += \
-    qztest.qrc

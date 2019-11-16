@@ -35,5 +35,11 @@ RUN set -xe \
     && cmake --build . -- -j4 \
     && cd ../../
 
-
+RUN set -xe \
+    && wget -q -O - https://github.com/stachenov/quazip/archive/v0.8.1.tar.gz | tar xz \
+    && mv quazip-0.8.1 quazip \
+    && cd quazip/quazip \
+    && qmake CONFIG+=staticlib quazip.pro \
+    && make -j4 \
+    && cd ../../
 

@@ -80,12 +80,13 @@ cd /d %~dp0
 cd ..
 
 set LIBGIT2=%~dp0..\..\libgit2\build%2
+set LIBQUAZIP=%~dp0..\..\quazip\build%2
 
 rem set environment variable for qmake phoenix.pro
 set RELEASE_SCRIPT="release_script"
 
 
-%QMAKE% -o Makefile phoenix.pro %arch% || exit /b 1
+%QMAKE% -o Makefile fritzing.pro %arch% || exit /b 1
 
 echo building fritzing
 nmake release || exit /b 2
@@ -137,6 +138,9 @@ copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy
 
 echo copying git2.dll from %LIBGIT2%
 copy %LIBGIT2%\Release\git2.dll  %DESTDIR%\deploy\git2.dll
+
+echo copying quazip.dll from %LIBGIT2%
+copy %LIBGIT2%\Release\quazip.dll  %DESTDIR%\deploy\quazip.dll
 
 echo copying sketches, translations, help, README, LICENSE
 echo.

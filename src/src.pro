@@ -21,10 +21,10 @@
 TEMPLATE = subdirs
 SUBDIRS = application mainwindow partsbinpalette partseditor referencemodel \
     svg help version eagle utils dock items autoroute dialogs connectors \
-    infoview model sketch program lib/qtsysteminfo lib/quazip kitchensink
+    infoview model sketch program lib/qtsysteminfo kitchensink
 
 application.depends = mainwindow partsbinpalette partseditor referencemodel \
     svg help version eagle utils dock items autoroute \
-    dialogs connectors infoview model sketch program lib/qtsysteminfo lib/quazip
+    dialogs connectors infoview model sketch program lib/qtsysteminfo
 
 kitchensink.depends = utils

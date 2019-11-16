@@ -13,7 +13,4 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
-# LIBTARGET = kitchensink
-BASEDIR   = $${PWD}
-INCLUDEPATH *= $${BASEDIR}
-LIBS += -L$${DESTDIR} -lutils
+unix: LIBS += $$[QUAZIP_LIBS]/libquazip.a

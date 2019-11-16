@@ -38,8 +38,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <quazip5/quazip.h>
 #include <quazip5/quazipfile.h>
 #else
-#include "lib/quazip/quazip.h"
-#include "lib/quazip/quazipfile.h"
+#include <quazip/quazip.h>
+#include <quazip/quazipfile.h>
 #endif
 #include "lib/qtsysteminfo/QtSystemInfo.h"
 

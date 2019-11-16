@@ -178,5 +178,5 @@ RC_FILE = fritzing.rc
 !build_pass:message("libs $$LIBS")
 
 TEMPLATE = subdirs
-SUBDIRS = src test translations
+SUBDIRS = src tests
 

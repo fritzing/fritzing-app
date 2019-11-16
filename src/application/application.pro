@@ -28,12 +28,12 @@ LIBGIT2LIB = $$_PRO_FILE_PWD_/../../../libgit2/build
 
 INCLUDEPATH += ..
 
-FLIBS = eagle referencemodel partseditor autoroute partsbinpalette help dialogs program infoview dock version kitchensink sketch mainwindow svg connectors model items utils
+FLIBS = referencemodel help program infoview version mainwindow partsbinpalette eagle dock sketch autoroute partseditor svg connectors model items kitchensink dialogs utils
 for(libname, FLIBS) {
     LIBS += -L../$${libname}/$$DESTDIR -l$${libname}
 }
 LIBS += -L../lib/qtsysteminfo/$$DESTDIR -lqtsysteminfo
-LIBS += -L../lib/quazip/$$DESTDIR -lquazip
+include(../utils/utils.pri)
 
 # Linux specific
 LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto

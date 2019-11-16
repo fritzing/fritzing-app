@@ -21,5 +21,6 @@ HEADERS += $$files(*.h)
 SOURCES += $$files(*.cpp)
 
 INCLUDEPATH += ..
+INCLUDEPATH += $$[QUAZIP_INCLUDES]
 
 TEMPLATE = lib

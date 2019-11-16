@@ -16,8 +16,8 @@
 include(../../pri/common.pri)
 include(../../pri/libcommon.pri)
 
-HEADERS += $$files(*.h) $$files(binmanger/*.h)
-SOURCES += $$files(*.cpp) $$files(binmanager/*.cpp)
+HEADERS += $$files(*.h)
+SOURCES += $$files(*.cpp)
 SOURCES -= $$files(moc*.cpp)
 
 INCLUDEPATH += ..

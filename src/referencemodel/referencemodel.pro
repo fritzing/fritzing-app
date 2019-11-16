@@ -14,6 +14,7 @@
 # ********************************************************************/
 
 include(../../pri/common.pri)
+include(../../pri/libcommon.pri)
 
 HEADERS += $$files(*.h)
 SOURCES += $$files(*.cpp)

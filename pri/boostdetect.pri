@@ -21,8 +21,8 @@ exists($$boost_root) {
 #     INCLUDEPATH += $$BOOST_ROOT
 #     message("using BOOST_ROOT environment")
 # } else {
-    # message("Boost auto detect is deprecated, please set boost root variable.")
-    message("Using fritzing boost detect script.")
+    message("Boost auto detect is deprecated, please set boost root variable.")
+
 
     # boost_1_54_0 is buggy
     BOOSTS = 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99

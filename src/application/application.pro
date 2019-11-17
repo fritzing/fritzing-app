@@ -18,12 +18,6 @@ include(../../pri/common.pri)
 HEADERS += $$files(*.h)
 SOURCES += $$files(*.cpp)
 
-# contains(DEFINES, QUAZIP_INSTALLED) {
-#     !build_pass:message("using installed QuaZIP library")
-#     LIBS += -lquazip5
-# } else {
-#     include(../lib/quazip/quazip.pri)
-# }
 LIBGIT2LIB = $$_PRO_FILE_PWD_/../../../libgit2/build
 
 INCLUDEPATH += ..

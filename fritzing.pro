@@ -178,5 +178,7 @@ RC_FILE = fritzing.rc
 !build_pass:message("libs $$LIBS")
 
 TEMPLATE = subdirs
-SUBDIRS = src tests
+SUBDIRS = src buildtest
 
+src.depends = buildtest
+#tests.depends = src

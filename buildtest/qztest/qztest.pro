@@ -51,8 +51,5 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../quazip/debug/ -l
 else:mac:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../quazip/ -lquazip_debug
 else:unix: LIBS += $$quazip_dir/quazip/libquazip.a
 
-
-message(HELLO)
-message($$quazip_dir)
 INCLUDEPATH += $$quazip_dir
 # DEPENDPATH += $$QUAZIP_LIBS

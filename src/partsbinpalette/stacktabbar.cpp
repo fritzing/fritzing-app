@@ -28,8 +28,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "stacktabbar.h"
 #include "stacktabwidget.h"
-#include "../partsbinpalettewidget.h"
-#include "../partsbinview.h"
+#include "partsbinpalettewidget.h"
+#include "partsbinview.h"
 #include "kitchensink/debugdialog.h"
 
 

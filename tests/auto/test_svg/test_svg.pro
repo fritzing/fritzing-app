@@ -13,11 +13,12 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
-include($$absolute_path(../../../pri/boostdetect.pri))
+include($$top_dir/pri/common.pri)
+include($$top_dir/pri/boostdetect.pri)
 
 HEADERS += $$files(*.h)
 SOURCES += $$files(*.cpp)
 
-INCLUDEPATH += $$absolute_path(../../../src)
-#INCLUDEPATH += $$top_srcdir
+INCLUDEPATH += $$top_srcdir
+
 # unix:QMAKE_POST_LINK = $$PWD/generated/test_svg

@@ -11,6 +11,7 @@ phoenix.pro.user
 /debug*
 *.user
 *.user*
+**/generated
 
 # Visual Studio files
 *.sdf

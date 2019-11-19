@@ -42,8 +42,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "utils/fileprogressdialog.h"
 #include "referencemodel/referencemodel.h"
 #include "items/partfactory.h"
-#include "../partsbinpalettewidget.h"
-#include "../partsbinview.h"
+#include "partsbinpalettewidget.h"
+#include "partsbinview.h"
 
 ///////////////////////////////////////////////////////////
 

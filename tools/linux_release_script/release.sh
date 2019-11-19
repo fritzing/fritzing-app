@@ -54,20 +54,16 @@ else
   arch='i386'
 fi
 
-quazip='QUAZIP_LIB'
-echo "using src/lib/quazip"
-
-
 app_folder=$(dirname "${script_folder}")
 app_folder=$(dirname "${app_folder}")
 cd "$app_folder"
 echo "appfolder ${app_folder}"
 
 echo "Build lingustics."
-lrelease phoenix.pro
+lrelease translations.pro
 
 echo "Compiling."
-qmake CONFIG+=${target} DEFINES+=$quazip
+qmake CONFIG+=${target} fritzing.pro
 make -j16
 
 release_name=fritzing-${relname}.linux.${arch}

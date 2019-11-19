@@ -13,7 +13,7 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
-include(../../pri/common.pri)
+include($$top_dir/pri/common.pri)
 
 HEADERS += $$files(*.h)
 SOURCES += $$files(*.cpp)
@@ -27,11 +27,10 @@ for(libname, FLIBS) {
     LIBS += -L../$${libname}/$$DESTDIR -l$${libname}
 }
 LIBS += -L../lib/qtsysteminfo/$$DESTDIR -lqtsysteminfo
-include(../utils/utils.pri)
+include($$top_dir/pri/libquazip.pri)
 
 # Linux specific
 LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
-LIBS += -lz
 
 RESOURCES += ../../fritzingresources.qrc
 

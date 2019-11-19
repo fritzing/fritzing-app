@@ -19,19 +19,21 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "resizableboard.h"
-#include "../utils/resizehandle.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/folderutils.h"
-#include "../utils/textutils.h"
+#include "moduleidnames.h"
+
+#include "utils/resizehandle.h"
+#include "utils/graphicsutils.h"
+#include "utils/folderutils.h"
+#include "utils/textutils.h"
 #include "kitchensink/fsvgrenderer.h"
-#include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
+#include "sketch/infographicsview.h"
+#include "svg/svgfilesplitter.h"
+#include "svg/svgpathregex.h"
 #include "kitchensink/commands.h"
 #include "../svg/svgpathregex.h"
-#include "moduleidnames.h"
 #include "kitchensink/layerattributes.h"
 #include "kitchensink/debugdialog.h"
-#include "../svg/gerbergenerator.h"
+#include "svg/gerbergenerator.h"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>

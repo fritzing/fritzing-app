@@ -24,22 +24,19 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <qmath.h>
 
 #include "gerbergenerator.h"
-#include "kitchensink/debugdialog.h"
-#include "kitchensink/fsvgrenderer.h"
-#include "../sketch/pcbsketchwidget.h"
-#include "../connectors/connectoritem.h"
-#include "../connectors/svgidlayer.h"
+#include "svgpathregex.h"
 #include "svgfilesplitter.h"
 #include "groundplanegenerator.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
-#include "../utils/folderutils.h"
-#include "../version/version.h"
 
-static const QRegExp AaCc("[aAcCqQtTsS]");
-//static const QRegExp MFinder("([mM])\\s*([0-9.]*)[\\s,]*([0-9.]*)");
-static const QRegExp MFinder("([mM])\\s*([+-\\.\\d]+)[\\s,]+([+-\\.\\d]+)");
-const QRegExp GerberGenerator::MultipleZs("[zZ]\\s*[^\\s]");
+#include "kitchensink/debugdialog.h"
+#include "kitchensink/fsvgrenderer.h"
+#include "sketch/pcbsketchwidget.h"
+#include "connectors/connectoritem.h"
+#include "connectors/svgidlayer.h"
+#include "utils/graphicsutils.h"
+#include "utils/textutils.h"
+#include "utils/folderutils.h"
+#include "version/version.h"
 
 const QString GerberGenerator::SilkTopSuffix = "_silkTop.gto";
 const QString GerberGenerator::SilkBottomSuffix = "_silkBottom.gbo";
@@ -864,9 +861,8 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 		QString originalPath = path.attribute("d", "").trimmed();
 		if (MultipleZs.indexIn(originalPath) >= 0) {
 			QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts, Qt::CaseInsensitive);
-			QString priorM;
 			MFinder.indexIn(subpaths.at(0).trimmed());
-			priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+			QString priorM = MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
 			for (int i = 1; i < subpaths.count(); i++) {
 				QDomElement newPath = path.cloneNode(true).toElement();
 				QString z = ((i < subpaths.count() - 1) || originalPath.endsWith("z", Qt::CaseInsensitive)) ? "z" : "";

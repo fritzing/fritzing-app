@@ -54,6 +54,8 @@ const QString TextUtils::SMDFlipSuffix("___");
 const QString TextUtils::RegexFloatDetector = "[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?";
 const QRegExp TextUtils::floatingPointMatcher(RegexFloatDetector);
 
+static const QString fontFamilyQuotesPattern = R"x(font-family(?:="|:)('[^']*')"?)x";
+
 static const QRegExp HexExpr("&#x[0-9a-fA-F];");   // &#x9; &#xa; &#xd;
 static const QRegExp Xmlns("xmlns=([\"|'])[^\"']*\\1");
 
@@ -117,9 +119,8 @@ FixedFontsHash fixFontsMapping(const QSet<QString> fontsTofix, const QString & d
 	return retval;
 }
 
-bool removeFontFamilySingleQuotes(QString &fileContent) {
-	static QString pattern = "font-family(?:=\"|:)('[^']*')\"?";
-	QSet<QString> wrongFontFamilies = TextUtils::getRegexpCaptures(pattern, fileContent);
+bool TextUtils::removeFontFamilySingleQuotes(QString &fileContent) {
+	QSet<QString> wrongFontFamilies = TextUtils::getRegexpCaptures(fontFamilyQuotesPattern, fileContent);
 
 	foreach(QString ff, wrongFontFamilies) {
 		QString wrongFF = ff;

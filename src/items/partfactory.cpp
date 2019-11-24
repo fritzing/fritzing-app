@@ -55,6 +55,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/lockmanager.h"
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
+#include "../svg/svgtext.h"
 
 #include <qmath.h>
 
@@ -636,7 +637,7 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
 	QRectF elementBounds = renderer.boundsOnElement(mps->subpartID());
 	QRectF bounds = m.mapRect(elementBounds);                                   // bounds is in terms of the whole svg
 
-	// unfortunately, QSvgRenderer doesn't deal with text bounds
+	// unfortunately, QSvgRenderer doesn't deal with text bounds, QTBUG-32405
 
 	int w = qCeil(sWidth * GraphicsUtils::SVGDPI);
 	int h = qCeil(sWidth * GraphicsUtils::SVGDPI);
@@ -658,7 +659,7 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
 		int minX, minY, maxX, maxY;
 		QMatrix matrix;
 		QRectF viewBox2;
-		SchematicTextLayerKinPaletteItem::renderText(image, text, minX, minY, maxX, maxY, matrix, viewBox2);
+		SvgText::renderText(image, text, minX, minY, maxX, maxY, matrix, viewBox2);
 		QRectF r(minX * viewBox.width() / image.width(),
 		         minY * viewBox.height() / image.height(),
 		         (maxX - minX) * viewBox.width() / image.width(),

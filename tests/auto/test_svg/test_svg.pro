@@ -13,11 +13,17 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
+boost_root = ../../boost_1_70_0
 include($$absolute_path(../../../pri/boostdetect.pri))
+
+QT += core xml svg
 
 HEADERS += $$files(*.h)
 SOURCES += $$files(*.cpp)
 
 INCLUDEPATH += $$absolute_path(../../../src)
+
+HEADERS += $$files(../../../src/svg/svgtext.h)
+SOURCES += $$files(../../../src/svg/svgtext.cpp)
 #INCLUDEPATH += $$top_srcdir
 # unix:QMAKE_POST_LINK = $$PWD/generated/test_svg

@@ -2753,7 +2753,7 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	manager->setProperty("count", countArgs);
 	QString filename = QUrl::toPercentEncoding(filenameIf());
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotFabQuote(QNetworkReply *)));
-	QString string = QString("https://aisler.net/meta/fritzing_quote%1&area=%2&count=%3&filename=%4&byuser=%5")
+	QString string = QString("https://fab.fritzing.org/fritzing-fab/quote%1&area=%2&count=%3&filename=%4&byuser=%5")
 	                 .arg(paramString)
 	                 .arg(area)
 	                 .arg(countArgs)

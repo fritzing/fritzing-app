@@ -310,7 +310,7 @@ void QuoteDialog::setText() {
 }
 
 void QuoteDialog::visitFritzingFab() {
-	QDesktopServices::openUrl(QString("http://fab.fritzing.org"));
+	QDesktopServices::openUrl(QString("https://fab.fritzing.org"));
 }
 
 QString QuoteDialog::countArgs() {

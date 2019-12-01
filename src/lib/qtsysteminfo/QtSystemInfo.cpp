@@ -19,7 +19,6 @@ public:
 
 	virtual QtSystemInfo::ArchitectureType architecture() = 0;
 	virtual QtSystemInfo::SystemType systemType() = 0;
-	virtual QString architectureName() = 0;
 	virtual QString kernelName() = 0;
 	virtual QString kernelVersion() = 0;
 	virtual QString systemName() = 0;
@@ -61,11 +60,6 @@ public:
 			else if (m_architectureName == "ppc64")
 				m_architecture = QtSystemInfo::MPPC64;
 		}
-	}
-
-	virtual QString architectureName()
-	{
-		return m_architectureName;
 	}
 
 	virtual QtSystemInfo::ArchitectureType architecture()
@@ -141,6 +135,18 @@ public:
 			return "10.5";
 		case QSysInfo::MV_10_6:
 			return "10.6";
+		case QSysInfo::MV_10_7:
+			return "10.7";
+		case QSysInfo::MV_10_8:
+			return "10.8";
+		case QSysInfo::MV_10_9:
+			return "10.9";
+		case QSysInfo::MV_10_10:
+			return "10.10";
+		case QSysInfo::MV_10_11:
+			return "10.11";
+		case QSysInfo::MV_10_12:
+			return "10.12";
 		default:
 			return UNKNOWN;
 		}
@@ -431,19 +437,6 @@ public:
 #  endif
 	}
 
-	virtual QString architectureName()
-	{
-		switch (architecture())
-		{
-		case QtSystemInfo::X86_64:
-			return "x86_64";
-		case QtSystemInfo::I386:
-			return "i386";
-		default:
-			return UNKNOWN;
-		}
-	}
-
 	virtual QString kernelName()
 	{
 		if (QSysInfo::WindowsVersion & QSysInfo::WV_NT_based)
@@ -470,6 +463,12 @@ public:
 			return "6.0";
 		case QSysInfo::WV_6_1:
 			return "6.1";
+		case QSysInfo::WV_6_2:
+			return "6.2";
+		case QSysInfo::WV_6_3:
+			return "6.3";
+		case QSysInfo::WV_10_0:
+			return "10.0";
 		case QSysInfo::WV_CE:
 			return "1.0";
 		case QSysInfo::WV_CENET:
@@ -504,7 +503,7 @@ public:
 			return "XP";
 		case QSysInfo::WV_2003:
 #  ifdef Q_OS_WIN64
-			return "XP Proffessional 64";
+			return "XP Professional 64";
 #  else
 			return "2003 Server";
 #  endif
@@ -512,6 +511,12 @@ public:
 			return "Vista / Server 2008";
 		case QSysInfo::WV_WINDOWS7:
 			return "7 / Server 2008 R2";
+		case QSysInfo::WV_WINDOWS8:
+			return "8";
+		case QSysInfo::WV_WINDOWS8_1:
+			return "8.1";
+		case QSysInfo::WV_WINDOWS10:
+			return "10";
 		default:
 			return UNKNOWN;
 		}
@@ -548,7 +553,7 @@ QtSystemInfo::~QtSystemInfo()
 
 QString QtSystemInfo::architectureName() const
 {
-	return d->architectureName();
+	return QSysInfo::currentCpuArchitecture();
 }
 
 QtSystemInfo::ArchitectureType QtSystemInfo::architecture() const

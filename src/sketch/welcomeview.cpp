@@ -480,7 +480,7 @@ QWidget * WelcomeView::initShop() {
 	m_fabUberFrame = createShopContentFrame(":/resources/images/pcbs_2013.png",
 	                                        tr("Fritzing Fab"),
 	                                        tr("Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches."),
-                                            "http://fab.fritzing.org/",
+											"https://fab.fritzing.org/",
 	                                        tr("produce your first pcb now >>"),
 	                                        tr("Order your PCB now."),
 	                                        ":/resources/images/icons/WS-fabLogo.png",
@@ -587,12 +587,12 @@ QWidget * WelcomeView::initBlog() {
 	QWidget * headerFrame = createHeaderFrame(tr("Projects"), "Projects", tr("Blog"), "Blog", m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_projectsLabel, m_blogLabel);
 	frameLayout->addWidget(headerFrame);
 
-	m_blogListWidget = createBlogContentFrame("https://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png", "#802742");
+	m_blogListWidget = createBlogContentFrame("http://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png", "#802742");
 	m_blogUberFrame = m_blogListWidget;
 	while (m_blogUberFrame->parentWidget()) m_blogUberFrame = m_blogUberFrame->parentWidget();
 	frameLayout->addWidget(m_blogUberFrame);
 
-	m_projectListWidget = createBlogContentFrame("https://fritzing.org/projects/", tr("Fritzing Projects."), ":/resources/images/icons/WS-galleryLogo.png", "#00a55b");
+	m_projectListWidget = createBlogContentFrame("http://fritzing.org/projects/", tr("Fritzing Projects."), ":/resources/images/icons/WS-galleryLogo.png", "#00a55b");
 	m_projectsUberFrame = m_projectListWidget;
 	while (m_projectsUberFrame->parentWidget()) m_projectsUberFrame = m_projectsUberFrame->parentWidget();
 	frameLayout->addWidget(m_projectsUberFrame);
@@ -739,7 +739,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	}
 
 	if (!goodBlog) {
-		QString message = (blog) ? tr("Unable to reach blog.fritzing.org") : tr("Unable to reach friting.org/projects") ;
+		QString message = (blog) ? tr("Unable to reach blog.fritzing.org") : tr("Unable to reach fritzing.org/projects") ;
 		QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
 		if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
 			readBlog(doc, true, blog, "");

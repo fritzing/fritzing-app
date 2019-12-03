@@ -2748,17 +2748,23 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	QString paramString = Version::makeRequestParamsString(false);
 	QNetworkAccessManager * manager = new QNetworkAccessManager(this);
 
-
+	QString protocol = "http";
+	if (QSslSocket::supportsSsl()) {
+		protocol = "https";
+	} else {
+		qDebug() << QSslSocket::supportsSsl() << QSslSocket::sslLibraryBuildVersionString() << QSslSocket::sslLibraryVersionString();
+	}
 	QString countArgs = QuoteDialog::countArgs();
 	manager->setProperty("count", countArgs);
 	QString filename = QUrl::toPercentEncoding(filenameIf());
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotFabQuote(QNetworkReply *)));
-	QString string = QString("https://fab.fritzing.org/fritzing-fab/quote%1&area=%2&count=%3&filename=%4&byuser=%5")
+	QString string = QString("%6://fab.fritzing.org/fritzing-fab/quote%1&area=%2&count=%3&filename=%4&byuser=%5")
 	                 .arg(paramString)
 	                 .arg(area)
 	                 .arg(countArgs)
 	                 .arg(filename)
 	                 .arg(byUser)
+	                 .arg(protocol)
 	                 ;
 	QuoteDialog::setQuoteSucceeded(false);
 	manager->get(QNetworkRequest(QUrl(string)));

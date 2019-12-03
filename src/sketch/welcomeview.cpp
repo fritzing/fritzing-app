@@ -321,11 +321,11 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	// TODO: blog network calls should only happen once, not for each window?
 	QNetworkAccessManager * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts-app/")));
+	manager->get(QNetworkRequest(QUrl("https://blog.fritzing.org/recent-posts-app/")));
 
 	manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl("http://fritzing.org/projects/snippet/")));
+	manager->get(QNetworkRequest(QUrl("https://fritzing.org/projects/snippet/")));
 
 	TipsAndTricks::initTipSets();
 	nextTip();
@@ -587,12 +587,12 @@ QWidget * WelcomeView::initBlog() {
 	QWidget * headerFrame = createHeaderFrame(tr("Projects"), "Projects", tr("Blog"), "Blog", m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_projectsLabel, m_blogLabel);
 	frameLayout->addWidget(headerFrame);
 
-	m_blogListWidget = createBlogContentFrame("http://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png", "#802742");
+	m_blogListWidget = createBlogContentFrame("https://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png", "#802742");
 	m_blogUberFrame = m_blogListWidget;
 	while (m_blogUberFrame->parentWidget()) m_blogUberFrame = m_blogUberFrame->parentWidget();
 	frameLayout->addWidget(m_blogUberFrame);
 
-	m_projectListWidget = createBlogContentFrame("http://fritzing.org/projects/", tr("Fritzing Projects."), ":/resources/images/icons/WS-galleryLogo.png", "#00a55b");
+	m_projectListWidget = createBlogContentFrame("https://fritzing.org/projects/", tr("Fritzing Projects."), ":/resources/images/icons/WS-galleryLogo.png", "#00a55b");
 	m_projectsUberFrame = m_projectListWidget;
 	while (m_projectsUberFrame->parentWidget()) m_projectsUberFrame = m_projectsUberFrame->parentWidget();
 	frameLayout->addWidget(m_projectsUberFrame);

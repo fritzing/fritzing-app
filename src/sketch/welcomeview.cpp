@@ -318,14 +318,16 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	connect(this, SIGNAL(openSketch()), this->window(), SLOT(mainLoad()));
 	connect(this, SIGNAL(recentSketch(const QString &, const QString &)), this->window(), SLOT(openRecentOrExampleFile(const QString &, const QString &)));
 
+	QString protocol = QSslSocket::supportsSsl() ? "https" : "http";
 	// TODO: blog network calls should only happen once, not for each window?
 	QNetworkAccessManager * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl("https://blog.fritzing.org/recent-posts-app/")));
+	manager->get(QNetworkRequest(QUrl(QString("%1://blog.fritzing.org/recent-posts-app/").arg(protocol))));
 
 	manager = new QNetworkAccessManager(this);
+
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl("https://fritzing.org/projects/snippet/")));
+	manager->get(QNetworkRequest(QUrl(QString("%1://fritzing.org/projects/snippet/").arg(protocol))));
 
 	TipsAndTricks::initTipSets();
 	nextTip();
@@ -527,7 +529,7 @@ QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const Q
 	contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Fixed, QSizePolicy::Expanding));
 
 	label = new QLabel(headline);
-    label->setTextFormat(Qt::RichText);
+	label->setTextFormat(Qt::RichText);
 	label->setObjectName("shopContentTextHeadline");
 	//label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 	contentTextFrameLayout->addWidget(label);
@@ -541,7 +543,7 @@ QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const Q
 	label->setObjectName("shopContentTextCaption");
 	contentTextFrameLayout->addWidget(label);
 	//label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    connect(label, &QLabel::linkActivated, this, &WelcomeView::clickBlog);
+	connect(label, &QLabel::linkActivated, this, &WelcomeView::clickBlog);
 
 	contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Fixed, QSizePolicy::Expanding));
 
@@ -654,7 +656,7 @@ BlogListWidget * WelcomeView::createBlogContentFrame(const QString & url, const 
 	zeroMargin(footerFrameLayout);
 	footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-    QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='font-family:Droid Sans; text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText).arg(footerLabelColor));
+	QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='font-family:Droid Sans; text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText).arg(footerLabelColor));
 	footerLabel->setObjectName("blogLogoText");
 	footerFrameLayout->addWidget(footerLabel);
 	connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));

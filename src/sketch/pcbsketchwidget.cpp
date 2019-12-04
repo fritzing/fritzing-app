@@ -2751,9 +2751,14 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	QString protocol = "http";
 	if (QSslSocket::supportsSsl()) {
 		protocol = "https";
-	} else {
-		qDebug() << QSslSocket::supportsSsl() << QSslSocket::sslLibraryBuildVersionString() << QSslSocket::sslLibraryVersionString();
 	}
+
+	QString msg;
+	msg = QSslSocket::supportsSsl() ? "TLS on" : "TLS off";
+	msg += " Want: " + QSslSocket::sslLibraryBuildVersionString();
+	msg += " Found: " + QSslSocket::sslLibraryVersionString();
+	DebugDialog::debug(msg);
+
 	QString countArgs = QuoteDialog::countArgs();
 	manager->setProperty("count", countArgs);
 	QString filename = QUrl::toPercentEncoding(filenameIf());

@@ -46,7 +46,7 @@ IF %2==64 (
     ) ELSE IF %3==2015 (
 	set QTBIN=C:\Qt\5.6\msvc2015_64\bin
     ) ELSE IF %3==2017 (
-        set QTBIN=C:\Qt\5.12.3\msvc2017_64\bin
+        set QTBIN=C:\Qt\5.12.6\msvc2017_64\bin
     )
 	set arch=""QMAKE_TARGET.arch=x86_64""
 ) ELSE (

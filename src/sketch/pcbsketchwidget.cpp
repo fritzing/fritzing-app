@@ -2758,7 +2758,9 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	if (QSslSocket::supportsSsl()) {
 		protocol = "https";
 	} else {
-		qDebug() << QSslSocket::supportsSsl() << QSslSocket::sslLibraryBuildVersionString() << QSslSocket::sslLibraryVersionString();
+		QString msg;
+		msg = QSslSocket::supportsSsl() ? "TLS on," : "TLS off," + QSslSocket::sslLibraryBuildVersionString() + QSslSocket::sslLibraryVersionString();
+		DebugDialog::debug(msg);
 	}
 	QString countArgs = QuoteDialog::countArgs();
 	manager->setProperty("count", countArgs);

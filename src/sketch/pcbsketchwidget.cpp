@@ -2757,11 +2757,14 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	QString protocol = "http";
 	if (QSslSocket::supportsSsl()) {
 		protocol = "https";
-	} else {
-		QString msg;
-		msg = QSslSocket::supportsSsl() ? "TLS on," : "TLS off," + QSslSocket::sslLibraryBuildVersionString() + QSslSocket::sslLibraryVersionString();
-		DebugDialog::debug(msg);
 	}
+
+	QString msg;
+	msg = QSslSocket::supportsSsl() ? "TLS on" : "TLS off";
+	msg += " Want: " + QSslSocket::sslLibraryBuildVersionString();
+	msg += " Found: " + QSslSocket::sslLibraryVersionString();
+	DebugDialog::debug(msg);
+
 	QString countArgs = QuoteDialog::countArgs();
 	manager->setProperty("count", countArgs);
 	QString filename = QUrl::toPercentEncoding(filenameIf());

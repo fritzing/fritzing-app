@@ -150,6 +150,7 @@ xcopy /q .\sketches %DESTDIR%\deploy\sketches /E  /I
 xcopy /q .\help %DESTDIR%\deploy\help /E  /I
 
 copy .\README.md %DESTDIR%\deploy\README.md
+copy .\INSTALL.txt %DESTDIR%\deploy\INSTALL.txt
 copy .\LICENSE.GPL2 %DESTDIR%\deploy\LICENSE.GPL2
 copy .\LICENSE.GPL3 %DESTDIR%\deploy\LICENSE.GPL3
 copy .\LICENSE.CC-BY-SA %DESTDIR%\deploy\LICENSE.CC-BY-SA

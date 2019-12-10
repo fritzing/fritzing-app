@@ -87,7 +87,6 @@ cp -rf sketches/ help/ translations/ Fritzing.sh Fritzing.1 org.fritzing.Fritzin
 mkdir -p "${release_folder}/icons"
 cp resources/system_icons/linux/* "$release_folder/icons/"
 mv Fritzing "${release_folder}/"
-chmod +x "${release_folder}/install_fritzing.sh"
 
 cd "${release_folder}"
 

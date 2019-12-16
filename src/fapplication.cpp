@@ -338,16 +338,6 @@ void RegenerateDatabaseThread::run() {
 
 FApplication::FApplication( int & argc, char ** argv) : QApplication(argc, argv)
 {
-	m_fServer = NULL;
-	m_spaceBarIsPressed = false;
-	m_mousePressed = false;
-	m_referenceModel = NULL;
-	m_started = false;
-	m_updateDialog = NULL;
-	m_lastTopmostWindow = NULL;
-	m_serviceType = NoService;
-	m_splash = NULL;
-
 	m_arguments = arguments();
 }
 

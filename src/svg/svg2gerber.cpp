@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSet>
 #include <qmath.h>
 
-static const double MaskClearance = 0.005;  // 5 mils clearance
+constexpr double MaskClearance = 0.005;  // 5 mils clearance
 
 bool fillNotStroke(QDomElement & element, SVG2gerber::ForWhy forWhy) {
 	if (forWhy == SVG2gerber::ForOutline) return false;
@@ -46,10 +46,6 @@ bool fillNotStroke(QDomElement & element, SVG2gerber::ForWhy forWhy) {
 }
 
 //TODO: currently only supports one board per sketch (i.e. multiple board outlines will mess you up)
-
-SVG2gerber::SVG2gerber()
-{
-}
 
 int SVG2gerber::convert(const QString & svgStr, bool doubleSided, const QString & mainLayerName, ForWhy forWhy, QSizeF boardSize)
 {
@@ -751,7 +747,7 @@ QString SVG2gerber::path2gerber(QDomElement pathElement) {
 
 void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double> & args, void * userData) {
 	QString gerb_path;
-	int x, y;
+	double x, y;
 
 	PathUserData * pathUserData = (PathUserData *) userData;
 
@@ -774,25 +770,25 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 			break;
 		case 'm':
 		case 'M':
-			x = args[argIndex];
-			y = args[argIndex + 1];
 			if (relative && !pathUserData->pathStarting) {
-				x += pathUserData->x;
-				y += pathUserData->y;
+				pathUserData->x += args[argIndex];
+				pathUserData->y += args[argIndex + 1];
+			} else {
+				pathUserData->x = args[argIndex];
+				pathUserData->y = args[argIndex + 1];
 			}
+			x = pathUserData->x;
+			y = pathUserData->y;
+
 			if (argIndex == 0) {
 				// treat first 'm' arg pair as a move to
 				gerb_path = "X" + QString::number(flipx(x)) + "Y" + QString::number(flipy(y)) + "D02*\n";
 				m_pathstart_x = x;
 				m_pathstart_y = y;
-			}
-			else {
+			} else {
 				// treat subsequent 'm' arg pair as line to
 				gerb_path = "X" + QString::number(flipx(x)) + "Y" + QString::number(flipy(y)) + "D01*\n";
 			}
-
-			pathUserData->x = x;
-			pathUserData->y = y;
 			pathUserData->pathStarting = false;
 			pathUserData->string.append(gerb_path);
 			argIndex += 2;
@@ -807,15 +803,14 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 			break;
 		case 'l':
 		case 'L':
-			x = args[argIndex];
-			y = args[argIndex + 1];
 			if (relative) {
-				x += pathUserData->x;
-				y += pathUserData->y;
+				pathUserData->x += args[argIndex];
+				pathUserData->y += args[argIndex+1];
+			} else {
+				pathUserData->x = args[argIndex];
+				pathUserData->y = args[argIndex+1];
 			}
-			gerb_path = "X" + QString::number(flipx(x)) + "Y" + QString::number(flipy(y)) + "D01*\n";
-			pathUserData->x = x;
-			pathUserData->y = y;
+			gerb_path = "X" + QString::number(flipx(pathUserData->x)) + "Y" + QString::number(flipy(pathUserData->y)) + "D01*\n";
 			pathUserData->string.append(gerb_path);
 			argIndex += 2;
 			break;
@@ -823,8 +818,9 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 		case 'Z':
 			gerb_path = "X" + QString::number(flipx(m_pathstart_x)) + "Y" + QString::number(flipy(m_pathstart_y)) + "D01*\n";
 			gerb_path += "D02*\n";
+			pathUserData->x = m_pathstart_x;
+			pathUserData->y = m_pathstart_y;
 			pathUserData->string.append(gerb_path);
-			pathUserData->pathStarting = true;
 			break;
 		default:
 			argIndex = args.count();

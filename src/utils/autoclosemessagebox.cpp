@@ -22,12 +22,19 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 #include "../mainwindow/mainwindow.h"
 
-static const int Interval = 30;
-static const int Steps = 7;
-static const int Wait = 100;
+constexpr auto Interval = 30;
+constexpr auto Steps = 7;
+constexpr auto Wait = 100;
 
 AutoCloseMessageBox::AutoCloseMessageBox( QWidget * parent )
-	: QLabel(parent)
+	: QLabel(parent),
+	m_movingState(MovingState::MovingOut),
+	m_endX(0),
+	m_endY(0),
+	m_startX(0),
+	m_startY(0),
+	m_animationTimer(),
+	m_counter(0) 
 {
 	setWordWrap(true);
 }

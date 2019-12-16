@@ -39,15 +39,15 @@ class Platform : public QObject
 
 public:
 	Platform(const QString &name);
-	~Platform();
+	~Platform() = default;
 
 	virtual void upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation);
-	Syntaxer *getSyntaxer();
+	Syntaxer *getSyntaxer() const noexcept { return m_syntaxer; }
 
-	QString getName() const;
-	QString getCommandLocation() const;
+	QString getName() const noexcept { return m_name; }
+	QString getCommandLocation() const noexcept { return m_commandLocation; }
 	void setCommandLocation(const QString &commandLocation);
-	QStringList getExtensions() const;
+	QStringList getExtensions() const noexcept { return m_extensions; }
 	void setExtensions(const QStringList &suffixes);
 	QMap<QString, QString> getBoards() const;
 	void setBoards(const QMap<QString, QString> &boards);
@@ -81,7 +81,6 @@ protected:
 
 private:
 	void initSyntaxer();
-	void initCommandLocation();
 
 private:
 	QPointer<Syntaxer> m_syntaxer;

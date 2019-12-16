@@ -866,7 +866,6 @@ void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> 
 	Q_UNUSED(relative);
 	HVConvertData * data = (HVConvertData *) userData;
 
-	double x, y;
 	switch(command.toLatin1()) {
 	case 'M':
 		data->path.append(command);
@@ -879,11 +878,13 @@ void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> 
 		break;
 	case 'm':
 		data->path.append(command);
-		x = data->x;
-		y = data->y;
+		if (args.count() > 1) {
+			data->subX = data->x + args[0];
+			data->subY = data->y + args[1];
+		}
 		for (int i = 0; i < args.count(); i += 2) {
-			data->subX = data->x = (x + args[i]);
-			data->subY = data->y = (y + args[i + 1]);
+			data->x += args[i];
+			data->y += args[i + 1];
 			appendPair(data->path, args[i], args[i + 1]);
 		}
 		data->path.chop(1);
@@ -901,11 +902,9 @@ void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> 
 	case 'l':
 	case 't':
 		data->path.append(command);
-		x = data->x;
-		y = data->y;
 		for (int i = 0; i < args.count(); i += 2) {
-			data->x = x + args[i];
-			data->y = y + args[i + 1];
+			data->x += args[i];
+			data->y += args[i + 1];
 			appendPair(data->path, args[i], args[i + 1]);
 		}
 		data->path.chop(1);
@@ -923,11 +922,9 @@ void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> 
 		break;
 	case 'c':
 		data->path.append(command);
-		x = data->x;
-		y = data->y;
 		for (int i = 0; i < args.count(); i += 6) {
-			data->x = x + args[i + 4];
-			data->y = y + args[i + 5];
+			data->x += args[i + 4];
+			data->y += args[i + 5];
 			appendPair(data->path, args[i], args[i + 1]);
 			appendPair(data->path, args[i + 2], args[i + 3]);
 			appendPair(data->path, args[i + 4], args[i + 5]);
@@ -948,11 +945,9 @@ void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> 
 	case 's':
 	case 'q':
 		data->path.append(command);
-		x = data->x;
-		y = data->y;
 		for (int i = 0; i < args.count(); i += 4) {
-			data->x = x + args[i + 2];
-			data->y = y + args[i + 3];
+			data->x += args[i + 2];
+			data->y += args[i + 3];
 			appendPair(data->path, args[i], args[i + 1]);
 			appendPair(data->path, args[i + 2], args[i + 3]);
 		}
@@ -982,11 +977,9 @@ void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> 
 		break;
 	case 'a':
 		data->path.append(command);
-		x = data->x;
-		y = data->y;
 		for (int i = 0; i < args.count(); i += 7) {
-			data->x = x + args[i + 5];
-			data->y = y + args[i + 6];
+			data->x += args[i + 5];
+			data->y += args[i + 6];
 			appendPair(data->path, args[i], args[i + 1]);
 			appendPair(data->path, args[i + 2], args[i + 3]);
 			appendPair(data->path, args[i + 4], args[i + 5]);
@@ -997,18 +990,16 @@ void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> 
 		break;
 	case 'v':
 		data->path.append('l');
-		y = data->y;
 		for (int i = 0; i < args.count(); i++) {
-			data->y = y + args[i];
+			data->y += args[i];
 			appendPair(data->path, 0, args[i]);
 		}
 		data->path.chop(1);
 		break;
 	case 'h':
 		data->path.append('l');
-		x = data->x;
 		for (int i = 0; i < args.count(); i++) {
-			data->x = x + args[i];
+			data->x += args[i];
 			appendPair(data->path, args[i], 0);
 		}
 		data->path.chop(1);

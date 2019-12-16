@@ -65,7 +65,7 @@ unix {
             LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
         }
     } else {
-        warning("Using dynamic linking for libgit2.")
+        !build_pass:warning("Using dynamic linking for libgit2.")
         #message("Enabled dynamic linking of libgit2")
         PKGCONFIG += libgit2
     }

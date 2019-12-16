@@ -28,6 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStatusBar>
 #include <QMainWindow>
 
+class ExpandingLabel;
 class SketchAreaWidget : public QFrame {
 	Q_OBJECT
 public:
@@ -52,14 +53,14 @@ public:
 	static const QString RoutingStateLabelName;
 
 protected:
-	QWidget *m_contentView;
+	QWidget *m_contentView = nullptr;
 
-	QFrame *m_toolbar;
-	QHBoxLayout *m_leftButtonsContainer;
-	QVBoxLayout *m_middleButtonsContainer;
-	QHBoxLayout *m_rightButtonsContainer;
-	QFrame *m_statusBarArea;
-	class ExpandingLabel * m_routingStatusLabel;
+	QFrame *m_toolbar = nullptr;
+	QHBoxLayout *m_leftButtonsContainer = nullptr;
+	QVBoxLayout *m_middleButtonsContainer = nullptr;
+	QHBoxLayout *m_rightButtonsContainer = nullptr;
+	QFrame *m_statusBarArea = nullptr;
+	ExpandingLabel * m_routingStatusLabel = nullptr;
 
 };
 

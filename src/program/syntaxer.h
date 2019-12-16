@@ -35,10 +35,10 @@ public:
 	CommentInfo(const QString & start, const QString & end, Qt::CaseSensitivity);
 
 public:
-	bool m_multiLine;
+	bool m_multiLine = false;
 	QString m_start;
 	QString m_end;
-	int m_index;
+	int m_index = 0;
 	Qt::CaseSensitivity m_caseSensitive;
 };
 
@@ -75,14 +75,14 @@ protected:
 	static QHash<QString, QString> m_listsToFormats;
 
 protected:
-	TrieNode * m_trieRoot;
+	TrieNode * m_trieRoot = nullptr;
 	QString m_name;
 	QString m_extensionString;
 	QStringList m_extensions;
 	QList<CommentInfo *> m_commentInfo;
-	QChar m_stringDelimiter;
-	bool m_hlCStringChar;
-	bool m_canProgram;
+	QChar m_stringDelimiter = 0;
+	bool m_hlCStringChar = false;
+	bool m_canProgram = false;
 };
 
 class SyntaxerTrieLeaf : public TrieLeaf

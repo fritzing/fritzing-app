@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.0" language="de">
 <context>
     <name>AboutBox</name>
     <message>
@@ -106,27 +106,27 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Yuelin and Ninjia</source>
-        <translation type="unfinished"></translation>
+        <translation>Yuelin und Ninjia</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Chinese (Traditional): </source>
-        <translation type="unfinished">Chinesisch traditionell:</translation>
+        <translation>Chinesisch (traditionell):</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Robert Lee</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="151"/>
         <source>Hiroshi Suzuki</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="152"/>
         <source>Jinbuhm Kim</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="156"/>
@@ -151,11 +151,11 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished">Vereinfachtes Chinesisch:</translation>
+        <translation>Vereinfachtes Chinesisch:</translation>
     </message>
     <message>
         <source>Robert Lee </source>
-        <translation type="vanished">Robert Lee</translation>
+        <translation>Robert Lee</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="151"/>
@@ -164,7 +164,7 @@
     </message>
     <message>
         <source>Hiroshi Suzuki </source>
-        <translation type="vanished">Hiroshi Suzuki</translation>
+        <translation>Hiroshi Suzuki</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="157"/>
@@ -1233,7 +1233,7 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="2024"/>
         <source>Regenerate parts database?</source>
-        <translation>Neuerstellung der Bauteil-Datenbank</translation>
+        <translation>Neuerstellung der Bauteil-Datenbank?</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2025"/>
@@ -1275,7 +1275,7 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="88"/>
         <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
-        <translation type="unfinished">&lt;br/&gt; Die &lt;b&gt; Breadboard-Ansicht &lt;/ b&gt; soll wie ein &lt;i&gt; realer &lt;/ i&gt; Breadboard-Prototyp aussehen. &lt;br/&gt; &lt;br/&gt; Ziehen Sie zunächst ein Teil aus dem Teilefach , das oben rechts ist. Ziehen Sie dann weitere Teile hinein und verbinden Sie sie, indem Sie sie auf das Steckbrett legen oder auf die Anschlüsse klicken und Drähte ziehen. Der Vorgang ähnelt der Anordnung der Dinge in der physischen Welt. &lt;br/&gt; &lt;br/&gt; Probieren Sie die anderen Ansichten aus, nachdem Sie Ihre Skizze in der Steckbrettansicht erstellt haben. Sie können die Ansicht wechseln, indem Sie auf die Registerkarten oben im Fenster klicken. Da unterschiedliche Ansichten unterschiedliche Zwecke haben, sehen Teile in den anderen Ansichten unterschiedlich aus.</translation>
+        <translation type="unfinished">&lt;br/&gt;Die &lt;b&gt;Breadboard-Ansicht&lt;/b&gt; soll wie ein &lt;i&gt; realer&lt;/i&gt; Breadboard-Prototyp aussehen.&lt;br/&gt;&lt;br/&gt;Ziehen Sie zunächst ein Teil aus dem Teilefach (oben rechts) hinein. Ziehen Sie dann weitere Teile hinein und verbinden Sie diese, indem Sie diese auf das Steckbrett legen oder auf die Anschlüsse klicken und Drähte ziehen. Der Vorgang ähnelt der Anordnung der Dinge in der realen Welt. &lt;br/&gt;&lt;br/&gt;Probieren Sie auch die anderen Ansichten aus, nachdem Sie Ihre Skizze in der Steckbrettansicht erstellt haben. Sie können die Ansicht wechseln, indem Sie auf die Registerkarten oben im Fenster klicken. Da unterschiedliche Ansichten andere Zwecke erfüllen, sehen Teile in den anderen Ansichten unterschiedlich aus.</translation>
     </message>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="101"/>
@@ -2898,7 +2898,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1132"/>
         <source>Display breadboard wires using standard color coding by length</source>
-        <translation type="unfinished">Auf dem Breadboard werden Kabel entsprechend der Länge gefärbt</translation>
+        <translation>Braeadboard-Kabel entsprechend ihrer Länge farbcodiert anzeigen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1150"/>
@@ -3609,12 +3609,12 @@ Zurücksetzen?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="954"/>
         <source>Rotate 45° Clockwise</source>
-        <translation>Um 45° drehen</translation>
+        <translation>Um 45° im Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="958"/>
         <source>Rotate 90° Clockwise</source>
-        <translation>Um 90° drehen</translation>
+        <translation>Um 90° im Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="962"/>
@@ -3624,12 +3624,12 @@ Zurücksetzen?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="966"/>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation>Um 90° drehen (gegen den Uhrzeigersinn)</translation>
+        <translation>Um 90° gegen den Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="970"/>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation>Um 45° drehen (gegen den Uhrzeigersinn)</translation>
+        <translation>Um 45° gegen den Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2703"/>
@@ -5237,7 +5237,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2144"/>
         <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt; Geben Sie ein Präfix ein, um die Teiledateien leichter identifizieren zu können. &lt;br/&gt; Die Dateinamen haben die Form &apos;PREFIX_%1&apos;. &lt;br/&gt; (Das vorgeschlagene Präfix muss nicht geändert werden, da ein eindeutiger Suffix immer hinzugefügt wird) &lt;/ p&gt;</translation>
+        <translation>&lt;p&gt;Geben Sie ein Präfix ein, um die Teiledateien leichter identifizieren zu können.&lt;br/&gt;Die Dateinamen haben die Form &apos;PREFIX_%1&apos;.&lt;br/&gt;(Das vorgeschlagene Präfix muss nicht geändert werden, da immer ein eindeutiger Suffix hinzugefügt wird.)&lt;/p&gt;</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/partseditor/pemainwindow.cpp" line="3796"/>
@@ -5976,7 +5976,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="450"/>
         <source>Rotate 45° Clockwise</source>
-        <translation>Um 45° drehen</translation>
+        <translation>Um 45° im Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
@@ -5986,7 +5986,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="455"/>
         <source>Rotate 90° Clockwise</source>
-        <translation>Um 90° drehen</translation>
+        <translation>Um 90° im Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="457"/>
@@ -5996,7 +5996,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="460"/>
         <source>Rotate 135° Clockwise</source>
-        <translation>Um 135° drehen</translation>
+        <translation>Um 135° im Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
@@ -6016,7 +6016,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="470"/>
         <source>Rotate 135° Counter Clockwise</source>
-        <translation>Um 45° drehen (gegen den Uhrzeigersinn)</translation>
+        <translation>Um 135° gegen den Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
@@ -6026,7 +6026,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="475"/>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation>Um 90° drehen (gegen den Uhrzeigersinn)</translation>
+        <translation>Um 90° gegen den Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="477"/>
@@ -6036,7 +6036,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="480"/>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation>Um 45° drehen (gegen den Uhrzeigersinn)</translation>
+        <translation>Um 45° gegen den Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="482"/>
@@ -7599,27 +7599,27 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="158"/>
         <source>the board outline layer, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">die Board Kontur-Schicht, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="159"/>
         <source>silkscreen layer(s), </source>
-        <translation type="unfinished">Siebdruckschicht(en)</translation>
+        <translation type="unfinished">Siebdruckschicht(en), </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="160"/>
         <source>copper layer(s), </source>
-        <translation type="unfinished">Kupferschicht(en)</translation>
+        <translation type="unfinished">Kupferschicht(en), </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="161"/>
         <source>mask layer(s), </source>
-        <translation type="unfinished">Maskenschicht(en)</translation>
+        <translation type="unfinished">Maskenschicht(en), </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="162"/>
         <source>paste mask layer(s), </source>
-        <translation type="unfinished">Maskenebene(n) einfügen</translation>
+        <translation type="unfinished">Maskenebene(n) einfügen, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="164"/>

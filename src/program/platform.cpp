@@ -26,21 +26,21 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDir>
 #include <QSettings>
 
-Platform::Platform(const QString &name) : QObject()
+Platform::Platform(const QString &name) 
+	: QObject(),
+	m_name(name),
+	m_commandLocation(QSettings().value(QString("programwindow/programmer.%1").  arg(getName())).toString()),
+	m_canProgram(false),
+	m_extensions(),
+	m_boards(),
+	m_defaultBoardName(),
+	m_referenceUrl(),
+	m_ideName(),
+	m_downloadUrl(),
+	m_minVersion(),
+	m_syntaxer(new Syntaxer())
 {
-	m_name = name;
 	initSyntaxer();
-	initCommandLocation();
-}
-
-Platform::~Platform()
-{
-	// nothing to do
-}
-
-QString Platform::getName() const
-{
-	return m_name;
 }
 
 void Platform::upload(QWidget * source, const QString &port, const QString &board, const QString &fileLocation)
@@ -48,13 +48,8 @@ void Platform::upload(QWidget * source, const QString &port, const QString &boar
 	// stub
 }
 
-Syntaxer * Platform::getSyntaxer() {
-	return m_syntaxer;
-}
-
 void Platform::initSyntaxer()
 {
-	Syntaxer * syntaxer = new Syntaxer();
 	QDir dir(FolderUtils::getApplicationSubFolderPath("translations"));
 	dir.cd("syntax");
 	QStringList nameFilters;
@@ -62,22 +57,12 @@ void Platform::initSyntaxer()
 	QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
 	foreach (QFileInfo fileInfo, list) {
 		if (fileInfo.completeBaseName().compare(getName(), Qt::CaseInsensitive) == 0) {
-			syntaxer->loadSyntax(fileInfo.absoluteFilePath());
+			m_syntaxer->loadSyntax(fileInfo.absoluteFilePath());
 			break;
 		}
 	}
-	m_syntaxer = syntaxer;
 }
 
-void Platform::initCommandLocation() {
-	QSettings settings;
-	m_commandLocation = settings.value(QString("programwindow/programmer.%1").arg(getName())).toString();
-}
-
-QString Platform::getCommandLocation() const
-{
-	return m_commandLocation;
-}
 
 void Platform::setCommandLocation(const QString &commandLocation)
 {
@@ -86,11 +71,6 @@ void Platform::setCommandLocation(const QString &commandLocation)
 	settings.setValue(QString("programwindow/programmer.%1").arg(getName()), commandLocation);
 
 	emit commandLocationChanged();
-}
-
-QStringList Platform::getExtensions() const
-{
-	return m_extensions;
 }
 
 void Platform::setExtensions(const QStringList &suffixes)

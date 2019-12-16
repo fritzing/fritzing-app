@@ -27,6 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../sketch/infographicsview.h"
 #include "../svg/svgfilesplitter.h"
 #include "../commands.h"
+#include "../svg/svgpathregex.h"
 #include "moduleidnames.h"
 #include "../layerattributes.h"
 #include "../debugdialog.h"
@@ -420,7 +421,7 @@ void Board::moreCheckImage(const QString & filename) {
 	int mCount = 0;
 	if (element.tagName() == "path") {
 		QString originalPath = element.attribute("d", "").trimmed();
-		if (GerberGenerator::MultipleZs.indexIn(originalPath) >= 0) {
+		if (MultipleZs.indexIn(originalPath) >= 0) {
 			QStringList ds = element.attribute("d").split("z", QString::SkipEmptyParts);
 			subpaths = ds.count();
 			foreach (QString d, ds) {

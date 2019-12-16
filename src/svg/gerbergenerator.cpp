@@ -25,6 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "gerbergenerator.h"
 #include "../debugdialog.h"
+#include "svgpathregex.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/pcbsketchwidget.h"
 #include "../connectors/connectoritem.h"
@@ -35,10 +36,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../utils/folderutils.h"
 #include "../version/version.h"
-
-static const QRegExp AaCc("[aAcCqQtTsS]");
-static const QRegExp MFinder("([mM])\\s*([0-9.]*)[\\s,]*([0-9.]*)");
-const QRegExp GerberGenerator::MultipleZs("z\\s*[^\\s]");
 
 const QString GerberGenerator::SilkTopSuffix = "_silkTop.gto";
 const QString GerberGenerator::SilkBottomSuffix = "_silkBottom.gbo";
@@ -78,14 +75,14 @@ bool pixelsCollide(QImage * image1, QImage * image2, int x1, int y1, int x2, int
 
 void GerberGenerator::exportToGerber(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes)
 {
-	if (board == NULL) {
+	if (board == nullptr) {
 		int boardCount;
 		board = sketchWidget->findSelectedBoard(boardCount);
 		if (boardCount == 0) {
 			DebugDialog::debug("board not found");
 			return;
 		}
-		if (board == NULL) {
+		if (board == nullptr) {
 			DebugDialog::debug("multiple boards found");
 			return;
 		}
@@ -172,7 +169,7 @@ int GerberGenerator::doCopper(ItemBase * board, PCBSketchWidget * sketchWidget, 
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
 	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem == NULL) continue;
+		if (connectorItem == nullptr) continue;
 		if (!connectorItem->isPath()) continue;
 		if (connectorItem->radius() == 0) continue;
 
@@ -244,7 +241,7 @@ int GerberGenerator::doDrill(ItemBase * board, PCBSketchWidget * sketchWidget, c
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
 	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem == NULL) continue;
+		if (connectorItem == nullptr) continue;
 		if (!connectorItem->isPath()) continue;
 		if (connectorItem->radius() == 0) continue;
 
@@ -359,7 +356,7 @@ bool GerberGenerator::saveEnd(const QString & layerName, const QString & exportD
 void GerberGenerator::displayMessage(const QString & message, bool displayMessageBoxes) {
 	// don't use QMessageBox if running conversion as a service
 	if (displayMessageBoxes) {
-		QMessageBox::warning(NULL, QObject::tr("Fritzing"), message);
+		QMessageBox::warning(nullptr, QObject::tr("Fritzing"), message);
 		return;
 	}
 
@@ -488,7 +485,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 	QSize imgSize(twidth + 2, theight + 2);
 	QRectF target(0, 0, twidth, theight);
 
-	QImage * clipImage = NULL;
+	QImage * clipImage = nullptr;
 	if (!clipString.isEmpty()) {
 		clipImage = new QImage(imgSize, QImage::Format_Mono);
 		clipImage->fill(0xffffffff);
@@ -684,7 +681,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 			image.save(FolderUtils::getTopLevelUserDataStorePath() + "/preclip_output.png");
 #endif
 
-			if (clipImage != NULL) {
+			if (clipImage != nullptr) {
 				// can this be done with a single blt using composition mode
 				// if not, grab a scanline instead of testing every pixel
 				for (int y = 0; y < theight; y++) {
@@ -862,10 +859,9 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 		QDomElement path = paths.at(p).toElement();
 		QString originalPath = path.attribute("d", "").trimmed();
 		if (MultipleZs.indexIn(originalPath) >= 0) {
-			QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts);
-			QString priorM;
+			QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts, Qt::CaseInsensitive);
 			MFinder.indexIn(subpaths.at(0).trimmed());
-			priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+			QString priorM = MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
 			for (int i = 1; i < subpaths.count(); i++) {
 				QDomElement newPath = path.cloneNode(true).toElement();
 				QString z = ((i < subpaths.count() - 1) || originalPath.endsWith("z", Qt::CaseInsensitive)) ? "z" : "";
@@ -874,7 +870,11 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 				if (d.startsWith("m", Qt::CaseSensitive)) {
 					d = priorM + d;
 				}
-				priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+				if (MFinder.cap(1) == "M") {
+					priorM = MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+				} else {
+					priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+				}
 				newPath.setAttribute("d",  d);
 				path.parentNode().appendChild(newPath);
 			}
@@ -891,7 +891,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 	QSet<ItemBase *> itemBases;
 	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 		if (itemBase == board) continue;
 		if (itemBase->itemType() == ModelPart::Wire) continue;
 
@@ -989,7 +989,7 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
 			if (!ids.contains(id)) continue;
 
 			QString pid;
-			ConnectorItem * connectorItem = NULL;
+			ConnectorItem * connectorItem = nullptr;
 			for (QDomElement parent = path.parentNode().toElement(); !parent.isNull(); parent = parent.parentNode().toElement()) {
 				pid = parent.attribute("partID");
 				if (pid.isEmpty()) continue;
@@ -1008,7 +1008,7 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
 
 				if (connectorItem) break;
 			}
-			if (connectorItem == NULL) continue;
+			if (connectorItem == nullptr) continue;
 
 			//QString string;
 			//QTextStream stream(&string);

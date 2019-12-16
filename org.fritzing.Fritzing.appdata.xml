@@ -44,7 +44,7 @@
  <url type="donation">http://fritzing.org/shop/donations/</url>
  <url type="translate">http://fritzing.org/support-us/language-translation/</url>
  <releases>
-  <release version="0.9.4b" date="2019-07-05"/>
+  <release version="0.9.5d" date="2019-10-09"/>
  </releases>
  <provides>
   <binary>Fritzing</binary>

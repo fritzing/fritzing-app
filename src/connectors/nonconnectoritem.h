@@ -36,27 +36,27 @@ class NonConnectorItem : public QObject, public QGraphicsRectItem
 
 public:
 	NonConnectorItem(ItemBase* attachedTo);
-	~NonConnectorItem();
+	~NonConnectorItem() = default;
 
 	ItemBase * attachedTo();
 	virtual void setHidden(bool hidden);
-	bool hidden();
+	bool hidden() const;
 	virtual void setInactive(bool inactivate);
-	bool inactive();
+	bool inactive() const;
 	virtual void setLayerHidden(bool hidden);
-	bool layerHidden();
+	bool layerHidden() const;
 	long attachedToID();
 	const QString & attachedToTitle();
 	const QString & attachedToInstanceTitle();
 	void setCircular(bool);
 	void setRadius(double radius, double strokeWidth);
-	double radius();
-	double strokeWidth();
+	double radius() const;
+	double strokeWidth() const;
 	void setShape(QPainterPath &);
 	void paint( QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0 );
 	QPainterPath shape() const;
 	void setIsPath(bool);
-	bool isPath();
+	bool isPath() const;
 	int attachedToItemType();
 
 protected:
@@ -71,19 +71,19 @@ protected:
 
 protected:
 	QPointer<ItemBase> m_attachedTo;
-	bool m_hidden;
-	bool m_layerHidden;
-	bool m_inactive;
-	bool m_paint;
-	double m_opacity;
-	bool m_circular;
-	Effectively m_effectively;
-	double m_radius;
-	double m_strokeWidth;
-	double m_negativePenWidth;
-	bool m_negativeOffsetRect;
+	bool m_hidden = false;
+	bool m_layerHidden = false;
+	bool m_inactive = false;
+	bool m_paint = false;
+	double m_opacity = 0.0;
+	bool m_circular = false;
+	Effectively m_effectively = Effectively::EffectivelyUnknown;
+	double m_radius = 0.0;
+	double m_strokeWidth = 0.0;
+	double m_negativePenWidth = 0.0;
+	bool m_negativeOffsetRect = false;
 	QPainterPath m_shape;
-	bool m_isPath;
+	bool m_isPath = false;
 
 };
 

@@ -42,17 +42,13 @@ PartsBinIconView::PartsBinIconView(ReferenceModel* referenceModel, PartsBinPalet
 	setAlignment(Qt::AlignLeft | Qt::AlignTop);
 	setAcceptDrops(true);
 
-	QGraphicsScene* scene = new QGraphicsScene(this);
-	this->setScene(scene);
+	this->setScene(new QGraphicsScene(this));
 
-	m_layouter = NULL;
-	m_layout = NULL;
 	setupLayout();
 
 	//connect(scene, SIGNAL(selectionChanged()), this, SLOT(informNewSelection()));
 	//connect(scene, SIGNAL(changed(const QList<QRectF>&)), this, SLOT(informNewSelection()));
 
-	m_noSelectionChangeEmition = false;
 	setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 	setContextMenuPolicy(Qt::CustomContextMenu);
@@ -95,13 +91,13 @@ void PartsBinIconView::resizeEvent(QResizeEvent * event) {
 
 void PartsBinIconView::mousePressEvent(QMouseEvent *event) {
 	SvgIconWidget* icon = svgIconWidgetAt(event->pos());
-	if (icon == NULL || event->button() != Qt::LeftButton) {
+	if (!icon || event->button() != Qt::LeftButton) {
 		QGraphicsView::mousePressEvent(event);
-		if (icon == NULL) {
-			viewItemInfo(NULL);
+		if (!icon ) {
+			viewItemInfo(nullptr);
 		}
 	} else {
-		if (icon != NULL) {
+		if (icon) {
 			QList<QGraphicsItem *> items = scene()->selectedItems();
 			for (int i = 0; i < items.count(); i++) {
 				// not sure why clearSelection doesn't do the update, but whatever...
@@ -120,7 +116,7 @@ void PartsBinIconView::mousePressEvent(QMouseEvent *event) {
 			mousePressOnItem(event->pos(), moduleID, icon->rect().size().toSize(), (mts - icon->pos()), hotspot );
 		}
 		else {
-			viewItemInfo(NULL);
+			viewItemInfo(nullptr);
 		}
 	}
 	informNewSelection();
@@ -141,7 +137,7 @@ void PartsBinIconView::addPart(ModelPart * model, int position) {
 }
 
 void PartsBinIconView::removePart(const QString &moduleID) {
-	SvgIconWidget *itemToRemove = NULL;
+	SvgIconWidget *itemToRemove = nullptr;
 	int position = 0;
 	foreach(QGraphicsItem *gIt, m_layouter->childItems()) {
 		SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(gIt);
@@ -154,7 +150,7 @@ void PartsBinIconView::removePart(const QString &moduleID) {
 	}
 	if(itemToRemove) {
 		m_itemBaseHash.remove(moduleID);
-		itemToRemove->setParentItem(NULL);
+		itemToRemove->setParentItem(nullptr);
 		m_noSelectionChangeEmition = true;
 		m_layout->removeItem(itemToRemove);
 		delete itemToRemove;
@@ -176,7 +172,7 @@ void PartsBinIconView::removeParts() {
 
 	foreach (SvgIconWidget * itemToRemove, itemsToRemove) {
 		m_noSelectionChangeEmition = true;
-		itemToRemove->setParentItem(NULL);
+		itemToRemove->setParentItem(nullptr);
 		m_layout->removeItem(itemToRemove);
 		delete itemToRemove;
 	}
@@ -196,14 +192,14 @@ int PartsBinIconView::setItemAux(ModelPart * modelPart, int position) {
 		return position;
 	}
 
-	SvgIconWidget* svgicon = NULL;
+	SvgIconWidget* svgicon = nullptr;
 	if (modelPart->itemType() != ModelPart::Space) {
 		ItemBase::PluralType plural;
 		ItemBase * itemBase = loadItemBase(moduleID, plural);
 		svgicon = new SvgIconWidget(modelPart, ViewLayer::IconView, itemBase, plural == ItemBase::Plural);
 	}
 	else {
-		svgicon = new SvgIconWidget(modelPart, ViewLayer::IconView, NULL, false);
+		svgicon = new SvgIconWidget(modelPart, ViewLayer::IconView, nullptr, false);
 	}
 
 
@@ -228,7 +224,7 @@ void PartsBinIconView::loadFromModel(PaletteModel * model) {
 	QList<QObject *>::const_iterator i;
 	for (i = root->children().constBegin(); i != root->children().constEnd(); ++i) {
 		ModelPart* mp = qobject_cast<ModelPart *>(*i);
-		if (mp == NULL) continue;
+        if (!mp) continue;
 
 		QDomElement instance = mp->instanceDomElement();
 		if (instance.isNull()) continue;
@@ -252,7 +248,7 @@ ModelPart *PartsBinIconView::selectedModelPart() {
 	if(icon) {
 		return icon->modelPart();
 	} else {
-		return NULL;
+		return nullptr;
 	}
 }
 
@@ -261,7 +257,7 @@ ItemBase *PartsBinIconView::selectedItemBase() {
 	if(icon) {
 		return icon->itemBase();
 	} else {
-		return NULL;
+		return nullptr;
 	}
 }
 
@@ -367,7 +363,7 @@ bool PartsBinIconView::inEmptyArea(const QPoint& pos) {
 
 QGraphicsWidget* PartsBinIconView::closestItemTo(const QPoint& pos) {
 	QPointF realPos = mapToScene(pos);
-	SvgIconWidget *item = NULL;
+	SvgIconWidget *item = nullptr;
 	this -> setObjectName("partsIcon");
 	if((item = svgIconWidgetAt(realPos.x()+ICON_SPACING,realPos.y()+ICON_SPACING))) {
 		return item;
@@ -381,7 +377,7 @@ QGraphicsWidget* PartsBinIconView::closestItemTo(const QPoint& pos) {
 	if((item = svgIconWidgetAt(realPos.x()-ICON_SPACING,realPos.y()-ICON_SPACING))) {
 		return item;
 	}
-	return NULL;
+	return nullptr;
 }
 
 QList<QObject*> PartsBinIconView::orderedChildren() {
@@ -416,16 +412,16 @@ SvgIconWidget * PartsBinIconView::svgIconWidgetAt(int x, int y) {
 
 SvgIconWidget * PartsBinIconView::svgIconWidgetAt(const QPoint & pos) {
 	QGraphicsItem * item = itemAt(pos);
-	while (item != NULL) {
+    while (item) {
 		SvgIconWidget * svgIconWidget = dynamic_cast<SvgIconWidget *>(item);
-		if (svgIconWidget != NULL) {
+        if (svgIconWidget) {
 			return svgIconWidget;
 		}
 
 		item = item->parentItem();
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 void PartsBinIconView::reloadPart(const QString & moduleID) {
@@ -433,7 +429,8 @@ void PartsBinIconView::reloadPart(const QString & moduleID) {
 
 	for (int i = 0; i < m_layout->count(); i++) {
 		SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(m_layout->itemAt(i));
-		if (it == NULL) continue;
+        if (!it) 
+            continue;
 
 		if (it->itemBase()->moduleID().compare(moduleID) != 0) continue;
 
@@ -448,8 +445,8 @@ void PartsBinIconView::reloadPart(const QString & moduleID) {
 ItemBase * PartsBinIconView::loadItemBase(const QString & moduleID, ItemBase::PluralType & plural) {
 	ItemBase * itemBase = ItemBaseHash.value(moduleID);
 	ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
-	if (itemBase == NULL) {
-		itemBase = PartFactory::createPart(modelPart, ViewLayer::NewTop, ViewLayer::IconView, ViewGeometry(), ItemBase::getNextID(), NULL, NULL, false);
+    if (!itemBase) {
+		itemBase = PartFactory::createPart(modelPart, ViewLayer::NewTop, ViewLayer::IconView, ViewGeometry(), ItemBase::getNextID(), nullptr, nullptr, false);
 		ItemBaseHash.insert(moduleID, itemBase);
 	}
 	m_itemBaseHash.insert(moduleID, itemBase);

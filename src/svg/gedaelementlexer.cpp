@@ -25,25 +25,29 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 static QRegExp findWhitespace("[\\s]+");
 
-GedaElementLexer::GedaElementLexer(const QString &source)
+GedaElementLexer::GedaElementLexer(const QString &source) :
+    m_nonWhitespaceMatcher("[^\\s]"),
+	m_commentMatcher("(^\\s*\\#)"),
+	m_elementMatcher("Element\\s*([\\(\\[])"),
+	m_stringMatcher("\"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\""),
+	m_integerMatcher("[-+]?\\d+"),
+	m_hexMatcher("0[xX][0-9a-fA-F]+"),
+	m_source(),
+	m_chars(nullptr),
+	m_size(0),
+	m_pos(0),
+	m_current(0),
+	m_currentCommand(),
+	m_currentNumber(0l),
+	m_currentHexString(0l),
+	m_currentString(),
+	m_comments()
 {
-	m_nonWhitespaceMatcher.setPattern("[^\\s]");
-	m_commentMatcher.setPattern("(^\\s*\\#)");
-	m_elementMatcher.setPattern("Element\\s*([\\(\\[])");
-	//m_stringMatcher.setPattern("\"([^\"]*)\"");
-	m_stringMatcher.setPattern("\"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\"");
-	m_integerMatcher.setPattern("[-+]?\\d+");
-	m_hexMatcher.setPattern("0[xX][0-9a-fA-F]+");
 	m_source = clean(source);
 	m_chars = m_source.unicode();
 	m_size = m_source.size();
 	//qDebug() << m_source;
-	m_pos = 0;
 	m_current = next();
-}
-
-GedaElementLexer::~GedaElementLexer()
-{
 }
 
 QString GedaElementLexer::clean(const QString & source) {

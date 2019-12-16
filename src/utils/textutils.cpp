@@ -54,6 +54,8 @@ const QString TextUtils::SMDFlipSuffix("___");
 const QString TextUtils::RegexFloatDetector = "[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?";
 const QRegExp TextUtils::floatingPointMatcher(RegexFloatDetector);
 
+static const QString fontFamilyQuotesPattern = R"x(font-family(?:="|:)('[^']*')"?)x";
+
 static const QRegExp HexExpr("&#x[0-9a-fA-F];");   // &#x9; &#xa; &#xd;
 static const QRegExp Xmlns("xmlns=([\"|'])[^\"']*\\1");
 
@@ -117,9 +119,8 @@ FixedFontsHash fixFontsMapping(const QSet<QString> fontsTofix, const QString & d
 	return retval;
 }
 
-bool removeFontFamilySingleQuotes(QString &fileContent) {
-	static QString pattern = "font-family=\"('[^']*')\"";
-	QSet<QString> wrongFontFamilies = TextUtils::getRegexpCaptures(pattern, fileContent);
+bool TextUtils::removeFontFamilySingleQuotes(QString &fileContent) {
+	QSet<QString> wrongFontFamilies = TextUtils::getRegexpCaptures(fontFamilyQuotesPattern, fileContent);
 
 	foreach(QString ff, wrongFontFamilies) {
 		QString wrongFF = ff;
@@ -903,7 +904,12 @@ QMatrix TextUtils::transformStringToMatrix(const QString & transform) {
 		return QMatrix(floats[0], floats[1], floats[2], floats[3], floats[4], floats[5]);
 	}
 	else if (transform.startsWith("scale")) {
-		return QMatrix().scale(floats[0], floats[1]);
+		if (floats.size() == 2) {
+			return QMatrix().scale(floats[0], floats[1]);
+		} else {
+			Q_ASSERT(floats.size() == 1);
+			return QMatrix().scale(floats[0], floats[0]);
+		}
 	}
 	else if (transform.startsWith("skewX")) {
 		return QMatrix().shear(floats[0], 0);

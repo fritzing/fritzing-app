@@ -74,12 +74,12 @@ protected:
 	virtual bool anyModified();
 
 protected:
-	class WaitPushUndoStack * m_undoStack;
+	class WaitPushUndoStack * m_undoStack = nullptr;
 	QString m_fwFilename;
-	bool m_readOnly;
-	QAction *m_closeAct;
+	bool m_readOnly = false;
+	QAction *m_closeAct = nullptr;
 	QDir m_tempDir;
-	QStatusBar *m_statusBar;
+	QStatusBar *m_statusBar = nullptr;
 
 protected:
 	static QStringList OtherKnownExtensions;

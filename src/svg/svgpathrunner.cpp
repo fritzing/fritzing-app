@@ -35,15 +35,15 @@ SVGPathRunner::~SVGPathRunner()
 }
 
 bool SVGPathRunner::runPath(QVector<QVariant> & pathData, void * userData) {
-	PathCommand * currentCommand = NULL;
+	PathCommand * currentCommand = nullptr;
 	QList<double> args;
 
 	foreach (QVariant variant, pathData) {
 		if (variant.type() == QVariant::Char) {
-			PathCommand * newCommand = pathCommands.value(variant.toChar(), NULL);
-			if (newCommand == NULL) return false;
+			PathCommand * newCommand = pathCommands.value(variant.toChar(), nullptr);
+			if (newCommand == nullptr) return false;
 
-			if (currentCommand != NULL) {
+			if (currentCommand != nullptr) {
 				if (currentCommand->argCount == 0) {
 					if (args.count() != 0) return false;
 				}
@@ -56,12 +56,12 @@ bool SVGPathRunner::runPath(QVector<QVariant> & pathData, void * userData) {
 			currentCommand = newCommand;
 		}
 		else if (variant.type() == QVariant::Double) {
-			if (currentCommand == NULL) return false;
+			if (currentCommand == nullptr) return false;
 			args.append(variant.toDouble());
 		}
 	}
 
-	if (currentCommand != NULL) {
+	if (currentCommand != nullptr) {
 		if (currentCommand->argCount == 0) {
 			if (args.count() != 0) return false;
 		}

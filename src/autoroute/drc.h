@@ -48,18 +48,21 @@ struct Markers {
 	QString outID;
 };
 
+class PCBSketchWidget;
+class ItemBase;
+class ConnectorItem;
 class DRC : public QObject
 {
 	Q_OBJECT
 
 public:
-	DRC(class PCBSketchWidget *, class ItemBase * board);
-	virtual ~DRC(void);
+	DRC(PCBSketchWidget *, ItemBase * board);
+	virtual ~DRC();
 
 	QStringList start(bool showOkMessage, double keepoutMils);
 
 public:
-	static void splitNetPrep(QDomDocument * masterDoc, QList<class ConnectorItem *> & equi, const Markers &, QList<QDomElement> & net, QList<QDomElement> & alsoNet, QList<QDomElement> & notNet, bool checkIntersection);
+	static void splitNetPrep(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, const Markers &, QList<QDomElement> & net, QList<QDomElement> & alsoNet, QList<QDomElement> & notNet, bool checkIntersection);
 	static void extendBorder(double keepoutImagePixels, QImage * image);
 
 public slots:
@@ -97,8 +100,8 @@ protected:
 	static void splitSubs(QDomDocument *, QDomElement & root, const QString & partID, const Markers &, const QStringList & svgIDs,  const QStringList & terminalIDs, const QList<ItemBase *> &, QHash<QString, QString> & both, bool checkIntersection);
 
 protected:
-	class PCBSketchWidget * m_sketchWidget;
-	class ItemBase * m_board;
+	PCBSketchWidget * m_sketchWidget;
+	ItemBase * m_board;
 	double m_keepout;
 	QImage * m_plusImage;
 	QImage * m_minusImage;

@@ -274,18 +274,17 @@ bool GroundPlaneGenerator::generateGroundPlaneFn(GPGParams & params)
 
 	double pixelFactor = GraphicsUtils::StandardFritzingDPI / params.res;
 	scanImage(*image, bWidth, bHeight, pixelFactor, params.res, params.color, true, true, QSizeF(.05, .05), 1 / GraphicsUtils::SVGDPI, QPointF(0,0));
-	if (rects.count() > 0) {
-		foreach (QRectF r, rects) {
-			// add the rects separately as tiny SVGs which don't get clipped (since they are connected)
-			QList<QPolygon> polygons;
-			QPolygon polygon;
-			polygon << QPoint(r.left() * pixelFactor, r.top() * pixelFactor)
-					<< QPoint(r.right() * pixelFactor, r.top() * pixelFactor)
-					<< QPoint(r.right() * pixelFactor, r.bottom() * pixelFactor)
-					<< QPoint(r.left() * pixelFactor, r.bottom() * pixelFactor);
-			polygons.append(polygon);
-			makePolySvg(polygons, params.res, bWidth, bHeight, pixelFactor, params.color, false, true, QSizeF(0, 0), 0, QPointF(0, 0));
-		}
+
+	foreach (QRectF r, rects) {
+		// add the rects separately as tiny SVGs which don't get clipped (since they are connected)
+		QList<QPolygon> polygons;
+		QPolygon polygon;
+		polygon << QPoint(r.left() * pixelFactor, r.top() * pixelFactor)
+				<< QPoint(r.right() * pixelFactor, r.top() * pixelFactor)
+				<< QPoint(r.right() * pixelFactor, r.bottom() * pixelFactor)
+				<< QPoint(r.left() * pixelFactor, r.bottom() * pixelFactor);
+		polygons.append(polygon);
+		makePolySvg(polygons, params.res, bWidth, bHeight, pixelFactor, params.color, false, true, QSizeF(0, 0), 0, QPointF(0, 0));
 	}
 
 	delete image;

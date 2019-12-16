@@ -311,9 +311,9 @@ void Perfboard::changeBoardSize()
 	QString newSize = QString("%1.%2").arg(m_xEdit->text()).arg(m_yEdit->text());
 	m_propsMap.insert("size", newSize);
 
-	foreach (QString key, m_propsMap.keys()) {
-		DebugDialog::debug("prop " + key + " " + m_propsMap.value(key));
-	}
+	// foreach (QString key, m_propsMap.keys()) {
+	// 	DebugDialog::debug("prop " + key + " " + m_propsMap.value(key));
+	// }
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {

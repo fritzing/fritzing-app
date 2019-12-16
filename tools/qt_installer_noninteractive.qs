@@ -31,8 +31,8 @@ Controller.prototype.ComponentSelectionPageCallback = function() {
   var widget = gui.currentPageWidget();
 
   widget.deselectAll();
-  widget.selectComponent("qt.qt5.5123.win32_msvc2017");
-  widget.selectComponent("qt.qt5.5123.win64_msvc2017_64");
+  //widget.selectComponent("qt.qt5.5123.win32_msvc2017");
+  widget.selectComponent("qt.qt5.5126.win64_msvc2017_64");
 
 // Cannot get older version of Qt qit Quick Scripts
 // Cannot programatically select LTS releases

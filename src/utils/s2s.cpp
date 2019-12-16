@@ -214,10 +214,10 @@ QString makeTerminal(const ConnectorLocation * connectorLocation, double x, doub
 ///////////////////////////////////////////////////////
 
 
-S2S::S2S(bool fzpzStyle) : QObject()
+S2S::S2S(bool fzpzStyle) : QObject(),
+	m_image(new QImage(50 * ImageFactor, 5 * ImageFactor, QImage::Format_Mono)),
+    m_fzpzStyle(fzpzStyle)
 {
-	m_image = new QImage(50 * ImageFactor, 5 * ImageFactor, QImage::Format_Mono);
-	m_fzpzStyle = fzpzStyle;
 }
 
 void S2S::message(const QString & msg) {

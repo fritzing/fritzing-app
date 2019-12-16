@@ -71,8 +71,8 @@ protected:
 	void writeResponse(QTcpSocket *, int code, const QString & codeString, const QString & mimeType, const QString & message);
 
 protected:
-	int m_socketDescriptor;
-	bool m_done;
+	int m_socketDescriptor = 0;
+	bool m_done = false;
 
 protected:
 	static QMutex m_busy;
@@ -96,8 +96,8 @@ protected:
 protected:
 	QString m_dbFileName;
 	QString m_error;
-	QDialog * m_progressDialog;
-	ReferenceModel * m_referenceModel;
+	QDialog * m_progressDialog = nullptr;
+	ReferenceModel * m_referenceModel = nullptr;
 };
 
 ////////////////////////////////////////////////////
@@ -203,15 +203,15 @@ protected:
 	};
 
 protected:
-	bool m_spaceBarIsPressed;
-	bool m_mousePressed;
+	bool m_spaceBarIsPressed = false;
+	bool m_mousePressed = false;
 	QTranslator m_translator;
-	ReferenceModel * m_referenceModel;
-	bool m_started;
+	ReferenceModel * m_referenceModel = nullptr;
+	bool m_started = false;
 	QStringList m_filesToLoad;
 	QString m_libPath;
 	QString m_translationPath;
-	class UpdateDialog * m_updateDialog;
+	class UpdateDialog * m_updateDialog = nullptr;
 	QTimer m_activationTimer;
 	QPointer<class FritzingWindow> m_lastTopmostWindow;
 	QList<QWidget *> m_orderedTopLevelWidgets;
@@ -219,16 +219,16 @@ protected:
 	QStringList m_externalProcessArgs;
 	QString m_externalProcessName;
 	QString m_externalProcessPath;
-	ServiceType m_serviceType;
-	int m_progressIndex;
-	class FSplashScreen * m_splash;
+	ServiceType m_serviceType = NoService;
+	int m_progressIndex = 0;
+	class FSplashScreen * m_splash = nullptr;
 	QString m_outputFolder;
 	QString m_portRootFolder;
 	QString m_panelFilename;
 	QHash<QString, struct LockedFile *> m_lockedFiles;
-	bool m_panelizerCustom;
-	int m_portNumber;
-	FServer * m_fServer;
+	bool m_panelizerCustom = false;
+	int m_portNumber = 0;
+	FServer * m_fServer = nullptr;
 	QString m_buildType;
 };
 

@@ -173,10 +173,10 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 }
 
 DRCResultsDialog::~DRCResultsDialog() {
-	if (m_displayItem != nullptr && m_sketchWidget != nullptr) {
+	if (m_displayItem && m_sketchWidget) {
 		delete m_displayItem;
 	}
-	if (m_displayImage != nullptr) {
+	if (m_displayImage) {
 		delete m_displayImage;
 	}
 	foreach (CollidingThing * collidingThing, m_collidingThings) {
@@ -186,7 +186,7 @@ DRCResultsDialog::~DRCResultsDialog() {
 }
 
 void DRCResultsDialog::pressedSlot(QListWidgetItem * item) {
-	if (item == nullptr) return;
+	if (!item) return;
 
 	int ix = item->data(Qt::UserRole).toInt();
 	CollidingThing * collidingThing = m_collidingThings.at(ix);
@@ -201,7 +201,7 @@ void DRCResultsDialog::pressedSlot(QListWidgetItem * item) {
 }
 
 void DRCResultsDialog::releasedSlot(QListWidgetItem * item) {
-	if (item == nullptr) return;
+	if (!item) return;
 
 	int ix = item->data(Qt::UserRole).toInt();
 	CollidingThing * collidingThing = m_collidingThings.at(ix);
@@ -223,20 +223,21 @@ static QString CancelledMessage;
 
 ///////////////////////////////////////////
 
-DRC::DRC(PCBSketchWidget * sketchWidget, ItemBase * board)
+DRC::DRC(PCBSketchWidget * sketchWidget, ItemBase * board) :
+    m_sketchWidget(sketchWidget),
+    m_board(board),
+    m_keepout(0.0),
+    m_plusImage(nullptr),
+    m_minusImage(nullptr),
+    m_displayImage(nullptr),
+    m_displayItem(nullptr),
+    m_cancelled(false),
+    m_maxProgress(0)
 {
 	CancelledMessage = tr("DRC was cancelled.");
-
-	m_cancelled = false;
-	m_sketchWidget = sketchWidget;
-	m_board = board;
-	m_displayItem = nullptr;
-	m_displayImage = nullptr;
-	m_plusImage = nullptr;
-	m_minusImage = nullptr;
 }
 
-DRC::~DRC(void)
+DRC::~DRC()
 {
 	if (m_displayItem) {
 		delete m_displayItem;
@@ -305,7 +306,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 	QList< QList<ConnectorItem *> > singletons;
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem == nullptr) continue;
+		if (!connectorItem) continue;
 		if (!connectorItem->attachedTo()->isEverVisible()) continue;
 		if (connectorItem->attachedTo()->getRatsnest()) continue;
 		if (visited.contains(connectorItem)) continue;
@@ -673,13 +674,13 @@ void DRC::splitNetPrep(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, 
 	QSet<QString> wireIDs;
 	foreach (ConnectorItem * equ, equi) {
 		ItemBase * itemBase = equ->attachedTo();
-		if (itemBase == nullptr) continue;
+		if (!itemBase) continue;
 
 		if (itemBase->itemType() == ModelPart::Wire) {
 			wireIDs.insert(QString::number(itemBase->id()));
 		}
 
-		if (equ->connector() == nullptr) {
+		if (!equ->connector()) {
 			// this shouldn't happen
 			itemBase->debugInfo("!!!!!!!!!!!!!!!!!!!!!!!!!!!!! missing connector !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			equ->debugInfo("missing connector");
@@ -909,7 +910,7 @@ void DRC::splitSubs(QDomDocument * doc, QDomElement & root, const QString & part
 
 void DRC::updateDisplay() {
 	QPixmap pixmap = QPixmap::fromImage(*m_displayImage);
-	if (m_displayItem == nullptr) {
+	if (!m_displayItem) {
 		m_displayItem = new QGraphicsPixmapItem(pixmap);
 		m_displayItem->setPos(m_board->sceneBoundingRect().topLeft());
 		m_sketchWidget->scene()->addItem(m_displayItem);
@@ -961,7 +962,7 @@ void DRC::extendBorder(const double keepout, QImage * image) {
 			const int x1 = std::max(x - ikeepout, 0);
 			const int x2 = std::min(x + ikeepout, w);
 			// extend border by keepout
-			int dx;
+			auto dx = 0;
 			for (int dy = y1; dy < y2; ++dy) {
 				uchar * r = image->scanLine(dy);
 				// This section is often the hotspot for creating copper layers,
@@ -986,7 +987,7 @@ void DRC::checkHoles(QStringList & messages, QList<CollidingThing *> & colliding
 	QRectF boardRect = m_board->sceneBoundingRect();
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->collidingItems(m_board)) {
 		NonConnectorItem * nci = dynamic_cast<NonConnectorItem *>(item);
-		if (nci == nullptr) continue;
+		if (!nci) continue;
 
 		QRectF ncibr = nci->sceneBoundingRect();
 		if (boardRect.contains(ncibr)) continue;
@@ -1032,7 +1033,7 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 	QList<ItemBase *> visited;
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == nullptr) continue;
+		if (!itemBase) continue;
 		if (!itemBase->isEverVisible()) continue;
 		if (itemBase->modelPart()->isCore()) continue;
 
@@ -1070,8 +1071,8 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 
 		QDomDocument doc;
 		QString errorStr;
-		int errorLine;
-		int errorColumn;
+		auto errorLine = 0;
+		auto errorColumn = 0;
 		if (!doc.setContent(svg, &errorStr, &errorLine, &errorColumn)) {
 			DebugDialog::debug(QString("itembase svg xml failure %1 %2 %3 %4").arg(itemBase->id()).arg(errorStr).arg(errorLine).arg(errorColumn));
 			continue;
@@ -1134,7 +1135,7 @@ QList<ConnectorItem *> DRC::missingCopper(const QString & layerName, ViewLayer::
 
 	foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
 		SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(itemBase->viewID(), viewLayerID);
-		if (svgIdLayer == nullptr) {
+		if (!svgIdLayer) {
 			DebugDialog::debug(QString("missing pin info for %1").arg(itemBase->id()));
 			missing << connectorItem;
 			continue;

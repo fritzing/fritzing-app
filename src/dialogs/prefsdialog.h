@@ -96,9 +96,9 @@ protected:
 	QHash<QString, QString> m_settings;
 	QHash<QString, QString> m_tempSettings;
 	QString m_name;
-	class TranslatorListModel * m_translatorListModel;
-	bool m_cleared;
-	int m_wheelMapping;
+	class TranslatorListModel * m_translatorListModel = nullptr;
+	bool m_cleared = false;
+	int m_wheelMapping = 0;
 	ViewInfoThing m_viewInfoThings[3];
 };
 

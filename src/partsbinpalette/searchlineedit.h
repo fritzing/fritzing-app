@@ -28,11 +28,11 @@ class SearchLineEdit : public QLineEdit {
 	Q_OBJECT
 
 public:
-	SearchLineEdit(QWidget * parent = NULL);
-	~SearchLineEdit();
+	SearchLineEdit(QWidget * parent = nullptr);
+	~SearchLineEdit() = default;
 
-	void setDecoy(bool);
-	bool decoy();
+	void setDecoy(bool value);
+	constexpr bool decoy() const noexcept { return m_decoy; }
 
 public:
 	static void cleanup();

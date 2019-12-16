@@ -206,7 +206,7 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 	QString additional = tr("<b>Shipping is free wordlwide</b>.<br />");
 	additional += tr("Documents for local customs control are included.<br />");
 	additional += tr("Some countries might charge additional import taxes or checking fees.<br />");
-	additional += tr("For more information on pricing see <a href='http://fab.fritzing.org/pricing'>http://fab.fritzing.org/pricing</a>.");
+	additional += tr("For more information on pricing see <a href='https://fab.fritzing.org/pricing'>https://fab.fritzing.org/pricing</a>.");
 	label = new QLabel(additional);
 	label->setObjectName("quoteAdditional");
 	label->setOpenExternalLinks(true);
@@ -310,7 +310,7 @@ void QuoteDialog::setText() {
 }
 
 void QuoteDialog::visitFritzingFab() {
-	QDesktopServices::openUrl(QString("http://fab.fritzing.org"));
+	QDesktopServices::openUrl(QString("https://fab.fritzing.org"));
 }
 
 QString QuoteDialog::countArgs() {

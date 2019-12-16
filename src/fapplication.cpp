@@ -338,16 +338,6 @@ void RegenerateDatabaseThread::run() {
 
 FApplication::FApplication( int & argc, char ** argv) : QApplication(argc, argv)
 {
-	m_fServer = NULL;
-	m_spaceBarIsPressed = false;
-	m_mousePressed = false;
-	m_referenceModel = NULL;
-	m_started = false;
-	m_updateDialog = NULL;
-	m_lastTopmostWindow = NULL;
-	m_serviceType = NoService;
-	m_splash = NULL;
-
 	m_arguments = arguments();
 }
 
@@ -1206,12 +1196,12 @@ int FApplication::startup()
 	//if (!fabEnabled) {
 	QNetworkAccessManager * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotOrderFab(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl(QString("http://fab.fritzing.org/launched%1").arg(Version::makeRequestParamsString(true)))));
+	manager->get(QNetworkRequest(QUrl(QString("http%2://fab.fritzing.org/launched%1")
+									  .arg(Version::makeRequestParamsString(true))
+									  .arg(QSslSocket::supportsSsl() ? "s" : ""))));
 	//}
 
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, LoadProgressEnd);
-
-
 
 	//DebugDialog::debug("after createUserDataStoreFolderStructure");
 
@@ -1429,9 +1419,10 @@ void FApplication::checkForUpdates(bool atUserRequest)
 		}
 	}
 
-	QString atom = QString("http://fritzing.org/download/feed/atom/%1/%2")
+	QString atom = QString("http%3://fritzing.org/download/feed/atom/%1/%2")
 	               .arg(PLATFORM_NAME)
-	               .arg(Version::makeRequestParamsString(true));
+				   .arg(Version::makeRequestParamsString(true))
+				   .arg(QSslSocket::supportsSsl() ? "s" : "");
 	DebugDialog::debug(atom);
 	versionChecker->setUrl(atom);
 	m_updateDialog->setAtUserRequest(atUserRequest);

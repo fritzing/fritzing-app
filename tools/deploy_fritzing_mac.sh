@@ -30,7 +30,7 @@ echo "$supportdir"
 
 echo ">> copy support files"
 cd "$workingdir"
-cp -rf sketches help translations README.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 "$supportdir/"
+cp -rf sketches help translations INSTALL.txt README.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 "$supportdir/"
 
 echo ">> clean translations"
 cd "$supportdir"

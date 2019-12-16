@@ -45,7 +45,7 @@ protected:
 	QString makeCopper(QStringList ids, QHash<QString, QString> &, const QString & filename);
 
 protected:
-	int m_nonConnectorNumber;
+	int m_nonConnectorNumber = 0;
 
 };
 

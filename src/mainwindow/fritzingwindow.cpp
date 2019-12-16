@@ -42,7 +42,6 @@ FritzingWindow::FritzingWindow(const QString &untitledFileName, int &untitledFil
 	: QMainWindow(parent, f)
 {
 	___fritzingTitle___ = QObject::tr("Fritzing");
-	m_readOnly = false;
 
 	// Let's set the icon
 	this->setWindowIcon(QIcon(QPixmap(":resources/images/fritzing_icon.png")));

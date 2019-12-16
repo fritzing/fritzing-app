@@ -53,22 +53,22 @@ public:
 
 public:
 	GridEntry(QRectF &, QGraphicsItem * parent);
-	bool drawn();
-	void setDrawn(bool);
+	constexpr bool drawn() const noexcept { return m_drawn; }
+	void setDrawn(bool value) noexcept { m_drawn = value; }
 
 protected:
 	bool m_drawn;
 };
 
 ////////////////////////////////////
-
+class PCBSketchWidget;
 class CMRouter : public QObject
 {
 	Q_OBJECT
 
 public:
-	CMRouter(class PCBSketchWidget *, ItemBase * board, bool adjustIf);
-	~CMRouter(void);
+	CMRouter(PCBSketchWidget *, ItemBase * board, bool adjustIf);
+	~CMRouter() = default;
 
 public:
 	enum OverlapType {
@@ -109,13 +109,13 @@ protected:
 	QRectF m_maxRect90;
 	TileRect m_overlappingTileRect;
 	QList<Plane *> m_planes;
-	Plane * m_unionPlane;
-	Plane * m_union90Plane;
-	ItemBase * m_board;
+	Plane * m_unionPlane = nullptr;
+	Plane * m_union90Plane = nullptr;
+	ItemBase * m_board = nullptr;
 	QRectF m_maxRect;
 	QString m_error;
-	PCBSketchWidget * m_sketchWidget;
-	double m_keepoutPixels;
+	PCBSketchWidget * m_sketchWidget = nullptr;
+	double m_keepoutPixels = 0.0;
 };
 
 #endif

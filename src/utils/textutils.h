@@ -147,7 +147,8 @@ protected:
 	static bool fixViewBox(QDomElement & root);
 	static void chopNotDigits(QString &);
 	static void collectTransforms(QDomElement & root, QList<QDomElement> & transforms);
-
+private:
+	static bool removeFontFamilySingleQuotes(QString &fileContent);
 };
 
 #endif

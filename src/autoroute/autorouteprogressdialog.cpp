@@ -66,8 +66,8 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 	m_progressBar = new QProgressBar(this);
 	vLayout->addWidget(m_progressBar);
 
-	m_spinLabel = NULL;
-	m_spinBox = NULL;
+	m_spinLabel = nullptr;
+	m_spinBox = nullptr;
 
 	if (spin) {
 		QFrame * frame = new QFrame(this);

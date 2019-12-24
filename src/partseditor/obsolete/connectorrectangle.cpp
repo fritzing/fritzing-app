@@ -47,7 +47,7 @@ ConnectorRectangle::ConnectorRectangle(QGraphicsItem* owner, bool withHandlers)
 		setHandlersVisible(false);
 	} else {
 		m_topLeftHandler = m_topRightHandler =
-		                       m_bottomRightHandler = m_bottomLeftHandler = NULL;
+		                       m_bottomRightHandler = m_bottomLeftHandler = nullptr;
 	}
 }
 

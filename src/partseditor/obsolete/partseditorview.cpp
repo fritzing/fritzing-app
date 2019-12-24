@@ -63,8 +63,8 @@ PartsEditorView::PartsEditorView(
 	: SketchWidget(viewId, parent, size, size)
 {
 	m_alignToGrid = m_showGrid = false;
-	m_viewItem = NULL;
-	m_item = NULL;
+	m_viewItem = nullptr;
+	m_item = nullptr;
 	m_connsLayerID = ViewLayer::UnknownLayer;
 	m_svgLoaded = false;
 	m_deleteModelPartOnSceneClear = deleteModelPartOnClearScene;
@@ -146,13 +146,13 @@ void PartsEditorView::addDefaultLayers(ItemBase * fromItem) {
 }
 
 void PartsEditorView::addItemInPartsEditor(ModelPart * modelPart, SvgAndPartFilePath * svgFilePath) {
-	if (modelPart == NULL) {
+	if (modelPart == nullptr) {
 		throw "PartsEditorView::addItemInPartsEditor no model part";
 	}
 	clearScene();
 
 	m_item = newPartsEditorPaletteItem(modelPart, svgFilePath);
-	this->addItem(modelPart, defaultViewLayerSpec(), BaseCommand::CrossView, m_item->getViewGeometry(), m_item->id(), -1, NULL, m_item);
+	this->addItem(modelPart, defaultViewLayerSpec(), BaseCommand::CrossView, m_item->getViewGeometry(), m_item->id(), -1, nullptr, m_item);
 
 	fitCenterAndDeselect();
 
@@ -172,11 +172,11 @@ ItemBase * PartsEditorView::addItemAux(ModelPart * modelPart, ViewLayer::ViewLay
 	Q_UNUSED(id);
 	Q_UNUSED(temporary);
 
-	if(paletteItemAux == NULL) {
+	if(paletteItemAux == nullptr) {
 		paletteItemAux = newPartsEditorPaletteItem(modelPart);
 	}
 	PartsEditorPaletteItem *paletteItem = dynamic_cast<PartsEditorPaletteItem*>(paletteItemAux);
-	if (paletteItem == NULL) {
+	if (paletteItem == nullptr) {
 		throw "PartsEditorView::addItemAux paletteItem not found";
 	}
 
@@ -193,7 +193,7 @@ ItemBase * PartsEditorView::addItemAux(ModelPart * modelPart, ViewLayer::ViewLay
 				if(viewLayerID == ViewLayer::UnknownLayer) {
 					viewLayerID = getViewLayerID(modelPart, m_viewIdentifier, viewLayerSpec);
 				}
-				addDefaultLayers(NULL);
+				addDefaultLayers(nullptr);
 				if (m_viewItem) {
 					QHash<QString, QString> svgHash;
 					QString svg = "";
@@ -216,7 +216,7 @@ ItemBase * PartsEditorView::addItemAux(ModelPart * modelPart, ViewLayer::ViewLay
 			}
 		}
 	}
-	return NULL;
+	return nullptr;
 }
 
 void PartsEditorView::fitCenterAndDeselect() {
@@ -256,7 +256,7 @@ void PartsEditorView::clearScene() {
 		deleteItem(m_item, m_deleteModelPartOnSceneClear, true, false);
 
 		scene()->clear();
-		m_item = NULL;
+		m_item = nullptr;
 	}
 }
 
@@ -264,7 +264,7 @@ void PartsEditorView::removeConnectors() {
 	QList<PartsEditorConnectorItem*> list;
 	for (int i = m_item->childItems().count()-1; i >= 0; i--) {
 		PartsEditorConnectorItem * connectorItem = dynamic_cast<PartsEditorConnectorItem *>(m_item->childItems()[i]);
-		if (connectorItem == NULL) continue;
+		if (connectorItem == nullptr) continue;
 
 		list << connectorItem;
 	}
@@ -427,7 +427,7 @@ QString PartsEditorView::getOrCreateViewFolderInTemp() {
 }
 
 bool PartsEditorView::isEmpty() {
-	return m_item == NULL;
+	return m_item == nullptr;
 }
 
 bool PartsEditorView::ensureFilePath(const QString &filePath) {
@@ -453,7 +453,7 @@ ViewLayer::ViewLayerID PartsEditorView::connectorsLayerId() {
 QString PartsEditorView::terminalIdForConnector(const QString &connId) {
 	//Q_ASSERT(m_item)
 
-	if (m_item == NULL) return "";
+	if (m_item == nullptr) return "";
 
 	QString result = "";
 	QDomElement elem = m_item->svgDom()->documentElement();
@@ -628,7 +628,7 @@ void PartsEditorView::loadFile() {
 		}
 		catch (const QString & msg) {
 			QMessageBox::warning(
-			    NULL,
+			    nullptr,
 			    tr("Conversion problem"),
 			    tr("Unable to load image file: \n%1").arg(msg)
 			);
@@ -639,9 +639,9 @@ void PartsEditorView::loadFile() {
 		if(m_startItem) {
 			m_fixedToCenterItems.removeAll(m_startItem);
 			delete m_startItem;
-			m_startItem = NULL;
+			m_startItem = nullptr;
 		}
-		m_viewItem = NULL;				// loading a new file, so m_viewItem is obsolete
+		m_viewItem = nullptr;				// loading a new file, so m_viewItem is obsolete
 		loadSvgFile(origPath);
 	}
 }
@@ -686,7 +686,7 @@ void PartsEditorView::beforeSVGLoading(const QString &filename, bool &canceled) 
 	QFile file(filename);
 	if(!file.open(QIODevice::ReadOnly )) {
 		QMessageBox::warning(
-		    NULL,
+		    nullptr,
 		    tr("Couldn't open svg file"),
 		    tr(
 		        "The file couldn't be opened. If this file defines its dimensions \n"
@@ -708,7 +708,7 @@ void PartsEditorView::beforeSVGLoading(const QString &filename, bool &canceled) 
 		file.close();
 		if(!TextUtils::writeUtf8(filename, fileContent)) {
 			QMessageBox::warning(
-			    NULL,
+			    nullptr,
 			    tr("Couldn't write into file"),
 			    tr(
 			        "This file needs to be fixed to fit fritzing needs, but it couldn't\n"
@@ -809,7 +809,7 @@ void PartsEditorView::loadFromModel(PaletteModel *paletteModel, ModelPart * mode
 
 	ViewGeometry viewGeometry;
 	this->setPaletteModel(paletteModel);
-	m_item = (PartsEditorPaletteItem*) addItemAux(modelPart, defaultViewLayerSpec(), viewGeometry, ItemBase::getNextID(), NULL, true, m_viewIdentifier, true);
+	m_item = (PartsEditorPaletteItem*) addItemAux(modelPart, defaultViewLayerSpec(), viewGeometry, ItemBase::getNextID(), nullptr, true, m_viewIdentifier, true);
 
 	fitCenterAndDeselect();
 
@@ -819,7 +819,7 @@ void PartsEditorView::loadFromModel(PaletteModel *paletteModel, ModelPart * mode
 		if(m_startItem) {
 			m_fixedToCenterItems.removeAll(m_startItem);
 			delete m_startItem;
-			m_startItem = NULL;
+			m_startItem = nullptr;
 		}
 
 
@@ -1023,9 +1023,9 @@ QString PartsEditorView::createSvgFromImage(const QString &origFilePath) {
 
 		QFile destFile(newFilePath);
 		if(!destFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-			QMessageBox::information(NULL, "", "file not created");
+			QMessageBox::information(nullptr, "", "file not created");
 			if(!destFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-					QMessageBox::information(NULL, "", "file not created 2");
+					QMessageBox::information(nullptr, "", "file not created 2");
 				}
 		}
 		QTextStream out(&destFile);
@@ -1128,7 +1128,7 @@ void PartsEditorView::createConnector(Connector *conn, const QSize &connSize, bo
 }
 
 void PartsEditorView::removeConnector(const QString &connId) {
-	ConnectorItem *connToRemove = NULL;
+	ConnectorItem *connToRemove = nullptr;
 	foreach(QGraphicsItem *item, items()) {
 		ConnectorItem *connItem = dynamic_cast<ConnectorItem*>(item);
 		if(connItem && connItem->connector()->connectorSharedID() == connId) {
@@ -1187,7 +1187,7 @@ void PartsEditorView::setMismatching(ViewLayer::ViewIdentifier viewId, const QSt
 		for (int i = 0; i < m_item->childItems().count(); i++) {
 			PartsEditorConnectorsConnectorItem * connectorItem
 			    = dynamic_cast<PartsEditorConnectorsConnectorItem *>(m_item->childItems()[i]);
-			if(connectorItem == NULL) continue;
+			if(connectorItem == nullptr) continue;
 
 			if(connectorItem->connector()->connectorSharedID() == id) {
 				connectorItem->setMismatching(mismatching);
@@ -1227,7 +1227,7 @@ void PartsEditorView::aboutToSave(bool fakeDefaultIfNone) {
 				ensureFilePath(tempFile);
 
 				if(!TextUtils::writeUtf8(tempFile, TextUtils::removeXMLEntities(svgDom->toString()))) {
-					/*QMessageBox::information(NULL,"",
+					/*QMessageBox::information(nullptr,"",
 						QString("Couldn't open file for update, after drawing connectors: '%1'")
 							.arg(tempFile)
 					);*/
@@ -1327,7 +1327,7 @@ QStringList PartsEditorView::defaultLayerAsStringlist() {
 QString PartsEditorView::svgIdForConnector(const QString &connId) {
 	//Q_ASSERT(m_item)
 
-	if (m_item == NULL) return connId;
+	if (m_item == nullptr) return connId;
 
 
 	QString result = "";
@@ -1445,7 +1445,7 @@ void PartsEditorView::addNewTerminalPoints(
 	foreach(PartsEditorConnectorsConnectorItem* citem, connsWithNewTPs) {
 		QString connId = citem->connector()->connectorSharedID();
 		TerminalPointItem *tp = citem->terminalPointItem();
-		if (tp == NULL) {
+		if (tp == nullptr) {
 			throw "PartsEditorView::addNewTerminalPoints tp missing";
 		}
 
@@ -1714,7 +1714,7 @@ void PartsEditorView::updatePinsInfo(QList< QPointer<ConnectorShared> > connsSha
 	foreach(ConnectorShared* cs, connsShared) {
 		QString connId = cs->id();
 		SvgIdLayer* pinInfo = cs->fullPinInfo(m_viewIdentifier, layerID);
-		if (pinInfo == NULL) {
+		if (pinInfo == nullptr) {
 			notFound << cs;
 		}
 		else if(!m_svgIds[connId].connectorId.isEmpty()) {

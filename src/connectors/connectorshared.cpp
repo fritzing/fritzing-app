@@ -34,13 +34,13 @@ ConnectorShared::ConnectorShared()
 	m_typeString = "";
 	m_type = Connector::Unknown;
 	m_description = "";
-	m_bus = NULL;
-	m_ercData = NULL;
+	m_bus = nullptr;
+	m_ercData = nullptr;
 }
 
 ConnectorShared::ConnectorShared( const QDomElement & domElement )
 {
-	m_ercData = NULL;
+	m_ercData = nullptr;
 	m_id = domElement.attribute("id", "");
 	m_name = domElement.attribute("name", "");
 	m_replacedby = domElement.attribute("replacedby", "");
@@ -66,7 +66,7 @@ ConnectorShared::ConnectorShared( const QDomElement & domElement )
 
 	}
 
-	m_bus = NULL;
+	m_bus = nullptr;
 }
 
 ConnectorShared::~ConnectorShared() {
@@ -168,7 +168,7 @@ SvgIdLayer * ConnectorShared::fullPinInfo(ViewLayer::ViewID viewId, ViewLayer::V
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 const QString & ConnectorShared::legID(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID) {
@@ -184,7 +184,7 @@ const QString & ConnectorShared::legID(ViewLayer::ViewID viewId, ViewLayer::View
 
 
 void ConnectorShared::loadPins(const QDomElement & domElement) {
-	//if(m_domElement == NULL) return;
+	//if(m_domElement == nullptr) return;
 
 	// TODO: this is view-related stuff and it would be nice if the model didn't know about it
 	QDomElement viewsTag = domElement.firstChildElement("views");
@@ -230,7 +230,7 @@ BusShared * ConnectorShared::bus() {
 }
 
 const QString & ConnectorShared::busID() {
-	if (m_bus == NULL) return ___emptyString___;
+	if (m_bus == nullptr) return ___emptyString___;
 	return m_bus->id();
 }
 

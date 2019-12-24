@@ -90,7 +90,7 @@ FSplashScreen::~FSplashScreen() {
 void FSplashScreen::showMessage(const QString &message, const QString & id, int alignment)
 {
 	MessageThing * itemMessageThing = m_items.value(id);
-	if (itemMessageThing == NULL) return;
+	if (itemMessageThing == nullptr) return;
 
 	MessageThing * messageThing = new MessageThing;
 	messageThing->alignment = alignment;
@@ -105,7 +105,7 @@ void FSplashScreen::showMessage(const QString &message, const QString & id, int 
 int FSplashScreen::showPixmap(const QPixmap & pixmap, const QString & id)
 {
 	MessageThing * itemMessageThing = m_items.value(id);
-	if (itemMessageThing == NULL) return -1;
+	if (itemMessageThing == nullptr) return -1;
 
 	PixmapThing * pixmapThing = new PixmapThing;
 	pixmapThing->rect = QRect(itemMessageThing->rect.topLeft(), pixmap.size());
@@ -180,7 +180,7 @@ void FSplashScreen::displaySlice()
 	QPixmap bar(":/resources/images/splash/fab_logo_bar.png");
 	if (bar.isNull()) return;
 
-	srand ( time(NULL) );
+	srand ( time(nullptr) );
 	int ix = (rand() % highest) + 1;
 
 	QPixmap slice(fname.arg(ix));

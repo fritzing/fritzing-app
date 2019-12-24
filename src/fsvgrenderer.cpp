@@ -316,7 +316,7 @@ void FSvgRenderer::initLegInfoAux(QDomElement & element, const LoadInfo & loadIn
 
 			element.setTagName("g");			// don't want this element to actually be drawn
 			gotOne = true;
-			ConnectorInfo * connectorInfo = m_connectorInfoHash.value(loadInfo.connectorIDs.at(ix), NULL);
+			ConnectorInfo * connectorInfo = m_connectorInfoHash.value(loadInfo.connectorIDs.at(ix), nullptr);
 			if (connectorInfo) {
 				//QString temp;
 				//QTextStream stream(&temp);
@@ -368,7 +368,7 @@ void FSvgRenderer::initTerminalInfoAux(QDomElement & element, const LoadInfo & l
 	if (!id.isEmpty()) {
 		int ix = loadInfo.terminalIDs.indexOf(id);
 		if (ix >= 0) {
-			ConnectorInfo * connectorInfo = m_connectorInfoHash.value(loadInfo.connectorIDs.at(ix), NULL);
+			ConnectorInfo * connectorInfo = m_connectorInfoHash.value(loadInfo.connectorIDs.at(ix), nullptr);
 			if (connectorInfo) {
 				connectorInfo->terminalMatrix = TextUtils::elementToMatrix(element);
 			}
@@ -616,7 +616,7 @@ ConnectorInfo * FSvgRenderer::getConnectorInfo(const QString & connectorID) {
 
 bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPoint, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
-	if (svgIdLayer == NULL) return false;
+	if (svgIdLayer == nullptr) return false;
 
 	//if (svgIdLayer->m_viewID = ViewLayer::SchematicView) {
 	//    DebugDialog::debug("delete me please");
@@ -818,7 +818,7 @@ QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors(ViewLayer::ViewLayerPlaceme
 
 		QRectF viewBox = this->viewBoxF();
 
-		ConnectorInfo * connectorInfo = m_nonConnectorInfoHash.value(nonConnectorID, NULL);
+		ConnectorInfo * connectorInfo = m_nonConnectorInfoHash.value(nonConnectorID, nullptr);
 		if (connectorInfo && connectorInfo->gotCircle) {
 			svgIdLayer->m_radius = connectorInfo->radius * defaultSizeF.width() / viewBox.width();
 			svgIdLayer->m_strokeWidth = connectorInfo->strokeWidth * defaultSizeF.width() / viewBox.width();

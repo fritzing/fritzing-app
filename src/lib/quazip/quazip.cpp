@@ -64,7 +64,7 @@ bool QuaZip::open(Mode mode, zlib_filefunc_def* ioApi)
 	switch(mode) {
 	case mdUnzip:
 		unzFile_f=unzOpen2(QFile::encodeName(zipName).constData(), ioApi);
-		if(unzFile_f!=NULL) {
+		if(unzFile_f!=nullptr) {
 			this->mode=mode;
 			return true;
 		} else {
@@ -78,9 +78,9 @@ bool QuaZip::open(Mode mode, zlib_filefunc_def* ioApi)
 		                   mode==mdCreate?APPEND_STATUS_CREATE:
 		                   mode==mdAppend?APPEND_STATUS_CREATEAFTER:
 		                   APPEND_STATUS_ADDINZIP,
-		                   NULL,
+		                   nullptr,
 		                   ioApi);
-		if(zipFile_f!=NULL) {
+		if(zipFile_f!=nullptr) {
 			this->mode=mode;
 			return true;
 		} else {
@@ -169,7 +169,7 @@ bool QuaZip::setCurrentFile(const QString& fileName, CaseSensitivity cs)
 		return true;
 	}
 	// Unicode-aware reimplementation of the unzLocateFile function
-	if(unzFile_f==NULL) {
+	if(unzFile_f==nullptr) {
 		zipError=UNZ_PARAMERROR;
 		return false;
 	}
@@ -237,14 +237,14 @@ bool QuaZip::getCurrentFileInfo(QuaZipFileInfo *info)const
 	QByteArray fileName;
 	QByteArray extra;
 	QByteArray comment;
-	if(info==NULL) return false;
+	if(info==nullptr) return false;
 	if(!isOpen()||!hasCurrentFile()) return false;
-	if((fakeThis->zipError=unzGetCurrentFileInfo(unzFile_f, &info_z, NULL, 0, NULL, 0, NULL, 0))!=UNZ_OK)
+	if((fakeThis->zipError=unzGetCurrentFileInfo(unzFile_f, &info_z, nullptr, 0, nullptr, 0, nullptr, 0))!=UNZ_OK)
 		return false;
 	fileName.resize(info_z.size_filename);
 	extra.resize(info_z.size_file_extra);
 	comment.resize(info_z.size_file_comment);
-	if((fakeThis->zipError=unzGetCurrentFileInfo(unzFile_f, NULL,
+	if((fakeThis->zipError=unzGetCurrentFileInfo(unzFile_f, nullptr,
 	                       fileName.data(), fileName.size(),
 	                       extra.data(), extra.size(),
 	                       comment.data(), comment.size()))!=UNZ_OK)
@@ -278,8 +278,8 @@ QString QuaZip::getCurrentFileName()const
 	}
 	if(!isOpen()||!hasCurrentFile()) return QString();
 	QByteArray fileName(MAX_FILE_NAME_LENGTH, 0);
-	if((fakeThis->zipError=unzGetCurrentFileInfo(unzFile_f, NULL, fileName.data(), fileName.size(),
-	                       NULL, 0, NULL, 0))!=UNZ_OK)
+	if((fakeThis->zipError=unzGetCurrentFileInfo(unzFile_f, nullptr, fileName.data(), fileName.size(),
+	                       nullptr, 0, nullptr, 0))!=UNZ_OK)
 		return QString();
 	return fileNameCodec->toUnicode(fileName.constData());
 }

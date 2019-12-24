@@ -28,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 QHash<QString, QString> Syntaxer::m_listsToFormats;
 
 Syntaxer::Syntaxer() : QObject() {
-	m_trieRoot = NULL;
+	m_trieRoot = nullptr;
 }
 
 Syntaxer::~Syntaxer() {
@@ -156,7 +156,7 @@ void Syntaxer::loadList(QDomElement & list) {
 }
 
 bool Syntaxer::matches(const QString & string, TrieLeaf * & leaf) {
-	if (m_trieRoot == NULL) return false;
+	if (m_trieRoot == nullptr) return false;
 
 	QString temp = string;
 	return m_trieRoot->matches(temp, leaf);

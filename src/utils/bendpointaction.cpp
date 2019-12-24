@@ -26,8 +26,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 BendpointAction::BendpointAction(const QString & text, QObject * parent)
 	: QAction(text, parent)
 {
-	m_lastHoverEnterConnectorItem = NULL;
-	m_lastHoverEnterItem = NULL;
+	m_lastHoverEnterConnectorItem = nullptr;
+	m_lastHoverEnterItem = nullptr;
 }
 
 void BendpointAction::setLastHoverEnterConnectorItem(ConnectorItem * connectorItem) {

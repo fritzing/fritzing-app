@@ -51,7 +51,7 @@ void debugError(bool result, QSqlQuery & query) {
 	DebugDialog::debug(QString("%1 %2 %3").arg(error.text()).arg(error.number()).arg(error.type()));
 }
 
-static ModelPart * DebugModelPart = NULL;
+static ModelPart * DebugModelPart = nullptr;
 
 void debugExec(const QString & msg, QSqlQuery & query) {
 	DebugDialog::debug(
@@ -59,7 +59,7 @@ void debugExec(const QString & msg, QSqlQuery & query) {
 	    "\t "+ query.lastQuery() + "\n"
 	    "\t ERROR DRIVER: "+ query.lastError().driverText() + "\n"
 	    "\t ERROR DB: " + query.lastError().databaseText() + "\n"
-	    "\t moduleid:" + (DebugModelPart == NULL ? "" : DebugModelPart->moduleID()) + ""
+	    "\t moduleid:" + (DebugModelPart == nullptr ? "" : DebugModelPart->moduleID()) + ""
 	);
 	QMap<QString, QVariant> map = query.boundValues();
 	foreach (QString name, map.keys()) {
@@ -87,7 +87,7 @@ QStringList FailurePropertyMessages;
 
 void noSwappingMessage(int n)
 {
-	FMessageBox::warning(NULL,
+	FMessageBox::warning(nullptr,
 	                     QObject::tr("Oops!"),
 	                     QObject::tr("Sorry, we have a problem with the swapping mechanism.\nFritzing still works, but you won't be able to change parts properties.") +
 	                     QObject::tr("Error %1\n").arg(n),
@@ -173,7 +173,7 @@ bool SqliteReferenceModel::loadFromDB(const QString & databaseName)
 	if (v.isValid() && qstrcmp(v.typeName(), "sqlite3*") == 0) {
 	    // v.data() returns a pointer to the handle
 	    sqlite3 *handle = *static_cast<sqlite3 **>(v.data());
-	    if (handle != 0) { // check that it is not NULL
+	    if (handle != 0) { // check that it is not nullptr
 	        const char * message = sqlite3_errmsg(handle);
 	        qDebug() << "testing sqlite3" << message;
 	    }
@@ -225,7 +225,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 	DebugDialog::debug(QString("parts count %1").arg(count));
 
 
-	QVector<ModelPart *> parts(count + 1, NULL);
+	QVector<ModelPart *> parts(count + 1, nullptr);
 	QVector<qulonglong > oldToNew(count + 1, 0);
 
 	query = db.exec("SELECT path, moduleID, id, family, version, replacedby, fritzingversion, author, title, label, date, description, spice, spicemodel, taxonomy, itemtype FROM parts");
@@ -246,7 +246,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 		QString moduleID = query.value(ix++).toString();
 		qulonglong dbid = query.value(ix++).toULongLong();
 
-		if (m_partHash.value(moduleID, NULL)) {
+		if (m_partHash.value(moduleID, nullptr)) {
 			// a part with this moduleID was already loaded--the file version overrides the db version
 			continue;
 		}
@@ -364,7 +364,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 	int connectorCount = query.value(0).toInt();
 	if (connectorCount == 0) return false;
 
-	QVector<Connector *> connectors(connectorCount + 1, NULL);
+	QVector<Connector *> connectors(connectorCount + 1, nullptr);
 
 	query = db.exec("SELECT id, connectorid, type, name, description, replacedby, part_id FROM connectors");
 	debugError(query.isActive(), query);
@@ -427,7 +427,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 	int busCount = query.value(0).toInt();
 	if (busCount == 0) return false;
 
-	QVector<BusShared *> buses(busCount + 1, NULL);
+	QVector<BusShared *> buses(busCount + 1, nullptr);
 	QHash<BusShared *, qulonglong> busids;
 
 	query = db.exec("SELECT id, name, part_id FROM buses");
@@ -497,7 +497,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 		}
 	}
 
-	if (m_root == NULL) {
+	if (m_root == nullptr) {
 		m_root = new ModelPart();
 	}
 	foreach (ModelPart * modelPart, m_partHash.values()) {
@@ -543,74 +543,74 @@ bool SqliteReferenceModel::createDatabase(const QString & databaseName, bool ful
 
 		QSqlQuery query;
 		result = query.exec("CREATE TABLE lastcommit (\n"
-		                    "id INTEGER PRIMARY KEY NOT NULL,\n"
-		                    "sha TEXT NOT NULL"
+		                    "id INTEGER PRIMARY KEY NOT nullptr,\n"
+		                    "sha TEXT NOT nullptr"
 		                    ")");
 		debugError(result, query);
 
 		result = query.exec("CREATE TABLE viewimages (\n"
-		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
-		                    "viewid INTEGER NOT NULL,\n"                     // ViewLayer::ViewID
-		                    "image TEXT NOT NULL,\n"
-		                    "layers INTEGER NOT NULL,\n"                     // bit flag (max 8 bytes = 64 layers)
-		                    "sticky INTEGER NOT NULL,\n"                     // bit flag (max 8 bytes = 64 layers)
-		                    "flipvertical INTEGER NOT NULL,\n"               // boolean
-		                    "fliphorizontal INTEGER NOT NULL,\n"             // boolean
-		                    "part_id INTEGER NOT NULL"
+		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT nullptr,\n"
+		                    "viewid INTEGER NOT nullptr,\n"                     // ViewLayer::ViewID
+		                    "image TEXT NOT nullptr,\n"
+		                    "layers INTEGER NOT nullptr,\n"                     // bit flag (max 8 bytes = 64 layers)
+		                    "sticky INTEGER NOT nullptr,\n"                     // bit flag (max 8 bytes = 64 layers)
+		                    "flipvertical INTEGER NOT nullptr,\n"               // boolean
+		                    "fliphorizontal INTEGER NOT nullptr,\n"             // boolean
+		                    "part_id INTEGER NOT nullptr"
 		                    ")");
 		debugError(result, query);
 
 		result = query.exec("CREATE TABLE connectors (\n"
-		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
-		                    "connectorid TEXT NOT NULL,\n"
-		                    "type INTEGER NOT NULL,\n"
-		                    "name TEXT NOT NULL,\n"
+		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT nullptr,\n"
+		                    "connectorid TEXT NOT nullptr,\n"
+		                    "type INTEGER NOT nullptr,\n"
+		                    "name TEXT NOT nullptr,\n"
 		                    "description TEXT,\n"
 		                    "replacedby TEXT,\n"
-		                    "part_id INTEGER NOT NULL"
+		                    "part_id INTEGER NOT nullptr"
 		                    ")");
 		debugError(result, query);
 
 		result = query.exec("CREATE TABLE connectorlayers (\n"
-		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
-		                    "view INTEGER NOT NULL,\n"                      // ViewLayer::ViewID
-		                    "layer INTEGER NOT NULL,\n"                     // ViewLayer::ViewLayerID
-		                    "svgid TEXT NOT NULL,\n"
-		                    "hybrid INTEGER NOT NULL,\n"
+		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT nullptr,\n"
+		                    "view INTEGER NOT nullptr,\n"                      // ViewLayer::ViewID
+		                    "layer INTEGER NOT nullptr,\n"                     // ViewLayer::ViewLayerID
+		                    "svgid TEXT NOT nullptr,\n"
+		                    "hybrid INTEGER NOT nullptr,\n"
 		                    "terminalid TEXT,\n"
 		                    "legid TEXT,\n"
-		                    "connector_id INTEGER NOT NULL"
+		                    "connector_id INTEGER NOT nullptr"
 		                    ")");
 		debugError(result, query);
 
 		result = query.exec("CREATE TABLE buses (\n"
-		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
-		                    "name TEXT NOT NULL,\n"
-		                    "part_id INTEGER NOT NULL"
+		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT nullptr,\n"
+		                    "name TEXT NOT nullptr,\n"
+		                    "part_id INTEGER NOT nullptr"
 		                    ")");
 		debugError(result, query);
 
 		result = query.exec("CREATE TABLE busmembers (\n"
-		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
-		                    "connectorid TEXT NOT NULL,\n"
-		                    "bus_id INTEGER NOT NULL"
+		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT nullptr,\n"
+		                    "connectorid TEXT NOT nullptr,\n"
+		                    "bus_id INTEGER NOT nullptr"
 		                    ")");
 		debugError(result, query);
 
 		result = query.exec("CREATE TABLE schematic_subparts (\n"
-		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
-		                    "label TEXT NOT NULL,\n"
-		                    "subpart_id TEXT NOT NULL,\n"
-		                    "part_id INTEGER NOT NULL"
+		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT nullptr,\n"
+		                    "label TEXT NOT nullptr,\n"
+		                    "subpart_id TEXT NOT nullptr,\n"
+		                    "part_id INTEGER NOT nullptr"
 		                    ")");
 		debugError(result, query);
 
 		// TODO: create a dictionary table so redundant tags, property names, and property values aren't stored multiple times
 
 		result = query.exec("CREATE TABLE tags (\n"
-		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,\n"
-		                    "tag TEXT NOT NULL,\n"
-		                    "part_id INTEGER NOT NULL"
+		                    "id INTEGER PRIMARY KEY AUTOINCREMENT NOT nullptr ,\n"
+		                    "tag TEXT NOT nullptr,\n"
+		                    "part_id INTEGER NOT nullptr"
 		                    ")");
 		debugError(result, query);
 
@@ -657,7 +657,7 @@ void SqliteReferenceModel::deleteConnection() {
 
 ModelPart *SqliteReferenceModel::loadPart(const QString & path, bool update) {
 	ModelPart *modelPart = PaletteModel::loadPart(path, update);
-	if (modelPart == NULL) return modelPart;
+	if (modelPart == nullptr) return modelPart;
 
 	if (!m_init) addPart(modelPart, update);
 	return modelPart;
@@ -665,9 +665,9 @@ ModelPart *SqliteReferenceModel::loadPart(const QString & path, bool update) {
 
 ModelPart *SqliteReferenceModel::retrieveModelPart(const QString &moduleID) {
 	if (moduleID.isEmpty()) {
-		return NULL;
+		return nullptr;
 	}
-	return m_partHash.value(moduleID, NULL);
+	return m_partHash.value(moduleID, nullptr);
 }
 
 QString SqliteReferenceModel::retrieveModuleIdWith(const QString &family, const QString &propertyName, bool closestMatch) {
@@ -786,7 +786,7 @@ QString SqliteReferenceModel::getClosestMatch(const QString &family, const QMult
 int SqliteReferenceModel::countPropsInCommon(const QString &family, const QMultiHash<QString, QString> &properties, const ModelPart *part2) {
 	Q_UNUSED(family)
 
-	if (part2 == NULL) {
+	if (part2 == nullptr) {
 		DebugDialog::debug("countPropsInCommon failure");
 		return 0;
 	}
@@ -865,7 +865,7 @@ bool SqliteReferenceModel::removePartFromDataBase(const QString & moduleId) {
 ModelPart * SqliteReferenceModel::reloadPart(const QString & path, const QString & moduleID) {
 	m_partHash.remove(moduleID);
 	ModelPart *modelPart = PaletteModel::loadPart(path, false);
-	if (modelPart == NULL) return modelPart;
+	if (modelPart == nullptr) return modelPart;
 
 	updatePart(modelPart);
 	return modelPart;
@@ -992,7 +992,7 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 		                    .arg(modelPart->path()).arg(modelPart->moduleID());
 	}
 
-	DebugModelPart = NULL;
+	DebugModelPart = nullptr;
 	return true;
 }
 
@@ -1252,11 +1252,11 @@ void SqliteReferenceModel::killParts()
 
 bool SqliteReferenceModel::createProperties(QSqlDatabase & db) {
 	QSqlQuery query = db.exec("CREATE TABLE properties (\n"
-	                          "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,\n"
-	                          "name TEXT NOT NULL,\n"
-	                          "value TEXT NOT NULL,\n"
-	                          "show_in_label INTEGER NOT NULL,\n"
-	                          "part_id INTEGER NOT NULL"
+	                          "id INTEGER PRIMARY KEY AUTOINCREMENT NOT nullptr ,\n"
+	                          "name TEXT NOT nullptr,\n"
+	                          "value TEXT NOT nullptr,\n"
+	                          "show_in_label INTEGER NOT nullptr,\n"
+	                          "part_id INTEGER NOT nullptr"
 	                          ")");
 	debugError(query.isActive(), query);
 	return query.isActive();
@@ -1277,20 +1277,20 @@ bool SqliteReferenceModel::createParts(QSqlDatabase & db, bool fullLoad)
 		        "spice TEXT,\n"
 		        "spicemodel TEXT,\n"
 		        "taxonomy TEXT,\n"
-		        "itemtype INTEGER NOT NULL,\n"
+		        "itemtype INTEGER NOT nullptr,\n"
 		        "path TEXT\n"
 		        ;
 	}
 	else {
-		extra = "core TEXT NOT NULL\n"
+		extra = "core TEXT NOT nullptr\n"
 		        ;
 	}
 
 
 	QString string = QString("CREATE TABLE parts (\n"
-	                         "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
-	                         "moduleID TEXT NOT NULL,\n"
-	                         "family TEXT NOT NULL,\n"
+	                         "id INTEGER PRIMARY KEY AUTOINCREMENT NOT nullptr,\n"
+	                         "moduleID TEXT NOT nullptr,\n"
+	                         "family TEXT NOT nullptr,\n"
 	                         "%1"
 	                         ")")
 	                 .arg(extra);

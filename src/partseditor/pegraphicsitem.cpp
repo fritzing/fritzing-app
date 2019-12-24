@@ -150,7 +150,7 @@ void PEGraphicsItem::setHighlighted(bool highlighted) {
 		setOpacity(0.4);
 		foreach (QGraphicsItem * item, scene()->items()) {
 			PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
-			if (pegi == NULL) continue;
+			if (pegi == nullptr) continue;
 			if (pegi == this) continue;
 			if (!pegi->highlighted()) continue;
 
@@ -250,7 +250,7 @@ void PEGraphicsItem::showMarquee(bool show) {
 		m_showMarquee = true;
 		foreach (QGraphicsItem * item, scene()->items()) {
 			PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
-			if (pegi == NULL) continue;
+			if (pegi == nullptr) continue;
 			if (pegi == this) continue;
 			if (!pegi->showingMarquee()) continue;
 

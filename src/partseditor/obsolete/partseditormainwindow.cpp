@@ -54,7 +54,7 @@ QString PartsEditorMainWindow::UntitledPartName;
 QString PartsEditorMainWindow::___partsEditorName___;
 
 int PartsEditorMainWindow::UntitledPartIndex = 1;
-QPointer<PartsEditorMainWindow> PartsEditorMainWindow::m_lastOpened = NULL;
+QPointer<PartsEditorMainWindow> PartsEditorMainWindow::m_lastOpened = nullptr;
 int PartsEditorMainWindow::m_closedBeforeCount = 0;
 bool PartsEditorMainWindow::m_closeAfterSaving = true;
 
@@ -68,7 +68,7 @@ bool PartsEditorMainWindow::m_closeAfterSaving = true;
 PartsEditorMainWindow::PartsEditorMainWindow(QWidget *parent)
 	: FritzingWindow(untitledFileName(), untitledFileCount(), fileExtension(), parent)
 {
-	m_iconItem = m_breadboardItem = m_schematicItem = m_pcbItem = NULL;
+	m_iconItem = m_breadboardItem = m_schematicItem = m_pcbItem = nullptr;
 	m_editingAlien = false;
 }
 
@@ -103,7 +103,7 @@ void PartsEditorMainWindow::initText() {
 
 void PartsEditorMainWindow::setup(long id, ModelPart *modelPart, bool fromTemplate, ItemBase * fromItem)
 {
-	ModelPart * originalModelPart = NULL;
+	ModelPart * originalModelPart = nullptr;
 	QFile styleSheet(":/resources/styles/partseditor.qss");
 	m_mainFrame = new QFrame(this);
 	m_mainFrame->setObjectName("partsEditor");
@@ -126,7 +126,7 @@ void PartsEditorMainWindow::setup(long id, ModelPart *modelPart, bool fromTempla
 
 	m_paletteModel = new PaletteModel(false, false);
 
-	if(modelPart == NULL) {
+	if(modelPart == nullptr) {
 		m_lastOpened = this;
 		m_updateEnabled = true;
 	} else {
@@ -144,7 +144,7 @@ void PartsEditorMainWindow::setup(long id, ModelPart *modelPart, bool fromTempla
 	} else {
 		ModelPart * mp = m_paletteModel->loadPart(m_fwFilename, false);
 		// this seems hacky but maybe it's ok
-		if (mp == NULL || mp->modelPartShared() == NULL) {
+		if (mp == nullptr || mp->modelPartShared() == nullptr) {
 			QMessageBox::critical(this, tr("Parts Editor"),
 			                      tr("Error! Cannot load part.\n"),
 			                      QMessageBox::Close);
@@ -171,7 +171,7 @@ void PartsEditorMainWindow::setup(long id, ModelPart *modelPart, bool fromTempla
 		m_sketchModel = new SketchModel(modelPart);
 	}
 
-	ModelPart *mp = fromTemplate ? modelPart : NULL;
+	ModelPart *mp = fromTemplate ? modelPart : nullptr;
 
 	createHeader(mp);
 	createCenter(mp, fromItem);
@@ -226,7 +226,7 @@ void PartsEditorMainWindow::createHeader(ModelPart *modelPart) {
 	m_headerFrame->setStyleSheet("padding: 2px; padding-bottom: 0;");
 
 	int iconViewSize = 50;
-	QGraphicsProxyWidget *startItem = modelPart? NULL: PartsEditorMainWindow::emptyViewItem("icon_icon.png",___emptyString___);
+	QGraphicsProxyWidget *startItem = modelPart? nullptr: PartsEditorMainWindow::emptyViewItem("icon_icon.png",___emptyString___);
 	m_iconViewImage = new PartsEditorView(
 	    ViewLayer::IconView, createTempFolderIfNecessary(), false, startItem, m_headerFrame, iconViewSize
 	);
@@ -427,7 +427,7 @@ QGraphicsProxyWidget *PartsEditorMainWindow::emptyViewItem(QString iconFile, QSt
 	icon->setPixmap(QPixmap(":/resources/images/"+iconFile));
 	icon->setAlignment(Qt::AlignHCenter);
 
-	QLabel *label = NULL;
+	QLabel *label = nullptr;
 	if(!text.isNull() && !text.isEmpty()) {
 		label = new QLabel(text);
 		label->setAlignment(Qt::AlignHCenter);

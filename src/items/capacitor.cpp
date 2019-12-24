@@ -122,7 +122,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 
 void Capacitor::propertyEntry(const QString & text) {
 	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
-	if (focusOutComboBox == NULL) return;
+	if (focusOutComboBox == nullptr) return;
 
 	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {
@@ -166,7 +166,7 @@ void Capacitor::setProp(const QString & prop, const QString & value) {
 void Capacitor::simplePropertyEntry(const QString & text) {
 
 	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
-	if (focusOutComboBox == NULL) return;
+	if (focusOutComboBox == nullptr) return;
 
 	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {

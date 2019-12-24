@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtDebug>
 #include <QIcon>
 
-DebugDialog* DebugDialog::singleton = NULL;
+DebugDialog* DebugDialog::singleton = nullptr;
 QFile DebugDialog::m_file;
 
 #ifdef QT_NO_DEBUG
@@ -133,7 +133,7 @@ void DebugDialog::debug(QString message, DebugLevel debugLevel, QObject * ancest
 	if (!m_enabled) return;
 
 
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		new DebugDialog();
 		//singleton->show();
 	}
@@ -161,7 +161,7 @@ void DebugDialog::hideDebug() {
 }
 
 void DebugDialog::showDebug() {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		new DebugDialog();
 	}
 
@@ -176,13 +176,13 @@ void DebugDialog::closeDebug() {
 
 
 bool DebugDialog::visible() {
-	if (singleton == NULL) return false;
+	if (singleton == nullptr) return false;
 
 	return singleton->isVisible();
 }
 
 bool DebugDialog::connectToBroadcast(QObject * receiver, const char* slot) {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		new DebugDialog();
 	}
 
@@ -190,7 +190,7 @@ bool DebugDialog::connectToBroadcast(QObject * receiver, const char* slot) {
 }
 
 void DebugDialog::setDebugLevel(DebugLevel debugLevel) {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		new DebugDialog();
 
 	}
@@ -201,7 +201,7 @@ void DebugDialog::setDebugLevel(DebugLevel debugLevel) {
 void DebugDialog::cleanup() {
 	if (singleton) {
 		delete singleton;
-		singleton = NULL;
+		singleton = nullptr;
 	}
 }
 

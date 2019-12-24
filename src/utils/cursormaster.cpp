@@ -34,15 +34,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGraphicsSceneMouseEvent>
 #include <QTimer>
 
-QCursor * CursorMaster::BendpointCursor = NULL;
-QCursor * CursorMaster::NewBendpointCursor = NULL;
-QCursor * CursorMaster::MakeWireCursor = NULL;
-QCursor * CursorMaster::MakeCurveCursor = NULL;
-QCursor * CursorMaster::RubberbandCursor = NULL;
-QCursor * CursorMaster::MoveCursor = NULL;
-QCursor * CursorMaster::BendlegCursor = NULL;
-QCursor * CursorMaster::RotateCursor = NULL;
-QCursor * CursorMaster::ScaleCursor = NULL;
+QCursor * CursorMaster::BendpointCursor = nullptr;
+QCursor * CursorMaster::NewBendpointCursor = nullptr;
+QCursor * CursorMaster::MakeWireCursor = nullptr;
+QCursor * CursorMaster::MakeCurveCursor = nullptr;
+QCursor * CursorMaster::RubberbandCursor = nullptr;
+QCursor * CursorMaster::MoveCursor = nullptr;
+QCursor * CursorMaster::BendlegCursor = nullptr;
+QCursor * CursorMaster::RotateCursor = nullptr;
+QCursor * CursorMaster::ScaleCursor = nullptr;
 
 //static QTimer timer;
 
@@ -67,7 +67,7 @@ void CursorMaster::cleanup() {
 
 void CursorMaster::initCursors()
 {
-	if (BendpointCursor == NULL) {
+	if (BendpointCursor == nullptr) {
 		//timer.setSingleShot(true);
 		//timer.setInterval(0);
 		//connect(&timer, SIGNAL(timeout()), &TheCursorMaster, SLOT(moveCursor()));
@@ -124,21 +124,21 @@ void CursorMaster::addCursor(QObject * object, const QCursor & cursor)
 {
 	if (m_blocked) return;
 
-	if (object == NULL) return;
+	if (object == nullptr) return;
 
 
 	/*
 	QGraphicsItem * item = dynamic_cast<QGraphicsItem *>(object);
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	QGraphicsScene * scene = item->scene();
-	if (scene == NULL) return;
+	if (scene == nullptr) return;
 
 	QGraphicsView * view = dynamic_cast<QGraphicsView *>(scene->parent());
-	if (view == NULL) return;
+	if (view == nullptr) return;
 
-	QGraphicsPixmapItem * pixmapItem = CursorItems.value(scene, NULL);
-	if (pixmapItem == NULL) {
+	QGraphicsPixmapItem * pixmapItem = CursorItems.value(scene, nullptr);
+	if (pixmapItem == nullptr) {
 		pixmapItem = new QGraphicsPixmapItem();
 		pixmapItem->setZValue(10000);			// always on top
 		pixmapItem->setVisible(true);
@@ -175,7 +175,7 @@ void CursorMaster::addCursor(QObject * object, const QCursor & cursor)
 
 void CursorMaster::removeCursor(QObject * object)
 {
-	if (object == NULL) return;
+	if (object == nullptr) return;
 
 	if (Listeners.contains(object)) {
 		disconnect(object, SIGNAL(destroyed(QObject *)), this, SLOT(deleteCursor(QObject *)));
@@ -187,13 +187,13 @@ void CursorMaster::removeCursor(QObject * object)
 
 	/*
 	QGraphicsItem * item = dynamic_cast<QGraphicsItem *>(object);
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	QGraphicsScene * scene = item->scene();
-	if (scene == NULL) return;
+	if (scene == nullptr) return;
 
-	QGraphicsPixmapItem * pixmapItem = CursorItems.value(scene, NULL);
-	if (pixmapItem == NULL) return;
+	QGraphicsPixmapItem * pixmapItem = CursorItems.value(scene, nullptr);
+	if (pixmapItem == nullptr) return;
 
 	pixmapItem->hide();
 	*/
@@ -207,7 +207,7 @@ void CursorMaster::deleteCursor(QObject * object)
 bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 {
 	Q_UNUSED(object);
-	//QGraphicsScene * scene = NULL;
+	//QGraphicsScene * scene = nullptr;
 
 	switch (event->type()) {
 	case QEvent::KeyPress:
@@ -230,7 +230,7 @@ bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 
 				scene = dynamic_cast<QGraphicsScene *>(object);
 				if (scene) {
-					QGraphicsPixmapItem * pixmapItem = CursorItems.value(scene, NULL);
+					QGraphicsPixmapItem * pixmapItem = CursorItems.value(scene, nullptr);
 					if (pixmapItem) {
 						timer.setProperty("loc", ((QGraphicsSceneMouseEvent *) event)->scenePos());
 						timer.setUserData(1, (QObjectUserData *) pixmapItem);
@@ -241,7 +241,7 @@ bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 			case QEvent::Leave:
 				scene = dynamic_cast<QGraphicsScene *>(object);
 				if (scene) {
-					QGraphicsPixmapItem * pixmapItem = CursorItems.value(scene, NULL);
+					QGraphicsPixmapItem * pixmapItem = CursorItems.value(scene, nullptr);
 					if (pixmapItem) {
 						//DebugDialog::debug("pos", ((QGraphicsSceneMouseEvent *) event)->scenePos());
 						pixmapItem->hide();
@@ -259,7 +259,7 @@ bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 
 void CursorMaster::moveCursor() {
 	//QObject * t = sender();
-	//if (t == NULL) return;
+	//if (t == nullptr) return;
 
 	//QPointF p = t->property("loc").toPointF();
 	//QGraphicsPixmapItem * item = (QGraphicsPixmapItem *) t->userData(1);

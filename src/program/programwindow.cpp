@@ -124,7 +124,7 @@ ProgramWindow::ProgramWindow(QWidget *parent)
 		initPlatforms();
 	}
 
-	m_savingProgramTab = NULL;
+	m_savingProgramTab = nullptr;
 	UntitledIndex--;						// incremented by FritzingWindow
 	ProgramWindow::setTitle();				// set to something weird by FritzingWindow
 }
@@ -135,7 +135,7 @@ ProgramWindow::~ProgramWindow()
 
 void ProgramWindow::setup()
 {
-	if (parentWidget() == NULL) {
+	if (parentWidget() == nullptr) {
 		resize(500,700);
 		setAttribute(Qt::WA_DeleteOnClose, true);
 	}
@@ -339,7 +339,7 @@ void ProgramWindow::linkFiles(const QList<LinkedFile *> & linkedFiles, const QSt
 
 	bool firstTime = true;
 	foreach (LinkedFile * linkedFile, linkedFiles) {
-		ProgramTab * programTab = NULL;
+		ProgramTab * programTab = nullptr;
 		if (firstTime) {
 			firstTime = false;
 			programTab = indexWidget(0);
@@ -513,7 +513,7 @@ void ProgramWindow::closeCurrentTab() {
 void ProgramWindow::closeTab(int index) {
 	ProgramTab * pTab = indexWidget(index);
 	if (pTab) {
-		emit linkToProgramFile(pTab->filename(), NULL, false, true);
+		emit linkToProgramFile(pTab->filename(), nullptr, false, true);
 		pTab->deleteTab();
 	}
 }
@@ -578,7 +578,7 @@ bool ProgramWindow::beforeClosing(bool showCancel, bool & discard) {
 bool ProgramWindow::beforeClosingTab(int index, bool showCancel)
 {
 	ProgramTab * programTab = indexWidget(index);
-	if (programTab == NULL) return true;
+	if (programTab == nullptr) return true;
 
 	if (!programTab->isModified()) return true;
 
@@ -610,7 +610,7 @@ bool ProgramWindow::saveAsAux(const QString & fileName) {
 	if (!m_savingProgramTab) return false;
 
 	bool result = m_savingProgramTab->save(fileName);
-	m_savingProgramTab = NULL;
+	m_savingProgramTab = nullptr;
 	return result;
 }
 
@@ -639,21 +639,21 @@ void ProgramWindow::saveCurrentTab() {
 
 void ProgramWindow::tabSave(int index) {
 	ProgramTab * programTab =indexWidget(index);
-	if (programTab == NULL) return;
+	if (programTab == nullptr) return;
 
 	prepSave(programTab, false);
 }
 
 void ProgramWindow::tabSaveAs(int index) {
 	ProgramTab * programTab = indexWidget(index);
-	if (programTab == NULL) return;
+	if (programTab == nullptr) return;
 
 	prepSave(programTab, true);
 }
 
 void ProgramWindow::tabRename(int index) {
 	ProgramTab * programTab = indexWidget(index);
-	if (programTab == NULL) return;
+	if (programTab == nullptr) return;
 
 	QString oldFileName = programTab->filename();
 	if (prepSave(programTab, true)) {
@@ -661,7 +661,7 @@ void ProgramWindow::tabRename(int index) {
 			QFile oldFile(oldFileName);
 			if (oldFile.exists()) {
 				oldFile.remove();
-				emit linkToProgramFile(oldFileName, NULL, false, true);
+				emit linkToProgramFile(oldFileName, nullptr, false, true);
 			}
 		}
 	}
@@ -669,7 +669,7 @@ void ProgramWindow::tabRename(int index) {
 
 void ProgramWindow::duplicateTab() {
 	ProgramTab * oldTab = currentWidget();
-	if (oldTab == NULL) return;
+	if (oldTab == nullptr) return;
 
 	ProgramTab * newTab = addTab();
 
@@ -712,7 +712,7 @@ Platform * ProgramWindow::getPlatformByName(const QString & platformName) {
 		if (platform->getName().compare(platformName, Qt::CaseInsensitive) == 0)
 			return platform;
 	}
-	return NULL;
+	return nullptr;
 }
 
 bool ProgramWindow::hasPlatform(const QString & platformName) {
@@ -831,14 +831,14 @@ bool ProgramWindow::alreadyHasProgram(const QString & filename) {
 
 QString ProgramWindow::getExtensionString() {
 	ProgramTab * pt = currentWidget();
-	if (pt == NULL) return "";
+	if (pt == nullptr) return "";
 
 	return pt->extensionString();
 }
 
 QStringList ProgramWindow::getExtensions() {
 	ProgramTab * pt = currentWidget();
-	if (pt == NULL) return QStringList();
+	if (pt == nullptr) return QStringList();
 
 	return pt->extensions();
 }

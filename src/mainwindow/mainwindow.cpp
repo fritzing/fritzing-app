@@ -294,38 +294,38 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 {
 	m_noSchematicConversion = m_useOldSchematic = m_convertedSchematic = false;
 	m_initialTab = 1;
-	m_rolloverQuoteDialog = NULL;
+	m_rolloverQuoteDialog = nullptr;
 	setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
 	setDockOptions(QMainWindow::AnimatedDocks);
 	m_sizeGrip = new FSizeGrip(this);
 
-	m_topDock = NULL;
-	m_bottomDock = NULL;
+	m_topDock = nullptr;
+	m_bottomDock = nullptr;
 	m_dontKeepMargins = true;
 
 	m_settingsPrefix = "main/";
-	m_showWelcomeAct = m_showProgramAct = m_raiseWindowAct = m_showPartsBinIconViewAct = m_showAllLayersAct = m_hideAllLayersAct = m_rotate90cwAct = m_showBreadboardAct = m_showSchematicAct = m_showPCBAct = NULL;
-	m_fileMenu = m_editMenu = m_partMenu = m_windowMenu = m_pcbTraceMenu = m_schematicTraceMenu = m_breadboardTraceMenu = m_viewMenu = NULL;
-	m_infoView = NULL;
+	m_showWelcomeAct = m_showProgramAct = m_raiseWindowAct = m_showPartsBinIconViewAct = m_showAllLayersAct = m_hideAllLayersAct = m_rotate90cwAct = m_showBreadboardAct = m_showSchematicAct = m_showPCBAct = nullptr;
+	m_fileMenu = m_editMenu = m_partMenu = m_windowMenu = m_pcbTraceMenu = m_schematicTraceMenu = m_breadboardTraceMenu = m_viewMenu = nullptr;
+	m_infoView = nullptr;
 	m_addedToTemp = false;
 	setAcceptDrops(true);
-	m_activeWire = NULL;
-	m_activeConnectorItem = NULL;
+	m_activeWire = nullptr;
+	m_activeConnectorItem = nullptr;
 	m_swapTimer.setInterval(30);
 	m_swapTimer.setParent(this);
 	m_swapTimer.setSingleShot(true);
 	connect(&m_swapTimer, SIGNAL(timeout()), this, SLOT(swapSelectedTimeout()));
 
 	m_closeSilently = false;
-	m_orderFabAct = NULL;
-	m_viewFromButtonWidget = m_activeLayerButtonWidget = NULL;
-	m_programView = m_programWindow = NULL;
-	m_welcomeView = NULL;
-	m_windowMenuSeparator = NULL;
-	m_schematicWireColorMenu = m_breadboardWireColorMenu = NULL;
-	m_checkForUpdatesAct = NULL;
-	m_fileProgressDialog = NULL;
-	m_currentGraphicsView = NULL;
+	m_orderFabAct = nullptr;
+	m_viewFromButtonWidget = m_activeLayerButtonWidget = nullptr;
+	m_programView = m_programWindow = nullptr;
+	m_welcomeView = nullptr;
+	m_windowMenuSeparator = nullptr;
+	m_schematicWireColorMenu = m_breadboardWireColorMenu = nullptr;
+	m_checkForUpdatesAct = nullptr;
+	m_fileProgressDialog = nullptr;
+	m_currentGraphicsView = nullptr;
 	m_comboboxChanged = false;
 
 	// Add a timer for autosaving
@@ -347,7 +347,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_dotIcon = QIcon(":/resources/images/dot.png");
 	m_emptyIcon = QIcon();
 
-	m_currentWidget = NULL;
+	m_currentWidget = nullptr;
 	m_firstOpen = true;
 
 	m_statusBar = new QStatusBar(this);
@@ -427,7 +427,7 @@ void MainWindow::addTab(QWidget * widget, const QString & iconPath, const QStrin
 	}
 
 	FTabWidget * tabWidget = qobject_cast<FTabWidget *>(m_tabWidget);
-	if (tabWidget == NULL) {
+	if (tabWidget == nullptr) {
 		addTab(widget, label);
 		return;
 	}
@@ -1100,7 +1100,7 @@ void MainWindow::updateZoomSlider(double zoom) {
 }
 
 SketchAreaWidget *MainWindow::currentSketchArea() {
-	if (m_currentGraphicsView == NULL) return NULL;
+	if (m_currentGraphicsView == nullptr) return nullptr;
 
 	return dynamic_cast<SketchAreaWidget*>(m_currentGraphicsView->parent());
 }
@@ -1122,7 +1122,7 @@ void MainWindow::createStatusBar()
 
 void MainWindow::tabWidget_currentChanged(int index) {
 	SketchAreaWidget * widgetParent = dynamic_cast<SketchAreaWidget *>(currentTabWidget());
-	if (widgetParent == NULL) return;
+	if (widgetParent == nullptr) return;
 
 	m_currentWidget = widgetParent;
 
@@ -1167,7 +1167,7 @@ void MainWindow::tabWidget_currentChanged(int index) {
 		setActionsIcons(index, actions);
 	}
 
-	if (widget == NULL) {
+	if (widget == nullptr) {
 		m_firstTimeHelpAct->setEnabled(false);
 		return;
 	}
@@ -1272,7 +1272,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 	int count = 0;
 	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
 		if (widget == this) continue;
-		if (qobject_cast<QMainWindow *>(widget) == NULL) continue;
+		if (qobject_cast<QMainWindow *>(widget) == nullptr) continue;
 
 		count++;
 	}
@@ -1474,7 +1474,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 		}
 
 		ModelPart * mp = m_referenceModel->retrieveModelPart(moduleID);
-		if (mp == NULL) {
+		if (mp == nullptr) {
 			QDomDocument doc;
 			if (!doc.setContent(fzp)) {
 				DebugDialog::debug(QString("unable to parse fzp in %1: %2").arg(file.fileName()).arg(fzp));
@@ -1482,7 +1482,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 			}
 
 			mp = copyToPartsFolder(fzpInfo, false, PartFactory::folderPath(), "contrib");
-			if (mp == NULL) {
+			if (mp == nullptr) {
 				DebugDialog::debug(QString("unable to create model part in %1: %2").arg(file.fileName()).arg(fzp));
 				continue;
 			}
@@ -1701,7 +1701,7 @@ ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 		    tr("Fritzing"),
 		    tr("Unable to open shareable part '%1': %2").arg(fileName).arg(error)
 		);
-		return NULL;
+		return nullptr;
 	}
 
 	QDir unzipDir(unzipDirPath);
@@ -1716,7 +1716,7 @@ ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 		    tr("Fritzing"),
 		    msg
 		);
-		return NULL;
+		return nullptr;
 	}
 
 	if (mps.count() != 1) {
@@ -1726,7 +1726,7 @@ ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 		    tr("Fritzing"),
 		    tr("Unable to load part from '%1'").arg(fileName)
 		);
-		return NULL;
+		return nullptr;
 	}
 
 	FolderUtils::rmdir(unzipDirPath);
@@ -1739,7 +1739,7 @@ void MainWindow::saveBundledPart(const QString &moduleId) {
 	ModelPart* mp;
 
 	if(moduleId.isEmpty()) {
-		if (m_currentGraphicsView == NULL) return;
+		if (m_currentGraphicsView == nullptr) return;
 		PaletteItem *selectedPart = m_currentGraphicsView->getSelectedPart();
 		mp = selectedPart->modelPart();
 		modIdToExport = mp->moduleID();
@@ -1827,7 +1827,7 @@ QList<ModelPart*> MainWindow::moveToPartsFolder(QDir &unzipDir, MainWindow* mw, 
 	QStringList namefilters;
 	QList<ModelPart*> retval;
 
-	if (mw == NULL) {
+	if (mw == nullptr) {
 		throw tr("MainWindow::moveToPartsFolder mainwindow missing");
 	}
 
@@ -1996,7 +1996,7 @@ void MainWindow::applyReadOnlyChange(bool isReadOnly) {
 }
 
 const QString MainWindow::fritzingTitle() {
-	if (m_currentGraphicsView == NULL) {
+	if (m_currentGraphicsView == nullptr) {
 		return FritzingWindow::fritzingTitle();
 	}
 
@@ -2095,7 +2095,7 @@ void MainWindow::swapSelectedTimeout()
 
 void MainWindow::swapSelectedMap(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase)
 {
-	if (itemBase == NULL) return;
+	if (itemBase == nullptr) return;
 
 	QString generatedModuleID = currPropsMap.value("moduleID");
 	bool logoPadBlocker = false;
@@ -2118,7 +2118,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 			}
 			else if (itemBase->itemType() == ModelPart::Wire) {
 				// assume this option is disabled for a one-sided board, so we would not get here?
-				m_pcbGraphicsView->changeTraceLayer(itemBase, false, NULL);
+				m_pcbGraphicsView->changeTraceLayer(itemBase, false, nullptr);
 				return;
 			}
 		}
@@ -2156,7 +2156,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 
 	if (!generatedModuleID.isEmpty()) {
 		ModelPart * modelPart = m_referenceModel->retrieveModelPart(generatedModuleID);
-		if (modelPart == NULL) {
+		if (modelPart == nullptr) {
 			if (!m_referenceModel->genFZP(generatedModuleID, m_referenceModel)) {
 				return;
 			}
@@ -2375,7 +2375,7 @@ void MainWindow::svgMissingLayer(const QString & layername, const QString & path
 }
 
 void MainWindow::addDefaultParts() {
-	if (m_pcbGraphicsView == NULL) return;
+	if (m_pcbGraphicsView == nullptr) return;
 
 	m_pcbGraphicsView->addDefaultParts();
 	m_breadboardGraphicsView->addDefaultParts();
@@ -2383,7 +2383,7 @@ void MainWindow::addDefaultParts() {
 }
 
 MainWindow * MainWindow::newMainWindow(ReferenceModel *referenceModel, const QString & displayPath, bool showProgress, bool lockFiles, int initialTab) {
-	MainWindow * mw = new MainWindow(referenceModel, NULL);
+	MainWindow * mw = new MainWindow(referenceModel, nullptr);
 	if (showProgress) {
 		mw->showFileProgressDialog(displayPath);
 	}
@@ -2398,7 +2398,7 @@ void  MainWindow::clearFileProgressDialog() {
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->close();
 		delete m_fileProgressDialog;
-		m_fileProgressDialog = NULL;
+		m_fileProgressDialog = nullptr;
 	}
 }
 
@@ -2541,7 +2541,7 @@ void MainWindow::updateActiveLayerButtons() {
 
 int MainWindow::activeLayerIndex()
 {
-	if (m_currentGraphicsView == NULL) return -1;
+	if (m_currentGraphicsView == nullptr) return -1;
 
 	if (m_currentGraphicsView->boardLayers() == 2 || activeLayerWidgetAlwaysOn()) {
 		bool copper0Visible = m_currentGraphicsView->layerIsActive(ViewLayer::Copper0);
@@ -2627,7 +2627,7 @@ void MainWindow::setAutosave(int minutes, bool enabled) {
 	AutosaveEnabled = enabled;
 	foreach (QWidget * widget, QApplication::topLevelWidgets()) {
 		MainWindow * mainWindow = qobject_cast<MainWindow *>(widget);
-		if (mainWindow == NULL) continue;
+		if (mainWindow == nullptr) continue;
 
 		mainWindow->m_autosaveTimer.stop();
 		if (qobject_cast<PEMainWindow *>(widget)) {
@@ -2698,12 +2698,12 @@ void MainWindow::routingStatusLabelMouseRelease(QMouseEvent* event) {
 void MainWindow::routingStatusLabelMouse(QMouseEvent*, bool show) {
 	//if (show) DebugDialog::debug("-------");
 
-	if (m_currentGraphicsView == NULL) return;
+	if (m_currentGraphicsView == nullptr) return;
 
 	QSet<ConnectorItem *> toShow;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		VirtualWire * vw = dynamic_cast<VirtualWire *>(item);
-		if (vw == NULL) continue;
+		if (vw == nullptr) continue;
 
 		foreach (ConnectorItem * connectorItem, vw->connector0()->connectedToItems()) {
 			toShow.insert(connectorItem);
@@ -2985,7 +2985,7 @@ void MainWindow::addToMyParts(ModelPart * modelPart, const QStringList & peAlien
 bool MainWindow::anyUsePart(const QString & moduleID) {
 	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
 		MainWindow *mainWindow = qobject_cast<MainWindow *>(widget);
-		if (mainWindow == NULL) continue;
+		if (mainWindow == nullptr) continue;
 
 		if (mainWindow->usesPart(moduleID)) {
 			return true;
@@ -2996,7 +2996,7 @@ bool MainWindow::anyUsePart(const QString & moduleID) {
 }
 
 bool MainWindow::usesPart(const QString & moduleID) {
-	if (m_currentGraphicsView == NULL) return false;
+	if (m_currentGraphicsView == nullptr) return false;
 
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
@@ -3009,12 +3009,12 @@ bool MainWindow::usesPart(const QString & moduleID) {
 }
 
 bool MainWindow::updateParts(const QString & moduleID, QUndoCommand * parentCommand) {
-	if (m_currentGraphicsView == NULL) return false;
+	if (m_currentGraphicsView == nullptr) return false;
 
 	QSet<ItemBase *> itemBases;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 		if (itemBase->moduleID().compare(moduleID) != 0) continue;
 
 		itemBases.insert(itemBase->layerKinChief());
@@ -3049,19 +3049,19 @@ void MainWindow::updatePartsBin(const QString & moduleID) {
 }
 
 bool MainWindow::hasCustomBoardShape() {
-	if (m_pcbGraphicsView == NULL) return false;
+	if (m_pcbGraphicsView == nullptr) return false;
 
 	return m_pcbGraphicsView->hasCustomBoardShape();
 }
 
 void MainWindow::selectPartsWithModuleID(ModelPart * modelPart) {
-	if (m_currentGraphicsView == NULL) return;
+	if (m_currentGraphicsView == nullptr) return;
 
 	m_currentGraphicsView->selectItemsWithModuleID(modelPart);
 }
 
 void MainWindow::addToSketch(QList<ModelPart *> & modelParts) {
-	if (m_currentGraphicsView == NULL) return;
+	if (m_currentGraphicsView == nullptr) return;
 
 	m_currentGraphicsView->addToSketch(modelParts);
 }
@@ -3096,7 +3096,7 @@ void MainWindow::fireQuote() {
 	if (!QuoteDialog::quoteSucceeded()) return;
 
 	m_rolloverQuoteDialog = m_pcbGraphicsView->quoteDialog(m_pcbWidget);
-	if (m_rolloverQuoteDialog == NULL) return;
+	if (m_rolloverQuoteDialog == nullptr) return;
 
 	//DebugDialog::debug("enter fab button");
 	//QWidget * toolbar = m_pcbWidget->toolbar();
@@ -3163,14 +3163,14 @@ void MainWindow::updateWelcomeViewRecentList(bool doEmit) {
 }
 
 void MainWindow::initZoom() {
-	if (m_currentGraphicsView == NULL) return;
+	if (m_currentGraphicsView == nullptr) return;
 	if (m_currentGraphicsView->everZoomed()) return;
 	if (!m_currentGraphicsView->isVisible()) return;
 
 	bool parts = false;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 		if (!itemBase->isEverVisible()) continue;
 
 		parts = true;

@@ -206,7 +206,7 @@ int TranslatorListModel::rowCount ( const QModelIndex & parent) const
 
 const QLocale * TranslatorListModel::locale( int index)
 {
-	if (index < 0 || index >= m_localeList.count()) return NULL;
+	if (index < 0 || index >= m_localeList.count()) return nullptr;
 
 	return m_localeList.at(index);
 }

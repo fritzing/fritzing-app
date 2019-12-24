@@ -39,7 +39,7 @@ PESvgView::PESvgView(QWidget * parent) : QFrame(parent)
 {
 	this->setObjectName("peSVG");
 
-	m_pegi = NULL;
+	m_pegi = nullptr;
 
 	QVBoxLayout * mainLayout = new QVBoxLayout;
 
@@ -100,7 +100,7 @@ PESvgView::~PESvgView()
 
 void PESvgView::highlightElement(PEGraphicsItem * pegi) {
 	m_pegi = pegi;
-	if (pegi == NULL) {
+	if (pegi == nullptr) {
 		m_svgElement->setText("");
 		m_x->setText("");
 		m_y->setText("");

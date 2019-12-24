@@ -82,8 +82,8 @@ PaletteModel::~PaletteModel()
 
 void PaletteModel::initParts(bool dbExists) {
 	loadParts(dbExists);
-	if (m_root == NULL) {
-		FMessageBox::information(NULL, QObject::tr("Fritzing"),
+	if (m_root == nullptr) {
+		FMessageBox::information(nullptr, QObject::tr("Fritzing"),
 		                         QObject::tr("No parts found.") );
 	}
 }
@@ -92,14 +92,14 @@ void PaletteModel::initNames() {
 }
 
 ModelPart * PaletteModel::retrieveModelPart(const QString & moduleID) {
-	ModelPart * modelPart = m_partHash.value(moduleID, NULL);
+	ModelPart * modelPart = m_partHash.value(moduleID, nullptr);
 	if (modelPart) return modelPart;
 
 	if (m_referenceModel) {
 		return m_referenceModel->retrieveModelPart(moduleID);
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 bool PaletteModel::containsModelPart(const QString & moduleID) {
@@ -191,11 +191,11 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 
 	QFile file(path);
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
-		FMessageBox::warning(NULL, QObject::tr("Fritzing"),
+		FMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 		                     QObject::tr("Cannot read file %1:\n%2.")
 		                     .arg(path)
 		                     .arg(file.errorString()));
-		return NULL;
+		return nullptr;
 	}
 
 	//DebugDialog::debug(QString("loading %2 %1").arg(path).arg(QTime::currentTime().toString("HH:mm:ss.zzz")));
@@ -210,30 +210,30 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	int errorColumn;
 	QDomDocument domDocument;
 	if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		FMessageBox::information(NULL, QObject::tr("Fritzing"),
+		FMessageBox::information(nullptr, QObject::tr("Fritzing"),
 		                         QObject::tr("Parse error (2) at line %1, column %2:\n%3\n%4")
 		                         .arg(errorLine)
 		                         .arg(errorColumn)
 		                         .arg(errorStr)
 		                         .arg(path));
-		return NULL;
+		return nullptr;
 	}
 
 	QDomElement root = domDocument.documentElement();
 	if (root.isNull()) {
-		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (8)."));
-		return NULL;
+		//QMessageBox::information(nullptr, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (8)."));
+		return nullptr;
 	}
 
 	if (root.tagName() != "module") {
-		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (9)."));
-		return NULL;
+		//QMessageBox::information(nullptr, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (9)."));
+		return nullptr;
 	}
 
 	moduleID = root.attribute("moduleId");
 	if (moduleID.isNull() || moduleID.isEmpty()) {
-		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (10)."));
-		return NULL;
+		//QMessageBox::information(nullptr, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (10)."));
+		return nullptr;
 	}
 
 	// check if it's a wire
@@ -310,7 +310,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	}
 
 	ModelPart * modelPart = new ModelPart(domDocument, path, type);
-	if (modelPart == NULL) return NULL;
+	if (modelPart == nullptr) return nullptr;
 
 	if (path.startsWith(ResourcePath)) {
 		modelPart->setCore(true);
@@ -330,14 +330,14 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		subpart = subpart.nextSiblingElement("subpart");
 	}
 
-	if (m_partHash.value(moduleID, NULL)) {
+	if (m_partHash.value(moduleID, nullptr)) {
 		if(!update) {
-			FMessageBox::warning(NULL, QObject::tr("Fritzing"),
+			FMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 			                     QObject::tr("The part '%1' at '%2' does not have a unique module id '%3'.")
 			                     .arg(modelPart->title())
 			                     .arg(path)
 			                     .arg(moduleID));
-			return NULL;
+			return nullptr;
 		} else {
 			m_partHash[moduleID]->copyStuff(modelPart);
 		}
@@ -345,7 +345,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		m_partHash.insert(moduleID, modelPart);
 	}
 
-	if (m_root == NULL) {
+	if (m_root == nullptr) {
 		m_root = modelPart;
 	}
 	else {
@@ -395,11 +395,11 @@ ModelPart * PaletteModel::addPart(QString newPartPath, bool addToReference, bool
 }
 
 void PaletteModel::removePart(const QString &moduleID) {
-	ModelPart *mpToRemove = NULL;
+	ModelPart *mpToRemove = nullptr;
 	QList<QObject *>::const_iterator i;
 	for (i = m_root->children().constBegin(); i != m_root->children().constEnd(); ++i) {
 		ModelPart* mp = qobject_cast<ModelPart *>(*i);
-		if (mp == NULL) continue;
+		if (mp == nullptr) continue;
 
 		//DebugDialog::debug(QString("remove part %1").arg(mp->moduleID()));
 		if(mp->moduleID() == moduleID) {
@@ -408,7 +408,7 @@ void PaletteModel::removePart(const QString &moduleID) {
 		}
 	}
 	if(mpToRemove) {
-		mpToRemove->setParent(NULL);
+		mpToRemove->setParent(nullptr);
 
 		delete mpToRemove;
 	}
@@ -421,13 +421,13 @@ void PaletteModel::removeParts() {
 	QList<ModelPart *> modelParts;
 	foreach (QObject * child, m_root->children()) {
 		ModelPart * modelPart = qobject_cast<ModelPart *>(child);
-		if (modelPart == NULL) continue;
+		if (modelPart == nullptr) continue;
 
 		modelParts.append(modelPart);
 	}
 
 	foreach(ModelPart * modelPart, modelParts) {
-		modelPart->setParent(NULL);
+		modelPart->setParent(nullptr);
 		m_partHash.remove(modelPart->moduleID());
 		delete modelPart;
 	}
@@ -437,7 +437,7 @@ void PaletteModel::clearPartHash() {
 	foreach (ModelPart * modelPart, m_partHash.values()) {
 		ModelPartShared * modelPartShared = modelPart->modelPartShared();
 		if (modelPartShared) {
-			modelPart->setModelPartShared(NULL);
+			modelPart->setModelPartShared(nullptr);
 			delete modelPartShared;
 		}
 
@@ -524,7 +524,7 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 
 	foreach(QObject * child, modelPart->children()) {
 		ModelPart * mp = qobject_cast<ModelPart *>(child);
-		if (mp == NULL) continue;
+		if (mp == nullptr) continue;
 
 		search(mp, searchStrings, modelParts, allowObsolete);
 		emit incSearch();

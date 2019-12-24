@@ -63,7 +63,7 @@ void loadIconSvg()
 GroundPlane::GroundPlane( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: PaletteItem(modelPart, viewID,  viewGeometry,  id, itemMenu, doLabel)
 {
-	m_connector0 = NULL;
+	m_connector0 = nullptr;
 }
 
 bool GroundPlane::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers, LayerAttributes & layerAttributes)
@@ -208,7 +208,7 @@ bool GroundPlane::canEditPart() {
 
 QString GroundPlane::generateSvg() {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) return "";
+	if (infoGraphicsView == nullptr) return "";
 
 	QPointF q = this->boundingRect().center() + this->pos();
 	//QPointF r = this->pos() + m_dropOffset;
@@ -218,7 +218,7 @@ QString GroundPlane::generateSvg() {
 void GroundPlane::setDropOffset(QPointF offset)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) return;
+	if (infoGraphicsView == nullptr) return;
 
 	m_dropOffset = offset;
 	modelPart()->setLocalProp("fillType", fillTypeIndividual);

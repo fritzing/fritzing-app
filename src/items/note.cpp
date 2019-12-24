@@ -110,7 +110,7 @@ QString addText(const QString & text, bool inUrl)
 class NoteGraphicsTextItem : public QGraphicsTextItem
 {
 public:
-	NoteGraphicsTextItem(QGraphicsItem * parent = NULL);
+	NoteGraphicsTextItem(QGraphicsItem * parent = nullptr);
 
 protected:
 	void focusInEvent(QFocusEvent *);
@@ -212,7 +212,7 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 		initialTextString = tr("[write your note here]");
 	}
 
-	m_inResize = NULL;
+	m_inResize = nullptr;
 	this->setCursor(Qt::ArrowCursor);
 
 	setFlag(QGraphicsItem::ItemIsSelectable, true);
@@ -358,7 +358,7 @@ void Note::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	}
 
 	m_spaceBarWasPressed = false;
-	m_inResize = NULL;
+	m_inResize = nullptr;
 	ItemBase::mousePressEvent(event);
 }
 
@@ -723,7 +723,7 @@ void Note::handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, ResizeHandle
 
 	if (!m_inResize) return;
 
-	m_inResize = NULL;
+	m_inResize = nullptr;
 	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView) {
 		infoGraphicsView->noteSizeChanged(this, m_viewGeometry.rect().size(), m_rect.size());

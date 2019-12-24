@@ -35,7 +35,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-Fritzing2Eagle* Fritzing2Eagle::singleton = NULL;
+Fritzing2Eagle* Fritzing2Eagle::singleton = nullptr;
 
 Fritzing2Eagle::Fritzing2Eagle(PCBSketchWidget *m_pcbGraphicsView)
 {
@@ -49,7 +49,7 @@ Fritzing2Eagle::Fritzing2Eagle(PCBSketchWidget *m_pcbGraphicsView)
 /*
 void Fritzing2Eagle::showOutputInfo(PCBSketchWidget m_pcbGraphicsView)
 {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		new Fritzing2Eagle();
 	}
 

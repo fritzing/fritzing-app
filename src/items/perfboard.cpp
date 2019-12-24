@@ -286,7 +286,7 @@ void Perfboard::changeBoardSize()
 		int y = m_yEdit->text().toInt();
 		if (x * y >= WarningSize) {
 			m_gotWarning = true;
-			QMessageBox messageBox(NULL);
+			QMessageBox messageBox(nullptr);
 			messageBox.setWindowTitle(tr("Performance Warning"));
 			messageBox.setText(tr("Performance of perfboards and stripboards with more than approximately 2000 holes can be slow. Are you sure ?\n"
 			                      "\nNote: this warning will not be repeated during this session."
@@ -327,7 +327,7 @@ ItemBase::PluralType Perfboard::isPlural() {
 
 void Perfboard::enableSetButton() {
 	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	if (edit == nullptr) return;
 
 	int x, y;
 	getXY(x, y, m_size);

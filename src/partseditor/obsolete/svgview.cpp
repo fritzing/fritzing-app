@@ -99,7 +99,7 @@ void SVGView::importPCBXML() {
 	               tr("Fritzing Footprint XML Files (*.fzfp);;All Files (*)"));
 	QFile file(path);
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
-		QMessageBox::warning(NULL, QObject::tr("Fritzing"),
+		QMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 		                     QObject::tr("Cannot read file %1:\n%2.")
 		                     .arg(path)
 		                     .arg(file.errorString()));
@@ -110,7 +110,7 @@ void SVGView::importPCBXML() {
 	int errorColumn;
 
 	if (!m_domDocument->setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		QMessageBox::critical(NULL, QObject::tr("Fritzing"),
+		QMessageBox::critical(nullptr, QObject::tr("Fritzing"),
 		                      QObject::tr("Parse error (3) at line %1, column %2:\n%3\n%4")
 		                      .arg(errorLine)
 		                      .arg(errorColumn)
@@ -121,12 +121,12 @@ void SVGView::importPCBXML() {
 
 	QDomElement root = m_domDocument->documentElement();
 	if (root.isNull()) {
-		QMessageBox::critical(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (12).").arg(path));
+		QMessageBox::critical(nullptr, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (12).").arg(path));
 		return;
 	}
 
 	if (root.tagName().toLower() != "element") {
-		QMessageBox::critical(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing Footprint XML file.").arg(path));
+		QMessageBox::critical(nullptr, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing Footprint XML file.").arg(path));
 		return;
 	}
 

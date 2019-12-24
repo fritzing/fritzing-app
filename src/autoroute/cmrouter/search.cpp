@@ -43,7 +43,7 @@
 Tile *
 TiSrPoint(Tile * hintTile, Plane * plane, int x, int y)
 /* Pointer to tile at which to begin search.
-			 * If this is NULL, use the hint tile stored
+			 * If this is nullptr, use the hint tile stored
 			 * with the plane instead.
 			 */
 /* Plane (containing hint tile pointer) */

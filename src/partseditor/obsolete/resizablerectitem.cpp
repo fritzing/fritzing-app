@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ResizableRectItem::ResizableRectItem()
 {
 	m_resizable = false; // not resizable by default
-	m_handlers = NULL;
+	m_handlers = nullptr;
 }
 
 void ResizableRectItem::setResizable(bool resizable) {

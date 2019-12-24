@@ -44,7 +44,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../lib/qtsysteminfo/QtSystemInfo.h"
 
 
-FolderUtils* FolderUtils::singleton = NULL;
+FolderUtils* FolderUtils::singleton = nullptr;
 QString FolderUtils::m_openSaveFolder = "";
 
 FolderUtils::FolderUtils() {
@@ -66,7 +66,7 @@ FolderUtils::~FolderUtils() {
 
 // finds a subfolder of the application directory searching backward up the tree
 QDir  FolderUtils::getApplicationSubFolder(QString search) {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		singleton = new FolderUtils();
 	}
 
@@ -90,7 +90,7 @@ QDir  FolderUtils::getApplicationSubFolder(QString search) {
 }
 
 QString FolderUtils::getApplicationSubFolderPath(QString search) {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		singleton = new FolderUtils();
 	}
 
@@ -99,7 +99,7 @@ QString FolderUtils::getApplicationSubFolderPath(QString search) {
 }
 
 QString FolderUtils::getAppPartsSubFolderPath(QString search) {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		singleton = new FolderUtils();
 	}
 
@@ -108,7 +108,7 @@ QString FolderUtils::getAppPartsSubFolderPath(QString search) {
 }
 
 QDir FolderUtils::getAppPartsSubFolder(QString search) {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		singleton = new FolderUtils();
 	}
 
@@ -167,7 +167,7 @@ bool FolderUtils::createFolderAndCdIntoIt(QDir &dir, QString newFolder) {
 
 bool FolderUtils::setApplicationPath(const QString & path)
 {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		singleton = new FolderUtils();
 	}
 
@@ -176,7 +176,7 @@ bool FolderUtils::setApplicationPath(const QString & path)
 
 bool FolderUtils::setAppPartsPath(const QString & path)
 {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		singleton = new FolderUtils();
 	}
 
@@ -186,13 +186,13 @@ bool FolderUtils::setAppPartsPath(const QString & path)
 void FolderUtils::cleanup() {
 	if (singleton) {
 		delete singleton;
-		singleton = NULL;
+		singleton = nullptr;
 	}
 }
 
 const QString FolderUtils::getLibraryPath()
 {
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		singleton = new FolderUtils();
 	}
 
@@ -721,7 +721,7 @@ void FolderUtils::showInFolder(const QString & path)
 void FolderUtils::createUserDataStoreFolders() {
 	// make sure that the folder structure for parts and bins, exists
 
-	if (singleton == NULL) {
+	if (singleton == nullptr) {
 		singleton = new FolderUtils();
 	}
 
@@ -753,7 +753,7 @@ void FolderUtils::createUserDataStoreFolders() {
 
 	if (foundOld) {
 		// inform user about the move
-		FMessageBox::information(NULL, QCoreApplication::translate("FolderUtils", "Moving your custom parts"),
+		FMessageBox::information(nullptr, QCoreApplication::translate("FolderUtils", "Moving your custom parts"),
 		                         QCoreApplication::translate("FolderUtils", "<p>Your custom-made parts and bins are moved from the hidden "
 		                                 "app data folder to your fritzing documents folder at <br/><br/><em>%1</em><br/><br/>"
 		                                 "This way we hope to make it easier for you to find and edit them manually.</p>")

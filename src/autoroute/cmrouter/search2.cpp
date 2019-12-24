@@ -81,12 +81,12 @@ int tiSrAreaEnum(Tile *enumRT, int enumBottom,  TileRect *rect, TileCallback, Us
 
 int
 TiSrArea(Tile *hintTile, Plane *plane, TileRect *rect, TileCallback tileCallback, UserData arg)
-/* Tile at which to begin search, if not NULL.
-		 * If this is NULL, use the hint tile supplied
+/* Tile at which to begin search, if not nullptr.
+		 * If this is nullptr, use the hint tile supplied
 		 * with plane.
 		 */
 /* Plane in which tiles lie.  This is used to
-		 * provide a hint tile in case hintTile == NULL.
+		 * provide a hint tile in case hintTile == nullptr.
 		 * The hint tile in the plane is updated to be
 		 * the last tile visited in the area enumeration.
 		 */

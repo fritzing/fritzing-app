@@ -36,12 +36,12 @@ void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 {
 	// TODO: how do we get a QTransform?
 	QGraphicsItem * item = this->itemAt(helpEvent->scenePos(), QTransform());
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	QString text;
 	QPoint point;
 	ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-	if (itemBase == NULL) {
+	if (itemBase == nullptr) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem) {
 			connectorItem->updateTooltip();
@@ -83,7 +83,7 @@ QList<ItemBase *> FGraphicsScene::lockedSelectedItems() {
 	QList<ItemBase *> items;
 	foreach (QGraphicsItem * gitem,  this->selectedItems()) {
 		ItemBase *itemBase = dynamic_cast<ItemBase *>(gitem);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 		if (itemBase->moveLock()) {
 			items.append(itemBase);
 		}

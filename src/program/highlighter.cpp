@@ -34,7 +34,7 @@ QHash <QString, QTextCharFormat *> Highlighter::m_styleFormats;
 
 Highlighter::Highlighter(QTextEdit * textEdit) : QSyntaxHighlighter(textEdit)
 {
-	m_syntaxer = NULL;
+	m_syntaxer = nullptr;
 }
 
 Highlighter::~Highlighter()
@@ -105,7 +105,7 @@ void Highlighter::highlightBlock(const QString &text)
 	setCurrentBlockState(0);
 	int startCommentIndex = -1;
 	int startStringIndex = -1;
-	const CommentInfo * currentCommentInfo = NULL;
+	const CommentInfo * currentCommentInfo = nullptr;
 	int pbs = previousBlockState();
 	if (pbs <= 0) {
 		m_syntaxer->matchCommentStart(text, 0, startCommentIndex, currentCommentInfo);
@@ -131,7 +131,7 @@ void Highlighter::highlightBlock(const QString &text)
 			commentLength = endIndex - startCommentIndex + currentCommentInfo->m_end.length();
 		}
 		noComment.replace(startCommentIndex, commentLength, QString(commentLength, ' '));
-		QTextCharFormat * cf = m_styleFormats.value("Comment", NULL);
+		QTextCharFormat * cf = m_styleFormats.value("Comment", nullptr);
 		if (cf) {
 			setFormat(startCommentIndex, commentLength, *cf);
 		}
@@ -177,7 +177,7 @@ void Highlighter::highlightStrings(int startStringIndex, QString & text) {
 			stringLength = endIndex - startStringIndex + 1;
 		}
 		text.replace(startStringIndex, stringLength, QString(stringLength, ' '));
-		QTextCharFormat * sf = m_styleFormats.value("String", NULL);
+		QTextCharFormat * sf = m_styleFormats.value("String", nullptr);
 		if (sf) {
 			setFormat(startStringIndex, stringLength, *sf);
 		}
@@ -195,12 +195,12 @@ void Highlighter::highlightTerms(const QString & text) {
 		}
 
 		if (b > lastWordBreak) {
-			TrieLeaf * leaf = NULL;
+			TrieLeaf * leaf = nullptr;
 			if (m_syntaxer->matches(text.mid(lastWordBreak, b - lastWordBreak), leaf)) {
 				SyntaxerTrieLeaf * stl = dynamic_cast<SyntaxerTrieLeaf *>(leaf);
 				if (stl) {
 					QString format = Syntaxer::formatFromList(stl->name());
-					QTextCharFormat * tcf = m_styleFormats.value(format, NULL);
+					QTextCharFormat * tcf = m_styleFormats.value(format, nullptr);
 					if (tcf) {
 						setFormat(lastWordBreak, b - lastWordBreak, *tcf);
 					}

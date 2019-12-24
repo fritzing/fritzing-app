@@ -150,8 +150,8 @@ void RatsnestColors::cleanup() {
 }
 
 const QColor & RatsnestColors::netColor(ViewLayer::ViewID viewID) {
-	RatsnestColors * ratsnestColors = m_viewList.value(viewID, NULL);
-	if (ratsnestColors == NULL) return ErrorColor;
+	RatsnestColors * ratsnestColors = m_viewList.value(viewID, nullptr);
+	if (ratsnestColors == nullptr) return ErrorColor;
 
 	return ratsnestColors->getNextColor();
 }
@@ -187,8 +187,8 @@ const QColor & RatsnestColors::getNextColor() {
 
 bool RatsnestColors::findConnectorColor(const QStringList & names, QColor & color) {
 	foreach (QString name, names) {
-		RatsnestColor * ratsnestColor = m_allNames.value(name.toLower(), NULL);
-		if (ratsnestColor == NULL) continue;
+		RatsnestColor * ratsnestColor = m_allNames.value(name.toLower(), nullptr);
+		if (ratsnestColor == nullptr) continue;
 
 		color = ratsnestColor->m_ratsnest;
 		return true;
@@ -198,8 +198,8 @@ bool RatsnestColors::findConnectorColor(const QStringList & names, QColor & colo
 }
 
 bool RatsnestColors::isConnectorColor(ViewLayer::ViewID m_viewID, const QColor & color) {
-	RatsnestColors * ratsnestColors = m_viewList.value(m_viewID, NULL);
-	if (ratsnestColors == NULL) return false;
+	RatsnestColors * ratsnestColors = m_viewList.value(m_viewID, nullptr);
+	if (ratsnestColors == nullptr) return false;
 
 	foreach (RatsnestColor * ratsnestColor, ratsnestColors->m_ratsnestColorList) {
 		if (ratsnestColor->m_ratsnest == color) {
@@ -211,37 +211,37 @@ bool RatsnestColors::isConnectorColor(ViewLayer::ViewID m_viewID, const QColor &
 }
 
 void RatsnestColors::reset(ViewLayer::ViewID m_viewID) {
-	RatsnestColors * ratsnestColors = m_viewList.value(m_viewID, NULL);
-	if (ratsnestColors == NULL) return;
+	RatsnestColors * ratsnestColors = m_viewList.value(m_viewID, nullptr);
+	if (ratsnestColors == nullptr) return;
 
 	ratsnestColors->m_index = 0;
 }
 
 QColor RatsnestColors::backgroundColor(ViewLayer::ViewID viewID)
 {
-	RatsnestColors * ratsnestColors = m_viewList.value(viewID, NULL);
-	if (ratsnestColors == NULL) return QColor();
+	RatsnestColors * ratsnestColors = m_viewList.value(viewID, nullptr);
+	if (ratsnestColors == nullptr) return QColor();
 
 	return ratsnestColors->m_backgroundColor;
 }
 
 const QString & RatsnestColors::shadowColor(ViewLayer::ViewID viewID, const QString & name)
 {
-	RatsnestColors * ratsnestColors = m_viewList.value(viewID, NULL);
-	if (ratsnestColors == NULL) return ___emptyString___;
+	RatsnestColors * ratsnestColors = m_viewList.value(viewID, nullptr);
+	if (ratsnestColors == nullptr) return ___emptyString___;
 
-	RatsnestColor * ratsnestColor = ratsnestColors->m_ratsnestColorHash.value(name.toLower(), NULL);
-	if (ratsnestColor == NULL) return ___emptyString___;
+	RatsnestColor * ratsnestColor = ratsnestColors->m_ratsnestColorHash.value(name.toLower(), nullptr);
+	if (ratsnestColor == nullptr) return ___emptyString___;
 
 	return ratsnestColor->m_shadow;
 }
 
 QString RatsnestColors::wireColor(ViewLayer::ViewID viewID, QString & string)
 {
-	RatsnestColors * ratsnestColors = m_viewList.value(viewID, NULL);
-	if (ratsnestColors == NULL) return ___emptyString___;
+	RatsnestColors * ratsnestColors = m_viewList.value(viewID, nullptr);
+	if (ratsnestColors == nullptr) return ___emptyString___;
 
-	RatsnestColor * ratsnestColor = ratsnestColors->m_ratsnestColorHash.value(string.toLower(), NULL);
+	RatsnestColor * ratsnestColor = ratsnestColors->m_ratsnestColorHash.value(string.toLower(), nullptr);
 	if (ratsnestColor) {
 		QString w = ratsnestColor->m_wire;
 		if (!w.isEmpty()) return w;

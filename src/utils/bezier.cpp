@@ -352,7 +352,7 @@ double Bezier::cubicF(double t) const
 
 void Bezier::copy(const Bezier * other)
 {
-	if (other == NULL) {
+	if (other == nullptr) {
 		m_isEmpty = true;
 		return;
 	}
@@ -406,7 +406,7 @@ void Bezier::translate(QPointF p) {
 Bezier Bezier::join(const Bezier * other) const
 {
 	Bezier bezier;
-	bool otherIsEmpty = (other == NULL || other->isEmpty());
+	bool otherIsEmpty = (other == nullptr || other->isEmpty());
 
 	if (isEmpty() && otherIsEmpty) {
 		return bezier;

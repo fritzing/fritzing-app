@@ -38,7 +38,7 @@ AbstractEditableLabelWidget::AbstractEditableLabelWidget(QString text, WaitPushU
 		m_title->setObjectName("title");
 		layout->addWidget(m_title,0,0);
 	} else {
-		m_title = NULL;
+		m_title = nullptr;
 	}
 
 	setLayout(layout);

@@ -107,8 +107,8 @@ int BaseCommand::subCommandCount() const {
 }
 
 const BaseCommand * BaseCommand::subCommand(int ix) const {
-	if (ix < 0) return NULL;
-	if (ix >= m_commands.count()) return NULL;
+	if (ix < 0) return nullptr;
+	if (ix >= m_commands.count()) return nullptr;
 
 	return m_commands.at(ix);
 }
@@ -568,7 +568,7 @@ ChangeWireCurveCommand::ChangeWireCurveCommand(SketchWidget* sketchWidget, long 
 {
 	m_fromID = fromID;
 	m_wasAutoroutable = wasAutoroutable;
-	m_oldBezier = m_newBezier = NULL;
+	m_oldBezier = m_newBezier = nullptr;
 	if (oldBezier) {
 		m_oldBezier = new Bezier;
 		m_oldBezier->copy(oldBezier);
@@ -736,7 +736,7 @@ ChangeLegCurveCommand::ChangeLegCurveCommand(SketchWidget* sketchWidget, long fr
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
 	m_fromID = fromID;
-	m_oldBezier = m_newBezier = NULL;
+	m_oldBezier = m_newBezier = nullptr;
 	if (oldBezier) {
 		m_oldBezier = new Bezier;
 		m_oldBezier->copy(oldBezier);
@@ -796,7 +796,7 @@ ChangeLegBendpointCommand::ChangeLegBendpointCommand(SketchWidget* sketchWidget,
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
 	m_fromID = fromID;
-	m_bezier0 = m_bezier1 = m_bezier2 = NULL;
+	m_bezier0 = m_bezier1 = m_bezier2 = nullptr;
 	if (bezier0) {
 		m_bezier0 = new Bezier;
 		m_bezier0->copy(bezier0);
@@ -980,7 +980,7 @@ bool SelectItemCommand::mergeWith(const QUndoCommand *other)
 	}
 
 	const SelectItemCommand * sother = dynamic_cast<const SelectItemCommand *>(other);
-	if (sother == NULL) return false;
+	if (sother == nullptr) return false;
 
 	if (sother->crossViewType() != this->crossViewType()) {
 		return false;
@@ -1182,7 +1182,7 @@ void CleanUpWiresCommand::undo()
 	}
 
 	if (m_direction == UndoOnly) {
-		m_sketchWidget->cleanUpWires(m_crossViewType == BaseCommand::CrossView, NULL);
+		m_sketchWidget->cleanUpWires(m_crossViewType == BaseCommand::CrossView, nullptr);
 	}
 	BaseCommand::undo();
 }
@@ -1215,7 +1215,7 @@ void CleanUpWiresCommand::addRatsnestConnect(long id, const QString & connectorI
 
 void CleanUpWiresCommand::addRoutingStatus(SketchWidget * sketchWidget, const RoutingStatus & oldRoutingStatus, const RoutingStatus & newRoutingStatus)
 {
-	addSubCommand(new RoutingStatusCommand(sketchWidget, oldRoutingStatus, newRoutingStatus, NULL));
+	addSubCommand(new RoutingStatusCommand(sketchWidget, oldRoutingStatus, newRoutingStatus, nullptr));
 }
 
 void CleanUpWiresCommand::setDirection(CleanUpWiresCommand::Direction direction)
@@ -1234,7 +1234,7 @@ void CleanUpWiresCommand::addTrace(SketchWidget * sketchWidget, Wire * wire)
 		for (int i = 0; i < m_parentCommand->childCount(); i++) {
 			const DeleteItemCommand * command = dynamic_cast<const DeleteItemCommand *>(m_parentCommand->child(i));
 
-			if (command == NULL) continue;
+			if (command == nullptr) continue;
 			if (command->itemID() == wire->id()) {
 				return;
 			}
@@ -1243,23 +1243,23 @@ void CleanUpWiresCommand::addTrace(SketchWidget * sketchWidget, Wire * wire)
 
 	m_sketchWidgets.insert(sketchWidget);
 
-	addSubCommand(new WireColorChangeCommand(sketchWidget, wire->id(), wire->colorString(), wire->colorString(), wire->opacity(), wire->opacity(), NULL));
-	addSubCommand(new WireWidthChangeCommand(sketchWidget, wire->id(), wire->width(), wire->width(), NULL));
+	addSubCommand(new WireColorChangeCommand(sketchWidget, wire->id(), wire->colorString(), wire->colorString(), wire->opacity(), wire->opacity(), nullptr));
+	addSubCommand(new WireWidthChangeCommand(sketchWidget, wire->id(), wire->width(), wire->width(), nullptr));
 
 	foreach (ConnectorItem * toConnectorItem, wire->connector0()->connectedToItems()) {
 		addSubCommand(new ChangeConnectionCommand(sketchWidget, BaseCommand::CrossView, toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
 		              wire->id(), "connector0",
 		              ViewLayer::specFromID(wire->viewLayerID()),
-		              false, NULL));
+		              false, nullptr));
 	}
 	foreach (ConnectorItem * toConnectorItem, wire->connector1()->connectedToItems()) {
 		addSubCommand(new ChangeConnectionCommand(sketchWidget, BaseCommand::CrossView, toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
 		              wire->id(), "connector1",
 		              ViewLayer::specFromID(wire->viewLayerID()),
-		              false, NULL));
+		              false, nullptr));
 	}
 
-	addSubCommand(new DeleteItemCommand(sketchWidget, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, wire->viewLayerPlacement(), wire->getViewGeometry(), wire->id(), wire->modelPart()->modelIndex(), NULL));
+	addSubCommand(new DeleteItemCommand(sketchWidget, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, wire->viewLayerPlacement(), wire->getViewGeometry(), wire->id(), wire->modelPart()->modelIndex(), nullptr));
 }
 
 bool CleanUpWiresCommand::hasTraces(SketchWidget * sketchWidget) {
@@ -1618,7 +1618,7 @@ bool ChangeNoteTextCommand::mergeWith(const QUndoCommand *other)
 	}
 
 	const ChangeNoteTextCommand * sother = dynamic_cast<const ChangeNoteTextCommand *>(other);
-	if (sother == NULL) return false;
+	if (sother == nullptr) return false;
 
 	if (sother->m_itemID != m_itemID) {
 		// this is not the same label so don't merge

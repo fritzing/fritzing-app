@@ -153,8 +153,8 @@ SingleConnectorInfoWidget::SingleConnectorInfoWidget(ConnectorsInfoWidget *topLe
 
 	m_type = new ConnectorTypeWidget(type, this);
 
-	m_nameEdit = NULL;
-	m_descEdit = NULL;
+	m_nameEdit = nullptr;
+	m_descEdit = nullptr;
 
 	m_nameEditContainer = new QFrame(this);
 	QHBoxLayout *nameLO = new QHBoxLayout(m_nameEditContainer);
@@ -168,8 +168,8 @@ SingleConnectorInfoWidget::SingleConnectorInfoWidget(ConnectorsInfoWidget *topLe
 	descLO->setMargin(0);
 	m_descEditContainer->hide();
 
-	m_acceptButton = NULL;
-	m_cancelButton = NULL;
+	m_acceptButton = nullptr;
+	m_cancelButton = nullptr;
 
 	setSelected(false);
 
@@ -396,7 +396,7 @@ MismatchingConnectorWidget *SingleConnectorInfoWidget::toMismatching(ViewLayer::
 }
 
 Connector::ConnectorType SingleConnectorInfoWidget::connectorType() {
-	if (m_type == NULL) return Connector::Unknown;
+	if (m_type == nullptr) return Connector::Unknown;
 
 	return m_type->type();
 }

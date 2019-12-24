@@ -141,7 +141,7 @@ void Resistor::setResistance(QString resistance, QString pinSpacing, bool force)
 		if (force || pinSpacing.compare(m_pinSpacing) != 0) {
 
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView == NULL) break;
+			if (infoGraphicsView == nullptr) break;
 
 			if (modelPart()->properties().value("package").compare("tht", Qt::CaseInsensitive) == 0)
 			{

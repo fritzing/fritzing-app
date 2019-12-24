@@ -80,7 +80,7 @@ void SVGDomDocument::save(QString fileName) {
 	QFile file(fileName);
 
 	if (!file.open(QFile::WriteOnly | QFile::Text)) {
-		QMessageBox::warning(NULL, QObject::tr("Parts Editor"),
+		QMessageBox::warning(nullptr, QObject::tr("Parts Editor"),
 		                     QObject::tr("Cannot write to file %1:\n%2.")
 		                     .arg(fileName)
 		                     .arg(file.errorString()));

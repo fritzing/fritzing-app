@@ -176,7 +176,7 @@ bool AutorouterSettingsDialog::initProductionType()
 		QString ringThickness = values[1];
 		QString holeSize = values[0];
 		if (!name.isEmpty() && !ringThickness.isEmpty() && !holeSize.isEmpty()) {
-			QRadioButton * button = NULL;
+			QRadioButton * button = nullptr;
 			if (name.contains("home", Qt::CaseInsensitive)) button = m_homebrewButton;
 			else if (name.contains("standard", Qt::CaseInsensitive)) button = m_professionalButton;
 			if (button) {

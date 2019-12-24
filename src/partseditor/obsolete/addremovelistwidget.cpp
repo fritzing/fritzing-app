@@ -85,7 +85,7 @@ QListWidgetItem* AddRemoveListWidget::itemAt(int rowIdx) {
 	if(m_list) {
 		return m_list->item(rowIdx);
 	} else {
-		return NULL;
+		return nullptr;
 	}
 }
 

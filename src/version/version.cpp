@@ -184,7 +184,7 @@ void Version::toVersionThing(const QString & candidate, VersionThing & versionTh
 void Version::cleanup() {
 	if (m_singleton) {
 		delete m_singleton;
-		m_singleton = NULL;
+		m_singleton = nullptr;
 	}
 }
 
@@ -196,7 +196,7 @@ QString Version::makeRequestParamsString(bool withID) {
 
 	QString id;
 	if (withID) id = QString("&pid=%1").arg(settings.value("pid").toString());
-	QtSystemInfo systemInfo(NULL);
+	QtSystemInfo systemInfo(nullptr);
 	QString siVersion(QUrl::toPercentEncoding(Version::versionString()));
 	QString siSystemName(QUrl::toPercentEncoding(systemInfo.systemName()));
 	QString siSystemVersion(QUrl::toPercentEncoding(systemInfo.systemVersion()));

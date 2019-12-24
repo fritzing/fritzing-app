@@ -652,14 +652,14 @@ QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
 	                       ;
 	if (sizeTenth) {
 		if (isDouble) {
-			svg += TextUtils::incrementTemplate(templateFile, pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, doubleCopyPinFunction, NULL);
+			svg += TextUtils::incrementTemplate(templateFile, pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, doubleCopyPinFunction, nullptr);
 		}
 		else {
-			svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, stdIncCopyPinFunction, NULL);
+			svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, stdIncCopyPinFunction, nullptr);
 		}
 	}
 	else {
-		svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+		svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 	}
 
 
@@ -707,7 +707,7 @@ QString PinHeader::makeBreadboardSvg(const QString & expectedFileName)
 
 	QString svg = header.arg(unitHeight * pins).arg(unitHeightPoints * pins);
 	svg += TextUtils::incrementTemplate(QString(":/resources/templates/generic_%1_pin_header_bread_template.txt").arg(fileForm),
-	                                    pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	                                    pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 
 	svg += "</g>\n</svg>";
 
@@ -745,7 +745,7 @@ QString PinHeader::makeBreadboardDoubleSvg(const QString & expectedFileName, int
 	                                    pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::negIncCopyPinFunction, userData);
 
 	svg += TextUtils::incrementTemplate(QString(":/resources/templates/generic_%1_pin_header_bread_2nd_template.txt").arg(fileForm),
-	                                    pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	                                    pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 
 	svg += "</g>\n</svg>";
 
@@ -795,16 +795,16 @@ QString PinHeader::makeBreadboardShroudedSvg(int pins)
 
 	double increment = 100;  // 0.1in
 
-	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 2) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 2) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	svg.replace("{", "[");
 	svg.replace("}", "]");
-	svg = TextUtils::incrementTemplateString(svg, 1, increment * (pins - 2) / 4, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	svg = TextUtils::incrementTemplateString(svg, 1, increment * (pins - 2) / 4, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
 	int userData[2];
 	userData[0] = pins;
 	userData[1] = 1;
 	QString repeatTs = TextUtils::incrementTemplateString(repeatT, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::negIncCopyPinFunction, userData);
-	QString repeatBs = TextUtils::incrementTemplateString(repeatB, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	QString repeatBs = TextUtils::incrementTemplateString(repeatB, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 2) / 1000.0).arg(repeatTs).arg(repeatBs);
 }
@@ -836,16 +836,16 @@ QString PinHeader::makePcbShroudedSvg(int pins)
 
 	double increment = 1000;  // 0.1in
 
-	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 2) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 2) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	svg.replace("{", "[");
 	svg.replace("}", "]");
-	svg = TextUtils::incrementTemplateString(svg, 1, increment * (pins - 2) / 4, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	svg = TextUtils::incrementTemplateString(svg, 1, increment * (pins - 2) / 4, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
 	int userData[2];
 	userData[0] = pins;
 	userData[1] = 1;
 	QString repeatLs = TextUtils::incrementTemplateString(repeatR, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::negIncCopyPinFunction, userData);
-	QString repeatRs = TextUtils::incrementTemplateString(repeatL, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	QString repeatRs = TextUtils::incrementTemplateString(repeatL, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 3) / 10000.0).arg(repeatLs).arg(repeatRs);
 }
@@ -923,11 +923,11 @@ QString PinHeader::makePcbLongPadLockSvg(int pins)
 	               "<line class='other' x1='2.6416' y1='[2.6416]' x2='2.921' y2='[2.3622]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n"
 	               "<line class='other' x1='1.651' y1='[2.6416]' x2='0.6604' y2='[2.6416]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n"
 	               "<line class='other' x1='0.6604' y1='[2.6416]' x2='0.381' y2='[2.3622]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n");
-	bottom = TextUtils::incrementTemplateString(bottom, 1, increment * dpi * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	bottom = TextUtils::incrementTemplateString(bottom, 1, increment * dpi * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
 
 	QString between("<line class='other' x1='1.651' y1='[2.8956]' x2='1.651' y2='[2.3876]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n");
-	QString betweens = TextUtils::incrementTemplateString(between, pins - 1, increment * dpi, TextUtils::standardMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString betweens = TextUtils::incrementTemplateString(between, pins - 1, increment * dpi, TextUtils::standardMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
 	double ncy = 1.3716;
 	double ncx = 1.524;

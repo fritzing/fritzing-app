@@ -42,8 +42,8 @@ const QColor SectionHeaderColor(80, 80, 80);
 #define SINGULAR_OFFSET 3
 #define PLURAL_OFFSET 2
 
-static QPixmap * PluralImage = NULL;
-static QPixmap * SingularImage = NULL;
+static QPixmap * PluralImage = nullptr;
+static QPixmap * SingularImage = nullptr;
 
 ////////////////////////////////////////////////////////////
 
@@ -104,10 +104,10 @@ SvgIconWidget::SvgIconWidget(ModelPart * modelPart, ViewLayer::ViewID viewID, It
 }
 
 void SvgIconWidget::initNames() {
-	if (PluralImage == NULL) {
+	if (PluralImage == nullptr) {
 		PluralImage = new QPixmap(":/resources/images/icons/parts_plural_v3_plur.png");
 	}
-	if (SingularImage == NULL) {
+	if (SingularImage == nullptr) {
 		SingularImage = new QPixmap(":/resources/images/icons/parts_plural_v3_sing.png");
 	}
 }
@@ -119,11 +119,11 @@ SvgIconWidget::~SvgIconWidget() {
 void SvgIconWidget::cleanup() {
 	if (PluralImage) {
 		delete PluralImage;
-		PluralImage = NULL;
+		PluralImage = nullptr;
 	}
 	if (SingularImage) {
 		delete SingularImage;
-		SingularImage = NULL;
+		SingularImage = nullptr;
 	}
 }
 
@@ -194,7 +194,7 @@ void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 	m_itemBase->initLayerAttributes(layerAttributes, viewID, ViewLayer::Icon, ViewLayer::NewTop, false, false);
 	ModelPart * modelPart = m_itemBase->modelPart();
 	FSvgRenderer * renderer = m_itemBase->setUpImage(modelPart, layerAttributes);
-	if (renderer == NULL) {
+	if (renderer == nullptr) {
 		DebugDialog::debug(QString("missing renderer for icon %1").arg(modelPart->moduleID()));
 	}
 	if (renderer && m_itemBase) {
@@ -202,7 +202,7 @@ void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 	}
 
 	QPixmap pixmap(plural ? *PluralImage : *SingularImage);
-	QPixmap * icon = (renderer == NULL) ? NULL : FSvgRenderer::getPixmap(renderer, QSize(ICON_SIZE, ICON_SIZE));
+	QPixmap * icon = (renderer == nullptr) ? nullptr : FSvgRenderer::getPixmap(renderer, QSize(ICON_SIZE, ICON_SIZE));
 	if (icon) {
 		QPainter painter;
 		painter.begin(&pixmap);

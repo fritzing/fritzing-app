@@ -76,11 +76,11 @@ int MINFINITY	= -TINFINITY;
 Plane *
 TiNewPlane(Tile *tile, int minx, int miny, int maxx, int maxy)
 /* Tile to become initial tile of plane.
-		 * May be NULL.
+		 * May be nullptr.
 		 */
 {
 	Plane *newplane;
-	static Tile *infinityTile = (Tile *) NULL;
+	static Tile *infinityTile = (Tile *) nullptr;
 
 	newplane = new Plane;
 	newplane->pl_top = TiAlloc();
@@ -101,7 +101,7 @@ TiNewPlane(Tile *tile, int minx, int miny, int maxx, int maxy)
 	 * or height, we use a dummy tile at (TINFINITY+1,TINFINITY+1).
 	 */
 
-	if (infinityTile == (Tile *) NULL)
+	if (infinityTile == (Tile *) nullptr)
 	{
 		infinityTile = TiAlloc();
 		SETLEFT(infinityTile, TINFINITY+1);

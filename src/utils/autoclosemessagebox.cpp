@@ -138,10 +138,10 @@ void AutoCloseMessageBox::prepMoveBack() {
 void AutoCloseMessageBox::showMessage(QWidget *window, const QString &message)
 {
 	MainWindow * mainWindow = qobject_cast<MainWindow *>(window);
-	if (mainWindow == NULL) return;
+	if (mainWindow == nullptr) return;
 
 	QStatusBar * statusBar = mainWindow->realStatusBar();
-	if (statusBar == NULL) return;
+	if (statusBar == nullptr) return;
 
 	AutoCloseMessageBox * acmb = new AutoCloseMessageBox(mainWindow);
 	acmb->setText(message);

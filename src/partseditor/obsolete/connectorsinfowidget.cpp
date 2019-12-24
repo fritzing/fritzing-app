@@ -35,10 +35,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ConnectorsInfoWidget::ConnectorsInfoWidget(WaitPushUndoStack *undoStack, QWidget *parent)
 	: QFrame(parent)
 {
-	m_objToDelete = NULL;
-	m_selected = NULL;
+	m_objToDelete = nullptr;
+	m_selected = nullptr;
 	m_undoStack = undoStack;
-	m_views = NULL;
+	m_views = nullptr;
 
 	createScrollArea();
 	createToolsArea();
@@ -411,9 +411,9 @@ void ConnectorsInfoWidget::syncNewConnectors(ViewLayer::ViewIdentifier viewId, c
 			SingleConnectorInfoWidget * sci = findSCI(connId);
 			resetType(viewId, sci, conn);
 			resetName(viewId, sci, conn);
-			emit existingConnectorSignal(viewId, connId, sci ? sci->connector() : NULL, conn);
+			emit existingConnectorSignal(viewId, connId, sci ? sci->connector() : nullptr, conn);
 		} else {
-			MismatchingConnectorWidget *mcw = NULL;
+			MismatchingConnectorWidget *mcw = nullptr;
 			if(( mcw = existingMismatchingConnector(connId) )) {
 				if(mcw->onlyMissingThisView(viewId)) {
 					Connector * prevConn = mcw->prevConn();
@@ -428,7 +428,7 @@ void ConnectorsInfoWidget::syncNewConnectors(ViewLayer::ViewIdentifier viewId, c
 					SingleConnectorInfoWidget * sci = findSCI(connId);
 					resetType(viewId, sci, conn);
 					resetName(viewId, sci, conn);
-					emit existingConnectorSignal(viewId, connId, sci ? sci->connector() : NULL, conn);
+					emit existingConnectorSignal(viewId, connId, sci ? sci->connector() : nullptr, conn);
 				} else {
 					mcw->addViewPresence(viewId);
 					emit setMismatching(viewId, mcw->connId(), true);
@@ -453,7 +453,7 @@ MismatchingConnectorWidget* ConnectorsInfoWidget::existingMismatchingConnector(c
 			return mci;
 		}
 	}
-	return NULL;
+	return nullptr;
 }
 
 void ConnectorsInfoWidget::removeMismatchingConnectorInfo(MismatchingConnectorWidget* mcw, bool singleShot, bool alsoDeleteFromView) {
@@ -474,7 +474,7 @@ void ConnectorsInfoWidget::removeMismatchingConnectorInfo(MismatchingConnectorWi
 	}
 
 	if(m_selected == mcw) {
-		m_selected = NULL;
+		m_selected = nullptr;
 	}
 
 	m_objToDelete = mcw;
@@ -493,7 +493,7 @@ void ConnectorsInfoWidget::removeConnectorInfo(SingleConnectorInfoWidget *sci, b
 	m_allConnsInfo.remove(sci->id());
 
 	if(m_selected == sci) {
-		m_selected = NULL;
+		m_selected = nullptr;
 	}
 
 	if(alsoDeleteFromView) {
@@ -514,7 +514,7 @@ Connector* ConnectorsInfoWidget::findConnector(const QString &id) {
 			return sci->connector();
 		}
 	}
-	return NULL;
+	return nullptr;
 }
 
 SingleConnectorInfoWidget* ConnectorsInfoWidget::findSCI(const QString &id) {
@@ -523,15 +523,15 @@ SingleConnectorInfoWidget* ConnectorsInfoWidget::findSCI(const QString &id) {
 			return sci;
 		}
 	}
-	return NULL;
+	return nullptr;
 }
 
 void ConnectorsInfoWidget::addConnector() {
 	m_connAdded = true;
 
-	if (m_views->breadboardView()->myItem() == NULL ||
-	        m_views->schematicView()->myItem() == NULL ||
-	        m_views->pcbView()->myItem() == NULL)
+	if (m_views->breadboardView()->myItem() == nullptr ||
+	        m_views->schematicView()->myItem() == nullptr ||
+	        m_views->pcbView()->myItem() == nullptr)
 	{
 		QMessageBox::warning(
 		    parentWidget(),
@@ -589,10 +589,10 @@ int ConnectorsInfoWidget::nextConnId() {
 void ConnectorsInfoWidget::deleteAux() {
 	if(m_objToDelete) {
 		if(m_selected == m_objToDelete) {
-			m_selected = NULL;
+			m_selected = nullptr;
 		}
 		delete m_objToDelete;
-		m_objToDelete = NULL;
+		m_objToDelete = nullptr;
 
 	}
 }

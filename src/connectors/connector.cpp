@@ -38,7 +38,7 @@ Connector::Connector( ConnectorShared * connectorShared, ModelPart * modelPart)
 {
 	m_modelPart = modelPart;
 	m_connectorShared = connectorShared;
-	m_bus = NULL;
+	m_bus = nullptr;
 }
 
 Connector::~Connector() {
@@ -98,10 +98,10 @@ void Connector::removeViewItem(ConnectorItem * item) {
 
 void Connector::connectTo(Connector * connector) {
 
-	if (this->modelPart() == NULL) {
+	if (this->modelPart() == nullptr) {
 		DebugDialog::debug("connecting bus connector 1");
 	}
-	else if (connector->modelPart() == NULL) {
+	else if (connector->modelPart() == nullptr) {
 		DebugDialog::debug("connecting bus connector 2");
 	}
 
@@ -166,7 +166,7 @@ const QList<Connector *> & Connector::toConnectors() {
 }
 
 ConnectorItem * Connector::connectorItemByViewLayerID(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
-	return m_connectorItems.value(QuickHash(viewID, viewLayerID), NULL);
+	return m_connectorItems.value(QuickHash(viewID, viewLayerID), nullptr);
 }
 
 ConnectorItem * Connector::connectorItem(ViewLayer::ViewID viewID) {
@@ -174,7 +174,7 @@ ConnectorItem * Connector::connectorItem(ViewLayer::ViewID viewID) {
 		if (connectorItem->attachedToViewID() == viewID) return connectorItem;
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 bool Connector::connectionIsAllowed(Connector* that)
@@ -191,13 +191,13 @@ bool Connector::connectionIsAllowed(Connector* that)
 }
 
 const QString & Connector::connectorSharedID() const {
-	if (m_connectorShared == NULL) return ___emptyString___;
+	if (m_connectorShared == nullptr) return ___emptyString___;
 
 	return m_connectorShared->id();
 }
 
 const QString & Connector::connectorSharedName() const {
-	if (m_connectorShared == NULL) return ___emptyString___;
+	if (m_connectorShared == nullptr) return ___emptyString___;
 
 	if (!m_connectorLocalName.isEmpty()) {
 		return m_connectorLocalName;
@@ -207,25 +207,25 @@ const QString & Connector::connectorSharedName() const {
 }
 
 const QString & Connector::connectorSharedDescription() const {
-	if (m_connectorShared == NULL) return ___emptyString___;
+	if (m_connectorShared == nullptr) return ___emptyString___;
 
 	return m_connectorShared->description();
 }
 
 const QString & Connector::connectorSharedReplacedby() const {
-	if (m_connectorShared == NULL) return ___emptyString___;
+	if (m_connectorShared == nullptr) return ___emptyString___;
 
 	return m_connectorShared->replacedby();
 }
 
 ErcData * Connector::connectorSharedErcData() {
-	if (m_connectorShared == NULL) return NULL;
+	if (m_connectorShared == nullptr) return nullptr;
 
 	return m_connectorShared->ercData();
 }
 
 const QString & Connector::busID() {
-	if (m_bus == NULL) return ___emptyString___;
+	if (m_bus == nullptr) return ___emptyString___;
 
 	return m_bus->id();
 }
@@ -246,7 +246,7 @@ void Connector::unprocess(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewL
 }
 
 SvgIdLayer * Connector::fullPinInfo(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
-	if (m_connectorShared == NULL) return NULL;
+	if (m_connectorShared == nullptr) return nullptr;
 
 	return m_connectorShared->fullPinInfo(viewID, viewLayerID);
 }

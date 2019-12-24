@@ -74,7 +74,7 @@ DBPlaceCell (Plane * plane, TileRect * rect, QGraphicsItem * body, Tile::TileTyp
 	arg.body = body;
 	arg.type = type;
 
-	(void) TiSrArea((Tile *) NULL, plane, rect, placeCellFunc, (UserData) &arg);
+	(void) TiSrArea((Tile *) nullptr, plane, rect, placeCellFunc, (UserData) &arg);
 
 }
 
@@ -89,7 +89,7 @@ DBPlaceCell (Plane * plane, TileRect * rect, QGraphicsItem * body, Tile::TileTyp
  *
  * Side effects:
  *	Modifies the subcell tile plane of the CellDef, sets the
- * 	parent pointer of the deleted CellUse to NULL.
+ * 	parent pointer of the deleted CellUse to nullptr.
  * ----------------------------------------------------------------------------
  */
 
@@ -100,7 +100,7 @@ DBDeleteCell (Plane  * plane, TileRect * rect)
 {
 	struct searchArg arg;	/* argument to deleteCellFunc() */
 
-	(void) TiSrArea((Tile *) NULL, plane, rect, deleteCellFunc, (UserData) &arg);
+	(void) TiSrArea((Tile *) nullptr, plane, rect, deleteCellFunc, (UserData) &arg);
 
 }
 
@@ -428,5 +428,5 @@ ctbListMatch (Tile *tp1, Tile *tp2)
 Tile* TiInsertTile(Plane * plane, TileRect * rect, QGraphicsItem * body, Tile::TileType type) {
 
 	DBPlaceCell(plane, rect, body, type);
-	return TiSrPoint(NULL, plane, rect->xmini, rect->ymini);
+	return TiSrPoint(nullptr, plane, rect->xmini, rect->ymini);
 }

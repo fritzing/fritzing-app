@@ -54,7 +54,7 @@ void FocusOutTextEdit::focusOutEvent(QFocusEvent * e) {
 
 PEMetadataView::PEMetadataView(QWidget * parent) : QScrollArea(parent)
 {
-	m_mainFrame = NULL;
+	m_mainFrame = nullptr;
 	this->setWidgetResizable(true);
 	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
@@ -140,9 +140,9 @@ void PEMetadataView::initMetadata(const QDomDocument & doc)
 	}
 
 	if (m_mainFrame) {
-		this->setWidget(NULL);
+		this->setWidget(nullptr);
 		delete m_mainFrame;
-		m_mainFrame = NULL;
+		m_mainFrame = nullptr;
 	}
 
 	QDomElement root = doc.documentElement();

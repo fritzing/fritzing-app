@@ -77,8 +77,8 @@ void HashLineEdit::focusOutEvent(QFocusEvent * event) {
 
 HashPopulateWidget::HashPopulateWidget(const QString & title, const QHash<QString,QString> &initValues, const QStringList &readOnlyKeys, bool keysOnly, QWidget *parent) : QFrame(parent) {
 	m_keysOnly = keysOnly;
-	m_lastLabel = NULL;
-	m_lastValue = NULL;
+	m_lastLabel = nullptr;
+	m_lastValue = nullptr;
 
 	QGridLayout *layout = new QGridLayout();
 	layout->setColumnStretch(0,0);
@@ -148,11 +148,11 @@ const QHash<QString,QString> &HashPopulateWidget::hash() {
 
 HashLineEdit* HashPopulateWidget::lineEditAt(int row, int col) {
 	QLayoutItem *litem = gridLayout()->itemAtPosition(row,col);
-	return litem ? qobject_cast<HashLineEdit*>(litem->widget()) : NULL;
+	return litem ? qobject_cast<HashLineEdit*>(litem->widget()) : nullptr;
 }
 
 void HashPopulateWidget::addRow(QGridLayout *layout) {
-	if(layout == NULL) {
+	if(layout == nullptr) {
 		layout = gridLayout();
 	}
 

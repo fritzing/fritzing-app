@@ -35,12 +35,12 @@ QuaZIP as long as you respect either GPL or LGPL for QuaZIP code.
 using namespace std;
 
 QuaZipFile::QuaZipFile():
-	zip(NULL), internal(true), zipError(UNZ_OK)
+	zip(nullptr), internal(true), zipError(UNZ_OK)
 {
 }
 
 QuaZipFile::QuaZipFile(QObject *parent):
-	QIODevice(parent), zip(NULL), internal(true), zipError(UNZ_OK)
+	QIODevice(parent), zip(nullptr), internal(true), zipError(UNZ_OK)
 {
 }
 
@@ -76,13 +76,13 @@ QuaZipFile::~QuaZipFile()
 
 QString QuaZipFile::getZipName()const
 {
-	return zip==NULL?QString():zip->getZipName();
+	return zip==nullptr?QString():zip->getZipName();
 }
 
 QString QuaZipFile::getActualFileName()const
 {
 	setZipError(UNZ_OK);
-	if(zip==NULL||(openMode()&WriteOnly)) return QString();
+	if(zip==nullptr||(openMode()&WriteOnly)) return QString();
 	QString name=zip->getCurrentFileName();
 	if(name.isNull())
 		setZipError(zip->getZipError());
@@ -95,7 +95,7 @@ void QuaZipFile::setZipName(const QString& zipName)
 		qWarning("QuaZipFile::setZipName(): file is already open - can not set ZIP name");
 		return;
 	}
-	if(zip!=NULL&&internal) delete zip;
+	if(zip!=nullptr&&internal) delete zip;
 	zip=new QuaZip(zipName);
 	Q_CHECK_PTR(zip);
 	internal=true;
@@ -107,7 +107,7 @@ void QuaZipFile::setZip(QuaZip *zip)
 		qWarning("QuaZipFile::setZip(): file is already open - can not set ZIP");
 		return;
 	}
-	if(this->zip!=NULL&&internal) delete this->zip;
+	if(this->zip!=nullptr&&internal) delete this->zip;
 	this->zip=zip;
 	this->fileName=QString();
 	internal=false;
@@ -115,7 +115,7 @@ void QuaZipFile::setZip(QuaZip *zip)
 
 void QuaZipFile::setFileName(const QString& fileName, QuaZip::CaseSensitivity cs)
 {
-	if(zip==NULL) {
+	if(zip==nullptr) {
 		qWarning("QuaZipFile::setFileName(): call setZipName() first");
 		return;
 	}
@@ -143,7 +143,7 @@ void QuaZipFile::setZipError(int zipError)const
 
 bool QuaZipFile::open(OpenMode mode)
 {
-	return open(mode, NULL);
+	return open(mode, nullptr);
 }
 
 bool QuaZipFile::open(OpenMode mode, int *method, int *level, bool raw, const char *password)
@@ -169,8 +169,8 @@ bool QuaZipFile::open(OpenMode mode, int *method, int *level, bool raw, const ch
 				return false;
 			}
 		} else {
-			if(zip==NULL) {
-				qWarning("QuaZipFile::open(): zip is NULL");
+			if(zip==nullptr) {
+				qWarning("QuaZipFile::open(): zip is nullptr");
 				return false;
 			}
 			if(zip->getMode()!=QuaZip::mdUnzip) {
@@ -211,8 +211,8 @@ bool QuaZipFile::open(OpenMode mode, const QuaZipNewInfo& info,
 			qWarning("QuaZipFile::open(): write mode is incompatible with internal QuaZip approach");
 			return false;
 		}
-		if(zip==NULL) {
-			qWarning("QuaZipFile::open(): zip is NULL");
+		if(zip==nullptr) {
+			qWarning("QuaZipFile::open(): zip is nullptr");
 			return false;
 		}
 		if(zip->getMode()!=QuaZip::mdCreate&&zip->getMode()!=QuaZip::mdAppend&&zip->getMode()!=QuaZip::mdAdd) {
@@ -260,7 +260,7 @@ bool QuaZipFile::isSequential()const
 
 qint64 QuaZipFile::pos()const
 {
-	if(zip==NULL) {
+	if(zip==nullptr) {
 		qWarning("QuaZipFile::pos(): call setZipName() or setZip() first");
 		return -1;
 	}
@@ -276,7 +276,7 @@ qint64 QuaZipFile::pos()const
 
 bool QuaZipFile::atEnd()const
 {
-	if(zip==NULL) {
+	if(zip==nullptr) {
 		qWarning("QuaZipFile::atEnd(): call setZipName() or setZip() first");
 		return false;
 	}
@@ -306,8 +306,8 @@ qint64 QuaZipFile::csize()const
 {
 	unz_file_info info_z;
 	setZipError(UNZ_OK);
-	if(zip==NULL||zip->getMode()!=QuaZip::mdUnzip) return -1;
-	setZipError(unzGetCurrentFileInfo(zip->getUnzFile(), &info_z, NULL, 0, NULL, 0, NULL, 0));
+	if(zip==nullptr||zip->getMode()!=QuaZip::mdUnzip) return -1;
+	setZipError(unzGetCurrentFileInfo(zip->getUnzFile(), &info_z, nullptr, 0, nullptr, 0, nullptr, 0));
 	if(zipError!=UNZ_OK)
 		return -1;
 	return info_z.compressed_size;
@@ -317,8 +317,8 @@ qint64 QuaZipFile::usize()const
 {
 	unz_file_info info_z;
 	setZipError(UNZ_OK);
-	if(zip==NULL||zip->getMode()!=QuaZip::mdUnzip) return -1;
-	setZipError(unzGetCurrentFileInfo(zip->getUnzFile(), &info_z, NULL, 0, NULL, 0, NULL, 0));
+	if(zip==nullptr||zip->getMode()!=QuaZip::mdUnzip) return -1;
+	setZipError(unzGetCurrentFileInfo(zip->getUnzFile(), &info_z, nullptr, 0, nullptr, 0, nullptr, 0));
 	if(zipError!=UNZ_OK)
 		return -1;
 	return info_z.uncompressed_size;
@@ -326,7 +326,7 @@ qint64 QuaZipFile::usize()const
 
 bool QuaZipFile::getFileInfo(QuaZipFileInfo *info)
 {
-	if(zip==NULL||zip->getMode()!=QuaZip::mdUnzip) return false;
+	if(zip==nullptr||zip->getMode()!=QuaZip::mdUnzip) return false;
 	zip->getCurrentFileInfo(info);
 	setZipError(zip->getZipError());
 	return zipError==UNZ_OK;
@@ -335,7 +335,7 @@ bool QuaZipFile::getFileInfo(QuaZipFileInfo *info)
 void QuaZipFile::close()
 {
 	resetZipError();
-	if(zip==NULL||!zip->isOpen()) return;
+	if(zip==nullptr||!zip->isOpen()) return;
 	if(!isOpen()) {
 		qWarning("QuaZipFile::close(): file isn't open");
 		return;

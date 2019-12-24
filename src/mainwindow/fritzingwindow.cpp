@@ -133,7 +133,7 @@ bool FritzingWindow::saveAs(const QString & filename, bool readOnly) {
 	if (newFilename.isEmpty()) return false; // Cancel pressed
 
 	if (readOnly && (newFilename.compare(filename, Qt::CaseInsensitive) == 0)) {
-		QMessageBox::warning(NULL, QObject::tr("Fritzing"),
+		QMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 		                     QObject::tr("The file '%1' is read-only; please use a different filename.")
 		                     .arg(newFilename) );
 		return false;

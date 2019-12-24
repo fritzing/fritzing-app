@@ -101,7 +101,7 @@ ConnectorItem * Via::connectorItem() {
 		return connectorItem;
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 void Via::saveInstanceLocation(QXmlStreamWriter & streamWriter)

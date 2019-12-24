@@ -481,7 +481,7 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 	QString message = QString("Panelizer finished: %1 panel(s), with %2 additional copy(ies) for each panel").arg(planePairs.count()).arg(duplicates - 1);
 	writePanelizerOutput("--------------------------------");
 	writePanelizerOutput(message);
-	QMessageBox::information(NULL, QObject::tr("Fritzing"), message);
+	QMessageBox::information(nullptr, QObject::tr("Fritzing"), message);
 }
 
 
@@ -505,17 +505,17 @@ bool Panelizer::bestFitOne(PanelItem * panelItem, PanelParams & panelParams, QLi
 		bestPlace1.plane = planePair->thePlane;
 		bestPlace2.plane = planePair->thePlane90;
 		bestPlace1.maxRect = planePair->tilePanelRect;
-		TiSrArea(NULL, planePair->thePlane, &planePair->tilePanelRect, placeBestFit, &bestPlace1);
+		TiSrArea(nullptr, planePair->thePlane, &planePair->tilePanelRect, placeBestFit, &bestPlace1);
 		if (customPartsOnly) {
 			// make sure board is rotated
-			bestPlace1.bestTile = NULL;
+			bestPlace1.bestTile = nullptr;
 			DebugDialog::debug("forcing rotation");
 		}
-		if (bestPlace1.bestTile == NULL) {
+		if (bestPlace1.bestTile == nullptr) {
 			bestPlace2.maxRect = planePair->tilePanelRect90;
-			TiSrArea(NULL, planePair->thePlane90, &planePair->tilePanelRect90, placeBestFit, &bestPlace2);
+			TiSrArea(nullptr, planePair->thePlane90, &planePair->tilePanelRect90, placeBestFit, &bestPlace2);
 		}
-		if (bestPlace1.bestTile == NULL && bestPlace2.bestTile == NULL ) {
+		if (bestPlace1.bestTile == nullptr && bestPlace2.bestTile == nullptr ) {
 			if (++ppix < planePairs.count()) {
 				// try next panel
 				continue;
@@ -533,10 +533,10 @@ bool Panelizer::bestFitOne(PanelItem * panelItem, PanelParams & panelParams, QLi
 		}
 
 		bool use2 = false;
-		if (bestPlace1.bestTile == NULL) {
+		if (bestPlace1.bestTile == nullptr) {
 			use2 = true;
 		}
-		else if (bestPlace2.bestTile == NULL) {
+		else if (bestPlace2.bestTile == nullptr) {
 		}
 		else {
 			// never actually get here
@@ -609,10 +609,10 @@ bool Panelizer::bestFitOne(PanelItem * panelItem, PanelParams & panelParams, QLi
 			if (fontSize == fontSize1) fontSize = fontSize2;
 		}
 
-		TiInsertTile(planePair->thePlane, &tileRect, NULL, Tile::OBSTACLE);
+		TiInsertTile(planePair->thePlane, &tileRect, nullptr, Tile::OBSTACLE);
 		TileRect tileRect90;
 		tileRotate90(tileRect, tileRect90);
-		TiInsertTile(planePair->thePlane90, &tileRect90, NULL, Tile::OBSTACLE);
+		TiInsertTile(planePair->thePlane90, &tileRect90, nullptr, Tile::OBSTACLE);
 
 		return true;
 	}
@@ -650,7 +650,7 @@ PlanePair * Panelizer::makePlanePair(PanelParams & panelParams, bool big)
 
 	Tile * bufferTile = TiAlloc();
 	TiSetType(bufferTile, Tile::BUFFER);
-	TiSetBody(bufferTile, NULL);
+	TiSetBody(bufferTile, nullptr);
 
 	QRectF panelRect(0, 0, planePair->panelWidth + panelParams.panelSpacing - panelParams.panelBorder,
 	                 planePair->panelHeight + panelParams.panelSpacing - panelParams.panelBorder);
@@ -668,7 +668,7 @@ PlanePair * Panelizer::makePlanePair(PanelParams & panelParams, bool big)
 	SETYMAX(bufferTile, b);
 
 	qrectToTile(panelRect, planePair->tilePanelRect);
-	TiInsertTile(planePair->thePlane, &planePair->tilePanelRect, NULL, Tile::SPACE);
+	TiInsertTile(planePair->thePlane, &planePair->tilePanelRect, nullptr, Tile::SPACE);
 
 	QMatrix matrix90;
 	matrix90.rotate(90);
@@ -676,7 +676,7 @@ PlanePair * Panelizer::makePlanePair(PanelParams & panelParams, bool big)
 
 	Tile * bufferTile90 = TiAlloc();
 	TiSetType(bufferTile90, Tile::BUFFER);
-	TiSetBody(bufferTile90, NULL);
+	TiSetBody(bufferTile90, nullptr);
 
 	l = fasterRealToTile(panelRect90.left() - 10);
 	t = fasterRealToTile(panelRect90.top() - 10);
@@ -691,7 +691,7 @@ PlanePair * Panelizer::makePlanePair(PanelParams & panelParams, bool big)
 	SETYMAX(bufferTile90, b);
 
 	qrectToTile(panelRect90, planePair->tilePanelRect90);
-	TiInsertTile(planePair->thePlane90, &planePair->tilePanelRect90, NULL, Tile::SPACE);
+	TiInsertTile(planePair->thePlane90, &planePair->tilePanelRect90, nullptr, Tile::SPACE);
 
 	return planePair;
 }
@@ -792,7 +792,7 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
 	norotateDir.mkdir("norotate");
 	norotateDir.cd("norotate");
 
-	PanelType * bigPanelType = NULL;
+	PanelType * bigPanelType = nullptr;
 	foreach (PanelType * panelType, panelParams.panelTypes) {
 		if (panelType->name == "big") {
 			bigPanelType = panelType;
@@ -800,7 +800,7 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
 		}
 	}
 
-	if (bigPanelType == NULL) {
+	if (bigPanelType == nullptr) {
 		writePanelizerOutput("No panel types defined");
 		return false;
 	}
@@ -865,7 +865,7 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
 
 		foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
 			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-			if (itemBase == NULL) continue;
+			if (itemBase == nullptr) continue;
 
 			itemBase->setMoveLock(false);
 		}
@@ -936,7 +936,7 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
 		// now save the rotated version
 		mainWindow->pcbView()->selectAllItems(true, false);
 		QMatrix matrix;
-		mainWindow->pcbView()->rotateX(90, false, NULL);
+		mainWindow->pcbView()->rotateX(90, false, nullptr);
 
 		foreach (ItemBase * boardItem, boards) {
 			makeSVGs(mainWindow, boardItem, boardName, layerThingList, rotateDir, copyInfo);
@@ -1336,7 +1336,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 	QString boardName = board.attribute("name");
 	int optional = board.attribute("maxOptionalCount", "").toInt();
 	int required = board.attribute("requiredCount", "").toInt();
-	if (optional <= 0 && required <= 0) return NULL;
+	if (optional <= 0 && required <= 0) return nullptr;
 
 	QString originalPath = fzzFilePaths.value(boardName, "");
 	QFileInfo originalInfo(originalPath);
@@ -1353,15 +1353,15 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 		DebugDialog::debug(QString("%1 original=%2, copy=%3").arg(originalInfo.fileName()).arg(originalInfo.lastModified().toString()).arg(copyInfo.lastModified().toString()));
 		if (originalInfo.lastModified() <= copyInfo.lastModified()) {
 			DebugDialog::debug(QString("copy %1 is up to date").arg(copyPath));
-			return NULL;
+			return nullptr;
 		}
 	}
 
 	QFile file(originalPath);
 	bool ok = FolderUtils::slamCopy(file, copyPath);
 	if (!ok) {
-		QMessageBox::warning(NULL, QObject::tr("Fritzing"), QObject::tr("unable to copy file '%1' to '%2'.").arg(originalPath).arg(copyPath));
-		return NULL;
+		QMessageBox::warning(nullptr, QObject::tr("Fritzing"), QObject::tr("unable to copy file '%1' to '%2'.").arg(originalPath).arg(copyPath));
+		return nullptr;
 	}
 
 	MainWindow * mainWindow = app->openWindowForService(false, 3);
@@ -1388,7 +1388,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 		QFileInfo info(originalPath);
 		QString message = QObject::tr("%2 ... %1 wires moved from their saved position").arg(moved).arg(info.fileName());
 		if (!noMessages) {
-			QMessageBox::warning(NULL, QObject::tr("Fritzing"), message);
+			QMessageBox::warning(nullptr, QObject::tr("Fritzing"), message);
 		}
 		writePanelizerOutput(message);
 		collectFilenames(info.fileName());
@@ -1396,7 +1396,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 
 	foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 
 		itemBase->setMoveLock(false);
 	}
@@ -1565,7 +1565,7 @@ void Panelizer::makeSVGs(MainWindow * mainWindow, ItemBase * board, const QStrin
 				treatAsCircle.clear();
 				foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->collidingItems(board)) {
 					ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-					if (connectorItem == NULL) continue;
+					if (connectorItem == nullptr) continue;
 					if (!connectorItem->isPath()) continue;
 					if (connectorItem->radius() == 0) continue;
 
@@ -1692,7 +1692,7 @@ int Panelizer::checkText(MainWindow * mainWindow, bool displayMessage) {
 
 	foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 		if (!itemBase->isEverVisible()) continue;
 
 		double factor;
@@ -1722,7 +1722,7 @@ int Panelizer::checkText(MainWindow * mainWindow, bool displayMessage) {
 	if (displayMessage && missing.count() > 0) {
 		mainWindow->pcbView()->selectAllItems(false, false);
 		mainWindow->pcbView()->selectItems(missing);
-		QMessageBox::warning(NULL, "Text", QString("There are %1 possible instances of parts with <path> elements missing stroke/fill/stroke-width attributes").arg(missing.count()));
+		QMessageBox::warning(nullptr, "Text", QString("There are %1 possible instances of parts with <path> elements missing stroke/fill/stroke-width attributes").arg(missing.count()));
 	}
 
 	if (missing.count() > 0) {
@@ -1740,7 +1740,7 @@ int Panelizer::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
 	QList<ConnectorItem *> donuts;
 	foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem == NULL) continue;
+		if (connectorItem == nullptr) continue;
 		if (!connectorItem->attachedTo()->isEverVisible()) continue;
 
 		if (connectorItem->isPath() && connectorItem->getCrossLayerConnectorItem()) {  // && connectorItem->radius() == 0
@@ -1757,7 +1757,7 @@ int Panelizer::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
 			itemBases.insert(connectorItem->attachedTo());
 		}
 		mainWindow->pcbView()->selectItems(itemBases.toList());
-		QMessageBox::warning(NULL, "Donuts", QString("There are %1 possible donut connectors").arg(donuts.count() / 2));
+		QMessageBox::warning(nullptr, "Donuts", QString("There are %1 possible donut connectors").arg(donuts.count() / 2));
 	}
 
 	if (donuts.count() > 0) {

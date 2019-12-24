@@ -250,7 +250,7 @@ bool PaletteItemBase::mousePressEventK(PaletteItemBase * originalItem, QGraphics
 	ItemBase::mousePressEvent(event);
 	if (canFindConnectorsUnder()) {
 		foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
-			connectorItem->setOverConnectorItem(NULL);
+			connectorItem->setOverConnectorItem(nullptr);
 		}
 	}
 
@@ -351,7 +351,7 @@ void PaletteItemBase::findConnectorsUnder() {
 			break;
 		}
 
-		connectorItem->findConnectorUnder(true, false, ConnectorItem::emptyConnectorItemList, false, NULL);
+		connectorItem->findConnectorUnder(true, false, ConnectorItem::emptyConnectorItemList, false, nullptr);
 	}
 }
 
@@ -391,7 +391,7 @@ void PaletteItemBase::collectWireConnectees(QSet<Wire *> & wires) {
 bool PaletteItemBase::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers, LayerAttributes & layerAttributes)
 {
 	FSvgRenderer * renderer = ItemBase::setUpImage(modelPart, layerAttributes);
-	if (renderer == NULL) {
+	if (renderer == nullptr) {
 		return false;
 	}
 
@@ -439,7 +439,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 	}
 
 	foreach (Connector * connector, m_modelPart->connectors().values()) {
-		if (connector == NULL) continue;
+		if (connector == nullptr) continue;
 
 		//DebugDialog::debug(QString("id:%1 vid:%2 vlid:%3")
 		//				   .arg(connector->connectorSharedID())
@@ -449,7 +449,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 
 
 		SvgIdLayer * svgIdLayer = connector->fullPinInfo(m_viewID, m_viewLayerID);
-		if (svgIdLayer == NULL) {
+		if (svgIdLayer == nullptr) {
 			DebugDialog::debug(QString("svgidlayer fail %1 vid:%2 vlid:%3 %4")
 			                   .arg(connector->connectorSharedID())
 			                   .arg(m_viewID)
@@ -488,7 +488,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 	}
 
 	foreach (SvgIdLayer * svgIdLayer, renderer->setUpNonConnectors(viewLayerPlacement())) {
-		if (svgIdLayer == NULL) continue;
+		if (svgIdLayer == nullptr) continue;
 
 		NonConnectorItem * nonConnectorItem = new NonConnectorItem(this);
 
@@ -595,7 +595,7 @@ LayerKinPaletteItem *PaletteItemBase::newLayerKinPaletteItem(PaletteItemBase * c
         const ViewGeometry & viewGeometry, long id,
         QMenu* itemMenu, const LayerHash & viewLayers, LayerAttributes & layerAttributes)
 {
-	LayerKinPaletteItem *lk = NULL;
+	LayerKinPaletteItem *lk = nullptr;
 	if (layerAttributes.viewLayerID == ViewLayer::SchematicText) {
 		lk = new SchematicTextLayerKinPaletteItem(chief, modelPart, layerAttributes.viewID, viewGeometry, id, itemMenu);
 	}
@@ -695,7 +695,7 @@ void PaletteItemBase::setProp(const QString & prop, const QString & value)
 
 void PaletteItemBase::partPropertyEntry() {
 	QLineEdit * lineEdit = qobject_cast<QLineEdit *>(sender());
-	if (lineEdit == NULL) return;
+	if (lineEdit == nullptr) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView) {

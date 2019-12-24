@@ -148,8 +148,8 @@ bool tilePointRectYGreaterThan(TilePointRect * tpr1, TilePointRect * tpr2)
 
 static inline void infoTile(const QString & message, Tile * tile)
 {
-	if (tile == NULL) {
-		DebugDialog::debug("infoTile: tile is NULL");
+	if (tile == nullptr) {
+		DebugDialog::debug("infoTile: tile is nullptr");
 		return;
 	}
 
@@ -316,7 +316,7 @@ CMRouter::CMRouter(PCBSketchWidget * sketchWidget, ItemBase * board, bool adjust
 Plane * CMRouter::initPlane(bool rotate90) {
 	Tile * bufferTile = TiAlloc();
 	TiSetType(bufferTile, Tile::BUFFER);
-	TiSetBody(bufferTile, NULL);
+	TiSetBody(bufferTile, nullptr);
 
 	QRectF bufferRect(rotate90 ? m_maxRect90 : m_maxRect);
 
@@ -341,7 +341,7 @@ Plane * CMRouter::initPlane(bool rotate90) {
 	SETYMAX(bufferTile, b);		// TILE is Math Y-axis not computer-graphic Y-axis
 
 	// do not use InsertTile here
-	TiInsertTile(thePlane, &thePlane->maxRect, NULL, Tile::SPACE);
+	TiInsertTile(thePlane, &thePlane->maxRect, nullptr, Tile::SPACE);
 	//infoTileRect("insert", thePlane->maxRect);
 
 	return thePlane;
@@ -417,16 +417,16 @@ void CMRouter::shortenUs(QList<QPointF> & allPoints, JSubedge * subedge)
 
 GridEntry * CMRouter::drawGridItem(Tile * tile)
 {
-	return NULL;
+	return nullptr;
 
-	if (tile == NULL) return NULL;
+	if (tile == nullptr) return nullptr;
 
 	QRectF r;
 	tileToQRect(tile, r);
 
 	GridEntry * gridEntry = TiGetGridEntry(tile);
-	if (gridEntry == NULL) {
-		gridEntry = new GridEntry(r, NULL);
+	if (gridEntry == nullptr) {
+		gridEntry = new GridEntry(r, nullptr);
 		gridEntry->setZValue(m_sketchWidget->getTopZ());
 		TiSetClient(tile, gridEntry);
 	}
@@ -467,7 +467,7 @@ GridEntry * CMRouter::drawGridItem(Tile * tile)
 
 	gridEntry->setPen(c);
 	gridEntry->setBrush(QBrush(c));
-	if (gridEntry->scene() == NULL) {
+	if (gridEntry->scene() == nullptr) {
 		m_sketchWidget->scene()->addItem(gridEntry);
 	}
 	gridEntry->show();
@@ -496,13 +496,13 @@ void CMRouter::hideTiles()
 
 void CMRouter::clearPlane(Plane * thePlane)
 {
-	if (thePlane == NULL) return;
+	if (thePlane == nullptr) return;
 
 	QSet<Tile *> tiles;
 
 	//infoTileRect("clear", thePlane->maxRect);
 
-	TiSrArea(NULL, thePlane, &thePlane->maxRect, prepDeleteTile, &tiles);
+	TiSrArea(nullptr, thePlane, &thePlane->maxRect, prepDeleteTile, &tiles);
 	foreach (Tile * tile, tiles) {
 		TiFree(tile);
 	}
@@ -523,7 +523,7 @@ void CMRouter::displayBadTiles(QList<Tile *> & alreadyTiled) {
 void CMRouter::displayBadTileRect(TileRect & tileRect) {
 	QRectF r;
 	tileRectToQRect(tileRect, r);
-	GridEntry * gridEntry = new GridEntry(r, NULL);
+	GridEntry * gridEntry = new GridEntry(r, nullptr);
 	gridEntry->setZValue(m_sketchWidget->getTopZ());
 	QColor c(255, 0, 0, GridEntryAlpha);
 	gridEntry->setPen(c);
@@ -546,7 +546,7 @@ Tile * CMRouter::insertTile(Plane * thePlane, TileRect & tileRect, QList<Tile *>
 	//infoTileRect("insert tile", tileRect);
 	if (tileRect.xmaxi - tileRect.xmini <= 0 || tileRect.ymaxi - tileRect.ymini <= 0) {
 		DebugDialog::debug("attempting to insert zero width tile");
-		return NULL;
+		return nullptr;
 	}
 
 	if (tileRect.xmaxi > thePlane->maxRect.xmaxi) {
@@ -564,18 +564,18 @@ Tile * CMRouter::insertTile(Plane * thePlane, TileRect & tileRect, QList<Tile *>
 	}
 
 	if (tileRect.xmaxi - tileRect.xmini <= 0 || tileRect.ymaxi - tileRect.ymini <= 0) {
-		return NULL;
+		return nullptr;
 	}
 
 	bool gotOverlap = false;
 	if (overlapType != CMRouter::IgnoreAllOverlaps) {
-		//TiSrArea(NULL, thePlane, &tileRect, checkAlready, &alreadyTiled);
+		//TiSrArea(nullptr, thePlane, &tileRect, checkAlready, &alreadyTiled);
 	}
 
 	if (gotOverlap) {
 		m_overlappingTileRect = tileRect;
 		DebugDialog::debug("!!!!!!!!!!!!!!!!!!!!!!! overlaps not allowed !!!!!!!!!!!!!!!!!!!!!!");
-		return NULL;
+		return nullptr;
 	}
 	Tile * newTile = TiInsertTile(thePlane, &tileRect, item, tileType);
 	insertUnion(tileRect, item, tileType);
@@ -629,7 +629,7 @@ bool CMRouter::allowEquipotentialOverlaps(QGraphicsItem * item, QList<Tile *> & 
 		}
 		else {
 			Wire * w = dynamic_cast<Wire *>(bodyItem);
-			if (w == NULL) return false;
+			if (w == nullptr) return false;
 
 			if (!collected) {
 				ConnectorItem::collectEqualPotential(equipotential, false, ViewGeometry::NoFlag);
@@ -651,7 +651,7 @@ bool CMRouter::allowEquipotentialOverlaps(QGraphicsItem * item, QList<Tile *> & 
 void CMRouter::clearGridEntries() {
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
 		GridEntry * gridEntry = dynamic_cast<GridEntry *>(item);
-		if (gridEntry == NULL) continue;
+		if (gridEntry == nullptr) continue;
 
 		delete gridEntry;
 	}
@@ -687,11 +687,11 @@ bool CMRouter::insideV(const QPointF & check, const QPointF & vertex)
 }
 
 void CMRouter::insertUnion(TileRect & tileRect, QGraphicsItem *, Tile::TileType tileType) {
-	if (m_unionPlane == NULL) return;
+	if (m_unionPlane == nullptr) return;
 	if (tileType == Tile::SPACE) return;
 	if (tileType == Tile::SPACE2) return;
 
-	TiInsertTile(m_unionPlane, &tileRect, NULL, Tile::OBSTACLE);
+	TiInsertTile(m_unionPlane, &tileRect, nullptr, Tile::OBSTACLE);
 	//infoTileRect("union", tileRect);
 
 	TileRect tileRect90;
@@ -715,14 +715,14 @@ void CMRouter::insertUnion(TileRect & tileRect, QGraphicsItem *, Tile::TileType 
 		return;
 	}
 
-	TiInsertTile(m_union90Plane, &tileRect90, NULL, Tile::OBSTACLE);
+	TiInsertTile(m_union90Plane, &tileRect90, nullptr, Tile::OBSTACLE);
 }
 
 void CMRouter::drawTileRect(TileRect & tileRect, QColor & color)
 {
 	QRectF r;
 	tileRectToQRect(tileRect, r);
-	GridEntry * gridEntry = new GridEntry(r, NULL);
+	GridEntry * gridEntry = new GridEntry(r, nullptr);
 	gridEntry->setZValue(m_sketchWidget->getTopZ());
 	gridEntry->setPen(color);
 	gridEntry->setBrush(QBrush(color));
@@ -753,10 +753,10 @@ void CMRouter::drcClean()
 	clearGridEntries();
 	if (m_unionPlane) {
 		clearPlane(m_unionPlane);
-		m_unionPlane = NULL;
+		m_unionPlane = nullptr;
 	}
 	if (m_union90Plane) {
 		clearPlane(m_union90Plane);
-		m_union90Plane = NULL;
+		m_union90Plane = nullptr;
 	}
 }

@@ -75,8 +75,8 @@ int main(int argc, char *argv[])
 	std::wstring wstr = path.toStdWString();
 	LPCWSTR ptr = wstr.c_str();
 	hLogFile = CreateFile(ptr, GENERIC_WRITE,
-						  FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
-						  FILE_ATTRIBUTE_NORMAL, NULL);
+						  FILE_SHARE_WRITE, nullptr, CREATE_ALWAYS,
+						  FILE_ATTRIBUTE_NORMAL, nullptr);
 	_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_FILE);
 	_CrtSetReportFile(_CRT_ERROR, hLogFile);
 	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE);

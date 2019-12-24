@@ -73,7 +73,7 @@ TraceWire * Autorouter::drawOneTrace(QPointF fromPos, QPointF toPos, double widt
 	viewGeometry.setLine(line);
 
 	auto trace = m_sketchWidget->addItem(m_sketchWidget->referenceModel()->retrieveModelPart(ModuleIDNames::WireModuleIDName),
-	                   viewLayerPlacement, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+	                   viewLayerPlacement, BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
 	if (!trace) {
 		// we're in trouble
 		DebugDialog::debug("autorouter unable to draw one trace");
@@ -289,7 +289,7 @@ void Autorouter::restoreOriginalState(QUndoCommand * parentCommand) {
 void Autorouter::clearTracesAndJumpers() {
 	QList<ItemBase *> toDelete;
 
-	foreach (QGraphicsItem * item, (m_board == NULL) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
+	foreach (QGraphicsItem * item, (m_board == nullptr) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
 		if (m_pcbType) {
 			auto jumperItem = dynamic_cast<JumperItem *>(item);
 			if (jumperItem) {
@@ -343,7 +343,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 	QList<JumperItem *> jumperItems;
 	QList<Via *> vias;
 	QList<SymbolPaletteItem *> netLabels;
-	foreach (QGraphicsItem * item, (m_board  == NULL) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
+	foreach (QGraphicsItem * item, (m_board  == nullptr) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
 		auto wire = dynamic_cast<TraceWire *>(item);
 		if (wire) {
 			if (!wire->getAutoroutable()) continue;

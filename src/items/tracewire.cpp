@@ -98,7 +98,7 @@ bool TraceWire::collectExtraInfo(QWidget * parent, const QString & family, const
 		bool disabled = !canSwitchLayers();
 		if (!disabled) {
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView == NULL || infoGraphicsView->boardLayers() == 1) disabled = true;
+			if (infoGraphicsView == nullptr || infoGraphicsView->boardLayers() == 1) disabled = true;
 		}
 		returnWidget->setDisabled(disabled);
 	}
@@ -121,7 +121,7 @@ void TraceWire::widthEntry(const QString & text) {
 int TraceWire::widthEntry(const QString & text, QObject * sender) {
 
 	QComboBox * comboBox = qobject_cast<QComboBox *>(sender);
-	if (comboBox == NULL) return 0;
+	if (comboBox == nullptr) return 0;
 
 	int w = comboBox->itemData(comboBox->currentIndex()).toInt();
 	if (w == 0) {
@@ -159,7 +159,7 @@ bool TraceWire::canSwitchLayers() {
 	collectChained(wires, ends);
 
 	foreach (ConnectorItem * end, ends) {
-		if (end->getCrossLayerConnectorItem() == NULL) return false;
+		if (end->getCrossLayerConnectorItem() == nullptr) return false;
 	}
 
 	return true;

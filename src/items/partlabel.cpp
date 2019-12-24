@@ -105,7 +105,7 @@ static const double InactiveOpacity = 0.4;
 PartLabel::PartLabel(ItemBase * owner, QGraphicsItem * parent)
 	: QGraphicsSvgItem(parent)
 {
-	m_renderer = NULL;
+	m_renderer = nullptr;
 	m_owner = owner;
 	m_spaceBarWasPressed = false;
 	m_text = m_displayText = "";
@@ -136,8 +136,8 @@ void PartLabel::showLabel(bool showIt, ViewLayer * viewLayer) {
 	if (showIt == this->isVisible()) return;
 
 	if (showIt && !m_initialized) {
-		if (m_owner == NULL) return;
-		if (m_owner->scene() == NULL) return;
+		if (m_owner == nullptr) return;
+		if (m_owner->scene() == nullptr) return;
 
 		bool flipped = (viewLayer->viewLayerID() == ViewLayer::Silkscreen0Label);
 
@@ -627,7 +627,7 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 	}
 
 	QAction *selectedAction = m_menu.exec(event->screenPos());
-	if (selectedAction == NULL) return;
+	if (selectedAction == nullptr) return;
 
 	PartLabelAction action = (PartLabelAction) selectedAction->data().toInt();
 	switch (action) {
@@ -756,7 +756,7 @@ void PartLabel::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
 void PartLabel::setFontSize(int action) {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics == NULL) return;
+	if (infographics == nullptr) return;
 
 	double fs = 0;
 	switch (action) {
@@ -899,7 +899,7 @@ void PartLabel::resetSvg()
 
 	QString svg = TextUtils::makeSVGHeader(GraphicsUtils::SVGDPI, GraphicsUtils::StandardFritzingDPI, w, h) + innerSvg + "\n</svg>";
 
-	if (m_renderer == NULL) {
+	if (m_renderer == nullptr) {
 		m_renderer = new QSvgRenderer(this);
 	}
 

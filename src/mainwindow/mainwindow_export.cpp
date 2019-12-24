@@ -141,7 +141,7 @@ void MainWindow::print() {
 		m_programView->print();
 	}
 
-	if (m_currentGraphicsView == NULL) return;
+	if (m_currentGraphicsView == nullptr) return;
 
 #ifndef QT_NO_PRINTER
 	QPrinter printer(QPrinter::HighResolution);
@@ -158,7 +158,7 @@ void MainWindow::print() {
 }
 
 void MainWindow::exportEtchable() {
-	if (sender() == NULL) return;
+	if (sender() == nullptr) return;
 
 	bool wantSvg = sender()->property("svg").toBool();
 	exportEtchable(!wantSvg, wantSvg);
@@ -174,14 +174,14 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 		                      tr("Your sketch does not have a board yet! Please add a PCB in order to export etchable."));
 		return;
 	}
-	if (board == NULL) {
+	if (board == nullptr) {
 		QMessageBox::critical(this, tr("Fritzing"),
 		                      tr("Etchable export can only handle one board at a time--please select the board you want to export."));
 		return;
 	}
 
 	RoutingStatus routingStatus;
-	m_pcbGraphicsView->updateRoutingStatus(NULL, routingStatus, true);
+	m_pcbGraphicsView->updateRoutingStatus(nullptr, routingStatus, true);
 	if (routingStatus.m_connectorsLeftToRoute > 0) {
 		QMessageBox msgBox(this);
 		msgBox.setWindowModality(Qt::WindowModal);
@@ -433,7 +433,7 @@ QString MainWindow::mergeBoardSvg(QString & svg, ItemBase * board, int res, bool
 }
 
 QString MainWindow::getBoardSvg(ItemBase * board, int res,  LayerList & viewLayerIDs) {
-	if (board == NULL) return ___emptyString___;
+	if (board == nullptr) return ___emptyString___;
 
 	board = board->layerKinChief();
 	QList<ItemBase *> boardLayers;
@@ -480,7 +480,7 @@ QString MainWindow::getBoardSvg(ItemBase * board, int res,  LayerList & viewLaye
 
 void MainWindow::doExport() {
 	QAction * action = qobject_cast<QAction *>(sender());
-	if (action == NULL) return;
+	if (action == nullptr) return;
 
 	QString actionType = action->data().toString();
 	QString path = defaultSaveFolder();
@@ -555,7 +555,7 @@ void MainWindow::doExport() {
 
 void MainWindow::exportAux(QString fileName, QImage::Format format, int quality, bool removeBackground)
 {
-	if (m_currentGraphicsView == NULL) return;
+	if (m_currentGraphicsView == nullptr) return;
 
 	double resMultiplier = 3;
 
@@ -626,7 +626,7 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 }
 
 void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginate) {
-	if (m_currentGraphicsView == NULL) return;
+	if (m_currentGraphicsView == nullptr) return;
 
 	int res = printer.resolution();
 	double scale2 = res / GraphicsUtils::SVGDPI;
@@ -830,8 +830,8 @@ void MainWindow::saveAsShareable(const QString & path, bool saveModel)
 	QHash<QString, ModelPart *> saveParts;
 	foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
-		if (itemBase->modelPart() == NULL) {
+		if (itemBase == nullptr) continue;
+		if (itemBase->modelPart() == nullptr) {
 			continue;
 		}
 		if (itemBase->modelPart()->isCore()) continue;
@@ -1050,7 +1050,7 @@ void MainWindow::exportToEagle() {
 
 	// bail out if something is wrong
 	// TODO: show an error in QMessageBox
-	if(m_currentWidget == NULL) {
+	if(m_currentWidget == nullptr) {
 		return;
 	}
 
@@ -1066,7 +1066,7 @@ void MainWindow::exportToEagle() {
 
 		QHash<QString,QString> properties = partList.at(i)->modelPartShared()->properties();
 		QString package = properties["package"];
-		if (package == NULL) {
+		if (package == nullptr) {
 			package = tr("*** package not specified ***");
 		}
 
@@ -1112,7 +1112,7 @@ void MainWindow::exportSvg(double res, bool selectedItems, bool flatten, const Q
 	FileProgressDialog * fileProgressDialog = exportProgress();
 	LayerList viewLayerIDs;
 	foreach (ViewLayer * viewLayer, m_currentGraphicsView->viewLayers()) {
-		if (viewLayer == NULL) continue;
+		if (viewLayer == nullptr) continue;
 		if (!viewLayer->visible()) continue;
 
 		viewLayerIDs << viewLayer->viewLayerID();
@@ -1125,7 +1125,7 @@ void MainWindow::exportSvg(double res, bool selectedItems, bool flatten, const Q
 	renderThing.selectedItems = selectedItems;
 	renderThing.hideTerminalPoints = true;
 	renderThing.renderBlocker = false;
-	QString svg = m_currentGraphicsView->renderToSVG(renderThing, NULL, viewLayerIDs);
+	QString svg = m_currentGraphicsView->renderToSVG(renderThing, nullptr, viewLayerIDs);
 	if (svg.isEmpty()) {
 		// tell the user something reasonable
 		return;
@@ -1169,7 +1169,7 @@ void MainWindow::exportBOM() {
 
 	// bail out if something is wrong
 	// TODO: show an error in QMessageBox
-	if (m_currentWidget == NULL) {
+	if (m_currentWidget == nullptr) {
 		return;
 	}
 
@@ -1276,7 +1276,7 @@ void MainWindow::exportBOM() {
 }
 
 void MainWindow::exportSpiceNetlist() {
-	if (m_schematicGraphicsView == NULL) return;
+	if (m_schematicGraphicsView == nullptr) return;
 
 	// examples:
 	// http://www.allaboutcircuits.com/vol_5/chpt_7/8.html
@@ -1312,7 +1312,7 @@ void MainWindow::exportSpiceNetlist() {
 
 	//DebugDialog::debug("_______________");
 	QSet<ItemBase *> itemBases;
-	QList<ConnectorItem *> * ground = NULL;
+	QList<ConnectorItem *> * ground = nullptr;
 	foreach (QList<ConnectorItem *> * net, netList) {
 		if (net->count() < 2) continue;
 
@@ -1500,7 +1500,7 @@ void MainWindow::exportNetlist() {
 		QList<ConnectorItem *> deleteItems;
 		foreach (ConnectorItem * connectorItem, *net) {
 			ErcData * ercData = connectorItem->connectorSharedErcData();
-			if (ercData == NULL) continue;
+			if (ercData == nullptr) continue;
 
 			if (ercData->ignore() == ErcData::Always) {
 				deleteItems.append(connectorItem);
@@ -1601,7 +1601,7 @@ void MainWindow::exportNormalizedFlattenedSVG() {
 
 QString MainWindow::getBomProps(ItemBase * itemBase)
 {
-	if (itemBase == NULL) return "";
+	if (itemBase == nullptr) return "";
 
 	QStringList keys;
 	QHash<QString, QString> properties = HtmlInfoView::getPartProperties(itemBase->modelPart(), itemBase, false, keys);
@@ -1612,7 +1612,7 @@ QString MainWindow::getBomProps(ItemBase * itemBase)
 		QString value = properties.value(key);
 
 		QWidget widget;
-		QWidget * resultWidget = NULL;
+		QWidget * resultWidget = nullptr;
 		QString resultKey, resultValue;
 		bool hide;
 		itemBase->collectExtraInfo(&widget, properties.value("family"), key, value, false, resultKey, resultValue, resultWidget, hide);
@@ -1639,7 +1639,7 @@ void MainWindow::exportToGerber() {
 		                      tr("Your sketch does not have a board yet!  Please add a PCB in order to export to Gerber."));
 		return;
 	}
-	if (board == NULL) {
+	if (board == nullptr) {
 		QMessageBox::critical(this, tr("Fritzing"),
 		                      tr("Gerber export can only handle one board at a time--please select the board you want to export."));
 		return;
@@ -1708,12 +1708,12 @@ void MainWindow::massageOutput(QString & svg, bool doMask, bool doSilk, bool doP
 }
 
 void MainWindow::dumpAllParts() {
-	if (m_currentGraphicsView == NULL) return;
+	if (m_currentGraphicsView == nullptr) return;
 
 	QList<ItemBase *> already;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->items()) {
 		ItemBase * ib = dynamic_cast<ItemBase *>(item);
-		if (ib == NULL) continue;
+		if (ib == nullptr) continue;
 
 		ItemBase * chief = ib->layerKinChief();
 		if (already.contains(chief)) continue;

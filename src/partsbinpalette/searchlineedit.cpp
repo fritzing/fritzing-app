@@ -47,7 +47,7 @@ void SearchLineEdit::paintEvent(QPaintEvent * event) {
 	if (!SearchFieldPixmap) {
 		SearchFieldPixmap.reset(new QPixmap(":/resources/images/icons/searchField.png"));
 	}
-	if (SearchFieldPixmap == NULL) return;
+	if (SearchFieldPixmap == nullptr) return;
 	if (SearchFieldPixmap->isNull()) return;
 
 	QPainter painter(this);

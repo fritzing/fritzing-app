@@ -95,7 +95,7 @@ void ModelPartShared::commonInit() {
 	m_dbid = 0;
 	m_ownerCount = 0;
 	m_hasZeroConnector = m_flippedSMD = m_connectorsInitialized = m_ignoreTerminalPoints = m_needsCopper1 = false;
-	m_superpart = NULL;
+	m_superpart = nullptr;
 }
 
 ModelPartShared::~ModelPartShared() {
@@ -502,7 +502,7 @@ bool ModelPartShared::needsCopper1() {
 void ModelPartShared::connectorIDs(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID, QStringList & connectorIDs, QStringList & terminalIDs, QStringList & legIDs) {
 	foreach (ConnectorShared * connectorShared, m_connectorSharedHash.values()) {
 		SvgIdLayer * svgIdLayer = connectorShared->fullPinInfo(viewID, viewLayerID);
-		if (svgIdLayer == NULL) {
+		if (svgIdLayer == nullptr) {
 			continue;
 		}
 		else {
@@ -590,23 +590,23 @@ void ModelPartShared::flipSMDAnd() {
 }
 
 bool ModelPartShared::hasViewFor(ViewLayer::ViewID viewID) {
-	ViewImage * viewImage = m_viewImages.value(viewID, NULL);
-	if (viewImage == NULL) return false;
+	ViewImage * viewImage = m_viewImages.value(viewID, nullptr);
+	if (viewImage == nullptr) return false;
 
 	return viewImage->layers != 0;
 }
 
 bool ModelPartShared::hasViewFor(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
-	ViewImage * viewImage = m_viewImages.value(viewID, NULL);
-	if (viewImage == NULL) return false;
+	ViewImage * viewImage = m_viewImages.value(viewID, nullptr);
+	if (viewImage == nullptr) return false;
 
 	qulonglong one = 1;
 	return (viewImage->layers & (one << viewLayerID)) != 0;
 }
 
 QString ModelPartShared::hasBaseNameFor(ViewLayer::ViewID viewID) {
-	ViewImage * viewImage = m_viewImages.value(viewID, NULL);
-	if (viewImage == NULL) return "";
+	ViewImage * viewImage = m_viewImages.value(viewID, nullptr);
+	if (viewImage == nullptr) return "";
 
 	return viewImage->image;
 }
@@ -652,7 +652,7 @@ const QList<ViewImage *> ModelPartShared::viewImages() {
 
 QString ModelPartShared::imageFileName(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
 	ViewImage * viewImage = m_viewImages.value(viewID);
-	if (viewImage == NULL) return "";
+	if (viewImage == nullptr) return "";
 
 	qulonglong one = 1;
 	if ((viewImage->layers & (one << viewLayerID)) == 0) return "";
@@ -664,28 +664,28 @@ QString ModelPartShared::imageFileName(ViewLayer::ViewID viewID, ViewLayer::View
 
 QString ModelPartShared::imageFileName(ViewLayer::ViewID viewID) {
 	ViewImage * viewImage = m_viewImages.value(viewID);
-	if (viewImage == NULL) return "";
+	if (viewImage == nullptr) return "";
 
 	return viewImage->image;
 }
 
 void ModelPartShared::setImageFileName(ViewLayer::ViewID viewID, const QString & filename) {
 	ViewImage * viewImage = m_viewImages.value(viewID);
-	if (viewImage == NULL) return;
+	if (viewImage == nullptr) return;
 
 	viewImage->image = filename;
 }
 
 bool ModelPartShared::hasViewID(ViewLayer::ViewID viewID) {
 	ViewImage * viewImage = m_viewImages.value(viewID);
-	if (viewImage == NULL) return false;
+	if (viewImage == nullptr) return false;
 
 	return viewImage->layers != 0;
 }
 
 bool ModelPartShared::hasMultipleLayers(ViewLayer::ViewID viewID) {
 	ViewImage * viewImage = m_viewImages.value(viewID);
-	if (viewImage == NULL) return false;
+	if (viewImage == nullptr) return false;
 
 	// http://eli.thegreenplace.net/2004/07/30/a-cool-algorithm-for-counting-ones-in-a-bitstring/
 
@@ -715,7 +715,7 @@ LayerList ModelPartShared::viewLayersAux(ViewLayer::ViewID viewID, qulonglong (*
 
 	LayerList layerList;
 	ViewImage * viewImage = m_viewImages.value(viewID);
-	if (viewImage == NULL) return layerList;
+	if (viewImage == nullptr) return layerList;
 
 	// http://eli.thegreenplace.net/2004/07/30/a-cool-algorithm-for-counting-ones-in-a-bitstring/
 
@@ -741,21 +741,21 @@ LayerList ModelPartShared::viewLayersAux(ViewLayer::ViewID viewID, qulonglong (*
 
 bool ModelPartShared::canFlipHorizontal(ViewLayer::ViewID viewID) {
 	ViewImage * viewImage = m_viewImages.value(viewID);
-	if (viewImage == NULL) return false;
+	if (viewImage == nullptr) return false;
 
 	return viewImage->canFlipHorizontal;
 }
 
 bool ModelPartShared::canFlipVertical(ViewLayer::ViewID viewID) {
 	ViewImage * viewImage = m_viewImages.value(viewID);
-	if (viewImage == NULL) return false;
+	if (viewImage == nullptr) return false;
 
 	return viewImage->canFlipVertical;
 }
 
 bool ModelPartShared::anySticky(ViewLayer::ViewID viewID) {
 	ViewImage * viewImage = m_viewImages.value(viewID);
-	if (viewImage == NULL) return false;
+	if (viewImage == nullptr) return false;
 
 	return (viewImage->sticky != 0);
 }
@@ -774,7 +774,7 @@ void ModelPartShared::copyPins(ViewLayer::ViewLayerID from, ViewLayer::ViewLayer
 		}
 
 		svgIdLayer = connectorShared->fullPinInfo(ViewLayer::PCBView, from);
-		if (svgIdLayer == NULL) {
+		if (svgIdLayer == nullptr) {
 			DebugDialog::debug(QString("missing connector in %1").arg(moduleID()));
 			continue;
 		}
@@ -839,7 +839,7 @@ const QList< QPointer<ModelPartShared> > & ModelPartShared::subparts() {
 }
 
 void ModelPartShared::addSubpart(ModelPartShared * subpart) {
-	if (subpart == NULL) return;
+	if (subpart == nullptr) return;
 
 	m_subparts.append(subpart);
 	subpart->setSuperpart(this);

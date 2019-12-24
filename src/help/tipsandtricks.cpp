@@ -182,7 +182,7 @@ TipsAndTricks::~TipsAndTricks()
 }
 
 void TipsAndTricks::hideTipsAndTricks() {
-	if (Singleton != NULL) {
+	if (Singleton) {
 		Singleton->hide();
 	}
 }

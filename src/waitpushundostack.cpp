@@ -137,7 +137,7 @@ void WaitPushUndoStack::resolveTemporary() {
 }
 
 void WaitPushUndoStack::deleteTemporary() {
-	if (m_temporary != NULL) {
+	if (m_temporary) {
 		delete m_temporary;
 		m_temporary = NULL;
 	}

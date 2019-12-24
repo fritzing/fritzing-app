@@ -150,7 +150,7 @@ void PartsBinView::mousePressOnItem(const QPoint &dragStartPos, const QString &m
 
 	// can set the pixmap, but can't hide it
 	//QPixmap * pixmap = pitem->pixmap();
-	//if (pixmap != NULL) {
+	//if (pixmap) {
 	//drag.setPixmap(*pixmap);
 	//drag.setHotSpot(mts.toPoint() - pitem->pos().toPoint());
 	//

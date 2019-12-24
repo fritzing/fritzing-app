@@ -50,7 +50,7 @@ bool EventEater::eventFilter(QObject *obj, QEvent *event)
 	{
 		bool gotOne = false;
 		foreach (QWidget * widget, m_allowedWidgets) {
-			for (QObject * parentObj = obj; parentObj != NULL; parentObj = parentObj->parent()) {
+			for (QObject * parentObj = obj; parentObj; parentObj = parentObj->parent()) {
 				if (parentObj == widget) {
 					gotOne = true;
 					break;

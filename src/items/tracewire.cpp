@@ -94,7 +94,7 @@ bool TraceWire::collectExtraInfo(QWidget * parent, const QString & family, const
 	}
 
 	bool result =  ClipableWire::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
-	if (prop.compare("layer") == 0 && returnWidget != NULL) {
+	if (prop.compare("layer") == 0 && returnWidget) {
 		bool disabled = !canSwitchLayers();
 		if (!disabled) {
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
@@ -113,7 +113,7 @@ void TraceWire::widthEntry(const QString & text) {
 	if (w == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->changeWireWidthMils(QString::number(w));
 	}
 }

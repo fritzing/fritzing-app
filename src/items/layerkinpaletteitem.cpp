@@ -49,7 +49,7 @@ void LayerKinPaletteItem::initLKPI(LayerAttributes & layerAttributes, const Laye
 QVariant LayerKinPaletteItem::itemChange(GraphicsItemChange change, const QVariant &value)
 {
 	//DebugDialog::debug(QString("lk item change %1 %2").arg(this->id()).arg(change));
-	if (m_layerKinChief != NULL) {
+	if (m_layerKinChief) {
 		if (change == ItemSelectedChange) {
 			bool selected = value.toBool();
 			if (m_blockItemSelectedChange && m_blockItemSelectedValue == selected) {

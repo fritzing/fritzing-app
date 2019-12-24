@@ -116,7 +116,7 @@ const BaseCommand * BaseCommand::subCommand(int ix) const {
 void BaseCommand::addSubCommand(BaseCommand * subCommand) {
 	m_commands.append(subCommand);
 #ifndef QT_NO_DEBUG
-	if (m_sketchWidget != NULL) {
+	if (m_sketchWidget) {
 		m_sketchWidget->undoStack()->writeUndo(subCommand, 4, this);
 	}
 #endif
@@ -797,15 +797,15 @@ ChangeLegBendpointCommand::ChangeLegBendpointCommand(SketchWidget* sketchWidget,
 {
 	m_fromID = fromID;
 	m_bezier0 = m_bezier1 = m_bezier2 = NULL;
-	if (bezier0 != NULL) {
+	if (bezier0) {
 		m_bezier0 = new Bezier;
 		m_bezier0->copy(bezier0);
 	}
-	if (bezier1 != NULL) {
+	if (bezier1) {
 		m_bezier1 = new Bezier;
 		m_bezier1->copy(bezier1);
 	}
-	if (bezier2 != NULL) {
+	if (bezier2) {
 		m_bezier2 = new Bezier;
 		m_bezier2->copy(bezier2);
 	}

@@ -273,7 +273,7 @@ void MysteryPart::chipLabelEntry() {
 	if (edit->text().compare(this->chipLabel()) == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setProp(this, "chip label", tr("chip label"), this->chipLabel(), edit->text(), true);
 	}
 }

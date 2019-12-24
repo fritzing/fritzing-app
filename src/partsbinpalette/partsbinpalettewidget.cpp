@@ -139,7 +139,7 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 }
 
 PartsBinPaletteWidget::~PartsBinPaletteWidget() {
-	if (m_canDeleteModel && m_model != NULL) {
+	if (m_canDeleteModel && m_model) {
 		delete m_model;
 		m_model = NULL;
 	}
@@ -504,7 +504,7 @@ void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarg
 		if (name.isEmpty()) name = QFileInfo(filename).completeBaseName();
 
 		bool deleteWhenDone = false;
-		if (progressTarget != NULL) {
+		if (progressTarget) {
 			//DebugDialog::debug("open progress " + filename);
 			deleteWhenDone = true;
 			progressTarget = m_loadingProgressDialog = new FileProgressDialog(tr("Loading..."), 200, progressTarget);
@@ -840,7 +840,7 @@ QIcon PartsBinPaletteWidget::icon() {
 }
 
 bool PartsBinPaletteWidget::hasMonoIcon() {
-	return m_monoIcon != NULL;
+	return m_monoIcon;
 }
 
 QIcon PartsBinPaletteWidget::monoIcon() {

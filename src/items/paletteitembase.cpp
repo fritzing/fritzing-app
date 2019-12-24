@@ -205,7 +205,7 @@ void PaletteItemBase::paintSelected(QPainter *painter, const QStyleOptionGraphic
 
 void PaletteItemBase::mousePressConnectorEvent(ConnectorItem * connectorItem, QGraphicsSceneMouseEvent * event) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->mousePressConnectorEvent(connectorItem, event);
 	}
 }
@@ -698,7 +698,7 @@ void PaletteItemBase::partPropertyEntry() {
 	if (lineEdit == NULL) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setProp(this, ModelPartShared::PartNumberPropertyName, "", m_modelPart->localProp(ModelPartShared::PartNumberPropertyName).toString(), lineEdit->text(), true);
 	}
 }

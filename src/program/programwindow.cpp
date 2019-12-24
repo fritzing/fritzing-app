@@ -716,7 +716,7 @@ Platform * ProgramWindow::getPlatformByName(const QString & platformName) {
 }
 
 bool ProgramWindow::hasPlatform(const QString & platformName) {
-	return getPlatformByName(platformName) != NULL;
+	return getPlatformByName(platformName);
 }
 
 const QMap<QString, QString> ProgramWindow::getBoards() {

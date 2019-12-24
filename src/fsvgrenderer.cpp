@@ -673,7 +673,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 	QMatrix elementMatrix = this->matrixForElement(connectorID);
 	QRectF r1 = elementMatrix.mapRect(bounds);
 
-	if (connectorInfo != NULL) {
+	if (connectorInfo) {
 		if (connectorInfo->gotCircle) {
 			QLineF l(0,0,connectorInfo->radius, 0);
 			QLineF lm = elementMatrix.map(l);

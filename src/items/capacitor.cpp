@@ -142,7 +142,7 @@ void Capacitor::propertyEntry(const QString & text) {
 			}
 
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView != NULL) {
+			if (infoGraphicsView) {
 				infoGraphicsView->setProp(this, propertyDef->name, "", m_propertyDefs.value(propertyDef, ""), utext, true);
 			}
 			break;
@@ -171,7 +171,7 @@ void Capacitor::simplePropertyEntry(const QString & text) {
 	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView != NULL) {
+			if (infoGraphicsView) {
 				infoGraphicsView->setProp(this, propertyDef->name, "", m_propertyDefs.value(propertyDef, ""), text, true);
 			}
 			break;

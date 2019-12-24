@@ -168,7 +168,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	}
 
 	QString searchTerm = root.attribute("search");
-	if (!searchTerm.isEmpty() && modelPartSharedRoot != NULL) {
+	if (!searchTerm.isEmpty() && modelPartSharedRoot) {
 		modelPartSharedRoot->setSearchTerm(searchTerm);
 	}
 
@@ -294,7 +294,7 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 			modelPart = fixObsoleteModuleID(domDocument, instance, moduleIDRef);
 			if (modelPart == NULL) {
 				modelPart = genFZP(moduleIDRef, m_referenceModel);
-				if (modelPart != NULL) {
+				if (modelPart) {
 					instance.setAttribute("moduleIdRef", modelPart->moduleID());
 					moduleIDRef = modelPart->moduleID();
 					generated = true;

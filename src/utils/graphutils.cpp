@@ -362,7 +362,7 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 			edges[ix].first = i;
 			edges[ix].second = j;
 			ConnectorItem * c2 = temp.at(j);
-			if ((c1->attachedTo() == c2->attachedTo()) && (c1->bus() != NULL) && (c1->bus() == c2->bus())) {
+			if ((c1->attachedTo() == c2->attachedTo()) && (c1->bus()) && (c1->bus() == c2->bus())) {
 				weights[ix++] = 0;
 				continue;
 			}
@@ -488,7 +488,7 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 				continue;
 			}
 
-			if ((to->bus() != NULL) && (to->bus() == from->bus())) {
+			if ((to->bus()) && (to->bus() == from->bus())) {
 				add_edge_d(i, j, G);
 				add_edge_d(j, i, G);
 				continue;

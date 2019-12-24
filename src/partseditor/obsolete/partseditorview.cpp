@@ -194,7 +194,7 @@ ItemBase * PartsEditorView::addItemAux(ModelPart * modelPart, ViewLayer::ViewLay
 					viewLayerID = getViewLayerID(modelPart, m_viewIdentifier, viewLayerSpec);
 				}
 				addDefaultLayers(NULL);
-				if (m_viewItem != NULL) {
+				if (m_viewItem) {
 					QHash<QString, QString> svgHash;
 					QString svg = "";
 					foreach (ViewLayer * vl, m_viewLayers.values()) {
@@ -485,7 +485,7 @@ bool PartsEditorView::terminalIdForConnectorIdAux(QString &result, const QString
 
 void PartsEditorView::findConnectorsLayerId() {
 	if(m_connsLayerID == ViewLayer::UnknownLayer) {
-		if (m_item != NULL) {
+		if (m_item) {
 			m_connsLayerID = ViewLayer::viewLayerIDFromXmlString(
 			                     findConnectorsLayerId(m_item->svgDom())
 			                 );
@@ -1217,7 +1217,7 @@ void PartsEditorView::aboutToSave(bool fakeDefaultIfNone) {
 				somethingChanged |= updateTerminalPoints(svgDom, sceneViewBox, svgViewBox, connectorsLayerId);
 				somethingChanged |= addConnectorsIfNeeded(svgDom, sceneViewBox, svgViewBox, connectorsLayerId);
 			}
-			somethingChanged |= (m_viewItem != NULL);
+			somethingChanged |= (m_viewItem);
 
 			if(somethingChanged) {
 				QString viewFolder = getOrCreateViewFolderInTemp();
@@ -1597,7 +1597,7 @@ void PartsEditorView::addFixedToBottomRight(QWidget *widget) {
 }
 
 bool PartsEditorView::imageLoaded() {
-	return m_item != NULL;
+	return m_item;
 }
 
 void PartsEditorView::drawBackground(QPainter *painter, const QRectF &rect) {
@@ -1736,7 +1736,7 @@ void PartsEditorView::updatePinsInfo(QList< QPointer<ConnectorShared> > connsSha
 		foreach(ConnectorShared* cs, notFound) {
 			QString connId = cs->id();
 			SvgIdLayer* pinInfo = cs->fullPinInfo(m_viewIdentifier, vlid);
-			if (pinInfo != NULL && !m_svgIds[connId].connectorId.isEmpty()) {
+			if (pinInfo && !m_svgIds[connId].connectorId.isEmpty()) {
 				pinInfo->m_svgId = m_svgIds[connId].connectorId;
 				pinInfo->m_svgViewLayerID = layerID;
 				found << cs;

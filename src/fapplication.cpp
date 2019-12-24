@@ -1488,12 +1488,12 @@ void FApplication::updateActivation() {
 	//DebugDialog::debug(QString("last:%1, new:%2").arg((long) prior, 0, 16).arg((long) m_lastTopmostWindow.data(), 0, 16));
 
 	MainWindow * priorMainWindow = qobject_cast<MainWindow *>(prior);
-	if (priorMainWindow != NULL) {
+	if (priorMainWindow) {
 		priorMainWindow->saveDocks();
 	}
 
 	MainWindow * lastTopmostMainWindow = qobject_cast<MainWindow *>(m_lastTopmostWindow);
-	if (lastTopmostMainWindow != NULL) {
+	if (lastTopmostMainWindow) {
 		lastTopmostMainWindow->restoreDocks();
 		//DebugDialog::debug("restoring active window");
 	}

@@ -589,7 +589,7 @@ bool CMRouter::overlapsOnly(QGraphicsItem *, QList<Tile *> & alreadyTiled)
 	bool doClip = false;
 	for (int i = alreadyTiled.count() - 1;  i >= 0; i--) {
 		Tile * intersectingTile = alreadyTiled.at(i);
-		if (dynamic_cast<Wire *>(TiGetBody(intersectingTile)) != NULL || dynamic_cast<ConnectorItem *>(TiGetBody(intersectingTile)) != NULL) {
+		if (dynamic_cast<Wire *>(TiGetBody(intersectingTile)) || dynamic_cast<ConnectorItem *>(TiGetBody(intersectingTile))) {
 			doClip = true;
 			continue;
 		}
@@ -616,7 +616,7 @@ bool CMRouter::allowEquipotentialOverlaps(QGraphicsItem * item, QList<Tile *> & 
 	foreach (Tile * intersectingTile, alreadyTiled) {
 		QGraphicsItem * bodyItem = TiGetBody(intersectingTile);
 		ConnectorItem * ci = dynamic_cast<ConnectorItem *>(bodyItem);
-		if (ci != NULL) {
+		if (ci) {
 			if (!collected) {
 				ConnectorItem::collectEqualPotential(equipotential, false, ViewGeometry::NoFlag);
 				collected = true;

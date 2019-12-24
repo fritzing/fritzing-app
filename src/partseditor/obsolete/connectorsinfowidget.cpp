@@ -444,7 +444,7 @@ void ConnectorsInfoWidget::syncNewConnectors(ViewLayer::ViewIdentifier viewId, c
 }
 
 bool ConnectorsInfoWidget::existingConnId(const QString &id) {
-	return findConnector(id) != NULL;
+	return findConnector(id);
 }
 
 MismatchingConnectorWidget* ConnectorsInfoWidget::existingMismatchingConnector(const QString &id) {

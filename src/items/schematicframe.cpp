@@ -266,7 +266,7 @@ void SchematicFrame::addedToScene(bool temporary)
 {
 	if (prop("filename").isEmpty()) {
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infoGraphicsView != NULL) {
+		if (infoGraphicsView) {
 			modelPart()->setLocalProp("filename", infoGraphicsView->filenameIf());
 		}
 	}
@@ -447,14 +447,14 @@ void SchematicFrame::propEntry() {
 	if (edit->text().compare(current) == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setProp(this, propp, ItemBase::TranslatedPropertyNames.value(propp), current, edit->text(), true);
 	}
 }
 
 void SchematicFrame::dateTimeEntry(QDateTime dateTime) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setProp(this, "date", tr("date"), prop("date"), QString::number(dateTime.toTime_t()), true);
 	}
 }
@@ -476,7 +476,7 @@ void SchematicFrame::sheetEntry(int value) {
 	else return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setProp(this, "sheet", tr("sheet"), prop("sheet"), strings.at(0) + "/" + strings[1], true);
 	}
 }

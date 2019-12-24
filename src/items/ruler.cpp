@@ -338,7 +338,7 @@ void Ruler::widthEntry() {
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		// get current object units
 		int units = (m_unitsEditor->objectName() == "cm") ? IndexCm : IndexIn;
 		DefaultWidth = edit->text() + m_unitsEditor->objectName();

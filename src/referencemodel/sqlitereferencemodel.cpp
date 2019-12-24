@@ -246,7 +246,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 		QString moduleID = query.value(ix++).toString();
 		qulonglong dbid = query.value(ix++).toULongLong();
 
-		if (m_partHash.value(moduleID, NULL) != NULL) {
+		if (m_partHash.value(moduleID, NULL)) {
 			// a part with this moduleID was already loaded--the file version overrides the db version
 			continue;
 		}

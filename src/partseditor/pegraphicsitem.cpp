@@ -298,7 +298,7 @@ void PEGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL && infoGraphicsView->spaceBarIsPressed()) {
+	if (infoGraphicsView && infoGraphicsView->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}

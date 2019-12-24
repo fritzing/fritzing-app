@@ -188,7 +188,7 @@ void PartLabel::mousePressEvent(QGraphicsSceneMouseEvent *event)
 	}
 
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics != NULL && infographics->spaceBarIsPressed()) {
+	if (infographics && infographics->spaceBarIsPressed()) {
 		m_spaceBarWasPressed = true;
 		event->ignore();
 		return;
@@ -381,7 +381,7 @@ void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID
 	double fs = labelGeometry.attribute("fontSize").toDouble(&ok);
 	if (!ok) {
 		InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infographics != NULL) {
+		if (infographics) {
 			fs = infographics->getLabelFontSizeMedium();
 			ok = true;
 		}
@@ -438,7 +438,7 @@ void PartLabel::initMenu()
 	QMenu * rlmenu = m_menu.addMenu(tr("Flip/Rotate"));
 	QMenu * fsmenu = m_menu.addMenu(tr("Font Size"));
 
-	bool include45 = (m_owner != NULL) && (m_owner->viewID() == ViewLayer::PCBView);
+	bool include45 = (m_owner) && (m_owner->viewID() == ViewLayer::PCBView);
 
 	if (include45) {
 		QAction *rotate45cwAct = rlmenu->addAction(tr("Rotate 45° Clockwise"));
@@ -559,7 +559,7 @@ void PartLabel::transformLabel(QTransform currTransf)
 
 void PartLabel::setUpText() {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics != NULL) {
+	if (infographics) {
 		infographics->getLabelFont(m_font, m_color, m_owner);
 	}
 }
@@ -610,7 +610,7 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 	m_mediumAct->setChecked(false);
 	m_largeAct->setChecked(false);
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics != NULL) {
+	if (infographics) {
 		int fs = m_font.pointSize();
 		if (fs == infographics->getLabelFontSizeTiny()) {
 			m_tinyAct->setChecked(true);

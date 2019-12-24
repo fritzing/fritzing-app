@@ -292,14 +292,14 @@ void Autorouter::clearTracesAndJumpers() {
 	foreach (QGraphicsItem * item, (m_board == NULL) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
 		if (m_pcbType) {
 			auto jumperItem = dynamic_cast<JumperItem *>(item);
-			if (jumperItem != NULL) {
+			if (jumperItem) {
 				if (jumperItem->getAutoroutable()) {
 					toDelete.append(jumperItem);
 				}
 				continue;
 			}
 			auto via = dynamic_cast<Via *>(item);
-			if (via != NULL) {
+			if (via) {
 				if (via->getAutoroutable()) {
 					toDelete.append(via);
 				}
@@ -308,7 +308,7 @@ void Autorouter::clearTracesAndJumpers() {
 		}
 		else {
 			auto netLabel = dynamic_cast<SymbolPaletteItem *>(item);
-			if (netLabel != NULL && netLabel->isOnlyNetLabel()) {
+			if (netLabel && netLabel->isOnlyNetLabel()) {
 				if (netLabel->getAutoroutable()) {
 					toDelete.append(netLabel);
 				}
@@ -317,7 +317,7 @@ void Autorouter::clearTracesAndJumpers() {
 		}
 
 		auto traceWire = dynamic_cast<TraceWire *>(item);
-		if (traceWire != NULL) {
+		if (traceWire) {
 			if (traceWire->isTraceType(m_sketchWidget->getTraceFlag()) && traceWire->getAutoroutable()) {
 				toDelete.append(traceWire);
 			}

@@ -74,7 +74,7 @@ void AddRemoveListWidget::removeSelectedItems() {
 }
 
 int AddRemoveListWidget::count() {
-	if(m_list != NULL) {
+	if(m_list) {
 		return m_list->count();
 	} else {
 		return 0;
@@ -82,7 +82,7 @@ int AddRemoveListWidget::count() {
 }
 
 QListWidgetItem* AddRemoveListWidget::itemAt(int rowIdx) {
-	if(m_list != NULL) {
+	if(m_list) {
 		return m_list->item(rowIdx);
 	} else {
 		return NULL;

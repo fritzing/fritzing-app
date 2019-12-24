@@ -108,7 +108,7 @@ int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
 void PartsBinListView::mouseMoveEvent(QMouseEvent *event) {
 	if(m_infoViewOnHover) {
 		QListWidgetItem * item = itemAt(event->pos());
-		if (item != NULL) {
+		if (item) {
 			showInfo(item);
 		}
 		else {
@@ -125,9 +125,9 @@ void PartsBinListView::showInfo(QListWidgetItem * item) {
 		return;
 	}
 
-	if (m_hoverItem != NULL && m_infoView != NULL) {
+	if (m_hoverItem && m_infoView) {
 		ItemBase * itemBase = itemItemBase(m_hoverItem);
-		if (itemBase != NULL) {
+		if (itemBase) {
 			m_infoView->hoverLeaveItem(NULL, NULL, itemBase);
 		}
 	}
@@ -137,9 +137,9 @@ void PartsBinListView::showInfo(QListWidgetItem * item) {
 	}
 
 	m_hoverItem = item;
-	if (m_infoView != NULL) {
+	if (m_infoView) {
 		ItemBase * itemBase = itemItemBase(item);
-		if (itemBase != NULL) {
+		if (itemBase) {
 			m_infoView->hoverEnterItem(NULL, NULL, itemBase, swappingEnabled());
 		}
 	}
@@ -153,12 +153,12 @@ void PartsBinListView::mousePressEvent(QMouseEvent *event) {
 	QListWidgetItem * current = currentItem();
 	if (current == NULL) {
 		m_hoverItem = NULL;
-		if (m_infoView != NULL) m_infoView->viewItemInfo(NULL, NULL, false);
+		if (m_infoView) m_infoView->viewItemInfo(NULL, NULL, false);
 		return;
 	}
 
 	showInfo(current);
-	if (m_infoView != NULL) m_infoView->viewItemInfo(NULL, itemItemBase(current), false);
+	if (m_infoView) m_infoView->viewItemInfo(NULL, itemItemBase(current), false);
 }
 
 void PartsBinListView::setInfoView(HtmlInfoView * infoView) {
@@ -380,7 +380,7 @@ void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, c
 		LayerAttributes layerAttributes;
 		itemBase->initLayerAttributes(layerAttributes, ViewLayer::IconView, ViewLayer::Icon, itemBase->viewLayerPlacement(), false, false);
 		FSvgRenderer * renderer = itemBase->setUpImage(modelPart, layerAttributes);
-		if (renderer != NULL) {
+		if (renderer) {
 			if (itemBase) {
 				itemBase->setFilename(renderer->filename());
 			}

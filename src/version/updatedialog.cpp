@@ -104,7 +104,7 @@ bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 			continue;
 		}
 
-		if (mainRelease != NULL && interimRelease != NULL) break;
+		if (mainRelease && interimRelease) break;
 	}
 
 	if (mainRelease == NULL && interimRelease == NULL) {
@@ -143,7 +143,7 @@ bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 
 void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 {
-	if (m_versionChecker != NULL) {
+	if (m_versionChecker) {
 		m_versionChecker->stop();
 		delete m_versionChecker;
 		m_versionChecker = NULL;

@@ -93,9 +93,9 @@ void PaletteModel::initNames() {
 
 ModelPart * PaletteModel::retrieveModelPart(const QString & moduleID) {
 	ModelPart * modelPart = m_partHash.value(moduleID, NULL);
-	if (modelPart != NULL) return modelPart;
+	if (modelPart) return modelPart;
 
-	if (m_referenceModel != NULL) {
+	if (m_referenceModel) {
 		return m_referenceModel->retrieveModelPart(moduleID);
 	}
 
@@ -379,9 +379,9 @@ QString PaletteModel::loadedFrom() {
 
 ModelPart * PaletteModel::addPart(QString newPartPath, bool addToReference, bool updateIdAlreadyExists) {
 	/*ModelPart * modelPart = loadPart(newPartPath, updateIdAlreadyExists);;
-	if (m_referenceModel != NULL && addToReference) {
+	if (m_referenceModel && addToReference) {
 		modelPart = m_referenceModel->addPart(newPartPath, addToReference);
-		if (modelPart != NULL) {
+		if (modelPart) {
 			return addModelPart( m_root, modelPart);
 		}
 	}*/

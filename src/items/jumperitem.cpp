@@ -202,7 +202,7 @@ bool JumperItem::mousePressEventK(PaletteItemBase * originalItem, QGraphicsScene
 {
 	m_originalClickItem = originalItem;
 	mousePressEvent(event);
-	return (m_dragItem != NULL);
+	return (m_dragItem);
 }
 
 void JumperItem::mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
@@ -222,7 +222,7 @@ void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 	PaletteItemBase * originalItem = m_originalClickItem;
 	m_originalClickItem = NULL;
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics != NULL && infographics->spaceBarIsPressed()) {
+	if (infographics && infographics->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
@@ -417,11 +417,11 @@ void JumperItem::resizeAux(double r0x, double r0y, double r1x, double r1y) {
 	m_connector0->setRect(r0);
 	m_connector1->setRect(r1);
 	ConnectorItem * cc0 = m_connector0->getCrossLayerConnectorItem();
-	if (cc0 != NULL) {
+	if (cc0) {
 		cc0->setRect(r0);
 	}
 	ConnectorItem * cc1 = m_connector1->getCrossLayerConnectorItem();
-	if (cc1 != NULL) {
+	if (cc1) {
 		cc1->setRect(r1);
 	}
 	resize();
@@ -479,7 +479,7 @@ bool JumperItem::hasCustomSVG() {
 }
 
 bool JumperItem::inDrag() {
-	return m_dragItem != NULL;
+	return m_dragItem;
 }
 
 void JumperItem::loadLayerKin( const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
@@ -497,11 +497,11 @@ void JumperItem::addedToScene(bool temporary) {
 	if (m_connector1 == NULL) return;
 
 	ConnectorItem * cc0 = m_connector0->getCrossLayerConnectorItem();
-	if (cc0 != NULL) {
+	if (cc0) {
 		cc0->setRect(m_connector0->rect());
 	}
 	ConnectorItem * cc1 = m_connector1->getCrossLayerConnectorItem();
-	if (cc1 != NULL) {
+	if (cc1) {
 		cc1->setRect(m_connector1->rect());
 	}
 

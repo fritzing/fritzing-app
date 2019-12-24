@@ -633,7 +633,7 @@ void HtmlInfoView::setUpTitle(ItemBase * itemBase)
 
 	m_lastTitleItemBase = itemBase;
 	bool titleEnabled = true;
-	if (itemBase != NULL) {
+	if (itemBase) {
 		QString title = itemBase->getInspectorTitle();
 		if (title.isEmpty()) {
 			// assumes a part with an empty title only comes from the parts bin palette
@@ -680,9 +680,9 @@ void HtmlInfoView::setUpIcons(ItemBase * itemBase, bool swappingEnabled) {
 	m_icon2->setPixmap(*use2);
 	m_icon3->setPixmap(*use3);
 
-	if (pixmap1 != NULL) delete pixmap1;
-	if (pixmap2 != NULL) delete pixmap2;
-	if (pixmap3 != NULL) delete pixmap3;
+	if (pixmap1) delete pixmap1;
+	if (pixmap2) delete pixmap2;
+	if (pixmap3) delete pixmap3;
 }
 
 void HtmlInfoView::addTags(ModelPart * modelPart) {
@@ -798,7 +798,7 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 		QWidget * resultWidget = oldPlugin;
 		bool result = false;
 		bool hide = false;
-		if (itemBase != NULL) {
+		if (itemBase) {
 			result = itemBase->collectExtraInfo(propThing->m_name->parentWidget(), family, key, value, swappingEnabled, resultKey, resultValue, resultWidget, hide);
 		}
 
@@ -891,7 +891,7 @@ QHash<QString, QString> HtmlInfoView::getPartProperties(ModelPart * modelPart, I
 	QHash<QString, QString> properties;
 	QString family;
 	QString partNumber;
-	if (modelPart != NULL && itemBase != NULL) {
+	if (modelPart && itemBase) {
 		properties = itemBase->prepareProps(modelPart, wantDebug, keys);
 	}
 
@@ -939,7 +939,7 @@ void HtmlInfoView::showLayers(bool show, ItemBase * itemBase, const QString & fa
 	QString resultKey, resultValue;
 	bool hide;
 	bool result = itemBase->collectExtraInfo(m_layerLabel->parentWidget(), family, "layer", value, swappingEnabled, resultKey, resultValue, m_layerWidget, hide);
-	if (result && m_layerWidget != NULL) {
+	if (result && m_layerWidget) {
 		m_layerLayout->addWidget(m_layerWidget);
 	}
 }
@@ -1185,13 +1185,13 @@ void HtmlInfoView::xyEntry() {
 	DebugDialog::debug(QString("xedit %1 %2 %3").arg(m_xEdit->text()).arg(m_yEdit->text()).arg(sender() == m_xEdit));
 	double x = TextUtils::convertToInches(m_xEdit->text() + m_unitsLabel->text());
 	double y = TextUtils::convertToInches(m_yEdit->text() + m_unitsLabel->text());
-	if (infoGraphicsView != NULL && m_lastItemBase != NULL) {
+	if (infoGraphicsView && m_lastItemBase) {
 		infoGraphicsView->moveItem(m_lastItemBase, x * 90, y * 90);
 	}
 }
 
 void HtmlInfoView::rotEntry() {
-	if (m_lastItemBase != NULL) {
+	if (m_lastItemBase) {
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(m_lastItemBase);
 		if (infoGraphicsView == NULL) return;
 

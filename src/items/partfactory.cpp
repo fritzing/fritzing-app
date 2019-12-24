@@ -530,7 +530,7 @@ ModelPart * PartFactory::fixObsoleteModuleID(QDomDocument & domDocument, QDomEle
 	// TODO: less hard-coding
 	if (moduleIDRef.startsWith("generic_male")) {
 		ModelPart * modelPart = referenceModel->retrieveModelPart(moduleIDRef);
-		if (modelPart != NULL) {
+		if (modelPart) {
 			instance.setAttribute("moduleIdRef", moduleIDRef);
 			QDomElement prop = domDocument.createElement("property");
 			instance.appendChild(prop);
@@ -542,7 +542,7 @@ ModelPart * PartFactory::fixObsoleteModuleID(QDomDocument & domDocument, QDomEle
 
 	if (moduleIDRef.startsWith("generic_rounded_female")) {
 		ModelPart * modelPart = referenceModel->retrieveModelPart(moduleIDRef);
-		if (modelPart != NULL) {
+		if (modelPart) {
 			instance.setAttribute("moduleIdRef", moduleIDRef);
 			QDomElement prop = domDocument.createElement("property");
 			instance.appendChild(prop);

@@ -543,25 +543,25 @@ void MainWindow::duplicate() {
 void MainWindow::doDelete() {
 	//DebugDialog::debug(QString("invoking do delete") );
 
-	if (m_currentGraphicsView != NULL) {
+	if (m_currentGraphicsView) {
 		m_currentGraphicsView->deleteSelected(retrieveWire(), false);
 	}
 }
 
 void MainWindow::doDeleteMinus() {
-	if (m_currentGraphicsView != NULL) {
+	if (m_currentGraphicsView) {
 		m_currentGraphicsView->deleteSelected(retrieveWire(), true);
 	}
 }
 
 void MainWindow::selectAll() {
-	if (m_currentGraphicsView != NULL) {
+	if (m_currentGraphicsView) {
 		m_currentGraphicsView->selectDeselectAllCommand(true);
 	}
 }
 
 void MainWindow::deselect() {
-	if (m_currentGraphicsView != NULL) {
+	if (m_currentGraphicsView) {
 		m_currentGraphicsView->selectDeselectAllCommand(false);
 	}
 }
@@ -797,7 +797,7 @@ void MainWindow::createOpenRecentMenu() {
 }
 
 void MainWindow::updateFileMenu() {
-	m_printAct->setEnabled(m_currentGraphicsView != NULL || m_currentWidget->contentView() == m_programView);
+	m_printAct->setEnabled(m_currentGraphicsView || m_currentWidget->contentView() == m_programView);
 
 	updateRecentFileActions();
 	m_orderFabAct->setEnabled(true);
@@ -1609,7 +1609,7 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 	        m_100PercentSizeAct << m_alignToGridAct << m_showGridAct << m_setGridSizeAct << m_setBackgroundColorAct <<
 	        m_colorWiresByLengthAct;
 
-	bool enabled = (m_currentGraphicsView != NULL);
+	bool enabled = (m_currentGraphicsView);
 	foreach (QAction * action, actions) action->setEnabled(enabled);
 
 	actions.clear();
@@ -1652,7 +1652,7 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 	foreach (ViewLayer::ViewLayerID key, keys) {
 		ViewLayer * viewLayer = viewLayers.value(key);
 		//DebugDialog::debug(QString("Layer: %1 is %2").arg(viewLayer->action()->text()).arg(viewLayer->action()->isEnabled()));
-		if (viewLayer != NULL) {
+		if (viewLayer) {
 			if (viewLayer->parentLayer()) continue;
 			m_viewMenu->addAction(viewLayer->action());
 			disconnect(viewLayer->action(), SIGNAL(triggered()), this, SLOT(updateLayerMenu()));
@@ -1679,8 +1679,8 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 	for (int i = 1; i < keys.count(); i++) {
 		ViewLayer *viewLayer = viewLayers.value(keys[i]);
 		//DebugDialog::debug(QString("Layer: %1 is %2").arg(viewLayer->action()->text()).arg(viewLayer->action()->isChecked()));
-		if (viewLayer != NULL) {
-			if (prev != NULL && prev->action()->isChecked() != viewLayer->action()->isChecked() ) {
+		if (viewLayer) {
+			if (prev && prev->action()->isChecked() != viewLayer->action()->isChecked() ) {
 				// if the actions aren't all checked or unchecked I don't bother about the "checked" variable
 				sameState = false;
 				break;
@@ -1733,7 +1733,7 @@ void MainWindow::updateWireMenu() {
 	bool gotRat = false;
 	bool ctlOK = false;
 
-	if (wire != NULL) {
+	if (wire) {
 
 		if (wire->getRatsnest()) {
 			QList<ConnectorItem *> ends;
@@ -1944,7 +1944,7 @@ void MainWindow::updatePartMenu() {
 	m_selectAllObsoleteAct->setEnabled(true);
 	m_swapObsoleteAct->setEnabled(itemCount.obsoleteCount > 0);
 
-	m_findPartInSketchAct->setEnabled(m_currentGraphicsView != NULL);
+	m_findPartInSketchAct->setEnabled(m_currentGraphicsView);
 	m_regeneratePartsDatabaseAct->setEnabled(true);
 	m_openProgramWindowAct->setEnabled(true);
 }
@@ -1999,15 +1999,15 @@ void MainWindow::updateItemMenu() {
 	}
 
 	PaletteItem *selected = qobject_cast<PaletteItem *>(itemBase);
-	bool enabled = (selCount == 1) && (selected != NULL);
+	bool enabled = (selCount == 1) && (selected);
 
 	m_saveBundledPart->setEnabled(enabled && !selected->modelPart()->isCore());
 
 
 	// can't open wire in parts editor
-	enabled &= selected != NULL && itemBase != NULL && itemBase->canEditPart();
+	enabled &= selected && itemBase && itemBase->canEditPart();
 
-	m_disconnectAllAct->setEnabled(enabled && m_currentGraphicsView->canDisconnectAll() && (itemBase->rightClickedConnector() != NULL));
+	m_disconnectAllAct->setEnabled(enabled && m_currentGraphicsView->canDisconnectAll() && (itemBase->rightClickedConnector()));
 
 	bool gfsEnabled = false;
 	if (activeConnectorItem) {
@@ -2035,9 +2035,9 @@ void MainWindow::updateEditMenu() {
 	QClipboard *clipboard = QApplication::clipboard();
 	m_pasteAct->setEnabled(false);
 	m_pasteInPlaceAct->setEnabled(false);
-	if (clipboard != NULL) {
+	if (clipboard) {
 		const QMimeData *mimeData = clipboard->mimeData(QClipboard::Clipboard);
-		if (mimeData != NULL) {
+		if (mimeData) {
 			if (mimeData->hasFormat("application/x-dnditemsdata")) {
 				m_pasteAct->setEnabled(true);
 				m_pasteInPlaceAct->setEnabled(true);
@@ -2077,7 +2077,7 @@ void MainWindow::updateTraceMenu() {
 
 	TraceMenuThing traceMenuThing;
 
-	if (m_currentGraphicsView != NULL) {
+	if (m_currentGraphicsView) {
 		QList<QGraphicsItem *> items = m_currentGraphicsView->scene()->items();
 		foreach (QGraphicsItem * item, items) {
 			Wire * wire = dynamic_cast<Wire *>(item);
@@ -2115,7 +2115,7 @@ void MainWindow::updateTraceMenu() {
 	}
 
 	if (!arEnabled) {
-		if (m_currentGraphicsView != NULL) {
+		if (m_currentGraphicsView) {
 			arEnabled = m_currentGraphicsView->hasAnyNets();
 		}
 	}
@@ -2440,7 +2440,7 @@ void MainWindow::updateWindowMenu() {
 		if (mainWindow == NULL) continue;
 
 		QAction *action = mainWindow->raiseWindowAction();
-		if (action != NULL) {
+		if (action) {
 			action->setChecked(action == m_raiseWindowAct);
 			m_windowMenu->addAction(action);
 		}
@@ -2907,7 +2907,7 @@ void MainWindow::toggleActiveLayer()
 
 
 void MainWindow::createOrderFabAct() {
-	if (m_orderFabAct != NULL) return;
+	if (m_orderFabAct) return;
 
 	m_orderFabAct = new QAction(tr("Order a PCB..."), this);
 	m_orderFabAct->setStatusTip(tr("Order a PCB created from your sketch--from fabulous Fritzing Fab"));
@@ -3100,7 +3100,7 @@ void MainWindow::enableAddBendpointAct(QGraphicsItem * graphicsItem) {
 	BendpointAction * bendpointAction = qobject_cast<BendpointAction *>(m_addBendpointAct);
 	BendpointAction * convertToViaAction = qobject_cast<BendpointAction *>(m_convertToViaAct);
 	FGraphicsScene * scene = qobject_cast<FGraphicsScene *>(graphicsItem->scene());
-	if (scene != NULL) {
+	if (scene) {
 		bendpointAction->setLastLocation(scene->lastContextMenuPos());
 		convertToViaAction->setLastLocation(scene->lastContextMenuPos());
 	}
@@ -4480,32 +4480,32 @@ void MainWindow::findPartInSketch() {
 }
 
 void MainWindow::setGroundFillKeepout() {
-	if (m_pcbGraphicsView != NULL) m_pcbGraphicsView->setGroundFillKeepout();
+	if (m_pcbGraphicsView) m_pcbGraphicsView->setGroundFillKeepout();
 }
 
 void MainWindow::setViewFromBelowToggle() {
-	if (m_pcbGraphicsView != NULL) {
+	if (m_pcbGraphicsView) {
 		m_pcbGraphicsView->setViewFromBelow(m_viewFromBelowToggleAct->isChecked());
 		updateActiveLayerButtons();
 	}
 }
 
 void MainWindow::setViewFromBelow() {
-	if (m_pcbGraphicsView != NULL) {
+	if (m_pcbGraphicsView) {
 		m_pcbGraphicsView->setViewFromBelow(true);
 		updateActiveLayerButtons();
 	}
 }
 
 void MainWindow::setViewFromAbove() {
-	if (m_pcbGraphicsView != NULL) {
+	if (m_pcbGraphicsView) {
 		m_pcbGraphicsView->setViewFromBelow(false);
 		updateActiveLayerButtons();
 	}
 }
 
 void MainWindow::updateExportMenu() {
-	bool enabled = m_currentGraphicsView != NULL;
+	bool enabled = m_currentGraphicsView;
 	foreach (QAction * action, m_exportMenu->actions()) {
 		action->setEnabled(enabled);
 	}

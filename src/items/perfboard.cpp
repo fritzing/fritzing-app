@@ -240,7 +240,7 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		subframe1->setLayout(hboxLayout1);
 		subframe2->setLayout(hboxLayout2);
 
-		if (returnWidget != NULL) vboxLayout->addWidget(qobject_cast<QWidget *>(returnWidget));
+		if (returnWidget) vboxLayout->addWidget(qobject_cast<QWidget *>(returnWidget));
 		vboxLayout->addWidget(subframe1);
 		vboxLayout->addWidget(subframe2);
 
@@ -316,7 +316,7 @@ void Perfboard::changeBoardSize()
 	// }
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->swap(family(), "size", m_propsMap, this);
 	}
 }

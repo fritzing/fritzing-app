@@ -120,7 +120,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	}
 
 	m_tabWidget = NULL;
-	while (parent != NULL) {
+	while (parent) {
 		QTabWidget * tabWidget = qobject_cast<QTabWidget *>(parent);
 		if (tabWidget) {
 			m_tabWidget = tabWidget;
@@ -393,7 +393,7 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
 		m_programWindow->updateLink(m_filename, newPlatform, false, false);
 	}
 
-	if (m_platform != NULL) m_platform->disconnect(SIGNAL(commandLocationChanged()));
+	if (m_platform) m_platform->disconnect(SIGNAL(commandLocationChanged()));
 	connect(newPlatform, SIGNAL(commandLocationChanged()), this, SLOT(enableProgramButton()));
 
 	m_platform = newPlatform;
@@ -405,7 +405,7 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
 	QSettings settings;
 	settings.setValue("programwindow/platform", newPlatform->getName());
 
-	//bool canProgram = (syntaxer != NULL && syntaxer->canProgram());
+	//bool canProgram = (syntaxer && syntaxer->canProgram());
 	//m_unableToProgramLabel->setVisible(!canProgram);
 	//m_unableToProgramLabel->setText(UnableToProgramMessage.arg(newPlatform.getName()));
 
@@ -736,7 +736,7 @@ void ProgramTab::sendProgram() {
 		//return;
 		save();
 	}
-	if (m_monitorWindow != NULL) {
+	if (m_monitorWindow) {
 		m_monitorWindow->closeSerialPort(m_portComboBox->currentText());
 	}
 

@@ -1269,7 +1269,7 @@ void MainWindow::exportBOM() {
 	}
 
 	QClipboard *clipboard = QApplication::clipboard();
-	if (clipboard != NULL) {
+	if (clipboard) {
 		clipboard->setText(bom);
 	}
 	delete fileProgressDialog;
@@ -1469,7 +1469,7 @@ void MainWindow::exportSpiceNetlist() {
 	netList.clear();
 
 	QClipboard *clipboard = QApplication::clipboard();
-	if (clipboard != NULL) {
+	if (clipboard) {
 		clipboard->setText(output);
 	}
 
@@ -1537,7 +1537,7 @@ void MainWindow::exportNetlist() {
 			part.setAttribute("label", itemBase->instanceTitle());
 			part.setAttribute("title", itemBase->title());
 			ErcData * ercData = connectorItem->connectorSharedErcData();
-			if (ercData != NULL) {
+			if (ercData) {
 				QDomElement erc = doc.createElement("erc");
 				if (ercData->writeToElement(erc, doc)) {
 					connector.appendChild(erc);
@@ -1581,7 +1581,7 @@ void MainWindow::exportNetlist() {
 	fp.close();
 
 	QClipboard *clipboard = QApplication::clipboard();
-	if (clipboard != NULL) {
+	if (clipboard) {
 		clipboard->setText(doc.toByteArray());
 	}
 	delete fileProgressDialog;

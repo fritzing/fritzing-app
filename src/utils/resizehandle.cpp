@@ -97,12 +97,12 @@ void ResizeHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
 {
 	if(scene()) {
 		FGraphicsScene * fscene = qobject_cast<FGraphicsScene *>(scene());
-		if (fscene != NULL && fscene->displayHandles()) {
+		if (fscene && fscene->displayHandles()) {
 			QGraphicsPixmapItem::paint(painter, option, widget);
 		}
 	}
 }
 
 bool ResizeHandle::scaling() {
-	return (this->flags() & QGraphicsItem::ItemIgnoresTransformations) && (scene() != NULL);
+	return (this->flags() & QGraphicsItem::ItemIgnoresTransformations) && (scene());
 }

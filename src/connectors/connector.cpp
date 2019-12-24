@@ -75,7 +75,7 @@ const QString & Connector::connectorNameFromType(ConnectorType type) {
 }
 
 Connector::ConnectorType Connector::connectorType() const {
-	if (m_connectorShared != NULL) {
+	if (m_connectorShared) {
 		return m_connectorShared->connectorType();
 	}
 
@@ -240,7 +240,7 @@ void Connector::setBus(Bus * bus) {
 
 void Connector::unprocess(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
 	SvgIdLayer * svgIdLayer = m_connectorShared->fullPinInfo(viewID, viewLayerID);
-	if (svgIdLayer != NULL) {
+	if (svgIdLayer) {
 		svgIdLayer->unprocess();
 	}
 }
@@ -252,7 +252,7 @@ SvgIdLayer * Connector::fullPinInfo(ViewLayer::ViewID viewID, ViewLayer::ViewLay
 }
 
 long Connector::modelIndex() {
-	if (m_modelPart != NULL) return m_modelPart->modelIndex();
+	if (m_modelPart) return m_modelPart->modelIndex();
 
 	DebugDialog::debug(QString("saving bus connector item: how is this supposed to work?"));
 	return 0;
@@ -278,7 +278,7 @@ const QString & Connector::legID(ViewLayer::ViewID viewID, ViewLayer::ViewLayerI
 }
 
 void Connector::setConnectorLocalName(const QString & name) {
-	if (m_connectorShared != NULL && name.compare(m_connectorShared->sharedName()) == 0) {
+	if (m_connectorShared && name.compare(m_connectorShared->sharedName()) == 0) {
 		m_connectorLocalName.clear();
 		return;
 	}

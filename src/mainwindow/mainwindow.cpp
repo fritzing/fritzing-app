@@ -1256,7 +1256,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 	/*
 	foreach (QWidget * widget, QApplication::topLevelWidgets()) {
 		QMenu * menu = qobject_cast<QMenu *>(widget);
-		if (menu != NULL) {
+		if (menu) {
 			continue;				// QMenus are always top level widgets, even if they have parents...
 		}
 		DebugDialog::debug(QString("top level widget %1 %2 %3")
@@ -1837,7 +1837,7 @@ QList<ModelPart*> MainWindow::moveToPartsFolder(QDir &unzipDir, MainWindow* mw, 
 
 	if (importingSinglePart && partEntryInfoList.count() > 0) {
 		QString moduleID = TextUtils::parseFileForModuleID(partEntryInfoList[0].absoluteFilePath());
-		if (!moduleID.isEmpty() && m_referenceModel->retrieveModelPart(moduleID) != NULL) {
+		if (!moduleID.isEmpty() && m_referenceModel->retrieveModelPart(moduleID)) {
 			throw tr("There is already a part with id '%1' loaded into Fritzing.").arg(moduleID);
 		}
 	}
@@ -1901,7 +1901,7 @@ ModelPart* MainWindow::copyToPartsFolder(const QFileInfo& file, bool addToAlien,
 		}
 	}
 	ModelPart *mp = m_referenceModel->loadPart(destFilePath, true);
-	if (mp != NULL) {
+	if (mp) {
 		mp->setAlien(true);
 	} else {
 		// Part load failed, remove modified files before proceeding.
@@ -2072,7 +2072,7 @@ void MainWindow::resizeEvent(QResizeEvent * event) {
 
 void MainWindow::enableCheckUpdates(bool enabled)
 {
-	if (m_checkForUpdatesAct != NULL) {
+	if (m_checkForUpdatesAct) {
 		m_checkForUpdatesAct->setEnabled(enabled);
 	}
 }
@@ -2249,7 +2249,7 @@ bool MainWindow::swapSpecial(const QString & theProp, QMap<QString, QString> & c
 		}
 
 		Resistor * resistor = qobject_cast<Resistor *>(itemBase);
-		if (resistor != NULL) {
+		if (resistor) {
 			m_currentGraphicsView->setResistance(resistance, pinSpacing);
 			return true;
 		}
@@ -2436,7 +2436,7 @@ void MainWindow::redrawSketch() {
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		item->update();
 		ConnectorItem * c = dynamic_cast<ConnectorItem *>(item);
-		if (c != NULL) {
+		if (c) {
 			c->restoreColor(visited);
 		}
 	}
@@ -2444,7 +2444,7 @@ void MainWindow::redrawSketch() {
 
 void MainWindow::statusMessage(QString message, int timeout) {
 	QStatusBar * sb = realStatusBar();
-	if (sb != NULL) {
+	if (sb) {
 		sb->showMessage(message, timeout);
 	}
 }
@@ -2469,7 +2469,7 @@ bool MainWindow::save() {
 
 bool MainWindow::saveAs() {
 	bool convertSchematic = false;
-	if (m_schematicGraphicsView != NULL && m_schematicGraphicsView->isOldSchematic()) {
+	if (m_schematicGraphicsView && m_schematicGraphicsView->isOldSchematic()) {
 		QMessageBox::StandardButton reply = QMessageBox::question(this, tr("Schematic conversion"),
 		                                    tr("Saving this sketch will convert it to the new schematic graphics standard. Go ahead and convert?"),
 		                                    QMessageBox::Yes | QMessageBox::No);
@@ -2505,7 +2505,7 @@ void MainWindow::changeBoardLayers(int layers, bool doEmit) {
 }
 
 void MainWindow::updateActiveLayerButtons() {
-	if (m_activeLayerButtonWidget != NULL) {
+	if (m_activeLayerButtonWidget) {
 		int index = activeLayerIndex();
 		bool enabled = index >= 0;
 
@@ -2521,7 +2521,7 @@ void MainWindow::updateActiveLayerButtons() {
 		setActionsIcons(index, actions);
 	}
 
-	if (m_viewFromButtonWidget != NULL) {
+	if (m_viewFromButtonWidget) {
 		if (m_pcbGraphicsView) {
 			bool viewFromBelow = m_pcbGraphicsView->viewFromBelow();
 			int index = (viewFromBelow ? 1 : 0);
@@ -3000,7 +3000,7 @@ bool MainWindow::usesPart(const QString & moduleID) {
 
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase != NULL && itemBase->moduleID().compare(moduleID) == 0) {
+		if (itemBase && itemBase->moduleID().compare(moduleID) == 0) {
 			return true;
 		}
 	}

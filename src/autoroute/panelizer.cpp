@@ -890,7 +890,7 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
 			/*
 			QSizeF boardSize = boardItem->size();
 			ResizableBoard * resizableBoard = qobject_cast<ResizableBoard *>(boardItem->layerKinChief());
-			if (resizableBoard != NULL) {
+			if (resizableBoard) {
 			    panelItem->boardSizeInches = resizableBoard->getSizeMM() / 25.4;
 			    DebugDialog::debug(QString("board size inches a %1, %2, %3")
 				    .arg(panelItem->boardSizeInches.width())
@@ -1743,7 +1743,7 @@ int Panelizer::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
 		if (connectorItem == NULL) continue;
 		if (!connectorItem->attachedTo()->isEverVisible()) continue;
 
-		if (connectorItem->isPath() && connectorItem->getCrossLayerConnectorItem() != NULL) {  // && connectorItem->radius() == 0
+		if (connectorItem->isPath() && connectorItem->getCrossLayerConnectorItem()) {  // && connectorItem->radius() == 0
 			connectorItem->debugInfo("possible donut");
 			connectorItem->attachedTo()->debugInfo("\t");
 			donuts << connectorItem;

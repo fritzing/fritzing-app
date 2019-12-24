@@ -369,7 +369,7 @@ void Resistor::resistanceEntry(const QString & text) {
 	//DebugDialog::debug(QString("resistance entry %1").arg(text));
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setResistance(text, "");
 	}
 }

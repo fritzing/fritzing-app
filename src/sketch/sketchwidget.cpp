@@ -334,7 +334,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 		if (parentCommand == NULL) {
 			viewGeometryConversionHack(viewGeometry, mp);
 			ItemBase * itemBase = addItemAux(mp, viewLayerPlacement, viewGeometry, newID, true, m_viewID, false);
-			if (itemBase != NULL) {
+			if (itemBase) {
 				if (locked) {
 					itemBase->setMoveLock(true);
 				}
@@ -360,7 +360,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 				bool gotOne = false;
 				if (!gotOne) {
 					PaletteItem * paletteItem = qobject_cast<PaletteItem *>(itemBase);
-					if (paletteItem != NULL) {
+					if (paletteItem) {
 						// wires don't have transforms
 
 						//paletteItem->setTransforms();     // jrc 14 july 2013: this call seems redundant--transforms have already been set up by now
@@ -369,7 +369,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 				}
 				if (!gotOne) {
 					Wire * wire = qobject_cast<Wire *>(itemBase);
-					if (wire != NULL) {
+					if (wire) {
 						QDomElement extras = view.firstChildElement("wireExtras");
 						wire->setExtras(extras, this);
 						gotOne = true;
@@ -377,7 +377,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 				}
 				if (!gotOne) {
 					Note * note = qobject_cast<Note *>(itemBase);
-					if (note != NULL) {
+					if (note) {
 						note->setText(mp->instanceText(), true);
 						gotOne = true;
 					}
@@ -508,7 +508,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 			z += ViewLayer::getZIncrement();
 		}
 		foreach (ViewLayer * viewLayer, m_viewLayers) {
-			if (viewLayer != NULL) viewLayer->resetNextZ(z);
+			if (viewLayer) viewLayer->resetNextZ(z);
 		}
 	}
 
@@ -723,7 +723,7 @@ ItemBase * SketchWidget::addItem(const QString & moduleID, ViewLayer::ViewLayerP
 	ItemBase * itemBase = NULL;
 	ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
 
-	if (modelPart != NULL) {
+	if (modelPart) {
 		if (!m_blockUI) {
 			QApplication::setOverrideCursor(Qt::WaitCursor);
 			statusMessage(tr("loading part"));
@@ -745,7 +745,7 @@ ItemBase * SketchWidget::addItem(ModelPart * modelPart, ViewLayer::ViewLayerPlac
 	ItemBase * newItem = NULL;
 	//if (checkAlreadyExists) {
 	//	newItem = findItem(id);
-	//	if (newItem != NULL) {
+	//	if (newItem) {
 	//		newItem->debugInfo("already exists");
 	//	}
 	//}
@@ -860,14 +860,14 @@ void SketchWidget::checkSticky(long id, bool doEmit, bool checkCurrent, CheckSti
 		ItemBase * stickyOne = overSticky(itemBase);
 		ItemBase * wasStickyOne = itemBase->stickingTo();
 		if (stickyOne != wasStickyOne) {
-			if (wasStickyOne != NULL) {
+			if (wasStickyOne) {
 				wasStickyOne->addSticky(itemBase, false);
 				itemBase->addSticky(wasStickyOne, false);
 				if (checkStickyCommand) {
 					checkStickyCommand->stick(this, wasStickyOne->id(), itemBase->id(), false);
 				}
 			}
-			if (stickyOne != NULL) {
+			if (stickyOne) {
 				stickyOne->addSticky(itemBase, true);
 				itemBase->addSticky(stickyOne, true);
 				if (checkStickyCommand) {
@@ -994,7 +994,7 @@ ItemBase * SketchWidget::findItem(long id) {
 void SketchWidget::deleteItem(long id, bool deleteModelPart, bool doEmit, bool later) {
 	ItemBase * pitem = findItem(id);
 	DebugDialog::debug(QString("delete item (1) %1 %2 %3 %4").arg(id).arg(doEmit).arg(m_viewID).arg((long) pitem, 0, 16) );
-	if (pitem != NULL) {
+	if (pitem) {
 		deleteItem(pitem, deleteModelPart, doEmit, later);
 	}
 	else {
@@ -1022,7 +1022,7 @@ void SketchWidget::deleteItem(ItemBase * itemBase, bool deleteModelPart, bool do
 		itemBase->killRubberBandLeg();
 	}
 
-	if (m_infoView != NULL) {
+	if (m_infoView) {
 		m_infoView->unregisterCurrentItemIf(itemBase->id());
 	}
 	if (itemBase == this->m_lastPaletteItemSelected) {
@@ -1032,7 +1032,7 @@ void SketchWidget::deleteItem(ItemBase * itemBase, bool deleteModelPart, bool do
 
 	if (deleteModelPart) {
 		ModelPart * modelPart = itemBase->modelPart();
-		if (modelPart != NULL) {
+		if (modelPart) {
 			m_sketchModel->removeModelPart(modelPart);
 			delete modelPart;
 		}
@@ -1109,7 +1109,7 @@ void SketchWidget::cutDeleteAux(QString undoStackMessage, bool minus, Wire * wir
 	const QList<QGraphicsItem *> sitems = scene()->selectedItems();
 
 	QSet<ItemBase *> deletedItems;
-	if (minus && wire != NULL) {
+	if (minus && wire) {
 		// called from wire context menu "delete to bendpoint"
 		deletedItems.insert(wire);
 	}
@@ -1199,7 +1199,7 @@ void SketchWidget::deleteAux(QSet<ItemBase *> & deletedItems, QUndoCommand * par
 	new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
 
 	foreach (ItemBase * itemBase, deletedItems) {
-		if (itemBase->superpart() != NULL) {
+		if (itemBase->superpart()) {
 			AddSubpartCommand * asc = new AddSubpartCommand(this, BaseCommand::CrossView, itemBase->superpart()->id(), itemBase->id(), parentCommand);
 			asc->setUndoOnly();
 		}
@@ -1215,7 +1215,7 @@ void SketchWidget::deleteAux(QSet<ItemBase *> & deletedItems, QUndoCommand * par
 }
 
 bool isVirtualWireConnector(ConnectorItem * toConnectorItem) {
-	return (qobject_cast<VirtualWire *>(toConnectorItem->attachedTo()) != NULL);
+	return (qobject_cast<VirtualWire *>(toConnectorItem->attachedTo()));
 }
 
 void SketchWidget::deleteMiddle(QSet<ItemBase *> & deletedItems, QUndoCommand * parentCommand) {
@@ -1395,7 +1395,7 @@ ViewLayer::ViewLayerPlacement SketchWidget::createWireViewLayerPlacement(Connect
 
 void SketchWidget::moveItem(long id, ViewGeometry & viewGeometry, bool updateRatsnest) {
 	ItemBase * itemBase = findItem(id);
-	if (itemBase != NULL) {
+	if (itemBase) {
 		if (updateRatsnest) {
 			ratsnestConnect(itemBase, true);
 		}
@@ -1406,7 +1406,7 @@ void SketchWidget::moveItem(long id, ViewGeometry & viewGeometry, bool updateRat
 
 void SketchWidget::simpleMoveItem(long id, QPointF p) {
 	ItemBase * itemBase = findItem(id);
-	if (itemBase != NULL) {
+	if (itemBase) {
 		itemBase->setItemPos(p);
 		if (m_infoView) m_infoView->updateLocation(itemBase);
 	}
@@ -1414,7 +1414,7 @@ void SketchWidget::simpleMoveItem(long id, QPointF p) {
 
 void SketchWidget::moveItem(long id, const QPointF & p, bool updateRatsnest) {
 	ItemBase * itemBase = findItem(id);
-	if (itemBase != NULL) {
+	if (itemBase) {
 		itemBase->setPos(p);
 		if (updateRatsnest) {
 			ratsnestConnect(itemBase, true);
@@ -1447,7 +1447,7 @@ void SketchWidget::rotateItem(long id, double degrees) {
 	if (!isVisible()) return;
 
 	ItemBase * itemBase = findItem(id);
-	if (itemBase != NULL) {
+	if (itemBase) {
 		itemBase->rotateItem(degrees, false);
 		if (m_infoView) m_infoView->updateRotation(itemBase);
 	}
@@ -1455,7 +1455,7 @@ void SketchWidget::rotateItem(long id, double degrees) {
 }
 void SketchWidget::transformItem(long id, const QMatrix & matrix) {
 	ItemBase * itemBase = findItem(id);
-	if (itemBase != NULL) {
+	if (itemBase) {
 		itemBase->transformItem2(matrix);
 		if (m_infoView) m_infoView->updateRotation(itemBase);
 	}
@@ -1467,7 +1467,7 @@ void SketchWidget::flipItem(long id, Qt::Orientations orientation) {
 	if (!isVisible()) return;
 
 	ItemBase * itemBase = findItem(id);
-	if (itemBase != NULL) {
+	if (itemBase) {
 		itemBase->flipItem(orientation);
 		if (m_infoView) m_infoView->updateRotation(itemBase);
 		ratsnestConnect(itemBase, true);
@@ -1563,7 +1563,7 @@ void SketchWidget::changeLegAux(long fromID, const QString & fromConnectorID, co
 void SketchWidget::selectItem(long id, bool state, bool updateInfoView, bool doEmit) {
 	this->clearHoldingSelectItem();
 	ItemBase * item = findItem(id);
-	if (item != NULL) {
+	if (item) {
 		item->setSelected(state);
 		if(updateInfoView) {
 			// show something in the info view, even if it's not selected
@@ -1923,7 +1923,7 @@ void SketchWidget::dragLeaveEvent(QDragLeaveEvent * event) {
 	Q_UNUSED(event);
 	turnOffAutoscroll();
 
-	if (m_droppingItem != NULL) {
+	if (m_droppingItem) {
 		if (m_clearSceneRect) {
 			m_clearSceneRect = false;
 			scene()->setSceneRect(QRectF());
@@ -1983,7 +1983,7 @@ void SketchWidget::dragMoveHighlightConnector(QPoint eventPos) {
 	checkAutoscroll(m_globalPos);
 
 	QPointF loc = this->mapToScene(eventPos) - m_droppingOffset;
-	if (m_alignToGrid && (m_alignmentItem != NULL)) {
+	if (m_alignToGrid && (m_alignmentItem)) {
 		QPointF l =  m_alignmentItem->getViewGeometry().loc();
 		alignLoc(loc, m_alignmentStartPoint, loc, l);
 
@@ -2115,7 +2115,7 @@ void SketchWidget::dropItemEvent(QDropEvent *event) {
 		//connectorItem->setMarked(false);
 		//connectorItems.append(connectorItem);
 		ConnectorItem * to = connectorItem->overConnectorItem();
-		if (to != NULL) {
+		if (to) {
 			to->connectorHover(to->attachedTo(), false);
 			connectorItem->setOverConnectorItem(NULL);   // clean up
 			extendChangeConnectionCommand(BaseCommand::CrossView, connectorItem, to, ViewLayer::specFromID(connectorItem->attachedToViewLayerID()), true, parentCommand);
@@ -2195,7 +2195,7 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 		QPointF sp = this->mapToScene(wp);
 		Wire * wire = dynamic_cast<Wire *>(scene()->itemAt(sp, QTransform()));
 		bool draggingWire = false;
-		if (wire != NULL) {
+		if (wire) {
 			if (canChainWire(wire) && wire->hasConnections()) {
 				if (canDragWire(wire) && ((event->modifiers() & altOrMetaModifier()) != 0)) {
 					prepDragWire(wire);
@@ -2205,7 +2205,7 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 		}
 
 		if (!draggingWire) {
-			rubberBandLegEnabled = (event != NULL) && ((event->modifiers() & altOrMetaModifier()) != 0);
+			rubberBandLegEnabled = (event) && ((event->modifiers() & altOrMetaModifier()) != 0);
 			prepMove(NULL, rubberBandLegEnabled, true);
 		}
 		if (m_savedItems.count() == 0) return false;
@@ -2217,7 +2217,7 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 		//DebugDialog::debug("autorepeat");
 	}
 
-	if (event != NULL && (event->modifiers() & Qt::ShiftModifier)) {
+	if (event && (event->modifiers() & Qt::ShiftModifier)) {
 		dx *= 10;
 		dy *= 10;
 	}
@@ -2300,21 +2300,21 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 		if (items.length() == 1) {
 			// if we unambiguously click on a partlabel whose owner is unselected, go ahead and activate it
 			PartLabel * partLabel =  dynamic_cast<PartLabel *>(items[0]);
-			if (partLabel != NULL) {
+			if (partLabel) {
 				partLabel->owner()->setSelected(true);
 				return;
 			}
 		}
 
 		clickBackground(event);
-		if (m_infoView != NULL) {
+		if (m_infoView) {
 			m_infoView->viewItemInfo(this, NULL, true);
 		}
 		return;
 	}
 
 	PartLabel * partLabel =  dynamic_cast<PartLabel *>(item);
-	if (partLabel != NULL) {
+	if (partLabel) {
 		viewItemInfo(partLabel->owner());
 		setLastPaletteItemSelectedIf(partLabel->owner());
 		return;
@@ -2322,7 +2322,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 
 	// Note's child items (at the moment) are the resize grip and the text editor
 	Note * note = dynamic_cast<Note *>(item->parentItem());
-	if (note != NULL)  {
+	if (note)  {
 		return;
 	}
 
@@ -2340,12 +2340,12 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 	}
 
 	ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(wasItem);
-	if (connectorItem != NULL && connectorItem->isDraggingLeg()) {
+	if (connectorItem && connectorItem->isDraggingLeg()) {
 		return;
 	}
 
 	Wire * wire = dynamic_cast<Wire *>(item);
-	if ((event->button() == Qt::LeftButton) && (wire != NULL)) {
+	if ((event->button() == Qt::LeftButton) && (wire)) {
 		if (canChainWire(wire) && wire->hasConnections()) {
 			if (canDragWire(wire) && ((event->modifiers() & altOrMetaModifier()) != 0)) {
 				prepDragWire(wire);
@@ -2375,9 +2375,9 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 		prepMove(itemBase ? itemBase : dynamic_cast<ItemBase *>(item->parentItem()), (event->modifiers() & altOrMetaModifier()) != 0, true);
 		if (m_alignToGrid && (itemBase == NULL) && (event->modifiers() == Qt::NoModifier)) {
 			Wire * wire = dynamic_cast<Wire *>(item->parentItem());
-			if (wire != NULL && wire->draggingEnd()) {
+			if (wire && wire->draggingEnd()) {
 				ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-				if (connectorItem != NULL) {
+				if (connectorItem) {
 					m_draggingBendpoint = (connectorItem->connectionsCount() > 0);
 					this->m_alignmentStartPoint = mapToScene(event->pos()) - connectorItem->sceneAdjustedTerminalPoint(NULL);
 				}
@@ -2482,7 +2482,7 @@ void SketchWidget::prepMove(ItemBase * originatingItem, bool rubberBandLegEnable
 		foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
 			bool gotOne = false;
 			foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
-				if (m_savedItems.value(toConnectorItem->attachedToID(), NULL) != NULL) {
+				if (m_savedItems.value(toConnectorItem->attachedToID(), NULL)) {
 					m_checkUnder.removeAt(i);
 					gotOne = true;
 					break;
@@ -2743,7 +2743,7 @@ void SketchWidget::categorizeDragWires(QSet<Wire *> & wires, QList<ItemBase *> &
 			if (ct->status[i] != UNDETERMINED_) continue;
 
 			ItemBase * stickingTo = ct->wire->stickingTo();
-			if (stickingTo != NULL) {
+			if (stickingTo) {
 				QPointF p = from.at(i)->sceneAdjustedTerminalPoint(NULL);
 				if (stickingTo->contains(stickingTo->mapFromScene(p))) {
 					if (m_savedItems.keys().contains(stickingTo->layerKinChief()->id())) {
@@ -2973,7 +2973,7 @@ bool SketchWidget::checkUnder() {
 };
 
 bool SketchWidget::draggingWireEnd() {
-	if (m_connectorDragWire != NULL) return true;
+	if (m_connectorDragWire) return true;
 
 	QGraphicsItem * mouseGrabberItem = scene()->mouseGrabberItem();
 	Wire * wire = dynamic_cast<Wire *>(mouseGrabberItem);
@@ -3011,7 +3011,7 @@ void SketchWidget::mouseMoveEvent(QMouseEvent *event) {
 		//DebugDialog::debug(QString("pos= %1,%2").arg(posx).arg(posy));
 	}
 
-	if (m_dragBendpointWire != NULL) {
+	if (m_dragBendpointWire) {
 		Wire * tempWire = m_dragBendpointWire;
 		m_dragBendpointWire = NULL;
 		prepDragBendpoint(tempWire, m_dragBendpointPos, m_dragCurve);
@@ -3099,7 +3099,7 @@ QString SketchWidget::makeMoveSVG(double printerScale, double dpi, QPointF & off
 
 	foreach (ItemBase * itemBase, m_savedItems.values()) {
 		Wire * wire = qobject_cast<Wire *>(itemBase);
-		if (wire != NULL) {
+		if (wire) {
 			outputSVG.append(makeWireSVG(wire, offset, dpi, printerScale, true));
 		}
 		else {
@@ -3125,7 +3125,7 @@ void SketchWidget::moveItems(QPoint globalPos, bool checkAutoScrollFlag, bool ru
 	QPoint q = mapFromGlobal(globalPos);
 	QPointF scenePos = mapToScene(q);
 
-	if (m_alignToGrid && (m_alignmentItem != NULL)) {
+	if (m_alignToGrid && (m_alignmentItem)) {
 		QPointF currentParentPos = m_alignmentItem->mapToParent(m_alignmentItem->mapFromScene(scenePos));
 		QPointF buttonDownParentPos = m_alignmentItem->mapToParent(m_alignmentItem->mapFromScene(m_mousePressScenePos));
 		alignLoc(scenePos, m_alignmentStartPoint, currentParentPos, buttonDownParentPos);
@@ -3246,9 +3246,9 @@ void SketchWidget::mouseReleaseEvent(QMouseEvent *event) {
 
 	QGraphicsView::mouseReleaseEvent(event);
 
-	if (m_connectorDragWire != NULL) {
+	if (m_connectorDragWire) {
 		// remove again (may not have been removed earlier)
-		if (m_connectorDragWire->scene() != NULL) {
+		if (m_connectorDragWire->scene()) {
 			removeDragWire();
 			//m_infoView->unregisterCurrentItem();
 			updateInfoView();
@@ -3282,7 +3282,7 @@ void SketchWidget::mouseReleaseEvent(QMouseEvent *event) {
 	m_bendpointWire = NULL;
 
 	if (m_moveEventCount == 0) {
-		if (this->m_holdingSelectItemCommand != NULL) {
+		if (this->m_holdingSelectItemCommand) {
 			if (m_holdingSelectItemCommand->updated()) {
 				SelectItemCommand* tempCommand = m_holdingSelectItemCommand;
 				m_holdingSelectItemCommand = NULL;
@@ -3398,7 +3398,7 @@ bool SketchWidget::checkMoved(bool wait)
 			}
 
 			ConnectorItem * toConnectorItem = fromConnectorItem->overConnectorItem();
-			if (toConnectorItem != NULL) {
+			if (toConnectorItem) {
 				toConnectorItem->connectorHover(item, false);
 				fromConnectorItem->setOverConnectorItem(NULL);   // clean up
 				gotConnection = true;
@@ -3451,7 +3451,7 @@ void SketchWidget::setSketchModel(SketchModel * sketchModel) {
 }
 
 void SketchWidget::itemAddedSlot(ModelPart * modelPart, ItemBase *, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin) {
-	if (dropOrigin != NULL && dropOrigin != this) {
+	if (dropOrigin && dropOrigin != this) {
 		placePartDroppedInOtherView(modelPart, viewLayerPlacement, viewGeometry, id, dropOrigin);
 	}
 	else {
@@ -3468,7 +3468,7 @@ ItemBase * SketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, View
 	ViewGeometry vg(viewGeometry);
 	vg.setLoc(to + dp);
 	ItemBase * itemBase = addItemAux(modelPart, viewLayerPlacement, vg, id, true, m_viewID, false);
-	if (m_alignToGrid && (itemBase != NULL)) {
+	if (m_alignToGrid && (itemBase)) {
 		alignOneToGrid(itemBase);
 	}
 
@@ -3477,7 +3477,7 @@ ItemBase * SketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, View
 
 void SketchWidget::itemDeletedSlot(long id) {
 	ItemBase * pitem = findItem(id);
-	if (pitem != NULL) {
+	if (pitem) {
 		deleteItem(pitem, false, false, false);
 	}
 }
@@ -3489,7 +3489,7 @@ void SketchWidget::selectionChangedSlot() {
 
 	emit selectionChangedSignal();
 
-	if (m_holdingSelectItemCommand != NULL) {
+	if (m_holdingSelectItemCommand) {
 		//DebugDialog::debug("update holding command");
 
 		int selCount = 0;
@@ -3518,7 +3518,7 @@ void SketchWidget::selectionChangedSlot() {
 
 void SketchWidget::clearHoldingSelectItem() {
 	// DebugDialog::debug("clear holding");
-	if (m_holdingSelectItemCommand != NULL) {
+	if (m_holdingSelectItemCommand) {
 		delete m_holdingSelectItemCommand;
 		m_holdingSelectItemCommand = NULL;
 	}
@@ -3535,8 +3535,8 @@ void SketchWidget::clearSelectionSlot() {
 
 void SketchWidget::itemSelectedSlot(long id, bool state) {
 	ItemBase * item = findItem(id);
-	//DebugDialog::debug(QString("got item selected signal %1 %2 %3 %4").arg(id).arg(state).arg(item != NULL).arg(m_viewID));
-	if (item != NULL) {
+	//DebugDialog::debug(QString("got item selected signal %1 %2 %3 %4").arg(id).arg(state).arg(item).arg(m_viewID));
+	if (item) {
 		item->setSelected(state);
 	}
 
@@ -3577,7 +3577,7 @@ void SketchWidget::prepLegBendpointMove(ConnectorItem * from, int index, QPointF
 
 	long toID = -1;
 	QString toConnectorID;
-	if (changeConnections && (to != NULL)) {
+	if (changeConnections && (to)) {
 		toID = to->attachedToID();
 		toConnectorID = to->connectorSharedID();
 	}
@@ -3632,7 +3632,7 @@ void SketchWidget::prepLegBendpointMove(ConnectorItem * from, int index, QPointF
 			}
 
 		}
-		if (to != NULL) {
+		if (to) {
 			ChangeConnectionCommand * ccc = extendChangeConnectionCommand(BaseCommand::CrossView, from, to, ViewLayer::specFromID(from->attachedToViewLayerID()), true, parentCommand);
 			ccc->setUpdateConnections(false);
 		}
@@ -3720,7 +3720,7 @@ void SketchWidget::wireChangedSlot(Wire* wire, const QLineF & oldLine, const QLi
 	}
 
 	clearDragWireTempCommand();
-	if ((to != NULL) && from->connectedToItems().contains(to)) {
+	if ((to) && from->connectedToItems().contains(to)) {
 		// there's no change: the wire was dragged back to its original connection
 		QList<ConnectorItem *> already;
 		from->attachedTo()->updateConnections(to, false, already);
@@ -3732,13 +3732,13 @@ void SketchWidget::wireChangedSlot(Wire* wire, const QLineF & oldLine, const QLi
 	long fromID = wire->id();
 
 	QString fromConnectorID;
-	if (from != NULL) {
+	if (from) {
 		fromConnectorID = from->connectorSharedID();
 	}
 
 	long toID = -1;
 	QString toConnectorID;
-	if (to != NULL) {
+	if (to) {
 		toID = to->attachedToID();
 		toConnectorID = to->connectorSharedID();
 	}
@@ -3809,7 +3809,7 @@ void SketchWidget::wireChangedSlot(Wire* wire, const QLineF & oldLine, const QLi
 			}
 
 		}
-		if (to != NULL) {
+		if (to) {
 			extendChangeConnectionCommand(BaseCommand::CrossView, from, to, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
 		}
 	}
@@ -3823,7 +3823,7 @@ void SketchWidget::wireChangedSlot(Wire* wire, const QLineF & oldLine, const QLi
 
 void SketchWidget::dragWireChanged(Wire* wire, ConnectorItem * fromOnWire, ConnectorItem * to)
 {
-	if (m_bendpointWire != NULL && wire->getRatsnest()) {
+	if (m_bendpointWire && wire->getRatsnest()) {
 		dragRatsnestChanged();
 		return;
 	}
@@ -3849,7 +3849,7 @@ void SketchWidget::dragWireChanged(Wire* wire, ConnectorItem * fromOnWire, Conne
 	parentCommand->setText(tr("Create and connect wire"));
 
 	SelectItemCommand * selectItemCommand = new SelectItemCommand(this, SelectItemCommand::NormalSelect, parentCommand);
-	if (m_tempDragWireCommand != NULL) {
+	if (m_tempDragWireCommand) {
 		selectItemCommand->copyUndo(m_tempDragWireCommand);
 		clearDragWireTempCommand();
 	}
@@ -3877,11 +3877,11 @@ void SketchWidget::dragWireChanged(Wire* wire, ConnectorItem * fromOnWire, Conne
 
 	if (m_bendpointWire == NULL) {
 		ConnectorItem * anchor = wire->otherConnector(fromOnWire);
-		if (anchor != NULL) {
+		if (anchor) {
 			extendChangeConnectionCommand(BaseCommand::CrossView, anchor, m_connectorDragConnector, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
 			doEmit = true;
 		}
-		if (to != NULL) {
+		if (to) {
 			extendChangeConnectionCommand(BaseCommand::CrossView, fromOnWire, to, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
 			doEmit = true;
 		}
@@ -4078,7 +4078,7 @@ void SketchWidget::setAllLayersVisible(bool visible) {
 
 	for (int i = 0; i < keys.count(); i++) {
 		ViewLayer * viewLayer = m_viewLayers.value(keys[i]);
-		if (viewLayer != NULL && viewLayer->action()->isEnabled()) {
+		if (viewLayer && viewLayer->action()->isEnabled()) {
 			setLayerVisible(viewLayer, visible, true);
 		}
 	}
@@ -4101,7 +4101,7 @@ ItemCount SketchWidget::calcItemCount() {
 
 	for (int i = 0; i < selItems.count(); i++) {
 		ItemBase * itemBase = ItemBase::extractTopLevelItemBase(selItems[i]);
-		if (itemBase != NULL) {
+		if (itemBase) {
 			itemCount.selCount++;
 
 			if (itemBase->moveLock()) {
@@ -4171,7 +4171,7 @@ ItemCount SketchWidget::calcItemCount() {
 	}
 	if (itemCount.selCount > 0) {
 		for (int i = 0; i < items.count(); i++) {
-			if (ItemBase::extractTopLevelItemBase(items[i]) != NULL) {
+			if (ItemBase::extractTopLevelItemBase(items[i])) {
 				itemCount.itemsCount++;
 			}
 		}
@@ -4265,7 +4265,7 @@ void SketchWidget::setLayerActive(ViewLayer * viewLayer, bool active) {
 	foreach (QGraphicsItem * item, scene()->items()) {
 		// want all items, not just topLevel
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase != NULL) {
+		if (itemBase) {
 			//itemBase->debugInfo("setActive");
 			if (viewLayerIDs.contains(itemBase->viewLayerID())) {
 				itemBase->setInactive(!active);
@@ -4275,7 +4275,7 @@ void SketchWidget::setLayerActive(ViewLayer * viewLayer, bool active) {
 		}
 
 		PartLabel * partLabel = dynamic_cast<PartLabel *>(item);
-		if (partLabel != NULL) {
+		if (partLabel) {
 			if (viewLayerIDs.contains(partLabel->viewLayerID())) {
 				partLabel->setInactive(!active);
 			}
@@ -4401,7 +4401,7 @@ void SketchWidget::continueZChangeMax(QList<ItemBase *> & bases, int start, int 
 	for (int i = start; test(i, end); i += inc) {
 		ItemBase * base = bases[i];
 		if (!base->getViewGeometry().selected()) continue;
-		if (marked[base] != NULL) continue;
+		if (marked[base]) continue;
 
 		marked.insert(base, base);
 
@@ -4457,7 +4457,7 @@ void SketchWidget::continueZChangeAux(QList<ItemBase *> & bases, const QString &
 void SketchWidget::sortAnyByZ(const QList<QGraphicsItem *> & items, QList<ItemBase *> & bases) {
 	for (int i = 0; i < items.size(); i++) {
 		ItemBase * base = dynamic_cast<ItemBase *>(items[i]);
-		if (base != NULL) {
+		if (base) {
 			bases.append(base);
 			base->saveGeometry();
 		}
@@ -4544,7 +4544,7 @@ void SketchWidget::mousePressConnectorEvent(ConnectorItem * connectorItem, QGrap
 	// make sure wire layer is visible
 	ViewLayer::ViewLayerID viewLayerID = getDragWireViewLayerID(connectorItem);
 	ViewLayer * viewLayer = m_viewLayers.value(viewLayerID);
-	if (viewLayer != NULL && !viewLayer->visible()) {
+	if (viewLayer && !viewLayer->visible()) {
 		setLayerVisible(viewLayer, true, true);
 		emit updateLayerMenuSignal();
 	}
@@ -4848,7 +4848,7 @@ ConnectorItem * SketchWidget::findConnectorItem(ConnectorItem * foreignConnector
 ConnectorItem * SketchWidget::findConnectorItem(ItemBase * itemBase, const QString & connectorID, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
 	ConnectorItem * connectorItem = itemBase->findConnectorItemWithSharedID(connectorID, viewLayerPlacement);
-	if (connectorItem != NULL) return connectorItem;
+	if (connectorItem) return connectorItem;
 
 	DebugDialog::debug("used to seek layer kin");
 	/*
@@ -4858,7 +4858,7 @@ ConnectorItem * SketchWidget::findConnectorItem(ItemBase * itemBase, const QStri
 
 		foreach (ItemBase * lkpi, pitem->layerKin()) {
 			connectorItem = lkpi->findConnectorItemWithSharedID(connectorID);
-			if (connectorItem != NULL) return connectorItem;
+			if (connectorItem) return connectorItem;
 		}
 
 	}
@@ -4876,7 +4876,7 @@ PaletteItem * SketchWidget::getSelectedPart() {
 		PaletteItem *temp = dynamic_cast<PaletteItem *>(items[i]);
 		if (temp == NULL) continue;
 
-		if (item != NULL) return NULL;  // there are multiple items selected
+		if (item) return NULL;  // there are multiple items selected
 		item = temp;
 	}
 
@@ -4986,7 +4986,7 @@ void SketchWidget::wireDisconnectedSlot(long fromID, QString fromConnectorID) {
 	}
 
 	ConnectorItem * toConnectorItem = fromConnectorItem->firstConnectedToIsh();
-	if (toConnectorItem != NULL) {
+	if (toConnectorItem) {
 		fromConnectorItem->removeConnection(toConnectorItem, true);
 		toConnectorItem->removeConnection(fromConnectorItem, true);
 	}
@@ -5164,7 +5164,7 @@ void SketchWidget::makeDeleteItemCommandPrepSlot(ItemBase * itemBase, bool forei
 	}
 
 	Note * note = qobject_cast<Note *>(itemBase);
-	if (note != NULL) {
+	if (note) {
 		ChangeNoteTextCommand * cntc = new ChangeNoteTextCommand(this, note->id(), note->text(), note->text(), QSizeF(), QSizeF(), parentCommand);
 		cntc->setSkipFirstRedo();
 	}
@@ -5237,7 +5237,7 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 
 	bool boardToCustomBoard = false;
 	ModelPart * mp = (newModuleID.isEmpty()) ? itemBase->modelPart() : referenceModel()->retrieveModelPart(newModuleID);
-	if (mp->itemType() == ModelPart::Logo && qobject_cast<Board *>(itemBase) != NULL) {
+	if (mp->itemType() == ModelPart::Logo && qobject_cast<Board *>(itemBase)) {
 		boardToCustomBoard = true;
 		mp = itemBase->modelPart();
 	}
@@ -5331,7 +5331,7 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 	}
 
 	Pad* pad = qobject_cast<Pad *>(itemBase);
-	if (pad != NULL) {
+	if (pad) {
 		pad->saveParams();
 		QPointF p;
 		QSizeF sz;
@@ -5342,14 +5342,14 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 	}
 
 	Resistor * resistor =  qobject_cast<Resistor *>(itemBase);
-	if (resistor != NULL) {
+	if (resistor) {
 		new SetResistanceCommand(this, id, resistor->resistance(), resistor->resistance(), resistor->pinSpacing(), resistor->pinSpacing(), parentCommand);
 		prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 		return;
 	}
 
 	MysteryPart * mysteryPart = qobject_cast<MysteryPart *>(itemBase);
-	if (mysteryPart != NULL) {
+	if (mysteryPart) {
 		new SetPropCommand(this, id, "chip label", mysteryPart->chipLabel(), mysteryPart->chipLabel(), true, parentCommand);
 		prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 		return;
@@ -5357,7 +5357,7 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 
 	/*
 	PinHeader * pinHeader = qobject_cast<PinHeader *>(itemBase);
-	if (pinHeader != NULL) {
+	if (pinHeader) {
 		// deal with old-style pin headers (pre 0.6.4)
 		new SetPropCommand(this, id, "form", pinHeader->form(), PinHeader::findForm(newModuleID), true, parentCommand);
 		prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
@@ -5366,7 +5366,7 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 	*/
 
 	Hole * hole = qobject_cast<Hole *>(itemBase);
-	if (hole != NULL) {
+	if (hole) {
 		new SetPropCommand(this, id, "hole size", hole->holeSize(), hole->holeSize(), true, parentCommand);
 		prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 		return;
@@ -5408,7 +5408,7 @@ void SketchWidget::prepDeleteOtherProps(ItemBase * itemBase, long id, const QStr
 		if (!newModuleID.isEmpty()) {
 			newValue = "";
 			ModelPart * newModelPart = m_referenceModel->retrieveModelPart(newModuleID);
-			if (newModelPart != NULL) {
+			if (newModelPart) {
 				newValue = newModelPart->properties().value(ModelPartShared::PartNumberPropertyName, "");
 			}
 		}
@@ -5434,7 +5434,7 @@ void SketchWidget::rememberSticky(ItemBase * itemBase, QUndoCommand * parentComm
 			checkStickyCommand->stick(this, itemBase->id(), sticking->id(), true);
 		}
 	}
-	else if (itemBase->stickingTo() != NULL) {
+	else if (itemBase->stickingTo()) {
 		checkStickyCommand->stick(this, itemBase->stickingTo()->id(), itemBase->id(), true);
 	}
 }
@@ -5469,7 +5469,7 @@ void SketchWidget::clearTemporaries() {
 
 void SketchWidget::killDroppingItem() {
 	m_alignmentItem = NULL;
-	if (m_droppingItem != NULL) {
+	if (m_droppingItem) {
 		m_droppingItem->removeLayerKin();
 		this->scene()->removeItem(m_droppingItem);
 		if (m_droppingItem->modelPart()) {
@@ -5740,7 +5740,7 @@ void SketchWidget::hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase * i
 	}
 
 	Wire * wire = dynamic_cast<Wire *>(item);
-	if (wire != NULL) {
+	if (wire) {
 		if (canChainWire(wire)) {
 			bool segment = wire->connector0()->chained() && wire->connector1()->chained();
 			bool disconnected = wire->connector0()->connectionsCount() == 0 &&  wire->connector1()->connectionsCount() == 0;
@@ -5766,7 +5766,7 @@ void SketchWidget::statusMessage(QString message, int timeout)
 
 	if (m_statusConnectState == StatusConnectFailed) {
 		QStatusBar * sb = mainWindow->statusBar();
-		if (sb != NULL) {
+		if (sb) {
 			sb->showMessage(message, timeout);
 		}
 	}
@@ -6096,7 +6096,7 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 
 
 			Wire * wire = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-			if (wire != NULL) {
+			if (wire) {
 				if (wire->getRatsnest()) continue;
 
 				//if (newConnector == NULL && wire->getTrace() && wire->isTraceType(getTraceFlag())) {
@@ -6535,7 +6535,7 @@ void SketchWidget::resizeEvent(QResizeEvent * event) {
 //
 //	);
 
-	if (m_sizeItem != NULL) {
+	if (m_sizeItem) {
 		m_sizeItem->setLine(z.x(), z.y(), p.x(), p.y());
 	}
 
@@ -6683,7 +6683,7 @@ void SketchWidget::updateRoutingStatus(RoutingStatus & routingStatus, bool manua
 		//}
 
 		VirtualWire * vw = qobject_cast<VirtualWire *>(connectorItem->attachedTo());
-		if (vw != NULL) {
+		if (vw) {
 			if (vw->connector0()->connectionsCount() == 0 || vw->connector1()->connectionsCount() == 0) {
 				ratsToDelete.append(vw);
 			}
@@ -6759,7 +6759,7 @@ void SketchWidget::updateRoutingStatus(RoutingStatus & routingStatus, bool manua
 	}
 
 	foreach(QPointer<VirtualWire> vw, ratsToDelete) {
-		if (vw != NULL) {
+		if (vw) {
 			//vw->debugInfo("removing rat 2");
 			vw->scene()->removeItem(vw);
 			delete vw;
@@ -7093,7 +7093,7 @@ void SketchWidget::setInstanceTitle(long itemID, const QString & oldText, const 
 void SketchWidget::showPartLabel(long itemID, bool showIt) {
 
 	ItemBase * itemBase = findItem(itemID);
-	if (itemBase != NULL) {
+	if (itemBase) {
 		itemBase->showPartLabel(showIt, m_viewLayers.value(getLabelViewLayerID(itemBase)));
 	}
 }
@@ -7756,13 +7756,13 @@ void SketchWidget::resizeWithHandle(ItemBase * itemBase, double mmW, double mmH)
 void SketchWidget::addBendpoint(ItemBase * lastHoverEnterItem, ConnectorItem * lastHoverEnterConnectorItem, QPointF lastLocation) {
 	if (lastHoverEnterConnectorItem) {
 		Wire * wire = qobject_cast<Wire *>(lastHoverEnterConnectorItem->attachedTo());
-		if (wire != NULL) {
+		if (wire) {
 			wireJoinSlot(wire, lastHoverEnterConnectorItem);
 		}
 	}
 	else if (lastHoverEnterItem) {
 		Wire * wire = qobject_cast<Wire *>(lastHoverEnterItem);
-		if (wire != NULL) {
+		if (wire) {
 			wireSplitSlot(wire, lastLocation, wire->pos(), wire->line());
 		}
 	}
@@ -7779,7 +7779,7 @@ void SketchWidget::flattenCurve(ItemBase * lastHoverEnterItem, ConnectorItem * l
 		wire = qobject_cast<Wire *>(lastHoverEnterItem);
 	}
 
-	if (wire != NULL) {
+	if (wire) {
 		wireChangedCurveSlot(wire, wire->curve(), NULL, true);
 	}
 
@@ -7861,7 +7861,7 @@ bool SketchWidget::createOneTrace(Wire * wire, ViewGeometry::WireFlag flag, bool
 		return false;
 	}
 
-	if (trace != NULL) {
+	if (trace) {
 		removeWire(trace, ends, done, parentCommand);
 	}
 
@@ -7891,7 +7891,7 @@ void SketchWidget::selectAllWiresFrom(ViewGeometry::WireFlag flag, QList<QGraphi
 		if (wire == NULL) continue;
 
 		if (wire->hasFlag(flag)) {
-			if (wire->parentItem() != NULL) {
+			if (wire->parentItem()) {
 				// skip module wires
 				continue;
 			}
@@ -8037,11 +8037,11 @@ void SketchWidget::disconnectAllSlot(QList<ConnectorItem *> connectorItems, QHas
 		if (itemBase == NULL) continue;
 
 		ConnectorItem * fromConnectorItem = findConnectorItem(itemBase, ci->connectorSharedID(), ViewLayer::NewTop);
-		if (fromConnectorItem != NULL) {
+		if (fromConnectorItem) {
 			myConnectorItems.append(fromConnectorItem);
 		}
 		fromConnectorItem = findConnectorItem(itemBase, ci->connectorSharedID(), ViewLayer::NewBottom);
-		if (fromConnectorItem != NULL) {
+		if (fromConnectorItem) {
 			myConnectorItems.append(fromConnectorItem);
 		}
 	}
@@ -9129,7 +9129,7 @@ VirtualWire * SketchWidget::makeOneRatsnestWire(ConnectorItem * source, Connecto
 	if (source->attachedTo() == dest->attachedTo()) {
 		if (source == dest) return NULL;
 
-		if (source->bus() == dest->bus() && dest->bus() != NULL) {
+		if (source->bus() == dest->bus() && dest->bus()) {
 			if (!force) return NULL;				// don't draw a wire within the same part on the same bus
 		}
 	}
@@ -9279,7 +9279,7 @@ bool SketchWidget::canConnect(ItemBase * from, ItemBase * to) {
 	Wire * fromWire = qobject_cast<Wire *>(from);
 	Wire * toWire = qobject_cast<Wire *>(to);
 
-	if (fromWire != NULL && fromWire->getTrace()) {
+	if (fromWire && fromWire->getTrace()) {
 		if (fromWire->isTraceType(getTraceFlag())) {
 			return canConnect(fromWire, to);
 		}
@@ -9290,7 +9290,7 @@ bool SketchWidget::canConnect(ItemBase * from, ItemBase * to) {
 		}
 	}
 
-	if (toWire != NULL && toWire->getTrace()) {
+	if (toWire && toWire->getTrace()) {
 		if (toWire->isTraceType(getTraceFlag())) {
 			return canConnect(toWire, from);
 		}
@@ -9858,7 +9858,7 @@ void SketchWidget::squashShapes(QPointF scenePos)
 		}
 
 		wire = dynamic_cast<Wire *>(item);
-		if (wire != NULL && wire->acceptHoverEvents() && !wire->inactive() && !wire->hidden() && !wire->layerHidden()) break;
+		if (wire && wire->acceptHoverEvents() && !wire->inactive() && !wire->hidden() && !wire->layerHidden()) break;
 	}
 
 	if (ix == 0) {
@@ -9871,7 +9871,7 @@ void SketchWidget::squashShapes(QPointF scenePos)
 		for (ix = 0; ix < itms.count(); ix++) {
 			QGraphicsItem * item = itms.at(ix);
 			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-			if (itemBase != NULL) {
+			if (itemBase) {
 				if (itemBase->hidden() || itemBase->layerHidden() || itemBase->inactive()) continue;
 
 				QPainterPath painterPath = itemBase->mapToScene(itemBase->selectionShape());
@@ -9903,7 +9903,7 @@ void SketchWidget::squashShapes(QPointF scenePos)
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(itms.at(i));
 		if (itemBase == NULL) continue;
 
-		if (connectorItem != NULL && connectorItem->parentItem() == itemBase) {
+		if (connectorItem && connectorItem->parentItem() == itemBase) {
 			if (firstTime) {
 				// topmost  contains connectorItem
 				return;
@@ -10133,9 +10133,9 @@ void SketchWidget::updateWires() {
 		if (!wire->isTraceType(traceFlag)) continue;
 
 		ConnectorItem * from = wire->connector0()->firstConnectedToIsh();
-		if (from != NULL) wire->connectedMoved(from, wire->connector0(), already);
+		if (from) wire->connectedMoved(from, wire->connector0(), already);
 		ConnectorItem * to = wire->connector1()->firstConnectedToIsh();
-		if (to != NULL) wire->connectedMoved(to, wire->connector1(), already);
+		if (to) wire->connectedMoved(to, wire->connector1(), already);
 	}
 }
 

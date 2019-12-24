@@ -62,7 +62,7 @@ ModelPart * SketchModel::findModelPartAux(ModelPart * modelPart, const QString &
 		if (mp == NULL) continue;
 
 		mp = findModelPartAux(mp, moduleID, id);
-		if (mp != NULL) {
+		if (mp) {
 			return mp;
 		}
 	}

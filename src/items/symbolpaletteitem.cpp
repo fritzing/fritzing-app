@@ -427,7 +427,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 
 void SymbolPaletteItem::voltageEntry(const QString & text) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setVoltage(text.toDouble(), true);
 	}
 }
@@ -445,7 +445,7 @@ void SymbolPaletteItem::labelEntry() {
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setProp(this, "label", ItemBase::TranslatedPropertyNames.value("label"), current, edit->text(), true);
 	}
 }

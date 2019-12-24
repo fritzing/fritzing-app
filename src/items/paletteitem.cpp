@@ -375,7 +375,7 @@ bool PaletteItem::mousePressEventK(PaletteItemBase * originalItem, QGraphicsScen
 void PaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics != NULL && infographics->spaceBarIsPressed()) {
+	if (infographics && infographics->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
@@ -531,7 +531,7 @@ bool PaletteItem::collectExtraInfo(QWidget * parent, const QString & family, con
 
 	bool result = PaletteItemBase::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 
-	if (prop.compare("layer") == 0 && modelPart()->flippedSMD() && returnWidget != NULL) {
+	if (prop.compare("layer") == 0 && modelPart()->flippedSMD() && returnWidget) {
 		bool disabled = true;
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 		if (infoGraphicsView && infoGraphicsView->boardLayers() == 2) disabled = false;
@@ -1159,7 +1159,7 @@ void PaletteItem::changeHoleSize(const QString & newSize) {
 	m_propsMap.insert("moduleID", newModuleID);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->swap(family(), newModuleID, m_propsMap, this);
 	}
 }

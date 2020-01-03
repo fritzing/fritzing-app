@@ -241,22 +241,22 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	TextUtils::findText(t, title);
 
 	//DebugDialog::debug("module ID " + moduleID);
-    static QHash<QString, ModelPart> pureEqualityChecks = {
+    static QHash<QString, ModelPart::ItemType> pureEqualityChecks = {
         { ModuleIDNames::WireModuleIDName, ModelPart::Wire },
         { ModuleIDNames::JumperModuleIDName, ModelPart::Jumper },
         { ModuleIDNames::GroundPlaneModuleIDName, ModelPart::CopperFill },
         { ModuleIDNames::NoteModuleIDName, ModelPart::Note },
         { ModuleIDNames::GroundModuleIDName, ModelPart::Symbol },
         { ModuleIDNames::PowerLabelModuleIDName, ModelPart::Symbol },
-        { ModuleIDNames::RuleModuleIDName, ModelPart::Ruler },
+        { ModuleIDNames::RulerModuleIDName, ModelPart::Ruler },
         { ModuleIDNames::ViaModuleIDName, ModelPart::Via },
         { ModuleIDNames::HoleModuleIDName, ModelPart::Hole },
     };
-    auto isLogo = [](const QString& moduleId) noexcept {
+    auto isLogo = [](const QString& moduleID) noexcept {
         return moduleID.endsWith(ModuleIDNames::LogoImageModuleIDName) ||
                moduleID.endsWith(ModuleIDNames::LogoTextModuleIDName);
     };
-    auto isBreadboard = [&propertiesText](const QString& moduleId) noexcept {
+    auto isBreadboard = [&propertiesText](const QString& moduleID) noexcept {
         return moduleID.endsWith(ModuleIDNames::PerfboardModuleIDName) || 
             moduleID.endsWith(ModuleIDNames::StripboardModuleIDName) ||
             moduleID.endsWith(ModuleIDNames::Stripboard2ModuleIDName) ||
@@ -269,19 +269,19 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
             return moduleId.endsWith(ModuleIDNames::PowerModuleIDName) ||
                    moduleId.endsWith(ModuleIDNames::NetLabelModuleIDName);
     };
-    if (pureEqualityChecks.contains(moduleId)) {
-        type = pureEqualityChecks.value(moduleId);
+    if (pureEqualityChecks.contains(moduleID)) {
+        type = pureEqualityChecks.value(moduleID);
     }
-    else if (isLogo(moduleId)) {
+    else if (isLogo(moduleID)) {
 		type = ModelPart::Logo;
 	}
-    else if (isPart(moduleId)) {
+    else if (isPart(moduleID)) {
 		type = ModelPart::Part;
 	}
-    else if (isSymbol(moduleId)) {
+    else if (isSymbol(moduleID)) {
 		type = ModelPart::Symbol;
 	}
-    else if (isBreadboard(moduleId) {
+    else if (isBreadboard(moduleID)) {
 		type = ModelPart::Breadboard;
 	}
 	else if (propertiesText.contains("plain vanilla pcb", Qt::CaseInsensitive)) {

@@ -58,15 +58,9 @@ void setFlip(ViewLayer::ViewID viewID, QXmlStreamReader & xml, QHash<ViewLayer::
 /////////////////////////////////////
 
 PaletteModel::PaletteModel() : ModelBase(true) {
-	m_loadedFromFile = false;
-	m_loadingContrib = false;
-	m_fullLoad = false;
 }
 
-PaletteModel::PaletteModel(bool makeRoot, bool doInit) : ModelBase( makeRoot ) {
-	m_loadedFromFile = false;
-	m_loadingContrib = false;
-	m_fullLoad = false;
+PaletteModel::PaletteModel(bool makeRoot, bool doInit) : ModelBase(makeRoot) {
 
 	if (doInit) {
 		initParts(false);
@@ -113,22 +107,22 @@ void PaletteModel::loadParts(bool dbExists) {
 	int totalPartCount = 0;
 	emit loadedPart(0, totalPartCount);
 
-	QDir dir1 = FolderUtils::getAppPartsSubFolder("");
+	QDir dir1(FolderUtils::getAppPartsSubFolder(""));
 	QDir dir2(FolderUtils::getUserPartsPath());
 	QDir dir3(":/resources/parts");
 	QDir dir4(s_fzpOverrideFolder);
 
 	if (m_fullLoad || !dbExists) {
 		// otherwise these will already be in the database
-		countParts(dir1, nameFilters, totalPartCount);
-		countParts(dir3, nameFilters, totalPartCount);
+		totalPartCount += countParts(dir1, nameFilters);
+		totalPartCount += countParts(dir3, nameFilters);
 	}
 
 	if (!m_fullLoad) {
 		// don't include local parts when doing full load
-		countParts(dir2, nameFilters, totalPartCount);
+		totalPartCount += countParts(dir2, nameFilters);
 		if (!s_fzpOverrideFolder.isEmpty()) {
-			countParts(dir4, nameFilters, totalPartCount);
+			totalPartCount += countParts(dir4, nameFilters);
 		}
 	}
 
@@ -149,18 +143,18 @@ void PaletteModel::loadParts(bool dbExists) {
 	}
 }
 
-void PaletteModel::countParts(QDir & dir, QStringList & nameFilters, int & partCount) {
-	QStringList list = dir.entryList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	partCount += list.size();
+int PaletteModel::countParts(const QDir & currentDir, const QStringList & nameFilters) const {
+	QStringList list = currentDir.entryList(nameFilters, QDir::Files | QDir::NoSymLinks);
+	int partCount = list.size();
 
-	QStringList dirs = dir.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-	for (int i = 0; i < dirs.size(); ++i) {
-		QString temp2 = dirs[i];
-		dir.cd(temp2);
-
-		countParts(dir, nameFilters, partCount);
-		dir.cdUp();
+	QStringList dirs = currentDir.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+    for (const auto& dir : dirs) {
+        // make a copy and then cd using that
+        QDir childDirectory(currentDir);
+		childDirectory.cd(dir);
+		partCount += countParts(childDirectory, nameFilters);
 	}
+    return partCount;
 }
 
 void PaletteModel::loadPartsAux(QDir & dir, QStringList & nameFilters, int & loadingPart, int totalPartCount) {

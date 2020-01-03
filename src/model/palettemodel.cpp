@@ -24,6 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QApplication>
 #include <QDir>
 #include <QDomElement>
+#include <QHash>
 
 #include "../debugdialog.h"
 #include "modelpart.h"
@@ -240,60 +241,47 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	TextUtils::findText(t, title);
 
 	//DebugDialog::debug("module ID " + moduleID);
-
-	// FIXME: properties is nested right now
-	if (moduleID.compare(ModuleIDNames::WireModuleIDName) == 0) {
-		type = ModelPart::Wire;
-	}
-	else if (moduleID.compare(ModuleIDNames::JumperModuleIDName) == 0) {
-		type = ModelPart::Jumper;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::LogoImageModuleIDName)) {
+    static QHash<QString, ModelPart> pureEqualityChecks = {
+        { ModuleIDNames::WireModuleIDName, ModelPart::Wire },
+        { ModuleIDNames::JumperModuleIDName, ModelPart::Jumper },
+        { ModuleIDNames::GroundPlaneModuleIDName, ModelPart::CopperFill },
+        { ModuleIDNames::NoteModuleIDName, ModelPart::Note },
+        { ModuleIDNames::GroundModuleIDName, ModelPart::Symbol },
+        { ModuleIDNames::PowerLabelModuleIDName, ModelPart::Symbol },
+        { ModuleIDNames::RuleModuleIDName, ModelPart::Ruler },
+        { ModuleIDNames::ViaModuleIDName, ModelPart::Via },
+        { ModuleIDNames::HoleModuleIDName, ModelPart::Hole },
+    };
+    auto isLogo = [](const QString& moduleId) noexcept {
+        return moduleID.endsWith(ModuleIDNames::LogoImageModuleIDName) ||
+               moduleID.endsWith(ModuleIDNames::LogoTextModuleIDName);
+    };
+    auto isBreadboard = [&propertiesText](const QString& moduleId) noexcept {
+        return moduleID.endsWith(ModuleIDNames::PerfboardModuleIDName) || 
+            moduleID.endsWith(ModuleIDNames::StripboardModuleIDName) ||
+            moduleID.endsWith(ModuleIDNames::Stripboard2ModuleIDName) ||
+            propertiesText.contains("breadboard", Qt::CaseInsensitive);
+    };
+    auto isPart = [](const QString& moduleId) noexcept {
+            return moduleId.endsWith(ModuleIDNames::TwoPowerModuleIDName); 
+    };
+    auto isSymbol = [](const QString& moduleId) noexcept {
+            return moduleId.endsWith(ModuleIDNames::PowerModuleIDName) ||
+                   moduleId.endsWith(ModuleIDNames::NetLabelModuleIDName);
+    };
+    if (pureEqualityChecks.contains(moduleId)) {
+        type = pureEqualityChecks.value(moduleId);
+    }
+    else if (isLogo(moduleId)) {
 		type = ModelPart::Logo;
 	}
-	else if (moduleID.endsWith(ModuleIDNames::LogoTextModuleIDName)) {
-		type = ModelPart::Logo;
-	}
-	else if (moduleID.compare(ModuleIDNames::GroundPlaneModuleIDName) == 0) {
-		type = ModelPart::CopperFill;
-	}
-	else if (moduleID.compare(ModuleIDNames::NoteModuleIDName) == 0) {
-		type = ModelPart::Note;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::TwoPowerModuleIDName)) {
+    else if (isPart(moduleId)) {
 		type = ModelPart::Part;
 	}
-	else if (moduleID.endsWith(ModuleIDNames::PowerModuleIDName)) {
+    else if (isSymbol(moduleId)) {
 		type = ModelPart::Symbol;
 	}
-	else if (moduleID.compare(ModuleIDNames::GroundModuleIDName) == 0) {
-		type = ModelPart::Symbol;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::NetLabelModuleIDName)) {
-		type = ModelPart::Symbol;
-	}
-	else if (moduleID.compare(ModuleIDNames::PowerLabelModuleIDName) == 0) {
-		type = ModelPart::Symbol;
-	}
-	else if (moduleID.compare(ModuleIDNames::RulerModuleIDName) == 0) {
-		type = ModelPart::Ruler;
-	}
-	else if (moduleID.compare(ModuleIDNames::ViaModuleIDName) == 0) {
-		type = ModelPart::Via;
-	}
-	else if (moduleID.compare(ModuleIDNames::HoleModuleIDName) == 0) {
-		type = ModelPart::Hole;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::PerfboardModuleIDName)) {
-		type = ModelPart::Breadboard;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::StripboardModuleIDName)) {
-		type = ModelPart::Breadboard;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::Stripboard2ModuleIDName)) {
-		type = ModelPart::Breadboard;
-	}
-	else if (propertiesText.contains("breadboard", Qt::CaseInsensitive)) {
+    else if (isBreadboard(moduleId) {
 		type = ModelPart::Breadboard;
 	}
 	else if (propertiesText.contains("plain vanilla pcb", Qt::CaseInsensitive)) {
@@ -306,7 +294,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	}
 
 	ModelPart * modelPart = new ModelPart(domDocument, path, type);
-	if (modelPart == NULL) return NULL;
+	if (!modelPart) return nullptr;
 
 	if (path.startsWith(ResourcePath)) {
 		modelPart->setCore(true);
@@ -326,14 +314,14 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		subpart = subpart.nextSiblingElement("subpart");
 	}
 
-	if (m_partHash.value(moduleID, NULL)) {
+	if (m_partHash.value(moduleID, nullptr)) {
 		if(!update) {
-			FMessageBox::warning(NULL, QObject::tr("Fritzing"),
+			FMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 			                     QObject::tr("The part '%1' at '%2' does not have a unique module id '%3'.")
 			                     .arg(modelPart->title())
 			                     .arg(path)
 			                     .arg(moduleID));
-			return NULL;
+			return nullptr;
 		} else {
 			m_partHash[moduleID]->copyStuff(modelPart);
 		}
@@ -341,7 +329,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		m_partHash.insert(moduleID, modelPart);
 	}
 
-	if (m_root == NULL) {
+	if (!m_root) {
 		m_root = modelPart;
 	}
 	else {

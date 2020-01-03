@@ -72,7 +72,7 @@ signals:
 protected:
 	virtual void initParts(bool dbExists);
 	void loadParts(bool dbExists);
-	void loadPartsAux(QDir & dir, QStringList & nameFilters, int & loadedPart, int totalParts);
+	int loadPartsAux(const QDir & dir, const QStringList & nameFilters, int partsLoadedSoFar, int totalParts);
 	int countParts(const QDir & dir, const QStringList & nameFilters) const;
 	ModelPart * makeSubpart(ModelPart * originalModelPart, const QDomElement & originalSubparth);
 

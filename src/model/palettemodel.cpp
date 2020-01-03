@@ -131,14 +131,14 @@ void PaletteModel::loadParts(bool dbExists) {
 	int loadingPart = 0;
 	if (m_fullLoad || !dbExists) {
 		// otherwise these will already be in the database
-		loadPartsAux(dir1, nameFilters, loadingPart, totalPartCount);
-		loadPartsAux(dir3, nameFilters, loadingPart, totalPartCount);
+		loadingPart = loadPartsAux(dir1, nameFilters, loadingPart, totalPartCount);
+		loadingPart = loadPartsAux(dir3, nameFilters, loadingPart, totalPartCount);
 	}
 
 	if (!m_fullLoad) {
-		loadPartsAux(dir2, nameFilters, loadingPart, totalPartCount);
+		loadingPart = loadPartsAux(dir2, nameFilters, loadingPart, totalPartCount);
 		if (!s_fzpOverrideFolder.isEmpty()) {
-			loadPartsAux(dir4, nameFilters, loadingPart, totalPartCount);
+			loadingPart = loadPartsAux(dir4, nameFilters, loadingPart, totalPartCount);
 		}
 	}
 }
@@ -157,39 +157,41 @@ int PaletteModel::countParts(const QDir & currentDir, const QStringList & nameFi
     return partCount;
 }
 
-void PaletteModel::loadPartsAux(QDir & dir, QStringList & nameFilters, int & loadingPart, int totalPartCount) {
+int PaletteModel::loadPartsAux(const QDir & currentDirectory, QStringList & nameFilters, int partsLoadedSoFar, int totalPartCount) {
 	//QString temp = dir.absolutePath();
+    int loadingPart = partsLoadedSoFar;
 	QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	for (int i = 0; i < list.size(); ++i) {
-		QFileInfo fileInfo = list.at(i);
-		QString path = fileInfo.absoluteFilePath ();
+    for (auto& fileInfo : list) {
+		auto path = fileInfo.absoluteFilePath();
 		//DebugDialog::debug(QString("part path:%1 core? %2").arg(path).arg(m_loadingCore? "true" : "false"));
-		loadPart(path, false);
+        /// @todo add checks in case the file exists but cannot be opened for
+        /// some reason. Never assume that existence of a file on the fs means
+        /// you are able to open it.
+		loadPart(path, false); 
 		emit loadedPart(++loadingPart, totalPartCount);
 		//DebugDialog::debug("loadedok");
 	}
 
 	QStringList dirs = dir.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-	for (int i = 0; i < dirs.size(); ++i) {
-		QString temp2 = dirs[i];
-		dir.cd(temp2);
-
-		m_loadingContrib = (temp2 == "contrib");
-
-		loadPartsAux(dir, nameFilters, loadingPart, totalPartCount);
-		dir.cdUp();
+    for (const auto& dir : dirs) {
+        QDir childDirectory(currentDirectory);
+        childDirectory.cd(dir);
+		m_loadingContrib = (dir == "contrib");
+        // overwrite the loadingParts count after each invocation of this method
+		loadingPart = loadPartsAux(childDirectory, nameFilters, loadingPart, totalPartCount);
 	}
+    return loadingPart;
 }
 
 ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 
 	QFile file(path);
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
-		FMessageBox::warning(NULL, QObject::tr("Fritzing"),
+		FMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 		                     QObject::tr("Cannot read file %1:\n%2.")
 		                     .arg(path)
 		                     .arg(file.errorString()));
-		return NULL;
+		return nullptr;
 	}
 
 	//DebugDialog::debug(QString("loading %2 %1").arg(path).arg(QTime::currentTime().toString("HH:mm:ss.zzz")));
@@ -204,19 +206,19 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	int errorColumn;
 	QDomDocument domDocument;
 	if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		FMessageBox::information(NULL, QObject::tr("Fritzing"),
+		FMessageBox::information(nullptr, QObject::tr("Fritzing"),
 		                         QObject::tr("Parse error (2) at line %1, column %2:\n%3\n%4")
 		                         .arg(errorLine)
 		                         .arg(errorColumn)
 		                         .arg(errorStr)
 		                         .arg(path));
-		return NULL;
+		return nullptr;
 	}
 
 	QDomElement root = domDocument.documentElement();
 	if (root.isNull()) {
 		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (8)."));
-		return NULL;
+		return nullptr;
 	}
 
 	if (root.tagName() != "module") {

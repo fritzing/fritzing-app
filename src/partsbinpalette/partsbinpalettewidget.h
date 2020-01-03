@@ -74,7 +74,7 @@ public:
 	void load(const QString& filename, QWidget * progressTarget, bool fastLoad);
 
 	bool contains(const QString &moduleID);
-	void setDirty(bool dirty=true);
+	void setDirty(bool dirty = true);
 
 	const QString &fileName();
 
@@ -160,7 +160,7 @@ protected:
 	QString m_untitledFileName;
 
 	QString m_title;
-	bool m_isDirty;
+	bool m_isDirty = false;
 
 	PartsBinView *m_currentView = nullptr;
 	PartsBinIconView *m_iconView = nullptr;

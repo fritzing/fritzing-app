@@ -496,9 +496,6 @@ void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarg
 			m_loadingProgressDialog->setBinLoadingCount(1);
 			m_loadingProgressDialog->setMessage(tr("loading bin '%1'").arg(name));
 			m_loadingProgressDialog->show();
-		}
-
-		if (progressTarget) {
 			connect(paletteBinModel, SIGNAL(loadingInstances(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstancesSlot(ModelBase *, QDomElement &)));
 			connect(paletteBinModel, SIGNAL(loadingInstance(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstanceSlot(ModelBase *, QDomElement &)));
 			connect(m_iconView, SIGNAL(settingItem()), progressTarget, SLOT(settingItemSlot()));

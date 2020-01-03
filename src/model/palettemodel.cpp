@@ -157,10 +157,10 @@ int PaletteModel::countParts(const QDir & currentDir, const QStringList & nameFi
     return partCount;
 }
 
-int PaletteModel::loadPartsAux(const QDir & currentDirectory, QStringList & nameFilters, int partsLoadedSoFar, int totalPartCount) {
+int PaletteModel::loadPartsAux(const QDir & currentDirectory, const QStringList & nameFilters, int partsLoadedSoFar, int totalPartCount) {
 	//QString temp = dir.absolutePath();
     int loadingPart = partsLoadedSoFar;
-	QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+	QFileInfoList list = currentDirectory.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
     for (auto& fileInfo : list) {
 		auto path = fileInfo.absoluteFilePath();
 		//DebugDialog::debug(QString("part path:%1 core? %2").arg(path).arg(m_loadingCore? "true" : "false"));
@@ -172,7 +172,7 @@ int PaletteModel::loadPartsAux(const QDir & currentDirectory, QStringList & name
 		//DebugDialog::debug("loadedok");
 	}
 
-	QStringList dirs = dir.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+	QStringList dirs = currentDirectory.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
     for (const auto& dir : dirs) {
         QDir childDirectory(currentDirectory);
         childDirectory.cd(dir);
@@ -223,13 +223,13 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 
 	if (root.tagName() != "module") {
 		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (9)."));
-		return NULL;
+		return nullptr;
 	}
 
 	moduleID = root.attribute("moduleId");
 	if (moduleID.isNull() || moduleID.isEmpty()) {
 		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (10)."));
-		return NULL;
+		return nullptr;
 	}
 
 	// check if it's a wire

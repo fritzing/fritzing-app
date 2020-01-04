@@ -110,6 +110,7 @@ public:
 	static bool fixMuch(QString &svg, bool fixStrokeWidth);
 	static bool fixMuch(const QString& svg, QDomDocument& svgDom, bool fixStrokeWidth);
     static bool fixMuchAndPixelDimensionsIn(QString& svg, bool fixStrokeWidth);
+    static bool fixMuchAndPixelDimensionsIn(const QString& svg, QDomDocument& svgDom, bool fixStrokeWidth);
 	static bool fixInternalUnits(QString & svg);
 	static bool fixFonts(QString & svg, const QString & destFont, bool & reallyFixed);
 	static void fixStyleAttribute(QDomElement & element);

@@ -1059,20 +1059,21 @@ bool TextUtils::fixMuchAndPixelDimensionsIn(QString& svg, bool fixStrokeWidth) {
     bool result = cleanSodipodi(svg);
     result |= fixInternalUnits(svg);
 	QDomDocument svgDom;
-	QString errorMsg;
-	int errorLine;
-	int errorCol;
-	if(!svgDom.setContent(svg, true, &errorMsg, &errorLine, &errorCol)) {
+	if(!svgDom.setContent(svg, true)) {
 		return result;
 	}
-
-    result |= fixMuch(svg, svgDom, fixStrokeWidth);
-	result |= fixPixelDimensionsIn(svgDom, isIllustratorFile(svg));
+    result |= fixMuchAndPixelDimensionsIn(svg, svgDom, fixStrokeWidth);
 
 	if (result) {
 		svg = removeXMLEntities(svgDom.toString());
 	}
 
+	return result;
+}
+
+bool TextUtils::fixMuchAndPixelDimensionsIn(const QString& svg, QDomDocument& svgDom, bool fixStrokeWidth) {
+    auto result = fixMuch(svg, svgDom, fixStrokeWidth);
+	result |= fixPixelDimensionsIn(svgDom, isIllustratorFile(svg));
 	return result;
 }
 

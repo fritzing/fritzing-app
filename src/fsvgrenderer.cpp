@@ -120,14 +120,6 @@ QByteArray FSvgRenderer::loadAux(const QByteArray & theContents, const LoadInfo 
 	bool cleaned = false;
 
 	QString string(cleanContents);
-#if 0
-	if (TextUtils::fixMuch(string, false)) {
-		cleaned = true;
-	}
-	if (TextUtils::fixPixelDimensionsIn(string)) {
-		cleaned = true;
-	}
-#endif
     cleaned = TextUtils::fixMuchAndPixelDimensionsIn(string, false);
 	if (cleaned) {
 		cleanContents = string.toUtf8();

@@ -1637,7 +1637,7 @@ void PEMainWindow::loadImage()
 			return;
 		}
 	}
-
+    /// @todo hmmm, we are making two copies of this svg's dom, how to fix this...
 	TextUtils::fixMuch(svg, true);
 	insertDesc(newReferenceFile, svg);
 	QString newPath = m_userPartsFolderSvgPath + makeSvgPath2(m_currentGraphicsView);

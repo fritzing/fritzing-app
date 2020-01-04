@@ -7315,13 +7315,12 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem
 			QString itemSvg = itemBase->retrieveSvg(itemBase->viewLayerID(), svgHash, renderThing.blackOnly, renderThing.dpi, factor);
 			if (itemSvg.isEmpty()) continue;
 
-			TextUtils::fixMuch(itemSvg, false);
-
 			QDomDocument doc;
 			QString errorStr;
 			int errorLine;
 			int errorColumn;
 			if (doc.setContent(itemSvg, &errorStr, &errorLine, &errorColumn)) {
+                TextUtils::fixMuch(itemSvg, doc, false);
 				bool changed = false;
 				if (renderThing.renderBlocker) {
 					Pad * pad = qobject_cast<Pad *>(itemBase);

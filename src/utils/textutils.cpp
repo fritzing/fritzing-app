@@ -1041,12 +1041,15 @@ bool TextUtils::fixMuch(QString &svg, bool fixStrokeWidthFlag)
 
 	QDomElement root = svgDom.documentElement();
 	result |= fixViewBox(root);
-
-	QStringList strings;
-	strings << "pattern" << "marker" << "clipPath";
-	foreach (QString string, strings) {
-		if (svg.contains("<" + string)) {
-			result |= noPatternAux(svgDom, string);
+    // only set this table up once 
+    static std::array<std::pair<QString, QString>, 3> lookupTable = {
+        std::make_pair("<pattern", "pattern" ),
+        std::make_pair("<marker", "marker" ),
+        std::make_pair("<clipPath", "clipPath" ),
+    };
+    for (const auto & lookup : lookupTable) {
+		if (svg.contains(lookup.first)) {
+			result |= noPatternAux(svgDom, lookup.second);
 		}
 	}
 

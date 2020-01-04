@@ -543,10 +543,9 @@ bool TextUtils::cleanSodipodi(QString &content)
 	return doc.toByteArray();
 	*/
 }
-
 bool TextUtils::fixPixelDimensionsIn(QString &fileContent) {
-	bool isIllustrator = isIllustratorFile(fileContent);
-	if (!isIllustrator) return false;
+    auto isIllustrator = isIllustratorFile(fileContent);
+    if (!isIllustrator) return false;
 
 	QDomDocument svgDom;
 
@@ -557,16 +556,23 @@ bool TextUtils::fixPixelDimensionsIn(QString &fileContent) {
 		return false;
 	}
 
-	bool fileHasChanged = false;
-
-	if(isIllustrator) {
-		QDomElement elem = svgDom.firstChildElement("svg");
-		fileHasChanged = pxToInches(elem,"width",isIllustrator);
-		fileHasChanged |= pxToInches(elem,"height",isIllustrator);
-	}
+	bool fileHasChanged = fixPixelDimensionsIn(svgDom, isIllustrator);
 
 	if (fileHasChanged) {
 		fileContent = removeXMLEntities(svgDom.toString());
+	}
+
+	return fileHasChanged;
+}
+
+bool TextUtils::fixPixelDimensionsIn(QDomDocument& svgDom, bool isIllustrator) {
+
+	bool fileHasChanged = false;
+
+    if (isIllustrator) {
+		QDomElement elem = svgDom.firstChildElement("svg");
+		fileHasChanged = pxToInches(elem,"width",isIllustrator);
+		fileHasChanged |= pxToInches(elem,"height",isIllustrator);
 	}
 
 	return fileHasChanged;
@@ -975,7 +981,8 @@ bool TextUtils::fixInternalUnits(QString & svg)
 	int iu = 0;
 	int jx = svg.indexOf("<svg");
 	if (jx >= 0) {
-		sw = iu = svg.indexOf(">", jx + 4);
+		sw = svg.indexOf(">", jx + 4);
+        iu = sw;
 	}
 
 	bool firstTime = true;
@@ -1039,8 +1046,41 @@ bool TextUtils::fixMuch(QString &svg, bool fixStrokeWidthFlag)
 		return result;
 	}
 
+	result |= fixMuch(svg, svgDom, fixStrokeWidth);
+
+	if (result) {
+		svg = removeXMLEntities(svgDom.toString());
+	}
+
+	return result;
+}
+
+bool TextUtils::fixMuchAndPixelDimensionsIn(QString& svg, bool fixStrokeWidth) {
+    bool result = cleanSodipodi(svg);
+    result |= fixInternalUnits(svg);
+	QDomDocument svgDom;
+	QString errorMsg;
+	int errorLine;
+	int errorCol;
+	if(!svgDom.setContent(svg, true, &errorMsg, &errorLine, &errorCol)) {
+		return result;
+	}
+
+    result |= fixMuch(svg, svgDom, fixStrokeWidth);
+	result |= fixPixelDimensionsIn(svgDom, isIllustratorFile(svg));
+
+	if (result) {
+		svg = removeXMLEntities(svgDom.toString());
+	}
+
+	return result;
+}
+
+bool TextUtils::fixMuch(const QString& svg, QDomDocument& svgDom, bool fixStrokeWidthFlag)
+{
+
 	QDomElement root = svgDom.documentElement();
-	result |= fixViewBox(root);
+	auto result = fixViewBox(root);
     // only set this table up once 
     static std::array<std::pair<QString, QString>, 3> lookupTable = {
         std::make_pair("<pattern", "pattern" ),
@@ -1066,10 +1106,6 @@ bool TextUtils::fixMuch(QString &svg, bool fixStrokeWidthFlag)
 	}
 
 	result |= elevateTransform(root);
-
-	if (result) {
-		svg = removeXMLEntities(svgDom.toString());
-	}
 
 	return result;
 }

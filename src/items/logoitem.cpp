@@ -363,8 +363,6 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			return;
 		}
 
-		TextUtils::fixMuch(svg, true);
-		TextUtils::fixPixelDimensionsIn(svg);
 
 		QString errorStr;
 		int errorLine;
@@ -376,6 +374,9 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			unableToLoad(fileName, tr("due to an xml problem: %1 line:%2 column:%3").arg(errorStr).arg(errorLine).arg(errorColumn));
 			return;
 		}
+        // if we can't even open the dom then there is no point in modifying it
+        // dump the svg output later on
+        TextUtils::fixMuchAndPixelDimensionsIn(svg, domDocument, true);
 
 		QDomElement root = domDocument.documentElement();
 		if (root.isNull()) {

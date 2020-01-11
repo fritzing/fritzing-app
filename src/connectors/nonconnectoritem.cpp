@@ -46,12 +46,6 @@ NonConnectorItem::NonConnectorItem(ItemBase * attachedTo)
 	setFlag(QGraphicsItem::ItemIsFocusable, false);
 }
 
-
-bool NonConnectorItem::doNotPaint() const noexcept {
-	return (m_hidden || m_inactive || !m_paint || m_layerHidden);
-}
-
-
 void NonConnectorItem::paint( QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget ) {
 
 	if (doNotPaint()) return;

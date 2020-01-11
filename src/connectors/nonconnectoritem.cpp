@@ -47,10 +47,6 @@ NonConnectorItem::NonConnectorItem(ItemBase * attachedTo)
 }
 
 
-ItemBase * NonConnectorItem::attachedTo() {
-	return m_attachedTo;
-}
-
 bool NonConnectorItem::doNotPaint() const noexcept {
 	return (m_hidden || m_inactive || !m_paint || m_layerHidden);
 }
@@ -134,26 +130,14 @@ void NonConnectorItem::setHidden(bool hide) {
 	this->update();
 }
 
-bool NonConnectorItem::hidden() const {
-	return m_hidden;
-}
-
 void NonConnectorItem::setLayerHidden(bool hide) {
 	m_layerHidden = hide;
 	this->update();
 }
 
-bool NonConnectorItem::layerHidden() const {
-	return m_layerHidden;
-}
-
 void NonConnectorItem::setInactive(bool inactivate) {
 	m_inactive = inactivate;
 	this->update();
-}
-
-bool NonConnectorItem::inactive() const {
-	return m_inactive;
 }
 
 long NonConnectorItem::attachedToID() {
@@ -183,18 +167,6 @@ void NonConnectorItem::setRadius(double radius, double strokeWidth) {
 
 void NonConnectorItem::setIsPath(bool path) {
 	m_isPath = path;
-}
-
-bool NonConnectorItem::isPath() const {
-	return m_isPath;
-}
-
-double NonConnectorItem::radius() const {
-	return m_radius;
-}
-
-double NonConnectorItem::strokeWidth() const {
-	return m_strokeWidth;
 }
 
 QPainterPath NonConnectorItem::shape() const

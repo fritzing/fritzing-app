@@ -60,7 +60,7 @@ public:
 	int attachedToItemType();
 
 protected:
-	bool doNotPaint();
+	bool doNotPaint() const noexcept;
 
 	enum Effectively {
 		EffectivelyCircular = 1,

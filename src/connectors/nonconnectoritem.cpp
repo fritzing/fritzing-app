@@ -37,17 +37,7 @@ constexpr double EffectiveAdjustmentFactor = 5.0 / 15.0;
 
 NonConnectorItem::NonConnectorItem(ItemBase * attachedTo) 
 	: QGraphicsRectItem(attachedTo),
-	m_attachedTo(attachedTo),
-	m_hidden(false),
-	m_inactive(false),
-	m_paint(false),
-	m_opacity(0.0),
-	m_effectively(Effectively::EffectivelyUnknown),
-	m_radius(0),
-	m_strokeWidth(0),
-	m_negativeOffsetRect(false),
-	m_shape(),
-	m_isPath(false)
+	m_attachedTo(attachedTo)
 {
 	setAcceptHoverEvents(false);
 	setAcceptedMouseButtons(Qt::NoButton);
@@ -61,7 +51,7 @@ ItemBase * NonConnectorItem::attachedTo() {
 	return m_attachedTo;
 }
 
-bool NonConnectorItem::doNotPaint() {
+bool NonConnectorItem::doNotPaint() const noexcept {
 	return (m_hidden || m_inactive || !m_paint || m_layerHidden);
 }
 

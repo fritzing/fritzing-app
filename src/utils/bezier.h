@@ -32,7 +32,7 @@ class Bezier
 public:
 	Bezier(QPointF cp1, QPointF cp2);
 	Bezier();
-
+    Bezier(const Bezier&);
 	constexpr const QPointF& cp0() const { return m_cp0; }
 	constexpr const QPointF& cp1() const { return m_cp1; }
 	constexpr const QPointF& endpoint0() const { return m_endpoint0; }

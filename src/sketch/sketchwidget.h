@@ -236,7 +236,7 @@ public:
 	class SelectItemCommand* stackSelectionState(bool pushIt, QUndoCommand * parentCommand);
 	QString renderToSVG(RenderThing &, QGraphicsItem * board, const LayerList &);
 
-	bool spaceBarIsPressed();
+	constexpr bool spaceBarIsPressed() const noexcept { return m_spaceBarIsPressed || m_middleMouseIsPressed; }
 	virtual long setUpSwap(SwapThing &, bool master);
 	ConnectorItem * lastHoverEnterConnectorItem();
 	ItemBase * lastHoverEnterItem();

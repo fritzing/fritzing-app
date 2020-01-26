@@ -7437,11 +7437,11 @@ void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
 
 	if (m_showGrid) {
 		double gridSize = m_gridSizeInches * GraphicsUtils::SVGDPI;
-		int intGridSize = int(gridSize * 10000);
+		int intGridSize = static_cast<int>(gridSize * 10000);
 		if (intGridSize > 0) {
-			double left = int(rect.left() * 10000) - (int(rect.left() * 10000) % intGridSize);
+			double left = static_cast<int>(rect.left() * 10000) - (static_cast<int>(rect.left() * 10000) % intGridSize);
 			left /= 10000;
-			double top = int(rect.top() * 10000) - (int(rect.top() * 10000) % intGridSize);
+			double top = static_cast<int>(rect.top() * 10000) - (static_cast<int>(rect.top() * 10000) % intGridSize);
 			top /= 10000;
 
 			QVarLengthArray<QLineF, 100> linesX;
@@ -7493,9 +7493,6 @@ void SketchWidget::pushCommand(QUndoCommand * command, QObject * thing) {
 	}
 }
 
-bool SketchWidget::spaceBarIsPressed() {
-	return m_spaceBarIsPressed || m_middleMouseIsPressed;
-}
 
 ViewLayer::ViewLayerID SketchWidget::defaultConnectorLayer(ViewLayer::ViewID viewId) {
 	switch(viewId) {

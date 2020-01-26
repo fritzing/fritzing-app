@@ -121,18 +121,6 @@ QPointF GraphicsUtils::calcConstraint(QPointF initial, QPointF current) {
 	return result;
 }
 
-double GraphicsUtils::mm2pixels(double mm) {
-	return (90 * mm / 25.4);
-}
-
-double GraphicsUtils::pixels2mm(double p, double dpi) {
-	return (p / dpi * 25.4);
-}
-
-double GraphicsUtils::mils2pixels(double m, double dpi) {
-	return (dpi * m / 1000);
-}
-
 void GraphicsUtils::saveTransform(QXmlStreamWriter & streamWriter, const QTransform & transform) {
 	if (transform.isIdentity()) return;
 

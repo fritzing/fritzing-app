@@ -60,9 +60,15 @@ public:
 	static constexpr double mm2mils(double mm) noexcept {
 	    return (mm / 25.4 * 1000);
     }
-	static double pixels2mm(double p, double dpi);
-	static double mm2pixels(double mm);
-	static double mils2pixels(double m, double dpi);
+	static constexpr double pixels2mm(double p, double dpi) noexcept {
+	    return (p / dpi * 25.4);
+    }
+	static constexpr double mm2pixels(double mm) noexcept {
+	    return (90 * mm / 25.4);
+    }
+	static constexpr double mils2pixels(double m, double dpi) noexcept {
+	    return (dpi * m / 1000);
+    }
 	static void saveTransform(QXmlStreamWriter & streamWriter, const QTransform & transform);
 	static bool loadTransform(const QDomElement & transformElement, QTransform & transform);
 	static bool isRect(const QPolygonF & poly);

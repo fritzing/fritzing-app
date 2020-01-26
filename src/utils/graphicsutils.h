@@ -57,7 +57,9 @@ public:
     }
 	static double getNearestOrdinate(double ordinate, double units);
 
-	static double mm2mils(double mm);
+	static constexpr double mm2mils(double mm) noexcept {
+	    return (mm / 25.4 * 1000);
+    }
 	static double pixels2mm(double p, double dpi);
 	static double mm2pixels(double mm);
 	static double mils2pixels(double m, double dpi);

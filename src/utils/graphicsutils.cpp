@@ -121,14 +121,6 @@ QPointF GraphicsUtils::calcConstraint(QPointF initial, QPointF current) {
 	return result;
 }
 
-double GraphicsUtils::pixels2mils(double p, double dpi) {
-	return p * 1000.0 / dpi;
-}
-
-double GraphicsUtils::pixels2ins(double p, double dpi) {
-	return p / dpi;
-}
-
 double GraphicsUtils::distanceSqd(QPointF p1, QPointF p2) {
 	return ((p1.x() - p2.x()) * (p1.x() - p2.x())) + ((p1.y() - p2.y()) * (p1.y() - p2.y()));
 }

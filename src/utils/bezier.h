@@ -24,15 +24,19 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPointF>
 #include <QDomElement>
 #include <QXmlStreamWriter>
+#include <tuple>
 
 // cubic bezier auxiliary implementation
 
 class Bezier
 {
 public:
+    using SplitBezier = std::tuple<Bezier, Bezier>;
+public:
 	Bezier(QPointF cp1, QPointF cp2);
 	Bezier();
     Bezier(const Bezier&);
+    Bezier(QPointF endpoint0, QPointF endpoint1, QPointF cp0, QPointF cp1) noexcept;
 	constexpr const QPointF& cp0() const { return m_cp0; }
 	constexpr const QPointF& cp1() const { return m_cp1; }
 	constexpr const QPointF& endpoint0() const { return m_endpoint0; }
@@ -48,9 +52,10 @@ public:
 	void recalc(QPointF p);
 	void initToEnds(QPointF cp0, QPointF cp1);
 	double xFromT(double t) const noexcept;
-	double xFromTPrime(double t) const;
-	double yFromT(double t) const;
-	void split(double t, Bezier & left, Bezier & right) const;
+	double xFromTPrime(double t) const noexcept;
+	double yFromT(double t) const noexcept;
+	void split(double t, Bezier & left, Bezier & right) const noexcept;
+    SplitBezier split(double t) const noexcept;
 	void initControlIndex(QPointF fromPoint, double width);
 	double computeCubicCurveLength(double z, int n) const;
 	void copy(const Bezier *);

@@ -2198,6 +2198,11 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 	return true;
 }
 
+bool SketchWidget::spaceBarIsPressed() noexcept {
+    // this should be const and constexpr but causes the compiler to optimize incorrectly
+    // and prevents middle clicking to scroll from working correctly
+    return m_spaceBarIsPressed || m_middleMouseIsPressed;
+}
 
 void SketchWidget::mousePressEvent(QMouseEvent *event)
 {

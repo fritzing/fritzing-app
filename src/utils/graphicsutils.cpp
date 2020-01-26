@@ -86,16 +86,14 @@ QPointF GraphicsUtils::calcConstraint(QPointF initial, QPointF current) {
     std::vector<PD> pds;
     pds.emplace_back(current.x(), initial.y(), (current.y() - initial.y()) * (current.y() - initial.y()));
     pds.emplace_back(initial.x(), initial.y(), (current.x() - initial.x()) * (current.x() - initial.x()));
-	double dx, dy, d;
-	bool atEndpoint;
 
 	QLineF plus45(initial.x() - 10000, initial.y() - 10000, initial.x() + 10000, initial.y() + 10000);
-	distanceFromLine(current.x(), current.y(), plus45.p1().x(), plus45.p1().y(), plus45.p2().x(), plus45.p2().y(), dx, dy, d, atEndpoint);
-    pds.emplace_back(dx, dy, d);
+    auto dl0 = distanceFromLine(current.x(), current.y(), plus45.p1().x(), plus45.p1().y(), plus45.p2().x(), plus45.p2().y());
+    pds.emplace_back(std::get<0>(dl0), std::get<1>(dl0), std::get<2>(dl0));
 
 	QLineF minus45(initial.x() + 10000, initial.y() - 10000, initial.x() - 10000, initial.y() + 10000);
-	distanceFromLine(current.x(), current.y(), minus45.p1().x(), minus45.p1().y(), minus45.p2().x(), minus45.p2().y(), dx, dy, d, atEndpoint);
-    pds.emplace_back(dx, dy, d);
+	auto dl1 = distanceFromLine(current.x(), current.y(), minus45.p1().x(), minus45.p1().y(), minus45.p2().x(), minus45.p2().y());
+    pds.emplace_back(std::get<0>(dl1), std::get<1>(dl1), std::get<2>(dl1));
 
     std::sort(pds.begin(), pds.end());
 	QPointF result = pds.front().p;

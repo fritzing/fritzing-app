@@ -101,8 +101,6 @@ QBrush ItemBase::UnconnectedBrush(StandardUnconnectedColor);
 QBrush ItemBase::ChosenBrush(QColor(255,0,0));
 QBrush ItemBase::EqualPotentialBrush(QColor(255,255,0));
 
-constexpr double ItemBase::NormalConnectorOpacity = 0.4;
-
 static QHash<QString, QStringList> CachedValues;
 
 ///////////////////////////////////////////////////
@@ -110,18 +108,17 @@ static QHash<QString, QStringList> CachedValues;
 ItemBase::ItemBase( ModelPart* modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu )
 	: QGraphicsSvgItem(),
     m_id(id),
+    m_viewGeometry(viewGeometry),
     m_modelPart(modelPart),
     m_viewID(viewID),
     m_itemMenu(itemMenu)
 {
 	//DebugDialog::debug(QString("itembase %1 %2").arg(id).arg((long) static_cast<QGraphicsItem *>(this), 0, 16));
-
 	if (m_modelPart) {
 		m_modelPart->addViewItem(this);
 	}
 	setCursor(*CursorMaster::MoveCursor);
 
-	m_viewGeometry.set(viewGeometry);
 	setAcceptHoverEvents ( true );
 }
 

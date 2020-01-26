@@ -267,7 +267,7 @@ protected:
 	static QBrush UnconnectedBrush;
 	static QBrush ChosenBrush;
 	static QBrush EqualPotentialBrush;
-	static const double NormalConnectorOpacity;
+	static constexpr double NormalConnectorOpacity = 0.4;
 
 public:
 	static QColor connectedColor();
@@ -348,7 +348,7 @@ protected:
 
 protected:
 	QSizeF m_size;
-	qint64 m_id;
+	qint64 m_id = 0;
 	ViewGeometry m_viewGeometry;
 	QPointer<ModelPart> m_modelPart;
 	ViewLayer::ViewID m_viewID;
@@ -361,7 +361,7 @@ protected:
 	bool m_inactive = false;
 	bool m_sticky = false;
 	QHash< long, QPointer<ItemBase> > m_stickyList;
-	QMenu *m_itemMenu;
+	QMenu *m_itemMenu = nullptr;
 	bool m_canFlipHorizontal = false;
 	bool m_canFlipVertical = false;
 	bool m_zUninitialized = true;

@@ -214,14 +214,6 @@ qint64 ItemBase::getNextID(qint64 index) {
 	return temp;
 }
 
-QSizeF ItemBase::size() {
-	return m_size;
-}
-
-qint64 ItemBase::id() const {
-	return m_id;
-}
-
 void ItemBase::resetID() {
 	m_id = m_modelPart->modelIndex() * ModelPart::indexMultiplier;
 }
@@ -559,18 +551,6 @@ void ItemBase::updateHidden() {
 	setAcceptedMouseButtons(m_hidden || m_inactive || m_layerHidden ? Qt::NoButton : ALLMOUSEBUTTONS);
 	setAcceptHoverEvents(!(m_hidden || m_inactive || m_layerHidden));
 	update();
-}
-
-bool ItemBase::hidden() {
-	return m_hidden;
-}
-
-bool ItemBase::layerHidden() {
-	return m_layerHidden;
-}
-
-bool ItemBase::inactive() {
-	return m_inactive;
 }
 
 void ItemBase::collectConnectors(ConnectorPairHash & connectorHash, SkipCheckFunction skipCheckFunction) {

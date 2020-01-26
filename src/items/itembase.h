@@ -51,7 +51,15 @@ class ReferenceModel;
 
 using ConnectorPairHash = QMultiHash<ConnectorItem*, ConnectorItem*>;
 using SkipCheckFunction = bool(ConnectorItem*);
-
+class ModelPartShared;
+class ModelPart;
+class Bus;
+class Wire;
+class PartLabel;
+class FSvgRenderer;
+class LayerAttributes;
+class Connector;
+class ReferenceModel;
 class ItemBase : public QGraphicsSvgItem
 {
 	Q_OBJECT
@@ -67,14 +75,14 @@ public:
 	ItemBase(ModelPart*, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu);
 	virtual ~ItemBase();
 
-	qint64 id() const;
+	constexpr qint64 id() const noexcept { return m_id; }
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	double z();
 	virtual void saveGeometry() = 0;
 	ViewGeometry & getViewGeometry();
 	ViewGeometry::WireFlags wireFlags() const;
 	virtual bool itemMoved() = 0;
-	QSizeF size();
+	constexpr QSizeF size() const noexcept { return m_size; }
 	ModelPart * modelPart();
 	void setModelPart(ModelPart *);
 	ModelPartShared * modelPartShared();
@@ -101,10 +109,10 @@ public:
 	virtual void busConnectorItems(Bus * bus, ConnectorItem *, QList<ConnectorItem *> & items);
 	virtual void setHidden(bool hidden);
 	virtual void setLayerHidden(bool hidden);
-	bool hidden();
-	bool layerHidden();
+	constexpr bool hidden() const noexcept { return m_hidden; }
+	constexpr bool layerHidden() const noexcept { return m_layerHidden; }
 	virtual void setInactive(bool inactivate);
-	bool inactive();
+	constexpr bool inactive() const noexcept { return m_inactive; }
 	ConnectorItem * findConnectorItemWithSharedID(const QString & connectorID, ViewLayer::ViewLayerPlacement);
 	ConnectorItem * findConnectorItemWithSharedID(const QString & connectorID);
 	void updateConnections(ConnectorItem *, bool includeRatsnest, QList<ConnectorItem *> & already);

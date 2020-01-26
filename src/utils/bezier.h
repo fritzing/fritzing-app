@@ -57,9 +57,9 @@ public:
 	void split(double t, Bezier & left, Bezier & right) const noexcept;
     SplitBezier split(double t) const noexcept;
 	void initControlIndex(QPointF fromPoint, double width);
-	double computeCubicCurveLength(double z, int n) const;
+	double computeCubicCurveLength(double z, int n) const noexcept;
 	void copy(const Bezier *);
-	double findSplit(QPointF p, double minDistance) const;
+	double findSplit(QPointF p, double minDistance) const noexcept;
 	void translateToZero();
 	void translate(QPointF);
 	Bezier join(const Bezier * other) const;

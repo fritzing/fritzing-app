@@ -212,20 +212,16 @@ void Bezier::write(QXmlStreamWriter & streamWriter)
 
 bool Bezier::operator==(const Bezier & other) const
 {
-	if (m_isEmpty != other.isEmpty()) return false;
-	if (m_cp0 != other.cp0()) return false;
-	if (m_cp1 != other.cp1()) return false;
-
-	return true;
+    return (m_isEmpty == other.isEmpty()) &&
+           (m_cp0 == other.cp0()) &&
+           (m_cp1 == other.cp1());
 }
 
 bool Bezier::operator!=(const Bezier & other) const
 {
-	if (m_isEmpty != other.isEmpty()) return true;
-	if (m_cp0 != other.cp0()) return true;
-	if (m_cp1 != other.cp1()) return true;
-
-	return false;
+    return (m_isEmpty != other.isEmpty()) &&
+           (m_cp0 != other.cp0()) &&
+           (m_cp1 != other.cp1());
 }
 
 void Bezier::recalc(QPointF p)
@@ -310,13 +306,15 @@ void Bezier::split(double t, Bezier & left, Bezier & right) const noexcept
 
 	// we now have all the values we need to build the subcurves
 	left.m_endpoint0 = m_endpoint0;
+    left.m_endpoint1 = p10;
 	left.m_cp0 = p5;
 	left.m_cp1 = p8;
-	right.m_endpoint0 = left.m_endpoint1 = p10;
+	right.m_endpoint0 = p10;
 	right.m_cp0 = p9;
 	right.m_cp1 = p7;
 	right.m_endpoint1 = m_endpoint1;
-	left.m_isEmpty = right.m_isEmpty = false;
+    left.m_isEmpty = false;
+    right.m_isEmpty = false;
 }
 Bezier::SplitBezier Bezier::split(double t) const noexcept 
 {
@@ -350,7 +348,7 @@ void Bezier::initControlIndex(QPointF p, double width)
 /**
  * Gauss quadrature for cubic Bezier curves
  */
-double Bezier::computeCubicCurveLength(double z, int n) const
+double Bezier::computeCubicCurveLength(double z, int n) const noexcept
 {
 	// http://processingjs.nihongoresources.com/bezierinfo/sketchsource.php?sketch=cubicGaussQuadrature
 

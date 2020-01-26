@@ -26,14 +26,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <qmath.h>
 #include <QtDebug>
 
-const double GraphicsUtils::IllustratorDPI = 72;
-const double GraphicsUtils::StandardFritzingDPI = 1000;
-const double GraphicsUtils::SVGDPI = 90;
-const double GraphicsUtils::InchesPerMeter = 39.370078;
-const double GraphicsUtils::StandardSchematicSeparationMils = 295.275591;   // 7.5mm
-const double GraphicsUtils::StandardSchematicSeparation10thinMils = 100;   // 0.1 inches
-
-
 void GraphicsUtils::distanceFromLine(double cx, double cy, double ax, double ay, double bx, double by,
                                      double & dx, double & dy, double &distanceSegment, bool & atEndpoint)
 {

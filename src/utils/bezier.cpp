@@ -128,6 +128,17 @@ Bezier::Bezier(QPointF cp0, QPointF cp1) : m_cp0(cp0), m_cp1(cp1), m_isEmpty(fal
 
 Bezier::Bezier() : m_isEmpty(true) { }
 
+Bezier::Bezier(const Bezier& other) : 
+    m_endpoint0(other.m_endpoint0),
+    m_endpoint1(other.m_endpoint1),
+    m_cp0(other.m_cp0),
+    m_cp1(other.m_cp1),
+    m_isEmpty(other.m_isEmpty),
+    m_drag_cp0(other.m_drag_cp0) 
+{
+
+}
+
 void Bezier::clear()
 {
 	m_isEmpty = true;
@@ -334,7 +345,7 @@ double Bezier::cubicF(double t) const noexcept
 
 void Bezier::copy(const Bezier * other)
 {
-	if (other == NULL) {
+	if (!other) {
 		m_isEmpty = true;
 		return;
 	}

@@ -42,13 +42,19 @@ const QColor SectionHeaderColor(80, 80, 80);
 #define SINGULAR_OFFSET 3
 #define PLURAL_OFFSET 2
 
-static QPixmap * PluralImage = NULL;
-static QPixmap * SingularImage = NULL;
+static QPixmap * PluralImage = nullptr;
+static QPixmap * SingularImage = nullptr;
 
 ////////////////////////////////////////////////////////////
 
 SvgIconPixmapItem::SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent) : QGraphicsPixmapItem(pixmap, parent)
 {
+}
+
+SvgIconPixmapItem::SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent, bool plural) : QGraphicsPixmapItem(pixmap, parent), m_plural(plural)
+{
+    setFlags(0);
+    setPos(0,0);
 }
 
 void  SvgIconPixmapItem::setPlural(bool plural) {
@@ -104,40 +110,34 @@ SvgIconWidget::SvgIconWidget(ModelPart * modelPart, ViewLayer::ViewID viewID, It
 }
 
 void SvgIconWidget::initNames() {
-	if (PluralImage == NULL) {
+	if (!PluralImage) {
 		PluralImage = new QPixmap(":/resources/images/icons/parts_plural_v3_plur.png");
 	}
-	if (SingularImage == NULL) {
+	if (!SingularImage) {
 		SingularImage = new QPixmap(":/resources/images/icons/parts_plural_v3_sing.png");
 	}
-}
-
-SvgIconWidget::~SvgIconWidget() {
-	//delete m_itemBase;  // these are now shared
 }
 
 void SvgIconWidget::cleanup() {
 	if (PluralImage) {
 		delete PluralImage;
-		PluralImage = NULL;
+		PluralImage = nullptr;
 	}
 	if (SingularImage) {
 		delete SingularImage;
-		SingularImage = NULL;
+		SingularImage = nullptr;
 	}
 }
 
-ItemBase *SvgIconWidget::itemBase() const {
+ItemBase *SvgIconWidget::itemBase() const noexcept {
 	return m_itemBase;
 }
 
-ModelPart *SvgIconWidget::modelPart() const {
-	return m_itemBase->modelPart();
+ModelPart *SvgIconWidget::modelPart() const noexcept {
+    if (m_itemBase) return m_itemBase->modelPart();
+    return nullptr;
 }
 
-const QString &SvgIconWidget::moduleID() const {
-	return m_moduleId;
-}
 
 void SvgIconWidget::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) {
 	QGraphicsWidget::hoverEnterEvent(event);
@@ -194,7 +194,7 @@ void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 	m_itemBase->initLayerAttributes(layerAttributes, viewID, ViewLayer::Icon, ViewLayer::NewTop, false, false);
 	ModelPart * modelPart = m_itemBase->modelPart();
 	FSvgRenderer * renderer = m_itemBase->setUpImage(modelPart, layerAttributes);
-	if (renderer == NULL) {
+	if (!renderer) {
 		DebugDialog::debug(QString("missing renderer for icon %1").arg(modelPart->moduleID()));
 	}
 	if (renderer && m_itemBase) {
@@ -202,7 +202,7 @@ void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 	}
 
 	QPixmap pixmap(plural ? *PluralImage : *SingularImage);
-	QPixmap * icon = (renderer == NULL) ? NULL : FSvgRenderer::getPixmap(renderer, QSize(ICON_SIZE, ICON_SIZE));
+	QPixmap * icon = (!renderer) ? nullptr : FSvgRenderer::getPixmap(renderer, QSize(ICON_SIZE, ICON_SIZE));
 	if (icon) {
 		QPainter painter;
 		painter.begin(&pixmap);
@@ -216,11 +216,8 @@ void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 		delete icon;
 	}
 
-	m_pixmapItem = new SvgIconPixmapItem(pixmap, this);
-	m_pixmapItem->setPlural(plural);
-
-	m_pixmapItem->setFlags(0);
-	m_pixmapItem->setPos(0, 0);
+    /// @todo make sure this doesn't leak if this function is called multiple times on the same object.
+	m_pixmapItem = new SvgIconPixmapItem(pixmap, this, plural);
 
 	if (m_itemBase) {
 		m_itemBase->setTooltip();

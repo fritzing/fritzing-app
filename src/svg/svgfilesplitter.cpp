@@ -49,10 +49,6 @@ void appendPair(QString & path, double a1, double a2) {
 
 //////////////////////////////////////////////////
 
-SvgFileSplitter::SvgFileSplitter()
-{
-}
-
 bool SvgFileSplitter::split(const QString & filename, const QString & elementID)
 {
 	m_byteArray.clear();
@@ -160,14 +156,6 @@ bool SvgFileSplitter::splitString(QString & contents, const QString & elementID)
 	//DebugDialog::debug(s);
 
 	return true;
-}
-
-const QByteArray & SvgFileSplitter::byteArray() {
-	return m_byteArray;
-}
-
-const QDomDocument & SvgFileSplitter::domDocument() {
-	return m_domDocument;
 }
 
 QString SvgFileSplitter::elementString(const QString & elementID) {
@@ -1254,7 +1242,7 @@ bool SvgFileSplitter::shiftAttribute(QDomElement & element, const char * attribu
 	return true;
 }
 
-bool SvgFileSplitter::load(const QString string)
+bool SvgFileSplitter::load(const QString& string)
 {
 	QString errorStr;
 	int errorLine;

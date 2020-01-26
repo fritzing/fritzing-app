@@ -69,38 +69,6 @@ static QSvgRenderer StickyRenderer;
 
 /////////////////////////////////
 
-#if 0
-class NameTriple {
-
-public:
-	NameTriple(const QString & _xmlName, const QString & _viewName, const QString & _naturalName) : 
-        m_xmlName(_xmlName),  
-        m_viewName(_viewName),
-        m_naturalName(_naturalName)
-    {
-	}
-
-	QString & xmlName() {
-		return m_xmlName;
-	}
-
-	QString & viewName() {
-		return m_viewName;
-	}
-
-	QString & naturalName() {
-		return m_naturalName;
-	}
-
-protected:
-	QString m_xmlName;
-	QString m_naturalName;
-	QString m_viewName;
-};
-#endif
-
-/////////////////////////////////
-
 const QString ItemBase::ITEMBASE_FONT_PREFIX = "<font size='2'>";
 const QString ItemBase::ITEMBASE_FONT_SUFFIX = "</font>";
 

@@ -139,6 +139,16 @@ Bezier::Bezier(const Bezier& other) :
 
 }
 
+Bezier::Bezier(QPointF endpoint0, QPointF endpoint1, QPointF cp0, QPointF cp1) noexcept :
+    m_endpoint0(endpoint0),
+    m_endpoint1(endpoint1),
+    m_cp0(cp0),
+    m_cp1(cp1),
+    m_isEmpty(false)
+{
+
+}
+
 void Bezier::clear()
 {
 	m_isEmpty = true;
@@ -269,20 +279,20 @@ double Bezier::xFromT(double t) const noexcept
 	return m_endpoint0.x() * B0(t) + m_cp0.x() * B1(t) + m_cp1.x() * B2(t) + m_endpoint1.x() * B3(t);
 }
 
-double Bezier::xFromTPrime(double t) const
+double Bezier::xFromTPrime(double t) const noexcept
 {
 	return base3(t, m_endpoint0.x(), m_cp0.x(), m_cp1.x(), m_endpoint1.x());
 
 }
 
-double Bezier::yFromT(double t) const
+double Bezier::yFromT(double t) const noexcept
 {
 	// http://www.lemoda.net/maths/bezier-length/index.html
 
 	return m_endpoint0.y() * B0(t) + m_cp0.y() * B1(t) + m_cp1.y() * B2(t) + m_endpoint1.y() * B3(t);
 }
 
-void Bezier::split(double t, Bezier & left, Bezier & right) const
+void Bezier::split(double t, Bezier & left, Bezier & right) const noexcept
 {
 	// http://processingjs.nihongoresources.com/bezierinfo/sketchsource.php?sketch=CubicDeCasteljau
 
@@ -308,6 +318,24 @@ void Bezier::split(double t, Bezier & left, Bezier & right) const
 	right.m_endpoint1 = m_endpoint1;
 	left.m_isEmpty = right.m_isEmpty = false;
 }
+Bezier::SplitBezier Bezier::split(double t) const noexcept 
+{
+	QPointF p5((1-t)*m_endpoint0.x() + t*m_cp0.x(), (1-t)*m_endpoint0.y() + t*m_cp0.y());
+	QPointF p6((1-t)*m_cp0.x() + t*m_cp1.x(), (1-t)*m_cp0.y() + t*m_cp1.y());
+	QPointF p7((1-t)*m_cp1.x() + t*m_endpoint1.x(), (1-t)*m_cp1.y() + t*m_endpoint1.y());
+
+	// interpolate from 3 to 2 points
+	QPointF p8((1-t)*p5.x() + t*p6.x(), (1-t)*p5.y() + t*p6.y());
+	QPointF p9((1-t)*p6.x() + t*p7.x(), (1-t)*p6.y() + t*p7.y());
+
+	// interpolate from 2 points to 1 point
+	QPointF p10((1-t)*p8.x() + t*p9.x(), (1-t)*p8.y() + t*p9.y());
+
+    return std::make_tuple<Bezier, Bezier>({m_endpoint0, p10, p5, p8} /* left */,
+                                           {p10, m_endpoint1, p9, p7} /* right */);
+}
+
+
 
 void Bezier::initControlIndex(QPointF p, double width)
 {

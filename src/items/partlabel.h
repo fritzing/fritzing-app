@@ -85,28 +85,28 @@ protected:
 
 protected:
 	QPointer<class ItemBase> m_owner;
-	bool m_initialized;
-	bool m_spaceBarWasPressed;
-	bool m_doDrag;
+	bool m_initialized = false;
+	bool m_spaceBarWasPressed = false;
+	bool m_doDrag = false;
 	QPointF m_initialPosition;
 	QPointF m_initialOffset;
 	QPointF m_offset;
-	ViewLayer::ViewLayerID m_viewLayerID;
-	bool m_hidden;
-	bool m_inactive;
+	ViewLayer::ViewLayerID m_viewLayerID = ViewLayer::UnknownLayer;
+	bool m_hidden = false;
+	bool m_inactive = false;
 	QMenu m_menu;
 	QString m_text;
 	QString m_displayText;
 	QStringList m_displayKeys;
-	QAction * m_tinyAct;
-	QAction * m_smallAct;
-	QAction * m_mediumAct;
-	QAction * m_largeAct;
-	QAction * m_labelAct;
+	QAction * m_tinyAct = nullptr;
+	QAction * m_smallAct = nullptr;
+	QAction * m_mediumAct = nullptr;
+	QAction * m_largeAct = nullptr;
+	QAction * m_labelAct = nullptr;
 	QList<QAction *> m_displayActs;
 	QColor m_color;
 	QFont m_font;
-	QSvgRenderer * m_renderer;
+	QSvgRenderer * m_renderer = nullptr;
 };
 
 #endif

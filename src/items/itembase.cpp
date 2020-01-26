@@ -57,7 +57,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 static QRegExp NumberMatcher;
 static QHash<QString, double> NumberMatcherValues;
 
-static const double InactiveOpacity = 0.4;
+static constexpr double InactiveOpacity = 0.4;
 
 bool numberValueLessThan(QString v1, QString v2)
 {
@@ -69,13 +69,15 @@ static QSvgRenderer StickyRenderer;
 
 /////////////////////////////////
 
+#if 0
 class NameTriple {
 
 public:
-	NameTriple(const QString & _xmlName, const QString & _viewName, const QString & _naturalName) {
-		m_xmlName = _xmlName;
-		m_viewName = _viewName;
-		m_naturalName = _naturalName;
+	NameTriple(const QString & _xmlName, const QString & _viewName, const QString & _naturalName) : 
+        m_xmlName(_xmlName),  
+        m_viewName(_viewName),
+        m_naturalName(_naturalName)
+    {
 	}
 
 	QString & xmlName() {
@@ -95,6 +97,7 @@ protected:
 	QString m_naturalName;
 	QString m_viewName;
 };
+#endif
 
 /////////////////////////////////
 
@@ -975,7 +978,7 @@ void ItemBase::setInstanceTitleAux(const QString &title, bool initial)
 	setInstanceTitleTooltip(title);
 
 //	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-//	if (infographics != nullptr) {
+//	if (infographics ) {
 //		infographics->setItemTooltip(this, title);
 //	}
 }
@@ -2032,7 +2035,7 @@ FSvgRenderer * ItemBase::fsvgRenderer() const {
 	if (m_fsvgRenderer) return m_fsvgRenderer;
 
 	FSvgRenderer * f = qobject_cast<FSvgRenderer *>(renderer());
-    if (!f) {
+	if (!f) {
 		DebugDialog::debug("shouldn't happen: missing fsvgRenderer");
 	}
 	return f;

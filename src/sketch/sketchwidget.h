@@ -179,7 +179,7 @@ public:
 
 	ItemCount calcItemCount();
 
-	ViewLayer::ViewID viewID();
+	constexpr ViewLayer::ViewID viewID() const noexcept { return m_viewID; }
 	void setViewLayerIDs(ViewLayer::ViewLayerID part, ViewLayer::ViewLayerID wire, ViewLayer::ViewLayerID connector, ViewLayer::ViewLayerID ruler, ViewLayer::ViewLayerID note);
 	void stickem(long stickTargetID, long stickSourceID, bool stick);
 	void stickyScoop(ItemBase * stickyOne, bool checkCurrent, CheckStickyCommand *);
@@ -216,7 +216,7 @@ public:
 	const QString &selectedModuleID();
 	virtual bool canDeleteItem(QGraphicsItem * item, int count);
 	virtual bool canCopyItem(QGraphicsItem * item, int count);
-	const QString & viewName();
+	constexpr const QString & viewName() const noexcept { return m_viewName; }
 	void makeDeleteItemCommand(ItemBase * itemBase, BaseCommand::CrossViewType, QUndoCommand * parentCommand);
 	virtual void forwardRoutingStatus(const RoutingStatus &);
 
@@ -331,9 +331,9 @@ public:
 	void hidePartLayer(long id, ViewLayer::ViewLayerID, bool hide);
 	void hidePartLayer(ItemBase *, ViewLayer::ViewLayerID, bool hide);
 	void moveItem(ItemBase *, double x, double y);
-	QColor gridColor() const;
+	constexpr const QColor& gridColor() const noexcept { return m_gridColor; }
 	void setGridColor(QColor);
-	bool everZoomed() const;
+	constexpr bool everZoomed() const noexcept { return m_everZoomed; }
 	void setEverZoomed(bool);
 	void testConnectors();
 	void updateWires();

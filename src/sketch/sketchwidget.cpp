@@ -5400,10 +5400,6 @@ void SketchWidget::rememberSticky(ItemBase * itemBase, QUndoCommand * parentComm
 	}
 }
 
-ViewLayer::ViewID SketchWidget::viewID() {
-	return m_viewID;
-}
-
 void SketchWidget::setViewLayerIDs(ViewLayer::ViewLayerID part, ViewLayer::ViewLayerID wire, ViewLayer::ViewLayerID connector, ViewLayer::ViewLayerID ruler, ViewLayer::ViewLayerID note) {
 	m_partViewLayerID = part;
 	m_wireViewLayerID = wire;
@@ -6983,10 +6979,6 @@ bool SketchWidget::matchesLayer(ModelPart * modelPart) {
 	}
 
 	return false;
-}
-
-const QString & SketchWidget::viewName() {
-	return m_viewName;
 }
 
 void SketchWidget::setNoteText(long itemID, const QString & newText) {
@@ -9964,16 +9956,8 @@ void SketchWidget::packItems(int columns, const QList<long> & ids, QUndoCommand 
 	}
 }
 
-QColor SketchWidget::gridColor() const {
-	return m_gridColor;
-}
-
 void SketchWidget::setGridColor(QColor color) {
 	m_gridColor = color;
-}
-
-bool SketchWidget::everZoomed() const {
-	return m_everZoomed;
 }
 
 void SketchWidget::setEverZoomed(bool everZoomed) {

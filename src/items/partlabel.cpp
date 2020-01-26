@@ -282,10 +282,6 @@ void PartLabel::displayTexts() {
 	resetSvg();
 }
 
-bool PartLabel::initialized() {
-	return m_initialized;
-}
-
 void PartLabel::ownerMoved(QPointF newPos) {
 	this->setPos(m_offset + newPos);
 }
@@ -312,18 +308,6 @@ void PartLabel::setHiddenOrInactive() {
 	update();
 }
 
-
-ViewLayer::ViewLayerID PartLabel::viewLayerID() {
-	return m_viewLayerID;
-}
-
-bool PartLabel::hidden() {
-	return m_hidden;
-}
-
-bool PartLabel::inactive() {
-	return m_inactive;
-}
 
 void PartLabel::saveInstance(QXmlStreamWriter & streamWriter) {
 	if (!m_initialized) return;

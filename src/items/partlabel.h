@@ -46,13 +46,13 @@ public:
 	void setPlainText(const QString & text);
 	void showLabel(bool showIt, ViewLayer *);
 	QPainterPath shape() const;
-	bool initialized();
+	constexpr bool initialized() const noexcept { return m_initialized; }
 	void ownerMoved(QPointF newPos);
 	void setHidden(bool hide);
-	bool hidden();
+	constexpr bool hidden() const noexcept { return m_hidden; }
 	void setInactive(bool inactivate);
-	bool inactive();
-	ViewLayer::ViewLayerID viewLayerID();
+	constexpr bool inactive() const noexcept { return m_inactive; }
+	constexpr ViewLayer::ViewLayerID viewLayerID() const noexcept { return m_viewLayerID; }
 	void saveInstance(QXmlStreamWriter & streamWriter);
 	void restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID);
 	void moveLabel(QPointF newPos, QPointF newOffset);

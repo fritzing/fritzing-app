@@ -25,6 +25,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QBuffer>
 #include <qmath.h>
 #include <QtDebug>
+#include <vector>
+#include <algorithm>
 
 void GraphicsUtils::distanceFromLine(double cx, double cy, double ax, double ay, double bx, double by,
                                      double & dx, double & dy, double &distanceSegment, bool & atEndpoint)
@@ -73,51 +75,30 @@ void GraphicsUtils::distanceFromLine(double cx, double cy, double ax, double ay,
 struct PD {
 	QPointF p;
 	double d;
-};
+    PD(qreal x, qreal y, double _d) : p(x, y), d(_d) { }
 
-bool pdLessThan(PD* pd1, PD* pd2) {
-	return pd1->d < pd2->d;
+};
+inline bool operator<(const PD& lhs, const PD& rhs) noexcept {
+    return lhs.d < rhs.d;
 }
 
 QPointF GraphicsUtils::calcConstraint(QPointF initial, QPointF current) {
-	QList<PD *> pds;
-
-	PD * pd = new PD;
-	pd->p.setX(current.x());
-	pd->p.setY(initial.y());
-	pd->d = (current.y() - initial.y()) * (current.y() - initial.y());
-	pds.append(pd);
-
-	pd = new PD;
-	pd->p.setX(initial.x());
-	pd->p.setY(current.y());
-	pd->d = (current.x() - initial.x()) * (current.x() - initial.x());
-	pds.append(pd);
-
+    std::vector<PD> pds;
+    pds.emplace_back(current.x(), initial.y(), (current.y() - initial.y()) * (current.y() - initial.y()));
+    pds.emplace_back(initial.x(), initial.y(), (current.x() - initial.x()) * (current.x() - initial.x()));
 	double dx, dy, d;
 	bool atEndpoint;
 
 	QLineF plus45(initial.x() - 10000, initial.y() - 10000, initial.x() + 10000, initial.y() + 10000);
 	distanceFromLine(current.x(), current.y(), plus45.p1().x(), plus45.p1().y(), plus45.p2().x(), plus45.p2().y(), dx, dy, d, atEndpoint);
-	pd = new PD;
-	pd->p.setX(dx);
-	pd->p.setY(dy);
-	pd->d = d;
-	pds.append(pd);
+    pds.emplace_back(dx, dy, d);
 
 	QLineF minus45(initial.x() + 10000, initial.y() - 10000, initial.x() - 10000, initial.y() + 10000);
 	distanceFromLine(current.x(), current.y(), minus45.p1().x(), minus45.p1().y(), minus45.p2().x(), minus45.p2().y(), dx, dy, d, atEndpoint);
-	pd = new PD;
-	pd->p.setX(dx);
-	pd->p.setY(dy);
-	pd->d = d;
-	pds.append(pd);
+    pds.emplace_back(dx, dy, d);
 
-	qSort(pds.begin(), pds.end(), pdLessThan);
-	QPointF result = pds[0]->p;
-	foreach (PD* pd, pds) {
-		delete pd;
-	}
+    std::sort(pds.begin(), pds.end());
+	QPointF result = pds.front().p;
 	return result;
 }
 
@@ -200,18 +181,20 @@ bool GraphicsUtils::isRect(const QPolygonF & poly) {
 	if (poly.at(0) != poly.at(4)) return false;
 
 	// either we start running across top or running along side
-
-	if (poly.at(0).x() == poly.at(1).x() &&
-	        poly.at(1).y() == poly.at(2).y() &&
-	        poly.at(2).x() == poly.at(3).x() &&
-	        poly.at(3).y() == poly.at(4).y()) return true;
-
-	if (poly.at(0).y() == poly.at(1).y() &&
-	        poly.at(1).x() == poly.at(2).x() &&
-	        poly.at(2).y() == poly.at(3).y() &&
-	        poly.at(3).x() == poly.at(4).x()) return true;
-
-	return false;
+    const auto& poly0 = poly.at(0);
+    const auto& poly1 = poly.at(1);
+    const auto& poly2 = poly.at(2);
+    const auto& poly3 = poly.at(3);
+    const auto& poly4 = poly.at(4);
+    if (poly0.x() == poly1.x() &&
+        poly1.y() == poly2.y() &&
+        poly2.x() == poly3.x() &&
+        poly3.y() == poly4.y()) return true;
+    if (poly0.y() == poly1.y() &&
+        poly1.x() == poly2.x() &&
+        poly2.y() == poly3.y() &&
+        poly3.x() == poly4.x()) return true;
+    return false;
 }
 
 QRectF GraphicsUtils::getRect(const QPolygonF & poly)

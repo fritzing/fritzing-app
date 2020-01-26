@@ -121,10 +121,6 @@ QPointF GraphicsUtils::calcConstraint(QPointF initial, QPointF current) {
 	return result;
 }
 
-double GraphicsUtils::mm2mils(double mm) {
-	return (mm / 25.4 * 1000);
-}
-
 double GraphicsUtils::mm2pixels(double mm) {
 	return (90 * mm / 25.4);
 }

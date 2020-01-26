@@ -35,11 +35,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../viewlayer.h"
 
+class ItemBase;
 class PartLabel : public QGraphicsSvgItem
 {
 	Q_OBJECT
 public:
-	PartLabel(class ItemBase * owner, QGraphicsItem * parent = 0 );   // itembase is not the parent
+	PartLabel(ItemBase * owner, QGraphicsItem * parent = 0 );   // itembase is not the parent
 	~PartLabel();
 
 	void setPlainText(const QString & text);
@@ -55,7 +56,7 @@ public:
 	void saveInstance(QXmlStreamWriter & streamWriter);
 	void restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID);
 	void moveLabel(QPointF newPos, QPointF newOffset);
-	class ItemBase * owner();
+	ItemBase * owner();
 	void rotateFlipLabel(double degrees, Qt::Orientations orientation);
 	QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value);
 	void ownerSelected(bool selected);
@@ -84,7 +85,7 @@ protected:
 	QString makeSvgAux(bool blackOnly, double dpi, double printerScale, double & w, double & h);
 
 protected:
-	QPointer<class ItemBase> m_owner;
+	QPointer<ItemBase> m_owner;
 	bool m_initialized = false;
 	bool m_spaceBarWasPressed = false;
 	bool m_doDrag = false;

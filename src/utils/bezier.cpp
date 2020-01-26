@@ -384,7 +384,7 @@ void Bezier::copy(const Bezier * other)
 	m_drag_cp0 = other->m_drag_cp0;
 }
 
-double Bezier::findSplit(QPointF p, double minDistance) const
+double Bezier::findSplit(QPointF p, double minDistance) const noexcept
 {
 	double bestT = 0;
 	double lastDistance = std::numeric_limits<int>::max();

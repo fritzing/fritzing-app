@@ -47,8 +47,14 @@ public:
 	static constexpr double pixels2ins(double p, double dpi) noexcept {
         return p / dpi;
     }
-	static double distanceSqd(QPointF p1, QPointF p2);
-	static double distanceSqd(QPoint p1, QPoint p2);
+	static constexpr double distanceSqd(QPointF p1, QPointF p2) noexcept {
+        return ((p1.x() - p2.x()) * (p1.x() - p2.x())) + ((p1.y() - p2.y()) * (p1.y() - p2.y()));
+    }
+	static constexpr double distanceSqd(QPoint p1, QPoint p2) noexcept {
+        double dpx = p1.x() - p2.x();
+        double dpy = p1.y() - p2.y();
+        return (dpx * dpx) + (dpy * dpy);
+    }
 	static double getNearestOrdinate(double ordinate, double units);
 
 	static double mm2mils(double mm);

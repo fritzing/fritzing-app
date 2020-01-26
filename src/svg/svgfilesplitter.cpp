@@ -819,8 +819,7 @@ QVector<QVariant> SvgFileSplitter::simpleParsePath(const QString & data) {
 
 	SVGPathLexer lexer(dataCopy);
 	SVGPathParser parser;
-	bool result = parser.parse(&lexer);
-	if (!result) {
+    if (!parser.parse(lexer)) {
 		//DebugDialog::debug(QString("svg path parse failed %1").arg(dataCopy));
 		return emptyStack;
 	}
@@ -850,8 +849,7 @@ bool SvgFileSplitter::parsePath(const QString & dataString, const char * slot, P
 	return svgPathRunner.runPath(symStack, &pathUserData);
 }
 
-void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> & args, void * userData) {
-	Q_UNUSED(relative);
+void SvgFileSplitter::convertHVSlot(QChar command, bool /* relative */, QList<double> & args, void * userData) {
 	HVConvertData * data = (HVConvertData *) userData;
 
 	switch(command.toLatin1()) {

@@ -33,10 +33,10 @@ public:
 	Bezier(QPointF cp1, QPointF cp2);
 	Bezier();
 
-	QPointF cp0() const;
-	QPointF cp1() const;
-	QPointF endpoint0() const;
-	QPointF endpoint1() const;
+	constexpr const QPointF& cp0() const { return m_cp0; }
+	constexpr const QPointF& cp1() const { return m_cp1; }
+	constexpr const QPointF& endpoint0() const { return m_endpoint0; }
+	constexpr const QPointF& endpoint1() const { return m_endpoint1; }
 	void set_cp0(QPointF);
 	void set_cp1(QPointF);
 	void set_endpoints(QPointF, QPointF);
@@ -47,7 +47,7 @@ public:
 	bool operator!=(const Bezier &) const;
 	void recalc(QPointF p);
 	void initToEnds(QPointF cp0, QPointF cp1);
-	double xFromT(double t) const;
+	double xFromT(double t) const noexcept;
 	double xFromTPrime(double t) const;
 	double yFromT(double t) const;
 	void split(double t, Bezier & left, Bezier & right) const;
@@ -58,10 +58,11 @@ public:
 	void translateToZero();
 	void translate(QPointF);
 	Bezier join(const Bezier * other) const;
+    Bezier join(const Bezier& other) const noexcept;
 	constexpr bool drag0() const noexcept { return m_drag_cp0; }
 
 protected:
-	double cubicF(double t) const;
+	double cubicF(double t) const noexcept;
 
 
 public:

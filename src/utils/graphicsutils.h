@@ -41,8 +41,12 @@ public:
 	                             double & dx, double & dy, double &distanceSegment, bool & atEndpoint);
 	static QPointF calcConstraint(QPointF initial, QPointF current);
 
-	static double pixels2mils(double p, double dpi);
-	static double pixels2ins(double p, double dpi);
+	static constexpr double pixels2mils(double p, double dpi) noexcept { 
+        return p * 1000.0 / dpi;
+    }
+	static constexpr double pixels2ins(double p, double dpi) noexcept {
+        return p / dpi;
+    }
 	static double distanceSqd(QPointF p1, QPointF p2);
 	static double distanceSqd(QPoint p1, QPoint p2);
 	static double getNearestOrdinate(double ordinate, double units);

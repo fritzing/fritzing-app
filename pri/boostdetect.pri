@@ -51,6 +51,6 @@ exists($$boost_root) {
 
     !contains(LATESTBOOST, installed) {
         message("using boost_1_$${LATESTBOOST}_0")
-        INCLUDEPATH += src/lib/boost_1_$${LATESTBOOST}_0 ../boost_1_$${LATESTBOOST}_0
+        INCLUDEPATH += src/lib/boost_1_$${LATESTBOOST}_0 ../boost_1_$${LATESTBOOST}_0 src/lib/boost_1_$${LATESTBOOST}_0/include ../boost_1_$${LATESTBOOST}_0/include
     }
 }

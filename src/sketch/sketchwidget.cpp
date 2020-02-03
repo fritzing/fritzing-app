@@ -2240,26 +2240,25 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 
 void SketchWidget::mousePressEvent(QMouseEvent *event)
 {
-	m_originatingItem = NULL;
+	m_originatingItem = nullptr;
 	m_draggingBendpoint = false;
 	if (m_movingByArrow) return;
 
 	m_movingByMouse = true;
 
-	QMouseEvent * hackEvent = NULL;
+	m_dragBendpointWire = nullptr;
+
+	QMouseEvent * hackEvent = nullptr;
 	if (event->button() == Qt::MidButton && !spaceBarIsPressed()) {
 		m_middleMouseIsPressed = true;
 		setDragMode(QGraphicsView::ScrollHandDrag);
 		setCursor(Qt::OpenHandCursor);
-		// make the event look like a left button press to fool the underlying drag mode implementation
-		event = hackEvent = new QMouseEvent(event->type(), event->pos(), event->globalPos(), Qt::LeftButton, event->buttons() | Qt::LeftButton, event->modifiers());
-	}
+		// make the event look like a left button press to fool the underlying drag mode implementation	 
+		hackEvent = new QMouseEvent(event->type(), event->pos(), event->globalPos(), Qt::LeftButton, event->buttons() | Qt::LeftButton, event->modifiers());
 
-	m_dragBendpointWire = NULL;
-	m_spaceBarWasPressed = spaceBarIsPressed();
-	if (m_spaceBarWasPressed) {
-		InfoGraphicsView::mousePressEvent(event);
-		if (hackEvent) delete hackEvent;
+		m_spaceBarWasPressed = true;
+		InfoGraphicsView::mousePressEvent(hackEvent);
+		delete hackEvent;
 		return;
 	}
 
@@ -2296,7 +2295,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 
 	unsquashShapes();
 
-	if (item == NULL) {
+	if (!item) {
 		if (items.length() == 1) {
 			// if we unambiguously click on a partlabel whose owner is unselected, go ahead and activate it
 			PartLabel * partLabel =  dynamic_cast<PartLabel *>(items[0]);
@@ -2314,7 +2313,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 	}
 
 	PartLabel * partLabel =  dynamic_cast<PartLabel *>(item);
-	if (partLabel != NULL) {
+	if (partLabel) {
 		viewItemInfo(partLabel->owner());
 		setLastPaletteItemSelectedIf(partLabel->owner());
 		return;
@@ -2322,7 +2321,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 
 	// Note's child items (at the moment) are the resize grip and the text editor
 	Note * note = dynamic_cast<Note *>(item->parentItem());
-	if (note != NULL)  {
+	if (note)  {
 		return;
 	}
 
@@ -2340,12 +2339,12 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 	}
 
 	ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(wasItem);
-	if (connectorItem != NULL && connectorItem->isDraggingLeg()) {
+	if (connectorItem && connectorItem->isDraggingLeg()) {
 		return;
 	}
 
 	Wire * wire = dynamic_cast<Wire *>(item);
-	if ((event->button() == Qt::LeftButton) && (wire != NULL)) {
+	if ((event->button() == Qt::LeftButton) && (wire)) {
 		if (canChainWire(wire) && wire->hasConnections()) {
 			if (canDragWire(wire) && ((event->modifiers() & altOrMetaModifier()) != 0)) {
 				prepDragWire(wire);
@@ -2360,7 +2359,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 					// drag the bendpoint on the wire rather than the new wire from the connector
 					// maybe a better approach to block mousePressConnectorEvent?
 					delete m_connectorDragWire;
-					m_connectorDragWire = NULL;
+					m_connectorDragWire = nullptr;
 				}
 				return;
 			}
@@ -2373,18 +2372,18 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 
 	if (event->button() == Qt::LeftButton) {
 		prepMove(itemBase ? itemBase : dynamic_cast<ItemBase *>(item->parentItem()), (event->modifiers() & altOrMetaModifier()) != 0, true);
-		if (m_alignToGrid && (itemBase == NULL) && (event->modifiers() == Qt::NoModifier)) {
+		if (m_alignToGrid && (!itemBase) && (event->modifiers() == Qt::NoModifier)) {
 			Wire * wire = dynamic_cast<Wire *>(item->parentItem());
-			if (wire != NULL && wire->draggingEnd()) {
+			if (wire && wire->draggingEnd()) {
 				ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-				if (connectorItem != NULL) {
+				if (connectorItem) {
 					m_draggingBendpoint = (connectorItem->connectionsCount() > 0);
 					this->m_alignmentStartPoint = mapToScene(event->pos()) - connectorItem->sceneAdjustedTerminalPoint(NULL);
 				}
 			}
 		}
 
-		m_moveReferenceItem = m_savedItems.count() > 0 ? m_savedItems.values().at(0) : NULL;
+		m_moveReferenceItem = m_savedItems.count() > 0 ? m_savedItems.values().at(0) : nullptr;
 
 		setupAutoscroll(true);
 	}
@@ -7565,7 +7564,7 @@ void SketchWidget::setLastPaletteItemSelected(PaletteItem * paletteItem)
 void SketchWidget::setLastPaletteItemSelectedIf(ItemBase * itemBase)
 {
 	PaletteItem * paletteItem = qobject_cast<PaletteItem *>(itemBase);
-	if (paletteItem == NULL) return;
+	if (!paletteItem) return;
 
 	setLastPaletteItemSelected(paletteItem);
 }

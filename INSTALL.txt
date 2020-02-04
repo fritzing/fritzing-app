@@ -23,8 +23,7 @@ To start Fritzing double-click Fritzing, or try ./Fritzing in your shell window
 
 Fritzing uses the Qt5 libraries. On Ubuntu, they can be installed like this:
 
-"sudo apt install libqt5xml5 libqt5sql5 libqt5serialport5"
-
+"sudo apt install libqt5printsupport5 libqt5xml5 libqt5sql5 libqt5serialport5 libqt5sql5-sqlite".
 
 ## Notes on macOS
 To start Fritzing on macOS double-click the Fritzing application

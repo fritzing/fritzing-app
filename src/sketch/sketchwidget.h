@@ -91,8 +91,8 @@ class SizeItem : public QObject, public QGraphicsLineItem
 	Q_OBJECT
 
 public:
-	SizeItem();
-	~SizeItem();
+	SizeItem() = default;
+	~SizeItem() = default;
 };
 
 class SketchWidget : public InfoGraphicsView
@@ -179,7 +179,7 @@ public:
 
 	ItemCount calcItemCount();
 
-	ViewLayer::ViewID viewID();
+	constexpr ViewLayer::ViewID viewID() const noexcept { return m_viewID; }
 	void setViewLayerIDs(ViewLayer::ViewLayerID part, ViewLayer::ViewLayerID wire, ViewLayer::ViewLayerID connector, ViewLayer::ViewLayerID ruler, ViewLayer::ViewLayerID note);
 	void stickem(long stickTargetID, long stickSourceID, bool stick);
 	void stickyScoop(ItemBase * stickyOne, bool checkCurrent, CheckStickyCommand *);
@@ -216,7 +216,7 @@ public:
 	const QString &selectedModuleID();
 	virtual bool canDeleteItem(QGraphicsItem * item, int count);
 	virtual bool canCopyItem(QGraphicsItem * item, int count);
-	const QString & viewName();
+	constexpr const QString & viewName() const noexcept { return m_viewName; }
 	void makeDeleteItemCommand(ItemBase * itemBase, BaseCommand::CrossViewType, QUndoCommand * parentCommand);
 	virtual void forwardRoutingStatus(const RoutingStatus &);
 
@@ -235,8 +235,7 @@ public:
 	void resizeNote(long itemID, const QSizeF & );
 	class SelectItemCommand* stackSelectionState(bool pushIt, QUndoCommand * parentCommand);
 	QString renderToSVG(RenderThing &, QGraphicsItem * board, const LayerList &);
-
-	bool spaceBarIsPressed();
+	bool spaceBarIsPressed() noexcept;
 	virtual long setUpSwap(SwapThing &, bool master);
 	ConnectorItem * lastHoverEnterConnectorItem();
 	ItemBase * lastHoverEnterItem();
@@ -331,9 +330,9 @@ public:
 	void hidePartLayer(long id, ViewLayer::ViewLayerID, bool hide);
 	void hidePartLayer(ItemBase *, ViewLayer::ViewLayerID, bool hide);
 	void moveItem(ItemBase *, double x, double y);
-	QColor gridColor() const;
+	constexpr const QColor& gridColor() const noexcept { return m_gridColor; }
 	void setGridColor(QColor);
-	bool everZoomed() const;
+	constexpr bool everZoomed() const noexcept { return m_everZoomed; }
 	void setEverZoomed(bool);
 	void testConnectors();
 	void updateWires();
@@ -650,19 +649,19 @@ protected:
 	QPointer<class ReferenceModel> m_referenceModel;
 	QPointer<SketchModel> m_sketchModel;
 	ViewLayer::ViewID m_viewID;
-	class WaitPushUndoStack * m_undoStack;
-	class SelectItemCommand * m_holdingSelectItemCommand;
-	class SelectItemCommand * m_tempDragWireCommand;
+	class WaitPushUndoStack * m_undoStack = nullptr;
+	class SelectItemCommand * m_holdingSelectItemCommand = nullptr;
+	class SelectItemCommand * m_tempDragWireCommand = nullptr;
 	LayerHash m_viewLayers;
 	QHash<ViewLayer::ViewLayerID, bool> m_viewLayerVisibility;
 	QPointer<Wire> m_connectorDragWire;
 	QPointer<Wire> m_bendpointWire;
 	ViewGeometry m_bendpointVG;
 	QPointer<ConnectorItem> m_connectorDragConnector;
-	bool m_droppingWire;
+	bool m_droppingWire = false;
 	QPointF m_droppingOffset;
 	QPointer<ItemBase> m_droppingItem;
-	int m_moveEventCount;
+	int m_moveEventCount = 0;
 	//QList<QGraphicsItem *> m_lastSelected;  hack for 4.5.something
 	ViewLayer::ViewLayerID m_wireViewLayerID;
 	ViewLayer::ViewLayerID m_partViewLayerID;
@@ -670,63 +669,63 @@ protected:
 	ViewLayer::ViewLayerID m_connectorViewLayerID;
 	ViewLayer::ViewLayerID m_noteViewLayerID;
 	QList<QGraphicsItem *> m_temporaries;
-	bool m_chainDrag;
+	bool m_chainDrag = false;
 	QPointF m_mousePressScenePos;
 	QPointF m_mousePressGlobalPos;
 	QTimer m_autoScrollTimer;
-	volatile int m_autoScrollX;
-	volatile int m_autoScrollY;
-	volatile int m_autoScrollCount;
+	volatile int m_autoScrollX = 0;
+	volatile int m_autoScrollY = 0;
+	volatile int m_autoScrollCount = 0;
 	QPoint m_globalPos;
 
 	QPointer<PaletteItem> m_lastPaletteItemSelected;
 
-	int m_pasteCount;
+	int m_pasteCount = 0;
 	QPointF m_pasteOffset;
 
 	// Part Menu
-	QMenu *m_itemMenu;
-	QMenu *m_wireMenu;
+	QMenu *m_itemMenu = nullptr;
+	QMenu *m_wireMenu = nullptr;
 
 	bool m_infoViewOnHover;
 
 	QHash<long, ItemBase *> m_savedItems;
 	QHash<Wire *, ConnectorItem *> m_savedWires;
 	QList<ItemBase *> m_additionalSavedItems;
-	int m_ignoreSelectionChangeEvents;
-	bool m_current;
+	int m_ignoreSelectionChangeEvents = 0;
+	bool m_current = false;
 
 	QString m_lastColorSelected;
 
 	ConnectorPairHash m_moveDisconnectedFromFemale;
-	bool m_spaceBarIsPressed;
-	bool m_spaceBarWasPressed;
+	bool m_spaceBarIsPressed = false;
+	bool m_spaceBarWasPressed = false;
 
 	QPointer<ConnectorItem> m_lastHoverEnterConnectorItem;
 	QPointer<ItemBase> m_lastHoverEnterItem;
 	QString m_shortName;
 	QPointer<Wire> m_dragBendpointWire;
-	bool m_dragCurve;
+	bool m_dragCurve = false;
 	QPoint m_dragBendpointPos;
-	StatusConnectStatus m_statusConnectState;
+	StatusConnectStatus m_statusConnectState = StatusConnectNotTried;
 	QList<QGraphicsItem *> m_inFocus;
 	QString m_viewName;
-	bool m_movingByArrow;
-	double m_arrowTotalX;
-	double m_arrowTotalY;
-	bool m_movingByMouse;
-	bool m_alignToGrid;
-	bool m_showGrid;
-	double m_gridSizeInches;
+	bool m_movingByArrow = false;
+	double m_arrowTotalX = 0.0;
+	double m_arrowTotalY = 0.0;
+	bool m_movingByMouse = false;
+	bool m_alignToGrid = true;
+	bool m_showGrid = true;
+	double m_gridSizeInches = 0.0;
 	QString m_gridSizeText;
 	QPointer<ItemBase> m_alignmentItem;
 	QPointer<ItemBase> m_originatingItem;
 	QPointF m_alignmentStartPoint;
-	double m_zoom;
-	bool m_draggingBendpoint;
+	double m_zoom = 100;
+	bool m_draggingBendpoint = false;
 	QPointer<SizeItem> m_sizeItem;
-	int m_autoScrollThreshold;
-	bool m_clearSceneRect;
+	int m_autoScrollThreshold = 0;
+	bool m_clearSceneRect = false;
 	QPointer<ItemBase> m_moveReferenceItem;
 	QPointer<QSvgRenderer> m_movingSVGRenderer;
 	QPointF m_movingSVGOffset;
@@ -736,32 +735,32 @@ protected:
 	QList< QPointer<ConnectorItem> > m_ratsnestCacheDisconnect;
 	QList< QPointer<ConnectorItem> > m_ratsnestCacheConnect;
 	QList <ItemBase *> m_checkUnder;
-	bool m_addDefaultParts;
+	bool m_addDefaultParts = false;
 	QPointer<ItemBase> m_addedDefaultPart;
 	float m_z;
 	QTimer m_arrowTimer;
-	bool m_middleMouseIsPressed;
+	bool m_middleMouseIsPressed = false;
 	QMultiHash<ItemBase *, ConnectorItem *> m_stretchingLegs;
-	bool m_curvyWires;
-	bool m_rubberBandLegWasEnabled;
+	bool m_curvyWires = false;
+	bool m_rubberBandLegWasEnabled = false;
 	RoutingStatus m_routingStatus;
 	bool m_anyInRotation;
-	bool m_pasting;
+	bool m_pasting = false;
 	QPointer<class ResizableBoard> m_resizingBoard;
 	QList< QPointer<ItemBase> > m_squashShapes;
 	QColor m_gridColor;
-	bool m_everZoomed;
-	double m_ratsnestOpacity;
-	double m_ratsnestWidth;
+	bool m_everZoomed = false;
+	double m_ratsnestOpacity = 0.0;
+	double m_ratsnestWidth = 0.0;
 
 public:
 	static ViewLayer::ViewLayerID defaultConnectorLayer(ViewLayer::ViewID viewId);
-	static const int PropChangeDelay;
+	static constexpr int PropChangeDelay = 100;
 	static bool m_blockUI;
 
 protected:
-	static const int MoveAutoScrollThreshold;
-	static const int DragAutoScrollThreshold;
+	static constexpr int MoveAutoScrollThreshold = 5;
+	static constexpr int DragAutoScrollThreshold = 10;
 };
 
 #endif

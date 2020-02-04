@@ -1,7 +1,7 @@
 # Installing Fritzing
 
 Please make sure your system satisfies one of these requirements:
-Windows 10
+Windows 10, 64 Bit
 Windows 7 was reported to work, too
 Mac - OSX 10.14 and up, though 10.13 might work too. MacOS 10.15 is currently untested.
 Linux - a fairly recent linux distro with libc >= 2.6
@@ -13,18 +13,17 @@ A free unzipping program can be found here, should you need it.
 
 ## Notes on Windows
 
-Unzipping Fritzing might be very slower than the download itself. We recommend
-using 7zip
+On Windows, unzipping Fritzing might be much slower than the download itself. We recommend
+using 7zip.
 
-To start Fritzing on Windows: double-click fritzing.exe
+To start Fritzing on Windows: Wait until unzipping is finished. Then open the destination folder and double-click fritzing.exe
 
 ## Notes on Linux
 To start Fritzing double-click Fritzing, or try ./Fritzing in your shell window
 
 Fritzing uses the Qt5 libraries. On Ubuntu, they can be installed like this:
 
-"sudo apt install libqt5xml5 libqt5sql5 libqt5serialport5"
-
+"sudo apt install libqt5printsupport5 libqt5xml5 libqt5sql5 libqt5serialport5 libqt5sql5-sqlite".
 
 ## Notes on macOS
 To start Fritzing on macOS double-click the Fritzing application

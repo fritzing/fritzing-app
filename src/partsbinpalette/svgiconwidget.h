@@ -37,7 +37,7 @@ class SvgIconPixmapItem : public QGraphicsPixmapItem {
 
 public:
 	SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent = nullptr);
-    SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent, bool plural);
+	SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent, bool plural);
 	void setPlural(bool);
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 protected:

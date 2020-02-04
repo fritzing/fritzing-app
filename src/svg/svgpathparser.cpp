@@ -42,8 +42,8 @@ void SVGPathParser::reallocateStack()
 
 bool SVGPathParser::parse(SVGPathLexer* lexer)
 {
-    // call the reference version
-    return parse(*lexer);
+	// call the reference version
+	return parse(*lexer);
 }
 bool SVGPathParser::parse(SVGPathLexer& lexer)
 {

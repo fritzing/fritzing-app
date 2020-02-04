@@ -31,12 +31,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class Bezier
 {
 public:
-    using SplitBezier = std::tuple<Bezier, Bezier>;
+	using SplitBezier = std::tuple<Bezier, Bezier>;
 public:
 	Bezier(QPointF cp1, QPointF cp2);
 	Bezier();
-    Bezier(const Bezier&);
-    Bezier(QPointF endpoint0, QPointF endpoint1, QPointF cp0, QPointF cp1) noexcept;
+	Bezier(const Bezier&);
+	Bezier(QPointF endpoint0, QPointF endpoint1, QPointF cp0, QPointF cp1) noexcept;
 	constexpr const QPointF& cp0() const { return m_cp0; }
 	constexpr const QPointF& cp1() const { return m_cp1; }
 	constexpr const QPointF& endpoint0() const { return m_endpoint0; }
@@ -55,7 +55,7 @@ public:
 	double xFromTPrime(double t) const noexcept;
 	double yFromT(double t) const noexcept;
 	void split(double t, Bezier & left, Bezier & right) const noexcept;
-    SplitBezier split(double t) const noexcept;
+	SplitBezier split(double t) const noexcept;
 	void initControlIndex(QPointF fromPoint, double width);
 	double computeCubicCurveLength(double z, int n) const noexcept;
 	void copy(const Bezier *);
@@ -63,7 +63,7 @@ public:
 	void translateToZero();
 	void translate(QPointF);
 	Bezier join(const Bezier * other) const;
-    Bezier join(const Bezier& other) const noexcept;
+	Bezier join(const Bezier& other) const noexcept;
 	constexpr bool drag0() const noexcept { return m_drag_cp0; }
 
 protected:

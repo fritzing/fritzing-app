@@ -107,11 +107,11 @@ static QHash<QString, QStringList> CachedValues;
 
 ItemBase::ItemBase( ModelPart* modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu )
 	: QGraphicsSvgItem(),
-    m_id(id),
-    m_viewGeometry(viewGeometry),
-    m_modelPart(modelPart),
-    m_viewID(viewID),
-    m_itemMenu(itemMenu)
+	  m_id(id),
+	  m_viewGeometry(viewGeometry),
+	  m_modelPart(modelPart),
+	  m_viewID(viewID),
+	  m_itemMenu(itemMenu)
 {
 	//DebugDialog::debug(QString("itembase %1 %2").arg(id).arg((long) static_cast<QGraphicsItem *>(this), 0, 16));
 	if (m_modelPart) {

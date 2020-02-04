@@ -53,8 +53,8 @@ SvgIconPixmapItem::SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * par
 
 SvgIconPixmapItem::SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent, bool plural) : QGraphicsPixmapItem(pixmap, parent), m_plural(plural)
 {
-    setFlags(0);
-    setPos(0,0);
+	setFlags(0);
+	setPos(0,0);
 }
 
 void  SvgIconPixmapItem::setPlural(bool plural) {
@@ -134,8 +134,8 @@ ItemBase *SvgIconWidget::itemBase() const noexcept {
 }
 
 ModelPart *SvgIconWidget::modelPart() const noexcept {
-    if (m_itemBase) return m_itemBase->modelPart();
-    return nullptr;
+	if (m_itemBase) return m_itemBase->modelPart();
+	return nullptr;
 }
 
 

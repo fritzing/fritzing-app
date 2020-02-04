@@ -75,27 +75,27 @@ void GraphicsUtils::distanceFromLine(double cx, double cy, double ax, double ay,
 struct PD {
 	QPointF p;
 	double d;
-    PD(qreal x, qreal y, double _d) : p(x, y), d(_d) { }
+	PD(qreal x, qreal y, double _d) : p(x, y), d(_d) { }
 
 };
 inline bool operator<(const PD& lhs, const PD& rhs) noexcept {
-    return lhs.d < rhs.d;
+	return lhs.d < rhs.d;
 }
 
 QPointF GraphicsUtils::calcConstraint(QPointF initial, QPointF current) {
-    std::vector<PD> pds;
-    pds.emplace_back(current.x(), initial.y(), (current.y() - initial.y()) * (current.y() - initial.y()));
-    pds.emplace_back(initial.x(), initial.y(), (current.x() - initial.x()) * (current.x() - initial.x()));
+	std::vector<PD> pds;
+	pds.emplace_back(current.x(), initial.y(), (current.y() - initial.y()) * (current.y() - initial.y()));
+	pds.emplace_back(initial.x(), initial.y(), (current.x() - initial.x()) * (current.x() - initial.x()));
 
 	QLineF plus45(initial.x() - 10000, initial.y() - 10000, initial.x() + 10000, initial.y() + 10000);
-    auto dl0 = distanceFromLine(current.x(), current.y(), plus45.p1().x(), plus45.p1().y(), plus45.p2().x(), plus45.p2().y());
-    pds.emplace_back(std::get<0>(dl0), std::get<1>(dl0), std::get<2>(dl0));
+	auto dl0 = distanceFromLine(current.x(), current.y(), plus45.p1().x(), plus45.p1().y(), plus45.p2().x(), plus45.p2().y());
+	pds.emplace_back(std::get<0>(dl0), std::get<1>(dl0), std::get<2>(dl0));
 
 	QLineF minus45(initial.x() + 10000, initial.y() - 10000, initial.x() - 10000, initial.y() + 10000);
 	auto dl1 = distanceFromLine(current.x(), current.y(), minus45.p1().x(), minus45.p1().y(), minus45.p2().x(), minus45.p2().y());
-    pds.emplace_back(std::get<0>(dl1), std::get<1>(dl1), std::get<2>(dl1));
+	pds.emplace_back(std::get<0>(dl1), std::get<1>(dl1), std::get<2>(dl1));
 
-    std::sort(pds.begin(), pds.end());
+	std::sort(pds.begin(), pds.end());
 	QPointF result = pds.front().p;
 	return result;
 }
@@ -179,20 +179,20 @@ bool GraphicsUtils::isRect(const QPolygonF & poly) {
 	if (poly.at(0) != poly.at(4)) return false;
 
 	// either we start running across top or running along side
-    const auto& poly0 = poly.at(0);
-    const auto& poly1 = poly.at(1);
-    const auto& poly2 = poly.at(2);
-    const auto& poly3 = poly.at(3);
-    const auto& poly4 = poly.at(4);
-    if (poly0.x() == poly1.x() &&
-        poly1.y() == poly2.y() &&
-        poly2.x() == poly3.x() &&
-        poly3.y() == poly4.y()) return true;
-    if (poly0.y() == poly1.y() &&
-        poly1.x() == poly2.x() &&
-        poly2.y() == poly3.y() &&
-        poly3.x() == poly4.x()) return true;
-    return false;
+	const auto& poly0 = poly.at(0);
+	const auto& poly1 = poly.at(1);
+	const auto& poly2 = poly.at(2);
+	const auto& poly3 = poly.at(3);
+	const auto& poly4 = poly.at(4);
+	if (poly0.x() == poly1.x() &&
+	    poly1.y() == poly2.y() &&
+	    poly2.x() == poly3.x() &&
+	    poly3.y() == poly4.y()) return true;
+	if (poly0.y() == poly1.y() &&
+	    poly1.x() == poly2.x() &&
+	    poly2.y() == poly3.y() &&
+	    poly3.x() == poly4.x()) return true;
+	return false;
 }
 
 QRectF GraphicsUtils::getRect(const QPolygonF & poly)
@@ -217,7 +217,7 @@ QRectF GraphicsUtils::getRect(const QPolygonF & poly)
 
 // based on code from http://code-heaven.blogspot.com/2009/05/c-program-for-liang-barsky-line.html
 bool GraphicsUtils::liangBarskyLineClip(double x1, double y1, double x2, double y2, double wxmin, double wxmax, double wymin, double wymax,
-                                        double & x11, double & y11, double & x22, double & y22)
+	                                      double & x11, double & y11, double & x22, double & y22)
 {
 	double p1 = -(x2 - x1 );
 	double q1 = x1 - wxmin;

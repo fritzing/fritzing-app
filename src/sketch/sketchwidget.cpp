@@ -599,8 +599,8 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 }
 
 void SketchWidget::handleConnect(QDomElement & connect, ModelPart * mp, const QString & fromConnectorID, ViewLayer::ViewLayerID fromViewLayerID,
-                                 QStringList & alreadyConnected, QHash<long, ItemBase *> & newItems, QUndoCommand * parentCommand,
-                                 bool seekOutsideConnections)
+	                               QStringList & alreadyConnected, QHash<long, ItemBase *> & newItems, QUndoCommand * parentCommand,
+	                               bool seekOutsideConnections)
 {
 	bool ok;
 	QHash<long, ItemBase *> otherNewItems;
@@ -2199,9 +2199,9 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 }
 
 bool SketchWidget::spaceBarIsPressed() noexcept {
-    // this should be const and constexpr but causes the compiler to optimize incorrectly
-    // and prevents middle clicking to scroll from working correctly
-    return m_spaceBarIsPressed || m_middleMouseIsPressed;
+	// this should be const and constexpr but causes the compiler to optimize incorrectly
+	// and prevents middle clicking to scroll from working correctly
+	return m_spaceBarIsPressed || m_middleMouseIsPressed;
 }
 
 void SketchWidget::mousePressEvent(QMouseEvent *event)

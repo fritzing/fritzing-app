@@ -128,23 +128,23 @@ Bezier::Bezier(QPointF cp0, QPointF cp1) : m_cp0(cp0), m_cp1(cp1), m_isEmpty(fal
 
 Bezier::Bezier() : m_isEmpty(true) { }
 
-Bezier::Bezier(const Bezier& other) : 
-    m_endpoint0(other.m_endpoint0),
-    m_endpoint1(other.m_endpoint1),
-    m_cp0(other.m_cp0),
-    m_cp1(other.m_cp1),
-    m_isEmpty(other.m_isEmpty),
-    m_drag_cp0(other.m_drag_cp0) 
+Bezier::Bezier(const Bezier& other) :
+		m_endpoint0(other.m_endpoint0),
+		m_endpoint1(other.m_endpoint1),
+		m_cp0(other.m_cp0),
+		m_cp1(other.m_cp1),
+		m_isEmpty(other.m_isEmpty),
+		m_drag_cp0(other.m_drag_cp0)
 {
 
 }
 
 Bezier::Bezier(QPointF endpoint0, QPointF endpoint1, QPointF cp0, QPointF cp1) noexcept :
-    m_endpoint0(endpoint0),
-    m_endpoint1(endpoint1),
-    m_cp0(cp0),
-    m_cp1(cp1),
-    m_isEmpty(false)
+		m_endpoint0(endpoint0),
+		m_endpoint1(endpoint1),
+		m_cp0(cp0),
+		m_cp1(cp1),
+		m_isEmpty(false)
 {
 
 }
@@ -212,16 +212,16 @@ void Bezier::write(QXmlStreamWriter & streamWriter)
 
 bool Bezier::operator==(const Bezier & other) const
 {
-    return (m_isEmpty == other.isEmpty()) &&
-           (m_cp0 == other.cp0()) &&
-           (m_cp1 == other.cp1());
+	return (m_isEmpty == other.isEmpty()) &&
+	       (m_cp0 == other.cp0()) &&
+	       (m_cp1 == other.cp1());
 }
 
 bool Bezier::operator!=(const Bezier & other) const
 {
-    return (m_isEmpty != other.isEmpty()) &&
-           (m_cp0 != other.cp0()) &&
-           (m_cp1 != other.cp1());
+	return (m_isEmpty != other.isEmpty()) &&
+	       (m_cp0 != other.cp0()) &&
+	       (m_cp1 != other.cp1());
 }
 
 void Bezier::recalc(QPointF p)
@@ -261,10 +261,10 @@ void Bezier::recalc(QPointF p)
 
 void Bezier::initToEnds(QPointF cp0, QPointF cp1)
 {
-    m_endpoint0 = cp0;
-    m_cp0 = cp0;
-    m_endpoint1 = cp1;
-    m_cp1 = cp1;
+	m_endpoint0 = cp0;
+	m_cp0 = cp0;
+	m_endpoint1 = cp1;
+	m_cp1 = cp1;
 	m_isEmpty = false;
 }
 
@@ -306,17 +306,17 @@ void Bezier::split(double t, Bezier & left, Bezier & right) const noexcept
 
 	// we now have all the values we need to build the subcurves
 	left.m_endpoint0 = m_endpoint0;
-    left.m_endpoint1 = p10;
+	left.m_endpoint1 = p10;
 	left.m_cp0 = p5;
 	left.m_cp1 = p8;
 	right.m_endpoint0 = p10;
 	right.m_cp0 = p9;
 	right.m_cp1 = p7;
 	right.m_endpoint1 = m_endpoint1;
-    left.m_isEmpty = false;
-    right.m_isEmpty = false;
+	left.m_isEmpty = false;
+	right.m_isEmpty = false;
 }
-Bezier::SplitBezier Bezier::split(double t) const noexcept 
+Bezier::SplitBezier Bezier::split(double t) const noexcept
 {
 	QPointF p5((1-t)*m_endpoint0.x() + t*m_cp0.x(), (1-t)*m_endpoint0.y() + t*m_cp0.y());
 	QPointF p6((1-t)*m_cp0.x() + t*m_cp1.x(), (1-t)*m_cp0.y() + t*m_cp1.y());
@@ -329,8 +329,8 @@ Bezier::SplitBezier Bezier::split(double t) const noexcept
 	// interpolate from 2 points to 1 point
 	QPointF p10((1-t)*p8.x() + t*p9.x(), (1-t)*p8.y() + t*p9.y());
 
-    return std::make_tuple<Bezier, Bezier>({m_endpoint0, p10, p5, p8} /* left */,
-                                           {p10, m_endpoint1, p9, p7} /* right */);
+	return std::make_tuple<Bezier, Bezier>({m_endpoint0, p10, p5, p8} /* left */,
+	                                       {p10, m_endpoint1, p9, p7} /* right */);
 }
 
 
@@ -423,11 +423,11 @@ void Bezier::translate(QPointF p) {
 }
 
 Bezier Bezier::join(const Bezier* other) const {
-    if (!other || other->isEmpty()) {
-        return {};
-    } else {
-        return join(*other);
-    }
+	if (!other || other->isEmpty()) {
+		return {};
+	} else {
+		return join(*other);
+	}
 }
 Bezier Bezier::join(const Bezier& other) const noexcept
 {

@@ -313,8 +313,8 @@ void SvgFileSplitter::painterPathChild(QDomElement & element, QPainterPath & ppa
 }
 
 void SvgFileSplitter::normalizeTranslation(QDomElement & element,
-        double sNewWidth, double sNewHeight,
-        double vbWidth, double vbHeight)
+				double sNewWidth, double sNewHeight,
+				double vbWidth, double vbHeight)
 {
 	QString attr = element.attribute("transform");
 	if (attr.isEmpty()) return;
@@ -333,8 +333,8 @@ void SvgFileSplitter::normalizeTranslation(QDomElement & element,
 
 
 void SvgFileSplitter::normalizeChild(QDomElement & element,
-                                     double sNewWidth, double sNewHeight,
-                                     double vbWidth, double vbHeight, bool blackOnly)
+				double sNewWidth, double sNewHeight,
+				double vbWidth, double vbHeight, bool blackOnly)
 {
 	normalizeTranslation(element, sNewWidth, sNewHeight, vbWidth, vbHeight);
 
@@ -819,7 +819,7 @@ QVector<QVariant> SvgFileSplitter::simpleParsePath(const QString & data) {
 
 	SVGPathLexer lexer(dataCopy);
 	SVGPathParser parser;
-    if (!parser.parse(lexer)) {
+	if (!parser.parse(lexer)) {
 		//DebugDialog::debug(QString("svg path parse failed %1").arg(dataCopy));
 		return emptyStack;
 	}

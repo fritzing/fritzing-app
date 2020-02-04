@@ -104,7 +104,7 @@ static constexpr double InactiveOpacity = 0.4;
 
 PartLabel::PartLabel(ItemBase * owner, QGraphicsItem * parent)
 	: QGraphicsSvgItem(parent),
-    m_owner(owner)
+	  m_owner(owner)
 
 {
 	m_displayKeys.append(LabelTextKey);

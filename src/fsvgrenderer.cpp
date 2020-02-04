@@ -335,9 +335,9 @@ void FSvgRenderer::initLegInfoAux(QDomElement & element, const LoadInfo & loadIn
 bool FSvgRenderer::initLegInfoAux(QDomElement & element, ConnectorInfo * connectorInfo)
 {
 	bool ok;
-    auto extractDoubleFromAttribute = [&element, &ok](const QString& attribute) {
-        return element.attribute(attribute).toDouble(&ok); 
-    };
+	auto extractDoubleFromAttribute = [&element, &ok](const QString& attribute) {
+		return element.attribute(attribute).toDouble(&ok);
+	};
 	double sw = extractDoubleFromAttribute("stroke-width");
 	if (!ok) return false;
 

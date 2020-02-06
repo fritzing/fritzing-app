@@ -1850,6 +1850,7 @@ PartsBinIconView QPushButton{
 PartsBinListView { /*the styling if you look the parts-window in list view mode*/
         selection-background-color: #b1b1b1;
         background-color:#d9d9d9;
+        color:#333;
         border: 0;
         border-bottom: 1px solid #D0D0D0;
 }

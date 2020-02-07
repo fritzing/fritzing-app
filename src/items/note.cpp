@@ -242,6 +242,7 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 	m_graphicsTextItem = new NoteGraphicsTextItem();
 	QFont font("Droid Sans", 9, QFont::Normal);
 	m_graphicsTextItem->setFont(font);
+	m_graphicsTextItem->setDefaultTextColor(QColor("grey"));
 	m_graphicsTextItem->document()->setDefaultFont(font);
 	m_graphicsTextItem->setParentItem(this);
 	m_graphicsTextItem->setVisible(true);

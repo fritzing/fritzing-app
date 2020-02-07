@@ -23,7 +23,14 @@ GIT_DATE = $$system($$BASE_GIT_COMMAND show --no-patch --no-notes --pretty='%cd'
 win32 {
     # Try to squeeze something ISO-8601-ish out of windows
     BUILD_DATE = $$system( powershell (Get-Date -Format "o") )
-} else {
+}
+
+macx {
+    # MacOS uses BSD date rather than GNU date. 
+    BUILD_DATE = $$system( date +%Y-%m-%dT%H:%M:%S%z )
+}
+
+!win32:!macx {
     BUILD_DATE = $$system( date --iso-8601=seconds )
 }
 

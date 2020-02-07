@@ -49,10 +49,6 @@ void appendPair(QString & path, double a1, double a2) {
 
 //////////////////////////////////////////////////
 
-SvgFileSplitter::SvgFileSplitter()
-{
-}
-
 bool SvgFileSplitter::split(const QString & filename, const QString & elementID)
 {
 	m_byteArray.clear();
@@ -160,14 +156,6 @@ bool SvgFileSplitter::splitString(QString & contents, const QString & elementID)
 	//DebugDialog::debug(s);
 
 	return true;
-}
-
-const QByteArray & SvgFileSplitter::byteArray() {
-	return m_byteArray;
-}
-
-const QDomDocument & SvgFileSplitter::domDocument() {
-	return m_domDocument;
 }
 
 QString SvgFileSplitter::elementString(const QString & elementID) {
@@ -325,8 +313,8 @@ void SvgFileSplitter::painterPathChild(QDomElement & element, QPainterPath & ppa
 }
 
 void SvgFileSplitter::normalizeTranslation(QDomElement & element,
-        double sNewWidth, double sNewHeight,
-        double vbWidth, double vbHeight)
+				double sNewWidth, double sNewHeight,
+				double vbWidth, double vbHeight)
 {
 	QString attr = element.attribute("transform");
 	if (attr.isEmpty()) return;
@@ -345,8 +333,8 @@ void SvgFileSplitter::normalizeTranslation(QDomElement & element,
 
 
 void SvgFileSplitter::normalizeChild(QDomElement & element,
-                                     double sNewWidth, double sNewHeight,
-                                     double vbWidth, double vbHeight, bool blackOnly)
+				double sNewWidth, double sNewHeight,
+				double vbWidth, double vbHeight, bool blackOnly)
 {
 	normalizeTranslation(element, sNewWidth, sNewHeight, vbWidth, vbHeight);
 
@@ -831,8 +819,7 @@ QVector<QVariant> SvgFileSplitter::simpleParsePath(const QString & data) {
 
 	SVGPathLexer lexer(dataCopy);
 	SVGPathParser parser;
-	bool result = parser.parse(&lexer);
-	if (!result) {
+	if (!parser.parse(lexer)) {
 		//DebugDialog::debug(QString("svg path parse failed %1").arg(dataCopy));
 		return emptyStack;
 	}
@@ -862,8 +849,7 @@ bool SvgFileSplitter::parsePath(const QString & dataString, const char * slot, P
 	return svgPathRunner.runPath(symStack, &pathUserData);
 }
 
-void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> & args, void * userData) {
-	Q_UNUSED(relative);
+void SvgFileSplitter::convertHVSlot(QChar command, bool /* relative */, QList<double> & args, void * userData) {
 	HVConvertData * data = (HVConvertData *) userData;
 
 	switch(command.toLatin1()) {
@@ -1254,7 +1240,7 @@ bool SvgFileSplitter::shiftAttribute(QDomElement & element, const char * attribu
 	return true;
 }
 
-bool SvgFileSplitter::load(const QString string)
+bool SvgFileSplitter::load(const QString& string)
 {
 	QString errorStr;
 	int errorLine;

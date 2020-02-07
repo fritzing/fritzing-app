@@ -38,29 +38,31 @@ public:
 	NonConnectorItem(ItemBase* attachedTo);
 	~NonConnectorItem() = default;
 
-	ItemBase * attachedTo();
+	ItemBase * attachedTo() const noexcept { return m_attachedTo; }
 	virtual void setHidden(bool hidden);
-	bool hidden() const;
+	constexpr bool hidden() const noexcept { return m_hidden; }
 	virtual void setInactive(bool inactivate);
-	bool inactive() const;
+	constexpr bool inactive() const noexcept { return m_inactive; }
 	virtual void setLayerHidden(bool hidden);
-	bool layerHidden() const;
+	constexpr bool layerHidden() const noexcept { return m_layerHidden; }
 	long attachedToID();
 	const QString & attachedToTitle();
 	const QString & attachedToInstanceTitle();
 	void setCircular(bool);
 	void setRadius(double radius, double strokeWidth);
-	double radius() const;
-	double strokeWidth() const;
+	constexpr double radius() const noexcept { return m_radius; }
+	constexpr double strokeWidth() const noexcept { return m_strokeWidth; }
 	void setShape(QPainterPath &);
 	void paint( QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0 );
 	QPainterPath shape() const;
 	void setIsPath(bool);
-	bool isPath() const;
+	constexpr bool isPath() const noexcept { return m_isPath; }
 	int attachedToItemType();
 
 protected:
-	bool doNotPaint();
+	constexpr bool doNotPaint() const noexcept { 
+        return (m_hidden || m_inactive || !m_paint || m_layerHidden);
+    }
 
 	enum Effectively {
 		EffectivelyCircular = 1,

@@ -53,12 +53,11 @@ struct LoadInfo {
 	QStringList legIDs;
 	QString setColor;
 	QString colorElementID;
-	bool findNonConnectors;
-	bool parsePaths;
+	bool findNonConnectors = false;
+	bool parsePaths = false;;
 
-	LoadInfo() {
-		findNonConnectors = parsePaths = false;
-	}
+	LoadInfo() = default;
+    LoadInfo(const QString& file, bool _findNonConnector = false) : filename(file), findNonConnectors(_findNonConnector) { }
 };
 
 class FSvgRenderer : public QSvgRenderer
@@ -70,13 +69,13 @@ public:
 
 	QByteArray loadSvg(const LoadInfo &);
 	QByteArray loadSvg(const QString & filename);
-	QByteArray loadSvg( const QByteArray & contents, const LoadInfo &);     // for SvgSplitter loads
-	QByteArray loadSvg( const QByteArray & contents, const QString & filename, bool findNonConnectors);						// for SvgSplitter loads
+	QByteArray loadSvg(const QByteArray & contents, const LoadInfo &);     // for SvgSplitter loads
+	QByteArray loadSvg(const QByteArray & contents, const QString & filename, bool findNonConnectors);						// for SvgSplitter loads
 	bool loadSvgString(const QString & svg);
 	bool loadSvgString(const QString & svg, QString & newSvg);
 	bool fastLoad(const QByteArray & contents);
 	QByteArray finalLoad(QByteArray & cleanContents, const QString & filename);
-	const QString & filename();
+	constexpr const QString & filename() const noexcept { return m_filename; }
 	QSizeF defaultSizeF();
 	bool setUpConnector(class SvgIdLayer * svgIdLayer, bool ignoreTerminalPoint, ViewLayer::ViewLayerPlacement);
 	QList<SvgIdLayer *> setUpNonConnectors(ViewLayer::ViewLayerPlacement);

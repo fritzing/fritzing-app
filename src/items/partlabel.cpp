@@ -98,19 +98,15 @@ enum PartLabelAction {
 
 static QMultiHash<long, PartLabel *> AllPartLabels;
 static const QString LabelTextKey = "";
-static const double InactiveOpacity = 0.4;
+static constexpr double InactiveOpacity = 0.4;
 
 ///////////////////////////////////////////
 
 PartLabel::PartLabel(ItemBase * owner, QGraphicsItem * parent)
-	: QGraphicsSvgItem(parent)
-{
-	m_renderer = NULL;
-	m_owner = owner;
-	m_spaceBarWasPressed = false;
-	m_text = m_displayText = "";
+	: QGraphicsSvgItem(parent),
+	  m_owner(owner)
 
-	m_inactive = m_hidden = m_initialized = false;
+{
 	m_displayKeys.append(LabelTextKey);
 	if (m_owner->hasPartNumberProperty() && m_owner->viewID() != ViewLayer::PCBView) {
 		m_displayKeys.append(ModelPartShared::PartNumberPropertyName);
@@ -119,7 +115,6 @@ PartLabel::PartLabel(ItemBase * owner, QGraphicsItem * parent)
 	setFlag(QGraphicsItem::ItemIsSelectable, false);
 	setFlag(QGraphicsItem::ItemIsMovable, false);					// don't move this in the standard QGraphicsItem way
 	setVisible(false);
-	m_viewLayerID = ViewLayer::UnknownLayer;
 	setAcceptHoverEvents(true);
 	AllPartLabels.insert(m_owner->id(), this);
 }
@@ -287,10 +282,6 @@ void PartLabel::displayTexts() {
 	resetSvg();
 }
 
-bool PartLabel::initialized() {
-	return m_initialized;
-}
-
 void PartLabel::ownerMoved(QPointF newPos) {
 	this->setPos(m_offset + newPos);
 }
@@ -317,18 +308,6 @@ void PartLabel::setHiddenOrInactive() {
 	update();
 }
 
-
-ViewLayer::ViewLayerID PartLabel::viewLayerID() {
-	return m_viewLayerID;
-}
-
-bool PartLabel::hidden() {
-	return m_hidden;
-}
-
-bool PartLabel::inactive() {
-	return m_inactive;
-}
 
 void PartLabel::saveInstance(QXmlStreamWriter & streamWriter) {
 	if (!m_initialized) return;

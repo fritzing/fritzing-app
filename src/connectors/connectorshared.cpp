@@ -168,7 +168,7 @@ SvgIdLayer * ConnectorShared::fullPinInfo(ViewLayer::ViewID viewId, ViewLayer::V
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 const QString & ConnectorShared::legID(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID) {

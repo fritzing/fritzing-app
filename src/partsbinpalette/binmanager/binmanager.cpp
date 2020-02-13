@@ -1130,9 +1130,11 @@ void BinManager::importPartToCurrentBin(const QString & filename) {
 }
 
 void BinManager::importPart(const QString & filename, PartsBinPaletteWidget * bin) {
-	ModelPart *mp = m_mainWindow->loadBundledPart(filename, !bin->allowsChanges());
+	QList<ModelPart*> mps = m_mainWindow->loadBundledPart(filename, !bin->allowsChanges());
 	if (bin->allowsChanges()) {
-		addPartTo(bin, mp, true);
+		for (auto * mp : mps) {
+			addPartTo(bin, mp, true);
+		}
 	}
 }
 

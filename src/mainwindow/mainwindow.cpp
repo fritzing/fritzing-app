@@ -1688,7 +1688,7 @@ void MainWindow::loadBundledPartFromWeb() {
 }
 */
 
-ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
+QList<ModelPart*> MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 	QDir destFolder = QDir::temp();
 
 	FolderUtils::createFolderAndCdIntoIt(destFolder, TextUtils::getRandText());
@@ -1701,7 +1701,7 @@ ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 		    tr("Fritzing"),
 		    tr("Unable to open shareable part '%1': %2").arg(fileName).arg(error)
 		);
-		return NULL;
+		return QList<ModelPart*>();
 	}
 
 	QDir unzipDir(unzipDirPath);
@@ -1716,22 +1716,22 @@ ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 		    tr("Fritzing"),
 		    msg
 		);
-		return NULL;
+		return QList<ModelPart*>();
 	}
 
-	if (mps.count() != 1) {
+	if (mps.count() < 1) {
 		// if this fails, that means that the bundled was wrong
 		FMessageBox::warning(
 		    this,
 		    tr("Fritzing"),
 		    tr("Unable to load part from '%1'").arg(fileName)
 		);
-		return NULL;
+		return QList<ModelPart*>();
 	}
 
 	FolderUtils::rmdir(unzipDirPath);
 
-	return mps[0];
+	return mps;
 }
 
 void MainWindow::saveBundledPart(const QString &moduleId) {

@@ -22,7 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../utils/misc.h"
 #include "../utils/textutils.h"
-//#include "../debugdialog.h"
+#include "../debugdialog.h"
 #include "svgpathparser.h"
 #include "svgpathlexer.h"
 #include "svgpathrunner.h"
@@ -343,7 +343,7 @@ void SvgFileSplitter::normalizeChild(QDomElement & element,
 	if (nodeName.compare("g") == 0) {
 		TextUtils::fixStyleAttribute(element);
 		normalizeAttribute(element, "stroke-width", sNewWidth, vbWidth);
-		normalizeAttribute(element, "font-size", sNewWidth, vbWidth);
+		normalizeFontSize(element, "font-size", sNewWidth, vbWidth);
 		setStrokeOrFill(element, blackOnly, "black", false);
 		doChildren = true;
 	}
@@ -432,7 +432,7 @@ void SvgFileSplitter::normalizeChild(QDomElement & element,
 		normalizeAttribute(element, "x", sNewWidth, vbWidth);
 		normalizeAttribute(element, "y", sNewHeight, vbHeight);
 		normalizeAttribute(element, "stroke-width", sNewWidth, vbWidth);
-		normalizeAttribute(element, "font-size", sNewWidth, vbWidth);
+		normalizeFontSize(element, "font-size", sNewWidth, vbWidth);
 		setStrokeOrFill(element, blackOnly, "black", false);
 	}
 	else if (nodeName.compare("linearGradient") == 0) {
@@ -471,6 +471,24 @@ void SvgFileSplitter::normalizeChild(QDomElement & element,
 	}
 }
 
+bool SvgFileSplitter::normalizeFontSize(QDomElement & element, const char * attributeName, double num, double denom)
+{
+	QString attributeValue = element.attribute(attributeName);
+	if (attributeValue.isEmpty()) return true;
+
+	bool ok;
+	double n = attributeValue.replace("px","").toDouble(&ok) * num / denom;
+	if (!ok) {
+		QString string;
+		QTextStream stream(&string);
+		element.save(stream, 0);
+		DebugDialog::debug("bad font-size " + string);
+	}
+
+	element.setAttribute(attributeName, QString::number(n));
+	return ok;
+}
+
 bool SvgFileSplitter::normalizeAttribute(QDomElement & element, const char * attributeName, double num, double denom)
 {
 	QString attributeValue = element.attribute(attributeName);
@@ -482,7 +500,7 @@ bool SvgFileSplitter::normalizeAttribute(QDomElement & element, const char * att
 		QString string;
 		QTextStream stream(&string);
 		element.save(stream, 0);
-		//DebugDialog::debug("bad attribute " + string);
+		DebugDialog::debug("bad attribute " + string);
 	}
 
 	element.setAttribute(attributeName, QString::number(n));

@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Chinese (Traditional): </source>
-        <translation type="unfinished"></translation>
+        <translation>Chino (tradicional):</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
@@ -126,77 +126,77 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="156"/>
         <source>Spanish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Español:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>Italian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Italiano:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="153"/>
         <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <translation>Portugues (Europeo):</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="154"/>
         <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
+        <translation>Portugués (Brasileño):</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
+        <translation>Chino (simplificado):</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="151"/>
         <source>Japanese: </source>
-        <translation type="unfinished"></translation>
+        <translation>Japonés:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Russian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ruso:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="147"/>
         <source>Dutch: </source>
-        <translation type="unfinished"></translation>
+        <translation>Holandés:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="146"/>
         <source>Czech: </source>
-        <translation type="unfinished"></translation>
+        <translation>Checo:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="152"/>
         <source>Korean: </source>
-        <translation type="unfinished"></translation>
+        <translation>Coreano:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="155"/>
         <source>Slovak: </source>
-        <translation type="unfinished"></translation>
+        <translation>Eslovaco:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>Greek: </source>
-        <translation type="unfinished"></translation>
+        <translation>Griego:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="148"/>
         <source>French: </source>
-        <translation type="unfinished"></translation>
+        <translation>Francés:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>Turkish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Turco:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
         <source>Bulgarian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Búlgaro:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="108"/>
@@ -667,7 +667,7 @@ El svg de una placa personalizada tiene una o dos capas de pantalla serigráfica
     <message>
         <location filename="../src/items/resizableboard.cpp" line="391"/>
         <source>because there is no &lt;board&gt; layer</source>
-        <translation>porque hay no capa &lt;placa&gt;</translation>
+        <translation>porque no hay capa &lt;placa&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="396"/>
@@ -1880,12 +1880,12 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/items/logoitem.cpp" line="448"/>
         <source>Unable to display</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede mostrar</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="449"/>
         <source>Unable to display image from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede mostrar imagen desde %1</translation>
     </message>
 </context>
 <context>
@@ -2207,7 +2207,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2109"/>
         <source>No copper top layer</source>
-        <translation type="unfinished">Ninguna capa superior cobre</translation>
+        <translation type="unfinished">Ninguna capa superior de cobre</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2201"/>
@@ -2282,13 +2282,13 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="194"/>
         <source>Etchable export can only handle one board at a time--please select the board you want to export.</source>
-        <translation type="unfinished">Esquemáticotico La exportación sólo puede manejar uno entabla a la vez--complacer seleccionar el placa  quieres exportación.</translation>
+        <translation type="unfinished">Exportación esquemática sólo puede manejar una placa a la vez--por favor, selecciona la placa que quiere exportar.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="355"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="559"/>
         <source>Sketch exported</source>
-        <translation>Bosquejo Exportado</translation>
+        <translation>Boceto exportado</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="538"/>
@@ -2507,12 +2507,12 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1029"/>
         <source>Export the current sketch to Extended Gerber format (RS-274X) for professional PCB production</source>
-        <translation type="unfinished">Exportación el esquemático actual a Extendido Gerber formato (RS-274X) para profesional PCB producción</translation>
+        <translation type="unfinished">Exportar el boceto actual a formato Gerber extendido (RS-274X) para producción profesional PCB</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1033"/>
         <source>Export the current sketch to PDF for DIY PCB production (photoresist)</source>
-        <translation type="unfinished">Exportación el esquemático actual a PDF para PCB al ácido</translation>
+        <translation type="unfinished">cococococoasdfaExportación el esquemático actual a PDF para PCB al ácido</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1038"/>
@@ -3015,7 +3015,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2157"/>
         <source>Copper Fill (%1)</source>
-        <translation type="unfinished">Máximo cobrer (%1)</translation>
+        <translation type="unfinished">Cobertura cobre (%1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2784"/>
@@ -3040,7 +3040,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2794"/>
         <source>Clear ground fill seeds--enable copper fill only.</source>
-        <translation type="unfinished">La tierra clara llena semillas--habilitar Máximo cobre sólo.</translation>
+        <translation type="unfinished">Limpiar cobertura inicial de semilla--habilitar solo cobertura de cobre.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2797"/>
@@ -5294,7 +5294,7 @@ Reason: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1639"/>
         <source>There are no copper layers defined in: %1. </source>
-        <translation type="unfinished"> hay no las capas cobres definieron en: %1. </translation>
+        <translation type="unfinished">No hay capas de cobre definidas en: %1. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1640"/>
@@ -8571,7 +8571,7 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9397"/>
         <source>There are no unrouted connections</source>
-        <translation>Hay no ninguno camino sin conexión</translation>
+        <translation>No hay caminos sin conexión</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9398"/>

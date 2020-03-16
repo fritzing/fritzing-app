@@ -243,7 +243,7 @@ signals:
 
 public slots:
 	void ensureClosable();
-	ModelPart* loadBundledPart(const QString &fileName, bool addToBin);
+	QList<ModelPart*> loadBundledPart(const QString &fileName, bool addToBin);
 	void acceptAlienFiles();
 	void statusMessage(QString message, int timeout);
 	void showPCBView();

@@ -4,9 +4,8 @@
 <context>
     <name>AboutBox</name>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="80"/>
         <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="91"/>
@@ -139,6 +138,11 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="64"/>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="80"/>
+        <source>&lt;a href=&quot;https://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -499,27 +503,27 @@
         <translation>Vuoi davvero cancellare il cesto &apos;%1&apos;?  Questa azione non può essere annullata.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1149"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1151"/>
         <source>Read-only bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1149"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1151"/>
         <source>This bin cannot be renamed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1156"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1158"/>
         <source>Rename bin</source>
         <translation>Rinomina cesto</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1157"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1159"/>
         <source>Please choose a name for the bin:</source>
         <translation>Seleziona un nome per il cesto:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1233"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation>Rimuovi dal cesto</translation>
     </message>
@@ -539,12 +543,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1331"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing File to Open</source>
         <translation>Seleziona un File di Fritzing da aprire</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -559,17 +563,17 @@
         <translation>Trova parte nello Sketch</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1227"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <source>Remove from Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1227"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1234"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1198,67 +1202,67 @@ A custom board svg typically has one or two silkscreen layers and one board laye
 <context>
     <name>FApplication</name>
     <message>
-        <location filename="../src/fapplication.cpp" line="1598"/>
-        <location filename="../src/fapplication.cpp" line="1604"/>
-        <location filename="../src/fapplication.cpp" line="1607"/>
+        <location filename="../src/fapplication.cpp" line="1599"/>
+        <location filename="../src/fapplication.cpp" line="1605"/>
+        <location filename="../src/fapplication.cpp" line="1608"/>
         <source>Fritzing failure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1607"/>
+        <location filename="../src/fapplication.cpp" line="1608"/>
         <source>Fritzing caught an exception from %1 in event %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1598"/>
+        <location filename="../src/fapplication.cpp" line="1599"/>
         <source>Fritzing caught an exception %1 from %2 in event %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1735"/>
+        <location filename="../src/fapplication.cpp" line="1736"/>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1735"/>
+        <location filename="../src/fapplication.cpp" line="1736"/>
         <source>Fritzing (*%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1604"/>
+        <location filename="../src/fapplication.cpp" line="1605"/>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2007"/>
+        <location filename="../src/fapplication.cpp" line="2008"/>
         <source>Regenerate parts database?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2008"/>
+        <location filename="../src/fapplication.cpp" line="2009"/>
         <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2009"/>
+        <location filename="../src/fapplication.cpp" line="2010"/>
         <source>Would you like to regenerate the parts database?
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2017"/>
+        <location filename="../src/fapplication.cpp" line="2018"/>
         <source>Regenerate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2018"/>
+        <location filename="../src/fapplication.cpp" line="2019"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2023"/>
+        <location filename="../src/fapplication.cpp" line="2024"/>
         <source>Regenerating parts database...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1559,233 +1563,233 @@ E&apos; anche possibile scegliere un connettore come seme per il piano massa con
 <context>
     <name>ItemBase</name>
     <message>
-        <location filename="../src/items/itembase.cpp" line="320"/>
+        <location filename="../src/items/itembase.cpp" line="261"/>
         <source>Part</source>
         <translation>Componente</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="272"/>
+        <location filename="../src/items/itembase.cpp" line="213"/>
         <source>family</source>
         <translation>famiglia</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="276"/>
+        <location filename="../src/items/itembase.cpp" line="217"/>
         <source>color</source>
         <translation>colore</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="277"/>
+        <location filename="../src/items/itembase.cpp" line="218"/>
         <source>resistance</source>
         <translation>resistenza</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="280"/>
+        <location filename="../src/items/itembase.cpp" line="221"/>
         <source>voltage</source>
         <translation>voltaggio</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="283"/>
-        <location filename="../src/items/itembase.cpp" line="295"/>
+        <location filename="../src/items/itembase.cpp" line="224"/>
+        <location filename="../src/items/itembase.cpp" line="236"/>
         <source>pin spacing</source>
         <translation>spaziatura piedini</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="284"/>
+        <location filename="../src/items/itembase.cpp" line="225"/>
         <source>rated power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="285"/>
+        <location filename="../src/items/itembase.cpp" line="226"/>
         <source>rated voltage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="286"/>
+        <location filename="../src/items/itembase.cpp" line="227"/>
         <source>rated current</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="287"/>
+        <location filename="../src/items/itembase.cpp" line="228"/>
         <source>version</source>
         <translation>versione</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="288"/>
+        <location filename="../src/items/itembase.cpp" line="229"/>
         <source>package</source>
         <translation>package</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="289"/>
+        <location filename="../src/items/itembase.cpp" line="230"/>
         <source>shape</source>
         <translation>forma</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="292"/>
+        <location filename="../src/items/itembase.cpp" line="233"/>
         <source>maximum resistance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="275"/>
+        <location filename="../src/items/itembase.cpp" line="216"/>
         <source>size</source>
         <translation>dimensione</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="290"/>
+        <location filename="../src/items/itembase.cpp" line="231"/>
         <source>form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="1377"/>
+        <location filename="../src/items/itembase.cpp" line="1284"/>
         <source>model part problem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="278"/>
+        <location filename="../src/items/itembase.cpp" line="219"/>
         <source>capacitance</source>
         <translation>capacità</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="279"/>
+        <location filename="../src/items/itembase.cpp" line="220"/>
         <source>inductance</source>
         <translation>induttanza</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="281"/>
+        <location filename="../src/items/itembase.cpp" line="222"/>
         <source>current</source>
         <translation>corrente</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="282"/>
+        <location filename="../src/items/itembase.cpp" line="223"/>
         <source>power</source>
         <translation>potenza</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="291"/>
+        <location filename="../src/items/itembase.cpp" line="232"/>
         <source>part number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="273"/>
+        <location filename="../src/items/itembase.cpp" line="214"/>
         <source>type</source>
         <translation>tipo</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="274"/>
+        <location filename="../src/items/itembase.cpp" line="215"/>
         <source>model</source>
         <translation>modello</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="293"/>
+        <location filename="../src/items/itembase.cpp" line="234"/>
         <source>pins</source>
         <translation>piedini</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="294"/>
+        <location filename="../src/items/itembase.cpp" line="235"/>
         <source>spacing</source>
         <translation>spaziatura</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="296"/>
+        <location filename="../src/items/itembase.cpp" line="237"/>
         <source>frequency</source>
         <translation>frequenza</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="297"/>
+        <location filename="../src/items/itembase.cpp" line="238"/>
         <source>processor</source>
         <translation>processore</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="298"/>
+        <location filename="../src/items/itembase.cpp" line="239"/>
         <source>variant</source>
         <translation>variante</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="299"/>
+        <location filename="../src/items/itembase.cpp" line="240"/>
         <source>layers</source>
         <translation>livelli</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="300"/>
+        <location filename="../src/items/itembase.cpp" line="241"/>
         <source>tolerance</source>
         <translation>tolleranza</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="301"/>
+        <location filename="../src/items/itembase.cpp" line="242"/>
         <source>descr</source>
         <translation>descr</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="302"/>
+        <location filename="../src/items/itembase.cpp" line="243"/>
         <source>filename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="303"/>
+        <location filename="../src/items/itembase.cpp" line="244"/>
         <source>title</source>
         <translation>titolo</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="304"/>
+        <location filename="../src/items/itembase.cpp" line="245"/>
         <source>date</source>
         <translation>data</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="305"/>
+        <location filename="../src/items/itembase.cpp" line="246"/>
         <source>rev</source>
         <translation>rev</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="306"/>
+        <location filename="../src/items/itembase.cpp" line="247"/>
         <source>sheet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="307"/>
+        <location filename="../src/items/itembase.cpp" line="248"/>
         <source>project</source>
         <translation>progetto</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="1502"/>
+        <location filename="../src/items/itembase.cpp" line="1409"/>
         <source>unable to create renderer for svg %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="1399"/>
+        <location filename="../src/items/itembase.cpp" line="1306"/>
         <source>file for %1 %2 not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="308"/>
+        <location filename="../src/items/itembase.cpp" line="249"/>
         <source>banded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="309"/>
+        <location filename="../src/items/itembase.cpp" line="250"/>
         <source>top</source>
         <translation>sopra</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="310"/>
+        <location filename="../src/items/itembase.cpp" line="251"/>
         <source>bottom</source>
         <translation>sotto</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="311"/>
+        <location filename="../src/items/itembase.cpp" line="252"/>
         <source>copper bottom</source>
         <translation>rame inferiore</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="312"/>
+        <location filename="../src/items/itembase.cpp" line="253"/>
         <source>copper top</source>
         <translation>rame superiore</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="313"/>
+        <location filename="../src/items/itembase.cpp" line="254"/>
         <source>silkscreen bottom</source>
         <translation>silkscreen inferiore</translation>
     </message>
     <message>
-        <location filename="../src/items/itembase.cpp" line="314"/>
+        <location filename="../src/items/itembase.cpp" line="255"/>
         <source>silkscreen top</source>
         <translation>silkscreen superiore</translation>
     </message>
@@ -4785,12 +4789,12 @@ Reason: %2 (errcode %3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2844"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2855"/>
         <source>Enter Keepout</source>
         <translation>Inserisci Distanziamento</translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2845"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2856"/>
         <source>Keepout is in mils (.001 inches).
 
 </source>
@@ -4799,13 +4803,13 @@ Reason: %2 (errcode %3)</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2846"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2857"/>
         <source>Note that due to aliasing, distances may be too short by up to 2 mils
 </source>
         <translation>Nota che a causa dell&apos;aliasing, le distanze sotto i 2 mills possono essere troppo ridotte </translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2847"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2858"/>
         <source>so you may want to increase the keepout value by that much.
 
 </source>
@@ -4814,7 +4818,7 @@ Reason: %2 (errcode %3)</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2848"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2859"/>
         <source>10 mils is a good default choice.
 
 </source>
@@ -4823,7 +4827,7 @@ Reason: %2 (errcode %3)</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2849"/>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="2860"/>
         <source>Enter keepout value:</source>
         <translation>Inserisci il valore di distanziamento:</translation>
     </message>
@@ -5096,6 +5100,13 @@ Reason: %2 (errcode %3)</source>
         <translation>&amp;File</translation>
     </message>
     <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="1603"/>
+        <source>Unable to load image file &apos;%1&apos;:
+
+%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2168"/>
         <source>Sketch Change Warning</source>
         <translation>Avvertenza Cambio Sketch</translation>
@@ -5309,13 +5320,6 @@ Andare avanti e salvare?</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1583"/>
         <source>Fritzing currently only supports OCRA and Droid fonts--these have been substituted in for the fonts in &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="1603"/>
-        <source>Unable to load image file &apos;%1&apos;: 
-
-%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5905,192 +5909,192 @@ Andare avanti e salvare?</translation>
 <context>
     <name>PartLabel</name>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="471"/>
+        <location filename="../src/items/partlabel.cpp" line="450"/>
         <source>Rotate current selection 90 degrees counter clockwise</source>
         <translation>Ruota la selezione corrente di 90 gradi in senso anti-orario</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="427"/>
+        <location filename="../src/items/partlabel.cpp" line="406"/>
         <source>Edit</source>
         <translation>Modifica</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="429"/>
+        <location filename="../src/items/partlabel.cpp" line="408"/>
         <source>Edit label text</source>
         <translation>Modifica testo etichetta</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="437"/>
+        <location filename="../src/items/partlabel.cpp" line="416"/>
         <source>Display Values</source>
         <translation>Mostra Valori</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="438"/>
+        <location filename="../src/items/partlabel.cpp" line="417"/>
         <source>Flip/Rotate</source>
         <translation>Ribalta/Ruota</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="439"/>
+        <location filename="../src/items/partlabel.cpp" line="418"/>
         <source>Font Size</source>
         <translation>Dimensione Testo</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="451"/>
+        <location filename="../src/items/partlabel.cpp" line="430"/>
         <source>Rotate the label by 90 degrees clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="461"/>
+        <location filename="../src/items/partlabel.cpp" line="440"/>
         <source>Rotate the label by 180 degrees</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="479"/>
+        <location filename="../src/items/partlabel.cpp" line="458"/>
         <source>Flip Horizontal</source>
         <translation>Ribalta Orizzontalmente</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="481"/>
+        <location filename="../src/items/partlabel.cpp" line="460"/>
         <source>Flip label horizontally</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="483"/>
+        <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Flip Vertical</source>
         <translation>Ribalta Verticalmente</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="485"/>
+        <location filename="../src/items/partlabel.cpp" line="464"/>
         <source>Flip label vertically</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="493"/>
+        <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Small</source>
         <translation>Piccolo</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="495"/>
+        <location filename="../src/items/partlabel.cpp" line="474"/>
         <source>Set font size to small</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="499"/>
+        <location filename="../src/items/partlabel.cpp" line="478"/>
         <source>Medium</source>
         <translation>Medio</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="501"/>
+        <location filename="../src/items/partlabel.cpp" line="480"/>
         <source>Set font size to medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="505"/>
+        <location filename="../src/items/partlabel.cpp" line="484"/>
         <source>Large</source>
         <translation>Grande</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="507"/>
+        <location filename="../src/items/partlabel.cpp" line="486"/>
         <source>Set font size to large</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="511"/>
+        <location filename="../src/items/partlabel.cpp" line="490"/>
         <source>Label text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="515"/>
+        <location filename="../src/items/partlabel.cpp" line="494"/>
         <source>Display the text of the label</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="526"/>
+        <location filename="../src/items/partlabel.cpp" line="505"/>
         <source>Display the value of property %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="725"/>
+        <location filename="../src/items/partlabel.cpp" line="704"/>
         <source>Set label for %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="726"/>
+        <location filename="../src/items/partlabel.cpp" line="705"/>
         <source>Label text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="431"/>
+        <location filename="../src/items/partlabel.cpp" line="410"/>
         <source>Hide</source>
         <translation>Nascondi</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="433"/>
+        <location filename="../src/items/partlabel.cpp" line="412"/>
         <source>Hide part label</source>
         <translation type="unfinished">Nascondi etichetta parte</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="446"/>
+        <location filename="../src/items/partlabel.cpp" line="425"/>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="456"/>
+        <location filename="../src/items/partlabel.cpp" line="435"/>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="466"/>
+        <location filename="../src/items/partlabel.cpp" line="445"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="476"/>
+        <location filename="../src/items/partlabel.cpp" line="455"/>
         <source>Rotate the label by 45 degrees counter clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="487"/>
+        <location filename="../src/items/partlabel.cpp" line="466"/>
         <source>Tiny</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="489"/>
+        <location filename="../src/items/partlabel.cpp" line="468"/>
         <source>Set font size to tiny</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="444"/>
+        <location filename="../src/items/partlabel.cpp" line="423"/>
         <source>Rotate 45° Clockwise</source>
         <translation>Ruota 45° Orario</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="449"/>
+        <location filename="../src/items/partlabel.cpp" line="428"/>
         <source>Rotate 90° Clockwise</source>
         <translation>Ruota 90° Orario</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="454"/>
+        <location filename="../src/items/partlabel.cpp" line="433"/>
         <source>Rotate 135° Clockwise</source>
         <translation>Ruota 135° Orario</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="459"/>
+        <location filename="../src/items/partlabel.cpp" line="438"/>
         <source>Rotate 180°</source>
         <translation>Ruota 180°</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="464"/>
+        <location filename="../src/items/partlabel.cpp" line="443"/>
         <source>Rotate 135° Counter Clockwise</source>
         <translation>Ruota 135° Antiorario</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="469"/>
+        <location filename="../src/items/partlabel.cpp" line="448"/>
         <source>Rotate 90° Counter Clockwise</source>
         <translation>Ruota 90° Antiorario</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="474"/>
+        <location filename="../src/items/partlabel.cpp" line="453"/>
         <source>Rotate 45° Counter Clockwise</source>
         <translation>Ruota 45° Antiorario</translation>
     </message>
@@ -6799,7 +6803,7 @@ shift key swaps scroll axis</source>
         <location filename="../src/model/palettemodel.cpp" line="213"/>
         <location filename="../src/model/palettemodel.cpp" line="335"/>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="528"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="941"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="902"/>
         <location filename="../src/svg/gerbergenerator.cpp" line="359"/>
         <source>Fritzing</source>
         <translation></translation>
@@ -6891,18 +6895,18 @@ shift key swaps scroll axis</source>
         <translation>Vista PCB</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7909"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7864"/>
         <source>Trace wires</source>
         <translation>Traccia</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7912"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7867"/>
         <source>Ratsnest wires</source>
         <translation>Nido di topo</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2233"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7914"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7869"/>
         <source>Select all %1</source>
         <translation>Seleziona tutto %1</translation>
     </message>
@@ -6937,38 +6941,38 @@ Fritzing continuerà a funzionare, ma non sarà possibile cambiare le proprietà
         <translation>Vista schema</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3799"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3765"/>
         <source>%1 %2 %3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4067"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4033"/>
         <source>%1 Layer</source>
         <translation>Livello %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4291"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4308"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4257"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4274"/>
         <source>Bring forward</source>
         <translation>Porta avanti</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4300"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4266"/>
         <source>Send backward</source>
         <translation>Manda indietro</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4317"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4283"/>
         <source>Bring to front</source>
         <translation>Porta in primo piano</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5587"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5549"/>
         <source>Split Wire</source>
         <translation>Dividi traccia</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5648"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5610"/>
         <source>Join Wire</source>
         <translation>Unisci traccia</translation>
     </message>
@@ -7087,7 +7091,7 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8189"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8144"/>
         <source>Select outdated parts</source>
         <translation>Seleziona parti obsolete</translation>
     </message>
@@ -7349,12 +7353,12 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="942"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="903"/>
         <source>Error reading file %1: %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8204"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8159"/>
         <source>Select locked parts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7404,12 +7408,12 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3612"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3578"/>
         <source>%1 %2,%3 %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3641"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3607"/>
         <source>Change leg of %1,%2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7766,7 +7770,7 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2056"/>
+        <location filename="../src/fapplication.cpp" line="2057"/>
         <source>Regenerate database failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7888,11 +7892,6 @@ is already there, we won&apos;t add it again, right?</source>
 <context>
     <name>QuoteDialog</name>
     <message>
-        <location filename="../src/dialogs/quotedialog.cpp" line="209"/>
-        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="172"/>
         <source>Order your PCB from Fritzing Fab</source>
         <translation type="unfinished"></translation>
@@ -7910,6 +7909,11 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="195"/>
         <source>Copies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dialogs/quotedialog.cpp" line="209"/>
+        <source>For more information on pricing see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8025,17 +8029,17 @@ is already there, we won&apos;t add it again, right?</source>
 <context>
     <name>Resistor</name>
     <message>
-        <location filename="../src/items/resistor.cpp" line="257"/>
+        <location filename="../src/items/resistor.cpp" line="253"/>
         <source>resistance</source>
         <translation>resistenza</translation>
     </message>
     <message>
-        <location filename="../src/items/resistor.cpp" line="130"/>
+        <location filename="../src/items/resistor.cpp" line="126"/>
         <source>Resistor</source>
         <translation>Resistenza</translation>
     </message>
     <message>
-        <location filename="../src/items/resistor.cpp" line="274"/>
+        <location filename="../src/items/resistor.cpp" line="270"/>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8313,306 +8317,306 @@ is already there, we won&apos;t add it again, right?</source>
 <context>
     <name>SketchWidget</name>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="729"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="690"/>
         <source>loading part</source>
         <translation>caricamento componente</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="733"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="694"/>
         <source>done loading</source>
         <translation>caricamento completato</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="1177"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="1138"/>
         <source>%1 %2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="1180"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="1141"/>
         <source>%1 %2 items</source>
         <translation>%1 %2 elementi</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="1587"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="1548"/>
         <source>Select All</source>
         <translation>Seleziona Tutto</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="1587"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="1548"/>
         <source>Deselect</source>
         <translation>Deseleziona</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="2070"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="2031"/>
         <source>Add %1</source>
         <translation>Aggiungi %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="2173"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="2134"/>
         <source>Selection</source>
         <translation>Selezione</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3324"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3290"/>
         <source>Move %2 (%1)</source>
         <translation>Muovi %2 (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3327"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3293"/>
         <source>Move %2 items (%1)</source>
         <translation>Muovi %2 elementi (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3509"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9520"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3475"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9475"/>
         <source>Select %1</source>
         <translation>Seleziona %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3512"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9523"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3478"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9478"/>
         <source>Select %1 items</source>
         <translation>Seleziona %1 elementi</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3600"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3783"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3566"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3749"/>
         <source>Disconnect</source>
         <translation>Disconnetti</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3791"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3757"/>
         <source>Change</source>
         <translation>Cambia</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3608"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3795"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3574"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3761"/>
         <source>Connect</source>
         <translation>Connetti</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3609"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3796"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3575"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3762"/>
         <source>to %1</source>
         <translation>a %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3849"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3815"/>
         <source>Create and connect wire</source>
         <translation>Crea e connetti filo</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7141"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7099"/>
         <source>Rotate</source>
         <translation>Ruota</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7141"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7099"/>
         <source>Flip</source>
         <translation>Ribalta</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5902"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5864"/>
         <source>Change %1 label to &apos;%2&apos;</source>
         <translation>Cambia etichetta da %1 a &apos;%2&apos;</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6414"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6376"/>
         <source>Change %1 color from %2 to %3</source>
         <translation>Cambia %1 colore da %2 a %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6420"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6382"/>
         <source>Change color of %1 wires to %2</source>
         <translation>Cambia colore del filo %1 in %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6466"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6428"/>
         <source>Change %1 width from %2 to %3</source>
         <translation>Cambia larghezza %1 da %2 a %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6472"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6434"/>
         <source>Change width of %1 wires to %2</source>
         <translation>Cambia larghezza del filo %1 in %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7134"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7092"/>
         <source>Move label &apos;%1&apos;</source>
         <translation>Muovi etichetta &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7141"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7099"/>
         <source>%1 label &apos;%2&apos;</source>
         <translation>%1 etichetta &apos;%2&apos;</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7193"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7151"/>
         <source>Resize Note</source>
         <translation>Note ridimensione</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4606"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4572"/>
         <source>Rotate %2 (%1)</source>
         <translation>Ruota %2 (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5814"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5776"/>
         <source>Double-click to delete this bend point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5748"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5710"/>
         <source>Double-click</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5748"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5710"/>
         <source>Drag or double-click</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5749"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5711"/>
         <source>or alt-drag to move the segment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8003"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7958"/>
         <source>Disconnect all wires from %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8006"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7961"/>
         <source>Disconnect all wires from %1 items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7594"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7549"/>
         <source>Change Resistance from %1 to %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8284"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8239"/>
         <source>Change image from %1 to %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7618"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7627"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7573"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7582"/>
         <source>Change %1 from %2 to %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3601"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3567"/>
         <source>from %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3604"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3570"/>
         <source>Move leg of</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4792"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4758"/>
         <source>Flip %2 (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3664"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3630"/>
         <source>Change leg curvature for %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3690"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3656"/>
         <source>Change leg bendpoint for %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9094"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9049"/>
         <source>change pin labels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="1096"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="1057"/>
         <source>Delete ratsnest</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3974"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3940"/>
         <source>Fritzing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3974"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3940"/>
         <source>This seems like an attempt to create a trace across layers. This circumstance should not arise: please contact the developers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3981"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3947"/>
         <source>Create and connect %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3981"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3947"/>
         <source>wire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3981"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3947"/>
         <source>trace</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7805"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7760"/>
         <source>Create wire from Ratsnest</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5876"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5838"/>
         <source>Note text change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9393"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9348"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9394"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9349"/>
         <source>There are no unrouted connections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9395"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9350"/>
         <source>Unrouted connections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9396"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9351"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9517"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9472"/>
         <source>Deselect all</source>
         <translation>Deseleziona tutto</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9443"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9398"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7748"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8633"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7703"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8588"/>
         <source>Resize board to %1 %2</source>
         <translation>Ridimensiona basetta da %1 %2</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7176"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7134"/>
         <source>show %n part label(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -8620,7 +8624,7 @@ Note: you can also trigger this display by mousing down on the routing status te
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7179"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7137"/>
         <source>hide %n part label(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -8628,17 +8632,17 @@ Note: you can also trigger this display by mousing down on the routing status te
         </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7725"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7680"/>
         <source>Resize ruler to %1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9455"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9410"/>
         <source>Add %1 parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="10058"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="10005"/>
         <source>test connectors</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9363,22 +9367,22 @@ Note: you can also trigger this display by mousing down on the routing status te
 <context>
     <name>WelcomeView</name>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="369"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="371"/>
         <source>Recent Sketches</source>
         <translation>Sketch Recenti</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="402"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="404"/>
         <source>New Sketch</source>
         <translation>Nuovo Sketch</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="410"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="412"/>
         <source>Open Sketch</source>
         <translation>Apri Sketch</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="455"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="457"/>
         <source>Fab</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9387,57 +9391,57 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="vanished">Negozio</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="482"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="484"/>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
         <translation>Fritzing Fab è un servizio facile e conveniente per produrre circuiti stampati professionali dai tuoi sketch Fritzing. </translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="484"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="486"/>
         <source>produce your first pcb now &gt;&gt;</source>
         <translation>produci il tuo primo circuito stampato ora &gt;&gt;</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="485"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="487"/>
         <source>Order your PCB now.</source>
         <translation>Ordina il tuo PCB ora.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="568"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="570"/>
         <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos;/&gt;&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="587"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="589"/>
         <source>Projects</source>
         <translation>Progetti</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="587"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="589"/>
         <source>Blog</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="590"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="592"/>
         <source>Fritzing News.</source>
         <translation>Novità Fritzing.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="595"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="597"/>
         <source>Fritzing Projects.</source>
         <translation>Progetti Fritzing.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="661"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="663"/>
         <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos; /&gt;&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="703"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="705"/>
         <source>No recent sketches found</source>
         <translation>Nessuno sketch recente</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="742"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="744"/>
         <source>Unable to reach blog.fritzing.org</source>
         <translation>Impossibile connettersi a blog.fritzing.org</translation>
     </message>
@@ -9446,52 +9450,52 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="vanished">Impossibile connettersi a fritzing.org/projects</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="963"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="965"/>
         <source>Tip of the Day:</source>
         <translation>Suggerimento del Giorno:</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="990"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="992"/>
         <source>All Tips</source>
         <translation>Tutti i Suggerimenti</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="998"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="1000"/>
         <source>Next Tip</source>
         <translation>Suggerimento Successivo</translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="481"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="483"/>
         <source>Fritzing Fab</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="455"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="457"/>
         <source>Donate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="459"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="461"/>
         <source>Fritzing development needs you</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="460"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="462"/>
         <source>Software development and maintenance is a lot of work. Without your support, it is not possible to keep that up.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="462"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="464"/>
         <source>Donate and leave a comment.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="463"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="465"/>
         <source>Donate now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="742"/>
+        <location filename="../src/sketch/welcomeview.cpp" line="744"/>
         <source>Unable to reach fritzing.org/projects</source>
         <translation type="unfinished"></translation>
     </message>

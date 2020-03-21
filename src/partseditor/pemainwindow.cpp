@@ -1600,7 +1600,7 @@ void PEMainWindow::loadImage()
 			svg = createSvgFromImage(origPath);
 		}
 		catch (const QString & msg) {
-			QMessageBox::warning(nullptr, tr("Conversion problem"), tr("Unable to load image file '%1': \n\n%2").arg(origPath).arg(msg));
+			QMessageBox::warning(nullptr, tr("Conversion problem"), tr("Unable to load image file '%1':\n\n%2").arg(origPath).arg(msg));
 			return;
 		}
 	}

@@ -7572,11 +7572,6 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <translation>Fehler in SVG-Konvertierung 2: %1 %2 %3</translation>
     </message>
     <message>
-        <location filename="../src/utils/folderutils.cpp" line="82"/>
-        <source>Application folder %1 not found</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/utils/folderutils.cpp" line="355"/>
         <source>Copying file %1</source>
         <translation>Kopiere Datei %1</translation>

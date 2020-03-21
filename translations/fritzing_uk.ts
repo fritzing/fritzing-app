@@ -6980,14 +6980,12 @@ Shift = змінити вісь прокручування</translation>
         <translation>%1 провідників переміщено зі збереженого місцеположення до %2.</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1366"/>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
-        <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</translation>
+        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1372"/>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</source>
-        <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</translation>
+        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2057"/>
@@ -7708,9 +7706,8 @@ Fritzing продовжує роботу, але ви не зможете змі
         <translation>Обробка файлу...</translation>
     </message>
     <message>
-        <location filename="../src/utils/folderutils.cpp" line="82"/>
         <source>Application folder %1 not found</source>
-        <translation>Папка програми%1 не знайдена</translation>
+        <translation type="vanished">Папка програми%1 не знайдена</translation>
     </message>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="355"/>

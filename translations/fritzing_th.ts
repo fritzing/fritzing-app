@@ -188,15 +188,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;a href=&quot;https://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>and Kjell Morgenstern </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ukrainian: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yelyzaveta Chyhryna</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5999,10 +6003,6 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Regenerate database failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6145,14 +6145,6 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     </message>
     <message>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Application folder %1 not found</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

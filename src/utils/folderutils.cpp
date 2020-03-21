@@ -79,7 +79,7 @@ QDir  FolderUtils::getApplicationSubFolder(QString search) {
 		dir.cdUp();
 		dir.cdUp();
 		if (dir.isRoot()) {
-			DebugDialog::debug(QObject::tr("Application folder %1 not found").arg(search));
+			DebugDialog::debug(QString("Application folder %1 not found").arg(search));
 			return QDir();   // didn't find the search folder
 		}
 

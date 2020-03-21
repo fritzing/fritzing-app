@@ -1363,20 +1363,20 @@ void FApplication::initSplash(FSplashScreen & splash) {
 
 	// put this above the progress indicator
 
-	QString msg1 = QObject::tr("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
+	QString msg1 = QString("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
 	                           "&#169; 2007-%1 Fritzing"
 	                           "</font>")
 	               .arg(Version::year());
 	splash.showMessage(msg1, "fritzingText", Qt::AlignLeft | Qt::AlignTop);
 
-	QString msg2 = QObject::tr("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
-                               "Version %1.%2.%3 (%4 %5) %6"
+	QString msg2 = QString("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
+	                           "Version %1.%2.%3 (%4 %5) %6"
 	                           "</font>")
 	               .arg(Version::majorVersion())
 	               .arg(Version::minorVersion())
 	               .arg(Version::minorSubVersion())
 	               .arg(Version::gitVersion())
-                   .arg(Version::date())
+	               .arg(Version::date())
 	               .arg(m_buildType);
 	splash.showMessage(msg2, "versionText", Qt::AlignRight | Qt::AlignTop);
 

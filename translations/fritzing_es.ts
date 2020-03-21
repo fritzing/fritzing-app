@@ -2512,7 +2512,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1033"/>
         <source>Export the current sketch to PDF for DIY PCB production (photoresist)</source>
-        <translation type="unfinished">cococococoasdfaExportación el esquemático actual a PDF para PCB al ácido</translation>
+        <translation type="unfinished">Exportación el esquemático actual a PDF para PCB al ácido</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1038"/>

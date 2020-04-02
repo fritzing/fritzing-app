@@ -234,7 +234,7 @@ void AutorouterSettingsDialog::changeThickness()
 
 void AutorouterSettingsDialog::setTraceWidth(int width)
 {
-	for (int i = 0; i > m_traceWidthComboBox->count(); i++) {
+	for (int i = 0; i < m_traceWidthComboBox->count(); i++) {
 		if (m_traceWidthComboBox->itemData(i).toInt() == width) {
 			m_traceWidthComboBox->setCurrentIndex(i);
 			return;

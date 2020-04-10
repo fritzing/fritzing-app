@@ -115,7 +115,7 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
 	/**
 	 * Connect to the remote.
 	 */
-#if LIBGIT2_VER_MINOR > 24
+#if LIBGIT2_VER_MAJOR > 0 || (LIBGIT2_VER_MAJOR == 0 && LIBGIT2_VER_MINOR > 24)
 	error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, NULL, NULL);
 #elif LIBGIT2_VER_MINOR == 24
 	error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, NULL);

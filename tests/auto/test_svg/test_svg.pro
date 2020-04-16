@@ -13,7 +13,8 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
-boost_root = ../../boost_1_70_0
+# specify absolute path so that unit test compiles will find the folder
+absolute_boost = 1
 include($$absolute_path(../../../pri/boostdetect.pri))
 
 QT += core xml svg

@@ -21,6 +21,7 @@ defined(boost_root, var) {
     exists($$boost_root) {
         # force absolute: relative would break due to detection versus use folder nest level
         BOOSTPATH = $$absolute_path($$boost_root)
+        # prevent possibly existing absolute_boost flag from breaking already absolute path
         absolute_boost = 1
         unset(absolute_boost)
     } else {
@@ -36,10 +37,6 @@ defined(boost_root, var) {
         exists(../../boost_1_$${boost}_0) {
             LATESTBOOST = $$boost
             BOOSTPATH = ../boost_1_$${boost}_0
-        }
-        exists(../src/lib/boost_1_$${boost}_0) {
-            LATESTBOOST = $$boost
-            BOOSTPATH = src/lib/boost_1_$${boost}_0
         }
     }
 }

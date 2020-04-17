@@ -86,7 +86,7 @@ jobs:
         - mkdir -p ../libgit2/build
         - wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz && mv libgit2-0.28.1/* ../libgit2/
         - (cd ../libgit2/build && cmake -D BUILD_SHARED_LIBS=OFF .. && cmake --build .)
-        - (cd src/lib && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+        - (cd .. && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
         - tools/aws_tasks.sh setup
       script:
         - ls /usr/local/opt
@@ -106,7 +106,7 @@ jobs:
         - ./qt-installer.exe --script ./tools/qt_installer_noninteractive.qs
         - curl -fsSL https://github.com/libgit2/libgit2/archive/v0.28.1.zip -o libgit2.zip && 7z x libgit2.zip && mv libgit2-0.28.1 ../libgit2
         - (mkdir ../libgit2/build64 && cd ../libgit2/build64 && cmake -G "Visual Studio 15 2017 Win64" .. && cmake --build . --config Release)
-        - (cd src/lib && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
+        - (cd .. && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
         - tools/aws_tasks.sh setup
 
       script:

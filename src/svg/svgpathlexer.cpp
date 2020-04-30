@@ -67,10 +67,10 @@ QString SVGPathLexer::clean(const QString & source) {
 
 int SVGPathLexer::lex()
 {
-    if (m_current.isNull()) {
-        // Do this first, to prevent infinite loop when last content of the path data is a number
-        return SVGPathGrammar::EOF_SYMBOL;
-    }
+	if (m_current.isNull()) {
+		// Do this first, to prevent infinite loop when last content of the path data is a number
+		return SVGPathGrammar::EOF_SYMBOL;
+	}
 	if (TextUtils::floatingPointMatcher.indexIn(m_source, m_pos - 1) == m_pos - 1) {
 		// sitting at the start of a number: collect and advance past it
 		m_currentNumber = m_source.mid(m_pos - 1, TextUtils::floatingPointMatcher.matchedLength()).toDouble();

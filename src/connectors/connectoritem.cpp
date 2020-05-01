@@ -1304,53 +1304,67 @@ bool ConnectorItem::isConnectedToPart() {
 	return false;
 }
 
-void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> & connectorItems, bool crossLayers, ViewGeometry::WireFlags skipFlags) {
-	// collects all the connectors at the same potential
-	// allows direct connections or wired connections
-
-	//DebugDialog::debug("__________________");
-
+/**
+ * Starting from the set of connectors supplied, build and return a list of all
+ * of the connectors that are wired together
+ *
+ * Allows direct or wired connections
+ * @brief collect all the connectors at the same potential
+ * @param[in,out] connectorItems start of list of connected items
+ * @param[in] crossLayers follow connections accross layers
+ * @param[in] skipFlags filter for the types of wires that are not to be included
+ */
+void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> &connectorItems,
+										  bool crossLayers, ViewGeometry::WireFlags skipFlags)
+{
+	// take a local (temporary working) copy of the supplied list, and wipe the original
 	QList<ConnectorItem *> tempItems = connectorItems;
 	connectorItems.clear();
 
 	for (int i = 0; i < tempItems.count(); i++) {
-		ConnectorItem * connectorItem = tempItems[i];
-		//connectorItem->debugInfo("testing eqp");
+		ConnectorItem *connectorItem = tempItems[i];
 
-		Wire * fromWire = (connectorItem->attachedToItemType() == ModelPart::Wire) ? qobject_cast<Wire *>(connectorItem->attachedTo()) : nullptr;
+		Wire *fromWire = (connectorItem->attachedToItemType() == ModelPart::Wire)
+						 ? qobject_cast<Wire *>(connectorItem->attachedTo())
+						 : nullptr;
 		if (fromWire) {
 			if (fromWire->hasAnyFlag(skipFlags)) {
 				// don't add this kind of wire
 				continue;
 			}
-		}
-		else {
+		} else {
 			if (crossLayers) {
-				ConnectorItem * crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
+				ConnectorItem *crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
 				if (crossConnectorItem) {
 					if (!tempItems.contains(crossConnectorItem)) {
 						tempItems.append(crossConnectorItem);
 					}
 				}
 			}
-		}
+		} // end else not (fromWire)
 
 		// this one's a keeper
 		connectorItems.append(connectorItem);
-		//connectorItem->debugInfo("collect");
 
-		foreach (ConnectorItem * cto, connectorItem->connectedToItems()) {
-			if (tempItems.contains(cto)) continue;
+		foreach (ConnectorItem *cto, connectorItem->connectedToItems()) {
+			if (tempItems.contains(cto)) {
+				continue;
+			}
 
-			if ((skipFlags & ViewGeometry::NormalFlag) && (!fromWire) && (cto->attachedToItemType() != ModelPart::Wire)) {
+			if ((skipFlags & ViewGeometry::NormalFlag)
+				&& (!fromWire)
+				&& (cto->attachedToItemType() != ModelPart::Wire)) {
 				// direct (part-to-part) connections not allowed
 				continue;
 			}
 
+			// add `approved` connected items to the list being processed
 			tempItems.append(cto);
-		}
+		} // end foreach (ConnectorItem *cto, connectorItem->connectedToItems())
 
-		Bus * bus = connectorItem->bus();
+		// When the kept connector item is part of a bus, include all of the other
+		// connectors on the bus in the list being processed
+		Bus *bus = connectorItem->bus();
 		if (bus) {
 			QList<ConnectorItem *> busConnectedItems;
 			connectorItem->attachedTo()->busConnectorItems(bus, connectorItem, busConnectedItems);
@@ -1361,14 +1375,14 @@ void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> & connectorItem
 				//connectorItem->attachedTo()->busConnectorItems(bus, busConnectedItems);
 			}
 #endif
-			foreach (ConnectorItem * busConnectedItem, busConnectedItems) {
+			foreach (ConnectorItem *busConnectedItem, busConnectedItems) {
 				if (!tempItems.contains(busConnectedItem)) {
 					tempItems.append(busConnectedItem);
 				}
 			}
-		}
-	}
-}
+		} // end if (bus)
+	} // end for (int i = 0; i < tempItems.count(); i++)
+} // end void ConnectorItem::collectEqualPotential(…)
 
 void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<ConnectorItem *> & partsConnectors, bool includeSymbols, ViewLayer::ViewLayerPlacement viewLayerPlacement)
 {

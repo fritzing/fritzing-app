@@ -1016,6 +1016,8 @@ void SketchWidget::deleteItem(ItemBase * itemBase, bool deleteModelPart, bool do
 }
 
 void SketchWidget::deleteSelected(Wire * wire, bool minus) {
+	checkMoved(false);
+
 	QSet<ItemBase *> itemBases;
 	if (wire) {
 		itemBases << wire;
@@ -1981,8 +1983,6 @@ void SketchWidget::dropEvent(QDropEvent *event)
 		if (event->source() == this) {
 			// Item was dragged from this same window/view
 			checkMoved(false);
-			m_savedItems.clear();
-			m_savedWires.clear();
 		}
 		else {
 			// Item was dragged from another window
@@ -3401,6 +3401,8 @@ bool SketchWidget::checkMoved(bool wait)
 		m_undoStack->push(parentCommand);
 	}
 
+	m_savedItems.clear();
+	m_savedWires.clear();
 	return true;
 }
 
@@ -5064,10 +5066,7 @@ void SketchWidget::keyReleaseEvent(QKeyEvent * event) {
 
 void SketchWidget::arrowTimerTimeout() {
 	m_movingByArrow = false;
-	if (checkMoved(false)) {
-		m_savedItems.clear();
-		m_savedWires.clear();
-	}
+	checkMoved(false);
 }
 
 void SketchWidget::keyPressEvent ( QKeyEvent * event ) {
@@ -9625,8 +9624,6 @@ void SketchWidget::moveItem(ItemBase * itemBase, double x, double y)
 
 	m_movingByArrow = false;
 	checkMoved(false);
-	m_savedItems.clear();
-	m_savedWires.clear();
 	m_alignToGrid = alignToGrid;
 }
 
@@ -9779,8 +9776,6 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
 	m_movingByArrow = false;
 	m_moveEventCount++;
 	checkMoved(false);
-	m_savedItems.clear();
-	m_savedWires.clear();
 }
 
 void SketchWidget::squashShapes(QPointF scenePos)

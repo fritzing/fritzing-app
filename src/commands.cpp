@@ -466,7 +466,7 @@ ChangeConnectionCommand::ChangeConnectionCommand(SketchWidget * sketchWidget, Ba
         bool connect, QUndoCommand * parent)
 	: BaseCommand(crossView, sketchWidget, parent)
 {
-	//DebugDialog::debug(QString("ccc: from %1 %2; to %3 %4").arg(fromID).arg(fromConnectorID).arg(toID).arg(toConnectorID) );
+	//DebugDialog::debug(QString("ccc: from %1 %2; to %3 %4, connect %5, layer %6").arg(fromID).arg(fromConnectorID).arg(toID).arg(toConnectorID).arg(connect).arg(viewLayerPlacement) );
 	m_enabled = true;
 	m_fromID = fromID;
 	m_fromConnectorID = fromConnectorID;

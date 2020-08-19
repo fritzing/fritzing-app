@@ -3369,8 +3369,8 @@ bool SketchWidget::checkMoved(bool wait)
 				fromConnectorItem->setOverConnectorItem(nullptr);   // clean up
 				gotConnection = true;
 				extendChangeConnectionCommand(BaseCommand::CrossView, fromConnectorItem, toConnectorItem,
-				                              ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID()),
-				                              true, parentCommand);
+											  ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID()),
+											  true, parentCommand);
 			}
 			restoreConnectorItems.append(fromConnectorItem);
 			fromConnectorItem->clearConnectorHover();
@@ -3586,24 +3586,28 @@ void SketchWidget::prepLegBendpointMove(ConnectorItem * from, int index, QPointF
 
 
 		if (former.count() > 0) {
-			QList<ConnectorItem *> connectorItems;
-			connectorItems.append(from);
-			ConnectorItem::collectEqualPotential(connectorItems, true, ViewGeometry::RatsnestFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::SchematicTraceFlag);
-
 			foreach (ConnectorItem * formerConnectorItem, former) {
-				ChangeConnectionCommand * ccc = extendChangeConnectionCommand(BaseCommand::CrossView, from, formerConnectorItem,
-				                                ViewLayer::specFromID(from->attachedToViewLayerID()),
-				                                false, parentCommand);
+
+				ItemBase * toItem = formerConnectorItem->attachedTo();
+				if (toItem) {
+					if (toItem->wireFlags() & (ViewGeometry::RatsnestFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::SchematicTraceFlag)) continue;
+				}
+
+				ChangeConnectionCommand * ccc = extendChangeConnectionCommand(
+					                                BaseCommand::CrossView, from, formerConnectorItem,
+					                                ViewLayer::specFromID(from->attachedToViewLayerID()),
+					                                false, parentCommand
+					);
 				ccc->setUpdateConnections(false);
 				from->tempRemove(formerConnectorItem, false);
 				formerConnectorItem->tempRemove(from, false);
 			}
-
 		}
 		if (to) {
 			ChangeConnectionCommand * ccc = extendChangeConnectionCommand(BaseCommand::CrossView, from, to, ViewLayer::specFromID(from->attachedToViewLayerID()), true, parentCommand);
 			ccc->setUpdateConnections(false);
 		}
+
 	}
 	else {
 		parentCommand->setText(QObject::tr("Change leg of %1,%2")

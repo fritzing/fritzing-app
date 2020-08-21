@@ -975,7 +975,10 @@ void PCBSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCo
 				QDomElement instance = modelPart->instanceDomElement();
 				QDomElement views = instance.firstChildElement("views");
 				QDomElement view = views.firstChildElement("pcbView");
-				if (view.attribute("layer").compare("copper1trace") == 0) {
+				QDomElement geometry = view.firstChildElement("geometry");
+				int wireFlags = geometry.attribute("wireFlags").toInt();
+				if ((wireFlags & ViewGeometry::PCBTraceFlag) &&
+					(view.attribute("layer").compare("copper1trace") == 0)) {
 					layers = 2;
 					break;
 				}

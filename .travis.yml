@@ -97,25 +97,6 @@ jobs:
       after_success:
         - tools/aws_tasks.sh synchronize_up
 
-    - stage: build_and_pack
-      os: windows
-      language: cpp
-
-      before_install:
-        - curl -L http://download.qt-project.org/official_releases/online_installers/qt-unified-windows-x86-online.exe --output qt-installer.exe
-        - ./qt-installer.exe --script ./tools/qt_installer_noninteractive.qs
-        - curl -fsSL https://github.com/libgit2/libgit2/archive/v0.28.1.zip -o libgit2.zip && 7z x libgit2.zip && mv libgit2-0.28.1 ../libgit2
-        - (mkdir ../libgit2/build64 && cd ../libgit2/build64 && cmake -G "Visual Studio 15 2017 Win64" .. && cmake --build . --config Release)
-        - (cd .. && curl -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj)
-        - tools/aws_tasks.sh setup
-
-      script:
-          - tools/build-windows.bat "$TRAVIS_COMMIT"-$TRAVIS_BRANCH-"$TRAVIS_BUILD_NUMBER"
-          - tools/aws_tasks.sh store_with_md5 $TRAVIS_BUILD_DIR/../release64 fritzing-$TRAVIS_COMMIT-$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER.windows.64.zip
-
-      after_success:
-        - tools/aws_tasks.sh synchronize_up
-
     - stage: deploy_to_github
       before_install:
         - tools/aws_tasks.sh setup

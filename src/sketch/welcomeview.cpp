@@ -953,7 +953,6 @@ void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
 
 	manager->deleteLater();
 	networkReply->deleteLater();
-	getNextBlogImage(index + 1, blog);
 }
 
 QWidget * WelcomeView::initTip() {

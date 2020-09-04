@@ -7247,7 +7247,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="92"/>
         <source>Sorry, we have a problem with the swapping mechanism.
 Fritzing still works, but you won&apos;t be able to change parts properties.</source>
-        <translation>Sorry, wir habben noch ein kleines Problem mit dem Ändern von Eigenschaften.
+        <translation>Sorry, wir haben noch ein kleines Problem mit dem Ändern von Eigenschaften.
 Versuche, Fritzing neu zu starten. Falls das Problem bestehen bleibt, wende Dich an uns.</translation>
     </message>
     <message>

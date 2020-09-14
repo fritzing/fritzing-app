@@ -78,10 +78,20 @@
 	<suffix suffix="CapacitorModuleID" />
 	<menuItem value="0.000000000001" />
 	<menuItem value="0.000000000010" />
+        <menuItem value="0.000000000022" />
+        <menuItem value="0.000000000047" />
 	<menuItem value="0.000000000100" />
+        <menuItem value="0.000000000220" />
+        <menuItem value="0.000000000470" />
 	<menuItem value="0.000000001000" />
+        <menuItem value="0.000000002200" />
+        <menuItem value="0.000000004700" />
 	<menuItem value="0.000000010000" />
+        <menuItem value="0.000000022000" />
+        <menuItem value="0.000000047000" />
 	<menuItem value="0.000000100000" />
+        <menuItem value="0.000000220000" />
+        <menuItem value="0.000000470000" />
 	<menuItem value="0.000001000000" />
 	<menuItem value="0.000002200000" />
 	<menuItem value="0.000004700000" />
@@ -92,6 +102,7 @@
 	<menuItem value="0.000220000000" />
 	<menuItem value="0.000470000000" />
 	<menuItem value="0.001000000000" />
+        <menuItem value="0.002200000000" />
 	<menuItem value="0.004700000000" />
 </property>
 

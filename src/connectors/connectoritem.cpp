@@ -1417,9 +1417,11 @@ void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<
 		case ModelPart::Board:
 		case ModelPart::ResizableBoard:
 		case ModelPart::Via:
+		case ModelPart::Breadboard:
 			collectPart(connectorItem, partsConnectors, viewLayerPlacement);
 			break;
 		default:
+			//Discard Wires, Notes, Logos, Holes, Rulers, Spaces and Unknowns
 			break;
 		}
 	}

@@ -557,6 +557,9 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 {
 	if (m_currentGraphicsView == NULL) return;
 
+	//Deselect all items before creating the image
+	m_currentGraphicsView->selectDeselectAllCommand(false);
+
 	double resMultiplier = 3;
 
 	QRectF itemsBoundingRect;

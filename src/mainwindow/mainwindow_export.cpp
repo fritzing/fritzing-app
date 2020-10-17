@@ -596,6 +596,9 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	if (removeBackground) {
 		color = m_currentGraphicsView->background();
 		m_currentGraphicsView->setBackground(QColor::fromRgb(255,255,255,255));
+		image.fill(QColor::fromRgb(255,255,255,255));
+	}else{
+		image.fill(m_currentGraphicsView->background());
 	}
 
 	painter.begin(&image);

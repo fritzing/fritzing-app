@@ -515,6 +515,16 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 			switch (toConnectorItem->attachedToItemType()) {
 			case ModelPart::Wire:
 				break;
+			case ModelPart::Part:
+				//Only the breadboard view allows part to part connections
+				if (toConnectorItem->attachedTo()->isEverVisible() && (myTrace & ViewGeometry::NormalFlag)) {
+					int j = partConnectorItems.indexOf(toConnectorItem);
+					if (j >= 0) {
+						add_edge_d(i, j, G);
+						add_edge_d(j, i, G);
+					}
+				}
+				continue;
 			case ModelPart::Breadboard:
 				if (toConnectorItem->attachedTo()->isEverVisible()) {
 					QList<ConnectorItem *> ends;

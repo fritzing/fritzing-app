@@ -1020,6 +1020,14 @@ SketchToolButton *MainWindow::createNoteButton(SketchAreaWidget *parent) {
 	return noteButton;
 }
 
+SketchToolButton *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
+	SketchToolButton *simulationButton = new SketchToolButton("Simulation",parent, m_simulationAct);
+	simulationButton->setObjectName("simulationButton");
+	simulationButton->setText(tr("Simulate"));
+	simulationButton->setEnabledIcon();					// seems to need this to display button icon first time
+	return simulationButton;
+}
+
 SketchToolButton *MainWindow::createExportEtchableButton(SketchAreaWidget *parent) {
 	QList<QAction*> actions;
 	actions << m_exportEtchablePdfAct << m_exportEtchableSvgAct << m_exportGerberAct;
@@ -1091,6 +1099,7 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
 		break;
 	}
 
+	retval << createSimulationButton(parent);
 	retval << createShareButton(parent);
 	return retval;
 }

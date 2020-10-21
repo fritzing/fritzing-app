@@ -274,6 +274,7 @@ protected slots:
 	void openRecentOrExampleFile(const QString & filename, const QString & actionText);
 	void print();
 	void doExport();
+	void simulate();
 	void exportEtchable();
 	void about();
 	void tipsAndTricks();
@@ -549,6 +550,7 @@ protected:
 	class ExpandingLabel * createRoutingStatusLabel(SketchAreaWidget *);
 	SketchToolButton *createExportEtchableButton(SketchAreaWidget *parent);
 	SketchToolButton *createNoteButton(SketchAreaWidget *parent);
+	SketchToolButton *createSimulationButton(SketchAreaWidget *parent);
 	QWidget *createToolbarSpacer(SketchAreaWidget *parent);
 	SketchAreaWidget *currentSketchArea();
 	const QString fritzingTitle();
@@ -752,6 +754,7 @@ protected:
 	QAction *m_selectAllAct = nullptr;
 	QAction *m_deselectAct = nullptr;
 	QAction *m_addNoteAct = nullptr;
+	QAction *m_simulationAct = nullptr;
 
 	// Part Menu
 	QMenu *m_partMenu = nullptr;

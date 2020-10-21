@@ -904,6 +904,10 @@ void MainWindow::createEditMenuActions() {
 	m_addNoteAct->setStatusTip(tr("Add a note"));
 	connect(m_addNoteAct, SIGNAL(triggered()), this, SLOT(addNote()));
 
+	m_simulationAct = new QAction(tr("Simulate"), this);
+	m_simulationAct->setStatusTip(tr("Simulate the circuit (DC analysis)"));
+	connect(m_simulationAct, SIGNAL(triggered()), this, SLOT(simulate()));
+
 	m_preferencesAct = new QAction(tr("&Preferences..."), this);
 	m_preferencesAct->setStatusTip(tr("Show the application's about box"));
 	m_preferencesAct->setMenuRole(QAction::PreferencesRole);						// make sure this is added to the correct menu on mac

@@ -506,6 +506,8 @@ protected:
 	void exportSvgWatermark(QString & svg, double res);
 	void exportEtchable(bool wantPDF, bool wantSVG);
 
+	QString getSpiceNetlist(QString, QList< QList<class ConnectorItem *>* >&, QSet<class ItemBase *>& );
+
 	virtual QList<QWidget*> getButtonsForView(ViewLayer::ViewID viewId);
 	const QString untitledFileName();
 	int &untitledFileCount();

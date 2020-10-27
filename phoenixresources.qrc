@@ -115,7 +115,7 @@
         <file>resources/images/icons/toolbarSimulationEnabled_icon.png</file>
         <file>resources/images/icons/toolbarSimulationDisabled_icon.png</file>
         <file>resources/images/icons/toolbarSimulationPressed_icon.png</file>
-	<file>resources/images/icons/toolbarRotateEnabled_icon.png</file>
+        <file>resources/images/icons/toolbarRotateEnabled_icon.png</file>
         <file>resources/images/icons/toolbarRotateDisabled_icon.png</file>
         <file>resources/images/icons/toolbarRotatePressed_icon.png</file>
         <file>resources/images/icons/toolbarFlipEnabled_icon.png</file>
@@ -378,5 +378,6 @@
         <file>resources/images/icons/toolbarSaveCodeEnabled_icon.png</file>
         <file>resources/images/icons/toolbarSaveCodePressed_icon.png</file>
         <file>resources/images/icons/aisler_donut-cloud_logo_icon.png</file>
+        <file>resources/images/smoke.svg</file>
     </qresource>
 </RCC>

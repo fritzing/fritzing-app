@@ -1313,16 +1313,33 @@ void MainWindow::exportSpiceNetlist() {
 		return; //Cancel pressed
 	}
 
-	QList< QList<ConnectorItem *>* > netList;
-	QSet<ItemBase *> itemBases;
 	QFileInfo fileInfo(m_fwFilename);
-	QString spiceNetlist = getSpiceNetlist(fileInfo.completeBaseName(), netList, itemBases);
+	QString spiceNetlist = getSpiceNetlist(fileInfo.completeBaseName());
 	//DebugDialog::debug(fileExt + " selected to export");
 	if(!alreadyHasExtension(fileName, spiceNetlistActionType)) {
 		fileName += spiceNetlistActionType;
 	}
 
 	TextUtils::writeUtf8(fileName, spiceNetlist);
+}
+
+/**
+ * Build and return a circuit description in spice based on the current circuit.
+ *
+ * Excludes parts that are not connected to other parts.
+ * @brief Create a circuit description in spice
+ * @param[in] simulationName Name of the simulation to be included in the first line of output
+ * @return A string that is a circuit description in spice
+ */
+QString MainWindow::getSpiceNetlist(QString simulationName) {
+	QList< QList<ConnectorItem *>* > netList;
+	QSet<ItemBase *> itemBases;
+	QString spiceNetlist = getSpiceNetlist(simulationName, netList, itemBases);
+	foreach (QList<ConnectorItem *> * net, netList) {
+		delete net;
+	}
+	netList.clear();
+	return spiceNetlist;
 }
 
 /**
@@ -1511,15 +1528,11 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 		output = output2;
 	}
 
+	output += ".options savecurrents\n";
 	output += ".OP\n";
 	output += "*.TRAN 1ms 100ms\n";
 	output += "* .AC DEC 100 100 1MEG\n";
 	output += ".END";
-
-	foreach (QList<ConnectorItem *> * net, netList) {
-		delete net;
-	}
-	netList.clear();
 
 	QClipboard *clipboard = QApplication::clipboard();
 	if (clipboard) {

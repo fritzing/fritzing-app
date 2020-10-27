@@ -46,6 +46,7 @@ public:
 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	const QString & title();
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	void LED::setBrightness(double);
 
 protected:
 	void setColor(const QString & color);

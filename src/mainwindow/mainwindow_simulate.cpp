@@ -71,6 +71,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../simulation/spice_simulator.h"
 #include "../simulation/sim_types.h"
 
+#include "../items/led.h"
+#include "../items/resistor.h"
+
 #if defined(__MINGW32__) || defined(_MSC_VER)
 #include <windows.h>  // for Sleep
 #else
@@ -96,6 +99,29 @@ void MainWindow::simulate()
 	QList< QList<ConnectorItem *>* > netList;
 	QSet<ItemBase *> itemBases;
 	QString spiceNetlist = getSpiceNetlist("Simulator Netlist", netList, itemBases);
+
+	//Generate a hash table to find the net of specific connectors
+	QHash<ConnectorItem *, int> connHash;
+	for (int i=0; i<netList.size(); i++) {
+		QList<ConnectorItem *> * net = netList.at(i);
+		foreach (ConnectorItem * ci, *net) {
+			connHash.insert(ci, i);
+		}
+	}
+
+	//Generate a hash table to find the breadboard parts from parts in the schematic view
+	QHash<ItemBase *, ItemBase *> partHash;
+	foreach(ItemBase* schPart, itemBases) {
+		foreach (QGraphicsItem * bbItem, m_breadboardGraphicsView->scene()->items()) {
+			ItemBase * bbPart = dynamic_cast<ItemBase *>(bbItem);
+			if (!bbPart) continue;
+			if (schPart->instanceTitle().compare(bbPart->instanceTitle()) == 0) {
+				partHash.insert(schPart, bbPart);
+			}
+		}
+	}
+
+
 	std::cout << "Netlist: " << spiceNetlist.toStdString() << std::endl;
 	std::cout << "-----------------------------------" <<std::endl;
 	simulator->Command("remcirc");
@@ -125,5 +151,93 @@ void MainWindow::simulate()
 	std::cout << "-----------------------------------" <<std::endl;
 	simulator->Stop();
 	std::cout << "-----------------------------------" <<std::endl;
+
+	foreach (ItemBase * part, itemBases){
+		std::cout << "-----------------------------------" <<std::endl;
+		std::cout << "Instance Title: " << part->instanceTitle().toStdString() << std::endl;
+		std::cout << "viewLayerID: " << part->viewLayerID() << std::endl;
+		LED* led = dynamic_cast<LED *>(part);
+		if (led) {
+			QString instanceStr = led->instanceTitle().toLower();
+			instanceStr.prepend("@d");
+			instanceStr.append("[id]");
+			double curr = simulator->GetDataPoint(instanceStr.toStdString());
+			double maxCurr = led->getProperty("current").toDouble();
+			std::cout << "Current: " <<curr<<std::endl;
+			std::cout << "MaxCurrent: " <<maxCurr<<std::endl;
+
+			LED* bbLed = dynamic_cast<LED *>(partHash.value(part));
+			bbLed->setBrightness(curr/maxCurr);
+
+			if (curr > maxCurr) {
+				QGraphicsSvgItem * smoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
+				if (!smoke) continue;
+				m_breadboardGraphicsView->scene()->addItem(smoke);
+				smoke->setPos(led->pos());
+				smoke->setZValue(DBL_MAX);
+			}
+			continue;
+		}
+		Resistor* resistor = dynamic_cast<Resistor *>(part);
+		if (resistor) {
+			QString instanceStr = resistor->instanceTitle().toLower();
+			instanceStr.prepend("@");
+			instanceStr.append("[i]");
+			std::cout << "instanceStr: " << instanceStr.toStdString() <<std::endl;
+			double curr = simulator->GetDataPoint(instanceStr.toStdString());
+			std::cout << "Current: " <<curr<<std::endl;
+			instanceStr.replace('i', 'p');
+			double power = simulator->GetDataPoint(instanceStr.toStdString());
+			std::cout << "Power: " << power <<std::endl;
+
+			double maxPower;
+			QString powerStr = resistor->getProperty("power");
+			if(powerStr.isEmpty()) {
+				maxPower = DBL_MAX;
+			} else {
+				maxPower = powerStr.toDouble();
+			}
+
+			if(resistor->cachedConnectorItems().size()>1){
+				ConnectorItem * c0 = resistor->cachedConnectorItems().at(0);
+				ConnectorItem * c1 = resistor->cachedConnectorItems().at(1);
+
+				QString instanceTitle = resistor->instanceTitle();
+				int net0 = connHash.value(c0);
+				int net1 = connHash.value(c1);
+
+				QString net0str = QString("v(%1)").arg(net0);
+				QString net1str = QString("v(%1)").arg(net1);
+				std::cout << "net0str: " << net0str.toStdString() <<std::endl;
+				std::cout << "net1str: " << net1str.toStdString() <<std::endl;
+
+				double volt0 = 0.0, volt1 = 0.0;
+				if (net0!=0) volt0 = simulator->GetDataPoint(net0str.toStdString());
+				if (net1!=0) volt1 = simulator->GetDataPoint(net1str.toStdString());
+				double voltage = abs(volt0 - volt1);
+				std::cout << "Voltage through the resistor: " << voltage <<std::endl;
+
+				if (power > maxPower) {
+					QGraphicsSvgItem * bbSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
+					QGraphicsSvgItem * schSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
+					if (!bbSmoke || !schSmoke) continue;
+					m_breadboardGraphicsView->scene()->addItem(bbSmoke);
+					m_schematicGraphicsView->scene()->addItem(schSmoke);
+					Resistor* bbResistor = dynamic_cast<Resistor *>(partHash.value(part));
+					schSmoke->setPos(resistor->pos());
+					schSmoke->setZValue(DBL_MAX);
+					if (!bbResistor) continue;
+					bbSmoke->setPos(bbResistor->pos());
+					bbSmoke->setZValue(DBL_MAX);
+				}
+			}
+		}
+
+	}
+
+	foreach (QList<ConnectorItem *> * net, netList) {
+		delete net;
+	}
+	netList.clear();
 
 }

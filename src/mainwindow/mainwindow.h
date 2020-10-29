@@ -45,6 +45,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../program/programwindow.h"
 #include "../svg/svg2gerber.h"
 #include "../routingstatus.h"
+#include "../simulation/simulator.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -229,6 +230,7 @@ public:
 	void setFireQuoteDelay(int);
 	void setInitialTab(int);
 	void noSchematicConversion();
+	QString getSpiceNetlist(QString, QList< QList<class ConnectorItem *>* >&, QSet<class ItemBase *>& );
 
 public:
 	static void initNames();
@@ -276,7 +278,6 @@ protected slots:
 	void openRecentOrExampleFile(const QString & filename, const QString & actionText);
 	void print();
 	void doExport();
-	void simulate();
 	void exportEtchable();
 	void about();
 	void tipsAndTricks();
@@ -508,7 +509,6 @@ protected:
 	void exportEtchable(bool wantPDF, bool wantSVG);
 
 	QString getSpiceNetlist(QString simulationName);
-	QString getSpiceNetlist(QString, QList< QList<class ConnectorItem *>* >&, QSet<class ItemBase *>& );
 
 	virtual QList<QWidget*> getButtonsForView(ViewLayer::ViewID viewId);
 	const QString untitledFileName();
@@ -672,6 +672,8 @@ protected:
 	QPointer<class SketchModel> m_sketchModel;
 	QPointer<class HtmlInfoView> m_infoView;
 	QPointer<QToolBar> m_toolbar;
+
+	class Simulator *m_simulator;
 
 	bool m_closing = false;
 	bool m_dontClose = false;

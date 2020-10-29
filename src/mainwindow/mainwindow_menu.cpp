@@ -908,7 +908,7 @@ void MainWindow::createEditMenuActions() {
 
 	m_simulationAct = new QAction(tr("Simulate"), this);
 	m_simulationAct->setStatusTip(tr("Simulate the circuit (DC analysis)"));
-	connect(m_simulationAct, SIGNAL(triggered()), this, SLOT(simulate()));
+	connect(m_simulationAct, SIGNAL(triggered()), m_simulator, SLOT(simulate()));
 
 	m_preferencesAct = new QAction(tr("&Preferences..."), this);
 	m_preferencesAct->setStatusTip(tr("Show the application's about box"));

@@ -1,7 +1,7 @@
 /*******************************************************************
-skw
+
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2019 Fritzing
+Copyright (c) 2007-2020 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,6 +18,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
+#include "simulator.h"
 #include <QtCore>
 
 #include <QSvgGenerator>
@@ -30,7 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QClipboard>
 #include <QApplication>
 
-#include "mainwindow.h"
+#include "../mainwindow/mainwindow.h"
 #include "../debugdialog.h"
 #include "../waitpushundostack.h"
 #include "../help/aboutbox.h"
@@ -87,9 +88,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 /////////////////////////////////////////////////////////
+Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
+	m_mainWindow = mainWindow;
+	m_breadboardGraphicsView = dynamic_cast<BreadboardSketchWidget *>(mainWindow->sketchWidgets().at(0));
+	m_schematicGraphicsView = dynamic_cast<SchematicSketchWidget *>(mainWindow->sketchWidgets().at(1));
+}
 
-void MainWindow::simulate()
-{
+Simulator::~Simulator() {
+}
+
+
+void Simulator::simulate() {
 	static std::shared_ptr<SPICE_SIMULATOR> simulator = SPICE_SIMULATOR::CreateInstance( "ngspice" );
 	if( !simulator )
 	{
@@ -98,7 +107,7 @@ void MainWindow::simulate()
 	}
 	QList< QList<ConnectorItem *>* > netList;
 	QSet<ItemBase *> itemBases;
-	QString spiceNetlist = getSpiceNetlist("Simulator Netlist", netList, itemBases);
+	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
 
 	//Generate a hash table to find the net of specific connectors
 	QHash<ConnectorItem *, int> connHash;

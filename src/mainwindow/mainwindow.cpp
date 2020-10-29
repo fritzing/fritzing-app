@@ -84,6 +84,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/zoomslider.h"
 #include "../partseditor/pemainwindow.h"
 #include "../help/firsttimehelpdialog.h"
+#include "../simulation/simulator.h"
 
 FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 {
@@ -479,6 +480,8 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	initWelcomeView();
 	initSketchWidgets(true);
 	initProgrammingWidget();
+
+	m_simulator = new Simulator(this);
 
 	m_undoView = new QUndoView();
 	m_undoGroup = new QUndoGroup(this);

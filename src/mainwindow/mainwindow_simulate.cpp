@@ -173,7 +173,7 @@ void MainWindow::simulate()
 				QGraphicsSvgItem * smoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
 				if (!smoke) continue;
 				m_breadboardGraphicsView->scene()->addItem(smoke);
-				smoke->setPos(led->pos());
+				smoke->setPos(bbLed->pos());
 				smoke->setZValue(DBL_MAX);
 			}
 			continue;

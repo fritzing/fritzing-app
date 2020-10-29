@@ -105,27 +105,31 @@ void Simulator::simulate() {
 		throw std::runtime_error( "Could not create simulator instance" );
 		return;
 	}
+
+
+	removeSimItems();
+
 	QList< QList<ConnectorItem *>* > netList;
 	QSet<ItemBase *> itemBases;
 	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
 
 	//Generate a hash table to find the net of specific connectors
-	QHash<ConnectorItem *, int> connHash;
+	m_connector2netHash.clear();
 	for (int i=0; i<netList.size(); i++) {
 		QList<ConnectorItem *> * net = netList.at(i);
 		foreach (ConnectorItem * ci, *net) {
-			connHash.insert(ci, i);
+			m_connector2netHash.insert(ci, i);
 		}
 	}
 
 	//Generate a hash table to find the breadboard parts from parts in the schematic view
-	QHash<ItemBase *, ItemBase *> partHash;
+	m_sch2bbItemHash.clear();
 	foreach(ItemBase* schPart, itemBases) {
 		foreach (QGraphicsItem * bbItem, m_breadboardGraphicsView->scene()->items()) {
 			ItemBase * bbPart = dynamic_cast<ItemBase *>(bbItem);
 			if (!bbPart) continue;
 			if (schPart->instanceTitle().compare(bbPart->instanceTitle()) == 0) {
-				partHash.insert(schPart, bbPart);
+				m_sch2bbItemHash.insert(schPart, bbPart);
 			}
 		}
 	}
@@ -175,15 +179,11 @@ void Simulator::simulate() {
 			std::cout << "Current: " <<curr<<std::endl;
 			std::cout << "MaxCurrent: " <<maxCurr<<std::endl;
 
-			LED* bbLed = dynamic_cast<LED *>(partHash.value(part));
+			LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(part));
 			bbLed->setBrightness(curr/maxCurr);
 
 			if (curr > maxCurr) {
-				QGraphicsSvgItem * smoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
-				if (!smoke) continue;
-				m_breadboardGraphicsView->scene()->addItem(smoke);
-				smoke->setPos(bbLed->pos());
-				smoke->setZValue(DBL_MAX);
+				drawSmoke(part);
 			}
 			continue;
 		}
@@ -212,8 +212,8 @@ void Simulator::simulate() {
 				ConnectorItem * c1 = resistor->cachedConnectorItems().at(1);
 
 				QString instanceTitle = resistor->instanceTitle();
-				int net0 = connHash.value(c0);
-				int net1 = connHash.value(c1);
+				int net0 = m_connector2netHash.value(c0);
+				int net1 = m_connector2netHash.value(c1);
 
 				QString net0str = QString("v(%1)").arg(net0);
 				QString net1str = QString("v(%1)").arg(net1);
@@ -227,17 +227,7 @@ void Simulator::simulate() {
 				std::cout << "Voltage through the resistor: " << voltage <<std::endl;
 
 				if (power > maxPower) {
-					QGraphicsSvgItem * bbSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
-					QGraphicsSvgItem * schSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
-					if (!bbSmoke || !schSmoke) continue;
-					m_breadboardGraphicsView->scene()->addItem(bbSmoke);
-					m_schematicGraphicsView->scene()->addItem(schSmoke);
-					Resistor* bbResistor = dynamic_cast<Resistor *>(partHash.value(part));
-					schSmoke->setPos(resistor->pos());
-					schSmoke->setZValue(DBL_MAX);
-					if (!bbResistor) continue;
-					bbSmoke->setPos(bbResistor->pos());
-					bbSmoke->setZValue(DBL_MAX);
+					drawSmoke(resistor);
 				}
 			}
 		}
@@ -249,4 +239,32 @@ void Simulator::simulate() {
 	}
 	netList.clear();
 
+}
+
+void Simulator::drawSmoke(ItemBase* part) {
+	QGraphicsSvgItem * bbSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
+	QGraphicsSvgItem * schSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
+	if (!bbSmoke || !schSmoke) return;
+	m_breadboardGraphicsView->scene()->addItem(bbSmoke);
+	m_schematicGraphicsView->scene()->addItem(schSmoke);
+	m_bbSimItems.append(bbSmoke);
+	m_schSimItems.append(schSmoke);
+
+	schSmoke->setPos(part->pos());
+	schSmoke->setZValue(DBL_MAX);
+	bbSmoke->setPos(m_sch2bbItemHash.value(part)->pos());
+	bbSmoke->setZValue(DBL_MAX);
+}
+
+void Simulator::removeSimItems() {
+	foreach(QGraphicsSvgItem * item, m_bbSimItems) {
+		m_breadboardGraphicsView->scene()->removeItem(item);
+		delete item;
+	}
+	m_bbSimItems.clear();
+	foreach(QGraphicsSvgItem * item, m_schSimItems) {
+		m_schematicGraphicsView->scene()->removeItem(item);
+		delete item;
+	}
+	m_schSimItems.clear();
 }

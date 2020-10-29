@@ -36,13 +36,20 @@ public slots:
 	void simulate();
 
 protected:
-	//void addSmoke(ItemBase* part);
+	void drawSmoke(ItemBase* part);
+	void removeSimItems();
 
 	MainWindow *m_mainWindow;
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;
 	QPointer<class SchematicSketchWidget> m_schematicGraphicsView;
 
-	bool showingSimulation = false;
+	bool m_showingSimulation = false;
+
+	QHash<ItemBase *, ItemBase *> m_sch2bbItemHash;
+	QHash<ConnectorItem *, int> m_connector2netHash;
+
+	QList<QGraphicsSvgItem *> m_bbSimItems;
+	QList<QGraphicsSvgItem *> m_schSimItems;
 };
 
 #endif // SIMULATOR_H

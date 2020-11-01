@@ -23,6 +23,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../mainwindow/mainwindow.h"
 #include "../items/itembase.h"
+#include "../simulation/ngspice.h"
+#include "../simulation/spice_simulator.h"
 
 class Simulator : public QObject
 {
@@ -37,9 +39,13 @@ public slots:
 
 protected:
 	void drawSmoke(ItemBase* part);
+	void updateMultimeterScreen(ItemBase *, QString);
 	void removeSimItems();
 
+	double calculateVoltage(ConnectorItem *, ConnectorItem *);
+
 	MainWindow *m_mainWindow;
+	std::shared_ptr<SPICE_SIMULATOR> m_simulator;
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;
 	QPointer<class SchematicSketchWidget> m_schematicGraphicsView;
 
@@ -48,8 +54,8 @@ protected:
 	QHash<ItemBase *, ItemBase *> m_sch2bbItemHash;
 	QHash<ConnectorItem *, int> m_connector2netHash;
 
-	QList<QGraphicsSvgItem *> m_bbSimItems;
-	QList<QGraphicsSvgItem *> m_schSimItems;
+	QList<QGraphicsObject *> m_bbSimItems;
+	QList<QGraphicsObject *> m_schSimItems;
 };
 
 #endif // SIMULATOR_H

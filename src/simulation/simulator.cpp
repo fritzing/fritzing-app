@@ -99,8 +99,8 @@ Simulator::~Simulator() {
 
 
 void Simulator::simulate() {
-	static std::shared_ptr<SPICE_SIMULATOR> simulator = SPICE_SIMULATOR::CreateInstance( "ngspice" );
-	if( !simulator )
+	m_simulator = SPICE_SIMULATOR::CreateInstance( "ngspice" );
+	if( !m_simulator )
 	{
 		throw std::runtime_error( "Could not create simulator instance" );
 		return;
@@ -137,16 +137,16 @@ void Simulator::simulate() {
 
 	std::cout << "Netlist: " << spiceNetlist.toStdString() << std::endl;
 	std::cout << "-----------------------------------" <<std::endl;
-	simulator->Command("remcirc");
+	m_simulator->Command("remcirc");
 	std::cout << "-----------------------------------" <<std::endl;
-	simulator->Init();
+	m_simulator->Init();
 	std::cout << "-----------------------------------" <<std::endl;
 	std::string netlist = "Test simulator\nV1 1 0 5\nR1 1 2 100\nR2 2 0 100\n.OP\n.END";
-	simulator->LoadNetlist( spiceNetlist.toStdString());
+	m_simulator->LoadNetlist( spiceNetlist.toStdString());
 	std::cout << "-----------------------------------" <<std::endl;
-	simulator->Command("listing");
+	m_simulator->Command("listing");
 	std::cout << "-----------------------------------" <<std::endl;
-	simulator->Run();
+	m_simulator->Run();
 	std::cout << "-----------------------------------" <<std::endl;
 #if defined(__MINGW32__) || defined(_MSC_VER)
 	Sleep(100);
@@ -155,15 +155,15 @@ void Simulator::simulate() {
 #endif
 
 
-	QString command = QString("print v(2)");
-	simulator->Command( command.toStdString() );
-	std::cout << "-----------------------------------" <<std::endl;
-	double volt = simulator->GetDataPoint("v(2)");
-	std::cout << "-----------------------------------" <<std::endl;
-	std::cout << "voltage: " <<volt<<std::endl;
-	std::cout << "-----------------------------------" <<std::endl;
-	simulator->Stop();
-	std::cout << "-----------------------------------" <<std::endl;
+	//QString command = QString("print v(2)");
+	//m_simulator->Command( command.toStdString() );
+	//std::cout << "-----------------------------------" <<std::endl;
+	//double volt = m_simulator->GetDataPoint("v(2)");
+	//std::cout << "-----------------------------------" <<std::endl;
+	//std::cout << "voltage: " <<volt<<std::endl;
+	//std::cout << "-----------------------------------" <<std::endl;
+	//m_simulator->Stop();
+	//std::cout << "-----------------------------------" <<std::endl;
 
 	foreach (ItemBase * part, itemBases){
 		std::cout << "-----------------------------------" <<std::endl;
@@ -174,7 +174,7 @@ void Simulator::simulate() {
 			QString instanceStr = led->instanceTitle().toLower();
 			instanceStr.prepend("@d");
 			instanceStr.append("[id]");
-			double curr = simulator->GetDataPoint(instanceStr.toStdString());
+			double curr = m_simulator->GetDataPoint(instanceStr.toStdString());
 			double maxCurr = led->getProperty("current").toDouble();
 			std::cout << "Current: " <<curr<<std::endl;
 			std::cout << "MaxCurrent: " <<maxCurr<<std::endl;
@@ -193,10 +193,10 @@ void Simulator::simulate() {
 			instanceStr.prepend("@");
 			instanceStr.append("[i]");
 			std::cout << "instanceStr: " << instanceStr.toStdString() <<std::endl;
-			double curr = simulator->GetDataPoint(instanceStr.toStdString());
+			double curr = m_simulator->GetDataPoint(instanceStr.toStdString());
 			std::cout << "Current: " <<curr<<std::endl;
 			instanceStr.replace('i', 'p');
-			double power = simulator->GetDataPoint(instanceStr.toStdString());
+			double power = m_simulator->GetDataPoint(instanceStr.toStdString());
 			std::cout << "Power: " << power <<std::endl;
 
 			double maxPower;
@@ -211,19 +211,8 @@ void Simulator::simulate() {
 				ConnectorItem * c0 = resistor->cachedConnectorItems().at(0);
 				ConnectorItem * c1 = resistor->cachedConnectorItems().at(1);
 
-				QString instanceTitle = resistor->instanceTitle();
-				int net0 = m_connector2netHash.value(c0);
-				int net1 = m_connector2netHash.value(c1);
 
-				QString net0str = QString("v(%1)").arg(net0);
-				QString net1str = QString("v(%1)").arg(net1);
-				std::cout << "net0str: " << net0str.toStdString() <<std::endl;
-				std::cout << "net1str: " << net1str.toStdString() <<std::endl;
-
-				double volt0 = 0.0, volt1 = 0.0;
-				if (net0!=0) volt0 = simulator->GetDataPoint(net0str.toStdString());
-				if (net1!=0) volt1 = simulator->GetDataPoint(net1str.toStdString());
-				double voltage = abs(volt0 - volt1);
+				double voltage = abs(calculateVoltage(c0, c1));
 				std::cout << "Voltage through the resistor: " << voltage <<std::endl;
 
 				if (power > maxPower) {
@@ -231,6 +220,34 @@ void Simulator::simulate() {
 				}
 			}
 		}
+
+		QString family = part->family().toLower();
+		if (family.compare("multimeter") == 0) {
+			std::cout << "Multimeter found. " << std::endl;
+			QString variant = part->getProperty("variant").toLower(); //TODO: change to type
+			if (variant.compare("v_dc") == 0) {
+				std::cout << "Multimeter (v_dc) found. " << std::endl;
+				ConnectorItem * c0 = part->cachedConnectorItems().at(0);
+				ConnectorItem * c1 = part->cachedConnectorItems().at(1);
+				ConnectorItem * c2 = part->cachedConnectorItems().at(2);
+
+				if(c0->connectedToWires() && c1->connectedToWires() && c2->connectedToWires()) {
+					std::cout << "Multimeter (v_dc) connected with three terminals. " << std::endl;
+					updateMultimeterScreen(part, "Err");
+					continue;
+				}
+				c0->debugInfo("connector c0: ");
+				c1->debugInfo("connector c1: ");
+				c2->debugInfo("connector c2: ");
+				if(c0->connectedToWires() && c1->connectedToWires()) {
+					std::cout << "Multimeter (v_dc) connected with three terminals. " << std::endl;
+					double v = calculateVoltage(c1, c0);
+					updateMultimeterScreen(part, QString::number(v, 'g', 3));
+				}
+
+			}
+		}
+
 
 	}
 
@@ -256,15 +273,42 @@ void Simulator::drawSmoke(ItemBase* part) {
 	bbSmoke->setZValue(DBL_MAX);
 }
 
+void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
+	QGraphicsTextItem * bbScreen = new QGraphicsTextItem(msg, m_sch2bbItemHash.value(multimeter));
+	//QGraphicsTextItem * schScreen = new QGraphicsTextItem(msg, multimeter);
+	m_bbSimItems.append(bbScreen);
+	//m_schSimItems.append(schScreen);
+	//schScreen->setPos(QPointF(10,10));
+	//schScreen->setZValue(DBL_MAX);
+	bbScreen->setScale(4);
+	bbScreen->setPos(QPointF(20,20));
+	bbScreen->setZValue(DBL_MAX);
+}
+
 void Simulator::removeSimItems() {
-	foreach(QGraphicsSvgItem * item, m_bbSimItems) {
+	foreach(QGraphicsObject * item, m_bbSimItems) {
 		m_breadboardGraphicsView->scene()->removeItem(item);
 		delete item;
 	}
 	m_bbSimItems.clear();
-	foreach(QGraphicsSvgItem * item, m_schSimItems) {
+	foreach(QGraphicsObject * item, m_schSimItems) {
 		m_schematicGraphicsView->scene()->removeItem(item);
 		delete item;
 	}
 	m_schSimItems.clear();
+}
+
+double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
+	int net0 = m_connector2netHash.value(c0);
+	int net1 = m_connector2netHash.value(c1);
+
+	QString net0str = QString("v(%1)").arg(net0);
+	QString net1str = QString("v(%1)").arg(net1);
+	std::cout << "net0str: " << net0str.toStdString() <<std::endl;
+	std::cout << "net1str: " << net1str.toStdString() <<std::endl;
+
+	double volt0 = 0.0, volt1 = 0.0;
+	if (net0!=0) volt0 = m_simulator->GetDataPoint(net0str.toStdString());
+	if (net1!=0) volt1 = m_simulator->GetDataPoint(net1str.toStdString());
+	return volt0-volt1;
 }

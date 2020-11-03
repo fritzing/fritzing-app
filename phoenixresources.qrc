@@ -281,6 +281,7 @@
         <file>resources/fonts/DroidSans-Bold.ttf</file>
         <file>resources/fonts/NOTICE</file>
         <file>resources/fonts/OCRA.ttf</file>
+        <file>resources/fonts/7segments/Segment7Standard.otf</file>
         <file>resources/bins/my_parts.fzb</file>
         <file>resources/bins/search.fzb</file>
         <file>resources/bins/temp.fzb</file>

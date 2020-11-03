@@ -208,17 +208,17 @@ void Simulator::simulate() {
 			}
 
 			if(resistor->cachedConnectorItems().size()>1){
-				ConnectorItem * c0 = resistor->cachedConnectorItems().at(0);
-				ConnectorItem * c1 = resistor->cachedConnectorItems().at(1);
+				ConnectorItem * com = resistor->cachedConnectorItems().at(0);
+				ConnectorItem * v = resistor->cachedConnectorItems().at(1);
 
-
-				double voltage = abs(calculateVoltage(c0, c1));
+				double voltage = abs(calculateVoltage(v, com));
 				std::cout << "Voltage through the resistor: " << voltage <<std::endl;
 
 				if (power > maxPower) {
 					drawSmoke(resistor);
 				}
 			}
+			continue;
 		}
 
 		QString family = part->family().toLower();
@@ -233,7 +233,7 @@ void Simulator::simulate() {
 
 				if(c0->connectedToWires() && c1->connectedToWires() && c2->connectedToWires()) {
 					std::cout << "Multimeter (v_dc) connected with three terminals. " << std::endl;
-					updateMultimeterScreen(part, "Err");
+					updateMultimeterScreen(part, "ERR");
 					continue;
 				}
 				c0->debugInfo("connector c0: ");
@@ -242,10 +242,11 @@ void Simulator::simulate() {
 				if(c0->connectedToWires() && c1->connectedToWires()) {
 					std::cout << "Multimeter (v_dc) connected with three terminals. " << std::endl;
 					double v = calculateVoltage(c1, c0);
-					updateMultimeterScreen(part, QString::number(v, 'g', 3));
+					updateMultimeterScreen(part, QString::number(v, 'f', 2));
 				}
-
+				continue;
 			}
+
 		}
 
 
@@ -274,14 +275,27 @@ void Simulator::drawSmoke(ItemBase* part) {
 }
 
 void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
+	//The '.' does not occuppy a position in the screen (is printed with the previous number)
+	//So, do not take them into account to fill with spaces
+	QString aux = QString(msg);
+	aux.remove(QChar('.'));
+	std::cout << "msg size: " << msg.size() <<std::endl;
+	std::cout << "aux size: " << aux.size() <<std::endl;
+	if(aux.size() < 5) {
+		msg.prepend(QString(5-aux.size(),' '));
+	}
+	std::cout << "msg is now: " << msg.toStdString() <<std::endl;
+
 	QGraphicsTextItem * bbScreen = new QGraphicsTextItem(msg, m_sch2bbItemHash.value(multimeter));
 	//QGraphicsTextItem * schScreen = new QGraphicsTextItem(msg, multimeter);
 	m_bbSimItems.append(bbScreen);
 	//m_schSimItems.append(schScreen);
 	//schScreen->setPos(QPointF(10,10));
 	//schScreen->setZValue(DBL_MAX);
+	QFont font("Segment7", 14, QFont::Normal);
+	bbScreen->setFont(font);
 	bbScreen->setScale(4);
-	bbScreen->setPos(QPointF(20,20));
+	bbScreen->setPos(QPointF(30,30));
 	bbScreen->setZValue(DBL_MAX);
 }
 

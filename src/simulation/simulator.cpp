@@ -171,11 +171,18 @@ void Simulator::simulate() {
 		std::cout << "viewLayerID: " << part->viewLayerID() << std::endl;
 		LED* led = dynamic_cast<LED *>(part);
 		if (led) {
-			QString instanceStr = led->instanceTitle().toLower();
-			instanceStr.prepend("@d");
-			instanceStr.append("[id]");
-			double curr = m_simulator->GetDataPoint(instanceStr.toStdString());
-			double maxCurr = led->getProperty("current").toDouble();
+			double curr = getCurrent(part);
+			//TODO: Check that this is ok. Or should we use QLocale.toDouble()?
+			//TODO: Handle metric prefixes
+			bool ok;
+			double maxCurr = led->getProperty("current").remove(QRegularExpression("[^.+\\-\\d]")).toDouble(&ok);
+			if(!ok){
+				QString maxCurrStr = led->getProperty("current").remove(QRegularExpression("[^.+-\\d]"));
+				maxCurrStr.prepend("Error conveting the maxCurrent of the LED to double. String: ");
+				throw (maxCurrStr);
+				continue;
+			}
+
 			std::cout << "Current: " <<curr<<std::endl;
 			std::cout << "MaxCurrent: " <<maxCurr<<std::endl;
 
@@ -189,13 +196,11 @@ void Simulator::simulate() {
 		}
 		Resistor* resistor = dynamic_cast<Resistor *>(part);
 		if (resistor) {
+			double curr = getCurrent(part);
+			std::cout << "Current: " <<curr<<std::endl;
 			QString instanceStr = resistor->instanceTitle().toLower();
 			instanceStr.prepend("@");
-			instanceStr.append("[i]");
-			std::cout << "instanceStr: " << instanceStr.toStdString() <<std::endl;
-			double curr = m_simulator->GetDataPoint(instanceStr.toStdString());
-			std::cout << "Current: " <<curr<<std::endl;
-			instanceStr.replace('i', 'p');
+			instanceStr.append("[p]");
 			double power = m_simulator->GetDataPoint(instanceStr.toStdString());
 			std::cout << "Power: " << power <<std::endl;
 
@@ -204,7 +209,16 @@ void Simulator::simulate() {
 			if(powerStr.isEmpty()) {
 				maxPower = DBL_MAX;
 			} else {
-				maxPower = powerStr.toDouble();
+				//TODO: Check that this is ok. Or should we use QLocale.toDouble()?
+				//TODO: Handle metric prefixes
+				bool ok;
+				maxPower = powerStr.remove(QRegularExpression("[^.+\\-\\d]")).toDouble(&ok);
+				if(!ok){
+					powerStr.prepend("Error conveting the maxPower of the resistor to double. String: ");
+					throw (powerStr);
+					continue;
+				}
+				std::cout << "MaxPower through the resistor: " << powerStr.toStdString() << QString(" %1").arg(maxPower).toStdString() << std::endl;
 			}
 
 			if(resistor->cachedConnectorItems().size()>1){
@@ -224,27 +238,35 @@ void Simulator::simulate() {
 		QString family = part->family().toLower();
 		if (family.compare("multimeter") == 0) {
 			std::cout << "Multimeter found. " << std::endl;
-			QString variant = part->getProperty("variant").toLower(); //TODO: change to type
-			if (variant.compare("v_dc") == 0) {
-				std::cout << "Multimeter (v_dc) found. " << std::endl;
-				ConnectorItem * c0 = part->cachedConnectorItems().at(0);
-				ConnectorItem * c1 = part->cachedConnectorItems().at(1);
-				ConnectorItem * c2 = part->cachedConnectorItems().at(2);
+			QString type = part->getProperty("type").toLower(); //TODO: change to type
 
-				if(c0->connectedToWires() && c1->connectedToWires() && c2->connectedToWires()) {
-					std::cout << "Multimeter (v_dc) connected with three terminals. " << std::endl;
-					updateMultimeterScreen(part, "ERR");
-					continue;
-				}
-				c0->debugInfo("connector c0: ");
-				c1->debugInfo("connector c1: ");
-				c2->debugInfo("connector c2: ");
-				if(c0->connectedToWires() && c1->connectedToWires()) {
-					std::cout << "Multimeter (v_dc) connected with three terminals. " << std::endl;
-					double v = calculateVoltage(c1, c0);
+			ConnectorItem * comProbe, * vProbe, * aProbe;
+			QList<ConnectorItem *> probes = part->cachedConnectorItems();
+			foreach(ConnectorItem * ci, probes) {
+				if(ci->connectorSharedName().toLower().compare("com probe") == 0) comProbe = ci;
+				if(ci->connectorSharedName().toLower().compare("v probe") == 0) vProbe = ci;
+				if(ci->connectorSharedName().toLower().compare("a probe") == 0) aProbe = ci;
+			}
+			if(!comProbe || !vProbe || !aProbe)
+				continue;
+
+			if(comProbe->connectedToWires() && vProbe->connectedToWires() && aProbe->connectedToWires()) {
+				std::cout << "Multimeter (v_dc) connected with three terminals. " << std::endl;
+				updateMultimeterScreen(part, "ERR");
+				continue;
+			}
+
+			if (type.compare("v_dc") == 0) {
+				std::cout << "Multimeter (v_dc) found. " << std::endl;
+				if(comProbe->connectedToWires() && vProbe->connectedToWires()) {
+					std::cout << "Multimeter (v_dc) connected with two terminals. " << std::endl;
+					double v = calculateVoltage(vProbe, comProbe);
 					updateMultimeterScreen(part, QString::number(v, 'f', 2));
 				}
 				continue;
+			} else if (type.compare("c_dc") == 0) {
+				std::cout << "Multimeter (c_dc) found. " << std::endl;
+				updateMultimeterScreen(part, QString::number(getCurrent(part), 'f', 3));
 			}
 
 		}
@@ -325,4 +347,41 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 	if (net0!=0) volt0 = m_simulator->GetDataPoint(net0str.toStdString());
 	if (net1!=0) volt1 = m_simulator->GetDataPoint(net1str.toStdString());
 	return volt0-volt1;
+}
+
+double Simulator::getCurrent(ItemBase* part) {
+	QString instanceStr = part->instanceTitle().toLower();
+	int index = part->spice().indexOf("{instanceTitle}");
+	if (index > 0){
+		QChar deviceType = part->spice().at(index-1).toLower();
+		if(deviceType == instanceStr.at(0)) {
+			instanceStr.prepend(QString("@"));
+		} else {
+			//f. ex. Leds are DLED1 in ngpice and LED1 in Fritzing
+			instanceStr.prepend(QString("@%1").arg(deviceType));
+		}
+		switch(deviceType.toLatin1()){
+			case 'd':
+				instanceStr.append("[id]");
+			break;
+			case 'r': //resistors
+			case 'c': //capacitors
+			case 'l': //inductors
+			case 'v': //voltage sources
+			case 'e': //Voltage-controlled voltage source (VCVS)
+			case 'f': //Current-controlled current source (CCCs)
+			case 'g': //Voltage-controlled current source (VCCS)
+			case 'h': //Current-controlled voltage source (CCVS)
+			case 'i': //Current source
+				instanceStr.append("[i]");
+				break;
+			default:
+				throw tr("Error getting the current of the device.The device type is not recognized. First letter is ").arg(deviceType);
+			break;
+
+		}
+		return m_simulator->GetDataPoint(instanceStr.toStdString());
+	}
+	throw tr("Error getting the current of the device.The device type is not recognized.");
+	return 0;
 }

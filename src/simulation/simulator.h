@@ -43,6 +43,7 @@ protected:
 	void removeSimItems();
 
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
+	double getCurrent(ItemBase*);
 
 	MainWindow *m_mainWindow;
 	std::shared_ptr<SPICE_SIMULATOR> m_simulator;

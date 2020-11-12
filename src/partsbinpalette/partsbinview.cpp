@@ -52,6 +52,7 @@ PartsBinView::PartsBinView(ReferenceModel *referenceModel, PartsBinPaletteWidget
 		TranslatedCategoryNames.insert("LilyPad",  QObject::tr("LilyPad"));
 		TranslatedCategoryNames.insert("Other",  QObject::tr("Other"));
 		TranslatedCategoryNames.insert("Sensors",  QObject::tr("Sensors"));
+		TranslatedCategoryNames.insert("Measuring Tools",  QObject::tr("Measuring Tools"));
 	}
 }
 

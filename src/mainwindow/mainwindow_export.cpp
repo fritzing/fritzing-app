@@ -1355,7 +1355,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName) {
  */
 QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class ConnectorItem *>* >& netList, QSet<class ItemBase *>& itemBases) {
 	QString output = simulationName + "\n";
-	static QRegExp curlies("\\{([^\\}]*)\\}");
+	static QRegExp curlies("\\{([^\\{\\}]*)\\}");
 	QHash<ConnectorItem *, int> indexer;
 	this->m_schematicGraphicsView->collectAllNets(indexer, netList, true, false);
 
@@ -1421,9 +1421,9 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 	foreach (ItemBase * itemBase, itemBases) {
 		QString spice = itemBase->spice();
 		if (spice.isEmpty()) continue;
-
+		int pos = 0;
 		while (true) {
-			int ix = curlies.indexIn(spice);
+			int ix = curlies.indexIn(spice, pos);
 			if (ix < 0) break;
 
 			QString token = curlies.cap(1).toLower();
@@ -1455,6 +1455,11 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 				QVariant variant = itemBase->modelPart()->localProp(token);
 				if (variant.isNull()) {
 					replacement = itemBase->modelPart()->properties().value(token, "");
+					if(replacement.isEmpty()) {
+						//Leave it, probably is a brace expresion for the spice simulator
+						pos = ix + 1;
+						replacement = curlies.cap(0);
+					}
 				}
 				else {
 					replacement = variant.toString();

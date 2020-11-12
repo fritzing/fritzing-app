@@ -314,10 +314,10 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 	//m_schSimItems.append(schScreen);
 	//schScreen->setPos(QPointF(10,10));
 	//schScreen->setZValue(DBL_MAX);
-	QFont font("Segment7", 14, QFont::Normal);
+	QFont font("Segment7", 30, QFont::Normal);
 	bbScreen->setFont(font);
-	bbScreen->setScale(4);
-	bbScreen->setPos(QPointF(30,30));
+	//bbScreen->setScale(4);
+	bbScreen->setPos(QPointF(15,20));
 	bbScreen->setZValue(DBL_MAX);
 }
 

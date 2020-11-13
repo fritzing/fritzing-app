@@ -62,6 +62,13 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 			}
 
 			if (propertyDef->numeric) {
+				focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value\n"
+												"Range: [%2 - %3] %4\n"
+												"Background: Green = ok, Red = incorrect value, Grey = current value").
+											 arg(returnProp).
+											 arg(TextUtils::convertToPowerPrefix(propertyDef->minValue)).
+											 arg(TextUtils::convertToPowerPrefix(propertyDef->maxValue)).
+											 arg(propertyDef->symbol));
 				if (!current.isEmpty()) {
 					double val = TextUtils::convertFromPowerPrefixU(current, propertyDef->symbol);
 					if (!propertyDef->menuItems.contains(val)) {
@@ -97,7 +104,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 				if (propertyDef->maxValue > propertyDef->minValue) {
 					validator->setBounds(propertyDef->minValue, propertyDef->maxValue);
 				}
-				QString pattern = QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d{1,2}))[%1]{0,1}[%2]{0,1}")
+				QString pattern = QString("((\\d{0,3})|(\\d{0,3}\\.)|(\\d{0,3}\\.\\d{1,3}))[%1]{0,1}[%2]{0,1}")
 				                  .arg(TextUtils::PowerPrefixesString)
 				                  .arg(propertyDef->symbol);
 				validator->setRegExp(QRegExp(pattern));

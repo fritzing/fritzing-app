@@ -22,7 +22,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define BOUNDEDREGEXPVALIDATOR_H
 
 #include <QRegExpValidator>
+#include <QColor>
+#include <QLineEdit>
 #include <limits>
+#include "focusoutcombobox.h"
+#include "../utils/textutils.h"
 
 typedef double (*Converter)(const QString &, const QString & symbol);
 
@@ -49,17 +53,59 @@ public:
 		m_symbol = symbol;
 	}
 
-	QValidator::State validate ( QString & input, int & pos ) const {
+	QValidator::State validate ( QString & input, int & pos ) const override {
 		QValidator::State state = QRegExpValidator::validate(input, pos);
-		if (state == QValidator::Invalid) return state;
-		if (state == QValidator::Intermediate) return state;
-		if (m_converter == NULL) return state;
+		input.replace(m_symbol, "");
+		if(!m_symbol.isEmpty())
+			input.append(m_symbol);
+		state = QRegExpValidator::validate(input, pos);
+
+		if ( state == QValidator::Acceptable ) {
+			double converted = m_converter(input, m_symbol);
+			if (converted < m_min) state = QValidator::Intermediate;
+			if (converted > m_max) state = QValidator::Intermediate;
+		}
+
+		FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(parent());
+		if (focusOutComboBox == NULL) return state;
+
+		if (state == QValidator::Acceptable) {
+			QColor backColor = QColor(210, 246, 210);
+			QLineEdit *lineEditor = focusOutComboBox->lineEdit();
+			QPalette pal = lineEditor->palette();
+			pal.setColor(QPalette::Base, backColor);
+			lineEditor->setPalette(pal);
+		} else if (state == QValidator::Intermediate) {
+			QColor backColor = QColor(246, 210, 210);
+			QLineEdit *lineEditor = focusOutComboBox->lineEdit();
+			QPalette pal = lineEditor->palette();
+			pal.setColor(QPalette::Base, backColor);
+			lineEditor->setPalette(pal);
+		}
+		return state;
+	}
+
+	virtual void fixup ( QString& input) const override {
+		if (m_converter == NULL) {
+			if(!input.endsWith(m_symbol)) input.append(m_symbol);
+			return;
+		}
+		double divider = 10;
+		if (m_max - m_min > 1000)
+			divider = 1000;
 
 		double converted = m_converter(input, m_symbol);
-		if (converted < m_min) return QValidator::Invalid;
-		if (converted > m_max) return QValidator::Invalid;
-
-		return QValidator::Acceptable;
+		for (int i = 0; i < 10; i++) {
+			if (converted > m_max) {
+				converted/=divider;
+			} else if (converted < m_min) {
+				converted*=divider;
+			} else {
+				break;
+			}
+		}
+		input = TextUtils::convertToPowerPrefix(converted);
+		input.append(m_symbol);
 	}
 
 protected:

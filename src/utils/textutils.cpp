@@ -803,6 +803,8 @@ bool TextUtils::addCopper1(const QString & filename, QDomDocument & domDocument,
 QString TextUtils::convertToPowerPrefix(double q) {
 	initPowerPrefixes();
 
+	if (q == 0) return QString::number(q);
+
 	for (int i = 0; i < PowerPrefixes.count(); i++) {
 		if (q < 100 * PowerPrefixValues[i]) {
 			q /= PowerPrefixValues[i];

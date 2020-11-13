@@ -66,6 +66,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/autoclosemessagebox.h"
 #include "../svg/gerbergenerator.h"
 #include "../processeventblocker.h"
+#include "../items/propertydef.h"
 
 static QString eagleActionType = ".eagle";
 static QString gerberActionType = ".gerber";
@@ -1397,12 +1398,27 @@ void MainWindow::exportSpiceNetlist() {
 				}
 			}
 			else {
+				//Find the symbol of this property
+				QString symbol;
+				QHash<PropertyDef *, QString> propertyDefs;
+				PropertyDefMaster::initPropertyDefs(itemBase->modelPart(), propertyDefs);
+				foreach (PropertyDef * propertyDef, propertyDefs.keys()) {
+					if (token.compare(propertyDef->name, Qt::CaseInsensitive) == 0) {
+						symbol = propertyDef->symbol;
+						break;
+					}
+				}
+				//Find the value of the property
 				QVariant variant = itemBase->modelPart()->localProp(token);
 				if (variant.isNull()) {
 					replacement = itemBase->modelPart()->properties().value(token, "");
 				}
 				else {
 					replacement = variant.toString();
+				}
+				//Remove the symbol, if any
+				if (!symbol.isEmpty()) {
+					replacement.replace(symbol, "");
 				}
 			}
 

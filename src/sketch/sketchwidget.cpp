@@ -3270,22 +3270,16 @@ bool SketchWidget::checkMoved(bool wait)
 		return false;
 	}
 
-	int moveCount = m_savedItems.count();
-	if (moveCount <= 0) {
+	if (m_savedItems.empty()) {
 		return false;
 	}
 
-	ItemBase * saveBase = nullptr;
-	foreach (ItemBase * item, m_savedItems) {
-		saveBase = item;
-		break;
-	}
-
+	int moveCount = m_savedItems.count();
+	ItemBase * saveBase = m_savedItems.begin().value();
 	clearHoldingSelectItem();
-
-	QString moveString;
 	QString viewName = ViewLayer::viewIDName(m_viewID);
 
+	QString moveString;
 	if (moveCount == 1) {
 		moveString = tr("Move %2 (%1)").arg(viewName).arg(saveBase->title());
 	}

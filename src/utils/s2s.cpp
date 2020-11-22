@@ -126,10 +126,11 @@ QString makePinNumber(const ConnectorLocation * connectorLocation, double x1, do
 	        .arg(ty)
 	        .arg("middle")
 	        .arg(connectorLocation->id)
-	        .arg(0)  // SW(width)
-	        .arg(SchematicRectConstants::PinTextColor)
-	        .arg(SchematicRectConstants::FontFamily)
-	        ;
+	        .arg(
+	        	"0"  // SW(width)
+	        	, SchematicRectConstants::PinTextColor
+	        	, SchematicRectConstants::FontFamily
+	        );
 
 	if (x1 == x2) {
 		text += "</g></g>\n";
@@ -172,15 +173,15 @@ QString makePinText(const ConnectorLocation * connectorLocation, double x1, doub
 	}
 
 	text += QString("<text class='text' font-family=\"%8\" stroke='none' stroke-width='%6' fill='%7' font-size='%1' x='%2' y='%3' text-anchor='%4'>%5</text>\n")
-	        .arg(SchematicRectConstants::PinBigTextHeight)
-	        .arg(x2 + xOffset)
-	        .arg(y2 + yOffset)
-	        .arg(anchorAtStart ? "start" : "end")
-	        .arg(TextUtils::escapeAnd(connectorLocation->name))
-	        .arg(0)  // SW(width)
-	        .arg(SchematicRectConstants::PinTextColor)
-	        .arg(SchematicRectConstants::FontFamily)
-	        ;
+			.arg(SchematicRectConstants::PinBigTextHeight)
+			.arg(x2 + xOffset)
+			.arg(y2 + yOffset)
+			.arg(anchorAtStart ? "start" : "end"
+				, TextUtils::escapeAnd(connectorLocation->name)
+				, "0"  // SW(width)
+				, SchematicRectConstants::PinTextColor
+				, SchematicRectConstants::FontFamily
+			);
 
 	if (rotate) {
 		text += "</g></g>\n";
@@ -261,7 +262,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 
 	QDomDocument dom;
 	if (!dom.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		message(tr("Failed loading '%1', %2 line:%3 col:%4").arg(fzpFilePath).arg(errorStr).arg(errorLine).arg(errorColumn));
+		message(tr("Failed loading '%1', %2 line:%3 col:%4").arg(fzpFilePath, errorStr).arg(errorLine).arg(errorColumn));
 		return false;
 	}
 
@@ -313,7 +314,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 	QSvgRenderer renderer;
 	bool loaded = renderer.load(schematicFilePath);
 	if (!loaded) {
-		message(tr("Unable to load schematic '%1' for '%2'").arg(schematicFilePath).arg(fzpFilePath));
+		message(tr("Unable to load schematic '%1' for '%2'").arg(schematicFilePath, fzpFilePath));
 		return false;
 	}
 
@@ -427,8 +428,8 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 	       .arg(rectT)
 	       .arg((hUnits * SchematicRectConstants::NewUnit) - SchematicRectConstants::RectStrokeWidth)
 	       .arg((vUnits * SchematicRectConstants::NewUnit) - SchematicRectConstants::RectStrokeWidth)
-	       .arg(SchematicRectConstants::RectFillColor)
-	       .arg(SchematicRectConstants::RectStrokeColor)
+		   .arg(SchematicRectConstants::RectFillColor
+		   , SchematicRectConstants::RectStrokeColor)
 	       .arg(SchematicRectConstants::RectStrokeWidth)
 	       ;
 
@@ -500,10 +501,10 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 		       .arg(SchematicRectConstants::LabelTextHeight)
 		       .arg(((hUnits * SchematicRectConstants::NewUnit) / 2) + rectL)
 		       .arg(y)
-		       .arg(0)  // SW(width)
-		       .arg(SchematicRectConstants::TitleColor)
-		       .arg(TextUtils::escapeAnd(subTitle))
-		       .arg(SchematicRectConstants::FontFamily)
+		       .arg("0"  // SW(width)
+		       , SchematicRectConstants::TitleColor
+		       , TextUtils::escapeAnd(subTitle)
+		       , SchematicRectConstants::FontFamily)
 		       ;
 		y += (SchematicRectConstants::LabelTextHeight + SchematicRectConstants::LabelTextSpace);
 	}

@@ -125,7 +125,6 @@ ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringTh
 	//DebugDialog::debug("both");
 	//DebugDialog::debug(svg);
 
-	QString setColor;
 	QStringList noIDs;
 
 	QString osvg;
@@ -187,19 +186,16 @@ QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThicknes
 	QString id = makeID();
 	if (hd == 0) {
 		svg += QString("<circle cx='%1' cy='%1' r='%2' fill='%3' id='%4' />")
-		       .arg(rt + offsetDPI)
-		       .arg(rt)
-		       .arg(setColor)
-		       .arg(id);
-	}
+					.arg(rt + offsetDPI)
+					.arg(rt)
+					.arg(setColor, id);
+}
 	else {
 		svg += QString("<circle fill='%6' cx='%1' cy='%1' r='%2' stroke-width='%3' stroke='%4' id='%5' />")
-		       .arg((hd / 2) + rt + offsetDPI)
-		       .arg((hd / 2) + (rt / 2))
-		       .arg(rt)
-		       .arg(setColor)
-		       .arg(id)
-		       .arg(rt == 0 ? "black" : "none")
+					.arg((hd / 2) + rt + offsetDPI)
+					.arg((hd / 2) + (rt / 2))
+					.arg(rt)
+					.arg(setColor, id, rt == 0 ? "black" : "none")
 		       ;
 		if (includeHole) {
 			svg += QString("<circle drill='0' fill='black' cx='%1' cy='%1' r='%2' stroke-width='0'  />")   // set the drill attribute to 0 for gerber translation

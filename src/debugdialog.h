@@ -75,7 +75,7 @@ protected:
 	DebugLevel m_debugLevel;
 
 signals:
-	void debugBroadcast(const QString & message, DebugLevel, QObject * ancestor);
+	void debugBroadcast(const QString & message, DebugDialog::DebugLevel, QObject * ancestor);
 };
 
 #endif

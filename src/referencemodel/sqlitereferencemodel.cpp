@@ -1309,6 +1309,7 @@ bool SqliteReferenceModel::insertSubpart(ModelPartShared * mps, qulonglong id)
 	query.bindValue(":part_id", id);
 	if(!query.exec()) {
 		debugExec("couldn't insert bus", query);
+		FailurePartMessages << QString("Problem with subpart in " + mps->path());
 		m_swappingEnabled = false;
 	}
 	//else {
@@ -1361,6 +1362,17 @@ void SqliteReferenceModel::setSha(const QString & sha) {
 
 const QString & SqliteReferenceModel::sha() const {
 	return m_sha;
+}
+
+const QString SqliteReferenceModel::error() const {
+	QString error;
+	if (!FailurePartMessages.empty()) {
+		error = FailurePartMessages.first();
+	}
+	if (!FailurePropertyMessages.empty()) {
+		error = FailurePropertyMessages.first();
+	}
+	return error;
 }
 
 bool SqliteReferenceModel::removeViewImages(qulonglong partId) {

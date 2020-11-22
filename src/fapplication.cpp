@@ -309,13 +309,13 @@ void RegenerateDatabaseThread::run() {
 		file.close();
 	}
 	else {
-		m_error = tr("Unable to open temporary file");
+		m_error = tr("Unable to open temporary file") + " (" + fileName + ")";
 		return;
 	}
 
 	bool ok = ((FApplication *) qApp)->loadReferenceModel(fileName, true, m_referenceModel);
 	if (!ok) {
-		m_error = tr("Database failure");
+		m_error = tr("Database failure") + "\n" + m_referenceModel->error();
 		return;
 	}
 

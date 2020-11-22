@@ -193,9 +193,17 @@ void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 	LayerAttributes layerAttributes;
 	m_itemBase->initLayerAttributes(layerAttributes, viewID, ViewLayer::Icon, ViewLayer::NewTop, false, false);
 	ModelPart * modelPart = m_itemBase->modelPart();
-	FSvgRenderer * renderer = m_itemBase->setUpImage(modelPart, layerAttributes);
+	FSvgRenderer * renderer = nullptr;
+	if (modelPart) {
+			renderer = m_itemBase->setUpImage(modelPart, layerAttributes);
+	}
 	if (!renderer) {
-		DebugDialog::debug(QString("missing renderer for icon %1").arg(modelPart->moduleID()));
+		if (modelPart) {
+			DebugDialog::debug(QString("missing renderer for icon %1").arg(modelPart->moduleID()));
+		} else {
+			DebugDialog::debug(QString("error icon %1").arg(m_itemBase->filename()));
+			DebugDialog::debug(QString("error icon %1").arg(m_itemBase->id()));
+		}
 	}
 	if (renderer && m_itemBase) {
 		m_itemBase->setFilename(renderer->filename());

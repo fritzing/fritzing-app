@@ -125,14 +125,17 @@ void GroundFillSeedDialog::changedSlot(QListWidgetItem *) {
 
 
 void GroundFillSeedDialog::clickedSlot(QListWidgetItem * item) {
-	int ix = -1;
-    if (item != nullptr) {
-		ix = item->data(Qt::UserRole).toInt();
-	}
 
 	showEqualPotential(m_activeConnectorItem, false);
-    m_activeConnectorItem = (ix >= 0 && ix < m_connectorItems.count()) ? m_connectorItems.at(ix) : nullptr;
-    showEqualPotential(m_activeConnectorItem, item->checkState() == Qt::Checked);
+
+	int ix = -1;
+	if (item) {
+		ix = item->data(Qt::UserRole).toInt();
+		m_activeConnectorItem = m_connectorItems.value(ix, nullptr);
+		showEqualPotential(m_activeConnectorItem, item->checkState() == Qt::Checked);
+	} else {
+		m_activeConnectorItem = nullptr;
+	}
 }
 
 void GroundFillSeedDialog::showEqualPotential(ConnectorItem * connectorItem, bool show)

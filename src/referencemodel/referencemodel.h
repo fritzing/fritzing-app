@@ -48,7 +48,7 @@ public:
 	virtual bool lastWasExactMatch() = 0;
 	virtual void setSha(const QString & sha) = 0;
 	virtual const QString & sha() const = 0;
-
+	virtual const QString error() const = 0;
 };
 
 #endif /* REFERENCEMODEL_H_ */

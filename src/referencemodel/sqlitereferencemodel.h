@@ -58,6 +58,7 @@ public:
 	bool lastWasExactMatch();
 	void setSha(const QString & sha);
 	const QString & sha() const;
+	const QString error() const;
 
 protected:
 	void initParts(bool dbExists);

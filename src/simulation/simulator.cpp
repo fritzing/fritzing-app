@@ -96,6 +96,7 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 	m_mainWindow = mainWindow;
 	m_breadboardGraphicsView = dynamic_cast<BreadboardSketchWidget *>(mainWindow->sketchWidgets().at(0));
 	m_schematicGraphicsView = dynamic_cast<SchematicSketchWidget *>(mainWindow->sketchWidgets().at(1));
+	m_instanceTitleSim = new QList<QString>;
 }
 
 Simulator::~Simulator() {
@@ -142,9 +143,11 @@ void Simulator::simulate() {
 		}
 	}
 
+
 	//Generate a hash table to find the breadboard parts from parts in the schematic view
 	m_sch2bbItemHash.clear();
 	foreach(ItemBase* schPart, itemBases) {
+		m_instanceTitleSim->append(schPart->instanceTitle());
 		foreach (QGraphicsItem * bbItem, m_breadboardGraphicsView->scene()->items()) {
 			ItemBase * bbPart = dynamic_cast<ItemBase *>(bbItem);
 			if (!bbPart) continue;
@@ -155,7 +158,7 @@ void Simulator::simulate() {
 	}
 
 	//If there are parts that are not being simulated, grey them out
-	greyNonSimPartsOut(itemBases);
+	greyOutNonSimParts(itemBases);
 
 
 	int elapsedTime = 0, simTimeOut = 3000; // in ms
@@ -350,6 +353,7 @@ void Simulator::removeSimItems() {
 		delete item;
 	}
 	m_schSimItems.clear();
+	m_instanceTitleSim->clear();
 }
 
 double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
@@ -404,7 +408,7 @@ double Simulator::getCurrent(ItemBase* part) {
 	return 0;
 }
 
-void Simulator::greyNonSimPartsOut(const QSet<ItemBase *>& simParts) {
+void Simulator::greyOutNonSimParts(const QSet<ItemBase *>& simParts) {
 	//Find the parts that are not being simulated.
 	//First, get all the parts from the scenes...
 	QList<QGraphicsItem *> noSimSchParts = m_schematicGraphicsView->scene()->items();
@@ -437,23 +441,44 @@ void Simulator::greyNonSimPartsOut(const QSet<ItemBase *>& simParts) {
 	}
 
 	//TODO: grey out the wires that are not connected to parts to be simulated
-	foreach (QGraphicsItem * part, noSimSchParts){
+	removeItemsToBeSimulated(noSimSchParts);
+	removeItemsToBeSimulated(noSimBbParts);
+
+	//... and grey them out to indicate it
+	greyOutParts(noSimSchParts);
+	greyOutParts(noSimBbParts);
+}
+
+void Simulator::greyOutParts(const QList<QGraphicsItem*> & parts) {
+	foreach (QGraphicsItem * part, parts){
+		QGraphicsColorizeEffect * schEffect = new QGraphicsColorizeEffect();
+		schEffect->setColor(QColor(100,100,100));
+		part->setGraphicsEffect(schEffect);
+	}
+}
+
+void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
+	foreach (QGraphicsItem * part, parts){
 		Wire* wire = dynamic_cast<Wire *>(part);
 		if (wire) {
-			noSimSchParts.removeAll(part);
-//			QList<Wire *> wires;
-//			QList<ConnectorItem *> ends;
-//			wire->collectChained(wires, ends);
-//			foreach (Wire * wireToRemove, wires) {
-//				noSimSchParts.removeAll(wireToRemove);
-//			}
+			parts.removeAll(part);
+			continue;
 		}
-	}
-	foreach (QGraphicsItem * part, noSimBbParts){
-		Wire* wire = dynamic_cast<Wire *>(part);
+
+		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(part);
+		if (connectorItem) {
+			//The connectors and rubber legs are not wires, but we should nor get them out if they are
+			//connected to a part that we are simulating
+			if (m_instanceTitleSim->contains(connectorItem->attachedToInstanceTitle())) {
+				parts.removeAll(part);
+				continue;
+			}
+		}
+
 		Breadboard* breadboard = dynamic_cast<Breadboard *>(part);
-		if (wire || breadboard) {
-			noSimBbParts.removeAll(part);
+		if (breadboard) {
+			parts.removeAll(part);
+			continue;
 //			if (bbConnectors.contains(wire->connector0()) ||
 //									bbConnectors.contains(wire->connector1())) {
 //				QList<Wire *> wires;
@@ -464,17 +489,5 @@ void Simulator::greyNonSimPartsOut(const QSet<ItemBase *>& simParts) {
 //				}
 //			}
 		}
-	}
-
-	//... and grey them out to indicate it
-	foreach (QGraphicsItem * part, noSimSchParts){
-		QGraphicsColorizeEffect * schEffect = new QGraphicsColorizeEffect();
-		schEffect->setColor(QColor(100,100,100));
-		part->setGraphicsEffect(schEffect);
-	}
-	foreach (QGraphicsItem * part, noSimBbParts){
-		QGraphicsColorizeEffect * bbEffect = new QGraphicsColorizeEffect();
-		bbEffect->setColor(QColor(100,100,100));
-		part->setGraphicsEffect(bbEffect);
 	}
 }

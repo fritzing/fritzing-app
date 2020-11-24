@@ -41,7 +41,9 @@ protected:
 	void drawSmoke(ItemBase* part);
 	void updateMultimeterScreen(ItemBase *, QString);
 	void removeSimItems();
-	void greyNonSimPartsOut(const QSet<class ItemBase *>&);
+	void greyOutNonSimParts(const QSet<class ItemBase *>&);
+	void greyOutParts(const QList<QGraphicsItem *> &);
+	void removeItemsToBeSimulated(QList<QGraphicsItem*> &);
 
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
 	double getCurrent(ItemBase*);
@@ -58,6 +60,8 @@ protected:
 
 	QList<QGraphicsObject *> m_bbSimItems;
 	QList<QGraphicsObject *> m_schSimItems;
+
+	QList<QString>* m_instanceTitleSim;
 };
 
 #endif // SIMULATOR_H

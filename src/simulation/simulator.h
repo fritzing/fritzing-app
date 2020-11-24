@@ -41,6 +41,7 @@ protected:
 	void drawSmoke(ItemBase* part);
 	void updateMultimeterScreen(ItemBase *, QString);
 	void removeSimItems();
+	void greyNonSimPartsOut(const QSet<class ItemBase *>&);
 
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
 	double getCurrent(ItemBase*);

@@ -80,7 +80,10 @@ public:
     std::vector<double> GetPhasePlot( const std::string& aName, int aMaxLen = -1 ) override;
 
     ///> @copydoc SPICE_SIMULATOR::GetNetlist()
-    virtual const std::string GetNetlist() const override;
+	virtual const std::string GetNetlist() const override;
+
+	//Flag to indicate if the background thread is running
+	bool m_bgThreadIsRunning;
 
 private:
     void init();
@@ -138,6 +141,7 @@ private:
 
     ///> current netlist
     std::string m_netlist;
+
 };
 
 /**

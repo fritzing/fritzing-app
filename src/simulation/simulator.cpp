@@ -30,6 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPrintDialog>
 #include <QClipboard>
 #include <QApplication>
+#include <QGraphicsColorizeEffect>
 
 #include "../mainwindow/mainwindow.h"
 #include "../debugdialog.h"
@@ -74,6 +75,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../items/led.h"
 #include "../items/resistor.h"
+#include "../items/wire.h"
+#include "../items/breadboard.h"
+
 
 #if defined(__MINGW32__) || defined(_MSC_VER)
 #include <windows.h>  // for Sleep
@@ -106,12 +110,28 @@ void Simulator::simulate() {
 		return;
 	}
 
-
-	removeSimItems();
-
 	QList< QList<ConnectorItem *>* > netList;
 	QSet<ItemBase *> itemBases;
 	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
+
+	std::cout << "Netlist: " << spiceNetlist.toStdString() << std::endl;
+	std::cout << "-----------------------------------" <<std::endl;
+	m_simulator->Command("remcirc");
+	std::cout << "-----------------------------------" <<std::endl;
+	m_simulator->Init();
+	std::cout << "-----------------------------------" <<std::endl;
+	std::string netlist = "Test simulator\nV1 1 0 5\nR1 1 2 100\nR2 2 0 100\n.OP\n.END";
+	m_simulator->LoadNetlist( spiceNetlist.toStdString());
+	std::cout << "-----------------------------------" <<std::endl;
+	m_simulator->Command("listing");
+	std::cout << "-----------------------------------" <<std::endl;
+	m_simulator->Run();
+	std::cout << "-----------------------------------" <<std::endl;
+
+	//While the spice simulator runs, we will perform some tasks:
+
+	//Removes the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.)
+	removeSimItems();
 
 	//Generate a hash table to find the net of specific connectors
 	m_connector2netHash.clear();
@@ -134,38 +154,35 @@ void Simulator::simulate() {
 		}
 	}
 
-
-	std::cout << "Netlist: " << spiceNetlist.toStdString() << std::endl;
-	std::cout << "-----------------------------------" <<std::endl;
-	m_simulator->Command("remcirc");
-	std::cout << "-----------------------------------" <<std::endl;
-	m_simulator->Init();
-	std::cout << "-----------------------------------" <<std::endl;
-	std::string netlist = "Test simulator\nV1 1 0 5\nR1 1 2 100\nR2 2 0 100\n.OP\n.END";
-	m_simulator->LoadNetlist( spiceNetlist.toStdString());
-	std::cout << "-----------------------------------" <<std::endl;
-	m_simulator->Command("listing");
-	std::cout << "-----------------------------------" <<std::endl;
-	m_simulator->Run();
-	std::cout << "-----------------------------------" <<std::endl;
-#if defined(__MINGW32__) || defined(_MSC_VER)
-	Sleep(100);
-#else
-	usleep(100000);
-#endif
+	//If there are parts that are not being simulated, grey them out
+	greyNonSimPartsOut(itemBases);
 
 
-	//QString command = QString("print v(2)");
-	//m_simulator->Command( command.toStdString() );
-	//std::cout << "-----------------------------------" <<std::endl;
-	//double volt = m_simulator->GetDataPoint("v(2)");
-	//std::cout << "-----------------------------------" <<std::endl;
-	//std::cout << "voltage: " <<volt<<std::endl;
-	//std::cout << "-----------------------------------" <<std::endl;
-	//m_simulator->Stop();
-	//std::cout << "-----------------------------------" <<std::endl;
+	int elapsedTime = 0, simTimeOut = 3000; // in ms
+	while (m_simulator->IsRunning() && elapsedTime < simTimeOut) {
+	#if defined(__MINGW32__) || defined(_MSC_VER)
+		Sleep(1);
+	#else
+		usleep(1000);
+	#endif
+		elapsedTime++;
+	}
+	if (elapsedTime >= simTimeOut) {
+		m_simulator->Stop();
+		throw std::runtime_error( QString("The spice simulator did not finish after %1 ms. Aborting simulation.").arg(simTimeOut).toStdString() );
+		return;
+	}
 
+	//The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
+	//This loops is in charge of:
+	// * update the multimeters sreen
+	// * add smoke to a part if something is out of its specifications
+	// * update the brighness of the LEDs
 	foreach (ItemBase * part, itemBases){
+		//Remove the effects, if any
+		part->setGraphicsEffect(NULL);
+		m_sch2bbItemHash.value(part)->setGraphicsEffect(NULL);
+
 		std::cout << "-----------------------------------" <<std::endl;
 		std::cout << "Instance Title: " << part->instanceTitle().toStdString() << std::endl;
 		std::cout << "viewLayerID: " << part->viewLayerID() << std::endl;
@@ -274,6 +291,7 @@ void Simulator::simulate() {
 
 	}
 
+	//Delete the pointers
 	foreach (QList<ConnectorItem *> * net, netList) {
 		delete net;
 	}
@@ -384,4 +402,79 @@ double Simulator::getCurrent(ItemBase* part) {
 	}
 	throw tr("Error getting the current of the device.The device type is not recognized.");
 	return 0;
+}
+
+void Simulator::greyNonSimPartsOut(const QSet<ItemBase *>& simParts) {
+	//Find the parts that are not being simulated.
+	//First, get all the parts from the scenes...
+	QList<QGraphicsItem *> noSimSchParts = m_schematicGraphicsView->scene()->items();
+	QList<QGraphicsItem *> noSimBbParts = m_breadboardGraphicsView->scene()->items();
+
+
+	//Remove the parts that are going to be simulated and the wires connected to them
+	QList<ConnectorItem *> bbConnectors;
+	foreach (ItemBase * part, simParts){
+		noSimSchParts.removeAll(part);
+		noSimBbParts.removeAll(m_sch2bbItemHash.value(part));
+		bbConnectors.append(m_sch2bbItemHash.value(part)->cachedConnectorItems());
+
+//		foreach (ConnectorItem * connectorItem, part->cachedConnectorItems()) {
+//			QList<Wire *> wires;
+//			QList<ConnectorItem *> ends;
+//			Wire::collectChained(connectorItem, wires, ends);
+//			foreach (Wire * wire, wires) {
+//				noSimSchParts.removeAll(wire);
+//			}
+//		}
+//		foreach (ConnectorItem * connectorItem, m_sch2bbItemHash.value(part)->cachedConnectorItems()) {
+//			QList<Wire *> wires;
+//			QList<ConnectorItem *> ends;
+//			Wire::collectChained(connectorItem, wires, ends);
+//			foreach (Wire * wire, wires) {
+//				noSimBbParts.removeAll(wire);
+//			}
+//		}
+	}
+
+	//TODO: grey out the wires that are not connected to parts to be simulated
+	foreach (QGraphicsItem * part, noSimSchParts){
+		Wire* wire = dynamic_cast<Wire *>(part);
+		if (wire) {
+			noSimSchParts.removeAll(part);
+//			QList<Wire *> wires;
+//			QList<ConnectorItem *> ends;
+//			wire->collectChained(wires, ends);
+//			foreach (Wire * wireToRemove, wires) {
+//				noSimSchParts.removeAll(wireToRemove);
+//			}
+		}
+	}
+	foreach (QGraphicsItem * part, noSimBbParts){
+		Wire* wire = dynamic_cast<Wire *>(part);
+		Breadboard* breadboard = dynamic_cast<Breadboard *>(part);
+		if (wire || breadboard) {
+			noSimBbParts.removeAll(part);
+//			if (bbConnectors.contains(wire->connector0()) ||
+//									bbConnectors.contains(wire->connector1())) {
+//				QList<Wire *> wires;
+//				QList<ConnectorItem *> ends;
+//				wire->collectChained(wires, ends);
+//				foreach (Wire * wireToRemove, wires) {
+//					noSimBbParts.removeAll(wireToRemove);
+//				}
+//			}
+		}
+	}
+
+	//... and grey them out to indicate it
+	foreach (QGraphicsItem * part, noSimSchParts){
+		QGraphicsColorizeEffect * schEffect = new QGraphicsColorizeEffect();
+		schEffect->setColor(QColor(100,100,100));
+		part->setGraphicsEffect(schEffect);
+	}
+	foreach (QGraphicsItem * part, noSimBbParts){
+		QGraphicsColorizeEffect * bbEffect = new QGraphicsColorizeEffect();
+		bbEffect->setColor(QColor(100,100,100));
+		part->setGraphicsEffect(bbEffect);
+	}
 }

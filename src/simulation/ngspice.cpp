@@ -56,6 +56,7 @@ NGSPICE::NGSPICE()
           m_error( false )
 {
     init_dll();
+	m_bgThreadIsRunning = true;
 }
 
 
@@ -294,8 +295,7 @@ bool NGSPICE::Stop()
 
 bool NGSPICE::IsRunning()
 {
-	LOCALE_IO c_locale;               // ngspice works correctly only with C locale
-    return m_ngSpice_Running();
+	return m_bgThreadIsRunning;
 }
 
 
@@ -570,7 +570,8 @@ int NGSPICE::cbSendStat( char* what, int id, void* user )
 int NGSPICE::cbBGThreadRunning( bool is_running, int id, void* user )
 {
     NGSPICE* sim = reinterpret_cast<NGSPICE*>( user );
-
+	sim->m_bgThreadIsRunning = !is_running;
+	std::cout << "Simulator running: " << is_running << endl;
 //    if( sim->m_reporter )
 //        // I know the test below seems like an error, but well, it works somehow..
 //        sim->m_reporter->OnSimStateChange( sim, is_running ? SIM_IDLE : SIM_RUNNING );

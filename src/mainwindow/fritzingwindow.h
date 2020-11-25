@@ -36,7 +36,7 @@ class FritzingWindow : public QMainWindow, public Bundler
 	Q_OBJECT
 
 public:
-	FritzingWindow(const QString &untitledFileName, int &untitledFileCount, QString fileExt, QWidget * parent = 0, Qt::WindowFlags f = 0);
+	FritzingWindow(const QString &untitledFileName, int &untitledFileCount, QString fileExt, QWidget * parent = 0, Qt::WindowFlags f = Qt::WindowFlags());
 	const QString &fileName();
 	void setFileName(const QString &);
 

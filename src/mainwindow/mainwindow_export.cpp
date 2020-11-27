@@ -1471,15 +1471,20 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 						//Leave it, probably is a brace expresion for the spice simulator
 						pos = ix + 1;
 						replacement = curlies.cap(0);
+						continue;
 					}
 				}
 				else {
 					replacement = variant.toString();
 				}
-				//Remove the symbol, if any
+				//Remove the symbol, if any. It is not mandatory:
+				//(Ngspice ignores letters immediately following a number that are not scale factors)
 				if (!symbol.isEmpty()) {
 					replacement.replace(symbol, "");
 				}
+				//Ngspice does not differenciate from m and M prefixes, u shuld be used for micro
+				replacement.replace("M", "Meg");
+				replacement.replace(TextUtils::MicroSymbol, "u");
 			}
 
 			spice.replace(ix, curlies.cap(0).count(), replacement);

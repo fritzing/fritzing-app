@@ -31,7 +31,9 @@ Currently, we have implemented these tests
 * Three probes connected to a multimeter (Err message in the screen appears)
 * Max current in diodes and LEDs (TODO: inductors)
 * Max power in resistors
-* Reverse voltage in tantalum and electrolytic capacitors (TODO)
+* Reverse voltage in tantalum and electrolytic capacitors
+* Max voltage in capacitors 
+
 
 ### Input devices ###
 
@@ -85,6 +87,7 @@ Pull request are welcome!
 
 Some features that could be added:
 
+* Better handling of Ngspice errors
 * Perform transitory analysis and plot the results in an oscilloscope. 
 * Switches and potentiometers could be activated interactively
 

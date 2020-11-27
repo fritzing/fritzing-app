@@ -45,8 +45,17 @@ protected:
 	void greyOutParts(const QList<QGraphicsItem *> &);
 	void removeItemsToBeSimulated(QList<QGraphicsItem*> &);
 
+	QChar getDeviceType (ItemBase*);
+	QString getSymbol(ItemBase*, QString);
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
-	double getCurrent(ItemBase*);
+	double getCurrent(ItemBase*, QString subpartName="");
+	double getPower(ItemBase*, QString subpartName="");
+
+	//Functions to update the parts
+	void updateCapacitor(ItemBase *);
+	void updateDiode(ItemBase *);
+	void updateMultimeter(ItemBase *);
+	void updateResistor(ItemBase *);
 
 	MainWindow *m_mainWindow;
 	std::shared_ptr<SPICE_SIMULATOR> m_simulator;

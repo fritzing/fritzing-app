@@ -188,110 +188,26 @@ void Simulator::simulate() {
 
 		std::cout << "-----------------------------------" <<std::endl;
 		std::cout << "Instance Title: " << part->instanceTitle().toStdString() << std::endl;
-		std::cout << "viewLayerID: " << part->viewLayerID() << std::endl;
-		LED* led = dynamic_cast<LED *>(part);
-		if (led) {
-			double curr = getCurrent(part);
-			//TODO: Check that this is ok. Or should we use QLocale.toDouble()?
-			//TODO: Handle metric prefixes
-			bool ok;
-			double maxCurr = led->getProperty("current").remove(QRegularExpression("[^.+\\-\\d]")).toDouble(&ok);
-			if(!ok){
-				QString maxCurrStr = led->getProperty("current").remove(QRegularExpression("[^.+-\\d]"));
-				maxCurrStr.prepend("Error conveting the maxCurrent of the LED to double. String: ");
-				throw (maxCurrStr);
+
+
+		switch (getDeviceType(part).unicode()) {
+			case 'c': //Capacitors
+				updateCapacitor(part);
 				continue;
-			}
-
-			std::cout << "Current: " <<curr<<std::endl;
-			std::cout << "MaxCurrent: " <<maxCurr<<std::endl;
-
-			LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(part));
-			bbLed->setBrightness(curr/maxCurr);
-
-			if (curr > maxCurr) {
-				drawSmoke(part);
-			}
-			continue;
-		}
-		Resistor* resistor = dynamic_cast<Resistor *>(part);
-		if (resistor) {
-			double curr = getCurrent(part);
-			std::cout << "Current: " <<curr<<std::endl;
-			QString instanceStr = resistor->instanceTitle().toLower();
-			instanceStr.prepend("@");
-			instanceStr.append("[p]");
-			double power = m_simulator->GetDataPoint(instanceStr.toStdString());
-			std::cout << "Power: " << power <<std::endl;
-
-			double maxPower;
-			QString powerStr = resistor->getProperty("power");
-			if(powerStr.isEmpty()) {
-				maxPower = DBL_MAX;
-			} else {
-				//TODO: Check that this is ok. Or should we use QLocale.toDouble()?
-				//TODO: Handle metric prefixes
-				bool ok;
-				maxPower = powerStr.remove(QRegularExpression("[^.+\\-\\d]")).toDouble(&ok);
-				if(!ok){
-					powerStr.prepend("Error conveting the maxPower of the resistor to double. String: ");
-					throw (powerStr);
-					continue;
+			case 'd': //Diodes
+				updateDiode(part);
+				continue;
+			case 'r': //Resistors and potentiometers
+				updateResistor(part);
+				continue;
+			case 'v': //This is a voltage source, check to see if it is a multimeter (ammeter, ohmmeter)
+			case '*': //This is a comment, check to see if it is a multimeter
+				QString family = part->family().toLower();
+				if (family.compare("multimeter") == 0) {
+					std::cout << "Multimeter found. " << std::endl;
+					updateMultimeter(part);
 				}
-				std::cout << "MaxPower through the resistor: " << powerStr.toStdString() << QString(" %1").arg(maxPower).toStdString() << std::endl;
-			}
-
-			if(resistor->cachedConnectorItems().size()>1){
-				ConnectorItem * com = resistor->cachedConnectorItems().at(0);
-				ConnectorItem * v = resistor->cachedConnectorItems().at(1);
-
-				double voltage = abs(calculateVoltage(v, com));
-				std::cout << "Voltage through the resistor: " << voltage <<std::endl;
-
-				if (power > maxPower) {
-					drawSmoke(resistor);
-				}
-			}
-			continue;
 		}
-
-		QString family = part->family().toLower();
-		if (family.compare("multimeter") == 0) {
-			std::cout << "Multimeter found. " << std::endl;
-			QString type = part->getProperty("type").toLower(); //TODO: change to type
-
-			ConnectorItem * comProbe, * vProbe, * aProbe;
-			QList<ConnectorItem *> probes = part->cachedConnectorItems();
-			foreach(ConnectorItem * ci, probes) {
-				if(ci->connectorSharedName().toLower().compare("com probe") == 0) comProbe = ci;
-				if(ci->connectorSharedName().toLower().compare("v probe") == 0) vProbe = ci;
-				if(ci->connectorSharedName().toLower().compare("a probe") == 0) aProbe = ci;
-			}
-			if(!comProbe || !vProbe || !aProbe)
-				continue;
-
-			if(comProbe->connectedToWires() && vProbe->connectedToWires() && aProbe->connectedToWires()) {
-				std::cout << "Multimeter (v_dc) connected with three terminals. " << std::endl;
-				updateMultimeterScreen(part, "ERR");
-				continue;
-			}
-
-			if (type.compare("v_dc") == 0) {
-				std::cout << "Multimeter (v_dc) found. " << std::endl;
-				if(comProbe->connectedToWires() && vProbe->connectedToWires()) {
-					std::cout << "Multimeter (v_dc) connected with two terminals. " << std::endl;
-					double v = calculateVoltage(vProbe, comProbe);
-					updateMultimeterScreen(part, QString::number(v, 'f', 2));
-				}
-				continue;
-			} else if (type.compare("c_dc") == 0) {
-				std::cout << "Multimeter (c_dc) found. " << std::endl;
-				updateMultimeterScreen(part, QString::number(getCurrent(part), 'f', 3));
-			}
-
-		}
-
-
 	}
 
 	//Delete the pointers
@@ -371,41 +287,72 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 	return volt0-volt1;
 }
 
-double Simulator::getCurrent(ItemBase* part) {
-	QString instanceStr = part->instanceTitle().toLower();
-	int index = part->spice().indexOf("{instanceTitle}");
-	if (index > 0){
-		QChar deviceType = part->spice().at(index-1).toLower();
-		if(deviceType == instanceStr.at(0)) {
-			instanceStr.prepend(QString("@"));
-		} else {
-			//f. ex. Leds are DLED1 in ngpice and LED1 in Fritzing
-			instanceStr.prepend(QString("@%1").arg(deviceType));
+QString Simulator::getSymbol(ItemBase* part, QString property) {
+	//Find the symbol of this property, TODO: is there an easy way of doing this?
+	QHash<PropertyDef *, QString> propertyDefs;
+	PropertyDefMaster::initPropertyDefs(part->modelPart(), propertyDefs);
+	foreach (PropertyDef * propertyDef, propertyDefs.keys()) {
+		if (property.compare(propertyDef->name, Qt::CaseInsensitive) == 0) {
+			return propertyDef->symbol;
 		}
-		switch(deviceType.toLatin1()){
-			case 'd':
-				instanceStr.append("[id]");
-			break;
-			case 'r': //resistors
-			case 'c': //capacitors
-			case 'l': //inductors
-			case 'v': //voltage sources
-			case 'e': //Voltage-controlled voltage source (VCVS)
-			case 'f': //Current-controlled current source (CCCs)
-			case 'g': //Voltage-controlled current source (VCCS)
-			case 'h': //Current-controlled voltage source (CCVS)
-			case 'i': //Current source
-				instanceStr.append("[i]");
-				break;
-			default:
-				throw tr("Error getting the current of the device.The device type is not recognized. First letter is ").arg(deviceType);
-			break;
-
-		}
-		return m_simulator->GetDataPoint(instanceStr.toStdString());
 	}
-	throw tr("Error getting the current of the device.The device type is not recognized.");
-	return 0;
+	return "";
+}
+
+QChar Simulator::getDeviceType (ItemBase* part) {
+	int index = part->spice().indexOf("{instanceTitle}");
+	if (index > 0) {
+		return part->spice().at(index-1).toLower();
+	}
+	QString msg = QString("Error getting the device type. The type is not recognized. Part=%1, Spice line=%2").arg(part->instanceTitle()).arg(part->spice());
+	//TODO: Add tr()
+	std::cout << msg.toStdString() << std::endl;
+	throw msg.toStdString();
+	return QChar('0');
+}
+
+double Simulator::getPower(ItemBase* part, QString subpartName) {
+	QString instanceStr = part->instanceTitle().toLower();
+	instanceStr.append(subpartName);
+	instanceStr.prepend("@");
+	instanceStr.append("[p]");
+	return m_simulator->GetDataPoint(instanceStr.toStdString());
+}
+
+
+double Simulator::getCurrent(ItemBase* part, QString subpartName) {
+	QString instanceStr = part->instanceTitle().toLower();
+	instanceStr.append(subpartName);
+
+	QChar deviceType = getDeviceType(part);
+	if (deviceType == instanceStr.at(0)) {
+		instanceStr.prepend(QString("@"));
+	} else {
+		//f. ex. Leds are DLED1 in ngpice and LED1 in Fritzing
+		instanceStr.prepend(QString("@%1").arg(deviceType));
+	}
+	switch (deviceType.toLatin1()){
+	case 'd':
+		instanceStr.append("[id]");
+		break;
+	case 'r': //resistors
+	case 'c': //capacitors
+	case 'l': //inductors
+	case 'v': //voltage sources
+	case 'e': //Voltage-controlled voltage source (VCVS)
+	case 'f': //Current-controlled current source (CCCs)
+	case 'g': //Voltage-controlled current source (VCCS)
+	case 'h': //Current-controlled voltage source (CCVS)
+	case 'i': //Current source
+		instanceStr.append("[i]");
+		break;
+	default:
+		//TODO: Add tr()
+		throw QString("Error getting the current of the device.The device type is not recognized. First letter is ").arg(deviceType);
+		break;
+
+	}
+	return m_simulator->GetDataPoint(instanceStr.toStdString());
 }
 
 void Simulator::greyOutNonSimParts(const QSet<ItemBase *>& simParts) {
@@ -489,5 +436,156 @@ void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 //				}
 //			}
 		}
+	}
+}
+
+/*********************************************************************************************************************/
+/*                          Update Functions for the different parts												 */
+/* *******************************************************************************************************************/
+
+void Simulator::updateDiode(ItemBase * diode) {
+	LED* led = dynamic_cast<LED *>(diode);
+	if (led) {
+		double curr = getCurrent(diode);
+		QString currentProp = QString("current");
+		QString symbol = getSymbol(diode, currentProp);
+		QString currentStr = diode->getProperty(currentProp);
+		double maxCurr;
+		if (currentStr.isEmpty()) {
+			maxCurr = DBL_MAX;
+		} else {
+			maxCurr = TextUtils::convertFromPowerPrefix(currentStr, symbol);
+		}
+		//			bool ok;
+		//			double maxCurr = led->getProperty("current").remove(QRegularExpression("[^.+\\-\\d]")).toDouble(&ok);
+		//			if(!ok){
+		//				QString maxCurrStr = led->getProperty("current").remove(QRegularExpression("[^.+-\\d]"));
+		//				maxCurrStr.prepend("Error conveting the maxCurrent of the LED to double. String: ");
+		//				throw (maxCurrStr);
+		//				continue;
+		//			}
+
+		std::cout << "LED Current: " <<curr<<std::endl;
+		std::cout << "LED MaxCurrent: " <<maxCurr<<std::endl;
+		if (curr > maxCurr) {
+			drawSmoke(diode);
+		}
+		LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(diode));
+		bbLed->setBrightness(curr/maxCurr);
+	} else {
+		//It is a diode and the limit factor is the power
+		double maxPower;
+		QString powerProp = QString("power");
+		QString powerStr = diode->getProperty(powerProp);
+		QString symbol = getSymbol(diode, powerProp);
+		if(powerStr.isEmpty()) {
+			maxPower = DBL_MAX;
+		} else {
+			maxPower = TextUtils::convertFromPowerPrefix(powerStr, symbol);
+			std::cout << "MaxPower through the diode: " << powerStr.toStdString() << QString(" %1").arg(maxPower).toStdString() << std::endl;
+		}
+		double power = getPower(diode);
+		if (power > maxPower) {
+			drawSmoke(diode);
+		}
+	}
+}
+
+void Simulator::updateCapacitor(ItemBase * part) {
+	QString family = part->getProperty("family").toLower();
+
+	ConnectorItem * negLeg, * posLeg;
+	QList<ConnectorItem *> legs = part->cachedConnectorItems();
+	foreach(ConnectorItem * ci, legs) {
+		if(ci->connectorSharedName().toLower().compare("+") == 0) posLeg = ci;
+		if(ci->connectorSharedName().toLower().compare("-") == 0) negLeg = ci;
+	}
+	if(!negLeg || !posLeg )
+		return;
+	QString vProp = QString("voltage");
+	QString vStr = part->getProperty(vProp);
+	QString symbol = getSymbol(part, vProp);
+	double maxV;
+	if(vStr.isEmpty()) {
+		maxV = DBL_MAX;
+	} else {
+		maxV = TextUtils::convertFromPowerPrefix(vStr, symbol);
+		std::cout << "MaxVoltage of the capacitor: " << vStr.toStdString() << std::endl;
+	}
+
+	double v = calculateVoltage(posLeg, negLeg);
+	std::cout << "Capacitor voltage is : " << QString("%1").arg(v).toStdString() << std::endl;
+
+	if (family.contains("bidirectional")) {
+		//This is a ceramic capacitor (or not polarized)
+		if (abs(v) > maxV) {
+			drawSmoke(part);
+		}
+	} else {
+		//This is a electrolyting o tantalum capacitor (polarized)
+		if (v > maxV/2 || v < 0) {
+			drawSmoke(part);
+		}
+	}
+
+}
+
+void Simulator::updateResistor(ItemBase * part) {
+	double maxPower;
+	QString powerProp = QString("power");
+	QString powerStr = part->getProperty(powerProp);
+	QString symbol = getSymbol(part, powerProp);
+	if(powerStr.isEmpty()) {
+		maxPower = DBL_MAX;
+	} else {
+		maxPower = TextUtils::convertFromPowerPrefix(powerStr, symbol);
+		std::cout << "MaxPower through the resistor: " << powerStr.toStdString() << QString(" %1").arg(maxPower).toStdString() << std::endl;
+	}
+	double power;
+	Resistor* resistor = dynamic_cast<Resistor *>(part);
+	if (resistor) {
+		//It is just one resistor
+		power = getPower(part);
+		std::cout << "Power: " << power <<std::endl;
+	} else {
+		//It probably is a potentiomenter
+		double powerA = getPower(part, "A"); //power through resistor A
+		double powerB = getPower(part, "B"); //power through resistor B
+		power = max(powerA, powerB);
+	}
+	if (power > maxPower) {
+		drawSmoke(resistor);
+	}
+}
+
+void Simulator::updateMultimeter(ItemBase * part) {
+	QString type = part->getProperty("type").toLower(); //TODO: change to variant
+	ConnectorItem * comProbe, * vProbe, * aProbe;
+	QList<ConnectorItem *> probes = part->cachedConnectorItems();
+	foreach(ConnectorItem * ci, probes) {
+		if(ci->connectorSharedName().toLower().compare("com probe") == 0) comProbe = ci;
+		if(ci->connectorSharedName().toLower().compare("v probe") == 0) vProbe = ci;
+		if(ci->connectorSharedName().toLower().compare("a probe") == 0) aProbe = ci;
+	}
+	if(!comProbe || !vProbe || !aProbe)
+		return;
+
+	if(comProbe->connectedToWires() && vProbe->connectedToWires() && aProbe->connectedToWires()) {
+		std::cout << "Multimeter (v_dc) connected with three terminals. " << std::endl;
+		updateMultimeterScreen(part, "ERR");
+		return;
+	}
+
+	if (type.compare("v_dc") == 0) {
+		std::cout << "Multimeter (v_dc) found. " << std::endl;
+		if(comProbe->connectedToWires() && vProbe->connectedToWires()) {
+			std::cout << "Multimeter (v_dc) connected with two terminals. " << std::endl;
+			double v = calculateVoltage(vProbe, comProbe);
+			updateMultimeterScreen(part, QString::number(v, 'f', 2));
+		}
+		return;
+	} else if (type.compare("c_dc") == 0) {
+		std::cout << "Multimeter (c_dc) found. " << std::endl;
+		updateMultimeterScreen(part, QString::number(getCurrent(part), 'f', 3));
 	}
 }

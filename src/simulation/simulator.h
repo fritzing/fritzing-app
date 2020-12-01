@@ -46,6 +46,7 @@ protected:
 	void removeItemsToBeSimulated(QList<QGraphicsItem*> &);
 
 	QChar getDeviceType (ItemBase*);
+	double getMaxPropValue(ItemBase*, QString);
 	QString getSymbol(ItemBase*, QString);
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
 	double getCurrent(ItemBase*, QString subpartName="");
@@ -54,8 +55,10 @@ protected:
 	//Functions to update the parts
 	void updateCapacitor(ItemBase *);
 	void updateDiode(ItemBase *);
+	void updateLED(ItemBase *);
 	void updateMultimeter(ItemBase *);
 	void updateResistor(ItemBase *);
+	void updatePotentiometer(ItemBase * part);
 
 	MainWindow *m_mainWindow;
 	std::shared_ptr<SPICE_SIMULATOR> m_simulator;

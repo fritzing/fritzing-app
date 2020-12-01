@@ -189,24 +189,27 @@ void Simulator::simulate() {
 		std::cout << "-----------------------------------" <<std::endl;
 		std::cout << "Instance Title: " << part->instanceTitle().toStdString() << std::endl;
 
+		QString family = part->family().toLower();
 
-		switch (getDeviceType(part).unicode()) {
-			case 'c': //Capacitors
-				updateCapacitor(part);
-				continue;
-			case 'd': //Diodes
-				updateDiode(part);
-				continue;
-			case 'r': //Resistors and potentiometers
-				updateResistor(part);
-				continue;
-			case 'v': //This is a voltage source, check to see if it is a multimeter (ammeter, ohmmeter)
-			case '*': //This is a comment, check to see if it is a multimeter
-				QString family = part->family().toLower();
-				if (family.compare("multimeter") == 0) {
-					std::cout << "Multimeter found. " << std::endl;
-					updateMultimeter(part);
-				}
+		if (family.contains("capacitor")) {
+			updateCapacitor(part);
+			continue;
+		}
+		if (family.contains("diode")) {
+			updateDiode(part);
+			continue;
+		}
+		if (family.contains("led")) {
+			updateLED(part);
+			continue;
+		}
+		if (family.contains("resistor")) {
+			updateResistor(part);
+			continue;
+		}
+		if (family.contains("multimeter")) {
+			updateMultimeter(part);
+			continue;
 		}
 	}
 
@@ -311,6 +314,18 @@ QChar Simulator::getDeviceType (ItemBase* part) {
 	return QChar('0');
 }
 
+double Simulator::getMaxPropValue(ItemBase *part, QString property) {
+	double value;
+	QString propertyStr = part->getProperty(property);
+	QString symbol = getSymbol(part, property);
+	if(propertyStr.isEmpty()) {
+		value = DBL_MAX;
+	} else {
+		value = TextUtils::convertFromPowerPrefix(propertyStr, symbol);
+	}
+	return value;
+}
+
 double Simulator::getPower(ItemBase* part, QString subpartName) {
 	QString instanceStr = part->instanceTitle().toLower();
 	instanceStr.append(subpartName);
@@ -331,7 +346,7 @@ double Simulator::getCurrent(ItemBase* part, QString subpartName) {
 		//f. ex. Leds are DLED1 in ngpice and LED1 in Fritzing
 		instanceStr.prepend(QString("@%1").arg(deviceType));
 	}
-	switch (deviceType.toLatin1()){
+	switch (deviceType.toLatin1()) {
 	case 'd':
 		instanceStr.append("[id]");
 		break;
@@ -444,50 +459,32 @@ void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 /* *******************************************************************************************************************/
 
 void Simulator::updateDiode(ItemBase * diode) {
-	LED* led = dynamic_cast<LED *>(diode);
+	double maxPower = getMaxPropValue(diode, "power");
+	double power = getPower(diode);
+	if (power > maxPower) {
+		drawSmoke(diode);
+	}
+}
+
+void Simulator::updateLED(ItemBase * part) {
+	LED* led = dynamic_cast<LED *>(part);
 	if (led) {
-		double curr = getCurrent(diode);
+		double curr = getCurrent(part);
 		QString currentProp = QString("current");
-		QString symbol = getSymbol(diode, currentProp);
-		QString currentStr = diode->getProperty(currentProp);
-		double maxCurr;
-		if (currentStr.isEmpty()) {
-			maxCurr = DBL_MAX;
-		} else {
-			maxCurr = TextUtils::convertFromPowerPrefix(currentStr, symbol);
-		}
-		//			bool ok;
-		//			double maxCurr = led->getProperty("current").remove(QRegularExpression("[^.+\\-\\d]")).toDouble(&ok);
-		//			if(!ok){
-		//				QString maxCurrStr = led->getProperty("current").remove(QRegularExpression("[^.+-\\d]"));
-		//				maxCurrStr.prepend("Error conveting the maxCurrent of the LED to double. String: ");
-		//				throw (maxCurrStr);
-		//				continue;
-		//			}
+		QString symbol = getSymbol(part, currentProp);
+		QString currentStr = part->getProperty(currentProp);
+		double maxCurr = getMaxPropValue(part, "current");
 
 		std::cout << "LED Current: " <<curr<<std::endl;
 		std::cout << "LED MaxCurrent: " <<maxCurr<<std::endl;
 		if (curr > maxCurr) {
-			drawSmoke(diode);
+			drawSmoke(part);
 		}
-		LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(diode));
+		LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(part));
 		bbLed->setBrightness(curr/maxCurr);
 	} else {
-		//It is a diode and the limit factor is the power
-		double maxPower;
-		QString powerProp = QString("power");
-		QString powerStr = diode->getProperty(powerProp);
-		QString symbol = getSymbol(diode, powerProp);
-		if(powerStr.isEmpty()) {
-			maxPower = DBL_MAX;
-		} else {
-			maxPower = TextUtils::convertFromPowerPrefix(powerStr, symbol);
-			std::cout << "MaxPower through the diode: " << powerStr.toStdString() << QString(" %1").arg(maxPower).toStdString() << std::endl;
-		}
-		double power = getPower(diode);
-		if (power > maxPower) {
-			drawSmoke(diode);
-		}
+		//It is probably an LED display (LED matrix)
+		//TODO: Add spice lines to the part and handle this here
 	}
 }
 
@@ -527,34 +524,24 @@ void Simulator::updateCapacitor(ItemBase * part) {
 			drawSmoke(part);
 		}
 	}
-
 }
 
 void Simulator::updateResistor(ItemBase * part) {
-	double maxPower;
-	QString powerProp = QString("power");
-	QString powerStr = part->getProperty(powerProp);
-	QString symbol = getSymbol(part, powerProp);
-	if(powerStr.isEmpty()) {
-		maxPower = DBL_MAX;
-	} else {
-		maxPower = TextUtils::convertFromPowerPrefix(powerStr, symbol);
-		std::cout << "MaxPower through the resistor: " << powerStr.toStdString() << QString(" %1").arg(maxPower).toStdString() << std::endl;
-	}
-	double power;
-	Resistor* resistor = dynamic_cast<Resistor *>(part);
-	if (resistor) {
-		//It is just one resistor
-		power = getPower(part);
-		std::cout << "Power: " << power <<std::endl;
-	} else {
-		//It probably is a potentiomenter
-		double powerA = getPower(part, "A"); //power through resistor A
-		double powerB = getPower(part, "B"); //power through resistor B
-		power = max(powerA, powerB);
-	}
+	double maxPower = getMaxPropValue(part, "power");
+	double power = getPower(part);
+	std::cout << "Power: " << power <<std::endl;
 	if (power > maxPower) {
-		drawSmoke(resistor);
+		drawSmoke(part);
+	}
+}
+
+void Simulator::updatePotentiometer(ItemBase * part) {
+	double maxPower = getMaxPropValue(part, "power");
+	double powerA = getPower(part, "A"); //power through resistor A
+	double powerB = getPower(part, "B"); //power through resistor B
+	double power = max(powerA, powerB);
+	if (power > maxPower) {
+		drawSmoke(part);
 	}
 }
 

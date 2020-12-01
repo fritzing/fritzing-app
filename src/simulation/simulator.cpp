@@ -102,7 +102,25 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 Simulator::~Simulator() {
 }
 
-
+/**
+ * Main function that is in charge of simulating the circuit and show components working out of its specifications.
+ * Components working outside its specifications are shown by adding a smoke image over them.
+ * The steps performed are:
+ * - Creates an instance of the Ngspice simulator (if it was not created before)
+ * - Gets the current spice netlist
+ * - Loads the netlist in Ngspice
+ * - Runs a operating point analysis in a background thread
+ * - Remove all previous items placed by the simulator (smokes, messages in the multimeters, etc.)
+ * - Grey out the parts that are not being simulated
+ * - Wait until the simulation has finished (timeout of 3s)
+ * - Iterate for all parts being simulated to
+ *     - Check if they work within specifications, add smoke if needed
+ *     - Update display messages in the multimeters
+ *     - Update LEDs colours
+ *
+ * Excludes all the parts that don not have spice models or that they are not connected to other parts
+ * @brief Simulate the current circuit and check for components working out of specifications
+ */
 void Simulator::simulate() {
 	m_simulator = SPICE_SIMULATOR::CreateInstance( "ngspice" );
 	if( !m_simulator )
@@ -178,9 +196,9 @@ void Simulator::simulate() {
 
 	//The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
 	//This loops is in charge of:
-	// * update the multimeters sreen
+	// * update the multimeters screen
 	// * add smoke to a part if something is out of its specifications
-	// * update the brighness of the LEDs
+	// * update the brightness of the LEDs
 	foreach (ItemBase * part, itemBases){
 		//Remove the effects, if any
 		part->setGraphicsEffect(NULL);
@@ -218,9 +236,12 @@ void Simulator::simulate() {
 		delete net;
 	}
 	netList.clear();
-
 }
 
+/**
+ * Adds an smoke image on top of a part in the breadboard and schematic views.
+ * @param[in] part Part where the smoke is going to be placed
+ */
 void Simulator::drawSmoke(ItemBase* part) {
 	QGraphicsSvgItem * bbSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
 	QGraphicsSvgItem * schSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
@@ -236,8 +257,15 @@ void Simulator::drawSmoke(ItemBase* part) {
 	bbSmoke->setZValue(DBL_MAX);
 }
 
+/**
+ * Adds a message to the display of a multimeter. It does not update the message, it just adds
+ * some text (the previous message is removed at the beginning of the simulation). The message
+ * is displayed in a 7-segments font.
+ * @param[in] multimeter The part where the message is going to be displayed
+ * @param[in] msg The message to be displayed
+ */
 void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
-	//The '.' does not occuppy a position in the screen (is printed with the previous number)
+	//The '.' does not occupy a position in the screen (is printed with the previous number)
 	//So, do not take them into account to fill with spaces
 	QString aux = QString(msg);
 	aux.remove(QChar('.'));
@@ -261,6 +289,10 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 	bbScreen->setZValue(DBL_MAX);
 }
 
+/**
+ * Removes all the items (images and texts) that have been placed in previous simulations
+ * in the breadboard and schematic views.
+ */
 void Simulator::removeSimItems() {
 	foreach(QGraphicsObject * item, m_bbSimItems) {
 		m_breadboardGraphicsView->scene()->removeItem(item);
@@ -275,6 +307,12 @@ void Simulator::removeSimItems() {
 	m_instanceTitleSim->clear();
 }
 
+/**
+ * Returns the voltage between two connectors.
+ * @param[in] c0 the first connector
+ * @param[in] c1 the second connector
+ * @returns the voltage between the connector c0 and c1
+ */
 double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 	int net0 = m_connector2netHash.value(c0);
 	int net1 = m_connector2netHash.value(c1);
@@ -290,6 +328,12 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 	return volt0-volt1;
 }
 
+/**
+ * Returns the symbol of a part´s property. It is needed to be able to remove the symbol from the value of the property.
+ * @param[in] part The part that has a property
+ * @param[in] property The property
+ * @returns the symbol for that property
+ */
 QString Simulator::getSymbol(ItemBase* part, QString property) {
 	//Find the symbol of this property, TODO: is there an easy way of doing this?
 	QHash<PropertyDef *, QString> propertyDefs;
@@ -302,6 +346,12 @@ QString Simulator::getSymbol(ItemBase* part, QString property) {
 	return "";
 }
 
+/**
+ * Returns the type of component of the first´s spice line. It is better to use the family field of a part
+ * to determine what kind of device is. This is because a part can have several spice lines.
+ * @param[in] part The part to get the type of spice component
+ * @returns a character that represents the type of device (R->Resistor, D-Diode, C-capacitor, etc.)
+ */
 QChar Simulator::getDeviceType (ItemBase* part) {
 	int index = part->spice().indexOf("{instanceTitle}");
 	if (index > 0) {
@@ -314,6 +364,12 @@ QChar Simulator::getDeviceType (ItemBase* part) {
 	return QChar('0');
 }
 
+/**
+ * Returns the maximum value of a part´s property.
+ * @param[in] part The part that has a property
+ * @param[in] property The name of property.
+ * @returns the value of the property for the part. If it is empty, returns the maximum value allowed.
+ */
 double Simulator::getMaxPropValue(ItemBase *part, QString property) {
 	double value;
 	QString propertyStr = part->getProperty(property);
@@ -326,7 +382,18 @@ double Simulator::getMaxPropValue(ItemBase *part, QString property) {
 	return value;
 }
 
+/**
+ * Returns the power that a part is consuming/producing.
+ * The subpartName is used for multiple spice lines for a part. For example, a potentiometer (R1)
+ * is a part that has two spice components, each of them in a spice line (R1A and R1B). Therefore,
+ * to get the power through R1A, the subpart parameter should be "A".
+ * Note that not all the spice devices are able to return the power.
+ * @param[in] part The part to get the power
+ * @param[in] subpartName The name of the subpart. Leave it empty if there is only one spice line for the device. Otherwise, give the suffix of the subpart.
+ * @returns the power that a part is consuming/producing.
+ */
 double Simulator::getPower(ItemBase* part, QString subpartName) {
+	//TODO: Handle devices that do not return the power
 	QString instanceStr = part->instanceTitle().toLower();
 	instanceStr.append(subpartName);
 	instanceStr.prepend("@");
@@ -334,7 +401,17 @@ double Simulator::getPower(ItemBase* part, QString subpartName) {
 	return m_simulator->GetDataPoint(instanceStr.toStdString());
 }
 
-
+/**
+ * Returns the current that flows through a part.
+ * The subpartName is used for multiple spice lines for a part. For example, a potentiometer (R1)
+ * is a part that has two spice components, each of them in a spice line (R1A and R1B). Therefore,
+ * to get the current that flows through R1A, the subpart parameter should be "A".
+ * Note that this function only works for a few spice components: resistors, capacitors, inductors,
+ * diodes (LEDs included) and voltage and current sources.
+ * @param[in] part The part to get the current
+ * @param[in] subpartName The name of the subpart. Leave it empty if there is only one spice line for the device. Otherwise, give the suffix of the subpart.
+ * @returns the current that a part is consuming/producing.
+ */
 double Simulator::getCurrent(ItemBase* part, QString subpartName) {
 	QString instanceStr = part->instanceTitle().toLower();
 	instanceStr.append(subpartName);
@@ -370,6 +447,10 @@ double Simulator::getCurrent(ItemBase* part, QString subpartName) {
 	return m_simulator->GetDataPoint(instanceStr.toStdString());
 }
 
+/**
+ * Greys out the parts that are not being simulated to inform the user.
+ * @param[in] simParts A set of parts that are being simulated.
+ */
 void Simulator::greyOutNonSimParts(const QSet<ItemBase *>& simParts) {
 	//Find the parts that are not being simulated.
 	//First, get all the parts from the scenes...
@@ -411,6 +492,10 @@ void Simulator::greyOutNonSimParts(const QSet<ItemBase *>& simParts) {
 	greyOutParts(noSimBbParts);
 }
 
+/**
+ * Greys out the parts that are passed.
+ * @param[in] parts A list of parts to grey out.
+ */
 void Simulator::greyOutParts(const QList<QGraphicsItem*> & parts) {
 	foreach (QGraphicsItem * part, parts){
 		QGraphicsColorizeEffect * schEffect = new QGraphicsColorizeEffect();
@@ -419,6 +504,12 @@ void Simulator::greyOutParts(const QList<QGraphicsItem*> & parts) {
 	}
 }
 
+/**
+ * Removes items that are being simulated but without spice lines. Basically, remove
+ * the wires and the breadboards, which are part of the simulation and leave the rest.
+ * @param[in/out] parts A list of parts which will be filtered to remove parts that
+ * are being simulated
+ */
 void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 	foreach (QGraphicsItem * part, parts){
 		Wire* wire = dynamic_cast<Wire *>(part);
@@ -455,9 +546,13 @@ void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 }
 
 /*********************************************************************************************************************/
-/*                          Update Functions for the different parts												 */
+/*                          Update functions for the different parts												 */
 /* *******************************************************************************************************************/
 
+/**
+ * Updates and checks a diode. Checks that the power is less than the maximum power.
+ * @param[in] diode A part that is going to be checked and updated.
+ */
 void Simulator::updateDiode(ItemBase * diode) {
 	double maxPower = getMaxPropValue(diode, "power");
 	double power = getPower(diode);
@@ -466,13 +561,15 @@ void Simulator::updateDiode(ItemBase * diode) {
 	}
 }
 
+/**
+ * Updates and checks an LED. Checks that the current is less than the maximum current
+ * and updates the brightness of the LED in the breadboard view.
+ * @param[in] part An LED that is going to be checked and updated.
+ */
 void Simulator::updateLED(ItemBase * part) {
 	LED* led = dynamic_cast<LED *>(part);
 	if (led) {
 		double curr = getCurrent(part);
-		QString currentProp = QString("current");
-		QString symbol = getSymbol(part, currentProp);
-		QString currentStr = part->getProperty(currentProp);
 		double maxCurr = getMaxPropValue(part, "current");
 
 		std::cout << "LED Current: " <<curr<<std::endl;
@@ -488,6 +585,11 @@ void Simulator::updateLED(ItemBase * part) {
 	}
 }
 
+/**
+ * Updates and checks a capacitor. Checks that the voltage is less than the maximum voltage
+ * and reverse voltage in electrolytic and tantalum capacitors (unidirectional capacitors).
+ * @param[in] part A capacitor that is going to be checked and updated.
+ */
 void Simulator::updateCapacitor(ItemBase * part) {
 	QString family = part->getProperty("family").toLower();
 
@@ -499,18 +601,10 @@ void Simulator::updateCapacitor(ItemBase * part) {
 	}
 	if(!negLeg || !posLeg )
 		return;
-	QString vProp = QString("voltage");
-	QString vStr = part->getProperty(vProp);
-	QString symbol = getSymbol(part, vProp);
-	double maxV;
-	if(vStr.isEmpty()) {
-		maxV = DBL_MAX;
-	} else {
-		maxV = TextUtils::convertFromPowerPrefix(vStr, symbol);
-		std::cout << "MaxVoltage of the capacitor: " << vStr.toStdString() << std::endl;
-	}
 
+	double maxV = getMaxPropValue(part, "voltage");
 	double v = calculateVoltage(posLeg, negLeg);
+	std::cout << "MaxVoltage of the capacitor: " << maxV << std::endl;
 	std::cout << "Capacitor voltage is : " << QString("%1").arg(v).toStdString() << std::endl;
 
 	if (family.contains("bidirectional")) {
@@ -519,13 +613,17 @@ void Simulator::updateCapacitor(ItemBase * part) {
 			drawSmoke(part);
 		}
 	} else {
-		//This is a electrolyting o tantalum capacitor (polarized)
+		//This is an electrolytic o tantalum capacitor (polarized)
 		if (v > maxV/2 || v < 0) {
 			drawSmoke(part);
 		}
 	}
 }
 
+/**
+ * Updates and checks a resistor. Checks that the power is less than the maximum power.
+ * @param[in] part A resistor that is going to be checked and updated.
+ */
 void Simulator::updateResistor(ItemBase * part) {
 	double maxPower = getMaxPropValue(part, "power");
 	double power = getPower(part);
@@ -535,6 +633,11 @@ void Simulator::updateResistor(ItemBase * part) {
 	}
 }
 
+/**
+ * Updates and checks a potentiometer. Checks that the power is less than the maximum power
+ * for the two resistors "A" and "B".
+ * @param[in] part A potentiometer that is going to be checked and updated.
+ */
 void Simulator::updatePotentiometer(ItemBase * part) {
 	double maxPower = getMaxPropValue(part, "power");
 	double powerA = getPower(part, "A"); //power through resistor A
@@ -545,6 +648,11 @@ void Simulator::updatePotentiometer(ItemBase * part) {
 	}
 }
 
+/**
+ * Updates and checks a multimeter. Checks that there are not 3 probes connected.
+ * Calculates the parameter to measure and updates the display of the multimeter.
+ * @param[in] part A multimeter that is going to be checked and updated.
+ */
 void Simulator::updateMultimeter(ItemBase * part) {
 	QString type = part->getProperty("type").toLower(); //TODO: change to variant
 	ConnectorItem * comProbe, * vProbe, * aProbe;

@@ -34,7 +34,7 @@ if ($$LIBGIT_STATIC) {
     INCLUDEPATH += $$LIBGIT2INCLUDE
 }
 
-win32 {
+win32:!mingw {
     contains(QMAKE_TARGET.arch, x86_64) {
         LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build64/Release"
     } else {
@@ -51,7 +51,7 @@ win32 {
     message($$PKGCONFIG)
 }
 
-unix {
+unix|mingw {
     if ($$LIBGIT_STATIC) {
         LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
         exists($$LIBGIT2LIB/libgit2.a) {

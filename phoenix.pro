@@ -33,7 +33,7 @@ CONFIG += c++14
 # TODO: Verify flags for clang and msvc builds
 QMAKE_CXXFLAGS += -O3 -fno-omit-frame-pointer
 
-unix:!macx {
+if(unix:!macx)|mingw {
     CONFIG += link_pkgconfig
 }
 
@@ -47,6 +47,9 @@ win32 {
     DEFINES += _CRT_SECURE_NO_DEPRECATE
     DEFINES += _WINDOWS
     RELEASE_SCRIPT = $$(RELEASE_SCRIPT)    # environment variable set from release script
+    mingw:isEmpty(QMAKE_TARGET.arch) {
+        QMAKE_TARGET.arch = $$(MSYSTEM_CARCH)
+    }
 
     message("target arch: $${QMAKE_TARGET.arch}")
     contains(QMAKE_TARGET.arch, x86_64) {
@@ -58,17 +61,19 @@ win32 {
         DEBDIR = ../debug32
     }
 
-    Release:DESTDIR = $${RELDIR}
-    Release:OBJECTS_DIR = $${RELDIR}
-    Release:MOC_DIR = $${RELDIR}
-    Release:RCC_DIR = $${RELDIR}
-    Release:UI_DIR = $${RELDIR}
+    !mingw {
+        Release:DESTDIR = $${RELDIR}
+        Release:OBJECTS_DIR = $${RELDIR}
+        Release:MOC_DIR = $${RELDIR}
+        Release:RCC_DIR = $${RELDIR}
+        Release:UI_DIR = $${RELDIR}
 
-    Debug:DESTDIR = $${DEBDIR}
-    Debug:OBJECTS_DIR = $${DEBDIR}
-    Debug:MOC_DIR = $${DEBDIR}
-    Debug:RCC_DIR = $${DEBDIR}
-    Debug:UI_DIR = $${DEBDIR}
+        Debug:DESTDIR = $${DEBDIR}
+        Debug:OBJECTS_DIR = $${DEBDIR}
+        Debug:MOC_DIR = $${DEBDIR}
+        Debug:RCC_DIR = $${DEBDIR}
+        Debug:UI_DIR = $${DEBDIR}
+    }
 }
 macx {
     RELDIR = ../release64
@@ -96,13 +101,15 @@ macx {
     LIBS += /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
     LIBS += -liconv
 }
-unix {
+unix|mingw {
     !macx { # unix is defined on mac
-        HARDWARE_PLATFORM = $$system(uname -m)
-        contains(HARDWARE_PLATFORM, x86_64) {
-            DEFINES += LINUX_64
-        } else {
-            DEFINES += LINUX_32
+        !mingw {
+            HARDWARE_PLATFORM = $$system(uname -m)
+            contains(HARDWARE_PLATFORM, x86_64) {
+                DEFINES += LINUX_64
+            } else {
+                DEFINES += LINUX_32
+            }
         }
         !contains(DEFINES, QUAZIP_INSTALLED) {
             LIBS += -lz

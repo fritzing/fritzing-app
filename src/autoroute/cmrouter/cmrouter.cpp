@@ -154,21 +154,21 @@ static inline void infoTile(const QString & message, Tile * tile)
 	}
 
 	DebugDialog::debug(QString("tile:%1 lb:%2 bl:%3 tr:%4 rt%5")
-	                   .arg((long) tile, 0, 16)
-	                   .arg((long) tile->ti_lb, 0, 16)
-	                   .arg((long) tile->ti_bl, 0, 16)
-	                   .arg((long) tile->ti_tr, 0, 16)
-	                   .arg((long) tile->ti_rt, 0, 16));
+	                   .arg((size_t) tile, 0, 16)
+	                   .arg((size_t) tile->ti_lb, 0, 16)
+	                   .arg((size_t) tile->ti_bl, 0, 16)
+	                   .arg((size_t) tile->ti_tr, 0, 16)
+	                   .arg((size_t) tile->ti_rt, 0, 16));
 
 	DebugDialog::debug(QString("%1 tile:%2 l:%3 t:%4 w:%5 h:%6 type:%7 body:%8")
 	                   .arg(message)
-	                   .arg((long) tile, 0, 16)
+	                   .arg((size_t) tile, 0, 16)
 	                   .arg(LEFT(tile))
 	                   .arg(YMIN(tile))
 	                   .arg(WIDTH(tile))
 	                   .arg(HEIGHT(tile))
 	                   .arg(TiGetType(tile))
-	                   .arg((long) TiGetBody(tile), 0, 16)
+	                   .arg((size_t) TiGetBody(tile), 0, 16)
 	                  );
 }
 

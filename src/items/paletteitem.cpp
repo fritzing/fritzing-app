@@ -200,7 +200,7 @@ void PaletteItem::makeOneKin(qint64 & id, ViewLayer::ViewLayerID viewLayerID, Vi
 	if (lkpi->ok()) {
 		DebugDialog::debug(QString("adding layer kin %1 %2 %3 %4")
 		                   .arg(id).arg(m_viewID).arg(viewLayerID)
-		                   .arg((long) lkpi, 0, 16)
+		                   .arg((size_t) lkpi, 0, 16)
 		                  );
 		addLayerKin(lkpi);
 		id++;

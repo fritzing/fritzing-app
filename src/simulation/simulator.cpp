@@ -654,7 +654,7 @@ void Simulator::updatePotentiometer(ItemBase * part) {
  * @param[in] part A multimeter that is going to be checked and updated.
  */
 void Simulator::updateMultimeter(ItemBase * part) {
-	QString type = part->getProperty("type").toLower(); //TODO: change to variant
+	QString variant = part->getProperty("variant").toLower();
 	ConnectorItem * comProbe, * vProbe, * aProbe;
 	QList<ConnectorItem *> probes = part->cachedConnectorItems();
 	foreach(ConnectorItem * ci, probes) {
@@ -671,16 +671,43 @@ void Simulator::updateMultimeter(ItemBase * part) {
 		return;
 	}
 
-	if (type.compare("v_dc") == 0) {
+	if (variant.compare("voltmeter (dc)") == 0) {
 		std::cout << "Multimeter (v_dc) found. " << std::endl;
+		if(aProbe->connectedToWires()) {
+			std::cout << "Multimeter (v_dc) has the current terminal connected. " << std::endl;
+			updateMultimeterScreen(part, "ERR");
+			return;
+		}
 		if(comProbe->connectedToWires() && vProbe->connectedToWires()) {
 			std::cout << "Multimeter (v_dc) connected with two terminals. " << std::endl;
 			double v = calculateVoltage(vProbe, comProbe);
 			updateMultimeterScreen(part, QString::number(v, 'f', 2));
 		}
 		return;
-	} else if (type.compare("c_dc") == 0) {
+	} else if (variant.compare("ammeter (dc)") == 0) {
 		std::cout << "Multimeter (c_dc) found. " << std::endl;
+		if(vProbe->connectedToWires()) {
+			std::cout << "Multimeter (c_dc) has the voltage terminal connected. " << std::endl;
+			updateMultimeterScreen(part, "ERR");
+			return;
+		}
 		updateMultimeterScreen(part, QString::number(getCurrent(part), 'f', 3));
+		return;
+	} else if (variant.compare("ohmmeter") == 0) {
+		std::cout << "Ohmmeter found. " << std::endl;
+		if(aProbe->connectedToWires()) {
+			std::cout << "Ohmmeter has the current terminal connected. " << std::endl;
+			updateMultimeterScreen(part, "ERR");
+			return;
+		}
+		double v = calculateVoltage(vProbe, comProbe);
+		double a = getCurrent(part);
+		double r = abs(v/a);
+		int precision = 1;
+		if (r >= 200)
+			precision = 0;
+		//TODO: Handle resistances bigger than 10k
+		updateMultimeterScreen(part, QString::number(r, 'f', precision));
+		return;
 	}
 }

@@ -246,6 +246,8 @@ public:
 	void initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, bool doConnectors, bool doCreateShape);
 	virtual QString getInspectorTitle();
 	virtual void setInspectorTitle(const QString & oldText, const QString & newText);
+	void addSimulationGraphicsItem(QGraphicsObject *);
+	void removeSimulationGraphicsItem();
 
 public:
 	virtual void getConnectedColor(ConnectorItem *, QBrush &, QPen &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
@@ -386,6 +388,7 @@ protected:
 	QList< QPointer<ItemBase> > m_subparts;
 	bool m_squashShape = false;
 	QPainterPath m_selectionShape;
+	QGraphicsObject * m_simItem = nullptr;
 
 protected:
 	static long nextID;

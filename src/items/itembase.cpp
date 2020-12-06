@@ -147,6 +147,9 @@ ItemBase::~ItemBase() {
 		delete m_fsvgRenderer;
 	}
 
+	//m_simItem is a child of this object, it gets delated by the destructor
+	m_simItem = nullptr;
+
 }
 
 void ItemBase::setTooltip() {
@@ -2372,4 +2375,16 @@ void ItemBase::setInspectorTitle(const QString & oldText, const QString & newTex
 
 	DebugDialog::debug(QString("set instance title to %1").arg(newText));
 	infoGraphicsView->setInstanceTitle(id(), oldText, newText, true, false);
+}
+
+void ItemBase::addSimulationGraphicsItem(QGraphicsObject * item) {
+	if (m_simItem)
+		delete m_simItem;
+	m_simItem = item;
+}
+
+void ItemBase::removeSimulationGraphicsItem() {
+	if (m_simItem) {
+		delete m_simItem;
+	}
 }

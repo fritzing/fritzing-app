@@ -150,7 +150,8 @@ void Simulator::simulate() {
 	//While the spice simulator runs, we will perform some tasks:
 
 	//Removes the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.)
-	removeSimItems();
+	//TODO: Decide if we really need it. The previous sim items are removed when the new ones are added
+	removeSimItems(itemBases);
 
 	//Generate a hash table to find the net of specific connectors
 	m_connector2netHash.clear();
@@ -243,18 +244,14 @@ void Simulator::simulate() {
  * @param[in] part Part where the smoke is going to be placed
  */
 void Simulator::drawSmoke(ItemBase* part) {
-	QGraphicsSvgItem * bbSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
-	QGraphicsSvgItem * schSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg");
+	QGraphicsSvgItem * bbSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg", m_sch2bbItemHash.value(part));
+	QGraphicsSvgItem * schSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg", part);
 	if (!bbSmoke || !schSmoke) return;
-	m_breadboardGraphicsView->scene()->addItem(bbSmoke);
-	m_schematicGraphicsView->scene()->addItem(schSmoke);
-	m_bbSimItems.append(bbSmoke);
-	m_schSimItems.append(schSmoke);
 
-	schSmoke->setPos(part->pos());
 	schSmoke->setZValue(DBL_MAX);
-	bbSmoke->setPos(m_sch2bbItemHash.value(part)->pos());
 	bbSmoke->setZValue(DBL_MAX);
+	part->addSimulationGraphicsItem(schSmoke);
+	m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbSmoke);
 }
 
 /**
@@ -278,7 +275,7 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 
 	QGraphicsTextItem * bbScreen = new QGraphicsTextItem(msg, m_sch2bbItemHash.value(multimeter));
 	//QGraphicsTextItem * schScreen = new QGraphicsTextItem(msg, multimeter);
-	m_bbSimItems.append(bbScreen);
+//	m_bbSimItems.append(bbScreen);
 	//m_schSimItems.append(schScreen);
 	//schScreen->setPos(QPointF(10,10));
 	//schScreen->setZValue(DBL_MAX);
@@ -287,24 +284,19 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 	//bbScreen->setScale(4);
 	bbScreen->setPos(QPointF(15,20));
 	bbScreen->setZValue(DBL_MAX);
+	m_sch2bbItemHash.value(multimeter)->addSimulationGraphicsItem(bbScreen);
 }
 
 /**
  * Removes all the items (images and texts) that have been placed in previous simulations
  * in the breadboard and schematic views.
  */
-void Simulator::removeSimItems() {
-	foreach(QGraphicsObject * item, m_bbSimItems) {
-		m_breadboardGraphicsView->scene()->removeItem(item);
-		delete item;
+void Simulator::removeSimItems(const QSet<class ItemBase *>& itemBases) {
+	foreach (ItemBase * item, itemBases) {
+		if (item)
+			if (m_sch2bbItemHash.value(item))
+				m_sch2bbItemHash.value(item)->removeSimulationGraphicsItem();
 	}
-	m_bbSimItems.clear();
-	foreach(QGraphicsObject * item, m_schSimItems) {
-		m_schematicGraphicsView->scene()->removeItem(item);
-		delete item;
-	}
-	m_schSimItems.clear();
-	m_instanceTitleSim->clear();
 }
 
 /**

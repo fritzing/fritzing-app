@@ -40,7 +40,7 @@ public slots:
 protected:
 	void drawSmoke(ItemBase* part);
 	void updateMultimeterScreen(ItemBase *, QString);
-	void removeSimItems();
+	void removeSimItems(const QSet<class ItemBase *>&);
 	void greyOutNonSimParts(const QSet<class ItemBase *>&);
 	void greyOutParts(const QList<QGraphicsItem *> &);
 	void removeItemsToBeSimulated(QList<QGraphicsItem*> &);
@@ -69,9 +69,6 @@ protected:
 
 	QHash<ItemBase *, ItemBase *> m_sch2bbItemHash;
 	QHash<ConnectorItem *, int> m_connector2netHash;
-
-	QList<QGraphicsObject *> m_bbSimItems;
-	QList<QGraphicsObject *> m_schSimItems;
 
 	QList<QString>* m_instanceTitleSim;
 };

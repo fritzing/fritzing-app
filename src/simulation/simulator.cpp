@@ -149,11 +149,8 @@ void Simulator::simulate() {
 
 	//While the spice simulator runs, we will perform some tasks:
 
-	//Removes the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.)
-	//TODO: Decide if we really need it. The previous sim items are removed when the new ones are added
-	removeSimItems(itemBases);
-
 	//Generate a hash table to find the net of specific connectors
+	std::cout << "Generate a hash table to find the net of specific connectors" <<std::endl;
 	m_connector2netHash.clear();
 	for (int i=0; i<netList.size(); i++) {
 		QList<ConnectorItem *> * net = netList.at(i);
@@ -161,11 +158,13 @@ void Simulator::simulate() {
 			m_connector2netHash.insert(ci, i);
 		}
 	}
+	std::cout << "-----------------------------------" <<std::endl;
 
 
 	//Generate a hash table to find the breadboard parts from parts in the schematic view
+	std::cout << "Generate a hash table to find the breadboard parts from parts in the schematic view" <<std::endl;
 	m_sch2bbItemHash.clear();
-	foreach(ItemBase* schPart, itemBases) {
+	foreach (ItemBase* schPart, itemBases) {
 		m_instanceTitleSim->append(schPart->instanceTitle());
 		foreach (QGraphicsItem * bbItem, m_breadboardGraphicsView->scene()->items()) {
 			ItemBase * bbPart = dynamic_cast<ItemBase *>(bbItem);
@@ -175,11 +174,20 @@ void Simulator::simulate() {
 			}
 		}
 	}
+	std::cout << "-----------------------------------" <<std::endl;
+
+	//Removes the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.)
+	//TODO: Decide if we really need it. The previous sim items are removed when the new ones are added
+	std::cout << "removeSimItems(itemBases);" <<std::endl;
+	removeSimItems(itemBases);
+	std::cout << "-----------------------------------" <<std::endl;
 
 	//If there are parts that are not being simulated, grey them out
+	std::cout << "greyOutNonSimParts(itemBases);" <<std::endl;
 	greyOutNonSimParts(itemBases);
+	std::cout << "-----------------------------------" <<std::endl;
 
-
+	std::cout << "wait for simulator thread to stop" <<std::endl;
 	int elapsedTime = 0, simTimeOut = 3000; // in ms
 	while (m_simulator->IsRunning() && elapsedTime < simTimeOut) {
 	#if defined(__MINGW32__) || defined(_MSC_VER)
@@ -194,6 +202,7 @@ void Simulator::simulate() {
 		throw std::runtime_error( QString("The spice simulator did not finish after %1 ms. Aborting simulation.").arg(simTimeOut).toStdString() );
 		return;
 	}
+	std::cout << "-----------------------------------" <<std::endl;
 
 	//The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
 	//This loops is in charge of:

@@ -2377,5 +2377,6 @@ void ItemBase::addSimulationGraphicsItem(QGraphicsObject * item) {
 void ItemBase::removeSimulationGraphicsItem() {
 	if (m_simItem) {
 		delete m_simItem;
+		m_simItem = nullptr;
 	}
 }

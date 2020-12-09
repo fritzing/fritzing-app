@@ -906,10 +906,6 @@ void MainWindow::createEditMenuActions() {
 	m_addNoteAct->setStatusTip(tr("Add a note"));
 	connect(m_addNoteAct, SIGNAL(triggered()), this, SLOT(addNote()));
 
-	m_simulationAct = new QAction(tr("Simulate"), this);
-	m_simulationAct->setStatusTip(tr("Simulate the circuit (DC analysis)"));
-	connect(m_simulationAct, SIGNAL(triggered()), m_simulator, SLOT(simulate()));
-
 	m_preferencesAct = new QAction(tr("&Preferences..."), this);
 	m_preferencesAct->setStatusTip(tr("Show the application's about box"));
 	m_preferencesAct->setMenuRole(QAction::PreferencesRole);						// make sure this is added to the correct menu on mac
@@ -1137,6 +1133,15 @@ void MainWindow::createViewMenuActions(bool showWelcome) {
 	m_colorWiresByLengthAct->setStatusTip(tr("Display breadboard wires using standard color coding by length"));
 	m_colorWiresByLengthAct->setCheckable(true);
 	connect(m_colorWiresByLengthAct, SIGNAL(triggered()), this, SLOT(colorWiresByLength()));
+
+	m_enableSimulatorAct = new QAction(tr("Enable the simulator"), this);
+	m_enableSimulatorAct->setStatusTip(tr("Adds a button to be able to simulate the circuit"));
+	m_enableSimulatorAct->setCheckable(true);
+	connect(m_enableSimulatorAct, SIGNAL(triggered()), this, SLOT(enableSimulator()));
+
+	m_simulationAct = new QAction(tr("Simulate"), this);
+	m_simulationAct->setStatusTip(tr("Simulate the circuit (DC analysis)"));
+	connect(m_simulationAct, SIGNAL(triggered()), m_simulator, SLOT(simulate()));
 
 	m_showGridAct = new QAction(tr("Show Grid"), this);
 	m_showGridAct->setStatusTip(tr("Show the grid"));
@@ -1500,6 +1505,7 @@ void MainWindow::createViewMenu()
 	m_viewMenu->addAction(m_setGridSizeAct);
 	m_viewMenu->addAction(m_setBackgroundColorAct);
 	m_viewMenu->addAction(m_colorWiresByLengthAct);
+	m_viewMenu->addAction(m_enableSimulatorAct);
 	m_viewMenu->addSeparator();
 
 	if (m_welcomeView) m_viewMenu->addAction(m_showWelcomeAct);
@@ -4122,6 +4128,13 @@ QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 	connect(gridSizeThing->mmButton, SIGNAL(clicked(bool)), this, SLOT(gridUnits(bool)));
 
 	return over;
+}
+
+void MainWindow::enableSimulator() {
+	if (m_simulator) {
+		m_simulator->enable(m_enableSimulatorAct->isChecked());
+		setWindowModified(true);
+	}
 }
 
 void MainWindow::colorWiresByLength() {

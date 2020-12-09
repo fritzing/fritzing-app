@@ -103,6 +103,18 @@ Simulator::~Simulator() {
 }
 
 /**
+ * Enables or disables the simulator. If it is disabled, removes the simulation effects: the grey out of
+ * the parts that are not simulated and the messages previously added.
+ * @param[in] enable boolean to indicate if the simulator needs to be enabled or disabled.
+ */
+void Simulator::enable(bool enable) {
+	m_enabled = enable;
+	if (!m_enabled) {
+		removeSimItems();
+	}
+}
+
+/**
  * Main function that is in charge of simulating the circuit and show components working out of its specifications.
  * Components working outside its specifications are shown by adding a smoke image over them.
  * The steps performed are:
@@ -126,6 +138,11 @@ void Simulator::simulate() {
 	if( !m_simulator )
 	{
 		throw std::runtime_error( "Could not create simulator instance" );
+		return;
+	}
+
+	if (!m_enabled) {
+		std::cout << "The simulator is not enabled" << std::endl;
 		return;
 	}
 
@@ -177,9 +194,8 @@ void Simulator::simulate() {
 	std::cout << "-----------------------------------" <<std::endl;
 
 	//Removes the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.)
-	//TODO: Decide if we really need it. The previous sim items are removed when the new ones are added
 	std::cout << "removeSimItems(itemBases);" <<std::endl;
-	removeSimItems(itemBases);
+	removeSimItems();
 	std::cout << "-----------------------------------" <<std::endl;
 
 	//If there are parts that are not being simulated, grey them out
@@ -187,7 +203,7 @@ void Simulator::simulate() {
 	greyOutNonSimParts(itemBases);
 	std::cout << "-----------------------------------" <<std::endl;
 
-	std::cout << "wait for simulator thread to stop" <<std::endl;
+	std::cout << "Waiting for simulator thread to stop" <<std::endl;
 	int elapsedTime = 0, simTimeOut = 3000; // in ms
 	while (m_simulator->IsRunning() && elapsedTime < simTimeOut) {
 	#if defined(__MINGW32__) || defined(_MSC_VER)
@@ -201,6 +217,8 @@ void Simulator::simulate() {
 		m_simulator->Stop();
 		throw std::runtime_error( QString("The spice simulator did not finish after %1 ms. Aborting simulation.").arg(simTimeOut).toStdString() );
 		return;
+	} else {
+		std::cout << "The spice simulator has finished." <<std::endl;
 	}
 	std::cout << "-----------------------------------" <<std::endl;
 
@@ -297,14 +315,25 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 }
 
 /**
- * Removes all the items (images and texts) that have been placed in previous simulations
- * in the breadboard and schematic views.
+ * Removes all the items (images and texts) and effects (grey out) that have been placed
+ * in previous simulations in the breadboard and schematic views.
  */
-void Simulator::removeSimItems(const QSet<class ItemBase *>& itemBases) {
-	foreach (ItemBase * item, itemBases) {
-		if (item)
-			if (m_sch2bbItemHash.value(item))
-				m_sch2bbItemHash.value(item)->removeSimulationGraphicsItem();
+void Simulator::removeSimItems() {
+	removeSimItems(m_schematicGraphicsView->scene()->items());
+	removeSimItems(m_breadboardGraphicsView->scene()->items());
+}
+
+/**
+ * Removes all the items (images and texts) and effects (grey out)
+ * from the specified list of QGraphicsItem.
+ */
+void Simulator::removeSimItems(QList<QGraphicsItem *> items) {
+	foreach (QGraphicsItem * item, items) {
+		item->setGraphicsEffect(NULL);
+		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		if (itemBase) {
+			itemBase->removeSimulationGraphicsItem();
+		}
 	}
 }
 
@@ -704,7 +733,10 @@ void Simulator::updateMultimeter(ItemBase * part) {
 		double v = calculateVoltage(vProbe, comProbe);
 		double a = getCurrent(part);
 		double r = abs(v/a);
+		std::cout << "Ohmmeter: Volt: " << v <<", Curr: " << a <<", Ohm: " << r << std::endl;
 		int precision = 1;
+		if (r < 1)
+			precision = 2;
 		if (r >= 200)
 			precision = 0;
 		//TODO: Handle resistances bigger than 10k

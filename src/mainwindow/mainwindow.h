@@ -299,6 +299,7 @@ protected slots:
 	void setGridSize();
 	void setBackgroundColor();
 	void colorWiresByLength();
+	void enableSimulator();
 	void showBreadboardView();
 	void showSchematicView();
 	void showProgramView();
@@ -758,6 +759,7 @@ protected:
 	QAction *m_deselectAct = nullptr;
 	QAction *m_addNoteAct = nullptr;
 	QAction *m_simulationAct = nullptr;
+	QAction *m_enableSimulatorAct = nullptr;
 
 	// Part Menu
 	QMenu *m_partMenu = nullptr;

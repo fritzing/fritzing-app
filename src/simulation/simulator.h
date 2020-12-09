@@ -36,11 +36,13 @@ public:
 
 public slots:
 	void simulate();
+	void enable(bool);
 
 protected:
 	void drawSmoke(ItemBase* part);
 	void updateMultimeterScreen(ItemBase *, QString);
-	void removeSimItems(const QSet<class ItemBase *>&);
+	void removeSimItems();
+	void removeSimItems(QList<QGraphicsItem *>);
 	void greyOutNonSimParts(const QSet<class ItemBase *>&);
 	void greyOutParts(const QList<QGraphicsItem *> &);
 	void removeItemsToBeSimulated(QList<QGraphicsItem*> &);
@@ -65,7 +67,7 @@ protected:
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;
 	QPointer<class SchematicSketchWidget> m_schematicGraphicsView;
 
-	bool m_showingSimulation = false;
+	bool m_enabled = false;
 
 	QHash<ItemBase *, ItemBase *> m_sch2bbItemHash;
 	QHash<ConnectorItem *, int> m_connector2netHash;

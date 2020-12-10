@@ -134,15 +134,15 @@ void Simulator::enable(bool enable) {
  * @brief Simulate the current circuit and check for components working out of specifications
  */
 void Simulator::simulate() {
+	if (!m_enabled) {
+		std::cout << "The simulator is not enabled" << std::endl;
+		return;
+	}
+
 	m_simulator = SPICE_SIMULATOR::CreateInstance( "ngspice" );
 	if( !m_simulator )
 	{
 		throw std::runtime_error( "Could not create simulator instance" );
-		return;
-	}
-
-	if (!m_enabled) {
-		std::cout << "The simulator is not enabled" << std::endl;
 		return;
 	}
 

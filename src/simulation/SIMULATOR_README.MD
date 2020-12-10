@@ -2,6 +2,10 @@
 
 This document describes the features of the implemented simulator in Fritzing. The purpose of the simulator is to teach electronics to beginners. Therefore, the current capabilities are very basics. In the future, we could extend this code to handle advanced analyses, but currently it is not a priority. If you want to help us, please, contact us to discuss collaborations (see the contribute section of this file). 
 
+## Use ##
+
+Activate the simulator in view->Enable Simulator. Then, build a circuit and measure something with the multimeters and press the simulate button. The parts not being simulated are greyed out and the multimeters show the results of the simulation. If any circuit is out of specifications, a smoke appears over it. Modify the circuit and press again simulate to perform a new simulation. If you disable the simulator (in the View menu), all the items of the simulation disappear (smoke images, text in multimeters and grey out of the non simulated parts).
+
 ## Features ##
 
 The current implementation performs a dc analysis (operating point). By default, there is no output of the voltages or currents in the circuit. To be able to measure them, you should use the multimeters of the core bin. There are five multimeters but currently only the dc multimeters work (voltmeter, ammeter and ohmmeter). 

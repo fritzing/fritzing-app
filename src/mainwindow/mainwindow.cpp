@@ -1024,11 +1024,12 @@ SketchToolButton *MainWindow::createNoteButton(SketchAreaWidget *parent) {
 }
 
 SketchToolButton *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
-	SketchToolButton *simulationButton = new SketchToolButton("Simulation",parent, m_simulationAct);
-	simulationButton->setObjectName("simulationButton");
-	simulationButton->setText(tr("Simulate"));
-	simulationButton->setEnabledIcon();					// seems to need this to display button icon first time
-	return simulationButton;
+	m_simulationButton = new SketchToolButton("Simulation",parent, m_simulationAct);
+	m_simulationButton->setObjectName("simulationButton");
+	m_simulationButton->setText(tr("Simulate"));
+	m_simulationButton->setEnabledIcon();					// seems to need this to display button icon first time
+	//m_simulationButton->hide();
+	return m_simulationButton;
 }
 
 SketchToolButton *MainWindow::createExportEtchableButton(SketchAreaWidget *parent) {

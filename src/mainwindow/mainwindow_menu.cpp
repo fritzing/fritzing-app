@@ -4096,6 +4096,13 @@ QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 void MainWindow::enableSimulator() {
 	if (m_simulator) {
 		m_simulator->enable(m_enableSimulatorAct->isChecked());
+		if (m_simulationButton) {
+			if(m_enableSimulatorAct->isChecked()) {
+				m_simulationButton->show();
+			} else {
+				m_simulationButton->hide();
+			}
+		}
 		setWindowModified(true);
 	}
 }

@@ -77,7 +77,7 @@ AboutBox::AboutBox(QWidget *parent)
 
 	// Link to website
 	QLabel *linkToFritzing = new QLabel(this);
-	linkToFritzing->setText("<a href=\"https://www.fritzing.org\">www.fritzing.org</a>");
+	linkToFritzing->setText("<a href=\"https://fritzing.org\">fritzing.org</a>");
 	linkToFritzing->setOpenExternalLinks(true);
 	linkToFritzing->setFont(smallFont);
     linkToFritzing->setGeometry(45, 188, 300, 18);

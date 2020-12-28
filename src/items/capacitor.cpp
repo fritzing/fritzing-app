@@ -57,6 +57,10 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 			focusOutComboBox->setEditable(propertyDef->editable);
 			focusOutComboBox->setObjectName("infoViewComboBox");
 			QString current = m_propertyDefs.value(propertyDef);
+			if (current.isEmpty() && !propertyDef->defaultValue.isEmpty()) {
+				current = propertyDef->defaultValue + propertyDef->symbol;
+				setProp(propertyDef->name, propertyDef->defaultValue + propertyDef->symbol);
+			}
 			if (propertyDef->editable) {
 				focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value").arg(returnProp));
 			}
@@ -142,7 +146,7 @@ void Capacitor::propertyEntry(const QString & text) {
 			}
 
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView != NULL) {
+			if (infoGraphicsView) {
 				infoGraphicsView->setProp(this, propertyDef->name, "", m_propertyDefs.value(propertyDef, ""), utext, true);
 			}
 			break;
@@ -171,7 +175,7 @@ void Capacitor::simplePropertyEntry(const QString & text) {
 	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView != NULL) {
+			if (infoGraphicsView) {
 				infoGraphicsView->setProp(this, propertyDef->name, "", m_propertyDefs.value(propertyDef, ""), text, true);
 			}
 			break;

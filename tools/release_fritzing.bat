@@ -46,7 +46,7 @@ IF %2==64 (
     ) ELSE IF %3==2015 (
 	set QTBIN=C:\Qt\5.6\msvc2015_64\bin
     ) ELSE IF %3==2017 (
-        set QTBIN=C:\Qt\5.12.3\msvc2017_64\bin
+        set QTBIN=C:\Qt\5.12.7\msvc2017_64\bin
     )
 	set arch=""QMAKE_TARGET.arch=x86_64""
 ) ELSE (
@@ -150,6 +150,7 @@ xcopy /q .\sketches %DESTDIR%\deploy\sketches /E  /I
 xcopy /q .\help %DESTDIR%\deploy\help /E  /I
 
 copy .\README.md %DESTDIR%\deploy\README.md
+copy .\INSTALL.txt %DESTDIR%\deploy\INSTALL.txt
 copy .\LICENSE.GPL2 %DESTDIR%\deploy\LICENSE.GPL2
 copy .\LICENSE.GPL3 %DESTDIR%\deploy\LICENSE.GPL3
 copy .\LICENSE.CC-BY-SA %DESTDIR%\deploy\LICENSE.CC-BY-SA

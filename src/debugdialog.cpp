@@ -155,7 +155,7 @@ void DebugDialog::debug(QString message, DebugLevel debugLevel, QObject * ancest
 }
 
 void DebugDialog::hideDebug() {
-	if (singleton != NULL) {
+	if (singleton) {
 		singleton->hide();
 	}
 }
@@ -169,7 +169,7 @@ void DebugDialog::showDebug() {
 }
 
 void DebugDialog::closeDebug() {
-	if (singleton != NULL) {
+	if (singleton) {
 		singleton->close();
 	}
 }

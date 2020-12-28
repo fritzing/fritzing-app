@@ -30,7 +30,7 @@ class GedaElementLexer
 {
 public:
 	GedaElementLexer(const QString &source);
-	~GedaElementLexer();
+	~GedaElementLexer() = default;
 	int lex();
 	QString currentCommand();
 	double currentNumber();
@@ -42,21 +42,21 @@ protected:
 	QString clean(const QString & source);
 
 protected:
-	QString m_source;
-	const QChar *m_chars;
-	int m_size;
-	int m_pos;
-	QChar m_current;
-	QString m_currentCommand;
-	long m_currentNumber;
-	long m_currentHexString;
-	QString m_currentString;
+	QRegExp m_nonWhitespaceMatcher;
+	QRegExp m_commentMatcher;
+	QRegExp m_elementMatcher;
+	QRegExp m_stringMatcher;
 	QRegExp m_integerMatcher;
 	QRegExp m_hexMatcher;
-	QRegExp m_stringMatcher;
-	QRegExp m_elementMatcher;
-	QRegExp m_commentMatcher;
-	QRegExp m_nonWhitespaceMatcher;
+	QString m_source;
+	const QChar *m_chars = nullptr;
+	int m_size = 0;
+	int m_pos = 0;
+	QChar m_current;
+	QString m_currentCommand;
+	long m_currentNumber = 0l;
+	long m_currentHexString = 0l;
+	QString m_currentString;
 	QStringList m_comments;
 };
 

@@ -557,12 +557,19 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 {
 	if (m_currentGraphicsView == NULL) return;
 
+	//Deselect all the items that are selected before creating the image
+	QList<QGraphicsItem*> selItems = m_currentGraphicsView->scene()->selectedItems();
+	foreach(QGraphicsItem *item, selItems) {
+		item->setSelected(false);
+	}
+
 	double resMultiplier = 3;
 
 	QRectF itemsBoundingRect;
 	foreach(QGraphicsItem *item,  m_currentGraphicsView->scene()->items()) {
 		if (!item->isVisible()) continue;
 
+		item->update();
 		itemsBoundingRect |= item->sceneBoundingRect();
 	}
 
@@ -596,6 +603,9 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	if (removeBackground) {
 		color = m_currentGraphicsView->background();
 		m_currentGraphicsView->setBackground(QColor::fromRgb(255,255,255,255));
+		image.fill(QColor::fromRgb(255,255,255,255));
+	} else {
+		image.fill(m_currentGraphicsView->background());
 	}
 
 	painter.begin(&image);
@@ -605,6 +615,11 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	painter.end();
 
 	//image.save(FolderUtils::getUserDataStorePath("") + "/export.png");
+
+	//Select the items that were selected
+	foreach(QGraphicsItem *item, selItems) {
+		item->setSelected(true);
+	}
 
 	if (removeBackground) {
 		m_currentGraphicsView->setBackground(color);
@@ -1269,7 +1284,7 @@ void MainWindow::exportBOM() {
 	}
 
 	QClipboard *clipboard = QApplication::clipboard();
-	if (clipboard != NULL) {
+	if (clipboard) {
 		clipboard->setText(bom);
 	}
 	delete fileProgressDialog;
@@ -1469,7 +1484,7 @@ void MainWindow::exportSpiceNetlist() {
 	netList.clear();
 
 	QClipboard *clipboard = QApplication::clipboard();
-	if (clipboard != NULL) {
+	if (clipboard) {
 		clipboard->setText(output);
 	}
 
@@ -1537,7 +1552,7 @@ void MainWindow::exportNetlist() {
 			part.setAttribute("label", itemBase->instanceTitle());
 			part.setAttribute("title", itemBase->title());
 			ErcData * ercData = connectorItem->connectorSharedErcData();
-			if (ercData != NULL) {
+			if (ercData) {
 				QDomElement erc = doc.createElement("erc");
 				if (ercData->writeToElement(erc, doc)) {
 					connector.appendChild(erc);
@@ -1581,7 +1596,7 @@ void MainWindow::exportNetlist() {
 	fp.close();
 
 	QClipboard *clipboard = QApplication::clipboard();
-	if (clipboard != NULL) {
+	if (clipboard) {
 		clipboard->setText(doc.toByteArray());
 	}
 	delete fileProgressDialog;

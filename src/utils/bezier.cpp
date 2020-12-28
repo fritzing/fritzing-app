@@ -38,16 +38,16 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 // utilities from http://www.flong.com/texts/code/shapers_bez/
 
-double B0 (double t) {
+constexpr double B0 (double t) noexcept {
 	return (1-t)*(1-t)*(1-t);
 }
-double B1 (double t) {
+constexpr double B1 (double t) noexcept {
 	return  3*t* (1-t)*(1-t);
 }
-double B2 (double t) {
+constexpr double B2 (double t) noexcept {
 	return 3*t*t* (1-t);
 }
-double B3 (double t) {
+constexpr double B3 (double t) noexcept {
 	return t*t*t;
 }
 
@@ -55,7 +55,7 @@ double B3 (double t) {
 
 // utilities from http://processingjs.nihongoresources.com/bezierinfo/sketchsource.php?sketch=cubicGaussQuadrature
 
-double base3(double t, double p1, double p2, double p3, double p4)
+constexpr double base3(double t, double p1, double p2, double p3, double p4) noexcept
 {
 	double t1 = -3*p1 + 9*p2 - 9*p3 + 3*p4;
 	double t2 = t*t1 + 6*p1 - 12*p2 + 6*p3;
@@ -63,7 +63,7 @@ double base3(double t, double p1, double p2, double p3, double p4)
 }
 
 // Legendre-Gauss abscissae (xi values, defined at i=n as the roots of the nth order Legendre polynomial Pn(x))
-double Tvalues[25][24] = {
+constexpr double Tvalues[25][24] = {
 	{},
 	{},
 	{-0.5773502691896257310588680411456152796745,0.5773502691896257310588680411456152796745},
@@ -92,7 +92,7 @@ double Tvalues[25][24] = {
 };
 
 // Legendre-Gauss weights (wi values, defined by a function linked to in the Bezier primer article)
-double Cvalues[25][24] = {
+constexpr double Cvalues[25][24] = {
 	{},
 	{},
 	{1.0000000000000000000000000000000000000000,1.0000000000000000000000000000000000000000},
@@ -122,46 +122,36 @@ double Cvalues[25][24] = {
 
 /////////////////////////////////////////////
 
-Bezier::Bezier(QPointF cp0, QPointF cp1)
+Bezier::Bezier(QPointF cp0, QPointF cp1) : m_cp0(cp0), m_cp1(cp1), m_isEmpty(false)
 {
-	m_cp0 = cp0;
-	m_cp1 = cp1;
-	m_isEmpty = false;
 }
 
-Bezier::Bezier()
+Bezier::Bezier() : m_isEmpty(true) { }
+
+Bezier::Bezier(const Bezier& other) :
+		m_endpoint0(other.m_endpoint0),
+		m_endpoint1(other.m_endpoint1),
+		m_cp0(other.m_cp0),
+		m_cp1(other.m_cp1),
+		m_isEmpty(other.m_isEmpty),
+		m_drag_cp0(other.m_drag_cp0)
 {
-	m_isEmpty = true;
+
 }
 
-bool Bezier::isEmpty() const
+Bezier::Bezier(QPointF endpoint0, QPointF endpoint1, QPointF cp0, QPointF cp1) noexcept :
+		m_endpoint0(endpoint0),
+		m_endpoint1(endpoint1),
+		m_cp0(cp0),
+		m_cp1(cp1),
+		m_isEmpty(false)
 {
-	return m_isEmpty;
+
 }
 
 void Bezier::clear()
 {
 	m_isEmpty = true;
-}
-
-QPointF Bezier::cp0() const
-{
-	return m_cp0;
-}
-
-QPointF Bezier::cp1() const
-{
-	return m_cp1;
-}
-
-QPointF Bezier::endpoint0() const
-{
-	return m_endpoint0;
-}
-
-QPointF Bezier::endpoint1() const
-{
-	return m_endpoint1;
 }
 
 void Bezier::set_cp0(QPointF cp0)
@@ -222,20 +212,16 @@ void Bezier::write(QXmlStreamWriter & streamWriter)
 
 bool Bezier::operator==(const Bezier & other) const
 {
-	if (m_isEmpty != other.isEmpty()) return false;
-	if (m_cp0 != other.cp0()) return false;
-	if (m_cp1 != other.cp1()) return false;
-
-	return true;
+	return (m_isEmpty == other.isEmpty()) &&
+	       (m_cp0 == other.cp0()) &&
+	       (m_cp1 == other.cp1());
 }
 
 bool Bezier::operator!=(const Bezier & other) const
 {
-	if (m_isEmpty != other.isEmpty()) return true;
-	if (m_cp0 != other.cp0()) return true;
-	if (m_cp1 != other.cp1()) return true;
-
-	return false;
+	return (m_isEmpty != other.isEmpty()) &&
+	       (m_cp0 != other.cp0()) &&
+	       (m_cp1 != other.cp1());
 }
 
 void Bezier::recalc(QPointF p)
@@ -275,32 +261,34 @@ void Bezier::recalc(QPointF p)
 
 void Bezier::initToEnds(QPointF cp0, QPointF cp1)
 {
-	m_endpoint0 = m_cp0 = cp0;
-	m_endpoint1 = m_cp1 = cp1;
+	m_endpoint0 = cp0;
+	m_cp0 = cp0;
+	m_endpoint1 = cp1;
+	m_cp1 = cp1;
 	m_isEmpty = false;
 }
 
-double Bezier::xFromT(double t) const
+double Bezier::xFromT(double t) const noexcept
 {
 	// http://www.lemoda.net/maths/bezier-length/index.html
 
 	return m_endpoint0.x() * B0(t) + m_cp0.x() * B1(t) + m_cp1.x() * B2(t) + m_endpoint1.x() * B3(t);
 }
 
-double Bezier::xFromTPrime(double t) const
+double Bezier::xFromTPrime(double t) const noexcept
 {
 	return base3(t, m_endpoint0.x(), m_cp0.x(), m_cp1.x(), m_endpoint1.x());
 
 }
 
-double Bezier::yFromT(double t) const
+double Bezier::yFromT(double t) const noexcept
 {
 	// http://www.lemoda.net/maths/bezier-length/index.html
 
 	return m_endpoint0.y() * B0(t) + m_cp0.y() * B1(t) + m_cp1.y() * B2(t) + m_endpoint1.y() * B3(t);
 }
 
-void Bezier::split(double t, Bezier & left, Bezier & right) const
+void Bezier::split(double t, Bezier & left, Bezier & right) const noexcept
 {
 	// http://processingjs.nihongoresources.com/bezierinfo/sketchsource.php?sketch=CubicDeCasteljau
 
@@ -318,14 +306,34 @@ void Bezier::split(double t, Bezier & left, Bezier & right) const
 
 	// we now have all the values we need to build the subcurves
 	left.m_endpoint0 = m_endpoint0;
+	left.m_endpoint1 = p10;
 	left.m_cp0 = p5;
 	left.m_cp1 = p8;
-	right.m_endpoint0 = left.m_endpoint1 = p10;
+	right.m_endpoint0 = p10;
 	right.m_cp0 = p9;
 	right.m_cp1 = p7;
 	right.m_endpoint1 = m_endpoint1;
-	left.m_isEmpty = right.m_isEmpty = false;
+	left.m_isEmpty = false;
+	right.m_isEmpty = false;
 }
+Bezier::SplitBezier Bezier::split(double t) const noexcept
+{
+	QPointF p5((1-t)*m_endpoint0.x() + t*m_cp0.x(), (1-t)*m_endpoint0.y() + t*m_cp0.y());
+	QPointF p6((1-t)*m_cp0.x() + t*m_cp1.x(), (1-t)*m_cp0.y() + t*m_cp1.y());
+	QPointF p7((1-t)*m_cp1.x() + t*m_endpoint1.x(), (1-t)*m_cp1.y() + t*m_endpoint1.y());
+
+	// interpolate from 3 to 2 points
+	QPointF p8((1-t)*p5.x() + t*p6.x(), (1-t)*p5.y() + t*p6.y());
+	QPointF p9((1-t)*p6.x() + t*p7.x(), (1-t)*p6.y() + t*p7.y());
+
+	// interpolate from 2 points to 1 point
+	QPointF p10((1-t)*p8.x() + t*p9.x(), (1-t)*p8.y() + t*p9.y());
+
+	return std::make_tuple<Bezier, Bezier>({m_endpoint0, p10, p5, p8} /* left */,
+	                                       {p10, m_endpoint1, p9, p7} /* right */);
+}
+
+
 
 void Bezier::initControlIndex(QPointF p, double width)
 {
@@ -340,7 +348,7 @@ void Bezier::initControlIndex(QPointF p, double width)
 /**
  * Gauss quadrature for cubic Bezier curves
  */
-double Bezier::computeCubicCurveLength(double z, int n) const
+double Bezier::computeCubicCurveLength(double z, int n) const noexcept
 {
 	// http://processingjs.nihongoresources.com/bezierinfo/sketchsource.php?sketch=cubicGaussQuadrature
 
@@ -353,7 +361,7 @@ double Bezier::computeCubicCurveLength(double z, int n) const
 	return z2 * sum;
 }
 
-double Bezier::cubicF(double t) const
+double Bezier::cubicF(double t) const noexcept
 {
 	double xbase = base3(t, m_endpoint0.x(), m_cp0.x(), m_cp1.x(), m_endpoint1.x());
 	double ybase = base3(t, m_endpoint0.y(), m_cp0.y(), m_cp1.y(), m_endpoint1.y());
@@ -363,7 +371,7 @@ double Bezier::cubicF(double t) const
 
 void Bezier::copy(const Bezier * other)
 {
-	if (other == NULL) {
+	if (!other) {
 		m_isEmpty = true;
 		return;
 	}
@@ -376,7 +384,7 @@ void Bezier::copy(const Bezier * other)
 	m_drag_cp0 = other->m_drag_cp0;
 }
 
-double Bezier::findSplit(QPointF p, double minDistance) const
+double Bezier::findSplit(QPointF p, double minDistance) const noexcept
 {
 	double bestT = 0;
 	double lastDistance = std::numeric_limits<int>::max();
@@ -414,10 +422,17 @@ void Bezier::translate(QPointF p) {
 	m_endpoint0 += p;
 }
 
-Bezier Bezier::join(const Bezier * other) const
+Bezier Bezier::join(const Bezier* other) const {
+	if (!other || other->isEmpty()) {
+		return {};
+	} else {
+		return join(*other);
+	}
+}
+Bezier Bezier::join(const Bezier& other) const noexcept
 {
 	Bezier bezier;
-	bool otherIsEmpty = (other == NULL || other->isEmpty());
+	bool otherIsEmpty = other.isEmpty();
 
 	if (isEmpty() && otherIsEmpty) {
 		return bezier;
@@ -425,22 +440,17 @@ Bezier Bezier::join(const Bezier * other) const
 	else {
 		if (isEmpty()) {
 			bezier.set_cp0(m_endpoint0);
-			bezier.set_cp1(other->cp1());
+			bezier.set_cp1(other.cp1());
 		}
-		else if (other->isEmpty()) {
-			bezier.set_cp1(other->m_endpoint1);
+		else if (other.isEmpty()) {
+			bezier.set_cp1(other.m_endpoint1);
 			bezier.set_cp0(cp0());
 		}
 		else {
 			bezier.set_cp0(cp0());
-			bezier.set_cp1(other->cp1());
+			bezier.set_cp1(other.cp1());
 		}
 	}
 
 	return bezier;
-}
-
-bool Bezier::drag0()
-{
-	return m_drag_cp0;
 }

@@ -5,7 +5,7 @@
     <name>AboutBox</name>
     <message>
         <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
@@ -37,7 +37,7 @@
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
-        <translation>Bryant Mairs, Uleshka Asher, e Daniel Tzschentke. </translation>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, e Daniel Tzschentke. </translation>
     </message>
     <message>
         <source>Special thanks goes out to: </source>
@@ -101,10 +101,6 @@
     </message>
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -197,6 +193,26 @@
     </message>
     <message>
         <source>Jinbuhm Kim</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and Kjell Morgenstern </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ukrainian: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yelyzaveta Chyhryna</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1607,7 +1623,7 @@ Também é possível escolher um conector como ponto de aterramento clicando com
     </message>
     <message>
         <source>PostScript (*.ps)</source>
-        <translation>PostScript (*.ps)</translation>
+        <translation type="vanished">PostScript (*.ps)</translation>
     </message>
     <message>
         <source>PNG Image (*.png)</source>
@@ -2225,7 +2241,7 @@ Estamos trabalhando para evitar esta mensagem, e apenas deixar você escolher en
     </message>
     <message>
         <source>Export the visible area of the current sketch as a PostScript image</source>
-        <translation>Exporte a área visível do sketch atual como uma imagem PostScript</translation>
+        <translation type="vanished">Exporte a área visível do sketch atual como uma imagem PostScript</translation>
     </message>
     <message>
         <source>Export the visible area of the current sketch as a PDF image</source>
@@ -2612,7 +2628,7 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
     </message>
     <message>
         <source>PostScript...</source>
-        <translation>PostScript...</translation>
+        <translation type="vanished">PostScript...</translation>
     </message>
     <message>
         <source>PDF...</source>
@@ -6069,15 +6085,7 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>N/A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6257,7 +6265,7 @@ is already there, we won&apos;t add it again, right?</source>
     <name>QuoteDialog</name>
     <message>
         <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation>Para mais informações sobre preços acesse &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
+        <translation type="vanished">Para mais informações sobre preços acesse &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>Order your PCB from Fritzing Fab</source>
@@ -6292,11 +6300,11 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
-        <translation>Preços não incluem o frete, &lt;br /&gt;</translation>
+        <translation type="vanished">Preços não incluem o frete, &lt;br /&gt;</translation>
     </message>
     <message>
         <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
-        <translation>podem incidir taxas adicionais e/ou impostos.&lt;br /&gt;</translation>
+        <translation type="vanished">podem incidir taxas adicionais e/ou impostos.&lt;br /&gt;</translation>
     </message>
     <message>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
@@ -6309,6 +6317,22 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>Take advantage of our quantity discount:</source>
         <translation>Aproveite nosso desconto por quantidade:</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Shipping is free wordlwide&lt;/b&gt;.&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documents for local customs control are included.&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some countries might charge additional import taxes or checking fees.&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For more information on pricing see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7457,14 +7481,6 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Shop</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fritzing CreatorKit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7509,10 +7525,6 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to reach friting.org/projects</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Tip of the Day:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7529,7 +7541,27 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
+        <source>Donate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing development needs you</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Software development and maintenance is a lot of work. Without your support, it is not possible to keep that up.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate and leave a comment.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach fritzing.org/projects</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

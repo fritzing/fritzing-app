@@ -252,7 +252,7 @@ void SchematicSketchWidget::setProp(ItemBase * itemBase, const QString & prop, c
 {
 	if (prop =="label") {
 		SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(itemBase);
-		if (sitem != NULL && sitem->isOnlyNetLabel()) {
+		if (sitem && sitem->isOnlyNetLabel()) {
 			if (sitem->getLabel() == newValue) {
 				return;
 			}
@@ -566,7 +566,7 @@ void SchematicSketchWidget::resizeLabels() {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == NULL) continue;
 
-		if (itemBase->hasPartLabel() && itemBase->partLabel() != NULL) {
+		if (itemBase->hasPartLabel() && itemBase->partLabel()) {
 			itemBase->partLabel()->setFontPointSize(fontSize);
 		}
 	}

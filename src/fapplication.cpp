@@ -338,16 +338,6 @@ void RegenerateDatabaseThread::run() {
 
 FApplication::FApplication( int & argc, char ** argv) : QApplication(argc, argv)
 {
-	m_fServer = NULL;
-	m_spaceBarIsPressed = false;
-	m_mousePressed = false;
-	m_referenceModel = NULL;
-	m_started = false;
-	m_updateDialog = NULL;
-	m_lastTopmostWindow = NULL;
-	m_serviceType = NoService;
-	m_splash = NULL;
-
 	m_arguments = arguments();
 }
 
@@ -1373,20 +1363,20 @@ void FApplication::initSplash(FSplashScreen & splash) {
 
 	// put this above the progress indicator
 
-	QString msg1 = QObject::tr("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
+	QString msg1 = QString("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
 	                           "&#169; 2007-%1 Fritzing"
 	                           "</font>")
 	               .arg(Version::year());
 	splash.showMessage(msg1, "fritzingText", Qt::AlignLeft | Qt::AlignTop);
 
-	QString msg2 = QObject::tr("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
-                               "Version %1.%2.%3 (%4 %5) %6"
+	QString msg2 = QString("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
+	                           "Version %1.%2.%3 (%4 %5) %6"
 	                           "</font>")
 	               .arg(Version::majorVersion())
 	               .arg(Version::minorVersion())
 	               .arg(Version::minorSubVersion())
 	               .arg(Version::gitVersion())
-                   .arg(Version::date())
+	               .arg(Version::date())
 	               .arg(m_buildType);
 	splash.showMessage(msg2, "versionText", Qt::AlignRight | Qt::AlignTop);
 
@@ -1498,12 +1488,12 @@ void FApplication::updateActivation() {
 	//DebugDialog::debug(QString("last:%1, new:%2").arg((long) prior, 0, 16).arg((long) m_lastTopmostWindow.data(), 0, 16));
 
 	MainWindow * priorMainWindow = qobject_cast<MainWindow *>(prior);
-	if (priorMainWindow != NULL) {
+	if (priorMainWindow) {
 		priorMainWindow->saveDocks();
 	}
 
 	MainWindow * lastTopmostMainWindow = qobject_cast<MainWindow *>(m_lastTopmostWindow);
-	if (lastTopmostMainWindow != NULL) {
+	if (lastTopmostMainWindow) {
 		lastTopmostMainWindow->restoreDocks();
 		//DebugDialog::debug("restoring active window");
 	}

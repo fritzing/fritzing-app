@@ -37,7 +37,7 @@ public:
 	double currentNumber();
 
 public:
-	static const char FakeClosePathChar = 'x';
+	static constexpr char FakeClosePathChar = 'x';
 
 protected:
 	QChar next();
@@ -45,12 +45,12 @@ protected:
 
 protected:
 	QString m_source;
-	const QChar *m_chars;
-	int m_size;
-	int m_pos;
-	QChar m_current;
-	QChar m_currentCommand;
-	double m_currentNumber;
+	const QChar *m_chars = nullptr;
+	int m_size = 0;
+	int m_pos = 0;
+	QChar m_current = 0;
+	QChar m_currentCommand = 0;
+	double m_currentNumber = 0.0;
 };
 
 #endif

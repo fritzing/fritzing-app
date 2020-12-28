@@ -32,14 +32,16 @@ QT_BEGIN_NAMESPACE
 class QDragEnterEvent;
 class QDropEvent;
 QT_END_NAMESPACE
-
+class PaletteModel;
+class SvgIconWidget;
+class GraphicsFlowLayout;
 class PartsBinIconView : public InfoGraphicsView, public PartsBinView
 {
 	Q_OBJECT
 public:
 	PartsBinIconView(ReferenceModel* referenceModel, PartsBinPaletteWidget *parent);
-	void loadFromModel(class PaletteModel *);
-	void setPaletteModel(class PaletteModel *model, bool clear=false);
+	void loadFromModel(PaletteModel *);
+	void setPaletteModel(PaletteModel *model, bool clear=false);
 	void addPart(ModelPart * model, int position = -1);
 	void removePart(const QString &moduleID);
 	void removeParts();
@@ -72,8 +74,8 @@ protected:
 
 	bool inEmptyArea(const QPoint& pos);
 	QGraphicsWidget* closestItemTo(const QPoint& pos);
-	class SvgIconWidget * svgIconWidgetAt(const QPoint & pos);
-	class SvgIconWidget * svgIconWidgetAt(int x, int y);
+	SvgIconWidget * svgIconWidgetAt(const QPoint & pos);
+	SvgIconWidget * svgIconWidgetAt(int x, int y);
 	ItemBase * loadItemBase(const QString & moduleID, ItemBase::PluralType &);
 
 public slots:
@@ -92,11 +94,11 @@ signals:
 protected:
 	LayerHash m_viewLayers;
 
-	QGraphicsWidget *m_layouter;
-	class GraphicsFlowLayout *m_layout;
+	QGraphicsWidget *m_layouter = nullptr;
+	GraphicsFlowLayout *m_layout = nullptr;
 
-	QMenu *m_itemMenu;
-	bool m_noSelectionChangeEmition;
+	QMenu *m_itemMenu = nullptr;
+	bool m_noSelectionChangeEmition = false;
 };
 
 #endif /* ICONVIEW_H_ */

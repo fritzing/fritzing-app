@@ -4,6 +4,9 @@
  <id>org.fritzing.Fritzing.desktop</id>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <project_license>GPL-3.0+</project_license>
+ <content_rating type="oars-1.1">
+  <content_attribute id="social-info">mild</content_attribute>
+ </content_rating>
  <name>Fritzing</name>
  <summary>Electronic Design Tool</summary>
  <description>
@@ -25,26 +28,26 @@
  </description>
  <screenshots>
   <screenshot type="default">
-   <image>http://fritzing.org/static/img/fritzing-preview-bb.png</image>
+   <image>https://fritzing.org/static/img/fritzing-preview-bb.png</image>
   </screenshot>
   <screenshot>
-   <image>http://fritzing.org/static/img/fritzing-preview-schem.png</image>
+   <image>https://fritzing.org/static/img/fritzing-preview-schem.png</image>
   </screenshot>
   <screenshot>
-   <image>http://fritzing.org/static/img/fritzing-preview-pcb.png</image>
+   <image>https://fritzing.org/static/img/fritzing-preview-pcb.png</image>
   </screenshot>
   <screenshot>
-   <image>http://fritzing.org/static/img/fritzing-preview-welcome.png</image>
+   <image>https://fritzing.org/static/img/fritzing-preview-welcome.png</image>
   </screenshot>
  </screenshots>
- <url type="homepage">http://fritzing.org/</url>
+ <url type="homepage">https://fritzing.org/</url>
  <url type="bugtracker">https://github.com/fritzing/fritzing-app/issues</url>
- <url type="faq">http://fritzing.org/faq/</url>
- <url type="help">http://fritzing.org/learning/</url>
- <url type="donation">http://fritzing.org/shop/donations/</url>
- <url type="translate">http://fritzing.org/support-us/language-translation/</url>
+ <url type="faq">https://fritzing.org/faq/</url>
+ <url type="help">https://fritzing.org/learning/</url>
+ <url type="donation">https://fritzing.org/shop/donations/</url>
+ <url type="translate">https://fritzing.org/support-us/language-translation/</url>
  <releases>
-  <release version="0.9.4b" date="2019-07-05"/>
+  <release version="0.9.5d" date="2019-12-10"/>
  </releases>
  <provides>
   <binary>Fritzing</binary>

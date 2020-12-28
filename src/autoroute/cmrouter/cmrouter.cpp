@@ -279,30 +279,21 @@ int prepDeleteTile(Tile * tile, UserData userData) {
 
 ////////////////////////////////////////////////////////////////////
 
-GridEntry::GridEntry(QRectF & r, QGraphicsItem * parent) : QGraphicsRectItem(r, parent)
+GridEntry::GridEntry(QRectF & r, QGraphicsItem * parent) : QGraphicsRectItem(r, parent),
+    m_drawn(false)
 {
-	m_drawn = false;
 	setAcceptedMouseButtons(Qt::NoButton);
 	setAcceptHoverEvents(false);
 }
 
-bool GridEntry::drawn() {
-	return m_drawn;
-}
-
-void GridEntry::setDrawn(bool d) {
-	m_drawn = d;
-}
-
 ////////////////////////////////////////////////////////////////////
 
-CMRouter::CMRouter(PCBSketchWidget * sketchWidget, ItemBase * board, bool adjustIf) : QObject()
+CMRouter::CMRouter(PCBSketchWidget * sketchWidget, ItemBase * board, bool adjustIf) : 
+    QObject(),
+    m_board(board),
+    m_sketchWidget(sketchWidget)
+
 {
-	m_board = board;
-	m_sketchWidget = sketchWidget;
-
-	m_unionPlane = m_union90Plane = NULL;
-
 	if (m_board) {
 		m_maxRect = m_board->sceneBoundingRect();
 	}
@@ -320,10 +311,6 @@ CMRouter::CMRouter(PCBSketchWidget * sketchWidget, ItemBase * board, bool adjust
 	qrectToTile(m_maxRect, m_tileMaxRect);
 
 	setUpWidths(m_sketchWidget->getAutorouterTraceWidth());
-}
-
-CMRouter::~CMRouter()
-{
 }
 
 Plane * CMRouter::initPlane(bool rotate90) {
@@ -602,7 +589,7 @@ bool CMRouter::overlapsOnly(QGraphicsItem *, QList<Tile *> & alreadyTiled)
 	bool doClip = false;
 	for (int i = alreadyTiled.count() - 1;  i >= 0; i--) {
 		Tile * intersectingTile = alreadyTiled.at(i);
-		if (dynamic_cast<Wire *>(TiGetBody(intersectingTile)) != NULL || dynamic_cast<ConnectorItem *>(TiGetBody(intersectingTile)) != NULL) {
+		if (dynamic_cast<Wire *>(TiGetBody(intersectingTile)) || dynamic_cast<ConnectorItem *>(TiGetBody(intersectingTile))) {
 			doClip = true;
 			continue;
 		}
@@ -629,7 +616,7 @@ bool CMRouter::allowEquipotentialOverlaps(QGraphicsItem * item, QList<Tile *> & 
 	foreach (Tile * intersectingTile, alreadyTiled) {
 		QGraphicsItem * bodyItem = TiGetBody(intersectingTile);
 		ConnectorItem * ci = dynamic_cast<ConnectorItem *>(bodyItem);
-		if (ci != NULL) {
+		if (ci) {
 			if (!collected) {
 				ConnectorItem::collectEqualPotential(equipotential, false, ViewGeometry::NoFlag);
 				collected = true;

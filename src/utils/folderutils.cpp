@@ -35,8 +35,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../debugdialog.h"
 #ifdef QUAZIP_INSTALLED
-#include <quazip/quazip.h>
-#include <quazip/quazipfile.h>
+#include <quazip5/quazip.h>
+#include <quazip5/quazipfile.h>
 #else
 #include "../lib/quazip/quazip.h"
 #include "../lib/quazip/quazipfile.h"
@@ -79,7 +79,7 @@ QDir  FolderUtils::getApplicationSubFolder(QString search) {
 		dir.cdUp();
 		dir.cdUp();
 		if (dir.isRoot()) {
-			DebugDialog::debug(QObject::tr("Application folder %1 not found").arg(search));
+			DebugDialog::debug(QString("Application folder %1 not found").arg(search));
 			return QDir();   // didn't find the search folder
 		}
 

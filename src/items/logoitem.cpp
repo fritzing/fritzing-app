@@ -280,7 +280,7 @@ bool LogoItem::checkImage(const QString & filename) {
 void LogoItem::prepLoadImageAux(const QString & fileName, bool addName)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->loadLogoImage(this, prop("shape"), m_aspectRatio, prop("lastfilename"), fileName, addName);
 	}
 }
@@ -647,7 +647,7 @@ void LogoItem::logoEntryAux(const QString & text)
 	m_inLogoEntry = QTime::currentTime().addSecs(1);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setProp(this, "logo", tr("text"), this->logo(), text, true);
 	}
 }
@@ -728,7 +728,7 @@ void LogoItem::widthEntry() {
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->resizeBoard(w, h, true);
 	}
 }
@@ -754,7 +754,7 @@ void LogoItem::setHeight(double h)
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->resizeBoard(w, h, true);
 	}
 }
@@ -783,7 +783,7 @@ QString LogoItem::layerName()
 double LogoItem::minWidth() {
 	double zoom = 1;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		zoom = infoGraphicsView->currentZoom() / 100;
 		if (zoom == 0) zoom = 1;
 	}
@@ -794,7 +794,7 @@ double LogoItem::minWidth() {
 double LogoItem::minHeight() {
 	double zoom = 1;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		zoom = infoGraphicsView->currentZoom() / 100;
 		if (zoom == 0) zoom = 1;
 	}
@@ -957,7 +957,7 @@ void BreadboardLogoItem::changeTextColor() {
 	if (newColor.name().compare(m_color, Qt::CaseInsensitive) == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setProp(this, "color", tr("color"), m_color, newColor.name(), true);
 	}
 }

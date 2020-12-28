@@ -24,15 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "svgpathparser.h"
 #include "svgpathlexer.h"
 
-SVGPathParser::SVGPathParser()
-{
-}
-
-SVGPathParser::~SVGPathParser()
-{
-}
-
-QVector<QVariant> & SVGPathParser::symStack() {
+QVector<QVariant> & SVGPathParser::symStack() noexcept {
 	return m_symStack;
 }
 
@@ -47,19 +39,15 @@ void SVGPathParser::reallocateStack()
 	m_stateStack.resize(size);
 }
 
-QString SVGPathParser::errorMessage() const
-{
-	return m_errorMessage;
-}
 
-QVariant SVGPathParser::result() const
+bool SVGPathParser::parse(SVGPathLexer* lexer)
 {
-	return m_result;
+	// call the reference version
+	return parse(*lexer);
 }
-
-bool SVGPathParser::parse(SVGPathLexer *lexer)
+bool SVGPathParser::parse(SVGPathLexer& lexer)
 {
-	const int INITIAL_STATE = 0;
+	constexpr int INITIAL_STATE = 0;
 
 	int yytoken = -1;
 
@@ -71,7 +59,7 @@ bool SVGPathParser::parse(SVGPathLexer *lexer)
 	while (true) {
 		const int state = m_stateStack.at(m_tos);
 		if (yytoken == -1 && - TERMINAL_COUNT != action_index [state])
-			yytoken = lexer->lex();
+			yytoken = lexer.lex();
 		int act = t_action (state, yytoken);
 		if (act == ACCEPT_STATE)
 			return true;
@@ -186,85 +174,85 @@ bool SVGPathParser::parse(SVGPathLexer *lexer)
 			} break;
 			case 69: {
 				//qDebug() << " got coordinate ";
-				m_symStack.append(lexer->currentNumber());
+				m_symStack.append(lexer.currentNumber());
 			}
 			break;
 
 			case 70: {
 				//qDebug() << " got nonnegative_number ";
 				//not presently checking this is non-negative
-				m_symStack.append(lexer->currentNumber());
+				m_symStack.append(lexer.currentNumber());
 			}
 			break;
 
 			case 71: {
 				//qDebug() << " got number ";
-				m_symStack.append(lexer->currentNumber());
+				m_symStack.append(lexer.currentNumber());
 			}
 			break;
 
 			case 72: {
 				//qDebug() << " got flag ";
 				//not presently checking this is only 0 or 1
-				m_symStack.append(lexer->currentNumber());
+				m_symStack.append(lexer.currentNumber());
 			}
 			break;
 
 			case 73: {
 				//qDebug() << "							got moveto command ";
-				m_symStack.append(lexer->currentCommand());
+				m_symStack.append(lexer.currentCommand());
 			}
 			break;
 
 			case 74: {
 				//qDebug() << "							got lineto command ";
-				m_symStack.append(lexer->currentCommand());
+				m_symStack.append(lexer.currentCommand());
 			}
 			break;
 
 			case 75: {
 				//qDebug() << "							got horizontal_lineto command ";
-				m_symStack.append(lexer->currentCommand());
+				m_symStack.append(lexer.currentCommand());
 			}
 			break;
 
 			case 76: {
 				//qDebug() << "							got vertical_lineto command ";
-				m_symStack.append(lexer->currentCommand());
+				m_symStack.append(lexer.currentCommand());
 			}
 			break;
 
 			case 77: {
 				//qDebug() << "							got curveto command ";
-				m_symStack.append(lexer->currentCommand());
+				m_symStack.append(lexer.currentCommand());
 			}
 			break;
 
 			case 78: {
 				//qDebug() << "							got smooth curveto command ";
-				m_symStack.append(lexer->currentCommand());
+				m_symStack.append(lexer.currentCommand());
 			}
 			break;
 
 			case 79: {
 				//qDebug() << "							got quadratic_bezier_curveto_command command ";
-				m_symStack.append(lexer->currentCommand());
+				m_symStack.append(lexer.currentCommand());
 			}
 			break;
 
 			case 80: {
 				//qDebug() << "							got smooth_quadratic_bezier_curveto_command command ";
-				m_symStack.append(lexer->currentCommand());
+				m_symStack.append(lexer.currentCommand());
 			}
 			break;
 			case 81: {
 				//qDebug() << "							got elliptical_arc_command ";
-				m_symStack.append(lexer->currentCommand());
+				m_symStack.append(lexer.currentCommand());
 			}
 			break;
 			case 82: {
 				//qDebug() << "							got closepath ";
-				m_symStack.append(lexer->currentCommand());
+				m_symStack.append(lexer.currentCommand());
 			}
 			break;
 			case 83: {

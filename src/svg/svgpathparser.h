@@ -32,17 +32,18 @@ class SVGPathLexer;
 class SVGPathParser: public SVGPathGrammar
 {
 public:
-	SVGPathParser();
-	~SVGPathParser();
+	SVGPathParser() = default;
+	~SVGPathParser() = default;
 
 	bool parse(SVGPathLexer *lexer);
-	QVector<QVariant> & symStack();
-	QString errorMessage() const;
-	QVariant result() const;
+    bool parse(SVGPathLexer& lexer);
+	QVector<QVariant> & symStack() noexcept;
+	constexpr const QString& errorMessage() const noexcept { return m_errorMessage; }
+	constexpr const QVariant& result() const noexcept { return m_result; }
 
 private:
 	void reallocateStack();
-	int m_tos;
+	int m_tos = 0;
 	QVector<int> m_stateStack;
 	QVector<QVariant> m_symStack;
 	QString m_errorMessage;

@@ -222,7 +222,7 @@ void BreadboardSketchWidget::addDefaultParts() {
 
 void BreadboardSketchWidget::showEvent(QShowEvent * event) {
 	SketchWidget::showEvent(event);
-	if (m_addDefaultParts && (m_addedDefaultPart != NULL)) {
+	if (m_addDefaultParts && (m_addedDefaultPart)) {
 		m_addDefaultParts = false;
 		QSizeF partSize = m_addedDefaultPart->size();
 		QSizeF vpSize = this->viewport()->size();

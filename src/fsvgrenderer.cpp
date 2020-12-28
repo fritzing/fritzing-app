@@ -66,8 +66,7 @@ void FSvgRenderer::cleanup() {
 }
 
 QByteArray FSvgRenderer::loadSvg(const QString & filename) {
-	LoadInfo loadInfo;
-	loadInfo.filename = filename;
+	LoadInfo loadInfo(filename);
 	return loadSvg(loadInfo);
 }
 
@@ -104,9 +103,7 @@ bool FSvgRenderer::loadSvgString(const QString & svg, QString & newSvg) {
 }
 
 QByteArray FSvgRenderer::loadSvg(const QByteArray & contents, const QString & filename, bool findNonConnectors) {
-	LoadInfo loadInfo;
-	loadInfo.filename = filename;
-	loadInfo.findNonConnectors = findNonConnectors;
+	LoadInfo loadInfo(filename, findNonConnectors);
 	return loadAux(contents, loadInfo);
 }
 
@@ -201,10 +198,6 @@ QByteArray FSvgRenderer::finalLoad(QByteArray & cleanContents, const QString & f
 
 bool FSvgRenderer::fastLoad(const QByteArray & contents) {
 	return QSvgRenderer::load(contents);
-}
-
-const QString & FSvgRenderer::filename() {
-	return m_filename;
 }
 
 QPixmap * FSvgRenderer::getPixmap(QSvgRenderer * renderer, QSize size)
@@ -342,19 +335,22 @@ void FSvgRenderer::initLegInfoAux(QDomElement & element, const LoadInfo & loadIn
 bool FSvgRenderer::initLegInfoAux(QDomElement & element, ConnectorInfo * connectorInfo)
 {
 	bool ok;
-	double sw = element.attribute("stroke-width").toDouble(&ok);
+	auto extractDoubleFromAttribute = [&element, &ok](const QString& attribute) {
+		return element.attribute(attribute).toDouble(&ok);
+	};
+	double sw = extractDoubleFromAttribute("stroke-width");
 	if (!ok) return false;
 
-	double x1 = element.attribute("x1").toDouble(&ok);
+	double x1 = extractDoubleFromAttribute("x1");
 	if (!ok) return false;
 
-	double y1 = element.attribute("y1").toDouble(&ok);
+	double y1 = extractDoubleFromAttribute("y1");
 	if (!ok) return false;
 
-	double x2 = element.attribute("x2").toDouble(&ok);
+	double x2 = extractDoubleFromAttribute("x2");
 	if (!ok) return false;
 
-	double y2 = element.attribute("y2").toDouble(&ok);
+	double y2 = extractDoubleFromAttribute("y2");
 	if (!ok) return false;
 
 	connectorInfo->legStrokeWidth = sw;
@@ -673,7 +669,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 	QMatrix elementMatrix = this->matrixForElement(connectorID);
 	QRectF r1 = elementMatrix.mapRect(bounds);
 
-	if (connectorInfo != NULL) {
+	if (connectorInfo) {
 		if (connectorInfo->gotCircle) {
 			QLineF l(0,0,connectorInfo->radius, 0);
 			QLineF lm = elementMatrix.map(l);

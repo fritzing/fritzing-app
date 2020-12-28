@@ -237,7 +237,7 @@ bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QStri
 
 	bool result = PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 
-	if (prop.compare("layer") == 0 && returnWidget != NULL) {
+	if (prop.compare("layer") == 0 && returnWidget) {
 		bool disabled = true;
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 		if (infoGraphicsView && infoGraphicsView->boardLayers() == 2) disabled = false;
@@ -332,7 +332,7 @@ void Pad::terminalPointEntry(const QString &) {
 	if (connectAt.compare(value) == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setProp(this, "connect to", tr("connect to"), connectAt, value, true);
 	}
 }

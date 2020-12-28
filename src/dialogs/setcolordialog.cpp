@@ -36,13 +36,17 @@ static const int BUTTON_WIDTH = 150;
 
 /////////////////////////////////////
 
-SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, QColor & standardColor, bool askPrefs, QWidget *parent) : QDialog(parent)
+SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, QColor & standardColor, bool askPrefs, QWidget *parent) : QDialog(parent),
+    m_message(message),
+    m_currentColor(currentColor),
+    m_standardColor(standardColor),
+    m_selectedColor(currentColor),
+    m_currentColorLabel(nullptr),
+    m_standardColorLabel(nullptr),
+    m_customColorLabel(nullptr),
+    m_selectedColorLabel(nullptr),
+    m_prefsCheckBox(nullptr)
 {
-	m_prefsCheckBox = NULL;
-	m_message = message;
-	m_currentColor = m_selectedColor = currentColor;
-	m_standardColor = standardColor;
-
 	this->setWindowTitle(tr("%1 Color...").arg(message));
 
 	QVBoxLayout * vLayout = new QVBoxLayout(this);
@@ -103,13 +107,6 @@ SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, Q
 	this->setLayout(vLayout);
 }
 
-SetColorDialog::~SetColorDialog() {
-}
-
-const QColor & SetColorDialog::selectedColor() {
-	return m_selectedColor;
-}
-
 void SetColorDialog::selectCurrent() {
 	setColor(m_currentColor);
 }
@@ -131,7 +128,7 @@ void SetColorDialog::selectCustom() {
 }
 
 bool SetColorDialog::isPrefsColor() {
-	if (m_prefsCheckBox == NULL) return false;
+	if (!m_prefsCheckBox) return false;
 
 	return m_prefsCheckBox->isChecked();
 }

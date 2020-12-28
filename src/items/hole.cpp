@@ -110,7 +110,7 @@ void Hole::setBoth(const QString & holeDiameter, const QString & ringThickness) 
 		if (svgIdLayer == NULL) continue;
 
 		setBothNonConnectors(this, svgIdLayer);
-		if (otherLayer != NULL) {
+		if (otherLayer) {
 			setBothNonConnectors(otherLayer, svgIdLayer);
 		}
 
@@ -277,7 +277,7 @@ bool Hole::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 
 void Hole::changeHoleSize(const QString & newSize) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		QRectF holeRect = getRect(holeSize());
 		QRectF newHoleRect = getRect(newSize);
 		infoGraphicsView->setHoleSize(this, "hole size", tr("hole size"), holeSize(), newSize, holeRect, newHoleRect, true);

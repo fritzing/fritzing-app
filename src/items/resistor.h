@@ -35,7 +35,7 @@ class Resistor : public Capacitor
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
 	Resistor(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
-	~Resistor();
+	~Resistor() = default;
 
 	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
@@ -70,7 +70,7 @@ protected:
 	QString m_ohms;
 	QString m_pinSpacing;
 	QString m_title;
-	bool m_changingPinSpacing;
+	bool m_changingPinSpacing = false;
 	QString m_iconSvgFile;
 	QString m_breadboardSvgFile;
 };

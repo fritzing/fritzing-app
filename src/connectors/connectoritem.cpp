@@ -229,7 +229,7 @@ parts editor support
 /////////////////////////////////////////////////////////
 
 static Bezier UndoBezier;
-static BezierDisplay * TheBezierDisplay = NULL;
+static BezierDisplay * TheBezierDisplay = nullptr;
 
 static const double StandardLegConnectorDrawEnabledLength = 5;  // pixels
 static const double StandardLegConnectorDetectLength = 9;       // pixels
@@ -287,14 +287,14 @@ QColor addColor(QColor & color, int offset)
 /////////////////////////////////////////////////////////////
 
 ConnectorItemAction::ConnectorItemAction(QAction * action) : QAction(action) {
-	m_connectorItem = NULL;
+	m_connectorItem = nullptr;
 	this->setText(action->text());
 	this->setStatusTip(action->statusTip());
 	this->setCheckable(action->isCheckable());
 }
 
 ConnectorItemAction::ConnectorItemAction(const QString & title, QObject * parent) : QAction(title, parent) {
-	m_connectorItem = NULL;
+	m_connectorItem = nullptr;
 }
 
 void ConnectorItemAction::setConnectorItem(ConnectorItem * c) {
@@ -308,18 +308,13 @@ ConnectorItem * ConnectorItemAction::connectorItem() {
 /////////////////////////////////////////////////////////
 
 ConnectorItem::ConnectorItem( Connector * connector, ItemBase * attachedTo )
-	: NonConnectorItem(attachedTo)
+	: NonConnectorItem(attachedTo),
+    m_connector(connector),
+    m_overConnectorItem(nullptr)
 {
 	// initialize m_connectorT, otherwise will trigger qWarning("QLine::unitVector: New line does not have unit length");
 	// TODO: figure out why paint is being called with m_connectorT not initialized
-	m_groundFillSeed = false;
-	m_connectorDetectT = m_connectorDrawT = 0;
-	m_draggingCurve = m_draggingLeg = m_rubberBandLeg = m_bigDot = m_hybrid = false;
-	m_hoverEnterSpaceBarWasPressed = m_spaceBarWasPressed = false;
-	m_overConnectorItem = NULL;
-	m_connectorHovering = false;
-	m_connector = connector;
-	if (connector != NULL) {
+	if (connector) {
 		connector->addViewItem(this);
 	}
 	setAcceptHoverEvents(true);
@@ -334,12 +329,12 @@ ConnectorItem::~ConnectorItem() {
 	m_equalPotentialDisplayItems.removeOne(this);
 	//DebugDialog::debug(QString("deleting connectorItem %1").arg((long) this, 0, 16));
 	foreach (ConnectorItem * connectorItem, m_connectedTo) {
-		if (connectorItem != NULL) {
+		if (connectorItem) {
 			//DebugDialog::debug(QString("temp remove %1 %2").arg(this->attachedToID()).arg(connectorItem->attachedToID()));
 			connectorItem->tempRemove(this, this->attachedToID() != connectorItem->attachedToID());
 		}
 	}
-	if (this->connector() != NULL) {
+	if (this->connector()) {
 		this->connector()->removeViewItem(this);
 	}
 	clearCurves();
@@ -364,7 +359,7 @@ void ConnectorItem::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) {
 	*/
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL && infoGraphicsView->spaceBarIsPressed()) {
+	if (infoGraphicsView && infoGraphicsView->spaceBarIsPressed()) {
 		m_hoverEnterSpaceBarWasPressed = true;
 		event->ignore();
 		return;
@@ -375,14 +370,14 @@ void ConnectorItem::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) {
 	bool setDefaultCursor = true;
 	m_hoverEnterSpaceBarWasPressed = false;
 	setHoverColor();
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->hoverEnterConnectorItem(event, this);
 		if (m_rubberBandLeg) {
 			updateLegCursor(event->pos(), event->modifiers());
 			setDefaultCursor = false;
 		}
 	}
-	if (this->m_attachedTo != NULL) {
+	if (this->m_attachedTo) {
 		if (this->attachedToItemType() == ModelPart::Wire) {
 			updateWireCursor(event->modifiers());
 			setDefaultCursor = false;
@@ -402,13 +397,13 @@ void ConnectorItem::hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) {
 	QList<ConnectorItem *> visited;
 	restoreColor(visited);
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->hoverLeaveConnectorItem(event, this);
 	}
 
 	CursorMaster::instance()->removeCursor(this);
 
-	if (this->m_attachedTo != NULL) {
+	if (this->m_attachedTo) {
 		m_attachedTo->hoverLeaveConnectorItem(event, this);
 	}
 
@@ -422,7 +417,7 @@ void ConnectorItem::hoverMoveEvent ( QGraphicsSceneHoverEvent * event ) {
 		return;
 	}
 
-	if (this->m_attachedTo != NULL) {
+	if (this->m_attachedTo) {
 		m_attachedTo->hoverMoveConnectorItem(event, this);
 	}
 
@@ -448,7 +443,7 @@ void ConnectorItem::connectorHover(ItemBase * itemBase, bool hovering) {
 		QList<ConnectorItem *> visited;
 		restoreColor(visited);
 	}
-	if (this->m_attachedTo != NULL) {
+	if (this->m_attachedTo) {
 		m_attachedTo->connectorHover(this, itemBase, hovering);
 	}
 }
@@ -464,7 +459,7 @@ void ConnectorItem::connectTo(ConnectorItem * connected) {
 	//DebugDialog::debug(QString("connect to cc:%4 this:%1 to:%2 %3").arg((long) this, 0, 16).arg((long) connected, 0, 16).arg(connected->attachedTo()->modelPartShared()->title()).arg(m_connectedTo.count()) );
 	QList<ConnectorItem *> visited;
 	restoreColor(visited);
-	if (m_attachedTo != NULL) {
+	if (m_attachedTo) {
 		m_attachedTo->connectionChange(this, connected, true);
 	}
 }
@@ -475,7 +470,7 @@ ConnectorItem * ConnectorItem::removeConnection(ItemBase * itemBase) {
 		if (m_connectedTo[i]->attachedTo() == itemBase) {
 			ConnectorItem * removed = m_connectedTo[i];
 			m_connectedTo.removeAt(i);
-			if (m_attachedTo != NULL) {
+			if (m_attachedTo) {
 				m_attachedTo->connectionChange(this, removed, false);
 			}
 			restoreColor(visited);
@@ -487,11 +482,11 @@ ConnectorItem * ConnectorItem::removeConnection(ItemBase * itemBase) {
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 void ConnectorItem::removeConnection(ConnectorItem * connectedItem, bool emitChange) {
-	if (connectedItem == NULL) return;
+	if (!connectedItem) return;
 
 	m_connectedTo.removeOne(connectedItem);
 	QList<ConnectorItem *> visited;
@@ -579,7 +574,7 @@ void ConnectorItem::restoreColor(QList<ConnectorItem *> & visited)
 }
 
 void ConnectorItem::setConnectedColor() {
-	if (m_attachedTo == NULL) return;
+	if (!m_attachedTo) return;
 
 	QBrush brush;
 	QPen pen;
@@ -589,7 +584,7 @@ void ConnectorItem::setConnectedColor() {
 }
 
 void ConnectorItem::setNormalColor() {
-	if (m_attachedTo == NULL) return;
+	if (!m_attachedTo) return;
 
 	QBrush brush;
 	QPen pen;
@@ -599,7 +594,7 @@ void ConnectorItem::setNormalColor() {
 }
 
 void ConnectorItem::setUnconnectedColor() {
-	if (m_attachedTo == NULL) return;
+	if (!m_attachedTo) return;
 
 	QBrush brush;
 	QPen pen;
@@ -609,7 +604,7 @@ void ConnectorItem::setUnconnectedColor() {
 }
 
 void ConnectorItem::setHoverColor() {
-	if (m_attachedTo == NULL) return;
+	if (!m_attachedTo) return;
 
 	QBrush brush;
 	QPen pen;
@@ -655,10 +650,10 @@ void ConnectorItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
 			m_draggingCurve = false;
 			if (TheBezierDisplay) {
 				delete TheBezierDisplay;
-				TheBezierDisplay = NULL;
+				TheBezierDisplay = nullptr;
 			}
 
-			if (infoGraphicsView != NULL) {
+			if (infoGraphicsView) {
 				infoGraphicsView->prepLegCurveChange(this, m_draggingLegIndex, &UndoBezier, m_legCurves.at(m_draggingLegIndex), false);
 			}
 
@@ -668,7 +663,7 @@ void ConnectorItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
 		if (m_oldPolygon.count() < m_legPolygon.count()) {
 			// we inserted a bendpoint
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView != NULL) {
+			if (infoGraphicsView) {
 				infoGraphicsView->prepLegBendpointChange(
 				    this,
 				    m_oldPolygon.count(),
@@ -685,17 +680,17 @@ void ConnectorItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
 		}
 
 		bool changeConnections = m_draggingLegIndex == m_legPolygon.count() - 1;
-		if (to != NULL && changeConnections) {
+		if (to && changeConnections) {
 			// center endpoint in the target connectorItem
-			reposition(to->sceneAdjustedTerminalPoint(NULL), m_draggingLegIndex);
+			reposition(to->sceneAdjustedTerminalPoint(nullptr), m_draggingLegIndex);
 		}
-		if (infoGraphicsView != NULL) {
+		if (infoGraphicsView) {
 			infoGraphicsView->prepLegBendpointMove(this, m_draggingLegIndex, mapToScene(m_oldPolygon.at(m_draggingLegIndex)), mapToScene(m_legPolygon.at(m_draggingLegIndex)), to, changeConnections);
 		}
 		return;
 	}
 
-	if (this->m_attachedTo != NULL && m_attachedTo->acceptsMouseReleaseConnectorEvent(this, event)) {
+	if (this->m_attachedTo && m_attachedTo->acceptsMouseReleaseConnectorEvent(this, event)) {
 		m_attachedTo->mouseReleaseConnectorEvent(this, event);
 		return;
 	}
@@ -723,7 +718,7 @@ void ConnectorItem::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) {
 		return;
 	}
 
-	if (this->m_attachedTo != NULL && m_attachedTo->acceptsMouseDoubleClickConnectorEvent(this, event)) {
+	if (this->m_attachedTo && m_attachedTo->acceptsMouseDoubleClickConnectorEvent(this, event)) {
 		m_attachedTo->mouseDoubleClickConnectorEvent(this);
 		return;
 	}
@@ -736,7 +731,7 @@ void ConnectorItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
 	if (m_rubberBandLeg && m_draggingLeg) {
 		if (m_draggingCurve) {
 			Bezier * bezier = m_legCurves.at(m_draggingLegIndex);
-			if (bezier != NULL && !bezier->isEmpty()) {
+			if (bezier && !bezier->isEmpty()) {
 				prepareGeometryChange();
 				bezier->recalc(event->pos());
 				calcConnectorEnd();
@@ -792,7 +787,7 @@ void ConnectorItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
 		return;
 	}
 
-	if (this->m_attachedTo != NULL && m_attachedTo->acceptsMouseMoveConnectorEvent(this, event)) {
+	if (this->m_attachedTo && m_attachedTo->acceptsMouseMoveConnectorEvent(this, event)) {
 		m_attachedTo->mouseMoveConnectorEvent(this, event);
 		return;
 	}
@@ -817,7 +812,7 @@ void ConnectorItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
 	clearEqualPotentialDisplay();
 
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics != NULL && infographics->spaceBarIsPressed()) {
+	if (infographics && infographics->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
@@ -832,11 +827,11 @@ void ConnectorItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
 		//connectorItem->debugInfo("display eqp");
 	}
 
-	if (m_rubberBandLeg && this->m_attachedTo != NULL && m_attachedTo->acceptsMousePressLegEvent(this, event)) {
+	if (m_rubberBandLeg && this->m_attachedTo && m_attachedTo->acceptsMousePressLegEvent(this, event)) {
 		if (legMousePressEvent(event)) return;
 	}
 
-	if (this->m_attachedTo != NULL && m_attachedTo->acceptsMousePressConnectorEvent(this, event)) {
+	if (this->m_attachedTo && m_attachedTo->acceptsMousePressConnectorEvent(this, event)) {
 		m_attachedTo->mousePressConnectorEvent(this, event);
 		return;
 	}
@@ -863,7 +858,7 @@ void ConnectorItem::attachedMoved(bool includeRatsnest, QList<ConnectorItem *> &
 	allTo.remove(this);
 	foreach (ConnectorItem * toConnectorItem, allTo) {
 		ItemBase * itemBase = toConnectorItem->attachedTo();
-		if (itemBase == NULL) continue;
+		if (!itemBase) continue;
 		if (!itemBase->isVisible()) {
 			//this->debugInfo("continue");
 			//itemBase->debugInfo("    ");
@@ -878,7 +873,7 @@ void ConnectorItem::attachedMoved(bool includeRatsnest, QList<ConnectorItem *> &
 }
 
 ConnectorItem * ConnectorItem::firstConnectedToIsh() {
-	if (m_connectedTo.count() <= 0) return NULL;
+	if (m_connectedTo.count() <= 0) return nullptr;
 
 	foreach (ConnectorItem * connectorItem, m_connectedTo) {
 		if (connectorItem->attachedTo()->getRatsnest()) continue;
@@ -896,7 +891,7 @@ ConnectorItem * ConnectorItem::firstConnectedToIsh() {
 		return connectorItem;
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 void ConnectorItem::setTerminalPoint(QPointF p) {
@@ -917,10 +912,10 @@ QPointF ConnectorItem::adjustedTerminalPoint() {
 
 QPointF ConnectorItem::sceneAdjustedTerminalPoint(ConnectorItem * connectee) {
 
-	if ((connectee != NULL) && !m_circular && !m_shape.isEmpty() && (connectee->attachedToItemType() == ModelPart::Wire)) {
+	if (connectee && !m_circular && !m_shape.isEmpty() && (connectee->attachedToItemType() == ModelPart::Wire)) {
 		Wire * wire = qobject_cast<Wire *>(connectee->attachedTo());
-		if ((wire != NULL) && !wire->getRatsnest()) {
-			QPointF anchor = wire->otherConnector(connectee)->sceneAdjustedTerminalPoint(NULL);
+		if (wire && !wire->getRatsnest()) {
+			QPointF anchor = wire->otherConnector(connectee)->sceneAdjustedTerminalPoint(nullptr);
 			double newX = 0, newY = 0, newDistance = MAX_DOUBLE;
 			int count = m_shape.elementCount();
 
@@ -932,8 +927,10 @@ QPointF ConnectorItem::sceneAdjustedTerminalPoint(ConnectorItem * connectee) {
 				}
 				else {
 					QPointF current = this->mapToScene(QPointF(el));
-					double candidateX, candidateY, candidateDistance;
-					bool atEndpoint;
+					double candidateX = 0.0;
+                    double candidateY = 0.0;
+                    double candidateDistance = 0.0;
+					bool atEndpoint = false;
 					GraphicsUtils::distanceFromLine(anchor.x(), anchor.y(), prev.x(), prev.y(), current.x(), current.y(),
 					                                candidateX, candidateY, candidateDistance, atEndpoint);
 					if (candidateDistance < newDistance) {
@@ -1019,79 +1016,79 @@ void ConnectorItem::setOverConnectorItem(ConnectorItem * connectorItem) {
 
 
 const QString & ConnectorItem::connectorSharedID() {
-	if (m_connector == NULL) return ___emptyString___;
+	if (!m_connector) return ___emptyString___;
 
 	return m_connector->connectorSharedID();
 }
 
 const QString & ConnectorItem::connectorSharedReplacedby() {
-	if (m_connector == NULL) return ___emptyString___;
+	if (!m_connector) return ___emptyString___;
 
 	return m_connector->connectorSharedReplacedby();
 }
 
 ErcData * ConnectorItem::connectorSharedErcData() {
-	if (m_connector == NULL) return NULL;
+	if (!m_connector) return nullptr;
 
 	return m_connector->connectorSharedErcData();
 }
 
 const QString & ConnectorItem::connectorSharedName() {
-	if (m_connector == NULL) return ___emptyString___;
+	if (!m_connector) return ___emptyString___;
 
 	return m_connector->connectorSharedName();
 }
 
 const QString & ConnectorItem::connectorSharedDescription() {
-	if (m_connector == NULL) return ___emptyString___;
+	if (!m_connector) return ___emptyString___;
 
 	return m_connector->connectorSharedDescription();
 }
 
 const QString & ConnectorItem::busID() {
-	if (m_connector == NULL) return ___emptyString___;
+	if (!m_connector) return ___emptyString___;
 
 	return m_connector->busID();
 }
 
 ModelPartShared * ConnectorItem::modelPartShared() {
-	if (m_attachedTo == NULL) return NULL;
+	if (!m_attachedTo) return nullptr;
 
 	return m_attachedTo->modelPartShared();
 }
 
 ModelPart * ConnectorItem::modelPart() {
-	if (m_attachedTo == NULL) return NULL;
+	if (!m_attachedTo) return nullptr;
 
 	return m_attachedTo->modelPart();
 }
 
 Bus * ConnectorItem::bus() {
-	if (m_connector == NULL) return NULL;
+	if (!m_connector) return nullptr;
 
 	return m_connector->bus();
 }
 
 ViewLayer::ViewLayerID ConnectorItem::attachedToViewLayerID() {
-	if (m_attachedTo == NULL) return ViewLayer::UnknownLayer;
+	if (!m_attachedTo) return ViewLayer::UnknownLayer;
 
 	return m_attachedTo->viewLayerID();
 }
 
 ViewLayer::ViewLayerPlacement ConnectorItem::attachedToViewLayerPlacement() {
-	if (m_attachedTo == NULL) return ViewLayer::UnknownPlacement;
+	if (!m_attachedTo) return ViewLayer::UnknownPlacement;
 
 	return m_attachedTo->viewLayerPlacement();
 }
 
 ViewLayer::ViewID ConnectorItem::attachedToViewID() {
-	if (m_attachedTo == NULL) return ViewLayer::UnknownView;
+	if (!m_attachedTo) return ViewLayer::UnknownView;
 
 	return m_attachedTo->viewID();
 }
 
 Connector::ConnectorType ConnectorItem::connectorType() {
-	if (m_connector == NULL) return Connector::Unknown;
+	if (!m_connector) return Connector::Unknown;
 
 	return m_connector->connectorType();
 }
@@ -1135,7 +1132,7 @@ void ConnectorItem::saveInstance(QXmlStreamWriter & writer) {
 			writer.writeEndElement();
 
 			Bezier * bezier = m_legCurves.at(i);
-			if (bezier == NULL) {
+			if (!bezier) {
 				writer.writeStartElement("bezier");
 				writer.writeEndElement();
 			}
@@ -1189,7 +1186,7 @@ Wire * ConnectorItem::directlyWiredTo(ConnectorItem * source, ConnectorItem * ta
 }
 
 Wire * ConnectorItem::directlyWiredToAux(ConnectorItem * source, ConnectorItem * target, ViewGeometry::WireFlags flags, QList<ConnectorItem *> & visited) {
-	if (visited.contains(source)) return NULL;
+	if (visited.contains(source)) return nullptr;
 
 	QList<ConnectorItem *> equals;
 	equals << source;
@@ -1206,7 +1203,7 @@ Wire * ConnectorItem::directlyWiredToAux(ConnectorItem * source, ConnectorItem *
 	foreach (ConnectorItem * fromItem, equals) {
 		foreach (ConnectorItem * toConnectorItem, fromItem->m_connectedTo) {
 			ItemBase * toItem = toConnectorItem->attachedTo();
-			if (toItem == NULL) {
+			if (!toItem) {
 				continue;  // shouldn't happen
 			}
 
@@ -1238,7 +1235,7 @@ Wire * ConnectorItem::directlyWiredToAux(ConnectorItem * source, ConnectorItem *
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 bool ConnectorItem::isConnectedToPart() {
@@ -1249,7 +1246,7 @@ bool ConnectorItem::isConnectedToPart() {
 	ConnectorItem * thisCrossConnectorItem = this->getCrossLayerConnectorItem();
 	QList<ConnectorItem *> busConnectedItems;
 	Bus * b = bus();
-	if (b != NULL) {
+	if (b) {
 		attachedTo()->busConnectorItems(b, this, busConnectedItems);
 	}
 
@@ -1280,7 +1277,7 @@ bool ConnectorItem::isConnectedToPart() {
 		}
 
 		ConnectorItem * crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
-		if (crossConnectorItem != NULL) {
+		if (crossConnectorItem) {
 			if (!tempItems.contains(crossConnectorItem)) {
 				tempItems.append(crossConnectorItem);
 			}
@@ -1293,7 +1290,7 @@ bool ConnectorItem::isConnectedToPart() {
 		}
 
 		Bus * bus = connectorItem->bus();
-		if (bus != NULL) {
+		if (bus) {
 			QList<ConnectorItem *> busConnectedItems;
 			connectorItem->attachedTo()->busConnectorItems(bus, connectorItem, busConnectedItems);
 			foreach (ConnectorItem * busConnectedItem, busConnectedItems) {
@@ -1307,54 +1304,68 @@ bool ConnectorItem::isConnectedToPart() {
 	return false;
 }
 
-void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> & connectorItems, bool crossLayers, ViewGeometry::WireFlags skipFlags) {
-	// collects all the connectors at the same potential
-	// allows direct connections or wired connections
-
-	//DebugDialog::debug("__________________");
-
+/**
+ * Starting from the set of connectors supplied, build and return a list of all
+ * of the connectors that are wired together
+ *
+ * Allows direct or wired connections
+ * @brief collect all the connectors at the same potential
+ * @param[in,out] connectorItems start of list of connected items
+ * @param[in] crossLayers follow connections accross layers
+ * @param[in] skipFlags filter for the types of wires that are not to be included
+ */
+void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> &connectorItems,
+										  bool crossLayers, ViewGeometry::WireFlags skipFlags)
+{
+	// take a local (temporary working) copy of the supplied list, and wipe the original
 	QList<ConnectorItem *> tempItems = connectorItems;
 	connectorItems.clear();
 
 	for (int i = 0; i < tempItems.count(); i++) {
-		ConnectorItem * connectorItem = tempItems[i];
-		//connectorItem->debugInfo("testing eqp");
+		ConnectorItem *connectorItem = tempItems[i];
 
-		Wire * fromWire = (connectorItem->attachedToItemType() == ModelPart::Wire) ? qobject_cast<Wire *>(connectorItem->attachedTo()) : NULL;
-		if (fromWire != NULL) {
+		Wire *fromWire = (connectorItem->attachedToItemType() == ModelPart::Wire)
+						 ? qobject_cast<Wire *>(connectorItem->attachedTo())
+						 : nullptr;
+		if (fromWire) {
 			if (fromWire->hasAnyFlag(skipFlags)) {
 				// don't add this kind of wire
 				continue;
 			}
-		}
-		else {
+		} else {
 			if (crossLayers) {
-				ConnectorItem * crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
-				if (crossConnectorItem != NULL) {
+				ConnectorItem *crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
+				if (crossConnectorItem) {
 					if (!tempItems.contains(crossConnectorItem)) {
 						tempItems.append(crossConnectorItem);
 					}
 				}
 			}
-		}
+		} // end else not (fromWire)
 
 		// this one's a keeper
 		connectorItems.append(connectorItem);
-		//connectorItem->debugInfo("collect");
 
-		foreach (ConnectorItem * cto, connectorItem->connectedToItems()) {
-			if (tempItems.contains(cto)) continue;
+		foreach (ConnectorItem *cto, connectorItem->connectedToItems()) {
+			if (tempItems.contains(cto)) {
+				continue;
+			}
 
-			if ((skipFlags & ViewGeometry::NormalFlag) && (fromWire == NULL) && (cto->attachedToItemType() != ModelPart::Wire)) {
+			if ((skipFlags & ViewGeometry::NormalFlag)
+				&& (!fromWire)
+				&& (cto->attachedToItemType() != ModelPart::Wire)) {
 				// direct (part-to-part) connections not allowed
 				continue;
 			}
 
+			// add `approved` connected items to the list being processed
 			tempItems.append(cto);
-		}
+		} // end foreach (ConnectorItem *cto, connectorItem->connectedToItems())
 
-		Bus * bus = connectorItem->bus();
-		if (bus != NULL) {
+		// When the kept connector item is part of a bus, include all of the other
+		// connectors on the bus in the list being processed
+		Bus *bus = connectorItem->bus();
+		if (bus) {
 			QList<ConnectorItem *> busConnectedItems;
 			connectorItem->attachedTo()->busConnectorItems(bus, connectorItem, busConnectedItems);
 #ifndef QT_NO_DEBUG
@@ -1364,14 +1375,14 @@ void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> & connectorItem
 				//connectorItem->attachedTo()->busConnectorItems(bus, busConnectedItems);
 			}
 #endif
-			foreach (ConnectorItem * busConnectedItem, busConnectedItems) {
+			foreach (ConnectorItem *busConnectedItem, busConnectedItems) {
 				if (!tempItems.contains(busConnectedItem)) {
 					tempItems.append(busConnectedItem);
 				}
 			}
-		}
-	}
-}
+		} // end if (bus)
+	} // end for (int i = 0; i < tempItems.count(); i++)
+} // end void ConnectorItem::collectEqualPotential(…)
 
 void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<ConnectorItem *> & partsConnectors, bool includeSymbols, ViewLayer::ViewLayerPlacement viewLayerPlacement)
 {
@@ -1406,9 +1417,11 @@ void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<
 		case ModelPart::Board:
 		case ModelPart::ResizableBoard:
 		case ModelPart::Via:
+		case ModelPart::Breadboard:
 			collectPart(connectorItem, partsConnectors, viewLayerPlacement);
 			break;
 		default:
+			//Discard Wires, Notes, Logos, Holes, Rulers, Spaces and Unknowns
 			break;
 		}
 	}
@@ -1418,7 +1431,7 @@ void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorIt
 	if (partsConnectors.contains(connectorItem)) return;
 
 	ConnectorItem * crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
-	if (crossConnectorItem != NULL) {
+	if (crossConnectorItem) {
 		if (partsConnectors.contains(crossConnectorItem)) {
 			return;
 		}
@@ -1524,7 +1537,7 @@ void ConnectorItem::updateTooltip() {
 }
 
 void ConnectorItem::clearConnector() {
-	m_connector = NULL;
+	m_connector = nullptr;
 }
 
 
@@ -1569,10 +1582,10 @@ bool ConnectorItem::isEverVisible() {
 
 bool ConnectorItem::isGrounded(ConnectorItem * c1, ConnectorItem * c2) {
 	QList<ConnectorItem *> connectorItems;
-	if (c1 != NULL) {
+	if (c1) {
 		connectorItems.append(c1);
 	}
-	if (c2 != NULL) {
+	if (c2) {
 		connectorItems.append(c2);
 	}
 	collectEqualPotential(connectorItems, true, ViewGeometry::NoFlag);
@@ -1595,9 +1608,9 @@ bool ConnectorItem::isGrounded() {
 }
 
 ConnectorItem * ConnectorItem::getCrossLayerConnectorItem() {
-	if (m_connector == NULL) return NULL;
-	if (m_attachedTo == NULL) return NULL;
-	if (m_attachedTo->viewID() != ViewLayer::PCBView) return NULL;
+	if (!m_connector) return nullptr;
+	if (!m_attachedTo) return nullptr;
+	if (m_attachedTo->viewID() != ViewLayer::PCBView) return nullptr;
 
 	ViewLayer::ViewLayerID viewLayerID = attachedToViewLayerID();
 	if (viewLayerID == ViewLayer::Copper0) {
@@ -1607,7 +1620,7 @@ ConnectorItem * ConnectorItem::getCrossLayerConnectorItem() {
 		return m_connector->connectorItemByViewLayerID(this->attachedToViewID(), ViewLayer::Copper0);
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 bool ConnectorItem::isInLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
@@ -1615,7 +1628,7 @@ bool ConnectorItem::isInLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement)
 }
 
 bool ConnectorItem::isCrossLayerConnectorItem(ConnectorItem * candidate) {
-	if (candidate == NULL) return false;
+	if (!candidate) return false;
 
 	ConnectorItem * cross = getCrossLayerConnectorItem();
 	return cross == candidate;
@@ -1665,7 +1678,7 @@ void ConnectorItem::paintLeg(QPainter * painter)
 
 	bool hasCurves = false;
 	foreach (Bezier * bezier, m_legCurves) {
-		if (bezier != NULL && !bezier->isEmpty()) {
+		if (bezier && !bezier->isEmpty()) {
 			hasCurves = true;
 			break;
 		}
@@ -1697,7 +1710,7 @@ void ConnectorItem::paintLeg(QPainter * painter)
 
 	// now draw the connector
 	Bezier * bezier = m_legCurves.at(m_legCurves.count() - 2);
-	bool connectorIsCurved = (bezier != NULL && !bezier->isEmpty());
+	bool connectorIsCurved = (bezier && !bezier->isEmpty());
 	Bezier left, right;
 	QPainterPath path;
 	if (connectorIsCurved) {
@@ -1756,7 +1769,7 @@ void ConnectorItem::paintLeg(QPainter * painter, bool hasCurves)
 
 ConnectorItem * ConnectorItem::chooseFromSpec(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 	ConnectorItem * crossConnectorItem = getCrossLayerConnectorItem();
-	if (crossConnectorItem == NULL) return this;
+	if (!crossConnectorItem) return this;
 
 	ViewLayer::ViewLayerID basis = ViewLayer::Copper0;
 	switch (viewLayerPlacement) {
@@ -1789,7 +1802,7 @@ bool ConnectorItem::connectedToWires() {
 	}
 
 	ConnectorItem * crossConnectorItem = getCrossLayerConnectorItem();
-	if (crossConnectorItem == NULL) return false;
+	if (!crossConnectorItem) return false;
 
 	foreach (ConnectorItem * toConnectorItem, crossConnectorItem->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() == ModelPart::Wire) {
@@ -1805,16 +1818,16 @@ void ConnectorItem::displayRatsnest(QList<ConnectorItem *> & partConnectorItems,
 	bool gotFormerColor = false;
 	QColor formerColor;
 
-	VirtualWire * vw = NULL;
+	VirtualWire * vw = nullptr;
 	foreach (ConnectorItem * fromConnectorItem, partConnectorItems) {
 		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
 			vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
-			if (vw != NULL) break;
+			if (vw) break;
 		}
-		if (vw != NULL) break;
+		if (vw) break;
 	}
 
-	if (vw != NULL) {
+	if (vw) {
 		formerColorWasNamed = vw->colorWasNamed();
 		formerColor = vw->color();
 		gotFormerColor = true;
@@ -1822,7 +1835,7 @@ void ConnectorItem::displayRatsnest(QList<ConnectorItem *> & partConnectorItems,
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) return;
+	if (!infoGraphicsView) return;
 
 	if (partConnectorItems.count() < 2) return;
 
@@ -1856,11 +1869,11 @@ void ConnectorItem::clearRatsnestDisplay(QList<ConnectorItem *> & connectorItems
 
 	QSet<VirtualWire *> ratsnests;
 	foreach (ConnectorItem * fromConnectorItem, connectorItems) {
-		if (fromConnectorItem == NULL) continue;
+		if (!fromConnectorItem) continue;
 
 		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
 			VirtualWire * vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
-			if (vw != NULL) {
+			if (vw) {
 				ratsnests.insert(vw);
 			}
 		}
@@ -1868,13 +1881,13 @@ void ConnectorItem::clearRatsnestDisplay(QList<ConnectorItem *> & connectorItems
 
 	foreach (VirtualWire * vw, ratsnests.values()) {
 		ConnectorItem * c1 = vw->connector0()->firstConnectedToIsh();
-		if (c1 != NULL) {
+		if (c1) {
 			vw->connector0()->tempRemove(c1, false);
 			c1->tempRemove(vw->connector0(), false);
 		}
 
 		ConnectorItem * c2 = vw->connector1()->firstConnectedToIsh();
-		if (c2 != NULL) {
+		if (c2) {
 			vw->connector1()->tempRemove(c2, false);
 			c2->tempRemove(vw->connector1(), false);
 		}
@@ -1902,11 +1915,11 @@ double ConnectorItem::calcClipRadius() {
 	}
 
 	if (m_effectively == EffectivelyCircular) {
-		double rad = rect().width() / 2;
-		return rad - (rad / 5);
+		double rad = rect().width() / 2.0;
+		return rad - (rad / 5.0);
 	}
 
-	return 0;
+	return 0.0;
 }
 
 bool ConnectorItem::isEffectivelyCircular() {
@@ -1917,7 +1930,7 @@ void ConnectorItem::debugInfo(const QString & msg)
 {
 
 #ifndef QT_NO_DEBUG
-	QPointF p = sceneAdjustedTerminalPoint(NULL);
+	QPointF p = sceneAdjustedTerminalPoint(nullptr);
 	QString s = QString("%1 cid:%2 cname:%3 title:%4 id:%5 type:%6 inst:%7 vlid:%8 vid:%9 spec:%10 flg:%11 hy:%12 bus:%13 r:%14 sw:%15 pos:(%16 %17)")
 	            .arg(msg)
 	            .arg(this->connectorSharedID())
@@ -1952,14 +1965,14 @@ double ConnectorItem::minDimension() {
 ConnectorItem * ConnectorItem::findConnectorUnder(bool useTerminalPoint, bool allowAlready, const QList<ConnectorItem *> & exclude, bool displayDragTooltip, ConnectorItem * other)
 {
 	QList<QGraphicsItem *> items = useTerminalPoint
-	                               ? this->scene()->items(this->sceneAdjustedTerminalPoint(NULL))
+	                               ? this->scene()->items(this->sceneAdjustedTerminalPoint(nullptr))
 	                               : this->scene()->items(mapToScene(this->rect()));  // only wires use rect
 	QList<ConnectorItem *> candidates;
 	// for the moment, take the topmost ConnectorItem that doesn't belong to me
 	foreach (QGraphicsItem * item, items) {
 		ConnectorItem * connectorItemUnder = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItemUnder == NULL) continue;
-		if (connectorItemUnder->connector() == NULL) continue;  // shouldn't happen
+		if (!connectorItemUnder) continue;
+		if (!connectorItemUnder->connector()) continue;  // shouldn't happen
 		if (attachedTo()->childItems().contains(connectorItemUnder)) continue;  // don't use own connectors
 		if (!this->connectionIsAllowed(connectorItemUnder)) {
 			continue;
@@ -1975,7 +1988,7 @@ ConnectorItem * ConnectorItem::findConnectorUnder(bool useTerminalPoint, bool al
 		candidates.append(connectorItemUnder);
 	}
 
-	ConnectorItem * candidate = NULL;
+	ConnectorItem * candidate = nullptr;
 	if (candidates.count() == 1) {
 		candidate = candidates[0];
 	}
@@ -1984,23 +1997,23 @@ ConnectorItem * ConnectorItem::findConnectorUnder(bool useTerminalPoint, bool al
 		candidate = candidates[0];
 	}
 
-	if (m_overConnectorItem != NULL && candidate != m_overConnectorItem) {
-		m_overConnectorItem->connectorHover(NULL, false);
+	if (m_overConnectorItem&& candidate != m_overConnectorItem) {
+		m_overConnectorItem->connectorHover(nullptr, false);
 	}
-	if (candidate != NULL && candidate != m_overConnectorItem) {
-		candidate->connectorHover(NULL, true);
+	if (candidate && candidate != m_overConnectorItem) {
+		candidate->connectorHover(nullptr, true);
 	}
 
 	m_overConnectorItem = candidate;
 
-	if (candidate == NULL) {
+	if (!candidate) {
 		if (this->connectorHovering()) {
-			this->connectorHover(NULL, false);
+			this->connectorHover(nullptr, false);
 		}
 	}
 	else {
 		if (!this->connectorHovering()) {
-			this->connectorHover(NULL, true);
+			this->connectorHover(nullptr, true);
 		}
 	}
 
@@ -2014,7 +2027,7 @@ ConnectorItem * ConnectorItem::findConnectorUnder(bool useTerminalPoint, bool al
 void ConnectorItem::displayTooltip(ConnectorItem * ci, ConnectorItem * other)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) return;
+	if (!infoGraphicsView) return;
 
 	// Activate tooltip for destination connector. based on a patch submitted by bryant.mairs
 	QString text;
@@ -2055,11 +2068,11 @@ void ConnectorItem::displayTooltip(ConnectorItem * ci, ConnectorItem * other)
 
 ConnectorItem * ConnectorItem::releaseDrag() {
 	ConnectorItem * result = m_overConnectorItem;
-	if (m_overConnectorItem != NULL) {
-		m_overConnectorItem->connectorHover(NULL, false);
+	if (m_overConnectorItem) {
+		m_overConnectorItem->connectorHover(nullptr, false);
 
 		// clean up
-		setOverConnectorItem(NULL);
+		setOverConnectorItem(nullptr);
 		clearConnectorHover();
 		QList<ConnectorItem *> visited;
 		restoreColor(visited);
@@ -2077,7 +2090,7 @@ void ConnectorItem::resetLeg(const QPolygonF & poly, bool relative, bool active,
 {
 	if (!m_rubberBandLeg) return;
 
-	ConnectorItem * target = NULL;
+	ConnectorItem * target = nullptr;
 	foreach (ConnectorItem * connectorItem, this->m_connectedTo) {
 		if (connectorItem->connectorType() == Connector::Female) {
 			target = connectorItem;
@@ -2085,7 +2098,7 @@ void ConnectorItem::resetLeg(const QPolygonF & poly, bool relative, bool active,
 		}
 	}
 
-	if (target == NULL) {
+	if (!target) {
 		setLeg(poly, relative, why);
 		return;
 	}
@@ -2103,7 +2116,7 @@ void ConnectorItem::resetLeg(const QPolygonF & poly, bool relative, bool active,
 
 	//DebugDialog::debug("connectorItem prepareGeometryChange 1");
 	prepareGeometryChange();
-	QPointF sceneNewLast = target->sceneAdjustedTerminalPoint(NULL);
+	QPointF sceneNewLast = target->sceneAdjustedTerminalPoint(nullptr);
 	QPointF sceneOldLast = poly.last();
 
 	for (int i = 1; i < m_legPolygon.count(); i++) {
@@ -2145,7 +2158,7 @@ QString ConnectorItem::makeLegSvg(QPointF offset, double dpi, double printerScal
 	for (int i = 1; i < m_legPolygon.count(); i++) {
 		QPointF p = m_legPolygon.at(i);
 		Bezier * bezier = m_legCurves.at(i - 1);
-		if (bezier == NULL || bezier->isEmpty()) {
+		if (!bezier || bezier->isEmpty()) {
 			data += "L";
 			data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
 		}
@@ -2234,7 +2247,7 @@ QPainterPath ConnectorItem::shapeAux(double width) const
 	path.moveTo(m_legPolygon.at(0));
 	for (int i = 1; i < m_legPolygon.count(); i++) {
 		Bezier * bezier = m_legCurves.at(i - 1);
-		if (bezier != NULL && !bezier->isEmpty()) {
+		if (bezier && !bezier->isEmpty()) {
 			path.cubicTo(bezier->cp0(), bezier->cp1(), m_legPolygon.at(i));
 		}
 		else {
@@ -2252,7 +2265,7 @@ void ConnectorItem::repositionTarget()
 	// this connector is connected to another part which is being dragged
 	foreach (ConnectorItem * connectorItem, this->m_connectedTo) {
 		if (connectorItem->connectorType() == Connector::Female) {
-			reposition(connectorItem->sceneAdjustedTerminalPoint(NULL), m_legPolygon.count() - 1);
+			reposition(connectorItem->sceneAdjustedTerminalPoint(nullptr), m_legPolygon.count() - 1);
 			break;
 		}
 	}
@@ -2280,7 +2293,7 @@ void ConnectorItem::repoly(const QPolygonF & poly, bool relative)
 
 	foreach (QPointF p, poly) {
 		m_legPolygon.append(relative ? p : mapFromScene(p));
-		m_legCurves.append(NULL);
+		m_legCurves.append(nullptr);
 	}
 	//foreach (QPointF p, m_legPolygon) DebugDialog::debug(QString("point a %1 %2").arg(p.x()).arg(p.y()));
 	calcConnectorEnd();
@@ -2302,7 +2315,7 @@ void ConnectorItem::calcConnectorEnd()
 	double detectlen = qMax(0.5, qMin(lineLen, StandardLegConnectorDetectLength));
 
 	Bezier * bezier = m_legCurves.at(m_legCurves.count() - 2);
-	if (bezier == NULL || bezier->isEmpty()) {
+	if (!bezier || bezier->isEmpty()) {
 		m_connectorDrawEnd = QPointF(p1 - QPointF(dx * drawlen / lineLen, dy * drawlen / lineLen));
 		m_connectorDetectEnd = QPointF(p1 - QPointF(dx * detectlen / lineLen, dy * detectlen / lineLen));
 		return;
@@ -2372,8 +2385,8 @@ void ConnectorItem::setRubberBandLeg(QColor color, double strokeWidth, QLineF pa
 	setPos(parentLine.p1());
 	m_legPolygon.append(QPointF(0,0));
 	m_legPolygon.append(parentLine.p2() - parentLine.p1());
-	m_legCurves.append(NULL);
-	m_legCurves.append(NULL);
+	m_legCurves.append(nullptr);
+	m_legCurves.append(nullptr);
 	m_legStrokeWidth = strokeWidth;
 	m_legColor = color;
 	reposition(m_attachedTo->mapToScene(parentLine.p2()), 1);
@@ -2414,7 +2427,7 @@ bool ConnectorItem::legMousePressEvent(QGraphicsSceneMouseEvent *event) {
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->prepLegSelection(this->attachedTo());
 	}
 
@@ -2436,7 +2449,7 @@ bool ConnectorItem::legMousePressEvent(QGraphicsSceneMouseEvent *event) {
 		if (curvyWiresIndicated(event->modifiers())) {
 			m_draggingLegIndex = bendpointIndex - 1;
 			Bezier * bezier = m_legCurves.at(m_draggingLegIndex);
-			if (bezier == NULL) {
+			if (!bezier) {
 				bezier = new Bezier();
 				m_legCurves.replace(m_draggingLegIndex, bezier);
 			}
@@ -2478,7 +2491,7 @@ bool ConnectorItem::legMousePressEvent(QGraphicsSceneMouseEvent *event) {
 ConnectorItem::CursorLocation ConnectorItem::findLocation(QPointF location, int & bendpointIndex) {
 	QPainterPath path;
 	Bezier * bezier = m_legCurves.at(m_legCurves.count() - 2);
-	if (bezier == NULL || bezier->isEmpty()) {
+	if (!bezier || bezier->isEmpty()) {
 		path.moveTo(m_connectorDetectEnd);
 		path.lineTo(m_legPolygon.last());
 	}
@@ -2500,7 +2513,7 @@ ConnectorItem::CursorLocation ConnectorItem::findLocation(QPointF location, int 
 		QPainterPath path;
 		path.moveTo(m_legPolygon.at(i));
 		Bezier * bezier = m_legCurves.at(i);
-		if (bezier != NULL && !bezier->isEmpty()) {
+		if (bezier && !bezier->isEmpty()) {
 			path.cubicTo(bezier->cp0(), bezier->cp1(), m_legPolygon.at(i + 1));
 		}
 		else {
@@ -2541,7 +2554,7 @@ void ConnectorItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setActiveConnectorItem(this);
 	}
 
@@ -2564,7 +2577,7 @@ void ConnectorItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 		QAction * addAction = menu.addAction(tr("Add bendpoint"));
 		addAction->setData(1);
 		Bezier * bezier = m_legCurves.at(bendpointIndex - 1);
-		if (bezier != NULL && !bezier->isEmpty()) {
+		if (bezier && !bezier->isEmpty()) {
 			QAction * straightenAction = menu.addAction(tr("Straighten curve"));
 			straightenAction->setData(2);
 		}
@@ -2575,7 +2588,7 @@ void ConnectorItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 			}
 			else if (selectedAction->data().toInt() == 2) {
 				InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-				if (infoGraphicsView != NULL) {
+				if (infoGraphicsView) {
 					Bezier newBezier;
 					infoGraphicsView->prepLegCurveChange(this, bendpointIndex - 1,bezier, &newBezier, true);
 				}
@@ -2610,7 +2623,7 @@ void ConnectorItem::insertBendpoint(QPointF p, int bendpointIndex)
 	m_oldPolygon = m_legPolygon;
 	insertBendpointAux(p, bendpointIndex);
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->prepLegBendpointChange(this, m_oldPolygon.count(), m_legPolygon.count(), bendpointIndex, p,
 		        &UndoBezier, m_legCurves.at(bendpointIndex - 1), m_legCurves.at(bendpointIndex), false);
 	}
@@ -2622,9 +2635,9 @@ Bezier * ConnectorItem::insertBendpointAux(QPointF p, int bendpointIndex)
 {
 	UndoBezier.clear();
 	m_legPolygon.insert(bendpointIndex, p);
-	m_legCurves.insert(bendpointIndex, NULL);
+	m_legCurves.insert(bendpointIndex, nullptr);
 	Bezier * bezier = m_legCurves.at(bendpointIndex - 1);
-	if (bezier == NULL || bezier->isEmpty()) return NULL;
+	if (!bezier || bezier->isEmpty()) return nullptr;
 
 	QPointF p0 = m_legPolygon.at(bendpointIndex - 1);
 	QPointF p1 = m_legPolygon.at(bendpointIndex + 1);
@@ -2636,7 +2649,7 @@ Bezier * ConnectorItem::insertBendpointAux(QPointF p, int bendpointIndex)
 	bezier->split(t, left, right);
 	replaceBezier(bendpointIndex - 1, &left);
 	replaceBezier(bendpointIndex, &right);
-	return NULL;
+	return nullptr;
 }
 
 void ConnectorItem::removeBendpoint(int bendpointIndex)
@@ -2665,7 +2678,7 @@ void ConnectorItem::removeBendpoint(int bendpointIndex)
 	if (bezier) delete bezier;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->prepLegBendpointChange(this, m_oldPolygon.count(), m_legPolygon.count(), bendpointIndex, p, &b0, &b1, &b2, false);
 	}
 
@@ -2677,7 +2690,7 @@ void ConnectorItem::removeBendpoint(int bendpointIndex)
 void ConnectorItem::clearCurves()
 {
 	foreach (Bezier * bezier, m_legCurves) {
-		if (bezier != NULL) delete bezier;
+		if (bezier) delete bezier;
 	}
 	m_legCurves.clear();
 }
@@ -2696,7 +2709,7 @@ void ConnectorItem::addLegBendpoint(int index, QPointF p, const Bezier * bezierL
 	prepareGeometryChange();
 
 	m_legPolygon.insert(index, p);
-	m_legCurves.insert(index, NULL);
+	m_legCurves.insert(index, nullptr);
 	replaceBezier(index - 1, bezierLeft);
 	replaceBezier(index, bezierRight);
 	calcConnectorEnd();
@@ -2732,7 +2745,7 @@ const QVector<Bezier *> & ConnectorItem::beziers()
 void ConnectorItem::replaceBezier(int index, const Bezier * newBezier)
 {
 	Bezier * bezier = m_legCurves.at(index);
-	if (bezier == NULL && newBezier == NULL) {
+	if (!bezier && !newBezier) {
 	}
 	else if (bezier && newBezier) {
 		bezier->copy(newBezier);
@@ -2774,7 +2787,7 @@ void ConnectorItem::updateWireCursor(Qt::KeyboardModifiers modifiers)
 		if (modifiers & altOrMetaModifier()) {
 			//DebugDialog::debug("uwc alt");
 			Wire * wire = qobject_cast<Wire *>(attachedTo());
-			if (wire != NULL && wire->canChainMultiple()) {
+			if (wire && wire->canChainMultiple()) {
 				//DebugDialog::debug("uwc make wire");
 				cursor = *CursorMaster::MakeWireCursor;
 			}
@@ -2786,7 +2799,7 @@ void ConnectorItem::updateWireCursor(Qt::KeyboardModifiers modifiers)
 
 void ConnectorItem::updateLegCursor(QPointF p, Qt::KeyboardModifiers modifiers)
 {
-	int bendpointIndex;
+	int bendpointIndex = 0;
 	CursorLocation cursorLocation = findLocation(p, bendpointIndex);
 	QCursor cursor;
 	switch (cursorLocation) {
@@ -2812,7 +2825,7 @@ void ConnectorItem::updateLegCursor(QPointF p, Qt::KeyboardModifiers modifiers)
 bool ConnectorItem::curvyWiresIndicated(Qt::KeyboardModifiers modifiers)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) return true;
+	if (!infoGraphicsView) return true;
 
 	return infoGraphicsView->curvyWiresIndicated(modifiers);
 }
@@ -2851,7 +2864,7 @@ void ConnectorItem::setGroundFillSeed(bool seed)
 
 ViewGeometry::WireFlags ConnectorItem::getSkipFlags() {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) return ViewGeometry::RatsnestFlag;
+	if (!infoGraphicsView) return ViewGeometry::RatsnestFlag;
 
 	return (ViewGeometry::RatsnestFlag | ViewGeometry::NormalFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::SchematicTraceFlag) ^ infoGraphicsView->getTraceFlag();
 }

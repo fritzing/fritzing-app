@@ -205,7 +205,7 @@ void PaletteItemBase::paintSelected(QPainter *painter, const QStyleOptionGraphic
 
 void PaletteItemBase::mousePressConnectorEvent(ConnectorItem * connectorItem, QGraphicsSceneMouseEvent * event) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->mousePressConnectorEvent(connectorItem, event);
 	}
 }
@@ -429,17 +429,12 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 	clearConnectorItemCache();
 
 	if (m_viewID == ViewLayer::PCBView && ViewLayer::isNonCopperLayer(m_viewLayerID)) {
-		//DebugDialog::debug(QString("skip connectors: %1 vid:%2 vlid:%3")
-		//				   .arg(this->title())
-		//				   .arg(m_viewID)
-		//				   .arg(m_viewLayerID)
-		//	);
 		// don't waste time
 		return;
 	}
 
 	foreach (Connector * connector, m_modelPart->connectors().values()) {
-		if (connector == NULL) continue;
+		if (!connector) continue;
 
 		//DebugDialog::debug(QString("id:%1 vid:%2 vlid:%3")
 		//				   .arg(connector->connectorSharedID())
@@ -449,7 +444,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 
 
 		SvgIdLayer * svgIdLayer = connector->fullPinInfo(m_viewID, m_viewLayerID);
-		if (svgIdLayer == NULL) {
+		if (!svgIdLayer) {
 			DebugDialog::debug(QString("svgidlayer fail %1 vid:%2 vlid:%3 %4")
 			                   .arg(connector->connectorSharedID())
 			                   .arg(m_viewID)
@@ -488,7 +483,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 	}
 
 	foreach (SvgIdLayer * svgIdLayer, renderer->setUpNonConnectors(viewLayerPlacement())) {
-		if (svgIdLayer == NULL) continue;
+		if (!svgIdLayer) continue;
 
 		NonConnectorItem * nonConnectorItem = new NonConnectorItem(this);
 
@@ -622,7 +617,7 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<Q
 
 	//DebugDialog::debug(QString("path: %1").arg(path));
 
-	QString svg = svgHash.value(path + xmlName, "");
+	QString svg = svgHash.value(path + xmlName + QString(m_viewLayerPlacement), "");
 	if (!svg.isEmpty()) return svg;
 
 	SvgFileSplitter splitter;
@@ -653,7 +648,7 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<Q
 		return "";
 	}
 	svg = splitter.elementString(xmlName);
-	svgHash.insert(path + xmlName, svg);
+	svgHash.insert(path + xmlName + QString(m_viewLayerPlacement), svg);
 	return svg;
 }
 
@@ -698,7 +693,7 @@ void PaletteItemBase::partPropertyEntry() {
 	if (lineEdit == NULL) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setProp(this, ModelPartShared::PartNumberPropertyName, "", m_modelPart->localProp(ModelPartShared::PartNumberPropertyName).toString(), lineEdit->text(), true);
 	}
 }

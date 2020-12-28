@@ -119,7 +119,7 @@ void Stripbit::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 void Stripbit::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL && infoGraphicsView->spaceBarIsPressed()) {
+	if (infoGraphicsView && infoGraphicsView->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
@@ -222,7 +222,7 @@ void Stripbit::hoverEnterEvent( QGraphicsSceneHoverEvent * event )
 	if (dynamic_cast<ItemBase *>(this->parentItem())->moveLock()) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL && infoGraphicsView->spaceBarIsPressed()) {
+	if (infoGraphicsView && infoGraphicsView->spaceBarIsPressed()) {
 		SpaceBarWasPressed = true;
 		return;
 	}
@@ -468,10 +468,10 @@ void Stripboard::addedToScene(bool temporary)
 			StripConnector * sc = getStripConnector(cx, cy);
 			bool vertical = name.contains("v");
 			if (vertical) {
-				if (sc->down != NULL) sc->down->setRemoved(true);
+				if (sc->down) sc->down->setRemoved(true);
 			}
 			else {
-				if (sc->right != NULL) sc->right->setRemoved(true);
+				if (sc->right) sc->right->setRemoved(true);
 			}
 		}
 	}
@@ -526,7 +526,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 		collectTo(affectedConnectors);
 
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infoGraphicsView != NULL) {
+		if (infoGraphicsView) {
 			QString changeType = (connect) ? tr("Restored") : tr("Cut") ;
 			QString changeText = tr("%1 %n strip(s)", "", changeCount).arg(changeType);
 			QList<ConnectorItem *> affected = affectedConnectors.toList();
@@ -596,21 +596,21 @@ void Stripboard::collectConnected(int ix, int iy, QList<ConnectorItem *> & conne
 
 	connected << sc->connectorItem;
 
-	if (sc->right != NULL && !sc->right->removed()) {
+	if (sc->right && !sc->right->removed()) {
 		collectConnected(ix + 1, iy, connected);
 
 	}
-	if (sc->down != NULL && !sc->down->removed()) {
+	if (sc->down && !sc->down->removed()) {
 		collectConnected(ix, iy + 1, connected);
 	}
 
 	StripConnector * left = ix > 0 ? getStripConnector(ix - 1, iy) : NULL;
-	if (left != NULL && left->right != NULL && !left->right->removed()) {
+	if (left && left->right && !left->right->removed()) {
 		collectConnected(ix - 1, iy, connected);
 	}
 
 	StripConnector * up = iy > 0 ? getStripConnector(ix, iy - 1) : NULL;
-	if (up != NULL && up->down != NULL && !up->down->removed()) {
+	if (up && up->down && !up->down->removed()) {
 		collectConnected(ix, iy - 1, connected);
 	}
 }
@@ -783,7 +783,7 @@ void Stripboard::swapEntry(const QString & text) {
 					propsMap.insert("buses", stripLayout.buses);
 					propsMap.insert("layout", text);
 					InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-					if (infoGraphicsView != NULL) {
+					if (infoGraphicsView) {
 						infoGraphicsView->swap(family(), "size", propsMap, this);
 					}
 					return;

@@ -106,8 +106,6 @@ int allObstacles(Tile * tile, UserData userData) {
 
 static int PlanePairIndex = 0;
 
-static double Worst = std::numeric_limits<double>::max() / 4;
-
 int roomOn(Tile * tile, TileRect & tileRect, BestPlace * bestPlace)
 {
 	int w = tileRect.xmaxi - tileRect.xmini;
@@ -196,27 +194,18 @@ int roomOnRight(Tile * tile, UserData userData)
 }
 
 
-BestPlace::BestPlace() {
-	bestTile = NULL;
-	bestArea = Worst;
-}
+PanelItem::PanelItem(const PanelItem& from) : 
+    boardName(from.boardName),
+    path(from.path),
+    required(from.required),
+    maxOptional(from.maxOptional),
+    optionalPriority(from.optionalPriority),
+    produced(from.produced),
+    boardSizeInches(from.boardSizeInches),
+    boardID(from.boardID),
+    refPanelItem(from.refPanelItem) 
+{ 
 
-PanelItem::PanelItem() {
-	produced = 0;
-	boardID = 0;
-	refPanelItem = NULL;
-}
-
-PanelItem::PanelItem(PanelItem * from) {
-	this->produced = from->produced;
-	this->boardName = from->boardName;
-	this->path = from->path;
-	this->required = from->required;
-	this->maxOptional = from->maxOptional;
-	this->optionalPriority = from->optionalPriority;
-	this->boardSizeInches = from->boardSizeInches;
-	this->boardID = from->boardID;
-	this->refPanelItem = from;
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -901,7 +890,7 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
 			/*
 			QSizeF boardSize = boardItem->size();
 			ResizableBoard * resizableBoard = qobject_cast<ResizableBoard *>(boardItem->layerKinChief());
-			if (resizableBoard != NULL) {
+			if (resizableBoard) {
 			    panelItem->boardSizeInches = resizableBoard->getSizeMM() / 25.4;
 			    DebugDialog::debug(QString("board size inches a %1, %2, %3")
 				    .arg(panelItem->boardSizeInches.width())
@@ -1754,7 +1743,7 @@ int Panelizer::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
 		if (connectorItem == NULL) continue;
 		if (!connectorItem->attachedTo()->isEverVisible()) continue;
 
-		if (connectorItem->isPath() && connectorItem->getCrossLayerConnectorItem() != NULL) {  // && connectorItem->radius() == 0
+		if (connectorItem->isPath() && connectorItem->getCrossLayerConnectorItem()) {  // && connectorItem->radius() == 0
 			connectorItem->debugInfo("possible donut");
 			connectorItem->attachedTo()->debugInfo("\t");
 			donuts << connectorItem;

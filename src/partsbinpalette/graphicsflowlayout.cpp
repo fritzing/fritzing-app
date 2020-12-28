@@ -21,11 +21,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "graphicsflowlayout.h"
 #include "../utils/misc.h"
 
-static const int SpaceBefore = 5;
-static const int SpaceAfter = 3;
+constexpr auto SpaceBefore = 5;
+constexpr auto SpaceAfter = 3;
 
 GraphicsFlowLayout::GraphicsFlowLayout(QGraphicsLayoutItem *parent, int spacing)
-	: QGraphicsLinearLayout(parent)
+	: QGraphicsLinearLayout(parent), 
+	m_lastWidth(0.0)
 {
 	setSpacing(spacing);
 }
@@ -40,22 +41,21 @@ void GraphicsFlowLayout::setGeometry(const QRectF &rect) {
 }
 
 int GraphicsFlowLayout::heightForWidth(int width) {
-	int height = doLayout(QRectF(0, 0, width, 0));
-	return height;
+	return doLayout(QRectF(0, 0, width, 0));
 }
 
 
 int GraphicsFlowLayout::doLayout(const QRectF &rect) {
-	double x = rect.x();
-	double y = rect.y();
-	double lineHeight = 0;
+	auto x = rect.x();
+	auto y = rect.y();
+	auto lineHeight = 0.0;
 
-	for(int i=0; i < count(); i++) {
+	for(int i=0; i < count(); ++i) {
 		QGraphicsLayoutItem* item = itemAt(i);
-		int nextX = x + item->preferredSize().width() + spacing();
+		auto nextX = x + item->preferredSize().width() + spacing();
 
 		if (item->sizePolicy().horizontalPolicy() == QSizePolicy::Expanding) {
-			int myY = y + lineHeight + spacing() + SpaceBefore;
+			auto myY = y + lineHeight + spacing() + SpaceBefore;
 			QRectF r(QPoint(rect.x(), myY), item->preferredSize());
 			item->setGeometry(r);
 			x = rect.x();
@@ -83,7 +83,7 @@ int GraphicsFlowLayout::doLayout(const QRectF &rect) {
 
 void GraphicsFlowLayout::clear() {
 	QList<QGraphicsLayoutItem*> itemsToRemove;
-	for(int i=0; i < count(); i++) {
+	for(int i=0; i < count(); ++i) {
 		itemsToRemove << itemAt(i);
 	}
 
@@ -93,7 +93,7 @@ void GraphicsFlowLayout::clear() {
 }
 
 int GraphicsFlowLayout::indexOf(const QGraphicsLayoutItem *item) {
-	for(int i=0; i < count(); i++) {
+	for(int i=0; i < count(); ++i) {
 		if(itemAt(i) == item) return i;
 	}
 	return -1;

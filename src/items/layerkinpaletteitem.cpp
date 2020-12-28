@@ -26,21 +26,16 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../utils/folderutils.h"
 #include "../svg/svgfilesplitter.h"
+#include "../svg/svgtext.h"
 
 #include <qmath.h>
 
 ////////////////////////////////////////////////
 
-static QString IDString("-_-_-text-_-_-%1");
-
-////////////////////////////////////////////////
-
 LayerKinPaletteItem::LayerKinPaletteItem(PaletteItemBase * chief, ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu* itemMenu)
-	: PaletteItemBase(modelPart, viewID, viewGeometry, id, itemMenu)
-
+	: PaletteItemBase(modelPart, viewID, viewGeometry, id, itemMenu), 
+    m_layerKinChief(chief), m_ok(false), m_passMouseEvents(false)
 {
-	m_passMouseEvents = false;
-	m_layerKinChief = chief;
 	setFlag(QGraphicsItem::ItemIsSelectable, true);
 	m_modelPart->removeViewItem(this);  // we don't need to save layerkin
 }
@@ -54,7 +49,7 @@ void LayerKinPaletteItem::initLKPI(LayerAttributes & layerAttributes, const Laye
 QVariant LayerKinPaletteItem::itemChange(GraphicsItemChange change, const QVariant &value)
 {
 	//DebugDialog::debug(QString("lk item change %1 %2").arg(this->id()).arg(change));
-	if (m_layerKinChief != NULL) {
+	if (m_layerKinChief) {
 		if (change == ItemSelectedChange) {
 			bool selected = value.toBool();
 			if (m_blockItemSelectedChange && m_blockItemSelectedValue == selected) {
@@ -314,13 +309,6 @@ QString SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
 	return doc.toString();
 }
 
-#define MINMAX(mx, my)          \
-    if (mx < minX) minX = mx;   \
-    if (mx > maxX) maxX = mx;   \
-    if (my < minY) minY = my;   \
-    if (my > maxY) maxY = my;
-
-
 void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts) {
 	// TODO: reuse these values unless the pin labels have changed
 	//QString id = IDString.arg(0);
@@ -342,7 +330,7 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
 		TextThing textThing;
 		QRectF viewBox;
 		QMatrix matrix;
-		renderText(image, text, textThing.minX, textThing.minY, textThing.maxX, textThing.maxY, matrix, viewBox);
+		SvgText::renderText(image, text, textThing.minX, textThing.minY, textThing.maxX, textThing.maxY, matrix, viewBox);
 
 		double newX = (image.width() - textThing.maxX) * viewBox.width() / image.width();
 		double oldX = textThing.minX * viewBox.width() / image.width();
@@ -366,82 +354,6 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
 		text.setTagName("text");
 	}
 
-}
-
-void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix & matrix, QRectF & viewBox)
-{
-	QString oldid = text.attribute("id");
-	text.setAttribute("id", IDString);
-
-	// TODO: handle inherited fill/stroke values
-	QString oldFill = text.attribute("fill");
-	text.setAttribute("fill", "black");
-	QString oldStroke = text.attribute("stroke");
-	text.setAttribute("stroke", "black");
-	text.setTagName("text");
-
-	image.fill(0xffffffff);
-	QByteArray byteArray = text.ownerDocument().toByteArray();
-	QSvgRenderer renderer(byteArray);
-	QPainter painter;
-	painter.begin(&image);
-	painter.setRenderHint(QPainter::Antialiasing, false);
-	renderer.render(&painter  /*, sourceRes */);
-	painter.end();
-
-#ifndef QT_NO_DEBUG
-	image.save(FolderUtils::getTopLevelUserDataStorePath() + "/renderText.png");
-#endif
-
-	viewBox = renderer.viewBoxF();
-	double x = text.attribute("x").toDouble();
-	double y = text.attribute("y").toDouble();
-	QPointF xy(x, y);
-	matrix = renderer.matrixForElement(IDString);
-	QPointF mxy = matrix.map(xy);
-
-	QPointF p(image.width() * mxy.x() / viewBox.width(), image.height() * mxy.y() / viewBox.height());
-	QPoint iq((int) p.x(), (int) p.y());
-
-	minX = image.width() + 1;
-	maxX = -1;
-	minY = image.height() + 1;
-	maxY = -1;
-
-	// spiral around q
-	int limit = qMax(image.width(), image.height());
-	for (int lim = 0; lim < limit; lim++) {
-		int t = qMax(0, iq.y() - lim);
-		int b = qMin(iq.y() + lim, image.height() - 1);
-		int l = qMax(0, iq.x() - lim);
-		int r = qMin(iq.x() + lim, image.width() - 1);
-
-		for (int iy = t; iy <= b; iy++) {
-			if (image.pixel(l, iy) == 0xff000000) {
-				MINMAX(l, iy);
-			}
-			if (image.pixel(r, iy) == 0xff000000) {
-				MINMAX(r, iy);
-			}
-		}
-
-		for (int ix = l + 1; ix < r; ix++) {
-			if (image.pixel(ix, t) == 0xff000000) {
-				MINMAX(ix, t);
-			}
-			if (image.pixel(ix, b) == 0xff000000) {
-				MINMAX(ix, b);
-			}
-		}
-	}
-
-	text.setTagName("g");
-	if (oldid.isEmpty()) text.removeAttribute("id");
-	else text.setAttribute("id", oldid);
-	if (oldFill.isEmpty()) text.removeAttribute("fill");
-	else text.setAttribute("fill", oldFill);
-	if (oldStroke.isEmpty()) text.removeAttribute("stroke");
-	else text.setAttribute("stroke", oldStroke);
 }
 
 void SchematicTextLayerKinPaletteItem::clearTextThings() {

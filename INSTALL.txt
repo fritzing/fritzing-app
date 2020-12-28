@@ -1,0 +1,39 @@
+# Installing Fritzing
+
+Please make sure your system satisfies one of these requirements:
+Windows 10, 64 Bit
+Windows 7 was reported to work, too
+Mac - OSX 10.14 and up, though 10.13 might work too. MacOS 10.15 is currently untested.
+Linux - a fairly recent linux distro with libc >= 2.6
+
+Start downloading the Fritzing package that's right for you.
+Unzip your Fritzing folder somewhere convenient on your hard drive.
+This may also be a good time for you to create a shortcut to the Fritzing application.
+A free unzipping program can be found here, should you need it.
+
+## Notes on Windows
+
+On Windows, unzipping Fritzing might be much slower than the download itself. We recommend
+using 7zip.
+
+To start Fritzing on Windows: Wait until unzipping is finished. Then open the destination folder and double-click fritzing.exe
+
+## Notes on Linux
+To start Fritzing double-click Fritzing, or try ./Fritzing in your shell window
+
+Fritzing uses the Qt5 libraries. On Ubuntu, they can be installed like this:
+
+"sudo apt install libqt5printsupport5 libqt5xml5 libqt5sql5 libqt5serialport5 libqt5sql5-sqlite".
+
+## Notes on macOS
+To start Fritzing on macOS double-click the Fritzing application
+
+Recent versions of macOS do not allow "unverified" software to be launched directly. In order to run Fritzing, you will need to either:
+
+1a. right-click the Fritzing icon and select "Open"
+2a. in the warning dialog, click "Open"
+or, to get rid of the warning permanently:
+1b. go to the System Preferences
+2b. open the Security & Privacy page
+3b. unlock it by clicking the lock in the lower left corner
+4b. set it to allow app downloads from anywhere

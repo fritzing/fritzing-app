@@ -25,7 +25,7 @@
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
-        <translation>Bryant Mairs, Uleshka Asher et Daniel Tzschentke.</translation>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher et Daniel Tzschentke.</translation>
     </message>
     <message>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
@@ -90,14 +90,6 @@
     <message>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
         <translation> Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
-    </message>
-    <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
@@ -213,6 +205,26 @@
     </message>
     <message>
         <source>Jinbuhm Kim</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and Kjell Morgenstern </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ukrainian: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yelyzaveta Chyhryna</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1006,7 +1018,7 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>Fritzing (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fritzing (*%1)</translation>
     </message>
     <message>
         <source>Regenerate parts database?</source>
@@ -1049,6 +1061,10 @@ Utiliser le fichier ?</translation>
     <message>
         <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
         <translation>Bienvenue dans la &lt;b&gt;vue schématique.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Il s&apos;agit d&apos;une manière plus abstraite de considérer les composants et les connexions que dans la vue de la platine d&apos;essai. Vous disposez des mêmes éléments que ceux de la platine d&apos;essai, ils ont simplement un aspect différent. Cette représentation est plus proche des diagrammes habituellement employés par les ingénieurs.&lt;br/&gt;&lt;br/&gt; Après avoir dessiné des câbles entre les composants, vous pouvez utiliser la commande &amp;lt;Majuscule&amp;gt;-clic avec la souris pour créer des points de connexion/basculement et mettre de l&apos;ordre dans vos connexions. La vue schématique peut vous aider à vérifier que vous avez établi les bonnes connexions entre composants. Il vous est également possible d&apos;imprimer votre schéma à fin de documentation.</translation>
+    </message>
+    <message>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1270,7 +1286,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>rotation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">rotation</translation>
     </message>
 </context>
 <context>
@@ -1457,7 +1473,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">date</translation>
     </message>
 </context>
 <context>
@@ -2538,7 +2554,7 @@ Do you want to update now?</source>
     </message>
     <message>
         <source>Export the visible area of the current sketch as a PostScript image</source>
-        <translation>Exporter la zone visible de l&apos;esquisse actuelle sous forme d&apos;une image PostScript</translation>
+        <translation type="vanished">Exporter la zone visible de l&apos;esquisse actuelle sous forme d&apos;une image PostScript</translation>
     </message>
     <message>
         <source>Search for parts in a sketch by matching text</source>
@@ -3351,7 +3367,7 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     </message>
     <message>
         <source>PostScript (*.ps)</source>
-        <translation>PostScript (*.ps)</translation>
+        <translation type="vanished">PostScript (*.ps)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
@@ -3371,7 +3387,7 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     </message>
     <message>
         <source>PostScript...</source>
-        <translation>PostScript...</translation>
+        <translation type="vanished">PostScript...</translation>
     </message>
     <message>
         <source>PDF...</source>
@@ -6038,15 +6054,11 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fritzing</translation>
     </message>
     <message>
         <source>mm</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">mm</translation>
     </message>
     <message>
         <source>in</source>
@@ -6082,18 +6094,14 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>%1 %2,%3 %4</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 %2,%3 %4</translation>
     </message>
     <message>
         <source>%1 %2 %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 %2 %3</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6281,7 +6289,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
-        <translation>Veuillez noter que les tarifs ne comprennent pas les frais de transport, &lt;br /&gt;</translation>
+        <translation type="vanished">Veuillez noter que les tarifs ne comprennent pas les frais de transport, &lt;br /&gt;</translation>
     </message>
     <message>
         <source>Fritzing Fab Quote</source>
@@ -6289,7 +6297,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
-        <translation>de possibles taxes ou frais de douane supplémentaires.&lt;br /&gt;</translation>
+        <translation type="vanished">de possibles taxes ou frais de douane supplémentaires.&lt;br /&gt;</translation>
     </message>
     <message>
         <source>Take advantage of our quantity discount:</source>
@@ -6305,7 +6313,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation>Pour plus d&apos;informations sur la tarification voir &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
+        <translation type="vanished">Pour plus d&apos;informations sur la tarification voir &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message numerus="yes">
         <source>The total area of the %n PCB(s) in this sketch is</source>
@@ -6321,6 +6329,22 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     <message>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
         <translation> %1 cm%3 (%2 in%3).&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Shipping is free wordlwide&lt;/b&gt;.&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documents for local customs control are included.&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some countries might charge additional import taxes or checking fees.&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For more information on pricing see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6510,7 +6534,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
-        <translation>Impossible de charger le schéma &apos;%1&apos; pour &apos;%2&apos;</translation>
+        <translation type="vanished">Impossible de charger le schéma &apos;%1&apos; pour &apos;%2&apos;</translation>
     </message>
     <message>
         <source>Failed loading schematic &apos;%1&apos;, %2 line:%3 col:%4</source>
@@ -7457,7 +7481,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     <name>WelcomeView</name>
     <message>
         <source>Shop</source>
-        <translation>Boutique</translation>
+        <translation type="vanished">Boutique</translation>
     </message>
     <message>
         <source>Fritzing News.</source>
@@ -7465,7 +7489,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Unable to reach friting.org/projects</source>
-        <translation>Impossible d&apos;accéder au site fritzing.org/projects</translation>
+        <translation type="vanished">Impossible d&apos;accéder au site fritzing.org/projects</translation>
     </message>
     <message>
         <source>All Tips</source>
@@ -7525,7 +7549,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Fritzing CreatorKit</source>
-        <translation>Fritzing CreatorKit</translation>
+        <translation type="vanished">Fritzing CreatorKit</translation>
     </message>
     <message>
         <source>Fritzing Fab</source>
@@ -7545,7 +7569,31 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
-        <translation>Le kit de créateur de Fritzing est en rupture de stock. Pour les mises à jour s&apos;il vous plaît visitez le blog fritzing</translation>
+        <translation type="vanished">Le kit de créateur de Fritzing est en rupture de stock. Pour les mises à jour s&apos;il vous plaît visitez le blog fritzing</translation>
+    </message>
+    <message>
+        <source>Donate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing development needs you</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Software development and maintenance is a lot of work. Without your support, it is not possible to keep that up.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate and leave a comment.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach fritzing.org/projects</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

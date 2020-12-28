@@ -33,9 +33,9 @@ class SetColorDialog : public QDialog
 
 public:
 	SetColorDialog(const QString & message, QColor & currentColor, QColor & standardColor, bool askPrefs, QWidget *parent = 0);
-	~SetColorDialog();
+	~SetColorDialog() = default;
 
-	const QColor & selectedColor();
+	const QColor & selectedColor() const noexcept { return m_selectedColor; }
 	bool isPrefsColor();
 
 protected:

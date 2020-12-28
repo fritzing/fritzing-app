@@ -49,8 +49,7 @@ static QHash<QString, QColor> Tolerances;
 Resistor::Resistor( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: Capacitor(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
-	m_changingPinSpacing = false;
-	if (Resistances.count() == 0) {
+    if (Resistances.empty()) {
 		Resistances
 		        << QString("0") + OhmSymbol
 		        << QString("1") + OhmSymbol << QString("1.5") + OhmSymbol << QString("2.2") + OhmSymbol << QString("3.3") + OhmSymbol << QString("4.7") + OhmSymbol << QString("6.8") + OhmSymbol
@@ -59,10 +58,10 @@ Resistor::Resistor( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 		        << QString("1k") + OhmSymbol << QString("1.5k") + OhmSymbol << QString("2.2k") + OhmSymbol << QString("3.3k") + OhmSymbol << QString("4.7k") + OhmSymbol << QString("6.8k") + OhmSymbol
 		        << QString("10k") + OhmSymbol << QString("15k") + OhmSymbol << QString("22k") + OhmSymbol << QString("33k") + OhmSymbol << QString("47k") + OhmSymbol << QString("68k") + OhmSymbol
 		        << QString("100k") + OhmSymbol << QString("150k") + OhmSymbol << QString("220k") + OhmSymbol << QString("330k") + OhmSymbol << QString("470k") + OhmSymbol << QString("680k") + OhmSymbol
-		        << QString("1M") + OhmSymbol;
+		        << QString("1M") + OhmSymbol << QString("1G") + OhmSymbol;
 	}
 
-	if (PinSpacings.count() == 0) {
+    if (PinSpacings.empty()) {
 		PinSpacings.insert("100 mil (stand-up right)", "pcb/axial_stand0_2_100mil_pcb.svg");
 		PinSpacings.insert("100 mil (stand-up left)", "pcb/axial_stand1_2_100mil_pcb.svg");
 		PinSpacings.insert("200 mil", "pcb/axial_lay_2_200mil_pcb.svg");
@@ -73,7 +72,7 @@ Resistor::Resistor( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 		PinSpacings.insert("800 mil", "pcb/axial_lay_2_800mil_pcb.svg");
 	}
 
-	if (ColorBands.count() == 0) {
+    if (ColorBands.empty()) {
 		ColorBands.insert(0, QColor(0, 0, 0));
 		ColorBands.insert(1, QColor(138, 61, 6));
 		ColorBands.insert(2, QColor(196, 8, 8));
@@ -88,7 +87,7 @@ Resistor::Resistor( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 		ColorBands.insert(-2, QColor(192, 192, 192));
 	}
 
-	if (Tolerances.count() == 0) {
+	if (Tolerances.empty()) {
 		// TODO: move this into properties.xml
 		Tolerances.insert(PlusMinusSymbol + "0.05%", QColor(140, 140, 140));
 		Tolerances.insert(PlusMinusSymbol + "0.1%", QColor(130, 16, 210));
@@ -114,9 +113,6 @@ Resistor::Resistor( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 	}
 
 	updateResistances(m_ohms);
-}
-
-Resistor::~Resistor() {
 }
 
 void Resistor::setResistance(QString resistance, QString pinSpacing, bool force) {
@@ -266,7 +262,7 @@ bool Resistor::collectExtraInfo(QWidget * parent, const QString & family, const 
 		validator->setSymbol(OhmSymbol);
 		validator->setConverter(TextUtils::convertFromPowerPrefix);
 		validator->setBounds(0, 9900000000.0);
-		validator->setRegExp(QRegExp(QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d{1,2}))[\\x%1umkMG]{0,1}[\\x03A9]{0,1}").arg(TextUtils::MicroSymbolCode, 4, 16, QChar('0'))));
+		validator->setRegExp(QRegExp(QString("((\\d{1,10})|(\\d{1,10}\\.)|(\\d{1,10}\\.\\d{1,5}))[\\x%1umkMG]{0,1}[\\x03A9]{0,1}").arg(TextUtils::MicroSymbolCode, 4, 16, QChar('0'))));
 		focusOutComboBox->setValidator(validator);
 		connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(resistanceEntry(const QString &)));
 
@@ -369,7 +365,7 @@ void Resistor::resistanceEntry(const QString & text) {
 	//DebugDialog::debug(QString("resistance entry %1").arg(text));
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->setResistance(text, "");
 	}
 }

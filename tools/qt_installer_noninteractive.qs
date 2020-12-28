@@ -31,8 +31,8 @@ Controller.prototype.ComponentSelectionPageCallback = function() {
   var widget = gui.currentPageWidget();
 
   widget.deselectAll();
-  widget.selectComponent("qt.qt5.5123.win32_msvc2017");
-  widget.selectComponent("qt.qt5.5123.win64_msvc2017_64");
+  //widget.selectComponent("qt.qt5.5123.win32_msvc2017");
+  widget.selectComponent("qt.qt5.5127.win64_msvc2017_64");
 
 // Cannot get older version of Qt qit Quick Scripts
 // Cannot programatically select LTS releases
@@ -67,5 +67,13 @@ Controller.prototype.FinishedPageCallback = function() {
 Controller.prototype.DynamicTelemetryPluginFormCallback = function() {
     var widget = gui.currentPageWidget();
     widget.TelemetryPluginForm.statisticGroupBox.disableStatisticRadioButton.checked = true;
+    gui.clickButton(buttons.NextButton);
+}
+
+Controller.prototype.ObligationsPageCallback = function()
+{
+    var page = gui.pageWidgetByObjectName("ObligationsPage");
+    page.obligationsAgreement.setChecked(true);
+    page.completeChanged();
     gui.clickButton(buttons.NextButton);
 }

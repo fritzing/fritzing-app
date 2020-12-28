@@ -269,7 +269,7 @@ PartsBinPaletteWidget* BinManager::getOrOpenBin(const QString & binLocation, con
 		QString fileToOpen = QFileInfo(binLocation).exists() ? binLocation : createIfBinNotExists(binLocation, binTemplateLocation);
 		partsBin = openBinIn(fileToOpen, false);
 	}
-	if (partsBin != NULL && partsBin->fastLoaded()) {
+	if (partsBin && partsBin->fastLoaded()) {
 		partsBin->load(partsBin->fileName(), partsBin, false);
 	}
 
@@ -361,7 +361,7 @@ void BinManager::setDirtyTab(PartsBinPaletteWidget* w, bool dirty) {
 	}
 	*/
 	w->setWindowModified(dirty);
-	if(m_stackTabWidget != NULL) {
+	if(m_stackTabWidget) {
 		int tabIdx = m_stackTabWidget->indexOf(w);
 		m_stackTabWidget->setTabText(tabIdx, w->title()+(dirty? " *": ""));
 	} else {
@@ -370,7 +370,7 @@ void BinManager::setDirtyTab(PartsBinPaletteWidget* w, bool dirty) {
 }
 
 void BinManager::updateTitle(PartsBinPaletteWidget* w, const QString& newTitle) {
-	if(m_stackTabWidget != NULL) {
+	if(m_stackTabWidget) {
 		m_stackTabWidget->setTabText(m_stackTabWidget->indexOf(w), newTitle+" *");
 		setDirtyTab(w);
 	}
@@ -434,7 +434,7 @@ PartsBinPaletteWidget* BinManager::openBinIn(QString fileName, bool fastLoad) {
 
 PartsBinPaletteWidget* BinManager::openCoreBinIn() {
 	PartsBinPaletteWidget* bin = findBin(CorePartsBinLocation);
-	if (bin != NULL) {
+	if (bin) {
 		setAsCurrentTab(bin);
 	}
 	else {
@@ -965,7 +965,7 @@ void BinManager::updateBinCombinedMenu(PartsBinPaletteWidget * bin) {
 	m_closeBinAction->setEnabled(bin->canClose());
 	m_deleteBinAction->setEnabled(bin->canClose());
 	ItemBase *itemBase = bin->selectedItemBase();
-	bool enabled = (itemBase != NULL);
+	bool enabled = (itemBase);
 	m_editPartNewAction->setEnabled(enabled && itemBase->canEditPart());
 
 	bool enableAnyway = false;
@@ -1130,9 +1130,11 @@ void BinManager::importPartToCurrentBin(const QString & filename) {
 }
 
 void BinManager::importPart(const QString & filename, PartsBinPaletteWidget * bin) {
-	ModelPart *mp = m_mainWindow->loadBundledPart(filename, !bin->allowsChanges());
+	QList<ModelPart*> mps = m_mainWindow->loadBundledPart(filename, !bin->allowsChanges());
 	if (bin->allowsChanges()) {
-		addPartTo(bin, mp, true);
+		for (auto * mp : mps) {
+			addPartTo(bin, mp, true);
+		}
 	}
 }
 
@@ -1276,7 +1278,7 @@ void BinManager::saveBundledBin() {
 
 void BinManager::setTabIcon(PartsBinPaletteWidget* w, QIcon * icon)
 {
-	if (m_stackTabWidget != NULL) {
+	if (m_stackTabWidget) {
 		int tabIdx = m_stackTabWidget->indexOf(w);
 		m_stackTabWidget->setTabIcon(tabIdx, *icon);
 	}

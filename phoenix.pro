@@ -19,10 +19,19 @@
 # ********************************************************************
 
 lessThan(QT_MAJOR_VERSION, 5) {
-    error(Fritzing does not build with Qt 4 or earlier)
+    error(Fritzing does not build with Qt 4 or earlier. 5.12 is recommended.)
+}
+
+lessThan(QT_MINOR_VERSION, 9) {
+    error(Fritzing does not build with Qt 5.8 or earlier. 5.12 is recommended.)
 }
 
 CONFIG += debug_and_release
+CONFIG += c++14
+
+# TODO: Omit frame pointers for release builds
+# TODO: Verify flags for clang and msvc builds
+QMAKE_CXXFLAGS += -O3 -fno-omit-frame-pointer
 
 unix:!macx {
     CONFIG += link_pkgconfig
@@ -192,10 +201,11 @@ include(pri/sketch.pri)
 include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
+include(test/version.pri)
 
 contains(DEFINES, QUAZIP_INSTALLED) {
-    INCLUDEPATH += /usr/include/quazip
-    LIBS += -lquazip
+    !build_pass:message("using installed QuaZIP library")
+    LIBS += -lquazip5
 } else {
     include(pri/quazip.pri)
 }
@@ -203,4 +213,4 @@ contains(DEFINES, QUAZIP_INSTALLED) {
 TARGET = Fritzing
 TEMPLATE = app
 
-message("libs $$LIBS")
+!build_pass:message("libs $$LIBS")

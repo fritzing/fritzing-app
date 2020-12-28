@@ -52,10 +52,10 @@ int CrossingsTest( double pgon[][2], int numverts, double point[2] )
 #ifdef	WINDING
 	register int	crossings ;
 #endif
-	register int	j, yflag0, yflag1, inside_flag, xflag0 ;
-	register double ty, tx, *vtx0, *vtx1 ;
+	int	j, yflag0, yflag1, inside_flag, xflag0 ;
+	double ty, tx, *vtx0, *vtx1 ;
 #ifdef	CONVEX
-	register int	line_flag ;
+	int	line_flag ;
 #endif
 
 	tx = point[XCOORD] ;
@@ -139,8 +139,8 @@ ClipableWire::ClipableWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  co
 	: Wire(modelPart, viewID,  viewGeometry,  id, itemMenu, initLabel)
 {
 	m_clipEnds = false;
-	m_trackHoverItem = NULL;
-	m_justFilteredEvent = NULL;
+	m_trackHoverItem = nullptr;
+	m_justFilteredEvent = nullptr;
 	m_cachedOriginalLine.setPoints(QPointF(-99999,-99999), QPointF(-99999,-99999));
 }
 
@@ -157,7 +157,7 @@ const QLineF & ClipableWire::getPaintLine() {
 	}
 
 	int t0c = 0;
-	ConnectorItem* to0 = NULL;
+	ConnectorItem* to0 = nullptr;
 	foreach (ConnectorItem * toConnectorItem, m_connector0->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to0 = toConnectorItem;
@@ -167,7 +167,7 @@ const QLineF & ClipableWire::getPaintLine() {
 	}
 
 	int t1c = 0;
-	ConnectorItem* to1 = NULL;
+	ConnectorItem* to1 = nullptr;
 	foreach (ConnectorItem * toConnectorItem, m_connector1->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to1 = toConnectorItem;
@@ -176,9 +176,9 @@ const QLineF & ClipableWire::getPaintLine() {
 		t1c++;
 	}
 
-	if ((to0 == NULL && to1 == NULL) ||		// no need to clip an unconnected wire
-	        (to0 == NULL && t0c == 0) ||		// dragging out a wire, no need to clip
-	        (to1 == NULL && t1c == 0) ||		// dragging out a wire, no need to clip
+	if ((to0 == nullptr && to1 == nullptr) ||		// no need to clip an unconnected wire
+			(to0 == nullptr && t0c == 0) ||		// dragging out a wire, no need to clip
+			(to1 == nullptr && t1c == 0) ||		// dragging out a wire, no need to clip
 	        m_dragEnd)							// dragging out a wire, no need to clip
 	{
 		return Wire::getPaintLine();
@@ -219,26 +219,26 @@ void ClipableWire::setClipEnds(bool clipEnds ) {
 
 void ClipableWire::calcClip(QPointF & p1, QPointF & p2, ConnectorItem * c1, ConnectorItem * c2) {
 
-	if (c1 != NULL && c2 != NULL && c1->isEffectivelyCircular() && c2->isEffectivelyCircular()) {
+	if (c1 != nullptr && c2 != nullptr && c1->isEffectivelyCircular() && c2->isEffectivelyCircular()) {
 		//qDebug() << "clause 1" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << c2->calcClipRadius() + (m_pen.width() / 2.0);
 		//c1->debugInfo("  c1");
 		//c2->debugInfo("  c2");
-		GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius() + (m_pen.width() / 2.0), c2->calcClipRadius() + (m_pen.width() / 2.0));
+		GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius(), c2->calcClipRadius());
 		return;
 	}
 
-	if (c1 != NULL && c1->isEffectivelyCircular()) {
+	if (c1 != nullptr && c1->isEffectivelyCircular()) {
 		//qDebug() << "clause 2" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << 0;
 		//c1->debugInfo("  c1");
-		GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius() + (m_pen.width() / 2.0), 0);
+        GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius(), 0);
 		p2 = findIntersection(c2, p2);
 		return;
 	}
 
-	if (c2 != NULL && c2->isEffectivelyCircular()) {
+	if (c2 != nullptr && c2->isEffectivelyCircular()) {
 		//qDebug() << "clause 3" << p1 << p2 << 0 << c2->calcClipRadius() + (m_pen.width() / 2.0);
 		//c2->debugInfo("  c2");
-		GraphicsUtils::shortenLine(p1, p2, 0, c2->calcClipRadius() + (m_pen.width() / 2.0));
+        GraphicsUtils::shortenLine(p1, p2, 0, c2->calcClipRadius());
 		p1 = findIntersection(c1, p1);
 		return;
 	}
@@ -253,7 +253,7 @@ void ClipableWire::calcClip(QPointF & p1, QPointF & p2, ConnectorItem * c1, Conn
 
 QPointF ClipableWire::findIntersection(ConnectorItem * connectorItem, const QPointF & p)
 {
-	if (connectorItem == NULL) return p;
+	if (connectorItem == nullptr) return p;
 
 	QRectF r = connectorItem->rect();
 	r.adjust(connectorRectClipInset, connectorRectClipInset, -connectorRectClipInset, -connectorRectClipInset);	// inset it a little bit so the wire touches
@@ -272,19 +272,19 @@ QPointF ClipableWire::findIntersection(ConnectorItem * connectorItem, const QPoi
 }
 
 bool ClipableWire::filterMousePressConnectorEvent(ConnectorItem * connectorItem, QGraphicsSceneMouseEvent * event) {
-	m_justFilteredEvent = NULL;
+	m_justFilteredEvent = nullptr;
 
 	if (!m_clipEnds) return false;
 	if (m_viewID != ViewLayer::PCBView) return false;
 
-	ConnectorItem * to = NULL;
+	ConnectorItem * to = nullptr;
 	foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to = toConnectorItem;
 			break;
 		}
 	}
-	if (to == NULL) return false;
+	if (to == nullptr) return false;
 
 	if (insideInnerCircle(to, event->scenePos()) || !insideSpoke(this, event->scenePos())) {
 		m_justFilteredEvent = event;
@@ -297,7 +297,7 @@ bool ClipableWire::filterMousePressConnectorEvent(ConnectorItem * connectorItem,
 
 void ClipableWire::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-	if ((long) event == (long) m_justFilteredEvent) {
+	if (event == m_justFilteredEvent) {
 		event->ignore();
 		return;
 	}
@@ -311,7 +311,7 @@ void ClipableWire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, Con
 
 	// track mouse move events for hover redirecting
 
-	ConnectorItem * to = NULL;
+	ConnectorItem * to = nullptr;
 	foreach (ConnectorItem * toConnectorItem, item->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to = toConnectorItem;
@@ -321,8 +321,8 @@ void ClipableWire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, Con
 
 	if (to) {
 		m_trackHoverItem = to;
-		m_trackHoverLastWireItem = NULL;
-		m_trackHoverLastItem = NULL;
+		m_trackHoverLastWireItem = nullptr;
+		m_trackHoverLastItem = nullptr;
 		dispatchHover(event->scenePos());
 	}
 }
@@ -330,8 +330,8 @@ void ClipableWire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, Con
 void ClipableWire::hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item) {
 	Q_UNUSED(item);
 	Q_UNUSED(event);
-	dispatchHoverAux(false, NULL);
-	m_trackHoverItem = NULL;
+	dispatchHoverAux(false, nullptr);
+	m_trackHoverItem = nullptr;
 	//Wire::hoverLeaveConnectorItem(event, item);
 }
 
@@ -345,7 +345,7 @@ void ClipableWire::hoverMoveConnectorItem(QGraphicsSceneHoverEvent * event, Conn
 
 void ClipableWire::dispatchHover(QPointF scenePos) {
 	bool inInner = false;
-	ClipableWire * inWire = NULL;
+	ClipableWire * inWire = nullptr;
 	if (insideInnerCircle(m_trackHoverItem, scenePos)) {
 		//DebugDialog::debug("got inner circle");
 		inInner = true;
@@ -355,7 +355,7 @@ void ClipableWire::dispatchHover(QPointF scenePos) {
 			if (toConnectorItem->attachedToItemType() != ModelPart::Wire) continue;
 
 			ClipableWire * w = dynamic_cast<ClipableWire *>(toConnectorItem->attachedTo());
-			if (w == NULL) continue;
+			if (w == nullptr) continue;
 			if (w->getRatsnest()) continue;									// is there a better way to check this?
 
 			if (insideSpoke(w, scenePos)) {
@@ -371,7 +371,7 @@ void ClipableWire::dispatchHover(QPointF scenePos) {
 
 void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 {
-	if (m_trackHoverItem == NULL) return;
+	if (m_trackHoverItem == nullptr) return;
 
 	if (inInner) {
 		if (m_trackHoverLastItem == m_trackHoverItem) {
@@ -380,7 +380,7 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 		}
 		if (m_trackHoverLastWireItem) {
 			((ItemBase *) m_trackHoverLastWireItem)->hoverLeaveConnectorItem();
-			m_trackHoverLastWireItem = NULL;
+			m_trackHoverLastWireItem = nullptr;
 		}
 
 		m_trackHoverLastItem = m_trackHoverItem;
@@ -396,7 +396,7 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 			QList<ConnectorItem *> visited;
 			m_trackHoverLastItem->restoreColor(visited);
 			m_trackHoverLastItem->attachedTo()->hoverLeaveConnectorItem();
-			m_trackHoverLastItem = NULL;
+			m_trackHoverLastItem = nullptr;
 		}
 		if (m_trackHoverLastWireItem) {
 			((ItemBase *) m_trackHoverLastWireItem)->hoverLeaveConnectorItem();
@@ -406,15 +406,15 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 	}
 	else {
 		//DebugDialog::debug("got none");
-		if (m_trackHoverLastItem != NULL) {
+		if (m_trackHoverLastItem != nullptr) {
 			QList<ConnectorItem *> visited;
 			m_trackHoverLastItem->restoreColor(visited);
 			m_trackHoverLastItem->attachedTo()->hoverLeaveConnectorItem();
-			m_trackHoverLastItem = NULL;
+			m_trackHoverLastItem = nullptr;
 		}
-		if (m_trackHoverLastWireItem != NULL) {
+		if (m_trackHoverLastWireItem != nullptr) {
 			((ItemBase *) m_trackHoverLastWireItem)->hoverLeaveConnectorItem();
-			m_trackHoverLastWireItem = NULL;
+			m_trackHoverLastWireItem = nullptr;
 		}
 	}
 }

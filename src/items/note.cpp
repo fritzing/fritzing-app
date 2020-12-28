@@ -127,7 +127,7 @@ NoteGraphicsTextItem::NoteGraphicsTextItem(QGraphicsItem * parent) : QGraphicsTe
 
 void NoteGraphicsTextItem::focusInEvent(QFocusEvent * event) {
 	InfoGraphicsView * igv = InfoGraphicsView::getInfoGraphicsView(this);
-	if (igv != NULL) {
+	if (igv) {
 		igv->setNoteFocus(this, true);
 	}
 	QApplication::instance()->installEventFilter((Note *) this->parentItem());
@@ -137,7 +137,7 @@ void NoteGraphicsTextItem::focusInEvent(QFocusEvent * event) {
 
 void NoteGraphicsTextItem::focusOutEvent(QFocusEvent * event) {
 	InfoGraphicsView * igv = InfoGraphicsView::getInfoGraphicsView(this);
-	if (igv != NULL) {
+	if (igv) {
 		igv->setNoteFocus(this, false);
 	}
 	QApplication::instance()->removeEventFilter((Note *) this->parentItem());
@@ -242,6 +242,7 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 	m_graphicsTextItem = new NoteGraphicsTextItem();
 	QFont font("Droid Sans", 9, QFont::Normal);
 	m_graphicsTextItem->setFont(font);
+	m_graphicsTextItem->setDefaultTextColor(QColor("grey"));
 	m_graphicsTextItem->document()->setDefaultFont(font);
 	m_graphicsTextItem->setParentItem(this);
 	m_graphicsTextItem->setVisible(true);
@@ -351,7 +352,7 @@ void Note::positionGrip() {
 
 void Note::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics != NULL && infographics->spaceBarIsPressed()) {
+	if (infographics && infographics->spaceBarIsPressed()) {
 		m_spaceBarWasPressed = true;
 		event->ignore();
 		return;
@@ -437,7 +438,7 @@ void Note::contentsChangedSlot() {
 	}
 
 	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		QString oldText;
 		if (m_modelPart) {
 			oldText = m_modelPart->instanceText();
@@ -725,7 +726,7 @@ void Note::handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, ResizeHandle
 
 	m_inResize = NULL;
 	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->noteSizeChanged(this, m_viewGeometry.rect().size(), m_rect.size());
 	}
 }

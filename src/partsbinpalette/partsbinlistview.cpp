@@ -87,7 +87,7 @@ int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
 		lwi->setBackground(QBrush(SectionHeaderBackgroundColor));
 		lwi->setForeground(QBrush(SectionHeaderForegroundColor));
 		lwi->setData(Qt::UserRole, 0);
-		lwi->setFlags(0);
+		lwi->setFlags({});
 		lwi->setText("        " + TranslatedCategoryNames.value(modelPart->instanceText(), modelPart->instanceText()));
 	}
 	else {
@@ -108,7 +108,7 @@ int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
 void PartsBinListView::mouseMoveEvent(QMouseEvent *event) {
 	if(m_infoViewOnHover) {
 		QListWidgetItem * item = itemAt(event->pos());
-		if (item != NULL) {
+		if (item) {
 			showInfo(item);
 		}
 		else {
@@ -125,9 +125,9 @@ void PartsBinListView::showInfo(QListWidgetItem * item) {
 		return;
 	}
 
-	if (m_hoverItem != NULL && m_infoView != NULL) {
+	if (m_hoverItem && m_infoView) {
 		ItemBase * itemBase = itemItemBase(m_hoverItem);
-		if (itemBase != NULL) {
+		if (itemBase) {
 			m_infoView->hoverLeaveItem(NULL, NULL, itemBase);
 		}
 	}
@@ -137,9 +137,9 @@ void PartsBinListView::showInfo(QListWidgetItem * item) {
 	}
 
 	m_hoverItem = item;
-	if (m_infoView != NULL) {
+	if (m_infoView) {
 		ItemBase * itemBase = itemItemBase(item);
-		if (itemBase != NULL) {
+		if (itemBase) {
 			m_infoView->hoverEnterItem(NULL, NULL, itemBase, swappingEnabled());
 		}
 	}
@@ -153,12 +153,12 @@ void PartsBinListView::mousePressEvent(QMouseEvent *event) {
 	QListWidgetItem * current = currentItem();
 	if (current == NULL) {
 		m_hoverItem = NULL;
-		if (m_infoView != NULL) m_infoView->viewItemInfo(NULL, NULL, false);
+		if (m_infoView) m_infoView->viewItemInfo(NULL, NULL, false);
 		return;
 	}
 
 	showInfo(current);
-	if (m_infoView != NULL) m_infoView->viewItemInfo(NULL, itemItemBase(current), false);
+	if (m_infoView) m_infoView->viewItemInfo(NULL, itemItemBase(current), false);
 }
 
 void PartsBinListView::setInfoView(HtmlInfoView * infoView) {
@@ -292,7 +292,7 @@ bool PartsBinListView::dropMimeData(int index, const QMimeData *data, Qt::DropAc
 		ModelPart *modelPart = m_partHash[moduleID];
 
 		QModelIndex idx = model()->index(index, 0);
-		model()->setData(idx, qVariantFromValue(modelPart), Qt::UserRole);*/
+		model()->setData(idx, QVariant::fromValue(modelPart), Qt::UserRole);*/
 
 		return true;
 	} else {
@@ -380,14 +380,14 @@ void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, c
 		LayerAttributes layerAttributes;
 		itemBase->initLayerAttributes(layerAttributes, ViewLayer::IconView, ViewLayer::Icon, itemBase->viewLayerPlacement(), false, false);
 		FSvgRenderer * renderer = itemBase->setUpImage(modelPart, layerAttributes);
-		if (renderer != NULL) {
+		if (renderer) {
 			if (itemBase) {
 				itemBase->setFilename(renderer->filename());
 			}
 			itemBase->setSharedRendererEx(renderer);
 		}
 	}
-	lwi->setData(Qt::UserRole, qVariantFromValue( itemBase ) );
+	lwi->setData(Qt::UserRole, QVariant::fromValue( itemBase ) );
 	QSize size(HtmlInfoView::STANDARD_ICON_IMG_WIDTH, HtmlInfoView::STANDARD_ICON_IMG_HEIGHT);
 	QPixmap * pixmap = FSvgRenderer::getPixmap(itemBase->renderer(), size);
 	lwi->setIcon(QIcon(*pixmap));

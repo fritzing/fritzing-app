@@ -77,7 +77,7 @@ AboutBox::AboutBox(QWidget *parent)
 
 	// Link to website
 	QLabel *linkToFritzing = new QLabel(this);
-	linkToFritzing->setText(tr("<a href=\"https://www.fritzing.org\">www.fritzing.org</a>"));
+	linkToFritzing->setText("<a href=\"https://fritzing.org\">fritzing.org</a>");
 	linkToFritzing->setOpenExternalLinks(true);
 	linkToFritzing->setFont(smallFont);
     linkToFritzing->setGeometry(45, 188, 300, 18);
@@ -120,7 +120,7 @@ AboutBox::AboutBox(QWidget *parent)
 	    tr("Mariano Crowe, Johannes Landstorfer, ") +
 	    tr("Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, ") +
 	    tr("Bryant Mairs, Uleshka Asher, Daniel Tzschentke, ") +
-        tr("and Kjell Morgenstern ") +
+	    tr("and Kjell Morgenstern ") +
 	    "</p>" +
 
 	    "<p>" +
@@ -147,10 +147,11 @@ AboutBox::AboutBox(QWidget *parent)
 	    tr("Korean: ") + tr("Jinbuhm Kim") + "<br/>" +
 	    tr("Portuguese (European): ") + "Nuno Pessanha Santos, Bruno Ramalhete" + "<br/>" +
 	    tr("Portuguese (Brazilian): ") + " Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, Gabriel Ferreira" + "<br/>" +
+	    tr("Russian: ") + "Vladimir Savinov" + "<br/>" +
 	    tr("Slovak: ") + " &#313;ubom&iacute;r Ducho&#328;" + "<br/>" +
 	    tr("Spanish: ") + "Kurt Badelt, Miguel Solis" + "<br/>" +
-	    tr("Russian: ") + "Vladimir Savinov" + "<br/>" +
 	    tr("Turkish: ") + "Cihan Mete Bahad&#x0131;r" + "<br/>" +
+	    tr("Ukrainian: ") + tr("Yelyzaveta Chyhryna") + "<br/>" +
 
 	    "</p>" +
 
@@ -235,7 +236,7 @@ void AboutBox::initBuildType(const QString & buildType) {
 
 void AboutBox::hideAbout() {
 	//DebugDialog::debug("the AboutBox gets a hide action triggered");
-	if (Singleton != NULL) {
+	if (Singleton) {
 		Singleton->hide();
 	}
 }
@@ -255,7 +256,7 @@ void AboutBox::showAbout() {
 void AboutBox::closeAbout() {
 	//DebugDialog::debug("the AboutBox gets a close action triggered");
 	// Note: not every close triggers this function. we better listen to closeEvent
-	if (Singleton != NULL) {
+	if (Singleton) {
 		Singleton->close();
 	}
 }

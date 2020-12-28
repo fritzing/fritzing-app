@@ -35,11 +35,11 @@ class ViewLayerCheckBox : public QCheckBox
 {
 	Q_OBJECT
 public:
-	ViewLayerCheckBox(QWidget * parent = NULL);
-	~ViewLayerCheckBox();
+	ViewLayerCheckBox(QWidget * parent = nullptr);
+	~ViewLayerCheckBox() = default;
 
-	void setViewLayer(ViewLayer *);
-	ViewLayer * viewLayer();
+	void setViewLayer(ViewLayer * vl) noexcept { m_viewLayer = vl; }
+	ViewLayer * viewLayer() const noexcept { return m_viewLayer; }
 
 protected:
 	ViewLayer * m_viewLayer;
@@ -49,8 +49,8 @@ class LayerPalette : public QScrollArea
 {
 	Q_OBJECT
 public:
-	LayerPalette(QWidget * parent = NULL);
-	~LayerPalette();
+	LayerPalette(QWidget * parent = nullptr);
+	~LayerPalette() = default;
 
 	void updateLayerPalette(LayerHash & viewLayers, LayerList & keys);
 	void resetLayout(LayerHash & viewLayers, LayerList & keys);

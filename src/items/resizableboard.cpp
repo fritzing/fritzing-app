@@ -27,6 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../sketch/infographicsview.h"
 #include "../svg/svgfilesplitter.h"
 #include "../commands.h"
+#include "../svg/svgpathregex.h"
 #include "moduleidnames.h"
 #include "../layerattributes.h"
 #include "../debugdialog.h"
@@ -420,7 +421,7 @@ void Board::moreCheckImage(const QString & filename) {
 	int mCount = 0;
 	if (element.tagName() == "path") {
 		QString originalPath = element.attribute("d", "").trimmed();
-		if (GerberGenerator::MultipleZs.indexIn(originalPath) >= 0) {
+		if (MultipleZs.indexIn(originalPath) >= 0) {
 			QStringList ds = element.attribute("d").split("z", QString::SkipEmptyParts);
 			subpaths = ds.count();
 			foreach (QString d, ds) {
@@ -532,7 +533,7 @@ bool Board::canLoad(const QString & fileName, const QString & reason) {
 void Board::prepLoadImageAux(const QString & fileName, bool addName)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->loadLogoImage(this, "", QSizeF(0,0), "", fileName, addName);
 	}
 }
@@ -1050,7 +1051,7 @@ void ResizableBoard::paperSizeChanged(int index) {
 	QModelIndex modelIndex = comboBox->model()->index(index,0);
 	QSizeF size = comboBox->model()->data(modelIndex, Qt::UserRole).toSizeF();
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->resizeBoard(size.width(), size.height(), true);
 	}
 }
@@ -1066,7 +1067,7 @@ void ResizableBoard::widthEntry() {
 	double h =  m_modelPart->localProp("height").toDouble();
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->resizeBoard(w, h, true);
 	}
 }
@@ -1082,7 +1083,7 @@ void ResizableBoard::heightEntry() {
 	double w =  m_modelPart->localProp("width").toDouble();
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->resizeBoard(w, h, true);
 	}
 }
@@ -1307,7 +1308,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 
 	subframe1->setLayout(hboxLayout1);
 	subframe2->setLayout(hboxLayout2);
-	if (returnWidget != NULL) vboxLayout->addWidget(returnWidget);
+	if (returnWidget) vboxLayout->addWidget(returnWidget);
 
 	connect(e1, SIGNAL(editingFinished()), this, SLOT(widthEntry()));
 	connect(e2, SIGNAL(editingFinished()), this, SLOT(heightEntry()));
@@ -1456,7 +1457,7 @@ void ResizableBoard::revertSize(bool) {
 	double oh = modelPart()->localProp("originalHeight").toDouble();
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
+	if (infoGraphicsView) {
 		infoGraphicsView->resizeBoard(ow, oh, true);
 		m_revertButton->setEnabled(false);
 	}

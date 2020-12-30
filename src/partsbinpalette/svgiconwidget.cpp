@@ -201,8 +201,8 @@ void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 		if (modelPart) {
 			DebugDialog::debug(QString("missing renderer for icon %1").arg(modelPart->moduleID()));
 		} else {
-			DebugDialog::debug(QString("error icon %1").arg(m_itemBase->m_filename));
-			DebugDialog::debug(QString("error icon %1").arg(m_itemBase->m_id));
+			DebugDialog::debug(QString("error icon %1").arg(m_itemBase->filename()));
+			DebugDialog::debug(QString("error icon %1").arg(m_itemBase->id()));
 		}
 	}
 	if (renderer && m_itemBase) {

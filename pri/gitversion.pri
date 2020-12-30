@@ -8,8 +8,8 @@ win32 {
 # Need to call git with manually specified paths to repository
 BASE_GIT_COMMAND = git --git-dir $$PWD/../.git --work-tree $$PWD/..
 
-$$(TRAVIS) {
-    # When running on travis, the tag is created *after* the build was successful.
+$$(CI) {
+    # When running on travis ci, the tag is created *after* the build was successful.
     # So we can not use 'git describe', but we generate a string that should look exactly
     # like what git describe would deliver
     GIT_VERSION = CD-$$(TRAVIS_BUILD_NUMBER)-0-$$system($$BASE_GIT_COMMAND rev-parse --short HEAD)

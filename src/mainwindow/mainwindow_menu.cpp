@@ -1232,10 +1232,6 @@ void MainWindow::createHelpMenuActions() {
 	m_openHelpAct->setStatusTip(tr("Open Fritzing help"));
 	connect(m_openHelpAct, SIGNAL(triggered(bool)), this, SLOT(openHelp()));
 
-	m_openDonateAct = new QAction(tr("Donate to Fritzing"), this);
-	m_openDonateAct->setStatusTip(tr("Open Fritzing donation web page"));
-	connect(m_openDonateAct, SIGNAL(triggered(bool)), this, SLOT(openDonate()));
-
 	m_examplesAct = new QAction(tr("Online Projects Gallery"), this);
 	m_examplesAct->setStatusTip(tr("Open Fritzing examples"));
 	connect(m_examplesAct, SIGNAL(triggered(bool)), this, SLOT(openExamples()));
@@ -1244,9 +1240,9 @@ void MainWindow::createHelpMenuActions() {
 	m_partsRefAct->setStatusTip(tr("Open Parts Reference"));
 	connect(m_partsRefAct, SIGNAL(triggered(bool)), this, SLOT(openPartsReference()));
 
-	/*m_visitFritzingDotOrgAct = new QAction(tr("Visit fritzing.org"), this);
-	m_visitFritzingDotOrgAct->setStatusTip(tr("www.fritzing.org"));
-	connect(m_visitFritzingDotOrgAct, SIGNAL(triggered(bool)), this, SLOT(visitFritzingDotOrg()));*/
+	m_visitFritzingDotOrgAct = new QAction(tr("Visit fritzing.org"), this);
+	m_visitFritzingDotOrgAct->setStatusTip(tr("fritzing.org"));
+	connect(m_visitFritzingDotOrgAct, SIGNAL(triggered(bool)), this, SLOT(visitFritzingDotOrg()));
 
 	m_checkForUpdatesAct = new QAction(tr("Check for updates..."), this);
 	m_checkForUpdatesAct->setStatusTip(tr("Check whether a newer version of Fritzing is available for download"));
@@ -1591,7 +1587,6 @@ void MainWindow::createHelpMenu()
 	m_helpMenu->addAction(m_enableDebugAct);
 	m_helpMenu->addSeparator();
 	m_helpMenu->addAction(m_aboutAct);
-	m_helpMenu->addAction(m_openDonateAct);
 	m_helpMenu->addAction(m_tipsAndTricksAct);
 	m_helpMenu->addAction(m_firstTimeHelpAct);
 #ifndef QT_NO_DEBUG
@@ -2290,10 +2285,6 @@ void MainWindow::openHelp() {
 	QDesktopServices::openUrl(QString("https://fritzing.org/learning/"));
 }
 
-void MainWindow::openDonate() {
-	QDesktopServices::openUrl(QString("https://fritzing.org/shop/donations/"));
-}
-
 void MainWindow::openExamples() {
 	QDesktopServices::openUrl(QString("https://fritzing.org/projects/"));
 }
@@ -2303,7 +2294,7 @@ void MainWindow::openPartsReference() {
 }
 
 void MainWindow::visitFritzingDotOrg() {
-	QDesktopServices::openUrl(QString("https://www.fritzing.org"));
+	QDesktopServices::openUrl(QString("https://fritzing.org"));
 }
 
 void MainWindow::reportBug() {

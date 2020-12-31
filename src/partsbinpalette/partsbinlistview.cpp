@@ -87,7 +87,7 @@ int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
 		lwi->setBackground(QBrush(SectionHeaderBackgroundColor));
 		lwi->setForeground(QBrush(SectionHeaderForegroundColor));
 		lwi->setData(Qt::UserRole, 0);
-		lwi->setFlags(0);
+		lwi->setFlags({});
 		lwi->setText("        " + TranslatedCategoryNames.value(modelPart->instanceText(), modelPart->instanceText()));
 	}
 	else {
@@ -292,7 +292,7 @@ bool PartsBinListView::dropMimeData(int index, const QMimeData *data, Qt::DropAc
 		ModelPart *modelPart = m_partHash[moduleID];
 
 		QModelIndex idx = model()->index(index, 0);
-		model()->setData(idx, qVariantFromValue(modelPart), Qt::UserRole);*/
+		model()->setData(idx, QVariant::fromValue(modelPart), Qt::UserRole);*/
 
 		return true;
 	} else {
@@ -387,7 +387,7 @@ void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, c
 			itemBase->setSharedRendererEx(renderer);
 		}
 	}
-	lwi->setData(Qt::UserRole, qVariantFromValue( itemBase ) );
+	lwi->setData(Qt::UserRole, QVariant::fromValue( itemBase ) );
 	QSize size(HtmlInfoView::STANDARD_ICON_IMG_WIDTH, HtmlInfoView::STANDARD_ICON_IMG_HEIGHT);
 	QPixmap * pixmap = FSvgRenderer::getPixmap(itemBase->renderer(), size);
 	lwi->setIcon(QIcon(*pixmap));

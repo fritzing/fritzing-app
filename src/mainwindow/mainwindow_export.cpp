@@ -557,12 +557,19 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 {
 	if (m_currentGraphicsView == NULL) return;
 
+	//Deselect all the items that are selected before creating the image
+	QList<QGraphicsItem*> selItems = m_currentGraphicsView->scene()->selectedItems();
+	foreach(QGraphicsItem *item, selItems) {
+		item->setSelected(false);
+	}
+
 	double resMultiplier = 3;
 
 	QRectF itemsBoundingRect;
 	foreach(QGraphicsItem *item,  m_currentGraphicsView->scene()->items()) {
 		if (!item->isVisible()) continue;
 
+		item->update();
 		itemsBoundingRect |= item->sceneBoundingRect();
 	}
 
@@ -596,6 +603,9 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	if (removeBackground) {
 		color = m_currentGraphicsView->background();
 		m_currentGraphicsView->setBackground(QColor::fromRgb(255,255,255,255));
+		image.fill(QColor::fromRgb(255,255,255,255));
+	} else {
+		image.fill(m_currentGraphicsView->background());
 	}
 
 	painter.begin(&image);
@@ -605,6 +615,11 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	painter.end();
 
 	//image.save(FolderUtils::getUserDataStorePath("") + "/export.png");
+
+	//Select the items that were selected
+	foreach(QGraphicsItem *item, selItems) {
+		item->setSelected(true);
+	}
 
 	if (removeBackground) {
 		m_currentGraphicsView->setBackground(color);

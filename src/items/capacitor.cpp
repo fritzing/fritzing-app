@@ -57,6 +57,10 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 			focusOutComboBox->setEditable(propertyDef->editable);
 			focusOutComboBox->setObjectName("infoViewComboBox");
 			QString current = m_propertyDefs.value(propertyDef);
+			if (current.isEmpty() && !propertyDef->defaultValue.isEmpty()) {
+				current = propertyDef->defaultValue + propertyDef->symbol;
+				setProp(propertyDef->name, propertyDef->defaultValue + propertyDef->symbol);
+			}
 			if (propertyDef->editable) {
 				focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value").arg(returnProp));
 			}

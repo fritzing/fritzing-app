@@ -895,7 +895,7 @@ void DRC::splitSubs(QDomDocument * doc, QDomElement & root, const QString & part
 
 				double area = sect.width() * sect.height();
 				double netArea = netr.width() * netr.height();
-				if ((area > netArea * .5) && (netArea * 2 > carea)) {
+				if ((area > netArea * .9) || ((area > netArea * .5) && (netArea * 2 > carea))) {
 					markSubs(checkElement, markers.inNoID);
 					gotOne = true;
 					break;

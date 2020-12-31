@@ -21,18 +21,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "svgpathlexer.h"
 #include "svgpathgrammar_p.h"
 #include "../utils/textutils.h"
-#include <qdebug.h>
 
-static const QRegExp findWhitespaceBefore(" ([AaCcMmVvTtQqSsLlVvHhZz,])");
+static const QRegExp findWhitespaceBefore(" ([AaCcMmVvTtQqSsLlVvHhZzx,])");
 static const QRegExp findWhitespaceAfter("([AaCcMmVvTtQqSsLlVvHhZz,]) ");
 static const QRegExp findWhitespaceAtEnd(" $");
+static const QRegExp findMinus("-");
 
 SVGPathLexer::SVGPathLexer(const QString &source)
 {
 	m_source = clean(source);
 	m_chars = m_source.unicode();
 	m_size = m_source.size();
-	//qDebug() << m_source;
 	m_pos = 0;
 	m_current = next();
 }
@@ -41,26 +40,39 @@ SVGPathLexer::~SVGPathLexer()
 {
 }
 
+/**
+ * Clean up svg path element data to make parsing simpler
+ *
+ * Mostly this removes extra whitespace, but it also adds a space before any minus (-)
+ * character. The attribute specification allows a negative number (leading minus sign
+ * to follow another number without any intervening separator. The minus sign acts as
+ * the separator. However (later) grammer processing does not recognized that sequence,
+ * at least for the "a" command. Inserting a leading space avoids the failing parse
+ * sequence, and does not change anything else. The extra space will get removed again
+ * by the existing (here) preprocessing, for all cases except
+ *   `number (space) negative number`
+ * @brief remove unneeded whitespaces from `d` attribute data
+ * @param source original svg path data
+ * @return sanitized svg path element data string
+ */
 QString SVGPathLexer::clean(const QString & source) {
-	// SVG path grammar is ambiguous, so clean it up to make it easier to parse
-	// the rules are WSP* , WSP* ==> ,
-	// WSP* command WSP* ==> command
-	// WSP+ ==> WSP
-	// where WSP is whitespace, command is one of the path commands such as M C V ...
-
-
 	QString s1 = source;
-	s1.replace(TextUtils::FindWhitespace, " ");
-	s1.replace(findWhitespaceBefore, "\\1");    // replace with the captured character
-	s1.replace(findWhitespaceAfter, "\\1");    // replace with the captured character
-	s1.replace(findWhitespaceAtEnd, "");
+	s1.replace(findMinus, " -");  // Patch (not fix) for #3647 bug: add space before "-" characters
+	s1.replace(TextUtils::FindWhitespace, " "); // collapse multiple whitespace to single space
+	s1.replace(findWhitespaceBefore, "\\1");  // remove space before command or comma
+	s1.replace(findWhitespaceAfter, "\\1");   // remove space after command or comma
+	s1.replace(findWhitespaceAtEnd, "");      // remove trailing space
 	return s1;
-
 }
 
 int SVGPathLexer::lex()
 {
+	if (m_current.isNull()) {
+		// Do this first, to prevent infinite loop when last content of the path data is a number
+		return SVGPathGrammar::EOF_SYMBOL;
+	}
 	if (TextUtils::floatingPointMatcher.indexIn(m_source, m_pos - 1) == m_pos - 1) {
+		// sitting at the start of a number: collect and advance past it
 		m_currentNumber = m_source.mid(m_pos - 1, TextUtils::floatingPointMatcher.matchedLength()).toDouble();
 		m_pos += TextUtils::floatingPointMatcher.matchedLength() - 1;
 		next();
@@ -70,9 +82,6 @@ int SVGPathLexer::lex()
 	if (m_current.isSpace()) {
 		next();
 		return SVGPathGrammar::WHITESPACE;
-	}
-	else if (m_current.isNull()) {
-		return SVGPathGrammar::EOF_SYMBOL;
 	}
 	else if (m_current == QLatin1Char('V')) {
 		m_currentCommand = m_current;
@@ -184,8 +193,7 @@ int SVGPathLexer::lex()
 		return SVGPathGrammar::COMMA;
 	}
 
-
-	return -1;
+	return -1; // the command character does not match any known path command
 }
 
 QChar SVGPathLexer::next()

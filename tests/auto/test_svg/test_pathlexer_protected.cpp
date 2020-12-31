@@ -33,7 +33,7 @@ BOOST_AUTO_TEST_CASE( pathlexer_clean )
 		"m0,0x",
 		"m0,0x",
 		"m0 0x",
-		"m0,0a2.6,2.6 0 0 1 5.2,0v5.2a2.6,2.6 0 0 1-5.2,0z"
+		"m0,0a2.6,2.6 0 0 1 5.2,0v5.2a2.6,2.6 0 0 1 -5.2,0z"
 			"m0.5,3a1,1 0 0 0 4.2,0v-0.8a1,1 0 0 0 -4.2,0z"
 	};
 	for (int i = 0; i < test_cases.size(); ++i) {

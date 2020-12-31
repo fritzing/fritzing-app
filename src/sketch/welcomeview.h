@@ -155,12 +155,10 @@ protected:
 	QListWidget * m_recentListWidget = nullptr;
 	QWidget * m_fabUberFrame = nullptr;
 	QWidget * m_shopUberFrame = nullptr;
-    QWidget * m_donateUberFrame = nullptr;
 	QLabel * m_projectsLabel = nullptr;
 	QLabel * m_blogLabel = nullptr;
 	QLabel * m_fabLabel = nullptr;
 	QLabel * m_shopLabel = nullptr;
-    QLabel * m_donateLabel = nullptr;
 
 	static QString m_activeHeaderLabelColor;
 	static QString m_inactiveHeaderLabelColor;

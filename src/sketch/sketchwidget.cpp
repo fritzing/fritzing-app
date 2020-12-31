@@ -795,9 +795,14 @@ ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerP
 
 	bool ok;
 	addPartItem(modelPart, viewLayerPlacement, (PaletteItem *) newItem, doConnectors, ok, viewID, temporary);
-	newItem->debugInfo("add part");
-	setNewPartVisible(newItem);
-	newItem->updateConnectors();
+	if (ok) {
+		newItem->debugInfo("add part");
+		setNewPartVisible(newItem);
+		newItem->updateConnectors();
+	} else {
+		delete(newItem);
+		newItem = nullptr;
+	}
 	return newItem;
 }
 
@@ -897,19 +902,18 @@ PaletteItem* SketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLay
 		ok = true;
 	}
 	else {
-		// nobody falls through to here now?
-
-		FMessageBox::information(nullptr, QObject::tr("Fritzing"),
-		                         QObject::tr("Error reading file %1: %2.").arg(modelPart->path()).arg(error) );
-
+		// Error rendering the image. This can also happen
+		// if filename cases do not match on case sensitive file
+		// systems.
+		QMessageBox *mb = new QMessageBox(this->parentWidget());
+		mb->setAttribute(Qt::WA_DeleteOnClose, true);
+		mb->setWindowTitle("Fritzing");
+		mb->setText(QObject::tr("Error reading file %1: %2.").arg(modelPart->path(), error));
+		mb->setIcon(QMessageBox::Critical);
+		mb->show();
 
 		DebugDialog::debug(QString("addPartItem renderImage failed %1 %2").arg(modelPart->moduleID()).arg(error));
-
-		//paletteItem->modelPart()->removeViewItem(paletteItem);
-		//delete paletteItem;
-		//return nullptr;
-		scene()->addItem(paletteItem);
-		//paletteItem->setVisible(false);
+		return paletteItem;
 	}
 	paletteItem->addedToScene(temporary);
 	return paletteItem;
@@ -1833,6 +1837,9 @@ bool SketchWidget::dragEnterEventAux(QDragEnterEvent *event) {
 
 		// create temporary item for dragging
 		m_droppingItem = addItemAuxTemp(modelPart, defaultViewLayerPlacement(modelPart), viewGeometry, fromID, doConnectors, m_viewID, true);
+		if (!m_droppingItem) {
+			return false;
+		}
 		QSizeF size = m_droppingItem->sceneBoundingRect().size();
 		if (size.width() < offset.x() || size.height() < offset.y()) {
 			offset = m_droppingOffset = QPointF(size.width() / 2, size.height() / 2);

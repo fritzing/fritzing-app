@@ -570,6 +570,7 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	foreach(QGraphicsItem *item,  m_currentGraphicsView->scene()->items()) {
 		if (!item->isVisible()) continue;
 
+		item->update();
 		itemsBoundingRect |= item->sceneBoundingRect();
 	}
 

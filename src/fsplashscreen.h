@@ -39,7 +39,7 @@ struct PixmapThing {
 class FSplashScreen : public QSplashScreen {
 	Q_OBJECT
 public:
-	FSplashScreen(const QPixmap & pixmap = QPixmap(), Qt::WindowFlags f = 0);
+	FSplashScreen(const QPixmap & pixmap = QPixmap(), Qt::WindowFlags f = Qt::WindowFlags());
 	~FSplashScreen();
 
 	void showMessage(const QString &message, const QString & id, int alignment = Qt::AlignLeft);

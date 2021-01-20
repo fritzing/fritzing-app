@@ -380,5 +380,7 @@
         <file>resources/images/icons/toolbarSaveCodePressed_icon.png</file>
         <file>resources/images/icons/aisler_donut-cloud_logo_icon.png</file>
         <file>resources/images/smoke.svg</file>
+        <file>resources/images/rotateCW.svg</file>
+        <file>resources/images/rotateCCW.svg</file>
     </qresource>
 </RCC>

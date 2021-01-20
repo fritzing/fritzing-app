@@ -253,4 +253,17 @@
 	<suffix suffix="ResistorModuleID"/>
 	<suffix suffix="PotentiometerModuleID"/>
 </property>
+
+<property name="voltage (max)" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">
+	<suffix suffix="1000FADF10011leg"/>
+	<menuItem value="3.3" />
+	<menuItem value="5" />
+	<menuItem value="12" />
+	<menuItem value="24" />
+</property>
+
+<property name="voltage (min)" symbol="V" minValue="0" maxValue="1000" defaultValue="2.5" numeric="yes" editable="yes">
+	<suffix suffix="1000FADF10011leg"/>
+</property>
+
 </properties>

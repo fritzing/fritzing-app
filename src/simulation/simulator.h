@@ -61,6 +61,7 @@ protected:
 	void updateMultimeter(ItemBase *);
 	void updateResistor(ItemBase *);
 	void updatePotentiometer(ItemBase * part);
+	void updateDcMotor(ItemBase * part);
 
 	MainWindow *m_mainWindow;
 	std::shared_ptr<SPICE_SIMULATOR> m_simulator;

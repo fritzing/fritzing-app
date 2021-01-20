@@ -196,6 +196,9 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 			return new Capacitor(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 		}
 		QString family = modelPart->properties().value("family", "");
+		if (family.compare("dc motor", Qt::CaseInsensitive) == 0) {
+			return new Capacitor(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
+		}
 		if (family.compare("mystery part", Qt::CaseInsensitive) == 0) {
 			return new MysteryPart(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 		}

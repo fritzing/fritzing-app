@@ -257,6 +257,11 @@ void Simulator::simulate() {
 			updateMultimeter(part);
 			continue;
 		}
+		if (family.contains("dc motor")) {
+			updateDcMotor(part);
+			continue;
+		}
+
 	}
 
 	//Delete the pointers
@@ -675,6 +680,51 @@ void Simulator::updatePotentiometer(ItemBase * part) {
 	double power = max(powerA, powerB);
 	if (power > maxPower) {
 		drawSmoke(part);
+	}
+}
+
+/**
+ * Updates and checks a DC motor. Checks that the voltage is less than the maximum voltage.
+ * If the voltage is bigger than the minimum, it plots an arrow to indicate that is turning.
+ * TODO: The number of arrows are proportional to the voltage applied.
+ * @param[in] part A DC motor that is going to be checked and updated.
+ */
+void Simulator::updateDcMotor(ItemBase * part) {
+	double maxV = getMaxPropValue(part, "voltage (max)");
+	double minV = getMaxPropValue(part, "voltage (min)");
+	std::cout << "Motor1: " << std::endl;
+	ConnectorItem * terminal1, * terminal2;
+	QList<ConnectorItem *> probes = part->cachedConnectorItems();
+	foreach(ConnectorItem * ci, probes) {
+		if(ci->connectorSharedName().toLower().compare("pin 1") == 0) terminal1 = ci;
+		if(ci->connectorSharedName().toLower().compare("pin 2") == 0) terminal2 = ci;
+	}
+	if(!terminal1 || !terminal2 )
+		return;
+
+	double v = calculateVoltage(terminal1, terminal2);; //voltage applied to the motor
+	if (abs(v) > maxV) {
+		drawSmoke(part);
+		return;
+	}
+	if (abs(v) >= minV) {
+		std::cout << "motor rotates " << std::endl;
+		QGraphicsSvgItem * bbSmoke;
+		QGraphicsSvgItem * schSmoke;
+		QString image;
+		if(v > 0) {
+			image = QString(":resources/images/rotateCW.svg");
+		} else {
+			image = QString(":resources/images/rotateCCW.svg");
+		}
+		bbSmoke = new QGraphicsSvgItem(image, m_sch2bbItemHash.value(part));
+		schSmoke = new QGraphicsSvgItem(image, part);
+		if (!bbSmoke || !schSmoke) return;
+
+		schSmoke->setZValue(DBL_MAX);
+		bbSmoke->setZValue(DBL_MAX);
+		part->addSimulationGraphicsItem(schSmoke);
+		m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbSmoke);
 	}
 }
 

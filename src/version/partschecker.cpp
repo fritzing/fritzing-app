@@ -71,7 +71,7 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
 		                "by selecting <i>Part > Regenerate parts database...</i>.</p>"
 		                "<p>If you did not use git to make changes, then you may need to reinstall Fritzing.</p>";
 
-		sNotInMasterBranch = QObject::tr("The parts folder '%1' has been changed--it is not in the master branch (%2). %3");
+		sNotInMasterBranch = QObject::tr("The parts folder '%1' has been changed--it is not in a supported branch (%2). %3");
 		sDamaged = QObject::tr("The parts folder '%1' may have been damaged (%2). %3");
 		sModifiedByGit = QObject::tr("The parts folder '%1' has been changed (%2). %3");
 		sModified = QObject::tr("There are new or modified files in the parts folder '%1'. These changes will be discarded by the update.");
@@ -80,8 +80,10 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
 
 	remoteSha = "";
 
-	git_repository *repository = NULL;
-	git_remote *remote = NULL;
+	git_repository * repository = nullptr;
+	git_remote * remote = nullptr;
+	git_reference * head = nullptr;
+	git_oid oid;
 	int error;
 	const git_remote_head **remote_heads;
 	size_t remote_heads_len, i;
@@ -115,6 +117,7 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
 	/**
 	 * Connect to the remote.
 	 */
+	DebugDialog::debug(QString("remote %1").arg(git_remote_url(remote)));
 #if LIBGIT2_VER_MAJOR > 0 || (LIBGIT2_VER_MAJOR == 0 && LIBGIT2_VER_MINOR > 24)
 	error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, NULL, NULL);
 #elif LIBGIT2_VER_MINOR == 24
@@ -138,12 +141,45 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
 		goto cleanup;
 	}
 
+	//get the current head
+	error = git_repository_head(&head, repository);
+	if (error == GIT_EUNBORNBRANCH || error == GIT_ENOTFOUND) {
+		// HEAD state changed, assume a git operation
+		partsCheckerResult.partsCheckerError = PARTS_CHECKER_ERROR_USED_GIT;
+		partsCheckerResult.errorMessage = sNotInMasterBranch.arg(repoPath).arg(0).arg(sBoilerPlate2);
+		goto cleanup;
+	}
+	if (error) {
+		// still dealing with git_repository_head error
+		partsCheckerResult.partsCheckerError = PARTS_CHECKER_ERROR_LOCAL_DAMAGE;
+		partsCheckerResult.errorMessage = sDamaged.arg(repoPath).arg(1).arg(sBoilerPlate2);
+		goto cleanup;
+	}
+
+	DebugDialog::debug(QString("current head %1").arg( git_reference_name(head)));
+
+	error = git_reference_name_to_id(&oid, repository, git_reference_name(head));
+	if (error) {
+		partsCheckerResult.partsCheckerError = PARTS_CHECKER_ERROR_LOCAL_DAMAGE;
+		partsCheckerResult.errorMessage = sDamaged.arg(repoPath).arg(2).arg(sBoilerPlate2);
+		goto cleanup;
+	}
+	// TODO: if oid and shaFromDatabase differ, suggest to reindex the database
+	DebugDialog::debug(QString("head oid %1").arg(git_oid_tostr_s(&oid)));
+
 	for (i = 0; i < remote_heads_len; i++) {
-		// we only care about the master branch
-		if (strcmp(remote_heads[i]->name, "refs/heads/master") == 0) {
-			char oid[GIT_OID_HEXSZ + 1] = {0};
-			git_oid_fmt(oid, &remote_heads[i]->oid);
-			QString soid(oid);
+		DebugDialog::debug(QString("remote head name %1, %2, %3").arg(
+							   remote_heads[i]->name).arg(
+							   remote_heads[i]->local).arg(
+							   remote_heads[i]->symref_target));
+		char oid[GIT_OID_HEXSZ + 1] = {0};
+		git_oid_fmt(oid, &remote_heads[i]->oid);
+		QString soid(oid);
+		DebugDialog::debug(QString("ref oid %1").arg(soid));
+
+		// we only care about the current branch
+		if (strcmp(remote_heads[i]->name, git_reference_name(head)) == 0) {
+
 			remoteSha = soid;
 			QSettings settings;
 			QString lastPartsSha = settings.value("lastPartsSha", "").toString();
@@ -160,11 +196,13 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
 	}
 
 	partsCheckerResult.partsCheckerError = PARTS_CHECKER_ERROR_REMOTE;
-	partsCheckerResult.errorMessage = QObject::tr("Unable to retrieve master network reference for '%1'. %2").arg(repoPath).arg(sBoilerPlate1);
+	partsCheckerResult.errorMessage = QObject::tr("Unable to retrieve the network reference for '%1'#%2. %3").arg(repoPath).arg(git_reference_name(head)).arg(sBoilerPlate1);
 
 cleanup:
+	if (head) git_reference_free(head);
 	if (remote) git_remote_free(remote);
 	if (repository) git_repository_free(repository);
+
 	git_libgit2_shutdown();
 	return available;
 }
@@ -175,7 +213,7 @@ cleanup:
 bool PartsChecker::checkIfClean(const QString & repoPath,
                                 const QString & shaFromDatabase,
                                 git_repository * repository,
-                                PartsCheckerResult & partsCheckerResult)
+								PartsCheckerResult & partsCheckerResult)
 {
 	// check local branch is master
 	// check local git status is ok
@@ -211,7 +249,8 @@ bool PartsChecker::checkIfClean(const QString & repoPath,
 
 	errorNumber++;
 	branchName = git_reference_shorthand(head);
-	if (branchName != "master") {
+	// TODO: Remove this restriction, maybe limited to an 'expert mode'
+	if (branchName != "master" && branchName != "release_0.9.6") {
 		partsCheckerResult.partsCheckerError = PARTS_CHECKER_ERROR_USED_GIT;
 		partsCheckerResult.errorMessage = sNotInMasterBranch.arg(repoPath).arg(errorNumber).arg(sBoilerPlate2);
 		goto cleanup;
@@ -551,8 +590,8 @@ int PartsChecker::doMerge(git_repository * repository, const QString & remoteSha
 	git_commit *remote_commit = NULL;
 	git_signature * signature = NULL;
 	git_tree * saved_tree = NULL;
-	git_reference * master_reference = NULL;
-	git_reference * new_master_reference = NULL;
+	git_reference * current_reference = NULL;
+	git_reference * new_reference = NULL;
 	git_reference * head_reference = NULL;
 	git_reference * new_head_reference = NULL;
 	git_index * index = NULL;
@@ -600,13 +639,19 @@ int PartsChecker::doMerge(git_repository * repository, const QString & remoteSha
 			goto cleanup;
 		}
 
-		error = git_reference_lookup(&master_reference, repository, "refs/heads/master");
+		error = git_repository_head(&head_reference, repository);
 		if (error) {
-			DebugDialog::debug("master ref lookup failed");
+			DebugDialog::debug("head ref lookup failed");
 			goto cleanup;
 		}
 
-		error = git_reference_set_target(&new_master_reference, master_reference, &their_oids[0], "Update parts");
+		error = git_reference_lookup(&current_reference, repository, git_reference_name(head_reference));
+		if (error) {
+			DebugDialog::debug("HEAD ref lookup failed");
+			goto cleanup;
+		}
+
+		error = git_reference_set_target(&new_reference, current_reference, &their_oids[0], "Update parts");
 		if (error) {
 			DebugDialog::debug("ref set target failed");
 			goto cleanup;
@@ -691,8 +736,8 @@ cleanup:
 	}
 
 	git_index_free(index);
-	git_reference_free(master_reference);
-	git_reference_free(new_master_reference);
+	git_reference_free(current_reference);
+	git_reference_free(new_reference);
 	git_reference_free(head_reference);
 	git_reference_free(new_head_reference);
 	git_signature_free(signature);

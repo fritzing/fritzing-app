@@ -1128,11 +1128,6 @@ void MainWindow::createViewMenuActions(bool showWelcome) {
 	m_colorWiresByLengthAct->setCheckable(true);
 	connect(m_colorWiresByLengthAct, SIGNAL(triggered()), this, SLOT(colorWiresByLength()));
 
-	m_enableSimulatorAct = new QAction(tr("Enable the simulator"), this);
-	m_enableSimulatorAct->setStatusTip(tr("Adds a button to be able to simulate the circuit"));
-	m_enableSimulatorAct->setCheckable(true);
-	connect(m_enableSimulatorAct, SIGNAL(triggered()), this, SLOT(enableSimulator()));
-
 	m_simulationAct = new QAction(tr("Simulate"), this);
 	m_simulationAct->setStatusTip(tr("Simulate the circuit (DC analysis)"));
 	connect(m_simulationAct, SIGNAL(triggered()), m_simulator, SLOT(simulate()));
@@ -1490,7 +1485,6 @@ void MainWindow::createViewMenu()
 	m_viewMenu->addAction(m_setGridSizeAct);
 	m_viewMenu->addAction(m_setBackgroundColorAct);
 	m_viewMenu->addAction(m_colorWiresByLengthAct);
-	m_viewMenu->addAction(m_enableSimulatorAct);
 	m_viewMenu->addSeparator();
 
 	if (m_welcomeView) m_viewMenu->addAction(m_showWelcomeAct);
@@ -4084,11 +4078,11 @@ QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 	return over;
 }
 
-void MainWindow::enableSimulator() {
+void MainWindow::enableSimulator(bool enable) {
 	if (m_simulator) {
-		m_simulator->enable(m_enableSimulatorAct->isChecked());
+		m_simulator->enable(enable);
 		if (m_simulationButton) {
-			if(m_enableSimulatorAct->isChecked()) {
+			if(enable) {
 				m_simulationButton->show();
 			} else {
 				m_simulationButton->hide();

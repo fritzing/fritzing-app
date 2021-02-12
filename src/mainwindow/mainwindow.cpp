@@ -3212,3 +3212,7 @@ void MainWindow::noSchematicConversion() {
 void MainWindow::setInitialTab(int tab) {
 	m_initialTab = tab;
 }
+
+bool MainWindow::isSimulatorEnabled() {
+	return m_simulator->isEnabled();
+}

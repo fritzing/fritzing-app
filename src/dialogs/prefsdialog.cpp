@@ -66,7 +66,7 @@ void PrefsDialog::initViewInfo(int index, const QString & viewName, const QStrin
 	m_viewInfoThings[index].curvy = curvy;
 }
 
-void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platforms)
+void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platforms, bool en_simulator)
 {
 	m_tabWidget = new QTabWidget();
 	m_general = new QWidget();
@@ -74,6 +74,7 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 	m_schematic = new QWidget();
 	m_pcb = new QWidget();
 	m_code = new QWidget();
+	m_beta_features = new QWidget();
 	m_tabWidget->setObjectName("preDia_tabs");
 
 	m_tabWidget->addTab(m_general, tr("General"));
@@ -81,6 +82,7 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 	m_tabWidget->addTab(m_schematic, m_viewInfoThings[1].viewName);
 	m_tabWidget->addTab(m_pcb, m_viewInfoThings[2].viewName);
 	m_tabWidget->addTab(m_code, tr("Code View"));
+	m_tabWidget->addTab(m_beta_features, tr("Beta Features"));
 
 	QVBoxLayout * vLayout = new QVBoxLayout();
 	vLayout->addWidget(m_tabWidget);
@@ -93,6 +95,8 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 
 	initCode(m_code, platforms);
 	m_platforms = platforms;
+
+	initBetaFeatures(m_beta_features, en_simulator);
 
 	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
@@ -156,6 +160,13 @@ void PrefsDialog::initCode(QWidget * widget, QList<Platform *> platforms)
 	QVBoxLayout * vLayout = new QVBoxLayout();
 	vLayout->addWidget(createProgrammerForm(platforms));
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
+	widget->setLayout(vLayout);
+}
+
+void PrefsDialog::initBetaFeatures(QWidget * widget, bool en_simulator)
+{
+	QVBoxLayout * vLayout = new QVBoxLayout();
+	vLayout->addWidget(createBetaFeaturesForm(en_simulator));
 	widget->setLayout(vLayout);
 }
 
@@ -425,6 +436,31 @@ void PrefsDialog::changeLanguage(int index)
 	}
 }
 
+QWidget * PrefsDialog::createBetaFeaturesForm(bool en_simulator) {
+	QGroupBox * simulator = new QGroupBox(tr("Simulator"), this );
+
+	QVBoxLayout * layout = new QVBoxLayout();
+	layout->setSpacing(SPACING);
+
+	QLabel * label = new QLabel(tr("The simulator is a beta feature and has not been tested extensively. "
+								   "This means that there are still bugs that need to be fixed and can cause "
+								   "to crash Fritzing. Backup your data and do not use it for production."));
+	label->setWordWrap(true);
+	layout->addWidget(label);
+	layout->addSpacing(10);
+
+	QCheckBox * box = new QCheckBox(tr("Enable simulator"));
+	box->setFixedWidth(FORMLABELWIDTH);
+	box->setChecked(en_simulator);
+	layout->addWidget(box);
+
+	simulator->setLayout(layout);
+
+	connect(box, SIGNAL(clicked(bool)), this, SLOT(toggleSimulator(bool)));
+
+	return simulator;
+}
+
 void PrefsDialog::clear() {
 	m_cleared = true;
 	accept();
@@ -509,6 +545,10 @@ void PrefsDialog::updateWheelText() {
 
 void PrefsDialog::toggleAutosave(bool checked) {
 	m_settings.insert("autosaveEnabled", QString("%1").arg(checked));
+}
+
+void PrefsDialog::toggleSimulator(bool checked) {
+	m_settings.insert("simulatorEnabled", QString("%1").arg(checked));
 }
 
 void PrefsDialog::changeAutosavePeriod(int value) {

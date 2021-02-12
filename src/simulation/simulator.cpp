@@ -103,6 +103,14 @@ Simulator::~Simulator() {
 }
 
 /**
+ * Returns the status of the simulator (enabled/disabled).
+ * @returns true if the simulator is enabled and false otherwise.
+ */
+bool Simulator::isEnabled() {
+	return m_enabled;
+}
+
+/**
  * Enables or disables the simulator. If it is disabled, removes the simulation effects: the grey out of
  * the parts that are not simulated and the messages previously added.
  * @param[in] enable boolean to indicate if the simulator needs to be enabled or disabled.

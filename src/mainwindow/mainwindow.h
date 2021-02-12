@@ -231,6 +231,8 @@ public:
 	void setInitialTab(int);
 	void noSchematicConversion();
 	QString getSpiceNetlist(QString, QList< QList<class ConnectorItem *>* >&, QSet<class ItemBase *>& );
+	bool isSimulatorEnabled();
+	void enableSimulator(bool);
 
 public:
 	static void initNames();
@@ -301,7 +303,6 @@ protected slots:
 	void setGridSize();
 	void setBackgroundColor();
 	void colorWiresByLength();
-	void enableSimulator();
 	void showBreadboardView();
 	void showSchematicView();
 	void showProgramView();
@@ -763,7 +764,6 @@ protected:
 	QAction *m_deselectAct = nullptr;
 	QAction *m_addNoteAct = nullptr;
 	QAction *m_simulationAct = nullptr;
-	QAction *m_enableSimulatorAct = nullptr;
 
 	// Part Menu
 	QMenu *m_partMenu = nullptr;

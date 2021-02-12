@@ -33,6 +33,7 @@ class Simulator : public QObject
 public:
 	Simulator(class MainWindow *mainWindow);
 	~Simulator();
+	bool isEnabled();
 
 public slots:
 	void simulate();

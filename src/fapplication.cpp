@@ -1266,7 +1266,7 @@ void FApplication::preferencesAfter()
 
 	QList<Platform *> platforms = mainWindow->programmingWidget()->getAvailablePlatforms();
 
-	prefsDialog.initLayout(languages, platforms);
+	prefsDialog.initLayout(languages, platforms, mainWindow->isSimulatorEnabled());
 	if (QDialog::Accepted == prefsDialog.exec()) {
 		updatePrefs(prefsDialog);
 	}
@@ -1315,6 +1315,11 @@ void FApplication::updatePrefs(PrefsDialog & prefsDialog)
 						sketchWidget->setCurvyWires(hash.value(key).compare("1") == 0);
 					}
 				}
+			}
+		}
+		else if (key.compare("simulatorEnabled") == 0) {
+			foreach (MainWindow * mainWindow, mainWindows) {
+				mainWindow->enableSimulator(hash.value(key).toInt());
 			}
 		}
 	}

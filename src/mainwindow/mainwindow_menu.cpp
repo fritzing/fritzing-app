@@ -4078,20 +4078,6 @@ QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 	return over;
 }
 
-void MainWindow::enableSimulator(bool enable) {
-	if (m_simulator) {
-		m_simulator->enable(enable);
-		if (m_simulationButton) {
-			if(enable) {
-				m_simulationButton->show();
-			} else {
-				m_simulationButton->hide();
-			}
-		}
-		setWindowModified(true);
-	}
-}
-
 void MainWindow::colorWiresByLength() {
 	if (m_breadboardGraphicsView == NULL) return;
 

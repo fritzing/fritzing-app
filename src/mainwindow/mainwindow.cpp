@@ -1024,12 +1024,13 @@ SketchToolButton *MainWindow::createNoteButton(SketchAreaWidget *parent) {
 }
 
 SketchToolButton *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
-	m_simulationButton = new SketchToolButton("Simulation",parent, m_simulationAct);
-	m_simulationButton->setObjectName("simulationButton");
-	m_simulationButton->setText(tr("Simulate"));
-	m_simulationButton->setEnabledIcon();					// seems to need this to display button icon first time
-	//m_simulationButton->hide();
-	return m_simulationButton;
+	SketchToolButton *simulationButton = new SketchToolButton("Simulation",parent, m_simulationAct);
+	simulationButton->setObjectName("simulationButton");
+	simulationButton->setText(tr("Simulate"));
+	simulationButton->setEnabledIcon();					// seems to need this to display button icon first time
+
+	m_simulationButtons << simulationButton;
+	return simulationButton;
 }
 
 SketchToolButton *MainWindow::createExportEtchableButton(SketchAreaWidget *parent) {
@@ -3215,4 +3216,19 @@ void MainWindow::setInitialTab(int tab) {
 
 bool MainWindow::isSimulatorEnabled() {
 	return m_simulator->isEnabled();
+}
+
+void MainWindow::enableSimulator(bool enable) {
+	if (m_simulator) {
+		m_simulator->enable(enable);
+	} else {
+		enable = false;
+	}
+
+	foreach(SketchToolButton* simButton, m_simulationButtons) {
+		if (simButton) {
+			m_simulationAct->setVisible(enable);
+			simButton->setVisible(enable);
+		}
+	}
 }

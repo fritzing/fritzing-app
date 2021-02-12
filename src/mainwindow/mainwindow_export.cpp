@@ -1373,7 +1373,8 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 			if (ci->isGrounded()) {
 				ground = net;
 			}
-			itemBases.insert(ci->attachedTo());
+			if (!ci->attachedTo()->spice().isEmpty())
+				itemBases.insert(ci->attachedTo());
 		}
 		//DebugDialog::debug("_______________");
 	}

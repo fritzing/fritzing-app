@@ -907,7 +907,7 @@ protected:
 	QList<SketchToolButton*> m_flipButtons;
 	QStackedWidget * m_activeLayerButtonWidget = nullptr;
 	QStackedWidget * m_viewFromButtonWidget = nullptr;
-	SketchToolButton* m_simulationButton = nullptr;
+	QList<SketchToolButton*> m_simulationButtons;
 
 	bool m_comboboxChanged = false;
 	bool m_restarting = false;

@@ -2432,6 +2432,7 @@ const QString &MainWindow::selectedModuleID() {
 }
 
 void MainWindow::redrawSketch() {
+	if (m_currentGraphicsView == NULL) return;
 	QList<ConnectorItem *> visited;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		item->update();

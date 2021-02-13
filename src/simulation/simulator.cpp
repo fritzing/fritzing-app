@@ -123,6 +123,14 @@ void Simulator::enable(bool enable) {
 }
 
 /**
+ * Resets the simulator and removes the simulation effects: the grey out of
+ * the parts that are not simulated and the messages previously added.
+ */
+void Simulator::reset() {
+	removeSimItems();
+}
+
+/**
  * Main function that is in charge of simulating the circuit and show components working out of its specifications.
  * Components working outside its specifications are shown by adding a smoke image over them.
  * The steps performed are:
@@ -346,6 +354,12 @@ void Simulator::removeSimItems(QList<QGraphicsItem *> items) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase) {
 			itemBase->removeSimulationGraphicsItem();
+			if (itemBase->viewID() == ViewLayer::ViewID::BreadboardView) {
+				LED * led = dynamic_cast<LED *>(item);
+				if (led) {
+					led->resetBrightness();
+				}
+			}
 		}
 	}
 }
@@ -503,7 +517,7 @@ void Simulator::greyOutNonSimParts(const QSet<ItemBase *>& simParts) {
 
 	//Remove the parts that are going to be simulated and the wires connected to them
 	QList<ConnectorItem *> bbConnectors;
-	foreach (ItemBase * part, simParts){
+	foreach (ItemBase * part, simParts) {
 		noSimSchParts.removeAll(part);
 		noSimBbParts.removeAll(m_sch2bbItemHash.value(part));
 		bbConnectors.append(m_sch2bbItemHash.value(part)->cachedConnectorItems());

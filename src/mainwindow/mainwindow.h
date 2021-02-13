@@ -759,6 +759,7 @@ protected:
 	QAction *m_deselectAct = nullptr;
 	QAction *m_addNoteAct = nullptr;
 	QAction *m_simulationAct = nullptr;
+	QAction *m_resetSimulatorAct = nullptr;
 
 	// Part Menu
 	QMenu *m_partMenu = nullptr;

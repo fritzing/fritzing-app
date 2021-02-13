@@ -132,6 +132,14 @@ void LED::setColor(const QString & color)
 }
 
 /**
+ * Resets the brightness of an LED to its original specification.
+ * @brief Restores the original brightness of an LED.
+ */
+void LED::resetBrightness() {
+	setBrightness(1-offColor);
+}
+
+/**
  * Changes the brightness of an LED based on a brightness parameter.
  * The color is the specfied in the LED file and it can  get 30% brighter than that
  * color if brightness is equal to 1. A brightness of 0 reduces scales the color to
@@ -168,7 +176,6 @@ void LED::setBrightness(double brightness){
 	if (brightness < 0) brightness = 0;
 
 	//Find the new color values
-	double offColor = 0.3;
 	red = offColor*red + brightness*red;
 	green = offColor*green + brightness*green;
 	blue = offColor*blue + brightness*blue;

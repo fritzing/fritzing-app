@@ -36,8 +36,9 @@ public:
 	bool isEnabled();
 
 public slots:
-	void simulate();
 	void enable(bool);
+	void reset();
+	void simulate();
 
 protected:
 	void drawSmoke(ItemBase* part);

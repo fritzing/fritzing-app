@@ -97,6 +97,10 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 	m_breadboardGraphicsView = dynamic_cast<BreadboardSketchWidget *>(mainWindow->sketchWidgets().at(0));
 	m_schematicGraphicsView = dynamic_cast<SchematicSketchWidget *>(mainWindow->sketchWidgets().at(1));
 	m_instanceTitleSim = new QList<QString>;
+
+	QSettings settings;
+	int enabled = settings.value("simulatorEnabled", 0).toInt();
+	enable(enabled);
 }
 
 Simulator::~Simulator() {

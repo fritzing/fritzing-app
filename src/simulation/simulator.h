@@ -70,7 +70,7 @@ protected:
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;
 	QPointer<class SchematicSketchWidget> m_schematicGraphicsView;
 
-	bool m_enabled = false;
+	bool m_enabled;
 
 	QHash<ItemBase *, ItemBase *> m_sch2bbItemHash;
 	QHash<ConnectorItem *, int> m_connector2netHash;

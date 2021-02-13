@@ -1032,6 +1032,9 @@ SketchToolButton *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
 	simulationButton->setText(tr("Simulate"));
 	simulationButton->setEnabledIcon();				// seems to need this to display button icon first time
 
+	if (!m_simulator->isEnabled())
+		simulationButton->hide();
+
 	m_simulationButtons << simulationButton;
 	return simulationButton;
 }

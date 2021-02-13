@@ -32,6 +32,9 @@ class LED : public Capacitor
 {
 	Q_OBJECT
 
+	//The color that remains when the brightness is set to 0
+	static constexpr double offColor = 0.3;
+
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
 	LED(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
@@ -46,7 +49,8 @@ public:
 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	const QString & title();
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
-	void LED::setBrightness(double);
+	void setBrightness(double);
+	void resetBrightness();
 
 protected:
 	void setColor(const QString & color);
@@ -55,6 +59,7 @@ protected:
 
 protected:
 	QString m_title;
+
 
 };
 

@@ -192,7 +192,7 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 
 		}
 		// TODO: use the list in properties.xml
-		if (moduleID == "alps-starter-pot9mm") {
+		if (moduleID == "alps-starter-pot9mm" || moduleID == "beab33bd7feee277622ef76dd6e79e4d") {
 			return new Capacitor(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 		}
 		QString family = modelPart->properties().value("family", "");

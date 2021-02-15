@@ -281,6 +281,10 @@ void Simulator::simulate() {
 			updateDcMotor(part);
 			continue;
 		}
+		if (family.contains("line sensor") || family.contains("distance sensor")) {
+			updateIRSensor(part);
+			continue;
+		}
 
 	}
 
@@ -380,8 +384,8 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 
 	QString net0str = QString("v(%1)").arg(net0);
 	QString net1str = QString("v(%1)").arg(net1);
-	std::cout << "net0str: " << net0str.toStdString() <<std::endl;
-	std::cout << "net1str: " << net1str.toStdString() <<std::endl;
+	//std::cout << "net0str: " << net0str.toStdString() <<std::endl;
+	//std::cout << "net1str: " << net1str.toStdString() <<std::endl;
 
 	double volt0 = 0.0, volt1 = 0.0;
 	if (net0!=0) volt0 = m_simulator->GetDataPoint(net0str.toStdString());
@@ -435,10 +439,17 @@ double Simulator::getMaxPropValue(ItemBase *part, QString property) {
 	double value;
 	QString propertyStr = part->getProperty(property);
 	QString symbol = getSymbol(part, property);
+
 	if(propertyStr.isEmpty()) {
 		value = DBL_MAX;
 	} else {
-		value = TextUtils::convertFromPowerPrefix(propertyStr, symbol);
+		if (!symbol.isEmpty()) {
+			value = TextUtils::convertFromPowerPrefix(propertyStr, symbol);
+		} else {
+			//Attempt to remove the symbol: Remove all the letters, except the multipliers
+			propertyStr.remove(QRegExp("[^pnu\x00B5mkMGT^\\d.]"));
+			value = TextUtils::convertFromPowerPrefix(propertyStr, symbol);
+		}
 	}
 	return value;
 }
@@ -478,6 +489,7 @@ double Simulator::getCurrent(ItemBase* part, QString subpartName) {
 	instanceStr.append(subpartName);
 
 	QChar deviceType = getDeviceType(part);
+	//std::cout << "deviceType: " << deviceType.toLatin1() <<std::endl;
 	if (deviceType == instanceStr.at(0)) {
 		instanceStr.prepend(QString("@"));
 	} else {
@@ -506,6 +518,34 @@ double Simulator::getCurrent(ItemBase* part, QString subpartName) {
 
 	}
 	return m_simulator->GetDataPoint(instanceStr.toStdString());
+}
+
+/**
+ * Returns the current that flows through a transistor.
+ * @param[in] spicePartName The name of the spice transistor.
+ * @returns the current that the transistor is sinking/sourcing.
+ */
+double Simulator::getTransistorCurrent(QString spicePartName, TransistorLeg leg) {
+	if(spicePartName.at(0).toLower()!="q") {
+		//TODO: Add tr()
+		throw QString("Error getting the current of a transistor. The device is not a transistor, its first letter is not a Q. Name: %1").arg(spicePartName);
+	}
+	spicePartName.prepend(QString("@"));
+	switch (leg) {
+		case BASE:
+			spicePartName.append("[ib]");
+			break;
+		case COLLECTOR:
+			spicePartName.append("[ic]");
+			break;
+		case EMITER:
+			spicePartName.append("[ie]");
+			break;
+		default:
+		throw QString("Error getting the current of a transistor. The transistor leg or property is not recognized. Leg: %1").arg(leg);
+	}
+
+	return m_simulator->GetDataPoint(spicePartName.toStdString());
 }
 
 /**
@@ -710,6 +750,49 @@ void Simulator::updatePotentiometer(ItemBase * part) {
 }
 
 /**
+ * Updates and checks a IR sensor. Checks that the voltage is between the allowed range
+ * and that the current of the output is less than  the maximum.
+ * @param[in] part A IR sensor that is going to be checked and updated.
+ */
+void Simulator::updateIRSensor(ItemBase * part) {
+	double maxV = getMaxPropValue(part, "voltage (max)");
+	double minV = getMaxPropValue(part, "voltage (min)");
+	double maxIout = getMaxPropValue(part, "max output current");
+	std::cout << "IR sensor VCC range: " << maxV << " " << minV << std::endl;
+	ConnectorItem *gnd, *vcc, *out;
+	QList<ConnectorItem *> terminals = part->cachedConnectorItems();
+	foreach(ConnectorItem * ci, terminals) {
+		if(ci->connectorSharedDescription().toLower().compare("vcc") == 0 ||
+				ci->connectorSharedDescription().toLower().compare("supply voltage") ==0)
+			vcc = ci;
+		if(ci->connectorSharedDescription().toLower().compare("gnd") == 0 ||
+				ci->connectorSharedDescription().toLower().compare("ground") ==0)
+			gnd = ci;
+		if(ci->connectorSharedDescription().toLower().compare("out") == 0 ||
+				ci->connectorSharedDescription().toLower().compare("output voltage") ==0) out = ci;
+	}
+	if(!gnd || !vcc || !out )
+		return;
+
+	double v = calculateVoltage(vcc, gnd); //voltage applied to the motor
+	double i;
+	if (part->family().contains("line sensor")) {
+		//digital sensor (push-pull output)
+		QString spicename = part->instanceTitle().toLower();
+		spicename.prepend("q");
+		i = getTransistorCurrent(spicename, COLLECTOR); //voltage applied to the motor
+	} else {
+		//analogue sensor (modelled by a voltage source and a resistor)
+		i = getCurrent(part, "a"); //voltage applied to the motor
+	}
+	std::cout << "IR sensor Max Iout: " << maxIout << ", current Iout " << i << std::endl;
+	if (v > maxV || v < 0 || abs(i) > maxIout) {
+		drawSmoke(part);
+		return;
+	}
+}
+
+/**
  * Updates and checks a DC motor. Checks that the voltage is less than the maximum voltage.
  * If the voltage is bigger than the minimum, it plots an arrow to indicate that is turning.
  * TODO: The number of arrows are proportional to the voltage applied.
@@ -728,7 +811,7 @@ void Simulator::updateDcMotor(ItemBase * part) {
 	if(!terminal1 || !terminal2 )
 		return;
 
-	double v = calculateVoltage(terminal1, terminal2);; //voltage applied to the motor
+	double v = calculateVoltage(terminal1, terminal2); //voltage applied to the motor
 	if (abs(v) > maxV) {
 		drawSmoke(part);
 		return;

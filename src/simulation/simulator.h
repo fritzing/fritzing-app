@@ -26,6 +26,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../simulation/ngspice.h"
 #include "../simulation/spice_simulator.h"
 
+enum TransistorLeg { BASE, COLLECTOR, EMITER };
+
 class Simulator : public QObject
 {
 	Q_OBJECT
@@ -54,6 +56,7 @@ protected:
 	QString getSymbol(ItemBase*, QString);
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
 	double getCurrent(ItemBase*, QString subpartName="");
+	double getTransistorCurrent(QString spicePartName, TransistorLeg leg);
 	double getPower(ItemBase*, QString subpartName="");
 
 	//Functions to update the parts
@@ -64,6 +67,8 @@ protected:
 	void updateResistor(ItemBase *);
 	void updatePotentiometer(ItemBase * part);
 	void updateDcMotor(ItemBase * part);
+	void updateIRSensor(ItemBase * part);
+
 
 	MainWindow *m_mainWindow;
 	std::shared_ptr<SPICE_SIMULATOR> m_simulator;
@@ -76,6 +81,7 @@ protected:
 	QHash<ConnectorItem *, int> m_connector2netHash;
 
 	QList<QString>* m_instanceTitleSim;
+
 };
 
 #endif // SIMULATOR_H

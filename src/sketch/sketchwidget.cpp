@@ -958,7 +958,7 @@ ItemBase * SketchWidget::findItem(long id) {
 
 void SketchWidget::deleteItem(long id, bool deleteModelPart, bool doEmit, bool later) {
 	ItemBase * pitem = findItem(id);
-	DebugDialog::debug(QString("delete item (1) %1 %2 %3 %4").arg(id).arg(doEmit).arg(m_viewID).arg((long) pitem, 0, 16) );
+	DebugDialog::debug(QString("delete item (1) %1 %2 %3 %4").arg(id).arg(doEmit).arg(m_viewID).arg((size_t) pitem, 0, 16) );
 	if (pitem) {
 		deleteItem(pitem, deleteModelPart, doEmit, later);
 	}
@@ -972,7 +972,7 @@ void SketchWidget::deleteItem(long id, bool deleteModelPart, bool doEmit, bool l
 void SketchWidget::deleteItem(ItemBase * itemBase, bool deleteModelPart, bool doEmit, bool later)
 {
 	long id = itemBase->id();
-	DebugDialog::debug(QString("delete item (2) %1 %2 %3 %4").arg(id).arg(itemBase->title()).arg(m_viewID).arg((long) itemBase, 0, 16) );
+	DebugDialog::debug(QString("delete item (2) %1 %2 %3 %4").arg(id).arg(itemBase->title()).arg(m_viewID).arg((size_t) itemBase, 0, 16) );
 
 	// this is a hack to try to workaround a Qt 4.7 crash in QGraphicsSceneFindItemBspTreeVisitor::visit
 	// when using a custom boundingRect, after deleting an item, it still appears on the visit list.

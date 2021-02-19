@@ -315,15 +315,12 @@ string NGSPICE::GetXAxis( SIM_TYPE aType ) const
         case ST_AC:
         case ST_NOISE:
             return string( "frequency" );
-            break;
 
         case ST_DC:
             return string( "v-sweep" );
-            break;
 
         case ST_TRANSIENT:
             return string( "time" );
-            break;
 
         default:
             break;

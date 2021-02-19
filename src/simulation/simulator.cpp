@@ -31,6 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QClipboard>
 #include <QApplication>
 #include <QGraphicsColorizeEffect>
+#include <QRegularExpression>
 
 #include "../mainwindow/mainwindow.h"
 #include "../debugdialog.h"
@@ -447,7 +448,7 @@ double Simulator::getMaxPropValue(ItemBase *part, QString property) {
 			value = TextUtils::convertFromPowerPrefix(propertyStr, symbol);
 		} else {
 			//Attempt to remove the symbol: Remove all the letters, except the multipliers
-			propertyStr.remove(QRegExp("[^pnu\x00B5mkMGT^\\d.]"));
+			propertyStr.remove(QRegularExpression("[^pnu\x00B5mkMGT^\\d.]"));
 			value = TextUtils::convertFromPowerPrefix(propertyStr, symbol);
 		}
 	}

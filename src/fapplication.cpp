@@ -1163,9 +1163,9 @@ int FApplication::startup()
 	                   .arg("%1") );
 #endif
 
-	cleanFzzs();
-
 	createUserDataStoreFolderStructures();
+
+	cleanFzzs();
 
 	ProcessEventBlocker::processEvents();
 

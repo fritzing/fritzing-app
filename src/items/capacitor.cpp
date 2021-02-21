@@ -115,6 +115,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 				);
 				validator->setRegExp(QRegExp(pattern));
 				focusOutComboBox->setValidator(validator);
+				connect(focusOutComboBox, SIGNAL(currentTextChanged(const QString &)), this, SLOT(textModified(const QString &)));
 				connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(propertyEntry(const QString &)));
 			}
 			else {
@@ -131,6 +132,36 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 	}
 
 	return PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+}
+
+/**
+ * Sets the appropriate background colour in the combo box when the text is modified. When a user changes the text of an editable
+ * property in a combo box, this function is called. The function checks the validator of the combo box and sets a red background if the
+ * state is Intermediate (the value does is not within the limits of the property) or green if the state is Acceptable. Invalid states
+ * are not possible as the characters that make the string invalid are deleted if introduced.
+ * not changed in this function.
+ * @param[in] text The new string in the combo box.
+ */
+void Capacitor::textModified(const QString & text) {
+	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
+	if (focusOutComboBox == NULL) return;
+
+	int pos;
+	QString textTemp = text;
+	QValidator::State state = focusOutComboBox->validator()->validate(textTemp, pos);
+	if (state == QValidator::Acceptable) {
+		QColor backColor = QColor(210, 246, 210);
+		QLineEdit *lineEditor = focusOutComboBox->lineEdit();
+		QPalette pal = lineEditor->palette();
+		pal.setColor(QPalette::Base, backColor);
+		lineEditor->setPalette(pal);
+	} else if (state == QValidator::Intermediate) {
+		QColor backColor = QColor(246, 210, 210);
+		QLineEdit *lineEditor = focusOutComboBox->lineEdit();
+		QPalette pal = lineEditor->palette();
+		pal.setColor(QPalette::Base, backColor);
+		lineEditor->setPalette(pal);
+	}
 }
 
 void Capacitor::propertyEntry(const QString & text) {

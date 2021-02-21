@@ -66,28 +66,12 @@ public:
 			if (converted > m_max) state = QValidator::Intermediate;
 		}
 
-		FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(parent());
-		if (focusOutComboBox == NULL) return state;
-
-		if (state == QValidator::Acceptable) {
-			QColor backColor = QColor(210, 246, 210);
-			QLineEdit *lineEditor = focusOutComboBox->lineEdit();
-			QPalette pal = lineEditor->palette();
-			pal.setColor(QPalette::Base, backColor);
-			lineEditor->setPalette(pal);
-		} else if (state == QValidator::Intermediate) {
-			QColor backColor = QColor(246, 210, 210);
-			QLineEdit *lineEditor = focusOutComboBox->lineEdit();
-			QPalette pal = lineEditor->palette();
-			pal.setColor(QPalette::Base, backColor);
-			lineEditor->setPalette(pal);
-		}
 		return state;
 	}
 
 	virtual void fixup ( QString& input) const override {
 		if (m_converter == NULL) {
-			if(!input.endsWith(m_symbol)) input.append(m_symbol);
+			if (!input.endsWith(m_symbol)) input.append(m_symbol);
 			return;
 		}
 		double divider = 10;
@@ -97,9 +81,9 @@ public:
 		double converted = m_converter(input, m_symbol);
 		for (int i = 0; i < 10; i++) {
 			if (converted > m_max) {
-				converted/=divider;
+				converted /= divider;
 			} else if (converted < m_min) {
-				converted*=divider;
+				converted *= divider;
 			} else {
 				break;
 			}

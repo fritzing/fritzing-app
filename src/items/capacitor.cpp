@@ -113,7 +113,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 				                  .arg(propertyDef->symbol);
 				validator->setRegExp(QRegExp(pattern));
 				focusOutComboBox->setValidator(validator);
-				connect(focusOutComboBox, SIGNAL(currentTextChanged(const QString &)), this, SLOT(textModified(const QString &)));
+				connect(focusOutComboBox->validator(), SIGNAL(sendState(QValidator::State)), this, SLOT(textModified(QValidator::State)));
 				connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(propertyEntry(const QString &)));
 			}
 			else {
@@ -140,13 +140,12 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
  * not changed in this function.
  * @param[in] text The new string in the combo box.
  */
-void Capacitor::textModified(const QString & text) {
-	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
+void Capacitor::textModified(QValidator::State state) {
+	BoundedRegExpValidator * validator = qobject_cast<BoundedRegExpValidator *>(sender());
+	if (validator == NULL) return;
+	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(validator->parent());
 	if (focusOutComboBox == NULL) return;
 
-	int pos;
-	QString textTemp = text;
-	QValidator::State state = focusOutComboBox->validator()->validate(textTemp, pos);
 	if (state == QValidator::Acceptable) {
 		QColor backColor = QColor(210, 246, 210);
 		QLineEdit *lineEditor = focusOutComboBox->lineEdit();

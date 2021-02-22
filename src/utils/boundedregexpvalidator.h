@@ -32,6 +32,11 @@ typedef double (*Converter)(const QString &, const QString & symbol);
 
 class BoundedRegExpValidator : public QRegExpValidator
 {
+	Q_OBJECT
+
+signals:
+	void sendState(QValidator::State) const;
+
 public:
 	BoundedRegExpValidator(QObject * parent) : QRegExpValidator(parent) {
 		m_max = std::numeric_limits<double>::max();
@@ -65,7 +70,7 @@ public:
 			if (converted < m_min) state = QValidator::Intermediate;
 			if (converted > m_max) state = QValidator::Intermediate;
 		}
-
+		emit sendState(state);
 		return state;
 	}
 

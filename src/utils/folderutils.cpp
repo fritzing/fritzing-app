@@ -218,8 +218,13 @@ const QString FolderUtils::applicationDirPath() {
 		// look in standard Fritzing location (applicationDirPath and parent folders) then in standard linux locations
 		QStringList candidates;
 		candidates.append(QCoreApplication::applicationDirPath());
+
 		QDir dir(QCoreApplication::applicationDirPath());
 		if (dir.cdUp()) {
+
+#ifdef Q_OS_MAC
+			candidates.append(dir.absolutePath() + "/Resources");
+#endif
 			candidates.append(dir.absolutePath());
 			if (dir.cdUp()) {
 				candidates.append(dir.absolutePath());
@@ -237,12 +242,13 @@ const QString FolderUtils::applicationDirPath() {
 #endif
 		candidates.append(QDir::homePath() + "/.local/share/fritzing");
 		foreach (QString candidate, candidates) {
-			//DebugDialog::debug(QString("candidate:%1").arg(candidate));
+			DebugDialog::debug(QString("candidate:%1").arg(candidate));
 			QDir dir(candidate);
 			if (!dir.exists("translations")) continue;
 
 			if (dir.exists("help")) {
 				m_appPath = candidate;
+				DebugDialog::debug(QString("data folders found: %1").arg(candidate));
 				return m_appPath;
 			}
 

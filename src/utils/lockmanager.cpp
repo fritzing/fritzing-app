@@ -21,6 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "lockmanager.h"
 #include "folderutils.h"
 #include "textutils.h"
+#include "../debugdialog.h"
 
 #include <QTimer>
 #include <QPointer>
@@ -127,7 +128,11 @@ void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, Lock
 void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, LockedFile *> & lockedFiles, bool remove)
 {
 	QDir backupDir(folder);
-	backupDir.cdUp();
+	if (! backupDir.cdUp()) {
+		DebugDialog::debug(QString("Error, lock directory not found: %1").arg(backupDir.dirName()));
+		return;
+	}
+
 	foreach (QString sub, lockedFiles.keys()) {
 		LockedFile * lockedFile = lockedFiles.value(sub);
 		TheMutex.lock();
@@ -144,7 +149,10 @@ void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, Lock
 void LockManager::checkLockedFiles(const QString & prefix, QFileInfoList & backupList, QHash<QString, LockedFile *> & lockedFiles, bool recurse, long touchFrequency)
 {
 	QDir backupDir(FolderUtils::getTopLevelUserDataStorePath());
-	backupDir.cd(prefix);
+	if (! backupDir.cd(prefix)) {
+		DebugDialog::debug(QString("Error, lock directory not found: %1 %2").arg(backupDir.absolutePath(), prefix));
+		return;
+	}
 	QFileInfoList dirList = backupDir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::Hidden | QDir::NoSymLinks);
 	foreach (QFileInfo dirInfo, dirList) {
 		QDir dir(dirInfo.filePath());

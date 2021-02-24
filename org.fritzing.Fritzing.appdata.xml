@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2014-2017 Fritzing Team <info_AT_fritzing.org> -->
+<!-- Copyright 2014-2019 Fritzing Team <info_AT_fritzing.org> -->
+<!-- Copyright 2020 Fritzing GmbH <info_AT_fritzing.org> -->	
 <component type="desktop">
  <id>org.fritzing.Fritzing.desktop</id>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
@@ -44,10 +45,11 @@
  <url type="bugtracker">https://github.com/fritzing/fritzing-app/issues</url>
  <url type="faq">https://fritzing.org/faq/</url>
  <url type="help">https://fritzing.org/learning/</url>
- <url type="donation">https://fritzing.org/shop/donations/</url>
+ <url type="forum">https://forum.fritzing.org</url>
+ <!-- <url type="donation">https://fritzing.org/shop/donations/</url> -->
  <url type="translate">https://fritzing.org/support-us/language-translation/</url>
  <releases>
-  <release version="0.9.5d" date="2019-12-10"/>
+  <release version="0.9.6" date="2021-02-01"/>
  </releases>
  <provides>
   <binary>Fritzing</binary>

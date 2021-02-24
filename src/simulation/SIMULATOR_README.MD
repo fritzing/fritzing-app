@@ -4,7 +4,9 @@ This document describes the features of the implemented simulator in Fritzing. T
 
 ## Use ##
 
-Activate the simulator in view->Enable Simulator. Then, build a circuit and measure something with the multimeters and press the simulate button. The parts not being simulated are greyed out and the multimeters show the results of the simulation. If any circuit is out of specifications, a smoke appears over it. Modify the circuit and press again simulate to perform a new simulation. If you disable the simulator (in the View menu), all the items of the simulation disappear (smoke images, text in multimeters and grey out of the non simulated parts).
+The simulator is disabled by default. To enable it, go to Edit->Preferences, select the "Beta Features" tab and check the enable simulator checkbox. This option will be saved and you only need to activate the simulator once. Of course, you can still disable at any time in the prefences dialog. Now, a new button called "Simulate" should appear at the bottom bar (next to the "Share" button).
+
+In order to use it, build a circuit as usual and add a multimeter to measure something (voltage, current or resitance).  Then, press the "Simulate" button and the screen of the multimeter will show the result of the simulation. The parts not being simulated are greyed out. If any device is out of specifications, a smoke appears over it. You can modify the circuit as usual and press again "Simulate" to perform a new simulation. In order to remove all the artifacts from the simulator, click on the small arrow in the "Simulate" button and select "Reset Simulation". Thus, all the items of the simulation disappear (smoke images, text in multimeters and grey out of the non simulated parts).
 
 ## Features ##
 
@@ -23,6 +25,8 @@ Currently, a very limited types of devices are supported:
 * LEDs
 * Bipolar Junction Transistors (TODO: FET transistors)
 * Multimeters
+* IR sensors (Infrared proximity sensor from core and FC-51)
+* DC motor
 
 If you want to add support to more devices, see the contribute section.
 
@@ -33,20 +37,20 @@ We check that the devices that are being simulated are withing its specification
 Currently, we have implemented these tests
 
 * Three probes connected to a multimeter (Err message in the screen appears)
-* Max current in diodes and LEDs (TODO: inductors)
-* Max power in resistors
-* Reverse voltage in tantalum and electrolytic capacitors
-* Max voltage in capacitors 
+* Max current (diodes and LEDs, TODO: inductors)
+* Max power (resistors)
+* Reverse voltage (tantalum and electrolytic capacitors, IR sensors)
+* Max voltage (capacitors, motor, IR sensors)
 
 
 ### Input devices ###
 
-The status of the switches and potentiometers can be change through a menu in the inspector pane. The switches change their image bases on its status (pressed/released) in the breadboard view and the schematics view. Currently, the potentiometers do not change its image.
+The status of the switches and potentiometers can be change through a menu in the inspector pane. The switches change their image bases on its status (pressed/released) in the breadboard view and the schematics view. Currently, the position of the knob in the potentiometers is not updated.
 
 
 ### Output devices ###
 
-The only output devices that we handle is the LED. LEDs change its color based on the current that flows through them. RGB LEDs are currently not supported.
+The only output devices that we handle are the LED and DC motors. LEDs change its color based on the current that flows through them. RGB LEDs are currently not supported. DC motors show if they are rotating and its direction of rotation.
 
 ## Install ##
 
@@ -93,7 +97,7 @@ Some features that could be added:
 
 * Better handling of Ngspice errors
 * Perform transitory analysis and plot the results in an oscilloscope. 
-* Switches and potentiometers could be activated interactively
+* Switches and potentiometers could be activated interactively (moving the knob of the potentiometer to update the current state of the potentiometer).
 
 ## Acknowledgments ##
 

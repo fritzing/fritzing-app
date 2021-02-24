@@ -27,7 +27,7 @@
 
 #include "spice_simulator.h"
 #include <QLibrary>
-#include <../ngspice-32_dll_64/Spice64_dll/include/ngspice/sharedspice.h>
+#include <ngspice/sharedspice.h>
 
 //class wxDynamicLibrary;
 

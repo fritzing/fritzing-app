@@ -305,8 +305,8 @@ void Simulator::drawSmoke(ItemBase* part) {
 	QGraphicsSvgItem * schSmoke = new QGraphicsSvgItem(":resources/images/smoke.svg", part);
 	if (!bbSmoke || !schSmoke) return;
 
-	schSmoke->setZValue(DBL_MAX);
-	bbSmoke->setZValue(DBL_MAX);
+	schSmoke->setZValue(std::numeric_limits<double>::max());
+	bbSmoke->setZValue(std::numeric_limits<double>::max());
 	part->addSimulationGraphicsItem(schSmoke);
 	m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbSmoke);
 }
@@ -335,12 +335,12 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 //	m_bbSimItems.append(bbScreen);
 	//m_schSimItems.append(schScreen);
 	//schScreen->setPos(QPointF(10,10));
-	//schScreen->setZValue(DBL_MAX);
+	//schScreen->setZValue(std::numeric_limits<double>::max());
 	QFont font("Segment7", 30, QFont::Normal);
 	bbScreen->setFont(font);
 	//bbScreen->setScale(4);
 	bbScreen->setPos(QPointF(15,20));
-	bbScreen->setZValue(DBL_MAX);
+	bbScreen->setZValue(std::numeric_limits<double>::max());
 	m_sch2bbItemHash.value(multimeter)->addSimulationGraphicsItem(bbScreen);
 }
 
@@ -442,7 +442,7 @@ double Simulator::getMaxPropValue(ItemBase *part, QString property) {
 	QString symbol = getSymbol(part, property);
 
 	if(propertyStr.isEmpty()) {
-		value = DBL_MAX;
+		value = std::numeric_limits<double>::max();
 	} else {
 		if (!symbol.isEmpty()) {
 			value = TextUtils::convertFromPowerPrefix(propertyStr, symbol);
@@ -744,7 +744,7 @@ void Simulator::updatePotentiometer(ItemBase * part) {
 	double maxPower = getMaxPropValue(part, "power");
 	double powerA = getPower(part, "A"); //power through resistor A
 	double powerB = getPower(part, "B"); //power through resistor B
-	double power = max(powerA, powerB);
+	double power = std::max(powerA, powerB);
 	if (power > maxPower) {
 		drawSmoke(part);
 	}
@@ -831,8 +831,8 @@ void Simulator::updateDcMotor(ItemBase * part) {
 		schSmoke = new QGraphicsSvgItem(image, part);
 		if (!bbSmoke || !schSmoke) return;
 
-		schSmoke->setZValue(DBL_MAX);
-		bbSmoke->setZValue(DBL_MAX);
+		schSmoke->setZValue(std::numeric_limits<double>::max());
+		bbSmoke->setZValue(std::numeric_limits<double>::max());
 		part->addSimulationGraphicsItem(schSmoke);
 		m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbSmoke);
 	}

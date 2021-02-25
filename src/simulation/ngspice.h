@@ -110,7 +110,7 @@ private:
     ngSpice_AllVecs m_ngSpice_AllVecs;
     ngSpice_Running m_ngSpice_Running;
 
-	QLibrary m_dll{"ngspice-32"};
+	QLibrary m_dll;
 
     ///> Executes commands from a file
     bool loadSpinit( const std::string& aFileName );

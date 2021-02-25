@@ -174,8 +174,8 @@ RESOURCES += phoenixresources.qrc
 # Disable this if you have (and want) libgit2 dynamically
 LIBGIT_STATIC = true
 include(pri/libgit2detect.pri)
-
 include(pri/boostdetect.pri)
+include(pri/spicedetect.pri)
 include(pri/quazipdetect.pri)
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)
@@ -197,6 +197,7 @@ include(pri/model.pri)
 include(pri/sketch.pri)
 include(pri/translations.pri)
 include(pri/program.pri)
+include(pri/simulation.pri)
 include(test/version.pri)
 
 TARGET = Fritzing

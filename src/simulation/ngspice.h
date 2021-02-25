@@ -27,9 +27,7 @@
 
 #include "spice_simulator.h"
 #include <QLibrary>
-#include <../ngspice-32_dll_64/Spice64_dll/include/ngspice/sharedspice.h>
-
-//class wxDynamicLibrary;
+#include <ngspice/sharedspice.h>
 
 class NGSPICE : public SPICE_SIMULATOR {
 
@@ -74,7 +72,7 @@ public:
     std::vector<double> GetMagPlot( const std::string& aName, int aMaxLen = -1 ) override;
 
 	///> @copydoc SPICE_SIMULATOR::GetMagPlot()
-	double NGSPICE::GetDataPoint( const std::string& aName);
+	double GetDataPoint( const std::string& aName);
 
     ///> @copydoc SPICE_SIMULATOR::GetPhasePlot()
     std::vector<double> GetPhasePlot( const std::string& aName, int aMaxLen = -1 ) override;

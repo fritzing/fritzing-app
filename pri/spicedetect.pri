@@ -17,5 +17,5 @@
 INCLUDEPATH += $$absolute_path($$_PRO_FILE_PWD_/../ngspice/src/include)
 
 #
-# LIBS += -L../ngspice/debug/src/.libs -lngspice
+LIBS += -L../ngspice/release/src/.libs -lngspice
 # We use QLibrary to load ngspice

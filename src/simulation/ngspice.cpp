@@ -36,13 +36,15 @@
 
 #include <algorithm>
 
+#include "../debugdialog.h"
+
 using namespace std;
 
-//static const wxChar* const traceNgspice = wxT( "KICAD_NGSPICE" );
-
-//FIXME:
-#define NGSPICE_DLL_FILE ""
-#define __WINDOWS__
+////char history_file[];
+//extern "C"
+//{
+//	char history_file[512] = {'\0'};
+//}
 
 NGSPICE::NGSPICE()
         : m_ngSpice_Init( nullptr ),
@@ -337,71 +339,45 @@ void NGSPICE::init_dll()
 	}
 
 	LOCALE_IO c_locale;               // ngspice works correctly only with C locale
-	//const wxStandardPaths& stdPaths = wxStandardPaths::Get();
 
-	if( m_dll.isLoaded() )      // enable force reload
+
+
+	QStringList libPaths = QStringList({ QCoreApplication::applicationDirPath()
+			 })
+			// TODO Not sure if we can place the library there on macOS
+			+ QStandardPaths::standardLocations(QStandardPaths::DataLocation);
+
+	if( m_dll.isLoaded() ) {     // enable force reload
 		m_dll.unload();
+	}
 
-// Extra effort to find libngspice
-//    wxFileName dllFile( "", NGSPICE_DLL_FILE );
-#if defined(__WINDOWS__)
-    const vector<string> dllPaths = { "", "/mingw64/bin", "/mingw32/bin" };
-#elif defined(__WXMAC__)
-    const vector<string> dllPaths = {
-        GetOSXKicadUserDataDir().ToStdString() + "/PlugIns/ngspice",
-        GetOSXKicadMachineDataDir().ToStdString() + "/PlugIns/ngspice",
-        // when running kicad.app
-        stdPaths.GetPluginsDir().ToStdString() + "/sim",
-        // when running eeschema.app
-        wxFileName( stdPaths.GetExecutablePath() ).GetPath().ToStdString() + "/../../../../../Contents/PlugIns/sim"
-    };
-#else   // Unix systems
-    const vector<string> dllPaths = { "/usr/local/lib" };
-#endif
+	m_dll.setFileName("ngspice");
+	m_dll.load();	// try system defaults
 
-#if defined(__WINDOWS__) || (__WXMAC__)
-    for( const auto& path : dllPaths )
-    {
-		//dllFile.SetPath( path );
-		//wxLogTrace( traceNgspice, "libngspice search path: %s", dllFile.GetFullPath() );
-		m_dll.load();
-
-		if( m_dll.isLoaded() )
-        {
-			//wxLogTrace( traceNgspice, "libngspice path found in: %s", dllFile.GetFullPath() );
-            break;
-        }
-    }
-
-//	if( !m_dll.isLoaded() ) // try also the system libraries
-//		m_dll.load( wxDynamicLibrary::CanonicalizeName( "ngspice" ) );
-
-#else   // here: __LINUX__
-    // First, try the system libraries
-    m_dll.Load( NGSPICE_DLL_FILE, wxDL_VERBATIM | wxDL_QUIET | wxDL_NOW );
-
-    // If failed, try some other paths:
-    if( !m_dll.IsLoaded() )
-    {
-        for( const auto& path : dllPaths )
-        {
-            dllFile.SetPath( path );
-            wxLogTrace( traceNgspice, "libngspice search path: %s", dllFile.GetFullPath() );
-            m_dll.Load( dllFile.GetFullPath(), wxDL_VERBATIM | wxDL_QUIET | wxDL_NOW );
-
-            if( m_dll.IsLoaded() )
-            {
-                wxLogTrace( traceNgspice, "libngspice path found in: %s", dllFile.GetFullPath() );
-                break;
-            }
-        }
-    }
-#endif
-
-	if( !m_dll.isLoaded() )
-        throw std::runtime_error( "Missing ngspice shared library" );
-
-    m_error = false;
+	if( !m_dll.isLoaded() ) {	  // fallback custom paths
+	#ifdef Q_OS_LINUX
+		const QString libName = "libngspice.so";
+	#elif Q_OS_MAC
+		const QString libName = "ngspice.dylib";
+	#elif Q_OS_WIN
+		const QString libName = "ngspice.dll";
+	#endif
+		for( const auto& path : libPaths ) {
+			QFileInfo library(QString(path + "/" + libName));
+			DebugDialog::debug("Check " + library.absoluteFilePath());
+			if(!library.canonicalFilePath().isEmpty()) {
+				m_dll.setFileName(library.canonicalFilePath());
+				m_dll.load();
+				if( m_dll.isLoaded() ) {
+					break;
+				} else {
+					DebugDialog::debug("Can not load ngspice " + m_dll.errorString());
+					throw std::runtime_error( "Error loading ngspice shared library" );
+				}
+			}
+		}
+	}
+	m_error = false;
 
     // Obtain function pointers
 	m_ngSpice_Init = (ngSpice_Init) m_dll.resolve( "ngSpice_Init" );

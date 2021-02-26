@@ -43,6 +43,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/via.h"
 #include "../fsvgrenderer.h"
 #include "../items/note.h"
+#include "../items/ruler.h"
 #include "../items/partfactory.h"
 #include "../eagle/fritzing2eagle.h"
 #include "../sketch/breadboardsketchwidget.h"
@@ -620,6 +621,17 @@ void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 	foreach (QGraphicsItem * part, parts){
 		Wire* wire = dynamic_cast<Wire *>(part);
 		if (wire) {
+			parts.removeAll(part);
+			continue;
+		}
+		Note* note = dynamic_cast<Note *>(part);
+		if (note) {
+			parts.removeAll(part);
+			continue;
+		}
+
+		Ruler* ruler = dynamic_cast<Ruler *>(part);
+		if (ruler) {
 			parts.removeAll(part);
 			continue;
 		}

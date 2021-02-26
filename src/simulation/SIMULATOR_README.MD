@@ -27,6 +27,7 @@ Currently, a very limited types of devices are supported:
 * Multimeters
 * IR sensors (Infrared proximity sensor from core and FC-51)
 * DC motor
+* Batteries
 
 If you want to add support to more devices, see the contribute section.
 
@@ -37,6 +38,7 @@ We check that the devices that are being simulated are withing its specification
 Currently, we have implemented these tests
 
 * Three probes connected to a multimeter (Err message in the screen appears)
+* Short circuit in batteries (TODO: power supplies)
 * Max current (diodes and LEDs, TODO: inductors)
 * Max power (resistors)
 * Reverse voltage (tantalum and electrolytic capacitors, IR sensors)

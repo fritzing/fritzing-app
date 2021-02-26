@@ -287,6 +287,10 @@ void Simulator::simulate() {
 			updateIRSensor(part);
 			continue;
 		}
+		if (family.contains("battery")) {
+			updateBattery(part);
+			continue;
+		}
 
 	}
 
@@ -752,6 +756,19 @@ void Simulator::updatePotentiometer(ItemBase * part) {
 }
 
 /**
+ * Updates and checks a battery. Checks that there are no short circuits.
+ * @param[in] part A battery that is going to be checked and updated.
+ */
+void Simulator::updateBattery(ItemBase * part) {
+	double maxCurrent = 500; //TODO: Use the capacity of the battery and multiply by 30.
+	double current = getCurrent(part); //current that the battery delivers
+	//std::cout << "Battery: MaxCurr=" << maxCurrent << ", Curr=" << current  <<std::endl;
+	if (abs(current) > maxCurrent) {
+		drawSmoke(part);
+	}
+}
+
+/**
  * Updates and checks a IR sensor. Checks that the voltage is between the allowed range
  * and that the current of the output is less than  the maximum.
  * @param[in] part A IR sensor that is going to be checked and updated.
@@ -820,22 +837,22 @@ void Simulator::updateDcMotor(ItemBase * part) {
 	}
 	if (abs(v) >= minV) {
 		std::cout << "motor rotates " << std::endl;
-		QGraphicsSvgItem * bbSmoke;
-		QGraphicsSvgItem * schSmoke;
+		QGraphicsSvgItem * bbRotate;
+		QGraphicsSvgItem * schRotate;
 		QString image;
 		if(v > 0) {
 			image = QString(":resources/images/rotateCW.svg");
 		} else {
 			image = QString(":resources/images/rotateCCW.svg");
 		}
-		bbSmoke = new QGraphicsSvgItem(image, m_sch2bbItemHash.value(part));
-		schSmoke = new QGraphicsSvgItem(image, part);
-		if (!bbSmoke || !schSmoke) return;
+		bbRotate = new QGraphicsSvgItem(image, m_sch2bbItemHash.value(part));
+		schRotate = new QGraphicsSvgItem(image, part);
+		if (!bbRotate || !schRotate) return;
 
-		schSmoke->setZValue(std::numeric_limits<double>::max());
-		bbSmoke->setZValue(std::numeric_limits<double>::max());
-		part->addSimulationGraphicsItem(schSmoke);
-		m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbSmoke);
+		schRotate->setZValue(std::numeric_limits<double>::max());
+		bbRotate->setZValue(std::numeric_limits<double>::max());
+		part->addSimulationGraphicsItem(schRotate);
+		m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbRotate);
 	}
 }
 

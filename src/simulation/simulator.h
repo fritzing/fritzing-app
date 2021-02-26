@@ -65,9 +65,10 @@ protected:
 	void updateLED(ItemBase *);
 	void updateMultimeter(ItemBase *);
 	void updateResistor(ItemBase *);
-	void updatePotentiometer(ItemBase * part);
-	void updateDcMotor(ItemBase * part);
-	void updateIRSensor(ItemBase * part);
+	void updatePotentiometer(ItemBase *);
+	void updateDcMotor(ItemBase *);
+	void updateIRSensor(ItemBase *);
+	void updateBattery(ItemBase *);
 
 
 	MainWindow *m_mainWindow;

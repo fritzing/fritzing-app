@@ -399,7 +399,7 @@ void NGSPICE::init_dll()
 #endif
 
 	if( !m_dll.isLoaded() )
-        throw std::runtime_error( "Missing ngspice shared library" );
+		throw std::runtime_error( "Missing ngspice shared library: " + m_dll.errorString().toStdString());
 
     m_error = false;
 

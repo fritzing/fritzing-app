@@ -549,7 +549,11 @@ int NGSPICE::cbSendChar( char* what, int id, void* user )
 //        sim->m_reporter->Report( what );
 
     }
-	std::cout << what << endl;
+	std::cout << "Simulator internal message: " << what << endl;
+	QString msg(what);
+	if (msg.contains("Fatal error")) {
+		sim->m_error = true;
+	}
     return 0;
 }
 
@@ -602,6 +606,9 @@ const std::string NGSPICE::GetNetlist() const
     return m_netlist;
 }
 
+bool NGSPICE::ErrorFound() {
+	return m_error;
+}
 
 bool NGSPICE::m_initialized = false;
 

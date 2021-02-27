@@ -168,6 +168,8 @@ public:
      */
 	static QString TypeToName( SIM_TYPE aType, bool aShortName );
 
+	virtual bool ErrorFound() = 0;
+
 protected:
     ///> Reporter object to receive simulation log
     SPICE_REPORTER* m_reporter;

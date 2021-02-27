@@ -32,6 +32,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QApplication>
 #include <QGraphicsColorizeEffect>
 #include <QRegularExpression>
+#include <QMessageBox>
 
 #include "../mainwindow/mainwindow.h"
 #include "../debugdialog.h"
@@ -232,6 +233,17 @@ void Simulator::simulate() {
 	}
 	std::cout << "-----------------------------------" <<std::endl;
 
+	if (m_simulator->ErrorFound()) {
+		//Ngspice found an error, do not continue
+		std::cout << "Fatal error found, stopping the simulation." <<std::endl;
+		removeSimItems();
+		QWidget * tempWidget = new QWidget();
+		QMessageBox::information(tempWidget, tr("Simulator Error"),
+								 tr("The simulator gave an error when trying to simulate this circuit. "
+									"Please, check the wiring and try again."));
+		delete tempWidget;
+		return;
+	}
 	//The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
 	//This loops is in charge of:
 	// * update the multimeters screen

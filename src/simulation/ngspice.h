@@ -83,6 +83,9 @@ public:
 	//Flag to indicate if the background thread is running
 	bool m_bgThreadIsRunning;
 
+	//Error found during simulation?
+	bool ErrorFound() override;
+
 private:
     void init();
 

@@ -101,7 +101,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	Traits::vertex_descriptor s, t;
 
 	QList<Wire *> visitedWires;
-	QList<int> indexes;
+//	QList<int> indexes;
 	QHash<ConnectorItem *, int> vertices;
 	QList<ConnectorEdge *> edges;
 	QVector<Traits::vertex_descriptor> verts;

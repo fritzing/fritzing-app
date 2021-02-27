@@ -187,7 +187,6 @@ void LockManager::checkLockedFiles(const QString & prefix, QFileInfoList & backu
 		}
 
 		// we own the file
-		QString folder;
 		LockedFile * lockedFile = makeLockedFile(dir.absoluteFilePath(LockedFileName), touchFrequency);
 		lockedFiles.insert(dirInfo.fileName(), lockedFile);
 		foreach (QFileInfo fileInfo, fileInfoList) {

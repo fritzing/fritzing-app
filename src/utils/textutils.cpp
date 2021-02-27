@@ -612,8 +612,9 @@ QString TextUtils::svgTransform(const QString & svg, QTransform & transform, boo
 	       .arg(transform.m22())
 	       .arg(translate ? transform.dx() : 0.0)
 	       .arg(translate ? transform.dy() : 0.0)
-	       .arg(svg)
-	       .arg(extras);
+	       .arg(svg
+	     		,extras
+	       );
 }
 
 bool TextUtils::getSvgSizes(QDomDocument & doc, double & sWidth, double & sHeight, double & vbWidth, double & vbHeight)
@@ -1087,7 +1088,7 @@ bool TextUtils::fixViewBox(QDomElement & root) {
 	double y = coords.at(1).toDouble(&ok);
 	if (!ok) return false;
 
-	QString newValue = QString("0 0 %1 %2").arg(coords[2]).arg(coords[3]);
+	QString newValue = QString("0 0 %1 %2").arg(coords[2], coords[3]);
 	root.setAttribute("viewBox", newValue);
 
 	QDomElement transformElement = root.ownerDocument().createElement("g");
@@ -1444,8 +1445,8 @@ QString TextUtils::makeLineSVG(QPointF p1, QPointF p2, double width, QString col
 	       .arg(p2.x())
 	       .arg(p2.y())
 	       .arg(width * dpi / printerScale)
-	       .arg(stroke)
-	       .arg(dash)
+		   .arg(stroke
+		   ,dash)
 	       ;
 }
 
@@ -1950,7 +1951,7 @@ QString TextUtils::elementToString(const QDomElement & element) {
 	QDomNamedNodeMap attributes = element.attributes();
 	for (int i = 0; i < attributes.count(); i++) {
 		QDomNode attribute = attributes.item(i);
-		string += QString(" %1='%2'").arg(attribute.nodeName()).arg(attribute.nodeValue());
+		string += QString(" %1='%2'").arg(attribute.nodeName(), attribute.nodeValue());
 	}
 	string +="/>";
 	return string;

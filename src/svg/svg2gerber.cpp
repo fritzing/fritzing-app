@@ -374,12 +374,15 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 			standardAperture(circle, apertureMap, current_dcode, dcode_index, 0);
 
 			// create circle outline
-			m_gerber_paths += QString("G01X%1Y%2D02*\n"
-			                          "G75*\n"
-			                          "G03X%1Y%2I%3J0D01*\n")
-			                  .arg(QString::number(flipx(centerx + r)))
-			                  .arg(QString::number(flipy(centery)))
-			                  .arg(QString::number(qRound(-r)));
+			m_gerber_paths += QString(
+					"G01X%1Y%2D02*\n"
+					"G75*\n"
+					"G03X%1Y%2I%3J0D01*\n"
+				)
+				.arg(QString::number(flipx(centerx + r))
+					,QString::number(flipy(centery))
+					,QString::number(qRound(-r))
+				);
 			m_gerber_paths += "G01*\n";
 		}
 	}

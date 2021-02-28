@@ -360,7 +360,7 @@ void NGSPICE::init_dll()
 	#elif defined Q_OS_MAC
 		const QString libName = "ngspice.dylib";
 	#elif defined Q_OS_WIN
-		const QString libName = "ngspice.dll";
+		const QString libName = "ngspice-34.dll";
 	#endif
 		for( const auto& path : libPaths ) {
 			QFileInfo library(QString(path + "/" + libName));

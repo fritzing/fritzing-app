@@ -357,9 +357,9 @@ void NGSPICE::init_dll()
 	if( !m_dll.isLoaded() ) {	  // fallback custom paths
 	#ifdef Q_OS_LINUX
 		const QString libName = "libngspice.so";
-	#elif Q_OS_MAC
+	#elif defined Q_OS_MAC
 		const QString libName = "ngspice.dylib";
-	#elif Q_OS_WIN
+	#elif defined Q_OS_WIN
 		const QString libName = "ngspice.dll";
 	#endif
 		for( const auto& path : libPaths ) {

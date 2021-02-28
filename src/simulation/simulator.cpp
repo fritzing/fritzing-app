@@ -79,13 +79,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/wire.h"
 #include "../items/breadboard.h"
 
-
-#if defined(__MINGW32__) || defined(_MSC_VER)
-#include <windows.h>  // for Sleep
-#else
-#include <unistd.h>
-#include <ctype.h>
-#endif
 #include <iostream>
 
 ////////////////////////////////////////////////////////
@@ -227,11 +220,7 @@ void Simulator::simulate() {
 	std::cout << "Waiting for simulator thread to stop" <<std::endl;
 	int elapsedTime = 0, simTimeOut = 3000; // in ms
 	while (m_simulator->IsRunning() && elapsedTime < simTimeOut) {
-	#if defined(__MINGW32__) || defined(_MSC_VER)
-		Sleep(1);
-	#else
-		usleep(1000);
-	#endif
+		QThread::msleep(1000);
 		elapsedTime++;
 	}
 	if (elapsedTime >= simTimeOut) {
@@ -250,8 +239,8 @@ void Simulator::simulate() {
 	// * update the brightness of the LEDs
 	foreach (ItemBase * part, itemBases){
 		//Remove the effects, if any
-		part->setGraphicsEffect(NULL);
-		m_sch2bbItemHash.value(part)->setGraphicsEffect(NULL);
+		part->setGraphicsEffect(nullptr);
+		m_sch2bbItemHash.value(part)->setGraphicsEffect(nullptr);
 
 		std::cout << "-----------------------------------" <<std::endl;
 		std::cout << "Instance Title: " << part->instanceTitle().toStdString() << std::endl;

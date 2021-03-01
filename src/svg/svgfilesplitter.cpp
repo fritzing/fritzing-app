@@ -125,12 +125,12 @@ bool SvgFileSplitter::splitString(QString & contents, const QString & elementID)
 
 	if (!superTransforms.isEmpty()) {
 		for (int i = 0; i < superTransforms.count() - 1; i++) {
-			elementText = QString("<g transform='%1'>%2</g>").arg(superTransforms[i]).arg(elementText);
+			elementText = QString("<g transform='%1'>%2</g>").arg(superTransforms[i], elementText);
 		}
 		elementText = QString("<g id='%1' transform='%2'>%3</g>")
-		              .arg(elementID)
-		              .arg(superTransforms[superTransforms.count() - 1])
-		              .arg(elementText);
+					  .arg(elementID
+					  , superTransforms[superTransforms.count() - 1]
+					  , elementText);
 	}
 
 	while (!root.firstChild().isNull()) {

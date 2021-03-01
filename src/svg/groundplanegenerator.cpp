@@ -820,7 +820,7 @@ QString GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res
 	if ((epsilon_difference(polygonOffset.x(), 0) > reldif) || (epsilon_difference(polygonOffset.y(), 0) > reldif)) {
 		transform = QString("transform='translate(%1, %2)'").arg(polygonOffset.x()).arg(polygonOffset.y());
 	}
-	pSvg += QString("<g id='%1' %2>\n").arg(m_layerName).arg(transform);
+	pSvg += QString("<g id='%1' %2>\n").arg(m_layerName, transform);
 	if (makeConnectorFlag) {
 		makeConnector(polygons, res, pixelFactor, colorString, minX, minY, pSvg);
 	}
@@ -968,7 +968,7 @@ QString GroundPlaneGenerator::makeOnePoly(const QPolygon & poly, const QString &
 	if (!id.isEmpty()) {
 		idString = QString("id='%1'").arg(id);
 	}
-	QString polyString = QString("<polygon fill='%1' stroke='none' stroke-width='0' %2 points='\n").arg(colorString).arg(idString);
+	QString polyString = QString("<polygon fill='%1' stroke='none' stroke-width='0' %2 points='\n").arg(colorString, idString);
 	int space = 0;
 	foreach (QPoint p, poly) {
 		polyString += QString("%1,%2 %3").arg(p.x() - minX).arg(p.y() - minY).arg((++space % 8 == 0) ?  "\n" : "");

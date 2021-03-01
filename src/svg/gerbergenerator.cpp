@@ -341,7 +341,7 @@ bool GerberGenerator::saveEnd(const QString & layerName, const QString & exportD
 	QString outname = exportDir + "/" +  prefix + suffix;
 	QFile out(outname);
 	if (!out.open(QIODevice::WriteOnly | QIODevice::Text)) {
-		displayMessage(QObject::tr("%1 layer: unable to save to '%2'").arg(layerName).arg(outname), displayMessageBoxes);
+		displayMessage(QObject::tr("%1 layer: unable to save to '%2'").arg(layerName, outname), displayMessageBoxes);
 		return false;
 	}
 
@@ -950,8 +950,8 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		// No;Value;Package;X;Y;Rotation;Side;Name
 		QString string = QString("%1;%2;%3;%4;%5;%6;%7;%8\n")
 		                 .arg(ix++)
-		                 .arg(value)
-		                 .arg(itemBase->modelPart()->properties().value("package"))
+						 .arg(value
+						 , itemBase->modelPart()->properties().value("package"))
 		                 .arg(GraphicsUtils::pixels2mm(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI))
 		                 .arg(GraphicsUtils::pixels2mm(loc.y() - bottomLeft.y(), GraphicsUtils::SVGDPI))
 		                 .arg(angle)

@@ -5,16 +5,16 @@
 
 #PEMainWindow
 {
-        font-size: 11px;
-        color: #fff;
-		font-family:Droid Sans;
-		background-color:#666666;
+	font-size: 11px;
+	color: #fff;
+	font-family:Droid Sans;
+	background-color:#666666;
 }
 
 
 #PEToolView::title {
 	border:1px solid #b1b1b1;
-	}
+}
 
 
 #PEToolView, #peSVG,
@@ -24,33 +24,33 @@ LayerPalette QObject {
 }
 
 #PEToolView QPushButton {
-        font-size: 11px;
-        /*min-width: 100px;*/
-        text-align: center;
-        background: #ececec;
-        border: 1px solid #b1b1b1;
-        border-radius: 0px;
-        padding: 2px;
-		color: #323232;
-		margin-top:0px;
-		margin-bottom:0px;
+	font-size: 11px;
+	/*min-width: 100px;*/
+	text-align: center;
+	background: #ececec;
+	border: 1px solid #b1b1b1;
+	border-radius: 0px;
+	padding: 2px;
+	color: #323232;
+	margin-top:0px;
+	margin-bottom:0px;
 }
 
 #PEToolView QPushButton:hover  {
-        background: #fff;
+	background: #fff;
 }
 
 #PEToolView QPushButton:pressed,
 #PEToolView QPushButton:on {
-        background: #666;
-		color: #fff;
+	background: #666;
+	color: #fff;
 }
 
 #PEToolView QTreeWidget {
 	background: #fff;
 	color:#333;
 	show-decoration-selected: 0;
-	}
+}
 
 
 #PEToolView QTreeWidget::item:selected {
@@ -58,7 +58,7 @@ LayerPalette QObject {
 	color:#333;
 	border:none;
 	show-decoration-selected: 0;
-	}
+}
 
 #PEToolView QTreeWidget::item:selected:!active	 {
 	background:transparent;
@@ -89,7 +89,6 @@ QDialog QTabWidget,
 QDialog QTabWidget::pane,
 #pe_tabs::pane
 { /*the tab-window*/
-
 	padding: 0px 0px 0px 0px;
 	border:none;
 	background:#d9d9d9;
@@ -101,7 +100,7 @@ QDialog QTabWidget::pane,
 
 QDialog QTabWidget::tab-bar,
 #pe_tabs::tab-bar
- /*this is the complete tab-bar*/
+/*this is the complete tab-bar*/
 {
 	top: 0px;
 	left: 10px;
@@ -110,7 +109,6 @@ QDialog QTabWidget::tab-bar,
 	font-size:14px;
 	font-weight: regular;
 	background: #b1b1b1;
-
 }
 
 QDialog QTabWidget QTabBar::tab,
@@ -127,8 +125,8 @@ QDialog QTabWidget QTabBar::tab,
 
 QDialog QTabWidget QTabBar::tab:selected,
 #pe_tabs QTabBar::tab:selected
- /*the active tab*/
- {
+/*the active tab*/
+{
 	font-family: Droid Sans;
 	font-size:14px;
 	background-color: transparent;
@@ -155,7 +153,7 @@ QDialog QTabWidget QTabBar::tab:selected:hover,
 
 QDialog QTabWidget QTabBar::tab:!selected,
 #pe_tabs QTabBar::tab:!selected {
-/*the inactive tabs*/
+	/*the inactive tabs*/
 	background-color: transparent;
 	font-family: Droid Sans;
 	font-size:14px;
@@ -166,9 +164,9 @@ QDialog QTabWidget QTabBar::tab:!selected,
 }
 
 QDialog QTabWidget QTabBar::tab:!selected:hover,
- #pe_tabs QTabBar::tab:!selected:hover
- /*the inactive tab- hover*/
- {
+#pe_tabs QTabBar::tab:!selected:hover
+/*the inactive tab- hover*/
+{
 	background-color: transparent;
 	font-family: Droid Sans;
 	font-size:14px;
@@ -189,28 +187,30 @@ QDialog QTabWidget QToolButton::right-arrow,
 #pe_tabs QToolButton::right-arrow {
 	background-image: url(:/resources/images/icons/TabScrollArrowButtonRightNormal.png);
 	background-repeat: none;
-		background-position: center;
+	background-position: center;
 }
 
 QDialog QTabWidget QToolButton::right-arrow:pressed,
 #pe_tabs QToolButton::right-arrow:pressed {
 	background-image: url(:/resources/images/icons/TabScrollArrowButtonRightPressed.png);
 	background-repeat: none;
-		background-position: center;
+	background-position: center;
 }
 
 QDialog QTabWidget QToolButton::left-arrow,
-#pe_tabs QToolButton::left-arrow{
-		background-image: url(:/resources/images/icons/TabScrollArrowButtonLeftNormal.png);
-		background-repeat: none;
-		background-position: center;
+#pe_tabs QToolButton::left-arrow
+{
+	background-image: url(:/resources/images/icons/TabScrollArrowButtonLeftNormal.png);
+	background-repeat: none;
+	background-position: center;
 }
 
 QDialog QTabWidget QToolButton::left-arrow:pressed,
-#pe_tabs QToolButton::left-arrow:pressed{
-		background-image: url(:/resources/images/icons/TabScrollArrowButtonLeftPressed.png);
-		background-repeat: none;
-		background-position: center;
+#pe_tabs QToolButton::left-arrow:pressed
+{
+	background-image: url(:/resources/images/icons/TabScrollArrowButtonLeftPressed.png);
+	background-repeat: none;
+	background-position: center;
 }
 
 
@@ -223,107 +223,106 @@ QDialog QTabWidget QToolButton::left-arrow:pressed,
 
 #theMainWindow
 {
-        /* layout here  */
-		background-color:#b1b1b1; /*mainbackground color - you see it behind the mainwindow-tabs*/
-        /* styling there */
-        font-size: 11px;
-        color: #fff;
-		font-family:Droid Sans;
-		selection-background-color: none;
-		selection-border: none;
+	/* layout here  */
+	background-color:#b1b1b1; /*mainbackground color - you see it behind the mainwindow-tabs*/
+	/* styling there */
+	font-size: 11px;
+	color: #fff;
+	font-family:Droid Sans;
+	selection-background-color: none;
+	selection-border: none;
 }
 
 
 
 QStatusBar {
-        background-color: rgb(130,31,9); /* the statusbar at the bottom */
-		color: #fff;
+	background-color: rgb(130,31,9); /* the statusbar at the bottom */
+	color: #fff;
 }
 
 #statusBarContainer {
-        background-color: rgb(130,31,9);/* the statusbar at the bottom */
-		color: #fff;
+	background-color: rgb(130,31,9);/* the statusbar at the bottom */
+	color: #fff;
 }
 
 #statusBarContainer QTooltip {
-     border: 1px solid #fff;
-     /* padding: 3px; */
-     border-radius: 1px;
-	 background:#fff;
-	 color:#333;
-	  opacity: 200;
+	border: 1px solid #fff;
+	/* padding: 3px; */
+	border-radius: 1px;
+	background:#fff;
+	color:#333;
+	opacity: 200;
 }
 
 
 
 
 QScrollBar:vertical {
-         border: 0px;
-         background:rgba(255,255,255,10);
-         width:10px;
-         margin: 0px 0px 0px 0px;
-     }
+	border: 0px;
+	background:rgba(255,255,255,10);
+	width:10px;
+	margin: 0px 0px 0px 0px;
+}
 
 QScrollBar::handle:vertical {
-		border: 2px solid #b2b2b2;
-		border-radius: 2px;
-         background: #b2b2b2;
-         min-height: 5px;
-
-     }
+	border: 2px solid #b2b2b2;
+	border-radius: 2px;
+	background: #b2b2b2;
+	min-height: 5px;
+}
 
 QScrollBar::add-line:vertical {
-         background: none;
-         height: 1px;
-         subcontrol-position: bottom;
-         subcontrol-origin: margin;
-     }
+	background: none;
+	height: 1px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
 
 QScrollBar::sub-line:vertical {
-         background:none;
-         height: 1px;
-         subcontrol-position: top;
-         subcontrol-origin: margin;
-     }
+	background:none;
+	height: 1px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
 
 
 QScrollBar:horizontal
 {
-        border: 0px;
-         background:rgba(255,255,255,10);
-         height:10px;
-         margin: 0px 0px 0px 0px;
-	}
+	border: 0px;
+	background:rgba(255,255,255,10);
+	height:10px;
+	margin: 0px 0px 0px 0px;
+}
 
 QScrollBar::handle:horizontal
 {
-			border: 2px solid #b2b2b2;
-		border-radius: 2px;
-         background: #b2b2b2;
-         min-width: 5px;
-	}
+	border: 2px solid #b2b2b2;
+	border-radius: 2px;
+	background: #b2b2b2;
+	min-width: 5px;
+}
 
 QScrollBar::add-line:horizontal
 {
-	         background: none;
-         width: 1px;
-subcontrol-position: right;
-subcontrol-origin: margin;
+	background: none;
+	width: 1px;
+	subcontrol-position: right;
+	subcontrol-origin: margin;
 }
 
 QScrollBar::sub-line:horizontal
 {
-	         background:none;
-         width: 1px;
+	background:none;
+	width: 1px;
 	subcontrol-position: left;
-subcontrol-origin: margin;
-	}
+	subcontrol-origin: margin;
+}
 
 QScrollBar::add-page:vertical,
 QScrollBar::sub-page:vertical
 {
-      background: transparent;
-  }
+	background: transparent;
+}
 
 
 /* complex property values with up and down arrows */
@@ -331,70 +330,70 @@ QScrollBar::sub-page:vertical
 
 PCBSketchWidget QObject QDoubleSpinBox,
 QDoubleSpinBox {
-        background: #fff;
-        font-size: 11px;
-        color: #000;
-        border: none;
-
+	background: #fff;
+	font-size: 11px;
+	color: #000;
+	border: none;
 }
 
 PCBSketchWidget QObject QDoubleSpinBox::down-button,
 QDoubleSpinBox::down-button {
-        background: #fff;
-		border: none;
-		image: url(:/resources/images/icons/spinArrowButtonDownNormal.png);
-		margin-bottom:1px;
+	background: #fff;
+	border: none;
+	image: url(:/resources/images/icons/spinArrowButtonDownNormal.png);
+	margin-bottom:1px;
 }
 
 PCBSketchWidget QObject QDoubleSpinBox::down-button:pressed,
 QDoubleSpinBox::down-button:pressed {
-        background: #fff;
-		border: none;
-		image: url(:/resources/images/icons/spinArrowButtonDownPressed.png);
-		margin-bottom:1px;
+	background: #fff;
+	border: none;
+	image: url(:/resources/images/icons/spinArrowButtonDownPressed.png);
+	margin-bottom:1px;
 }
 
 PCBSketchWidget QObject QDoubleSpinBox::up-button,
-QDoubleSpinBox::up-button {
-        background: #fff;
-		border-bottom: none;
-		image: url(:/resources/images/icons/spinArrowButtonUpNormal.png);
+QDoubleSpinBox::up-button
+{
+	background: #fff;
+	border-bottom: none;
+	image: url(:/resources/images/icons/spinArrowButtonUpNormal.png);
 }
 
 PCBSketchWidget QObject QDoubleSpinBox::up-button:pressed,
 DoubleSpinBox::up-button:pressed  {
-        background: #fff;
-		border-bottom: none;
-		image: url(:/resources/images/icons/spinArrowButtonUpPressed.png);
+	background: #fff;
+	border-bottom: none;
+	image: url(:/resources/images/icons/spinArrowButtonUpPressed.png);
 }
 
 
 /* this separates palettes from each other and is movable */
 MainWindow::separator {
-        background-color: rgb(101,101,101);
+	background-color: rgb(101,101,101);
 }
 
 MainWindow::toolbar {
-        background-color: #fff;
+	background-color: #fff;
 }
 
 MainWindow QLabel {
-        color: rgb(50,50,50);
-		font-family: Droid Sans;
+	color: rgb(50,50,50);
+	font-family: Droid Sans;
 }
 
 QStatusBar {
-        left: 6px;
-        color: #fff;
-        font-weight: bold;
-        font-size: 11px;
-		font-family: Droid Sans;
+	left: 6px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Droid Sans;
 }
 
 QStatusBar::item {
-		font-family: Droid Sans;
-        border: none;
-		color: #fff;
+	font-family: Droid Sans;
+	border: none;
+	color: #fff;
 }
 
 /* ################### Mainmenubar window #################### */
@@ -407,7 +406,7 @@ QMenuBar {
 
 QMenuBar::item {
 	spacing: 10px; /* spacing between menu bar items */
-     padding: 7px 10px;
+	padding: 7px 10px;
 	background: #d9d9d9;
 	color:rgb(51,51,51);
 	background-image:none;
@@ -454,15 +453,15 @@ QMenu::item:selected {
 	font-family: Droid Sans;
 }
 
- QMenu::separator {
+QMenu::separator {
 	background-color: #c1c1c1;
 	height:1px;
 }
 
- QMenu::indicator {
-     width: 15px;
-     height: 15px;
- }
+QMenu::indicator {
+	width: 15px;
+	height: 15px;
+}
 
 QMenu::item:disabled {
 	color:#b7b7b7;
@@ -476,40 +475,40 @@ QMenu::item:disabled:selected {
 
 }
 
- /*############## indicator:non-exclusive is a  ###########*/
+/*############## indicator:non-exclusive is a  ###########*/
 QCheckBox::indicator:checked,
 QMenu::indicator:non-exclusive:checked {
-     image: url(:/resources/images/icons/check.png);
-		 background-color:transparent;
-			border:none;
- }
+	image: url(:/resources/images/icons/check.png);
+	background-color:transparent;
+	border:none;
+}
 
 QCheckBox::indicator:checked:selected,
 QMenu::indicator:non-exclusive:checked:selected {
-     image: url(:/resources/images/icons/checkhover.png);
-		 background-color:transparent;
-			border:none;
- }
+	image: url(:/resources/images/icons/checkhover.png);
+	background-color:transparent;
+	border:none;
+}
 
 QCheckBox::indicator:unchecked,
 QMenu::indicator:non-exclusive:unchecked {  /*the checkbox for the mainmenu */
-    image: url(:/resources/images/icons/nocheck.png);
-		 background-color:transparent;
-			border:transparent;
+	image: url(:/resources/images/icons/nocheck.png);
+	background-color:transparent;
+	border:transparent;
 
- }
+}
 
 QCheckBox::indicator:unchecked:selected,
 QMenu::indicator:non-exclusive:unchecked:selected {
-     image: url(:/resources/images/icons/check.png);
-		 background-color:transparent;
-			border:none;
- }
+	image: url(:/resources/images/icons/check.png);
+	background-color:transparent;
+	border:none;
+}
 
 
 /*########### MAIN WINDOW TABBAR #################*/
 
- /*the tab-window*/
+/*the tab-window*/
 
 #mainTabBar {
 	qproperty-iconSize: 36px;
@@ -532,7 +531,7 @@ QMenu::indicator:non-exclusive:unchecked:selected {
 }
 
 #sketch_tabs::tab-bar
- /*this is the complete tab-bar*/
+/*this is the complete tab-bar*/
 {
 	top: 0px;
 	left: 10px;
@@ -548,7 +547,7 @@ QMenu::indicator:non-exclusive:unchecked:selected {
 
 #sketch_tabs QTabBar::tab
 {
-        margin: 0px 10px -1px 0px;
+	margin: 0px 10px -1px 0px;
 	min-width: 150px;
 	max-width: 150px;
 	font-family: Droid Sans;
@@ -559,8 +558,8 @@ QMenu::indicator:non-exclusive:unchecked:selected {
 
 
 #sketch_tabs QTabBar::tab:selected
- /*the active tab*/
- {
+/*the active tab*/
+{
 	font-family: Droid Sans;
 	font-size:14px;
 	background-color: transparent;
@@ -585,7 +584,7 @@ QMenu::indicator:non-exclusive:unchecked:selected {
 }
 
 #sketch_tabs QTabBar::tab:!selected{
-/*the inactive tabs*/
+	/*the inactive tabs*/
 	background-color: transparent;
 	font-family: Droid Sans;
 	font-size:14px;
@@ -596,8 +595,8 @@ QMenu::indicator:non-exclusive:unchecked:selected {
 }
 
 #sketch_tabs QTabBar::tab:!selected:hover
- /*the inactive tab- hover*/
- {
+/*the inactive tab- hover*/
+{
 	background-color: transparent;
 	font-family: Droid Sans;
 	font-size:14px;
@@ -625,13 +624,13 @@ WelcomeView QFrame {
 }
 
 WelcomeView QFrame QLabel {
-    border:0px;
+	border:0px;
 	font-family: Droid Sans;
 }
 
 /* -------- position of WS"content-blocks" ------------  */
 #recentFrame {
-    margin: 10px 0px 13px 15px;
+	margin: 10px 0px 13px 15px;
 	padding-bottom:5px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;
@@ -642,13 +641,13 @@ WelcomeView QFrame QLabel {
 }
 #tipFrame
 {
-    margin: 0px 0px 13px 15px;
+	margin: 0px 0px 13px 15px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;
 	font: Droid Sans;
 	font-family: Droid Sans;
 	max-width: 350px;
-min-width: 220px;
+	min-width: 220px;
 }
 
 
@@ -667,7 +666,7 @@ min-width: 220px;
 	border-bottom: 8px solid #d9d9d9;
 	font: Droid Sans;
 	font-family: Droid Sans;
-		max-width: 820px;
+	max-width: 820px;
 }
 
 
@@ -694,7 +693,7 @@ min-width: 220px;
 	margin-left:0px;
 	margin-right:0px;
 	font-family: Droid Sans;
-		margin-left:1px;
+	margin-left:1px;
 	margin-right:2px;
 }
 
@@ -703,7 +702,7 @@ min-width: 220px;
 	font-size:14px;
 	font-weight:bold;
 	font-family: Droid Sans;
-		margin-left:1px;
+	margin-left:1px;
 	margin-right:2px;
 }
 
@@ -711,7 +710,7 @@ min-width: 220px;
 #headerTitleSpace
 {
 	margin:0px, 3px;
-	}
+}
 
 
 /* ----------- WS-"recentItem"-block  ------------- */
@@ -726,7 +725,7 @@ min-width: 220px;
 	padding:0px;
 	font-family: Droid Sans;
 
- }
+}
 
 #recentTitle
 {
@@ -753,7 +752,7 @@ min-width: 220px;
 	max-height:22px;
 	background:transparent;
 
-	}
+}
 
 #recentList
 {
@@ -766,7 +765,7 @@ min-width: 220px;
 	background:#fff;
 	font: regular Droid Sans;
 
-	}
+}
 
 #recentList::item
 {
@@ -779,9 +778,9 @@ min-width: 220px;
 	color:#666;
 	font-weight: regular;
 	font-family: Droid Sans;
-min-height:14px;
-max-height:24px;
-	}
+	min-height:14px;
+	max-height:24px;
+}
 
 #recentList::item:selected
 {
@@ -794,10 +793,9 @@ max-height:24px;
 	color:#666;
 	font-weight: regular;
 	font-family: Droid Sans;
-min-height:14px;
-max-height:24px;
-
-	}
+	min-height:14px;
+	max-height:24px;
+}
 
 #recentSpace
 {
@@ -810,26 +808,26 @@ max-height:24px;
 
 #recentText
 {
-font-size: 12px;
-margin-left:3px;
-padding:0px;
-border:none;
-background:#fff;
-max-height:20px;
-min-height:20px;
-
+	font-size: 12px;
+	margin-left:3px;
+	padding:0px;
+	border:none;
+	background:#fff;
+	max-height:20px;
+	min-height:20px;
 }
+
 #recentIcon
 {
-margin-left:1px;
-padding:0px;
-image-position:center;
-max-width:18px;
-max-height:20px;
-min-width:18px;
-min-height:20px;
-border:none;
-background:transparent;
+	margin-left:1px;
+	padding:0px;
+	image-position:center;
+	max-width:18px;
+	max-height:20px;
+	min-width:18px;
+	min-height:20px;
+	border:none;
+	background:transparent;
 }
 
 
@@ -841,7 +839,7 @@ background:transparent;
 
 #blogTitleFrameLayout {
 
-	}
+}
 
 #blogList
 {
@@ -881,7 +879,7 @@ background:transparent;
 	font-weight: regular;
 	font-family: Droid Sans;
 	border-bottom:1px solid #d4d4d4;
-	}
+}
 
 
 /******* this is the styling for the blog-footer ***********/
@@ -900,7 +898,7 @@ background:transparent;
 	background: #D5E1E9;
 	border-bottom: 8px solid #A9C6D6;
 
-	}
+}
 
 #tipTitle {
 	color: #77ACC2;
@@ -919,41 +917,41 @@ background:transparent;
 	padding: 0px 0px 0px 0px;
 	margin-right:5px;
 
-	}
+}
 #tipScrollArea QScrollBar
 {
 	border:none;
 
-	}
+}
 
 #tipScrollArea QScrollBar:vertical{
-         border: 0px;
-         background:#D5E1E9;
-         width:10px;
-         margin: 0px;
-     }
+	border: 0px;
+	background:#D5E1E9;
+	width:10px;
+	margin: 0px;
+}
 
 #tipScrollArea QScrollBar::handle:vertical{
-		border: 2px solid #77ACC2;
-		border-radius: 2px;
-         background: #77ACC2;
-         min-height: 0px;
+	border: 2px solid #77ACC2;
+	border-radius: 2px;
+	background: #77ACC2;
+	min-height: 0px;
 
-     }
+}
 
 #tipScrollArea QScrollBar::add-line:vertical{
-         background: #D5E1E9;
-         height: 10px;
-         subcontrol-position: bottom;
-         subcontrol-origin: margin;
-     }
+	background: #D5E1E9;
+	height: 10px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
 
 #tipScrollArea QScrollBar::sub-line:vertical{
-         background:#D5E1E9;
-         height: 10px;
-         subcontrol-position: top;
-         subcontrol-origin: margin;
-     }
+	background:#D5E1E9;
+	height: 10px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
 
 
 #tip  {
@@ -965,27 +963,25 @@ background:transparent;
 	qproperty-wordWrap: true;
 	padding: 0px 10px 10px 10px;
 
-	}
+}
 
 
 #tipFooterFrame{
-		margin:5px 10px 5px 10px;
-		border-bottom:none;
+	margin:5px 10px 5px 10px;
+	border-bottom:none;
 
-	}
+}
 
 /* ----------- WS-"shop+fab"-block  ------------- */
 #shopContentFrame,
 #fabContentFrame
 {
-
 	border:none;
 	font-weight: regular;
 	font-family: Droid Sans;
 	margin:5px;
 	height:100%;
-
-	}
+}
 
 
 #shopContentImage,
@@ -996,63 +992,64 @@ background:transparent;
 	min-height:45px;
 	margin:0px;
 	padding:0px;
-	}
+}
 
 
 #shopContentTextFrame,
-#fabContentTextFrame{
+#fabContentTextFrame
+{
 	margin: 5px 5px 5px 15px;
 	border:none;
 	min-width:200px;
-
-	}
+}
 
 
 #shopContentTextHeadline,
-#fabContentTextHeadline {
+#fabContentTextHeadline
+{
 	font-size:16px;
 	font-weight:bold;
 	qproperty-wordWrap: true;
 	max-height:40px;
 	font-family: Droid Sans;
 	background:#fff;
-	}
+}
 
 #shopContentTextDescription,
-#fabContentTextDescription	{
+#fabContentTextDescription
+{
 	font-size:14px;
 	font-weight:regular;
 	qproperty-wordWrap: true;
 	font-family: Droid Sans;
 	min-height:65px;
 	background:#fff;
-	}
+}
 
 #shopContentTextCaption,
 #fabContentTextCaption
 {
-font-weight: regular;
-font-family: Droid Sans;
-font-size:14px;
-max-height:16px;
-background:#fff;
+	font-weight: regular;
+	font-family: Droid Sans;
+	font-size:14px;
+	max-height:16px;
+	background:#fff;
 }
 
 #blogFooterFrame,
 #shopFooterFrame,
 #fabFooterFrame {
-		border-top:1px solid #c4c4c4;
-		background:transparent;
-		border-bottom:none;
-		margin:0px 5px 8px 5px;
-		font-weight: regular;
-		font-family: Droid Sans;
-		padding-top:10px;
-		padding-right:5px;
+	border-top:1px solid #c4c4c4;
+	background:transparent;
+	border-bottom:none;
+	margin:0px 5px 8px 5px;
+	font-weight: regular;
+	font-family: Droid Sans;
+	padding-top:10px;
+	padding-right:5px;
 	/*	padding:8px 0px 8px 0px; */
-		min-height:25px;
-		max-height:100px;
-
+	min-height:25px;
+	max-height:100px;
 }
 
 #blogLogoText,
@@ -1065,73 +1062,71 @@ background:#fff;
 
 /*############### a styled loading/progress bar #################### */
 
- QProgressBar {
-     border: none;
-     border-radius: 0px;
-	 background-color: #821F09;
+QProgressBar {
+	border: none;
+	border-radius: 0px;
+	background-color: #821F09;
 	text-align: center;
 	color:#fff;
 	font-weight:bold;
+}
 
- }
+QProgressBar::chunk {
+	background-color: #f32926;
+	width: 10px;
+	text-align: center;
+	font-family: Droid Sans;
+}
 
- QProgressBar::chunk {
-     background-color: #f32926;
-     width: 10px;
-	 text-align: center;
-	 font-family: Droid Sans;
-
- }
-
- /* ############ tooltips for the partsbin and toolbar NOT the main window ########*/
-  QToolTip {
-     border: 1px solid #fff;
-     /* padding: 3px; */
-     border-radius: 1px;
-	 background:#fff;
-	 color:#333;
-	 opacity: 200;
-	 font-family: Droid Sans;
- }
+/* ############ tooltips for the partsbin and toolbar NOT the main window ########*/
+QToolTip {
+	border: 1px solid #fff;
+	/* padding: 3px; */
+	border-radius: 1px;
+	background:#fff;
+	color:#333;
+	opacity: 200;
+	font-family: Droid Sans;
+}
 
 
 /* ############## RADIOBUTTON STYLING  ###########*/
 QWidget QRadioButton::indicator,
 QRadioButton::indicator  {
-    width: 13px;
-    height: 13px;
+	width: 13px;
+	height: 13px;
 	background:transparent;
 }
 
 QWidget QRadioButton::indicator::unchecked,
 QRadioButton::indicator::unchecked  {
-    image: url(:/resources/images/icons/nocheck.png);
-		background:transparent;
+	image: url(:/resources/images/icons/nocheck.png);
+	background:transparent;
 }
 
 QWidget QRadioButton::indicator:unchecked:hover,
 QRadioButton::indicator:unchecked:hover  {
-    image: url(:/resources/images/icons/checkhover.png);
+	image: url(:/resources/images/icons/checkhover.png);
 }
 
 QWidget QRadioButton::indicator:unchecked:pressed,
 QRadioButton::indicator:unchecked:pressed  {
-    image: url(:/resources/images/icons/checkactive.png);
+	image: url(:/resources/images/icons/checkactive.png);
 }
 
 QWidget QRadioButton::indicator:checked,
 QRadioButton::indicator::checked  {
-    image: url(:/resources/images/icons/check.png);
+	image: url(:/resources/images/icons/check.png);
 }
 
 QWidget QRadioButton::indicator:checked:hover,
 QRadioButton::indicator:checked:hover  {
-    image: url(:/resources/images/icons/checkhover.png);
+	image: url(:/resources/images/icons/checkhover.png);
 }
 
 QWidget QRadioButton::indicator:checked:pressed,
 QRadioButton::indicator:checked:pressed  {
-    image: url(:/resources/images/icons/checkactive.png);
+	image: url(:/resources/images/icons/checkactive.png);
 }
 
 
@@ -1152,8 +1147,8 @@ QRadioButton::indicator:checked:pressed  {
 #fileToolBar QToolButton,
 #editToolBar QToolButton {
 	border: none;
-    color: rgb(214,50,34);
-    background: rgb(214,50,34);
+	color: rgb(214,50,34);
+	background: rgb(214,50,34);
 	width:75px;
 	padding:0px 5px;
 }
@@ -1161,7 +1156,7 @@ QRadioButton::indicator:checked:pressed  {
 
 #fileToolBar QToolButton:pressed,
 #editToolBar QToolButton:pressed {
-    background: rgb(242,57,38);
+	background: rgb(242,57,38);
 	color: rgb(214,50,34); /* doesn't work, why ??? */
 	margin: 0px;
 	width:75px;
@@ -1170,91 +1165,91 @@ QRadioButton::indicator:checked:pressed  {
 
 
 #sketchAreaToolbar {
-        background: rgb(214,50,34); /*background of toolbar*/
-        border: none;
-        padding: 0px;
+	background: rgb(214,50,34); /*background of toolbar*/
+	border: none;
+	padding: 0px;
 }
 
 #exportButton,
 #viewFromButton,
 #activeLayerButton,
 #sketchToolButton {
-        border: none;
-        padding: 0px;
-		height:66px;
-		max-width:110px;
-		min-width:95px;
+	border: none;
+	padding: 0px;
+	height:66px;
+	max-width:110px;
+	min-width:95px;
 }
 
 
 
 #sketchAreaToolbar QLabel {
-        font-weight: bold;
-        color: rgb(214,50,34);
-		border: none;
-		padding:5px 5px 0px 5px;
+	font-weight: bold;
+	color: rgb(214,50,34);
+	border: none;
+	padding:5px 5px 0px 5px;
 
 }
 
 #sketchAreaToolbar QToolButton { /*all the button styleing*/
-        border: none;
-		color:#fff;
-		margin: 0px;
-		height:66px;
-		padding:5px;
-		font-weight: regular;
-		width:75px;
+	border: none;
+	color:#fff;
+	margin: 0px;
+	height:66px;
+	padding:5px;
+	font-weight: regular;
+	width:75px;
 }
 
- #sketchAreaToolbar QToolButton:hover {   /* hover on toolbar buttons */
-        background: rgb(242,57,38);
-        border: none;
-		color: #ececec;
-		margin: 0px;
-		height:66px;
+#sketchAreaToolbar QToolButton:hover {   /* hover on toolbar buttons */
+	background: rgb(242,57,38);
+	border: none;
+	color: #ececec;
+	margin: 0px;
+	height:66px;
 }
 
- #sketchAreaToolbar QToolButton:disabled {   /* disabled toolbar buttons */
-        border: none;
-		color: #ececec;
-		margin: 0px;
-		height:66px;
+#sketchAreaToolbar QToolButton:disabled {   /* disabled toolbar buttons */
+	border: none;
+	color: #ececec;
+	margin: 0px;
+	height:66px;
 }
 
 
 
 #sketchAreaToolbar QToolButton::menu-button { /*the little arrow to open the submenu*/
-        border: none;
-       /* background-image: none; */
-        margin-top: 28px;
-		margin-right:20px;
-		background:transparent;
-		width:10px;
-		height:10px;
-		float:right;
+	border: none;
+	/* background-image: none; */
+	margin-top: 28px;
+	margin-right:20px;
+	background:transparent;
+	width:10px;
+	height:10px;
+	float:right;
 }
 
 #sketchAreaToolbar QToolButton::menu-arrow {
-		image: url(:/resources/images/icons/smalToolarrow-normal.png);
-		border: none;
-        padding: 4px;
-		background:transparent;
+	image: url(:/resources/images/icons/smalToolarrow-normal.png);
+	border: none;
+	padding: 4px;
+	background:transparent;
 }
 
 #sketchAreaToolbar QToolButton::menu-arrow:open {
-        border: none;
-        image: url(:/resources/images/icons/smalToolarrow-pressed.png);
-        padding: 4px;
-		background:transparent;
+	border: none;
+	image: url(:/resources/images/icons/smalToolarrow-pressed.png);
+	padding: 4px;
+	background:transparent;
 }
 
 #sketchAreaToolbar QToolButton::menu-arrow:disabled{
-        border: none;
-        image: url(:/resources/images/icons/smalToolarrow-inactive.png);
-        padding-top: 0px;
-		padding-right:0px;
-		margin: 2px;
-		background:none;
+	border: none;
+	image: url(:/resources/images/icons/smalToolarrow-inactive.png);
+	padding-top: 0px;
+	padding-right:0px;
+	margin: 2px;
+	background:none;
 }
 
 
@@ -1262,11 +1257,11 @@ QRadioButton::indicator:checked:pressed  {
 	color:#fff;
 	border-bottom: 5px solid #006737;
 	background:#00a55b;
-		height: 55px;
+	height: 55px;
 	width:80px;
 	margin:5px 10px 5px 5px;
 	padding: 3px 0px 0px 0px;
-	}
+}
 
 #sketchAreaToolbar #shareProjectButton:hover {
 	color:#fff;
@@ -1277,9 +1272,9 @@ QRadioButton::indicator:checked:pressed  {
 	width:80px;
 	margin:5px 10px 5px 5px;
 
-	}
+}
 
-	#sketchAreaToolbar #shareProjectButton:pressed {
+#sketchAreaToolbar #shareProjectButton:pressed {
 	color:#fff;
 	border-bottom: 5px solid #148d50;
 	background:#6dba82;
@@ -1287,7 +1282,7 @@ QRadioButton::indicator:checked:pressed  {
 	height: 55px;
 	width:80px;
 	margin:5px 10px 5px 5px;
-	}
+}
 
 
 #sketchAreaToolbar #orderFabButton{
@@ -1310,19 +1305,20 @@ QRadioButton::indicator:checked:pressed  {
 	margin:5px 10px 5px 5px;
 }
 
-	#sketchAreaToolbar #orderFabButton:pressed {
+#sketchAreaToolbar #orderFabButton:pressed {
 	color:#fff;
 	border-bottom: 5px solid #6d5e5a;
 	background:#917d78;
-		padding: 3px 0px 0px 0px;
+	padding: 3px 0px 0px 0px;
 	height: 55px;
 	width:80px;
 	margin:5px 10px 5px 5px;
-	}
+}
 
 /* ################### zoomslider #################### */
 
-QSlider::groove:horizontal { /*this is the slider - "line" */
+QSlider::groove:horizontal 
+{ /*this is the slider - "line" */
 	background:rgb(214,50,34);
 	height: 2px;
 	border-radius:-5px;
@@ -1331,14 +1327,14 @@ QSlider::groove:horizontal { /*this is the slider - "line" */
 }
 
 
-QSlider::handle:horizontal { /*this is the handle: it needs negative margin to be "bigger" than the slider - "line" */
+QSlider::handle:horizontal 
+{ /*this is the handle: it needs negative margin to be "bigger" than the slider - "line" */
 	width:10px;
 	height:10px;
 	margin-top: -4px;
 	margin-bottom: -4px;
 	background-clip: content;
 	background-image: url(:/resources/images/icons/zoomSlider.png);
-
 }
 
 QSlider::handle:horizontal:hover {
@@ -1352,284 +1348,287 @@ QSlider::handle:horizontal:hover {
 
 
 #ZoomSliderFrame {
-        max-height: 16px;
-        min-height: 16px;
-        max-width: 202px;
-        min-width: 202px;
+	max-height: 16px;
+	min-height: 16px;
+	max-width: 202px;
+	min-width: 202px;
 }
 
 #ZoomSliderValue { /*this is the number in percent of left to the zoomslider*/
-        margin: 0px;
-        padding: 0px;
-        border: none;
-        color: #fff;
-        background-color: transparent;
-        width: 35px;
-        max-width: 35px;
-        min-width: 35px;
-        text-align: right;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	color: #fff;
+	background-color: transparent;
+	width: 35px;
+	max-width: 35px;
+	min-width: 35px;
+	text-align: right;
 }
 
 #ZoomSliderLabel {
-        color: #CCCCCC;
-        width: 15px;
-        max-width: 15px;
-        min-width: 15px;
-        text-align: left;
+	color: #CCCCCC;
+	width: 15px;
+	max-width: 15px;
+	min-width: 15px;
+	text-align: left;
 }
 
 #ZoomSliderButton {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: 5px;
-        margin-right: 5px;
-        padding: 0px;
-        border: none;
-        width: 16px;
-        max-width: 16px;
-        min-width: 16px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding: 0px;
+	border: none;
+	width: 16px;
+	max-width: 16px;
+	min-width: 16px;
 }
 
 /* next to the zoomslider in the status bar */
 
 #LocationLabel {
-        font-size: 9px;
-        font-weight: 500;
-        color: #fff;
+	font-size: 9px;
+	font-weight: 500;
+	color: #fff;
 }
 
 
 /* ################### the palettes #################### */
 FDockWidget {
-        /* only relevant if palette is floating
-           and only visible with tabs inside the widget
-           such as Parts Library */
-        background-color: #d9d9d9;
-        /* this defines the title text! */
-        font-size: 14px;
-		font-weight: 150;
-        color: rgb(101,101,101);
-		font-family: Droid Sans;
-        titlebar-close-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
-        titlebar-normal-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
+	/* only relevant if palette is floating
+	and only visible with tabs inside the widget
+	such as Parts Library */
+	background-color: #d9d9d9;
+	/* this defines the title text! */
+	font-size: 14px;
+	font-weight: 150;
+	color: rgb(101,101,101);
+	font-family: Droid Sans;
+	titlebar-close-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
+	titlebar-normal-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
 }
 
 #topMostDock {
-        margin: 0px;
-        margin-top: 8px;
-        border: 0px;
+	margin: 0px;
+	margin-top: 8px;
+	border: 0px;
 }
 
 #bottomMostDock {
-        margin: 0px;
-        margin-bottom: 8px;
-        border: 0px;
+	margin: 0px;
+	margin-bottom: 8px;
+	border: 0px;
 }
 
 FDockWidget::title {
-      font-size: 20px;
-		font-weight: 300;
-        height: 35px;
+	font-size: 20px;
+	font-weight: 300;
+	height: 35px;
 	font-family: Droid Sans;
-        /*border-top-left-radius: 5px;*/
-        /*border-top-right-radius: 5px;*/
-        background: #d9d9d9;
-        border-top: 4px rgb(51,51,51) solid;
-        padding-left: 6px;
-        padding-top: 2px;
-        padding-bottom: 0px;
+	/*border-top-left-radius: 5px;*/
+	/*border-top-right-radius: 5px;*/
+	background: #d9d9d9;
+	border-top: 4px rgb(51,51,51) solid;
+	padding-left: 6px;
+	padding-top: 2px;
+	padding-bottom: 0px;
 
 }
+
 FDockWidget::close-button,
-FDockWidget::float-button {
-        margin: 0px;
-        padding: 0px;
-        border: 0px;
-        subcontrol-position: top right;
-        subcontrol-origin: margin;
-        position: absolute;
-        top: 4px;  bottom: 0px;
-		height:15px;
-		width:15px;
+FDockWidget::float-button
+{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	subcontrol-position: top right;
+	subcontrol-origin: margin;
+	position: absolute;
+	top: 4px;  bottom: 0px;
+	height:15px;
+	width:15px;
 }
 
-FDockWidget::close-button {
-        right: 2px;
-        image: url(:/resources/images/icons/dockWidgetCloseNormal_icon.png);
+FDockWidget::close-button
+{
+	right: 2px;
+	image: url(:/resources/images/icons/dockWidgetCloseNormal_icon.png);
 
 
 }
 FDockWidget::close-button:hover {
-        border: none;
-        image: url(:/resources/images/icons/dockWidgetCloseHover_icon.png);
+	border: none;
+	image: url(:/resources/images/icons/dockWidgetCloseHover_icon.png);
 
 }
 FDockWidget::close-button:pressed {
-        border: none;
-        image: url(:/resources/images/icons/dockWidgetClosePressed_icon.png);
+	border: none;
+	image: url(:/resources/images/icons/dockWidgetClosePressed_icon.png);
 
 }
 
 FDockWidget::float-button {
-        right: 17px;
-        image: url(:/resources/images/icons/dockWidgetFloatNormal_icon.png);
+	right: 17px;
+	image: url(:/resources/images/icons/dockWidgetFloatNormal_icon.png);
 
 }
 FDockWidget::float-button:hover {
-        border: none;
-        image: url(:/resources/images/icons/dockWidgetFloatHover_icon.png);
+	border: none;
+	image: url(:/resources/images/icons/dockWidgetFloatHover_icon.png);
 
 }
 FDockWidget::float-button:pressed {
-        border: none;
-        image: url(:/resources/images/icons/dockWidgetFloatPressed_icon.png);
+	border: none;
+	image: url(:/resources/images/icons/dockWidgetFloatPressed_icon.png);
 
 }
 
 
 AutoCloseMessageBox {
-        background-color: #FFFFE1;
-        border: 1px solid black;
-        padding: 5px;
-        font-size: 12px;
+	background-color: #FFFFE1;
+	border: 1px solid black;
+	padding: 5px;
+	font-size: 12px;
 }
 
 /* ################### info view #################### */
 
 HtmlInfoView {
-margin-right:0px;
-padding-right:5px;
-border:none;
-background:#d9d9d9;
+	margin-right:0px;
+	padding-right:5px;
+	border:none;
+	background:#d9d9d9;
 
 }
 
 HtmlInfoView QScrollBar:vertical {
-         border: 0px;
-         background:rgba(255,255,255,10);
-         width:10px;
-         margin: 0px 0px 0px 0px;
-     }
+	border: 0px;
+	background:rgba(255,255,255,10);
+	width:10px;
+	margin: 0px 0px 0px 0px;
+}
 
 #infoViewMainFrame {
-        background-color: #d9d9d9;
-        border: 0px;
-        margin: 0px;
-		font-size:14px;
+	background-color: #d9d9d9;
+	border: 0px;
+	margin: 0px;
+	font-size:14px;
 }
 
 #instanceTitleEditor {
-        /* background-color is set programmatically */
-        text-align: left;
-        font-size: 16px;
-        font-weight: 600;
-        border: 0px;
-        margin: 5px 5px 5px 5px;
-        padding: 0px;
-		background-color: #ececec;
+	/* background-color is set programmatically */
+	text-align: left;
+	font-size: 16px;
+	font-weight: 600;
+	border: 0px;
+	margin: 5px 5px 5px 5px;
+	padding: 0px;
+	background-color: #ececec;
 }
 
 #iconFrame { /*background-color in the icon-row*/
-        background-color: #d9d9d9;
-        max-height: 34px;
-        min-height: 34px;
-        margin: 0px 0px 0px 5px;
-        padding: 0px;
+	background-color: #d9d9d9;
+	max-height: 34px;
+	min-height: 34px;
+	margin: 0px 0px 0px 5px;
+	padding: 0px;
 }
 
 #iconLabel {
-        background-color: #fff;
+	background-color: #fff;
 }
 
 #infoViewLockCheckbox {
-        font-size: 11px;
-        padding: 0px;
-        margin: 0px;
+	font-size: 11px;
+	padding: 0px;
+	margin: 0px;
 }
 
 
 
 #infoViewPartFrame {
-        font-size: 11px;
-        padding: 0px;
-        margin: 0px;
-		color:#f0f;
+	font-size: 11px;
+	padding: 0px;
+	margin: 0px;
+	color:#f0f;
 }
 
 /* part description/subtitle */
 #infoViewPartTitle,
 #infoViewPartVersion {
-        margin: 3px 5px 3px 5px;
-        padding: 0px 0px 1px 0px;
-        font-size: 11px;
-        font-weight: normal;
-        color: #323232;
-		background: #d9d9d9;
-		/*just the part description title, not the part main-title*/
+	margin: 3px 5px 3px 5px;
+	padding: 0px 0px 1px 0px;
+	font-size: 11px;
+	font-weight: normal;
+	color: #323232;
+	background: #d9d9d9;
+	/*just the part description title, not the part main-title*/
 }
 
 
 #infoViewPartUrl {
-        margin: 0px 4px 0px 4px;
-        padding: 0px 0px 1px 0px;
-        font-size: 11px;
-        font-weight: normal;
-        color: #d63222;/*rgb(110,110,110);*/
+	margin: 0px 4px 0px 4px;
+	padding: 0px 0px 1px 0px;
+	font-size: 11px;
+	font-weight: normal;
+	color: #d63222;/*rgb(110,110,110);*/
 }
 
 
 /* section title - these are the subtitels in the infoview (like: placement, properties, tags etc.) */
 #expandableViewLabel {
-        padding: 0px 0px 3px 0px;
-        margin: 4px 0px 0px 4px;
-        border: 0px;
-        font-weight: bold;
-        text-align: left;
-        font-size: 11px;
-        color: #D63222;
+	padding: 0px 0px 3px 0px;
+	margin: 4px 0px 0px 4px;
+	border: 0px;
+	font-weight: bold;
+	text-align: left;
+	font-size: 11px;
+	color: #D63222;
 }
 
 /* Properties */
 #infoViewPropertyFrame {
-        margin: 2px 4px 2px 0px;
+	margin: 2px 4px 2px 0px;
 }
 
 #propNameLabel {
-        font-size: 11px;
-        color: rgb(51,51,51);
-        min-width: 65px;
-        max-width: 65px;
-        margin: 0px 0px 0px 4px;
-        padding: 3px 3px 3px 0px;
-        border-top: 1px solid #b1b1b1;
-		font-weight: normal;
+	font-size: 11px;
+	color: rgb(51,51,51);
+	min-width: 65px;
+	max-width: 65px;
+	margin: 0px 0px 0px 4px;
+	padding: 3px 3px 3px 0px;
+	border-top: 1px solid #b1b1b1;
+	font-weight: normal;
 }
 #propValueFrame {
-        margin: 0px;
-        border: 0px;
-        padding: 1px 0px 1px 0px;
-        border-top: 1px solid #b1b1b1;
+	margin: 0px;
+	border: 0px;
+	padding: 1px 0px 1px 0px;
+	border-top: 1px solid #b1b1b1;
 }
 #propValueLabel {
-        font-size: 11px;
-        padding: 3px 3px 3px 0px;
-		font-weight: normal;
+	font-size: 11px;
+	padding: 3px 3px 3px 0px;
+	font-weight: normal;
 }
 
 #infoViewSpinBoxLabel {
-        font-size: 11px;
-        color: #000000;
-		font-weight: normal;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
 }
 
 
 
 #infoViewComboBox {
-       font-size: 11px;
-        color: rgb(0,0,0);
-        border: none;
-        /*padding-left: 5px;*/
-           /* This causes a bad side-effect where the values get covered by the arrows in the drop-down */
+	font-size: 11px;
+	color: rgb(0,0,0);
+	border: none;
+	/*padding-left: 5px;*/
+	/* This causes a bad side-effect where the values get covered by the arrows in the drop-down */
 }
 
 #infoViewComboBox:disabled {
@@ -1644,10 +1643,10 @@ HtmlInfoView QScrollBar:vertical {
 }
 
 #infoViewComboBox:!editable {
-        background:#ececec;
+	background:#ececec;
 }
 #infoViewComboBox:hover  {
-        background: #fff;
+	background: #fff;
 }
 #infoViewComboBox:on  {
 }
@@ -1655,59 +1654,59 @@ HtmlInfoView QScrollBar:vertical {
 /* drop-down arrow of the combobox */
 
 #infoViewComboBox::down-arrow {
-        image: url(:/resources/images/icons/combobox-arrow.png);
+	image: url(:/resources/images/icons/combobox-arrow.png);
 }
 
 /* drop-down button of the combobox */
 #infoViewComboBox::drop-down:button {
-        background: #ececec;
+	background: #ececec;
 }
 #infoViewComboBox::drop-down:hover {
-        background: #ececec;
+	background: #ececec;
 }
 #infoViewComboBox::drop-down:on {
-        background:#ececec;
+	background:#ececec;
 }
 
 /* drop-down list of the combobox */
 #infoViewComboBox QAbstractItemView {
-        background-color: #ececec;
-        margin: 3px 0px;
-        padding: 0px;
-		color:#333;
+	background-color: #ececec;
+	margin: 3px 0px;
+	padding: 0px;
+	color:#333;
 }
 
 
 
 #infoViewComboBox:editable {
-        background: #fff;
+	background: #fff;
 }
 
 #infoViewComboBox:editable:hover,
 #infoViewComboBox:editable:on {
-/* BUG: for some reason this background is shown _behind_ the :editable background */
-        background: #fff;
+	/* BUG: for some reason this background is shown _behind_ the :editable background */
+	background: #fff;
 }
 
 #infoViewComboBox:hover
- {
-        background: #ececec;
+{
+	background: #ececec;
 }
 
 #infoViewComboBox::drop-down:editable {
-        border-left: 1px solid #989898;
-        background: #ececec;
+	border-left: 1px solid #989898;
+	background: #ececec;
 }
 
 
 #infoViewLineEdit {
-        font-size: 11px;
-        color: rgb(0,0,0);
-        background: #fff;
-        border: none;
+	font-size: 11px;
+	color: rgb(0,0,0);
+	background: #fff;
+	border: none;
 }
 #infoViewLineEdit:hover, #infoViewLineEdit:focus  {
-        background:#fff;
+	background:#fff;
 }
 
 #infoViewLineEdit:disabled {
@@ -1717,149 +1716,149 @@ HtmlInfoView QScrollBar:vertical {
 
 /* the label between the two spinners in the schematic frame */
 #infoViewOfLabel {
-        font-size: 11px;
-        padding: 3px 3px 3px 0px;
-        margin: 0px;
-        width: 30px;
-        min-width: 30px;
-        max-width: 30px;
+	font-size: 11px;
+	padding: 3px 3px 3px 0px;
+	margin: 0px;
+	width: 30px;
+	min-width: 30px;
+	max-width: 30px;
 }
 
 /* this is the style of buttons - mostly in generic parts like: "edit pin labels"-button */
 #infoViewButton {
-        font-size: 11px;
-        /*min-width: 100px;*/
-        text-align: center;
-        background: #ececec;
-        border: 1px solid #b1b1b1;
-        border-radius: 0px;
-        padding: 2px;
-		color: #323232;
-		margin-top:3px;
-		margin-bottom:3px;
+	font-size: 11px;
+	/*min-width: 100px;*/
+	text-align: center;
+	background: #ececec;
+	border: 1px solid #b1b1b1;
+	border-radius: 0px;
+	padding: 2px;
+	color: #323232;
+	margin-top:3px;
+	margin-bottom:3px;
 }
 
 #infoViewButton:hover  {
-        background: #fff;
+	background: #fff;
 }
 
 #infoViewButton:pressed,
 #infoViewButton:on {
-        background: #666;
-		color: #fff;
+	background: #666;
+	color: #fff;
 }
 
 /* the title if you have a "advanced settings" box - i.e. gereric ics */
 #infoViewGroupBox {
-        border: 1px solid gray;
-        font-size: 11px;
-        font-weight: bold;
-        margin: 5px 0px 0px 0px;
-        padding: 15px 2px 5px 2px;
+	border: 1px solid gray;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 5px 0px 0px 0px;
+	padding: 15px 2px 5px 2px;
 }
 
 /* the text inside the advanced settings box */
 #infoViewGroupBoxLabel {
-        font-size: 11px;
+	font-size: 11px;
 
 }
 
 #infoViewCheckBox {
-        font-size: 11px;
-        padding: 0px;
-        margin-right: 2px;
+	font-size: 11px;
+	padding: 0px;
+	margin-right: 2px;
 }
 
 /* Connections */
 #connectionsFrame {
-        margin: 0px;
+	margin: 0px;
 }
 
 #connectionsLabel {
-        font-size: 11px;
-        color: #575757;
-        min-width: 65px;
-        max-width: 65px;
-        margin: 0px 0px 0px 4px;
-        padding: 3px 3px 3px 0px;
-        border-top: 1px solid #9b9b9b;
+	font-size: 11px;
+	color: #575757;
+	min-width: 65px;
+	max-width: 65px;
+	margin: 0px 0px 0px 4px;
+	padding: 3px 3px 3px 0px;
+	border-top: 1px solid #9b9b9b;
 }
 
 #connectionsValue {
-        font-size: 11px;
-        color: black;
-        margin: 0px;
-        border: 0px;
-        padding: 3px 3px 3px 0px;
-        border-top: 1px solid #9b9b9b;
+	font-size: 11px;
+	color: black;
+	margin: 0px;
+	border: 0px;
+	padding: 3px 3px 3px 0px;
+	border-top: 1px solid #9b9b9b;
 }
 
 /* Tags */
 
 #tagsValue {
-        font-size: 11px;
-        margin: 0px 4px 0px 4px;
-        padding: 2px 0px 0px 0px;
-        border-top: 1px solid #9b9b9b;
+	font-size: 11px;
+	margin: 0px 4px 0px 4px;
+	padding: 2px 0px 0px 0px;
+	border-top: 1px solid #9b9b9b;
 }
 
 
 /***************** Parts Bin *****************/
 
 #partsBinHeader {
-margin:0;
-  padding: 0px;
-  max-height: 28px;
-  height: 28px;
+	margin:0;
+	padding: 0px;
+	max-height: 28px;
+	height: 28px;
 
 }
 
 #partsBinHeaderSeparator {
-        border: 2px solid #b1b1b1;
+	border: 2px solid #b1b1b1;
 }
 
 SearchLineEdit,  #searchStackWidget {
-        max-height: 20px;
-        height: 20px;
+	max-height: 20px;
+	height: 20px;
 }
 
 #partsBinLabel { /*the chosen libery-labelname and background*/
-        background-color: #d9d9d9;
-        font-size: 14px;
-        color: rgb(50,50,50);
-        font-weight: bold;
-        /*text-transform: uppercase;*/
-        padding-left: 1px;
-        margin: 0;
+	background-color: #d9d9d9;
+	font-size: 14px;
+	color: rgb(50,50,50);
+	font-weight: bold;
+	/*text-transform: uppercase;*/
+	padding-left: 1px;
+	margin: 0;
 
 }
 
 
 PartsBinIconView {
-        padding: 3px; /*this is the size of the grey-border around the partsbin-iconview*/
+	padding: 3px; /*this is the size of the grey-border around the partsbin-iconview*/
 }
 
 PartsBinIconView QPushButton{
-        padding: 3px;
-		selection-background-color: #b1b1b1;
-        background-color:#d9d9d9;
-        border: 0;
-        border-bottom: 1px solid #D0D0D0;/*this is the size of the grey-border around the partsbin-iconview*/
+	padding: 3px;
+	selection-background-color: #b1b1b1;
+	background-color:#d9d9d9;
+	border: 0;
+	border-bottom: 1px solid #D0D0D0;/*this is the size of the grey-border around the partsbin-iconview*/
 }
 
 PartsBinListView { /*the styling if you look the parts-window in list view mode*/
-        selection-background-color: #b1b1b1;
-        background-color:#d9d9d9;
-        color:#333;
-        border: 0;
-        border-bottom: 1px solid #D0D0D0;
+	selection-background-color: #b1b1b1;
+	background-color:#d9d9d9;
+	color:#333;
+	border: 0;
+	border-bottom: 1px solid #D0D0D0;
 }
 
 PartsBinListView::item:selected {
 	background:#b1b1b1;
 	color:#333;
 	border:none;
-	}
+}
 
 PartsBinListView::item:selected:!active	 {
 	background:#dadada;
@@ -1886,15 +1885,15 @@ PartsBinPaletteWidget,
 PartsBinPaletteWidget SimpleEditableLabelWidget,
 PartsBinPaletteWidget InfoGraphicsView
 {
-        background-color: #d9d9d9; /*background of parts library*/
-        border: none;
+	background-color: #d9d9d9; /*background of parts library*/
+	border: none;
 }
 
 #partsBinContainer
 {
 
 	background-color: #d9d9d9; /*background of parts library*/
-border-top: 1px solid #b1b1b1;
+	border-top: 1px solid #b1b1b1;
 }
 
 
@@ -1902,43 +1901,43 @@ PartsBinPaletteWidget,
 StackTabWidget,
 StackTabWidget::pane
 {
-        /* trying to get rid of the line
-        across the top of the tabs */
-        border: none;
-		background-color:transparent;
+/* trying to get rid of the line
+across the top of the tabs */
+border: none;
+background-color:transparent;
 }
 
 StackTabBar::tab {
-    margin: 0px 0px 0px 0px;
-    padding: 0px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
 	min-width: 32px;
-        max-width: 32px;
-        min-height: 32px;
-        max-height: 32px;
-        border: 0;
-        background: #d9d9d9; /*this is the color for the active tab*/
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+	border: 0;
+	background: #d9d9d9; /*this is the color for the active tab*/
 
-        font-weight: 600;
+	font-weight: 600;
 }
 
 StackTabBar::tab:selected { /*color for not active tab*/
-        color: #b1b1b1;
+	color: #b1b1b1;
 }
 
 StackTabBar::tab:!selected {
-        background-color: #b1b1b1; /*#9b9b9b;*/ /*color for not active tab*/
-        color: #ff0;/*#686868;*/
+	background-color: #b1b1b1; /*#9b9b9b;*/ /*color for not active tab*/
+	color: #ff0;/*#686868;*/
 }
 
 StackTabBar::tab:!selected:hover {
-        background-color: #ececec;
-		/*the hover status of the library buttons*/
+	background-color: #ececec;
+	/*the hover status of the library buttons*/
 }
 
 StackTabBar[current="true"]::tab:selected {
-		border:5px solid #00f;
-        /*background-color: black;
-        color: white;*/
+	border:5px solid #00f;
+/*background-color: black;
+color: white;*/
 }
 
 /*styling for the scrolling arrows for the part-bins*/
@@ -1951,27 +1950,27 @@ StackTabBar QToolButton {
 StackTabBar QToolButton::up-arrow {
 	background-image: url(:/resources/images/icons/TabScrollArrowButtonUpNormal.png);
 	background-repeat: none;
-		background-position: center;
+	background-position: center;
 }
 
 StackTabBar QToolButton::up-arrow:pressed {
 	background-image: url(:/resources/images/icons/TabScrollArrowButtonUpPressed.png);
 	background-repeat: none;
-		background-position: center;
+	background-position: center;
 }
 
 
 StackTabBar QToolButton::down-arrow{
-		background-image: url(:/resources/images/icons/TabScrollArrowButtonDownNormal.png);
-		background-repeat: none;
-		background-position: center;
+	background-image: url(:/resources/images/icons/TabScrollArrowButtonDownNormal.png);
+	background-repeat: none;
+	background-position: center;
 }
 
 
 StackTabBar QToolButton::down-arrow:pressed{
-		background-image: url(:/resources/images/icons/TabScrollArrowButtonDownPressed.png);
-		background-repeat: none;
-		background-position: center;
+	background-image: url(:/resources/images/icons/TabScrollArrowButtonDownPressed.png);
+	background-repeat: none;
+	background-position: center;
 }
 
 
@@ -1979,48 +1978,48 @@ StackTabBar QToolButton::down-arrow:pressed{
 
 
 #binToolButton {
-        background-color: transparent;
-        font-size: 11px;
+	background-color: transparent;
+	font-size: 11px;
 }
 
 #partsBinCombinedMenuButton
 #partsBinCombinedMenuButton:pressed {
-        margin: 0;
-        margin-top: 2px;
-        margin-left: 2px;
-        padding: 0;
-        border: 0;
-        width: 25px;
-        background-color: transparent;
-        background-attachment: fixed;
-        background-position: 100% 100%;
-        background-repeat: no-repeat;
+	margin: 0;
+	margin-top: 2px;
+	margin-left: 2px;
+	padding: 0;
+	border: 0;
+	width: 25px;
+	background-color: transparent;
+	background-attachment: fixed;
+	background-position: 100% 100%;
+	background-repeat: no-repeat;
 }
 
 #partsBinCombinedMenuButton {
-        background-image: url(:/resources/images/icons/partsBinCombinedMenu_icon.png);
-        background-repeat: no-repeat;
-        border: none;
-		height:12px;
-		width:12px;
+	background-image: url(:/resources/images/icons/partsBinCombinedMenu_icon.png);
+	background-repeat: no-repeat;
+	border: none;
+	height:12px;
+	width:12px;
 }
 
 #partsBinCombinedMenuButton:pressed {
-        background-image: url(:/resources/images/icons/partsBinCombinedMenuPressed_icon.png);
-        background-repeat: no-repeat;
-		height:12px;
-		width:12px;
+	background-image: url(:/resources/images/icons/partsBinCombinedMenuPressed_icon.png);
+	background-repeat: no-repeat;
+	height:12px;
+	width:12px;
 }
 
 #partsBinCombinedMenuButton:hover {
-        background-image: url(:/resources/images/icons/partsBinCombinedMenuHover_icon.png);
-        background-repeat: no-repeat;
-		height:12px;
-		width:12px;
+	background-image: url(:/resources/images/icons/partsBinCombinedMenuHover_icon.png);
+	background-repeat: no-repeat;
+	height:12px;
+	width:12px;
 }
 
 #partsBinCombinedMenuButton::menu-indicator {
-     image: url(:/resources/images/icons/noArrow_icon.png);
+	image: url(:/resources/images/icons/noArrow_icon.png);
 }
 
 
@@ -2034,14 +2033,14 @@ LayerPalette QObject {
 QUndoView {
 	background: #d9d9d9;
 	show-decoration-selected: 1;
-	}
+}
 
 
 QUndoView::item:selected {
 	background:#b1b1b1;
 	color:#333;
 	border:none;
-	}
+}
 
 QUndoView::item:selected:!active	 {
 	background:#dadada;
@@ -2066,57 +2065,57 @@ QUndoView::item:hover	 {
 /**************** Fab Quote ****************/
 
 #quoteOrder {
-        font-size: 16px;
-        font-weight: bold;
-        color: rgb(214,50,34);
-        margin: 0px 0px 0px 18px;
-        text-align: left;
-        font-family: Droid Sans;
-        font-weight: bold;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(214,50,34);
+	margin: 0px 0px 0px 18px;
+	text-align: left;
+	font-family: Droid Sans;
+	font-weight: bold;
 }
 
 #quoteMessage {
-        font-size: 11px;
-        color: #000000;
-        margin: 0px 0px 0px 10px;
-        text-align: left;
-        font-family: Droid Sans;
+	font-size: 11px;
+	color: #000000;
+	margin: 0px 0px 0px 10px;
+	text-align: left;
+	font-family: Droid Sans;
 }
 
 #quoteAdditional {
-        font-size: 11px;
-        color: #000000;
-        margin: 0px 0px 0px 10px;
-        text-align: left;
-        font-family: Droid Sans;
+	font-size: 11px;
+	color: #000000;
+	margin: 0px 0px 0px 10px;
+	text-align: left;
+	font-family: Droid Sans;
 }
 
 #quoteTable {
-        background-color: transparent;
-        border: 0px solid transparent;
-        margin: 0px 0px 0px 10px;
-        font-size: 11px;
-        font-family: Droid Sans;
+	background-color: transparent;
+	border: 0px solid transparent;
+	margin: 0px 0px 0px 10px;
+	font-size: 11px;
+	font-family: Droid Sans;
 }
 
 #quoteTable QHeaderView {
-        background-color: transparent;
-        color: #000000;
-        border: 0px solid transparent;
+	background-color: transparent;
+	color: #000000;
+	border: 0px solid transparent;
 }
 
 #quoteTable::item::disabled {
-        margin-right: 10px;
-        color: #000000;
+	margin-right: 10px;
+	color: #000000;
 }
 
 #quoteVisitButton {
-        color: #ffffff;
-        text-align: center;						/* text-align: center is not implemented.  QSS is shit. */
-        qproperty-alignment: AlignCenter;
-        font-size: 16px;
-        font-family: Droid Sans;
-        font-weight: bold;
+	color: #ffffff;
+	text-align: center;						/* text-align: center is not implemented.  QSS is shit. */
+	qproperty-alignment: AlignCenter;
+	font-size: 16px;
+	font-family: Droid Sans;
+	font-weight: bold;
 }
 
 /************************ About Box ****************************/
@@ -2139,7 +2138,7 @@ MainWindow {
 }
 
 SketchWidget {
-        border: 0px;
+	border: 0px;
 	font-weight: bold;
 	background-image:none;
 }
@@ -2168,15 +2167,15 @@ SchematicSketchWidget {
 
 
 WaitPushUndoStack {
-        background-color: white;
-        color: #0f0;
+	background-color: white;
+	color: #0f0;
 }
 
 SearchLineEdit {
-        color: #000000;
-        font-size: 11px;
-        font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
-        border: 1px solid #8c8c8c;
+	color: #000000;
+	font-size: 11px;
+	font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
+	border: 1px solid #8c8c8c;
 }
 
 /*############# aboutbox ################*/
@@ -2209,30 +2208,30 @@ QDialog QFrame QLabel {
 PCBSketchWidget QDialogButtonBox,
 QDialog QDialogButtonBox,
 QDialogButtonBox
- {
-        font-size: 11px;
-        /*min-width: 100px;*/
-        text-align: center;
-        background: #ececec;
-        border: 1px solid #b1b1b1;
-        border-radius: 0px;
-        padding: 10px;
-		color: #323232;
-		margin-top:3px;
-		margin-bottom:3px;
+{
+	font-size: 12px;
+	/*min-width: 100px;*/
+	text-align: center;
+	background: #ececec;
+	border: 1px solid #b1b1b1;
+	border-radius: 0px;
+	padding: 10px;
+	color: #323232;
+	margin-top:3px;
+	margin-bottom:3px;
 }
 
 QDialog QPushButton {
-        font-size: 11px;
-        /*min-width: 100px;*/
-        text-align: center;
-        background: #ececec;
-        border: 1px solid #b1b1b1;
-        border-radius: 0px;
-        padding: 2px;
-		color: #323232;
-		margin-top:3px;
-		margin-bottom:3px;
+	font-size: 12px;
+	/*min-width: 100px;*/
+	text-align: center;
+	background: #ececec;
+	border: 1px solid #b1b1b1;
+	border-radius: 0px;
+	padding: 2px;
+	color: #323232;
+	margin-top:3px;
+	margin-bottom:3px;
 }
 
 
@@ -2240,7 +2239,7 @@ PCBSketchWidget QDialogButtonBox:hover,
 QDialog QDialogButtonBox:hover,
 QDialogButtonBox:hover,
 QDialog QPushButton:hover {
-        background: #fff;
+	background: #fff;
 
 }
 
@@ -2253,14 +2252,14 @@ QDialogButtonBox:on,
 QDialog QPushButton:pressed,
 QDialog QPushButton:on
 {
-        background: #666;
-		color: #fff;
+	background: #666;
+	color: #fff;
 }
 
 
 #PrefsDialog {
-background:#f0f;
-background-color:#0ff;
+	background:#f0f;
+	background-color:#0ff;
 
 
 }

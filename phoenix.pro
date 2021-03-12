@@ -27,7 +27,7 @@ lessThan(QT_MINOR_VERSION, 9) {
 }
 
 CONFIG += debug_and_release
-CONFIG += c++14
+CONFIG += c++17
 
 # TODO: Omit frame pointers for release builds
 # TODO: Verify flags for clang and msvc builds

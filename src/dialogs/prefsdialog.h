@@ -91,6 +91,8 @@ protected:
 	QPointer<QWidget> m_pcb;
 	QPointer<QWidget> m_code;
 	QPointer<QLabel> m_wheelLabel[3];
+	QPointer<QLabel> m_connectedColorLabel;
+	QPointer<QLabel> m_unconnectedColorLabel;
 	QList<Platform *> m_platforms;
 	QHash<QString, QLineEdit *> m_programmerLEs;
 	QHash<QString, QString> m_settings;

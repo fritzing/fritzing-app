@@ -33,11 +33,11 @@
     </message>
     <message>
         <source>Special thanks goes out to: </source>
-        <translation>Remerciements spéciaux à :</translation>
+        <translation type="vanished">Remerciements spéciaux à :</translation>
     </message>
     <message>
         <source>Fritzing a test spin. </source>
-        <translation> Fritzing un tour d&apos;essai.</translation>
+        <translation type="vanished"> Fritzing un tour d&apos;essai.</translation>
     </message>
     <message>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
@@ -45,7 +45,7 @@
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
-        <translation>Un merci tout spécial aussi à tous les étudiants</translation>
+        <translation type="vanished">Un merci tout spécial aussi à tous les étudiants</translation>
     </message>
     <message>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>and alpha testers who were brave enough to give </source>
-        <translation> et aux testeurs alpha qui étaient assez courageux pour faire avec</translation>
+        <translation type="vanished"> et aux testeurs alpha qui étaient assez courageux pour faire avec</translation>
     </message>
     <message>
         <source>Fritzing is made by: </source>
@@ -212,19 +212,23 @@
         <translation>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
-        <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>and Kjell Morgenstern </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Ukrainian: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Yelyzaveta Chyhryna</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Special thanks go out to: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1046,6 +1050,56 @@ Utiliser le fichier ?</translation>
     <message>
         <source>Regenerating parts database...</source>
         <translation>Régénérer la base de données de composants ...</translation>
+    </message>
+</context>
+<context>
+    <name>FabUploadDialog</name>
+    <message>
+        <source>Fritzing Fab Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get your board fabricated this week!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload it now to get a preview rendered by AISLER. Review, and if you like it, order it and get it manufactured in two days.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annuler</translation>
+    </message>
+    <message>
+        <source>Upload to Fab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished">Télécharger</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uploading...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FabUploadProgress</name>
+    <message>
+        <source>Fritzing</source>
+        <translation type="unfinished">Fritzing</translation>
+    </message>
+    <message>
+        <source>Could not connect to Fritzing fab.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error processing the project. The factory says: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2017,7 +2071,7 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>directly loading parts</source>
-        <translation>Composants étant chargés directement</translation>
+        <translation type="vanished">Composants étant chargés directement</translation>
     </message>
     <message>
         <source>Send selected object(s) back in their layer</source>
@@ -2313,7 +2367,7 @@ Do you want to update now?</source>
     </message>
     <message>
         <source>Open Fritzing donation web page</source>
-        <translation>Ouvrir la page Web de donation Fritzing</translation>
+        <translation type="vanished">Ouvrir la page Web de donation Fritzing</translation>
     </message>
     <message>
         <source>Tips, Tricks and Shortcuts</source>
@@ -3014,7 +3068,7 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     </message>
     <message>
         <source>Donate to Fritzing</source>
-        <translation>Faire un don à Fritzing</translation>
+        <translation type="vanished">Faire un don à Fritzing</translation>
     </message>
     <message>
         <source>Undo History</source>
@@ -3605,6 +3659,46 @@ Remarque: si vous souhaitez mettre à jour plus tard, il y a des options dans le
     </message>
     <message>
         <source>Display breadboard wires using standard color coding by length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local part &apos;%1&apos; incomplete, only &apos;%2&apos; layers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View &apos;%1&apos; should be prefixed with &apos;%2/&apos;. Trying to continue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not copy subfile &apos;%1&apos; to &apos;%2&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local part &apos;%1&apos; incomplete, subfile not found &apos;%2&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to open local part &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visit fritzing.org</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>fritzing.org</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing Fab Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please first save your project in order to upload it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5173,6 +5267,10 @@ Alt ou la touche %1 = zoom</translation>
         <source>Select a programmer (executable) for %1</source>
         <translation>Sélectionnez un programmeur (exécutable) pour %1</translation>
     </message>
+    <message>
+        <source>%1</source>
+        <translation type="unfinished">%1</translation>
+    </message>
 </context>
 <context>
     <name>ProgramTab</name>
@@ -6121,10 +6219,6 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The parts folder &apos;%1&apos; has been changed--it is not in the master branch (%2). %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The parts folder &apos;%1&apos; may have been damaged (%2). %3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6158,10 +6252,6 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6247,6 +6337,14 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; has been changed--it is not in a supported branch (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7185,7 +7283,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
-        <translation>Pour afficher différentes propriétés dans l&apos;étiquette d&apos;un composant, pour la faire tourner, ou changer sa typographie, faites un double-clic dessus.</translation>
+        <translation type="vanished">Pour afficher différentes propriétés dans l&apos;étiquette d&apos;un composant, pour la faire tourner, ou changer sa typographie, faites un double-clic dessus.</translation>
     </message>
     <message>
         <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
@@ -7226,6 +7324,10 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     <message>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
         <translation>Lorsque vous utilisez le service Fab de Fritzing, s&apos;il existe des zones vides du circuit imprimé que vous ne voulez pas remplir de cuivre, utilisez la partie cuivre-bloqueur. Cette partie redimensionnable masquera le remplissage de cuivre dans le rectangle qu&apos;il couvre.</translation>
+    </message>
+    <message>
+        <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7570,26 +7672,6 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     <message>
         <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
         <translation type="vanished">Le kit de créateur de Fritzing est en rupture de stock. Pour les mises à jour s&apos;il vous plaît visitez le blog fritzing</translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fritzing development needs you</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Software development and maintenance is a lot of work. Without your support, it is not possible to keep that up.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate and leave a comment.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate now</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Unable to reach fritzing.org/projects</source>

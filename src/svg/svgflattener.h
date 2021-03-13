@@ -25,17 +25,19 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMatrix>
 #include <QSvgRenderer>
 
+typedef std::map<QString, QString> SvgAttributesMap;
+
 class SvgFlattener : public SvgFileSplitter
 {
 public:
 	SvgFlattener();
 
-	void flattenChildren(QDomElement & element);
-	void unRotateChild(QDomElement & element,QMatrix transform);
+	void flattenChildren(QDomElement &element, const SvgAttributesMap &attributes);
+	void unRotateChild(QDomElement &element, QMatrix transform, const SvgAttributesMap & attributes);
 
-public:
 	static void flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID, double printerScale, Qt::Orientations);
 	static void replaceElementID(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID);
+	static SvgAttributesMap mergeSvgAttributes(const SvgAttributesMap &inherited_attributes, QDomElement &element);
 
 protected:
 	static QString flipSMDElement(QDomDocument & domDocument, QDomElement & element, const QString & att, QDomElement altAtt, const QString & altElementID, double printerScale, Qt::Orientations);

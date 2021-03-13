@@ -151,7 +151,7 @@ void FServerThread::run()
 
 	DebugDialog::debug("header " + header);
 
-	QStringList tokens = header.split(QRegExp("[ \r\n][ \r\n]*"), QString::SkipEmptyParts);
+	QStringList tokens = header.split(QRegExp("[ \r\n][ \r\n]*"), Qt::SplitBehaviorFlags::SkipEmptyParts);
 	if (tokens.count() <= 0) {
 		writeResponse(socket, 400, "Bad Request", "", "");
 		return;
@@ -167,7 +167,7 @@ void FServerThread::run()
 		return;
 	}
 
-	QStringList params = tokens.at(1).split("/", QString::SkipEmptyParts);
+	QStringList params = tokens.at(1).split("/", Qt::SplitBehaviorFlags::SkipEmptyParts);
 	QString command = params.takeFirst();
 	if (params.count() == 0) {
 		writeResponse(socket, 400, "Bad Request", "", "");

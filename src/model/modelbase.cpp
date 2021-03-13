@@ -289,22 +289,22 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 
 		bool generated = false;
 		modelPart = m_referenceModel->retrieveModelPart(moduleIDRef);
-		if (modelPart == NULL) {
+		if (!modelPart) {
 			DebugDialog::debug(QString("module id %1 not found in database").arg(moduleIDRef));
 			modelPart = fixObsoleteModuleID(domDocument, instance, moduleIDRef);
-			if (modelPart == NULL) {
-				modelPart = genFZP(moduleIDRef, m_referenceModel);
-				if (modelPart) {
-					instance.setAttribute("moduleIdRef", modelPart->moduleID());
-					moduleIDRef = modelPart->moduleID();
-					generated = true;
-				}
-				if (modelPart == NULL) {
-					missingModules.insert(moduleIDRef, instance.attribute("path"));
-					instance = instance.nextSiblingElement("instance");
-					continue;
-				}
+		}
+		if (!modelPart) {
+			modelPart = genFZP(moduleIDRef, m_referenceModel);
+			if (modelPart) {
+				instance.setAttribute("moduleIdRef", modelPart->moduleID());
+				moduleIDRef = modelPart->moduleID();
+				generated = true;
 			}
+		}
+		if (!modelPart) {
+			missingModules.insert(moduleIDRef, instance.attribute("path"));
+			instance = instance.nextSiblingElement("instance");
+			continue;
 		}
 
 		if (modelPart->isCore() && m_useOldSchematics) {

@@ -27,19 +27,29 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QRegExp>
 #include <QTextStream>
 #include <qmath.h>
+#include <stdexcept>
 
 SvgFlattener::SvgFlattener() : SvgFileSplitter()
 {
 }
 
-void SvgFlattener::flattenChildren(QDomElement &element) {
+SvgAttributesMap SvgFlattener::mergeSvgAttributes(const SvgAttributesMap & inherited_attributes, QDomElement & element) {
+	SvgAttributesMap attributes(inherited_attributes); // copy
+	if (element.hasAttribute("stroke-width")) {
+		attributes["stroke-width"] = element.attribute("stroke-width");
+	}
+	return attributes;
+}
+
+void SvgFlattener::flattenChildren(QDomElement &element, const SvgAttributesMap & inherited_attributes) {
+	const SvgAttributesMap attributes = mergeSvgAttributes(inherited_attributes, element);
 
 	// recurse the children
 	QDomNodeList childList = element.childNodes();
 
 	for(int i = 0; i < childList.length(); i++) {
 		QDomElement child = childList.item(i).toElement();
-		flattenChildren(child);
+		flattenChildren(child, attributes);
 	}
 
 	//do translate
@@ -64,21 +74,20 @@ void SvgFlattener::flattenChildren(QDomElement &element) {
 		QMatrix transform = TextUtils::transformStringToMatrix(element.attribute("transform"));
 
 		//DebugDialog::debug(QString("rotating %1 %2 %3 %4 %5 %6").arg(params.at(0)).arg(params.at(1)).arg(params.at(2)).arg(params.at(3)).arg(params.at(4)).arg(params.at(5)));
-		unRotateChild(element, transform);
+		unRotateChild(element, transform, attributes);
 	}
 
 	// remove transform
 	element.removeAttribute("transform");
 }
 
-void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform) {
-
+void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform, const SvgAttributesMap & inherited_attributes) {
+	const SvgAttributesMap attributes( mergeSvgAttributes(inherited_attributes, element) );
 	// TODO: missing ellipse element
 
 	if(!element.hasChildNodes()) {
-
-		QString sw = element.attribute("stroke-width");
-		if (!sw.isEmpty()) {
+		try {
+			QString sw(attributes.at("stroke-width"));
 			bool ok;
 			double strokeWidth = sw.toDouble(&ok);
 			if (ok) {
@@ -86,6 +95,8 @@ void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform) {
 				QLineF newLine = transform.map(line);
 				element.setAttribute("stroke-width", QString::number(newLine.length()));
 			}
+		} catch (std::out_of_range) {
+			// Expected, sometimes there is no stroke-width
 		}
 
 		// I'm a leaf node.
@@ -178,7 +189,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform) {
 
 	for(int i = 0; i < childList.length(); i++) {
 		QDomElement child = childList.item(i).toElement();
-		unRotateChild(child, transform);
+		unRotateChild(child, transform, attributes);
 	}
 
 }

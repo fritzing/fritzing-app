@@ -160,6 +160,7 @@ class MainWindow : public FritzingWindow
 	Q_OBJECT
 	Q_PROPERTY(int fireQuoteDelay READ fireQuoteDelay WRITE setFireQuoteDelay DESIGNABLE true)
 
+	void setEnableSubmenu(QMenu *menu, bool value);
 public:
 	MainWindow(class ReferenceModel *referenceModel, QWidget * parent);
 	MainWindow(QFile & fileToLoad);
@@ -603,10 +604,10 @@ protected:
 	virtual void createWindowMenu();
 	virtual void createTraceMenus();
 	virtual void createHelpMenu();
-	virtual void createRotateSubmenu(QMenu * parentMenu);
-	virtual void createZOrderSubmenu(QMenu * parentMenu);
+	virtual QMenu * createRotateSubmenu(QMenu * parentMenu);
+	virtual QMenu * createZOrderSubmenu(QMenu * parentMenu);
 	//  virtual void createZOrderWireSubmenu(QMenu * parentMenu);
-	virtual void createAlignSubmenu(QMenu * parentMenu);
+	virtual QMenu * createAlignSubmenu(QMenu * parentMenu);
 	virtual void createAddToBinSubmenu(QMenu * parentMenu);
 	virtual void populateExportMenu();
 

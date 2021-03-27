@@ -1294,33 +1294,37 @@ void MainWindow::createMenus()
 	createHelpMenu();
 }
 
-void MainWindow::createRotateSubmenu(QMenu * parentMenu) {
-	QMenu *rotateMenu = parentMenu->addMenu(tr("Rotate"));
+QMenu * MainWindow::createRotateSubmenu(QMenu * parentMenu) {
+	QMenu * rotateMenu = parentMenu->addMenu(tr("Rotate"));
 	rotateMenu->addAction(m_rotate45cwAct);
 	rotateMenu->addAction(m_rotate90cwAct);
 	rotateMenu->addAction(m_rotate180Act);
 	rotateMenu->addAction(m_rotate90ccwAct);
 	rotateMenu->addAction(m_rotate45ccwAct);
+	return rotateMenu;
 }
 
-void MainWindow::createZOrderSubmenu(QMenu * parentMenu) {
+QMenu * MainWindow::createZOrderSubmenu(QMenu * parentMenu) {
 	QMenu *zOrderMenu = parentMenu->addMenu(tr("Raise and Lower"));
 	zOrderMenu->addAction(m_bringToFrontAct);
 	zOrderMenu->addAction(m_bringForwardAct);
 	zOrderMenu->addAction(m_sendBackwardAct);
 	zOrderMenu->addAction(m_sendToBackAct);
+
+	return zOrderMenu;
 }
 
 /*
 void MainWindow::createZOrderWireSubmenu(QMenu * parentMenu) {
-    QMenu *zOrderWireMenu = parentMenu->addMenu(tr("Raise and Lower"));
-    zOrderWireMenu->addAction(m_bringToFrontWireAct);
-    zOrderWireMenu->addAction(m_bringForwardWireAct);
-    zOrderWireMenu->addAction(m_sendBackwardWireAct);
-    zOrderWireMenu->addAction(m_sendToBackWireAct);
+	QMenu *zOrderWireMenu = parentMenu->addMenu(tr("Raise and Lower"));
+	zOrderWireMenu->addAction(m_bringToFrontWireAct);
+	zOrderWireMenu->addAction(m_bringForwardWireAct);
+	zOrderWireMenu->addAction(m_sendBackwardWireAct);
+	zOrderWireMenu->addAction(m_sendToBackWireAct);
 }
 */
-void MainWindow::createAlignSubmenu(QMenu * parentMenu) {
+
+QMenu * MainWindow::createAlignSubmenu(QMenu * parentMenu) {
 	QMenu *alignMenu = parentMenu->addMenu(tr("Align"));
 	alignMenu->addAction(m_alignLeftAct);
 	alignMenu->addAction(m_alignHorizontalCenterAct);
@@ -1328,6 +1332,8 @@ void MainWindow::createAlignSubmenu(QMenu * parentMenu) {
 	alignMenu->addAction(m_alignTopAct);
 	alignMenu->addAction(m_alignVerticalCenterAct);
 	alignMenu->addAction(m_alignBottomAct);
+
+	return alignMenu;
 }
 
 void MainWindow::createAddToBinSubmenu(QMenu * parentMenu) {
@@ -1439,10 +1445,11 @@ void MainWindow::createPartMenu() {
 	m_partMenu->addSeparator();
 	m_partMenu->addAction(m_flipHorizontalAct);
 	m_partMenu->addAction(m_flipVerticalAct);
-	createRotateSubmenu(m_partMenu);
-	createZOrderSubmenu(m_partMenu);
+	m_rotateMenu = createRotateSubmenu(m_partMenu);
+	m_zOrderMenu = createZOrderSubmenu(m_partMenu);
+
 	//createZOrderWireSubmenu(m_partMenu);
-	createAlignSubmenu(m_partMenu);
+	m_alignMenu = createAlignSubmenu(m_partMenu);
 	m_partMenu->addAction(m_moveLockAct);
 	m_partMenu->addAction(m_stickyAct);
 	m_partMenu->addAction(m_selectMoveLockAct);
@@ -1601,8 +1608,8 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 
 	QList<QAction *> actions;
 	actions << m_zoomInAct << m_zoomOutAct << m_zoomInShortcut << m_fitInWindowAct << m_actualSizeAct <<
-	        m_100PercentSizeAct << m_alignToGridAct << m_showGridAct << m_setGridSizeAct << m_setBackgroundColorAct <<
-	        m_colorWiresByLengthAct;
+			m_100PercentSizeAct << m_alignToGridAct << m_showGridAct << m_setGridSizeAct << m_setBackgroundColorAct <<
+			m_colorWiresByLengthAct;
 
 	bool enabled = (m_currentGraphicsView);
 	foreach (QAction * action, actions) action->setEnabled(enabled);
@@ -1642,7 +1649,7 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 	LayerList keys = viewLayers.keys();
 
 	// make sure they're in ascending order when inserting into the menu
-	qSort(keys.begin(), keys.end());
+	std::sort(keys.begin(), keys.end());
 
 	foreach (ViewLayer::ViewLayerID key, keys) {
 		ViewLayer * viewLayer = viewLayers.value(key);
@@ -1807,12 +1814,23 @@ void MainWindow::updateWireMenu() {
 	}
 }
 
+void MainWindow::setEnableSubmenu( QMenu * menu, bool value ) {
+	foreach (QAction * action, menu->actions()) {
+		action->setEnabled(value);
+	}
+	menu->setEnabled(value);
+	menu->menuAction()->setEnabled(value);
+}
+
 void MainWindow::updatePartMenu() {
 	if (m_partMenu == NULL) return;
 
 	if (m_currentGraphicsView == NULL) {
 		foreach (QAction * action, m_partMenu->actions()) {
 			action->setEnabled(false);
+			if (action->menu()) {
+				setEnableSubmenu(action->menu(), false);
+			}
 		}
 		return;
 	}
@@ -1833,18 +1851,8 @@ void MainWindow::updatePartMenu() {
 		}
 	}
 
-	m_alignLeftAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
-	m_alignRightAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
-	m_alignTopAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
-	m_alignBottomAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
-	m_alignVerticalCenterAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
-	m_alignHorizontalCenterAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
-
-	//DebugDialog::debug(QString("enable layer actions %1")upat.arg(enable));
-	m_bringToFrontAct->setEnabled(zenable);
-	m_bringForwardAct->setEnabled(zenable);
-	m_sendBackwardAct->setEnabled(zenable);
-	m_sendToBackAct->setEnabled(zenable);
+	setEnableSubmenu(m_alignMenu, itemCount.selCount - itemCount.wireCount > 1);
+	setEnableSubmenu(m_zOrderMenu, zenable);
 
 	m_moveLockAct->setEnabled(itemCount.selCount > 0 && itemCount.selCount > itemCount.wireCount);
 	m_moveLockAct->setChecked(itemCount.moveLockCount > 0);
@@ -1857,13 +1865,10 @@ void MainWindow::updatePartMenu() {
 	bool renable = (itemCount.selRotatable > 0);
 	bool renable45 = (itemCount.sel45Rotatable > 0);
 
-	//DebugDialog::debug(QString("enable rotate (2) %1").arg(enable));
-
-	m_rotate90cwAct->setEnabled(renable && enable);
-	m_rotate180Act->setEnabled(renable && enable);
-	m_rotate90ccwAct->setEnabled(renable && enable);
+	setEnableSubmenu(m_rotateMenu, renable && enable);
 	m_rotate45ccwAct->setEnabled(renable && renable45 && enable);
 	m_rotate45cwAct->setEnabled(renable && renable45 && enable);
+
 
 	m_flipHorizontalAct->setEnabled(enable && (itemCount.selHFlipable > 0) && (m_currentGraphicsView != m_pcbGraphicsView));
 	m_flipVerticalAct->setEnabled(enable && (itemCount.selVFlipable > 0) && (m_currentGraphicsView != m_pcbGraphicsView));
@@ -1954,7 +1959,7 @@ void MainWindow::updateTransformationActions() {
 	bool enable = (itemCount.selRotatable > 0);
 	bool renable = (itemCount.sel45Rotatable > 0);
 
-	//DebugDialog::debug(QString("enable rotate (1) %1").arg(enable));
+//	DebugDialog::debug(QString("enable rotate (1) %1 %2").arg(enable).arg(m_rotate90ccwAct->isEnabled()));
 
 	m_rotate90cwAct->setEnabled(enable);
 	m_rotate180Act->setEnabled(enable);

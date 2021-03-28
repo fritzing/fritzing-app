@@ -1336,11 +1336,13 @@ QMenu * MainWindow::createAlignSubmenu(QMenu * parentMenu) {
 	return alignMenu;
 }
 
-void MainWindow::createAddToBinSubmenu(QMenu * parentMenu) {
+QMenu * MainWindow::createAddToBinSubmenu(QMenu * parentMenu) {
 	QMenu *addToBinMenu = parentMenu->addMenu(tr("&Add to bin..."));
 	addToBinMenu->setStatusTip(tr("Add selected part to bin"));
 	QList<QAction*> acts = m_binManager->openedBinsActions(selectedModuleID());
 	addToBinMenu->addActions(acts);
+
+	return addToBinMenu;
 }
 
 void MainWindow::createFileMenu() {
@@ -1455,7 +1457,7 @@ void MainWindow::createPartMenu() {
 	m_partMenu->addAction(m_selectMoveLockAct);
 
 	m_partMenu->addSeparator();
-	createAddToBinSubmenu(m_partMenu);
+	m_addToBinMenu = createAddToBinSubmenu(m_partMenu);
 	m_partMenu->addAction(m_showPartLabelAct);
 	m_partMenu->addSeparator();
 	m_partMenu->addAction(m_selectAllObsoleteAct);
@@ -1872,6 +1874,8 @@ void MainWindow::updatePartMenu() {
 
 	m_flipHorizontalAct->setEnabled(enable && (itemCount.selHFlipable > 0) && (m_currentGraphicsView != m_pcbGraphicsView));
 	m_flipVerticalAct->setEnabled(enable && (itemCount.selVFlipable > 0) && (m_currentGraphicsView != m_pcbGraphicsView));
+
+	setEnableSubmenu(m_addToBinMenu, enable);
 
 	updateItemMenu();
 	updateEditMenu();

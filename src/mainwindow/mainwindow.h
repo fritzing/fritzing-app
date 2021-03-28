@@ -608,7 +608,7 @@ protected:
 	virtual QMenu * createZOrderSubmenu(QMenu * parentMenu);
 	//  virtual void createZOrderWireSubmenu(QMenu * parentMenu);
 	virtual QMenu * createAlignSubmenu(QMenu * parentMenu);
-	virtual void createAddToBinSubmenu(QMenu * parentMenu);
+	virtual QMenu * createAddToBinSubmenu(QMenu * parentMenu);
 	virtual void populateExportMenu();
 
 	// dock management

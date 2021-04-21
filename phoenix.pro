@@ -71,8 +71,26 @@ win32 {
     Debug:UI_DIR = $${DEBDIR}
 }
 macx {
-    RELDIR = ../release64
-    DEBDIR = ../debug64
+    # QMAKE_MAC_SDK = macosx11.0            # uncomment/adapt for your version of OSX
+    CONFIG+=sdk_no_version_check
+# Request x86_64 build or arm64 build. 'qmake phoenix.pro' must use the corresponding qmake
+#   for the build type being requested. ie If you're wanting arm64, use the qmake built in
+#   your arm64 folder so it'll create makefiles with the arm64 folder paths for linking.
+#    QMAKE_APPLE_DEVICE_ARCHS=arm64
+    QMAKE_APPLE_DEVICE_ARCHS=x86_64
+    QMAKE_INFO_PLIST = FritzingInfo.plist
+    #DEFINES += QT_NO_DEBUG                # uncomment this for xcode
+    LIBS += -lz -liconv
+    LIBS  += -framework CoreFoundation -framework Carbon -framework IOKit -framework Security
+
+    message("device archs: $${QMAKE_APPLE_DEVICE_ARCHS}")
+    contains(QMAKE_APPLE_DEVICE_ARCHS, x86_64) {
+        RELDIR = ../release64
+        DEBDIR = ../debug64
+    } else {
+        RELDIR = ../releasearm64
+        DEBDIR = ../debugarm64
+    }
     Release:DESTDIR = $${RELDIR}
     Release:OBJECTS_DIR = $${RELDIR}
     Release:MOC_DIR = $${RELDIR}
@@ -84,17 +102,6 @@ macx {
     Debug:MOC_DIR = $${DEBDIR}
     Debug:RCC_DIR = $${DEBDIR}
     Debug:UI_DIR = $${DEBDIR}
-
-    #QMAKE_MAC_SDK = macosx10.11            # uncomment/adapt for your version of OSX
-    CONFIG += x86_64 # x86 ppc
-    QMAKE_INFO_PLIST = FritzingInfo.plist
-    #DEFINES += QT_NO_DEBUG                # uncomment this for xcode
-    LIBS += -lz
-    LIBS += /usr/lib/libz.dylib
-    LIBS += /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-    LIBS += /System/Library/Frameworks/Carbon.framework/Carbon
-    LIBS += /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
-    LIBS += -liconv
 }
 unix {
     !macx { # unix is defined on mac

@@ -60,7 +60,7 @@ unix {
             error("static libgit2 library not found in $$LIBGIT2LIB")
         }
         macx {
-            LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
+            LIBS += $$LIBGIT2LIB/libgit2.a
         } else {
             LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
         }

@@ -174,7 +174,7 @@ QT += concurrent core gui network printsupport serialport sql svg widgets xml
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
 
-# Disable this if you have (and want) libgit2 dynamically
+# Set this to false if you have (and want) libgit2 dynamically
 LIBGIT_STATIC = true
 include(pri/libgit2detect.pri)
 

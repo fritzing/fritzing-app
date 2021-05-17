@@ -107,6 +107,7 @@ HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 	m_lastTitleItemBase = NULL;
+	m_lastSpiceModelPart = NULL;
 	m_lastTagsModelPart = NULL;
 	m_lastConnectorItem = NULL;
 	m_lastIconItemBase = NULL;
@@ -121,6 +122,7 @@ HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 	m_lockCheckbox = NULL;
 	m_stickyCheckbox = NULL;
 	m_connDescr = NULL;
+	m_spiceTextLabel = NULL;
 	m_tagsTextLabel = NULL;
 	m_lastSwappingEnabled = false;
 	m_lastItemBase = NULL;
@@ -275,6 +277,15 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_propLayout->setContentsMargins(0, 0, 0, 0);
 	m_propFrame->setLayout(m_propLayout);
 	vlo->addWidget(m_propFrame);
+
+	m_spiceLabel = new QLabel(tr("Spice"), NULL);
+	m_spiceLabel->setObjectName("expandableViewLabel");
+	vlo->addWidget(m_spiceLabel);
+
+	m_spiceTextLabel = new TagLabel(this);
+	m_spiceTextLabel->setWordWrap(true);
+	m_spiceTextLabel->setObjectName("tagsValue");
+	vlo->addWidget(m_spiceTextLabel);
 
 	m_tagLabel = new QLabel(tr("Tags"), NULL);
 	m_tagLabel->setObjectName("expandableViewLabel");
@@ -498,6 +509,7 @@ void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, b
 	}
 
 	displayProps(modelPart, itemBase, swappingEnabled);
+	addSpice(modelPart);
 	addTags(modelPart);
 
 	m_placementLabel->setVisible(swappingEnabled);
@@ -574,6 +586,7 @@ void HtmlInfoView::setNullContent()
 	partTitle("", "", "", false);
 	setUpIcons(NULL, false);
 	displayProps(NULL, NULL, false);
+	addSpice(NULL);
 	addTags(NULL);
 	viewConnectorItemInfo(NULL, NULL);
 	m_connFrame->setVisible(false);
@@ -683,6 +696,24 @@ void HtmlInfoView::setUpIcons(ItemBase * itemBase, bool swappingEnabled) {
 	if (pixmap1) delete pixmap1;
 	if (pixmap2) delete pixmap2;
 	if (pixmap3) delete pixmap3;
+}
+
+void HtmlInfoView::addSpice(ModelPart * modelPart) {
+	if (m_spiceTextLabel == NULL) return;
+
+	if (m_lastSpiceModelPart == modelPart) return;
+
+	m_lastSpiceModelPart = modelPart;
+
+	if (modelPart == NULL || modelPart->spice().isEmpty()) {
+		m_spiceTextLabel->setText(tr("No spice info. This part will not be simulated."));
+		return;
+	} else {
+		QString spiceText = modelPart->spice().trimmed();
+		if(!modelPart->spiceModel().isEmpty())
+			spiceText.append("\nSpice model:\n" + modelPart->spiceModel().trimmed());
+		m_spiceTextLabel->setText(spiceText);
+	}
 }
 
 void HtmlInfoView::addTags(ModelPart * modelPart) {

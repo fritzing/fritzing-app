@@ -120,6 +120,7 @@ protected:
 	void setNullContent();
 	void setUpTitle(ItemBase *);
 	void setUpIcons(ItemBase *, bool swappingEnabled);
+	void addSpice(ModelPart * modelPart);
 	void addTags(ModelPart * modelPart);
 	void partTitle(const QString & title, const QString & version, const QString & url, bool obsolete);
 	void displayProps(ModelPart * modelPart, ItemBase * itemBase, bool swappingEnabled);
@@ -147,12 +148,14 @@ protected:
 	QLabel * m_partTitle;
 	QLabel * m_partUrl;
 	QLabel * m_partVersion;
+	QLabel * m_spiceTextLabel;
 	QLabel * m_tagsTextLabel;
 	QLabel * m_connDescr;
 	QLabel * m_connName;
 	QLabel * m_connType;
 	QLabel * m_propLabel;
 	QLabel * m_placementLabel;
+	QLabel * m_spiceLabel;
 	QLabel * m_tagLabel;
 	QLabel * m_connLabel;
 	QLabel * m_layerLabel;
@@ -184,6 +187,7 @@ protected:
 	ItemBase * m_lastTitleItemBase;
 	QString m_lastPartTitle;
 	QString m_lastPartVersion;
+	ModelPart * m_lastSpiceModelPart;
 	ModelPart * m_lastTagsModelPart;
 	int m_lastConnectorItemCount;
 	ConnectorItem * m_lastConnectorItem;

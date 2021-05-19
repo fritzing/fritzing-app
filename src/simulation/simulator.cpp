@@ -162,24 +162,53 @@ void Simulator::simulate() {
 		return;
 	}
 
+	//Empty the stderr and stdout buffers
+	m_simulator->ResetStdOutErr();
+
 	QList< QList<ConnectorItem *>* > netList;
 	QSet<ItemBase *> itemBases;
 	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
 
 	std::cout << "Netlist: " << spiceNetlist.toStdString() << std::endl;
-	std::cout << "-----------------------------------" <<std::endl;
+
+	//std::cout << "-----------------------------------" <<std::endl;
+	std::cout << "Running Command(remcirc):" <<std::endl;
 	m_simulator->Command("remcirc");
-	std::cout << "-----------------------------------" <<std::endl;
+	//std::cout << "-----------------------------------" <<std::endl;
+	std::cout << "Running m_simulator->Init():" <<std::endl;
 	m_simulator->Init();
+	m_simulator->ResetStdOutErr();
+
 	std::cout << "-----------------------------------" <<std::endl;
-	std::string netlist = "Test simulator\nV1 1 0 5\nR1 1 2 100\nR2 2 0 100\n.OP\n.END";
+	std::cout << "Running LoadNetlist:" <<std::endl;
+
 	m_simulator->LoadNetlist( spiceNetlist.toStdString());
+	if (m_simulator->GetStdOut().toLower().contains("error") || // "error on line"
+			m_simulator->GetStdErr().toLower().contains("warning")) { // "warning, can't find model"
+
+		//Ngspice found an error, do not continue
+		std::cout << "Error loading the netlist. Probably some spice field is wrong, check them." <<std::endl;
+		removeSimItems();
+		QWidget * tempWidget = new QWidget();
+		//TODO: Create copy to clipboard button o make this selectable ans resizeable!
+		QMessageBox::warning(tempWidget, tr("Simulator Error"),
+								 tr("The simulator gave an error when loading the netlist. "
+									"Probably some spice field is wrong, please, check them.\n"
+									"If the parts are from the simulation bin, report the bug in GitHub.\n\nErrors:\n") +
+								 m_simulator->GetStdErr() +
+								 m_simulator->GetStdOut() +
+								 "\n\nNetlist:\n" + spiceNetlist);
+		delete tempWidget;
+		return;
+	}
 	std::cout << "-----------------------------------" <<std::endl;
+	std::cout << "Running Command(listing):" <<std::endl;
 	m_simulator->Command("listing");
 	std::cout << "-----------------------------------" <<std::endl;
+	std::cout << "Running m_simulator->Run():" <<std::endl;
 	m_simulator->Run();
 	std::cout << "-----------------------------------" <<std::endl;
-
+	std::cout << "Generating a hash table to find the net of specific connectors:" <<std::endl;
 	//While the spice simulator runs, we will perform some tasks:
 
 	//Generate a hash table to find the net of specific connectors
@@ -192,7 +221,7 @@ void Simulator::simulate() {
 		}
 	}
 	std::cout << "-----------------------------------" <<std::endl;
-
+	std::cout << "Generating a hash table to find the breadboard parts from parts in the schematic view:" <<std::endl;
 
 	//Generate a hash table to find the breadboard parts from parts in the schematic view
 	std::cout << "Generate a hash table to find the breadboard parts from parts in the schematic view" <<std::endl;
@@ -208,11 +237,13 @@ void Simulator::simulate() {
 		}
 	}
 	std::cout << "-----------------------------------" <<std::endl;
+	std::cout << "Removing the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.):" <<std::endl;
 
 	//Removes the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.)
 	std::cout << "removeSimItems(itemBases);" <<std::endl;
 	removeSimItems();
 	std::cout << "-----------------------------------" <<std::endl;
+	std::cout << "If there are parts that are not being simulated, grey them out:" <<std::endl;
 
 	//If there are parts that are not being simulated, grey them out
 	std::cout << "greyOutNonSimParts(itemBases);" <<std::endl;
@@ -234,17 +265,23 @@ void Simulator::simulate() {
 	}
 	std::cout << "-----------------------------------" <<std::endl;
 
-	if (m_simulator->ErrorFound()) {
+	if (m_simulator->ErrorFound() ||
+			m_simulator->GetStdErr().toLower().contains("there aren't any circuits loaded")) {
 		//Ngspice found an error, do not continue
 		std::cout << "Fatal error found, stopping the simulation." <<std::endl;
 		removeSimItems();
 		QWidget * tempWidget = new QWidget();
-		QMessageBox::information(tempWidget, tr("Simulator Error"),
+		QMessageBox::warning(tempWidget, tr("Simulator Error"),
 								 tr("The simulator gave an error when trying to simulate this circuit. "
-									"Please, check the wiring and try again."));
+									"Please, check the wiring and try again. \n\nErrors:\n") +
+								 m_simulator->GetStdErr() +
+								 m_simulator->GetStdOut() +
+								 "\n\nNetlist:\n" + spiceNetlist);
 		delete tempWidget;
 		return;
 	}
+	std::cout << "No fatal error found, continuing..." <<std::endl;
+
 	//The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
 	//This loops is in charge of:
 	// * update the multimeters screen
@@ -772,9 +809,13 @@ void Simulator::updatePotentiometer(ItemBase * part) {
  * @param[in] part A battery that is going to be checked and updated.
  */
 void Simulator::updateBattery(ItemBase * part) {
-	double maxCurrent = 500; //TODO: Use the capacity of the battery and multiply by 30.
+	double voltage = getMaxPropValue(part, "voltage");
+	double resistance = getMaxPropValue(part, "internal resistance");
+	double safetyMargin = 0.1; //TODO: This should be adjusted
+	double maxCurrent = voltage/resistance * safetyMargin;
 	double current = getCurrent(part); //current that the battery delivers
-	//std::cout << "Battery: MaxCurr=" << maxCurrent << ", Curr=" << current  <<std::endl;
+	std::cout << "Battery: voltage=" << voltage << ", resistance=" << resistance  <<std::endl;
+	std::cout << "Battery: MaxCurr=" << maxCurrent << ", Curr=" << current  <<std::endl;
 	if (abs(current) > maxCurrent) {
 		drawSmoke(part);
 	}

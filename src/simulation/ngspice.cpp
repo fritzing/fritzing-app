@@ -55,7 +55,9 @@ NGSPICE::NGSPICE()
           m_ngSpice_AllPlots( nullptr ),
           m_ngSpice_AllVecs( nullptr ),
           m_ngSpice_Running( nullptr ),
-          m_error( false )
+		  m_error( false ),
+		  m_stderr(""),
+		  m_stdout("")
 {
     init_dll();
 	m_bgThreadIsRunning = true;
@@ -527,9 +529,15 @@ int NGSPICE::cbSendChar( char* what, int id, void* user )
     }
 	std::cout << "Simulator internal message: " << what << endl;
 	QString msg(what);
-	if (msg.contains("Fatal error")) {
-		sim->m_error = true;
+
+	if (msg.contains("stderr")) {
+		sim->m_stderr.append(msg + "\n");
+		if(msg.toLower().contains("fatal error"))
+			sim->m_error = true;
+	} else {
+		sim->m_stdout.append(msg + "\n");
 	}
+
     return 0;
 }
 
@@ -584,6 +592,19 @@ const std::string NGSPICE::GetNetlist() const
 
 bool NGSPICE::ErrorFound() {
 	return m_error;
+}
+
+QString NGSPICE::GetStdErr() {
+	return m_stderr;
+}
+
+QString NGSPICE::GetStdOut() {
+	return m_stdout;
+}
+
+void NGSPICE::ResetStdOutErr(){
+	m_stderr = "";
+	m_stdout = "";
 }
 
 bool NGSPICE::m_initialized = false;

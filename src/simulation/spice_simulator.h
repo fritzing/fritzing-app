@@ -168,7 +168,28 @@ public:
      */
 	static QString TypeToName( SIM_TYPE aType, bool aShortName );
 
+	/**
+	 * @brief Returns a flag if errors are found during the simulation.
+	 * @return The error flag.
+	 */
 	virtual bool ErrorFound() = 0;
+
+	/**
+	 * @brief Returns the standard error reported by the spice simulator.
+	 * @return The standard error reported.
+	 */
+	virtual QString GetStdErr() = 0;
+
+	/**
+	 * @brief Returns the standard output reported by the spice simulator.
+	 * @return The standard output reported.
+	 */
+	virtual QString GetStdOut() = 0;
+
+	/**
+	 * @brief Discards previous messages received in the stdout and stderr.
+	 */
+	virtual void ResetStdOutErr() = 0;
 
 protected:
     ///> Reporter object to receive simulation log

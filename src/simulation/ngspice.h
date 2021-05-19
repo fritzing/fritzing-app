@@ -86,6 +86,15 @@ public:
 	//Error found during simulation?
 	bool ErrorFound() override;
 
+	//Error messages during simulation
+	QString GetStdErr() override;
+
+	//Standard output messages during simulation
+	QString GetStdOut() override;
+
+	//Reset standard output and error buffers
+	void ResetStdOutErr() override;
+
 private:
     void init();
 
@@ -136,6 +145,9 @@ private:
 
     ///> Error flag indicating that ngspice needs to be reloaded
     bool m_error;
+
+	///> Standard output and error streams for debugging
+	QString m_stderr, m_stdout;
 
     ///> NGspice should be initialized only once
     static bool m_initialized;

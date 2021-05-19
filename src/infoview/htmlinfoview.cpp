@@ -538,6 +538,7 @@ void HtmlInfoView::setContent()
 		m_tagLabel->setVisible(true);
 		m_connLabel->setVisible(m_pendingSwappingEnabled);
 	}
+	m_spiceLabel->setVisible(true);
 	m_propLabel->setVisible(true);
 	m_propFrame->setVisible(true);
 
@@ -594,6 +595,7 @@ void HtmlInfoView::setNullContent()
 	m_propLabel->setVisible(false);
 	m_placementFrame->setVisible(false);
 	m_placementLabel->setVisible(false);
+	m_spiceLabel->setVisible(false);
 	m_tagLabel->setVisible(false);
 	m_connLabel->setVisible(false);
 }
@@ -705,15 +707,20 @@ void HtmlInfoView::addSpice(ModelPart * modelPart) {
 
 	m_lastSpiceModelPart = modelPart;
 
-	if (modelPart == NULL || modelPart->spice().isEmpty()) {
+	if (modelPart == NULL) {
+		m_spiceTextLabel->setText("");
+		return;
+	}
+
+	if(modelPart->spice().isEmpty()) {
 		m_spiceTextLabel->setText(tr("No spice info. This part will not be simulated."));
 		return;
-	} else {
-		QString spiceText = modelPart->spice().trimmed();
-		if(!modelPart->spiceModel().isEmpty())
-			spiceText.append("\nSpice model:\n" + modelPart->spiceModel().trimmed());
-		m_spiceTextLabel->setText(spiceText);
 	}
+
+	QString spiceText = modelPart->spice().trimmed();
+	if(!modelPart->spiceModel().isEmpty())
+		spiceText.append("\nSpice model:\n" + modelPart->spiceModel().trimmed());
+	m_spiceTextLabel->setText(spiceText);
 }
 
 void HtmlInfoView::addTags(ModelPart * modelPart) {

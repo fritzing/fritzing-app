@@ -5,6 +5,7 @@
 	<bin title="Temporary Parts" location="user" />
 	<bin title="___*___" location="user" />
 	<bin title="___*___" location="outside" />
+	<bin title="Sim Parts" location="more" />
 	<bin title="Arduino" location="more" />
 	<bin title="SparkFun" location="more" />
 	<bin title="Seeed Studio" location="more" />

@@ -189,27 +189,27 @@
     </message>
     <message>
         <source>Yuelin and Ninjia</source>
-        <translation type="unfinished"></translation>
+        <translation>Yuelin et Ninjia</translation>
     </message>
     <message>
         <source>Chinese (Traditional): </source>
-        <translation type="unfinished"></translation>
+        <translation>Chinois (Traditionnel) - %1 </translation>
     </message>
     <message>
         <source>Robert Lee</source>
-        <translation type="unfinished"></translation>
+        <translation>Robert Lee</translation>
     </message>
     <message>
         <source>Hiroshi Suzuki</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiroshi Suzuki</translation>
     </message>
     <message>
         <source>Jinbuhm Kim</source>
-        <translation type="unfinished"></translation>
+        <translation>Jinbuhm Kim</translation>
     </message>
     <message>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, </source>
@@ -1037,15 +1037,15 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>Regenerate</source>
-        <translation type="unfinished"></translation>
+        <translation>Régénérer</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <source>Regenerating parts database...</source>
-        <translation type="unfinished"></translation>
+        <translation>Régénérer la base de données de composants ...</translation>
     </message>
 </context>
 <context>
@@ -1064,7 +1064,7 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>La  &lt;b&gt;vue PCB&lt;/b&gt; est l&apos;endroit où vous disposez les composants sur un PCB physique (circuit imprimé)&lt;br/&gt;&lt;br/&gt;Les PCB peuvent être fabriqués à la maison ou dans un petit laboratoire en utilisant des procédés de gravure bricolés. Ils peuvent également être envoyés à des services professionnels de fabrication de PCB pour une fabrication plus précise. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;La première chose dont vous aurez besoin est une carte sur laquelle placer vos pièces. Il devrait déjà y en avoir une dans votre esquisse, mais si ce n&apos;est pas le cas, faites glisser l&apos;icône de la carte depuis le panier de pièces. L&apos;icône correspond à l&apos;image de droite : &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Pour disposer votre PCB, arrangez tous les composants de façon à ce qu&apos;ils s&apos;adaptent parfaitement à la carte. Essayez ensuite de les déplacer pour minimiser la longueur et la confusion des connexions. Vous pouvez également redimensionner les cartes rectangulaires. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Une fois les composants triés, vous les connectez avec des traces de cuivre. Vous pouvez faire glisser une trace à partir des connexions individuelles ou utiliser l&apos;autorouteur pour les générer. Le bouton Autoroute se trouve en bas de la fenêtre. Le bouton correspond à l&apos;image de droite : &lt;/td&gt; &lt;td&gt; &lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt; &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</translation>
     </message>
 </context>
 <context>

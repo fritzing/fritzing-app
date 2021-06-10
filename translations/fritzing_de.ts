@@ -6426,7 +6426,7 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
         <location filename="../src/dialogs/prefsdialog.cpp" line="267"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="287"/>
         <source>%1 (click to change...)</source>
-        <translation>%1</translation>
+        <translation>%1 (zum Ändern anklicken...)</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="303"/>
@@ -7626,12 +7626,12 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="150"/>
         <source>silkscreen layer(s), </source>
-        <translation type="unfinished">Siebdruckschicht(en), </translation>
+        <translation>Siebdruckschicht(en), </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="151"/>
         <source>copper layer(s), </source>
-        <translation type="unfinished">Kupferschicht(en), </translation>
+        <translation>Kupferschicht(en), </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="152"/>
@@ -7641,7 +7641,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="153"/>
         <source>paste mask layer(s), </source>
-        <translation type="unfinished">Maskenebene(n) einfügen, </translation>
+        <translation>Lotpastenmuster, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="155"/>
@@ -7982,22 +7982,22 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="206"/>
         <source>&lt;b&gt;Shipping is free wordlwide&lt;/b&gt;.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Der Versand ist weltweit kostenlos&lt;/b&gt;.&lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="207"/>
         <source>Documents for local customs control are included.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Zolldokumente für sind enthalten.&lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="208"/>
         <source>Some countries might charge additional import taxes or checking fees.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>In einigen Ländern können zusätzliche Einfuhrsteuern oder Prüfgebühren anfallen.&lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="209"/>
         <source>For more information on pricing see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Für weitere Informationen zur Preisgestaltung siehe &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/dialogs/quotedialog.cpp" line="267"/>
@@ -9477,7 +9477,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="462"/>
         <source>Software development and maintenance is a lot of work. Without your support, it is not possible to keep that up.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Entwicklung und Wartung von Software ist eine Menge Arbeit. Ohne Eure Unterstützung ist es nicht möglich, das durchzuhalten.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="464"/>

@@ -144,7 +144,7 @@ SymbolPaletteItem::~SymbolPaletteItem() {
 void SymbolPaletteItem::removeMeFromBus(double v) {
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		if (m_isNetLabel) {
-			LocalNetLabels.remove(getLabel(), connectorItem);
+			LocalNetLabels.remove(m_label, connectorItem);
 		}
 		else {
 			double nv = useVoltage(connectorItem);
@@ -243,10 +243,11 @@ void SymbolPaletteItem::setProp(const QString & prop, const QString & value) {
 }
 
 void SymbolPaletteItem::setLabel(const QString & label) {
-	removeMeFromBus(0);
+	removeMeFromBus(0); //Remove this specific item (bb, sch or pcb) from the previous net label
+	m_label = label; // Update the label for this specific item (bb, sch or pcb)
+	m_modelPart->setLocalProp("label", label); //This line modifies the property label in the bb, sch and pcb items
 
-	m_modelPart->setLocalProp("label", label);
-
+	//Add the conectors of the item to the new net label
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		LocalNetLabels.insert(label, connectorItem);
 	}
@@ -521,6 +522,7 @@ NetLabel::NetLabel( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 		}
 		modelPart->setLocalProp("label", label);
 	}
+	m_label = label;
 	setInstanceTitle(label, true);
 
 	// direction is now obsolete, new netlabels use flip

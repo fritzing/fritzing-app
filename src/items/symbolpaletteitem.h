@@ -96,6 +96,7 @@ protected:
 	QPointer<ConnectorItem> m_connector1;
 	bool m_voltageReference;
 	bool m_isNetLabel;
+	QString m_label;
 };
 
 

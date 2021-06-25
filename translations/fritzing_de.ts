@@ -7446,7 +7446,7 @@ Versuche, Fritzing neu zu starten. Falls das Problem bestehen bleibt, wende Dich
         <translation>Alles auswählen %1</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="50"/>
+        <location filename="../src/version/updatedialog.cpp" line="52"/>
         <source>Check for updates</source>
         <translation>Nach Aktualisierungen suchen</translation>
     </message>
@@ -9484,17 +9484,16 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
 <context>
     <name>UpdateDialog</name>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="52"/>
+        <location filename="../src/version/updatedialog.cpp" line="54"/>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Es ist eine Bauteil-Aktualisierung verfügbar!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Soll Fritzing dieses jetzt herunterladen und installieren?&lt;br/&gt;Siehe die &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;Liste der Änderungen hier.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Hinweis: Die Aktualisierung kann ein paar Minuten dauern und Fritzing muss danach neu gestartet werden.&lt;br/&gt;Du kannst die Aktualisierung auch später manuell starten per &lt;i&gt;Hilfe &amp;rarr; Nach Aktualisierungen suchen&lt;/i&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="75"/>
         <source>Close</source>
-        <translation>Schließen</translation>
+        <translation type="vanished">Schließen</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="76"/>
+        <location filename="../src/version/updatedialog.cpp" line="251"/>
         <source>Update parts</source>
         <translation>Bauteile aktualisieren</translation>
     </message>
@@ -9504,82 +9503,87 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         <translation>&lt;p&gt;Keine neue Verion gefunden.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="128"/>
+        <location filename="../src/version/updatedialog.cpp" line="129"/>
         <source>A new main release is available for downloading:</source>
         <translation>Eine neue Version ist zum Herunterladen verfügbar:</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="132"/>
+        <location filename="../src/version/updatedialog.cpp" line="134"/>
         <source>A new interim release is available for downloading:</source>
         <translation>Eine neue Zwischenversion ist zum Herunterladen verfügbar:</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="156"/>
+        <location filename="../src/version/updatedialog.cpp" line="161"/>
         <source>&lt;p&gt;Checking for new releases...&lt;/p&gt;</source>
         <translation>&lt;p&gt;Es wird nach neuen Versionen gesucht...&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="194"/>
+        <location filename="../src/version/updatedialog.cpp" line="185"/>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/version/updatedialog.cpp" line="213"/>
         <source>&lt;p&gt;Fritzing is unable to check for--and update--new parts.&lt;br/&gt;If you want this functionality, please enable write permission on this folder:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Fritzing konnte nicht aktualisiert werden.&lt;br/&gt;Hierfür benötigt Fritzing Schreibzugriff auf diesen Ordner:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="207"/>
+        <location filename="../src/version/updatedialog.cpp" line="226"/>
         <source>&lt;p&gt;Checking for new parts...&lt;/p&gt;</source>
         <translation>&lt;p&gt;Suche nach aktualisierten Bauteilen...&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="216"/>
+        <location filename="../src/version/updatedialog.cpp" line="235"/>
         <source>&lt;p&gt;No new releases or new parts found&lt;/p&gt;</source>
         <translation>&lt;p&gt;Keine neuen Versionen oder neuen Bauteile gefunden.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="244"/>
+        <location filename="../src/version/updatedialog.cpp" line="264"/>
         <source>New files:</source>
         <translation>Neue Dateien:</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="245"/>
+        <location filename="../src/version/updatedialog.cpp" line="265"/>
         <source>Modified Files:</source>
         <translation>Veränderte Dateien:</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="275"/>
+        <location filename="../src/version/updatedialog.cpp" line="295"/>
         <source>Fritzing was unable to clean the files, so the update cannot proceed.&lt;br/&gt;You may have to reinstall Fritzing.</source>
         <translation>Die Aktualisierung kann nicht fortgesetzt werden, da Fritzing nicht alle Änderungen zurücksetzen konnte.&lt;br/&gt;Vielleicht musst Du Fritzing neu installieren.</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="391"/>
+        <location filename="../src/version/updatedialog.cpp" line="421"/>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Bauteil-Aktualisierungen werden installiert. Dies kann ein paar Minuten daueren.&lt;br/&gt;Bitte diesen Prozess nicht unterbrechen, da Dein Bauteil-Ordner beschädigt werden könnte.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="302"/>
+        <location filename="../src/version/updatedialog.cpp" line="322"/>
         <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
         <translation>&lt;p&gt;Es konnten keine Aktualisierungsinformationen abgerufen werden&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="318"/>
+        <location filename="../src/version/updatedialog.cpp" line="339"/>
         <source>&lt;p&gt;Sorry, unable to retrieve parts update info&lt;/p&gt;</source>
         <translation>&lt;p&gt;Es konnten keine Bauteil-Aktualisierungsinformationen abgerufen werden&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="378"/>
+        <location filename="../src/version/updatedialog.cpp" line="408"/>
         <source>&lt;p&gt;Downloading new parts...&lt;/p&gt;</source>
         <translation>&lt;p&gt;Lade aktualisierte Bauteile...&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="387"/>
+        <location filename="../src/version/updatedialog.cpp" line="417"/>
         <source>&lt;p&gt;Sorry, unable to download new parts&lt;/p&gt;</source>
         <translation>&lt;p&gt;Es konnten keine Bauteil-Aktualisierungen heruntergeladen werden&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="407"/>
+        <location filename="../src/version/updatedialog.cpp" line="437"/>
         <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Bauteile erfolgreich aktualisiert!&lt;/p&gt;&lt;p&gt;Fritzing muss nun neu gestartet werden. Durch einen Klick auf &lt;em&gt;Schließen&lt;/em&gt; wird Fritzing beendet.&lt;br/&gt;Die neuen Bauteile sind beim nächsten Start verfügbar.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="412"/>
+        <location filename="../src/version/updatedialog.cpp" line="442"/>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Die Bauteile konnten nicht aktualisiert werden: %1&lt;br/&gt;Fritzing muss trotzdem neu gestartet werden. Ein Klick auf &lt;em&gt;Schließen&lt;/em&gt; beendet Fritzing.&lt;/p&gt;</translation>
     </message>

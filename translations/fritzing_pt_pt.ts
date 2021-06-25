@@ -7507,7 +7507,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <name>UpdateDialog</name>
     <message>
         <source>Close</source>
-        <translation>Fechar</translation>
+        <translation type="vanished">Fechar</translation>
     </message>
     <message>
         <source>A new main release is available for downloading:</source>
@@ -7584,6 +7584,10 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Desculpe, não foi possível instalar novos componentes: %1&lt;br/&gt;O Fritzing pode nunca ter sido reiniciado, então o botão &apos;Fechar&apos; irá fechar o Fritzing.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

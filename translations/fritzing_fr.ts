@@ -7500,7 +7500,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     <name>UpdateDialog</name>
     <message>
         <source>Close</source>
-        <translation>Fermer</translation>
+        <translation type="vanished">Fermer</translation>
     </message>
     <message>
         <source>A new main release is available for downloading:</source>
@@ -7577,6 +7577,10 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     <message>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Installation de nouveaux composants Cela peut prendre quelques minutes.&lt;br/&gt;N&apos;interrompez pas le processus, car votre dossier de composants pourrait être endommagé.&lt;/P&gt;</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

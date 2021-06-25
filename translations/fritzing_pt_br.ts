@@ -7481,7 +7481,7 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <name>UpdateDialog</name>
     <message>
         <source>Close</source>
-        <translation>Fechar</translation>
+        <translation type="vanished">Fechar</translation>
     </message>
     <message>
         <source>A new main release is available for downloading:</source>
@@ -7557,6 +7557,10 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     </message>
     <message>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

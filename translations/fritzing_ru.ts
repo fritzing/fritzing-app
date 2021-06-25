@@ -7447,7 +7447,7 @@ Fritzing по-прежнему работает, но вы не сможете �
         <translation>Выбрать все %1</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="50"/>
+        <location filename="../src/version/updatedialog.cpp" line="52"/>
         <source>Check for updates</source>
         <translation>Проверить обновления</translation>
     </message>
@@ -9493,17 +9493,16 @@ Note: you can also trigger this display by mousing down on the routing status te
 <context>
     <name>UpdateDialog</name>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="52"/>
+        <location filename="../src/version/updatedialog.cpp" line="54"/>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Доступно обновление библиотеки компонентов!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Следует ли программе Fritzing выполнить загрузку и установку обновления прямо сейчас?&lt;br/&gt;См. &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;список изменений здесь.&lt;/a&gt;&lt;/p&gt;&lt;p&gt; Примечание: обновление может занять несколько минут, и вам придётся перезапустить Fritzing.&lt;br/&gt;Вы также можете выполнить обновление позже с помощью пункта меню &lt;i&gt;Справка &amp;rarr; Проверить обновления&lt;/i&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="75"/>
         <source>Close</source>
-        <translation>Закрыть</translation>
+        <translation type="vanished">Закрыть</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="76"/>
+        <location filename="../src/version/updatedialog.cpp" line="251"/>
         <source>Update parts</source>
         <translation>Обновить компоненты</translation>
     </message>
@@ -9513,82 +9512,87 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>&lt;p&gt;Новая версия не найдена.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="128"/>
+        <location filename="../src/version/updatedialog.cpp" line="129"/>
         <source>A new main release is available for downloading:</source>
         <translation>Новая основная версия доступна для загрузки:</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="132"/>
+        <location filename="../src/version/updatedialog.cpp" line="134"/>
         <source>A new interim release is available for downloading:</source>
         <translation>Новая промежуточная версия доступна для загрузки:</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="156"/>
+        <location filename="../src/version/updatedialog.cpp" line="161"/>
         <source>&lt;p&gt;Checking for new releases...&lt;/p&gt;</source>
         <translation>&lt;p&gt;Проверка новых версий...&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="194"/>
+        <location filename="../src/version/updatedialog.cpp" line="185"/>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/version/updatedialog.cpp" line="213"/>
         <source>&lt;p&gt;Fritzing is unable to check for--and update--new parts.&lt;br/&gt;If you want this functionality, please enable write permission on this folder:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Fritzing не удалось проверить наличие новых компонентов и установить соответствующие обновления.&lt;br/&gt;Если вы хотите использовать эту функцию, включите разрешение на запись в эту папку:&lt;br/&gt; «%1».&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="207"/>
+        <location filename="../src/version/updatedialog.cpp" line="226"/>
         <source>&lt;p&gt;Checking for new parts...&lt;/p&gt;</source>
         <translation>&lt;p&gt;Проверка наличия новых компонентов...&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="216"/>
+        <location filename="../src/version/updatedialog.cpp" line="235"/>
         <source>&lt;p&gt;No new releases or new parts found&lt;/p&gt;</source>
         <translation>&lt;p&gt;Новые версии или новые компоненты не найдены&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="244"/>
+        <location filename="../src/version/updatedialog.cpp" line="264"/>
         <source>New files:</source>
         <translation>Новые файлы:</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="245"/>
+        <location filename="../src/version/updatedialog.cpp" line="265"/>
         <source>Modified Files:</source>
         <translation>Изменённые файлы:</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="275"/>
+        <location filename="../src/version/updatedialog.cpp" line="295"/>
         <source>Fritzing was unable to clean the files, so the update cannot proceed.&lt;br/&gt;You may have to reinstall Fritzing.</source>
         <translation>Fritzing не удалось очистить файлы, поэтому обновление не может быть продолжено.&lt;br/&gt;Возможно, придётся переустановить Fritzing.</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="391"/>
+        <location filename="../src/version/updatedialog.cpp" line="421"/>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Установка новых компонентов. Это может занять несколько минут.&lt;br/&gt;Пожалуйста, не прерывайте процесс, поскольку папка с компонентами может быть повреждена.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="302"/>
+        <location filename="../src/version/updatedialog.cpp" line="322"/>
         <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
         <translation>&lt;p&gt;К сожалению, не удалось загрузить информацию об обновлениях&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="318"/>
+        <location filename="../src/version/updatedialog.cpp" line="339"/>
         <source>&lt;p&gt;Sorry, unable to retrieve parts update info&lt;/p&gt;</source>
         <translation>&lt;p&gt;К сожалению, не удалось загрузить информацию об обновлениях компонентов&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="378"/>
+        <location filename="../src/version/updatedialog.cpp" line="408"/>
         <source>&lt;p&gt;Downloading new parts...&lt;/p&gt;</source>
         <translation>&lt;p&gt;Загрузка новых компонентов...&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="387"/>
+        <location filename="../src/version/updatedialog.cpp" line="417"/>
         <source>&lt;p&gt;Sorry, unable to download new parts&lt;/p&gt;</source>
         <translation>&lt;p&gt;К сожалению, не удалось загрузить новые компоненты&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="407"/>
+        <location filename="../src/version/updatedialog.cpp" line="437"/>
         <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Новые компоненты успешно установлены!&lt;/p&gt; &lt;p&gt;Требуется перезапуск Fritzing, поэтому нажатие кнопки «Закрыть» приведёт к закрытию программы.&lt;br/&gt;Новые компоненты будут доступны, когда вы запустите Fritzing снова.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/version/updatedialog.cpp" line="412"/>
+        <location filename="../src/version/updatedialog.cpp" line="442"/>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
         <translation>&lt;p&gt;К сожалению, не удалось установить новые компоненты: %1&lt;br/&gt;Тем не менее необходимо перезапустить Fritzing, поэтому нажатие кнопки «Закрыть» приведёт к закрытию программы.&lt;/p&gt;</translation>
     </message>

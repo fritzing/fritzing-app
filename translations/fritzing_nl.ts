@@ -7481,7 +7481,7 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     <name>UpdateDialog</name>
     <message>
         <source>Close</source>
-        <translation>Sluiten</translation>
+        <translation type="vanished">Sluiten</translation>
     </message>
     <message>
         <source>A new main release is available for downloading:</source>
@@ -7557,6 +7557,10 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     </message>
     <message>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

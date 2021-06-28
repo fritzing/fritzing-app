@@ -221,15 +221,15 @@
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
-        <translation type="unfinished"></translation>
+        <translation>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, e Kjell Morgenstern</translation>
     </message>
     <message>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Agradecimentos especiais vão para: </translation>
     </message>
     <message>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um agradecimento especial a todos os alunos e aos alunos que tiveram a coragem de dar um giro de teste ao Fritzing.</translation>
     </message>
 </context>
 <context>
@@ -1057,46 +1057,46 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>Get your board fabricated this week!</source>
-        <translation type="unfinished"></translation>
+        <translation>Vai fabricar a tua prancha esta semana!</translation>
     </message>
     <message>
         <source>Upload it now to get a preview rendered by AISLER. Review, and if you like it, order it and get it manufactured in two days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Faça o upload agora para obter uma pré-visualização feita pela AISLER. Revise, e se você gostar, encomende e obtenha-o fabricado em dois dias.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Upload to Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Carregar para Fab</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation type="unfinished">Upload</translation>
+        <translation>Carregar</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <source>Uploading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Carregando...</translation>
     </message>
 </context>
 <context>
     <name>FabUploadProgress</name>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>Could not connect to Fritzing fab.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não consegui ligar-me ao Fritzing fab.</translation>
     </message>
     <message>
         <source>Error processing the project. The factory says: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro no processamento do projeto. A fábrica diz: %1</translation>
     </message>
 </context>
 <context>
@@ -3653,35 +3653,35 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     </message>
     <message>
         <source>Local part &apos;%1&apos; incomplete, only &apos;%2&apos; layers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Parte local &apos;%1&apos; incompleto, apenas camadas &apos;%2&apos;.</translation>
     </message>
     <message>
         <source>View &apos;%1&apos; should be prefixed with &apos;%2/&apos;. Trying to continue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver &apos;%1&apos; deve ser prefixado com &apos;%2/&apos;. Tentando continuar.</translation>
     </message>
     <message>
         <source>Could not copy subfile &apos;%1&apos; to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível copiar o subfile &apos;%1&apos; para &apos;%2&apos;</translation>
     </message>
     <message>
         <source>Local part &apos;%1&apos; incomplete, subfile not found &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Parte local &apos;%1&apos; incompleto, subfile não encontrado &apos;%2</translation>
     </message>
     <message>
         <source>Unable to open local part &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Incapaz de abrir a parte local &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Visit fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Visite fritzing.org</translation>
     </message>
     <message>
         <source>fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>fritzing.org</translation>
     </message>
     <message>
         <source>Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Roteiro</translation>
     </message>
     <message>
         <source>Fritzing Fab Upload</source>
@@ -3689,7 +3689,7 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     </message>
     <message>
         <source>Please first save your project in order to upload it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, primeiro salve seu projeto para poder carregá-lo.</translation>
     </message>
 </context>
 <context>
@@ -5257,7 +5257,7 @@ tecla shift troca o eixo de scroll</translation>
     </message>
     <message>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
 </context>
 <context>
@@ -6352,11 +6352,11 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     </message>
     <message>
         <source>The parts folder &apos;%1&apos; has been changed--it is not in a supported branch (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>A pasta de componentes &apos;%1&apos; foi alterada - não está em um ramo suportado (%2). %3</translation>
     </message>
     <message>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível recuperar a referência da rede para &apos;%1&apos;#%2. %3</translation>
     </message>
 </context>
 <context>
@@ -7334,7 +7334,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para exibir diferentes propriedades em uma etiqueta de componente, girá-la ou alterar a fonte, clique com o botão direito do mouse sobre a etiqueta.</translation>
     </message>
 </context>
 <context>
@@ -7587,7 +7587,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ok</translation>
     </message>
 </context>
 <context>

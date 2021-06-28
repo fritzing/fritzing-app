@@ -20,27 +20,27 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="115"/>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
-        <translation type="unfinished"></translation>
+        <translation>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="116"/>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zach Eveland, Dirk van Oosterbosch, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="117"/>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="118"/>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
-        <translation type="unfinished"></translation>
+        <translation>Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="119"/>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mariano Crowe, Johannes Landstorfer, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -55,22 +55,22 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="128"/>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
-        <translation type="unfinished"></translation>
+        <translation>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="129"/>
         <source>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </source>
-        <translation type="unfinished"></translation>
+        <translation>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="130"/>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jan Sieber, Yaniv Steiner, Olaf Val, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="131"/>
         <source>Michaela Vieser and Julia Werner.</source>
-        <translation type="unfinished"></translation>
+        <translation>Michaela Vieser e Julia Werner.</translation>
     </message>
     <message>
         <source>to Gianluca Urgese for the Italian translation, </source>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing è reso possibile grazie al finanziamento del </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="158"/>
@@ -108,147 +108,147 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="101"/>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="63"/>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Versione %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Thanks for the translations go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>I ringraziamenti per le traduzioni vanno a: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="136"/>
         <source>Bulgarian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Bulgaro: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="137"/>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
+        <translation>Cinese (semplificato): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="137"/>
         <source>Yuelin and Ninjia</source>
-        <translation type="unfinished"></translation>
+        <translation>Yuelin e Ninjia</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="138"/>
         <source>Chinese (Traditional): </source>
-        <translation type="unfinished"></translation>
+        <translation>Cinese (tradizionale): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="138"/>
         <source>Robert Lee</source>
-        <translation type="unfinished"></translation>
+        <translation>Robert Lee</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="139"/>
         <source>Czech: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ceco: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="140"/>
         <source>Dutch: </source>
-        <translation type="unfinished"></translation>
+        <translation>Olandese: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="141"/>
         <source>French: </source>
-        <translation type="unfinished"></translation>
+        <translation>Francese: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>Greek: </source>
-        <translation type="unfinished"></translation>
+        <translation>Greco: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
         <source>Italian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Italiano: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Japanese: </source>
-        <translation type="unfinished"></translation>
+        <translation>Giapponese: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Hiroshi Suzuki</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiroshi Suzuki</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Korean: </source>
-        <translation type="unfinished"></translation>
+        <translation>Coreano: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Jinbuhm Kim</source>
-        <translation type="unfinished"></translation>
+        <translation>Jinbuhm Kim</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="146"/>
         <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <translation>Portoghese (europeo): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="147"/>
         <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
+        <translation>Portoghese (brasiliano): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>Slovak: </source>
-        <translation type="unfinished"></translation>
+        <translation>Slovacco: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>Spanish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Spagnolo: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="152"/>
         <source>Ukrainian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ucraino: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="152"/>
         <source>Yelyzaveta Chyhryna</source>
-        <translation type="unfinished"></translation>
+        <translation>Yelyzaveta Chyhryna</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="165"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un ringraziamento speciale va a tutti gli studenti e agli alpha tester che sono stati abbastanza coraggiosi da provare Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="148"/>
         <source>Russian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Russo: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="121"/>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
-        <translation type="unfinished"></translation>
+        <translation>Bryant Mairs, Uleshka Asher, Daniel Tzschentke e Kjell Morgenstern</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="125"/>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Un ringraziamento speciale va a: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="151"/>
         <source>Turkish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Turco: </translation>
     </message>
 </context>
 <context>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="136"/>
         <source>Best So Far</source>
-        <translation type="unfinished"></translation>
+        <translation>Il migliore finora</translation>
     </message>
 </context>
 <context>
@@ -279,7 +279,7 @@
     <message>
         <location filename="../src/autoroute/autorouter.cpp" line="334"/>
         <source>Routing canceled! Now cleaning up...</source>
-        <translation type="unfinished"></translation>
+        <translation>Routing annullato! Ora puliamo...</translation>
     </message>
 </context>
 <context>
@@ -355,27 +355,27 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation type="unfinished"></translation>
+        <translation>BinManager::setDirtyTab: Impossibile impostare il contenitore &apos;%1&apos; come sporco</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="398"/>
         <source>Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile impostare un contenitore NULL come quello corrente</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation type="unfinished"></translation>
+        <translation>BinManager::updateTitle: Impossibile impostare il contenitore &apos;%1&apos; come sporco</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="396"/>
         <source>Select a Fritzing Parts Bin file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Selezionare un file Fritzing Parts Bin da aprire</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="982"/>
@@ -390,7 +390,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="989"/>
         <source>Create a new parts bin</source>
-        <translation type="unfinished"></translation>
+        <translation>Creare un nuovo contenitore di parti</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="992"/>
@@ -400,7 +400,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="993"/>
         <source>Close parts bin</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiudere il contenitore delle parti</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="996"/>
@@ -410,7 +410,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="997"/>
         <source>Delete parts bin</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancellare il cestino delle parti</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1000"/>
@@ -420,7 +420,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1001"/>
         <source>Save parts bin</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva il contenitore delle parti</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1004"/>
@@ -430,7 +430,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1005"/>
         <source>Save parts bin as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva il cestino delle parti come...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1008"/>
@@ -440,7 +440,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1009"/>
         <source>Save parts bin in compressed format...</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva il cestino delle parti in formato compresso...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1012"/>
@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1013"/>
         <source>Rename parts bin...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rinomina il cestino delle parti...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1024"/>
@@ -460,7 +460,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1026"/>
         <source>Display parts as a list</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualizzare le parti come una lista</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1029"/>
@@ -470,7 +470,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1031"/>
         <source>Display parts as icons</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualizzare le parti come icone</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1053"/>
@@ -485,7 +485,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1098"/>
         <source>Delete bin</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancellare il bidone</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1099"/>
@@ -495,12 +495,12 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1151"/>
         <source>Read-only bin</source>
-        <translation type="unfinished"></translation>
+        <translation>Cestino di sola lettura</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1151"/>
         <source>This bin cannot be renamed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questo cestino non può essere rinominato.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1158"/>
@@ -530,7 +530,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="985"/>
         <source>Load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Caricare una parte Fritzing (.fzpz), o un contenitore di parti Fritzing (.fzb, .fzbz)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
@@ -555,17 +555,17 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <source>Remove from Bin</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi dal cesto</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Impossibile rimuovere la parte &apos;%1&apos;--è in uso in uno sketch</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoi davvero rimuovere &apos;%1&apos; dal cestino? Questa operazione non può essere annullata.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1016"/>

@@ -127,7 +127,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="165"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un agradecimiento especial a todos los estudiantes y probadores alfa que fueron lo suficientemente valientes como para dar una vuelta de prueba a Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
@@ -167,12 +167,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="121"/>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
-        <translation type="unfinished"></translation>
+        <translation>Bryant Mairs, Uleshka Asher, Daniel Tzschentke y Kjell Morgenstern</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="125"/>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Un agradecimiento especial a: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="139"/>
@@ -1291,43 +1291,43 @@ Use the file?</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="19"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="70"/>
         <source>Get your board fabricated this week!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Obtenga su tabla fabricada esta semana!</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="106"/>
         <source>Upload it now to get a preview rendered by AISLER. Review, and if you like it, order it and get it manufactured in two days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Súbelo ahora para obtener una vista previa renderizada por AISLER. Revísalo y, si te gusta, pídelo y lo tendrás fabricado en dos días.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="163"/>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="327"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="192"/>
         <source>Upload to Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Subir a Fab</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="251"/>
         <source>Upload</source>
-        <translation type="unfinished">Carga</translation>
+        <translation>Carga</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="265"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="356"/>
         <source>Uploading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Subiendo...</translation>
     </message>
 </context>
 <context>
@@ -1337,17 +1337,17 @@ Use the file?</source>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="144"/>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="152"/>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="135"/>
         <source>Could not connect to Fritzing fab.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido conectar con Fritzing fab.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="152"/>
         <source>Error processing the project. The factory says: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al procesar el proyecto. La fábrica dice: %1</translation>
     </message>
 </context>
 <context>
@@ -1654,7 +1654,7 @@ Es también posible elegir un conector como &lt;i&gt;semilla de tierra&lt;/i&gt;
     <message>
         <location filename="../src/items/itembase.cpp" line="214"/>
         <source>type</source>
-        <translation type="unfinished">tipo</translation>
+        <translation>tipo</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="215"/>
@@ -1827,7 +1827,7 @@ Es también posible elegir un conector como &lt;i&gt;semilla de tierra&lt;/i&gt;
         <location filename="../src/items/itembase.cpp" line="249"/>
         <source>banded</source>
         <translatorcomment>?? unido / junto / adjunto</translatorcomment>
-        <translation type="unfinished">unido</translation>
+        <translation>anillada</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="250"/>
@@ -1877,7 +1877,7 @@ Es también posible elegir un conector como &lt;i&gt;semilla de tierra&lt;/i&gt;
     <message>
         <location filename="../src/items/itembase.cpp" line="1409"/>
         <source>unable to create renderer for svg %1</source>
-        <translation type="unfinished">No se puede crear &quot;renderer&quot; para SVG %1</translation>
+        <translation>no se puede crear un renderizador para el svg %1</translation>
     </message>
 </context>
 <context>
@@ -2185,27 +2185,27 @@ Es también posible elegir un conector como &lt;i&gt;semilla de tierra&lt;/i&gt;
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1708"/>
         <source>Local part &apos;%1&apos; incomplete, only &apos;%2&apos; layers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Parte local &apos;%1&apos; incompleta, sólo capas &apos;%2&apos;.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1724"/>
         <source>View &apos;%1&apos; should be prefixed with &apos;%2/&apos;. Trying to continue.</source>
-        <translation type="unfinished"></translation>
+        <translation>La vista &apos;%1&apos; debería ir precedida de &apos;%2/&apos;. Intentando continuar.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1744"/>
         <source>Could not copy subfile &apos;%1&apos; to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido copiar el subfichero &apos;%1&apos; en &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1752"/>
         <source>Local part &apos;%1&apos; incomplete, subfile not found &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Parte local &apos;%1&apos; incompleta, subfichero no encontrado &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1766"/>
         <source>Unable to open local part &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede abrir la parte local &apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1810"/>
@@ -3830,19 +3830,19 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1245"/>
         <source>Visit fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Visite fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1246"/>
         <source>fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2695"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2703"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2711"/>
         <source>Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Enrutado</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2718"/>
@@ -4070,7 +4070,7 @@ Do you want to update now?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4337"/>
         <source>Please first save your project in order to upload it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, guarde primero su proyecto para poder subirlo.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4346"/>
@@ -6424,7 +6424,9 @@ Go ahead and save?</source>
         <source>Performance of perfboards and stripboards with more than approximately 2000 holes can be slow. Are you sure ?
 
 Note: this warning will not be repeated during this session.</source>
-        <translation type="unfinished"></translation>
+        <translation>El rendimiento de los perfboards y stripboards con más de 2000 agujeros aproximadamente puede ser lento. ¿Está seguro?
+
+Nota: esta advertencia no se repetirá durante esta sesión.</translation>
     </message>
     <message>
         <location filename="../src/items/perfboard.cpp" line="298"/>
@@ -6457,7 +6459,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/pinlabeldialog.cpp" line="81"/>
         <source>&lt;p&gt;&lt;h2&gt;Pin Label Editor&lt;/h2&gt;&lt;/p&gt;</source>
-        <translation>&lt;*p&gt;&lt;*h2&gt;Editor de etiqueta de pin&lt;/*h2&gt;&lt;/*p&gt;</translation>
+        <translation>&lt;p&gt;&lt;h2&gt;Editor de etiqueta de pin&lt;/h2&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/pinlabeldialog.cpp" line="82"/>
@@ -6579,7 +6581,7 @@ Note: this warning will not be repeated during this session.</source>
         <location filename="../src/dialogs/prefsdialog.cpp" line="445"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="461"/>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="268"/>
@@ -6637,14 +6639,18 @@ Note: this warning will not be repeated during this session.</source>
         <source>no keys down = scroll
 shift key swaps scroll axis
 Alt or %1 key = zoom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ninguna tecla abajo = desplazamiento
+tecla shift cambia el eje de desplazamiento
+Tecla Alt o %1 = zoom</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="496"/>
         <source>no keys down = zoom
 Alt or %1 key = scroll
 shift key swaps scroll axis</source>
-        <translation type="unfinished"></translation>
+        <translation>ninguna tecla abajo = zoom
+Tecla Alt o %1 = desplazamiento
+la tecla shift cambia el eje de desplazamiento</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="516"/>
@@ -6664,7 +6670,7 @@ shift key swaps scroll axis</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="531"/>
         <source>Curvy wires and legs</source>
-        <translation type="unfinished">*Curvy Cables y piernas</translation>
+        <translation>Cables y piernas curvas</translation>
     </message>
 </context>
 <context>
@@ -6672,7 +6678,7 @@ shift key swaps scroll axis</source>
     <message>
         <location filename="../src/program/programtab.cpp" line="450"/>
         <source>Select a program file to load</source>
-        <translation type="unfinished">Selecciona un archivo de programa para cargar</translation>
+        <translation>Seleccione un archivo de programa para cargar</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="119"/>
@@ -6737,7 +6743,7 @@ shift key swaps scroll axis</source>
     <message>
         <location filename="../src/program/programtab.cpp" line="599"/>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
-        <translation type="unfinished">¿Desea quitar &quot;%1&quot; del esquemático?</translation>
+        <translation>¿Estás seguro de que quieres eliminar &quot;%1&quot; del boceto?</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="727"/>
@@ -6770,42 +6776,42 @@ shift key swaps scroll axis</source>
     <message>
         <location filename="../src/program/programwindow.cpp" line="175"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished">&amp;Editar</translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="177"/>
         <source>Undo</source>
-        <translation type="unfinished">Deshacer</translation>
+        <translation>Deshacer</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="183"/>
         <source>Redo</source>
-        <translation type="unfinished">Rehacer</translation>
+        <translation>Rehacer</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="191"/>
         <source>&amp;Cut</source>
-        <translation type="unfinished">&amp;Cortar</translation>
+        <translation>&amp;Cortar</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="193"/>
         <source>Cut selection</source>
-        <translation type="unfinished">Cortar selección</translation>
+        <translation>Cortar selección</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="198"/>
         <source>&amp;Copy</source>
-        <translation type="unfinished">&amp;Copiar</translation>
+        <translation>&amp;Copiar</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="200"/>
         <source>Copy selection</source>
-        <translation type="unfinished">Copiar selección</translation>
+        <translation>Copiar selección</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="205"/>
         <source>&amp;Paste</source>
-        <translation type="unfinished">&amp;Pegar</translation>
+        <translation>&amp;Pegar</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="207"/>
@@ -6815,108 +6821,107 @@ shift key swaps scroll axis</source>
     <message>
         <location filename="../src/program/programwindow.cpp" line="214"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">&amp;Seleccionar todo</translation>
+        <translation>&amp;Seleccionar todo</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="216"/>
         <source>Select all text</source>
-        <translation type="unfinished">Seleccionar todo texto</translation>
+        <translation>Seleccionar todo texto</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="222"/>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished">&amp;Preferencias...</translation>
+        <translation>&amp;Preferencias...</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="223"/>
         <source>Show the application&apos;s about box</source>
-        <translation type="unfinished">Mostrar el dialogo acerca de la aplicación</translation>
+        <translation>Mostrar el dialogo acerca de la aplicación</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="227"/>
         <source>&amp;Code</source>
-        <translation type="unfinished">&amp;Código</translation>
+        <translation>&amp;Código</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="229"/>
         <source>&amp;New Tab</source>
-        <translation type="unfinished">&amp;Pestaña nuevo</translation>
+        <translation>&amp;Nueva pestaña</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="231"/>
         <source>Create a new program tab</source>
-        <translation type="unfinished">Crear un pestaña de programa nuevo</translation>
+        <translation>Crear un pestaña de programa nuevo</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="235"/>
         <source>&amp;Import Code...</source>
-        <translation type="unfinished">&amp;Código de importación...</translation>
+        <translation>Código de &amp;importación...</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="236"/>
         <source>Alt+Ctrl+I</source>
-        <translation type="unfinished">Alt+Ctrl+Yo</translation>
+        <translation>Alt+Ctrl+I</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="237"/>
         <source>Import a program from a file</source>
-        <translation type="unfinished">Importación un programa de un archivo</translation>
+        <translation>Importar un programa desde un archivo</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="241"/>
         <source>&amp;Save Tab</source>
-        <translation type="unfinished">&amp;Salva Pestaña</translation>
+        <translation>&amp;Salvar Pestaña</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="242"/>
         <source>Alt+Ctrl+S</source>
-        <translation type="unfinished">Alt+Ctrl+*S</translation>
+        <translation>Alt+Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="243"/>
         <source>Save the current program tab</source>
-        <translation type="unfinished">Salvar el pestaña de programa actual</translation>
+        <translation>Salvar el pestaña de programa actual</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="247"/>
         <source>&amp;Rename Tab</source>
-        <translation type="unfinished">&amp;Rebautiza Pestaña</translation>
+        <translation>&amp;Rebautiza Pestaña</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="248"/>
         <source>Alt+Ctrl+R</source>
-        <translation type="unfinished">Alt+Ctrl+R</translation>
+        <translation>Alt+Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="249"/>
         <source>Rename the current program tab</source>
-        <translation type="unfinished">Rebautizar el pestaña de programa actual</translation>
+        <translation>Cambiar el nombre de la pestaña del programa actual</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="253"/>
         <source>Close Tab</source>
-        <translation type="unfinished">Pestaña cercano</translation>
+        <translation>Cerrar pestaña</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="254"/>
         <source>Alt+Ctrl+W</source>
-        <translation type="unfinished">Alt+Ctrl+*W
- </translation>
+        <translation>Alt+Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="255"/>
         <source>Remove the current program tab from the sketch</source>
-        <translation type="unfinished">Sacar el pestaña de programa actual del esquemático</translation>
+        <translation>Eliminar la pestaña del programa actual del boceto</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="261"/>
         <source>Platform</source>
-        <translation type="unfinished">Plataforma</translation>
+        <translation>Plataforma</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="276"/>
         <source>Board</source>
-        <translation type="unfinished">Placa</translation>
+        <translation>Placa</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="281"/>
@@ -6931,52 +6936,52 @@ shift key swaps scroll axis</source>
     <message>
         <location filename="../src/program/programwindow.cpp" line="291"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="292"/>
         <source>Monitor the serial port communication</source>
-        <translation type="unfinished">Monitor la comunicación de puerto serie</translation>
+        <translation>Supervisar la comunicación del puerto serie</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="297"/>
         <source>Upload</source>
-        <translation type="unfinished">Carga</translation>
+        <translation>Subir a</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="298"/>
         <source>Ctrl+U</source>
-        <translation type="unfinished">Ctrl+*U</translation>
+        <translation>Ctrl+U</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="299"/>
         <source>Upload the current program onto a microcontroller</source>
-        <translation type="unfinished">Cargar el programa actual a un microcontrolador</translation>
+        <translation>Cargar el programa actual en un microcontrolador</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="473"/>
         <source>Code Window</source>
-        <translation type="unfinished">Ventana de código</translation>
+        <translation>Ventana de código</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="477"/>
         <source>Code Window - %1</source>
-        <translation type="unfinished">Ventana de código - %1</translation>
+        <translation>Ventana de código - %1</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="486"/>
         <source>%1%2</source>
-        <translation type="unfinished">%1%2</translation>
+        <translation>%1%2</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="304"/>
         <source>&amp;View</source>
-        <translation type="unfinished">&amp;Vista</translation>
+        <translation>&amp;Vista</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="355"/>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
-        <translation type="unfinished">Archivo &apos;%1&apos; estuvo restaurado del .fzz Archivo; la copia local no fue encontrada.</translation>
+        <translation>Archivo &apos;%1&apos; estuvo restaurado del .fzz Archivo; la copia local no fue encontrada.</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="358"/>
@@ -8196,7 +8201,7 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;*p&gt;&lt;b&gt;Fritzing Puede haber chocado, pero algunos de los cambios a los archivos siguientes pueden ser recuperados.&lt;/b&gt;&lt;/*p&gt;&lt;*p&gt;La fecha y cronometrar cada archivo estuvo respaldado-arriba está mostrado. Si el archivo estuvo salvado, aquella fecha y el tiempo es también listado para comparación.&lt;/*p&gt;&lt;*p&gt;Los archivos originales son todavía en su disco, si  eran nunca salvó.  Puedes escoger si a *overwrite el archivo original después de que  cargas su archivo de recuperación.&lt;/*p&gt;&lt;*p&gt;&lt;b&gt;Seleccionar cualesquier archivos  quieres recuperar de la lista abajo.&lt;/b&gt;&lt;/*p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzing Puede haber chocado, pero algunos de los cambios a los archivos siguientes pueden ser recuperados.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;La fecha y cronometrar cada archivo estuvo respaldado-arriba está mostrado. Si el archivo estuvo salvado, aquella fecha y el tiempo es también listado para comparación.&lt;/p&gt;&lt;p&gt;Los archivos originales son todavía en su disco, si  eran nunca salvó.  Puedes escoger si a *overwrite el archivo original después de que  cargas su archivo de recuperación.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seleccionar cualesquier archivos  quieres recuperar de la lista abajo.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>

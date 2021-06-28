@@ -4,14 +4,6 @@
 <context>
     <name>AboutBox</name>
     <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="vanished">Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 auf den Quellcode und CreativeCommons:BY-SA auf den Rest</translation>
@@ -55,14 +47,6 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
-    </message>
-    <message>
-        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
-        <translation type="vanished">Bryant Mairs, Uleshka Asher, und Daniel Tzschentke. </translation>
-    </message>
-    <message>
-        <source>Special thanks goes out to: </source>
-        <translation type="vanished">Besonderer Dank geht an: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -132,7 +116,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="165"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein besonderer Dank geht an alle Studenten und Alpha-Tester, die mutig genug waren, Fritzing zu testen.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
@@ -155,17 +139,9 @@
         <translation>Vereinfachtes Chinesisch:</translation>
     </message>
     <message>
-        <source>Robert Lee </source>
-        <translation type="vanished">Robert Lee</translation>
-    </message>
-    <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Japanese: </source>
         <translation>Japanisch:</translation>
-    </message>
-    <message>
-        <source>Hiroshi Suzuki </source>
-        <translation type="vanished">Hiroshi Suzuki</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="148"/>
@@ -180,12 +156,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="121"/>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
-        <translation type="unfinished"></translation>
+        <translation>Bryant Mairs, Uleshka Asher, Daniel Tzschentke und Kjell Morgenstern</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="125"/>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Besonderer Dank geht an: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="139"/>
@@ -228,14 +204,6 @@
         <translation>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
-        <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, </source>
-        <translation type="vanished">Bryant Mairs, Uleshka Asher, und Daniel Tzschentke </translation>
-    </message>
-    <message>
-        <source>and Kjell Morgenstern </source>
-        <translation type="vanished">und Kjell Morgenstern </translation>
-    </message>
-    <message>
         <location filename="../src/help/aboutbox.cpp" line="152"/>
         <source>Ukrainian: </source>
         <translation>Ukrainisch: </translation>
@@ -269,18 +237,6 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>und von jedem Kauf eines Fritzing Starter Kit oder einer Leiterplatte von Fritzing Fab.</translation>
-    </message>
-    <message>
-        <source>Special thanks goes out as well to all the students </source>
-        <translation type="vanished">Besonderer Dank geht außerdem an alle Studenten </translation>
-    </message>
-    <message>
-        <source>and alpha testers who were brave enough to give </source>
-        <translation type="vanished">und Alpha-Testern, die mutig genug waren, um</translation>
-    </message>
-    <message>
-        <source>Fritzing a test spin. </source>
-        <translation type="vanished">Fritzing auszuprobieren. </translation>
     </message>
 </context>
 <context>
@@ -756,8 +712,8 @@ Ein eigenes Platinen-SVG hat üblicherweise eine oder zwei Siebdruckebenen (&quo
         <location filename="../src/items/resizableboard.cpp" line="443"/>
         <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
         <translation>
+            <numerusform>&lt;b&gt;Die Platinenform enthält %n Ausschnitt.&lt;/b&gt;</numerusform>
             <numerusform>&lt;b&gt;Die Platinenform enthält %n Ausschnitte.&lt;/b&gt;</numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -1301,43 +1257,43 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="19"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="70"/>
         <source>Get your board fabricated this week!</source>
-        <translation type="unfinished"></translation>
+        <translation>Lassen Sie Ihr Board noch diese Woche fertigen!</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="106"/>
         <source>Upload it now to get a preview rendered by AISLER. Review, and if you like it, order it and get it manufactured in two days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Laden Sie es hoch, um eine von AISLER eine Vorschau zur Überprüfung zu erhalten. Nach der Bestellung ist Ihr Board innerhalb von zwei Tagen versandfertig.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="163"/>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="327"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="192"/>
         <source>Upload to Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Hochladen zur Fab</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="251"/>
         <source>Upload</source>
-        <translation type="unfinished">Hochladen</translation>
+        <translation>Hochladen</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="265"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="356"/>
         <source>Uploading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sende...</translation>
     </message>
 </context>
 <context>
@@ -1347,17 +1303,17 @@ Trotzdem diese Datei benutzen?</translation>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="144"/>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="152"/>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="135"/>
         <source>Could not connect to Fritzing fab.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konnte keine Verbindung zum Fritzing Fab herstellen.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="152"/>
         <source>Error processing the project. The factory says: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler bei der Bearbeitung des Projekts. Die Fabrik sagt: %1</translation>
     </message>
 </context>
 <context>
@@ -2237,27 +2193,27 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1708"/>
         <source>Local part &apos;%1&apos; incomplete, only &apos;%2&apos; layers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokalteil &apos;%1&apos; unvollständig, nur &apos;%2&apos; Schichten.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1724"/>
         <source>View &apos;%1&apos; should be prefixed with &apos;%2/&apos;. Trying to continue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ansicht &apos;%1&apos; sollte mit &apos;%2/&apos; beginnen. Versuche, fortzufahren.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1744"/>
         <source>Could not copy subfile &apos;%1&apos; to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Konnte Unterdatei &apos;%1&apos; nicht nach &apos;%2&apos; kopieren</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1752"/>
         <source>Local part &apos;%1&apos; incomplete, subfile not found &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Teil &apos;%1&apos; unvollständig, Unterdatei nicht gefunden &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1766"/>
         <source>Unable to open local part &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokales Teil &apos;%1&apos; kann nicht geöffnet werden</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
@@ -2363,10 +2319,6 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="128"/>
         <source>PDF (*.pdf)</source>
         <translation>PDF (*.pdf)</translation>
-    </message>
-    <message>
-        <source>PostScript (*.ps)</source>
-        <translation type="vanished">PostScript (*.ps)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="129"/>
@@ -2482,10 +2434,6 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <translation>Sichtbaren Bereich als PNG-Bild speichern</translation>
     </message>
     <message>
-        <source>Export the visible area of the current sketch as a PostScript image</source>
-        <translation type="vanished">Sichtbaren Bereich als PostScript-Grafik speichern</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="992"/>
         <source>Export the visible area of the current sketch as a PDF image</source>
         <translation>Sichtbaren Bereich als PDF-Dokument speichern</translation>
@@ -2582,10 +2530,6 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="985"/>
         <source>PNG...</source>
         <translation>PNG...</translation>
-    </message>
-    <message>
-        <source>PostScript...</source>
-        <translation type="vanished">PostScript...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="990"/>
@@ -3066,14 +3010,6 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <translation>Die Bauteile des Sortiments in einer Listenansicht anzeigen</translation>
     </message>
     <message>
-        <source>Donate to Fritzing</source>
-        <translation type="vanished">Spenden an Fritzing</translation>
-    </message>
-    <message>
-        <source>Open Fritzing donation web page</source>
-        <translation type="vanished">Öffnet die Fritzing Spenden-Website</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1263"/>
         <source>Display First Time Help</source>
         <translation>Erstbenutzerhilfe anzeigen</translation>
@@ -3294,16 +3230,16 @@ Hinweis: Wenn Du die Aktualisierung später durchführen möchtest, gibt es im &
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3853"/>
         <source>There are %n outdated part(s) in this sketch. </source>
         <translation>
+            <numerusform>Es ist ein veraltetes Bauteil in diesem Entwurf. </numerusform>
             <numerusform>Es sind %n veraltete Bauteile in diesem Entwurf. </numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3854"/>
         <source>We strongly recommend that you update these %n parts  to the latest version. </source>
         <translation>
-            <numerusform>Wir empfehlen Dir eindringlich, diese %n Bauteile auf die neueste Version zu aktualisieren. </numerusform>
-            <numerusform></numerusform>
+            <numerusform>Wir empfehlen Dir dringend, dieses Bauteil auf die neueste Version zu aktualisieren. </numerusform>
+            <numerusform>Wir empfehlen Dir dringend, diese %n Bauteile auf die neueste Version zu aktualisieren. </numerusform>
         </translation>
     </message>
     <message>
@@ -3761,19 +3697,19 @@ Zurücksetzen?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1245"/>
         <source>Visit fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Besuchen Sie fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1246"/>
         <source>fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2695"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2703"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2711"/>
         <source>Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Routing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2718"/>
@@ -3987,12 +3923,12 @@ Willst Du jetzt aktualisieren?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4337"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4337"/>
         <source>Please first save your project in order to upload it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte speichern Sie zunächst Ihr Projekt, bevor es hochgeladen wird.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4346"/>
@@ -4495,10 +4431,6 @@ Bitte überprüfe alle Ansichten auf eventuelle Nebenwirkungen.</translation>
             <numerusform>%1 von %2 Netzen geroutet - %n Verbinder noch zu routen</numerusform>
             <numerusform>%1 von %2 Netzen geroutet - %n Verbinder noch zu routen</numerusform>
         </translation>
-    </message>
-    <message>
-        <source>directly loading parts</source>
-        <translation type="vanished">Bauteile direkt laden</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2453"/>
@@ -5401,8 +5333,8 @@ Ursache: %2 (Fehlercode %3)</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3807"/>
         <source>This part has %n unassigned connectors </source>
         <translation>
-            <numerusform>Dieses Bauteil hat %n unbelegte Verbinder </numerusform>
-            <numerusform></numerusform>
+            <numerusform>Dieses Bauteil hat einen ungenutzten Anschluss. </numerusform>
+            <numerusform>Dieses Bauteil hat %n ungenutzte Anschlüsse. </numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -5410,7 +5342,7 @@ Ursache: %2 (Fehlercode %3)</translation>
         <source>across %n views. </source>
         <translation>
             <numerusform>über %n Ansichten. </numerusform>
-            <numerusform></numerusform>
+            <numerusform>über %n Ansichten. </numerusform>
         </translation>
     </message>
     <message>
@@ -6566,7 +6498,7 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
         <location filename="../src/dialogs/prefsdialog.cpp" line="445"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="461"/>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="268"/>
@@ -7102,18 +7034,6 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <location filename="../src/viewlayer.cpp" line="180"/>
         <source>pcb view</source>
         <translation>Leiterplattenansicht</translation>
-    </message>
-    <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
-        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</source>
-        <translation type="obsolete">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt; {2&apos;?} {4e?} {1.%2.%3 ?} {4 %5)?} {6&lt;?}</translation>
-    </message>
-    <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
-        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2057"/>
@@ -7987,13 +7907,9 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <translation>N/V</translation>
     </message>
     <message>
-        <source>The parts folder &apos;%1&apos; has been changed--it is not in the master branch (%2). %3</source>
-        <translation type="vanished">Der Bauteil-Ordner &apos;%1&apos; wurde geändert - er befindet sich nicht im Zweig &apos;master&apos; (%2). %3</translation>
-    </message>
-    <message>
         <location filename="../src/version/partschecker.cpp" line="74"/>
         <source>The parts folder &apos;%1&apos; has been changed--it is not in a supported branch (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bauteil-Ordner &apos;%1&apos; wurde geändert - er befindet sich nicht im Zweig &apos;master&apos; (%2). %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="75"/>
@@ -8043,11 +7959,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/version/partschecker.cpp" line="199"/>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
-        <translation type="vanished">Es konnte keine &apos;master&apos;-Netzwerkreferenz für &apos;%1&apos; gefunden werden. %2</translation>
+        <translation>Die Netzwerkreferenz für &apos;%1&apos;#%2 konnte nicht abgerufen werden. %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="469"/>
@@ -8106,14 +8018,6 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <translation>Kopien</translation>
     </message>
     <message>
-        <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
-        <translation type="vanished">Beachte dass dieser Preis exklusive Versand,</translation>
-    </message>
-    <message>
-        <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
-        <translation type="vanished">Steuern, und Prüfgebühr ist.&lt;br/&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="268"/>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
         <translation> %1 cm%3 (%2 in%3).&lt;br /&gt;</translation>
@@ -8160,10 +8064,6 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
             <numerusform>Die Gesamtgröße Deiner %n Leiterplatte ist</numerusform>
             <numerusform>Die Gesamtgröße Deiner %n Leiterplatten ist</numerusform>
         </translation>
-    </message>
-    <message>
-        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="vanished">Für weitere Informationen über Preise siehe &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="168"/>
@@ -8915,7 +8815,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         <source>%1 %n strip(s)</source>
         <translation>
             <numerusform>%1 %n-Streifen</numerusform>
-            <numerusform></numerusform>
+            <numerusform>%1 %n-Streifen</numerusform>
         </translation>
     </message>
     <message>
@@ -9202,7 +9102,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>
         <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um verschiedene Eigenschaften in einer Teilebeschriftung anzuzeigen, sie zu drehen oder die Schriftart zu ändern, klicken Sie mit der rechten Maustaste auf die Beschriftung.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="149"/>
@@ -9611,22 +9511,6 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         <translation>Fab</translation>
     </message>
     <message>
-        <source>Shop</source>
-        <translation type="vanished">Shop</translation>
-    </message>
-    <message>
-        <source>Fritzing CreatorKit</source>
-        <translation type="vanished">Fritzing CreatorKit</translation>
-    </message>
-    <message>
-        <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
-        <translation type="vanished">Das Fritzing Creator Kit ist momentan nicht verfügbar. Besuche den Fritzing Blog für Aktualisierungen.</translation>
-    </message>
-    <message>
-        <source>Software development and maintenance is a lot of work. Without your support, it is not possible to keep that up.</source>
-        <translation type="vanished">Die Entwicklung und Wartung von Software ist eine Menge Arbeit. Ohne Eure Unterstützung ist es nicht möglich, das durchzuhalten.</translation>
-    </message>
-    <message>
         <location filename="../src/sketch/welcomeview.cpp" line="461"/>
         <source>Fritzing Fab</source>
         <translation>Fritzing Fab</translation>
@@ -9690,10 +9574,6 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         <location filename="../src/sketch/welcomeview.cpp" line="716"/>
         <source>Unable to reach fritzing.org/projects</source>
         <translation>fritzing.org/projects kann nicht erreicht werden</translation>
-    </message>
-    <message>
-        <source>Unable to reach friting.org/projects</source>
-        <translation type="vanished">friting.org/projects konnte nicht erreicht werden</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="929"/>

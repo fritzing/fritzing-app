@@ -4,14 +4,6 @@
 <context>
     <name>AboutBox</name>
     <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="vanished">Versión %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 para el código y CreativeCommons:BY-SA para el resto</translation>
@@ -52,14 +44,6 @@
         <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
     </message>
     <message>
-        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
-        <translation type="vanished">Bryant Mairs, Uleshka Asher y Daniel Tzschentke. </translation>
-    </message>
-    <message>
-        <source>Special thanks goes out to: </source>
-        <translation type="vanished">Un agradecimiento especial a: </translation>
-    </message>
-    <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
         <translation>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </translation>
@@ -82,7 +66,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="130"/>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jan Sieber, Yaniv Steiner, Olaf Val, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="131"/>
@@ -172,7 +156,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="125"/>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Agradecemos especialmente a: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="139"/>
@@ -212,22 +196,22 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="63"/>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Versión %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="101"/>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="152"/>
         <source>Ukrainian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ucraniano: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="152"/>
         <source>Yelyzaveta Chyhryna</source>
-        <translation type="unfinished"></translation>
+        <translation>Yelyzaveta Chyhryna</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="157"/>
@@ -253,18 +237,6 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>y por cada compra de un Kit de iniciación a Fritzing o un PCB de Fritzing Fab.</translation>
-    </message>
-    <message>
-        <source>Special thanks goes out as well to all the students </source>
-        <translation type="vanished">Un agradecimiento especial a todo el alumnado </translation>
-    </message>
-    <message>
-        <source>and alpha testers who were brave enough to give </source>
-        <translation type="vanished">y a los alfa testers que fueron suficientemente valientes como para </translation>
-    </message>
-    <message>
-        <source>Fritzing a test spin. </source>
-        <translation type="vanished">darle a Fritzing una vuelta de prueba. </translation>
     </message>
 </context>
 <context>
@@ -740,9 +712,9 @@ El svg de una placa personalizada tiene una o dos capas de pantalla serigráfica
     <message numerus="yes">
         <location filename="../src/items/resizableboard.cpp" line="443"/>
         <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>&lt;b&gt;La forma personalizada tiene %n recorte.&lt;/b&gt;</numerusform>
+            <numerusform>&lt;b&gt;La forma personalizada tiene %n recortes.&lt;/b&gt;</numerusform>
         </translation>
     </message>
     <message>
@@ -1285,17 +1257,17 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="19"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="70"/>
         <source>Get your board fabricated this week!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Obtenga su tabla fabricada esta semana!</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="106"/>
         <source>Upload it now to get a preview rendered by AISLER. Review, and if you like it, order it and get it manufactured in two days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Súbelo ahora para obtener una vista previa renderizada por AISLER. Revísalo y, si te gusta, pídelo y lo tendrás fabricado en dos días.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="163"/>
@@ -1306,7 +1278,7 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="192"/>
         <source>Upload to Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Subir a Fab</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="251"/>
@@ -1316,12 +1288,12 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="265"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="356"/>
         <source>Uploading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Subiendo...</translation>
     </message>
 </context>
 <context>
@@ -1336,12 +1308,12 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="135"/>
         <source>Could not connect to Fritzing fab.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido conectar con Fritzing Fab.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="152"/>
         <source>Error processing the project. The factory says: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al procesar el proyecto. La fábrica dice: %1</translation>
     </message>
 </context>
 <context>
@@ -1365,7 +1337,7 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="107"/>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>La &lt;b&gt;Vista de la PCB&lt;/b&gt; es el lugar en el que se diseñan los componentes en una PCB física (placa de circuito impreso).&lt;br/&gt;&lt;br/&gt;Las PCB se pueden hacer en casa o en un pequeño laboratorio utilizando procesos de grabado de bricolaje. También se pueden enviar a servicios profesionales de fabricación de PCB para una fabricación más precisa. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Lo primero que necesitarás es una placa para colocar tus piezas. Ya debería haber una en tu boceto, pero si no es así, arrastra el icono de la placa desde la papelera de piezas. El icono coincide con la imagen de la derecha: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Para diseñar tu PCB, organiza todos los componentes para que encajen bien en la placa. A continuación, intenta desplazarlos para minimizar la longitud y la confusión de las conexiones. También puedes cambiar el tamaño de las placas rectangulares. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Una vez que las piezas están ordenadas, las conectas con trazas de cobre. Puedes arrastrar una traza desde las conexiones individuales o utilizar el autorouter para generarlas. El botón Autoroute está en la parte inferior de la ventana. El botón coincide con la imagen de la derecha:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
@@ -1378,7 +1350,7 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="763"/>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Tus partes y contenedores personalizados se mueven de la carpeta de datos de la aplicación oculta a tu carpeta de documentos de fritzing en &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;De esta manera esperamos que te sea más fácil encontrarlos y editarlos manualmente.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1592,9 +1564,9 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message numerus="yes">
         <location filename="../src/infoview/htmlinfoview.cpp" line="385"/>
         <source>connected to %n item(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>conectado a %n elemento</numerusform>
+            <numerusform>conectado a %n elementos</numerusform>
         </translation>
     </message>
     <message>
@@ -2179,7 +2151,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1744"/>
         <source>Could not copy subfile &apos;%1&apos; to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido copiar el subfichero &apos;%1&apos; en &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1752"/>
@@ -2189,7 +2161,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1766"/>
         <source>Unable to open local part &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede abrir la parte local &apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1810"/>
@@ -2222,7 +2194,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2219"/>
         <source>The copper top (copper 1) layer is not available on a one-sided board.  Please switch the board to double-sided or choose the copper bottom (copper 0) layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>La capa superior de cobre (cobre 1) no está disponible en una placa de una cara.  Cambie la placa a doble cara o elija la capa inferior de cobre (cobre 0).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2347"/>
@@ -2258,7 +2230,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2789"/>
         <source>Fritzing uncompressed (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing sin comprimir (*%1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2844"/>
@@ -2278,7 +2250,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2900"/>
         <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
-        <translation type="unfinished"></translation>
+        <translation>(x, y)=(%1, %2) (ancho, alto)=(%3, %4) %5</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="3187"/>
@@ -2293,9 +2265,9 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message numerus="yes">
         <location filename="../src/mainwindow/mainwindow.cpp" line="2091"/>
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%1 de %2 redes enrutadas - %n conector aún por enrutar</numerusform>
+            <numerusform>%1 de %2 redes enrutadas - %n conectores aún por enrutar</numerusform>
         </translation>
     </message>
     <message>
@@ -2363,10 +2335,6 @@ Es también posible de escoger un conector como tierra llena semilla por correct
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="128"/>
         <source>PDF (*.pdf)</source>
         <translation>PDF (*.pdf)</translation>
-    </message>
-    <message>
-        <source>PostScript (*.ps)</source>
-        <translation type="vanished">PostScript (*.ps)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="129"/>
@@ -2446,10 +2414,6 @@ Es también posible de escoger un conector como tierra llena semilla por correct
         <translation>Imposible encontrar archivo %1.</translation>
     </message>
     <message>
-        <source>directly loading parts</source>
-        <translation type="vanished">Cargando componentes directamente</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
         <source>loading %1 (model)</source>
         <translation>Cargando %1 (modelo)</translation>
@@ -2493,10 +2457,6 @@ Es también posible de escoger un conector como tierra llena semilla por correct
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="987"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation type="unfinished">Exportar el área visible del bosquejo actual como una imagen PNG</translation>
-    </message>
-    <message>
-        <source>Export the visible area of the current sketch as a PostScript image</source>
-        <translation type="obsolete">Exportar el área visble del bosquejo actual como una imagen PostScript</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="992"/>
@@ -2659,7 +2619,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1654"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to export to Gerber.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tu boceto aún no tiene una placa.  Por favor, añada una PCB para poder exportar a Gerber.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1659"/>
@@ -2831,7 +2791,8 @@ Es también posible de escoger un conector como tierra llena semilla por correct
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="239"/>
         <source>Cannot read file  1 %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede leer el archivo 1 %1:
+%2.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="921"/>
@@ -3002,22 +2963,22 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1085"/>
         <source>Regenerate parts database ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Regenerar la base de datos de piezas ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1086"/>
         <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
-        <translation type="unfinished"></translation>
+        <translation>Regenerar la base de datos de piezas (sólo debe utilizarse si su base de datos de piezas está rota)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1128"/>
         <source>Color Breadboard Wires By Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Colorear los cables de la pizarra por longitud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1129"/>
         <source>Display breadboard wires using standard color coding by length</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar los cables de la protoboard utilizando un código de colores estándar por longitud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1147"/>
@@ -3058,14 +3019,6 @@ Es también posible de escoger un conector como tierra llena semilla por correct
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1193"/>
         <source>Display the parts bin in a list view</source>
         <translation type="unfinished">Exhibición de Componentes como una Lista</translation>
-    </message>
-    <message>
-        <source>Donate to Fritzing</source>
-        <translation type="vanished">Donación para Fritzing</translation>
-    </message>
-    <message>
-        <source>Open Fritzing donation web page</source>
-        <translation type="vanished">Abrir la página web de donaciones de Fritzing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1263"/>
@@ -3212,7 +3165,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2951"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use the autorouter.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tu boceto aún no tiene una placa.  Por favor, añade una PCB para poder utilizar el autorouter.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3052"/>
@@ -3232,7 +3185,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3239"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use ground or copper fill.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tu boceto aún no tiene una placa.  Por favor, añada una PCB para poder utilizar la tierra o el relleno de cobre.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3249"/>
@@ -3252,7 +3205,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3273"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to remove copper fill.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tu boceto aún no tiene una placa.  Por favor, añada una PCB para eliminar el relleno de cobre.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3595"/>
@@ -3302,9 +3255,9 @@ Nota: si quieres actualizar más tarde, hay opciones en el menú de componentes<
     <message numerus="yes">
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3853"/>
         <source>There are %n outdated part(s) in this sketch. </source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Hay %n parte obsoleta en este boceto. </numerusform>
+            <numerusform>Hay %n piezas obsoleta en este boceto. </numerusform>
         </translation>
     </message>
     <message>
@@ -3797,7 +3750,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1245"/>
         <source>Visit fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Visite fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1246"/>
@@ -3809,7 +3762,7 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2703"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2711"/>
         <source>Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Enrutamiento</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2718"/>
@@ -3970,8 +3923,8 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3854"/>
         <source>We strongly recommend that you update these %n parts  to the latest version. </source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Le recomendamos encarecidamente que actualice estas partes %n a la última versión. </numerusform>
+            <numerusform>Le recomendamos encarecidamente que actualice estas partes %n a la última versión. </numerusform>
         </translation>
     </message>
     <message>
@@ -4031,12 +3984,12 @@ Do you want to update now?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4337"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4337"/>
         <source>Please first save your project in order to upload it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, guarde primero su proyecto para poder subirlo.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4346"/>
@@ -4654,9 +4607,9 @@ Estamos trabajando para evitar este mensaje, y sólo dejado  escoges entre propi
     <message numerus="yes">
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="774"/>
         <source> with %n vias</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform> con %n vía</numerusform>
+            <numerusform> con %n vías</numerusform>
         </translation>
     </message>
     <message>
@@ -4712,22 +4665,22 @@ Estamos trabajando para evitar este mensaje, y sólo dejado  escoges entre propi
     <message>
         <location filename="../src/version/modfiledialog.ui" line="14"/>
         <source>Modified files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Archivos modificados</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.ui" line="27"/>
         <source>decision</source>
-        <translation type="unfinished"></translation>
+        <translation>decisión</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.cpp" line="11"/>
         <source>Fritzing can proceed with the update, but the set of files listed below must first be cleaned (removed or reset). It may take a few minutes. &lt;p&gt;Do you want to proceed with cleaning these files?&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing puede proceder a la actualización, pero primero hay que limpiar (eliminar o restablecer) el conjunto de archivos que se enumeran a continuación. Esto puede llevar unos minutos. &lt;p&gt;Desea proceder a la limpieza de estos archivos?&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.cpp" line="15"/>
         <source>Clean files</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar archivos</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.cpp" line="42"/>
@@ -8055,14 +8008,6 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
         <translation type="unfinished">Copias</translation>
     </message>
     <message>
-        <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
-        <translation type="obsolete">Complacer nota que los precios no incluyen navío,&lt;br /&gt;</translation>
-    </message>
-    <message>
-        <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
-        <translation type="obsolete">Impuestos adicionales posibles, o el coste de comprobar.&lt;br /&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="268"/>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
         <translation type="unfinished"> %1 cm%3 (%2 en%3).&lt;br /&gt;</translation>
@@ -8109,10 +8054,6 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
-    </message>
-    <message>
-        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="obsolete">Para más información encima tasando ve &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="168"/>
@@ -9009,10 +8950,6 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
         <translation type="unfinished">Para editar una etiqueta de componente, doble-clic él, o utilizar la entrada de texto *widget en la ventana de inspector.</translation>
     </message>
     <message>
-        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
-        <translation type="obsolete">Para mostrar propiedades diferentes en una etiqueta de componente, así como Rotate lo, o cambiar la fuente, bien-clic la etiqueta.</translation>
-    </message>
-    <message>
         <location filename="../src/help/tipsandtricks.cpp" line="119"/>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
         <translation type="unfinished">Para mover una etiqueta de componente independientemente de su componente, seleccionar la componente primero--ambos la componente y la etiqueta serán destacadas. Una vez la etiqueta está seleccionada te lo puede arrastrar.</translation>
@@ -9564,18 +9501,6 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
         <translation>Fab</translation>
     </message>
     <message>
-        <source>Shop</source>
-        <translation type="vanished">Tienda</translation>
-    </message>
-    <message>
-        <source>Fritzing CreatorKit</source>
-        <translation type="vanished">Fritzing CreatorKit</translation>
-    </message>
-    <message>
-        <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
-        <translation type="vanished">El Kit de creación de Fritzing está agotado. Para actualizaciones, por favor, visita fritzing.blog</translation>
-    </message>
-    <message>
         <location filename="../src/sketch/welcomeview.cpp" line="461"/>
         <source>Fritzing Fab</source>
         <translation>Fritzing Fab</translation>
@@ -9639,10 +9564,6 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
         <location filename="../src/sketch/welcomeview.cpp" line="716"/>
         <source>Unable to reach fritzing.org/projects</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to reach friting.org/projects</source>
-        <translation type="vanished">Incapaz de alcanzar friting.org/projects</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="929"/>

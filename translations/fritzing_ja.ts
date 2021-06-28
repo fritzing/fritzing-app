@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Fritzing is made by: </source>
-        <translation type="unfinished"></translation>
+        <translation>フリッツィングは、次のように作られています。 </translation>
     </message>
     <message>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
@@ -89,67 +89,67 @@
     </message>
     <message>
         <source>Thanks for the translations go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>翻訳に感謝します。 </translation>
     </message>
     <message>
         <source>Spanish: </source>
-        <translation type="unfinished"></translation>
+        <translation>スペイン語。 </translation>
     </message>
     <message>
         <source>Italian: </source>
-        <translation type="unfinished"></translation>
+        <translation>イタリア語。 </translation>
     </message>
     <message>
         <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <translation>ポルトガル語（ヨーロッパ）。 </translation>
     </message>
     <message>
         <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
+        <translation>ポルトガル語（ブラジル）。 </translation>
     </message>
     <message>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
+        <translation>中国語（簡体字）。 </translation>
     </message>
     <message>
         <source>Japanese: </source>
-        <translation type="unfinished"></translation>
+        <translation>日本人です。 </translation>
     </message>
     <message>
         <source>Russian: </source>
-        <translation type="unfinished"></translation>
+        <translation>ロシア語です。 </translation>
     </message>
     <message>
         <source>Dutch: </source>
-        <translation type="unfinished"></translation>
+        <translation>オランダ語。 </translation>
     </message>
     <message>
         <source>Czech: </source>
-        <translation type="unfinished"></translation>
+        <translation>チェコ。 </translation>
     </message>
     <message>
         <source>Korean: </source>
-        <translation type="unfinished"></translation>
+        <translation>韓国語です。 </translation>
     </message>
     <message>
         <source>Slovak: </source>
-        <translation type="unfinished"></translation>
+        <translation>スロバキア語。 </translation>
     </message>
     <message>
         <source>Greek: </source>
-        <translation type="unfinished"></translation>
+        <translation>ギリシャ語。 </translation>
     </message>
     <message>
         <source>French: </source>
-        <translation type="unfinished"></translation>
+        <translation>フランス語。 </translation>
     </message>
     <message>
         <source>Turkish: </source>
-        <translation type="unfinished"></translation>
+        <translation>トルコ語。 </translation>
     </message>
     <message>
         <source>Bulgarian: </source>
-        <translation type="unfinished"></translation>
+        <translation>ブルガリア語。 </translation>
     </message>
     <message>
         <source>Yuelin and Ninjia</source>
@@ -157,7 +157,7 @@
     </message>
     <message>
         <source>Chinese (Traditional): </source>
-        <translation type="unfinished"></translation>
+        <translation>中国語（繁体字）。 </translation>
     </message>
     <message>
         <source>Robert Lee</source>
@@ -173,11 +173,11 @@
     </message>
     <message>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>バージョン %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <source>Ukrainian: </source>
-        <translation type="unfinished"></translation>
+        <translation>ウクライナ。 </translation>
     </message>
     <message>
         <source>Yelyzaveta Chyhryna</source>
@@ -189,11 +189,11 @@
     </message>
     <message>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>スペシャルサンクスをお贈りします。 </translation>
     </message>
     <message>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
-        <translation type="unfinished"></translation>
+        <translation>勇気を持ってFritzingをテストしてくれた学生やアルファテスターの皆さんに感謝します。</translation>
     </message>
 </context>
 <context>
@@ -226,7 +226,7 @@
     <name>AutorouterSettingsDialog</name>
     <message>
         <source>Production type</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">生産形態</translation>
     </message>
     <message>
         <source>homebrew</source>

@@ -2009,8 +2009,10 @@ void FApplication::regeneratePartsDatabase() {
 	messageBox.setText(tr("Regenerating the parts database will take some minutes and you will have to restart Fritzing\n\n") +
 	                   tr("Would you like to regenerate the parts database?\n")
 	                  );
-	messageBox.setInformativeText("This option is a last resort in case Fritzing's is more-or-less unable to display parts. "
-	                              "You may be better off downloading the latest Fritzing release.");
+	messageBox.setInformativeText(tr("This option is usefull if you modify the parts database on your own. "
+									 "If you want to recover from an error, "
+								  "you may be better off downloading the latest Fritzing release."
+									 ));
 	messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 	messageBox.setDefaultButton(QMessageBox::Yes);
 	messageBox.setIcon(QMessageBox::Question);

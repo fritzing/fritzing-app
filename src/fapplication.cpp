@@ -1275,7 +1275,7 @@ void FApplication::preferencesAfter()
 {
 	QDir dir(m_translationPath);
 	QStringList nameFilters;
-	nameFilters << "*.qm";
+	nameFilters << "fritzing_*.qm";
 	QFileInfoList languages = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
 	QSettings settings;
 	QString language = settings.value("language").toString();

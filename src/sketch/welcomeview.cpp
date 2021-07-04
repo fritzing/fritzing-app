@@ -454,7 +454,7 @@ QWidget * WelcomeView::initShop() {
 	QVBoxLayout * frameLayout = new QVBoxLayout;
 	zeroMargin(frameLayout);
 
-	QWidget * headerFrame = createHeaderFrame( tr("Fab"), "Fab", "", "",  m_activeHeaderLabelColor, m_inactiveHeaderLabelColor, m_fabLabel, m_fabLabel);
+	QWidget * headerFrame = createHeaderFrame( "Fab", tr("Fab"), "", "",  m_activeHeaderLabelColor, m_inactiveHeaderLabelColor, m_fabLabel, m_fabLabel);
 	frameLayout->addWidget(headerFrame);
 
 	m_fabUberFrame = createShopContentFrame(":/resources/images/pcbs_2013.png",
@@ -557,7 +557,7 @@ QWidget * WelcomeView::initBlog() {
 	QVBoxLayout * frameLayout = new QVBoxLayout;
 	zeroMargin(frameLayout);
 
-	QWidget * headerFrame = createHeaderFrame(tr("Projects"), "Projects", tr("Blog"), "Blog", m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_projectsLabel, m_blogLabel);
+	QWidget * headerFrame = createHeaderFrame("Projects", tr("Projects"), "Blog", tr("Blog"), m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_projectsLabel, m_blogLabel);
 	frameLayout->addWidget(headerFrame);
 
 	m_blogListWidget = createBlogContentFrame("https://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png", "#802742");

@@ -183,14 +183,16 @@ int BaseCommand::totalChildCount(const QUndoCommand * command) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-AddDeleteItemCommand::AddDeleteItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QUndoCommand *parent)
+AddDeleteItemCommand::AddDeleteItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QUndoCommand *parent)
 	: BaseCommand(crossViewType, sketchWidget, parent),
 	m_moduleID(moduleID),
 	m_itemID(id),
 	m_viewGeometry(viewGeometry),
 	m_modelIndex(modelIndex),
 	m_dropOrigin(nullptr),
-	m_viewLayerPlacement(viewLayerPlacement)
+	m_viewLayerPlacement(viewLayerPlacement),
+	m_labelPos(labelPos),
+	m_labelOffset(labelOffset)
 {
 }
 
@@ -218,7 +220,7 @@ SketchWidget * AddDeleteItemCommand::dropOrigin() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 AddItemCommand::AddItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, bool updateInfoView, long modelIndex, QUndoCommand *parent)
-	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, parent),
+	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, NULL, NULL, parent),
 	m_updateInfoView(updateInfoView),
 	m_module(false),
 	m_restoreIndexesCommand(nullptr)
@@ -251,14 +253,17 @@ QString AddItemCommand::getParamString() const {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-DeleteItemCommand::DeleteItemCommand(SketchWidget* sketchWidget,BaseCommand::CrossViewType crossViewType,  QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QUndoCommand *parent)
-	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, parent)
+DeleteItemCommand::DeleteItemCommand(SketchWidget* sketchWidget,BaseCommand::CrossViewType crossViewType,  QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QUndoCommand *parent)
+	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, labelPos, labelOffset, parent)
 {
 }
 
 void DeleteItemCommand::undo()
 {
 	m_sketchWidget->addItem(m_moduleID, m_viewLayerPlacement, m_crossViewType, m_viewGeometry, m_itemID, m_modelIndex, this);
+	if(m_labelPos && m_labelOffset) {
+		m_sketchWidget->movePartLabel(m_itemID, *m_labelPos, *m_labelOffset);
+	}
 	BaseCommand::undo();
 }
 
@@ -1259,7 +1264,7 @@ void CleanUpWiresCommand::addTrace(SketchWidget * sketchWidget, Wire * wire)
 		              false, NULL));
 	}
 
-	addSubCommand(new DeleteItemCommand(sketchWidget, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, wire->viewLayerPlacement(), wire->getViewGeometry(), wire->id(), wire->modelPart()->modelIndex(), NULL));
+	addSubCommand(new DeleteItemCommand(sketchWidget, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, wire->viewLayerPlacement(), wire->getViewGeometry(), wire->id(), wire->modelPart()->modelIndex(), NULL, NULL, NULL));
 }
 
 bool CleanUpWiresCommand::hasTraces(SketchWidget * sketchWidget) {

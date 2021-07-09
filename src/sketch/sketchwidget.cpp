@@ -5187,7 +5187,10 @@ void SketchWidget::makeDeleteItemCommandFinalSlot(ItemBase * itemBase, bool fore
 
 	ModelPart * mp = itemBase->modelPart();
 	// single view because this is called for each view
-	new DeleteItemCommand(this, BaseCommand::SingleView, mp->moduleID(), itemBase->viewLayerPlacement(), itemBase->getViewGeometry(), itemBase->id(), mp->modelIndex(), parentCommand);
+	PartLabel * partLabel = itemBase->partLabel();
+	QPointF *labelPos = new QPointF(partLabel->pos());
+	QPointF *labelOffset = new QPointF(partLabel->getOffset());
+	new DeleteItemCommand(this, BaseCommand::SingleView, mp->moduleID(), itemBase->viewLayerPlacement(), itemBase->getViewGeometry(), itemBase->id(), mp->modelIndex(), labelPos, labelOffset, parentCommand);
 }
 
 void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString & newModuleID, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand)

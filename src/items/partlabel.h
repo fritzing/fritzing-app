@@ -56,6 +56,7 @@ public:
 	void saveInstance(QXmlStreamWriter & streamWriter);
 	void restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID);
 	void moveLabel(QPointF newPos, QPointF newOffset);
+	QPointF getOffset();
 	ItemBase * owner();
 	void rotateFlipLabel(double degrees, Qt::Orientations orientation);
 	QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value);
@@ -87,6 +88,7 @@ protected:
 protected:
 	QPointer<ItemBase> m_owner;
 	bool m_initialized = false;
+	bool m_initializedPos = false;
 	bool m_spaceBarWasPressed = false;
 	bool m_doDrag = false;
 	QPointF m_initialPosition;

@@ -156,8 +156,11 @@ void PartLabel::showLabel(bool showIt, ViewLayer * viewLayer) {
 		QPointF initial = (flipped)
 		                  ? m_owner->pos() + QPointF(-tbr.width(), -tbr.height())
 		                  : m_owner->pos() + QPointF(obr.width(), -tbr.height());
-		this->setPos(initial);
-		m_offset = initial - m_owner->pos();
+		if (!m_initializedPos) {
+			this->setPos(initial);
+			m_offset = initial - m_owner->pos();
+			m_initializedPos = true;
+		}
 		if (flipped) {
 			transformLabel(QTransform().scale(-1,1));
 		}
@@ -392,7 +395,13 @@ void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID
 void PartLabel::moveLabel(QPointF newPos, QPointF newOffset)
 {
 	this->setPos(newPos);
+	m_initializedPos = true;
 	m_offset = newOffset;
+}
+
+QPointF PartLabel::getOffset()
+{
+	return m_offset;
 }
 
 ItemBase * PartLabel::owner() {

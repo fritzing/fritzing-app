@@ -112,7 +112,7 @@ protected:
 class AddDeleteItemCommand : public BaseCommand
 {
 public:
-	AddDeleteItemCommand(SketchWidget * sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QUndoCommand *parent);
+	AddDeleteItemCommand(SketchWidget * sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QUndoCommand *parent);
 
 	long itemID() const;
 	void setDropOrigin(SketchWidget *);
@@ -128,6 +128,8 @@ protected:
 	long m_modelIndex;
 	SketchWidget * m_dropOrigin;
 	ViewLayer::ViewLayerPlacement m_viewLayerPlacement;
+	QPointF *m_labelPos;
+	QPointF *m_labelOffset;
 };
 
 /////////////////////////////////////////////
@@ -154,7 +156,7 @@ protected:
 class DeleteItemCommand : public AddDeleteItemCommand
 {
 public:
-	DeleteItemCommand(SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QUndoCommand *parent);
+	DeleteItemCommand(SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QUndoCommand *parent);
 	void undo();
 	void redo();
 

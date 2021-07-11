@@ -5366,14 +5366,14 @@ void SketchWidget::prepDeleteOtherProps(ItemBase * itemBase, long id, const QStr
 		QString buses = itemBase->prop("buses");
 		QString newBuses = propsMap.value("buses");
 		if (newBuses.isEmpty()) newBuses = buses;
-		if (!buses.isEmpty()) {
+		if (!newBuses.isEmpty()) {
 			new SetPropCommand(this, id, "buses", buses, newBuses, true, parentCommand);
 		}
 
 		QString layout = itemBase->prop("layout");
 		QString newLayout = propsMap.value("layout");
 		if (newLayout.isEmpty()) newLayout = layout;
-		if (!layout.isEmpty()) {
+		if (!newLayout.isEmpty()) {
 			new SetPropCommand(this, id, "layout", layout, newLayout, true, parentCommand);
 		}
 	}

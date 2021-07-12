@@ -227,7 +227,7 @@
        <widget class="FabUploadProgress" name="upload" native="true">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>110</x>
           <y>10</y>
           <width>521</width>
           <height>321</height>

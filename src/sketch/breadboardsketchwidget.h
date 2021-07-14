@@ -57,8 +57,13 @@ protected:
 	ViewLayer::ViewLayerID getLabelViewLayerID(ItemBase *);
 	double getTraceWidth();
 	const QString & traceColor(ViewLayer::ViewLayerPlacement);
+	bool canCreateWire(Wire * dragWire, ConnectorItem * from, ConnectorItem * to);
+	Wire * createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 
 	bool m_colorWiresByLength;
+
+	//Only applies to wires that are connected to one connector
+	static constexpr int WireMinLength = 6;
 };
 
 #endif

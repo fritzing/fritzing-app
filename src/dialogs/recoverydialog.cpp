@@ -95,9 +95,9 @@ RecoveryDialog::RecoveryDialog(QFileInfoList fileInfoList, QWidget *parent, Qt::
 	QLabel * label = new QLabel;
 	label->setWordWrap(true);
 	label->setText(tr("<p><b>Fritzing may have crashed, but some of the changes to the following files may be recovered.</b></p>"
-	                  "<p>The date and time each file was backed-up is displayed. "
-	                  "If the file was saved, that date and time is also listed for comparison.</p>"
-	                  "<p>The original files are still on your disk, if they were ever saved. "
+	                  "<p>The date and time each file was backed up are displayed. "
+	                  "If the file was saved, that date and time are also listed for comparison.</p>"
+	                  "<p>The original files are still on your disk if they were ever saved. "
 	                  "You can choose whether to overwrite the original file after you load its recovery file.</p>"
 	                  "<p><b>Select any files you want to recover from the list below.</b></p>"
 	                 ));

@@ -206,7 +206,7 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 	QString additional = tr("<b>Shipping is free wordlwide</b>.<br />");
 	additional += tr("Documents for local customs control are included.<br />");
 	additional += tr("Some countries might charge additional import taxes or checking fees.<br />");
-	additional += tr("For more information on pricing see <a href='https://fab.fritzing.org/pricing'>https://fab.fritzing.org/pricing</a>.");
+	additional += tr("For more pricing information, see <a href='https://fab.fritzing.org/pricing'>https://fab.fritzing.org/pricing</a>.");
 	label = new QLabel(additional);
 	label->setObjectName("quoteAdditional");
 	label->setOpenExternalLinks(true);

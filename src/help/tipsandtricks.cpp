@@ -89,7 +89,7 @@ void TipsAndTricks::initTipSets() {
 	ts->tips << tr("To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.");
 	ts->tips << tr("If you're having trouble selecting a part or a wire (segment), try selecting the part that's in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).");
 	ts->tips << tr("To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.");
-	ts->tips << tr("Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.");
+	ts->tips << tr("Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.");
 	TipSets.append(ts);
 
 	ts = new TipSet;
@@ -101,7 +101,7 @@ void TipsAndTricks::initTipSets() {
 
 	ts = new TipSet;
 	ts->heading = tr("rotation");
-	ts->tips << tr("To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.");
+	ts->tips << tr("To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.");
 	ts->tips << tr("To free-rotate a logo text or image item in PCB view hold down the Alt (Linux: meta) key and free-rotate as usual.");
 	TipSets.append(ts);
 

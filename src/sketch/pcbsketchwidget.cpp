@@ -285,7 +285,7 @@ void PCBSketchWidget::selectAllXTraces(bool autoroutable, const QString & cmdTex
 		ItemBase * board = findSelectedBoard(boardCount);
 		if (boardCount == 0  && autorouteTypePCB()) {
 			QMessageBox::critical(this, tr("Fritzing"),
-			                      tr("Your sketch does not have a board yet! Please add a PCB in order to use this selection operation."));
+			                      tr("Your sketch does not have a board yet! Please add a PCB to use this selection operation."));
 			return;
 		}
 		if (board == NULL) {
@@ -2263,7 +2263,7 @@ int PCBSketchWidget::selectAllItemType(ModelPart::ItemType itemType, const QStri
 	ItemBase * board = findSelectedBoard(boardCount);
 	if (boardCount == 0  && autorouteTypePCB()) {
 		QMessageBox::critical(this, tr("Fritzing"),
-		                      tr("Your sketch does not have a board yet!  Please add a PCB in order to use this selection operation."));
+		                      tr("Your sketch does not have a board yet!  Please add a PCB to use this selection operation."));
 		return 0;
 	}
 	if (board == NULL) {

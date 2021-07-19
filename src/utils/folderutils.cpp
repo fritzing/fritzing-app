@@ -756,7 +756,7 @@ void FolderUtils::createUserDataStoreFolders() {
 		FMessageBox::information(NULL, QCoreApplication::translate("FolderUtils", "Moving your custom parts"),
 		                         QCoreApplication::translate("FolderUtils", "<p>Your custom-made parts and bins are moved from the hidden "
 		                                 "app data folder to your fritzing documents folder at <br/><br/><em>%1</em><br/><br/>"
-		                                 "This way we hope to make it easier for you to find and edit them manually.</p>")
+		                                 "This way, we hope to make it easier for you to find and edit them manually.</p>")
 		                         .arg(documents.absolutePath()));
 
 		// copy these into the new locations

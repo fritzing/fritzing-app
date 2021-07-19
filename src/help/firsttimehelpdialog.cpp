@@ -105,7 +105,7 @@ void FirstTimeHelpDialog::init() {
 		                  );
 
 		QString pcbText = tr(
-		                      "The <b>PCB View</b> is where you layout the components will  on a physical PCB (Printed Circuit Board)."
+		                      "The <b>PCB View</b> is where you layout the components on a physical PCB (Printed Circuit Board)."
 		                      "<br/><br/>"
 		                      "PCBs can be made at home or in a small lab using DIY etching processes. "
 		                      "They also can be sent to professional PCB manufacturing services for more precise fabrication. "

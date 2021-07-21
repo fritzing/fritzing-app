@@ -560,17 +560,14 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 
 	double resMultiplier = 3;
 
-	QRectF source = prepareExport();
+	QRectF source = prepareExport(removeBackground);
 
 	QSize imgSize(source.width() * resMultiplier, source.height() * resMultiplier);
 	QImage image(imgSize,format);
 	image.setDotsPerMeterX(InchesPerMeter * GraphicsUtils::SVGDPI * resMultiplier);
 	image.setDotsPerMeterY(InchesPerMeter * GraphicsUtils::SVGDPI * resMultiplier);
 	QPainter painter;
-	QColor color;
 	if (removeBackground) {
-		color = m_currentGraphicsView->background();
-		m_currentGraphicsView->setBackground(QColor::fromRgb(255,255,255,255));
 		image.fill(QColor::fromRgb(255,255,255,255));
 	} else {
 		image.fill(m_currentGraphicsView->background());
@@ -581,7 +578,7 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	m_currentGraphicsView->scene()->render(&painter, target, source, Qt::KeepAspectRatio);
 	painter.end();
 
-	afterExport(removeBackground, color);
+	afterExport(removeBackground);
 
 	QImageWriter imageWriter(fileName);
 	if (imageWriter.supportsOption(QImageIOHandler::Description)) {
@@ -609,7 +606,7 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 	                   .arg(printer.width() / scale2)
 	                   .arg(printer.height() / scale2) );
 
-	QRectF source = prepareExport();
+	QRectF source = prepareExport(removeBackground);
 	DebugDialog::debug("items bounding rect", source);
 	DebugDialog::debug("scene items bounding rect", m_currentGraphicsView->scene()->itemsBoundingRect());
 
@@ -624,17 +621,9 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 
 	QPainter painter;
 	if (!painter.begin(&printer)) {
-		if (m_watermark) {
-			delete m_watermark;
-		}
+		afterExport(removeBackground);
 		QMessageBox::warning(this, tr("Fritzing"), tr("Cannot print to %1").arg(printer.docName()));
 		return;
-	}
-
-	QColor color;
-	if(removeBackground) {
-		color = m_currentGraphicsView->background();
-		m_currentGraphicsView->setBackground(QColor::fromRgb(255,255,255,255));
 	}
 
 	if (paginate) {
@@ -665,7 +654,7 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 		m_currentGraphicsView->scene()->render(&painter, target, source, Qt::KeepAspectRatio);
 	}
 
-	afterExport(removeBackground, color);
+	afterExport(removeBackground);
 
 	DebugDialog::debug(QString("source w:%1 h:%2 target w:%5 h:%6 pres:%3 screenres:%4")
 	                   .arg(source.width())
@@ -696,7 +685,7 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 
 }
 
-QRectF MainWindow::prepareExport()
+QRectF MainWindow::prepareExport(bool removeBackground)
 {
 	//Deselect all the items that are selected before creating the image
 	m_selectedItems = m_currentGraphicsView->scene()->selectedItems();
@@ -718,17 +707,23 @@ QRectF MainWindow::prepareExport()
 		m_watermark->setPos(source.right() - m_watermark->boundingRect().width(), source.bottom());
 		source.adjust(0, 0, 0, m_watermark->boundingRect().height());
 	}
+
+	if(removeBackground) {
+		m_bgColor = m_currentGraphicsView->background();
+		m_currentGraphicsView->setBackground(QColor::fromRgb(255,255,255,255));
+	}
+
 	return source;
 }
 
-void MainWindow::afterExport(bool removeBackground, QColor color)
+void MainWindow::afterExport(bool removeBackground)
 {
 	foreach(QGraphicsItem *item, m_selectedItems) {
 		item->setSelected(true);
 	}
 
 	if (removeBackground) {
-		m_currentGraphicsView->setBackground(color);
+		m_currentGraphicsView->setBackground(m_bgColor);
 	}
 
 	if (m_watermark) {

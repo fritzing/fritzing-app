@@ -491,8 +491,8 @@ protected:
 	void saveAsAuxAux(const QString & fileName);
 	void printAux(QPrinter &printer, bool removeBackground, bool paginate);
 	void exportAux(QString fileName, QImage::Format format, int quality, bool removeBackground);
-	QRectF prepareExport();
-	void afterExport(bool removeBackground, QColor color);
+	QRectF prepareExport(bool removeBackground);
+	void afterExport(bool removeBackground);
 	void notYetImplemented(QString action);
 	bool eventFilter(QObject *obj, QEvent *event);
 	void setActionsIcons(int index, QList<QAction *> &);
@@ -956,6 +956,7 @@ protected:
 	// exporting
 	QGraphicsItem * m_watermark;
 	QList<QGraphicsItem*> m_selectedItems;
+	QColor m_bgColor;
 
 public:
 	static int AutosaveTimeoutMinutes;

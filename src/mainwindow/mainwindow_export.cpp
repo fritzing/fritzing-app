@@ -562,10 +562,7 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 
 	QRectF source = prepareExport();
 
-	int width = source.width();
-	int height = source.height();
-
-	QSize imgSize(width * resMultiplier, height * resMultiplier);
+	QSize imgSize(source.width() * resMultiplier, source.height() * resMultiplier);
 	QImage image(imgSize,format);
 	image.setDotsPerMeterX(InchesPerMeter * GraphicsUtils::SVGDPI * resMultiplier);
 	image.setDotsPerMeterY(InchesPerMeter * GraphicsUtils::SVGDPI * resMultiplier);

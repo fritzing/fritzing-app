@@ -565,17 +565,6 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	int width = source.width();
 	int height = source.height();
 
-	/*
-	int width = m_currentGraphicsView->width();
-	if (m_currentGraphicsView->verticalScrollBar()->isVisible()) {
-		width -= m_currentGraphicsView->verticalScrollBar()->width();
-	}
-	int height = m_currentGraphicsView->height();
-	if (m_currentGraphicsView->horizontalScrollBar()->isVisible()) {
-		height -= m_currentGraphicsView->horizontalScrollBar()->height();
-	}
-	*/
-
 	QSize imgSize(width * resMultiplier, height * resMultiplier);
 	QImage image(imgSize,format);
 	image.setDotsPerMeterX(InchesPerMeter * GraphicsUtils::SVGDPI * resMultiplier);
@@ -591,12 +580,10 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	}
 
 	painter.begin(&image);
-	//m_currentGraphicsView->render(&painter);
 	QRectF target(0, 0, imgSize.width(), imgSize.height());
 	m_currentGraphicsView->scene()->render(&painter, target, source, Qt::KeepAspectRatio);
 	painter.end();
 
-	//image.save(FolderUtils::getUserDataStorePath("") + "/export.png");
 	afterExport(removeBackground, color);
 
 	QImageWriter imageWriter(fileName);
@@ -624,11 +611,6 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 	                   .arg(printer.pageLayout().fullRectPixels(printer.resolution()).height())
 	                   .arg(printer.width() / scale2)
 	                   .arg(printer.height() / scale2) );
-
-	// oSceneStart oSceneEnd: shows only what's visible in the viewport, not the entire view
-	//QPointF oSceneStart = m_currentGraphicsView->mapToScene(QPoint(0,0));
-	//QPointF oSceneEnd = m_currentGraphicsView->mapToScene(QPoint(m_currentGraphicsView->viewport()->width(), m_currentGraphicsView->viewport()->height()));
-	//QRectF source(oSceneStart, oSceneEnd);
 
 	QRectF source = prepareExport();
 	DebugDialog::debug("items bounding rect", source);

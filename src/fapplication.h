@@ -169,8 +169,6 @@ protected:
 	void runGerberServiceAux();
 	void runSvgService();
 	void runSvgServiceAux();
-	void runPanelizerService();
-	void runInscriptionService();
 	void runExampleService();
 	void runExampleService(QDir &);
 	QList<class MainWindow *> recoverBackups();
@@ -188,9 +186,7 @@ protected:
 
 
 	enum ServiceType {
-		PanelizerService = 1,
-		InscriptionService,
-		GerberService,
+		GerberService = 1,
 		GedaService,
 		KicadSchematicService,
 		KicadFootprintService,
@@ -226,7 +222,6 @@ protected:
 	QString m_portRootFolder;
 	QString m_panelFilename;
 	QHash<QString, struct LockedFile *> m_lockedFiles;
-	bool m_panelizerCustom = false;
 	int m_portNumber = 0;
 	FServer * m_fServer = nullptr;
 	QString m_buildType;

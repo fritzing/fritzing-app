@@ -57,7 +57,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "dialogs/recoverydialog.h"
 #include "processeventblocker.h"
 #include "autoroute/checker.h"
-#include "autoroute/panelizer.h"
 #include "sketch/sketchwidget.h"
 #include "sketch/pcbsketchwidget.h"
 #include "help/firsttimehelpdialog.h"
@@ -495,33 +494,6 @@ int FApplication::init() {
 			toRemove << i << i + 1;
 		}
 
-		if ((m_arguments[i].compare("-p", Qt::CaseInsensitive) == 0) ||
-		        (m_arguments[i].compare("-panel", Qt::CaseInsensitive) == 0)||
-		        (m_arguments[i].compare("--panel", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = PanelizerService;
-			m_panelFilename = m_arguments[i + 1];
-			m_outputFolder = " ";					// otherwise program will bail out
-			m_panelizerCustom = false;
-			toRemove << i << i + 1;
-		}
-
-		if ((m_arguments[i].compare("-pc", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = PanelizerService;
-			m_panelFilename = m_arguments[i + 1];
-			m_outputFolder = " ";					// otherwise program will bail out
-			m_panelizerCustom = true;
-			toRemove << i << i + 1;
-		}
-
-		if ((m_arguments[i].compare("-i", Qt::CaseInsensitive) == 0) ||
-		        (m_arguments[i].compare("-inscription", Qt::CaseInsensitive) == 0)||
-		        (m_arguments[i].compare("--inscription", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = InscriptionService;
-			m_panelFilename = m_arguments[i + 1];
-			m_outputFolder = " ";					// otherwise program will bail out
-			toRemove << i << i + 1;
-		}
-
 		if (m_arguments[i].compare("-ep", Qt::CaseInsensitive) == 0) {
 			m_externalProcessPath = m_arguments[i + 1];
 			toRemove << i << i + 1;
@@ -860,14 +832,6 @@ int FApplication::serviceStartup() {
 
 	case SvgService:
 		runSvgService();
-		return 0;
-
-	case PanelizerService:
-		runPanelizerService();
-		return 0;
-
-	case InscriptionService:
-		runInscriptionService();
 		return 0;
 
 	case ExampleService:
@@ -1791,28 +1755,6 @@ void FApplication::gotOrderFab(QNetworkReply * networkReply) {
 	}
 	networkReply->manager()->deleteLater();
 	networkReply->deleteLater();
-}
-
-void FApplication::runPanelizerService()
-{
-	m_started = true;
-	Panelizer::panelize(this, m_panelFilename, m_panelizerCustom);
-}
-
-void FApplication::runInscriptionService()
-{
-	m_started = true;
-	bool drc = false;
-	bool noMessages = false;
-	foreach (QString arg, m_arguments) {
-		if (arg.compare("-drc", Qt::CaseInsensitive) == 0) {
-			drc = true;
-		}
-		if (arg.compare("-nm", Qt::CaseInsensitive) == 0) {
-			noMessages = true;
-		}
-	}
-	Panelizer::inscribe(this, m_panelFilename, drc, noMessages);
 }
 
 QList<MainWindow *> FApplication::orderedTopLevelMainWindows() {

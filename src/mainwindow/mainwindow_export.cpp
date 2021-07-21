@@ -315,9 +315,10 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 				double trueHeight = boardImageSize.height() / GraphicsUtils::SVGDPI;
 				QRectF target(0, 0, trueWidth * res, trueHeight * res);
 
-				QSizeF psize((target.width() + printer.paperRect().width() - printer.width()) / res,
-				             (target.height() + printer.paperRect().height() - printer.height()) / res);
-				printer.setPaperSize(psize, QPrinter::Inch);
+				QSizeF psize((target.width() + printer.pageLayout().fullRectPixels(printer.resolution()).width() - printer.width()) / res,
+				             (target.height() + printer.pageLayout().fullRectPixels(printer.resolution()).height() - printer.height()) / res);
+				QPageSize pageSize(psize, QPageSize::Inch);
+				printer.setPageSize(pageSize);
 
 				QPainter painter;
 				if (painter.begin(&printer))
@@ -650,8 +651,8 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 	                   .arg(printer.height())
 	                   .arg(printer.pageRect().width())
 	                   .arg(printer.pageRect().height())
-	                   .arg(printer.paperRect().width())
-	                   .arg(printer.paperRect().height())
+	                   .arg(printer.pageLayout().fullRectPixels(printer.resolution()).width())
+	                   .arg(printer.pageLayout().fullRectPixels(printer.resolution()).height())
 	                   .arg(printer.width() / scale2)
 	                   .arg(printer.height() / scale2) );
 
@@ -679,9 +680,10 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 	QRectF target(0, 0, source.width() * scale2, source.height() * scale2);
 
 	if (!paginate) {
-		QSizeF psize((target.width() + printer.paperRect().width() - printer.width()) / res,
-		             (target.height() + printer.paperRect().height() - printer.height()) / res);
-		printer.setPaperSize(psize, QPrinter::Inch);
+		QSizeF psize((target.width() + printer.pageLayout().fullRectPixels(printer.resolution()).width() - printer.width()) / res,
+		             (target.height() + printer.pageLayout().fullRectPixels(printer.resolution()).height() - printer.height()) / res);
+		QPageSize pageSize(psize, QPageSize::Inch);
+		printer.setPageSize(pageSize);
 	}
 
 	QPainter painter;

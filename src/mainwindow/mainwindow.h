@@ -491,6 +491,8 @@ protected:
 	void saveAsAuxAux(const QString & fileName);
 	void printAux(QPrinter &printer, bool removeBackground, bool paginate);
 	void exportAux(QString fileName, QImage::Format format, int quality, bool removeBackground);
+	QRectF prepareExport();
+	void afterExport(bool removeBackground, QColor color);
 	void notYetImplemented(QString action);
 	bool eventFilter(QObject *obj, QEvent *event);
 	void setActionsIcons(int index, QList<QAction *> &);
@@ -950,6 +952,10 @@ protected:
 	bool m_obsoleteSMDOrientation = false;
 	QWidget * m_orderFabButton = nullptr;
 	int m_fireQuoteDelay = 0;
+
+	// exporting
+	QGraphicsItem * m_watermark;
+	QList<QGraphicsItem*> m_selectedItems;
 
 public:
 	static int AutosaveTimeoutMinutes;

@@ -558,28 +558,9 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 {
 	if (m_currentGraphicsView == NULL) return;
 
-	//Deselect all the items that are selected before creating the image
-	QList<QGraphicsItem*> selItems = m_currentGraphicsView->scene()->selectedItems();
-	foreach(QGraphicsItem *item, selItems) {
-		item->setSelected(false);
-	}
-
 	double resMultiplier = 3;
 
-	QRectF itemsBoundingRect;
-	foreach(QGraphicsItem *item,  m_currentGraphicsView->scene()->items()) {
-		if (!item->isVisible()) continue;
-
-		item->update();
-		itemsBoundingRect |= item->sceneBoundingRect();
-	}
-
-	QRectF source = itemsBoundingRect;  // m_currentGraphicsView->scene()->itemsBoundingRect();
-	QGraphicsItem * watermark = m_currentGraphicsView->addWatermark(":resources/images/watermark_fritzing_outline.svg");
-	if (watermark) {
-		watermark->setPos(source.right() - watermark->boundingRect().width(), source.bottom());
-		source.adjust(0, 0, 0, watermark->boundingRect().height());
-	}
+	QRectF source = prepareExport();
 
 	int width = source.width();
 	int height = source.height();
@@ -616,19 +597,7 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	painter.end();
 
 	//image.save(FolderUtils::getUserDataStorePath("") + "/export.png");
-
-	//Select the items that were selected
-	foreach(QGraphicsItem *item, selItems) {
-		item->setSelected(true);
-	}
-
-	if (removeBackground) {
-		m_currentGraphicsView->setBackground(color);
-	}
-
-	if (watermark) {
-		delete watermark;
-	}
+	afterExport(removeBackground, color);
 
 	QImageWriter imageWriter(fileName);
 	if (imageWriter.supportsOption(QImageIOHandler::Description)) {
@@ -661,21 +630,9 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 	//QPointF oSceneEnd = m_currentGraphicsView->mapToScene(QPoint(m_currentGraphicsView->viewport()->width(), m_currentGraphicsView->viewport()->height()));
 	//QRectF source(oSceneStart, oSceneEnd);
 
-	QRectF itemsBoundingRect;
-	foreach(QGraphicsItem *item,  m_currentGraphicsView->scene()->items()) {
-		if (!item->isVisible()) continue;
-
-		itemsBoundingRect |= item->sceneBoundingRect();
-	}
-
-	QRectF source = itemsBoundingRect;  // m_currentGraphicsView->scene()->itemsBoundingRect();
+	QRectF source = prepareExport();
 	DebugDialog::debug("items bounding rect", source);
 	DebugDialog::debug("scene items bounding rect", m_currentGraphicsView->scene()->itemsBoundingRect());
-	QGraphicsItem * watermark = m_currentGraphicsView->addWatermark(":resources/images/watermark_fritzing_outline.svg");
-	if (watermark) {
-		watermark->setPos(source.right() - watermark->boundingRect().width(), source.bottom());
-		source.adjust(0, 0, 0, watermark->boundingRect().height());
-	}
 
 	QRectF target(0, 0, source.width() * scale2, source.height() * scale2);
 
@@ -688,8 +645,8 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 
 	QPainter painter;
 	if (!painter.begin(&printer)) {
-		if (watermark) {
-			delete watermark;
+		if (m_watermark) {
+			delete m_watermark;
 		}
 		QMessageBox::warning(this, tr("Fritzing"), tr("Cannot print to %1").arg(printer.docName()));
 		return;
@@ -699,11 +656,6 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 	if(removeBackground) {
 		color = m_currentGraphicsView->background();
 		m_currentGraphicsView->setBackground(QColor::fromRgb(255,255,255,255));
-	}
-
-	QList<QGraphicsItem*> selItems = m_currentGraphicsView->scene()->selectedItems();
-	foreach(QGraphicsItem *item, selItems) {
-		item->setSelected(false);
 	}
 
 	if (paginate) {
@@ -734,17 +686,7 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 		m_currentGraphicsView->scene()->render(&painter, target, source, Qt::KeepAspectRatio);
 	}
 
-	foreach(QGraphicsItem *item, selItems) {
-		item->setSelected(true);
-	}
-
-	if(removeBackground) {
-		m_currentGraphicsView->setBackground(color);
-	}
-
-	if (watermark) {
-		delete watermark;
-	}
+	afterExport(removeBackground, color);
 
 	DebugDialog::debug(QString("source w:%1 h:%2 target w:%5 h:%6 pres:%3 screenres:%4")
 	                   .arg(source.width())
@@ -774,6 +716,47 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 	//#endif
 
 }
+
+QRectF MainWindow::prepareExport()
+{
+	//Deselect all the items that are selected before creating the image
+	m_selectedItems = m_currentGraphicsView->scene()->selectedItems();
+	foreach(QGraphicsItem *item, m_selectedItems) {
+		item->setSelected(false);
+	}
+
+	QRectF itemsBoundingRect;
+	foreach(QGraphicsItem *item,  m_currentGraphicsView->scene()->items()) {
+		if (!item->isVisible()) continue;
+
+		item->update();
+		itemsBoundingRect |= item->sceneBoundingRect();
+	}
+
+	QRectF source = itemsBoundingRect;
+	m_watermark = m_currentGraphicsView->addWatermark(":resources/images/watermark_fritzing_outline.svg");
+	if (m_watermark) {
+		m_watermark->setPos(source.right() - m_watermark->boundingRect().width(), source.bottom());
+		source.adjust(0, 0, 0, m_watermark->boundingRect().height());
+	}
+	return source;
+}
+
+void MainWindow::afterExport(bool removeBackground, QColor color)
+{
+	foreach(QGraphicsItem *item, m_selectedItems) {
+		item->setSelected(true);
+	}
+
+	if (removeBackground) {
+		m_currentGraphicsView->setBackground(color);
+	}
+
+	if (m_watermark) {
+		delete m_watermark;
+	}
+}
+
 
 bool MainWindow::saveAsAux(const QString & fileName) {
 	QFile file(fileName);

@@ -566,13 +566,13 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	QImage image(imgSize,format);
 	image.setDotsPerMeterX(InchesPerMeter * GraphicsUtils::SVGDPI * resMultiplier);
 	image.setDotsPerMeterY(InchesPerMeter * GraphicsUtils::SVGDPI * resMultiplier);
-	QPainter painter;
 	if (removeBackground) {
 		image.fill(QColor::fromRgb(255,255,255,255));
 	} else {
 		image.fill(m_currentGraphicsView->background());
 	}
 
+	QPainter painter;
 	painter.begin(&image);
 	QRectF target(0, 0, imgSize.width(), imgSize.height());
 	m_currentGraphicsView->scene()->render(&painter, target, source, Qt::KeepAspectRatio);

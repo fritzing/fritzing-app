@@ -191,7 +191,6 @@ AboutBox::AboutBox(QWidget *parent)
 
 	// auto scroll timer initialization
 	m_restartAtTop = false;
-	m_startTime = QTime::currentTime();
 	m_autoScrollTimer = new QTimer(this);
 	m_autoScrollTimer->setTimerType(Qt::PreciseTimer);
 

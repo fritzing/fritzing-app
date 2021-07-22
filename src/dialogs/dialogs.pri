@@ -16,6 +16,7 @@
 INCLUDEPATH += $$PWD
 
 HEADERS += src/dialogs/prefsdialog.h \
+        $$PWD/exportparametersdialog.h \
         src/dialogs/pinlabeldialog.h \
         src/dialogs/groundfillseeddialog.h \
         src/dialogs/quotedialog.h \
@@ -27,6 +28,7 @@ HEADERS += src/dialogs/prefsdialog.h \
         src/dialogs/networkhelper.h
 
 SOURCES += src/dialogs/prefsdialog.cpp \
+        $$PWD/exportparametersdialog.cpp \
         src/dialogs/pinlabeldialog.cpp \
         src/dialogs/groundfillseeddialog.cpp \
         src/dialogs/quotedialog.cpp \
@@ -37,4 +39,5 @@ SOURCES += src/dialogs/prefsdialog.cpp \
         src/dialogs/fabuploadprogress.cpp \
         src/dialogs/networkhelper.cpp
 
-FORMS += src/dialogs/fabuploaddialog.ui
+FORMS += src/dialogs/fabuploaddialog.ui \
+    $$PWD/exportparametersdialog.ui

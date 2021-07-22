@@ -55,6 +55,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../version/version.h"
 #include "../help/tipsandtricks.h"
 #include "../dialogs/setcolordialog.h"
+#include "../dialogs/exportparametersdialog.h"
 #include "../utils/folderutils.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
@@ -558,14 +559,25 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 {
 	if (m_currentGraphicsView == NULL) return;
 
-	double resMultiplier = 3;
+        int dpi = 3 * GraphicsUtils::SVGDPI;
+
+        ExportParametersDialog parameters(dpi, this);
+        parameters.setValue(dpi);
+        int parametersResult = parameters.exec();
+        if ( parametersResult == QDialog::Rejected )
+        {
+                return;
+        }
+        dpi = parameters.getDpi();
 
 	QRectF source = prepareExport(removeBackground);
 
+	double resMultiplier = dpi / GraphicsUtils::SVGDPI;
+
 	QSize imgSize(source.width() * resMultiplier, source.height() * resMultiplier);
-	QImage image(imgSize,format);
-	image.setDotsPerMeterX(InchesPerMeter * GraphicsUtils::SVGDPI * resMultiplier);
-	image.setDotsPerMeterY(InchesPerMeter * GraphicsUtils::SVGDPI * resMultiplier);
+	QImage image(imgSize, format);
+	image.setDotsPerMeterX(InchesPerMeter * dpi);
+	image.setDotsPerMeterY(InchesPerMeter * dpi);
 	if (removeBackground) {
 		image.fill(QColor::fromRgb(255,255,255,255));
 	} else {

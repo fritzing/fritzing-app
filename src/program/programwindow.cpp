@@ -319,6 +319,11 @@ void ProgramWindow::showMenus(bool show) {
 		m_copyAction->setEnabled(show);
 		m_pasteAction->setEnabled(show);
 		m_selectAction->setEnabled(show);
+	if (show) {
+		m_editMenu->setTitle(tr("&Edit"));
+	} else {
+		m_editMenu->setTitle(tr("Edit"));
+	}
 	}
 	if (m_programMenu) {
 		m_programMenu->menuAction()->setVisible(show);
@@ -327,6 +332,11 @@ void ProgramWindow::showMenus(bool show) {
 	if (m_viewMenu) {
 		m_viewMenu->menuAction()->setVisible(show);
 		m_viewMenu->setEnabled(show);
+	if (show) {
+		m_viewMenu->setTitle(tr("&View"));
+	} else {
+		m_viewMenu->setTitle(tr("View"));
+	}
 	}
 }
 

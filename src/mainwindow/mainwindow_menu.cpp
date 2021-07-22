@@ -2673,6 +2673,11 @@ void MainWindow::hideShowProgramMenu() {
 	if (m_viewMenu) {
 		m_viewMenu->menuAction()->setVisible(show);
 		m_viewMenu->setEnabled(show);
+	if (show) {
+		m_viewMenu->setTitle(tr("&View"));
+	} else {
+		m_viewMenu->setTitle(tr("View"));
+	}
 	}
 	if (m_partMenu) {
 		m_partMenu->menuAction()->setVisible(show);
@@ -2686,6 +2691,11 @@ void MainWindow::hideShowProgramMenu() {
 		m_selectAllAct->setEnabled(show);
 		m_undoAct->setEnabled(show);
 		m_redoAct->setEnabled(show);
+	if (show) {
+		m_editMenu->setTitle(tr("&Edit"));
+	} else {
+		m_editMenu->setTitle(tr("Edit"));
+	}
 	}
 	if (m_programView) m_programView->showMenus(!show);
 }

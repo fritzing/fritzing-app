@@ -492,6 +492,7 @@ protected:
 	void printAux(QPrinter &printer, bool removeBackground, bool paginate);
 	void exportAux(QString fileName, QImage::Format format, int quality, bool removeBackground);
 	QRectF prepareExport(bool removeBackground);
+	void transformPainter(QPainter &painter, qreal width);
 	void afterExport(bool removeBackground);
 	void notYetImplemented(QString action);
 	bool eventFilter(QObject *obj, QEvent *event);

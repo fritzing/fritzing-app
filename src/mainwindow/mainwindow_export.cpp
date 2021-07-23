@@ -587,6 +587,7 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	QPainter painter;
 	painter.begin(&image);
 	QRectF target(0, 0, imgSize.width(), imgSize.height());
+	transformPainter(painter, target.width());
 	m_currentGraphicsView->scene()->render(&painter, target, source, Qt::KeepAspectRatio);
 	painter.end();
 
@@ -655,6 +656,7 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 				               qMin(xSourcePage, (int) source.width() - (ix * xSourcePage)),
 				               qMin(ySourcePage, (int) source.height() - (iy * ySourcePage)));
 				QRectF pTarget(0, 0, pSource.width() * scale2, pSource.height() * scale2);
+				transformPainter(painter, pTarget.width());
 				m_currentGraphicsView->scene()->render(&painter, pTarget, pSource, Qt::KeepAspectRatio);
 				if (++page < lastPage) {
 					printer.newPage();
@@ -663,6 +665,7 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 		}
 	}
 	else {
+		transformPainter(painter, target.width());
 		m_currentGraphicsView->scene()->render(&painter, target, source, Qt::KeepAspectRatio);
 	}
 
@@ -697,6 +700,17 @@ void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginat
 
 }
 
+void MainWindow::transformPainter(QPainter &painter, qreal width)
+{
+	if(m_currentGraphicsView->viewFromBelow()) {
+	// m_currentGraphicsView->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
+		QTransform transform;
+		transform.translate(width, 0.0);
+		transform.scale(-1, 1);
+		painter.setTransform(transform, true);
+	}
+}
+
 QRectF MainWindow::prepareExport(bool removeBackground)
 {
 	//Deselect all the items that are selected before creating the image
@@ -717,6 +731,13 @@ QRectF MainWindow::prepareExport(bool removeBackground)
 	m_watermark = m_currentGraphicsView->addWatermark(":resources/images/watermark_fritzing_outline.svg");
 	if (m_watermark) {
 		m_watermark->setPos(source.right() - m_watermark->boundingRect().width(), source.bottom());
+		if(m_currentGraphicsView->viewFromBelow()) {
+			QTransform transformScale;
+			transformScale.scale(-1, 1);
+			m_watermark->setTransformOriginPoint((m_watermark->boundingRect().left() + m_watermark->boundingRect().right()) / 2, m_watermark->y());
+			m_watermark->setTransform(transformScale, true);
+			m_watermark->setPos(source.left() + m_watermark->boundingRect().width(), source.bottom());
+		}
 		source.adjust(0, 0, 0, m_watermark->boundingRect().height());
 	}
 

@@ -495,7 +495,7 @@ protected:
 	QGraphicsItem * getClickedItem(QList<QGraphicsItem *> & items);
 	void cleanupRatsnests(QList< QPointer<ConnectorItem> > & connectorItems, bool connect);
 	void rotateWire(Wire *, QTransform & rotation, QPointF center, bool undoOnly, QUndoCommand * parentCommand);
-	QString renderToSVG(RenderThing &, const LayerList &);
+	QList<QGraphicsItem *> getVisibleItemsAndLabels(RenderThing & renderThing, const LayerList & layers);
 	QString renderToSVG(RenderThing &, QList<QGraphicsItem *> & itemsAndLabels);
 	QList<ItemBase *> collectSuperSubs(ItemBase *);
 	void squashShapes(QPointF scenePos);

@@ -7200,13 +7200,12 @@ void SketchWidget::resizeNote(long itemID, const QSizeF & size)
 QString SketchWidget::renderToSVG(RenderThing & renderThing, QGraphicsItem * board, const LayerList & layers)
 {
 	renderThing.setBoard(board);
-	return renderToSVG(renderThing, layers);
+	QList<QGraphicsItem *> itemsAndLabels = getVisibleItemsAndLabels(renderThing, layers);
+	return renderToSVG(renderThing, itemsAndLabels);
 }
 
-
-QString SketchWidget::renderToSVG(RenderThing & renderThing, const LayerList & layers)
+QList<QGraphicsItem *> SketchWidget::getVisibleItemsAndLabels(RenderThing & renderThing, const LayerList & layers)
 {
-
 	QList<QGraphicsItem *> itemsAndLabels;
 	QRectF itemsBoundingRect;
 	QList<QGraphicsItem *> items = renderThing.getItems(scene());
@@ -7237,7 +7236,7 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, const LayerList & l
 	}
 
 	renderThing.itemsBoundingRect = itemsBoundingRect;
-	return renderToSVG(renderThing, itemsAndLabels);
+	return itemsAndLabels;
 }
 
 QString translateSVG(QString & svg, QPointF loc, double dpi, double printerScale) {

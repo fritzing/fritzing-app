@@ -4,14 +4,6 @@
 <context>
     <name>AboutBox</name>
     <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="vanished">Versiunea %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
-        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 pentru cod și CreativeCommons:BY-SA pentru restul</translation>
@@ -55,14 +47,6 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
-        <translation type="vanished">Bryant Mairs, Uleshka Asher, și Daniel Tzschentke. </translation>
-    </message>
-    <message>
-        <source>Special thanks goes out to: </source>
-        <translation type="vanished">Mulțumiri speciale pentru: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -253,22 +237,6 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>și pentru toate achizițiile a Kitului de Pornire Fritzing sau a unei PCB de la Fabrica Fritzing.</translation>
-    </message>
-    <message>
-        <source>Special thanks goes out as well to all the students </source>
-        <translation type="vanished">Mulțumiri speciale adresate tuturor studenților </translation>
-    </message>
-    <message>
-        <source>and alpha testers who were brave enough to give </source>
-        <translation type="vanished">și testerilor care au avut curajul să testeze </translation>
-    </message>
-    <message>
-        <source>Fritzing a test spin. </source>
-        <translation type="vanished">Fritzing. </translation>
-    </message>
-    <message>
-        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
-        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
 </context>
 <context>
@@ -1217,6 +1185,25 @@ Se utilizează fișierul?</translation>
     </message>
 </context>
 <context>
+    <name>ExportParametersDialog</name>
+    <message>
+        <location filename="../src/dialogs/exportparametersdialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dialogs/exportparametersdialog.ui" line="65"/>
+        <location filename="../src/dialogs/exportparametersdialog.cpp" line="13"/>
+        <source>Export parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dialogs/exportparametersdialog.ui" line="131"/>
+        <source>DPI</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FApplication</name>
     <message>
         <location filename="../src/fapplication.cpp" line="1599"/>
@@ -1269,17 +1256,22 @@ Se utilizează fișierul?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2018"/>
+        <location filename="../src/fapplication.cpp" line="2012"/>
+        <source>This option is usefull if you modify the parts database on your own. If you want to recover from an error, you may be better off downloading the latest Fritzing release.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fapplication.cpp" line="2020"/>
         <source>Regenerate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2019"/>
+        <location filename="../src/fapplication.cpp" line="2021"/>
         <source>Cancel</source>
         <translation type="unfinished">Anulare</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2024"/>
+        <location filename="../src/fapplication.cpp" line="2026"/>
         <source>Regenerating parts database...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1367,8 +1359,8 @@ Se utilizează fișierul?</translation>
     </message>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="107"/>
-        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Vizualizare PCB&lt;/b&gt; este unde amplasați componentele pe o PCB fizică (Placă Circuit Imprimat-PCB).&lt;br/&gt;&lt;br/&gt;PCB-urile pot fi făcute acasă sau într-un mic laborator utilizând procese de gravare DIY. De asemenea pot fi trimise unui serviciu profesional de fabricare PCB pentru o fabricare mai precisă. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Primul lucru de care aveți nevoie este o placă pe care să plasați componentele. Ar trebui să fie deja una în schița dumneavoastră, dar dacă nu este, trageți pictograma plăcii din cutia componentelor. Pictograma se aseamănă cu această imagine din dreapta: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt; Pentru amplasarea PCB, aranjați toate componentele astfel încât acestea să se potrivească bine pe placă. Apoi încercați să le deplasați împrejur pentru micșorarea lungimii și confuziei conectorilor. Puteți deasemenea să redimensionați plăcile dreptunghiulare. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Odată ce componentele sunt sortate, le conectați cu trasee de cupru. Puteți trasa un traseu de la conexiunile individuale sau utilizați autotrasarea pentru a le genera. Butonul de autotrasare este în partea de sus a ferestrei. Butonul se potrivește cu imaginea din dreapta:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resurse/imagini/miniaturi/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1380,7 +1372,7 @@ Se utilizează fișierul?</translation>
     </message>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="763"/>
-        <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
+        <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2000,7 +1992,7 @@ Este deasemeni posibil să alegeți un conector ca sămânță umplere împămâ
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="946"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2717"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2727"/>
         <source>Autoroute</source>
         <translation>Autotrasare</translation>
     </message>
@@ -2033,7 +2025,7 @@ notificare</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1120"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="153"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="154"/>
         <source>Ready</source>
         <translation>Gata</translation>
     </message>
@@ -2127,13 +2119,13 @@ notificare</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1864"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="872"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="864"/>
         <source>Specify a file name</source>
         <translation>Specificați un nume fișier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2788"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="872"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="864"/>
         <source>Fritzing (*%1)</source>
         <translation>Fritzing (*%1)</translation>
     </message>
@@ -2153,40 +2145,40 @@ notificare</translation>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1834"/>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1899"/>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2476"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="173"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="178"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="639"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="692"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="779"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="953"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1059"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1278"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1653"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1658"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="174"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="179"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="603"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="638"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="771"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="945"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1051"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1270"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1645"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1650"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="227"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="238"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="299"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2457"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2640"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2950"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2955"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3238"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3243"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3272"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3277"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3838"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3981"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4205"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4211"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4345"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4350"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4362"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4367"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2960"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2965"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3248"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3253"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3282"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3287"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3848"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3991"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4215"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4221"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4355"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4360"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4372"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4377"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="954"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="946"/>
         <source>Unable to export %1 as shareable</source>
         <translation>Nu se poate exporta %1 ca partajabil</translation>
     </message>
@@ -2291,7 +2283,7 @@ notificare</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2297"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3919"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3929"/>
         <source>Sorry!</source>
         <translation>Regretăm!</translation>
     </message>
@@ -2398,101 +2390,97 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
         <translation>Bine ați venit</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1654"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1646"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to export to Gerber.</source>
         <translation>Schița dumneavoastră nu are încă o placă!  Adăugați un PCB în scopul de a o exporta la Gerber.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="208"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1663"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="209"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1655"/>
         <source>Choose a folder for exporting</source>
         <translation>Alegeți un dosar pentru export</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="128"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="129"/>
         <source>PDF (*.pdf)</source>
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
-        <source>PostScript (*.ps)</source>
-        <translation type="vanished">PostScript (*.ps)</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="129"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
         <source>PNG Image (*.png)</source>
         <translation>PNG Imagine (*.png)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="131"/>
         <source>JPEG Image (*.jpg)</source>
         <translation>JPEG Imagine (*.jpg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="131"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="132"/>
         <source>SVG Image (*.svg)</source>
         <translation>SVG Imagine (*.svg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="151"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="152"/>
         <source>Printing...</source>
         <translation>Se tipărește...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="188"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="189"/>
         <source>All traces have not yet been routed.</source>
         <translation>Toate traseele nu au fost încă trasate.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="189"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="190"/>
         <source>Do you want to proceed anyway?</source>
         <translation>Doriți să se continue oricum?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="191"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="192"/>
         <source>Proceed</source>
         <translation>Continuă</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="192"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4020"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="193"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4030"/>
         <source>Cancel</source>
         <translation>Anulare</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="340"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="544"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="342"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="546"/>
         <source>Sketch exported</source>
         <translation>Schița s-a exportat</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="523"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="525"/>
         <source>Export...</source>
         <translation>Export...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="542"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="544"/>
         <source>Exporting...</source>
         <translation>Se exportă...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="639"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="603"/>
         <source>Unable to save %1</source>
         <translation>Nu se poate salva %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="692"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="638"/>
         <source>Cannot print to %1</source>
         <translation>Nu se poate tipări la %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="780"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="772"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Nu se poate scrie fișierul %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="795"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="787"/>
         <source>Saved &apos;%1&apos;</source>
         <translation>Salvat &apos;%1&apos;</translation>
     </message>
@@ -2518,10 +2506,6 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2640"/>
         <source>File &apos;%1&apos; not found</source>
         <translation>Fișierul &apos;%1&apos; nu a fost găsit</translation>
-    </message>
-    <message>
-        <source>directly loading parts</source>
-        <translation type="vanished">încărcare directă componente</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
@@ -2569,206 +2553,198 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
         <translation>Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="132"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="133"/>
         <source>BoM Text File (*.html)</source>
         <translation>Fișier text BoM (*.html)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="174"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="175"/>
         <source>Your sketch does not have a board yet! Please add a PCB in order to export etchable.</source>
         <translation>Schița nu are încă o placă! Adăugați un PCB pentru a o exporta gravabil.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="179"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="180"/>
         <source>Etchable export can only handle one board at a time--please select the board you want to export.</source>
         <translation>Exportul gravabil poate manipula numai o placă odată--selectați placa pe care doriți să o exportați.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="966"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="958"/>
         <source>&amp;Save</source>
         <translation>&amp;Salvează</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="967"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="959"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="968"/>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="973"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="960"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="965"/>
         <source>Save the current sketch</source>
         <translation>Salvează schița curentă</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="971"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="963"/>
         <source>&amp;Save As...</source>
         <translation>&amp;Salvează ca...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="972"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="964"/>
         <source>Shift+Ctrl+S</source>
         <translation>Shift+Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="976"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="968"/>
         <source>Share online...</source>
         <translation>Partajare online...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="977"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="969"/>
         <source>Post a project to the Fritzing website</source>
         <translation>Postează un proiect pe site-ul web Fritzing</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="980"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="972"/>
         <source>JPG...</source>
         <translation>JPG...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="982"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="974"/>
         <source>Export the visible area of the current sketch as a JPG image</source>
         <translation>Exportă zona vizibilă a schiței curente ca o imagine JPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="985"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="977"/>
         <source>PNG...</source>
         <translation>PNG...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="987"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="979"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>Exportă zona vizibilă a schiței curente ca o imagine PNG</translation>
     </message>
     <message>
-        <source>PostScript...</source>
-        <translation type="vanished">PostScript...</translation>
-    </message>
-    <message>
-        <source>Export the visible area of the current sketch as a PostScript image</source>
-        <translation type="vanished">Exportă zona vizibilă a schiței curente ca o imagine PostScript</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="990"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="982"/>
         <source>PDF...</source>
         <translation>PDF...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="992"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="984"/>
         <source>Export the visible area of the current sketch as a PDF image</source>
         <translation>Exportă zona vizibilă a schiței curente ca un fișier PDF</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="995"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="987"/>
         <source>SVG...</source>
         <translation>SVG...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="997"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="989"/>
         <source>Export the current sketch as an SVG image</source>
         <translation>Exportă schița curentă ca o imagine SVG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1000"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="992"/>
         <source>List of parts (&amp;Bill of Materials)...</source>
         <translation>Lista componentelor (&amp;Factura de materiale)...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1002"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="994"/>
         <source>Save a Bill of Materials (BoM)/Shopping List as text</source>
         <translation>Salvează o listă de materiale (BoM)/listă cumpărături ca text</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1005"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="997"/>
         <source>XML Netlist...</source>
         <translatorcomment>netlist is not curently translatable in romanian. see: http://en.wikipedia.org/wiki/Netlist</translatorcomment>
         <translation>XML Netlist...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1007"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="999"/>
         <source>Save a netlist in XML format</source>
         <translatorcomment>netlist is not curently translatable in romanian. see: http://en.wikipedia.org/wiki/Netlist</translatorcomment>
         <translation>Salvează netlist în format XML</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1010"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1002"/>
         <source>SPICE Netlist...</source>
         <translatorcomment>netlist is not curently translatable in romanian. see: http://en.wikipedia.org/wiki/Netlist</translatorcomment>
         <translation>SPICE Netlist...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1012"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1004"/>
         <source>Save a netlist in SPICE format</source>
         <translatorcomment>netlist is not curently translatable in romanian. see: http://en.wikipedia.org/wiki/Netlist</translatorcomment>
         <translation>Salvează netlist în format SPICE</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1015"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1007"/>
         <source>Eagle...</source>
         <translation>Eagle...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1017"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1009"/>
         <source>Export the current sketch to Eagle CAD</source>
         <translation>Exportă schița curentă la Eagle CAD</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1020"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1012"/>
         <source>Extended Gerber (RS-274X)...</source>
         <translation>Extended Gerber (RS-274X)...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1022"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1014"/>
         <source>Export the current sketch to Extended Gerber format (RS-274X) for professional PCB production</source>
         <translation>Exportă schița curentă în format Gerber extins (RS-274X) pentru producția profesională de PCB</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1307"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1299"/>
         <source>Export SPICE Netlist...</source>
         <translatorcomment>netlist is not curently translatable in romanian. see: http://en.wikipedia.org/wiki/Netlist</translatorcomment>
         <translation>Exportă netlist SPICE...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1659"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1651"/>
         <source>Gerber export can only handle one board at a time--please select the board you want to export.</source>
         <translation>Exportul către Gerber poate manipula o singură placă odată  selectați placa pe care doriți să o exportați.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1684"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1676"/>
         <source>Sketch exported to Gerber</source>
         <translation>Schița exportată la Gerber</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1026"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1018"/>
         <source>Export the current sketch to PDF for DIY PCB production (photoresist)</source>
         <translation>Exportați schița curentă ca PDF pentru DIY producție PCB (fotorezistent)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1031"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1023"/>
         <source>Export the current sketch to SVG for DIY PCB production (photoresist)</source>
         <translation>Exportați schița curentă ca SVG pentru DIY producție PCB (fotorezistent)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1025"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1017"/>
         <source>Etchable (PDF)...</source>
         <translation>Gravabil (PDF)...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1030"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1022"/>
         <source>Etchable (SVG)...</source>
         <translation>Gravabil (SVG)...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1040"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1032"/>
         <source>&amp;Print...</source>
         <translation>&amp;Tipărește...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1041"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1033"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1042"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1034"/>
         <source>Print the current view</source>
         <translation>Tipărește vizualizarea curentă</translation>
     </message>
@@ -2926,7 +2902,7 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="905"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3090"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3100"/>
         <source>Add Note</source>
         <translation>Adaugă notificare</translation>
     </message>
@@ -2943,6 +2919,7 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1418"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2691"/>
         <source>&amp;Edit</source>
         <translation>&amp;Editare</translation>
     </message>
@@ -3017,12 +2994,12 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
         <translation>Rotește selecția curentă 45 de grade în sens orar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3611"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3621"/>
         <source>Convert</source>
         <translation>Convertește</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3612"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3622"/>
         <source>Read-only</source>
         <translation>Doar-citire</translation>
     </message>
@@ -3218,7 +3195,7 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1053"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3142"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3152"/>
         <source>Add Bendpoint</source>
         <translation>Adaugă bendpoint</translation>
     </message>
@@ -3393,88 +3370,88 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1523"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1561"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1574"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2693"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2701"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2709"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2703"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2711"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2719"/>
         <source>&amp;Routing</source>
         <translation>&amp;Trasare</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2725"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2735"/>
         <source>&amp;Create trace from ratsnest</source>
         <translatorcomment>ratsnest is not translatable yet. see: http://commons.wikimedia.org/wiki/File:Rats_nest_diagram.JPG</translatorcomment>
         <translation>&amp;Crează traseu de la ratsnest</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2726"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2736"/>
         <source>Create a trace from the ratsnest line</source>
         <translatorcomment>ratsnest is not translatable yet. see: http://commons.wikimedia.org/wiki/File:Rats_nest_diagram.JPG</translatorcomment>
         <translation>Crează un traseu de la linia ratsnest</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2729"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2739"/>
         <source>&amp;Create wire from ratsnest</source>
         <translatorcomment>ratsnest is not translatable yet. see: http://commons.wikimedia.org/wiki/File:Rats_nest_diagram.JPG</translatorcomment>
         <translation>&amp;Creează fire de la ratsnest</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2730"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2740"/>
         <source>Create a wire from the ratsnest line</source>
         <translatorcomment>ratsnest is not translatable yet. see: http://commons.wikimedia.org/wiki/File:Rats_nest_diagram.JPG</translatorcomment>
         <translation>Crează un fir de la linia ratsnest</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2755"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2765"/>
         <source>Select All Wires</source>
         <translation>Selectați toate firele</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2756"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2766"/>
         <source>Select all wires</source>
         <translation>Selectați toate firele</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2792"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2802"/>
         <source>Fill empty regions of the copper layer--not including traces connected to a GROUND</source>
         <translation>Umple regiunile goale ale stratului de cupru--nu includ traseele conectate la o ÎMPĂMÂNTARE</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2800"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2810"/>
         <source>Fill empty regions of the copper layer--fill will include all traces connected to the seeds</source>
         <translation>Umple regiunile goale ale stratului de cupru--umplerea va include toate pistele conectate la semințe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2824"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2834"/>
         <source>Select any traces where the screen location doesn&apos;t match the actual location. Only needed for sketches autorouted with version 0.7.10 or earlier</source>
         <translation>Selectați orice piste unde poziția ecranului nu se potrivește cu poziția actuală. Este necesar numai pentru schițele trasate automat cu versiunea 0.7.10 sau anterioară</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2827"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2837"/>
         <source>Autorouter/DRC settings...</source>
         <translation>Configurări autotrasor/DRC...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2828"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2838"/>
         <source>Set autorouting parameters including keepout...</source>
         <translation>Configurează parametri de autotrasare inclusiv zona de restricționare...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3052"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3062"/>
         <source>jumpers</source>
         <translation>jumpere</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3056"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3066"/>
         <source>copperfill</source>
         <translation>umple cupru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3060"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3070"/>
         <source>vias</source>
         <translation>vias</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3857"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3867"/>
         <source>
 
 Do you want to update now?</source>
@@ -3483,7 +3460,7 @@ Do you want to update now?</source>
 Doriți să actualizați acum?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3920"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3930"/>
         <source>unable to find replacement for %1.
 </source>
         <translation>nu se poate găsi înlocuitor pentru %1.</translation>
@@ -3769,14 +3746,6 @@ Continuați și inversați?</translation>
         <translation>Deschide ajutor Fritzing</translation>
     </message>
     <message>
-        <source>Donate to Fritzing</source>
-        <translation type="vanished">Donați pentru Fritzing</translation>
-    </message>
-    <message>
-        <source>Open Fritzing donation web page</source>
-        <translation type="vanished">Deschide pagina web Fritzing pentru donații</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1237"/>
         <source>Online Projects Gallery</source>
         <translation>Galeria de proiecte online</translation>
@@ -3944,6 +3913,7 @@ Continuați și inversați?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1482"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2673"/>
         <source>&amp;View</source>
         <translation>&amp;Vizualizare</translation>
     </message>
@@ -3954,8 +3924,8 @@ Continuați și inversați?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1529"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2787"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3251"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2797"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3261"/>
         <source>Ground Fill</source>
         <translation>Umple cu plan de masă</translation>
     </message>
@@ -4051,96 +4021,106 @@ Continuați și inversați?</translation>
         <translation>Regretăm, &quot;%1&quot; nu a fost implementat încă</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2695"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2703"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2711"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2675"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2693"/>
+        <source>Edit</source>
+        <translation type="unfinished">Editare</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2705"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2713"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2721"/>
         <source>Routing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2718"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2728"/>
         <source>Autoroute connections...</source>
         <translation>Autotrasare conexiuni...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2719"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2729"/>
         <source>Shift+Ctrl+A</source>
         <translation>Shift+Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2812"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2822"/>
         <source>Set Ground Fill Keepout...</source>
         <translation>Configurați zona de restricționare a planului de masă...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2813"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2823"/>
         <source>Set the minimum distance between ground fill and traces or connectors</source>
         <translation>Configurați distanța minimă dintre planul de masă și trasee sau conectori</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2818"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2828"/>
         <source>Design Rules Check (DRC)</source>
         <translation>Verificare Reguli Design (DRC)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2819"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2829"/>
         <source>Highlights any parts that are too close together for safe board production</source>
         <translation>Evidențiază orice componente care sunt prea apropiate una de cealaltă pentru producția plăcii în siguranță</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2831"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2841"/>
         <source>Fritzing Fab Quote...</source>
         <translation>Citat Fritzing Fab...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2832"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2842"/>
         <source>How much would it could to produce a PCB from this sketch with Fritzing Fab</source>
         <translation>Cât de mult ar putea să producă o PCB după această schiță cu Fritzing Fab</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2839"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2845"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2849"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2855"/>
         <source>View from below</source>
         <translation>Vizualizare de dedesubt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2840"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2846"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2850"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2856"/>
         <source>View the PCB from the bottom layers upwards</source>
         <translation>Vizualizați PCB din straturile de jos în sus</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2850"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2860"/>
         <source>View from above</source>
         <translation>Vizualizare de deasupra</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2851"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2861"/>
         <source>View the PCB from the top layers downwards</source>
         <translation>Vizualizați PCB din straturile superioare în jos</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2857"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2867"/>
         <source>Shift+Ctrl+3</source>
         <translation>Shift+Ctrl+3</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2863"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2873"/>
         <source>Shift+Ctrl+2</source>
         <translation>Shift+Ctrl+2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2869"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2879"/>
         <source>Shift+Ctrl+1</source>
         <translation>Shift+Ctrl+1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3595"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3605"/>
         <source>Schematic view update</source>
         <translation>Actualizare vizualizare schemă</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3596"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3606"/>
         <source>There is a new graphics standard for schematic-view part images, beginning with version 0.8.6.
 
 </source>
@@ -4149,7 +4129,7 @@ Continuați și inversați?</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3597"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3607"/>
         <source>Would you like to convert &apos;%1&apos; to the new standard now or open the file read-only?
 </source>
         <translation>Doriți să convertiți acum &apos;%1&apos; la noul standard sau deschideți fișierul doar citire?
@@ -4157,22 +4137,22 @@ Continuați și inversați?</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3600"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3610"/>
         <source>The conversion process will not modify &apos;%1&apos;, until you save the file. </source>
         <translation>Procesul de conversie nu va modifica &apos;%1&apos;, până veți salva fișierul. </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3602"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3612"/>
         <source>You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. </source>
         <translation>Va trebui să rearanjați componentele și conexiunile în vizualizarea schemă, ca dimensiunea celor mai multe imagini componente vor avea modificări. Luați în considerare utilizarea trasării automate pentru a curăța traseele. </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3604"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3614"/>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
         <translation>Rețineți că unele componente personalizate nu vor fi convertite. O unealtă pentru convertire &apos;dreptunghiulară&apos; a imaginilor schemelor este disponibilă în Editorul componentelor.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3848"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3858"/>
         <source>
 
 Note: if you want to update later, there are options under the &apos;Part&apos; menu for dealing with outdated parts individually. </source>
@@ -4181,7 +4161,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
 Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul &apos;Componente&apos; pentru lucrul cu componente învechite individual. </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3853"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3863"/>
         <source>There are %n outdated part(s) in this sketch. </source>
         <translation>
             <numerusform>Este %n componentă învechită în această schiță. </numerusform>
@@ -4190,7 +4170,7 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3854"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3864"/>
         <source>We strongly recommend that you update these %n parts  to the latest version. </source>
         <translation>
             <numerusform>Vă recomandăm să actualizați această %n componentă  la ultima versiune. </numerusform>
@@ -4199,436 +4179,436 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3855"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3865"/>
         <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
         <translation>Aceasta poate rezulta în modificări aduse schiței, componente sau conectori pot fi mutați. </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4337"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4347"/>
         <source>Fritzing Fab Upload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4337"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4347"/>
         <source>Please first save your project in order to upload it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4435"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4445"/>
         <source>%1 background</source>
         <translation>%1 fundal</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4468"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4478"/>
         <source>Enter Text</source>
         <translation>Introduceți text</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4469"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4479"/>
         <source>Text will match part label, description, title, etc. Enter text to search for:</source>
         <translation>Textul se va potrivi cu eticheta componentei, descrierea, titlul, etc. Introduceți textul de căutat:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4507"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4517"/>
         <source>Search</source>
         <translation>Căutare</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4507"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4517"/>
         <source>No parts matched search term &apos;%1&apos;.</source>
         <translation>Nici o componentă nu se potrivește cu termenul căutat &apos;%1&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2734"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2744"/>
         <source>Do not autoroute</source>
         <translation>Nu autotrasa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2735"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2745"/>
         <source>When autorouting, do not rip up this trace wire, via, or jumper item</source>
         <translation>Când se trasează automat, nu rupe acest traseu fir, via, sau elementul jumper</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2741"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2751"/>
         <source>Move to other side of the board</source>
         <translation>Mută la altă parte a plăcii</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2747"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2757"/>
         <source>Show unrouted</source>
         <translation>Arată netrasatele</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2748"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2758"/>
         <source>Highlight all unrouted connectors</source>
         <translation>Evidențiază toți conectorii netrasați</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2759"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2769"/>
         <source>Select All CopperFill</source>
         <translation>Selectează toate umplerile cu cupru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2760"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2770"/>
         <source>Select all copper fill items</source>
         <translation>Selectează toate elementele umplute cu cupru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2767"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2777"/>
         <source>Select All &quot;Don&apos;t Autoroute&quot; Traces</source>
         <translation>Selectează toate traseele &quot;Nu trasa automat&quot;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2771"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2781"/>
         <source>Select All Autoroutable Traces</source>
         <translation>Selectează toate traseele autotrasabile</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2772"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2782"/>
         <source>Select all trace wires that can be changed during autorouting</source>
         <translation>Selectează toate traseele cablate care pot fi modificate în timpul autotrasării</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2776"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2786"/>
         <source>Select all jumper item parts</source>
         <translation>Selectați toate componentele element jumper</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2779"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2789"/>
         <source>Select All Vias</source>
         <translation>Selectați toate Vias</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2780"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2790"/>
         <source>Select all via parts</source>
         <translation>Selectează toate componentele via</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2823"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2833"/>
         <source>Check Loaded Traces</source>
         <translation>Verifică traseele încărcate</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2951"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2961"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use the autorouter.</source>
         <translation>Schița dumneavoastră nu are încă o placă!  Adăugați o PCB în scopul utilizării trasatorului automat.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2956"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2966"/>
         <source>Please select the board you want to autoroute. The autorouter can only handle one board at a time.</source>
         <translation>Selectați placa pe care doriți să o trasați automat. Trasatorul automat nu poate manipula decât o placă la un moment dat.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3239"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3249"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use ground or copper fill.</source>
         <translation>Schița dumneavoastră nu are încă o placă!  Adăugați o PCB în scopul de a utiliza împământarea sau umplerea cu cupru.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3244"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3254"/>
         <source>Please select a PCB--copper fill only works for one board at a time.</source>
         <translation>Selectați o PCB--umplerea cu cupru funcționează numai cu o singură placă la un moment dat.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3273"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3283"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to remove copper fill.</source>
         <translation>Schița dumneavoastră nu are încă o placă!  Adăugați o PCB în scopul de a elimina umplerea cu cupru.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3278"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3288"/>
         <source>Please select a PCB--ground fill operations only work on a one board at a time.</source>
         <translation>Selectați o PCB--operațiile de umplere împământare funcționează cu o singură placă la un moment dat.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4021"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4031"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4044"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4054"/>
         <source>Set the grid size for %1.</source>
         <translation>Configurează dimensiunea grilei pentru %1.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4051"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4061"/>
         <source>Grid Size:</source>
         <translation>Dimensiune grilă:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4066"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4076"/>
         <source>in</source>
         <translation>in</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4069"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4079"/>
         <source>mm</source>
         <translation>mm</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4078"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4088"/>
         <source>Restore Default</source>
         <translation>Restaurează implicite</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4203"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4213"/>
         <source>Your sketch does not have a board yet! DRC only works with a PCB.</source>
         <translation>Schița dumneavoastră nu are încă o placă! DRC funcționează numai cu o PCB.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4209"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4219"/>
         <source>Please select a PCB. DRC only works on one board at a time.</source>
         <translation>Selectați o PCB. DRC funcționează numai cu o singură placă odată.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4219"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4229"/>
         <source>DRC Progress...</source>
         <translation>Progres DRC...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4346"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4363"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4356"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4373"/>
         <source>Your sketch does not have a board yet! Please add a PCB in order to use copper fill operations.</source>
         <translation>Schița dumneavoastră nu are încă o PCB! Adăugați o PCB cu scopul de a utiliza operațiile de umplere cu cupru.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4351"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4368"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4361"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4378"/>
         <source>Please select a PCB. Copper fill operations only work on one board at a time.</source>
         <translation>Selectați o PCB. Operațiile de umplere cu cupru funcționează numai cu o singură PCB la un moment dat.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1050"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1042"/>
         <source>This will soon provide an export of your Fritzing sketch to the EAGLE layout software. If you&apos;d like to have more exports to your favourite EDA tool, please let us know, or contribute.</source>
         <translation>Aceasta va asigura în curând un export al schiței Fritzing la aplicația cu aspect EAGLE. Dacă doriți să aveți mai multe exporturi către unealta EDA favorită, anunțați-ne, sau contribuiți.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1114"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1106"/>
         <source>Export SVG...</source>
         <translation>Exportă SVG...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1261"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1253"/>
         <source>Export Bill of Materials (BoM)...</source>
         <translation>Exportă lista de materiale (BoM)...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1278"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1270"/>
         <source>Unable to save BOM file, but the text is on the clipboard.</source>
         <translation>Nu se poate salva fișierul BOM, dar textul este în memoria temporară a PC.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1577"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1569"/>
         <source>Export Netlist...</source>
         <translatorcomment>netlist is not curently translatable in romanian. see: http://en.wikipedia.org/wiki/Netlist</translatorcomment>
         <translation>Exportă netlist...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2855"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2856"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2865"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2866"/>
         <source>Set both copper layers clickable</source>
         <translation>Configurați ambele straturi de cupru să interacționeze cu mausul</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2861"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2862"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2871"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2872"/>
         <source>Set copper top layer clickable</source>
         <translation>Configurați stratul de cupru de deasupra să interacționeze cu mausul</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2867"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2868"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2877"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2878"/>
         <source>Set copper bottom layer clickable</source>
         <translation>Configurați stratul de cupru de dedesubt să interacționeze cu mausul</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2742"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2752"/>
         <source>Move selected traces to the other side of the board (note: the &apos;first&apos; trace will be moved and the rest will follow to the same side)</source>
         <translation>Mută traseele selectate pe cealaltă parte a plăcii (notificare: &apos;primul&apos; traseu va fi mutat iar restul îl va urma pe aceiași pistă)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2751"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2761"/>
         <source>Select All Traces</source>
         <translation>Selectează toate traseele</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2752"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2762"/>
         <source>Select all trace wires</source>
         <translation>Selectează toate traseele cablate</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2763"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2773"/>
         <source>Force Update Routing Status and Ratsnests</source>
         <translatorcomment>ratsnest is not translatable yet. see: http://commons.wikimedia.org/wiki/File:Rats_nest_diagram.JPG</translatorcomment>
         <translation>Forțează actualizarea stării trasării și ratsnest-uri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2764"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2774"/>
         <source>Recalculate routing status and ratsnest wires (in case the auto-update isn&apos;t working correctly)</source>
         <translatorcomment>ratsnest is not translatable yet. see: http://commons.wikimedia.org/wiki/File:Rats_nest_diagram.JPG</translatorcomment>
         <translation>Recalculează starea trasării și fire ratsnest (în caz de actualizare automată nu funcționează corect)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2768"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2778"/>
         <source>Select all trace wires excluded from autorouting</source>
         <translation>Selectează toate traseele cablate excluse de la autotrasare</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2775"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2785"/>
         <source>Select All Jumpers</source>
         <translation>Selectează toți jumperii</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2783"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2793"/>
         <source>Tidy Wires</source>
         <translation>Aranjează firele</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2784"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2794"/>
         <source>Tidy selected wires</source>
         <translation>Aranjează firele selectate</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2788"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2798"/>
         <source>Fill empty regions of the copper layer--fill will include all traces connected to a GROUND</source>
         <translation>Umple regiunile goale ale stratului de cupru--umplerea va include toate traseele conectate la o ÎMPĂMÂNTARE</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2791"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3251"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2801"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3261"/>
         <source>Copper Fill</source>
         <translation>Umplere cupru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2795"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2805"/>
         <source>Remove Copper Fill</source>
         <translation>Elimină umplere cupru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2796"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2806"/>
         <source>Remove the copper fill</source>
         <translation>Elimină umplerea cu cupru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2799"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2809"/>
         <source>Choose Ground Fill Seed(s)...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2803"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2813"/>
         <source>Set Ground Fill Seed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2804"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2814"/>
         <source>Treat this connector and its connections as a &apos;ground&apos; during ground fill.</source>
         <translation>Tratează acest conector și conexiunile sale ca o &apos;împământare&apos; în timpul umplerii cu plan de masă.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2808"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2818"/>
         <source>Clear Ground Fill Seeds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2809"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2819"/>
         <source>Clear ground fill seeds--enable copper fill only.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2820"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2830"/>
         <source>Shift+Ctrl+D</source>
         <translation>Shift+Ctrl+D</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2882"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2892"/>
         <source>Copper Top and Copper Bottom layers are both active</source>
         <translation>Straturile de cupru de deasupra și de dedesubt sunt ambele active</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2935"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2945"/>
         <source>Order a PCB...</source>
         <translation>Comandați o PCB...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2936"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2946"/>
         <source>Order a PCB created from your sketch--from fabulous Fritzing Fab</source>
         <translation>Comandați o PCB creată după schița dumneavoastră--de la fabuloasa Fritzing Fab</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2894"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2904"/>
         <source>Copper Top layer is active</source>
         <translation>Stratul superior de cupru este activ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2906"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2916"/>
         <source>Copper Bottom layer is active</source>
         <translation>Stratul inferior de cupru este activ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2961"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2971"/>
         <source>Autorouting...</source>
         <translation>Se autotrasează...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2966"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2976"/>
         <source>Autorouting Progress...</source>
         <translation>Progres autotrasare...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3134"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3144"/>
         <source>Remove Bendpoint</source>
         <translation>Elimină bendpoint</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3249"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3259"/>
         <source>Generating %1 fill...</source>
         <translation>Se generează %1 umplere...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3249"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3259"/>
         <source>ground</source>
         <translation>împământare</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3249"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3259"/>
         <source>copper</source>
         <translation>cupru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3301"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3311"/>
         <source>Remove copper fill</source>
         <translation>Elimină umplerea cu cupru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3364"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3423"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3374"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3433"/>
         <source>&amp;Wire Color</source>
         <translation>&amp;Culoare fir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3757"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3767"/>
         <source>Launch %1...</source>
         <translation>Lansează %1...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3838"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3848"/>
         <source>No outdated parts found.
 All your parts are up-to-date.</source>
         <translation>Nu s-au găsit componente învechite.
 Toate componentele sunt actualizate.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3852"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3862"/>
         <source>Outdated parts</source>
         <translation>Componente învechite</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3981"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3991"/>
         <source>Successfully updated %1 part(s).
 Please check all views for potential side-effects.</source>
         <translation>S-au actualizat cu succes %1 componentă(e).
 Verificați toate vizualizările pentru potențiale efecte secundare.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3976"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3986"/>
         <source>Update %1 part(s)</source>
         <translation>Actualizează %1 componentă(e)</translation>
     </message>
@@ -4867,6 +4847,11 @@ Motivul: %2 (cod eroare %3)</translation>
         <translation>Fritzing</translation>
     </message>
     <message>
+        <location filename="../src/sketch/pcbsketchwidget.cpp" line="290"/>
+        <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1473"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1625"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use copper fill.</source>
@@ -4900,11 +4885,6 @@ Motivul: %2 (cod eroare %3)</translation>
         <translation>Desemnați una sau mai multe sămânțe plan de masă înaintea efectuării a unei umpleri cu masă.
 
 </translation>
-    </message>
-    <message>
-        <location filename="../src/sketch/pcbsketchwidget.cpp" line="290"/>
-        <source>Your sketch does not have a board yet! Please add a PCB in order to use this selection operation.</source>
-        <translation>Schița dumneavoastră nu are încă o placă! Adăugați o PCB în scopul de a utiliza această operație selectată.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="295"/>
@@ -4953,6 +4933,10 @@ Motivul: %2 (cod eroare %3)</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
+        <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use this selection operation.</source>
         <translation>Schița dumneavoastră nu are încă o placă!  Adăugați o PCB în scopul de a utiliza această operație selectată.</translation>
@@ -6106,192 +6090,192 @@ Continuați și salvați?</translation>
 <context>
     <name>PartLabel</name>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="406"/>
+        <location filename="../src/items/partlabel.cpp" line="415"/>
         <source>Edit</source>
         <translation>Editare</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="408"/>
+        <location filename="../src/items/partlabel.cpp" line="417"/>
         <source>Edit label text</source>
         <translation>Editare text etichetă</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="410"/>
+        <location filename="../src/items/partlabel.cpp" line="419"/>
         <source>Hide</source>
         <translation>Ascunde</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="412"/>
+        <location filename="../src/items/partlabel.cpp" line="421"/>
         <source>Hide part label</source>
         <translation>Ascunde eticheta componentei</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="416"/>
+        <location filename="../src/items/partlabel.cpp" line="425"/>
         <source>Display Values</source>
         <translation>Afișează valorile</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="417"/>
+        <location filename="../src/items/partlabel.cpp" line="426"/>
         <source>Flip/Rotate</source>
         <translation>Întoarce/Rotește</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="418"/>
+        <location filename="../src/items/partlabel.cpp" line="427"/>
         <source>Font Size</source>
         <translation>Dimensiune font</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="423"/>
+        <location filename="../src/items/partlabel.cpp" line="432"/>
         <source>Rotate 45° Clockwise</source>
         <translation type="unfinished">Rotește 135° în sens orar {135�?} {45°?}</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="425"/>
+        <location filename="../src/items/partlabel.cpp" line="434"/>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>Rotește eticheta cu 45 de grade în sens orar</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="428"/>
+        <location filename="../src/items/partlabel.cpp" line="437"/>
         <source>Rotate 90° Clockwise</source>
         <translation type="unfinished">Rotește 135° în sens orar {135�?} {90°?}</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="430"/>
+        <location filename="../src/items/partlabel.cpp" line="439"/>
         <source>Rotate the label by 90 degrees clockwise</source>
         <translation>Rotește eticheta cu 90 de grade în sens orar</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="433"/>
+        <location filename="../src/items/partlabel.cpp" line="442"/>
         <source>Rotate 135° Clockwise</source>
         <translation type="unfinished">Rotește 135° în sens orar {135�?} {135°?}</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="435"/>
+        <location filename="../src/items/partlabel.cpp" line="444"/>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>Rotește eticheta cu 135 de grade în sens orar</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="438"/>
+        <location filename="../src/items/partlabel.cpp" line="447"/>
         <source>Rotate 180°</source>
         <translation type="unfinished">Rotire 180° {180�?} {180°?}</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="440"/>
+        <location filename="../src/items/partlabel.cpp" line="449"/>
         <source>Rotate the label by 180 degrees</source>
         <translation>Rotește eticheta cu 180 de grade</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="443"/>
+        <location filename="../src/items/partlabel.cpp" line="452"/>
         <source>Rotate 135° Counter Clockwise</source>
         <translation type="unfinished">Rotește 45° în sens antiorar {45�?} {135°?}</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="445"/>
+        <location filename="../src/items/partlabel.cpp" line="454"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation>Rotește eticheta cu 135 de grade în sens antiorar</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="448"/>
+        <location filename="../src/items/partlabel.cpp" line="457"/>
         <source>Rotate 90° Counter Clockwise</source>
         <translation type="unfinished">Rotește 45° în sens antiorar {45�?} {90°?}</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="450"/>
+        <location filename="../src/items/partlabel.cpp" line="459"/>
         <source>Rotate current selection 90 degrees counter clockwise</source>
         <translation>Rotește selecția curentă 90 de grade în sens antiorar</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="453"/>
+        <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished">Rotește 45° în sens antiorar {45�?} {45°?}</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="455"/>
+        <location filename="../src/items/partlabel.cpp" line="464"/>
         <source>Rotate the label by 45 degrees counter clockwise</source>
         <translation>Rotește eticheta cu 45 de grade în sens antiorar</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="458"/>
+        <location filename="../src/items/partlabel.cpp" line="467"/>
         <source>Flip Horizontal</source>
         <translation>Întoarce orizontal</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="460"/>
+        <location filename="../src/items/partlabel.cpp" line="469"/>
         <source>Flip label horizontally</source>
         <translation>Întoarce eticheta orizontal</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="462"/>
+        <location filename="../src/items/partlabel.cpp" line="471"/>
         <source>Flip Vertical</source>
         <translation>Întoarce vertical</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="464"/>
+        <location filename="../src/items/partlabel.cpp" line="473"/>
         <source>Flip label vertically</source>
         <translation>Întoarce eticheta vertical</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="466"/>
+        <location filename="../src/items/partlabel.cpp" line="475"/>
         <source>Tiny</source>
         <translation>Minuscul</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="468"/>
+        <location filename="../src/items/partlabel.cpp" line="477"/>
         <source>Set font size to tiny</source>
         <translation>Configurează dimensiunea fontului ca minusculă</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="472"/>
+        <location filename="../src/items/partlabel.cpp" line="481"/>
         <source>Small</source>
         <translation>Mic</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="474"/>
+        <location filename="../src/items/partlabel.cpp" line="483"/>
         <source>Set font size to small</source>
         <translation>Configurează dimensiunea fontului ca mică</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="478"/>
+        <location filename="../src/items/partlabel.cpp" line="487"/>
         <source>Medium</source>
         <translation>Mediu</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="480"/>
+        <location filename="../src/items/partlabel.cpp" line="489"/>
         <source>Set font size to medium</source>
         <translation>Configurează dimensiunea fontului ca medie</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="484"/>
+        <location filename="../src/items/partlabel.cpp" line="493"/>
         <source>Large</source>
         <translation>Larg</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="486"/>
+        <location filename="../src/items/partlabel.cpp" line="495"/>
         <source>Set font size to large</source>
         <translation>Configurează dimensiunea fontului ca mare</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="490"/>
+        <location filename="../src/items/partlabel.cpp" line="499"/>
         <source>Label text</source>
         <translation>Text etichetă</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="494"/>
+        <location filename="../src/items/partlabel.cpp" line="503"/>
         <source>Display the text of the label</source>
         <translation>Afișează textul etichetei</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="505"/>
+        <location filename="../src/items/partlabel.cpp" line="514"/>
         <source>Display the value of property %1</source>
         <translation>Afișează valoarea proprietății %1</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="704"/>
+        <location filename="../src/items/partlabel.cpp" line="713"/>
         <source>Set label for %1</source>
         <translation>Configurează eticheta pentru %1</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="705"/>
+        <location filename="../src/items/partlabel.cpp" line="714"/>
         <source>Label text:</source>
         <translation>Text etichetă:</translation>
     </message>
@@ -6764,12 +6748,13 @@ tasta shift schimbată derulare axială</translation>
 <context>
     <name>ProgramWindow</name>
     <message>
-        <location filename="../src/program/programwindow.cpp" line="728"/>
+        <location filename="../src/program/programwindow.cpp" line="738"/>
         <source>No boards available</source>
         <translation>Nu sunt plăci disponibile</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="175"/>
+        <location filename="../src/program/programwindow.cpp" line="323"/>
         <source>&amp;Edit</source>
         <translation>&amp;Editare</translation>
     </message>
@@ -6954,32 +6939,43 @@ tasta shift schimbată derulare axială</translation>
         <translation>Încarcă programul curent într-un microcontroller</translation>
     </message>
     <message>
-        <location filename="../src/program/programwindow.cpp" line="473"/>
+        <location filename="../src/program/programwindow.cpp" line="325"/>
+        <source>Edit</source>
+        <translation type="unfinished">Editare</translation>
+    </message>
+    <message>
+        <location filename="../src/program/programwindow.cpp" line="338"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/program/programwindow.cpp" line="483"/>
         <source>Code Window</source>
         <translation>Cod fereastră</translation>
     </message>
     <message>
-        <location filename="../src/program/programwindow.cpp" line="477"/>
+        <location filename="../src/program/programwindow.cpp" line="487"/>
         <source>Code Window - %1</source>
         <translation>Cod fereastră - %1</translation>
     </message>
     <message>
-        <location filename="../src/program/programwindow.cpp" line="486"/>
+        <location filename="../src/program/programwindow.cpp" line="496"/>
         <source>%1%2</source>
         <translation>%1%2</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="304"/>
+        <location filename="../src/program/programwindow.cpp" line="336"/>
         <source>&amp;View</source>
         <translation>&amp;Vizualizare</translation>
     </message>
     <message>
-        <location filename="../src/program/programwindow.cpp" line="355"/>
+        <location filename="../src/program/programwindow.cpp" line="365"/>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
         <translation>Fișierul &apos;%1&apos; a fost restaurat din fișierul .fzz; copia locală nu a fost găsită.</translation>
     </message>
     <message>
-        <location filename="../src/program/programwindow.cpp" line="358"/>
+        <location filename="../src/program/programwindow.cpp" line="368"/>
         <source>File &apos;%1&apos; was restored from the .fzz file; save a local copy to work with an external editor.</source>
         <translation>Fișierul &apos;%1&apos; a fost restaurat din fișierul .fzz; salvați o copie locală pentru a lucra cu un editor extern.</translation>
     </message>
@@ -6990,9 +6986,9 @@ tasta shift schimbată derulare axială</translation>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="615"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="658"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="728"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="484"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1363"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1391"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="485"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1364"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1392"/>
         <location filename="../src/fapplication.cpp" line="1017"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="44"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="136"/>
@@ -7068,15 +7064,7 @@ tasta shift schimbată derulare axială</translation>
         <translation>Curăță configurările</translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</source>
-        <translation type="obsolete">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt; {2&apos;?} {4e?} {1.%2.%3 ?} {4 %5)?} {6&lt;?}</translation>
-    </message>
-    <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
-        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/fapplication.cpp" line="2057"/>
+        <location filename="../src/fapplication.cpp" line="2059"/>
         <source>Regenerate database failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7091,21 +7079,21 @@ tasta shift schimbată derulare axială</translation>
         <translation>Editare legătură</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3333"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3339"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3347"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3343"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3349"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3357"/>
         <source>Part</source>
         <translation>Componentă</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3360"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3393"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3419"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3370"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3403"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3429"/>
         <source>Wire</source>
         <translation>Fir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4013"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4023"/>
         <source>Set Grid Size</source>
         <translation>Configurați dimensiunea grilei</translation>
     </message>
@@ -7378,39 +7366,39 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <translation>Adu în față</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5549"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5556"/>
         <source>Split Wire</source>
         <translation>Desparte fir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5610"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5617"/>
         <source>Join Wire</source>
         <translation>Alătură fir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7852"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7858"/>
         <source>Trace wires</source>
         <translation>Traseu cablat</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7855"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7861"/>
         <source>Ratsnest wires</source>
         <translatorcomment>ratsnest is not translatable yet. see: http://commons.wikimedia.org/wiki/File:Rats_nest_diagram.JPG</translatorcomment>
         <translation>Fire ratsnest</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2236"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7857"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7863"/>
         <source>Select all %1</source>
         <translation>Selectează tot %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8132"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8138"/>
         <source>Select outdated parts</source>
         <translation>Selectați componentele învechite</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8147"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8153"/>
         <source>Select locked parts</source>
         <translation>Selectați componentele blocate</translation>
     </message>
@@ -7903,7 +7891,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <translation>in</translation>
     </message>
     <message>
-        <location filename="../src/commands.cpp" line="2046"/>
+        <location filename="../src/commands.cpp" line="2051"/>
         <source>Set Ground Fill Seed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7913,12 +7901,12 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1363"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1364"/>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
         <translation>nu se poate copia fișierul &apos;%1&apos; la &apos;%2&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1389"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1390"/>
         <source>%2 ... %1 wires moved from their saved position</source>
         <translation>%2 ... %1 fire sunt mutate de la poziția lor salvată</translation>
     </message>
@@ -8116,14 +8104,6 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <translation>Copii</translation>
     </message>
     <message>
-        <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
-        <translation type="vanished">Vă rugăm să rețineți că prețurile nu includ taxa de transport,&lt;br /&gt;</translation>
-    </message>
-    <message>
-        <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
-        <translation type="vanished">sunt posibile taxe suplimentare, sau taxa de verificare.&lt;br /&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="268"/>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
         <translation> %1 cm%3 (%2 in%3).&lt;br /&gt;</translation>
@@ -8160,7 +8140,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="209"/>
-        <source>For more information on pricing see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
@@ -8171,10 +8151,6 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
             <numerusform>Zona totală a %n PCB-uri în această schiță este</numerusform>
             <numerusform>Zona totală a %n PCB-uri în această schiță este</numerusform>
         </translation>
-    </message>
-    <message>
-        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="vanished">Pentru mai multe informații despre prețuri consultați &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="168"/>
@@ -8216,8 +8192,8 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
-        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Fritzing poate avea disfuncțiuni, dar unele dintre modificări ale următoarelor fișiere se pot recupera.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Este afișată data și ora la care fiecare fișier are creată o copie de siguranță. dacă fișierul a fost salvat, acea dată și oră este listată pentru comparare.&lt;/p&gt;&lt;p&gt;Fișierele originale sunt încă pe hard-disc, dacă acestea au fost salvate. Puteți alege dacă suprascrieți fișierul original după ce ați încărcat fișierul său de recuperare.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Selectați orice fișier pe care doriți să-l recuperați din lista de mai jos.&lt;/b&gt;&lt;/p&gt;</translation>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
@@ -8595,13 +8571,13 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3474"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9463"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9469"/>
         <source>Select %1</source>
         <translation>Selectați %1</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3477"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9466"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9472"/>
         <source>Select %1 items</source>
         <translation>Selectați %1 elemente</translation>
     </message>
@@ -8639,22 +8615,22 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <translation>Rotește %2 (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5838"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5845"/>
         <source>Note text change</source>
         <translation>Notă modificare text</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7099"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7106"/>
         <source>Rotate</source>
         <translation>Rotește</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7099"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7106"/>
         <source>Flip</source>
         <translation>Întoarce</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5710"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5717"/>
         <source>Double-click</source>
         <translation>Dublu-click</translation>
     </message>
@@ -8715,57 +8691,57 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <translation>Întoarce %2 (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5710"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5717"/>
         <source>Drag or double-click</source>
         <translation>Trage sau dublu-click</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5711"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5718"/>
         <source>or alt-drag to move the segment</source>
         <translation>sau alt+trage pentru a muta segmentul</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5776"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5783"/>
         <source>Double-click to delete this bend point</source>
         <translation>Click dublu pentru a șterge acest bendpoint</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5864"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5871"/>
         <source>Change %1 label to &apos;%2&apos;</source>
         <translation>Schimbă eticheta %1 la &apos;%2&apos;</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6376"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6383"/>
         <source>Change %1 color from %2 to %3</source>
         <translation>Modifică culoarea %1 de la %2 la %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6382"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6389"/>
         <source>Change color of %1 wires to %2</source>
         <translation>Schimbă culoarea a %1 fire la %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6428"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6435"/>
         <source>Change %1 width from %2 to %3</source>
         <translation>Schimbă lățimea %1 de la %2 la %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6434"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6441"/>
         <source>Change width of %1 wires to %2</source>
         <translation>Schimbă lățimea a %1 fire la %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7092"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7099"/>
         <source>Move label &apos;%1&apos;</source>
         <translation>Mută eticheta &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7099"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7106"/>
         <source>%1 label &apos;%2&apos;</source>
         <translation>%1 etichetă &apos;%2&apos;</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7134"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7141"/>
         <source>show %n part label(s)</source>
         <translation>
             <numerusform>arată %n eticheta componentei</numerusform>
@@ -8774,7 +8750,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7137"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7144"/>
         <source>hide %n part label(s)</source>
         <translation>
             <numerusform>ascunde %n eticheta componentei</numerusform>
@@ -8783,80 +8759,80 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7668"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7674"/>
         <source>Resize ruler to %1 %2</source>
         <translation>Redimensionează rigla la %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9989"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9995"/>
         <source>test connectors</source>
         <translation>testare conectori</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7151"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7158"/>
         <source>Resize Note</source>
         <translation>Redimensionează notificarea</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7537"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7543"/>
         <source>Change Resistance from %1 to %2</source>
         <translation>Schimbă rezistența de la %1 la %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7561"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7570"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7567"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7576"/>
         <source>Change %1 from %2 to %3</source>
         <translation>Schimbă %1 de la %2 la %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7691"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8576"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7697"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8582"/>
         <source>Resize board to %1 %2</source>
         <translation>Redimensionează tabla la %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7748"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7754"/>
         <source>Create wire from Ratsnest</source>
         <translatorcomment>ratsnest is not translatable yet. see: http://commons.wikimedia.org/wiki/File:Rats_nest_diagram.JPG</translatorcomment>
         <translation>Creează fire de la ratsnest</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7946"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7952"/>
         <source>Disconnect all wires from %1</source>
         <translation>Deconectează toate firele de la %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7949"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7955"/>
         <source>Disconnect all wires from %1 items</source>
         <translation>Deconectează toate firele de la %1 elemente</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8227"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8233"/>
         <source>Change image from %1 to %2</source>
         <translation>Schimbă imaginea de la %1 la %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9037"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9043"/>
         <source>change pin labels</source>
         <translation>modifică etichetele pinilor</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9336"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9342"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation>Conexiunile netrasate sunt evidențiate în galben.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9337"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9343"/>
         <source>There are no unrouted connections</source>
         <translation>Nu sunt conexiuni netrasate</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9338"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9344"/>
         <source>Unrouted connections</source>
         <translation>Conexiuni netrasate</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9339"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9345"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
@@ -8865,17 +8841,17 @@ Note: you can also trigger this display by mousing down on the routing status te
 Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea mausului peste textul stare trasare în bara de stare.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9386"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9392"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation>Componenta &apos;%1&apos; nu a fost găsită în schiță</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9398"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9404"/>
         <source>Add %1 parts</source>
         <translation>Adaugă %1 componente</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9460"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9466"/>
         <source>Deselect all</source>
         <translation>Deselectează tot</translation>
     </message>
@@ -9046,19 +9022,9 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <translation>Pentru a muta cu mai mare precizie o selecție de componente, utilizați tastele săgeți.  Shift-săgeată mută cu 10 unități.</translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="92"/>
-        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
-        <translation>Apăsați pe indicatorul de poziție al mausului în bara de stare (dedesubt) pentru a comuta unitățile de la in la mm sau px.</translation>
-    </message>
-    <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
         <source>rotation</source>
         <translation>rotire</translation>
-    </message>
-    <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="104"/>
-        <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
-        <translation>Pentru a roti liber o componentă în vizualizare Placă testare sau PCB, selectați-o, apoi planați mausul lângă unul dintre colțuri până ce vedeți că se rotește cursorul. Coborâți mausul iar acel colț va urma mausul după cum trageți.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
@@ -9094,10 +9060,6 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
         <translation>Pentru a edita etichetă unei componente, dați dublu-click pe ea, sau utilizați controlul intrare text în fereastra inspector.</translation>
-    </message>
-    <message>
-        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
-        <translation type="vanished">Pentru a afișa proprietăți diferite în eticheta unei componente, precum și rotirea acesteia, sau schimbarea fontului, dați click-dreapta pe etichetă.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="119"/>
@@ -9200,6 +9162,11 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <translation>aspect pcb</translation>
     </message>
     <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="92"/>
+        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/help/tipsandtricks.cpp" line="96"/>
         <source>curves and bendable legs</source>
         <translation>curbe și picioare flexibile</translation>
@@ -9217,6 +9184,11 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="99"/>
         <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="104"/>
+        <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9510,10 +9482,6 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation type="vanished">Închide</translation>
-    </message>
-    <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>
         <source>Update parts</source>
         <translation type="unfinished"></translation>
@@ -9632,14 +9600,6 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <translation>Fabrică</translation>
     </message>
     <message>
-        <source>Shop</source>
-        <translation type="vanished">Magazin</translation>
-    </message>
-    <message>
-        <source>Fritzing CreatorKit</source>
-        <translation type="vanished">Fritzing CreatorKit</translation>
-    </message>
-    <message>
         <location filename="../src/sketch/welcomeview.cpp" line="461"/>
         <source>Fritzing Fab</source>
         <translation>Fritzing Fab</translation>
@@ -9703,10 +9663,6 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <location filename="../src/sketch/welcomeview.cpp" line="716"/>
         <source>Unable to reach fritzing.org/projects</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to reach friting.org/projects</source>
-        <translation type="vanished">Nu se poate accesa friting.org/projects</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="929"/>

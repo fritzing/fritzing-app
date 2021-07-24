@@ -8203,7 +8203,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzing možná havaroval, ale některé ze změn v následujících souborech mohou být obnoveny.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Datum a čas každého souboru který byl zálohován, je zobrazen. Pokud byl soubor uložen, jeho datum a čas je také pro srovnání uveden.&lt;/p&gt;&lt;p&gt;Původní soubory jsou stále na Vašem disku, pokud byly vůbec uloženy. Můžete vybrat, zda chcete přepsat původní soubor po načtení jeho obnoveného souboru.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vyberte soubory, které chcete obnovit z níže uvedeného seznamu.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
@@ -9212,7 +9212,7 @@ Poznámka: Toto okno můžete taktéž zobrazit kliknutím na text stavu autorou
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud chcete otáčet danou součástkou,označte ji a najeďte myší na jeden z jejich rohů (čárkované ohraničení součástky). Kurzor šipky se změní na kurzor otáčení a po kliknutí levým tlačítkem myši můžete se součástkou otáčet.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>

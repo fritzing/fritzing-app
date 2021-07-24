@@ -4895,33 +4895,33 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaša skica še nima table!  Za uporabo te izbirne operacije dodajte tiskano vezje.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaša skica še nima table!  Za uporabo te izbirne operacije dodajte tiskano vezje.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2425"/>
         <source>Unable to convert this via to a bendpoint because it is connected to a part that is only on the bottom layer and another part that is only on the top layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tega via ni mogoče pretvoriti v krivno točko, ker je povezan z delom, ki je samo na spodnji plasti, in z drugim delom, ki je samo na zgornji plasti.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2684"/>
         <source>Show part silkscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Prikaži del sitotiska</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2684"/>
         <source>Hide part silkscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrivni del sitotisk</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2698"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2704"/>
         <source>Fritzing Fab Quote</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Citat</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2699"/>

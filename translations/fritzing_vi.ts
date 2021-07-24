@@ -9233,7 +9233,7 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Để xoay tự do một linh kiện trong chế độ xem Breadboard hoặc PCB, chọn nó, sau đó di chuột gần một trong các góc cho đến khi bạn thấy con trỏ xoay. Nhấp chuột và góc đó sẽ theo con chuột của bạn khi bạn kéo.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>

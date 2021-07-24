@@ -8150,7 +8150,7 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;&lt;b&gt;Fritzing có thể đã bị xung đột, nhưng một số thay đổi đối với các tập tin sau đây có thể được phục hồi. &lt;/b&gt;&lt;/p&gt;&lt;p&gt;Ngày giờ mỗi tập tin đã được sao lưu sẽ được hiển thị. Nếu tập tin đã được lưu lại, ngày giờ đó cũng được liệt kê để so sánh.&lt;/p&gt;&lt;p&gt;Các tập tin gốc vẫn còn trên ổ cứng của bạn, nếu chúng đã từng được lưu. Bạn có thể chọn hoặc để ghi đè lên tập tin gốc sau khi bạn tải tập tin phục hồi của nó. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Chọn bất kỳ tập tin nào mà bạn muốn khôi phục từ danh sách dưới đây. &lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>

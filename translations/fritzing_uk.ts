@@ -1364,7 +1364,7 @@ Use the file?</source>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="107"/>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt; ФДП Вид &lt;/b&gt; - це розташування компонентів на фізичній друкованій платі (ФДП) &lt;br/&gt; &lt;br/&gt; ФДП можна виготовити вдома або в невеликій лабораторії, використовуючи процеси травлення DIY . Вони також можуть бути відправлені до професійних служб виготовлення друкованих плат для більш точного вироблення. &lt;br/&gt; &lt;table&gt;&lt;tr&gt; &lt;td&gt; Перше, що вам знадобиться - це дошка, на яку потрібно розмістити свої деталі. У вашому нарисі вже має бути одна, але якщо ні, перетягніть значок дошки із розділу Набір деталей. Значок відповідає зображенню праворуч:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Щоб викласти вашу фізичну друковану плату, розташуйте всі компоненти так, щоб вони добре вмістилися на платі. Потім спробуйте змістити їх навколо, щоб мінімізувати тривалість і плутанину з&apos;єднань. Ви також можете змінити розміри прямокутних дощок. &lt;br/&gt; &lt;table&gt;&lt;tr&gt; &lt;td&gt; Після того як деталі розібрані, з&apos;єднайте їх з мідними доріжками. Ви можете перетягнути доріжку із окремих з&apos;єднувачів або скористатися авторетуром для їх створення. Кнопка Автонаправлення знаходиться внизу вікна. Кнопка відповідає зображенню праворуч:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
@@ -1377,7 +1377,7 @@ Use the file?</source>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="763"/>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Ваші виготовлені на замовлення деталі та набори переміщуються із прихованої папки даних програми у вашу папку з документами fritzing у &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;Ми сподіваємось полегшити їх пошук і редагування вручну. &lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -4928,7 +4928,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваш нарис не містить плати! Будь ласка, додайте ДП для використовування обраної операції.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>

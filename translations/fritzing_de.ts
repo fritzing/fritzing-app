@@ -2415,7 +2415,8 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="772"/>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Der Entwurf %1 konnte nicht geschrieben werden: %2.</translation>
+        <translation>Der Entwurf %1 konnte nicht geschrieben werden:
+ %2.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="787"/>
@@ -2599,7 +2600,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1007"/>
         <source>Eagle...</source>
-        <translation>Eagle...</translation>
+        <translation>Eagle…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1009"/>
@@ -2609,7 +2610,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1012"/>
         <source>Extended Gerber (RS-274X)...</source>
-        <translation>Extended Gerber (RS-274X)...</translation>
+        <translation>Extended Gerber (RS-274X)…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1014"/>
@@ -3664,7 +3665,7 @@ Zurücksetzen?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2838"/>
         <source>Set autorouting parameters including keepout...</source>
-        <translation>Autorouter und Entwurfsregeln einstellen</translation>
+        <translation>Autorouter und Entwurfsregeln einstellen…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2865"/>
@@ -4199,7 +4200,7 @@ Bitte überprüfe alle Ansichten auf eventuelle Nebenwirkungen.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1210"/>
         <source>Minimize current window</source>
-        <translation>Fenster minimieren </translation>
+        <translation>Fenster minimieren</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1222"/>
@@ -4470,7 +4471,7 @@ Bitte überprüfe alle Ansichten auf eventuelle Nebenwirkungen.</translation>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2091"/>
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
         <translation>
-            <numerusform>%1 von %2 Netzen geroutet - %n Verbinder noch zu routen</numerusform>
+            <numerusform>%1 von %2 Netzen geroutet - eine Verbindung noch zu routen</numerusform>
             <numerusform>%1 von %2 Netzen geroutet - %n Verbinder noch zu routen</numerusform>
         </translation>
     </message>
@@ -4655,8 +4656,8 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="774"/>
         <source> with %n vias</source>
         <translation>
-            <numerusform>mit %n Via</numerusform>
-            <numerusform>mit %n Vias</numerusform>
+            <numerusform> mit %n Via</numerusform>
+            <numerusform> mit %n Vias</numerusform>
         </translation>
     </message>
     <message>
@@ -5232,7 +5233,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1595"/>
         <source>You may use a PNG or JPG image to construct your part, but it is better to use an SVG. </source>
-        <translation>Du kannst ein PNG- oder JPG-Bild zum Erstellen Deines Bauteils verwenden, aber es ist besser, eine SVG zu verwenden.</translation>
+        <translation>Du kannst ein PNG- oder JPG-Bild zum Erstellen Deines Bauteils verwenden, aber es ist besser, eine SVG zu verwenden. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1596"/>
@@ -5391,14 +5392,14 @@ Ursache: %2 (Fehlercode %3)</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3808"/>
         <source>across %n views. </source>
         <translation>
-            <numerusform>über %n Ansichten. </numerusform>
+            <numerusform>über eine Ansicht. </numerusform>
             <numerusform>über %n Ansichten. </numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3809"/>
         <source>Until all connectors are assigned to SVG elements, the part will not work correctly. </source>
-        <translation>Bis alle Verbinder SVG-Elementen zugeordnet sind, wird das Bauteil nicht korrekt funktionieren.</translation>
+        <translation>Bis alle Verbinder SVG-Elementen zugeordnet sind, wird das Bauteil nicht korrekt funktionieren. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="536"/>
@@ -5518,7 +5519,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="565"/>
         <source>Open a file to use as the image for this view of the part.</source>
-        <translation>Wähle eine Datei für die Darstellung dieser Ansicht</translation>
+        <translation>Wähle eine Datei für die Darstellung dieser Ansicht.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="575"/>
@@ -5563,7 +5564,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="828"/>
         <source>If you make changes to breadboard view, or change connector metadata, the legs may no longer work. </source>
-        <translation>Wenn Du Änderungen an der Steckplatinen-Ansicht vornimmst, oder Verbindungs-Metadaten änderst, kann es sein dass die biegbaren Bauteilbeine nicht mehr funktionieren.</translation>
+        <translation>Wenn Du Änderungen an der Steckplatinen-Ansicht vornimmst, oder Verbindungs-Metadaten änderst, kann es sein dass die biegbaren Bauteilbeine nicht mehr funktionieren. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="829"/>
@@ -5571,6 +5572,7 @@ Ursache: %2 (Fehlercode %3)</translation>
 
 </source>
         <translation>Du kannst problemlos Änderungen an der Schaltplan- und Leiterplatten-Ansicht vornehmen.
+
 </translation>
     </message>
     <message>
@@ -5869,7 +5871,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="96"/>
         <source>Set this checkbox to edit internal connections by drawing wires</source>
-        <translation></translation>
+        <translation>Aktivieren Sie dieses Kontrollkästchen, um interne Verbindungen durch Zeichnen von Drähten zu bearbeiten</translation>
     </message>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="85"/>
@@ -5879,7 +5881,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="110"/>
         <source>Controls for setting the terminal point for a connector. The terminal point is where a wire will attach to the connector. You can also drag the crosshair of the current connector</source>
-        <translation></translation>
+        <translation type="unfinished">Steuerelemente zum Einstellen der Klemmstelle für einen Steckverbinder. Die Klemmstelle ist die Stelle, an der ein Draht an den Verbinder angeschlossen wird. Sie können auch das Fadenkreuz des aktuellen Verbinders ziehen</translation>
     </message>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="119"/>
@@ -5974,7 +5976,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="444"/>
         <source>Use the cursor location and mouse wheel to navigate to the SVG element which you want to assign to the current connector, then mouse down to select it.</source>
-        <translation></translation>
+        <translation>Verwenden Sie die Cursorposition und das Mausrad, um zu dem SVG-Element zu navigieren, das Sie dem aktuellen Anschluss zuweisen möchten, und wählen Sie es dann mit der Maus aus.</translation>
     </message>
 </context>
 <context>
@@ -6291,7 +6293,8 @@ Fortsetzen und speichern?</translation>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="461"/>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Die Datei %1 konnte nicht gelesen werden: %2.</translation>
+        <translation>Die Datei %1 konnte nicht gelesen werden: 
+%2.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="513"/>
@@ -6631,7 +6634,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="524"/>
         <source>This checkbox sets the default behavior. You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag.</source>
-        <translation>Dies ist die Standardeinstellung. Du kannst immer das jeweils andere Verhalten erzielen, wenn Du beim Ziehen die &quot;Strg&quot;-Taste (Mac: Cmd) gedrückt hältst. </translation>
+        <translation>Dies ist die Standardeinstellung. Du kannst immer das jeweils andere Verhalten erzielen, wenn Du beim Ziehen die &quot;Strg&quot;-Taste (Mac: Cmd) gedrückt hältst.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="531"/>
@@ -6674,7 +6677,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="290"/>
         <source>Board</source>
-        <translation>Board</translation>
+        <translation>Platine</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="308"/>
@@ -6888,7 +6891,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="276"/>
         <source>Board</source>
-        <translation>Board</translation>
+        <translation>Platine</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="281"/>
@@ -7125,7 +7128,8 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <location filename="../src/model/palettemodel.cpp" line="195"/>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Die Datei %1 konnte nicht gelesen werden: %2.</translation>
+        <translation>Die Datei %1 konnte nicht gelesen werden: 
+%2.</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="88"/>
@@ -7681,7 +7685,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="568"/>
         <source>non-copper holes not implemented</source>
-        <translation>Sorry, kann noch nicht mit nicht-kupfernen Löchern umgehen.</translation>
+        <translation>Nicht-Kupferbohrungen nicht implementiert</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="589"/>
@@ -7773,7 +7777,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="155"/>
         <source>Unable to translate svg curves in %1</source>
-        <translation></translation>
+        <translation>SVG-Kurven in %1 können nicht  verschoben werden</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="165"/>
@@ -7788,43 +7792,43 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="198"/>
         <source>silk layer %1 export is empty</source>
-        <translation></translation>
+        <translation type="unfinished">silk layer %1 export is empty</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="214"/>
         <source>silk export failure</source>
-        <translation></translation>
+        <translation type="unfinished">silk export failure</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="236"/>
         <source>exported drill file is empty</source>
-        <translation></translation>
+        <translation>exportierte Bohrungs-Datei ist leer</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="253"/>
         <source>drill export failure</source>
-        <translation></translation>
+        <translation>Fehler beim Export der Bohrungen</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="271"/>
         <source>exported mask layer %1 is empty</source>
-        <translation></translation>
+        <translation>exportierte Maskenebene %1 ist leer</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="277"/>
         <source>%1 mask export failure (2)</source>
-        <translation></translation>
+        <translation>%1 Masken-Exportfehler (2)</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="285"/>
         <location filename="../src/svg/gerbergenerator.cpp" line="319"/>
         <source>mask export failure</source>
-        <translation></translation>
+        <translation>Masken-Exportfehler</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="308"/>
         <source>exported paste mask layer is empty</source>
-        <translation></translation>
+        <translation>exportierte Pastenmaskenebene ist leer</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="344"/>

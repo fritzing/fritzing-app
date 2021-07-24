@@ -966,7 +966,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>DPI</source>
-        <translation type="unfinished"></translation>
+        <translation>DPI</translation>
     </message>
 </context>
 <context>
@@ -1094,7 +1094,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>A &lt;b&gt;Vista PCB&lt;/b&gt; é onde você etiqueta os componentes  numa PCB física (Placa de Circuito Impresso).&lt;br/&gt;&lt;br/&gt;PCBs podem ser feitos em casa ou num pequeno laboratório usando processos de gravura DIY. Eles podem também ser enviados para um fabricante de PCB para um fabrico preciso. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;A primeira coisa que irá precisar é uma placa para colocar os seus componentes. Lá poderá estar um no seu esboço, mas se não, arraste para o ícone da placa no Pacote de Componentes. O ícone encaixa na imagem na direita: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Para dispor o seu PCB, arrume todos os componenetes para que encaixem bem na placa. Depois tente movimentá-los para minimizar o comprimento e a confusão das ligações. Pode também redimensionar placas retangulares. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Assim que os componentes são postos, pode ligá-las com traços de cobre. Pode também arrastar um traço de ligações individuais ou utilizar o autorouter para gerá-las. O botão Autoroute está em baixo na janela. O botão corresponde à imagem na direita:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
@@ -1105,7 +1105,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Os seus componentes personalizados e os pacotes são movidos da pasta da app escondida para a sua pasta de documentos fritzing em &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;Desta forma esperemos que fique mais fácil para poder encontrar e editá-los manualmente.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -3922,11 +3922,11 @@ Razão: %2 (errcode %3)</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>O seu esboço ainda não tem uma placa!  Por favor adicione um PCB em ordem de utilizar esta operação.</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>O seu esboço ainda não tem uma placa!  Por favor adicione um PCB em ordem de utilizar esta operação.</translation>
     </message>
 </context>
 <context>
@@ -5482,7 +5482,7 @@ tecla shift troca o eixo de scroll</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished">Editar</translation>
+        <translation>Editar</translation>
     </message>
     <message>
         <source>View</source>
@@ -6396,7 +6396,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     </message>
     <message>
         <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para mais informações sobre preços consulte &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -6427,7 +6427,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;O Fritzing talvez tenha falhado, mas algumas das alterações nos seguintes ficheiros podem ser recuperadas.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;A data e hora de cada ficheiro recuperado é mostrado. Se o ficheiro foi guardado, a data e hora estão listados para poder comparar.&lt;/p&gt;&lt;p&gt;Os ficheiros originais ainda estão no disco, caso eles não tenham sido guardados. Pode escolher se quer substituir o ficheiro original depois de abrir o ficheiro de recuperação.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Selecione os ficheiros que quer recuperar a partir da seguinte lista.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -7269,11 +7269,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Clique no indicador de posição do rato na barra de estado (na parte inferior) para alterar as unidades de in para mm e px.</translation>
     </message>
     <message>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para girar livremente um componente na vista Breadboard ou PCB, selecione-a e passe o rato perto de um dos cantos até ver o cursor de rotação. Passe o rato para baixo e o canto seguirá o rato enquanto você arrasta.</translation>
     </message>
 </context>
 <context>

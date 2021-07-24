@@ -1090,22 +1090,22 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">欢迎来到&lt;b&gt;原理图视图&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;这是一种比面包板视图更抽象的方式来观察元件和连接。你有和面包板上一样的元素，只是看起来不同。这种表示方法更接近于工程师使用的传统图表。&lt;br/&gt;&lt;br/&gt;在你绘制了部件之间的导线后，你可以按&amp;lt;Shift&amp;gt;-用鼠标点击来创建弯曲点并整理你的连接。原理图视图可以帮助你检查你是否在部件之间建立了正确的连接。你还可以打印出你的原理图，以备记录。</translation>
     </message>
     <message>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;PCB视图&lt;/b&gt;是你在物理PCB（印刷电路板）上布置元件的地方。&lt;br/&gt;&lt;br/&gt;PCB可以在家里或在一个小实验室使用DIY蚀刻工艺制作。它们也可以被送到专业的PCB制造服务机构进行更精确的制造。&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;你首先需要的是一块板子，把你的零件放在上面。你的草图中应该已经有一个，如果没有，从零件库中拖入电路板图标。该图标与右边的图片一致。&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;要布置好你的PCB，安排好所有的部件，使它们能很好地在电路板上安装。然后试着把它们移开，以减少连接的长度和混乱。你也可以调整矩形板的大小。&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;一旦零件整理好了，你就用铜线连接它们。你可以从单个连接处拖出一条线，或者使用自动布线器来生成它们。自动路由按钮在窗口的底部。该按钮与右边的图片相匹配：&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
     <name>FolderUtils</name>
     <message>
         <source>Moving your custom parts</source>
-        <translation type="unfinished"></translation>
+        <translation>移动您的定制部件</translation>
     </message>
     <message>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;你定制的零件和仓被从隐藏的应用程序数据文件夹移到你的Fritzing文档文件夹中&lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;这种方式，我们希望让你更容易找到并手动编辑它们&lt;/p&gt; 。</translation>
     </message>
 </context>
 <context>

@@ -264,7 +264,7 @@ QWidget* PrefsDialog::createColorForm()
 	h1->addWidget(c1);
 
 	QColor connectedColor = ItemBase::connectedColor();
-	m_connectedColorLabel = new QLabel(tr("%1").arg(connectedColor.name()), this);
+	m_connectedColorLabel = new QLabel(QString("%1").arg(connectedColor.name()), this);
 	QPushButton * pb1 = new QPushButton(tr("%1 (click to change...)").arg(""), this);
 	connect(pb1, SIGNAL(clicked()), this, SLOT(setConnectedColor()));
 	m_connectedColorLabel->setPalette(QPalette(connectedColor));

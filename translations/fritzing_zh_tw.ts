@@ -4877,7 +4877,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>你的草图还没有板子!  请添加一个PCB来使用这个选择操作。</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>
@@ -8099,7 +8099,7 @@ Fritzing 還可以運作，但此時，您無法變更元件的屬性。</transl
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>

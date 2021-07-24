@@ -1108,7 +1108,7 @@ Um svg de placa personalizada tipicamente tem uma ou mais camadas de impressão 
     </message>
     <message>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Suas peças e caixas feitas sob medida são movidas da pasta de dados da aplicação escondida para a pasta de documentos Fritzing em &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt; Desta forma, esperamos facilitar a sua localização e edição manual.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -3916,7 +3916,7 @@ Razão: %2 (código do erro %3)</translation>
     </message>
     <message>
         <source>Fritzing Fab Quote</source>
-        <translation>Fritzing Fab</translation>
+        <translation>Oferta Fritzing Fab</translation>
     </message>
     <message>
         <source>Sorry, http://fab.fritzing.org is not responding to the quote request. Please check your network connection and/or try again later.</source>
@@ -3928,7 +3928,7 @@ Razão: %2 (código do erro %3)</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seu esquemático não tem uma placa ainda!  Adicione uma PCB para utilizar esta operação de seleção.</translation>
     </message>
 </context>
 <context>

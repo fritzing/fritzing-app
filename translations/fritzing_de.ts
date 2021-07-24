@@ -1375,6 +1375,10 @@ Trotzdem diese Datei benutzen?</translation>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Deine selbst erstellten Bauteile werden jetzt von dem verborgenen &quot;App Data&quot;-Ordner in Deinen Fritzing Dokumenten-Ordner verschoben: &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;So wird es für Dich einfacher, die zugehörigen Dateien zu finden und ggf. manuell zu bearbeiten.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;Deine selbst erstellten Bauteile werden jetzt von dem verborgenen &quot;App Data&quot;-Ordner in Deinen Fritzing Dokumenten-Ordner verschoben: &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;So wird es für Dich einfacher, die zugehörigen Dateien zu finden und ggf. manuell zu bearbeiten.&lt;/p&gt;</translation>
+    </message>
 </context>
 <context>
     <name>FritzingWindow</name>
@@ -4868,6 +4872,10 @@ Ursache: %2 (Fehlercode %3)</translation>
 </translation>
     </message>
     <message>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use this selection operation.</source>
+        <translation type="vanished">Dein Entwurf enthält noch keine Leiterplatte! Bitte füge eine hinzu, um diese Funktion auszuführen.</translation>
+    </message>
+    <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="295"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2223"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2251"/>
@@ -8108,6 +8116,10 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <source>Some countries might charge additional import taxes or checking fees.&lt;br /&gt;</source>
         <translation>In einigen Ländern können zusätzliche Einfuhrsteuern oder Prüfgebühren anfallen.&lt;br /&gt;</translation>
     </message>
+    <message>
+        <source>For more information on pricing see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="vanished">Für weitere Informationen zur Preisgestaltung siehe &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
+    </message>
     <message numerus="yes">
         <location filename="../src/dialogs/quotedialog.cpp" line="267"/>
         <source>The total area of the %n PCB(s) in this sketch is</source>
@@ -8158,6 +8170,10 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Fritzing ist abgestürzt, aber einige Deiner letzten Änderungen an den folgenden Entwürfen könnten wiederhergestellt werden.&lt;/b&gt;&lt;/p&gt;&lt;p&gt; Das Datum und die Uhrzeit der letzten automatischen Sicherung werden hier angezeigt. Falls die Datei einmal gespeichert wurde, wird auch dieses Datum zum Vergleich angezeigt. Du kannst nach der Wiederherstellung noch wählen, ob Du die letzte gespeicherte Datei überschreiben willst.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Wähle alle Dateien, die Du von der Sicherung wiederherstellen möchtest:&lt;/b&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt;Fritzing ist abgestürzt, aber einige Deiner letzten Änderungen an den folgenden Entwürfen könnten wiederhergestellt werden.&lt;/b&gt;&lt;/p&gt;&lt;p&gt; Das Datum und die Uhrzeit der letzten automatischen Sicherung werden hier angezeigt. Falls die Datei einmal gespeichert wurde, wird auch dieses Datum zum Vergleich angezeigt. Du kannst nach der Wiederherstellung noch wählen, ob Du die letzte gespeicherte Datei überschreiben willst.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Wähle alle Dateien, die Du von der Sicherung wiederherstellen möchtest:&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
@@ -9438,6 +9454,10 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         <location filename="../src/version/updatedialog.cpp" line="54"/>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Es ist eine Bauteil-Aktualisierung verfügbar!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Soll Fritzing dieses jetzt herunterladen und installieren?&lt;br/&gt;Siehe die &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;Liste der Änderungen hier.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Hinweis: Die Aktualisierung kann ein paar Minuten dauern und Fritzing muss danach neu gestartet werden.&lt;br/&gt;Du kannst die Aktualisierung auch später manuell starten per &lt;i&gt;Hilfe &amp;rarr; Nach Aktualisierungen suchen&lt;/i&gt;.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">Schließen</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>

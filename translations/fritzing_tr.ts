@@ -4,6 +4,14 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="vanished">Sürüm %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;Kod için GNU GPL v3 ve geri kalanlar için CreativeCommons:BY-SA</translation>
@@ -47,6 +55,14 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher ve Daniel Tzschentke. </translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="vanished">Teşekkürler: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -237,6 +253,22 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>ve her bir Fritzing Başlangıç Kiti veya Fritzing Lab&apos;dan PCB alımı.</translation>
+    </message>
+    <message>
+        <source>Special thanks goes out as well to all the students </source>
+        <translation type="vanished">Fritznig&apos;e test turu atma imkanı sağlayan tüm öğrencilere </translation>
+    </message>
+    <message>
+        <source>and alpha testers who were brave enough to give </source>
+        <translation type="vanished">ve cesur alfa testçilere </translation>
+    </message>
+    <message>
+        <source>Fritzing a test spin. </source>
+        <translation type="vanished">ayrıca teşekkür ederiz. </translation>
+    </message>
+    <message>
+        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
 </context>
 <context>
@@ -1360,6 +1392,10 @@ Dosya kullanılsın mı?</translation>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="obsolete">&lt;b&gt;BDK Görünümü&lt;/b&gt; bileşenleri fiziksel BDK (Baskılı Devre Kartı) üzerine yerleştirebileceğiniz bir yerdir.&lt;br/&gt;&lt;br/&gt;Baskılı devre kartları evde veya küçük laboratuvarlarda üretilebilirler. Daha hassas üretim için profesyonel baskılı üretime de gönderebilirsiniz. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;İlk ihtiyacınız olacak şey üzerine parçaları yerleştireceğiniz kart olacaktır. Çiziminizde zaten bir tane olmalıdır ama yoksa Parçalar Kovasından bir kart simgesi sürükleyebilirsiniz. Simge sağdaki gibi olmalıdır:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Baskılı devrenizde tüm bileşenleri karta rahatça sığacak şekilde yerleştirin. Ardından bağlantıların uzunluklarını ve karmaşasını azaltacak şekilde kaydırın. Dikdörtgen kartlar da kullanabilirsiniz. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Bir defa parçalar yerleştiğinde onları bakır izlerle birleştirebilirsiniz. Bu izleri ister tek tek, isterseniz otomatik yönlendirici ile uzatabilirsiniz. Otomatik yönlendirici düğmesi pencerenin altında bulunur. Simgesi şunun gibi olmalıdır:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+    </message>
 </context>
 <context>
     <name>FolderUtils</name>
@@ -2403,6 +2439,10 @@ Bu mesajı engellemek için çalışıyoruz ve size varolan özelliklerden birin
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
         <source>PNG Image (*.png)</source>
         <translation>PNG Görüntüsü (*.png)</translation>
@@ -2503,6 +2543,10 @@ Bu mesajı engellemek için çalışıyoruz ve size varolan özelliklerden birin
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2640"/>
         <source>File &apos;%1&apos; not found</source>
         <translation>&apos;%1&apos; dosyası bulunamadı</translation>
+    </message>
+    <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">elemanları direk olarak yüklüyor</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
@@ -2619,6 +2663,14 @@ Bu mesajı engellemek için çalışıyoruz ve size varolan özelliklerden birin
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="979"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>Mevcut çizimin görünen kısımlarını PNG resmi olarak dışa aktar</translation>
+    </message>
+    <message>
+        <source>PostScript...</source>
+        <translation type="vanished">PostScript...</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">Mevcut çizimin görünen kısımlarını PostScript resmi olarak dışa aktar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="982"/>
@@ -3738,6 +3790,14 @@ Devam et ve geri döndür?</translation>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1234"/>
         <source>Open Fritzing help</source>
         <translation>Fritzing Yardımı Aç</translation>
+    </message>
+    <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Fritzing&apos;e Bağış Yap</translation>
+    </message>
+    <message>
+        <source>Open Fritzing donation web page</source>
+        <translation type="vanished">Fritzing bağış web sitesini ziyaret et</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1237"/>
@@ -4864,6 +4924,10 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
         <translation>Toprak dolgusu yapmadan önce lütfen bir ya da daha fazla toprak tanesi belirleyin.
 
 </translation>
+    </message>
+    <message>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use this selection operation.</source>
+        <translation type="vanished">Çiziminizin henüz bir borad&apos;u yok! Lütfen seçilen bu işlemi kullanabilmek için bir Baskı Devre ekleyin.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="295"/>
@@ -7040,6 +7104,14 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <translation>Yönlendirmek için bağlantı yok.</translation>
     </message>
     <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</source>
+        <translation type="obsolete">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Sürüm %1.%2.%3 (%4%5) %6&lt;/font&gt; {2&apos;?} {4e?} {1.%2.%3 ?} {4 %5)?} {6&lt;?}</translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
+        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Sürüm %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/fapplication.cpp" line="2059"/>
         <source>Regenerate database failed</source>
         <translation type="unfinished"></translation>
@@ -8076,6 +8148,14 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>Adet</translation>
     </message>
     <message>
+        <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
+        <translation type="vanished">Lütfen fiyatların kargo ücretini, ilave vergi ve gümrükleri&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
+        <translation type="vanished">kapsamadığını unutmayın.&lt;br /&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="268"/>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
         <translation> %1 cm%3 (%2 in%3).&lt;br /&gt;</translation>
@@ -8123,6 +8203,10 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         </translation>
     </message>
     <message>
+        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="vanished">Ücretlendirme ile ilgili daha fazla bilgi için &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt; adresini ziyaret edin.</translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="168"/>
         <source>Fritzing Fab Quote</source>
         <translation>Fritzing Fab Teklifi</translation>
@@ -8164,6 +8248,10 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Fritzing çökmüş olabilir ancak ilgili dosyalardaki bazı değişiklikler kurtarılabilir.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Yedeklenen her dosyanın tarih ve saati görüntülenir.Dosya kaydedildiyse tarih ve saat&apos;de karşılaştırma için listelenir.&lt;/p&gt;&lt;p&gt;Eğer dosyayı bir kere bile kaydettiyseniz o orijinal dosyalar halen diskinizde bulunmaktadır.Ve orijinal dosyanızın kurtarma dosyasını yüklediyseniz onu üzerine yazmak üzere seçebilirsiniz.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Aşağıdaki listeden kurtarmak istediğiniz herhangi bir dosyayı seçin.&lt;/b&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt;Fritzing çökmüş olabilir ancak ilgili dosyalardaki bazı değişiklikler kurtarılabilir.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Yedeklenen her dosyanın tarih ve saati görüntülenir.Dosya kaydedildiyse tarih ve saat&apos;de karşılaştırma için listelenir.&lt;/p&gt;&lt;p&gt;Eğer dosyayı bir kere bile kaydettiyseniz o orijinal dosyalar halen diskinizde bulunmaktadır.Ve orijinal dosyanızın kurtarma dosyasını yüklediyseniz onu üzerine yazmak üzere seçebilirsiniz.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Aşağıdaki listeden kurtarmak istediğiniz herhangi bir dosyayı seçin.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
@@ -8985,9 +9073,17 @@ Not: Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzer
         <translation>Parçaların seçili bir bölümünü daha hassas taşımak için ok tuşlarını kullanın.  Shift ile kullanıldıklarında 10 birim hareket ederler.</translation>
     </message>
     <message>
+        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
+        <translation type="vanished">Birimi mm&apos;den px&apos;e değiştirmek için (en alttaki) durum çubuğundaki fare konum göstergesine tıklayın.</translation>
+    </message>
+    <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
         <source>rotation</source>
         <translation>dönme</translation>
+    </message>
+    <message>
+        <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
+        <translation type="vanished">Deneysel devre tahtası veya baskılı devrede bir parçayı serbestçe döndürmek için onu seçin, fareyi köşelerinden biri üzerinde döndürme imleci görünene kadar bekletin. Fareyi hareket ettirdiğinizde bu köşe onu takip edecektir.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
@@ -9023,6 +9119,10 @@ Not: Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzer
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
         <translation>Bir parça etiketini düzenlemek için üzerine çift tıklayın veya denetim penceresinde metin girdisi alanını kullanın.</translation>
+    </message>
+    <message>
+        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
+        <translation type="vanished">Bir parça etiketinde çeşitli özellikleri görüntülemek, döndürmek veya yazı tipini değiştirmek için etikete sağ tıklayın.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="119"/>
@@ -9444,6 +9544,10 @@ Not: Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzer
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Close</source>
+        <translation type="vanished">Kapat</translation>
+    </message>
+    <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>
         <source>Update parts</source>
         <translation type="unfinished"></translation>
@@ -9562,6 +9666,14 @@ Not: Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzer
         <translation>Fab</translation>
     </message>
     <message>
+        <source>Shop</source>
+        <translation type="vanished">Alışveriş</translation>
+    </message>
+    <message>
+        <source>Fritzing CreatorKit</source>
+        <translation type="vanished">Fritzing Oluşturma Seti</translation>
+    </message>
+    <message>
         <location filename="../src/sketch/welcomeview.cpp" line="461"/>
         <source>Fritzing Fab</source>
         <translation>Fritzing Fab</translation>
@@ -9625,6 +9737,10 @@ Not: Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzer
         <location filename="../src/sketch/welcomeview.cpp" line="716"/>
         <source>Unable to reach fritzing.org/projects</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach friting.org/projects</source>
+        <translation type="vanished">friting.org/projects adresine ulaşılamıyor</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="929"/>

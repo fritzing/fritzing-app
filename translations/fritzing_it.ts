@@ -4,6 +4,10 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 sul codice e CreativeCommons:BY-SA su tutto il resto</translation>
@@ -69,6 +73,10 @@
         <translation>Michaela Vieser e Julia Werner.</translation>
     </message>
     <message>
+        <source>to Gianluca Urgese for the Italian translation, </source>
+        <translation type="vanished">to Gianluca Urgese and 5volts for the Italian translation,</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
         <translation>Fritzing è reso possibile grazie al finanziamento del </translation>
@@ -92,6 +100,10 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="vanished">Versione %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="120"/>
@@ -2232,6 +2244,10 @@ Stiamo lavorando per evitare questo messaggio, quindi ti chiediamo di scegliere 
 %2.</translation>
     </message>
     <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">caricamento diretto componenti</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
         <source>loading %1 (model)</source>
         <translation>carica %1 (modello)</translation>
@@ -3350,6 +3366,10 @@ Please check all views for potential side-effects.</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1193"/>
         <source>Display the parts bin in a list view</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Dona a Fritzing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1029"/>
@@ -9397,6 +9417,10 @@ Note: you can also trigger this display by mousing down on the routing status te
 <context>
     <name>UpdateDialog</name>
     <message>
+        <source>Close</source>
+        <translation type="vanished">Chiudi</translation>
+    </message>
+    <message>
         <location filename="../src/version/updatedialog.cpp" line="129"/>
         <source>A new main release is available for downloading:</source>
         <translation>Una nuova release principale è disponibile per il download:</translation>
@@ -9520,6 +9544,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Shop</source>
+        <translation type="vanished">Negozio</translation>
+    </message>
+    <message>
         <location filename="../src/sketch/welcomeview.cpp" line="462"/>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
         <translation>Fritzing Fab è un servizio facile e conveniente per produrre circuiti stampati professionali dai tuoi sketch Fritzing. </translation>
@@ -9573,6 +9601,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/sketch/welcomeview.cpp" line="716"/>
         <source>Unable to reach blog.fritzing.org</source>
         <translation>Impossibile connettersi a blog.fritzing.org</translation>
+    </message>
+    <message>
+        <source>Unable to reach friting.org/projects</source>
+        <translation type="vanished">Impossibile connettersi a fritzing.org/projects</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="929"/>

@@ -4,6 +4,10 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 para o código e CreativeCommons:BY-SA para o resto</translation>
     </message>
@@ -30,6 +34,14 @@
     <message>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
         <translation>Mariano Crowe, Johannes Landstorfer, </translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, e Daniel Tzschentke. </translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="vanished">Agradecimentos especiais vão para:</translation>
     </message>
     <message>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
@@ -72,8 +84,28 @@
         <translation>IxDS,um patrocinador anônimo, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
+        <source>Special thanks goes out as well to all the students </source>
+        <translation type="vanished">Agradecimentos especiais vão também para todos os estudantes </translation>
+    </message>
+    <message>
+        <source>and alpha testers who were brave enough to give </source>
+        <translation type="vanished">e todos os alpha testers que foram corajosos o suficiente para fazer </translation>
+    </message>
+    <message>
+        <source>Fritzing a test spin. </source>
+        <translation type="vanished">ao Fritzing o teste inicial. </translation>
+    </message>
+    <message>
+        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
+    </message>
+    <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>e para cada compra de um Fritzing Starter Kit ou um PCB do Fritzing Fab.</translation>
+    </message>
+    <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="vanished">Versão %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
@@ -170,6 +202,14 @@
     <message>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
         <translation>Versão %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, Daniel Tzschentke, </translation>
+    </message>
+    <message>
+        <source>and Kjell Morgenstern </source>
+        <translation type="vanished">e Kjell Morgenstern </translation>
     </message>
     <message>
         <source>Ukrainian: </source>
@@ -1093,6 +1133,10 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <translation>Bem-vindo(a) à &lt;b&gt;Vista de Esquema&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Essa é uma maneira mais abstrata de ver componentes e conexões do que a Vista de Breadboard. Você tem os mesmos elementos que você tem na sua placa de ensaio, eles apenas parecem diferentes. Essa representação está mais próxima dos diagramas tradicionais usados pelos engenheiros.&lt;br/&gt;&lt;br/&gt;Depois de desenhar os fios entre os componentes, pode clicar &amp;lt;Shift&amp;gt;-clique com o rato para criar pontos de curvatura e arruma as suas ligações. A Vista de Esquema pode ajudá-lo a verificar se tem as ligações certas entre os componentes. Pode também imprimir o seu esquema para documentação.</translation>
     </message>
     <message>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="vanished">A &lt;b&gt;Vista PCB&lt;/b&gt; é onde você etiqueta os componentes  numa PCB física (Placa de Circuito Impresso).&lt;br/&gt;&lt;br/&gt;PCBs podem ser feitos em casa ou num pequeno laboratório usando processos de gravura DIY. Eles podem também ser enviados para um fabricante de PCB para um fabrico preciso. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;A primeira coisa que irá precisar é uma placa para colocar os seus componentes. Lá poderá estar um no seu esboço, mas se não, arraste para o ícone da placa no Pacote de Componentes. O ícone encaixa na imagem na direita: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Para dispor o seu PCB, arrume todos os componenetes para que encaixem bem na placa. Depois tente movimentá-los para minimizar o comprimento e a confusão das ligações. Pode também redimensionar placas retangulares. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Assim que os componentes são postos, pode ligá-las com traços de cobre. Pode também arrastar um traço de ligações individuais ou utilizar o autorouter para gerá-las. O botão Autoroute está em baixo na janela. O botão corresponde à imagem na direita:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+    </message>
+    <message>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
         <translation>A &lt;b&gt;Vista PCB&lt;/b&gt; é onde você etiqueta os componentes  numa PCB física (Placa de Circuito Impresso).&lt;br/&gt;&lt;br/&gt;PCBs podem ser feitos em casa ou num pequeno laboratório usando processos de gravura DIY. Eles podem também ser enviados para um fabricante de PCB para um fabrico preciso. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;A primeira coisa que irá precisar é uma placa para colocar os seus componentes. Lá poderá estar um no seu esboço, mas se não, arraste para o ícone da placa no Pacote de Componentes. O ícone encaixa na imagem na direita: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Para dispor o seu PCB, arrume todos os componenetes para que encaixem bem na placa. Depois tente movimentá-los para minimizar o comprimento e a confusão das ligações. Pode também redimensionar placas retangulares. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Assim que os componentes são postos, pode ligá-las com traços de cobre. Pode também arrastar um traço de ligações individuais ou utilizar o autorouter para gerá-las. O botão Autoroute está em baixo na janela. O botão corresponde à imagem na direita:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
@@ -1102,6 +1146,10 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <source>Moving your custom parts</source>
         <translation>Mover os componentes peronalizados</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;Os seus componentes personalizados e os pacotes são movidos da pasta da app escondida para a sua pasta de documentos fritzing em &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;Desta forma esperemos que fique mais fácil para poder encontrar e editá-los manualmente.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
@@ -1664,6 +1712,10 @@ Também é possível escolher um conector como uma semente de aterramento clican
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <source>PNG Image (*.png)</source>
         <translation>Imagem PNG (*.png)</translation>
     </message>
@@ -1722,6 +1774,10 @@ Também é possível escolher um conector como uma semente de aterramento clican
 %2.</source>
         <translation>Não foi possível lerr o ficheiro 1 %1:
 %2.</translation>
+    </message>
+    <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">Carregando os componentes diretamente</translation>
     </message>
     <message>
         <source>loading %1 (model)</source>
@@ -2274,6 +2330,10 @@ Estamos a trabalhar para evitar esta mensagem, e apenas deixar escolher entre pr
         <translation>Exportar a área visível do sketch atual como uma imagem PNG</translation>
     </message>
     <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">Exporta a área visível do sketch actual como uma imagem PostScript</translation>
+    </message>
+    <message>
         <source>Export the visible area of the current sketch as a PDF image</source>
         <translation>Exportar a área visível do sketch atual como uma imagem PDF</translation>
     </message>
@@ -2629,6 +2689,14 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
         <translation>Mostrar o pacote de componentes em vista de listas</translation>
     </message>
     <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Doar para o Fritzing</translation>
+    </message>
+    <message>
+        <source>Open Fritzing donation web page</source>
+        <translation type="vanished">Abrir a página web de donativos Fritzing</translation>
+    </message>
+    <message>
         <source>Export for PCB</source>
         <translation>Exportar para PCB</translation>
     </message>
@@ -2647,6 +2715,10 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
     <message>
         <source>PNG...</source>
         <translation>PNG...</translation>
+    </message>
+    <message>
+        <source>PostScript...</source>
+        <translation type="vanished">PostScript...</translation>
     </message>
     <message>
         <source>PDF...</source>
@@ -3854,6 +3926,10 @@ Razão: %2 (errcode %3)</translation>
     <message>
         <source>Copper fill: please select only the board you want to fill.</source>
         <translation>Preenchimento de cobre: por favor selecione a placa que queira preencher.</translation>
+    </message>
+    <message>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use this selection operation.</source>
+        <translation type="vanished">O seu esboço ainda não tem uma placa! Por favor adicione um PCB em ordem de utilizar esta operação</translation>
     </message>
     <message>
         <source>Please click on a PCB first--this selection operation only works for one board at a time.</source>
@@ -6244,12 +6320,24 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
         <translation>%2 ... %1 fios movidos da sua posição guardada</translation>
     </message>
     <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
+        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
+    </message>
+    <message>
         <source>N/A</source>
         <translation>N/D</translation>
     </message>
     <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
+        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</translation>
+    </message>
+    <message>
         <source>Regenerate database failed</source>
         <translation>Regenerar base de dados falhou</translation>
+    </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; has been changed--it is not in the master branch (%2). %3</source>
+        <translation type="vanished">O diretório de componentes &apos;%1&apos; foi alterado--não está em master branch (%2). %3</translation>
     </message>
     <message>
         <source>The parts folder &apos;%1&apos; may have been damaged (%2). %3</source>
@@ -6288,6 +6376,10 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
         <translation>Incapaz de recuperar referências na rede para &apos;%1&apos;. %2</translation>
     </message>
     <message>
+        <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
+        <translation type="vanished">Não foi possível recuperar a referência de rede principal para &apos;%1&apos;. %2</translation>
+    </message>
+    <message>
         <source>Regenerating parts database</source>
         <translation>A regenerar base de dados de componentes</translation>
     </message>
@@ -6304,6 +6396,10 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
 </source>
         <translation>Erro %1
         </translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</source>
+        <translation type="obsolete">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt; {2&apos;?} {4e?} {1.%2.%3 ?} {4 %5)?} {6&lt;?}</translation>
     </message>
     <message>
         <source>The parts folder &apos;%1&apos; has been changed--it is not in a supported branch (%2). %3</source>
@@ -6340,6 +6436,10 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
 <context>
     <name>QuoteDialog</name>
     <message>
+        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="vanished">Para mais informação sobre preços veja &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
+    </message>
+    <message>
         <source>Order your PCB from Fritzing Fab</source>
         <translation>Encomende o seu PCB no Fritzing Fab</translation>
     </message>
@@ -6371,6 +6471,14 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
         </translation>
     </message>
     <message>
+        <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
+        <translation type="vanished">Por favor note que os preços não incluem portes,&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
+        <translation type="vanished">possíveis impostos adicionais, ou a taxa de verificação.&lt;br /&gt;</translation>
+    </message>
+    <message>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
         <translation> %1 cm%3 (%2 in%3).&lt;br /&gt;</translation>
     </message>
@@ -6393,6 +6501,10 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     <message>
         <source>Some countries might charge additional import taxes or checking fees.&lt;br /&gt;</source>
         <translation>Alguns países podem cobrar impostos de importação adicionais ou taxas de verificação.&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>For more information on pricing see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="vanished">Para mais informações sobre preços consulte &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
@@ -6424,6 +6536,10 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     <message>
         <source>file not saved</source>
         <translation>ficheiro não guardado</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt;O Fritzing talvez tenha falhado, mas algumas das alterações nos seguintes ficheiros podem ser recuperadas.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;A data e hora de cada ficheiro recuperado é mostrado. Se o ficheiro foi guardado, a data e hora estão listados para poder comparar.&lt;/p&gt;&lt;p&gt;Os ficheiros originais ainda estão no disco, caso eles não tenham sido guardados. Pode escolher se quer substituir o ficheiro original depois de abrir o ficheiro de recuperação.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Selecione os ficheiros que quer recuperar a partir da seguinte lista.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
@@ -7064,8 +7180,16 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>Para mover com mais precisão uma seleção de componentes, use as teclas de seta. A tecla Shift move-se 10 unidades.</translation>
     </message>
     <message>
+        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
+        <translation type="vanished">Clique no indicador de posição do rato na barra de estado (na parte inferior) para alterar as unidades de in para mm e px.</translation>
+    </message>
+    <message>
         <source>rotation</source>
         <translation>rotação</translation>
+    </message>
+    <message>
+        <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
+        <translation type="vanished">Para girar livremente um componente na vista Breadboard ou PCB, selecione-a e passe o rato perto de um dos cantos até ver o cursor de rotação. Passe o rato para baixo e o canto seguirá o rato enquanto você arrasta.</translation>
     </message>
     <message>
         <source>To free-rotate a logo text or image item in PCB view hold down the Alt (Linux: meta) key and free-rotate as usual.</source>
@@ -7094,6 +7218,10 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
         <translation>Para editar um rótulo de componente, clique duas vezes nele ou use o widget de entrada de texto na janela do inspetor.</translation>
+    </message>
+    <message>
+        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
+        <translation type="vanished">Para exibir propriedades diferentes num rótulo de componente, girá-lo ou alterar a fonte, clique com o botão direito do rato no rótulo.</translation>
     </message>
     <message>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
@@ -7445,6 +7573,10 @@ Note: you can also trigger this display by mousing down on the routing status te
 <context>
     <name>UpdateDialog</name>
     <message>
+        <source>Close</source>
+        <translation type="vanished">Fechar</translation>
+    </message>
+    <message>
         <source>A new main release is available for downloading:</source>
         <translation>Uma nova versão do Fritzing  encontra-se disponível para download:</translation>
     </message>
@@ -7544,6 +7676,14 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>Fab</translation>
     </message>
     <message>
+        <source>Shop</source>
+        <translation type="vanished">Shop</translation>
+    </message>
+    <message>
+        <source>Fritzing CreatorKit</source>
+        <translation type="vanished">Fritzing CreatorKit</translation>
+    </message>
+    <message>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
         <translation>Fritzing Fab é um serviço fácil e acessível para produzir PCBs profissionais dos seus esboços Fritzing.</translation>
     </message>
@@ -7588,6 +7728,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>Incapaz de abrir blog.fritzing.org</translation>
     </message>
     <message>
+        <source>Unable to reach friting.org/projects</source>
+        <translation type="vanished">Incapaz de abrir fritzing.org/projects</translation>
+    </message>
+    <message>
         <source>Tip of the Day:</source>
         <translation>Sugestão do Dia:</translation>
     </message>
@@ -7602,6 +7746,30 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <source>Fritzing Fab</source>
         <translation>Fritzing Fab</translation>
+    </message>
+    <message>
+        <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
+        <translation type="vanished">O Fritzing Creator Kit está sem Stock. Para Atualizações por favor visite o fritzing.blog</translation>
+    </message>
+    <message>
+        <source>Donate</source>
+        <translation type="vanished">Doar</translation>
+    </message>
+    <message>
+        <source>Fritzing development needs you</source>
+        <translation type="vanished">O desenvolvimento do Fritzing precisa de si</translation>
+    </message>
+    <message>
+        <source>Software development and maintenance is a lot of work. Without your support, it is not possible to keep that up.</source>
+        <translation type="vanished">O desenvolvimento e a manutenção de software dão muito trabalho. Sem o seu apoio, não é possível continuar assim.</translation>
+    </message>
+    <message>
+        <source>Donate and leave a comment.</source>
+        <translation type="vanished">Doar e deixar um comentário.</translation>
+    </message>
+    <message>
+        <source>Donate now</source>
+        <translation type="vanished">Doar agora</translation>
     </message>
     <message>
         <source>Unable to reach fritzing.org/projects</source>

@@ -4,6 +4,10 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 -on the code and CreativeCommons:BY-SA on the rest</translation>
     </message>
@@ -30,6 +34,14 @@
     <message>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
         <translation>Mariano Crowe, Johannes Landstorfer, </translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="vanished">Met speciale dank aan:</translation>
     </message>
     <message>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
@@ -70,6 +82,22 @@
     <message>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
         <translation>IxDS, een anonieme gever, Parallax, Picaxe, Sparkfun, </translation>
+    </message>
+    <message>
+        <source>Special thanks goes out as well to all the students </source>
+        <translation type="vanished">Speciale dank gaat ook uit naar alle studenten </translation>
+    </message>
+    <message>
+        <source>and alpha testers who were brave enough to give </source>
+        <translation type="vanished">en alpha testers, welke moedig genoeg waren om </translation>
+    </message>
+    <message>
+        <source>Fritzing a test spin. </source>
+        <translation type="vanished">Fritzing te testen.</translation>
+    </message>
+    <message>
+        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
@@ -1698,6 +1726,10 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <source>PNG Image (*.png)</source>
         <translation>PNG afbeelding (*.png)</translation>
     </message>
@@ -1774,6 +1806,10 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
 %2.</translation>
     </message>
     <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">Direct inladen van onderdelen</translation>
+    </message>
+    <message>
         <source>loading %1 (model)</source>
         <translation>laden %1 (model)</translation>
     </message>
@@ -1840,6 +1876,10 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
     <message>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>Exporteer het zichtbare gedeelte van de huidige sketch als een PNG afbeelding</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">Exporteer het zichtbare gedeelte van de huidige sketch als een PostScript afbeelding</translation>
     </message>
     <message>
         <source>Export the visible area of the current sketch as a PDF image</source>
@@ -2633,6 +2673,14 @@ Controleer a.u.b. alle weergaves voor potentiële fouten.</translation>
         <translation>Laat onderdelen in de onderdelen koffer zien als een lijst</translation>
     </message>
     <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Doneer aan Fritzing</translation>
+    </message>
+    <message>
+        <source>Open Fritzing donation web page</source>
+        <translation type="vanished">Open de Fritzing donatie website</translation>
+    </message>
+    <message>
         <source>Export for PCB</source>
         <translation>Exporteer voor PCB</translation>
     </message>
@@ -2651,6 +2699,10 @@ Controleer a.u.b. alle weergaves voor potentiële fouten.</translation>
     <message>
         <source>PNG...</source>
         <translation>PNG...</translation>
+    </message>
+    <message>
+        <source>PostScript...</source>
+        <translation type="vanished">PostScript...</translation>
     </message>
     <message>
         <source>PDF...</source>
@@ -3856,6 +3908,10 @@ Reden : %2 (errcode %3)</translation>
     <message>
         <source>Copper fill: please select only the board you want to fill.</source>
         <translation>Koper vulling: Selecteer a.u.b. het bord welke gevuld moet worden.</translation>
+    </message>
+    <message>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use this selection operation.</source>
+        <translation type="vanished">Je sketch heeft nog geen bord! Voeg a.u.b. een bord toe om te kunnen selecteren.</translation>
     </message>
     <message>
         <source>Please click on a PCB first--this selection operation only works for one board at a time.</source>
@@ -6348,6 +6404,10 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
 <context>
     <name>QuoteDialog</name>
     <message>
+        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="vanished">Voor meer informatie over beprijzing ga je naar &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
+    </message>
+    <message>
         <source>Order your PCB from Fritzing Fab</source>
         <translation>Bestel je PCB van Fritzing Fab</translation>
     </message>
@@ -6377,6 +6437,14 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
             <numerusform>De totale oppervlakte van deze %n PCB in deze sketch is</numerusform>
             <numerusform>De totale oppervlakte van de %n PCB&apos;s in deze sketch is</numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
+        <translation type="vanished">Houd er rekening mee dat de prijzen exclusief verzendkosten,&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
+        <translation type="vanished">btw en eventuele bankkosten zijn.&lt;br /&gt;</translation>
     </message>
     <message>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
@@ -6432,6 +6500,10 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     <message>
         <source>file not saved</source>
         <translation>Bestand niet bewaard</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt;Fritzing is vastgelopen, maar sommige wijzigingen voor de volgende bestanden kunnen herstelt worden.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;De datum en tijd van elk gebackupt bestand is weergegeven. Als het bestand is opgeslagen staat daarvan ook de datum en tijd vermeldt ter vergelijking.&lt;/p&gt;&lt;p&gt;De originele bestanden staan nog op je schijf als je ze ooit opgeslagen hebt. Je kunt er voor kiezen om die bestanden te overschrijven nadat je het herstelbestand geladen hebt.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Selcteer de bestanden die je wilt herstellen uit de lijst hier onder.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
@@ -7454,6 +7526,10 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
 </context>
 <context>
     <name>UpdateDialog</name>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">Sluiten</translation>
+    </message>
     <message>
         <source>A new main release is available for downloading:</source>
         <translation>Een nieuwe algemene release is beschikbaar om te downloaden :</translation>

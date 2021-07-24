@@ -4,6 +4,10 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</translation>
@@ -47,6 +51,14 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="obsolete">با تشکر فراوان از:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>

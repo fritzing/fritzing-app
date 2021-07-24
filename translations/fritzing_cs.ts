@@ -4,6 +4,14 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="vanished">Verze %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 za kód a CreativeCommons:BY-SA za zbytek</translation>
@@ -47,6 +55,14 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, a Daniel Tzschentke. </translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="vanished">Zvláštní poděkování patří: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -237,6 +253,22 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>a z každého zakoupeného Fritzing Starter Kitu nebo vyrobené DPS z Fritzing Laboratoří.</translation>
+    </message>
+    <message>
+        <source>Special thanks goes out as well to all the students </source>
+        <translation type="vanished">Zvláštní poděkování patří také všem studentům </translation>
+    </message>
+    <message>
+        <source>and alpha testers who were brave enough to give </source>
+        <translation type="vanished">a alfa testerům, kteří měli odvahu se </translation>
+    </message>
+    <message>
+        <source>Fritzing a test spin. </source>
+        <translation type="vanished">pustit do kola testů Fritzingu.</translation>
+    </message>
+    <message>
+        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
 </context>
 <context>
@@ -1360,6 +1392,11 @@ Poté bude nutné restartovat Fritzing
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="obsolete">Obrazovka &lt;b&gt;DPS&lt;/b&gt; je obrazovka která zobrazuje rozvržení komponentů (součástek) na fyzické desce DPS. DPS desky mohou být vyrobené po domácku (DIY) nebo v továrnách jako je ta naše (Fritzing Fab).
+&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;První věc kterou budete potřebovat je deska na kterou budete umísťovat vaše součástky. Po otevření obrazovky DPS by zde již měla jedna být, jestli není, vložte ji sem přemístěním z panelu součástek.Tato ikona představuje novou desku DPS:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;K rozvržení desky DPS, umisťujte komponenty na vaší desku tak aby na ní přesně seděli. Poté s nimi zkuste manipulovat tak aby jste zmenšily celkovou velikost desky a zkrátily tak délku spojů. Desku DPS můžete taktéž zvětšovat či zmenšovat dle libosti.&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Jakmile máte součástky umístěné musíte je propojit měděnými trasami (propojkami). K vytvoření tras můžete použít funkci AutoRoute nebo je zkusit umístit ručně. Tlačítko autoroutingu vypadá takto:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+    </message>
 </context>
 <context>
     <name>FolderUtils</name>
@@ -2402,6 +2439,10 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
         <source>PNG Image (*.png)</source>
         <translation>PNG obrázek (*.png)</translation>
@@ -2514,6 +2555,10 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
         <translation>Soubor &apos;%1&apos; nenalezen</translation>
     </message>
     <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">přímé načtení součástek</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
         <source>loading %1 (model)</source>
         <translation>načítání %1 (model)</translation>
@@ -2613,6 +2658,14 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="979"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>Exportuje viditelnou oblast aktuálního návrhu jako PNG obrázek</translation>
+    </message>
+    <message>
+        <source>PostScript...</source>
+        <translation type="vanished">PostScript...</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">Exportuje viditelnou oblast aktuálního návrhu jako PostScript obrázek</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="982"/>
@@ -4125,6 +4178,14 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1234"/>
         <source>Open Fritzing help</source>
         <translation>Otevře nápovědu Fritzingu</translation>
+    </message>
+    <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Podpořte Fritzing</translation>
+    </message>
+    <message>
+        <source>Open Fritzing donation web page</source>
+        <translation type="vanished">Otevře web stránku daru pro Fritzing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1237"/>
@@ -8145,6 +8206,10 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt;Fritzing možná havaroval, ale některé ze změn v následujících souborech mohou být obnoveny.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Datum a čas každého souboru který byl zálohován, je zobrazen. Pokud byl soubor uložen, jeho datum a čas je také pro srovnání uveden.&lt;/p&gt;&lt;p&gt;Původní soubory jsou stále na Vašem disku, pokud byly vůbec uloženy. Můžete vybrat, zda chcete přepsat původní soubor po načtení jeho obnoveného souboru.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vyberte soubory, které chcete obnovit z níže uvedeného seznamu.&lt;/b&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
         <source>&amp;Recover</source>
         <translation>&amp;Obnovit</translation>
@@ -8968,9 +9033,17 @@ Poznámka: Toto okno můžete taktéž zobrazit kliknutím na text stavu autorou
         <translation>K lepšímu a přesnějšímu posunování součástek můžete taktéž využít šipky (na klávesnici). Shift+šipka posune objekt o 10 jednotek.</translation>
     </message>
     <message>
+        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
+        <translation type="vanished">Klikněte na indikátor pozice myši v pravé části spodního status panelu pro přepnutí zobrazovaných jednotek (milimetry [mm],palce [in] nebo pixely [px]).</translation>
+    </message>
+    <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
         <source>rotation</source>
         <translation>Otáčení (rotace)</translation>
+    </message>
+    <message>
+        <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
+        <translation type="vanished">Pokud chcete otáčet danou součástkou,označte ji a najeďte myší na jeden z jejich rohů (čárkované ohraničení součástky). Kurzor šipky se změní na kurzor otáčení a po kliknutí levým tlačítkem myši můžete se součástkou otáčet.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
@@ -9006,6 +9079,10 @@ Poznámka: Toto okno můžete taktéž zobrazit kliknutím na text stavu autorou
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
         <translation>Klepněte dvakrát na popisek součástky, čímž jej upravíte. Nebo můžete použít panel Inspektor, kliknutím na součástku a poté kliknutím na název součástky.</translation>
+    </message>
+    <message>
+        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
+        <translation type="vanished">K zobrazení jiných druhů popisků, úpravu písma, rotaci a další možnosti součástky, klikněte pravým tlačítkem myši na popisek.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="119"/>
@@ -9427,6 +9504,10 @@ Poznámka: Toto okno můžete taktéž zobrazit kliknutím na text stavu autorou
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Close</source>
+        <translation type="vanished">Zavřít</translation>
+    </message>
+    <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>
         <source>Update parts</source>
         <translation type="unfinished"></translation>
@@ -9545,6 +9626,18 @@ Poznámka: Toto okno můžete taktéž zobrazit kliknutím na text stavu autorou
         <translation>Laboratoř</translation>
     </message>
     <message>
+        <source>Shop</source>
+        <translation type="vanished">Obchod</translation>
+    </message>
+    <message>
+        <source>Fritzing CreatorKit</source>
+        <translation type="vanished">Fritzing CreatorKit</translation>
+    </message>
+    <message>
+        <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
+        <translation type="vanished">Fritzing Creator Kit není skladem. Pro více informací navštivte fritzing.blog</translation>
+    </message>
+    <message>
         <location filename="../src/sketch/welcomeview.cpp" line="461"/>
         <source>Fritzing Fab</source>
         <translation>Fritzing Laboratoř</translation>
@@ -9608,6 +9701,10 @@ Poznámka: Toto okno můžete taktéž zobrazit kliknutím na text stavu autorou
         <location filename="../src/sketch/welcomeview.cpp" line="716"/>
         <source>Unable to reach fritzing.org/projects</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach friting.org/projects</source>
+        <translation type="vanished">Nelze se připojit k friting.org/projects</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="929"/>

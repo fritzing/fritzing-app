@@ -9360,6 +9360,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Close</source>
+        <translation type="vanished">Tutup</translation>
+    </message>
+    <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>
         <source>Update parts</source>
         <translation type="unfinished"></translation>
@@ -9541,6 +9545,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/sketch/welcomeview.cpp" line="716"/>
         <source>Unable to reach fritzing.org/projects</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach friting.org/projects</source>
+        <translation type="vanished">Tidak dapat menjangkau fritzing.org/projects</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="929"/>

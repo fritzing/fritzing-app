@@ -4,6 +4,14 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="vanished">Versiunea %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 pentru cod și CreativeCommons:BY-SA pentru restul</translation>
@@ -47,6 +55,14 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, și Daniel Tzschentke. </translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="vanished">Mulțumiri speciale pentru: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -237,6 +253,22 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>și pentru toate achizițiile a Kitului de Pornire Fritzing sau a unei PCB de la Fabrica Fritzing.</translation>
+    </message>
+    <message>
+        <source>Special thanks goes out as well to all the students </source>
+        <translation type="vanished">Mulțumiri speciale adresate tuturor studenților </translation>
+    </message>
+    <message>
+        <source>and alpha testers who were brave enough to give </source>
+        <translation type="vanished">și testerilor care au avut curajul să testeze </translation>
+    </message>
+    <message>
+        <source>Fritzing a test spin. </source>
+        <translation type="vanished">Fritzing. </translation>
+    </message>
+    <message>
+        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
 </context>
 <context>
@@ -1362,6 +1394,10 @@ Se utilizează fișierul?</translation>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Vizualizare PCB&lt;/b&gt; este unde amplasați componentele pe o PCB fizică (Placă Circuit Imprimat-PCB).&lt;br/&gt;&lt;br/&gt;PCB-urile pot fi făcute acasă sau într-un mic laborator utilizând procese de gravare DIY. De asemenea pot fi trimise unui serviciu profesional de fabricare PCB pentru o fabricare mai precisă. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Primul lucru de care aveți nevoie este o placă pe care să plasați componentele. Ar trebui să fie deja una în schița dumneavoastră, dar dacă nu este, trageți pictograma plăcii din cutia componentelor. Pictograma se aseamănă cu această imagine din dreapta: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt; Pentru amplasarea PCB, aranjați toate componentele astfel încât acestea să se potrivească bine pe placă. Apoi încercați să le deplasați împrejur pentru micșorarea lungimii și confuziei conectorilor. Puteți deasemenea să redimensionați plăcile dreptunghiulare. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Odată ce componentele sunt sortate, le conectați cu trasee de cupru. Puteți trasa un traseu de la conexiunile individuale sau utilizați autotrasarea pentru a le genera. Butonul de autotrasare este în partea de sus a ferestrei. Butonul se potrivește cu imaginea din dreapta:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resurse/imagini/miniaturi/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+    </message>
 </context>
 <context>
     <name>FolderUtils</name>
@@ -2406,6 +2442,10 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
         <source>PNG Image (*.png)</source>
         <translation>PNG Imagine (*.png)</translation>
@@ -2506,6 +2546,10 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2640"/>
         <source>File &apos;%1&apos; not found</source>
         <translation>Fișierul &apos;%1&apos; nu a fost găsit</translation>
+    </message>
+    <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">încărcare directă componente</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
@@ -2622,6 +2666,14 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="979"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>Exportă zona vizibilă a schiței curente ca o imagine PNG</translation>
+    </message>
+    <message>
+        <source>PostScript...</source>
+        <translation type="vanished">PostScript...</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">Exportă zona vizibilă a schiței curente ca o imagine PostScript</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="982"/>
@@ -3744,6 +3796,14 @@ Continuați și inversați?</translation>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1234"/>
         <source>Open Fritzing help</source>
         <translation>Deschide ajutor Fritzing</translation>
+    </message>
+    <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Donați pentru Fritzing</translation>
+    </message>
+    <message>
+        <source>Open Fritzing donation web page</source>
+        <translation type="vanished">Deschide pagina web Fritzing pentru donații</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1237"/>
@@ -4885,6 +4945,10 @@ Motivul: %2 (cod eroare %3)</translation>
         <translation>Desemnați una sau mai multe sămânțe plan de masă înaintea efectuării a unei umpleri cu masă.
 
 </translation>
+    </message>
+    <message>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use this selection operation.</source>
+        <translation type="vanished">Schița dumneavoastră nu are încă o placă! Adăugați o PCB în scopul de a utiliza această operație selectată.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="295"/>
@@ -7063,6 +7127,14 @@ tasta shift schimbată derulare axială</translation>
         <translation>Curăță configurările</translation>
     </message>
     <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</source>
+        <translation type="obsolete">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt; {2&apos;?} {4e?} {1.%2.%3 ?} {4 %5)?} {6&lt;?}</translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
+        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/fapplication.cpp" line="2059"/>
         <source>Regenerate database failed</source>
         <translation type="unfinished"></translation>
@@ -8103,6 +8175,14 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <translation>Copii</translation>
     </message>
     <message>
+        <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
+        <translation type="vanished">Vă rugăm să rețineți că prețurile nu includ taxa de transport,&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
+        <translation type="vanished">sunt posibile taxe suplimentare, sau taxa de verificare.&lt;br /&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="268"/>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
         <translation> %1 cm%3 (%2 in%3).&lt;br /&gt;</translation>
@@ -8152,6 +8232,10 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         </translation>
     </message>
     <message>
+        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="vanished">Pentru mai multe informații despre prețuri consultați &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="168"/>
         <source>Fritzing Fab Quote</source>
         <translation>Citat Fritzing Fab</translation>
@@ -8193,6 +8277,10 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt;Fritzing poate avea disfuncțiuni, dar unele dintre modificări ale următoarelor fișiere se pot recupera.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Este afișată data și ora la care fiecare fișier are creată o copie de siguranță. dacă fișierul a fost salvat, acea dată și oră este listată pentru comparare.&lt;/p&gt;&lt;p&gt;Fișierele originale sunt încă pe hard-disc, dacă acestea au fost salvate. Puteți alege dacă suprascrieți fișierul original după ce ați încărcat fișierul său de recuperare.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Selectați orice fișier pe care doriți să-l recuperați din lista de mai jos.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
@@ -9021,9 +9109,17 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <translation>Pentru a muta cu mai mare precizie o selecție de componente, utilizați tastele săgeți.  Shift-săgeată mută cu 10 unități.</translation>
     </message>
     <message>
+        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
+        <translation type="vanished">Apăsați pe indicatorul de poziție al mausului în bara de stare (dedesubt) pentru a comuta unitățile de la in la mm sau px.</translation>
+    </message>
+    <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
         <source>rotation</source>
         <translation>rotire</translation>
+    </message>
+    <message>
+        <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
+        <translation type="vanished">Pentru a roti liber o componentă în vizualizare Placă testare sau PCB, selectați-o, apoi planați mausul lângă unul dintre colțuri până ce vedeți că se rotește cursorul. Coborâți mausul iar acel colț va urma mausul după cum trageți.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
@@ -9059,6 +9155,10 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
         <translation>Pentru a edita etichetă unei componente, dați dublu-click pe ea, sau utilizați controlul intrare text în fereastra inspector.</translation>
+    </message>
+    <message>
+        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
+        <translation type="vanished">Pentru a afișa proprietăți diferite în eticheta unei componente, precum și rotirea acesteia, sau schimbarea fontului, dați click-dreapta pe etichetă.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="119"/>
@@ -9481,6 +9581,10 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Close</source>
+        <translation type="vanished">Închide</translation>
+    </message>
+    <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>
         <source>Update parts</source>
         <translation type="unfinished"></translation>
@@ -9599,6 +9703,14 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <translation>Fabrică</translation>
     </message>
     <message>
+        <source>Shop</source>
+        <translation type="vanished">Magazin</translation>
+    </message>
+    <message>
+        <source>Fritzing CreatorKit</source>
+        <translation type="vanished">Fritzing CreatorKit</translation>
+    </message>
+    <message>
         <location filename="../src/sketch/welcomeview.cpp" line="461"/>
         <source>Fritzing Fab</source>
         <translation>Fritzing Fab</translation>
@@ -9662,6 +9774,10 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
         <location filename="../src/sketch/welcomeview.cpp" line="716"/>
         <source>Unable to reach fritzing.org/projects</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach friting.org/projects</source>
+        <translation type="vanished">Nu se poate accesa friting.org/projects</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="929"/>

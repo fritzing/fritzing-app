@@ -4,6 +4,10 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;程式碼版權為 GNU GPL v3, 其他部分版權為 CreativeCommons:BY-SA</translation>
@@ -2373,6 +2377,10 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
         <source>PNG Image (*.png)</source>
         <translation>PNG 圖檔(*.png)</translation>
@@ -2467,6 +2475,10 @@ We&apos;re working to avoid this message, and only let you choose between proper
 %2.</source>
         <translation>無法讀檔 1 %1:
 %2.</translation>
+    </message>
+    <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">直接載入元件</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
@@ -2614,6 +2626,10 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="979"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>匯出草圖的可見區域為 PNG 圖檔</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">匯出草圖的可見區域為 PostScript 圖檔</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="984"/>
@@ -9372,6 +9388,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/version/updatedialog.cpp" line="54"/>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">關閉</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>

@@ -4,6 +4,10 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 na kód a CreativeCommons:BY-SA na zvyšok</translation>
@@ -47,6 +51,14 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, a Daniel Tzschentke. </translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="vanished">Zvláštne poďakovanie patrí: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -237,6 +249,22 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Special thanks goes out as well to all the students </source>
+        <translation type="vanished">Zvláštne poďakovanie patrí taktiež všetkým študentom </translation>
+    </message>
+    <message>
+        <source>and alpha testers who were brave enough to give </source>
+        <translation type="vanished">a alfa testerom, ktorí mali odvahu sa </translation>
+    </message>
+    <message>
+        <source>Fritzing a test spin. </source>
+        <translation type="vanished">pustiť do kolotoča testov Fritzingu.</translation>
+    </message>
+    <message>
+        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
 </context>
 <context>
@@ -2392,6 +2420,10 @@ Pracujeme na vyhnutí sa tejto správe a práve Vám neostáva iné než zvoliť
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
         <source>PNG Image (*.png)</source>
         <translation>PNG obrázok (*.png)</translation>
@@ -2504,6 +2536,10 @@ Pracujeme na vyhnutí sa tejto správe a práve Vám neostáva iné než zvoliť
         <translation>Súbor &apos;%1&apos; nenájdený</translation>
     </message>
     <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">priame načítanie súčiastok</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
         <source>loading %1 (model)</source>
         <translation>načítanie %1 (model)</translation>
@@ -2603,6 +2639,14 @@ Pracujeme na vyhnutí sa tejto správe a práve Vám neostáva iné než zvoliť
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="979"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>Exportuje viditeľnú oblasť aktuálneho návrhu ako PNG obrázok</translation>
+    </message>
+    <message>
+        <source>PostScript...</source>
+        <translation type="vanished">PostScript...</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">Exportuje viditeľnú oblasť aktuálneho návrhu ako PostScript obrázok</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="982"/>
@@ -3808,6 +3852,14 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1234"/>
         <source>Open Fritzing help</source>
         <translation>Otvorí nápovedu Fritzingu</translation>
+    </message>
+    <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Podporte Fritzing</translation>
+    </message>
+    <message>
+        <source>Open Fritzing donation web page</source>
+        <translation type="vanished">Otvorte web stránku daru pre Fritzing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1237"/>
@@ -8128,6 +8180,10 @@ Fritzing stále funguje, ale nebudete môcť zmeniť vlastnosti súčiastok.</tr
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt;Fritzing možno havaroval, ale niektoré zo zmien v následujúcich súboroch môžu byť obnovené.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Dátum a čas každého súboru, ktorý bol zalohovaný, je zobrazený. Pokiaľ bol súbor uložený, jeho dátum a čas je tiež uvedený.&lt;/p&gt;&lt;p&gt;Pôvodné súbory sú stále na Vašom disku, pokiaľ boli vôbec uložené. Môžete vybrať či chcete prepísať pôvodný súbor po načítani jeho obnoveného súboru.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vyberte súbory, ktoré chcete obnoviť z nižšie uvedeného zoznamu.&lt;/b&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
         <source>&amp;Recover</source>
         <translation>&amp;Obnoviť</translation>
@@ -9405,6 +9461,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/version/updatedialog.cpp" line="54"/>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">Zavrieť</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>

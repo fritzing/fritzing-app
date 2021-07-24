@@ -4,6 +4,14 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="vanished">Версия %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;Кодът използва лиценза на ГНУ „GPL v3“, а всичко останало – лиценза „CreativeCommons:BY-SA“</translation>
@@ -47,6 +55,14 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher и Daniel Tzschentke. </translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="vanished">Със специални благодарности на: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -237,6 +253,22 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>и от всяка покупка на началния комплект на Fritzing или на печатна платка от фабриката на Fritzing.</translation>
+    </message>
+    <message>
+        <source>Special thanks goes out as well to all the students </source>
+        <translation type="vanished">Изразяваме специални благодарности към всички студенти </translation>
+    </message>
+    <message>
+        <source>and alpha testers who were brave enough to give </source>
+        <translation type="vanished">и всички изпитатели на алфа версията, които бяха достатъчно смели да </translation>
+    </message>
+    <message>
+        <source>Fritzing a test spin. </source>
+        <translation type="vanished">опитат „Fritzing“.</translation>
+    </message>
+    <message>
+        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
 </context>
 <context>
@@ -1364,6 +1396,10 @@ Use the file?</source>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="obsolete">Изгледът &lt;b&gt;Печатна платка&lt;/b&gt; Ви помага да разположите компонентите върху печатна платка.&lt;br/&gt;&lt;br/&gt;Печатните платки могат да бъдат създавани у дома или в малка лаборатория чрез саморъчни процеси по ецване. Те могат да бъдат изпратени и към някоя професионална компания за производство на печатни платки, за по-прецизна изработка. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Първото, което Ви трябва, е платка, върху която да поставите частите. Трябва да има поне една в схемата Ви, но ако няма, просто завлачете иконката на платката от набора части. Иконката отговаря на изображението вдясно: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;За да оформите печатната си платка, подредете всички компоненти, така че да се събират на платката. След това опитайте да ги разместите и подредите, така че да намалите дължината и сложността на връзките между тях. Също така можете и да преоразмерявате правоъгълните платки. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;След като частите бъдат подредени, трябва да ги свържете с медни писти. Можете да изтегляте пистите ръчно от един компонент до друг, или да използвате функцията за автоматично опроводяване. Бутонът за автоматично опроводяване е в дъното на прозореца. Бутонът изглежда като изображението вдясно:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+    </message>
 </context>
 <context>
     <name>FolderUtils</name>
@@ -1376,6 +1412,10 @@ Use the file?</source>
         <location filename="../src/utils/folderutils.cpp" line="763"/>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Персонализираните Ви части и набори са преместени от скритата папка на приложението в папката Ви за документи на Fritzing тук: &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;Надяваме се, че така ще Ви е по-лесно да ги намирате и редактирате ръчно.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;Персонализираните Ви части и набори са преместени от скритата папка на приложението в папката Ви за документи на Fritzing тук: &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;Надяваме се, че така ще Ви е по-лесно да ги намирате и редактирате ръчно.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2404,6 +2444,10 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
         <source>PNG Image (*.png)</source>
         <translation>Изображение PNG (*.png)</translation>
@@ -2559,6 +2603,14 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="979"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>Изнасяне на видимата част на текущата схема като изображение във формат PNG</translation>
+    </message>
+    <message>
+        <source>PostScript...</source>
+        <translation type="vanished">PostScript…</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">Изнасяне на видимата част на текущата схема като изображение във формат PostScript</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="982"/>
@@ -2743,6 +2795,10 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3622"/>
         <source>Read-only</source>
         <translation>Само за четене</translation>
+    </message>
+    <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">директно зареждане на частите</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
@@ -3681,6 +3737,14 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1234"/>
         <source>Open Fritzing help</source>
         <translation>Отваряне на помощната страница на Fritzing</translation>
+    </message>
+    <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Дарение на Fritzing</translation>
+    </message>
+    <message>
+        <source>Open Fritzing donation web page</source>
+        <translation type="vanished">Отваряне на страницата за дарения на Fritzing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1237"/>
@@ -4874,6 +4938,10 @@ Reason: %2 (errcode %3)</source>
         <translation>Моля, изберете една или повече отправни точки за запълване със заземяваща писта, преди да изпълните запълването със заземяваща писта.
 
 </translation>
+    </message>
+    <message>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use this selection operation.</source>
+        <translation type="vanished">Схемата все още няма платка! Моля, добавете печатна платка, за да можете да използвате тази функционалност за избор.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="295"/>
@@ -7052,6 +7120,18 @@ SHIFT променя оста</translation>
         <translation>Изчистване на настройките</translation>
     </message>
     <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
+        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</source>
+        <translation type="obsolete">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Версия %1.%2.%3 (%4%5) %6&lt;/font&gt; {2&apos;?} {4e?} {1.%2.%3 ?} {4 %5)?} {6&lt;?}</translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
+        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Версия %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/fapplication.cpp" line="2059"/>
         <source>Regenerate database failed</source>
         <translation>Пресъздаването на базата данни беше неуспешно</translation>
@@ -7973,6 +8053,10 @@ Fritzing все още работи ,но няма да можете да про
         <translation>няма</translation>
     </message>
     <message>
+        <source>The parts folder &apos;%1&apos; has been changed--it is not in the master branch (%2). %3</source>
+        <translation type="vanished">Папката с части „%1“ е променена – тя не е в основния клон (%2). %3</translation>
+    </message>
+    <message>
         <location filename="../src/version/partschecker.cpp" line="74"/>
         <source>The parts folder &apos;%1&apos; has been changed--it is not in a supported branch (%2). %3</source>
         <translation type="unfinished"></translation>
@@ -8026,6 +8110,10 @@ Fritzing все още работи ,но няма да можете да про
         <location filename="../src/version/partschecker.cpp" line="199"/>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
+        <translation type="vanished">Основната мрежова препратка за „%1“ не може да бъде получена. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="469"/>
@@ -8119,6 +8207,18 @@ Fritzing все още работи ,но няма да можете да про
         <translation>За повече информация относно цените вижте &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message>
+        <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
+        <translation type="vanished">Имайте предвид, че цените не включват разходите за доставка,&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
+        <translation type="vanished">евентуалните допълнителни такси и таксата за проверяване на платката.&lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="vanished">Можете да прочетете повече относно цените тук: &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="219"/>
         <source>Visit Fritzing Fab</source>
         <translation>Посетете фабриката на Fritzing</translation>
@@ -8173,6 +8273,10 @@ Fritzing все още работи ,но няма да можете да про
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt; Fritzing може да е претърпял срив, но и възможно някои от промените по следните файлове да могат да бъдат възстановени.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Показани са датата и часа на последното съхраняване на резервно копие. Ако файлът е бил запазен, датата и часа на запазването му също са показани за сравнение.&lt;/p&gt;&lt;p&gt;Оригиналните файлове все още са на диска Ви, ако някога са били запазени. Можете да изберете дали да презапишете оригиналния файл след като заредите възстановения.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Изберете файловете, които искате да възстановите, от списъка по долу.&lt;/b&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt; Fritzing може да е претърпял срив, но и възможно някои от промените по следните файлове да могат да бъдат възстановени.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Показани са датата и часа на последното съхраняване на резервно копие. Ако файлът е бил запазен, датата и часа на запазването му също са показани за сравнение.&lt;/p&gt;&lt;p&gt;Оригиналните файлове все още са на диска Ви, ако някога са били запазени. Можете да изберете дали да презапишете оригиналния файл след като заредите възстановения.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Изберете файловете, които искате да възстановите, от списъка по долу.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
@@ -8996,9 +9100,17 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>За по-фино преместване на избраните части, можете да използвате стрелките. Ако задържите клавиша SHIFT, стрелките ще преместват елементите с по 10 единици.</translation>
     </message>
     <message>
+        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
+        <translation type="vanished">Щракнете индикатора за позицията на курсора в лентата за състоянието (в дъното), за да превключите единиците между инчове, милиметри и пиксели.</translation>
+    </message>
+    <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
         <source>rotation</source>
         <translation>завъртане</translation>
+    </message>
+    <message>
+        <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
+        <translation type="vanished">За да завъртите част на прототипната или печатната платка, изберете я и посочете с мишката близо до някой от ъглите ѝ, докато не се появи курсорът за завъртане. Натиснете и задръжте левия бутон на мишката и този ъгъл ще следва движението на курсора.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
@@ -9034,6 +9146,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
         <translation>За да редактирате етикет на част, щракнете два пъти върху него, или използвайте полето за въвеждане на текст в инспектора.</translation>
+    </message>
+    <message>
+        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
+        <translation type="vanished">За да покажете различни свойства в етикета на частта, както и за да го задържите или да промените шрифта, щракнете с десния бутон на мишката върху етикета.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="119"/>
@@ -9455,6 +9571,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>&lt;p&gt;&lt;b&gt;Има обновление на библиотеката с части!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Искате ли Fritzing да свали и инсталира обновлението сега?&lt;br/&gt;Вижте &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;списъка с промени тук&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Забележка: обновлението може да отнеме известно време и ще трябва да рестартирате Fritzing.&lt;br/&gt;Обновлението може да бъде инсталирано по-късно от менюто &lt;i&gt;Помощ &amp;rarr; Проверка за обновления&lt;/i&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
+        <source>Close</source>
+        <translation type="vanished">Затваряне</translation>
+    </message>
+    <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>
         <source>Update parts</source>
         <translation>Обновяване на частите</translation>
@@ -9573,6 +9693,18 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>Фабрика</translation>
     </message>
     <message>
+        <source>Shop</source>
+        <translation type="vanished">Магазин</translation>
+    </message>
+    <message>
+        <source>Fritzing CreatorKit</source>
+        <translation type="vanished">Творчески комплект на Fritzing</translation>
+    </message>
+    <message>
+        <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
+        <translation type="vanished">Творческият комплект на Fritzing не е в наличност. Можете да получите актуална информация от блога на Fritzing</translation>
+    </message>
+    <message>
         <location filename="../src/sketch/welcomeview.cpp" line="461"/>
         <source>Fritzing Fab</source>
         <translation>Фабрика на Fritzing</translation>
@@ -9636,6 +9768,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/sketch/welcomeview.cpp" line="716"/>
         <source>Unable to reach fritzing.org/projects</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach friting.org/projects</source>
+        <translation type="vanished">Няма връзка с friting.org/projects</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="929"/>

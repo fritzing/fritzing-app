@@ -4,6 +4,10 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 στον κώδικα και CreativeCommons:BY-SA στα υπόλοιπα</translation>
@@ -47,6 +51,14 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, and Daniel Tzschentke.</translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="vanished">Ιδιαίτερες ευχαριστίες στους:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -237,6 +249,22 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Special thanks goes out as well to all the students </source>
+        <translation type="vanished">Ειδικές ευχαριστίες σε όλους τους σπουδαστές </translation>
+    </message>
+    <message>
+        <source>and alpha testers who were brave enough to give </source>
+        <translation type="vanished">και στους δοκιμαστές των alpha εκδόσεων που ήταν αρκετά γενναίοι </translation>
+    </message>
+    <message>
+        <source>Fritzing a test spin. </source>
+        <translation type="vanished">να δοκιμάσουν το Fritzing. </translation>
+    </message>
+    <message>
+        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
 </context>
 <context>
@@ -2400,6 +2428,10 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
         <source>PNG Image (*.png)</source>
         <translation>PNG Εικόνα (*.png)</translation>
@@ -2554,6 +2586,14 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="979"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>Εξαγωγή της ορατής περιοχής του τρέχοντος σχεδίου ως PNG εικόνας</translation>
+    </message>
+    <message>
+        <source>PostScript...</source>
+        <translation type="vanished">PostScript...</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">Εξαγωγή της ορατής περιοχής του τρέχοντος σχεδίου ως PostScrip εικόνας</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="982"/>
@@ -2737,6 +2777,10 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3622"/>
         <source>Read-only</source>
         <translation>Μόνο Ανάγνωση</translation>
+    </message>
+    <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">απευθείας φόρτωση εξαρτημάτων</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
@@ -3905,6 +3949,14 @@ Go ahead and revert?</source>
         <translation>Άνοιγμα βοήθειας του Fritzing</translation>
     </message>
     <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Δωρεά προς το Fritzing</translation>
+    </message>
+    <message>
+        <source>Open Fritzing donation web page</source>
+        <translation type="vanished">Ανοίγει την σελίδα δωρεών του Fritzing</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1237"/>
         <source>Online Projects Gallery</source>
         <translation>Συλλογή Έργων στο Διαδίκτυο</translation>
@@ -4823,6 +4875,10 @@ Reason: %2 (errcode %3)</source>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2424"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
+    </message>
+    <message>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use this selection operation.</source>
+        <translation type="vanished">Το σχέδιο σας δεν έχει κάποια πλακέτα ακόμη!  Παρακαλώ προσθέστε κάποια πλακέτα (PCB) για να χρησιμοποιήσετε αυτή την λειτουργία επιλογής.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="295"/>
@@ -8113,6 +8169,10 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         </translation>
     </message>
     <message>
+        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="vanished">Για περισσότερες πληροφορίες για την κοστολόγηση δείτε στο &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="168"/>
         <source>Fritzing Fab Quote</source>
         <translation type="unfinished"></translation>
@@ -8154,6 +8214,10 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Το Fritzing μπορεί να αντιμετώπισε σφάλμα αλλά μερικές από τις αλλαγές στα ακόλουθα αρχεία ίσως ανακτηθούν.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Προβάλλεται η ημερομηνία και η ώρα αντιγράφου του κάθε αρχείου. Αν το αρχείο είχε αποθηκευτεί, προβάλλεται και αυτή η ημερομηνία και ώρα.&lt;/p&gt;&lt;p&gt;Τα αρχικά αρχεία θα υπάρχουν ακόμη στον δίσκο αν είχαν αποθηκευτεί. Μπορείτε να επιλέξετε αν θα αντικαταστήσετε αφού φορτώσετε το αντίγραφο ασφαλείας του.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Επιλέξτε όποιο αρχείο θέλετε να ανακτήσετε από την παρακάτω λίστα.&lt;/b&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt;Το Fritzing μπορεί να αντιμετώπισε σφάλμα αλλά μερικές από τις αλλαγές στα ακόλουθα αρχεία ίσως ανακτηθούν.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Προβάλλεται η ημερομηνία και η ώρα αντιγράφου του κάθε αρχείου. Αν το αρχείο είχε αποθηκευτεί, προβάλλεται και αυτή η ημερομηνία και ώρα.&lt;/p&gt;&lt;p&gt;Τα αρχικά αρχεία θα υπάρχουν ακόμη στον δίσκο αν είχαν αποθηκευτεί. Μπορείτε να επιλέξετε αν θα αντικαταστήσετε αφού φορτώσετε το αντίγραφο ασφαλείας του.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Επιλέξτε όποιο αρχείο θέλετε να ανακτήσετε από την παρακάτω λίστα.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
@@ -9434,6 +9498,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/version/updatedialog.cpp" line="54"/>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>

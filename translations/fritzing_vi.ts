@@ -4,6 +4,14 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="vanished">Phiên bản %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 cho mã lập trình và CreativeCommons:BY-SA cho các phần còn lại</translation>
@@ -47,6 +55,14 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="vanished">Đặc biệt gửi lời cảm ơn tới:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -237,6 +253,22 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>và từ mỗi người mua một Fritzing Starter Kit hoặc một PCB từ Fritzing Fab.</translation>
+    </message>
+    <message>
+        <source>Special thanks goes out as well to all the students </source>
+        <translation type="vanished">Đặc biệt cảm ơn tới tất cả các sinh viên</translation>
+    </message>
+    <message>
+        <source>and alpha testers who were brave enough to give </source>
+        <translation type="vanished">và những thử nghiệm viên phiên bản alpha những người đầy lòng can đảm để giúp</translation>
+    </message>
+    <message>
+        <source>Fritzing a test spin. </source>
+        <translation type="vanished">Fritzing được thử nghiệm.</translation>
+    </message>
+    <message>
+        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
 </context>
 <context>
@@ -1358,6 +1390,10 @@ Sử dụng file này?</translation>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="obsolete">&lt;b&gt;Kiểu xem PCB&lt;/b&gt; là nơi bạn bố trí các linh kiện trên một PCB (mạch in) vật lý. &lt;br/&gt;&lt;br/&gt; Các mạch in có thể được thực hiện tại nhà hoặc tại một phòng thí nghiệm nhỏ bằng cách sử dụng quy trình ăn mòn tự làm. Chúng cũng có thể được gửi đến dịch vụ sản xuất PCB chuyên nghiệp để được chế tạo chính xác hơn. &lt;br/&gt; &lt;table&gt;&lt;tr&gt;&lt;td&gt;Điều đầu tiên bạn cần là một board để đặt các linh kiện của bạn lên trên. Nên có sẵn 1 board trong sketch của bạn, nhưng nếu không có, thì kéo trong biểu tượng board từ Khoang Linh kiện. Biểu tượng khớp với hình ảnh đó nằm ở bên phải:&lt;/td&gt; &lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt; &lt;br/&gt; &lt;br/&gt; để triển khai PCB của bạn, hãy sắp xếp tất cả các thành phần để chúng nằm gọn lên trên board. Sau đó cố gắng dịch chuyển chúng xung quanh để giảm thiểu chiều dài và sự nhầm lẫn các kết nối. Bạn cũng có thể thay đổi kích thước các board hình chữ nhật. &lt;br/&gt; &lt;table&gt;&lt;tr&gt;&lt;td&gt;Khi các linh kiện đã được sắp xếp xong, bạn kết nối chúng với copper traces (dấu vết đồng). Bạn có thể kéo ra một dấu vết từ các kết nối đơn hoặc sử dụng autorouter để tạo ra chúng. Nút Autoroute là ở dưới cùng của cửa sổ. Nút này khớp với hình ảnh ở bên phải:&lt;/td&gt; &lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+    </message>
 </context>
 <context>
     <name>FolderUtils</name>
@@ -2360,6 +2396,10 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
         <source>PNG Image (*.png)</source>
         <translation>Hình ảnh PNG (*.png)</translation>
@@ -2488,6 +2528,10 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="979"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>Xuất  vùng nhìn thấy của sketch hiện tại thành một file ảnh PNG</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">xuất vùng nhìn thấy của sketch hiện tại thành một file ảnh PostScript</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="984"/>
@@ -3038,6 +3082,14 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1193"/>
         <source>Display the parts bin in a list view</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Đóng góp cho Fritzing</translation>
+    </message>
+    <message>
+        <source>Open Fritzing donation web page</source>
+        <translation type="vanished">Mở trang web tài trợ cho Fritzing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1263"/>
@@ -4464,6 +4516,10 @@ Hãy kiểm tra tất cả các kiểu xem để kiểm tra các tác dụng ph�
         <translation>Tự động đi dây đồng...</translation>
     </message>
     <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">tải trực tiếp các linh kiện</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2453"/>
         <source>Page Setup</source>
         <translation>Cài đặt trang</translation>
@@ -4858,6 +4914,10 @@ Nguyên nhân: %2 (mã lỗi:%3)</translation>
 
 </source>
         <translation>Hãy chỉ định một hoặc nhiều vùng đổ mát trước khi đổ mát.</translation>
+    </message>
+    <message>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use this selection operation.</source>
+        <translation type="vanished">Sketch của bạn chưa có board nào cả! Xin vui lòng thêm một PCB để sử dụng thao tác lựa chọn này.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="295"/>
@@ -7056,6 +7116,14 @@ phím shift hoán đổi trục cuộn</translation>
         <translation>Không có kết nối để đi dây.</translation>
     </message>
     <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4 %5) %6&lt;/font&gt;</source>
+        <translation type="obsolete">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Phiên bản %1.%2.%3 (%4%5) %6&lt;/font&gt; {2&apos;?} {4e?} {1.%2.%3 ?} {4 %5)?} {6&lt;?}</translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
+        <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Phiên bản %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/fapplication.cpp" line="2059"/>
         <source>Regenerate database failed</source>
         <translation type="unfinished"></translation>
@@ -8062,6 +8130,14 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>Các bản sao</translation>
     </message>
     <message>
+        <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
+        <translation type="vanished">Xin lưu ý rằng giá này không bao gồm phí vận chuyển, &lt;br /&gt;</translation>
+    </message>
+    <message>
+        <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
+        <translation type="vanished">các khoản thuế bổ sung có thể, hoặc kiểm tra phí. &lt;br /&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="268"/>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
         <translation> %1 cm%3 (%2 trong %3).&lt;br /&gt;</translation>
@@ -8109,6 +8185,10 @@ is already there, we won&apos;t add it again, right?</source>
         </translation>
     </message>
     <message>
+        <source>For more information on pricing see &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt;http://fab.fritzing.org/pricing&lt;/a&gt;.</source>
+        <translation type="vanished">Để biết thêm thông tin về giá cả xin xem tại &lt;a href=&apos;http://fab.fritzing.org/pricing&apos;&gt; http://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="168"/>
         <source>Fritzing Fab Quote</source>
         <translation>Fritzing Fab báo</translation>
@@ -8150,6 +8230,10 @@ is already there, we won&apos;t add it again, right?</source>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;&lt;b&gt;Fritzing có thể đã bị xung đột, nhưng một số thay đổi đối với các tập tin sau đây có thể được phục hồi. &lt;/b&gt;&lt;/p&gt;&lt;p&gt;Ngày giờ mỗi tập tin đã được sao lưu sẽ được hiển thị. Nếu tập tin đã được lưu lại, ngày giờ đó cũng được liệt kê để so sánh.&lt;/p&gt;&lt;p&gt;Các tập tin gốc vẫn còn trên ổ cứng của bạn, nếu chúng đã từng được lưu. Bạn có thể chọn hoặc để ghi đè lên tập tin gốc sau khi bạn tải tập tin phục hồi của nó. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Chọn bất kỳ tập tin nào mà bạn muốn khôi phục từ danh sách dưới đây. &lt;/b&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="vanished">&lt;p&gt;&lt;b&gt;Fritzing có thể đã bị xung đột, nhưng một số thay đổi đối với các tập tin sau đây có thể được phục hồi. &lt;/b&gt;&lt;/p&gt;&lt;p&gt;Ngày giờ mỗi tập tin đã được sao lưu sẽ được hiển thị. Nếu tập tin đã được lưu lại, ngày giờ đó cũng được liệt kê để so sánh.&lt;/p&gt;&lt;p&gt;Các tập tin gốc vẫn còn trên ổ cứng của bạn, nếu chúng đã từng được lưu. Bạn có thể chọn hoặc để ghi đè lên tập tin gốc sau khi bạn tải tập tin phục hồi của nó. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Chọn bất kỳ tập tin nào mà bạn muốn khôi phục từ danh sách dưới đây. &lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
@@ -8970,9 +9054,17 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
         <translation>Để di chuyển một lựa chọn trong linh kiện chính xác hơn, sử dụng các phím mũi tên. Tổ hợp phím Shift+-mũi tên sẽ di chuyển tương đương với 10 đơn vị.</translation>
     </message>
     <message>
+        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
+        <translation type="vanished">Click vào các chỉ số vị trí chuột trên thanh trạng thái (ở dưới) để chuyển đổi đơn vị từ mm sang px.</translation>
+    </message>
+    <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
         <source>rotation</source>
         <translation>xoay</translation>
+    </message>
+    <message>
+        <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
+        <translation type="vanished">Để xoay tự do một linh kiện trong chế độ xem Breadboard hoặc PCB, chọn nó, sau đó di chuột gần một trong các góc cho đến khi bạn thấy con trỏ xoay. Nhấp chuột và góc đó sẽ theo con chuột của bạn khi bạn kéo.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
@@ -9008,6 +9100,10 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
         <translation>Để chỉnh sửa một nhãn linh kiện, nhấp đúp vào nó, hoặc sử dụng widget nhập văn bản trong cửa sổ kiểm tra.</translation>
+    </message>
+    <message>
+        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
+        <translation type="vanished">Để hiển thị các thuộc tính khác nhau trong một nhãn linh kiện, cũng như xoay nó, hoặc thay đổi phông chữ, bấm chuột phải vào nhãn.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="119"/>
@@ -9429,6 +9525,10 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Close</source>
+        <translation type="vanished">Đóng lại</translation>
+    </message>
+    <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>
         <source>Update parts</source>
         <translation type="unfinished"></translation>
@@ -9547,6 +9647,14 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
         <translation>Fab</translation>
     </message>
     <message>
+        <source>Shop</source>
+        <translation type="vanished">Shop</translation>
+    </message>
+    <message>
+        <source>Fritzing CreatorKit</source>
+        <translation type="vanished">Fritzing CreatorKit</translation>
+    </message>
+    <message>
         <location filename="../src/sketch/welcomeview.cpp" line="461"/>
         <source>Fritzing Fab</source>
         <translation>Fritzing Fab</translation>
@@ -9610,6 +9718,10 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
         <location filename="../src/sketch/welcomeview.cpp" line="716"/>
         <source>Unable to reach fritzing.org/projects</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach friting.org/projects</source>
+        <translation type="vanished">Không thể truy cập friting.org/projects</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="929"/>

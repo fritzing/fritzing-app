@@ -4,6 +4,10 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>プログラムコードはGNU GPL v3に、その他についてはCreativeCommons:BY-SAに準じます</translation>
     </message>
@@ -1651,6 +1655,10 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>PDF (*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">PostScript (*.ps)</translation>
+    </message>
+    <message>
         <source>PNG Image (*.png)</source>
         <translation>PNG画像 (*.png)</translation>
     </message>
@@ -1709,6 +1717,10 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
 %2.</source>
         <translation>ファイルを読み込めません  1 %1:
 %2.</translation>
+    </message>
+    <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">パーツを直接読み込み中</translation>
     </message>
     <message>
         <source>loading %1 (model)</source>
@@ -2266,6 +2278,10 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>PNGイメージとしてエクスポートするエリアをスケッチから選んでください</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">PostScriptイメージとしてエクスポートするエリアをスケッチから選んでください</translation>
     </message>
     <message>
         <source>Export the visible area of the current sketch as a PDF image</source>
@@ -7399,6 +7415,10 @@ Note: you can also trigger this display by mousing down on the routing status te
 </context>
 <context>
     <name>UpdateDialog</name>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">閉じる</translation>
+    </message>
     <message>
         <source>A new main release is available for downloading:</source>
         <translation>新しいメインリリースがダウンロード可能です:</translation>

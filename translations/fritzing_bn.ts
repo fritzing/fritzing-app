@@ -4,6 +4,10 @@
 <context>
     <name>AboutBox</name>
     <message>
+        <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
+        <translation type="vanished">&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/help/aboutbox.cpp" line="90"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;কোড এর মধ্যে GNU GPL v3এবং বাকি টুকুর মধ্যে CreativeCommons:BY-SA</translation>
@@ -47,6 +51,14 @@
         <location filename="../src/help/aboutbox.cpp" line="120"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
+        <translation type="vanished">Bryant Mairs, Uleshka Asher, and Daniel Tzschentke.</translation>
+    </message>
+    <message>
+        <source>Special thanks goes out to: </source>
+        <translation type="vanished">বিশেষ ভাবে ধন্যবাদ দিচ্ছিঃ</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
@@ -240,6 +252,23 @@
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Special thanks goes out as well to all the students </source>
+        <translation type="vanished">সকল ছাত্র ছাত্রিদের বিশেষ ধন্যবাদ দেয়াহল </translation>
+    </message>
+    <message>
+        <source>and alpha testers who were brave enough to give </source>
+        <translation type="vanished">এবং পরীক্ষক গনকে যারা পর্যাপ্ত অভিমত প্রদান করেছেন</translation>
+    </message>
+    <message>
+        <source>Fritzing a test spin. </source>
+        <translatorcomment>Fritzing  পর্যবেক্ষণ</translatorcomment>
+        <translation type="vanished">ফ্রিটজিংগ পরীক্ষন</translation>
+    </message>
+    <message>
+        <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="vanished">&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -2525,6 +2554,10 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>পি ডি এফ(*.pdf)</translation>
     </message>
     <message>
+        <source>PostScript (*.ps)</source>
+        <translation type="vanished">পোস্ট স্ক্রিপ্ট(*.ps)</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="130"/>
         <source>PNG Image (*.png)</source>
         <translatorcomment>পি এন জি ইমেজ(*png)</translatorcomment>
@@ -2698,6 +2731,14 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="979"/>
         <source>Export the visible area of the current sketch as a PNG image</source>
         <translation>PNG ইমেজ হিসাবে বর্তমান নকশায় দৃশ্যমান এরিয়া সাথেএক্সপোর্ট </translation>
+    </message>
+    <message>
+        <source>PostScript...</source>
+        <translation type="vanished">স্ক্রিপ্ট পোষ্ট...</translation>
+    </message>
+    <message>
+        <source>Export the visible area of the current sketch as a PostScript image</source>
+        <translation type="vanished">স্ক্রিপ্ট পোষ্ট ইমেজ হিসাবে বর্তমান নকশায় দৃশ্যমান এরিয়া সাথেএক্সপোর্ট</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="982"/>
@@ -2902,6 +2943,10 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3622"/>
         <source>Read-only</source>
         <translation>শুধু-পড়তে</translation>
+    </message>
+    <message>
+        <source>directly loading parts</source>
+        <translation type="vanished">সরাসরি পার্টস লোডিং</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="359"/>
@@ -3952,6 +3997,14 @@ Go ahead and revert?</source>
         <translation>ফ্রিটজিং সহায়তা ওপেন </translation>
     </message>
     <message>
+        <source>Donate to Fritzing</source>
+        <translation type="vanished">Fritzing  এ প্রদান করুন</translation>
+    </message>
+    <message>
+        <source>Open Fritzing donation web page</source>
+        <translation type="vanished">Fritzing  প্রদান এ ওয়েবপেইজ খুলুন</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1237"/>
         <source>Online Projects Gallery</source>
         <translation>অনলাইন প্রজেক্টস গ্যালারী</translation>
@@ -4932,6 +4985,10 @@ Reason: %2 (errcode %3)</source>
         <source>Fritzing</source>
         <translatorcomment>Fritzing</translatorcomment>
         <translation>ফ্রিটজিং</translation>
+    </message>
+    <message>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use this selection operation.</source>
+        <translation type="vanished">আপনার তৈরি নকশা করা বোর্ডটিএখনো হয়নি? দয়া করে পাথানর জন্য একটিPCB যোগ করতে পারেন </translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="290"/>
@@ -9571,6 +9628,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/version/updatedialog.cpp" line="54"/>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">বন্ধ কর</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>

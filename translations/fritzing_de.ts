@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>Spanish: </source>
-        <translation>Spanisch:</translation>
+        <translation>Spanisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="165"/>
@@ -121,37 +121,37 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
         <source>Italian: </source>
-        <translation>Italienisch:</translation>
+        <translation>Italienisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="146"/>
         <source>Portuguese (European): </source>
-        <translation>Portugiesisch (Europäisch):</translation>
+        <translation>Portugiesisch (Europäisch): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="147"/>
         <source>Portuguese (Brazilian): </source>
-        <translation>Portugiesisch (brasilianisch):</translation>
+        <translation>Portugiesisch (brasilianisch): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="137"/>
         <source>Chinese (Simplified): </source>
-        <translation>Vereinfachtes Chinesisch:</translation>
+        <translation>Vereinfachtes Chinesisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Japanese: </source>
-        <translation>Japanisch:</translation>
+        <translation>Japanisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="148"/>
         <source>Russian: </source>
-        <translation>Russisch:</translation>
+        <translation>Russisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="140"/>
         <source>Dutch: </source>
-        <translation>Niederländisch:</translation>
+        <translation>Niederländisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="121"/>
@@ -166,37 +166,37 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="139"/>
         <source>Czech: </source>
-        <translation>Tschechisch:</translation>
+        <translation>Tschechisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Korean: </source>
-        <translation>Koreanisch:</translation>
+        <translation>Koreanisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>Slovak: </source>
-        <translation>Slowakisch:</translation>
+        <translation>Slowakisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>Greek: </source>
-        <translation>Griechisch:</translation>
+        <translation>Griechisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="141"/>
         <source>French: </source>
-        <translation>Französisch:</translation>
+        <translation>Französisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="151"/>
         <source>Turkish: </source>
-        <translation>Türkisch:</translation>
+        <translation>Türkisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="136"/>
         <source>Bulgarian: </source>
-        <translation>Bulgarisch:</translation>
+        <translation>Bulgarisch: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="63"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, Parallax, Picaxe, Sparkfun, zahlreiche Spender,</translation>
+        <translation>IxDS, Parallax, Picaxe, Sparkfun, zahlreiche Spender, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="161"/>
@@ -686,7 +686,7 @@ Ein eigenes Platinen-SVG hat üblicherweise eine oder zwei Siebdruckebenen (&quo
     <message>
         <location filename="../src/items/resizableboard.cpp" line="434"/>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
-        <translation>Vor der Platinenherstellung empfehlen wir, die eigene Platinenform im Gerberformat zu überprüfen (Datei &gt; Exportieren &gt; Produktion &gt; Extended Gerber).</translation>
+        <translation>Vor der Platinenherstellung empfehlen wir, die eigene Platinenform im Gerberformat zu überprüfen (Datei &gt; Exportieren &gt; Produktion &gt; Extended Gerber). </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="435"/>
@@ -696,12 +696,12 @@ Ein eigenes Platinen-SVG hat üblicherweise eine oder zwei Siebdruckebenen (&quo
     <message>
         <location filename="../src/items/resizableboard.cpp" line="437"/>
         <source>The rest of this message concerns &apos;cutouts&apos;. </source>
-        <translation>Der folgende Hinweis betrifft &quot;Ausschnitte&quot; in der Platine.</translation>
+        <translation>Der folgende Hinweis betrifft &quot;Ausschnitte&quot; in der Platine. </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="438"/>
         <source>These are circular or irregularly-shaped holes that you can optionally incorporate into a custom PCB shape.&lt;br/&gt;&lt;br/&gt;</source>
-        <translation>Ausschnitte sind kreisförmige oder anders geformte Löcher, die Du optional in Deiner eigenen Platinenform nutzen kannst.&lt;br/&gt;&lt;br/&gt; </translation>
+        <translation>Ausschnitte sind kreisförmige oder anders geformte Löcher, die Du optional in Deiner eigenen Platinenform nutzen kannst.&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="440"/>
@@ -724,12 +724,12 @@ Ein eigenes Platinen-SVG hat üblicherweise eine oder zwei Siebdruckebenen (&quo
     <message>
         <location filename="../src/items/resizableboard.cpp" line="448"/>
         <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, </source>
-        <translation>&lt;br/&gt;&lt;br/&gt;Falls die von Dir eingesetzten Ausschnitte nicht wie erwartet angezeigt werden,</translation>
+        <translation>&lt;br/&gt;&lt;br/&gt;Falls die von Dir eingesetzten Ausschnitte nicht wie erwartet angezeigt werden, </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="449"/>
         <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation>liegt das vermutlich daran, dass Fritzing diese nur korrekt erkennen kann, wenn sie als &quot;Subtraktion&quot; der Grundform in Deinem Zeichenprogramm erstellt wurden. </translation>
+        <translation>liegt das vermutlich daran, dass Fritzing diese nur korrekt erkennen kann, wenn sie als &quot;Subtraktion&quot; der Grundform in Deinem Zeichenprogramm erstellt wurden.</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="517"/>
@@ -1000,7 +1000,7 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/program/consolewindow.ui" line="103"/>
         <source>Configure serial port</source>
-        <translation>Konfiguration des seriellen Ports </translation>
+        <translation>Konfiguration des seriellen Ports</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="106"/>
@@ -1083,7 +1083,7 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="270"/>
         <source>The areas on your board highlighted in red are connectors and traces which may overlap or be too close together. </source>
-        <translation>Die rot hervorgehobenen Bereiche sind problematisch, da sich hier Leiterbahnen überlappen oder zu nah beieinander liegen.</translation>
+        <translation>Die rot hervorgehobenen Bereiche sind problematisch, da sich hier Leiterbahnen überlappen oder zu nah beieinander liegen. </translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="271"/>
@@ -1247,13 +1247,15 @@ Trotzdem diese Datei benutzen?</translation>
 
 </source>
         <translation>Die Neuerstellung der Bauteil-Datenbank wird einige Minuten dauern und erfordert einen Neustart von Fritzing
+
 </translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2010"/>
         <source>Would you like to regenerate the parts database?
 </source>
-        <translation>Willst Du die Datenbank neu erstellen lassen?</translation>
+        <translation>Willst Du die Datenbank neu erstellen lassen?
+</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2012"/>
@@ -1355,7 +1357,7 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="95"/>
         <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
-        <translation>Willkommen in der &lt;b&gt; schematischen Ansicht &lt;/ b&gt; &lt;br/&gt; &lt;br/&gt; Dies ist eine abstraktere Art, Komponenten und Verbindungen zu betrachten, als die Breadboard-Ansicht. Sie haben die gleichen Elemente wie auf Ihrem Steckbrett, sie sehen einfach anders aus. Diese Darstellung ähnelt eher den traditionellen Diagrammen, die von Ingenieuren verwendet werden. &lt;br/&gt; &lt;br/&gt; Nachdem Sie Drähte zwischen Teilen gezogen haben, können Sie mit gedrückter Umschalttaste auf die Maus klicken, um Biegepunkte zu erstellen und Ihre Verbindungen zu ordnen. Mithilfe der schematischen Ansicht können Sie überprüfen, ob Sie die richtigen Verbindungen zwischen Komponenten hergestellt haben. Sie können Ihren Schaltplan auch zur Dokumentation ausdrucken.</translation>
+        <translation>Willkommen in der &lt;b&gt; schematischen Ansicht &lt;/b&gt; &lt;br/&gt; &lt;br/&gt; Dies ist eine abstraktere Art, Komponenten und Verbindungen zu betrachten, als die Breadboard-Ansicht. Sie haben die gleichen Elemente wie auf Ihrem Steckbrett, sie sehen einfach anders aus. Diese Darstellung ähnelt eher den traditionellen Diagrammen, die von Ingenieuren verwendet werden. &lt;br/&gt; &lt;br/&gt; Nachdem Sie Drähte zwischen Teilen gezogen haben, können Sie mit gedrückter Umschalttaste auf die Maus klicken, um Biegepunkte zu erstellen und Ihre Verbindungen zu ordnen. Mithilfe der schematischen Ansicht können Sie überprüfen, ob Sie die richtigen Verbindungen zwischen Komponenten hergestellt haben. Sie können Ihren Schaltplan auch zur Dokumentation ausdrucken.</translation>
     </message>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="107"/>
@@ -1459,13 +1461,13 @@ This dialog collects only connectors labeled &apos;GND&apos; or &apos;ground&apo
 Click an item to highlight its connections in the sketch.
 
 It is also possible to choose a connector as a ground fill seed by right-clicking a connector and choosing the &apos;Set Ground Fill Seed&apos; context menu option.</source>
-        <translation>Der Unterschied zwischen einer &quot;Massefüllung&quot; und einer einfachen &quot;Kupferfüllung&quot; besteht darin, dass bei einer Massefüllung die gefüllte Fläche Leiterbahnen und Verbinder beinhaltet, welche mit dem &quot;Masse&quot;-Verbinder verbunden sind. Masseverbinder sind in der Regel mit &quot;GND&quot; oder &quot;ground&quot; gekennzeichnet, aber manchmal ist dies nicht der Fall. Es kann auch sein, dass es mehrere Netze mit einem Masseverbinder gibt und Du nur eines der Netze gefüllt haben willst.
+        <translation>Der Unterschied zwischen einer &quot;Massefüllung&quot; und einer einfachen &quot;Kupferfüllung&quot; besteht darin, dass bei einer Massefüllung die gefüllte Fläche Leiterbahnen und Verbinder beinhaltet, welche mit  Masse verbunden sind. Masseverbinder sind in der Regel mit &quot;GND&quot; oder &quot;ground&quot; gekennzeichnet, aber manchmal ist dies nicht der Fall. Es kann auch sein, dass es mehrere Netze mit Masseverbindern gibt und Du nur eines der Netze gefüllt haben willst.
 
 Dieser Dialog sammelt nur Verbinder mit der Bezeichnung &quot;GND&quot; oder &quot;ground&quot;, sowie bereits als &quot;Saat&quot; ausgewählte Verbinder.
 
 Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
 
-Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für die Massefüllung setzen. </translation>
+Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für die Massefüllung setzen.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/groundfillseeddialog.cpp" line="84"/>
@@ -1941,7 +1943,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/items/logoitem.cpp" line="362"/>
         <source>because this appears to be a SVG file exported from CorelDRAW without choosing the &apos;presentation attributes&apos; setting</source>
-        <translation>da diese SVG-Datei vermutlich aus CorelDRAW ohne die Einstellung &quot;presentation attributes&quot; exportiert wurde </translation>
+        <translation>da diese SVG-Datei vermutlich aus CorelDRAW ohne die Einstellung &quot;presentation attributes&quot; exportiert wurde</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="376"/>

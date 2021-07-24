@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="da">
 <context>
     <name>AboutBox</name>
     <message>
@@ -4871,7 +4871,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Din skitse har endnu ikke en tavle!  Tilføj venligst et printkort for at kunne bruge denne valgfunktion.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>
@@ -8085,7 +8085,7 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzing er muligvis gået ned, men nogle af ændringerne i følgende filer kan muligvis genoprettes.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Dato og klokkeslæt for hver fil, der blev sikkerhedskopieret, vises. Hvis filen blev gemt, vises den dato og det tidspunkt også til sammenligning.&lt;/p&gt;&lt;p&gt;De originale filer er stadig på din disk, hvis de nogensinde blev gemt. Du kan vælge, om du vil overskrive den originale fil, når du har indlæst dens gendannelsesfil.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vælg de filer, du vil gendanne, på listen nedenfor.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>

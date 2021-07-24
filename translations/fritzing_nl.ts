@@ -6472,7 +6472,7 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     </message>
     <message>
         <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voor meer informatie over prijzen, zie &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -6507,7 +6507,7 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzing is vastgelopen, maar sommige wijzigingen voor de volgende bestanden kunnen herstelt worden.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;De datum en tijd van elk gebackupt bestand is weergegeven. Als het bestand is opgeslagen staat daarvan ook de datum en tijd vermeldt ter vergelijking.&lt;/p&gt;&lt;p&gt;De originele bestanden staan nog op je schijf als je ze ooit opgeslagen hebt. Je kunt er voor kiezen om die bestanden te overschrijven nadat je het herstelbestand geladen hebt.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Selcteer de bestanden die je wilt herstellen uit de lijst hier onder.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

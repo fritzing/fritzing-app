@@ -2166,7 +2166,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4372"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4377"/>
         <source>Fritzing</source>
-        <translation>Frizting</translation>
+		<translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1416"/>

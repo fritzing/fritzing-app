@@ -1366,7 +1366,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <location filename="../src/utils/folderutils.cpp" line="763"/>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Le tue parti e i tuoi bidoni personalizzati sono spostati dalla cartella nascosta dei dati dell&apos;app alla tua cartella dei documenti di fritzing a &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;In questo modo, speriamo di renderti più facile trovarli e modificarli manualmente.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

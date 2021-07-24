@@ -6424,7 +6424,7 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzing可能已经崩溃了，但下面文件的一些改变有可能被恢复。&lt;/b&gt;&lt;/p&gt;&lt;p&gt;每个文件的备份日期和时间都显示了。如果文件被保存了，日期和时间也将被列出来用于对比。&lt;/p&gt;&lt;p&gt;如果他们曾经被保存过，原来的文件仍然在你的磁盘上。你可以在载入恢复文件后，选择是否覆盖原来的文件。&lt;/p&gt;&lt;p&gt;&lt;b&gt;从下面的列表中选择你想要恢复的文件。&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

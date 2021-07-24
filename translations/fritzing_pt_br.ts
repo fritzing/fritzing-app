@@ -6508,7 +6508,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzing talvez tenha falhado, mas algumas das alterações nos seguintes arquivos talvez sejam recuperadas.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;A data e hora de cada arquivo recuperado é mostrado. Se o arquivo foi salvo, a data e hora também está listado para comparação.&lt;/p&gt;&lt;p&gt;Os arquivos originais ainda estão no disco, caso eles não tenham sido salvos. Você pode escolher se deseja substituir o arquivo original depois de carregar o seu arquivo de recuperação.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Selecione os arquivos que deseja recuperar a partir da lista abaixo.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

@@ -3932,7 +3932,7 @@ Reden : %2 (errcode %3)</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Je sketch heeft nog geen bord! Voeg a.u.b. een bord toe om te kunnen selecteren.</translation>
     </message>
 </context>
 <context>

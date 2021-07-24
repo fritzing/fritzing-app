@@ -4906,7 +4906,7 @@ Důvod: %2 (chyb.kód %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Váš náčrtek ještě nemá desku!  Chcete-li použít tuto operaci výběru, přidejte prosím desku plošných spojů.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>

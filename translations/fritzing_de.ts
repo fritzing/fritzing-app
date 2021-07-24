@@ -9240,7 +9240,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="156"/>
         <source>To change trace width, select a trace then use the &lt;b&gt;width&lt;/b&gt; combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).</source>
-        <translation></translation>
+        <translation>Um die Leiterbahnbreite zu ändern, wählen Sie eine Leiterbahn aus und verwenden dann das Kombinationsfeld &lt;b&gt;Breite&lt;/b&gt; im Inspektor. Sie können die Dropdown-Liste verwenden oder einfach eine Zahl eingeben (von 8 bis 128).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="138"/>

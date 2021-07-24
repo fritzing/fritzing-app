@@ -21,27 +21,27 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="115"/>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
-        <translation></translation>
+        <translation>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="116"/>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
-        <translation></translation>
+        <translation>Zach Eveland, Dirk van Oosterbosch, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="117"/>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
-        <translation></translation>
+        <translation>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="118"/>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
-        <translation></translation>
+        <translation>Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="119"/>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation></translation>
+        <translation>Mariano Crowe, Johannes Landstorfer, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="120"/>
@@ -51,27 +51,27 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
-        <translation></translation>
+        <translation>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="127"/>
         <source>Durrell Bishop, David Cuartielles, Fabian Hemmert, </source>
-        <translation></translation>
+        <translation>Durrell Bishop, David Cuartielles, Fabian Hemmert, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="128"/>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
-        <translation></translation>
+        <translation>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="129"/>
         <source>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </source>
-        <translation></translation>
+        <translation>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="130"/>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation></translation>
+        <translation>Jan Sieber, Yaniv Steiner, Olaf Val, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="131"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Thanks for the translations go out to: </source>
-        <translation>Vielen Dank für die Übersetzungen geht an:</translation>
+        <translation>Vielen Dank für die Übersetzungen geht an: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="137"/>
@@ -91,17 +91,17 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="138"/>
         <source>Chinese (Traditional): </source>
-        <translation>Chinesisch (traditionell):</translation>
+        <translation>Chinesisch (traditionell): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="138"/>
         <source>Robert Lee</source>
-        <translation></translation>
+        <translation>Robert Lee</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Hiroshi Suzuki</source>
-        <translation></translation>
+        <translation>Hiroshi Suzuki</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>

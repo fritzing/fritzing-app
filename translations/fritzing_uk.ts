@@ -4069,7 +4069,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2675"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Вид</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2693"/>
@@ -4081,7 +4081,7 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2713"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2721"/>
         <source>Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Розведення</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2728"/>
@@ -7031,7 +7031,7 @@ Shift = змінити вісь прокручування</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="338"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Вид</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="365"/>
@@ -8083,7 +8083,7 @@ Fritzing продовжує роботу, але ви не зможете змі
     <message>
         <location filename="../src/version/partschecker.cpp" line="74"/>
         <source>The parts folder &apos;%1&apos; has been changed--it is not in a supported branch (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка деталей &apos;%1&apos; змінена--її немає у головній гілці (%2). %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="75"/>
@@ -8133,7 +8133,7 @@ Fritzing продовжує роботу, але ви не зможете змі
     <message>
         <location filename="../src/version/partschecker.cpp" line="199"/>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо отримати головну мережеву посилання для &apos;%1&apos;# %2. %3</translation>
     </message>
     <message>
         <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>

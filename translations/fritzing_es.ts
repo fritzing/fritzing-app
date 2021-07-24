@@ -4946,7 +4946,7 @@ Causa: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Su esquemático no tiene una placa todavía! Añada una PCB primero.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>

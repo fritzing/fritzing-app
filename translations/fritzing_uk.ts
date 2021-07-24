@@ -161,7 +161,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="125"/>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Особлива подяка: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="139"/>
@@ -4833,7 +4833,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="290"/>
         <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваш нарис не містить плати! Будь ласка, додайте ДП для використовування обраної операції.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="295"/>
@@ -8129,7 +8129,7 @@ Fritzing продовжує роботу, але ви не зможете змі
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="209"/>
         <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Більш детальну інформацію про ціни дивіться на &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="219"/>
@@ -8186,7 +8186,7 @@ Fritzing продовжує роботу, але ви не зможете змі
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Схоже що Fritzing несподівано упав, але дещо можна відновити&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Відображається дата та час останнього резервування файлу. Якщо файл було збережено, дата та час буде показано для порівняння.&lt;/p&gt;&lt;p&gt;Початковий файл досі зберігається на диску, якщо його колись було збережено. Ви можете обрати, чи потрібно перезаписати файл вихідний файл після завантаження його відновленої копії.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Оберіть файли для відновлення з переліку знизу.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
@@ -9075,17 +9075,17 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="92"/>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Клацніть на показнику положення миші у рядку стану (це знизу) для перемикання між міліметрами, пікселями та дюймами.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Для вільного обертання деталі у виді Монтажної або Друкованї плат, оберіть її, а потім підведіть вказівник до будь-якого її кута, аж доки не побачите значок повороту. Затисніть кнопку миші, і кут буде слідувати за вказівником при перетягуванні.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>
         <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
+        <translation>Для відображення різних властивостей на позначках, а також для їх обертання або зміни шрифта, клацніть по позначці правою кнопкою.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="119"/>

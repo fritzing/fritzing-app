@@ -8276,7 +8276,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzing poate avea disfuncțiuni, dar unele dintre modificări ale următoarelor fișiere se pot recupera.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Este afișată data și ora la care fiecare fișier are creată o copie de siguranță. dacă fișierul a fost salvat, acea dată și oră este listată pentru comparare.&lt;/p&gt;&lt;p&gt;Fișierele originale sunt încă pe hard-disc, dacă acestea au fost salvate. Puteți alege dacă suprascrieți fișierul original după ce ați încărcat fișierul său de recuperare.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Selectați orice fișier pe care doriți să-l recuperați din lista de mai jos.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
@@ -9288,7 +9288,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a roti liber o componentă în vizualizare Placă testare sau PCB, selectați-o, apoi planați mausul lângă unul dintre colțuri până ce vedeți că se rotește cursorul. Coborâți mausul iar acel colț va urma mausul după cum trageți.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>

@@ -8164,7 +8164,7 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzing çökmüş olabilir ancak ilgili dosyalardaki bazı değişiklikler kurtarılabilir.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Yedeklenen her dosyanın tarih ve saati görüntülenir.Dosya kaydedildiyse tarih ve saat&apos;de karşılaştırma için listelenir.&lt;/p&gt;&lt;p&gt;Eğer dosyayı bir kere bile kaydettiyseniz o orijinal dosyalar halen diskinizde bulunmaktadır.Ve orijinal dosyanızın kurtarma dosyasını yüklediyseniz onu üzerine yazmak üzere seçebilirsiniz.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Aşağıdaki listeden kurtarmak istediğiniz herhangi bir dosyayı seçin.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>

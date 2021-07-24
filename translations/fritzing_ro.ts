@@ -4934,7 +4934,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Schița dumneavoastră nu are încă o placă!  Adăugați o PCB în scopul de a utiliza această operație selectată.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>

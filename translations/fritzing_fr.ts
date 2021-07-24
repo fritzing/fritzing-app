@@ -3936,11 +3936,11 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Votre croquis ne comporte pas encore de carte ! Veuillez ajouter un circuit imprimé pour pouvoir utiliser cette opération de sélection.</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Votre croquis ne comporte pas encore de carte ! Veuillez ajouter un circuit imprimé pour pouvoir utiliser cette opération de sélection.</translation>
     </message>
 </context>
 <context>
@@ -6198,7 +6198,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Unable to find parts git repository HEAD</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de trouver les parties du dépôt git HEAD</translation>
     </message>
     <message>
         <source>The parts folder &apos;%1&apos; may have been damaged (%2). %3</source>
@@ -6413,7 +6413,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour plus d&apos;informations sur les prix, voir &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -6444,7 +6444,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzing peut-être écrasé, mais quelques-unes des modifications apportées aux fichiers suivants peuvent être récupérés.&lt;/b&gt;&lt;/p&gt;&lt;p&gt; La date et l&apos;heure auxquelles chaque fichier a été sauvegardé est affiché. Si le fichier a été enregistré, à cette date heure est également inscrite pour la comparaison.&lt;/p&gt;&lt;p&gt; Les fichiers originaux sont toujours sur votre disque, s&apos;ils ont déjà été enregistrées. Vous pouvez choisir si vous souhaitez remplacer le fichier d&apos;origine après avoir charger son fichier de récupération;&lt;/p&gt; &lt;p&gt;&lt;b&gt;Sélectionnez les fichiers que vous souhaitez récupérer dans la liste ci-dessous.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -7286,11 +7286,11 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cliquer sur l&apos;indicateur de position de la souris dans la barre de statut (au bas de l&apos;écran) pour faire basculer l&apos;affichage des unités en mm ou en px.</translation>
     </message>
     <message>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour faire tourner librement un composant dans les vues  de la platine d&apos;essai ou du circuit imprimé, sélectionnnez-le, ensuite faites passer le pointeur de la souris près d&apos;un de ses coins jusqu&apos;à ce que le curseur de rotation apparaisse. Enfoncez le bouton de la souris et ce coin suivra en tournant les déplacements de la souris.</translation>
     </message>
 </context>
 <context>

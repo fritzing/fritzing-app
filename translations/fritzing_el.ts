@@ -6525,7 +6525,6 @@ Note: this warning will not be repeated during this session.</source>
         <translation>Χρώματα</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="267"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="289"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="445"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="461"/>
@@ -7346,28 +7345,28 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         <translation>Ένωση Καλωδίου</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7858"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7866"/>
         <source>Trace wires</source>
         <translation>Ιχνηλάτηση καλωδίων</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7861"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7869"/>
         <source>Ratsnest wires</source>
         <translation>Καλώδια Ratsnest</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2236"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7863"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7871"/>
         <source>Select all %1</source>
         <translation>Επιλογή Όλων των %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8138"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8146"/>
         <source>Select outdated parts</source>
         <translation>Επιλογή ξεπερασμένων εξαρτημάτων</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8153"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8161"/>
         <source>Select locked parts</source>
         <translation>Επιλογή κλειδωμένων εξαρτημάτων</translation>
     </message>
@@ -8537,13 +8536,13 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3474"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9469"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9477"/>
         <source>Select %1</source>
         <translation>Επιλογή %1</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3477"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9472"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9480"/>
         <source>Select %1 items</source>
         <translation>Επιλογή %1 αντικειμένων</translation>
     </message>
@@ -8717,12 +8716,12 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7674"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7682"/>
         <source>Resize ruler to %1 %2</source>
         <translation>Αλλαγή μεγέθους κανόνα σε %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9995"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="10003"/>
         <source>test connectors</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8732,64 +8731,64 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         <translation>Αλλαγή μεγέθους Σημείωσης</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7543"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7551"/>
         <source>Change Resistance from %1 to %2</source>
         <translation>Αλλαγή Αντίστασης από %1 σε %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7567"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7576"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7575"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7584"/>
         <source>Change %1 from %2 to %3</source>
         <translation>Αλλαγή %1 από %2 σε %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7697"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8582"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7705"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8590"/>
         <source>Resize board to %1 %2</source>
         <translation>Μέγεθος πλακέτας σε %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7754"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7762"/>
         <source>Create wire from Ratsnest</source>
         <translation>Δημιουργία καλωδίου από Ratsnes</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7952"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7960"/>
         <source>Disconnect all wires from %1</source>
         <translation>Αποσύνδεση όλων των καλωδίων από το %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7955"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7963"/>
         <source>Disconnect all wires from %1 items</source>
         <translation>Αποσύνδεση όλων των καλωδίων από %1 αντικείμενα</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8233"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8241"/>
         <source>Change image from %1 to %2</source>
         <translation>Αλλαγή εικόνας από %1 σε %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9043"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9051"/>
         <source>change pin labels</source>
         <translation>αλλαγή ετικετών ακίδας (pin)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9342"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9350"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation>Μη δρομολογημένες συνδέσεις είναι επισημασμένες με κίτρινο.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9343"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9351"/>
         <source>There are no unrouted connections</source>
         <translation>Δεν υπάρχουν μη δρομολογημένες συνδέσεις</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9344"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9352"/>
         <source>Unrouted connections</source>
         <translation>Μη δρομολογημένς συνδέσεις</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9345"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9353"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
@@ -8798,17 +8797,17 @@ Note: you can also trigger this display by mousing down on the routing status te
 Σημείωση: μπορείτε να προκαλέσετε την οθόνη αυτή πατώντας το ποντίκι στο κείμενο κατάστασης της δρομολόγησης στην μπάρα κατάστασης.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9392"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation>Το εξάρτημα &apos;%1&apos; δεν βρέθηκε στο σχέδιο</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9404"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9412"/>
         <source>Add %1 parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9466"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9474"/>
         <source>Deselect all</source>
         <translation>Αποεπιλογή όλων</translation>
     </message>

@@ -6541,7 +6541,6 @@ Note: this warning will not be repeated during this session.</source>
         <translation>Цвета</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="267"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="289"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="445"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="461"/>
@@ -7281,7 +7280,7 @@ Fritzing по-прежнему работает, но вы не сможете �
         <translation>Соединить провод</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8153"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8161"/>
         <source>Select locked parts</source>
         <translation>Выбрать заблокированные компоненты</translation>
     </message>
@@ -7415,18 +7414,18 @@ Fritzing по-прежнему работает, но вы не сможете �
         <translation>Примечания</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7858"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7866"/>
         <source>Trace wires</source>
         <translation>Провода трассировки</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7861"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7869"/>
         <source>Ratsnest wires</source>
         <translation>Исключённые провода</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2236"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7863"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7871"/>
         <source>Select all %1</source>
         <translation>Выбрать все %1</translation>
     </message>
@@ -7528,7 +7527,7 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>Прогресс файла...</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8138"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8146"/>
         <source>Select outdated parts</source>
         <translation>Выбрать устаревшие компоненты</translation>
     </message>
@@ -8545,13 +8544,13 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3474"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9469"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9477"/>
         <source>Select %1</source>
         <translation>Выбрать %1</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3477"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9472"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9480"/>
         <source>Select %1 items</source>
         <translation>Выбрать %1 элементов</translation>
     </message>
@@ -8684,74 +8683,74 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>Изменить цвет проводов (%1) на %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7674"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7682"/>
         <source>Resize ruler to %1 %2</source>
         <translation>Изменить размер линейки на %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9995"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="10003"/>
         <source>test connectors</source>
         <translation>проверка разъёмов</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7543"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7551"/>
         <source>Change Resistance from %1 to %2</source>
         <translation>Изменить сопротивление с %1 на %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7567"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7576"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7575"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7584"/>
         <source>Change %1 from %2 to %3</source>
         <translation>Изменить %1 с %2 на %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7697"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8582"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7705"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8590"/>
         <source>Resize board to %1 %2</source>
         <translation>Изменить размер платы на %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7754"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7762"/>
         <source>Create wire from Ratsnest</source>
         <translation>Создать провод из исключения</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7952"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7960"/>
         <source>Disconnect all wires from %1</source>
         <translation>Отключить все провода от %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7955"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7963"/>
         <source>Disconnect all wires from %1 items</source>
         <translation>Отключить все провода от %1 элементов</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8233"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8241"/>
         <source>Change image from %1 to %2</source>
         <translation>Изменить изображение с %1 на %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9043"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9051"/>
         <source>change pin labels</source>
         <translation>изменить метки выводов</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9342"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9350"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation>Неразведённые соединения выделяются жёлтым цветом.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9343"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9351"/>
         <source>There are no unrouted connections</source>
         <translation>Нет неразведённых соединений</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9344"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9352"/>
         <source>Unrouted connections</source>
         <translation>Неразведённые соединения</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9345"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9353"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
@@ -8760,17 +8759,17 @@ Note: you can also trigger this display by mousing down on the routing status te
 Примечание: вы также можете запустить этот экран, щёлкнув по тексту состояния трассировки в строке состояния.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9392"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation>Компонент «%1» не найден в эскизе</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9404"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9412"/>
         <source>Add %1 parts</source>
         <translation>Добавить компоненты (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9466"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9474"/>
         <source>Deselect all</source>
         <translation>Отменить выделение всего</translation>
     </message>

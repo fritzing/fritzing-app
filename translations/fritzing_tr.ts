@@ -6532,7 +6532,6 @@ Not:Bu uyarı bu bölüm boyunca tekrar edilmeyecektir.</translation>
         <translation>Renkler</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="267"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="289"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="445"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="461"/>
@@ -7353,28 +7352,28 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>Kabloları Birleştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7858"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7866"/>
         <source>Trace wires</source>
         <translation>Hat kablolar</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7861"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7869"/>
         <source>Ratsnest wires</source>
         <translation>Yumak kablolar</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2236"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7863"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7871"/>
         <source>Select all %1</source>
         <translation>Tüm %1 seçilsin</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8138"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8146"/>
         <source>Select outdated parts</source>
         <translation>Zamanı geçmiş elemanları seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8153"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8161"/>
         <source>Select locked parts</source>
         <translation>Kilitli parçaları seç</translation>
     </message>
@@ -8542,13 +8541,13 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3474"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9469"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9477"/>
         <source>Select %1</source>
         <translation>%1 ögesini seç</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3477"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9472"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9480"/>
         <source>Select %1 items</source>
         <translation>%1 ögeyi seç</translation>
     </message>
@@ -8726,12 +8725,12 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7674"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7682"/>
         <source>Resize ruler to %1 %2</source>
         <translation>Cetveli %1 %2 tekrar ölçeklendir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9995"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="10003"/>
         <source>test connectors</source>
         <translation>bağlayıcıları test et</translation>
     </message>
@@ -8741,64 +8740,64 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>Notu Tekrar Ölçeklendir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7543"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7551"/>
         <source>Change Resistance from %1 to %2</source>
         <translation>Direnç değerini %1 yerine %2 yap</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7567"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7576"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7575"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7584"/>
         <source>Change %1 from %2 to %3</source>
         <translation>%1 değerini %2 yerine %3 yap</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7697"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8582"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7705"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8590"/>
         <source>Resize board to %1 %2</source>
         <translation>Kartı %1 %2 yeniden ölçeklendir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7754"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7762"/>
         <source>Create wire from Ratsnest</source>
         <translation>Yumaktan kablo oluştur</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7952"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7960"/>
         <source>Disconnect all wires from %1</source>
         <translation>Tüm kabloların %1 bağlantılarını kes</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7955"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7963"/>
         <source>Disconnect all wires from %1 items</source>
         <translation>%1 ögelerinden tüm kablo bağlantılarını kes</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8233"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8241"/>
         <source>Change image from %1 to %2</source>
         <translation>Görüntüyü %1 yerine %2 yap</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9043"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9051"/>
         <source>change pin labels</source>
         <translation>pin etiketlerini değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9342"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9350"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation>Yönlendirilmemiş bağlantılar sarı ile vurgulanmıştır.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9343"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9351"/>
         <source>There are no unrouted connections</source>
         <translation>Yönlendirilmemiş bağlantı yok</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9344"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9352"/>
         <source>Unrouted connections</source>
         <translation>Yönlendirilmemiş bağlantılar</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9345"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9353"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
@@ -8807,17 +8806,17 @@ Note: you can also trigger this display by mousing down on the routing status te
 Not: Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzerinde aşağı kaydırarak da tetikleyebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9392"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation>&apos;%1&apos; elemanı çizimde bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9404"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9412"/>
         <source>Add %1 parts</source>
         <translation>%1 parça ekle</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9466"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9474"/>
         <source>Deselect all</source>
         <translation>Tümünü seçmeyi bırak</translation>
     </message>

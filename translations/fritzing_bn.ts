@@ -6639,7 +6639,6 @@ Note: this warning will not be repeated during this session.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="267"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="289"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="445"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="461"/>
@@ -7487,7 +7486,7 @@ Fritzing এখনও কাজ করছে, কিন্তু আপনি �
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2236"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7863"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7871"/>
         <source>Select all %1</source>
         <translation>সব নির্বাচন করুন </translation>
     </message>
@@ -7558,22 +7557,22 @@ Fritzing এখনও কাজ করছে, কিন্তু আপনি �
         <translation>সংযোগ তার </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7858"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7866"/>
         <source>Trace wires</source>
         <translation>তারের ট্রেস</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7861"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7869"/>
         <source>Ratsnest wires</source>
         <translation>Ratsnest তার গুলি </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8138"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8146"/>
         <source>Select outdated parts</source>
         <translation>মেয়াদোত্তীর্ণ যন্ত্রাংশ নির্বাচন</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8153"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8161"/>
         <source>Select locked parts</source>
         <translation>লক যন্ত্রাংশ  নির্বাচন করুন</translation>
     </message>
@@ -8669,13 +8668,13 @@ Fritzing এখনও কাজ করছে, কিন্তু আপনি �
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3474"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9469"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9477"/>
         <source>Select %1</source>
         <translation>নির্বাচন করুন %1</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3477"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9472"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9480"/>
         <source>Select %1 items</source>
         <translation>নির্বাচন করুন%1 items</translation>
     </message>
@@ -8856,33 +8855,33 @@ Fritzing এখনও কাজ করছে, কিন্তু আপনি �
         </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7674"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7682"/>
         <source>Resize ruler to %1 %2</source>
         <translation type="unfinished">এবং মাপকাঠি পুনরায় আকার দিন %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7697"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8582"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7705"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8590"/>
         <source>Resize board to %1 %2</source>
         <translation type="unfinished">বোর্ড পুনরায় আকার দিন %1%2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9392"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9404"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9412"/>
         <source>Add %1 parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9466"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9474"/>
         <source>Deselect all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9995"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="10003"/>
         <source>test connectors</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8892,59 +8891,59 @@ Fritzing এখনও কাজ করছে, কিন্তু আপনি �
         <translation>নোট পুনঃমাপ</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7543"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7551"/>
         <source>Change Resistance from %1 to %2</source>
         <translation>রেজিস্টেনস পরিবর্তন করতে %1থেকে%2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7567"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7576"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7575"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7584"/>
         <source>Change %1 from %2 to %3</source>
         <translation>%1পরিবর্তনের জন্য %2 থেকে %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7754"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7762"/>
         <source>Create wire from Ratsnest</source>
         <translation>তারের Ratsnest তৈরি করতে </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7952"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7960"/>
         <source>Disconnect all wires from %1</source>
         <translation>সকল তারের সংযোগ বিচসিন্ন করতে%1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7955"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7963"/>
         <source>Disconnect all wires from %1 items</source>
         <translation>সকল তারের সংযোগ বিচসিন্ন করতে%1 আইটেম</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8233"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8241"/>
         <source>Change image from %1 to %2</source>
         <translation>ইমেজ পরিবর্তনের জন্য%1থেকে%2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9043"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9051"/>
         <source>change pin labels</source>
         <translation>পিন লেবেল পরিবর্তন</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9342"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9350"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translatorcomment>Unrouted connections are highlighted in yellow.</translatorcomment>
         <translation>Unrouted সংযোগটি উজ্জল হলুদ করা থাকে।</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9343"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9351"/>
         <source>There are no unrouted connections</source>
         <translation>এখানে কোন unrouted সংযোগ নাই </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9344"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9352"/>
         <source>Unrouted connections</source>
         <translation>Unrouted সংযোগটি</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9345"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9353"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>

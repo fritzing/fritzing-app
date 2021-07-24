@@ -1331,7 +1331,7 @@ Use the file?</source>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="144"/>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="152"/>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fritzing</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="135"/>
@@ -2166,7 +2166,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4372"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4377"/>
         <source>Fritzing</source>
-		<translation>Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1416"/>
@@ -6541,7 +6541,6 @@ Note: this warning will not be repeated during this session.</source>
         <translation>Кольори</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="267"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="289"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="445"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="461"/>
@@ -7419,7 +7418,7 @@ Fritzing продовжує роботу, але ви не зможете змі
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2236"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7863"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7871"/>
         <source>Select all %1</source>
         <translation>Вибрати все %1</translation>
     </message>
@@ -7490,22 +7489,22 @@ Fritzing продовжує роботу, але ви не зможете змі
         <translation>Сполучити провідник</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7858"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7866"/>
         <source>Trace wires</source>
         <translation>Розвести провідники</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7861"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7869"/>
         <source>Ratsnest wires</source>
         <translation>Провідники навісного монтажу</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8138"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8146"/>
         <source>Select outdated parts</source>
         <translation>Вибрати застарілі деталі</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8153"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8161"/>
         <source>Select locked parts</source>
         <translation>Вибрати заблоковані деталі</translation>
     </message>
@@ -8569,13 +8568,13 @@ Fritzing продовжує роботу, але ви не зможете змі
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3474"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9469"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9477"/>
         <source>Select %1</source>
         <translation>Вибрати %1</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3477"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9472"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9480"/>
         <source>Select %1 items</source>
         <translation>Вибрати %1 предмети</translation>
     </message>
@@ -8756,69 +8755,69 @@ Fritzing продовжує роботу, але ви не зможете змі
         <translation>Змінити розмір примітки</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7543"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7551"/>
         <source>Change Resistance from %1 to %2</source>
         <translation>Змінити Опір з %1 на %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7567"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7576"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7575"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7584"/>
         <source>Change %1 from %2 to %3</source>
         <translation>Змінити %1 з %2 на %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7674"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7682"/>
         <source>Resize ruler to %1 %2</source>
         <translation>Змінити розмір керувача на %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7697"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8582"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7705"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8590"/>
         <source>Resize board to %1 %2</source>
         <translation>Змінити розмір плати на %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7754"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7762"/>
         <source>Create wire from Ratsnest</source>
         <translation>Створити дріт з наівсного монтажу</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7952"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7960"/>
         <source>Disconnect all wires from %1</source>
         <translation>Від’єднати всі дроти від %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7955"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7963"/>
         <source>Disconnect all wires from %1 items</source>
         <translation>Від’єднати всі дроти з %1 предметів</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8233"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8241"/>
         <source>Change image from %1 to %2</source>
         <translation>Змінити зображення з %1 на %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9043"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9051"/>
         <source>change pin labels</source>
         <translation>змінити позначки штирка</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9342"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9350"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation>Нерозведені з’єднання буде виділено жовтим кольором.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9343"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9351"/>
         <source>There are no unrouted connections</source>
         <translation>Тут немає нерозведених з’єднань</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9344"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9352"/>
         <source>Unrouted connections</source>
         <translation>Нерозведені з’єднання</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9345"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9353"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
@@ -8827,22 +8826,22 @@ Note: you can also trigger this display by mousing down on the routing status te
 Увага: ви можете викликати це повідомлення, клацнувши мишею на стані розведення у рядку стану.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9392"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation>Деталь &apos;%1&apos; не знайдено у нарисі</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9404"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9412"/>
         <source>Add %1 parts</source>
         <translation>Додати %1 деталі</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9466"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9474"/>
         <source>Deselect all</source>
         <translation>Зняти виділення з усього</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9995"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="10003"/>
         <source>test connectors</source>
         <translation>перевірити з’єднання</translation>
     </message>

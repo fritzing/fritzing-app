@@ -1189,18 +1189,18 @@ Use the file?</source>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Диалог</translation>
     </message>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="65"/>
         <location filename="../src/dialogs/exportparametersdialog.cpp" line="13"/>
         <source>Export parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Параметры экспорта</translation>
     </message>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="131"/>
         <source>DPI</source>
-        <translation type="unfinished"></translation>
+        <translation>DPI</translation>
     </message>
 </context>
 <context>
@@ -1261,7 +1261,7 @@ Use the file?</source>
     <message>
         <location filename="../src/fapplication.cpp" line="2012"/>
         <source>This option is usefull if you modify the parts database on your own. If you want to recover from an error, you may be better off downloading the latest Fritzing release.</source>
-        <translation type="unfinished"></translation>
+        <translation>Эта опция полезна, если вы самостоятельно изменяете базу данных деталей. Если вы хотите восстановиться после ошибки, лучше загрузить последнюю версию Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2020"/>
@@ -1284,7 +1284,7 @@ Use the file?</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="19"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="70"/>
@@ -1294,13 +1294,13 @@ Use the file?</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="106"/>
         <source>Upload it now to get a preview rendered by AISLER. Review, and if you like it, order it and get it manufactured in two days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузите его сейчас, чтобы получить предварительный просмотр, сделанный AISLER. Просмотрите, и если он вам понравится, закажите его и получите в течение двух дней.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="163"/>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="327"/>
         <source>Cancel</source>
-        <translation type="unfinished">Отменить</translation>
+        <translation>Отменить</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="192"/>
@@ -1310,12 +1310,12 @@ Use the file?</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="251"/>
         <source>Upload</source>
-        <translation type="unfinished">Отправить</translation>
+        <translation>Отправить</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="265"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорт</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="356"/>
@@ -1330,7 +1330,7 @@ Use the file?</source>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="144"/>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="152"/>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="135"/>
@@ -1363,7 +1363,7 @@ Use the file?</source>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="107"/>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Представление печатной платы&lt;/b&gt; — это режим, в котором вы размещаете компоненты на физической ПП (печатной плате). &lt;br/&gt;&lt;br/&gt;ПП могут быть сделаны дома или в небольшой лаборатории с использованием процессов DIY-травления. Их также можно послать  профессиональным производителям ПП для более точного изготовления. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Во-первых, вам потребуется плата, чтобы разместить на ней свои компоненты. Одна плата уже должна быть в эскизе, но если её нет, перетащите значок платы из каталога компонентов. Значок соответствует изображению справа: &lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;br/&gt;&lt;br/&gt;Чтобы разметить печатную плату, расположите все компоненты так, чтобы они хорошо вписывались в плату. Затем попробуйте переместить их, чтобы минимизировать длину и хаотичность соединений. Вы также можете изменить размер прямоугольных плат. &lt;table&gt;&lt;tr&gt;&lt;td&gt;Как только компоненты будут упорядочены, вы соединяете их с медными дорожками. Можно прокладывать дорожки из отдельных соединений или использовать для создания дорожек автотрассировку. Кнопка автотрассировки находится в нижней части окна. Кнопка соответствует изображению справа:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
@@ -1376,7 +1376,7 @@ Use the file?</source>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="763"/>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Ваши пользовательские компоненты и каталоги перемещены из скрытой папки данных приложения в папку документов Fritzing по адресу &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;. Это должно упростить вам их поиск и редактирование вручную.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2188,7 +2188,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1708"/>
         <source>Local part &apos;%1&apos; incomplete, only &apos;%2&apos; layers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Локальная часть &apos;%1&apos; неполная, только &apos;%2&apos; слои.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1724"/>
@@ -2203,12 +2203,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1752"/>
         <source>Local part &apos;%1&apos; incomplete, subfile not found &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Локальная часть &apos;%1&apos; неполная, подфайл &apos;%2&apos; не найден</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1766"/>
         <source>Unable to open local part &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно открыть локальную часть &apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1810"/>
@@ -3775,19 +3775,19 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2675"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Вид</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2693"/>
         <source>Edit</source>
-        <translation type="unfinished">Правка</translation>
+        <translation>Правка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2705"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2713"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2721"/>
         <source>Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Трассировка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2728"/>
@@ -4016,7 +4016,7 @@ Do you want to update now?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4347"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4347"/>
@@ -4834,7 +4834,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="290"/>
         <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>У вашего эскиза ещё нет платы! Пожалуйста, добавьте печатную плату, чтобы использовать эту операцию выбора.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1473"/>
@@ -6932,7 +6932,7 @@ shift key swaps scroll axis</source>
     <message>
         <location filename="../src/program/programwindow.cpp" line="338"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Вид</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="483"/>
@@ -8024,7 +8024,7 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/version/partschecker.cpp" line="199"/>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно получить ссылку на сеть для &apos;%1&apos;#%2. %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="469"/>
@@ -8120,7 +8120,7 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="209"/>
         <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Более подробную информацию о ценах см. в &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/dialogs/quotedialog.cpp" line="267"/>
@@ -8172,7 +8172,7 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;&lt;b&gt;Произошёл сбой Fritzing, но некоторые изменения в следующих файлах могут быть восстановлены.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Отображается дата и время резервного копирования каждого файла. Если файл был сохранён, эта дата и время также указаны для сравнения.&lt;/p&gt;&lt;p&gt;Исходные файлы всё ещё находятся на вашем диске, если они когда-либо были сохранены. Вы можете выбрать, следует ли перезаписать исходный файл после загрузки его файла восстановления.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Выберите файлы, которые следует восстановить, в списке ниже.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
@@ -9141,7 +9141,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="92"/>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Нажмите на индикатор положения мыши в строке состояния (внизу), чтобы переключить единицы измерения с мм на пиксели.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="96"/>
@@ -9166,7 +9166,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Чтобы свободно вращать компонент в режиме макетной платы или печатной платы, выберите его, затем наведите указатель мыши на один из углов, пока не увидите курсор поворота. Нажмите кнопку мыши, и этот угол будет следовать за мышью при перетаскивании.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>
@@ -9485,7 +9485,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/version/updatedialog.cpp" line="185"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Хорошо</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="213"/>

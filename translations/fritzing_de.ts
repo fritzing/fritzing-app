@@ -1258,7 +1258,7 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="2012"/>
         <source>This option is usefull if you modify the parts database on your own. If you want to recover from an error, you may be better off downloading the latest Fritzing release.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Option ist nützlich, wenn Sie die Teiledatenbank selbst ändern. Wenn Sie einen Fehler beheben wollen, ist es möglicherweise besser, die neueste Fritzing-Version herunterzuladen.</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2020"/>
@@ -1360,7 +1360,7 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="107"/>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>In der &lt;b&gt;PCB-Ansicht&lt;/b&gt; layouten Sie die Komponenten auf einer physischen Leiterplatte (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;Leiterplatten können zu Hause oder in einem kleinen Labor mit DIY-Ätzverfahren hergestellt werden. Für eine präzisere Fertigung können sie auch an professionelle PCB-Hersteller geschickt werden. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Als erstes benötigen Sie eine Platine, auf der Sie Ihre Bauteile platzieren können. Es sollte bereits eine in Ihrer Skizze vorhanden sein, aber wenn nicht, ziehen Sie das Platinen-Symbol aus der Teileablage hinein. Das Symbol entspricht dem Bild auf der rechten Seite: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Um Ihre Platine auszulegen, ordnen Sie alle Bauteile so an, dass sie gut auf die Platine passen. Versuchen Sie dann, sie zu verschieben, um die Länge und das Durcheinander der Anschlüsse zu minimieren. Sie können auch die Größe von rechteckigen Platinen ändern. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Sobald die Bauteile sortiert sind, verbinden Sie sie mit Kupferbahnen. Sie können eine Leiterbahn aus einzelnen Anschlüssen herausziehen oder mit dem Autorouter erzeugen. Die Schaltfläche Autoroute befindet sich am unteren Rand des Fensters. Die Schaltfläche entspricht dem Bild rechts:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
@@ -1373,7 +1373,7 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="763"/>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Deine selbst erstellten Bauteile werden jetzt von dem verborgenen &quot;App Data&quot;-Ordner in Deinen Fritzing Dokumenten-Ordner verschoben: &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;So wird es für Dich einfacher, die zugehörigen Dateien zu finden und ggf. manuell zu bearbeiten.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -3101,12 +3101,12 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2675"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Ansicht</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2693"/>
         <source>Edit</source>
-        <translation type="unfinished">Bearbeiten</translation>
+        <translation>Bearbeiten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2809"/>
@@ -4830,7 +4830,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="290"/>
         <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein Entwurf enthält noch keine Leiterplatte! Bitte füge eine hinzu, um diese Funktion auszuführen.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1473"/>

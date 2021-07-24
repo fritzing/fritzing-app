@@ -4907,7 +4907,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το σχέδιο σας δεν έχει κάποια πλακέτα ακόμη!  Παρακαλώ προσθέστε κάποια πλακέτα (PCB) για να χρησιμοποιήσετε αυτή την λειτουργία επιλογής.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>
@@ -8154,7 +8154,7 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Το Fritzing μπορεί να αντιμετώπισε σφάλμα αλλά μερικές από τις αλλαγές στα ακόλουθα αρχεία ίσως ανακτηθούν.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Προβάλλεται η ημερομηνία και η ώρα αντιγράφου του κάθε αρχείου. Αν το αρχείο είχε αποθηκευτεί, προβάλλεται και αυτή η ημερομηνία και ώρα.&lt;/p&gt;&lt;p&gt;Τα αρχικά αρχεία θα υπάρχουν ακόμη στον δίσκο αν είχαν αποθηκευτεί. Μπορείτε να επιλέξετε αν θα αντικαταστήσετε αφού φορτώσετε το αντίγραφο ασφαλείας του.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Επιλέξτε όποιο αρχείο θέλετε να ανακτήσετε από την παρακάτω λίστα.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>

@@ -213,7 +213,7 @@
     </message>
     <message>
         <source>Ukrainian: </source>
-        <translation type="unfinished">Ukrainien : </translation>
+        <translation>Ukrainien : </translation>
     </message>
     <message>
         <source>Yelyzaveta Chyhryna</source>
@@ -221,7 +221,7 @@
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
-        <translation type="unfinished">Bryant Mairs, Uleshka Asher, Daniel Tzschentke, et Kjell Morgenstern</translation>
+        <translation>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, et Kjell Morgenstern</translation>
     </message>
     <message>
         <source>Special thanks go out to: </source>
@@ -1002,15 +1002,15 @@ Utiliser le fichier ?</translation>
     <name>ExportParametersDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogue</translation>
     </message>
     <message>
         <source>Export parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres d&apos;exportation</translation>
     </message>
     <message>
         <source>DPI</source>
-        <translation type="unfinished"></translation>
+        <translation>DPI</translation>
     </message>
 </context>
 <context>
@@ -1071,7 +1071,7 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>This option is usefull if you modify the parts database on your own. If you want to recover from an error, you may be better off downloading the latest Fritzing release.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cette option est utile si vous modifiez la base de données des pièces par vous-même. Si vous voulez récupérer une erreur, il est préférable de télécharger la dernière version de Fritzing.</translation>
     </message>
 </context>
 <context>
@@ -1249,7 +1249,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">D&apos;accord</translation>
+        <translation>D&apos;accord</translation>
     </message>
 </context>
 <context>
@@ -1358,11 +1358,11 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>type</source>
-        <translation type="unfinished">type</translation>
+        <translation>type</translation>
     </message>
     <message>
         <source>(autoroutable)</source>
-        <translation type="unfinished"></translation>
+        <translation>(autoroutable)</translation>
     </message>
     <message>
         <source>v. %1 %2</source>
@@ -1549,7 +1549,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>inductance</source>
-        <translation type="unfinished"></translation>
+        <translation>Inductance</translation>
     </message>
     <message>
         <source>version</source>
@@ -1557,7 +1557,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>date</source>
-        <translation type="unfinished">date</translation>
+        <translation>date</translation>
     </message>
 </context>
 <context>
@@ -1568,7 +1568,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">D&apos;accord</translation>
+        <translation>D&apos;accord</translation>
     </message>
 </context>
 <context>
@@ -1594,7 +1594,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">D&apos;accord</translation>
+        <translation>D&apos;accord</translation>
     </message>
 </context>
 <context>
@@ -3489,7 +3489,7 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     </message>
     <message>
         <source>Eagle...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eagle…</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -3719,15 +3719,15 @@ Remarque: si vous souhaitez mettre à jour plus tard, il y a des options dans le
     </message>
     <message>
         <source>fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>fritzing.org</translation>
     </message>
     <message>
         <source>Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Routage</translation>
     </message>
     <message>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished">Fritzing Fab Upload</translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <source>Please first save your project in order to upload it.</source>
@@ -3735,11 +3735,11 @@ Remarque: si vous souhaitez mettre à jour plus tard, il y a des options dans le
     </message>
     <message>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Vue</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished">Editer</translation>
+        <translation>Editer</translation>
     </message>
 </context>
 <context>
@@ -5577,11 +5577,11 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished">Editer</translation>
+        <translation>Editer</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Vue</translation>
     </message>
 </context>
 <context>
@@ -6218,7 +6218,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>in</source>
-        <translation type="unfinished">dans</translation>
+        <translation>po</translation>
     </message>
     <message>
         <source>ICs</source>
@@ -6234,7 +6234,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>ii</source>
-        <translation type="unfinished"></translation>
+        <translation>ii</translation>
     </message>
     <message>
         <source>&lt;b&gt;id:&lt;/b&gt;</source>
@@ -6242,11 +6242,11 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>N/A</translation>
     </message>
     <message>
         <source>bb</source>
-        <translation type="unfinished"></translation>
+        <translation>bb</translation>
     </message>
     <message>
         <source>%1 %2,%3 %4</source>
@@ -7656,7 +7656,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>
@@ -7755,7 +7755,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Unable to reach fritzing.org/projects</source>
-        <translation type="unfinished">Impossible de joindre fritzing.org/projets</translation>
+        <translation>Impossible de joindre fritzing.org/projets</translation>
     </message>
 </context>
 <context>

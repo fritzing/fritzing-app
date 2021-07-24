@@ -1375,7 +1375,7 @@ Use the file?</source>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="763"/>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Персонализираните Ви части и набори са преместени от скритата папка на приложението в папката Ви за документи на Fritzing тук: &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;Надяваме се, че така ще Ви е по-лесно да ги намирате и редактирате ръчно.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -4836,7 +4836,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="290"/>
         <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Схемата все още няма платка! Моля, добавете печатна платка, за да можете да използвате тази функционалност за избор.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1473"/>
@@ -4923,7 +4923,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Схемата все още няма платка! Моля, добавете печатна платка, за да можете да използвате тази функционалност за избор.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>
@@ -8102,22 +8102,22 @@ Fritzing все още работи ,но няма да можете да про
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="206"/>
         <source>&lt;b&gt;Shipping is free wordlwide&lt;/b&gt;.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Доставката е безплатна за цялата страна&lt;/b&gt;.&lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="207"/>
         <source>Documents for local customs control are included.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Включени са документи за местен митнически контрол.&lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="208"/>
         <source>Some countries might charge additional import taxes or checking fees.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>В някои страни могат да се начислят допълнителни данъци върху вноса или такси за проверка.&lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="209"/>
         <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>За повече информация относно цените вижте &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="219"/>
@@ -8173,7 +8173,7 @@ Fritzing все още работи ,но няма да можете да про
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt; Fritzing може да е претърпял срив, но и възможно някои от промените по следните файлове да могат да бъдат възстановени.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Показани са датата и часа на последното съхраняване на резервно копие. Ако файлът е бил запазен, датата и часа на запазването му също са показани за сравнение.&lt;/p&gt;&lt;p&gt;Оригиналните файлове все още са на диска Ви, ако някога са били запазени. Можете да изберете дали да презапишете оригиналния файл след като заредите възстановения.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Изберете файловете, които искате да възстановите, от списъка по долу.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="111"/>
@@ -9139,7 +9139,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="92"/>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Щракнете индикатора за позицията на курсора в лентата за състоянието (в дъното), за да превключите единиците между инчове, милиметри и пиксели.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="96"/>
@@ -9164,12 +9164,12 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>За да завъртите част на прототипната или печатната платка, изберете я и посочете с мишката близо до някой от ъглите ѝ, докато не се появи курсорът за завъртане. Натиснете и задръжте левия бутон на мишката и този ъгъл ще следва движението на курсора.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>
         <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
+        <translation>За да покажете различни свойства в етикета на частта, както и за да го задържите или да промените шрифта, щракнете с десния бутон на мишката върху етикета.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="149"/>

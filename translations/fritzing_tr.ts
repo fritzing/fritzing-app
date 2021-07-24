@@ -91,7 +91,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="138"/>
         <source>Chinese (Traditional): </source>
-        <translation type="unfinished"></translation>
+        <translation>Çince (Geleneksel): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="138"/>
@@ -126,17 +126,17 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="146"/>
         <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <translation>Portekizce (Avrupa): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="147"/>
         <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
+        <translation>Portekizce (Brezilya): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="137"/>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
+        <translation>Çince (Basitleştirilmiş): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="125"/>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Teşekkürler: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="139"/>
@@ -1266,7 +1266,7 @@ Dosya kullanılsın mı?</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="2021"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>İptal</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2026"/>
@@ -1279,7 +1279,7 @@ Dosya kullanılsın mı?</translation>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="19"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="70"/>
@@ -1295,7 +1295,7 @@ Dosya kullanılsın mı?</translation>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="163"/>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="327"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>İptal</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="192"/>
@@ -4016,7 +4016,7 @@ Devam et ve geri döndür?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2675"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Göster</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2693"/>
@@ -4028,7 +4028,7 @@ Devam et ve geri döndür?</translation>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2713"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2721"/>
         <source>Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Yönlendirme</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2728"/>
@@ -4174,7 +4174,7 @@ Not: ileride güncellemek isterseniz &apos;Parça&apos; menüsünde eskimiş par
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4347"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4347"/>
@@ -4828,7 +4828,7 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="290"/>
         <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Çiziminizin henüz bir kartı yok! Seçimi kullanabilmek için lütfen bir Baskı Devre ekleyin.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1473"/>
@@ -4913,7 +4913,7 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2218"/>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Çiziminizin henüz bir kartı yok!  Seçimi kullanabilmek için lütfen bir Baskı Devre ekleyin.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2246"/>
@@ -6923,7 +6923,7 @@ shift tuşu ilerleme eksenini değiştirir</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="338"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Göster</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="483"/>
@@ -9128,7 +9128,7 @@ Not: Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzer
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="92"/>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Birimi mm&apos;den px&apos;e değiştirmek için (en alttaki) durum çubuğundaki fare konum göstergesine tıklayın.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="96"/>
@@ -9153,12 +9153,12 @@ Not: Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzer
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deneysel devre tahtası veya baskılı devrede bir parçayı serbestçe döndürmek için onu seçin, fareyi köşelerinden biri üzerinde döndürme imleci görünene kadar bekletin. Fareyi hareket ettirdiğinizde bu köşe onu takip edecektir.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>
         <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir parça etiketinde çeşitli özellikleri görüntülemek, döndürmek veya yazı tipini değiştirmek için etikete sağ tıklayın.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="149"/>

@@ -1093,7 +1093,7 @@ Use the file?</source>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="286"/>
         <source>Fritzing</source>
-        <translation>Frizting</translation>
+		<translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="369"/>
@@ -2181,7 +2181,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4372"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4377"/>
         <source>Fritzing</source>
-        <translation>Frizting</translation>
+		<translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="946"/>
@@ -3206,7 +3206,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="617"/>
         <source>Open a Fritzing sketch (.fzz, .fz), or load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
-        <translation>Отваряне на схема на Fritzing (.fzz, .fz), или зареждане на част на Frizting (.fpz) или набор части на Fritzing (.fbz, .fzbz)</translation>
+		<translation>Отваряне на схема на Fritzing (.fzz, .fz), или зареждане на част на Fritzing (.fpz) или набор части на Fritzing (.fbz, .fzbz)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="620"/>
@@ -4831,7 +4831,7 @@ Reason: %2 (errcode %3)</source>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2250"/>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2424"/>
         <source>Fritzing</source>
-        <translation>Frizting</translation>
+		<translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="290"/>
@@ -6295,7 +6295,7 @@ Go ahead and save?</source>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="453"/>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="460"/>
         <source>Fritzing</source>
-        <translation>Frizting</translation>
+		<translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="454"/>
@@ -6995,7 +6995,7 @@ SHIFT променя оста</translation>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="528"/>
         <location filename="../src/svg/gerbergenerator.cpp" line="359"/>
         <source>Fritzing</source>
-        <translation>Frizting</translation>
+		<translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="615"/>
@@ -8617,7 +8617,7 @@ Fritzing все още работи ,но няма да можете да про
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3943"/>
         <source>Fritzing</source>
-        <translation>Frizting</translation>
+		<translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3943"/>

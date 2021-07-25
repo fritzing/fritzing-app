@@ -126,7 +126,12 @@
         <translation>Іспанська: </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -238,29 +243,24 @@
         <translation>Єлизавета Чигрина</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Створення Fritzing стало можливим завдяки фінансуванню </translation>
+        <translation type="vanished">Створення Fritzing стало можливим завдяки фінансуванню </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, підтримці дизайнерського </translation>
+        <translation type="vanished">MWFK Brandenburg, підтримці дизайнерського </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>факультету веймарського університету Баухаус, </translation>
+        <translation type="vanished">факультету веймарського університету Баухаус, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, анонімному дарувальнику, Parallax, Picaxe, Sparkfun, </translation>
+        <translation type="vanished">IxDS, анонімному дарувальнику, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation>і завдяки кожній купівлі набору Fritzing Starter та друкованих плат Fritzing Fab.</translation>
+        <translation type="vanished">і завдяки кожній купівлі набору Fritzing Starter та друкованих плат Fritzing Fab.</translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -376,14 +376,12 @@
         <translation>Набір деталей</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>Керування набором::setDirtyTab: Неможливо задати набір &apos;%1&apos; як чорнетку</translation>
+        <translation type="vanished">Керування набором::setDirtyTab: Неможливо задати набір &apos;%1&apos; як чорнетку</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>Керування набором::updateTitle::Неможливо задати набір &apos;%1&apos; як чорнетку</translation>
+        <translation type="vanished">Керування набором::updateTitle::Неможливо задати набір &apos;%1&apos; як чорнетку</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="385"/>
@@ -401,9 +399,8 @@
         <translation>Файл набору Fritzing (*%1 *%2);;Набір Fritzing (*%1);;Спільний набір Fritzing (*%2)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>Неможливо задати пустий набір як поточний</translation>
+        <translation type="vanished">Неможливо задати пустий набір як поточний</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="908"/>
@@ -586,9 +583,8 @@
         <translation>Будь ласка, введіть назву набору:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <source>Remove from Bin</source>
-        <translation>Видалити з набору</translation>
+        <translation type="vanished">Видалити з набору</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -596,6 +592,7 @@
         <translation>Не вдалось видалити деталь &apos;%1&apos; — вона використовується у схемі</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation>Видалити з набору</translation>
@@ -2284,14 +2281,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>Не вдалось експортувати %1 до спільного нарису</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation>ГоловнеВікно::переміститиДоПапкиДеталей головневікно відсутнє</translation>
+        <translation type="vanished">ГоловнеВікно::переміститиДоПапкиДеталей головневікно відсутнє</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation>Деталь з ідентифікатором &apos;%1&apos; вже було завантажено до Fritzing.</translation>
+        <translation type="vanished">Деталь з ідентифікатором &apos;%1&apos; вже було завантажено до Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2008"/>
@@ -2805,9 +2800,8 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>Нарис експортується у Gerber</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="162"/>
         <source>Select a Fritzing File to Open</source>
-        <translation>Виберіть файл Fritzing для відкривання</translation>
+        <translation type="vanished">Виберіть файл Fritzing для відкривання</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="164"/>
@@ -2961,9 +2955,8 @@ Go ahead and revert?</source>
         <translation>Різне</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>ГоловнеВікно::заповнитиМенюЗІнексом::неможливо завантажити приклад з ідентифікатором=&apos;%1&apos;</translation>
+        <translation type="vanished">ГоловнеВікно::заповнитиМенюЗІнексом::неможливо завантажити приклад з ідентифікатором=&apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="786"/>
@@ -3882,6 +3875,11 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1310"/>
         <source>Raise and Lower</source>
         <translation>Підняти та опустити</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="162"/>
+        <source>Select a Fritzing file to open</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="863"/>

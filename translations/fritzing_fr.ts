@@ -9,15 +9,15 @@
     </message>
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation>et grâce à chaque achat d&apos;un Starter Kit Fritzing ou d&apos;un circuit imprimé Fritzing Fab.</translation>
+        <translation type="vanished">et grâce à chaque achat d&apos;un Starter Kit Fritzing ou d&apos;un circuit imprimé Fritzing Fab.</translation>
     </message>
     <message>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, le parrainage du Département du Design </translation>
+        <translation type="vanished">MWFK Brandenburg, le parrainage du Département du Design </translation>
     </message>
     <message>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation> de l&apos;Université Bauhaus de Weimar,</translation>
+        <translation type="vanished"> de l&apos;Université Bauhaus de Weimar,</translation>
     </message>
     <message>
         <source>Michaela Vieser and Julia Werner.</source>
@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, un donneur anonyme, Parallax, Picaxe, Sparkfun,</translation>
+        <translation type="vanished">IxDS, un donneur anonyme, Parallax, Picaxe, Sparkfun,</translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -85,7 +85,7 @@
     </message>
     <message>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Fritzing a été rendu possible grâce au financement de</translation>
+        <translation type="vanished">Fritzing a été rendu possible grâce au financement de</translation>
     </message>
     <message>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
@@ -231,6 +231,10 @@
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation>Nous remercions tout particulièrement tous les étudiants et les testeurs alpha qui ont eu le courage de faire tourner Fritzing.</translation>
     </message>
+    <message>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AutorouteProgressDialog</name>
@@ -337,7 +341,7 @@
     </message>
     <message>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager :: setDirtyTab: Impossible de configurer bin &apos;%1&apos; comme sale</translation>
+        <translation type="vanished">BinManager :: setDirtyTab: Impossible de configurer bin &apos;%1&apos; comme sale</translation>
     </message>
     <message>
         <source>Copy to Sketch</source>
@@ -349,7 +353,7 @@
     </message>
     <message>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager :: updateTitle: Impossible de configurer bin &apos;%1&apos; comme sale</translation>
+        <translation type="vanished">BinManager :: updateTitle: Impossible de configurer bin &apos;%1&apos; comme sale</translation>
     </message>
     <message>
         <source>Delete parts bin</source>
@@ -417,7 +421,7 @@
     </message>
     <message>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>Impossible de définir un magasin NULL comme celui en cours</translation>
+        <translation type="vanished">Impossible de définir un magasin NULL comme celui en cours</translation>
     </message>
     <message>
         <source>Display parts as icons</source>
@@ -465,7 +469,7 @@
     </message>
     <message>
         <source>Remove from Bin</source>
-        <translation>Supprimer du jeu de composants</translation>
+        <translation type="vanished">Supprimer du jeu de composants</translation>
     </message>
     <message>
         <source>Display parts as a list</source>
@@ -481,7 +485,7 @@
     </message>
     <message>
         <source>Select a Fritzing file to open</source>
-        <translation>Sélectionner le fichier Fritzing que vous désirez ouvrir</translation>
+        <translation type="vanished">Sélectionner le fichier Fritzing que vous désirez ouvrir</translation>
     </message>
     <message>
         <source>Close parts bin</source>
@@ -502,6 +506,10 @@
     <message>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
         <translation>Fichiers Fritzing (*%1 *%2 *%3);;Composants Fritzing (*%1);;Fritzing Bin (*%2);;Fritzing Bin partageables (*%3)</translation>
+    </message>
+    <message>
+        <source>Select a Fritzing File to Open</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1688,7 +1696,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation>MainWindow :: Le dossier principal de la fenêtre pour le déplacement des composants est manquant</translation>
+        <translation type="vanished">MainWindow :: Le dossier principal de la fenêtre pour le déplacement des composants est manquant</translation>
     </message>
     <message>
         <source>Restore Default</source>
@@ -2021,7 +2029,7 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation>Il existe déjà un composant avec l&apos;id &quot;%1&quot; chargé dans Fritzing.</translation>
+        <translation type="vanished">Il existe déjà un composant avec l&apos;id &quot;%1&quot; chargé dans Fritzing.</translation>
     </message>
     <message>
         <source>Select all trace wires</source>
@@ -2045,7 +2053,7 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>MainWindow :: Le remplissage du menu grâce à l&apos;index: n&apos;a pas pu charger l&apos;exemple avec l&apos;id = &apos;%1&apos;</translation>
+        <translation type="vanished">MainWindow :: Le remplissage du menu grâce à l&apos;index: n&apos;a pas pu charger l&apos;exemple avec l&apos;id = &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Select All &quot;Don&apos;t Autoroute&quot; Traces</source>

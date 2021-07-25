@@ -130,7 +130,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -230,29 +235,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Fritzing được tạo ra với tài chính đến từ</translation>
+        <translation type="vanished">Fritzing được tạo ra với tài chính đến từ</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, nhà tài trợ của việc Thiết Kế</translation>
+        <translation type="vanished">MWFK Brandenburg, nhà tài trợ của việc Thiết Kế</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>Khoa  Bauhaus-Đại học Weimar, </translation>
+        <translation type="vanished">Khoa  Bauhaus-Đại học Weimar, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, một nhà tài trợ vô danh, Paralax, Picaxe, Sparkfun,</translation>
+        <translation type="vanished">IxDS, một nhà tài trợ vô danh, Paralax, Picaxe, Sparkfun,</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation>và từ mỗi người mua một Fritzing Starter Kit hoặc một PCB từ Fritzing Fab.</translation>
+        <translation type="vanished">và từ mỗi người mua một Fritzing Starter Kit hoặc một PCB từ Fritzing Fab.</translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -368,14 +368,12 @@
         <translation>Linh kiện</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::setDirtyTab: Không thể thiết lập bin  &apos;%1&apos; là bẩn</translation>
+        <translation type="vanished">BinManager::setDirtyTab: Không thể thiết lập bin  &apos;%1&apos; là bẩn</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::updateTitle: Không thể thiết lập bin &apos;%1&apos; là bẩn</translation>
+        <translation type="vanished">BinManager::updateTitle: Không thể thiết lập bin &apos;%1&apos; là bẩn</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="385"/>
@@ -568,9 +566,13 @@
         <translation>Xin chọn một tên cho bin này:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing File to Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remove from Bin</source>
-        <translation>Gỡ bỏ từ Bin</translation>
+        <translation type="vanished">Gỡ bỏ từ Bin</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -578,6 +580,7 @@
         <translation>không thể gỡ bỏ linh kiện %1 --nó được sử dụng trong một sketch</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation>Gỡ bỏ từ bin</translation>
@@ -588,9 +591,8 @@
         <translation>Bạn có thực sự muốn loại bỏ &apos;%1&apos; ra khỏi bin? Thao tác này không thể hoàn tác.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation>Chọn một tập tin Fritzing để mở</translation>
+        <translation type="vanished">Chọn một tập tin Fritzing để mở</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
@@ -603,9 +605,8 @@
         <translation>Các file Bin Fritzing (* %1 * %2);; Fritzing Bin (* %1); Fritzing Shareable Bin (* %2)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>Không thể thiết lập một bin NULL như cái hiện tại</translation>
+        <translation type="vanished">Không thể thiết lập một bin NULL như cái hiện tại</translation>
     </message>
 </context>
 <context>
@@ -2341,16 +2342,6 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
         <translation>Không thể tải linh kiện từ %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
-        <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
-        <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2218"/>
         <source>No copper top layer</source>
         <translation type="unfinished"></translation>
@@ -2732,9 +2723,8 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
         <translation>Tất cả</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>MainWindow::populateMenuWithIndex: không thể tải ví dụ có=&apos;%1&apos;</translation>
+        <translation type="vanished">MainWindow::populateMenuWithIndex: không thể tải ví dụ có=&apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="820"/>

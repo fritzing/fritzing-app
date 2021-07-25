@@ -130,7 +130,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -230,29 +235,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Fritzing bylo možné vytvořit s financováním </translation>
+        <translation type="vanished">Fritzing bylo možné vytvořit s financováním </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, sponzor Designu </translation>
+        <translation type="vanished">MWFK Brandenburg, sponzor Designu </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>Oddělení Bauhaus univerzity Weimar, </translation>
+        <translation type="vanished">Oddělení Bauhaus univerzity Weimar, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, anonymní dárce, Parallax, Picaxe, Sparkfun, </translation>
+        <translation type="vanished">IxDS, anonymní dárce, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation>a z každého zakoupeného Fritzing Starter Kitu nebo vyrobené DPS z Fritzing Laboratoří.</translation>
+        <translation type="vanished">a z každého zakoupeného Fritzing Starter Kitu nebo vyrobené DPS z Fritzing Laboratoří.</translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -368,14 +368,12 @@
         <translation>Součástky</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::setDirtyTab: Nelze nastavit zásobník &apos;%1&apos; jako dirty</translation>
+        <translation type="vanished">BinManager::setDirtyTab: Nelze nastavit zásobník &apos;%1&apos; jako dirty</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::updateTitle: Nelze nastavit zásobník &apos;%1&apos; jako dirty</translation>
+        <translation type="vanished">BinManager::updateTitle: Nelze nastavit zásobník &apos;%1&apos; jako dirty</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="385"/>
@@ -568,9 +566,13 @@
         <translation>Zvolte název pro zásobník:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing File to Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remove from Bin</source>
-        <translation>Odstranit ze zásobníku</translation>
+        <translation type="vanished">Odstranit ze zásobníku</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -578,6 +580,7 @@
         <translation>Nelze odstranit součástku &apos;%1&apos;-- právě se používá v návrhu</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation>Odstranit ze zásobníku</translation>
@@ -588,9 +591,8 @@
         <translation>Opravdu chcete odstranit &apos;%1&apos; ze zásobníku ? Tuto operaci nelze vzít zpět.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation>Vybrat soubor Fritzing k otevření</translation>
+        <translation type="vanished">Vybrat soubor Fritzing k otevření</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
@@ -603,9 +605,8 @@
         <translation>Fritzing soubory zásobníku (*%1 *%2);;Fritzing zásobník (*%1);;Fritzing sdílený zásobník (*%2)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>Nelze nastavit NULL zásobník jako aktuální</translation>
+        <translation type="vanished">Nelze nastavit NULL zásobník jako aktuální</translation>
     </message>
 </context>
 <context>
@@ -2300,14 +2301,12 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation>MainWindow::moveToPartsFolder hlavní okno chybí</translation>
+        <translation type="vanished">MainWindow::moveToPartsFolder hlavní okno chybí</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation>Součástka s id &apos;%1&apos; je již načtena programem Fritzing.</translation>
+        <translation type="vanished">Součástka s id &apos;%1&apos; je již načtena programem Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2112"/>
@@ -2833,9 +2832,8 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
         <translation>Vše</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>MainWindow::populateMenuWithIndex: nelze načíst příklad s id=&apos;%1&apos;</translation>
+        <translation type="vanished">MainWindow::populateMenuWithIndex: nelze načíst příklad s id=&apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="786"/>

@@ -130,7 +130,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -230,29 +235,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Fritzing este făcut posibil cu finanțare de la </translation>
+        <translation type="vanished">Fritzing este făcut posibil cu finanțare de la </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, sponsorul pentru Design </translation>
+        <translation type="vanished">MWFK Brandenburg, sponsorul pentru Design </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>Departamentul universității Weimar din Bauhaus, </translation>
+        <translation type="vanished">Departamentul universității Weimar din Bauhaus, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, un donator anonim, Parallax, Picaxe, Sparkfun, </translation>
+        <translation type="vanished">IxDS, un donator anonim, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation>și pentru toate achizițiile a Kitului de Pornire Fritzing sau a unei PCB de la Fabrica Fritzing.</translation>
+        <translation type="vanished">și pentru toate achizițiile a Kitului de Pornire Fritzing sau a unei PCB de la Fabrica Fritzing.</translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -369,14 +369,12 @@
         <translation>Componente</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::setDirtyTab: Nu se poate configura cutia &apos;%1&apos; ca murdară</translation>
+        <translation type="vanished">BinManager::setDirtyTab: Nu se poate configura cutia &apos;%1&apos; ca murdară</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::updateTitle: Nu se poate configura cutia &apos;%1&apos; ca murdară</translation>
+        <translation type="vanished">BinManager::updateTitle: Nu se poate configura cutia &apos;%1&apos; ca murdară</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="385"/>
@@ -569,9 +567,13 @@
         <translation>Alegeți un nume pentru cutie:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing File to Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remove from Bin</source>
-        <translation>Elimină din cutie</translation>
+        <translation type="vanished">Elimină din cutie</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -579,6 +581,7 @@
         <translation>Nu se poate elimina partea &apos;%1&apos;--este utilizată într-o schiță</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation>Elimină din cutie</translation>
@@ -589,9 +592,8 @@
         <translation>Sigur doriți să eliminați &apos;%1&apos; din cutie? Această operație nu poate fi refăcută.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation>Selectați un fișier Fritzing de deschis</translation>
+        <translation type="vanished">Selectați un fișier Fritzing de deschis</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
@@ -604,9 +606,8 @@
         <translation>Fișiere cutie Fritzing (*%1 *%2);;Cutie Fritzing (*%1);;Cutie partajabilă Fritzing (*%2)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>Nu se poate configura o cutie NULĂ ca una curentă</translation>
+        <translation type="vanished">Nu se poate configura o cutie NULĂ ca una curentă</translation>
     </message>
 </context>
 <context>
@@ -2259,14 +2260,12 @@ notificare</translation>
         <translation>Nu se poate exporta %1 la schița partajabilă</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation>Fereastraprincipală::mutăladosarulcomponentelor lipsește fereastra principală</translation>
+        <translation type="vanished">Fereastraprincipală::mutăladosarulcomponentelor lipsește fereastra principală</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation>Este deja o parte cu id &apos;%1&apos; încărcată în Fritzing.</translation>
+        <translation type="vanished">Este deja o parte cu id &apos;%1&apos; încărcată în Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2008"/>
@@ -2841,9 +2840,8 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
         <translation>Tot</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>Fereastraprincipală::populeazămeniucuindex: nu se pot încărca exemplul cu id=&apos;%1&apos;</translation>
+        <translation type="vanished">Fereastraprincipală::populeazămeniucuindex: nu se pot încărca exemplul cu id=&apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="786"/>

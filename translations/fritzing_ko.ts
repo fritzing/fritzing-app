@@ -126,7 +126,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -226,29 +231,20 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Fritzing is made possible with funding from the </translation>
+        <translation type="vanished">Fritzing is made possible with funding from the </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, the sponsorship of the Design </translation>
+        <translation type="vanished">MWFK Brandenburg, the sponsorship of the Design </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>Department of Bauhaus-University Weimar,</translation>
+        <translation type="vanished">Department of Bauhaus-University Weimar,</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
-        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -364,14 +360,12 @@
         <translation>부품</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>저장소매니저::setDirtyTab: 저장소 &apos;%1&apos;를 dirty로 설정할 수 없습니다</translation>
+        <translation type="vanished">저장소매니저::setDirtyTab: 저장소 &apos;%1&apos;를 dirty로 설정할 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>저장소매니저::updateTitle: 저장소 &apos;%1&apos;를 dirty로 설정할 수 없습니다</translation>
+        <translation type="vanished">저장소매니저::updateTitle: 저장소 &apos;%1&apos;를 dirty로 설정할 수 없습니다</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="385"/>
@@ -389,9 +383,8 @@
         <translation>Fritzing 저장소 파일 (*%1 *%2);;Fritzing 저장소 (*%1);;Fritzing 공유가능한 저장소 (*%2)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>현재 저장소로 NULL 저장소를 설정할 수 없습니다</translation>
+        <translation type="vanished">현재 저장소로 NULL 저장소를 설정할 수 없습니다</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="908"/>
@@ -574,8 +567,8 @@
         <translation>저장소의 이름을 선택하세요:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <source>Remove from Bin</source>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing File to Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -584,6 +577,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation>저장소에서 삭제</translation>
@@ -594,9 +588,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="unfinished">열 Fritzing 파일 선택하기</translation>
+        <translation type="obsolete">열 Fritzing 파일 선택하기</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
@@ -2240,16 +2233,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>%1 를 공유가능한 스케치로 내보낼 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
-        <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
-        <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2008"/>
         <location filename="../src/mainwindow/mainwindow.cpp" line="3089"/>
         <source>Do you want to keep the imported parts?</source>
@@ -2853,9 +2836,8 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>모든 예제</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</translation>
+        <translation type="vanished">MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="786"/>

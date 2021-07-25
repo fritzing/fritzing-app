@@ -114,7 +114,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -213,31 +218,6 @@
         <source>Yelyzaveta Chyhryna</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
-        <source>Fritzing is made possible with funding from the </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
-        <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
-        <source>Department of Bauhaus-University Weimar, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
-        <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
-        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>AutorouteProgressDialog</name>
@@ -333,16 +313,6 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="105"/>
         <source>Parts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
-        <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
-        <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -536,8 +506,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <source>Remove from Bin</source>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing File to Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -546,6 +516,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation type="unfinished"></translation>
@@ -556,11 +527,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing file to open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
         <translation type="unfinished"></translation>
@@ -568,11 +534,6 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="398"/>
         <source>Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
-        <source>Cannot set a NULL bin as the current one</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2265,16 +2226,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
-        <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
-        <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2112"/>
         <source>%1 - [%2]</source>
         <translation type="unfinished"></translation>
@@ -2776,11 +2727,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="682"/>
         <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
-        <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

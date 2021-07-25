@@ -126,7 +126,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -226,29 +231,20 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Το Fritzing είναι πραγματικότητα με χρηματοδότηση από τους </translation>
+        <translation type="vanished">Το Fritzing είναι πραγματικότητα με χρηματοδότηση από τους </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, για την χορηγία του Σχεδίου </translation>
+        <translation type="vanished">MWFK Brandenburg, για την χορηγία του Σχεδίου </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>Τμήμα του πανεπιστημίου Bauhaus Weimar,  </translation>
+        <translation type="vanished">Τμήμα του πανεπιστημίου Bauhaus Weimar,  </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, έναν ανώνυμο χορηγό, Parallax, Picaxe, Sparkfun, </translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
-        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">IxDS, έναν ανώνυμο χορηγό, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -364,14 +360,12 @@
         <translation>Εξαρτήματα</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::setDirtyTab: Δεν μπόρεσε να γίνει επισήμανση του δοχείου &apos;%1&apos; ως &quot;βρώμικο&quot;</translation>
+        <translation type="vanished">BinManager::setDirtyTab: Δεν μπόρεσε να γίνει επισήμανση του δοχείου &apos;%1&apos; ως &quot;βρώμικο&quot;</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::updateTitle: Δεν μπόρεσε να γίνει επισήμανση του δοχείου &apos;%1&apos; ως &quot;βρώμικο&quot;</translation>
+        <translation type="vanished">BinManager::updateTitle: Δεν μπόρεσε να γίνει επισήμανση του δοχείου &apos;%1&apos; ως &quot;βρώμικο&quot;</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="385"/>
@@ -564,9 +558,13 @@
         <translation>Παρακαλώ επιλέξτε ένα όνομα για το δοχείο:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing File to Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remove from Bin</source>
-        <translation>Αφαίρεση από το Δοχείο</translation>
+        <translation type="vanished">Αφαίρεση από το Δοχείο</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -574,6 +572,7 @@
         <translation>Αδυναμία αφαίρεσης του εξαρτήματος &apos;%1&apos; --είναι σε χρήση σε κάποιο σχέδιο</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation>Αφαίρεση από το δοχείο</translation>
@@ -584,9 +583,8 @@
         <translation>Θέλετε πραγματικά να αφαιρέσετε το &apos;%1&apos; από το δοχείο; Η ενέργεια αυτή δεν μπορεί να αναιρεθεί.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation>Επιλέξτε για Άνοιγμα ένα αρχείο Fritzing</translation>
+        <translation type="vanished">Επιλέξτε για Άνοιγμα ένα αρχείο Fritzing</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
@@ -599,10 +597,9 @@
         <translation>Αρχεία Δοχείων του Fritzing (*%1 *%2);;Δοχείο του Fritzing (*%1);;Κοινό Δοχείο του Fritzing (*%2)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
         <translatorcomment>Τώρα το NULL πως να το πεις... ΚΕΝΟ; Θα δείξει...</translatorcomment>
-        <translation>Δεν μπορείτε να επιλέξετε ένα NULL δοχείο ως τρέχον</translation>
+        <translation type="vanished">Δεν μπορείτε να επιλέξετε ένα NULL δοχείο ως τρέχον</translation>
     </message>
 </context>
 <context>
@@ -2258,14 +2255,8 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>Αδυναμία εξαγωγής του %1 σε κοινόχρηστο σχέδιο</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
-        <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation>Υπάρχει ήδη ένα εξάρτημα με ταυτότητα &apos;%1&apos; που έχει φορτωθεί στο Fritzing.</translation>
+        <translation type="vanished">Υπάρχει ήδη ένα εξάρτημα με ταυτότητα &apos;%1&apos; που έχει φορτωθεί στο Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2008"/>
@@ -2868,9 +2859,8 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>Όλα</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>MainWindow::populateMenuWithIndex: αδυναμία φόρτωσης παραδείγματος με διακριτικό=&apos;%1&apos;</translation>
+        <translation type="vanished">MainWindow::populateMenuWithIndex: αδυναμία φόρτωσης παραδείγματος με διακριτικό=&apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="786"/>

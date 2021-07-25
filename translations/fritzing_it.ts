@@ -77,29 +77,8 @@
         <translation type="vanished">to Gianluca Urgese and 5volts for the Italian translation,</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Fritzing è reso possibile grazie al finanziamento del </translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
-        <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
-        <source>Department of Bauhaus-University Weimar, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
-        <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
-        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Fritzing è reso possibile grazie al finanziamento del </translation>
     </message>
     <message>
         <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
@@ -226,7 +205,12 @@
         <translation>Yelyzaveta Chyhryna</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation>Un ringraziamento speciale va a tutti gli studenti e agli alpha tester che sono stati abbastanza coraggiosi da provare Fritzing.</translation>
     </message>
@@ -353,9 +337,8 @@
         <translation>Nuovo Componente (%1)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::setDirtyTab: Impossibile impostare il contenitore &apos;%1&apos; come sporco</translation>
+        <translation type="vanished">BinManager::setDirtyTab: Impossibile impostare il contenitore &apos;%1&apos; come sporco</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="398"/>
@@ -363,14 +346,12 @@
         <translation>Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>Impossibile impostare un contenitore NULL come quello corrente</translation>
+        <translation type="vanished">Impossibile impostare un contenitore NULL come quello corrente</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::updateTitle: Impossibile impostare il contenitore &apos;%1&apos; come sporco</translation>
+        <translation type="vanished">BinManager::updateTitle: Impossibile impostare il contenitore &apos;%1&apos; come sporco</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="396"/>
@@ -513,9 +494,15 @@
         <translation>Seleziona un nome per il cesto:</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation>Rimuovi dal cesto</translation>
+    </message>
+    <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing File to Open</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="908"/>
@@ -533,9 +520,8 @@
         <translation>Caricare una parte Fritzing (.fzpz), o un contenitore di parti Fritzing (.fzb, .fzbz)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation>Seleziona un File di Fritzing da aprire</translation>
+        <translation type="vanished">Seleziona un File di Fritzing da aprire</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
@@ -553,9 +539,8 @@
         <translation>Trova parte nello Sketch</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <source>Remove from Bin</source>
-        <translation>Rimuovi dal cesto</translation>
+        <translation type="vanished">Rimuovi dal cesto</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -2954,11 +2939,6 @@ Stiamo lavorando per evitare questo messaggio, quindi ti chiediamo di scegliere 
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
-        <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1342"/>
         <source>&amp;Add to bin...</source>
         <translation>&amp;Aggiungi al cesto...</translation>
@@ -4197,16 +4177,6 @@ Procedere e ricaricare il file come salvato sul disco?</translation>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1789"/>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1835"/>
         <source>Unable to load part from &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
-        <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
-        <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

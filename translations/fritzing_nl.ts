@@ -69,19 +69,19 @@
     </message>
     <message>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Fritzing is mogelijk gemaakt door financiering van de </translation>
+        <translation type="vanished">Fritzing is mogelijk gemaakt door financiering van de </translation>
     </message>
     <message>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, sponsoring van de Design </translation>
+        <translation type="vanished">MWFK Brandenburg, sponsoring van de Design </translation>
     </message>
     <message>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>afdeling van de Bauhaus Universiteit Weimar, </translation>
+        <translation type="vanished">afdeling van de Bauhaus Universiteit Weimar, </translation>
     </message>
     <message>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, een anonieme gever, Parallax, Picaxe, Sparkfun, </translation>
+        <translation type="vanished">IxDS, een anonieme gever, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -101,7 +101,7 @@
     </message>
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation>en van elke aankoop van een Fritzing Starter Kit of een PCB van Fritzing Fab.</translation>
+        <translation type="vanished">en van elke aankoop van een Fritzing Starter Kit of een PCB van Fritzing Fab.</translation>
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
@@ -219,6 +219,10 @@
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AutorouteProgressDialog</name>
@@ -301,7 +305,7 @@
     </message>
     <message>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::setDirtyTab: Kon de koffer &apos;%1&apos; niet als vuil zetten</translation>
+        <translation type="vanished">BinManager::setDirtyTab: Kon de koffer &apos;%1&apos; niet als vuil zetten</translation>
     </message>
     <message>
         <source>New bin (%1)</source>
@@ -313,11 +317,11 @@
     </message>
     <message>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>Kan geen NULL koffer instellen als de huidige</translation>
+        <translation type="vanished">Kan geen NULL koffer instellen als de huidige</translation>
     </message>
     <message>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::updateTitle: Kon de koffer &apos;%1&apos; niet als vuil zetten</translation>
+        <translation type="vanished">BinManager::updateTitle: Kon de koffer &apos;%1&apos; niet als vuil zetten</translation>
     </message>
     <message>
         <source>Select a Fritzing Parts Bin file to open</source>
@@ -449,7 +453,7 @@
     </message>
     <message>
         <source>Select a Fritzing file to open</source>
-        <translation>Selecteer een Fritzing Bestand om te Openen</translation>
+        <translation type="vanished">Selecteer een Fritzing Bestand om te Openen</translation>
     </message>
     <message>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
@@ -465,7 +469,7 @@
     </message>
     <message>
         <source>Remove from Bin</source>
-        <translation>Verwijder uit de koffer</translation>
+        <translation type="vanished">Verwijder uit de koffer</translation>
     </message>
     <message>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
@@ -490,6 +494,10 @@
     <message>
         <source>Copy all loaded parts to the sketch</source>
         <translation>Kopieer alle geladen onderdelen naar de sketch</translation>
+    </message>
+    <message>
+        <source>Select a Fritzing File to Open</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1947,7 +1955,7 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
     </message>
     <message>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>MainWindow::populateMenuWithIndex:&apos;kon voorbeeld niet laden met id=&apos;%1&apos;</translation>
+        <translation type="vanished">MainWindow::populateMenuWithIndex:&apos;kon voorbeeld niet laden met id=&apos;%1&apos;</translation>
     </message>
     <message>
         <source>&amp;Open Recent Files</source>
@@ -3335,11 +3343,11 @@ Doorgaan en terug naar vorige versie?</translation>
     </message>
     <message>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation>MainWindow::verplaatsNaarOnderdeelMap Hoofdscherm mist</translation>
+        <translation type="vanished">MainWindow::verplaatsNaarOnderdeelMap Hoofdscherm mist</translation>
     </message>
     <message>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation>Er is al een onderdeel met id &apos;%1&apos; geladen in Fritzing.</translation>
+        <translation type="vanished">Er is al een onderdeel met id &apos;%1&apos; geladen in Fritzing.</translation>
     </message>
     <message>
         <source>SPICE Netlist...</source>

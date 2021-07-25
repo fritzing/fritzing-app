@@ -130,7 +130,12 @@
         <translation>Испанский: </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation>Особая благодарность выражается всем студентам и альфа-тестерам, которые были достаточно смелы, чтобы дать Fritzing поработать.</translation>
     </message>
@@ -230,29 +235,24 @@
         <translation>Елизавета Чигрина</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Создание Fritzing стало возможным благодаря финансированию </translation>
+        <translation type="vanished">Создание Fritzing стало возможным благодаря финансированию </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>Министерство науки, исследований и культуры Бранденбурга, спонсор проекта </translation>
+        <translation type="vanished">Министерство науки, исследований и культуры Бранденбурга, спонсор проекта </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>Кафедра Баухаус-Университета Веймара, </translation>
+        <translation type="vanished">Кафедра Баухаус-Университета Веймара, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, анонимный даритель, Parallax, Picaxe, Sparkfun, </translation>
+        <translation type="vanished">IxDS, анонимный даритель, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation>а также средства от каждой покупки Fritzing Starter Kit или печатной платы от Fritzing Fab.</translation>
+        <translation type="vanished">а также средства от каждой покупки Fritzing Starter Kit или печатной платы от Fritzing Fab.</translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -368,14 +368,12 @@
         <translation>Компоненты</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::setDirtyTab: не удалось установить каталог «%1» как черновик</translation>
+        <translation type="vanished">BinManager::setDirtyTab: не удалось установить каталог «%1» как черновик</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::updateTitle: не удалось установить каталог «%1» как черновик</translation>
+        <translation type="vanished">BinManager::updateTitle: не удалось установить каталог «%1» как черновик</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="385"/>
@@ -568,9 +566,13 @@
         <translation>Пожалуйста, выберите имя для каталога:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing File to Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remove from Bin</source>
-        <translation>Удалить из каталога</translation>
+        <translation type="vanished">Удалить из каталога</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -578,6 +580,7 @@
         <translation>Не удалось удалить компонент «%1» — он используется в эскизе</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation>Удалить из каталога</translation>
@@ -588,9 +591,8 @@
         <translation>Действительно удалить «%1» из каталога? Эту операцию нельзя будет отменить.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation>Выбрать файл Fritzing для открытия</translation>
+        <translation type="vanished">Выбрать файл Fritzing для открытия</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
@@ -603,9 +605,8 @@
         <translation>Файлы каталога Fritzing (*%1 *%2);;Каталог Fritzing (*%1);;Разделяемый каталог Fritzing (*%2)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>Не удалось установить нулевой каталог текущим</translation>
+        <translation type="vanished">Не удалось установить нулевой каталог текущим</translation>
     </message>
 </context>
 <context>
@@ -2351,14 +2352,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>Не удалось загрузить компонент из «%1»</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation>MainWindow::moveToPartsFolder отсутствует главное окно</translation>
+        <translation type="vanished">MainWindow::moveToPartsFolder отсутствует главное окно</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation>Компонент с идентификатором «%1» уже загружен во Fritzing.</translation>
+        <translation type="vanished">Компонент с идентификатором «%1» уже загружен во Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2218"/>
@@ -2742,9 +2741,8 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>Все</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>MainWindow::populateMenuWithIndex: не удалось загрузить пример с идентификатором=«%1»</translation>
+        <translation type="vanished">MainWindow::populateMenuWithIndex: не удалось загрузить пример с идентификатором=«%1»</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="820"/>

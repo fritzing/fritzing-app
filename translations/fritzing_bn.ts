@@ -126,7 +126,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -226,32 +231,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
         <translatorcomment>Fritzing থেকে অর্থায়ন সঙ্গে তৈরি সম্ভব</translatorcomment>
-        <translation>ফ্রিটজিংগ এর আনুদানে ইহা সম্ভব </translation>
+        <translation type="vanished">ফ্রিটজিংগ এর আনুদানে ইহা সম্ভব </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg,এর উদ্যোক্তা বা ডিজাইনার </translation>
+        <translation type="vanished">MWFK Brandenburg,এর উদ্যোক্তা বা ডিজাইনার </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>Department of Bauhaus-University Weimar, </source>
         <translatorcomment>Buhaus বিশ্ববিদ্যাল এর weimer ডিপার্টমেন্ট,&gt;বিভাগ</translatorcomment>
-        <translation>Buhaus বিশ্ববিদ্যালয় weimer ডিপার্টমেন্ট,</translation>
+        <translation type="vanished">Buhaus বিশ্ববিদ্যালয় weimer ডিপার্টমেন্ট,</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
         <translatorcomment> লম্বন</translatorcomment>
-        <translation>IxDS, বেনামী দাতা,parallax,Picaxe, Sperkfun,</translation>
-    </message>
-    <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
-        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">IxDS, বেনামী দাতা,parallax,Picaxe, Sperkfun,</translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -378,14 +374,12 @@
         <translation>পার্টস</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>Bin ম্যানেজারঃঃসেট অপরিচ্ছন্ন ট্যাবঃ বিন সেট করা %1 </translation>
+        <translation type="vanished">Bin ম্যানেজারঃঃসেট অপরিচ্ছন্ন ট্যাবঃ বিন সেট করা %1 </translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>Bin ম্যানেজারঃঃসেট শিরোনাম: ট্যাবঃ বিন সেট করা %1 </translation>
+        <translation type="vanished">Bin ম্যানেজারঃঃসেট শিরোনাম: ট্যাবঃ বিন সেট করা %1 </translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="385"/>
@@ -405,9 +399,8 @@
         <translation>Fritzing ফাইল বক্স(*%1&apos;*%2);;Fritzing বক্স (*%1);;Fritzing সেয়ারেবল বক্স</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>বর্তমান বক্সে NULLএর মত বক্স তৈয়ার  কর</translation>
+        <translation type="vanished">বর্তমান বক্সে NULLএর মত বক্স তৈয়ার  কর</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="908"/>
@@ -613,8 +606,8 @@
         <translation>আনুগ্রহ করে বক্সের নাম ধার্য করুনঃ</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <source>Remove from Bin</source>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing File to Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -623,6 +616,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translatorcomment>বক্স হতে স্তানান্তর জন্য</translatorcomment>
@@ -634,10 +628,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
         <translatorcomment>frtzing ফাইল খোলা জন্য নির্বাচন</translatorcomment>
-        <translation>frtzing ফাইল খোলা জন্য</translation>
+        <translation type="vanished">frtzing ফাইল খোলা জন্য</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
@@ -2328,16 +2321,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>%1বিনিময় স্কেচপাটাতে অক্ষম</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
-        <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
-        <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2008"/>
         <location filename="../src/mainwindow/mainwindow.cpp" line="3089"/>
         <source>Do you want to keep the imported parts?</source>
@@ -3050,9 +3033,8 @@ Go ahead and revert?</source>
         <translation>সকল</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>MainWindow :: populateMenuWithIndex: আইডি = &apos;% 1&apos; উদাহরণ টি লোড করতে পারেনি</translation>
+        <translation type="vanished">MainWindow :: populateMenuWithIndex: আইডি = &apos;% 1&apos; উদাহরণ টি লোড করতে পারেনি</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="786"/>

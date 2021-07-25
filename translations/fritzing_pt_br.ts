@@ -69,19 +69,19 @@
     </message>
     <message>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Fritzing foi possível com o financiamento proveniente da </translation>
+        <translation type="vanished">Fritzing foi possível com o financiamento proveniente da </translation>
     </message>
     <message>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, o patrocinador do Design </translation>
+        <translation type="vanished">MWFK Brandenburg, o patrocinador do Design </translation>
     </message>
     <message>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>Departamento da  Bauhaus-University Weimar, </translation>
+        <translation type="vanished">Departamento da  Bauhaus-University Weimar, </translation>
     </message>
     <message>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS,um patrocinador anônimo, Parallax, Picaxe, Sparkfun, </translation>
+        <translation type="vanished">IxDS,um patrocinador anônimo, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
         <source>Special thanks goes out as well to all the students </source>
@@ -98,10 +98,6 @@
     <message>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
         <translation type="vanished">&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
-    </message>
-    <message>
-        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
@@ -219,6 +215,10 @@
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AutorouteProgressDialog</name>
@@ -305,7 +305,7 @@
     </message>
     <message>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::setDirtyTab: Não foi possível definir o pacote &apos;%1&apos; como suja</translation>
+        <translation type="vanished">BinManager::setDirtyTab: Não foi possível definir o pacote &apos;%1&apos; como suja</translation>
     </message>
     <message>
         <source>Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)</source>
@@ -313,11 +313,11 @@
     </message>
     <message>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>Não é possível definir NULL como pacote atual</translation>
+        <translation type="vanished">Não é possível definir NULL como pacote atual</translation>
     </message>
     <message>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>GestorPacote::TítuloAtualizado: Não se pode definir o pacote &apos;%1&apos; como sujo</translation>
+        <translation type="vanished">GestorPacote::TítuloAtualizado: Não se pode definir o pacote &apos;%1&apos; como sujo</translation>
     </message>
     <message>
         <source>Select a Fritzing Parts Bin file to open</source>
@@ -449,7 +449,7 @@
     </message>
     <message>
         <source>Select a Fritzing file to open</source>
-        <translation>Selecione um arquivo Fritzing para abrir</translation>
+        <translation type="vanished">Selecione um arquivo Fritzing para abrir</translation>
     </message>
     <message>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
@@ -465,7 +465,7 @@
     </message>
     <message>
         <source>Remove from Bin</source>
-        <translation>Remover do Pacote</translation>
+        <translation type="vanished">Remover do Pacote</translation>
     </message>
     <message>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
@@ -489,6 +489,10 @@
     </message>
     <message>
         <source>Copy all loaded parts to the sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a Fritzing File to Open</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2346,7 +2350,7 @@ Estamos trabalhando para evitar esta mensagem, e apenas deixar você escolher en
     </message>
     <message>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>MainWindow::populateMenuWithIndex: Não foi possível carreagar o exemplo com a id=&apos;%1&apos;</translation>
+        <translation type="vanished">MainWindow::populateMenuWithIndex: Não foi possível carreagar o exemplo com a id=&apos;%1&apos;</translation>
     </message>
     <message>
         <source>&amp;Add to bin...</source>
@@ -3334,11 +3338,11 @@ Ir em frente e desfazer?</translation>
     </message>
     <message>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation>MainWindow::moveToPartsFolder janela principal faltando</translation>
+        <translation type="vanished">MainWindow::moveToPartsFolder janela principal faltando</translation>
     </message>
     <message>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation>Já existe um componente com id &apos;%1&apos; carregado no Fritzing.</translation>
+        <translation type="vanished">Já existe um componente com id &apos;%1&apos; carregado no Fritzing.</translation>
     </message>
     <message>
         <source>SPICE Netlist...</source>

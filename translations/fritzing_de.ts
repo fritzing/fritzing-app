@@ -114,7 +114,12 @@
         <translation>Spanisch: </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation>Ein besonderer Dank geht an alle Studenten und Alpha-Tester, die mutig genug waren, Fritzing zu testen.</translation>
     </message>
@@ -214,29 +219,24 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation>Fritzing wird ermöglicht durch die Förderung von </translation>
+        <translation type="vanished">Fritzing wird ermöglicht durch die Förderung von </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, die Unterstützung durch die Design </translation>
+        <translation type="vanished">MWFK Brandenburg, die Unterstützung durch die Design </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>Abteilung der Bauhaus-Universität Weimar, </translation>
+        <translation type="vanished">Abteilung der Bauhaus-Universität Weimar, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation>IxDS, Parallax, Picaxe, Sparkfun, zahlreiche Spender, </translation>
+        <translation type="vanished">IxDS, Parallax, Picaxe, Sparkfun, zahlreiche Spender, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation>und von jedem Kauf eines Fritzing Starter Kit oder einer Leiterplatte von Fritzing Fab.</translation>
+        <translation type="vanished">und von jedem Kauf eines Fritzing Starter Kit oder einer Leiterplatte von Fritzing Fab.</translation>
     </message>
 </context>
 <context>
@@ -336,14 +336,12 @@
         <translation>Bauteile</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="368"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::setDirtyTab: Konnte das Sortiment &apos;%1&apos; nicht als verändert setzen</translation>
+        <translation type="vanished">BinManager::setDirtyTab: Konnte das Sortiment &apos;%1&apos; nicht als verändert setzen</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="378"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>BinManager::updateTitle: Konnte das Sortiment &apos;%1&apos; nicht als verändert festlegen</translation>
+        <translation type="vanished">BinManager::updateTitle: Konnte das Sortiment &apos;%1&apos; nicht als verändert festlegen</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="385"/>
@@ -536,9 +534,13 @@
         <translation>Bitte wähle einen Namen für das Sortiment:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing File to Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remove from Bin</source>
-        <translation>Aus Sortiment entfernen</translation>
+        <translation type="vanished">Aus Sortiment entfernen</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -546,6 +548,7 @@
         <translation>Das Bauteil &apos;%1&apos; konnte nicht entfernt werden - es wird in einem Entwurf verwendet</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translation>Von Sortiment entfernen</translation>
@@ -556,9 +559,8 @@
         <translation>Willst Du &apos;%1&apos; wirklich aus dem Sortiment entfernen? Dies kann nicht rückgängig gemacht werden.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation>Fritzing-Entwurf öffnen</translation>
+        <translation type="vanished">Fritzing-Entwurf öffnen</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
@@ -571,9 +573,8 @@
         <translation>Fritzing-Sortimente (*%1 *%2);;Fritzing-Sortiment (*%1);;Fritzing-Sortiment-Paket (*%2)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="491"/>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>Ein NULL Sortiment kann nicht als aktuell gesetzt werden</translation>
+        <translation type="vanished">Ein NULL Sortiment kann nicht als aktuell gesetzt werden</translation>
     </message>
 </context>
 <context>
@@ -2246,14 +2247,12 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <translation>Lokales Teil &apos;%1&apos; kann nicht geöffnet werden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1939"/>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation>MainWindow::moveToPartsFolder mainwindow missing</translation>
+        <translation type="vanished">MainWindow::moveToPartsFolder mainwindow missing</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1949"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation>Es gibt bereits ein Bauteil mit der ID &apos;%1&apos;.</translation>
+        <translation type="vanished">Es gibt bereits ein Bauteil mit der ID &apos;%1&apos;.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2218"/>
@@ -2693,9 +2692,8 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <translation>Alle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="734"/>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</translation>
+        <translation type="vanished">MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="820"/>

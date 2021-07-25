@@ -64,26 +64,6 @@
         <translation></translation>
     </message>
     <message>
-        <source>Fritzing is made possible with funding from the </source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Department of Bauhaus-University Weimar, </source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation type="unfinished"></translation>
     </message>
@@ -199,6 +179,10 @@
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AutorouteProgressDialog</name>
@@ -281,7 +265,7 @@
     </message>
     <message>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>库管理器::设置废标签:不能设置库&apos;%1&apos;作为dirty</translation>
+        <translation type="vanished">库管理器::设置废标签:不能设置库&apos;%1&apos;作为dirty</translation>
     </message>
     <message>
         <source>New bin (%1)</source>
@@ -293,11 +277,11 @@
     </message>
     <message>
         <source>Cannot set a NULL bin as the current one</source>
-        <translation>不能设置当前库为空</translation>
+        <translation type="vanished">不能设置当前库为空</translation>
     </message>
     <message>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation>库管理器::更新标题:不能把库&apos;%1&apos;设置dirty</translation>
+        <translation type="vanished">库管理器::更新标题:不能把库&apos;%1&apos;设置dirty</translation>
     </message>
     <message>
         <source>Select a Fritzing Parts Bin file to open</source>
@@ -429,7 +413,7 @@
     </message>
     <message>
         <source>Select a Fritzing file to open</source>
-        <translation>选择要打开的Fritzing文件</translation>
+        <translation type="vanished">选择要打开的Fritzing文件</translation>
     </message>
     <message>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
@@ -441,10 +425,6 @@
     </message>
     <message>
         <source>Find Part in Sketch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remove from Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -469,6 +449,10 @@
     </message>
     <message>
         <source>Copy all loaded parts to the sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a Fritzing File to Open</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1905,7 +1889,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
-        <translation>主窗口::populateMenuWithIndex: 不能载入id为&apos;%1&apos;的例子</translation>
+        <translation type="vanished">主窗口::populateMenuWithIndex: 不能载入id为&apos;%1&apos;的例子</translation>
     </message>
     <message>
         <source>&amp;Open Recent Files</source>
@@ -3311,14 +3295,6 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Unable to load part from &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

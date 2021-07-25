@@ -1358,7 +1358,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>connection</source>
-        <translation type="unfinished"></translation>
+        <translation>connexion</translation>
     </message>
     <message>
         <source>type</source>

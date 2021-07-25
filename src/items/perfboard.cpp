@@ -312,8 +312,9 @@ bool Perfboard::boardSizeWarning()
 
 void Perfboard::changeBoardSize()
 {
-	if (boardSizeWarning())
+	if (boardSizeWarning()) {
 		return;
+	}
 
 	QString newSize = QString("%1.%2").arg(m_xEdit->text()).arg(m_yEdit->text());
 	m_propsMap.insert("size", newSize);

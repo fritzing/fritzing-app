@@ -272,10 +272,12 @@ bool BreadboardSketchWidget::coloringWiresByLength() {
 
 bool BreadboardSketchWidget::canCreateWire(Wire * dragWire, ConnectorItem * from, ConnectorItem * to)
 {
-	if ((from) && (to))
+	if ((from) && (to)) {
 		return true;
-	if (!dragWire)
+	}
+	if (!dragWire) {
 		return false;
+	}
 	qreal length = dragWire->getPaintLine().length();
 	return ( length > WireMinLength);
 }
@@ -283,7 +285,8 @@ bool BreadboardSketchWidget::canCreateWire(Wire * dragWire, ConnectorItem * from
 Wire * BreadboardSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec)
 {
 	Wire * wire = SketchWidget::createTempWireForDragging(fromWire, wireModel, connectorItem, viewGeometry, spec);
-	if (fromWire && wire)
+	if (fromWire && wire) {
 		wire->setColorString(fromWire->colorString(), fromWire->opacity(), false);
+	}
 	return wire;
 }

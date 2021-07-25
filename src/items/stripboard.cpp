@@ -861,16 +861,17 @@ QStringList Stripboard::collectValues(const QString & family, const QString & pr
 
 void Stripboard::changeBoardSize()
 {
-	if (boardSizeWarning())
+	if (boardSizeWarning()) {
 		return;
+	}
 
 	QString newSize = QString("%1.%2").arg(m_xEdit->text(), m_yEdit->text());
 	m_propsMap.insert("size", newSize);
+	// We have to create the "buses" (strip segments that are broken) for the stripboard.
+	// We do not modify the previous buses. If we extend the board, we just break the strips
+	// based on the layout (vertical or horizontal strips). These bus properties are passed
+	// to the swap mechanism, which creates a new part and sets the new properties (the buses).
 
-	//We have to create the "buses" (strip segments that are broken) for the strip board.
-	//We do not modify the previous buses. If we extend the board, we just break the strips based on
-	//the layout (vertical or horizontal strips). These buses properties are pased to the swap mechanism,
-	//which creates a new part and sets the new properties (the buses).
 	QString buses = prop("buses");
 	QString newBuses;
 	bool vertical = m_layout.compare(VerticalString) == 0;

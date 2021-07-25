@@ -232,7 +232,7 @@
         <translation>Nous remercions tout particulièrement tous les étudiants et les testeurs alpha qui ont eu le courage de faire tourner Fritzing.</translation>
     </message>
     <message>
-        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER </source>
+        <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from our partner PCB Fab AISLER , and from each paid download.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

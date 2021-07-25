@@ -158,8 +158,8 @@ AboutBox::AboutBox(QWidget *parent)
 		   "MWFK Brandenburg, "
 		   "the sponsorship of the Design Department of Bauhaus-University Weimar, "
 		   "IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, "
-		   "from our partner PCB Fab AISLER ") +
-		   ", and from each paid download."
+		   "from our partner PCB Fab AISLER "
+		   ", and from each paid download.") +
 	    "</p>" +
 
 	    "<p>" +

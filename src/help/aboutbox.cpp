@@ -154,11 +154,12 @@ AboutBox::AboutBox(QWidget *parent)
 	    "</p>" +
 
 	    "<p>" +
-	    tr("Fritzing is made possible with funding from the ") +
-	    tr("MWFK Brandenburg, the sponsorship of the Design ") +
-	    tr("Department of Bauhaus-University Weimar, ") +
-	    tr("IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, ") +
-	    tr("and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.") +
+		tr("Fritzing is made possible with funding from the "
+		   "MWFK Brandenburg, "
+		   "the sponsorship of the Design Department of Bauhaus-University Weimar, "
+		   "IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, "
+		   "from our partner PCB Fab AISLER ") +
+		   ", and from each paid download."
 	    "</p>" +
 
 	    "<p>" +

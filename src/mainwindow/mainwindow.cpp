@@ -1936,7 +1936,7 @@ QList<ModelPart*> MainWindow::moveToPartsFolder(QDir &unzipDir, MainWindow* mw, 
 	QList<ModelPart*> retval;
 
 	if (mw == NULL) {
-		throw tr("MainWindow::moveToPartsFolder mainwindow missing");
+		throw "MainWindow::moveToPartsFolder mainwindow missing";
 	}
 
 	namefilters.clear();
@@ -1946,7 +1946,7 @@ QList<ModelPart*> MainWindow::moveToPartsFolder(QDir &unzipDir, MainWindow* mw, 
 	if (importingSinglePart && partEntryInfoList.count() > 0) {
 		QString moduleID = TextUtils::parseFileForModuleID(partEntryInfoList[0].absoluteFilePath());
 		if (!moduleID.isEmpty() && m_referenceModel->retrieveModelPart(moduleID)) {
-			throw tr("There is already a part with id '%1' loaded into Fritzing.").arg(moduleID);
+			throw QString("There is already a part with id '%1' loaded into Fritzing.").arg(moduleID);
 		}
 	}
 

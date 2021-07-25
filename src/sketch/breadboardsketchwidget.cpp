@@ -257,8 +257,6 @@ void BreadboardSketchWidget::colorWiresByLength(bool colorByLength) {
 	QSettings settings;
 	settings.setValue(QString("%1ColorWiresByLength").arg(viewName()), colorByLength);
 
-	QList<Wire *> wires;
-	QList<Wire *> visited;
 	foreach (QGraphicsItem * item, scene()->items()) {
 		Wire * wire = dynamic_cast<Wire *>(item);
 		if (wire == NULL) continue;

@@ -36,6 +36,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QMessageBox>
+#include <QtDebug>
 
 
 static const int ConnectorIDJump = 1000;
@@ -109,7 +110,11 @@ QString Perfboard::makeBreadboardSvg(const QString & size)
 	}
 
 	int x, y;
-	getXY(x, y, size);
+	if (!getXY(x, y, size)) {
+		qWarning() << QString("Invalid size for breadboard: %1. Using 100x100").arg(size);
+		x = 100;
+		y = 100;
+	}
 
 	QString middle;
 	QString holes;
@@ -316,7 +321,7 @@ void Perfboard::changeBoardSize()
 		return;
 	}
 
-	QString newSize = QString("%1.%2").arg(m_xEdit->text()).arg(m_yEdit->text());
+	QString newSize = QString("%1.%2").arg(m_xEdit->text(), m_yEdit->text());
 	m_propsMap.insert("size", newSize);
 
 	// foreach (QString key, m_propsMap.keys()) {
@@ -338,7 +343,10 @@ void Perfboard::enableSetButton() {
 	if (edit == NULL) return;
 
 	int x, y;
-	getXY(x, y, m_size);
+	if (!getXY(x, y, m_size)) {
+		qWarning() << QString("set button invalid size ") + m_size;
+		return;
+	}
 
 	int vx = m_xEdit->text().toInt();
 	int vy = m_yEdit->text().toInt();

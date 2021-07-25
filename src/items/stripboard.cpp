@@ -403,7 +403,7 @@ void Stripboard::addedToScene(bool temporary)
 	if (temporary) return;
 	if (m_viewID != ViewLayer::BreadboardView) return;
 
-	QList<QGraphicsItem *> items = childItems();
+//	QList<QGraphicsItem *> items = childItems();
 
 	if (HPath.isEmpty()) {
 		makeInitialPath();

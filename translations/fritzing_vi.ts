@@ -1525,7 +1525,7 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <name>HtmlInfoView</name>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="303"/>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>kết nối.</translation>
     </message>
     <message>

@@ -1597,7 +1597,7 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="303"/>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>konn.</translation>
     </message>
     <message>

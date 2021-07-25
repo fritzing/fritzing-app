@@ -1243,7 +1243,7 @@ Também é possível escolher um conector como ponto de aterramento clicando com
         <translation>Conexões</translation>
     </message>
     <message>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>con.</translation>
     </message>
     <message numerus="yes">

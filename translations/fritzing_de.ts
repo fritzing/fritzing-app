@@ -1499,7 +1499,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <name>HtmlInfoView</name>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="303"/>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>Verb.</translation>
     </message>
     <message>

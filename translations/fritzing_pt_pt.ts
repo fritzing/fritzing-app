@@ -1264,7 +1264,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
         <translation>Ligações</translation>
     </message>
     <message>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>conn.</translation>
     </message>
     <message numerus="yes">

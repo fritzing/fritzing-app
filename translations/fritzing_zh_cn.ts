@@ -1204,7 +1204,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>连接数</translation>
     </message>
     <message>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>接口.</translation>
     </message>
     <message numerus="yes">

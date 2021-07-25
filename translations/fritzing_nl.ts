@@ -1248,7 +1248,7 @@ Het is ook mogelijk om op een connector rechts te klikken en kies &apos;Maak gro
         <translation>Aansluitingen</translation>
     </message>
     <message>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>aansl.</translation>
     </message>
     <message numerus="yes">

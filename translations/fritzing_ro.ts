@@ -1599,7 +1599,7 @@ Este deasemeni posibil să alegeți un conector ca sămânță umplere împămâ
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="303"/>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>conex.</translation>
     </message>
     <message>

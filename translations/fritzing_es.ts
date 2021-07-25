@@ -1536,7 +1536,7 @@ Es también posible elegir un conector como &lt;i&gt;semilla de tierra&lt;/i&gt;
     <name>HtmlInfoView</name>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="303"/>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>conn.</translation>
     </message>
     <message>

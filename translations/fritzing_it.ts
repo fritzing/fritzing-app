@@ -1487,7 +1487,7 @@ E&apos; anche possibile scegliere un connettore come seme per il piano massa con
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="303"/>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>conn.</translation>
     </message>
     <message numerus="yes">

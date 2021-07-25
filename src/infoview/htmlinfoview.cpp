@@ -300,7 +300,7 @@ void HtmlInfoView::init(bool tinyMode) {
 	connLayout->setContentsMargins(0, 0, 0, 0);
 	m_connFrame->setLayout(connLayout);
 
-	QLabel * descrLabel = new QLabel(tr("conn."), this);
+	QLabel * descrLabel = new QLabel(tr("connection"), this);
 	descrLabel->setObjectName("connectionsLabel");
 	m_connDescr = new QLabel(this);
 	m_connDescr->setObjectName("connectionsValue");

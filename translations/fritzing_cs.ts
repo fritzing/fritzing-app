@@ -1598,7 +1598,7 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="303"/>
-        <source>conn.</source>
+        <source>connection</source>
         <translation>kon.</translation>
     </message>
     <message>

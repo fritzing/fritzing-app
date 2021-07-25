@@ -1357,7 +1357,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
         <translation>Modifier l&apos;état de verrouillage du composant dans cette vue. Un composant verrouillé ne peut pas être déplacé.</translation>
     </message>
     <message>
-        <source>conn.</source>
+        <source>connection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

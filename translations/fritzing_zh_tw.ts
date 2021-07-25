@@ -514,8 +514,9 @@
         <translation type="unfinished">命名元件庫:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
+        <source>Remove from Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -524,10 +525,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
-        <translation type="unfinished">移出元件庫</translation>
+        <translation type="obsolete">移出元件庫</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
@@ -535,8 +534,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="obsolete">選取要開啟的 Fritzing 檔</translation>
+        <translation type="unfinished">選取要開啟的 Fritzing 檔</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>

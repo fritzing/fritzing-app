@@ -534,13 +534,10 @@
         <translation>Bitte wähle einen Namen für das Sortiment:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from Bin</source>
-        <translation type="vanished">Aus Sortiment entfernen</translation>
+        <translation>Aus Sortiment entfernen</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -548,10 +545,8 @@
         <translation>Das Bauteil &apos;%1&apos; konnte nicht entfernt werden - es wird in einem Entwurf verwendet</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
-        <translation>Von Sortiment entfernen</translation>
+        <translation type="vanished">Von Sortiment entfernen</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
@@ -559,8 +554,9 @@
         <translation>Willst Du &apos;%1&apos; wirklich aus dem Sortiment entfernen? Dies kann nicht rückgängig gemacht werden.</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="vanished">Fritzing-Entwurf öffnen</translation>
+        <translation>Fritzing-Entwurf öffnen</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>

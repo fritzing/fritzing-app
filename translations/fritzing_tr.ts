@@ -566,13 +566,10 @@
         <translation>Lütfen bin için bir ad seçin:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from Bin</source>
-        <translation type="vanished">Kovayı Kaldır</translation>
+        <translation>Kovayı Kaldır</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -580,10 +577,8 @@
         <translation>&apos;%1&apos; parçası kaldırılamıyor--şu anda bir çizimde kullanılmakta</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
-        <translation>Bin&apos;den kaldır</translation>
+        <translation type="vanished">Bin&apos;den kaldır</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
@@ -591,8 +586,9 @@
         <translation>&apos;%1&apos; bin&apos;den kaldırılsın mı? Bu geri dönüşsüz bir eylemdir.</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="vanished">Açılacak Fritzing Dosyası Seçin</translation>
+        <translation>Açılacak Fritzing Dosyası Seçin</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>

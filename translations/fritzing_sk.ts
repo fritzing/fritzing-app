@@ -558,8 +558,9 @@
         <translation>Zvoľte názov pre zásobník:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
+        <source>Remove from Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -568,10 +569,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
-        <translation>Odstrániť zo zásobníku</translation>
+        <translation type="vanished">Odstrániť zo zásobníku</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
@@ -579,8 +578,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="obsolete">Vybrať súbor Fritzing pre otvorenie</translation>
+        <translation type="unfinished">Vybrať súbor Fritzing pre otvorenie</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>

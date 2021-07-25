@@ -558,13 +558,10 @@
         <translation>Παρακαλώ επιλέξτε ένα όνομα για το δοχείο:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from Bin</source>
-        <translation type="vanished">Αφαίρεση από το Δοχείο</translation>
+        <translation>Αφαίρεση από το Δοχείο</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -572,10 +569,8 @@
         <translation>Αδυναμία αφαίρεσης του εξαρτήματος &apos;%1&apos; --είναι σε χρήση σε κάποιο σχέδιο</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
-        <translation>Αφαίρεση από το δοχείο</translation>
+        <translation type="vanished">Αφαίρεση από το δοχείο</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
@@ -583,8 +578,9 @@
         <translation>Θέλετε πραγματικά να αφαιρέσετε το &apos;%1&apos; από το δοχείο; Η ενέργεια αυτή δεν μπορεί να αναιρεθεί.</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="vanished">Επιλέξτε για Άνοιγμα ένα αρχείο Fritzing</translation>
+        <translation>Επιλέξτε για Άνοιγμα ένα αρχείο Fritzing</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>

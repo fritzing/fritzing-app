@@ -566,13 +566,10 @@
         <translation>Zvolte název pro zásobník:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from Bin</source>
-        <translation type="vanished">Odstranit ze zásobníku</translation>
+        <translation>Odstranit ze zásobníku</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -580,10 +577,8 @@
         <translation>Nelze odstranit součástku &apos;%1&apos;-- právě se používá v návrhu</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
-        <translation>Odstranit ze zásobníku</translation>
+        <translation type="vanished">Odstranit ze zásobníku</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
@@ -591,8 +586,9 @@
         <translation>Opravdu chcete odstranit &apos;%1&apos; ze zásobníku ? Tuto operaci nelze vzít zpět.</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="vanished">Vybrat soubor Fritzing k otevření</translation>
+        <translation>Vybrat soubor Fritzing k otevření</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>

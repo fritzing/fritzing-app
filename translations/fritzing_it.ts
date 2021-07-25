@@ -494,15 +494,8 @@
         <translation>Seleziona un nome per il cesto:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
-        <translation>Rimuovi dal cesto</translation>
-    </message>
-    <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Rimuovi dal cesto</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="908"/>
@@ -520,8 +513,9 @@
         <translation>Caricare una parte Fritzing (.fzpz), o un contenitore di parti Fritzing (.fzb, .fzbz)</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="vanished">Seleziona un File di Fritzing da aprire</translation>
+        <translation>Seleziona un File di Fritzing da aprire</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
@@ -539,8 +533,10 @@
         <translation>Trova parte nello Sketch</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from Bin</source>
-        <translation type="vanished">Rimuovi dal cesto</translation>
+        <translation>Rimuovi dal cesto</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>

@@ -397,7 +397,7 @@
     </message>
     <message>
         <source>Remove from bin</source>
-        <translation>从库中移除</translation>
+        <translation type="vanished">从库中移除</translation>
     </message>
     <message>
         <source>Searching...</source>
@@ -413,7 +413,7 @@
     </message>
     <message>
         <source>Select a Fritzing file to open</source>
-        <translation type="vanished">选择要打开的Fritzing文件</translation>
+        <translation>选择要打开的Fritzing文件</translation>
     </message>
     <message>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
@@ -452,7 +452,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Remove from Bin</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

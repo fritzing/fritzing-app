@@ -547,11 +547,6 @@
         <translation>¿Quieres borrar el almacén &apos;%1&apos;? Esta acción no puede deshacerse.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
         <translation>Archivos Fritzing (*%1 *%2 *%3);;Componente Fritzing (*%1);;Almacén Fritzing (*%2);;Almacén compartido Fritzing (*%3)</translation>
@@ -577,8 +572,10 @@
         <translation>Elige un nombre para el almacén:</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from Bin</source>
-        <translation type="vanished">Eliminar del almacén</translation>
+        <translation>Eliminar del almacén</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -586,10 +583,8 @@
         <translation>No se pudo eliminar el componente &apos;%1&apos;. Está en uso en un esquemático</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
-        <translation>Eliminar del almacén</translation>
+        <translation type="vanished">Eliminar del almacén</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
@@ -597,8 +592,9 @@
         <translation>¿Quiere borrar &apos;%1&apos; del almacén? Esta operación no puede deshacerse.</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="vanished">Selecciona un archivo Fritzing</translation>
+        <translation>Selecciona un archivo Fritzing</translation>
     </message>
     <message>
         <source>Cannot set a NULL bin as the current one</source>

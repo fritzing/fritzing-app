@@ -567,8 +567,10 @@
         <translation>Моля, изберете име за набора:</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from Bin</source>
-        <translation type="vanished">Премахване от набора</translation>
+        <translation>Премахване от набора</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -576,10 +578,13 @@
         <translation>Частта „%1“ не може да бъде премахната – тя се използвав в схема</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing file to open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remove from bin</source>
-        <translation>Премахване от набора</translation>
+        <translation type="vanished">Премахване от набора</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
@@ -587,9 +592,8 @@
         <translation>Наистина ли искате да премахнете „%1“ от набора? Това действие е необратимо.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing File to Open</source>
-        <translation>Изберете файл на Fritzing, който да бъде отворен</translation>
+        <translation type="vanished">Изберете файл на Fritzing, който да бъде отворен</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>

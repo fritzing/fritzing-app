@@ -433,7 +433,7 @@
     </message>
     <message>
         <source>Remove from bin</source>
-        <translation>Remover do pacote</translation>
+        <translation type="vanished">Remover do pacote</translation>
     </message>
     <message>
         <source>Searching...</source>
@@ -449,7 +449,7 @@
     </message>
     <message>
         <source>Select a Fritzing file to open</source>
-        <translation type="vanished">Selecione um arquivo Fritzing para abrir</translation>
+        <translation>Selecione um arquivo Fritzing para abrir</translation>
     </message>
     <message>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
@@ -465,7 +465,7 @@
     </message>
     <message>
         <source>Remove from Bin</source>
-        <translation type="vanished">Remover do Pacote</translation>
+        <translation>Remover do Pacote</translation>
     </message>
     <message>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
@@ -489,10 +489,6 @@
     </message>
     <message>
         <source>Copy all loaded parts to the sketch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select a Fritzing File to Open</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

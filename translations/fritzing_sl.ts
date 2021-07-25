@@ -519,8 +519,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
+        <source>Remove from Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -529,14 +530,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
-        <source>Remove from bin</source>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
+        <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
-        <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing file to open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

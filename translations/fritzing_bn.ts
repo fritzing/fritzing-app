@@ -606,8 +606,9 @@
         <translation>আনুগ্রহ করে বক্সের নাম ধার্য করুনঃ</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
+        <source>Remove from Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -616,11 +617,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from bin</source>
         <translatorcomment>বক্স হতে স্তানান্তর জন্য</translatorcomment>
-        <translation>বক্স হতে সরাতে </translation>
+        <translation type="vanished">বক্স হতে সরাতে </translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
@@ -628,9 +627,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
         <translatorcomment>frtzing ফাইল খোলা জন্য নির্বাচন</translatorcomment>
-        <translation type="vanished">frtzing ফাইল খোলা জন্য</translation>
+        <translation>frtzing ফাইল খোলা জন্য</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>

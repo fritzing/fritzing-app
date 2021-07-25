@@ -583,8 +583,10 @@
         <translation>Будь ласка, введіть назву набору:</translation>
     </message>
     <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
         <source>Remove from Bin</source>
-        <translation type="vanished">Видалити з набору</translation>
+        <translation>Видалити з набору</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
@@ -592,10 +594,13 @@
         <translation>Не вдалось видалити деталь &apos;%1&apos; — вона використовується у схемі</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1229"/>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1235"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
+        <source>Select a Fritzing file to open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remove from bin</source>
-        <translation>Видалити з набору</translation>
+        <translation type="vanished">Видалити з набору</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1236"/>
@@ -603,9 +608,8 @@
         <translation>Ви справді бажаєте видалити набір &apos;%1&apos;? Цю дію неможливо скасувати.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing File to Open</source>
-        <translation>Виберіть файл Fritzing для відкриття</translation>
+        <translation type="vanished">Виберіть файл Fritzing для відкриття</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>

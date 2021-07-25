@@ -1226,13 +1226,13 @@ bool BinManager::removeSelected() {
 	if (mp == NULL) return false;
 
 	if (m_mainWindow->anyUsePart(mp->moduleID())) {
-		QMessageBox::warning(this, tr("Remove from bin"), tr("Unable to remove part '%1'--it is in use in a sketch").arg(mp->title()));
+		QMessageBox::warning(this, tr("Remove from Bin"), tr("Unable to remove part '%1'--it is in use in a sketch").arg(mp->title()));
 		return false;
 	}
 
 	QMessageBox::StandardButton answer = QMessageBox::question(
 	        this,
-	        tr("Remove from bin"),
+			tr("Remove from Bin"),
 	        tr("Do you really want to remove '%1' from the bin? This operation cannot be undone.").arg(mp->title()),
 	        QMessageBox::Yes | QMessageBox::No,
 	        QMessageBox::No
@@ -1330,7 +1330,7 @@ void BinManager::mainLoad() {
 
 	QString fileName = FolderUtils::getOpenFileName(
 	                       this,
-	                       tr("Select a Fritzing File to Open"),
+						   tr("Select a Fritzing file to open"),
 	                       path,
 	                       tr("Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)")
 	                       .arg(FritzingBundledPartExtension)

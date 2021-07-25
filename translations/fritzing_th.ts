@@ -376,10 +376,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remove from bin</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Searching...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -428,7 +424,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Remove from Bin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a Fritzing file to open</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

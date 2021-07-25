@@ -465,11 +465,11 @@
     </message>
     <message>
         <source>Remove from bin</source>
-        <translation>Supprimer du jeu de composants</translation>
+        <translation type="vanished">Supprimer du jeu de composants</translation>
     </message>
     <message>
         <source>Remove from Bin</source>
-        <translation type="vanished">Supprimer du jeu de composants</translation>
+        <translation>Supprimer du jeu de composants</translation>
     </message>
     <message>
         <source>Display parts as a list</source>
@@ -485,7 +485,7 @@
     </message>
     <message>
         <source>Select a Fritzing file to open</source>
-        <translation type="vanished">Sélectionner le fichier Fritzing que vous désirez ouvrir</translation>
+        <translation>Sélectionner le fichier Fritzing que vous désirez ouvrir</translation>
     </message>
     <message>
         <source>Close parts bin</source>
@@ -506,10 +506,6 @@
     <message>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
         <translation>Fichiers Fritzing (*%1 *%2 *%3);;Composants Fritzing (*%1);;Fritzing Bin (*%2);;Fritzing Bin partageables (*%3)</translation>
-    </message>
-    <message>
-        <source>Select a Fritzing File to Open</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

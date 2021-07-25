@@ -428,7 +428,7 @@
         <translation>载入Fritzing原件（.fzpz）,或者 Fritzing元件库（.fzb, .fzbz）</translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>选择要打开的Fritzing文件</translation>
     </message>
     <message>
@@ -1762,7 +1762,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>保存了 &apos;%1&apos;</translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>选择要打开的Fritzing文件</translation>
     </message>
     <message>

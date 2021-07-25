@@ -595,7 +595,7 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation type="unfinished">열 Fritzing 파일 선택하기</translation>
     </message>
     <message>
@@ -2732,7 +2732,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="162"/>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>열 Fritzing 파일 선택하기</translation>
     </message>
     <message>

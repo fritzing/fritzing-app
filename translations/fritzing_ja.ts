@@ -426,7 +426,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation type="unfinished">Fritzing ファイルを選択して開いてください</translation>
     </message>
     <message>
@@ -1705,7 +1705,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>&apos;%1&apos;を保存しました</translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Fritzing ファイルを選択して開いてください</translation>
     </message>
     <message>

@@ -420,7 +420,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1743,7 +1743,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -590,7 +590,7 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Selectați un fișier Fritzing de deschis</translation>
     </message>
     <message>
@@ -2526,7 +2526,7 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="162"/>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Selectați un fișier Fritzing de deschis</translation>
     </message>
     <message>

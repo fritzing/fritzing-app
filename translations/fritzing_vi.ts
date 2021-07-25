@@ -589,7 +589,7 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Chọn một tập tin Fritzing để mở</translation>
     </message>
     <message>
@@ -4538,7 +4538,7 @@ Hãy kiểm tra tất cả các kiểu xem để kiểm tra các tác dụng ph�
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="162"/>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Chọn một file Fritzing để Mở</translation>
     </message>
     <message>

@@ -159,7 +159,7 @@ void MainWindow::mainLoad() {
 
 	QString fileName = FolderUtils::getOpenFileName(
 	                       this,
-	                       tr("Select a Fritzing File to Open"),
+						   tr("Select a Fritzing file to open"),
 	                       path,
 	                       tr("Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)")
 	                       .arg(FritzingSketchExtension)

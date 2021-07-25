@@ -589,7 +589,7 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Выбрать файл Fritzing для открытия</translation>
     </message>
     <message>
@@ -4554,7 +4554,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="162"/>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Выбрать файл Fritzing для открытия</translation>
     </message>
     <message>

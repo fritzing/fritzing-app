@@ -589,7 +589,7 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Vybrat soubor Fritzing k otevření</translation>
     </message>
     <message>
@@ -2533,7 +2533,7 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="162"/>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Vybrat soubor Fritzing pro otevření</translation>
     </message>
     <message>

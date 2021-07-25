@@ -448,7 +448,7 @@
         <translation>Laad een Fritzing onderdeel (.fzpz) of een Fritzing onderdeel koffer (.fzb, .fzbz)</translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Selecteer een Fritzing Bestand om te Openen</translation>
     </message>
     <message>
@@ -1792,7 +1792,7 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
         <translation>Opgeslagen %1</translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Selecteer een Fritzing bestand om te openen</translation>
     </message>
     <message>

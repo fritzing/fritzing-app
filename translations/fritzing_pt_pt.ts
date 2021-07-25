@@ -460,7 +460,7 @@
         <translation>Carregar um componente Fritzing (.fzpz), ou um pacote de componentes Fritzing (.fzb, .fzbz)</translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Selecione um ficheiro Fritzing para abrir</translation>
     </message>
     <message>
@@ -1762,7 +1762,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
         <translation>Guardado &apos;%1&apos;</translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Selecione um ficheiron Fritzing para abrir</translation>
     </message>
     <message>

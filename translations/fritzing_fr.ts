@@ -480,7 +480,7 @@
         <translation>Copier tous les composants du magasin vers une esquisse</translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Sélectionner le fichier Fritzing que vous désirez ouvrir</translation>
     </message>
     <message>
@@ -3211,7 +3211,7 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
         <translation>Supprimer le remplissage cuivre</translation>
     </message>
     <message>
-        <source>Select a Fritzing File to Open</source>
+        <source>Select a Fritzing file to open</source>
         <translation>Sélectionner le fichier Fritzing que vous désirez ouvrir</translation>
     </message>
     <message>

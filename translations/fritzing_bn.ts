@@ -6519,23 +6519,23 @@ Go ahead and save?</source>
 <context>
     <name>Perfboard</name>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="184"/>
+        <location filename="../src/items/perfboard.cpp" line="189"/>
         <source>size</source>
         <translation>আকার </translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="247"/>
+        <location filename="../src/items/perfboard.cpp" line="252"/>
         <source>set board size</source>
         <translation>বোর্ড আকার সেট </translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="290"/>
+        <location filename="../src/items/perfboard.cpp" line="295"/>
         <source>Performance Warning</source>
         <translatorcomment>কর্মক্ষমতা সতর্কতা </translatorcomment>
         <translation>কর্মক্ষম সতর্কতা </translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="291"/>
+        <location filename="../src/items/perfboard.cpp" line="296"/>
         <source>Performance of perfboards and stripboards with more than approximately 2000 holes can be slow. Are you sure ?
 
 Note: this warning will not be repeated during this session.</source>
@@ -6544,22 +6544,22 @@ Note: this warning will not be repeated during this session.</source>
 নোট: এই অধিবেশনের  সাবধান বাণীটি সময় উপযোগী।</translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="298"/>
+        <location filename="../src/items/perfboard.cpp" line="303"/>
         <source>Set new size</source>
         <translation>নতুন আকার সেট </translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="299"/>
+        <location filename="../src/items/perfboard.cpp" line="304"/>
         <source>Cancel</source>
         <translation>বাতিল </translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="386"/>
+        <location filename="../src/items/perfboard.cpp" line="402"/>
         <source>rows</source>
         <translation>সারি </translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="390"/>
+        <location filename="../src/items/perfboard.cpp" line="406"/>
         <source>columns</source>
         <translation>কলাম </translation>
     </message>

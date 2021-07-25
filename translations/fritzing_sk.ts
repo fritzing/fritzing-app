@@ -6369,44 +6369,44 @@ Go ahead and save?</source>
 <context>
     <name>Perfboard</name>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="184"/>
+        <location filename="../src/items/perfboard.cpp" line="189"/>
         <source>size</source>
         <translation>veľkosť</translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="290"/>
+        <location filename="../src/items/perfboard.cpp" line="295"/>
         <source>Performance Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="291"/>
+        <location filename="../src/items/perfboard.cpp" line="296"/>
         <source>Performance of perfboards and stripboards with more than approximately 2000 holes can be slow. Are you sure ?
 
 Note: this warning will not be repeated during this session.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="298"/>
+        <location filename="../src/items/perfboard.cpp" line="303"/>
         <source>Set new size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="299"/>
+        <location filename="../src/items/perfboard.cpp" line="304"/>
         <source>Cancel</source>
         <translation type="unfinished">Zrušit</translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="386"/>
+        <location filename="../src/items/perfboard.cpp" line="402"/>
         <source>rows</source>
         <translation>riadkov</translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="390"/>
+        <location filename="../src/items/perfboard.cpp" line="406"/>
         <source>columns</source>
         <translation>stĺpcov</translation>
     </message>
     <message>
-        <location filename="../src/items/perfboard.cpp" line="247"/>
+        <location filename="../src/items/perfboard.cpp" line="252"/>
         <source>set board size</source>
         <translation>nastaviť veľkosť dosky</translation>
     </message>

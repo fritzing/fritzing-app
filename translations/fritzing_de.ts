@@ -116,7 +116,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing wird ermöglicht durch die Förderung des MWFK Brandenburg, die Unterstützung der Fakultät Gestaltung der Bauhaus-Universität Weimar, IxDS, einen anonymen Spender, Parallax, Picaxe, Sparkfun, die PCB Fab AISLER und durch jeden bezahlten Download.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="166"/>
@@ -5875,7 +5875,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="110"/>
         <source>Controls for setting the terminal point for a connector. The terminal point is where a wire will attach to the connector. You can also drag the crosshair of the current connector</source>
-        <translation type="unfinished">Steuerelemente zum Einstellen der Klemmstelle für einen Steckverbinder. Die Klemmstelle ist die Stelle, an der ein Draht an den Verbinder angeschlossen wird. Sie können auch das Fadenkreuz des aktuellen Verbinders ziehen</translation>
+        <translation>Steuerelemente zum Einstellen der Klemmstelle für einen Steckverbinder. Die Klemmstelle ist die Stelle, an der ein Draht an den Verbinder angeschlossen wird. Sie können auch das Fadenkreuz des aktuellen Verbinders ziehen</translation>
     </message>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="119"/>

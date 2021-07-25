@@ -6558,7 +6558,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
         <translation>Erreur dans la base de données</translation>
     </message>
     <message>
-        <source>Unable to remove original db file %1</source>
+        <source>Unable to replace the existing database file %1</source>
         <translation>Impossible de supprimer le fichier bd original %1</translation>
     </message>
     <message>

@@ -8228,7 +8228,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="325"/>
-        <source>Unable to remove original db file %1</source>
+        <source>Unable to replace the existing database file %1</source>
         <translation>Nelze odebrat původní soubor databáze %1</translation>
     </message>
     <message>

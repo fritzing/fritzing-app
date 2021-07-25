@@ -6561,7 +6561,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
         <translation>Falha na Base de Dados</translation>
     </message>
     <message>
-        <source>Unable to remove original db file %1</source>
+        <source>Unable to replace the existing database file %1</source>
         <translation>Impossível remover ficheiro db original %1</translation>
     </message>
     <message>

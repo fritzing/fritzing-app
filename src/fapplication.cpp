@@ -322,7 +322,7 @@ void RegenerateDatabaseThread::run() {
 	if (QFile::exists(m_dbFileName)) {
 		ok = QFile::remove(m_dbFileName);
 		if (!ok) {
-			m_error = tr("Unable to remove original db file %1").arg(m_dbFileName);
+			m_error = tr("Unable to replace the existing database file %1").arg(m_dbFileName);
 			return;
 		}
 	}

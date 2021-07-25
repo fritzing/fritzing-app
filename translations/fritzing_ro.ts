@@ -8301,7 +8301,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="325"/>
-        <source>Unable to remove original db file %1</source>
+        <source>Unable to replace the existing database file %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

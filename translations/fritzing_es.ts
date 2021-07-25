@@ -8289,7 +8289,7 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="325"/>
-        <source>Unable to remove original db file %1</source>
+        <source>Unable to replace the existing database file %1</source>
         <translation type="unfinished">No se puede eliminar el archivo de datos original %1</translation>
     </message>
     <message>

@@ -127,7 +127,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing es posible gracias a la financiación de la MWFK de Brandenburgo, el patrocinio del Departamento de Diseño de la Bauhaus-Universidad de Weimar, IxDS, un donante anónimo, Parallax, Picaxe, Sparkfun, de la PCB Fab AISLER, y cada descarga pagada.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="166"/>
@@ -1217,18 +1217,18 @@ Use the file?</source>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="65"/>
         <location filename="../src/dialogs/exportparametersdialog.cpp" line="13"/>
         <source>Export parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Parámetros de exportación</translation>
     </message>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="131"/>
         <source>DPI</source>
-        <translation type="unfinished"></translation>
+        <translation>DPI</translation>
     </message>
 </context>
 <context>
@@ -1289,7 +1289,7 @@ Use the file?</source>
     <message>
         <location filename="../src/fapplication.cpp" line="2012"/>
         <source>This option is usefull if you modify the parts database on your own. If you want to recover from an error, you may be better off downloading the latest Fritzing release.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta opción es útil si modifica la base de datos de piezas por su cuenta. Si quiere recuperarse de un error, puede ser mejor que descargue la última versión de Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2020"/>
@@ -3862,7 +3862,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2675"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Vista</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2693"/>
@@ -4906,7 +4906,7 @@ Causa: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="290"/>
         <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tu sketch aún no tiene una placa. Por favor, añada una PCB para utilizar esta operación de selección.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1478"/>
@@ -7008,7 +7008,7 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="338"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Vista</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="483"/>
@@ -7154,7 +7154,7 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="2059"/>
         <source>Regenerate database failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallo en la regeneración de la base de datos</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="177"/>
@@ -7227,7 +7227,10 @@ la tecla shift cambia el eje de desplazamiento</translation>
 %1
 %2
 %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede escribir el archivo temp:
+%1
+%2
+%3.</translation>
     </message>
     <message>
         <location filename="../src/model/palettemodel.cpp" line="87"/>
@@ -7287,7 +7290,8 @@ Fritzing Trabajos quietos, pero ganaste ser capaz de cambiar propiedades de comp
         <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="93"/>
         <source>Error %1
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Error %1
+</translation>
     </message>
     <message>
         <location filename="../src/sketch/schematicsketchwidget.cpp" line="57"/>
@@ -7823,47 +7827,47 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="149"/>
         <source>the board outline layer, </source>
-        <translation type="unfinished"></translation>
+        <translation>la capa de contorno del tablero, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="150"/>
         <source>silkscreen layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>capa(s) de serigrafía, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="151"/>
         <source>copper layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>capa(s) de cobre, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="152"/>
         <source>mask layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>capa(s) de máscara, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="153"/>
         <source>paste mask layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>capa(s) de máscara de pasta, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="155"/>
         <source>Unable to translate svg curves in %1</source>
-        <translation type="unfinished"></translation>
+        <translation>No se pueden traducir las curvas SVG en %1</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="165"/>
         <source>%1 layer export is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>La exportación de la capa %1 está vacía.</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="183"/>
         <source>%1 layer export is empty (case 2).</source>
-        <translation type="unfinished"></translation>
+        <translation>La exportación de la capa %1 está vacía (caso 2).</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="198"/>
         <source>silk layer %1 export is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>La exportación de la capa de seda %1 está vacía</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="214"/>
@@ -7873,53 +7877,53 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="236"/>
         <source>exported drill file is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>el archivo de perforación exportado está vacío</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="253"/>
         <source>drill export failure</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">fallo en la exportación de la broca</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="271"/>
         <source>exported mask layer %1 is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>la capa de máscara exportada %1 está vacía</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="277"/>
         <source>%1 mask export failure (2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallo en la exportación de la máscara %1 (2)</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="285"/>
         <location filename="../src/svg/gerbergenerator.cpp" line="319"/>
         <source>mask export failure</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">fallo en la exportación de la máscara</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="308"/>
         <source>exported paste mask layer is empty</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">la capa de máscara de pasta exportada está vacía</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="344"/>
         <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 capa: no se puede guardar en &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="851"/>
         <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing no puede procesar los recortes con esta forma de PCB personalizada. </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="852"/>
         <source>You may need to reload the shape SVG. </source>
-        <translation type="unfinished"></translation>
+        <translation>Es posible que tenga que volver a cargar el SVG de la forma. </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="853"/>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing requiere que hagas recortes utilizando una operación de &quot;sustracción&quot; o &quot;diferencia&quot; de formas en tu editor de gráficos vectoriales.</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="908"/>
@@ -8045,57 +8049,57 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     <message>
         <location filename="../src/version/partschecker.cpp" line="74"/>
         <source>The parts folder &apos;%1&apos; has been changed--it is not in a supported branch (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>La carpeta de partes &apos;%1&apos; ha sido cambiada--no está en una rama soportada (%2). %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="75"/>
         <source>The parts folder &apos;%1&apos; may have been damaged (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>La carpeta de piezas &apos;%1&apos; puede estar dañada (%2). %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="76"/>
         <source>The parts folder &apos;%1&apos; has been changed (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>La carpeta de partes &apos;%1&apos; ha sido modificada (%2). %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="77"/>
         <source>There are new or modified files in the parts folder &apos;%1&apos;. These changes will be discarded by the update.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hay archivos nuevos o modificados en la carpeta de partes &apos;%1&apos;. Estos cambios serán descartados por la actualización.</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="78"/>
         <source>There are unreadable files in the parts folder &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Hay archivos ilegibles en la carpeta de partes &apos;%1&apos;. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="99"/>
         <source>Unable to open parts folder &apos;%1&apos; for update. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido abrir la carpeta de piezas &apos;%1&apos; para su actualización. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="105"/>
         <source>Parts folder repo &apos;%1&apos; is empty. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>La carpeta de partes repo &apos;%1&apos; está vacía. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="113"/>
         <source>Unable to determine network site for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido determinar el sitio de la red para &apos;%1&apos;. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="130"/>
         <source>Unable to access network site for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede acceder al sitio de la red para &apos;%1&apos;. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="140"/>
         <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>No se han podido recuperar las referencias de red para &apos;%1&apos;. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="199"/>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido recuperar la referencia de red para &apos;%1&apos;#%2. %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="469"/>
@@ -8106,12 +8110,12 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     <message>
         <location filename="../src/version/partschecker.cpp" line="469"/>
         <source>Unable to find parts git repository</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede encontrar el repositorio git de las partes</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="477"/>
         <source>Unable to find parts git repository HEAD</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede encontrar partes del repositorio git HEAD</translation>
     </message>
 </context>
 <context>
@@ -8184,29 +8188,29 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="206"/>
         <source>&lt;b&gt;Shipping is free wordlwide&lt;/b&gt;.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;El envío es gratuito en todo el mundo&lt;/b&gt;.&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="207"/>
         <source>Documents for local customs control are included.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Se incluyen los documentos para el control aduanero local.&lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="208"/>
         <source>Some countries might charge additional import taxes or checking fees.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Algunos países pueden cobrar impuestos adicionales de importación o tasas de control.&lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="209"/>
         <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para más información sobre precios, véase &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/dialogs/quotedialog.cpp" line="267"/>
         <source>The total area of the %n PCB(s) in this sketch is</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>El área total de la placa de circuito impreso en este esquema es</numerusform>
+            <numerusform>El área total de la placa de %n circuitos impresos en este esquema es</numerusform>
         </translation>
     </message>
     <message>
@@ -8254,7 +8258,7 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Es posible que Fritzing se haya estrellado, pero algunos de los cambios en los siguientes archivos pueden ser recuperados.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Se muestra la fecha y la hora en que se hizo la copia de seguridad de cada archivo. Si el archivo fue guardado, esa fecha y hora también se muestran para su comparación.&lt;/p&gt;&lt;p&gt;Los archivos originales siguen en tu disco si alguna vez fueron guardados. Puedes elegir si sobrescribir el archivo original después de cargar su archivo de recuperación.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Selecciona los archivos que quieras recuperar de la lista siguiente.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
@@ -8276,17 +8280,17 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="312"/>
         <source>Unable to open temporary file</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede abrir el archivo temporal</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="318"/>
         <source>Database failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallo de la base de datos</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="325"/>
         <source>Unable to remove original db file %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No se puede eliminar el archivo de datos original %1</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="332"/>

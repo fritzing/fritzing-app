@@ -9467,7 +9467,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/version/updatedialog.cpp" line="112"/>
         <source>&lt;p&gt;No new versions found.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Keine neue Verion gefunden.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Keine neue Version gefunden.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="129"/>

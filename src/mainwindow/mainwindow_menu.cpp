@@ -731,7 +731,7 @@ void MainWindow::populateMenuWithIndex(const QHash<QString, struct SketchDescrip
 				}
 				else
 				{
-					qWarning() << tr("MainWindow::populateMenuWithIndex: couldn't load example with id='%1'").arg(id);
+					qWarning() << QString("MainWindow::populateMenuWithIndex: couldn't load example with id='%1'").arg(id);
 				}
 			}
 		}

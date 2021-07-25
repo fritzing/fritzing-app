@@ -365,7 +365,7 @@ void BinManager::setDirtyTab(PartsBinPaletteWidget* w, bool dirty) {
 		int tabIdx = m_stackTabWidget->indexOf(w);
 		m_stackTabWidget->setTabText(tabIdx, w->title()+(dirty? " *": ""));
 	} else {
-		qWarning() << tr("BinManager::setDirtyTab: Couldn't set the bin '%1' as dirty").arg(w->title());
+		qWarning() << QString("BinManager::setDirtyTab: Couldn't set the bin '%1' as dirty").arg(w->title());
 	}
 }
 
@@ -375,7 +375,7 @@ void BinManager::updateTitle(PartsBinPaletteWidget* w, const QString& newTitle) 
 		setDirtyTab(w);
 	}
 	else {
-		qWarning() << tr("BinManager::updateTitle: Couldn't set the bin '%1' as dirty").arg(w->title());
+		qWarning() << QString("BinManager::updateTitle: Couldn't set the bin '%1' as dirty").arg(w->title());
 	}
 }
 
@@ -488,7 +488,7 @@ void BinManager::currentChanged(int index) {
 
 void BinManager::setAsCurrentBin(PartsBinPaletteWidget* bin) {
 	if (bin == NULL) {
-		qWarning() << tr("Cannot set a NULL bin as the current one");
+		qWarning() << QString("Cannot set a NULL bin as the current one");
 		return;
 	}
 
@@ -1226,7 +1226,7 @@ bool BinManager::removeSelected() {
 	if (mp == NULL) return false;
 
 	if (m_mainWindow->anyUsePart(mp->moduleID())) {
-		QMessageBox::warning(this, tr("Remove from Bin"), tr("Unable to remove part '%1'--it is in use in a sketch").arg(mp->title()));
+		QMessageBox::warning(this, tr("Remove from bin"), tr("Unable to remove part '%1'--it is in use in a sketch").arg(mp->title()));
 		return false;
 	}
 

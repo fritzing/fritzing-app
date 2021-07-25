@@ -233,7 +233,7 @@
     </message>
     <message>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing est rendu possible grâce au financement du MWFK Brandenburg, au parrainage du département de design de la Bauhaus-Université de Weimar, à IxDS, à un donateur anonyme, à Parallax, Picaxe, Sparkfun, à la PCB Fab AISLER et à chaque téléchargement payant.</translation>
     </message>
 </context>
 <context>
@@ -6234,7 +6234,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Pad</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pad</translation>
     </message>
     <message>
         <source>ii</source>

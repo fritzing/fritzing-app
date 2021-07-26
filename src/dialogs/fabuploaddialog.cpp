@@ -30,5 +30,5 @@ void FabUploadDialog::onUploadStarted()
 void FabUploadDialog::onUploadReady()
 {
 	ui->uploadButton_2->setEnabled(true);
-	ui->uploadButton_2->setText("Open in browser");
+	ui->uploadButton_2->setText(tr("Open in browser"));
 }

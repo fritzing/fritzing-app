@@ -874,13 +874,13 @@ void DRC::splitSubs(QDomDocument * doc, QDomElement & root, const QString & part
 		QList<QRectF> netRects;
 		foreach (QDomElement element, netElements) {
 			QString id = element.attribute("id");
-			QRectF r = renderer.matrixForElement(id).mapRect(renderer.boundsOnElement(id));
+			QRectF r = renderer.transformForElement(id).mapRect(renderer.boundsOnElement(id));
 			netRects << r;
 		}
 		QList<QRectF> checkRects;
 		foreach (QDomElement element, toCheck) {
 			QString id = element.attribute("id");
-			QRectF r = renderer.matrixForElement(id).mapRect(renderer.boundsOnElement(id));
+			QRectF r = renderer.transformForElement(id).mapRect(renderer.boundsOnElement(id));
 			checkRects << r;
 			element.setAttribute("id", element.attribute("oldid"));
 		}

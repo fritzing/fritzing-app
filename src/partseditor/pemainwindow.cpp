@@ -2634,7 +2634,7 @@ QRectF PEMainWindow::getPixelBounds(FSvgRenderer & renderer, QDomElement & eleme
 
 	QString id = element.attribute("id");
 	QRectF r = renderer.boundsOnElement(id);
-	QMatrix matrix = renderer.matrixForElement(id);
+	QTransform matrix = renderer.transformForElement(id);
 	QString oldid = element.attribute("oldid");
 	if (!oldid.isEmpty()) {
 		element.setAttribute("id", oldid);

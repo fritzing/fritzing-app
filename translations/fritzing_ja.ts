@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingは、MWFK Brandenburg、Bauhaus-University Weimarのデザイン部門のスポンサー、IxDS、匿名の寄付者、Parallax、Picaxe、Sparkfun、PCB Fab AISLERおよび各有料ダウンロードによりの提供で実現しています。</translation>
     </message>
 </context>
 <context>
@@ -192,18 +192,18 @@
     </message>
     <message>
         <source>zoom and pan controls</source>
-        <translation type="unfinished"></translation>
+        <translation>ズーム・パンコントロール</translation>
     </message>
     <message>
         <source>Best So Far</source>
-        <translation type="unfinished"></translation>
+        <translation>これまでのベスト</translation>
     </message>
 </context>
 <context>
     <name>Autorouter</name>
     <message>
         <source>Routing canceled! Now cleaning up...</source>
-        <translation type="unfinished"></translation>
+        <translation>ルーティングがキャンセルされました！今から片付けています...。</translation>
     </message>
 </context>
 <context>
@@ -218,15 +218,15 @@
     </message>
     <message>
         <source>professional</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">専門家</translation>
     </message>
     <message>
         <source>custom</source>
-        <translation type="unfinished"></translation>
+        <translation>カスタム</translation>
     </message>
     <message>
         <source>Trace width</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">トレース幅</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -238,19 +238,19 @@
     </message>
     <message>
         <source>Keepout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">キープアウト</translation>
     </message>
     <message>
         <source>&lt;b&gt;Keepout&lt;/b&gt; is the minimum distance between copper elements on different nets.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;キープアウト&lt;/b&gt;は、銅エレメントの異なるネットの間の最小距離です。</translation>
     </message>
     <message>
         <source>A keepout of 0.01 inch (0.254 mm) is a good default.</source>
-        <translation type="unfinished"></translation>
+        <translation>キープアウトは0.01インチ（0.254mm）を目安にしてください。</translation>
     </message>
     <message>
         <source>Note: the smaller the keepout, the slower the DRC and Autorouter will run.</source>
-        <translation type="unfinished"></translation>
+        <translation>注：キープアウトを小さくすると、DRCとアウトルータの動作が遅くなります。</translation>
     </message>
 </context>
 <context>
@@ -279,7 +279,7 @@
     </message>
     <message>
         <source>Select a Fritzing Parts Bin file to open</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fritzing パーツビンのフィルを選択して開く</translation>
     </message>
     <message>
         <source>Bin</source>
@@ -287,51 +287,51 @@
     </message>
     <message>
         <source>New Bin...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">新規 Bin...</translation>
     </message>
     <message>
         <source>Create a new parts bin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">新規パーツビンを作成</translation>
     </message>
     <message>
         <source>Close Bin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ビンを閉じる</translation>
     </message>
     <message>
         <source>Close parts bin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">パーツビンを閉じる</translation>
     </message>
     <message>
         <source>Delete Bin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ビンを削除</translation>
     </message>
     <message>
         <source>Delete parts bin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">パーツビンを削除</translation>
     </message>
     <message>
         <source>Save Bin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ビンを保存</translation>
     </message>
     <message>
         <source>Save parts bin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">パーツビンを保存</translation>
     </message>
     <message>
         <source>Save Bin As...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ビンの名前を付け保存...</translation>
     </message>
     <message>
         <source>Save parts bin as...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">パーツビンを名前を付け保存...</translation>
     </message>
     <message>
         <source>Export Bin...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ビンをエクスポート</translation>
     </message>
     <message>
         <source>Save parts bin in compressed format...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">パーツビンを圧縮ファイルで保存...</translation>
     </message>
     <message>
         <source>Rename Bin...</source>

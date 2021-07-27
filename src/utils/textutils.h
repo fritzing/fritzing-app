@@ -70,6 +70,8 @@ public:
 	static QString escapeAnd(const QString &);
 	static QMatrix elementToMatrix(QDomElement & element);
 	static QMatrix transformStringToMatrix(const QString & transform);
+	static QTransform elementToTransform(QDomElement & element);
+	static QTransform transformStringToTransform(const QString & transform);
 	static QList<double> getTransformFloats(QDomElement & element);
 	static QList<double> getTransformFloats(const QString & transform);
 	static QString svgNSOnly(QString svgContent);

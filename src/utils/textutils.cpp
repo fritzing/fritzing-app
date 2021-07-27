@@ -922,6 +922,49 @@ QMatrix TextUtils::transformStringToMatrix(const QString & transform) {
 	return QMatrix();
 }
 
+QTransform TextUtils::elementToTransform(QDomElement & element) {
+	QString transform = element.attribute("transform");
+	if (transform.isEmpty()) return QTransform();
+
+	return transformStringToTransform(transform);
+}
+
+QTransform TextUtils::transformStringToTransform(const QString & transform) {
+	// doesn't handle multiple transform attributes
+	QList<double> floats = getTransformFloats(transform);
+
+	if (transform.startsWith("translate")) {
+		return QTransform().translate(floats[0], (floats.length() > 1) ? floats[1] : 0);
+	}
+	else if (transform.startsWith("rotate")) {
+		if (floats.length() == 1) {
+			return QTransform().rotate(floats[0]);
+		}
+		else if (floats.length() == 3) {
+			return  QTransform().translate(-floats[1], -floats[2]) * QTransform().rotate(floats[0]) * QTransform().translate(floats[1], floats[2]);
+		}
+	}
+	else if (transform.startsWith("matrix")) {
+		return QTransform(floats[0], floats[1], floats[2], floats[3], floats[4], floats[5]);
+	}
+	else if (transform.startsWith("scale")) {
+		if (floats.size() == 2) {
+			return QTransform().scale(floats[0], floats[1]);
+		} else {
+			Q_ASSERT(floats.size() == 1);
+			return QTransform().scale(floats[0], floats[0]);
+		}
+	}
+	else if (transform.startsWith("skewX")) {
+		return QTransform().shear(floats[0], 0);
+	}
+	else if (transform.startsWith("skewY")) {
+		return QTransform().shear(0, floats[0]);
+	}
+
+	return QTransform();
+}
+
 QList<double> TextUtils::getTransformFloats(QDomElement & element) {
 	return getTransformFloats(element.attribute("transform"));
 }

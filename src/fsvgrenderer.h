@@ -37,7 +37,7 @@ struct ConnectorInfo {
 	QMatrix matrix;
 	//QRectF cbounds;
 	QMatrix terminalMatrix;
-	QMatrix legMatrix;
+	QTransform legMatrix;
 	QString legColor;
 	QLineF legLine;
 	double legStrokeWidth;

@@ -515,7 +515,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		for (int i = 0; i < transformCount1; i++) {
 			QString n = QString::number(i);
 			QRectF bounds = renderer.boundsOnElement(n);
-			QMatrix m = renderer.matrixForElement(n);
+			QTransform m = renderer.transformForElement(n);
 			QDomElement element = leaves1.at(i);
 			QRectF mBounds = m.mapRect(bounds);
 			if (mBounds.left() < sourceRes.left() - 0.1|| mBounds.top() < sourceRes.top() - 0.1 || mBounds.right() > sourceRes.right() + 0.1 || mBounds.bottom() > sourceRes.bottom() + 0.1) {
@@ -552,7 +552,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		for (int i = newHoles.count() - 1; i >= 0; i--) {
 			QString id = QString("__%1__").arg(i);
 			QRectF bounds = renderer.boundsOnElement(id);
-			QMatrix m = renderer.matrixForElement(id);
+			QTransform m = renderer.transformForElement(id);
 			QDomElement newElement = newHoles.at(i);
 			QRectF mBounds = m.mapRect(bounds);
 			if (mBounds.left() < sourceRes.left() - 0.1 || mBounds.top() < sourceRes.top() - 0.1 || mBounds.right() > sourceRes.right() + 0.1 || mBounds.bottom() > sourceRes.bottom() + 0.1) {
@@ -593,7 +593,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 
 			QString n = QString::number(i);
 			QRectF bounds = renderer.boundsOnElement(n);
-			QMatrix m = renderer.matrixForElement(n);
+			QTransform m = renderer.transformForElement(n);
 			QRectF mBounds = m.mapRect(bounds);
 
 			int x1 = qFloor(qMax(0.0, mBounds.left() - sourceRes.left()));          // atmel compiler fails without cast

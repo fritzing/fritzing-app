@@ -633,7 +633,7 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
 	QDomDocument doc = top.ownerDocument();
 	TextUtils::getSvgSizes(doc, sWidth, sHeight, vbWidth, vbHeight);
 
-	QMatrix m = renderer.matrixForElement(mps->subpartID());
+	QTransform m = renderer.transformForElement(mps->subpartID());
 	QRectF elementBounds = renderer.boundsOnElement(mps->subpartID());
 	QRectF bounds = m.mapRect(elementBounds);                                   // bounds is in terms of the whole svg
 

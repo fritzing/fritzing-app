@@ -2583,7 +2583,7 @@ QString PCBSketchWidget::makePasteMask(const QString & svgMask, ItemBase * board
 	foreach (QDomElement element, leaves) {
 		QString id = element.attribute("id");
 		QRectF bounds = renderer.boundsOnElement(id);
-		QRectF leafRect = renderer.matrixForElement(id).mapRect(bounds);
+		QRectF leafRect = renderer.transformForElement(id).mapRect(bounds);
 		QPointF leafCenter = leafRect.center();
 		foreach (QRectF r, connectorRects) {
 			if (!leafRect.intersects(r)) continue;

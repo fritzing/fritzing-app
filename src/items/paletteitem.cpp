@@ -119,7 +119,11 @@ PaletteItem::PaletteItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const
 {
 	m_flipCount = 0;
 	if(doLabel) {
-		m_partLabel = new PartLabel(this, NULL);
+		QWidget *parentWidget = NULL;
+		if (itemMenu) {
+			parentWidget = itemMenu->parentWidget();
+		}
+		m_partLabel = new PartLabel(this, parentWidget, NULL);
 		m_partLabel->setVisible(false);
 	} else {
 		m_partLabel = NULL;

@@ -102,9 +102,10 @@ static constexpr double InactiveOpacity = 0.4;
 
 ///////////////////////////////////////////
 
-PartLabel::PartLabel(ItemBase * owner, QGraphicsItem * parent)
+PartLabel::PartLabel(ItemBase * owner, QWidget *parentWidget, QGraphicsItem * parent)
 	: QGraphicsSvgItem(parent),
-	  m_owner(owner)
+	  m_owner(owner),
+	  m_parentWidget(parentWidget)
 
 {
 	m_displayKeys.append(LabelTextKey);
@@ -119,6 +120,7 @@ PartLabel::PartLabel(ItemBase * owner, QGraphicsItem * parent)
 	setVisible(false);
 	setAcceptHoverEvents(true);
 	AllPartLabels.insert(m_owner->id(), this);
+	m_menu = new QMenu(QObject::tr("PartLabel"), m_parentWidget);
 }
 
 PartLabel::~PartLabel()
@@ -417,20 +419,19 @@ ItemBase * PartLabel::owner() {
 void PartLabel::initMenu()
 {
 	// todo: make this a static var?
-
-	QAction *editAct = m_menu.addAction(tr("Edit"));
+	QAction *editAct = m_menu->addAction(tr("Edit"));
 	editAct->setData(QVariant(PartLabelEdit));
 	editAct->setStatusTip(tr("Edit label text"));
 
-	QAction *hideAct = m_menu.addAction(tr("Hide"));
+	QAction *hideAct = m_menu->addAction(tr("Hide"));
 	hideAct->setData(QVariant(PartLabelHide));
 	hideAct->setStatusTip(tr("Hide part label"));
 
-	m_menu.addSeparator();
+	m_menu->addSeparator();
 
-	QMenu * dvmenu = m_menu.addMenu(tr("Display Values"));
-	QMenu * rlmenu = m_menu.addMenu(tr("Flip/Rotate"));
-	QMenu * fsmenu = m_menu.addMenu(tr("Font Size"));
+	QMenu * dvmenu = m_menu->addMenu(tr("Display Values"));
+	QMenu * rlmenu = m_menu->addMenu(tr("Flip/Rotate"));
+	QMenu * fsmenu = m_menu->addMenu(tr("Font Size"));
 
 	bool include45 = (m_owner) && (m_owner->viewID() == ViewLayer::PCBView);
 
@@ -589,7 +590,7 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 		return;
 	}
 
-	if (m_menu.isEmpty()) {
+	if (m_menu->isEmpty()) {
 		initMenu();
 	}
 
@@ -620,7 +621,7 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 		}
 	}
 
-	QAction *selectedAction = m_menu.exec(event->screenPos());
+	QAction *selectedAction = m_menu->exec(event->screenPos());
 	if (selectedAction == NULL) return;
 
 	PartLabelAction action = (PartLabelAction) selectedAction->data().toInt();

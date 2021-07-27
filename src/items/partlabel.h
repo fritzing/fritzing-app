@@ -40,7 +40,7 @@ class PartLabel : public QGraphicsSvgItem
 {
 	Q_OBJECT
 public:
-	PartLabel(ItemBase * owner, QGraphicsItem * parent = 0 );   // itembase is not the parent
+	PartLabel(ItemBase * owner, QWidget *parentWidget, QGraphicsItem * parent = 0 );   // itembase is not the parent
 	~PartLabel();
 
 	void setPlainText(const QString & text);
@@ -87,6 +87,7 @@ protected:
 
 protected:
 	QPointer<ItemBase> m_owner;
+	QWidget *m_parentWidget;
 	bool m_initialized = false;
 	bool m_initializedPos = false;
 	bool m_spaceBarWasPressed = false;
@@ -97,7 +98,7 @@ protected:
 	ViewLayer::ViewLayerID m_viewLayerID = ViewLayer::UnknownLayer;
 	bool m_hidden = false;
 	bool m_inactive = false;
-	QMenu m_menu;
+	QMenu * m_menu = nullptr;
 	QString m_text;
 	QString m_displayText;
 	QStringList m_displayKeys;

@@ -154,7 +154,7 @@ Wire::Wire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 	m_displayBendpointCursor = m_canHaveCurve = true;
 	m_hoverStrokeWidth = DefaultHoverStrokeWidth;
 	m_connector0 = m_connector1 = NULL;
-	m_partLabel = initLabel ? new PartLabel(this, NULL) : NULL;
+	m_partLabel = initLabel ? new PartLabel(this, NULL, NULL) : NULL;
 	m_canChainMultiple = false;
 	setFlag(QGraphicsItem::ItemIsSelectable, true );
 	m_connectorHover = NULL;

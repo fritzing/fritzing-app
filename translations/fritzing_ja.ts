@@ -279,115 +279,115 @@
     </message>
     <message>
         <source>Select a Fritzing Parts Bin file to open</source>
-        <translation type="unfinished">Fritzing パーツビンのフィルを選択して開く</translation>
+        <translation>Fritzing パーツビンのフィルを選択して開く</translation>
     </message>
     <message>
         <source>Bin</source>
-        <translation type="unfinished">ビン</translation>
+        <translation>ビン</translation>
     </message>
     <message>
         <source>New Bin...</source>
-        <translation type="unfinished">新規 Bin...</translation>
+        <translation>新規 Bin...</translation>
     </message>
     <message>
         <source>Create a new parts bin</source>
-        <translation type="unfinished">新規パーツビンを作成</translation>
+        <translation>新規パーツビンを作成</translation>
     </message>
     <message>
         <source>Close Bin</source>
-        <translation type="unfinished">ビンを閉じる</translation>
+        <translation>ビンを閉じる</translation>
     </message>
     <message>
         <source>Close parts bin</source>
-        <translation type="unfinished">パーツビンを閉じる</translation>
+        <translation>パーツビンを閉じる</translation>
     </message>
     <message>
         <source>Delete Bin</source>
-        <translation type="unfinished">ビンを削除</translation>
+        <translation>ビンを削除</translation>
     </message>
     <message>
         <source>Delete parts bin</source>
-        <translation type="unfinished">パーツビンを削除</translation>
+        <translation>パーツビンを削除</translation>
     </message>
     <message>
         <source>Save Bin</source>
-        <translation type="unfinished">ビンを保存</translation>
+        <translation>ビンを保存</translation>
     </message>
     <message>
         <source>Save parts bin</source>
-        <translation type="unfinished">パーツビンを保存</translation>
+        <translation>パーツビンを保存</translation>
     </message>
     <message>
         <source>Save Bin As...</source>
-        <translation type="unfinished">ビンの名前を付け保存...</translation>
+        <translation>ビンの名前を付け保存...</translation>
     </message>
     <message>
         <source>Save parts bin as...</source>
-        <translation type="unfinished">パーツビンを名前を付け保存...</translation>
+        <translation>パーツビンを名前を付け保存...</translation>
     </message>
     <message>
         <source>Export Bin...</source>
-        <translation type="unfinished">ビンをエクスポート</translation>
+        <translation>ビンをエクスポート...</translation>
     </message>
     <message>
         <source>Save parts bin in compressed format...</source>
-        <translation type="unfinished">パーツビンを圧縮ファイルで保存...</translation>
+        <translation>パーツビンを圧縮ファイルで保存...</translation>
     </message>
     <message>
         <source>Rename Bin...</source>
-        <translation type="unfinished"></translation>
+        <translation>ビンの名前を変更...</translation>
     </message>
     <message>
         <source>Rename parts bin...</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツビンの名前変更...</translation>
     </message>
     <message>
         <source>Show Bin in List View</source>
-        <translation type="unfinished"></translation>
+        <translation>ビンを一覧に表示</translation>
     </message>
     <message>
         <source>Display parts as a list</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツを一覧で表示</translation>
     </message>
     <message>
         <source>Show Bin in Icon View</source>
-        <translation type="unfinished"></translation>
+        <translation>ビンをアイコンに表示</translation>
     </message>
     <message>
         <source>Display parts as icons</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツをアイコンで表示</translation>
     </message>
     <message>
         <source>Export Part...</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツをエクスポート...</translation>
     </message>
     <message>
         <source>Remove Part</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツを取り外し</translation>
     </message>
     <message>
         <source>Delete bin</source>
-        <translation type="unfinished"></translation>
+        <translation>ビンを削除</translation>
     </message>
     <message>
         <source>Do you really want to delete bin &apos;%1&apos;?  This action cannot be undone.</source>
-        <translation type="unfinished"></translation>
+        <translation>本当にビン &apos;%1&apos; を削除しますか？  この操作は不可逆です。</translation>
     </message>
     <message>
         <source>Read-only bin</source>
-        <translation type="unfinished"></translation>
+        <translation>ビンを読み取り専用</translation>
     </message>
     <message>
         <source>This bin cannot be renamed.</source>
-        <translation type="unfinished"></translation>
+        <translation>このビンの名前を変更することはできません。</translation>
     </message>
     <message>
         <source>Rename bin</source>
-        <translation type="unfinished">ビンの名前変更</translation>
+        <translation>ビンの名前変更</translation>
     </message>
     <message>
         <source>Please choose a name for the bin:</source>
-        <translation type="unfinished">ビン用に名前を選んでください:</translation>
+        <translation>ビンの名前を選んでください:</translation>
     </message>
     <message>
         <source>Remove from bin</source>
@@ -395,253 +395,259 @@
     </message>
     <message>
         <source>Searching...</source>
-        <translation type="unfinished"></translation>
+        <translation>検索中...</translation>
     </message>
     <message>
         <source>Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>インポート...</translation>
     </message>
     <message>
         <source>Load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingパーツ又はFritzingパーツビンの読みとりFritzingパーツ又はFritzingパーツビンの読み込み</translation>
     </message>
     <message>
         <source>Select a Fritzing file to open</source>
-        <translation type="unfinished">Fritzing ファイルを選択して開いてください</translation>
+        <translation>Fritzing ファイルを選択して開く</translation>
     </message>
     <message>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing フィル (*%1 *%2 *%3);;Fritzingパーツ (*%1);;Fritzing ビン (*%2);;Fritzing 共有可ビン (*%3)</translation>
     </message>
     <message>
         <source>Edit Part (new parts editor)...</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツ編集（新規パーツエディター）...</translation>
     </message>
     <message>
         <source>Find Part in Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>スケッチでパーツを検索</translation>
     </message>
     <message>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツ &apos;%1&apos;を取り外し不可能－スケッチで使用されていますツ &apos;%1&apos;を取り外し不可能－スケッチで使用されています</translation>
     </message>
     <message>
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
-        <translation type="unfinished"></translation>
+        <translation>本当に &apos;%1&apos;をビンから取り外しますか？この操作を不可逆です。</translation>
     </message>
     <message>
         <source>Copy to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>スケッチへコピー</translation>
     </message>
     <message>
         <source>Copy all the parts in the bin to a sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>ビンの中の全パーツをスケッチへコピー</translation>
     </message>
     <message>
         <source>Copy all to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>すべてをスケッチへコピー</translation>
     </message>
     <message>
         <source>Copy all loaded parts to the sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>読み込んだパーツをすべてスケッチにコピー</translation>
     </message>
     <message>
         <source>Remove from Bin</source>
-        <translation type="unfinished"></translation>
+        <translation>ビンから取り外し</translation>
     </message>
 </context>
 <context>
     <name>Board</name>
     <message>
         <source>one layer (single-sided)</source>
-        <translation type="unfinished"></translation>
+        <translation>1層（片面）</translation>
     </message>
     <message>
         <source>two layers (double-sided)</source>
-        <translation type="unfinished"></translation>
+        <translation>2層（両面）</translation>
     </message>
     <message>
         <source>Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingのインストールフォルダ（parts/svg/core/pcb/）にあるcircle_pcb.svgファイルを見てみましょう。
+
+</translation>
     </message>
     <message>
         <source>image file</source>
-        <translation type="unfinished"></translation>
+        <translation>画像ファイル</translation>
     </message>
     <message>
         <source>load image file</source>
-        <translation type="unfinished"></translation>
+        <translation>画像ファイルの読み込み</translation>
     </message>
     <message>
         <source>Images</source>
-        <translation type="unfinished"></translation>
+        <translation>画像</translation>
     </message>
     <message>
         <source>Select an image file to load</source>
-        <translation type="unfinished"></translation>
+        <translation>読み込む画像ファイルを選択</translation>
     </message>
     <message>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
-        <translation type="unfinished"></translation>
+        <translation>xml の問題のため: %1 line:%2 column:%3</translation>
     </message>
     <message>
         <source>because the xml is not correctly formatted</source>
-        <translation type="unfinished"></translation>
+        <translation>xmlが正しくフォーマットされていないため</translation>
     </message>
     <message>
         <source>the &lt;board&gt; element contains no shape elements</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;board&gt;要素に形状要素が含まれていません</translation>
     </message>
     <message>
         <source>because there are multiple &lt;board&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>複層&lt;ボード&gt;があるため</translation>
     </message>
     <message>
         <source>because there are multiple &lt;silkscreen&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>複層&lt;シルクスクリーン&gt;があるため</translation>
     </message>
     <message>
         <source>because there is no &lt;board&gt; layer</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;ボード&gt;レイヤーが存在しないため</translation>
     </message>
     <message>
         <source>the svg contains no shape elements</source>
-        <translation type="unfinished"></translation>
+        <translation>svgに形状要素が含まれていない</translation>
     </message>
     <message>
         <source>but the pcb itself will have no silkscreen layer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">しかし、PCB自体にはシルクスクリーン層はありません</translation>
     </message>
     <message>
         <source>the svg doesn&apos;t fit the custom board format</source>
-        <translation type="unfinished"></translation>
+        <translation>svgがカスタムボードのフォーマットに合わない</translation>
     </message>
     <message>
         <source>Unable to load</source>
-        <translation type="unfinished"></translation>
+        <translation>読み込みができません</translation>
     </message>
     <message>
         <source>Unable to load image from %1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 の画像をロードできません</translation>
     </message>
     <message>
         <source>Can load, but</source>
-        <translation type="unfinished"></translation>
+        <translation>読み込みが可能ですが</translation>
     </message>
     <message>
         <source>The image from %1 can be loaded, but %2
 Use the file?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1の画像をロードできますが %2
+ファイルを使用しますか?</translation>
     </message>
     <message>
         <source>
 
 A custom board svg typically has one or two silkscreen layers and one board layer.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+svgのカスタムボード一般的に1～2枚のシルクスクリーンレイヤーと1枚のボードレイヤーで構成されています。
+</translation>
     </message>
     <message>
         <source>because there are multiple &lt;silkscreen0&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>複層&lt;シルクスクリーン0&gt;があるため</translation>
     </message>
     <message>
         <source>&lt;b&gt;The custom shape has been loaded, and you will see the new board shortly.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;カスタム形状が読み込まれ、まもなく新規ボードが表示されます。&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
-        <translation type="unfinished"></translation>
+        <translation>実物のPCB構造を始める前に &apos;File &gt; Export for Production &gt; Extended Gerber&apos; のオプションでカスタム形状をテストすることをお勧めします </translation>
     </message>
     <message>
         <source>Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>出来上がった輪郭ファイルをGerber-viewerアプリケーションで確認し、期待通りの形状になっていることを確かめます。&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <source>The rest of this message concerns &apos;cutouts&apos;. </source>
-        <translation type="unfinished"></translation>
+        <translation>残りのメッセージは「カットアウト」に関するものです。 </translation>
     </message>
     <message>
         <source>These are circular or irregularly-shaped holes that you can optionally incorporate into a custom PCB shape.&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>この円形又は異形の穴はオプションでカスタムPCBの形状に組み込むことができます。&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;The custom shape has no cutouts.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;カスタム形状にはカットアウトがありません。&lt;/b&gt;</translation>
     </message>
     <message numerus="yes">
         <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>&lt;b&gt;カスタム形状には%n個のカットアウトがあります。&lt;/b&gt;</numerusform>
         </translation>
     </message>
     <message>
         <source>&lt;br/&gt;However, the cutouts may not be formatted correctly.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br/&gt;しかし、カットアウトが正しくフォーマットされていないかもしれません。</translation>
     </message>
     <message>
         <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br/&gt;&lt;br/&gt;カスタム形状にカットアウトを含まれることを意図している場合、期待される結果に得られません。 </translation>
     </message>
     <message>
         <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>それは、Fritzingでは、ベクターグラフィックエディターで図形の「引き算」か「差分」の操作を使ってカットアウトを行う必要があるからです。</translation>
     </message>
 </context>
 <context>
     <name>BoardLogoItem</name>
     <message>
         <source>shape</source>
-        <translation type="unfinished">シェイプ</translation>
+        <translation>形状</translation>
     </message>
 </context>
 <context>
     <name>BreadboardLogoItem</name>
     <message>
         <source>color</source>
-        <translation type="unfinished">カラー</translation>
+        <translation>色</translation>
     </message>
     <message>
         <source>Set text color</source>
-        <translation type="unfinished"></translation>
+        <translation>文字色の設定</translation>
     </message>
     <message>
         <source>Select text color</source>
-        <translation type="unfinished"></translation>
+        <translation>文字色を選択</translation>
     </message>
 </context>
 <context>
     <name>Capacitor</name>
     <message>
         <source>Select from the dropdown, or type in a %1 value</source>
-        <translation type="unfinished"></translation>
+        <translation>ドロップダウンから選択する、又は%1を入力します</translation>
     </message>
 </context>
 <context>
     <name>ConnectorItem</name>
     <message>
         <source>Add bendpoint</source>
-        <translation type="unfinished"></translation>
+        <translation>ベンドポイント追加</translation>
     </message>
     <message>
         <source>Remove bendpoint</source>
-        <translation type="unfinished"></translation>
+        <translation>ベンドポイント取り外し</translation>
     </message>
     <message>
         <source>Straighten curve</source>
-        <translation type="unfinished"></translation>
+        <translation>カーブをまっすぐにする</translation>
     </message>
 </context>
 <context>
     <name>ConsoleSettings</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>設定</translation>
     </message>
     <message>
         <source>Select Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>パラメータを選択</translation>
     </message>
     <message>
         <source>BaudRate:</source>
@@ -649,98 +655,98 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>Data bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>データビット:</translation>
     </message>
     <message>
         <source>Parity:</source>
-        <translation type="unfinished"></translation>
+        <translation>平価：</translation>
     </message>
     <message>
         <source>Stop bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>停止ビット：</translation>
     </message>
     <message>
         <source>Flow control:</source>
-        <translation type="unfinished"></translation>
+        <translation>フロー制御：</translation>
     </message>
     <message>
         <source>Select Serial Port</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアルポートを選択</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>記述：</translation>
     </message>
     <message>
         <source>Manufacturer:</source>
-        <translation type="unfinished"></translation>
+        <translation>メーカー：</translation>
     </message>
     <message>
         <source>Serial number:</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアル番号：</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>場所：</translation>
     </message>
     <message>
         <source>Vendor ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>業者 ID:</translation>
     </message>
     <message>
         <source>Product ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>製品ID：</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>適用</translation>
     </message>
     <message>
         <source>Additional options</source>
-        <translation type="unfinished"></translation>
+        <translation>追加オプション</translation>
     </message>
     <message>
         <source>Local echo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ローカルエコー</translation>
     </message>
     <message>
         <source>Description: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>記述：%1</translation>
     </message>
     <message>
         <source>Manufacturer: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>メーカー: %1</translation>
     </message>
     <message>
         <source>Serial number: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアル番号：%1</translation>
     </message>
     <message>
         <source>Location: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>場所：%1</translation>
     </message>
     <message>
         <source>Vendor Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>業者ID: %1</translation>
     </message>
     <message>
         <source>Product Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>製品 ID: %1</translation>
     </message>
 </context>
 <context>
     <name>ConsoleWindow</name>
     <message>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアルモニタ</translation>
     </message>
     <message>
         <source>Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>モニター</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>ツール</translation>
     </message>
     <message>
         <source>&amp;About</source>
@@ -748,130 +754,130 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>About program</source>
-        <translation type="unfinished"></translation>
+        <translation>プログラムについて</translation>
     </message>
     <message>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Qtについて</translation>
     </message>
     <message>
         <source>C&amp;onnect</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">結合</translation>
     </message>
     <message>
         <source>Connect to serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアルポートに接続</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished">Ctrl+O</translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>&amp;Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>＆切断</translation>
     </message>
     <message>
         <source>Disconnect from serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアルポートから切断</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
-        <translation type="unfinished">Ctrl+D</translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;コンフィグ</translation>
     </message>
     <message>
         <source>Configure serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアルポートをコンフィグ</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
     <message>
         <source>C&amp;lear</source>
-        <translation type="unfinished"></translation>
+        <translation>＆空く</translation>
     </message>
     <message>
         <source>Clear data</source>
-        <translation type="unfinished"></translation>
+        <translation>クリアデータ</translation>
     </message>
     <message>
         <source>Alt+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+L</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished">終了(&amp;Q)</translation>
+        <translation>＆終了</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>Connected to %1 : %2, %3, %4, %5, %6</source>
-        <translation type="unfinished"></translation>
+        <translation>接続先は %1 : %2, %3, %4, %5, %6</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>Serial port open error</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアルポートオープンエラー</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>切断</translation>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation type="unfinished"></translation>
+        <translation>クリティカルエラー</translation>
     </message>
     <message>
         <source>About Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアルモニタについて</translation>
     </message>
     <message>
         <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
-        <translation type="unfinished"></translation>
+        <translation>このターミナルは選択されたポートのシリアル通信を表示して、大抵パソコンと接続されたマイクロコントローラーでの間です。</translation>
     </message>
 </context>
 <context>
     <name>DRC</name>
     <message>
         <source>DRC was cancelled.</source>
-        <translation type="unfinished"></translation>
+        <translation>DRCは中止になりました。</translation>
     </message>
     <message>
         <source>Your sketch is ready for production: there are no connectors or traces that overlap or are too close together.</source>
-        <translation type="unfinished"></translation>
+        <translation>スケッチは生産準備をできています：コネクターやトレスが重なっていたり近すぎたりしていません。</translation>
     </message>
     <message>
         <source>The areas on your board highlighted in red are connectors and traces which may overlap or be too close together. </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">基板上で赤く表示されている箇所はコネクタやトレースが重なっていたり近すぎたりかもしれません。 </translation>
     </message>
     <message>
         <source>Reposition them and run the DRC again to find more problems</source>
-        <translation type="unfinished"></translation>
+        <translation>再配置して、問題点を発見するにはDRCを再度実行してください</translation>
     </message>
     <message>
         <source>Fritzing error: unable to render board svg.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing エラーFritzing エラー: svg基板をレンダーできません。</translation>
     </message>
     <message>
         <source>No traces or connectors to check</source>
-        <translation type="unfinished"></translation>
+        <translation>確認するトレスやコネクターはありません</translation>
     </message>
     <message>
         <source>Unexpected SVG rendering failure--contact fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>想定外のＳＶＧレンダリング失敗--fritzing.orgご連絡ください</translation>
     </message>
     <message>
         <source>Fritzing</source>
@@ -879,34 +885,34 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>%1 is overlapping (%2 layer)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1は (%2 layer)に重なっている</translation>
     </message>
     <message>
         <source>Too close to a border (%1 layer)</source>
-        <translation type="unfinished"></translation>
+        <translation>ボーダーに近すぎる (%1 層)</translation>
     </message>
     <message>
         <source>A hole in %1 may lie outside the border of the board and would be clipped.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 にいる穴は恐らく基板のボーダー外にあり、切り取られてしまいます。</translation>
     </message>
     <message>
         <source>Connector %1 on %2 should have both copper top and bottom layers, but the svg only specifies one layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>%2にいるコネクター%1は上下の銅層があるはずですが、svgは片方しか設定されていません。</translation>
     </message>
 </context>
 <context>
     <name>DRCResultsDialog</name>
     <message>
         <source>DRC Results</source>
-        <translation type="unfinished"></translation>
+        <translation>DRCの結果</translation>
     </message>
     <message>
         <source>Note: the list items and the red highlighting will not update as you edit your sketch--you must rerun the DRC. The highlighting will disappear when you close this dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>注：スケッチを編集する時に、リストの項目や赤い色の強調表示は更新されませんので、DRCを再実行する必要があります。このダイアログを閉じると強調表示は消えます。</translation>
     </message>
     <message>
         <source>Click on an item in the list to highlight of overlap it refers to.</source>
-        <translation type="unfinished"></translation>
+        <translation>一覧の項目をクリックすると、重なっている箇所をハイライトされます。</translation>
     </message>
 </context>
 <context>
@@ -920,130 +926,133 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <name>DeleteDialog</name>
     <message>
         <source>Also delete the file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ファイルを削除</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished">削除</translation>
+        <translation>取り外し</translation>
     </message>
     <message>
         <source>Don&apos;t remove</source>
-        <translation type="unfinished"></translation>
+        <translation>取り外せないでください</translation>
     </message>
 </context>
 <context>
     <name>Dip</name>
     <message>
         <source>chip label</source>
-        <translation type="unfinished"></translation>
+        <translation>チップラベル</translation>
     </message>
 </context>
 <context>
     <name>ExportParametersDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <source>Export parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>パラメータをエクスポート</translation>
     </message>
     <message>
         <source>DPI</source>
-        <translation type="unfinished"></translation>
+        <translation>DPI</translation>
     </message>
 </context>
 <context>
     <name>FApplication</name>
     <message>
         <source>Fritzing failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing 失敗</translation>
     </message>
     <message>
         <source>Fritzing caught an exception from %1 in event %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing はイベント %2 で %1 の例外を検出しました</translation>
     </message>
     <message>
         <source>Fritzing caught an exception %1 from %2 in event %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing はイベント %3 で %2 からの例外 %1 を検出しました</translation>
     </message>
     <message>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
-        <translation type="unfinished"></translation>
+        <translation>保存先の.fzzファイル名を指定してください（キャンセルするとバックアップが削除されます）</translation>
     </message>
     <message>
         <source>Fritzing (*%1)</source>
-        <translation type="unfinished">Fritzing (*%1)</translation>
+        <translation>Fritzing (*%1)</translation>
     </message>
     <message>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing はイベント %2: %3 で %1 の例外を検出しました</translation>
     </message>
     <message>
         <source>Regenerate parts database?</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツのデータベースを再生？</translation>
     </message>
     <message>
         <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>パーツデ再生ータベースの再生には数分かかって、Fritzingを再起動する必要があります
+
+</translation>
     </message>
     <message>
         <source>Would you like to regenerate the parts database?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>パーツデータベースを再生してみませんか？
+</translation>
     </message>
     <message>
         <source>Regenerate</source>
-        <translation type="unfinished"></translation>
+        <translation>再生</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <source>Regenerating parts database...</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツのデータベースを再生...</translation>
     </message>
     <message>
         <source>This option is usefull if you modify the parts database on your own. If you want to recover from an error, you may be better off downloading the latest Fritzing release.</source>
-        <translation type="unfinished"></translation>
+        <translation>このオプションはパーツデータベースをご自身で変更する場合には便利です。エラーから回復したい場合は、Fritzingの最新版をダウンロードした方が良いでしょう。</translation>
     </message>
 </context>
 <context>
     <name>FabUploadDialog</name>
     <message>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingファブアップロード</translation>
     </message>
     <message>
         <source>Get your board fabricated this week!</source>
-        <translation type="unfinished"></translation>
+        <translation>今週中に作り上げたボードをゲット！</translation>
     </message>
     <message>
         <source>Upload it now to get a preview rendered by AISLER. Review, and if you like it, order it and get it manufactured in two days.</source>
-        <translation type="unfinished"></translation>
+        <translation>今すぐアップロードして、AISLERのレンダリングしたプレビューをゲット。検討して、気に入ったら、注文して2日後には製造されます。</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <source>Upload to Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>ファブへのアップロード</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>アップロード</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>インポート</translation>
     </message>
     <message>
         <source>Uploading...</source>
-        <translation type="unfinished"></translation>
+        <translation>アップロード中...</translation>
     </message>
 </context>
 <context>
@@ -1054,18 +1063,18 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>Could not connect to Fritzing fab.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing ファブに接続できません。</translation>
     </message>
     <message>
         <source>Error processing the project. The factory says: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>プロジェクトの処理でエラーが発生しました。ファクトリは次のように言っています: %1</translation>
     </message>
 </context>
 <context>
     <name>FirstTimeHelpDialog</name>
     <message>
         <source>First Time Help</source>
-        <translation type="unfinished">Fritzing 起動時のヘルプを再表示</translation>
+        <translation>初ヘルプ</translation>
     </message>
     <message>
         <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
@@ -1084,7 +1093,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <name>FolderUtils</name>
     <message>
         <source>Moving your custom parts</source>
-        <translation type="unfinished"></translation>
+        <translation>カスタムパーツを移動</translation>
     </message>
     <message>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
@@ -1160,15 +1169,15 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>OK and ground fill</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OKとグランドフィル</translation>
     </message>
     <message>
         <source>OK and copper fill</source>

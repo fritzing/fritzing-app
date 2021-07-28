@@ -604,13 +604,13 @@ QList<ConnectorLocation *> S2S::initConnectors(const QDomElement & root, const Q
 			connectorLocation->terminalID = schematicView.firstChildElement("p").attribute("terminalId");
 			connectorLocation->svgID = svgID;
 			QRectF bounds = renderer.boundsOnElement(svgID);
-			QMatrix m = renderer.matrixForElement(svgID);
+			QTransform m = renderer.transformForElement(svgID);
 			connectorLocation->bounds = m.mapRect(bounds);
 			connectorLocation->terminalPoint = connectorLocation->bounds.center();
 
 			if (!connectorLocation->terminalID.isEmpty()) {
 				bounds = renderer.boundsOnElement(connectorLocation->terminalID);
-				m = renderer.matrixForElement(connectorLocation->terminalID);
+				m = renderer.transformForElement(connectorLocation->terminalID);
 				connectorLocation->terminalPoint = m.mapRect(bounds).center();
 			}
 			connectorLocations.append(connectorLocation);

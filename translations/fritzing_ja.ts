@@ -17,55 +17,55 @@
     </message>
     <message>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
-        <translation type="unfinished"></translation>
+        <translation>教授 Reto Wettach, André Knörig, Myriel Milicevic, </translation>
     </message>
     <message>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
-        <translation type="unfinished"></translation>
+        <translation>Zach Eveland, Dirk van Oosterbosch, </translation>
     </message>
     <message>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
     </message>
     <message>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
-        <translation type="unfinished"></translation>
+        <translation>Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
     </message>
     <message>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation type="unfinished"></translation>
+        <translation>Mariano Crowe, Johannes Landstorfer, </translation>
     </message>
     <message>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </translation>
     </message>
     <message>
         <source>Durrell Bishop, David Cuartielles, Fabian Hemmert, </source>
-        <translation type="unfinished"></translation>
+        <translation>Durrell Bishop, David Cuartielles, Fabian Hemmert, </translation>
     </message>
     <message>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
-        <translation type="unfinished"></translation>
+        <translation>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </translation>
     </message>
     <message>
         <source>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </source>
-        <translation type="unfinished"></translation>
+        <translation>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </translation>
     </message>
     <message>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jan Sieber, Yaniv Steiner, Olaf Val, </translation>
     </message>
     <message>
         <source>Michaela Vieser and Julia Werner.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Michaela VieserとJulia Wernerです。</translation>
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
     </message>
     <message>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Thanks for the translations go out to: </source>
@@ -133,7 +133,7 @@
     </message>
     <message>
         <source>Yuelin and Ninjia</source>
-        <translation type="unfinished"></translation>
+        <translation>Yuelin と Ninjia</translation>
     </message>
     <message>
         <source>Chinese (Traditional): </source>
@@ -141,15 +141,15 @@
     </message>
     <message>
         <source>Robert Lee</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ロバート・リー</translation>
     </message>
     <message>
         <source>Hiroshi Suzuki</source>
-        <translation type="unfinished"></translation>
+        <translation>鈴木宏</translation>
     </message>
     <message>
         <source>Jinbuhm Kim</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">キム・ジンブフム</translation>
     </message>
     <message>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
@@ -161,7 +161,7 @@
     </message>
     <message>
         <source>Yelyzaveta Chyhryna</source>
-        <translation type="unfinished"></translation>
+        <translation>Yelyzaveta Chyhryna</translation>
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
@@ -1428,7 +1428,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>descr</source>
-        <translation type="unfinished"></translation>
+        <translation>説明</translation>
     </message>
     <message>
         <source>filename</source>
@@ -1444,7 +1444,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>rev</source>
-        <translation type="unfinished"></translation>
+        <translation>バージョン</translation>
     </message>
     <message>
         <source>sheet</source>
@@ -2597,27 +2597,27 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Lock Part</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">係留</translation>
     </message>
     <message>
         <source>Prevent a part from being moved</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツの移動を防ぐ</translation>
     </message>
     <message>
         <source>Select All Locked Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツの移動を防ぐ</translation>
     </message>
     <message>
         <source>Select all parts that can&apos;t be moved</source>
-        <translation type="unfinished"></translation>
+        <translation>動かせない部品をすべて選択</translation>
     </message>
     <message>
         <source>Show Parts Bin Icon View</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">品揃えをシンボルとして表示</translation>
     </message>
     <message>
         <source>Display the parts bin in an icon view</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">部品箱をアイコンビューで表示</translation>
     </message>
     <message>
         <source>Show Parts Bin List View</source>
@@ -2645,19 +2645,19 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>PNG...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PNG</translation>
     </message>
     <message>
         <source>PDF...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PDF</translation>
     </message>
     <message>
         <source>SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SVG</translation>
     </message>
     <message>
         <source>Eagle...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eagle</translation>
     </message>
     <message>
         <source>Etchable (PDF)...</source>
@@ -2669,11 +2669,11 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>as Image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">イメージとして</translation>
     </message>
     <message>
         <source>for Production</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">生産のための</translation>
     </message>
     <message>
         <source>loading %1</source>
@@ -2681,7 +2681,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Loading...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ローディング...</translation>
     </message>
     <message>
         <source>new sketch</source>
@@ -2705,15 +2705,15 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Do not autoroute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">オートルートにしない</translation>
     </message>
     <message>
         <source>When autorouting, do not rip up this trace wire, via, or jumper item</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ルーティング時にこの要素を無視する</translation>
     </message>
     <message>
         <source>Move to other side of the board</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">盤面の反対側に移動</translation>
     </message>
     <message>
         <source>Select all jumper item parts</source>
@@ -2733,7 +2733,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Order a PCB...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PCBを注文する...</translation>
     </message>
     <message>
         <source>Order a PCB created from your sketch--from fabulous Fritzing Fab</source>
@@ -2741,7 +2741,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Straighten Curve</source>
-        <translation type="unfinished"></translation>
+        <translation>カーブをまっすぐにする</translation>
     </message>
     <message>
         <source>Straighten the curve of the selected wire</source>
@@ -2758,7 +2758,8 @@ Please check all views for potential side-effects.</source>
     <message>
         <source>unable to find replacement for %1.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
@@ -2845,7 +2846,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Read-only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">リードオンリー</translation>
     </message>
     <message>
         <source>&amp;Routing</source>
@@ -2869,11 +2870,11 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Select All Wires</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">全てのワイヤーを選択</translation>
     </message>
     <message>
         <source>Select all wires</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">すべてのワイヤーを選択</translation>
     </message>
     <message>
         <source>Fill empty regions of the copper layer--fill will include all traces connected to the seeds</source>

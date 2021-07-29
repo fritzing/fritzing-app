@@ -2589,11 +2589,11 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Force Update Routing Status and Ratsnests</source>
-        <translation type="unfinished"></translation>
+        <translation>ラツネスト・ルーティングステータスの強制更新</translation>
     </message>
     <message>
         <source>Recalculate routing status and ratsnest wires (in case the auto-update isn&apos;t working correctly)</source>
-        <translation type="unfinished"></translation>
+        <translation>ルーティングステータスとラツネストワイヤーの再計算（自動更新が正しく機能していない場合）</translation>
     </message>
     <message>
         <source>Lock Part</source>

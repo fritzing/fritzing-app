@@ -234,7 +234,7 @@
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Keepout</source>
@@ -687,7 +687,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>Location:</source>
-        <translation>場所：</translation>
+        <translation>位置：</translation>
     </message>
     <message>
         <source>Vendor ID:</source>
@@ -723,7 +723,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>Location: %1</source>
-        <translation>場所：%1</translation>
+        <translation>位置：%1</translation>
     </message>
     <message>
         <source>Vendor Identifier: %1</source>
@@ -1078,11 +1078,11 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;br/&gt;ブレッドボードビュー&lt;b&gt;は&lt;/b&gt;&lt;i&gt;実際&lt;/i&gt;のブレッドボードプロトタイプのように見えるようになっています。&lt;br/&gt;&lt;br/&gt;まず、右上のパーツビンからパーツをドラッグします。その後、パーツを追加し、ブレッドボード上に配置して接続したり、コネクタをクリックしてワイヤをドラッグしたりします。このプロセスは物理的に物を配置する方法に真似ています。&lt;br/&gt;&lt;br/&gt;ブレッドボードビューでのスケッチ作成が終わったら、他のビューも試してみましょう。ウィンドウの上部にあるタブをクリックすると、ビューを切り替えることができます。ビューによって目的が異なるため、パーツの見方も異なります。</translation>
     </message>
     <message>
         <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;回路図ビューへようこそ&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;ブレッドボードビューよりも、より抽象的に部品や接続を見ることができます。ブレッドボードにあるのと同じ要素がありますが、外見が違います。この表記はエンジニアが使用する図式と近いです。&lt;br/&gt;&lt;br/&gt;部品間の配線を引くと、マウスで&amp;lt;Shift&amp;gt;キーを押しながらクリックすると、屈曲点を作ったり、接続を整えたりできます。回路図ビューでは、部品間の接続が正しく引いてるかどうかを確認することができます。また、作成した回路図を印刷して書類化することもできます。</translation>
     </message>
     <message>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
@@ -1097,7 +1097,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way, we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;カスタムされたパーツやビンは隠しアプリのデータフォルダから&lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;のfritzingドキュメントフォルダーへ移動されました。そうすると、そのパーツは検索や編集が楽になります。&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1177,18 +1177,18 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>OK and ground fill</source>
-        <translation type="unfinished">OKとグランドフィル</translation>
+        <translation>OK・グランドフィル</translation>
     </message>
     <message>
         <source>OK and copper fill</source>
-        <translation type="unfinished"></translation>
+        <translation>OK・銅フィル</translation>
     </message>
 </context>
 <context>
     <name>Hole</name>
     <message>
         <source>hole size</source>
-        <translation type="unfinished"></translation>
+        <translation>穴サイズ</translation>
     </message>
 </context>
 <context>
@@ -1199,7 +1199,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>connection</source>
-        <translation>コネクタ.</translation>
+        <translation>接続</translation>
     </message>
     <message numerus="yes">
         <source>connected to %n item(s)</source>
@@ -1237,71 +1237,71 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Change the part label here</source>
-        <translation type="unfinished"></translation>
+        <translation>このパーツラベル変更</translation>
     </message>
     <message>
         <source>Part breadboard view image</source>
-        <translation type="unfinished"></translation>
+        <translation>ブレッドボードビューパーツ図</translation>
     </message>
     <message>
         <source>Part schematic view image</source>
-        <translation type="unfinished"></translation>
+        <translation>回路図ビューパーツ図</translation>
     </message>
     <message>
         <source>Part pcb view image</source>
-        <translation type="unfinished"></translation>
+        <translation>PCBビューパーツ図</translation>
     </message>
     <message>
         <source>Part version number</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツヴァージョン番</translation>
     </message>
     <message>
         <source>Locked</source>
-        <translation type="unfinished"></translation>
+        <translation>ロックされました</translation>
     </message>
     <message>
         <source>Ratsnest wire</source>
-        <translation type="unfinished"></translation>
+        <translation>ラツネストワイヤー</translation>
     </message>
     <message>
         <source>Change the locked state of the part in this view. A locked part can&apos;t be moved.</source>
-        <translation type="unfinished"></translation>
+        <translation>このビューでパーツのロック状態を変更します。ロックされたパーツは移動できません。</translation>
     </message>
     <message>
         <source>Sticky</source>
-        <translation type="unfinished"></translation>
+        <translation>粘る</translation>
     </message>
     <message>
         <source>Change the &quot;sticky&quot; state of the part in this view. When a sticky part is moved, objects on top of it also move.</source>
-        <translation type="unfinished"></translation>
+        <translation>このビューでパーツの粘る状態を変更します。粘るパーツを移動すると、上にあるオブジェクトも動かされます。</translation>
     </message>
     <message>
         <source>v. %1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>v. %1 %2</translation>
     </message>
     <message>
         <source>obsolete</source>
-        <translation type="unfinished"></translation>
+        <translation>廃止</translation>
     </message>
     <message>
         <source>Placement</source>
-        <translation type="unfinished"></translation>
+        <translation>配置</translation>
     </message>
     <message>
         <source>pcb layer</source>
-        <translation type="unfinished"></translation>
+        <translation>PCB層</translation>
     </message>
     <message>
         <source>location</source>
-        <translation type="unfinished"></translation>
+        <translation>位置</translation>
     </message>
     <message>
         <source>rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>回転</translation>
     </message>
     <message>
         <source>degrees</source>
-        <translation type="unfinished"></translation>
+        <translation>角度</translation>
     </message>
 </context>
 <context>
@@ -1364,67 +1364,67 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>form</source>
-        <translation type="unfinished"></translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>model part problem</source>
-        <translation type="unfinished"></translation>
+        <translation>モデルパーツ問題</translation>
     </message>
     <message>
         <source>capacitance</source>
-        <translation type="unfinished"></translation>
+        <translation>容量</translation>
     </message>
     <message>
         <source>inductance</source>
-        <translation type="unfinished"></translation>
+        <translation>インダクタンス</translation>
     </message>
     <message>
         <source>current</source>
-        <translation type="unfinished"></translation>
+        <translation>電流</translation>
     </message>
     <message>
         <source>power</source>
-        <translation type="unfinished"></translation>
+        <translation>電力</translation>
     </message>
     <message>
         <source>part number</source>
-        <translation type="unfinished"></translation>
+        <translation>部品番</translation>
     </message>
     <message>
         <source>type</source>
-        <translation type="unfinished">タイプ</translation>
+        <translation>タイプ</translation>
     </message>
     <message>
         <source>model</source>
-        <translation type="unfinished"></translation>
+        <translation>モデル</translation>
     </message>
     <message>
         <source>pins</source>
-        <translation type="unfinished"></translation>
+        <translation>ピン</translation>
     </message>
     <message>
         <source>spacing</source>
-        <translation type="unfinished"></translation>
+        <translation>間隔</translation>
     </message>
     <message>
         <source>frequency</source>
-        <translation type="unfinished"></translation>
+        <translation>周波数</translation>
     </message>
     <message>
         <source>processor</source>
-        <translation type="unfinished"></translation>
+        <translation>プロセッサー</translation>
     </message>
     <message>
         <source>variant</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">変異体</translation>
     </message>
     <message>
         <source>layers</source>
-        <translation type="unfinished"></translation>
+        <translation>層</translation>
     </message>
     <message>
         <source>tolerance</source>
-        <translation type="unfinished"></translation>
+        <translation>許容範囲</translation>
     </message>
     <message>
         <source>descr</source>
@@ -1432,15 +1432,15 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>filename</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル名</translation>
     </message>
     <message>
         <source>title</source>
-        <translation type="unfinished"></translation>
+        <translation>題名</translation>
     </message>
     <message>
         <source>date</source>
-        <translation type="unfinished"></translation>
+        <translation>日付</translation>
     </message>
     <message>
         <source>rev</source>
@@ -1448,19 +1448,19 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>sheet</source>
-        <translation type="unfinished"></translation>
+        <translation>シート</translation>
     </message>
     <message>
         <source>project</source>
-        <translation type="unfinished"></translation>
+        <translation>プロジェクト</translation>
     </message>
     <message>
         <source>unable to create renderer for svg %1</source>
-        <translation type="unfinished"></translation>
+        <translation>svg %1のレンダリング作成できません</translation>
     </message>
     <message>
         <source>file for %1 %2 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>%1%2のファイルっがいません</translation>
     </message>
     <message>
         <source>banded</source>
@@ -1468,45 +1468,45 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>top</source>
-        <translation type="unfinished"></translation>
+        <translation>トップ</translation>
     </message>
     <message>
         <source>bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>ボトム</translation>
     </message>
     <message>
         <source>copper bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>底銅</translation>
     </message>
     <message>
         <source>copper top</source>
-        <translation type="unfinished"></translation>
+        <translation>上銅</translation>
     </message>
     <message>
         <source>silkscreen bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>低シルクスクリーン</translation>
     </message>
     <message>
         <source>silkscreen top</source>
-        <translation type="unfinished"></translation>
+        <translation>上シルクスクリーン</translation>
     </message>
 </context>
 <context>
     <name>KicadModuleDialog</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
     <name>LayerPalette</name>
     <message>
         <source>show all layers</source>
-        <translation type="unfinished"></translation>
+        <translation>全層表示</translation>
     </message>
 </context>
 <context>
@@ -1521,58 +1521,58 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>url:</source>
-        <translation type="unfinished"></translation>
+        <translation>url:</translation>
     </message>
     <message>
         <source>text:</source>
-        <translation type="unfinished"></translation>
+        <translation>テクスト：</translation>
     </message>
 </context>
 <context>
     <name>LogoItem</name>
     <message>
         <source>shape</source>
-        <translation type="unfinished">シェイプ</translation>
+        <translation>形状</translation>
     </message>
     <message>
         <source>due to a rendering error</source>
-        <translation type="unfinished"></translation>
+        <translation>レンダリングエラーでによる</translation>
     </message>
     <message>
         <source>because the svg is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>svgが空ので</translation>
     </message>
     <message>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
-        <translation type="unfinished"></translation>
+        <translation>xml の問題により: %1 line:%2 column:%3</translation>
     </message>
     <message>
         <source>because the file has no root element</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイルがルート要素がないため、</translation>
     </message>
     <message>
         <source>because the file has no &lt;svg&gt; element</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイルが&lt;svg&gt; 要素がないため、</translation>
     </message>
     <message>
         <source>for unknown reasons--possibly the image file is corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>原因不明--画像ファイルが壊れているのかもしれない</translation>
     </message>
     <message>
         <source>because this appears to be a SVG file exported from CorelDRAW without choosing the &apos;presentation attributes&apos; setting</source>
-        <translation type="unfinished"></translation>
+        <translation>これは、CorelDRAWから「プレゼンテーション属性」を選択せずのエクスポートされたSVG ファイルのようです</translation>
     </message>
     <message>
         <source>text</source>
-        <translation type="unfinished"></translation>
+        <translation>テクスト</translation>
     </message>
     <message>
         <source>Unable to display</source>
-        <translation type="unfinished"></translation>
+        <translation>表示できません</translation>
     </message>
     <message>
         <source>Unable to display image from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 の画像を表示できません</translation>
     </message>
 </context>
 <context>
@@ -1849,7 +1849,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Delete selection</source>
-        <translation>範囲を削除</translation>
+        <translation>選択を削除</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
@@ -2400,20 +2400,21 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <source>Select outdated parts</source>
-        <translation type="unfinished"></translation>
+        <translation>旧式のパーツを選択</translation>
     </message>
     <message>
         <source>Update selected parts</source>
-        <translation type="unfinished"></translation>
+        <translation>選択したパーツを更新</translation>
     </message>
     <message>
         <source>No outdated parts found.
 All your parts are up-to-date.</source>
-        <translation type="unfinished"></translation>
+        <translation>旧式パーツを見つかりません。
+すべてのパーツが更新されました。</translation>
     </message>
     <message>
         <source>Outdated parts</source>
-        <translation type="unfinished"></translation>
+        <translation>旧式パーツ</translation>
     </message>
     <message>
         <source>Successfully updated %1 part(s).
@@ -2422,87 +2423,87 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Update %1 part(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツ %1 更新</translation>
     </message>
     <message>
         <source>No exactly matching part found; Fritzing chose the closest match.</source>
-        <translation type="unfinished"></translation>
+        <translation>完全に一致するパーツが見つからず、Fritzingは最も近いものを選びました。</translation>
     </message>
     <message>
         <source>Shell launch %1</source>
-        <translation type="unfinished"></translation>
+        <translation>シェルの起動 %1</translation>
     </message>
     <message>
         <source>Launch %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>起動 %1...</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>すべて</translation>
     </message>
     <message>
         <source>throw test exception</source>
-        <translation type="unfinished"></translation>
+        <translation>例外テストを投げ</translation>
     </message>
     <message>
         <source>throw a fake exception to see what happens</source>
-        <translation type="unfinished"></translation>
+        <translation>偽例外を投げて様子を見る</translation>
     </message>
     <message>
         <source>Select All Jumpers</source>
-        <translation type="unfinished"></translation>
+        <translation>すべてのジャンパーを選択する</translation>
     </message>
     <message>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>新規</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>Tips, Tricks and Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>ヒント、コツ、ショートカット</translation>
     </message>
     <message>
         <source>Align to Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>グリッドに合わせる</translation>
     </message>
     <message>
         <source>Align items to grid when dragging</source>
-        <translation type="unfinished"></translation>
+        <translation>ドラッグ時アイテムをグリッドに合わせる</translation>
     </message>
     <message>
         <source>Open programming window</source>
-        <translation type="unfinished"></translation>
+        <translation>プログラミングウィンドウズを開く</translation>
     </message>
     <message>
         <source>Open microcontroller programming window</source>
-        <translation type="unfinished"></translation>
+        <translation>マイクロコントローラープログラミングウィンドウズを開く</translation>
     </message>
     <message>
         <source>Report a bug...</source>
-        <translation type="unfinished"></translation>
+        <translation>バッグを報告…</translation>
     </message>
     <message>
         <source>Enable debugging log</source>
-        <translation type="unfinished"></translation>
+        <translation>デバッグログを有効</translation>
     </message>
     <message>
         <source>Both Layers</source>
-        <translation type="unfinished"></translation>
+        <translation>両層</translation>
     </message>
     <message>
         <source>Bottom Layer</source>
-        <translation type="unfinished"></translation>
+        <translation>低層</translation>
     </message>
     <message>
         <source>Top Layer</source>
-        <translation type="unfinished"></translation>
+        <translation>上層</translation>
     </message>
     <message>
         <source>Backing up &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>バックアップ&apos;%1&apos;</translation>
     </message>
     <message>
         <source>Rotate current selection 45 degrees counter clockwise</source>
@@ -2510,81 +2511,81 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Rotate current selection 45 degrees clockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>現在に選択した項目は45度時計回り回転する</translation>
     </message>
     <message>
         <source>Actual (real world physical) size</source>
-        <translation type="unfinished"></translation>
+        <translation>実際の（原寸）サイズ</translation>
     </message>
     <message>
         <source>100% Size</source>
-        <translation type="unfinished"></translation>
+        <translation>サイズ100％</translation>
     </message>
     <message>
         <source>100% (pixel) size</source>
-        <translation type="unfinished"></translation>
+        <translation>100%(ピクセル)サイズ</translation>
     </message>
     <message>
         <source>Set both copper layers clickable</source>
-        <translation type="unfinished"></translation>
+        <translation>両方の銅層をクリック可に設定</translation>
     </message>
     <message>
         <source>Set copper top layer clickable</source>
-        <translation type="unfinished"></translation>
+        <translation>上銅層のをクリック可にする</translation>
     </message>
     <message>
         <source>Set copper bottom layer clickable</source>
-        <translation type="unfinished"></translation>
+        <translation>低銅層のをクリック可にする</translation>
     </message>
     <message>
         <source>Copper Top and Copper Bottom layers are both active</source>
-        <translation type="unfinished"></translation>
+        <translation>上銅層・低銅層は両方アクティブ</translation>
     </message>
     <message>
         <source>Copper Top layer is active</source>
-        <translation type="unfinished"></translation>
+        <translation>上銅層がアクティブ</translation>
     </message>
     <message>
         <source>Copper Bottom layer is active</source>
-        <translation type="unfinished"></translation>
+        <translation>下銅層がアクティブ</translation>
     </message>
     <message>
         <source>Autorouting Progress...</source>
-        <translation type="unfinished"></translation>
+        <translation>自動ルーティングの進行状況…</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; not found</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル &apos;%1&apos; が見つかりません</translation>
     </message>
     <message>
         <source>Paste in Place</source>
-        <translation type="unfinished"></translation>
+        <translation>プレイスで貼り付け</translation>
     </message>
     <message>
         <source>Paste clipboard contents in place</source>
-        <translation type="unfinished"></translation>
+        <translation>クリップボードの内容をプレイスで貼り付ける</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>削除</translation>
     </message>
     <message numerus="yes">
         <source>Routing completed using %n jumper part(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%ｎジャンパーパーツを使用してルーティング完了</numerusform>
         </translation>
     </message>
     <message>
         <source>Delete Ratsnest Line</source>
-        <translation type="unfinished"></translation>
+        <translation>ラツネスト線を削除</translation>
     </message>
     <message>
         <source>Delete Wire</source>
-        <translation type="unfinished"></translation>
+        <translation>ワイヤを削除</translation>
     </message>
     <message>
         <source>Move selected traces to the other side of the board (note: the &apos;first&apos; trace will be moved and the rest will follow to the same side)</source>
-        <translation type="unfinished"></translation>
+        <translation>選択したトレースを基板の反対側に移動する（注：「最初の」トレースが移動されると、残りのトレースは同じ側に追従する）</translation>
     </message>
     <message>
         <source>Force Update Routing Status and Ratsnests</source>
@@ -2684,11 +2685,11 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>new sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>新規スケッチ</translation>
     </message>
     <message>
         <source>BoM Text File (*.html)</source>
-        <translation type="unfinished"></translation>
+        <translation>BoMテクストファイル(*.html)</translation>
     </message>
     <message>
         <source>Extended Gerber (RS-274X)...</source>
@@ -2992,7 +2993,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Set the grid size for %1.</source>
@@ -3118,11 +3119,11 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Edit (new parts editor)</source>
-        <translation type="unfinished"></translation>
+        <translation>編集（新規パーツエディター）</translation>
     </message>
     <message>
         <source>Open the new parts editor on an existing part</source>
-        <translation type="unfinished"></translation>
+        <translation>新規パーツエディターを既存パーツでに開く</translation>
     </message>
     <message>
         <source>Show unrouted</source>
@@ -3162,7 +3163,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>&amp;Delete Wire</source>
-        <translation type="unfinished"></translation>
+        <translation>＆ワイヤを削除</translation>
     </message>
     <message>
         <source>Parts Editor Help</source>
@@ -3306,7 +3307,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Enter Text</source>
-        <translation type="unfinished"></translation>
+        <translation>テクスト入力</translation>
     </message>
     <message>
         <source>View from Above</source>
@@ -3334,7 +3335,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Delete Minus</source>
-        <translation type="unfinished"></translation>
+        <translation>マイナスを削除</translation>
     </message>
     <message>
         <source>Delete selection without attached wires</source>
@@ -4213,7 +4214,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Fritzing (New) Parts Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing (新規) パーツエディター</translation>
     </message>
     <message>
         <source>Show Metadata</source>
@@ -4395,7 +4396,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Save as new part</source>
-        <translation type="unfinished"></translation>
+        <translation>新規パーツで保存</translation>
     </message>
     <message>
         <source>Make a copy of the part and save it in the &apos;My Parts&apos; Bin</source>
@@ -4753,7 +4754,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Edit label text</source>
-        <translation>ラベルを編集</translation>
+        <translation>ラベルテクストを編集</translation>
     </message>
     <message>
         <source>Display Values</source>
@@ -5011,7 +5012,7 @@ Note: this warning will not be repeated during this session.</source>
     </message>
     <message>
         <source>Set new size</source>
-        <translation type="unfinished"></translation>
+        <translation>新サイズを設定</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -5171,7 +5172,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>位置：</translation>
     </message>
     <message>
         <source>...</source>
@@ -5202,7 +5203,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>新規</translation>
     </message>
     <message>
         <source>Save</source>
@@ -5309,7 +5310,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Select all text</source>
-        <translation type="unfinished"></translation>
+        <translation>すべてのテクスト選択</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
@@ -5349,7 +5350,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>&amp;New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>＆新規タブ</translation>
     </message>
     <message>
         <source>Create a new program tab</source>
@@ -6116,7 +6117,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>テクスト</translation>
     </message>
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
@@ -6815,7 +6816,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Delete ratsnest</source>
-        <translation type="unfinished"></translation>
+        <translation>ラツネストを削除</translation>
     </message>
     <message>
         <source>Fritzing</source>
@@ -6843,7 +6844,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Note text change</source>
-        <translation type="unfinished"></translation>
+        <translation>ノートテクスト変更</translation>
     </message>
     <message>
         <source>Unrouted connections are highlighted in yellow.</source>
@@ -7462,7 +7463,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>New files:</source>
-        <translation type="unfinished"></translation>
+        <translation>新規ファイル：</translation>
     </message>
     <message>
         <source>Modified Files:</source>
@@ -7478,7 +7479,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -7489,7 +7490,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>New Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>新スケッチ</translation>
     </message>
     <message>
         <source>Open Sketch</source>

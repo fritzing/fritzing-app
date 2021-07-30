@@ -129,7 +129,7 @@ bool SvgFileSplitter::splitString(QString & contents, const QString & elementID)
 		}
 		elementText = QString("<g id='%1' transform='%2'>%3</g>").arg(
 			elementID,
-			QString(superTransforms[superTransforms.count() - 1]),
+			superTransforms[superTransforms.count() - 1],
 			elementText
 		);
 	}

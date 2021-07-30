@@ -596,7 +596,6 @@ FApplication::~FApplication(void)
 	FirstTimeHelpDialog::cleanup();
 	TranslatorListModel::cleanup();
 	FolderUtils::cleanup();
-	SearchLineEdit::cleanup();
 	RatsnestColors::cleanup();
 	HtmlInfoView::cleanup();
 	SvgIconWidget::cleanup();

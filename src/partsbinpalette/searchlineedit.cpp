@@ -25,53 +25,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QImage>
 #include <QPixmap>
 #include <memory>
-std::unique_ptr<QPixmap> SearchFieldPixmap;
 
-SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent), m_decoy(true)
+
+SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent)
 {
-	SearchFieldPixmap.reset();
 }
 
-
-void SearchLineEdit::cleanup() {
-	SearchFieldPixmap.reset();
-}
-
-void SearchLineEdit::mousePressEvent(QMouseEvent * event) {
-	QLineEdit::mousePressEvent(event);
-	emit clicked();
-}
-
-void SearchLineEdit::enterEvent(QEvent * event) {
-	QLineEdit::enterEvent(event);
-	if (m_decoy) {
-		setColors(QColor(0xc8, 0xc8, 0xc8), QColor(0x57, 0x57, 0x57));
-	}
-}
-
-void SearchLineEdit::leaveEvent(QEvent * event) {
-	QLineEdit::leaveEvent(event);
-	if (m_decoy) {
-		setColors(QColor(0xb3, 0xb3, 0xb3), QColor(0x57, 0x57, 0x57));
-	}
-}
-
-void SearchLineEdit::setColors(const QColor & base, const QColor & text) {
-	setStyleSheet(QString("background: rgb(%1,%2,%3); color: rgb(%4,%5,%6);")
-	              .arg(base.red()).arg(base.green()).arg(base.blue())
-	              .arg(text.red()).arg(text.green()).arg(text.blue()) );
-}
-
-void SearchLineEdit::setDecoy(bool d) {
-	m_decoy = d;
-	if (m_decoy) {
-		setReadOnly(true);
-		setColors(QColor(0xb3, 0xb3, 0xb3), QColor(0x57, 0x57, 0x57));
-	}
-	else {
-		setReadOnly(false);
-		setColors(QColor(0xfc, 0xfc, 0xfc), QColor(0x00, 0x00, 0x00));
-	}
-	setCursor(Qt::IBeamCursor);
-}
 

@@ -31,23 +31,6 @@ public:
 	SearchLineEdit(QWidget * parent = nullptr);
 	~SearchLineEdit() = default;
 
-	void setDecoy(bool value);
-	constexpr bool decoy() const noexcept { return m_decoy; }
-
-public:
-	static void cleanup();
-
-signals:
-	void clicked();
-
-protected:
-	void mousePressEvent(QMouseEvent *);
-	void enterEvent( QEvent *);
-	void leaveEvent( QEvent *);
-	void setColors(const QColor & base, const QColor & text);
-
-protected:
-	bool m_decoy;
 };
 
 

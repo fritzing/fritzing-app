@@ -187,6 +187,7 @@ void PartsBinPaletteWidget::setupHeader()
 	m_searchLineEdit->setClearButtonEnabled(true);
 //	m_searchLineEdit->addAction(QIcon(":/resources/images/icons/searchField.png"), QLineEdit::TrailingPosition);
 	m_searchLineEdit->setPlaceholderText(tr("Search..."));
+	m_searchLineEdit->setCursor(Qt::IBeamCursor);
 
 	m_searchLineEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 	connect(m_searchLineEdit, SIGNAL(returnPressed()), this, SLOT(search()));
@@ -820,10 +821,6 @@ void PartsBinPaletteWidget::focusSearch() {
 }
 
 void PartsBinPaletteWidget::focusSearchAfter() {
-	//DebugDialog::debug("focus search after");
-	if (m_searchLineEdit->decoy()) {
-		m_searchLineEdit->setDecoy(false);
-	}
 	m_searchLineEdit->setFocus(Qt::OtherFocusReason);
 }
 

@@ -22,7 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define SEARCHLINEEDIT_H
 
 #include <QLineEdit>
-#include <QMouseEvent>
+#include <QTimer>
 
 class SearchLineEdit : public QLineEdit {
 	Q_OBJECT
@@ -30,6 +30,14 @@ class SearchLineEdit : public QLineEdit {
 public:
 	SearchLineEdit(QWidget * parent = nullptr);
 	~SearchLineEdit() = default;
+
+
+signals:
+	void updateSearch();
+
+private:
+	QTimer mTimer;
+
 
 };
 

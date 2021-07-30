@@ -185,12 +185,12 @@ void PartsBinPaletteWidget::setupHeader()
 
 	m_searchLineEdit = new SearchLineEdit(this);
 	m_searchLineEdit->setClearButtonEnabled(true);
-//	m_searchLineEdit->addAction(QIcon(":/resources/images/icons/searchField.png"), QLineEdit::TrailingPosition);
 	m_searchLineEdit->setPlaceholderText(tr("Search..."));
 	m_searchLineEdit->setCursor(Qt::IBeamCursor);
 
 	m_searchLineEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 	connect(m_searchLineEdit, SIGNAL(returnPressed()), this, SLOT(search()));
+	connect(m_searchLineEdit, SIGNAL(updateSearch()), this, SLOT(search()));
 
 	m_searchStackedWidget = new QStackedWidget(this);
 	m_searchStackedWidget->setObjectName("searchStackedWidget");

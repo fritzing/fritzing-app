@@ -109,7 +109,7 @@ public slots:
 protected slots:
 	void undoStackCleanChanged(bool isClean);
 	void addSketchPartToMe();
-	void search();
+	void search(const QString& searchTerm);
 	void focusSearchAfter();
 
 signals:

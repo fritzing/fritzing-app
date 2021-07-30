@@ -189,8 +189,7 @@ void PartsBinPaletteWidget::setupHeader()
 	m_searchLineEdit->setCursor(Qt::IBeamCursor);
 
 	m_searchLineEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-	connect(m_searchLineEdit, SIGNAL(returnPressed()), this, SLOT(search()));
-	connect(m_searchLineEdit, SIGNAL(updateSearch()), this, SLOT(search()));
+	connect(m_searchLineEdit, &SearchLineEdit::updateSearch, this, &PartsBinPaletteWidget::search);
 
 	m_searchStackedWidget = new QStackedWidget(this);
 	m_searchStackedWidget->setObjectName("searchStackedWidget");
@@ -783,11 +782,7 @@ void PartsBinPaletteWidget::setFilename(const QString &filename) {
 	m_listView->setAcceptDrops(acceptIt);
 }
 
-void PartsBinPaletteWidget::search() {
-	SearchLineEdit * edit = qobject_cast<SearchLineEdit *>(sender());
-	if (edit == NULL) return;
-
-	QString searchText = edit->text();
+void PartsBinPaletteWidget::search(const QString& searchText) {
 	if (searchText.isEmpty()) return;
 
 	ModelPartSharedRoot * root = m_model->rootModelPartShared();

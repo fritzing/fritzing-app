@@ -19,13 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "searchlineedit.h"
-#include "../debugdialog.h"
-
-#include <QPainter>
-#include <QImage>
-#include <QPixmap>
-#include <memory>
-
 
 SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent)
 {
@@ -33,9 +26,16 @@ SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent)
 	mTimer.setInterval(500);
 
 	connect(&mTimer, &QTimer::timeout,
-		   this, &SearchLineEdit::updateSearch);
+			this, [=]() {
+		emit updateSearch(this->text());
+	});
+
+	connect(this, &QLineEdit::returnPressed,
+			this, [=]() {
+		mTimer.stop();
+		emit updateSearch(this->text());
+	});
+
 	connect(this, &QLineEdit::textEdited,
 		   &mTimer, QOverload<>::of(&QTimer::start));
-	connect(this, &QLineEdit::returnPressed,
-		   &mTimer, QOverload<>::of(&QTimer::stop));
 }

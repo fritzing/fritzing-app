@@ -33,7 +33,7 @@ public:
 
 
 signals:
-	void updateSearch();
+	void updateSearch(const QString& searchTerm);
 
 private:
 	QTimer mTimer;

@@ -41,7 +41,6 @@ signals:
 	void clicked();
 
 protected:
-	void paintEvent(QPaintEvent *);
 	void mousePressEvent(QMouseEvent *);
 	void enterEvent( QEvent *);
 	void leaveEvent( QEvent *);

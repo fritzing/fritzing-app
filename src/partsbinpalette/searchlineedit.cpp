@@ -42,22 +42,6 @@ void SearchLineEdit::mousePressEvent(QMouseEvent * event) {
 	emit clicked();
 }
 
-void SearchLineEdit::paintEvent(QPaintEvent * event) {
-	QLineEdit::paintEvent(event);
-	if (!SearchFieldPixmap) {
-		SearchFieldPixmap.reset(new QPixmap(":/resources/images/icons/searchField.png"));
-	}
-	if (SearchFieldPixmap == NULL) return;
-	if (SearchFieldPixmap->isNull()) return;
-
-	QPainter painter(this);
-	QSize sz = size();
-	int x = sz.width() - SearchFieldPixmap->width() - 2;
-	int y = (sz.height() - SearchFieldPixmap->height()) / 2;
-	painter.drawPixmap(x, y, SearchFieldPixmap->width(), SearchFieldPixmap->height(), *SearchFieldPixmap);
-
-}
-
 void SearchLineEdit::enterEvent(QEvent * event) {
 	QLineEdit::enterEvent(event);
 	if (m_decoy) {

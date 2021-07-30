@@ -184,6 +184,10 @@ void PartsBinPaletteWidget::setupHeader()
 	m_binLabel->setWordWrap(false);
 
 	m_searchLineEdit = new SearchLineEdit(this);
+//	m_searchLineEdit->setClearButtonEnabled(true);
+	m_searchLineEdit->addAction(QIcon(":/resources/images/icons/searchField.png"), QLineEdit::TrailingPosition);
+	m_searchLineEdit->setPlaceholderText(tr("Search..."));
+
 	m_searchLineEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 	connect(m_searchLineEdit, SIGNAL(returnPressed()), this, SLOT(search()));
 

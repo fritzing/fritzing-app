@@ -675,7 +675,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>Description:</source>
-        <translation>記述：</translation>
+        <translation>詳細：</translation>
     </message>
     <message>
         <source>Manufacturer:</source>
@@ -711,7 +711,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>Description: %1</source>
-        <translation>記述：%1</translation>
+        <translation>詳細：%1</translation>
     </message>
     <message>
         <source>Manufacturer: %1</source>
@@ -2242,15 +2242,15 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <source>Add Bendpoint</source>
-        <translation>折り曲げる点の追加</translation>
+        <translation>ベンドポイントの追加</translation>
     </message>
     <message>
         <source>Add a bendpoint to the selected wire</source>
-        <translation>選択したワイヤに折り曲げるポイントを追加します</translation>
+        <translation>選択したワイヤにベンドポイントを追加します</translation>
     </message>
     <message>
         <source>Remove Bendpoint</source>
-        <translation>折り曲げた点を削除します</translation>
+        <translation>ベンドポイントを削除します</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to export to Gerber.</source>
@@ -3732,8 +3732,8 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message numerus="yes">
         <source>Unable to find the following %n part(s):</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>次の%nパーツの検索できません：</numerusform>
         </translation>
     </message>
     <message>
@@ -3979,7 +3979,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Change description</source>
-        <translation>記述を変更</translation>
+        <translation>詳細を変更</translation>
     </message>
     <message>
         <source>Change connector %1</source>
@@ -4119,7 +4119,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>The open sketches </source>
-        <translation type="unfinished"></translation>
+        <translation>スケッチを開く </translation>
     </message>
     <message>
         <source>&apos;%1&apos;, </source>
@@ -4171,7 +4171,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Your changes will be lost if you don&apos;t save them.</source>
-        <translation type="unfinished"></translation>
+        <translation>保存しないと変更内容が失われてしまいます。</translation>
     </message>
     <message>
         <source>untitled part</source>
@@ -4195,7 +4195,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Duplicate &apos;variant&apos; property not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation>バリアントのプロパティの重複は禁止</translation>
     </message>
     <message>
         <source>Close without saving?</source>
@@ -4247,11 +4247,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Must be unique</source>
-        <translation type="unfinished"></translation>
+        <translation>ユニークが必</translation>
     </message>
     <message>
         <source>Variant &apos;%1&apos; is in use. The variant name must be unique.</source>
-        <translation type="unfinished"></translation>
+        <translation>バリアント &apos;%1&apos; が使用されています。バリアント名はユニークではなければなりません。</translation>
     </message>
     <message>
         <source>Duplicate problem</source>
@@ -4267,7 +4267,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Please re-export the SVG file using that setting, and try loading again.</source>
-        <translation type="unfinished"></translation>
+        <translation>その設定でSVGファイルを再エクスポートして、再度ロードを実行てください。</translation>
     </message>
     <message>
         <source>Fonts</source>
@@ -4279,15 +4279,15 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Remove internal connection from &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; からの内部接続を削除します</translation>
     </message>
     <message>
         <source>Internal connections are very messed up.</source>
-        <translation type="unfinished"></translation>
+        <translation>内部の接続は非常に乱れています。</translation>
     </message>
     <message>
         <source>Add internal connection from &apos;%1&apos; to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>1&apos; から &apos;%2&apos; への内部接続を追加します</translation>
     </message>
     <message>
         <source>The &apos;family&apos; property can not be blank.</source>
@@ -4299,33 +4299,35 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>A duplicate &apos;variant&apos; property is not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation>バリアントのプロパティの重複は禁止</translation>
     </message>
     <message>
         <source>This part can not be saved as-is:
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>このパーツをままでは保存できません
+
+</translation>
     </message>
     <message>
         <source>Do you want to keep working or close without saving?</source>
-        <translation type="unfinished"></translation>
+        <translation>作業続くか保存しないまま閉じますか？</translation>
     </message>
     <message numerus="yes">
         <source>This part has %n unassigned connectors </source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>このパーツは未割り付けコネクターがあります。 </numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>across %n views. </source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%nのビューに渡る </numerusform>
         </translation>
     </message>
     <message>
         <source>Until all connectors are assigned to SVG elements, the part will not work correctly. </source>
-        <translation type="unfinished"></translation>
+        <translation>すべてのコネクタがSVG要素に割り当てられるまでは、パーツは正しく作動しません。 </translation>
     </message>
     <message>
         <source>Layers</source>
@@ -4345,7 +4347,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Reuse the schematic image in this view</source>
-        <translation type="unfinished"></translation>
+        <translation>このビューで回路図のイメージを再利用</translation>
     </message>
     <message>
         <source>Reuse PCB image</source>
@@ -4361,7 +4363,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>The part will only be visible in this view and icon view</source>
-        <translation type="unfinished"></translation>
+        <translation>このパートは当ビューとアイコンビューでのみ表示されます</translation>
     </message>
     <message>
         <source>This version of the new Parts Editor can not deal with separate copper0 and copper1 layers in &apos;%1&apos;. </source>
@@ -4373,7 +4375,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished">エクスポート(&amp;E)</translation>
+        <translation>＆エクスポート</translation>
     </message>
     <message>
         <source>Change all connectors to %1</source>
@@ -4397,7 +4399,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Load image for view...</source>
-        <translation type="unfinished"></translation>
+        <translation>表示する画像をロード...</translation>
     </message>
     <message>
         <source>Open a file to use as the image for this view of the part.</source>
@@ -4409,15 +4411,15 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Make a copy of the part and save it in the &apos;My Parts&apos; Bin</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツのコピーを作成して「マイパーツ」のビンに保存します</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished">編集(&amp;E)</translation>
+        <translation>&amp;編集</translation>
     </message>
     <message>
         <source>This part has bendable legs. </source>
-        <translation type="unfinished"></translation>
+        <translation>このパーツは曲げる端子があります。 </translation>
     </message>
     <message>
         <source>This version of the Parts Editor does not yet support editing bendable legs, and the legs may not be displayed correctly in breadboard view . </source>
@@ -4431,15 +4433,17 @@ Go ahead and save?</source>
         <source>You can safely make changes to Schematic or PCB view.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>回路図やPCBビューでの変更は無事に行うことがます。
+
+</translation>
     </message>
     <message>
         <source>This warning will not be repeated in this session of Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>この警告は今回のFritzingのセッションでは繰り返されません</translation>
     </message>
     <message>
         <source>Unable to load &apos;%1&apos;. Please close the parts editor without saving and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; をロードできません。保存せずにパーツエディターを閉じて、もう一度試してください。</translation>
     </message>
     <message>
         <source>Unable to load image file &apos;%1&apos;</source>
@@ -4447,7 +4451,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Inspector</source>
-        <translation type="unfinished">インスペクター</translation>
+        <translation>インスペクター</translation>
     </message>
     <message>
         <source>Unable to load fzp from %1</source>
@@ -4455,7 +4459,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Unable to create new connector--you may have to start over.</source>
-        <translation type="unfinished"></translation>
+        <translation>新規コネクターを作成できません--最初からやり直す必要があります。</translation>
     </message>
     <message>
         <source>Filename prefix</source>
@@ -4467,7 +4471,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Convert pre-0.8.6 schematic image to new 0.1 inch standard</source>
-        <translation type="unfinished"></translation>
+        <translation>前0.8.6の回路図画像を新0.1インチ標準に変換する</translation>
     </message>
     <message>
         <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
@@ -4486,7 +4490,7 @@ Go ahead and save?</source>
     <name>PEMetadataView</name>
     <message>
         <source>This is where you edit the metadata for the part ...</source>
-        <translation type="unfinished"></translation>
+        <translation>パートのメタデータはここで編集する…</translation>
     </message>
     <message>
         <source>Set the part&apos;s title</source>
@@ -4514,11 +4518,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Set the part&apos;s description--you can use simple html (as defined by Qt&apos;s Rich Text)</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツ説明を設定--簡単なHTMLを使用できます（Qtのリッチテキストによって定義されて）</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished">詳細</translation>
+        <translation>詳細</translation>
     </message>
     <message>
         <source>Set the default part label prefix</source>
@@ -4526,7 +4530,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">ラベル</translation>
+        <translation>ラベル</translation>
     </message>
     <message>
         <source>Set the part&apos;s family--what other parts is this part related to</source>
@@ -4640,15 +4644,15 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Sets the connector&apos;s terminal point to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>コネクタのターミナルポイントを %1 に設定。</translation>
     </message>
     <message>
         <source>Modifies the x-coordinate of the terminal point</source>
-        <translation type="unfinished"></translation>
+        <translation>X-座標のターミナルポイントを変更</translation>
     </message>
     <message>
         <source>Modifies the y-coordinate of the terminal point</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-座標のターミナルポイントを変更</translation>
     </message>
     <message>
         <source>Dragging disabled</source>
@@ -4664,7 +4668,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Connector List (a checkmark means the graphic was selected)</source>
-        <translation type="unfinished"></translation>
+        <translation>コネクターリスト（選択された画像はチェックマークがついてる）</translation>
     </message>
     <message>
         <source>Select graphic</source>
@@ -4718,15 +4722,15 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Unable to proceed; unable to find top level view.</source>
-        <translation type="unfinished"></translation>
+        <translation>上面ビューを見つからないため実行できません。</translation>
     </message>
     <message>
         <source>Unable to proceed; part connectors do no have standard IDs.</source>
-        <translation type="unfinished"></translation>
+        <translation>コネクターパーツが標準IDがないため実行できません。</translation>
     </message>
     <message>
         <source>Label mismatch.  Nothing was saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ラベルが不一致です。  保存されていません。</translation>
     </message>
     <message>
         <source>hole size</source>
@@ -4865,7 +4869,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate the label by 135 degrees counter clockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>ラベルを135度の反時計回りに回転</translation>
     </message>
     <message>
         <source>Rotate the label by 45 degrees counter clockwise</source>
@@ -5038,7 +5042,7 @@ Note: this warning will not be repeated during this session.</source>
     </message>
     <message>
         <source>&lt;p&gt;Click on a label next to a pin number to rename that pin.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;ピン名を変更するにはピン番号の横にあるラベルをクリックする。</translation>
     </message>
     <message>
         <source>You can use the tab key to move through the labels in order.&lt;/p&gt;</source>
@@ -5151,11 +5155,11 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Curvy vs. straight wires</source>
-        <translation type="unfinished"></translation>
+        <translation>曲るvs直線</translation>
     </message>
     <message>
         <source>Clear Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>設定をクリア</translation>
     </message>
     <message>
         <source>When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?</source>
@@ -5167,7 +5171,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Curvy wires and legs</source>
-        <translation type="unfinished"></translation>
+        <translation>曲るワイヤと端子</translation>
     </message>
     <message>
         <source>Code View</source>
@@ -5191,11 +5195,11 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>You need to have &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (version %3 or newer) installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt;（バージョン%3以降）のインストールが必要。</translation>
     </message>
     <message>
         <source>Select a programmer (executable) for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 のプログラマ（実行可）を選択します</translation>
     </message>
     <message>
         <source>%1</source>
@@ -5226,7 +5230,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
-        <translation type="unfinished"></translation>
+        <translation>スケッチから&quot;%1 &quot;を削除しますか？</translation>
     </message>
     <message>
         <source>Code (*.%1)</source>
@@ -5262,11 +5266,11 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
-        <translation type="unfinished"></translation>
+        <translation>指定された %1 のアップローダがありません。プレファレンス＞コードビューで設定してください。</translation>
     </message>
     <message>
         <source>Uploader configured, but not found at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>アップローダが設定されていましたが、%1 で見つかりません</translation>
     </message>
     <message>
         <source>Upload finished.</source>
@@ -5274,7 +5278,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Upload failed with exit code %1, %2</source>
-        <translation type="unfinished"></translation>
+        <translation>終了コード %1, %2 でアップロードに失敗しました</translation>
     </message>
 </context>
 <context>
@@ -5325,11 +5329,11 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル &apos;%1&apos; は .fzz ファイルから引き戻されましたが、ローカルコピーは見つかりませんでした。</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; save a local copy to work with an external editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル &apos;%1&apos; は .fzz ファイルから引き戻されました；ローカルコピーは外部エディターで保存。</translation>
     </message>
     <message>
         <source>&amp;Code</source>
@@ -5413,7 +5417,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Remove the current program tab from the sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のプログラムタブはスケッチから削除する</translation>
     </message>
     <message>
         <source>Platform</source>
@@ -5449,7 +5453,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Upload the current program onto a microcontroller</source>
-        <translation type="unfinished"></translation>
+        <translation>現プログラムはマイクロコントローラーにアップロード</translation>
     </message>
     <message>
         <source>%1%2</source>
@@ -5689,7 +5693,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Select outdated parts</source>
-        <translation type="unfinished"></translation>
+        <translation>旧式パーツを選択</translation>
     </message>
     <message>
         <source>files</source>
@@ -5697,7 +5701,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>unable to open %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1が開けません</translation>
     </message>
     <message>
         <source>unable to parse %1</source>
@@ -5705,7 +5709,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>parse failure in %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 で解析が失敗</translation>
     </message>
     <message>
         <source>Sorry, Fritzing can&apos;t yet handle both pins and pads together (in %1)</source>
@@ -5713,11 +5717,11 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>bad pin argument count</source>
-        <translation type="unfinished"></translation>
+        <translation>不正なピン引数カウント</translation>
     </message>
     <message>
         <source>bad pad argument count</source>
-        <translation type="unfinished"></translation>
+        <translation>不正なパッド引数カウント</translation>
     </message>
     <message>
         <source>footprint %1 not found in %2</source>
@@ -5725,75 +5729,75 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>unexpected end of file in footprint %1 in file %2</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル %2 のフットプリント %1 での予想外のファイル末尾</translation>
     </message>
     <message>
         <source>unexpected format (1) in %1 from %2</source>
-        <translation type="unfinished"></translation>
+        <translation>2 から %1 の予想外フォーマット (1)</translation>
     </message>
     <message>
         <source>unexpected end of file</source>
-        <translation type="unfinished"></translation>
+        <translation>予想外のファイル末尾</translation>
     </message>
     <message>
         <source>pad missing drill</source>
-        <translation type="unfinished"></translation>
+        <translation>無ドリルパッド</translation>
     </message>
     <message>
         <source>pad missing attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>無属性パッド</translation>
     </message>
     <message>
         <source>pad missing position</source>
-        <translation type="unfinished"></translation>
+        <translation>無位置パッド</translation>
     </message>
     <message>
         <source>pad missing shape</source>
-        <translation type="unfinished"></translation>
+        <translation>無形状パッド</translation>
     </message>
     <message>
         <source>position missing params</source>
-        <translation type="unfinished"></translation>
+        <translation>パラムがない位置</translation>
     </message>
     <message>
         <source>drill missing params</source>
-        <translation type="unfinished"></translation>
+        <translation>パラムが無いドリル</translation>
     </message>
     <message>
         <source>drill offset not implemented</source>
-        <translation type="unfinished"></translation>
+        <translation>ドリルオフセットが反映されてない</translation>
     </message>
     <message>
         <source>drill missing ellipse params</source>
-        <translation type="unfinished"></translation>
+        <translation>楕円パラムが無いドリル</translation>
     </message>
     <message>
         <source>attributes missing params</source>
-        <translation type="unfinished"></translation>
+        <translation>パラムが無い属性</translation>
     </message>
     <message>
         <source>Sorry, can&apos;t handle pad type %1</source>
-        <translation type="unfinished"></translation>
+        <translation>パッドタイプ %1 を処理できません</translation>
     </message>
     <message>
         <source>pad shape missing params</source>
-        <translation type="unfinished"></translation>
+        <translation>パラムが無いパッド形状</translation>
     </message>
     <message>
         <source>shape delta not implemented</source>
-        <translation type="unfinished"></translation>
+        <translation>形状デルタが反映されてない</translation>
     </message>
     <message>
         <source>trapezoidal pads not implemented</source>
-        <translation type="unfinished"></translation>
+        <translation>台形パッドが反映されてない</translation>
     </message>
     <message>
         <source>unable to handle pad shape %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1のパッド形状が処理できません</translation>
     </message>
     <message>
         <source>failure in svg conversion 1: %1 %2 %3</source>
-        <translation type="unfinished"></translation>
+        <translation>svg 変換が失敗 1: %1 %2 %3</translation>
     </message>
     <message>
         <source>failure in svg conversion 2: %1 %2 %3</source>
@@ -5805,135 +5809,135 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>File %1 already exists: it won&apos;t be overwritten</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル %1 は既に存在しています: 上書きされません</translation>
     </message>
     <message>
         <source>Silkscreen Top</source>
-        <translation type="unfinished"></translation>
+        <translation>上面シルクスクリーン</translation>
     </message>
     <message>
         <source>Silkscreen Top (Part Labels)</source>
-        <translation type="unfinished"></translation>
+        <translation>上面シルクスクリーン（パートラベル）</translation>
     </message>
     <message>
         <source>Copper Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>底面銅</translation>
     </message>
     <message>
         <source>Copper Bottom Trace</source>
-        <translation type="unfinished"></translation>
+        <translation>低面銅のトレース</translation>
     </message>
     <message>
         <source>Copper Top</source>
-        <translation type="unfinished"></translation>
+        <translation>上面銅</translation>
     </message>
     <message>
         <source>Copper Top Trace</source>
-        <translation type="unfinished"></translation>
+        <translation>上面銅のトレース</translation>
     </message>
     <message>
         <source>Silkscreen Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>低面シルクスクリーン</translation>
     </message>
     <message>
         <source>Silkscreen Bottom (Part Labels)</source>
-        <translation type="unfinished"></translation>
+        <translation>底面シルクスクリーン（パートラベル）</translation>
     </message>
     <message>
         <source>Sorry, Fritzing can&apos;t yet handle both pins and pads together (in %1 in %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>申し訳ありません、Fritzingはまだピンとパッドの両方一緒に処理できません（%1で %2で）</translation>
     </message>
     <message>
         <source>bad layer mask parameter</source>
-        <translation type="unfinished"></translation>
+        <translation>異常レイヤーマスクのパラメータ</translation>
     </message>
     <message>
         <source>non-circular holes not implemented</source>
-        <translation type="unfinished"></translation>
+        <translation>非円形の穴が反映されていない</translation>
     </message>
     <message>
         <source>non-copper holes not implemented</source>
-        <translation type="unfinished"></translation>
+        <translation>非銅穴が反映されてない</translation>
     </message>
     <message>
         <source>Unable to parse copper: %1 %2 %3</source>
-        <translation type="unfinished"></translation>
+        <translation>銅が解析できません: %1 %2 %3</translation>
     </message>
     <message>
         <source>Select %1</source>
-        <translation type="unfinished">%1を選択</translation>
+        <translation>%1を選択</translation>
     </message>
     <message>
         <source>pad shape size is invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>パッドの形状サイズが無効</translation>
     </message>
     <message>
         <source>bad schematic definition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>異常回路図の定義 %1</translation>
     </message>
     <message>
         <source>schematic part %1 not found in %2</source>
-        <translation type="unfinished"></translation>
+        <translation>回路図のパート %1 が %2 で見つかりません</translation>
     </message>
     <message>
         <source>schematic %1 unexpectedly ends (1) in %2</source>
-        <translation type="unfinished"></translation>
+        <translation>回路図 %1 は %2 での予想外の終了（1）</translation>
     </message>
     <message>
         <source>schematic %1 unexpectedly ends (2) in %2</source>
-        <translation type="unfinished"></translation>
+        <translation>回路図 %1 は %2 での予想外の終了（2）</translation>
     </message>
     <message>
         <source>schematic %1 unexpectedly ends (3) in %2</source>
-        <translation type="unfinished"></translation>
+        <translation>回路図 %1 は %2 での予想外の終了（3）</translation>
     </message>
     <message>
         <source>Part Image</source>
-        <translation type="unfinished"></translation>
+        <translation>パート図</translation>
     </message>
     <message>
         <source>Error reading file %1: %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル%1: %2 の読み取りでエラー。</translation>
     </message>
     <message>
         <source>Select locked parts</source>
-        <translation type="unfinished"></translation>
+        <translation>ロックされたパーツを選択</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>基本</translation>
     </message>
     <message>
         <source>Input</source>
-        <translation type="unfinished"></translation>
+        <translation>入力</translation>
     </message>
     <message>
         <source>Output</source>
-        <translation type="unfinished"></translation>
+        <translation>出力</translation>
     </message>
     <message>
         <source>ICs</source>
-        <translation type="unfinished"></translation>
+        <translation>IC</translation>
     </message>
     <message>
         <source>Power</source>
-        <translation type="unfinished"></translation>
+        <translation>電力</translation>
     </message>
     <message>
         <source>Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>接続</translation>
     </message>
     <message>
         <source>Microcontroller</source>
-        <translation type="unfinished"></translation>
+        <translation>マイクロコントローラー</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>ツール</translation>
     </message>
     <message>
         <source>Frame</source>
-        <translation type="unfinished"></translation>
+        <translation>枠</translation>
     </message>
     <message>
         <source>%1 %2,%3 %4</source>
@@ -5941,82 +5945,85 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Change leg of %1,%2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1,%2 の端子を変更</translation>
     </message>
     <message>
         <source>outline is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>概形は空</translation>
     </message>
     <message>
         <source>Copper Fill Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>底面銅フィル</translation>
     </message>
     <message>
         <source>Copper Fill Top</source>
-        <translation type="unfinished"></translation>
+        <translation>上面銅フィル</translation>
     </message>
     <message>
         <source>Shields</source>
-        <translation type="unfinished"></translation>
+        <translation>シールド</translation>
     </message>
     <message>
         <source>LilyPad</source>
-        <translation type="unfinished"></translation>
+        <translation>リリーパッド</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>その他</translation>
     </message>
     <message>
         <source>Sensors</source>
-        <translation type="unfinished"></translation>
+        <translation>センサー</translation>
     </message>
     <message>
         <source>Pin Label Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>ピンラベルエディタ</translation>
     </message>
     <message>
         <source>Ratsnest</source>
-        <translation type="unfinished"></translation>
+        <translation>ラツネスト</translation>
     </message>
     <message>
         <source>mm</source>
-        <translation type="unfinished"></translation>
+        <translation>㎜</translation>
     </message>
     <message>
         <source>in</source>
-        <translation type="unfinished"></translation>
+        <translation>中</translation>
     </message>
     <message>
         <source>Cannot write file temp:
 %1
 %2
 %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>仮のファイル を書き込めません：
+%1
+%2
+%3.</translation>
     </message>
     <message>
         <source>Cannot autoroute: no board (or multiple boards) found</source>
-        <translation type="unfinished"></translation>
+        <translation>自動ルートできません：ボード（複数のボード）が見つかりません</translation>
     </message>
     <message>
         <source>Set Ground Fill Seed</source>
-        <translation type="unfinished"></translation>
+        <translation>グランド フィル シードを設定</translation>
     </message>
     <message>
         <source>Ground Fill Seed Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>グランドフィルシードエディター</translation>
     </message>
     <message>
         <source>Select all &apos;Don&apos;t autoroute&apos; traces</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;自動ルートしない&quot;のトレースをすべて選択</translation>
     </message>
     <message>
         <source>Select all autorouteable traces</source>
-        <translation type="unfinished"></translation>
+        <translation>自動ルート可能なトレースをすべて選択</translation>
     </message>
     <message>
         <source>Set Grid Size</source>
-        <translation type="unfinished"></translation>
+        <translation>グリッドサイズを設定</translation>
     </message>
     <message>
         <source>There is no undo for this action, and no further warning!!!!</source>
@@ -6024,79 +6031,79 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Clear Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>設定解除</translation>
     </message>
     <message>
         <source>No connections (on the PCB) to route.</source>
-        <translation type="unfinished"></translation>
+        <translation>ルートへの（PCBで）接続が無い。</translation>
     </message>
     <message>
         <source>No connections to route.</source>
-        <translation type="unfinished"></translation>
+        <translation>ルートへの接続が無い。</translation>
     </message>
     <message>
         <source>Connected highlight color</source>
-        <translation type="unfinished"></translation>
+        <translation>接続された強調色</translation>
     </message>
     <message>
         <source>Unconnected highlight color</source>
-        <translation type="unfinished"></translation>
+        <translation>接続されてない強調色</translation>
     </message>
     <message>
         <source>Clear all saved settings and close this dialog immediately.</source>
-        <translation type="unfinished"></translation>
+        <translation>保存されている設定をすべてクリアして、このダイアログをすぐに閉じます。</translation>
     </message>
     <message>
         <source>This action does not delete any files; it restores settings to their default values.</source>
-        <translation type="unfinished"></translation>
+        <translation>このアクションはファイルを削除するのではなく；設定をデフォルト値に元に戻します。</translation>
     </message>
     <message>
         <source>Convert to Via</source>
-        <translation type="unfinished"></translation>
+        <translation>ビアに変換</translation>
     </message>
     <message>
         <source>Convert Via to Bendpoint</source>
-        <translation type="unfinished"></translation>
+        <translation>ビアはベンドポイントに変換</translation>
     </message>
     <message>
         <source>%1 wires moved from their saved position in %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ワイヤは%2 で保存された位置から移動しました。</translation>
     </message>
     <message>
         <source>ii</source>
-        <translation type="unfinished"></translation>
+        <translation>ii</translation>
     </message>
     <message>
         <source>Icon View</source>
-        <translation type="unfinished"></translation>
+        <translation>アイコン表示</translation>
     </message>
     <message>
         <source>&lt;b&gt;id:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;id:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Name:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;名前：&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Set the connectors&apos;s title</source>
-        <translation type="unfinished"></translation>
+        <translation>コネクタのタイトルを設定</translation>
     </message>
     <message>
         <source>&lt;b&gt;Description:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;詳細：&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Set the connectors&apos;s description</source>
-        <translation type="unfinished"></translation>
+        <translation>コネクタの詳細を設定</translation>
     </message>
     <message>
         <source>Fritzing cannot load the parts bin</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingがパーツビンをロードできません</translation>
     </message>
     <message>
         <source>Internal Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>内部接続</translation>
     </message>
     <message>
         <source>Set all to:</source>
@@ -6104,27 +6111,27 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Pad</source>
-        <translation type="unfinished"></translation>
+        <translation>パッド</translation>
     </message>
     <message>
         <source>&lt;b&gt;type:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;タイプ:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Part %1 &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>パート %1 &apos;%2&apos;</translation>
     </message>
     <message>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル &apos;%1&apos; を &apos;%2&apos; にコピーできませんでした。</translation>
     </message>
     <message>
         <source>Autorouter Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>自動ルートの設定</translation>
     </message>
     <message>
         <source>Unable to save pick and place file: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>ピックアンドプレースファイル保存できません：%2</translation>
     </message>
     <message>
         <source>Text</source>
@@ -6132,19 +6139,19 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
-        <translation type="unfinished"></translation>
+        <translation>%2 ... %1 のワイヤが保存された位置から移動しました</translation>
     </message>
     <message>
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>N/A</translation>
     </message>
     <message>
         <source>Regenerate database failed</source>
-        <translation type="unfinished"></translation>
+        <translation>データベースの再生成が失敗</translation>
     </message>
     <message>
         <source>Regenerating parts database</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツデータベースを再生成</translation>
     </message>
     <message>
         <source>Unable to find parts git repository</source>
@@ -6767,7 +6774,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Double-click to delete this bend point</source>
-        <translation>ダブルクリックして折り曲げる点を削除します</translation>
+        <translation>ダブルクリックしてベンドポイントを削除します</translation>
     </message>
     <message>
         <source>Double-click</source>

@@ -651,7 +651,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>BaudRate:</source>
-        <translation type="unfinished"></translation>
+        <translation>ボーレート：</translation>
     </message>
     <message>
         <source>Data bits:</source>
@@ -2419,7 +2419,8 @@ All your parts are up-to-date.</source>
     <message>
         <source>Successfully updated %1 part(s).
 Please check all views for potential side-effects.</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツ%1の更新成功しました。
+影響されないか、全ビュー確認してください。</translation>
     </message>
     <message>
         <source>Update %1 part(s)</source>
@@ -2637,7 +2638,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Export the current sketch to SVG for DIY PCB production (photoresist)</source>
-        <translation type="unfinished"></translation>
+        <translation>現スケッチをDIY PCB生産用のSVGへエクスポートしてください（フォトレシスト）</translation>
     </message>
     <message>
         <source>JPG...</source>
@@ -5214,7 +5215,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Fritzing is unable to find &apos;%1&apos;, please locate it</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing は &apos;%1&apos; を見つけることができません、位置付けてください</translation>
     </message>
     <message>
         <source>New</source>
@@ -5713,7 +5714,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Sorry, Fritzing can&apos;t yet handle both pins and pads together (in %1)</source>
-        <translation type="unfinished"></translation>
+        <translation>申し訳ありません、Fritzingはまだピンとパッドの両方一緒に処理できません（%1で）</translation>
     </message>
     <message>
         <source>bad pin argument count</source>
@@ -6027,7 +6028,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>There is no undo for this action, and no further warning!!!!</source>
-        <translation type="unfinished"></translation>
+        <translation>この操作を元に戻すことはできません、次の警告もありません!!!!</translation>
     </message>
     <message>
         <source>Clear Settings</source>
@@ -6107,7 +6108,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Set all to:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">すべてを設定：</translation>
     </message>
     <message>
         <source>Pad</source>
@@ -6155,19 +6156,19 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Unable to find parts git repository</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツのgitリポジトリが見つかれません</translation>
     </message>
     <message>
         <source>Unable to find parts git repository HEAD</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツのgitリポジトリのHEADが見つかれません</translation>
     </message>
     <message>
         <source>The parts folder &apos;%1&apos; may have been damaged (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツフォルダ &apos;%1&apos; が破損かもしれません (%2)。%3</translation>
     </message>
     <message>
         <source>The parts folder &apos;%1&apos; has been changed (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツフォルダ &apos;%1&apos; が変更されたかもしれません (%2)。%3</translation>
     </message>
     <message>
         <source>There are new or modified files in the parts folder &apos;%1&apos;. These changes will be discarded by the update.</source>
@@ -6175,104 +6176,105 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>There are unreadable files in the parts folder &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツフォルダ &apos;%1&apos; に読取れないファイルがあります。%2</translation>
     </message>
     <message>
         <source>Unable to open parts folder &apos;%1&apos; for update. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>更新のためにパーツフォルダ &apos;%1&apos; を開けませんでした。%2</translation>
     </message>
     <message>
         <source>Parts folder repo &apos;%1&apos; is empty. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツフォルダレポ &apos;%1&apos; は空です。%2</translation>
     </message>
     <message>
         <source>Unable to determine network site for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; のネットワークサイトを決定できません。%2</translation>
     </message>
     <message>
         <source>Unable to access network site for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; のネットワークサイトにアクセスできません。%2</translation>
     </message>
     <message>
         <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; のネットワーク参照を取得できませんでした。%2</translation>
     </message>
     <message>
         <source>Error %1
 </source>
-        <translation type="unfinished"></translation>
+        <translation>エラー %1
+</translation>
     </message>
     <message>
         <source>the board outline layer, </source>
-        <translation type="unfinished"></translation>
+        <translation>ボードの概形層、 </translation>
     </message>
     <message>
         <source>silkscreen layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>シルクスクリーン層、 </translation>
     </message>
     <message>
         <source>copper layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>銅層、 </translation>
     </message>
     <message>
         <source>mask layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>マスク層、 </translation>
     </message>
     <message>
         <source>paste mask layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>ペーストマスク層、 </translation>
     </message>
     <message>
         <source>Unable to translate svg curves in %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 で svg カーブを翻訳できません</translation>
     </message>
     <message>
         <source>%1 layer export is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 層エクスポートが空です。</translation>
     </message>
     <message>
         <source>%1 layer export is empty (case 2).</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 層エクスポートが空です（件２）。</translation>
     </message>
     <message>
         <source>silk layer %1 export is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>シルク層%1エクスポートが空です</translation>
     </message>
     <message>
         <source>silk export failure</source>
-        <translation type="unfinished"></translation>
+        <translation>シルクのエクスポート失敗</translation>
     </message>
     <message>
         <source>exported drill file is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートされたドリルファイルが空です</translation>
     </message>
     <message>
         <source>drill export failure</source>
-        <translation type="unfinished"></translation>
+        <translation>ドリルのエクスポート失敗</translation>
     </message>
     <message>
         <source>exported mask layer %1 is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートされたマスク層%1 が空です</translation>
     </message>
     <message>
         <source>%1 mask export failure (2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 マスクエクスポート失敗 (2)</translation>
     </message>
     <message>
         <source>mask export failure</source>
-        <translation type="unfinished"></translation>
+        <translation>マスクのエクスポート失敗</translation>
     </message>
     <message>
         <source>exported paste mask layer is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートされたペーストマスク層が空です</translation>
     </message>
     <message>
         <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 層: &apos;%2&apos; に保存できません</translation>
     </message>
     <message>
         <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation type="unfinished"></translation>
+        <translation>FritzingはこのカスタムPCB形状のカットアウトを処理できません。 </translation>
     </message>
     <message>
         <source>You may need to reload the shape SVG. </source>
@@ -6301,7 +6303,7 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>Alt</source>
         <comment>for naming shortcut keys on menu items</comment>
-        <translation type="unfinished"></translation>
+        <translation>Alt</translation>
     </message>
     <message>
         <source>Shift</source>
@@ -6311,95 +6313,95 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>Meta</source>
         <comment>for naming shortcut keys on menu items</comment>
-        <translation type="unfinished"></translation>
+        <translation>メタ</translation>
     </message>
 </context>
 <context>
     <name>QuoteDialog</name>
     <message>
         <source>Order your PCB from Fritzing Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing FabにPCBを注文する</translation>
     </message>
     <message>
         <source>Price per board</source>
-        <translation type="unfinished"></translation>
+        <translation>1枚あたりの価格</translation>
     </message>
     <message>
         <source>Price</source>
-        <translation type="unfinished"></translation>
+        <translation>価格</translation>
     </message>
     <message>
         <source>Copies</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">コピー</translation>
     </message>
     <message>
         <source>Visit Fritzing Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>FritzingFabへ</translation>
     </message>
     <message>
         <source>Fritzing Fab Quote</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab見積もり</translation>
     </message>
     <message numerus="yes">
         <source>The total area of the %n PCB(s) in this sketch is</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>このスケッチの%n PCBの総面積は</numerusform>
         </translation>
     </message>
     <message>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> %1 cm%3 (%2 in%3).&lt;br /&gt;</translation>
     </message>
     <message>
         <source>Use Fritzing Fab to produce a PCB from your sketch.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fabを使って、スケッチをPCに製作します&lt;br /&gt;</translation>
     </message>
     <message>
         <source>Take advantage of our quantity discount:</source>
-        <translation type="unfinished"></translation>
+        <translation>数量の割引をご利用ください：</translation>
     </message>
     <message>
         <source>&lt;b&gt;Shipping is free wordlwide&lt;/b&gt;.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;世界中送料無料&lt;/b&gt;。&lt;br /&gt;</translation>
     </message>
     <message>
         <source>Documents for local customs control are included.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>現地の通関手続きの書類が含まれています。&lt;br /&gt;</translation>
     </message>
     <message>
         <source>Some countries might charge additional import taxes or checking fees.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>国によって追加の輸入税やチェック費用がかかる場合もあります。&lt;br /&gt;</translation>
     </message>
     <message>
         <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>詳しい価格情報について、 &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;をご覧ください。</translation>
     </message>
 </context>
 <context>
     <name>RecoveryDialog</name>
     <message>
         <source>&amp;Recover</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;取り戻す</translation>
     </message>
     <message>
         <source>&amp;Ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>＆無視</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル</translation>
     </message>
     <message>
         <source>Last backup</source>
-        <translation type="unfinished"></translation>
+        <translation>前回のバックアップ</translation>
     </message>
     <message>
         <source>Last saved</source>
-        <translation type="unfinished"></translation>
+        <translation>前回に保存された</translation>
     </message>
     <message>
         <source>file not saved</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイルが保存されない</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
@@ -6410,30 +6412,30 @@ is already there, we won&apos;t add it again, right?</source>
     <name>RegenerateDatabaseThread</name>
     <message>
         <source>Unable to open temporary file</source>
-        <translation type="unfinished"></translation>
+        <translation>仮のファイルを開けません</translation>
     </message>
     <message>
         <source>Database failure</source>
-        <translation type="unfinished"></translation>
+        <translation>データベースの不具合</translation>
     </message>
     <message>
         <source>Unable to replace the existing database file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>既存のデータベースファイル %1 を置き換えることができません</translation>
     </message>
     <message>
         <source>Unable to copy database file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>データベースファイル %1 をコピーできません</translation>
     </message>
 </context>
 <context>
     <name>Resistor</name>
     <message>
         <source>resistance</source>
-        <translation type="unfinished">抵抗</translation>
+        <translation>抵抗</translation>
     </message>
     <message>
         <source>Resistor</source>
-        <translation type="unfinished"></translation>
+        <translation>抵抗器</translation>
     </message>
     <message>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
@@ -6444,31 +6446,31 @@ is already there, we won&apos;t add it again, right?</source>
     <name>ResizableBoard</name>
     <message>
         <source>shape</source>
-        <translation type="unfinished">シェイプ</translation>
+        <translation>形状</translation>
     </message>
     <message>
         <source>width: %1mm</source>
-        <translation type="unfinished"></translation>
+        <translation>幅: %1mm</translation>
     </message>
     <message>
         <source>height: %1mm</source>
-        <translation type="unfinished"></translation>
+        <translation>高さ: %1mm</translation>
     </message>
     <message>
         <source>width(mm)</source>
-        <translation type="unfinished"></translation>
+        <translation>幅(mm)</translation>
     </message>
     <message>
         <source>height(mm)</source>
-        <translation type="unfinished"></translation>
+        <translation>高さ(mm)</translation>
     </message>
     <message>
         <source>keep aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>アスペクト比はそのまま</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>元に戻す</translation>
     </message>
     <message>
         <source>size</source>
@@ -6476,43 +6478,43 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>custom</source>
-        <translation type="unfinished"></translation>
+        <translation>カスタム</translation>
     </message>
     <message>
         <source>A0 (1030x1456)</source>
-        <translation type="unfinished"></translation>
+        <translation>A0 (1030x1456)</translation>
     </message>
     <message>
         <source>A1 (728x1030)</source>
-        <translation type="unfinished"></translation>
+        <translation>A1 (728x1030)</translation>
     </message>
     <message>
         <source>A2 (515x728)</source>
-        <translation type="unfinished"></translation>
+        <translation>A2 (515x728)</translation>
     </message>
     <message>
         <source>A3 (364x515)</source>
-        <translation type="unfinished"></translation>
+        <translation>A3 (364x515)</translation>
     </message>
     <message>
         <source>A4 (257x364)</source>
-        <translation type="unfinished"></translation>
+        <translation>A4 (257x364)</translation>
     </message>
     <message>
         <source>A5 (182x257)</source>
-        <translation type="unfinished"></translation>
+        <translation>A5 (182x257)</translation>
     </message>
     <message>
         <source>A6 (128x182)</source>
-        <translation type="unfinished"></translation>
+        <translation>A6 (128x182)</translation>
     </message>
     <message>
         <source>Letter (8.5x11)</source>
-        <translation type="unfinished"></translation>
+        <translation>レター (8.5x11)</translation>
     </message>
     <message>
         <source>Legal (8.5x14)</source>
-        <translation type="unfinished"></translation>
+        <translation>リーガル(8.5x14)</translation>
     </message>
     <message>
         <source>Ledger (17x11)</source>
@@ -6531,73 +6533,73 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>&amp;cm</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;cm</translation>
     </message>
     <message>
         <source>&amp;in</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;in</translation>
     </message>
 </context>
 <context>
     <name>S2S</name>
     <message>
         <source>Failed loading &apos;%1&apos;, %2 line:%3 col:%4</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos;, %2 line:%3 col:%4 の読み込みに失敗しました</translation>
     </message>
     <message>
         <source>Schematic not found for &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos;の 回路図が見つかりませんでした</translation>
     </message>
     <message>
         <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%2&apos;の 回路図 &apos;%1&apos; がロードできません</translation>
     </message>
     <message>
         <source>Schematic &apos;%1&apos; is already using the 0.1inch standard.</source>
-        <translation type="unfinished"></translation>
+        <translation>回路図&apos;%1&apos;はすでに0.1inchの標準を使用しています。</translation>
     </message>
     <message>
         <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%3&apos; の回路図 &apos;%2&apos; でコネクタ %1 が見つかりません</translation>
     </message>
     <message>
         <source>Failed loading schematic &apos;%1&apos;, %2 line:%3 col:%4</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos;, %2 line:%3 col:%4 の回路図 のロードに失敗しました</translation>
     </message>
 </context>
 <context>
     <name>SchematicFrame</name>
     <message>
         <source>Project</source>
-        <translation type="unfinished"></translation>
+        <translation>プロジェクト</translation>
     </message>
     <message>
         <source>Filename</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル名</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>日付</translation>
     </message>
     <message>
         <source>Sheet</source>
-        <translation type="unfinished"></translation>
+        <translation>シート</translation>
     </message>
     <message>
         <source>Rev</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">版</translation>
     </message>
     <message>
         <source>of</source>
-        <translation type="unfinished"></translation>
+        <translation>の</translation>
     </message>
     <message>
         <source>date</source>
-        <translation type="unfinished"></translation>
+        <translation>日付</translation>
     </message>
     <message>
         <source>sheet</source>
-        <translation type="unfinished"></translation>
+        <translation>シート</translation>
     </message>
     <message>
         <source>shape</source>
@@ -6612,7 +6614,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Change label from %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>ラベルを %1 から %2 に変更します</translation>
     </message>
 </context>
 <context>
@@ -6631,31 +6633,31 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>%1 Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 色...</translation>
     </message>
     <message>
         <source>Choose %1 color:</source>
-        <translation type="unfinished"></translation>
+        <translation>%1色を選択：</translation>
     </message>
     <message>
         <source>Reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>デフォルトにリセット</translation>
     </message>
     <message>
         <source>Default color (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>デフォルトの色 (%1)</translation>
     </message>
     <message>
         <source>Pick custom color ...</source>
-        <translation type="unfinished"></translation>
+        <translation>カスタム色を選択...</translation>
     </message>
     <message>
         <source>Pick custom %1 color</source>
-        <translation type="unfinished"></translation>
+        <translation>カスタム%1 色を選択</translation>
     </message>
     <message>
         <source>Current color (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>現の色(%1)</translation>
     </message>
 </context>
 <context>
@@ -6802,27 +6804,27 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Change image from %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>画像を %1 から %2 に変更</translation>
     </message>
     <message>
         <source>Change %1 from %2 to %3</source>
-        <translation type="unfinished"></translation>
+        <translation>1 を %2 から %3 に変更</translation>
     </message>
     <message>
         <source>from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1から</translation>
     </message>
     <message>
         <source>Move leg of</source>
-        <translation type="unfinished"></translation>
+        <translation>の端子を移動</translation>
     </message>
     <message>
         <source>Flip %2 (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>フリップ %2 (%1)</translation>
     </message>
     <message>
         <source>Change leg curvature for %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1の端子屈曲を変更します。</translation>
     </message>
     <message>
         <source>Change leg bendpoint for %1.</source>

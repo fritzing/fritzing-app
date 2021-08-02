@@ -1993,7 +1993,7 @@ ConnectorItem * ConnectorItem::findConnectorUnder(bool useTerminalPoint, bool al
 		candidate = candidates[0];
 	}
 	else if (candidates.count() > 0) {
-		qSort(candidates.begin(), candidates.end(), wireLessThan);
+		std::sort(candidates.begin(), candidates.end(), wireLessThan);
 		candidate = candidates[0];
 	}
 

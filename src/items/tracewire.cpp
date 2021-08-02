@@ -55,7 +55,7 @@ QComboBox * TraceWire::createWidthComboBox(double m, QWidget * parent)
 	int ix = 0;
 	if (!Wire::widths.contains(m)) {
 		Wire::widths.append(m);
-		qSort(Wire::widths.begin(), Wire::widths.end());
+		std::sort(Wire::widths.begin(), Wire::widths.end());
 	}
 	foreach(long widthValue, Wire::widths) {
 		QString widthName = Wire::widthTrans.value(widthValue, "");

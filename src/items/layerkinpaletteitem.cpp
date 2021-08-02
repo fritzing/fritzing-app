@@ -386,10 +386,10 @@ QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlip
 		g.appendChild(text);
 		QRectF r = m_textThings[ix].newRect;
 		ix++;
-		QMatrix m;
+		QTransform m;
 		m.translate(r.center().x(), r.center().y());
-		QMatrix inv = m.inverted();
-		QMatrix matrix = inv * QMatrix().rotate(180) * m;
+		QTransform inv = m.inverted();
+		QTransform matrix = inv * QTransform().rotate(180) * m;
 		TextUtils::setSVGTransform(g, matrix);
 	}
 

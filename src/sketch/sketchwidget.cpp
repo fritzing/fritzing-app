@@ -7271,7 +7271,7 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem
 	QHash<QString, QString> svgHash;
 
 	// put them in z order
-	qSort(itemsAndLabels.begin(), itemsAndLabels.end(), zLessThan);
+	std::sort(itemsAndLabels.begin(), itemsAndLabels.end(), zLessThan);
 
 	QList<ItemBase *> gotLabel;
 	foreach (QGraphicsItem * item, itemsAndLabels) {

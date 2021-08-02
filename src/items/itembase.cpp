@@ -1669,7 +1669,7 @@ QStringList ItemBase::collectValues(const QString & family, const QString & prop
 		NumberMatcherValues.insert(opt, n);
 	}
 	if (ok) {
-		qSort(values.begin(), values.end(), numberValueLessThan);
+		std::sort(values.begin(), values.end(), numberValueLessThan);
 	}
 
 	CachedValues.insert(family + prop, values);

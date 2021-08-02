@@ -4433,7 +4433,7 @@ void SketchWidget::sortAnyByZ(const QList<QGraphicsItem *> & items, QList<ItemBa
 	}
 
 	// order by z
-	qSort(bases.begin(), bases.end(), ItemBase::zLessThan);
+	std::sort(bases.begin(), bases.end(), ItemBase::zLessThan);
 
 	//Print Z order before changing them
 	//for (int i = 0; i < bases.size(); i++) {

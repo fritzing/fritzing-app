@@ -130,7 +130,7 @@ int TraceWire::widthEntry(const QString & text, QObject * sender) {
 	}
 	if (!Wire::widths.contains(w)) {
 		Wire::widths.append(w);
-		qSort(Wire::widths.begin(), Wire::widths.end());
+		std::sort(Wire::widths.begin(), Wire::widths.end());
 	}
 
 	return w;

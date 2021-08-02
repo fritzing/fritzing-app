@@ -655,7 +655,7 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
 
 	foreach (QDomElement text, texts) {
 		int minX, minY, maxX, maxY;
-		QMatrix matrix;
+		QTransform matrix;
 		QRectF viewBox2;
 		SvgText::renderText(image, text, minX, minY, maxX, maxY, matrix, viewBox2);
 		QRectF r(minX * viewBox.width() / image.width(),

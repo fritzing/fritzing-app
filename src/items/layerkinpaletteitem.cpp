@@ -302,7 +302,7 @@ QString SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
 		QDomElement g = text.ownerDocument().createElement("g");
 		text.parentNode().insertAfter(g, text);
 		g.appendChild(text);
-		QMatrix m = m_textThings[ix++].flipMatrix;
+		QTransform m = m_textThings[ix++].flipMatrix;
 		TextUtils::setSVGTransform(g, m);
 	}
 
@@ -329,14 +329,14 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
 	foreach (QDomElement text, texts) {
 		TextThing textThing;
 		QRectF viewBox;
-		QMatrix matrix;
+		QTransform matrix;
 		SvgText::renderText(image, text, textThing.minX, textThing.minY, textThing.maxX, textThing.maxY, matrix, viewBox);
 
 		double newX = (image.width() - textThing.maxX) * viewBox.width() / image.width();
 		double oldX = textThing.minX * viewBox.width() / image.width();
 
-		QMatrix inv = matrix.inverted();
-		QMatrix t = QMatrix().translate(newX - oldX, 0);
+		QTransform inv = matrix.inverted();
+		QTransform t = QTransform().translate(newX - oldX, 0);
 		textThing.flipMatrix = matrix * t * inv;
 
 		QRectF r(textThing.minX * viewBox.width() / image.width(),

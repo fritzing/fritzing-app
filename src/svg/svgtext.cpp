@@ -15,7 +15,7 @@
 
 static QString IDString("-_-_-text-_-_-%1");
 
-void SvgText::renderText(QImage & image, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix & matrix, QRectF & viewBox)
+void SvgText::renderText(QImage & image, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QTransform & matrix, QRectF & viewBox)
 {
 	QString oldid = text.attribute("id");
 	text.setAttribute("id", IDString);
@@ -40,7 +40,7 @@ void SvgText::renderText(QImage & image, QDomElement & text, int & minX, int & m
 	double x = text.attribute("x").toDouble();
 	double y = text.attribute("y").toDouble();
 	QPointF xy(x, y);
-	matrix = renderer.matrixForElement(IDString);
+	matrix = renderer.transformForElement(IDString);
 	QPointF mxy = matrix.map(xy);
 
 	QPointF p(image.width() * mxy.x() / viewBox.width(), image.height() * mxy.y() / viewBox.height());

@@ -602,6 +602,11 @@ void TextUtils::setSVGTransform(QDomElement & element, QMatrix & matrix)
 	element.setAttribute("transform", svgMatrix(matrix));
 }
 
+void TextUtils::setSVGTransform(QDomElement & element, QTransform & matrix)
+{
+	element.setAttribute("transform", svgMatrix(matrix));
+}
+
 QString TextUtils::svgTransform(const QString & svg, QTransform & transform, bool translate, const QString extras) {
 	if (transform.isIdentity()) return svg;
 

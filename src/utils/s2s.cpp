@@ -697,10 +697,10 @@ double S2S::lrtb(QList<ConnectorLocation *> & connectorLocations, const QRectF &
 
 	}
 
-	qSort(m_lefts.begin(), m_lefts.end(), yLessThan);
-	qSort(m_rights.begin(), m_rights.end(), yLessThan);
-	qSort(m_tops.begin(), m_tops.end(), xLessThan);
-	qSort(m_bottoms.begin(), m_bottoms.end(), xLessThan);
+	std::sort(m_lefts.begin(), m_lefts.end(), yLessThan);
+	std::sort(m_rights.begin(), m_rights.end(), yLessThan);
+	std::sort(m_tops.begin(), m_tops.end(), xLessThan);
+	std::sort(m_bottoms.begin(), m_bottoms.end(), xLessThan);
 
 	QList<double> distances;
 	for (int i = 1; i < m_lefts.count(); i++) {
@@ -724,7 +724,7 @@ double S2S::lrtb(QList<ConnectorLocation *> & connectorLocations, const QRectF &
 		distances << l2->terminalPoint.x() - l1->terminalPoint.x();
 	}
 
-	qSort(distances.begin(), distances.end());
+	std::sort(distances.begin(), distances.end());
 
 	int totalPins = m_lefts.count() + m_rights.count() + m_bottoms.count() + m_tops.count();
 

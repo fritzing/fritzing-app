@@ -8397,7 +8397,7 @@ void SketchWidget::copyDrop() {
 		itemBases.append(itemBase);
 	}
 
-	qSort(itemBases.begin(), itemBases.end(), ItemBase::zLessThan);
+	std::sort(itemBases.begin(), itemBases.end(), ItemBase::zLessThan);
 	foreach (ItemBase * itemBase, itemBases) {
 		QPointF loc = itemBase->getViewGeometry().loc();
 		itemBase->setItemPos(loc);

@@ -460,7 +460,7 @@ void Stripboard::addedToScene(bool temporary)
 
 	if (m_layout.isEmpty()) m_layout = VerticalString;
 
-	QStringList removed = config.split(" ", QString::SkipEmptyParts);
+	QStringList removed = config.split(" ", Qt::SkipEmptyParts);
 
 	foreach (QString name, removed) {
 		int cx, cy;
@@ -630,7 +630,7 @@ void Stripboard::nextBus(QList<ConnectorItem *> & soFar)
 void Stripboard::setProp(const QString & prop, const QString & value)
 {
 	if (prop.compare("buses") == 0) {
-		QStringList removed = value.split(" ", QString::SkipEmptyParts);
+		QStringList removed = value.split(" ", Qt::SkipEmptyParts);
 		foreach (QGraphicsItem * item, childItems()) {
 			Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
 			if (stripbit == NULL) continue;

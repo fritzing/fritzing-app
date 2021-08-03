@@ -701,7 +701,7 @@ void MazeRouter::start()
 		totalToRoute += net->net->count() - 1;
 	}
 
-    qSort(netList.nets.begin(), netList.nets.end(), byPinsWithin);
+    std::sort(netList.nets.begin(), netList.nets.end(), byPinsWithin);
 	NetOrdering initialOrdering;
 	auto ix = 0;
 	foreach (Net * net, netList.nets) {
@@ -2152,7 +2152,7 @@ void MazeRouter::createTraces(NetList & netList, Score & bestScore, QUndoCommand
 		emit setProgressValue(progress++);
 		//DebugDialog::debug(QString("tracing net %1").arg(netIndex));
 		QList<Trace> traces = bestScore.traces.values(netIndex);
-		qSort(traces.begin(), traces.end(), byOrder);
+		std::sort(traces.begin(), traces.end(), byOrder);
 
 		TraceThing traceThing;
 		traceThing.jumperItem = nullptr;

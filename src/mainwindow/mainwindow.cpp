@@ -1574,7 +1574,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 		}
 	}
 
-	qSort(missing.begin(), missing.end(), byConnectorCount);
+	std::sort(missing.begin(), missing.end(), byConnectorCount);
 	foreach (MissingSvgInfo msi, missing) {
 		if (msi.equal) {
 			// two or more parts have the same number of connectors--so we can't figure out how to assign them

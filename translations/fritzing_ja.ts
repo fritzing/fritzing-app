@@ -7244,7 +7244,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
-        <translation type="unfinished"></translation>
+        <translation>ステータスバー（一番下）でマウス位置インジケーターをクリックすると、単位がmmからpxにスウィッチします。</translation>
     </message>
     <message>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>

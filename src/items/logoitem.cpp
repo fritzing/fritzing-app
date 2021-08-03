@@ -186,7 +186,7 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 				QString viewBox = root.attribute("viewBox");
 				double w = TextUtils::convertToInches(root.attribute("width"));
 				double h = TextUtils::convertToInches(root.attribute("height"));
-				QStringList coords = viewBox.split(" ", QString::SkipEmptyParts);
+				QStringList coords = viewBox.split(" ", Qt::SkipEmptyParts);
 				double sx = w / coords.at(2).toDouble();
 				double sy = h / coords.at(3).toDouble();
 				if (qAbs(sx - sy) > .001) {
@@ -673,7 +673,7 @@ QString LogoItem::hackSvg(const QString & svg, const QString & logo)
 	root.setAttribute("width", QString::number(logo.length() * 0.1) + "in");
 
 	QString viewBox = root.attribute("viewBox");
-	QStringList coords = viewBox.split(" ", QString::SkipEmptyParts);
+	QStringList coords = viewBox.split(" ", Qt::SkipEmptyParts);
 	coords[2] = QString::number(logo.length() * 10);
 	root.setAttribute("viewBox", coords.join(" "));
 

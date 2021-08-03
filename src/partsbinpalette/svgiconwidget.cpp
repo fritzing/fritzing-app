@@ -53,7 +53,7 @@ SvgIconPixmapItem::SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * par
 
 SvgIconPixmapItem::SvgIconPixmapItem(const QPixmap & pixmap, QGraphicsItem * parent, bool plural) : QGraphicsPixmapItem(pixmap, parent), m_plural(plural)
 {
-	setFlags(0);
+	setFlags(QFlags<QGraphicsItem::GraphicsItemFlag>());
 	setPos(0,0);
 }
 
@@ -98,7 +98,7 @@ SvgIconWidget::SvgIconWidget(ModelPart * modelPart, ViewLayer::ViewID viewID, It
 			this->setMaximumSize(PluralImage->size().width(), 8);
 		}
 		setAcceptHoverEvents(false);
-		setFlags(0);
+		setFlags(QFlags<QGraphicsItem::GraphicsItemFlag>());
 		setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
 	}
 	else {

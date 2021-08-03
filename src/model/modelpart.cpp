@@ -357,13 +357,13 @@ void ModelPart::saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument) 
 		QString spice = m_modelPartShared->spice();
 		if (!spice.isEmpty()) {
 			streamWriter.writeStartElement("spice");
-			QStringList lines = spice.split("\r",QString::SkipEmptyParts);
+			QStringList lines = spice.split("\r",Qt::SkipEmptyParts);
 			foreach (QString line, lines) {
 				writeTag(streamWriter, "line", line);
 			}
 			QString spiceModel = m_modelPartShared->spiceModel();
 			if (!spiceModel.isEmpty()) {
-				lines = spiceModel.split("\r",QString::SkipEmptyParts);
+				lines = spiceModel.split("\r",Qt::SkipEmptyParts);
 				foreach (QString line, lines) {
 					writeTag(streamWriter, "model", line);
 				}

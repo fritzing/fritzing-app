@@ -53,7 +53,7 @@ QStringList KicadSchematic2Svg::listDefs(const QString & filename) {
 		if (line.isNull()) break;
 
 		if (line.startsWith("DEF")) {
-			QStringList linedefs = line.split(" ", QString::SkipEmptyParts);
+			QStringList linedefs = line.split(" ", Qt::SkipEmptyParts);
 			if (linedefs.count() > 1) {
 				defs.append(linedefs[1]);
 			}
@@ -674,7 +674,7 @@ QString KicadSchematic2Svg::addFill(const QString & line, const QString & NF, co
 
 QStringList KicadSchematic2Svg::splitLine(const QString & line) {
 	// doesn't handle escaped quotes next to spaces
-	QStringList strs = line.split(" ", QString::SkipEmptyParts);
+	QStringList strs = line.split(" ", Qt::SkipEmptyParts);
 	for (int i = strs.count() - 1; i > 0; i--) {
 		QString s = strs[i];
 		if (s[s.length() - 1] != '"') continue;

@@ -1027,6 +1027,10 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <source>Uploading...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FabUploadProgress</name>
@@ -4927,6 +4931,10 @@ Go ahead and save?</source>
         <source>Select a color for this icon</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Perfboard</name>
@@ -6210,6 +6218,10 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     </message>
     <message>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PartLabel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

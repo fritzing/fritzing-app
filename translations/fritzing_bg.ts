@@ -1238,44 +1238,44 @@ Use the file?</source>
 <context>
     <name>FApplication</name>
     <message>
-        <location filename="../src/fapplication.cpp" line="1599"/>
-        <location filename="../src/fapplication.cpp" line="1605"/>
-        <location filename="../src/fapplication.cpp" line="1608"/>
+        <location filename="../src/fapplication.cpp" line="1598"/>
+        <location filename="../src/fapplication.cpp" line="1604"/>
+        <location filename="../src/fapplication.cpp" line="1607"/>
         <source>Fritzing failure</source>
         <translation>Грешка във Fritzing</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1599"/>
+        <location filename="../src/fapplication.cpp" line="1598"/>
         <source>Fritzing caught an exception %1 from %2 in event %3</source>
         <translation>Fritzing прихвана изключение %1 от %2 в събитие %3</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1605"/>
+        <location filename="../src/fapplication.cpp" line="1604"/>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
         <translation>Fritzing прихвана изключение от %1 в събитие %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1608"/>
+        <location filename="../src/fapplication.cpp" line="1607"/>
         <source>Fritzing caught an exception from %1 in event %2</source>
         <translation>Fritzing прихвана изключение от %1 в събитие %2</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1736"/>
+        <location filename="../src/fapplication.cpp" line="1735"/>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
         <translation>Моля, посочете файл с разширение „.fzz“, в който искате да запазите (при отказ резервното копие ще бъде изтрито)</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1736"/>
+        <location filename="../src/fapplication.cpp" line="1735"/>
         <source>Fritzing (*%1)</source>
         <translation>Fritzing (*%1)</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2008"/>
+        <location filename="../src/fapplication.cpp" line="2007"/>
         <source>Regenerate parts database?</source>
         <translation>Пресъздаване на базата данни с частите?</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2009"/>
+        <location filename="../src/fapplication.cpp" line="2008"/>
         <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
 
 </source>
@@ -1284,29 +1284,29 @@ Use the file?</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2010"/>
+        <location filename="../src/fapplication.cpp" line="2009"/>
         <source>Would you like to regenerate the parts database?
 </source>
         <translation>Искате ли базата данни с частите да бъде създадена отново?
 </translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2012"/>
+        <location filename="../src/fapplication.cpp" line="2011"/>
         <source>This option is usefull if you modify the parts database on your own. If you want to recover from an error, you may be better off downloading the latest Fritzing release.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2020"/>
+        <location filename="../src/fapplication.cpp" line="2019"/>
         <source>Regenerate</source>
         <translation>Пресъздаване</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2021"/>
+        <location filename="../src/fapplication.cpp" line="2020"/>
         <source>Cancel</source>
         <translation>Отказ</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2026"/>
+        <location filename="../src/fapplication.cpp" line="2025"/>
         <source>Regenerating parts database...</source>
         <translation>Повторно създаване на базата данни с частите…</translation>
     </message>
@@ -1352,6 +1352,11 @@ Use the file?</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="356"/>
         <source>Uploading...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dialogs/fabuploaddialog.cpp" line="33"/>
+        <source>Open in browser</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6089,59 +6094,59 @@ Go ahead and save?</source>
 <context>
     <name>PaletteItem</name>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="522"/>
+        <location filename="../src/items/paletteitem.cpp" line="526"/>
         <source>Edit Pin Labels</source>
         <translation>Промяна на етикетите на крачетата</translation>
     </message>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="596"/>
-        <location filename="../src/items/paletteitem.cpp" line="607"/>
-        <location filename="../src/items/paletteitem.cpp" line="631"/>
+        <location filename="../src/items/paletteitem.cpp" line="600"/>
+        <location filename="../src/items/paletteitem.cpp" line="611"/>
+        <location filename="../src/items/paletteitem.cpp" line="635"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="597"/>
+        <location filename="../src/items/paletteitem.cpp" line="601"/>
         <source>Unable to proceed; unable to find top level view.</source>
         <translation>Продължаването е невъзможно; изгледът от най-горното ниво не може да бъда открит.</translation>
     </message>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="608"/>
+        <location filename="../src/items/paletteitem.cpp" line="612"/>
         <source>Unable to proceed; part connectors do no have standard IDs.</source>
         <translation>Продължаването е невъзможно; изводите нямат стандартни идентификатори.</translation>
     </message>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="632"/>
+        <location filename="../src/items/paletteitem.cpp" line="636"/>
         <source>Label mismatch.  Nothing was saved.</source>
         <translation>Разминаване в етикетите.  Нищо не бе запазено.</translation>
     </message>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="790"/>
+        <location filename="../src/items/paletteitem.cpp" line="794"/>
         <source>hole size</source>
         <translation>размер на отвора</translation>
     </message>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="930"/>
+        <location filename="../src/items/paletteitem.cpp" line="934"/>
         <source>advanced settings</source>
         <translation>разширени настройки</translation>
     </message>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="941"/>
+        <location filename="../src/items/paletteitem.cpp" line="945"/>
         <source>in</source>
         <translation>инча</translation>
     </message>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="945"/>
+        <location filename="../src/items/paletteitem.cpp" line="949"/>
         <source>mm</source>
         <translation>мм</translation>
     </message>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="963"/>
+        <location filename="../src/items/paletteitem.cpp" line="967"/>
         <source>Hole Diameter</source>
         <translation>Диаметър на отвора</translation>
     </message>
     <message>
-        <location filename="../src/items/paletteitem.cpp" line="976"/>
+        <location filename="../src/items/paletteitem.cpp" line="980"/>
         <source>Ring Thickness</source>
         <translation>Дебелина на пръстена </translation>
     </message>
@@ -6149,192 +6154,192 @@ Go ahead and save?</source>
 <context>
     <name>PartLabel</name>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="415"/>
+        <location filename="../src/items/partlabel.cpp" line="416"/>
         <source>Edit</source>
         <translation>Редактиране</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="417"/>
+        <location filename="../src/items/partlabel.cpp" line="418"/>
         <source>Edit label text</source>
         <translation>Редактиране на текста на етикета</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="419"/>
+        <location filename="../src/items/partlabel.cpp" line="420"/>
         <source>Hide</source>
         <translation>Скриване</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="421"/>
+        <location filename="../src/items/partlabel.cpp" line="422"/>
         <source>Hide part label</source>
         <translation>Скриване на етикета на частта</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="425"/>
+        <location filename="../src/items/partlabel.cpp" line="426"/>
         <source>Display Values</source>
         <translation>Показване на стойностите</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="426"/>
+        <location filename="../src/items/partlabel.cpp" line="427"/>
         <source>Flip/Rotate</source>
         <translation>Обръщане/завъртане</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="427"/>
+        <location filename="../src/items/partlabel.cpp" line="428"/>
         <source>Font Size</source>
         <translation>Размер на шрифта</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="432"/>
+        <location filename="../src/items/partlabel.cpp" line="433"/>
         <source>Rotate 45° Clockwise</source>
         <translation>Завъртане на 45° по часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="434"/>
+        <location filename="../src/items/partlabel.cpp" line="435"/>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>Завъртане на етикета на 45° по посока на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="437"/>
+        <location filename="../src/items/partlabel.cpp" line="438"/>
         <source>Rotate 90° Clockwise</source>
         <translation>Завъртане на 90° по часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="439"/>
+        <location filename="../src/items/partlabel.cpp" line="440"/>
         <source>Rotate the label by 90 degrees clockwise</source>
         <translation>Завъртане на етикета на 90° по посока на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="442"/>
+        <location filename="../src/items/partlabel.cpp" line="443"/>
         <source>Rotate 135° Clockwise</source>
         <translation>Завъртане на 135° по часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="444"/>
+        <location filename="../src/items/partlabel.cpp" line="445"/>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>Завъртане на етикета на 135° по посока на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="447"/>
+        <location filename="../src/items/partlabel.cpp" line="448"/>
         <source>Rotate 180°</source>
         <translation>Завъртане на 180°</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="449"/>
+        <location filename="../src/items/partlabel.cpp" line="450"/>
         <source>Rotate the label by 180 degrees</source>
         <translation>Завъртане на етикета на 180°</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="452"/>
+        <location filename="../src/items/partlabel.cpp" line="453"/>
         <source>Rotate 135° Counter Clockwise</source>
         <translation>Завъртане на 135° обратно на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="454"/>
+        <location filename="../src/items/partlabel.cpp" line="455"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation>Завъртане на етикета на 135° по посока обратно на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="457"/>
+        <location filename="../src/items/partlabel.cpp" line="458"/>
         <source>Rotate 90° Counter Clockwise</source>
         <translation>Завъртане на 90° обратно на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="459"/>
+        <location filename="../src/items/partlabel.cpp" line="460"/>
         <source>Rotate current selection 90 degrees counter clockwise</source>
         <translation>Завъртане на етикета на 90° по посока обратно на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="462"/>
+        <location filename="../src/items/partlabel.cpp" line="463"/>
         <source>Rotate 45° Counter Clockwise</source>
         <translation>Завъртане на 45° обратно на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="464"/>
+        <location filename="../src/items/partlabel.cpp" line="465"/>
         <source>Rotate the label by 45 degrees counter clockwise</source>
         <translation>Завъртане на 45° обратно на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="467"/>
+        <location filename="../src/items/partlabel.cpp" line="468"/>
         <source>Flip Horizontal</source>
         <translation>Хоризонтално обръщане</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="469"/>
+        <location filename="../src/items/partlabel.cpp" line="470"/>
         <source>Flip label horizontally</source>
         <translation>Хоризонтално обръщане на етикета</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="471"/>
+        <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Flip Vertical</source>
         <translation>Вертикално обръщане</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="473"/>
+        <location filename="../src/items/partlabel.cpp" line="474"/>
         <source>Flip label vertically</source>
         <translation>Вертикално обръщане на етикета</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="475"/>
+        <location filename="../src/items/partlabel.cpp" line="476"/>
         <source>Tiny</source>
         <translation>Дребен</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="477"/>
+        <location filename="../src/items/partlabel.cpp" line="478"/>
         <source>Set font size to tiny</source>
         <translation>Задаване на размера на шрифта да бъде дребен</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="481"/>
+        <location filename="../src/items/partlabel.cpp" line="482"/>
         <source>Small</source>
         <translation>Малък</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="483"/>
+        <location filename="../src/items/partlabel.cpp" line="484"/>
         <source>Set font size to small</source>
         <translation>Задаване на размера на шрифта да бъде малък</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="487"/>
+        <location filename="../src/items/partlabel.cpp" line="488"/>
         <source>Medium</source>
         <translation>Среден</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="489"/>
+        <location filename="../src/items/partlabel.cpp" line="490"/>
         <source>Set font size to medium</source>
         <translation>Задаване на размера на шрифта да бъде среден</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="493"/>
+        <location filename="../src/items/partlabel.cpp" line="494"/>
         <source>Large</source>
         <translation>Голям</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="495"/>
+        <location filename="../src/items/partlabel.cpp" line="496"/>
         <source>Set font size to large</source>
         <translation>Задаване на размера на шрифта да бъде голям</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="499"/>
+        <location filename="../src/items/partlabel.cpp" line="500"/>
         <source>Label text</source>
         <translation>Текст на етикета</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="503"/>
+        <location filename="../src/items/partlabel.cpp" line="504"/>
         <source>Display the text of the label</source>
         <translation>Показване на текста на етикета</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="514"/>
+        <location filename="../src/items/partlabel.cpp" line="515"/>
         <source>Display the value of property %1</source>
         <translation>Показване на стойността на свойството „%1“</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="713"/>
+        <location filename="../src/items/partlabel.cpp" line="714"/>
         <source>Set label for %1</source>
         <translation>Задаване на етикет за „%1“</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="714"/>
+        <location filename="../src/items/partlabel.cpp" line="715"/>
         <source>Label text:</source>
         <translation>Текст на етикета: </translation>
     </message>
@@ -6347,100 +6352,105 @@ Go ahead and save?</source>
         <translation>Неозаглавен набор</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="587"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="591"/>
         <source>Save</source>
         <translation>Запазване</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="408"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="412"/>
         <source>Specify a file name</source>
         <translation>Задайте име на файла</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="412"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="188"/>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="416"/>
         <source>Fritzing Bin (*%1)</source>
         <translation>Файл с набор на Fritzing (*%1)</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="453"/>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="460"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="457"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="464"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="454"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="458"/>
         <source>Cannot find file %1.</source>
         <translation>Файлът „%1“ не може да бъде намерен.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="461"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="465"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Файлът „%1“ не може да бъде прочетен:
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="510"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="514"/>
         <source>Loading...</source>
         <translation>Зареждане…</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="513"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="517"/>
         <source>loading bin &apos;%1&apos;</source>
         <translation>зареждане на набор „%1“</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="580"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="584"/>
         <source>Save bin &quot;%1&quot;</source>
         <translation>Запазване на набор „%1“</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="581"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="585"/>
         <source>Do you want to save the changes you made in the bin &quot;%1&quot;?</source>
         <translation>Искате ли промените, които направихте по набора „%1“, да бъдат запазени?</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="582"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="586"/>
         <source>Your changes will be lost if you don&apos;t save them.</source>
         <translation>Ако не бъдат запазени, промените ще бъдат загубени.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="588"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="592"/>
         <source>Don&apos;t Save</source>
         <translation>Без запазване</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="589"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="593"/>
         <source>Ctrl+D</source>
         <translation>Ctrl+D</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="590"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="594"/>
         <source>Cancel</source>
         <translation>Отказ</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="693"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="697"/>
         <source>Add to bin</source>
         <translation>Добавяне в набора части</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="694"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="698"/>
         <source>Do you really want to add the selected part to the bin?</source>
         <translation>Наистина ли искате да добавите избраната част в набора?</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="879"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="875"/>
         <source>Change icon color...</source>
         <translation>Промяна на цвета на иконката…</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="880"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="876"/>
         <source>Change the color of the icon for this bin.</source>
         <translation>Промяна на цвета на иконката за този набор части.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="891"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="887"/>
         <source>Select a color for this icon</source>
         <translation>Изберете цвят за иконката</translation>
     </message>
@@ -7047,7 +7057,7 @@ SHIFT променя оста</translation>
         <location filename="../src/autoroute/panelizer.cpp" line="485"/>
         <location filename="../src/autoroute/panelizer.cpp" line="1364"/>
         <location filename="../src/autoroute/panelizer.cpp" line="1392"/>
-        <location filename="../src/fapplication.cpp" line="1017"/>
+        <location filename="../src/fapplication.cpp" line="1016"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="44"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="136"/>
         <location filename="../src/model/modelbase.cpp" line="74"/>
@@ -7061,7 +7071,7 @@ SHIFT променя оста</translation>
         <location filename="../src/model/palettemodel.cpp" line="194"/>
         <location filename="../src/model/palettemodel.cpp" line="213"/>
         <location filename="../src/model/palettemodel.cpp" line="335"/>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="528"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="532"/>
         <location filename="../src/svg/gerbergenerator.cpp" line="359"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
@@ -7134,7 +7144,7 @@ SHIFT променя оста</translation>
         <translation type="vanished">&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Версия %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="2059"/>
+        <location filename="../src/fapplication.cpp" line="2058"/>
         <source>Regenerate database failed</source>
         <translation>Пресъздаването на базата данни беше неуспешно</translation>
     </message>
@@ -7974,7 +7984,7 @@ Fritzing все още работи ,но няма да можете да про
         <translation>%2 ... %1 проводника са преместени от запазените си места</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1017"/>
+        <location filename="../src/fapplication.cpp" line="1016"/>
         <source>%1 wires moved from their saved position in %2.</source>
         <translation>%1 проводника са преместени от запазените си места в %2.</translation>
     </message>
@@ -8024,7 +8034,7 @@ Fritzing все още работи ,но няма да можете да про
         <translation>Задайте описание за извода</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="528"/>
+        <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="532"/>
         <source>Fritzing cannot load the parts bin</source>
         <translation>Fritzing не може да зареди набора части</translation>
     </message>
@@ -8132,6 +8142,11 @@ Fritzing все още работи ,но няма да можете да про
         <location filename="../src/version/partschecker.cpp" line="477"/>
         <source>Unable to find parts git repository HEAD</source>
         <translation>Версията „HEAD“ на хранилището в git за частите не може да бъде открита</translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="121"/>
+        <source>PartLabel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

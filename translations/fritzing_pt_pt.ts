@@ -1106,6 +1106,10 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <source>Uploading...</source>
         <translation>Carregando...</translation>
     </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FabUploadProgress</name>
@@ -5093,6 +5097,10 @@ Go ahead and save?</source>
         <source>Select a color for this icon</source>
         <translation>Selecione uma cor para este ícone</translation>
     </message>
+    <message>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Perfboard</name>
@@ -6412,6 +6420,10 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     <message>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
         <translation>Não foi possível recuperar a referência da rede para &apos;%1&apos;#%2. %3</translation>
+    </message>
+    <message>
+        <source>PartLabel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

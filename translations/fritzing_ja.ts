@@ -1054,6 +1054,10 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
         <source>Uploading...</source>
         <translation>アップロード中...</translation>
     </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FabUploadProgress</name>
@@ -3469,7 +3473,7 @@ Do you want to update now?</source>
     </message>
     <message>
         <source>&amp;Show Welcome</source>
-        <translation type="unfinished">&amp;表示　ようこそ</translation>
+        <translation type="unfinished">&amp;表示&#x3000;ようこそ</translation>
     </message>
     <message>
         <source>Show the welcome view</source>
@@ -4997,6 +5001,10 @@ Go ahead and save?</source>
         <source>Select a color for this icon</source>
         <translation>アイコンの色を選択</translation>
     </message>
+    <message>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Perfboard</name>
@@ -6291,6 +6299,10 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
         <translation>&apos;%1&apos;#%2 のネットワーク参照を取得できませんでした。%3</translation>
+    </message>
+    <message>
+        <source>PartLabel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

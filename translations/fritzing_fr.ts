@@ -1112,6 +1112,10 @@ Utiliser le fichier ?</translation>
         <source>Uploading...</source>
         <translation>Téléchargement...</translation>
     </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FabUploadProgress</name>
@@ -5110,6 +5114,10 @@ Poursuivre et sauvegarder?</translation>
         <source>Ctrl+D</source>
         <translation>Ctrl+D</translation>
     </message>
+    <message>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Perfboard</name>
@@ -6409,6 +6417,10 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     <message>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
         <translation>Impossible de récupérer la référence réseau pour &apos;%1&apos;#%2. %3</translation>
+    </message>
+    <message>
+        <source>PartLabel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

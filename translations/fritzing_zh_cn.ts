@@ -1054,6 +1054,10 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <source>Uploading...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FabUploadProgress</name>
@@ -5019,6 +5023,10 @@ Go ahead and save?</source>
         <source>Select a color for this icon</source>
         <translation>为图标选择颜色</translation>
     </message>
+    <message>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Perfboard</name>
@@ -6321,6 +6329,10 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
     </message>
     <message>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PartLabel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

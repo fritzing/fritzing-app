@@ -1098,6 +1098,10 @@ Er zijn geen banen of connectoren die elkaar overlappen of te dicht bij elkaar l
         <source>Uploading...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FabUploadProgress</name>
@@ -5080,6 +5084,10 @@ Doorgaan en opslaan?</translation>
         <source>Select a color for this icon</source>
         <translation>Selecteer een kleur voor dit icoon</translation>
     </message>
+    <message>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Perfboard</name>
@@ -6379,6 +6387,10 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     </message>
     <message>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PartLabel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

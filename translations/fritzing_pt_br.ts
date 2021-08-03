@@ -1093,6 +1093,10 @@ Um svg de placa personalizada tipicamente tem uma ou mais camadas de impressão 
         <source>Uploading...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FabUploadProgress</name>
@@ -5073,6 +5077,10 @@ Vá em frente e salve?</translation>
         <source>Select a color for this icon</source>
         <translation>Selecionar uma cor para este ícone</translation>
     </message>
+    <message>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Perfboard</name>
@@ -6372,6 +6380,10 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PartLabel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

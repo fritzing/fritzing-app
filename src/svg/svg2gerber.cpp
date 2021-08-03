@@ -620,7 +620,7 @@ void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
                         QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index)
 {
 	QString points = polygon.attribute("points");
-	QStringList pointList = points.split(QRegExp("\\s+|,"), QString::SkipEmptyParts);
+	QStringList pointList = points.split(QRegExp("\\s+|,"), Qt::SkipEmptyParts);
 
 	if (pointList.length() < 4) {
 		qDebug() << QString("Empty polyline %1").arg(points);

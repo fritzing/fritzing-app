@@ -5132,7 +5132,7 @@ Note: this warning will not be repeated during this session.</source>
     </message>
     <message>
         <source>Autosave every:</source>
-        <translation type="unfinished"></translation>
+        <translation>自動保存間隔：</translation>
     </message>
     <message>
         <source>minutes</source>
@@ -7208,7 +7208,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>notes</source>
-        <translation type="unfinished"></translation>
+        <translation>ノート</translation>
     </message>
     <message>
         <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
@@ -7216,11 +7216,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>local file storage</source>
-        <translation type="unfinished"></translation>
+        <translation>ローカルファイルストレージ</translation>
     </message>
     <message>
         <source>curves and bendable legs</source>
-        <translation type="unfinished"></translation>
+        <translation>カーブ又は曲げられる端子</translation>
     </message>
     <message>
         <source>In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
@@ -7240,7 +7240,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
+        <translation>別パートラベルのプロパティを表示する又は回転する又はフォントを変更するには、ラベルを右クリックしてください。</translation>
     </message>
     <message>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>

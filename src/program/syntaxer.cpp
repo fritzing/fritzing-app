@@ -81,7 +81,7 @@ bool Syntaxer::loadSyntax(const QString &filename)
 
 	m_canProgram = root.attribute("canProgram", "").compare("true", Qt::CaseInsensitive) == 0;
 	m_name = root.attribute("name");
-	QStringList extensions = root.attribute("extensions").split(";", QString::SkipEmptyParts);
+	QStringList extensions = root.attribute("extensions").split(";", Qt::SkipEmptyParts);
 	if (extensions.count() > 0) {
 		m_extensionString = m_name + " " + QObject::tr("files") + " (";
 		foreach (QString ext, extensions) {

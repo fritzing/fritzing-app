@@ -592,7 +592,7 @@ void PCBSketchWidget::calcDistances(Wire * wire, QList<ConnectorItem *> & ends) 
 		                   .arg(distance).arg(fromConnector0 ? "connector0" : "connector1"));
 		distances.insert(end, dt);
 	}
-	qSort(ends.begin(), ends.end(), distanceLessThan);
+	std::sort(ends.begin(), ends.end(), distanceLessThan);
 
 }
 

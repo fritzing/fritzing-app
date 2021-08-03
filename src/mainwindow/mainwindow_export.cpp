@@ -1207,7 +1207,7 @@ void MainWindow::exportBOM() {
 
 	m_currentGraphicsView->collectParts(partList);
 
-	qSort(partList.begin(), partList.end(), sortPartList);
+	std::sort(partList.begin(), partList.end(), sortPartList);
 
 	foreach (ItemBase * itemBase, partList) {
 		if (itemBase->itemType() != ModelPart::Part) continue;

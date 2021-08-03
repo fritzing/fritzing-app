@@ -133,7 +133,7 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 	m_sketchWidget = sketchWidget;
 	m_displayItem = displayItem;
 	if (m_displayItem) {
-		m_displayItem->setFlags(0);
+		m_displayItem->setFlags(QFlags<QGraphicsItem::GraphicsItemFlag>());
 	}
 	m_displayImage = displayImage;
 	m_collidingThings = collidingThings;

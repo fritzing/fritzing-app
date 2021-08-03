@@ -124,7 +124,7 @@ QString Dip::genModuleID(QMap<QString, QString> & currPropsMap)
 		int p = pins.toInt();
 		if (p < 4) p = 4;
 		if (p % 2 == 1) p--;
-		return QString("generic_ic_dip_%1_%2").arg(QString(p), spacing);
+		return QString("generic_ic_dip_%1_%2").arg(QString::number(p), spacing);
 	}
 }
 

@@ -437,7 +437,7 @@ QString TextUtils::mergeSvg(const QString & svg1, const QString & svg2, const QS
 	if (flip) {
 		QDomElement svg = doc1.documentElement();
 		QString viewBox = svg.attribute("viewBox");
-		QStringList coords = viewBox.split(" ", QString::SkipEmptyParts);
+		QStringList coords = viewBox.split(" ", Qt::SkipEmptyParts);
 		double width = coords[2].toDouble();
 		QMatrix matrix;
 		matrix.translate(width / 2, 0);
@@ -2022,7 +2022,7 @@ void TextUtils::resplit(QStringList & names, const QString & split) {
 	QString appender = split;
 	if (appender == " ") appender = "";
 	foreach (QString name, names) {
-		QStringList sub = name.split(split, QString::SkipEmptyParts);
+		QStringList sub = name.split(split, Qt::SkipEmptyParts);
 		for (int i = 0; i < sub.count(); i++) {
 			QString s = sub.at(i);
 			if (i < sub.count() - 1) s.append(appender);

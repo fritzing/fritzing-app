@@ -308,6 +308,10 @@
         <source>Note: the smaller the keepout, the slower the DRC and Autorouter will run.</source>
         <translation>Nota: quanto menor a margem de distância, mais lento o DRC e o Autorouter a serem executados.</translation>
     </message>
+    <message>
+        <source>Via size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BinManager</name>
@@ -7296,7 +7300,7 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>Rota traça ângulos de 45-graus para reduzir ruído.</translation>
     </message>
     <message>
-        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <source>If Fritzing is missing a particular part and you don&apos;t want to build one yourself, then use pin headers as connectors and the grid to align them.</source>
         <translation>Se o Fritzing estiver com falta do seu componente especial e você não quiser construir um por conta própria, use cabeçalhos como conectores e a grelha para alinhá-los.</translation>
     </message>
     <message>

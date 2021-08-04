@@ -350,6 +350,11 @@
         <translation>Šířka spoje</translation>
     </message>
     <message>
+        <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="308"/>
+        <source>Via size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="97"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
@@ -9250,7 +9255,7 @@ Poznámka: Toto okno můžete taktéž zobrazit kliknutím na text stavu autorou
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="153"/>
-        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <source>If Fritzing is missing a particular part and you don&apos;t want to build one yourself, then use pin headers as connectors and the grid to align them.</source>
         <translation>Pokud v programu Fritzing chybí nějaká speciální součástka a nechcete se s ní vyrábět v &quot;editoru součástek&quot;, poté použijte &quot;Pinheadery&quot; jako konektory a mřížku k jejich uspořádání.</translation>
     </message>
     <message>

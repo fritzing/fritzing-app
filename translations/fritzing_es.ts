@@ -346,6 +346,11 @@
         <translation>Ancho de las pistas</translation>
     </message>
     <message>
+        <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="308"/>
+        <source>Via size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="97"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
@@ -9294,7 +9299,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="153"/>
-        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <source>If Fritzing is missing a particular part and you don&apos;t want to build one yourself, then use pin headers as connectors and the grid to align them.</source>
         <translation type="unfinished">Si en Fritzing falta un component especial y usted no lo quiere construir, pude usar una pinera alineada a la grilla.</translation>
     </message>
     <message>

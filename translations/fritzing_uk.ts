@@ -367,6 +367,11 @@
         <source>Trace width</source>
         <translation>Ширина доріжки</translation>
     </message>
+    <message>
+        <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="308"/>
+        <source>Via size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BinManager</name>
@@ -9347,7 +9352,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="153"/>
-        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <source>If Fritzing is missing a particular part and you don&apos;t want to build one yourself, then use pin headers as connectors and the grid to align them.</source>
         <translation>Якщо у Fritzing відсутня потрібна вам деталь, і ви не хочете робити її самостійно — використовуйте штирковий з’єднувач як з’єднувачі, і сітку для вирівнювання.</translation>
     </message>
     <message>

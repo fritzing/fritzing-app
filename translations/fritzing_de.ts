@@ -318,6 +318,11 @@
         <translation>Leiterbahnbreite</translation>
     </message>
     <message>
+        <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="308"/>
+        <source>Via size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="97"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
@@ -9208,7 +9213,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="153"/>
-        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <source>If Fritzing is missing a particular part and you don&apos;t want to build one yourself, then use pin headers as connectors and the grid to align them.</source>
         <translation>Wenn Ihnen in Fritzing ein Teil fehlt und Sie es nicht selbst erstellen wollen, dann verwenden Sie Stiftleisten als Verbinder und das Raster, um sie auszurichten.</translation>
     </message>
     <message>

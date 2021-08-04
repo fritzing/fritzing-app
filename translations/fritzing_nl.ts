@@ -296,6 +296,10 @@
         <source>Note: the smaller the keepout, the slower the DRC and Autorouter will run.</source>
         <translation>Noot: Hoe kleiner de veiligheidsafstand, hoe langzamer de DRC en Autorouter zullen zijn.</translation>
     </message>
+    <message>
+        <source>Via size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BinManager</name>
@@ -7250,7 +7254,7 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <source>If Fritzing is missing a particular part and you don&apos;t want to build one yourself, then use pin headers as connectors and the grid to align them.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

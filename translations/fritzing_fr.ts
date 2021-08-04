@@ -308,6 +308,10 @@
         <source>OK</source>
         <translation>OK</translation>
     </message>
+    <message>
+        <source>Via size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BinManager</name>
@@ -7277,7 +7281,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
         <translation>Vous ne trouvez pas un composant ? Recherchez-le en cliquant sur l&apos;icône en forme de loupe dans le Magasin de Composants et tapez quelques mots-clés</translation>
     </message>
     <message>
-        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <source>If Fritzing is missing a particular part and you don&apos;t want to build one yourself, then use pin headers as connectors and the grid to align them.</source>
         <translation>S&apos;il manque dans Fritzing un composant spécifique et que vous ne voulez pas le créer par vous-même, alors employez des barrettes (pinheaders) comme connecteurs et employez la grille pour les aligner.</translation>
     </message>
     <message>

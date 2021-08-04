@@ -350,6 +350,11 @@
         <translation>İzleme genişliği</translation>
     </message>
     <message>
+        <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="308"/>
+        <source>Via size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="97"/>
         <source>Cancel</source>
         <translation>İptal Et</translation>
@@ -9290,7 +9295,7 @@ Not: Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzer
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="153"/>
-        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <source>If Fritzing is missing a particular part and you don&apos;t want to build one yourself, then use pin headers as connectors and the grid to align them.</source>
         <translation>Eğer Fritzing sizin özel parçanızı içermiyorsa ve onu kendiniz oluşturmak istemiyorsanız bağlayıcı olarak pin başlıklarını kullanın ve ızgaralar ile hizalayın.</translation>
     </message>
     <message>

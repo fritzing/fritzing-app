@@ -150,7 +150,7 @@ void TipsAndTricks::initTipSets() {
 	ts->tips << tr("Through-hole parts can be traced from either side of a PCB.");
 	ts->tips << tr("It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.");
 	ts->tips << tr("Route traces in 45-degree angles to reduce noise.");
-	ts->tips << tr("If Fritzing is missing your special part and you don't want to build one by yourself, then use pinheaders as connectors and the grid to align them.");
+	ts->tips << tr("If Fritzing is missing a particular part and you don't want to build one yourself, then use pin headers as connectors and the grid to align them.");
 	ts->tips << tr("You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.");
 	ts->tips << tr("Use copper-blocker parts to mask out areas that you want free of copper fill.");
 	ts->tips << tr("To change trace width, select a trace then use the <b>width</b> combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).");

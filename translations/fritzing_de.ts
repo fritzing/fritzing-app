@@ -1321,7 +1321,7 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.cpp" line="33"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Browser öffnen</translation>
     </message>
 </context>
 <context>
@@ -6313,7 +6313,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="188"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchen...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="514"/>
@@ -7801,7 +7801,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="214"/>
         <source>silk export failure</source>
-        <translation type="unfinished">silk export failure</translation>
+        <translation>Fehler beim Exportieren der Farbebene</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="236"/>
@@ -9104,7 +9104,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="140"/>
         <source>Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.</source>
-        <translation></translation>
+        <translation>Bevor Sie den Teile-Editor verwenden, sollten Sie prüfen, ob ein allgemeines IC, ein Mystery-Teil oder eine Stiftleiste für die Aufgabe geeignet ist. Sobald Sie eines dieser Bauteile in Ihre Skizze eingefügt haben, können Sie die Anzahl der Pins, den Pin-Abstand und andere Eigenschaften ändern.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="141"/>
@@ -9209,7 +9209,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="153"/>
         <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
-        <translation></translation>
+        <translation>Wenn Ihnen in Fritzing ein Teil fehlt und Sie es nicht selbst erstellen wollen, dann verwenden Sie Stiftleisten als Verbinder und das Raster, um sie auszurichten.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="154"/>

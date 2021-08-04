@@ -254,7 +254,7 @@
     </message>
     <message>
         <source>Via size</source>
-        <translation type="unfinished"></translation>
+        <translation>ビアサイズ</translation>
     </message>
 </context>
 <context>
@@ -1472,7 +1472,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>banded</source>
-        <translation type="unfinished"></translation>
+        <translation>縞模様</translation>
     </message>
     <message>
         <source>top</source>
@@ -2899,7 +2899,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Treat this connector and its connections as a &apos;ground&apos; during ground fill.</source>
-        <translation type="unfinished"></translation>
+        <translation>グランドフィルする時に、このコネクタとその接続を「グランド」として扱います。</translation>
     </message>
     <message>
         <source>Clear Ground Fill Seeds</source>
@@ -3267,7 +3267,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Search for parts in a sketch by matching text</source>
-        <translation type="unfinished"></translation>
+        <translation>一致するテキストでスケッチにパーツを検索</translation>
     </message>
     <message>
         <source>Text will match part label, description, title, etc. Enter text to search for:</source>
@@ -3521,7 +3521,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Connect all connectors to a single test part</source>
-        <translation type="unfinished"></translation>
+        <translation>すべてのコネクターを1つのテストパーツに接続</translation>
     </message>
     <message>
         <source>Schematic view update</source>
@@ -3540,7 +3540,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>The conversion process will not modify &apos;%1&apos;, until you save the file. </source>
-        <translation type="unfinished"></translation>
+        <translation>変換処理はファイルを保存するまで &apos;%1&apos; を変更しません。 </translation>
     </message>
     <message>
         <source>You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. </source>
@@ -3596,11 +3596,11 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Color Breadboard Wires By Length</source>
-        <translation type="unfinished"></translation>
+        <translation>ブレッドボードのワイヤを長さでを色分けする</translation>
     </message>
     <message>
         <source>Display breadboard wires using standard color coding by length</source>
-        <translation type="unfinished"></translation>
+        <translation>ブレッドボードのワイヤーを長さで色分けして表示する</translation>
     </message>
     <message>
         <source>Local part &apos;%1&apos; incomplete, only &apos;%2&apos; layers.</source>
@@ -3608,7 +3608,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>View &apos;%1&apos; should be prefixed with &apos;%2/&apos;. Trying to continue.</source>
-        <translation type="unfinished"></translation>
+        <translation>ビュー &apos;%1&apos; の前に &apos;%2/&apos; を付ける必要があります。 続行してみてください。</translation>
     </message>
     <message>
         <source>Could not copy subfile &apos;%1&apos; to &apos;%2&apos;</source>
@@ -3667,7 +3667,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>best so far: %1 of %2 routed</source>
-        <translation type="unfinished"></translation>
+        <translation>これまでの最良の結果：ルートされた%2の%1</translation>
     </message>
     <message numerus="yes">
         <source> with %n vias</source>
@@ -3693,7 +3693,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Use best so far...</source>
-        <translation type="unfinished"></translation>
+        <translation>最良の結果を適用する...</translation>
     </message>
     <message>
         <source>Preparing undo...</source>
@@ -3845,7 +3845,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Copper fill: please select only the board you want to fill.</source>
-        <translation type="unfinished"></translation>
+        <translation>銅フィル：ボードを選択してください。</translation>
     </message>
     <message>
         <source>Please click on a PCB first--this selection operation only works for one board at a time.</source>
@@ -3898,7 +3898,9 @@ Reason: %2 (errcode %3)</source>
         <source>10 mils is a good default choice.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>10milが適切なデフォルトです。
+
+</translation>
     </message>
     <message>
         <source>Enter keepout value:</source>
@@ -3925,7 +3927,7 @@ Reason: %2 (errcode %3)</source>
     <name>PEConnectorsView</name>
     <message>
         <source>This is where you edit the connector metadata for the part</source>
-        <translation type="unfinished"></translation>
+        <translation>パートのコネクターのメタデータはここで編集する</translation>
     </message>
     <message>
         <source>number of connectors:</source>
@@ -4008,7 +4010,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>On the desktop, open the folder containing the current svg file.</source>
-        <translation type="unfinished"></translation>
+        <translation>デスクトップで現在のSVGファイルのフォルダーを開いてください。</translation>
     </message>
     <message>
         <source>Unable to write svg to  %1</source>
@@ -4080,11 +4082,11 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>There are no copper layers defined in: %1. </source>
-        <translation type="unfinished"></translation>
+        <translation>銅層はここで定義されていません：%1。 </translation>
     </message>
     <message>
         <source>See &lt;a href=&quot;http://fritzing.org/learning/tutorials/creating-custom-parts/providing-part-graphics/&quot;&gt;this explanation&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;http://fritzing.org/learning/tutorials/creating-custom-parts/providing-part-graphics/&quot;&gt;の説明を見る&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;br/&gt;&lt;br/&gt;This will not be a problem in the next release of the Parts Editor, </source>
@@ -4120,7 +4122,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>The open sketch &apos;%1&apos; uses the part you are editing. </source>
-        <translation type="unfinished"></translation>
+        <translation>開いているスケッチ&apos;%1&apos;は編集中のパーツを使用しています。 </translation>
     </message>
     <message>
         <source>Saving this part will make a change to the sketch that cannot be undone.</source>
@@ -4200,7 +4202,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Duplicate &apos;family&apos; property not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation>複製「ファミリー」プロパティは禁止</translation>
     </message>
     <message>
         <source>Duplicate &apos;variant&apos; property not allowed</source>
@@ -4300,11 +4302,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>The &apos;family&apos; property can not be blank.</source>
-        <translation type="unfinished"></translation>
+        <translation>「ファミリー」プロパティは空白にすることはできません。</translation>
     </message>
     <message>
         <source>A duplicate &apos;family&apos; property is not allowed</source>
-        <translation type="unfinished"></translation>
+        <translation>複製「ファミリー」プロパティは禁止</translation>
     </message>
     <message>
         <source>A duplicate &apos;variant&apos; property is not allowed</source>
@@ -4380,7 +4382,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>So editing may produce an invalid PCB view image</source>
-        <translation type="unfinished"></translation>
+        <translation>編集作業により無効なPCBビュー画像が生成される可能性があります</translation>
     </message>
     <message>
         <source>&amp;Export</source>
@@ -4543,7 +4545,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Set the part&apos;s family--what other parts is this part related to</source>
-        <translation type="unfinished"></translation>
+        <translation>パーとのファミリーを設定する --このパーツはどの部品に関連していますか</translation>
     </message>
     <message>
         <source>Family</source>
@@ -6312,7 +6314,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>PartLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>パートラベル</translation>
     </message>
 </context>
 <context>
@@ -7090,7 +7092,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツのラベルを編集するには、ラベルをダブルクリックするか、インスペクタウィンドウのテキスト入力ウィジェットを使用します。</translation>
     </message>
     <message>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
@@ -7110,7 +7112,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>In Schematic or PCB view, if you drag from a bendpoint with the Alt (Linux: Meta) key down, you will drag out a new wire from that bendpoint.</source>
-        <translation type="unfinished"></translation>
+        <translation>回路図やPCBビューでは、Alt（Linux: Meta）キーを押しながらベンドポイントからドラッグすると、そのベンドポイントから新しいワイヤがドラッグアウトできます。</translation>
     </message>
     <message>
         <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
@@ -7281,7 +7283,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Select from the dropdown, or type in any value from %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>ドロップダウンから選択するか、%1～%2 の値を入力してください</translation>
     </message>
 </context>
 <context>
@@ -7348,95 +7350,95 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Estonian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>エストニア語 - %1</translation>
     </message>
     <message>
         <source>Chinese (Traditional) - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>中国語（繁体字） - %1</translation>
     </message>
     <message>
         <source>Polish - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ポーランド語 - %1</translation>
     </message>
     <message>
         <source>Czech - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>チェコ - %1</translation>
     </message>
     <message>
         <source>Turkish - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>トルコ語 - %1</translation>
     </message>
     <message>
         <source>Swedish - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>スウェーデン語 - %1</translation>
     </message>
     <message>
         <source>Romanian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ルーマニア語 - %1</translation>
     </message>
     <message>
         <source>Thai - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>タイ語 - %1</translation>
     </message>
     <message>
         <source>Greek - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ギリシャ語 - %1</translation>
     </message>
     <message>
         <source>Bulgarian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ブルガリア語 - %1</translation>
     </message>
     <message>
         <source>Galician - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ガリシア語 - %1</translation>
     </message>
     <message>
         <source>Korean - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>韓国語 - %1</translation>
     </message>
     <message>
         <source>Indonesian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>インドネシア語 - %1</translation>
     </message>
     <message>
         <source>Slovak - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>スロバキア語 - %1</translation>
     </message>
     <message>
         <source>Bengali - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ベンガル語 - %1</translation>
     </message>
     <message>
         <source>Persian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ペルシャ語 - %1</translation>
     </message>
     <message>
         <source>Slovenian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>スロベニア語 - %1</translation>
     </message>
     <message>
         <source>Marathi - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>マラーティー語 - %1</translation>
     </message>
     <message>
         <source>Ukrainian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ウクライナ語 - %1</translation>
     </message>
     <message>
         <source>Danish - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>デンマーク語 - %1</translation>
     </message>
     <message>
         <source>Macedonian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>マケドニア語 - %1</translation>
     </message>
     <message>
         <source>Serbian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>セルビア語 - %1</translation>
     </message>
     <message>
         <source>Urdu - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ウルドゥ語 - %1</translation>
     </message>
 </context>
 <context>
@@ -7455,15 +7457,15 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Update parts</source>
-        <translation type="unfinished"></translation>
+        <translation>更新パーツ</translation>
     </message>
     <message>
         <source>&lt;p&gt;No new versions found.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;新しいバージョンは見つかりませんでした。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Checking for new releases...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;新規バージョンを検索...&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Fritzing is unable to check for--and update--new parts.&lt;br/&gt;If you want this functionality, please enable write permission on this folder:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</source>
@@ -7471,27 +7473,27 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>&lt;p&gt;Checking for new parts...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;更新されたパーツを検索...&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;No new releases or new parts found&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;新規バージョンや新規パーツを見つかりませんでした&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;申し訳ありません、更新情報を取得できません&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Sorry, unable to retrieve parts update info&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;申し訳ありません、パーツの更新情報を取得できません&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Downloading new parts...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;新規パーツをダウンロードする...&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Sorry, unable to download new parts&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;申し訳ありません、新規パーツをダウンロードできません&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
@@ -7499,7 +7501,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;申し訳ありません、新規パーツをインストールできません: %1&lt;br/&gt;Fritzingを再起動してください。「終了」ボタンを押して、Fritzingを閉じてください。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
@@ -7511,7 +7513,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Modified Files:</source>
-        <translation type="unfinished"></translation>
+        <translation>修正したファイル：</translation>
     </message>
     <message>
         <source>Fritzing was unable to clean the files, so the update cannot proceed.&lt;br/&gt;You may have to reinstall Fritzing.</source>
@@ -7519,7 +7521,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;新規パーツをインストールします。数分掛かります。&lt;br/&gt;パーツフォルダが破損する可能性がありますので、処理を中断しないでください。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Ok</source>
@@ -7530,7 +7532,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <name>WelcomeView</name>
     <message>
         <source>Recent Sketches</source>
-        <translation type="unfinished"></translation>
+        <translation>最近のスケッチ</translation>
     </message>
     <message>
         <source>New Sketch</source>
@@ -7538,75 +7540,75 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Open Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>スケッチを開く</translation>
     </message>
     <message>
         <source>Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>ファブ</translation>
     </message>
     <message>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing ファブは、Fritzingスケッチから簡単で経済的なプロのPCBを製造するためのサービスです。</translation>
     </message>
     <message>
         <source>produce your first pcb now &gt;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>今すぐ最初のPCBを作りましょう&gt;&gt;</translation>
     </message>
     <message>
         <source>Order your PCB now.</source>
-        <translation type="unfinished"></translation>
+        <translation>今すぐPCBを注文しましょう。</translation>
     </message>
     <message>
         <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos;/&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos;/&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>プロジェクト</translation>
     </message>
     <message>
         <source>Blog</source>
-        <translation type="unfinished"></translation>
+        <translation>ブログ</translation>
     </message>
     <message>
         <source>Fritzing News.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingニュース。</translation>
     </message>
     <message>
         <source>Fritzing Projects.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingプロジェクト。</translation>
     </message>
     <message>
         <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos; /&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos; /&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <source>No recent sketches found</source>
-        <translation type="unfinished"></translation>
+        <translation>最近のスケッチが見つかりませんでした</translation>
     </message>
     <message>
         <source>Unable to reach blog.fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>blog.fritzing.orgにアクセスできません</translation>
     </message>
     <message>
         <source>Tip of the Day:</source>
-        <translation type="unfinished"></translation>
+        <translation>今日のヒント：</translation>
     </message>
     <message>
         <source>All Tips</source>
-        <translation type="unfinished"></translation>
+        <translation>すべてのヒント</translation>
     </message>
     <message>
         <source>Next Tip</source>
-        <translation type="unfinished"></translation>
+        <translation>次のヒント</translation>
     </message>
     <message>
         <source>Fritzing Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingファブ</translation>
     </message>
     <message>
         <source>Unable to reach fritzing.org/projects</source>
-        <translation type="unfinished"></translation>
+        <translation>fritzing.org/projectsにアクセスできません</translation>
     </message>
 </context>
 <context>
@@ -7673,7 +7675,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>super fine (8 mil)</source>
-        <translation type="unfinished"></translation>
+        <translation>超ファイン（8ミル）</translation>
     </message>
     <message>
         <source>extra thin (12 mil)</source>
@@ -7681,7 +7683,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Banded</source>
-        <translation type="unfinished"></translation>
+        <translation>縞模様</translation>
     </message>
     <message>
         <source>pink</source>

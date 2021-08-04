@@ -7558,7 +7558,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
-        <translation>Fritzing ファブは、Fritzingスケッチから簡単で経済的なプロのPCBを製造するためのサービスです。</translation>
+        <translation>Fritzing Fabは、あなたのFritzingスケッチからプロ仕様のプリント基板を簡単かつ経済的に作成するサービスです。</translation>
     </message>
     <message>
         <source>produce your first pcb now &gt;&gt;</source>

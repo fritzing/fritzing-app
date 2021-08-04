@@ -9240,7 +9240,7 @@ Not: Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzer
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="92"/>
-        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
+        <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
         <translation type="unfinished">Birimi mm&apos;den px&apos;e değiştirmek için (en alttaki) durum çubuğundaki fare konum göstergesine tıklayın.</translation>
     </message>
     <message>

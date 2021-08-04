@@ -89,7 +89,7 @@ void TipsAndTricks::initTipSets() {
 	ts->tips << tr("To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.");
 	ts->tips << tr("If you're having trouble selecting a part or a wire (segment), try selecting the part that's in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).");
 	ts->tips << tr("To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.");
-	ts->tips << tr("Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.");
+	ts->tips << tr("Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.");
 	TipSets.append(ts);
 
 	ts = new TipSet;

@@ -9158,7 +9158,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="92"/>
-        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
+        <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
         <translation>Klicken Sie auf die Mauspositionsanzeige in der Statusleiste (unten), um die Einheiten von mm auf px umzuschalten.</translation>
     </message>
     <message>

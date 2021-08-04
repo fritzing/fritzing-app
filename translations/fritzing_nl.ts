@@ -7370,7 +7370,7 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
+        <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

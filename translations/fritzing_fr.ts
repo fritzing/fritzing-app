@@ -7417,7 +7417,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
         <translation>Pour afficher différentes propriétés dans l&apos;étiquette d&apos;un composant, pour la faire tourner, ou changer sa typographie, faites un double-clic dessus.</translation>
     </message>
     <message>
-        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
+        <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
         <translation>Cliquer sur l&apos;indicateur de position de la souris dans la barre de statut (au bas de l&apos;écran) pour faire basculer l&apos;affichage des unités en mm ou en px.</translation>
     </message>
     <message>

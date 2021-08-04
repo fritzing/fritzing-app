@@ -7297,7 +7297,7 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
+        <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

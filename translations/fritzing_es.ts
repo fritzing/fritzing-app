@@ -9249,7 +9249,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="92"/>
-        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
+        <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

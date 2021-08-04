@@ -7265,7 +7265,7 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>別パートラベルのプロパティを表示する又は回転する又はフォントを変更するには、ラベルを右クリックしてください。</translation>
     </message>
     <message>
-        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from mm to px.</source>
+        <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
         <translation>ステータスバー（一番下）でマウス位置インジケーターをクリックすると、単位がmmからpxにスウィッチします。</translation>
     </message>
     <message>

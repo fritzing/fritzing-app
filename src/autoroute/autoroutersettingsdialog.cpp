@@ -305,7 +305,7 @@ QWidget * AutorouterSettingsDialog::createTraceWidget() {
 }
 
 QWidget * AutorouterSettingsDialog::createViaWidget() {
-	QGroupBox * viaGroupBox = new QGroupBox("Via size", this);
+	QGroupBox * viaGroupBox = new QGroupBox(tr("Via size"), this);
 	QVBoxLayout * viaLayout = new QVBoxLayout();
 
 	QWidget * viaWidget = Hole::createHoleSettings(viaGroupBox, m_holeSettings, true, "", true);

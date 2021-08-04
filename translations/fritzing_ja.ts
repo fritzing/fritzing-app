@@ -1269,7 +1269,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Ratsnest wire</source>
-        <translation>ラツネストワイヤー</translation>
+        <translation>ラッツネストワイヤー</translation>
     </message>
     <message>
         <source>Change the locked state of the part in this view. A locked part can&apos;t be moved.</source>
@@ -1857,7 +1857,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Delete selection</source>
-        <translation>選択を削除</translation>
+        <translation>選択したパーツを削除</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
@@ -1902,7 +1902,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Rotate current selection 90 degrees counter clockwise</source>
-        <translation>現在の選択範囲を逆時計方向に90°回転</translation>
+        <translation>現在の選択範囲を反時計回りに90度回転</translation>
     </message>
     <message>
         <source>&amp;Flip Horizontal</source>
@@ -2186,7 +2186,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Select all trace wires</source>
-        <translation>すべてのワイヤ(ラッツネスト)を選択</translation>
+        <translation>すべてのワイヤーを選択</translation>
     </message>
     <message>
         <source>Select all trace wires excluded from autorouting</source>
@@ -2516,11 +2516,11 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Rotate current selection 45 degrees counter clockwise</source>
-        <translation type="unfinished">現在の選択範囲を逆時計方向に90°回転 {45 ?}</translation>
+        <translation>現在の選択範囲を反時計方向に45度回転</translation>
     </message>
     <message>
         <source>Rotate current selection 45 degrees clockwise</source>
-        <translation>現在に選択した項目は45度時計回り回転する</translation>
+        <translation>現在の選択範囲を時計方向に45度回転</translation>
     </message>
     <message>
         <source>Actual (real world physical) size</source>
@@ -2586,7 +2586,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Delete Ratsnest Line</source>
-        <translation>ラツネスト線を削除</translation>
+        <translation>ラッツネストラインを削除</translation>
     </message>
     <message>
         <source>Delete Wire</source>
@@ -2598,11 +2598,11 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Force Update Routing Status and Ratsnests</source>
-        <translation>ラツネスト・ルーティングステータスの強制更新</translation>
+        <translation>ラッツネストとルーティングステータスの強制更新</translation>
     </message>
     <message>
         <source>Recalculate routing status and ratsnest wires (in case the auto-update isn&apos;t working correctly)</source>
-        <translation>ルーティングステータスとラツネストワイヤーの再計算（自動更新が正しく機能していない場合）</translation>
+        <translation>ルーティングステータスとラッツネストワイヤーの再計算（自動更新が正しく機能していない場合）</translation>
     </message>
     <message>
         <source>Lock Part</source>
@@ -2863,19 +2863,19 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>&amp;Create trace from ratsnest</source>
-        <translation type="unfinished">ラツネストからトレースを作成</translation>
+        <translation>ラッツネストからトレースを作成</translation>
     </message>
     <message>
         <source>Create a trace from the ratsnest line</source>
-        <translation>ラツネスト線からトレースを作成</translation>
+        <translation>ラッツネストラインからトレースを作成</translation>
     </message>
     <message>
         <source>&amp;Create wire from ratsnest</source>
-        <translation type="unfinished">ラツネストからワイヤーを作る</translation>
+        <translation>ラッツネストからワイヤーを作る</translation>
     </message>
     <message>
         <source>Create a wire from the ratsnest line</source>
-        <translation>ラツネスト線からワイヤーを作成</translation>
+        <translation>ラッツネストラインからワイヤーを作成</translation>
     </message>
     <message>
         <source>Select All Wires</source>
@@ -3564,7 +3564,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {45°?}</translation>
+        <translation>時計回りに45°回転</translation>
     </message>
     <message>
         <source>Rotate 90° Clockwise</source>
@@ -3576,11 +3576,11 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {90°?}</translation>
+        <translation>反時計回りに90°回転</translation>
     </message>
     <message>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {45°?}</translation>
+        <translation>反時計回りに45°回転</translation>
     </message>
     <message>
         <source>Regenerate parts database ...</source>
@@ -3819,7 +3819,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Create Trace from Ratsnest</source>
-        <translation>ラツネストからのトレースを作成</translation>
+        <translation>ラッツネストからのトレースを作成</translation>
     </message>
     <message>
         <source>Please designate one or more ground fill seeds before doing a ground fill.
@@ -4894,7 +4894,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {45°?}</translation>
+        <translation>時計回りに45°回転</translation>
     </message>
     <message>
         <source>Rotate 90° Clockwise</source>
@@ -4910,15 +4910,15 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {135°?}</translation>
+        <translation>反時計回りに135°回転</translation>
     </message>
     <message>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {90°?}</translation>
+        <translation>反時計回りに90°回転</translation>
     </message>
     <message>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {45°?}</translation>
+        <translation>反時計回りに45°回転</translation>
     </message>
 </context>
 <context>
@@ -5581,7 +5581,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Ratsnest wires</source>
-        <translation>ラッツネストワイヤ</translation>
+        <translation>ラッツネストワイヤー</translation>
     </message>
     <message>
         <source>Select all %1</source>
@@ -6000,7 +6000,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Ratsnest</source>
-        <translation>ラツネスト</translation>
+        <translation>ラッツネスト</translation>
     </message>
     <message>
         <source>mm</source>
@@ -6858,7 +6858,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Delete ratsnest</source>
-        <translation>ラツネストを削除</translation>
+        <translation>ラッツネストを削除</translation>
     </message>
     <message>
         <source>Fritzing</source>
@@ -6882,7 +6882,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Create wire from Ratsnest</source>
-        <translation>ラツネストからワイヤーを作成</translation>
+        <translation>ラッツネストからワイヤーを作成</translation>
     </message>
     <message>
         <source>Note text change</source>
@@ -7146,7 +7146,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Route traces in 45-degree angles to reduce noise.</source>
-        <translation>ノイズを減らすためにトレースを45度の角度で配線してください。</translation>
+        <translation>乱雑さを減らすためにトレースを45度の角度で配線してください。</translation>
     </message>
     <message>
         <source>If Fritzing is missing a particular part and you don&apos;t want to build one yourself, then use pin headers as connectors and the grid to align them.</source>
@@ -7186,7 +7186,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>A ratsnest line (very thin &apos;wire&apos;) between connections in one view means that those connections are somehow connected in another view.</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツ間のラッツネストライン（点線）は、別のビューで接続があることを示しています。例えば、ブレッドボードビューで2つのパーツがワイヤーで接続されている場合、PCBビューではラッツネストラインが表示されます。</translation>
     </message>
     <message>
         <source>To create a custom shape for your PCB, import an SVG file.</source>
@@ -7266,7 +7266,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
-        <translation>ステータスバー（一番下）でマウス位置インジケーターをクリックすると、単位がmmからpxにスウィッチします。</translation>
+        <translation type="unfinished">ステータスバー（一番下）でマウス位置インジケーターをクリックすると、単位がmmからpxにスウィッチします。</translation>
     </message>
     <message>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>

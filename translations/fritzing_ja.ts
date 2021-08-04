@@ -1056,7 +1056,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>ブラウザーで開く</translation>
     </message>
 </context>
 <context>
@@ -3473,7 +3473,7 @@ Do you want to update now?</source>
     </message>
     <message>
         <source>&amp;Show Welcome</source>
-        <translation type="unfinished">&amp;表示&#x3000;ようこそ</translation>
+        <translation type="unfinished">&amp;表示　ようこそ</translation>
     </message>
     <message>
         <source>Show the welcome view</source>
@@ -4519,7 +4519,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Author</source>
-        <translation type="unfinished">作者</translation>
+        <translation>作者</translation>
     </message>
     <message>
         <source>Set the part&apos;s description--you can use simple html (as defined by Qt&apos;s Rich Text)</source>

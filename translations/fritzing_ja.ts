@@ -4571,7 +4571,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Set the part&apos;s url if it is described on a web page</source>
-        <translation type="unfinished"></translation>
+        <translation>ウエブページに記載されている場合、パーツのURLを設定します</translation>
     </message>
     <message>
         <source>URL</source>
@@ -4621,7 +4621,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Set this checkbox to edit internal connections by drawing wires</source>
-        <translation type="unfinished"></translation>
+        <translation>ワイヤを引いて内部接続を編集にするには、このチェックボックスを設定します</translation>
     </message>
     <message>
         <source>Controls for setting the terminal point for a connector. The terminal point is where a wire will attach to the connector. You can also drag the crosshair of the current connector</source>
@@ -4681,7 +4681,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Use the cursor location and mouse wheel to navigate to the SVG element which you want to assign to the current connector, then mouse down to select it.</source>
-        <translation type="unfinished"></translation>
+        <translation>カーソルの位置とマウスホイールを使って、現在のコネクタに割り当てたいSVG要素に移動し、マウス押しながら選択します。</translation>
     </message>
 </context>
 <context>
@@ -5003,7 +5003,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>検索...</translation>
     </message>
 </context>
 <context>
@@ -5032,7 +5032,9 @@ Go ahead and save?</source>
         <source>Performance of perfboards and stripboards with more than approximately 2000 holes can be slow. Are you sure ?
 
 Note: this warning will not be repeated during this session.</source>
-        <translation type="unfinished"></translation>
+        <translation>約2000個以上の穴にいるパーフボードやストリップボードのパフォーマンスが低下することになります。よろしいでしょうか？
+
+注：この警告はこのセッションでは繰り返されません。</translation>
     </message>
     <message>
         <source>Set new size</source>
@@ -5055,7 +5057,7 @@ Note: this warning will not be repeated during this session.</source>
     </message>
     <message>
         <source>You can use the tab key to move through the labels in order.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>タブキーでラベルを順番に移動することができます。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -5150,13 +5152,17 @@ Note: this warning will not be repeated during this session.</source>
         <source>no keys down = scroll
 shift key swaps scroll axis
 Alt or %1 key = zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>マウスホイール　＝垂直スクロール
+マウスホイール+Shiftキー　＝水平スクロール
+マウスホイール+ Alt又は％1キー　＝ズーム</translation>
     </message>
     <message>
         <source>no keys down = zoom
 Alt or %1 key = scroll
 shift key swaps scroll axis</source>
-        <translation type="unfinished"></translation>
+        <translation>マウスホイール　＝ズーム
+マウスホイール+ Alt又は％1キー　=垂直スクロール
+マウスホイール+ Alt + Shiftキー　=水平スクロール</translation>
     </message>
     <message>
         <source>General</source>

@@ -1094,7 +1094,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;PCB View&lt;/b&gt;では、物理的なPCB（プリンテッドサーキットボード‐プリント配線基板）上に部品を配置します。&lt;br/&gt;&lt;br/&gt;PCBは、自宅や小さなラボでDIYのエッチングプロセスを使って作ることができます。また、より精密な製造には専門のPCB製造サービスに送ることもできる。&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;まず、パーツを配置できる回路基板が必要です。スケッチにはすでに1つあるはずですが、ない場合は、回路基板のアイコンをパーツビンからドラッグしてください。アイコンは右の画像に対応しています。&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;PCBをデザインするには、すべてのパーツをボード上にうまく収まるように配置します。そして、コネクターの長さや混乱を制限するには、パーツの位置を整理してください。また、長方形の基板のサイズを変更することもできます。&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;パーツが整理され後に、銅のトレースで接続してください。個々の接続からトレースをドラッグアウトすることもできますし、自動ルートを使ってトレースを引くこともできます。自動ルートボタンはウィンドウの一番下にあります。このボタンは右の画像に対応しています：&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
@@ -1173,7 +1173,13 @@ This dialog collects only connectors labeled &apos;GND&apos; or &apos;ground&apo
 Click an item to highlight its connections in the sketch.
 
 It is also possible to choose a connector as a ground fill seed by right-clicking a connector and choosing the &apos;Set Ground Fill Seed&apos; context menu option.</source>
-        <translation type="unfinished"></translation>
+        <translation>「グランドフィル」と普通の「銅フィル」の違いは、グランドフィルでは、フィリングされた領域に、アースに接続されたトレースとコネクタが含まれることです。グランドコネクタには通常「GND」又は「グランド」と表示されていますが、そうでない場合もあります。また、グランドコネクターは複数ネットを持っているので、その中の1つのネットだけをフィルしたい場合もあります。
+
+このダイアログでは、「GND」又は「グランド」と表示されたコネクタとすでに「シード」として選択されているコネクタのみを収集します。
+
+アイテムをクリックすると、スケッチの中でその接続が強調表示されます。
+
+また、コネクタを右クリックして、「グランドフィルシードを設定」コンテキストメニューオプションを選択すると、そのコネクタをグランドフィルシードとして選択することができます。</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2706,7 +2712,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Export the current sketch to Extended Gerber format (RS-274X) for professional PCB production</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のスケッチをプロPCB 生産用の拡張ガーバーフォーマット(RS-274X)にエクスポート</translation>
     </message>
     <message>
         <source>Unable to save BOM file, but the text is on the clipboard.</source>
@@ -2835,7 +2841,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Fill empty regions of the copper layer--not including traces connected to a GROUND</source>
-        <translation type="unfinished"></translation>
+        <translation>GROUNDに接続されているトレースを除く、銅層の空いている領域を埋める</translation>
     </message>
     <message>
         <source>No copper top layer</source>
@@ -3271,7 +3277,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Text will match part label, description, title, etc. Enter text to search for:</source>
-        <translation type="unfinished"></translation>
+        <translation>テキストは、パーツラベル、説明、タイトル等に一致します。検索するテキストを入力：</translation>
     </message>
     <message>
         <source>Search</source>
@@ -3495,8 +3501,8 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message numerus="yes">
         <source>We strongly recommend that you update these %n parts  to the latest version. </source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n パーツを最新バージョンに更新することを強くお勧めします。 </numerusform>
         </translation>
     </message>
     <message>
@@ -3588,7 +3594,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツデータベースの再生成（問題を発生する場合のみ使用してください）</translation>
     </message>
     <message>
         <source>Fritzing uncompressed (*%1)</source>
@@ -3811,7 +3817,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Unable to create copper fill--probably the part wasn&apos;t dropped onto the PCB.</source>
-        <translation type="unfinished"></translation>
+        <translation>銅フィルを作成できません--PCBにパーツを配置されていないかもしれません。</translation>
     </message>
     <message>
         <source>Unable to create copper fill--possibly the part was dropped onto another part or wire rather than the actual PCB.</source>
@@ -3825,7 +3831,9 @@ Reason: %2 (errcode %3)</source>
         <source>Please designate one or more ground fill seeds before doing a ground fill.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>グランドフィリングを実行する前に、せめて1つのグランドフィルシイドを指定してください。
+
+</translation>
     </message>
     <message>
         <source>Clear ground fill seeds</source>
@@ -3833,7 +3841,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>%1 Fill: please select the board you want to apply fill to.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 フィル：フィルを適用したいボードを選択してください。</translation>
     </message>
     <message>
         <source>Ground</source>
@@ -3892,7 +3900,9 @@ Reason: %2 (errcode %3)</source>
         <source>so you may want to increase the keepout value by that much.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>それぐらいのキープアウト値を増加する必要があります。
+
+</translation>
     </message>
     <message>
         <source>10 mils is a good default choice.
@@ -4090,11 +4100,11 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>&lt;br/&gt;&lt;br/&gt;This will not be a problem in the next release of the Parts Editor, </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br/&gt;&lt;br/&gt;次のパーツエディターのリリースでは問題になりません。 </translation>
     </message>
     <message>
         <source>but for now please modify the file according to the instructions in the link.</source>
-        <translation type="unfinished"></translation>
+        <translation>とりあえず、リンク先の説明に従ってファイルを修正してください。</translation>
     </message>
     <message>
         <source>no schematics found in %1</source>
@@ -4126,7 +4136,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Saving this part will make a change to the sketch that cannot be undone.</source>
-        <translation type="unfinished"></translation>
+        <translation>このパートを保存すると、変更したスケッチを元に戻すことができません。</translation>
     </message>
     <message>
         <source>The open sketches </source>
@@ -4142,7 +4152,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Saving this part will make a change to these sketches that cannot be undone.</source>
-        <translation type="unfinished"></translation>
+        <translation>このパートを保存すると、変更したスケッチを元に戻すことができません。</translation>
     </message>
     <message>
         <source>
@@ -4414,7 +4424,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Open a file to use as the image for this view of the part.</source>
-        <translation type="unfinished"></translation>
+        <translation>このビューを表示するファイルを選択します。</translation>
     </message>
     <message>
         <source>Save as new part</source>
@@ -6429,7 +6439,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzingはクラッシュしたかもしれませんが、以下のファイルの変更の一部は回復できるかもしれません。&lt;/b&gt;&lt;/p&gt;&lt;p&gt;各ファイルがバックアップされた日時が表示されます。元のファイルが保存されている場合、その日時も比較のために記録されます。&lt;/p&gt;&lt;p&gt;元のファイルは保存しいた場合、ディスクの中にまだ残っています。復元ファイルを読み込んだ後、元のファイルを上書きするかを選択できます。&lt;/p&gt;&lt;p&gt;&lt;b&gt;復元したいファイルを下記のリストから選択してください。&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -6969,7 +6979,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>part &apos;%1&apos; with id &apos;%2&apos;; possibly because it has no &apos;family&apos; property.</source>
-        <translation type="unfinished"></translation>
+        <translation>ID &apos;%2&apos;のパーツ &apos;%1&apos; ; おそらく 「ファミリー」 プロパティがないのです。</translation>
     </message>
 </context>
 <context>
@@ -7160,11 +7170,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Smaller PCBs are more affortable than larger ones. Save space and money.</source>
-        <translation type="unfinished"></translation>
+        <translation>小さいPCBは大きいの方より安い。スペースを小さくして、お金を節約できます。</translation>
     </message>
     <message>
         <source>Use copper-blocker parts to mask out areas that you want free of copper fill.</source>
-        <translation type="unfinished"></translation>
+        <translation>銅ブロックパーツを使って、銅を埋めたくない範囲をマスキングします。</translation>
     </message>
     <message>
         <source>To change trace width, select a trace then use the &lt;b&gt;width&lt;/b&gt; combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).</source>

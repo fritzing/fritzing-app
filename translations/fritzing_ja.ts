@@ -2941,7 +2941,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>It doesn&apos;t seem to be possible to automatically determine the actual physical size of the monitor, so &apos;actual size&apos; as currently implemented is only a guess. Your best bet would be to drag out a ruler part, then place a real (physical) ruler on top and zoom until they match up.</source>
-        <translation type="unfinished"></translation>
+        <translation>モニターの物理的なサイズを自動的に判断することはできないようですので、現在実装されている「実際のサイズ」は推測に過ぎません。一番良い方法は、ルーラーパートをドラッグして、実際の（実物の）ルーラーを上に配置し、一致するまでズームします。</translation>
     </message>
     <message>
         <source>Select All &quot;Don&apos;t Autoroute&quot; Traces</source>
@@ -3722,7 +3722,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Fritzing can proceed with the update, but the set of files listed below must first be cleaned (removed or reset). It may take a few minutes. &lt;p&gt;Do you want to proceed with cleaning these files?&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingは更新できますが、その前に下記の一覧ファイルをクリーンアップ（削除又はリセット）する必要があります。数分掛かります。&lt;p&gt;このファイルのクリーンアップしますか？&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Clean files</source>
@@ -5194,7 +5194,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?</source>
-        <translation type="unfinished"></translation>
+        <translation>マウスを押したままてワイヤー又はパーツの端子をドラッグすると（コネクタやベンドポイントとは対照的に）、ワイヤー（や端子）の曲度を変更するか、又は新しいベンドポイントをドラッグアウトするのですか？</translation>
     </message>
     <message>
         <source>This checkbox sets the default behavior. You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag.</source>
@@ -7046,7 +7046,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツビンに部品が見つからない場合は、ジェネリック ICが便利です。  スケッチにドラッグし、インスペクタのウィジェットを使用し：25種類のスルーホールおよびSMDパッケージからの選択；ピンラベルの変更；--DIPとSIPの場合はピン数の変更。  ピンラベルエディターでピンの名前を変更することもできます</translation>
     </message>
     <message>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
@@ -7066,7 +7066,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツやワイヤー（セグメント）の選択がうまくいかない時に、邪魔なパーツを選択して後ろに送ってみましょう：パーツメニューやコンテキストメニュー（右クリックメニュー）で「上げ下げ」機能を使用してください。</translation>
     </message>
     <message>
         <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
@@ -7126,11 +7126,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
-        <translation type="unfinished"></translation>
+        <translation>ワイヤーセグメント（2つのベンドポイント間のワイヤーの断面）をドラッグするには、Alt（Linux: メタ）キーを押しながらドラッグします。  シフトキーも押したままにすると、ワイヤーセグメントは水平又は垂直方向の動きに拘束されます。</translation>
     </message>
     <message>
         <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ワイヤー端やベンドポイントで「Shiftキー＋ドラッグ」利用すると、ワイヤーを45度（又は45度の倍数）の角度に制限します。もしワイヤーは他のワイヤーを接続されている場合、ドラッグされている箇所と隣に繋がっているワイヤーを90度に曲がります。</translation>
     </message>
     <message>
         <source>connections</source>
@@ -7218,7 +7218,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingはカスタムパーツ、生成パーツ、他の仮ファイルと長期目的のファイルを&apos;ローカルストレージフォルダ&apos;に保存します。MacやLinuxでは、~/.config/Fritzing/で通常で保存します。Windows Vista以降では、C:users\\AppData\Roaming\Fritzing\、Windows XPでは、C:Documents and Settings\Application Data\Fritzing\で保存されます。</translation>
     </message>
     <message>
         <source>Check out Parts Editor Help under the &lt;b&gt;Help&lt;/b&gt; Menu.</source>
@@ -7226,7 +7226,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツエディターを使用する前に、タスクがジェネリックICや、ミステリーパートや、又はピンヘッダーで適ているのか確認してください。これらをスケッチにドロップすると、ピン数やピン間隔等のプロパティを変更することができます。</translation>
     </message>
     <message>
         <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
@@ -7234,11 +7234,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツエディターを使って、このビューでパーツ画像のSVGファイルを探すことができます。パーツエディターで、そのビューのタブをクリックし、&lt;b&gt;ファイル&lt;/b&gt;のメニューで&lt;b&gt;フォルダーで表示&lt;/b&gt;を使ってください</translation>
     </message>
     <message>
         <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
-        <translation type="unfinished"></translation>
+        <translation>カスタムパーツファイルをFritzingのインストールフォルダに保存しないでください。そのファイルをFritzingをアップグレードする時に削除される可能性があります。また、Fritzingインストールフォルダ内のファイルはスケッチ(.fzz)ファイルに保存されませんので、共有することはできません。</translation>
     </message>
     <message>
         <source>notes</source>
@@ -7246,7 +7246,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
-        <translation type="unfinished"></translation>
+        <translation>ノートにクリック可のURLを入れるには、ノート内のテキストを選択し、ctrl-l（Macではcommand-l）を入力します。(「リンク」の最初の文字のように「l」です。）既存のリンクを修正するには、リンク先のテキストを選択し、ctrl-l（command-l）を再度使用してください。</translation>
     </message>
     <message>
         <source>local file storage</source>
@@ -7270,7 +7270,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingファブサービスを使用する際、PCBに銅を充填したくない空き領域がある場合は、銅ブロッカーパートを使用してください。このサイズ変更可のパーツは、覆わされた範囲の銅フィルをマスクします。</translation>
     </message>
     <message>
         <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
@@ -7282,7 +7282,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>ブレッドボードビューま又はPCBビューでパートを自由回転させるには、パーツを選択し、回転カーソルが表示されるまでパーツのコーナーにマウスを置いてください。マウスを押したまま、クリックしたコーナーがマウスのドラッグに追従します。</translation>
     </message>
 </context>
 <context>
@@ -7515,7 +7515,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;パーツライブラリの更新があります！&lt;/b&gt;&lt;/p&gt;&lt;p&gt;次にダウンロードとインストールしますか？&lt;br/&gt;&lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;で変更するリストを見てください。&lt;/a&gt;&lt;/p&gt;&lt;p&gt;注意：数分掛かるので、Fritzingも再起動する必要があります。&lt;br/&gt;後からでも&lt;i&gt;ヘルプ&amp;rarr;更新を確認&lt;/i&gt;のメニューで更新できます。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>New files:</source>

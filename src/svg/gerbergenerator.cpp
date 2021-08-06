@@ -631,7 +631,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		root2.setAttribute("height", QString("%1px").arg(theight));
 		if (boardRect.x() != 0 || boardRect.y() != 0) {
 			QString viewBox = root2.attribute("viewBox");
-			QStringList coords = viewBox.split(" ", QString::SkipEmptyParts);
+			QStringList coords = viewBox.split(" ", Qt::SkipEmptyParts);
 			coords[0] = QString::number(sourceRes.left());
 			coords[1] = QString::number(sourceRes.top());
 			root2.setAttribute("viewBox", coords.join(" "));
@@ -842,7 +842,7 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 		if (MultipleZs.indexIn(originalPath) < 0) continue;
 
 		multipleContours = true;
-		QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts);
+		QStringList subpaths = path.attribute("d").split("z", Qt::SkipEmptyParts);
 		foreach (QString subpath, subpaths) {
 			if (!subpath.trimmed().startsWith("m", Qt::CaseInsensitive)) {
 				contoursOK = false;
@@ -866,7 +866,7 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 		QDomElement path = paths.at(p).toElement();
 		QString originalPath = path.attribute("d", "").trimmed();
 		if (MultipleZs.indexIn(originalPath) >= 0) {
-			QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts, Qt::CaseInsensitive);
+			QStringList subpaths = path.attribute("d").split("z", Qt::SkipEmptyParts, Qt::CaseInsensitive);
 			MFinder.indexIn(subpaths.at(0).trimmed());
 			QString priorM = MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
 			for (int i = 1; i < subpaths.count(); i++) {

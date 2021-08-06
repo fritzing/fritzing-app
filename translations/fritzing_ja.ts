@@ -885,7 +885,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>%1 is overlapping (%2 layer)</source>
@@ -930,7 +930,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     <name>DeleteDialog</name>
     <message>
         <source>Also delete the file</source>
-        <translation type="unfinished">ファイルを削除</translation>
+        <translation>ファイルも削除します。</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -1067,7 +1067,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     <name>FabUploadProgress</name>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>Could not connect to Fritzing fab.</source>
@@ -2837,7 +2837,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Fill empty regions of the copper layer--fill will include all traces connected to a GROUND</source>
-        <translation type="unfinished"></translation>
+        <translation>銅層の空いている領域を埋めます--GROUNDに接続されているすべてのトレースを含めです</translation>
     </message>
     <message>
         <source>Fill empty regions of the copper layer--not including traces connected to a GROUND</source>
@@ -2849,7 +2849,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>The copper top (copper 1) layer is not available on a one-sided board.  Please switch the board to double-sided or choose the copper bottom (copper 0) layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>片面基板では、上面銅層の（銅1）を選択できません。  両面基板に変更するか、底面銅層（銅0）を選択してください。</translation>
     </message>
     <message>
         <source>No Sketch found in &apos;%1&apos;</source>
@@ -2893,7 +2893,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Fill empty regions of the copper layer--fill will include all traces connected to the seeds</source>
-        <translation type="unfinished"></translation>
+        <translation>銅層の空いている領域を埋めます--シードに接続されているすべてのトレースを含めです</translation>
     </message>
     <message>
         <source>Choose Ground Fill Seed(s)...</source>
@@ -3233,7 +3233,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Select any traces where the screen location doesn&apos;t match the actual location. Only needed for sketches autorouted with version 0.7.10 or earlier</source>
-        <translation type="unfinished"></translation>
+        <translation>画面上の位置と実際の位置が一致しないトレースを選択してください。バージョン0.7.10以前で自動ルートされたスケッチにのみ必要です</translation>
     </message>
     <message>
         <source>Autorouter/DRC settings...</source>
@@ -3265,7 +3265,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>How much would it could to produce a PCB from this sketch with Fritzing Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fabを使って、このスケッチからPCBを製造するには、どれくらいの掛かるのでしょうか</translation>
     </message>
     <message>
         <source>Find part in sketch...</source>
@@ -3497,7 +3497,9 @@ Do you want to update now?</source>
         <source>
 
 Note: if you want to update later, there are options under the &apos;Part&apos; menu for dealing with outdated parts individually. </source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+注意：後から更新したい場合は、「パーツ」メニューで、古くなったパーツを個別に処理するオプションがあります。 </translation>
     </message>
     <message numerus="yes">
         <source>We strongly recommend that you update these %n parts  to the latest version. </source>
@@ -3507,7 +3509,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
-        <translation type="unfinished"></translation>
+        <translation>パーツやコネクターがずれる等して、スケッチの変更になるかもしれません。 </translation>
     </message>
     <message>
         <source>%1 background</source>
@@ -3519,7 +3521,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Saving this sketch will convert it to the new schematic graphics standard. Go ahead and convert?</source>
-        <translation type="unfinished"></translation>
+        <translation>このスケッチを保存すると、新規回路図標準に変換されます。変換してみますか？</translation>
     </message>
     <message>
         <source>Test Connectors</source>
@@ -3537,12 +3539,15 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>There is a new graphics standard for schematic-view part images, beginning with version 0.8.6.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>バージョン0.8.6以降、回路図ビューのパーツ画像に新規のグラフィック標準標準が導入されました。
+
+</translation>
     </message>
     <message>
         <source>Would you like to convert &apos;%1&apos; to the new standard now or open the file read-only?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>今すぐ &apos;%1&apos; を新規標準に変換しますか、それともファイルを読み取り専用で開きますか？
+</translation>
     </message>
     <message>
         <source>The conversion process will not modify &apos;%1&apos;, until you save the file. </source>
@@ -3550,11 +3555,11 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ほとんどのパート画像のサイズが変更されているため、回路図ビューでパーツや接続を再配置する必要があります。自動ルーターを使用してトレースのクリーンアップを検討してください。 </translation>
     </message>
     <message>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>カスタムパーツは変換されないことに注意してください。「長方形」の回路図画像を変換するツールは、パーツエディターに居ます。</translation>
     </message>
     <message>
         <source>Ctrl+Shift+V</source>
@@ -3821,7 +3826,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Unable to create copper fill--possibly the part was dropped onto another part or wire rather than the actual PCB.</source>
-        <translation type="unfinished"></translation>
+        <translation>銅フィルが作成できない--PCBではなく、他のパートやワイヤーの上に落とされているかもしれません。</translation>
     </message>
     <message>
         <source>Create Trace from Ratsnest</source>
@@ -3857,15 +3862,15 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Please click on a PCB first--this selection operation only works for one board at a time.</source>
-        <translation type="unfinished"></translation>
+        <translation>まずPCBでクリックしてください--この選択操作は、一度に1つのボードに対してのみ有効です。</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>スケッチはまだボードがありません！ この選択操作を使用するには、PCBを追加してください。</translation>
     </message>
     <message>
         <source>Unable to convert this via to a bendpoint because it is connected to a part that is only on the bottom layer and another part that is only on the top layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>上面層のパーツと下面層のパーツを接続されているので、このビアをベンドポイントに変換できません。</translation>
     </message>
     <message>
         <source>Show part silkscreen</source>
@@ -3877,7 +3882,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Your sketch does not have a board yet. You cannot fabricate this sketch without a PCB part.</source>
-        <translation type="unfinished"></translation>
+        <translation>スケッチはまだボードがありません。PCBパーツなしでこのスケッチを製作することはできません。</translation>
     </message>
     <message>
         <source>Enter Keepout</source>
@@ -3894,7 +3899,8 @@ Reason: %2 (errcode %3)</source>
     <message>
         <source>Note that due to aliasing, distances may be too short by up to 2 mils
 </source>
-        <translation type="unfinished"></translation>
+        <translation>エイリアシングの影響で、距離が2ミルまで短くなるかもしれません
+</translation>
     </message>
     <message>
         <source>so you may want to increase the keepout value by that much.
@@ -3922,15 +3928,15 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Sorry, http://fab.fritzing.org is not responding to the quote request. Please check your network connection and/or try again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>申し訳ありません。http://fab.fritzing.org は見積依頼に応答していません。お手数ですが、ネットワーク接続をご確認の上、再度お試しください。</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>スケッチはまだボードがありません！ この選択操作を使用するには、PCBを追加してください。</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB to use this selection operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>スケッチはまだボードがありません！ この選択操作を使用するには、PCBを追加してください。</translation>
     </message>
 </context>
 <context>
@@ -4064,15 +4070,15 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>You may use a PNG or JPG image to construct your part, but it is better to use an SVG. </source>
-        <translation type="unfinished"></translation>
+        <translation>パーツの作成には、PNGやJPG等の画像を使用することもできますが、SVGを使用する方が良いです。 </translation>
     </message>
     <message>
         <source>PNG and JPG images retain their nature as bitmaps and do not look good when scaled--</source>
-        <translation type="unfinished"></translation>
+        <translation>PNGやJPG画像はビットマップとしての性質を持っているため、拡大したら見た目が良くありません--</translation>
     </message>
     <message>
         <source>so for Fritzing parts it is best to use PNG and JPG only as placeholders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingパーツでは、PNGやJPGをプレースホルダーとしてのみ使用するのがベストです。</translation>
     </message>
     <message>
         <source>Use of PNG and JPG discouraged</source>
@@ -4188,7 +4194,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Do you want to save the changes you made in the part &quot;%1&quot;?</source>
-        <translation type="unfinished"></translation>
+        <translation>パート&quot;%1&quot; の変更を保存しますか?</translation>
     </message>
     <message>
         <source>Your changes will be lost if you don&apos;t save them.</source>
@@ -4284,7 +4290,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>The SVG file &apos;%1&apos; appears to have been exported from CorelDRAW without the &apos;presentation attributes&apos; setting. </source>
-        <translation type="unfinished"></translation>
+        <translation>SVG ファイル &apos;%1&apos; は、CorelDRAW から「プレゼンテーション属性」の設定なしにエクスポートされているようです。 </translation>
     </message>
     <message>
         <source>Please re-export the SVG file using that setting, and try loading again.</source>
@@ -4296,7 +4302,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Fritzing currently only supports OCRA and Droid fonts--these have been substituted in for the fonts in &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingは現在、OCRAとDroidフォントにしか対応していません--&apos;%1&apos;のフォントで代用されています</translation>
     </message>
     <message>
         <source>Remove internal connection from &apos;%1&apos;</source>
@@ -4388,7 +4394,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>This version of the new Parts Editor can not deal with separate copper0 and copper1 layers in &apos;%1&apos;. </source>
-        <translation type="unfinished"></translation>
+        <translation>このバージョンの新規パーツエディタでは、&apos;%1&apos; にある別々の copper0 層と copper1 層を扱うことができません。 </translation>
     </message>
     <message>
         <source>So editing may produce an invalid PCB view image</source>
@@ -4416,7 +4422,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Exiting the Parts Editor now is fine, as long as you remember to finish the assignments later.</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツエディターを今終了しても、後で課題を終わらせることを忘れなければ問題ありません。</translation>
     </message>
     <message>
         <source>Load image for view...</source>
@@ -4444,11 +4450,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>This version of the Parts Editor does not yet support editing bendable legs, and the legs may not be displayed correctly in breadboard view . </source>
-        <translation type="unfinished"></translation>
+        <translation>このバージョンのパーツエディターでは、曲り端子の編集がサポートできませんので、ブレッドボードビューで端子が正しく表示されない可能性があります。 </translation>
     </message>
     <message>
         <source>If you make changes to breadboard view, or change connector metadata, the legs may no longer work. </source>
-        <translation type="unfinished"></translation>
+        <translation>ブレッドボードビューを変更したり、コネクターのメタデータを変更したりすると、端子が動作しなくなることがあります。 </translation>
     </message>
     <message>
         <source>You can safely make changes to Schematic or PCB view.
@@ -4496,7 +4502,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;っパーツファイルを識別するためのプレフィックスを入力してください。&lt;br/&gt;ファイル名は「PREFIX_%1」という形になります。&lt;br/&gt;（ユニークなサフィックスが常に付加されるので、提案されたプレフィックスを変更する必要はありません）。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Unable to load image file &apos;%1&apos;:
@@ -4579,7 +4585,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Set the part&apos;s variant--this makes it unique from all other parts in the same family</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツのバリアントを設定すること--同じファミリーのパーツからユニークになります</translation>
     </message>
     <message>
         <source>Variant</source>
@@ -4641,7 +4647,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Controls for setting the terminal point for a connector. The terminal point is where a wire will attach to the connector. You can also drag the crosshair of the current connector</source>
-        <translation type="unfinished"></translation>
+        <translation>コネクタのターミナルポイントを設定するためのコントロールです。ターミナルポイントは、ワイヤーがコネクターに接続される点です。現在のコネクターの十字線をドラッグすることもできます</translation>
     </message>
     <message>
         <source>center</source>
@@ -5198,7 +5204,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>This checkbox sets the default behavior. You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>このチェックボックスでは、デフォルトの動作を設定します。Ctrlキー（Mac：Commandキー）を押しながらドラッグすると、デフォルトではない動作に切り替えることができます。</translation>
     </message>
     <message>
         <source>Curvy wires and legs</source>
@@ -5269,7 +5275,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1のプログラミングファイルを読み込んで編集することはできますが、Fritzingを使ってこのプログラムをコンパイルしたり、マイクロコントローラーにアップロードすることはまだできません。</translation>
     </message>
     <message>
         <source>Open</source>
@@ -6202,7 +6208,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>There are new or modified files in the parts folder &apos;%1&apos;. These changes will be discarded by the update.</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツフォルダ &apos;%1&apos; に新規又は変更されたファイルがあります。この変更は、更新で削除されます。</translation>
     </message>
     <message>
         <source>There are unreadable files in the parts folder &apos;%1&apos;. %2</source>
@@ -6312,7 +6318,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingでは、ベクターグラフィックエディターで形状の「引き算」や「差分」の操作を使ってカットアウトを行う必要があります。</translation>
     </message>
     <message>
         <source>The parts folder &apos;%1&apos; has been changed--it is not in a supported branch (%2). %3</source>
@@ -6473,7 +6479,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>抵抗値を入力するか、ドロップダウンから選択することもできます。nnn.dP形式で、Pは「umkMG」の1つです</translation>
     </message>
 </context>
 <context>
@@ -6916,7 +6922,9 @@ is already there, we won&apos;t add it again, right?</source>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1
+
+注意：この表示は、ステータスバーのルーティングステータスのテキストをマウス押したまま行うこともできます。</translation>
     </message>
     <message>
         <source>Deselect all</source>
@@ -7050,11 +7058,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツビンのアイコンは、実際には複数の関連パーツを表しています。  アイコンをパーツビンからスケッチにドラッグする時には、必ずインスペクタを確かめてください。  インスペクタではパーツを修正したり、関連するパーツと交換等の選択肢を表示しいます。パーツビンのアイコンは、1つだけのパーツの示していないが、「スタック」のように複数のパーツを示します。</translation>
     </message>
     <message>
         <source>The Inspector Window--which lets you change the properties of parts--is only enabled for parts that are in a sketch (not for parts still in a Parts Bin).</source>
-        <translation type="unfinished"></translation>
+        <translation>インスペクタウィンドウは--パーツのプロパティを変更させます--スケッチ内のパーツにのみ有効します（パーツビン内のパーツには有効しません）。</translation>
     </message>
     <message>
         <source>moving and selection</source>
@@ -7090,11 +7098,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>ビュー内のレイヤーの表示を切り替えるには、ビューメニューで層項目のビューを選択してください。  又は、&lt;b&gt;ウィンドウ&lt;/b&gt;メニューから&lt;b&gt;層&lt;/b&gt;のパレットを開いてください。</translation>
     </message>
     <message>
         <source>When you export images from Fritzing, you can choose which layers are exported. Before you choose &apos;Export...&apos;, go into the &apos;View&apos; menu and hide the layers you don&apos;t want to be visible.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingから画像をエクスポートする時に、どの層をエクスポートするかを選択することができます。「エクスポート...」を選択する前に、「表示」メニューで、表示させたくない層を非表示してください。</translation>
     </message>
     <message>
         <source>part labels</source>
@@ -7106,7 +7114,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
-        <translation type="unfinished"></translation>
+        <translation>パートラベルをパートから単独に移動させるには、まずパーツを選択して--パートとラベルを両方強調されています。ラベルを選択されたら、ドラッグすることができます。</translation>
     </message>
     <message>
         <source>wires and bendpoints</source>
@@ -7138,7 +7146,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To see all the connectors connected to a given connector, hold the mouse down on the connector--all the connections will be highlighted.</source>
-        <translation type="unfinished"></translation>
+        <translation>コネクタの間の接続を見るには、そのコネクタでマウスを押したままで--すべての接続が強調されます。</translation>
     </message>
     <message>
         <source>pcb layout</source>
@@ -7146,7 +7154,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Always lead a trace straight out of a pin. This helps to prevent short circuits.</source>
-        <translation type="unfinished"></translation>
+        <translation>常にピンからまっすぐにトレースを引いてください。 ショートを防ぐのに役立ちます。</translation>
     </message>
     <message>
         <source>Through-hole parts can be traced from either side of a PCB.</source>
@@ -7154,7 +7162,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.</source>
-        <translation type="unfinished"></translation>
+        <translation>PCBの片側には水平に、反対側には垂直にトレースを引くのがもっと簡単です。</translation>
     </message>
     <message>
         <source>Route traces in 45-degree angles to reduce noise.</source>
@@ -7162,11 +7170,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>If Fritzing is missing a particular part and you don&apos;t want to build one yourself, then use pin headers as connectors and the grid to align them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingを特定のパーツが欠けていて、自分で作成したくない場合は、ピンヘッダをコネクタとして使って、グリッドで合わせます。</translation>
     </message>
     <message>
         <source>You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.</source>
-        <translation type="unfinished"></translation>
+        <translation>PCBでシルクスクリーンに自作のロゴを入れることができます。コアライブラリのロゴパートを使用し、自作のファイルを選択するだけです。SVG形式が最適です。</translation>
     </message>
     <message>
         <source>Smaller PCBs are more affortable than larger ones. Save space and money.</source>
@@ -7178,7 +7186,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To change trace width, select a trace then use the &lt;b&gt;width&lt;/b&gt; combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).</source>
-        <translation type="unfinished"></translation>
+        <translation>トレースの幅を変更するには、トレースを選択して、インスペクタの &lt;b&gt;幅&lt;/b&gt; コンボボックスを使用します。ドロップダウンを使用するか、数値（8～128の範囲で）を入力することもできます。</translation>
     </message>
     <message>
         <source>parts editor</source>
@@ -7190,11 +7198,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Get a jump start by looking at the example circuits under File &gt; Examples.</source>
-        <translation type="unfinished"></translation>
+        <translation>まず、「ファイル」→「例」にあるサンプル回路を見てみましょう。</translation>
     </message>
     <message>
         <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords</source>
-        <translation type="unfinished"></translation>
+        <translation>検索するのパーツが見つかりませんか？パーツビンの拡大鏡アイコンをクリックし、キーワードを入力して検索してください</translation>
     </message>
     <message>
         <source>A ratsnest line (very thin &apos;wire&apos;) between connections in one view means that those connections are somehow connected in another view.</source>
@@ -7206,7 +7214,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To make a stylish Arduino shield in no time, switch the shape of the PCB from a rectangle to the Arduino</source>
-        <translation type="unfinished"></translation>
+        <translation>スタイリッシュなArduinoシールドをすぐに作成するには、PCBの形状を長方形からArduinoに切り替えてください</translation>
     </message>
     <message>
         <source>pcb production</source>
@@ -7214,7 +7222,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Have your PCB quickly and easily produced with Fritzing Fab. Hover over the &apos;Fabricate&apos; button to get a quote.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingファブで自分のPCBを素早く簡単に製作しましょう。「ファブリケート」ボタンの上にマウスを置いて、見積もりはゲットしましょう。</translation>
     </message>
     <message>
         <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
@@ -7230,7 +7238,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">パーツエディターで、重ねっているグラフィックの下に居るグラフィックを選択するには、シフトキーを押しながらマウスホイールを使います。</translation>
     </message>
     <message>
         <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
@@ -7258,15 +7266,15 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
-        <translation type="unfinished"></translation>
+        <translation>ブレッドボードビューで、ブレッドボードに接続したまま、曲り端子のパーツドをラッグするには、、Altキー（Linux: めた）を押しながらドラッグします。</translation>
     </message>
     <message>
         <source>In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.</source>
-        <translation type="unfinished"></translation>
+        <translation>ブレッドボードビューで、曲り端子の端からワイヤーをドラッグするには、Altキー（Linux: Meta）を押しながらドラッグします。</translation>
     </message>
     <message>
         <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation type="unfinished"></translation>
+        <translation>ブレッドボードビューやPCBビューで、ワイヤーで曲度を付けて、又は曲り端子を追加するには、Ctrlキー（Mac：Command）を押しながらドラッグします。 プリファレンスで、曲りワイヤーをデフォルトにされているのか設定できます。</translation>
     </message>
     <message>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
@@ -7479,7 +7487,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>&lt;p&gt;Fritzing is unable to check for--and update--new parts.&lt;br/&gt;If you want this functionality, please enable write permission on this folder:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Fritzingは、新規パーツをチェックして--更新すること--ができません。&lt;br/&gt;この機能が必要な場合は、このフォルダの書き込み権限を有効にしてください：&lt;br/&gt; &apos;%1&apos;。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Checking for new parts...&lt;/p&gt;</source>
@@ -7507,7 +7515,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;新規パーツのインストールに成功しました！&lt;/p&gt;&lt;p&gt;Fritzingの再起動が必要なので、「閉じる」ボタンでFritzingを終了します。&lt;br/&gt;Fritzingを再起動すると、新規パーツが使えるようになります。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
@@ -7527,7 +7535,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Fritzing was unable to clean the files, so the update cannot proceed.&lt;br/&gt;You may have to reinstall Fritzing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingがファイルをクリーンアップできなかったため、更新を続行できませんでした&lt;br/&gt;Fritzingを再インストールする必要があるかもしれません。</translation>
     </message>
     <message>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>

@@ -53,10 +53,10 @@ Version::Version() {
 	}
 
 	QStringList strings;
-	strings = m_gitDate.split("T", QString::SkipEmptyParts);
+	strings = m_gitDate.split("T", Qt::SkipEmptyParts);
 	if (strings.size() >= 2) {
 		m_date = strings[0];
-		strings = m_date.split("-", QString::SkipEmptyParts);
+		strings = m_date.split("-", Qt::SkipEmptyParts);
 		if (strings.size() >= 3) {
 			m_shortDate = strings[1] + "." + strings[2];
 			m_year = strings[0];

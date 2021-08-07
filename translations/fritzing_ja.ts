@@ -214,7 +214,7 @@
     </message>
     <message>
         <source>homebrew</source>
-        <translation type="unfinished">ホームブリュー</translation>
+        <translation>ホームブリュー</translation>
     </message>
     <message>
         <source>professional</source>
@@ -865,7 +865,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>The areas on your board highlighted in red are connectors and traces which may overlap or be too close together. </source>
-        <translation type="unfinished">基板上で赤く表示されている箇所はコネクタやトレースが重なっていたり近すぎたりかもしれません。 </translation>
+        <translation>ボード上で赤く強調されている箇所はコネクタやトレースが重なっていたり近すぎたりかもしれません。 </translation>
     </message>
     <message>
         <source>Reposition them and run the DRC again to find more problems</source>
@@ -930,7 +930,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     <name>DeleteDialog</name>
     <message>
         <source>Also delete the file</source>
-        <translation>ファイルも削除します。</translation>
+        <translation>ファイルも削除します</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -1086,7 +1086,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
-        <translation type="unfinished">&lt;br/&gt;ブレッドボードビュー&lt;b&gt;は&lt;/b&gt;&lt;i&gt;実際&lt;/i&gt;のブレッドボードプロトタイプのように見えるようになっています。&lt;br/&gt;&lt;br/&gt;まず、右上のパーツビンからパーツをドラッグします。その後、パーツを追加し、ブレッドボード上に配置して接続したり、コネクタをクリックしてワイヤをドラッグしたりします。このプロセスは物理的に物を配置する方法に真似ています。&lt;br/&gt;&lt;br/&gt;ブレッドボードビューでのスケッチ作成が終わったら、他のビューも試してみましょう。ウィンドウの上部にあるタブをクリックすると、ビューを切り替えることができます。ビューによって目的が異なるため、パーツの見方も異なります。</translation>
+        <translation>&lt;br/&gt;&lt;b&gt;ブレッドボードビュー&lt;/b&gt;は&lt;i&gt;物理的な&lt;/i&gt;のブレッドボードプロトタイプに見えるようになっています。&lt;br/&gt;&lt;br/&gt;まず、右上のパーツビンからパーツをドラッグします。その後、パーツを追加し、ブレッドボード上に配置して接続したり、コネクタをクリックしてワイヤをドラッグしたりします。このプロセスは物理的に物を配置する方法に真似しています。&lt;br/&gt;&lt;br/&gt;ブレッドボードビューでのスケッチ作成が終わったら、他のビューも試してみましょう。ウィンドウの上部にあるタブをクリックすると、ビューを切り替えることができます。ビューによって目的が異なるため、パーツの見方も異なります。</translation>
     </message>
     <message>
         <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
@@ -1430,7 +1430,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>variant</source>
-        <translation type="unfinished">変異体</translation>
+        <translation>バリアント</translation>
     </message>
     <message>
         <source>layers</source>
@@ -1887,7 +1887,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>&amp;Preferences...</source>
-        <translation>環境設定(&amp;P) ...</translation>
+        <translation>&amp;プリファレンス…</translation>
     </message>
     <message>
         <source>Show the application&apos;s about box</source>
@@ -2180,7 +2180,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Sorry, &quot;%1&quot; has not been implemented yet</source>
-        <translation>申し訳ありませが  &quot;%1&quot; はまだ実装されていません</translation>
+        <translation>申し訳ありませ。&quot;%1&quot; はまだ実装されていません</translation>
     </message>
     <message>
         <source>Export Bill of Materials (BoM)...</source>
@@ -2230,9 +2230,8 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <source>No part with those characteristics.
 We&apos;re working to avoid this message, and only let you choose between properties that do exist</source>
-        <translation>No part with those characteristics.
-We&apos;re working to avoid this message, and only let you choose between properties that do exist
-(翻訳者中:使用箇所不明)</translation>
+        <translation>そのような特徴を持つパーツはありません。
+このメッセージを回避し、存在するプロパティのみを選択できるようにしています</translation>
     </message>
     <message>
         <source>Swapped %1 with module %2</source>
@@ -2252,7 +2251,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <source>Svg %1 is missing a &apos;%2&apos; layer. For more information on how to create a custom board shape, see the tutorial at &lt;a href=&apos;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&apos;&gt;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&lt;/a&gt;.</source>
-        <translation>Svg %1 は &apos;%2&apos; レイヤの中に見つかりません. 追加情報は「カスタムボードの作り方」をご覧ください, チュートリアルは  &lt;a href=&apos;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&apos;&gt;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&lt;/a&gt;です.</translation>
+        <translation>Svg %1 は &apos;%2&apos; 層が見つかりません. 「カスタムボードの作り方」の詳細につて、 チュートリアルはここでご覧ください&lt;a href=&apos;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&apos;&gt;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&lt;/a&gt;。</translation>
     </message>
     <message>
         <source>Add Bendpoint</source>
@@ -2370,7 +2369,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <source>XML Netlist...</source>
-        <translation>XML Netlist...</translation>
+        <translation>XML ネットリスト...</translation>
     </message>
     <message>
         <source>Save a netlist in XML format</source>
@@ -2648,7 +2647,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Export the current sketch to PDF for DIY PCB production (photoresist)</source>
-        <translation type="unfinished">現在のスケッチをDIY PCB生産用をPDFへエクスポート（フォトレジスト）</translation>
+        <translation>現在のスケッチをDIY PCB生産用をPDFへエクスポート（フォトレジスト）</translation>
     </message>
     <message>
         <source>Export the current sketch to SVG for DIY PCB production (photoresist)</source>
@@ -2724,7 +2723,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>When autorouting, do not rip up this trace wire, via, or jumper item</source>
-        <translation type="unfinished">ルーティング時にこの要素を無視する</translation>
+        <translation>自動ルーティングの時に、このトレースワイヤーやビアやジャンパーパーツを引っ張がさないでください</translation>
     </message>
     <message>
         <source>Move to other side of the board</source>
@@ -2941,7 +2940,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>It doesn&apos;t seem to be possible to automatically determine the actual physical size of the monitor, so &apos;actual size&apos; as currently implemented is only a guess. Your best bet would be to drag out a ruler part, then place a real (physical) ruler on top and zoom until they match up.</source>
-        <translation>モニターの物理的なサイズを自動的に判断することはできないようですので、現在実装されている「実際のサイズ」は推測に過ぎません。一番良い方法は、ルーラーパートをドラッグして、実際の（実物の）ルーラーを上に配置し、一致するまでズームします。</translation>
+        <translation>モニターの物理的なサイズを自動的に判断することはできないようですので、現在実装されている「実際のサイズ」は推測に過ぎません。一番良い方法は、ルーラーパーツをドラッグして、実際の（実物の）ルーラーを上に配置し、一致するまでズームします。</translation>
     </message>
     <message>
         <source>Select All &quot;Don&apos;t Autoroute&quot; Traces</source>
@@ -3153,23 +3152,23 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Inspector</source>
-        <translation type="unfinished">インスペクター</translation>
+        <translation>インスペクター</translation>
     </message>
     <message>
         <source>Undo History</source>
-        <translation type="unfinished">履歴をやり直す</translation>
+        <translation>履歴をやり直し</translation>
     </message>
     <message>
         <source>Breadboard</source>
-        <translation type="unfinished">ブレッドボード</translation>
+        <translation>ブレッドボード</translation>
     </message>
     <message>
         <source>Schematic</source>
-        <translation type="unfinished">回路図</translation>
+        <translation>回路図</translation>
     </message>
     <message>
         <source>PCB</source>
-        <translation type="unfinished">プリント基板</translation>
+        <translation>PCB</translation>
     </message>
     <message>
         <source>Layers</source>
@@ -3177,7 +3176,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Couldn&apos;t get the dock widget</source>
-        <translation type="unfinished">ドックウィジットを取得できません</translation>
+        <translation>ドックウィジットを取得できません</translation>
     </message>
     <message>
         <source>&amp;Delete Wire</source>
@@ -3229,7 +3228,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Show part silkscreen</source>
-        <translation type="unfinished">パーツシルクスクリーンを表示</translation>
+        <translation>パーツシルクスクリーンを表示</translation>
     </message>
     <message>
         <source>Select any traces where the screen location doesn&apos;t match the actual location. Only needed for sketches autorouted with version 0.7.10 or earlier</source>
@@ -3483,7 +3482,7 @@ Do you want to update now?</source>
     </message>
     <message>
         <source>&amp;Show Welcome</source>
-        <translation type="unfinished">&amp;表示　ようこそ</translation>
+        <translation>&amp;表示　ようこそ</translation>
     </message>
     <message>
         <source>Show the welcome view</source>
@@ -3555,7 +3554,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. </source>
-        <translation type="unfinished">ほとんどのパート画像のサイズが変更されているため、回路図ビューでパーツや接続を再配置する必要があります。自動ルーターを使用してトレースのクリーンアップを検討してください。 </translation>
+        <translation>ほとんどのパーツ画像のサイズが変更されているため、回路図ビューでパーツや接続を再配置する必要があります。自動ルーターを使用してトレースのクリーンアップを検討してください。 </translation>
     </message>
     <message>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
@@ -3571,7 +3570,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
-        <translation type="unfinished">(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</translation>
+        <translation>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</translation>
     </message>
     <message>
         <source>Rotate 45° Clockwise</source>
@@ -3579,11 +3578,11 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {90°?}</translation>
+        <translation>90°時計周りを回転する</translation>
     </message>
     <message>
         <source>Rotate 180°</source>
-        <translation type="unfinished">回転 180° {180�?} {180°?}</translation>
+        <translation>180°回転</translation>
     </message>
     <message>
         <source>Rotate 90° Counter Clockwise</source>
@@ -3615,7 +3614,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Local part &apos;%1&apos; incomplete, only &apos;%2&apos; layers.</source>
-        <translation>ローカルパート &apos;%1&apos; を不完全、&apos;%2&apos; 層のみです。</translation>
+        <translation>ローカルパーツ &apos;%1&apos; を不完全、&apos;%2&apos; 層のみです。</translation>
     </message>
     <message>
         <source>View &apos;%1&apos; should be prefixed with &apos;%2/&apos;. Trying to continue.</source>
@@ -3627,15 +3626,15 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Local part &apos;%1&apos; incomplete, subfile not found &apos;%2&apos;</source>
-        <translation>ローカルパート &apos;%1&apos; が不完全で、サブファイル &apos;%2&apos; が見つかりません</translation>
+        <translation>ローカルパーツ &apos;%1&apos; が不完全で、サブファイル &apos;%2&apos; が見つかりません</translation>
     </message>
     <message>
         <source>Unable to open local part &apos;%1&apos;</source>
-        <translation>ローカルパート &apos;%1&apos; を開けません</translation>
+        <translation>ローカルパーツ&apos;%1&apos; を開けません</translation>
     </message>
     <message>
         <source>Visit fritzing.org</source>
-        <translation type="unfinished">fritzing.orgを見る</translation>
+        <translation>fritzing.orgを見る</translation>
     </message>
     <message>
         <source>fritzing.org</source>
@@ -3659,7 +3658,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished">編集</translation>
+        <translation>編集</translation>
     </message>
 </context>
 <context>
@@ -3798,19 +3797,19 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use copper fill.</source>
-        <translation type="unfinished">スケッチはボードを含んでいません。ガーバーのエクスポートのためにブレッドボードビューで銅面を埋めてください.</translation>
+        <translation>スケッチはボードを含んでいません。銅フィルを使用するにはPCBを追加してください。</translation>
     </message>
     <message>
         <source>Fritzing error: unable to render board svg (1).</source>
-        <translation type="unfinished">Fritzing エラー ボードSVGの描画が出来ません  (1).</translation>
+        <translation>Fritzing エラー： SVG (1)のボードがレンダーできません。</translation>
     </message>
     <message>
         <source>Fritzing error: unable to render copper svg (1).</source>
-        <translation type="unfinished">Fritzing エラー 銅箔面のSVGが描画出来ません  (1).</translation>
+        <translation>Fritzing エラー： SVGの銅がレンダー出来ません (1)。</translation>
     </message>
     <message>
         <source>Fritzing error: unable to write copper fill (1).</source>
@@ -3826,7 +3825,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Unable to create copper fill--possibly the part was dropped onto another part or wire rather than the actual PCB.</source>
-        <translation>銅フィルが作成できない--PCBではなく、他のパートやワイヤーの上に落とされているかもしれません。</translation>
+        <translation>銅フィルが作成できない--PCBではなく、他のパーツやワイヤーの上に落とされているかもしれません。</translation>
     </message>
     <message>
         <source>Create Trace from Ratsnest</source>
@@ -3874,11 +3873,11 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Show part silkscreen</source>
-        <translation>パートのシルクスクリーンを表示</translation>
+        <translation>パーツのシルクスクリーンを表示</translation>
     </message>
     <message>
         <source>Hide part silkscreen</source>
-        <translation>パートのシルクスクリーンを非表示</translation>
+        <translation>パーツのシルクスクリーンを非表示</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet. You cannot fabricate this sketch without a PCB part.</source>
@@ -3943,7 +3942,7 @@ Reason: %2 (errcode %3)</source>
     <name>PEConnectorsView</name>
     <message>
         <source>This is where you edit the connector metadata for the part</source>
-        <translation>パートのコネクターのメタデータはここで編集する</translation>
+        <translation>パーツのコネクターのメタデータはここで編集する</translation>
     </message>
     <message>
         <source>number of connectors:</source>
@@ -3962,7 +3961,7 @@ Reason: %2 (errcode %3)</source>
     <name>PEMainWindow</name>
     <message>
         <source>Parts Editor</source>
-        <translation type="unfinished">パーツエディター</translation>
+        <translation>パーツエディター</translation>
     </message>
     <message>
         <source>Show Icon</source>
@@ -4018,7 +4017,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Connectors</source>
-        <translation type="unfinished">コネクター</translation>
+        <translation>コネクター</translation>
     </message>
     <message>
         <source>Show in Folder</source>
@@ -4118,7 +4117,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>schematic part</source>
-        <translation>回路図パート</translation>
+        <translation>回路図パーツ</translation>
     </message>
     <message>
         <source>no footprints found in %1</source>
@@ -4130,7 +4129,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished">ファイル(&amp;F)</translation>
+        <translation>&amp;ファイル</translation>
     </message>
     <message>
         <source>Sketch Change Warning</source>
@@ -4142,7 +4141,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Saving this part will make a change to the sketch that cannot be undone.</source>
-        <translation>このパートを保存すると、変更したスケッチを元に戻すことができません。</translation>
+        <translation>このパーツを保存すると、変更したスケッチを元に戻すことができません。</translation>
     </message>
     <message>
         <source>The open sketches </source>
@@ -4158,7 +4157,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Saving this part will make a change to these sketches that cannot be undone.</source>
-        <translation>このパートを保存すると、変更したスケッチを元に戻すことができません。</translation>
+        <translation>このパーツを保存すると、変更したスケッチを元に戻すことができません。</translation>
     </message>
     <message>
         <source>
@@ -4170,7 +4169,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">保存</translation>
+        <translation>保存</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -4190,11 +4189,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Save &quot;%1&quot;</source>
-        <translation type="unfinished">保存 &quot;%1&quot;</translation>
+        <translation>保存 &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Do you want to save the changes you made in the part &quot;%1&quot;?</source>
-        <translation>パート&quot;%1&quot; の変更を保存しますか?</translation>
+        <translation>パーツ&quot;%1&quot; の変更を保存しますか?</translation>
     </message>
     <message>
         <source>Your changes will be lost if you don&apos;t save them.</source>
@@ -4202,11 +4201,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>untitled part</source>
-        <translation>無題パート</translation>
+        <translation>無題パーツ</translation>
     </message>
     <message>
         <source>Add connector</source>
-        <translation type="unfinished">コネクターを追加</translation>
+        <translation>コネクターを追加</translation>
     </message>
     <message>
         <source>Add %1 connectors</source>
@@ -4238,7 +4237,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Icon</source>
-        <translation type="unfinished">アイコン</translation>
+        <translation>アイコン</translation>
     </message>
     <message>
         <source>Metadata</source>
@@ -4390,7 +4389,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>The part will only be visible in this view and icon view</source>
-        <translation>このパートは当ビューとアイコンビューでのみ表示されます</translation>
+        <translation>このパーツは当ビューとアイコンビューでのみ表示されます</translation>
     </message>
     <message>
         <source>This version of the new Parts Editor can not deal with separate copper0 and copper1 layers in &apos;%1&apos;. </source>
@@ -4517,7 +4516,7 @@ Go ahead and save?</source>
     <name>PEMetadataView</name>
     <message>
         <source>This is where you edit the metadata for the part ...</source>
-        <translation>パートのメタデータはここで編集する…</translation>
+        <translation>パーツのメタデータはここで編集する…</translation>
     </message>
     <message>
         <source>Set the part&apos;s title</source>
@@ -4573,7 +4572,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished">プロパティ</translation>
+        <translation>プロパティ</translation>
     </message>
     <message>
         <source>Set the part&apos;s tags</source>
@@ -4581,7 +4580,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Tags</source>
-        <translation type="unfinished">タグ</translation>
+        <translation>タグ</translation>
     </message>
     <message>
         <source>Set the part&apos;s variant--this makes it unique from all other parts in the same family</source>
@@ -4710,7 +4709,7 @@ Go ahead and save?</source>
     <name>Pad</name>
     <message>
         <source>shape</source>
-        <translation type="unfinished">シェイプ</translation>
+        <translation>形状</translation>
     </message>
     <message>
         <source>center</source>
@@ -4745,7 +4744,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>Unable to proceed; unable to find top level view.</source>
@@ -4888,11 +4887,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate the label by 45 degrees clockwise</source>
-        <translation type="unfinished">ラベルを時計方向に90°回転 {45 ?}</translation>
+        <translation>ラベルを時計周り45度に回転</translation>
     </message>
     <message>
         <source>Rotate the label by 135 degrees clockwise</source>
-        <translation type="unfinished">ラベルを時計方向に90°回転 {135 ?}</translation>
+        <translation>ラベルを時計周り135度に回転</translation>
     </message>
     <message>
         <source>Rotate the label by 135 degrees counter clockwise</source>
@@ -4916,15 +4915,15 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {90°?}</translation>
+        <translation>90° 時計周りを回転する</translation>
     </message>
     <message>
         <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {135°?}</translation>
+        <translation>135° 時計周りを回転する</translation>
     </message>
     <message>
         <source>Rotate 180°</source>
-        <translation type="unfinished">回転 180° {180�?} {180°?}</translation>
+        <translation>180°回転</translation>
     </message>
     <message>
         <source>Rotate 135° Counter Clockwise</source>
@@ -5087,15 +5086,15 @@ Note: this warning will not be repeated during this session.</source>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished">元に戻す</translation>
+        <translation>元に戻す</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="unfinished">やり直し</translation>
+        <translation>やり直し</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">保存</translation>
+        <translation>保存</translation>
     </message>
 </context>
 <context>
@@ -5240,7 +5239,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
 </context>
 <context>
@@ -5259,7 +5258,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">保存</translation>
+        <translation>保存</translation>
     </message>
     <message>
         <source>Remove &quot;%1&quot;?</source>
@@ -5287,7 +5286,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Board</source>
-        <translation type="unfinished">ボード</translation>
+        <translation>ボード</translation>
     </message>
     <message>
         <source>Port</source>
@@ -5322,43 +5321,43 @@ shift key swaps scroll axis</source>
     <name>ProgramWindow</name>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished">編集(&amp;E)</translation>
+        <translation>＆編集</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished">元に戻す</translation>
+        <translation>元に戻す</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="unfinished">やり直し</translation>
+        <translation>やり直し</translation>
     </message>
     <message>
         <source>&amp;Cut</source>
-        <translation type="unfinished">切り取り(&amp;C)</translation>
+        <translation>&amp;切り取り</translation>
     </message>
     <message>
         <source>Cut selection</source>
-        <translation type="unfinished">選択された範囲を切り取り</translation>
+        <translation>選択肢を切り取り</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished">コピー (&amp;C)</translation>
+        <translation>&amp;コピー</translation>
     </message>
     <message>
         <source>Copy selection</source>
-        <translation type="unfinished">選択範囲をコピー</translation>
+        <translation>選択肢をコピー</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
-        <translation type="unfinished">貼り付け(&amp;P)</translation>
+        <translation>&amp;貼り付け(&amp;P)</translation>
     </message>
     <message>
         <source>Paste clipboard contents</source>
-        <translation type="unfinished">クリップボードの内容を貼り付け</translation>
+        <translation>クリップボードの内容を貼り付け</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation type="unfinished">すべて選択(&amp;S)</translation>
+        <translation>%すべて選択</translation>
     </message>
     <message>
         <source>Select all text</source>
@@ -5378,7 +5377,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished">表示(&amp;V)</translation>
+        <translation>&amp;表示</translation>
     </message>
     <message>
         <source>Code Window</source>
@@ -5394,11 +5393,11 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished">環境設定(&amp;P) ...</translation>
+        <translation>&amp;プリファレンス…</translation>
     </message>
     <message>
         <source>Show the application&apos;s about box</source>
-        <translation type="unfinished">アプリケーションのバージョン情報を表示</translation>
+        <translation>Fritzing に関する情報を表示する</translation>
     </message>
     <message>
         <source>&amp;New Tab</source>
@@ -5462,7 +5461,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Board</source>
-        <translation type="unfinished">ボード</translation>
+        <translation>ボード</translation>
     </message>
     <message>
         <source>Port</source>
@@ -5494,11 +5493,11 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>%1%2</source>
-        <translation type="unfinished">%1%2</translation>
+        <translation>%1%2</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished">編集</translation>
+        <translation>編集</translation>
     </message>
     <message>
         <source>View</source>
@@ -5607,7 +5606,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Preferences</source>
-        <translation>設定</translation>
+        <translation>プリファレンス</translation>
     </message>
     <message>
         <source>Please note that a new language setting will not take effect until the next time you run Fritzing.</source>
@@ -5615,7 +5614,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Oops!</source>
-        <translation>Oops!</translation>
+        <translation>おっと！</translation>
     </message>
     <message>
         <source>Sorry, we have a problem with the swapping mechanism.
@@ -5710,7 +5709,8 @@ Fritzingはまだ作業中のためパーツのプロパティを変更するこ
     <message>
         <source>The part that you have just added,
 is already there, we won&apos;t add it again, right?</source>
-        <translation>追加したパーツはすでにあります。再び追加していいですか?</translation>
+        <translation>追加したパーツは
+すでにあります、再び追加しますか?</translation>
     </message>
     <message>
         <source>bb</source>
@@ -5854,7 +5854,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Silkscreen Top (Part Labels)</source>
-        <translation>上面シルクスクリーン（パートラベル）</translation>
+        <translation>上面シルクスクリーン（パーツラベル）</translation>
     </message>
     <message>
         <source>Copper Bottom</source>
@@ -5878,7 +5878,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Silkscreen Bottom (Part Labels)</source>
-        <translation>底面シルクスクリーン（パートラベル）</translation>
+        <translation>底面シルクスクリーン（パーツラベル）</translation>
     </message>
     <message>
         <source>Sorry, Fritzing can&apos;t yet handle both pins and pads together (in %1 in %2)</source>
@@ -5914,7 +5914,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>schematic part %1 not found in %2</source>
-        <translation>回路図のパート %1 が %2 で見つかりません</translation>
+        <translation>回路図のパーツ %1 が %2 で見つかりません</translation>
     </message>
     <message>
         <source>schematic %1 unexpectedly ends (1) in %2</source>
@@ -5930,7 +5930,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Part Image</source>
-        <translation>パート図</translation>
+        <translation>パーツ図</translation>
     </message>
     <message>
         <source>Error reading file %1: %2.</source>
@@ -5978,7 +5978,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>%1 %2,%3 %4</source>
-        <translation type="unfinished">%1 %2,%3 %4</translation>
+        <translation>%1 %2,%3 %4</translation>
     </message>
     <message>
         <source>Change leg of %1,%2</source>
@@ -6144,7 +6144,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Set all to:</source>
-        <translation type="unfinished">すべてを設定：</translation>
+        <translation>すべてを設定：</translation>
     </message>
     <message>
         <source>Pad</source>
@@ -6156,7 +6156,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Part %1 &apos;%2&apos;</source>
-        <translation>パート %1 &apos;%2&apos;</translation>
+        <translation>パーツ %1 &apos;%2&apos;</translation>
     </message>
     <message>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
@@ -6262,7 +6262,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Unable to translate svg curves in %1</source>
-        <translation type="unfinished">%1 で svg カーブを翻訳できません</translation>
+        <translation>％1のSVG曲線は移動できません</translation>
     </message>
     <message>
         <source>%1 layer export is empty.</source>
@@ -6330,7 +6330,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>PartLabel</source>
-        <translation>パートラベル</translation>
+        <translation>パーツラベル</translation>
     </message>
 </context>
 <context>
@@ -6372,7 +6372,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Copies</source>
-        <translation type="unfinished">コピー</translation>
+        <translation>コピー</translation>
     </message>
     <message>
         <source>Visit Fritzing Fab</source>
@@ -6514,7 +6514,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>size</source>
-        <translation type="unfinished">サイズ</translation>
+        <translation>サイズ</translation>
     </message>
     <message>
         <source>custom</source>
@@ -6569,7 +6569,7 @@ is already there, we won&apos;t add it again, right?</source>
     <name>Ruler</name>
     <message>
         <source>width</source>
-        <translation type="unfinished">幅</translation>
+        <translation>幅</translation>
     </message>
     <message>
         <source>&amp;cm</source>
@@ -6627,7 +6627,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Rev</source>
-        <translation type="unfinished">版</translation>
+        <translation>リビジョン</translation>
     </message>
     <message>
         <source>of</source>
@@ -6643,14 +6643,14 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>shape</source>
-        <translation type="unfinished">シェイプ</translation>
+        <translation>形状</translation>
     </message>
 </context>
 <context>
     <name>SchematicSketchWidget</name>
     <message>
         <source>Change voltage from %1 to %2</source>
-        <translation type="unfinished">電圧を %1 から %2 へ変更</translation>
+        <translation>電圧を %1 から %2 へ変更</translation>
     </message>
     <message>
         <source>Change label from %1 to %2</source>
@@ -6880,7 +6880,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>This seems like an attempt to create a trace across layers. This circumstance should not arise: please contact the developers.</source>
@@ -6932,11 +6932,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Part &apos;%1&apos; not found in sketch</source>
-        <translation>パート &apos;%1&apos; がスケッチで見つかりません</translation>
+        <translation>パーツ&apos;%1&apos; がスケッチで見つかりません</translation>
     </message>
     <message>
         <source>Resize board to %1 %2</source>
-        <translation type="unfinished">ボードのサイズを %1 %2 に変更</translation>
+        <translation>ボードのサイズを %1 %2 に変更</translation>
     </message>
     <message numerus="yes">
         <source>show %n part label(s)</source>
@@ -7023,7 +7023,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <name>SymbolPaletteItem</name>
     <message>
         <source>voltage</source>
-        <translation type="unfinished">電圧</translation>
+        <translation>電圧</translation>
     </message>
     <message>
         <source>label</source>
@@ -7114,7 +7114,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
-        <translation>パートラベルをパートから単独に移動させるには、まずパーツを選択して--パートとラベルを両方強調されています。ラベルを選択されたら、ドラッグすることができます。</translation>
+        <translation>パーツラベルをパーツから単独に移動させるには、まずパーツを選択して--パーツとラベルを両方強調されています。ラベルを選択されたら、ドラッグすることができます。</translation>
     </message>
     <message>
         <source>wires and bendpoints</source>
@@ -7138,7 +7138,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
-        <translation type="unfinished">ワイヤー端やベンドポイントで「Shiftキー＋ドラッグ」利用すると、ワイヤーを45度（又は45度の倍数）の角度に制限します。もしワイヤーは他のワイヤーを接続されている場合、ドラッグされている箇所と隣に繋がっているワイヤーを90度に曲がります。</translation>
+        <translation>ワイヤー端やベンドポイントで「Shiftキー＋ドラッグ」利用すると、ワイヤーを45度（又は45度の倍数）の角度に制限します。もしワイヤーは他のワイヤーを接続されている場合、ドラッグされている箇所と隣に繋がっているワイヤーを90度に曲がります。</translation>
     </message>
     <message>
         <source>connections</source>
@@ -7174,7 +7174,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.</source>
-        <translation>PCBでシルクスクリーンに自作のロゴを入れることができます。コアライブラリのロゴパートを使用し、自作のファイルを選択するだけです。SVG形式が最適です。</translation>
+        <translation>PCBでシルクスクリーンに自作のロゴを入れることができます。コアライブラリのロゴパーツを使用し、自作のファイルを選択するだけです。SVG形式が最適です。</translation>
     </message>
     <message>
         <source>Smaller PCBs are more affortable than larger ones. Save space and money.</source>
@@ -7234,11 +7234,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.</source>
-        <translation>パーツエディターを使用する前に、タスクがジェネリックICや、ミステリーパートや、又はピンヘッダーで適ているのか確認してください。これらをスケッチにドロップすると、ピン数やピン間隔等のプロパティを変更することができます。</translation>
+        <translation>パーツエディターを使用する前に、タスクがジェネリックICや、ミステリーパーツや、又はピンヘッダーで適ているのか確認してください。これらをスケッチにドロップすると、ピン数やピン間隔等のプロパティを変更することができます。</translation>
     </message>
     <message>
         <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
-        <translation type="unfinished">パーツエディターで、重ねっているグラフィックの下に居るグラフィックを選択するには、シフトキーを押しながらマウスホイールを使います。</translation>
+        <translation>パーツエディターで、重ねっているグラフィックの下に居るグラフィックを選択するには、シフトキーを押しながらマウスホイールを使います。</translation>
     </message>
     <message>
         <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
@@ -7278,26 +7278,26 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation>Fritzingファブサービスを使用する際、PCBに銅を充填したくない空き領域がある場合は、銅ブロッカーパートを使用してください。このサイズ変更可のパーツは、覆わされた範囲の銅フィルをマスクします。</translation>
+        <translation>Fritzingファブサービスを使用する際、PCBに銅を充填したくない空き領域がある場合は、銅ブロッカーパーツを使用してください。このサイズ変更可のパーツは、覆わされた範囲の銅フィルをマスクします。</translation>
     </message>
     <message>
         <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
-        <translation>別パートラベルのプロパティを表示する又は回転する又はフォントを変更するには、ラベルを右クリックしてください。</translation>
+        <translation>別のパーツラベルのプロパティを表示する又は回転する又はフォントを変更するには、ラベルを右クリックしてください。</translation>
     </message>
     <message>
         <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
-        <translation type="unfinished">ステータスバー（一番下）でマウス位置インジケーターをクリックすると、単位がmmからpxにスウィッチします。</translation>
+        <translation>ステータスバー（下）でマウス位置インジケーターをクリックすると、単位がインチとmmとpxの間に切り替えることができます。</translation>
     </message>
     <message>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation>ブレッドボードビューま又はPCBビューでパートを自由回転させるには、パーツを選択し、回転カーソルが表示されるまでパーツのコーナーにマウスを置いてください。マウスを押したまま、クリックしたコーナーがマウスのドラッグに追従します。</translation>
+        <translation>ブレッドボードビューま又はPCBビューでパーツを自由回転させるには、パーツを選択し、回転カーソルが表示されるまでパーツのコーナーにマウスを置いてください。マウスを押したまま、クリックしたコーナーがマウスのドラッグに追従します。</translation>
     </message>
 </context>
 <context>
     <name>TraceWire</name>
     <message>
         <source>width</source>
-        <translation type="unfinished">幅</translation>
+        <translation>幅</translation>
     </message>
     <message>
         <source>Select from the dropdown, or type in any value from %1 to %2</source>
@@ -7681,7 +7681,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>color</source>
-        <translation type="unfinished">カラー</translation>
+        <translation>色</translation>
     </message>
     <message>
         <source>brown</source>

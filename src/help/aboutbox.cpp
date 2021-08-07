@@ -105,51 +105,49 @@ AboutBox::AboutBox(QWidget *parent)
 
 
 	// Scrolling Credits Text
-
-	// moved data out of credits.txt so we could apply translation
 	QString data =
-	    QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
+		QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
 
-	    "<p>" +
-	    tr("Fritzing is made by: ") +
-	    tr("Prof. Reto Wettach, Andr&eacute; Kn&ouml;rig, Myriel Milicevic, ") +
+		"<p>" +
+		tr("Fritzing is made by: ") +
+		tr("Prof. Reto Wettach, Andr&eacute; Kn&ouml;rig, Myriel Milicevic, ") +
 		tr("Zach Eveland, Dirk van Oosterbosch, ") +
 		tr("Jonathan Cohen, Marcus Paeschke, Omer Yosha, ") +
 		tr("Travis Robertson, Stefan Hermann, Brendan Howell, ") +
 		tr("Mariano Crowe, Johannes Landstorfer, ") +
 		tr("Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, ") +
 		tr("Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern") +
-	    "</p>" +
+		"</p>" +
 
-	    "<p>" +
+		"<p>" +
 		tr("Special thanks go out to: ") +
-	    tr("Jussi &Auml;ngeslev&auml;, Massimo Banzi, Ayah Bdeir, ") +
+		tr("Jussi &Auml;ngeslev&auml;, Massimo Banzi, Ayah Bdeir, ") +
 		tr("Durrell Bishop, David Cuartielles, Fabian Hemmert, ") +
 		tr("Gero Herkenrath, Jeff Hoefs, Tom Hulbert, ") +
 		tr("Tom Igoe, Hans-Peter Kadel, Till Savelkoul, ") +
 		tr("Jan Sieber, Yaniv Steiner, Olaf Val, ") +
-	    tr("Michaela Vieser and Julia Werner.") +
-	    "</p>" +
+		tr("Michaela Vieser and Julia Werner.") +
+		"</p>" +
 
-	    "<p>" +
-	    tr("Thanks for the translations go out to: ") + "<br/>" +
-	    tr("Bulgarian: ") + "Nikolay Stankov, Lyubomir Vasilev" + "<br/>" +
-	    tr("Chinese (Simplified): ") + tr("Yuelin and Ninjia") + "<br/>" +
-	    tr("Chinese (Traditional): ") + tr("Robert Lee") + "<br/>" +
-	    tr("Czech: ") + "Josef Dustira" + "<br/>" +
-	    tr("Dutch: ") + "Steven Noppe, Davy Uittenbogerd" + "<br/>" +
-	    tr("French: ") + "Lionel Michel, Yvan Kloster, Alexandre Dussart, Roald Baudoux" + "<br/>" +
-	    tr("Greek: ") + "Alexander Kaltsas" + "<br/>" +
-	    tr("Italian: ") + "Gianluca Urgese" + "<br/>" +
-	    tr("Japanese: ") + tr("Hiroshi Suzuki") + "<br/>" +
-	    tr("Korean: ") + tr("Jinbuhm Kim") + "<br/>" +
-	    tr("Portuguese (European): ") + "Nuno Pessanha Santos, Bruno Ramalhete" + "<br/>" +
-	    tr("Portuguese (Brazilian): ") + " Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, Gabriel Ferreira" + "<br/>" +
-	    tr("Russian: ") + "Vladimir Savinov" + "<br/>" +
-	    tr("Slovak: ") + " &#313;ubom&iacute;r Ducho&#328;" + "<br/>" +
-	    tr("Spanish: ") + "Kurt Badelt, Miguel Solis" + "<br/>" +
-	    tr("Turkish: ") + "Cihan Mete Bahad&#x0131;r" + "<br/>" +
-	    tr("Ukrainian: ") + tr("Yelyzaveta Chyhryna") + "<br/>" +
+		"<p>" +
+		tr("Thanks for the translations go out to: ") + "<br/>" +
+		tr("Bulgarian: ") + "Nikolay Stankov, Lyubomir Vasilev" + "<br/>" +
+		tr("Chinese (Simplified): ") + tr("Yuelin and Ninjia") + "<br/>" +
+		tr("Chinese (Traditional): ") + tr("Robert Lee") + "<br/>" +
+		tr("Czech: ") + "Josef Dustira" + "<br/>" +
+		tr("Dutch: ") + "Steven Noppe, Davy Uittenbogerd" + "<br/>" +
+		tr("French: ") + "Lionel Michel, Yvan Kloster, Alexandre Dussart, Roald Baudoux" + "<br/>" +
+		tr("Greek: ") + "Alexander Kaltsas" + "<br/>" +
+		tr("Italian: ") + "Gianluca Urgese" + "<br/>" +
+		tr("Japanese: ") + tr("Hiroshi Suzuki") + tr(", Siti Aishah Abdul Raouf") + "<br/>" +
+		tr("Korean: ") + tr("Jinbuhm Kim") + "<br/>" +
+		tr("Portuguese (European): ") + "Nuno Pessanha Santos, Bruno Ramalhete" + "<br/>" +
+		tr("Portuguese (Brazilian): ") + " Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, Gabriel Ferreira" + "<br/>" +
+		tr("Russian: ") + "Vladimir Savinov" + "<br/>" +
+		tr("Slovak: ") + " &#313;ubom&iacute;r Ducho&#328;" + "<br/>" +
+		tr("Spanish: ") + "Kurt Badelt, Miguel Solis" + "<br/>" +
+		tr("Turkish: ") + "Cihan Mete Bahad&#x0131;r" + "<br/>" +
+		tr("Ukrainian: ") + tr("Yelyzaveta Chyhryna") + "<br/>" +
 
 	    "</p>" +
 

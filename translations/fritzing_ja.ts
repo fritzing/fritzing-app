@@ -3596,7 +3596,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
-        <translation>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</translation>
+        <translation></translation>
     </message>
     <message>
         <source>Rotate 45° Clockwise</source>

@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Japanese: </source>
-        <translation>日本人です。 </translation>
+        <translation>日本語： </translation>
     </message>
     <message>
         <source>Russian: </source>
@@ -566,7 +566,7 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     </message>
     <message>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
-        <translation>実物のPCB構造を始める前に &apos;File &gt; Export for Production &gt; Extended Gerber&apos; のオプションでカスタム形状をテストすることをお勧めします </translation>
+        <translation>実物のPCB構造を始める前に &apos;File &gt; Export for Production &gt; Extended Gerber&apos; のオプションでカスタム形状をテストすることをお勧めします。 </translation>
     </message>
     <message>
         <source>Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.&lt;br/&gt;&lt;br/&gt;</source>
@@ -1761,7 +1761,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>loading %1 (pcb)</source>
-        <translation>loading %1 (プリント基板)</translation>
+        <translation>loading %1 (PCB)</translation>
     </message>
     <message>
         <source>loading %1 (schematic)</source>
@@ -2102,7 +2102,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>&amp;Show PCB</source>
-        <translation>プリント基板 ビュー(&amp;S)</translation>
+        <translation>&amp;PCBを表示</translation>
     </message>
     <message>
         <source>Ctrl+3</source>
@@ -2110,7 +2110,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Show the PCB view</source>
-        <translation>プリント基板ビューを表示</translation>
+        <translation>PCBビューを表示</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
@@ -2293,7 +2293,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to export to Gerber.</source>
-        <translation>スケッチはボードを含んでいません。ガーバーのエクスポートのためにブレッドボードビューで追加してください.</translation>
+        <translation>スケッチはボードを含んでいません。ガーバーへエクスポートするには、PCBを追加してください。</translation>
     </message>
     <message>
         <source>Choose a folder for exporting</source>
@@ -3070,7 +3070,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use the autorouter.</source>
-        <translation>スケッチはボードを含んでいません。自動ルーターを使えるようにPCBを追加してください。</translation>
+        <translation>スケッチはボードを含んでいません。自動ルーターを使用するにはPCBを追加してください。</translation>
     </message>
     <message>
         <source>Please select the board you want to autoroute. The autorouter can only handle one board at a time.</source>
@@ -3078,7 +3078,7 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to use ground or copper fill.</source>
-        <translation>スケッチはボードを含んでいません。グランドフィルや銅フィルを使用したい場合PCB追加してください.</translation>
+        <translation>スケッチはボードを含んでいません。グランドフィルや銅フィルを使用するにはPCB追加してください.</translation>
     </message>
     <message>
         <source>Please select a PCB--copper fill only works for one board at a time.</source>

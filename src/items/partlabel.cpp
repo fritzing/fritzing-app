@@ -120,7 +120,10 @@ PartLabel::PartLabel(ItemBase * owner, QWidget *parentWidget, QGraphicsItem * pa
 	setVisible(false);
 	setAcceptHoverEvents(true);
 	AllPartLabels.insert(m_owner->id(), this);
-	m_menu = new QMenu(QObject::tr("PartLabel"), m_parentWidget);
+	// No translation needed, the menu title is only shown if the menu is added
+	// to a menu bar
+	//	m_menu = new QMenu(QObject::tr("PartLabel"), m_parentWidget);
+	m_menu = new QMenu("PartLabel", m_parentWidget);
 }
 
 PartLabel::~PartLabel()

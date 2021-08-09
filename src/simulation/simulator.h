@@ -45,6 +45,7 @@ public slots:
 protected:
 	void drawSmoke(ItemBase* part);
 	void updateMultimeterScreen(ItemBase *, QString);
+	void updateMultimeterScreen(ItemBase *, double);
 	void removeSimItems();
 	void removeSimItems(QList<QGraphicsItem *>);
 	void greyOutNonSimParts(const QSet<class ItemBase *>&);

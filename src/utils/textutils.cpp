@@ -800,19 +800,19 @@ bool TextUtils::addCopper1(const QString & filename, QDomDocument & domDocument,
 
 }
 
-QString TextUtils::convertToPowerPrefix(double q) {
+QString TextUtils::convertToPowerPrefix(double q, char format, int precision) {
 	initPowerPrefixes();
 
-	if (q == 0) return QString::number(q);
+	if (q == 0) return QString::number(q, format, precision);
 
 	for (int i = 0; i < PowerPrefixes.count(); i++) {
 		if (q < 100 * PowerPrefixValues[i]) {
 			q /= PowerPrefixValues[i];
-			return QString::number(q) + PowerPrefixes[i];
+			return QString::number(q, format, precision) + PowerPrefixes[i];
 		}
 	}
 
-	return QString::number(q);
+	return QString::number(q, format, precision);
 }
 
 double TextUtils::convertFromPowerPrefixU(QString & val, const QString & symbol)

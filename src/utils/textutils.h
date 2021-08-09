@@ -40,7 +40,7 @@ public:
 	static void findElementsWithAttribute(QDomElement & element, const QString & att, QList<QDomElement> & elements);
 	static double convertToInches(const QString & string, bool * ok, bool isIllustrator);
 	static double convertToInches(const QString & string);
-	static QString convertToPowerPrefix(double);
+	static QString convertToPowerPrefix(double, char f='g', int prec=6);
 	static double convertFromPowerPrefix(const QString & val, const QString & symbol);
 	static double convertFromPowerPrefixU(QString & val, const QString & symbol);
 

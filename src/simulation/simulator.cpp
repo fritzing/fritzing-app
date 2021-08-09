@@ -355,6 +355,20 @@ void Simulator::drawSmoke(ItemBase* part) {
 }
 
 /**
+ * Display a number in the screen of a multimeter. The message
+ * is displayed in a 7-segments font.
+ * @param[in] multimeter The part where the message is going to be displayed
+ * @param[in] number The number to be displayed
+ */
+void Simulator::updateMultimeterScreen(ItemBase * multimeter, double number){
+	QString textToDisplay = TextUtils::convertToPowerPrefix(number, 'f', 6);
+	int indexPoint = textToDisplay.indexOf('.');
+	textToDisplay = TextUtils::convertToPowerPrefix(number, 'f', 4 - indexPoint);
+	textToDisplay.replace('k', 'K');
+	updateMultimeterScreen(multimeter, textToDisplay);
+}
+
+/**
  * Adds a message to the display of a multimeter. It does not update the message, it just adds
  * some text (the previous message is removed at the beginning of the simulation). The message
  * is displayed in a 7-segments font.
@@ -372,20 +386,19 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 		msg.prepend(QString(5-aux.size(),' '));
 	}
 	std::cout << "msg is now: " << msg.toStdString() <<std::endl;
-
 	QGraphicsTextItem * bbScreen = new QGraphicsTextItem(msg, m_sch2bbItemHash.value(multimeter));
 	//QGraphicsTextItem * schScreen = new QGraphicsTextItem(msg, multimeter);
 //	m_bbSimItems.append(bbScreen);
 	//m_schSimItems.append(schScreen);
 	//schScreen->setPos(QPointF(10,10));
 	//schScreen->setZValue(std::numeric_limits<double>::max());
-	QFont font("Segment7", 30, QFont::Normal);
+	QFont font("Segment16C", 30, QFont::Normal);
 	bbScreen->setFont(font);
 	//There are issues as the size of the text changes depending on the display settings in windows
 	//This hack scales the text to match the appropiate value
 	QRectF boundingBoxText = bbScreen->boundingRect();
 	bbScreen->setScale(52.0/boundingBoxText.height());
-	bbScreen->setPos(QPointF(15,20));
+	bbScreen->setPos(QPointF(16,19));
 	bbScreen->setZValue(std::numeric_limits<double>::max());
 	m_sch2bbItemHash.value(multimeter)->addSimulationGraphicsItem(bbScreen);
 }
@@ -945,7 +958,7 @@ void Simulator::updateMultimeter(ItemBase * part) {
 		if(comProbe->connectedToWires() && vProbe->connectedToWires()) {
 			std::cout << "Multimeter (v_dc) connected with two terminals. " << std::endl;
 			double v = calculateVoltage(vProbe, comProbe);
-			updateMultimeterScreen(part, QString::number(v, 'f', 2));
+			updateMultimeterScreen(part, v);
 		}
 		return;
 	} else if (variant.compare("ammeter (dc)") == 0) {
@@ -955,7 +968,7 @@ void Simulator::updateMultimeter(ItemBase * part) {
 			updateMultimeterScreen(part, "ERR");
 			return;
 		}
-		updateMultimeterScreen(part, QString::number(getCurrent(part), 'f', 3));
+		updateMultimeterScreen(part, getCurrent(part));
 		return;
 	} else if (variant.compare("ohmmeter") == 0) {
 		std::cout << "Ohmmeter found. " << std::endl;
@@ -968,13 +981,7 @@ void Simulator::updateMultimeter(ItemBase * part) {
 		double a = getCurrent(part);
 		double r = abs(v/a);
 		std::cout << "Ohmmeter: Volt: " << v <<", Curr: " << a <<", Ohm: " << r << std::endl;
-		int precision = 1;
-		if (r < 1)
-			precision = 2;
-		if (r >= 200)
-			precision = 0;
-		//TODO: Handle resistances bigger than 10k
-		updateMultimeterScreen(part, QString::number(r, 'f', precision));
+		updateMultimeterScreen(part, r);
 		return;
 	}
 }

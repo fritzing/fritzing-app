@@ -281,7 +281,6 @@
         <file>resources/fonts/DroidSans-Bold.ttf</file>
         <file>resources/fonts/NOTICE</file>
         <file>resources/fonts/OCRA.ttf</file>
-        <file>resources/fonts/7segments/Segment7Standard.otf</file>
         <file>resources/bins/my_parts.fzb</file>
         <file>resources/bins/search.fzb</file>
         <file>resources/bins/temp.fzb</file>
@@ -383,5 +382,7 @@
         <file>resources/images/smoke.svg</file>
         <file>resources/images/rotateCW.svg</file>
         <file>resources/images/rotateCCW.svg</file>
+        <file>resources/fonts/Segment16/Segment16C Regular.ttf</file>
+        <file>resources/fonts/Segment16/Segment16C Bold.ttf</file>
     </qresource>
 </RCC>

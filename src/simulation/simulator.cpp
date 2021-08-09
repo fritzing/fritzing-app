@@ -381,7 +381,10 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 	//schScreen->setZValue(std::numeric_limits<double>::max());
 	QFont font("Segment7", 30, QFont::Normal);
 	bbScreen->setFont(font);
-	//bbScreen->setScale(4);
+	//There are issues as the size of the text changes depending on the display settings in windows
+	//This hack scales the text to match the appropiate value
+	QRectF boundingBoxText = bbScreen->boundingRect();
+	bbScreen->setScale(52.0/boundingBoxText.height());
 	bbScreen->setPos(QPointF(15,20));
 	bbScreen->setZValue(std::numeric_limits<double>::max());
 	m_sch2bbItemHash.value(multimeter)->addSimulationGraphicsItem(bbScreen);

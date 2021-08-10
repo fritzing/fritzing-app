@@ -180,8 +180,8 @@ void LED::setBrightness(double brightness){
 	green = offColor*green + brightness*green;
 	blue = offColor*blue + brightness*blue;
 	if(red > 255) red = 255;
-	if(green > 255) red = 255;
-	if(blue > 255) red = 255;
+	if(green > 255) green = 255;
+	if(blue > 255) blue = 255;
 
 	QString newColorStr = QString("#%1%2%3")
 			.arg(red, 2, 16)

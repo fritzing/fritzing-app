@@ -361,6 +361,8 @@ void Simulator::drawSmoke(ItemBase* part) {
  * @param[in] number The number to be displayed
  */
 void Simulator::updateMultimeterScreen(ItemBase * multimeter, double number){
+	if (number < 1.0e-12)
+		number = 0.0; //Show 0.000 instead of 0.000p
 	QString textToDisplay = TextUtils::convertToPowerPrefix(number, 'f', 6);
 	int indexPoint = textToDisplay.indexOf('.');
 	textToDisplay = TextUtils::convertToPowerPrefix(number, 'f', 4 - indexPoint);

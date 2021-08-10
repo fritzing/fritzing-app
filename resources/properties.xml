@@ -247,6 +247,7 @@
   <property name="current" symbol="A" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">
 	<suffix suffix="InductorModuleID"/>
 	<suffix suffix="LEDModuleID"/>
+	<suffix suffix="SuperfluxModuleID"/>
 </property>
 
 <property name="power" symbol="W" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">

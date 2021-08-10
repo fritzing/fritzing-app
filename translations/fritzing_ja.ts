@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Fritzing is made by: </source>
-        <translation>フリッツィングは、次のように作られています。 </translation>
+        <translation>Fritzing は次の方々に作成されます： </translation>
     </message>
     <message>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
@@ -69,27 +69,27 @@
     </message>
     <message>
         <source>Thanks for the translations go out to: </source>
-        <translation>翻訳に感謝します。 </translation>
+        <translation>翻訳はこの方々に感謝します: </translation>
     </message>
     <message>
         <source>Spanish: </source>
-        <translation>スペイン語。 </translation>
+        <translation>スペイン語： </translation>
     </message>
     <message>
         <source>Italian: </source>
-        <translation>イタリア語。 </translation>
+        <translation>イタリア語： </translation>
     </message>
     <message>
         <source>Portuguese (European): </source>
-        <translation>ポルトガル語（ヨーロッパ）。 </translation>
+        <translation>ポルトガル語（ヨーロッパ）： </translation>
     </message>
     <message>
         <source>Portuguese (Brazilian): </source>
-        <translation>ポルトガル語（ブラジル）。 </translation>
+        <translation>ポルトガル語（ブラジル）： </translation>
     </message>
     <message>
         <source>Chinese (Simplified): </source>
-        <translation>中国語（簡体字）。 </translation>
+        <translation>中国語（簡体字）： </translation>
     </message>
     <message>
         <source>Japanese: </source>
@@ -97,39 +97,39 @@
     </message>
     <message>
         <source>Russian: </source>
-        <translation>ロシア語です。 </translation>
+        <translation>ロシア語： </translation>
     </message>
     <message>
         <source>Dutch: </source>
-        <translation>オランダ語。 </translation>
+        <translation>オランダ語： </translation>
     </message>
     <message>
         <source>Czech: </source>
-        <translation>チェコ。 </translation>
+        <translation>チェコ語： </translation>
     </message>
     <message>
         <source>Korean: </source>
-        <translation>韓国語です。 </translation>
+        <translation>韓国語： </translation>
     </message>
     <message>
         <source>Slovak: </source>
-        <translation>スロバキア語。 </translation>
+        <translation>スロバキア語： </translation>
     </message>
     <message>
         <source>Greek: </source>
-        <translation>ギリシャ語。 </translation>
+        <translation>ギリシャ語： </translation>
     </message>
     <message>
         <source>French: </source>
-        <translation>フランス語。 </translation>
+        <translation>フランス語： </translation>
     </message>
     <message>
         <source>Turkish: </source>
-        <translation>トルコ語。 </translation>
+        <translation>トルコ語： </translation>
     </message>
     <message>
         <source>Bulgarian: </source>
-        <translation>ブルガリア語。 </translation>
+        <translation>ブルガリア語： </translation>
     </message>
     <message>
         <source>Yuelin and Ninjia</source>
@@ -137,7 +137,7 @@
     </message>
     <message>
         <source>Chinese (Traditional): </source>
-        <translation>中国語（繁体字）。 </translation>
+        <translation>中国語（繁体字）： </translation>
     </message>
     <message>
         <source>Robert Lee</source>
@@ -157,7 +157,7 @@
     </message>
     <message>
         <source>Ukrainian: </source>
-        <translation>ウクライナ。 </translation>
+        <translation>ウクライナ語： </translation>
     </message>
     <message>
         <source>Yelyzaveta Chyhryna</source>
@@ -169,7 +169,7 @@
     </message>
     <message>
         <source>Special thanks go out to: </source>
-        <translation>スペシャルサンクスをお贈りします。 </translation>
+        <translation>特別な感謝を捧げます： </translation>
     </message>
     <message>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>

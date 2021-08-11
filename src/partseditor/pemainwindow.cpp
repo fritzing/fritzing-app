@@ -1464,7 +1464,7 @@ void PEMainWindow::initConnectors(bool updateConnectorsView) {
 		connector = connector.nextSiblingElement("connector");
 	}
 
-	qSort(m_connectorList.begin(), m_connectorList.end(), byID);
+	std::sort(m_connectorList.begin(), m_connectorList.end(), byID);
 
 	if (updateConnectorsView) {
 		m_connectorsView->initConnectors(&m_connectorList);
@@ -2805,7 +2805,7 @@ void PEMainWindow::connectorCountChanged(int newCount) {
 	if (newCount == connectorList.count()) return;
 
 	if (newCount < connectorList.count()) {
-		qSort(connectorList.begin(), connectorList.end(), byID);
+		std::sort(connectorList.begin(), connectorList.end(), byID);
 		QList<QDomElement> toDelete;
 		for (int i = newCount; i < connectorList.count(); i++) {
 			toDelete.append(connectorList.at(i));

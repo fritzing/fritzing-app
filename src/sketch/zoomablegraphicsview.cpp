@@ -153,18 +153,18 @@ void ZoomableGraphicsView::relativeZoom(double step, bool centerOnCursor) {
 	//QPoint q = this->mapFromGlobal(p);
 	//QPointF r = this->mapToScene(q);
 
-	QMatrix matrix;
+	QTransform transform;
 	double multiplier = 1;
 	if (m_viewFromBelow) multiplier = -1;
-	matrix.scale(multiplier * tempScaleValue, tempScaleValue);
+	transform.scale(multiplier * tempScaleValue, tempScaleValue);
 	if (centerOnCursor) {
-		//this->setMatrix(QMatrix().translate(-r.x(), -r.y()) * matrix * QMatrix().translate(r.x(), r.y()));
+		//this->setTransform(QTransform().translate(-r.x(), -r.y()) * transform * QTransform().translate(r.x(), r.y()));
 		this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
 	}
 	else {
 		this->setTransformationAnchor(QGraphicsView::AnchorViewCenter);
 	}
-	this->setMatrix(matrix);
+	this->setTransform(transform);
 
 	emit zoomChanged(m_scaleValue);
 }

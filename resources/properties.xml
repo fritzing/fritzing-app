@@ -228,6 +228,14 @@
 <property  name="maximum resistance" symbol="&#937;" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">
 	<suffix suffix="PotentiometerModuleID"/>
 	<suffix suffix="alps-starter-pot9mm" />
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3MM-2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT-5MM"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT_PTH_S3_LOCK"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-SMD"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--PTH-KNOB"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-PTH"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3362U-2"/>
 </property>
 
 <property name="inductance" symbol="H" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">
@@ -236,6 +244,14 @@
 <property  name="knob status" symbol="%" minValue="0" maxValue="100" defaultValue="50" numeric="yes" editable="yes">
 	<suffix suffix="PotentiometerModuleID"/>
 	<suffix suffix="alps-starter-pot9mm" />
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3MM-2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT-5MM"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT_PTH_S3_LOCK"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-SMD"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--PTH-KNOB"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-PTH"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3362U-2"/>
 	<menuItem value="0" />
 	<menuItem value="25" />
 	<menuItem value="50" />
@@ -251,6 +267,14 @@
 <property name="power" symbol="W" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">
 	<suffix suffix="ResistorModuleID"/>
 	<suffix suffix="PotentiometerModuleID"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3MM-2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT-5MM"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT_PTH_S3_LOCK"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-SMD"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--PTH-KNOB"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-PTH"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3362U-2"/>
 </property>
 
 <property name="voltage (max)" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">

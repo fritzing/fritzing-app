@@ -191,14 +191,15 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 			}
 
 		}
-		// TODO: use the list in properties.xml
-		if (moduleID == "alps-starter-pot9mm" || moduleID == "beab33bd7feee277622ef76dd6e79e4d") {
+
+		// If the moduleID ends with any of the suffixes listed in properties.xml,
+		// use the Capacitor class to be able to change the properties in the Inspector pane
+		// TODO: Otimize the code above this line, as it can be simplified
+		if (PropertyDefMaster::partPropertiesCanBeModified(moduleID)) {
 			return new Capacitor(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 		}
+
 		QString family = modelPart->properties().value("family", "");
-		if (family.compare("dc motor", Qt::CaseInsensitive) == 0) {
-			return new Capacitor(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
-		}
 		if (family.compare("mystery part", Qt::CaseInsensitive) == 0) {
 			return new MysteryPart(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 		}

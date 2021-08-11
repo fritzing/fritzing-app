@@ -329,6 +329,11 @@ void Simulator::simulate() {
 			updateBattery(part);
 			continue;
 		}
+		if (family.contains("potentiometer") || family.contains("sparkfun trimpot")) {
+			updatePotentiometer(part);
+			continue;
+		}
+
 
 	}
 
@@ -529,7 +534,7 @@ double Simulator::getMaxPropValue(ItemBase *part, QString property) {
 double Simulator::getPower(ItemBase* part, QString subpartName) {
 	//TODO: Handle devices that do not return the power
 	QString instanceStr = part->instanceTitle().toLower();
-	instanceStr.append(subpartName);
+	instanceStr.append(subpartName.toLower());
 	instanceStr.prepend("@");
 	instanceStr.append("[p]");
 	return m_simulator->GetDataPoint(instanceStr.toStdString());
@@ -548,7 +553,7 @@ double Simulator::getPower(ItemBase* part, QString subpartName) {
  */
 double Simulator::getCurrent(ItemBase* part, QString subpartName) {
 	QString instanceStr = part->instanceTitle().toLower();
-	instanceStr.append(subpartName);
+	instanceStr.append(subpartName.toLower());
 
 	QChar deviceType = getDeviceType(part);
 	//std::cout << "deviceType: " << deviceType.toLatin1() <<std::endl;
@@ -816,7 +821,7 @@ void Simulator::updatePotentiometer(ItemBase * part) {
 	double maxPower = getMaxPropValue(part, "power");
 	double powerA = getPower(part, "A"); //power through resistor A
 	double powerB = getPower(part, "B"); //power through resistor B
-	double power = std::max(powerA, powerB);
+	double power = powerA + powerB;
 	if (power > maxPower) {
 		drawSmoke(part);
 	}

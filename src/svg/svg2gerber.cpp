@@ -137,7 +137,8 @@ int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, Fo
 		foreach (QString aperture, m_platedApertures.uniqueKeys()) {
 			m_gerber_header += QString("T%1%2\n").arg(ix).arg(aperture);
 			m_gerber_paths += QString("T%1\n").arg(ix);
-			foreach (QString loc, m_platedApertures.values(aperture).toSet()) {
+			auto values = m_platedApertures.values(aperture);
+			foreach (QString loc, QSet<QString>(values.begin(), values.end())) {
 				m_gerber_paths += loc + "\n";
 			}
 			ix++;

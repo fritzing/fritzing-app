@@ -29,6 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFile>
 
 QList <PropertyDef *> PropertyDefMaster::PropertyDefs;
+QList <QString> PropertyDefMaster::ModuleIDSuffixes;
 
 void PropertyDefMaster::loadPropertyDefs() {
 	QFile file(":/resources/properties.xml");
@@ -78,6 +79,8 @@ void PropertyDefMaster::loadPropertyDefs() {
 		while (!suffixElement.isNull()) {
 			QString suffix = suffixElement.attribute("suffix");
 			propertyDef->suffixes.append(suffix);
+			if (!ModuleIDSuffixes.contains(suffix))
+				ModuleIDSuffixes.append(suffix);
 			suffixElement = suffixElement.nextSiblingElement("suffix");
 		}
 
@@ -92,6 +95,7 @@ void PropertyDefMaster::cleanup() {
 	}
 
 	PropertyDefs.clear();
+	ModuleIDSuffixes.clear();
 }
 
 void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDef *, QString> & propertyDefs)
@@ -125,4 +129,19 @@ void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDe
 			propertyDefs.insert(propertyDef, savedValue);
 		}
 	}
+}
+
+/**
+ * Returns true if the moduleID of a part ends with any of the sufixxes listed in the properties.xml.
+ * Thus, the properties of the part can be changed in the Inspector pane.
+ * @param[in] moduleID The module ID of the part to check
+ * @returns true if the moduleID is listed in properties.xml, false otherwise .
+ */
+bool PropertyDefMaster::partPropertiesCanBeModified(QString moduleID){
+	foreach(QString suffix, ModuleIDSuffixes){
+		if(moduleID.endsWith(suffix)) {
+			return true;
+		}
+	}
+	return false;
 }

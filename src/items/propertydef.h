@@ -44,12 +44,14 @@ class PropertyDefMaster
 public:
 	static void initPropertyDefs(class ModelPart *, QHash<PropertyDef *, QString> & propertyDefs);
 	static void cleanup();
+	static bool partPropertiesCanBeModified(QString);
 
 protected:
 	static void loadPropertyDefs();
 
 protected:
 	static QList <PropertyDef *> PropertyDefs;
+	static QList <QString> ModuleIDSuffixes;
 };
 
 #endif // PROPERTYDEF_H

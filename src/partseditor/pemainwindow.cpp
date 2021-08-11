@@ -1094,7 +1094,7 @@ void PEMainWindow::metadataChanged(const QString & name, const QString & value)
 
 	if (name.compare("variant") == 0) {
 		QString family = m_metadataView->family();
-		QHash<QString, QString> variants = m_referenceModel->allPropValues(family, "variant");
+		QMultiHash<QString, QString> variants = m_referenceModel->allPropValues(family, "variant");
 		QStringList values = variants.values(value);
 		if (m_canSave) {
 			QString moduleID = m_fzpDocument.documentElement().attribute("moduleId");
@@ -2323,7 +2323,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 		fzpRoot.setAttribute("moduleId", suffix);
 		QString family = m_metadataView->family();
 		QString variant = m_metadataView->variant();
-		QHash<QString, QString> variants = m_referenceModel->allPropValues(family, "variant");
+		QMultiHash<QString, QString> variants = m_referenceModel->allPropValues(family, "variant");
 		QStringList values = variants.values(variant);
 		if (values.count() > 0) {
 			QString newVariant = makeNewVariant(family);

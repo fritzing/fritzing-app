@@ -90,7 +90,7 @@ HashPopulateWidget::HashPopulateWidget(const QString & title, const QHash<QStrin
 	}
 
 	QList<QString> keys = initValues.keys();
-	qSort(keys);
+	std::sort(keys.begin(), keys.end());
 
 	for(int i=0; i < keys.count(); i++) {
 		HashLineEdit *name = new HashLineEdit(keys[i],false,this);

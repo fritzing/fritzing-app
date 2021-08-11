@@ -703,7 +703,7 @@ QString SqliteReferenceModel::retrieveModuleId(const QString &family, const QMul
 		query.prepare(queryStr);
 
 		query.bindValue(":family",family.toLower().trimmed());
-		foreach(QString name, params.uniqueKeys()) {
+		foreach(QString name, params.keys()) {
 			query.bindValue(name,params[name].toLower().trimmed());
 		}
 

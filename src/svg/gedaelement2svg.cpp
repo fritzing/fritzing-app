@@ -497,7 +497,7 @@ QString GedaElement2Svg::getPinID(QString & number, QString & name, bool isPad) 
 }
 
 
-QString GedaElement2Svg::makeCopper(QStringList ids, QHash<QString, QString> & strings, const QString & filename) {
+QString GedaElement2Svg::makeCopper(QStringList ids, QMultiHash<QString, QString> & strings, const QString & filename) {
 	QString copper;
 	foreach (QString id, ids) {
 		QStringList values = strings.values(id);

@@ -374,5 +374,6 @@
         <file>resources/images/icons/toolbarSaveCodeDisabled_icon.png</file>
         <file>resources/images/icons/toolbarSaveCodeEnabled_icon.png</file>
         <file>resources/images/icons/toolbarSaveCodePressed_icon.png</file>
+        <file>resources/images/icons/aisler_donut-cloud_logo_icon.png</file>
     </qresource>
 </RCC>

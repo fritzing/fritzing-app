@@ -377,12 +377,22 @@ QWidget * WelcomeView::initRecent() {
 	frameLayout->addWidget(titleFrame);
 
 	m_recentListWidget = new QListWidget();
+	m_recentLinksListWidget = new QListWidget();
 	m_recentListWidget->setObjectName("recentList");
+	m_recentLinksListWidget->setObjectName("recentList");
 	m_recentListWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	m_recentLinksListWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	connect(m_recentListWidget, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(recentItemClicked(QListWidgetItem *)));
+	connect(m_recentLinksListWidget, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(blogItemClicked(QListWidgetItem *)));
 
 
-	frameLayout->addWidget(m_recentListWidget);
+	QFrame * listsFrame = new QFrame;
+	QHBoxLayout * listsFrameLayout = new QHBoxLayout;
+	zeroMargin(listsFrameLayout);
+	listsFrameLayout->addWidget(m_recentListWidget);
+	listsFrameLayout->addWidget(m_recentLinksListWidget);
+	listsFrame ->setLayout(listsFrameLayout);
+	frameLayout->addWidget(listsFrame);
 
 	QStringList names;
 	names << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
@@ -653,23 +663,39 @@ void WelcomeView::showEvent(QShowEvent * event) {
 
 void WelcomeView::updateRecent() {
 	if (!m_recentListWidget) return;
+	if (!m_recentLinksListWidget) return;
 
 	QSettings settings;
 	auto files = settings.value("recentFileList").toStringList();
 	m_recentListWidget->clear();
+	m_recentLinksListWidget->clear();
 
 	auto gotOne = false;
 
 	QIcon icon(":/resources/images/icons/WS-fzz-icon.png");
+	QIcon icon2(":/resources/images/icons/aisler_donut-cloud_logo_icon.png");
+
 	for (int i = 0; i < files.size(); ++i) {
 		QFileInfo finfo(files[i]);
 		if (!finfo.exists()) continue;
 
 		gotOne = true;
 		auto item = new QListWidgetItem(icon, finfo.fileName());
+		QListWidgetItem * itemLinks = nullptr;
 		item->setData(Qt::UserRole, finfo.absoluteFilePath());
 		item->setToolTip(finfo.absoluteFilePath());
+		QString link = settings.value("aisler/" + finfo.absoluteFilePath(), "").toString();
+		if (!link.isEmpty()) {
+			int pos = link.lastIndexOf(QChar('/'));
+			link = link.left(pos);
+			itemLinks = new QListWidgetItem(icon2, "Fritzing Fab");
+			itemLinks->setData(RefRole, link);
+			itemLinks->setToolTip(link);
+		} else {
+			itemLinks = new QListWidgetItem(QString(""));
+		}
 		m_recentListWidget->addItem(item);
+		m_recentLinksListWidget->addItem(itemLinks);
 	}
 
 	if (!gotOne) {

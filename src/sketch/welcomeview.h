@@ -153,6 +153,7 @@ protected:
 	QWidget * m_projectsUberFrame = nullptr;
 	QLabel * m_tip = nullptr;
 	QListWidget * m_recentListWidget = nullptr;
+	QListWidget * m_recentLinksListWidget = nullptr;
 	QWidget * m_fabUberFrame = nullptr;
 	QWidget * m_shopUberFrame = nullptr;
 	QLabel * m_projectsLabel = nullptr;

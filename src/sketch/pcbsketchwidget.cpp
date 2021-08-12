@@ -1850,7 +1850,7 @@ void PCBSketchWidget::rotatePartLabels(double degrees, QTransform & transform, Q
 
 		QPointF offset = partLabel->pos() - partLabel->owner()->pos();
 		new MoveLabelCommand(this, partLabel->owner()->id(), partLabel->pos(), offset, partLabel->pos(), offset, parentCommand);
-		new RotateFlipLabelCommand(this, partLabel->owner()->id(), degrees, 0, parentCommand);
+		new RotateFlipLabelCommand(this, partLabel->owner()->id(), degrees, QFlags<Qt::Orientation>(), parentCommand);
 		QPointF p = GraphicsUtils::calcRotation(transform, center, partLabel->pos(), partLabel->boundingRect().center());
 		ViewGeometry vg;
 		partLabel->owner()->calcRotation(transform, center, vg);

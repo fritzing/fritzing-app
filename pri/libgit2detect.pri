@@ -62,7 +62,7 @@ unix {
         macx {
             LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
         } else {
-            LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
+            LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssh2 -lssl -lcrypto
         }
     } else {
         !build_pass:warning("Using dynamic linking for libgit2.")

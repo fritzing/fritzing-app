@@ -263,7 +263,7 @@ QPointF ClipableWire::findIntersection(ConnectorItem * connectorItem, const QPoi
 	for (int i = 0; i < count; i++) {
 		QLineF l2(poly[i], poly[(i + 1) % count]);
 		QPointF intersectingPoint;
-		if (l1.intersect(l2, &intersectingPoint) == QLineF::BoundedIntersection) {
+		if (l1.intersects(l2, &intersectingPoint) == QLineF::BoundedIntersection) {
 			return intersectingPoint;
 		}
 	}

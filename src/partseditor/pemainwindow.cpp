@@ -290,16 +290,16 @@ void IconSketchWidget::addViewLayers() {
 
 PEMainWindow::PEMainWindow(ReferenceModel * referenceModel, QWidget * parent)
 	: MainWindow(referenceModel, parent),
-	m_useNextPick(false),
-	m_inPickMode(false),
-	m_gaveSaveWarning(false),
-	m_canSave(false),
+	m_connectorsView(nullptr),
+	m_peToolView(nullptr),
+	m_peSvgView(nullptr),
 	m_guid(TextUtils::getRandText()),
 	m_prefix("prefix0000"),
 	m_fileIndex(0),
-	m_peToolView(nullptr),
-	m_peSvgView(nullptr),
-	m_connectorsView(nullptr)
+	m_canSave(false),
+	m_gaveSaveWarning(false),
+	m_inPickMode(false),
+	m_useNextPick(false)
 {
     m_settingsPrefix = "pe/";
 	m_viewThings.insert(ViewLayer::BreadboardView, new ViewThing);

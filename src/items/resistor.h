@@ -65,6 +65,8 @@ public slots:
 
 public:
 	static double toOhms(const QString & ohmsString, void * data);
+	static constexpr double MIN_RESISTANCE = 0.0;
+	static constexpr double MAX_RESISTANCE = 9900000000.0;
 
 protected:
 	QString m_ohms;
@@ -73,6 +75,7 @@ protected:
 	bool m_changingPinSpacing = false;
 	QString m_iconSvgFile;
 	QString m_breadboardSvgFile;
+
 };
 
 #endif

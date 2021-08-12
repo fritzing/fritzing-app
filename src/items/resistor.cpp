@@ -31,6 +31,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "moduleidnames.h"
 #include "partlabel.h"
 #include "../debugdialog.h"
+#include "../simulation/simulator.h"
+#include "../sketch/sketchwidget.h"
 
 #include <qmath.h>
 #include <QRegExpValidator>
@@ -261,13 +263,23 @@ bool Resistor::collectExtraInfo(QWidget * parent, const QString & family, const 
 		BoundedRegExpValidator * validator = new BoundedRegExpValidator(focusOutComboBox);
 		validator->setSymbol(OhmSymbol);
 		validator->setConverter(TextUtils::convertFromPowerPrefix);
-		validator->setBounds(0, 9900000000.0);
-		validator->setRegExp(QRegExp(QString("((\\d{1,10})|(\\d{1,10}\\.)|(\\d{1,10}\\.\\d{1,5}))[\\x%1umkMG]{0,1}[\\x03A9]{0,1}").arg(TextUtils::MicroSymbolCode, 4, 16, QChar('0'))));
+		validator->setBounds(MIN_RESISTANCE, MAX_RESISTANCE);
+		QString pattern = QString("((\\d{0,10})|(\\d{0,10}\\.)|(\\d{0,10}\\.\\d{1,10}))[%1]{0,1}[%2]{0,1}")
+										  .arg(TextUtils::PowerPrefixesString)
+										  .arg(OhmSymbol);
+		validator->setRegExp(QRegExp(pattern));
 		focusOutComboBox->setValidator(validator);
+		connect(focusOutComboBox->validator(), SIGNAL(sendState(QValidator::State)), this, SLOT(textModified(QValidator::State)));
 		connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(resistanceEntry(const QString &)));
 
 		focusOutComboBox->setObjectName("infoViewComboBox");
-		focusOutComboBox->setToolTip(tr("You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of 'umkMG'"));
+		focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value\n"
+												"Range: [%2 - %3] %4\n"
+												"Background: Green = ok, Red = incorrect value, Grey = current value").
+											 arg(returnProp).
+											 arg(TextUtils::convertToPowerPrefix(MIN_RESISTANCE)).
+											 arg(TextUtils::convertToPowerPrefix(MAX_RESISTANCE)).
+											 arg(OhmSymbol));
 
 		returnValue = current;
 		returnWidget = focusOutComboBox;
@@ -367,6 +379,12 @@ void Resistor::resistanceEntry(const QString & text) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView) {
 		infoGraphicsView->setResistance(text, "");
+		//Trigguer a simulation if we are simulating
+		if (Simulator::isSimulating()){
+			//The infoGraphicsView->setProp trigues a delay before changing the property, we need
+			//to wait until we can perform the simulation
+			QTimer::singleShot(SketchWidget::PropChangeDelay*2, this, SLOT(triggerSimulation()));
+		}
 	}
 }
 

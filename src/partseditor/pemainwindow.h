@@ -127,7 +127,6 @@ protected:
 	void setInitialView();
 	void createActions();
 	void createMenus();
-	QList<QWidget*> getButtonsForView(ViewLayer::ViewID);
 	void connectPairs();
 	QMenu *breadboardItemMenu();
 	QMenu *schematicItemMenu();

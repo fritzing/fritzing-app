@@ -637,41 +637,6 @@ void PEMainWindow::createEditMenu()
 	connect(m_editMenu, SIGNAL(aboutToShow()), this, SLOT(updateEditMenu()));
 }
 
-QList<QWidget*> PEMainWindow::getButtonsForView(ViewLayer::ViewID viewID) {
-
-	QList<QWidget*> retval;
-	SketchAreaWidget *parent;
-	switch(viewID) {
-	case ViewLayer::BreadboardView:
-		parent = m_breadboardWidget;
-		break;
-	case ViewLayer::SchematicView:
-		parent = m_schematicWidget;
-		break;
-	case ViewLayer::PCBView:
-		parent = m_pcbWidget;
-		break;
-	default:
-		return retval;
-	}
-
-	//retval << createExportEtchableButton(parent);
-
-	switch (viewID) {
-	case ViewLayer::BreadboardView:
-		break;
-	case ViewLayer::SchematicView:
-		break;
-	case ViewLayer::PCBView:
-		// retval << createActiveLayerButton(parent);
-		break;
-	default:
-		break;
-	}
-
-	return retval;
-}
-
 bool PEMainWindow::activeLayerWidgetAlwaysOn() {
 	return true;
 }

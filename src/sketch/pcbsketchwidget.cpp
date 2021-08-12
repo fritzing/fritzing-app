@@ -798,7 +798,7 @@ QList<ItemBase *> PCBSketchWidget::findBoard() {
 		}
 	}
 
-	return boards.toList();
+	return boards.values();
 }
 
 void PCBSketchWidget::forwardRoutingStatus(const RoutingStatus & routingStatus)

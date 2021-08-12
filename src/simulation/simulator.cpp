@@ -85,7 +85,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ////////////////////////////////////////////////////////
 
-
+Simulator* Simulator::simulatorInstance = nullptr;
+bool Simulator::simulating = false;
 
 /////////////////////////////////////////////////////////
 Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
@@ -97,9 +98,29 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 	QSettings settings;
 	int enabled = settings.value("simulatorEnabled", 0).toInt();
 	enable(enabled);
+	if( !simulatorInstance ) {
+		simulatorInstance = this;
+	} else {
+		std::cout << "Trying to instanciate more than one simulator, check this!" << std::endl;
+	}
+
 }
 
 Simulator::~Simulator() {
+}
+
+/**
+ * This function triggers a simulation if the simulator has been created, and the
+ * the simulator is sumulating. is Simulating is controlled by "Start Simulation" and
+ * "Stop Simulator" buttons. Of corse, to be able to simulate, the simulator needs to
+ * be enabled. This function can be called from everywhere in the code as it is a static.
+ */
+void Simulator::triggerSimulation()
+{
+
+	if( simulatorInstance && simulating) {
+		simulatorInstance->simulate();
+	}
 }
 
 /**
@@ -127,6 +148,7 @@ void Simulator::enable(bool enable) {
  * the parts that are not simulated and the messages previously added.
  */
 void Simulator::reset() {
+	simulating = false;
 	removeSimItems();
 }
 
@@ -161,6 +183,8 @@ void Simulator::simulate() {
 		throw std::runtime_error( "Could not create simulator instance" );
 		return;
 	}
+
+	simulating = true;
 
 	//Empty the stderr and stdout buffers
 	m_simulator->ResetStdOutErr();
@@ -842,6 +866,11 @@ void Simulator::updateBattery(ItemBase * part) {
 	if (abs(current) > maxCurrent) {
 		drawSmoke(part);
 	}
+}
+
+bool Simulator::isSimulating()
+{
+	return simulating;
 }
 
 /**

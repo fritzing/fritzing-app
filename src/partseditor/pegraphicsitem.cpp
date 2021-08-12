@@ -37,7 +37,6 @@ static bool ShiftDown = false;
 static QPointF OriginalShiftPos;
 static bool ShiftX = false;
 static bool ShiftY = false;
-static bool SpaceBarWasPressed = false;
 static const double MinMouseMove = 2;
 static const QColor NormalColor(0, 0, 255);
 static const QColor PickColor(255, 0, 255);

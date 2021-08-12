@@ -529,7 +529,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 		if (infoGraphicsView) {
 			QString changeType = (connect) ? tr("Restored") : tr("Cut") ;
 			QString changeText = tr("%1 %n strip(s)", "", changeCount).arg(changeType);
-			QList<ConnectorItem *> affected = affectedConnectors.toList();
+			QList<ConnectorItem *> affected = affectedConnectors.values();
 			infoGraphicsView->changeBus(this, connect, m_beforeCut, afterCut, affected, changeText, m_layout, m_layout);  // affectedConnectors is used for updating ratsnests; it's just a wild guess
 		}
 
@@ -796,7 +796,7 @@ void Stripboard::swapEntry(const QString & text) {
 			QString changeText = tr("%1 layout").arg(text);
 			QSet<ConnectorItem *> affectedConnectors;
 			collectTo(affectedConnectors);
-			QList<ConnectorItem *> affected = affectedConnectors.toList();
+			QList<ConnectorItem *> affected = affectedConnectors.values();
 			infoGraphicsView->changeBus(this, true, m_beforeCut, afterCut, affected, changeText, m_layout, text);  // affectedConnectors is used for updating ratsnests; it's just a wild guess
 		}
 

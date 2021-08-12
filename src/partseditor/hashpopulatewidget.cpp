@@ -86,7 +86,7 @@ HashPopulateWidget::HashPopulateWidget(const QString & title, const QHash<QStrin
 	layout->setColumnStretch(2,0);
 
 	if (!title.isEmpty()) {
-		layout->addWidget(new QLabel(title),0,0,0);
+		layout->addWidget(new QLabel(title),0,0);
 	}
 
 	QList<QString> keys = initValues.keys();

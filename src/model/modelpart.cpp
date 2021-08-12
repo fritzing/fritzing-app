@@ -64,7 +64,7 @@ ModelPart::ModelPart(QDomDocument & domDocument, const QString & path, ItemType 
 
 void ModelPart::commonInit(ItemType type) {
 	m_type = type;
-	m_locationFlags = 0;
+	m_locationFlags = QFlags<LocationFlag>();
 	m_indexSynched = false;
 }
 

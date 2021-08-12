@@ -34,6 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QSplashScreen>
+#include <QScreen>
 
 /////////////////////////////////////
 
@@ -196,7 +197,7 @@ void FileProgressDialog::settingItemSlot()
 void FileProgressDialog::resizeEvent(QResizeEvent * event)
 {
 	QDialog::resizeEvent(event);
-	QRect scr = QApplication::desktop()->screenGeometry();
+	QRect scr = QApplication::primaryScreen()->geometry();
 	move( scr.center() - rect().center() );
 }
 

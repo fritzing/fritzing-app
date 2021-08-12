@@ -287,7 +287,6 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 			continue;
 		}
 
-		bool generated = false;
 		modelPart = m_referenceModel->retrieveModelPart(moduleIDRef);
 		if (!modelPart) {
 			DebugDialog::debug(QString("module id %1 not found in database").arg(moduleIDRef));
@@ -298,7 +297,6 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 			if (modelPart) {
 				instance.setAttribute("moduleIdRef", modelPart->moduleID());
 				moduleIDRef = modelPart->moduleID();
-				generated = true;
 			}
 		}
 		if (!modelPart) {

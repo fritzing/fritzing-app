@@ -408,6 +408,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 	if (forWhy == SVG2gerber::ForOutline) {
 		multipleContours = dealWithMultipleContours(root1, displayMessageBoxes);
 	}
+	(void)multipleContours;
 
 	// document 2 will contain svg that must be rasterized for gerber conversion
 	QDomDocument domDocument2 = domDocument1.cloneNode(true).toDocument();

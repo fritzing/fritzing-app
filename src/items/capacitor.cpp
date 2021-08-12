@@ -110,7 +110,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 				if (propertyDef->maxValue > propertyDef->minValue) {
 					validator->setBounds(propertyDef->minValue, propertyDef->maxValue);
 				}
-				QString pattern = QString("((\\d{0,3})|(\\d{0,3}\\.)|(\\d{0,3}\\.\\d{1,3}))[%1]{0,1}[%2]{0,1}")
+				QString pattern = QString("((\\d{0,10})|(\\d{0,10}\\.)|(\\d{0,10}\\.\\d{1,10}))[%1]{0,1}[%2]{0,1}")
 				                  .arg(TextUtils::PowerPrefixesString)
 				                  .arg(propertyDef->symbol);
 				validator->setRegExp(QRegExp(pattern));

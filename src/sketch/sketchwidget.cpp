@@ -1125,7 +1125,7 @@ void SketchWidget::cutDeleteAux(QString undoStackMessage, bool minus, Wire * wir
 				}
 			}
 			if (allWires.count() > 0) {
-				QList<Wire *> wires = allWires.toList();
+				QList<Wire *> wires = allWires.values();
 				wires.at(0)->collectDirectWires(wires);
 				foreach (Wire * w, wires) {
 					deletedItems.insert(w);
@@ -8165,7 +8165,7 @@ QList<ItemBase *> SketchWidget::selectAllObsolete()
 	}
 
 	selectAllItems(itemBases, QObject::tr("Select outdated parts"));
-	return itemBases.toList();
+	return itemBases.values();
 }
 
 int SketchWidget::selectAllMoveLock()
@@ -9584,7 +9584,7 @@ void SketchWidget::cleanupRatsnests(QList< QPointer<ConnectorItem> > & connector
 
 	QSet<ConnectorItem *> set = cis.toSet();
 	cis.clear();
-	QList<ConnectorItem *> cis2 = set.toList();
+	QList<ConnectorItem *> cis2 = set.values();
 
 	ConnectorItem::collectEqualPotential(cis2, true, ViewGeometry::RatsnestFlag);
 	foreach (ConnectorItem * connectorItem, cis2) {

@@ -664,7 +664,7 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
 void PartLabel::rotateFlip(int action) {
 	double degrees = 0;
-	Qt::Orientations orientation = 0;
+	Qt::Orientations orientation = QFlags<Qt::Orientation>();
 	switch (action) {
 	case PartLabelRotate45CW:
 		degrees = 45;

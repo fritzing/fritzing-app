@@ -93,10 +93,12 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 
 	property_map < Graph, edge_capacity_t >::type capacity = get(edge_capacity, g);
 	property_map < Graph, edge_residual_capacity_t >::type residual_capacity = get(edge_residual_capacity, g);
+	(void) residual_capacity;
 	property_map < Graph, edge_reverse_t >::type reverse = get(edge_reverse, g);
 
 	property_map < Graph, vertex_color_t >::type color = get(vertex_color, g);
 	property_map < Graph, vertex_index_t >::type index = get(vertex_index, g);
+	(void) index;
 
 	Traits::vertex_descriptor s, t;
 

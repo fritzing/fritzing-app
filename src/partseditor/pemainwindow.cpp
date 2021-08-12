@@ -1346,15 +1346,11 @@ void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase,
 			traverse.push_front(next.takeLast());
 		}
 
-		bool isG = false;
-		bool isSvg = false;
 		QString tagName = element.tagName();
 		if      (tagName.compare("rect") == 0);
 		else if (tagName.compare("g") == 0) {
-			isG = true;
 		}
 		else if (tagName.compare("svg") == 0) {
-			isSvg = true;
 		}
 		else if (tagName.compare("circle") == 0);
 		else if (tagName.compare("ellipse") == 0);

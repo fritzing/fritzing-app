@@ -36,11 +36,13 @@ public:
 	Simulator(class MainWindow *mainWindow);
 	~Simulator();
 	bool isEnabled();
+	static bool isSimulating();
 
 public slots:
 	void enable(bool);
 	void reset();
 	void simulate();
+	static void triggerSimulation();
 
 protected:
 	void drawSmoke(ItemBase* part);
@@ -71,7 +73,8 @@ protected:
 	void updateIRSensor(ItemBase *);
 	void updateBattery(ItemBase *);
 
-
+	static bool simulating;
+	static Simulator *simulatorInstance;
 	MainWindow *m_mainWindow;
 	std::shared_ptr<SPICE_SIMULATOR> m_simulator;
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;

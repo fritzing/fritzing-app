@@ -252,6 +252,16 @@
 	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--PTH-KNOB"/>
 	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-PTH"/>
 	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3362U-2"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-MAM"/>
+	<suffix suffix="SparkFun-Electromechanical-POT_SWITCH-POT_PTH_SWITCH"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-TRIM"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-"/>
+	<suffix suffix="SparkFun-Electromechanical-SLIDER-"/>
+	<suffix suffix="SparkFun-Electromechanical-POT_SWITCH-POT_PTH"/>
+	<suffix suffix="SparkFun-Electromechanical-POT--RV16AF-20"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-100K_3362U"/>
+	<suffix suffix="ab15a34dfcf83e23a26e83fe8a5a4dac_2"/>
+	<suffix suffix="297c7ab01279c7b7f5c4ca77ec94554c"/>
 	<menuItem value="0" />
 	<menuItem value="25" />
 	<menuItem value="50" />
@@ -267,6 +277,7 @@
 <property name="power" symbol="W" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">
 	<suffix suffix="ResistorModuleID"/>
 	<suffix suffix="PotentiometerModuleID"/>
+	<suffix suffix="alps-starter-pot9mm" />
 	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3MM-2"/>
 	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--2"/>
 	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT-5MM"/>
@@ -275,6 +286,17 @@
 	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--PTH-KNOB"/>
 	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-PTH"/>
 	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3362U-2"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-MAM"/>
+	<suffix suffix="SparkFun-Electromechanical-POT_SWITCH-POT_PTH_SWITCH"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-TRIM"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-"/>
+	<suffix suffix="SparkFun-Electromechanical-SLIDER-"/>
+	<suffix suffix="SparkFun-Electromechanical-POT_SWITCH-POT_PTH"/>
+	<suffix suffix="SparkFun-Electromechanical-POT--RV16AF-20"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-100K_3362U"/>
+	<suffix suffix="ab15a34dfcf83e23a26e83fe8a5a4dac_2"/>
+	<suffix suffix="297c7ab01279c7b7f5c4ca77ec94554c"/>
+
 </property>
 
 <property name="voltage (max)" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">

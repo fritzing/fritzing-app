@@ -42,6 +42,7 @@ public slots:
 	void textModified(QValidator::State state);
 	void propertyEntry(const QString & text);
 	void simplePropertyEntry(const QString & text);
+	void triggerSimulation();
 
 protected:
 	QHash<PropertyDef *, QString> m_propertyDefs;

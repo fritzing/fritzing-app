@@ -1025,11 +1025,11 @@ SketchToolButton *MainWindow::createNoteButton(SketchAreaWidget *parent) {
 
 SketchToolButton *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
 	QList<QAction*> actions;
-	actions << m_simulationAct << m_resetSimulatorAct;
+	actions << m_startSimulatorAct << m_stopSimulatorAct;
 	SketchToolButton *simulationButton = new SketchToolButton("Simulation", parent, actions);
 	simulationButton->setObjectName("simulationButton");
-	simulationButton->setDefaultAction(m_simulationAct);
-	simulationButton->setText(tr("Simulate"));
+	simulationButton->setDefaultAction(m_startSimulatorAct);
+	simulationButton->setText(tr("Start\nSimulator"));
 	simulationButton->setEnabledIcon();				// seems to need this to display button icon first time
 
 	if (!m_simulator->isEnabled())
@@ -3342,7 +3342,7 @@ void MainWindow::enableSimulator(bool enable) {
 
 	foreach(SketchToolButton* simButton, m_simulationButtons) {
 		if (simButton) {
-			m_simulationAct->setVisible(enable);
+			m_startSimulatorAct->setVisible(enable);
 			simButton->setVisible(enable);
 		}
 	}

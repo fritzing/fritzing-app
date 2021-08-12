@@ -26,6 +26,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/boundedregexpvalidator.h"
 #include "../sketch/infographicsview.h"
 #include "partlabel.h"
+#include "../simulation/simulator.h"
+#include "../sketch/sketchwidget.h"
 
 // TODO
 //	save into parts bin
@@ -187,6 +189,12 @@ void Capacitor::propertyEntry(const QString & text) {
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 			if (infoGraphicsView) {
 				infoGraphicsView->setProp(this, propertyDef->name, "", m_propertyDefs.value(propertyDef, ""), utext, true);
+				//Trigguer a simulation if we are simulating
+				if (Simulator::isSimulating()){
+					//The infoGraphicsView->setProp trigues a delay before changing the property, we need
+					//to wait until we can perform the simulation
+					QTimer::singleShot(SketchWidget::PropChangeDelay*2, this, SLOT(triggerSimulation()));
+				}
 			}
 			break;
 		}
@@ -216,6 +224,12 @@ void Capacitor::simplePropertyEntry(const QString & text) {
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 			if (infoGraphicsView) {
 				infoGraphicsView->setProp(this, propertyDef->name, "", m_propertyDefs.value(propertyDef, ""), text, true);
+				//Trigguer a simulation if we are simulating
+				if (Simulator::isSimulating()){
+					//The infoGraphicsView->setProp trigues a delay before changing the property, we need
+					//to wait until we can perform the simulation
+					QTimer::singleShot(SketchWidget::PropChangeDelay*2, this, SLOT(triggerSimulation()));
+				}
 			}
 			break;
 		}
@@ -226,4 +240,12 @@ void Capacitor::getProperties(QHash<QString, QString> & hash) {
 	foreach (PropertyDef * propertyDef, m_propertyDefs.keys()) {
 		hash.insert(propertyDef->name, m_propertyDefs.value(propertyDef));
 	}
+}
+
+/**
+ * Triggers a simulation after a timeout. This ensures that the circuit to simulate has the
+ * newest parameters.
+ */
+void Capacitor::triggerSimulation() {
+	Simulator::triggerSimulation();
 }

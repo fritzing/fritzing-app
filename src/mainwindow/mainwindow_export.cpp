@@ -1052,6 +1052,7 @@ void MainWindow::exportToEagle() {
 	QMessageBox::information(this, tr("Fritzing"), text);
 
 	Fritzing2Eagle eagle = Fritzing2Eagle(m_pcbGraphicsView);
+	(void) eagle;
 
 	/*
 	QList <ItemBase*> partList;

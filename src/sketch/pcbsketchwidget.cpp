@@ -1817,7 +1817,7 @@ void PCBSketchWidget::prereleaseTempWireForDragging(Wire* wire)
 {
 	if (wire->property(PCBSketchWidget::FakeTraceProperty).toBool()) {
 		// make it not look like a trace, or modifyNewWireConnections will create the wrong kind of wire
-		wire->setWireFlags(0);
+		wire->setWireFlags(QFlags<ViewGeometry::WireFlag>());
 	}
 }
 

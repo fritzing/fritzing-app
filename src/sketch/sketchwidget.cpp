@@ -2216,7 +2216,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 	m_movingByMouse = true;
 
 	QMouseEvent * hackEvent = nullptr;
-	if (event->button() == Qt::MidButton && !spaceBarIsPressed()) {
+	if (event->button() == Qt::MiddleButton && !spaceBarIsPressed()) {
 		m_middleMouseIsPressed = true;
 		setDragMode(QGraphicsView::ScrollHandDrag);
 		setCursor(Qt::OpenHandCursor);

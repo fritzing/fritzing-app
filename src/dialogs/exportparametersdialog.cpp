@@ -2,9 +2,9 @@
 #include "ui_exportparametersdialog.h"
 
 ExportParametersDialog::ExportParametersDialog(int dpi, QWidget *parent) :
-    m_dpi(dpi),
     QDialog(parent),
-    ui(new Ui::ExportParametersDialog)
+    ui(new Ui::ExportParametersDialog),
+    m_dpi(dpi)
 {
     ui->setupUi(this);
     ui->dpiSpinBox->setRange(minDPI, maxDPI);

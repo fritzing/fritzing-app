@@ -550,6 +550,7 @@ void PaletteItemBase::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) {
 					break;
 				}
 			}
+			(void)connected;
 		}
 
 		checkFreeRotation(event->modifiers(), event->scenePos());

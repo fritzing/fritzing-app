@@ -598,7 +598,7 @@ void ProgramTab::deleteTab() {
 		DeleteDialog deleteDialog(tr("Remove \"%1\"?").arg(name),
 		                          tr("Are you sure you want to remove \"%1\" from the sketch?").arg(name),
 		                          !FolderUtils::isEmptyFileName(m_filename, "Untitled"),
-		                          NULL, 0);
+		                          NULL, QFlags<Qt::WindowType>());
 		int reply = deleteDialog.exec();
 		if (reply != QMessageBox::Yes) {
 			return;

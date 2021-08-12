@@ -115,9 +115,9 @@ void ZoomableGraphicsView::wheelEvent(QWheelEvent* event) {
 		}
 	}
 
-	int numSteps = event->delta() / 8;
+	int numSteps = event->angleDelta().y() / 8;
 	if (doZoom) {
-		double delta = ((double) event->delta() / 120) * ZoomSlider::ZoomStep;
+		double delta = ((double) event->angleDelta().y() / 120) * ZoomSlider::ZoomStep;
 		if (delta == 0) return;
 
 		// Scroll zooming relative to the current size

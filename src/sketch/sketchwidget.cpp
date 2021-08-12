@@ -9582,7 +9582,7 @@ void SketchWidget::cleanupRatsnests(QList< QPointer<ConnectorItem> > & connector
 	}
 	connectorItems.clear();
 
-	QSet<ConnectorItem *> set = cis.toSet();
+	QSet<ConnectorItem *> set = QSet<ConnectorItem *>(cis.begin(), cis.end());
 	cis.clear();
 	QList<ConnectorItem *> cis2 = set.values();
 

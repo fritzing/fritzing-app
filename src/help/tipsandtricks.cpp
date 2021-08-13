@@ -22,6 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPixmap>
 #include <QIcon>
 #include <QTime>
+#include <QRandomGenerator>
 
 #include "tipsandtricks.h"
 
@@ -62,9 +63,6 @@ TipsAndTricks::TipsAndTricks(QWidget *parent)
 
 void TipsAndTricks::initTipSets() {
 	if (TipSets.count() > 0) return;
-
-	QTime now = QTime::currentTime();
-	qsrand(now.msec());
 
 	QString localStorage = tr("Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a 'local storage folder'. "
 	                          "On Mac and Linux this is usually ~/.config/Fritzing/. "
@@ -209,7 +207,7 @@ const QString & TipsAndTricks::randomTip() {
 	}
 	if (tipCount == 0) return ___emptyString___;
 
-	int ix = qrand() % tipCount;
+	int ix = QRandomGenerator::system()->generate() % tipCount;
 	tipCount = 0;
 	foreach (TipSet * tipSet, TipSets) {
 		int count = tipSet->tips.count();

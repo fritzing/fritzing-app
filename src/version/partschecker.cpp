@@ -550,10 +550,7 @@ bool PartsChecker::updateParts(const QString & repoPath, const QString & remoteS
 	 * "fetch".
 	 */
 
-	git_strarray refspecs;
-	refspecs.count = 1;
-	refspecs.strings = &refspec;
-	error = git_remote_fetch(remote, NULL /* &refspecs */, &fetch_opts, "fetch");
+	error = git_remote_fetch(remote, NULL, &fetch_opts, "fetch");
 	if (error) {
 		DebugDialog::debug("unable to fetch " + repoPath);
 		goto cleanup;

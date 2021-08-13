@@ -62,7 +62,13 @@ unix {
         macx {
             LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
         } else {
-            LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssh2 -lssl -lcrypto
+            exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
+                message("Using system-wide installed http-parser lib.")
+                LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssh2 -lssl -lcrypto
+            } else {
+                message("Using http-parser bundled with libgit2.")
+                LIBS += $$LIBGIT2LIB/libgit2.a -lssh2 -lssl -lcrypto
+            }
         }
     } else {
         !build_pass:warning("Using dynamic linking for libgit2.")

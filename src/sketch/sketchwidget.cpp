@@ -1657,6 +1657,7 @@ void SketchWidget::pasteHeart(QByteArray & itemData, bool seekOutsideConnections
 	if (m_sketchModel->paste(m_referenceModel, itemData, modelParts, boundingRects, true)) {
 		QRectF r;
 		QRectF boundingRect = boundingRects.value(this->viewName(), r);
+		(void)boundingRect;
 		QList<long> newIDs;
 		this->loadFromModelParts(modelParts, BaseCommand::SingleView, nullptr, true, &r, seekOutsideConnections, newIDs);
 	}

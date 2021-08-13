@@ -3538,6 +3538,7 @@ void SketchWidget::prepLegBendpointMove(ConnectorItem * from, int index, QPointF
 		toID = to->attachedToID();
 		toConnectorID = to->connectorSharedID();
 	}
+	(void)toID;
 
 	if (changeConnections) {
 		new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
@@ -3703,6 +3704,7 @@ void SketchWidget::wireChangedSlot(Wire* wire, const QLineF & oldLine, const QLi
 		toID = to->attachedToID();
 		toConnectorID = to->connectorSharedID();
 	}
+	(void)toID;
 
 	new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);

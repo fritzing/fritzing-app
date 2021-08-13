@@ -1995,7 +1995,6 @@ void SketchWidget::dropEvent(QDropEvent *event)
 				throw "drag and drop from unknown source";
 			}
 
-			ItemBase * ref = other->m_moveReferenceItem;
 			other->copyDrop();
 			QPointF startLocal = other->mapFromGlobal(QPoint(other->m_mousePressGlobalPos.x(), other->m_mousePressGlobalPos.y()));
 			QPointF sceneLocal = other->mapToScene(startLocal.x(), startLocal.y());

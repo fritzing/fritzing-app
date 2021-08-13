@@ -10018,7 +10018,6 @@ void SketchWidget::testConnectors()
 
 	foreach (ItemBase * itemBase, already) {
 		QRectF sceneBoundingRect = itemBase->sceneBoundingRect();
-		QPointF center = sceneBoundingRect.center();
 
 		foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
 			QPointF fromPos = connectorItem->sceneAdjustedTerminalPoint(nullptr);

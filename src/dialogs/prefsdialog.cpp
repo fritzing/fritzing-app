@@ -403,12 +403,16 @@ void PrefsDialog::chooseProgrammer()
 	if (button == NULL) return;
 
 	QString platformName = sender()->property("platform").toString();
-	Platform * platform;
+	Platform * platform = nullptr;
 	foreach (Platform *p, m_platforms) {
 		if (p->getName().compare(platformName) == 0) {
 			platform = p;
 			break;
 		}
+	}
+
+	if (!platform) {
+		return;
 	}
 
 	QString filename = FolderUtils::getOpenFileName(

@@ -3821,7 +3821,6 @@ void SketchWidget::dragWireChanged(Wire* wire, ConnectorItem * fromOnWire, Conne
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
 
 	m_connectorDragWire->saveGeometry();
-	bool doEmit = false;
 	long fromID = wire->id();
 
 	DebugDialog::debug(QString("m_connectorDragConnector:%1 %4 from:%2 to:%3")
@@ -3842,11 +3841,9 @@ void SketchWidget::dragWireChanged(Wire* wire, ConnectorItem * fromOnWire, Conne
 		ConnectorItem * anchor = wire->otherConnector(fromOnWire);
 		if (anchor) {
 			extendChangeConnectionCommand(BaseCommand::CrossView, m_connectorDragConnector, anchor, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
-			doEmit = true;
 		}
 		if (to) {
 			extendChangeConnectionCommand(BaseCommand::CrossView, to, fromOnWire, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
-			doEmit = true;
 		}
 
 		setUpColor(m_connectorDragConnector, to, wire, parentCommand);

@@ -3292,8 +3292,6 @@ bool SketchWidget::checkMoved(bool wait)
 
 	QUndoCommand * parentCommand = new QUndoCommand(moveString);
 
-	bool hasBoard = false;
-
 	foreach (ItemBase * item, m_savedItems) {
 		rememberSticky(item, parentCommand);
 	}
@@ -3316,13 +3314,7 @@ bool SketchWidget::checkMoved(bool wait)
 		moveItemsCommand->addItem(item->id(), viewGeometry.loc(), item->getViewGeometry().loc());
 
 		if (item->itemType() == ModelPart::Breadboard) {
-			hasBoard = true;
 			continue;
-		}
-
-		// TODO: boardtypes and breadboard types are always sticky
-		if (Board::isBoard(item)) {
-			hasBoard = true;
 		}
 	}
 

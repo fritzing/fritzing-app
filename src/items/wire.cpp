@@ -1879,6 +1879,7 @@ void Wire::cursorKeyEvent(Qt::KeyboardModifiers modifiers)
 	if (infoGraphicsView) {
 		QPoint p = infoGraphicsView->mapFromGlobal(QCursor::pos());
 		QPointF r = infoGraphicsView->mapToScene(p);
+		(void)r;
 		// DebugDialog::debug(QString("got key event %1").arg(keyEvent->modifiers()));
 		updateCursor(modifiers);
 	}

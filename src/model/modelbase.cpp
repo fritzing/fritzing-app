@@ -752,12 +752,9 @@ void ModelBase::setReferenceModel(ModelBase * modelBase) {
 void ModelBase::checkMystery(QDomElement & instance)
 {
 	QString moduleIDRef = instance.attribute("moduleIdRef");
-	bool mystery = false;
-	bool sip = false;
-	bool dip = false;
-	if (moduleIDRef.contains("mystery", Qt::CaseInsensitive)) mystery = true;
-	else if (moduleIDRef.contains("sip", Qt::CaseInsensitive)) sip = true;
-	else if (moduleIDRef.contains("dip", Qt::CaseInsensitive)) dip = true;
+	if (moduleIDRef.contains("mystery", Qt::CaseInsensitive)) {}
+	else if (moduleIDRef.contains("sip", Qt::CaseInsensitive)) {}
+	else if (moduleIDRef.contains("dip", Qt::CaseInsensitive)) {}
 	else return;
 
 	QString spacing;

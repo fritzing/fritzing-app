@@ -623,6 +623,7 @@ void PEMainWindow::createFileMenu() {
 	populateExportMenu();
 
 	connect(m_fileMenu, SIGNAL(aboutToShow()), this, SLOT(updateFileMenu()));
+	connect(m_exportMenu, SIGNAL(aboutToShow()), this, SLOT(updateExportMenu()));
 }
 
 void PEMainWindow::createEditMenu()
@@ -3908,8 +3909,9 @@ void PEMainWindow::setInitialView() {
 }
 
 void PEMainWindow::updateExportMenu() {
+	bool enabled = m_currentGraphicsView || currentTabIndex() == IconViewIndex;
 	foreach (QAction * action, m_exportMenu->actions()) {
-		action->setEnabled(false);
+		action->setEnabled(enabled);
 	}
 }
 

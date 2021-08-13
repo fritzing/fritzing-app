@@ -10133,7 +10133,7 @@ void SketchWidget::checkForReversedWires() {
 			QPointF to0pos = to0->sceneAdjustedTerminalPoint(nullptr);
 			QPointF w0pos = w0->sceneAdjustedTerminalPoint(nullptr);
 			totalDistance += (to0pos - w0pos).manhattanLength();
-			QPointF w0revPos = p2 + wire->connector0Rect(newLine).center();
+			QPointF w0revPos = p2 + wire->connector0Rect().center();
 			totalReverseDistance += (to0pos - w0revPos).manhattanLength();
 		}
 		if (to1) {

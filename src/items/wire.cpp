@@ -693,7 +693,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 	}
 }
 
-QRectF Wire::connector0Rect(const QLineF & line) {
+QRectF Wire::connector0Rect() {
 	QRectF rect = m_connector0->rect();
 	rect.moveTo(0 - (rect.width()  / 2.0),
 	            0 - (rect.height()  / 2.0) );

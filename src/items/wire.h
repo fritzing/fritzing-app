@@ -159,7 +159,7 @@ public:
 	void setProp(const QString & prop, const QString & value);
 	void setConnector0Rect();
 	void setConnector1Rect();
-	QRectF connector0Rect(const QLineF & line);
+	QRectF connector0Rect();
 	QRectF connector1Rect(const QLineF & line);
 	void colorByLength(bool);
 

@@ -1538,6 +1538,7 @@ void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen 
 
 	// connectorItem is a bendpoint or connects to a multiply connected connector
 
+	(void)bendpoint;
 	//if (!bendpoint) {
 	//DebugDialog::debug(QString("big dot %1 %2 %3").arg(this->id()).arg(connectorItem->connectorSharedID()).arg(count));
 	//}

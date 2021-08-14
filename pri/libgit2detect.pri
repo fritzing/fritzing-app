@@ -66,7 +66,7 @@ unix {
         macx {
             LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
         } else {
-            contains(LSB_INFO, bionic): {
+            if(contains(LSB_INFO, bionic)) {
                 message("we are on Ubuntu bionic.")
                 exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
                     message("Using system-wide installed http-parser lib.")
@@ -75,8 +75,7 @@ unix {
                     message("Using http-parser bundled with libgit2.")
                     LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
                 }
-            }
-            contains(LSB_INFO, focal): {
+            } else:contains(LSB_INFO, focal) {
                 message("we are on Ubuntu focal.")
                 exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
                     message("Using system-wide installed http-parser lib.")
@@ -85,8 +84,7 @@ unix {
                     message("Using http-parser bundled with libgit2.")
                     LIBS += $$LIBGIT2LIB/libgit2.a -lssh2 -lssl -lcrypto
                 }
-            }
-            defined(LSB_INFO, var) {
+            } else {
                 message("we are neither on Ubuntu focal nor on Ubuntu bionic.")
                 LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
             }

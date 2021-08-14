@@ -13,7 +13,6 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************
 
-
 packagesExist(libgit2) {
 } else {
     LIBGIT_STATIC = true
@@ -51,6 +50,20 @@ win32 {
     message($$PKGCONFIG)
 }
 
+# Unix section
+# Detrmine Linux distribution information
+
+BIONIC = $$system(lsb_release -c | grep bionic)
+FOCAL = $$system(lsb_release -c | grep focal)
+if(contains(BIONIC, bionic)) {
+    message("we are on Ubuntu bionic.")
+} if(contains(FOCAL, focal)) {
+    message("we are on Ubuntu focal.")
+} else {
+    UNKNOWN_LINUX_DIST = "unknown"
+    message("we are neither on bionic nor on focal.")
+}
+
 unix {
     if ($$LIBGIT_STATIC) {
         LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
@@ -62,12 +75,26 @@ unix {
         macx {
             LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
         } else {
-            exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
-                message("Using system-wide installed http-parser lib.")
-                LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssh2 -lssl -lcrypto
-            } else {
-                message("Using http-parser bundled with libgit2.")
-                LIBS += $$LIBGIT2LIB/libgit2.a -lssh2 -lssl -lcrypto
+            contains(BIONIC, bionic): {
+                exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
+                    message("Using system-wide installed http-parser lib.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssl -lcrypto
+                } else {
+                    message("Using http-parser bundled with libgit2.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
+                }
+            }
+            contains(FOCAL, focal): {
+                exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
+                    message("Using system-wide installed http-parser lib.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssh2 -lssl -lcrypto
+                } else {
+                    message("Using http-parser bundled with libgit2.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lssh2 -lssl -lcrypto
+                }
+            }
+            contains(UNKNOWN_LINUX_DIST, unknown) {
+                LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
             }
         }
     } else {

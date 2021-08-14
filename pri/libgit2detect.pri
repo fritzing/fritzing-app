@@ -51,20 +51,11 @@ win32 {
 }
 
 # Unix section
-# Detrmine Linux distribution information
-
-BIONIC = $$system(lsb_release -c | grep bionic)
-FOCAL = $$system(lsb_release -c | grep focal)
-if(contains(BIONIC, bionic)) {
-    message("we are on Ubuntu bionic.")
-} if(contains(FOCAL, focal)) {
-    message("we are on Ubuntu focal.")
-} else {
-    UNKNOWN_LINUX_DIST = "unknown"
-    message("we are neither on bionic nor on focal.")
-}
 
 unix {
+    # Determine Linux distribution information
+    LSB_INFO = $$system(lsb_release -sc 2> /dev/null)
+
     if ($$LIBGIT_STATIC) {
         LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
         exists($$LIBGIT2LIB/libgit2.a) {
@@ -75,7 +66,8 @@ unix {
         macx {
             LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
         } else {
-            contains(BIONIC, bionic): {
+            contains(LSB_INFO, bionic): {
+                message("we are on Ubuntu bionic.")
                 exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
                     message("Using system-wide installed http-parser lib.")
                     LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssl -lcrypto
@@ -84,7 +76,8 @@ unix {
                     LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
                 }
             }
-            contains(FOCAL, focal): {
+            contains(LSB_INFO, focal): {
+                message("we are on Ubuntu focal.")
                 exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
                     message("Using system-wide installed http-parser lib.")
                     LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssh2 -lssl -lcrypto
@@ -93,7 +86,8 @@ unix {
                     LIBS += $$LIBGIT2LIB/libgit2.a -lssh2 -lssl -lcrypto
                 }
             }
-            contains(UNKNOWN_LINUX_DIST, unknown) {
+            defined(LSB_INFO, var) {
+                message("we are neither on Ubuntu focal nor on Ubuntu bionic.")
                 LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
             }
         }

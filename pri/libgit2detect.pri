@@ -86,7 +86,7 @@ unix {
                     message("Using http-parser bundled with libgit2.")
                     LIBS += $$LIBGIT2LIB/libgit2.a -lssh2 -lssl -lcrypto
                 }
-            # Other Linux OS (tested on Fedora31)
+            # Other Linux OS (tested on Fedora-30)
             } else {
                 message("we are neither on Ubuntu focal nor on Ubuntu bionic.")
                 LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto

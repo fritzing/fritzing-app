@@ -50,10 +50,8 @@ win32 {
     message($$PKGCONFIG)
 }
 
-# Unix section
-
 unix {
-    # Determine Linux distribution information
+    # Look up Ubuntu distribution (codename)
     LSB_INFO = $$system(lsb_release -sc 2> /dev/null)
 
     if ($$LIBGIT_STATIC) {
@@ -66,8 +64,10 @@ unix {
         macx {
             LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
         } else {
+            # Ubuntu Bionic
             if(contains(LSB_INFO, bionic)) {
                 message("we are on Ubuntu bionic.")
+                # Check if the http_parser library is installed
                 exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
                     message("Using system-wide installed http-parser lib.")
                     LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssl -lcrypto
@@ -75,8 +75,10 @@ unix {
                     message("Using http-parser bundled with libgit2.")
                     LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
                 }
+            # Ubuntu Focal
             } else:contains(LSB_INFO, focal) {
                 message("we are on Ubuntu focal.")
+                # Check if the http_parser library is installed
                 exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
                     message("Using system-wide installed http-parser lib.")
                     LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssh2 -lssl -lcrypto
@@ -84,6 +86,7 @@ unix {
                     message("Using http-parser bundled with libgit2.")
                     LIBS += $$LIBGIT2LIB/libgit2.a -lssh2 -lssl -lcrypto
                 }
+            # Other Linux OS (tested on Fedora31)
             } else {
                 message("we are neither on Ubuntu focal nor on Ubuntu bionic.")
                 LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto

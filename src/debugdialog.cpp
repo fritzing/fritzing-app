@@ -21,7 +21,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #include "debugdialog.h"
+#ifndef QT_NO_DEBUG
 #include "utils/folderutils.h"
+#endif
 #include <QEvent>
 #include <QCoreApplication>
 #include <QFile>
@@ -68,7 +70,10 @@ DebugDialog::DebugDialog(QWidget *parent)
 	m_textEdit = new QTextEdit(this);
 	m_textEdit->setGeometry(QRect(10, 10, 381, 281));
 
-	QString path = FolderUtils::getTopLevelUserDataStorePath();
+	QString path;
+#ifndef QT_NO_DEBUG
+	path = FolderUtils::getTopLevelUserDataStorePath();
+#endif
 	path += "/debug.txt";
 
 	m_file.setFileName(path);

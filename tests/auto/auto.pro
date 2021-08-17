@@ -1,4 +1,4 @@
 TEMPLATE = subdirs
 
-SUBDIRS = test_svg test_textutils
+SUBDIRS = test_gerber test_svg test_textutils
 

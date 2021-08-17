@@ -32,3 +32,20 @@ BOOST_AUTO_TEST_CASE( test_removeFontFamilySingleQuotes )
 	changed = TextUtils::removeFontFamilySingleQuotes(input5);
 	BOOST_REQUIRE(changed);
 }
+
+BOOST_AUTO_TEST_CASE( test_makeSVGHeader )
+{
+	std::string prefix = "<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n<!-- Created with Fritzing (https://fritzing.org/) -->\n<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' ";
+
+	std::string suffix1 = "width='3.33333in' height='2.22222in' viewBox='0 0 3333.33 2222.22' >\n";
+	QString result = TextUtils::makeSVGHeader(1000, 1000, 3333.33, 2222.22);
+	BOOST_CHECK_EQUAL(result.toStdString(), prefix + suffix1);
+
+	std::string suffix2 = "width='3.33333in' height='2.22222in' viewBox='0 0 3.33333 2.22222' >\n";
+	result = TextUtils::makeSVGHeader(1000, 1, 3333.33, 2222.22);
+	BOOST_CHECK_EQUAL(result.toStdString(), prefix + suffix2);
+
+	std::string suffix3 = "width='3333.33in' height='2222.22in' viewBox='0 0 3.33333e+06 2.22222e+06' >\n";
+	result = TextUtils::makeSVGHeader(1, 1000, 3333.33, 2222.22);
+	BOOST_CHECK_EQUAL(result.toStdString(), prefix + suffix3);
+}

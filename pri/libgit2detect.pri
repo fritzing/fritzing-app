@@ -89,7 +89,13 @@ unix {
             # Other Linux OS (tested on Fedora-30)
             } else {
                 message("we are neither on Ubuntu focal nor on Ubuntu bionic.")
-                LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
+                exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
+                    message("Using system-wide installed http-parser lib.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssl -lcrypto
+                } else {
+                    message("Using http-parser bundled with libgit2.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
+                }
             }
         }
     } else {

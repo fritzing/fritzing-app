@@ -756,6 +756,15 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 
 	PathUserData * pathUserData = (PathUserData *) userData;
 
+	if (command.toLatin1() == 'z' || command.toLatin1() == 'Z') {
+		gerb_path = "X" + QString::number(flipx(m_pathstart_x)) + "Y" + QString::number(flipy(m_pathstart_y)) + "D01*\n";
+		gerb_path += "D02*\n";
+		pathUserData->x = m_pathstart_x;
+		pathUserData->y = m_pathstart_y;
+		pathUserData->string.append(gerb_path);
+		return;
+	}
+
 	int argIndex = 0;
 	while (argIndex < args.count()) {
 		switch(command.toLatin1()) {
@@ -818,14 +827,6 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 			gerb_path = "X" + QString::number(flipx(pathUserData->x)) + "Y" + QString::number(flipy(pathUserData->y)) + "D01*\n";
 			pathUserData->string.append(gerb_path);
 			argIndex += 2;
-			break;
-		case 'z':
-		case 'Z':
-			gerb_path = "X" + QString::number(flipx(m_pathstart_x)) + "Y" + QString::number(flipy(m_pathstart_y)) + "D01*\n";
-			gerb_path += "D02*\n";
-			pathUserData->x = m_pathstart_x;
-			pathUserData->y = m_pathstart_y;
-			pathUserData->string.append(gerb_path);
 			break;
 		default:
 			argIndex = args.count();

@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_CASE( test_svg2gerber )
 		"<g partID='57870'> <g transform='translate(1656.69,1034.47)'> <circle id='0'  fill='black' cx='65.5293' cy='65.5293' r='43.3071' stroke-width='0' stroke='black'/> </g> </g> <g partID='57871'> <g transform='translate(1656.69,1034.47)'> <circle id='1'  fill='black' cx='65.5293' cy='65.5293' r='43.3071' stroke-width='0' stroke='black'/> </g> </g> </svg>", // hole
 	};
 	const QStringList gerbers = {
-		"G04 MADE WITH FRITZING*\nG04 WWW.FRITZING.ORG*\nG04 DOUBLE SIDED*\nG04 HOLES PLATED*\nG04 CONTOUR ON CENTER OF CONTOUR VECTOR*\n%ASAXBY*%\n%FSLAX23Y23*%\n%MOIN*%\n%OFA0B0*%\n%SFA1.0B1.0*%\n%ADD10C,0.011108*%\n%LNSILK1*%\nG90*\nG70*\nG54D10*\nX167Y2217D02*\nX1277Y2217D01*\nX1277Y828D01*\nD02*\nG04 End of Silk1*\nM02*",
+		"G04 MADE WITH FRITZING*\nG04 WWW.FRITZING.ORG*\nG04 DOUBLE SIDED*\nG04 HOLES PLATED*\nG04 CONTOUR ON CENTER OF CONTOUR VECTOR*\n%ASAXBY*%\n%FSLAX23Y23*%\n%MOIN*%\n%OFA0B0*%\n%SFA1.0B1.0*%\n%ADD10C,0.011108*%\n%LNSILK1*%\nG90*\nG70*\nG54D10*\nX167Y2217D02*\nX1277Y2217D01*\nX1277Y828D01*\nX167Y2217D01*\nD02*\nD02*\nG04 End of Silk1*\nM02*",
 		"; NON-PLATED HOLES START AT T1\n; THROUGH (PLATED) HOLES START AT T100\nM48\nINCH\nT1C0.086614\n%\nT1\nX017222Y011222\nT00\nM30\n",
 	};
 

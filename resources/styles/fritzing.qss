@@ -1566,8 +1566,8 @@ HtmlInfoView QScrollBar:vertical {
 
 #iconFrame { /*background-color in the icon-row*/
 	background-color: #d9d9d9;
-	max-height: 34px;
-	min-height: 34px;
+	max-height: 82px;
+	min-height: 82px;
 	margin: 0px 0px 0px 5px;
 	padding: 0px;
 }

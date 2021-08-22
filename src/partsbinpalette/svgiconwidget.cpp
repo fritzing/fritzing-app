@@ -38,9 +38,9 @@ const QColor SectionHeaderColor(80, 80, 80);
 
 #define SELECTION_THICKNESS 2
 #define HALF_SELECTION_THICKNESS 1
-#define ICON_SIZE 32
-#define SINGULAR_OFFSET 3
-#define PLURAL_OFFSET 2
+#define ICON_SIZE 42
+#define SINGULAR_OFFSET 0
+#define PLURAL_OFFSET 0
 
 static QPixmap * PluralImage = nullptr;
 static QPixmap * SingularImage = nullptr;
@@ -111,10 +111,14 @@ SvgIconWidget::SvgIconWidget(ModelPart * modelPart, ViewLayer::ViewID viewID, It
 
 void SvgIconWidget::initNames() {
 	if (!PluralImage) {
-		PluralImage = new QPixmap(":/resources/images/icons/parts_plural_v3_plur.png");
+		int r = ICON_SIZE;
+		PluralImage = new QPixmap(r, r);
+		PluralImage->fill(QColorConstants::White);
 	}
 	if (!SingularImage) {
-		SingularImage = new QPixmap(":/resources/images/icons/parts_plural_v3_sing.png");
+		int r = ICON_SIZE;
+		SingularImage = new QPixmap(r, r);
+		SingularImage->fill(QColorConstants::White);
 	}
 }
 

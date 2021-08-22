@@ -42,8 +42,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 QPixmap * NoIcon = NULL;
 
-const int HtmlInfoView::STANDARD_ICON_IMG_WIDTH = 32;
-const int HtmlInfoView::STANDARD_ICON_IMG_HEIGHT = 32;
+const int HtmlInfoView::STANDARD_ICON_IMG_WIDTH = 80;
+const int HtmlInfoView::STANDARD_ICON_IMG_HEIGHT = 80;
 const int IconSpace = 0;
 
 static const int MaxSpinBoxWidth = 60;
@@ -177,7 +177,8 @@ void HtmlInfoView::init(bool tinyMode) {
 	/* Part Icons */
 
 	if (NoIcon == NULL) {
-		NoIcon = new QPixmap(":/resources/images/icons/noicon.png");
+		NoIcon = new QPixmap(STANDARD_ICON_IMG_WIDTH, STANDARD_ICON_IMG_HEIGHT);
+		NoIcon->fill(QColorConstants::White);
 	}
 
 	QFrame * iconFrame = new QFrame(mainFrame);

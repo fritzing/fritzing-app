@@ -634,8 +634,8 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message numerus="yes">
         <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
         <translation>
-            <numerusform>&lt;b&gt;A forma personalizada possui %n recortes.</numerusform>
-            <numerusform>&lt;b&gt;As formas personalizadas possuem %n recortes.</numerusform>
+            <numerusform>&lt;b&gt;A forma personalizada possui %n recorte.&lt;/b&gt;</numerusform>
+            <numerusform>&lt;b&gt;A forma personalizada possui %n recortes.&lt;/b&gt;</numerusform>
         </translation>
     </message>
     <message>
@@ -743,7 +743,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     </message>
     <message>
         <source>Description:</source>
-        <translation>Descrição</translation>
+        <translation>Descrição:</translation>
     </message>
     <message>
         <source>Manufacturer:</source>
@@ -1148,7 +1148,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     </message>
     <message>
         <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
-        <translation>&lt;br/&gt;A &lt;b&gt;Vista Breadboard&lt;/b&gt; deve parecer um protótipo de breadboard da &lt;i&gt;vida real&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt; Comece arrastando um componente do Pacote de Componentes, que fica no canto superior direito. Em seguida, puxe mais componentes, conectando-as colocando-as na breadboard ou clicando nos conectores e arrastando os fios. O processo é semelhante a como você organizaria as coisas no mundo físico. Depois de terminar de criar seu esboço na vista da placa de ensaio, tente as outras vistas. Você pode alterar as visualizações clicando nos separadores na parte superior da janela. Como vistas diferentes têm propósitos diferentes, os componentes terão aparência diferente nas outras vistas.</translation>
+        <translation>&lt;br/&gt;A &lt;b&gt;Vista Breadboard&lt;/b&gt; deve parecer um protótipo de breadboard da &lt;i&gt;vida real&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt; Comece arrastando um componente do Pacote de Componentes, que fica no canto superior direito. Em seguida, puxe mais componentes, conectando-as colocando-as na breadboard ou clicando nos conectores e arrastando os fios. O processo é semelhante a como você organizaria as coisas no mundo físico.&lt;br/&gt;&lt;br/&gt; Depois de terminar de criar seu esboço na vista da placa de ensaio, tente as outras vistas. Você pode alterar as visualizações clicando nos separadores na parte superior da janela. Como vistas diferentes têm propósitos diferentes, os componentes terão aparência diferente nas outras vistas.</translation>
     </message>
     <message>
         <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
@@ -1737,8 +1737,8 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message numerus="yes">
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
         <translation>
-            <numerusform>%1 de %2 redes encaminhadas - %n ligação(ões) ainda à espera de ser encaminhadas</numerusform>
-            <numerusform></numerusform>
+            <numerusform>%1 de %2 redes encaminhadas - %n ligação ainda à espera de ser encaminhada</numerusform>
+            <numerusform>%1 de %2 redes encaminhadas - %n ligações ainda à espera de ser encaminhadas</numerusform>
         </translation>
     </message>
     <message>
@@ -2910,7 +2910,7 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
     </message>
     <message>
         <source>The copper top (copper 1) layer is not available on a one-sided board.  Please switch the board to double-sided or choose the copper bottom (copper 0) layer.</source>
-        <translation>A camada superior de cobre (cobre 1) não está disponível numa placa unilateral. Mude a placa para frente e verso ou escolha a camada inferior de cobre (cobre 0).</translation>
+        <translation>O cobre na camada superior (cobre 1) não está disponível numa placa unilateral. Mude a placa para frente e verso ou escolha o cobre da camada inferior (cobre 0).</translation>
     </message>
     <message>
         <source>No Sketch found in &apos;%1&apos;</source>
@@ -3762,7 +3762,7 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished">Editar</translation>
+        <translation>Editar</translation>
     </message>
     <message>
         <source>Simulate</source>
@@ -3814,8 +3814,8 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     <message numerus="yes">
         <source> with %n vias</source>
         <translation>
-            <numerusform>com %n via</numerusform>
-            <numerusform>com %n vias</numerusform>
+            <numerusform> com %n via</numerusform>
+            <numerusform> com %n vias</numerusform>
         </translation>
     </message>
     <message>
@@ -4079,7 +4079,7 @@ Razão: %2 (errcode %3)</translation>
     </message>
     <message>
         <source>number of connectors:</source>
-        <translation>número de conectores</translation>
+        <translation>número de conectores:</translation>
     </message>
     <message>
         <source>Through-hole</source>
@@ -7199,7 +7199,9 @@ Note: you can also trigger this display by mousing down on the routing status te
         <source>The swapping mechanism is disabled for:
 
 </source>
-        <translation>O mecanismo de troca está desativado para:</translation>
+        <translation>O mecanismo de troca está desativado para:
+
+</translation>
     </message>
     <message>
         <source>and %1 other parts</source>
@@ -7784,7 +7786,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
 </context>
 <context>

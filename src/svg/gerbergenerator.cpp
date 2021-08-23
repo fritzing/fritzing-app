@@ -816,6 +816,13 @@ QString GerberGenerator::makePath(QImage & image, double unit, const QString & c
 				whiteStart = x;
 			}
 		}
+		if (inWhite) {
+			paths += QString("M%1,%2L%3,%2 ").arg(whiteStart + halfUnit).arg(y + halfUnit).arg(image.width() - 1 + halfUnit);
+			if (++lineCount == 10) {
+				lineCount = 0;
+				paths += "\n";
+			}
+		}
 	}
 
 	QString path = QString("<path fill='none' stroke='%1' stroke-width='%2' stroke-linecap='square' d='").arg(colorString).arg(unit);

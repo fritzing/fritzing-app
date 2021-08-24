@@ -275,7 +275,7 @@ protected:
 
 /////////////////////////////////////////////
 class QMatrix;
-class TransformItemCommand : public BaseCommand
+class TransformItemCommand : public SimulationCommand
 {
 
 public:
@@ -324,7 +324,7 @@ protected:
 
 /////////////////////////////////////////////
 
-class ChangeWireCommand : public BaseCommand
+class ChangeWireCommand : public SimulationCommand
 {
 public:
 	ChangeWireCommand(class SketchWidget *sketchWidget, long fromID,
@@ -349,7 +349,7 @@ protected:
 
 /////////////////////////////////////////////
 
-class ChangeWireCurveCommand : public BaseCommand
+class ChangeWireCurveCommand : public SimulationCommand
 {
 public:
 	ChangeWireCurveCommand(class SketchWidget *sketchWidget, long fromID,
@@ -464,7 +464,7 @@ protected:
 
 /////////////////////////////////////////////
 
-class RotateLegCommand : public BaseCommand
+class RotateLegCommand : public SimulationCommand
 {
 public:
 	RotateLegCommand(class SketchWidget *sketchWidget, long fromID, const QString & fromConnectorID,
@@ -710,7 +710,7 @@ protected:
 
 /////////////////////////////////////////////
 
-class CleanUpRatsnestsCommand : public BaseCommand
+class CleanUpRatsnestsCommand : public SimulationCommand
 {
 public:
 	CleanUpRatsnestsCommand(class SketchWidget * sketchWidget, CleanUpWiresCommand::Direction, QUndoCommand * parent);
@@ -911,7 +911,7 @@ protected:
 
 /////////////////////////////////////////////
 
-class SetResistanceCommand : public BaseCommand
+class SetResistanceCommand : public SimulationCommand
 {
 public:
 	SetResistanceCommand(class SketchWidget *, long itemID, QString oldResistance, QString newResistance, QString oldPinSpacing, QString newPinSpacing, QUndoCommand * parent);

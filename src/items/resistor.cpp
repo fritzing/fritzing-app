@@ -379,12 +379,6 @@ void Resistor::resistanceEntry(const QString & text) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView) {
 		infoGraphicsView->setResistance(text, "");
-		//Trigguer a simulation if we are simulating
-		if (Simulator::isSimulating()){
-			//The infoGraphicsView->setProp trigues a delay before changing the property, we need
-			//to wait until we can perform the simulation
-			QTimer::singleShot(SketchWidget::PropChangeDelay*2, this, SLOT(triggerSimulation()));
-		}
 	}
 }
 

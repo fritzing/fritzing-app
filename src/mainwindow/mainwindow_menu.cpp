@@ -1136,11 +1136,11 @@ void MainWindow::createViewMenuActions(bool showWelcome) {
 
 	m_startSimulatorAct = new QAction(tr("Start Simulator"), this);
 	m_startSimulatorAct->setStatusTip(tr("Starts the simulator (DC analysis)"));
-	connect(m_startSimulatorAct, SIGNAL(triggered()), m_simulator, SLOT(simulate()));
+	connect(m_startSimulatorAct, SIGNAL(triggered()), m_simulator, SLOT(startSimulation()));
 
 	m_stopSimulatorAct = new QAction(tr("Stop Simulator"), this);
 	m_stopSimulatorAct->setStatusTip(tr("Stops the simulator and removes simulator data"));
-	connect(m_stopSimulatorAct, SIGNAL(triggered()), m_simulator, SLOT(reset()));
+	connect(m_stopSimulatorAct, SIGNAL(triggered()), m_simulator, SLOT(stopSimulation()));
 
 	m_showGridAct = new QAction(tr("Show Grid"), this);
 	m_showGridAct->setStatusTip(tr("Show the grid"));

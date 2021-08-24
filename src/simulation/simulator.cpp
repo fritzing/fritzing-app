@@ -159,10 +159,22 @@ void Simulator::enable(bool enable) {
 }
 
 /**
- * Resets the simulator and removes the simulation effects: the grey out of
- * the parts that are not simulated and the messages previously added.
+ * This function starts the simulator and triggers a simulation. Once the simulator has
+ * been started, the simulaton will run after any user actions that modifies the circuit
+ * (adding wires, parts, modifying property values, etc.)
  */
-void Simulator::reset() {
+void Simulator::startSimulation()
+{
+	simulating = true;
+	simulate();
+}
+
+/**
+ * Stops the simulator (the simulator will not run if the user modifies the circuit) and
+ * removes the simulation effects: the grey out effects on the parts that are not being,
+ * simulated, the smoke images, and the messages on the multimeter.
+ */
+void Simulator::stopSimulation() {
 	simulating = false;
 	removeSimItems();
 }
@@ -187,8 +199,8 @@ void Simulator::reset() {
  * @brief Simulate the current circuit and check for components working out of specifications
  */
 void Simulator::simulate() {
-	if (!m_enabled) {
-		std::cout << "The simulator is not enabled" << std::endl;
+	if (!m_enabled || !simulating) {
+		std::cout << "The simulator is not enabled or simulating" << std::endl;
 		return;
 	}
 
@@ -198,8 +210,6 @@ void Simulator::simulate() {
 		throw std::runtime_error( "Could not create simulator instance" );
 		return;
 	}
-
-	simulating = true;
 
 	//Empty the stderr and stdout buffers
 	m_simulator->ResetStdOutErr();
@@ -292,7 +302,7 @@ void Simulator::simulate() {
 	std::cout << "Waiting for simulator thread to stop" <<std::endl;
 	int elapsedTime = 0, simTimeOut = 3000; // in ms
 	while (m_simulator->IsRunning() && elapsedTime < simTimeOut) {
-		QThread::msleep(1000);
+		QThread::usleep(1000);
 		elapsedTime++;
 	}
 	if (elapsedTime >= simTimeOut) {

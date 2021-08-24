@@ -225,18 +225,12 @@ SimulationCommand::SimulationCommand(BaseCommand::CrossViewType crossViewType, S
 
 void SimulationCommand::undo() {
 	BaseCommand::undo();
-	//Trigguer a simulation if we are simulating
-	if (Simulator::isSimulating()) {
-		Simulator::triggerSimulation();
-	}
+	Simulator::triggerSimulation();
 }
 
 void SimulationCommand::redo() {
 	BaseCommand::redo();
-	//Trigguer a simulation if we are simulating
-	if (Simulator::isSimulating()) {
-		Simulator::triggerSimulation();
-	}
+	Simulator::triggerSimulation();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -544,7 +538,7 @@ ChangeWireCommand::ChangeWireCommand(SketchWidget* sketchWidget, long fromID,
                                      const QLineF & oldLine, const QLineF & newLine, QPointF oldPos, QPointF newPos,
                                      bool updateConnections, bool updateRatsnest,
                                      QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
 	m_updateRatsnest = updateRatsnest;
 	m_fromID = fromID;
@@ -560,7 +554,7 @@ void ChangeWireCommand::undo()
 	if (!m_redoOnly) {
 		m_sketchWidget->changeWire(m_fromID, m_oldLine, m_oldPos, m_updateConnections, m_updateRatsnest);
 	}
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void ChangeWireCommand::redo()
@@ -568,7 +562,7 @@ void ChangeWireCommand::redo()
 	if (!m_undoOnly) {
 		m_sketchWidget->changeWire(m_fromID, m_newLine, m_newPos, m_updateConnections, m_updateRatsnest);
 	}
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString ChangeWireCommand::getParamString() const {
@@ -588,7 +582,7 @@ QString ChangeWireCommand::getParamString() const {
 ChangeWireCurveCommand::ChangeWireCurveCommand(SketchWidget* sketchWidget, long fromID,
         const Bezier * oldBezier, const Bezier * newBezier, bool wasAutoroutable,
         QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
 	m_fromID = fromID;
 	m_wasAutoroutable = wasAutoroutable;
@@ -608,7 +602,7 @@ void ChangeWireCurveCommand::undo()
 	if (!m_redoOnly) {
 		m_sketchWidget->changeWireCurve(m_fromID, m_oldBezier, m_wasAutoroutable);
 	}
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void ChangeWireCurveCommand::redo()
@@ -621,7 +615,7 @@ void ChangeWireCurveCommand::redo()
 			m_sketchWidget->changeWireCurve(m_fromID, m_newBezier, false);
 		}
 	}
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString ChangeWireCurveCommand::getParamString() const {
@@ -887,7 +881,7 @@ QString ChangeLegBendpointCommand::getParamString() const {
 
 RotateLegCommand::RotateLegCommand(SketchWidget* sketchWidget, long fromID, const QString & fromConnectorID,
                                    const QPolygonF & oldLeg, bool active, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
 	m_fromID = fromID;
 	m_oldLeg = oldLeg;
@@ -897,13 +891,13 @@ RotateLegCommand::RotateLegCommand(SketchWidget* sketchWidget, long fromID, cons
 
 void RotateLegCommand::undo()
 {
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void RotateLegCommand::redo()
 {
 	m_sketchWidget->rotateLeg(m_fromID, m_fromConnectorID, m_oldLeg, m_active);
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString RotateLegCommand::getParamString() const {
@@ -1299,7 +1293,7 @@ QString CleanUpWiresCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 CleanUpRatsnestsCommand::CleanUpRatsnestsCommand(SketchWidget* sketchWidget, CleanUpWiresCommand::Direction direction, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+	: SimulationCommand(BaseCommand::CrossView, sketchWidget, parent)
 {
 	if (direction == CleanUpWiresCommand::UndoOnly) m_undoOnly = true;
 	if (direction == CleanUpWiresCommand::RedoOnly) m_redoOnly = true;
@@ -1310,7 +1304,7 @@ void CleanUpRatsnestsCommand::undo()
 	if (m_undoOnly) {
 		m_sketchWidget->cleanupRatsnests(true);
 	}
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void CleanUpRatsnestsCommand::redo()
@@ -1318,7 +1312,7 @@ void CleanUpRatsnestsCommand::redo()
 	if (m_redoOnly) {
 		m_sketchWidget->cleanupRatsnests(true);
 	}
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString CleanUpRatsnestsCommand::getParamString() const {
@@ -1764,7 +1758,7 @@ QString ResizeBoardCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 TransformItemCommand::TransformItemCommand(SketchWidget *sketchWidget, long id, const QMatrix & oldMatrix, const QMatrix & newMatrix, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent),
 	m_itemID(id),
 	m_oldMatrix(oldMatrix),
 	m_newMatrix(newMatrix)
@@ -1774,13 +1768,13 @@ TransformItemCommand::TransformItemCommand(SketchWidget *sketchWidget, long id, 
 void TransformItemCommand::undo()
 {
 	m_sketchWidget->transformItem(m_itemID, m_oldMatrix);
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void TransformItemCommand::redo()
 {
 	m_sketchWidget->transformItem(m_itemID, m_newMatrix);
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString TransformItemCommand::getParamString() const {
@@ -1793,7 +1787,7 @@ QString TransformItemCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 SetResistanceCommand::SetResistanceCommand(SketchWidget * sketchWidget, long itemID, QString oldResistance, QString newResistance, QString oldPinSpacing, QString newPinSpacing, QUndoCommand * parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+	: SimulationCommand(BaseCommand::CrossView, sketchWidget, parent),
 	m_oldResistance(oldResistance),
 	m_newResistance(newResistance),
 	m_oldPinSpacing(oldPinSpacing),
@@ -1804,12 +1798,12 @@ SetResistanceCommand::SetResistanceCommand(SketchWidget * sketchWidget, long ite
 
 void SetResistanceCommand::undo() {
 	m_sketchWidget->setResistance(m_itemID, m_oldResistance, m_oldPinSpacing, true);
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void SetResistanceCommand::redo() {
 	m_sketchWidget->setResistance(m_itemID, m_newResistance, m_newPinSpacing, true);
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString SetResistanceCommand::getParamString() const {

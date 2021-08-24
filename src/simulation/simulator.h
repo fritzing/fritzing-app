@@ -38,13 +38,16 @@ public:
 	bool isEnabled();
 	static bool isSimulating();
 
+private:
+	void resetTimer();
+
 public slots:
 	void enable(bool);
 	void reset();
 	void simulate();
 	static void triggerSimulation();
 
-protected:
+protected:	
 	void drawSmoke(ItemBase* part);
 	void updateMultimeterScreen(ItemBase *, QString);
 	void updateMultimeterScreen(ItemBase *, double);
@@ -86,6 +89,8 @@ protected:
 	QHash<ConnectorItem *, int> m_connector2netHash;
 
 	QList<QString>* m_instanceTitleSim;
+	QTimer *m_simTimer;
+	static constexpr int SimDelay = 200;
 
 };
 

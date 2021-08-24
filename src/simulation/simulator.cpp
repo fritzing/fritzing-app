@@ -33,6 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGraphicsColorizeEffect>
 #include <QRegularExpression>
 #include <QMessageBox>
+#include <QTimer>
 
 #include "../mainwindow/mainwindow.h"
 #include "../debugdialog.h"
@@ -95,6 +96,10 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 	m_schematicGraphicsView = dynamic_cast<SchematicSketchWidget *>(mainWindow->sketchWidgets().at(1));
 	m_instanceTitleSim = new QList<QString>;
 
+	m_simTimer = new QTimer(this);
+	m_simTimer->setSingleShot(true);
+	connect(m_simTimer, &QTimer::timeout, this, &Simulator::simulate);
+
 	QSettings settings;
 	int enabled = settings.value("simulatorEnabled", 0).toInt();
 	enable(enabled);
@@ -119,8 +124,18 @@ void Simulator::triggerSimulation()
 {
 
 	if( simulatorInstance && simulating) {
-		simulatorInstance->simulate();
+		simulatorInstance->resetTimer();
 	}
+}
+
+/**
+ * This function resets the timer of the simulation, which triggers a simulation after
+ * the timeout. Several commands can trigger the simulation, and each of them will reset
+ * the timer. Thus, the simulation will only be triggered once, even if a user action
+ * calls several times to triggerSimulation.
+ */
+void Simulator::resetTimer(){
+	m_simTimer->start(SimDelay);
 }
 
 /**

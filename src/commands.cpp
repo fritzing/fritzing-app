@@ -26,6 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "connectors/connectoritem.h"
 #include "items/moduleidnames.h"
 #include "utils/bezier.h"
+#include "simulation/simulator.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -184,7 +185,7 @@ int BaseCommand::totalChildCount(const QUndoCommand * command) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 AddDeleteItemCommand::AddDeleteItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QUndoCommand *parent)
-	: BaseCommand(crossViewType, sketchWidget, parent),
+	: SimulationCommand(crossViewType, sketchWidget, parent),
 	m_moduleID(moduleID),
 	m_itemID(id),
 	m_viewGeometry(viewGeometry),
@@ -215,6 +216,29 @@ SketchWidget * AddDeleteItemCommand::dropOrigin() {
 	return m_dropOrigin;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+SimulationCommand::SimulationCommand(BaseCommand::CrossViewType crossViewType, SketchWidget* sketchWidget, QUndoCommand *parent)
+	: BaseCommand(crossViewType, sketchWidget, parent)
+{
+}
+
+void SimulationCommand::undo() {
+	BaseCommand::undo();
+	//Trigguer a simulation if we are simulating
+	if (Simulator::isSimulating()) {
+		Simulator::triggerSimulation();
+	}
+}
+
+void SimulationCommand::redo() {
+	BaseCommand::redo();
+	//Trigguer a simulation if we are simulating
+	if (Simulator::isSimulating()) {
+		Simulator::triggerSimulation();
+	}
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 AddItemCommand::AddItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, bool updateInfoView, long modelIndex, QUndoCommand *parent)
@@ -228,7 +252,7 @@ AddItemCommand::AddItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossVie
 void AddItemCommand::undo()
 {
 	m_sketchWidget->deleteItem(m_itemID, true, true, false);
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void AddItemCommand::redo()
@@ -237,7 +261,7 @@ void AddItemCommand::redo()
 		m_sketchWidget->addItem(m_moduleID, m_viewLayerPlacement, m_crossViewType, m_viewGeometry, m_itemID, m_modelIndex, this);
 	}
 	m_skipFirstRedo = false;
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString AddItemCommand::getParamString() const {
@@ -259,13 +283,13 @@ DeleteItemCommand::DeleteItemCommand(SketchWidget* sketchWidget,BaseCommand::Cro
 void DeleteItemCommand::undo()
 {
 	m_sketchWidget->addItem(m_moduleID, m_viewLayerPlacement, m_crossViewType, m_viewGeometry, m_itemID, m_modelIndex, this);
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void DeleteItemCommand::redo()
 {
 	m_sketchWidget->deleteItem(m_itemID, true, m_crossViewType == BaseCommand::CrossView, false);
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString DeleteItemCommand::getParamString() const {
@@ -275,7 +299,7 @@ QString DeleteItemCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 MoveItemCommand::MoveItemCommand(SketchWidget* sketchWidget, long itemID, ViewGeometry & oldG, ViewGeometry & newG, bool updateRatsnest, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent),
 	m_updateRatsnest(updateRatsnest),
 	m_itemID(itemID),
 	m_old(oldG),
@@ -286,13 +310,13 @@ MoveItemCommand::MoveItemCommand(SketchWidget* sketchWidget, long itemID, ViewGe
 void MoveItemCommand::undo()
 {
 	m_sketchWidget->moveItem(m_itemID, m_old, m_updateRatsnest);
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void MoveItemCommand::redo()
 {
 	m_sketchWidget->moveItem(m_itemID, m_new, m_updateRatsnest);
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString MoveItemCommand::getParamString() const {
@@ -314,7 +338,7 @@ QString MoveItemCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 SimpleMoveItemCommand::SimpleMoveItemCommand(SketchWidget* sketchWidget, long itemID, QPointF & oldP, QPointF & newP, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent),
 	m_itemID(itemID),
 	m_old(oldP),
 	m_new(newP)
@@ -324,13 +348,13 @@ SimpleMoveItemCommand::SimpleMoveItemCommand(SketchWidget* sketchWidget, long it
 void SimpleMoveItemCommand::undo()
 {
 	m_sketchWidget->simpleMoveItem(m_itemID, m_old);
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void SimpleMoveItemCommand::redo()
 {
 	m_sketchWidget->simpleMoveItem(m_itemID, m_new);
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString SimpleMoveItemCommand::getParamString() const {
@@ -348,7 +372,7 @@ QString SimpleMoveItemCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 MoveItemsCommand::MoveItemsCommand(SketchWidget* sketchWidget, bool updateRatsnest, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent),
     m_updateRatsnest(updateRatsnest)
 {
 }
@@ -361,7 +385,7 @@ void MoveItemsCommand::undo()
 	foreach (long id, m_wires.keys()) {
 		m_sketchWidget->updateWire(id, m_wires.value(id), m_updateRatsnest);
 	}
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void MoveItemsCommand::redo()
@@ -372,7 +396,7 @@ void MoveItemsCommand::redo()
 	foreach (long id, m_wires.keys()) {
 		m_sketchWidget->updateWire(id, m_wires.value(id), m_updateRatsnest);
 	}
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 void MoveItemsCommand::addWire(long id, const QString & connectorID)
@@ -401,7 +425,7 @@ QString MoveItemsCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 RotateItemCommand::RotateItemCommand(SketchWidget* sketchWidget, long itemID, double degrees, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent),
 	m_itemID(itemID),
 	m_degrees(degrees)
 {
@@ -410,13 +434,13 @@ RotateItemCommand::RotateItemCommand(SketchWidget* sketchWidget, long itemID, do
 void RotateItemCommand::undo()
 {
 	m_sketchWidget->rotateItem(m_itemID, -m_degrees);
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void RotateItemCommand::redo()
 {
 	m_sketchWidget->rotateItem(m_itemID, m_degrees);
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString RotateItemCommand::getParamString() const {
@@ -464,7 +488,7 @@ ChangeConnectionCommand::ChangeConnectionCommand(SketchWidget * sketchWidget, Ba
         long toID, const QString & toConnectorID,
         ViewLayer::ViewLayerPlacement viewLayerPlacement,
         bool connect, QUndoCommand * parent)
-	: BaseCommand(crossView, sketchWidget, parent)
+	: SimulationCommand(crossView, sketchWidget, parent)
 {
 	//DebugDialog::debug(QString("ccc: from %1 %2; to %3 %4, connect %5, layer %6").arg(fromID).arg(fromConnectorID).arg(toID).arg(toConnectorID).arg(connect).arg(viewLayerPlacement) );
 	m_enabled = true;
@@ -481,7 +505,7 @@ void ChangeConnectionCommand::undo()
 {
 	if (m_enabled) {
 		m_sketchWidget->changeConnection(m_fromID, m_fromConnectorID, m_toID, m_toConnectorID, m_viewLayerPlacement, !m_connect,  m_crossViewType == CrossView,  m_updateConnections);
-		BaseCommand::undo();
+		SimulationCommand::undo();
 	}
 }
 
@@ -489,7 +513,7 @@ void ChangeConnectionCommand::redo()
 {
 	if (m_enabled) {
 		m_sketchWidget->changeConnection(m_fromID, m_fromConnectorID, m_toID, m_toConnectorID, m_viewLayerPlacement, m_connect,  m_crossViewType == CrossView, m_updateConnections);
-		BaseCommand::redo();
+		SimulationCommand::redo();
 	}
 }
 
@@ -626,7 +650,7 @@ QString ChangeWireCurveCommand::getParamString() const {
 ChangeLegCommand::ChangeLegCommand(SketchWidget* sketchWidget, long fromID, const QString & fromConnectorID,
                                    const QPolygonF & oldLeg, const QPolygonF & newLeg, bool relative, bool active,
                                    const QString & why, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent),
 	m_fromConnectorID(fromConnectorID),
 	m_fromID(fromID),
 	m_newLeg(newLeg),
@@ -643,7 +667,7 @@ void ChangeLegCommand::undo()
 	if (!m_redoOnly) {
 		m_sketchWidget->changeLeg(m_fromID, m_fromConnectorID, m_oldLeg, m_relative, m_why);
 	}
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void ChangeLegCommand::setSimple()
@@ -661,7 +685,7 @@ void ChangeLegCommand::redo()
 			m_sketchWidget->recalcLeg(m_fromID, m_fromConnectorID, m_newLeg, m_relative, m_active, m_why);
 		}
 	}
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString ChangeLegCommand::getParamString() const {
@@ -689,7 +713,7 @@ QString ChangeLegCommand::getParamString() const {
 
 MoveLegBendpointCommand::MoveLegBendpointCommand(SketchWidget* sketchWidget, long fromID, const QString & fromConnectorID,
         int index, QPointF oldPos, QPointF newPos, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
 	m_fromID = fromID;
 	m_oldPos = oldPos;
@@ -703,7 +727,7 @@ void MoveLegBendpointCommand::undo()
 	if (!m_redoOnly) {
 		m_sketchWidget->moveLegBendpoint(m_fromID, m_fromConnectorID, m_index, m_oldPos);
 	}
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void MoveLegBendpointCommand::redo()
@@ -711,7 +735,7 @@ void MoveLegBendpointCommand::redo()
 	if (!m_undoOnly) {
 		m_sketchWidget->moveLegBendpoint(m_fromID, m_fromConnectorID, m_index, m_newPos);
 	}
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString MoveLegBendpointCommand::getParamString() const {
@@ -733,7 +757,7 @@ QString MoveLegBendpointCommand::getParamString() const {
 
 ChangeLegCurveCommand::ChangeLegCurveCommand(SketchWidget* sketchWidget, long fromID, const QString & connectorID, int index,
         const Bezier * oldBezier, const Bezier * newBezier, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent)
+	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent)
 {
 	m_fromID = fromID;
 	m_oldBezier = m_newBezier = NULL;
@@ -753,7 +777,7 @@ ChangeLegCurveCommand::ChangeLegCurveCommand(SketchWidget* sketchWidget, long fr
 void ChangeLegCurveCommand::undo()
 {
 	m_sketchWidget->changeLegCurve(m_fromID, m_fromConnectorID, m_index,  m_oldBezier);
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void ChangeLegCurveCommand::redo()
@@ -764,7 +788,7 @@ void ChangeLegCurveCommand::redo()
 	else if (!m_undoOnly) {
 		m_sketchWidget->changeLegCurve(m_fromID, m_fromConnectorID, m_index, m_newBezier);
 	}
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString ChangeLegCurveCommand::getParamString() const {
@@ -1166,7 +1190,7 @@ void CheckStickyCommand::stick(SketchWidget * sketchWidget, long fromID, long to
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 CleanUpWiresCommand::CleanUpWiresCommand(SketchWidget* sketchWidget, CleanUpWiresCommand::Direction direction, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+	: SimulationCommand(BaseCommand::CrossView, sketchWidget, parent),
 	m_direction(direction)
 {
 }
@@ -1184,7 +1208,7 @@ void CleanUpWiresCommand::undo()
 	if (m_direction == UndoOnly) {
 		m_sketchWidget->cleanUpWires(m_crossViewType == BaseCommand::CrossView, NULL);
 	}
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void CleanUpWiresCommand::redo()
@@ -1200,7 +1224,7 @@ void CleanUpWiresCommand::redo()
 	if (m_direction == RedoOnly) {
 		m_sketchWidget->cleanUpWires(m_crossViewType == BaseCommand::CrossView, this);
 	}
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 void CleanUpWiresCommand::addRatsnestConnect(long id, const QString & connectorID, bool connect)
@@ -1801,7 +1825,7 @@ QString SetResistanceCommand::getParamString() const {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 SetPropCommand::SetPropCommand(SketchWidget * sketchWidget, long itemID, QString prop, QString oldValue, QString newValue, bool redraw, QUndoCommand * parent)
-	: BaseCommand(BaseCommand::CrossView, sketchWidget, parent),
+	: SimulationCommand(BaseCommand::CrossView, sketchWidget, parent),
 	m_redraw(redraw),
 	m_prop(prop),
 	m_oldValue(oldValue),
@@ -1812,12 +1836,12 @@ SetPropCommand::SetPropCommand(SketchWidget * sketchWidget, long itemID, QString
 
 void SetPropCommand::undo() {
 	m_sketchWidget->setProp(m_itemID, m_prop, m_oldValue, m_redraw, true);
-	BaseCommand::undo();
+	SimulationCommand::undo();
 }
 
 void SetPropCommand::redo() {
 	m_sketchWidget->setProp(m_itemID, m_prop, m_newValue, m_redraw, true);
-	BaseCommand::redo();
+	SimulationCommand::redo();
 }
 
 QString SetPropCommand::getParamString() const {

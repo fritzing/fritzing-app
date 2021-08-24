@@ -37,15 +37,16 @@ public:
 	~Simulator();
 	bool isEnabled();
 	static bool isSimulating();
+	static void triggerSimulation();
+	void simulate();
 
 private:
 	void resetTimer();
 
 public slots:
 	void enable(bool);
-	void reset();
-	void simulate();
-	static void triggerSimulation();
+	void stopSimulation();
+	void startSimulation();
 
 protected:	
 	void drawSmoke(ItemBase* part);

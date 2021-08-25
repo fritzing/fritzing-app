@@ -74,7 +74,7 @@ void SvgFlattener::flattenChildren(QDomElement &element, const SvgAttributesMap 
 		QTransform transform = TextUtils::transformStringToTransform(element.attribute("transform"));
 
 		//DebugDialog::debug(QString("rotating %1 %2 %3 %4 %5 %6").arg(params.at(0)).arg(params.at(1)).arg(params.at(2)).arg(params.at(3)).arg(params.at(4)).arg(params.at(5)));
-		unRotateChild(element, QTransform(transform), attributes);
+		unRotateChild(element, transform, attributes);
 	}
 
 	// remove transform
@@ -106,7 +106,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QTransform transform, co
 			if (!data.isEmpty()) {
 				const char * slot = SLOT(rotateCommandSlot(QChar, bool, QList<double> &, void *));
 				PathUserData pathUserData;
-				pathUserData.transform = QTransform(transform);
+				pathUserData.transform = transform;
 				if (parsePath(data, slot, pathUserData, this, true)) {
 					element.setAttribute("d", pathUserData.string);
 				}
@@ -117,7 +117,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QTransform transform, co
 			if (!data.isEmpty()) {
 				const char * slot = SLOT(rotateCommandSlot(QChar, bool, QList<double> &, void *));
 				PathUserData pathUserData;
-				pathUserData.transform = QTransform(transform);
+				pathUserData.transform = transform;
 				if (parsePath(data, slot, pathUserData, this, false)) {
 					pathUserData.string.remove(0, 1);			// get rid of the "M"
 					element.setAttribute("points", pathUserData.string);

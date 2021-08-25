@@ -201,7 +201,7 @@ bool SvgFlattener::hasTranslate(QDomElement & element)
 	if (transform.startsWith("translate")) return true;
 
 	if (transform.startsWith("matrix")) {
-		QMatrix matrix = TextUtils::transformStringToMatrix(transform);
+		QTransform matrix = TextUtils::transformStringToTransform(transform);
 		matrix.translate(-matrix.dx(), -matrix.dy());
 		if (matrix.isIdentity()) return true;
 	}

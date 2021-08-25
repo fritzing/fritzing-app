@@ -366,7 +366,7 @@ void FSvgRenderer::initTerminalInfoAux(QDomElement & element, const LoadInfo & l
 		if (ix >= 0) {
 			ConnectorInfo * connectorInfo = m_connectorInfoHash.value(loadInfo.connectorIDs.at(ix), NULL);
 			if (connectorInfo) {
-				connectorInfo->terminalMatrix = TextUtils::elementToMatrix(element);
+				connectorInfo->terminalMatrix = TextUtils::elementToTransform(element);
 			}
 			// don't return here, might miss other terminal ids
 		}
@@ -404,7 +404,7 @@ ConnectorInfo * FSvgRenderer::initConnectorInfoStruct(QDomElement & connectorEle
 
 	if (connectorElement.isNull()) return connectorInfo;
 
-	connectorInfo->matrix = TextUtils::elementToMatrix(connectorElement);
+	connectorInfo->matrix = TextUtils::elementToTransform(connectorElement);
 	initConnectorInfoStructAux(connectorElement, connectorInfo, filename, parsePaths);
 	return connectorInfo;
 }
@@ -553,7 +553,7 @@ bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * 
 
 	double r = (qMin(bounds.width(), bounds.height()) -  sw) / 2;
 
-	QMatrix matrix = TextUtils::elementToMatrix(element);
+	QTransform matrix = TextUtils::elementToTransform(element);
 	if (!matrix.isIdentity()) {
 		QRectF r1(0,0,r,r);
 		QRectF r2 = matrix.mapRect(r1);
@@ -588,7 +588,7 @@ bool FSvgRenderer::initConnectorInfoCircle(QDomElement & element, ConnectorInfo 
 
 	double sw = TextUtils::getStrokeWidth(element, 1);
 
-	QMatrix matrix = TextUtils::elementToMatrix(element);
+	QTransform matrix = TextUtils::elementToTransform(element);
 	if (!matrix.isIdentity()) {
 		QRectF r1(0,0,r,r);
 		QRectF r2 = matrix.mapRect(r1);
@@ -663,7 +663,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 
 	// some strangeness in the way that svg items and non-svg items map to screen space
 	// might be a qt problem.
-	//QMatrix matrix0 = connectorInfo->matrix * this->transformForElement(connectorID);
+	//QTransform matrix0 = connectorInfo->matrix * this->transformForElement(connectorID);
 	//QRectF r1 = matrix0.mapRect(bounds);
 
 	QTransform elementMatrix = this->transformForElement(connectorID);
@@ -748,7 +748,7 @@ void FSvgRenderer::calcLeg(SvgIdLayer * svgIdLayer, const QRectF & viewBox, Conn
 	}
 }
 
-QPointF FSvgRenderer::calcTerminalPoint(const QString & terminalId, const QRectF & connectorRect, bool ignoreTerminalPoint, const QRectF & viewBox, QMatrix & terminalMatrix)
+QPointF FSvgRenderer::calcTerminalPoint(const QString & terminalId, const QRectF & connectorRect, bool ignoreTerminalPoint, const QRectF & viewBox, QTransform & terminalMatrix)
 {
 	Q_UNUSED(terminalMatrix);
 	QPointF terminalPoint = connectorRect.center() - connectorRect.topLeft();    // default spot is centered
@@ -822,7 +822,7 @@ QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors(ViewLayer::ViewLayerPlaceme
 		}
 
 		// transformForElement only grabs parent matrices, not any transforms in the element itself
-		//QMatrix matrix0 = connectorInfo->matrix * this->transformForElement(nonConnectorID);
+		//QTransform matrix0 = connectorInfo->matrix * this->transformForElement(nonConnectorID);
 		//QRectF r1 = matrix0.mapRect(bounds);
 		QRectF r1 = this->transformForElement(nonConnectorID).mapRect(bounds);
 		QRectF svgRect(r1.x() * defaultSize.width() / viewBox.width(), r1.y() * defaultSize.height() / viewBox.height(), r1.width() * defaultSize.width() / viewBox.width(), r1.height() * defaultSize.height() / viewBox.height());

@@ -453,8 +453,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		while (!parent.isNull()) {
 			QString transformString = parent.toElement().attribute("transform");
 			if (!transformString.isNull()) {
-				QMatrix matrix = TextUtils::transformStringToMatrix(transformString);
-				QTransform transform(matrix);
+				QTransform transform = TextUtils::transformStringToTransform(transformString);
 				if (transform.isScaling()) {
 					nodeList.at(i).toElement().setTagName("g");
 					anyConverted = true;

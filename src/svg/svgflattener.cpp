@@ -74,14 +74,14 @@ void SvgFlattener::flattenChildren(QDomElement &element, const SvgAttributesMap 
 		QMatrix transform = TextUtils::transformStringToMatrix(element.attribute("transform"));
 
 		//DebugDialog::debug(QString("rotating %1 %2 %3 %4 %5 %6").arg(params.at(0)).arg(params.at(1)).arg(params.at(2)).arg(params.at(3)).arg(params.at(4)).arg(params.at(5)));
-		unRotateChild(element, transform, attributes);
+		unRotateChild(element, QTransform(transform), attributes);
 	}
 
 	// remove transform
 	element.removeAttribute("transform");
 }
 
-void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform, const SvgAttributesMap & inherited_attributes) {
+void SvgFlattener::unRotateChild(QDomElement & element, QTransform transform, const SvgAttributesMap & inherited_attributes) {
 	const SvgAttributesMap attributes( mergeSvgAttributes(inherited_attributes, element) );
 	// TODO: missing ellipse element
 

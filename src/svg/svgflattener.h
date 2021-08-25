@@ -33,7 +33,7 @@ public:
 	SvgFlattener();
 
 	void flattenChildren(QDomElement &element, const SvgAttributesMap &attributes);
-	void unRotateChild(QDomElement &element, QMatrix transform, const SvgAttributesMap & attributes);
+	void unRotateChild(QDomElement &element, QTransform transform, const SvgAttributesMap & attributes);
 
 	static void flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID, double printerScale, Qt::Orientations);
 	static void replaceElementID(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID);

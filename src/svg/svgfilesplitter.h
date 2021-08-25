@@ -33,7 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 struct PathUserData {
 	QString string;
-	QMatrix transform;
+	QTransform transform;
 	double sNewWidth;
 	double sNewHeight;
 	double vbWidth;

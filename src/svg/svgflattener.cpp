@@ -106,7 +106,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform, const
 			if (!data.isEmpty()) {
 				const char * slot = SLOT(rotateCommandSlot(QChar, bool, QList<double> &, void *));
 				PathUserData pathUserData;
-				pathUserData.transform = transform;
+				pathUserData.transform = QTransform(transform);
 				if (parsePath(data, slot, pathUserData, this, true)) {
 					element.setAttribute("d", pathUserData.string);
 				}
@@ -117,7 +117,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform, const
 			if (!data.isEmpty()) {
 				const char * slot = SLOT(rotateCommandSlot(QChar, bool, QList<double> &, void *));
 				PathUserData pathUserData;
-				pathUserData.transform = transform;
+				pathUserData.transform = QTransform(transform);
 				if (parsePath(data, slot, pathUserData, this, false)) {
 					pathUserData.string.remove(0, 1);			// get rid of the "M"
 					element.setAttribute("points", pathUserData.string);

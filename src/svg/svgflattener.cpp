@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
 #include "../debugdialog.h"
-#include <QMatrix>
+#include <QTransform>
 #include <QRegExp>
 #include <QTextStream>
 #include <qmath.h>
@@ -71,7 +71,7 @@ void SvgFlattener::flattenChildren(QDomElement &element, const SvgAttributesMap 
 		}
 	}
 	else if(hasOtherTransform(element)) {
-		QMatrix transform = TextUtils::transformStringToMatrix(element.attribute("transform"));
+		QTransform transform = TextUtils::transformStringToTransform(element.attribute("transform"));
 
 		//DebugDialog::debug(QString("rotating %1 %2 %3 %4 %5 %6").arg(params.at(0)).arg(params.at(1)).arg(params.at(2)).arg(params.at(3)).arg(params.at(4)).arg(params.at(5)));
 		unRotateChild(element, QTransform(transform), attributes);

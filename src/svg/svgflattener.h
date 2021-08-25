@@ -22,7 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define SVGFLATTENER_H
 
 #include "svgfilesplitter.h"
-#include <QMatrix>
+#include <QTransform>
 #include <QSvgRenderer>
 
 typedef std::map<QString, QString> SvgAttributesMap;

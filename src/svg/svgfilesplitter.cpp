@@ -320,14 +320,14 @@ void SvgFileSplitter::normalizeTranslation(QDomElement & element,
 	QString attr = element.attribute("transform");
 	if (attr.isEmpty()) return;
 
-	QMatrix matrix = TextUtils::elementToMatrix(element);
+	QTransform matrix = TextUtils::elementToTransform(element);
 	if (matrix.dx() == 0 && matrix.dy() == 0) return;
 
 	double dx = matrix.dx() * sNewWidth / vbWidth;
 	double dy = matrix.dy() * sNewHeight / vbHeight;
 	if (dx == 0 && dy == 0) return;
 
-	matrix.setMatrix(matrix.m11(), matrix.m12(), matrix.m21(), matrix.m22(), dx, dy);
+	matrix = QTransform(matrix.m11(), matrix.m12(), matrix.m21(), matrix.m22(), dx, dy);
 
 	TextUtils::setSVGTransform(element, matrix);
 }
@@ -534,14 +534,14 @@ bool SvgFileSplitter::shiftTranslation(QDomElement & element, double x, double y
 	QString attr = element.attribute("transform");
 	if (attr.isEmpty()) return false;
 
-	QMatrix m0 = TextUtils::elementToMatrix(element);
+	QTransform m0 = TextUtils::elementToTransform(element);
 
 	bool ok1, ok2, ok3;
 	double _x = element.attribute("_x").toDouble(&ok1);
 	double _y = element.attribute("_y").toDouble(&ok2);
 	double _r = element.attribute("_r").toDouble(&ok3);
 	if (ok1 && ok2 && ok3) {
-		QMatrix mx = QMatrix().translate(-_x - x, -_y - y) * QMatrix().rotate(_r) * QMatrix().translate(_x + x, _y + y);
+		QTransform mx = QTransform().translate(-_x - x, -_y - y) * QTransform().rotate(_r) * QTransform().translate(_x + x, _y + y);
 		TextUtils::setSVGTransform(element, mx);
 		element.removeAttribute("_x");
 		element.removeAttribute("_y");
@@ -563,8 +563,8 @@ bool SvgFileSplitter::shiftTranslation(QDomElement & element, double x, double y
 	cx += x;
 	cy += y;
 
-	QMatrix m1(m0.m11(), m0.m12(), m0.m21(), m0.m22(), 0, 0);
-	QMatrix mx = QMatrix().translate(-cx, -cy) * m1 * QMatrix().translate(cx, cy);
+	QTransform m1(m0.m11(), m0.m12(), m0.m21(), m0.m22(), 0, 0);
+	QTransform mx = QTransform().translate(-cx, -cy) * m1 * QTransform().translate(cx, cy);
 
 	TextUtils::setSVGTransform(element, mx);
 	return false;

@@ -597,11 +597,6 @@ QString TextUtils::svgMatrix(const QTransform & matrix) {
 	return QString("matrix(%1, %2, %3, %4, %5, %6)").arg(matrix.m11()).arg(matrix.m12()).arg(matrix.m21()).arg(matrix.m22()).arg(matrix.dx()).arg(matrix.dy());
 }
 
-void TextUtils::setSVGTransform(QDomElement & element, QMatrix & matrix)
-{
-	element.setAttribute("transform", svgMatrix(matrix));
-}
-
 void TextUtils::setSVGTransform(QDomElement & element, QTransform & matrix)
 {
 	element.setAttribute("transform", svgMatrix(matrix));
@@ -883,50 +878,6 @@ void TextUtils::collectLeaves(QDomElement & element, QList<QDomElement> & leaves
 	else {
 		leaves.append(element);
 	}
-}
-
-QMatrix TextUtils::elementToMatrix(QDomElement & element) {
-	QString transform = element.attribute("transform");
-	if (transform.isEmpty()) return QMatrix();
-
-	return transformStringToMatrix(transform);
-}
-
-QMatrix TextUtils::transformStringToMatrix(const QString & transform) {
-
-	// doesn't handle multiple transform attributes
-	QList<double> floats = getTransformFloats(transform);
-
-	if (transform.startsWith("translate")) {
-		return QMatrix().translate(floats[0], (floats.length() > 1) ? floats[1] : 0);
-	}
-	else if (transform.startsWith("rotate")) {
-		if (floats.length() == 1) {
-			return QMatrix().rotate(floats[0]);
-		}
-		else if (floats.length() == 3) {
-			return  QMatrix().translate(-floats[1], -floats[2]) * QMatrix().rotate(floats[0]) * QMatrix().translate(floats[1], floats[2]);
-		}
-	}
-	else if (transform.startsWith("matrix")) {
-		return QMatrix(floats[0], floats[1], floats[2], floats[3], floats[4], floats[5]);
-	}
-	else if (transform.startsWith("scale")) {
-		if (floats.size() == 2) {
-			return QMatrix().scale(floats[0], floats[1]);
-		} else {
-			Q_ASSERT(floats.size() == 1);
-			return QMatrix().scale(floats[0], floats[0]);
-		}
-	}
-	else if (transform.startsWith("skewX")) {
-		return QMatrix().shear(floats[0], 0);
-	}
-	else if (transform.startsWith("skewY")) {
-		return QMatrix().shear(0, floats[0]);
-	}
-
-	return QMatrix();
 }
 
 QTransform TextUtils::elementToTransform(QDomElement & element) {

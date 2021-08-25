@@ -59,7 +59,6 @@ public:
 	static bool cleanSodipodi(QString &bytes);
 	static bool fixPixelDimensionsIn(QString &fileContent);
 	static bool addCopper1(const QString & filename, QDomDocument & doc, const QString & srcAtt, const QString & destAtt);
-	static void setSVGTransform(QDomElement &, QMatrix &);
 	static void setSVGTransform(QDomElement &, QTransform &);
 	static QString svgMatrix(const QMatrix &);
 	static QString svgMatrix(const QTransform &);
@@ -69,8 +68,6 @@ public:
 	static QString stripNonValidXMLCharacters(const QString & str);
 	static QString convertExtendedChars(const QString & str);
 	static QString escapeAnd(const QString &);
-	static QMatrix elementToMatrix(QDomElement & element);
-	static QMatrix transformStringToMatrix(const QString & transform);
 	static QTransform elementToTransform(QDomElement & element);
 	static QTransform transformStringToTransform(const QString & transform);
 	static QList<double> getTransformFloats(QDomElement & element);

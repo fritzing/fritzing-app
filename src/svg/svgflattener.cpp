@@ -319,14 +319,14 @@ QString SvgFlattener::flipSMDElement(QDomDocument & domDocument, QDomElement & e
 	Q_UNUSED(printerScale);
 	Q_UNUSED(att);
 
-	QMatrix m;
+	QTransform m;
 	//QRectF bounds = renderer.boundsOnElement(att);
 	QRectF bounds;   // want part bounds, not layer bounds
 	double w, h;
 	TextUtils::ensureViewBox(domDocument, 1, bounds, false, w, h, false);
 	m.translate(bounds.center().x(), bounds.center().y());
-	QMatrix mMinus = m.inverted();
-	QMatrix cm = mMinus * ((orientation & Qt::Vertical) ? QMatrix().scale(-1, 1) : QMatrix().scale(1, -1)) * m;
+	QTransform mMinus = m.inverted();
+	QTransform cm = mMinus * ((orientation & Qt::Vertical) ? QTransform().scale(-1, 1) : QTransform().scale(1, -1)) * m;
 	QDomElement newElement = element.cloneNode(true).toElement();
 
 #ifndef QT_NODEBUG

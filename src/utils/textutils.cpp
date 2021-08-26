@@ -43,6 +43,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <qmath.h>
 #include <qnumeric.h>
 
+#include <svgpp/svgpp.hpp>
+
 QSet<QString> InstalledFonts::InstalledFontsList;
 QMultiHash<QString, QString> InstalledFonts::InstalledFontsNameMapper;   // family name to filename; SVG files seem to have to use filename
 
@@ -937,39 +939,19 @@ QTransform TextUtils::elementToTransform(QDomElement & element) {
 	return transformStringToTransform(transform);
 }
 
+struct Context
+{
+	void transform_matrix(const boost::array<double, 6> & m)
+	{
+		m_transform = QTransform(m[0], m[1], m[2], m[3], m[4], m[5]);
+	}
+	QTransform m_transform;
+};
+
 QTransform TextUtils::transformStringToTransform(const QString & transform) {
-	// doesn't handle multiple transform attributes
-	QList<double> floats = getTransformFloats(transform);
-
-	if (transform.startsWith("translate")) {
-		return QTransform().translate(floats[0], (floats.length() > 1) ? floats[1] : 0);
-	}
-	else if (transform.startsWith("rotate")) {
-		if (floats.length() == 1) {
-			return QTransform().rotate(floats[0]);
-		}
-		else if (floats.length() == 3) {
-			return  QTransform().translate(-floats[1], -floats[2]) * QTransform().rotate(floats[0]) * QTransform().translate(floats[1], floats[2]);
-		}
-	}
-	else if (transform.startsWith("matrix")) {
-		return QTransform(floats[0], floats[1], floats[2], floats[3], floats[4], floats[5]);
-	}
-	else if (transform.startsWith("scale")) {
-		if (floats.size() == 2) {
-			return QTransform().scale(floats[0], floats[1]);
-		} else {
-			return QTransform().scale(floats[0], floats[0]);
-		}
-	}
-	else if (transform.startsWith("skewX")) {
-		return QTransform().shear(floats[0], 0);
-	}
-	else if (transform.startsWith("skewY")) {
-		return QTransform().shear(0, floats[0]);
-	}
-
-	return QTransform();
+	Context context;
+	svgpp::value_parser<svgpp::tag::type::transform_list>::parse(svgpp::tag::attribute::transform(), context, transform.toStdString(), svgpp::tag::source::attribute());
+	return context.m_transform;
 }
 
 QList<double> TextUtils::getTransformFloats(QDomElement & element) {

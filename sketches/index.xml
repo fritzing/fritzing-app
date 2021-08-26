@@ -218,6 +218,30 @@
 		<sketch id="Workshop07" >
 			<language country="en" name="07 Servo" src="core/Fritzing Workshop/Workshop_07_Servo.fzz"/>
 		</sketch>
+		<sketch id="SimpleButton" >
+			<language country="en" name="Button" src="core/Simulator/EN/simple_button.fzz"/>
+		</sketch>
+		<sketch id="HowToUseMultimeter" >
+			<language country="en" name="How To Use A Multimeter" src="core/Simulator/EN/how_to_use_multimeter.fzz"/>
+		</sketch>
+		<sketch id="IrSensorTransistorMotor" >
+			<language country="en" name="IR Sensor Controlling a motor" src="core/Simulator/EN/ir_sensor_npn_transistor_dc_motor_.fzz"/>
+		</sketch>
+		<sketch id="SimpleLED" >
+			<language country="en" name="LED" src="core/Simulator/EN/simple_led.fzz"/>
+		</sketch>
+		<sketch id="MeasureDcCurrent" >
+			<language country="en" name="How To Measure DC Currents" src="core/Simulator/EN/measure_dc_current.fzz"/>
+		</sketch>
+		<sketch id="MeasureDcVoltage" >
+			<language country="en" name="How To Measure DC Voltages" src="core/Simulator/EN/measure_dc_voltage.fzz"/>
+		</sketch>
+		<sketch id="MeasureResistance" >
+			<language country="en" name="How To Measure Resistances" src="core/Simulator/EN/measure_resistance.fzz"/>
+		</sketch>
+		<sketch id="SimplePotentiometer" >
+			<language country="en" name="Button" src="core/Simulator/EN/simple_potentiometer.fzz"/>
+		</sketch>
 </sketches>
 	<categories>
 		<category>
@@ -459,5 +483,24 @@
 			<sketch id="EDGY-motor-control_stepper"/>
 		</category>
 		-->
+		<category>
+			<language country="en" name="Simulator"/>
+			<language country="es" name="Simulador"/>
+			<category>
+				<language country="en" name="Multimeter"/>
+				<language country="es" name="Multimetro"/>
+				<sketch id="HowToUseMultimeter"/>
+				<sketch id="MeasureResistance"/>
+				<sketch id="MeasureDcVoltage"/>
+				<sketch id="MeasureDcCurrent"/>
+			</category>
+			<category>
+				<language country="en" name="Basic Circits"/>
+				<language country="es" name="Circuitos Básicos"/>
+				<sketch id="SimpleButton"/>
+				<sketch id="SimpleLED"/>
+				<sketch id="SimplePotentiometer"/>
+			</category>
+		</category>
 	</categories>
 </fritzing-sketches>

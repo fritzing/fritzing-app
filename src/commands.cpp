@@ -221,16 +221,21 @@ SketchWidget * AddDeleteItemCommand::dropOrigin() {
 SimulationCommand::SimulationCommand(BaseCommand::CrossViewType crossViewType, SketchWidget* sketchWidget, QUndoCommand *parent)
 	: BaseCommand(crossViewType, sketchWidget, parent)
 {
+	m_mainWindow = dynamic_cast<MainWindow *>(sketchWidget->nativeParentWidget());
 }
 
 void SimulationCommand::undo() {
 	BaseCommand::undo();
-	Simulator::triggerSimulation();
+	if(m_mainWindow) {
+		m_mainWindow->triggerSimulator();
+	}
 }
 
 void SimulationCommand::redo() {
 	BaseCommand::redo();
-	Simulator::triggerSimulation();
+	if(m_mainWindow) {
+		m_mainWindow->triggerSimulator();
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -232,6 +232,7 @@ public:
 	QString getSpiceNetlist(QString, QList< QList<class ConnectorItem *>* >&, QSet<class ItemBase *>& );
 	bool isSimulatorEnabled();
 	void enableSimulator(bool);
+	void triggerSimulator();
 
 public:
 	static void initNames();

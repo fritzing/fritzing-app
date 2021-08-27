@@ -84,10 +84,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <iostream>
 
-////////////////////////////////////////////////////////
-
-Simulator* Simulator::simulatorInstance = nullptr;
-bool Simulator::simulating = false;
 
 /////////////////////////////////////////////////////////
 Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
@@ -103,11 +99,7 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 	QSettings settings;
 	int enabled = settings.value("simulatorEnabled", 0).toInt();
 	enable(enabled);
-	if( !simulatorInstance ) {
-		simulatorInstance = this;
-	} else {
-		std::cout << "Trying to instanciate more than one simulator, check this!" << std::endl;
-	}
+	m_simulating = false;
 
 }
 
@@ -122,9 +114,8 @@ Simulator::~Simulator() {
  */
 void Simulator::triggerSimulation()
 {
-
-	if( simulatorInstance && simulating) {
-		simulatorInstance->resetTimer();
+	if(m_simulating) {
+		resetTimer();
 	}
 }
 
@@ -165,7 +156,7 @@ void Simulator::enable(bool enable) {
  */
 void Simulator::startSimulation()
 {
-	simulating = true;
+	m_simulating = true;
 	simulate();
 }
 
@@ -175,7 +166,7 @@ void Simulator::startSimulation()
  * simulated, the smoke images, and the messages on the multimeter.
  */
 void Simulator::stopSimulation() {
-	simulating = false;
+	m_simulating = false;
 	removeSimItems();
 }
 
@@ -199,7 +190,7 @@ void Simulator::stopSimulation() {
  * @brief Simulate the current circuit and check for components working out of specifications
  */
 void Simulator::simulate() {
-	if (!m_enabled || !simulating) {
+	if (!m_enabled || !m_simulating) {
 		std::cout << "The simulator is not enabled or simulating" << std::endl;
 		return;
 	}
@@ -895,7 +886,7 @@ void Simulator::updateBattery(ItemBase * part) {
 
 bool Simulator::isSimulating()
 {
-	return simulating;
+	return m_simulating;
 }
 
 /**

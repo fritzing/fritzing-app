@@ -3221,6 +3221,10 @@ void MainWindow::setInitialTab(int tab) {
 	m_initialTab = tab;
 }
 
+void MainWindow::triggerSimulator() {
+	m_simulator->triggerSimulation();
+}
+
 bool MainWindow::isSimulatorEnabled() {
 	return m_simulator->isEnabled();
 }

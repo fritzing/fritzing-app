@@ -30,6 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "routingstatus.h"
 #include "utils/misc.h"
 #include "items/itembase.h"
+#include "mainwindow/mainwindow.h"
 
 /////////////////////////////////////////////
 
@@ -115,6 +116,8 @@ public:
 	SimulationCommand(BaseCommand::CrossViewType, SketchWidget * sketchWidget, QUndoCommand *parent);
 	void undo();
 	void redo();
+private:
+	MainWindow* m_mainWindow;
 };
 
 /////////////////////////////////////////////

@@ -99,6 +99,7 @@ public:
 	static QString expandAndFill(const QString & svg, const QString & color, double expandBy);
 	static void expandAndFillAux(QDomElement &, const QString & color, double expandBy);
 	static bool writeUtf8(const QString & fileName, const QString & text);
+	static bool writeUtf8(const QString & fileName, const QByteArray & data);
 	static int getPinsAndSpacing(const QString & expectedFileName, QString & spacingString);
 	static QSizeF parseForWidthAndHeight(QXmlStreamReader &, QRectF & viewBox, bool getViewBox);
 	static QSizeF parseForWidthAndHeight(QXmlStreamReader &);

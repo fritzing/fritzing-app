@@ -35,12 +35,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../debugdialog.h"
 #ifdef QUAZIP_INSTALLED
+#ifdef QUAZIP_1X
+#include <quazip/quazip.h>
+#include <quazip/quazipfile.h>
+#else
 #include <quazip5/quazip.h>
 #include <quazip5/quazipfile.h>
+#endif /* QUAZIP_1X */
 #else
 #include "../lib/quazip/quazip.h"
 #include "../lib/quazip/quazipfile.h"
-#endif
+#endif /* QUAZIP_INSTALLED */
 #include "../lib/qtsysteminfo/QtSystemInfo.h"
 
 

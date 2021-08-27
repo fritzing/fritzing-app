@@ -205,7 +205,11 @@ include(test/version.pri)
 
 contains(DEFINES, QUAZIP_INSTALLED) {
     !build_pass:message("using installed QuaZIP library")
-    LIBS += -lquazip5
+    contains(DEFINES, QUAZIP_1X) {
+        PKGCONFIG += quazip1-qt5
+    } else {
+        LIBS += -lquazip5
+    }
 } else {
     include(pri/quazip.pri)
 }

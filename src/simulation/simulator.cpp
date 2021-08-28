@@ -434,20 +434,37 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 	}
 	std::cout << "msg is now: " << msg.toStdString() <<std::endl;
 	QGraphicsTextItem * bbScreen = new QGraphicsTextItem(msg, m_sch2bbItemHash.value(multimeter));
-	//QGraphicsTextItem * schScreen = new QGraphicsTextItem(msg, multimeter);
-//	m_bbSimItems.append(bbScreen);
-	//m_schSimItems.append(schScreen);
-	//schScreen->setPos(QPointF(10,10));
-	//schScreen->setZValue(std::numeric_limits<double>::max());
-	QFont font("Segment16C", 30, QFont::Normal);
+	QGraphicsTextItem * schScreen = new QGraphicsTextItem(msg, multimeter);
+	schScreen->setPos(QPointF(10,10));
+	schScreen->setZValue(std::numeric_limits<double>::max());
+	QFont font("Segment16C", 10, QFont::Normal);
 	bbScreen->setFont(font);
 	//There are issues as the size of the text changes depending on the display settings in windows
 	//This hack scales the text to match the appropiate value
-	QRectF boundingBoxText = bbScreen->boundingRect();
-	bbScreen->setScale(52.0/boundingBoxText.height());
-	bbScreen->setPos(QPointF(16,19));
+	QRectF bbMultBoundingBox = m_sch2bbItemHash.value(multimeter)->boundingRect();
+	QRectF bbBoundingBox = bbScreen->boundingRect();
+	QRectF schMultBoundingBox = multimeter->boundingRect();
+	QRectF schBoundingBox = schScreen->boundingRect();
+
+	//Set the text to be a 80% percent of the multimeter´s width and 50% in sch view
+	bbScreen->setScale((0.8*bbMultBoundingBox.width())/bbBoundingBox.width());
+	schScreen->setScale((0.5*schMultBoundingBox.width())/schBoundingBox.width());
+
+	//Update the boundiong box after scaling them
+	bbBoundingBox = bbScreen->mapRectToParent(bbScreen->boundingRect());
+	schBoundingBox = schScreen->mapRectToParent(schScreen->boundingRect());
+
+	//Center the text
+	bbScreen->setPos(QPointF((bbMultBoundingBox.width()-bbBoundingBox.width())/2
+						 ,0.07*bbMultBoundingBox.height()));
+	schScreen->setPos(QPointF((schMultBoundingBox.width()-schBoundingBox.width())/2
+						 ,0.13*schMultBoundingBox.height()));
+
+
 	bbScreen->setZValue(std::numeric_limits<double>::max());
+	schScreen->setZValue(std::numeric_limits<double>::max());
 	m_sch2bbItemHash.value(multimeter)->addSimulationGraphicsItem(bbScreen);
+	multimeter->addSimulationGraphicsItem(schScreen);
 }
 
 /**
@@ -719,7 +736,7 @@ void Simulator::greyOutParts(const QList<QGraphicsItem*> & parts) {
  * are being simulated
  */
 void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
-	foreach (QGraphicsItem * part, parts){
+	foreach (QGraphicsItem * part, parts) {
 		Wire* wire = dynamic_cast<Wire *>(part);
 		if (wire) {
 			parts.removeAll(part);
@@ -984,7 +1001,7 @@ void Simulator::updateDcMotor(ItemBase * part) {
  */
 void Simulator::updateMultimeter(ItemBase * part) {
 	QString variant = part->getProperty("variant").toLower();
-	ConnectorItem * comProbe, * vProbe, * aProbe;
+	ConnectorItem * comProbe = nullptr, * vProbe = nullptr, * aProbe = nullptr;
 	QList<ConnectorItem *> probes = part->cachedConnectorItems();
 	foreach(ConnectorItem * ci, probes) {
 		if(ci->connectorSharedName().toLower().compare("com probe") == 0) comProbe = ci;

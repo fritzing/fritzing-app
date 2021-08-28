@@ -951,6 +951,7 @@ void MainWindow::createPartMenuActions() {
 	connect(m_rotate45cwAct, SIGNAL(triggered()), this, SLOT(rotate45cw()));
 
 	m_rotate90cwAct = new QAction(tr("Rotate 90° Clockwise"), this);
+	m_rotate90cwAct->setShortcut(tr("R"));
 	m_rotate90cwAct->setStatusTip(tr("Rotate the selected parts by 90 degrees clockwise"));
 	connect(m_rotate90cwAct, SIGNAL(triggered()), this, SLOT(rotate90cw()));
 
@@ -959,6 +960,7 @@ void MainWindow::createPartMenuActions() {
 	connect(m_rotate180Act, SIGNAL(triggered()), this, SLOT(rotate180()));
 
 	m_rotate90ccwAct = new QAction(tr("Rotate 90° Counter Clockwise"), this);
+	m_rotate90ccwAct->setShortcut(tr("Shift+R"));
 	m_rotate90ccwAct->setStatusTip(tr("Rotate current selection 90 degrees counter clockwise"));
 	connect(m_rotate90ccwAct, SIGNAL(triggered()), this, SLOT(rotate90ccw()));
 
@@ -967,10 +969,12 @@ void MainWindow::createPartMenuActions() {
 	connect(m_rotate45ccwAct, SIGNAL(triggered()), this, SLOT(rotate45ccw()));
 
 	m_flipHorizontalAct = new QAction(tr("&Flip Horizontal"), this);
+	m_flipHorizontalAct->setShortcut(tr("F"));
 	m_flipHorizontalAct->setStatusTip(tr("Flip current selection horizontally"));
 	connect(m_flipHorizontalAct, SIGNAL(triggered()), this, SLOT(flipHorizontal()));
 
 	m_flipVerticalAct = new QAction(tr("&Flip Vertical"), this);
+	m_flipVerticalAct->setShortcut(tr("Shift+F"));
 	m_flipVerticalAct->setStatusTip(tr("Flip current selection vertically"));
 	connect(m_flipVerticalAct, SIGNAL(triggered()), this, SLOT(flipVertical()));
 
@@ -1073,6 +1077,7 @@ void MainWindow::createPartMenuActions() {
 	connect(m_swapObsoleteAct, SIGNAL(triggered()), this, SLOT(swapObsolete()));
 
 	m_findPartInSketchAct = new QAction(tr("Find part in sketch..."), this);
+	m_findPartInSketchAct->setShortcut(QKeySequence::Find);
 	m_findPartInSketchAct->setStatusTip(tr("Search for parts in a sketch by matching text"));
 	connect(m_findPartInSketchAct, SIGNAL(triggered()), this, SLOT(findPartInSketch()));
 

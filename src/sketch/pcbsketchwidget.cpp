@@ -1773,49 +1773,6 @@ void PCBSketchWidget::prereleaseTempWireForDragging(Wire* wire)
 	}
 }
 
-void PCBSketchWidget::rotatePartLabels(double degrees, QTransform & transform, QPointF center, QUndoCommand * parentCommand)
-{
-	QList<ItemBase *> savedValues = m_savedItems.values();
-	/*
-	QSet<ItemBase *> boards;
-	foreach (ItemBase * itemBase, savedValues) {
-	    if (Board::isBoard(itemBase)) {
-	        boards.insert(itemBase);
-	    }
-	}
-
-
-	if (boards.count() == 0) return;
-
-	QRectF bbr;
-	foreach (ItemBase * board, boards.values()) {
-	    bbr |= board->sceneBoundingRect();
-	}
-	*/
-
-	foreach (QGraphicsItem * item, scene()->items()) {
-		PartLabel * partLabel = dynamic_cast<PartLabel *>(item);
-		if (partLabel == NULL) continue;
-		if (!partLabel->isVisible()) continue;
-		//if (!bbr.intersects(partLabel->sceneBoundingRect())) continue;  // if the part is on the board and the label is off the board, this does not rotate
-		if (!savedValues.contains(partLabel->owner()->layerKinChief())) continue;
-
-		QPointF offset = partLabel->pos() - partLabel->owner()->pos();
-		new MoveLabelCommand(this, partLabel->owner()->id(), partLabel->pos(), offset, partLabel->pos(), offset, parentCommand);
-		//Labels need to be readable (change the 90 and 180 degrees orientation to 270 or 0 degrees)
-		//Labels can be still be forced to 90 and 180 degrees through the right click menu
-		double finalOrientation = degrees + atan2(partLabel->transform().m12(), partLabel->transform().m11())/M_PI*180;
-		if(abs(finalOrientation-90) < 0.1 || abs(finalOrientation-180) < 0.1)
-			degrees+=180;
-
-		new RotateFlipLabelCommand(this, partLabel->owner()->id(), degrees, 0, parentCommand);
-		QPointF p = GraphicsUtils::calcRotation(transform, center, partLabel->pos(), partLabel->boundingRect().center());
-		ViewGeometry vg;
-		partLabel->owner()->calcRotation(transform, center, vg);
-		new MoveLabelCommand(this, partLabel->owner()->id(), p, p - vg.loc(), p, p - vg.loc(), parentCommand);
-	}
-}
-
 QString PCBSketchWidget::characterizeGroundFill(ViewLayer::ViewLayerID whichGroundPlane) {
 	QString result = GroundPlane::fillTypeNone;
 	bool gotOne = false;

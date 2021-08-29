@@ -1802,6 +1802,12 @@ void PCBSketchWidget::rotatePartLabels(double degrees, QTransform & transform, Q
 
 		QPointF offset = partLabel->pos() - partLabel->owner()->pos();
 		new MoveLabelCommand(this, partLabel->owner()->id(), partLabel->pos(), offset, partLabel->pos(), offset, parentCommand);
+		//Labels need to be readable (change the 90 and 180 degrees orientation to 270 or 0 degrees)
+		//Labels can be still be forced to 90 and 180 degrees through the right click menu
+		double finalOrientation = degrees + atan2(partLabel->transform().m12(), partLabel->transform().m11())/M_PI*180;
+		if(abs(finalOrientation-90) < 0.1 || abs(finalOrientation-180) < 0.1)
+			degrees+=180;
+
 		new RotateFlipLabelCommand(this, partLabel->owner()->id(), degrees, 0, parentCommand);
 		QPointF p = GraphicsUtils::calcRotation(transform, center, partLabel->pos(), partLabel->boundingRect().center());
 		ViewGeometry vg;

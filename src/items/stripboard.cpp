@@ -58,6 +58,7 @@ static QPainterPath VPath;
 
 static QString HorizontalString("horizontal strips");
 static QString VerticalString("vertical strips");
+static QString EmptyString("no strips");
 
 /////////////////////////////////////////////////////////////////////
 
@@ -773,6 +774,14 @@ void Stripboard::swapEntry(const QString & text) {
 				}
 			}
 		}
+		else if (text.compare(EmptyString, Qt::CaseInsensitive) == 0) {
+			foreach (QGraphicsItem * item, childItems()) {
+				Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
+				if (stripbit == NULL) continue;
+
+				afterCut += stripbit->makeRemovedString();
+			}
+		}
 		else {
 			for (int i = 0; i < StripLayouts.count(); i++) {
 				if (StripLayouts.at(i).name.compare(text) == 0) {
@@ -822,6 +831,9 @@ void Stripboard::initStripLayouts() {
 	int errorColumn;
 	QDomDocument domDocument;
 
+	StripLayout stripLayoutEmpty(EmptyString, 20, 30, "");
+	StripLayouts.append(stripLayoutEmpty);
+
 	if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
 		DebugDialog::debug(QString("unable to parse stripboards.xml: %1 %2 %3").arg(errorStr).arg(errorLine).arg(errorColumn));
 		return;
@@ -859,6 +871,24 @@ QStringList Stripboard::collectValues(const QString & family, const QString & pr
 	return values;
 }
 
+QString Stripboard::getNewBuses(bool vertical) {
+	QString newBuses;
+
+	QString hv = vertical ? "h" : "v";
+	int offsetX = vertical ? 1 : 0;
+	int offsetY = vertical ? 0 : 1;
+
+	for (int i = 0; i < m_xEdit->text().toInt() - offsetX; i++) {
+		for (int j = 0; j < m_yEdit->text().toInt() - offsetY; j++) {
+			if (i < (m_x - offsetX) && j < (m_y - offsetY))
+				continue; //Do not modify previous strips
+			QString newBus = QString("%1.%2%3 ").arg(i).arg(j).arg(hv);
+			newBuses += newBus;
+		}
+	}
+	return newBuses;
+}
+
 void Stripboard::changeBoardSize()
 {
 	if (boardSizeWarning()) {
@@ -874,18 +904,11 @@ void Stripboard::changeBoardSize()
 
 	QString buses = prop("buses");
 	QString newBuses;
-	bool vertical = m_layout.compare(VerticalString) == 0;
-	QString hv = vertical ? "h" : "v";
-	int offsetX = vertical ? 1 : 0;
-	int offsetY = vertical ? 0 : 1;
-
-	for (int i = 0; i < m_xEdit->text().toInt() - offsetX; i++) {
-		for (int j = 0; j < m_yEdit->text().toInt() - offsetY; j++) {
-			if (i < (m_x - offsetX) && j < (m_y - offsetY))
-				continue; //Do not modify previous strips
-			QString newBus = QString("%1.%2%3 ").arg(i).arg(j).arg(hv);
-			newBuses += newBus;
-		}
+	if(m_layout.compare(VerticalString) == 0 || m_layout.compare(EmptyString) == 0) {
+		newBuses += getNewBuses(true);
+	}
+	if(m_layout.compare(HorizontalString) == 0 || m_layout.compare(EmptyString) == 0) {
+		newBuses += getNewBuses(false);
 	}
 
 	m_propsMap.insert("buses", buses + newBuses);

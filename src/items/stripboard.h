@@ -100,6 +100,7 @@ protected:
 	StripConnector * getStripConnector(int x, int y);
 	void collectTo(QSet<ConnectorItem *> &);
 	void initStripLayouts();
+	QString getNewBuses(bool vertical);
 
 public:
 	static QString genFZP(const QString & moduleID);

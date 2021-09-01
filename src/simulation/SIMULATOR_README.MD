@@ -4,9 +4,9 @@ This document describes the features of the implemented simulator in Fritzing. T
 
 ## Use ##
 
-The simulator is disabled by default. To enable it, go to Edit->Preferences, select the "Beta Features" tab and check the enable simulator checkbox. This option will be saved and you only need to activate the simulator once. Of course, you can still disable at any time in the prefences dialog. Now, a new button called "Simulate" should appear at the bottom bar (next to the "Share" button).
+The simulator is disabled by default. To enable it, go to Edit->Preferences, select the "Beta Features" tab and check the enable simulator checkbox. This option will be saved and you only need to activate the simulator once. Of course, you can still disable at any time in the preferences dialog. 
 
-In order to use it, build a circuit as usual and add a multimeter to measure something (voltage, current or resitance).  Then, press the "Simulate" button and the screen of the multimeter will show the result of the simulation. The parts not being simulated are greyed out. If any device is out of specifications, a smoke appears over it. You can modify the circuit as usual and press again "Simulate" to perform a new simulation. In order to remove all the artifacts from the simulator, click on the small arrow in the "Simulate" button and select "Reset Simulation". Thus, all the items of the simulation disappear (smoke images, text in multimeters and grey out of the non simulated parts).
+After the simulator has been enabled, a new button called "Start Simulator" should appear at the bottom bar (next to the "Share" button). In order to use it, build a circuit as usual and add a multimeter to measure something (voltage, current or resistance).  Then, press the "Start Simulator" button and the simulator will be working. Thus, you will observe some changes: (1) the screen of the multimeter will show the result of the simulation, (2) the parts not being simulated are greyed out, and (3) if any device is out of specifications, a smoke appears over it. From now on, every time that you modify the circuit, a new simulation is performed. In order to stop the simulator and remove all the artifacts that adds (smoke, greyed out effects, etc.), click on the small arrow in the "Start Simulator" button and select "Stop Simulatior". Thus, all the items of the simulation disappear (smoke images, text in multimeters and grey out of the non simulated parts).
 
 ## Features ##
 
@@ -23,7 +23,7 @@ Currently, a very limited types of devices are supported:
 * Potentiometers
 * Diodes 
 * LEDs
-* Bipolar Junction Transistors (TODO: FET transistors)
+* Bipolar Junction Transistors and FET transistors
 * Multimeters
 * IR sensors (Infrared proximity sensor from core and FC-51)
 * DC motor
@@ -38,7 +38,7 @@ We check that the devices that are being simulated are withing its specification
 Currently, we have implemented these tests
 
 * Three probes connected to a multimeter (Err message in the screen appears)
-* Short circuit in batteries (TODO: power supplies)
+* Short circuit in batteries
 * Max current (diodes and LEDs, TODO: inductors)
 * Max power (resistors)
 * Reverse voltage (tantalum and electrolytic capacitors, IR sensors)
@@ -56,7 +56,7 @@ The only output devices that we handle are the LED and DC motors. LEDs change it
 
 ## Install ##
 
-Right now, this code is not integrated in the main code of Fritzing. If you want to try it, you need to download my simulator branch, which is hosted [here](https://github.com/failiz/fritzing-app). Please, note that you also need the parts repository with spice fields. Some of these fields are in the Fritzing-parts repository but others are still missing. It is recommended to use my parts repositorty, which can be found [here](https://github.com/failiz/fritzing-parts). 
+Right now, this code is not integrated in the main code of Fritzing. If you want to try it, you need to download my simulator branch, which is hosted [here](https://github.com/failiz/fritzing-app). Please, note that you also need the parts repository with spice fields. Some of these fields are in the Fritzing-parts repository but others are still missing. It is recommended to use my parts repository, which can be found [here](https://github.com/failiz/fritzing-parts). 
 
 The simulator uses Ngspice as a spice simulator. It is needed to download the shared library of Ngspice (.dll or .so) from [here](http://ngspice.sourceforge.net/shared.html) and it needs to be in the library path of your system.
 
@@ -87,7 +87,7 @@ There several things that you can contribute, and you do not need to be a progra
 
 The simulator uses spice fields that are stored in the part file (.fpz). You can help us to populate these fields in the components that do not have them yet. You should send us pull requests to the part repository. Please, be aware of copyrights when uploading spice fields! 
 
-### Improving svgs of the switches ###
+### Improving SVGs of the switches ###
 
 Currently, the svgs of the switches have two states (pressed or released). However, this distinction is subtle in some parts as the point of view is from above. If you can improve this visualization, send us a pull request.
 

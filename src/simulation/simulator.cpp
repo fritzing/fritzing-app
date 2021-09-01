@@ -81,6 +81,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/resistor.h"
 #include "../items/wire.h"
 #include "../items/breadboard.h"
+#include "../items/resizableboard.h"
+#include "../items/symbolpaletteitem.h"
+#include "../items/perfboard.h"
+#include "../items/partlabel.h"
 
 #include <iostream>
 
@@ -365,7 +369,7 @@ void Simulator::simulate() {
 			updateIRSensor(part);
 			continue;
 		}
-		if (family.contains("battery")) {
+		if (family.contains("battery") || family.contains("voltage source")) {
 			updateBattery(part);
 			continue;
 		}
@@ -737,19 +741,26 @@ void Simulator::greyOutParts(const QList<QGraphicsItem*> & parts) {
  */
 void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 	foreach (QGraphicsItem * part, parts) {
+		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(part);
+		if (connectorItem) {
+			parts.removeAll(part);
+			continue;
+		}
+
 		Wire* wire = dynamic_cast<Wire *>(part);
 		if (wire) {
 			parts.removeAll(part);
 			continue;
 		}
-		Note* note = dynamic_cast<Note *>(part);
-		if (note) {
+
+		PartLabel* label = dynamic_cast<PartLabel *>(part);
+		if (label) {
 			parts.removeAll(part);
 			continue;
 		}
 
-		Ruler* ruler = dynamic_cast<Ruler *>(part);
-		if (ruler) {
+		Note* note = dynamic_cast<Note *>(part);
+		if (note) {
 			parts.removeAll(part);
 			continue;
 		}
@@ -760,8 +771,20 @@ void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 			continue;
 		}
 
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(part);
-		if (connectorItem) {
+		SymbolPaletteItem* symbol = dynamic_cast<SymbolPaletteItem *>(part);
+		if (symbol) {
+			parts.removeAll(part);
+			continue;
+		}
+
+		ResizableBoard* board = dynamic_cast<ResizableBoard *>(part);
+		if (board) {
+			parts.removeAll(part);
+			continue;
+		}
+
+		Perfboard* perfBoard = dynamic_cast<Perfboard *>(part);
+		if (perfBoard) {
 			parts.removeAll(part);
 			continue;
 		}
@@ -779,6 +802,12 @@ void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 //					noSimBbParts.removeAll(wireToRemove);
 //				}
 //			}
+		}
+
+		Ruler* ruler = dynamic_cast<Ruler *>(part);
+		if (ruler) {
+			parts.removeAll(part);
+			continue;
 		}
 	}
 }

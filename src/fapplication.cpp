@@ -56,6 +56,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "items/propertydef.h"
 #include "dialogs/recoverydialog.h"
 #include "processeventblocker.h"
+#include "autoroute/checker.h"
 #include "autoroute/panelizer.h"
 #include "sketch/sketchwidget.h"
 #include "sketch/pcbsketchwidget.h"
@@ -1019,8 +1020,8 @@ void FApplication::runDRCService() {
 			}
 
 
-			Panelizer::checkDonuts(mainWindow, true);
-			Panelizer::checkText(mainWindow, true);
+			Checker::checkDonuts(mainWindow, true);
+			Checker::checkText(mainWindow, true);
 
 			QList<ItemBase *> boards = mainWindow->pcbView()->findBoard();
 			foreach (ItemBase * boardItem, boards) {

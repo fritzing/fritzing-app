@@ -18,6 +18,7 @@ src/autoroute/autorouter.h \
 src/autoroute/cmrouter/cmrouter.h \
 src/autoroute/autorouteprogressdialog.h \
 src/autoroute/autoroutersettingsdialog.h \
+src/autoroute/checker.h  \
 src/autoroute/panelizer.h  \
 src/autoroute/cmrouter/tile.h  \
 src/autoroute/cmrouter/tileutils.h  \
@@ -30,6 +31,7 @@ src/autoroute/autorouter.cpp \
 src/autoroute/cmrouter/cmrouter.cpp \
 src/autoroute/autorouteprogressdialog.cpp \
 src/autoroute/autoroutersettingsdialog.cpp \
+src/autoroute/checker.cpp  \
 src/autoroute/panelizer.cpp  \
 src/autoroute/cmrouter/tile.cpp \
 src/autoroute/cmrouter/DBcell.cpp \

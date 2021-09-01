@@ -28,6 +28,33 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "capacitor.h"
 
+class LedLight : public QGraphicsEllipseItem {
+public:
+	LedLight(QGraphicsItem *parent = nullptr) : QGraphicsEllipseItem(parent) {
+		setFlag(QGraphicsItem::ItemStacksBehindParent);
+		setPen(Qt::NoPen);
+	};
+	~LedLight() {
+	};
+	void setLight(double brightness, int red, int green, int blue){
+		if (brightness < 0.15)
+			brightness = 0.0;
+		double radious = std::min(parentItem()->boundingRect().width()/2,
+								  parentItem()->boundingRect().height()/2) * brightness * 4;
+		prepareGeometryChange();
+		setRect(-radious + parentItem()->boundingRect().width()/2,
+							-radious + parentItem()->boundingRect().width()/5,
+							radious*2, radious*2);
+		QRadialGradient gradient = QRadialGradient(0.5, 0.5, 0.5);
+		gradient.setCoordinateMode(QGradient::ObjectBoundingMode);
+		gradient.setColorAt(0, QColor(red, green, blue, 255));
+		gradient.setColorAt(0.3, QColor(red, green, blue, 230));
+		gradient.setColorAt(1, QColor(red, green, blue, 0));
+		setBrush(gradient);
+		this->show();
+	};
+};
+
 class LED : public Capacitor
 {
 	Q_OBJECT
@@ -59,6 +86,7 @@ protected:
 
 protected:
 	QString m_title;
+	LedLight  * m_ledLight = nullptr;
 
 
 };

@@ -38,6 +38,10 @@ LED::LED( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & 
 }
 
 LED::~LED() {
+	if (m_ledLight) {
+		delete m_ledLight;
+		m_ledLight = nullptr;
+	}
 }
 
 QString LED::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
@@ -137,6 +141,9 @@ void LED::setColor(const QString & color)
  */
 void LED::resetBrightness() {
 	setBrightness(1-offColor);
+	if(m_ledLight && this->viewID()==ViewLayer::ViewID::BreadboardView) {
+		m_ledLight->hide();
+	}
 }
 
 /**
@@ -193,6 +200,14 @@ void LED::setBrightness(double brightness){
 	QDomElement root = domDocument.documentElement();
 	slamColor(root, newColorStr);
 	reloadRenderer(domDocument.toString(),true);
+
+	//Add light comming out of the LED in BreadboardView
+	if(this->viewID()==ViewLayer::ViewID::BreadboardView) {
+		if(!m_ledLight) {
+			m_ledLight = new LedLight(this);
+		}
+		m_ledLight->setLight(brightness, red, green, blue);
+	}
 }
 
 QString LED::getColorSVG(const QString & color, ViewLayer::ViewLayerID viewLayerID)

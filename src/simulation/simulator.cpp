@@ -754,14 +754,16 @@ void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 			continue;
 		}
 
+		LedLight* ledLight = dynamic_cast<LedLight *>(part);
+		if (ledLight) {
+			parts.removeAll(part);
+			continue;
+		}
+
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(part);
 		if (connectorItem) {
-			//The connectors and rubber legs are not wires, but we should nor get them out if they are
-			//connected to a part that we are simulating
-			if (m_instanceTitleSim->contains(connectorItem->attachedToInstanceTitle())) {
-				parts.removeAll(part);
-				continue;
-			}
+			parts.removeAll(part);
+			continue;
 		}
 
 		Breadboard* breadboard = dynamic_cast<Breadboard *>(part);

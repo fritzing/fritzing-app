@@ -180,7 +180,7 @@ void FSplashScreen::displaySlice()
 	QPixmap bar(":/resources/images/splash/fab_logo_bar.png");
 	if (bar.isNull()) return;
 
-	srand ( time(NULL) );
+	srand ( time(NULL) ); 	   // flawfinder: ignore
 	int ix = (rand() % highest) + 1;
 
 	QPixmap slice(fname.arg(ix));

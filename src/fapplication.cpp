@@ -702,7 +702,10 @@ bool FApplication::findTranslator(const QString & translationsPath) {
 	QSettings settings;
 	QString suffix = settings.value("language").toString();
 	if (suffix.isEmpty()) {
-		suffix = QLocale::system().name();	   // Returns the language and country of this locale as a string of the form "language_country", where language is a lowercase, two-letter ISO 639 language code, and country is an uppercase, two-letter ISO 3166 country code.
+		// Returns the language and country of this locale as a string of the form
+		// "language_country", where language is a lowercase, two-letter ISO 639
+		// language code, and country is an uppercase, two-letter ISO 3166 country code.
+		suffix = QLocale::system().name();	   // flawfinder: ignore
 	}
 	else {
 		QLocale::setDefault(QLocale(suffix));

@@ -88,10 +88,10 @@ Qt::KeyboardModifier altOrMetaModifier();
 
 static QRegExp IntegerFinder("\\d+");
 
-static const int PartsBinHeightDefault = 300;
+static const int PartsBinHeightDefault = 240;
 static const int InfoViewHeightDefault = 220;
 static const int InfoViewMinHeight = 100;
-static const int DockWidthDefault = 360;
+static const int DockWidthDefault = 300;
 
 
 #endif

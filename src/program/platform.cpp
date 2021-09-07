@@ -43,7 +43,7 @@ Platform::Platform(const QString &name)
 	initSyntaxer();
 }
 
-void Platform::upload(QWidget * source, const QString &port, const QString &board, const QString &fileLocation)
+void Platform::upload(QWidget *, const QString &, const QString &, const QString &)
 {
 	// stub
 }

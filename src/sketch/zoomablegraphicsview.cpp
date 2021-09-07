@@ -80,7 +80,7 @@ void ZoomableGraphicsView::wheelEvent(QWheelEvent* event) {
 	case ScrollPrimary:
 		if (control || alt) doZoom = true;
 		else {
-			if (event->orientation() == Qt::Horizontal) {
+			if (event->angleDelta().x() != 0) {
 				doHorizontal = true;
 			}
 			else {
@@ -90,7 +90,7 @@ void ZoomableGraphicsView::wheelEvent(QWheelEvent* event) {
 		break;
 	case ZoomPrimary:
 		if (control || alt) {
-			if (event->orientation() == Qt::Horizontal) {
+			if (event->angleDelta().x() != 0) {
 				doHorizontal = true;
 			}
 			else {

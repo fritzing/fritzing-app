@@ -98,7 +98,7 @@ AboutBox::AboutBox(QWidget *parent)
 	CC->setGeometry(30, this->height() - cc.height(), cc.width(), cc.height());
 
 	QLabel *copyrightFritzing = new QLabel(this);
-	copyrightFritzing->setText(tr("<b>2007-%1 Fritzing</b>").arg(Version::year()));
+	copyrightFritzing->setText(tr("<b>Copyright 2007-%1 Fritzing GmbH</b>").arg(Version::year()));
 	copyrightFritzing->setFont(extraSmallFont);
     copyrightFritzing->setGeometry(30, 426, AboutWidth - 30 - 30, 16);
 	copyrightFritzing->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);

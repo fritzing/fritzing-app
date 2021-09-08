@@ -928,8 +928,6 @@ void HtmlInfoView::clearPropThingPlugin(PropThing * propThing, QWidget * plugin)
 QHash<QString, QString> HtmlInfoView::getPartProperties(ModelPart * modelPart, ItemBase * itemBase, bool wantDebug, QStringList & keys)
 {
 	QHash<QString, QString> properties;
-	QString family;
-	QString partNumber;
 	if (modelPart && itemBase) {
 		properties = itemBase->prepareProps(modelPart, wantDebug, keys);
 	}

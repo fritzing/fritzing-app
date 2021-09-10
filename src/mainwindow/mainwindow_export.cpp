@@ -1218,8 +1218,9 @@ void MainWindow::exportBOM() {
 
 	foreach (ItemBase * itemBase, partList) {
 		if (itemBase->itemType() != ModelPart::Part) continue;
-
-		QString desc = itemBase->title() + "%%%%%" + getBomProps(itemBase);  // keeps different parts separate if there are no properties
+		QStringList keys;
+		QHash<QString, QString> properties = HtmlInfoView::getPartProperties(itemBase->modelPart(), itemBase, false, keys);
+		QString desc = properties["mn"] + "%%%%%" + properties["mpn"] + "%%%%%" + itemBase->title() + "%%%%%" + getBomProps(itemBase);  // keeps different parts separate if there are no properties
 		descrs.insert(desc, itemBase);
 		if (!descrList.contains(desc)) {
 			descrList.append(desc);
@@ -1229,15 +1230,16 @@ void MainWindow::exportBOM() {
 	QString assemblyString;
 	foreach (ItemBase * itemBase, partList) {
 		if (itemBase->itemType() != ModelPart::Part) continue;
-
-		assemblyString += bomRowTemplate.arg(itemBase->instanceTitle()).arg(itemBase->title()).arg(getBomProps(itemBase));
+		QStringList keys;
+		QHash<QString, QString> properties = HtmlInfoView::getPartProperties(itemBase->modelPart(), itemBase, false, keys);
+		assemblyString += bomRowTemplate.arg(itemBase->instanceTitle()).arg(properties["mn"]).arg(properties["mpn"]).arg(itemBase->title()).arg(getBomProps(itemBase));
 	}
 
 	QString shoppingListString;
 	foreach (QString descr, descrList) {
 		QList<ItemBase *> itemBases = descrs.values(descr);
 		QStringList split = descr.split("%%%%%");
-		shoppingListString += bomRowTemplate.arg(itemBases.count()).arg(split.at(0)).arg(split.at(1));
+		shoppingListString += bomRowTemplate.arg(itemBases.count()).arg(split.at(0)).arg(split.at(1)).arg(split.at(2)).arg(split.at(3));
 	}
 
 	QString bom = bomTemplate

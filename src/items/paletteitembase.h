@@ -98,6 +98,7 @@ protected:
 	virtual void setInitialTransform(const QTransform &);
 	virtual void cacheLoaded(const LayerAttributes &);
 	bool collectExtraInfoPartNumber(const QString & propertyName, const QString & prop, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget);
+	void initLocalProperty(const QString & propertyName, ModelPart * modelPart);
 
 protected slots:
 	void partPropertyEntry();

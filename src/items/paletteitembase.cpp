@@ -61,12 +61,17 @@ PaletteItemBase::PaletteItemBase(ModelPart * modelPart, ViewLayer::ViewID viewID
 	setAcceptHoverEvents(true);
 
 	if (hasPartNumberProperty()) {
-		QString savedValue = modelPart->localProp(ModelPartShared::PartNumberPropertyName).toString();
-		if (savedValue.isEmpty()) {
-			savedValue = modelPart->properties().value(ModelPartShared::PartNumberPropertyName, "");
-			if (!savedValue.isEmpty()) {
-				modelPart->setLocalProp(ModelPartShared::PartNumberPropertyName, savedValue);
-			}
+		initLocalProperty(ModelPartShared::PartNumberPropertyName, modelPart);
+	}
+}
+
+void PaletteItemBase::initLocalProperty(const QString & propertyName, ModelPart * modelPart)
+{
+	QString savedValue = modelPart->localProp(propertyName).toString();
+	if (savedValue.isEmpty()) {
+		savedValue = modelPart->properties().value(propertyName, "");
+		if (!savedValue.isEmpty()) {
+			modelPart->setLocalProp(propertyName, savedValue);
 		}
 	}
 }

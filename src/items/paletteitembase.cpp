@@ -660,12 +660,18 @@ bool PaletteItemBase::canEditPart() {
 
 bool PaletteItemBase::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
-	if (prop.compare(ModelPartShared::PartNumberPropertyName, Qt::CaseInsensitive) == 0) {
+	if (collectExtraInfoPartNumber(ModelPartShared::PartNumberPropertyName, prop, swappingEnabled, returnProp, returnValue, returnWidget)) return true;
+	return ItemBase::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+}
+
+bool PaletteItemBase::collectExtraInfoPartNumber(const QString & propertyName, const QString & prop, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget)
+{
+	if (prop.compare(propertyName, Qt::CaseInsensitive) == 0) {
 		returnProp = TranslatedPropertyNames.value(prop);
 
 		QLineEdit * lineEdit = new QLineEdit();
 		lineEdit->setEnabled(swappingEnabled);
-		QString current = m_modelPart->localProp(ModelPartShared::PartNumberPropertyName).toString();
+		QString current = m_modelPart->localProp(propertyName).toString();
 		lineEdit->setText(current);
 		connect(lineEdit, SIGNAL(editingFinished()), this, SLOT(partPropertyEntry()));
 		lineEdit->setObjectName("infoViewLineEdit");
@@ -673,8 +679,7 @@ bool PaletteItemBase::collectExtraInfo(QWidget * parent, const QString & family,
 		returnValue = current;
 		return true;
 	}
-
-	return ItemBase::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+	return false;
 }
 
 void PaletteItemBase::setProp(const QString & prop, const QString & value)

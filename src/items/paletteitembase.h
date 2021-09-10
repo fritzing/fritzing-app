@@ -97,6 +97,7 @@ protected:
 	virtual LayerKinPaletteItem * newLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, const ViewGeometry &, long id, QMenu* itemMenu, const LayerHash &, LayerAttributes &);
 	virtual void setInitialTransform(const QTransform &);
 	virtual void cacheLoaded(const LayerAttributes &);
+	bool collectExtraInfoPartNumber(const QString & propertyName, const QString & prop, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget);
 
 protected slots:
 	void partPropertyEntry();

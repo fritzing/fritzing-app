@@ -806,7 +806,7 @@ QString TextUtils::convertToPowerPrefix(double q, char format, int precision) {
 	if (q == 0) return QString::number(q, format, precision);
 
 	for (int i = 0; i < PowerPrefixes.count(); i++) {
-		if (q < 100 * PowerPrefixValues[i]) {
+		if (abs(q) < 100 * PowerPrefixValues[i]) {
 			q /= PowerPrefixValues[i];
 			return QString::number(q, format, precision) + PowerPrefixes[i];
 		}

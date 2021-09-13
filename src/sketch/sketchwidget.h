@@ -502,6 +502,7 @@ protected:
 	void unsquashShapes();
 	virtual bool updateOK(ConnectorItem *, ConnectorItem *);
 	virtual void viewGeometryConversionHack(ViewGeometry &, ModelPart *);
+	void prepDeleteOtherPropsNumbers(const QString & propertyName, ItemBase * itemBase, long id, const QString & newModuleID, QUndoCommand * parentCommand);
 
 protected:
 	static bool lessThan(int a, int b);

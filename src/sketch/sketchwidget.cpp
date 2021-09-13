@@ -5380,17 +5380,22 @@ void SketchWidget::prepDeleteOtherProps(ItemBase * itemBase, long id, const QStr
 		}
 	}
 
-	QString value = itemBase->modelPart()->localProp(ModelPartShared::PartNumberPropertyName).toString();
+	prepDeleteOtherPropsNumbers(ModelPartShared::PartNumberPropertyName, itemBase, id, newModuleID, parentCommand);
+}
+
+void SketchWidget::prepDeleteOtherPropsNumbers(const QString & propertyName, ItemBase * itemBase, long id, const QString & newModuleID, QUndoCommand * parentCommand)
+{
+	QString value = itemBase->modelPart()->localProp(propertyName).toString();
 	if (!value.isEmpty()) {
 		QString newValue = value;
 		if (!newModuleID.isEmpty()) {
 			newValue = "";
 			ModelPart * newModelPart = m_referenceModel->retrieveModelPart(newModuleID);
 			if (newModelPart) {
-				newValue = newModelPart->properties().value(ModelPartShared::PartNumberPropertyName, "");
+				newValue = newModelPart->properties().value(propertyName, "");
 			}
 		}
-		new SetPropCommand(this, id, ModelPartShared::PartNumberPropertyName, value, newValue, true, parentCommand);
+		new SetPropCommand(this, id, propertyName, value, newValue, true, parentCommand);
 	}
 }
 

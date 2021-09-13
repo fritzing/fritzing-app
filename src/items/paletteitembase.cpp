@@ -689,13 +689,17 @@ bool PaletteItemBase::collectExtraInfoPartNumber(const QString & propertyName, c
 
 void PaletteItemBase::setProp(const QString & prop, const QString & value)
 {
-	if (prop.compare(ModelPartShared::PartNumberPropertyName) == 0) {
-		modelPart()->setLocalProp(ModelPartShared::PartNumberPropertyName, value);
+	setLocalProp(prop, value, ModelPartShared::PartNumberPropertyName);
+	ItemBase::setProp(prop, value);
+}
+
+void PaletteItemBase::setLocalProp(const QString & prop, const QString & value, const QString & propertyName)
+{
+	if (prop.compare(propertyName) == 0) {
+		modelPart()->setLocalProp(propertyName, value);
 		if (m_partLabel) m_partLabel->displayTextsIf();
 		return;
 	}
-
-	ItemBase::setProp(prop, value);
 }
 
 void PaletteItemBase::partPropertyEntry() {

@@ -20,6 +20,8 @@ src/autoroute/autorouteprogressdialog.h \
 src/autoroute/autoroutersettingsdialog.h \
 src/autoroute/checker.h  \
 src/autoroute/panelizer.h  \
+src/autoroute/binpacking/Rect.h  \
+src/autoroute/binpacking/GuillotineBinPack.h  \
 src/autoroute/cmrouter/tile.h  \
 src/autoroute/cmrouter/tileutils.h  \
 src/autoroute/mazerouter/mazerouter.h  \
@@ -33,6 +35,8 @@ src/autoroute/autorouteprogressdialog.cpp \
 src/autoroute/autoroutersettingsdialog.cpp \
 src/autoroute/checker.cpp  \
 src/autoroute/panelizer.cpp  \
+src/autoroute/binpacking/Rect.cpp  \
+src/autoroute/binpacking/GuillotineBinPack.cpp  \
 src/autoroute/cmrouter/tile.cpp \
 src/autoroute/cmrouter/DBcell.cpp \
 src/autoroute/cmrouter/search.cpp \

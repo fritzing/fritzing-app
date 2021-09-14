@@ -73,6 +73,8 @@ void ModelPartSharedRoot::setSearchTerm(const QString & searchTerm) {
 
 ///////////////////////////////////////////////
 
+const QString ModelPartShared::MNPropertyName = "mn";
+const QString ModelPartShared::MPNPropertyName = "mpn";
 const QString ModelPartShared::PartNumberPropertyName = "part number";
 
 ModelPartShared::ModelPartShared() {
@@ -616,9 +618,11 @@ const QStringList & ModelPartShared::displayKeys() {
 }
 
 void ModelPartShared::ensurePartNumberProperty() {
-	if (!m_properties.keys().contains(PartNumberPropertyName)) {
-		m_properties.insert(PartNumberPropertyName, "");
-		m_displayKeys.append(PartNumberPropertyName);
+	for (auto&& propertyName : {MNPropertyName, MPNPropertyName, PartNumberPropertyName}) {
+		if (!m_properties.keys().contains(propertyName)) {
+			m_properties.insert(propertyName, "");
+			m_displayKeys.append(propertyName);
+		}
 	}
 }
 

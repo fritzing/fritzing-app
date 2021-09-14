@@ -166,6 +166,8 @@ protected slots:
 	void removeOwner();
 
 public:
+	static const QString MNPropertyName;
+	static const QString MPNPropertyName;
 	static const QString PartNumberPropertyName;
 
 protected:

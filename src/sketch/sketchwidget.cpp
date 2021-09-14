@@ -5380,7 +5380,9 @@ void SketchWidget::prepDeleteOtherProps(ItemBase * itemBase, long id, const QStr
 		}
 	}
 
-	prepDeleteOtherPropsNumbers(ModelPartShared::PartNumberPropertyName, itemBase, id, newModuleID, parentCommand);
+	for (auto&& propertyName : {ModelPartShared::MNPropertyName, ModelPartShared::MPNPropertyName, ModelPartShared::PartNumberPropertyName}) {
+		prepDeleteOtherPropsNumbers(propertyName, itemBase, id, newModuleID, parentCommand);
+	}
 }
 
 void SketchWidget::prepDeleteOtherPropsNumbers(const QString & propertyName, ItemBase * itemBase, long id, const QString & newModuleID, QUndoCommand * parentCommand)

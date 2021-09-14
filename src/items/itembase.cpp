@@ -256,6 +256,8 @@ void ItemBase::initNames() {
 		TranslatedPropertyNames.insert("copper top", tr("copper top"));
 		TranslatedPropertyNames.insert("silkscreen bottom", tr("silkscreen bottom"));
 		TranslatedPropertyNames.insert("silkscreen top", tr("silkscreen top"));
+		TranslatedPropertyNames.insert("mn", tr("mn"));
+		TranslatedPropertyNames.insert("mpn", tr("mpn"));
 
 		// TODO: translate more known property names from fzp files and resource xml files
 
@@ -2227,7 +2229,9 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
 
 	// ensure part number  is last
 	QString partNumber = props.value(ModelPartShared::PartNumberPropertyName, "").toLower();
-	keys.removeOne(ModelPartShared::PartNumberPropertyName);
+	for (auto&& propertyName : {ModelPartShared::MNPropertyName, ModelPartShared::MPNPropertyName, ModelPartShared::PartNumberPropertyName}) {
+		keys.removeOne(propertyName);
+	}
 
 	if (wantDebug) {
 		props.insert("id", QString("%1 %2 %3")
@@ -2254,7 +2258,9 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
 
 	// ensure part number is last
 	if (hasPartNumberProperty()) {
-		keys.append(ModelPartShared::PartNumberPropertyName);
+		for (auto&& propertyName : {ModelPartShared::MNPropertyName, ModelPartShared::MPNPropertyName, ModelPartShared::PartNumberPropertyName}) {
+			keys.append(propertyName);
+		}
 	}
 
 	return props;

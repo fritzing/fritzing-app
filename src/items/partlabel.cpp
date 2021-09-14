@@ -109,7 +109,9 @@ PartLabel::PartLabel(ItemBase * owner, QGraphicsItem * parent)
 {
 	m_displayKeys.append(LabelTextKey);
 	if (m_owner->hasPartNumberProperty() && m_owner->viewID() != ViewLayer::PCBView) {
-		m_displayKeys.append(ModelPartShared::PartNumberPropertyName);
+		for (auto&& propertyName : {ModelPartShared::MNPropertyName, ModelPartShared::MPNPropertyName, ModelPartShared::PartNumberPropertyName}) {
+			m_displayKeys.append(propertyName);
+		}
 	}
 
 	setFlag(QGraphicsItem::ItemIsSelectable, false);
@@ -381,7 +383,11 @@ void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID
 
 	if (m_displayKeys.length() == 0) {
 		m_displayKeys.append(LabelTextKey);
-		if (m_owner->hasPartNumberProperty()) m_displayKeys.append(ModelPartShared::PartNumberPropertyName);
+		if (m_owner->hasPartNumberProperty()) {
+			for (auto&& propertyName : {ModelPartShared::MNPropertyName, ModelPartShared::MPNPropertyName, ModelPartShared::PartNumberPropertyName}) {
+				m_displayKeys.append(propertyName);
+			}
+		}
 	}
 
 	displayTexts();

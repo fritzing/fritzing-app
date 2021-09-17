@@ -300,7 +300,7 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
 	painter->restore();
 }
 
-QSize BlogListDelegate::sizeHint ( const QStyleOptionViewItem & option, const QModelIndex & index ) const
+QSize BlogListDelegate::sizeHint (const QStyleOptionViewItem &, const QModelIndex &) const
 {
 	return QSize(100, ImageSpace); // very dumb value
 }

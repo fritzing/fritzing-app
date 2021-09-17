@@ -33,6 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../fsvgrenderer.h"
 #include "../autoroute/autorouteprogressdialog.h"
 #include "../autoroute/drc.h"
+#include "../autoroute/binpacking/GuillotineBinPack.h"
 #include "../items/groundplane.h"
 #include "../items/jumperitem.h"
 #include "../utils/autoclosemessagebox.h"
@@ -40,9 +41,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../utils/folderutils.h"
 #include "../processeventblocker.h"
-#include "../autoroute/cmrouter/tileutils.h"
-#include "../autoroute/cmrouter/cmrouter.h"
-#include "../autoroute/panelizer.h"
 #include "../autoroute/autoroutersettingsdialog.h"
 #include "../svg/groundplanegenerator.h"
 #include "../items/logoitem.h"
@@ -1319,17 +1317,17 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 	}
 
 	foreach (ItemBase * board, boards) {
+		// This is a 2d bin-packing problem.
+		if (!board) continue;
 
-		// This is a 2d bin-packing problem. We can use our tile datastructure for this.
-		// Use a simple best-fit approach for now.  No idea how optimal a solution it is.
-
-		CMRouter router(this, board, false);
+		auto boardRect = board->sceneBoundingRect();
 		int keepout = 10;
-		router.setKeepout(keepout);
-		Plane * plane = router.initPlane(false);
-		QList<Tile *> alreadyTiled;
+		int boardKeepout = 5;
+		rbp::GuillotineBinPack binPack(boardRect.width() - boardKeepout * 2, boardRect.height() - boardKeepout * 2);
 
-		foreach (QGraphicsItem * item, (board) ? scene()->collidingItems(board) : scene()->items()) {
+		std::map<std::string, ItemBase *> items;
+
+		foreach (QGraphicsItem * item, scene()->collidingItems(board)) {
 			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
 			if (itemBase == NULL) continue;
 			if (!itemBase->isEverVisible()) continue;
@@ -1345,32 +1343,38 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 			}
 			else if (ResizableBoard::isBoard(itemBase)) continue;
 
-			// itemBase->debugInfo("tiling");
-			QRectF r = itemBase->sceneBoundingRect().adjusted(-keepout, -keepout, keepout, keepout);
-			router.insertTile(plane, r, alreadyTiled, NULL, Tile::OBSTACLE, CMRouter::IgnoreAllOverlaps);
+			if (!itemBase->modelPart()) continue;
+
+			QStringList keys;
+			auto properties = itemBase->prepareProps(itemBase->modelPart(), true, keys);
+			items[properties["id"].toStdString()] = itemBase;
 		}
 
-		BestPlace bestPlace;
-		bestPlace.maxRect = router.boardRect();
-		bestPlace.rotate90 = false;
-		bestPlace.width = realToTile(newItem->boundingRect().width());
-		bestPlace.height = realToTile(newItem->boundingRect().height());
-		bestPlace.plane = plane;
+		// Sort by id to make sure parts are always added in correct order for bin packing algorithm.
+		// This might not yet work well if parts are manually moved in the PCB view.
+		for (auto& [id, itemBase]: items) {
+			QRectF r = itemBase->sceneBoundingRect();
+			binPack.Insert(r.width() + keepout * 2, r.height() + keepout * 2, true, rbp::GuillotineBinPack::RectBestAreaFit, rbp::GuillotineBinPack::SplitMinimizeArea);
+		}
 
-		TiSrArea(NULL, plane, &bestPlace.maxRect, Panelizer::placeBestFit, &bestPlace);
-		if (bestPlace.bestTile) {
-			QRectF r;
-			tileToQRect(bestPlace.bestTile, r);
-			ItemBase * chief = newItem->layerKinChief();
-			chief->setPos(r.topLeft());
-			DebugDialog::debug(QString("placing part with rotation:%1").arg(bestPlace.rotate90), r);
-			if (bestPlace.rotate90) {
-				chief->rotateItem(90, false);
+		auto newWidth = newItem->sceneBoundingRect().width() + keepout * 2;
+		auto newHeight = newItem->sceneBoundingRect().height() + keepout * 2;
+		rbp::Rect rect = binPack.Insert(newWidth, newHeight, true, rbp::GuillotineBinPack::RectBestAreaFit, rbp::GuillotineBinPack::SplitMinimizeArea);
+		rect.x += boardRect.x() + boardKeepout + keepout;
+		rect.y += boardRect.y() + boardKeepout + keepout;
+		if (rect.height != 0) {
+			QRectF r(rect.x, rect.y, rect.width, rect.height);
+			ItemBase * kinChief = newItem->layerKinChief();
+			if (r.height() != newHeight && (r.width() - newHeight) < 0.01) {
+				kinChief->rotateItem(90, false);
+				auto rotationCorrection = (r.height() - r.width()) / 2;
+				r.setX(r.x() - rotationCorrection);
+				r.setY(r.y() + rotationCorrection);
 			}
+			kinChief->setPos(r.topLeft());
 			alignOneToGrid(newItem);
 		}
-		router.drcClean();
-		if (bestPlace.bestTile) {
+		if (rect.height != 0) {
 			break;
 		}
 	}

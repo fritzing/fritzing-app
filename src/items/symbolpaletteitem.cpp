@@ -144,7 +144,11 @@ SymbolPaletteItem::~SymbolPaletteItem() {
 void SymbolPaletteItem::removeMeFromBus(double v) {
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		if (m_isNetLabel) {
-			LocalNetLabels.remove(m_label, connectorItem);
+			if (m_voltageReference) {
+				LocalNetLabels.remove(getLabel(), connectorItem);
+			} else {
+				LocalNetLabels.remove(m_label, connectorItem);
+			}
 		}
 		else {
 			double nv = useVoltage(connectorItem);

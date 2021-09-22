@@ -38,6 +38,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStyle>
 #include <QStylePainter>
 #include <QPrinter>
+#include <QNetworkAccessManager>
 
 #include "fritzingwindow.h"
 #include "sketchareawidget.h"
@@ -466,6 +467,7 @@ protected slots:
 	void setViewFromAbove();
 	void updateWelcomeViewRecentList(bool doEmit = true);
 	virtual void initZoom();
+	void onShareOnlineFinished();
 
 protected:
 	void initSketchWidget(SketchWidget *);
@@ -691,6 +693,8 @@ protected:
 	//QToolBar *m_editToolBar;
 
 	QAction *m_raiseWindowAct = nullptr;
+
+	QNetworkAccessManager m_manager;
 
 	// Fritzing Menu
 	QMenu *m_fritzingMenu = nullptr;

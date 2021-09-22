@@ -3849,9 +3849,23 @@ void MainWindow::processStateChanged(QProcess::ProcessState newState) {
 }
 
 void MainWindow::shareOnline() {
-	QDesktopServices::openUrl(QString("http://fritzing.org/projects/create/"));
+	QUrl new_url(QString("https://fritzing.org/projects/create/"));
+	QNetworkRequest request(new_url);
+
+	QNetworkReply *reply = m_manager.get(request);
+	connect(reply, SIGNAL(finished()), this, SLOT(onShareOnlineFinished()));
 }
 
+void MainWindow::onShareOnlineFinished() {
+	QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+
+	if (reply->error() == QNetworkReply::NoError) {
+		QDesktopServices::openUrl(QString("https://fritzing.org/projects/create/"));
+	} else {
+		FMessageBox::critical(this, tr("Fritzing"), QString("Online sharing is currently not available."));
+	}
+	reply->deleteLater();
+}
 
 void MainWindow::selectAllObsolete() {
 	selectAllObsolete(true);

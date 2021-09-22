@@ -144,7 +144,7 @@ SymbolPaletteItem::~SymbolPaletteItem() {
 void SymbolPaletteItem::removeMeFromBus(double v) {
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		if (m_isNetLabel) {
-			LocalNetLabels.remove(m_label, connectorItem);
+			LocalNetLabels.remove(getLabel(), connectorItem);
 		}
 		else {
 			double nv = useVoltage(connectorItem);
@@ -481,6 +481,8 @@ QString SymbolPaletteItem::getLabel() {
 	if (m_voltageReference) {
 		return QString::number(m_voltage);
 	}
+	if(!m_label.isEmpty())
+		return m_label;
 	return  modelPart()->localProp("label").toString();
 }
 

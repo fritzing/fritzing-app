@@ -168,7 +168,10 @@ void ItemBase::removeTooltip() {
 
 bool ItemBase::zLessThan(ItemBase * & p1, ItemBase * & p2)
 {
-	return p1->z() < p2->z();
+	if(p1->viewLayerID() == p2->viewLayerID())
+		return p1->z() < p2->z();
+	else
+		return p1->viewLayerID() < p2->viewLayerID();
 }
 
 qint64 ItemBase::getNextID() {

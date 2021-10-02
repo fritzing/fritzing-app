@@ -4444,6 +4444,11 @@ void SketchWidget::sortAnyByZ(const QList<QGraphicsItem *> & items, QList<ItemBa
 
 	// order by z
 	qSort(bases.begin(), bases.end(), ItemBase::zLessThan);
+
+	//Print Z order before changing them
+	//for (int i = 0; i < bases.size(); i++) {
+	//	DebugDialog::debug(QString("%1 viewLayerID=%2 z=%3").arg(bases[i]->instanceTitle()).arg(bases[i]->viewLayerID()).arg(bases[i]->z()));
+	//}
 }
 
 bool SketchWidget::lessThan(int a, int b) {
@@ -4471,7 +4476,7 @@ void SketchWidget::changeZ(QHash<long, RealPair * > triplets, double (*pairAcces
 		if (viewLayer) {
 			newZ = viewLayer->getZFromBelow(newZ, this->viewFromBelow());
 		}
-		//DebugDialog::debug(QString("change z %1 %2").arg(itemBase->id()).arg(newZ));
+		//DebugDialog::debug(QString("change z %1 %2 %3 %4").arg(itemBase->instanceTitle()).arg(itemBase->id()).arg(newZ).arg(itemBase->viewLayerID()));
 		items[i]->setZValue(newZ);
 
 	}

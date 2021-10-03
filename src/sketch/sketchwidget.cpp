@@ -4415,7 +4415,7 @@ void SketchWidget::continueZChangeAux(QList<ItemBase *> & bases, const QString &
 		double oldZ = bases[i]->getViewGeometry().z();
 		if (bases[i]->viewLayerID() != lastViewLayerID) {
 			lastViewLayerID = bases[i]->viewLayerID();
-			z = qFloor(oldZ);
+			z = lastViewLayerID;
 		}
 		else {
 			z += ViewLayer::getZIncrement();

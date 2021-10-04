@@ -36,6 +36,7 @@ public:
 	ViewGeometry(QDomElement &);
 	ViewGeometry(const ViewGeometry &);
 	~ViewGeometry() {}
+	ViewGeometry& operator=(const ViewGeometry& viewGeometry);
 
 public:
 	enum WireFlag {

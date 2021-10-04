@@ -160,7 +160,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	m_textEdit->setFontFamily("Droid Sans Mono");
 	m_textEdit->setLineWrapMode(QTextEdit::NoWrap);
 	QFontMetrics fm(m_textEdit->currentFont());
-	m_textEdit->setTabStopWidth(fm.averageCharWidth() * 2);
+	m_textEdit->setTabStopDistance(fm.averageCharWidth() * 2);
 	m_textEdit->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 	m_textEdit->setUndoRedoEnabled(true);
 	connect(m_textEdit, SIGNAL(textChanged()), this, SLOT(textChanged()));

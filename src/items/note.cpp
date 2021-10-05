@@ -111,6 +111,7 @@ class NoteGraphicsTextItem : public QGraphicsTextItem
 {
 public:
 	NoteGraphicsTextItem(QGraphicsItem * parent = NULL);
+	void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
 
 protected:
 	void focusInEvent(QFocusEvent *);
@@ -123,6 +124,9 @@ NoteGraphicsTextItem::NoteGraphicsTextItem(QGraphicsItem * parent) : QGraphicsTe
 	QTextFrameFormat altFormat(format);
 	altFormat.setMargin(0);										// so document never thinks a mouse click is a move event
 	document()->rootFrame()->setFrameFormat(altFormat);
+}
+
+void NoteGraphicsTextItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *) {
 }
 
 void NoteGraphicsTextItem::focusInEvent(QFocusEvent * event) {

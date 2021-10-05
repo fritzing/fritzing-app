@@ -30,6 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 //#include "../debugdialog.h"
 
 #include <QRegExp>
+#include <QRegularExpression>
 #include <QBuffer>
 #include <QFile>
 #include <QSettings>
@@ -47,7 +48,7 @@ QMultiHash<QString, QString> InstalledFonts::InstalledFontsNameMapper;   // fami
 const QString TextUtils::CreatedWithFritzingString("Created with Fritzing (https://fritzing.org/)");
 const QString TextUtils::CreatedWithFritzingXmlComment("<!-- " + CreatedWithFritzingString + " -->\n");
 
-const QRegExp TextUtils::FindWhitespace("[\\s]+");
+const QRegularExpression TextUtils::FindWhitespace("[\\s]+");
 static const QRegExp SodipodiAttributeDetector("(inkscape|sodipodi):[^=\\s]+=\"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\"");
 static const QRegExp SodipodiElementDetector("</{0,1}(inkscape|sodipodi):[^>]+>");
 const QString TextUtils::SMDFlipSuffix("___");

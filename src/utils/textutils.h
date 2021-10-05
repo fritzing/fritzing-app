@@ -121,7 +121,7 @@ public:
 	static QString elementToString(const QDomElement &);
 
 public:
-	static const QRegExp FindWhitespace;
+	static const QRegularExpression FindWhitespace;
 	static const QString SMDFlipSuffix;
 	static const QString MicroSymbol;
 	static const ushort MicroSymbolCode;

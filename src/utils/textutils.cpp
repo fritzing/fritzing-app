@@ -59,7 +59,7 @@ const QRegExp TextUtils::floatingPointMatcher(RegexFloatDetector);
 static const QString fontFamilyQuotesPattern = R"x(font-family(?:="|:)('[^']*')"?)x";
 
 static const QRegularExpression HexExpr("&#x[0-9a-fA-F];");   // &#x9; &#xa; &#xd;
-static const QRegExp Xmlns("xmlns=([\"|'])[^\"']*\\1");
+static const QRegularExpression Xmlns("xmlns=([\"|'])[^\"']*\\1");
 
 const ushort TextUtils::MicroSymbolCode = 181;
 const QString TextUtils::MicroSymbol = QString::fromUtf16(&MicroSymbolCode, 1);

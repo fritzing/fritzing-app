@@ -49,8 +49,8 @@ const QString TextUtils::CreatedWithFritzingString("Created with Fritzing (https
 const QString TextUtils::CreatedWithFritzingXmlComment("<!-- " + CreatedWithFritzingString + " -->\n");
 
 const QRegularExpression TextUtils::FindWhitespace("[\\s]+");
-static const QRegExp SodipodiAttributeDetector("(inkscape|sodipodi):[^=\\s]+=\"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\"");
-static const QRegExp SodipodiElementDetector("</{0,1}(inkscape|sodipodi):[^>]+>");
+static const QRegularExpression SodipodiAttributeDetector("(inkscape|sodipodi):[^=\\s]+=\"([^\"\\\\]*(\\\\.[^\"\\\\]*)*)\"");
+static const QRegularExpression SodipodiElementDetector("</{0,1}(inkscape|sodipodi):[^>]+>");
 const QString TextUtils::SMDFlipSuffix("___");
 
 const QString TextUtils::RegexFloatDetector = "[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?";

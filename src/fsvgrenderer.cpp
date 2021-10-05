@@ -26,7 +26,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "utils/folderutils.h"
 #include "connectors/svgidlayer.h"
 
-#include <QRegExp>
 #include <QTextStream>
 #include <QPainter>
 #include <QCoreApplication>

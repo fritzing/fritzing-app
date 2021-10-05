@@ -48,6 +48,7 @@ const QString SchematicRectConstants::FontFamily("'Droid Sans'");
 #include <QStringList>
 #include <QFont>
 #include <QFontMetricsF>
+#include <QRegularExpression>
 #include <qmath.h>
 
 ///////////////////////////////////////////
@@ -214,7 +215,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 		boardName.replace("_", " ");
 		titles = boardName.split(" ");
 		if (!usingParam) {
-			QRegExp version("^[vV][\\d]+");
+			QRegularExpression version("^[vV][\\d]+");
 			if (titles.last().contains(version)) {
 				titles.takeLast();
 			}

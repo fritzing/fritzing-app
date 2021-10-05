@@ -471,8 +471,8 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	svg.replace("viax=''", QString("x='%1'").arg(viaX));
 	svg.replace("viay=''", QString("y='%1'").arg(viaY));
 
-	QRegExp pin("connector[\\d]+pin");
-	QRegExp terminal("connector[\\d]+terminal");
+	QRegularExpression pin("connector[\\d]+pin");
+	QRegularExpression terminal("connector[\\d]+terminal");
 	foreach (QDomElement contact, busContacts) {
 		QString mid = busMids.value(contact.attribute("signal").toLower(), "");
 		if (mid.isEmpty()) continue;

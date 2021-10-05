@@ -39,8 +39,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QLineEdit>
 
 static QStringList Spacings;
-static QRegExp Digits("(\\d)+");
-static QRegExp DigitsMil("(\\d)+mil");
+static QRegularExpression Digits("(\\d)+");
+static QRegularExpression DigitsMil("(\\d)+mil");
 
 static const int MinSipPins = 1;
 static const int MaxSipPins = 128;

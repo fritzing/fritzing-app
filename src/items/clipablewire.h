@@ -27,6 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class ClipableWire : public Wire
 {
+	Q_OBJECT
 
 public:
 	ClipableWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool initLabel);

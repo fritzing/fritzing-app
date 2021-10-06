@@ -128,7 +128,6 @@ QString Ruler::makeSvg(double inches) {
 		// 1/100 centimeter spacing
 		for (int i = 0; i <= qCeil(mmmW); i++) {
 			double h = cm / 12;
-			double h2 = h - (cm / 12);
 			double x = (offset + ((double)i / 254)) * GraphicsUtils::StandardFritzingDPI;
 			if (i % 5 == 0) {
 				h = cm / 6;

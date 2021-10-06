@@ -46,8 +46,7 @@ AboutBox::AboutBox(QWidget *parent)
 
     setFixedSize(AboutWidth, 466);
 
-	// the background color
-	setStyleSheet("background-color: #E8E8E8");
+	setStyleSheet("background-color: #E8E8E8; color: #000");
 
 	// the new Default Font
 	QFont smallFont("Droid Sans", 11);
@@ -114,22 +113,21 @@ AboutBox::AboutBox(QWidget *parent)
 	    "<p>" +
 	    tr("Fritzing is made by: ") +
 	    tr("Prof. Reto Wettach, Andr&eacute; Kn&ouml;rig, Myriel Milicevic, ") +
-	    tr("Zach Eveland, Dirk van Oosterbosch, ") +
-	    tr("Jonathan Cohen, Marcus Paeschke, Omer Yosha, ") +
-	    tr("Travis Robertson, Stefan Hermann, Brendan Howell, ") +
-	    tr("Mariano Crowe, Johannes Landstorfer, ") +
-	    tr("Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, ") +
-	    tr("Bryant Mairs, Uleshka Asher, Daniel Tzschentke, ") +
-	    tr("and Kjell Morgenstern ") +
+		tr("Zach Eveland, Dirk van Oosterbosch, ") +
+		tr("Jonathan Cohen, Marcus Paeschke, Omer Yosha, ") +
+		tr("Travis Robertson, Stefan Hermann, Brendan Howell, ") +
+		tr("Mariano Crowe, Johannes Landstorfer, ") +
+		tr("Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, ") +
+		tr("Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern") +
 	    "</p>" +
 
 	    "<p>" +
-	    tr("Special thanks goes out to: ") +
+		tr("Special thanks go out to: ") +
 	    tr("Jussi &Auml;ngeslev&auml;, Massimo Banzi, Ayah Bdeir, ") +
-	    tr("Durrell Bishop, David Cuartielles, Fabian Hemmert, ") +
-	    tr("Gero Herkenrath, Jeff Hoefs, Tom Hulbert, ") +
-	    tr("Tom Igoe, Hans-Peter Kadel, Till Savelkoul, ") +
-	    tr("Jan Sieber, Yaniv Steiner, Olaf Val, ") +
+		tr("Durrell Bishop, David Cuartielles, Fabian Hemmert, ") +
+		tr("Gero Herkenrath, Jeff Hoefs, Tom Hulbert, ") +
+		tr("Tom Igoe, Hans-Peter Kadel, Till Savelkoul, ") +
+		tr("Jan Sieber, Yaniv Steiner, Olaf Val, ") +
 	    tr("Michaela Vieser and Julia Werner.") +
 	    "</p>" +
 
@@ -164,9 +162,7 @@ AboutBox::AboutBox(QWidget *parent)
 	    "</p>" +
 
 	    "<p>" +
-	    tr("Special thanks goes out as well to all the students ") +
-	    tr("and alpha testers who were brave enough to give ") +
-	    tr("Fritzing a test spin. ") +
+		tr("Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.") +
 	    "</p>" +
 
 	    "<br /><br /><br /><br /><br /><br /><br /><br />";
@@ -192,7 +188,6 @@ AboutBox::AboutBox(QWidget *parent)
 	scrollFade->setPixmap(fadepixmap);
 	scrollFade->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
 	scrollFade->setStyleSheet("background-color: none");
-
 
 	// auto scroll timer initialization
 	m_restartAtTop = false;

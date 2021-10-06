@@ -151,7 +151,7 @@ void FServerThread::run()
 
 	DebugDialog::debug("header " + header);
 
-	QStringList tokens = header.split(QRegExp("[ \r\n][ \r\n]*"), QString::SkipEmptyParts);
+	QStringList tokens = header.split(QRegExp("[ \r\n][ \r\n]*"), Qt::SplitBehaviorFlags::SkipEmptyParts);
 	if (tokens.count() <= 0) {
 		writeResponse(socket, 400, "Bad Request", "", "");
 		return;
@@ -167,7 +167,7 @@ void FServerThread::run()
 		return;
 	}
 
-	QStringList params = tokens.at(1).split("/", QString::SkipEmptyParts);
+	QStringList params = tokens.at(1).split("/", Qt::SplitBehaviorFlags::SkipEmptyParts);
 	QString command = params.takeFirst();
 	if (params.count() == 0) {
 		writeResponse(socket, 400, "Bad Request", "", "");
@@ -1275,7 +1275,7 @@ void FApplication::preferencesAfter()
 {
 	QDir dir(m_translationPath);
 	QStringList nameFilters;
-	nameFilters << "*.qm";
+	nameFilters << "fritzing_*.qm";
 	QFileInfoList languages = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
 	QSettings settings;
 	QString language = settings.value("language").toString();
@@ -2009,8 +2009,10 @@ void FApplication::regeneratePartsDatabase() {
 	messageBox.setText(tr("Regenerating the parts database will take some minutes and you will have to restart Fritzing\n\n") +
 	                   tr("Would you like to regenerate the parts database?\n")
 	                  );
-	messageBox.setInformativeText("This option is a last resort in case Fritzing's is more-or-less unable to display parts. "
-	                              "You may be better off downloading the latest Fritzing release.");
+	messageBox.setInformativeText(tr("This option is usefull if you modify the parts database on your own. "
+									 "If you want to recover from an error, "
+								  "you may be better off downloading the latest Fritzing release."
+									 ));
 	messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 	messageBox.setDefaultButton(QMessageBox::Yes);
 	messageBox.setIcon(QMessageBox::Question);

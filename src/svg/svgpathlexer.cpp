@@ -22,8 +22,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "svgpathgrammar_p.h"
 #include "../utils/textutils.h"
 
-static const QRegExp findWhitespaceBefore(" ([AaCcMmVvTtQqSsLlVvHhZzx,])");
-static const QRegExp findWhitespaceAfter("([AaCcMmVvTtQqSsLlVvHhZz,]) ");
+static const QRegExp findWhitespaceBefore(" ([AaCcEeMmVvTtQqSsLlVvHhZzx,])");
+static const QRegExp findWhitespaceAfter("([AaCcEeMmVvTtQqSsLlVvHhZz,]) ");
 static const QRegExp findWhitespaceAtEnd(" $");
 static const QRegExp findMinus("-");
 

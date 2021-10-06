@@ -40,9 +40,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 static const int ConnectorIDJump = 1000;
 static const int MaxXDimension = 199;
-static const int MinXDimension = 5;
+static const int MinXDimension = 3;
 static const int MaxYDimension = 199;
-static const int MinYDimension = 5;
+static const int MinYDimension = 3;
 static const int WarningSize = 2000;
 
 static const QString OneHole("M%1,%2a%3,%3 0 1 %5 %4,0 %3,%3 0 1 %5 -%4,0z\n");
@@ -279,7 +279,7 @@ bool Perfboard::canEditPart() {
 	return false;
 }
 
-void Perfboard::changeBoardSize()
+bool Perfboard::boardSizeWarning()
 {
 	if (!m_gotWarning) {
 		int x = m_xEdit->text().toInt();
@@ -303,10 +303,17 @@ void Perfboard::changeBoardSize()
 				getXY(x, y, m_size);
 				m_xEdit->setText(QString::number(x));
 				m_yEdit->setText(QString::number(y));
-				return;
+				return true;
 			}
 		}
 	}
+	return false;
+}
+
+void Perfboard::changeBoardSize()
+{
+	if (boardSizeWarning())
+		return;
 
 	QString newSize = QString("%1.%2").arg(m_xEdit->text()).arg(m_yEdit->text());
 	m_propsMap.insert("size", newSize);

@@ -949,15 +949,16 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		double angle = atan2(transform.m12(), transform.m11()) * 180 / M_PI;
 		// No;Value;Package;X;Y;Rotation;Side;Name
 		QString string = QString("%1;%2;%3;%4;%5;%6;%7;%8\n")
-		                 .arg(ix++)
-						 .arg(value
-						 , itemBase->modelPart()->properties().value("package"))
-		                 .arg(GraphicsUtils::pixels2mm(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI))
-		                 .arg(GraphicsUtils::pixels2mm(loc.y() - bottomLeft.y(), GraphicsUtils::SVGDPI))
-		                 .arg(angle)
-		                 .arg(itemBase->viewLayerID() == ViewLayer::Copper1 ? "Top" : "Bottom")
-		                 .arg(itemBase->instanceTitle())
-		                 ;
+					.arg(ix++)
+					.arg(value
+						,itemBase->modelPart()->properties().value("package")
+					)
+					.arg(GraphicsUtils::pixels2mm(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI))
+					.arg(GraphicsUtils::pixels2mm(loc.y() - bottomLeft.y(), GraphicsUtils::SVGDPI))
+					.arg(angle)
+					.arg(itemBase->viewLayerID() == ViewLayer::Copper1 ? "Top" : "Bottom"
+						,itemBase->instanceTitle()
+					);
 		stream << string;
 		stream.flush();
 	}

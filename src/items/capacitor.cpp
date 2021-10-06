@@ -101,9 +101,10 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 				if (propertyDef->maxValue > propertyDef->minValue) {
 					validator->setBounds(propertyDef->minValue, propertyDef->maxValue);
 				}
-				QString pattern = QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d{1,2}))[%1]{0,1}[%2]{0,1}")
-				                  .arg(TextUtils::PowerPrefixesString)
-				                  .arg(propertyDef->symbol);
+				QString pattern = QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d{1,2}))[%1]{0,1}[%2]{0,1}").arg(
+					TextUtils::PowerPrefixesString, 
+					propertyDef->symbol
+				);
 				validator->setRegExp(QRegExp(pattern));
 				focusOutComboBox->setValidator(validator);
 				connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(propertyEntry(const QString &)));

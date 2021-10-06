@@ -130,7 +130,7 @@ private:
 CustomDelegate::CustomDelegate(QTableView* tableView)
 {
 	// create grid pen
-	int gridHint = tableView->style()->styleHint(QStyle::SH_Table_GridLineColor, new QStyleOptionViewItemV4());
+	int gridHint = tableView->style()->styleHint(QStyle::SH_Table_GridLineColor, new QStyleOptionViewItem());
 	QColor gridColor(gridHint);
 	_gridPen = QPen(gridColor, 0, tableView->gridStyle());
 }
@@ -196,7 +196,7 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 	int ix = 0;
 	foreach (QString labl, labels) {
 		QTableWidgetItem * item = new QTableWidgetItem(labl);
-		item->setFlags(0);
+		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(ix, 0, item);
 		ix += 1;
 	}
@@ -282,18 +282,18 @@ void QuoteDialog::setText() {
 
 		QTableWidgetItem * item = new QTableWidgetItem(QString::number(count));
 		item->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
-		item->setFlags(0);
+		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(0, i + 1, item);
 		item = new QTableWidgetItem(QString("%1%2%3").arg(hundredths(cost/count), 13, 'F', 2).arg(ThinSpaceSymbol).arg(EuroSymbol));
 		item->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
-		item->setFlags(0);
+		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(1, i + 1, item);
 		item = new QTableWidgetItem(QString("%1%2%3").arg(hundredths(cost), 13, 'F', 2).arg(ThinSpaceSymbol).arg(EuroSymbol));
 		item->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
 		QFont font = item->font();
 		font.setBold(true);
 		item->setFont(font);
-		item->setFlags(0);
+		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(2, i + 1, item);
 
 	}

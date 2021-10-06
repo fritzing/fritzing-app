@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Fritzing is made by: </source>
-        <translation type="unfinished"></translation>
+        <translation>フリッツィングは、次のように作られています。 </translation>
     </message>
     <message>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
@@ -33,10 +33,6 @@
     </message>
     <message>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Special thanks goes out to: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -80,18 +76,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Special thanks goes out as well to all the students </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>and alpha testers who were brave enough to give </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fritzing a test spin. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -105,67 +89,67 @@
     </message>
     <message>
         <source>Thanks for the translations go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>翻訳に感謝します。 </translation>
     </message>
     <message>
         <source>Spanish: </source>
-        <translation type="unfinished"></translation>
+        <translation>スペイン語。 </translation>
     </message>
     <message>
         <source>Italian: </source>
-        <translation type="unfinished"></translation>
+        <translation>イタリア語。 </translation>
     </message>
     <message>
         <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <translation>ポルトガル語（ヨーロッパ）。 </translation>
     </message>
     <message>
         <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
+        <translation>ポルトガル語（ブラジル）。 </translation>
     </message>
     <message>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
+        <translation>中国語（簡体字）。 </translation>
     </message>
     <message>
         <source>Japanese: </source>
-        <translation type="unfinished"></translation>
+        <translation>日本人です。 </translation>
     </message>
     <message>
         <source>Russian: </source>
-        <translation type="unfinished"></translation>
+        <translation>ロシア語です。 </translation>
     </message>
     <message>
         <source>Dutch: </source>
-        <translation type="unfinished"></translation>
+        <translation>オランダ語。 </translation>
     </message>
     <message>
         <source>Czech: </source>
-        <translation type="unfinished"></translation>
+        <translation>チェコ。 </translation>
     </message>
     <message>
         <source>Korean: </source>
-        <translation type="unfinished"></translation>
+        <translation>韓国語です。 </translation>
     </message>
     <message>
         <source>Slovak: </source>
-        <translation type="unfinished"></translation>
+        <translation>スロバキア語。 </translation>
     </message>
     <message>
         <source>Greek: </source>
-        <translation type="unfinished"></translation>
+        <translation>ギリシャ語。 </translation>
     </message>
     <message>
         <source>French: </source>
-        <translation type="unfinished"></translation>
+        <translation>フランス語。 </translation>
     </message>
     <message>
         <source>Turkish: </source>
-        <translation type="unfinished"></translation>
+        <translation>トルコ語。 </translation>
     </message>
     <message>
         <source>Bulgarian: </source>
-        <translation type="unfinished"></translation>
+        <translation>ブルガリア語。 </translation>
     </message>
     <message>
         <source>Yuelin and Ninjia</source>
@@ -173,7 +157,7 @@
     </message>
     <message>
         <source>Chinese (Traditional): </source>
-        <translation type="unfinished"></translation>
+        <translation>中国語（繁体字）。 </translation>
     </message>
     <message>
         <source>Robert Lee</source>
@@ -189,23 +173,27 @@
     </message>
     <message>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>and Kjell Morgenstern </source>
-        <translation type="unfinished"></translation>
+        <translation>バージョン %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <source>Ukrainian: </source>
-        <translation type="unfinished"></translation>
+        <translation>ウクライナ。 </translation>
     </message>
     <message>
         <source>Yelyzaveta Chyhryna</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Special thanks go out to: </source>
+        <translation>スペシャルサンクスをお贈りします。 </translation>
+    </message>
+    <message>
+        <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
+        <translation>勇気を持ってFritzingをテストしてくれた学生やアルファテスターの皆さんに感謝します。</translation>
     </message>
 </context>
 <context>
@@ -238,7 +226,7 @@
     <name>AutorouterSettingsDialog</name>
     <message>
         <source>Production type</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">生産形態</translation>
     </message>
     <message>
         <source>homebrew</source>
@@ -1025,6 +1013,56 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
 </context>
 <context>
+    <name>FabUploadDialog</name>
+    <message>
+        <source>Fritzing Fab Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get your board fabricated this week!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload it now to get a preview rendered by AISLER. Review, and if you like it, order it and get it manufactured in two days.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">キャンセル</translation>
+    </message>
+    <message>
+        <source>Upload to Fab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uploading...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FabUploadProgress</name>
+    <message>
+        <source>Fritzing</source>
+        <translation type="unfinished">Fritzing</translation>
+    </message>
+    <message>
+        <source>Could not connect to Fritzing fab.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error processing the project. The factory says: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FirstTimeHelpDialog</name>
     <message>
         <source>First Time Help</source>
@@ -1663,7 +1701,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>directly loading parts</source>
-        <translation>パーツを直接読み込み中</translation>
+        <translation type="vanished">パーツを直接読み込み中</translation>
     </message>
     <message>
         <source>loading %1 (model)</source>
@@ -2578,14 +2616,6 @@ Please check all views for potential side-effects.</source>
     </message>
     <message>
         <source>Display the parts bin in a list view</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate to Fritzing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Fritzing donation web page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3555,6 +3585,46 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Display breadboard wires using standard color coding by length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local part &apos;%1&apos; incomplete, only &apos;%2&apos; layers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View &apos;%1&apos; should be prefixed with &apos;%2/&apos;. Trying to continue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not copy subfile &apos;%1&apos; to &apos;%2&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local part &apos;%1&apos; incomplete, subfile not found &apos;%2&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to open local part &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visit fritzing.org</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>fritzing.org</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Routing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing Fab Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please first save your project in order to upload it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5103,6 +5173,10 @@ shift key swaps scroll axis</source>
         <source>Select a programmer (executable) for %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1</source>
+        <translation type="unfinished">%1</translation>
+    </message>
 </context>
 <context>
     <name>ProgramTab</name>
@@ -6049,10 +6123,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The parts folder &apos;%1&apos; has been changed--it is not in the master branch (%2). %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The parts folder &apos;%1&apos; may have been damaged (%2). %3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6086,10 +6156,6 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6175,6 +6241,14 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; has been changed--it is not in a supported branch (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6962,10 +7036,6 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7131,6 +7201,10 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7304,7 +7378,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <name>UpdateDialog</name>
     <message>
         <source>Close</source>
-        <translation>閉じる</translation>
+        <translation type="vanished">閉じる</translation>
     </message>
     <message>
         <source>A new main release is available for downloading:</source>
@@ -7380,6 +7454,10 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7459,26 +7537,6 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Fritzing Fab</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fritzing development needs you</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Software development and maintenance is a lot of work. Without your support, it is not possible to keep that up.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate and leave a comment.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

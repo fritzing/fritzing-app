@@ -296,8 +296,6 @@
         <file>resources/bins/icons/Search.png</file>
         <file>resources/bins/icons/Lilypad.png</file>
         <file>resources/bins/icons/Lilypad-mono.png</file>
-        <file>resources/bins/icons/Snootlab.png</file>
-        <file>resources/bins/icons/Snootlab-mono.png</file>
         <file>resources/bins/icons/SparkFun.png</file>
         <file>resources/bins/icons/SparkFun-mono.png</file>
         <file>resources/bins/icons/Contrib.png</file>
@@ -376,5 +374,6 @@
         <file>resources/images/icons/toolbarSaveCodeDisabled_icon.png</file>
         <file>resources/images/icons/toolbarSaveCodeEnabled_icon.png</file>
         <file>resources/images/icons/toolbarSaveCodePressed_icon.png</file>
+        <file>resources/images/icons/aisler_donut-cloud_logo_icon.png</file>
     </qresource>
 </RCC>

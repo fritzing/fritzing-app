@@ -13,6 +13,7 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 HEADERS += \
+    $$PWD/../src/sketch/renderthing.h \
     src/sketch/fgraphicsscene.h \
     src/sketch/breadboardsketchwidget.h \
     src/sketch/infographicsview.h \
@@ -24,6 +25,7 @@ HEADERS += \
 
 
 SOURCES += \
+    $$PWD/../src/sketch/renderthing.cpp \
     src/sketch/fgraphicsscene.cpp \
     src/sketch/breadboardsketchwidget.cpp \
     src/sketch/infographicsview.cpp \

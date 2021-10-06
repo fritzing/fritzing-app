@@ -48,7 +48,6 @@ win32 {
     }
 
     LIBS += -L$$LIBGIT2LIB -lgit2
-    message($$PKGCONFIG)
 }
 
 unix {

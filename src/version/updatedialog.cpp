@@ -2,6 +2,7 @@
 
 Part of the Fritzing project - http://fritzing.org
 Copyright (c) 2007-2019 Fritzing
+Copyright (c) 2020-2021 Fritzing GmbH
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -36,6 +37,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTimer>
 #include <QCloseEvent>
 #include <QMessageBox>
+#include <QDesktopServices>
 
 
 static const int s_maxProgress = 1000;
@@ -72,11 +74,9 @@ UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
 	vLayout->addWidget(m_progressBar);
 
 	m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-	m_buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Close"));
-	m_buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Update parts"));
 
 	connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(stopClose()));
-	connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(updateParts()));
+	connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(openInBrowser()));
 
 	vLayout->addWidget(m_buttonBox);
 
@@ -124,13 +124,18 @@ bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 	QString text = QString("<html><head><style type='text/css'>%1</style></head><body>").arg(style);
 
 	QSettings settings;
+	m_updateUrl = "";
 	if (mainRelease) {
 		text += genTable(tr("A new main release is available for downloading:"), mainRelease);
 		settings.setValue("lastMainVersionChecked", mainRelease->versionString);
+		m_updateUrl = mainRelease->link;
 	}
 	if (interimRelease) {
 		text += genTable(tr("A new interim release is available for downloading:"), interimRelease);
 		settings.setValue("lastInterimVersionChecked", interimRelease->versionString);
+		if (m_updateUrl.isEmpty()) {
+			m_updateUrl = interimRelease->link;
+		}
 	}
 
 	text += "</body></html>";
@@ -172,9 +177,23 @@ void UpdateDialog::releasesAvailableSlot() {
 		if (!this->isVisible()) {
 			this->exec();
 		}
-		return;
+	} else {
+		if (m_atUserRequest) {
+			m_buttonBox->setEnabled(true);
+			m_buttonBox->button(QDialogButtonBox::Cancel)->setVisible(false);
+			m_buttonBox->button(QDialogButtonBox::Cancel)->setEnabled(false);
+			m_buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Ok"));
+			m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(true);
+			if (!this->isVisible()) {
+				this->exec();
+			}
+		} else {
+			emit enableAgainSignal(true);
+		}
 	}
+}
 
+void UpdateDialog::partsAvailableSlot() {
 	bool canWrite = false;
 	QDir repoDir(m_repoPath);
 	QFile permissionTest(repoDir.absoluteFilePath("test.txt"));
@@ -207,7 +226,7 @@ void UpdateDialog::releasesAvailableSlot() {
 	m_feedbackLabel->setText(tr("<p>Checking for new parts...</p>"));
 	m_doClose = false;
 	m_partsCheckerResult.reset();
-	available = PartsChecker::newPartsAvailable(m_repoPath, m_shaFromDataBase, m_atUserRequest, m_remoteSha, m_partsCheckerResult);
+	bool available = PartsChecker::newPartsAvailable(m_repoPath, m_shaFromDataBase, m_atUserRequest, m_remoteSha, m_partsCheckerResult);
 	m_doClose = true;
 	if (!available) {
 		m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(false);
@@ -229,6 +248,7 @@ void UpdateDialog::releasesAvailableSlot() {
 	switch (m_partsCheckerResult.partsCheckerError) {
 	case PARTS_CHECKER_ERROR_NONE:
 		m_feedbackLabel->setText(sUpdatePartsMessage.arg(m_shaFromDataBase));
+		m_buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Update parts"));
 		m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(true);
 		break;
 	case PARTS_CHECKER_ERROR_REMOTE:
@@ -262,7 +282,7 @@ void UpdateDialog::releasesAvailableSlot() {
 	break;
 	}
 
-	m_buttonBox->setEnabled(true);
+	m_buttonBox->setEnabled(true);	
 	if (!this->isVisible()) {
 		this->exec();
 	}
@@ -300,6 +320,7 @@ void UpdateDialog::handleError()
 {
 	DebugDialog::debug("handle error");
 	m_feedbackLabel->setText(tr("<p>Sorry, unable to retrieve update info</p>"));
+	m_buttonBox->button(QDialogButtonBox::Cancel)->setVisible(true);
 	emit enableAgainSignal(true);
 	DebugDialog::debug("handle error done");
 }
@@ -328,6 +349,13 @@ void UpdateDialog::stopClose() {
 	m_versionChecker->stop();
 	this->close();
 	emit enableAgainSignal(true);
+}
+
+void UpdateDialog::openInBrowser()
+{
+	QDesktopServices::openUrl(m_updateUrl);
+	emit enableAgainSignal(true);
+	this->close();
 }
 
 void UpdateDialog::closeEvent(QCloseEvent * event) {
@@ -360,7 +388,9 @@ QString UpdateDialog::genTable(const QString & title, AvailableRelease * release
 
 	       .arg(title)
 	       .arg(release->versionString)
-	       .arg(release->dateTime.toString(Qt::DefaultLocaleShortDate))
+		   //.arg(QLocale::system().toString(release->dateTime., QLocale::LongFormat))
+		   //.arg(release->dateTime.toString(Qt::ISODate))
+		   .arg(release->dateTime.toString(QLocale().dateFormat(QLocale::LongFormat)))
 	       .arg(release->link)
 	       .arg(release->summary.replace("changelog:", "", Qt::CaseInsensitive));
 }

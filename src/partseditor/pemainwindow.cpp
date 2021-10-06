@@ -954,7 +954,9 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 	reload(true);
 
 	foreach (ViewThing * viewThing, m_viewThings.values()) {
-		viewThing->originalSvgPath = viewThing->itemBase->filename();
+		if (viewThing->itemBase) {
+			viewThing->originalSvgPath = viewThing->itemBase->filename();
+		}
 		viewThing->svgChangeCount = 0;
 	}
 
@@ -1321,6 +1323,9 @@ void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase,
 	int errorColumn;
 
 	QDomDocument tempSvgDoc;
+	if (!itemBase) {
+		return;
+	}
 	QFile file(itemBase->filename());
 	if (!tempSvgDoc.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
 		DebugDialog::debug(QString("unable to parse svg: %1 %2 %3").arg(errorStr).arg(errorLine).arg(errorColumn));
@@ -1567,7 +1572,7 @@ void PEMainWindow::loadImage()
 			return;
 		}
 
-		QStringList availFonts = InstalledFonts::InstalledFontsList.toList();
+		QStringList availFonts = InstalledFonts::InstalledFontsList.values();
 		if (availFonts.count() > 0) {
 			QString destFont = availFonts.at(0);
 			foreach (QString f, availFonts) {
@@ -1649,7 +1654,12 @@ void PEMainWindow::loadImage()
 
 	QFileInfo info(origPath);
 	QUndoCommand * parentCommand = new QUndoCommand(QString("Load '%1'").arg(info.fileName()));
-	new ChangeSvgCommand(this, m_currentGraphicsView, itemBase->filename(), newPath, parentCommand);
+
+	QString oldPath;
+	if (itemBase) {
+		oldPath = itemBase->filename();
+	}
+	new ChangeSvgCommand(this, m_currentGraphicsView, oldPath, newPath, parentCommand);
 	m_undoStack->waitPush(parentCommand, SketchWidget::PropChangeDelay);
 }
 
@@ -1752,8 +1762,10 @@ void PEMainWindow::changeSvg(SketchWidget * sketchWidget, const QString & filena
 	setImageAttribute(fzpRoot, filename, sketchWidget->viewID());
 
 	foreach (ViewThing * viewThing, m_viewThings.values()) {
-		foreach(ItemBase * lk, viewThing->itemBase->layerKin()) {
-			delete lk;
+		if (viewThing->itemBase) {
+			foreach(ItemBase * lk, viewThing->itemBase->layerKin()) {
+				delete lk;
+			}
 		}
 		delete viewThing->itemBase;
 		viewThing->itemBase = nullptr;
@@ -1816,6 +1828,7 @@ void PEMainWindow::reload(bool firstTime)
 	itemBases <<  m_pcbGraphicsView->addItem(modelPart, m_pcbGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
 
 	foreach (ItemBase * itemBase, itemBases) {
+		if (!itemBase) continue;
 		ViewThing * viewThing = m_viewThings.value(itemBase->viewID());
 		viewThing->itemBase = itemBase;
 		viewThing->referenceFile = getSvgReferenceFile(itemBase->filename());
@@ -1851,6 +1864,7 @@ void PEMainWindow::reload(bool firstTime)
 		// TODO: may have to revisit this and move all pegi items
 		//viewThing->itemBase->setMoveLock(true);
 		//viewThing->itemBase->setItemIsSelectable(false);
+		if (!viewThing->itemBase) { continue; }
 		viewThing->itemBase->setAcceptsMousePressLegEvent(false);
 		viewThing->itemBase->setSwappable(false);
 		viewThing->sketchWidget->hideConnectors(true);

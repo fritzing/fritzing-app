@@ -48,7 +48,7 @@ void debugError(bool result, QSqlQuery & query) {
 	if (result) return;
 
 	QSqlError error = query.lastError();
-	DebugDialog::debug(QString("%1 %2 %3").arg(error.text()).arg(error.number()).arg(error.type()));
+	DebugDialog::debug(QString("%1 %2 %3").arg(error.text()).arg(error.nativeErrorCode()).arg(error.type()));
 }
 
 static ModelPart * DebugModelPart = NULL;

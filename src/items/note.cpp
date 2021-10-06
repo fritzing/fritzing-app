@@ -107,17 +107,6 @@ QString addText(const QString & text, bool inUrl)
 
 ///////////////////////////////////////
 
-class NoteGraphicsTextItem : public QGraphicsTextItem
-{
-public:
-	NoteGraphicsTextItem(QGraphicsItem * parent = NULL);
-	void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
-
-protected:
-	void focusInEvent(QFocusEvent *);
-	void focusOutEvent(QFocusEvent *);
-};
-
 NoteGraphicsTextItem::NoteGraphicsTextItem(QGraphicsItem * parent) : QGraphicsTextItem(parent)
 {
 	const QTextFrameFormat format = document()->rootFrame()->frameFormat();

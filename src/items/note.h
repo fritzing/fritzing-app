@@ -102,6 +102,18 @@ protected:
 
 };
 
+class NoteGraphicsTextItem : public QGraphicsTextItem
+{
+	Q_OBJECT
+public:
+	NoteGraphicsTextItem(QGraphicsItem * parent = NULL);
+	void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
+
+protected:
+	void focusInEvent(QFocusEvent *);
+	void focusOutEvent(QFocusEvent *);
+};
+
 class LinkDialog : public QDialog
 {
 	Q_OBJECT

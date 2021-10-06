@@ -54,6 +54,7 @@ protected:
 };
 
 class ZoomControlsPrivate : public QFrame {
+	Q_OBJECT
 public:
 	ZoomControlsPrivate(ZoomableGraphicsView*, QBoxLayout::Direction = QBoxLayout::TopToBottom, QWidget *parent=0);
 

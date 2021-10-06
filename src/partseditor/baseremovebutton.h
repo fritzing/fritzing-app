@@ -23,6 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QLabel>
 
 class BaseRemoveButton : public QLabel {
+	Q_OBJECT
 public:
 	BaseRemoveButton(QWidget *parent) : QLabel(parent) {
 		m_enterIcon = QPixmap(":/resources/images/remove_prop_enter.png");

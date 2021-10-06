@@ -25,6 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class GroundPlane : public PaletteItem
 {
+	Q_OBJECT
 
 public:
 	GroundPlane( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool doLabel);

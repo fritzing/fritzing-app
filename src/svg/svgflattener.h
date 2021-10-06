@@ -29,6 +29,7 @@ typedef std::map<QString, QString> SvgAttributesMap;
 
 class SvgFlattener : public SvgFileSplitter
 {
+	Q_OBJECT
 public:
 	SvgFlattener();
 

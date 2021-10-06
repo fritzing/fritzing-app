@@ -168,6 +168,7 @@ protected:
 
 class BlogListDelegate : public QAbstractItemDelegate
 {
+	Q_OBJECT
 public:
 	BlogListDelegate(QObject *parent = 0);
 	virtual ~BlogListDelegate();

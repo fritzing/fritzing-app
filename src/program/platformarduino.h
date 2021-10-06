@@ -7,6 +7,7 @@
 
 class PlatformArduino : public Platform
 {
+	Q_OBJECT
 public:
 	PlatformArduino();
 

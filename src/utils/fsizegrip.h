@@ -27,6 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 class FSizeGrip : public QSizeGrip {
+	Q_OBJECT
 public:
 	FSizeGrip(QMainWindow *parent);
 	void rearrange();

@@ -421,7 +421,7 @@ void Board::moreCheckImage(const QString & filename) {
 	int mCount = 0;
 	if (element.tagName() == "path") {
 		QString originalPath = element.attribute("d", "").trimmed();
-		if (MultipleZs.indexIn(originalPath) >= 0) {
+		if (originalPath.contains(MultipleZs)) {
 			QStringList ds = element.attribute("d").split("z", Qt::SkipEmptyParts);
 			subpaths = ds.count();
 			foreach (QString d, ds) {

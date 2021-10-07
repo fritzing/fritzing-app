@@ -883,7 +883,7 @@ void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 		dirToRemove = destFolder.path();
 	}
 	else {
-		destFolder = QDir(destFolderPath);
+		destFolder.setPath(destFolderPath);
 	}
 
 	QString aux = QFileInfo(bundledFileName).fileName();

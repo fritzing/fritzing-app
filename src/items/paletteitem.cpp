@@ -1275,7 +1275,7 @@ QString PaletteItem::hackSvgHoleSize(QDomDocument & domDocument, const QString &
 	for (int i = 0; i < circles.count(); i++) {
 		QDomElement circle = circles.at(i).toElement();
 		QString id = circle.attribute("id");
-		if (ConnectorFinder.indexIn(id) == 0) {
+		if (id.indexOf(ConnectorFinder) == 0) {
 			circle.setAttribute("r", QString::number(rad));
 			circle.setAttribute("stroke-width", QString::number(rt));
 		}

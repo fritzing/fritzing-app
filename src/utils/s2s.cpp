@@ -8,7 +8,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QtDebug>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <qmath.h>
 #include <QDomNodeList>
 #include <QDomDocument>
@@ -92,10 +92,9 @@ void setHiddenAux(QList<ConnectorLocation *> & allConnectorLocations, QList<Conn
 
 /////////////////////////////////
 
-static QRegExp IntegerFinder("\\d+");
+static QRegularExpression IntegerFinder("\\d+");
 static const double ImageFactor = 5;
 static const double FudgeDivisor = 300;
-static const QRegExp VersionRegexp("[ -_][vV][\\d]+");
 
 ///////////////////////////////////////////////////////
 
@@ -270,10 +269,6 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 	QDomElement titleElement = root.firstChildElement("title");
 	QString title;
 	TextUtils::findText(titleElement, title);
-	//int ix = VersionRegexp.lastIndexIn(title);
-	//if (ix > 0 && ix + VersionRegexp.cap(0).count() == title.count()) {
-	//    title.chop(VersionRegexp.cap(0).count());
-	//}
 	QStringList titles;
 	titles << title;
 	TextUtils::resplit(titles, " ");
@@ -587,9 +582,9 @@ QList<ConnectorLocation *> S2S::initConnectors(const QDomElement & root, const Q
 			connectorLocation->hidden = false;
 			connectorLocation->displayPinNumber = false;
 			QString id = connector.attribute("id");
-			int ix = IntegerFinder.indexIn(id);
-			if (ix > 0) {
-				connectorLocation->id = IntegerFinder.cap(0).toInt();
+			QRegularExpressionMatch match;
+			if (id.indexOf(IntegerFinder, 0, &match) > 0) {
+				connectorLocation->id = match.captured(0).toInt();
 				if (idlist.size() < connectorLocation->id + 1) {
 					int oldsize = idlist.size();
 					idlist.resize(connectorLocation->id + 1);

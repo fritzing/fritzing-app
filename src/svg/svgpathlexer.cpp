@@ -22,10 +22,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "svgpathgrammar_p.h"
 #include "../utils/textutils.h"
 
-static const QRegExp findWhitespaceBefore(" ([AaCcEeMmVvTtQqSsLlVvHhZzx,])");
-static const QRegExp findWhitespaceAfter("([AaCcEeMmVvTtQqSsLlVvHhZz,]) ");
-static const QRegExp findWhitespaceAtEnd(" $");
-static const QRegExp findMinus("-");
+static const QRegularExpression findWhitespaceBefore(" ([AaCcEeMmVvTtQqSsLlVvHhZzx,])");
+static const QRegularExpression findWhitespaceAfter("([AaCcEeMmVvTtQqSsLlVvHhZz,]) ");
+static const QRegularExpression findWhitespaceAtEnd(" $");
+static const QRegularExpression findMinus("-");
 
 SVGPathLexer::SVGPathLexer(const QString &source)
 {

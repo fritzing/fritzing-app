@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QtCore/QString>
 #include <QtCore/QHash>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QDomElement>
 #include <QMatrix>
 

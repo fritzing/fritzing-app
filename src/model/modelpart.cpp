@@ -40,7 +40,7 @@ typedef QHash<QString, ModelPartList*> InstanceTitleIncrementHash;
 static QHash<QObject *, InstanceTitleIncrementHash *> AllInstanceTitleIncrements;
 InstanceTitleIncrementHash NullInstanceTitleIncrements;
 
-static const QRegExp InstanceTitleRegExp("^(.*[^\\d])(\\d+)$");
+static const QRegularExpression InstanceTitleRegExp("^(.*[^\\d])(\\d+)$");
 
 static const QList<ViewImage *> EmptyViewImages;
 
@@ -746,9 +746,9 @@ void ModelPart::clearOldInstanceTitle(const QString & title)
 
 	//DebugDialog::debug(QString("clearing title:%1 ix:%2").arg(title).arg(modelPart->modelIndex()));
 	QString prefix = title;
-	int ix = InstanceTitleRegExp.indexIn(title);
-	if (ix >= 0) {
-		prefix = InstanceTitleRegExp.cap(1);
+	QRegularExpressionMatch match;
+	if (title.contains(InstanceTitleRegExp, &match)) {
+		prefix = match.captured(1);
 	}
 	ModelPartList * modelParts = itih->value(prefix, nullptr);
 	if (modelParts) {
@@ -791,9 +791,10 @@ void ModelPart::setInstanceTitle(QString title, bool initial) {
 	m_instanceTitle = title;
 
 	QString prefix = title;
-	int ix = InstanceTitleRegExp.indexIn(title);
-	if (ix >= 0) {
-		prefix = InstanceTitleRegExp.cap(1);
+
+	QRegularExpressionMatch match;
+	if (title.contains(InstanceTitleRegExp, &match)) {
+		prefix = match.captured(1);
 		ModelPartList * modelParts = ensureInstanceTitleIncrements(prefix);
 		modelParts->append(this);
 	}
@@ -834,9 +835,10 @@ bool ModelPart::setSubpartInstanceTitle() {
 
 QString ModelPart::getNextTitle(const QString & title) {
 	QString prefix = title;
-	int ix = InstanceTitleRegExp.indexIn(title);
-	if (ix >= 0) {
-		prefix = InstanceTitleRegExp.cap(1);
+
+	QRegularExpressionMatch match;
+	if (title.contains(InstanceTitleRegExp, &match)) {
+		prefix = match.captured(1);
 	}
 	else {
 		bool allDigits = true;

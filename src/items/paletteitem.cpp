@@ -48,7 +48,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMessageBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QGroupBox>
 #include <QLabel>
 #include <limits>
@@ -66,11 +66,9 @@ QString HoleSettings::holeSize() {
 
 /////////////////////////////////////////////////
 
-static QRegExp LabelFinder("id=['|\"]label['|\"]");
-
 static bool ByIDParseSuccessful = true;
 
-static QRegExp ConnectorFinder("connector\\d+pin");
+static QRegularExpression ConnectorFinder("connector\\d+pin");
 const QString PaletteItem::HoleSizePrefix("_hs_");
 
 int findNumber(const QString & string) {

@@ -54,7 +54,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 /////////////////////////////////
 
-static QRegExp NumberMatcher;
+static QRegularExpression NumberMatcher;
 static QHash<QString, double> NumberMatcherValues;
 
 static constexpr double InactiveOpacity = 0.4;
@@ -211,7 +211,7 @@ ModelPartShared * ItemBase::modelPartShared() {
 }
 
 void ItemBase::initNames() {
-	if (NumberMatcher.isEmpty()) {
+	if (NumberMatcher.pattern().isEmpty()) {
 		NumberMatcher.setPattern(QString("(([0-9]+(\\.[0-9]*)?)|\\.[0-9]+)([\\s]*([") + TextUtils::PowerPrefixesString + "]))?");
 	}
 
@@ -1659,13 +1659,13 @@ QStringList ItemBase::collectValues(const QString & family, const QString & prop
 	NumberMatcherValues.clear();
 	bool ok = true;
 	foreach(QString opt, values) {
-		int ix = NumberMatcher.indexIn(opt);
-		if (ix < 0) {
+		QRegularExpressionMatch match;
+		if (!opt.contains(NumberMatcher, &match)) {
 			ok = false;
 			break;
 		}
 
-		double n = TextUtils::convertFromPowerPrefix(NumberMatcher.cap(1) + NumberMatcher.cap(5), "");
+		double n = TextUtils::convertFromPowerPrefix(match.captured(1) + match.captured(5), "");
 		NumberMatcherValues.insert(opt, n);
 	}
 	if (ok) {

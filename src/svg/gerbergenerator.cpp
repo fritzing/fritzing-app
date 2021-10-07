@@ -839,7 +839,7 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 	for (int p = 0; p < paths.count() && contoursOK; p++) {
 		QDomElement path = paths.at(p).toElement();
 		QString originalPath = path.attribute("d", "").trimmed();
-		if (MultipleZs.indexIn(originalPath) < 0) continue;
+		if (!originalPath.contains(MultipleZs)) continue;
 
 		multipleContours = true;
 		QStringList subpaths = path.attribute("d").split("z", Qt::SkipEmptyParts);
@@ -865,7 +865,7 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 	for (int p = 0; p < paths.count(); p++) {
 		QDomElement path = paths.at(p).toElement();
 		QString originalPath = path.attribute("d", "").trimmed();
-		if (MultipleZs.indexIn(originalPath) >= 0) {
+		if (originalPath.contains(MultipleZs)) {
 			QStringList subpaths = path.attribute("d").split("z", Qt::SkipEmptyParts, Qt::CaseInsensitive);
 			MFinder.indexIn(subpaths.at(0).trimmed());
 			QString priorM = MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";

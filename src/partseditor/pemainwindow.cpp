@@ -866,7 +866,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 		else {
 			// deal with copper0 and copper1 layers as parent/child
 			// have to remove whitespace in order to compare the two svgs
-			QRegExp white("\\s");
+			QRegularExpression white("\\s");
 			QStringList whiteList;
 			foreach (QString string, svgList) {
 				string.remove(white);

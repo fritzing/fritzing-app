@@ -274,7 +274,7 @@ bool TextUtils::squashElement(QDomDocument & doc, const QString & elementName, c
 			if (att.isEmpty()) continue;
 
 			if (!matchContent.isEmpty()) {
-				if (matchContent.indexIn(att) < 0) continue;
+				if (!att.contains(matchContent)) continue;
 			}
 		}
 
@@ -1644,7 +1644,7 @@ int TextUtils::getPinsAndSpacing(const QString & expectedFileName, QString & spa
 
 	spacingString = "100mil";
 	for (++pix; pix < pieces.count(); pix++) {
-		if (QRegExp("\\d").indexIn(pieces.at(pix)) == 0) {
+		if (pieces.at(pix).indexOf(QRegExp("\\d")) == 0) {
 			spacingString = pieces.at(pix);
 			return pins;
 		}

@@ -41,7 +41,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPushButton>
 #include <QImageReader>
 #include <QMessageBox>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <qmath.h>
 #include <qnumeric.h>
 
@@ -55,7 +55,7 @@ static QHash<QString, QString> BoardLayerTemplates;
 static QHash<QString, QString> SilkscreenLayerTemplates;
 static QHash<QString, QString> Silkscreen0LayerTemplates;
 static const int LineThickness = 8;
-static const QRegExp HeightExpr("height=\\'\\d*px");
+static const QRegularExpression HeightExpr("height=\\'\\d*px");
 static QString StandardCustomBoardExplanation;
 
 QStringList Board::BoardImageNames;

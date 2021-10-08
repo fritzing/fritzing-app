@@ -32,7 +32,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFrame>
 #include <QLabel>
 #include <QLineEdit>
-#include <QRegExp>
 #include <qmath.h>
 
 static const int IndexCm = 0;

@@ -258,8 +258,8 @@ void SVG2gerber::copyStyles(QDomElement source, QDomElement dest) {
 	}
 }
 
-QMatrix SVG2gerber::parseTransform(QDomElement element) {
-	QMatrix transform = QMatrix();
+QTransform SVG2gerber::parseTransform(QDomElement element) {
+	QTransform transform = QTransform();
 
 	QString svgTransform = element.attribute("transform");
 

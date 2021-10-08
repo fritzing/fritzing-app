@@ -24,7 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QString>
 #include <QDomElement>
 #include <QObject>
-#include <QMatrix>
+#include <QTransform>
 #include <QMultiHash>
 
 class SVG2gerber : public QObject
@@ -64,7 +64,7 @@ protected:
 	void normalizeSVG();
 	void convertShapes2paths(QDomNode);
 	void flattenSVG(QDomNode);
-	QMatrix parseTransform(QDomElement);
+	QTransform parseTransform(QDomElement);
 
 	QDomElement ellipse2path(QDomElement);
 

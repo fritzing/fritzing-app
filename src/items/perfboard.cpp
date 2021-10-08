@@ -197,7 +197,7 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		vboxLayout->setAlignment(Qt::AlignLeft);
 		vboxLayout->setSpacing(1);
 		vboxLayout->setContentsMargins(0, 3, 0, 0);
-		vboxLayout->setMargin(0);
+		vboxLayout->setContentsMargins(0, 0, 0, 0);
 
 		QFrame * subframe1 = new QFrame();
 		QHBoxLayout * hboxLayout1 = new QHBoxLayout();
@@ -206,7 +206,7 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		hboxLayout1->setSpacing(2);
 
 		QLabel * l1 = new QLabel(getColumnLabel());
-		l1->setMargin(0);
+		l1->setContentsMargins(0, 0, 0, 0);
 		l1->setObjectName("infoViewLabel");
 		m_xEdit = new QLineEdit();
 		m_xEdit->setEnabled(swappingEnabled);
@@ -224,7 +224,7 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		hboxLayout2->setSpacing(2);
 
 		QLabel * l2 = new QLabel(getRowLabel());
-		l2->setMargin(0);
+		l2->setContentsMargins(0, 0, 0, 0);
 		l2->setObjectName("infoViewLabel");
 		m_yEdit = new QLineEdit();
 		m_yEdit->setEnabled(swappingEnabled);

@@ -300,7 +300,7 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 		hboxLayout->setAlignment(Qt::AlignRight);
 		hboxLayout->setContentsMargins(0, 0, 0, 0);
 		hboxLayout->setSpacing(5);
-		hboxLayout->setMargin(0);
+		hboxLayout->setContentsMargins(0, 0, 0, 0);
 
 		hboxLayout->addWidget(e1);
 		hboxLayout->addWidget(radioCm);

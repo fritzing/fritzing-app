@@ -909,7 +909,7 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 	frame->setObjectName("infoViewPartFrame");
 
 	QVBoxLayout * vBoxLayout = new QVBoxLayout(frame);
-	vBoxLayout->setMargin(0);
+	vBoxLayout->setContentsMargins(0, 0, 0, 0);
 	vBoxLayout->setContentsMargins(0, 0, 0, 0);
 	vBoxLayout->setSpacing(0);
 
@@ -928,18 +928,18 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 
 		QFrame * hFrame = new QFrame(frame);
 		QHBoxLayout * hLayout = new QHBoxLayout(hFrame);
-		hLayout->setMargin(0);
+		hLayout->setContentsMargins(0, 0, 0, 0);
 
 		QGroupBox * subFrame = new QGroupBox(tr("advanced settings"), frame);
 		subFrame->setObjectName("infoViewGroupBox");
 
 		QGridLayout * gridLayout = new QGridLayout(subFrame);
-		gridLayout->setMargin(0);
+		gridLayout->setContentsMargins(0, 0, 0, 0);
 
 		QGroupBox * rbFrame = new QGroupBox("", subFrame);
 		rbFrame->setObjectName("infoViewGroupBox");
 		QVBoxLayout * vbl = new QVBoxLayout(rbFrame);
-		vbl->setMargin(0);
+		vbl->setContentsMargins(0, 0, 0, 0);
 
 		holeSettings.inRadioButton = new QRadioButton(tr("in"), subFrame);
 		gridLayout->addWidget(holeSettings.inRadioButton, 0, 2);

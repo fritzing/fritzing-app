@@ -213,7 +213,7 @@ void Board::setupLoadImage(QWidget * parent, const QString & family, const QStri
 	QVBoxLayout * vboxLayout = new QVBoxLayout();
 	vboxLayout->setContentsMargins(0, 0, 0, 0);
 	vboxLayout->setSpacing(0);
-	vboxLayout->setMargin(0);
+	vboxLayout->setContentsMargins(0, 0, 0, 0);
 
 	QComboBox * comboBox = new QComboBox();
 	comboBox->setObjectName("infoViewComboBox");
@@ -1006,19 +1006,19 @@ bool ResizableBoard::collectExtraInfo(QWidget * parent, const QString & family, 
 			QVBoxLayout * vboxLayout = new QVBoxLayout();
 			vboxLayout->setAlignment(Qt::AlignLeft);
 			vboxLayout->setSpacing(0);
-			vboxLayout->setMargin(0);
+			vboxLayout->setContentsMargins(0, 0, 0, 0);
 			vboxLayout->setContentsMargins(0, 3, 0, 0);
 
 			double tens = pow(10.0, m_decimalsAfter);
 			QRectF r = this->boundingRect();
 			double w = qRound(GraphicsUtils::pixels2mm(r.width(), GraphicsUtils::SVGDPI) * tens) / tens;
 			QLabel * l1 = new QLabel(tr("width: %1mm").arg(w));
-			l1->setMargin(0);
+			l1->setContentsMargins(0, 0, 0, 0);
 			l1->setObjectName("infoViewLabel");
 
 			double h = qRound(GraphicsUtils::pixels2mm(r.height(), GraphicsUtils::SVGDPI) * tens) / tens;
 			QLabel * l2 = new QLabel(tr("height: %1mm").arg(h));
-			l2->setMargin(0);
+			l2->setContentsMargins(0, 0, 0, 0);
 			l2->setObjectName("infoViewLabel");
 
 			if (returnWidget) vboxLayout->addWidget(qobject_cast<QWidget *>(returnWidget));
@@ -1276,7 +1276,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 	hboxLayout2->setSpacing(2);
 
 	QLabel * l1 = new QLabel(tr("width(mm)"));
-	l1->setMargin(0);
+	l1->setContentsMargins(0, 0, 0, 0);
 	l1->setObjectName("infoViewLabel");
 	QLineEdit * e1 = new QLineEdit();
 	QDoubleValidator * validator = new QDoubleValidator(e1);
@@ -1289,7 +1289,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 	e1->setText(QString::number(w));
 
 	QLabel * l2 = new QLabel(tr("height(mm)"));
-	l2->setMargin(0);
+	l2->setContentsMargins(0, 0, 0, 0);
 	l2->setObjectName("infoViewLabel");
 	QLineEdit * e2 = new QLineEdit();
 	validator = new QDoubleValidator(e1);
@@ -1328,7 +1328,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 
 		if (includeAspectRatio) {
 			QLabel * l3 = new QLabel(tr("keep aspect ratio"));
-			l3->setMargin(0);
+			l3->setContentsMargins(0, 0, 0, 0);
 			l3->setObjectName("infoViewLabel");
 			QCheckBox * checkBox = new QCheckBox();
 			checkBox->setChecked(m_keepAspectRatio);
@@ -1356,7 +1356,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 			initPaperSizes();
 
 			QLabel * l3 = new QLabel(tr("size"));
-			l3->setMargin(0);
+			l3->setContentsMargins(0, 0, 0, 0);
 			l3->setObjectName("infoViewLabel");
 
 			m_paperSizeComboBox = new QComboBox();

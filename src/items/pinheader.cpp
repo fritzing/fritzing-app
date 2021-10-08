@@ -34,7 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDomDocument>
 #include <QDomElement>
 #include <QLineEdit>
-#include <QRegExp>
+#include <QRegularExpression>
 
 //////////////////////////////////////////////////
 

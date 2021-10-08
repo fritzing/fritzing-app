@@ -24,7 +24,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../debugdialog.h"
 #include <QTransform>
-#include <QRegExp>
 #include <QTextStream>
 #include <qmath.h>
 #include <stdexcept>

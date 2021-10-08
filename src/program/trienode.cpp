@@ -23,7 +23,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "trienode.h"
 #include "../debugdialog.h"
 
-#include <QRegExp>
 #include <QXmlStreamReader>
 
 

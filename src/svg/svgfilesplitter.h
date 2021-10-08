@@ -28,7 +28,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QObject>
 #include <QMatrix>
 #include <QPainterPath>
-#include <QRegExp>
 #include <QFile>
 
 struct PathUserData {

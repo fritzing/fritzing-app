@@ -29,7 +29,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QFileInfoList>
 #include <QFileInfo>
-#include <QRegExp>
 #include <QSettings>
 #include <QFontMetrics>
 #include <QTextStream>

@@ -23,7 +23,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../debugdialog.h"
 
-#include <QRegExp>
 #include <stdlib.h>
 
 #define STRINGOFFSET 10

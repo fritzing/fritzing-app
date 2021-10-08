@@ -22,7 +22,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 #include "../utils/textutils.h"
 
-#include <QRegExp>
 #include <QXmlStreamReader>
 
 QHash<QString, QString> Syntaxer::m_listsToFormats;

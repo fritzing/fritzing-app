@@ -31,7 +31,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "partlabel.h"
 
 #include <qmath.h>
-#include <QRegExpValidator>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QLabel>
@@ -362,16 +361,16 @@ QString Perfboard::genModuleID(QMap<QString, QString> & currPropsMap)
 
 bool Perfboard::getXY(int & x, int & y, const QString & s)
 {
-	QRegExp re("(\\d+)\\.(\\d+)");
+	QRegularExpression re("(\\d+)\\.(\\d+)");
 
-	int ix = re.indexIn(s);
-	if (ix < 0) return false;
+	QRegularExpressionMatch match;
+	if (!s.contains(re, &match)) return false;
 
 	bool ok;
-	x = re.cap(1).toInt(&ok);
+	x = match.captured(1).toInt(&ok);
 	if (!ok) return false;
 
-	y = re.cap(2).toInt(&ok);
+	y = match.captured(2).toInt(&ok);
 	return ok;
 }
 

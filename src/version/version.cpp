@@ -26,6 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSettings>
 #include <QUrl>
 #include <QSysInfo>
+#include <QRegularExpression>
 
 #include "../debugdialog.h"
 #include "../utils/textutils.h"
@@ -165,21 +166,22 @@ void Version::toVersionThing(const QString & candidate, VersionThing & versionTh
 		modString += s + "|";
 	}
 	modString.chop(1);
-	QRegExp sw(QString("([\\d]+)\\.([\\d]+)\\.([\\d]+)[\\.]{0,1}(%1)").arg(modString));
-	if (sw.indexIn(candidate) != 0) {
+	QRegularExpression sw(QString("([\\d]+)\\.([\\d]+)\\.([\\d]+)[\\.]{0,1}(%1)").arg(modString));
+	QRegularExpressionMatch match;
+	if (candidate.indexOf(sw, 0, &match) != 0) {
 		return;
 	}
 
-	versionThing.majorVersion = sw.cap(1).toInt(&versionThing.ok);
+	versionThing.majorVersion = match.captured(1).toInt(&versionThing.ok);
 	if (!versionThing.ok) return;
 
-	versionThing.minorVersion = sw.cap(2).toInt(&versionThing.ok);
+	versionThing.minorVersion = match.captured(2).toInt(&versionThing.ok);
 	if (!versionThing.ok) return;
 
-	versionThing.minorSubVersion = sw.cap(3).toInt(&versionThing.ok);
+	versionThing.minorSubVersion = match.captured(3).toInt(&versionThing.ok);
 	if (!versionThing.ok) return;
 
-	versionThing.releaseModifier = sw.cap(4);
+	versionThing.releaseModifier = match.captured(4);
 }
 
 void Version::cleanup() {

@@ -201,7 +201,7 @@ void PartsBinPaletteWidget::setupHeader()
 	m_header->setObjectName("partsBinHeader");
 	QHBoxLayout * hbl = new QHBoxLayout();
 	hbl->setSpacing(0);
-	hbl->setMargin(0);
+	hbl->setContentsMargins(0, 0, 0, 0);
 
 	hbl->addWidget(m_searchStackedWidget);
 	hbl->addWidget(m_combinedBinMenuButton);

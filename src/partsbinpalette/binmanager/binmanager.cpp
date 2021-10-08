@@ -124,7 +124,7 @@ BinManager::BinManager(class ReferenceModel *referenceModel, class HtmlInfoView 
 	m_stackTabWidget->setTabPosition(QTabWidget::West);
 	lo->addWidget(m_stackTabWidget);
 
-	lo->setMargin(0);
+	lo->setContentsMargins(0, 0, 0, 0);
 	lo->setSpacing(0);
 	setMaximumHeight(500);
 }

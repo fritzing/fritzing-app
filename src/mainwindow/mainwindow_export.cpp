@@ -83,8 +83,8 @@ static QHash<QString, QPrinter::OutputFormat> filePrintFormats;
 static QHash<QString, QImage::Format> fileExportFormats;
 static QHash<QString, QString> fileExtFormats;
 
-static QRegExp AaCc("[aAcC]");
-static QRegExp LabelNumber("([^\\d]+)(.*)");
+static QRegularExpression AaCc("[aAcC]");
+static QRegularExpression LabelNumber("([^\\d]+)(.*)");
 
 static const double InchesPerMeter = 39.3700787;
 
@@ -93,17 +93,17 @@ static const double InchesPerMeter = 39.3700787;
 bool sortPartList(ItemBase * b1, ItemBase * b2) {
 	bool result = b1->instanceTitle().toLower() < b2->instanceTitle().toLower();
 
-	int ix1 = LabelNumber.indexIn(b1->instanceTitle());
-	if (ix1 < 0) return result;
+	QRegularExpressionMatch match;
+	if (!b1->instanceTitle().contains(LabelNumber, &match)) return result;
 
-	QString label1 = LabelNumber.cap(1);
-	QString number1 = LabelNumber.cap(2);
+	QString label1 = match.captured(1);
+	QString number1 = match.captured(2);
 
-	int ix2 = LabelNumber.indexIn(b2->instanceTitle());
-	if (ix2 < 0) return result;
+	match = QRegularExpressionMatch();
+	if (!b2->instanceTitle().contains(LabelNumber, &match)) return result;
 
-	QString label2 = LabelNumber.cap(1);
-	QString number2 = LabelNumber.cap(2);
+	QString label2 = match.captured(1);
+	QString number2 = match.captured(2);
 	if (label2.compare(label1, Qt::CaseInsensitive) != 0) return result;
 
 	bool ok;
@@ -1352,7 +1352,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName) {
  */
 QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class ConnectorItem *>* >& netList, QSet<class ItemBase *>& itemBases) {
 	QString output = simulationName + "\n";
-	static QRegExp curlies("\\{([^\\{\\}]*)\\}");
+	static QRegularExpression curlies("\\{([^\\{\\}]*)\\}");
 	QHash<ConnectorItem *, int> indexer;
 	this->m_schematicGraphicsView->collectAllNets(indexer, netList, true, false);
 
@@ -1421,14 +1421,15 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 		if (spice.isEmpty()) continue;
 		int pos = 0;
 		while (true) {
-			int ix = curlies.indexIn(spice, pos);
-			if (ix < 0) break;
+			QRegularExpressionMatch match;
+			pos = spice.indexOf(curlies, pos, &match);
+			if (pos < 0) break;
 
-			QString token = curlies.cap(1).toLower();
+			QString token = match.captured(1).toLower();
 			QString replacement;
 			if (token == "instancetitle") {
 				replacement = itemBase->instanceTitle();
-				if (ix > 0 && replacement.at(0).toLower() == spice.at(ix - 1).toLower()) {
+				if (pos > 0 && replacement.at(0).toLower() == spice.at(pos - 1).toLower()) {
 					// if the type letter is repeated
 					replacement = replacement.mid(1);
 				}
@@ -1466,8 +1467,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 					replacement = itemBase->modelPart()->properties().value(token, "");
 					if(replacement.isEmpty()) {
 						//Leave it, probably is a brace expresion for the spice simulator
-						pos = ix + 1;
-						replacement = curlies.cap(0);
+						replacement = match.captured(0);
 						continue;
 					}
 				}
@@ -1484,7 +1484,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 				replacement.replace(TextUtils::MicroSymbol, "u");
 			}
 
-			spice.replace(ix, curlies.cap(0).count(), replacement);
+			spice.replace(pos, match.captured(0).count(), replacement);
 			DebugDialog::debug("spice " + spice);
 		}
 

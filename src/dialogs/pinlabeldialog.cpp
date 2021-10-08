@@ -147,7 +147,7 @@ QFrame * PinLabelDialog::initLabels(const QStringList & labels, bool singleRow, 
 	QFrame * subFrame = new QFrame();
 	if (singleRow) {
 		QGridLayout * gridLayout = new QGridLayout();
-		gridLayout->setMargin(0);
+		gridLayout->setContentsMargins(0, 0, 0, 0);
 		gridLayout->setSpacing(3);
 
 		for (int i = 0; i < labels.count(); i++) {
@@ -161,7 +161,7 @@ QFrame * PinLabelDialog::initLabels(const QStringList & labels, bool singleRow, 
 
 		QFrame * lFrame = new QFrame();
 		QGridLayout * lLayout = new QGridLayout;
-		lLayout->setMargin(0);
+		lLayout->setContentsMargins(0, 0, 0, 0);
 		lLayout->setSpacing(3);
 		for (int i = 0; i < labels.count() / 2; i++) {
 			makeOnePinEntry(i, labels.at(i), Qt::AlignLeft, i, lLayout);
@@ -170,7 +170,7 @@ QFrame * PinLabelDialog::initLabels(const QStringList & labels, bool singleRow, 
 
 		QFrame * rFrame = new QFrame();
 		QGridLayout * rLayout = new QGridLayout;
-		rLayout->setMargin(0);
+		rLayout->setContentsMargins(0, 0, 0, 0);
 		rLayout->setSpacing(3);
 		int row = labels.count() - 1;
 		for (int i = labels.count() / 2; i < labels.count(); i++) {

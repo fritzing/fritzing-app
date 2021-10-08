@@ -181,7 +181,7 @@ QWidget * PrefsDialog::createZoomerForm() {
 
 	QVBoxLayout * vLayout = new QVBoxLayout();
 	vLayout->setSpacing(0);
-	vLayout->setMargin(0);
+	vLayout->setContentsMargins(0, 0, 0, 0);
 
 	for (int i = 0; i < 3; i++) {
 		m_wheelLabel[i] = new QLabel();
@@ -263,7 +263,7 @@ QWidget* PrefsDialog::createColorForm()
 	QGroupBox * formGroupBox = new QGroupBox(tr("Colors"));
 	QVBoxLayout *layout = new QVBoxLayout();
 	layout->setSpacing(0);
-	layout->setMargin(0);
+	layout->setContentsMargins(0, 0, 0, 0);
 
 	QFrame * f1 = new QFrame();
 	QHBoxLayout * h1 = new QHBoxLayout();
@@ -317,7 +317,7 @@ QWidget* PrefsDialog::createOtherForm()
 {
 	QGroupBox * formGroupBox = new QGroupBox(tr("Clear Settings"));
 	QVBoxLayout *layout = new QVBoxLayout();
-	layout->setMargin(0);
+	layout->setContentsMargins(0, 0, 0, 0);
 	layout->setSpacing(0);
 
 	QLabel * clearLabel = new QLabel(QObject::tr("Clear all saved settings and close this dialog immediately."));
@@ -361,7 +361,7 @@ QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
 
 		QFrame * locationFrame = new QFrame(formGroupBox);
 		QHBoxLayout * locationLayout = new QHBoxLayout();
-		locationLayout->setMargin(0);
+		locationLayout->setContentsMargins(0, 0, 0, 0);
 		locationLayout->setSpacing(0);
 		locationFrame->setLayout(locationLayout);
 

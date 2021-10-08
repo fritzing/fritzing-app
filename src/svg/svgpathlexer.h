@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtCore/QHash>
 #include <QRegularExpression>
 #include <QDomElement>
-#include <QMatrix>
+#include <QTransform>
 
 class SVGPathLexer
 {

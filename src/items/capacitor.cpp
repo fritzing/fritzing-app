@@ -115,7 +115,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 					TextUtils::PowerPrefixesString, 
 					propertyDef->symbol
 				);
-				validator->setRegExp(QRegExp(pattern));
+				validator->setRegularExpression(QRegularExpression(pattern));
 				focusOutComboBox->setValidator(validator);
 				connect(focusOutComboBox->validator(), SIGNAL(sendState(QValidator::State)), this, SLOT(textModified(QValidator::State)));
 				connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(propertyEntry(const QString &)));

@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef BOUNDEDREGEXPVALIDATOR_H
 #define BOUNDEDREGEXPVALIDATOR_H
 
-#include <QRegExpValidator>
+#include <QRegularExpressionValidator>
 #include <QColor>
 #include <QLineEdit>
 #include <limits>
@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 typedef double (*Converter)(const QString &, const QString & symbol);
 
-class BoundedRegExpValidator : public QRegExpValidator
+class BoundedRegExpValidator : public QRegularExpressionValidator
 {
 	Q_OBJECT
 
@@ -38,7 +38,7 @@ signals:
 	void sendState(QValidator::State) const;
 
 public:
-	BoundedRegExpValidator(QObject * parent) : QRegExpValidator(parent) {
+	BoundedRegExpValidator(QObject * parent) : QRegularExpressionValidator(parent) {
 		m_max = std::numeric_limits<double>::max();
 		m_min = std::numeric_limits<double>::min();
 		m_converter = NULL;
@@ -59,11 +59,10 @@ public:
 	}
 
 	QValidator::State validate ( QString & input, int & pos ) const override {
-		QValidator::State state = QRegExpValidator::validate(input, pos);
-		input.replace(m_symbol, "");
-		if(!m_symbol.isEmpty())
-			input.append(m_symbol);
-		state = QRegExpValidator::validate(input, pos);
+		QValidator::State state = QRegularExpressionValidator::validate(input, pos);
+		if (state == QValidator::Invalid) return state;
+		if (state == QValidator::Intermediate) return state;
+		if (m_converter == NULL) return state;
 
 		if ( state == QValidator::Acceptable ) {
 			double converted = m_converter(input, m_symbol);

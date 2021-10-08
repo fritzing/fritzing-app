@@ -35,7 +35,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../sketch/sketchwidget.h"
 
 #include <qmath.h>
-#include <QRegExpValidator>
+#include <QRegularExpressionValidator>
 
 static QStringList Resistances;
 static QHash<QString, QString> PinSpacings;
@@ -264,10 +264,7 @@ bool Resistor::collectExtraInfo(QWidget * parent, const QString & family, const 
 		validator->setSymbol(OhmSymbol);
 		validator->setConverter(TextUtils::convertFromPowerPrefix);
 		validator->setBounds(MIN_RESISTANCE, MAX_RESISTANCE);
-		QString pattern = QString("((\\d{0,10})|(\\d{0,10}\\.)|(\\d{0,10}\\.\\d{1,10}))[%1]{0,1}[%2]{0,1}")
-										  .arg(TextUtils::PowerPrefixesString)
-										  .arg(OhmSymbol);
-		validator->setRegExp(QRegExp(pattern));
+		validator->setRegularExpression(QRegularExpression(QString("((\\d{1,10})|(\\d{1,10}\\.)|(\\d{1,10}\\.\\d{1,5}))[\\x%1umkMG]{0,1}[\\x03A9]{0,1}").arg(TextUtils::MicroSymbolCode, 4, 16, QChar('0'))));
 		focusOutComboBox->setValidator(validator);
 		connect(focusOutComboBox->validator(), SIGNAL(sendState(QValidator::State)), this, SLOT(textModified(QValidator::State)));
 		connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(resistanceEntry(const QString &)));

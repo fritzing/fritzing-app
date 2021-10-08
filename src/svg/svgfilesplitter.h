@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QByteArray>
 #include <QDomElement>
 #include <QObject>
-#include <QMatrix>
+#include <QTransform>
 #include <QPainterPath>
 #include <QFile>
 

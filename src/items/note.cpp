@@ -75,7 +75,7 @@ const double InactiveOpacity = 0.5;
 
 QString Note::initialTextString;
 
-QRegExp UrlTag("<a.*href=[\"']([^\"]+[.\\s]*)[\"'].*>");
+QRegularExpression UrlTag("<a.*href=[\"']([^\"]+[.\\s]*)[\"'].*>");
 
 ///////////////////////////////////////
 
@@ -557,6 +557,7 @@ bool Note::eventFilter(QObject * object, QEvent * event)
 void Note::linkDialog() {
 	QTextCursor textCursor = m_graphicsTextItem->textCursor();
 	bool gotUrl = false;
+	QRegularExpressionMatch match;
 	if (textCursor.anchor() == textCursor.selectionStart()) {
 		// the selection returns empty since we're between characters
 		// so select one character forward or one character backward
@@ -567,14 +568,14 @@ void Note::linkDialog() {
 		if (!atStart) {
 			textCursor.setPosition(wasAnchor - 1, QTextCursor::KeepAnchor);
 			QString html = textCursor.selection().toHtml();
-			if (UrlTag.indexIn(html) >= 0) {
+			if (html.contains(UrlTag, &match)) {
 				gotUrl = true;
 			}
 		}
 		if (!gotUrl && !atEnd) {
 			textCursor.setPosition(wasAnchor + 1, QTextCursor::KeepAnchor);
 			QString html = textCursor.selection().toHtml();
-			if (UrlTag.indexIn(html) >= 0) {
+			if (html.contains(UrlTag, &match)) {
 				gotUrl = true;
 			}
 		}
@@ -583,7 +584,7 @@ void Note::linkDialog() {
 	else {
 		QString html = textCursor.selection().toHtml();
 		DebugDialog::debug(html);
-		if (UrlTag.indexIn(html) >= 0) {
+		if (html.contains(UrlTag, &match)) {
 			gotUrl = true;
 		}
 	}
@@ -592,7 +593,7 @@ void Note::linkDialog() {
 	QString originalText;
 	QString originalUrl;
 	if (gotUrl) {
-		originalUrl = UrlTag.cap(1);
+		originalUrl = match.captured(1);
 		ld.setUrl(originalUrl);
 		QString html = m_graphicsTextItem->toHtml();
 
@@ -809,7 +810,7 @@ QString Note::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 				textCursor.setPosition(i + start + block.position(), QTextCursor::MoveAnchor);
 				textCursor.setPosition(i + start + block.position() + 1, QTextCursor::KeepAnchor);
 				QString html = textCursor.selection().toHtml();
-				if (UrlTag.indexIn(html) >= 0) {
+				if (html.contains(UrlTag)) {
 					if (inUrl) {
 						soFar += block.text().mid(start + i, 1);
 						continue;

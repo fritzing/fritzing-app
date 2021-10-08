@@ -87,7 +87,7 @@ public:
 	void setTransform2(const QTransform &);
 
 public:
-	static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix &, QRectF & viewBox);
+	static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QTransform &, QRectF & viewBox);
 
 protected:
 	QString makeFlipTextSvg();

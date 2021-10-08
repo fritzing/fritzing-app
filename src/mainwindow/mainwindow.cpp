@@ -28,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QLabel>
 #include <QTime>
 #include <QSettings>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QPaintDevice>
 #include <QPixmap>
 #include <QTimer>
@@ -286,7 +286,7 @@ int MainWindow::AutosaveTimeoutMinutes = 10;   // in minutes
 bool MainWindow::AutosaveEnabled = true;
 QString MainWindow::BackupFolder;
 
-QRegExp MainWindow::GuidMatcher = QRegExp("[A-Fa-f0-9]{32}");
+QRegularExpression MainWindow::GuidMatcher = QRegularExpression("[A-Fa-f0-9]{32}");
 
 /////////////////////////////////////////////
 
@@ -1659,26 +1659,28 @@ bool MainWindow::copySvg(const QString & path, QFileInfoList & svgEntryInfoList)
 	// most of the time it's just a GUID difference
 
 	DebugDialog::debug(QString("svg matching fz path %1 not found").arg(path));
-	int guidix = GuidMatcher.lastIndexIn(subpath);
+	QRegularExpressionMatch match;
+	int guidix = subpath.lastIndexOf(GuidMatcher, -1, &match);
 	if (guidix < 0) return false;
 
-	QString originalGuid = GuidMatcher.cap(0);
+	QString originalGuid = match.captured(0);
 	QString tryPath = subpath;
 	tryPath.replace(guidix, originalGuid.length(), "%%%%");
 	for (int jx = svgEntryInfoList.count() - 1; jx >= 0; jx--) {
 		QFileInfo svgInfo = svgEntryInfoList.at(jx);
 		QString tempPath = svgInfo.fileName();
-		guidix = GuidMatcher.lastIndexIn(tempPath);
+		QRegularExpressionMatch match;
+		guidix = tempPath.lastIndexOf(GuidMatcher, -1, &match);
 		if (guidix < 0) continue;
 
-		tempPath.replace(guidix, GuidMatcher.cap(0).length(), "%%%%");
+		tempPath.replace(guidix, match.captured(0).length(), "%%%%");
 		if (!tempPath.contains(tryPath)) continue;
 
 		QString destPath = copyToSvgFolder(svgInfo, false, PartFactory::folderPath(), "contrib");
 		if (!destPath.isEmpty()) {
 			QFile file(destPath);
-			guidix = GuidMatcher.lastIndexIn(destPath);
-			destPath.replace(guidix, GuidMatcher.cap(0).length(), originalGuid);
+			guidix = destPath.lastIndexOf(GuidMatcher, -1, &match);
+			destPath.replace(guidix, match.captured(0).length(), originalGuid);
 			FolderUtils::slamCopy(file, destPath);
 			DebugDialog::debug(QString("found matching svg %1").arg(destPath));
 			svgEntryInfoList.removeAt(jx);
@@ -2023,7 +2025,7 @@ QList<ModelPart*> MainWindow::moveToPartsFolder(QDir &unzipDir, MainWindow* mw, 
 QString MainWindow::copyToSvgFolder(const QFileInfo& file, bool addToAlien, const QString & prefixFolder, const QString &destFolder) {
 	QFile svgfile(file.filePath());
 	// let's make sure that we remove just the suffix
-	QString fileName = file.fileName().remove(QRegExp("^"+ZIP_SVG));
+	QString fileName = file.fileName().remove(QRegularExpression("^"+ZIP_SVG));
 	QString viewFolder = fileName.left(fileName.indexOf("."));
 	fileName.remove(0, viewFolder.length() + 1);
 
@@ -2045,7 +2047,7 @@ ModelPart* MainWindow::copyToPartsFolder(const QFileInfo& file, bool addToAlien,
 	QFile partfile(file.filePath());
 	// let's make sure that we remove just the suffix
 	QString destFilePath =
-	    prefixFolder+"/"+destFolder+"/"+file.fileName().remove(QRegExp("^"+ZIP_PART));
+	    prefixFolder+"/"+destFolder+"/"+file.fileName().remove(QRegularExpression("^"+ZIP_PART));
 
 	backupExistingFileIfExists(destFilePath);
 	if(FolderUtils::slamCopy(partfile, destFilePath)) {

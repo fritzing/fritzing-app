@@ -33,7 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QProcess>
 #include <QDockWidget>
 #include <QXmlStreamWriter>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QProxyStyle>
 #include <QStyle>
 #include <QStylePainter>
@@ -989,7 +989,7 @@ protected:
 	static int UntitledSketchIndex;
 	static int CascadeFactorX;
 	static int CascadeFactorY;
-	static QRegExp GuidMatcher;
+	static QRegularExpression GuidMatcher;
 };
 
 #endif

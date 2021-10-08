@@ -708,7 +708,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 
 	QFileInfo info(originalModelPart->path());
 	QString basename = info.completeBaseName();
-	int ix = GuidMatcher.indexIn(basename);
+	int ix = basename.indexOf(GuidMatcher, 0);
 	if (ix > 1 && basename.at(ix - 1) == '_')  {
 		int dix = ix + 32 + 1;
 		if (basename.count() > dix) {

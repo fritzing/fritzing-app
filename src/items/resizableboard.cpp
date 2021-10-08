@@ -737,7 +737,7 @@ void ResizableBoard::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 
 			double sw = size.width() / 2;
 			double sh = size.height() / 2;
-			QMatrix m(oldT.m11(), oldT.m12(), oldT.m21(), oldT.m22(), 0, 0);
+			QTransform m(oldT.m11(), oldT.m12(), oldT.m21(), oldT.m22(), 0, 0);
 			ds = m.inverted().map(ds);
 			QTransform newT = QTransform().translate(-sw, -sh) * QTransform(m) * QTransform().translate(sw, sh);
 

@@ -1619,7 +1619,7 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 		comboBox->addItems(values);
 		comboBox->setCurrentIndex(comboBox->findText(tempValue));
 		comboBox->setEnabled(swappingEnabled);
-		comboBox->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+		comboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
 		connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(swapEntry(const QString &)));
 
 		returnWidget = comboBox;

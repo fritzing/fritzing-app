@@ -35,7 +35,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVBoxLayout>
 #include <QFrame>
 #include <QLabel>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QPushButton>
 #include <QImageReader>
 #include <QMessageBox>

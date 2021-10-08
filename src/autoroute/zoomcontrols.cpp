@@ -74,7 +74,7 @@ ZoomControlsPrivate::ZoomControlsPrivate(ZoomableGraphicsView* view, QBoxLayout:
 	m_boxLayout = new QBoxLayout(dir,this);
 	m_boxLayout->addWidget(m_zoomInButton);
 	m_boxLayout->addWidget(m_zoomOutButton);
-	m_boxLayout->setMargin(2);
+	m_boxLayout->setContentsMargins(2, 2, 2, 2);
 	m_boxLayout->setSpacing(2);
 
 	setStyleSheet("background-color: transparent;");

@@ -225,7 +225,7 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
 
 	double rotation;
 	QTransform chiefTransform = layerKinChief()->transform();      // assume chief already has rotation
-	bool isFlipped = GraphicsUtils::isFlipped(chiefTransform.toAffine(), rotation);
+	bool isFlipped = GraphicsUtils::isFlipped(chiefTransform, rotation);
 	QString svg;
 	if (isFlipped) {
 		svg = makeFlipTextSvg();

@@ -127,7 +127,7 @@ public:
 	static void qt_graphicsItem_highlightSelected(QPainter *painter, const QStyleOptionGraphicsItem *option, const QRectF & boundingRect, const QPainterPath & path);
 	static QPointF calcRotation(QTransform & rotation, QPointF rCenter, QPointF p, QPointF pCenter);
 	static void drawBorder(QImage * image, int border);
-	static bool isFlipped(const QMatrix & matrix, double & rotation);
+	static bool isFlipped(const QTransform & matrix, double & rotation);
 
 public:
 	static constexpr double IllustratorDPI = 72;

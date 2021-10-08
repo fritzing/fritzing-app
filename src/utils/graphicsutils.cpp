@@ -396,7 +396,7 @@ bool almostEqual(qreal a, qreal b) {
 	return (qAbs(a - b) < nearly);
 }
 
-bool GraphicsUtils::isFlipped(const QMatrix & matrix, double & rotation) {
+bool GraphicsUtils::isFlipped(const QTransform & matrix, double & rotation) {
 	static qreal halfSqrt2 = 0.7071;
 
 	// flipped means flipped horizontally (around the vertical axis)

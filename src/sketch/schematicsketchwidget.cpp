@@ -506,7 +506,7 @@ void SchematicSketchWidget::viewGeometryConversionHack(ViewGeometry & viewGeomet
 	ViewGeometry vg;
 	ItemBase * itemBase = addItemAuxTemp(modelPart, ViewLayer::NewTop, vg, 0, true, viewID(), true);
 	double rotation;
-	if (GraphicsUtils::isFlipped(viewGeometry.transform().toAffine(), rotation)) {
+	if (GraphicsUtils::isFlipped(viewGeometry.transform(), rotation)) {
 		itemBase->flipItem(Qt::Horizontal);
 	}
 	itemBase->rotateItem(rotation, false);

@@ -144,11 +144,11 @@ void ProgramWindow::setup()
 	QFrame * headerFrame = createHeader();
 	QFrame * centerFrame = createCenter();
 
-	layout()->setMargin(0);
+	layout()->setContentsMargins(0, 0, 0, 0);
 	layout()->setSpacing(0);
 
 	QGridLayout *layout = new QGridLayout(mainFrame);
-	layout->setMargin(0);
+	layout->setContentsMargins(0, 0, 0, 0);
 	layout->setSpacing(0);
 	layout->addWidget(headerFrame,0,0);
 	layout->addWidget(centerFrame,1,0);
@@ -402,11 +402,11 @@ QFrame * ProgramWindow::createCenter() {
 	//addTab();
 
 	QGridLayout *tabLayout = new QGridLayout(m_tabWidget);
-	tabLayout->setMargin(0);
+	tabLayout->setContentsMargins(0, 0, 0, 0);
 	tabLayout->setSpacing(0);
 
 	QGridLayout *mainLayout = new QGridLayout(centerFrame);
-	mainLayout->setMargin(0);
+	mainLayout->setContentsMargins(0, 0, 0, 0);
 	mainLayout->setSpacing(0);
 	mainLayout->addWidget(m_tabWidget,0,0,1,1);
 

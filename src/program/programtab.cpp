@@ -144,7 +144,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 
 	m_updateEnabled = false;
 	QGridLayout *editLayout = new QGridLayout(this);
-	editLayout->setMargin(0);
+	editLayout->setContentsMargins(0, 0, 0, 0);
 	editLayout->setSpacing(0);
 
 	while (m_programWindow == NULL) {
@@ -194,22 +194,22 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 
 	QFrame *leftButtons = new QFrame(m_toolbar);
 	m_leftButtonsContainer = new QHBoxLayout(leftButtons);
-	m_leftButtonsContainer->setMargin(0);
+	m_leftButtonsContainer->setContentsMargins(0, 0, 0, 0);
 	m_leftButtonsContainer->setSpacing(0);
 
 	QFrame *middleButtons = new QFrame(m_toolbar);
 	middleButtons->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::MinimumExpanding);
 	m_middleButtonsContainer = new QHBoxLayout(middleButtons);
 	m_middleButtonsContainer->setSpacing(0);
-	m_middleButtonsContainer->setMargin(0);
+	m_middleButtonsContainer->setContentsMargins(0, 0, 0, 0);
 
 	QFrame *rightButtons = new QFrame(m_toolbar);
 	m_rightButtonsContainer = new QHBoxLayout(rightButtons);
-	m_rightButtonsContainer->setMargin(0);
+	m_rightButtonsContainer->setContentsMargins(0, 0, 0, 0);
 	m_rightButtonsContainer->setSpacing(0);
 
 	QHBoxLayout *toolbarLayout = new QHBoxLayout(m_toolbar);
-	toolbarLayout->setMargin(0);
+	toolbarLayout->setContentsMargins(0, 0, 0, 0);
 	toolbarLayout->setSpacing(0);
 	toolbarLayout->addWidget(leftButtons);
 	toolbarLayout->addWidget(middleButtons);
@@ -260,7 +260,7 @@ void ProgramTab::initMenus() {
 	platformSelector->setObjectName("toolbarSelector");
 	QVBoxLayout *platformSelectionContainer = new QVBoxLayout(platformSelector);
 	platformSelectionContainer->setSpacing(0);
-	platformSelectionContainer->setMargin(0);
+	platformSelectionContainer->setContentsMargins(0, 0, 0, 0);
 
 	QLabel * platformLabel = new QLabel(tr("Platform"), this);
 	m_platformComboBox = new QComboBox();
@@ -284,7 +284,7 @@ void ProgramTab::initMenus() {
 	boardSelector->setObjectName("toolbarSelector");
 	QVBoxLayout *boardSelectionContainer = new QVBoxLayout(boardSelector);
 	boardSelectionContainer->setSpacing(0);
-	boardSelectionContainer->setMargin(0);
+	boardSelectionContainer->setContentsMargins(0, 0, 0, 0);
 
 	QLabel * boardLabel = new QLabel(tr("Board"), this);
 	m_boardComboBox = new QComboBox();
@@ -302,7 +302,7 @@ void ProgramTab::initMenus() {
 	portSelector->setObjectName("toolbarSelector");
 	QVBoxLayout *portSelectionContainer = new QVBoxLayout(portSelector);
 	portSelectionContainer->setSpacing(0);
-	portSelectionContainer->setMargin(0);
+	portSelectionContainer->setContentsMargins(0, 0, 0, 0);
 
 	QLabel * portLabel = new QLabel(tr("Port"), this);
 	m_portComboBox = new SerialPortComboBox();
@@ -339,7 +339,7 @@ void ProgramTab::initMenus() {
 
 	//    QFrame * superFrame = new QFrame();
 	//    QVBoxLayout * superLayout = new QVBoxLayout();
-	//	  superLayout->setMargin(0);
+	//	  superLayout->setContentsMargins(0, 0, 0, 0);
 	//	  superLayout->setSpacing(0);
 	//    m_unableToProgramLabel = new QLabel(UnableToProgramMessage.arg(""));
 	//    m_unableToProgramLabel->setObjectName("unableToProgramLabel");

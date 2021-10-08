@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGraphicsScene>
 #include <QPoint>
 #include <QPair>
-#include <QMatrix>
+#include <QTransform>
 #include <QtAlgorithms>
 #include <QPen>
 #include <QColor>
@@ -1420,7 +1420,7 @@ void SketchWidget::rotateItem(long id, double degrees) {
 	}
 
 }
-void SketchWidget::transformItem(long id, const QMatrix & matrix) {
+void SketchWidget::transformItem(long id, const QTransform & matrix) {
 	ItemBase * itemBase = findItem(id);
 	if (itemBase) {
 		itemBase->transformItem2(matrix);
@@ -9315,8 +9315,7 @@ long SketchWidget::swapStart(SwapThing & swapThing, bool master) {
 	newAddItemCommand(BaseCommand::SingleView, nullptr, swapThing.newModuleID, swapThing.viewLayerPlacement, vg, newID, true, swapThing.newModelIndex, true, swapThing.parentCommand);
 
 	if (needsTransform) {
-		QMatrix m;
-		m.setMatrix(oldTransform.m11(), oldTransform.m12(), oldTransform.m21(), oldTransform.m22(), 0, 0);
+		QTransform m(oldTransform.m11(), oldTransform.m12(), oldTransform.m21(), oldTransform.m22(), 0, 0);
 		new TransformItemCommand(this, newID, m, m, swapThing.parentCommand);
 	}
 

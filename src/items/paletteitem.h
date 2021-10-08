@@ -82,7 +82,7 @@ public:
 	void rotateItem(double degrees, bool includeRatsnest);
 	void flipItem(Qt::Orientations orientation);
 	void moveItem(ViewGeometry & viewGeometry);
-	void transformItem2(const QMatrix &);
+	void transformItem2(const QTransform &);
 	void setItemPos(QPointF & pos);
 
 	bool renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID, bool doConnectors, QString & error);

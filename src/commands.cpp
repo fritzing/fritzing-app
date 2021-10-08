@@ -1768,7 +1768,7 @@ QString ResizeBoardCommand::getParamString() const {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TransformItemCommand::TransformItemCommand(SketchWidget *sketchWidget, long id, const QMatrix & oldMatrix, const QMatrix & newMatrix, QUndoCommand *parent)
+TransformItemCommand::TransformItemCommand(SketchWidget *sketchWidget, long id, const QTransform & oldMatrix, const QTransform & newMatrix, QUndoCommand *parent)
 	: SimulationCommand(BaseCommand::SingleView, sketchWidget, parent),
 	m_itemID(id),
 	m_oldMatrix(oldMatrix),

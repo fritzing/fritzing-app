@@ -1257,7 +1257,7 @@ void ItemBase::transformItem(const QTransform & currTransf, bool includeRatsnest
 	update();
 }
 
-void ItemBase::transformItem2(const QMatrix & matrix) {
+void ItemBase::transformItem2(const QTransform & matrix) {
 	QTransform transform(matrix);
 	transformItem(transform, false);
 }

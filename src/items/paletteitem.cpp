@@ -298,7 +298,7 @@ void PaletteItem::flipItem(Qt::Orientations orientation) {
 	}
 }
 
-void PaletteItem::transformItem2(const QMatrix & matrix) {
+void PaletteItem::transformItem2(const QTransform & matrix) {
 	PaletteItemBase::transformItem2(matrix);
 	foreach (ItemBase * lkpi, m_layerKin) {
 		lkpi->transformItem2(matrix);

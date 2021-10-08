@@ -277,12 +277,12 @@ protected:
 };
 
 /////////////////////////////////////////////
-class QMatrix;
+class QTransform;
 class TransformItemCommand : public SimulationCommand
 {
 
 public:
-	TransformItemCommand(SketchWidget *sketchWidget, long id, const QMatrix & oldMatrix, const class QMatrix & newMatrix, QUndoCommand *parent);
+	TransformItemCommand(SketchWidget *sketchWidget, long id, const QTransform & oldMatrix, const class QTransform & newMatrix, QUndoCommand *parent);
 	void undo();
 	void redo();
 
@@ -291,8 +291,8 @@ protected:
 
 protected:
 	long m_itemID;
-	QMatrix m_oldMatrix;
-	QMatrix m_newMatrix;
+	QTransform m_oldMatrix;
+	QTransform m_newMatrix;
 };
 
 /////////////////////////////////////////////

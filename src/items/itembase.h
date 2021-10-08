@@ -95,7 +95,7 @@ public:
 	virtual void rotateItem(double degrees, bool includeRatsnest);
 	virtual void flipItem(Qt::Orientations orientation);
 	virtual void transformItem(const QTransform &, bool includeRatsnest);
-	virtual void transformItem2(const QMatrix &);
+	virtual void transformItem2(const QTransform &);
 	virtual void removeLayerKin();
 	ViewLayer::ViewID viewID();
 	QString & viewIDName();

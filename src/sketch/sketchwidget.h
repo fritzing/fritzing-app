@@ -106,7 +106,7 @@ public:
 	void updateWire(long id, const QString & connectorID, bool updateRatsnest);
 
 	void rotateItem(long id, double degrees);
-	void transformItem(long id, const QMatrix &);
+	void transformItem(long id, const QTransform &);
 	void flipItem(long id, Qt::Orientations orientation);
 	void selectItem(long id, bool state, bool updateInfoView, bool doEmit);
 	void selectItem(ItemBase * itemBase);

@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <qdebug.h>
 #include <QStringList>
 
-static QRegExp findWhitespace("[\\s]+");
+static QRegularExpression findWhitespace("[\\s]+");
 
 GedaElementLexer::GedaElementLexer(const QString &source) :
     m_nonWhitespaceMatcher("[^\\s]"),

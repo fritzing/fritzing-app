@@ -201,7 +201,6 @@ void ConnectorShared::loadPin(QDomElement elem, ViewLayer::ViewID viewID) {
 		//pinElem.save(stream, 0);
 		//stream.flush();
 		QString svgId = pinElem.attribute("svgId");
-		//svgId = svgId.left(svgId.lastIndexOf(QRegExp("\\d"))+1);
 		QString layer = pinElem.attribute("layer");
 		SvgIdLayer * svgIdLayer = new SvgIdLayer(viewID);
 		svgIdLayer->m_hybrid = (pinElem.attribute("hybrid").compare("yes") == 0);

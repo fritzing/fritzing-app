@@ -56,17 +56,19 @@ QString GedaElementLexer::clean(const QString & source) {
 	QStringList s = source.split("\n");
 	for (int i = s.length() - 1; i >= 0; i--) {
 		QString str = s[i];
-		if (m_commentMatcher.indexIn(str) == 0) {
+		QRegularExpressionMatch match;
+		if (str.indexOf(m_commentMatcher, 0, &match) == 0) {
 			s.removeAt(i);
-			str = str.remove(0, m_commentMatcher.matchedLength());
-			if (m_nonWhitespaceMatcher.indexIn(str) >= 0) {
+			str = str.remove(0, match.capturedLength());
+			if (str.contains(m_nonWhitespaceMatcher)) {
 				m_comments.push_front(str.trimmed());
 			}
 		}
 	}
 	QString s1 = s.join("\n");
 	QString s2 = s1.replace(findWhitespace, " ");
-	int ix = m_elementMatcher.indexIn(s2);
+	QRegularExpressionMatch match;
+	int ix = s2.indexOf(m_elementMatcher, 0, &match);
 	if (ix < 0) {
 		return s2;
 	}
@@ -75,7 +77,7 @@ QString GedaElementLexer::clean(const QString & source) {
 	// this is because Element grammar requires a longer lookahead than provided by an LALR(1) parser
 
 	QStringList params;
-	GedaElementLexer lexer(s2.right(s2.length() - m_elementMatcher.matchedLength() - ix));
+	GedaElementLexer lexer(s2.right(s2.length() - match.capturedLength() - ix));
 	int nix = ix;
 	bool done = false;
 	while (!done) {
@@ -138,36 +140,37 @@ QString GedaElementLexer::clean(const QString & source) {
 	}
 
 	QString j = params.join(" ");
-	return s2.replace(ix + m_elementMatcher.matchedLength(), nix, j);
+	return s2.replace(ix + match.capturedLength(), nix, j);
 }
 
 int GedaElementLexer::lex()
 {
 	while (true) {
-		if (m_hexMatcher.indexIn(m_source, m_pos - 1) == m_pos - 1) {
+		QRegularExpressionMatch match;
+		if (m_source.indexOf(m_hexMatcher, m_pos - 1, &match) == m_pos - 1) {
 			bool ok;
-			m_currentString = m_hexMatcher.cap(0);
+			m_currentString = match.captured(0);
 			m_currentNumber = m_currentString.toLong(&ok, 16);
-			m_pos += m_hexMatcher.matchedLength() - 1;
+			m_pos += match.capturedLength() - 1;
 			if (m_source.at(m_pos).isSpace()) {
 				m_pos++;
 			}
 			next();
 			return GedaElementGrammar::HEXNUMBER;
 		}
-		else if (m_integerMatcher.indexIn(m_source, m_pos - 1) == m_pos - 1) {
-			m_currentString = m_integerMatcher.cap(0);
+		else if (m_source.indexOf(m_integerMatcher, m_pos - 1, &match) == m_pos - 1) {
+			m_currentString = match.captured(0);
 			m_currentNumber = m_currentString.toLong();
-			m_pos += m_integerMatcher.matchedLength() - 1;
+			m_pos += match.capturedLength() - 1;
 			if (m_source.at(m_pos).isSpace()) {
 				m_pos++;
 			}
 			next();
 			return GedaElementGrammar::NUMBER;
 		}
-		else if (m_stringMatcher.indexIn(m_source, m_pos - 1) == m_pos - 1) {
-			m_currentString = m_stringMatcher.cap(0);
-			m_pos += m_stringMatcher.matchedLength() - 1;
+		else if (m_source.indexOf(m_stringMatcher, m_pos - 1, &match) == m_pos - 1) {
+			m_currentString = match.captured(0);
+			m_pos += match.capturedLength() - 1;
 			next();
 			return GedaElementGrammar::STRING;
 		}

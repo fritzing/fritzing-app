@@ -24,7 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QString>
 #include <QStringList>
 #include <QHash>
-#include <QRegExp>
+#include <QRegularExpression>
 
 class GedaElementLexer
 {
@@ -42,12 +42,12 @@ protected:
 	QString clean(const QString & source);
 
 protected:
-	QRegExp m_nonWhitespaceMatcher;
-	QRegExp m_commentMatcher;
-	QRegExp m_elementMatcher;
-	QRegExp m_stringMatcher;
-	QRegExp m_integerMatcher;
-	QRegExp m_hexMatcher;
+	QRegularExpression m_nonWhitespaceMatcher;
+	QRegularExpression m_commentMatcher;
+	QRegularExpression m_elementMatcher;
+	QRegularExpression m_stringMatcher;
+	QRegularExpression m_integerMatcher;
+	QRegularExpression m_hexMatcher;
 	QString m_source;
 	const QChar *m_chars = nullptr;
 	int m_size = 0;

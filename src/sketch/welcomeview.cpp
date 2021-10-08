@@ -68,10 +68,10 @@ QString makeUrlText(const QString & url, const QString & urlText, const QString 
 }
 
 QString hackColor(QString oldText, const QString & color) {
-	QRegExp colorFinder("color:(#[^;]*);");
-	int ix = oldText.indexOf(colorFinder);
-	if (ix >= 0) {
-		oldText.replace(colorFinder.cap(1), color);
+	QRegularExpression colorFinder("color:(#[^;]*);");
+	QRegularExpressionMatch match;
+	if (oldText.contains(colorFinder, &match)) {
+		oldText.replace(match.captured(1), color);
 	}
 	return oldText;
 }
@@ -92,17 +92,17 @@ int pixelSize(const QString & sizeString) {
 
 
 QString cleanData(const QString & data) {
-	static QRegExp ListItemMatcher("<li>.*</li>");
-	ListItemMatcher.setMinimal(true);           // equivalent of lazy matcher
+	static QRegularExpression ListItemMatcher("<li>.*</li>", QRegularExpression::InvertedGreedinessOption);
 
 	QDomDocument doc;
 	QStringList listItems;
 	int pos = 0;
 	while (pos < data.count()) {
-		int ix = data.indexOf(ListItemMatcher, pos);
+		QRegularExpressionMatch match;
+		int ix = data.indexOf(ListItemMatcher, pos, &match);
 		if (ix < 0) break;
 
-		QString listItem = ListItemMatcher.cap(0);
+		QString listItem = match.captured(0);
 		//DebugDialog::debug("ListItem " + listItem);
 		if (doc.setContent(listItem)) {
 			listItems << listItem;

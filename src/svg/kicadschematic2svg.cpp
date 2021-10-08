@@ -246,9 +246,9 @@ QString KicadSchematic2Svg::convertField(const QString & xString, const QString 
 
 	bool rotate = (orientation == "V");
 	QString rotation;
-	QMatrix m;
+	QTransform m;
 	if (rotate) {
-		m = QMatrix().translate(-x, -y) * QMatrix().rotate(-90) * QMatrix().translate(x, y);
+		m = QTransform().translate(-x, -y) * QTransform().rotate(-90) * QTransform().translate(x, y);
 		// store x, y, and r so they can be shifted correctly later
 		rotation = QString("transform='%1' _x='%2' _y='%3' _r='-90'").arg(TextUtils::svgMatrix(m)).arg(x).arg(y);
 	}

@@ -24,6 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTextStream>
 #include <QSet>
 #include <QtDebug>
+#include <QRegularExpression>
 #include <qmath.h>
 
 constexpr double MaskClearance = 0.005;  // 5 mils clearance
@@ -622,7 +623,7 @@ void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
                         QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index)
 {
 	QString points = polygon.attribute("points");
-	QStringList pointList = points.split(QRegExp("\\s+|,"), Qt::SkipEmptyParts);
+	QStringList pointList = points.split(QRegularExpression("\\s+|,"), Qt::SkipEmptyParts);
 
 	if (pointList.length() < 4) {
 		qDebug() << QString("Empty polyline %1").arg(points);

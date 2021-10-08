@@ -280,7 +280,7 @@ QWidget* PrefsDialog::createColorForm()
 	connect(pb1, SIGNAL(clicked()), this, SLOT(setConnectedColor()));
 	m_connectedColorLabel->setPalette(QPalette(connectedColor));
 	m_connectedColorLabel->setAutoFillBackground(true);
-	m_connectedColorLabel->setMargin(MARGIN);
+	m_connectedColorLabel->setContentsMargins(MARGIN, MARGIN, MARGIN, MARGIN);
 	h1->addWidget(m_connectedColorLabel);
 	h1->addWidget(pb1);
 
@@ -302,7 +302,7 @@ QWidget* PrefsDialog::createColorForm()
 	connect(pb2, SIGNAL(clicked()), this, SLOT(setUnconnectedColor()));
 	m_unconnectedColorLabel->setPalette(QPalette(unconnectedColor));
 	m_unconnectedColorLabel->setAutoFillBackground(true);
-	m_unconnectedColorLabel->setMargin(MARGIN);
+	m_unconnectedColorLabel->setContentsMargins(MARGIN, MARGIN, MARGIN, MARGIN);
 	h2->addWidget(m_unconnectedColorLabel);
 	h2->addWidget(pb2);
 

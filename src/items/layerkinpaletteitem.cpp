@@ -241,19 +241,12 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
 
 	reloadRenderer(svg, true);
 
-//	QPointF p = layerKinChief()->sceneBoundingRect().topLeft();
 	QTransform transform;
 	QRectF bounds = boundingRect();
 	transform.translate(bounds.width() / 2, bounds.height() / 2);
 	transform.rotate(rotation);
 	transform.translate(bounds.width() / -2, bounds.height() / -2);
 	this->setTransform(transform);
-
-	//QMatrix m1 = chiefTransform.toAffine();
-	//layerKinChief()->debugInfo("chief " + TextUtils::svgMatrix(m1));
-
-	//m1 = transform.toAffine();
-	//debugInfo("\t " + TextUtils::svgMatrix(m1));
 }
 
 void SchematicTextLayerKinPaletteItem::initTextThings() {

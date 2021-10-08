@@ -848,12 +848,12 @@ QString LogoItem::flipSvg(const QString & svg)
 
 QString LogoItem::flipSvgAux(QString & newSvg)
 {
-	QMatrix m;
+	QTransform m;
 	QSvgRenderer renderer(newSvg.toUtf8());
 	QRectF bounds = renderer.viewBoxF();
 	m.translate(bounds.center().x(), bounds.center().y());
-	QMatrix mMinus = m.inverted();
-	QMatrix cm = mMinus * QMatrix().scale(-1, 1) * m;
+	QTransform mMinus = m.inverted();
+	QTransform cm = mMinus * QTransform().scale(-1, 1) * m;
 	int gix = newSvg.indexOf("<g");
 	newSvg.replace(gix, 2, "<g _flipped_='1' transform='" + TextUtils::svgMatrix(cm) + "'");
 	return newSvg;

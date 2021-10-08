@@ -37,6 +37,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPair>
 #include <QList>
 #include <QPointF>
+#include <QRegularExpression>
 
 #define ALLMOUSEBUTTONS (Qt::LeftButton | Qt::MiddleButton | Qt::RightButton | Qt::XButton1 | Qt::XButton2)
 
@@ -86,7 +87,7 @@ static const QString MaleSymbolString = QString("%1").arg(QChar(0x2642));
 
 Qt::KeyboardModifier altOrMetaModifier();
 
-static QRegExp IntegerFinder("\\d+");
+static QRegularExpression IntegerFinder("\\d+");
 
 static const int PartsBinHeightDefault = 240;
 static const int InfoViewHeightDefault = 220;

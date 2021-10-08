@@ -246,10 +246,11 @@ bool byID(QDomElement & c1, QDomElement & c2)
 {
 	int c1id = -1;
 	int c2id = -1;
-	int ix = IntegerFinder.indexIn(c1.attribute("id"));
-	if (ix >= 0) c1id = IntegerFinder.cap(0).toInt();
-	ix = IntegerFinder.indexIn(c2.attribute("id"));
-	if (ix >= 0) c2id = IntegerFinder.cap(0).toInt();
+	QRegularExpressionMatch match;
+	int ix = c1.attribute("id").indexOf(IntegerFinder, 0, &match);
+	if (ix >= 0) c1id = match.captured(0).toInt();
+	ix = c2.attribute("id").indexOf(IntegerFinder, 0, &match);
+	if (ix >= 0) c2id = match.captured(0).toInt();
 
 	if (c1id == 0 || c2id == 0) GotZeroConnector = true;
 
@@ -2780,15 +2781,16 @@ void PEMainWindow::connectorCountChanged(int newCount) {
 	// add connectors
 	int id = 0;
 	foreach (QDomElement connector, connectorList) {
-		int ix = IntegerFinder.indexIn(connector.attribute("id"));
+		QRegularExpressionMatch match;
+		int ix = connector.attribute("id").indexOf(IntegerFinder, 0, &match);
 		if (ix >= 0) {
-			int candidate = IntegerFinder.cap(0).toInt();
+			int candidate = match.captured(0).toInt();
 			if (candidate > id) id = candidate;
 		}
 		// sometimes id = 0 but name = 1, and we are now using name = id
-		ix = IntegerFinder.indexIn(connector.attribute("name"));
+		ix = connector.attribute("name").indexOf(IntegerFinder, 0, &match);
 		if (ix >= 0) {
-			int candidate = IntegerFinder.cap(0).toInt();
+			int candidate = match.captured(0).toInt();
 			if (candidate > id) id = candidate;
 		}
 	}

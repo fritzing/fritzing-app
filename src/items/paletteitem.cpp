@@ -72,15 +72,16 @@ static QRegularExpression ConnectorFinder("connector\\d+pin");
 const QString PaletteItem::HoleSizePrefix("_hs_");
 
 int findNumber(const QString & string) {
-	int ix = string.indexOf(IntegerFinder);
+	QRegularExpressionMatch match;
+	int ix = string.indexOf(IntegerFinder, 0, &match);
 	if (ix < 0) {
 		return -1;
 	}
 
-	int result = IntegerFinder.cap(0).toInt();
-	int length = IntegerFinder.cap(0).length();
+	int result = match.captured(0).toInt();
+	int length = match.captured(0).length();
 
-	int jx = string.lastIndexOf(IntegerFinder);
+	int jx = string.lastIndexOf(IntegerFinder, 0, &match);
 	if (jx >= ix + length) {
 		return -1;
 	}

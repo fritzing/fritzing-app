@@ -795,9 +795,10 @@ void ModelPartShared::insertBus(BusShared * busShared) {
 
 void ModelPartShared::lookForZeroConnector() {
 	foreach (QString key, m_connectorSharedHash.keys()) {
-		int ix = IntegerFinder.indexIn(key);
+		QRegularExpressionMatch match;
+		int ix = key.indexOf(IntegerFinder, 0, &match);
 		if (ix >= 0) {
-			if (IntegerFinder.cap(0) == "0") {
+			if (match.captured(0) == "0") {
 				m_hasZeroConnector = true;
 				return;
 			}

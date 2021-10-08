@@ -1488,16 +1488,17 @@ void ConnectorItem::updateTooltip() {
 			descr = ":" + descr;
 		}
 		QString id = connectorSharedID();
-		int ix = IntegerFinder.indexIn(id);
+		QRegularExpressionMatch match;
+		int ix = id.indexOf(IntegerFinder, 0, &match);
 		if (ix < 0 || isInt) {
 			id = "";
 		}
 		else {
 			if (attachedTo()->modelPart()->hasZeroConnector()) {
-				id = QString::number(IntegerFinder.cap(0).toInt() + 1);
+				id = QString::number(match.captured(0).toInt() + 1);
 			}
 			else {
-				id = IntegerFinder.cap(0);
+				id = match.captured(0);
 			}
 			if (!id.isEmpty()) {
 				id = " <span style='color:#909090;'>(" + id + ")</span>";

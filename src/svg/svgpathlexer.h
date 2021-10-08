@@ -48,8 +48,8 @@ protected:
 	const QChar *m_chars = nullptr;
 	int m_size = 0;
 	int m_pos = 0;
-	QChar m_current = 0;
-	QChar m_currentCommand = 0;
+	QChar m_current = QChar();
+	QChar m_currentCommand = QChar();
 	double m_currentNumber = 0.0;
 };
 

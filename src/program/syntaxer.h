@@ -80,7 +80,7 @@ protected:
 	QString m_extensionString;
 	QStringList m_extensions;
 	QList<CommentInfo *> m_commentInfo;
-	QChar m_stringDelimiter = 0;
+	QChar m_stringDelimiter = QChar();
 	bool m_hlCStringChar = false;
 	bool m_canProgram = false;
 };

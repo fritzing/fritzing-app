@@ -92,7 +92,7 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 		QGroupBox * groupBox = new QGroupBox(tr("zoom and pan controls"));
 		QHBoxLayout *lo2 = new QHBoxLayout(groupBox);
 		lo2->setSpacing(1);
-		lo2->setMargin(0);
+		lo2->setContentsMargins(0, 0, 0, 0);
 
 		//TODO: use the zoom slider instead
 		lo2->addWidget(new ZoomControls(view, groupBox));

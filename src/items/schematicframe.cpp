@@ -38,7 +38,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVBoxLayout>
 #include <QFrame>
 #include <QLabel>
-#include <QRegExp>
 #include <QPushButton>
 #include <QImageReader>
 #include <QMessageBox>
@@ -117,32 +116,6 @@ void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, 
 	file.open(QFile::ReadOnly);
 	templateThing.svgTemplate = file.readAll();
 	file.close();
-
-
-	/*
-
-	static QRegExp NumberFinder("(=['\"][\\[\\{]{0,1})(\\d+(\\.\\d){0,1})[\\]\\}]{0,1}['\"]");
-	SchematicTemplate = OldSchematicTemplate;
-	int pos = 0;
-	while (true) {
-	    int ix = NumberFinder.indexIn(SchematicTemplate, pos);
-	    if (ix < 0) break;
-
-	    double d = NumberFinder.cap(2).toDouble();
-	    QString d3 = QString("%1").arg(d / 3, 0, 'g', 5);
-	    int offset = NumberFinder.cap(0).count();
-	    if (SchematicTemplate.indexOf("version", ix - 7) < 0) {
-	        SchematicTemplate.replace(ix + NumberFinder.cap(1).count(), NumberFinder.cap(2).count(), d3);
-	        offset += d3.count() - NumberFinder.cap(2).count();
-	    }
-
-	    pos = ix + offset;
-	}
-
-	DebugDialog::debug("schematic template " + SchematicTemplate);
-
-	*/
-
 
 	QString errorStr;
 	int errorLine;

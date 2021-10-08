@@ -151,7 +151,7 @@ void FServerThread::run()
 
 	DebugDialog::debug("header " + header);
 
-	QStringList tokens = header.split(QRegExp("[ \r\n][ \r\n]*"), Qt::SplitBehaviorFlags::SkipEmptyParts);
+	QStringList tokens = header.split(QRegularExpression("[ \r\n][ \r\n]*"), Qt::SplitBehaviorFlags::SkipEmptyParts);
 	if (tokens.count() <= 0) {
 		writeResponse(socket, 400, "Bad Request", "", "");
 		return;

@@ -59,7 +59,7 @@ SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, Q
 	m_selectedColorLabel = new QLabel();
 	setColor(currentColor);
 	hLayout4->addWidget(m_selectedColorLabel);
-	m_selectedColorLabel->setMargin(MARGIN);
+	m_selectedColorLabel->setContentsMargins(MARGIN, MARGIN, MARGIN, MARGIN);
 	vLayout->addWidget(f4);
 
 	QFrame * f2 = new QFrame();
@@ -72,7 +72,7 @@ SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, Q
 	connect(m_standardColorLabel, SIGNAL(clicked()), this, SLOT(selectStandard()));
 	m_standardColorLabel->setPalette(QPalette(standardColor));
 	m_standardColorLabel->setAutoFillBackground(true);
-	m_standardColorLabel->setMargin(MARGIN);
+	m_standardColorLabel->setContentsMargins(MARGIN, MARGIN, MARGIN, MARGIN);
 	hLayout2->addWidget(m_standardColorLabel);
 	vLayout->addWidget(f2);
 

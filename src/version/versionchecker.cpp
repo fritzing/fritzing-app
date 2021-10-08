@@ -151,7 +151,7 @@ void VersionChecker::parseXml()
 		}
 		else if (m_xml.isCharacters() && !m_xml.isWhitespace()) {
 			QString t = m_xml.text().toString();
-			t.replace(QRegExp("[\\s]+"), " ");
+			t.replace(QRegularExpression("[\\s]+"), " ");
 			//DebugDialog::debug(QString("%1%2").arg(QString((m_depth + 1) * 4, ' ')).arg(t));
 			if (m_inTitle) {
 				m_currentTitle = m_xml.text().toString();

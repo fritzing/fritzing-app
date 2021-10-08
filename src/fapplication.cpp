@@ -1712,21 +1712,6 @@ QList<MainWindow *> FApplication::recoverBackups()
 				currentRecoveredSketch->saveAsShareable(bundledFileName, true);
 				currentRecoveredSketch->setCurrentFile(bundledFileName, true, true);
 				recoveredSketches << currentRecoveredSketch;
-
-				/*
-				if (originalPath.startsWith(untitledFileName())) {
-					DebugDialog::debug(QString("Comparing untitled documents: %1 %2").arg(filename).arg(untitledFileName()));
-					QRegExp regexp("\\d+");
-					int ix = regexp.indexIn(filename);
-					int untitledSketchNumber = ix >= 0 ? regexp.cap(0).toInt() : 1;
-					untitledSketchNumber++;
-					DebugDialog::debug(QString("%1 untitled documents open, currently thinking %2").arg(untitledSketchNumber).arg(UntitledSketchIndex));
-					UntitledSketchIndex = UntitledSketchIndex >= untitledSketchNumber ? UntitledSketchIndex : untitledSketchNumber;
-				}
-				*/
-
-
-
 			}
 		}
 

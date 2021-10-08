@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 //#include "../debugdialog.h"
 
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QRegularExpression>
 #include <QBuffer>
 #include <QFile>
@@ -54,7 +54,7 @@ static const QRegularExpression SodipodiElementDetector("</{0,1}(inkscape|sodipo
 const QString TextUtils::SMDFlipSuffix("___");
 
 const QString TextUtils::RegexFloatDetector = "[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?";
-const QRegExp TextUtils::floatingPointMatcher(RegexFloatDetector);
+const QRegularExpression TextUtils::floatingPointMatcher(RegexFloatDetector);
 
 static const QString fontFamilyQuotesPattern = R"x(font-family(?:="|:)('[^']*')"?)x";
 
@@ -194,13 +194,14 @@ QDomElement TextUtils::findElementWithAttribute(QDomElement element, const QStri
 
 
 QSet<QString> TextUtils::getRegexpCaptures(const QString &pattern, const QString &textToSearchIn) {
-	QRegExp re(pattern);
+	QRegularExpression re(pattern);
 	QSet<QString> captures;
 	int pos = 0;
 
-	while ((pos = re.indexIn(textToSearchIn, pos)) != -1) {
-		captures << re.cap(1);
-		pos += re.matchedLength();
+	QRegularExpressionMatch match;
+	while ((pos = textToSearchIn.indexOf(re, pos, &match)) != -1) {
+		captures << match.captured(1);
+		pos += match.capturedLength();
 	}
 
 	return captures;
@@ -933,9 +934,10 @@ QList<double> TextUtils::getTransformFloats(const QString & transform) {
 	QList<double> list;
 	int pos = 0;
 
-	while ((pos = TextUtils::floatingPointMatcher.indexIn(transform, pos)) != -1) {
-		list << transform.mid(pos, TextUtils::floatingPointMatcher.matchedLength()).toDouble();
-		pos += TextUtils::floatingPointMatcher.matchedLength();
+	QRegularExpressionMatch match;
+	while ((pos = transform.indexOf(TextUtils::floatingPointMatcher, pos, &match)) != -1) {
+		list << transform.mid(pos, match.capturedLength()).toDouble();
+		pos += match.capturedLength();
 	}
 
 #ifndef QT_NO_DEBUG
@@ -972,8 +974,8 @@ void TextUtils::gWrap(QDomDocument & domDocument, const QHash<QString, QString> 
 bool TextUtils::fixInternalUnits(QString & svg)
 {
 	// float detector is a little weak
-	static QRegExp findInternalUnits("[\"']([\\d,\\.]+)(px|mm|cm|in|pt|pc)[\"']");
-	static QRegExp findStrokeWidth("stroke-width:([\\d,\\.]+)(px|mm|cm|in|pt|pc)");
+	static QRegularExpression findInternalUnits("[\"']([\\d,\\.]+)(px|mm|cm|in|pt|pc)[\"']");
+	static QRegularExpression findStrokeWidth("stroke-width:([\\d,\\.]+)(px|mm|cm|in|pt|pc)");
 
 	int sw = 0;
 	int iu = 0;
@@ -987,7 +989,9 @@ bool TextUtils::fixInternalUnits(QString & svg)
 	QRectF viewBox;
 	bool result = false;
 	while (true) {
-		iu = findInternalUnits.indexIn(svg, iu);
+		QRegularExpressionMatch match;
+
+		iu = svg.indexOf(findInternalUnits, iu, &match);
 		if (iu < 0) break;
 
 		result = true;
@@ -1001,14 +1005,15 @@ bool TextUtils::fixInternalUnits(QString & svg)
 			firstTime = false;
 		}
 
-		QString old = findInternalUnits.cap(1) + findInternalUnits.cap(2);
+		QString old = match.captured(1) + match.captured(2);
 		double in = convertToInches(old);
 		double replacement = in * viewBox.width() / size.width();
 		svg.replace(iu + 1, old.length(), QString::number(replacement));
 	}
 
 	while (true) {
-		sw = findStrokeWidth.indexIn(svg, sw);
+		QRegularExpressionMatch match;
+		sw = svg.indexOf(findStrokeWidth, sw, &match);
 		if (sw < 0) break;
 
 		result = true;
@@ -1021,7 +1026,7 @@ bool TextUtils::fixInternalUnits(QString & svg)
 			}
 		}
 
-		QString old = findStrokeWidth.cap(1) + findStrokeWidth.cap(2);
+		QString old = match.captured(1) + match.captured(2);
 		double in = convertToInches(old);
 		double replacement = in * viewBox.width() / size.width();
 		svg.replace(sw + 13, old.length(), QString::number(replacement));
@@ -1079,7 +1084,7 @@ bool TextUtils::fixViewBox(QDomElement & root) {
 	QString viewBox = root.attribute("viewBox");
 	if (viewBox.isEmpty()) return false;
 
-	QStringList coords = viewBox.split(QRegExp(" |,"));
+	QStringList coords = viewBox.split(QRegularExpression(" |,"));
 	if (coords.length() != 4) return false;
 
 	if (coords[0] == "0" && coords[1] == "0") return false;
@@ -1362,16 +1367,17 @@ QString TextUtils::incrementTemplateString(const QString & templateString, int p
 {
 	QString string;
 
-	QRegExp uMatcher("\\[([\\.\\d]+)\\]");
+	QRegularExpression uMatcher("\\[([\\.\\d]+)\\]");
 	MatchThing matchThings[32];
 	int pos = 0;
 	unsigned int matchThingIndex = 0;
-	while ((pos = uMatcher.indexIn(templateString, pos)) != -1) {
+	QRegularExpressionMatch match;
+	while ((pos = templateString.indexOf(uMatcher, pos, &match)) != -1) {
 		MatchThing * mt = &matchThings[matchThingIndex++];
 		mt->pos = pos;
-		mt->len = uMatcher.matchedLength();
-		mt->val = uMatcher.cap(1).toDouble();
-		pos += uMatcher.matchedLength();
+		mt->len = match.capturedLength();
+		mt->val = match.captured(1).toDouble();
+		pos += match.capturedLength();
 		if (matchThingIndex >= sizeof(matchThings) / sizeof(MatchThing)) break;
 	}
 
@@ -1422,11 +1428,12 @@ QString TextUtils::negIncCopyPinFunction(int pin, const QString & argString, voi
 
 double TextUtils::getViewBoxCoord(const QString & svg, int coord)
 {
-	QRegExp re("viewBox=['\\\"]([^'\\\"]+)['\\\"]");
-	int ix = re.indexIn(svg);
+	QRegularExpression re("viewBox=['\\\"]([^'\\\"]+)['\\\"]");
+	QRegularExpressionMatch match;
+	int ix = svg.indexOf(re, 0, &match);
 	if (ix < 0) return 0;
 
-	QString vb = re.cap(1);
+	QString vb = match.captured(1);
 	QStringList coords = vb.split(" ");
 	QString c = coords.at(coord);
 	return c.toDouble();
@@ -1644,7 +1651,7 @@ int TextUtils::getPinsAndSpacing(const QString & expectedFileName, QString & spa
 
 	spacingString = "100mil";
 	for (++pix; pix < pieces.count(); pix++) {
-		if (pieces.at(pix).indexOf(QRegExp("\\d")) == 0) {
+		if (pieces.at(pix).indexOf(QRegularExpression("\\d")) == 0) {
 			spacingString = pieces.at(pix);
 			return pins;
 		}
@@ -1790,7 +1797,7 @@ QSizeF TextUtils::parseForWidthAndHeight(QXmlStreamReader & svg, QRectF & viewBo
 				if (getViewBox) {
 					bool gotViewBox = false;
 					QString vb = svg.attributes().value("viewBox").toString();
-					QStringList vbs = vb.split(QRegExp(",| "));
+					QStringList vbs = vb.split(QRegularExpression(",| "));
 					if (vbs.count() == 4) {
 						bool ok = false;
 						double d[4];
@@ -1914,9 +1921,10 @@ void TextUtils::fixStyleAttribute(QDomElement & element, QString & style, const 
 	static const QString findStyle("%1[\\s]*:[\\s]*([^;]*)[;]?");
 
 	QString str = findStyle.arg(attributeName);
-	QRegExp sw(str);
-	if (sw.indexIn(style) >= 0) {
-		QString value = sw.cap(1);
+	QRegularExpression sw(str);
+	QRegularExpressionMatch match;
+	if (style.indexOf(sw, 0, &match) >= 0) {
+		QString value = match.captured(1);
 		style.remove(sw);
 		element.setAttribute(attributeName, value);
 	}
@@ -1961,7 +1969,7 @@ bool TextUtils::ensureViewBox(QDomDocument doc, double dpi, QRectF & rect, bool 
 		return true;
 	}
 
-	QStringList coords = viewBox.split(QRegExp(" |,"));
+	QStringList coords = viewBox.split(QRegularExpression(" |,"));
 	if (coords.count() != 4) return false;
 
 	rect.setRect(coords.at(0).toDouble(), coords.at(1).toDouble(), coords.at(2).toDouble(), coords.at(3).toDouble());

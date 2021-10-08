@@ -130,7 +130,7 @@ public:
 	static const QString CreatedWithFritzingXmlComment;
 	static void collectLeaves(QDomElement & element, int & index, QVector<QDomElement> & leaves);
 	static void collectLeaves(QDomElement & element, QList<QDomElement> & leaves);
-	static const QRegExp floatingPointMatcher;
+	static const QRegularExpression floatingPointMatcher;
 	static const QString RegexFloatDetector;
 	static const QString AdobeIllustratorIdentifier;
 

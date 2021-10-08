@@ -261,7 +261,7 @@ void TextUtils::chopNotDigits(QString & string) {
 	}
 }
 
-bool TextUtils::squashElement(QDomDocument & doc, const QString & elementName, const QString &attName, const QRegExp &matchContent) {
+bool TextUtils::squashElement(QDomDocument & doc, const QString & elementName, const QString &attName, const QRegularExpression &matchContent) {
 	bool result = false;
 	QDomElement root = doc.documentElement();
 	QDomNodeList domNodeList = root.elementsByTagName(elementName);
@@ -273,7 +273,7 @@ bool TextUtils::squashElement(QDomDocument & doc, const QString & elementName, c
 			QString att = node.attribute(attName);
 			if (att.isEmpty()) continue;
 
-			if (!matchContent.isEmpty()) {
+			if (!matchContent.pattern().isEmpty()) {
 				if (!att.contains(matchContent)) continue;
 			}
 		}

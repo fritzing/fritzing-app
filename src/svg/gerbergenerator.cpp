@@ -414,20 +414,20 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 	QDomDocument domDocument2 = domDocument1.cloneNode(true).toDocument();
 
 	bool anyConverted = false;
-	if (TextUtils::squashElement(domDocument1, "text", "", QRegExp())) {
+	if (TextUtils::squashElement(domDocument1, "text", "", QRegularExpression())) {
 		anyConverted = true;
 	}
 
 	// gerber can't handle ellipses that are rotated, so cull them all
-	if (TextUtils::squashElement(domDocument1, "ellipse", "", QRegExp())) {
+	if (TextUtils::squashElement(domDocument1, "ellipse", "", QRegularExpression())) {
 		anyConverted = true;
 	}
 
-	if (TextUtils::squashElement(domDocument1, "rect", "rx", QRegExp())) {
+	if (TextUtils::squashElement(domDocument1, "rect", "rx", QRegularExpression())) {
 		anyConverted = true;
 	}
 
-	if (TextUtils::squashElement(domDocument1, "rect", "ry", QRegExp())) {
+	if (TextUtils::squashElement(domDocument1, "rect", "ry", QRegularExpression())) {
 		anyConverted = true;
 	}
 
@@ -441,7 +441,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		anyConverted = true;
 	}
 
-	if (TextUtils::squashElement(domDocument1, "image", "", QRegExp())) {
+	if (TextUtils::squashElement(domDocument1, "image", "", QRegularExpression())) {
 		anyConverted = true;
 	}
 
@@ -867,20 +867,21 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 		QString originalPath = path.attribute("d", "").trimmed();
 		if (originalPath.contains(MultipleZs)) {
 			QStringList subpaths = path.attribute("d").split("z", Qt::SkipEmptyParts, Qt::CaseInsensitive);
-			MFinder.indexIn(subpaths.at(0).trimmed());
-			QString priorM = MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+			QRegularExpressionMatch match;
+			subpaths.at(0).trimmed().indexOf(MFinder, 0, &match);
+			QString priorM = match.captured(1) + match.captured(2) + "," + match.captured(3) + " ";
 			for (int i = 1; i < subpaths.count(); i++) {
 				QDomElement newPath = path.cloneNode(true).toElement();
 				QString z = ((i < subpaths.count() - 1) || originalPath.endsWith("z", Qt::CaseInsensitive)) ? "z" : "";
 				QString d = subpaths.at(i).trimmed() + z;
-				MFinder.indexIn(d);
+				d.indexOf(MFinder, 0, &match);
 				if (d.startsWith("m", Qt::CaseSensitive)) {
 					d = priorM + d;
 				}
-				if (MFinder.cap(1) == "M") {
-					priorM = MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+				if (match.captured(1) == "M") {
+					priorM = match.captured(1) + match.captured(2) + "," + match.captured(3) + " ";
 				} else {
-					priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+					priorM += match.captured(1) + match.captured(2) + "," + match.captured(3) + " ";
 				}
 				newPath.setAttribute("d",  d);
 				path.parentNode().appendChild(newPath);

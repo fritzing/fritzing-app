@@ -47,7 +47,7 @@ public:
 	static QString replaceTextElement(const QString & svg, const QString & id, const QString &  newValue);
 	static QByteArray replaceTextElement(const QByteArray & svg, const QString & id, const QString &  newValue);
 	static QString replaceTextElements(const QString & svg, const QHash<QString, QString> &);
-	static bool squashElement(QDomDocument &, const QString & elementName, const QString & attName, const QRegExp & matchContent);
+	static bool squashElement(QDomDocument &, const QString & elementName, const QString & attName, const QRegularExpression & matchContent);
 	static QString mergeSvg(const QString & svg1, const QString & svg2, const QString & id, bool flip);
 	static QString mergeSvgFinish(QDomDocument & doc);
 	static bool mergeSvg(QDomDocument & doc1, const QString & svg, const QString & id);
@@ -137,7 +137,7 @@ public:
 	static QMap<QString, QString> parseFileForViewImages(const QString &fzpPath);
 protected:
 	static bool pxToInches(QDomElement &elem, const QString &attrName, bool isIllustrator);
-	static void squashNotElement(QDomElement & element, const QString & elementName, const QString & attName, const QRegExp & matchContent, bool & result);
+	static void squashNotElement(QDomElement & element, const QString & elementName, const QString & attName, const QRegularExpression & matchContent, bool & result);
 	static void initPowerPrefixes();
 	static QDomElement copyText(QDomDocument & svgDom, QDomElement & parent, QDomElement & text, const QString & defaultX, const QString & defaultY, bool copyAttributes);
 	static void gornTreeAux(QDomElement &);

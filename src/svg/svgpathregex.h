@@ -1,10 +1,10 @@
 #ifndef SVGPATHPARSER_H
 #define SVGPATHPARSER_H
 
-#include <QRegExp>
+#include <QRegularExpression>
 
-static const QRegExp AaCc("[aAcCqQtTsS]");
-static const QRegExp MFinder("([mM])\\s*([-+\\.\\d]+)[\\s,]+([-+\\.\\d]+)");
-static const QRegExp MultipleZs("[zZ]\\s*[^\\s]");
+static const QRegularExpression AaCc("[aAcCqQtTsS]");
+static const QRegularExpression MFinder("([mM])\\s*([-+\\.\\d]+)[\\s,]+([-+\\.\\d]+)");
+static const QRegularExpression MultipleZs("[zZ]\\s*[^\\s]");
 
 #endif

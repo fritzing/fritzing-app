@@ -94,7 +94,7 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 	m_stackedWidget->addWidget(m_listView);
 
 	QVBoxLayout * vbl = new QVBoxLayout(this);
-	vbl->setMargin(3);
+	vbl->setContentsMargins(3, 3, 3, 3);
 	vbl->setSpacing(0);
 
 	m_header = NULL;

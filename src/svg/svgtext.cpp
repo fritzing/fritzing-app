@@ -2,7 +2,7 @@
 
 #include <QString>
 #include <QDomElement>
-#include <QMatrix>
+#include <QTransform>
 #include <QRect>
 #include <QSvgRenderer>
 #include <QPainter>

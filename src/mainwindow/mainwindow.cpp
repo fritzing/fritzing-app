@@ -1679,6 +1679,7 @@ bool MainWindow::copySvg(const QString & path, QFileInfoList & svgEntryInfoList)
 		QString destPath = copyToSvgFolder(svgInfo, false, PartFactory::folderPath(), "contrib");
 		if (!destPath.isEmpty()) {
 			QFile file(destPath);
+			match = QRegularExpressionMatch();
 			guidix = destPath.lastIndexOf(GuidMatcher, -1, &match);
 			destPath.replace(guidix, match.captured(0).length(), originalGuid);
 			FolderUtils::slamCopy(file, destPath);

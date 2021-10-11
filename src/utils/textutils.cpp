@@ -202,6 +202,7 @@ QSet<QString> TextUtils::getRegexpCaptures(const QString &pattern, const QString
 	while ((pos = textToSearchIn.indexOf(re, pos, &match)) != -1) {
 		captures << match.captured(1);
 		pos += match.capturedLength();
+		match = QRegularExpressionMatch();
 	}
 
 	return captures;
@@ -934,6 +935,7 @@ QList<double> TextUtils::getTransformFloats(const QString & transform) {
 	while ((pos = transform.indexOf(TextUtils::floatingPointMatcher, pos, &match)) != -1) {
 		list << transform.mid(pos, match.capturedLength()).toDouble();
 		pos += match.capturedLength();
+		match = QRegularExpressionMatch();
 	}
 
 #ifndef QT_NO_DEBUG
@@ -1375,6 +1377,7 @@ QString TextUtils::incrementTemplateString(const QString & templateString, int p
 		mt->val = match.captured(1).toDouble();
 		pos += match.capturedLength();
 		if (matchThingIndex >= sizeof(matchThings) / sizeof(MatchThing)) break;
+		match = QRegularExpressionMatch();
 	}
 
 	for (int i = 0; i < pins; i++) {

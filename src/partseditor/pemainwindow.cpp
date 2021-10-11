@@ -249,6 +249,7 @@ bool byID(QDomElement & c1, QDomElement & c2)
 	QRegularExpressionMatch match;
 	int ix = c1.attribute("id").indexOf(IntegerFinder, 0, &match);
 	if (ix >= 0) c1id = match.captured(0).toInt();
+	match = QRegularExpressionMatch();
 	ix = c2.attribute("id").indexOf(IntegerFinder, 0, &match);
 	if (ix >= 0) c2id = match.captured(0).toInt();
 
@@ -2788,6 +2789,7 @@ void PEMainWindow::connectorCountChanged(int newCount) {
 			if (candidate > id) id = candidate;
 		}
 		// sometimes id = 0 but name = 1, and we are now using name = id
+		match = QRegularExpressionMatch();
 		ix = connector.attribute("name").indexOf(IntegerFinder, 0, &match);
 		if (ix >= 0) {
 			int candidate = match.captured(0).toInt();

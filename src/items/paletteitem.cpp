@@ -81,7 +81,7 @@ int findNumber(const QString & string) {
 	int result = match.captured(0).toInt();
 	int length = match.captured(0).length();
 
-	int jx = string.lastIndexOf(IntegerFinder, 0, &match);
+	int jx = string.lastIndexOf(IntegerFinder, 0);
 	if (jx >= ix + length) {
 		return -1;
 	}

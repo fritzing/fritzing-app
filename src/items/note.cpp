@@ -570,6 +570,8 @@ void Note::linkDialog() {
 			QString html = textCursor.selection().toHtml();
 			if (html.contains(UrlTag, &match)) {
 				gotUrl = true;
+			} else {
+				match = QRegularExpressionMatch();
 			}
 		}
 		if (!gotUrl && !atEnd) {

@@ -874,6 +874,7 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 				QDomElement newPath = path.cloneNode(true).toElement();
 				QString z = ((i < subpaths.count() - 1) || originalPath.endsWith("z", Qt::CaseInsensitive)) ? "z" : "";
 				QString d = subpaths.at(i).trimmed() + z;
+				match = QRegularExpressionMatch();
 				d.indexOf(MFinder, 0, &match);
 				if (d.startsWith("m", Qt::CaseSensitive)) {
 					d = priorM + d;

@@ -33,6 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFile>
 #include <QUrl>
 #include <QFrame>
+#include <QEnterEvent>
 
 //////////////////////////////////////////////////////
 
@@ -66,13 +67,13 @@ LabelThing::LabelThing(const QString & text, const QString & released, const QSt
 void LabelThing::enterEvent(QEvent * event) {
 	m_state = HOVER;
 	update();
-	QLabel::enterEvent(event);
+	QLabel::enterEvent((QEnterEvent *)event);
 }
 
 void LabelThing::leaveEvent(QEvent * event) {
 	m_state = RELEASED;
 	update();
-	QLabel::enterEvent(event);
+	QLabel::enterEvent((QEnterEvent *)event);
 }
 
 void LabelThing::mousePressEvent(QMouseEvent * event) {

@@ -21,7 +21,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PALETTEITEMBASE_H
 #define PALETTEITEMBASE_H
 
+#include <QtGlobal>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QGraphicsSvgItem>
+#else
+#include <QtSvgWidgets/QGraphicsSvgItem>
+#endif
 #include <QGraphicsSceneMouseEvent>
 #include <QSet>
 

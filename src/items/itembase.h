@@ -27,7 +27,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QHash>
 #include <QList>
 #include <QGraphicsSceneHoverEvent>
+#include <QtGlobal>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QGraphicsSvgItem>
+#else
+#include <QtSvgWidgets/QGraphicsSvgItem>
+#endif
 #include <QPointer>
 #include <QUrl>
 #include <QMap>

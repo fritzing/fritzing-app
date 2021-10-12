@@ -792,10 +792,11 @@ int SqliteReferenceModel::countPropsInCommon(const QString &family, const QMulti
 	}
 
 	int result = 0;
-	QMultiHash<QString,QString> props2 = part2->properties();
+	QHash<QString,QString> props2 = part2->properties();
 	foreach(QString prop, properties.uniqueKeys()) {
 		QStringList values1 = properties.values(prop);
-		QStringList values2 = props2.values(prop);
+		QStringList values2;
+		values2.append(props2.value(prop));
 		foreach (QString value1, values1) {
 			if (values2.contains(value1)) {
 				result++;

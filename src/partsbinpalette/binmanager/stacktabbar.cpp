@@ -23,7 +23,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMouseEvent>
 #include <QMenu>
 #include <QStylePainter>
+#include <QtGlobal>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QStyleOptionTabV2>
+#else
+#include <QStyleOptionTab>
+#endif
 #include <QMimeData>
 
 #include "stacktabbar.h"

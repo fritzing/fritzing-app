@@ -230,26 +230,26 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	bigFont.setPointSizeF(bigFontSize * 72 / 1000.0);
 	QFontMetricsF bigFontMetrics(bigFont);
 	foreach (QString title, titles) {
-		qreal w = bigFontMetrics.width(title);
+		qreal w = bigFontMetrics.horizontalAdvance(title);
 		if (w > titleWidth) titleWidth = w;
 	}
 	QFont pinTextFont("DroidSans");
 	pinTextFont.setPointSizeF(bigPinFontSize * 72 / 1000.0);
 	QFontMetricsF smallFontMetrics(pinTextFont);
 	foreach (QDomElement element, lefts) {
-		qreal w = smallFontMetrics.width(getConnectorName(element));
+		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
 		if (w > leftWidth) leftWidth = w;
 	}
 	foreach (QDomElement element, rights) {
-		qreal w = smallFontMetrics.width(getConnectorName(element));
+		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
 		if (w > rightWidth) rightWidth = w;
 	}
 	foreach (QDomElement element, powers) {
-		qreal w = smallFontMetrics.width(getConnectorName(element));
+		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
 		if (w > topWidth) topWidth = w;
 	}
 	foreach (QDomElement element, grounds) {
-		qreal w = smallFontMetrics.width(getConnectorName(element));
+		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
 		if (w > bottomWidth) bottomWidth = w;
 	}
 

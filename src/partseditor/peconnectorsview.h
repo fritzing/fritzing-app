@@ -40,6 +40,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../connectors/connectoritem.h"
 #include "../connectors/connector.h"
 #include "../referencemodel/referencemodel.h"
+#include "../partseditor/peutils.h"
 
 class PEConnectorsView : public QFrame
 {

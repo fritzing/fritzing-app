@@ -407,7 +407,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 		connect(edit, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(voltageEntry(const QString &)));
 		returnWidget = edit;
 
-		returnValue = m_voltage;
+		returnValue = QString("%1").arg(m_voltage);
 		returnProp = tr("voltage");
 		return true;
 	}

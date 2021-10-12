@@ -32,6 +32,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDesktopServices>
 #include <QUrl>
 #include <QFileInfo>
+#include <QStandardPaths>
 
 #include "../debugdialog.h"
 #include <quazip.h>

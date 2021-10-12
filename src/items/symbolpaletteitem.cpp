@@ -127,7 +127,7 @@ SymbolPaletteItem::~SymbolPaletteItem() {
 	else {
 		if (m_connector0) LocalGrounds.removeOne(m_connector0);
 		if (m_connector1) LocalGrounds.removeOne(m_connector1);
-		LocalGrounds.removeOne(NULL);   // cleans null QPointers
+		LocalGrounds.removeOne(QPointer<ConnectorItem>(NULL));   // cleans null QPointers
 
 		foreach (long key, LocalVoltages.uniqueKeys()) {
 			if (m_connector0) {
@@ -169,7 +169,7 @@ void SymbolPaletteItem::removeMeFromBus(double v) {
 			}
 		}
 	}
-	LocalGrounds.removeOne(NULL);  // keep cleaning these out
+	LocalGrounds.removeOne(QPointer<ConnectorItem>(NULL));  // keep cleaning these out
 }
 
 ConnectorItem* SymbolPaletteItem::newConnectorItem(Connector *connector)

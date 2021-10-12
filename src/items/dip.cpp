@@ -211,7 +211,7 @@ QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels)
 	QFont font("Droid Sans", labelFontSize * 72 / GraphicsUtils::StandardFritzingDPI, QFont::Normal);
 	QFontMetricsF fm(font);
 	for (int i = 0; i < labels.count(); i++) {
-		double w = fm.width(labels.at(i));
+		double w = fm.horizontalAdvance(labels.at(i));
 		if (w > textMax) textMax = w;
 	}
 	if (textMax > defaultLabelWidth) {

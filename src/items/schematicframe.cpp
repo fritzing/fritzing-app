@@ -77,7 +77,7 @@ SchematicFrame::SchematicFrame( ModelPart * modelPart, ViewLayer::ViewID viewID,
 
 	if (modelPart->localProp("date").toString().isEmpty()) {
 		QDateTime dt = QDateTime::currentDateTime();
-		modelPart->setLocalProp("date", QString::number(dt.toTime_t()));
+		modelPart->setLocalProp("date", QString::number(dt.toSecsSinceEpoch()));
 	}
 
 	if (modelPart->localProp("sheet").toString().isEmpty()) {
@@ -198,7 +198,7 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 	}
 
 	QDateTime dt;
-	dt.setTime_t(modelPart()->localProp("date").toUInt());
+	dt.setSecsSinceEpoch(modelPart()->localProp("date").toUInt());
 	hash.insert("date", dt.toString(DisplayFormat));
 
 	DebugDialog::debug("svg " + svg);
@@ -288,7 +288,7 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 		QString d = prop("date");
 		if (!d.isEmpty()) {
 			QDateTime dateTime;
-			dateTime.setTime_t(d.toUInt());
+			dateTime.setSecsSinceEpoch(d.toUInt());
 			dateTimeEdit->setDateTime(dateTime);
 		}
 		//dateTimeEdit->setCalendarPopup(true);
@@ -428,7 +428,7 @@ void SchematicFrame::propEntry() {
 void SchematicFrame::dateTimeEntry(QDateTime dateTime) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView) {
-		infoGraphicsView->setProp(this, "date", tr("date"), prop("date"), QString::number(dateTime.toTime_t()), true);
+		infoGraphicsView->setProp(this, "date", tr("date"), prop("date"), QString::number(dateTime.toSecsSinceEpoch()), true);
 	}
 }
 

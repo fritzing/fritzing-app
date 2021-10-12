@@ -21,7 +21,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGraphicsScene>
 #include <QPoint>
 #include <QSet>
+#include <QtGlobal>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QSvgWidget>
+#else
+#include <QtSvgWidgets/QSvgWidget>
+#endif
 
 #include "partsbiniconview.h"
 #include "graphicsflowlayout.h"

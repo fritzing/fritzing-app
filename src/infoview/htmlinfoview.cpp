@@ -81,7 +81,7 @@ QSize TagLabel::sizeHint() const
 	if (t.isEmpty()) return hint;
 
 	QFontMetricsF fm(this->font());
-	double textWidth = fm.width(t);
+	double textWidth = fm.horizontalAdvance(t);
 
 	QWidget * w = this->window();
 	QPoint pos(0,0);

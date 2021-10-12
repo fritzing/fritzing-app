@@ -701,7 +701,7 @@ QString TextUtils::convertExtendedChars(const QString & str)
 {
 	QString result;
 	foreach (QChar c, str) {
-		if (c < 128) {
+		if (c < QChar(128)) {
 			result.append(c);
 		}
 		else {
@@ -724,18 +724,18 @@ QString TextUtils::stripNonValidXMLCharacters(const QString & str)
 			continue;
 		}
 
-		if ((c == 0x9) ||
-		        (c == 0xA) ||
-		        (c == 0xD) ||
-		        ((c >= 0x20) && (c <= 0xD7FF)) ||
-		        ((c >= 0xE000) && (c <= 0xFFFD)))
+		if ((c == QChar(0x9)) ||
+			(c == QChar(0xA)) ||
+			(c == QChar(0xD)) ||
+			((c >= QChar(0x20)) && (c <= QChar(0xD7FF))) ||
+			((c >= QChar(0xE000)) && (c <= QChar(0xFFFD))))
 		{
 			if (in_hs) {
 				result.append(hs);
 				in_hs = false;
 			}
-			if (c > 255) {
-				result.append(QString("&#%1").arg(c, 0, 16));
+			if (c > QChar(255)) {
+				result.append(QString("&#%1").arg(c, 0, QChar(16)));
 			}
 			else {
 				result.append(c);

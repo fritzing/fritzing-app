@@ -22,6 +22,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 #include "../utils/zoomslider.h"
 
+#include <QEnterEvent>
+
 ZoomButton::ZoomButton(QBoxLayout::Direction dir, ZoomButton::ZoomType type, ZoomableGraphicsView* view, QWidget *parent) : QLabel(parent)
 {
 	QString imgPath = ":/resources/images/icons/partsEditorZoom%1%2Button.png";
@@ -54,7 +56,7 @@ void ZoomButton::mousePressEvent(QMouseEvent *event) {
 }
 
 void ZoomButton::enterEvent(QEvent *event) {
-	QLabel::enterEvent(event);
+	QLabel::enterEvent((QEnterEvent *)event);
 }
 
 void ZoomButton::leaveEvent(QEvent *event) {

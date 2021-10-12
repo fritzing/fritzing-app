@@ -32,7 +32,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGroupBox>
 #include <QCloseEvent>
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QSplashScreen>
 #include <QScreen>
 

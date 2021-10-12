@@ -39,6 +39,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "infographicsview.h"
 #include "../viewlayer.h"
 #include "../utils/misc.h"
+#include "../utils/graphutils.h"
 #include "../commands.h"
 
 #include "renderthing.h"

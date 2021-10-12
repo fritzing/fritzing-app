@@ -47,6 +47,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../svg/svg2gerber.h"
 #include "../routingstatus.h"
 #include "../simulation/simulator.h"
+#include "../model/modelpart.h"
+#include "../partseditor/peutils.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;

@@ -46,7 +46,7 @@ void FLineEdit::mousePressEvent ( QMouseEvent * event ) {
 }
 
 void FLineEdit::enterEvent(QEvent * event) {
-	QLineEdit::enterEvent(event);
+	QLineEdit::enterEvent((QEnterEvent *)event);
 	if (m_readOnly) {
 		emit mouseEnter();
 	}

@@ -11,10 +11,11 @@ public:
 	explicit FabUploadProgress(QWidget *parent = nullptr);
 	void init(QNetworkAccessManager *manager, QString filename);
 
-
-private slots:
+public slots:
 	void doUpload();
 	void openInBrowser();
+
+private slots:
 	void onRequestUploadFinished();
 	void onError(QNetworkReply::NetworkError code);
 	void uploadDone();

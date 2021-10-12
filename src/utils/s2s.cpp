@@ -234,7 +234,9 @@ void S2S::saveFile(const QString & content, const QString & path)
 	QFile file(path);
 	if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
 		QTextStream out(&file);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 		out.setCodec("UTF-8");
+#endif
 		out << content;
 		file.close();
 	}

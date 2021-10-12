@@ -124,7 +124,9 @@ void Checker::writeCheckerOutput(const QString & message) {
 		QFile file(CheckerOutputPath);
 		if (file.open(QFile::Append)) {
 			QTextStream out(&file);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 			out.setCodec("UTF-8");
+#endif
 			out << message << "\n";
 			file.close();
 		}

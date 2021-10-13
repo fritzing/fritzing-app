@@ -264,9 +264,9 @@ bool GroundPlaneGenerator::generateGroundPlane(const QString & boardSvg, QSizeF 
 	return future.result();
 }
 
-bool GroundPlaneGenerator::generateGroundPlaneFn(GPGParams & params)
+bool GroundPlaneGenerator::generateGroundPlaneFn(const GPGParams &constParams)
 {
-
+	GPGParams params = constParams;
 	double bWidth, bHeight;
 	QList<QRectF> rects;
 	QImage * image = generateGroundPlaneAux(params, bWidth, bHeight, rects);

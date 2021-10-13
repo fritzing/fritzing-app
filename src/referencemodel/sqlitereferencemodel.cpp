@@ -27,6 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSqlResult>
 #include <QSqlDriver>
 #include <QDebug>
+#include <QtGlobal>
 #include <limits>
 
 #include "sqlitereferencemodel.h"
@@ -61,10 +62,12 @@ void debugExec(const QString & msg, QSqlQuery & query) {
 	    "\t ERROR DB: " + query.lastError().databaseText() + "\n"
 	    "\t moduleid:" + (DebugModelPart == NULL ? "" : DebugModelPart->moduleID()) + ""
 	);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QMap<QString, QVariant> map = query.boundValues();
 	foreach (QString name, map.keys()) {
 		DebugDialog::debug(QString("\t%1:%2").arg(name).arg(map.value(name).toString()));
 	}
+#endif
 }
 
 void killConnectors(QVector<Connector *> & connectors) {

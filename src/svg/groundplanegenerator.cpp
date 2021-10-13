@@ -35,6 +35,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSvgRenderer>
 #include <QDate>
 #include <QTextStream>
+#include <QtGlobal>
 #include <qmath.h>
 
 #include <boost/math/special_functions/relative_difference.hpp>
@@ -257,7 +258,11 @@ bool GroundPlaneGenerator::generateGroundPlane(const QString & boardSvg, QSizeF 
 	params.board = board;
 	params.res = res;
 	params.color = color;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QFuture<bool> future = QtConcurrent::run(this, &GroundPlaneGenerator::generateGroundPlaneFn, params);
+#else
+	QFuture<bool> future = QtConcurrent::run(&GroundPlaneGenerator::generateGroundPlaneFn, this, params);
+#endif
 	while (!future.isFinished()) {
 		ProcessEventBlocker::processEvents(200);
 	}

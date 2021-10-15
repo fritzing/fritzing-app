@@ -61,7 +61,7 @@ protected:
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 public slots:
-	void resistanceEntry(const QString & text);
+	void resistanceEntry(int);
 
 public:
 	static double toOhms(const QString & ohmsString, void * data);

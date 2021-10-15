@@ -267,7 +267,7 @@ bool Resistor::collectExtraInfo(QWidget * parent, const QString & family, const 
 		validator->setRegularExpression(QRegularExpression(QString("((\\d{1,10})|(\\d{1,10}\\.)|(\\d{1,10}\\.\\d{1,5}))[\\x%1umkMG]{0,1}[\\x03A9]{0,1}").arg(TextUtils::MicroSymbolCode, 4, 16, QChar('0'))));
 		focusOutComboBox->setValidator(validator);
 		connect(focusOutComboBox->validator(), SIGNAL(sendState(QValidator::State)), this, SLOT(textModified(QValidator::State)));
-		connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(resistanceEntry(const QString &)));
+		connect(focusOutComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(resistanceEntry(int)));
 
 		focusOutComboBox->setObjectName("infoViewComboBox");
 		focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value\n"
@@ -370,8 +370,12 @@ QStringList Resistor::collectValues(const QString & family, const QString & prop
 	return Capacitor::collectValues(family, prop, value);
 }
 
-void Resistor::resistanceEntry(const QString & text) {
+void Resistor::resistanceEntry(int index) {
+	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	if (comboBox == NULL) return;
 	//DebugDialog::debug(QString("resistance entry %1").arg(text));
+
+	QString text = comboBox->itemText(index);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView) {

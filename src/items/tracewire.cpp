@@ -86,7 +86,7 @@ bool TraceWire::collectExtraInfo(QWidget * parent, const QString & family, const
 		comboBox->setEnabled(swappingEnabled);
 		comboBox->setObjectName("infoViewComboBox");
 
-		connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(widthEntry(const QString &)));
+		connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(widthEntry(int)));
 		returnWidget = comboBox;
 		returnValue = comboBox->currentText();
 
@@ -107,7 +107,10 @@ bool TraceWire::collectExtraInfo(QWidget * parent, const QString & family, const
 }
 
 
-void TraceWire::widthEntry(const QString & text) {
+void TraceWire::widthEntry(int index) {
+	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	if (comboBox == NULL) return;
+	QString text = comboBox->itemText(index);
 
 	int w = widthEntry(text, sender());
 	if (w == 0) return;

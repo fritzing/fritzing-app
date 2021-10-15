@@ -61,7 +61,7 @@ protected:
 	void setColorFromElement(QDomElement & element);
 
 protected slots:
-	void widthEntry(const QString & text);
+	void widthEntry(int index);
 
 protected:
 	WireDirection m_wireDirection;

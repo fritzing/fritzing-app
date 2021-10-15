@@ -798,7 +798,7 @@ bool PaletteItem::collectHoleSizeInfo(const QString & defaultHoleSizeValue, QWid
 	}
 	QWidget * frame = createHoleSettings(parent, m_holeSettings, swappingEnabled, returnValue, true);
 
-	connect(m_holeSettings.sizesComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(changeHoleSize(const QString &)));
+	connect(m_holeSettings.sizesComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(changeHoleSize(int)));
 	connect(m_holeSettings.mmRadioButton, SIGNAL(toggled(bool)), this, SLOT(changeUnits(bool)));
 	connect(m_holeSettings.inRadioButton, SIGNAL(toggled(bool)), this, SLOT(changeUnits(bool)));
 	connect(m_holeSettings.diameterEdit, SIGNAL(editingFinished()), this, SLOT(changeDiameter()));
@@ -1124,6 +1124,13 @@ QStringList PaletteItem::getSizes(QString & holeSize, HoleSettings & holeSetting
 		holeSize = sizes[0] + "," + sizes[1];
 	}
 	return sizes;
+}
+
+void PaletteItem::changeHoleSize(int index) {
+	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	if (comboBox == NULL) return;
+	QString newSize = comboBox->itemText(index);
+	changeHoleSize(newSize);
 }
 
 void PaletteItem::changeHoleSize(const QString & newSize) {

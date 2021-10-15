@@ -159,9 +159,10 @@ protected:
 	static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid, int hsix);
 	static QString hackSvgHoleSize(QDomDocument & domDocument, const QString & holeDiameter, const QString & ringThickness);
 	static QString hackSvgHoleSizeAux(const QString & svg, const QString & expectedFileName);
+	virtual void changeHoleSize(const QString &);
 
 protected slots:
-	virtual void changeHoleSize(const QString &);
+	virtual void changeHoleSize(int);
 	virtual void changeUnits(bool);
 	void changeDiameter();
 	void changeThickness();

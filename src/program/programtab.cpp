@@ -319,10 +319,10 @@ void ProgramTab::initMenus() {
 	m_rightButtonsContainer->addWidget(portSelector);
 
 	// connect last so these signals aren't triggered during initialization
-	connect(m_platformComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setPlatform(const QString &)));
-	connect(m_portComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setPort(const QString &)));
+	connect(m_platformComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setPlatform(int)));
+	connect(m_portComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setPort(int)));
 	connect(m_portComboBox, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
-	connect(m_boardComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setBoard(const QString &)));
+	connect(m_boardComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setBoard(int)));
 
 	m_monitorButton = new SketchToolButton("MonitorCode", this, m_programWindow->m_monitorAction);
 	m_monitorButton->setText(tr("Serial Monitor"));
@@ -371,6 +371,11 @@ void ProgramTab::initWithSettings() {
 	setPlatform(currentPlatform, true);
 	setBoard(currentBoard);
 	setPort(currentPort);
+}
+
+void ProgramTab::setPlatform(int index) {
+	QString newPlatform = m_platformComboBox->itemText(index);
+	setPlatform(newPlatform);
 }
 
 void ProgramTab::setPlatform(const QString & newPlatformName) {
@@ -425,6 +430,11 @@ void ProgramTab::setPort(const QString & newPort) {
 	}
 }
 
+void ProgramTab::setPort(int index) {
+	QString newPort = m_portComboBox->itemText(index);
+	setPort(newPort);
+}
+
 void ProgramTab::setBoard(const QString & newBoard) {
 	DebugDialog::debug(QString("Setting board to %1").arg(newBoard));
 	int ix = m_boardComboBox->findText(newBoard);
@@ -436,6 +446,11 @@ void ProgramTab::setBoard(const QString & newBoard) {
 		QSettings settings;
 		settings.setValue("programwindow/board", newBoard);
 	}
+}
+
+void ProgramTab::setBoard(int index) {
+	QString newBoard = m_boardComboBox->itemText(index);
+	setBoard(newBoard);
 }
 
 bool ProgramTab::loadProgramFile() {

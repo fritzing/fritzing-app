@@ -86,13 +86,16 @@ public:
 	Platform *platform();
 	void setPlatform(const QString & newPlatformName, bool updateLink);
 	void setPlatform(Platform * newPlatform, bool updateLink);
+	void setPlatform(const QString & newPlatformName);
+	void setPort(const QString &);
+	void setBoard(const QString &);
 	void appendToConsole(const QString &);
 	void initMenus();
 public slots:
-	void setPlatform(const QString & newPlatformName);
 	void setPlatform(Platform * newPlatform);
-	void setPort(const QString &);
-	void setBoard(const QString &);
+	void setPlatform(int index);
+	void setPort(int index);
+	void setBoard(int index);
 	bool loadProgramFile();
 	void textChanged();
 	void undo();

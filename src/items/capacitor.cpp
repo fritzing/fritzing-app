@@ -118,10 +118,10 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 				validator->setRegularExpression(QRegularExpression(pattern));
 				focusOutComboBox->setValidator(validator);
 				connect(focusOutComboBox->validator(), SIGNAL(sendState(QValidator::State)), this, SLOT(textModified(QValidator::State)));
-				connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(propertyEntry(const QString &)));
+				connect(focusOutComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(propertyEntry(int)));
 			}
 			else {
-				connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(simplePropertyEntry(const QString &)));
+				connect(focusOutComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(simplePropertyEntry(int)));
 			}
 
 			this->m_comboBoxes.insert(propertyDef, focusOutComboBox);
@@ -165,9 +165,10 @@ void Capacitor::textModified(QValidator::State state) {
 	}
 }
 
-void Capacitor::propertyEntry(const QString & text) {
+void Capacitor::propertyEntry(int index) {
 	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
 	if (focusOutComboBox == NULL) return;
+	QString text = focusOutComboBox->itemText(index);
 
 	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {
@@ -208,10 +209,11 @@ void Capacitor::setProp(const QString & prop, const QString & value) {
 	PaletteItem::setProp(prop, value);
 }
 
-void Capacitor::simplePropertyEntry(const QString & text) {
+void Capacitor::simplePropertyEntry(int index) {
 
 	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
 	if (focusOutComboBox == NULL) return;
+	QString text = focusOutComboBox->itemText(index);
 
 	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {

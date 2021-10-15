@@ -40,8 +40,8 @@ public:
 
 public slots:
 	void textModified(QValidator::State state);
-	void propertyEntry(const QString & text);
-	void simplePropertyEntry(const QString & text);
+	void propertyEntry(int index);
+	void simplePropertyEntry(int index);
 
 protected:
 	QHash<PropertyDef *, QString> m_propertyDefs;

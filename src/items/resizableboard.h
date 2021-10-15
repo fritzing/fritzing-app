@@ -78,7 +78,7 @@ public:
 
 protected slots:
 	void prepLoadImage();
-	void fileNameEntry(const QString & filename);
+	void fileNameEntry(int index);
 
 protected:
 	QPointer<QComboBox> m_fileNameComboBox;

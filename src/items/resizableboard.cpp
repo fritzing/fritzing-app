@@ -223,7 +223,7 @@ void Board::setupLoadImage(QWidget * parent, const QString & family, const QStri
 
 	setFileNameItems();
 
-	connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(fileNameEntry(const QString &)));
+	connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(fileNameEntry(int)));
 
 	QPushButton * button = new QPushButton (tr("load image file"));
 	button->setObjectName("infoViewButton");
@@ -271,7 +271,11 @@ QStringList & Board::getNewImageNames() {
 	return NewBoardImageNames;
 }
 
-void Board::fileNameEntry(const QString & filename) {
+void Board::fileNameEntry(int index) {
+	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	if (comboBox == NULL) return;
+
+	QString filename = comboBox->itemText(index);
 	foreach (QString name, getImageNames()) {
 		if (filename.compare(name) == 0) {
 			QString f = FolderUtils::getAppPartsSubFolderPath("") + "/svg/core/pcb/" + filename + ".svg";

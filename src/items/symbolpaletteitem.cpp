@@ -404,7 +404,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 		edit->setObjectName("infoViewComboBox");
 
 
-		connect(edit, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(voltageEntry(const QString &)));
+		connect(edit, SIGNAL(currentIndexChanged(int)), this, SLOT(voltageEntry(int)));
 		returnWidget = edit;
 
 		returnValue = QString("%1").arg(m_voltage);
@@ -430,7 +430,11 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 	return PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 }
 
-void SymbolPaletteItem::voltageEntry(const QString & text) {
+void SymbolPaletteItem::voltageEntry(int index) {
+	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	if (comboBox == NULL) return;
+	QString text = comboBox->itemText(index);
+
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView) {
 		infoGraphicsView->setVoltage(text.toDouble(), true);

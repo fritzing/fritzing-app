@@ -79,7 +79,7 @@ public:
 	static double DefaultVoltage;
 
 public slots:
-	void voltageEntry(const QString & text);
+	void voltageEntry(int index);
 	void labelEntry();
 
 protected:

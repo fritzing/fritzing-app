@@ -164,7 +164,7 @@ public:
 	void colorByLength(bool);
 
 protected slots:
-	void colorEntry(const QString & text);
+	void colorEntry(int index);
 	void setBandedProp(bool);
 
 public:

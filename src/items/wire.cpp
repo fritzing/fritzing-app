@@ -1630,7 +1630,7 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 				}
 			}
 
-			connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(colorEntry(const QString &)));
+			connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(colorEntry(int)));
 
 			if (this->hasShadow()) {
 				QCheckBox * checkBox = new QCheckBox(tr("Banded"));
@@ -1663,8 +1663,8 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 	return ItemBase::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 }
 
-void Wire::colorEntry(const QString & text) {
-	Q_UNUSED(text);
+void Wire::colorEntry(int index) {
+	Q_UNUSED(index);
 
 	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;

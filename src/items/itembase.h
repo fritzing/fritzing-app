@@ -320,6 +320,7 @@ public slots:
 	void hidePartLabel();
 	void partLabelChanged(const QString &newText);
 	virtual void swapEntry(const QString & text);
+	virtual void swapEntry(int index);
 	void showInFolder();
 
 public:

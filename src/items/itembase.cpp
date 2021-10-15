@@ -1620,7 +1620,7 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 		comboBox->setCurrentIndex(comboBox->findText(tempValue));
 		comboBox->setEnabled(swappingEnabled);
 		comboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-		connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(swapEntry(const QString &)));
+		connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(swapEntry(int)));
 
 		returnWidget = comboBox;
 		m_propsMap.insert(prop, tempValue);
@@ -1628,6 +1628,13 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 	}
 
 	return true;
+}
+
+void ItemBase::swapEntry(int index) {
+	FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
+	if (!comboBox) return;
+
+	swapEntry(comboBox->itemText(index));
 }
 
 void ItemBase::swapEntry(const QString & text) {

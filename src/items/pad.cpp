@@ -227,7 +227,7 @@ bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QStri
 				}
 			}
 
-			connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(terminalPointEntry(const QString &)));
+			connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(terminalPointEntry(int)));
 
 			returnWidget = comboBox;
 			returnProp = tr("connect to");
@@ -323,7 +323,7 @@ void Pad::addedToScene(bool temporary)
 	return PaletteItem::addedToScene(temporary);
 }
 
-void Pad::terminalPointEntry(const QString &) {
+void Pad::terminalPointEntry(int) {
 	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 

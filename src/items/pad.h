@@ -58,7 +58,7 @@ public:
 	bool copperBlocker();
 
 protected slots:
-	void terminalPointEntry(const QString &);
+	void terminalPointEntry(int);
 
 
 protected:

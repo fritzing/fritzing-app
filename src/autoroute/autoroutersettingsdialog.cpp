@@ -198,11 +198,25 @@ bool AutorouterSettingsDialog::initProductionType()
 	return custom > 0;
 }
 
+void AutorouterSettingsDialog::widthEntry(int index) {
+	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	if (comboBox == NULL) return;
+	QString text = comboBox->itemText(index);
+	widthEntry(text);
+}
+
 void AutorouterSettingsDialog::widthEntry(const QString & text) {
 	int w = TraceWire::widthEntry(text, sender());
 	if (w == 0) return;
 
 	m_traceWidth = w;
+}
+
+void AutorouterSettingsDialog::changeHoleSize(int index) {
+	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	if (comboBox == NULL) return;
+	QString newSize = comboBox->itemText(index);
+	changeHoleSize(newSize);
 }
 
 void AutorouterSettingsDialog::changeHoleSize(const QString & newSize) {
@@ -296,7 +310,7 @@ QWidget * AutorouterSettingsDialog::createTraceWidget() {
 	QBoxLayout * traceLayout = new QVBoxLayout();
 
 	m_traceWidthComboBox = TraceWire::createWidthComboBox(m_traceWidth, traceGroupBox);
-	connect(m_traceWidthComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(widthEntry(const QString &)));
+	connect(m_traceWidthComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(widthEntry(int)));
 
 	traceLayout->addWidget(m_traceWidthComboBox);
 	traceGroupBox->setLayout(traceLayout);
@@ -310,7 +324,7 @@ QWidget * AutorouterSettingsDialog::createViaWidget() {
 
 	QWidget * viaWidget = Hole::createHoleSettings(viaGroupBox, m_holeSettings, true, "", true);
 
-	connect(m_holeSettings.sizesComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(changeHoleSize(const QString &)));
+	connect(m_holeSettings.sizesComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(changeHoleSize(int)));
 	connect(m_holeSettings.mmRadioButton, SIGNAL(toggled(bool)), this, SLOT(changeUnits(bool)));
 	connect(m_holeSettings.inRadioButton, SIGNAL(toggled(bool)), this, SLOT(changeUnits(bool)));
 	connect(m_holeSettings.diameterEdit, SIGNAL(editingFinished()), this, SLOT(changeDiameter()));

@@ -513,8 +513,6 @@ bool PartsChecker::updateParts(const QString & repoPath, const QString & remoteS
 	// from https://github.com/libgit2/libgit2/blob/master/examples/network/fetch.c
 	// useful for testing: http://stackoverflow.com/questions/3489173/how-to-clone-git-repository-with-specific-revision-changeset
 
-	static char *refspec = const_cast<char *>("master:refs/heads/master");
-
 	bool ok = false;
 	git_remote *remote = NULL;
 	git_repository * repository = NULL;

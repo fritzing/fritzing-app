@@ -233,7 +233,7 @@
           <height>321</height>
          </rect>
         </property>
-        <widget class="QWidget" name="layoutWidget">
+        <widget class="QWidget" name="layoutWidget1">
          <property name="geometry">
           <rect>
            <x>0</x>

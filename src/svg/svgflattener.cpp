@@ -94,7 +94,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QTransform transform, co
 				QLineF newLine = transform.map(line);
 				element.setAttribute("stroke-width", QString::number(newLine.length()));
 			}
-		} catch (std::out_of_range) {
+		} catch (std::out_of_range const&) {
 			// Expected, sometimes there is no stroke-width
 		}
 

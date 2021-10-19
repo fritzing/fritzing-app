@@ -226,7 +226,8 @@ bool PartsChecker::checkIfClean(const QString & repoPath,
 	QString branchName;
 	bool result = false;
 	git_status_list *status_list = NULL;
-	git_status_options status_options = GIT_STATUS_OPTIONS_INIT;
+	git_status_options status_options = {};
+	status_options.version = GIT_STATUS_OPTIONS_VERSION;
 	int errorNumber = 0;
 	QString currentSha;
 	char buffer[GIT_OID_HEXSZ + 1] = {0};

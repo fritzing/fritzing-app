@@ -209,6 +209,9 @@ QString Resistor::makeSvg(const QString & resistance, ViewLayer::ViewLayerID vie
 	QDomDocument domDocument;
 	QString fn = (viewLayerID == ViewLayer::Breadboard) ? m_breadboardSvgFile : m_iconSvgFile;
 	QFile file(fn);
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(fn));
+	}
 	if (!domDocument.setContent(&file, &errorStr, &errorLine, &errorColumn)) {
 		DebugDialog::debug(QString("makesvg failed %1 %2 %3").arg(errorStr).arg(errorLine).arg(errorColumn));
 		return "";

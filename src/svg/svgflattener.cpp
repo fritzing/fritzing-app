@@ -378,6 +378,9 @@ bool SvgFlattener::loadDocIf(const QString & filename, const QString & svg, QDom
 		}
 		else {
 			QFile file(filename);
+			if (!file.open(QIODevice::ReadOnly)) {
+				DebugDialog::debug(QString("Unable to open :%1").arg(filename));
+			}
 			result = domDocument.setContent(&file, &errorStr, &errorLine, &errorColumn);
 		}
 		if (!result) {

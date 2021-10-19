@@ -1271,6 +1271,9 @@ bool SvgFileSplitter::load(const QString& string)
 bool SvgFileSplitter::load(const QString * filename)
 {
 	QFile file(*filename);
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(*filename));
+	}
 
 	return load(&file);
 }
@@ -1308,6 +1311,9 @@ QByteArray SvgFileSplitter::hideText(const QString & filename) {
 	QDomDocument doc;
 
 	QFile file(filename);
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(filename));
+	}
 	if (!doc.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
 		return QByteArray();
 	}
@@ -1371,6 +1377,9 @@ QByteArray SvgFileSplitter::showText(const QString & filename, bool & hasText) {
 	QDomDocument doc;
 
 	QFile file(filename);
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(filename));
+	}
 	if (!doc.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
 		return QByteArray();
 	}

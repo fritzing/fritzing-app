@@ -840,6 +840,9 @@ ModelPart * ModelBase::createOldSchematicPartAux(ModelPart * modelPart, const QS
 
 	// create oldModelPart, set up the new image file name, add it to refmodel
 	QFile newFzp(modelPart->path());
+	if (!newFzp.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(modelPart->path()));
+	}
 	QDomDocument oldDoc;
 	bool ok = oldDoc.setContent(&newFzp);
 	if (!ok) {

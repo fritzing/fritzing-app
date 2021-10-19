@@ -660,6 +660,9 @@ void MainWindow::populateMenuFromXMLFile(QMenu *parentMenu, QStringList &actions
 {
 	QDomDocument dom;
 	QFile file(folderPath+indexFileName);
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(folderPath+indexFileName));
+	}
 	dom.setContent(&file);
 
 	QDomElement domElem = dom.documentElement();

@@ -836,6 +836,9 @@ void PaletteItem::setUpHoleSizes(const QString & type, HoleClassThing & holeThin
 }
 void PaletteItem::setUpHoleSizesAux(HoleClassThing & holeThing, const QString & type) {
 	QFile file(":/resources/vias.xml");
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug("Unable to open :/resources/vias.xml");
+	}
 
 	QString errorStr;
 	int errorLine;
@@ -1191,6 +1194,9 @@ QString PaletteItem::hackFzpHoleSize(const QString & fzp, const QString & module
 
 QString PaletteItem::hackFzpHoleSize(const QString & newModuleID, const QString & pcbFilename, const QString & newSize) {
 	QFile file(modelPart()->path());
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(modelPart()->path()));
+	}
 	QString errorStr;
 	int errorLine;
 	int errorColumn;
@@ -1249,6 +1255,9 @@ QString PaletteItem::hackSvgHoleSizeAux(const QString & svg, const QString & exp
 
 QString PaletteItem::hackSvgHoleSize(const QString & holeDiameter, const QString & ringThickness) {
 	QFile file(filename());
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(filename()));
+	}
 	QString errorStr;
 	int errorLine;
 	int errorColumn;

@@ -1295,6 +1295,9 @@ void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase,
 		return;
 	}
 	QFile file(itemBase->filename());
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(itemBase->filename()));
+	}
 	if (!tempSvgDoc.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
 		DebugDialog::debug(QString("unable to parse svg: %1 %2 %3").arg(errorStr).arg(errorLine).arg(errorColumn));
 		return;
@@ -2744,6 +2747,9 @@ void PEMainWindow::killPegi() {
 
 bool PEMainWindow::loadFzp(const QString & path) {
 	QFile file(path);
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(path));
+	}
 	QString errorStr;
 	int errorLine;
 	int errorColumn;
@@ -3413,6 +3419,9 @@ void PEMainWindow::smdChanged(const QString & after) {
 	if (itemBase == nullptr) return;
 
 	QFile file(itemBase->filename());
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(itemBase->filename()));
+	}
 	QDomDocument svgDoc;
 	svgDoc.setContent(&file);
 	QDomElement svgRoot = svgDoc.documentElement();

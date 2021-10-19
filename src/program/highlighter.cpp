@@ -42,6 +42,9 @@ Highlighter::~Highlighter()
 
 void Highlighter::loadStyles(const QString & filename) {
 	QFile file(filename);
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(filename));
+	}
 
 	QString errorStr;
 	int errorLine;

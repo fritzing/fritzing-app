@@ -87,7 +87,8 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
 	int error;
 	const git_remote_head **remote_heads;
 	size_t remote_heads_len, i;
-	git_remote_callbacks callbacks = GIT_REMOTE_CALLBACKS_INIT;
+	git_remote_callbacks callbacks = {};
+	callbacks.version = GIT_REMOTE_CALLBACKS_VERSION;
 	bool available = false;
 
 	partsCheckerResult.partsCheckerError = PARTS_CHECKER_ERROR_NONE;

@@ -288,6 +288,9 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
 			}
 
 			QFile file(originalPath);
+			if (!file.open(QIODevice::ReadOnly)) {
+				DebugDialog::debug(QString("Unable to open :%1").arg(originalPath));
+			}
 			QString errorStr;
 			int errorLine;
 			int errorColumn;

@@ -33,6 +33,9 @@ QList <QString> PropertyDefMaster::ModuleIDSuffixes;
 
 void PropertyDefMaster::loadPropertyDefs() {
 	QFile file(":/resources/properties.xml");
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(":/resources/properties.xml"));
+	}
 
 	QString errorStr;
 	int errorLine;

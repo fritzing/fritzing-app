@@ -581,8 +581,10 @@ int PartsChecker::doMerge(git_repository * repository, const QString & remoteSha
 
 	git_oid their_oids[1];
 	git_annotated_commit *their_heads[1];
-	git_merge_options merge_options = GIT_MERGE_OPTIONS_INIT;
-	git_checkout_options checkout_options = GIT_CHECKOUT_OPTIONS_INIT;
+	git_merge_options merge_options = {};
+	merge_options.version = GIT_MERGE_OPTIONS_VERSION;
+	git_checkout_options checkout_options = {};
+	checkout_options.version = GIT_CHECKOUT_OPTIONS_VERSION;
 	bool afterMerge = false;
 	git_commit *head_commit = NULL;
 	git_commit *remote_commit = NULL;

@@ -1589,6 +1589,9 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 			if (!svgInfo.fileName().contains(prefix, Qt::CaseInsensitive)) continue;
 
 			QFile svgfile(svgInfo.absoluteFilePath());
+			if (!svgfile.open(QIODevice::ReadOnly)) {
+				DebugDialog::debug(QString("Unable to open :%1").arg(svgInfo.absoluteFilePath()));
+			}
 			QDomDocument svgDoc;
 			if (!svgDoc.setContent(&svgfile)) continue;
 

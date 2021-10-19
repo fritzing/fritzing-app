@@ -826,6 +826,9 @@ void Stripboard::collectTo(QSet<ConnectorItem *> & affectedConnectors) {
 
 void Stripboard::initStripLayouts() {
 	QFile file(":/resources/templates/stripboards.xml");
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(":/resources/templates/stripboards.xml"));
+	}
 	QString errorStr;
 	int errorLine;
 	int errorColumn;

@@ -518,7 +518,8 @@ bool PartsChecker::updateParts(const QString & repoPath, const QString & remoteS
 	bool ok = false;
 	git_remote *remote = NULL;
 	git_repository * repository = NULL;
-	git_fetch_options fetch_opts = GIT_FETCH_OPTIONS_INIT;
+	git_fetch_options fetch_opts = {};
+	fetch_opts.version = GIT_FETCH_OPTIONS_VERSION;
 
 	if (remoteSha.isEmpty()) {
 		DebugDialog::debug("Missing remoteSha");

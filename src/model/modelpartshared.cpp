@@ -391,6 +391,9 @@ void ModelPartShared::initConnectors() {
 		return;
 
 	QFile file(m_path);
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(m_path));
+	}
 	QString errorStr;
 	int errorLine;
 	int errorColumn;

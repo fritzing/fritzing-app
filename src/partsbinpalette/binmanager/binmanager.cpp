@@ -663,6 +663,9 @@ void BinManager::restoreStateAndGeometry(QList<BinLocation *> & actualLocations)
 void BinManager::readTheoreticalLocations(QList<BinLocation *> & theoreticalLocations)
 {
 	QFile file(":/resources/bins/order.xml");
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(":/resources/bins/order.xml"));
+	}
 	QString errorStr;
 	int errorLine;
 	int errorColumn;
@@ -718,6 +721,9 @@ void BinManager::hackLocalContrib(QList<BinLocation *> & locations)
 	int errorColumn;
 
 	QFile contribFile(localContrib->path);
+	if (!contribFile.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(localContrib->path));
+	}
 	QDomDocument contribDoc;
 	bool result = contribDoc.setContent(&contribFile, true, &errorStr, &errorLine, &errorColumn);
 	locations.removeOne(localContrib);
@@ -730,6 +736,9 @@ void BinManager::hackLocalContrib(QList<BinLocation *> & locations)
 	if (!result) return;
 
 	QFile myPartsFile(myParts->path);
+	if (!myPartsFile.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(myParts->path));
+	}
 	QDomDocument myPartsDoc;
 	if (!myPartsDoc.setContent(&myPartsFile, true, &errorStr, &errorLine, &errorColumn)) {
 		return;

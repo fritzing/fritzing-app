@@ -115,7 +115,9 @@ RatsnestColors::~RatsnestColors()
 
 void RatsnestColors::initNames() {
 	QFile file(":/resources/ratsnestcolors.xml");
-
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug("Unable to open :/resources/ratsnestcolors.xml");
+	}
 	QString errorStr;
 	int errorLine;
 	int errorColumn;

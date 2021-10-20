@@ -753,6 +753,7 @@ bool TextUtils::addCopper1(const QString & filename, QDomDocument & domDocument,
 	int errorLine;
 	int errorColumn;
 	QFile file(filename);
+	file.open(QIODevice::ReadOnly);
 	bool result = domDocument.setContent(&file, &errorStr, &errorLine, &errorColumn);
 	if (!result) {
 		domDocument.clear();			// probably redundant

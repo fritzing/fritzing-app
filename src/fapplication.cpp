@@ -1071,7 +1071,6 @@ void FApplication::runKicadSchematicService() {
 				QString newFilePath = dir.absoluteFilePath(defName + "_" + filename);
 				newFilePath.replace(".lib", ".svg");
 
-				QFile file(newFilePath);
 				if (!TextUtils::writeUtf8(newFilePath, svg)) {
 					DebugDialog::debug("unable to open file " + newFilePath);
 				}

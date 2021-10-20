@@ -256,6 +256,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 	m_bottoms.clear();
 
 	QFile file(fzpFilePath);
+	file.open(QIODevice::ReadOnly);
 
 	QString errorStr;
 	int errorLine;
@@ -797,6 +798,7 @@ bool S2S::ensureTerminalPoints(const QString & fzpFilePath, const QString & svgF
 	int errorColumn;
 
 	QFile file(svgFilePath);
+	file.open(QIODevice::ReadOnly);
 	QDomDocument dom;
 	if (!dom.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
 		message(tr("Failed loading schematic '%1', %2 line:%3 col:%4").arg(svgFilePath).arg(errorStr).arg(errorLine).arg(errorColumn));

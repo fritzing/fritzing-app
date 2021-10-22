@@ -182,6 +182,11 @@ void PartLabel::mousePressEvent(QGraphicsSceneMouseEvent *event)
 		return;
 	}
 
+	if(event->button() == Qt::RightButton) {
+		//Return but do not ignore the event (we will handle the context menu event)
+		return;
+	}
+
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infographics && infographics->spaceBarIsPressed()) {
 		m_spaceBarWasPressed = true;
@@ -238,6 +243,7 @@ void PartLabel::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 	if (m_doDrag) {
 		m_owner->partLabelMoved(m_initialPosition, m_initialOffset, pos(), m_offset);
+		m_doDrag = false;
 	}
 
 	QGraphicsSvgItem::mouseReleaseEvent(event);

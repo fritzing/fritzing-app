@@ -92,7 +92,7 @@ int pixelSize(const QString & sizeString) {
 
 
 QString cleanData(const QString & data) {
-	static QRegularExpression ListItemMatcher("<li>.*</li>", QRegularExpression::InvertedGreedinessOption);
+	static QRegularExpression ListItemMatcher("<li>.*</li>", QRegularExpression::InvertedGreedinessOption | QRegularExpression::MultilineOption | QRegularExpression::DotMatchesEverythingOption);
 
 	QDomDocument doc;
 	QStringList listItems;

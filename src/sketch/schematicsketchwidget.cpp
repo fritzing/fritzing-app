@@ -260,24 +260,16 @@ void SchematicSketchWidget::setProp(ItemBase * itemBase, const QString & prop, c
 			QUndoCommand * parentCommand =  new QUndoCommand();
 			parentCommand->setText(tr("Change label from %1 to %2").arg(oldValue).arg(newValue));
 
-			new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+			CleanUpWiresCommand * cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+			cuwc->addRatsnestConnect(itemBase->id(), itemBase->cachedConnectorItems().at(0)->connectorSharedID(), true);
 			new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
-
-			QList<Wire *> done;
-			foreach (ConnectorItem * toConnectorItem, sitem->connector0()->connectedToItems()) {
-				Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-				if (w == NULL) continue;
-				if (done.contains(w)) continue;
-
-				QList<ConnectorItem *> ends;
-				removeWire(w, ends, done, parentCommand);
-			}
 
 			new SetPropCommand(this, itemBase->id(), "label", oldValue, newValue, true, parentCommand);
 			new ChangeLabelTextCommand(this, itemBase->id(), oldValue, newValue, parentCommand);
 
 			new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
-			new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+			cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+			cuwc->addRatsnestConnect(itemBase->id(), itemBase->cachedConnectorItems().at(0)->connectorSharedID(), true);
 
 			m_undoStack->waitPush(parentCommand, PropChangeDelay);
 			return;
@@ -305,24 +297,15 @@ void SchematicSketchWidget::setVoltage(double v, bool doEmit)
 	QUndoCommand * parentCommand =  new QUndoCommand();
 	parentCommand->setText(tr("Change voltage from %1 to %2").arg(sitem->voltage()).arg(v));
 
-	new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+	CleanUpWiresCommand * cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+	cuwc->addRatsnestConnect(item->id(), item->cachedConnectorItems().at(0)->connectorSharedID(), true);
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
-
-	QList<Wire *> done;
-	foreach (ConnectorItem * toConnectorItem, sitem->connector0()->connectedToItems()) {
-		Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-		if (w == NULL) continue;
-		if (done.contains(w)) continue;
-
-		QList<ConnectorItem *> ends;
-		removeWire(w, ends, done, parentCommand);
-	}
 
 	new SetPropCommand(this, item->id(), "voltage", QString::number(sitem->voltage()), QString::number(v), true, parentCommand);
 
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
-	new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
-
+	cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+	cuwc->addRatsnestConnect(item->id(), item->cachedConnectorItems().at(0)->connectorSharedID(), true);
 	m_undoStack->waitPush(parentCommand, PropChangeDelay);
 }
 

@@ -104,9 +104,6 @@ unix {
         } else {
             DEFINES += LINUX_32
         }
-        !contains(DEFINES, QUAZIP_INSTALLED) {
-            LIBS += -lz
-        }
     }
 
     isEmpty(PREFIX) {
@@ -179,7 +176,7 @@ LIBGIT_STATIC = true
 include(pri/libgit2detect.pri)
 
 include(pri/boostdetect.pri)
-
+include(pri/quazipdetect.pri)
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)
 include(pri/partsbinpalette.pri)
@@ -202,13 +199,6 @@ include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
 include(test/version.pri)
-
-contains(DEFINES, QUAZIP_INSTALLED) {
-    !build_pass:message("using installed QuaZIP library")
-    LIBS += -lquazip5
-} else {
-    include(pri/quazip.pri)
-}
 
 TARGET = Fritzing
 TEMPLATE = app

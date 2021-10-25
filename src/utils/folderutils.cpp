@@ -34,13 +34,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFileInfo>
 
 #include "../debugdialog.h"
-#ifdef QUAZIP_INSTALLED
-#include <quazip5/quazip.h>
-#include <quazip5/quazipfile.h>
-#else
-#include "../lib/quazip/quazip.h"
-#include "../lib/quazip/quazipfile.h"
-#endif
+#include <quazip.h>
+#include <quazipfile.h>
 #include "../lib/qtsysteminfo/QtSystemInfo.h"
 
 

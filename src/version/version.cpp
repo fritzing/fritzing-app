@@ -25,10 +25,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStringList>
 #include <QSettings>
 #include <QUrl>
+#include <QSysInfo>
 
 #include "../debugdialog.h"
 #include "../utils/textutils.h"
-#include "../lib/qtsysteminfo/QtSystemInfo.h"
 
 
 QString Version::m_majorVersion("0");
@@ -197,13 +197,12 @@ QString Version::makeRequestParamsString(bool withID) {
 
 	QString id;
 	if (withID) id = QString("&pid=%1").arg(settings.value("pid").toString());
-	QtSystemInfo systemInfo(NULL);
 	QString siVersion(QUrl::toPercentEncoding(Version::versionString()));
-	QString siSystemName(QUrl::toPercentEncoding(systemInfo.systemName()));
-	QString siSystemVersion(QUrl::toPercentEncoding(systemInfo.systemVersion()));
-	QString siKernelName(QUrl::toPercentEncoding(systemInfo.kernelName()));
-	QString siKernelVersion(QUrl::toPercentEncoding(systemInfo.kernelVersion()));
-	QString siArchitecture(QUrl::toPercentEncoding(systemInfo.architectureName()));
+	QString siSystemName(QUrl::toPercentEncoding(QSysInfo::productType()));
+	QString siSystemVersion(QUrl::toPercentEncoding(QSysInfo::productVersion()));
+	QString siKernelName(QUrl::toPercentEncoding(QSysInfo::kernelType()));
+	QString siKernelVersion(QUrl::toPercentEncoding(QSysInfo::kernelVersion()));
+	QString siArchitecture(QUrl::toPercentEncoding(QSysInfo::currentCpuArchitecture()));
 	QString string = QString("?version=%2&sysname=%3&kernname=%4&kernversion=%5&arch=%6&sysversion=%7%8")
 	                 .arg(siVersion)
 	                 .arg(siSystemName)

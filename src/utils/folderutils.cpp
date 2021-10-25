@@ -36,7 +36,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 #include <quazip.h>
 #include <quazipfile.h>
-#include "../lib/qtsysteminfo/QtSystemInfo.h"
 
 
 FolderUtils* FolderUtils::singleton = NULL;

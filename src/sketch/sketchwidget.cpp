@@ -6194,6 +6194,8 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 
 void SketchWidget::makeSwapWire(SketchWidget * bbView, ItemBase * itemBase, long newID, ConnectorItem * fromConnectorItem, ConnectorItem * toConnectorItem, Connector * newConnector, QUndoCommand * parentCommand) {
 	Q_UNUSED(fromConnectorItem);
+	if (!toConnectorItem) return;
+
 	long wireID = ItemBase::getNextID();
 	ViewGeometry vg;
 	new AddItemCommand(bbView, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, itemBase->viewLayerPlacement(), vg, wireID, false, -1, parentCommand);

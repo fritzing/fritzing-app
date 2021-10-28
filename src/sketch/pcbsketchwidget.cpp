@@ -1300,6 +1300,31 @@ bool PCBSketchWidget::acceptsTrace(const ViewGeometry & viewGeometry) {
 	return !viewGeometry.getSchematicTrace();
 }
 
+QList<QGraphicsItem *> PCBSketchWidget::getCollidingItems(QGraphicsItem *target, QGraphicsItem *other) {
+	QList<QGraphicsItem *> collidingItems;
+	foreach (QGraphicsItem * item, scene()->collidingItems(target)) {
+		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		if (itemBase == NULL) continue;
+		if (!itemBase->isEverVisible()) continue;
+		if (itemBase->layerKinChief() != itemBase) continue;
+
+		if (itemBase->layerKinChief() == target) continue;
+		if (itemBase->layerKinChief() == other) continue;
+
+		Wire * wire = qobject_cast<Wire *>(itemBase);
+		if (wire) {
+			if (!wire->getTrace()) continue;
+			if (!wire->isTraceType(getTraceFlag())) continue;
+		}
+		else if (ResizableBoard::isBoard(itemBase)) continue;
+
+		if (!itemBase->modelPart()) continue;
+
+		collidingItems.append(itemBase);
+	}
+	return collidingItems;
+}
+
 ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin)
 {
 	ItemBase * newItem = SketchWidget::placePartDroppedInOtherView(modelPart, viewLayerPlacement, viewGeometry, id, dropOrigin);
@@ -1327,24 +1352,9 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 
 		std::map<std::string, ItemBase *> items;
 
-		foreach (QGraphicsItem * item, scene()->collidingItems(board)) {
+		QList<QGraphicsItem *> onBoard = getCollidingItems(board, newItem);
+		foreach (QGraphicsItem * item, onBoard) {
 			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-			if (itemBase == NULL) continue;
-			if (!itemBase->isEverVisible()) continue;
-			if (itemBase->layerKinChief() != itemBase) continue;
-
-			if (itemBase->layerKinChief() == board) continue;
-			if (itemBase->layerKinChief() == newItem) continue;
-
-			Wire * wire = qobject_cast<Wire *>(itemBase);
-			if (wire) {
-				if (!wire->getTrace()) continue;
-				if (!wire->isTraceType(getTraceFlag())) continue;
-			}
-			else if (ResizableBoard::isBoard(itemBase)) continue;
-
-			if (!itemBase->modelPart()) continue;
-
 			QStringList keys;
 			auto properties = itemBase->prepareProps(itemBase->modelPart(), true, keys);
 			items[properties["id"].toStdString()] = itemBase;

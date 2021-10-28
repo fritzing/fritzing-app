@@ -185,6 +185,7 @@ protected:
 	void requestQuoteSoon();
 	double getKeepoutMils();
 	bool updateOK(ConnectorItem *, ConnectorItem *);
+	QList<QGraphicsItem *> getCollidingItems(QGraphicsItem *target, QGraphicsItem *other);
 
 signals:
 	void subSwapSignal(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerPlacement, long & newID, QUndoCommand * parentCommand);

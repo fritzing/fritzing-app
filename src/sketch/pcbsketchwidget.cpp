@@ -1362,6 +1362,7 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 		rbp::Rect rect = binPack.Insert(newWidth, newHeight, true, rbp::GuillotineBinPack::RectBestAreaFit, rbp::GuillotineBinPack::SplitMinimizeArea);
 		rect.x += boardRect.x() + boardKeepout + keepout;
 		rect.y += boardRect.y() + boardKeepout + keepout;
+		bool rotated = false;
 		if (rect.height != 0) {
 			QRectF r(rect.x, rect.y, rect.width, rect.height);
 			ItemBase * kinChief = newItem->layerKinChief();
@@ -1370,9 +1371,42 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 				auto rotationCorrection = (r.height() - r.width()) / 2;
 				r.setX(r.x() - rotationCorrection);
 				r.setY(r.y() + rotationCorrection);
+				rotated = true;
 			}
+			auto oldPos = kinChief->pos();
 			kinChief->setPos(r.topLeft());
-			alignOneToGrid(newItem);
+			QRectF r2 = r;
+			QList<QGraphicsItem *> onNewItem = getCollidingItems(newItem, board);
+			newItem->collidesWithItem(board);
+			board->sceneBoundingRect().contains(newItem->sceneBoundingRect());
+
+			QPointF dir(1, 0);
+			while (getCollidingItems(newItem, board).size() > 0) {
+				r.setX(r.x() + dir.x() * newWidth);
+				r.setY(r.y() + dir.y() * newHeight);
+				kinChief->setPos(r.topLeft());
+				if (!board->sceneBoundingRect().contains(newItem->sceneBoundingRect())) {
+					DebugDialog::debug(QString("change dir"));
+					r = r2;
+					kinChief->setPos(r.topLeft());
+					if (dir.x() > dir.y()) {
+						dir = QPointF(0, 1);
+					} else {
+						break;
+					}
+				}
+			}
+			if ((!board->sceneBoundingRect().contains(newItem->sceneBoundingRect())) || getCollidingItems(newItem, board).size() > 0) {
+				DebugDialog::debug(QString("reset because out of board"));
+				if (rotated) {
+					kinChief->rotateItem(-90, false);
+				}
+				kinChief->setPos(oldPos);
+				rect.height = 0;
+			} else {
+				alignOneToGrid(newItem);
+			}
+
 		}
 		if (rect.height != 0) {
 			break;

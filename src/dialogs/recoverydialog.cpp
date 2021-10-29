@@ -38,7 +38,12 @@ CenteredTreeWidget::CenteredTreeWidget(QWidget * parent) : QTreeWidget(parent) {
 
 QStyleOptionViewItem CenteredTreeWidget::viewOptions() const {
 	// alignment not possible from a stylesheet
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QStyleOptionViewItem styleOptionViewItem = QTreeWidget::viewOptions();
+#else
+	QStyleOptionViewItem styleOptionViewItem;
+	QTreeWidget::initViewItemOption(&styleOptionViewItem);
+#endif
 	styleOptionViewItem.displayAlignment = Qt::AlignCenter;
 	return styleOptionViewItem;
 }

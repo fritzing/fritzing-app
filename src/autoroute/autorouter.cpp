@@ -72,8 +72,8 @@ TraceWire * Autorouter::drawOneTrace(QPointF fromPos, QPointF toPos, double widt
 	QLineF line(0, 0, toPos.x() - fromPos.x(), toPos.y() - fromPos.y());
 	viewGeometry.setLine(line);
 
-	auto trace = m_sketchWidget->addItem(m_sketchWidget->referenceModel()->retrieveModelPart(ModuleIDNames::WireModuleIDName),
-	                   viewLayerPlacement, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+	auto *trace = m_sketchWidget->addItem(m_sketchWidget->referenceModel()->retrieveModelPart(ModuleIDNames::WireModuleIDName),
+	                   viewLayerPlacement, BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
 	if (!trace) {
 		// we're in trouble
 		DebugDialog::debug("autorouter unable to draw one trace");
@@ -82,7 +82,7 @@ TraceWire * Autorouter::drawOneTrace(QPointF fromPos, QPointF toPos, double widt
 
 	// addItem calls trace->setSelected(true) so unselect it (TODO: this may no longer be necessary)
 	trace->setSelected(false);
-	auto traceWire = dynamic_cast<TraceWire *>(trace);
+	auto *traceWire = dynamic_cast<TraceWire *>(trace);
 	if (!traceWire) {
 		DebugDialog::debug("autorouter unable to draw one trace as trace");
 		return nullptr;
@@ -122,7 +122,7 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 	if (m_pcbType) {
 		collidingItems = m_sketchWidget->scene()->collidingItems(m_board);
 		foreach (QGraphicsItem * item, collidingItems) {
-			auto jumperItem = dynamic_cast<JumperItem *>(item);
+			auto *jumperItem = dynamic_cast<JumperItem *>(item);
 			if (!jumperItem) continue;
 
 			if (jumperItem->getAutoroutable()) {
@@ -136,7 +136,7 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 			foreach (ConnectorItem * ci, jumperItem->connector0()->connectedToItems()) both.append(ci);
 			foreach (ConnectorItem * ci, jumperItem->connector1()->connectedToItems()) both.append(ci);
 			foreach (ConnectorItem * connectorItem, both) {
-				auto w = qobject_cast<TraceWire *>(connectorItem->attachedTo());
+				auto *w = qobject_cast<TraceWire *>(connectorItem->attachedTo());
 				if (!w) continue;
 				if (!w->isTraceType(m_sketchWidget->getTraceFlag())) continue;
 
@@ -150,7 +150,7 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 			}
 		}
 		foreach (QGraphicsItem * item, collidingItems) {
-			auto via = dynamic_cast<Via *>(item);
+			auto *via = dynamic_cast<Via *>(item);
 			if (!via) continue;
 
 			if (via->getAutoroutable()) {
@@ -164,7 +164,7 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 			foreach (ConnectorItem * ci, via->connectorItem()->connectedToItems()) both.append(ci);
 			foreach (ConnectorItem * ci, via->connectorItem()->getCrossLayerConnectorItem()->connectedToItems()) both.append(ci);
 			foreach (ConnectorItem * connectorItem, both) {
-				auto w = qobject_cast<TraceWire *>(connectorItem->attachedTo());
+				auto *w = qobject_cast<TraceWire *>(connectorItem->attachedTo());
 				if (!w) continue;
 				if (!w->isTraceType(m_sketchWidget->getTraceFlag())) continue;
 
@@ -181,7 +181,7 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 	else {
 		collidingItems = m_sketchWidget->scene()->items();
 		foreach (QGraphicsItem * item, collidingItems) {
-			auto netLabel = dynamic_cast<SymbolPaletteItem *>(item);
+			auto *netLabel = dynamic_cast<SymbolPaletteItem *>(item);
 			if (!netLabel) continue;
 			if (!netLabel->isOnlyNetLabel()) continue;
 
@@ -193,7 +193,7 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 
 			// deal with the traces connecting the netlabel to the part
 			foreach (ConnectorItem * connectorItem, netLabel->connector0()->connectedToItems()) {
-				auto w = qobject_cast<TraceWire *>(connectorItem->attachedTo());
+				auto *w = qobject_cast<TraceWire *>(connectorItem->attachedTo());
 				if (!w) continue;
 				if (!w->isTraceType(m_sketchWidget->getTraceFlag())) continue;
 
@@ -210,7 +210,7 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 
 	QList<TraceWire *> visited;
 	foreach (QGraphicsItem * item, collidingItems) {
-		auto traceWire = dynamic_cast<TraceWire *>(item);
+		auto *traceWire = dynamic_cast<TraceWire *>(item);
 		if (!traceWire) continue;
 		if (!traceWire->isTraceType(m_sketchWidget->getTraceFlag())) continue;
 		if (traceWire->getAutoroutable()) continue;
@@ -228,7 +228,7 @@ void Autorouter::initUndo(QUndoCommand * parentCommand)
 	}
 
 	foreach (QGraphicsItem * item, collidingItems) {
-		auto traceWire = dynamic_cast<TraceWire *>(item);
+		auto *traceWire = dynamic_cast<TraceWire *>(item);
 		if (!traceWire) continue;
 		if (!traceWire->isTraceType(m_sketchWidget->getTraceFlag())) continue;
 		if (!traceWire->getAutoroutable()) continue;
@@ -268,10 +268,10 @@ void Autorouter::addUndoConnection(bool connect, TraceWire * traceWire, QUndoCom
 void Autorouter::addUndoConnection(bool connect, ConnectorItem * connectorItem, BaseCommand::CrossViewType crossView, QUndoCommand * parentCommand)
 {
 	foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
-		auto vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
+		auto *vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
 		if (vw) continue;
 
-		auto ccc = new ChangeConnectionCommand(m_sketchWidget, crossView,
+		auto *ccc = new ChangeConnectionCommand(m_sketchWidget, crossView,
 				toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
 				connectorItem->attachedToID(), connectorItem->connectorSharedID(),
 				ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID()),
@@ -291,14 +291,14 @@ void Autorouter::clearTracesAndJumpers() {
 
 	foreach (QGraphicsItem * item, (m_board == NULL) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
 		if (m_pcbType) {
-			auto jumperItem = dynamic_cast<JumperItem *>(item);
+			auto *jumperItem = dynamic_cast<JumperItem *>(item);
 			if (jumperItem) {
 				if (jumperItem->getAutoroutable()) {
 					toDelete.append(jumperItem);
 				}
 				continue;
 			}
-			auto via = dynamic_cast<Via *>(item);
+			auto *via = dynamic_cast<Via *>(item);
 			if (via) {
 				if (via->getAutoroutable()) {
 					toDelete.append(via);
@@ -307,7 +307,7 @@ void Autorouter::clearTracesAndJumpers() {
 			}
 		}
 		else {
-			auto netLabel = dynamic_cast<SymbolPaletteItem *>(item);
+			auto *netLabel = dynamic_cast<SymbolPaletteItem *>(item);
 			if (netLabel && netLabel->isOnlyNetLabel()) {
 				if (netLabel->getAutoroutable()) {
 					toDelete.append(netLabel);
@@ -316,7 +316,7 @@ void Autorouter::clearTracesAndJumpers() {
 			}
 		}
 
-		auto traceWire = dynamic_cast<TraceWire *>(item);
+		auto *traceWire = dynamic_cast<TraceWire *>(item);
 		if (traceWire) {
 			if (traceWire->isTraceType(m_sketchWidget->getTraceFlag()) && traceWire->getAutoroutable()) {
 				toDelete.append(traceWire);
@@ -356,7 +356,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 			continue;
 		}
 		if (m_pcbType) {
-			auto jumperItem = dynamic_cast<JumperItem *>(item);
+			auto *jumperItem = dynamic_cast<JumperItem *>(item);
 			if (jumperItem) {
 				jumperItems.append(jumperItem);
 				if (!jumperItem->getAutoroutable()) {
@@ -374,7 +374,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 
 				continue;
 			}
-			auto via = dynamic_cast<Via *>(item);
+			auto *via = dynamic_cast<Via *>(item);
 			if (via) {
 				vias.append(via);
 				if (!via->getAutoroutable()) {
@@ -389,7 +389,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 			}
 		}
 		else {
-			auto netLabel = dynamic_cast<SymbolPaletteItem *>(item);
+			auto *netLabel = dynamic_cast<SymbolPaletteItem *>(item);
 			if (netLabel && netLabel->isOnlyNetLabel()) {
 				netLabels.append(netLabel);
 				if (!netLabel->getAutoroutable()) {

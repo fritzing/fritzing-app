@@ -95,9 +95,9 @@ RecoveryDialog::RecoveryDialog(QFileInfoList fileInfoList, QWidget *parent, Qt::
 		m_fileList << item;
 	}
 
-	QVBoxLayout *layout = new QVBoxLayout();
+	auto *layout = new QVBoxLayout();
 
-	QLabel * label = new QLabel;
+	auto * label = new QLabel;
 	label->setWordWrap(true);
 	label->setText(tr("<p><b>Fritzing may have crashed, but some of the changes to the following files may be recovered.</b></p>"
 	                  "<p>The date and time each file was backed up are displayed. "
@@ -110,7 +110,7 @@ RecoveryDialog::RecoveryDialog(QFileInfoList fileInfoList, QWidget *parent, Qt::
 	layout->addWidget(label);
 	layout->addWidget(m_recoveryList);
 
-	QHBoxLayout *buttonLayout = new QHBoxLayout();
+	auto *buttonLayout = new QHBoxLayout();
 	layout->addLayout(buttonLayout);
 
 	m_recover = new QPushButton(tr("&Recover"));

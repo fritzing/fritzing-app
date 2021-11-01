@@ -93,7 +93,7 @@ AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & set
 	QWidget * keepoutWidget = createKeepoutWidget(settings.value(DRC::KeepoutSettingName));
 	QWidget * viaWidget = createViaWidget();
 
-	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 	buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 
@@ -199,7 +199,7 @@ bool AutorouterSettingsDialog::initProductionType()
 }
 
 void AutorouterSettingsDialog::widthEntry(int index) {
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 	QString text = comboBox->itemText(index);
 	widthEntry(text);
@@ -213,7 +213,7 @@ void AutorouterSettingsDialog::widthEntry(const QString & text) {
 }
 
 void AutorouterSettingsDialog::changeHoleSize(int index) {
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 	QString newSize = comboBox->itemText(index);
 	changeHoleSize(newSize);

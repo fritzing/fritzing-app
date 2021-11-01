@@ -84,7 +84,7 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 	m_tabWidget->addTab(m_code, tr("Code View"));
 	m_tabWidget->addTab(m_beta_features, tr("Beta Features"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * vLayout = new QVBoxLayout();
 	vLayout->addWidget(m_tabWidget);
 
 	initGeneral(m_general, languages);
@@ -97,8 +97,8 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 	m_platforms = platforms;
 
 	initBetaFeatures(m_beta_features, en_simulator);
+	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
-	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 	buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 
@@ -113,7 +113,7 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 
 void PrefsDialog::initGeneral(QWidget * widget, QFileInfoList & languages)
 {
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * vLayout = new QVBoxLayout();
 
 	if (languages.size() > 1) {
 		vLayout->addWidget(createLanguageForm(languages));
@@ -129,7 +129,7 @@ void PrefsDialog::initGeneral(QWidget * widget, QFileInfoList & languages)
 
 void PrefsDialog::initBreadboard(QWidget * widget, ViewInfoThing * viewInfoThing)
 {
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * vLayout = new QVBoxLayout();
 
 	vLayout->addWidget(createCurvyForm(viewInfoThing));
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
@@ -139,7 +139,7 @@ void PrefsDialog::initBreadboard(QWidget * widget, ViewInfoThing * viewInfoThing
 
 void PrefsDialog::initSchematic(QWidget * widget, ViewInfoThing * viewInfoThing)
 {
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * vLayout = new QVBoxLayout();
 	vLayout->addWidget(createCurvyForm(viewInfoThing));
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
 
@@ -148,7 +148,7 @@ void PrefsDialog::initSchematic(QWidget * widget, ViewInfoThing * viewInfoThing)
 
 void PrefsDialog::initPCB(QWidget * widget, ViewInfoThing * viewInfoThing)
 {
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * vLayout = new QVBoxLayout();
 	vLayout->addWidget(createCurvyForm(viewInfoThing));
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
 
@@ -157,7 +157,7 @@ void PrefsDialog::initPCB(QWidget * widget, ViewInfoThing * viewInfoThing)
 
 void PrefsDialog::initCode(QWidget * widget, QList<Platform *> platforms)
 {
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * vLayout = new QVBoxLayout();
 	vLayout->addWidget(createProgrammerForm(platforms));
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
 	widget->setLayout(vLayout);
@@ -171,15 +171,15 @@ void PrefsDialog::initBetaFeatures(QWidget * widget, bool en_simulator)
 }
 
 QWidget * PrefsDialog::createZoomerForm() {
-	QGroupBox * zoomer = new QGroupBox(tr("Mouse Wheel Behavior"), this );
+	auto * zoomer = new QGroupBox(tr("Mouse Wheel Behavior"), this );
 
-	QHBoxLayout * zhlayout = new QHBoxLayout();
+	auto * zhlayout = new QHBoxLayout();
 	zhlayout->setSpacing(SPACING);
 
-	QFrame * frame = new QFrame();
+	auto * frame = new QFrame();
 	frame->setFixedWidth(FORMLABELWIDTH);
 
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * vLayout = new QVBoxLayout();
 	vLayout->setSpacing(0);
 	vLayout->setContentsMargins(0, 0, 0, 0);
 
@@ -193,7 +193,7 @@ QWidget * PrefsDialog::createZoomerForm() {
 	frame->setLayout(vLayout);
 	zhlayout->addWidget(frame);
 
-	QPushButton * pushButton = new QPushButton(tr("Change Wheel Behavior"), this);
+	auto * pushButton = new QPushButton(tr("Change Wheel Behavior"), this);
 	connect(pushButton, SIGNAL(clicked()), this, SLOT(changeWheelBehavior()));
 	zhlayout->addWidget(pushButton);
 
@@ -203,24 +203,24 @@ QWidget * PrefsDialog::createZoomerForm() {
 }
 
 QWidget * PrefsDialog::createAutosaveForm() {
-	QGroupBox * autosave = new QGroupBox(tr("Autosave"), this );
+	auto * autosave = new QGroupBox(tr("Autosave"), this );
 
-	QHBoxLayout * zhlayout = new QHBoxLayout();
+	auto * zhlayout = new QHBoxLayout();
 	zhlayout->setSpacing(SPACING);
 
-	QCheckBox * box = new QCheckBox(tr("Autosave every:"));
+	auto * box = new QCheckBox(tr("Autosave every:"));
 	box->setFixedWidth(FORMLABELWIDTH);
 	box->setChecked(MainWindow::AutosaveEnabled);
 	zhlayout->addWidget(box);
 
-	QSpinBox * spinBox = new QSpinBox;
+	auto * spinBox = new QSpinBox;
 	spinBox->setMinimum(1);
 	spinBox->setMaximum(60);
 	spinBox->setValue(MainWindow::AutosaveTimeoutMinutes);
 	spinBox->setMaximumWidth(80);
 	zhlayout->addWidget(spinBox);
 
-	QLabel * label = new QLabel(tr("minutes"));
+	auto * label = new QLabel(tr("minutes"));
 	zhlayout->addWidget(label);
 
 	zhlayout->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Expanding));
@@ -236,10 +236,10 @@ QWidget * PrefsDialog::createAutosaveForm() {
 
 QWidget * PrefsDialog::createLanguageForm(QFileInfoList & languages)
 {
-	QGroupBox * formGroupBox = new QGroupBox(tr("Language"));
-	QVBoxLayout *layout = new QVBoxLayout();
+	auto * formGroupBox = new QGroupBox(tr("Language"));
+	auto *layout = new QVBoxLayout();
 
-	QComboBox* comboBox = new QComboBox(this);
+	auto* comboBox = new QComboBox(this);
 	m_translatorListModel = new TranslatorListModel(languages, this);
 	comboBox->setModel(m_translatorListModel);
 	comboBox->setCurrentIndex(m_translatorListModel->findIndex(m_name));
@@ -247,7 +247,7 @@ QWidget * PrefsDialog::createLanguageForm(QFileInfoList & languages)
 
 	layout->addWidget(comboBox);
 
-	QLabel * ll = new QLabel();
+	auto * ll = new QLabel();
 	ll->setMinimumHeight(45);
 	ll->setWordWrap(true);
 	ll->setText(QObject::tr("Please note that a new language setting will not take effect "
@@ -260,23 +260,23 @@ QWidget * PrefsDialog::createLanguageForm(QFileInfoList & languages)
 
 QWidget* PrefsDialog::createColorForm()
 {
-	QGroupBox * formGroupBox = new QGroupBox(tr("Colors"));
-	QVBoxLayout *layout = new QVBoxLayout();
+	auto * formGroupBox = new QGroupBox(tr("Colors"));
+	auto *layout = new QVBoxLayout();
 	layout->setSpacing(0);
 	layout->setContentsMargins(0, 0, 0, 0);
 
-	QFrame * f1 = new QFrame();
-	QHBoxLayout * h1 = new QHBoxLayout();
+	auto * f1 = new QFrame();
+	auto * h1 = new QHBoxLayout();
 	h1->setSpacing(SPACING);
 
-	QLabel * c1 = new QLabel(QObject::tr("Connected highlight color"));
+	auto * c1 = new QLabel(QObject::tr("Connected highlight color"));
 	c1->setWordWrap(true);
 	c1->setFixedWidth(FORMLABELWIDTH);
 	h1->addWidget(c1);
 
 	QColor connectedColor = ItemBase::connectedColor();
 	m_connectedColorLabel = new QLabel(QString("%1").arg(connectedColor.name()), this);
-	QPushButton * pb1 = new QPushButton(tr("%1 (click to change...)").arg(""), this);
+	auto * pb1 = new QPushButton(tr("%1 (click to change...)").arg(""), this);
 	connect(pb1, SIGNAL(clicked()), this, SLOT(setConnectedColor()));
 	m_connectedColorLabel->setPalette(QPalette(connectedColor));
 	m_connectedColorLabel->setAutoFillBackground(true);
@@ -287,18 +287,18 @@ QWidget* PrefsDialog::createColorForm()
 	f1->setLayout(h1);
 	layout->addWidget(f1);
 
-	QFrame * f2 = new QFrame();
-	QHBoxLayout * h2 = new QHBoxLayout();
+	auto * f2 = new QFrame();
+	auto * h2 = new QHBoxLayout();
 	h2->setSpacing(SPACING);
 
-	QLabel * c2 = new QLabel(QObject::tr("Unconnected highlight color"));
+	auto * c2 = new QLabel(QObject::tr("Unconnected highlight color"));
 	c2->setWordWrap(true);
 	c2->setFixedWidth(FORMLABELWIDTH);
 	h2->addWidget(c2);
 
 	QColor unconnectedColor = ItemBase::unconnectedColor();
 	m_unconnectedColorLabel = new QLabel(QString("%1").arg(unconnectedColor.name()), this);
-	QPushButton * pb2 = new QPushButton(tr("%1 (click to change...)").arg(""), this);
+	auto * pb2 = new QPushButton(tr("%1 (click to change...)").arg(""), this);
 	connect(pb2, SIGNAL(clicked()), this, SLOT(setUnconnectedColor()));
 	m_unconnectedColorLabel->setPalette(QPalette(unconnectedColor));
 	m_unconnectedColorLabel->setAutoFillBackground(true);
@@ -315,12 +315,12 @@ QWidget* PrefsDialog::createColorForm()
 
 QWidget* PrefsDialog::createOtherForm()
 {
-	QGroupBox * formGroupBox = new QGroupBox(tr("Clear Settings"));
-	QVBoxLayout *layout = new QVBoxLayout();
+	auto * formGroupBox = new QGroupBox(tr("Clear Settings"));
+	auto *layout = new QVBoxLayout();
 	layout->setContentsMargins(0, 0, 0, 0);
 	layout->setSpacing(0);
 
-	QLabel * clearLabel = new QLabel(QObject::tr("Clear all saved settings and close this dialog immediately."));
+	auto * clearLabel = new QLabel(QObject::tr("Clear all saved settings and close this dialog immediately."));
 	clearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	clearLabel->setWordWrap(true);
 	layout->addWidget(clearLabel);
@@ -339,7 +339,7 @@ QWidget* PrefsDialog::createOtherForm()
 	clearLabel->setWordWrap(true);
 	layout->addWidget(clearLabel);
 
-	QPushButton * clear = new QPushButton(QObject::tr("Clear Settings"), this);
+	auto * clear = new QPushButton(QObject::tr("Clear Settings"), this);
 	connect(clear, SIGNAL(clicked()), this, SLOT(clear()));
 
 	layout->addWidget(clear);
@@ -349,39 +349,39 @@ QWidget* PrefsDialog::createOtherForm()
 }
 
 QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
-	QGroupBox * formGroupBox = new QGroupBox(tr("Platform Support"));
-	QVBoxLayout *layout = new QVBoxLayout();
+	auto * formGroupBox = new QGroupBox(tr("Platform Support"));
+	auto *layout = new QVBoxLayout();
 	layout->setSpacing(SPACING);
 
 	foreach (Platform * platform, platforms) {
-		QLabel *platformLb = new QLabel("");
+		auto *platformLb = new QLabel("");
 		platformLb->setTextFormat(Qt::RichText);
 		platformLb->setText(QString("<b>%1</b>").arg(platform->getName()));
 		layout->addWidget(platformLb);
 
-		QFrame * locationFrame = new QFrame(formGroupBox);
-		QHBoxLayout * locationLayout = new QHBoxLayout();
+		auto * locationFrame = new QFrame(formGroupBox);
+		auto * locationLayout = new QHBoxLayout();
 		locationLayout->setContentsMargins(0, 0, 0, 0);
 		locationLayout->setSpacing(0);
 		locationFrame->setLayout(locationLayout);
 
-		QLabel *locationLb = new QLabel(tr("Location:"));
+		auto *locationLb = new QLabel(tr("Location:"));
 		locationLayout->addWidget(locationLb);
 		locationLayout->addSpacing(SPACING);
 
-		QLineEdit * locationLE = new QLineEdit(locationFrame);
+		auto * locationLE = new QLineEdit(locationFrame);
 		locationLE->setText(platform->getCommandLocation());
 		locationLayout->addWidget(locationLE);
 		m_programmerLEs.insert(platform->getName(), locationLE);
 
-		QPushButton * locateBtn = new QPushButton(tr("..."),locationFrame);
+		auto * locateBtn = new QPushButton(tr("..."),locationFrame);
 		locationLayout->addWidget(locateBtn);
 		locateBtn->setProperty("platform", platform->getName());
 		connect(locateBtn, SIGNAL(clicked()), this, SLOT(chooseProgrammer()));
 
 		layout->addWidget(locationFrame);
 
-		QLabel *hintLb = new QLabel("");
+		auto *hintLb = new QLabel("");
 		hintLb->setTextFormat(Qt::RichText);
 		hintLb->setOpenExternalLinks(true);
 		hintLb->setText(tr("You need to have <a href='%1'>%2</a> (version %3 or newer) installed.")
@@ -557,22 +557,22 @@ void PrefsDialog::changeAutosavePeriod(int value) {
 
 QWidget* PrefsDialog::createCurvyForm(ViewInfoThing * viewInfoThing)
 {
-	QGroupBox * groupBox = new QGroupBox(tr("Curvy vs. straight wires"));
-	QVBoxLayout *layout = new QVBoxLayout;
+	auto * groupBox = new QGroupBox(tr("Curvy vs. straight wires"));
+	auto *layout = new QVBoxLayout;
 
-	QLabel * label1 = new QLabel(tr("When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) "
+	auto * label1 = new QLabel(tr("When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) "
 	                                "do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?"));
 	label1->setWordWrap(true);
 	layout->addWidget(label1);
 
-	QLabel * label2 = new QLabel(tr("This checkbox sets the default behavior. "
+	auto * label2 = new QLabel(tr("This checkbox sets the default behavior. "
 	                                "You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag."));
 	label2->setWordWrap(true);
 	layout->addWidget(label2);
 
 	layout->addSpacing(10);
 
-	QCheckBox * checkbox = new QCheckBox(tr("Curvy wires and legs"));
+	auto * checkbox = new QCheckBox(tr("Curvy wires and legs"));
 	checkbox->setProperty("index", viewInfoThing->index);
 	checkbox->setChecked(viewInfoThing->curvy);
 	connect(checkbox, SIGNAL(clicked()), this, SLOT(curvyChanged()));
@@ -583,7 +583,7 @@ QWidget* PrefsDialog::createCurvyForm(ViewInfoThing * viewInfoThing)
 }
 
 void PrefsDialog::curvyChanged() {
-	QCheckBox * checkBox = qobject_cast<QCheckBox *>(sender());
+	auto * checkBox = qobject_cast<QCheckBox *>(sender());
 	if (checkBox == NULL) return;
 
 	ViewInfoThing * viewInfoThing = &m_viewInfoThings[sender()->property("index").toInt()];

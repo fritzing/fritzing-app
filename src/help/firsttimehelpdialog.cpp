@@ -39,7 +39,7 @@ FirstTimeHelpDialog::FirstTimeHelpDialog(QWidget *parent)
 	m_label->setWordWrap(true);
 	m_label->setObjectName("firstTimeHelpDialogText");
 
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * vLayout = new QVBoxLayout();
 	vLayout->addWidget(m_label);
 
 	this->setLayout(vLayout);

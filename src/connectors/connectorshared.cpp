@@ -139,7 +139,7 @@ void ConnectorShared::insertPin(ViewLayer::ViewID layer, SvgIdLayer * svgIdLayer
 }
 
 void ConnectorShared::addPin(ViewLayer::ViewID viewID, const QString & svgId, ViewLayer::ViewLayerID viewLayerID, const QString & terminalId, const QString & legId, bool hybrid) {
-	SvgIdLayer * svgIdLayer = new SvgIdLayer(viewID);
+	auto * svgIdLayer = new SvgIdLayer(viewID);
 	svgIdLayer->m_svgViewLayerID = viewLayerID;
 	svgIdLayer->m_svgId = svgId;
 	svgIdLayer->m_terminalId = terminalId;
@@ -202,7 +202,7 @@ void ConnectorShared::loadPin(QDomElement elem, ViewLayer::ViewID viewID) {
 		//stream.flush();
 		QString svgId = pinElem.attribute("svgId");
 		QString layer = pinElem.attribute("layer");
-		SvgIdLayer * svgIdLayer = new SvgIdLayer(viewID);
+		auto * svgIdLayer = new SvgIdLayer(viewID);
 		svgIdLayer->m_hybrid = (pinElem.attribute("hybrid").compare("yes") == 0);
 		svgIdLayer->m_legId = pinElem.attribute("legId");
 		svgIdLayer->m_svgId = svgId;

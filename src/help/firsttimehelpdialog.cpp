@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "firsttimehelpdialog.h"
 
-static FirstTimeHelpDialog * Singleton = NULL;
+static FirstTimeHelpDialog * Singleton = nullptr;
 static ViewLayer::ViewID TheViewID = ViewLayer::BreadboardView;
 static QHash<ViewLayer::ViewID, QString> TheTexts;
 
@@ -73,7 +73,7 @@ void FirstTimeHelpDialog::hideFirstTimeHelp() {
 void FirstTimeHelpDialog::cleanup() {
 	if (Singleton) {
 		delete Singleton;
-		Singleton = NULL;
+		Singleton = nullptr;
 	}
 }
 
@@ -137,7 +137,7 @@ void FirstTimeHelpDialog::init() {
 		TheTexts.insert(ViewLayer::PCBView, pcbText);
 	}
 
-	if (Singleton == NULL) {
+	if (Singleton == nullptr) {
 		Singleton = new FirstTimeHelpDialog();
 	}
 }

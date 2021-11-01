@@ -344,7 +344,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 	QList<Via *> vias;
 	QList<SymbolPaletteItem *> netLabels;
 	foreach (QGraphicsItem * item, (m_board  == NULL) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
-		auto wire = dynamic_cast<TraceWire *>(item);
+		auto *wire = dynamic_cast<TraceWire *>(item);
 		if (wire) {
 			if (!wire->getAutoroutable()) continue;
 			if (!wire->isTraceType(m_sketchWidget->getTraceFlag())) continue;

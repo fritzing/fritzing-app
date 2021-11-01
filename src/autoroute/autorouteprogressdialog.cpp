@@ -61,7 +61,7 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 
 	this->setWindowTitle(title);
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto *vLayout = new QVBoxLayout(this);
 
 	m_progressBar = new QProgressBar(this);
 	vLayout->addWidget(m_progressBar);
@@ -70,13 +70,13 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 	m_spinBox = nullptr;
 
 	if (spin) {
-		QFrame * frame = new QFrame(this);
+		auto * frame = new QFrame(this);
 		m_spinLabel = new QLabel(this);
 		m_spinBox = new QSpinBox(this);
 		m_spinBox->setMinimum(1);
 		m_spinBox->setMaximum(99999);
 		connect(m_spinBox, SIGNAL(valueChanged(int)), this, SLOT(internalSpinChange(int)));
-		QHBoxLayout * hBoxLayout = new QHBoxLayout(frame);
+		auto * hBoxLayout = new QHBoxLayout(frame);
 		hBoxLayout->addStretch();
 		hBoxLayout->addWidget(m_spinLabel);
 		hBoxLayout->addWidget(m_spinBox);
@@ -89,8 +89,8 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 	vLayout->addWidget(m_message2);
 
 	if (zoomAndPan) {
-		QGroupBox * groupBox = new QGroupBox(tr("zoom and pan controls"));
-		QHBoxLayout *lo2 = new QHBoxLayout(groupBox);
+		auto * groupBox = new QGroupBox(tr("zoom and pan controls"));
+		auto *lo2 = new QHBoxLayout(groupBox);
 		lo2->setSpacing(1);
 		lo2->setContentsMargins(0, 0, 0, 0);
 
@@ -99,11 +99,11 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 
 		lo2->addSpacerItem(new QSpacerItem ( 10, 0, QSizePolicy::Expanding));
 
-		QFrame * frame = new QFrame();
-		QGridLayout *gridLayout = new QGridLayout(frame);
+		auto * frame = new QFrame();
+		auto *gridLayout = new QGridLayout(frame);
 
 		QString imgPath = ":/resources/images/icons/arrowButton%1.png";
-		ArrowButton * label = new ArrowButton(0, -ScrollAmount, view, imgPath.arg("Up"));
+		auto * label = new ArrowButton(0, -ScrollAmount, view, imgPath.arg("Up"));
 		gridLayout->addWidget(label, 0, 1);
 
 		label = new ArrowButton(0, ScrollAmount, view, imgPath.arg("Down"));
@@ -133,7 +133,7 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 		connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(sendStop()));
 	}
 	if (bestButton) {
-		QPushButton * best = new QPushButton(tr("Best So Far"));
+		auto * best = new QPushButton(tr("Best So Far"));
 		m_buttonBox->addButton(best, QDialogButtonBox::ActionRole);
 		connect(best, SIGNAL(clicked()), this, SLOT(sendBest()));
 	}

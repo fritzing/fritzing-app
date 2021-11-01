@@ -63,11 +63,11 @@ AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & set
 
 	this->setWindowTitle(QObject::tr("Autorouter Settings"));
 
-	QVBoxLayout * windowLayout = new QVBoxLayout();
+	auto * windowLayout = new QVBoxLayout();
 	this->setLayout(windowLayout);
 
-	QGroupBox * prodGroupBox = new QGroupBox(tr("Production type"), this);
-	QVBoxLayout * prodLayout = new QVBoxLayout();
+	auto * prodGroupBox = new QGroupBox(tr("Production type"), this);
+	auto * prodLayout = new QVBoxLayout();
 	prodGroupBox->setLayout(prodLayout);
 
 	m_homebrewButton = new QRadioButton(tr("homebrew"), this);
@@ -80,13 +80,13 @@ AutorouterSettingsDialog::AutorouterSettingsDialog(QHash<QString, QString> & set
 	connect(m_customButton, SIGNAL(clicked(bool)), this, SLOT(production(bool)));
 
 	m_customFrame = new QFrame(this);
-	QHBoxLayout * customFrameLayout = new QHBoxLayout(this);
+	auto * customFrameLayout = new QHBoxLayout(this);
 	m_customFrame->setLayout(customFrameLayout);
 
 	customFrameLayout->addSpacing(5);
 
-	QFrame * innerFrame = new QFrame(this);
-	QVBoxLayout * innerFrameLayout = new QVBoxLayout(this);
+	auto * innerFrame = new QFrame(this);
+	auto * innerFrameLayout = new QVBoxLayout(this);
 	innerFrame->setLayout(innerFrameLayout);
 
 	QWidget * traceWidget = createTraceWidget();
@@ -232,7 +232,7 @@ void AutorouterSettingsDialog::changeUnits(bool)
 void AutorouterSettingsDialog::changeDiameter()
 {
 	if (PaletteItem::changeDiameter(m_holeSettings, sender())) {
-		QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+		auto * edit = qobject_cast<QLineEdit *>(sender());
 		changeHoleSize(edit->text() + m_holeSettings.currentUnits() + "," + m_holeSettings.ringThickness);
 	}
 }
@@ -240,7 +240,7 @@ void AutorouterSettingsDialog::changeDiameter()
 void AutorouterSettingsDialog::changeThickness()
 {
 	if (PaletteItem::changeThickness(m_holeSettings, sender())) {
-		QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+		auto * edit = qobject_cast<QLineEdit *>(sender());
 		changeHoleSize(m_holeSettings.holeDiameter + "," + edit->text() + m_holeSettings.currentUnits());
 	}
 }
@@ -257,10 +257,10 @@ void AutorouterSettingsDialog::setTraceWidth(int width)
 }
 
 QWidget * AutorouterSettingsDialog::createKeepoutWidget(const QString & keepoutString) {
-	QGroupBox * keepoutGroupBox = new QGroupBox(tr("Keepout"), this);
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * keepoutGroupBox = new QGroupBox(tr("Keepout"), this);
+	auto * vLayout = new QVBoxLayout();
 
-	QLabel * label = new QLabel(tr("<b>Keepout</b> is the minimum distance between copper elements on different nets."));
+	auto * label = new QLabel(tr("<b>Keepout</b> is the minimum distance between copper elements on different nets."));
 	//label->setWordWrap(true);  // setting wordwrap here seems to break the layout
 	vLayout->addWidget(label);
 
@@ -270,8 +270,8 @@ QWidget * AutorouterSettingsDialog::createKeepoutWidget(const QString & keepoutS
 	label = new QLabel(tr("Note: the smaller the keepout, the slower the DRC and Autorouter will run."));
 	vLayout->addWidget(label);
 
-	QFrame * frame = new QFrame;
-	QHBoxLayout * frameLayout = new QHBoxLayout;
+	auto * frame = new QFrame;
+	auto * frameLayout = new QHBoxLayout;
 
 	m_keepoutSpinBox = new QDoubleSpinBox;
 	m_keepoutSpinBox->setDecimals(4);
@@ -306,8 +306,8 @@ QWidget * AutorouterSettingsDialog::createKeepoutWidget(const QString & keepoutS
 }
 
 QWidget * AutorouterSettingsDialog::createTraceWidget() {
-	QGroupBox * traceGroupBox = new QGroupBox(tr("Trace width"), this);
-	QBoxLayout * traceLayout = new QVBoxLayout();
+	auto * traceGroupBox = new QGroupBox(tr("Trace width"), this);
+	auto * traceLayout = new QVBoxLayout();
 
 	m_traceWidthComboBox = TraceWire::createWidthComboBox(m_traceWidth, traceGroupBox);
 	connect(m_traceWidthComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(widthEntry(int)));
@@ -319,8 +319,8 @@ QWidget * AutorouterSettingsDialog::createTraceWidget() {
 }
 
 QWidget * AutorouterSettingsDialog::createViaWidget() {
-	QGroupBox * viaGroupBox = new QGroupBox(tr("Via size"), this);
-	QVBoxLayout * viaLayout = new QVBoxLayout();
+	auto * viaGroupBox = new QGroupBox(tr("Via size"), this);
+	auto * viaLayout = new QVBoxLayout();
 
 	QWidget * viaWidget = Hole::createHoleSettings(viaGroupBox, m_holeSettings, true, "", true);
 

@@ -289,7 +289,7 @@ void Autorouter::restoreOriginalState(QUndoCommand * parentCommand) {
 void Autorouter::clearTracesAndJumpers() {
 	QList<ItemBase *> toDelete;
 
-	foreach (QGraphicsItem * item, (m_board == NULL) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
+	foreach (QGraphicsItem * item, (m_board == nullptr) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
 		if (m_pcbType) {
 			auto *jumperItem = dynamic_cast<JumperItem *>(item);
 			if (jumperItem) {
@@ -343,7 +343,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 	QList<JumperItem *> jumperItems;
 	QList<Via *> vias;
 	QList<SymbolPaletteItem *> netLabels;
-	foreach (QGraphicsItem * item, (m_board  == NULL) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
+	foreach (QGraphicsItem * item, (m_board  == nullptr) ? m_sketchWidget->scene()->items() : m_sketchWidget->scene()->collidingItems(m_board)) {
 		auto *wire = dynamic_cast<TraceWire *>(item);
 		if (wire) {
 			if (!wire->getAutoroutable()) continue;

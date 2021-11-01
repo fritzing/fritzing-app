@@ -1873,7 +1873,7 @@ void ConnectorItem::clearRatsnestDisplay(QList<ConnectorItem *> & connectorItems
 		if (!fromConnectorItem) continue;
 
 		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
-			VirtualWire * vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
+			auto * vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
 			if (vw) {
 				ratsnests.insert(vw);
 			}
@@ -1971,7 +1971,7 @@ ConnectorItem * ConnectorItem::findConnectorUnder(bool useTerminalPoint, bool al
 	QList<ConnectorItem *> candidates;
 	// for the moment, take the topmost ConnectorItem that doesn't belong to me
 	foreach (QGraphicsItem * item, items) {
-		ConnectorItem * connectorItemUnder = dynamic_cast<ConnectorItem *>(item);
+		auto * connectorItemUnder = dynamic_cast<ConnectorItem *>(item);
 		if (!connectorItemUnder) continue;
 		if (!connectorItemUnder->connector()) continue;  // shouldn't happen
 		if (attachedTo()->childItems().contains(connectorItemUnder)) continue;  // don't use own connectors

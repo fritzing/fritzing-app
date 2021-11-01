@@ -400,7 +400,7 @@ QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
 void PrefsDialog::chooseProgrammer()
 {
 	QObject *  button = sender();
-	if (button == NULL) return;
+	if (button == nullptr) return;
 
 	QString platformName = sender()->property("platform").toString();
 	Platform * platform = nullptr;
@@ -584,7 +584,7 @@ QWidget* PrefsDialog::createCurvyForm(ViewInfoThing * viewInfoThing)
 
 void PrefsDialog::curvyChanged() {
 	auto * checkBox = qobject_cast<QCheckBox *>(sender());
-	if (checkBox == NULL) return;
+	if (checkBox == nullptr) return;
 
 	ViewInfoThing * viewInfoThing = &m_viewInfoThings[sender()->property("index").toInt()];
 	m_settings.insert(QString("%1CurvyWires").arg(viewInfoThing->shortName), checkBox->isChecked() ? "1" : "0");

@@ -54,12 +54,12 @@ AboutBox::AboutBox(QWidget *parent)
 	extraSmallFont.setLetterSpacing(QFont::PercentageSpacing, 92);
 
 	// Big Icon
-	QLabel *logoShield = new QLabel(this);
+	auto *logoShield = new QLabel(this);
 	logoShield->setPixmap(QPixmap(":/resources/images/AboutBoxLogoShield.png"));
 	logoShield->setGeometry(17, 8, 356, 128);
 
 	// Version String
-	QLabel *versionMain = new QLabel(this);
+	auto *versionMain = new QLabel(this);
     versionMain->setText(tr("Version %1.%2.%3 <br><small>(%4%5 %6) %7 [Qt %8]</small>")
 	                     .arg(Version::majorVersion())
 	                     .arg(Version::minorVersion())
@@ -75,7 +75,7 @@ AboutBox::AboutBox(QWidget *parent)
 	versionMain->setTextInteractionFlags(Qt::TextSelectableByMouse);
 
 	// Link to website
-	QLabel *linkToFritzing = new QLabel(this);
+	auto *linkToFritzing = new QLabel(this);
 	linkToFritzing->setText("<a href=\"https://fritzing.org\">fritzing.org</a>");
 	linkToFritzing->setOpenExternalLinks(true);
 	linkToFritzing->setFont(smallFont);
@@ -92,12 +92,12 @@ AboutBox::AboutBox(QWidget *parent)
     copyrightGNU->setGeometry(0, 410, AboutWidth, 16);
 	copyrightGNU->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
 
-	QLabel *CC = new QLabel(this);
+	auto *CC = new QLabel(this);
 	QPixmap cc(":/resources/images/aboutbox_CC.png");
 	CC->setPixmap(cc);
 	CC->setGeometry(30, this->height() - cc.height(), cc.width(), cc.height());
 
-	QLabel *copyrightFritzing = new QLabel(this);
+	auto *copyrightFritzing = new QLabel(this);
 	copyrightFritzing->setText(tr("<b>Copyright 2007-%1 Fritzing GmbH</b>").arg(Version::year()));
 	copyrightFritzing->setFont(extraSmallFont);
     copyrightFritzing->setGeometry(30, 426, AboutWidth - 30 - 30, 16);
@@ -183,7 +183,7 @@ AboutBox::AboutBox(QWidget *parent)
 	cursor.mergeBlockFormat(fmt);
 
 	// Add a fade out and a fade in the scrollArea
-	QLabel *scrollFade = new QLabel(this);
+	auto *scrollFade = new QLabel(this);
 	scrollFade->setPixmap(fadepixmap);
 	scrollFade->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
 	scrollFade->setStyleSheet("background-color: none");

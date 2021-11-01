@@ -69,7 +69,7 @@ void FabUploadProgress::doUpload()
 
 void FabUploadProgress::onRequestUploadFinished()
 {
-	QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+	auto *reply = qobject_cast<QNetworkReply*>(sender());
 
 	//Check status code
 	if (reply->error() == QNetworkReply::NoError) {
@@ -104,8 +104,8 @@ void FabUploadProgress::uploadMultipart(const QUrl &url, const QString &file_pat
 {
 //	qDebug() << url.toString() << Qt::endl << Qt::flush;
 
-	QHttpMultiPart *httpMultiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
-	QFile *file = new QFile(file_path);
+	auto *httpMultiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+	auto *file = new QFile(file_path);
 	QHttpPart imagePart;
 	imagePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"upload[file]\"; filename=\"" + QFileInfo(*file).fileName() + "\""));
 	imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("application/octet-stream"));
@@ -139,7 +139,7 @@ void FabUploadProgress::uploadProgress(qint64 bytesSent, qint64 bytesTotal) {
 //// Handle errors from NetworkManager
 void FabUploadProgress::onError(QNetworkReply::NetworkError code)
 {
-	QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+	auto *reply = qobject_cast<QNetworkReply*>(sender());
 	qDebug() << "onError" << code << Qt::endl << Qt::flush;
 	FMessageBox::critical(this, tr("Fritzing"), tr("Could not connect to Fritzing fab.") + "Error: " + reply->errorString());
 	emit closeUploadError();
@@ -164,7 +164,7 @@ void FabUploadProgress::apiError(QString message)
 
 
 void FabUploadProgress::uploadDone() {
-	QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+	auto *reply = qobject_cast<QNetworkReply*>(sender());
 	qDebug() << "----------Finished--------------" << Qt::endl;
 	if (reply->error() == QNetworkReply::NoError) {
 		auto d = reply->readAll();
@@ -192,7 +192,7 @@ void FabUploadProgress::checkProcessingStatus(QUrl url)
 
 void FabUploadProgress::updateProcessingStatus()
 {
-	QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+	auto *reply = qobject_cast<QNetworkReply*>(sender());
 
 	if (reply->error() == QNetworkReply::NoError) {
 		auto d = reply->readAll();

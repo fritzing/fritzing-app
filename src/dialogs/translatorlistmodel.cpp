@@ -148,7 +148,7 @@ TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* 
 			if (names.count() > 1) {
 				name = names[0] + "_" + names[1].toUpper();
 			}
-			QLocale * locale = new QLocale(name);
+			auto * locale = new QLocale(name);
 			m_localeList.append(locale);
 		}
 	}

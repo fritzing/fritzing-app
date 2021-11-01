@@ -91,7 +91,7 @@ void LabelThing::mouseReleaseEvent(QMouseEvent * event) {
 
 void LabelThing::paintEvent(QPaintEvent * event) {
 	// use 'new QPainter()' so that delete is invoked before the QLabel::paintEvent call, otherwise the label isn't painted on mac
-	QPainter * painter = new QPainter(this);
+	auto * painter = new QPainter(this);
 	switch (m_state) {
 	case PRESSED:
 		painter->drawPixmap(0, 0, m_pressedImage);
@@ -168,9 +168,9 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 
 	setWindowTitle(tr("Fritzing Fab Quote"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
-	QLabel * label = new QLabel(tr("Order your PCB from Fritzing Fab"));
+	auto * label = new QLabel(tr("Order your PCB from Fritzing Fab"));
 	label->setObjectName("quoteOrder");
 	vLayout->addWidget(label);
 
@@ -196,7 +196,7 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 	labels << tr("Copies") << tr("Price per board") << tr("Price");
 	int ix = 0;
 	foreach (QString labl, labels) {
-		QTableWidgetItem * item = new QTableWidgetItem(labl);
+		auto * item = new QTableWidgetItem(labl);
 		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(ix, 0, item);
 		ix += 1;
@@ -214,10 +214,10 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 	vLayout->addWidget(label);
 	if (!full) label->setVisible(false);
 
-	QFrame * frame = new QFrame;
-	QHBoxLayout * buttonLayout = new QHBoxLayout();
+	auto * frame = new QFrame;
+	auto * buttonLayout = new QHBoxLayout();
 
-	LabelThing * labelThing = new LabelThing(tr("Visit Fritzing Fab"),
+	auto * labelThing = new LabelThing(tr("Visit Fritzing Fab"),
 	        ":/resources/images/icons/fabquote_button_release.png",
 	        ":/resources/images/icons/fabquote_button_press.png",
 	        ":/resources/images/icons/fabquote_button_hover.png"
@@ -281,7 +281,7 @@ void QuoteDialog::setText() {
 		if (count == 0) continue;
 		if (cost == 0) continue;
 
-		QTableWidgetItem * item = new QTableWidgetItem(QString::number(count));
+		auto * item = new QTableWidgetItem(QString::number(count));
 		item->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
 		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(0, i + 1, item);

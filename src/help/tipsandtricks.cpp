@@ -56,7 +56,7 @@ TipsAndTricks::TipsAndTricks(QWidget *parent)
 	m_textEdit->setReadOnly(true);
 	m_textEdit->setHtml(html);
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 	vLayout->addWidget(m_textEdit);
 
 }
@@ -69,7 +69,7 @@ void TipsAndTricks::initTipSets() {
 	                          "Under Windows Vista and above, it is something like C:\\Users\\[user name]\\AppData\\Roaming\\Fritzing\\; "
 	                          "under Windows XP is something like C:\\Documents and Settings\\[user name]\\Application Data\\Fritzing\\.");
 
-	TipSet * ts = new TipSet;
+	auto * ts = new TipSet;
 	ts->heading = tr("examples");
 	ts->tips << tr("Get a jump start by looking at the example circuits under File > Examples.");
 	TipSets.append(ts);

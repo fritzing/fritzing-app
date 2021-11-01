@@ -38,7 +38,7 @@ Connector::Connector( ConnectorShared * connectorShared, ModelPart * modelPart)
 {
 	m_modelPart = modelPart;
 	m_connectorShared = connectorShared;
-	m_bus = NULL;
+	m_bus = nullptr;
 }
 
 Connector::~Connector() {
@@ -98,10 +98,10 @@ void Connector::removeViewItem(ConnectorItem * item) {
 
 void Connector::connectTo(Connector * connector) {
 
-	if (this->modelPart() == NULL) {
+	if (this->modelPart() == nullptr) {
 		DebugDialog::debug("connecting bus connector 1");
 	}
-	else if (connector->modelPart() == NULL) {
+	else if (connector->modelPart() == nullptr) {
 		DebugDialog::debug("connecting bus connector 2");
 	}
 
@@ -166,7 +166,7 @@ const QList<Connector *> & Connector::toConnectors() {
 }
 
 ConnectorItem * Connector::connectorItemByViewLayerID(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
-	return m_connectorItems.value(QuickHash(viewID, viewLayerID), NULL);
+	return m_connectorItems.value(QuickHash(viewID, viewLayerID), nullptr);
 }
 
 ConnectorItem * Connector::connectorItem(ViewLayer::ViewID viewID) {
@@ -174,7 +174,7 @@ ConnectorItem * Connector::connectorItem(ViewLayer::ViewID viewID) {
 		if (connectorItem->attachedToViewID() == viewID) return connectorItem;
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 bool Connector::connectionIsAllowed(Connector* that)

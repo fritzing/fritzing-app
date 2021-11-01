@@ -31,7 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../version/version.h"
 #include "../utils/expandinglabel.h"
 
-AboutBox* AboutBox::Singleton = NULL;
+AboutBox* AboutBox::Singleton = nullptr;
 
 static const int AboutWidth = 390;
 static const int AboutText = 220;
@@ -236,7 +236,7 @@ void AboutBox::hideAbout() {
 
 void AboutBox::showAbout() {
 	//DebugDialog::debug("the AboutBox gets a show action triggered");
-	if (Singleton == NULL) {
+	if (Singleton == nullptr) {
 		new AboutBox();
 	}
 

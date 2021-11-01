@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "tipsandtricks.h"
 
-TipsAndTricks* TipsAndTricks::Singleton = NULL;
+TipsAndTricks* TipsAndTricks::Singleton = nullptr;
 QList<TipSet *>  TipsAndTricks::TipSets;
 
 TipsAndTricks::TipsAndTricks(QWidget *parent)
@@ -186,7 +186,7 @@ void TipsAndTricks::hideTipsAndTricks() {
 }
 
 void TipsAndTricks::showTipsAndTricks() {
-	if (Singleton == NULL) {
+	if (Singleton == nullptr) {
 		new TipsAndTricks();
 	}
 
@@ -196,7 +196,7 @@ void TipsAndTricks::showTipsAndTricks() {
 void TipsAndTricks::cleanup() {
 	if (Singleton) {
 		delete Singleton;
-		Singleton = NULL;
+		Singleton = nullptr;
 	}
 }
 

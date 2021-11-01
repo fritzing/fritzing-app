@@ -140,9 +140,9 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 
 	this->setWindowTitle(tr("DRC Results"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
-	QLabel * label = new QLabel(message);
+	auto * label = new QLabel(message);
 	label->setWordWrap(true);
 	vLayout->addWidget(label);
 
@@ -154,9 +154,9 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 	label->setWordWrap(true);
 	vLayout->addWidget(label);
 
-	QListWidget *listWidget = new QListWidget();
+	auto *listWidget = new QListWidget();
 	for (int ix = 0; ix < messages.count(); ix++) {
-		QListWidgetItem * item = new QListWidgetItem(messages.at(ix));
+		auto * item = new QListWidgetItem(messages.at(ix));
 		item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 		item->setData(Qt::UserRole, ix);
 		listWidget->addItem(item);
@@ -165,7 +165,7 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 	connect(listWidget, SIGNAL(itemPressed(QListWidgetItem *)), this, SLOT(pressedSlot(QListWidgetItem *)));
 	connect(listWidget, SIGNAL(itemClicked(QListWidgetItem *)), this, SLOT(releasedSlot(QListWidgetItem *)));
 
-	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok);
+	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok);
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(close()));
 
 	vLayout->addWidget(buttonBox);
@@ -286,7 +286,7 @@ QStringList DRC::start(bool showOkMessage, double keepoutMils) {
 			QMessageBox::information(m_sketchWidget->window(), tr("Fritzing"), message);
 		}
 		else {
-			DRCResultsDialog * dialog = new DRCResultsDialog(message, messages, collidingThings, m_displayItem, m_displayImage, m_sketchWidget, m_sketchWidget->window());
+			auto * dialog = new DRCResultsDialog(message, messages, collidingThings, m_displayItem, m_displayImage, m_sketchWidget, m_sketchWidget->window());
 			dialog->show();
 		}
 	}
@@ -305,7 +305,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 	QList< QList<ConnectorItem *> > equis;
 	QList< QList<ConnectorItem *> > singletons;
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (!connectorItem) continue;
 		if (!connectorItem->attachedTo()->isEverVisible()) continue;
 		if (connectorItem->attachedTo()->getRatsnest()) continue;
@@ -403,7 +403,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 			continue;
 		}
 
-		QDomDocument * masterDoc = new QDomDocument();
+		auto * masterDoc = new QDomDocument();
 		m_masterDocs.insert(viewLayerPlacement, masterDoc);
 
 		QString errorStr;
@@ -935,7 +935,7 @@ CollidingThing * DRC::findItemsAt(QList<QPointF> & atPixels, ItemBase * board, c
 	Q_UNUSED(dpi);
 	Q_UNUSED(skipHoles);
 
-	CollidingThing * collidingThing = new CollidingThing;
+	auto * collidingThing = new CollidingThing;
 	collidingThing->nonConnectorItem = already;
 	collidingThing->atPixels = atPixels;
 
@@ -986,7 +986,7 @@ void DRC::extendBorder(const double keepout, QImage * image) {
 void DRC::checkHoles(QStringList & messages, QList<CollidingThing *> & collidingThings, double dpi) {
 	QRectF boardRect = m_board->sceneBoundingRect();
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->collidingItems(m_board)) {
-		NonConnectorItem * nci = dynamic_cast<NonConnectorItem *>(item);
+		auto * nci = dynamic_cast<NonConnectorItem *>(item);
 		if (!nci) continue;
 
 		QRectF ncibr = nci->sceneBoundingRect();
@@ -1007,7 +1007,7 @@ void DRC::checkHoles(QStringList & messages, QList<CollidingThing *> & colliding
 		int h = qCeil(ir.height() * dpi / GraphicsUtils::SVGDPI);
 		if (y + h > m_displayImage->height()) h = m_displayImage->height() - y;
 
-		CollidingThing * collidingThing = new CollidingThing;
+		auto * collidingThing = new CollidingThing;
 		collidingThing->nonConnectorItem = nci;
 		for (int iy = 0; iy < h; iy++) {
 			for (int ix = 0; ix < w; ix++) {
@@ -1032,7 +1032,7 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 	QRectF boardRect = m_board->sceneBoundingRect();
 	QList<ItemBase *> visited;
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (!itemBase) continue;
 		if (!itemBase->isEverVisible()) continue;
 		if (itemBase->modelPart()->isCore()) continue;
@@ -1104,7 +1104,7 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 			int h = qCeil(ir.height() * dpi / GraphicsUtils::SVGDPI);
 			if (y + h > m_displayImage->height()) h = m_displayImage->height() - y;
 
-			CollidingThing * collidingThing = new CollidingThing;
+			auto * collidingThing = new CollidingThing;
 			collidingThing->nonConnectorItem = ci;
 			for (int iy = 0; iy < h; iy++) {
 				for (int ix = 0; ix < w; ix++) {

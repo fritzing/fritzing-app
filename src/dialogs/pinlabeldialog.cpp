@@ -224,7 +224,7 @@ void PinLabelDialog::makeOnePinEntry(int index, const QString & text, Qt::Alignm
 
 void PinLabelDialog::labelChanged() {
 	auto * lineEdit = qobject_cast<QLineEdit *>(sender());
-	if (lineEdit == NULL) return;
+	if (lineEdit == nullptr) return;
 
 	bool ok;
 	int index = lineEdit->property("index").toInt(&ok);

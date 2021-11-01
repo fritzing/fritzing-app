@@ -660,7 +660,7 @@ void MazeRouter::start()
 		return;
 	}
 
-	auto parentCommand = new QUndoCommand("Autoroute");
+	auto *parentCommand = new QUndoCommand("Autoroute");
     /// @todo can have leaks if ctors of these commands changes
 	new CleanUpWiresCommand(m_sketchWidget, CleanUpWiresCommand::UndoOnly, parentCommand);
 	new CleanUpRatsnestsCommand(m_sketchWidget, CleanUpWiresCommand::UndoOnly, parentCommand);
@@ -670,7 +670,7 @@ void MazeRouter::start()
 	NetList netList;
 	auto totalToRoute = 0;
 	for (auto i = 0; i < m_allPartConnectorItems.count(); i++) {
-		auto net = new Net;
+		auto *net = new Net;
 		net->net = m_allPartConnectorItems[i];
 
 		//foreach (ConnectorItem * connectorItem, *(net->net)) {
@@ -680,7 +680,7 @@ void MazeRouter::start()
 		QList<ConnectorItem *> todo;
 		todo.append(*(net->net));
 		while (todo.count() > 0) {
-			auto first = todo.takeFirst();
+			auto *first = todo.takeFirst();
 			QList<ConnectorItem *> equi;
 			equi.append(first);
 			ConnectorItem::collectEqualPotential(equi, m_bothSidesNow, (ViewGeometry::RatsnestFlag | ViewGeometry::NormalFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::SchematicTraceFlag) ^ m_sketchWidget->getTraceFlag());
@@ -892,7 +892,7 @@ int MazeRouter::findPinsWithin(QList<ConnectorItem *> * net) {
 	}
 
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items(r)) {
-		auto connectorItem = dynamic_cast<ConnectorItem *>(item);
+		auto *connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (!connectorItem) continue;
 
 		if (net->contains(connectorItem)) continue;
@@ -1010,7 +1010,7 @@ bool MazeRouter::routeNets(NetList & netList, bool makeJumper, Score & currentSc
 			return false;
 		}
 
-		auto net = netList.nets.at(netIndex);
+		auto *net = netList.nets.at(netIndex);
 		/*
 		DebugDialog::debug(QString("routing net %1, subnets %2, traces %3, routed %4")
 		    .arg(netIndex)
@@ -3294,10 +3294,10 @@ void MazeRouter::reducePoints(QList<QPointF> & points, QPointF topLeft, QList<Tr
 					}
 					connectionThing.remove(traceWire->connector1(), next->connector0());
 					for (int i = 0; i < separation - 1; i++) {
-						auto tw = bundle.takeAt(ix + 1);
+						auto *tw = bundle.takeAt(ix + 1);
 						connectionThing.remove(tw->connector0());
 						connectionThing.remove(tw->connector1());
-						auto modelPart = tw->modelPart();
+						auto *modelPart = tw->modelPart();
 						delete tw;
 						modelPart->setParent(nullptr);
 						delete modelPart;

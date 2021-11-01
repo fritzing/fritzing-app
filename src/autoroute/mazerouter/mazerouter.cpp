@@ -965,7 +965,7 @@ bool MazeRouter::makeMasters(QString & message) {
 			continue;
 		}
 
-		QDomDocument * masterDoc = new QDomDocument();
+		auto * masterDoc = new QDomDocument();
 		m_masterDocs.insert(viewLayerPlacement, masterDoc);
 
 		QString errorStr;
@@ -2500,7 +2500,7 @@ ConnectorItem * MazeRouter::findAnchor(GridPoint gp, const QRectF & gridRect, Tr
 	QList<TraceWire *> traceWires;
 	QList<ConnectorItem *> traceConnectorItems;
 	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items(gridRect)) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem) {
 			if (!connectorItem->attachedTo()->isEverVisible()) continue;
 			if (connectorItem == already) continue;
@@ -2525,7 +2525,7 @@ ConnectorItem * MazeRouter::findAnchor(GridPoint gp, const QRectF & gridRect, Tr
 			bool traceConnector = false;
 			if (net->net->contains(connectorItem)) ;
 			else {
-				TraceWire * traceWire = qobject_cast<TraceWire *>(connectorItem->attachedTo());
+				auto * traceWire = qobject_cast<TraceWire *>(connectorItem->attachedTo());
 				if (traceWire == nullptr) {
 					Via * via = qobject_cast<Via *>(connectorItem->attachedTo()->layerKinChief());
 					if (via == nullptr) isCandidate = false;
@@ -2551,7 +2551,7 @@ ConnectorItem * MazeRouter::findAnchor(GridPoint gp, const QRectF & gridRect, Tr
 			}
 		}
 
-		TraceWire * traceWire = dynamic_cast<TraceWire *>(item);
+		auto * traceWire = dynamic_cast<TraceWire *>(item);
 		if (traceWire == nullptr) continue;
 		if (!traceWire->isEverVisible()) continue;
 
@@ -2706,7 +2706,7 @@ void MazeRouter::addConnectionToUndo(ConnectorItem * from, ConnectorItem * to, Q
 {
 	if (from == nullptr || to == nullptr) return;
 
-	ChangeConnectionCommand * ccc = new ChangeConnectionCommand(m_sketchWidget, BaseCommand::CrossView,
+	auto * ccc = new ChangeConnectionCommand(m_sketchWidget, BaseCommand::CrossView,
 	        from->attachedToID(), from->connectorSharedID(),
 	        to->attachedToID(), to->connectorSharedID(),
 	        ViewLayer::specFromID(from->attachedToViewLayerID()),
@@ -2780,7 +2780,7 @@ SymbolPaletteItem * MazeRouter::makeNetLabel(GridPoint & center, SymbolPaletteIt
 	if (m_netLabelIndex < 0) {
 		m_netLabelIndex = 0;
 		foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
-			SymbolPaletteItem * netLabel = dynamic_cast<SymbolPaletteItem *>(item);
+			auto * netLabel = dynamic_cast<SymbolPaletteItem *>(item);
 			if (netLabel == nullptr || !netLabel->isOnlyNetLabel()) continue;
 
 			bool ok;
@@ -2798,7 +2798,7 @@ SymbolPaletteItem * MazeRouter::makeNetLabel(GridPoint & center, SymbolPaletteIt
 	ItemBase * itemBase = m_sketchWidget->addItem(m_sketchWidget->referenceModel()->retrieveModelPart(traceFlags & JumperLeft ? ModuleIDNames::NetLabelModuleIDName : ModuleIDNames::LeftNetLabelModuleIDName),
 	                      ViewLayer::NewBottom, BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
 
-	SymbolPaletteItem * netLabel = dynamic_cast<SymbolPaletteItem *>(itemBase);
+	auto * netLabel = dynamic_cast<SymbolPaletteItem *>(itemBase);
 	netLabel->setAutoroutable(true);
 	netLabel->setLabel(QString::number(m_netLabelIndex));
 	QPointF tl = m_maxRect.topLeft();
@@ -2980,11 +2980,11 @@ void MazeRouter::removeOffBoardAnd(bool isPCBType, bool removeSingletons, bool b
 				doRemove = via->getAutoroutable();
 			}
 			else if (connectorItem->attachedToItemType() == ModelPart::Jumper) {
-				JumperItem * jumperItem = qobject_cast<JumperItem *>(connectorItem->attachedTo()->layerKinChief());
+				auto * jumperItem = qobject_cast<JumperItem *>(connectorItem->attachedTo()->layerKinChief());
 				doRemove = jumperItem->getAutoroutable();
 			}
 			else if (connectorItem->attachedToItemType() == ModelPart::Symbol) {
-				SymbolPaletteItem * netLabel = qobject_cast<SymbolPaletteItem *>(connectorItem->attachedTo()->layerKinChief());
+				auto * netLabel = qobject_cast<SymbolPaletteItem *>(connectorItem->attachedTo()->layerKinChief());
 				doRemove = netLabel->getAutoroutable() && netLabel->isOnlyNetLabel();
 			}
 			if (!bothSides && connectorItem->attachedToViewLayerID() == ViewLayer::Copper1) doRemove = true;

@@ -52,7 +52,7 @@ static const int AfterSpinBoxWidth = 5;
 /////////////////////////////////////
 
 QLabel * addLabel(QHBoxLayout * hboxLayout, QPixmap * pixmap) {
-	QLabel * label = new QLabel();
+	auto * label = new QLabel();
 	label->setObjectName("iconLabel");
 	label->setAutoFillBackground(true);
 	label->setPixmap(*pixmap);
@@ -148,10 +148,10 @@ HtmlInfoView::~HtmlInfoView() {
 void HtmlInfoView::init(bool tinyMode) {
 	m_tinyMode = tinyMode;
 
-	QFrame * mainFrame = new QFrame(this);
+	auto * mainFrame = new QFrame(this);
 	mainFrame->setObjectName("infoViewMainFrame");
 
-	QVBoxLayout *vlo = new QVBoxLayout(mainFrame);
+	auto *vlo = new QVBoxLayout(mainFrame);
 	vlo->setSpacing(0);
 	vlo->setContentsMargins(0, 0, 0, 0);
 	vlo->setSizeConstraint( QLayout::SetMinAndMaxSize );
@@ -181,10 +181,10 @@ void HtmlInfoView::init(bool tinyMode) {
 		NoIcon->fill(QColorConstants::White);
 	}
 
-	QFrame * iconFrame = new QFrame(mainFrame);
+	auto * iconFrame = new QFrame(mainFrame);
 	iconFrame->setObjectName("iconFrame");
 
-	QHBoxLayout * hboxLayout = new QHBoxLayout();
+	auto * hboxLayout = new QHBoxLayout();
 	hboxLayout->setContentsMargins(0, 0, 0, 0);
 	hboxLayout->addSpacing(IconSpace);
 	m_icon1 = addLabel(hboxLayout, NoIcon);
@@ -194,9 +194,9 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_icon3 = addLabel(hboxLayout, NoIcon);
 	m_icon3->setToolTip(tr("Part pcb view image"));
 
-	QVBoxLayout * versionLayout = new QVBoxLayout();
+	auto * versionLayout = new QVBoxLayout();
 
-	QHBoxLayout * subVersionLayout = new QHBoxLayout();
+	auto * subVersionLayout = new QHBoxLayout();
 	m_partVersion = new QLabel();
 	m_partVersion->setObjectName("infoViewPartVersion");
 	m_partVersion->setToolTip(tr("Part version number"));
@@ -307,26 +307,26 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_connFrame = new QFrame(this);
 	m_connFrame->setObjectName("connectionsFrame");
 
-	QGridLayout * connLayout = new QGridLayout(m_connFrame);
+	auto * connLayout = new QGridLayout(m_connFrame);
 	connLayout->setSpacing(0);
 	connLayout->setContentsMargins(0, 0, 0, 0);
 	m_connFrame->setLayout(connLayout);
 
-	QLabel * descrLabel = new QLabel(tr("connection"), this);
+	auto * descrLabel = new QLabel(tr("connection"), this);
 	descrLabel->setObjectName("connectionsLabel");
 	m_connDescr = new QLabel(this);
 	m_connDescr->setObjectName("connectionsValue");
 	connLayout->addWidget(descrLabel, 0, 0);
 	connLayout->addWidget(m_connDescr, 0, 1);
 
-	QLabel * nameLabel = new QLabel(tr("name"), this);
+	auto * nameLabel = new QLabel(tr("name"), this);
 	nameLabel->setObjectName("connectionsLabel");
 	m_connName = new QLabel(this);
 	m_connName->setObjectName("connectionsValue");
 	connLayout->addWidget(nameLabel, 1, 0);
 	connLayout->addWidget(m_connName, 1, 1);
 
-	QLabel * typeLabel = new QLabel(tr("type"), this);
+	auto * typeLabel = new QLabel(tr("type"), this);
 	typeLabel->setObjectName("connectionsLabel");
 	m_connType = new QLabel(this);
 	m_connType->setObjectName("connectionsValue");
@@ -602,7 +602,7 @@ void HtmlInfoView::setNullContent()
 }
 
 void HtmlInfoView::setInstanceTitle() {
-	FLineEdit * edit = qobject_cast<FLineEdit *>(sender());
+	auto * edit = qobject_cast<FLineEdit *>(sender());
 	if (edit == nullptr) return;
 	if (!edit->isEnabled()) return;
 	if (m_currentItem == nullptr) return;
@@ -611,21 +611,21 @@ void HtmlInfoView::setInstanceTitle() {
 }
 
 void HtmlInfoView::instanceTitleEnter() {
-	FLineEdit * edit = qobject_cast<FLineEdit *>(sender());
+	auto * edit = qobject_cast<FLineEdit *>(sender());
 	if (edit->isEnabled()) {
 		setInstanceTitleColors(edit, QColor(0xeb, 0xeb, 0xee), QColor(0x00, 0x00, 0x00)); //c8c8c8, 575757
 	}
 }
 
 void HtmlInfoView::instanceTitleLeave() {
-	FLineEdit * edit = qobject_cast<FLineEdit *>(sender());
+	auto * edit = qobject_cast<FLineEdit *>(sender());
 	if (edit->isEnabled()) {
 		setInstanceTitleColors(edit, QColor(0xd2, 0xd2, 0xd7), QColor(0x00, 0x00, 0x00)); //b3b3b3, 575757
 	}
 }
 
 void HtmlInfoView::instanceTitleEditable(bool editable) {
-	FLineEdit * edit = qobject_cast<FLineEdit *>(sender());
+	auto * edit = qobject_cast<FLineEdit *>(sender());
 	if (editable) {
 		setInstanceTitleColors(edit, QColor(0xff, 0xff, 0xff), QColor(0x00, 0x00, 0x00)); //fcfcfc, 000000
 	}
@@ -800,25 +800,25 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 	foreach(QString key, keys) {
 		if (ix >= m_propThings.count()) {
 			//DebugDialog::debug(QString("new prop thing %1").arg(ix));
-			PropThing * propThing = new PropThing;
+			auto * propThing = new PropThing;
 			propThing->m_plugin = nullptr;
 			m_propThings.append(propThing);
 
-			QLabel * propNameLabel = new QLabel(this);
+			auto * propNameLabel = new QLabel(this);
 			propNameLabel->setObjectName("propNameLabel");
 			propNameLabel->setWordWrap(true);
 			propThing->m_name = propNameLabel;
 			m_propLayout->addWidget(propNameLabel, ix, 0);
 
-			QFrame * valueFrame = new QFrame(this);
+			auto * valueFrame = new QFrame(this);
 			valueFrame->setObjectName("propValueFrame");
-			QVBoxLayout * vlayout = new QVBoxLayout(valueFrame);
+			auto * vlayout = new QVBoxLayout(valueFrame);
 			vlayout->setSpacing(0);
 			vlayout->setContentsMargins(0, 0, 0, 0);
 			propThing->m_layout = vlayout;
 			propThing->m_frame = valueFrame;
 
-			QLabel * propValueLabel = new QLabel(valueFrame);
+			auto * propValueLabel = new QLabel(valueFrame);
 			propValueLabel->setObjectName("propValueLabel");
 			propValueLabel->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
 			vlayout->addWidget(propValueLabel);
@@ -987,7 +987,7 @@ void HtmlInfoView::makeLockFrame() {
 	m_lockLabel->setWordWrap(true);
 
 	m_lockFrame = new QFrame(this);
-	QHBoxLayout * lockLayout = new QHBoxLayout();
+	auto * lockLayout = new QHBoxLayout();
 	lockLayout->setSpacing(0);
 	lockLayout->setContentsMargins(0, 0, 0, 0);
 	m_lockFrame->setObjectName("propValueFrame");
@@ -1017,7 +1017,7 @@ void HtmlInfoView::makeLocationFrame() {
 	m_locationLabel->setWordWrap(true);
 
 	m_locationFrame = new QFrame(this);
-	QHBoxLayout * locationLayout = new QHBoxLayout();
+	auto * locationLayout = new QHBoxLayout();
 	locationLayout->setSpacing(0);
 	locationLayout->setContentsMargins(0, 0, 0, 0);
 	m_locationFrame->setObjectName("propValueFrame");
@@ -1067,7 +1067,7 @@ void HtmlInfoView::makeRotationFrame() {
 	m_rotationLabel->setWordWrap(true);
 
 	m_rotationFrame = new QFrame(this);
-	QHBoxLayout * rotationLayout = new QHBoxLayout();
+	auto * rotationLayout = new QHBoxLayout();
 	rotationLayout->setSpacing(0);
 	rotationLayout->setContentsMargins(0, 0, 0, 0);
 	m_rotationFrame->setObjectName("propValueFrame");
@@ -1084,7 +1084,7 @@ void HtmlInfoView::makeRotationFrame() {
 
 	rotationLayout->addSpacing(AfterSpinBoxWidth);
 
-	QLabel * label = new QLabel(tr("degrees"), this);
+	auto * label = new QLabel(tr("degrees"), this);
 	label->setObjectName("infoViewSpinBoxLabel");
 	rotationLayout->addWidget(label);
 

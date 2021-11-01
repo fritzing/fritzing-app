@@ -107,7 +107,7 @@ void LayerPalette::updateLayerPalette(LayerHash & viewLayers, LayerList & keys)
 }
 
 void LayerPalette::setLayerVisibility(bool) {
-	ViewLayerCheckBox * cb = qobject_cast<ViewLayerCheckBox *>(sender());
+	auto * cb = qobject_cast<ViewLayerCheckBox *>(sender());
 	if (!cb) return;
 
 	// want to toggle layer individually in this case

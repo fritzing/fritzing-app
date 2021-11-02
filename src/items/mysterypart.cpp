@@ -268,7 +268,7 @@ bool MysteryPart::hasCustomSVG() {
 
 void MysteryPart::chipLabelEntry() {
 	auto * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	if (edit == nullptr) return;
 
 	if (edit->text().compare(this->chipLabel()) == 0) return;
 
@@ -536,7 +536,7 @@ QString MysteryPart::makeBreadboardDipSvg(const QString & expectedFileName)
 	               "</svg>\n");
 
 
-	header = TextUtils::incrementTemplateString(header, 1, spacing - increment, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	header = TextUtils::incrementTemplateString(header, 1, spacing - increment, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	header = header.arg(TextUtils::getViewBoxCoord(header, 3) / 100.0);
 	if (spacing == 10) {
 		header.replace("{{6.0}}", "8.0");
@@ -552,9 +552,9 @@ QString MysteryPart::makeBreadboardDipSvg(const QString & expectedFileName)
 	header.replace("{", "[");
 	header.replace("}", "]");
 
-	QString svg = TextUtils::incrementTemplateString(header, 1, increment * ((pins - 4) / 2), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header, 1, increment * ((pins - 4) / 2), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
-	repeatB = TextUtils::incrementTemplateString(repeatB, 1, spacing - increment, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	repeatB = TextUtils::incrementTemplateString(repeatB, 1, spacing - increment, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	repeatB.replace("{", "[");
 	repeatB.replace("}", "]");
 
@@ -562,7 +562,7 @@ QString MysteryPart::makeBreadboardDipSvg(const QString & expectedFileName)
 	userData[0] = pins;
 	userData[1] = 1;
 	QString repeatTs = TextUtils::incrementTemplateString(repeatT, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::negIncCopyPinFunction, userData);
-	QString repeatBs = TextUtils::incrementTemplateString(repeatB, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	QString repeatBs = TextUtils::incrementTemplateString(repeatB, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 2) / 100).arg(repeatTs).arg(repeatBs);
 }
@@ -588,12 +588,12 @@ QString MysteryPart::makeBreadboardSipSvg(const QString & expectedFileName)
 	               "</g>\n"
 	               "</svg>\n");
 
-	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
 	QString repeat("<rect id='connector%1terminal' stroke='none' stroke-width='0' x='[1.87]' y='25.586' fill='#8C8C8C' width='2.3' height='2.0'/>\n"
 	               "<rect id='connector%1pin' stroke='none' stroke-width='0' x='[1.87]' y='23.336' fill='#8C8C8C' width='2.3' height='4.25'/>\n");
 
-	QString repeats = TextUtils::incrementTemplateString(repeat, pins, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	QString repeats = TextUtils::incrementTemplateString(repeat, pins, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 2) / 100).arg(repeats);
 }
@@ -626,7 +626,7 @@ bool MysteryPart::changePinLabels(bool singleRow, bool sip) {
 void MysteryPart::swapEntry(const QString & text) {
 
 	auto * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
-	if (comboBox == NULL) return;
+	if (comboBox == nullptr) return;
 
 	QString layout = m_propsMap.value("layout");
 

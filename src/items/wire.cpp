@@ -95,7 +95,7 @@ double Wire::THIN_TRACE_WIDTH = 0.0;
 constexpr double DefaultHoverStrokeWidth = 4;
 
 static Bezier UndoBezier;
-static BezierDisplay * TheBezierDisplay = NULL;
+static BezierDisplay * TheBezierDisplay = nullptr;
 
 ////////////////////////////////////////////////////////////
 
@@ -125,14 +125,14 @@ void debugCompare(ItemBase * it) {
 /////////////////////////////////////////////////////////////
 
 WireAction::WireAction(QAction * action) : QAction(action) {
-	m_wire = NULL;
+	m_wire = nullptr;
 	this->setText(action->text());
 	this->setStatusTip(action->statusTip());
 	this->setCheckable(action->isCheckable());
 }
 
 WireAction::WireAction(const QString & title, QObject * parent) : QAction(title, parent) {
-	m_wire = NULL;
+	m_wire = nullptr;
 }
 
 void WireAction::setWire(Wire * w) {
@@ -150,14 +150,14 @@ Wire::Wire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 {
 	m_banded = false;
 	m_colorByLength = false;
-	m_bezier = NULL;
+	m_bezier = nullptr;
 	m_displayBendpointCursor = m_canHaveCurve = true;
 	m_hoverStrokeWidth = DefaultHoverStrokeWidth;
-	m_connector0 = m_connector1 = NULL;
-	m_partLabel = initLabel ? new PartLabel(this, NULL, NULL) : NULL;
+	m_connector0 = m_connector1 = nullptr;
+	m_partLabel = initLabel ? new PartLabel(this, nullptr, nullptr) : nullptr;
 	m_canChainMultiple = false;
 	setFlag(QGraphicsItem::ItemIsSelectable, true );
-	m_connectorHover = NULL;
+	m_connectorHover = nullptr;
 	m_opacity = 1.0;
 	m_ignoreSelectionChange = false;
 
@@ -227,7 +227,7 @@ void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsVie
 		}
 	}
 
-	if (m_connector0 == NULL || m_connector1 == NULL) {
+	if (m_connector0 == nullptr || m_connector1 == nullptr) {
 		// should never happen
 		return;
 	}
@@ -384,7 +384,7 @@ QPainterPath Wire::shapeAux(double width) const
 	}
 
 	path.moveTo(m_line.p1());
-	if (m_bezier == NULL || m_bezier->isEmpty()) {
+	if (m_bezier == nullptr || m_bezier->isEmpty()) {
 		path.lineTo(m_line.p2());
 	}
 	else {
@@ -431,7 +431,7 @@ void Wire::mousePressEvent(QGraphicsSceneMouseEvent *event)
 }
 
 void Wire::initDragCurve(QPointF scenePos) {
-	if (m_bezier == NULL) {
+	if (m_bezier == nullptr) {
 		m_bezier = new Bezier();
 	}
 
@@ -440,8 +440,8 @@ void Wire::initDragCurve(QPointF scenePos) {
 	m_dragCurve = true;
 	m_dragEnd = false;
 
-	QPointF p0 = connector0()->sceneAdjustedTerminalPoint(NULL);
-	QPointF p1 = connector1()->sceneAdjustedTerminalPoint(NULL);
+	QPointF p0 = connector0()->sceneAdjustedTerminalPoint(nullptr);
+	QPointF p1 = connector1()->sceneAdjustedTerminalPoint(nullptr);
 	if (m_bezier->isEmpty()) {
 		m_bezier->initToEnds(mapFromScene(p0), mapFromScene(p1));
 	}
@@ -455,13 +455,13 @@ void Wire::initDragCurve(QPointF scenePos) {
 }
 
 bool Wire::initNewBendpoint(QPointF scenePos, Bezier & left, Bezier & right) {
-	if (m_bezier == NULL || m_bezier->isEmpty()) {
+	if (m_bezier == nullptr || m_bezier->isEmpty()) {
 		UndoBezier.clear();
 		return false;
 	}
 
-	QPointF p0 = connector0()->sceneAdjustedTerminalPoint(NULL);
-	QPointF p1 = connector1()->sceneAdjustedTerminalPoint(NULL);
+	QPointF p0 = connector0()->sceneAdjustedTerminalPoint(nullptr);
+	QPointF p1 = connector1()->sceneAdjustedTerminalPoint(nullptr);
 	m_bezier->set_endpoints(mapFromScene(p0), mapFromScene(p1));
 	UndoBezier.copy(m_bezier);
 
@@ -545,14 +545,14 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 	}
 
 	if ((modifiers & Qt::ShiftModifier) != 0) {
-		QPointF initialPos = mapFromScene(otherConnectorItem->sceneAdjustedTerminalPoint(NULL));
+		QPointF initialPos = mapFromScene(otherConnectorItem->sceneAdjustedTerminalPoint(nullptr));
 		bool bendpoint = isBendpoint(whichConnectorItem);
 		if (bendpoint) {
 			bendpoint = false;
 			foreach (ConnectorItem * ci, whichConnectorItem->connectedToItems()) {
 				Wire * w = qobject_cast<Wire *>(ci->attachedTo());
 				ConnectorItem * oci = w->otherConnector(ci);
-				QPointF otherInitialPos = mapFromScene(oci->sceneAdjustedTerminalPoint(NULL));
+				QPointF otherInitialPos = mapFromScene(oci->sceneAdjustedTerminalPoint(nullptr));
 				QPointF p1(initialPos.x(), otherInitialPos.y());
 				double d = GraphicsUtils::distanceSqd(p1, eventPos);
 				if (d <= 144) {
@@ -605,7 +605,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 	allTo.insert(whichConnectorItem);
 	foreach (ConnectorItem * toConnectorItem, whichConnectorItem->connectedToItems()) {
 		Wire * chainedWire = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-		if (chainedWire == NULL) continue;
+		if (chainedWire == nullptr) continue;
 
 		allTo.insert(toConnectorItem);
 		foreach (ConnectorItem * subTo, toConnectorItem->connectedToItems()) {
@@ -670,7 +670,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 		//DebugDialog::debug("__________________");
 		//foreach (ConnectorItem * end, exclude) end->debugInfo("exclude");
 
-		ConnectorItem * originatingConnector = NULL;
+		ConnectorItem * originatingConnector = nullptr;
 		if (otherConnectorItem) {
 			foreach (ConnectorItem * toConnectorItem, otherConnectorItem->connectedToItems()) {
 				if (ends.contains(toConnectorItem)) {
@@ -754,7 +754,7 @@ bool Wire::releaseDrag() {
 
 	if (m_dragCurve) {
 		delete TheBezierDisplay;
-		TheBezierDisplay = NULL;
+		TheBezierDisplay = nullptr;
 		m_dragCurve = false;
 		ungrabMouse();
 		if (UndoBezier != *m_bezier) {
@@ -831,8 +831,8 @@ void Wire::setExtras(QDomElement & element, InfoGraphicsView * infoGraphicsView)
 		prepareGeometryChange();
 		m_bezier = new Bezier;
 		m_bezier->copy(&bezier);
-		QPointF p0 = connector0()->sceneAdjustedTerminalPoint(NULL);
-		QPointF p1 = connector1()->sceneAdjustedTerminalPoint(NULL);
+		QPointF p0 = connector0()->sceneAdjustedTerminalPoint(nullptr);
+		QPointF p1 = connector1()->sceneAdjustedTerminalPoint(nullptr);
 		m_bezier->set_endpoints(mapFromScene(p0), mapFromScene(p1));
 	}
 
@@ -857,7 +857,7 @@ void Wire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorIt
 }
 
 void Wire::hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item) {
-	m_connectorHover = NULL;
+	m_connectorHover = nullptr;
 	ItemBase::hoverLeaveConnectorItem(event, item);
 }
 
@@ -927,7 +927,7 @@ void Wire::mousePressConnectorEvent(ConnectorItem * connectorItem, QGraphicsScen
 	}
 
 
-	connectorItem->setOverConnectorItem(NULL);
+	connectorItem->setOverConnectorItem(nullptr);
 	initDragEnd(connectorItem, event->scenePos());
 
 }
@@ -939,7 +939,7 @@ void Wire::simpleConnectedMoved(ConnectorItem * to) {
 
 void Wire::simpleConnectedMoved(ConnectorItem * from, ConnectorItem * to)
 {
-	if (from == NULL) return;
+	if (from == nullptr) return;
 
 	//if (from) from->debugInfo("connected moved from");
 	//if (to) to->debugInfo("\tto");
@@ -977,7 +977,7 @@ void Wire::calcNewLine(ConnectorItem * from, ConnectorItem * to, QPointF & p1, Q
 	if (to == m_connector0) {
 		p1 = from->sceneAdjustedTerminalPoint(to);
 		ConnectorItem * otherFrom = m_connector1->firstConnectedToIsh();
-		if (otherFrom == NULL) {
+		if (otherFrom == nullptr) {
 			p2 = m_connector1->mapToScene(m_connector1->rect().center());
 		}
 		else {
@@ -987,7 +987,7 @@ void Wire::calcNewLine(ConnectorItem * from, ConnectorItem * to, QPointF & p1, Q
 	else {
 		p2 = from->sceneAdjustedTerminalPoint(to);
 		ConnectorItem * otherFrom = m_connector0->firstConnectedToIsh();
-		if (otherFrom == NULL) {
+		if (otherFrom == nullptr) {
 			p1 = m_connector0->mapToScene(m_connector0->rect().center());
 		}
 		else {
@@ -1023,15 +1023,15 @@ FSvgRenderer * Wire::setUpConnectors(ModelPart * modelPart, ViewLayer::ViewID vi
 	LayerAttributes layerAttributes;
 	this->initLayerAttributes(layerAttributes, viewID, m_viewLayerID, m_viewLayerPlacement, false, false);
 	FSvgRenderer * renderer = ItemBase::setUpImage(modelPart, layerAttributes);
-	if (renderer == NULL) {
-		return NULL;
+	if (renderer == nullptr) {
+		return nullptr;
 	}
 
 	foreach (Connector * connector, modelPart->connectors().values()) {
-		if (connector == NULL) continue;
+		if (connector == nullptr) continue;
 
 		SvgIdLayer * svgIdLayer = connector->fullPinInfo(viewID, m_viewLayerID);
-		if (svgIdLayer == NULL) continue;
+		if (svgIdLayer == nullptr) continue;
 
 		bool result = renderer->setUpConnector(svgIdLayer, false, viewLayerPlacement());
 		if (!result) continue;
@@ -1079,7 +1079,7 @@ ConnectorItem * Wire::connector1() {
 void Wire::findConnectorsUnder() {
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		if (connectorItem->connectionsCount() > 0) continue;  // only check free ends
-		connectorItem->findConnectorUnder(true, false, ConnectorItem::emptyConnectorItemList, false, NULL);
+		connectorItem->findConnectorUnder(true, false, ConnectorItem::emptyConnectorItemList, false, nullptr);
 	}
 }
 
@@ -1093,11 +1093,11 @@ void Wire::collectChained(QList<Wire *> & chained, QList<ConnectorItem *> & ends
 }
 
 void Wire::collectChained(ConnectorItem * connectorItem, QList<Wire *> & chained, QList<ConnectorItem *> & ends) {
-	if (connectorItem == NULL) return;
+	if (connectorItem == nullptr) return;
 
 	foreach (ConnectorItem * connectedToItem, connectorItem->connectedToItems()) {
 		Wire * wire = qobject_cast<Wire *>(connectedToItem->attachedTo());
-		if (wire == NULL) {
+		if (wire == nullptr) {
 			if (!ends.contains(connectedToItem)) {
 				ends.append(connectedToItem);
 			}
@@ -1342,7 +1342,7 @@ Wire * Wire::findTraced(ViewGeometry::WireFlags flags, QList<ConnectorItem *>  &
 	this->collectChained(chainedWires, ends);
 	if (ends.count() != 2) {
 		DebugDialog::debug(QString("wire in jumper or trace must have two ends") );
-		return NULL;
+		return nullptr;
 	}
 
 	return ConnectorItem::directlyWiredTo(ends[0], ends[1], flags);
@@ -1495,7 +1495,7 @@ void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen 
 	int count = 0;
 	bool bendpoint = true;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) {
+	if (infoGraphicsView == nullptr) {
 		return;
 	}
 
@@ -1573,7 +1573,7 @@ bool Wire::connectionIsAllowed(ConnectorItem * to) {
 	if (!ItemBase::connectionIsAllowed(to)) return false;
 
 	Wire * w = qobject_cast<Wire *>(to->attachedTo());
-	if (w == NULL) return true;
+	if (w == nullptr) return true;
 
 	if (w->getRatsnest()) return false;
 
@@ -1654,7 +1654,7 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 			return true;
 		}
 		else {
-			returnWidget = NULL;
+			returnWidget = nullptr;
 			returnValue = colorString();
 			return true;
 		}
@@ -1667,7 +1667,7 @@ void Wire::colorEntry(int index) {
 	Q_UNUSED(index);
 
 	auto * comboBox = qobject_cast<QComboBox *>(sender());
-	if (comboBox == NULL) return;
+	if (comboBox == nullptr) return;
 
 	QString color = comboBox->itemData(comboBox->currentIndex()).toString();
 
@@ -1726,7 +1726,7 @@ void Wire::addedToScene(bool temporary) {
 	ItemBase::addedToScene(temporary);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) return;
+	if (infoGraphicsView == nullptr) return;
 
 	infoGraphicsView->newWire(this);
 }
@@ -1836,7 +1836,7 @@ void Wire::dragCurve(QPointF eventPos, Qt::KeyboardModifiers)
 void Wire::changeCurve(const Bezier * bezier)
 {
 	prepareGeometryChange();
-	if (m_bezier == NULL) m_bezier = new Bezier;
+	if (m_bezier == nullptr) m_bezier = new Bezier;
 	m_bezier->copy(bezier);
 	update();
 }
@@ -1855,7 +1855,7 @@ const Bezier * Wire::undoCurve() {
 
 QPolygonF Wire::sceneCurve(QPointF offset) {
 	QPolygonF poly;
-	if (m_bezier == NULL) return poly;
+	if (m_bezier == nullptr) return poly;
 	if (m_bezier->isEmpty()) return poly;
 
 	poly.append(m_line.p1() + pos() - offset);

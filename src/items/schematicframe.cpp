@@ -261,7 +261,7 @@ bool SchematicFrame::makeLineEdit(QWidget * parent, const QString & family, cons
 	returnProp = ItemBase::TranslatedPropertyNames.value(propp.toLower());
 	returnValue = prop(propp);
 
-	QLineEdit * e1 = new QLineEdit(parent);
+	auto * e1 = new QLineEdit(parent);
 	e1->setObjectName("infoViewLineEdit");
 
 	e1->setProperty("prop", QVariant(propp));
@@ -284,7 +284,7 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 	}
 
 	if (propp.compare("date", Qt::CaseInsensitive) == 0) {
-		QDateTimeEdit * dateTimeEdit = new QDateTimeEdit(QDateTime::currentDateTime(), parent);
+		auto * dateTimeEdit = new QDateTimeEdit(QDateTime::currentDateTime(), parent);
 		QString d = prop("date");
 		if (!d.isEmpty()) {
 			QDateTime dateTime;
@@ -311,8 +311,8 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 			strings.clear();
 			strings << "1" << "1";
 		}
-		QFrame * frame = new QFrame(parent);
-		QSpinBox * spin1 = new QSpinBox(frame);
+		auto * frame = new QFrame(parent);
+		auto * spin1 = new QSpinBox(frame);
 		spin1->setMinimum(1);
 		spin1->setMaximum(999);
 		spin1->setValue(strings[0].toInt());
@@ -321,7 +321,7 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 		spin1->setProperty("role", "numerator");
 		spin1->setEnabled(swappingEnabled);
 
-		QSpinBox * spin2 = new QSpinBox(frame);
+		auto * spin2 = new QSpinBox(frame);
 		spin2->setMinimum(1);
 		spin2->setMaximum(999);
 		spin2->setValue(strings[1].toInt());
@@ -330,12 +330,12 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 		spin2->setProperty("role", "denominator");
 		spin2->setEnabled(swappingEnabled);
 
-		QLabel * label = new QLabel(parent);
+		auto * label = new QLabel(parent);
 		label->setText(tr("of"));
 		label->setObjectName("infoViewOfLabel");
 		label->setAlignment(Qt::AlignCenter);
 
-		QHBoxLayout * hBoxLayout = new QHBoxLayout(frame);
+		auto * hBoxLayout = new QHBoxLayout(frame);
 		hBoxLayout->addWidget(spin1);
 		hBoxLayout->addWidget(label);
 		hBoxLayout->addWidget(spin2);
@@ -409,7 +409,7 @@ void SchematicFrame::setInitialSize() {
 }
 
 void SchematicFrame::propEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+	auto * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
 	QString propp = edit->property("prop").toString();

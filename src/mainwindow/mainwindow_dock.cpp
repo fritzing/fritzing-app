@@ -53,7 +53,7 @@ void MainWindow::dockChangeActivation(bool activate, QWidget * originator) {
 
 void MainWindow::createDockWindows()
 {
-	QWidget * widget = new QWidget();
+	auto * widget = new QWidget();
 	widget->setMinimumHeight(0);
 	widget->setMaximumHeight(0);
 
@@ -232,7 +232,7 @@ void MainWindow::moreInitDock() {
 void MainWindow::saveDocks()
 {
 	for (int i = 0; i < children().count(); i++) {
-		FDockWidget * dock = qobject_cast<FDockWidget *>(children()[i]);
+		auto * dock = qobject_cast<FDockWidget *>(children()[i]);
 		if (dock == NULL) continue;
 
 		//DebugDialog::debug(QString("saving dock %1").arg(dock->windowTitle()));
@@ -247,7 +247,7 @@ void MainWindow::saveDocks()
 
 void MainWindow::restoreDocks() {
 	for (int i = 0; i < children().count(); i++) {
-		FDockWidget * dock = qobject_cast<FDockWidget *>(children()[i]);
+		auto * dock = qobject_cast<FDockWidget *>(children()[i]);
 		if (dock == NULL) continue;
 
 		// DebugDialog::debug(QString("restoring dock %1").arg(dock->windowTitle()));

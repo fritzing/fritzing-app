@@ -257,13 +257,13 @@ bool Resistor::collectExtraInfo(QWidget * parent, const QString & family, const 
 	if (prop.compare("resistance", Qt::CaseInsensitive) == 0) {
 		returnProp = tr("resistance");
 
-		FocusOutComboBox * focusOutComboBox = new FocusOutComboBox();
+		auto * focusOutComboBox = new FocusOutComboBox();
 		focusOutComboBox->setEnabled(swappingEnabled);
 		focusOutComboBox->setEditable(true);
 		QString current = m_ohms + OhmSymbol;
 		focusOutComboBox->addItems(Resistances);
 		focusOutComboBox->setCurrentIndex(focusOutComboBox->findText(current));
-		BoundedRegExpValidator * validator = new BoundedRegExpValidator(focusOutComboBox);
+		auto * validator = new BoundedRegExpValidator(focusOutComboBox);
 		validator->setSymbol(OhmSymbol);
 		validator->setConverter(TextUtils::convertFromPowerPrefix);
 		validator->setBounds(MIN_RESISTANCE, MAX_RESISTANCE);
@@ -374,7 +374,7 @@ QStringList Resistor::collectValues(const QString & family, const QString & prop
 }
 
 void Resistor::resistanceEntry(int index) {
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 	//DebugDialog::debug(QString("resistance entry %1").arg(text));
 

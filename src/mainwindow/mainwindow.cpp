@@ -382,7 +382,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_sketchModel = new SketchModel(true);
 
 
-	QShortcut * shortcut = new QShortcut(QKeySequence(tr("Ctrl+R", "Rotate Clockwise")), this);
+	auto * shortcut = new QShortcut(QKeySequence(tr("Ctrl+R", "Rotate Clockwise")), this);
 	connect(shortcut, SIGNAL(activated()), this, SLOT(rotateIncCW()));
 	shortcut = new QShortcut(QKeySequence(tr("Alt+Ctrl+R", "Rotate Clockwise")), this);
 	connect(shortcut, SIGNAL(activated()), this, SLOT(rotateIncCWRubberBand()));
@@ -409,7 +409,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 
 QWidget * MainWindow::createTabWidget() {
 	//return new QStackedWidget(this);
-	FTabWidget * tabWidget = new FTabWidget(this);
+	auto * tabWidget = new FTabWidget(this);
 	tabWidget->setObjectName("sketch_tabs");
 	return tabWidget;
 }
@@ -427,7 +427,7 @@ void MainWindow::addTab(QWidget * widget, const QString & iconPath, const QStrin
 		return;
 	}
 
-	FTabWidget * tabWidget = qobject_cast<FTabWidget *>(m_tabWidget);
+	auto * tabWidget = qobject_cast<FTabWidget *>(m_tabWidget);
 	if (tabWidget == NULL) {
 		addTab(widget, label);
 		return;
@@ -883,7 +883,7 @@ void MainWindow::setCurrentFile(const QString &filename, bool addToRecent, bool 
 	}
 
 	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
-		MainWindow *mainWin = qobject_cast<MainWindow *>(widget);
+		auto *mainWin = qobject_cast<MainWindow *>(widget);
 		if (mainWin)
 			mainWin->updateRecentFileActions();
 	}
@@ -897,7 +897,7 @@ void MainWindow::createZoomOptions(SketchAreaWidget* parent) {
 }
 
 ExpandingLabel * MainWindow::createRoutingStatusLabel(SketchAreaWidget * parent) {
-	ExpandingLabel * routingStatusLabel = new ExpandingLabel(m_pcbWidget);
+	auto * routingStatusLabel = new ExpandingLabel(m_pcbWidget);
 
 	connect(routingStatusLabel, SIGNAL(mousePressSignal(QMouseEvent*)), this, SLOT(routingStatusLabelMousePress(QMouseEvent*)));
 	connect(routingStatusLabel, SIGNAL(mouseReleaseSignal(QMouseEvent*)), this, SLOT(routingStatusLabelMouseRelease(QMouseEvent*)));
@@ -918,7 +918,7 @@ ExpandingLabel * MainWindow::createRoutingStatusLabel(SketchAreaWidget * parent)
 SketchToolButton *MainWindow::createRotateButton(SketchAreaWidget *parent) {
 	QList<QAction*> rotateMenuActions;
 	rotateMenuActions << m_rotate45ccwAct << m_rotate90ccwAct << m_rotate180Act << m_rotate90cwAct << m_rotate45cwAct;
-	SketchToolButton * rotateButton = new SketchToolButton("Rotate",parent, rotateMenuActions);
+	auto * rotateButton = new SketchToolButton("Rotate",parent, rotateMenuActions);
 	rotateButton->setDefaultAction(m_rotate90ccwAct);
 	rotateButton->setText(tr("Rotate"));
 
@@ -927,7 +927,7 @@ SketchToolButton *MainWindow::createRotateButton(SketchAreaWidget *parent) {
 }
 
 SketchToolButton *MainWindow::createShareButton(SketchAreaWidget *parent) {
-	SketchToolButton *shareButton = new SketchToolButton("Share",parent, m_shareOnlineAct);
+	auto *shareButton = new SketchToolButton("Share",parent, m_shareOnlineAct);
 	shareButton->setText(tr("Share"));
 	shareButton->setObjectName("shareProjectButton");
 	shareButton->setEnabledIcon();					// seems to need this to display button icon first time
@@ -937,7 +937,7 @@ SketchToolButton *MainWindow::createShareButton(SketchAreaWidget *parent) {
 SketchToolButton *MainWindow::createFlipButton(SketchAreaWidget *parent) {
 	QList<QAction*> flipMenuActions;
 	flipMenuActions << m_flipHorizontalAct << m_flipVerticalAct;
-	SketchToolButton *flipButton = new SketchToolButton("Flip",parent, flipMenuActions);
+	auto *flipButton = new SketchToolButton("Flip",parent, flipMenuActions);
 	flipButton->setText(tr("Flip"));
 
 	m_flipButtons << flipButton;
@@ -945,7 +945,7 @@ SketchToolButton *MainWindow::createFlipButton(SketchAreaWidget *parent) {
 }
 
 SketchToolButton *MainWindow::createAutorouteButton(SketchAreaWidget *parent) {
-	SketchToolButton *autorouteButton = new SketchToolButton("Autoroute",parent, m_newAutorouteAct);
+	auto *autorouteButton = new SketchToolButton("Autoroute",parent, m_newAutorouteAct);
 	autorouteButton->setText(tr("Autoroute"));
 	autorouteButton->setEnabledIcon(); // seems to need this to display button icon first time
 
@@ -953,7 +953,7 @@ SketchToolButton *MainWindow::createAutorouteButton(SketchAreaWidget *parent) {
 }
 
 SketchToolButton *MainWindow::createOrderFabButton(SketchAreaWidget *parent) {
-	SketchToolButton *orderFabButton = new SketchToolButton("Order",parent, m_orderFabAct);
+	auto *orderFabButton = new SketchToolButton("Order",parent, m_orderFabAct);
 	orderFabButton->setText(tr("Fabricate"));
 	orderFabButton->setObjectName("orderFabButton");
 	orderFabButton->setEnabledIcon();// seems to need this to display button icon first time
@@ -972,7 +972,7 @@ QWidget *MainWindow::createActiveLayerButton(SketchAreaWidget *parent)
 	// m_activeLayerButtonWidget->setMaximumWidth(90);
 	m_activeLayerButtonWidget->setObjectName("activeLayerButton");
 
-	SketchToolButton * button = new SketchToolButton("ActiveLayer", parent, actions);
+	auto * button = new SketchToolButton("ActiveLayer", parent, actions);
 	button->setDefaultAction(m_activeLayerBottomAct);
 	button->setText(tr("Both Layers"));
 	m_activeLayerButtonWidget->addWidget(button);
@@ -999,7 +999,7 @@ QWidget *MainWindow::createViewFromButton(SketchAreaWidget *parent)
 	// m_viewFromButtonWidget->setMaximumWidth(95);
 	m_viewFromButtonWidget->setObjectName("viewFromButton");
 
-	SketchToolButton * button = new SketchToolButton("ViewFromT", parent, actions);
+	auto * button = new SketchToolButton("ViewFromT", parent, actions);
 	button->setDefaultAction(m_viewFromBelowAct);
 	button->setText(tr("View from Above"));
 	button->setEnabledIcon();					// seems to need this to display button icon first time
@@ -1016,7 +1016,7 @@ QWidget *MainWindow::createViewFromButton(SketchAreaWidget *parent)
 }
 
 SketchToolButton *MainWindow::createNoteButton(SketchAreaWidget *parent) {
-	SketchToolButton *noteButton = new SketchToolButton("Notes",parent, m_addNoteAct);
+	auto *noteButton = new SketchToolButton("Notes",parent, m_addNoteAct);
 	noteButton->setObjectName("noteButton");
 	noteButton->setText(tr("Add a note"));
 	noteButton->setEnabledIcon();					// seems to need this to display button icon first time
@@ -1067,7 +1067,7 @@ QWidget *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
 SketchToolButton *MainWindow::createExportEtchableButton(SketchAreaWidget *parent) {
 	QList<QAction*> actions;
 	actions << m_exportEtchablePdfAct << m_exportEtchableSvgAct << m_exportGerberAct;
-	SketchToolButton *exportEtchableButton = new SketchToolButton("Diy",parent, actions);
+	auto *exportEtchableButton = new SketchToolButton("Diy",parent, actions);
 	exportEtchableButton->setObjectName("exportButton");
 	exportEtchableButton->setDefaultAction(m_exportEtchablePdfAct);
 	exportEtchableButton->setText(tr("Export for PCB"));
@@ -1076,8 +1076,8 @@ SketchToolButton *MainWindow::createExportEtchableButton(SketchAreaWidget *paren
 }
 
 QWidget *MainWindow::createToolbarSpacer(SketchAreaWidget *parent) {
-	QFrame *toolbarSpacer = new QFrame(parent);
-	QHBoxLayout *spacerLayout = new QHBoxLayout(toolbarSpacer);
+	auto *toolbarSpacer = new QFrame(parent);
+	auto *spacerLayout = new QHBoxLayout(toolbarSpacer);
 	spacerLayout->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Expanding));
 
 	return toolbarSpacer;
@@ -1167,7 +1167,7 @@ void MainWindow::createStatusBar()
 }
 
 void MainWindow::tabWidget_currentChanged(int index) {
-	SketchAreaWidget * widgetParent = dynamic_cast<SketchAreaWidget *>(currentTabWidget());
+	auto * widgetParent = dynamic_cast<SketchAreaWidget *>(currentTabWidget());
 	if (widgetParent == NULL) return;
 
 	m_currentWidget = widgetParent;
@@ -1185,7 +1185,7 @@ void MainWindow::tabWidget_currentChanged(int index) {
 	if (m_schematicGraphicsView) m_schematicGraphicsView->setCurrent(false);
 	if (m_pcbGraphicsView) m_pcbGraphicsView->setCurrent(false);
 
-	SketchWidget *widget = qobject_cast<SketchWidget *>(widgetParent->contentView());
+	auto *widget = qobject_cast<SketchWidget *>(widgetParent->contentView());
 
 	if(m_currentGraphicsView) {
 		m_currentGraphicsView->saveZoom(m_zoomSlider->value());
@@ -2408,7 +2408,7 @@ bool MainWindow::swapSpecial(const QString & theProp, QMap<QString, QString> & c
 			return false;
 		}
 
-		Resistor * resistor = qobject_cast<Resistor *>(itemBase);
+		auto * resistor = qobject_cast<Resistor *>(itemBase);
 		if (resistor) {
 			m_currentGraphicsView->setResistance(resistance, pinSpacing);
 			return true;
@@ -2419,7 +2419,7 @@ bool MainWindow::swapSpecial(const QString & theProp, QMap<QString, QString> & c
 }
 
 void MainWindow::swapLayers(ItemBase * itemBase, int layers, const QString & msg, int delay) {
-	QUndoCommand* parentCommand = new QUndoCommand(msg);
+	auto* parentCommand = new QUndoCommand(msg);
 	new CleanUpWiresCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 	new CleanUpRatsnestsCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 	m_pcbGraphicsView->swapLayers(itemBase, layers, parentCommand);
@@ -2429,7 +2429,7 @@ void MainWindow::swapLayers(ItemBase * itemBase, int layers, const QString & msg
 
 void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement overrideViewLayerPlacement,  QMap<QString, QString> & propsMap) {
 
-	QUndoCommand* parentCommand = new QUndoCommand(tr("Swapped %1 with module %2").arg(itemBase->instanceTitle()).arg(moduleID));
+	auto* parentCommand = new QUndoCommand(tr("Swapped %1 with module %2").arg(itemBase->instanceTitle()).arg(moduleID));
 	new CleanUpWiresCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 	new CleanUpRatsnestsCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 
@@ -2464,11 +2464,11 @@ void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, 
 
 void MainWindow::swapBoardImageSlot(SketchWidget * sketchWidget, ItemBase * itemBase, const QString & filename, const QString & moduleID, bool addName) {
 
-	QUndoCommand* parentCommand = new QUndoCommand(tr("Change image to %2").arg(filename));
+	auto* parentCommand = new QUndoCommand(tr("Change image to %2").arg(filename));
 	QMap<QString, QString> propsMap;
 	long newID = swapSelectedAuxAux(itemBase, moduleID, itemBase->viewLayerPlacement(), propsMap, parentCommand);
 
-	LoadLogoImageCommand * cmd = new LoadLogoImageCommand(sketchWidget, newID, "", QSizeF(0,0), filename, filename, addName, parentCommand);
+	auto * cmd = new LoadLogoImageCommand(sketchWidget, newID, "", QSizeF(0,0), filename, filename, addName, parentCommand);
 	cmd->setRedoOnly();
 
 	// need to defer execution so the content of the info view doesn't change during an event that started in the info view
@@ -2543,7 +2543,7 @@ void MainWindow::addDefaultParts() {
 }
 
 MainWindow * MainWindow::newMainWindow(ReferenceModel *referenceModel, const QString & displayPath, bool showProgress, bool lockFiles, int initialTab) {
-	MainWindow * mw = new MainWindow(referenceModel, NULL);
+	auto * mw = new MainWindow(referenceModel, NULL);
 	if (showProgress) {
 		mw->showFileProgressDialog(displayPath);
 	}
@@ -2596,7 +2596,7 @@ void MainWindow::redrawSketch() {
 	QList<ConnectorItem *> visited;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		item->update();
-		ConnectorItem * c = dynamic_cast<ConnectorItem *>(item);
+		auto * c = dynamic_cast<ConnectorItem *>(item);
 		if (c) {
 			c->restoreColor(visited);
 		}
@@ -2787,7 +2787,7 @@ void MainWindow::setAutosave(int minutes, bool enabled) {
 	AutosaveTimeoutMinutes = minutes;
 	AutosaveEnabled = enabled;
 	foreach (QWidget * widget, QApplication::topLevelWidgets()) {
-		MainWindow * mainWindow = qobject_cast<MainWindow *>(widget);
+		auto * mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow == NULL) continue;
 
 		mainWindow->m_autosaveTimer.stop();
@@ -2863,7 +2863,7 @@ void MainWindow::routingStatusLabelMouse(QMouseEvent*, bool show) {
 
 	QSet<ConnectorItem *> toShow;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
-		VirtualWire * vw = dynamic_cast<VirtualWire *>(item);
+		auto * vw = dynamic_cast<VirtualWire *>(item);
 		if (vw == NULL) continue;
 
 		foreach (ConnectorItem * connectorItem, vw->connector0()->connectedToItems()) {
@@ -3145,7 +3145,7 @@ void MainWindow::addToMyParts(ModelPart * modelPart, const QStringList & peAlien
 
 bool MainWindow::anyUsePart(const QString & moduleID) {
 	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
-		MainWindow *mainWindow = qobject_cast<MainWindow *>(widget);
+		auto *mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow == NULL) continue;
 
 		if (mainWindow->usesPart(moduleID)) {
@@ -3160,7 +3160,7 @@ bool MainWindow::usesPart(const QString & moduleID) {
 	if (m_currentGraphicsView == NULL) return false;
 
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase && itemBase->moduleID().compare(moduleID) == 0) {
 			return true;
 		}
@@ -3174,7 +3174,7 @@ bool MainWindow::updateParts(const QString & moduleID, QUndoCommand * parentComm
 
 	QSet<ItemBase *> itemBases;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == NULL) continue;
 		if (itemBase->moduleID().compare(moduleID) != 0) continue;
 
@@ -3235,7 +3235,7 @@ void MainWindow::initProgrammingWidget() {
 
 	m_programView->setup();
 
-	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_programView, this, false, true);
+	auto * sketchAreaWidget = new SketchAreaWidget(m_programView, this, false, true);
 	addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetCodeActive_icon.png", tr("Code"), true);
 }
 
@@ -3294,7 +3294,7 @@ void MainWindow::orderFabHoverLeave() {
 void MainWindow::initWelcomeView() {
 	m_welcomeView = new WelcomeView(this);
 	m_welcomeView->setObjectName("WelcomeView");
-	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this, false, false);
+	auto * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this, false, false);
 	addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetWelcomeActive_icon.png", tr("Welcome"), true);
 }
 
@@ -3314,7 +3314,7 @@ void MainWindow::updateWelcomeViewRecentList(bool doEmit) {
 		m_welcomeView->updateRecent();
 		if (doEmit) {
 			foreach (QWidget *widget, QApplication::topLevelWidgets()) {
-				MainWindow *mainWin = qobject_cast<MainWindow *>(widget);
+				auto *mainWin = qobject_cast<MainWindow *>(widget);
 				if (mainWin && mainWin != this) {
 					mainWin->updateWelcomeViewRecentList(false);
 				}
@@ -3330,7 +3330,7 @@ void MainWindow::initZoom() {
 
 	bool parts = false;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == NULL) continue;
 		if (!itemBase->isEverVisible()) continue;
 

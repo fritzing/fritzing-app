@@ -310,7 +310,7 @@ void Pad::setInitialSize() {
 
 void Pad::resizeMMAux(double mmW, double mmH) {
 	ResizableBoard::resizeMMAux(mmW, mmH);
-	resetConnectors(NULL, NULL);
+	resetConnectors(nullptr, nullptr);
 }
 
 void Pad::addedToScene(bool temporary)
@@ -325,7 +325,7 @@ void Pad::addedToScene(bool temporary)
 
 void Pad::terminalPointEntry(int) {
 	auto * comboBox = qobject_cast<QComboBox *>(sender());
-	if (comboBox == NULL) return;
+	if (comboBox == nullptr) return;
 
 	QString value = comboBox->itemData(comboBox->currentIndex()).toString();
 	QString connectAt = m_modelPart->localProp("connect").toString();

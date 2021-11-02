@@ -144,11 +144,11 @@ LinkDialog::LinkDialog(QWidget *parent) : QDialog(parent)
 {
 	this->setWindowTitle(QObject::tr("Edit link"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
-	QGroupBox * formGroupBox = new QGroupBox(this);
+	auto * formGroupBox = new QGroupBox(this);
 
-	QFormLayout * formLayout = new QFormLayout();
+	auto * formLayout = new QFormLayout();
 
 	m_urlEdit = new QLineEdit(this);
 	m_urlEdit->setFixedHeight(25);
@@ -164,7 +164,7 @@ LinkDialog::LinkDialog(QWidget *parent) : QDialog(parent)
 
 	vLayout->addWidget(formGroupBox);
 
-	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 	buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 
@@ -524,7 +524,7 @@ bool Note::eventFilter(QObject * object, QEvent * event)
 	}
 
 	if (event->type() == QEvent::KeyPress) {
-		QKeyEvent * kevent = static_cast<QKeyEvent *>(event);
+		auto * kevent = static_cast<QKeyEvent *>(event);
 		if (kevent->matches(QKeySequence::Bold)) {
 			QTextCursor textCursor = m_graphicsTextItem->textCursor();
 			QTextCharFormat cf = textCursor.charFormat();

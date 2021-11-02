@@ -167,7 +167,7 @@ void Capacitor::textModified(QValidator::State state) {
 
 void Capacitor::propertyEntry(int index) {
 	auto * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
-	if (focusOutComboBox == NULL) return;
+	if (focusOutComboBox == nullptr) return;
 	QString text = focusOutComboBox->itemText(index);
 
 	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
@@ -212,7 +212,7 @@ void Capacitor::setProp(const QString & prop, const QString & value) {
 void Capacitor::simplePropertyEntry(int index) {
 
 	auto * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
-	if (focusOutComboBox == NULL) return;
+	if (focusOutComboBox == nullptr) return;
 	QString text = focusOutComboBox->itemText(index);
 
 	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {

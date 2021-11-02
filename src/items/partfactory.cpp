@@ -93,7 +93,7 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 
 	}
 	case ModelPart::Note:
-		return new Note(modelPart, viewID, viewGeometry, id, NULL);
+		return new Note(modelPart, viewID, viewGeometry, id, nullptr);
 	case ModelPart::CopperFill:
 		return new GroundPlane(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 	case ModelPart::Jumper:
@@ -559,7 +559,7 @@ ModelPart * PartFactory::fixObsoleteModuleID(QDomDocument & domDocument, QDomEle
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 QString PartFactory::folderPath() {

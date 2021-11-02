@@ -522,7 +522,7 @@ bool PaletteItem::collectExtraInfo(QWidget * parent, const QString & family, con
 		returnProp = "";
 		returnValue = value;
 
-		QPushButton * button = new QPushButton(tr("Edit Pin Labels"));
+		auto * button = new QPushButton(tr("Edit Pin Labels"));
 		button->setObjectName("infoViewButton");
 		connect(button, SIGNAL(pressed()), this, SLOT(openPinLabelDialog()));
 		button->setEnabled(swappingEnabled);
@@ -908,10 +908,10 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 	holeSettings.diameterValidator = NULL;
 	holeSettings.thicknessValidator = NULL;
 
-	QFrame * frame = new QFrame(parent);
+	auto * frame = new QFrame(parent);
 	frame->setObjectName("infoViewPartFrame");
 
-	QVBoxLayout * vBoxLayout = new QVBoxLayout(frame);
+	auto * vBoxLayout = new QVBoxLayout(frame);
 	vBoxLayout->setContentsMargins(0, 0, 0, 0);
 	vBoxLayout->setContentsMargins(0, 0, 0, 0);
 	vBoxLayout->setSpacing(0);
@@ -929,19 +929,19 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 	if (advanced) {
 		vBoxLayout->addSpacing(4);
 
-		QFrame * hFrame = new QFrame(frame);
-		QHBoxLayout * hLayout = new QHBoxLayout(hFrame);
+		auto * hFrame = new QFrame(frame);
+		auto * hLayout = new QHBoxLayout(hFrame);
 		hLayout->setContentsMargins(0, 0, 0, 0);
 
-		QGroupBox * subFrame = new QGroupBox(tr("advanced settings"), frame);
+		auto * subFrame = new QGroupBox(tr("advanced settings"), frame);
 		subFrame->setObjectName("infoViewGroupBox");
 
-		QGridLayout * gridLayout = new QGridLayout(subFrame);
+		auto * gridLayout = new QGridLayout(subFrame);
 		gridLayout->setContentsMargins(0, 0, 0, 0);
 
-		QGroupBox * rbFrame = new QGroupBox("", subFrame);
+		auto * rbFrame = new QGroupBox("", subFrame);
 		rbFrame->setObjectName("infoViewGroupBox");
-		QVBoxLayout * vbl = new QVBoxLayout(rbFrame);
+		auto * vbl = new QVBoxLayout(rbFrame);
 		vbl->setContentsMargins(0, 0, 0, 0);
 
 		holeSettings.inRadioButton = new QRadioButton(tr("in"), subFrame);
@@ -966,7 +966,7 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 		gridLayout->addWidget(holeSettings.diameterEdit, 0, 1);
 		holeSettings.diameterEdit->setObjectName("infoViewLineEdit");
 
-		QLabel * label = new QLabel(tr("Hole Diameter"));
+		auto * label = new QLabel(tr("Hole Diameter"));
 		label->setMinimumHeight(RowHeight);
 		label->setObjectName("infoViewGroupBoxLabel");
 		gridLayout->addWidget(label, 0, 0);
@@ -1130,7 +1130,7 @@ QStringList PaletteItem::getSizes(QString & holeSize, HoleSettings & holeSetting
 }
 
 void PaletteItem::changeHoleSize(int index) {
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 	QString newSize = comboBox->itemText(index);
 	changeHoleSize(newSize);
@@ -1138,7 +1138,7 @@ void PaletteItem::changeHoleSize(int index) {
 
 void PaletteItem::changeHoleSize(const QString & newSize) {
 	if (this->m_viewID != ViewLayer::PCBView) {
-		PaletteItem * paletteItem = qobject_cast<PaletteItem *>(modelPart()->viewItem(ViewLayer::PCBView));
+		auto * paletteItem = qobject_cast<PaletteItem *>(modelPart()->viewItem(ViewLayer::PCBView));
 		if (paletteItem == NULL) return;
 
 		paletteItem->changeHoleSize(newSize);
@@ -1330,7 +1330,7 @@ QString PaletteItem::appendHoleSize(const QString & moduleid, const QString & ho
 
 void PaletteItem::generateSwap(const QString & text, GenModuleID genModuleID, GenFzp genFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg)
 {
-	FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
+	auto * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
 	if (comboBox == NULL) return;
 
 	QMap<QString, QString> propsMap(m_propsMap);
@@ -1417,14 +1417,14 @@ QString PaletteItem::changeUnits(HoleSettings & holeSettings)
 void PaletteItem::changeThickness()
 {
 	if (changeThickness(m_holeSettings, sender())) {
-		QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+		auto * edit = qobject_cast<QLineEdit *>(sender());
 		changeHoleSize(m_holeSettings.holeDiameter + "," + edit->text() + m_holeSettings.currentUnits());
 	}
 }
 
 bool PaletteItem::changeThickness(HoleSettings & holeSettings, QObject * sender)
 {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender);
+	auto * edit = qobject_cast<QLineEdit *>(sender);
 	if (edit == NULL) return false;
 
 	double newValue = edit->text().toDouble();
@@ -1437,14 +1437,14 @@ bool PaletteItem::changeThickness(HoleSettings & holeSettings, QObject * sender)
 void PaletteItem::changeDiameter()
 {
 	if (changeDiameter(m_holeSettings, sender())) {
-		QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+		auto * edit = qobject_cast<QLineEdit *>(sender());
 		changeHoleSize(edit->text() + m_holeSettings.currentUnits() + "," + m_holeSettings.ringThickness);
 	}
 }
 
 bool PaletteItem::changeDiameter(HoleSettings & holeSettings, QObject * sender)
 {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender);
+	auto * edit = qobject_cast<QLineEdit *>(sender);
 	if (edit == NULL) return false;
 
 	double newValue = edit->text().toDouble();

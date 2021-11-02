@@ -62,7 +62,7 @@ static QString EmptyString("no strips");
 
 /////////////////////////////////////////////////////////////////////
 
-Stripbit::Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent = 0)
+Stripbit::Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent = nullptr)
 	: QGraphicsPathItem(path, parent)
 {
 	if (SpotFaceCutterCursor == nullptr) {

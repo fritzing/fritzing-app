@@ -210,7 +210,7 @@ bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QStri
 
 	if (!copperBlocker()) {
 		if (prop.compare("connect to", Qt::CaseInsensitive) == 0) {
-			QComboBox * comboBox = new QComboBox();
+			auto * comboBox = new QComboBox();
 			comboBox->setObjectName("infoViewComboBox");
 			comboBox->setEditable(false);
 			comboBox->setEnabled(swappingEnabled);
@@ -324,7 +324,7 @@ void Pad::addedToScene(bool temporary)
 }
 
 void Pad::terminalPointEntry(int) {
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 
 	QString value = comboBox->itemData(comboBox->currentIndex()).toString();

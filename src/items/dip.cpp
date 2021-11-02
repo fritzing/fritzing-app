@@ -435,7 +435,7 @@ void Dip::addedToScene(bool temporary)
 
 void Dip::swapEntry(const QString & text) {
 
-	FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
+	auto * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
 	if (comboBox == NULL) return;
 
 	bool sip = moduleID().contains("sip");

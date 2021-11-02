@@ -47,7 +47,7 @@ QComboBox * TraceWire::createWidthComboBox(double m, QWidget * parent)
 {
 	QComboBox * comboBox = new FocusOutComboBox(parent);  // new QComboBox(parent);
 	comboBox->setEditable(true);
-	QIntValidator * intValidator = new QIntValidator(comboBox);
+	auto * intValidator = new QIntValidator(comboBox);
 	intValidator->setRange(MinTraceWidthMils, MaxTraceWidthMils);
 	comboBox->setValidator(intValidator);
 	comboBox->setToolTip(tr("Select from the dropdown, or type in any value from %1 to %2").arg(MinTraceWidthMils).arg(MaxTraceWidthMils));
@@ -108,7 +108,7 @@ bool TraceWire::collectExtraInfo(QWidget * parent, const QString & family, const
 
 
 void TraceWire::widthEntry(int index) {
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 	QString text = comboBox->itemText(index);
 
@@ -123,7 +123,7 @@ void TraceWire::widthEntry(int index) {
 
 int TraceWire::widthEntry(const QString & text, QObject * sender) {
 
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender);
+	auto * comboBox = qobject_cast<QComboBox *>(sender);
 	if (comboBox == NULL) return 0;
 
 	int w = comboBox->itemData(comboBox->currentIndex()).toInt();

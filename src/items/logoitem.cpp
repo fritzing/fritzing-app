@@ -65,7 +65,7 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 	m_svgOnly = false;
 	m_standardizeColors = true;
 	m_inLogoEntry = QTime::currentTime().addSecs(-10);
-	m_aspectRatioCheck = NULL;
+	m_aspectRatioCheck = nullptr;
 	m_keepAspectRatio = true;
 	m_hasLogo = (modelPart->moduleID().endsWith(ModuleIDNames::LogoTextModuleIDName));
 	m_logo = modelPart->localProp("logo").toString();
@@ -219,7 +219,7 @@ QStringList LogoItem::collectValues(const QString & family, const QString & prop
 
 	bool copperTopOK = true;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) copperTopOK = false;
+	if (infoGraphicsView == nullptr) copperTopOK = false;
 	else if (infoGraphicsView->boardLayers() == 1) copperTopOK = false;
 
 	QStringList newValues;
@@ -437,7 +437,7 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			gpg.scanImage(image, image.width(), image.height(), 1, res, colorString(), false, false, QSizeF(0, 0), 0, QPointF(0, 0));
 			if (gpg.newSVGs().count() < 1) {
 				FMessageBox::information(
-				    NULL,
+				    nullptr,
 				    tr("Unable to display"),
 				    tr("Unable to display image from %1").arg(fileName)
 				);
@@ -632,7 +632,7 @@ bool LogoItem::hasPartLabel() {
 
 void LogoItem::logoEntry() {
 	auto * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	if (edit == nullptr) return;
 
 	logoEntryAux(edit->text());
 }
@@ -715,7 +715,7 @@ void LogoItem::widthEntry() {
 	if (QTime::currentTime() < m_inLogoEntry) return;
 
 	auto * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	if (edit == nullptr) return;
 
 	double w = edit->text().toDouble();
 	double oldW = m_modelPart->localProp("width").toDouble();
@@ -736,7 +736,7 @@ void LogoItem::heightEntry() {
 	if (QTime::currentTime() < m_inLogoEntry) return;
 
 	auto * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	if (edit == nullptr) return;
 
 	double h = edit->text().toDouble();
 	double oldH =  m_modelPart->localProp("height").toDouble();
@@ -951,7 +951,7 @@ bool BreadboardLogoItem::collectExtraInfo(QWidget * parent, const QString & fami
 
 void BreadboardLogoItem::changeTextColor() {
 	QColor color(m_color);
-	QColor newColor = QColorDialog::getColor(color, NULL, tr("Select text color"));
+	QColor newColor = QColorDialog::getColor(color, nullptr, tr("Select text color"));
 	if (!newColor.isValid()) return;
 	if (newColor.name().compare(m_color, Qt::CaseInsensitive) == 0) return;
 

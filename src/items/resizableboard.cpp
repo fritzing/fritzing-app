@@ -72,7 +72,7 @@ Board::Board( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometr
 	: PaletteItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
 	m_svgOnly = true;
-	m_fileNameComboBox = NULL;
+	m_fileNameComboBox = nullptr;
 	if (isBoard(modelPart)) {
 		if (modelPart->localProp("layers").isNull()) {
 			modelPart->setLocalProp("layers", modelPart->properties().value("layers"));
@@ -184,7 +184,7 @@ bool Board::isBoard(ItemBase * itemBase) {
 }
 
 bool Board::isBoard(ModelPart * modelPart) {
-	if (modelPart == NULL) return false;
+	if (modelPart == nullptr) return false;
 
 	switch (modelPart->itemType()) {
 	case ModelPart::Board:
@@ -240,7 +240,7 @@ void Board::setupLoadImage(QWidget * parent, const QString & family, const QStri
 }
 
 void Board::setFileNameItems() {
-	if (m_fileNameComboBox == NULL) return;
+	if (m_fileNameComboBox == nullptr) return;
 
 	m_fileNameComboBox->addItems(getImageNames());
 	m_fileNameComboBox->addItems(getNewImageNames());
@@ -273,7 +273,7 @@ QStringList & Board::getNewImageNames() {
 
 void Board::fileNameEntry(int index) {
 	auto * comboBox = qobject_cast<QComboBox *>(sender());
-	if (comboBox == NULL) return;
+	if (comboBox == nullptr) return;
 
 	QString filename = comboBox->itemText(index);
 	foreach (QString name, getImageNames()) {
@@ -301,7 +301,7 @@ void Board::prepLoadImage() {
 	}
 	imagesStr += ")";
 	QString fileName = FolderUtils::getOpenFileName(
-	                       NULL,
+	                       nullptr,
 	                       tr("Select an image file to load"),
 	                       "",
 	                       imagesStr
@@ -453,7 +453,7 @@ void Board::moreCheckImage(const QString & filename) {
 	}
 	msg +=  tr("<br/><br/>If you intended your custom shape to have cutouts and you did not get the expected result, ");
 	msg += tr("it is because Fritzing requires that you make cutouts using a shape 'subtraction' or 'difference' operation in your vector graphics editor.");
-	QMessageBox::information(NULL, "Custom Shape", msg);
+	QMessageBox::information(nullptr, "Custom Shape", msg);
 }
 
 QString Board::setBoardOutline(const QString & svg) {
@@ -519,7 +519,7 @@ QString Board::setBoardOutline(const QString & svg) {
 }
 void Board::unableToLoad(const QString & fileName, const QString & reason) {
 	QMessageBox::information(
-	    NULL,
+	    nullptr,
 	    tr("Unable to load"),
 	    tr("Unable to load image from %1 %2").arg(fileName).arg(reason)
 	);
@@ -527,7 +527,7 @@ void Board::unableToLoad(const QString & fileName, const QString & reason) {
 
 bool Board::canLoad(const QString & fileName, const QString & reason) {
 	QMessageBox::StandardButton answer = QMessageBox::question(
-	        NULL,
+	        nullptr,
 	        tr("Can load, but"),
 	        tr("The image from %1 can be loaded, but %2\nUse the file?").arg(fileName).arg(reason),
 	        QMessageBox::Yes | QMessageBox::No,
@@ -577,11 +577,11 @@ ResizableBoard::ResizableBoard( ModelPart * modelPart, ViewLayer::ViewID viewID,
 	fixWH();
 
 	m_keepAspectRatio = false;
-	m_widthEditor = m_heightEditor = NULL;
-	m_aspectRatioCheck = NULL;
-	m_aspectRatioLabel = NULL;
-	m_revertButton = NULL;
-	m_paperSizeComboBox = NULL;
+	m_widthEditor = m_heightEditor = nullptr;
+	m_aspectRatioCheck = nullptr;
+	m_aspectRatioLabel = nullptr;
+	m_revertButton = nullptr;
+	m_paperSizeComboBox = nullptr;
 
 	m_corner = ResizableBoard::NO_CORNER;
 	m_currentScale = 1.0;
@@ -1052,7 +1052,7 @@ QStringList ResizableBoard::collectValues(const QString & family, const QString 
 
 void ResizableBoard::paperSizeChanged(int index) {
 	auto * comboBox = qobject_cast<QComboBox *>(sender());
-	if (comboBox == NULL) return;
+	if (comboBox == nullptr) return;
 
 	QModelIndex modelIndex = comboBox->model()->index(index,0);
 	QSizeF size = comboBox->model()->data(modelIndex, Qt::UserRole).toSizeF();
@@ -1064,7 +1064,7 @@ void ResizableBoard::paperSizeChanged(int index) {
 
 void ResizableBoard::widthEntry() {
 	auto * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	if (edit == nullptr) return;
 
 	double w = edit->text().toDouble();
 	double oldW = m_modelPart->localProp("width").toDouble();
@@ -1080,7 +1080,7 @@ void ResizableBoard::widthEntry() {
 
 void ResizableBoard::heightEntry() {
 	auto * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	if (edit == nullptr) return;
 
 	double h = edit->text().toDouble();
 	double oldH =  m_modelPart->localProp("height").toDouble();
@@ -1470,7 +1470,7 @@ void ResizableBoard::revertSize(bool) {
 }
 
 void ResizableBoard::updatePaperSizes(double w, double h) {
-	if (m_paperSizeComboBox ==  NULL) return;
+	if (m_paperSizeComboBox ==  nullptr) return;
 
 	int currentIndex = 0;
 	for (int i = 0; i < PaperSizeNames.count(); i++) {

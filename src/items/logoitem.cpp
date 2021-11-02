@@ -243,7 +243,7 @@ bool LogoItem::collectExtraInfo(QWidget * parent, const QString & family, const 
 			returnProp = tr("text");
 			returnValue = m_logo;
 
-			QLineEdit * edit = new QLineEdit(parent);
+			auto * edit = new QLineEdit(parent);
 			edit->setObjectName("infoViewLineEdit");
 
 			edit->setText(m_logo);
@@ -631,7 +631,7 @@ bool LogoItem::hasPartLabel() {
 }
 
 void LogoItem::logoEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+	auto * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
 	logoEntryAux(edit->text());
@@ -714,7 +714,7 @@ QString LogoItem::hackSvg(const QString & svg, const QString & logo)
 void LogoItem::widthEntry() {
 	if (QTime::currentTime() < m_inLogoEntry) return;
 
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+	auto * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
 	double w = edit->text().toDouble();
@@ -735,7 +735,7 @@ void LogoItem::widthEntry() {
 void LogoItem::heightEntry() {
 	if (QTime::currentTime() < m_inLogoEntry) return;
 
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+	auto * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
 	double h = edit->text().toDouble();
@@ -937,7 +937,7 @@ bool BreadboardLogoItem::collectExtraInfo(QWidget * parent, const QString & fami
 			returnProp = tr("color");
 			returnValue = m_color;
 
-			QPushButton * button = new QPushButton(tr("Set text color"));
+			auto * button = new QPushButton(tr("Set text color"));
 			button->setObjectName("infoViewButton");
 			connect(button, SIGNAL(pressed()), this, SLOT(changeTextColor()));
 

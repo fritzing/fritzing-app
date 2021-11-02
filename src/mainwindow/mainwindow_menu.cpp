@@ -429,7 +429,7 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	if (m_obsoleteSMDOrientation) {
 		QSet<ItemBase *> toConvert;
 		foreach (QGraphicsItem * item, m_pcbGraphicsView->items()) {
-			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+			auto * itemBase = dynamic_cast<ItemBase *>(item);
 			if (itemBase == NULL) continue;
 
 			itemBase = itemBase->layerKinChief();
@@ -440,7 +440,7 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 
 		QList<ConnectorItem *> already;
 		foreach (ItemBase * itemBase, toConvert) {
-			PaletteItem * paletteItem = qobject_cast<PaletteItem *>(itemBase);
+			auto * paletteItem = qobject_cast<PaletteItem *>(itemBase);
 			if (paletteItem == NULL) continue;          // shouldn't happen
 
 			paletteItem->rotateItem(180, true);
@@ -502,7 +502,7 @@ void MainWindow::pasteAux(bool pasteInPlace)
 	QList<ModelPart *> modelParts;
 	QHash<QString, QRectF> boundingRects;
 	if (m_sketchModel->paste(m_referenceModel, itemData, modelParts, boundingRects, false)) {
-		QUndoCommand * parentCommand = new QUndoCommand("Paste");
+		auto * parentCommand = new QUndoCommand("Paste");
 
 		QList<SketchWidget *> sketchWidgets;
 		sketchWidgets << m_breadboardGraphicsView << m_schematicGraphicsView << m_pcbGraphicsView;
@@ -711,7 +711,7 @@ QHash<QString, struct SketchDescriptor *> MainWindow::indexAvailableElements(QDo
 		const QString src = QFileInfo(srcAux).exists()? srcAux: srcPrefix+srcAux;
 		if(QFileInfo(src).exists()) {
 			actionsTracker << name;
-			QAction * action = new QAction(name, this);
+			auto * action = new QAction(name, this);
 			action->setData(src);
 			connect(action,SIGNAL(triggered()),this,SLOT(openRecentOrExampleFile()));
 			retval[id] = new SketchDescriptor(id,name,src, action);
@@ -741,7 +741,7 @@ void MainWindow::populateMenuWithIndex(const QHash<QString, struct SketchDescrip
 		else if (e.nodeName() == "category") {
 			QDomElement bestLang = getBestLanguageChild(localeName, e);
 			QString name = bestLang.attribute("name");
-			QMenu * currMenu = new QMenu(name, parentMenu);
+			auto * currMenu = new QMenu(name, parentMenu);
 			parentMenu->addMenu(currMenu);
 			populateMenuWithIndex(index, currMenu, e, localeName);
 		}
@@ -750,7 +750,7 @@ void MainWindow::populateMenuWithIndex(const QHash<QString, struct SketchDescrip
 		}
 		else if (e.nodeName() == "url") {
 			QDomElement bestLang = getBestLanguageChild(localeName, e);
-			QAction * action = new QAction(bestLang.attribute("name"), this);
+			auto * action = new QAction(bestLang.attribute("name"), this);
 			action->setData(bestLang.attribute("href"));
 			connect(action, SIGNAL(triggered()), this, SLOT(openURL()));
 			parentMenu->addAction(action);
@@ -767,13 +767,13 @@ void MainWindow::populateMenuFromFolderContent(QMenu * parentMenu, const QString
 			QString currFile = content.at(i);
 			QString currFilePath = currDir->absoluteFilePath(currFile);
 			if(QFileInfo(currFilePath).isDir()) {
-				QMenu * currMenu = new QMenu(currFile, parentMenu);
+				auto * currMenu = new QMenu(currFile, parentMenu);
 				parentMenu->addMenu(currMenu);
 				populateMenuFromFolderContent(currMenu, currFilePath);
 			} else {
 				QString actionText = QFileInfo(currFilePath).completeBaseName();
 				m_openExampleActions << actionText;
-				QAction * currAction = new QAction(actionText, this);
+				auto * currAction = new QAction(actionText, this);
 				currAction->setData(currFilePath);
 				connect(currAction,SIGNAL(triggered()),this,SLOT(openRecentOrExampleFile()));
 				parentMenu->addAction(currAction);
@@ -2024,7 +2024,7 @@ void MainWindow::updateItemMenu() {
 		else if (selCount > 1) break;
 	}
 
-	PaletteItem *selected = qobject_cast<PaletteItem *>(itemBase);
+	auto *selected = qobject_cast<PaletteItem *>(itemBase);
 	bool enabled = (selCount == 1) && (selected);
 
 	m_saveBundledPart->setEnabled(enabled && !selected->modelPart()->isCore());
@@ -2196,7 +2196,7 @@ void MainWindow::updateTraceMenu() {
 
 void MainWindow::updatePCBTraceMenu(QGraphicsItem * item, TraceMenuThing & traceMenuThing)
 {
-	ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+	auto * itemBase = dynamic_cast<ItemBase *>(item);
 	if (itemBase == NULL) return;
 	if (!itemBase->isEverVisible()) return;
 
@@ -2355,7 +2355,7 @@ void MainWindow::enableDebug() {
 void MainWindow::openNewPartsEditor(PaletteItem * paletteItem)
 {
 	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
-		PEMainWindow * peMainWindow = qobject_cast<PEMainWindow *>(widget);
+		auto * peMainWindow = qobject_cast<PEMainWindow *>(widget);
 		if (peMainWindow == NULL) continue;
 
 		if (peMainWindow->editsModuleID(paletteItem->moduleID())) {
@@ -2366,7 +2366,7 @@ void MainWindow::openNewPartsEditor(PaletteItem * paletteItem)
 		}
 	}
 
-	PEMainWindow * peMainWindow = new PEMainWindow(m_referenceModel, NULL);
+	auto * peMainWindow = new PEMainWindow(m_referenceModel, NULL);
 	peMainWindow->init(m_referenceModel, false);
 	if (peMainWindow->setInitialItem(paletteItem)) {
 		peMainWindow->show();
@@ -2380,7 +2380,7 @@ void MainWindow::openNewPartsEditor(PaletteItem * paletteItem)
 
 void MainWindow::getPartsEditorNewAnd(ItemBase * fromItem)
 {
-	PaletteItem * paletteItem = qobject_cast<PaletteItem *>(fromItem);
+	auto * paletteItem = qobject_cast<PaletteItem *>(fromItem);
 	if (paletteItem == NULL) return;
 
 	openNewPartsEditor(paletteItem);
@@ -2458,7 +2458,7 @@ void MainWindow::toggleDebuggerOutput(bool toggle) {
 void MainWindow::updateWindowMenu() {
 	m_toggleDebuggerOutputAct->setChecked(DebugDialog::visible());
 	foreach (QWidget * widget, QApplication::topLevelWidgets()) {
-		MainWindow * mainWindow = qobject_cast<MainWindow *>(widget);
+		auto * mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow == NULL) continue;
 
 		QAction *action = mainWindow->raiseWindowAction();
@@ -2635,7 +2635,7 @@ void MainWindow::hideAllLayers() {
 }
 
 void MainWindow::openURL() {
-	QAction *action = qobject_cast<QAction *>(sender());
+	auto *action = qobject_cast<QAction *>(sender());
 	if (action == NULL) return;
 
 	QString href = action->data().toString();
@@ -2645,7 +2645,7 @@ void MainWindow::openURL() {
 }
 
 void MainWindow::openRecentOrExampleFile() {
-	QAction *action = qobject_cast<QAction *>(sender());
+	auto *action = qobject_cast<QAction *>(sender());
 	if (action) {
 		openRecentOrExampleFile(action->data().toString(), action->text());
 	}
@@ -2752,7 +2752,7 @@ void MainWindow::createTraceMenuActions() {
 	createOrderFabAct();
 	createActiveLayerActions();
 
-	QAction * traceAct = new QAction(tr("&Create trace from ratsnest"), this);
+	auto * traceAct = new QAction(tr("&Create trace from ratsnest"), this);
 	traceAct->setStatusTip(tr("Create a trace from the ratsnest line"));
 	m_createTraceWireAct = new WireAction(traceAct);
 	connect(m_createTraceWireAct, SIGNAL(triggered()), this, SLOT(createTrace()));
@@ -2902,7 +2902,7 @@ void MainWindow::createActiveLayerActions() {
 }
 
 void MainWindow::activeLayerBoth() {
-	PCBSketchWidget * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
+	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == NULL) return;
 
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper1, true);
@@ -2914,7 +2914,7 @@ void MainWindow::activeLayerBoth() {
 }
 
 void MainWindow::activeLayerTop() {
-	PCBSketchWidget * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
+	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == NULL) return;
 
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper1, true);
@@ -2926,7 +2926,7 @@ void MainWindow::activeLayerTop() {
 }
 
 void MainWindow::activeLayerBottom() {
-	PCBSketchWidget * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
+	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == NULL) return;
 
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper1, false);
@@ -2939,7 +2939,7 @@ void MainWindow::activeLayerBottom() {
 
 void MainWindow::toggleActiveLayer()
 {
-	PCBSketchWidget * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
+	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == NULL) return;
 
 	int index = activeLayerIndex();
@@ -2969,7 +2969,7 @@ void MainWindow::createOrderFabAct() {
 
 
 void MainWindow::newAutoroute() {
-	PCBSketchWidget * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
+	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == NULL) return;
 
 	ItemBase * board = NULL;
@@ -3047,7 +3047,7 @@ void MainWindow::createTrace() {
 
 void MainWindow::excludeFromAutoroute() {
 	Wire * wire = retrieveWire();
-	PCBSketchWidget * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
+	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == NULL) return;
 
 	pcbSketchWidget->excludeFromAutoroute(wire == NULL ? m_excludeFromAutorouteAct->isChecked() : m_excludeFromAutorouteWireAct->isChecked());
@@ -3065,14 +3065,14 @@ void MainWindow::updateRoutingStatus() {
 }
 
 void MainWindow::selectAllExcludedTraces() {
-	PCBSketchWidget * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
+	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == NULL) return;
 
 	pcbSketchWidget->selectAllExcludedTraces();
 }
 
 void MainWindow::selectAllIncludedTraces() {
-	PCBSketchWidget * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
+	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == NULL) return;
 
 	pcbSketchWidget->selectAllIncludedTraces();
@@ -3117,7 +3117,7 @@ void MainWindow::addNote() {
 	tl.setY(tl.y() + ((vpSize.height() - Note::initialMinHeight) / 2.0));
 	vg.setLoc(tl);
 
-	QUndoCommand * parentCommand = new QUndoCommand(tr("Add Note"));
+	auto * parentCommand = new QUndoCommand(tr("Add Note"));
 	m_currentGraphicsView->stackSelectionState(false, parentCommand);
 	m_currentGraphicsView->scene()->clearSelection();
 	new AddItemCommand(m_currentGraphicsView, BaseCommand::SingleView, ModuleIDNames::NoteModuleIDName, m_currentGraphicsView->defaultViewLayerPlacement(NULL), vg, ItemBase::getNextID(), false, -1, parentCommand);
@@ -3126,7 +3126,7 @@ void MainWindow::addNote() {
 
 bool MainWindow::alreadyOpen(const QString & fileName) {
 	foreach (QWidget * widget, QApplication::topLevelWidgets()) {
-		MainWindow * mainWindow = qobject_cast<MainWindow *>(widget);
+		auto * mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow == NULL) continue;
 
 		// don't load two copies of the same file
@@ -3150,9 +3150,9 @@ void MainWindow::enableAddBendpointAct(QGraphicsItem * graphicsItem) {
 
 	m_flattenCurveAct->setEnabled(wire->isCurved());
 
-	BendpointAction * bendpointAction = qobject_cast<BendpointAction *>(m_addBendpointAct);
-	BendpointAction * convertToViaAction = qobject_cast<BendpointAction *>(m_convertToViaAct);
-	FGraphicsScene * scene = qobject_cast<FGraphicsScene *>(graphicsItem->scene());
+	auto * bendpointAction = qobject_cast<BendpointAction *>(m_addBendpointAct);
+	auto * convertToViaAction = qobject_cast<BendpointAction *>(m_convertToViaAct);
+	auto * scene = qobject_cast<FGraphicsScene *>(graphicsItem->scene());
 	if (scene) {
 		bendpointAction->setLastLocation(scene->lastContextMenuPos());
 		convertToViaAction->setLastLocation(scene->lastContextMenuPos());
@@ -3189,7 +3189,7 @@ void MainWindow::enableAddBendpointAct(QGraphicsItem * graphicsItem) {
 
 void MainWindow::addBendpoint()
 {
-	BendpointAction * bendpointAction = qobject_cast<BendpointAction *>(m_addBendpointAct);
+	auto * bendpointAction = qobject_cast<BendpointAction *>(m_addBendpointAct);
 
 	m_currentGraphicsView->addBendpoint(bendpointAction->lastHoverEnterItem(),
 	                                    bendpointAction->lastHoverEnterConnectorItem(),
@@ -3198,7 +3198,7 @@ void MainWindow::addBendpoint()
 
 void MainWindow::convertToVia()
 {
-	BendpointAction * bendpointAction = qobject_cast<BendpointAction *>(m_convertToViaAct);
+	auto * bendpointAction = qobject_cast<BendpointAction *>(m_convertToViaAct);
 
 	m_pcbGraphicsView->convertToVia(bendpointAction->lastHoverEnterConnectorItem());
 }
@@ -3210,7 +3210,7 @@ void MainWindow::convertToBendpoint()
 
 void MainWindow::flattenCurve()
 {
-	BendpointAction * bendpointAction = qobject_cast<BendpointAction *>(m_addBendpointAct);
+	auto * bendpointAction = qobject_cast<BendpointAction *>(m_addBendpointAct);
 
 	m_currentGraphicsView->flattenCurve(bendpointAction->lastHoverEnterItem(),
 	                                    bendpointAction->lastHoverEnterConnectorItem(),
@@ -3278,7 +3278,7 @@ void MainWindow::groundFillAux(bool fillGroundTraces, ViewLayer::ViewLayerID vie
 
 	FileProgressDialog fileProgress(tr("Generating %1 fill...").arg(fillGroundTraces ? tr("ground") : tr("copper")), 0, this);
 	fileProgress.setIndeterminate();
-	QUndoCommand * parentCommand = new QUndoCommand(fillGroundTraces ? tr("Ground Fill") : tr("Copper Fill"));
+	auto * parentCommand = new QUndoCommand(fillGroundTraces ? tr("Ground Fill") : tr("Copper Fill"));
 	m_pcbGraphicsView->blockUI(true);
 	removeGroundFill(viewLayerID, parentCommand);
 	if (m_pcbGraphicsView->groundFill(fillGroundTraces, viewLayerID, parentCommand)) {
@@ -3310,7 +3310,7 @@ void MainWindow::removeGroundFill(ViewLayer::ViewLayerID viewLayerID, QUndoComma
 	}
 
 	foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->collidingItems(board)) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == NULL) continue;
 		if (itemBase->moveLock()) continue;
 		if (!isGroundFill(itemBase)) continue;
@@ -3360,13 +3360,13 @@ bool MainWindow::isGroundFill(ItemBase * itemBase) {
 
 
 QMenu *MainWindow::breadboardItemMenu() {
-	QMenu *menu = new QMenu(QObject::tr("Part"), this);
+	auto *menu = new QMenu(QObject::tr("Part"), this);
 	createRotateSubmenu(menu);
 	return viewItemMenuAux(menu);
 }
 
 QMenu *MainWindow::schematicItemMenu() {
-	QMenu *menu = new QMenu(QObject::tr("Part"), this);
+	auto *menu = new QMenu(QObject::tr("Part"), this);
 	createRotateSubmenu(menu);
 	menu->addAction(m_flipHorizontalAct);
 	menu->addAction(m_flipVerticalAct);
@@ -3374,7 +3374,7 @@ QMenu *MainWindow::schematicItemMenu() {
 }
 
 QMenu *MainWindow::pcbItemMenu() {
-	QMenu *menu = new QMenu(QObject::tr("Part"), this);
+	auto *menu = new QMenu(QObject::tr("Part"), this);
 	createRotateSubmenu(menu);
 	menu = viewItemMenuAux(menu);
 	menu->addAction(m_hidePartSilkscreenAct);
@@ -3387,14 +3387,14 @@ QMenu *MainWindow::pcbItemMenu() {
 }
 
 QMenu *MainWindow::breadboardWireMenu() {
-	QMenu *menu = new QMenu(QObject::tr("Wire"), this);
+	auto *menu = new QMenu(QObject::tr("Wire"), this);
 //   createZOrderWireSubmenu(menu);
 	createZOrderSubmenu(menu);
 	menu->addSeparator();
 	m_breadboardWireColorMenu = menu->addMenu(tr("&Wire Color"));
 	foreach(QString colorName, Wire::colorNames) {
 		QString colorValue = Wire::colorTrans.value(colorName);
-		QAction * action = new QAction(colorName, this);
+		auto * action = new QAction(colorName, this);
 		m_breadboardWireColorMenu->addAction(action);
 		action->setData(colorValue);
 		action->setCheckable(true);
@@ -3420,7 +3420,7 @@ QMenu *MainWindow::breadboardWireMenu() {
 }
 
 QMenu *MainWindow::pcbWireMenu() {
-	QMenu *menu = new QMenu(QObject::tr("Wire"), this);
+	auto *menu = new QMenu(QObject::tr("Wire"), this);
 	// createZOrderWireSubmenu(menu);
 	createZOrderSubmenu(menu);
 	menu->addSeparator();
@@ -3446,7 +3446,7 @@ QMenu *MainWindow::pcbWireMenu() {
 }
 
 QMenu *MainWindow::schematicWireMenu() {
-	QMenu *menu = new QMenu(QObject::tr("Wire"), this);
+	auto *menu = new QMenu(QObject::tr("Wire"), this);
 	// createZOrderWireSubmenu(menu);
 	createZOrderSubmenu(menu);
 	menu->addSeparator();
@@ -3454,7 +3454,7 @@ QMenu *MainWindow::schematicWireMenu() {
 	foreach(QString colorName, Wire::colorNames) {
 		QString colorValue = Wire::colorTrans.value(colorName);
 		if (colorValue == "white") continue;
-		QAction * action = new QAction(colorName, this);
+		auto * action = new QAction(colorName, this);
 		m_schematicWireColorMenu->addAction(action);
 		action->setData(colorValue);
 		action->setCheckable(true);
@@ -3520,7 +3520,7 @@ void MainWindow::changeWireColor(bool checked) {
 		return;
 	}
 
-	QAction * action = qobject_cast<QAction *>(sender());
+	auto * action = qobject_cast<QAction *>(sender());
 	if (action == NULL) return;
 
 	QString colorName = action->data().toString();
@@ -3677,7 +3677,7 @@ void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement 
 				path = text;
 			}
 
-			LinkedFile * linkedFile = new LinkedFile;
+			auto * linkedFile = new LinkedFile;
 			QFileInfo info(path);
 			if (!(sameMachine && info.exists())) {
 				inBundle = true;
@@ -3801,7 +3801,7 @@ void MainWindow::launchExternalProcess() {
 	m_externalProcessOutput.clear();
 
 	QFileInfo f = QFileInfo(path);
-	QProcess * process = new QProcess(this);
+	auto * process = new QProcess(this);
 	process->setWorkingDirectory(f.dir().absolutePath());
 	process->setProcessChannelMode(QProcess::MergedChannels);
 	process->setReadChannel(QProcess::StandardOutput);
@@ -3860,7 +3860,7 @@ void MainWindow::shareOnline() {
 }
 
 void MainWindow::onShareOnlineFinished() {
-	QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
+	auto *reply = qobject_cast<QNetworkReply*>(sender());
 
 	if (reply->error() == QNetworkReply::NoError) {
 		QDesktopServices::openUrl(QString("https://fritzing.org/projects/create/"));
@@ -3938,7 +3938,7 @@ void MainWindow::swapObsolete(bool displayFeedback, QList<ItemBase *> & items) {
 
 	if (items.count() == 0) {
 		foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->selectedItems()) {
-			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+			auto * itemBase = dynamic_cast<ItemBase *>(item);
 			if (itemBase == NULL) continue;
 			if (!itemBase->isObsolete()) continue;
 
@@ -3952,7 +3952,7 @@ void MainWindow::swapObsolete(bool displayFeedback, QList<ItemBase *> & items) {
 		foreach (ItemBase * itemBase, items) itemBases.insert(itemBase);
 	}
 
-	QUndoCommand* parentCommand = new QUndoCommand();
+	auto* parentCommand = new QUndoCommand();
 	int count = 0;
 	QMap<QString, QString> propsMap;
 	foreach (ItemBase * itemBase, itemBases) {
@@ -4056,11 +4056,11 @@ void MainWindow::setGridSize()
 	GridSizeDialog dialog(&gridSizeThing);
 	dialog.setWindowTitle(QObject::tr("Set Grid Size"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(&dialog);
+	auto * vLayout = new QVBoxLayout(&dialog);
 
 	vLayout->addWidget(createGridSizeForm(&gridSizeThing));
 
-	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 	buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 
@@ -4081,18 +4081,18 @@ void MainWindow::setGridSize()
 QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 {
 	this->setObjectName("gridSizeDia");
-	QGroupBox * over = new QGroupBox("", this);
+	auto * over = new QGroupBox("", this);
 
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * vLayout = new QVBoxLayout();
 
-	QLabel * explain = new QLabel(tr("Set the grid size for %1.").arg(gridSizeThing->viewName));
+	auto * explain = new QLabel(tr("Set the grid size for %1.").arg(gridSizeThing->viewName));
 	vLayout->addWidget(explain);
 
-	QGroupBox * groupBox = new QGroupBox(this);
+	auto * groupBox = new QGroupBox(this);
 
-	QHBoxLayout * hLayout = new QHBoxLayout();
+	auto * hLayout = new QHBoxLayout();
 
-	QLabel * label = new QLabel(tr("Grid Size:"));
+	auto * label = new QLabel(tr("Grid Size:"));
 	hLayout->addWidget(label);
 
 	gridSizeThing->lineEdit = new QLineEdit();
@@ -4118,7 +4118,7 @@ QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 	vLayout->addWidget(groupBox);
 	vLayout->addSpacing(5);
 
-	QPushButton * pushButton = new QPushButton(this);
+	auto * pushButton = new QPushButton(this);
 	pushButton->setText(tr("Restore Default"));
 	pushButton->setMaximumWidth(150);
 	vLayout->addWidget(pushButton);
@@ -4197,7 +4197,7 @@ void MainWindow::linkToProgramFile(const QString & filename, Platform * platform
 			}
 		}
 		if (!gotOne) {
-			LinkedFile * linkedFile = new LinkedFile;
+			auto * linkedFile = new LinkedFile;
 			linkedFile->linkedFilename = filename;
 			linkedFile->platform = platform->getName();
 			m_linkedProgramFiles.append(linkedFile);
@@ -4236,7 +4236,7 @@ QStringList MainWindow::newDesignRulesCheck(bool showOkMessage)
 
 	if (m_currentGraphicsView == NULL) return results;
 
-	PCBSketchWidget * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
+	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == NULL) return results;
 
 	ItemBase * board = NULL;
@@ -4303,14 +4303,14 @@ void MainWindow::changeTraceLayer() {
 }
 
 Wire * MainWindow::retrieveWire() {
-	WireAction * wireAction = qobject_cast<WireAction *>(sender());
+	auto * wireAction = qobject_cast<WireAction *>(sender());
 	if (wireAction == NULL) return NULL;
 
 	return wireAction->wire();
 }
 
 ConnectorItem * MainWindow::retrieveConnectorItem() {
-	ConnectorItemAction * connectorItemAction = qobject_cast<ConnectorItemAction *>(sender());
+	auto * connectorItemAction = qobject_cast<ConnectorItemAction *>(sender());
 	if (connectorItemAction == NULL) return NULL;
 
 	return connectorItemAction->connectorItem();
@@ -4321,7 +4321,7 @@ void MainWindow::setSticky()
 	QList<QGraphicsItem *> items = m_currentGraphicsView->scene()->selectedItems();
 	if (items.count() < 1) return;
 
-	ItemBase * itemBase = dynamic_cast<ItemBase *>(items.at(0));
+	auto * itemBase = dynamic_cast<ItemBase *>(items.at(0));
 	if (itemBase == NULL) return;
 
 	if (!itemBase->isBaseSticky()) return;
@@ -4373,7 +4373,7 @@ void MainWindow::orderFab()
 	// save project if not clean
 	if (MainWindow::save()) {
 		// upload
-		QNetworkAccessManager* manager = new QNetworkAccessManager();
+		auto* manager = new QNetworkAccessManager();
 		FabUploadDialog upload(manager, m_fwFilename, this);
 		upload.exec();
 		delete manager;
@@ -4417,13 +4417,13 @@ void MainWindow::clearGroundFillSeeds() {
 }
 
 void MainWindow::setOneGroundFillSeed() {
-	ConnectorItemAction * action = qobject_cast<ConnectorItemAction *>(sender());
+	auto * action = qobject_cast<ConnectorItemAction *>(sender());
 	if (action == NULL) return;
 
 	ConnectorItem * connectorItem = action->connectorItem();
 	if (connectorItem == NULL) return;
 
-	GroundFillSeedCommand * command = new GroundFillSeedCommand(m_pcbGraphicsView, NULL);
+	auto * command = new GroundFillSeedCommand(m_pcbGraphicsView, NULL);
 	command->addItem(connectorItem->attachedToID(), connectorItem->connectorSharedID(), action->isChecked());
 
 	m_undoStack->push(command);
@@ -4433,7 +4433,7 @@ void MainWindow::gridUnits(bool checked) {
 	QWidget * widget = qobject_cast<QWidget *>(sender());
 	if (widget == NULL) return;
 
-	GridSizeDialog * dialog = qobject_cast<GridSizeDialog *>(widget->window());
+	auto * dialog = qobject_cast<GridSizeDialog *>(widget->window());
 	if (dialog == NULL) return;
 
 	GridSizeThing * gridSizeThing = dialog->gridSizeThing();
@@ -4461,7 +4461,7 @@ void MainWindow::restoreDefaultGrid() {
 	QWidget * widget = qobject_cast<QWidget *>(sender());
 	if (widget == NULL) return;
 
-	GridSizeDialog * dialog = qobject_cast<GridSizeDialog *>(widget->window());
+	auto * dialog = qobject_cast<GridSizeDialog *>(widget->window());
 	if (dialog == NULL) return;
 
 	GridSizeThing * gridSizeThing = dialog->gridSizeThing();
@@ -4517,7 +4517,7 @@ void MainWindow::findPartInSketch() {
 	lastSearchText = text;
 	QSet<ItemBase *> itemBases;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == NULL) continue;
 
 		itemBases.insert(itemBase->layerKinChief());

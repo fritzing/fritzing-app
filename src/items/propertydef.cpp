@@ -53,7 +53,7 @@ void PropertyDefMaster::loadPropertyDefs() {
 
 	QDomElement propertyElement = root.firstChildElement("property");
 	while (!propertyElement.isNull()) {
-		PropertyDef * propertyDef = new PropertyDef;
+		auto * propertyDef = new PropertyDef;
 		propertyDef->name = propertyElement.attribute("name");
 
 		PropertyDefs.append(propertyDef);

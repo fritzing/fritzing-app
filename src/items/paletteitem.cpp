@@ -118,14 +118,14 @@ PaletteItem::PaletteItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const
 {
 	m_flipCount = 0;
 	if(doLabel) {
-		QWidget *parentWidget = NULL;
+		QWidget *parentWidget = nullptr;
 		if (itemMenu) {
 			parentWidget = itemMenu->parentWidget();
 		}
-		m_partLabel = new PartLabel(this, parentWidget, NULL);
+		m_partLabel = new PartLabel(this, parentWidget, nullptr);
 		m_partLabel->setVisible(false);
 	} else {
-		m_partLabel = NULL;
+		m_partLabel = nullptr;
 	}
 }
 
@@ -147,10 +147,10 @@ bool PaletteItem::renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, c
 
 void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
-	if (m_modelPart == NULL) return;
+	if (m_modelPart == nullptr) return;
 
 	ModelPartShared * modelPartShared = m_modelPart->modelPartShared();
-	if (modelPartShared == NULL) return;
+	if (modelPartShared == nullptr) return;
 
 	qint64 id = m_id + 1;
 	ViewGeometry viewGeometry = m_viewGeometry;
@@ -428,7 +428,7 @@ void PaletteItem::figureHover() {
 
 void PaletteItem::clearModelPart() {
 	foreach (ItemBase * lkpi, m_layerKin) {
-		lkpi->setModelPart(NULL);
+		lkpi->setModelPart(nullptr);
 	}
 	ItemBase::clearModelPart();
 }
@@ -593,9 +593,9 @@ QStringList PaletteItem::collectValues(const QString & family, const QString & p
 
 void PaletteItem::openPinLabelDialog() {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) {
+	if (infoGraphicsView == nullptr) {
 		QMessageBox::warning(
-		    NULL,
+		    nullptr,
 		    tr("Fritzing"),
 		    tr("Unable to proceed; unable to find top level view.")
 		);
@@ -606,7 +606,7 @@ void PaletteItem::openPinLabelDialog() {
 	QList<Connector *> sortedConnectors = sortConnectors();
 	if (sortedConnectors.count() == 0) {
 		QMessageBox::warning(
-		    NULL,
+		    nullptr,
 		    tr("Fritzing"),
 		    tr("Unable to proceed; part connectors do no have standard IDs.")
 		);
@@ -623,14 +623,14 @@ void PaletteItem::openPinLabelDialog() {
 	}
 
 	bool singleRow = isSingleRow(cachedConnectorItems());
-	PinLabelDialog pinLabelDialog(labels, singleRow, chipLabel, modelPart()->isCore(), NULL);
+	PinLabelDialog pinLabelDialog(labels, singleRow, chipLabel, modelPart()->isCore(), nullptr);
 	int result = pinLabelDialog.exec();
 	if (result != QDialog::Accepted) return;
 
 	QStringList newLabels = pinLabelDialog.labels();
 	if (newLabels.count() != sortedConnectors.count()) {
 		QMessageBox::warning(
-		    NULL,
+		    nullptr,
 		    tr("Fritzing"),
 		    tr("Label mismatch.  Nothing was saved.")
 		);
@@ -658,10 +658,10 @@ bool PaletteItem::isSingleRow(const QList<ConnectorItem *> & connectorItems) {
 		return false;
 	}
 	else if (connectorItems.count() % 2 == 0) {
-		QPointF p = connectorItems.at(0)->sceneAdjustedTerminalPoint(NULL);
+		QPointF p = connectorItems.at(0)->sceneAdjustedTerminalPoint(nullptr);
 		double slope = 0;
 		for (int i = 1; i < connectorItems.count(); i++) {
-			QPointF q = connectorItems.at(i)->sceneAdjustedTerminalPoint(NULL);
+			QPointF q = connectorItems.at(i)->sceneAdjustedTerminalPoint(nullptr);
 			if (p == q) continue;
 
 			double newSlope = q.x() == p.x() ? std::numeric_limits<double>::max() : (q.y()  - p.y()) / (q.x() - p.x());
@@ -722,13 +722,13 @@ void PaletteItem::resetConnectors() {
 	if (m_viewID != ViewLayer::SchematicView) return;
 
 	FSvgRenderer * renderer = fsvgRenderer();
-	if (renderer == NULL) return;
+	if (renderer == nullptr) return;
 
 	QSizeF size = renderer->defaultSizeF();   // pixels
 	QRectF viewBox = renderer->viewBoxF();
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(m_viewID, m_viewLayerID);
-		if (svgIdLayer == NULL) continue;
+		if (svgIdLayer == nullptr) continue;
 
 		QRectF bounds = renderer->boundsOnElement(svgIdLayer->m_svgId);
 		QPointF p(bounds.left() * size.width() / viewBox.width(), bounds.top() * size.height() / viewBox.height());
@@ -743,11 +743,11 @@ void PaletteItem::resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLay
 {
 	// there's only one connector
 	foreach (Connector * connector, m_modelPart->connectors().values()) {
-		if (connector == NULL) continue;
+		if (connector == nullptr) continue;
 
 		connector->unprocess(m_viewID, m_viewLayerID);
 		SvgIdLayer * svgIdLayer = connector->fullPinInfo(m_viewID, m_viewLayerID);
-		if (svgIdLayer == NULL) continue;
+		if (svgIdLayer == nullptr) continue;
 
 		bool result = fsvgRenderer()->setUpConnector(svgIdLayer, false, viewLayerPlacement());
 		if (!result) continue;
@@ -757,11 +757,11 @@ void PaletteItem::resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLay
 
 	if (otherLayer) {
 		foreach (Connector * connector, m_modelPart->connectors().values()) {
-			if (connector == NULL) continue;
+			if (connector == nullptr) continue;
 
 			connector->unprocess(m_viewID, otherLayer->viewLayerID());
 			SvgIdLayer * svgIdLayer = connector->fullPinInfo(m_viewID, otherLayer->viewLayerID());
-			if (svgIdLayer == NULL) continue;
+			if (svgIdLayer == nullptr) continue;
 
 			bool result = otherLayerRenderer->setUpConnector(svgIdLayer, false, viewLayerPlacement());
 			if (!result) continue;
@@ -901,12 +901,12 @@ void PaletteItem::setUpHoleSizesAux(HoleClassThing & holeThing, const QString & 
 QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeSettings, bool swappingEnabled, const QString & currentHoleSize, bool advanced) {
 	static const int RowHeight = 21;
 
-	holeSettings.diameterEdit = NULL;
-	holeSettings.thicknessEdit = NULL;
-	holeSettings.mmRadioButton = NULL;
-	holeSettings.inRadioButton = NULL;
-	holeSettings.diameterValidator = NULL;
-	holeSettings.thicknessValidator = NULL;
+	holeSettings.diameterEdit = nullptr;
+	holeSettings.thicknessEdit = nullptr;
+	holeSettings.mmRadioButton = nullptr;
+	holeSettings.inRadioButton = nullptr;
+	holeSettings.diameterValidator = nullptr;
+	holeSettings.thicknessValidator = nullptr;
 
 	auto * frame = new QFrame(parent);
 	frame->setObjectName("infoViewPartFrame");
@@ -1015,9 +1015,9 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 }
 
 void PaletteItem::updateEditTexts(HoleSettings & holeSettings) {
-	if (holeSettings.diameterEdit == NULL) return;
-	if (holeSettings.thicknessEdit == NULL) return;
-	if (holeSettings.mmRadioButton == NULL) return;
+	if (holeSettings.diameterEdit == nullptr) return;
+	if (holeSettings.thicknessEdit == nullptr) return;
+	if (holeSettings.mmRadioButton == nullptr) return;
 
 	double hd = TextUtils::convertToInches(holeSettings.holeDiameter);
 	double rt = TextUtils::convertToInches(holeSettings.ringThickness);
@@ -1036,7 +1036,7 @@ void PaletteItem::updateEditTexts(HoleSettings & holeSettings) {
 }
 
 void PaletteItem::updateSizes(HoleSettings &  holeSettings) {
-	if (holeSettings.sizesComboBox == NULL) return;
+	if (holeSettings.sizesComboBox == nullptr) return;
 
 	int newIndex = -1;
 
@@ -1077,9 +1077,9 @@ void PaletteItem::updateSizes(HoleSettings &  holeSettings) {
 
 void PaletteItem::updateValidators(HoleSettings & holeSettings)
 {
-	if (holeSettings.diameterValidator == NULL) return;
-	if (holeSettings.thicknessValidator == NULL) return;
-	if (holeSettings.mmRadioButton == NULL) return;
+	if (holeSettings.diameterValidator == nullptr) return;
+	if (holeSettings.thicknessValidator == nullptr) return;
+	if (holeSettings.mmRadioButton == nullptr) return;
 
 	QString units = holeSettings.currentUnits();
 	double multiplier = (units == "mm") ? 25.4 : 1.0;
@@ -1090,10 +1090,10 @@ void PaletteItem::updateValidators(HoleSettings & holeSettings)
 void PaletteItem::initHoleSettings(HoleSettings & holeSettings, HoleClassThing * holeThing)
 {
 	holeSettings.holeThing = holeThing;
-	holeSettings.diameterEdit = holeSettings.thicknessEdit = NULL;
-	holeSettings.diameterValidator = holeSettings.thicknessValidator = NULL;
-	holeSettings.inRadioButton = holeSettings.mmRadioButton = NULL;
-	holeSettings.sizesComboBox = NULL;
+	holeSettings.diameterEdit = holeSettings.thicknessEdit = nullptr;
+	holeSettings.diameterValidator = holeSettings.thicknessValidator = nullptr;
+	holeSettings.inRadioButton = holeSettings.mmRadioButton = nullptr;
+	holeSettings.sizesComboBox = nullptr;
 }
 
 
@@ -1131,7 +1131,7 @@ QStringList PaletteItem::getSizes(QString & holeSize, HoleSettings & holeSetting
 
 void PaletteItem::changeHoleSize(int index) {
 	auto * comboBox = qobject_cast<QComboBox *>(sender());
-	if (comboBox == NULL) return;
+	if (comboBox == nullptr) return;
 	QString newSize = comboBox->itemText(index);
 	changeHoleSize(newSize);
 }
@@ -1139,7 +1139,7 @@ void PaletteItem::changeHoleSize(int index) {
 void PaletteItem::changeHoleSize(const QString & newSize) {
 	if (this->m_viewID != ViewLayer::PCBView) {
 		auto * paletteItem = qobject_cast<PaletteItem *>(modelPart()->viewItem(ViewLayer::PCBView));
-		if (paletteItem == NULL) return;
+		if (paletteItem == nullptr) return;
 
 		paletteItem->changeHoleSize(newSize);
 		return;
@@ -1331,7 +1331,7 @@ QString PaletteItem::appendHoleSize(const QString & moduleid, const QString & ho
 void PaletteItem::generateSwap(const QString & text, GenModuleID genModuleID, GenFzp genFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg)
 {
 	auto * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
-	if (comboBox == NULL) return;
+	if (comboBox == nullptr) return;
 
 	QMap<QString, QString> propsMap(m_propsMap);
 	propsMap.insert(comboBox->prop(), text);
@@ -1425,7 +1425,7 @@ void PaletteItem::changeThickness()
 bool PaletteItem::changeThickness(HoleSettings & holeSettings, QObject * sender)
 {
 	auto * edit = qobject_cast<QLineEdit *>(sender);
-	if (edit == NULL) return false;
+	if (edit == nullptr) return false;
 
 	double newValue = edit->text().toDouble();
 	QString temp = holeSettings.ringThickness;
@@ -1445,7 +1445,7 @@ void PaletteItem::changeDiameter()
 bool PaletteItem::changeDiameter(HoleSettings & holeSettings, QObject * sender)
 {
 	auto * edit = qobject_cast<QLineEdit *>(sender);
-	if (edit == NULL) return false;
+	if (edit == nullptr) return false;
 
 	double newValue = edit->text().toDouble();
 	QString temp = holeSettings.holeDiameter;

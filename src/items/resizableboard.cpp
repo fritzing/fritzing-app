@@ -208,14 +208,14 @@ void Board::setupLoadImage(QWidget * parent, const QString & family, const QStri
 
 	returnProp = tr("image file");
 
-	QFrame * frame = new QFrame();
+	auto * frame = new QFrame();
 	frame->setObjectName("infoViewPartFrame");
-	QVBoxLayout * vboxLayout = new QVBoxLayout();
+	auto * vboxLayout = new QVBoxLayout();
 	vboxLayout->setContentsMargins(0, 0, 0, 0);
 	vboxLayout->setSpacing(0);
 	vboxLayout->setContentsMargins(0, 0, 0, 0);
 
-	QComboBox * comboBox = new QComboBox();
+	auto * comboBox = new QComboBox();
 	comboBox->setObjectName("infoViewComboBox");
 	comboBox->setEditable(false);
 	comboBox->setEnabled(swappingEnabled);
@@ -225,7 +225,7 @@ void Board::setupLoadImage(QWidget * parent, const QString & family, const QStri
 
 	connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(fileNameEntry(int)));
 
-	QPushButton * button = new QPushButton (tr("load image file"));
+	auto * button = new QPushButton (tr("load image file"));
 	button->setObjectName("infoViewButton");
 	connect(button, SIGNAL(pressed()), this, SLOT(prepLoadImage()));
 	button->setEnabled(swappingEnabled);
@@ -272,7 +272,7 @@ QStringList & Board::getNewImageNames() {
 }
 
 void Board::fileNameEntry(int index) {
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 
 	QString filename = comboBox->itemText(index);
@@ -1006,10 +1006,10 @@ bool ResizableBoard::collectExtraInfo(QWidget * parent, const QString & family, 
 
 		if (!m_modelPart->localProp("height").isValid()) {
 			// display uneditable width and height
-			QFrame * frame = new QFrame();
+			auto * frame = new QFrame();
 			frame->setObjectName("infoViewPartFrame");
 
-			QVBoxLayout * vboxLayout = new QVBoxLayout();
+			auto * vboxLayout = new QVBoxLayout();
 			vboxLayout->setAlignment(Qt::AlignLeft);
 			vboxLayout->setSpacing(0);
 			vboxLayout->setContentsMargins(0, 0, 0, 0);
@@ -1018,12 +1018,12 @@ bool ResizableBoard::collectExtraInfo(QWidget * parent, const QString & family, 
 			double tens = pow(10.0, m_decimalsAfter);
 			QRectF r = this->boundingRect();
 			double w = qRound(GraphicsUtils::pixels2mm(r.width(), GraphicsUtils::SVGDPI) * tens) / tens;
-			QLabel * l1 = new QLabel(tr("width: %1mm").arg(w));
+			auto * l1 = new QLabel(tr("width: %1mm").arg(w));
 			l1->setContentsMargins(0, 0, 0, 0);
 			l1->setObjectName("infoViewLabel");
 
 			double h = qRound(GraphicsUtils::pixels2mm(r.height(), GraphicsUtils::SVGDPI) * tens) / tens;
-			QLabel * l2 = new QLabel(tr("height: %1mm").arg(h));
+			auto * l2 = new QLabel(tr("height: %1mm").arg(h));
 			l2->setContentsMargins(0, 0, 0, 0);
 			l2->setObjectName("infoViewLabel");
 
@@ -1051,7 +1051,7 @@ QStringList ResizableBoard::collectValues(const QString & family, const QString 
 }
 
 void ResizableBoard::paperSizeChanged(int index) {
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 
 	QModelIndex modelIndex = comboBox->model()->index(index,0);
@@ -1063,7 +1063,7 @@ void ResizableBoard::paperSizeChanged(int index) {
 }
 
 void ResizableBoard::widthEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+	auto * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
 	double w = edit->text().toDouble();
@@ -1079,7 +1079,7 @@ void ResizableBoard::widthEntry() {
 }
 
 void ResizableBoard::heightEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+	auto * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
 	double h = edit->text().toDouble();
@@ -1262,30 +1262,30 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 	double w = qRound(m_modelPart->localProp("width").toDouble() * tens) / tens;	// truncate to 1 decimal point
 	double h = qRound(m_modelPart->localProp("height").toDouble() * tens) / tens;  // truncate to 1 decimal point
 
-	QFrame * frame = new QFrame();
+	auto * frame = new QFrame();
 	frame->setObjectName("infoViewPartFrame");
-	QVBoxLayout * vboxLayout = new QVBoxLayout();
+	auto * vboxLayout = new QVBoxLayout();
 	vboxLayout->setAlignment(Qt::AlignLeft);
 	vboxLayout->setSpacing(1);
 	vboxLayout->setContentsMargins(0, 3, 0, 0);
 
-	QFrame * subframe1 = new QFrame();
-	QHBoxLayout * hboxLayout1 = new QHBoxLayout();
+	auto * subframe1 = new QFrame();
+	auto * hboxLayout1 = new QHBoxLayout();
 	hboxLayout1->setAlignment(Qt::AlignLeft);
 	hboxLayout1->setContentsMargins(0, 0, 0, 0);
 	hboxLayout1->setSpacing(2);
 
-	QFrame * subframe2 = new QFrame();
-	QHBoxLayout * hboxLayout2 = new QHBoxLayout();
+	auto * subframe2 = new QFrame();
+	auto * hboxLayout2 = new QHBoxLayout();
 	hboxLayout2->setAlignment(Qt::AlignLeft);
 	hboxLayout2->setContentsMargins(0, 0, 0, 0);
 	hboxLayout2->setSpacing(2);
 
-	QLabel * l1 = new QLabel(tr("width(mm)"));
+	auto * l1 = new QLabel(tr("width(mm)"));
 	l1->setContentsMargins(0, 0, 0, 0);
 	l1->setObjectName("infoViewLabel");
-	QLineEdit * e1 = new QLineEdit();
-	QDoubleValidator * validator = new QDoubleValidator(e1);
+	auto * e1 = new QLineEdit();
+	auto * validator = new QDoubleValidator(e1);
 	validator->setRange(0.1, 999.9, m_decimalsAfter);
 	validator->setNotation(QDoubleValidator::StandardNotation);
 	validator->setLocale(QLocale::C);
@@ -1294,10 +1294,10 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 	e1->setMaxLength(4 + m_decimalsAfter);
 	e1->setText(QString::number(w));
 
-	QLabel * l2 = new QLabel(tr("height(mm)"));
+	auto * l2 = new QLabel(tr("height(mm)"));
 	l2->setContentsMargins(0, 0, 0, 0);
 	l2->setObjectName("infoViewLabel");
-	QLineEdit * e2 = new QLineEdit();
+	auto * e2 = new QLineEdit();
 	validator = new QDoubleValidator(e1);
 	validator->setRange(0.1, 999.9, m_decimalsAfter);
 	validator->setNotation(QDoubleValidator::StandardNotation);
@@ -1326,17 +1326,17 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 	vboxLayout->addWidget(subframe2);
 
 	if (includeAspectRatio || includeRevert || includePaperSizes) {
-		QFrame * subframe3 = new QFrame();
-		QHBoxLayout * hboxLayout3 = new QHBoxLayout();
+		auto * subframe3 = new QFrame();
+		auto * hboxLayout3 = new QHBoxLayout();
 		hboxLayout3->setAlignment(Qt::AlignLeft);
 		hboxLayout3->setContentsMargins(0, 0, 0, 0);
 		hboxLayout3->setSpacing(0);
 
 		if (includeAspectRatio) {
-			QLabel * l3 = new QLabel(tr("keep aspect ratio"));
+			auto * l3 = new QLabel(tr("keep aspect ratio"));
 			l3->setContentsMargins(0, 0, 0, 0);
 			l3->setObjectName("infoViewLabel");
-			QCheckBox * checkBox = new QCheckBox();
+			auto * checkBox = new QCheckBox();
 			checkBox->setChecked(m_keepAspectRatio);
 			checkBox->setObjectName("infoViewCheckBox");
 
@@ -1347,7 +1347,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 			m_aspectRatioLabel = l3;
 		}
 		if (includeRevert) {
-			QPushButton * pb = new QPushButton(tr("Revert"));
+			auto * pb = new QPushButton(tr("Revert"));
 			pb->setObjectName("infoViewButton");
 			hboxLayout3->addWidget(pb);
 			connect(pb, SIGNAL(clicked(bool)), this, SLOT(revertSize(bool)));
@@ -1361,7 +1361,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 		if (includePaperSizes) {
 			initPaperSizes();
 
-			QLabel * l3 = new QLabel(tr("size"));
+			auto * l3 = new QLabel(tr("size"));
 			l3->setContentsMargins(0, 0, 0, 0);
 			l3->setObjectName("infoViewLabel");
 

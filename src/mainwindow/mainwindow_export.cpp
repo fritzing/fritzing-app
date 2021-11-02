@@ -148,7 +148,7 @@ void MainWindow::print() {
 #ifndef QT_NO_PRINTER
 	QPrinter printer(QPrinter::HighResolution);
 
-	QPrintDialog *printDialog = new QPrintDialog(&printer, this);
+	auto *printDialog = new QPrintDialog(&printer, this);
 	if (printDialog->exec() == QDialog::Accepted) {
 		m_statusBar->showMessage(tr("Printing..."));
 		printAux(printer, true, true);
@@ -482,7 +482,7 @@ QString MainWindow::getBoardSvg(ItemBase * board, int res,  LayerList & viewLaye
 
 
 void MainWindow::doExport() {
-	QAction * action = qobject_cast<QAction *>(sender());
+	auto * action = qobject_cast<QAction *>(sender());
 	if (action == NULL) return;
 
 	QString actionType = action->data().toString();
@@ -837,7 +837,7 @@ void MainWindow::saveAsShareable(const QString & path, bool saveModel)
 	QString filename = path;
 	QHash<QString, ModelPart *> saveParts;
 	foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == NULL) continue;
 		if (itemBase->modelPart() == NULL) {
 			continue;
@@ -1051,7 +1051,7 @@ void MainWindow::exportToEagle() {
 
 	QMessageBox::information(this, tr("Fritzing"), text);
 
-	Fritzing2Eagle eagle = Fritzing2Eagle(m_pcbGraphicsView);
+	auto eagle = Fritzing2Eagle(m_pcbGraphicsView);
 	(void) eagle;
 
 	/*
@@ -1796,7 +1796,7 @@ void MainWindow::dumpAllParts() {
 
 	QList<ItemBase *> already;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->items()) {
-		ItemBase * ib = dynamic_cast<ItemBase *>(item);
+		auto * ib = dynamic_cast<ItemBase *>(item);
 		if (ib == NULL) continue;
 
 		ItemBase * chief = ib->layerKinChief();

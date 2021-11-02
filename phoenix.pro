@@ -19,11 +19,7 @@
 # ********************************************************************
 
 lessThan(QT_MAJOR_VERSION, 5) {
-    error(Fritzing does not build with Qt 4 or earlier. 5.12 is recommended.)
-}
-
-lessThan(QT_MINOR_VERSION, 9) {
-    error(Fritzing does not build with Qt 5.8 or earlier. 5.12 is recommended.)
+    error(Fritzing does not build with Qt 4 or earlier. 5.15 is recommended.)
 }
 
 CONFIG += debug_and_release
@@ -168,6 +164,9 @@ macx {
 }
 
 QT += concurrent core gui network printsupport serialport sql svg widgets xml
+equals(QT_MAJOR_VERSION, 6) {
+  QT += core5compat svgwidgets
+}
 
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc

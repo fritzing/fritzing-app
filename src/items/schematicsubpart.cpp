@@ -35,7 +35,7 @@ void SchematicSubpart::hoverEnterEvent (QGraphicsSceneHoverEvent * event)
 	if (m_superpart) {
 		foreach (ItemBase * itemBase, m_superpart->subparts()) {
 			if (itemBase != this) {
-				SchematicSubpart * subpart = qobject_cast<SchematicSubpart *>(itemBase);
+				auto * subpart = qobject_cast<SchematicSubpart *>(itemBase);
 				if (subpart) subpart->simpleHoverEnterEvent(event);
 			}
 		}
@@ -48,7 +48,7 @@ void SchematicSubpart::hoverLeaveEvent (QGraphicsSceneHoverEvent * event)
 	if (m_superpart) {
 		foreach (ItemBase * itemBase, m_superpart->subparts()) {
 			if (itemBase != this) {
-				SchematicSubpart * subpart = qobject_cast<SchematicSubpart *>(itemBase);
+				auto * subpart = qobject_cast<SchematicSubpart *>(itemBase);
 				if (subpart) subpart->simpleHoverLeaveEvent(event);
 			}
 		}

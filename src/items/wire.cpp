@@ -1611,7 +1611,7 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 	if (prop.compare("color", Qt::CaseInsensitive) == 0) {
 		returnProp = tr("color");
 		if (canChangeColor()) {
-			QComboBox * comboBox = new QComboBox(parent);
+			auto * comboBox = new QComboBox(parent);
 			comboBox->setEditable(false);
 			comboBox->setEnabled(swappingEnabled);
 			comboBox->setObjectName("infoViewComboBox");
@@ -1633,13 +1633,13 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 			connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(colorEntry(int)));
 
 			if (this->hasShadow()) {
-				QCheckBox * checkBox = new QCheckBox(tr("Banded"));
+				auto * checkBox = new QCheckBox(tr("Banded"));
 				checkBox->setChecked(m_banded);
 				checkBox->setObjectName("infoViewCheckBox");
 				connect(checkBox, SIGNAL(clicked(bool)), this, SLOT(setBandedProp(bool)));
 
-				QFrame * frame = new QFrame(parent);
-				QHBoxLayout * hboxLayout = new QHBoxLayout;
+				auto * frame = new QFrame(parent);
+				auto * hboxLayout = new QHBoxLayout;
 				hboxLayout->addWidget(comboBox);
 				hboxLayout->addWidget(checkBox);
 				frame->setLayout(hboxLayout);
@@ -1666,7 +1666,7 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 void Wire::colorEntry(int index) {
 	Q_UNUSED(index);
 
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 
 	QString color = comboBox->itemData(comboBox->currentIndex()).toString();

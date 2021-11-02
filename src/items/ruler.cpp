@@ -42,9 +42,9 @@ static QString DefaultWidth = "";
 Ruler::Ruler( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: PaletteItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
-	m_widthEditor = NULL;
-	m_unitsEditor = NULL;
-	m_widthValidator = NULL;
+	m_widthEditor = nullptr;
+	m_unitsEditor = nullptr;
+	m_widthValidator = nullptr;
 	QString w = modelPart->localProp("width").toString();
 	if (w.isEmpty()) {
 		if (DefaultWidth.isEmpty()) {
@@ -326,7 +326,7 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 
 void Ruler::widthEntry() {
 	auto * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	if (edit == nullptr) return;
 
 	QString t = edit->text();
 	QString w = prop("width");
@@ -347,7 +347,7 @@ void Ruler::widthEntry() {
 void Ruler::unitsEntry() {
 	// get clicked object
 	auto * obj = qobject_cast<QRadioButton *>(sender());
-	if (obj == NULL) return;
+	if (obj == nullptr) return;
 
 	// update pointer
 	m_unitsEditor = obj;

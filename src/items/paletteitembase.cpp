@@ -492,7 +492,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 	foreach (SvgIdLayer * svgIdLayer, renderer->setUpNonConnectors(viewLayerPlacement())) {
 		if (!svgIdLayer) continue;
 
-		NonConnectorItem * nonConnectorItem = new NonConnectorItem(this);
+		auto * nonConnectorItem = new NonConnectorItem(this);
 
 		//DebugDialog::debug(	QString("in layer %1 with z %2")
 		//.arg(ViewLayer::viewLayerNameFromID(m_viewLayerID))
@@ -679,7 +679,7 @@ bool PaletteItemBase::collectExtraInfoPartNumber(const QString & propertyName, c
 	if (prop.compare(propertyName, Qt::CaseInsensitive) == 0) {
 		returnProp = TranslatedPropertyNames.value(prop);
 
-		QLineEdit * lineEdit = new QLineEdit();
+		auto * lineEdit = new QLineEdit();
 		lineEdit->setEnabled(swappingEnabled);
 		QString current = m_modelPart->localProp(propertyName).toString();
 		lineEdit->setText(current);
@@ -711,7 +711,7 @@ void PaletteItemBase::setLocalProp(const QString & prop, const QString & value, 
 }
 
 void PaletteItemBase::partPropertyEntry() {
-	QLineEdit * lineEdit = qobject_cast<QLineEdit *>(sender());
+	auto * lineEdit = qobject_cast<QLineEdit *>(sender());
 	if (lineEdit == NULL) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);

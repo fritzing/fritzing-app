@@ -43,8 +43,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 //	disconnect and reconnect affected parts
 //	swapping
 
-static QCursor * SpotFaceCutterCursor = NULL;
-static QCursor * MagicWandCursor = NULL;
+static QCursor * SpotFaceCutterCursor = nullptr;
+static QCursor * MagicWandCursor = nullptr;
 
 static bool ShiftDown = false;
 static QPointF OriginalShiftPos;
@@ -65,13 +65,13 @@ static QString EmptyString("no strips");
 Stripbit::Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent = 0)
 	: QGraphicsPathItem(path, parent)
 {
-	if (SpotFaceCutterCursor == NULL) {
+	if (SpotFaceCutterCursor == nullptr) {
 		QBitmap bitmap(":resources/images/cursor/spot_face_cutter.bmp");
 		QBitmap bitmapm(":resources/images/cursor/spot_face_cutter_mask.bmp");
 		SpotFaceCutterCursor = new QCursor(bitmap, bitmapm, 0, 0);
 	}
 
-	if (MagicWandCursor == NULL) {
+	if (MagicWandCursor == nullptr) {
 		QBitmap bitmap(":resources/images/cursor/magic_wand.bmp");
 		QBitmap bitmapm(":resources/images/cursor/magic_wand_mask.bmp");
 		MagicWandCursor = new QCursor(bitmap, bitmapm, 0, 0);
@@ -168,7 +168,7 @@ void Stripbit::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 	//DebugDialog::debug("got move");
 
-	Stripbit * other = NULL;
+	Stripbit * other = nullptr;
 	QPointF p = event->scenePos();
 	if (ShiftDown) {
 		if (ShiftX) {
@@ -283,8 +283,8 @@ QString Stripbit::makeRemovedString() {
 /////////////////////////////////////////////////////////////////////
 
 StripConnector::StripConnector() {
-	down = right = NULL;
-	connectorItem = NULL;
+	down = right = nullptr;
+	connectorItem = nullptr;
 }
 
 struct StripLayout {
@@ -352,7 +352,7 @@ QString Stripboard::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QStrin
 	QString stripSvg;
 	foreach(QGraphicsItem * item, childItems()) {
 		auto * stripbit = dynamic_cast<Stripbit *>(item);
-		if (stripbit == NULL) continue;
+		if (stripbit == nullptr) continue;
 		if (stripbit->removed()) continue;
 
 		QPointF p = stripbit->pos();
@@ -400,7 +400,7 @@ bool Stripboard::collectExtraInfo(QWidget * parent, const QString & family, cons
 void Stripboard::addedToScene(bool temporary)
 {
 	Perfboard::addedToScene(temporary);
-	if (this->scene() == NULL) return;
+	if (this->scene() == nullptr) return;
 	if (temporary) return;
 	if (m_viewID != ViewLayer::BreadboardView) return;
 
@@ -491,7 +491,7 @@ void Stripboard::initCutting(Stripbit *)
 	m_beforeCut.clear();
 	foreach (QGraphicsItem * item, childItems()) {
 		auto * stripbit = dynamic_cast<Stripbit *>(item);
-		if (stripbit == NULL) continue;
+		if (stripbit == nullptr) continue;
 
 		stripbit->setChanged(false);
 		if (stripbit->removed()) {
@@ -501,7 +501,7 @@ void Stripboard::initCutting(Stripbit *)
 }
 
 void appendConnectors(QList<ConnectorItem *> & connectorItems, ConnectorItem * connectorItem) {
-	if (connectorItem == NULL) return;
+	if (connectorItem == nullptr) return;
 
 	foreach (ConnectorItem * ci, connectorItem->connectedToItems()) {
 		connectorItems.append(ci);
@@ -517,7 +517,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 		bool connect = true;
 		foreach (QGraphicsItem * item, childItems()) {
 			auto * stripbit = dynamic_cast<Stripbit *>(item);
-			if (stripbit == NULL) continue;
+			if (stripbit == nullptr) continue;
 
 			if (stripbit->removed()) {
 				afterCut += stripbit->makeRemovedString();
@@ -543,12 +543,12 @@ void Stripboard::reinitBuses(bool triggerUndo)
 
 	foreach (QGraphicsItem * item, childItems()) {
 		auto * stripbit = dynamic_cast<Stripbit *>(item);
-		if (stripbit == NULL) {
+		if (stripbit == nullptr) {
 			auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
-			if (connectorItem == NULL) continue;
+			if (connectorItem == nullptr) continue;
 
-			connectorItem->connector()->connectorShared()->setBus(NULL);
-			connectorItem->connector()->setBus(NULL);
+			connectorItem->connector()->connectorShared()->setBus(nullptr);
+			connectorItem->connector()->setBus(nullptr);
 			continue;
 		}
 
@@ -557,7 +557,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 	QString busPropertyString;
 	foreach (QGraphicsItem * item, childItems()) {
 		auto * stripbit = dynamic_cast<Stripbit *>(item);
-		if (stripbit == NULL) continue;
+		if (stripbit == nullptr) continue;
 
 		if (stripbit->removed()) {
 			busPropertyString += stripbit->makeRemovedString();
@@ -605,12 +605,12 @@ void Stripboard::collectConnected(int ix, int iy, QList<ConnectorItem *> & conne
 		collectConnected(ix, iy + 1, connected);
 	}
 
-	StripConnector * left = ix > 0 ? getStripConnector(ix - 1, iy) : NULL;
+	StripConnector * left = ix > 0 ? getStripConnector(ix - 1, iy) : nullptr;
 	if (left && left->right && !left->right->removed()) {
 		collectConnected(ix - 1, iy, connected);
 	}
 
-	StripConnector * up = iy > 0 ? getStripConnector(ix, iy - 1) : NULL;
+	StripConnector * up = iy > 0 ? getStripConnector(ix, iy - 1) : nullptr;
 	if (up && up->down && !up->down->removed()) {
 		collectConnected(ix, iy - 1, connected);
 	}
@@ -634,7 +634,7 @@ void Stripboard::setProp(const QString & prop, const QString & value)
 		QStringList removed = value.split(" ", Qt::SkipEmptyParts);
 		foreach (QGraphicsItem * item, childItems()) {
 			auto * stripbit = dynamic_cast<Stripbit *>(item);
-			if (stripbit == NULL) continue;
+			if (stripbit == nullptr) continue;
 
 			QString removedString = stripbit->makeRemovedString();
 			removedString.chop(1);          // remove trailing space
@@ -681,9 +681,9 @@ QString Stripboard::getColumnLabel() {
 }
 
 void Stripboard::makeInitialPath() {
-	ConnectorItem * ciFirst = NULL;
-	ConnectorItem * ciNextH = NULL;
-	ConnectorItem * ciNextV = NULL;
+	ConnectorItem * ciFirst = nullptr;
+	ConnectorItem * ciNextH = nullptr;
+	ConnectorItem * ciNextV = nullptr;
 	foreach (ConnectorItem * ci, cachedConnectorItems()) {
 		int cx, cy;
 		getXY(cx, cy, ci->connectorSharedName());
@@ -705,9 +705,9 @@ void Stripboard::makeInitialPath() {
 		}
 	}
 
-	if (ciFirst == NULL) return;
-	if (ciNextH == NULL) return;
-	if (ciNextV == NULL) return;
+	if (ciFirst == nullptr) return;
+	if (ciNextH == nullptr) return;
+	if (ciNextV == nullptr) return;
 
 	QRectF r1 = ciFirst->rect();
 	QRectF rh = ciNextH->rect();
@@ -747,17 +747,17 @@ StripConnector * Stripboard::getStripConnector(int ix, int iy) {
 void Stripboard::swapEntry(const QString & text) {
 
 	auto * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
-	if (comboBox == NULL) return;
+	if (comboBox == nullptr) return;
 
 	if (comboBox->prop().compare("layout", Qt::CaseInsensitive) == 0) {
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infoGraphicsView == NULL) return;
+		if (infoGraphicsView == nullptr) return;
 
 		QString afterCut;
 		if (text.compare(HorizontalString, Qt::CaseInsensitive) == 0) {
 			foreach (QGraphicsItem * item, childItems()) {
 				auto * stripbit = dynamic_cast<Stripbit *>(item);
-				if (stripbit == NULL) continue;
+				if (stripbit == nullptr) continue;
 
 				if (!stripbit->horizontal()) {
 					afterCut += stripbit->makeRemovedString();
@@ -767,7 +767,7 @@ void Stripboard::swapEntry(const QString & text) {
 		else if (text.compare(VerticalString, Qt::CaseInsensitive) == 0) {
 			foreach (QGraphicsItem * item, childItems()) {
 				auto * stripbit = dynamic_cast<Stripbit *>(item);
-				if (stripbit == NULL) continue;
+				if (stripbit == nullptr) continue;
 
 				if (stripbit->horizontal()) {
 					afterCut += stripbit->makeRemovedString();
@@ -777,7 +777,7 @@ void Stripboard::swapEntry(const QString & text) {
 		else if (text.compare(EmptyString, Qt::CaseInsensitive) == 0) {
 			foreach (QGraphicsItem * item, childItems()) {
 				auto * stripbit = dynamic_cast<Stripbit *>(item);
-				if (stripbit == NULL) continue;
+				if (stripbit == nullptr) continue;
 
 				afterCut += stripbit->makeRemovedString();
 			}
@@ -801,7 +801,7 @@ void Stripboard::swapEntry(const QString & text) {
 		}
 
 		if (!afterCut.isEmpty()) {
-			initCutting(NULL);
+			initCutting(nullptr);
 			QString changeText = tr("%1 layout").arg(text);
 			QSet<ConnectorItem *> affectedConnectors;
 			collectTo(affectedConnectors);

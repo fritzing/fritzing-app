@@ -149,7 +149,7 @@ ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringTh
 
 void Hole::setBothNonConnectors(ItemBase * itemBase, SvgIdLayer * svgIdLayer) {
 	foreach (QGraphicsItem * child, itemBase->childItems()) {
-		NonConnectorItem * nonConnectorItem = dynamic_cast<NonConnectorItem *>(child);
+		auto * nonConnectorItem = dynamic_cast<NonConnectorItem *>(child);
 		if (nonConnectorItem == NULL) continue;
 
 		//DebugDialog::debug(QString("hole set rect %1").arg(m_viewID), svgIdLayer->m_rect);

@@ -354,7 +354,7 @@ void ClipableWire::dispatchHover(QPointF scenePos) {
 		foreach (ConnectorItem * toConnectorItem, m_trackHoverItem->connectedToItems()) {
 			if (toConnectorItem->attachedToItemType() != ModelPart::Wire) continue;
 
-			ClipableWire * w = dynamic_cast<ClipableWire *>(toConnectorItem->attachedTo());
+			auto * w = dynamic_cast<ClipableWire *>(toConnectorItem->attachedTo());
 			if (w == nullptr) continue;
 			if (w->getRatsnest()) continue;									// is there a better way to check this?
 

@@ -67,7 +67,7 @@ void shorten(QRectF r0, QPointF r0c, QPointF r1c, double & r0x, double & r0y, do
 JumperItem::JumperItem( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: PaletteItem(modelPart, viewID,  viewGeometry,  id, itemMenu, doLabel)
 {
-	m_originalClickItem = NULL;
+	m_originalClickItem = nullptr;
 	if (Colors.isEmpty()) {
 		Colors.insert(ViewLayer::Copper0, ViewLayer::Copper0Color);
 		Colors.insert(ViewLayer::Copper1, ViewLayer::Copper1Color);
@@ -75,7 +75,7 @@ JumperItem::JumperItem( ModelPart * modelPart, ViewLayer::ViewID viewID,  const 
 		Colors.insert(ViewLayer::Silkscreen1, ViewLayer::Silkscreen1Color);
 	}
 
-	m_otherItem = m_connector0 = m_connector1 = m_dragItem = NULL;
+	m_otherItem = m_connector0 = m_connector1 = m_dragItem = nullptr;
 	if (Copper0LayerTemplate.isEmpty()) {
 		QFile file(":/resources/templates/jumper_copper0LayerTemplate.txt");
 		if (file.open(QFile::ReadOnly)) {
@@ -220,14 +220,14 @@ void JumperItem::mouseReleaseEventK(PaletteItemBase * originalItem, QGraphicsSce
 void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
 	PaletteItemBase * originalItem = m_originalClickItem;
-	m_originalClickItem = NULL;
+	m_originalClickItem = nullptr;
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infographics && infographics->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
 
-	m_dragItem = NULL;
+	m_dragItem = nullptr;
 	QRectF rect = m_connector0->rect();
 	double dx = m_connectorTL.x();
 	double dy = m_connectorTL.y();
@@ -260,7 +260,7 @@ void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void JumperItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-	if (m_dragItem == NULL) return;
+	if (m_dragItem == nullptr) return;
 
 	// TODO: make sure the two connectors don't overlap
 
@@ -290,7 +290,7 @@ void JumperItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 void JumperItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-	m_dragItem = NULL;
+	m_dragItem = nullptr;
 	PaletteItem::mouseReleaseEvent(event);
 }
 
@@ -359,8 +359,8 @@ void JumperItem::resize(QPointF p0, QPointF p1) {
 void JumperItem::resize() {
 	if (m_viewID != ViewLayer::PCBView) return;
 
-	if (m_connector0 == NULL) return;
-	if (m_connector1 == NULL) return;
+	if (m_connector0 == nullptr) return;
+	if (m_connector1 == nullptr) return;
 
 	prepareGeometryChange();
 
@@ -494,8 +494,8 @@ ItemBase::PluralType JumperItem::isPlural() {
 
 void JumperItem::addedToScene(bool temporary) {
 
-	if (m_connector0 == NULL) return;
-	if (m_connector1 == NULL) return;
+	if (m_connector0 == nullptr) return;
+	if (m_connector1 == nullptr) return;
 
 	ConnectorItem * cc0 = m_connector0->getCrossLayerConnectorItem();
 	if (cc0) {

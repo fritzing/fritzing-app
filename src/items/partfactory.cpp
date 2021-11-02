@@ -86,7 +86,7 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 			return new VirtualWire(modelPart, viewID, viewGeometry, id, wireMenu);
 		}
 		if (viewGeometry.getAnyTrace()) {
-			TraceWire * traceWire = new TraceWire(modelPart, viewID, viewGeometry, id, wireMenu);
+			auto * traceWire = new TraceWire(modelPart, viewID, viewGeometry, id, wireMenu);
 			return traceWire;
 		}
 		return new Wire(modelPart, viewID, viewGeometry, id, wireMenu, false);

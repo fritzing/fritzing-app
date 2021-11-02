@@ -36,12 +36,12 @@ LayerPalette::LayerPalette(QWidget * parent)
 	m_hideAllLayersAct(nullptr)
 {
 
-	auto frame = new QFrame(this);
+	auto *frame = new QFrame(this);
     
 	m_mainLayout->setSizeConstraint( QLayout::SetMinAndMaxSize );
 	m_mainLayout->setObjectName("LayerWindowFrame");
 	for (int i = 0; i < ViewLayer::ViewLayerCount; i++) {
-		auto cb = new ViewLayerCheckBox(this);
+		auto *cb = new ViewLayerCheckBox(this);
 		connect(cb, SIGNAL(clicked(bool)), this, SLOT(setLayerVisibility(bool)));
 		m_checkBoxes.append(cb);
 		cb -> setObjectName("LayerCheckBox");
@@ -49,7 +49,7 @@ LayerPalette::LayerPalette(QWidget * parent)
 	}
 
 	m_groupBox -> setObjectName("LayerWindowList");
-	auto groupLayout = new QVBoxLayout();
+	auto *groupLayout = new QVBoxLayout();
 	groupLayout -> setObjectName("LayerWindowBoxes");
 	connect(m_showAllWidget, SIGNAL(clicked(bool)), this, SLOT(setAllLayersVisible(bool)));
 

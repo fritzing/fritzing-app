@@ -292,7 +292,7 @@ QString Dip::makeBreadboardSipSvg(const QString & expectedFileName)
 	int increment = 10;
 	double totalWidth = (pins * increment);
 
-	QString svg = TextUtils::incrementTemplate(":/resources/templates/generic_sip_bread_template.txt", 1, increment * (pins - 2), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplate(":/resources/templates/generic_sip_bread_template.txt", 1, increment * (pins - 2), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
 	QString repeat("<rect id='connector%1pin' x='[13.5]' y='25.66' fill='#8C8C8C' width='3' height='4.34'/>\n"
 	               "<rect id='connector%1terminal' x='[13.5]' y='27.0' fill='#8C8C8C' width='3' height='3'/>\n"
@@ -300,7 +300,7 @@ QString Dip::makeBreadboardSipSvg(const QString & expectedFileName)
 
 	QString repeats;
 	if (pins > 2) {
-		repeats = TextUtils::incrementTemplateString(repeat, pins - 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::incCopyPinFunction, NULL);
+		repeats = TextUtils::incrementTemplateString(repeat, pins - 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::incCopyPinFunction, nullptr);
 	}
 
 	return svg.arg(totalWidth / 100).arg(pins - 1).arg(repeats);
@@ -364,7 +364,7 @@ QString Dip::makeBreadboardDipSvg(const QString & expectedFileName)
 
 	// header came from a 300mil dip, so base case is spacing - (increment * 3)
 
-	header = TextUtils::incrementTemplateString(header, 1, spacing - (increment * 3), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	header = TextUtils::incrementTemplateString(header, 1, spacing - (increment * 3), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	header = header
 	         .arg(TextUtils::getViewBoxCoord(header, 3) / 100.0)
 	         .arg(pins - 1)
@@ -373,14 +373,14 @@ QString Dip::makeBreadboardDipSvg(const QString & expectedFileName)
 	         .arg(OCRAFontName);
 	header.replace("{{", "[");
 	header.replace("}}", "]");
-	header = TextUtils::incrementTemplateString(header, 1, (spacing - (increment * 3)) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	header = TextUtils::incrementTemplateString(header, 1, (spacing - (increment * 3)) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	header.replace("{", "[");
 	header.replace("}", "]");
 	header.replace(".percent.", "%");
 
-	QString svg = TextUtils::incrementTemplateString(header, 1, increment * ((pins - 4) / 2), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header, 1, increment * ((pins - 4) / 2), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
-	repeatB = TextUtils::incrementTemplateString(repeatB, 1, spacing - (increment * 3), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	repeatB = TextUtils::incrementTemplateString(repeatB, 1, spacing - (increment * 3), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	repeatB.replace("{", "[");
 	repeatB.replace("}", "]");
 
@@ -388,7 +388,7 @@ QString Dip::makeBreadboardDipSvg(const QString & expectedFileName)
 	userData[0] = pins - 1;
 	userData[1] = 1;
 	QString repeatTs = TextUtils::incrementTemplateString(repeatT, (pins - 4) / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::negIncCopyPinFunction, userData);
-	QString repeatBs = TextUtils::incrementTemplateString(repeatB, (pins - 4) / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::incCopyPinFunction, NULL);
+	QString repeatBs = TextUtils::incrementTemplateString(repeatB, (pins - 4) / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::incCopyPinFunction, nullptr);
 
 
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 2) / 100.0).arg(repeatTs, repeatBs);
@@ -436,7 +436,7 @@ void Dip::addedToScene(bool temporary)
 void Dip::swapEntry(const QString & text) {
 
 	auto * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
-	if (comboBox == NULL) return;
+	if (comboBox == nullptr) return;
 
 	bool sip = moduleID().contains("sip");
 	bool dip = moduleID().contains("dip");

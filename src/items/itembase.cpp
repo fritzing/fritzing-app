@@ -475,7 +475,7 @@ void ItemBase::connectionChange(ConnectorItem * /*onMe*/, ConnectorItem * /*onIt
 void ItemBase::connectedMoved(ConnectorItem * /*from*/, ConnectorItem * /*to*/,  QList<ConnectorItem *> & /*already*/) { }
 
 ItemBase * ItemBase::extractTopLevelItemBase(QGraphicsItem * item) {
-	ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+	auto * itemBase = dynamic_cast<ItemBase *>(item);
 	if (!itemBase) return nullptr;
 
 	if (itemBase->topLevel()) return itemBase;
@@ -492,7 +492,7 @@ void ItemBase::setHidden(bool hide) {
 	m_hidden = hide;
 	updateHidden();
 	foreach (QGraphicsItem * item, childItems()) {
-		NonConnectorItem * nonconnectorItem = dynamic_cast<NonConnectorItem *>(item);
+		auto * nonconnectorItem = dynamic_cast<NonConnectorItem *>(item);
 		if (!nonconnectorItem) continue;
 
 		nonconnectorItem->setHidden(hide);
@@ -504,7 +504,7 @@ void ItemBase::setInactive(bool inactivate) {
 	m_inactive = inactivate;
 	updateHidden();
 	foreach (QGraphicsItem * item, childItems()) {
-		NonConnectorItem * nonconnectorItem = dynamic_cast<NonConnectorItem *>(item);
+		auto * nonconnectorItem = dynamic_cast<NonConnectorItem *>(item);
 		if (!nonconnectorItem) continue;
 
 		nonconnectorItem->setInactive(inactivate);
@@ -516,7 +516,7 @@ void ItemBase::setLayerHidden(bool layerHidden) {
 	m_layerHidden = layerHidden;
 	updateHidden();
 	foreach (QGraphicsItem * item, childItems()) {
-		NonConnectorItem * nonconnectorItem = dynamic_cast<NonConnectorItem *>(item);
+		auto * nonconnectorItem = dynamic_cast<NonConnectorItem *>(item);
 		if (!nonconnectorItem) continue;
 
 		nonconnectorItem->setLayerHidden(layerHidden);
@@ -1016,7 +1016,7 @@ void ItemBase::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 	if (m_itemMenu) {
 		m_rightClickedConnector = nullptr;
 		foreach (QGraphicsItem * item, scene()->items(event->scenePos())) {
-			ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+			auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 			if (!connectorItem) continue;
 
 			if (connectorItem->attachedTo() == this) {
@@ -1348,7 +1348,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 		break;
 	}
 
-	FSvgRenderer * newRenderer = new FSvgRenderer();
+	auto * newRenderer = new FSvgRenderer();
 	QDomDocument flipDoc;
 	getFlipDoc(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc, layerAttributes.orientation);
 	QByteArray bytesToLoad;
@@ -1600,7 +1600,7 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 	if (prop.compare("svg", Qt::CaseInsensitive) == 0 || prop.compare("fzp", Qt::CaseInsensitive) == 0) {
 		QFileInfo fileInfo(value);
 		if (fileInfo.exists()) {
-			ClickableLabel * label = new ClickableLabel(fileInfo.fileName(), parent);
+			auto * label = new ClickableLabel(fileInfo.fileName(), parent);
 			label->setProperty("path", value);
 			label->setToolTip(value);
 			connect(label, SIGNAL(clicked()), this, SLOT(showInFolder()));
@@ -1613,7 +1613,7 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 	QString tempValue = value;
 	QStringList values = collectValues(family, prop, tempValue);
 	if (values.count() > 1) {
-		FamilyPropertyComboBox * comboBox = new FamilyPropertyComboBox(family, prop, parent);
+		auto * comboBox = new FamilyPropertyComboBox(family, prop, parent);
 		comboBox->setObjectName("infoViewComboBox");
 
 		comboBox->addItems(values);
@@ -1631,14 +1631,14 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 }
 
 void ItemBase::swapEntry(int index) {
-	FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
+	auto * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
 	if (!comboBox) return;
 
 	swapEntry(comboBox->itemText(index));
 }
 
 void ItemBase::swapEntry(const QString & text) {
-	FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
+	auto * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
 	if (!comboBox) return;
 
 	m_propsMap.insert(comboBox->prop(), text);
@@ -1937,7 +1937,7 @@ const QList<ConnectorItem *> & ItemBase::cachedConnectorItems()
 {
 	if (m_cachedConnectorItems.isEmpty()) {
 		foreach (QGraphicsItem * childItem, childItems()) {
-			ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(childItem);
+			auto * connectorItem = dynamic_cast<ConnectorItem *>(childItem);
 			if (connectorItem) m_cachedConnectorItems.append(connectorItem);
 		}
 	}
@@ -2014,7 +2014,7 @@ QPixmap * ItemBase::getPixmap(QSize size) {
 FSvgRenderer * ItemBase::fsvgRenderer() const {
 	if (m_fsvgRenderer) return m_fsvgRenderer;
 
-	FSvgRenderer * f = qobject_cast<FSvgRenderer *>(renderer());
+	auto * f = qobject_cast<FSvgRenderer *>(renderer());
 	if (!f) {
 		DebugDialog::debug("shouldn't happen: missing fsvgRenderer");
 	}
@@ -2061,7 +2061,7 @@ bool ItemBase::resetRenderer(const QString & svg, QString & newSvg) {
 	// use resetRenderer instead of reloadRender because if the svg size changes, with reloadRenderer the new image seems to be scaled to the old bounds
 	// what I don't understand is why the old renderer causes a crash if it is deleted here
 
-	FSvgRenderer * newRenderer = new FSvgRenderer();
+	auto * newRenderer = new FSvgRenderer();
 	bool result = newRenderer->loadSvgString(svg, newSvg);
 	if (result) {
 		//DebugDialog::debug("reloaded");
@@ -2117,7 +2117,7 @@ QPixmap * ItemBase::getPixmap(ViewLayer::ViewID vid, bool swappingEnabled, QSize
 
 	QSvgRenderer renderer(filename);
 
-	QPixmap * pixmap = new QPixmap(size);
+	auto * pixmap = new QPixmap(size);
 	pixmap->fill(Qt::transparent);
 	QPainter painter(pixmap);
 	// preserve aspect ratio
@@ -2252,7 +2252,7 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
 		keys.insert(1, "id");
 
 		int insertAt = 2;
-		PaletteItemBase * paletteItemBase = qobject_cast<PaletteItemBase *>(this);
+		auto * paletteItemBase = qobject_cast<PaletteItemBase *>(this);
 		if (paletteItemBase) {
 			props.insert("svg", paletteItemBase->filename());
 			keys.insert(insertAt++, "svg");

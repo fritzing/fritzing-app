@@ -192,38 +192,38 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		int x, y;
 		getXY(x, y, m_size);
 
-		QFrame * frame = new QFrame();
-		QVBoxLayout * vboxLayout = new QVBoxLayout();
+		auto * frame = new QFrame();
+		auto * vboxLayout = new QVBoxLayout();
 		vboxLayout->setAlignment(Qt::AlignLeft);
 		vboxLayout->setSpacing(1);
 		vboxLayout->setContentsMargins(0, 3, 0, 0);
 		vboxLayout->setContentsMargins(0, 0, 0, 0);
 
-		QFrame * subframe1 = new QFrame();
-		QHBoxLayout * hboxLayout1 = new QHBoxLayout();
+		auto * subframe1 = new QFrame();
+		auto * hboxLayout1 = new QHBoxLayout();
 		hboxLayout1->setAlignment(Qt::AlignLeft);
 		hboxLayout1->setContentsMargins(0, 0, 0, 0);
 		hboxLayout1->setSpacing(2);
 
-		QLabel * l1 = new QLabel(getColumnLabel());
+		auto * l1 = new QLabel(getColumnLabel());
 		l1->setContentsMargins(0, 0, 0, 0);
 		l1->setObjectName("infoViewLabel");
 		m_xEdit = new QLineEdit();
 		m_xEdit->setEnabled(swappingEnabled);
-		QIntValidator * validator = new QIntValidator(m_xEdit);
+		auto * validator = new QIntValidator(m_xEdit);
 		validator->setRange(MinXDimension, MaxXDimension);
 		m_xEdit->setObjectName("infoViewLineEdit");
 		m_xEdit->setValidator(validator);
 		m_xEdit->setMaxLength(5);
 		m_xEdit->setText(QString::number(x));
 
-		QFrame * subframe2 = new QFrame();
-		QHBoxLayout * hboxLayout2 = new QHBoxLayout();
+		auto * subframe2 = new QFrame();
+		auto * hboxLayout2 = new QHBoxLayout();
 		hboxLayout2->setAlignment(Qt::AlignLeft);
 		hboxLayout2->setContentsMargins(0, 0, 0, 0);
 		hboxLayout2->setSpacing(2);
 
-		QLabel * l2 = new QLabel(getRowLabel());
+		auto * l2 = new QLabel(getRowLabel());
 		l2->setContentsMargins(0, 0, 0, 0);
 		l2->setObjectName("infoViewLabel");
 		m_yEdit = new QLineEdit();
@@ -301,7 +301,7 @@ bool Perfboard::boardSizeWarning()
 			messageBox.setWindowModality(Qt::WindowModal);
 			messageBox.setButtonText(QMessageBox::Ok, tr("Set new size"));
 			messageBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
-			QMessageBox::StandardButton answer = (QMessageBox::StandardButton) messageBox.exec();
+			auto answer = (QMessageBox::StandardButton) messageBox.exec();
 
 			if (answer != QMessageBox::Ok) {
 				getXY(x, y, m_size);
@@ -338,7 +338,7 @@ ItemBase::PluralType Perfboard::isPlural() {
 }
 
 void Perfboard::enableSetButton() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+	auto * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
 	int x, y;

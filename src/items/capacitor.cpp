@@ -53,7 +53,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 				returnProp = propertyDef->name;
 			}
 
-			FocusOutComboBox * focusOutComboBox = new FocusOutComboBox();
+			auto * focusOutComboBox = new FocusOutComboBox();
 			focusOutComboBox->setEnabled(swappingEnabled);
 			focusOutComboBox->setEditable(propertyDef->editable);
 			focusOutComboBox->setObjectName("infoViewComboBox");
@@ -103,7 +103,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 			}
 
 			if (propertyDef->editable) {
-				BoundedRegExpValidator * validator = new BoundedRegExpValidator(focusOutComboBox);
+				auto * validator = new BoundedRegExpValidator(focusOutComboBox);
 				validator->setSymbol(propertyDef->symbol);
 				validator->setConverter(TextUtils::convertFromPowerPrefix);
 				if (propertyDef->maxValue > propertyDef->minValue) {
@@ -166,7 +166,7 @@ void Capacitor::textModified(QValidator::State state) {
 }
 
 void Capacitor::propertyEntry(int index) {
-	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
+	auto * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
 	if (focusOutComboBox == NULL) return;
 	QString text = focusOutComboBox->itemText(index);
 
@@ -211,7 +211,7 @@ void Capacitor::setProp(const QString & prop, const QString & value) {
 
 void Capacitor::simplePropertyEntry(int index) {
 
-	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
+	auto * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
 	if (focusOutComboBox == NULL) return;
 	QString text = focusOutComboBox->itemText(index);
 

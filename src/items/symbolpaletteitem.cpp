@@ -383,7 +383,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 	if ((prop.compare("voltage", Qt::CaseInsensitive) == 0) &&
 	        (moduleID().compare(ModuleIDNames::GroundModuleIDName) != 0))
 	{
-		FocusOutComboBox * edit = new FocusOutComboBox(parent);
+		auto * edit = new FocusOutComboBox(parent);
 		edit->setEnabled(swappingEnabled);
 		int ix = 0;
 		foreach (double v, Voltages) {
@@ -394,7 +394,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 			ix++;
 		}
 
-		QDoubleValidator * validator = new QDoubleValidator(edit);
+		auto * validator = new QDoubleValidator(edit);
 		validator->setRange(-9999.99, 9999.99, 2);
 		validator->setLocale(QLocale::C);
 		validator->setNotation(QDoubleValidator::StandardNotation);
@@ -414,7 +414,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 
 	if (prop.compare("label", Qt::CaseInsensitive) == 0 && m_isNetLabel)
 	{
-		QLineEdit * edit = new QLineEdit(parent);
+		auto * edit = new QLineEdit(parent);
 		edit->setEnabled(swappingEnabled);
 		edit->setText(getLabel());
 		edit->setObjectName("infoViewLineEdit");
@@ -431,7 +431,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 }
 
 void SymbolPaletteItem::voltageEntry(int index) {
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
 	if (comboBox == NULL) return;
 	QString text = comboBox->itemText(index);
 
@@ -442,7 +442,7 @@ void SymbolPaletteItem::voltageEntry(int index) {
 }
 
 void SymbolPaletteItem::labelEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+	auto * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
 	QString current = getLabel();

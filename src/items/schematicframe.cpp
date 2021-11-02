@@ -170,10 +170,10 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 	if (milsW < templateThing.size.width()) milsW = templateThing.size.width();
 	if (milsH < templateThing.size.height()) milsH = templateThing.size.height();
 	QString svg = templateThing.svgTemplate.arg(milsW / 1000).arg(milsH / 1000).arg(milsW).arg(milsH).arg(milsW - templateThing.strokeWidth).arg(milsH - templateThing.strokeWidth);
-	svg = TextUtils::incrementTemplateString(svg, 1, milsW - templateThing.size.width(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	svg = TextUtils::incrementTemplateString(svg, 1, milsW - templateThing.size.width(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	svg.replace("{", "[");
 	svg.replace("}", "]");
-	svg = TextUtils::incrementTemplateString(svg, 1, milsH - templateThing.size.height(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	svg = TextUtils::incrementTemplateString(svg, 1, milsH - templateThing.size.height(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	QHash<QString, QString> hash;
 	foreach (QString propp, FrameProps.keys()) {
 		hash.insert(propp, prop(propp));
@@ -410,7 +410,7 @@ void SchematicFrame::setInitialSize() {
 
 void SchematicFrame::propEntry() {
 	auto * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	if (edit == nullptr) return;
 
 	QString propp = edit->property("prop").toString();
 	if (propp.isEmpty()) return;

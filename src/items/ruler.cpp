@@ -259,8 +259,8 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 		returnProp = tr("width");
 
 		int units = m_modelPart->localProp("width").toString().contains("cm") ? IndexCm : IndexIn;
-		QLineEdit * e1 = new QLineEdit();
-		QDoubleValidator * validator = new QDoubleValidator(e1);
+		auto * e1 = new QLineEdit();
+		auto * validator = new QDoubleValidator(e1);
 		validator->setRange(1.0, 20 * ((units == IndexCm) ? 2.54 : 1), 2);
 		validator->setNotation(QDoubleValidator::StandardNotation);
 		validator->setLocale(QLocale::C);
@@ -276,8 +276,8 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 		m_widthValidator = validator;
 
 		// Radio Buttons
-		QRadioButton *radioCm = new QRadioButton(tr("&cm"));
-		QRadioButton *radioIn = new QRadioButton(tr("&in"));
+		auto *radioCm = new QRadioButton(tr("&cm"));
+		auto *radioIn = new QRadioButton(tr("&in"));
 
 		// set radio button object names
 		radioCm->setObjectName("cm");
@@ -294,9 +294,9 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 		}
 
 		// spacer to keep radio buttons together when resizing Inspector Window
-		QSpacerItem *item = new QSpacerItem(1,1, QSizePolicy::Expanding, QSizePolicy::Fixed);
+		auto *item = new QSpacerItem(1,1, QSizePolicy::Expanding, QSizePolicy::Fixed);
 
-		QHBoxLayout * hboxLayout = new QHBoxLayout();
+		auto * hboxLayout = new QHBoxLayout();
 		hboxLayout->setAlignment(Qt::AlignRight);
 		hboxLayout->setContentsMargins(0, 0, 0, 0);
 		hboxLayout->setSpacing(5);
@@ -307,7 +307,7 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 		hboxLayout->addWidget(radioIn);
 		hboxLayout->addSpacerItem(item);
 
-		QFrame * frame = new QFrame();
+		auto * frame = new QFrame();
 		frame->setLayout(hboxLayout);
 		frame->setObjectName("infoViewPartFrame");
 
@@ -325,7 +325,7 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 }
 
 void Ruler::widthEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+	auto * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
 	QString t = edit->text();
@@ -346,7 +346,7 @@ void Ruler::widthEntry() {
 
 void Ruler::unitsEntry() {
 	// get clicked object
-	QRadioButton * obj = qobject_cast<QRadioButton *>(sender());
+	auto * obj = qobject_cast<QRadioButton *>(sender());
 	if (obj == NULL) return;
 
 	// update pointer

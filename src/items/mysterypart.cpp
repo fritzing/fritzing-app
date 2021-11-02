@@ -210,7 +210,7 @@ bool MysteryPart::collectExtraInfo(QWidget * parent, const QString & family, con
 		returnProp = tr("label");
 		returnValue = m_chipLabel;
 
-		QLineEdit * e1 = new QLineEdit(parent);
+		auto * e1 = new QLineEdit(parent);
 		e1->setEnabled(swappingEnabled);
 		e1->setText(m_chipLabel);
 		connect(e1, SIGNAL(editingFinished()), this, SLOT(chipLabelEntry()));
@@ -267,7 +267,7 @@ bool MysteryPart::hasCustomSVG() {
 }
 
 void MysteryPart::chipLabelEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
+	auto * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
 	if (edit->text().compare(this->chipLabel()) == 0) return;
@@ -625,7 +625,7 @@ bool MysteryPart::changePinLabels(bool singleRow, bool sip) {
 
 void MysteryPart::swapEntry(const QString & text) {
 
-	FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
+	auto * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
 	if (comboBox == NULL) return;
 
 	QString layout = m_propsMap.value("layout");

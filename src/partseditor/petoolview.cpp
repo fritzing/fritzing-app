@@ -35,8 +35,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 //////////////////////////////////////
 
-static QPixmap * CheckImage = NULL;
-static QPixmap * NoCheckImage = NULL;
+static QPixmap * CheckImage = nullptr;
+static QPixmap * NoCheckImage = nullptr;
 
 //////////////////////////////////////
 
@@ -56,10 +56,10 @@ void PEDoubleSpinBox::stepBy(int steps)
 
 PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 {
-	m_assignButton = NULL;
+	m_assignButton = nullptr;
 
-	if (CheckImage == NULL) CheckImage = new QPixmap(":/resources/images/icons/check.png");
-	if (NoCheckImage == NULL) NoCheckImage = new QPixmap(":/resources/images/icons/nocheck.png");
+	if (CheckImage == nullptr) CheckImage = new QPixmap(":/resources/images/icons/check.png");
+	if (NoCheckImage == nullptr) NoCheckImage = new QPixmap(":/resources/images/icons/nocheck.png");
 
 	this->setObjectName("PEToolView");
 	/*
@@ -71,7 +71,7 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 	this->setStyleSheet(styleSheet.readAll());
 	}
 	*/
-	m_pegi = NULL;
+	m_pegi = nullptr;
 
 	QVBoxLayout * mainLayout = new QVBoxLayout;
 	mainLayout -> setObjectName("connectorFrame");
@@ -241,7 +241,7 @@ void PEToolView::initConnectors(QList<QDomElement> * connectorList) {
 
 	if (connectorList->count() > 0) {
 		m_connectorListWidget->setCurrentItem(m_connectorListWidget->topLevelItem(0));
-		switchConnector(m_connectorListWidget->currentItem(), NULL);
+		switchConnector(m_connectorListWidget->currentItem(), nullptr);
 	}
 
 	m_connectorListWidget->blockSignals(false);
@@ -286,10 +286,10 @@ void PEToolView::switchConnector(QTreeWidgetItem * current, QTreeWidgetItem * pr
 
 	if (m_connectorInfoWidget) {
 		delete m_connectorInfoWidget;
-		m_connectorInfoWidget = NULL;
+		m_connectorInfoWidget = nullptr;
 	}
 
-	if (current == NULL) return;
+	if (current == nullptr) return;
 
 	int index = current->data(0, Qt::UserRole).toInt();
 	QDomElement element = m_connectorList->at(index);
@@ -332,7 +332,7 @@ void PEToolView::descriptionEntry() {
 
 void PEToolView::changeConnector() {
 	QTreeWidgetItem * item = m_connectorListWidget->currentItem();
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	int index = item->data(0, Qt::UserRole).toInt();
 
@@ -357,7 +357,7 @@ void PEToolView::setCurrentConnector(const QDomElement & newConnector) {
 
 int PEToolView::currentConnectorIndex() {
 	QTreeWidgetItem * item = m_connectorListWidget->currentItem();
-	if (item == NULL) return -1;
+	if (item == nullptr) return -1;
 
 	int index = item->data(0, Qt::UserRole).toInt();
 	return index;
@@ -399,7 +399,7 @@ void PEToolView::getSpinAmountSlot(double & d) {
 
 void PEToolView::removeConnector() {
 	QTreeWidgetItem * item = m_connectorListWidget->currentItem();
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	int index = item->data(0, Qt::UserRole).toInt();
 	QDomElement element = m_connectorList->at(index);
@@ -450,5 +450,5 @@ void PEToolView::hideConnectorListStuff() {
 
 void PEToolView::setCurrentConnector(int ix) {
 	m_connectorListWidget->setCurrentItem(m_connectorListWidget->topLevelItem(ix));
-	switchConnector(m_connectorListWidget->currentItem(), NULL);
+	switchConnector(m_connectorListWidget->currentItem(), nullptr);
 }

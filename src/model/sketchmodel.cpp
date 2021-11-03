@@ -36,12 +36,12 @@ SketchModel::SketchModel(ModelPart * root) : ModelBase(false) {
 }
 
 void SketchModel::removeModelPart(ModelPart * modelPart) {
-	modelPart->setParent(NULL);
+	modelPart->setParent(nullptr);
 	//DebugDialog::debug(QString("model count %1").arg(root()->children().size()));
 }
 
 ModelPart * SketchModel::findModelPart(const QString & moduleID, long id) {
-	if (m_root == NULL) return NULL;
+	if (m_root == nullptr) return nullptr;
 
 	return findModelPartAux(m_root, moduleID, id);
 }
@@ -59,7 +59,7 @@ ModelPart * SketchModel::findModelPartAux(ModelPart * modelPart, const QString &
 
 	foreach (QObject * child, modelPart->children()) {
 		auto * mp = qobject_cast<ModelPart *>(child);
-		if (mp == NULL) continue;
+		if (mp == nullptr) continue;
 
 		mp = findModelPartAux(mp, moduleID, id);
 		if (mp) {
@@ -67,5 +67,5 @@ ModelPart * SketchModel::findModelPartAux(ModelPart * modelPart, const QString &
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }

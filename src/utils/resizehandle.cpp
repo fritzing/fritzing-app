@@ -65,7 +65,7 @@ QVariant ResizeHandle::itemChange(GraphicsItemChange change, const QVariant &val
 	switch (change) {
 	case QGraphicsItem::ItemSceneHasChanged:
 		if (scaling()) {
-			ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
+			auto *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
 			if (sw) {
 				connect(sw, SIGNAL(zoomChanged(double)), this, SLOT(zoomChangedSlot(double)));
 			}
@@ -85,7 +85,7 @@ void ResizeHandle::zoomChangedSlot(double scale) {
 
 double ResizeHandle::currentScale() {
 	if (scaling()) {
-		ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
+		auto *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
 		if(sw) {
 			return sw->currentZoom()/100;
 		}
@@ -96,7 +96,7 @@ double ResizeHandle::currentScale() {
 void ResizeHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 	if(scene()) {
-		FGraphicsScene * fscene = qobject_cast<FGraphicsScene *>(scene());
+		auto * fscene = qobject_cast<FGraphicsScene *>(scene());
 		if (fscene && fscene->displayHandles()) {
 			QGraphicsPixmapItem::paint(painter, option, widget);
 		}

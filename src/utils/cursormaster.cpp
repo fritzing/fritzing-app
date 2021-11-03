@@ -216,7 +216,7 @@ bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 		//DebugDialog::debug(QString("event filter %1").arg(object->metaObject()->className()));
 		//if (scene)
 	{
-		QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+		auto *keyEvent = static_cast<QKeyEvent*>(event);
 		foreach (QObject * listener, Listeners) {
 			if (listener) {
 				dynamic_cast<CursorKeyListener *>(listener)->cursorKeyEvent(keyEvent->modifiers());

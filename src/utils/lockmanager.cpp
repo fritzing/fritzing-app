@@ -78,7 +78,7 @@ void LockManager::cleanup() {
 }
 
 void LockManager::touchFiles() {
-	QTimer * timer = qobject_cast<QTimer *>(sender());
+	auto * timer = qobject_cast<QTimer *>(sender());
 	if (timer == NULL) return;
 
 	QMutexLocker locker(&TheMutex);
@@ -101,7 +101,7 @@ void LockManager::initLockedFiles(const QString & prefix, QString & folder, QHas
 }
 
 LockedFile * LockManager::makeLockedFile(const QString & path, long touchFrequency) {
-	LockedFile * lockedFile = new LockedFile(path, touchFrequency);
+	auto * lockedFile = new LockedFile(path, touchFrequency);
 	lockedFile->touch();
 	TheMutex.lock();
 	TheLockedFiles.insert(touchFrequency, lockedFile);

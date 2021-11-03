@@ -80,7 +80,7 @@ HashPopulateWidget::HashPopulateWidget(const QString & title, const QHash<QStrin
 	m_lastLabel = nullptr;
 	m_lastValue = nullptr;
 
-	QGridLayout *layout = new QGridLayout();
+	auto *layout = new QGridLayout();
 	layout->setColumnStretch(0,0);
 	layout->setColumnStretch(1,1);
 	layout->setColumnStretch(2,0);
@@ -93,8 +93,8 @@ HashPopulateWidget::HashPopulateWidget(const QString & title, const QHash<QStrin
 	std::sort(keys.begin(), keys.end());
 
 	for(int i=0; i < keys.count(); i++) {
-		HashLineEdit *name = new HashLineEdit(keys[i],false,this);
-		HashLineEdit *value = new HashLineEdit(initValues[keys[i]],false,this);
+		auto *name = new HashLineEdit(keys[i],false,this);
+		auto *value = new HashLineEdit(initValues[keys[i]],false,this);
 		if (m_keysOnly) value->hide();
 
 		int ix = layout->rowCount();
@@ -117,7 +117,7 @@ HashPopulateWidget::HashPopulateWidget(const QString & title, const QHash<QStrin
 }
 
 HashRemoveButton *HashPopulateWidget::createRemoveButton(HashLineEdit* label, HashLineEdit* value) {
-	HashRemoveButton *button = new HashRemoveButton(label, value, this);
+	auto *button = new HashRemoveButton(label, value, this);
 	connect(button, SIGNAL(clicked(HashRemoveButton*)), this, SLOT(removeRow(HashRemoveButton*)));
 	return button;
 }

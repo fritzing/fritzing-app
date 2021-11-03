@@ -53,7 +53,7 @@ void ConnectorEdge::setHeadTail(int h, int t) {
 
 ConnectorEdge * makeConnectorEdge(QList<ConnectorEdge *> & edges, ConnectorItem * ci, ConnectorItem * cj, int weight, Wire * wire)
 {
-	ConnectorEdge * connectorEdge = new ConnectorEdge;
+	auto * connectorEdge = new ConnectorEdge;
 	connectorEdge->c0 = ci;
 	connectorEdge->c1 = cj;
 	connectorEdge->weight = weight;
@@ -354,7 +354,7 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 	int num_nodes = temp.count();
 	int num_edges = num_nodes * (num_nodes - 1) / 2;
 	E * edges = new E[num_edges];
-	double * weights = new double[num_edges];
+	auto * weights = new double[num_edges];
 	int ix = 0;
 	QVector< QVector<double> > reverseWeights(num_nodes, QVector<double>(num_nodes, 0));
 	for (int i = 0; i < num_nodes; i++) {

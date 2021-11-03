@@ -30,8 +30,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 BezierDisplay::BezierDisplay()
 {
-	m_itemL0 = m_itemL1 = NULL;
-	m_itemE0 = m_itemE1 = NULL;
+	m_itemL0 = m_itemL1 = nullptr;
+	m_itemE0 = m_itemE1 = nullptr;
 }
 
 BezierDisplay::~BezierDisplay()
@@ -105,12 +105,12 @@ void BezierDisplay::initDisplay(QGraphicsItem * master, Bezier *bezier)
 
 void BezierDisplay::updateDisplay(QGraphicsItem * master, Bezier *bezier)
 {
-	if (m_itemL0 == NULL) return;
-	if (m_itemL1 == NULL) return;
+	if (m_itemL0 == nullptr) return;
+	if (m_itemL1 == nullptr) return;
 	//if (m_itemE0 == NULL) return;
 	//if (m_itemE1 == NULL) return;
 
-	if (bezier == NULL || bezier->isEmpty()) {
+	if (bezier == nullptr || bezier->isEmpty()) {
 		m_itemL0->setVisible(false);
 		m_itemL1->setVisible(false);
 		//m_itemE0->setVisible(false);

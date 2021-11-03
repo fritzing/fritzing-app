@@ -2099,7 +2099,6 @@ void MainWindow::updateTraceMenu() {
 	bool tEnabled = false;
 	bool twEnabled = false;
 	bool ctlEnabled = false;
-	bool arEnabled = false;
 
 	TraceMenuThing traceMenuThing;
 
@@ -2122,7 +2121,6 @@ void MainWindow::updateTraceMenu() {
 				//}
 			}
 			else if (wire->isTraceType(m_currentGraphicsView->getTraceFlag())) {
-				arEnabled = true;
 				tEnabled = true;
 				twEnabled = true;
 				if (wire->isSelected()) {
@@ -2137,12 +2135,6 @@ void MainWindow::updateTraceMenu() {
 					}
 				}
 			}
-		}
-	}
-
-	if (!arEnabled) {
-		if (m_currentGraphicsView) {
-			arEnabled = m_currentGraphicsView->hasAnyNets();
 		}
 	}
 

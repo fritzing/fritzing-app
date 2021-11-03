@@ -341,7 +341,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	QRectF br =  params.board->sceneBoundingRect();
 	bWidth = params.res * br.width() / GraphicsUtils::SVGDPI;
 	bHeight = params.res * br.height() / GraphicsUtils::SVGDPI;
-	QImage * image = new QImage(qMax(svgWidth, bWidth), qMax(svgHeight, bHeight), QImage::Format_Mono); //
+	auto * image = new QImage(qMax(svgWidth, bWidth), qMax(svgHeight, bHeight), QImage::Format_Mono); //
 	image->setDotsPerMeterX(params.res * GraphicsUtils::InchesPerMeter);
 	image->setDotsPerMeterY(params.res * GraphicsUtils::InchesPerMeter);
 	image->fill(0x0);
@@ -606,7 +606,7 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 
 				if (gotCount == 0) {
 					// candidate is an orphan line at this point
-					QList<int> * piece = new QList<int>;
+					auto * piece = new QList<int>;
 					piece->append(i);
 					pieces.append(piece);
 				}
@@ -615,7 +615,7 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 		}
 		else {
 			for (int i = first; i <= last; i++) {
-				QList<int> * piece = new QList<int>;
+				auto * piece = new QList<int>;
 				piece->append(i);
 				pieces.append(piece);
 			}
@@ -698,7 +698,7 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 				if (!gotOne) {
 					// start a new chunk
 					holdPrevs[index] = -1;						// allow others to capture the prev
-					QList<int> * piece = new QList<int>;
+					auto * piece = new QList<int>;
 					piece->append(i);
 					pieces.append(piece);
 				}
@@ -706,7 +706,7 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 		}
 		else {
 			for (int i = first; i <= last; i++) {
-				QList<int> * piece = new QList<int>;
+				auto * piece = new QList<int>;
 				piece->append(i);
 				pieces.append(piece);
 			}

@@ -46,7 +46,7 @@ PlatformPicaxe::PlatformPicaxe() : Platform(QString("PICAXE"))
 void PlatformPicaxe::upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation)
 {
 	// see http://www.picaxe.com/docs/beta_compiler.pdf
-	QProcess * process = new QProcess(this);
+	auto * process = new QProcess(this);
 	process->setProcessChannelMode(QProcess::MergedChannels);
 	process->setReadChannel(QProcess::StandardOutput);
 
@@ -60,7 +60,7 @@ void PlatformPicaxe::upload(QWidget *source, const QString &port, const QString 
 	args.append(QString("-c%1").arg(port));
 	args.append(fileLocation);
 
-	ProgramTab *tab = qobject_cast<ProgramTab *>(source);
+	auto *tab = qobject_cast<ProgramTab *>(source);
 	if (tab)
 		tab->appendToConsole(tr("Running %1 %2").arg(cmd).arg(args.join(" ")));
 	process->start(cmd, args);

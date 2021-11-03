@@ -757,7 +757,7 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 	QString gerb_path;
 	double x, y;
 
-	PathUserData * pathUserData = (PathUserData *) userData;
+	auto * pathUserData = (PathUserData *) userData;
 
 	if (command.toLatin1() == 'z' || command.toLatin1() == 'Z') {
 		gerb_path = "X" + QString::number(flipx(m_pathstart_x)) + "Y" + QString::number(flipy(m_pathstart_y)) + "D01*\n";

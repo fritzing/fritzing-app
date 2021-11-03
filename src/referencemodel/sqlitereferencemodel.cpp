@@ -52,7 +52,7 @@ void debugError(bool result, QSqlQuery & query) {
 	DebugDialog::debug(QString("%1 %2 %3").arg(error.text()).arg(error.nativeErrorCode()).arg(error.type()));
 }
 
-static ModelPart * DebugModelPart = NULL;
+static ModelPart * DebugModelPart = nullptr;
 
 void debugExec(const QString & msg, QSqlQuery & query) {
 	DebugDialog::debug(
@@ -60,7 +60,7 @@ void debugExec(const QString & msg, QSqlQuery & query) {
 	    "\t "+ query.lastQuery() + "\n"
 	    "\t ERROR DRIVER: "+ query.lastError().driverText() + "\n"
 	    "\t ERROR DB: " + query.lastError().databaseText() + "\n"
-	    "\t moduleid:" + (DebugModelPart == NULL ? "" : DebugModelPart->moduleID()) + ""
+	    "\t moduleid:" + (DebugModelPart == nullptr ? "" : DebugModelPart->moduleID()) + ""
 	);
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QMap<QString, QVariant> map = query.boundValues();
@@ -90,7 +90,7 @@ QStringList FailurePropertyMessages;
 
 void noSwappingMessage(int n)
 {
-	FMessageBox::warning(NULL,
+	FMessageBox::warning(nullptr,
 	                     QObject::tr("Oops!"),
 	                     QObject::tr("Sorry, we have a problem with the swapping mechanism.\nFritzing still works, but you won't be able to change parts properties.") +
 	                     QObject::tr("Error %1\n").arg(n),
@@ -500,7 +500,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 		}
 	}
 
-	if (m_root == NULL) {
+	if (m_root == nullptr) {
 		m_root = new ModelPart();
 	}
 	foreach (ModelPart * modelPart, m_partHash.values()) {
@@ -660,7 +660,7 @@ void SqliteReferenceModel::deleteConnection() {
 
 ModelPart *SqliteReferenceModel::loadPart(const QString & path, bool update) {
 	ModelPart *modelPart = PaletteModel::loadPart(path, update);
-	if (modelPart == NULL) return modelPart;
+	if (modelPart == nullptr) return modelPart;
 
 	if (!m_init) addPart(modelPart, update);
 	return modelPart;
@@ -668,7 +668,7 @@ ModelPart *SqliteReferenceModel::loadPart(const QString & path, bool update) {
 
 ModelPart *SqliteReferenceModel::retrieveModelPart(const QString &moduleID) {
 	if (moduleID.isEmpty()) {
-		return NULL;
+		return nullptr;
 	}
 	return m_partHash.value(moduleID, NULL);
 }
@@ -789,7 +789,7 @@ QString SqliteReferenceModel::getClosestMatch(const QString &family, const QMult
 int SqliteReferenceModel::countPropsInCommon(const QString &family, const QMultiHash<QString, QString> &properties, const ModelPart *part2) {
 	Q_UNUSED(family)
 
-	if (part2 == NULL) {
+	if (part2 == nullptr) {
 		DebugDialog::debug("countPropsInCommon failure");
 		return 0;
 	}
@@ -869,7 +869,7 @@ bool SqliteReferenceModel::removePartFromDataBase(const QString & moduleId) {
 ModelPart * SqliteReferenceModel::reloadPart(const QString & path, const QString & moduleID) {
 	m_partHash.remove(moduleID);
 	ModelPart *modelPart = PaletteModel::loadPart(path, false);
-	if (modelPart == NULL) return modelPart;
+	if (modelPart == nullptr) return modelPart;
 
 	updatePart(modelPart);
 	return modelPart;
@@ -996,7 +996,7 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 		                    .arg(modelPart->path()).arg(modelPart->moduleID());
 	}
 
-	DebugModelPart = NULL;
+	DebugModelPart = nullptr;
 	return true;
 }
 

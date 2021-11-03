@@ -187,14 +187,14 @@ void PEMetadataView::initMetadata(const QDomDocument & doc)
 
 	m_mainFrame = new QFrame(this);
 	m_mainFrame->setObjectName("metadataMainFrame");
-	QVBoxLayout *mainLayout = new QVBoxLayout(m_mainFrame);
+	auto *mainLayout = new QVBoxLayout(m_mainFrame);
 	mainLayout->setSizeConstraint( QLayout::SetMinAndMaxSize );
 
-	QLabel *explanation = new QLabel(tr("This is where you edit the metadata for the part ..."));
+	auto *explanation = new QLabel(tr("This is where you edit the metadata for the part ..."));
 	mainLayout->addWidget(explanation);
 
-	QFormLayout * formLayout = new QFormLayout();
-	QFrame * formFrame = new QFrame;
+	auto * formLayout = new QFormLayout();
+	auto * formFrame = new QFrame;
 	mainLayout->addWidget(formFrame);
 
 	m_titleEdit = new QLineEdit();

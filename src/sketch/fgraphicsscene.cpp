@@ -40,9 +40,9 @@ void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 
 	QString text;
 	QPoint point;
-	ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+	auto * itemBase = dynamic_cast<ItemBase *>(item);
 	if (itemBase == nullptr) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem) {
 			connectorItem->updateTooltip();
 		}
@@ -82,7 +82,7 @@ bool FGraphicsScene::displayHandles() {
 QList<ItemBase *> FGraphicsScene::lockedSelectedItems() {
 	QList<ItemBase *> items;
 	foreach (QGraphicsItem * gitem,  this->selectedItems()) {
-		ItemBase *itemBase = dynamic_cast<ItemBase *>(gitem);
+		auto *itemBase = dynamic_cast<ItemBase *>(gitem);
 		if (itemBase == nullptr) continue;
 		if (itemBase->moveLock()) {
 			items.append(itemBase);

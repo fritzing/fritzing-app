@@ -168,7 +168,7 @@ int GerberGenerator::doCopper(ItemBase * board, PCBSketchWidget * sketchWidget, 
 
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
 	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (!connectorItem->isPath()) continue;
 		if (connectorItem->radius() == 0) continue;
@@ -240,7 +240,7 @@ int GerberGenerator::doDrill(ItemBase * board, PCBSketchWidget * sketchWidget, c
 	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgDrill);
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
 	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (!connectorItem->isPath()) continue;
 		if (connectorItem->radius() == 0) continue;
@@ -899,7 +899,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 	QPointF bottomLeft = board->sceneBoundingRect().bottomLeft();
 	QSet<ItemBase *> itemBases;
 	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 		if (itemBase == board) continue;
 		if (itemBase->itemType() == ModelPart::Wire) continue;

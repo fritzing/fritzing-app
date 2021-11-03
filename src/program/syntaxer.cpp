@@ -111,7 +111,7 @@ bool Syntaxer::loadSyntax(const QString &filename)
 		Qt::CaseSensitivity caseSensitivity = comments.attribute("casesensitive").compare("1") == 0 ? Qt::CaseSensitive : Qt::CaseInsensitive;
 		QDomElement comment = comments.firstChildElement("comment");
 		while (!comment.isNull()) {
-			CommentInfo * commentInfo = new CommentInfo(comment.attribute("start"), comment.attribute("end"), caseSensitivity);
+			auto * commentInfo = new CommentInfo(comment.attribute("start"), comment.attribute("end"), caseSensitivity);
 			commentInfo->m_index = m_commentInfo.count();
 			m_commentInfo.append(commentInfo);
 			comment = comment.nextSiblingElement("comment");
@@ -145,7 +145,7 @@ QString Syntaxer::parseForName(const QString & filename)
 
 void Syntaxer::loadList(QDomElement & list) {
 	QString name = list.attribute("name");
-	SyntaxerTrieLeaf * stf = new SyntaxerTrieLeaf(name);
+	auto * stf = new SyntaxerTrieLeaf(name);
 	QDomElement item = list.firstChildElement("item");
 	while (!item.isNull()) {
 		QString text;

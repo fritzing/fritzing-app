@@ -164,28 +164,28 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 
 	foreach (QDomElement contact, powers) {
 		contact.setAttribute("ltrb", "power");
-		if (contact.attribute("bus", 0).compare("1") == 0) {
+		if (contact.attribute("bus", nullptr).compare("1") == 0) {
 			busContacts.append(contact);
 			powersBuses++;
 		}
 	}
 	foreach (QDomElement contact, grounds) {
 		contact.setAttribute("ltrb", "ground");
-		if (contact.attribute("bus", 0).compare("1") == 0) {
+		if (contact.attribute("bus", nullptr).compare("1") == 0) {
 			busContacts.append(contact);
 			groundsBuses++;
 		}
 	}
 	foreach (QDomElement contact, lefts) {
 		contact.setAttribute("ltrb", "left");
-		if (contact.attribute("bus", 0).compare("1") == 0) {
+		if (contact.attribute("bus", nullptr).compare("1") == 0) {
 			busContacts.append(contact);
 			leftsBuses++;
 		}
 	}
 	foreach (QDomElement contact, rights) {
 		contact.setAttribute("ltrb", "right");
-		if (contact.attribute("bus", 0).compare("1") == 0) {
+		if (contact.attribute("bus", nullptr).compare("1") == 0) {
 			busContacts.append(contact);
 			rightsBuses++;
 		}
@@ -347,7 +347,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 
 	qreal ly = startTitle;
 	foreach (QDomElement contact, lefts) {
-		bool bus = contact.attribute("bus", 0).compare("1") == 0;
+		bool bus = contact.attribute("bus", nullptr).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
 			svg += QString("<line fill='none' stroke='%5' stroke-linejoin='round' stroke-linecap='round' stroke-width='%2' x1='%4' y1='%1' x2='%3' y2='%1' />\n")
@@ -372,7 +372,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 
 	ly = startTitle;
 	foreach (QDomElement contact, rights) {
-		bool bus = contact.attribute("bus", 0).compare("1") == 0;
+		bool bus = contact.attribute("bus", nullptr).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
 			svg += QString("<line fill='none' stroke='%5' stroke-linejoin='round' stroke-linecap='round' stroke-width='%4' x1='%1' y1='%2' x2='%3' y2='%2' />\n")
@@ -415,7 +415,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	}
 	lx = qFloor(lx / unitLength) * unitLength;
 	foreach (QDomElement contact, powers) {
-		bool bus = contact.attribute("bus", 0).compare("1") == 0;
+		bool bus = contact.attribute("bus", nullptr).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
 			svg += QString("<line fill='none' stroke='%5' stroke-linejoin='round' stroke-linecap='round' stroke-width='%4' x1='%1' y1='%2' x2='%1' y2='%3' />\n")
@@ -444,7 +444,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	}
 	lx = qFloor(lx / unitLength) * unitLength;
 	foreach (QDomElement contact, grounds) {
-		bool bus = contact.attribute("bus", 0).compare("1") == 0;
+		bool bus = contact.attribute("bus", nullptr).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
 			svg += QString("<line fill='none' stroke='%5' stroke-linejoin='round' stroke-linecap='round' stroke-width='%4' x1='%1' y1='%2' x2='%1' y2='%3' />\n")

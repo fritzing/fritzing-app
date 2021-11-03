@@ -150,7 +150,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 
 				appendVertIf(toConnectorItem, vertices, verts);
 				int jx = LastVertex;
-				ConnectorEdge * connectorEdge = makeConnectorEdge(edges, connectorItem, toConnectorItem, 1000, NULL);
+				ConnectorEdge * connectorEdge = makeConnectorEdge(edges, connectorItem, toConnectorItem, 1000, nullptr);
 				connectorEdge->setHeadTail(ix, jx);
 			}
 		}
@@ -176,9 +176,9 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 						int jx = LastVertex;
 						ConnectorEdge * fce = makeConnectorEdge(foreignEdges, fc0, fc1, 1, qobject_cast<Wire *>(foreignItemBase));
 						fce->setHeadTail(ix, jx);
-						fce = makeConnectorEdge(foreignEdges, ce->c0, fc0, 1000, NULL);
+						fce = makeConnectorEdge(foreignEdges, ce->c0, fc0, 1000, nullptr);
 						fce->setHeadTail(ce->head, ix);
-						fce = makeConnectorEdge(foreignEdges, ce->c1, fc1, 1000, NULL);
+						fce = makeConnectorEdge(foreignEdges, ce->c1, fc1, 1000, nullptr);
 						fce->setHeadTail(ce->tail, jx);
 					}
 					else {
@@ -194,7 +194,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 			ce->visible = false;
 			foreach (SketchWidget * foreignSketchWidget, foreignSketchWidgets) {
 				ConnectorItem * fc0 = foreignSketchWidget->findConnectorItem(ce->c0);
-				if (fc0 == NULL) {
+				if (fc0 == nullptr) {
 					ce->c0->debugInfo("missing foreign connector");
 					continue;
 				}
@@ -206,11 +206,11 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 					int ix = LastVertex;
 					appendVertIf(fc1, vertices, verts);
 					int jx = LastVertex;
-					ConnectorEdge * fce = makeConnectorEdge(foreignEdges, fc0, fc1, 1, NULL);
+					ConnectorEdge * fce = makeConnectorEdge(foreignEdges, fc0, fc1, 1, nullptr);
 					fce->setHeadTail(ix, jx);
-					fce = makeConnectorEdge(foreignEdges, ce->c0, fc0, 1000, NULL);
+					fce = makeConnectorEdge(foreignEdges, ce->c0, fc0, 1000, nullptr);
 					fce->setHeadTail(ce->head, ix);
-					fce = makeConnectorEdge(foreignEdges, ce->c1, fc1, 1000, NULL);
+					fce = makeConnectorEdge(foreignEdges, ce->c1, fc1, 1000, nullptr);
 					fce->setHeadTail(ce->tail, jx);
 
 				}
@@ -224,7 +224,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	while (originalKeys.count() > 0) {
 		ConnectorItem * key = originalKeys.takeFirst();
 		if (key->attachedToItemType() == ModelPart::Wire) continue;
-		if (key->bus() == NULL) continue;
+		if (key->bus() == nullptr) continue;
 
 		int ix = vertices.value(key);
 		QList<ConnectorItem *> bcis;
@@ -235,7 +235,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 			originalKeys.removeOne(bci);
 			appendVertIf(bci, vertices, verts);
 			int jx = LastVertex;
-			ConnectorEdge * connectorEdge = makeConnectorEdge(edges, key, bci, 1000, NULL);
+			ConnectorEdge * connectorEdge = makeConnectorEdge(edges, key, bci, 1000, nullptr);
 			connectorEdge->setHeadTail(ix, jx);
 		}
 	}
@@ -251,11 +251,11 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 		foreach (ConnectorItem * ci, from) {
 			if (!crossVisited.contains(ci)) {
 				ConnectorItem * cross = ci->getCrossLayerConnectorItem();
-				if (cross == NULL) continue;
+				if (cross == nullptr) continue;
 
 				appendVertIf(cross, vertices, verts);
 				int jx = LastVertex;
-				ConnectorEdge * connectorEdge = makeConnectorEdge(edges, ci, cross, 1000, NULL);
+				ConnectorEdge * connectorEdge = makeConnectorEdge(edges, ci, cross, 1000, nullptr);
 				connectorEdge->setHeadTail(vertices.value(ci), jx);
 			}
 		}
@@ -346,7 +346,7 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 
 	QList<QPointF> locs;
 	foreach (ConnectorItem * connectorItem, temp) {
-		locs << connectorItem->sceneAdjustedTerminalPoint(NULL);
+		locs << connectorItem->sceneAdjustedTerminalPoint(nullptr);
 	}
 
 	QList < QList<ConnectorItem *> > wiredTo;
@@ -545,7 +545,7 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 			}
 
 			Wire * wire = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-			if (wire == NULL) continue;
+			if (wire == nullptr) continue;
 
 			if (!(wire->getViewGeometry().wireFlags() & myTrace)) {
 				// don't add edge if the connection isn't traced with my kind of trace

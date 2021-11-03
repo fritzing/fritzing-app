@@ -309,7 +309,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		}
 	}
 
-	ModelPart * modelPart = new ModelPart(domDocument, path, type);
+	auto * modelPart = new ModelPart(domDocument, path, type);
 	if (!modelPart) return nullptr;
 
 	if (path.startsWith(ResourcePath)) {
@@ -398,7 +398,7 @@ void PaletteModel::removePart(const QString &moduleID) {
 	ModelPart *mpToRemove = NULL;
 	QList<QObject *>::const_iterator i;
 	for (i = m_root->children().constBegin(); i != m_root->children().constEnd(); ++i) {
-		ModelPart* mp = qobject_cast<ModelPart *>(*i);
+		auto* mp = qobject_cast<ModelPart *>(*i);
 		if (mp == NULL) continue;
 
 		//DebugDialog::debug(QString("remove part %1").arg(mp->moduleID()));
@@ -420,7 +420,7 @@ void PaletteModel::removePart(const QString &moduleID) {
 void PaletteModel::removeParts() {
 	QList<ModelPart *> modelParts;
 	foreach (QObject * child, m_root->children()) {
-		ModelPart * modelPart = qobject_cast<ModelPart *>(child);
+		auto * modelPart = qobject_cast<ModelPart *>(child);
 		if (modelPart == NULL) continue;
 
 		modelParts.append(modelPart);
@@ -523,7 +523,7 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 	emit addSearchMaximum(modelPart->children().count());
 
 	foreach(QObject * child, modelPart->children()) {
-		ModelPart * mp = qobject_cast<ModelPart *>(child);
+		auto * mp = qobject_cast<ModelPart *>(child);
 		if (mp == NULL) continue;
 
 		search(mp, searchStrings, modelParts, allowObsolete);

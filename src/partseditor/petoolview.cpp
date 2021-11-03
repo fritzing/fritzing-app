@@ -73,16 +73,16 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 	*/
 	m_pegi = nullptr;
 
-	QVBoxLayout * mainLayout = new QVBoxLayout;
+	auto * mainLayout = new QVBoxLayout;
 	mainLayout -> setObjectName("connectorFrame");
-	QSplitter * splitter = new QSplitter(Qt::Vertical);
+	auto * splitter = new QSplitter(Qt::Vertical);
 	mainLayout->addWidget(splitter);
 
-	QFrame * connectorsFrame = new QFrame;
+	auto * connectorsFrame = new QFrame;
 
-	QVBoxLayout * connectorsLayout = new QVBoxLayout;
+	auto * connectorsLayout = new QVBoxLayout;
 
-	QLabel * label = new QLabel(tr("Connector List (a checkmark means the graphic was selected)"));
+	auto * label = new QLabel(tr("Connector List (a checkmark means the graphic was selected)"));
 	connectorsLayout->addWidget(label);
 
 
@@ -108,10 +108,10 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 
 	m_terminalPointGroupBox = new QGroupBox("Terminal point");
 	m_terminalPointGroupBox->setToolTip(tr("Controls for setting the terminal point for a connector. The terminal point is where a wire will attach to the connector. You can also drag the crosshair of the current connector"));
-	QVBoxLayout * anchorGroupLayout = new QVBoxLayout;
+	auto * anchorGroupLayout = new QVBoxLayout;
 
-	QFrame * posRadioFrame = new QFrame;
-	QHBoxLayout * posRadioLayout = new QHBoxLayout;
+	auto * posRadioFrame = new QFrame;
+	auto * posRadioLayout = new QHBoxLayout;
 
 	QList<QString> positionNames;
 	positionNames << "Center"  << "W" << "N" << "S" << "E";
@@ -120,7 +120,7 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 	QList<QString> trLongNames;
 	trLongNames << tr("center") << tr("west") << tr("north") << tr("south") << tr("east");
 	for (int i = 0; i < positionNames.count(); i++) {
-		QPushButton * button = new QPushButton(trPositionNames.at(i));
+		auto * button = new QPushButton(trPositionNames.at(i));
 		button->setProperty("how", positionNames.at(i));
 		button->setToolTip(tr("Sets the connector's terminal point to %1.").arg(trLongNames.at(i)));
 		connect(button, SIGNAL(clicked()), this, SLOT(buttonChangeTerminalPoint()));
@@ -133,8 +133,8 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 	posRadioFrame->setLayout(posRadioLayout);
 	anchorGroupLayout->addWidget(posRadioFrame);
 
-	QFrame * posNumberFrame = new QFrame;
-	QHBoxLayout * posNumberLayout = new QHBoxLayout;
+	auto * posNumberFrame = new QFrame;
+	auto * posNumberLayout = new QHBoxLayout;
 
 	label = new QLabel("x");
 	posNumberLayout->addWidget(label);
@@ -228,13 +228,13 @@ void PEToolView::initConnectors(QList<QDomElement> * connectorList) {
 
 	for (int ix = 0; ix < connectorList->count(); ix++) {
 		QDomElement connector = connectorList->at(ix);
-		QTreeWidgetItem *item = new QTreeWidgetItem;
+		auto *item = new QTreeWidgetItem;
 		item->setData(0, Qt::DisplayRole, connector.attribute("name"));
 		item->setData(0, Qt::UserRole, ix);
 		item->setData(1, Qt::UserRole, ix);
 		item->setData(0, Qt::DecorationRole, *NoCheckImage);
 		m_connectorListWidget->addTopLevelItem(item);
-		QLabel * label = new QLabel("");
+		auto * label = new QLabel("");
 		//label->setPixmap(*NoCheckImage);
 		m_connectorListWidget->setItemWidget(item, 1, label);
 	}
@@ -430,7 +430,7 @@ void PEToolView::hideConnectorListStuff() {
 			else {
 				// remove the button and add the label
 				m_connectorListWidget->removeItemWidget(item, 1);
-				QLabel * label = new QLabel();
+				auto * label = new QLabel();
 				//label->setPixmap(*NoCheckImage);
 				m_connectorListWidget->setItemWidget(item, 1, label);
 			}

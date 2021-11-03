@@ -118,7 +118,7 @@ BinManager::BinManager(class ReferenceModel *referenceModel, class HtmlInfoView 
 
 	m_unsavedBinsCount = 0;
 
-	QVBoxLayout *lo = new QVBoxLayout(this);
+	auto *lo = new QVBoxLayout(this);
 
 	m_stackTabWidget = new StackTabWidget(this);
 	m_stackTabWidget->setTabPosition(QTabWidget::West);
@@ -213,7 +213,7 @@ bool BinManager::beforeClosing() {
 	bool retval = true;
 
 	for(int j = 0; j < m_stackTabWidget->count(); j++) {
-		PartsBinPaletteWidget *bin = qobject_cast<PartsBinPaletteWidget*>(m_stackTabWidget->widget(j));
+		auto *bin = qobject_cast<PartsBinPaletteWidget*>(m_stackTabWidget->widget(j));
 		if (bin && !bin->fastLoaded()) {
 			setAsCurrentTab(bin);
 			retval = retval && bin->beforeClosing();
@@ -278,7 +278,7 @@ PartsBinPaletteWidget* BinManager::getOrOpenBin(const QString & binLocation, con
 
 PartsBinPaletteWidget* BinManager::findBin(const QString & binLocation) {
 	for (int i = 0; i < m_stackTabWidget->count(); i++) {
-		PartsBinPaletteWidget* bin = (PartsBinPaletteWidget *) m_stackTabWidget->widget(i);
+		auto* bin = (PartsBinPaletteWidget *) m_stackTabWidget->widget(i);
 		if(bin->fileName() == binLocation) {
 			return bin;
 		}
@@ -327,7 +327,7 @@ void BinManager::addToTempPartsBin(ModelPart *modelPart) {
 
 void BinManager::hideTempPartsBin() {
 	for (int i = 0; i < m_stackTabWidget->count(); i++) {
-		PartsBinPaletteWidget* bin = (PartsBinPaletteWidget *) m_stackTabWidget->widget(i);
+		auto* bin = (PartsBinPaletteWidget *) m_stackTabWidget->widget(i);
 		if (bin->fileName().compare(m_tempPartsBinLocation) == 0) {
 			m_stackTabWidget->removeTab(i);
 			break;
@@ -448,7 +448,7 @@ PartsBinPaletteWidget* BinManager::openCoreBinIn() {
 }
 
 PartsBinPaletteWidget* BinManager::newBin() {
-	PartsBinPaletteWidget* bin = new PartsBinPaletteWidget(m_referenceModel, m_infoView, m_undoStack,this);
+	auto* bin = new PartsBinPaletteWidget(m_referenceModel, m_infoView, m_undoStack,this);
 	connect(
 	    bin, SIGNAL(fileNameUpdated(PartsBinPaletteWidget*, const QString&, const QString&)),
 	    this, SLOT(updateFileName(PartsBinPaletteWidget*, const QString&, const QString&))
@@ -465,7 +465,7 @@ PartsBinPaletteWidget* BinManager::newBin() {
 
 void BinManager::currentChanged(int index) {
 	for (int i = 0; i < m_stackTabWidget->count(); i++) {
-		PartsBinPaletteWidget* bin = (PartsBinPaletteWidget *) m_stackTabWidget->widget(i);
+		auto* bin = (PartsBinPaletteWidget *) m_stackTabWidget->widget(i);
 		if (bin == NULL) continue;
 		if (!bin->hasMonoIcon()) continue;
 
@@ -555,7 +555,7 @@ void BinManager::saveStateAndGeometry() {
 	settings.beginGroup("bins2");
 
 	for(int j = m_stackTabWidget->count() - 1; j >= 0; j--) {
-		PartsBinPaletteWidget *bin = qobject_cast<PartsBinPaletteWidget*>(m_stackTabWidget->widget(j));
+		auto *bin = qobject_cast<PartsBinPaletteWidget*>(m_stackTabWidget->widget(j));
 		if (bin) {
 			settings.beginGroup(QString::number(j));
 			settings.setValue("location", BinLocation::toString(bin->location()));
@@ -581,7 +581,7 @@ void BinManager::restoreStateAndGeometry(QList<BinLocation *> & actualLocations)
 	else {
 		for (int i = 0; i < size; ++i) {
 			settings.beginGroup(QString::number(i));
-			BinLocation  * location = new BinLocation;
+			auto  * location = new BinLocation;
 			location->location = BinLocation::fromString(settings.value("location").toString());
 			location->path = settings.value("path").toString();
 			location->title = settings.value("title").toString();
@@ -678,7 +678,7 @@ void BinManager::readTheoreticalLocations(QList<BinLocation *> & theoreticalLoca
 
 	QDomElement bin = domDocument.documentElement().firstChildElement("bin");
 	while (!bin.isNull()) {
-		BinLocation * location = new BinLocation;
+		auto * location = new BinLocation;
 		location->title = bin.attribute("title", "");
 		location->location = BinLocation::fromString(bin.attribute("location", ""));
 		theoreticalLocations.append(location);
@@ -781,7 +781,7 @@ void BinManager::hackLocalContrib(QList<BinLocation *> & locations)
 
 void BinManager::findAllBins(QList<BinLocation *> & locations)
 {
-	BinLocation * location = new BinLocation;
+	auto * location = new BinLocation;
 	location->location = BinLocation::App;
 	location->path = CorePartsBinLocation;
 	QString icon;
@@ -808,7 +808,7 @@ void BinManager::findBins(QDir & dir, QList<BinLocation *> & locations, BinLocat
 	filters << "*"+FritzingBinExtension;
 	QFileInfoList files = dir.entryInfoList(filters);
 	foreach(QFileInfo info, files) {
-		BinLocation * location = new BinLocation;
+		auto * location = new BinLocation;
 		location->path = info.absoluteFilePath();
 		location->location = loc;
 		QString icon;
@@ -876,7 +876,7 @@ QList<QAction*> BinManager::openedBinsActions(const QString &moduleId) {
 	QMap<QString,QAction*> titlesAndActions; // QMap sorts values by key
 
 	for (int i = 0; i < m_stackTabWidget->count(); i++) {
-		PartsBinPaletteWidget* pppw = (PartsBinPaletteWidget *) m_stackTabWidget->widget(i);
+		auto* pppw = (PartsBinPaletteWidget *) m_stackTabWidget->widget(i);
 		if (pppw->readOnly()) continue;
 
 		QAction *act = pppw->addPartToMeAction();
@@ -1294,7 +1294,7 @@ void BinManager::setTabIcon(PartsBinPaletteWidget* w, QIcon * icon)
 }
 
 void BinManager::copyFilesToContrib(ModelPart * mp, QWidget * originator) {
-	PartsBinPaletteWidget * bin = qobject_cast<PartsBinPaletteWidget *>(originator);
+	auto * bin = qobject_cast<PartsBinPaletteWidget *>(originator);
 	if (bin == NULL) return;
 
 	if (bin->fileName().compare(m_tempPartsBinLocation) != 0) return;				// only copy from temp bin
@@ -1367,7 +1367,7 @@ void BinManager::hideTabBar()
 void BinManager::reloadPart(const QString & moduleID) {
 	PartsBinView::removePartReference(moduleID);
 	for(int j = 0; j < m_stackTabWidget->count(); j++) {
-		PartsBinPaletteWidget *bin = qobject_cast<PartsBinPaletteWidget*>(m_stackTabWidget->widget(j));
+		auto *bin = qobject_cast<PartsBinPaletteWidget*>(m_stackTabWidget->widget(j));
 		if (bin == NULL) continue;
 
 		bin->reloadPart(moduleID);

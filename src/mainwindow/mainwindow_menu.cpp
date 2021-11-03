@@ -1657,8 +1657,8 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 	if (m_showAllLayersAct) m_viewMenu->addAction(m_showAllLayersAct);
 	if (m_hideAllLayersAct) m_viewMenu->addAction(m_hideAllLayersAct);
 
-	m_hideAllLayersAct->setEnabled(false);
-	m_showAllLayersAct->setEnabled(false);
+	if (m_hideAllLayersAct) m_hideAllLayersAct->setEnabled(false);
+	if (m_showAllLayersAct) m_showAllLayersAct->setEnabled(false);
 
 	if (m_currentGraphicsView == nullptr) {
 		return;

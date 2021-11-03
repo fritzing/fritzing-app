@@ -251,7 +251,7 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
 
 	style->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, listWidget);
 
-	QPixmap pixmap = qvariant_cast<QPixmap>(index.data(IconRole));
+	auto pixmap = qvariant_cast<QPixmap>(index.data(IconRole));
 	QString title = index.data(TitleRole).toString();
 	QString date = index.data(DateRole).toString();
 	QString author = index.data(AuthorRole).toString();
@@ -320,7 +320,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 
 	QString protocol = QSslSocket::supportsSsl() ? "https" : "http";
 	// TODO: blog network calls should only happen once, not for each window?
-	QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+	auto * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
 	manager->get(QNetworkRequest(QUrl(QString("%1://blog.fritzing.org/recent-posts-app/").arg(protocol))));
 
@@ -335,7 +335,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 
 void WelcomeView::initLayout()
 {
-	QGridLayout * mainLayout = new QGridLayout();
+	auto * mainLayout = new QGridLayout();
 
 	//mainLayout->setSpacing (0);
 	//mainLayout->setContentsMargins (0, 0, 0, 0);
@@ -359,16 +359,16 @@ void WelcomeView::initLayout()
 
 
 QWidget * WelcomeView::initRecent() {
-	QFrame * frame = new QFrame;
+	auto * frame = new QFrame;
 	frame->setObjectName("recentFrame");
-	QVBoxLayout * frameLayout = new QVBoxLayout;
+	auto * frameLayout = new QVBoxLayout;
 	zeroMargin(frameLayout);
 
-	QFrame * titleFrame = new QFrame;
+	auto * titleFrame = new QFrame;
 	titleFrame-> setObjectName("recentTitleFrame");
-	QHBoxLayout * titleFrameLayout = new QHBoxLayout;
+	auto * titleFrameLayout = new QHBoxLayout;
 	zeroMargin(titleFrameLayout);
-	QLabel * label = new QLabel(tr("Recent Sketches"));
+	auto * label = new QLabel(tr("Recent Sketches"));
 
 	label->setObjectName("recentTitle");
 	titleFrameLayout->addWidget(label);
@@ -386,8 +386,8 @@ QWidget * WelcomeView::initRecent() {
 	connect(m_recentLinksListWidget, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(blogItemClicked(QListWidgetItem *)));
 
 
-	QFrame * listsFrame = new QFrame;
-	QHBoxLayout * listsFrameLayout = new QHBoxLayout;
+	auto * listsFrame = new QFrame;
+	auto * listsFrameLayout = new QHBoxLayout;
 	zeroMargin(listsFrameLayout);
 	listsFrameLayout->addWidget(m_recentListWidget);
 	listsFrameLayout->addWidget(m_recentLinksListWidget);
@@ -437,8 +437,8 @@ QWidget * WelcomeView::initRecent() {
 }
 
 QWidget * WelcomeView::makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text) {
-	QFrame * rFrame = new QFrame;
-	QHBoxLayout * rFrameLayout = new QHBoxLayout;
+	auto * rFrame = new QFrame;
+	auto * rFrameLayout = new QHBoxLayout;
 
 	zeroMargin(rFrameLayout);
 
@@ -459,9 +459,9 @@ QWidget * WelcomeView::makeRecentItem(const QString & objectName, const QString 
 
 QWidget * WelcomeView::initShop() {
 
-	QFrame * frame = new QFrame();
+	auto * frame = new QFrame();
 	frame->setObjectName("shopFrame");
-	QVBoxLayout * frameLayout = new QVBoxLayout;
+	auto * frameLayout = new QVBoxLayout;
 	zeroMargin(frameLayout);
 
 	QWidget * headerFrame = createHeaderFrame( "Fab", tr("Fab"), "", "",  m_activeHeaderLabelColor, m_inactiveHeaderLabelColor, m_fabLabel, m_fabLabel);
@@ -486,25 +486,25 @@ QWidget * WelcomeView::initShop() {
 QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const QString & headline, const QString & description,
         const QString & url, const QString & urlText, const QString & urlText2, const QString & logoPath, const QString & footerLabelColor )
 {
-	QFrame * uberFrame = new QFrame();
+	auto * uberFrame = new QFrame();
 	uberFrame->setObjectName("shopUberFrame");
-	QVBoxLayout * shopUberFrameLayout = new QVBoxLayout;
+	auto * shopUberFrameLayout = new QVBoxLayout;
 	zeroMargin(shopUberFrameLayout);
 
-	QFrame* shopContentFrame = new QFrame();
+	auto* shopContentFrame = new QFrame();
 	shopContentFrame->setObjectName("shopContentFrame");
 
-	QHBoxLayout * contentFrameLayout = new QHBoxLayout;
+	auto * contentFrameLayout = new QHBoxLayout;
 	zeroMargin(contentFrameLayout);
 
-	QLabel * label = new QLabel(QString("<img src='%1' />").arg(imagePath));
+	auto * label = new QLabel(QString("<img src='%1' />").arg(imagePath));
 	label->setObjectName("shopContentImage");
 	contentFrameLayout->addWidget(label);
 
-	QFrame * contentTextFrame = new QFrame();
+	auto * contentTextFrame = new QFrame();
 	contentTextFrame->setObjectName("shopContentTextFrame");
 
-	QVBoxLayout * contentTextFrameLayout = new QVBoxLayout;
+	auto * contentTextFrameLayout = new QVBoxLayout;
 	zeroMargin(contentTextFrameLayout);
 
 	contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Fixed, QSizePolicy::Expanding));
@@ -536,19 +536,19 @@ QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const Q
 	shopUberFrameLayout->addWidget(shopContentFrame);
 	shopUberFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
-	QFrame * shopFooterFrame = new QFrame();
+	auto * shopFooterFrame = new QFrame();
 	shopFooterFrame->setObjectName("shopFooterFrame");
 
-	QHBoxLayout * footerFrameLayout = new QHBoxLayout;
+	auto * footerFrameLayout = new QHBoxLayout;
 	zeroMargin(footerFrameLayout);
 	footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-	QLabel * footerLabel = new QLabel(QString("<a href='%1' style='text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText2).arg(footerLabelColor));
+	auto * footerLabel = new QLabel(QString("<a href='%1' style='text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText2).arg(footerLabelColor));
 	footerLabel->setObjectName("shopLogoText");
 	footerFrameLayout->addWidget(footerLabel);
     connect(footerLabel, &QLabel::linkActivated, this, &WelcomeView::clickBlog);
 
-	QLabel * footerLogoLabel = new QLabel(tr("<a href='%1'><img src='%2'/></a>").arg(url).arg(logoPath));
+	auto * footerLogoLabel = new QLabel(tr("<a href='%1'><img src='%2'/></a>").arg(url).arg(logoPath));
 	footerLogoLabel->setObjectName("shopLogo");
 	footerFrameLayout->addWidget(footerLogoLabel);
     connect(footerLogoLabel, &QLabel::linkActivated, this, &WelcomeView::clickBlog);
@@ -562,9 +562,9 @@ QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const Q
 
 QWidget * WelcomeView::initBlog() {
 
-	QFrame * frame = new QFrame();
+	auto * frame = new QFrame();
 	frame->setObjectName("blogFrame");
-	QVBoxLayout * frameLayout = new QVBoxLayout;
+	auto * frameLayout = new QVBoxLayout;
 	zeroMargin(frameLayout);
 
 	QWidget * headerFrame = createHeaderFrame("Projects", tr("Projects"), "Blog", tr("Blog"), m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_projectsLabel, m_blogLabel);
@@ -591,10 +591,10 @@ QWidget * WelcomeView::initBlog() {
 
 QFrame * WelcomeView::createHeaderFrame (const QString & url1, const QString & urlText1, const QString & url2, const QString & urlText2, const QString & inactiveColor, const QString & activeColor,
         QLabel * & label1, QLabel * & label2) {
-	QFrame * titleFrame = new QFrame();
+	auto * titleFrame = new QFrame();
 	titleFrame->setObjectName("wsSwitchableFrameHeader");
 
-	QHBoxLayout * titleFrameLayout = new QHBoxLayout;
+	auto * titleFrameLayout = new QHBoxLayout;
 	zeroMargin(titleFrameLayout);
 
 	label1 = new QLabel(makeUrlText(url1, urlText1, inactiveColor));
@@ -603,7 +603,7 @@ QFrame * WelcomeView::createHeaderFrame (const QString & url1, const QString & u
 	connect(label1, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
 	if (!urlText2.isEmpty()) {
-		QLabel * titleSpace = new QLabel("|");
+		auto * titleSpace = new QLabel("|");
 		titleSpace->setObjectName("headerTitleSpace");
 		titleFrameLayout->addWidget(titleSpace);
 
@@ -619,11 +619,11 @@ QFrame * WelcomeView::createHeaderFrame (const QString & url1, const QString & u
 }
 
 BlogListWidget * WelcomeView::createBlogContentFrame(const QString & url, const QString & urlText, const QString & logoPath, const QString & footerLabelColor) {
-	QFrame * uberFrame = new QFrame;
-	QVBoxLayout * uberFrameLayout = new QVBoxLayout;
+	auto * uberFrame = new QFrame;
+	auto * uberFrameLayout = new QVBoxLayout;
 	zeroMargin(uberFrameLayout);
 
-	BlogListWidget * listWidget = new BlogListWidget;
+	auto * listWidget = new BlogListWidget;
 	listWidget->setObjectName("blogList");
 	listWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	listWidget->setItemDelegate(new BlogListDelegate(listWidget));
@@ -631,14 +631,14 @@ BlogListWidget * WelcomeView::createBlogContentFrame(const QString & url, const 
 
 	uberFrameLayout->addWidget(listWidget);
 
-	QFrame * footerFrame = new QFrame();
+	auto * footerFrame = new QFrame();
 	footerFrame->setObjectName("blogFooterFrame");
 
-	QHBoxLayout * footerFrameLayout = new QHBoxLayout;
+	auto * footerFrameLayout = new QHBoxLayout;
 	zeroMargin(footerFrameLayout);
 	footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-	QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='font-family:Droid Sans; text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText).arg(footerLabelColor));
+	auto * footerLabel = new QLabel(QString("<a href='%1'  style='font-family:Droid Sans; text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText).arg(footerLabelColor));
 	footerLabel->setObjectName("blogLogoText");
 	footerFrameLayout->addWidget(footerLabel);
 	connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
@@ -895,7 +895,7 @@ void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit, bool blog, con
 	if (doEmit) {
 		getNextBlogImage(0, blog);
 		foreach (QWidget *widget, QApplication::topLevelWidgets()) {
-			WelcomeView * other = widget->findChild<WelcomeView *>();
+			auto * other = widget->findChild<WelcomeView *>();
 			if (!other) continue;
 			if (other == this) continue;
 
@@ -910,7 +910,7 @@ void WelcomeView::getNextBlogImage(int ix, bool blog) {
 		QString image = listWidget->imageRequestList().at(i);
 		if (image.isEmpty()) continue;
 
-		QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+		auto * manager = new QNetworkAccessManager(this);
 		manager->setProperty("index", i);
 		manager->setProperty("blog", blog);
 		connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
@@ -972,7 +972,7 @@ QWidget * WelcomeView::initTip() {
 	tipLayout->addWidget(scrollArea);
 
 	tipLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Fixed, QSizePolicy::Fixed));
-	QFrame * footerFrame = new QFrame();
+	auto * footerFrame = new QFrame();
 	footerFrame->setObjectName("tipFooterFrame");
 
 	auto footerFrameLayout = new QHBoxLayout;

@@ -33,7 +33,7 @@ QHash <QString, QTextCharFormat *> Highlighter::m_styleFormats;
 
 Highlighter::Highlighter(QTextEdit * textEdit) : QSyntaxHighlighter(textEdit)
 {
-	m_syntaxer = NULL;
+	m_syntaxer = nullptr;
 }
 
 Highlighter::~Highlighter()
@@ -107,7 +107,7 @@ void Highlighter::highlightBlock(const QString &text)
 	setCurrentBlockState(0);
 	int startCommentIndex = -1;
 	int startStringIndex = -1;
-	const CommentInfo * currentCommentInfo = NULL;
+	const CommentInfo * currentCommentInfo = nullptr;
 	int pbs = previousBlockState();
 	if (pbs <= 0) {
 		m_syntaxer->matchCommentStart(text, 0, startCommentIndex, currentCommentInfo);
@@ -197,7 +197,7 @@ void Highlighter::highlightTerms(const QString & text) {
 		}
 
 		if (b > lastWordBreak) {
-			TrieLeaf * leaf = NULL;
+			TrieLeaf * leaf = nullptr;
 			if (m_syntaxer->matches(text.mid(lastWordBreak, b - lastWordBreak), leaf)) {
 				SyntaxerTrieLeaf * stl = dynamic_cast<SyntaxerTrieLeaf *>(leaf);
 				if (stl) {

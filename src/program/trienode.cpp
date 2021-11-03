@@ -85,7 +85,7 @@ void TrieNode::addStringAux(QChar c, QString & next, bool caseInsensitive, TrieL
 	}
 
 	if (!gotc) {
-		TrieNode * child = new TrieNode(c);
+		auto * child = new TrieNode(c);
 		m_children.append(child);
 		child->addString(next, caseInsensitive, leaf);
 	}

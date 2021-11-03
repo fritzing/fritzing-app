@@ -68,26 +68,26 @@ double PEUtils::unconvertUnits(double val)
 
 QWidget * PEUtils::makeConnectorForm(const QDomElement & connector, int index, QObject * slotHolder, bool alternating)
 {
-	QFrame * frame = new QFrame();
+	auto * frame = new QFrame();
 	if (alternating) {
 		frame->setObjectName(index % 2 == 0 ? "NewPartsEditorConnector0Frame" : "NewPartsEditorConnector1Frame");
 	}
 	else {
 		frame->setObjectName("NewPartsEditorConnectorFrame");
 	}
-	QVBoxLayout * mainLayout = new QVBoxLayout();
+	auto * mainLayout = new QVBoxLayout();
 	mainLayout->setContentsMargins(0, 0, 0, 0);
 	mainLayout->setContentsMargins(0, 0, 0, 0);
 	mainLayout->setSpacing(0);
 
-	QFrame * nameFrame = new QFrame();
-	QHBoxLayout * nameLayout = new QHBoxLayout();
+	auto * nameFrame = new QFrame();
+	auto * nameLayout = new QHBoxLayout();
 
-	QLabel * justLabel = new QLabel(QObject::tr("<b>Name:</b>"));
+	auto * justLabel = new QLabel(QObject::tr("<b>Name:</b>"));
 	justLabel->setObjectName("NewPartsEditorLabel");
 	nameLayout->addWidget(justLabel);
 
-	QLineEdit * nameEdit = new QLineEdit();
+	auto * nameEdit = new QLineEdit();
 	nameEdit->setText(connector.attribute("name"));
 	QObject::connect(nameEdit, SIGNAL(editingFinished()), slotHolder, SLOT(nameEntry()));
 	nameEdit->setObjectName("NewPartsEditorLineEdit");
@@ -99,7 +99,7 @@ QWidget * PEUtils::makeConnectorForm(const QDomElement & connector, int index, Q
 	nameLayout->addWidget(nameEdit);
 	nameLayout->addSpacing(Spacing);
 
-	HashRemoveButton * hashRemoveButton = new HashRemoveButton(nullptr, nullptr, nullptr);
+	auto * hashRemoveButton = new HashRemoveButton(nullptr, nullptr, nullptr);
 	hashRemoveButton->setProperty("index", index);
 	QObject::connect(hashRemoveButton, SIGNAL(clicked(HashRemoveButton *)), slotHolder, SLOT(removeConnector()));
 	nameLayout->addWidget(hashRemoveButton);
@@ -109,14 +109,14 @@ QWidget * PEUtils::makeConnectorForm(const QDomElement & connector, int index, Q
 
 
 
-	QFrame * descriptionFrame = new QFrame();
-	QHBoxLayout * descriptionLayout = new QHBoxLayout();
+	auto * descriptionFrame = new QFrame();
+	auto * descriptionLayout = new QHBoxLayout();
 
 	justLabel = new QLabel(QObject::tr("<b>Description:</b>"));
 	justLabel->setObjectName("NewPartsEditorLabel");
 	descriptionLayout->addWidget(justLabel);
 
-	QLineEdit * descriptionEdit = new QLineEdit();
+	auto * descriptionEdit = new QLineEdit();
 	QDomElement description = connector.firstChildElement("description");
 	descriptionEdit->setText(description.text());
 	QObject::connect(descriptionEdit, SIGNAL(editingFinished()), slotHolder, SLOT(descriptionEntry()));
@@ -132,8 +132,8 @@ QWidget * PEUtils::makeConnectorForm(const QDomElement & connector, int index, Q
 
 
 
-	QFrame * idFrame = new QFrame();
-	QHBoxLayout * idLayout = new QHBoxLayout();
+	auto * idFrame = new QFrame();
+	auto * idLayout = new QHBoxLayout();
 
 	justLabel = new QLabel(QObject::tr("<b>id:</b>"));
 	justLabel->setObjectName("NewPartsEditorLabel");
@@ -150,7 +150,7 @@ QWidget * PEUtils::makeConnectorForm(const QDomElement & connector, int index, Q
 	justLabel->setObjectName("NewPartsEditorLabel");
 	idLayout->addWidget(justLabel);
 
-	QRadioButton * radioButton = new QRadioButton(MaleSymbolString);
+	auto * radioButton = new QRadioButton(MaleSymbolString);
 	QObject::connect(radioButton, SIGNAL(clicked()), slotHolder, SLOT(typeEntry()));
 	radioButton->setObjectName("NewPartsEditorRadio");
 	if (ctype == Connector::Male) radioButton->setChecked(true);
@@ -198,7 +198,7 @@ bool PEUtils::fillInMetadata(int senderIndex, QWidget * parent, ConnectorMetadat
 
 		QString type = widget->property("type").toString();
 		if (type == "name") {
-			QLineEdit * lineEdit = qobject_cast<QLineEdit *>(widget);
+			auto * lineEdit = qobject_cast<QLineEdit *>(widget);
 			if (lineEdit == nullptr) continue;
 
 			cmd.connectorName = lineEdit->text();
@@ -206,14 +206,14 @@ bool PEUtils::fillInMetadata(int senderIndex, QWidget * parent, ConnectorMetadat
 			result = true;
 		}
 		else if (type == "radio") {
-			QRadioButton * radioButton = qobject_cast<QRadioButton *>(widget);
+			auto * radioButton = qobject_cast<QRadioButton *>(widget);
 			if (radioButton == nullptr) continue;
 			if (!radioButton->isChecked()) continue;
 
 			cmd.connectorType = (Connector::ConnectorType) radioButton->property("value").toInt();
 		}
 		else if (type == "description") {
-			QLineEdit * lineEdit = qobject_cast<QLineEdit *>(widget);
+			auto * lineEdit = qobject_cast<QLineEdit *>(widget);
 			if (lineEdit == nullptr) continue;
 
 			cmd.connectorDescription = lineEdit->text();

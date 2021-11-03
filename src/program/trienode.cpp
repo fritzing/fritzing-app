@@ -37,7 +37,7 @@ TrieLeaf::~TrieLeaf()
 TrieNode::TrieNode(QChar c)
 {
 	m_char = c;
-	m_leafData = NULL;
+	m_leafData = nullptr;
 	m_isLeaf = false;
 	m_caseInsensitive = false;
 }

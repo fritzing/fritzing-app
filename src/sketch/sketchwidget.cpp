@@ -5553,6 +5553,21 @@ void SketchWidget::wireSplitSlot(Wire* wire, QPointF newPos, QPointF oldPos, con
 
 	long fromID = wire->id();
 
+	if (m_alignToGrid) {
+		alignLoc(newPos, newPos, QPointF(0,0), QPointF(0,0));
+	} else {
+		//We need to place the bendpoint on the original wire
+		//The distance between the point clicked and the line is not goint to be very big.
+		//Thus, we can simplify the calculation
+		double dist = pow(newPos.x() - (oldPos.x()+oldLine.x1()), 2) + pow(newPos.y() - (oldPos.y()+oldLine.y1()), 2);
+		dist = pow(dist, 0.5);
+		double distWire = pow(oldLine.x1() - oldLine.x2(), 2) + pow(oldLine.y1() - oldLine.y2(), 2);
+		distWire = pow(distWire, 0.5);
+		if (dist > distWire) dist = distWire;
+		QPointF point = oldLine.pointAt(dist/distWire);
+		newPos.setX(point.x() + oldPos.x());
+		newPos.setY(point.y() + oldPos.y());
+	}
 	QLineF newLine(oldLine.p1(), newPos - oldPos);
 
 	long newID = ItemBase::getNextID();

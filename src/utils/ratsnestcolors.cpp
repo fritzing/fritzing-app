@@ -94,7 +94,7 @@ RatsnestColors::RatsnestColors(const QDomElement & view)
 	m_index = 0;
 	QDomElement color = view.firstChildElement("color");
 	while (!color.isNull()) {
-		RatsnestColor * ratsnestColor = new RatsnestColor(color);
+		auto * ratsnestColor = new RatsnestColor(color);
 		m_ratsnestColorHash.insert(ratsnestColor->m_name, ratsnestColor);
 		m_ratsnestColorList.append(ratsnestColor);
 		foreach (QString name, ratsnestColor->m_connectorNames) {
@@ -138,7 +138,7 @@ void RatsnestColors::initNames() {
 
 	QDomElement view = root.firstChildElement("view");
 	while (!view.isNull()) {
-		RatsnestColors * ratsnestColors = new RatsnestColors(view);
+		auto * ratsnestColors = new RatsnestColors(view);
 		m_viewList.insert(ratsnestColors->m_viewID, ratsnestColors);
 		view = view.nextSiblingElement("view");
 	}

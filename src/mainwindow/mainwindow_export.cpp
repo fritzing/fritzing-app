@@ -1137,6 +1137,7 @@ void MainWindow::exportSvg(double res, bool selectedItems, bool flatten, const Q
 	QString svg = m_currentGraphicsView->renderToSVG(renderThing, nullptr, viewLayerIDs);
 	if (svg.isEmpty()) {
 		// tell the user something reasonable
+		delete fileProgressDialog;
 		return;
 	}
 

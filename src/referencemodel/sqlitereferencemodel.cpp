@@ -261,8 +261,8 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 			}
 		}
 
-		ModelPart * modelPart = new ModelPart();
-		ModelPartShared * modelPartShared = new ModelPartShared();
+		auto * modelPart = new ModelPart();
+		auto * modelPartShared = new ModelPartShared();
 		modelPart->setModelPartShared(modelPartShared);
 
 		modelPartShared->setModuleID(moduleID);
@@ -305,7 +305,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 
 	while (query.next()) {
 		int ix = 0;
-		ViewImage * viewImage = new ViewImage(ViewLayer::BreadboardView);
+		auto * viewImage = new ViewImage(ViewLayer::BreadboardView);
 		viewImage->viewID = (ViewLayer::ViewID) query.value(ix++).toInt();
 		viewImage->image = query.value(ix++).toString();
 		viewImage->layers = query.value(ix++).toULongLong();
@@ -387,14 +387,14 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 		qulonglong dbid = query.value(ix++).toULongLong();
 		ModelPart * modelPart = parts.at(dbid);
 		if (modelPart) {
-			ConnectorShared * connectorShared = new ConnectorShared();
+			auto * connectorShared = new ConnectorShared();
 			connectorShared->setConnectorType(type);
 			connectorShared->setDescription(description);
 			connectorShared->setReplacedby(replacedby);
 			connectorShared->setSharedName(name);
 			connectorShared->setId(connectorid);
 
-			Connector * connector = new Connector(connectorShared, modelPart);
+			auto * connector = new Connector(connectorShared, modelPart);
 			modelPart->addConnector(connector);
 
 			connectors[cid] = connector;
@@ -448,7 +448,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 		qulonglong dbid = query.value(ix++).toULongLong();
 		ModelPart * modelPart = parts.at(dbid);
 		if (modelPart) {
-			BusShared * busShared = new BusShared(name);
+			auto * busShared = new BusShared(name);
 			ModelPart * modelPart = parts.at(dbid);
 			modelPart->modelPartShared()->insertBus(busShared);
 

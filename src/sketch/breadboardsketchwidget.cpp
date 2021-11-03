@@ -215,7 +215,7 @@ void BreadboardSketchWidget::addDefaultParts() {
 	ViewGeometry viewGeometry;
 	viewGeometry.setLoc(QPointF(0, 0));
 	ModelPart * modelPart = referenceModel()->retrieveModelPart(ModuleIDNames::FullPlusBreadboardModuleIDName);
-	m_addedDefaultPart = addItem(modelPart, defaultViewLayerPlacement(modelPart), BaseCommand::CrossView, viewGeometry, newID, -1, NULL);
+	m_addedDefaultPart = addItem(modelPart, defaultViewLayerPlacement(modelPart), BaseCommand::CrossView, viewGeometry, newID, -1, nullptr);
 	m_addDefaultParts = true;
 	// have to put this off until later, because positioning the item doesn't work correctly until the view is visible
 }
@@ -259,7 +259,7 @@ void BreadboardSketchWidget::colorWiresByLength(bool colorByLength) {
 
 	foreach (QGraphicsItem * item, scene()->items()) {
 		Wire * wire = dynamic_cast<Wire *>(item);
-		if (wire == NULL) continue;
+		if (wire == nullptr) continue;
 		wire->colorByLength(colorByLength);
 	}
 }

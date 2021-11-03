@@ -60,14 +60,14 @@ static QIcon EmptyIcon;
 PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, HtmlInfoView *infoView, WaitPushUndoStack *undoStack, BinManager* manager) :
 	QFrame(manager)
 {
-	m_binLabel = NULL;
-	m_monoIcon = m_icon = NULL;
-	m_searchLineEdit = NULL;
+	m_binLabel = nullptr;
+	m_monoIcon = m_icon = nullptr;
+	m_searchLineEdit = nullptr;
 	m_saveQuietly = false;
 	m_fastLoaded = false;
-	m_model = NULL;
+	m_model = nullptr;
 
-	m_loadingProgressDialog = NULL;
+	m_loadingProgressDialog = nullptr;
 
 	setAcceptDrops(true);
 	setAllowsChanges(true);
@@ -97,7 +97,7 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 	vbl->setContentsMargins(3, 3, 3, 3);
 	vbl->setSpacing(0);
 
-	m_header = NULL;
+	m_header = nullptr;
 	setupHeader();
 	if (m_header) {
 		vbl->addWidget(m_header);
@@ -141,7 +141,7 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 PartsBinPaletteWidget::~PartsBinPaletteWidget() {
 	if (m_canDeleteModel && m_model) {
 		delete m_model;
-		m_model = NULL;
+		m_model = nullptr;
 	}
 
 	if (m_icon) delete m_icon;
@@ -174,7 +174,7 @@ void PartsBinPaletteWidget::setTitle(const QString &title) {
 void PartsBinPaletteWidget::setupHeader()
 {
 	QMenu * combinedMenu = m_manager->combinedMenu();
-	if (combinedMenu == NULL) return;
+	if (combinedMenu == nullptr) return;
 
 	m_combinedBinMenuButton = newToolButton("partsBinCombinedMenuButton", ___emptyString___, ___emptyString___);
 	m_combinedBinMenuButton->setMenu(combinedMenu);
@@ -364,7 +364,7 @@ void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilen
 }
 
 void PartsBinPaletteWidget::addPart(ModelPart *modelPart, int position) {
-	if (m_model == NULL) {
+	if (m_model == nullptr) {
 		return;
 	}
 
@@ -454,14 +454,14 @@ bool PartsBinPaletteWidget::loadBundledAux(QDir &unzipDir, QList<ModelPart*> mps
 bool PartsBinPaletteWidget::open(QString fileName, QWidget * progressTarget, bool fastLoad) {
 	QFile file(fileName);
 	if (!file.exists()) {
-		QMessageBox::warning(NULL, tr("Fritzing"),
+		QMessageBox::warning(nullptr, tr("Fritzing"),
 		                     tr("Cannot find file %1.")
 		                     .arg(fileName));
 		return false;
 	}
 
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
-		QMessageBox::warning(NULL, tr("Fritzing"),
+		QMessageBox::warning(nullptr, tr("Fritzing"),
 		                     tr("Cannot read file %1:\n%2.")
 		                     .arg(fileName)
 		                     .arg(file.errorString()));
@@ -500,7 +500,7 @@ void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarg
 
 	m_fastLoaded = false;
 	PaletteModel * paletteBinModel = PaletteBinModels.value(filename);
-	if (paletteBinModel == NULL) {
+	if (paletteBinModel == nullptr) {
 		paletteBinModel = new PaletteModel(true, false);
 		//DebugDialog::debug("after palette model");
 
@@ -529,7 +529,7 @@ void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarg
 		//DebugDialog::debug(QString("done loading bin '%1'").arg(name));
 
 		if (!result) {
-			QMessageBox::warning(NULL, QObject::tr("Fritzing"), QObject::tr("Fritzing cannot load the parts bin"));
+			QMessageBox::warning(nullptr, QObject::tr("Fritzing"), QObject::tr("Fritzing cannot load the parts bin"));
 		}
 		else {
 			m_fileName = filename;
@@ -547,7 +547,7 @@ void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarg
 				m_loadingProgressDialog->close();
 				delete m_loadingProgressDialog;
 			}
-			m_loadingProgressDialog = NULL;
+			m_loadingProgressDialog = nullptr;
 		}
 	}
 	else {
@@ -824,7 +824,7 @@ void PartsBinPaletteWidget::setSaveQuietly(bool saveQuietly) {
 }
 
 bool PartsBinPaletteWidget::currentViewIsIconView() {
-	if (m_currentView == NULL) return true;
+	if (m_currentView == nullptr) return true;
 
 	return (m_currentView == m_iconView);
 }
@@ -858,7 +858,7 @@ QMenu * PartsBinPaletteWidget::partContextMenu()
 QMenu * PartsBinPaletteWidget::binContextMenu()
 {
 	QMenu * menu = m_manager->binContextMenu(this);
-	if (menu == NULL) return NULL;
+	if (menu == nullptr) return nullptr;
 
 	auto * newMenu = new QMenu();
 	foreach (QAction * action, menu->actions()) {
@@ -867,7 +867,7 @@ QMenu * PartsBinPaletteWidget::binContextMenu()
 
 	// TODO: need to enable/disable actions based on this bin
 
-	ModelPartSharedRoot * root = (m_model == NULL) ? NULL : m_model->rootModelPartShared();
+	ModelPartSharedRoot * root = (m_model == nullptr) ? nullptr : m_model->rootModelPartShared();
 	if (root) {
 		QString iconFilename = root->icon();
 		if (iconFilename.compare(CustomIconName) == 0 || isCustomSvg(iconFilename)) {
@@ -958,7 +958,7 @@ void PartsBinPaletteWidget::copyFilesToContrib(ModelPart * mp, QWidget * origina
 }
 
 ModelPart * PartsBinPaletteWidget::root() {
-	if (m_model == NULL) return NULL;
+	if (m_model == nullptr) return nullptr;
 
 	return m_model->root();
 }
@@ -974,9 +974,9 @@ void PartsBinPaletteWidget::reloadPart(const QString & moduleID) {
 
 QList<ModelPart *> PartsBinPaletteWidget::getAllParts() {
 	QList<ModelPart*> empty;
-	if (m_model == NULL) return empty;
+	if (m_model == nullptr) return empty;
 
-	if (m_model->root() == NULL) return empty;
+	if (m_model->root() == nullptr) return empty;
 
 	return m_model->root()->getAllParts();
 }

@@ -78,7 +78,7 @@ DeleteDialog::DeleteDialog(const QString & title, const QString & text, bool del
 
 	vlayout->addWidget(frame);
 
-	m_checkBox = NULL;
+	m_checkBox = nullptr;
 	if (deleteFileCheckBox) {
 		m_checkBox = new QCheckBox(tr("Also delete the file"));
 		vlayout->addSpacing(7);
@@ -103,14 +103,14 @@ void DeleteDialog::buttonClicked(QAbstractButton * button) {
 }
 
 bool DeleteDialog::deleteFileChecked() {
-	if (m_checkBox == NULL) return false;
+	if (m_checkBox == nullptr) return false;
 
 	return m_checkBox->isChecked();
 }
 
 /////////////////////////////////////////////
 
-QIcon * AsteriskIcon = NULL;
+QIcon * AsteriskIcon = nullptr;
 
 ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 {
@@ -118,7 +118,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 		UnableToProgramMessage = tr("While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.");
 	}
 
-	m_tabWidget = NULL;
+	m_tabWidget = nullptr;
 	while (parent) {
 		QTabWidget * tabWidget = qobject_cast<QTabWidget *>(parent);
 		if (tabWidget) {
@@ -128,7 +128,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 		parent = parent->parentWidget();
 	}
 
-	if (AsteriskIcon == NULL) {
+	if (AsteriskIcon == nullptr) {
 		AsteriskIcon = new QIcon(":/resources/images/icons/asterisk.png");
 	}
 
@@ -147,7 +147,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	editLayout->setContentsMargins(0, 0, 0, 0);
 	editLayout->setSpacing(0);
 
-	while (m_programWindow == NULL) {
+	while (m_programWindow == nullptr) {
 		m_programWindow = qobject_cast<ProgramWindow *>(parent);
 		parent = parent->parentWidget();
 	}
@@ -487,7 +487,7 @@ bool ProgramTab::loadProgramFile(const QString & fileName, const QString & altFi
 			if (!file.open(QFile::ReadOnly)) {
 				QFileInfo fileInfo(fileName);
 				QString fn = FolderUtils::getOpenFileName(
-				                 NULL,
+				                 nullptr,
 				                 tr("Fritzing is unable to find '%1', please locate it").arg(fileInfo.fileName()),
 				                 FolderUtils::openSaveFolder(),
 				                 tr("Code (*.%1)").arg(fileInfo.suffix())
@@ -612,7 +612,7 @@ void ProgramTab::deleteTab() {
 		DeleteDialog deleteDialog(tr("Remove \"%1\"?").arg(name),
 		                          tr("Are you sure you want to remove \"%1\" from the sketch?").arg(name),
 		                          !FolderUtils::isEmptyFileName(m_filename, "Untitled"),
-		                          NULL, QFlags<Qt::WindowType>());
+		                          nullptr, QFlags<Qt::WindowType>());
 		int reply = deleteDialog.exec();
 		if (reply != QMessageBox::Yes) {
 			return;
@@ -652,19 +652,19 @@ void ProgramTab::setFilename(const QString & name) {
 }
 
 const QStringList & ProgramTab::extensions() {
-	if (m_highlighter == NULL) return ___emptyStringList___;
+	if (m_highlighter == nullptr) return ___emptyStringList___;
 
 	Syntaxer * syntaxer = m_highlighter->syntaxer();
-	if (syntaxer == NULL) return ___emptyStringList___;
+	if (syntaxer == nullptr) return ___emptyStringList___;
 
 	return syntaxer->extensions();
 }
 
 const QString & ProgramTab::extensionString() {
-	if (m_highlighter == NULL) return ___emptyString___;
+	if (m_highlighter == nullptr) return ___emptyString___;
 
 	Syntaxer * syntaxer = m_highlighter->syntaxer();
-	if (syntaxer == NULL) return ___emptyString___;
+	if (syntaxer == nullptr) return ___emptyString___;
 
 	return syntaxer->extensionString();
 }
@@ -726,7 +726,7 @@ bool ProgramTab::save(const QString & filename) {
 }
 
 void ProgramTab::serialMonitor() {
-	if (m_monitorWindow == NULL) {
+	if (m_monitorWindow == nullptr) {
 		m_monitorWindow = new ConsoleWindow(this);
 	}
 	m_monitorWindow->show();
@@ -860,7 +860,7 @@ Platform * ProgramTab::platform() {
 }
 
 void ProgramTab::enableMonitorButton() {
-	if (m_monitorButton == NULL) return;
+	if (m_monitorButton == nullptr) return;
 
 	bool enabled = true;
 	if (m_portComboBox->count() == 0) {
@@ -871,7 +871,7 @@ void ProgramTab::enableMonitorButton() {
 }
 
 void ProgramTab::enableProgramButton() {
-	if (m_programButton == NULL) return;
+	if (m_programButton == nullptr) return;
 
 	bool enabled = true;
 	// always enable, to show helpful error message if no programmer is set up

@@ -47,16 +47,16 @@ PEConnectorsView::PEConnectorsView(QWidget * parent) : QFrame(parent)
 	this->setStyleSheet(styleSheet.readAll());
 	}
 	*/
-	QVBoxLayout *mainLayout = new QVBoxLayout();
+	auto *mainLayout = new QVBoxLayout();
 	mainLayout->setSizeConstraint( QLayout::SetMinAndMaxSize );
 
-	QLabel *explanation = new QLabel(tr("This is where you edit the connector metadata for the part"));
+	auto *explanation = new QLabel(tr("This is where you edit the connector metadata for the part"));
 	mainLayout->addWidget(explanation);
 
-	QFrame * numberFrame = new QFrame();
-	QHBoxLayout * numberLayout = new QHBoxLayout();
+	auto * numberFrame = new QFrame();
+	auto * numberLayout = new QHBoxLayout();
 
-	QLabel * label = new QLabel(tr("number of connectors:"));
+	auto * label = new QLabel(tr("number of connectors:"));
 	numberLayout->addWidget(label);
 
 	m_numberEdit = new QLineEdit();
@@ -69,15 +69,15 @@ PEConnectorsView::PEConnectorsView(QWidget * parent) : QFrame(parent)
 	numberFrame->setLayout(numberLayout);
 	mainLayout->addWidget(numberFrame);
 
-	QFrame * typeFrame = new QFrame();
-	QHBoxLayout * typeLayout = new QHBoxLayout();
+	auto * typeFrame = new QFrame();
+	auto * typeLayout = new QHBoxLayout();
 
 	label = new QLabel(QObject::tr("Set all to:"));
 	label->setObjectName("NewPartsEditorLabel");
 	typeLayout->addWidget(label);
 
 	m_radios.clear();
-	QRadioButton * radioButton = new QRadioButton(MaleSymbolString);
+	auto * radioButton = new QRadioButton(MaleSymbolString);
 	QObject::connect(radioButton, SIGNAL(clicked()), this, SLOT(allTypeEntry()));
 	radioButton->setObjectName("NewPartsEditorRadio");
 	radioButton->setProperty("value", Connector::Male);
@@ -102,8 +102,8 @@ PEConnectorsView::PEConnectorsView(QWidget * parent) : QFrame(parent)
 	typeFrame->setLayout(typeLayout);
 	mainLayout->addWidget(typeFrame);
 
-	QFrame * smdFrame = new QFrame();
-	QHBoxLayout * smdLayout = new QHBoxLayout();
+	auto * smdFrame = new QFrame();
+	auto * smdLayout = new QHBoxLayout();
 
 	m_tht = new QRadioButton(tr("Through-hole"));
 	QObject::connect(m_tht, SIGNAL(clicked()), this, SLOT(smdEntry()));
@@ -156,7 +156,7 @@ void PEConnectorsView::initConnectors(QList<QDomElement> * connectorList)
 
 	m_scrollFrame = new QFrame(this);
 	m_scrollFrame->setObjectName("NewPartsEditorConnectors");
-	QVBoxLayout *scrollLayout = new QVBoxLayout();
+	auto *scrollLayout = new QVBoxLayout();
 
 	int ix = 0;
 	foreach (QDomElement connector, *connectorList) {
@@ -171,7 +171,7 @@ void PEConnectorsView::initConnectors(QList<QDomElement> * connectorList)
 }
 
 void PEConnectorsView::nameEntry() {
-	QLineEdit * lineEdit = qobject_cast<QLineEdit *>(sender());
+	auto * lineEdit = qobject_cast<QLineEdit *>(sender());
 	if (lineEdit && lineEdit->isModified()) {
 		changeConnector();
 		lineEdit->setModified(false);
@@ -183,7 +183,7 @@ void PEConnectorsView::typeEntry() {
 }
 
 void PEConnectorsView::descriptionEntry() {
-	QLineEdit * lineEdit = qobject_cast<QLineEdit *>(sender());
+	auto * lineEdit = qobject_cast<QLineEdit *>(sender());
 	if (lineEdit && lineEdit->isModified()) {
 		changeConnector();
 		lineEdit->setModified(false);
@@ -193,7 +193,7 @@ void PEConnectorsView::descriptionEntry() {
 void PEConnectorsView::connectorCountEntry() {
 	if (!m_mutex.tryLock(1)) return;            // need the mutex because multiple editingFinished() signals can be triggered more-or-less at once
 
-	QLineEdit * lineEdit = qobject_cast<QLineEdit *>(sender());
+	auto * lineEdit = qobject_cast<QLineEdit *>(sender());
 	if (lineEdit && lineEdit->isModified()) {
 		int newCount = lineEdit->text().toInt();
 		if (newCount != m_connectorCount) {
@@ -231,7 +231,7 @@ void PEConnectorsView::changeConnector() {
 }
 
 void PEConnectorsView::allTypeEntry() {
-	QRadioButton * radio = qobject_cast<QRadioButton *>(sender());
+	auto * radio = qobject_cast<QRadioButton *>(sender());
 	if (radio == nullptr) return;
 
 	bool ok;
@@ -245,7 +245,7 @@ void PEConnectorsView::allTypeEntry() {
 
 void PEConnectorsView::smdEntry()
 {
-	QRadioButton * radio = qobject_cast<QRadioButton *>(sender());
+	auto * radio = qobject_cast<QRadioButton *>(sender());
 	if (radio == nullptr) return;
 
 	emit smdChanged(radio == m_smd ? "smd" : "tht");

@@ -3043,7 +3043,7 @@ void PEMainWindow::deleteBusConnection() {
 
 void PEMainWindow::newWireSlot(Wire * wire) {
 	wire->setDisplayBendpointCursor(false);
-	disconnect(wire, 0, m_viewThings.value(wire->viewID())->sketchWidget, 0);
+	disconnect(wire, nullptr, m_viewThings.value(wire->viewID())->sketchWidget, nullptr);
 	connect(wire, SIGNAL(wireChangedSignal(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)	),
 	        this, SLOT(wireChangedSlot(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
 	        Qt::DirectConnection);		// DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue

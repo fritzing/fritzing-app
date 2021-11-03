@@ -118,7 +118,7 @@ void StackTabBar::showContextMenu(const QPoint &point)
 
 	int tabIndex = this->tabAt(point);
 	auto* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(tabIndex));
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	setCurrentIndex(tabIndex);
 
@@ -147,7 +147,7 @@ void StackTabBar::paintEvent(QPaintEvent *event)
 }
 
 void StackTabBar::setIndex() {
-	if (sender() == NULL) return;
+	if (sender() == nullptr) return;
 
 	bool ok = false;
 	int index = sender()->property("index").toInt(&ok);

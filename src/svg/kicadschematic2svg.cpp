@@ -142,7 +142,6 @@ QString KicadSchematic2Svg::convert(const QString & filename, const QString & de
 		}
 
 		if (fline.startsWith("$ENDFPLIST")) {
-			inFPLIST = false;
 			break;
 		}
 

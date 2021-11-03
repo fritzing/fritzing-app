@@ -98,7 +98,7 @@ void PEGraphicsItem::wheelEvent(QGraphicsSceneWheelEvent * event) {
 
 	QList<PEGraphicsItem *> items;
 	foreach (QGraphicsItem * item, scene()->items(event->scenePos())) {
-		PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
+		auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 		if (pegi) items.append(pegi);
 	}
 
@@ -148,7 +148,7 @@ void PEGraphicsItem::setHighlighted(bool highlighted) {
 		m_highlighted = true;
 		setOpacity(0.4);
 		foreach (QGraphicsItem * item, scene()->items()) {
-			PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
+			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 			if (pegi == nullptr) continue;
 			if (pegi == this) continue;
 			if (!pegi->highlighted()) continue;
@@ -248,7 +248,7 @@ void PEGraphicsItem::showMarquee(bool show) {
 	if (show) {
 		m_showMarquee = true;
 		foreach (QGraphicsItem * item, scene()->items()) {
-			PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
+			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 			if (pegi == nullptr) continue;
 			if (pegi == this) continue;
 			if (!pegi->showingMarquee()) continue;

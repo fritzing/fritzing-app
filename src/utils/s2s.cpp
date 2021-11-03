@@ -580,7 +580,7 @@ QList<ConnectorLocation *> S2S::initConnectors(const QDomElement & root, const Q
 			message(tr("Missing connector %1 in '%2' schematic of '%3'").arg(connector.attribute("id")).arg(svgFilename).arg(fzpFilename));
 		}
 		else {
-			ConnectorLocation * connectorLocation = new ConnectorLocation;
+			auto * connectorLocation = new ConnectorLocation;
 			connectorLocation->id = -1;
 			connectorLocation->hidden = false;
 			connectorLocation->displayPinNumber = false;

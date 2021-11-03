@@ -60,16 +60,16 @@ DeleteDialog::DeleteDialog(const QString & title, const QString & text, bool del
 	this->setWindowTitle(title);
 	this->setWindowFlags(Qt::MSWindowsFixedSizeDialogHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint |  Qt::WindowCloseButtonHint);
 
-	QVBoxLayout * vlayout = new QVBoxLayout(this);
+	auto * vlayout = new QVBoxLayout(this);
 
-	QFrame * frame  = new QFrame(this);
-	QHBoxLayout * hlayout = new QHBoxLayout(frame);
+	auto * frame  = new QFrame(this);
+	auto * hlayout = new QHBoxLayout(frame);
 
-	QLabel * iconLabel = new QLabel;
+	auto * iconLabel = new QLabel;
 	iconLabel->setPixmap(QMessageBox::standardIcon(QMessageBox::Warning));
 	iconLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
-	QLabel * label = new QLabel;
+	auto * label = new QLabel;
 	label->setWordWrap(true);
 	label->setText(text);
 
@@ -120,7 +120,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 
 	m_tabWidget = nullptr;
 	while (parent) {
-		QTabWidget * tabWidget = qobject_cast<QTabWidget *>(parent);
+		auto * tabWidget = qobject_cast<QTabWidget *>(parent);
 		if (tabWidget) {
 			m_tabWidget = tabWidget;
 			break;
@@ -143,7 +143,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	m_filename = filename;
 
 	m_updateEnabled = false;
-	QGridLayout *editLayout = new QGridLayout(this);
+	auto *editLayout = new QGridLayout(this);
 	editLayout->setContentsMargins(0, 0, 0, 0);
 	editLayout->setSpacing(0);
 
@@ -169,7 +169,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	connect(m_textEdit, SIGNAL(copyAvailable(bool)), this, SLOT(enableCut(bool))); // Reuse copy signal for cut
 	m_highlighter = new Highlighter(m_textEdit);
 
-	QSplitter * splitter = new QSplitter;
+	auto * splitter = new QSplitter;
 	splitter->setObjectName("splitter");
 	splitter->setOrientation(Qt::Vertical);
 	editLayout->addWidget(splitter, 1, 0);
@@ -192,23 +192,23 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	m_toolbar->setObjectName("sketchAreaToolbar");
 	m_toolbar->setFixedHeight(66);
 
-	QFrame *leftButtons = new QFrame(m_toolbar);
+	auto *leftButtons = new QFrame(m_toolbar);
 	m_leftButtonsContainer = new QHBoxLayout(leftButtons);
 	m_leftButtonsContainer->setContentsMargins(0, 0, 0, 0);
 	m_leftButtonsContainer->setSpacing(0);
 
-	QFrame *middleButtons = new QFrame(m_toolbar);
+	auto *middleButtons = new QFrame(m_toolbar);
 	middleButtons->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::MinimumExpanding);
 	m_middleButtonsContainer = new QHBoxLayout(middleButtons);
 	m_middleButtonsContainer->setSpacing(0);
 	m_middleButtonsContainer->setContentsMargins(0, 0, 0, 0);
 
-	QFrame *rightButtons = new QFrame(m_toolbar);
+	auto *rightButtons = new QFrame(m_toolbar);
 	m_rightButtonsContainer = new QHBoxLayout(rightButtons);
 	m_rightButtonsContainer->setContentsMargins(0, 0, 0, 0);
 	m_rightButtonsContainer->setSpacing(0);
 
-	QHBoxLayout *toolbarLayout = new QHBoxLayout(m_toolbar);
+	auto *toolbarLayout = new QHBoxLayout(m_toolbar);
 	toolbarLayout->setContentsMargins(0, 0, 0, 0);
 	toolbarLayout->setSpacing(0);
 	toolbarLayout->addWidget(leftButtons);
@@ -256,13 +256,13 @@ void ProgramTab::initMenus() {
 
 	// Platform selection
 
-	QFrame *platformSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+	auto *platformSelector = new QFrame(m_middleButtonsContainer->parentWidget());
 	platformSelector->setObjectName("toolbarSelector");
-	QVBoxLayout *platformSelectionContainer = new QVBoxLayout(platformSelector);
+	auto *platformSelectionContainer = new QVBoxLayout(platformSelector);
 	platformSelectionContainer->setSpacing(0);
 	platformSelectionContainer->setContentsMargins(0, 0, 0, 0);
 
-	QLabel * platformLabel = new QLabel(tr("Platform"), this);
+	auto * platformLabel = new QLabel(tr("Platform"), this);
 	m_platformComboBox = new QComboBox();
 	m_platformComboBox->setObjectName("toolBarComboBox");
 	m_platformComboBox->setEditable(false);
@@ -280,13 +280,13 @@ void ProgramTab::initMenus() {
 
 	// Board selection
 
-	QFrame *boardSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+	auto *boardSelector = new QFrame(m_middleButtonsContainer->parentWidget());
 	boardSelector->setObjectName("toolbarSelector");
-	QVBoxLayout *boardSelectionContainer = new QVBoxLayout(boardSelector);
+	auto *boardSelectionContainer = new QVBoxLayout(boardSelector);
 	boardSelectionContainer->setSpacing(0);
 	boardSelectionContainer->setContentsMargins(0, 0, 0, 0);
 
-	QLabel * boardLabel = new QLabel(tr("Board"), this);
+	auto * boardLabel = new QLabel(tr("Board"), this);
 	m_boardComboBox = new QComboBox();
 	m_boardComboBox->setObjectName("toolBarComboBox");
 	m_boardComboBox->setEditable(false);
@@ -298,13 +298,13 @@ void ProgramTab::initMenus() {
 
 	// Port selection
 
-	QFrame *portSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+	auto *portSelector = new QFrame(m_middleButtonsContainer->parentWidget());
 	portSelector->setObjectName("toolbarSelector");
-	QVBoxLayout *portSelectionContainer = new QVBoxLayout(portSelector);
+	auto *portSelectionContainer = new QVBoxLayout(portSelector);
 	portSelectionContainer->setSpacing(0);
 	portSelectionContainer->setContentsMargins(0, 0, 0, 0);
 
-	QLabel * portLabel = new QLabel(tr("Port"), this);
+	auto * portLabel = new QLabel(tr("Port"), this);
 	m_portComboBox = new SerialPortComboBox();
 	m_portComboBox->setObjectName("toolBarComboBox");
 	m_portComboBox->setEditable(false);

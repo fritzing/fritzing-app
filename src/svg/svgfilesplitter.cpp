@@ -636,7 +636,7 @@ void SvgFileSplitter::normalizeCommandSlot(QChar command, bool relative, QList<d
 
 	Q_UNUSED(relative);			// just normalizing here, so relative is not used
 
-	PathUserData * pathUserData = (PathUserData *) userData;
+	auto * pathUserData = (PathUserData *) userData;
 
 	double d;
 	pathUserData->string.append(command);
@@ -713,7 +713,7 @@ void SvgFileSplitter::painterPathCommandSlot(QChar command, bool relative, QList
 	Q_UNUSED(relative);			// just normalizing here, so relative is not used
 	Q_UNUSED(command)			// note: painterPathCommandSlot is only partially implemented
 
-	PathUserData * pathUserData = (PathUserData *) userData;
+	auto * pathUserData = (PathUserData *) userData;
 
 	double dx, dy;
 	for (int i = 0; i < args.count(); i += 2) {
@@ -735,7 +735,7 @@ void SvgFileSplitter::shiftCommandSlot(QChar command, bool relative, QList<doubl
 
 	Q_UNUSED(relative);			// just normalizing here, so relative is not used
 
-	PathUserData * pathUserData = (PathUserData *) userData;
+	auto * pathUserData = (PathUserData *) userData;
 
 	double d;
 	pathUserData->string.append(command);
@@ -869,7 +869,7 @@ bool SvgFileSplitter::parsePath(const QString & dataString, const char * slot, P
 }
 
 void SvgFileSplitter::convertHVSlot(QChar command, bool /* relative */, QList<double> & args, void * userData) {
-	HVConvertData * data = (HVConvertData *) userData;
+	auto * data = (HVConvertData *) userData;
 
 	switch(command.toLatin1()) {
 	case 'M':

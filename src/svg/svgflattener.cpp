@@ -221,7 +221,7 @@ void SvgFlattener::rotateCommandSlot(QChar command, bool relative, QList<double>
 
 	Q_UNUSED(relative);			// just normalizing here, so relative is not used
 
-	PathUserData * pathUserData = (PathUserData *) userData;
+	auto * pathUserData = (PathUserData *) userData;
 
 	pathUserData->string.append(command);
 	double x;

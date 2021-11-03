@@ -29,20 +29,20 @@ static LayerHash ViewLayers;
 InfoGraphicsView::InfoGraphicsView( QWidget * parent )
 	: ZoomableGraphicsView(parent)
 {
-	m_infoView = NULL;
+	m_infoView = nullptr;
 	m_boardLayers = 1;
 	m_hoverEnterMode = m_hoverEnterConnectorMode = false;
 	m_smdOrientation = Qt::Vertical;
 }
 
 void InfoGraphicsView::viewItemInfo(ItemBase * item) {
-	if (m_infoView == NULL) return;
+	if (m_infoView == nullptr) return;
 
 	m_infoView->viewItemInfo(this, item ? item->layerKinChief() : item, swappingEnabled(item));
 }
 
 void InfoGraphicsView::hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase * itemBase) {
-	if (m_infoView == NULL) return;
+	if (m_infoView == nullptr) return;
 
 	if (event->modifiers() & Qt::ShiftModifier || itemBase->viewID() == ViewLayer::IconView) {
 		m_hoverEnterMode = true;
@@ -51,7 +51,7 @@ void InfoGraphicsView::hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase
 }
 
 void InfoGraphicsView::hoverLeaveItem(QGraphicsSceneHoverEvent * event, ItemBase * itemBase) {
-	if (m_infoView == NULL) return;
+	if (m_infoView == nullptr) return;
 
 	if (m_hoverEnterMode) {
 		m_hoverEnterMode = false;
@@ -60,7 +60,7 @@ void InfoGraphicsView::hoverLeaveItem(QGraphicsSceneHoverEvent * event, ItemBase
 }
 
 void InfoGraphicsView::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item) {
-	if (m_infoView == NULL) return;
+	if (m_infoView == nullptr) return;
 
 	if (event->modifiers() & Qt::ShiftModifier) {
 		m_hoverEnterConnectorMode = true;
@@ -69,7 +69,7 @@ void InfoGraphicsView::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event,
 }
 
 void InfoGraphicsView::hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item) {
-	if (m_infoView == NULL) return;
+	if (m_infoView == nullptr) return;
 
 	if (m_hoverEnterConnectorMode) {
 		m_hoverEnterConnectorMode = false;
@@ -109,7 +109,7 @@ void InfoGraphicsView::noteChanged(ItemBase * item, const QString &oldText, cons
 QGraphicsItem *InfoGraphicsView::selectedAux() {
 	QList<QGraphicsItem*> selItems = scene()->selectedItems();
 	if(selItems.size() != 1) {
-		return NULL;
+		return nullptr;
 	} else {
 		return selItems[0];
 	}
@@ -142,10 +142,10 @@ bool InfoGraphicsView::spaceBarIsPressed() {
 
 InfoGraphicsView * InfoGraphicsView::getInfoGraphicsView(QGraphicsItem * item)
 {
-	if (item == NULL) return NULL;
+	if (item == nullptr) return nullptr;
 
 	QGraphicsScene * scene = item->scene();
-	if (scene == NULL) return NULL;
+	if (scene == nullptr) return nullptr;
 
 	return dynamic_cast<InfoGraphicsView *>(scene->parent());
 }
@@ -277,7 +277,7 @@ VirtualWire * InfoGraphicsView::makeOneRatsnestWire(ConnectorItem * source, Conn
 	Q_UNUSED(routed);
 	Q_UNUSED(color);
 	Q_UNUSED(force);
-	return NULL;
+	return nullptr;
 }
 
 void InfoGraphicsView::getRatsnestColor(QColor & color)

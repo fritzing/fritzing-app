@@ -105,7 +105,7 @@ void SchematicSketchWidget::tidyWires() {
 	QList<Wire *> visited;
 	foreach (QGraphicsItem * item, scene()->selectedItems()) {
 		Wire * wire = dynamic_cast<Wire *>(item);
-		if (wire == NULL) continue;
+		if (wire == nullptr) continue;
 		if ((wire->getViewGeometry().wireFlags() & ViewGeometry::SchematicTraceFlag) == 0) continue;
 		if (visited.contains(wire)) continue;
 	}
@@ -207,11 +207,11 @@ void SchematicSketchWidget::updateBigDots()
 	QList<ConnectorItem *> connectorItems;
 	foreach (QGraphicsItem * item, scene()->items()) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem == NULL) continue;
+		if (connectorItem == nullptr) continue;
 		if (connectorItem->attachedToItemType() != ModelPart::Wire) continue;
 
 		TraceWire * traceWire = qobject_cast<TraceWire *>(connectorItem->attachedTo());
-		if (traceWire == NULL) continue;
+		if (traceWire == nullptr) continue;
 
 		//DebugDialog::debug(QString("update big dot %1 %2").arg(traceWire->id()).arg(connectorItem->connectorSharedID()));
 
@@ -284,12 +284,12 @@ void SchematicSketchWidget::setVoltage(double v, bool doEmit)
 	Q_UNUSED(doEmit);
 
 	PaletteItem * item = getSelectedPart();
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	if (item->itemType() != ModelPart::Symbol) return;
 
 	SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(item);
-	if (sitem == NULL) return;
+	if (sitem == nullptr) return;
 
 	if (sitem->moduleID().compare("ground symbol", Qt::CaseInsensitive) == 0) return;
 	if (v == sitem->voltage()) return;
@@ -369,15 +369,15 @@ double SchematicSketchWidget::getAutorouterTraceWidth() {
 void SchematicSketchWidget::extraRenderSvgStep(ItemBase * itemBase, QPointF offset, double dpi, double printerScale, QString & outputSvg)
 {
 	TraceWire * traceWire = qobject_cast<TraceWire *>(itemBase);
-	if (traceWire == NULL) return;
+	if (traceWire == nullptr) return;
 
 	if (traceWire->connector0()->isBigDot()) {
 		double r = traceWire->connector0()->rect().width();
-		outputSvg += makeCircleSVG(traceWire->connector0()->sceneAdjustedTerminalPoint(NULL), r, offset, dpi, printerScale);
+		outputSvg += makeCircleSVG(traceWire->connector0()->sceneAdjustedTerminalPoint(nullptr), r, offset, dpi, printerScale);
 	}
 	if (traceWire->connector1()->isBigDot()) {
 		double r = traceWire->connector0()->rect().width();
-		outputSvg += makeCircleSVG(traceWire->connector1()->sceneAdjustedTerminalPoint(NULL), r, offset, dpi, printerScale);
+		outputSvg += makeCircleSVG(traceWire->connector1()->sceneAdjustedTerminalPoint(nullptr), r, offset, dpi, printerScale);
 	}
 
 }
@@ -468,7 +468,7 @@ QSizeF SchematicSketchWidget::jumperItemSize() {
 		long newID = ItemBase::getNextID();
 		ViewGeometry viewGeometry;
 		viewGeometry.setLoc(QPointF(0, 0));
-		ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(NULL), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+		ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(nullptr), BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
 		if (itemBase) {
 			SymbolPaletteItem * netLabel = qobject_cast<SymbolPaletteItem *>(itemBase);
 			netLabel->setLabel("00");
@@ -531,10 +531,10 @@ void SchematicSketchWidget::setConvertSchematic(bool convert) {
 
 void SchematicSketchWidget::resizeWires() {
 	double tw = getTraceWidth();
-	double sw = getWireStrokeWidth(NULL, tw);
+	double sw = getWireStrokeWidth(nullptr, tw);
 	foreach (QGraphicsItem * item, scene()->items()) {
 		Wire * wire = dynamic_cast<Wire *>(item);
-		if (wire == NULL) continue;
+		if (wire == nullptr) continue;
 		if (!wire->isTraceType(getTraceFlag())) continue;
 
 		wire->setWireWidth(tw, this, sw);
@@ -546,7 +546,7 @@ void SchematicSketchWidget::resizeLabels() {
 	double fontSize = getLabelFontSizeSmall();
 	foreach (QGraphicsItem * item, scene()->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 
 		if (itemBase->hasPartLabel() && itemBase->partLabel()) {
 			itemBase->partLabel()->setFontPointSize(fontSize);

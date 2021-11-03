@@ -82,7 +82,7 @@ int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
 		return position;
 	}
 
-	QListWidgetItem * lwi = new QListWidgetItem(modelPart->title());
+	auto * lwi = new QListWidgetItem(modelPart->title());
 	if (modelPart->itemType() == ModelPart::Space) {
 		lwi->setBackground(QBrush(SectionHeaderBackgroundColor));
 		lwi->setForeground(QBrush(SectionHeaderForegroundColor));
@@ -314,7 +314,7 @@ QMimeData * PartsBinListView::mimeData(const QList<QListWidgetItem *> items) con
 
 		dataStream << modelPart->moduleID() << QPointF(0,0);
 
-		QMimeData *mimeData = new QMimeData;
+		auto *mimeData = new QMimeData;
 		mimeData->setData("application/x-dnditemdata", itemData);
 		mimeData->setData("action", "part-reordering");
 

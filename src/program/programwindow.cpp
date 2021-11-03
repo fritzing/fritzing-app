@@ -69,7 +69,7 @@ QTabBar * PTabWidget::tabBar() {
 void PTabWidget::tabChanged(int index) {
 	// Hide the close button on the old tab
 	if (m_lastTabIndex >= 0) {
-		QAbstractButton *tabButton = qobject_cast<QAbstractButton *>(tabBar()->tabButton(m_lastTabIndex, QTabBar::LeftSide));
+		auto *tabButton = qobject_cast<QAbstractButton *>(tabBar()->tabButton(m_lastTabIndex, QTabBar::LeftSide));
 		if (!tabButton) {
 			tabButton = qobject_cast<QAbstractButton *>(tabBar()->tabButton(m_lastTabIndex, QTabBar::RightSide));
 		}
@@ -83,7 +83,7 @@ void PTabWidget::tabChanged(int index) {
 
 	// Show the close button on the new tab
 	if (m_lastTabIndex >= 0) {
-		QAbstractButton *tabButton = qobject_cast<QAbstractButton *>(tabBar()->tabButton(m_lastTabIndex, QTabBar::LeftSide));
+		auto *tabButton = qobject_cast<QAbstractButton *>(tabBar()->tabButton(m_lastTabIndex, QTabBar::LeftSide));
 		if (!tabButton) {
 			tabButton = qobject_cast<QAbstractButton *>(tabBar()->tabButton(m_lastTabIndex, QTabBar::RightSide));
 		}
@@ -139,7 +139,7 @@ void ProgramWindow::setup()
 		setAttribute(Qt::WA_DeleteOnClose, true);
 	}
 
-	QFrame * mainFrame =  new QFrame(this);
+	auto * mainFrame =  new QFrame(this);
 
 	QFrame * headerFrame = createHeader();
 	QFrame * centerFrame = createCenter();
@@ -147,7 +147,7 @@ void ProgramWindow::setup()
 	layout()->setContentsMargins(0, 0, 0, 0);
 	layout()->setSpacing(0);
 
-	QGridLayout *layout = new QGridLayout(mainFrame);
+	auto *layout = new QGridLayout(mainFrame);
 	layout->setContentsMargins(0, 0, 0, 0);
 	layout->setSpacing(0);
 	layout->addWidget(headerFrame,0,0);
@@ -379,7 +379,7 @@ void ProgramWindow::linkFiles(const QList<LinkedFile *> & linkedFiles, const QSt
 }
 
 QFrame * ProgramWindow::createHeader() {
-	QFrame * headerFrame = new QFrame();
+	auto * headerFrame = new QFrame();
 	headerFrame->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed));
 	headerFrame->setObjectName("header");
 
@@ -388,7 +388,7 @@ QFrame * ProgramWindow::createHeader() {
 
 QFrame * ProgramWindow::createCenter() {
 
-	QFrame * centerFrame = new QFrame(this);
+	auto * centerFrame = new QFrame(this);
 	centerFrame->setObjectName("center");
 
 	m_tabWidget = new PTabWidget(centerFrame);
@@ -401,11 +401,11 @@ QFrame * ProgramWindow::createCenter() {
 
 	//addTab();
 
-	QGridLayout *tabLayout = new QGridLayout(m_tabWidget);
+	auto *tabLayout = new QGridLayout(m_tabWidget);
 	tabLayout->setContentsMargins(0, 0, 0, 0);
 	tabLayout->setSpacing(0);
 
-	QGridLayout *mainLayout = new QGridLayout(centerFrame);
+	auto *mainLayout = new QGridLayout(centerFrame);
 	mainLayout->setContentsMargins(0, 0, 0, 0);
 	mainLayout->setSpacing(0);
 	mainLayout->addWidget(m_tabWidget,0,0,1,1);
@@ -424,7 +424,7 @@ void ProgramWindow::cleanUp() {
  */
 bool ProgramWindow::eventFilter(QObject * object, QEvent * event) {
 	if (object == this && event->type() == QEvent::ShortcutOverride) {
-		QKeyEvent *keyEvent = dynamic_cast<QKeyEvent*>(event);
+		auto *keyEvent = dynamic_cast<QKeyEvent*>(event);
 		if(keyEvent && keyEvent->matches(QKeySequence::Close) && m_tabWidget->count() > 1 ) {
 			return true;
 		}
@@ -495,7 +495,7 @@ void ProgramWindow::setTitle(const QString & filename) {
  */
 ProgramTab * ProgramWindow::addTab() {
 	QString name = (UntitledIndex == 1) ? untitledFileName() : tr("%1%2").arg(untitledFileName()).arg(UntitledIndex);
-	ProgramTab * programTab = new ProgramTab(name, m_tabWidget);
+	auto * programTab = new ProgramTab(name, m_tabWidget);
 	connect(programTab, SIGNAL(wantToSave(int)), this, SLOT(tabSave(int)));
 	connect(programTab, SIGNAL(wantToSaveAs(int)), this, SLOT(tabSaveAs(int)));
 	connect(programTab, SIGNAL(wantToRename(int)), this, SLOT(tabRename(int)));
@@ -743,7 +743,7 @@ const QMap<QString, QString> ProgramWindow::getBoards() {
 
 QAction * ProgramWindow::addBoard(const QString & name, const QString & definition)
 {
-	QAction * currentAction = new QAction(name, this);
+	auto * currentAction = new QAction(name, this);
 	currentAction->setCheckable(true);
 	currentAction->setData(definition);
 	m_boardActions.insert(name, currentAction);
@@ -884,7 +884,7 @@ void ProgramWindow::updateSerialPorts() {
 
 QAction * ProgramWindow::addPort(QSerialPortInfo port)
 {
-	QAction * currentAction = new QAction(port.portName(), this);
+	auto * currentAction = new QAction(port.portName(), this);
 	currentAction->setCheckable(true);
 	currentAction->setData(port.systemLocation());
 	m_portActions.insert(port.portName(), currentAction);

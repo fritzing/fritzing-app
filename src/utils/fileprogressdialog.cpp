@@ -85,7 +85,7 @@ void FileProgressDialog::init(const QString & title, int initialMaximum)
 
 	this->setWindowTitle(title);
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
 	m_message = new QLabel(this);
 	m_message->setMinimumWidth(300);

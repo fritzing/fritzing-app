@@ -39,8 +39,8 @@ static const QColor SectionHeaderForegroundColor(32, 32, 32);
 PartsBinListView::PartsBinListView(ReferenceModel* referenceModel, PartsBinPaletteWidget *parent)
 	: QListWidget((QWidget *) parent), PartsBinView(referenceModel, parent)
 {
-	m_infoView = NULL;
-	m_hoverItem = NULL;
+	m_infoView = nullptr;
+	m_hoverItem = nullptr;
 	m_infoViewOnHover = true;
 	setMouseTracking(true);
 	setSpacing(2);
@@ -64,13 +64,13 @@ PartsBinListView::~PartsBinListView() {
 }
 
 void PartsBinListView::doClear() {
-	m_hoverItem = NULL;
+	m_hoverItem = nullptr;
 	PartsBinView::doClear();
 	clear();
 }
 
 int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
-	if (modelPart->modelPartShared() == NULL) return position;
+	if (modelPart->modelPartShared() == nullptr) return position;
 	if (modelPart->itemType() == ModelPart::Unknown) {
 		// don't want the empty root to appear in the view
 		return position;
@@ -112,7 +112,7 @@ void PartsBinListView::mouseMoveEvent(QMouseEvent *event) {
 			showInfo(item);
 		}
 		else {
-			m_hoverItem = NULL;
+			m_hoverItem = nullptr;
 		}
 	}
 
@@ -128,11 +128,11 @@ void PartsBinListView::showInfo(QListWidgetItem * item) {
 	if (m_hoverItem && m_infoView) {
 		ItemBase * itemBase = itemItemBase(m_hoverItem);
 		if (itemBase) {
-			m_infoView->hoverLeaveItem(NULL, NULL, itemBase);
+			m_infoView->hoverLeaveItem(nullptr, nullptr, itemBase);
 		}
 	}
 
-	if (item == NULL) {
+	if (item == nullptr) {
 		return;
 	}
 
@@ -140,7 +140,7 @@ void PartsBinListView::showInfo(QListWidgetItem * item) {
 	if (m_infoView) {
 		ItemBase * itemBase = itemItemBase(item);
 		if (itemBase) {
-			m_infoView->hoverEnterItem(NULL, NULL, itemBase, swappingEnabled());
+			m_infoView->hoverEnterItem(nullptr, nullptr, itemBase, swappingEnabled());
 		}
 	}
 }
@@ -151,14 +151,14 @@ void PartsBinListView::mousePressEvent(QMouseEvent *event) {
 	QListWidget::mousePressEvent(event);
 
 	QListWidgetItem * current = currentItem();
-	if (current == NULL) {
-		m_hoverItem = NULL;
-		if (m_infoView) m_infoView->viewItemInfo(NULL, NULL, false);
+	if (current == nullptr) {
+		m_hoverItem = nullptr;
+		if (m_infoView) m_infoView->viewItemInfo(nullptr, nullptr, false);
 		return;
 	}
 
 	showInfo(current);
-	if (m_infoView) m_infoView->viewItemInfo(NULL, itemItemBase(current), false);
+	if (m_infoView) m_infoView->viewItemInfo(nullptr, itemItemBase(current), false);
 }
 
 void PartsBinListView::setInfoView(HtmlInfoView * infoView) {
@@ -166,7 +166,7 @@ void PartsBinListView::setInfoView(HtmlInfoView * infoView) {
 }
 
 void PartsBinListView::removePart(const QString &moduleID) {
-	m_hoverItem = NULL;
+	m_hoverItem = nullptr;
 	int idxToRemove = position(moduleID);
 	if(idxToRemove > -1) {
 		m_itemBaseHash.remove(moduleID);
@@ -175,7 +175,7 @@ void PartsBinListView::removePart(const QString &moduleID) {
 }
 
 void PartsBinListView::removeParts() {
-	m_hoverItem = NULL;
+	m_hoverItem = nullptr;
 	m_itemBaseHash.clear();
 	while (count() > 0) {
 		delete takeItem(0);
@@ -197,14 +197,14 @@ ItemBase * PartsBinListView::itemItemBase(const QListWidgetItem *item) const {
 
 ModelPart *PartsBinListView::itemModelPart(const QListWidgetItem *item) const {
 	ItemBase * itemBase = itemItemBase(item);
-	if (itemBase == NULL) return NULL;
+	if (itemBase == nullptr) return nullptr;
 
 	return itemBase->modelPart();
 }
 
 const QString &PartsBinListView::itemModuleID(const QListWidgetItem *item) {
 	ModelPart *modelPart = itemModelPart(item);
-	if (modelPart == NULL) {
+	if (modelPart == nullptr) {
 		// this shouldn't happen?
 		return ___emptyString___;
 	}
@@ -216,14 +216,14 @@ ItemBase *PartsBinListView::selectedItemBase() {
 	if(selectedItems().size()==1) {
 		return itemItemBase(selectedItems()[0]);
 	}
-	return NULL;
+	return nullptr;
 }
 
 ModelPart *PartsBinListView::selectedModelPart() {
 	if(selectedItems().size()==1) {
 		return itemModelPart(selectedItems()[0]);
 	}
-	return NULL;
+	return nullptr;
 }
 
 bool PartsBinListView::swappingEnabled() {
@@ -361,7 +361,7 @@ void PartsBinListView::reloadPart(const QString & moduleID) {
 	for(int i = 0; i < count(); i++) {
 		QListWidgetItem * lwi = item(i);
 		ItemBase * itemBase = itemItemBase(lwi);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 
 		if (itemBase->moduleID().compare(moduleID) == 0) {
 			lwi->setText(itemBase->title());
@@ -374,8 +374,8 @@ void PartsBinListView::reloadPart(const QString & moduleID) {
 void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, const QString & moduleID)
 {
 	ItemBase * itemBase = ItemBaseHash.value(moduleID);
-	if (itemBase == NULL) {
-		itemBase = PartFactory::createPart(modelPart, ViewLayer::NewTop, ViewLayer::IconView, ViewGeometry(), ItemBase::getNextID(), NULL, NULL, false);
+	if (itemBase == nullptr) {
+		itemBase = PartFactory::createPart(modelPart, ViewLayer::NewTop, ViewLayer::IconView, ViewGeometry(), ItemBase::getNextID(), nullptr, nullptr, false);
 		ItemBaseHash.insert(moduleID, itemBase);
 		LayerAttributes layerAttributes;
 		itemBase->initLayerAttributes(layerAttributes, ViewLayer::IconView, ViewLayer::Icon, itemBase->viewLayerPlacement(), false, false);

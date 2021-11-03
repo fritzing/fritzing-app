@@ -93,7 +93,7 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 	m_stackedWidget->addWidget(m_iconView);
 	m_stackedWidget->addWidget(m_listView);
 
-	QVBoxLayout * vbl = new QVBoxLayout(this);
+	auto * vbl = new QVBoxLayout(this);
 	vbl->setContentsMargins(3, 3, 3, 3);
 	vbl->setSpacing(0);
 
@@ -102,7 +102,7 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 	if (m_header) {
 		vbl->addWidget(m_header);
 
-		QFrame * separator = new QFrame();
+		auto * separator = new QFrame();
 		separator->setMaximumHeight(1);
 		separator->setObjectName("partsBinHeaderSeparator");
 		separator->setFrameShape(QFrame::HLine);
@@ -199,7 +199,7 @@ void PartsBinPaletteWidget::setupHeader()
 
 	m_header = new QFrame(this);
 	m_header->setObjectName("partsBinHeader");
-	QHBoxLayout * hbl = new QHBoxLayout();
+	auto * hbl = new QHBoxLayout();
 	hbl->setSpacing(0);
 	hbl->setContentsMargins(0, 0, 0, 0);
 
@@ -379,7 +379,7 @@ void PartsBinPaletteWidget::addPart(ModelPart *modelPart, int position) {
 }
 
 QToolButton* PartsBinPaletteWidget::newToolButton(const QString& btnObjName, const QString& imgPath, const QString &text) {
-	QToolButton *toolBtn = new QToolButton(this);
+	auto *toolBtn = new QToolButton(this);
 	toolBtn->setObjectName(btnObjName);
 	toolBtn->setToolButtonStyle(Qt::ToolButtonIconOnly);
 	toolBtn->setArrowType(Qt::NoArrow);
@@ -860,7 +860,7 @@ QMenu * PartsBinPaletteWidget::binContextMenu()
 	QMenu * menu = m_manager->binContextMenu(this);
 	if (menu == NULL) return NULL;
 
-	QMenu * newMenu = new QMenu();
+	auto * newMenu = new QMenu();
 	foreach (QAction * action, menu->actions()) {
 		newMenu->addAction(action);
 	}
@@ -872,7 +872,7 @@ QMenu * PartsBinPaletteWidget::binContextMenu()
 		QString iconFilename = root->icon();
 		if (iconFilename.compare(CustomIconName) == 0 || isCustomSvg(iconFilename)) {
 			newMenu->addSeparator();
-			QAction * action = new QAction(tr("Change icon color..."), newMenu);
+			auto * action = new QAction(tr("Change icon color..."), newMenu);
 			action->setToolTip(tr("Change the color of the icon for this bin."));
 			connect(action, SIGNAL(triggered()), this, SLOT(changeIconColor()));
 			newMenu->addAction(action);

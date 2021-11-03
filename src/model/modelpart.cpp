@@ -225,7 +225,7 @@ void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & strea
 
 	QList<QObject *>::const_iterator i;
 	for (i = children.constBegin(); i != children.constEnd(); ++i) {
-		ModelPart* mp = qobject_cast<ModelPart *>(*i);
+		auto* mp = qobject_cast<ModelPart *>(*i);
 		if (mp == nullptr) continue;
 
 		mp->saveInstances(fileName, streamWriter, false);
@@ -392,7 +392,7 @@ void ModelPart::saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument) 
 		streamWriter.writeStartElement("connectors");
 		const QList< QPointer<ConnectorShared> > connectors = m_modelPartShared->connectorsShared();
 		for (int i = 0; i < connectors.count(); i++) {
-			Connector * connector = new Connector(connectors[i], this);
+			auto * connector = new Connector(connectors[i], this);
 			connector->saveAsPart(streamWriter);
 			delete connector;
 		}
@@ -401,7 +401,7 @@ void ModelPart::saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument) 
 
 	QList<QObject *>::const_iterator i;
 	for (i = children().constBegin(); i != children().constEnd(); ++i) {
-		ModelPart * mp = qobject_cast<ModelPart *>(*i);
+		auto * mp = qobject_cast<ModelPart *>(*i);
 		if (mp == nullptr) continue;
 
 		mp->saveAsPart(streamWriter, false);
@@ -430,7 +430,7 @@ void ModelPart::initConnectors(bool force) {
 
 	m_modelPartShared->initConnectors();
 	foreach (ConnectorShared * connectorShared, m_modelPartShared->connectorsShared()) {
-		Connector * connector = new Connector(connectorShared, this);
+		auto * connector = new Connector(connectorShared, this);
 		m_connectorHash.insert(connectorShared->id(), connector);
 	}
 	initBuses();
@@ -689,7 +689,7 @@ QList<ModelPart*> ModelPart::getAllParts() {
 	QList<ModelPart*> retval;
 	QList<QObject *>::const_iterator i;
 	for (i = children().constBegin(); i != children().constEnd(); ++i) {
-		ModelPart* mp = qobject_cast<ModelPart *>(*i);
+		auto* mp = qobject_cast<ModelPart *>(*i);
 		if (mp == nullptr) continue;
 		retval << mp;
 	}
@@ -701,7 +701,7 @@ QList<ModelPart*> ModelPart::getAllNonCoreParts() {
 	QList<ModelPart*> retval;
 	QList<QObject *>::const_iterator i;
 	for (i = children().constBegin(); i != children().constEnd(); ++i) {
-		ModelPart* mp = qobject_cast<ModelPart *>(*i);
+		auto* mp = qobject_cast<ModelPart *>(*i);
 		if (mp == nullptr) continue;
 
 		if(!mp->isCore()) {

@@ -145,7 +145,7 @@ void PartsBinIconView::removePart(const QString &moduleID) {
 	SvgIconWidget *itemToRemove = nullptr;
 	int position = 0;
 	foreach(QGraphicsItem *gIt, m_layouter->childItems()) {
-		SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(gIt);
+		auto *it = dynamic_cast<SvgIconWidget*>(gIt);
 		if(it && it->moduleID() == moduleID) {
 			itemToRemove = it;
 			break;
@@ -168,7 +168,7 @@ void PartsBinIconView::removePart(const QString &moduleID) {
 void PartsBinIconView::removeParts() {
 	QList<SvgIconWidget *> itemsToRemove;
 	foreach(QGraphicsItem *gIt, m_layouter->childItems()) {
-		SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(gIt);
+		auto *it = dynamic_cast<SvgIconWidget*>(gIt);
 		if(it) {
 			itemsToRemove.append(it);
 		}
@@ -228,7 +228,7 @@ void PartsBinIconView::loadFromModel(PaletteModel * model) {
 	ModelPart* root = model->root();
 	QList<QObject *>::const_iterator i;
 	for (i = root->children().constBegin(); i != root->children().constEnd(); ++i) {
-		ModelPart* mp = qobject_cast<ModelPart *>(*i);
+		auto* mp = qobject_cast<ModelPart *>(*i);
         if (!mp) continue;
 
 		QDomElement instance = mp->instanceDomElement();
@@ -249,7 +249,7 @@ void PartsBinIconView::loadFromModel(PaletteModel * model) {
 }
 
 ModelPart *PartsBinIconView::selectedModelPart() {
-	SvgIconWidget *icon = dynamic_cast<SvgIconWidget *>(selectedAux());
+	auto *icon = dynamic_cast<SvgIconWidget *>(selectedAux());
 	if(icon) {
 		return icon->modelPart();
 	} else {
@@ -258,7 +258,7 @@ ModelPart *PartsBinIconView::selectedModelPart() {
 }
 
 ItemBase *PartsBinIconView::selectedItemBase() {
-	SvgIconWidget *icon = dynamic_cast<SvgIconWidget *>(selectedAux());
+	auto *icon = dynamic_cast<SvgIconWidget *>(selectedAux());
 	if(icon) {
 		return icon->itemBase();
 	} else {
@@ -268,7 +268,7 @@ ItemBase *PartsBinIconView::selectedItemBase() {
 
 void PartsBinIconView::setSelected(int position, bool doEmit) {
 	QGraphicsLayoutItem *glIt = m_layout->itemAt(position);
-	if(SvgIconWidget *item = dynamic_cast<SvgIconWidget*>(glIt)) {
+	if(auto *item = dynamic_cast<SvgIconWidget*>(glIt)) {
 		m_noSelectionChangeEmition = true;
 		scene()->clearSelection();
 		m_noSelectionChangeEmition = !doEmit;
@@ -284,7 +284,7 @@ bool PartsBinIconView::swappingEnabled(ItemBase * itemBase) {
 int PartsBinIconView::selectedIndex() {
 	int idx = 0;
 	foreach(QGraphicsItem *it, scene()->items()) {
-		SvgIconWidget *icon = dynamic_cast<SvgIconWidget*>(it);
+		auto *icon = dynamic_cast<SvgIconWidget*>(it);
 		if(icon) {
 			if(icon->isSelected()) {
 				return idx;
@@ -389,7 +389,7 @@ QList<QObject*> PartsBinIconView::orderedChildren() {
 	QList<QObject*> result;
 
 	for(int i=0; i < m_layout->count(); i++) {
-		SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(m_layout->itemAt(i));
+		auto *it = dynamic_cast<SvgIconWidget*>(m_layout->itemAt(i));
 		if(it) {
 			result << it->modelPart();
 		}
@@ -418,7 +418,7 @@ SvgIconWidget * PartsBinIconView::svgIconWidgetAt(int x, int y) {
 SvgIconWidget * PartsBinIconView::svgIconWidgetAt(const QPoint & pos) {
 	QGraphicsItem * item = itemAt(pos);
     while (item) {
-		SvgIconWidget * svgIconWidget = dynamic_cast<SvgIconWidget *>(item);
+		auto * svgIconWidget = dynamic_cast<SvgIconWidget *>(item);
         if (svgIconWidget) {
 			return svgIconWidget;
 		}
@@ -433,7 +433,7 @@ void PartsBinIconView::reloadPart(const QString & moduleID) {
 	if (!contains(moduleID)) return;
 
 	for (int i = 0; i < m_layout->count(); i++) {
-		SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(m_layout->itemAt(i));
+		auto *it = dynamic_cast<SvgIconWidget*>(m_layout->itemAt(i));
         if (!it) 
             continue;
 

@@ -173,7 +173,7 @@ bool ModelPartShared::setDomDocument(QDomDocument & domDocument) {
 		QDomElement view = views.firstChildElement();
 		while (!view.isNull()) {
 			ViewLayer::ViewID viewID = ViewLayer::idFromXmlName(view.nodeName());
-			ViewImage * viewImage = new ViewImage(viewID);
+			auto * viewImage = new ViewImage(viewID);
 			m_viewImages.insert(viewID, viewImage);
 			viewImage->canFlipHorizontal = view.attribute("fliphorizontal","").compare("true") == 0;
 			viewImage->canFlipVertical = view.attribute("flipvertical","").compare("true") == 0;
@@ -415,7 +415,7 @@ void ModelPartShared::initConnectors() {
 	//DebugDialog::debug(QString("part:%1 %2").arg(m_moduleID).arg(m_title));
 	QDomElement connector = connectors.firstChildElement("connector");
 	while (!connector.isNull()) {
-		ConnectorShared * connectorShared = new ConnectorShared(connector);
+		auto * connectorShared = new ConnectorShared(connector);
 		m_connectorSharedHash.insert(connectorShared->id(), connectorShared);
 
 		connector = connector.nextSiblingElement("connector");
@@ -426,7 +426,7 @@ void ModelPartShared::initConnectors() {
 	if (!buses.isNull()) {
 		QDomElement busElement = buses.firstChildElement("bus");
 		while (!busElement.isNull()) {
-			BusShared * busShared = new BusShared(busElement, m_connectorSharedHash);
+			auto * busShared = new BusShared(busElement, m_connectorSharedHash);
 			m_buses.insert(busShared->id(), busShared);
 
 			busElement = busElement.nextSiblingElement("bus");
@@ -467,7 +467,7 @@ void ModelPartShared::copy(ModelPartShared* other) {
 
 	foreach (ViewLayer::ViewID viewID, other->m_viewImages.keys()) {
 		ViewImage * otherViewImage = other->m_viewImages.value(viewID);
-		ViewImage * viewImage = new ViewImage(viewID);
+		auto * viewImage = new ViewImage(viewID);
 		viewImage->layers = otherViewImage->layers;
 		viewImage->sticky = otherViewImage->sticky;
 		viewImage->canFlipHorizontal = otherViewImage->canFlipHorizontal;

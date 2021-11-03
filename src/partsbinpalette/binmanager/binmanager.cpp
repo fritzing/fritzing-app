@@ -104,15 +104,15 @@ BinManager::BinManager(class ReferenceModel *referenceModel, class HtmlInfoView 
 {
 	BinManager::Title = tr("Parts");
 
-	m_combinedMenu = NULL;
-	m_showListViewAction = m_showIconViewAction = NULL;
+	m_combinedMenu = nullptr;
+	m_showListViewAction = m_showIconViewAction = nullptr;
 
 	m_referenceModel = referenceModel;
 	m_infoView = infoView;
 	m_undoStack = undoStack;
 	m_defaultSaveFolder = FolderUtils::getUserBinsPath();
 	m_mainWindow = parent;
-	m_currentBin = NULL;
+	m_currentBin = nullptr;
 
 	connect(this, SIGNAL(savePartAsBundled(const QString &)), m_mainWindow, SLOT(saveBundledPart(const QString &)));
 
@@ -284,7 +284,7 @@ PartsBinPaletteWidget* BinManager::findBin(const QString & binLocation) {
 		}
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 QString BinManager::createIfMyPartsNotExists() {
@@ -398,9 +398,9 @@ PartsBinPaletteWidget* BinManager::openBinIn(QString fileName, bool fastLoad) {
 		               tr("Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)")
 		               .arg(FritzingBinExtension).arg(FritzingBundledBinExtension)
 		           );
-		if (fileName.isNull()) return NULL;
+		if (fileName.isNull()) return nullptr;
 	}
-	PartsBinPaletteWidget* bin = NULL;
+	PartsBinPaletteWidget* bin = nullptr;
 	bool createNewOne = false;
 	if(m_openedBins.contains(fileName)) {
 		bin = m_openedBins[fileName];
@@ -466,7 +466,7 @@ PartsBinPaletteWidget* BinManager::newBin() {
 void BinManager::currentChanged(int index) {
 	for (int i = 0; i < m_stackTabWidget->count(); i++) {
 		auto* bin = (PartsBinPaletteWidget *) m_stackTabWidget->widget(i);
-		if (bin == NULL) continue;
+		if (bin == nullptr) continue;
 		if (!bin->hasMonoIcon()) continue;
 
 		if (i == index) {
@@ -487,7 +487,7 @@ void BinManager::currentChanged(int index) {
 }
 
 void BinManager::setAsCurrentBin(PartsBinPaletteWidget* bin) {
-	if (bin == NULL) {
+	if (bin == nullptr) {
 		qWarning() << QString("Cannot set a NULL bin as the current one");
 		return;
 	}
@@ -691,8 +691,8 @@ void BinManager::hackLocalContrib(QList<BinLocation *> & locations)
 	// with release 0.7.12, there is no more local contrib bin
 	// so clear out existing local contrib bins by copying parts to mine bin
 
-	BinLocation * localContrib = NULL;
-	BinLocation * myParts = NULL;
+	BinLocation * localContrib = nullptr;
+	BinLocation * myParts = nullptr;
 	foreach (BinLocation * location, locations) {
 		if (location->location == BinLocation::User) {
 			if (location->title == "Contributed Parts") {
@@ -704,9 +704,9 @@ void BinManager::hackLocalContrib(QList<BinLocation *> & locations)
 		}
 	}
 
-	if (localContrib == NULL) return;
+	if (localContrib == nullptr) return;
 
-	if (myParts == NULL) {
+	if (myParts == nullptr) {
 		createIfBinNotExists(MyPartsBinLocation, MyPartsBinTemplateLocation);
 		myParts = new BinLocation;
 		myParts->location = BinLocation::User;
@@ -912,7 +912,7 @@ void BinManager::initNames() {
 
 void BinManager::search(const QString & searchText) {
 	PartsBinPaletteWidget * searchBin = getOrOpenSearchBin();
-	if (searchBin == NULL) return;
+	if (searchBin == nullptr) return;
 
 	FileProgressDialog progress(tr("Searching..."), 0, this);
 	progress.setIncValueMod(10);
@@ -940,34 +940,34 @@ void BinManager::search(const QString & searchText) {
 
 bool BinManager::currentViewIsIconView() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return true;
+	if (bin == nullptr) return true;
 
 	return bin->currentViewIsIconView();
 }
 
 void BinManager::toIconView() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	bin->toIconView();
 }
 
 void BinManager::toListView() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	bin->toListView();
 }
 
 void BinManager::updateBinCombinedMenuCurrent() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	updateBinCombinedMenu(bin);
 }
 
 void BinManager::updateBinCombinedMenu(PartsBinPaletteWidget * bin) {
-	if (m_combinedMenu == NULL) return;
+	if (m_combinedMenu == nullptr) return;
 
 	m_saveBinAction->setEnabled(bin->allowsChanges());
 	m_renameBinAction->setEnabled(bin->canClose());
@@ -1100,7 +1100,7 @@ void BinManager::closeBin() {
 
 void BinManager::deleteBin() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	QMessageBox::StandardButton answer = QMessageBox::question(
 	        this,
@@ -1121,7 +1121,7 @@ void BinManager::importPartToMineBin(const QString & filename) {
 
 	if (!filename.isEmpty() && !filename.isNull()) {
 		PartsBinPaletteWidget * bin = getOrOpenBin(MyPartsBinLocation, MyPartsBinTemplateLocation);
-		if (bin == NULL) return;
+		if (bin == nullptr) return;
 
 		setAsCurrentTab(bin);
 		importPart(filename, bin);
@@ -1132,7 +1132,7 @@ void BinManager::importPartToCurrentBin(const QString & filename) {
 
 	if (!filename.isEmpty() && !filename.isNull()) {
 		PartsBinPaletteWidget * bin = currentBin();
-		if (bin == NULL) return;
+		if (bin == nullptr) return;
 
 		importPart(filename, bin);
 	}
@@ -1153,7 +1153,7 @@ void BinManager::editSelectedNew() {
 
 void BinManager::renameBin() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	if (!currentBin()->allowsChanges()) {
 		// TODO: disable menu item instead
@@ -1180,7 +1180,7 @@ void BinManager::renameBin() {
 
 void BinManager::saveBin() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	bool result = bin->save();
 	if (result) setDirtyTab(currentBin(),false);
@@ -1188,15 +1188,15 @@ void BinManager::saveBin() {
 
 void BinManager::saveBinAs() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	bin->saveAs();
 }
 
 
 void BinManager::updateViewChecks(bool iconView) {
-	if (m_showListViewAction == NULL) return;
-	if (m_showIconViewAction == NULL) return;
+	if (m_showListViewAction == nullptr) return;
+	if (m_showIconViewAction == nullptr) return;
 
 	if (iconView) {
 		m_showListViewAction->setChecked(false);
@@ -1229,10 +1229,10 @@ QMenu * BinManager::combinedMenu() {
 
 bool BinManager::removeSelected() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return false;
+	if (bin == nullptr) return false;
 
 	ModelPart * mp = bin->selectedModelPart();
-	if (mp == NULL) return false;
+	if (mp == nullptr) return false;
 
 	if (m_mainWindow->anyUsePart(mp->moduleID())) {
 		QMessageBox::warning(this, tr("Remove from Bin"), tr("Unable to remove part '%1'--it is in use in a sketch").arg(mp->title()));
@@ -1259,10 +1259,10 @@ bool BinManager::removeSelected() {
 
 void BinManager::findSelected() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	ModelPart * mp = bin->selectedModelPart();
-	if (mp == NULL) return;
+	if (mp == nullptr) return;
 
 	m_mainWindow->selectPartsWithModuleID(mp);
 }
@@ -1270,17 +1270,17 @@ void BinManager::findSelected() {
 
 void BinManager::exportSelected() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	ModelPart * mp = bin->selectedModelPart();
-	if (mp == NULL) return;
+	if (mp == nullptr) return;
 
 	emit savePartAsBundled(mp->moduleID());
 }
 
 void BinManager::saveBundledBin() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	bin->saveBundledBin();
 }
@@ -1295,7 +1295,7 @@ void BinManager::setTabIcon(PartsBinPaletteWidget* w, QIcon * icon)
 
 void BinManager::copyFilesToContrib(ModelPart * mp, QWidget * originator) {
 	auto * bin = qobject_cast<PartsBinPaletteWidget *>(originator);
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	if (bin->fileName().compare(m_tempPartsBinLocation) != 0) return;				// only copy from temp bin
 
@@ -1368,7 +1368,7 @@ void BinManager::reloadPart(const QString & moduleID) {
 	PartsBinView::removePartReference(moduleID);
 	for(int j = 0; j < m_stackTabWidget->count(); j++) {
 		auto *bin = qobject_cast<PartsBinPaletteWidget*>(m_stackTabWidget->widget(j));
-		if (bin == NULL) continue;
+		if (bin == nullptr) continue;
 
 		bin->reloadPart(moduleID);
 	}
@@ -1376,7 +1376,7 @@ void BinManager::reloadPart(const QString & moduleID) {
 
 void BinManager::copyToSketch() {
 	PartsBinPaletteWidget * bin = currentBin();
-	if (bin == NULL) return;
+	if (bin == nullptr) return;
 
 	QList<ModelPart *> modelParts = bin->getAllParts();
 	if (modelParts.count() == 0) return;

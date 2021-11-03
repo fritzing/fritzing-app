@@ -277,7 +277,7 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 
 		//DebugDialog::debug("loading " + moduleIDRef);
 		if (moduleIDRef.compare(ModuleIDNames::SpacerModuleIDName) == 0) {
-			ModelPart * mp = new ModelPart(ModelPart::Space);
+			auto * mp = new ModelPart(ModelPart::Space);
 			mp->setInstanceText(instance.attribute("path"));
 			mp->setParent(m_root);
 			mp->modelPartShared()->setModuleID(ModuleIDNames::SpacerModuleIDName);
@@ -392,7 +392,7 @@ ModelPart * ModelBase::addModelPart(ModelPart * parent, ModelPart * copyChild) {
 	//    DebugDialog::debug("alive in here");
 	//}
 
-	ModelPart * modelPart = new ModelPart();
+	auto * modelPart = new ModelPart();
 	modelPart->copyNew(copyChild);
 	modelPart->setParent(parent);
 	modelPart->initConnectors();

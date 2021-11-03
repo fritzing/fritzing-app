@@ -1723,15 +1723,15 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 	//DebugDialog::debug(QString("checked: %1").arg(checked));
 	if (sameState) {
 		if(checked) {
-			m_hideAllLayersAct->setEnabled(true);
+			if (m_hideAllLayersAct) m_hideAllLayersAct->setEnabled(true);
 		}
 		else {
-			m_showAllLayersAct->setEnabled(true);
+			if (m_showAllLayersAct) m_showAllLayersAct->setEnabled(true);
 		}
 	}
 	else {
-		m_showAllLayersAct->setEnabled(true);
-		m_hideAllLayersAct->setEnabled(true);
+		if (m_showAllLayersAct) m_showAllLayersAct->setEnabled(true);
+		if (m_hideAllLayersAct) m_hideAllLayersAct->setEnabled(true);
 	}
 
 	if (resetLayout) {

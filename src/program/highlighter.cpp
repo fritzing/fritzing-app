@@ -61,7 +61,7 @@ void Highlighter::loadStyles(const QString & filename) {
 
 	QDomElement style = root.firstChildElement("style");
 	while (!style.isNull()) {
-		QTextCharFormat * tcf = new QTextCharFormat();
+		auto * tcf = new QTextCharFormat();
 		QColor color(Qt::black);
 		QString colorString = style.attribute("color");
 		if (!colorString.isEmpty()) {
@@ -199,7 +199,7 @@ void Highlighter::highlightTerms(const QString & text) {
 		if (b > lastWordBreak) {
 			TrieLeaf * leaf = nullptr;
 			if (m_syntaxer->matches(text.mid(lastWordBreak, b - lastWordBreak), leaf)) {
-				SyntaxerTrieLeaf * stl = dynamic_cast<SyntaxerTrieLeaf *>(leaf);
+				auto * stl = dynamic_cast<SyntaxerTrieLeaf *>(leaf);
 				if (stl) {
 					QString format = Syntaxer::formatFromList(stl->name());
 					QTextCharFormat * tcf = m_styleFormats.value(format, NULL);

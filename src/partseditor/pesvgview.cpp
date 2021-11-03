@@ -41,15 +41,15 @@ PESvgView::PESvgView(QWidget * parent) : QFrame(parent)
 
 	m_pegi = nullptr;
 
-	QVBoxLayout * mainLayout = new QVBoxLayout;
+	auto * mainLayout = new QVBoxLayout;
 
 	m_filename = new QLabel();
 	mainLayout->addWidget(m_filename);
 
-	QFrame * boundsFrame = new QFrame;
-	QHBoxLayout * boundsLayout = new QHBoxLayout;
+	auto * boundsFrame = new QFrame;
+	auto * boundsLayout = new QHBoxLayout;
 
-	QLabel * label = new QLabel("x:");
+	auto * label = new QLabel("x:");
 	boundsLayout->addWidget(label);
 	m_x = new QLabel;
 	boundsLayout->addWidget(m_x);

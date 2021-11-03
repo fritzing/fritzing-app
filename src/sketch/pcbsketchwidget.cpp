@@ -195,7 +195,7 @@ ViewLayer::ViewLayerID PCBSketchWidget::multiLayerGetViewLayerID(ModelPart * mod
 
 bool PCBSketchWidget::canDeleteItem(QGraphicsItem * item, int count)
 {
-	VirtualWire * wire = dynamic_cast<VirtualWire *>(item);
+	auto * wire = dynamic_cast<VirtualWire *>(item);
 	if (wire && count > 1) return false;
 
 	return SketchWidget::canDeleteItem(item, count);
@@ -203,7 +203,7 @@ bool PCBSketchWidget::canDeleteItem(QGraphicsItem * item, int count)
 
 bool PCBSketchWidget::canCopyItem(QGraphicsItem * item, int count)
 {
-	VirtualWire * wire = dynamic_cast<VirtualWire *>(item);
+	auto * wire = dynamic_cast<VirtualWire *>(item);
 	if (wire) {
 		if (wire->getRatsnest()) return false;
 	}
@@ -238,7 +238,7 @@ void PCBSketchWidget::createTrace(Wire * wire, bool useLastWireColor) {
 void PCBSketchWidget::excludeFromAutoroute(bool exclude)
 {
 	foreach (QGraphicsItem * item, scene()->selectedItems()) {
-		TraceWire * wire = dynamic_cast<TraceWire *>(item);
+		auto * wire = dynamic_cast<TraceWire *>(item);
 
 		if (wire) {
 			if (!wire->isTraceType(getTraceFlag())) continue;
@@ -252,7 +252,7 @@ void PCBSketchWidget::excludeFromAutoroute(bool exclude)
 			continue;
 		}
 
-		JumperItem * jumperItem = dynamic_cast<JumperItem *>(item);
+		auto * jumperItem = dynamic_cast<JumperItem *>(item);
 		if (jumperItem) {
 			jumperItem->setAutoroutable(!exclude);
 			continue;
@@ -300,7 +300,7 @@ void PCBSketchWidget::selectAllXTraces(bool autoroutable, const QString & cmdTex
 		items = scene()->items();
 	}
 	foreach (QGraphicsItem * item, items) {
-		TraceWire * wire = dynamic_cast<TraceWire *>(item);
+		auto * wire = dynamic_cast<TraceWire *>(item);
 		if (wire == nullptr) continue;
 
 		if (!wire->isTraceType(getTraceFlag())) continue;
@@ -310,10 +310,10 @@ void PCBSketchWidget::selectAllXTraces(bool autoroutable, const QString & cmdTex
 		}
 	}
 
-	QUndoCommand * parentCommand = new QUndoCommand(cmdText);
+	auto * parentCommand = new QUndoCommand(cmdText);
 
 	stackSelectionState(false, parentCommand);
-	SelectItemCommand * selectItemCommand = new SelectItemCommand(this, SelectItemCommand::NormalSelect, parentCommand);
+	auto * selectItemCommand = new SelectItemCommand(this, SelectItemCommand::NormalSelect, parentCommand);
 	foreach (Wire * wire, wires) {
 		selectItemCommand->addRedo(wire->id());
 	}
@@ -373,7 +373,7 @@ void PCBSketchWidget::dealWithDefaultParts() {
 	QPointF q = mapToScene(p.toPoint());
 	m_addedDefaultPart->setPos(q);
 	alignOneToGrid(m_addedDefaultPart);
-	ResizableBoard * rb = qobject_cast<ResizableBoard *>(m_addedDefaultPart);
+	auto * rb = qobject_cast<ResizableBoard *>(m_addedDefaultPart);
 	if (rb) rb->resizePixels(partSize.width(), partSize.height(), m_viewLayers);
 	QTimer::singleShot(10, this, SLOT(vScrollToZero()));
 
@@ -585,7 +585,7 @@ void PCBSketchWidget::calcDistances(Wire * wire, QList<ConnectorItem *> & ends) 
 		bool fromConnector0;
 		QList<Wire *> distanceWires;
 		int distance = calcDistance(wire, end, 0, distanceWires, fromConnector0);
-		DistanceThing * dt = new DistanceThing;
+		auto * dt = new DistanceThing;
 		dt->distance = distance;
 		dt->fromConnector0 = fromConnector0;
 		DebugDialog::debug(QString("distance %1 %2 %3, %4 %5")
@@ -656,7 +656,7 @@ int PCBSketchWidget::calcDistance(Wire * wire, ConnectorItem * end, int distance
 void PCBSketchWidget::showGroundTraces(QList<ConnectorItem *> & connectorItems, bool show) {
 
 	foreach (ConnectorItem * connectorItem, connectorItems) {
-		TraceWire * trace = dynamic_cast<TraceWire *>(connectorItem->attachedTo());
+		auto * trace = dynamic_cast<TraceWire *>(connectorItem->attachedTo());
 		if (trace == nullptr) continue;
 
 		if (!trace->isTraceType(getTraceFlag())) continue;
@@ -760,7 +760,7 @@ void PCBSketchWidget::showLabelFirstTime(long itemID, bool show, bool doEmit) {
 
 ItemBase * PCBSketchWidget::findBoardBeneath(ItemBase * itemBase) {
 	foreach (QGraphicsItem * item, scene()->collidingItems(itemBase)) {
-		Board * board = dynamic_cast<Board *>(item);
+		auto * board = dynamic_cast<Board *>(item);
 		if (board == nullptr) continue;
 
 		if (Board::isBoard(board)) return board;
@@ -791,7 +791,7 @@ ItemBase * PCBSketchWidget::findSelectedBoard(int & boardCount) {
 QList<ItemBase *> PCBSketchWidget::findBoard() {
 	QSet<ItemBase *> boards;
 	foreach (QGraphicsItem * childItem, items()) {
-		Board * board = dynamic_cast<Board *>(childItem);
+		auto * board = dynamic_cast<Board *>(childItem);
 		if (board == nullptr) continue;
 
 		if (Board::isBoard(board)) {
@@ -850,7 +850,7 @@ void PCBSketchWidget::swapLayers(ItemBase *, int newLayers, QUndoCommand * paren
 	QList<ItemBase *> pads;
 	QList<Wire *> already;
 
-	ChangeBoardLayersCommand * changeBoardCommand = new ChangeBoardLayersCommand(this, m_boardLayers, newLayers, parentCommand);
+	auto * changeBoardCommand = new ChangeBoardLayersCommand(this, m_boardLayers, newLayers, parentCommand);
 	QList<ItemBase *> boards = findBoard();
 	foreach (ItemBase * board, boards) {
 		new SetPropCommand(this, board->id(), "layers", QString::number(m_boardLayers), QString::number(newLayers), true, parentCommand);
@@ -864,7 +864,7 @@ void PCBSketchWidget::swapLayers(ItemBase *, int newLayers, QUndoCommand * paren
 
 	// disconnect and flip smds
 	foreach (QGraphicsItem * item, scene()->items()) {
-		ItemBase * smd = dynamic_cast<ItemBase *>(item);
+		auto * smd = dynamic_cast<ItemBase *>(item);
 		if (smd == nullptr) continue;
 		if (smd->moduleID().endsWith(ModuleIDNames::PadModuleIDName)) {
 			pads << smd;
@@ -1043,7 +1043,7 @@ void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCom
 	else if (force) items = scene()->items();
 	else items =  scene()->selectedItems();
 	foreach (QGraphicsItem * item, items) {
-		TraceWire * tw = dynamic_cast<TraceWire *>(item);
+		auto * tw = dynamic_cast<TraceWire *>(item);
 		if (tw == nullptr) continue;
 
 		if (!tw->isTraceType(getTraceFlag())) continue;
@@ -1145,7 +1145,7 @@ void PCBSketchWidget::changeLayer(long id, double z, ViewLayer::ViewLayerID view
 	itemBase->setZValue(z);
 	itemBase->saveGeometry();
 
-	TraceWire * tw = qobject_cast<TraceWire *>(itemBase);
+	auto * tw = qobject_cast<TraceWire *>(itemBase);
 	if (tw) {
 		ViewLayer::ViewLayerPlacement viewLayerPlacement = ViewLayer::specFromID(viewLayerID);
 		tw->setViewLayerPlacement(viewLayerPlacement);
@@ -1162,7 +1162,7 @@ void PCBSketchWidget::changeLayer(long id, double z, ViewLayer::ViewLayerID view
 bool PCBSketchWidget::resizingJumperItemPress(ItemBase * itemBase) {
 	if (itemBase == nullptr) return false;
 
-	JumperItem * jumperItem = qobject_cast<JumperItem *>(itemBase->layerKinChief());
+	auto * jumperItem = qobject_cast<JumperItem *>(itemBase->layerKinChief());
 	if (jumperItem == nullptr) return false;
 	if (!jumperItem->inDrag()) return false;
 
@@ -1175,7 +1175,7 @@ bool PCBSketchWidget::resizingJumperItemPress(ItemBase * itemBase) {
 		QHash<Wire *, ConnectorItem *> savedWires;
 		if (board == nullptr) {
 			foreach (QGraphicsItem * item, scene()->items()) {
-				PaletteItemBase * itemBase = dynamic_cast<PaletteItemBase *>(item);
+				auto * itemBase = dynamic_cast<PaletteItemBase *>(item);
 				if (itemBase == nullptr) continue;
 				if (itemBase->itemType() == ModelPart::Jumper) continue;
 
@@ -1261,7 +1261,7 @@ QSizeF PCBSketchWidget::jumperItemSize() {
 		viewGeometry.setLoc(QPointF(0, 0));
 		ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::JumperModuleIDName), ViewLayer::NewTop, BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
 		if (itemBase) {
-			JumperItem * jumperItem = qobject_cast<JumperItem *>(itemBase);
+			auto * jumperItem = qobject_cast<JumperItem *>(itemBase);
 			m_jumperItemSize = jumperItem->connector0()->rect().size();
 			deleteItem(itemBase, true, false, false);
 		}
@@ -1304,7 +1304,7 @@ bool PCBSketchWidget::acceptsTrace(const ViewGeometry & viewGeometry) {
 QList<QGraphicsItem *> PCBSketchWidget::getCollidingItems(QGraphicsItem *target, QGraphicsItem *other) {
 	QList<QGraphicsItem *> collidingItems;
 	foreach (QGraphicsItem * item, scene()->collidingItems(target)) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 		if (!itemBase->isEverVisible()) continue;
 		if (itemBase->layerKinChief() != itemBase) continue;
@@ -1355,7 +1355,7 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 
 		QList<QGraphicsItem *> onBoard = getCollidingItems(board, newItem);
 		foreach (QGraphicsItem * item, onBoard) {
-			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+			auto * itemBase = dynamic_cast<ItemBase *>(item);
 			QStringList keys;
 			auto properties = itemBase->prepareProps(itemBase->modelPart(), true, keys);
 			items[properties["id"].toStdString()] = itemBase;
@@ -1843,7 +1843,7 @@ void PCBSketchWidget::rotatePartLabels(double degrees, QTransform & transform, Q
 	*/
 
 	foreach (QGraphicsItem * item, scene()->items()) {
-		PartLabel * partLabel = dynamic_cast<PartLabel *>(item);
+		auto * partLabel = dynamic_cast<PartLabel *>(item);
 		if (partLabel == nullptr) continue;
 		if (!partLabel->isVisible()) continue;
 		//if (!bbr.intersects(partLabel->sceneBoundingRect())) continue;  // if the part is on the board and the label is off the board, this does not rotate
@@ -1866,7 +1866,7 @@ QString PCBSketchWidget::characterizeGroundFill(ViewLayer::ViewLayerID whichGrou
 	int boardCount;
 	ItemBase * board = findSelectedBoard(boardCount);
 	foreach (QGraphicsItem * item, scene()->collidingItems(board)) {
-		GroundPlane * gp = dynamic_cast<GroundPlane *>(item);
+		auto * gp = dynamic_cast<GroundPlane *>(item);
 		if (gp == nullptr) continue;
 
 		if (gp->viewLayerID() == whichGroundPlane) {
@@ -1879,7 +1879,7 @@ QString PCBSketchWidget::characterizeGroundFill(ViewLayer::ViewLayerID whichGrou
 	if (!gotOne) return result;
 
 	foreach (QGraphicsItem * item, scene()->items()) {
-		GroundPlane * gp = dynamic_cast<GroundPlane *>(item);
+		auto * gp = dynamic_cast<GroundPlane *>(item);
 		if (gp == nullptr) continue;
 		if (gp->viewLayerID() != whichGroundPlane) continue;
 
@@ -2031,7 +2031,7 @@ void PCBSketchWidget::postImageSlot(GroundPlaneGenerator * gpg, QImage * copperI
 bool PCBSketchWidget::hasNeighbor(ConnectorItem * connectorItem, ViewLayer::ViewLayerID viewLayerID, const QRectF & r)
 {
 	foreach (QGraphicsItem * item, scene()->items(r)) {
-		ConnectorItem * ci = dynamic_cast<ConnectorItem *>(item);
+		auto * ci = dynamic_cast<ConnectorItem *>(item);
 		if (ci != nullptr) {
 			if (ci->attachedToViewLayerID() != viewLayerID) continue;
 			if (!ci->attachedTo()->isEverVisible()) continue;
@@ -2040,7 +2040,7 @@ bool PCBSketchWidget::hasNeighbor(ConnectorItem * connectorItem, ViewLayer::View
 			return true;
 		}
 
-		TraceWire * traceWire = dynamic_cast<TraceWire *>(item);
+		auto * traceWire = dynamic_cast<TraceWire *>(item);
 		if (traceWire != nullptr) {
 			if (!sameElectricalLayer2(traceWire->viewLayerID(), viewLayerID)) continue;
 			if (!traceWire->isTraceType(getTraceFlag())) continue;
@@ -2055,7 +2055,7 @@ bool PCBSketchWidget::hasNeighbor(ConnectorItem * connectorItem, ViewLayer::View
 void PCBSketchWidget::collectThroughHole(QList<ConnectorItem *> & th, QList<ConnectorItem *> & pads, const LayerList & layerList)
 {
 	foreach (QGraphicsItem * item, scene()->items()) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (!connectorItem->attachedTo()->isVisible()) continue;
 		if (!layerList.contains(connectorItem->attachedToViewLayerID())) continue;
@@ -2076,7 +2076,7 @@ void PCBSketchWidget::collectThroughHole(QList<ConnectorItem *> & th, QList<Conn
 void PCBSketchWidget::hideCopperLogoItems(QList<ItemBase *> & copperLogoItems)
 {
 	foreach (QGraphicsItem * item, this->items()) {
-		CopperLogoItem * logoItem = dynamic_cast<CopperLogoItem *>(item);
+		auto * logoItem = dynamic_cast<CopperLogoItem *>(item);
 		if (logoItem && logoItem->isVisible()) {
 			copperLogoItems.append(logoItem);
 			logoItem->setVisible(false);
@@ -2087,7 +2087,7 @@ void PCBSketchWidget::hideCopperLogoItems(QList<ItemBase *> & copperLogoItems)
 void PCBSketchWidget::hideHoles(QList<ItemBase *> & holes)
 {
 	foreach (QGraphicsItem * item, this->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		// for some reason the layerkin of the hole doesn't have a modelPart->itemType() == ModelPart::Hole
 		if (itemBase && itemBase->isVisible() && itemBase->layerKinChief()->modelPart()->itemType() == ModelPart::Hole) {
 			holes.append(itemBase);
@@ -2112,7 +2112,7 @@ void PCBSketchWidget::clearGroundFillSeeds()
 	if (board == nullptr) return;
 
 	foreach (QGraphicsItem * item, scene()->collidingItems(board)) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (connectorItem->attachedToItemType() == ModelPart::CopperFill) continue;
 
@@ -2124,7 +2124,7 @@ void PCBSketchWidget::clearGroundFillSeeds()
 
 	if (trueSeeds.count() == 0) return;
 
-	GroundFillSeedCommand * command = new GroundFillSeedCommand(this, nullptr);
+	auto * command = new GroundFillSeedCommand(this, nullptr);
 	command->setText(tr("Clear ground fill seeds"));
 	foreach (ConnectorItem * connectorItem, trueSeeds) {
 		command->addItem(connectorItem->attachedToID(), connectorItem->connectorSharedID(), false);
@@ -2181,7 +2181,7 @@ bool PCBSketchWidget::collectGroundFillSeeds(QList<ConnectorItem *> & seeds, boo
 	if (board == nullptr) return false;
 
 	foreach (QGraphicsItem * item, scene()->collidingItems(board)) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (connectorItem->attachedToItemType() == ModelPart::CopperFill) continue;
 
@@ -2238,7 +2238,7 @@ void PCBSketchWidget::shiftHoles() {
 	if (!doShift) return;
 
 	foreach (QGraphicsItem * item, scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 
 		switch (itemBase->itemType()) {
@@ -2275,7 +2275,7 @@ int PCBSketchWidget::selectAllItemType(ModelPart::ItemType itemType, const QStri
 
 	QSet<ItemBase *> itemBases;
 	foreach (QGraphicsItem * item, (board == nullptr ? scene()->items() : scene()->collidingItems(board))) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 		if (itemBase->itemType() != itemType) continue;
 
@@ -2347,7 +2347,7 @@ void PCBSketchWidget::convertToVia(ConnectorItem * lastHoverEnterConnectorItem) 
 	this->clearHoldingSelectItem();
 	this->m_moveEventCount = 0;  // clear this so an extra MoveItemCommand isn't posted
 
-	QUndoCommand * parentCommand = new QUndoCommand(QObject::tr("Convert to Via"));
+	auto * parentCommand = new QUndoCommand(QObject::tr("Convert to Via"));
 
 	new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
@@ -2397,7 +2397,7 @@ void PCBSketchWidget::convertToVia(ConnectorItem * lastHoverEnterConnectorItem) 
 
 	}
 
-	SelectItemCommand * selectItemCommand = new SelectItemCommand(this, SelectItemCommand::NormalSelect, parentCommand);
+	auto * selectItemCommand = new SelectItemCommand(this, SelectItemCommand::NormalSelect, parentCommand);
 	selectItemCommand->addRedo(newID);
 
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
@@ -2411,7 +2411,7 @@ void PCBSketchWidget::convertToBendpoint() {
 
 	ItemBase * itemBase = nullptr;
 	foreach (QGraphicsItem * item,  scene()->selectedItems()) {
-		ItemBase * candidate = dynamic_cast<ItemBase *>(item);
+		auto * candidate = dynamic_cast<ItemBase *>(item);
 		if (candidate == nullptr) continue;
 
 		if (itemBase == nullptr) itemBase = candidate->layerKinChief();
@@ -2478,7 +2478,7 @@ void PCBSketchWidget::convertToBendpoint() {
 	this->clearHoldingSelectItem();
 	this->m_moveEventCount = 0;  // clear this so an extra MoveItemCommand isn't posted
 
-	QUndoCommand * parentCommand = new QUndoCommand(QObject::tr("Convert Via to Bendpoint"));
+	auto * parentCommand = new QUndoCommand(QObject::tr("Convert Via to Bendpoint"));
 
 	new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
@@ -2715,7 +2715,7 @@ void PCBSketchWidget::hidePartSilkscreen() {
 
 	ItemBase * itemBase = nullptr;
 	foreach (QGraphicsItem * item,  scene()->selectedItems()) {
-		ItemBase * candidate = dynamic_cast<ItemBase *>(item);
+		auto * candidate = dynamic_cast<ItemBase *>(item);
 		if (candidate == nullptr) continue;
 
 		itemBase = candidate->layerKinChief();
@@ -2730,7 +2730,7 @@ void PCBSketchWidget::hidePartSilkscreen() {
 	foreach (ItemBase * lkpi, itemBases) {
 		if (lkpi->viewLayerID() == ViewLayer::Silkscreen1 || lkpi->viewLayerID() == ViewLayer::Silkscreen0) {
 			bool layerHidden = lkpi->layerHidden();
-			QUndoCommand * parentCommand = new QUndoCommand(layerHidden ? tr("Show part silkscreen") : tr("Hide part silkscreen"));
+			auto * parentCommand = new QUndoCommand(layerHidden ? tr("Show part silkscreen") : tr("Hide part silkscreen"));
 			new HidePartLayerCommand(this, itemBase->id(), ViewLayer::Silkscreen0, layerHidden, !layerHidden, parentCommand);
 			new HidePartLayerCommand(this, itemBase->id(), ViewLayer::Silkscreen1, layerHidden, !layerHidden, parentCommand);
 			m_undoStack->push(parentCommand);
@@ -2804,7 +2804,7 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	QuoteDialog::setArea(area, boardCount);
 
 	QString paramString = Version::makeRequestParamsString(false);
-	QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+	auto * manager = new QNetworkAccessManager(this);
 
 	QString protocol = "http";
 	if (QSslSocket::supportsSsl()) {
@@ -2927,7 +2927,7 @@ void PCBSketchWidget::setViewFromBelow(bool viewFromBelow) {
 
 	QSet<ItemBase *> chiefs;
 	foreach (QGraphicsItem * item, scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 
 		ViewLayer * viewLayer = m_viewLayers.value(itemBase->viewLayerID(), NULL);

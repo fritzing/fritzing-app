@@ -67,7 +67,7 @@ void PartsBinView::setPaletteModel(PaletteModel * model, bool clear) {
 		doClear();
 	}
 
-	if (model->root() == NULL) return;
+	if (model->root() == nullptr) return;
 
 	setItemAux(model->root());
 	setItem(model->root());
@@ -212,7 +212,7 @@ void PartsBinView::dropEventAux(QDropEvent* event, bool justAppend) {
 		m_parent->copyFilesToContrib(mp, ItemDrag::originator());
 		if(mp) {
 			if(m_parent->contains(moduleID)) {
-				QMessageBox::information(NULL, QObject::tr("Part already in bin"), QObject::tr("The part that you have just added,\nis already there, we won't add it again, right?"));
+				QMessageBox::information(nullptr, QObject::tr("Part already in bin"), QObject::tr("The part that you have just added,\nis already there, we won't add it again, right?"));
 			} else {
 				m_parent->addPart(mp,toIndex);
 				m_parent->setDirty();

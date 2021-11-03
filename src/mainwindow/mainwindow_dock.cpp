@@ -69,7 +69,7 @@ void MainWindow::createDockWindows()
 	m_layerPalette->setShowAllLayersAction(m_showAllLayersAct);
 	m_layerPalette->setHideAllLayersAction(m_hideAllLayersAct);
 
-	if (m_programView == NULL) {
+	if (m_programView == nullptr) {
 		m_windowMenu->addSeparator();
 		m_windowMenu->addAction(m_openProgramWindowAct);
 	}
@@ -117,7 +117,7 @@ FDockWidget *MainWindow::dockIt(FDockWidget* dock, int dockMinHeight, int dockDe
 
 FDockWidget *MainWindow::newTopWidget() {
 	int topMostY = 10000;
-	FDockWidget *topWidget = NULL;
+	FDockWidget *topWidget = nullptr;
 	foreach(FDockWidget* dock, m_docks) {
 		if(/*!dock->isFloating() && dock->isVisible() &&*/
 		    dockWidgetArea(dock) == Qt::RightDockWidgetArea
@@ -131,7 +131,7 @@ FDockWidget *MainWindow::newTopWidget() {
 
 FDockWidget *MainWindow::newBottomWidget() {
 	int bottomMostY = -1;
-	FDockWidget *bottomWidget = NULL;
+	FDockWidget *bottomWidget = nullptr;
 	foreach(FDockWidget* dock, m_docks) {
 		if(!dock->isFloating() && dock->isVisible() &&
 		        dockWidgetArea(dock) == Qt::RightDockWidgetArea
@@ -233,7 +233,7 @@ void MainWindow::saveDocks()
 {
 	for (int i = 0; i < children().count(); i++) {
 		auto * dock = qobject_cast<FDockWidget *>(children()[i]);
-		if (dock == NULL) continue;
+		if (dock == nullptr) continue;
 
 		//DebugDialog::debug(QString("saving dock %1").arg(dock->windowTitle()));
 		dock->saveState();
@@ -248,7 +248,7 @@ void MainWindow::saveDocks()
 void MainWindow::restoreDocks() {
 	for (int i = 0; i < children().count(); i++) {
 		auto * dock = qobject_cast<FDockWidget *>(children()[i]);
-		if (dock == NULL) continue;
+		if (dock == nullptr) continue;
 
 		// DebugDialog::debug(QString("restoring dock %1").arg(dock->windowTitle()));
 		dock->restoreState();

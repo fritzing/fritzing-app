@@ -27,7 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 PEBaseCommand::PEBaseCommand(PEMainWindow * peMainWindow, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, NULL, parent)
+	: BaseCommand(BaseCommand::CrossView, nullptr, parent)
 {
 	m_peMainWindow = peMainWindow;
 }

@@ -76,7 +76,7 @@ bool SVGPathRunner::runPath(QVector<QVariant> & pathData, void * userData) {
 void SVGPathRunner::initStates() {
 	pathCommands.clear();
 
-	PathCommand * pathCommand = new PathCommand;
+	auto * pathCommand = new PathCommand;
 	pathCommand->command = 'M';
 	pathCommand->relative = false;
 	pathCommand->argCount = 2;

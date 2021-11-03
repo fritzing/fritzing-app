@@ -146,9 +146,9 @@ void PEConnectorsView::initConnectors(QList<QDomElement> * connectorList)
 	}
 
 	if (m_scrollFrame) {
-		m_scrollArea->setWidget(NULL);
+		m_scrollArea->setWidget(nullptr);
 		delete m_scrollFrame;
-		m_scrollFrame = NULL;
+		m_scrollFrame = nullptr;
 	}
 
 	m_connectorCount = connectorList->size();
@@ -232,7 +232,7 @@ void PEConnectorsView::changeConnector() {
 
 void PEConnectorsView::allTypeEntry() {
 	QRadioButton * radio = qobject_cast<QRadioButton *>(sender());
-	if (radio == NULL) return;
+	if (radio == nullptr) return;
 
 	bool ok;
 	Connector::ConnectorType ct = (Connector::ConnectorType) radio->property("value").toInt(&ok);
@@ -246,7 +246,7 @@ void PEConnectorsView::allTypeEntry() {
 void PEConnectorsView::smdEntry()
 {
 	QRadioButton * radio = qobject_cast<QRadioButton *>(sender());
-	if (radio == NULL) return;
+	if (radio == nullptr) return;
 
 	emit smdChanged(radio == m_smd ? "smd" : "tht");
 }

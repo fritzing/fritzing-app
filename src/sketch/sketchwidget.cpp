@@ -3851,7 +3851,7 @@ void SketchWidget::dragWireChanged(Wire* wire, ConnectorItem * fromOnWire, Conne
 			doEmit = true;
 		}
 		if (to) {
-			extendChangeConnectionCommand(BaseCommand::CrossView, fromOnWire, to, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
+			extendChangeConnectionCommand(BaseCommand::CrossView, to, fromOnWire, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
 			doEmit = true;
 		}
 

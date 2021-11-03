@@ -206,11 +206,11 @@ void SchematicSketchWidget::updateBigDots()
 {
 	QList<ConnectorItem *> connectorItems;
 	foreach (QGraphicsItem * item, scene()->items()) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (connectorItem->attachedToItemType() != ModelPart::Wire) continue;
 
-		TraceWire * traceWire = qobject_cast<TraceWire *>(connectorItem->attachedTo());
+		auto * traceWire = qobject_cast<TraceWire *>(connectorItem->attachedTo());
 		if (traceWire == nullptr) continue;
 
 		//DebugDialog::debug(QString("update big dot %1 %2").arg(traceWire->id()).arg(connectorItem->connectorSharedID()));
@@ -238,7 +238,7 @@ void SchematicSketchWidget::setInstanceTitle(long itemID, const QString & oldTex
 	// isUndoable is true when setInstanceTitle is called from the infoview
 
 	if (isUndoable) {
-		SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(findItem(itemID));
+		auto * sitem = qobject_cast<SymbolPaletteItem *>(findItem(itemID));
 		if (sitem && sitem->isOnlyNetLabel()) {
 			setProp(sitem, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
 			return;
@@ -251,13 +251,13 @@ void SchematicSketchWidget::setInstanceTitle(long itemID, const QString & oldTex
 void SchematicSketchWidget::setProp(ItemBase * itemBase, const QString & prop, const QString & trProp, const QString & oldValue, const QString & newValue, bool redraw)
 {
 	if (prop =="label") {
-		SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(itemBase);
+		auto * sitem = qobject_cast<SymbolPaletteItem *>(itemBase);
 		if (sitem && sitem->isOnlyNetLabel()) {
 			if (sitem->getLabel() == newValue) {
 				return;
 			}
 
-			QUndoCommand * parentCommand =  new QUndoCommand();
+			auto * parentCommand =  new QUndoCommand();
 			parentCommand->setText(tr("Change label from %1 to %2").arg(oldValue).arg(newValue));
 
 			CleanUpWiresCommand * cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
@@ -288,13 +288,13 @@ void SchematicSketchWidget::setVoltage(double v, bool doEmit)
 
 	if (item->itemType() != ModelPart::Symbol) return;
 
-	SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(item);
+	auto * sitem = qobject_cast<SymbolPaletteItem *>(item);
 	if (sitem == nullptr) return;
 
 	if (sitem->moduleID().compare("ground symbol", Qt::CaseInsensitive) == 0) return;
 	if (v == sitem->voltage()) return;
 
-	QUndoCommand * parentCommand =  new QUndoCommand();
+	auto * parentCommand =  new QUndoCommand();
 	parentCommand->setText(tr("Change voltage from %1 to %2").arg(sitem->voltage()).arg(v));
 
 	CleanUpWiresCommand * cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
@@ -368,7 +368,7 @@ double SchematicSketchWidget::getAutorouterTraceWidth() {
 
 void SchematicSketchWidget::extraRenderSvgStep(ItemBase * itemBase, QPointF offset, double dpi, double printerScale, QString & outputSvg)
 {
-	TraceWire * traceWire = qobject_cast<TraceWire *>(itemBase);
+	auto * traceWire = qobject_cast<TraceWire *>(itemBase);
 	if (traceWire == nullptr) return;
 
 	if (traceWire->connector0()->isBigDot()) {
@@ -470,7 +470,7 @@ QSizeF SchematicSketchWidget::jumperItemSize() {
 		viewGeometry.setLoc(QPointF(0, 0));
 		ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(nullptr), BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
 		if (itemBase) {
-			SymbolPaletteItem * netLabel = qobject_cast<SymbolPaletteItem *>(itemBase);
+			auto * netLabel = qobject_cast<SymbolPaletteItem *>(itemBase);
 			netLabel->setLabel("00");
 			SchematicSketchWidget::m_jumperItemSize = netLabel->boundingRect().size();
 			deleteItem(itemBase, true, false, false);
@@ -545,7 +545,7 @@ void SchematicSketchWidget::resizeLabels() {
 
 	double fontSize = getLabelFontSizeSmall();
 	foreach (QGraphicsItem * item, scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 
 		if (itemBase->hasPartLabel() && itemBase->partLabel()) {

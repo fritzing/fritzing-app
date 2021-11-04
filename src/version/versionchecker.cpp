@@ -35,7 +35,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 VersionChecker::VersionChecker() : QObject()
 {
-	m_networkReply = NULL;
+	m_networkReply = nullptr;
 	m_depth = 0;
 	m_inSummary = m_inUpdated = m_inTitle = m_inEntry = false;
 	m_ignoreInterimVersion.ok = m_ignoreMainVersion.ok = false;
@@ -81,7 +81,7 @@ void VersionChecker::finished(QNetworkReply * networkReply)
 
 	QMutexLocker locker(&m_networkReplyLock);
 	if (networkReply == m_networkReply) {
-		m_networkReply = NULL;
+		m_networkReply = nullptr;
 	}
 
 	networkReply->manager()->deleteLater();
@@ -225,7 +225,7 @@ const QList<AvailableRelease *> & VersionChecker::availableReleases()
 void VersionChecker::stop() {
 	if (m_networkReplyLock.tryLock(1)) {
 		if (m_networkReply) {
-			m_networkReply = NULL;
+			m_networkReply = nullptr;
 		}
 		m_networkReplyLock.unlock();
 	}

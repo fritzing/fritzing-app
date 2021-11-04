@@ -52,7 +52,7 @@ SketchToolButton::SketchToolButton(const QString &imageName, QWidget *parent, QL
 	m_imageName = imageName;			// nice to have for debugging
 	setupIcons(imageName);
 
-	QMenu *menu = new QMenu(this);
+	auto *menu = new QMenu(this);
 	for(int i=0; i < menuActions.size(); i++) {
 		QAction* act = menuActions[i];
 		menu->addAction(act);

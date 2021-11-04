@@ -1008,7 +1008,7 @@ bool SelectItemCommand::mergeWith(const QUndoCommand *other)
 		return false;
 	}
 
-	const SelectItemCommand * sother = dynamic_cast<const SelectItemCommand *>(other);
+	const auto * sother = dynamic_cast<const SelectItemCommand *>(other);
 	if (sother == NULL) return false;
 
 	if (sother->crossViewType() != this->crossViewType()) {
@@ -1184,7 +1184,7 @@ QString CheckStickyCommand::getParamString() const {
 }
 
 void CheckStickyCommand::stick(SketchWidget * sketchWidget, long fromID, long toID, bool stickem) {
-	StickyThing * stickyThing = new StickyThing;
+	auto * stickyThing = new StickyThing;
 	stickyThing->sketchWidget = sketchWidget;
 	stickyThing->fromID = fromID;
 	stickyThing->toID = toID;
@@ -1261,7 +1261,7 @@ void CleanUpWiresCommand::addTrace(SketchWidget * sketchWidget, Wire * wire)
 {
 	if (m_parentCommand) {
 		for (int i = 0; i < m_parentCommand->childCount(); i++) {
-			const DeleteItemCommand * command = dynamic_cast<const DeleteItemCommand *>(m_parentCommand->child(i));
+			const auto * command = dynamic_cast<const DeleteItemCommand *>(m_parentCommand->child(i));
 
 			if (command == NULL) continue;
 			if (command->itemID() == wire->id()) {
@@ -1646,7 +1646,7 @@ bool ChangeNoteTextCommand::mergeWith(const QUndoCommand *other)
 		return false;
 	}
 
-	const ChangeNoteTextCommand * sother = dynamic_cast<const ChangeNoteTextCommand *>(other);
+	const auto * sother = dynamic_cast<const ChangeNoteTextCommand *>(other);
 	if (sother == NULL) return false;
 
 	if (sother->m_itemID != m_itemID) {

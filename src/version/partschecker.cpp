@@ -500,7 +500,7 @@ static int transfer_progress_cb(const git_transfer_progress *stats, void *payloa
 		progress = 0.5 * stats->received_objects / stats->total_objects;
 	}
 	if (payload) {
-		PartsCheckerUpdateInterface * interface = static_cast<PartsCheckerUpdateInterface *>(payload);
+		auto * interface = static_cast<PartsCheckerUpdateInterface *>(payload);
 		if (interface) {
 			interface->updateProgress(progress);
 		}

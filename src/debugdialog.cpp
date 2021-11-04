@@ -157,7 +157,7 @@ void DebugDialog::debug(QString message, DebugLevel debugLevel, QObject * ancest
 		out << message << "\n";
 		m_file.close();
 	}
-	DebugEvent* de = new DebugEvent(message, debugLevel, ancestor);
+	auto* de = new DebugEvent(message, debugLevel, ancestor);
 	QCoreApplication::postEvent(singleton, de);
 }
 

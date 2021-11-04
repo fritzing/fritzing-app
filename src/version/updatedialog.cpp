@@ -58,7 +58,7 @@ UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
 		                         "You can also update later via the <i>Help &rarr; Check for Updates</i> menu.</p>");
 	}
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
 	m_feedbackLabel = new QLabel();
 	m_feedbackLabel->setTextInteractionFlags(Qt::LinksAccessibleByMouse | Qt::LinksAccessibleByKeyboard);

@@ -60,7 +60,7 @@ FSplashScreen::FSplashScreen(const QPixmap & pixmap, Qt::WindowFlags f ) : QSpla
 			int width = item.attribute("width", "0").toInt();
 			int height = item.attribute("height", "0").toInt();
 			QString colorName = item.attribute("color");
-			MessageThing * messageThing = new MessageThing();
+			auto * messageThing = new MessageThing();
 			messageThing->rect.setCoords(x, y, x + width, y + height);
 			if (colorName.isEmpty()) {
 				messageThing->color = QColor(0, 0, 0);
@@ -92,7 +92,7 @@ void FSplashScreen::showMessage(const QString &message, const QString & id, int 
 	MessageThing * itemMessageThing = m_items.value(id);
 	if (itemMessageThing == NULL) return;
 
-	MessageThing * messageThing = new MessageThing;
+	auto * messageThing = new MessageThing;
 	messageThing->alignment = alignment;
 	messageThing->color = itemMessageThing->color;
 	messageThing->rect = itemMessageThing->rect;;
@@ -107,7 +107,7 @@ int FSplashScreen::showPixmap(const QPixmap & pixmap, const QString & id)
 	MessageThing * itemMessageThing = m_items.value(id);
 	if (itemMessageThing == NULL) return -1;
 
-	PixmapThing * pixmapThing = new PixmapThing;
+	auto * pixmapThing = new PixmapThing;
 	pixmapThing->rect = QRect(itemMessageThing->rect.topLeft(), pixmap.size());
 	pixmapThing->pixmap = pixmap;
 	m_pixmaps.append(pixmapThing);

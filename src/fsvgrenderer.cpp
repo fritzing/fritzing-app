@@ -206,12 +206,12 @@ bool FSvgRenderer::fastLoad(const QByteArray & contents) {
 
 QPixmap * FSvgRenderer::getPixmap(QSvgRenderer * renderer, QSize size)
 {
-	QPixmap *pixmap = new QPixmap(size);
+	auto *pixmap = new QPixmap(size);
 	pixmap->fill(Qt::transparent);
 	QPainter painter(pixmap);
 	// preserve aspect ratio
 	QSizeF def = renderer->defaultSize();
-	FSvgRenderer * frenderer = qobject_cast<FSvgRenderer *>(renderer);
+	auto * frenderer = qobject_cast<FSvgRenderer *>(renderer);
 	if (frenderer) {
 		def = frenderer->defaultSizeF();
 	}
@@ -402,7 +402,7 @@ void FSvgRenderer::initConnectorInfoAux(QDomElement & element, const LoadInfo & 
 }
 
 ConnectorInfo * FSvgRenderer::initConnectorInfoStruct(QDomElement & connectorElement, const QString & filename, bool parsePaths) {
-	ConnectorInfo * connectorInfo = new ConnectorInfo();
+	auto * connectorInfo = new ConnectorInfo();
 	connectorInfo->radius = connectorInfo->strokeWidth = 0;
 	connectorInfo->gotPath = connectorInfo->gotCircle = false;
 
@@ -801,7 +801,7 @@ QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors(ViewLayer::ViewLayerPlaceme
 	if (m_nonConnectorInfoHash.count() == 0) return list;
 
 	foreach (QString nonConnectorID, m_nonConnectorInfoHash.keys()) {
-		SvgIdLayer * svgIdLayer = new SvgIdLayer(ViewLayer::PCBView);
+		auto * svgIdLayer = new SvgIdLayer(ViewLayer::PCBView);
 		svgIdLayer->m_svgId = nonConnectorID;
 		QRectF bounds = this->boundsOnElement(nonConnectorID);
 		if (bounds.isNull()) {

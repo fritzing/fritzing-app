@@ -135,7 +135,7 @@ FServerThread::FServerThread(qintptr socketDescriptor, QObject *parent) : QThrea
 
 void FServerThread::run()
 {
-	QTcpSocket * socket = new QTcpSocket();
+	auto * socket = new QTcpSocket();
 	if (!socket->setSocketDescriptor(m_socketDescriptor)) {
 		emit error(socket->error());
 		DebugDialog::debug(QString("Socket error %1 %2").arg(socket->error()).arg(socket->errorString()));
@@ -643,7 +643,7 @@ bool FApplication::eventFilter(QObject *obj, QEvent *event)
 	{
 		//DebugDialog::debug(QString("key pressed %1 %2").arg(m_mousePressed).arg(QApplication::mouseButtons()));
 		if (!m_mousePressed && !m_spaceBarIsPressed) {
-			QKeyEvent * kevent = static_cast<QKeyEvent *>(event);
+			auto * kevent = static_cast<QKeyEvent *>(event);
 			if (!kevent->isAutoRepeat() && (kevent->key() == Qt::Key_Space)) {
 				m_spaceBarIsPressed = true;
 				//DebugDialog::debug("spacebar pressed");
@@ -658,7 +658,7 @@ bool FApplication::eventFilter(QObject *obj, QEvent *event)
 	{
 		//DebugDialog::debug(QString("key released %1 %2").arg(m_mousePressed).arg(QApplication::mouseButtons()));
 		if (m_spaceBarIsPressed) {
-			QKeyEvent * kevent = static_cast<QKeyEvent *>(event);
+			auto * kevent = static_cast<QKeyEvent *>(event);
 			if (!kevent->isAutoRepeat() && (kevent->key() == Qt::Key_Space)) {
 				m_spaceBarIsPressed = false;
 				//DebugDialog::debug("spacebar pressed");
@@ -1161,7 +1161,7 @@ int FApplication::startup()
 
 	//bool fabEnabled = settings.value(ORDERFABENABLED, QVariant(false)).toBool();
 	//if (!fabEnabled) {
-	QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+	auto * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotOrderFab(QNetworkReply *)));
 	manager->get(QNetworkRequest(QUrl(QString("http%2://fab.fritzing.org/launched%1")
 									  .arg(Version::makeRequestParamsString(true))
@@ -1376,7 +1376,7 @@ void FApplication::checkForUpdates(bool atUserRequest)
 {
 	enableCheckUpdates(false);
 
-	VersionChecker * versionChecker = new VersionChecker();
+	auto * versionChecker = new VersionChecker();
 
 	QSettings settings;
 	if (!atUserRequest) {
@@ -1409,7 +1409,7 @@ void FApplication::enableCheckUpdates(bool enabled)
 {
 	//DebugDialog::debug("before enable check updates");
 	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
-		MainWindow *mainWindow = qobject_cast<MainWindow *>(widget);
+		auto *mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow) {
 			mainWindow->enableCheckUpdates(enabled);
 		}
@@ -1430,7 +1430,7 @@ void FApplication::changeActivation(bool activate, QWidget * originator) {
 
 	//DebugDialog::debug(QString("change activation %1 %2").arg(activate).arg(originator->metaObject()->className()));
 
-	FritzingWindow * fritzingWindow = qobject_cast<FritzingWindow *>(originator);
+	auto * fritzingWindow = qobject_cast<FritzingWindow *>(originator);
 	if (fritzingWindow == NULL) {
 		fritzingWindow = qobject_cast<FritzingWindow *>(originator->parent());
 	}
@@ -1459,12 +1459,12 @@ void FApplication::updateActivation() {
 
 	//DebugDialog::debug(QString("last:%1, new:%2").arg((long) prior, 0, 16).arg((long) m_lastTopmostWindow.data(), 0, 16));
 
-	MainWindow * priorMainWindow = qobject_cast<MainWindow *>(prior);
+	auto * priorMainWindow = qobject_cast<MainWindow *>(prior);
 	if (priorMainWindow) {
 		priorMainWindow->saveDocks();
 	}
 
-	MainWindow * lastTopmostMainWindow = qobject_cast<MainWindow *>(m_lastTopmostWindow);
+	auto * lastTopmostMainWindow = qobject_cast<MainWindow *>(m_lastTopmostWindow);
 	if (lastTopmostMainWindow) {
 		lastTopmostMainWindow->restoreDocks();
 		//DebugDialog::debug("restoring active window");
@@ -1514,7 +1514,7 @@ void FApplication::closeAllWindows2() {
 	QWidgetList list = QApplication::topLevelWidgets();
 	for (int i = 0; did_close && i < list.size(); ++i) {
 		w = list.at(i);
-		FritzingWindow *fWindow = qobject_cast<FritzingWindow *>(w);
+		auto *fWindow = qobject_cast<FritzingWindow *>(w);
 		if (fWindow == NULL) continue;
 
 		if (w->isVisible() && w->windowType() != Qt::Desktop) {
@@ -1697,12 +1697,12 @@ QList<MainWindow *> FApplication::recoverBackups()
 	QList<QTreeWidgetItem*> fileItems = recoveryDialog.getFileList();
 	DebugDialog::debug(QString("Recovering %1 files from recoveryDialog").arg(fileItems.size()));
 	foreach (QTreeWidgetItem * item, fileItems) {
-		QString backupName = item->data(0, Qt::UserRole).value<QString>();
+		auto backupName = item->data(0, Qt::UserRole).value<QString>();
 		if (result == QDialog::Accepted && item->isSelected()) {
 			QString originalBaseName = item->text(0);
 			DebugDialog::debug(QString("Loading recovered sketch %1").arg(originalBaseName));
 
-			QString originalPath = item->data(1, Qt::UserRole).value<QString>();
+			auto originalPath = item->data(1, Qt::UserRole).value<QString>();
 			QString fileExt;
 			QString bundledFileName = FolderUtils::getSaveFileName(NULL, tr("Please specify an .fzz file name to save to (cancel will delete the backup)"), originalPath, tr("Fritzing (*%1)").arg(FritzingBundleExtension), &fileExt);
 			if (!bundledFileName.isEmpty()) {
@@ -1751,7 +1751,7 @@ void FApplication::gotOrderFab(QNetworkReply * networkReply) {
 QList<MainWindow *> FApplication::orderedTopLevelMainWindows() {
 	QList<MainWindow *> mainWindows;
 	foreach (QWidget * widget, m_orderedTopLevelWidgets) {
-		MainWindow * mainWindow = qobject_cast<MainWindow *>(widget);
+		auto * mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow) mainWindows.append(mainWindow);
 	}
 	return mainWindows;
@@ -1819,7 +1819,7 @@ void FApplication::initServer() {
 }
 
 void FApplication::newConnection(qintptr socketDescription) {
-	FServerThread *thread = new FServerThread(socketDescription, this);
+	auto *thread = new FServerThread(socketDescription, this);
 	connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
 	connect(thread, SIGNAL(doCommand(const QString &, const QString &, QString &, int &)),
 	        this, SLOT(doCommand(const QString &, const QString &, QString &, int &)), Qt::BlockingQueuedConnection);
@@ -1957,7 +1957,7 @@ void FApplication::regeneratePartsDatabase() {
 		return;
 	}
 
-	FileProgressDialog * fileProgressDialog = new FileProgressDialog(tr("Regenerating parts database..."), 0, NULL);
+	auto * fileProgressDialog = new FileProgressDialog(tr("Regenerating parts database..."), 0, NULL);
 	// these don't seem very accurate (i.e. when progress is at 100%, there is still a lot of work pending)
 	// so we are leaving progress indeterminate at present
 	//connect(referenceModel, SIGNAL(partsToLoad(int)), fileProgressDialog, SLOT(setMaximum(int)));
@@ -1970,14 +1970,14 @@ void FApplication::regeneratePartsDatabaseAux(QDialog * progressDialog) {
 	ReferenceModel * referenceModel = new CurrentReferenceModel();
 	QDir dir = FolderUtils::getAppPartsSubFolder("");
 	QString dbPath = dir.absoluteFilePath("parts.db");
-	RegenerateDatabaseThread *thread = new RegenerateDatabaseThread(dbPath, progressDialog, referenceModel);
+	auto *thread = new RegenerateDatabaseThread(dbPath, progressDialog, referenceModel);
 	connect(thread, SIGNAL(finished()), this, SLOT(regenerateDatabaseFinished()));
 	FMessageBox::BlockMessages = true;
 	thread->start();
 }
 
 void FApplication::regenerateDatabaseFinished() {
-	RegenerateDatabaseThread * thread = qobject_cast<RegenerateDatabaseThread *>(sender());
+	auto * thread = qobject_cast<RegenerateDatabaseThread *>(sender());
 	if (thread == NULL) return;
 
 	QDialog * progressDialog = thread->progressDialog();

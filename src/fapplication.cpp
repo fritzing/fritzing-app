@@ -517,7 +517,7 @@ int FApplication::init() {
 	}
 
 	m_started = false;
-	m_lastTopmostWindow = NULL;
+	m_lastTopmostWindow = nullptr;
 
 	connect(&m_activationTimer, SIGNAL(timeout()), this, SLOT(updateActivation()));
 	m_activationTimer.setInterval(10);
@@ -868,7 +868,7 @@ void FApplication::runGerberServiceAux()
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
 		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
 			QFileInfo info(filepath);
-			GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, NULL, mainWindow->pcbView(), false);
+			GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, nullptr, mainWindow->pcbView(), false);
 		}
 
 		mainWindow->setCloseSilently(true);
@@ -967,7 +967,7 @@ void FApplication::runDRCService() {
 		foreach (QString filename, filenames) {
 			QString filepath = dir.absoluteFilePath(filename);
 			MainWindow * mainWindow = openWindowForService(false, 3);
-			if (mainWindow == NULL) continue;
+			if (mainWindow == nullptr) continue;
 
 			mainWindow->setCloseSilently(true);
 
@@ -982,7 +982,7 @@ void FApplication::runDRCService() {
 
 			int moved = mainWindow->pcbView()->checkLoadedTraces();
 			if (moved > 0) {
-				QMessageBox::warning(NULL, QObject::tr("Fritzing"), QObject::tr("%1 wires moved from their saved position in %2.").arg(moved).arg(filepath));
+				QMessageBox::warning(nullptr, QObject::tr("Fritzing"), QObject::tr("%1 wires moved from their saved position in %2.").arg(moved).arg(filepath));
 				DebugDialog::debug(QString("\ncheckloadedtraces %1\n").arg(filepath));
 			}
 
@@ -1183,7 +1183,7 @@ int FApplication::startup()
 	ProcessEventBlocker::processEvents();
 
 	splash.hide();
-	m_splash = NULL;
+	m_splash = nullptr;
 
 	m_updateDialog = new UpdateDialog();
 	m_updateDialog->setRepoPath(FolderUtils::getAppPartsSubFolderPath(""), m_referenceModel->sha());
@@ -1250,15 +1250,15 @@ void FApplication::preferencesAfter()
 		language = QLocale::system().name();
 	}
 
-	MainWindow * mainWindow = NULL;
+	MainWindow * mainWindow = nullptr;
 	foreach (MainWindow * mw, orderedTopLevelMainWindows()) {
 		mainWindow = mw;
 		break;
 	}
 
-	if (mainWindow == NULL) return;			// shouldn't happen (maybe on the mac)
+	if (mainWindow == nullptr) return;			// shouldn't happen (maybe on the mac)
 
-	PrefsDialog prefsDialog(language, NULL);			// TODO: use the topmost MainWindow as parent
+	PrefsDialog prefsDialog(language, nullptr);			// TODO: use the topmost MainWindow as parent
 	int ix = 0;
 	foreach (SketchWidget * sketchWidget, mainWindow->sketchWidgets()) {
 		prefsDialog.initViewInfo(ix++,  sketchWidget->viewName(), sketchWidget->getShortName(),
@@ -1431,10 +1431,10 @@ void FApplication::changeActivation(bool activate, QWidget * originator) {
 	//DebugDialog::debug(QString("change activation %1 %2").arg(activate).arg(originator->metaObject()->className()));
 
 	auto * fritzingWindow = qobject_cast<FritzingWindow *>(originator);
-	if (fritzingWindow == NULL) {
+	if (fritzingWindow == nullptr) {
 		fritzingWindow = qobject_cast<FritzingWindow *>(originator->parent());
 	}
-	if (fritzingWindow == NULL) return;
+	if (fritzingWindow == nullptr) return;
 
 	m_orderedTopLevelWidgets.removeOne(fritzingWindow);
 	m_orderedTopLevelWidgets.push_front(fritzingWindow);
@@ -1447,7 +1447,7 @@ void FApplication::updateActivation() {
 	//DebugDialog::debug("updating activation");
 
 	FritzingWindow * prior = m_lastTopmostWindow;
-	m_lastTopmostWindow = NULL;
+	m_lastTopmostWindow = nullptr;
 	if (m_orderedTopLevelWidgets.count() > 0) {
 		m_lastTopmostWindow = qobject_cast<FritzingWindow *>(m_orderedTopLevelWidgets.at(0));
 	}
@@ -1515,7 +1515,7 @@ void FApplication::closeAllWindows2() {
 	for (int i = 0; did_close && i < list.size(); ++i) {
 		w = list.at(i);
 		auto *fWindow = qobject_cast<FritzingWindow *>(w);
-		if (fWindow == NULL) continue;
+		if (fWindow == nullptr) continue;
 
 		if (w->isVisible() && w->windowType() != Qt::Desktop) {
 			did_close = w->close();
@@ -1549,7 +1549,7 @@ bool FApplication::runAsService() {
 
 void FApplication::loadedPart(int loaded, int total) {
 	if (total == 0) return;
-	if (m_splash == NULL) return;
+	if (m_splash == nullptr) return;
 
 	//DebugDialog::debug(QString("loaded %1 %2").arg(loaded).arg(total));
 	if (m_progressIndex >= 0) m_splash->showProgress(m_progressIndex, LoadProgressStart + ((LoadProgressEnd - LoadProgressStart) * loaded / (double) total));
@@ -1568,15 +1568,15 @@ bool FApplication::notify(QObject *receiver, QEvent *e)
 		return QApplication::notify(receiver, e);
 	}
 	catch (char const *str) {
-		FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception %1 from %2 in event %3")
+		FMessageBox::critical(nullptr, tr("Fritzing failure"), tr("Fritzing caught an exception %1 from %2 in event %3")
 		                      .arg(str).arg(receiver->objectName()).arg(e->type()));
 	}
 	catch (std::exception& exp) {
 		qDebug() << QString("notify %1 %2").arg(receiver->metaObject()->className()).arg(e->type());
-		FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2: %3").arg(receiver->objectName()).arg(e->type()).arg(exp.what()));
+		FMessageBox::critical(nullptr, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2: %3").arg(receiver->objectName()).arg(e->type()).arg(exp.what()));
 	}
 	catch (...) {
-		FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2").arg(receiver->objectName()).arg(e->type()));
+		FMessageBox::critical(nullptr, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2").arg(receiver->objectName()).arg(e->type()));
 	}
 	closeAllWindows2();
 	QApplication::exit(-1);
@@ -1631,7 +1631,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
 		//sketchesToLoad = loadLastOpenSketch();
 	}
 
-	MainWindow * newBlankSketch = NULL;
+	MainWindow * newBlankSketch = nullptr;
 	if (sketchesToLoad.isEmpty()) {
 		DebugDialog::debug(QString("create empty sketch"));
 		newBlankSketch = MainWindow::newMainWindow(m_referenceModel, "", true, true, -1);
@@ -1704,7 +1704,7 @@ QList<MainWindow *> FApplication::recoverBackups()
 
 			auto originalPath = item->data(1, Qt::UserRole).value<QString>();
 			QString fileExt;
-			QString bundledFileName = FolderUtils::getSaveFileName(NULL, tr("Please specify an .fzz file name to save to (cancel will delete the backup)"), originalPath, tr("Fritzing (*%1)").arg(FritzingBundleExtension), &fileExt);
+			QString bundledFileName = FolderUtils::getSaveFileName(nullptr, tr("Please specify an .fzz file name to save to (cancel will delete the backup)"), originalPath, tr("Fritzing (*%1)").arg(FritzingBundleExtension), &fileExt);
 			if (!bundledFileName.isEmpty()) {
 				MainWindow *currentRecoveredSketch = MainWindow::newMainWindow(m_referenceModel, originalBaseName, true, true, -1);
 				currentRecoveredSketch->mainLoad(backupName, bundledFileName, true);
@@ -1776,7 +1776,7 @@ void FApplication::runExampleService(QDir & dir) {
 		DebugDialog::debug("sketch file " + path);
 
 		MainWindow * mainWindow = openWindowForService(false, -1);
-		if (mainWindow == NULL) continue;
+		if (mainWindow == nullptr) continue;
 
 		FolderUtils::setOpenSaveFolderAux(dir.absolutePath());
 
@@ -1938,7 +1938,7 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 }
 
 void FApplication::regeneratePartsDatabase() {
-	QMessageBox messageBox(NULL);
+	QMessageBox messageBox(nullptr);
 	messageBox.setWindowTitle(tr("Regenerate parts database?"));
 	messageBox.setText(tr("Regenerating the parts database will take some minutes and you will have to restart Fritzing\n\n") +
 	                   tr("Would you like to regenerate the parts database?\n")
@@ -1957,7 +1957,7 @@ void FApplication::regeneratePartsDatabase() {
 		return;
 	}
 
-	auto * fileProgressDialog = new FileProgressDialog(tr("Regenerating parts database..."), 0, NULL);
+	auto * fileProgressDialog = new FileProgressDialog(tr("Regenerating parts database..."), 0, nullptr);
 	// these don't seem very accurate (i.e. when progress is at 100%, there is still a lot of work pending)
 	// so we are leaving progress indeterminate at present
 	//connect(referenceModel, SIGNAL(partsToLoad(int)), fileProgressDialog, SLOT(setMaximum(int)));
@@ -1978,7 +1978,7 @@ void FApplication::regeneratePartsDatabaseAux(QDialog * progressDialog) {
 
 void FApplication::regenerateDatabaseFinished() {
 	auto * thread = qobject_cast<RegenerateDatabaseThread *>(sender());
-	if (thread == NULL) return;
+	if (thread == nullptr) return;
 
 	QDialog * progressDialog = thread->progressDialog();
 	if (progressDialog == m_updateDialog) {
@@ -1990,7 +1990,7 @@ void FApplication::regenerateDatabaseFinished() {
 		}
 		else {
 			thread->referenceModel()->deleteLater();
-			QMessageBox::warning(NULL, QObject::tr("Regenerate database failed"), thread->error());
+			QMessageBox::warning(nullptr, QObject::tr("Regenerate database failed"), thread->error());
 		}
 
 		if (progressDialog) {

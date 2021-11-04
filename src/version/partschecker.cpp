@@ -120,7 +120,7 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
 	 */
 	DebugDialog::debug(QString("remote %1").arg(git_remote_url(remote)));
 #if LIBGIT2_VER_MAJOR > 0 || (LIBGIT2_VER_MAJOR == 0 && LIBGIT2_VER_MINOR > 24)
-	error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, NULL, NULL);
+	error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, nullptr, nullptr);
 #elif LIBGIT2_VER_MINOR == 24
 	error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, NULL);
 #else
@@ -220,12 +220,12 @@ bool PartsChecker::checkIfClean(const QString & repoPath,
 	// check local git status is ok
 	// check that last commit matches the one in the database
 
-	git_reference *head = NULL;
-	git_reference * resolved_head = NULL;
+	git_reference *head = nullptr;
+	git_reference * resolved_head = nullptr;
 	git_ref_t ref_type;
 	QString branchName;
 	bool result = false;
-	git_status_list *status_list = NULL;
+	git_status_list *status_list = nullptr;
 	git_status_options status_options = {};
 	status_options.version = GIT_STATUS_OPTIONS_VERSION;
 	int errorNumber = 0;
@@ -407,11 +407,11 @@ void PartsChecker::getChanges(git_status_list *status_list, PartsCheckerResult &
  */
 bool PartsChecker::cleanRepo(const QString & repoPath, const PartsCheckerResult & partsCheckerResult) {
 
-	git_repository *repository = NULL;
-	git_reference *head = NULL;
+	git_repository *repository = nullptr;
+	git_reference *head = nullptr;
 	bool result = false;
 	git_oid oid;  /* the SHA1 for last commit */
-	git_object *object = NULL;
+	git_object *object = nullptr;
 	QDir repoDir(repoPath);
 
 	git_libgit2_init();
@@ -433,7 +433,7 @@ bool PartsChecker::cleanRepo(const QString & repoPath, const PartsCheckerResult 
 	}
 
 
-	error = git_reset(repository, object, GIT_RESET_HARD, NULL);
+	error = git_reset(repository, object, GIT_RESET_HARD, nullptr);
 	if (error) {
 		goto cleanup;
 	}
@@ -461,14 +461,14 @@ cleanup:
 QString PartsChecker::getSha(const QString & repoPath) {
 
 	QString sha;
-	git_repository * repository = NULL;
+	git_repository * repository = nullptr;
 	char buffer[GIT_OID_HEXSZ + 1] = {0};
 
 	git_libgit2_init();
 
 	int error = git_repository_open(&repository, repoPath.toUtf8().constData());
 	if (error) {
-		FMessageBox::warning(NULL, QObject::tr("Regenerating parts database"), QObject::tr("Unable to find parts git repository"));
+		FMessageBox::warning(nullptr, QObject::tr("Regenerating parts database"), QObject::tr("Unable to find parts git repository"));
 		goto cleanup;
 	}
 
@@ -476,7 +476,7 @@ QString PartsChecker::getSha(const QString & repoPath) {
 	/* resolve HEAD into a SHA1 */
 	error = git_reference_name_to_id( &oid, repository, "HEAD" );
 	if (error) {
-		FMessageBox::warning(NULL, QObject::tr("Regenerating parts database"), QObject::tr("Unable to find parts git repository HEAD"));
+		FMessageBox::warning(nullptr, QObject::tr("Regenerating parts database"), QObject::tr("Unable to find parts git repository HEAD"));
 		goto cleanup;
 	}
 
@@ -516,8 +516,8 @@ bool PartsChecker::updateParts(const QString & repoPath, const QString & remoteS
 	// useful for testing: http://stackoverflow.com/questions/3489173/how-to-clone-git-repository-with-specific-revision-changeset
 
 	bool ok = false;
-	git_remote *remote = NULL;
-	git_repository * repository = NULL;
+	git_remote *remote = nullptr;
+	git_repository * repository = nullptr;
 	git_fetch_options fetch_opts = {};
 	fetch_opts.version = GIT_FETCH_OPTIONS_VERSION;
 
@@ -551,7 +551,7 @@ bool PartsChecker::updateParts(const QString & repoPath, const QString & remoteS
 	 * "fetch".
 	 */
 
-	error = git_remote_fetch(remote, NULL, &fetch_opts, "fetch");
+	error = git_remote_fetch(remote, nullptr, &fetch_opts, "fetch");
 	if (error) {
 		DebugDialog::debug("unable to fetch " + repoPath);
 		goto cleanup;
@@ -586,15 +586,15 @@ int PartsChecker::doMerge(git_repository * repository, const QString & remoteSha
 	git_checkout_options checkout_options = {};
 	checkout_options.version = GIT_CHECKOUT_OPTIONS_VERSION;
 	bool afterMerge = false;
-	git_commit *head_commit = NULL;
-	git_commit *remote_commit = NULL;
-	git_signature * signature = NULL;
-	git_tree * saved_tree = NULL;
-	git_reference * current_reference = NULL;
-	git_reference * new_reference = NULL;
-	git_reference * head_reference = NULL;
-	git_reference * new_head_reference = NULL;
-	git_index * index = NULL;
+	git_commit *head_commit = nullptr;
+	git_commit *remote_commit = nullptr;
+	git_signature * signature = nullptr;
+	git_tree * saved_tree = nullptr;
+	git_reference * current_reference = nullptr;
+	git_reference * new_reference = nullptr;
+	git_reference * head_reference = nullptr;
+	git_reference * new_head_reference = nullptr;
+	git_index * index = nullptr;
 	//char buffer[GIT_OID_HEXSZ + 1] = {0};
 
 	merge_options.file_favor = GIT_MERGE_FILE_FAVOR_THEIRS;
@@ -724,7 +724,7 @@ int PartsChecker::doMerge(git_repository * repository, const QString & remoteSha
 
 	git_oid new_commit_id;
 	error = git_commit_create_v(&new_commit_id, repository, "HEAD", signature, signature,
-	                            NULL, "Update parts", saved_tree, 2, head_commit, remote_commit);
+	                            nullptr, "Update parts", saved_tree, 2, head_commit, remote_commit);
 	if (error) {
 		DebugDialog::debug("final commit failed");
 		goto cleanup;

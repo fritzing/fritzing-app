@@ -49,7 +49,7 @@ void CommandTimer::timedout() {
 WaitPushUndoStack::WaitPushUndoStack(QObject * parent) :
 	QUndoStack(parent)
 {
-	m_temporary = NULL;
+	m_temporary = nullptr;
 #ifndef QT_NO_DEBUG
 	QString path = FolderUtils::getTopLevelUserDataStorePath();
 	path += "/undostack.txt";
@@ -67,7 +67,7 @@ WaitPushUndoStack::~WaitPushUndoStack() {
 void WaitPushUndoStack::push(QUndoCommand * cmd)
 {
 #ifndef QT_NO_DEBUG
-	writeUndo(cmd, 0, NULL);
+	writeUndo(cmd, 0, nullptr);
 #endif
 	if (m_temporary == cmd) {
 		m_temporary->redo();
@@ -128,7 +128,7 @@ bool WaitPushUndoStack::hasTimers() {
 
 void WaitPushUndoStack::resolveTemporary() {
 	auto * tc = dynamic_cast<TemporaryCommand *>(m_temporary);
-	m_temporary = NULL;
+	m_temporary = nullptr;
 	if (tc) {
 		tc->setEnabled(false);
 		push(tc);
@@ -139,7 +139,7 @@ void WaitPushUndoStack::resolveTemporary() {
 void WaitPushUndoStack::deleteTemporary() {
 	if (m_temporary) {
 		delete m_temporary;
-		m_temporary = NULL;
+		m_temporary = nullptr;
 	}
 }
 
@@ -149,7 +149,7 @@ void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const Ba
 	const auto * bcmd = dynamic_cast<const BaseCommand *>(cmd);
 	QString cmdString;
 	QString indexString;
-	if (bcmd == NULL) {
+	if (bcmd == nullptr) {
 		cmdString = cmd->text();
 	}
 	else {
@@ -169,7 +169,7 @@ void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const Ba
 	}
 
 	for (int i = 0; i < cmd->childCount(); i++) {
-		writeUndo(cmd->child(i), indent + 4, NULL);
+		writeUndo(cmd->child(i), indent + 4, nullptr);
 	}
 
 	if (bcmd) {

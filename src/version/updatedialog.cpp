@@ -45,7 +45,7 @@ static QString sUpdatePartsMessage;
 
 UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
 {
-	m_versionChecker = NULL;
+	m_versionChecker = nullptr;
 	m_doQuit = false;
 	m_doClose = true;
 
@@ -91,15 +91,15 @@ UpdateDialog::~UpdateDialog() {
 
 bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availableReleases)
 {
-	AvailableRelease * interimRelease = NULL;
-	AvailableRelease * mainRelease = NULL;
+	AvailableRelease * interimRelease = nullptr;
+	AvailableRelease * mainRelease = nullptr;
 
 	foreach (AvailableRelease * availableRelease, availableReleases) {
-		if (availableRelease->interim && (interimRelease == NULL)) {
+		if (availableRelease->interim && (interimRelease == nullptr)) {
 			interimRelease = availableRelease;
 			continue;
 		}
-		if (!availableRelease->interim && (mainRelease == NULL)) {
+		if (!availableRelease->interim && (mainRelease == nullptr)) {
 			mainRelease = availableRelease;
 			continue;
 		}
@@ -107,7 +107,7 @@ bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 		if (mainRelease && interimRelease) break;
 	}
 
-	if (mainRelease == NULL && interimRelease == NULL) {
+	if (mainRelease == nullptr && interimRelease == nullptr) {
 		if (m_atUserRequest) {
 			m_feedbackLabel->setText(tr("<p>No new versions found.</p>"));
 		}
@@ -151,7 +151,7 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 	if (m_versionChecker) {
 		m_versionChecker->stop();
 		delete m_versionChecker;
-		m_versionChecker = NULL;
+		m_versionChecker = nullptr;
 	}
 
 	m_progressBar->setVisible(false);

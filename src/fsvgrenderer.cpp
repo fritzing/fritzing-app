@@ -616,7 +616,7 @@ ConnectorInfo * FSvgRenderer::getConnectorInfo(const QString & connectorID) {
 
 bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPoint, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
-	if (svgIdLayer == NULL) return false;
+	if (svgIdLayer == nullptr) return false;
 
 	//if (svgIdLayer->m_viewID = ViewLayer::SchematicView) {
 	//    DebugDialog::debug("delete me please");

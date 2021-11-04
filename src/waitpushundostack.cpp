@@ -127,7 +127,7 @@ bool WaitPushUndoStack::hasTimers() {
 }
 
 void WaitPushUndoStack::resolveTemporary() {
-	TemporaryCommand * tc = dynamic_cast<TemporaryCommand *>(m_temporary);
+	auto * tc = dynamic_cast<TemporaryCommand *>(m_temporary);
 	m_temporary = NULL;
 	if (tc) {
 		tc->setEnabled(false);
@@ -146,7 +146,7 @@ void WaitPushUndoStack::deleteTemporary() {
 #ifndef QT_NO_DEBUG
 void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const BaseCommand * parent)
 {
-	const BaseCommand * bcmd = dynamic_cast<const BaseCommand *>(cmd);
+	const auto * bcmd = dynamic_cast<const BaseCommand *>(cmd);
 	QString cmdString;
 	QString indexString;
 	if (bcmd == NULL) {

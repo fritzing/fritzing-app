@@ -56,7 +56,7 @@ void VersionChecker::fetch()
 	m_xml.clear();
 	QUrl url(m_urlString);
 
-	QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+	auto * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(finished(QNetworkReply *)));
 	QNetworkRequest request = QNetworkRequest(url);
 	QNetworkReply * reply = manager->get(request);
@@ -208,7 +208,7 @@ void VersionChecker::parseEntry() {
 		}
 	}
 
-	AvailableRelease * availableRelease = new AvailableRelease();
+	auto * availableRelease = new AvailableRelease();
 	availableRelease->versionString = m_currentTitle;
 	availableRelease->link = m_currentLinkHref;
 	availableRelease->interim = interim;

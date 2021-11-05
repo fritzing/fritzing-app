@@ -82,7 +82,7 @@ public:
 
 	QStringList & imageRequestList();
 
-public slots:
+public Q_SLOTS:
 	void itemEnteredSlot(QListWidgetItem *);
 
 protected:
@@ -132,12 +132,12 @@ protected:
     QFrame * createHeaderFrame(const QString & url1, const QString & urlText1, const QString & url2, const QString & urlText2, const QString & inactiveColor, const QString & activeColor, QLabel * & label1, QLabel * & label2);
 
 
-signals:
+Q_SIGNALS:
 	void newSketch();
 	void openSketch();
 	void recentSketch(const QString & filename, const QString & actionText);
 
-protected slots:
+protected Q_SLOTS:
 	void clickRecent(const QString &);
 	void gotBlogSnippet(QNetworkReply *);
 	void gotBlogImage(QNetworkReply *);

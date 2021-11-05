@@ -397,7 +397,7 @@ QWidget * WelcomeView::initRecent() {
 	QStringList names;
 	names << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
 
-	foreach (QString name, names) {
+	Q_FOREACH (QString name, names) {
 		QWidget * widget = nullptr;
 		QLayout * whichLayout = frameLayout;
 		QLabel * icon = nullptr;
@@ -708,11 +708,11 @@ void WelcomeView::updateRecent() {
 
 void WelcomeView::clickRecent(const QString & url) {
 	if (url == "open") {
-		emit openSketch();
+		Q_EMIT openSketch();
 		return;
 	}
 	if (url == "new") {
-		emit newSketch();
+		Q_EMIT newSketch();
 		return;
 	}
 }
@@ -894,7 +894,7 @@ void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit, bool blog, con
 
 	if (doEmit) {
 		getNextBlogImage(0, blog);
-		foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+		Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 			auto * other = widget->findChild<WelcomeView *>();
 			if (!other) continue;
 			if (other == this) continue;
@@ -932,7 +932,7 @@ void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
 		if (pixmap.loadFromData(data)) {
 			QPixmap scaled = pixmap.scaled(QSize(ImageSpace, ImageSpace), Qt::KeepAspectRatio);
 			setBlogItemImage(scaled, index, blog);
-			foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+			Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 				auto *other = widget->findChild<WelcomeView *>();
 				if (!other) continue;
 				if (other == this) continue;
@@ -1018,7 +1018,7 @@ void WelcomeView::recentItemClicked(QListWidgetItem * item) {
 	QString data = item->data(Qt::UserRole).toString();
 	if (data.isEmpty()) return;
 
-	emit recentSketch(data, data);
+	Q_EMIT recentSketch(data, data);
 }
 
 

@@ -44,7 +44,7 @@ TrieNode::TrieNode(QChar c)
 
 TrieNode::~TrieNode()
 {
-	foreach (TrieNode * node, m_children) {
+	Q_FOREACH (TrieNode * node, m_children) {
 		delete node;
 	}
 	m_children.clear();
@@ -77,7 +77,7 @@ void TrieNode::addString(QString & string, bool caseInsensitive, TrieLeaf * leaf
 
 void TrieNode::addStringAux(QChar c, QString & next, bool caseInsensitive, TrieLeaf * leaf) {
 	bool gotc = false;
-	foreach (TrieNode * node, m_children) {
+	Q_FOREACH (TrieNode * node, m_children) {
 		if (node->matchesChar(c)) {
 			node->addString(next, caseInsensitive, leaf);
 			gotc = true;
@@ -107,7 +107,7 @@ bool TrieNode::matches(QString & string, TrieLeaf * & leaf)
 	}
 
 	QChar in(string.at(0));
-	foreach (TrieNode * node, m_children) {
+	Q_FOREACH (TrieNode * node, m_children) {
 		if (node->matchesChar(in)) {
 			return node->matches(string.remove(0, 1), leaf);
 		}

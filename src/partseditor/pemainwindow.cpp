@@ -321,7 +321,7 @@ PEMainWindow::~PEMainWindow()
 	killPegi();
 
 	// kill temp files
-	foreach (QString string, m_filesToDelete) {
+	Q_FOREACH (QString string, m_filesToDelete) {
 		QFile::remove(string);
 	}
 	QDir dir = QDir::temp();
@@ -337,7 +337,7 @@ void PEMainWindow::closeEvent(QCloseEvent *event)
 	if (m_inFocusWidgets.count() > 0) {
 		bool gotOne = false;
 		// should only be one in-focus widget
-		foreach (QWidget * widget, m_inFocusWidgets) {
+		Q_FOREACH (QWidget * widget, m_inFocusWidgets) {
 			auto * lineEdit = qobject_cast<QLineEdit *>(widget);
 			if (lineEdit) {
 				if (lineEdit->isModified()) {
@@ -383,7 +383,7 @@ void PEMainWindow::closeEvent(QCloseEvent *event)
 		messageBox.setWindowTitle(tr("Close without saving?"));
 
 		QString message = tr("This part can not be saved as-is:\n\n");
-		foreach (QString string, messages) {
+		Q_FOREACH (QString string, messages) {
 			message.append('\t');
 			message.append(string);
 			messages.append("\n\n");
@@ -453,7 +453,7 @@ void PEMainWindow::initSketchWidgets(bool whatever)
 	viewThing->sketchWidget = m_iconGraphicsView;
 	viewThing->document = &m_iconDocument;
 
-	foreach (ViewThing * viewThing, m_viewThings.values()) {
+	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
 		viewThing->sketchWidget->setAcceptWheelEvents(true);
 		viewThing->sketchWidget->setChainDrag(false);				// no bendpoints
 		viewThing->firstTime = true;
@@ -759,11 +759,11 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 		fzpRoot.appendChild(properties);
 	}
 	QHash<QString,QString> props = originalModelPart->properties();
-	foreach (QString key, props.keys()) {
+	Q_FOREACH (QString key, props.keys()) {
 		replaceProperty(key, props.value(key), properties);
 	}
 	// record "local" properties
-	foreach (QByteArray byteArray, originalModelPart->dynamicPropertyNames()) {
+	Q_FOREACH (QByteArray byteArray, originalModelPart->dynamicPropertyNames()) {
 		replaceProperty(byteArray, originalModelPart->property(byteArray).toString(), properties);
 	}
 
@@ -817,7 +817,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 		replaceProperty("variant", newVariant, properties);
 	}
 
-	foreach (ViewThing * viewThing, m_viewThings.values()) {
+	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
 		if (viewThing->sketchWidget == nullptr) continue;
 
 		ItemBase * itemBase = originalModelPart->viewItem(viewThing->sketchWidget->viewID());
@@ -848,7 +848,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 		QHash<QString, QString> svgHash;
 		QStringList svgList;
 		double factor;
-		foreach (ViewLayer * vl, viewThing->sketchWidget->viewLayers().values()) {
+		Q_FOREACH (ViewLayer * vl, viewThing->sketchWidget->viewLayers().values()) {
 			QString string = itemBase->retrieveSvg(vl->viewLayerID(), svgHash, false, GraphicsUtils::StandardFritzingDPI, factor);
 			if (!string.isEmpty()) {
 				svgList.append(string);
@@ -870,7 +870,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 			// have to remove whitespace in order to compare the two svgs
 			QRegularExpression white("\\s");
 			QStringList whiteList;
-			foreach (QString string, svgList) {
+			Q_FOREACH (QString string, svgList) {
 				string.remove(white);
 				whiteList << string;
 			}
@@ -921,7 +921,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 
 	reload(true);
 
-	foreach (ViewThing * viewThing, m_viewThings.values()) {
+	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
 		if (viewThing->itemBase) {
 			viewThing->originalSvgPath = viewThing->itemBase->filename();
 		}
@@ -989,7 +989,7 @@ void PEMainWindow::createViewMenu() {
 	MainWindow::createViewMenu();
 
 	bool afterNext = false;
-	foreach (QAction * action, m_viewMenu->actions()) {
+	Q_FOREACH (QAction * action, m_viewMenu->actions()) {
 		if (action == m_setBackgroundColorAct) {
 			afterNext = true;
 		}
@@ -1001,7 +1001,7 @@ void PEMainWindow::createViewMenu() {
 	}
 
 	afterNext = false;
-	foreach (QAction * action, m_viewMenu->actions()) {
+	Q_FOREACH (QAction * action, m_viewMenu->actions()) {
 		if (action == m_showPCBAct) {
 			afterNext = true;
 		}
@@ -1135,7 +1135,7 @@ void PEMainWindow::changeTags(const QStringList & newTags, bool updateDisplay)
 		tag = tags.firstChildElement("tag");
 	}
 
-	foreach (QString newTag, newTags) {
+	Q_FOREACH (QString newTag, newTags) {
 		QDomElement tag = m_fzpDocument.createElement("tag");
 		tags.appendChild(tag);
 		TextUtils::replaceChildText(tag, newTag);
@@ -1191,7 +1191,7 @@ void PEMainWindow::changeProperties(const QHash<QString, QString> & newPropertie
 		prop = next;
 	}
 
-	foreach (QString name, newProperties.keys()) {
+	Q_FOREACH (QString name, newProperties.keys()) {
 		QDomElement prop = m_fzpDocument.createElement("property");
 		properties.appendChild(prop);
 		prop.setAttribute("name", name);
@@ -1459,7 +1459,7 @@ void PEMainWindow::switchedConnector(int ix, SketchWidget * sketchWidget)
 
 	QList<PEGraphicsItem *> pegiList = getPegiList(sketchWidget);
 	bool gotOne = false;
-	foreach (PEGraphicsItem * pegi, pegiList) {
+	Q_FOREACH (PEGraphicsItem * pegi, pegiList) {
 		QDomElement pegiElement = pegi->element();
 		if (pegiElement.attribute("id").compare(svgID) == 0) {
 			gotOne = true;
@@ -1472,7 +1472,7 @@ void PEMainWindow::switchedConnector(int ix, SketchWidget * sketchWidget)
 	}
 
 	if (!gotOne) {
-		foreach (PEGraphicsItem * pegi, pegiList) {
+		Q_FOREACH (PEGraphicsItem * pegi, pegiList) {
 			pegi->showMarquee(false);
 			pegi->setHighlighted(false);
 		}
@@ -1542,7 +1542,7 @@ void PEMainWindow::loadImage()
 		QStringList availFonts = InstalledFonts::InstalledFontsList.values();
 		if (availFonts.count() > 0) {
 			QString destFont = availFonts.at(0);
-			foreach (QString f, availFonts) {
+			Q_FOREACH (QString f, availFonts) {
 				if (f.contains("droid", Qt::CaseInsensitive)) {
 					destFont = f;
 					break;
@@ -1728,9 +1728,9 @@ void PEMainWindow::changeSvg(SketchWidget * sketchWidget, const QString & filena
 	QDomElement fzpRoot = m_fzpDocument.documentElement();
 	setImageAttribute(fzpRoot, filename, sketchWidget->viewID());
 
-	foreach (ViewThing * viewThing, m_viewThings.values()) {
+	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
 		if (viewThing->itemBase) {
-			foreach(ItemBase * lk, viewThing->itemBase->layerKin()) {
+			Q_FOREACH(ItemBase * lk, viewThing->itemBase->layerKin()) {
 				delete lk;
 			}
 		}
@@ -1766,16 +1766,16 @@ void PEMainWindow::reload(bool firstTime)
 
 	QList<ItemBase *> toDelete;
 
-	foreach (ViewThing * viewThing, m_viewThings.values()) {
+	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
 		if (viewThing->sketchWidget == nullptr) continue;
 
-		foreach (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
+		Q_FOREACH (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
 			auto * itemBase = dynamic_cast<ItemBase *>(item);
 			if (itemBase) toDelete << itemBase;
 		}
 	}
 
-	foreach (ItemBase * itemBase, toDelete) {
+	Q_FOREACH (ItemBase * itemBase, toDelete) {
 		delete itemBase;
 	}
 
@@ -1794,7 +1794,7 @@ void PEMainWindow::reload(bool firstTime)
 	itemBases <<  m_schematicGraphicsView->addItem(modelPart, m_schematicGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
 	itemBases <<  m_pcbGraphicsView->addItem(modelPart, m_pcbGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
 
-	foreach (ItemBase * itemBase, itemBases) {
+	Q_FOREACH (ItemBase * itemBase, itemBases) {
 		if (!itemBase) continue;
 		ViewThing * viewThing = m_viewThings.value(itemBase->viewID());
 		viewThing->itemBase = itemBase;
@@ -1805,13 +1805,13 @@ void PEMainWindow::reload(bool firstTime)
 
 	QList<QWidget *> widgets;
 	widgets << m_metadataView << m_peToolView << m_connectorsView;
-	foreach (QWidget * widget, widgets) {
+	Q_FOREACH (QWidget * widget, widgets) {
 		QList<QLineEdit *> lineEdits = widget->findChildren<QLineEdit *>();
-		foreach (QLineEdit * lineEdit, lineEdits) {
+		Q_FOREACH (QLineEdit * lineEdit, lineEdits) {
 			lineEdit->installEventFilter(this);
 		}
 		QList<QTextEdit *> textEdits = widget->findChildren<QTextEdit *>();
-		foreach (QTextEdit * textEdit, textEdits) {
+		Q_FOREACH (QTextEdit * textEdit, textEdits) {
 			textEdit->installEventFilter(this);
 		}
 	}
@@ -1820,14 +1820,14 @@ void PEMainWindow::reload(bool firstTime)
 		showing(m_currentGraphicsView);
 	}
 
-	foreach (ViewThing * viewThing, m_viewThings.values()) {
+	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
 		initSvgTree(viewThing->sketchWidget, viewThing->itemBase, *viewThing->document);
 	}
 
 	initConnectors(true);
 	m_connectorsView->setSMD(modelPart->flippedSMD());
 
-	foreach (ViewThing * viewThing, m_viewThings.values()) {
+	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
 		// TODO: may have to revisit this and move all pegi items
 		//viewThing->itemBase->setMoveLock(true);
 		//viewThing->itemBase->setItemIsSelectable(false);
@@ -1851,7 +1851,7 @@ void PEMainWindow::busModeChanged(bool state) {
 	if (m_currentGraphicsView == nullptr) return;
 
 	if (!state) {
-		foreach (ViewThing * viewThing, m_viewThings.values()) {
+		Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
 			viewThing->busMode = false;
 			viewThing->sketchWidget->hideConnectors(true);
 		}
@@ -1869,11 +1869,11 @@ void PEMainWindow::busModeChanged(bool state) {
 	QDomElement root = m_fzpDocument.documentElement();
 	QDomElement connectors = root.firstChildElement("connectors");
 
-	foreach (ViewThing * viewThing, m_viewThings.values()) {
+	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
 		// items on pegiList no longer exist after reload so get them now
 		pegiList = getPegiList(viewThing->sketchWidget);
 		viewThing->sketchWidget->hideConnectors(true);
-		foreach (PEGraphicsItem * pegi, pegiList) {
+		Q_FOREACH (PEGraphicsItem * pegi, pegiList) {
 			pegi->setVisible(false);
 		}
 
@@ -1883,7 +1883,7 @@ void PEMainWindow::busModeChanged(bool state) {
 		while (!connector.isNull()) {
 			QDomElement p = ViewLayer::getConnectorPElement(connector, viewThing->sketchWidget->viewID());
 			QString id = p.attribute("svgId");
-			foreach (PEGraphicsItem * pegi, pegiList) {
+			Q_FOREACH (PEGraphicsItem * pegi, pegiList) {
 				QDomElement pegiElement = pegi->element();
 				if (pegiElement.attribute("id").compare(id) == 0) {
 					connectorIDs.append(connector.attribute("id"));
@@ -1909,7 +1909,7 @@ void PEMainWindow::pickModeChanged(bool state) {
 	m_inPickMode = state;
 	if (m_inPickMode) {
 		QApplication::setOverrideCursor(Qt::PointingHandCursor);
-		foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
+		Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 			if (pegi) pegi->setPickAppearance(true);
 		}
@@ -2073,7 +2073,7 @@ void PEMainWindow::relocateConnectorSvg(SketchWidget * sketchWidget, const QStri
 	writeXml(newPath, removeGorn(svg), true);
 	setImageAttribute(fzpRoot, newPath, viewID);
 
-	foreach (QGraphicsItem * item, sketchWidget->scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, sketchWidget->scene()->items()) {
 		auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 		if (pegi == nullptr) continue;
 
@@ -2132,7 +2132,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 	QList<MainWindow *> affectedWindows;
 	QList<MainWindow *> allWindows;
 	if (overWrite) {
-		foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+		Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 			auto *mainWindow = qobject_cast<MainWindow *>(widget);
 			if (mainWindow == nullptr) continue;
 
@@ -2184,7 +2184,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 
 	QHash<ViewLayer::ViewID, QString> svgPaths;
 
-	foreach (ViewLayer::ViewID viewID, m_viewThings.keys()) {
+	Q_FOREACH (ViewLayer::ViewID viewID, m_viewThings.keys()) {
 		ViewThing * viewThing = m_viewThings.value(viewID);
 		QDomElement view = views.firstChildElement(ViewLayer::viewIDXmlName(viewID));
 		QDomElement layers = view.firstChildElement("layers");
@@ -2199,7 +2199,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 		bool svgOK = TextUtils::getSvgSizes(writeDoc, svgWidth, svgHeight, vbWidth, vbHeight);
 		if (svgOK) {
 			QHash<QString, QString> svgHash;
-			foreach (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
+			Q_FOREACH (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
 				auto * itemBase = dynamic_cast<ItemBase *>(item);
 				if (itemBase == nullptr) continue;
 
@@ -2243,7 +2243,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 			}
 		}
 
-		foreach (ViewLayer::ViewLayerID viewLayerID, extraSvg.uniqueKeys()) {
+		Q_FOREACH (ViewLayer::ViewLayerID viewLayerID, extraSvg.uniqueKeys()) {
 			QStringList svgList = extraSvg.values(viewLayerID);
 			QDomElement svgViewElement = (viewLayerID == ViewLayer::Copper0 && !copperChild.isNull())
 			                             ? copperChild
@@ -2252,11 +2252,11 @@ bool PEMainWindow::saveAs(bool overWrite)
 				svgViewElement = svgRoot;
 			}
 
-			foreach (QString svg, svgList) {
+			Q_FOREACH (QString svg, svgList) {
 				QDomDocument doc;
 				doc.setContent(svg, true);
 				QDomElement root = doc.documentElement();
-				foreach (ViewLayer::ViewLayerID vlid, sketchLayers) {
+				Q_FOREACH (ViewLayer::ViewLayerID vlid, sketchLayers) {
 					removeID(root, ViewLayer::viewLayerXmlNameFromID(vlid));
 				}
 				svgViewElement.appendChild(doc.documentElement());
@@ -2309,7 +2309,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 	}
 
 	// restore the set of working svg files
-	foreach (ViewLayer::ViewID viewID, m_viewThings.keys()) {
+	Q_FOREACH (ViewLayer::ViewID viewID, m_viewThings.keys()) {
 		QString svgPath = svgPaths.value(viewID);
 		if (svgPath.isEmpty()) continue;
 
@@ -2332,10 +2332,10 @@ bool PEMainWindow::saveAs(bool overWrite)
 		m_referenceModel->reloadPart(fzpPath, m_originalModuleID);
 		WaitPushUndoStack undoStack;
 		auto * parentCommand = new QUndoCommand;
-		foreach (MainWindow * mainWindow, affectedWindows) {
+		Q_FOREACH (MainWindow * mainWindow, affectedWindows) {
 			mainWindow->updateParts(m_originalModuleID, parentCommand);
 		}
-		foreach (MainWindow * mainWindow, allWindows) {
+		Q_FOREACH (MainWindow * mainWindow, allWindows) {
 			mainWindow->updatePartsBin(m_originalModuleID);
 		}
 		undoStack.push(parentCommand);
@@ -2365,7 +2365,7 @@ PEGraphicsItem * PEMainWindow::findConnectorItem()
 	if (!ok) return nullptr;
 
 	QList<PEGraphicsItem *> pegiList = getPegiList(m_currentGraphicsView);
-	foreach (PEGraphicsItem * pegi, pegiList) {
+	Q_FOREACH (PEGraphicsItem * pegi, pegiList) {
 		if (pegi->element().attribute("id") == svgID) return pegi;
 	}
 
@@ -2464,7 +2464,7 @@ void PEMainWindow::moveTerminalPoint(SketchWidget * sketchWidget, const QString 
 
 	PEGraphicsItem * connectorPegi = nullptr;
 	QList<PEGraphicsItem *> pegiList = getPegiList(sketchWidget);
-	foreach (PEGraphicsItem * pegi, pegiList) {
+	Q_FOREACH (PEGraphicsItem * pegi, pegiList) {
 		QDomElement pegiElement = pegi->element();
 		if (pegiElement.attribute("id").compare(svgID) == 0) {
 			connectorPegi = pegi;
@@ -2534,7 +2534,7 @@ void PEMainWindow::moveTerminalPoint(SketchWidget * sketchWidget, const QString 
 		svgConnectorElement.parentNode().insertAfter(terminalElement, svgConnectorElement);
 
 		double oldZ = connectorPegi->zValue() + 1;
-		foreach (PEGraphicsItem * pegi, pegiList) {
+		Q_FOREACH (PEGraphicsItem * pegi, pegiList) {
 			QDomElement pegiElement = pegi->element();
 			if (pegiElement.attribute("id").compare(terminalID) == 0) {
 				DebugDialog::debug("old pegi location", pegi->pos());
@@ -2661,7 +2661,7 @@ void PEMainWindow::removedConnectors(QList<ConnectorMetadata *> & cmdList)
 {
 	QList<QDomElement> connectors;
 
-	foreach (ConnectorMetadata * cmd, cmdList) {
+	Q_FOREACH (ConnectorMetadata * cmd, cmdList) {
 		int index;
 		QDomElement connector = findConnector(cmd->connectorID, index);
 		if (connector.isNull()) return;
@@ -2677,7 +2677,7 @@ void PEMainWindow::removedConnectorsAux(QList<QDomElement> & connectors)
 {
 	QString originalPath = saveFzp();
 
-	foreach (QDomElement connector, connectors) {
+	Q_FOREACH (QDomElement connector, connectors) {
 		if (m_removedConnector.isEmpty()) {
 			QTextStream stream(&m_removedConnector);
 			connector.save(stream, 0);
@@ -2735,10 +2735,10 @@ QString PEMainWindow::getPartTitle() {
 }
 
 void PEMainWindow::killPegi() {
-	foreach (ViewThing * viewThing, m_viewThings.values()) {
+	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
 		if (viewThing->sketchWidget == nullptr) continue;
 
-		foreach (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
+		Q_FOREACH (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
 			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 			if (pegi) delete pegi;
 		}
@@ -2787,7 +2787,7 @@ void PEMainWindow::connectorCountChanged(int newCount) {
 
 	// add connectors
 	int id = 0;
-	foreach (QDomElement connector, connectorList) {
+	Q_FOREACH (QDomElement connector, connectorList) {
 		QRegularExpressionMatch match;
 		int ix = connector.attribute("id").indexOf(IntegerFinder, 0, &match);
 		if (ix >= 0) {
@@ -2957,10 +2957,10 @@ void PEMainWindow::displayBuses() {
 			nodeMember = nodeMember.nextSiblingElement("nodeMember");
 		}
 
-		foreach (ViewLayer::ViewID viewID, m_viewThings.keys()) {
+		Q_FOREACH (ViewLayer::ViewID viewID, m_viewThings.keys()) {
 			ViewThing * viewThing = m_viewThings.value(viewID);
 			QList<ConnectorItem *> connectorItems;
-			foreach (QString connectorID, connectorIDs) {
+			Q_FOREACH (QString connectorID, connectorIDs) {
 				ConnectorItem * connectorItem = viewThing->itemBase->findConnectorItemWithSharedID(connectorID, viewThing->itemBase->viewLayerPlacement());
 				if (connectorItem) connectorItems.append(connectorItem);
 			}
@@ -3173,7 +3173,7 @@ void PEMainWindow::removeBusConnector(const QString & busID, const QString & con
 		bus = bus.nextSiblingElement("bus");
 	}
 
-	foreach (QDomElement element, toDelete) {
+	Q_FOREACH (QDomElement element, toDelete) {
 		element.parentNode().removeChild(element);
 	}
 
@@ -3323,7 +3323,7 @@ void PEMainWindow::clearPickMode() {
 	m_useNextPick = m_inPickMode = false;
 	QApplication::restoreOverrideCursor();
 	if (m_currentGraphicsView) {
-		foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
+		Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 			if (pegi) pegi->setPickAppearance(false);
 		}
@@ -3334,7 +3334,7 @@ QList<PEGraphicsItem *> PEMainWindow::getPegiList(SketchWidget * sketchWidget) {
 	// DebugDialog::debug("-----------------------------");
 
 	QList<PEGraphicsItem *> pegiList;
-	foreach (QGraphicsItem * item, sketchWidget->scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, sketchWidget->scene()->items()) {
 		auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 		if (pegi == nullptr) continue;
 
@@ -3356,8 +3356,8 @@ QList<PEGraphicsItem *> PEMainWindow::getPegiList(SketchWidget * sketchWidget) {
 
 void PEMainWindow::deleteBuses() {
 	QList<Wire *> toDelete;
-	foreach (ViewThing * viewThing, m_viewThings.values()) {
-		foreach (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
+	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
+		Q_FOREACH (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
 			Wire * wire = dynamic_cast<Wire *>(item);
 			if (wire == nullptr) continue;
 
@@ -3365,7 +3365,7 @@ void PEMainWindow::deleteBuses() {
 		}
 	}
 
-	foreach (Wire * wire, toDelete) {
+	Q_FOREACH (Wire * wire, toDelete) {
 		delete wire;
 	}
 }
@@ -3682,7 +3682,7 @@ void PEMainWindow::hideOtherViews() {
 
 	QString afterViewName = ViewLayer::viewIDXmlName(afterViewID);
 	QStringList beforeViewNames;
-	foreach (ViewLayer::ViewID viewID, viewIDList) {
+	Q_FOREACH (ViewLayer::ViewID viewID, viewIDList) {
 		beforeViewNames << ViewLayer::viewIDXmlName(viewID);
 	}
 
@@ -3693,7 +3693,7 @@ void PEMainWindow::hideOtherViews() {
 		QDomElement views = connector.firstChildElement("views");
 		QDomElement afterView = views.firstChildElement(afterViewName);
 
-		foreach (QString name, beforeViewNames) {
+		Q_FOREACH (QString name, beforeViewNames) {
 			QDomElement toRemove = views.firstChildElement(name);
 			if (!toRemove.isNull()) {
 				toRemove.parentNode().removeChild(toRemove);
@@ -3708,7 +3708,7 @@ void PEMainWindow::hideOtherViews() {
 
 	QDomElement views = root.firstChildElement("views");
 	QDomElement afterView = views.firstChildElement(afterViewName);
-	foreach (QString name, beforeViewNames) {
+	Q_FOREACH (QString name, beforeViewNames) {
 		QDomElement toRemove = views.firstChildElement(name);
 		if (!toRemove.isNull()) {
 			toRemove.parentNode().removeChild(toRemove);
@@ -3746,14 +3746,14 @@ void PEMainWindow::updateAssignedConnectors() {
 
 void PEMainWindow::connectorWarning() {
 	QHash<ViewLayer::ViewID, int> unassigned;
-	foreach (ViewLayer::ViewID viewID, m_viewThings.keys()) {
+	Q_FOREACH (ViewLayer::ViewID viewID, m_viewThings.keys()) {
 		unassigned.insert(viewID, 0);
 	}
 	int unassignedTotal = 0;
 
 	QDomElement fzpRoot = m_fzpDocument.documentElement();
 	QDomElement connectors = fzpRoot.firstChildElement("connectors");
-	foreach (ViewLayer::ViewID viewID, m_viewThings.keys()) {
+	Q_FOREACH (ViewLayer::ViewID viewID, m_viewThings.keys()) {
 		if (viewID == ViewLayer::IconView) continue;
 
 		QDomDocument * svgDoc = m_viewThings.value(viewID)->document;
@@ -3779,7 +3779,7 @@ void PEMainWindow::connectorWarning() {
 
 	if (unassignedTotal > 0) {
 		int viewCount = 0;
-		foreach (ViewLayer::ViewID viewID, unassigned.keys()) {
+		Q_FOREACH (ViewLayer::ViewID viewID, unassigned.keys()) {
 			if (unassigned.value(viewID) > 0) viewCount++;
 		}
 		QMessageBox::warning(nullptr, tr("Parts Editor"),
@@ -3799,7 +3799,7 @@ void PEMainWindow::showing(SketchWidget * sketchWidget) {
 		QPointF offset = viewThing->sketchWidget->alignOneToGrid(viewThing->itemBase);
 		if (offset.x() != 0 || offset.y() != 0) {
 			QList<PEGraphicsItem *> pegiList = getPegiList(sketchWidget);
-			foreach (PEGraphicsItem * pegi, pegiList) {
+			Q_FOREACH (PEGraphicsItem * pegi, pegiList) {
 				pegi->setPos(pegi->pos() + offset);
 				pegi->setOffset(pegi->offset() + offset);
 			}
@@ -3811,7 +3811,7 @@ bool PEMainWindow::anyMarquee() {
 	if (m_currentGraphicsView == nullptr) return false;
 
 	QList<PEGraphicsItem *> pegiList = getPegiList(m_currentGraphicsView);
-	foreach (PEGraphicsItem * pegi, pegiList) {
+	Q_FOREACH (PEGraphicsItem * pegi, pegiList) {
 		if (pegi->showingMarquee()) {
 			return true;
 		}
@@ -3823,7 +3823,7 @@ bool PEMainWindow::anyMarquee() {
 bool PEMainWindow::anyVisible() {
 	if (m_currentGraphicsView == nullptr) return false;
 
-	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 		if (pegi == nullptr) continue;
 
@@ -3865,7 +3865,7 @@ void PEMainWindow::itemAddedSlot(ModelPart *, ItemBase * itemBase, ViewLayer::Vi
 
 	QDomElement element;
 	double z = 0;
-	foreach (PEGraphicsItem * pegi, getPegiList(m_currentGraphicsView)) {
+	Q_FOREACH (PEGraphicsItem * pegi, getPegiList(m_currentGraphicsView)) {
 		if (pegi->zValue() > z) z = pegi->zValue();
 	}
 
@@ -3877,7 +3877,7 @@ void PEMainWindow::itemMovedSlot(ItemBase * itemBase) {
 	if (itemBase == nullptr) return;
 	if (itemBase->viewID() != m_currentGraphicsView->viewID()) return;
 
-	foreach (PEGraphicsItem * pegi, getPegiList(m_currentGraphicsView)) {
+	Q_FOREACH (PEGraphicsItem * pegi, getPegiList(m_currentGraphicsView)) {
 		if (pegi->itemBase() == itemBase) {
 			pegi->setPos(itemBase->pos() + pegi->offset());
 		}
@@ -3889,7 +3889,7 @@ void PEMainWindow::resizedSlot(ItemBase * itemBase) {
 	if (itemBase == nullptr) return;
 	if (itemBase->viewID() != m_currentGraphicsView->viewID()) return;
 
-	foreach (PEGraphicsItem * pegi, getPegiList(m_currentGraphicsView)) {
+	Q_FOREACH (PEGraphicsItem * pegi, getPegiList(m_currentGraphicsView)) {
 		if (pegi->itemBase() == itemBase) {
 			pegi->setPos(itemBase->pos() + pegi->offset());
 			QRectF bounds = itemBase->boundingRect();
@@ -3923,7 +3923,7 @@ void PEMainWindow::setInitialView() {
 
 void PEMainWindow::updateExportMenu() {
 	bool enabled = m_currentGraphicsView || currentTabIndex() == IconViewIndex;
-	foreach (QAction * action, m_exportMenu->actions()) {
+	Q_FOREACH (QAction * action, m_exportMenu->actions()) {
 		action->setEnabled(enabled);
 	}
 }

@@ -109,12 +109,12 @@ FixedFontsHash fixFontsMapping(const QSet<QString> fontsTofix, const QString & d
 
 	QSet<QString> tempFontsToFix;
 	tempFontsToFix = fontsTofix - InstalledFonts::InstalledFontsList;
-	foreach (QString fontFileName, InstalledFonts::InstalledFontsNameMapper.values()) {
+	Q_FOREACH (QString fontFileName, InstalledFonts::InstalledFontsNameMapper.values()) {
 		// SVG uses filename which may not match family name (e.g. "Droid Sans" and "Droid Sans")
 		tempFontsToFix.remove(fontFileName);
 	}
 
-	foreach (QString broken, tempFontsToFix) {
+	Q_FOREACH (QString broken, tempFontsToFix) {
 		retval.insert(broken, destFont);
 	}
 
@@ -124,7 +124,7 @@ FixedFontsHash fixFontsMapping(const QSet<QString> fontsTofix, const QString & d
 bool TextUtils::removeFontFamilySingleQuotes(QString &fileContent) {
 	QSet<QString> wrongFontFamilies = TextUtils::getRegexpCaptures(fontFamilyQuotesPattern, fileContent);
 
-	foreach(QString ff, wrongFontFamilies) {
+	Q_FOREACH(QString ff, wrongFontFamilies) {
 		QString wrongFF = ff;
 		QString fixedFF = ff.remove('\'');
 		fileContent.replace(wrongFF,fixedFF);
@@ -139,7 +139,7 @@ bool fixUnavailableFontFamilies(QString &fileContent, const QString & destFont) 
 	definedFFs.unite(getFontFamiliesInsideStyleTag(fileContent));
 
 	FixedFontsHash fixedFonts = fixFontsMapping(definedFFs, destFont);
-	foreach(QString oldF, fixedFonts.keys()) {
+	Q_FOREACH(QString oldF, fixedFonts.keys()) {
 		QString newF = fixedFonts[oldF];
 		fileContent.replace(oldF,newF);
 	}
@@ -152,7 +152,7 @@ QString  makeDashString(bool dashed, const QVector<qreal> & pattern, double dpi,
 	QString dash;
 	if (dashed && pattern.count() > 0) {
 		dash = "stroke-dasharray='";
-		foreach (qreal p, pattern) {
+		Q_FOREACH (qreal p, pattern) {
 			dash += QString::number(p * dpi / printerScale);
 			dash += ",";
 		}
@@ -344,7 +344,7 @@ QString TextUtils::replaceTextElements(const QString & svg, const QHash<QString,
 	for (int i = 0; i < domNodeList.count(); i++) {
 		QDomElement node = domNodeList.item(i).toElement();
 		if (node.isNull()) continue;
-		foreach (QString id, hash.keys()) {
+		Q_FOREACH (QString id, hash.keys()) {
 			if (node.attribute("id").compare(id) != 0) continue;
 
 			replaceChildText(node, hash.value(id));
@@ -700,7 +700,7 @@ QString TextUtils::escapeAnd(const QString & string) {
 QString TextUtils::convertExtendedChars(const QString & str)
 {
 	QString result;
-	foreach (QChar c, str) {
+	Q_FOREACH (QChar c, str) {
 		if (c < QChar(128)) {
 			result.append(c);
 		}
@@ -717,7 +717,7 @@ QString TextUtils::stripNonValidXMLCharacters(const QString & str)
 	QString result;
 	QChar hs;
 	bool in_hs = false;
-	foreach (QChar c, str) {
+	Q_FOREACH (QChar c, str) {
 		if (c.isHighSurrogate()) {
 			hs = c;
 			in_hs = true;
@@ -954,7 +954,7 @@ QList<double> TextUtils::getTransformFloats(const QString & transform) {
 void TextUtils::gWrap(QDomDocument & domDocument, const QHash<QString, QString> & attributes)
 {
 	QDomElement g = domDocument.createElement("g");
-	foreach (QString key, attributes.keys()) {
+	Q_FOREACH (QString key, attributes.keys()) {
 		g.setAttribute(key, attributes.value(key, ""));
 	}
 
@@ -965,7 +965,7 @@ void TextUtils::gWrap(QDomDocument & domDocument, const QHash<QString, QString> 
 	}
 
 	domDocument.documentElement().appendChild(g);
-	foreach (QDomNode node, nodes) {
+	Q_FOREACH (QDomNode node, nodes) {
 		g.appendChild(node);
 	}
 }
@@ -1052,7 +1052,7 @@ bool TextUtils::fixMuch(QString &svg, bool fixStrokeWidthFlag)
 
 	QStringList strings;
 	strings << "pattern" << "marker" << "clipPath";
-	foreach (QString string, strings) {
+	Q_FOREACH (QString string, strings) {
 		if (svg.contains("<" + string)) {
 			result |= noPatternAux(svgDom, string);
 		}
@@ -1211,7 +1211,7 @@ bool TextUtils::tspanRemoveAux(QDomDocument & svgDom)
 
 	if (texts.count() == 0) return false;
 
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		QDomElement g = svgDom.createElement("g");
 		text.parentNode().replaceChild(g, text);
 		QDomNamedNodeMap attributes = text.attributes();
@@ -1257,7 +1257,7 @@ bool TextUtils::noUseAux(QDomDocument & svgDom)
 
 	if (uses.count() == 0) return false;
 
-	foreach (QDomElement use, uses) {
+	Q_FOREACH (QDomElement use, uses) {
 		QString transform = use.attribute("transform");
 		QString refid = use.attribute("href");
 		QString id = use.attribute("id");
@@ -1503,7 +1503,7 @@ QString TextUtils::makePolySVG(const QPolygonF & poly, QPointF offset, double wi
 {
 	QString polyString = QString("<polyline stroke-linecap='round' stroke-linejoin='round' fill='none' stroke='%1' stroke-width='%2' points='\n").arg(blackOnly ? "black" : colorString).arg(width);
 	int space = 0;
-	foreach (QPointF p, poly) {
+	Q_FOREACH (QPointF p, poly) {
 		polyString += QString("%1,%2 %3")
 		              .arg((p.x() - offset.x()) * dpi / printerScale)
 		              .arg((p.y() - offset.y()) * dpi / printerScale)
@@ -1640,7 +1640,7 @@ int TextUtils::getPinsAndSpacing(const QString & expectedFileName, QString & spa
 {
 	QStringList pieces = expectedFileName.split("_");
 	int pix = 0;
-	foreach (QString piece, pieces) {
+	Q_FOREACH (QString piece, pieces) {
 		bool ok;
 		piece.toInt(&ok);
 		if (ok) break;
@@ -1861,7 +1861,7 @@ bool TextUtils::elevateTransform(QDomElement & root) {
 	collectTransforms(root, transforms);
 	if (transforms.length() == 0) return false;
 
-	foreach (QDomElement element, transforms) {
+	Q_FOREACH (QDomElement element, transforms) {
 		QString transform = element.attribute("transform");
 		element.removeAttribute("transform");
 		QDomElement g = element.ownerDocument().createElement("g");
@@ -1991,7 +1991,7 @@ void TextUtils::resplit(QStringList & names, const QString & split) {
 	QStringList result;
 	QString appender = split;
 	if (appender == " ") appender = "";
-	foreach (QString name, names) {
+	Q_FOREACH (QString name, names) {
 		QStringList sub = name.split(split, Qt::SkipEmptyParts);
 		for (int i = 0; i < sub.count(); i++) {
 			QString s = sub.at(i);

@@ -265,7 +265,7 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 
 	QList<Platform *> platforms = getAvailablePlatforms();
 	m_platformActionGroup = new QActionGroup(this);
-	foreach (Platform * platform, platforms) {
+	Q_FOREACH (Platform * platform, platforms) {
 		currentAction = new QAction(platform->getName(), this);
 		currentAction->setCheckable(true);
 		m_platformActions.insert(platform, currentAction);
@@ -303,7 +303,7 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 	m_programMenu->addAction(m_programAction);
 
 	m_viewMenu = menubar->addMenu(tr("&View"));
-	foreach (QAction * action, m_viewMenuActions) {
+	Q_FOREACH (QAction * action, m_viewMenuActions) {
 		m_viewMenu->addAction(action);
 	}
 
@@ -349,7 +349,7 @@ void ProgramWindow::linkFiles(const QList<LinkedFile *> & linkedFiles, const QSt
 	if (linkedFiles.isEmpty()) return;
 
 	bool firstTime = true;
-	foreach (LinkedFile * linkedFile, linkedFiles) {
+	Q_FOREACH (LinkedFile * linkedFile, linkedFiles) {
 		ProgramTab * programTab = nullptr;
 		if (firstTime) {
 			firstTime = false;
@@ -440,7 +440,7 @@ void ProgramWindow::closeEvent(QCloseEvent *event) {
 	if(beforeClosing(true, discard)) {
 		cleanUp();
 		QMainWindow::closeEvent(event);
-		emit closed();
+		Q_EMIT closed();
 	} else {
 		event->ignore();
 	}
@@ -465,10 +465,10 @@ const QString ProgramWindow::defaultSaveFolder() {
 bool ProgramWindow::event(QEvent * e) {
 	switch (e->type()) {
 	case QEvent::WindowActivate:
-		emit changeActivationSignal(true, this);
+		Q_EMIT changeActivationSignal(true, this);
 		break;
 	case QEvent::WindowDeactivate:
-		emit changeActivationSignal(false, this);
+		Q_EMIT changeActivationSignal(false, this);
 		break;
 	default:
 		break;
@@ -524,7 +524,7 @@ void ProgramWindow::closeCurrentTab() {
 void ProgramWindow::closeTab(int index) {
 	ProgramTab * pTab = indexWidget(index);
 	if (pTab) {
-		emit linkToProgramFile(pTab->filename(), nullptr, false, true);
+		Q_EMIT linkToProgramFile(pTab->filename(), nullptr, false, true);
 		pTab->deleteTab();
 	}
 }
@@ -672,7 +672,7 @@ void ProgramWindow::tabRename(int index) {
 			QFile oldFile(oldFileName);
 			if (oldFile.exists()) {
 				oldFile.remove();
-				emit linkToProgramFile(oldFileName, nullptr, false, true);
+				Q_EMIT linkToProgramFile(oldFileName, nullptr, false, true);
 			}
 		}
 	}
@@ -702,7 +702,7 @@ bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag)
 
 	if (result) {
 		programTab->setClean();
-		emit linkToProgramFile(programTab->filename(), programTab->platform(), true, true);
+		Q_EMIT linkToProgramFile(programTab->filename(), programTab->platform(), true, true);
 	}
 	return result;
 }
@@ -719,7 +719,7 @@ QList<Platform *> ProgramWindow::getAvailablePlatforms() {
 }
 
 Platform * ProgramWindow::getPlatformByName(const QString & platformName) {
-	foreach (Platform * platform, getAvailablePlatforms()) {
+	Q_FOREACH (Platform * platform, getAvailablePlatforms()) {
 		if (platform->getName().compare(platformName, Qt::CaseInsensitive) == 0)
 			return platform;
 	}
@@ -756,7 +756,7 @@ void ProgramWindow::updateBoards() {
 	QMap<QString, QString> boards = getBoards();
 
 	m_boardActions.clear();
-	foreach (QAction * action, m_boardActionGroup->actions()) {
+	Q_FOREACH (QAction * action, m_boardActionGroup->actions()) {
 		m_boardActionGroup->removeAction(action);
 	}
 	m_boardMenu->clear();
@@ -873,11 +873,11 @@ void ProgramWindow::updateSerialPorts() {
 	QList<QSerialPortInfo> ports = getSerialPorts();
 
 	m_portActions.clear();
-	foreach (QAction * action, m_serialPortActionGroup->actions())
+	Q_FOREACH (QAction * action, m_serialPortActionGroup->actions())
 		m_serialPortActionGroup->removeAction(action);
 	m_serialPortMenu->clear();
 
-	foreach (QSerialPortInfo port, ports) {
+	Q_FOREACH (QSerialPortInfo port, ports) {
 		addPort(port);
 	}
 }
@@ -894,7 +894,7 @@ QAction * ProgramWindow::addPort(QSerialPortInfo port)
 }
 
 bool ProgramWindow::hasPort(const QString & portName) {
-	foreach (QSerialPortInfo port, getSerialPorts()) {
+	Q_FOREACH (QSerialPortInfo port, getSerialPorts()) {
 		if (port.portName().compare(portName) == 0)
 			return true;
 	}
@@ -904,7 +904,7 @@ bool ProgramWindow::hasPort(const QString & portName) {
 void ProgramWindow::updateLink(const QString & filename, Platform * platform, bool addlink, bool strong)
 {
 	DebugDialog::debug("updating link");
-	emit linkToProgramFile(filename, platform, addlink, strong);
+	Q_EMIT linkToProgramFile(filename, platform, addlink, strong);
 }
 
 void ProgramWindow::portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus) {
@@ -928,7 +928,7 @@ void ProgramWindow::portProcessReadyRead() {
 		if (!line.contains("serial", Qt::CaseInsensitive)) continue;
 
 		QStringList candidates = line.split(" ");
-		foreach (QString candidate, candidates) {
+		Q_FOREACH (QString candidate, candidates) {
 			if (candidate.contains("tty")) {
 				m_ports.append(candidate);
 				break;

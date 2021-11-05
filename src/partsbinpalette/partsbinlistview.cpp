@@ -76,7 +76,7 @@ int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
 		return position;
 	}
 
-	emit settingItem();
+	Q_EMIT settingItem();
 	QString moduleID = modelPart->moduleID();
 	if (contains(moduleID)) {
 		return position;
@@ -255,7 +255,7 @@ void PartsBinListView::startDrag(Qt::DropActions supportedActions) {
 
 void PartsBinListView::moveItem(int fromIndex, int toIndex) {
 	itemMoved(fromIndex,toIndex);
-	emit informItemMoved(fromIndex, toIndex);
+	Q_EMIT informItemMoved(fromIndex, toIndex);
 }
 
 void PartsBinListView::itemMoved(int fromIndex, int toIndex) {

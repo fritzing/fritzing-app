@@ -86,7 +86,7 @@ bool Syntaxer::loadSyntax(const QString &filename)
 	QStringList extensions = root.attribute("extensions").split(";", Qt::SkipEmptyParts);
 	if (extensions.count() > 0) {
 		m_extensionString = m_name + " " + QObject::tr("files") + " (";
-		foreach (QString ext, extensions) {
+		Q_FOREACH (QString ext, extensions) {
 			m_extensionString += ext + " ";
 			int ix = ext.indexOf(".");
 			if (ix > 0) {
@@ -170,7 +170,7 @@ const CommentInfo * Syntaxer::getCommentInfo(int ix) {
 
 bool Syntaxer::matchCommentStart(const QString & text, int offset, int & result, const CommentInfo * & resultCommentInfo) {
 	result = -1;
-	foreach (CommentInfo * commentInfo, m_commentInfo) {
+	Q_FOREACH (CommentInfo * commentInfo, m_commentInfo) {
 		int si = text.indexOf(commentInfo->m_start, offset, commentInfo->m_caseSensitive);
 		if (si >= 0 && (result < 0 || si < result)) {
 			result = si;

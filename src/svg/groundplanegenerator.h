@@ -71,7 +71,7 @@ public:
 public:
 	static QString ConnectorName;
 
-signals:
+Q_SIGNALS:
 	void postImageSignal(GroundPlaneGenerator *, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> *);
 
 protected:

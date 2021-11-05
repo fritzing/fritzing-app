@@ -47,7 +47,7 @@ PEDoubleSpinBox::PEDoubleSpinBox(QWidget * parent) : QDoubleSpinBox(parent)
 void PEDoubleSpinBox::stepBy(int steps)
 {
 	double amount;
-	emit getSpinAmount(amount);
+	Q_EMIT getSpinAmount(amount);
 	setSingleStep(amount);
 	QDoubleSpinBox::stepBy(steps);
 }
@@ -310,12 +310,12 @@ void PEToolView::switchConnector(QTreeWidgetItem * current, QTreeWidgetItem * pr
 
 	hideConnectorListStuff();
 
-	emit switchedConnector(index);
+	Q_EMIT switchedConnector(index);
 }
 
 void PEToolView::busModeChangedSlot(bool state)
 {
-	emit busModeChanged(state);
+	Q_EMIT busModeChanged(state);
 }
 
 void PEToolView::nameEntry() {
@@ -339,7 +339,7 @@ void PEToolView::changeConnector() {
 	ConnectorMetadata cmd;
 	if (!PEUtils::fillInMetadata(index, this, cmd)) return;
 
-	emit connectorMetadataChanged(&cmd);
+	Q_EMIT connectorMetadataChanged(&cmd);
 }
 
 void PEToolView::setCurrentConnector(const QDomElement & newConnector) {
@@ -379,21 +379,21 @@ void PEToolView::setTerminalPointLimits(QSizeF sz) {
 
 void PEToolView::buttonChangeTerminalPoint() {
 	QString how = sender()->property("how").toString();
-	emit terminalPointChanged(how);
+	Q_EMIT terminalPointChanged(how);
 }
 
 void PEToolView::terminalPointEntry()
 {
 	if (sender() == m_terminalPointX) {
-		emit terminalPointChanged("x", PEUtils::unconvertUnits(m_terminalPointX->value()));
+		Q_EMIT terminalPointChanged("x", PEUtils::unconvertUnits(m_terminalPointX->value()));
 	}
 	else if (sender() == m_terminalPointY) {
-		emit terminalPointChanged("y", PEUtils::unconvertUnits(m_terminalPointY->value()));
+		Q_EMIT terminalPointChanged("y", PEUtils::unconvertUnits(m_terminalPointY->value()));
 	}
 }
 
 void PEToolView::getSpinAmountSlot(double & d) {
-	emit getSpinAmount(d);
+	Q_EMIT getSpinAmount(d);
 }
 
 
@@ -403,19 +403,19 @@ void PEToolView::removeConnector() {
 
 	int index = item->data(0, Qt::UserRole).toInt();
 	QDomElement element = m_connectorList->at(index);
-	emit removedConnector(element);
+	Q_EMIT removedConnector(element);
 
 }
 
 void PEToolView::setChildrenVisible(bool vis)
 {
-	foreach (QWidget * widget, findChildren<QWidget *>()) {
+	Q_FOREACH (QWidget * widget, findChildren<QWidget *>()) {
 		widget->setVisible(vis);
 	}
 }
 
 void PEToolView::pickModeChangedSlot() {
-	emit pickModeChanged(true);
+	Q_EMIT pickModeChanged(true);
 }
 
 void PEToolView::hideConnectorListStuff() {

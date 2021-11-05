@@ -84,7 +84,7 @@ protected:
 
 
 
-protected slots:
+protected Q_SLOTS:
 	void path2gerbCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
 
 

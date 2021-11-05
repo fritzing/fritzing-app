@@ -87,7 +87,7 @@ void GraphicsFlowLayout::clear() {
 		itemsToRemove << itemAt(i);
 	}
 
-	foreach(QGraphicsLayoutItem* iToR, itemsToRemove) {
+	Q_FOREACH(QGraphicsLayoutItem* iToR, itemsToRemove) {
 		removeItem(iToR);
 	}
 }

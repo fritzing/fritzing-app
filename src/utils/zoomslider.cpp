@@ -80,7 +80,7 @@ void ZoomLabel::repeat()
 {
 	if (m_mouseIsIn && m_mouseIsDown) {
 		m_repeated = true;
-		emit clicked();
+		Q_EMIT clicked();
 	}
 }
 
@@ -124,7 +124,7 @@ void ZoomLabel::mouseReleaseEvent(QMouseEvent * event)
 	this->setPixmap(m_normal);
 	QLabel::mouseReleaseEvent(event);
 	if (!m_repeated && m_mouseIsIn) {
-		emit clicked();
+		Q_EMIT clicked();
 	}
 }
 
@@ -241,7 +241,7 @@ void ZoomSlider::step(int direction) {
 	}
 
 	setValue(ZoomFactors[minIndex]);
-	emit zoomChanged(ZoomFactors[minIndex]);
+	Q_EMIT zoomChanged(ZoomFactors[minIndex]);
 }
 
 void ZoomSlider::sliderValueChanged(int newValue) {
@@ -249,7 +249,7 @@ void ZoomSlider::sliderValueChanged(int newValue) {
 	QString newText = QString("%1").arg(newValue);
 	if (newText.compare(m_lineEdit->text()) != 0) {
 		m_lineEdit->setText(newText);
-		emit zoomChanged(newValue);
+		Q_EMIT zoomChanged(newValue);
 	}
 }
 
@@ -264,7 +264,7 @@ void ZoomSlider::sliderTextEdited(const QString & newText, bool doEmit)
 		disconnect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(sliderValueChanged(int)));
 		m_slider->setValue(value);
 		connect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(sliderValueChanged(int)));
-		if (doEmit) emit zoomChanged(value);
+		if (doEmit) Q_EMIT zoomChanged(value);
 	}
 }
 

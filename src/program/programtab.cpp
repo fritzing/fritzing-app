@@ -46,7 +46,7 @@ SerialPortComboBox::SerialPortComboBox() : QComboBox() {
 }
 
 void SerialPortComboBox::showPopup() {
-	emit aboutToShow();
+	Q_EMIT aboutToShow();
 	QComboBox::showPopup();
 }
 
@@ -267,7 +267,7 @@ void ProgramTab::initMenus() {
 	m_platformComboBox->setObjectName("toolBarComboBox");
 	m_platformComboBox->setEditable(false);
 	m_platformComboBox->setEnabled(true);
-	foreach (Platform * platform, m_programWindow->getAvailablePlatforms()) {
+	Q_FOREACH (Platform * platform, m_programWindow->getAvailablePlatforms()) {
 		m_platformComboBox->addItem(platform->getName());
 	}
 
@@ -310,7 +310,7 @@ void ProgramTab::initMenus() {
 	m_portComboBox->setEditable(false);
 	m_portComboBox->setEnabled(true);
 	QList<QSerialPortInfo> ports = m_programWindow->getSerialPorts();
-	foreach (const QSerialPortInfo port, ports)
+	Q_FOREACH (const QSerialPortInfo port, ports)
 		m_portComboBox->addItem(port.portName(), port.systemLocation());
 
 
@@ -414,7 +414,7 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
 	//m_unableToProgramLabel->setText(UnableToProgramMessage.arg(newPlatform.getName()));
 
 	if (updateLink && isPlatformChanged)
-		emit platformChanged(newPlatform);
+		Q_EMIT platformChanged(newPlatform);
 }
 
 void ProgramTab::setPort(const QString & newPort) {
@@ -622,7 +622,7 @@ void ProgramTab::deleteTab() {
 	}
 
 	if (m_tabWidget) {
-		emit wantToDelete(m_tabWidget->currentIndex(), deleteFile);
+		Q_EMIT wantToDelete(m_tabWidget->currentIndex(), deleteFile);
 		this->deleteLater();
 	}
 }
@@ -681,15 +681,15 @@ void ProgramTab::setDirty() {
 }
 
 void ProgramTab::save() {
-	emit wantToSave(m_tabWidget->currentIndex());
+	Q_EMIT wantToSave(m_tabWidget->currentIndex());
 }
 
 void ProgramTab::saveAs() {
-	emit wantToSaveAs(m_tabWidget->currentIndex());
+	Q_EMIT wantToSaveAs(m_tabWidget->currentIndex());
 }
 
 void ProgramTab::rename() {
-	emit wantToRename(m_tabWidget->currentIndex());
+	Q_EMIT wantToRename(m_tabWidget->currentIndex());
 }
 
 void ProgramTab::print(QPrinter &printer) {
@@ -795,7 +795,7 @@ void ProgramTab::updateMenu() {
 	enableProgramButton();
 
 	// Emit a signal so that the ProgramWindow can update its own UI.
-	emit programWindowUpdateRequest(m_programButton ? m_programButton->isEnabled() : false,
+	Q_EMIT programWindowUpdateRequest(m_programButton ? m_programButton->isEnabled() : false,
 	                                m_canUndo, m_canRedo, m_canCut, m_canCopy, m_canPaste,
 	                                m_platform, m_port, m_board, m_filename);
 }
@@ -813,7 +813,7 @@ void ProgramTab::updateBoards() {
 	}
 
 	QMap<QString, QString> boardNames = m_programWindow->getBoards();
-	foreach (QString name, boardNames.keys()) {
+	Q_FOREACH (QString name, boardNames.keys()) {
 		m_boardComboBox->addItem(name, boardNames.value(name));
 	}
 
@@ -828,7 +828,7 @@ void ProgramTab::updateSerialPorts() {
 	QList<QSerialPortInfo> ports = m_programWindow->getSerialPorts();
 
 	QList<QSerialPortInfo> newPorts;
-	foreach (QSerialPortInfo port, ports) {
+	Q_FOREACH (QSerialPortInfo port, ports) {
 		if (m_portComboBox->findText(port.portName()) < 0) {
 			newPorts.append(port);
 		}
@@ -847,7 +847,7 @@ void ProgramTab::updateSerialPorts() {
 	for (int i = obsoletePorts.count() - 1; i >= 0; i--) {
 		m_portComboBox->removeItem(obsoletePorts.at(i));
 	}
-	foreach (QSerialPortInfo port, newPorts) {
+	Q_FOREACH (QSerialPortInfo port, newPorts) {
 		m_portComboBox->addItem(port.portName(), port.systemLocation());
 	}
 

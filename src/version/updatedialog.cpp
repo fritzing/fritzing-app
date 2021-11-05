@@ -94,7 +94,7 @@ bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 	AvailableRelease * interimRelease = nullptr;
 	AvailableRelease * mainRelease = nullptr;
 
-	foreach (AvailableRelease * availableRelease, availableReleases) {
+	Q_FOREACH (AvailableRelease * availableRelease, availableReleases) {
 		if (availableRelease->interim && (interimRelease == nullptr)) {
 			interimRelease = availableRelease;
 			continue;
@@ -188,7 +188,7 @@ void UpdateDialog::releasesAvailableSlot() {
 				this->exec();
 			}
 		} else {
-			emit enableAgainSignal(true);
+			Q_EMIT enableAgainSignal(true);
 		}
 	}
 }
@@ -218,7 +218,7 @@ void UpdateDialog::partsAvailableSlot() {
 		if (!this->isVisible()) {
 			// we are doing the parts check silently, so enable manual update by sending signal
 			// otherwise manual update is enabled by closing the dialog
-			emit enableAgainSignal(true);
+			Q_EMIT enableAgainSignal(true);
 		}
 		return;
 	}
@@ -240,7 +240,7 @@ void UpdateDialog::partsAvailableSlot() {
 		if (!this->isVisible()) {
 			// we are doing the parts check silently, so enable manual update by sending signal
 			// otherwise manual update is enabled by closing the dialog
-			emit enableAgainSignal(true);
+			Q_EMIT enableAgainSignal(true);
 		}
 		return;
 	}
@@ -273,7 +273,7 @@ void UpdateDialog::partsAvailableSlot() {
 			}
 			// we are doing the parts check silently, so enable manual update by sending signal
 			// otherwise manual update is enabled by closing the dialog
-			emit enableAgainSignal(true);
+			Q_EMIT enableAgainSignal(true);
 			return;
 		}
 
@@ -297,7 +297,7 @@ void UpdateDialog::onCleanRepo(ModFileDialog * modFileDialog) {
 
 		// we are doing the parts check silently, so enable manual update by sending signal
 		// otherwise manual update is enabled by closing the dialog
-		emit enableAgainSignal(true);
+		Q_EMIT enableAgainSignal(true);
 		modFileDialog->done(QDialog::Rejected);
 		return;
 	}
@@ -321,7 +321,7 @@ void UpdateDialog::handleError()
 	DebugDialog::debug("handle error");
 	m_feedbackLabel->setText(tr("<p>Sorry, unable to retrieve update info</p>"));
 	m_buttonBox->button(QDialogButtonBox::Cancel)->setVisible(true);
-	emit enableAgainSignal(true);
+	Q_EMIT enableAgainSignal(true);
 	DebugDialog::debug("handle error done");
 }
 
@@ -337,7 +337,7 @@ void UpdateDialog::handlePartsError(const QString & error) {
 
 	DebugDialog::debug("handle error " + error);
 	m_feedbackLabel->setText(tr("<p>Sorry, unable to retrieve parts update info</p>"));
-	emit enableAgainSignal(true);
+	Q_EMIT enableAgainSignal(true);
 }
 
 void UpdateDialog::setAtUserRequest(bool atUserRequest)
@@ -348,13 +348,13 @@ void UpdateDialog::setAtUserRequest(bool atUserRequest)
 void UpdateDialog::stopClose() {
 	m_versionChecker->stop();
 	this->close();
-	emit enableAgainSignal(true);
+	Q_EMIT enableAgainSignal(true);
 }
 
 void UpdateDialog::openInBrowser()
 {
 	QDesktopServices::openUrl(m_updateUrl);
-	emit enableAgainSignal(true);
+	Q_EMIT enableAgainSignal(true);
 	this->close();
 }
 
@@ -422,7 +422,7 @@ void UpdateDialog::updateParts() {
 	m_progressBar->setValue(0);
 	m_progressBar->setMinimum(0);
 	m_progressBar->setMaximum(0);
-	emit installNewParts();
+	Q_EMIT installNewParts();
 }
 
 void UpdateDialog::updateProgress(double progress) {

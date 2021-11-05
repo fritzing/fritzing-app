@@ -153,7 +153,7 @@ void ViewLayer::initNames() {
 		names.insert(ViewLayer::PcbNote,  new NamePair("pcbNote", QObject::tr("Notes")));
 		names.insert(ViewLayer::PcbRuler,  new NamePair("pcbRuler", QObject::tr("Rulers")));
 
-		foreach (ViewLayerID key, names.keys()) {
+		Q_FOREACH (ViewLayerID key, names.keys()) {
 			xmlHash.insert(names.value(key)->xmlName, key);
 		}
 
@@ -165,8 +165,8 @@ void ViewLayer::initNames() {
 		LayerList l0, l1;
 		l0 << ViewLayer::Copper0 << ViewLayer::Copper0Trace << ViewLayer::GroundPlane0;
 		l1 << ViewLayer::Copper1 << ViewLayer::Copper1Trace << ViewLayer::GroundPlane1;
-		foreach (ViewLayer::ViewLayerID viewLayerID0, l0) {
-			foreach (ViewLayer::ViewLayerID viewLayerID1, l1) {
+		Q_FOREACH (ViewLayer::ViewLayerID viewLayerID0, l0) {
+			Q_FOREACH (ViewLayer::ViewLayerID viewLayerID1, l1) {
 				unconnectables.insert(viewLayerID0, viewLayerID1);
 				unconnectables.insert(viewLayerID1, viewLayerID0);
 			}
@@ -296,12 +296,12 @@ bool ViewLayer::alreadyInLayer(double z) {
 }
 
 void ViewLayer::cleanup() {
-	foreach (NamePair * sp, names.values()) {
+	Q_FOREACH (NamePair * sp, names.values()) {
 		delete sp;
 	}
 	names.clear();
 
-	foreach (NameTriple * nameTriple, ViewIDNames) {
+	Q_FOREACH (NameTriple * nameTriple, ViewIDNames) {
 		delete nameTriple;
 	}
 	ViewIDNames.clear();
@@ -479,7 +479,7 @@ QString & ViewLayer::viewIDNaturalName(ViewLayer::ViewID viewID) {
 }
 
 ViewLayer::ViewID ViewLayer::idFromXmlName(const QString & name) {
-	foreach (ViewID id, ViewIDNames.keys()) {
+	Q_FOREACH (ViewID id, ViewIDNames.keys()) {
 		NameTriple * nameTriple = ViewIDNames.value(id);
 		if (name.compare(nameTriple->xmlName()) == 0) return id;
 	}

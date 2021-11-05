@@ -112,12 +112,12 @@ public:
 	virtual void moveItem(ItemBase *, double x, double y);
 	virtual void rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem);
 
-public slots:
+public Q_SLOTS:
 	virtual void setVoltage(double, bool doEmit);
 	virtual void resizeBoard(double w, double h, bool doEmit);
 	virtual void setInstanceTitle(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit);
 
-signals:
+Q_SIGNALS:
 	void setVoltageSignal(double, bool doEmit);
 	void swapSignal(const QString & family, const QString & prop, QMap<QString, QString> & propsMap, ItemBase *);
 	void changePinLabelsSignal(ItemBase *, bool singleRow);

@@ -123,7 +123,7 @@ void ZoomableGraphicsView::wheelEvent(QWheelEvent* event) {
 		// Scroll zooming relative to the current size
 		relativeZoom(2*delta, true);
 
-		emit wheelSignal();
+		Q_EMIT wheelSignal();
 	}
 	else if (doVertical) {
 		verticalScrollBar()->setValue( verticalScrollBar()->value() - numSteps);
@@ -137,12 +137,12 @@ void ZoomableGraphicsView::relativeZoom(double step, bool centerOnCursor) {
 	double tempSize = m_scaleValue + step;
 	if (tempSize < m_minScaleValue) {
 		m_scaleValue = m_minScaleValue;
-		emit zoomOutOfRange(m_scaleValue);
+		Q_EMIT zoomOutOfRange(m_scaleValue);
 		return;
 	}
 	if (tempSize > m_maxScaleValue) {
 		m_scaleValue = m_maxScaleValue;
-		emit zoomOutOfRange(m_scaleValue);
+		Q_EMIT zoomOutOfRange(m_scaleValue);
 		return;
 	}
 	double tempScaleValue = tempSize/100;
@@ -166,7 +166,7 @@ void ZoomableGraphicsView::relativeZoom(double step, bool centerOnCursor) {
 	}
 	this->setTransform(transform);
 
-	emit zoomChanged(m_scaleValue);
+	Q_EMIT zoomChanged(m_scaleValue);
 }
 
 void ZoomableGraphicsView::absoluteZoom(double percent) {

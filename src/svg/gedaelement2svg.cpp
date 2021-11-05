@@ -147,7 +147,7 @@ QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins
 		throw QObject::tr("Sorry, Fritzing can't yet handle both pins and pads together (in %1)").arg(filename);
 	}
 
-	foreach (QString c, lexer.comments()) {
+	Q_FOREACH (QString c, lexer.comments()) {
 		metadata += m_comment.arg(TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(c)));
 	}
 
@@ -499,11 +499,11 @@ QString GedaElement2Svg::getPinID(QString & number, QString & name, bool isPad) 
 
 QString GedaElement2Svg::makeCopper(QStringList ids, QMultiHash<QString, QString> & strings, const QString & filename) {
 	QString copper;
-	foreach (QString id, ids) {
+	Q_FOREACH (QString id, ids) {
 		QStringList values = strings.values(id);
 		if (id.isEmpty()) {
 			DebugDialog::debug(QString("geda empty id %1").arg(filename));
-			foreach(QString string, values) {
+			Q_FOREACH(QString string, values) {
 				copper.append(string);
 			}
 			continue;
@@ -523,7 +523,7 @@ QString GedaElement2Svg::makeCopper(QStringList ids, QMultiHash<QString, QString
 
 
 		QString xml = "<g>";
-		foreach (QString string, values) {
+		Q_FOREACH (QString string, values) {
 			xml.append(string);
 		}
 		xml.append("</g>");

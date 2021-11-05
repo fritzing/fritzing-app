@@ -34,11 +34,11 @@ public:
 	StackTabWidget(QWidget *parent);
 	class StackTabBar *stackTabBar();
 
-public slots:
+public Q_SLOTS:
 	void informCurrentChanged(int index);
 	void informTabCloseRequested(int index);
 
-signals:
+Q_SIGNALS:
 	void currentChanged(StackTabWidget *, int index);
 	void tabCloseRequested(StackTabWidget *, int index);
 

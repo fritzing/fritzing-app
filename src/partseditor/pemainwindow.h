@@ -84,10 +84,10 @@ public:
 	void changeReferenceFile(ViewLayer::ViewID viewID, const QString referenceFile);
 	void changeOriginalFile(ViewLayer::ViewID viewID, const QString originalFile, int changeCount);
 
-signals:
+Q_SIGNALS:
 	void addToMyPartsSignal(ModelPart *, const QStringList &);
 
-public slots:
+public Q_SLOTS:
 	void metadataChanged(const QString & name, const QString & value);
 	void propertiesChanged(const QHash<QString, QString> &);
 	void tagsChanged(const QStringList &);
@@ -199,7 +199,7 @@ protected:
 	QString makeDirName();
 	void initWelcomeView();
 
-protected slots:
+protected Q_SLOTS:
 	void initZoom();
 	void showMetadataView();
 	void showConnectorsView();

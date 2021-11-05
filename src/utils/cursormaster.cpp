@@ -59,7 +59,7 @@ CursorMaster::CursorMaster() : QObject()
 }
 
 void CursorMaster::cleanup() {
-	foreach (QCursor ** cursor, Cursors) {
+	Q_FOREACH (QCursor ** cursor, Cursors) {
 		delete *cursor;
 	}
 	Cursors.clear();
@@ -217,7 +217,7 @@ bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 		//if (scene)
 	{
 		auto *keyEvent = static_cast<QKeyEvent*>(event);
-		foreach (QObject * listener, Listeners) {
+		Q_FOREACH (QObject * listener, Listeners) {
 			if (listener) {
 				dynamic_cast<CursorKeyListener *>(listener)->cursorKeyEvent(keyEvent->modifiers());
 				break;

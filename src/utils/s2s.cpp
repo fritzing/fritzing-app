@@ -65,7 +65,7 @@ void setHiddenAux(QList<ConnectorLocation *> & allConnectorLocations, QList<Conn
 			}
 		}
 		if (same.count() > 1) {
-			foreach (ConnectorLocation * connectorLocation, same) {
+			Q_FOREACH (ConnectorLocation * connectorLocation, same) {
 				connectorLocation->hidden = true;
 			}
 			for (int ix = allConnectorLocations.count() - 1; ix >= 0; ix--) {
@@ -76,7 +76,7 @@ void setHiddenAux(QList<ConnectorLocation *> & allConnectorLocations, QList<Conn
 					that->hidden = false;
 					sideConnectorLocations.removeOne(that);
 					int maxIndex = -1;
-					foreach (ConnectorLocation * s, same) {
+					Q_FOREACH (ConnectorLocation * s, same) {
 						int ix = sideConnectorLocations.indexOf(s);
 						if (ix > maxIndex) maxIndex = ix;
 					}
@@ -226,7 +226,7 @@ void S2S::message(const QString & msg) {
 	// cout.flush();
 
 	qDebug() << msg;
-	emit messageSignal(msg);
+	Q_EMIT messageSignal(msg);
 }
 
 void S2S::saveFile(const QString & content, const QString & path)
@@ -439,7 +439,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 		vPinOffset += (space / 2) * SchematicRectConstants::NewUnit;
 	}
 
-	foreach (ConnectorLocation * connectorLocation, m_rights) {
+	Q_FOREACH (ConnectorLocation * connectorLocation, m_rights) {
 		int units = qRound((connectorLocation->terminalPoint.y() - minPinV) / oldUnit) + 1;
 		double y = units * SchematicRectConstants::NewUnit + vPinOffset;
 		double x1 = ((fullWidth - 2) * SchematicRectConstants::NewUnit) - (SchematicRectConstants::PinWidth / 2);
@@ -450,7 +450,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 		svg += makeTerminal(connectorLocation, fullWidth * SchematicRectConstants::NewUnit, y);
 	}
 
-	foreach (ConnectorLocation * connectorLocation, m_lefts) {
+	Q_FOREACH (ConnectorLocation * connectorLocation, m_lefts) {
 		int units = qRound((connectorLocation->terminalPoint.y() - minPinV) / oldUnit) + 1;
 		double y = units * SchematicRectConstants::NewUnit + vPinOffset;
 		double x1 = SchematicRectConstants::PinWidth / 2;
@@ -468,7 +468,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 		hPinOffset += (space / 2) * SchematicRectConstants::NewUnit;
 	}
 
-	foreach (ConnectorLocation * connectorLocation, m_bottoms) {
+	Q_FOREACH (ConnectorLocation * connectorLocation, m_bottoms) {
 		int units = qRound((connectorLocation->terminalPoint.x() - minPinH) / oldUnit) + 1;
 		double x = units * SchematicRectConstants::NewUnit + hPinOffset;
 		double y1 = ((fullHeight - 2) * SchematicRectConstants::NewUnit) - (SchematicRectConstants::PinWidth / 2);
@@ -479,7 +479,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 		svg += makeTerminal(connectorLocation, x, fullHeight * SchematicRectConstants::NewUnit);
 	}
 
-	foreach (ConnectorLocation * connectorLocation, m_tops) {
+	Q_FOREACH (ConnectorLocation * connectorLocation, m_tops) {
 		int units = qRound((connectorLocation->terminalPoint.x() - minPinH) / oldUnit) + 1;
 		double x = units * SchematicRectConstants::NewUnit + hPinOffset;
 		double y1 =  SchematicRectConstants::PinWidth / 2;
@@ -494,7 +494,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 	y -= titles.count() * (SchematicRectConstants::LabelTextHeight + SchematicRectConstants::LabelTextSpace) / 2;
 	y += rectT;
 	y = qMax(y, rectT + (topTextUnits * SchematicRectConstants::NewUnit) + SchematicRectConstants::LabelTextHeight + SchematicRectConstants::LabelTextSpace + SchematicRectConstants::PinTextIndent);  // y seems to be the location of the baseline so add a line
-	foreach (QString subTitle, titles) {
+	Q_FOREACH (QString subTitle, titles) {
 		svg += QString("<text class='text' id='label' font-family=\"%7\" stroke='none' stroke-width='%4' fill='%5' font-size='%1' x='%2' y='%3' text-anchor='middle'>%6</text>\n")
 		       .arg(SchematicRectConstants::LabelTextHeight)
 		       .arg(((hUnits * SchematicRectConstants::NewUnit) / 2) + rectL)
@@ -645,12 +645,12 @@ QList<ConnectorLocation *> S2S::initConnectors(const QDomElement & root, const Q
 		display = (present >= .66 * idlist.size());
 	}
 
-	foreach (ConnectorLocation * connectorLocation, connectorLocations) {
+	Q_FOREACH (ConnectorLocation * connectorLocation, connectorLocations) {
 		connectorLocation->displayPinNumber = display;
 	}
 
 	if (display && idlist.at(0)) {
-		foreach (ConnectorLocation * connectorLocation, connectorLocations) {
+		Q_FOREACH (ConnectorLocation * connectorLocation, connectorLocations) {
 			connectorLocation->id++;
 		}
 	}
@@ -662,7 +662,7 @@ double S2S::lrtb(QList<ConnectorLocation *> & connectorLocations, const QRectF &
 {
 	m_fudge = qMax(m_maxRight - m_minLeft, m_maxBottom - m_minTop) / FudgeDivisor;
 
-	foreach (ConnectorLocation * connectorLocation, connectorLocations) {
+	Q_FOREACH (ConnectorLocation * connectorLocation, connectorLocations) {
 		double d[4];
 		d[0] = connectorLocation->terminalPoint.x() - viewBox.left();
 		d[1] = connectorLocation->terminalPoint.y() - viewBox.top();
@@ -727,13 +727,13 @@ double S2S::lrtb(QList<ConnectorLocation *> & connectorLocations, const QRectF &
 	int totalPins = m_lefts.count() + m_rights.count() + m_bottoms.count() + m_tops.count();
 
 	int most = 0;
-	foreach (double distance, distances) {
+	Q_FOREACH (double distance, distances) {
 		int d = qRound(distance / m_fudge);
 		if (d > most) most = d;
 	}
 
 	QVector<int> dbins(most + 2, 0);
-	foreach (double distance, distances) {
+	Q_FOREACH (double distance, distances) {
 		int d = qRound(distance / m_fudge);
 		dbins[d] += 1;
 	}
@@ -810,7 +810,7 @@ bool S2S::ensureTerminalPoints(const QString & fzpFilePath, const QString & svgF
 	bool fzpChanged = false;
 	bool svgChanged = false;
 
-	foreach (QDomElement p, missing) {
+	Q_FOREACH (QDomElement p, missing) {
 		QDomElement connector = p.parentNode().parentNode().parentNode().toElement();
 		QString name = connector.attribute("id");
 		if (name.isEmpty()) {
@@ -855,7 +855,7 @@ bool S2S::ensureTerminalPoints(const QString & fzpFilePath, const QString & svgF
 double S2S::spaceTitle(QStringList & titles, int openUnits)
 {
 	double labelTextMax = 0;
-	foreach (QString title, titles) {
+	Q_FOREACH (QString title, titles) {
 		double w = stringWidthMM(SchematicRectConstants::LabelTextHeight, title);
 		if (w > labelTextMax) labelTextMax = w;
 	}
@@ -884,7 +884,7 @@ double S2S::spaceTitle(QStringList & titles, int openUnits)
 	if (!changed) return labelTextMax;
 
 	labelTextMax = 0;
-	foreach (QString title, titles) {
+	Q_FOREACH (QString title, titles) {
 		double w = stringWidthMM(SchematicRectConstants::LabelTextHeight, title);
 		if (w > labelTextMax) labelTextMax = w;
 	}

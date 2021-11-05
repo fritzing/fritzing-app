@@ -159,7 +159,7 @@ void PEConnectorsView::initConnectors(QList<QDomElement> * connectorList)
 	auto *scrollLayout = new QVBoxLayout();
 
 	int ix = 0;
-	foreach (QDomElement connector, *connectorList) {
+	Q_FOREACH (QDomElement connector, *connectorList) {
 		QWidget * widget = PEUtils::makeConnectorForm(connector, ix++, this, true);
 		scrollLayout->addWidget(widget);
 	}
@@ -198,7 +198,7 @@ void PEConnectorsView::connectorCountEntry() {
 		int newCount = lineEdit->text().toInt();
 		if (newCount != m_connectorCount) {
 			m_connectorCount = newCount;
-			emit connectorCountChanged(newCount);
+			Q_EMIT connectorCountChanged(newCount);
 			lineEdit->setModified(false);
 		}
 	}
@@ -216,7 +216,7 @@ void PEConnectorsView::removeConnector() {
 
 	QList<ConnectorMetadata *> cmdList;
 	cmdList.append(&cmd);
-	emit removedConnectors(cmdList);
+	Q_EMIT removedConnectors(cmdList);
 }
 
 void PEConnectorsView::changeConnector() {
@@ -227,7 +227,7 @@ void PEConnectorsView::changeConnector() {
 	ConnectorMetadata cmd;
 	if (!PEUtils::fillInMetadata(senderIndex, m_scrollFrame, cmd)) return;
 
-	emit connectorMetadataChanged(&cmd);
+	Q_EMIT connectorMetadataChanged(&cmd);
 }
 
 void PEConnectorsView::allTypeEntry() {
@@ -238,7 +238,7 @@ void PEConnectorsView::allTypeEntry() {
 	Connector::ConnectorType ct = (Connector::ConnectorType) radio->property("value").toInt(&ok);
 	if (!ok) return;
 
-	emit connectorsTypeChanged(ct);
+	Q_EMIT connectorsTypeChanged(ct);
 
 	QTimer::singleShot(10, this, SLOT(uncheckRadios()));
 }
@@ -248,12 +248,12 @@ void PEConnectorsView::smdEntry()
 	auto * radio = qobject_cast<QRadioButton *>(sender());
 	if (radio == nullptr) return;
 
-	emit smdChanged(radio == m_smd ? "smd" : "tht");
+	Q_EMIT smdChanged(radio == m_smd ? "smd" : "tht");
 }
 
 void PEConnectorsView::uncheckRadios() {
 	// this doesn't work because the buttons are "autoexclusive"
-	foreach (QRadioButton * radio, m_radios) {
+	Q_FOREACH (QRadioButton * radio, m_radios) {
 		radio->setChecked(false);
 	}
 }

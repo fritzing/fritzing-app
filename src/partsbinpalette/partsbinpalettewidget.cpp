@@ -149,7 +149,7 @@ PartsBinPaletteWidget::~PartsBinPaletteWidget() {
 }
 
 void PartsBinPaletteWidget::cleanup() {
-	foreach (PaletteModel * paletteModel, PaletteBinModels) {
+	Q_FOREACH (PaletteModel * paletteModel, PaletteBinModels) {
 		delete paletteModel;
 	}
 	PaletteBinModels.clear();
@@ -257,11 +257,11 @@ bool PartsBinPaletteWidget::saveAsAux(const QString &filename) {
 	m_location = BinLocation::findLocation(filename);
 
 	if(oldFilename != m_fileName) {
-		emit fileNameUpdated(this,m_fileName,oldFilename);
+		Q_EMIT fileNameUpdated(this,m_fileName,oldFilename);
 	}
-	emit saved(hasAlienParts());
+	Q_EMIT saved(hasAlienParts());
 
-	foreach (QString path, m_removed) {
+	Q_FOREACH (QString path, m_removed) {
 		bool result = QFile::remove(path);
 		if (!result) {
 			DebugDialog::debug("unable to delete '" + path + "' from bin");
@@ -440,7 +440,7 @@ bool PartsBinPaletteWidget::loadBundledAux(QDir &unzipDir, QList<ModelPart*> mps
 	namefilters << "*"+FritzingBinExtension;
 
 	this->load(unzipDir.entryInfoList(namefilters)[0].filePath(), this, false);
-	foreach(ModelPart* mp, mps) {
+	Q_FOREACH(ModelPart* mp, mps) {
 		if(mp->isAlien()) { // double check
 			m_alienParts << mp->moduleID();
 		}
@@ -614,7 +614,7 @@ void PartsBinPaletteWidget::closeEvent(QCloseEvent* event) {
 }
 
 void PartsBinPaletteWidget::mousePressEvent(QMouseEvent* event) {
-	emit focused(this);
+	Q_EMIT focused(this);
 	QFrame::mousePressEvent(event);
 }
 
@@ -662,7 +662,7 @@ void PartsBinPaletteWidget::removeParts() {
 }
 
 void PartsBinPaletteWidget::removeAlienParts() {
-	foreach(QString moduleID, m_alienParts) {
+	Q_FOREACH(QString moduleID, m_alienParts) {
 		removePart(moduleID, "");
 	}
 	m_alienParts.clear();
@@ -728,7 +728,7 @@ bool PartsBinPaletteWidget::eventFilter(QObject *obj, QEvent *event) {
 		        event->type() == QEvent::GraphicsSceneDrop ||
 		        event->type() == QEvent::GraphicsSceneMousePress
 		   ) {
-			emit focused(this);
+			Q_EMIT focused(this);
 		}
 	}
 	return QFrame::eventFilter(obj, event);
@@ -861,7 +861,7 @@ QMenu * PartsBinPaletteWidget::binContextMenu()
 	if (menu == nullptr) return nullptr;
 
 	auto * newMenu = new QMenu();
-	foreach (QAction * action, menu->actions()) {
+	Q_FOREACH (QAction * action, menu->actions()) {
 		newMenu->addAction(action);
 	}
 

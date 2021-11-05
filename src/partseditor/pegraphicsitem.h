@@ -63,14 +63,14 @@ public:
 	void flash();
 	class ItemBase * itemBase();
 
-signals:
+Q_SIGNALS:
 	void highlightSignal(PEGraphicsItem *);
 	void mousePressedSignal(PEGraphicsItem *, bool & ignore);
 	void mouseReleasedSignal(PEGraphicsItem *);
 	void terminalPointMoved(PEGraphicsItem *, QPointF);
 	void terminalPointChanged(PEGraphicsItem *, QPointF before, QPointF after);
 
-protected slots:
+protected Q_SLOTS:
 	void restoreColor();
 
 protected:

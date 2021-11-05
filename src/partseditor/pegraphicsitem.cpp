@@ -97,7 +97,7 @@ void PEGraphicsItem::wheelEvent(QGraphicsSceneWheelEvent * event) {
 	m_wheelAccum = 0;
 
 	QList<PEGraphicsItem *> items;
-	foreach (QGraphicsItem * item, scene()->items(event->scenePos())) {
+	Q_FOREACH (QGraphicsItem * item, scene()->items(event->scenePos())) {
 		auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 		if (pegi) items.append(pegi);
 	}
@@ -147,7 +147,7 @@ void PEGraphicsItem::setHighlighted(bool highlighted) {
 	if (highlighted) {
 		m_highlighted = true;
 		setOpacity(0.4);
-		foreach (QGraphicsItem * item, scene()->items()) {
+		Q_FOREACH (QGraphicsItem * item, scene()->items()) {
 			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 			if (pegi == nullptr) continue;
 			if (pegi == this) continue;
@@ -155,7 +155,7 @@ void PEGraphicsItem::setHighlighted(bool highlighted) {
 
 			pegi->setHighlighted(false);
 		}
-		emit highlightSignal(this);
+		Q_EMIT highlightSignal(this);
 	}
 	else {
 		m_highlighted = false;
@@ -247,7 +247,7 @@ bool PEGraphicsItem::showingTerminalPoint() {
 void PEGraphicsItem::showMarquee(bool show) {
 	if (show) {
 		m_showMarquee = true;
-		foreach (QGraphicsItem * item, scene()->items()) {
+		Q_FOREACH (QGraphicsItem * item, scene()->items()) {
 			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
 			if (pegi == nullptr) continue;
 			if (pegi == this) continue;
@@ -303,7 +303,7 @@ void PEGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	}
 
 	bool ignore;
-	emit mousePressedSignal(this, ignore);
+	Q_EMIT mousePressedSignal(this, ignore);
 	if (ignore) {
 		event->ignore();
 		return;
@@ -369,7 +369,7 @@ void PEGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 	if (newTerminalPoint.y() < 0) newTerminalPoint.setY(0);
 	else if (newTerminalPoint.y() > rect().height()) newTerminalPoint.setY(rect().height());
 	m_terminalPoint = newTerminalPoint;
-	emit terminalPointMoved(this, newTerminalPoint);
+	Q_EMIT terminalPointMoved(this, newTerminalPoint);
 	update();
 }
 
@@ -378,12 +378,12 @@ void PEGraphicsItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *) {
 	if (m_dragTerminalPoint) {
 		m_dragTerminalPoint = false;
 		if (m_terminalPointOrigin != m_terminalPoint) {
-			emit terminalPointChanged(this, m_terminalPointOrigin, m_terminalPoint);
+			Q_EMIT terminalPointChanged(this, m_terminalPointOrigin, m_terminalPoint);
 		}
 	}
 	else {
 		// relocate the connector
-		emit mouseReleasedSignal(this);
+		Q_EMIT mouseReleasedSignal(this);
 	}
 }
 

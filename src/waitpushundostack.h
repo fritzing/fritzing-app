@@ -72,7 +72,7 @@ class CommandTimer : public QTimer
 public:
 	CommandTimer(QUndoCommand * command, int delayMS, WaitPushUndoStack * undoStack);
 
-protected slots:
+protected Q_SLOTS:
 	void timedout();
 
 protected:

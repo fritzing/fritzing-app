@@ -113,7 +113,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	verts.append(s = add_vertex(g));
 	verts.append(t = add_vertex(g));
 
-	foreach (ConnectorItem * connectorItem, connectorItems) {
+	Q_FOREACH (ConnectorItem * connectorItem, connectorItems) {
 		//connectorItem->debugInfo("input");
 		if (connectorItem->attachedToItemType() == ModelPart::Wire) {
 			Wire * wire = qobject_cast<Wire *>(connectorItem->attachedTo());
@@ -125,7 +125,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 			visitedWires.append(wires);
 			if (ends.count() < 2) continue;
 
-			foreach (ConnectorItem * end, ends) {
+			Q_FOREACH (ConnectorItem * end, ends) {
 				appendVertIf(end, vertices, verts);
 			}
 
@@ -142,7 +142,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 		if (connectorItem->connectorType() == Connector::Female) {
 			appendVertIf(connectorItem, vertices, verts);
 			int ix = LastVertex;
-			foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
+			Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 				if (toConnectorItem->attachedToItemType() == ModelPart::Wire) {
 					// deal with the wire
 					continue;
@@ -161,10 +161,10 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 
 	// make cross-view connections
 	QList<ConnectorEdge *> foreignEdges;
-	foreach (ConnectorEdge * ce, edges) {
+	Q_FOREACH (ConnectorEdge * ce, edges) {
 		if (ce->wire && !ce->wire->isEverVisible()) {
 			ce->visible = false;
-			foreach (SketchWidget * foreignSketchWidget, foreignSketchWidgets) {
+			Q_FOREACH (SketchWidget * foreignSketchWidget, foreignSketchWidgets) {
 				ItemBase * foreignItemBase = foreignSketchWidget->findItem(ce->wire->id());
 				if (foreignItemBase && foreignItemBase->isEverVisible()) {
 					ConnectorItem * fc0 = foreignSketchWidget->findConnectorItem(ce->c0);
@@ -192,7 +192,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 
 		if (!ce->c0->attachedTo()->isEverVisible()) {
 			ce->visible = false;
-			foreach (SketchWidget * foreignSketchWidget, foreignSketchWidgets) {
+			Q_FOREACH (SketchWidget * foreignSketchWidget, foreignSketchWidgets) {
 				ConnectorItem * fc0 = foreignSketchWidget->findConnectorItem(ce->c0);
 				if (fc0 == nullptr) {
 					ce->c0->debugInfo("missing foreign connector");
@@ -229,7 +229,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 		int ix = vertices.value(key);
 		QList<ConnectorItem *> bcis;
 		key->attachedTo()->busConnectorItems(key->bus(), key, bcis);
-		foreach (ConnectorItem * bci, bcis) {
+		Q_FOREACH (ConnectorItem * bci, bcis) {
 			if (bci == key) continue;
 
 			originalKeys.removeOne(bci);
@@ -244,11 +244,11 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 
 	// add cross-layer edges
 	QList <ConnectorItem *> crossVisited;
-	foreach (ConnectorEdge * ce, edges) {
+	Q_FOREACH (ConnectorEdge * ce, edges) {
 		QList<ConnectorItem *> from;
 		from << ce->c0;
 		from << ce->c1;
-		foreach (ConnectorItem * ci, from) {
+		Q_FOREACH (ConnectorItem * ci, from) {
 			if (!crossVisited.contains(ci)) {
 				ConnectorItem * cross = ci->getCrossLayerConnectorItem();
 				if (cross == nullptr) continue;
@@ -265,7 +265,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	//	connectorItem->debugInfo(QString("vertex %1").arg(vertices.value(connectorItem)));
 	//}
 
-	foreach(ConnectorEdge * ce, edges) {
+	Q_FOREACH(ConnectorEdge * ce, edges) {
 		if (!ce->visible) continue;
 
 		Traits::edge_descriptor e1, e2;
@@ -300,7 +300,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 
 	typedef property_traits<property_map < Graph, vertex_color_t >::type>::value_type tColorValue;
 	typedef boost::color_traits<tColorValue> tColorTraits;
-	foreach (ConnectorEdge * ce, edges) {
+	Q_FOREACH (ConnectorEdge * ce, edges) {
 		bool addIt = false;
 		if (ce->visible) {
 			if (color(verts[ce->head]) == tColorTraits::white() && color(verts[ce->tail]) != tColorTraits::white()) {
@@ -345,7 +345,7 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 	}
 
 	QList<QPointF> locs;
-	foreach (ConnectorItem * connectorItem, temp) {
+	Q_FOREACH (ConnectorItem * connectorItem, temp) {
 		locs << connectorItem->sceneAdjustedTerminalPoint(nullptr);
 	}
 
@@ -371,7 +371,7 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 
 			bool already = false;
 			bool checkWiredTo = true;
-			foreach (QList<ConnectorItem *> list, wiredTo) {
+			Q_FOREACH (QList<ConnectorItem *> list, wiredTo) {
 				if (list.contains(c1)) {
 					checkWiredTo = false;
 					if (list.contains(c2)) {
@@ -513,7 +513,7 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 		if (fromConnectorItem->attachedToItemType() == ModelPart::Jumper) {
 			routingStatus.m_jumperItemCount++;
 		}
-		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
+		Q_FOREACH (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
 			switch (toConnectorItem->attachedToItemType()) {
 			case ModelPart::Wire:
 				break;
@@ -531,7 +531,7 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 				if (toConnectorItem->attachedTo()->isEverVisible()) {
 					QList<ConnectorItem *> ends;
 					collectBreadboard(toConnectorItem, partConnectorItems, ends);
-					foreach (ConnectorItem * end, ends) {
+					Q_FOREACH (ConnectorItem * end, ends) {
 						if (end == fromConnectorItem) continue;
 
 						int j = partConnectorItems.indexOf(end);
@@ -555,7 +555,7 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 			QList<Wire *> wires;
 			QList<ConnectorItem *> ends;
 			wire->collectChained(wires, ends);
-			foreach (ConnectorItem * end, ends) {
+			Q_FOREACH (ConnectorItem * end, ends) {
 				if (end == fromConnectorItem) continue;
 
 				int j = partConnectorItems.indexOf(end);
@@ -623,14 +623,14 @@ void GraphUtils::collectBreadboard(ConnectorItem * connectorItem, QList<Connecto
 		if (bus) {
 			QList<ConnectorItem *> busConnectorItems;
 			candidate->attachedTo()->busConnectorItems(bus, candidate, busConnectorItems);
-			foreach (ConnectorItem * bci, busConnectorItems) {
+			Q_FOREACH (ConnectorItem * bci, busConnectorItems) {
 				if (!itemsToGo.contains(bci)) {
 					itemsToGo.append(bci);
 				}
 			}
 		}
 
-		foreach (ConnectorItem * to, candidate->connectedToItems()) {
+		Q_FOREACH (ConnectorItem * to, candidate->connectedToItems()) {
 			if (!itemsToGo.contains(to)) {
 				itemsToGo.append(to);
 			}

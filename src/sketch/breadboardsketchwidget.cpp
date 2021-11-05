@@ -78,10 +78,10 @@ bool BreadboardSketchWidget::disconnectFromFemale(ItemBase * item, QHash<long, I
 	// at the moment, I think this doesn't apply to other views
 
 	bool result = false;
-	foreach (ConnectorItem * fromConnectorItem, item->cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * fromConnectorItem, item->cachedConnectorItems()) {
 		if (rubberBandLegEnabled && fromConnectorItem->hasRubberBandLeg()) continue;
 
-		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems())  {
+		Q_FOREACH (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems())  {
 			if (rubberBandLegEnabled && toConnectorItem->hasRubberBandLeg()) continue;
 
 			if (toConnectorItem->connectorType() == Connector::Female) {
@@ -257,7 +257,7 @@ void BreadboardSketchWidget::colorWiresByLength(bool colorByLength) {
 	QSettings settings;
 	settings.setValue(QString("%1ColorWiresByLength").arg(viewName()), colorByLength);
 
-	foreach (QGraphicsItem * item, scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, scene()->items()) {
 		Wire * wire = dynamic_cast<Wire *>(item);
 		if (wire == nullptr) continue;
 		wire->colorByLength(colorByLength);

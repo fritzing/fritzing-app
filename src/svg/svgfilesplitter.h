@@ -101,7 +101,7 @@ protected:
 	static void hideTextAux(QDomElement & parent, bool hideChildren);
 	static void showTextAux(QDomElement & parent, bool & hasText, bool root);
 
-protected slots:
+protected Q_SLOTS:
 	void normalizeCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
 	void shiftCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
 	virtual void rotateCommandSlot(QChar, bool, QList<double> &, void *) {}

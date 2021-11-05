@@ -150,7 +150,7 @@ void ConsoleSettings::fillPortsInfo()
 	QString description;
 	QString manufacturer;
 	QString serialNumber;
-	foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
+	Q_FOREACH (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
 		QStringList list;
 		description = info.description();
 		manufacturer = info.manufacturer();

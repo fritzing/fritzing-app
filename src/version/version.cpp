@@ -162,7 +162,7 @@ void Version::toVersionThing(const QString & candidate, VersionThing & versionTh
 {
 	versionThing.ok = false;
 	QString modString;
-	foreach (QString s, m_modifiers) {
+	Q_FOREACH (QString s, m_modifiers) {
 		modString += s + "|";
 	}
 	modString.chop(1);

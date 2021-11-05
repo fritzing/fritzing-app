@@ -421,7 +421,7 @@ KicadModule2Svg::PadLayer KicadModule2Svg::convertPad(QTextStream & stream, QStr
 	QString attributes;
 	QString position;
 
-	foreach (QString string, padStrings) {
+	Q_FOREACH (QString string, padStrings) {
 		if (string.startsWith("Sh")) {
 			shape = string;
 		}

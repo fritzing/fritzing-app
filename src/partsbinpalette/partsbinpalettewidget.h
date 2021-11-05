@@ -96,7 +96,7 @@ public:
 	bool isTempPartsBin();
 	void reloadPart(const QString & moduleID);
 
-public slots:
+public Q_SLOTS:
 	void addPartCommand(const QString& moduleID);
 	void removeAlienParts();
 	void itemMoved();
@@ -106,13 +106,13 @@ public slots:
 	bool saveAs();
 	void changeIconColor();
 
-protected slots:
+protected Q_SLOTS:
 	void undoStackCleanChanged(bool isClean);
 	void addSketchPartToMe();
 	void search(const QString& searchTerm);
 	void focusSearchAfter();
 
-signals:
+Q_SIGNALS:
 	void saved(bool hasPartsFromBundled);
 	void fileNameUpdated(PartsBinPaletteWidget*, const QString &newFileName, const QString &oldFilename);
 	void focused(PartsBinPaletteWidget*);

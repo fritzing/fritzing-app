@@ -33,7 +33,7 @@ public:
 protected:
 	void mousePressEvent(QMouseEvent * e);
 
-signals:
+Q_SIGNALS:
 	void clicked();
 };
 

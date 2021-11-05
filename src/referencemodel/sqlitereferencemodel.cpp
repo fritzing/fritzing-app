@@ -64,14 +64,14 @@ void debugExec(const QString & msg, QSqlQuery & query) {
 	);
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QMap<QString, QVariant> map = query.boundValues();
-	foreach (QString name, map.keys()) {
+	Q_FOREACH (QString name, map.keys()) {
 		DebugDialog::debug(QString("\t%1:%2").arg(name).arg(map.value(name).toString()));
 	}
 #endif
 }
 
 void killConnectors(QVector<Connector *> & connectors) {
-	foreach (Connector * connector, connectors) {
+	Q_FOREACH (Connector * connector, connectors) {
 		delete connector->connectorShared();
 		delete connector;
 	}
@@ -79,7 +79,7 @@ void killConnectors(QVector<Connector *> & connectors) {
 }
 
 void killBuses(QVector<BusShared *> & buses) {
-	foreach (BusShared * bus, buses) {
+	Q_FOREACH (BusShared * bus, buses) {
 		delete bus;
 	}
 	buses.clear();
@@ -503,7 +503,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 	if (m_root == nullptr) {
 		m_root = new ModelPart();
 	}
-	foreach (ModelPart * modelPart, m_partHash.values()) {
+	Q_FOREACH (ModelPart * modelPart, m_partHash.values()) {
 		if (modelPart->dbid() != 0) {
 			// initConnectors is not redundant here
 			// there may be parts in m_partHash loaded from a file rather from the database
@@ -636,12 +636,12 @@ bool SqliteReferenceModel::createDatabase(const QString & databaseName, bool ful
 			result = query.exec();
 			debugError(result, query);
 
-			foreach(ModelPart* mp, m_partHash.values()) {
+			Q_FOREACH(ModelPart* mp, m_partHash.values()) {
 				mp->initConnectors(false);
 			}
 		}
 
-		foreach(ModelPart* mp, m_partHash.values()) {
+		Q_FOREACH(ModelPart* mp, m_partHash.values()) {
 			addPartAux(mp, fullLoad);
 		}
 
@@ -689,8 +689,8 @@ QString SqliteReferenceModel::retrieveModuleId(const QString &family, const QMul
 		    "WHERE part.family = :family AND (1=1 ";
 		QHash<QString, QString> params;
 		int ix = 0;
-		foreach (QString name, properties.uniqueKeys()) {
-			foreach (QString value, properties.values(name)) {
+		Q_FOREACH (QString name, properties.uniqueKeys()) {
+			Q_FOREACH (QString value, properties.values(name)) {
 				QString propParam = QString(":prop%1").arg(ix++);
 				queryStr += QString(" AND EXISTS (SELECT * FROM properties prop WHERE prop.part_id = part.id AND prop.name = %1_name AND prop.value = %1_value)").arg(propParam);
 				params[propParam+"_name"] = name;
@@ -706,7 +706,7 @@ QString SqliteReferenceModel::retrieveModuleId(const QString &family, const QMul
 		query.prepare(queryStr);
 
 		query.bindValue(":family",family.toLower().trimmed());
-		foreach(QString name, params.keys()) {
+		Q_FOREACH(QString name, params.keys()) {
 			query.bindValue(name,params[name].toLower().trimmed());
 		}
 
@@ -776,7 +776,7 @@ QString SqliteReferenceModel::getClosestMatch(const QString &family, const QMult
 	int propsInCommonCount = 0;
 	int propsInCommonCountAux = 0;
 	QString result;
-	foreach(QString modId, possibleMatches) {
+	Q_FOREACH(QString modId, possibleMatches) {
 		propsInCommonCountAux = countPropsInCommon(family, properties, retrieveModelPart(modId));
 		if(propsInCommonCountAux > propsInCommonCount) {
 			result = modId;
@@ -796,11 +796,11 @@ int SqliteReferenceModel::countPropsInCommon(const QString &family, const QMulti
 
 	int result = 0;
 	QHash<QString,QString> props2 = part2->properties();
-	foreach(QString prop, properties.uniqueKeys()) {
+	Q_FOREACH(QString prop, properties.uniqueKeys()) {
 		QStringList values1 = properties.values(prop);
 		QStringList values2;
 		values2.append(props2.value(prop));
-		foreach (QString value1, values1) {
+		Q_FOREACH (QString value1, values1) {
 			if (values2.contains(value1)) {
 				result++;
 			}
@@ -953,7 +953,7 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 	if (query.exec()) {
 		qulonglong id = query.lastInsertId().toULongLong();
 		modelPart->setDBID(id);
-		foreach (QString prop, properties.keys()) {
+		Q_FOREACH (QString prop, properties.keys()) {
 			if (prop == "family") continue;
 
 			bool result = insertProperty(prop, properties.value(prop), id, modelPart->showInLabel(prop));
@@ -967,25 +967,25 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 		}
 
 		if (fullLoad) {
-			foreach (QString tag, modelPart->tags()) {
+			Q_FOREACH (QString tag, modelPart->tags()) {
 				insertTag(tag, id);
 			}
 
-			foreach (ViewImage * viewImage, modelPart->viewImages()) {
+			Q_FOREACH (ViewImage * viewImage, modelPart->viewImages()) {
 				insertViewImage(viewImage, id);
 			}
 
-			foreach (Connector * connector, modelPart->connectors().values()) {
+			Q_FOREACH (Connector * connector, modelPart->connectors().values()) {
 				insertConnector(connector, id);
 			}
 
-			foreach (Bus * bus, modelPart->buses().values()) {
+			Q_FOREACH (Bus * bus, modelPart->buses().values()) {
 				insertBus(bus, id);
 			}
 
 			ModelPartShared * mps = modelPart->modelPartShared();
 			if (mps) {
-				foreach (ModelPartShared * sub, mps->subparts()) {
+				Q_FOREACH (ModelPartShared * sub, mps->subparts()) {
 					insertSubpart(sub, id);
 				}
 			}
@@ -1068,7 +1068,7 @@ bool SqliteReferenceModel::insertBus(const Bus * bus, qulonglong id)
 		m_swappingEnabled = false;
 	} else {
 		qulonglong bid = query.lastInsertId().toULongLong();
-		foreach (Connector * connector, bus->connectors()) {
+		Q_FOREACH (Connector * connector, bus->connectors()) {
 			insertBusMember(connector, bid);
 		}
 	}
@@ -1107,7 +1107,7 @@ bool SqliteReferenceModel::insertConnector(const Connector * connector, qulonglo
 		m_swappingEnabled = false;
 	} else {
 		qulonglong id = query.lastInsertId().toULongLong();
-		foreach (SvgIdLayer * layer, connector->svgIdLayers()) {
+		Q_FOREACH (SvgIdLayer * layer, connector->svgIdLayers()) {
 			insertConnectorLayer(layer, id);
 		}
 	}
@@ -1248,7 +1248,7 @@ QString SqliteReferenceModel::partTitle(const QString & moduleID) {
 
 void SqliteReferenceModel::killParts()
 {
-	foreach (ModelPart * modelPart, m_partHash.values()) {
+	Q_FOREACH (ModelPart * modelPart, m_partHash.values()) {
 		delete modelPart;
 	}
 	m_partHash.clear();

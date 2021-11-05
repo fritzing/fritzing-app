@@ -144,7 +144,7 @@ void PartsBinIconView::addPart(ModelPart * model, int position) {
 void PartsBinIconView::removePart(const QString &moduleID) {
 	SvgIconWidget *itemToRemove = nullptr;
 	int position = 0;
-	foreach(QGraphicsItem *gIt, m_layouter->childItems()) {
+	Q_FOREACH(QGraphicsItem *gIt, m_layouter->childItems()) {
 		auto *it = dynamic_cast<SvgIconWidget*>(gIt);
 		if(it && it->moduleID() == moduleID) {
 			itemToRemove = it;
@@ -167,7 +167,7 @@ void PartsBinIconView::removePart(const QString &moduleID) {
 
 void PartsBinIconView::removeParts() {
 	QList<SvgIconWidget *> itemsToRemove;
-	foreach(QGraphicsItem *gIt, m_layouter->childItems()) {
+	Q_FOREACH(QGraphicsItem *gIt, m_layouter->childItems()) {
 		auto *it = dynamic_cast<SvgIconWidget*>(gIt);
 		if(it) {
 			itemsToRemove.append(it);
@@ -175,7 +175,7 @@ void PartsBinIconView::removeParts() {
 	}
 	m_itemBaseHash.clear();
 
-	foreach (SvgIconWidget * itemToRemove, itemsToRemove) {
+	Q_FOREACH (SvgIconWidget * itemToRemove, itemsToRemove) {
 		m_noSelectionChangeEmition = true;
 		itemToRemove->setParentItem(nullptr);
 		m_layout->removeItem(itemToRemove);
@@ -191,7 +191,7 @@ int PartsBinIconView::setItemAux(ModelPart * modelPart, int position) {
 		return position;
 	}
 
-	emit settingItem();
+	Q_EMIT settingItem();
 	QString moduleID = modelPart->moduleID();
 	if (contains(moduleID)) {
 		return position;
@@ -283,7 +283,7 @@ bool PartsBinIconView::swappingEnabled(ItemBase * itemBase) {
 
 int PartsBinIconView::selectedIndex() {
 	int idx = 0;
-	foreach(QGraphicsItem *it, scene()->items()) {
+	Q_FOREACH(QGraphicsItem *it, scene()->items()) {
 		auto *icon = dynamic_cast<SvgIconWidget*>(it);
 		if(icon) {
 			if(icon->isSelected()) {
@@ -298,7 +298,7 @@ int PartsBinIconView::selectedIndex() {
 
 void PartsBinIconView::informNewSelection() {
 	if(!m_noSelectionChangeEmition) {
-		emit selectionChanged(selectedIndex());
+		Q_EMIT selectionChanged(selectedIndex());
 	} else {
 		m_noSelectionChangeEmition = false;
 	}
@@ -314,7 +314,7 @@ void PartsBinIconView::dropEvent(QDropEvent* event) {
 
 void PartsBinIconView::moveItem(int fromIndex, int toIndex) {
 	itemMoved(fromIndex,toIndex);
-	emit informItemMoved(fromIndex, toIndex);
+	Q_EMIT informItemMoved(fromIndex, toIndex);
 }
 
 void PartsBinIconView::itemMoved(int fromIndex, int toIndex) {
@@ -460,7 +460,7 @@ ItemBase * PartsBinIconView::loadItemBase(const QString & moduleID, ItemBase::Pl
 	if (plural == ItemBase::NotSure) {
 		QHash<QString,QString> properties = modelPart->properties();
 		QString family = properties.value("family", "").toLower();
-		foreach (QString key, properties.keys()) {
+		Q_FOREACH (QString key, properties.keys()) {
 			QStringList values = m_referenceModel->propValues(family, key, true);
 			if (values.length() > 1) {
 				plural = ItemBase::Plural;

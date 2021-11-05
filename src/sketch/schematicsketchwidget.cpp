@@ -103,7 +103,7 @@ bool SchematicSketchWidget::autorouteTypePCB() {
 void SchematicSketchWidget::tidyWires() {
 	QList<Wire *> wires;
 	QList<Wire *> visited;
-	foreach (QGraphicsItem * item, scene()->selectedItems()) {
+	Q_FOREACH (QGraphicsItem * item, scene()->selectedItems()) {
 		Wire * wire = dynamic_cast<Wire *>(item);
 		if (wire == nullptr) continue;
 		if ((wire->getViewGeometry().wireFlags() & ViewGeometry::SchematicTraceFlag) == 0) continue;
@@ -205,7 +205,7 @@ bool SchematicSketchWidget::hasBigDots() {
 void SchematicSketchWidget::updateBigDots()
 {
 	QList<ConnectorItem *> connectorItems;
-	foreach (QGraphicsItem * item, scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, scene()->items()) {
 		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (connectorItem->attachedToItemType() != ModelPart::Wire) continue;
@@ -219,7 +219,7 @@ void SchematicSketchWidget::updateBigDots()
 	}
 
 	QList<ConnectorItem *> visited;
-	foreach (ConnectorItem * connectorItem, connectorItems) {
+	Q_FOREACH (ConnectorItem * connectorItem, connectorItems) {
 		connectorItem->restoreColor(visited);
 	}
 }
@@ -513,7 +513,7 @@ void SchematicSketchWidget::viewGeometryConversionHack(ViewGeometry & viewGeomet
 	itemBase->saveGeometry();
 	viewGeometry.setTransform(itemBase->getViewGeometry().transform());
 
-	foreach (ItemBase * kin, itemBase->layerKin()) delete kin;
+	Q_FOREACH (ItemBase * kin, itemBase->layerKin()) delete kin;
 	delete itemBase;
 }
 
@@ -532,7 +532,7 @@ void SchematicSketchWidget::setConvertSchematic(bool convert) {
 void SchematicSketchWidget::resizeWires() {
 	double tw = getTraceWidth();
 	double sw = getWireStrokeWidth(nullptr, tw);
-	foreach (QGraphicsItem * item, scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, scene()->items()) {
 		Wire * wire = dynamic_cast<Wire *>(item);
 		if (wire == nullptr) continue;
 		if (!wire->isTraceType(getTraceFlag())) continue;
@@ -544,7 +544,7 @@ void SchematicSketchWidget::resizeWires() {
 void SchematicSketchWidget::resizeLabels() {
 
 	double fontSize = getLabelFontSizeSmall();
-	foreach (QGraphicsItem * item, scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, scene()->items()) {
 		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 

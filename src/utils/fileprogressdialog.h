@@ -47,7 +47,7 @@ protected:
 	void closeEvent(QCloseEvent *);
 	void resizeEvent(QResizeEvent *);
 
-public slots:
+public Q_SLOTS:
 	void setMinimum(int);
 	void setMaximum(int);
 	void addMaximum(int);
@@ -60,11 +60,11 @@ public slots:
 	void loadingInstanceSlot(class ModelBase *, QDomElement & instance);
 	void settingItemSlot();
 
-protected slots:
+protected Q_SLOTS:
 	void updateIndeterminate();
 
 
-signals:
+Q_SIGNALS:
 	void cancel();
 
 protected:

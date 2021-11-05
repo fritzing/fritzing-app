@@ -85,7 +85,7 @@ void SketchToolButton::setupIcons(const QString &imageName, bool hasStates) {
 
 void SketchToolButton::updateEnabledState() {
 	bool enabled = false;
-	foreach(QAction *act, actions()) {
+	Q_FOREACH(QAction *act, actions()) {
 		if(act->isEnabled()) {
 			enabled = true;
 			break;
@@ -129,10 +129,10 @@ void SketchToolButton::changeEvent(QEvent *event) {
 
 void SketchToolButton::enterEvent(QEvent *event) {
 	QToolButton::enterEvent((QEnterEvent *)event);
-	emit entered();
+	Q_EMIT entered();
 }
 
 void SketchToolButton::leaveEvent(QEvent *event) {
 	QToolButton::leaveEvent(event);
-	emit left();
+	Q_EMIT left();
 }

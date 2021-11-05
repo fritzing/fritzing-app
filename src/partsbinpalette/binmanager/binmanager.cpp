@@ -144,7 +144,7 @@ void BinManager::initStandardBins()
 	hackLocalContrib(actualLocations);
 
 	restoreStateAndGeometry(actualLocations);
-	foreach (BinLocation * location, actualLocations) {
+	Q_FOREACH (BinLocation * location, actualLocations) {
 		PartsBinPaletteWidget* bin = newBin();
 		bin->load(location->path, m_mainWindow->fileProgressDialog(), true);
 		m_stackTabWidget->addTab(bin, bin->icon(), bin->title());
@@ -590,11 +590,11 @@ void BinManager::restoreStateAndGeometry(QList<BinLocation *> & actualLocations)
 		}
 	}
 
-	foreach (BinLocation * location, actualLocations) {
+	Q_FOREACH (BinLocation * location, actualLocations) {
 		location->marked = false;
 	}
-	foreach (BinLocation * tLocation, theoreticalLocations) {
-		foreach (BinLocation * aLocation, actualLocations) {
+	Q_FOREACH (BinLocation * tLocation, theoreticalLocations) {
+		Q_FOREACH (BinLocation * aLocation, actualLocations) {
 			if (aLocation->title.compare(tLocation->title) == 0 && aLocation->location == tLocation->location) {
 				aLocation->marked = true;
 				break;
@@ -605,7 +605,7 @@ void BinManager::restoreStateAndGeometry(QList<BinLocation *> & actualLocations)
 	QList<BinLocation *> tempLocations(actualLocations);
 	actualLocations.clear();
 
-	foreach (BinLocation * tLocation, theoreticalLocations) {
+	Q_FOREACH (BinLocation * tLocation, theoreticalLocations) {
 		tLocation->marked = false;
 		bool gotOne = false;
 
@@ -645,7 +645,7 @@ void BinManager::restoreStateAndGeometry(QList<BinLocation *> & actualLocations)
 		}
 	}
 
-	foreach (BinLocation * tLocation, theoreticalLocations) {
+	Q_FOREACH (BinLocation * tLocation, theoreticalLocations) {
 		if (!tLocation->marked) {
 			delete tLocation;
 		}
@@ -693,7 +693,7 @@ void BinManager::hackLocalContrib(QList<BinLocation *> & locations)
 
 	BinLocation * localContrib = nullptr;
 	BinLocation * myParts = nullptr;
-	foreach (BinLocation * location, locations) {
+	Q_FOREACH (BinLocation * location, locations) {
 		if (location->location == BinLocation::User) {
 			if (location->title == "Contributed Parts") {
 				localContrib = location;
@@ -807,7 +807,7 @@ void BinManager::findBins(QDir & dir, QList<BinLocation *> & locations, BinLocat
 	QStringList filters;
 	filters << "*"+FritzingBinExtension;
 	QFileInfoList files = dir.entryInfoList(filters);
-	foreach(QFileInfo info, files) {
+	Q_FOREACH(QFileInfo info, files) {
 		auto * location = new BinLocation;
 		location->path = info.absoluteFilePath();
 		location->location = loc;
@@ -923,7 +923,7 @@ void BinManager::search(const QString & searchText) {
 
 	progress.setIncValueMod(1);
 	searchBin->removeParts();
-	foreach (ModelPart * modelPart, modelParts) {
+	Q_FOREACH (ModelPart * modelPart, modelParts) {
 		//DebugDialog::debug(modelPart->title());
 		if (modelPart->itemType() == ModelPart::SchematicSubpart) {
 		}
@@ -1275,7 +1275,7 @@ void BinManager::exportSelected() {
 	ModelPart * mp = bin->selectedModelPart();
 	if (mp == nullptr) return;
 
-	emit savePartAsBundled(mp->moduleID());
+	Q_EMIT savePartAsBundled(mp->moduleID());
 }
 
 void BinManager::saveBundledBin() {
@@ -1316,7 +1316,7 @@ void BinManager::copyFilesToContrib(ModelPart * mp, QWidget * originator) {
 
 	QList<ViewLayer::ViewID> viewIDs;
 	viewIDs << ViewLayer::IconView << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
-	foreach (ViewLayer::ViewID viewID, viewIDs) {
+	Q_FOREACH (ViewLayer::ViewID viewID, viewIDs) {
 		QString fn = mp->hasBaseNameFor(viewID);
 		if (!fn.isEmpty()) {
 			QFile svg(dir.absoluteFilePath(fn));

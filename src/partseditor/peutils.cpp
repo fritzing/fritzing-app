@@ -189,7 +189,7 @@ bool PEUtils::fillInMetadata(int senderIndex, QWidget * parent, ConnectorMetadat
 {
 	bool result = false;
 	QList<QWidget *> widgets = parent->findChildren<QWidget *>();
-	foreach (QWidget * widget, widgets) {
+	Q_FOREACH (QWidget * widget, widgets) {
 		bool ok;
 		int index = widget->property("index").toInt(&ok);
 		if (!ok) continue;

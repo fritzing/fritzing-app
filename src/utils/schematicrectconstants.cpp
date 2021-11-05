@@ -156,34 +156,34 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	all.append(grounds);
 	bool gotZero = false;
 	bool gotOne = false;
-	foreach (QDomElement contact, all) {
+	Q_FOREACH (QDomElement contact, all) {
 		bool ok;
 		if (contact.attribute("connectorIndex").toInt() == 1) gotOne = true;
 		if (contact.attribute("connectorIndex").toInt(&ok) == 0 && ok) gotZero = true;
 	}
 
-	foreach (QDomElement contact, powers) {
+	Q_FOREACH (QDomElement contact, powers) {
 		contact.setAttribute("ltrb", "power");
 		if (contact.attribute("bus", nullptr).compare("1") == 0) {
 			busContacts.append(contact);
 			powersBuses++;
 		}
 	}
-	foreach (QDomElement contact, grounds) {
+	Q_FOREACH (QDomElement contact, grounds) {
 		contact.setAttribute("ltrb", "ground");
 		if (contact.attribute("bus", nullptr).compare("1") == 0) {
 			busContacts.append(contact);
 			groundsBuses++;
 		}
 	}
-	foreach (QDomElement contact, lefts) {
+	Q_FOREACH (QDomElement contact, lefts) {
 		contact.setAttribute("ltrb", "left");
 		if (contact.attribute("bus", nullptr).compare("1") == 0) {
 			busContacts.append(contact);
 			leftsBuses++;
 		}
 	}
-	foreach (QDomElement contact, rights) {
+	Q_FOREACH (QDomElement contact, rights) {
 		contact.setAttribute("ltrb", "right");
 		if (contact.attribute("bus", nullptr).compare("1") == 0) {
 			busContacts.append(contact);
@@ -229,26 +229,26 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	QFont bigFont("DroidSans");
 	bigFont.setPointSizeF(bigFontSize * 72 / 1000.0);
 	QFontMetricsF bigFontMetrics(bigFont);
-	foreach (QString title, titles) {
+	Q_FOREACH (QString title, titles) {
 		qreal w = bigFontMetrics.horizontalAdvance(title);
 		if (w > titleWidth) titleWidth = w;
 	}
 	QFont pinTextFont("DroidSans");
 	pinTextFont.setPointSizeF(bigPinFontSize * 72 / 1000.0);
 	QFontMetricsF smallFontMetrics(pinTextFont);
-	foreach (QDomElement element, lefts) {
+	Q_FOREACH (QDomElement element, lefts) {
 		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
 		if (w > leftWidth) leftWidth = w;
 	}
-	foreach (QDomElement element, rights) {
+	Q_FOREACH (QDomElement element, rights) {
 		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
 		if (w > rightWidth) rightWidth = w;
 	}
-	foreach (QDomElement element, powers) {
+	Q_FOREACH (QDomElement element, powers) {
 		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
 		if (w > topWidth) topWidth = w;
 	}
-	foreach (QDomElement element, grounds) {
+	Q_FOREACH (QDomElement element, grounds) {
 		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
 		if (w > bottomWidth) bottomWidth = w;
 	}
@@ -319,7 +319,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	qreal y = qFloor((height / 2) / unitLength) * unitLength;
 	y -= bigFontSize * qCeil(titles.count() / 2.0);
 	if (y < startTitle) y = startTitle;
-	foreach (QString title, titles) {
+	Q_FOREACH (QString title, titles) {
 		svg += QString("<text id='label' x='%1' y='%3' font-family=\"%5\" stroke='none' fill='#000000' text-anchor='middle' font-size='%4' >%2</text>\n")
 		       .arg(rectLeft + (width - rectMinus) / 2)
 		       .arg(TextUtils::escapeAnd(title))
@@ -337,7 +337,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 
 	qreal viaX = 0;
 	qreal viaY = 0;
-	foreach (QDomElement contact, vias) {
+	Q_FOREACH (QDomElement contact, vias) {
 		QString signal = getConnectorName(contact);
 		svg += QString("<rect viax='' viay='' fill='none' width='0' height='0' id='connector%1pin' connectorName='%2' stroke-width='0' stroke='none'/>\n")
 			   .arg(contact.attribute("connectorIndex"), signal);
@@ -346,7 +346,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	}
 
 	qreal ly = startTitle;
-	foreach (QDomElement contact, lefts) {
+	Q_FOREACH (QDomElement contact, lefts) {
 		bool bus = contact.attribute("bus", nullptr).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
@@ -371,7 +371,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	}
 
 	ly = startTitle;
-	foreach (QDomElement contact, rights) {
+	Q_FOREACH (QDomElement contact, rights) {
 		bool bus = contact.attribute("bus", nullptr).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
@@ -414,7 +414,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 		lx -= (unitLength * (powers.count() - powersBuses) / 2);
 	}
 	lx = qFloor(lx / unitLength) * unitLength;
-	foreach (QDomElement contact, powers) {
+	Q_FOREACH (QDomElement contact, powers) {
 		bool bus = contact.attribute("bus", nullptr).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
@@ -443,7 +443,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 		lx -= (unitLength * (grounds.count() - groundsBuses) / 2);
 	}
 	lx = qFloor(lx / unitLength) * unitLength;
-	foreach (QDomElement contact, grounds) {
+	Q_FOREACH (QDomElement contact, grounds) {
 		bool bus = contact.attribute("bus", nullptr).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
@@ -473,7 +473,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 
 	QRegularExpression pin("connector[\\d]+pin");
 	QRegularExpression terminal("connector[\\d]+terminal");
-	foreach (QDomElement contact, busContacts) {
+	Q_FOREACH (QDomElement contact, busContacts) {
 		QString mid = busMids.value(contact.attribute("signal").toLower(), "");
 		if (mid.isEmpty()) continue;
 

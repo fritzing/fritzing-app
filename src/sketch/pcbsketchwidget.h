@@ -120,7 +120,7 @@ public:
 	bool dropOnBottom();
 	ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
 
-public slots:
+public Q_SLOTS:
 	void resizeBoard(double w, double h, bool doEmit);
 	void showLabelFirstTime(long itemID, bool show, bool doEmit);
 	void changeBoardLayers(int layers, bool doEmit);
@@ -187,7 +187,7 @@ protected:
 	bool updateOK(ConnectorItem *, ConnectorItem *);
 	QList<QGraphicsItem *> getCollidingItems(QGraphicsItem *target, QGraphicsItem *other);
 
-signals:
+Q_SIGNALS:
 	void subSwapSignal(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerPlacement, long & newID, QUndoCommand * parentCommand);
 	void boardDeletedSignal();
 	void groundFillSignal();
@@ -199,7 +199,7 @@ protected:
 	static int calcDistance(Wire * wire, ConnectorItem * end, int distance, QList<Wire *> & distanceWires, bool & fromConnector0);
 	static int calcDistanceAux(ConnectorItem * from, ConnectorItem * to, int distance, QList<Wire *> & distanceWires);
 
-protected slots:
+protected Q_SLOTS:
 	void alignJumperItem(class JumperItem *, QPointF &);
 	void wireSplitSlot(class Wire*, QPointF newPos, QPointF oldPos, const QLineF & oldLine);
 	void postImageSlot(class GroundPlaneGenerator *, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> *);

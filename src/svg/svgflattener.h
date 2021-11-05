@@ -47,7 +47,7 @@ protected:
 	static bool loadDocIf(const QString & filename, const QString & svg, QDomDocument & domDocument);
 
 
-protected slots:
+protected Q_SLOTS:
 	void rotateCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
 
 };

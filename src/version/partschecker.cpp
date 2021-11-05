@@ -438,7 +438,7 @@ bool PartsChecker::cleanRepo(const QString & repoPath, const PartsCheckerResult 
 		goto cleanup;
 	}
 
-	foreach (QString fileName, partsCheckerResult.untrackedFiles) {
+	Q_FOREACH (QString fileName, partsCheckerResult.untrackedFiles) {
 		bool success = QFile::remove(repoDir.absoluteFilePath(fileName));
 		if (!success) {
 			goto cleanup;

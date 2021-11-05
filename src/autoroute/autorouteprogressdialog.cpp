@@ -163,19 +163,19 @@ void AutorouteProgressDialog::setValue(int value) {
 }
 
 void AutorouteProgressDialog::sendSkip() {
-	emit skip();
+	Q_EMIT skip();
 }
 
 void AutorouteProgressDialog::sendCancel() {
-	emit cancel();
+	Q_EMIT cancel();
 }
 
 void AutorouteProgressDialog::sendStop() {
-	emit stop();
+	Q_EMIT stop();
 }
 
 void AutorouteProgressDialog::sendBest() {
-	emit best();
+	Q_EMIT best();
 }
 
 void AutorouteProgressDialog::closeEvent(QCloseEvent *event)
@@ -205,7 +205,7 @@ void AutorouteProgressDialog::setSpinValue(int value)
 }
 
 void AutorouteProgressDialog::internalSpinChange(int value) {
-	emit spinChange(value);
+	Q_EMIT spinChange(value);
 }
 
 void AutorouteProgressDialog::disableButtons() {

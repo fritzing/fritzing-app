@@ -53,14 +53,14 @@ public:
 	bool anyModified();
 	void setSMD(bool);
 
-signals:
+Q_SIGNALS:
 	void connectorMetadataChanged(struct ConnectorMetadata *);
 	void removedConnectors(QList<struct ConnectorMetadata *> &);
 	void connectorCountChanged(int);
 	void connectorsTypeChanged(Connector::ConnectorType);
 	void smdChanged(const QString &);
 
-protected slots:
+protected Q_SLOTS:
 	void nameEntry();
 	void descriptionEntry();
 	void typeEntry();

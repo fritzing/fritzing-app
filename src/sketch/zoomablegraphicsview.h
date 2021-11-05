@@ -54,7 +54,7 @@ public:
 	static WheelMapping wheelMapping();
 	static void setWheelMapping(WheelMapping);
 
-signals:
+Q_SIGNALS:
 	void zoomChanged(double zoom);
 	void zoomOutOfRange(double zoom);
 	void wheelSignal();

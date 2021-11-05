@@ -82,7 +82,7 @@ void Console::keyPressEvent(QKeyEvent *e)
 	default:
 		if (localEchoEnabled)
 			QPlainTextEdit::keyPressEvent(e);
-		emit getData(e->text().toLocal8Bit());
+		Q_EMIT getData(e->text().toLocal8Bit());
 	}
 }
 

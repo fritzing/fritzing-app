@@ -140,7 +140,7 @@ void PESvgView::highlightElement(PEGraphicsItem * pegi) {
 
 void PESvgView::setChildrenVisible(bool vis)
 {
-	foreach (QWidget * widget, findChildren<QWidget *>()) {
+	Q_FOREACH (QWidget * widget, findChildren<QWidget *>()) {
 		widget->setVisible(vis);
 	}
 }

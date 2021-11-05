@@ -44,9 +44,9 @@ StackTabBar *StackTabWidget::stackTabBar() {
 }
 
 void StackTabWidget::informCurrentChanged(int index) {
-	emit currentChanged(this,index);
+	Q_EMIT currentChanged(this,index);
 }
 
 void StackTabWidget::informTabCloseRequested(int index) {
-	emit tabCloseRequested(this, index);
+	Q_EMIT tabCloseRequested(this, index);
 }

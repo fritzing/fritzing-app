@@ -41,7 +41,7 @@ FileProgressDialog::FileProgressDialog(const QString & title, int initialMaximum
     m_incValueMod(2)
 {
 	QSplashScreen *splash = nullptr;
-	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+	Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 		splash = qobject_cast<QSplashScreen *>(widget);
 		if (splash) {
 			break;
@@ -138,7 +138,7 @@ int FileProgressDialog::value() {
 }
 
 void FileProgressDialog::sendCancel() {
-	emit cancel();
+	Q_EMIT cancel();
 }
 
 void FileProgressDialog::closeEvent(QCloseEvent *event)

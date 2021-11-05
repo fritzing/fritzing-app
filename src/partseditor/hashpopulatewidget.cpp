@@ -175,7 +175,7 @@ void HashPopulateWidget::addRow(QGridLayout *layout) {
 	connect(m_lastValue,SIGNAL(editingFinished()),this,SLOT(lastRowEditionCompleted()));
 	if (m_keysOnly) m_lastValue->hide();
 
-	emit editionStarted();
+	Q_EMIT editionStarted();
 }
 
 QGridLayout * HashPopulateWidget::gridLayout() {
@@ -204,15 +204,15 @@ void HashPopulateWidget::removeRow(HashRemoveButton* button) {
 	QLayout *lo = layout();
 	QList<QWidget*> widgs;
 	widgs << button->label() << button->value() << button;
-	foreach(QWidget* w, widgs) {
+	Q_FOREACH(QWidget* w, widgs) {
 		lo->removeWidget(w);
 		//w->hide();
 		//delete w;
 	}
 	lo->update();
-	emit changed();
+	Q_EMIT changed();
 }
 
 void HashPopulateWidget::lineEditChanged() {
-	emit changed();
+	Q_EMIT changed();
 }

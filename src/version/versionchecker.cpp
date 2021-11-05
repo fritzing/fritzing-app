@@ -42,7 +42,7 @@ VersionChecker::VersionChecker() : QObject()
 }
 
 VersionChecker::~VersionChecker() {
-	foreach (AvailableRelease * availableRelease, m_availableReleases) {
+	Q_FOREACH (AvailableRelease * availableRelease, m_availableReleases) {
 		delete availableRelease;
 	}
 
@@ -72,11 +72,11 @@ void VersionChecker::finished(QNetworkReply * networkReply)
 		m_xml.addData(networkReply->readAll());
 		parseXml();
 		DebugDialog::debug("https check new version no error");
-		emit releasesAvailable();
+		Q_EMIT releasesAvailable();
 	}
 	else {
 		DebugDialog::debug(QString("http check new version error %1").arg(networkReply->errorString()));
-		emit httpError(networkReply->error());
+		Q_EMIT httpError(networkReply->error());
 	}
 
 	QMutexLocker locker(&m_networkReplyLock);
@@ -165,7 +165,7 @@ void VersionChecker::parseXml()
 		}
 	}
 	if (m_xml.error() && m_xml.error() != QXmlStreamReader::PrematureEndOfDocumentError) {
-		emit xmlError(m_xml.error());
+		Q_EMIT xmlError(m_xml.error());
 		return;
 	}
 

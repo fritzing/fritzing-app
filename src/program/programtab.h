@@ -54,7 +54,7 @@ public:
 protected:
 	void showPopup();
 
-signals:
+Q_SIGNALS:
 	void aboutToShow();
 };
 
@@ -91,7 +91,7 @@ public:
 	void setBoard(const QString &);
 	void appendToConsole(const QString &);
 	void initMenus();
-public slots:
+public Q_SLOTS:
 	void setPlatform(Platform * newPlatform);
 	void setPlatform(int index);
 	void setPort(int index);
@@ -121,7 +121,7 @@ public slots:
 	void updateSerialPorts();
 	void updateBoards();
 
-signals:
+Q_SIGNALS:
 	// TODO: since ProgramTab has m_programWindow most/all of these signals could be replaced by direct
 	// calls to ProgramWindow public functions
 	void wantToSave(int);
@@ -136,7 +136,7 @@ signals:
 protected:
 	QFrame * createFooter();
 
-protected slots:
+protected Q_SLOTS:
 	void enableProgramButton();
 	void enableMonitorButton();
 
@@ -192,7 +192,7 @@ public:
 
 	bool deleteFileChecked();
 
-protected slots:
+protected Q_SLOTS:
 	void buttonClicked(QAbstractButton * button);
 
 protected:

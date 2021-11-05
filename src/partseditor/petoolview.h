@@ -43,7 +43,7 @@ public:
 
 	void stepBy (int steps);
 
-signals:
+Q_SIGNALS:
 	void getSpinAmount(double &);
 };
 
@@ -64,7 +64,7 @@ public:
 	void enableConnectorChanges(bool enableTerminalPointDrag, bool enableTerminalPointControls, bool enableInfo, bool enableAssign);
 	void showAssignedConnectors(const QDomDocument * svgDoc, ViewLayer::ViewID);
 
-signals:
+Q_SIGNALS:
 	void switchedConnector(int);
 	void removedConnector(const QDomElement &);
 	void pickModeChanged(bool);
@@ -74,7 +74,7 @@ signals:
 	void getSpinAmount(double &);
 	void connectorMetadataChanged(struct ConnectorMetadata *);
 
-protected slots:
+protected Q_SLOTS:
 	void switchConnector(QTreeWidgetItem * current, QTreeWidgetItem * previous);
 	void pickModeChangedSlot();
 	void busModeChangedSlot(bool);

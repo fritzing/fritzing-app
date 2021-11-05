@@ -61,14 +61,14 @@ LockManager::LockManager() : QObject()
 
 LockManager::~LockManager()
 {
-	foreach (QTimer * timer, TheTimers) {
+	Q_FOREACH (QTimer * timer, TheTimers) {
 		if (timer) timer->stop();
 	}
 	TheTimers.clear();
 }
 
 void LockManager::cleanup() {
-	foreach (QTimer * timer, TheTimers) {
+	Q_FOREACH (QTimer * timer, TheTimers) {
 		if (timer) {
 			timer->stop();
 			delete timer;
@@ -82,7 +82,7 @@ void LockManager::touchFiles() {
 	if (timer == nullptr) return;
 
 	QMutexLocker locker(&TheMutex);
-	foreach (LockedFile * lockedFile, TheLockedFiles.values(timer->interval())) {
+	Q_FOREACH (LockedFile * lockedFile, TheLockedFiles.values(timer->interval())) {
 		lockedFile->touch();
 	}
 }
@@ -133,7 +133,7 @@ void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, Lock
 		return;
 	}
 
-	foreach (QString sub, lockedFiles.keys()) {
+	Q_FOREACH (QString sub, lockedFiles.keys()) {
 		LockedFile * lockedFile = lockedFiles.value(sub);
 		TheMutex.lock();
 		TheLockedFiles.remove(lockedFile->frequency, lockedFile);
@@ -154,7 +154,7 @@ void LockManager::checkLockedFiles(const QString & prefix, QFileInfoList & backu
 		return;
 	}
 	QFileInfoList dirList = backupDir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::Hidden | QDir::NoSymLinks);
-	foreach (QFileInfo dirInfo, dirList) {
+	Q_FOREACH (QFileInfo dirInfo, dirList) {
 		QDir dir(dirInfo.filePath());
 		QStringList filters;
 		//DebugDialog::debug(QString("looking in backup dir %1").arg(dir.absolutePath()));
@@ -189,7 +189,7 @@ void LockManager::checkLockedFiles(const QString & prefix, QFileInfoList & backu
 		// we own the file
 		LockedFile * lockedFile = makeLockedFile(dir.absoluteFilePath(LockedFileName), touchFrequency);
 		lockedFiles.insert(dirInfo.fileName(), lockedFile);
-		foreach (QFileInfo fileInfo, fileInfoList) {
+		Q_FOREACH (QFileInfo fileInfo, fileInfoList) {
 			backupList << fileInfo;
 		}
 	}
@@ -198,7 +198,7 @@ void LockManager::checkLockedFiles(const QString & prefix, QFileInfoList & backu
 bool LockManager::checkLockedFilesAux(const QDir & parent, QStringList & filters)
 {
 	QFileInfoList dirList = parent.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::Hidden | QDir::NoSymLinks);
-	foreach (QFileInfo dirInfo, dirList) {
+	Q_FOREACH (QFileInfo dirInfo, dirList) {
 		QDir dir(dirInfo.filePath());
 		//DebugDialog::debug(QString("looking in backup dir %1").arg(dir.absolutePath()));
 		QFileInfoList fileInfoList = dir.entryInfoList(filters, QDir::Files | QDir::Hidden | QDir::NoSymLinks);

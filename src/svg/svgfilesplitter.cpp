@@ -1072,7 +1072,7 @@ void SvgFileSplitter::fixColorRecurse(QDomElement & element, const QString & new
 	QString s = element.attribute("stroke");
 	QString f = element.attribute("fill");
 	QString id = element.attribute("id");
-	foreach (QString e, exceptions) {
+	Q_FOREACH (QString e, exceptions) {
 		if (s.isEmpty()) {
 			if (f.isEmpty()) {
 			}

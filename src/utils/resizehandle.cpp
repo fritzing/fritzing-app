@@ -38,17 +38,17 @@ ResizeHandle::~ResizeHandle() {
 
 void ResizeHandle::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	event->accept();
-	emit mousePressSignal(event, this);
+	Q_EMIT mousePressSignal(event, this);
 }
 
 void ResizeHandle::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 	event->accept();
-	emit mouseMoveSignal(event, this);
+	Q_EMIT mouseMoveSignal(event, this);
 }
 
 void ResizeHandle::mouseReleaseEvent(QGraphicsSceneMouseEvent * event) {
 	event->accept();
-	emit mouseReleaseSignal(event, this);
+	Q_EMIT mouseReleaseSignal(event, this);
 }
 
 void ResizeHandle::setResizeOffset(QPointF p) {
@@ -80,7 +80,7 @@ QVariant ResizeHandle::itemChange(GraphicsItemChange change, const QVariant &val
 }
 
 void ResizeHandle::zoomChangedSlot(double scale) {
-	emit zoomChangedSignal(scale);
+	Q_EMIT zoomChangedSignal(scale);
 }
 
 double ResizeHandle::currentScale() {

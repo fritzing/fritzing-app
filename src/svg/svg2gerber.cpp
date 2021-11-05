@@ -124,22 +124,22 @@ int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, Fo
 		m_gerber_header += "INCH\n";
 
 		int ix = initialHoleIndex;
-		foreach (QString aperture, m_holeApertures.uniqueKeys()) {
+		Q_FOREACH (QString aperture, m_holeApertures.uniqueKeys()) {
 			m_gerber_header += QString("T%1%2\n").arg(ix).arg(aperture);
 			m_gerber_paths += QString("T%1\n").arg(ix);
 			auto values = m_holeApertures.values(aperture);
-			foreach (QString loc, QSet<QString>(values.begin(), values.end())) {
+			Q_FOREACH (QString loc, QSet<QString>(values.begin(), values.end())) {
 				m_gerber_paths += loc + "\n";
 			}
 			ix++;
 		}
 
 		ix = initialPlatedIndex;
-		foreach (QString aperture, m_platedApertures.uniqueKeys()) {
+		Q_FOREACH (QString aperture, m_platedApertures.uniqueKeys()) {
 			m_gerber_header += QString("T%1%2\n").arg(ix).arg(aperture);
 			m_gerber_paths += QString("T%1\n").arg(ix);
 			auto values = m_platedApertures.values(aperture);
-			foreach (QString loc, QSet<QString>(values.begin(), values.end())) {
+			Q_FOREACH (QString loc, QSet<QString>(values.begin(), values.end())) {
 				m_gerber_paths += loc + "\n";
 			}
 			ix++;

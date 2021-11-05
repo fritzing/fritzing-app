@@ -45,14 +45,14 @@ public:
 	QList<QObject*> orderedChildren();
 	void reloadPart(const QString & moduleID);
 
-public slots:
+public Q_SLOTS:
 	void setSelected(int position, bool doEmit=false);
 	void itemMoved(int fromIndex, int toIndex);
 
-protected slots:
+protected Q_SLOTS:
 	void showContextMenu(const QPoint& pos);
 
-signals:
+Q_SIGNALS:
 	void informItemMoved(int fromIndex, int toIndex);
 	void settingItem();
 

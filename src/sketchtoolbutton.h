@@ -36,10 +36,10 @@ public:
 
 	void updateEnabledState();
 
-protected slots:
+protected Q_SLOTS:
 	void setEnabledIconAux();
 
-signals:
+Q_SIGNALS:
 	void entered();
 	void left();
 

@@ -32,7 +32,7 @@ public:
 	~SearchLineEdit() = default;
 
 
-signals:
+Q_SIGNALS:
 	void updateSearch(const QString& searchTerm);
 
 private:

@@ -236,7 +236,7 @@ const QString FolderUtils::applicationDirPath() {
 		candidates.append("/usr/local/share/fritzing");
 #endif
 		candidates.append(QDir::homePath() + "/.local/share/fritzing");
-		foreach (QString candidate, candidates) {
+		Q_FOREACH (QString candidate, candidates) {
 			DebugDialog::debug(QString("candidate:%1").arg(candidate));
 			QDir dir(candidate);
 			if (!dir.exists("translations")) continue;
@@ -401,12 +401,12 @@ bool FolderUtils::createFZAndSaveTo(const QDir &dirToCompress, const QString &fi
 
 	QString currFolderBU = QDir::currentPath();
 	QDir::setCurrent(dirToCompress.path());
-	foreach(QFileInfo file, files) {
+	Q_FOREACH(QFileInfo file, files) {
 		if(!file.isFile()||file.fileName()==filepath) continue;
 		if (file.fileName().contains(LockManager::LockedFileName)) continue;
 
 		bool skip = false;
-		foreach (QString suffix, skipSuffixes) {
+		Q_FOREACH (QString suffix, skipSuffixes) {
 			if (file.fileName().endsWith(suffix)) {
 				skip = true;
 				break;
@@ -452,12 +452,12 @@ bool FolderUtils::createZipAndSaveTo(const QDir &dirToCompress, const QString &f
 
 	QString currFolderBU = QDir::currentPath();
 	QDir::setCurrent(dirToCompress.path());
-	foreach(QFileInfo file, files) {
+	Q_FOREACH(QFileInfo file, files) {
 		if(!file.isFile()||file.fileName()==filepath) continue;
 		if (file.fileName().contains(LockManager::LockedFileName)) continue;
 
 		bool skip = false;
-		foreach (QString suffix, skipSuffixes) {
+		Q_FOREACH (QString suffix, skipSuffixes) {
 			if (file.fileName().endsWith(suffix)) {
 				skip = true;
 				break;
@@ -621,13 +621,13 @@ bool FolderUtils::unzipTo(const QString &filepath, const QString &dirToDecompres
 void FolderUtils::collectFiles(const QDir & parent, QStringList & filters, QStringList & files, bool recursive)
 {
 	QFileInfoList fileInfoList = parent.entryInfoList(filters, QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-	foreach (QFileInfo fileInfo, fileInfoList) {
+	Q_FOREACH (QFileInfo fileInfo, fileInfoList) {
 		files.append(fileInfo.absoluteFilePath());
 	}
 
 	if (recursive) {
 		QFileInfoList dirList = parent.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::Hidden | QDir::NoSymLinks);
-		foreach (QFileInfo dirInfo, dirList) {
+		Q_FOREACH (QFileInfo dirInfo, dirList) {
 			QDir dir(dirInfo.filePath());
 			//DebugDialog::debug(QString("looking in backup dir %1").arg(dir.absolutePath()));
 
@@ -727,7 +727,7 @@ void FolderUtils::createUserDataStoreFolders() {
 	}
 
 	QDir userDataStore(getTopLevelUserDataStorePath());
-	foreach(QString folder, singleton->m_userFolders) {
+	Q_FOREACH(QString folder, singleton->m_userFolders) {
 		QString path = userDataStore.absoluteFilePath(folder);
 		if(!QFileInfo(path).exists()) {
 			userDataStore.mkpath(folder);
@@ -736,7 +736,7 @@ void FolderUtils::createUserDataStoreFolders() {
 
 	QDir documents(getTopLevelDocumentsPath());
 	QStringList documentFolders(singleton->m_documentFolders);
-	foreach(QString folder, documentFolders) {
+	Q_FOREACH(QString folder, documentFolders) {
 		QString path = documents.absoluteFilePath(folder);
 		if(!QFileInfo(path).exists()) {
 			documents.mkpath(folder);
@@ -748,7 +748,7 @@ void FolderUtils::createUserDataStoreFolders() {
 	QStringList folders;
 	folders << "bins" << "parts";
 	bool foundOld = false;
-	foreach(QString folder, folders ) {
+	Q_FOREACH(QString folder, folders ) {
 		foundOld || QFileInfo(userDataStore.absoluteFilePath(folder)).exists();
 	}
 
@@ -761,7 +761,7 @@ void FolderUtils::createUserDataStoreFolders() {
 		                         .arg(documents.absolutePath()));
 
 		// copy these into the new locations
-		foreach(QString folder, folders ) {
+		Q_FOREACH(QString folder, folders ) {
 			QDir source(userDataStore.absoluteFilePath(folder));
 			QDir target(documents.absoluteFilePath(folder));
 			if (source.exists()) {
@@ -771,7 +771,7 @@ void FolderUtils::createUserDataStoreFolders() {
 		}
 
 		// now remove the obsolete locations
-		foreach (QDir dir, toRemove) {
+		Q_FOREACH (QDir dir, toRemove) {
 			rmdir(dir);
 		}
 	}

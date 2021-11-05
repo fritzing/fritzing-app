@@ -167,7 +167,7 @@ int GerberGenerator::doCopper(ItemBase * board, PCBSketchWidget * sketchWidget, 
 	}
 
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
-	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
+	Q_FOREACH (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
 		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (!connectorItem->isPath()) continue;
@@ -239,7 +239,7 @@ int GerberGenerator::doDrill(ItemBase * board, PCBSketchWidget * sketchWidget, c
 
 	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgDrill);
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
-	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
+	Q_FOREACH (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
 		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (!connectorItem->isPath()) continue;
@@ -397,7 +397,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 				}
 			}
 		}
-		foreach (QDomElement circle, justHoles) {
+		Q_FOREACH (QDomElement circle, justHoles) {
 			circle.setTagName("g");
 		}
 	}
@@ -536,7 +536,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 	if (possibleHoles.count() > 0) {
 		QList<QDomElement> newHoles;
 		int ix = 0;
-		foreach (QDomElement element, possibleHoles) {
+		Q_FOREACH (QDomElement element, possibleHoles) {
 			QDomElement newElement = element.cloneNode(false).toElement();
 			double radius = element.attribute("r").toDouble();
 			double sw = element.attribute("stroke-width").toDouble();
@@ -843,7 +843,7 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 
 		multipleContours = true;
 		QStringList subpaths = path.attribute("d").split("z", Qt::SkipEmptyParts);
-		foreach (QString subpath, subpaths) {
+		Q_FOREACH (QString subpath, subpaths) {
 			if (!subpath.trimmed().startsWith("m", Qt::CaseInsensitive)) {
 				contoursOK = false;
 				break;
@@ -898,7 +898,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 {
 	QPointF bottomLeft = board->sceneBoundingRect().bottomLeft();
 	QSet<ItemBase *> itemBases;
-	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
+	Q_FOREACH (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
 		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 		if (itemBase == board) continue;
@@ -942,9 +942,9 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 	valueKeys << "resistance" << "capacitance" << "inductance" << "voltage"  << "current" << "power";
 
 	int ix = 1;
-	foreach (ItemBase * itemBase, itemBases) {
+	Q_FOREACH (ItemBase * itemBase, itemBases) {
 		QString value;
-		foreach (QString valueKey, valueKeys) {
+		Q_FOREACH (QString valueKey, valueKeys) {
 			value = itemBase->modelPart()->localProp(valueKey).toString();
 			if (!value.isEmpty()) break;
 
@@ -983,7 +983,7 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
 	QDomNodeList nodeList = root1.elementsByTagName("path");
 	if (treatAsCircle.count() > 0) {
 		QStringList ids;
-		foreach (ConnectorItem * connectorItem, treatAsCircle.values()) {
+		Q_FOREACH (ConnectorItem * connectorItem, treatAsCircle.values()) {
 			ItemBase * itemBase = connectorItem->attachedTo();
 			SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(itemBase->viewID(), itemBase->viewLayerID());
 			DebugDialog::debug(QString("treat as circle %1").arg(svgIdLayer->m_svgId));
@@ -1007,7 +1007,7 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
 				QList<ConnectorItem *> connectorItems = treatAsCircle.values(pid.toLong());
 				if (connectorItems.count() == 0) break;
 
-				foreach (ConnectorItem * candidate, connectorItems) {
+				Q_FOREACH (ConnectorItem * candidate, connectorItems) {
 					ItemBase * itemBase = candidate->attachedTo();
 					SvgIdLayer * svgIdLayer = candidate->connector()->fullPinInfo(itemBase->viewID(), itemBase->viewLayerID());
 					if (svgIdLayer->m_svgId == id) {

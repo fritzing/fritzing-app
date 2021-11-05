@@ -81,7 +81,7 @@ bool FGraphicsScene::displayHandles() {
 
 QList<ItemBase *> FGraphicsScene::lockedSelectedItems() {
 	QList<ItemBase *> items;
-	foreach (QGraphicsItem * gitem,  this->selectedItems()) {
+	Q_FOREACH (QGraphicsItem * gitem,  this->selectedItems()) {
 		auto *itemBase = dynamic_cast<ItemBase *>(gitem);
 		if (itemBase == nullptr) continue;
 		if (itemBase->moveLock()) {

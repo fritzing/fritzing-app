@@ -27,13 +27,13 @@ SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent)
 
 	connect(&mTimer, &QTimer::timeout,
 			this, [=]() {
-		emit updateSearch(this->text());
+		Q_EMIT updateSearch(this->text());
 	});
 
 	connect(this, &QLineEdit::returnPressed,
 			this, [=]() {
 		mTimer.stop();
-		emit updateSearch(this->text());
+		Q_EMIT updateSearch(this->text());
 	});
 
 	connect(this, &QLineEdit::textEdited,

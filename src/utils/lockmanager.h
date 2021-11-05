@@ -52,7 +52,7 @@ public:
 	static const long FastTime;
 	static const long SlowTime;
 
-public slots:
+public Q_SLOTS:
 	void touchFiles();
 
 protected:

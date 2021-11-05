@@ -187,7 +187,7 @@ bool InfoGraphicsView::hasBigDots() {
 
 void InfoGraphicsView::setVoltage(double v, bool doEmit) {
 	if (doEmit) {
-		emit setVoltageSignal(v, false);
+		Q_EMIT setVoltageSignal(v, false);
 	}
 }
 
@@ -234,7 +234,7 @@ void InfoGraphicsView::changeWireColor(const QString newColor) {
 }
 
 void InfoGraphicsView::swap(const QString & family, const QString & prop, QMap<QString, QString> & propsMap, ItemBase * itemBase) {
-	emit swapSignal(family, prop, propsMap, itemBase);
+	Q_EMIT swapSignal(family, prop, propsMap, itemBase);
 }
 
 void InfoGraphicsView::setInstanceTitle(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit) {
@@ -375,12 +375,12 @@ void InfoGraphicsView::setAnyInRotation()
 
 void InfoGraphicsView::setActiveWire(Wire * wire)
 {
-	emit setActiveWireSignal(wire);
+	Q_EMIT setActiveWireSignal(wire);
 }
 
 void InfoGraphicsView::setActiveConnectorItem(ConnectorItem * connectorItem)
 {
-	emit setActiveConnectorItemSignal(connectorItem);
+	Q_EMIT setActiveConnectorItemSignal(connectorItem);
 }
 
 void InfoGraphicsView::resolveTemporary(bool, ItemBase *)
@@ -402,7 +402,7 @@ void InfoGraphicsView::newWire(Wire * wire)
 		DebugDialog::debug("wire signal connect failed");
 	}
 
-	emit newWireSignal(wire);
+	Q_EMIT newWireSignal(wire);
 }
 
 void InfoGraphicsView::setSMDOrientation(Qt::Orientations orientation) {

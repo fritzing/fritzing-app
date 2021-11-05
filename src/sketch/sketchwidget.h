@@ -509,7 +509,7 @@ protected:
 	static bool lessThan(int a, int b);
 	static bool greaterThan(int a, int b);
 
-signals:
+Q_SIGNALS:
 	void itemAddedSignal(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long id, SketchWidget * dropOrigin);
 	void itemDeletedSignal(long id);
 	void clearSelectionSignal();
@@ -560,7 +560,7 @@ signals:
 	void getDroppedItemViewLayerPlacementSignal(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);
 	void packItemsSignal(int columns, const QList<long> & ids, QUndoCommand *parent, bool doEmit);
 
-protected slots:
+protected Q_SLOTS:
 	void itemAddedSlot(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long id, SketchWidget * dropOrigin);
 	void itemDeletedSlot(long id);
 	void clearSelectionSlot();
@@ -602,7 +602,7 @@ protected slots:
 	long swapStart(SwapThing & swapThing, bool master);
 	virtual void getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);
 
-public slots:
+public Q_SLOTS:
 	void changeWireColor(const QString newColor);
 	void changeWireWidthMils(const QString newWidth);
 	void selectAllItems(bool state, bool doEmit);

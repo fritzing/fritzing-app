@@ -45,11 +45,11 @@ public:
 	void updateProgress(double progress);
 	void installFinished(const QString & error);
 
-signals:
+Q_SIGNALS:
 	void enableAgainSignal(bool enable);
 	void installNewParts();
 
-protected slots:
+protected Q_SLOTS:
 	void releasesAvailableSlot();
 	void partsAvailableSlot();
 	void xmlErrorSlot(QXmlStreamReader::Error errorCode);

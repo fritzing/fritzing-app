@@ -54,12 +54,12 @@ public:
 	void stop();
 	void ignore(const QString & version, bool interim);
 
-signals:
+Q_SIGNALS:
 	void httpError(QNetworkReply::NetworkError);
 	void xmlError(QXmlStreamReader::Error errorCode);
 	void releasesAvailable();
 
-public slots:
+public Q_SLOTS:
 	void fetch();
 	void finished(QNetworkReply *);
 

@@ -38,7 +38,7 @@ public:
 	void setSvgDirs(QDir & oldDir, QDir & newDir);
 
 
-signals:
+Q_SIGNALS:
 	void messageSignal(const QString & message);
 
 protected:

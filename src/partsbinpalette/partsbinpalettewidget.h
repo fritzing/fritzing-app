@@ -34,11 +34,18 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/bundler.h"
 #include "binmanager/binmanager.h"
 
+class ReferenceModel;
+class HtmlInfoView;
+class BinManager;
+class PartsBinView;
+class PartsBinIconView;
+class PartsBinListView;
+class SearchLineEdit;
 class PartsBinPaletteWidget : public QFrame, public Bundler {
 	Q_OBJECT
 
 public:
-	PartsBinPaletteWidget(class ReferenceModel *referenceModel, class HtmlInfoView *infoView, WaitPushUndoStack *undoStack, class BinManager* manager);
+	PartsBinPaletteWidget(ReferenceModel *referenceModel, HtmlInfoView *infoView, WaitPushUndoStack *undoStack, BinManager* manager);
 	~PartsBinPaletteWidget();
 
 	QSize sizeHint() const;
@@ -67,16 +74,16 @@ public:
 	void load(const QString& filename, QWidget * progressTarget, bool fastLoad);
 
 	bool contains(const QString &moduleID);
-	void setDirty(bool dirty=true);
+	void setDirty(bool dirty = true);
 
 	const QString &fileName();
 
-	class PartsBinView *currentView();
+	PartsBinView *currentView();
 	QAction *addPartToMeAction();
-	bool allowsChanges();
-	bool readOnly();
-	void setAllowsChanges(bool);
-	void setReadOnly(bool);
+	constexpr bool allowsChanges() const noexcept { return m_allowsChanges; }
+	constexpr bool readOnly() const noexcept { return !m_allowsChanges; }
+	void setAllowsChanges(bool) noexcept;
+	void setReadOnly(bool) noexcept;
 	void focusSearch();
 	void setSaveQuietly(bool);
 	bool open(QString fileName, QWidget * progressTarget, bool fastLoad);
@@ -131,7 +138,7 @@ protected:
 	void grabTitle(PaletteModel *model);
 	void grabTitle(const QString & title, QString & iconFilename);
 
-	void setView(class PartsBinView *view);
+	void setView(PartsBinView *view);
 	bool saveAsAux(const QString &filename);
 
 	void afterModelSetted(PaletteModel *model);
@@ -143,43 +150,43 @@ protected:
 	void setFilename(const QString &filename);
 
 protected:
-	PaletteModel *m_model;
-	ReferenceModel *m_referenceModel;
-	bool m_canDeleteModel;
-	bool m_orderHasChanged;
+	PaletteModel *m_model = nullptr;
+	ReferenceModel *m_referenceModel = nullptr;
+	bool m_canDeleteModel = false;
+	bool m_orderHasChanged = false;
 
 	QString m_fileName;
 	QString m_defaultSaveFolder;
 	QString m_untitledFileName;
 
 	QString m_title;
-	bool m_isDirty;
+	bool m_isDirty = false;
 
-	PartsBinView *m_currentView;
-	class PartsBinIconView *m_iconView;
-	class PartsBinListView *m_listView;
+	PartsBinView *m_currentView = nullptr;
+	PartsBinIconView *m_iconView = nullptr;
+	PartsBinListView *m_listView = nullptr;
 
-	QFrame *m_header;
-	QLabel * m_binLabel;
+	QFrame * m_header = nullptr;
+	QLabel * m_binLabel = nullptr;
 
-	class SearchLineEdit * m_searchLineEdit;
+	SearchLineEdit * m_searchLineEdit = nullptr;
 
-	QToolButton * m_combinedBinMenuButton;
+	QToolButton * m_combinedBinMenuButton = nullptr;
 
-	WaitPushUndoStack *m_undoStack;
-	BinManager *m_manager;
+	WaitPushUndoStack *m_undoStack = nullptr;
+	BinManager *m_manager = nullptr;
 
 	QStringList m_alienParts;
-	bool m_allowsChanges;
-	bool m_saveQuietly;
+	bool m_allowsChanges = false;
+	bool m_saveQuietly = false;
 
-	FileProgressDialog * m_loadingProgressDialog;
-	QIcon * m_icon;
-	QIcon * m_monoIcon;
-	QAction *m_addPartToMeAction;
-	QStackedWidget * m_stackedWidget;
-	QStackedWidget * m_searchStackedWidget;
-	bool m_fastLoaded;
+	FileProgressDialog * m_loadingProgressDialog = nullptr;
+	QIcon * m_icon = nullptr;
+	QIcon * m_monoIcon = nullptr;
+	QAction *m_addPartToMeAction = nullptr;
+	QStackedWidget * m_stackedWidget = nullptr;
+	QStackedWidget * m_searchStackedWidget = nullptr;
+	bool m_fastLoaded = false;
 	BinLocation::Location m_location;
 	QStringList m_removed;
 

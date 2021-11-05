@@ -24,6 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QApplication>
 #include <QDir>
 #include <QDomElement>
+#include <QHash>
 
 #include "../debugdialog.h"
 #include "modelpart.h"
@@ -58,15 +59,9 @@ void setFlip(ViewLayer::ViewID viewID, QXmlStreamReader & xml, QHash<ViewLayer::
 /////////////////////////////////////
 
 PaletteModel::PaletteModel() : ModelBase(true) {
-	m_loadedFromFile = false;
-	m_loadingContrib = false;
-	m_fullLoad = false;
 }
 
-PaletteModel::PaletteModel(bool makeRoot, bool doInit) : ModelBase( makeRoot ) {
-	m_loadedFromFile = false;
-	m_loadingContrib = false;
-	m_fullLoad = false;
+PaletteModel::PaletteModel(bool makeRoot, bool doInit) : ModelBase(makeRoot) {
 
 	if (doInit) {
 		initParts(false);
@@ -113,22 +108,22 @@ void PaletteModel::loadParts(bool dbExists) {
 	int totalPartCount = 0;
 	emit loadedPart(0, totalPartCount);
 
-	QDir dir1 = FolderUtils::getAppPartsSubFolder("");
+	QDir dir1(FolderUtils::getAppPartsSubFolder(""));
 	QDir dir2(FolderUtils::getUserPartsPath());
 	QDir dir3(":/resources/parts");
 	QDir dir4(s_fzpOverrideFolder);
 
 	if (m_fullLoad || !dbExists) {
 		// otherwise these will already be in the database
-		countParts(dir1, nameFilters, totalPartCount);
-		countParts(dir3, nameFilters, totalPartCount);
+		totalPartCount += countParts(dir1, nameFilters);
+		totalPartCount += countParts(dir3, nameFilters);
 	}
 
 	if (!m_fullLoad) {
 		// don't include local parts when doing full load
-		countParts(dir2, nameFilters, totalPartCount);
+		totalPartCount += countParts(dir2, nameFilters);
 		if (!s_fzpOverrideFolder.isEmpty()) {
-			countParts(dir4, nameFilters, totalPartCount);
+			totalPartCount += countParts(dir4, nameFilters);
 		}
 	}
 
@@ -137,65 +132,67 @@ void PaletteModel::loadParts(bool dbExists) {
 	int loadingPart = 0;
 	if (m_fullLoad || !dbExists) {
 		// otherwise these will already be in the database
-		loadPartsAux(dir1, nameFilters, loadingPart, totalPartCount);
-		loadPartsAux(dir3, nameFilters, loadingPart, totalPartCount);
+		loadingPart = loadPartsAux(dir1, nameFilters, loadingPart, totalPartCount);
+		loadingPart = loadPartsAux(dir3, nameFilters, loadingPart, totalPartCount);
 	}
 
 	if (!m_fullLoad) {
-		loadPartsAux(dir2, nameFilters, loadingPart, totalPartCount);
+		loadingPart = loadPartsAux(dir2, nameFilters, loadingPart, totalPartCount);
 		if (!s_fzpOverrideFolder.isEmpty()) {
-			loadPartsAux(dir4, nameFilters, loadingPart, totalPartCount);
+			loadingPart = loadPartsAux(dir4, nameFilters, loadingPart, totalPartCount);
 		}
 	}
 }
 
-void PaletteModel::countParts(QDir & dir, QStringList & nameFilters, int & partCount) {
-	QStringList list = dir.entryList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	partCount += list.size();
+int PaletteModel::countParts(const QDir & currentDir, const QStringList & nameFilters) const {
+	QStringList list = currentDir.entryList(nameFilters, QDir::Files | QDir::NoSymLinks);
+	int partCount = list.size();
 
-	QStringList dirs = dir.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-	for (int i = 0; i < dirs.size(); ++i) {
-		QString temp2 = dirs[i];
-		dir.cd(temp2);
-
-		countParts(dir, nameFilters, partCount);
-		dir.cdUp();
+	QStringList dirs = currentDir.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+    for (const auto& dir : dirs) {
+        // make a copy and then cd using that
+        QDir childDirectory(currentDir);
+		childDirectory.cd(dir);
+		partCount += countParts(childDirectory, nameFilters);
 	}
+    return partCount;
 }
 
-void PaletteModel::loadPartsAux(QDir & dir, QStringList & nameFilters, int & loadingPart, int totalPartCount) {
+int PaletteModel::loadPartsAux(const QDir & currentDirectory, const QStringList & nameFilters, int partsLoadedSoFar, int totalPartCount) {
 	//QString temp = dir.absolutePath();
-	QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	for (int i = 0; i < list.size(); ++i) {
-		QFileInfo fileInfo = list.at(i);
-		QString path = fileInfo.absoluteFilePath ();
+    int loadingPart = partsLoadedSoFar;
+	QFileInfoList list = currentDirectory.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+    for (auto& fileInfo : list) {
+		auto path = fileInfo.absoluteFilePath();
 		//DebugDialog::debug(QString("part path:%1 core? %2").arg(path).arg(m_loadingCore? "true" : "false"));
-		loadPart(path, false);
+        /// @todo add checks in case the file exists but cannot be opened for
+        /// some reason. Never assume that existence of a file on the fs means
+        /// you are able to open it.
+		loadPart(path, false); 
 		emit loadedPart(++loadingPart, totalPartCount);
 		//DebugDialog::debug("loadedok");
 	}
 
-	QStringList dirs = dir.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-	for (int i = 0; i < dirs.size(); ++i) {
-		QString temp2 = dirs[i];
-		dir.cd(temp2);
-
-		m_loadingContrib = (temp2 == "contrib");
-
-		loadPartsAux(dir, nameFilters, loadingPart, totalPartCount);
-		dir.cdUp();
+	QStringList dirs = currentDirectory.entryList(QDir::AllDirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+    for (const auto& dir : dirs) {
+        QDir childDirectory(currentDirectory);
+        childDirectory.cd(dir);
+		m_loadingContrib = (dir == "contrib");
+        // overwrite the loadingParts count after each invocation of this method
+		loadingPart = loadPartsAux(childDirectory, nameFilters, loadingPart, totalPartCount);
 	}
+    return loadingPart;
 }
 
 ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 
 	QFile file(path);
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
-		FMessageBox::warning(NULL, QObject::tr("Fritzing"),
+		FMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 		                     QObject::tr("Cannot read file %1:\n%2.")
 		                     .arg(path)
 		                     .arg(file.errorString()));
-		return NULL;
+		return nullptr;
 	}
 
 	//DebugDialog::debug(QString("loading %2 %1").arg(path).arg(QTime::currentTime().toString("HH:mm:ss.zzz")));
@@ -210,7 +207,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	int errorColumn;
 	QDomDocument domDocument;
 	if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		FMessageBox::information(NULL, QObject::tr("Fritzing"),
+		FMessageBox::information(nullptr, QObject::tr("Fritzing"),
 		                         QObject::tr("Parse error (2) at line %1, column %2:\n%3\n%4")
 		                         .arg(errorLine)
 		                         .arg(errorColumn)
@@ -244,60 +241,47 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	TextUtils::findText(t, title);
 
 	//DebugDialog::debug("module ID " + moduleID);
-
-	// FIXME: properties is nested right now
-	if (moduleID.compare(ModuleIDNames::WireModuleIDName) == 0) {
-		type = ModelPart::Wire;
-	}
-	else if (moduleID.compare(ModuleIDNames::JumperModuleIDName) == 0) {
-		type = ModelPart::Jumper;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::LogoImageModuleIDName)) {
+    static QHash<QString, ModelPart::ItemType> pureEqualityChecks = {
+        { ModuleIDNames::WireModuleIDName, ModelPart::Wire },
+        { ModuleIDNames::JumperModuleIDName, ModelPart::Jumper },
+        { ModuleIDNames::GroundPlaneModuleIDName, ModelPart::CopperFill },
+        { ModuleIDNames::NoteModuleIDName, ModelPart::Note },
+        { ModuleIDNames::GroundModuleIDName, ModelPart::Symbol },
+        { ModuleIDNames::PowerLabelModuleIDName, ModelPart::Symbol },
+        { ModuleIDNames::RulerModuleIDName, ModelPart::Ruler },
+        { ModuleIDNames::ViaModuleIDName, ModelPart::Via },
+        { ModuleIDNames::HoleModuleIDName, ModelPart::Hole },
+    };
+    auto isLogo = [](const QString& moduleID) noexcept {
+        return moduleID.endsWith(ModuleIDNames::LogoImageModuleIDName) ||
+               moduleID.endsWith(ModuleIDNames::LogoTextModuleIDName);
+    };
+    auto isBreadboard = [&propertiesText](const QString& moduleID) noexcept {
+        return moduleID.endsWith(ModuleIDNames::PerfboardModuleIDName) || 
+            moduleID.endsWith(ModuleIDNames::StripboardModuleIDName) ||
+            moduleID.endsWith(ModuleIDNames::Stripboard2ModuleIDName) ||
+            propertiesText.contains("breadboard", Qt::CaseInsensitive);
+    };
+    auto isPart = [](const QString& moduleId) noexcept {
+            return moduleId.endsWith(ModuleIDNames::TwoPowerModuleIDName); 
+    };
+    auto isSymbol = [](const QString& moduleId) noexcept {
+            return moduleId.endsWith(ModuleIDNames::PowerModuleIDName) ||
+                   moduleId.endsWith(ModuleIDNames::NetLabelModuleIDName);
+    };
+    if (pureEqualityChecks.contains(moduleID)) {
+        type = pureEqualityChecks.value(moduleID);
+    }
+    else if (isLogo(moduleID)) {
 		type = ModelPart::Logo;
 	}
-	else if (moduleID.endsWith(ModuleIDNames::LogoTextModuleIDName)) {
-		type = ModelPart::Logo;
-	}
-	else if (moduleID.compare(ModuleIDNames::GroundPlaneModuleIDName) == 0) {
-		type = ModelPart::CopperFill;
-	}
-	else if (moduleID.compare(ModuleIDNames::NoteModuleIDName) == 0) {
-		type = ModelPart::Note;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::TwoPowerModuleIDName)) {
+    else if (isPart(moduleID)) {
 		type = ModelPart::Part;
 	}
-	else if (moduleID.endsWith(ModuleIDNames::PowerModuleIDName)) {
+    else if (isSymbol(moduleID)) {
 		type = ModelPart::Symbol;
 	}
-	else if (moduleID.compare(ModuleIDNames::GroundModuleIDName) == 0) {
-		type = ModelPart::Symbol;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::NetLabelModuleIDName)) {
-		type = ModelPart::Symbol;
-	}
-	else if (moduleID.compare(ModuleIDNames::PowerLabelModuleIDName) == 0) {
-		type = ModelPart::Symbol;
-	}
-	else if (moduleID.compare(ModuleIDNames::RulerModuleIDName) == 0) {
-		type = ModelPart::Ruler;
-	}
-	else if (moduleID.compare(ModuleIDNames::ViaModuleIDName) == 0) {
-		type = ModelPart::Via;
-	}
-	else if (moduleID.compare(ModuleIDNames::HoleModuleIDName) == 0) {
-		type = ModelPart::Hole;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::PerfboardModuleIDName)) {
-		type = ModelPart::Breadboard;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::StripboardModuleIDName)) {
-		type = ModelPart::Breadboard;
-	}
-	else if (moduleID.endsWith(ModuleIDNames::Stripboard2ModuleIDName)) {
-		type = ModelPart::Breadboard;
-	}
-	else if (propertiesText.contains("breadboard", Qt::CaseInsensitive)) {
+    else if (isBreadboard(moduleID)) {
 		type = ModelPart::Breadboard;
 	}
 	else if (propertiesText.contains("plain vanilla pcb", Qt::CaseInsensitive)) {
@@ -330,14 +314,14 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		subpart = subpart.nextSiblingElement("subpart");
 	}
 
-	if (m_partHash.value(moduleID, NULL)) {
+	if (m_partHash.value(moduleID, nullptr)) {
 		if(!update) {
-			FMessageBox::warning(NULL, QObject::tr("Fritzing"),
+			FMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 			                     QObject::tr("The part '%1' at '%2' does not have a unique module id '%3'.")
 			                     .arg(modelPart->title())
 			                     .arg(path)
 			                     .arg(moduleID));
-			return NULL;
+			return nullptr;
 		} else {
 			m_partHash[moduleID]->copyStuff(modelPart);
 		}
@@ -345,7 +329,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		m_partHash.insert(moduleID, modelPart);
 	}
 
-	if (m_root == NULL) {
+	if (!m_root) {
 		m_root = modelPart;
 	}
 	else {

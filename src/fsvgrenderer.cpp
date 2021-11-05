@@ -114,19 +114,6 @@ QByteArray FSvgRenderer::loadSvg(const QByteArray & contents, const LoadInfo & l
 QByteArray FSvgRenderer::loadAux(const QByteArray & theContents, const LoadInfo & loadInfo)
 {
 	QByteArray cleanContents(theContents);
-	bool cleaned = false;
-
-	QString string(cleanContents);
-	if (TextUtils::fixMuch(string, false)) {
-		cleaned = true;
-	}
-	if (TextUtils::fixPixelDimensionsIn(string)) {
-		cleaned = true;
-	}
-	if (cleaned) {
-		cleanContents = string.toUtf8();
-	}
-
 	if (loadInfo.connectorIDs.count() > 0 || !loadInfo.setColor.isEmpty() || loadInfo.findNonConnectors) {
 		QString errorStr;
 		int errorLine;
@@ -135,6 +122,9 @@ QByteArray FSvgRenderer::loadAux(const QByteArray & theContents, const LoadInfo 
 		if (!doc.setContent(cleanContents, &errorStr, &errorLine, &errorColumn)) {
 			DebugDialog::debug(QString("renderer loadAux failed %1 %2 %3 %4").arg(loadInfo.filename).arg(errorStr).arg(errorLine).arg(errorColumn));
 		}
+
+        QString string(cleanContents);
+        TextUtils::fixMuchAndPixelDimensionsIn(string, doc, false);
 
 		bool resetContents = false;
 
@@ -160,22 +150,6 @@ QByteArray FSvgRenderer::loadAux(const QByteArray & theContents, const LoadInfo 
 			cleanContents = TextUtils::removeXMLEntities(doc.toString()).toUtf8();
 		}
 	}
-
-
-	/*
-	cleanContents = doc.toByteArray();
-
-	//QFile file("all.txt");
-	//if (file.open(QIODevice::Append)) {
-		//QTextStream t(&file);
-		//t << cleanContents;
-		//file.close();
-	//}
-
-	*/
-
-	//DebugDialog::debug(cleanContents.data());
-
 	return finalLoad(cleanContents, loadInfo.filename);
 }
 

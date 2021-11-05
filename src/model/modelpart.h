@@ -37,7 +37,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "modelpartshared.h"
 #include "../connectors/connector.h"
 #include "../connectors/bus.h"
-
+class ItemBase;
 class ModelPart : public QObject
 {
 	Q_OBJECT
@@ -88,11 +88,11 @@ public:
 	void setModelPartShared(ModelPartShared *modelPartShared);
 	void saveInstances(const QString & fileName, QXmlStreamWriter & streamWriter, bool startDocument);
 	void saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument);
-	void addViewItem(class ItemBase *);
-	void removeViewItem(class ItemBase *);
+	void addViewItem(ItemBase *);
+	void removeViewItem(ItemBase *);
 	void killViewItems();
-	class ItemBase * viewItem(QGraphicsScene * scene);
-	class ItemBase * viewItem(ViewLayer::ViewID);
+	ItemBase * viewItem(QGraphicsScene * scene);
+	ItemBase * viewItem(ViewLayer::ViewID);
 	bool hasViewItems();
 	void initConnectors(bool force=false);
 	const QHash<QString, QPointer<Connector> > & connectors();
@@ -205,24 +205,23 @@ protected:
 	void writeNestedTag(QXmlStreamWriter & streamWriter, QString tagName, const QStringList &values, QString childTag);
 	void writeNestedTag(QXmlStreamWriter & streamWriter, QString tagName, const QHash<QString,QString> &values, QString childTag, QString attrName);
 
-	void commonInit(ItemType type);
 	void saveInstance(QXmlStreamWriter & streamWriter);
 	QList< QPointer<ModelPart> > * ensureInstanceTitleIncrements(const QString & prefix);
 	void clearOldInstanceTitle(const QString & title);
 	bool setSubpartInstanceTitle();
 
 protected:
-	QList< QPointer<class ItemBase> > m_viewItems;
+	QList< QPointer<ItemBase> > m_viewItems;
 
 	ItemType m_type;
 	QPointer<ModelPartShared> m_modelPartShared;
 	QHash<QString, QPointer<Connector> > m_connectorHash;
 	QHash<QString, QPointer<Bus> > m_busHash;
-	long m_index;						// only used at save time to identify model parts in the xml
+	long m_index = 0;					// only used at save time to identify model parts in the xml
 	QDomElement m_instanceDomElement;	// only used at load time (so far)
 
-	LocationFlags m_locationFlags;
-	bool m_indexSynched;
+	LocationFlags m_locationFlags = 0;
+	bool m_indexSynched = false;
 
 	QString m_instanceTitle;
 	QString m_instanceText;

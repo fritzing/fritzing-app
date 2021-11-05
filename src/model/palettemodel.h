@@ -57,11 +57,11 @@ public:
 
 protected:
 	QHash<QString, ModelPart *> m_partHash;
-	bool m_loadedFromFile;
+	bool m_loadedFromFile = false;
 	QString m_loadedFrom; // The file this was loaded from, only if m_loadedFromFile == true
 
-	bool m_loadingContrib;
-	bool m_fullLoad;
+	bool m_loadingContrib = false;
+	bool m_fullLoad = false;
 
 signals:
 	void loadedPart(int i, int total);
@@ -72,8 +72,8 @@ signals:
 protected:
 	virtual void initParts(bool dbExists);
 	void loadParts(bool dbExists);
-	void loadPartsAux(QDir & dir, QStringList & nameFilters, int & loadedPart, int totalParts);
-	void countParts(QDir & dir, QStringList & nameFilters, int & partCount);
+	int loadPartsAux(const QDir & dir, const QStringList & nameFilters, int partsLoadedSoFar, int totalParts);
+	int countParts(const QDir & dir, const QStringList & nameFilters) const;
 	ModelPart * makeSubpart(ModelPart * originalModelPart, const QDomElement & originalSubparth);
 
 public:

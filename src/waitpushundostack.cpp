@@ -104,7 +104,7 @@ void WaitPushUndoStack::clearLiveTimers() {
 
 void WaitPushUndoStack::clearTimers(QList<QTimer *> & timers) {
 	QMutexLocker locker(&m_mutex);
-	foreach (QTimer * timer, timers) {
+	Q_FOREACH (QTimer * timer, timers) {
 		delete timer;
 	}
 	timers.clear();

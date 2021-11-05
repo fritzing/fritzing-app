@@ -57,7 +57,7 @@ PartsBinView::PartsBinView(ReferenceModel *referenceModel, PartsBinPaletteWidget
 }
 
 void PartsBinView::cleanup() {
-	foreach (ItemBase * itemBase, ItemBaseHash.values()) {
+	Q_FOREACH (ItemBase * itemBase, ItemBaseHash.values()) {
 		delete itemBase;
 	}
 }

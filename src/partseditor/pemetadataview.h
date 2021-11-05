@@ -53,12 +53,12 @@ public:
 	QString variant();
 	const QHash<QString, QString> & properties();
 
-signals:
+Q_SIGNALS:
 	void metadataChanged(const QString & name, const QString & value);
 	void propertiesChanged(const QHash<QString, QString> &);
 	void tagsChanged(const QStringList &);
 
-protected slots:
+protected Q_SLOTS:
 	void titleEntry();
 	void authorEntry();
 	void descriptionEntry();
@@ -92,7 +92,7 @@ public:
 	FocusOutTextEdit(QWidget * parent = 0);
 	~FocusOutTextEdit();
 
-signals:
+Q_SIGNALS:
 	void focusOut();
 
 protected:

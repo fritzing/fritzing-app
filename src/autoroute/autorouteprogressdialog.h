@@ -38,7 +38,7 @@ public:
 protected:
 	void closeEvent(QCloseEvent *);
 
-public slots:
+public Q_SLOTS:
 	void setMinimum(int);
 	void setMaximum(int);
 	void setValue(int);
@@ -52,14 +52,14 @@ public slots:
 	void disableButtons();
 	void sendBest();
 
-signals:
+Q_SIGNALS:
 	void skip();
 	void cancel();
 	void stop();
 	void best();
 	void spinChange(int);
 
-protected slots:
+protected Q_SLOTS:
 	void internalSpinChange(int);
 
 protected:

@@ -3847,7 +3847,7 @@ void SketchWidget::dragWireChanged(Wire* wire, ConnectorItem * fromOnWire, Conne
 	if (!m_bendpointWire) {
 		ConnectorItem * anchor = wire->otherConnector(fromOnWire);
 		if (anchor) {
-			extendChangeConnectionCommand(BaseCommand::CrossView, anchor, m_connectorDragConnector, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
+			extendChangeConnectionCommand(BaseCommand::CrossView, m_connectorDragConnector, anchor, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
 			doEmit = true;
 		}
 		if (to) {

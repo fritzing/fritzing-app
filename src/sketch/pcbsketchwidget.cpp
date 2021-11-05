@@ -2047,6 +2047,18 @@ void PCBSketchWidget::hideHoles(QList<ItemBase *> & holes)
 	}
 }
 
+void PCBSketchWidget::hideVias(QList<ItemBase *> & vias)
+{
+	foreach (QGraphicsItem * item, this->items()) {
+		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+        // for some reason the layerkin of the hole doesn't have a modelPart->itemType() == ModelPart::Hole
+		if (itemBase && itemBase->isVisible() && itemBase->layerKinChief()->modelPart()->itemType() == ModelPart::Via) {
+			vias.append(itemBase);
+			itemBase->setVisible(false);
+		}
+	}
+}
+
 void PCBSketchWidget::restoreCopperLogoItems(QList<ItemBase *> & copperLogoItems)
 {
 	foreach (ItemBase * logoItem, copperLogoItems) {

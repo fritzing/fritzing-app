@@ -263,9 +263,13 @@ int GerberGenerator::doMask(LayerList maskLayerIDs, const QString &maskName, con
 	QList<ItemBase *> copperLogoItems;
 	sketchWidget->hideCopperLogoItems(copperLogoItems);
 
+	QList<ItemBase *> vias;
+	sketchWidget->hideVias(vias);
+
 	bool empty;
 	QString svgMask = renderTo(maskLayerIDs, board, sketchWidget, empty);
 	sketchWidget->restoreCopperLogoItems(copperLogoItems);
+	sketchWidget->restoreCopperLogoItems(vias);
 
 	if (empty || svgMask.isEmpty()) {
 		displayMessage(QObject::tr("exported mask layer %1 is empty").arg(maskName), displayMessageBoxes);
@@ -293,16 +297,20 @@ int GerberGenerator::doMask(LayerList maskLayerIDs, const QString &maskName, con
 
 int GerberGenerator::doPasteMask(LayerList maskLayerIDs, const QString &maskName, const QString & gerberSuffix, ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes)
 {
-	// don't want these in the mask laqyer
+	// don't want these in the mask layer
 	QList<ItemBase *> copperLogoItems;
 	sketchWidget->hideCopperLogoItems(copperLogoItems);
 	QList<ItemBase *> holes;
 	sketchWidget->hideHoles(holes);
 
+	QList<ItemBase *> vias;
+	sketchWidget->hideVias(vias);
+
 	bool empty;
 	QString svgMask = renderTo(maskLayerIDs, board, sketchWidget, empty);
 	sketchWidget->restoreCopperLogoItems(copperLogoItems);
 	sketchWidget->restoreCopperLogoItems(holes);
+	sketchWidget->restoreCopperLogoItems(vias);
 
 	if (empty || svgMask.isEmpty()) {
 		displayMessage(QObject::tr("exported paste mask layer is empty"), displayMessageBoxes);

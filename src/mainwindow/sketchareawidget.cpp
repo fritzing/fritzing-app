@@ -100,7 +100,7 @@ void SketchAreaWidget::createLayout() {
 
 void SketchAreaWidget::setToolbarWidgets(QList<QWidget*> widgets) {
 	bool goLeft = true;
-	foreach(QWidget* widget, widgets) {
+	Q_FOREACH(QWidget* widget, widgets) {
 		if(widget->objectName() != RoutingStateLabelName) {
 			if (goLeft) m_leftButtonsContainer->addWidget(widget);
 			else m_rightButtonsContainer->addWidget(widget);

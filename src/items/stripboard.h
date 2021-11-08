@@ -88,7 +88,7 @@ public:
 	void swapEntry(const QString & text);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 
-protected slots:
+protected Q_SLOTS:
 	void changeBoardSize();
 
 protected:

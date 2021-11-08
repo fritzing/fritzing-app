@@ -70,14 +70,14 @@ protected:
 	void addToUndo(QUndoCommand * parentCommand);
 	void addWireToUndo(Wire * wire, QUndoCommand * parentCommand);
 
-public slots:
+public Q_SLOTS:
 	virtual void cancel();
 	virtual void cancelTrace();
 	virtual void stopTracing();
 	virtual void useBest();
 	virtual void setMaxCycles(int);
 
-signals:
+Q_SIGNALS:
 	void setMaximumProgress(int);
 	void setProgressValue(int);
 	void wantTopVisible();

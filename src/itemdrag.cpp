@@ -33,7 +33,7 @@ ItemDrag::ItemDrag(QObject * parent) :
 
 void ItemDrag::__dragIsDone() {
 	m_cache.clear();
-	emit dragIsDoneSignal(this);
+	Q_EMIT dragIsDoneSignal(this);
 }
 
 void ItemDrag::cleanup() {

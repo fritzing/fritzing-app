@@ -221,7 +221,7 @@ QString LED::getColorSVG(const QString & color, ViewLayer::ViewLayerID viewLayer
 	}
 
 	QString colorString;
-	foreach (PropertyDef * propertyDef, m_propertyDefs.keys()) {
+	Q_FOREACH (PropertyDef * propertyDef, m_propertyDefs.keys()) {
 		if (propertyDef->name.compare("color") == 0) {
 			colorString = propertyDef->adjuncts.value(color, "");
 			break;

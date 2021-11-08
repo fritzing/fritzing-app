@@ -158,7 +158,7 @@ const QLineF & ClipableWire::getPaintLine() {
 
 	int t0c = 0;
 	ConnectorItem* to0 = nullptr;
-	foreach (ConnectorItem * toConnectorItem, m_connector0->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, m_connector0->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to0 = toConnectorItem;
 			break;
@@ -168,7 +168,7 @@ const QLineF & ClipableWire::getPaintLine() {
 
 	int t1c = 0;
 	ConnectorItem* to1 = nullptr;
-	foreach (ConnectorItem * toConnectorItem, m_connector1->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, m_connector1->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to1 = toConnectorItem;
 			break;
@@ -278,7 +278,7 @@ bool ClipableWire::filterMousePressConnectorEvent(ConnectorItem * connectorItem,
 	if (m_viewID != ViewLayer::PCBView) return false;
 
 	ConnectorItem * to = nullptr;
-	foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to = toConnectorItem;
 			break;
@@ -312,7 +312,7 @@ void ClipableWire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, Con
 	// track mouse move events for hover redirecting
 
 	ConnectorItem * to = nullptr;
-	foreach (ConnectorItem * toConnectorItem, item->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, item->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to = toConnectorItem;
 			break;
@@ -351,7 +351,7 @@ void ClipableWire::dispatchHover(QPointF scenePos) {
 		inInner = true;
 	}
 	else {
-		foreach (ConnectorItem * toConnectorItem, m_trackHoverItem->connectedToItems()) {
+		Q_FOREACH (ConnectorItem * toConnectorItem, m_trackHoverItem->connectedToItems()) {
 			if (toConnectorItem->attachedToItemType() != ModelPart::Wire) continue;
 
 			auto * w = dynamic_cast<ClipableWire *>(toConnectorItem->attachedTo());

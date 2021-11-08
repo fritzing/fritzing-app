@@ -42,7 +42,7 @@ protected:
 	void setColor(const QColor &);
 	void setCustomColor(const QColor &);
 
-protected slots:
+protected Q_SLOTS:
 	void selectCurrent();
 	void selectCustom();
 	void selectLastCustom();

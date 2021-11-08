@@ -60,7 +60,7 @@ public:
 protected:
 	void setColorFromElement(QDomElement & element);
 
-protected slots:
+protected Q_SLOTS:
 	void widthEntry(int index);
 
 protected:

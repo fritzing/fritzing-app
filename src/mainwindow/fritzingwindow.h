@@ -43,10 +43,10 @@ public:
 	virtual void notClosableForAWhile();
 	static bool alreadyHasExtension(const QString &fileName, const QString &extension=___emptyString___);
 
-signals:
+Q_SIGNALS:
 	void readOnlyChanged(bool isReadOnly);
 
-protected slots:
+protected Q_SLOTS:
 	void undoStackCleanChanged(bool isClean);
 	virtual bool save();
 	virtual bool saveAs();

@@ -47,7 +47,7 @@ protected:
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 
 
-public slots:
+public Q_SLOTS:
 	void swapEntry(const QString & text);
 
 public:

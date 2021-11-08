@@ -75,7 +75,7 @@ PaletteModel::PaletteModel(bool makeRoot, bool doInit) : ModelBase( makeRoot ) {
 
 PaletteModel::~PaletteModel()
 {
-	foreach (ModelPart * modelPart, m_partHash.values()) {
+	Q_FOREACH (ModelPart * modelPart, m_partHash.values()) {
 		delete modelPart;
 	}
 }
@@ -111,7 +111,7 @@ void PaletteModel::loadParts(bool dbExists) {
 	nameFilters << "*" + FritzingPartExtension;
 
 	int totalPartCount = 0;
-	emit loadedPart(0, totalPartCount);
+	Q_EMIT loadedPart(0, totalPartCount);
 
 	QDir dir1 = FolderUtils::getAppPartsSubFolder("");
 	QDir dir2(FolderUtils::getUserPartsPath());
@@ -132,7 +132,7 @@ void PaletteModel::loadParts(bool dbExists) {
 		}
 	}
 
-	emit partsToLoad(totalPartCount);
+	Q_EMIT partsToLoad(totalPartCount);
 
 	int loadingPart = 0;
 	if (m_fullLoad || !dbExists) {
@@ -171,7 +171,7 @@ void PaletteModel::loadPartsAux(QDir & dir, QStringList & nameFilters, int & loa
 		QString path = fileInfo.absoluteFilePath ();
 		//DebugDialog::debug(QString("part path:%1 core? %2").arg(path).arg(m_loadingCore? "true" : "false"));
 		loadPart(path, false);
-		emit loadedPart(++loadingPart, totalPartCount);
+		Q_EMIT loadedPart(++loadingPart, totalPartCount);
 		//DebugDialog::debug("loadedok");
 	}
 
@@ -419,14 +419,14 @@ void PaletteModel::removePart(const QString &moduleID) {
 
 void PaletteModel::removeParts() {
 	QList<ModelPart *> modelParts;
-	foreach (QObject * child, m_root->children()) {
+	Q_FOREACH (QObject * child, m_root->children()) {
 		auto * modelPart = qobject_cast<ModelPart *>(child);
 		if (modelPart == nullptr) continue;
 
 		modelParts.append(modelPart);
 	}
 
-	foreach(ModelPart * modelPart, modelParts) {
+	Q_FOREACH(ModelPart * modelPart, modelParts) {
 		modelPart->setParent(nullptr);
 		m_partHash.remove(modelPart->moduleID());
 		delete modelPart;
@@ -434,7 +434,7 @@ void PaletteModel::removeParts() {
 }
 
 void PaletteModel::clearPartHash() {
-	foreach (ModelPart * modelPart, m_partHash.values()) {
+	Q_FOREACH (ModelPart * modelPart, m_partHash.values()) {
 		ModelPartShared * modelPartShared = modelPart->modelPartShared();
 		if (modelPartShared) {
 			modelPart->setModelPartShared(nullptr);
@@ -464,7 +464,7 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 	// or google search api
 
 	int count = 0;
-	foreach (QString searchString, searchStrings) {
+	Q_FOREACH (QString searchString, searchStrings) {
 		bool gotOne = false;
 		if (modelPart->title().contains(searchString, Qt::CaseInsensitive)) {
 			gotOne = true;
@@ -482,7 +482,7 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 			gotOne = true;
 		}
 		else {
-			foreach (QString string, modelPart->tags()) {
+			Q_FOREACH (QString string, modelPart->tags()) {
 				if (string.contains(searchString, Qt::CaseInsensitive)) {
 					gotOne = true;
 					break;
@@ -490,7 +490,7 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 			}
 		}
 		if (!gotOne) {
-			foreach (QString string, modelPart->properties().values()) {
+			Q_FOREACH (QString string, modelPart->properties().values()) {
 				if (string.contains(searchString, Qt::CaseInsensitive)) {
 					gotOne = true;
 					break;
@@ -498,7 +498,7 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 			}
 		}
 		if (!gotOne) {
-			foreach (QString string, modelPart->properties().keys()) {
+			Q_FOREACH (QString string, modelPart->properties().keys()) {
 				if (string.contains(searchString, Qt::CaseInsensitive)) {
 					gotOne = true;
 					break;
@@ -516,24 +516,24 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 		else
 		{
 			modelParts.append(modelPart);
-			emit addSearchMaximum(1);
+			Q_EMIT addSearchMaximum(1);
 		}
 	}
 
-	emit addSearchMaximum(modelPart->children().count());
+	Q_EMIT addSearchMaximum(modelPart->children().count());
 
-	foreach(QObject * child, modelPart->children()) {
+	Q_FOREACH(QObject * child, modelPart->children()) {
 		auto * mp = qobject_cast<ModelPart *>(child);
 		if (mp == nullptr) continue;
 
 		search(mp, searchStrings, modelParts, allowObsolete);
-		emit incSearch();
+		Q_EMIT incSearch();
 	}
 }
 
 QList<ModelPart *> PaletteModel::findContribNoBin() {
 	QList<ModelPart *> modelParts;
-	foreach (ModelPart * modelPart, m_partHash.values()) {
+	Q_FOREACH (ModelPart * modelPart, m_partHash.values()) {
 		if (modelPart->isContrib()) {
 			if (!modelPart->isInBin()) {
 				modelParts << modelPart;
@@ -630,7 +630,7 @@ ModelPart * PaletteModel::makeSubpart(ModelPart * originalModelPart, const QDomE
 
 QList<ModelPart *> PaletteModel::allParts() {
 	QList<ModelPart *> modelParts;
-	foreach (ModelPart * modelPart, m_partHash.values()) {
+	Q_FOREACH (ModelPart * modelPart, m_partHash.values()) {
 		if (!modelPart->isObsolete()) modelParts.append(modelPart);
 	}
 	return modelParts;

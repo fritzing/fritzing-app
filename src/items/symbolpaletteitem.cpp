@@ -114,7 +114,7 @@ SymbolPaletteItem::SymbolPaletteItem( ModelPart * modelPart, ViewLayer::ViewID v
 
 SymbolPaletteItem::~SymbolPaletteItem() {
 	if (m_isNetLabel) {
-		foreach (QString key, LocalNetLabels.uniqueKeys()) {
+		Q_FOREACH (QString key, LocalNetLabels.uniqueKeys()) {
 			if (m_connector0) {
 				LocalNetLabels.remove(key, m_connector0);
 			}
@@ -129,7 +129,7 @@ SymbolPaletteItem::~SymbolPaletteItem() {
 		if (m_connector1) LocalGrounds.removeOne(m_connector1);
 		LocalGrounds.removeOne(QPointer<ConnectorItem>(nullptr));   // cleans null QPointers
 
-		foreach (long key, LocalVoltages.uniqueKeys()) {
+		Q_FOREACH (long key, LocalVoltages.uniqueKeys()) {
 			if (m_connector0) {
 				LocalVoltages.remove(key, m_connector0);
 			}
@@ -142,7 +142,7 @@ SymbolPaletteItem::~SymbolPaletteItem() {
 }
 
 void SymbolPaletteItem::removeMeFromBus(double v) {
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		if (m_isNetLabel) {
 			if (m_voltageReference) {
 				LocalNetLabels.remove(getLabel(), connectorItem);
@@ -219,7 +219,7 @@ void SymbolPaletteItem::busConnectorItems(Bus * bus, ConnectorItem * fromConnect
 	else {
 		mitems.append(LocalVoltages.values(FROMVOLTAGE(m_voltage)));
 	}
-	foreach (ConnectorItem * connectorItem, mitems) {
+	Q_FOREACH (ConnectorItem * connectorItem, mitems) {
 		if (connectorItem == nullptr) continue;
 
 		if (connectorItem->scene() == this->scene()) {
@@ -252,7 +252,7 @@ void SymbolPaletteItem::setLabel(const QString & label) {
 	m_modelPart->setLocalProp("label", label); //This line modifies the property label in the bb, sch and pcb items
 
 	//Add the conectors of the item to the new net label
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		LocalNetLabels.insert(label, connectorItem);
 	}
 
@@ -276,12 +276,12 @@ void SymbolPaletteItem::setVoltage(double v) {
 	}
 
 	if (m_isNetLabel) {
-		foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 			LocalNetLabels.insert(QString::number(m_voltage), connectorItem);
 		}
 	}
 	else {
-		foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 			if (connectorItem->isGrounded()) {
 				LocalGrounds.append(connectorItem);
 				//connectorItem->debugInfo("ground insert");
@@ -386,7 +386,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 		auto * edit = new FocusOutComboBox(parent);
 		edit->setEnabled(swappingEnabled);
 		int ix = 0;
-		foreach (double v, Voltages) {
+		Q_FOREACH (double v, Voltages) {
 			edit->addItem(QString::number(v));
 			if (v == m_voltage) {
 				edit->setCurrentIndex(ix);
@@ -506,7 +506,7 @@ bool SymbolPaletteItem::getAutoroutable() {
 
 void SymbolPaletteItem::resetLayerKin() {
 
-	foreach (ItemBase * lkpi, layerKin()) {
+	Q_FOREACH (ItemBase * lkpi, layerKin()) {
 		if (lkpi->viewLayerID() == ViewLayer::SchematicText) {
 			QString svg = makeSvg(lkpi->viewLayerID());
 			lkpi->resetRenderer(svg);

@@ -47,10 +47,10 @@ void FDockWidget::restoreState() {
 bool FDockWidget::event(QEvent * e) {
 	switch (e->type()) {
 	case QEvent::WindowActivate:
-		emit dockChangeActivationSignal(true, this);
+		Q_EMIT dockChangeActivationSignal(true, this);
 		break;
 	case QEvent::WindowDeactivate:
-		emit dockChangeActivationSignal(false, this);
+		Q_EMIT dockChangeActivationSignal(false, this);
 		break;
 	default:
 		break;
@@ -60,5 +60,5 @@ bool FDockWidget::event(QEvent * e) {
 
 void FDockWidget::moveEvent(QMoveEvent *event) {
 	QDockWidget::moveEvent(event);
-	emit positionChanged();
+	Q_EMIT positionChanged();
 }

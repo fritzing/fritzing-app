@@ -235,7 +235,7 @@ protected:
 	void optimizeTraces(QList<int> & order, QMultiHash<int, QList< QPointer<TraceWire> > > &, QMultiHash<int, Via *> &, QMultiHash<int, JumperItem *> &, QMultiHash<int, SymbolPaletteItem *> &, NetList &, ConnectionThing &);
 	void reducePoints(QList<QPointF> & points, QPointF topLeft, QList<TraceWire *> & bundle, int startIndex, int endIndex, ConnectionThing &, int netIndex, ViewLayer::ViewLayerPlacement);
 
-public slots:
+public Q_SLOTS:
 	void incCommandProgress();
 	void setMaxCycles(int);
 

@@ -90,7 +90,7 @@ DebugDialog::~DebugDialog()
 bool DebugDialog::event(QEvent *e) {
 	if (e->type() == DebugEventType) {
 		this->m_textEdit->append(((DebugEvent *) e)->m_message);
-		emit debugBroadcast(((DebugEvent *) e)->m_message, ((DebugEvent *) e)->m_debugLevel,((DebugEvent *) e)->m_ancestor);
+		Q_EMIT debugBroadcast(((DebugEvent *) e)->m_message, ((DebugEvent *) e)->m_debugLevel,((DebugEvent *) e)->m_ancestor);
 		// need to delete these events at some point...
 		// but it's tricky if the message is being used elsewhere
 		return true;

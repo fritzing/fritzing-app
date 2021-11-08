@@ -86,7 +86,7 @@ void LabelThing::mouseReleaseEvent(QMouseEvent * event) {
 	m_state = RELEASED;
 	update();
 	QLabel::mouseReleaseEvent(event);
-	emit clicked();
+	Q_EMIT clicked();
 }
 
 void LabelThing::paintEvent(QPaintEvent * event) {
@@ -195,7 +195,7 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 	QStringList labels;
 	labels << tr("Copies") << tr("Price per board") << tr("Price");
 	int ix = 0;
-	foreach (QString labl, labels) {
+	Q_FOREACH (QString labl, labels) {
 		auto * item = new QTableWidgetItem(labl);
 		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(ix, 0, item);
@@ -318,7 +318,7 @@ QString QuoteDialog::countArgs() {
 	initCounts();
 
 	QString countArgs;
-	foreach (int c, Counts) {
+	Q_FOREACH (int c, Counts) {
 		countArgs += QString::number(c) + ",";
 	}
 	countArgs.chop(1);

@@ -75,13 +75,13 @@ FSplashScreen::FSplashScreen(const QPixmap & pixmap, Qt::WindowFlags f ) : QSpla
 }
 
 FSplashScreen::~FSplashScreen() {
-	foreach (MessageThing * messageThing, m_messages) {
+	Q_FOREACH (MessageThing * messageThing, m_messages) {
 		delete messageThing;
 	}
-	foreach (MessageThing * messageThing, m_items) {
+	Q_FOREACH (MessageThing * messageThing, m_items) {
 		delete messageThing;
 	}
-	foreach (PixmapThing * pixmapThing, m_pixmaps) {
+	Q_FOREACH (PixmapThing * pixmapThing, m_pixmaps) {
 		delete pixmapThing;
 	}
 }
@@ -133,12 +133,12 @@ void FSplashScreen::drawContents ( QPainter * painter )
 	painter->setRenderHint ( QPainter::Antialiasing, true );				// TODO: might need to be in the stylesheet?
 
 	// pixmaps first, since they go beneath text
-	foreach (PixmapThing * pixmapThing, m_pixmaps) {
+	Q_FOREACH (PixmapThing * pixmapThing, m_pixmaps) {
 		painter->drawPixmap(pixmapThing->rect, pixmapThing->pixmap);
 		//DebugDialog::debug(QString("pixmapthing %1 %2").arg(pixmapThing->pixmap.width()).arg(pixmapThing->pixmap.height()), pixmapThing->rect);
 	}
 
-	foreach (MessageThing * messageThing, m_messages) {
+	Q_FOREACH (MessageThing * messageThing, m_messages) {
 		painter->setPen(messageThing->color);
 		if (Qt::mightBeRichText(messageThing->message)) {
 			QTextDocument doc;

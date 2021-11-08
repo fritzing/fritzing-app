@@ -336,7 +336,7 @@ QPainterPath Note::shape() const
 
 void Note::positionGrip() {
 	QSizeF gripSize = m_resizeGrip->boundingRect().size();
-	QSizeF sz = this->boundingRect().size();
+	QSizeF sz = Note::boundingRect().size();
 	QPointF p(sz.width() - gripSize.width(), sz.height() - gripSize.height());
 	m_resizeGrip->setPos(p);
 	m_graphicsTextItem->setPos(TriangleOffset / 2, TriangleOffset / 2);

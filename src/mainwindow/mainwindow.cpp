@@ -563,7 +563,7 @@ MainWindow::~MainWindow()
 	dontKeepMargins();
 	m_setUpDockManagerTimer.stop();
 
-	foreach (LinkedFile * linkedFile, m_linkedProgramFiles) {
+	Q_FOREACH (LinkedFile * linkedFile, m_linkedProgramFiles) {
 		delete linkedFile;
 	}
 	m_linkedProgramFiles.clear();
@@ -882,7 +882,7 @@ void MainWindow::setCurrentFile(const QString &filename, bool addToRecent, bool 
 		// TODO: if lastTab file is not on recent list, remove it from the settings
 	}
 
-	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+	Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 		auto *mainWin = qobject_cast<MainWindow *>(widget);
 		if (mainWin)
 			mainWin->updateRecentFileActions();
@@ -1239,7 +1239,7 @@ void MainWindow::tabWidget_currentChanged(int index) {
 	// this item update loop seems to deal with a qt update bug:
 	// if one view is visible and you change something in another view,
 	// the change might not appear when you switch views until you move the item in question
-	foreach(QGraphicsItem * item, m_currentGraphicsView->items()) {
+	Q_FOREACH(QGraphicsItem * item, m_currentGraphicsView->items()) {
 		item->update();
 	}
 
@@ -1316,7 +1316,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 	m_closing = true;
 
 	int count = 0;
-	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+	Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 		if (widget == this) continue;
 		if (qobject_cast<QMainWindow *>(widget) == NULL) continue;
 
@@ -1361,13 +1361,13 @@ bool MainWindow::whatToDoWithAlienFiles() {
 		if (reply == QMessageBox::Yes) {
 			return true;
 		} else if (reply == QMessageBox::No) {
-			foreach(QString pathToRemove, m_alienFiles) {
+			Q_FOREACH(QString pathToRemove, m_alienFiles) {
 				QFile::remove(pathToRemove);
 			}
 			m_alienFiles.clear();
 			recoverBackupedFiles();
 
-			emit alienPartsDismissed();
+			Q_EMIT alienPartsDismissed();
 			return true;
 		}
 		else {
@@ -1500,7 +1500,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 	QList<MissingSvgInfo> missing;
 	QList<ModelPart *> missingModelParts;
 
-	foreach (QFileInfo fzpInfo, entryInfoList) {
+	Q_FOREACH (QFileInfo fzpInfo, entryInfoList) {
 		QFile file(dir.absoluteFilePath(fzpInfo.fileName()));
 		if (!file.open(QFile::ReadOnly)) {
 			DebugDialog::debug(QString("unable to open %1: %2").arg(file.fileName()));
@@ -1575,7 +1575,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 	}
 
 	std::sort(missing.begin(), missing.end(), byConnectorCount);
-	foreach (MissingSvgInfo msi, missing) {
+	Q_FOREACH (MissingSvgInfo msi, missing) {
 		if (msi.equal) {
 			// two or more parts have the same number of connectors--so we can't figure out how to assign them
 			continue;
@@ -1601,12 +1601,12 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 			if (elements.count() < msi.connectorSvgIds.count()) continue;
 
 			QStringList ids;
-			foreach (QDomElement element, elements) {
+			Q_FOREACH (QDomElement element, elements) {
 				ids << element.attribute("id");
 			}
 
 			bool allGood = true;
-			foreach (QString id, msi.connectorSvgIds) {
+			Q_FOREACH (QString id, msi.connectorSvgIds) {
 				if (!ids.contains(id)) {
 					allGood = false;
 					break;
@@ -1627,7 +1627,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 		}
 	}
 
-	foreach (ModelPart * mp, missingModelParts) {
+	Q_FOREACH (ModelPart * mp, missingModelParts) {
 		m_binManager->addToTempPartsBin(mp);
 		m_addedToTemp = true;
 	}
@@ -1761,7 +1761,7 @@ QList<ModelPart*> MainWindow::loadPart(const QString &fzpFile, bool addToBin) {
 			);
 		}
 		QDir path = QFileInfo(fzpFile).path();
-		foreach(QString key, map.keys()) {
+		Q_FOREACH(QString key, map.keys()) {
 			QString file = map[key];
 			if(!file.startsWith(key + "/")) {
 				// We can add the missing "svg." prefix here.
@@ -1966,7 +1966,7 @@ QStringList MainWindow::saveBundledAux(ModelPart *mp, const QDir &destFolder) {
 
 	QList<ViewLayer::ViewID> viewIDs;
 	viewIDs << ViewLayer::IconView << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
-	foreach (ViewLayer::ViewID viewID, viewIDs) {
+	Q_FOREACH (ViewLayer::ViewID viewID, viewIDs) {
 		QString basename = mp->hasBaseNameFor(viewID);
 		if (basename.isEmpty()) continue;
 
@@ -2005,13 +2005,13 @@ QList<ModelPart*> MainWindow::moveToPartsFolder(QDir &unzipDir, MainWindow* mw, 
 
 	namefilters.clear();
 	namefilters << ZIP_SVG+"*";
-	foreach(QFileInfo file, unzipDir.entryInfoList(namefilters)) { // svg files
+	Q_FOREACH(QFileInfo file, unzipDir.entryInfoList(namefilters)) { // svg files
 		//DebugDialog::debug("unzip svg " + file.absoluteFilePath());
 		mw->copyToSvgFolder(file, addToAlien, prefixFolder, destFolder);
 	}
 
 
-	foreach(QFileInfo file, partEntryInfoList) { // part files
+	Q_FOREACH(QFileInfo file, partEntryInfoList) { // part files
 		//DebugDialog::debug("unzip part " + file.absoluteFilePath());
 		ModelPart * mp = mw->copyToPartsFolder(file, addToAlien, prefixFolder, destFolder);
 		retval << mp;
@@ -2065,12 +2065,12 @@ ModelPart* MainWindow::copyToPartsFolder(const QFileInfo& file, bool addToAlien,
 		mp->setAlien(true);
 	} else {
 		// Part load failed, remove modified files before proceeding.
-		foreach(QString pathToRemove, m_alienFiles) {
+		Q_FOREACH(QString pathToRemove, m_alienFiles) {
 			QFile::remove(pathToRemove);
 		}
 		m_alienFiles.clear();
 		recoverBackupedFiles();
-		emit alienPartsDismissed();
+		Q_EMIT alienPartsDismissed();
 	}
 
 	return mp;
@@ -2109,7 +2109,7 @@ void MainWindow::backupExistingFileIfExists(const QString &destFilePath) {
 }
 
 void MainWindow::recoverBackupedFiles() {
-	foreach(QString originalFilePath, m_filesReplacedByAlienOnes) {
+	Q_FOREACH(QString originalFilePath, m_filesReplacedByAlienOnes) {
 		QFile file(m_tempDir.path()+"/"+QFileInfo(originalFilePath).fileName());
 		if(file.exists(originalFilePath)) {
 			file.remove();
@@ -2206,16 +2206,16 @@ QStatusBar *MainWindow::realStatusBar() {
 
 void MainWindow::moveEvent(QMoveEvent * event) {
 	FritzingWindow::moveEvent(event);
-	emit mainWindowMoved(this);
+	Q_EMIT mainWindowMoved(this);
 }
 
 bool MainWindow::event(QEvent * e) {
 	switch (e->type()) {
 	case QEvent::WindowActivate:
-		emit changeActivationSignal(true, this);
+		Q_EMIT changeActivationSignal(true, this);
 		break;
 	case QEvent::WindowDeactivate:
-		emit changeActivationSignal(false, this);
+		Q_EMIT changeActivationSignal(false, this);
 		break;
 	default:
 		break;
@@ -2335,7 +2335,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 		return;
 	}
 
-	foreach (QString key, currPropsMap.keys()) {
+	Q_FOREACH (QString key, currPropsMap.keys()) {
 		QString value = currPropsMap.value(key);
 		m_referenceModel->recordProperty(key, value);
 	}
@@ -2370,7 +2370,7 @@ bool MainWindow::swapSpecial(const QString & theProp, QMap<QString, QString> & c
 	QString pinSpacing, resistance;
 	int layers = 0;
 
-	foreach (QString key, currPropsMap.keys()) {
+	Q_FOREACH (QString key, currPropsMap.keys()) {
 		if (key.compare("layers", Qt::CaseInsensitive) == 0) {
 			if (!Board::isBoard(itemBase)) continue;
 
@@ -2594,7 +2594,7 @@ const QString &MainWindow::selectedModuleID() {
 void MainWindow::redrawSketch() {
 	if (m_currentGraphicsView == nullptr) return;
 	QList<ConnectorItem *> visited;
-	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		item->update();
 		auto * c = dynamic_cast<ConnectorItem *>(item);
 		if (c) {
@@ -2786,7 +2786,7 @@ void MainWindow::setAutosaveEnabled(bool enabled) {
 void MainWindow::setAutosave(int minutes, bool enabled) {
 	AutosaveTimeoutMinutes = minutes;
 	AutosaveEnabled = enabled;
-	foreach (QWidget * widget, QApplication::topLevelWidgets()) {
+	Q_FOREACH (QWidget * widget, QApplication::topLevelWidgets()) {
 		auto * mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow == nullptr) continue;
 
@@ -2862,19 +2862,19 @@ void MainWindow::routingStatusLabelMouse(QMouseEvent*, bool show) {
 	if (m_currentGraphicsView == nullptr) return;
 
 	QSet<ConnectorItem *> toShow;
-	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		auto * vw = dynamic_cast<VirtualWire *>(item);
 		if (vw == nullptr) continue;
 
-		foreach (ConnectorItem * connectorItem, vw->connector0()->connectedToItems()) {
+		Q_FOREACH (ConnectorItem * connectorItem, vw->connector0()->connectedToItems()) {
 			toShow.insert(connectorItem);
 		}
-		foreach (ConnectorItem * connectorItem, vw->connector1()->connectedToItems()) {
+		Q_FOREACH (ConnectorItem * connectorItem, vw->connector1()->connectedToItems()) {
 			toShow.insert(connectorItem);
 		}
 	}
 	QList<ConnectorItem *> visited;
-	foreach (ConnectorItem * connectorItem, toShow) {
+	Q_FOREACH (ConnectorItem * connectorItem, toShow) {
 		//if (show) {
 		//	DebugDialog::debug(QString("unrouted %1 %2 %3 %4")
 		//		.arg(connectorItem->attachedToInstanceTitle())
@@ -3045,7 +3045,7 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 		// extract the local paths of the files
 		for (int i = 0; i < urlList.size() && i < 32; ++i) {
 			QString fn = urlList.at(i).toLocalFile();
-			foreach (QString ext, fritzingExtensions()) {
+			Q_FOREACH (QString ext, fritzingExtensions()) {
 				if (fn.endsWith(ext)) {
 					event->acceptProposedAction();
 					return;
@@ -3058,7 +3058,7 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 					QTextStream stream(&file);
 					while (!stream.atEnd()) {
 						QString line = stream.readLine().trimmed();
-						foreach (QString ext, fritzingExtensions()) {
+						Q_FOREACH (QString ext, fritzingExtensions()) {
 							if (line.endsWith(ext)) {
 								event->acceptProposedAction();
 								return;
@@ -3134,7 +3134,7 @@ QString MainWindow::getStyleSheetSuffix() {
 
 void MainWindow::addToMyParts(ModelPart * modelPart, const QStringList & peAlienFiles)
 {
-	foreach(QString pathToAddFromPe, peAlienFiles) {
+	Q_FOREACH(QString pathToAddFromPe, peAlienFiles) {
 		// DebugDialog::debug(QString("addToMyParts adding  %1")
 		//.arg(pathToAddFromPe));
 		m_alienFiles << pathToAddFromPe;
@@ -3144,7 +3144,7 @@ void MainWindow::addToMyParts(ModelPart * modelPart, const QStringList & peAlien
 }
 
 bool MainWindow::anyUsePart(const QString & moduleID) {
-	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+	Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 		auto *mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow == nullptr) continue;
 
@@ -3159,7 +3159,7 @@ bool MainWindow::anyUsePart(const QString & moduleID) {
 bool MainWindow::usesPart(const QString & moduleID) {
 	if (m_currentGraphicsView == nullptr) return false;
 
-	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase && itemBase->moduleID().compare(moduleID) == 0) {
 			return true;
@@ -3173,7 +3173,7 @@ bool MainWindow::updateParts(const QString & moduleID, QUndoCommand * parentComm
 	if (m_currentGraphicsView == nullptr) return false;
 
 	QSet<ItemBase *> itemBases;
-	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 		if (itemBase->moduleID().compare(moduleID) != 0) continue;
@@ -3182,7 +3182,7 @@ bool MainWindow::updateParts(const QString & moduleID, QUndoCommand * parentComm
 	}
 
 	QMap<QString, QString> propsMap;
-	foreach (ItemBase * itemBase, itemBases) {
+	Q_FOREACH (ItemBase * itemBase, itemBases) {
 		swapSelectedAuxAux(itemBase, moduleID, itemBase->viewLayerPlacement(), propsMap, parentCommand);
 	}
 
@@ -3313,7 +3313,7 @@ void MainWindow::updateWelcomeViewRecentList(bool doEmit) {
 	if (m_welcomeView) {
 		m_welcomeView->updateRecent();
 		if (doEmit) {
-			foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+			Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 				auto *mainWin = qobject_cast<MainWindow *>(widget);
 				if (mainWin && mainWin != this) {
 					mainWin->updateWelcomeViewRecentList(false);
@@ -3329,7 +3329,7 @@ void MainWindow::initZoom() {
 	if (!m_currentGraphicsView->isVisible()) return;
 
 	bool parts = false;
-	foreach (QGraphicsItem * item, m_currentGraphicsView->items()) {
+	Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->items()) {
 		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 		if (!itemBase->isEverVisible()) continue;

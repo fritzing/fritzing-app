@@ -18,7 +18,7 @@ public:
     int getDpi();
     void setValue(int value);
 
-private slots:
+private Q_SLOTS:
     void on_dpiSpinBox_valueChanged(int arg1);
 
 private:

@@ -141,7 +141,7 @@ TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* 
 	}
 
 	if (m_localeList.count() == 0) {
-		foreach (QFileInfo fileinfo, fileInfoList) {
+		Q_FOREACH (QFileInfo fileinfo, fileInfoList) {
 			QString name = fileinfo.completeBaseName();
 			name.replace("fritzing_", "");
 			QStringList names = name.split("_");
@@ -159,7 +159,7 @@ TranslatorListModel::~TranslatorListModel() {
 }
 
 void TranslatorListModel::cleanup() {
-	foreach (QLocale * locale, m_localeList) {
+	Q_FOREACH (QLocale * locale, m_localeList) {
 		delete locale;
 	}
 	m_localeList.clear();
@@ -181,7 +181,7 @@ QVariant TranslatorListModel::data ( const QModelIndex & index, int role) const
 		}
 
 		if (trLanguageString.isEmpty()) {
-			foreach (QString key, m_languages.keys()) {
+			Q_FOREACH (QString key, m_languages.keys()) {
 				if (key.startsWith(languageString.toLower())) {
 					return m_languages.value(key);
 				}
@@ -213,14 +213,14 @@ const QLocale * TranslatorListModel::locale( int index)
 
 int TranslatorListModel::findIndex(const QString & language) {
 	int ix = 0;
-	foreach (QLocale * locale, m_localeList) {
+	Q_FOREACH (QLocale * locale, m_localeList) {
 		//DebugDialog::debug(QString("find index %1 %2").arg(language).arg(locale->name()));
 		if (language.compare(locale->name()) == 0) return ix;
 		ix++;
 	}
 
 	ix = 0;
-	foreach (QLocale * locale, m_localeList) {
+	Q_FOREACH (QLocale * locale, m_localeList) {
 		if (locale->name().startsWith("en")) return ix;
 		ix++;
 	}

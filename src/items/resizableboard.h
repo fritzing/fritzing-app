@@ -76,7 +76,7 @@ public:
 	static QString convertToXmlName(const QString &);
 	static QString convertFromXmlName(const QString &);
 
-protected slots:
+protected Q_SLOTS:
 	void prepLoadImage();
 	void fileNameEntry(int index);
 
@@ -114,7 +114,7 @@ public:
 	bool inResize();
 	void figureHover();
 
-public slots:
+public Q_SLOTS:
 	virtual void widthEntry();
 	virtual void heightEntry();
 	void keepAspectRatio(bool checkState);

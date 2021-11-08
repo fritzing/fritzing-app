@@ -198,7 +198,7 @@ void Stripbit::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 		OriginalShiftPos = event->scenePos();
 	}
 
-	foreach (QGraphicsItem * item, scene()->items(p)) {
+	Q_FOREACH (QGraphicsItem * item, scene()->items(p)) {
 		other = dynamic_cast<Stripbit *>(item);
 		if (other) break;
 	}
@@ -325,7 +325,7 @@ Stripboard::Stripboard( ModelPart * modelPart, ViewLayer::ViewID viewID, const V
 }
 
 Stripboard::~Stripboard() {
-	foreach (StripConnector * sc, m_strips) {
+	Q_FOREACH (StripConnector * sc, m_strips) {
 		delete sc;
 	}
 
@@ -350,7 +350,7 @@ QString Stripboard::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QStrin
 	*/
 
 	QString stripSvg;
-	foreach(QGraphicsItem * item, childItems()) {
+	Q_FOREACH(QGraphicsItem * item, childItems()) {
 		auto * stripbit = dynamic_cast<Stripbit *>(item);
 		if (stripbit == nullptr) continue;
 		if (stripbit->removed()) continue;
@@ -425,7 +425,7 @@ void Stripboard::addedToScene(bool temporary)
 	QString config = prop("buses");
 	QString additionalConfig;
 
-	foreach (ConnectorItem * ci, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * ci, cachedConnectorItems()) {
 		int cx, cy;
 		getXY(cx, cy, ci->connectorSharedName());
 		StripConnector * sc =  getStripConnector(cx, cy);
@@ -463,7 +463,7 @@ void Stripboard::addedToScene(bool temporary)
 
 	QStringList removed = config.split(" ", Qt::SkipEmptyParts);
 
-	foreach (QString name, removed) {
+	Q_FOREACH (QString name, removed) {
 		int cx, cy;
 		if (getXY(cx, cy, name)) {
 			StripConnector * sc = getStripConnector(cx, cy);
@@ -489,7 +489,7 @@ QString Stripboard::genModuleID(QMap<QString, QString> & currPropsMap)
 void Stripboard::initCutting(Stripbit *)
 {
 	m_beforeCut.clear();
-	foreach (QGraphicsItem * item, childItems()) {
+	Q_FOREACH (QGraphicsItem * item, childItems()) {
 		auto * stripbit = dynamic_cast<Stripbit *>(item);
 		if (stripbit == nullptr) continue;
 
@@ -503,7 +503,7 @@ void Stripboard::initCutting(Stripbit *)
 void appendConnectors(QList<ConnectorItem *> & connectorItems, ConnectorItem * connectorItem) {
 	if (connectorItem == nullptr) return;
 
-	foreach (ConnectorItem * ci, connectorItem->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * ci, connectorItem->connectedToItems()) {
 		connectorItems.append(ci);
 	}
 }
@@ -515,7 +515,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 		QSet<ConnectorItem *> affectedConnectors;
 		int changeCount = 0;
 		bool connect = true;
-		foreach (QGraphicsItem * item, childItems()) {
+		Q_FOREACH (QGraphicsItem * item, childItems()) {
 			auto * stripbit = dynamic_cast<Stripbit *>(item);
 			if (stripbit == nullptr) continue;
 
@@ -538,10 +538,10 @@ void Stripboard::reinitBuses(bool triggerUndo)
 	}
 	if (viewID() != ViewLayer::BreadboardView) return;
 
-	foreach (BusShared * busShared, m_buses) delete busShared;
+	Q_FOREACH (BusShared * busShared, m_buses) delete busShared;
 	m_buses.clear();
 
-	foreach (QGraphicsItem * item, childItems()) {
+	Q_FOREACH (QGraphicsItem * item, childItems()) {
 		auto * stripbit = dynamic_cast<Stripbit *>(item);
 		if (stripbit == nullptr) {
 			auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
@@ -555,7 +555,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 	}
 
 	QString busPropertyString;
-	foreach (QGraphicsItem * item, childItems()) {
+	Q_FOREACH (QGraphicsItem * item, childItems()) {
 		auto * stripbit = dynamic_cast<Stripbit *>(item);
 		if (stripbit == nullptr) continue;
 
@@ -584,7 +584,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 
 
 	QList<ConnectorItem *> visited2;
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		connectorItem->restoreColor(visited2);
 	}
 
@@ -621,7 +621,7 @@ void Stripboard::nextBus(QList<ConnectorItem *> & soFar)
 	if (soFar.count() > 1) {
 		auto * busShared = new BusShared(QString::number(m_buses.count()));
 		m_buses.append(busShared);
-		foreach (ConnectorItem * connectorItem, soFar) {
+		Q_FOREACH (ConnectorItem * connectorItem, soFar) {
 			busShared->addConnectorShared(connectorItem->connector()->connectorShared());
 		}
 	}
@@ -632,7 +632,7 @@ void Stripboard::setProp(const QString & prop, const QString & value)
 {
 	if (prop.compare("buses") == 0) {
 		QStringList removed = value.split(" ", Qt::SkipEmptyParts);
-		foreach (QGraphicsItem * item, childItems()) {
+		Q_FOREACH (QGraphicsItem * item, childItems()) {
 			auto * stripbit = dynamic_cast<Stripbit *>(item);
 			if (stripbit == nullptr) continue;
 
@@ -684,7 +684,7 @@ void Stripboard::makeInitialPath() {
 	ConnectorItem * ciFirst = nullptr;
 	ConnectorItem * ciNextH = nullptr;
 	ConnectorItem * ciNextV = nullptr;
-	foreach (ConnectorItem * ci, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * ci, cachedConnectorItems()) {
 		int cx, cy;
 		getXY(cx, cy, ci->connectorSharedName());
 		if (cy == 0 && cx == 0) {
@@ -692,7 +692,7 @@ void Stripboard::makeInitialPath() {
 			break;
 		}
 	}
-	foreach (ConnectorItem * ci, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * ci, cachedConnectorItems()) {
 		int cx, cy;
 		getXY(cx, cy, ci->connectorSharedName());
 		if (cy == 0 && cx == 1) {
@@ -755,7 +755,7 @@ void Stripboard::swapEntry(const QString & text) {
 
 		QString afterCut;
 		if (text.compare(HorizontalString, Qt::CaseInsensitive) == 0) {
-			foreach (QGraphicsItem * item, childItems()) {
+			Q_FOREACH (QGraphicsItem * item, childItems()) {
 				auto * stripbit = dynamic_cast<Stripbit *>(item);
 				if (stripbit == nullptr) continue;
 
@@ -765,7 +765,7 @@ void Stripboard::swapEntry(const QString & text) {
 			}
 		}
 		else if (text.compare(VerticalString, Qt::CaseInsensitive) == 0) {
-			foreach (QGraphicsItem * item, childItems()) {
+			Q_FOREACH (QGraphicsItem * item, childItems()) {
 				auto * stripbit = dynamic_cast<Stripbit *>(item);
 				if (stripbit == nullptr) continue;
 
@@ -775,7 +775,7 @@ void Stripboard::swapEntry(const QString & text) {
 			}
 		}
 		else if (text.compare(EmptyString, Qt::CaseInsensitive) == 0) {
-			foreach (QGraphicsItem * item, childItems()) {
+			Q_FOREACH (QGraphicsItem * item, childItems()) {
 				auto * stripbit = dynamic_cast<Stripbit *>(item);
 				if (stripbit == nullptr) continue;
 
@@ -817,8 +817,8 @@ void Stripboard::swapEntry(const QString & text) {
 }
 
 void Stripboard::collectTo(QSet<ConnectorItem *> & affectedConnectors) {
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
-		foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 			affectedConnectors.insert(toConnectorItem);
 		}
 	}
@@ -865,7 +865,7 @@ QStringList Stripboard::collectValues(const QString & family, const QString & pr
 	QStringList values = Perfboard::collectValues(family, prop, value);
 
 	if (prop.compare("layout", Qt::CaseInsensitive) == 0) {
-		foreach (StripLayout stripLayout, StripLayouts) {
+		Q_FOREACH (StripLayout stripLayout, StripLayouts) {
 			values.append(stripLayout.name);
 			value = m_layout;
 		}

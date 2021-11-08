@@ -57,7 +57,7 @@ QComboBox * TraceWire::createWidthComboBox(double m, QWidget * parent)
 		Wire::widths.append(m);
 		std::sort(Wire::widths.begin(), Wire::widths.end());
 	}
-	foreach(long widthValue, Wire::widths) {
+	Q_FOREACH(long widthValue, Wire::widths) {
 		QString widthName = Wire::widthTrans.value(widthValue, "");
 		QVariant val((int) widthValue);
 		comboBox->addItem(widthName.isEmpty() ? QString::number(widthValue) : widthName, val);
@@ -161,7 +161,7 @@ bool TraceWire::canSwitchLayers() {
 	QList<ConnectorItem *> ends;
 	collectChained(wires, ends);
 
-	foreach (ConnectorItem * end, ends) {
+	Q_FOREACH (ConnectorItem * end, ends) {
 		if (end->getCrossLayerConnectorItem() == nullptr) return false;
 	}
 

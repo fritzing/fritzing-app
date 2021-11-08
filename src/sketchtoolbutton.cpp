@@ -33,7 +33,7 @@ SketchToolButton::SketchToolButton(const QString &imageName, QWidget *parent, QA
 	: QToolButton(parent)
 {
 	m_imageName = imageName;			// nice to have for debugging
-	setupIcons(imageName);
+	SketchToolButton::setupIcons(imageName);
 
 	//DebugDialog::debug(QString("%1 %2 %3 %4 %5 %6 %7").arg(imageName)
 	//.arg(m_enabledImage.width()).arg(m_enabledImage.height())
@@ -50,7 +50,7 @@ SketchToolButton::SketchToolButton(const QString &imageName, QWidget *parent, QL
 	: QToolButton(parent)
 {
 	m_imageName = imageName;			// nice to have for debugging
-	setupIcons(imageName);
+	SketchToolButton::setupIcons(imageName);
 
 	auto *menu = new QMenu(this);
 	for(int i=0; i < menuActions.size(); i++) {

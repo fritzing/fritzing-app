@@ -76,13 +76,13 @@ ModelPart::~ModelPart() {
 	InstanceTitleIncrementHash * itih = AllInstanceTitleIncrements.value(this);
 	if (itih) {
 		AllInstanceTitleIncrements.remove(this);
-		foreach (ModelPartList * list, itih->values()) {
+		Q_FOREACH (ModelPartList * list, itih->values()) {
 			delete list;
 		}
 		delete itih;
 	}
 
-	foreach (Connector * connector, m_connectorHash.values()) {
+	Q_FOREACH (Connector * connector, m_connectorHash.values()) {
 		delete connector;
 	}
 	m_connectorHash.clear();
@@ -175,7 +175,7 @@ void ModelPart::removeViewItem(ItemBase * item) {
 }
 
 ItemBase * ModelPart::viewItem(QGraphicsScene * scene) {
-	foreach (ItemBase * itemBase, m_viewItems) {
+	Q_FOREACH (ItemBase * itemBase, m_viewItems) {
 		if (itemBase->scene() == scene) return itemBase;
 	}
 
@@ -183,7 +183,7 @@ ItemBase * ModelPart::viewItem(QGraphicsScene * scene) {
 }
 
 ItemBase * ModelPart::viewItem(ViewLayer::ViewID viewID) {
-	foreach (ItemBase * itemBase, m_viewItems) {
+	Q_FOREACH (ItemBase * itemBase, m_viewItems) {
 		if (itemBase->viewID() == viewID) return itemBase;
 	}
 
@@ -209,7 +209,7 @@ void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & strea
 			streamWriter.writeTextElement("title",title);
 		}
 
-		emit startSaveInstances(fileName, this, streamWriter);
+		Q_EMIT startSaveInstances(fileName, this, streamWriter);
 
 		streamWriter.writeStartElement("instances");
 	}
@@ -258,7 +258,7 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 	}
 
 	bool writeLocal = false;
-	foreach (Connector * connector, this->connectors()) {
+	Q_FOREACH (Connector * connector, this->connectors()) {
 		if (!connector->connectorLocalName().isEmpty()) {
 			writeLocal = true;
 			break;
@@ -267,7 +267,7 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 
 	if (writeLocal) {
 		streamWriter.writeStartElement("localConnectors");
-		foreach (Connector * connector, this->connectors()) {
+		Q_FOREACH (Connector * connector, this->connectors()) {
 			if (!connector->connectorLocalName().isEmpty()) {
 				streamWriter.writeStartElement("localConnector");
 				streamWriter.writeAttribute("id", connector->connectorSharedID());
@@ -278,7 +278,7 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 		streamWriter.writeEndElement();
 	}
 
-	foreach (QByteArray byteArray, dynamicPropertyNames()) {
+	Q_FOREACH (QByteArray byteArray, dynamicPropertyNames()) {
 		streamWriter.writeStartElement("property");
 		streamWriter.writeAttribute("name",  byteArray.data());
 		streamWriter.writeAttribute("value", property(byteArray.data()).toString());
@@ -299,7 +299,7 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 
 	// tell the views to write themselves out
 	streamWriter.writeStartElement("views");
-	foreach (ItemBase * itemBase, m_viewItems) {
+	Q_FOREACH (ItemBase * itemBase, m_viewItems) {
 		itemBase->saveInstance(streamWriter);
 	}
 	streamWriter.writeEndElement();		// views
@@ -358,13 +358,13 @@ void ModelPart::saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument) 
 		if (!spice.isEmpty()) {
 			streamWriter.writeStartElement("spice");
 			QStringList lines = spice.split("\r",Qt::SkipEmptyParts);
-			foreach (QString line, lines) {
+			Q_FOREACH (QString line, lines) {
 				writeTag(streamWriter, "line", line);
 			}
 			QString spiceModel = m_modelPartShared->spiceModel();
 			if (!spiceModel.isEmpty()) {
 				lines = spiceModel.split("\r",Qt::SkipEmptyParts);
-				foreach (QString line, lines) {
+				Q_FOREACH (QString line, lines) {
 					writeTag(streamWriter, "model", line);
 				}
 			}
@@ -418,7 +418,7 @@ void ModelPart::initConnectors(bool force) {
 	if(m_modelPartShared == nullptr) return;
 
 	if(force) {
-		foreach (Connector * connector, m_connectorHash.values()) {
+		Q_FOREACH (Connector * connector, m_connectorHash.values()) {
 			// due to craziness in the parts editor
 			// m_deletedConnectors.append(connector);
 			delete connector;
@@ -429,7 +429,7 @@ void ModelPart::initConnectors(bool force) {
 	if(m_connectorHash.count() > 0) return;		// already done
 
 	m_modelPartShared->initConnectors();
-	foreach (ConnectorShared * connectorShared, m_modelPartShared->connectorsShared()) {
+	Q_FOREACH (ConnectorShared * connectorShared, m_modelPartShared->connectorsShared()) {
 		auto * connector = new Connector(connectorShared, this);
 		m_connectorHash.insert(connectorShared->id(), connector);
 	}
@@ -437,14 +437,14 @@ void ModelPart::initConnectors(bool force) {
 }
 
 void ModelPart::clearBuses() {
-	foreach (Bus * bus, m_busHash.values()) {
+	Q_FOREACH (Bus * bus, m_busHash.values()) {
 		delete bus;
 	}
 	m_busHash.clear();
 }
 
 void ModelPart::initBuses() {
-	foreach (Connector * connector, m_connectorHash.values()) {
+	Q_FOREACH (Connector * connector, m_connectorHash.values()) {
 		BusShared * busShared = connector->connectorShared()->bus();
 		if (busShared != nullptr) {
 			Bus * bus = m_busHash.value(busShared->id());
@@ -713,7 +713,7 @@ QList<ModelPart*> ModelPart::getAllNonCoreParts() {
 }
 
 bool ModelPart::hasViewID(long id) {
-	foreach (ItemBase * item, m_viewItems) {
+	Q_FOREACH (ItemBase * item, m_viewItems) {
 		if (item->id() == id) return true;
 	}
 
@@ -804,7 +804,7 @@ void ModelPart::setInstanceTitle(QString title, bool initial) {
 		if (m_viewItems.count() > 0) {
 			ItemBase * itemBase = m_viewItems.last();
 			if (itemBase) {
-				foreach (ItemBase * subpart, itemBase->subparts()) {
+				Q_FOREACH (ItemBase * subpart, itemBase->subparts()) {
 					subpart->setInstanceTitle("", true);   // will end up calling setSubpartInstanceTitle()
 				}
 			}
@@ -842,7 +842,7 @@ QString ModelPart::getNextTitle(const QString & title) {
 	}
 	else {
 		bool allDigits = true;
-		foreach (QChar c, title) {
+		Q_FOREACH (QChar c, title) {
 			if (!c.isDigit()) {
 				allDigits = false;
 				break;
@@ -857,7 +857,7 @@ QString ModelPart::getNextTitle(const QString & title) {
 	ModelPartList * modelParts = ensureInstanceTitleIncrements(prefix);
 	int highestSoFar = 0;
 	bool gotNull = false;
-	foreach (ModelPart * modelPart, *modelParts) {
+	Q_FOREACH (ModelPart * modelPart, *modelParts) {
 		if (modelPart == nullptr) {
 			gotNull = true;
 			continue;
@@ -1059,7 +1059,7 @@ bool ModelPart::hasZeroConnector() {
 }
 
 void ModelPart::killViewItems() {
-	foreach (ItemBase * itemBase, m_viewItems) {
+	Q_FOREACH (ItemBase * itemBase, m_viewItems) {
 		if (itemBase) delete itemBase;
 	}
 

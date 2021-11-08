@@ -157,7 +157,7 @@ void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLaye
 	viewGeometry.setZ(-1);
 
 
-	foreach (ViewLayer::ViewLayerID viewLayerID, viewLayers.keys()) {
+	Q_FOREACH (ViewLayer::ViewLayerID viewLayerID, viewLayers.keys()) {
 		if (viewLayerID == m_viewLayerID) continue;
 		if (!m_modelPart->hasViewFor(m_viewID, viewLayerID)) continue;
 
@@ -232,7 +232,7 @@ void PaletteItem::removeLayerKin() {
 void PaletteItem::syncKinSelection(bool selected, PaletteItemBase * originator) {
 	PaletteItemBase::syncKinSelection(selected, originator);
 
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		if (lkpi != originator && lkpi->isSelected() != selected) {
 			qobject_cast<LayerKinPaletteItem *>(lkpi)->blockItemSelectedChange(selected);
 			lkpi->setSelected(selected);
@@ -293,14 +293,14 @@ void PaletteItem::rotateItem(double degrees, bool includeRatsnest) {
 
 void PaletteItem::flipItem(Qt::Orientations orientation) {
 	PaletteItemBase::flipItem(orientation);
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		lkpi->flipItem(orientation);
 	}
 }
 
 void PaletteItem::transformItem2(const QTransform & matrix) {
 	PaletteItemBase::transformItem2(matrix);
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		lkpi->transformItem2(matrix);
 	}
 }
@@ -340,14 +340,14 @@ void PaletteItem::setItemPos(QPointF & loc) {
 
 void PaletteItem::updateConnections(bool includeRatsnest, QList<ConnectorItem *> & already) {
 	updateConnectionsAux(includeRatsnest, already);
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		lkpi->updateConnectionsAux(includeRatsnest, already);
 	}
 }
 
 bool PaletteItem::collectFemaleConnectees(QSet<ItemBase *> & items) {
 	bool hasMale = PaletteItemBase::collectFemaleConnectees(items);
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		if (lkpi->collectFemaleConnectees(items)) {
 			hasMale = true;
 		}
@@ -357,7 +357,7 @@ bool PaletteItem::collectFemaleConnectees(QSet<ItemBase *> & items) {
 
 void PaletteItem::collectWireConnectees(QSet<Wire *> & wires) {
 	PaletteItemBase::collectWireConnectees(wires);
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		qobject_cast<LayerKinPaletteItem *>(lkpi)->collectWireConnectees(wires);
 	}
 }
@@ -394,7 +394,7 @@ void PaletteItem::syncKinMoved(QPointF offset, QPointF newPos) {
 	//m_syncMoved = pos - offset;
 	//if (newPos != pos()) {
 	setPos(newPos);
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		lkpi->setPos(newPos);
 	}
 	//}
@@ -402,7 +402,7 @@ void PaletteItem::syncKinMoved(QPointF offset, QPointF newPos) {
 
 void PaletteItem::setInstanceTitle(const QString& title, bool initial) {
 	ItemBase::setInstanceTitle(title, initial);
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		lkpi->setInstanceTitle(title, initial);
 	}
 }
@@ -420,14 +420,14 @@ void PaletteItem::setInactive(bool inactivate) {
 void PaletteItem::figureHover() {
 	setAcceptHoverEvents(true);
 	setAcceptedMouseButtons(ALLMOUSEBUTTONS);
-	foreach(ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH(ItemBase * lkpi, m_layerKin) {
 		lkpi->setAcceptHoverEvents(true);
 		lkpi->setAcceptedMouseButtons(ALLMOUSEBUTTONS);
 	}
 }
 
 void PaletteItem::clearModelPart() {
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		lkpi->setModelPart(nullptr);
 	}
 	ItemBase::clearModelPart();
@@ -435,20 +435,20 @@ void PaletteItem::clearModelPart() {
 
 void PaletteItem::resetID() {
 	ItemBase::resetID();
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		lkpi->resetID();
 	}
 }
 
 void PaletteItem::slamZ(double z) {
 	PaletteItemBase::slamZ(z);
-	foreach (ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 		lkpi->slamZ(z);
 	}
 }
 
 void PaletteItem::resetImage(InfoGraphicsView * infoGraphicsView) {
-	foreach (Connector * connector, modelPart()->connectors()) {
+	Q_FOREACH (Connector * connector, modelPart()->connectors()) {
 		connector->unprocess(this->viewID(), this->viewLayerID());
 	}
 
@@ -456,14 +456,14 @@ void PaletteItem::resetImage(InfoGraphicsView * infoGraphicsView) {
 	initLayerAttributes(layerAttributes, viewID(), viewLayerID(), viewLayerPlacement(), true, !m_selectionShape.isEmpty());
 	this->setUpImage(modelPart(), infoGraphicsView->viewLayers(), layerAttributes);
 
-	foreach (ItemBase * layerKin, m_layerKin) {
+	Q_FOREACH (ItemBase * layerKin, m_layerKin) {
 		resetKinImage(layerKin, infoGraphicsView);
 	}
 }
 
 void PaletteItem::resetKinImage(ItemBase * layerKin, InfoGraphicsView * infoGraphicsView)
 {
-	foreach (Connector * connector, modelPart()->connectors()) {
+	Q_FOREACH (Connector * connector, modelPart()->connectors()) {
 		connector->unprocess(layerKin->viewID(), layerKin->viewLayerID());
 	}
 	LayerAttributes layerAttributes;
@@ -495,7 +495,7 @@ QString PaletteItem::genFZP(const QString & moduleid, const QString & templateNa
 
 	QStringList ss = moduleid.split("_");
 	int count = 0;
-	foreach (QString s, ss) {
+	Q_FOREACH (QString s, ss) {
 		bool ok;
 		int c = s.toInt(&ok);
 		if (ok) {
@@ -613,7 +613,7 @@ void PaletteItem::openPinLabelDialog() {
 		return;
 	}
 
-	foreach (Connector * connector, sortedConnectors) {
+	Q_FOREACH (Connector * connector, sortedConnectors) {
 		labels.append(connector->connectorSharedName());
 	}
 
@@ -682,7 +682,7 @@ bool PaletteItem::isSingleRow(const QList<ConnectorItem *> & connectorItems) {
 
 QList<Connector *> PaletteItem::sortConnectors() {
 	QList<Connector *> sortedConnectors;
-	foreach (Connector * connector, modelPart()->connectors().values()) {
+	Q_FOREACH (Connector * connector, modelPart()->connectors().values()) {
 		sortedConnectors.append(connector);
 	}
 	ByIDParseSuccessful = true;
@@ -708,7 +708,7 @@ QStringList PaletteItem::getPinLabels(bool & hasLocal) {
 	QList<Connector *> sortedConnectors = sortConnectors();
 	if (sortedConnectors.count() == 0) return labels;
 
-	foreach (Connector * connector, sortedConnectors) {
+	Q_FOREACH (Connector * connector, sortedConnectors) {
 		labels.append(connector->connectorSharedName());
 		if (!connector->connectorLocalName().isEmpty()) {
 			hasLocal = true;
@@ -726,7 +726,7 @@ void PaletteItem::resetConnectors() {
 
 	QSizeF size = renderer->defaultSizeF();   // pixels
 	QRectF viewBox = renderer->viewBoxF();
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(m_viewID, m_viewLayerID);
 		if (svgIdLayer == nullptr) continue;
 
@@ -742,7 +742,7 @@ void PaletteItem::resetConnectors() {
 void PaletteItem::resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLayerRenderer)
 {
 	// there's only one connector
-	foreach (Connector * connector, m_modelPart->connectors().values()) {
+	Q_FOREACH (Connector * connector, m_modelPart->connectors().values()) {
 		if (connector == nullptr) continue;
 
 		connector->unprocess(m_viewID, m_viewLayerID);
@@ -756,7 +756,7 @@ void PaletteItem::resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLay
 	}
 
 	if (otherLayer) {
-		foreach (Connector * connector, m_modelPart->connectors().values()) {
+		Q_FOREACH (Connector * connector, m_modelPart->connectors().values()) {
 			if (connector == nullptr) continue;
 
 			connector->unprocess(m_viewID, otherLayer->viewLayerID());
@@ -776,7 +776,7 @@ void PaletteItem::resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLay
 void PaletteItem::resetConnector(ItemBase * itemBase, SvgIdLayer * svgIdLayer)
 {
 	QList<ConnectorItem *> already;
-	foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
 		//DebugDialog::debug(QString("via set rect %1").arg(itemBase->viewID()), svgIdLayer->m_rect);
 
 		connectorItem->setRect(svgIdLayer->rect(viewLayerPlacement()));
@@ -919,7 +919,7 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 	holeSettings.sizesComboBox = new QComboBox(frame);
 	holeSettings.sizesComboBox->setEditable(false);
 	holeSettings.sizesComboBox->setObjectName("infoViewComboBox");
-	foreach (QString key, holeSettings.holeThing->holeSizeKeys) {
+	Q_FOREACH (QString key, holeSettings.holeThing->holeSizeKeys) {
 		holeSettings.sizesComboBox->addItem(key);
 	}
 	holeSettings.sizesComboBox->setEnabled(swappingEnabled);
@@ -1521,7 +1521,7 @@ QStringList PaletteItem::sipOrDipOrLabels(bool & hasLayout, bool & sip) {
 
 	// part was formerly a mystery part or generic ic ...
 	QHash<QString, QString> properties = modelPart()->properties();
-	foreach (QString key, properties.keys()) {
+	Q_FOREACH (QString key, properties.keys()) {
 		QString value = properties.value(key);
 		if (key.compare("layout", Qt::CaseInsensitive) == 0) {
 			// was a mystery part
@@ -1543,7 +1543,7 @@ void PaletteItem::resetLayerKin(const QString & svg) {
 
 	resetRenderer(svgNoText);
 
-	foreach (ItemBase * lkpi, layerKin()) {
+	Q_FOREACH (ItemBase * lkpi, layerKin()) {
 		if (lkpi->viewLayerID() == ViewLayer::SchematicText) {
 			bool hasText;
 			QString svgText = SvgFileSplitter::showText3(svg, hasText);
@@ -1563,7 +1563,7 @@ QTransform PaletteItem::untransform() {
 	if (!identity) {
 		QTransform invert = chiefTransform.inverted();
 		transformItem(invert, false);
-		foreach (ItemBase * lkpi, layerKin()) {
+		Q_FOREACH (ItemBase * lkpi, layerKin()) {
 			lkpi->transformItem(invert, false);
 		}
 	}
@@ -1575,7 +1575,7 @@ void PaletteItem::retransform(const QTransform & chiefTransform) {
 	//DebugDialog::debug("retransform");
 	if (!chiefTransform.isIdentity()) {
 		transformItem(chiefTransform, false);
-		foreach (ItemBase * lkpi, layerKin()) {
+		Q_FOREACH (ItemBase * lkpi, layerKin()) {
 			lkpi->transformItem(chiefTransform, false);
 		}
 	}

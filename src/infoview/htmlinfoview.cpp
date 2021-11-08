@@ -791,7 +791,7 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 	bool sl = false;
 	if (keys.contains("layer")) {
 		keys.removeOne("layer");
-		sl = (itemBase->viewID() == ViewLayer::PCBView);
+		if (itemBase) sl = (itemBase->viewID() == ViewLayer::PCBView);
 	}
 
 	showLayers(sl, itemBase, family, properties.value("layer", ""), swappingEnabled);

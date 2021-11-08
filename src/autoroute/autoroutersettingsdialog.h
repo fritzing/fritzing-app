@@ -40,7 +40,7 @@ public:
 
 	QHash<QString, QString> getSettings();
 
-protected slots:
+protected Q_SLOTS:
 	void production(bool);
 	void widthEntry(int index);
 	void changeUnits(bool);

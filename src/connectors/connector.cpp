@@ -43,7 +43,7 @@ Connector::Connector( ConnectorShared * connectorShared, ModelPart * modelPart)
 
 Connector::~Connector() {
 	//DebugDialog::debug(QString("deleting connector %1 %2").arg((long) this, 0, 16).arg(connectorSharedID()));
-	foreach (ConnectorItem * connectorItem, m_connectorItems.values()) {
+	Q_FOREACH (ConnectorItem * connectorItem, m_connectorItems.values()) {
 		connectorItem->clearConnector();
 	}
 }
@@ -127,9 +127,9 @@ void Connector::saveAsPart(QXmlStreamWriter & writer) {
 	writer.writeTextElement("replacedby", connectorShared()->replacedby());
 	writer.writeStartElement("views");
 	QMultiHash<ViewLayer::ViewID,SvgIdLayer *> pins = m_connectorShared->pins();
-	foreach (ViewLayer::ViewID currView, pins.uniqueKeys()) {
+	Q_FOREACH (ViewLayer::ViewID currView, pins.uniqueKeys()) {
 		writer.writeStartElement(ViewLayer::viewIDXmlName(currView));
-		foreach (SvgIdLayer * svgIdLayer, pins.values(currView)) {
+		Q_FOREACH (SvgIdLayer * svgIdLayer, pins.values(currView)) {
 			writer.writeStartElement("p");
 			writeLayerAttr(writer, svgIdLayer->m_svgViewLayerID);
 			writeSvgIdAttr(writer, currView, svgIdLayer->m_svgId);
@@ -170,7 +170,7 @@ ConnectorItem * Connector::connectorItemByViewLayerID(ViewLayer::ViewID viewID, 
 }
 
 ConnectorItem * Connector::connectorItem(ViewLayer::ViewID viewID) {
-	foreach (ConnectorItem * connectorItem, m_connectorItems.values()) {
+	Q_FOREACH (ConnectorItem * connectorItem, m_connectorItems.values()) {
 		if (connectorItem->attachedToViewID() == viewID) return connectorItem;
 	}
 

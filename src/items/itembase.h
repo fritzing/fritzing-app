@@ -315,7 +315,7 @@ public:
 	virtual void setInstanceTitle(const QString &title, bool initial);
 	void updatePartLabelInstanceTitle();
 
-public slots:
+public Q_SLOTS:
 	void showPartLabel(bool show, ViewLayer *);
 	void hidePartLabel();
 	void partLabelChanged(const QString &newText);

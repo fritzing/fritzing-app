@@ -49,7 +49,7 @@ public:
 	void addedToScene(bool temporary);
 	bool changePinLabels(bool singleRow, bool sip);
 
-public slots:
+public Q_SLOTS:
 	void chipLabelEntry();
 	void swapEntry(const QString & text);
 

@@ -290,7 +290,7 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 			QString svg;
 			QList<bool> flips;
 			flips << false << true;
-			foreach (bool flip, flips) {
+			Q_FOREACH (bool flip, flips) {
 				QString mirror = flip ? "_mirror" : "";
 				QPrinter printer(QPrinter::HighResolution);
 				printer.setOutputFormat(filePrintFormats[fileExt]);
@@ -441,12 +441,12 @@ QString MainWindow::getBoardSvg(ItemBase * board, int res,  LayerList & viewLaye
 	board = board->layerKinChief();
 	QList<ItemBase *> boardLayers;
 	boardLayers << board;
-	foreach (ItemBase * lk, board->layerKin()) {
+	Q_FOREACH (ItemBase * lk, board->layerKin()) {
 		boardLayers << lk;
 	}
 
 	bool gotOne = false;
-	foreach (ItemBase * boardLayer, boardLayers) {
+	Q_FOREACH (ItemBase * boardLayer, boardLayers) {
 		if (viewLayerIDs.contains(boardLayer->viewLayerID())) {
 			gotOne = true;
 			break;
@@ -458,7 +458,7 @@ QString MainWindow::getBoardSvg(ItemBase * board, int res,  LayerList & viewLaye
 	m_pcbGraphicsView->setIgnoreSelectionChangeEvents(true);
 
 	QList<QGraphicsItem *> items = m_pcbGraphicsView->scene()->selectedItems();
-	foreach (QGraphicsItem * item, items) {
+	Q_FOREACH (QGraphicsItem * item, items) {
 		item->setSelected(false);
 	}
 	board->setSelected(true);
@@ -471,7 +471,7 @@ QString MainWindow::getBoardSvg(ItemBase * board, int res,  LayerList & viewLaye
 	renderThing.renderBlocker = false;
 	QString svg = m_pcbGraphicsView->renderToSVG(renderThing, board, viewLayerIDs);
 	board->setSelected(false);
-	foreach (QGraphicsItem * item, items) {
+	Q_FOREACH (QGraphicsItem * item, items) {
 		item->setSelected(true);
 	}
 
@@ -716,12 +716,12 @@ QRectF MainWindow::prepareExport(bool removeBackground)
 {
 	//Deselect all the items that are selected before creating the image
 	m_selectedItems = m_currentGraphicsView->scene()->selectedItems();
-	foreach(QGraphicsItem *item, m_selectedItems) {
+	Q_FOREACH(QGraphicsItem *item, m_selectedItems) {
 		item->setSelected(false);
 	}
 
 	QRectF itemsBoundingRect;
-	foreach(QGraphicsItem *item,  m_currentGraphicsView->scene()->items()) {
+	Q_FOREACH(QGraphicsItem *item,  m_currentGraphicsView->scene()->items()) {
 		if (!item->isVisible()) continue;
 
 		item->update();
@@ -752,7 +752,7 @@ QRectF MainWindow::prepareExport(bool removeBackground)
 
 void MainWindow::afterExport(bool removeBackground)
 {
-	foreach(QGraphicsItem *item, m_selectedItems) {
+	Q_FOREACH(QGraphicsItem *item, m_selectedItems) {
 		item->setSelected(true);
 	}
 
@@ -814,7 +814,7 @@ void MainWindow::saveAsAuxAux(const QString & fileName) {
 	QDir dir(this->m_fzzFolder);
 	QStringList nameFilters("*" + FritzingSketchExtension);
 	QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	foreach (QFileInfo fileInfo, fileList) {
+	Q_FOREACH (QFileInfo fileInfo, fileList) {
 		QFile file(fileInfo.absoluteFilePath());
 		file.remove();
 	}
@@ -836,7 +836,7 @@ void MainWindow::saveAsShareable(const QString & path, bool saveModel)
 {
 	QString filename = path;
 	QHash<QString, ModelPart *> saveParts;
-	foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, m_pcbGraphicsView->scene()->items()) {
 		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 		if (itemBase->modelPart() == nullptr) {
@@ -916,7 +916,7 @@ void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 		filename = prevFileName;
 	}
 
-	foreach(ModelPart* mp, partsToSave) {
+	Q_FOREACH(ModelPart* mp, partsToSave) {
 		names.append(saveBundledAux(mp, destFolder));
 	}
 
@@ -925,7 +925,7 @@ void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 		nameFilters << ("*" + FritzingPartExtension) << "*.svg";
 		QDir dir(destFolder);
 		QStringList fileList = dir.entryList(nameFilters, QDir::Files | QDir::NoSymLinks);
-		foreach (QString fileName, fileList) {
+		Q_FOREACH (QString fileName, fileList) {
 			if (!names.contains(fileName)) {
 				QFile::remove(dir.absoluteFilePath(fileName));
 			}
@@ -1120,7 +1120,7 @@ void MainWindow::exportSvg(double res, bool selectedItems, bool flatten, const Q
 {
 	FileProgressDialog * fileProgressDialog = exportProgress();
 	LayerList viewLayerIDs;
-	foreach (ViewLayer * viewLayer, m_currentGraphicsView->viewLayers()) {
+	Q_FOREACH (ViewLayer * viewLayer, m_currentGraphicsView->viewLayers()) {
 		if (viewLayer == nullptr) continue;
 		if (!viewLayer->visible()) continue;
 
@@ -1211,7 +1211,7 @@ void MainWindow::exportBOM() {
 
 	std::sort(partList.begin(), partList.end(), sortPartList);
 
-	foreach (ItemBase * itemBase, partList) {
+	Q_FOREACH (ItemBase * itemBase, partList) {
 		if (itemBase->itemType() != ModelPart::Part) continue;
 		QStringList keys;
 		QHash<QString, QString> properties = HtmlInfoView::getPartProperties(itemBase->modelPart(), itemBase, false, keys);
@@ -1223,7 +1223,7 @@ void MainWindow::exportBOM() {
 	}
 
 	QString assemblyString;
-	foreach (ItemBase * itemBase, partList) {
+	Q_FOREACH (ItemBase * itemBase, partList) {
 		if (itemBase->itemType() != ModelPart::Part) continue;
 		QStringList keys;
 		QHash<QString, QString> properties = HtmlInfoView::getPartProperties(itemBase->modelPart(), itemBase, false, keys);
@@ -1231,7 +1231,7 @@ void MainWindow::exportBOM() {
 	}
 
 	QString shoppingListString;
-	foreach (QString descr, descrList) {
+	Q_FOREACH (QString descr, descrList) {
 		QList<ItemBase *> itemBases = descrs.values(descr);
 		QStringList split = descr.split("%%%%%");
 		shoppingListString += bomRowTemplate.arg(itemBases.count()).arg(split.at(0)).arg(split.at(1)).arg(split.at(2)).arg(split.at(3));
@@ -1361,10 +1361,10 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 	//DebugDialog::debug("_______________");
 
 	QList<ConnectorItem *> * ground = nullptr;
-	foreach (QList<ConnectorItem *> * net, netList) {
+	Q_FOREACH (QList<ConnectorItem *> * net, netList) {
 		if (net->count() < 2) continue;
 
-		foreach (ConnectorItem * ci, *net) {
+		Q_FOREACH (ConnectorItem * ci, *net) {
 			//ci->debugInfo("net");
 			if (ci->isGrounded()) {
 				ground = net;
@@ -1405,10 +1405,10 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 		}
 	}
 
-	foreach (QList<ConnectorItem *> * net, netList) {
+	Q_FOREACH (QList<ConnectorItem *> * net, netList) {
 		if (net->count() < 2) continue;
 
-		foreach (ConnectorItem * ci, *net) {
+		Q_FOREACH (ConnectorItem * ci, *net) {
 			ci->debugInfo("net");
 		}
 		DebugDialog::debug("_______________");
@@ -1417,7 +1417,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 	//DebugDialog::debug("_______________");
 	//DebugDialog::debug("_______________");
 
-	foreach (ItemBase * itemBase, itemBases) {
+	Q_FOREACH (ItemBase * itemBase, itemBases) {
 		QString spice = itemBase->spice();
 		if (spice.isEmpty()) continue;
 		int pos = 0;
@@ -1438,10 +1438,10 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 			}
 			else if (token.startsWith("net ")) {
 				QString cname = token.mid(4).trimmed();
-				foreach (ConnectorItem * ci, itemBase->cachedConnectorItems()) {
+				Q_FOREACH (ConnectorItem * ci, itemBase->cachedConnectorItems()) {
 					if (ci->connectorSharedID().toLower() == cname) {
 						int ix = -1;
-						foreach (QList<ConnectorItem *> * net, netList) {
+						Q_FOREACH (QList<ConnectorItem *> * net, netList) {
 							ix++;
 							if (net->contains(ci)) break;
 						}
@@ -1496,7 +1496,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 
 	// remove redundant models
 	QStringList models;
-	foreach (ItemBase * itemBase, itemBases) {
+	Q_FOREACH (ItemBase * itemBase, itemBases) {
 		QString spiceModel = itemBase->spiceModel();
 		if (spiceModel.isEmpty()) continue;
 		if (models.contains(spiceModel, Qt::CaseInsensitive)) continue;
@@ -1504,7 +1504,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 		models.append(spiceModel);
 	}
 
-	foreach (QString model, models) {
+	Q_FOREACH (QString model, models) {
 		output += model;
 		output += "\n";
 	}
@@ -1517,7 +1517,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 		paths << QDir(FolderUtils::getUserPartsPath());
 
 		QString output2;
-		foreach (QString line, lines) {
+		Q_FOREACH (QString line, lines) {
 			int ix = line.toLower().indexOf(incl);
 			if (ix < 0) {
 				output2 += line + "\n";
@@ -1529,8 +1529,8 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 			QString filename = temp.trimmed();
 
 			bool gotOne = false;
-			foreach (QDir dir, paths) {
-				foreach (QString folder, ModelPart::possibleFolders()) {
+			Q_FOREACH (QDir dir, paths) {
+				Q_FOREACH (QString folder, ModelPart::possibleFolders()) {
 					QDir sub(dir);
 					sub.cd(folder);
 					sub.cd("spicemodels");
@@ -1581,9 +1581,9 @@ void MainWindow::exportNetlist() {
 	// TODO: filter out 'ignore' connectors
 
 	QList< QList<ConnectorItem *>* > deleteNets;
-	foreach (QList<ConnectorItem *> * net, netList) {
+	Q_FOREACH (QList<ConnectorItem *> * net, netList) {
 		QList<ConnectorItem *> deleteItems;
-		foreach (ConnectorItem * connectorItem, *net) {
+		Q_FOREACH (ConnectorItem * connectorItem, *net) {
 			ErcData * ercData = connectorItem->connectorSharedErcData();
 			if (ercData == nullptr) continue;
 
@@ -1595,7 +1595,7 @@ void MainWindow::exportNetlist() {
 			}
 		}
 
-		foreach (ConnectorItem * connectorItem, deleteItems) {
+		Q_FOREACH (ConnectorItem * connectorItem, deleteItems) {
 			net->removeOne(connectorItem);
 		}
 		if (net->count() == 0) {
@@ -1603,14 +1603,14 @@ void MainWindow::exportNetlist() {
 		}
 	}
 
-	foreach (QList<ConnectorItem *> * net, deleteNets) {
+	Q_FOREACH (QList<ConnectorItem *> * net, deleteNets) {
 		netList.removeOne(net);
 	}
 
-	foreach (QList<ConnectorItem *> * net, netList) {
+	Q_FOREACH (QList<ConnectorItem *> * net, netList) {
 		QDomElement netElement = doc.createElement("net");
 		netlist.appendChild(netElement);
-		foreach (ConnectorItem * connectorItem, *net) {
+		Q_FOREACH (ConnectorItem * connectorItem, *net) {
 			QDomElement connector = doc.createElement("connector");
 			netElement.appendChild(connector);
 			connector.setAttribute("id", connectorItem->connectorSharedID());
@@ -1631,7 +1631,7 @@ void MainWindow::exportNetlist() {
 		}
 	}
 
-	foreach (QList<ConnectorItem *> * net, netList) {
+	Q_FOREACH (QList<ConnectorItem *> * net, netList) {
 		delete net;
 	}
 	netList.clear();
@@ -1691,7 +1691,7 @@ QString MainWindow::getBomProps(ItemBase * itemBase)
 	QStringList keys;
 	QHash<QString, QString> properties = HtmlInfoView::getPartProperties(itemBase->modelPart(), itemBase, false, keys);
 	QString pString;
-	foreach (QString key, keys) {
+	Q_FOREACH (QString key, keys) {
 		if (key.compare("family") == 0) continue;
 
 		QString value = properties.value(key);
@@ -1796,7 +1796,7 @@ void MainWindow::dumpAllParts() {
 	if (m_currentGraphicsView == nullptr) return;
 
 	QList<ItemBase *> already;
-	foreach (QGraphicsItem * item, m_currentGraphicsView->items()) {
+	Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->items()) {
 		auto * ib = dynamic_cast<ItemBase *>(item);
 		if (ib == nullptr) continue;
 
@@ -1808,12 +1808,12 @@ void MainWindow::dumpAllParts() {
 		QList<ItemBase *> itemBases;
 		itemBases << chief;
 		itemBases.append(chief->layerKin());
-		foreach (ItemBase * itemBase, itemBases) {
+		Q_FOREACH (ItemBase * itemBase, itemBases) {
 			itemBase->debugInfo("");
-			foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
+			Q_FOREACH (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
 				if (connectorItem->connectionsCount() > 0) {
 					connectorItem->debugInfo("\t");
-					foreach (ConnectorItem * to, connectorItem->connectedToItems()) {
+					Q_FOREACH (ConnectorItem * to, connectorItem->connectedToItems()) {
 						to->debugInfo("\t\t");
 					}
 				}

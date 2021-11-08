@@ -150,7 +150,7 @@ void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const Ba
 	QString cmdString;
 	QString indexString;
 	if (bcmd == nullptr) {
-		cmdString = cmd->text();
+		if (cmd) cmdString = cmd->text();
 	}
 	else {
 		cmdString = bcmd->getDebugString();

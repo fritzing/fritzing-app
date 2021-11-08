@@ -106,7 +106,7 @@ protected:
 	void initLocalProperty(const QString & propertyName, ModelPart * modelPart);
 	void setLocalProp(const QString & prop, const QString & value, const QString & propertyName);
 
-protected slots:
+protected Q_SLOTS:
 	void partPropertyEntry();
 
 protected:

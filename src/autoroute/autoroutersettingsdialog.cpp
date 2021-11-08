@@ -170,7 +170,7 @@ bool AutorouterSettingsDialog::initProductionType()
 	custom++;  // assume the holesize/ringthickness won't match
 	double rt = TextUtils::convertToInches(m_holeSettings.ringThickness);
 	double hs = TextUtils::convertToInches(m_holeSettings.holeDiameter);
-	foreach (QString name, m_holeSettings.holeThing->holeSizeKeys) {
+	Q_FOREACH (QString name, m_holeSettings.holeThing->holeSizeKeys) {
 		// have to loop through all values to set up the two buttons
 		QStringList values = m_holeSettings.holeThing->holeSizes.value(name).split(",");
 		QString ringThickness = values[1];

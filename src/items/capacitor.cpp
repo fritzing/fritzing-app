@@ -46,7 +46,7 @@ ItemBase::PluralType Capacitor::isPlural() {
 
 bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
-	foreach (PropertyDef * propertyDef, m_propertyDefs.keys()) {
+	Q_FOREACH (PropertyDef * propertyDef, m_propertyDefs.keys()) {
 		if (prop.compare(propertyDef->name, Qt::CaseInsensitive) == 0) {
 			returnProp = TranslatedPropertyNames.value(prop);
 			if (returnProp.isEmpty()) {
@@ -80,7 +80,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 						propertyDef->menuItems.append(val);
 					}
 				}
-				foreach(double q, propertyDef->menuItems) {
+				Q_FOREACH(double q, propertyDef->menuItems) {
 					QString s = TextUtils::convertToPowerPrefix(q) + propertyDef->symbol;
 					focusOutComboBox->addItem(s);
 				}
@@ -170,7 +170,7 @@ void Capacitor::propertyEntry(int index) {
 	if (focusOutComboBox == nullptr) return;
 	QString text = focusOutComboBox->itemText(index);
 
-	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
+	Q_FOREACH (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {
 			QString utext = text;
 			if (propertyDef->numeric) {
@@ -197,7 +197,7 @@ void Capacitor::propertyEntry(int index) {
 }
 
 void Capacitor::setProp(const QString & prop, const QString & value) {
-	foreach (PropertyDef * propertyDef, m_propertyDefs.keys()) {
+	Q_FOREACH (PropertyDef * propertyDef, m_propertyDefs.keys()) {
 		if (prop.compare(propertyDef->name, Qt::CaseInsensitive) == 0) {
 			m_propertyDefs.insert(propertyDef, value);
 			modelPart()->setLocalProp(propertyDef->name, value);
@@ -215,7 +215,7 @@ void Capacitor::simplePropertyEntry(int index) {
 	if (focusOutComboBox == nullptr) return;
 	QString text = focusOutComboBox->itemText(index);
 
-	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
+	Q_FOREACH (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 			if (infoGraphicsView) {
@@ -227,7 +227,7 @@ void Capacitor::simplePropertyEntry(int index) {
 }
 
 void Capacitor::getProperties(QHash<QString, QString> & hash) {
-	foreach (PropertyDef * propertyDef, m_propertyDefs.keys()) {
+	Q_FOREACH (PropertyDef * propertyDef, m_propertyDefs.keys()) {
 		hash.insert(propertyDef->name, m_propertyDefs.value(propertyDef));
 	}
 }

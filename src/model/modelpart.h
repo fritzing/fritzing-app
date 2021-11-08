@@ -197,7 +197,7 @@ public:
 	static const int indexMultiplier;
 	static const QStringList & possibleFolders();
 
-signals:
+Q_SIGNALS:
 	void startSaveInstances(const QString & fileName, ModelPart *, QXmlStreamWriter &);
 
 protected:

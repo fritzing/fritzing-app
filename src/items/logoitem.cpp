@@ -224,7 +224,7 @@ QStringList LogoItem::collectValues(const QString & family, const QString & prop
 
 	QStringList newValues;
 	if (prop.compare("layer", Qt::CaseInsensitive) == 0) {
-		foreach (QString xmlName, values) {
+		Q_FOREACH (QString xmlName, values) {
 			if (xmlName == ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1) && copperTopOK == false) continue;
 
 			newValues << Board::convertFromXmlName(xmlName);
@@ -411,7 +411,7 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			QDomElement topG = domDocument.createElement("g");
 			topG.setAttribute("id", layerName());
 			root.appendChild(topG);
-			foreach (QDomNode node, rootChildren) {
+			Q_FOREACH (QDomNode node, rootChildren) {
 				topG.appendChild(node);
 			}
 		}
@@ -1074,7 +1074,7 @@ bool BoardLogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayer
 
 void BoardLogoItem::reloadLayerKin(double mmW, double mmH)
 {
-	foreach (ItemBase * itemBase, m_layerKin) {
+	Q_FOREACH (ItemBase * itemBase, m_layerKin) {
 		if (itemBase->viewLayerID() == ViewLayer::Silkscreen1 || itemBase->viewLayerID() == ViewLayer::Silkscreen0) {
 			QString svg = ResizableBoard::getShapeForRenderer(prop("shape"), itemBase->viewLayerID());
 			if (!svg.isEmpty()) {

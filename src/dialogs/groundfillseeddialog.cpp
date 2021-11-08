@@ -64,7 +64,7 @@ GroundFillSeedDialog::GroundFillSeedDialog(PCBSketchWidget * sketchWidget, QList
 
 	m_listWidget = new QListWidget(this);
 	int ix = 0;
-	foreach (ConnectorItem * connectorItem, connectorItems) {
+	Q_FOREACH (ConnectorItem * connectorItem, connectorItems) {
 		auto *item = new QListWidgetItem;
 		item->setData(Qt::DisplayRole, connectorItem->connectorSharedName());
 		item->setData(Qt::CheckStateRole, connectorItem->isGroundFillSeed() ? Qt::Checked : Qt::Unchecked);
@@ -145,7 +145,7 @@ void GroundFillSeedDialog::showEqualPotential(ConnectorItem * connectorItem, boo
 		connectorItems.append(connectorItem);
 		ConnectorItem::collectEqualPotential(connectorItems, true, ViewGeometry::NoFlag);
 		QList<ConnectorItem *> visited;
-		foreach (ConnectorItem * ci, connectorItems) {
+		Q_FOREACH (ConnectorItem * ci, connectorItems) {
 			ci->showEqualPotential(show, visited);
 		}
 	}

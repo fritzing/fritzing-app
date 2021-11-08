@@ -163,7 +163,7 @@ public:
 	QRectF connector1Rect(const QLineF & line);
 	void colorByLength(bool);
 
-protected slots:
+protected Q_SLOTS:
 	void colorEntry(int index);
 	void setBandedProp(bool);
 
@@ -255,7 +255,7 @@ public:
 	static QList<int> widths;
 	static QList<QColor> lengthColorTrans;
 
-signals:
+Q_SIGNALS:
 	void wireChangedSignal(Wire* me, const QLineF & oldLine, const QLineF & newLine, QPointF oldPos, QPointF newPos, ConnectorItem * from, ConnectorItem * to);
 	void wireChangedCurveSignal(Wire* me, const Bezier * oldB, const Bezier * newB, bool triggerFirstTime);
 	void wireSplitSignal(Wire* me, QPointF newPos, QPointF oldPos, const QLineF & oldLine);

@@ -20,7 +20,7 @@ public:
 							 QWidget *parent = nullptr);
 	~FabUploadDialog();
 
-private slots:
+private Q_SLOTS:
 	void onUploadStarted();
 	void onUploadReady();
 

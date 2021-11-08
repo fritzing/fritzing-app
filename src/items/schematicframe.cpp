@@ -69,7 +69,7 @@ SchematicFrame::SchematicFrame( ModelPart * modelPart, ViewLayer::ViewID viewID,
 		FrameProps.insert("rev", tr("Rev"));
 	}
 
-	foreach (QString prop, FrameProps.keys()) {
+	Q_FOREACH (QString prop, FrameProps.keys()) {
 		if (modelPart->localProp(prop).toString().isEmpty()) {
 			modelPart->setLocalProp(prop, modelPart->properties().value(prop));
 		}
@@ -175,7 +175,7 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 	svg.replace("}", "]");
 	svg = TextUtils::incrementTemplateString(svg, 1, milsH - templateThing.size.height(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	QHash<QString, QString> hash;
-	foreach (QString propp, FrameProps.keys()) {
+	Q_FOREACH (QString propp, FrameProps.keys()) {
 		hash.insert(propp, prop(propp));
 		QString label = FrameProps.value(propp);
 		if (!label.isEmpty()) {

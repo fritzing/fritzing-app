@@ -35,11 +35,11 @@ void CommandProgress::setActive(bool active) {
 }
 
 void CommandProgress::emitUndo() {
-	emit incUndo();
+	Q_EMIT incUndo();
 }
 
 void CommandProgress::emitRedo() {
-	emit incRedo();
+	Q_EMIT incRedo();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -62,7 +62,7 @@ BaseCommand::BaseCommand(BaseCommand::CrossViewType crossViewType, SketchWidget*
 }
 
 BaseCommand::~BaseCommand() {
-	foreach (BaseCommand * baseCommand, m_commands) {
+	Q_FOREACH (BaseCommand * baseCommand, m_commands) {
 		delete baseCommand;
 	}
 	m_commands.clear();
@@ -134,7 +134,7 @@ void BaseCommand::subUndo() {
 }
 
 void BaseCommand::subRedo() {
-	foreach (BaseCommand * command, m_commands) {
+	Q_FOREACH (BaseCommand * command, m_commands) {
 		command->redo();
 	}
 }
@@ -384,10 +384,10 @@ MoveItemsCommand::MoveItemsCommand(SketchWidget* sketchWidget, bool updateRatsne
 
 void MoveItemsCommand::undo()
 {
-	foreach(MoveItemThing moveItemThing, m_items) {
+	Q_FOREACH(MoveItemThing moveItemThing, m_items) {
 		m_sketchWidget->moveItem(moveItemThing.id, moveItemThing.oldPos, m_updateRatsnest);
 	}
-	foreach (long id, m_wires.keys()) {
+	Q_FOREACH (long id, m_wires.keys()) {
 		m_sketchWidget->updateWire(id, m_wires.value(id), m_updateRatsnest);
 	}
 	SimulationCommand::undo();
@@ -395,10 +395,10 @@ void MoveItemsCommand::undo()
 
 void MoveItemsCommand::redo()
 {
-	foreach(MoveItemThing moveItemThing, m_items) {
+	Q_FOREACH(MoveItemThing moveItemThing, m_items) {
 		m_sketchWidget->moveItem(moveItemThing.id, moveItemThing.newPos, m_updateRatsnest);
 	}
-	foreach (long id, m_wires.keys()) {
+	Q_FOREACH (long id, m_wires.keys()) {
 		m_sketchWidget->updateWire(id, m_wires.value(id), m_updateRatsnest);
 	}
 	SimulationCommand::redo();
@@ -697,10 +697,10 @@ QString ChangeLegCommand::getParamString() const {
 
 	QString oldLeg;
 	QString newLeg;
-	foreach (QPointF p, m_oldLeg) {
+	Q_FOREACH (QPointF p, m_oldLeg) {
 		oldLeg += QString("(%1,%2)").arg(p.x()).arg(p.y());
 	}
-	foreach (QPointF p, m_newLeg) {
+	Q_FOREACH (QPointF p, m_newLeg) {
 		newLeg += QString("(%1,%2)").arg(p.x()).arg(p.y());
 	}
 	return QString("ChangeLegCommand ")
@@ -914,7 +914,7 @@ void RotateLegCommand::redo()
 QString RotateLegCommand::getParamString() const {
 
 	QString oldLeg;
-	foreach (QPointF p, m_oldLeg) {
+	Q_FOREACH (QPointF p, m_oldLeg) {
 		oldLeg += QString("(%1,%2)").arg(p.x()).arg(p.y());
 	}
 	return QString("RotateLegCommand ")
@@ -1091,7 +1091,7 @@ ChangeZCommand::ChangeZCommand(SketchWidget* sketchWidget, QUndoCommand *parent)
 }
 
 ChangeZCommand::~ChangeZCommand() {
-	foreach (RealPair * realpair, m_triplets) {
+	Q_FOREACH (RealPair * realpair, m_triplets) {
 		delete realpair;
 	}
 	m_triplets.clear();
@@ -1138,7 +1138,7 @@ CheckStickyCommand::CheckStickyCommand(SketchWidget* sketchWidget, BaseCommand::
 }
 
 CheckStickyCommand::~CheckStickyCommand() {
-	foreach (StickyThing * stickyThing, m_stickyList) {
+	Q_FOREACH (StickyThing * stickyThing, m_stickyList) {
 		delete stickyThing;
 	}
 
@@ -1149,7 +1149,7 @@ void CheckStickyCommand::undo()
 {
 	if (m_checkType == RedoOnly) return;
 
-	foreach (StickyThing * stickyThing, m_stickyList) {
+	Q_FOREACH (StickyThing * stickyThing, m_stickyList) {
 		if (m_checkType == RemoveOnly) {
 			stickyThing->sketchWidget->stickem(stickyThing->fromID, stickyThing->toID, !stickyThing->stickem);
 		}
@@ -1169,7 +1169,7 @@ void CheckStickyCommand::redo()
 		m_skipFirstRedo = false;
 	}
 	else {
-		foreach (StickyThing * stickyThing, m_stickyList) {
+		Q_FOREACH (StickyThing * stickyThing, m_stickyList) {
 			stickyThing->sketchWidget->stickem(stickyThing->fromID, stickyThing->toID, stickyThing->stickem);
 		}
 	}
@@ -1202,7 +1202,7 @@ CleanUpWiresCommand::CleanUpWiresCommand(SketchWidget* sketchWidget, CleanUpWire
 
 void CleanUpWiresCommand::undo()
 {
-	foreach (RatsnestConnectThing rct, m_ratsnestConnectThings) {
+	Q_FOREACH (RatsnestConnectThing rct, m_ratsnestConnectThings) {
 		m_sketchWidget->ratsnestConnect(rct.id, rct.connectorID, !rct.connect, true);
 	}
 
@@ -1218,7 +1218,7 @@ void CleanUpWiresCommand::undo()
 
 void CleanUpWiresCommand::redo()
 {
-	foreach (RatsnestConnectThing rct, m_ratsnestConnectThings) {
+	Q_FOREACH (RatsnestConnectThing rct, m_ratsnestConnectThings) {
 		m_sketchWidget->ratsnestConnect(rct.id, rct.connectorID, rct.connect, true);
 	}
 
@@ -1275,13 +1275,13 @@ void CleanUpWiresCommand::addTrace(SketchWidget * sketchWidget, Wire * wire)
 	addSubCommand(new WireColorChangeCommand(sketchWidget, wire->id(), wire->colorString(), wire->colorString(), wire->opacity(), wire->opacity(), nullptr));
 	addSubCommand(new WireWidthChangeCommand(sketchWidget, wire->id(), wire->width(), wire->width(), nullptr));
 
-	foreach (ConnectorItem * toConnectorItem, wire->connector0()->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, wire->connector0()->connectedToItems()) {
 		addSubCommand(new ChangeConnectionCommand(sketchWidget, BaseCommand::CrossView, toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
 		              wire->id(), "connector0",
 		              ViewLayer::specFromID(wire->viewLayerID()),
 		              false, nullptr));
 	}
-	foreach (ConnectorItem * toConnectorItem, wire->connector1()->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, wire->connector1()->connectedToItems()) {
 		addSubCommand(new ChangeConnectionCommand(sketchWidget, BaseCommand::CrossView, toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
 		              wire->id(), "connector1",
 		              ViewLayer::specFromID(wire->viewLayerID()),
@@ -1908,7 +1908,7 @@ ShowLabelCommand::ShowLabelCommand(SketchWidget *sketchWidget, QUndoCommand *par
 
 void ShowLabelCommand::undo()
 {
-	foreach (long id, m_idStates.keys()) {
+	Q_FOREACH (long id, m_idStates.keys()) {
 		m_sketchWidget->showPartLabel(id, (m_idStates.value(id) & 2) != 0);
 	}
 	BaseCommand::undo();
@@ -1916,7 +1916,7 @@ void ShowLabelCommand::undo()
 
 void ShowLabelCommand::redo()
 {
-	foreach (long id, m_idStates.keys()) {
+	Q_FOREACH (long id, m_idStates.keys()) {
 		m_sketchWidget->showPartLabel(id, (m_idStates.value(id) & 1) != 0);
 	}
 	BaseCommand::redo();
@@ -2077,7 +2077,7 @@ GroundFillSeedCommand::GroundFillSeedCommand(SketchWidget* sketchWidget, QUndoCo
 
 void GroundFillSeedCommand::undo()
 {
-	foreach(GFSThing gfsThing, m_items) {
+	Q_FOREACH(GFSThing gfsThing, m_items) {
 		m_sketchWidget->setGroundFillSeed(gfsThing.id, gfsThing.connectorID, !gfsThing.seed);
 	}
 	BaseCommand::undo();
@@ -2085,7 +2085,7 @@ void GroundFillSeedCommand::undo()
 
 void GroundFillSeedCommand::redo()
 {
-	foreach(GFSThing gfsThing, m_items) {
+	Q_FOREACH(GFSThing gfsThing, m_items) {
 		m_sketchWidget->setGroundFillSeed(gfsThing.id, gfsThing.connectorID, gfsThing.seed);
 	}
 	BaseCommand::redo();

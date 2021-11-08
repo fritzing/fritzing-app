@@ -621,7 +621,7 @@ void Note::linkDialog() {
 		DebugDialog::debug(html);
 		QList<QDomElement> aElements;
 		findA(root, aElements);
-		foreach (QDomElement a, aElements) {
+		Q_FOREACH (QDomElement a, aElements) {
 			// TODO: if multiple hrefs point to the same url this will only find the first one
 			QString href = a.attribute("href");
 			if (href.isEmpty()) {

@@ -34,14 +34,14 @@ public:
 
 	void saveState();
 
-public slots:
+public Q_SLOTS:
 	void restoreState();
 
 protected:
 	bool event(QEvent *event);
 	void moveEvent(QMoveEvent *);
 
-signals:
+Q_SIGNALS:
 	void dockChangeActivationSignal(bool activate, QWidget * originator);
 	void positionChanged();
 

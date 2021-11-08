@@ -78,7 +78,7 @@ public:
 public:
 	static double DefaultVoltage;
 
-public slots:
+public Q_SLOTS:
 	void voltageEntry(int index);
 	void labelEntry();
 

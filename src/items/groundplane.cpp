@@ -71,7 +71,7 @@ bool GroundPlane::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers
 	bool result = PaletteItem::setUpImage(modelPart, viewLayers, layerAttributes);
 
 	if (layerAttributes.doConnectors) {
-		foreach (ConnectorItem * item, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * item, cachedConnectorItems()) {
 			// there is only one
 			m_connector0 = item;
 			break;

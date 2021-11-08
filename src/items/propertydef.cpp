@@ -93,7 +93,7 @@ void PropertyDefMaster::loadPropertyDefs() {
 }
 
 void PropertyDefMaster::cleanup() {
-	foreach (PropertyDef * propertyDef, PropertyDefs) {
+	Q_FOREACH (PropertyDef * propertyDef, PropertyDefs) {
 		delete propertyDef;
 	}
 
@@ -107,8 +107,8 @@ void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDe
 		loadPropertyDefs();
 	}
 
-	foreach (PropertyDef * propertyDef, PropertyDefs) {
-		foreach (QString suffix, propertyDef->suffixes) {
+	Q_FOREACH (PropertyDef * propertyDef, PropertyDefs) {
+		Q_FOREACH (QString suffix, propertyDef->suffixes) {
 			if (!modelPart->moduleID().endsWith(suffix, Qt::CaseInsensitive)) continue;
 
 			//DebugDialog::debug(QString("%1 %2").arg(suffix).arg(modelPart->moduleID()));

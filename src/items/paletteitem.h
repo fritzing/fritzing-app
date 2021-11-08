@@ -129,10 +129,10 @@ public:
 	static bool changeDiameter(HoleSettings & holeSettings, QObject * sender);
 	static bool changeThickness(HoleSettings & holeSettings, QObject * sender);
 
-signals:
+Q_SIGNALS:
 	void pinLabelSwap(ItemBase *, const QString & moduleID);
 
-protected slots:
+protected Q_SLOTS:
 	void openPinLabelDialog();
 
 protected:
@@ -161,7 +161,7 @@ protected:
 	static QString hackSvgHoleSizeAux(const QString & svg, const QString & expectedFileName);
 	virtual void changeHoleSize(const QString &);
 
-protected slots:
+protected Q_SLOTS:
 	virtual void changeHoleSize(int);
 	virtual void changeUnits(bool);
 	void changeDiameter();

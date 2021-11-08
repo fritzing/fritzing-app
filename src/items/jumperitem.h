@@ -73,7 +73,7 @@ protected:
 	void paintSelected(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
-signals:
+Q_SIGNALS:
 	void alignMe(JumperItem *, QPointF & p);
 
 protected:

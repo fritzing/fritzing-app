@@ -8673,6 +8673,7 @@ void SketchWidget::ratsnestConnect(ConnectorItem * connectorItem, bool connect) 
 
 void SketchWidget::deleteRatsnest(Wire * ratsnest, QUndoCommand * parentCommand)
 {
+	if (ratsnest == nullptr) return;
 	// deleting a ratsnest really means deleting underlying connections
 
 	// assume ratsnest has only one connection at each end

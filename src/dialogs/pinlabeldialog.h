@@ -44,7 +44,7 @@ public:
 	void setLabelText(int index, QLineEdit *, const QString & text);
 	bool doSaveAs();
 
-protected slots:
+protected Q_SLOTS:
 	void labelChanged();
 	void buttonClicked(QAbstractButton *);
 	void undoChanged(bool);

@@ -46,7 +46,7 @@ class FServer : public QTcpServer
 public:
 	FServer(QObject *parent = 0);
 
-signals:
+Q_SIGNALS:
 	void newConnection(qintptr socketDescriptor);
 
 protected:
@@ -63,7 +63,7 @@ public:
 	void run();
 	void setDone();
 
-signals:
+Q_SIGNALS:
 	void error(QTcpSocket::SocketError socketError);
 	void doCommand(const QString & command, const QString & params, QString & result, int & status);
 
@@ -125,10 +125,10 @@ public:
 public:
 	static bool spaceBarIsPressed();
 
-signals:
+Q_SIGNALS:
 	void spaceBarIsPressedSignal(bool);
 
-public slots:
+public Q_SLOTS:
 	void preferences();
 	void preferencesAfter();
 	void checkForUpdates();

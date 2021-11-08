@@ -49,7 +49,7 @@ public:
 protected:
 	void drawContents ( QPainter * painter );
 
-public slots:
+public Q_SLOTS:
 	void displaySlice();
 
 protected:

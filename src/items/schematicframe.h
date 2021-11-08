@@ -61,7 +61,7 @@ public:
 	bool hasPartNumberProperty();
 	void setInitialSize();
 
-protected slots:
+protected Q_SLOTS:
 	void propEntry();
 	void dateTimeEntry(QDateTime);
 	void sheetEntry(int);

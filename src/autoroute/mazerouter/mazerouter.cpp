@@ -1516,7 +1516,6 @@ QList<QPoint> MazeRouter::renderSource(QDomDocument * masterDoc, int z, ViewLaye
 			dy = 0;
 		}
 		if (qAbs(p.x() - r.right()) < d) {
-			d = qAbs(p.x() - r.right());
 			closest = QPointF(r.right(), p.y());
 			dy = 0;
 			dx = 1;

@@ -170,7 +170,7 @@ QStringList MysteryPart::collectValues(const QString & family, const QString & p
 		QString spacing;
 		TextUtils::getPinsAndSpacing(moduleID(), spacing);
 		if (isDIP()) {
-			foreach (QString f, spacings()) {
+			Q_FOREACH (QString f, spacings()) {
 				values.append(f);
 			}
 		}

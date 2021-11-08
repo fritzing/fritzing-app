@@ -253,8 +253,8 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
 
 	QString filename;
 	bool exists = false;
-	foreach (QString tempPath, tempPaths) {
-		foreach (QString possibleFolder, ModelPart::possibleFolders()) {
+	Q_FOREACH (QString tempPath, tempPaths) {
+		Q_FOREACH (QString possibleFolder, ModelPart::possibleFolders()) {
 			filename = tempPath.arg(possibleFolder);
 			if (QFileInfo(filename).exists()) {
 				exists = true;
@@ -276,7 +276,7 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
 		ModelPartShared * superpart = modelPart->modelPartShared();
 		QString schematicName = superpart->imageFileName(ViewLayer::SchematicView);
 		QString originalPath = getSvgFilename(modelPart, schematicName, true, false);
-		foreach (ModelPartShared * mps, superpart->subparts()) {
+		Q_FOREACH (ModelPartShared * mps, superpart->subparts()) {
 			QString schematicFileName = mps->imageFileName(ViewLayer::SchematicView);
 			if (schematicFileName.isEmpty()) continue;
 
@@ -656,11 +656,11 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
 		texts.append(nodeList.at(i).toElement());
 	}
 
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		text.setTagName("g");
 	}
 
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		int minX, minY, maxX, maxY;
 		QTransform matrix;
 		QRectF viewBox2;
@@ -672,7 +672,7 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
 		bounds |= r;
 	}
 
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		text.setTagName("text");
 	}
 

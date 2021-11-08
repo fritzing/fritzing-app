@@ -39,9 +39,9 @@ TipsAndTricks::TipsAndTricks(QWidget *parent)
 	QString html("<html><body>");
 	html += QString("<h3>%1</h3>").arg(tr("Fritzing Tips and Tricks"));
 	html += "<ul>";
-	foreach (TipSet * tipSet, TipSets) {
+	Q_FOREACH (TipSet * tipSet, TipSets) {
 		html += QString("<li><h4>%1</h4><ul>").arg(tipSet->heading);
-		foreach (QString tip, tipSet->tips) {
+		Q_FOREACH (QString tip, tipSet->tips) {
 			html += QString("<li>%1</li>").arg(tip);
 		}
 		html += "</ul></li>";
@@ -202,14 +202,14 @@ void TipsAndTricks::cleanup() {
 
 const QString & TipsAndTricks::randomTip() {
 	int tipCount = 0;
-	foreach (TipSet * tipSet, TipSets) {
+	Q_FOREACH (TipSet * tipSet, TipSets) {
 		tipCount += tipSet->tips.count();
 	}
 	if (tipCount == 0) return ___emptyString___;
 
 	int ix = QRandomGenerator::system()->generate() % tipCount;
 	tipCount = 0;
-	foreach (TipSet * tipSet, TipSets) {
+	Q_FOREACH (TipSet * tipSet, TipSets) {
 		int count = tipSet->tips.count();
 		if (tipCount + count > ix) {
 			return tipSet->tips.at(ix - tipCount);

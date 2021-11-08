@@ -71,7 +71,7 @@ public:
 
 	//int addTab(QWidget * page, const QIcon & icon, const QIcon & hoverIcon, const QIcon & inactiveIcon, const QString & label);
 
-protected slots:
+protected Q_SLOTS:
 	//void tabIndexChanged(int index);
 
 protected:
@@ -244,13 +244,13 @@ public:
 	static void setAutosavePeriod(int);
 	static void setAutosaveEnabled(bool);
 
-signals:
+Q_SIGNALS:
 	void alienPartsDismissed();
 	void mainWindowMoved(QWidget *);
 	void changeActivationSignal(bool activate, QWidget * originator);
 	void externalProcessSignal(QString & name, QString & path, QStringList & args);
 
-public slots:
+public Q_SLOTS:
 	void ensureClosable();
 	QList<ModelPart*> loadBundledPart(const QString &fileName, bool addToBin);
 	QList<ModelPart *> loadPart(const QString &fileName, bool addToBin);
@@ -277,7 +277,7 @@ public slots:
 	void oldSchematicsSlot(const QString & filename, bool & useOldSchematics);
 	void showWelcomeView();
 
-protected slots:
+protected Q_SLOTS:
 	void mainLoad();
 	void revert();
 	void openRecentOrExampleFile();

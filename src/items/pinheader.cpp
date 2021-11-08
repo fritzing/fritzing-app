@@ -98,7 +98,7 @@ void PinHeader::initNames() {
 QStringList PinHeader::collectValues(const QString & family, const QString & prop, QString & value) {
 	if (prop.compare("form", Qt::CaseInsensitive) == 0) {
 		QStringList values;
-		foreach (QString f, forms()) {
+		Q_FOREACH (QString f, forms()) {
 			values.append(f);
 		}
 
@@ -164,7 +164,7 @@ QStringList PinHeader::collectValues(const QString & family, const QString & pro
 			values.append(value);
 		}
 		else {
-			foreach (QString key, Spacings.keys()) {
+			Q_FOREACH (QString key, Spacings.keys()) {
 				values.append(Spacings.value(key));
 			}
 		}
@@ -429,7 +429,7 @@ QString PinHeader::genModuleID(QMap<QString, QString> & currPropsMap)
 		pins = QString::number(p + 1);
 	}
 
-	foreach (QString key, Spacings.keys()) {
+	Q_FOREACH (QString key, Spacings.keys()) {
 		if (Spacings.value(key).compare(spacing, Qt::CaseInsensitive) == 0) {
 			return QString("generic_%1_pin_header_%2_%3").arg(formWord).arg(pins).arg(key);
 		}

@@ -122,7 +122,7 @@ FServer::FServer(QObject *parent)
 void FServer::incomingConnection(qintptr socketDescriptor)
 {
 	DebugDialog::debug("incomingConnection called");
-	emit newConnection(socketDescriptor);
+	Q_EMIT newConnection(socketDescriptor);
 }
 
 ////////////////////////////////////////////////////
@@ -137,7 +137,7 @@ void FServerThread::run()
 {
 	auto * socket = new QTcpSocket();
 	if (!socket->setSocketDescriptor(m_socketDescriptor)) {
-		emit error(socket->error());
+		Q_EMIT error(socket->error());
 		DebugDialog::debug(QString("Socket error %1 %2").arg(socket->error()).arg(socket->errorString()));
 		socket->deleteLater();
 		return;
@@ -220,7 +220,7 @@ void FServerThread::run()
 	DebugDialog::debug(QString("emitting do command %1 %2").arg(command).arg(subFolder));
 	QString result;
 	int status;
-	emit doCommand(command, subFolder, result, status);
+	Q_EMIT doCommand(command, subFolder, result, status);
 
 	m_busy.unlock();
 
@@ -649,7 +649,7 @@ bool FApplication::eventFilter(QObject *obj, QEvent *event)
 				//DebugDialog::debug("spacebar pressed");
 				CursorMaster::instance()->block();
 				setOverrideCursor(Qt::OpenHandCursor);
-				emit spaceBarIsPressedSignal(true);
+				Q_EMIT spaceBarIsPressedSignal(true);
 			}
 		}
 	}
@@ -664,7 +664,7 @@ bool FApplication::eventFilter(QObject *obj, QEvent *event)
 				//DebugDialog::debug("spacebar pressed");
 				restoreOverrideCursor();
 				CursorMaster::instance()->unblock();
-				emit spaceBarIsPressedSignal(false);
+				Q_EMIT spaceBarIsPressedSignal(false);
 			}
 		}
 	}
@@ -860,7 +860,7 @@ void FApplication::runGerberServiceAux()
 	QStringList filters;
 	filters << "*" + FritzingBundleExtension;
 	QStringList filenames = dir.entryList(filters, QDir::Files);
-	foreach (QString filename, filenames) {
+	Q_FOREACH (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
 		MainWindow * mainWindow = openWindowForService(false, 3);
 		m_started = true;
@@ -896,7 +896,7 @@ void FApplication::runSvgServiceAux()
 	QStringList filters;
 	filters << "*" + FritzingBundleExtension;
 	QStringList filenames = dir.entryList(filters, QDir::Files);
-	foreach (QString filename, filenames) {
+	Q_FOREACH (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
 		MainWindow * mainWindow = openWindowForService(false, -1);
 		m_started = true;
@@ -906,7 +906,7 @@ void FApplication::runSvgServiceAux()
 			QFileInfo info(filepath);
 			QList<ViewLayer::ViewID> ids;
 			ids << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
-			foreach (ViewLayer::ViewID id, ids) {
+			Q_FOREACH (ViewLayer::ViewID id, ids) {
 				QString fn = QString("%1_%2.svg").arg(info.completeBaseName()).arg(ViewLayer::viewIDNaturalName(id));
 				QString svgPath = dir.absoluteFilePath(fn);
 				mainWindow->setCurrentView(id);
@@ -936,7 +936,7 @@ void FApplication::runGedaService() {
 		QStringList filters;
 		filters << "*.fp";
 		QStringList filenames = dir.entryList(filters, QDir::Files);
-		foreach (QString filename, filenames) {
+		Q_FOREACH (QString filename, filenames) {
 			QString filepath = dir.absoluteFilePath(filename);
 			QString newfilepath = filepath;
 			newfilepath.replace(".fp", ".svg");
@@ -964,7 +964,7 @@ void FApplication::runDRCService() {
 		QStringList filters;
 		filters << "*.fzz";
 		QStringList filenames = dir.entryList(filters, QDir::Files);
-		foreach (QString filename, filenames) {
+		Q_FOREACH (QString filename, filenames) {
 			QString filepath = dir.absoluteFilePath(filename);
 			MainWindow * mainWindow = openWindowForService(false, 3);
 			if (mainWindow == nullptr) continue;
@@ -991,7 +991,7 @@ void FApplication::runDRCService() {
 			Checker::checkText(mainWindow, true);
 
 			QList<ItemBase *> boards = mainWindow->pcbView()->findBoard();
-			foreach (ItemBase * boardItem, boards) {
+			Q_FOREACH (ItemBase * boardItem, boards) {
 				mainWindow->pcbView()->selectAllItems(false, false);
 				boardItem->setSelected(true);
 				mainWindow->newDesignRulesCheck(false);
@@ -1014,10 +1014,10 @@ void FApplication::runKicadFootprintService() {
 	QStringList filters;
 	filters << "*.mod";
 	QStringList filenames = dir.entryList(filters, QDir::Files);
-	foreach (QString filename, filenames) {
+	Q_FOREACH (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
 		QStringList moduleNames = KicadModule2Svg::listModules(filepath);
-		foreach (QString moduleName, moduleNames) {
+		Q_FOREACH (QString moduleName, moduleNames) {
 			KicadModule2Svg kicad;
 			try {
 				QString svg = kicad.convert(filepath, moduleName, false);
@@ -1025,7 +1025,7 @@ void FApplication::runKicadFootprintService() {
 					DebugDialog::debug("svg is empty " + filepath + " " + moduleName);
 					continue;
 				}
-				foreach (QChar c, QString("<>:\"/\\|?*")) {
+				Q_FOREACH (QChar c, QString("<>:\"/\\|?*")) {
 					moduleName.remove(c);
 				}
 
@@ -1051,10 +1051,10 @@ void FApplication::runKicadSchematicService() {
 	QStringList filters;
 	filters << "*.lib";
 	QStringList filenames = dir.entryList(filters, QDir::Files);
-	foreach (QString filename, filenames) {
+	Q_FOREACH (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
 		QStringList defNames = KicadSchematic2Svg::listDefs(filepath);
-		foreach (QString defName, defNames) {
+		Q_FOREACH (QString defName, defNames) {
 			KicadSchematic2Svg kicad;
 			try {
 				QString svg = kicad.convert(filepath, defName);
@@ -1062,7 +1062,7 @@ void FApplication::runKicadSchematicService() {
 					DebugDialog::debug("svg is empty " + filepath + " " + defName);
 					continue;
 				}
-				foreach (QChar c, QString("<>:\"/\\|?*")) {
+				Q_FOREACH (QChar c, QString("<>:\"/\\|?*")) {
 					defName.remove(c);
 				}
 
@@ -1199,7 +1199,7 @@ void FApplication::registerFont(const QString &fontFile, bool reallyRegister) {
 	if(id > -1 && reallyRegister) {
 		QStringList familyNames = QFontDatabase::applicationFontFamilies(id);
 		QFileInfo finfo(fontFile);
-		foreach (QString family, familyNames) {
+		Q_FOREACH (QString family, familyNames) {
 			InstalledFonts::InstalledFontsNameMapper.insert(family, finfo.completeBaseName());
 			InstalledFonts::InstalledFontsList << family;
 			DebugDialog::debug(QString("registering font family: %1 %2").arg(family).arg(finfo.completeBaseName()));
@@ -1251,7 +1251,7 @@ void FApplication::preferencesAfter()
 	}
 
 	MainWindow * mainWindow = nullptr;
-	foreach (MainWindow * mw, orderedTopLevelMainWindows()) {
+	Q_FOREACH (MainWindow * mw, orderedTopLevelMainWindows()) {
 		mainWindow = mw;
 		break;
 	}
@@ -1260,7 +1260,7 @@ void FApplication::preferencesAfter()
 
 	PrefsDialog prefsDialog(language, nullptr);			// TODO: use the topmost MainWindow as parent
 	int ix = 0;
-	foreach (SketchWidget * sketchWidget, mainWindow->sketchWidgets()) {
+	Q_FOREACH (SketchWidget * sketchWidget, mainWindow->sketchWidgets()) {
 		prefsDialog.initViewInfo(ix++,  sketchWidget->viewName(), sketchWidget->getShortName(),
 		                         sketchWidget->curvyWires());
 	}
@@ -1284,19 +1284,19 @@ void FApplication::updatePrefs(PrefsDialog & prefsDialog)
 
 	QHash<QString, QString> hash = prefsDialog.settings();
 	QList<MainWindow *> mainWindows = orderedTopLevelMainWindows();
-	foreach (QString key, hash.keys()) {
+	Q_FOREACH (QString key, hash.keys()) {
 		settings.setValue(key, hash.value(key));
 		if (key.compare("connectedColor") == 0) {
 			QColor c(hash.value(key));
 			ItemBase::setConnectedColor(c);
-			foreach (MainWindow * mainWindow, mainWindows) {
+			Q_FOREACH (MainWindow * mainWindow, mainWindows) {
 				mainWindow->redrawSketch();
 			}
 		}
 		else if (key.compare("unconnectedColor") == 0) {
 			QColor c(hash.value(key));
 			ItemBase::setUnconnectedColor(c);
-			foreach (MainWindow * mainWindow, mainWindows) {
+			Q_FOREACH (MainWindow * mainWindow, mainWindows) {
 				mainWindow->redrawSketch();
 			}
 		}
@@ -1310,8 +1310,8 @@ void FApplication::updatePrefs(PrefsDialog & prefsDialog)
 			MainWindow::setAutosaveEnabled(hash.value(key).toInt());
 		}
 		else if (key.contains("curvy", Qt::CaseInsensitive)) {
-			foreach (MainWindow * mainWindow, mainWindows) {
-				foreach (SketchWidget * sketchWidget, mainWindow->sketchWidgets()) {
+			Q_FOREACH (MainWindow * mainWindow, mainWindows) {
+				Q_FOREACH (SketchWidget * sketchWidget, mainWindow->sketchWidgets()) {
 					if (key.contains(sketchWidget->getShortName())) {
 						sketchWidget->setCurvyWires(hash.value(key).compare("1") == 0);
 					}
@@ -1408,7 +1408,7 @@ void FApplication::checkForUpdates(bool atUserRequest)
 void FApplication::enableCheckUpdates(bool enabled)
 {
 	//DebugDialog::debug("before enable check updates");
-	foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+	Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 		auto *mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow) {
 			mainWindow->enableCheckUpdates(enabled);
@@ -1608,7 +1608,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
 		// Check for double-clicked files to load
 		DebugDialog::debug(QString("check files to load %1").arg(m_filesToLoad.count()));
 
-		foreach (QString filename, m_filesToLoad) {
+		Q_FOREACH (QString filename, m_filesToLoad) {
 			DebugDialog::debug(QString("Loading non-service file %1").arg(filename));
 			MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, filename, true, true, -1);
 			mainWindow->loadWhich(filename, true, true, true, "");
@@ -1646,7 +1646,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
 	DebugDialog::debug(QString("finish up sketch loading"));
 
 	// Finish loading the sketches and show them to the user
-	foreach (MainWindow* sketch, sketchesToLoad) {
+	Q_FOREACH (MainWindow* sketch, sketchesToLoad) {
 		sketch->show();
 		sketch->clearFileProgressDialog();
 	}
@@ -1696,7 +1696,7 @@ QList<MainWindow *> FApplication::recoverBackups()
 	int result = (QMessageBox::StandardButton)recoveryDialog.exec();
 	QList<QTreeWidgetItem*> fileItems = recoveryDialog.getFileList();
 	DebugDialog::debug(QString("Recovering %1 files from recoveryDialog").arg(fileItems.size()));
-	foreach (QTreeWidgetItem * item, fileItems) {
+	Q_FOREACH (QTreeWidgetItem * item, fileItems) {
 		auto backupName = item->data(0, Qt::UserRole).value<QString>();
 		if (result == QDialog::Accepted && item->isSelected()) {
 			QString originalBaseName = item->text(0);
@@ -1750,7 +1750,7 @@ void FApplication::gotOrderFab(QNetworkReply * networkReply) {
 
 QList<MainWindow *> FApplication::orderedTopLevelMainWindows() {
 	QList<MainWindow *> mainWindows;
-	foreach (QWidget * widget, m_orderedTopLevelWidgets) {
+	Q_FOREACH (QWidget * widget, m_orderedTopLevelWidgets) {
 		auto * mainWindow = qobject_cast<MainWindow *>(widget);
 		if (mainWindow) mainWindows.append(mainWindow);
 	}
@@ -1771,7 +1771,7 @@ void FApplication::runExampleService(QDir & dir) {
 	QStringList nameFilters;
 	nameFilters << ("*" + FritzingBundleExtension);   //  FritzingSketchExtension
 	QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	foreach (QFileInfo fileInfo, fileList) {
+	Q_FOREACH (QFileInfo fileInfo, fileList) {
 		QString path = fileInfo.absoluteFilePath();
 		DebugDialog::debug("sketch file " + path);
 
@@ -1795,7 +1795,7 @@ void FApplication::runExampleService(QDir & dir) {
 	}
 
 	QFileInfoList dirList = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::Hidden | QDir::NoSymLinks);
-	foreach (QFileInfo dirInfo, dirList) {
+	Q_FOREACH (QFileInfo dirInfo, dirList) {
 		QDir dir(dirInfo.filePath());
 		runExampleService(dir);
 	}

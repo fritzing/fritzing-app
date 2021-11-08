@@ -68,13 +68,13 @@ LayerPalette::LayerPalette(QWidget * parent)
 
 void LayerPalette::resetLayout(LayerHash & viewLayers, LayerList & keys) {
 	m_mainLayout->removeWidget(m_groupBox);
-	foreach (ViewLayerCheckBox * cb, m_checkBoxes) {
+	Q_FOREACH (ViewLayerCheckBox * cb, m_checkBoxes) {
 		m_mainLayout->removeWidget(cb);
 		cb->setVisible(false);
 	}
 
 	int ix = 0;
-	foreach (ViewLayer::ViewLayerID key, keys) {
+	Q_FOREACH (ViewLayer::ViewLayerID key, keys) {
 		ViewLayer * viewLayer = viewLayers.value(key);
 		//if (viewLayer->parentLayer()) continue;
 
@@ -96,7 +96,7 @@ void LayerPalette::updateLayerPalette(LayerHash & viewLayers, LayerList & keys)
 	m_showAllWidget->setChecked(!m_showAllLayersAct->isEnabled());
 
 	int ix = 0;
-	foreach (ViewLayer::ViewLayerID key, keys) {
+	Q_FOREACH (ViewLayer::ViewLayerID key, keys) {
 		ViewLayer * viewLayer = viewLayers.value(key);
 		//if (viewLayer->parentLayer()) continue;
 

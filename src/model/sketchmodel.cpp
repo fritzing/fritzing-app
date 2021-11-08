@@ -57,7 +57,7 @@ ModelPart * SketchModel::findModelPartAux(ModelPart * modelPart, const QString &
 		}
 	}
 
-	foreach (QObject * child, modelPart->children()) {
+	Q_FOREACH (QObject * child, modelPart->children()) {
 		auto * mp = qobject_cast<ModelPart *>(child);
 		if (mp == nullptr) continue;
 

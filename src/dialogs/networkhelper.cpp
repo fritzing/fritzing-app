@@ -12,7 +12,7 @@ const QString NetworkHelper::debugRequest(QNetworkRequest request)
 {
 	QString ret(request.url().toString()); //output the url
 	const QList<QByteArray>& rawHeaderList(request.rawHeaderList());
-	foreach (QByteArray rawHeader, rawHeaderList) { //traverse and output the header
+	Q_FOREACH (QByteArray rawHeader, rawHeaderList) { //traverse and output the header
 		ret += rawHeader + ":" + request.rawHeader(rawHeader);
 	}
 	return ret;

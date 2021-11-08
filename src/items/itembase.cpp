@@ -129,13 +129,13 @@ ItemBase::~ItemBase() {
 		m_partLabel = nullptr;
 	}
 
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
-		foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 			toConnectorItem->tempRemove(connectorItem, true);
 		}
 	}
 
-	foreach (ItemBase * itemBase, m_stickyList) {
+	Q_FOREACH (ItemBase * itemBase, m_stickyList) {
 		itemBase->addSticky(this, false);
 	}
 
@@ -307,7 +307,7 @@ void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
 	QList<ItemBase *> itemBases;
 	itemBases.append(this);
 	itemBases.append(layerKinChief()->layerKin());
-	foreach (ItemBase * itemBase, itemBases) {
+	Q_FOREACH (ItemBase * itemBase, itemBases) {
 		if (itemBase->layerHidden()) {
 			streamWriter.writeStartElement("layerHidden");
 			streamWriter.writeAttribute("layer", ViewLayer::viewLayerXmlNameFromID(itemBase->viewLayerID()));
@@ -317,7 +317,7 @@ void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
 
 
 	bool saveConnectorItems = false;
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		if (connectorItem->connectionsCount() > 0 || connectorItem->hasRubberBandLeg() || connectorItem->isGroundFillSeed()) {
 			saveConnectorItems = true;
 			break;
@@ -326,7 +326,7 @@ void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
 
 	if (saveConnectorItems) {
 		streamWriter.writeStartElement("connectors");
-		foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 			connectorItem->saveInstance(streamWriter);
 		}
 		streamWriter.writeEndElement();
@@ -491,7 +491,7 @@ void ItemBase::setHidden(bool hide) {
 
 	m_hidden = hide;
 	updateHidden();
-	foreach (QGraphicsItem * item, childItems()) {
+	Q_FOREACH (QGraphicsItem * item, childItems()) {
 		auto * nonconnectorItem = dynamic_cast<NonConnectorItem *>(item);
 		if (!nonconnectorItem) continue;
 
@@ -503,7 +503,7 @@ void ItemBase::setInactive(bool inactivate) {
 
 	m_inactive = inactivate;
 	updateHidden();
-	foreach (QGraphicsItem * item, childItems()) {
+	Q_FOREACH (QGraphicsItem * item, childItems()) {
 		auto * nonconnectorItem = dynamic_cast<NonConnectorItem *>(item);
 		if (!nonconnectorItem) continue;
 
@@ -515,7 +515,7 @@ void ItemBase::setLayerHidden(bool layerHidden) {
 
 	m_layerHidden = layerHidden;
 	updateHidden();
-	foreach (QGraphicsItem * item, childItems()) {
+	Q_FOREACH (QGraphicsItem * item, childItems()) {
 		auto * nonconnectorItem = dynamic_cast<NonConnectorItem *>(item);
 		if (!nonconnectorItem) continue;
 
@@ -536,8 +536,8 @@ void ItemBase::collectConnectors(ConnectorPairHash & connectorHash, SkipCheckFun
 
 	// collect all the connectorItem pairs
 
-	foreach (ConnectorItem * fromConnectorItem, cachedConnectorItems()) {
-		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * fromConnectorItem, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
 			if (skipCheckFunction && skipCheckFunction(toConnectorItem)) continue;
 
 			connectorHash.insert(fromConnectorItem, toConnectorItem);
@@ -546,7 +546,7 @@ void ItemBase::collectConnectors(ConnectorPairHash & connectorHash, SkipCheckFun
 		ConnectorItem * crossConnectorItem = fromConnectorItem->getCrossLayerConnectorItem();
 		if (!crossConnectorItem) continue;
 
-		foreach (ConnectorItem * toConnectorItem, crossConnectorItem->connectedToItems()) {
+		Q_FOREACH (ConnectorItem * toConnectorItem, crossConnectorItem->connectedToItems()) {
 			if (skipCheckFunction && skipCheckFunction(toConnectorItem)) continue;
 
 			connectorHash.insert(crossConnectorItem, toConnectorItem);
@@ -652,7 +652,7 @@ QList<Bus *> ItemBase::buses() {
 	QList<Bus *> busList;
 	if (!m_modelPart) return busList;
 
-	foreach (Bus * bus, m_modelPart->buses().values()) {
+	Q_FOREACH (Bus * bus, m_modelPart->buses().values()) {
 		busList.append(bus);
 	}
 
@@ -663,8 +663,8 @@ void ItemBase::busConnectorItems(class Bus * bus, ConnectorItem * /* fromConnect
 
 	if (!bus) return;
 
-	foreach (Connector * connector, bus->connectors()) {
-		foreach (ConnectorItem * connectorItem, connector->viewItems()) {
+	Q_FOREACH (Connector * connector, bus->connectors()) {
+		Q_FOREACH (ConnectorItem * connectorItem, connector->viewItems()) {
 			if (connectorItem) {
 				//connectorItem->debugInfo(QString("on the bus %1").arg((long) connector, 0, 16));
 				if (connectorItem->attachedTo() == this) {
@@ -677,7 +677,7 @@ void ItemBase::busConnectorItems(class Bus * bus, ConnectorItem * /* fromConnect
 	if (m_superpart || m_subparts.count() > 0) {
 		Connector * connector = bus->subConnector();
 		if (connector) {
-			foreach (ConnectorItem * connectorItem, connector->viewItems()) {
+			Q_FOREACH (ConnectorItem * connectorItem, connector->viewItems()) {
 				if (connectorItem) {
 					//connectorItem->debugInfo(QString("on the bus %1").arg((long) connector, 0, 16));
 					if (connectorItem->attachedToViewID() == m_viewID) {
@@ -869,7 +869,7 @@ void ItemBase::addSticky(ItemBase * stickyBase, bool stickem) {
 	//sticky->debugInfo(QString("  to"));
 	if (stickem) {
 		if (!isBaseSticky()) {
-			foreach (ItemBase * oldstickingTo, m_stickyList.values()) {
+			Q_FOREACH (ItemBase * oldstickingTo, m_stickyList.values()) {
 				if (oldstickingTo == stickyBase) continue;
 
 				oldstickingTo->addSticky(this, false);
@@ -915,7 +915,7 @@ ConnectorItem* ItemBase::newConnectorItem(ItemBase * layerKin, Connector *connec
 }
 
 ConnectorItem * ItemBase::anyConnectorItem() {
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		return connectorItem;
 	}
 
@@ -1015,7 +1015,7 @@ void ItemBase::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
 	if (m_itemMenu) {
 		m_rightClickedConnector = nullptr;
-		foreach (QGraphicsItem * item, scene()->items(event->scenePos())) {
+		Q_FOREACH (QGraphicsItem * item, scene()->items(event->scenePos())) {
 			auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 			if (!connectorItem) continue;
 
@@ -1034,7 +1034,7 @@ bool ItemBase::hasConnectors() {
 }
 
 bool ItemBase::hasNonConnectors() {
-	foreach (QGraphicsItem * childItem, childItems()) {
+	Q_FOREACH (QGraphicsItem * childItem, childItems()) {
 		if (dynamic_cast<NonConnectorItem *>(childItem)) return true;
 	}
 
@@ -1431,7 +1431,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 void ItemBase::updateConnectionsAux(bool includeRatsnest, QList<ConnectorItem *> & already) {
 	//DebugDialog::debug("update connections");
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		updateConnections(connectorItem, includeRatsnest, already);
 	}
 }
@@ -1447,7 +1447,7 @@ QString ItemBase::retrieveSvg(ViewLayer::ViewLayerID /* viewLayerID */,  QHash<Q
 
 bool ItemBase::hasConnections()
 {
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		if (connectorItem->connectionsCount() > 0) return true;
 	}
 
@@ -1665,7 +1665,7 @@ QStringList ItemBase::collectValues(const QString & family, const QString & prop
 	// sort values numerically
 	NumberMatcherValues.clear();
 	bool ok = true;
-	foreach(QString opt, values) {
+	Q_FOREACH(QString opt, values) {
 		QRegularExpressionMatch match;
 		if (!opt.contains(NumberMatcher, &match)) {
 			ok = false;
@@ -1802,7 +1802,7 @@ void ItemBase::updateConnectors()
 	if (!isEverVisible()) return;
 
 	QList<ConnectorItem *> visited;
-	foreach(ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH(ConnectorItem * connectorItem, cachedConnectorItems()) {
 		connectorItem->restoreColor(visited);
 	}
 	//DebugDialog::debug(QString("set up connectors restore:%1").arg(count));
@@ -1907,7 +1907,7 @@ void ItemBase::collectPropsMap(QString & family, QMap<QString, QString> & propsM
 	QHash<QString, QString> properties;
 	properties = m_modelPart->properties();
 	family = properties.value("family", "");
-	foreach (QString key, properties.keys()) {
+	Q_FOREACH (QString key, properties.keys()) {
 		if (key.compare("family") == 0) continue;
 		if (key.compare("id") == 0) continue;
 
@@ -1936,7 +1936,7 @@ bool ItemBase::sceneEvent(QEvent *event)
 const QList<ConnectorItem *> & ItemBase::cachedConnectorItems()
 {
 	if (m_cachedConnectorItems.isEmpty()) {
-		foreach (QGraphicsItem * childItem, childItems()) {
+		Q_FOREACH (QGraphicsItem * childItem, childItems()) {
 			auto * connectorItem = dynamic_cast<ConnectorItem *>(childItem);
 			if (connectorItem) m_cachedConnectorItems.append(connectorItem);
 		}
@@ -1960,7 +1960,7 @@ void ItemBase::killRubberBandLeg() {
 
 	prepareGeometryChange();
 
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		connectorItem->killRubberBandLeg();
 	}
 }
@@ -2150,7 +2150,7 @@ bool ItemBase::makeLocalModifications(QByteArray &, const QString & ) {
 }
 
 void ItemBase::showConnectors(const QStringList & connectorIDs) {
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		if (connectorIDs.contains(connectorItem->connectorSharedID())) {
 			connectorItem->setVisible(true);
 		}
@@ -2175,7 +2175,7 @@ void ItemBase::addSubpart(ItemBase * sub)
 	sub->debugInfo("\t");
 	m_subparts.append(sub);
 	sub->setSuperpart(this);
-	foreach (ConnectorItem * connectorItem, sub->cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, sub->cachedConnectorItems()) {
 		Bus * subbus = connectorItem->bus();
 		Connector * subconnector = nullptr;
 		if (!subbus) {
@@ -2211,7 +2211,7 @@ ItemBase * ItemBase::superpart() {
 }
 
 ItemBase * ItemBase::findSubpart(const QString & connectorID, ViewLayer::ViewLayerPlacement spec) {
-	foreach (ItemBase * itemBase, m_subparts) {
+	Q_FOREACH (ItemBase * itemBase, m_subparts) {
 		ConnectorItem * connectorItem = itemBase->findConnectorItemWithSharedID(connectorID, spec);
 		if (connectorItem) return itemBase;
 	}

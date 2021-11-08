@@ -118,7 +118,7 @@ FDockWidget *MainWindow::dockIt(FDockWidget* dock, int dockMinHeight, int dockDe
 FDockWidget *MainWindow::newTopWidget() {
 	int topMostY = 10000;
 	FDockWidget *topWidget = nullptr;
-	foreach(FDockWidget* dock, m_docks) {
+	Q_FOREACH(FDockWidget* dock, m_docks) {
 		if(/*!dock->isFloating() && dock->isVisible() &&*/
 		    dockWidgetArea(dock) == Qt::RightDockWidgetArea
 		    && dock->pos().y() < topMostY) {
@@ -132,7 +132,7 @@ FDockWidget *MainWindow::newTopWidget() {
 FDockWidget *MainWindow::newBottomWidget() {
 	int bottomMostY = -1;
 	FDockWidget *bottomWidget = nullptr;
-	foreach(FDockWidget* dock, m_docks) {
+	Q_FOREACH(FDockWidget* dock, m_docks) {
 		if(!dock->isFloating() && dock->isVisible() &&
 		        dockWidgetArea(dock) == Qt::RightDockWidgetArea
 		        && dock->pos().y() > bottomMostY) {

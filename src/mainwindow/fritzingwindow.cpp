@@ -144,7 +144,7 @@ bool FritzingWindow::saveAs(const QString & filename, bool readOnly) {
 
 	QStringList extensions = getExtensions();
 	bool hasExtension = false;
-	foreach (QString extension, extensions) {
+	Q_FOREACH (QString extension, extensions) {
 		if(alreadyHasExtension(newFilename, extension)) {
 			hasExtension = true;
 			break;
@@ -167,10 +167,10 @@ bool FritzingWindow::alreadyHasExtension(const QString &fileName, const QString 
 	if(!fileExt.isEmpty()) {
 		return fileName.endsWith(fileExt);
 	} else {
-		foreach (QString extension, fritzingExtensions()) {
+		Q_FOREACH (QString extension, fritzingExtensions()) {
 			if (fileName.endsWith(extension)) return true;
 		}
-		foreach (QString extension, OtherKnownExtensions) {
+		Q_FOREACH (QString extension, OtherKnownExtensions) {
 			if (fileName.endsWith(extension)) return true;
 		}
 
@@ -242,7 +242,7 @@ void FritzingWindow::setReadOnly(bool readOnly) {
 	bool hasChanged = m_readOnly != readOnly;
 	m_readOnly = readOnly;
 	if(hasChanged) {
-		emit readOnlyChanged(readOnly);
+		Q_EMIT readOnlyChanged(readOnly);
 	}
 }
 

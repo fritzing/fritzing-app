@@ -93,7 +93,7 @@ Board::Board( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometr
 		NamesToXmlNames.insert("copper top", "copper1");
 		NamesToXmlNames.insert("silkscreen bottom", "silkscreen0");
 		NamesToXmlNames.insert("silkscreen top", "silkscreen");
-		foreach (QString key, NamesToXmlNames.keys()) {
+		Q_FOREACH (QString key, NamesToXmlNames.keys()) {
 			XmlNamesToNames.insert(NamesToXmlNames.value(key), key);
 		}
 	}
@@ -246,7 +246,7 @@ void Board::setFileNameItems() {
 	m_fileNameComboBox->addItems(getNewImageNames());
 
 	int ix = 0;
-	foreach (QString name, getImageNames()) {
+	Q_FOREACH (QString name, getImageNames()) {
 		if (prop("lastfilename").contains(name)) {
 			m_fileNameComboBox->setCurrentIndex(ix);
 			return;
@@ -254,7 +254,7 @@ void Board::setFileNameItems() {
 		ix++;
 	}
 
-	foreach (QString name, getNewImageNames()) {
+	Q_FOREACH (QString name, getNewImageNames()) {
 		if (prop("lastfilename").contains(name)) {
 			m_fileNameComboBox->setCurrentIndex(ix);
 			return;
@@ -276,7 +276,7 @@ void Board::fileNameEntry(int index) {
 	if (comboBox == nullptr) return;
 
 	QString filename = comboBox->itemText(index);
-	foreach (QString name, getImageNames()) {
+	Q_FOREACH (QString name, getImageNames()) {
 		if (filename.compare(name) == 0) {
 			QString f = FolderUtils::getAppPartsSubFolderPath("") + "/svg/core/pcb/" + filename + ".svg";
 			prepLoadImageAux(f, false);
@@ -292,7 +292,7 @@ void Board::prepLoadImage() {
 	imagesStr += " (";
 	if (!m_svgOnly) {
 		QList<QByteArray> supportedImageFormats = QImageReader::supportedImageFormats();
-		foreach (QByteArray ba, supportedImageFormats) {
+		Q_FOREACH (QByteArray ba, supportedImageFormats) {
 			imagesStr += "*." + QString(ba) + " ";
 		}
 	}
@@ -343,7 +343,7 @@ bool Board::checkImage(const QString & filename) {
 	int silk0Layers = 0;
 	int silk1Layers = 0;
 	bool boardHasChildren = false;
-	foreach (QDomElement element, elements) {
+	Q_FOREACH (QDomElement element, elements) {
 		QString id = element.attribute("id");
 		ViewLayer::ViewLayerID viewLayerID = ViewLayer::viewLayerIDFromXmlString(id);
 		if (viewLayerID != ViewLayer::UnknownLayer) {
@@ -430,7 +430,7 @@ void Board::moreCheckImage(const QString & filename) {
 		if (originalPath.contains(MultipleZs)) {
 			QStringList ds = element.attribute("d").split("z", Qt::SkipEmptyParts);
 			subpaths = ds.count();
-			foreach (QString d, ds) {
+			Q_FOREACH (QString d, ds) {
 				if (d.trimmed().startsWith("m", Qt::CaseInsensitive)) mCount++;
 			}
 		}
@@ -487,7 +487,7 @@ QString Board::setBoardOutline(const QString & svg) {
 
 	int ix = 0;
 	QStringList ids;
-	foreach (QDomElement leaf, leaves) {
+	Q_FOREACH (QDomElement leaf, leaves) {
 		ids.append(leaf.attribute("id", ""));
 		leaf.setAttribute("id", QString("____%1____").arg(ix++));
 	}
@@ -495,7 +495,7 @@ QString Board::setBoardOutline(const QString & svg) {
 	QSvgRenderer renderer(domDocument.toByteArray());
 
 	ix = 0;
-	foreach (QDomElement leaf, leaves) {
+	Q_FOREACH (QDomElement leaf, leaves) {
 		leaf.setAttribute("id", ids.at(ix++));
 	}
 
@@ -554,7 +554,7 @@ ViewLayer::ViewID Board::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
 }
 
 QString Board::convertToXmlName(const QString & name) {
-	foreach (QString key, ItemBase::TranslatedPropertyNames.keys()) {
+	Q_FOREACH (QString key, ItemBase::TranslatedPropertyNames.keys()) {
 		if (name.compare(ItemBase::TranslatedPropertyNames.value(key), Qt::CaseInsensitive) == 0) {
 			return NamesToXmlNames.value(key);
 		}
@@ -749,10 +749,10 @@ void ResizableBoard::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 
 			QList<ItemBase *> kin;
 			kin << this->layerKinChief();
-			foreach (ItemBase * lk, this->layerKinChief()->layerKin()) {
+			Q_FOREACH (ItemBase * lk, this->layerKinChief()->layerKin()) {
 				kin << lk;
 			}
-			foreach (ItemBase * itemBase, kin) {
+			Q_FOREACH (ItemBase * itemBase, kin) {
 				itemBase->getViewGeometry().setTransform(newT);
 				itemBase->setTransform(newT);
 			}
@@ -852,7 +852,7 @@ void ResizableBoard::resizeMMAux(double mmW, double mmH)
 	}
 	//	DebugDialog::debug(QString("fast load result %1 %2").arg(result).arg(s));
 
-	foreach (ItemBase * itemBase, m_layerKin) {
+	Q_FOREACH (ItemBase * itemBase, m_layerKin) {
 		QString s = makeNextLayerSvg(itemBase->viewLayerID(), mmW, mmH, milsW, milsH);
 		if (!s.isEmpty()) {
 			result = itemBase->resetRenderer(s);
@@ -1171,7 +1171,7 @@ bool ResizableBoard::inResize() {
 void ResizableBoard::figureHover() {
 	setAcceptHoverEvents(true);
 	setAcceptedMouseButtons(ALLMOUSEBUTTONS);
-	foreach(ItemBase * lkpi, m_layerKin) {
+	Q_FOREACH(ItemBase * lkpi, m_layerKin) {
 		lkpi->setAcceptHoverEvents(false);
 		lkpi->setAcceptedMouseButtons(Qt::NoButton);
 	}
@@ -1243,7 +1243,7 @@ ResizableBoard::Corner ResizableBoard::findCorner(QPointF scenePos, Qt::Keyboard
 void ResizableBoard::setKinCursor(QCursor & cursor) {
 	ItemBase * chief = this->layerKinChief();
 	chief->setCursor(cursor);
-	foreach (ItemBase * itemBase, chief->layerKin()) {
+	Q_FOREACH (ItemBase * itemBase, chief->layerKin()) {
 		itemBase->setCursor(cursor);
 	}
 }
@@ -1251,7 +1251,7 @@ void ResizableBoard::setKinCursor(QCursor & cursor) {
 void ResizableBoard::setKinCursor(Qt::CursorShape cursor) {
 	ItemBase * chief = this->layerKinChief();
 	chief->setCursor(cursor);
-	foreach (ItemBase * itemBase, chief->layerKin()) {
+	Q_FOREACH (ItemBase * itemBase, chief->layerKin()) {
 		itemBase->setCursor(cursor);
 	}
 }

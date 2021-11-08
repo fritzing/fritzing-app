@@ -69,7 +69,7 @@ PaletteModel::PaletteModel(bool makeRoot, bool doInit) : ModelBase( makeRoot ) {
 	m_fullLoad = false;
 
 	if (doInit) {
-		initParts(false);
+		PaletteModel::initParts(false);
 	}
 }
 
@@ -170,7 +170,7 @@ void PaletteModel::loadPartsAux(QDir & dir, QStringList & nameFilters, int & loa
 		QFileInfo fileInfo = list.at(i);
 		QString path = fileInfo.absoluteFilePath ();
 		//DebugDialog::debug(QString("part path:%1 core? %2").arg(path).arg(m_loadingCore? "true" : "false"));
-		loadPart(path, false);
+		PaletteModel::loadPart(path, false);
 		Q_EMIT loadedPart(++loadingPart, totalPartCount);
 		//DebugDialog::debug("loadedok");
 	}

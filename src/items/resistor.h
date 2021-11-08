@@ -60,7 +60,7 @@ protected:
 	void setBands(QDomElement & element, int firstband, int secondband, int thirdband, int multiplier, const QString & tolerance);
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
-public slots:
+public Q_SLOTS:
 	void resistanceEntry(int);
 
 public:

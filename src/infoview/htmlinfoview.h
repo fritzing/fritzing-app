@@ -92,10 +92,10 @@ public:
 	static void cleanup();
 	static QHash<QString, QString> getPartProperties(ModelPart * modelPart, ItemBase * itemBase, bool wantDebug, QStringList & keys);
 
-signals:
+Q_SIGNALS:
 	void clickObsoleteSignal();
 
-protected slots:
+protected Q_SLOTS:
 	void setContent();
 	void setInstanceTitle();
 	void instanceTitleEnter();

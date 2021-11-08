@@ -49,7 +49,7 @@ public:
 
 	static QString obsoleteMakeSchematicSvg(const QStringList & labels);
 
-public slots:
+public Q_SLOTS:
 	void swapEntry(const QString & text);
 
 protected:

@@ -50,7 +50,7 @@ public:
 	bool hasPartNumberProperty();
 	bool canFindConnectorsUnder();
 
-public slots:
+public Q_SLOTS:
 	void widthEntry();
 	void unitsEntry();
 

@@ -106,7 +106,7 @@ void Hole::setBoth(const QString & holeDiameter, const QString & ringThickness) 
 	ItemBase * otherLayer = setBothSvg(holeDiameter, ringThickness);
 
 	// there's only one NonConnectorItem
-	foreach (SvgIdLayer * svgIdLayer, fsvgRenderer()->setUpNonConnectors(viewLayerPlacement())) {
+	Q_FOREACH (SvgIdLayer * svgIdLayer, fsvgRenderer()->setUpNonConnectors(viewLayerPlacement())) {
 		if (svgIdLayer == nullptr) continue;
 
 		setBothNonConnectors(this, svgIdLayer);
@@ -129,7 +129,7 @@ ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringTh
 
 	QString osvg;
 	ItemBase * otherLayer = nullptr;
-	foreach (ItemBase * layerKin, m_layerKin) {
+	Q_FOREACH (ItemBase * layerKin, m_layerKin) {
 		if (layerKin->hasNonConnectors()) {
 			otherLayer = layerKin;
 			break;
@@ -148,7 +148,7 @@ ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringTh
 }
 
 void Hole::setBothNonConnectors(ItemBase * itemBase, SvgIdLayer * svgIdLayer) {
-	foreach (QGraphicsItem * child, itemBase->childItems()) {
+	Q_FOREACH (QGraphicsItem * child, itemBase->childItems()) {
 		auto * nonConnectorItem = dynamic_cast<NonConnectorItem *>(child);
 		if (nonConnectorItem == nullptr) continue;
 

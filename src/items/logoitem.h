@@ -60,7 +60,7 @@ public:
 	QString getInspectorTitle();
 	void setInspectorTitle(const QString & oldText, const QString & newText);
 
-protected slots:
+protected Q_SLOTS:
 	void logoEntry();
 	void widthEntry();
 	void heightEntry();
@@ -137,7 +137,7 @@ public:
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	void setProp(const QString & prop, const QString & value);
 
-public slots:
+public Q_SLOTS:
 	void changeTextColor();
 
 protected:

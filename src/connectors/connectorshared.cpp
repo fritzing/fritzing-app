@@ -56,7 +56,7 @@ ConnectorShared::ConnectorShared( const QDomElement & domElement )
 	loadPins(domElement);
 
 	if (m_type == Connector::Unknown) {
-		foreach (SvgIdLayer * svgIdLayer, m_pins.values()) {
+		Q_FOREACH (SvgIdLayer * svgIdLayer, m_pins.values()) {
 			if (svgIdLayer->m_svgId.endsWith("pad")) {
 				m_type = Connector::Pad;
 				m_typeString = Connector::connectorNameFromType(m_type);
@@ -70,7 +70,7 @@ ConnectorShared::ConnectorShared( const QDomElement & domElement )
 }
 
 ConnectorShared::~ConnectorShared() {
-	foreach (SvgIdLayer * svgIdLayer, m_pins.values()) {
+	Q_FOREACH (SvgIdLayer * svgIdLayer, m_pins.values()) {
 		delete svgIdLayer;
 	}
 	m_pins.clear();
@@ -162,7 +162,7 @@ void ConnectorShared::removePin(ViewLayer::ViewID layer, SvgIdLayer * svgIdLayer
 
 SvgIdLayer * ConnectorShared::fullPinInfo(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID) {
 	QList<SvgIdLayer *> svgLayers = m_pins.values(viewId);
-	foreach ( SvgIdLayer * svgIdLayer, svgLayers) {
+	Q_FOREACH ( SvgIdLayer * svgIdLayer, svgLayers) {
 		if (svgIdLayer->m_svgViewLayerID == viewLayerID) {
 			return svgIdLayer;
 		}
@@ -173,7 +173,7 @@ SvgIdLayer * ConnectorShared::fullPinInfo(ViewLayer::ViewID viewId, ViewLayer::V
 
 const QString & ConnectorShared::legID(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID) {
 	QList<SvgIdLayer *> svgLayers = m_pins.values(viewId);
-	foreach ( SvgIdLayer * svgIdLayer, svgLayers) {
+	Q_FOREACH ( SvgIdLayer * svgIdLayer, svgLayers) {
 		if (svgIdLayer->m_svgViewLayerID == viewLayerID) {
 			return svgIdLayer->m_legId;
 		}

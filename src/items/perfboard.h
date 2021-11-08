@@ -60,7 +60,7 @@ public:
 	static QString genModuleID(QMap<QString, QString> & currPropsMap);
 
 
-protected slots:
+protected Q_SLOTS:
 	void changeBoardSize();
 	void enableSetButton();
 

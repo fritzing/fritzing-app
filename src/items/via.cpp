@@ -97,7 +97,7 @@ bool Via::getAutoroutable() {
 }
 
 ConnectorItem * Via::connectorItem() {
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		return connectorItem;
 	}
 

@@ -189,7 +189,7 @@ QStringList Pad::collectValues(const QString & family, const QString & prop, QSt
 
 	QStringList newValues;
 	if (prop.compare("layer", Qt::CaseInsensitive) == 0) {
-		foreach (QString xmlName, values) {
+		Q_FOREACH (QString xmlName, values) {
 			newValues << Board::convertFromXmlName(xmlName);
 		}
 		value = Board::convertFromXmlName(value);

@@ -139,7 +139,7 @@ HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 
 
 HtmlInfoView::~HtmlInfoView() {
-	foreach (PropThing * propThing, m_propThings) {
+	Q_FOREACH (PropThing * propThing, m_propThings) {
 		delete propThing;
 	}
 	m_propThings.clear();
@@ -797,7 +797,7 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 	showLayers(sl, itemBase, family, properties.value("layer", ""), swappingEnabled);
 
 	int ix = 0;
-	foreach(QString key, keys) {
+	Q_FOREACH(QString key, keys) {
 		if (ix >= m_propThings.count()) {
 			//DebugDialog::debug(QString("new prop thing %1").arg(ix));
 			auto * propThing = new PropThing;
@@ -955,7 +955,7 @@ void HtmlInfoView::changeSticky(bool lockState)
 }
 
 void HtmlInfoView::clickObsolete(const QString &) {
-	emit clickObsoleteSignal();
+	Q_EMIT clickObsoleteSignal();
 }
 
 void HtmlInfoView::showLayers(bool show, ItemBase * itemBase, const QString & family, const QString & value, bool swappingEnabled) {

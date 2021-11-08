@@ -56,7 +56,7 @@ FritzingWindow::FritzingWindow(const QString &untitledFileName, int &untitledFil
 
 	untitledFileCount++;
 
-	setTitle();
+	FritzingWindow::setTitle();
 
 	m_undoStack = new WaitPushUndoStack(this);
 	connect(m_undoStack, SIGNAL(cleanChanged(bool)), this, SLOT(undoStackCleanChanged(bool)) );
@@ -72,7 +72,7 @@ void FritzingWindow::createCloseAction() {
 void FritzingWindow::setTitle() {
 	setWindowTitle(tr("%1 - %2")
 	               .arg(QFileInfo(m_fwFilename).fileName()+(m_readOnly?ReadOnlyPlaceholder:"")+QtFunkyPlaceholder)
-	               .arg(fritzingTitle()));
+		       .arg(FritzingWindow::fritzingTitle()));
 }
 
 // returns true if the user wanted to save the file

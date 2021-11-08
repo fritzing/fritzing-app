@@ -353,7 +353,7 @@ QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
 	auto *layout = new QVBoxLayout();
 	layout->setSpacing(SPACING);
 
-	foreach (Platform * platform, platforms) {
+	Q_FOREACH (Platform * platform, platforms) {
 		auto *platformLb = new QLabel("");
 		platformLb->setTextFormat(Qt::RichText);
 		platformLb->setText(QString("<b>%1</b>").arg(platform->getName()));
@@ -404,7 +404,7 @@ void PrefsDialog::chooseProgrammer()
 
 	QString platformName = sender()->property("platform").toString();
 	Platform * platform = nullptr;
-	foreach (Platform *p, m_platforms) {
+	Q_FOREACH (Platform *p, m_platforms) {
 		if (p->getName().compare(platformName) == 0) {
 			platform = p;
 			break;

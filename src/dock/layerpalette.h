@@ -57,7 +57,7 @@ public:
 	void setShowAllLayersAction(QAction *);
 	void setHideAllLayersAction(QAction *);
 
-protected slots:
+protected Q_SLOTS:
 	void setLayerVisibility(bool vis);
 	void setAllLayersVisible(bool vis);
 

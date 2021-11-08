@@ -39,7 +39,7 @@ int Checker::checkText(MainWindow * mainWindow, bool displayMessage) {
 	QHash<QString, QString> svgHash;
 	QList<ItemBase *> missing;
 
-	foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == NULL) continue;
 		if (!itemBase->isEverVisible()) continue;
@@ -87,7 +87,7 @@ int Checker::checkText(MainWindow * mainWindow, bool displayMessage) {
 
 int Checker::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
 	QList<ConnectorItem *> donuts;
-	foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == NULL) continue;
 		if (!connectorItem->attachedTo()->isEverVisible()) continue;
@@ -102,7 +102,7 @@ int Checker::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
 	if (displayMessage && donuts.count() > 0) {
 		mainWindow->pcbView()->selectAllItems(false, false);
 		QSet<ItemBase *> itemBases;
-		foreach (ConnectorItem * connectorItem, donuts) {
+		Q_FOREACH (ConnectorItem * connectorItem, donuts) {
 			itemBases.insert(connectorItem->attachedTo());
 		}
 		mainWindow->pcbView()->selectItems(itemBases.values());

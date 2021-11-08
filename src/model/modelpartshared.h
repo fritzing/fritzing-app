@@ -162,7 +162,7 @@ protected:
 	void addSchematicText(ViewImage *);
 	bool setDomDocument(QDomDocument &);
 
-protected slots:
+protected Q_SLOTS:
 	void removeOwner();
 
 public:

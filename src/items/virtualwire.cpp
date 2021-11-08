@@ -55,14 +55,14 @@ FSvgRenderer * VirtualWire::setUpConnectors(ModelPart * modelPart, ViewLayer::Vi
 
 void VirtualWire::hideConnectors() {
 	// m_connector0 and m_connector1 may not yet be initialized
-	foreach (ConnectorItem * item, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * item, cachedConnectorItems()) {
 		item->setHidden(true);
 	}
 }
 
 void VirtualWire::inactivateConnectors() {
 	// m_connector0 and m_connector1 may not yet be initialized
-	foreach (ConnectorItem * item, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * item, cachedConnectorItems()) {
 		item->setInactive(true);
 	}
 }

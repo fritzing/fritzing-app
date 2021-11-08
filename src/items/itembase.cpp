@@ -876,7 +876,7 @@ void ItemBase::addSticky(ItemBase * stickyBase, bool stickem) {
 			}
 			m_stickyList.clear();
 		}
-		m_stickyList.insert(stickyBase->id(), stickyBase);
+		if (stickyBase) m_stickyList.insert(stickyBase->id(), stickyBase);
 	}
 	else {
 		m_stickyList.remove(stickyBase->id());

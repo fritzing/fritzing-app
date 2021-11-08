@@ -101,18 +101,18 @@ void ModelPartShared::commonInit() {
 }
 
 ModelPartShared::~ModelPartShared() {
-	foreach (ConnectorShared * connectorShared, m_connectorSharedHash.values()) {
+	Q_FOREACH (ConnectorShared * connectorShared, m_connectorSharedHash.values()) {
 		delete connectorShared;
 	}
 	m_connectorSharedHash.clear();
 
-	foreach (ViewImage * viewImage, m_viewImages.values()) {
+	Q_FOREACH (ViewImage * viewImage, m_viewImages.values()) {
 		delete viewImage;
 	}
 	m_viewImages.clear();
 
 
-	foreach (BusShared * busShared, m_buses.values()) {
+	Q_FOREACH (BusShared * busShared, m_buses.values()) {
 		delete busShared;
 	}
 	m_buses.clear();
@@ -465,7 +465,7 @@ void ModelPartShared::copy(ModelPartShared* other) {
 	setVersion(other->version());
 	setSuperpart(other->superpart());
 
-	foreach (ViewLayer::ViewID viewID, other->m_viewImages.keys()) {
+	Q_FOREACH (ViewLayer::ViewID viewID, other->m_viewImages.keys()) {
 		ViewImage * otherViewImage = other->m_viewImages.value(viewID);
 		auto * viewImage = new ViewImage(viewID);
 		viewImage->layers = otherViewImage->layers;
@@ -505,7 +505,7 @@ bool ModelPartShared::needsCopper1() {
 }
 
 void ModelPartShared::connectorIDs(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID, QStringList & connectorIDs, QStringList & terminalIDs, QStringList & legIDs) {
-	foreach (ConnectorShared * connectorShared, m_connectorSharedHash.values()) {
+	Q_FOREACH (ConnectorShared * connectorShared, m_connectorSharedHash.values()) {
 		SvgIdLayer * svgIdLayer = connectorShared->fullPinInfo(viewID, viewLayerID);
 		if (svgIdLayer == nullptr) {
 			continue;
@@ -773,7 +773,7 @@ void ModelPartShared::addConnector(ConnectorShared * connectorShared)
 }
 
 void ModelPartShared::copyPins(ViewLayer::ViewLayerID from, ViewLayer::ViewLayerID to) {
-	foreach (ConnectorShared * connectorShared, m_connectorSharedHash.values()) {
+	Q_FOREACH (ConnectorShared * connectorShared, m_connectorSharedHash.values()) {
 		SvgIdLayer * svgIdLayer = connectorShared->fullPinInfo(ViewLayer::PCBView, to);
 		if (svgIdLayer) {
 			// already there
@@ -797,7 +797,7 @@ void ModelPartShared::insertBus(BusShared * busShared) {
 }
 
 void ModelPartShared::lookForZeroConnector() {
-	foreach (QString key, m_connectorSharedHash.keys()) {
+	Q_FOREACH (QString key, m_connectorSharedHash.keys()) {
 		QRegularExpressionMatch match;
 		int ix = key.indexOf(IntegerFinder, 0, &match);
 		if (ix >= 0) {

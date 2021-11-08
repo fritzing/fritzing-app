@@ -99,7 +99,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		return false;
 	}
 
-	emit loadedRoot(fileName, this, root);
+	Q_EMIT loadedRoot(fileName, this, root);
 
 	if (root.tagName() != "module") {
 		FMessageBox::information(nullptr, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (4).").arg(fileName));
@@ -173,7 +173,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	}
 
 	QDomElement views = root.firstChildElement("views");
-	emit loadedViews(this, views);
+	Q_EMIT loadedViews(this, views);
 
 	QDomElement instances = root.firstChildElement("instances");
 	if (instances.isNull()) {
@@ -188,7 +188,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		delete child;
 	}
 
-	emit loadingInstances(this, instances);
+	Q_EMIT loadingInstances(this, instances);
 
 	if (checkForRats) {
 		QDomElement instance = instances.firstChildElement("instance");
@@ -222,7 +222,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		QDomElement instance = instances.firstChildElement("instance");
 		while (!instance.isNull()) {
 			if (checkObsoleteOrientation(instance)) {
-				emit obsoleteSMDOrientationSignal();
+				Q_EMIT obsoleteSMDOrientationSignal();
 				break;
 			}
 			instance = instance.nextSiblingElement("instance");
@@ -234,7 +234,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		QDomElement instance = instances.firstChildElement("instance");
 		while (!instance.isNull()) {
 			if (checkOldSchematics(instance)) {
-				emit oldSchematicsSignal(fileName, m_useOldSchematics);
+				Q_EMIT oldSchematicsSignal(fileName, m_useOldSchematics);
 				break;
 			}
 			instance = instance.nextSiblingElement("instance");
@@ -242,7 +242,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	}
 
 	bool result = loadInstances(domDocument, instances, modelParts, checkViews);
-	emit loadedInstances(this, instances);
+	Q_EMIT loadedInstances(this, instances);
 	return result;
 }
 
@@ -256,7 +256,7 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 	QDomElement instance = instances.firstChildElement("instance");
 	ModelPart* modelPart = nullptr;
 	while (!instance.isNull()) {
-		emit loadingInstance(this, instance);
+		Q_EMIT loadingInstance(this, instance);
 
 		if (checkViews) {
 			QDomElement views = instance.firstChildElement("views");
@@ -374,7 +374,7 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 	if (m_reportMissingModules && missingModules.count() > 0) {
 		QString unableToFind = QString("<html><body><b>%1</b><br/><table style='border-spacing: 0px 12px;'>")
 		                       .arg(tr("Unable to find the following %n part(s):", "", missingModules.count()));
-		foreach (QString key, missingModules.keys()) {
+		Q_FOREACH (QString key, missingModules.keys()) {
 			unableToFind += QString("<tr><td>'%1'</td><td><b>%2</b></td><td>'%3'</td></tr>")
 			                .arg(key).arg(tr("at")).arg(missingModules.value(key, ""));
 		}
@@ -666,7 +666,7 @@ void ModelBase::checkTraces(QDomElement & instance) {
 
 		QList<QDomElement> elements;
 		elements << bbView << schView << pcbView;
-		foreach (QDomElement element, elements) {
+		Q_FOREACH (QDomElement element, elements) {
 			QDomElement geometry = element.firstChildElement("geometry");
 			if (!geometry.isNull()) {
 				int flags = geometry.attribute("wireFlags").toInt();

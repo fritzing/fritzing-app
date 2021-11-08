@@ -47,7 +47,7 @@ public:
 	static void closeAbout(); // Maybe we don't need close as a public method (we only want to hide)
 	static void initBuildType(const QString &);
 
-public slots:
+public Q_SLOTS:
 	void scrollCredits();
 
 protected:

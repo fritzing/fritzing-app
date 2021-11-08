@@ -74,7 +74,7 @@ protected:
 	void initBetaFeatures(QWidget *widget, bool);
 	QWidget * createCurvyForm(ViewInfoThing *);
 
-protected slots:
+protected Q_SLOTS:
 	void changeLanguage(int);
 	void clear();
 	void setConnectedColor();

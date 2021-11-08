@@ -65,10 +65,10 @@ public:
 	static void splitNetPrep(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, const Markers &, QList<QDomElement> & net, QList<QDomElement> & alsoNet, QList<QDomElement> & notNet, bool checkIntersection);
 	static void extendBorder(double keepoutImagePixels, QImage * image);
 
-public slots:
+public Q_SLOTS:
 	void cancel();
 
-signals:
+Q_SIGNALS:
 	void hideProgress();
 	void setMaximumProgress(int);
 	void setProgressValue(int);
@@ -120,7 +120,7 @@ public:
 	DRCResultsDialog(const QString & message, const QStringList & messages, const QList<CollidingThing *> &, QGraphicsPixmapItem * displayItem,  QImage * displayImage, class PCBSketchWidget * sketchWidget, QWidget *parent = 0);
 	~DRCResultsDialog();
 
-protected slots:
+protected Q_SLOTS:
 	void pressedSlot(QListWidgetItem *);
 	void releasedSlot(QListWidgetItem *);
 

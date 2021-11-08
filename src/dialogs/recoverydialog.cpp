@@ -72,7 +72,7 @@ RecoveryDialog::RecoveryDialog(QFileInfoList fileInfoList, QWidget *parent, Qt::
 	connect(m_recoveryList, SIGNAL(itemSelectionChanged()), this, SLOT(updateRecoverButton()));
 
 	QTreeWidgetItem *item;
-	foreach (QFileInfo fileInfo, fileInfoList) {
+	Q_FOREACH (QFileInfo fileInfo, fileInfoList) {
 		item = new QTreeWidgetItem;
 		QString originalFileName = getOriginalFileName(fileInfo.absoluteFilePath());
 		DebugDialog::debug(QString("Creating option for recoveryDialog file %1").arg(originalFileName));

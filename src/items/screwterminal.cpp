@@ -104,7 +104,7 @@ QString ScrewTerminal::genModuleID(QMap<QString, QString> & currPropsMap)
 	QString spacing = currPropsMap.value("pin spacing");
 	QString pins = currPropsMap.value("pins");
 
-	foreach (QString key, Spacings.keys()) {
+	Q_FOREACH (QString key, Spacings.keys()) {
 		if (Spacings.value(key).compare(spacing, Qt::CaseInsensitive) == 0) {
 			return QString("screw_terminal_%1_%2").arg(pins).arg(key);
 		}

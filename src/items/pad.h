@@ -57,7 +57,7 @@ public:
 	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	bool copperBlocker();
 
-protected slots:
+protected Q_SLOTS:
 	void terminalPointEntry(int);
 
 

@@ -59,7 +59,7 @@ void FSvgRenderer::initNames() {
 }
 
 void FSvgRenderer::clearConnectorInfoHash(QHash<QString, ConnectorInfo *> & hash) {
-	foreach (ConnectorInfo * connectorInfo, hash.values()) {
+	Q_FOREACH (ConnectorInfo * connectorInfo, hash.values()) {
 		delete connectorInfo;
 	}
 	hash.clear();
@@ -800,7 +800,7 @@ QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors(ViewLayer::ViewLayerPlaceme
 	QList<SvgIdLayer *> list;
 	if (m_nonConnectorInfoHash.count() == 0) return list;
 
-	foreach (QString nonConnectorID, m_nonConnectorInfoHash.keys()) {
+	Q_FOREACH (QString nonConnectorID, m_nonConnectorInfoHash.keys()) {
 		auto * svgIdLayer = new SvgIdLayer(ViewLayer::PCBView);
 		svgIdLayer->m_svgId = nonConnectorID;
 		QRectF bounds = this->boundsOnElement(nonConnectorID);

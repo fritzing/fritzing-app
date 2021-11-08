@@ -45,7 +45,7 @@ public:
 	void emitUndo();
 	void emitRedo();
 
-signals:
+Q_SIGNALS:
 	void incUndo();
 	void incRedo();
 

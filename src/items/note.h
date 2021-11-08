@@ -74,7 +74,7 @@ protected:
 	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
-protected slots:
+protected Q_SLOTS:
 	void contentsChangeSlot(int position, int charsAdded, int charsRemoved);
 	void contentsChangedSlot();
 	void linkDialog();

@@ -99,7 +99,7 @@ static int UntitledIndex = 1;
 QList<Platform *> ProgramWindow::m_platforms;
 
 ProgramWindow::ProgramWindow(QWidget *parent)
-	: FritzingWindow("", untitledFileCount(), "", parent)
+	: FritzingWindow("", ProgramWindow::untitledFileCount(), "", parent)
 {
 	QFile styleSheet(":/resources/styles/programwindow.qss");
 

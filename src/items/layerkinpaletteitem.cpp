@@ -291,7 +291,7 @@ QString SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
 	}
 
 	int ix = 0;
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		QDomElement g = text.ownerDocument().createElement("g");
 		text.parentNode().insertAfter(g, text);
 		g.appendChild(text);
@@ -312,14 +312,14 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
 
 	m_textThings.clear();
 
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		text.setTagName("g");
 	}
 
 	QRectF br = boundingRect();
 	QImage image(qCeil(br.width()) * 2, qCeil(br.height()) * 2, QImage::Format_Mono);  // schematic text is so small it doesn't render unless bitmap is double-sized
 
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		TextThing textThing;
 		QRectF viewBox;
 		QTransform matrix;
@@ -343,7 +343,7 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
 		m_textThings.append(textThing);
 	}
 
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		text.setTagName("text");
 	}
 
@@ -373,7 +373,7 @@ QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlip
 	}
 
 	int ix = 0;
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		QDomElement g = text.ownerDocument().createElement("g");
 		text.parentNode().insertAfter(g, text);
 		g.appendChild(text);

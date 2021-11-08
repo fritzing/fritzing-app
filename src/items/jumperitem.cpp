@@ -156,7 +156,7 @@ bool JumperItem::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers,
 	bool result = PaletteItem::setUpImage(modelPart, viewLayers, layerAttributes);
 
 	if (layerAttributes.doConnectors) {
-		foreach (ConnectorItem * item, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * item, cachedConnectorItems()) {
 			item->setCircular(true);
 			if (item->connectorSharedName().contains('0')) {
 				m_connector0 = item;
@@ -266,7 +266,7 @@ void JumperItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 	QPointF d = event->scenePos() - m_dragStartScenePos;
 	QPointF p = m_dragStartConnectorPos + d;
-	emit alignMe(this, p);
+	Q_EMIT alignMe(this, p);
 	QPointF myPos(qMin(p.x(), m_otherPos.x()) - m_connectorTL.x(),
 	              qMin(p.y(), m_otherPos.y()) - m_connectorTL.y());
 	this->setPos(myPos);
@@ -368,7 +368,7 @@ void JumperItem::resize() {
 	//DebugDialog::debug(s);
 	resetRenderer(s);
 
-	foreach (ItemBase * itemBase, m_layerKin) {
+	Q_FOREACH (ItemBase * itemBase, m_layerKin) {
 		switch(itemBase->viewLayerID()) {
 		case ViewLayer::PartImage:
 		case ViewLayer::Copper1:

@@ -56,7 +56,7 @@ public:
 	bool canFindConnectorsUnder();
 	QRectF trueSceneBoundingRect();
 
-protected slots:
+protected Q_SLOTS:
 	void changeHoleSize(const QString &);
 	void changeUnits(bool);
 

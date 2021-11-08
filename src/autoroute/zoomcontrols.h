@@ -37,10 +37,10 @@ public:
 
 
 
-signals:
+Q_SIGNALS:
 	void clicked();
 
-protected slots:
+protected Q_SLOTS:
 	void zoom();
 
 protected:
@@ -73,7 +73,7 @@ class ZoomControls : public ZoomControlsPrivate {
 public:
 	ZoomControls(ZoomableGraphicsView *view, QWidget *parent);
 
-protected slots:
+protected Q_SLOTS:
 	void updateLabel(double zoom);
 
 protected:

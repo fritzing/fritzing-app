@@ -190,7 +190,11 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		m_propsMap.insert("size", m_size);
 
 		int x, y;
-		getXY(x, y, m_size);
+		bool result = getXY(x, y, m_size);
+		if (!result) {
+			x = y = 0;
+		}
+
 
 		auto * frame = new QFrame();
 		auto * vboxLayout = new QVBoxLayout();

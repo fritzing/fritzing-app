@@ -132,7 +132,7 @@ void FabUploadProgress::uploadMultipart(const QUrl &url, const QString &file_pat
 void FabUploadProgress::uploadProgress(qint64 bytesSent, qint64 bytesTotal) {
 	qDebug() << "---------Uploaded--------------" << bytesSent<< "of" <<bytesTotal;
 	if (bytesSent > 0) {
-		emit uploadProgressChanged(100 * bytesTotal / bytesSent);
+		Q_EMIT uploadProgressChanged(100 * bytesTotal / bytesSent);
 	}
 }
 
@@ -142,7 +142,7 @@ void FabUploadProgress::onError(QNetworkReply::NetworkError code)
 	auto *reply = qobject_cast<QNetworkReply*>(sender());
 	qDebug() << "onError" << code << Qt::endl << Qt::flush;
 	FMessageBox::critical(this, tr("Fritzing"), tr("Could not connect to Fritzing fab.") + "Error: " + reply->errorString());
-	emit closeUploadError();
+	Q_EMIT closeUploadError();
 }
 
 // Handle http errors detected
@@ -151,7 +151,7 @@ void FabUploadProgress::httpError(QNetworkReply* reply)
 	QString error(reply->errorString() + reply->attribute( QNetworkRequest::HttpStatusCodeAttribute).toString());
 	qDebug() << error;
 	FMessageBox::critical(this, tr("Fritzing"), error);
-	emit closeUploadError();
+	Q_EMIT closeUploadError();
 }
 
 // Handle errors reported by remote server
@@ -159,7 +159,7 @@ void FabUploadProgress::apiError(QString message)
 {
 	qDebug() << message;
 	FMessageBox::critical(this, tr("Fritzing"), tr("Error processing the project. The factory says: %1").arg(message));
-	emit closeUploadError();
+	Q_EMIT closeUploadError();
 }
 
 
@@ -213,14 +213,14 @@ void FabUploadProgress::updateProcessingStatus()
 			}
 			mActivity += 1;
 			findChild<QLabel*>("message")->setText(message);
-			emit processProgressChanged(std::min(progress + mActivity, 100));
+			Q_EMIT processProgressChanged(std::min(progress + mActivity, 100));
 			if(progress < 100) {
 				QUrl url = reply->url();
 				QTimer::singleShot(1000, this, [this, url](){
 					checkProcessingStatus(url);
 				});
 			} else {
-				emit processingDone();
+				Q_EMIT processingDone();
 			}
 		}
 	} else {

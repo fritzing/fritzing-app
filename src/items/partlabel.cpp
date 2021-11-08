@@ -144,7 +144,7 @@ void PartLabel::showLabel(bool showIt, ViewLayer * viewLayer) {
 		bool flipped = (viewLayer->viewLayerID() == ViewLayer::Silkscreen0Label);
 
 		if (m_owner->viewID() != ViewLayer::PCBView) {
-			foreach (QString dk, m_owner->modelPart()->displayKeys()) {
+			Q_FOREACH (QString dk, m_owner->modelPart()->displayKeys()) {
 				if (!m_displayKeys.contains(dk)) {
 					m_displayKeys.append(dk);
 				}
@@ -271,7 +271,7 @@ void PartLabel::displayTextsIf() {
 void PartLabel::displayTexts() {
 	QStringList texts;
 
-	foreach (QString key, m_displayKeys) {
+	Q_FOREACH (QString key, m_displayKeys) {
 		QString t;
 		if (key.compare(LabelTextKey) == 0) {
 			t = m_text;
@@ -332,7 +332,7 @@ void PartLabel::saveInstance(QXmlStreamWriter & streamWriter) {
 	streamWriter.writeAttribute("textColor", m_color.name());
 	streamWriter.writeAttribute("fontSize", QString::number(m_font.pointSizeF()));
 	GraphicsUtils::saveTransform(streamWriter, transform());
-	foreach (QString key, m_displayKeys) {
+	Q_FOREACH (QString key, m_displayKeys) {
 		streamWriter.writeStartElement("displayKey");
 		streamWriter.writeAttribute("key", key);
 		streamWriter.writeEndElement();
@@ -515,7 +515,7 @@ void PartLabel::initMenu()
 	dvmenu->addSeparator();
 
 	QHash<QString,QString> properties = m_owner->modelPart()->properties();
-	foreach (QString key, properties.keys()) {
+	Q_FOREACH (QString key, properties.keys()) {
 		QString translatedName = ItemBase::translatePropertyName(key);
 		QAction * action = dvmenu->addAction(translatedName);
 		action->setData(QVariant(key));
@@ -598,7 +598,7 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 	}
 
 	m_labelAct->setChecked(m_displayKeys.contains(LabelTextKey));
-	foreach (QAction * displayAct, m_displayActs) {
+	Q_FOREACH (QAction * displayAct, m_displayActs) {
 		QString data = displayAct->data().toString();
 		displayAct->setChecked(m_displayKeys.contains(data));
 	}
@@ -725,7 +725,7 @@ void PartLabel::partLabelEdit()
 	if (ok && (oldText.compare(text) != 0)) {
 		if (m_owner) {
 			m_owner->partLabelChanged(text);
-			foreach (PartLabel * p, AllPartLabels.values(m_owner->id())) {
+			Q_FOREACH (PartLabel * p, AllPartLabels.values(m_owner->id())) {
 				p->setPlainText(text);
 			}
 		}
@@ -859,7 +859,7 @@ QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, d
 
 	w = 0;
 	QStringList texts = m_displayText.split("\n");
-	foreach (QString t, texts) {
+	Q_FOREACH (QString t, texts) {
 		QString t1 = TextUtils::convertExtendedChars(TextUtils::escapeAnd(t));
 		svg += QString("<text x='0' y='%1'>%2</text>")
 		       .arg(y * dpi / printerScale)

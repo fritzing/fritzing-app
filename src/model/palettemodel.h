@@ -63,7 +63,7 @@ protected:
 	bool m_loadingContrib;
 	bool m_fullLoad;
 
-signals:
+Q_SIGNALS:
 	void loadedPart(int i, int total);
 	void incSearch();
 	void addSearchMaximum(int);

@@ -474,10 +474,12 @@ ConnectorItem * ConnectorItem::removeConnection(ItemBase * itemBase) {
 				m_attachedTo->connectionChange(this, removed, false);
 			}
 			restoreColor(visited);
-			DebugDialog::debug(QString("remove from:%1 to:%2 count%3")
-			                   .arg((long) this, 0, 16)
-			                   .arg(itemBase->modelPartShared()->title())
-			                   .arg(m_connectedTo.count()) );
+			if (itemBase) {
+				DebugDialog::debug(QString("remove from:%1 to:%2 count%3")
+						   .arg((long) this, 0, 16)
+						   .arg(itemBase->modelPartShared()->title())
+						   .arg(m_connectedTo.count()) );
+			}
 			return removed;
 		}
 	}

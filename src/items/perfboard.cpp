@@ -169,7 +169,10 @@ QString Perfboard::genFZP(const QString & moduleid)
 	}
 
 	int x, y;
-	getXY(x, y, moduleid);
+	bool result = getXY(x, y, moduleid);
+	if (!result) {
+		x = y = 0;
+	}
 
 	QString middle;
 

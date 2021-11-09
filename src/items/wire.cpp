@@ -888,7 +888,6 @@ void Wire::connectionChange(ConnectorItem * onMe, ConnectorItem * onIt, bool con
 	if (movable) {
 		Q_FOREACH (ConnectorItem * connectedTo, m_connector1->connectedToItems()) {
 			if (connectedTo->attachedToItemType() != ModelPart::Wire) {
-				movable = false;
 				break;
 			}
 		}

@@ -2849,7 +2849,7 @@ void MazeRouter::routeJumper(int netIndex, RouteThing & routeThing, Score & curr
 	GridPoint gp2 = lookForJumper(routeThing.bestLocationToSource, GridTarget, routeThing.gridSourcePoint);
 	if (gp2.baseCost == GridBoardObstacle) return;
 
-	int sourceViaCount;
+	int sourceViaCount = 0;
 	if (routeBothEnds) {
 		sourceTrace.flags = JumperStart;
 		if (gp1.flags & GridPointJumperLeft) sourceTrace.flags |= JumperLeft;
@@ -2861,7 +2861,7 @@ void MazeRouter::routeJumper(int netIndex, RouteThing & routeThing, Score & curr
 	destTrace.flags = JumperEnd;
 	if (gp2.flags & GridPointJumperLeft) destTrace.flags |= JumperLeft;
 	else if (gp2.flags & GridPointJumperRight) destTrace.flags |= JumperRight;
-	int targetViaCount;
+	int targetViaCount = 0;
 	destTrace.gridPoints = traceBack(gp2, m_grid, targetViaCount, GridSource, GridTarget);          // trace back to target
 
 	if (routeBothEnds) {

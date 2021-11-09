@@ -490,7 +490,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 			if ((y1 != currenty) || (x1 != currentx)) {
 				if (light_on) {
 					m_gerber_paths += "D02*\n";
-					light_on = false;
+					// Assignment of light_on to false was removed from this line because it is overwritten to true below.
 				}
 			}
 

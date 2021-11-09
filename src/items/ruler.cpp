@@ -121,7 +121,6 @@ QString Ruler::makeSvg(double inches) {
 	int counter;
 
 	if (units == IndexCm) {
-		counter = 0;
 		svg += "<g font-family='Droid Sans' text-anchor='middle' font-size='100' stroke-width='1' style='stroke: rgb(100,100,100)'>";
 
 		// 1/100 centimeter spacing

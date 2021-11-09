@@ -100,7 +100,6 @@ SymbolPaletteItem::SymbolPaletteItem( ModelPart * modelPart, ViewLayer::ViewID v
 			m_voltage = temp;
 		}
 		else {
-			temp = modelPart->properties().value("voltage").toDouble(&ok);
 			if (ok) {
 				m_voltage = SymbolPaletteItem::DefaultVoltage;
 			}

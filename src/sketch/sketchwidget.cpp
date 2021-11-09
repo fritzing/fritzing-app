@@ -5824,7 +5824,7 @@ void SketchWidget::hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, Con
 		attachedTo->hoverLeaveConnectorItem(event, item);
 	}
 
-	if (attachedTo->itemType() == ModelPart::Wire) {
+	if (attachedTo != nullptr && attachedTo->itemType() == ModelPart::Wire) {
 		if (!this->m_chainDrag) return;
 		if (!item->chained()) return;
 

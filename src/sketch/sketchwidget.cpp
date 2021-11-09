@@ -2160,7 +2160,7 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 		bool draggingWire = false;
 		if (wire) {
 			if (canChainWire(wire) && wire->hasConnections()) {
-				if (canDragWire(wire) && ((event->modifiers() & altOrMetaModifier()) != 0)) {
+				if (canDragWire(wire) && (event != nullptr) && ((event->modifiers() & altOrMetaModifier()) != 0)) {
 					prepDragWire(wire);
 					draggingWire = true;
 				}

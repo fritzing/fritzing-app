@@ -340,7 +340,6 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 					Note * note = qobject_cast<Note *>(itemBase);
 					if (note) {
 						note->setText(mp->instanceText(), true);
-						gotOne = true;
 					}
 				}
 

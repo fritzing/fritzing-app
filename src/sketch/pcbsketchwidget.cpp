@@ -1124,11 +1124,15 @@ void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCom
 				}
 			}
 
-			new ChangeConnectionCommand(this, BaseCommand::SingleView,
-			                            targetConnectorItem->attachedToID(), targetConnectorItem->connectorSharedID(),
-			                            end->attachedToID(), end->connectorSharedID(),
-			                            ViewLayer::specFromID(newViewLayerID),
-			                            true, parentCommand);
+			if (targetConnectorItem != nullptr) {
+				new ChangeConnectionCommand(this, BaseCommand::SingleView,
+							    targetConnectorItem->attachedToID(), targetConnectorItem->connectorSharedID(),
+							    end->attachedToID(), end->connectorSharedID(),
+							    ViewLayer::specFromID(newViewLayerID),
+							    true, parentCommand);
+			} else {
+				DebugDialog::debug("Warning. targetConnectorItem is null. ChangeConnectionCommand canceled.");
+			}
 		}
 	}
 

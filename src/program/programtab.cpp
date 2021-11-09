@@ -149,7 +149,9 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 
 	while (m_programWindow == nullptr) {
 		m_programWindow = qobject_cast<ProgramWindow *>(parent);
-		parent = parent->parentWidget();
+		if (parent) {
+			parent = parent->parentWidget();
+		}
 	}
 
 	// m_textEdit needs to be initialized before createFooter so

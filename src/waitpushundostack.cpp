@@ -168,8 +168,10 @@ void WaitPushUndoStack::writeUndo(const QUndoCommand * cmd, int indent, const Ba
 		m_file.close();
 	}
 
-	for (int i = 0; i < cmd->childCount(); i++) {
-		writeUndo(cmd->child(i), indent + 4, nullptr);
+	if (cmd) {
+		for (int i = 0; i < cmd->childCount(); i++) {
+			writeUndo(cmd->child(i), indent + 4, nullptr);
+		}
 	}
 
 	if (bcmd) {

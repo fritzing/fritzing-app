@@ -1278,7 +1278,10 @@ bool ConnectorItem::isConnectedToPart() {
 			}
 		}
 
-		ConnectorItem * crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
+		ConnectorItem * crossConnectorItem = nullptr;
+		if (connectorItem != nullptr) {
+			crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
+		}
 		if (crossConnectorItem) {
 			if (!tempItems.contains(crossConnectorItem)) {
 				tempItems.append(crossConnectorItem);

@@ -388,10 +388,12 @@ void InfoGraphicsView::resolveTemporary(bool, ItemBase *)
 }
 void InfoGraphicsView::newWire(Wire * wire)
 {
-	bool succeeded = connect(wire, SIGNAL(wireChangedSignal(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
+	// Bool 'succeeded' was removed from this line because its result was overwritten in the next line.
+	// If there are any problems related to this code you might try to add a 'succeeded &&' instead.
+	connect(wire, SIGNAL(wireChangedSignal(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
 	                         this, SLOT(wireChangedSlot(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
 	                         Qt::DirectConnection); // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
-	succeeded = connect(wire, SIGNAL(wireChangedCurveSignal(Wire*, const Bezier *, const Bezier *, bool)),
+	bool succeeded = connect(wire, SIGNAL(wireChangedCurveSignal(Wire*, const Bezier *, const Bezier *, bool)),
 	                    this, SLOT(wireChangedCurveSlot(Wire*, const Bezier *, const Bezier *, bool)),
 	                    Qt::DirectConnection); // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
 	succeeded = succeeded && connect(wire, SIGNAL(wireSplitSignal(Wire*, QPointF, QPointF, const QLineF & )),

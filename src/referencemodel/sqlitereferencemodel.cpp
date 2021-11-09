@@ -544,6 +544,10 @@ bool SqliteReferenceModel::createDatabase(const QString & databaseName, bool ful
 
 		bool result = createParts(m_database, fullLoad);
 
+		if (!result) {
+			DebugDialog::debug("SqliteReferenceModel::createParts failed.");
+		}
+
 		QSqlQuery query;
 		result = query.exec("CREATE TABLE lastcommit (\n"
 		                    "id INTEGER PRIMARY KEY NOT NULL,\n"
@@ -618,6 +622,10 @@ bool SqliteReferenceModel::createDatabase(const QString & databaseName, bool ful
 		debugError(result, query);
 
 		result = createProperties(m_database);
+
+		if (!result) {
+			DebugDialog::debug("SqliteReferenceModel::createProperties failed.");
+		}
 
 		result = query.exec("CREATE TRIGGER unique_part__moduleID \n"
 		                    "BEFORE INSERT ON parts \n"

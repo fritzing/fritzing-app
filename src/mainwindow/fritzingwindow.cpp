@@ -72,7 +72,7 @@ void FritzingWindow::createCloseAction() {
 void FritzingWindow::setTitle() {
 	setWindowTitle(tr("%1 - %2")
 	               .arg(QFileInfo(m_fwFilename).fileName()+(m_readOnly?ReadOnlyPlaceholder:"")+QtFunkyPlaceholder)
-		       .arg(FritzingWindow::fritzingTitle()));
+		       .arg(fritzingTitle()));
 }
 
 // returns true if the user wanted to save the file

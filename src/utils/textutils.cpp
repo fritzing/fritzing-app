@@ -55,6 +55,7 @@ const QString TextUtils::SMDFlipSuffix("___");
 
 const QString TextUtils::RegexFloatDetector = "[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?";
 const QRegularExpression TextUtils::floatingPointMatcher(RegexFloatDetector);
+const QRegularExpression TextUtils::positiveIntegerMatcher("[0-9]+");
 
 static const QString fontFamilyQuotesPattern = R"x(font-family(?:="|:)('[^']*')"?)x";
 
@@ -947,6 +948,19 @@ QList<double> TextUtils::getTransformFloats(const QString & transform) {
 	// }
 	//DebugDialog::debug(dbg);
 #endif
+
+	return list;
+}
+QList<uint> TextUtils::getPositiveIntegers(const QString & str) {
+	QList<uint> list;
+	int pos = 0;
+
+	QRegularExpressionMatch match;
+	while ((pos = str.indexOf(TextUtils::positiveIntegerMatcher, pos, &match)) != -1) {
+		list << str.mid(pos, match.capturedLength()).toDouble();
+		pos += match.capturedLength();
+		match = QRegularExpressionMatch();
+	}
 
 	return list;
 }

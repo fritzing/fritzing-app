@@ -494,6 +494,15 @@ int FApplication::init() {
 			toRemove << i << i + 1;
 		}
 
+		if ((m_arguments[i].compare("-a", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("-all", Qt::CaseInsensitive) == 0)||
+			(m_arguments[i].compare("--all", Qt::CaseInsensitive) == 0)) {
+			m_serviceType = ExportAllService;
+			DebugDialog::setEnabled(true);
+			m_outputFolder = m_arguments[i + 1];
+			toRemove << i << i + 1;
+		}
+
 		if (m_arguments[i].compare("-ep", Qt::CaseInsensitive) == 0) {
 			m_externalProcessPath = m_arguments[i + 1];
 			toRemove << i << i + 1;
@@ -833,6 +842,10 @@ int FApplication::serviceStartup() {
 		runGerberService();
 		return 0;
 
+	case ExportAllService:
+		runExportAllService();
+		return 0;
+
 	case SvgService:
 		runSvgService();
 		return 0;
@@ -869,6 +882,42 @@ void FApplication::runGerberServiceAux()
 		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
 			QFileInfo info(filepath);
 			GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, nullptr, mainWindow->pcbView(), false);
+		}
+
+		mainWindow->setCloseSilently(true);
+		mainWindow->close();
+	}
+}
+
+
+void FApplication::runExportAllService()
+{
+	initService();
+	runExportAllServiceAux();
+}
+
+void FApplication::runExportAllServiceAux()
+{
+	QDir dir(m_outputFolder);
+	QString s = dir.absolutePath();
+	QStringList filters;
+	filters << "*" + FritzingBundleExtension;
+	QStringList filenames = dir.entryList(filters, QDir::Files);
+	Q_FOREACH (QString filename, filenames) {
+		QString filepath = dir.absoluteFilePath(filename);
+		MainWindow * mainWindow = openWindowForService(false, 3);
+		m_started = true;
+
+		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
+		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
+			QFileInfo info(filepath);
+			GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, nullptr, mainWindow->pcbView(), false);
+
+			QString filepathCsv = filepath;
+			TextUtils::writeUtf8(filepathCsv.replace(".fzz", "_bom.csv"), mainWindow->getExportBOM_CSV());
+
+			QString filepathIPC = filepath;
+			TextUtils::writeUtf8(filepathIPC.replace(".fzz", "_ipc.txt"), mainWindow->exportIPC_D_356A());
 		}
 
 		mainWindow->setCloseSilently(true);

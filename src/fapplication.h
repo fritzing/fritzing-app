@@ -167,6 +167,8 @@ protected:
 	void runKicadSchematicService();
 	void runGerberService();
 	void runGerberServiceAux();
+	void runExportAllService();
+	void runExportAllServiceAux();
 	void runSvgService();
 	void runSvgServiceAux();
 	void runExampleService();
@@ -195,6 +197,7 @@ protected:
 		SvgService,
 		PortService,
 		DRCService,
+		ExportAllService,
 		NoService
 	};
 

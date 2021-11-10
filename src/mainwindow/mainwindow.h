@@ -166,6 +166,7 @@ class MainWindow : public FritzingWindow
 
 	void setEnableSubmenu(QMenu *menu, bool value);
 	void save_text_file(QString text, QString actionType, QString dialogTitle, QString differentiator, QString errorMessage);
+
 public:
 	MainWindow(class ReferenceModel *referenceModel, QWidget * parent);
 	MainWindow(QFile & fileToLoad);
@@ -234,6 +235,7 @@ public:
 	void setFireQuoteDelay(int);
 	void setInitialTab(int);
 	void noSchematicConversion();
+	QString getExportBOM_CSV();
 	QString getSpiceNetlist(QString, QList< QList<class ConnectorItem *>* >&, QSet<class ItemBase *>& );
 	bool isSimulatorEnabled();
 	void enableSimulator(bool);
@@ -510,7 +512,7 @@ protected:
 	void exportToEagle();
 	void exportToGerber();
 	void exportBOM();
-	void exportBOM_CSV();
+	void exportBOM_CSV();	
 	void exportNetlist();
 	void exportSpiceNetlist();
 	void exportSvg(double res, bool selectedItems, bool flatten);
@@ -756,6 +758,7 @@ protected:
 	QAction *m_exportEtchableSvgAct = nullptr;
 	QAction *m_exportBomAct = nullptr;
 	QAction *m_exportBomCsvAct = nullptr;
+	QAction *m_exportIpcAct = nullptr;
 	QAction *m_exportNetlistAct = nullptr;
 	QAction *m_exportSpiceNetlistAct = nullptr;
 	QAction *m_exportSvgAct = nullptr;
@@ -990,12 +993,14 @@ public:
 	static const int DockMinWidth;
 	static const int DockMinHeight;
 
+	QString exportIPC_D_356A();
 protected:
 	static const QString UntitledSketchName;
 	static int UntitledSketchIndex;
 	static int CascadeFactorX;
 	static int CascadeFactorY;
 	static QRegularExpression GuidMatcher;
+	void exportIPC_D_356A_interactive();
 };
 
 #endif

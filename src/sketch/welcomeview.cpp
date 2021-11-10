@@ -693,7 +693,7 @@ void WelcomeView::updateRecent() {
 		if (!link.isEmpty()) {
 			int pos = link.lastIndexOf(QChar('/'));
 			link = link.left(pos);
-			itemLinks = new QListWidgetItem(icon2, "Fritzing Fab");
+			itemLinks = new QListWidgetItem(icon2, "Aisler Project");
 			itemLinks->setData(RefRole, link);
 			itemLinks->setToolTip(link);
 		} else {

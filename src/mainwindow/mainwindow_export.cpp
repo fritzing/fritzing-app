@@ -68,6 +68,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../svg/gerbergenerator.h"
 #include "../processeventblocker.h"
 #include "../items/propertydef.h"
+#include "src/ipc/ipc_d_356.h"
 
 static QString eagleActionType = ".eagle";
 static QString gerberActionType = ".gerber";
@@ -77,6 +78,7 @@ static QString pngActionType = ".png";
 static QString svgActionType = ".svg";
 static QString bomActionType = ".html";
 static QString bomCsvActionType = ".csv";
+static QString ipcActionType = ".txt";
 static QString netlistActionType = ".xml";
 static QString spiceNetlistActionType = ".cir";
 
@@ -121,7 +123,7 @@ bool sortPartList(ItemBase * b1, ItemBase * b2) {
 
 void MainWindow::initNames()
 {
-	OtherKnownExtensions << jpgActionType << pdfActionType << pngActionType << svgActionType << bomActionType << bomCsvActionType << netlistActionType << spiceNetlistActionType;
+	OtherKnownExtensions << jpgActionType << pdfActionType << pngActionType << svgActionType << bomActionType << bomCsvActionType << ipcActionType << netlistActionType << spiceNetlistActionType;
 
 	filePrintFormats[pdfActionType] = QPrinter::PdfFormat;
 
@@ -134,6 +136,7 @@ void MainWindow::initNames()
 	fileExtFormats[svgActionType] = tr("SVG Image (*.svg)");
 	fileExtFormats[bomActionType] = tr("BoM Text File (*.html)");
 	fileExtFormats[bomCsvActionType] = tr("BoM CSV File (*.csv)");
+	fileExtFormats[ipcActionType] = tr("IPC-D-356 File (*.txt)");
 
 	QSettings settings;
 	AutosaveEnabled = settings.value("autosaveEnabled", QString("%1").arg(AutosaveEnabled)).toBool();
@@ -507,6 +510,11 @@ void MainWindow::doExport() {
 
 	if (actionType.compare(bomCsvActionType) == 0) {
 		exportBOM_CSV();
+		return;
+	}
+
+	if (actionType.compare(ipcActionType) == 0) {
+		exportIPC_D_356A_interactive();
 		return;
 	}
 
@@ -1007,6 +1015,11 @@ void MainWindow::createExportActions() {
 	m_exportBomCsvAct->setStatusTip(tr("Save a Bill of Materials (BoM)/Shopping List as text"));
 	connect(m_exportBomCsvAct, SIGNAL(triggered()), this, SLOT(doExport()));
 
+	m_exportIpcAct = new QAction(tr("IPC-D-356A netlist"), this);
+	m_exportIpcAct->setData(ipcActionType);
+	m_exportIpcAct->setStatusTip(tr("Save a netlist in IPC-D-356A format"));
+	connect(m_exportIpcAct, SIGNAL(triggered()), this, SLOT(doExport()));
+
 	m_exportNetlistAct = new QAction(tr("XML Netlist..."), this);
 	m_exportNetlistAct->setData(netlistActionType);
 	m_exportNetlistAct->setStatusTip(tr("Save a netlist in XML format"));
@@ -1187,7 +1200,8 @@ void MainWindow::exportSvgWatermark(QString & svg, double res)
 	svg = TextUtils::mergeSvg(newSvg, svg, "", false);
 }
 
-void MainWindow::exportBOM_CSV() {
+QString MainWindow::getExportBOM_CSV() {
+
 	QList <ItemBase*> partList;
 	std::map<QString, int> descrs;
 
@@ -1223,7 +1237,11 @@ void MainWindow::exportBOM_CSV() {
 	}
 
 	QString bom = assembly + "\n" + shopping;
+	return bom;
+}
 
+void MainWindow::exportBOM_CSV() {
+	QString bom = getExportBOM_CSV();
 	save_text_file(
 				bom,
 				bomCsvActionType,
@@ -1357,6 +1375,7 @@ void MainWindow::save_text_file(QString text, QString actionType, QString dialog
 	}
 	delete fileProgressDialog;
 }
+
 
 void MainWindow::exportSpiceNetlist() {
 	if (m_schematicGraphicsView == nullptr) return;
@@ -1636,6 +1655,50 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 
 	return output;
 }
+
+QString MainWindow::exportIPC_D_356A() {
+	int boardCount;
+	ItemBase * board = m_pcbGraphicsView->findSelectedBoard(boardCount);
+
+	QString basename = QFileInfo(m_fwFilename).fileName();
+
+	QHash<ConnectorItem *, int> indexer;
+	QList< QList<ConnectorItem *>* > netList;
+	this->m_pcbGraphicsView->collectAllNets(indexer, netList, true, m_pcbGraphicsView->boardLayers() > 1);
+
+	QString ipc = getExportIPC_D_356A(board, basename, netList);
+	return ipc;
+}
+
+void MainWindow::exportIPC_D_356A_interactive() {
+	int boardCount;
+	ItemBase * board = m_pcbGraphicsView->findSelectedBoard(boardCount);
+
+	// barf an error if there's no board
+	if (boardCount == 0) {
+		QMessageBox::critical(this, tr("Fritzing"),
+					  tr("Your sketch does not have a board yet!  Please add a PCB in order to export to IPC netlist."));
+		return;
+	}
+	if (board == nullptr) {
+		QMessageBox::critical(this, tr("Fritzing"),
+					  tr("IPC netlist export can only handle one board at a time--please select the board you want to export."));
+		return;
+	}
+
+	QString ipc = exportIPC_D_356A();
+	save_text_file(
+				ipc,
+				ipcActionType,
+				tr("Export IPC-D-356..."),
+				"ipc",
+				tr("Unable to save IPC file.") + tr("But the content was copied to the clipboard.")
+				);
+
+	return;
+
+}
+
 
 void MainWindow::exportNetlist() {
 	QHash<ConnectorItem *, int> indexer;

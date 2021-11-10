@@ -129,10 +129,12 @@ public:
 	static void collectLeaves(QDomElement & element, int & index, QVector<QDomElement> & leaves);
 	static void collectLeaves(QDomElement & element, QList<QDomElement> & leaves);
 	static const QRegularExpression floatingPointMatcher;
+	static const QRegularExpression positiveIntegerMatcher;
 	static const QString RegexFloatDetector;
 	static const QString AdobeIllustratorIdentifier;
 
 	static QMap<QString, QString> parseFileForViewImages(const QString &fzpPath);
+	static QList<uint> getPositiveIntegers(const QString &str);
 protected:
 	static bool pxToInches(QDomElement &elem, const QString &attrName, bool isIllustrator);
 	static void squashNotElement(QDomElement & element, const QString & elementName, const QString & attName, const QRegularExpression & matchContent, bool & result);

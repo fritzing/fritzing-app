@@ -165,6 +165,7 @@ class MainWindow : public FritzingWindow
 	Q_PROPERTY(int fireQuoteDelay READ fireQuoteDelay WRITE setFireQuoteDelay DESIGNABLE true)
 
 	void setEnableSubmenu(QMenu *menu, bool value);
+	void save_text_file(QString text, QString actionType, QString dialogTitle, QString differentiator, QString errorMessage);
 public:
 	MainWindow(class ReferenceModel *referenceModel, QWidget * parent);
 	MainWindow(QFile & fileToLoad);
@@ -509,6 +510,7 @@ protected:
 	void exportToEagle();
 	void exportToGerber();
 	void exportBOM();
+	void exportBOM_CSV();
 	void exportNetlist();
 	void exportSpiceNetlist();
 	void exportSvg(double res, bool selectedItems, bool flatten);
@@ -516,6 +518,7 @@ protected:
 	void exportEtchable(bool wantPDF, bool wantSVG);
 
 	QString getSpiceNetlist(QString simulationName);
+	void saveTextFile(QString text, QString action, QString dialogTitle, QString differentiator, QString errorMessage);
 
 	virtual QList<QWidget*> getButtonsForView(ViewLayer::ViewID viewId);
 	const QString untitledFileName();
@@ -752,6 +755,7 @@ protected:
 	QAction *m_exportEtchablePdfAct = nullptr;
 	QAction *m_exportEtchableSvgAct = nullptr;
 	QAction *m_exportBomAct = nullptr;
+	QAction *m_exportBomCsvAct = nullptr;
 	QAction *m_exportNetlistAct = nullptr;
 	QAction *m_exportSpiceNetlistAct = nullptr;
 	QAction *m_exportSvgAct = nullptr;

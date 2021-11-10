@@ -76,6 +76,7 @@ static QString pdfActionType = ".pdf";
 static QString pngActionType = ".png";
 static QString svgActionType = ".svg";
 static QString bomActionType = ".html";
+static QString bomCsvActionType = ".csv";
 static QString netlistActionType = ".xml";
 static QString spiceNetlistActionType = ".cir";
 
@@ -120,7 +121,7 @@ bool sortPartList(ItemBase * b1, ItemBase * b2) {
 
 void MainWindow::initNames()
 {
-	OtherKnownExtensions << jpgActionType << pdfActionType << pngActionType << svgActionType << bomActionType << netlistActionType << spiceNetlistActionType;
+	OtherKnownExtensions << jpgActionType << pdfActionType << pngActionType << svgActionType << bomActionType << bomCsvActionType << netlistActionType << spiceNetlistActionType;
 
 	filePrintFormats[pdfActionType] = QPrinter::PdfFormat;
 
@@ -132,6 +133,7 @@ void MainWindow::initNames()
 	fileExtFormats[jpgActionType] = tr("JPEG Image (*.jpg)");
 	fileExtFormats[svgActionType] = tr("SVG Image (*.svg)");
 	fileExtFormats[bomActionType] = tr("BoM Text File (*.html)");
+	fileExtFormats[bomCsvActionType] = tr("BoM CSV File (*.csv)");
 
 	QSettings settings;
 	AutosaveEnabled = settings.value("autosaveEnabled", QString("%1").arg(AutosaveEnabled)).toBool();
@@ -500,6 +502,11 @@ void MainWindow::doExport() {
 
 	if (actionType.compare(bomActionType) == 0) {
 		exportBOM();
+		return;
+	}
+
+	if (actionType.compare(bomCsvActionType) == 0) {
+		exportBOM_CSV();
 		return;
 	}
 
@@ -992,8 +999,13 @@ void MainWindow::createExportActions() {
 
 	m_exportBomAct = new QAction(tr("List of parts (&Bill of Materials)..."), this);
 	m_exportBomAct->setData(bomActionType);
-	m_exportBomAct->setStatusTip(tr("Save a Bill of Materials (BoM)/Shopping List as text"));
+	m_exportBomAct->setStatusTip(tr("Save a Bill of Materials (BoM)/Shopping List as html"));
 	connect(m_exportBomAct, SIGNAL(triggered()), this, SLOT(doExport()));
+
+	m_exportBomCsvAct = new QAction(tr("List of parts (&Bill of Materials) as CSV"), this);
+	m_exportBomCsvAct->setData(bomCsvActionType);
+	m_exportBomCsvAct->setStatusTip(tr("Save a Bill of Materials (BoM)/Shopping List as text"));
+	connect(m_exportBomCsvAct, SIGNAL(triggered()), this, SLOT(doExport()));
 
 	m_exportNetlistAct = new QAction(tr("XML Netlist..."), this);
 	m_exportNetlistAct->setData(netlistActionType);
@@ -1175,6 +1187,53 @@ void MainWindow::exportSvgWatermark(QString & svg, double res)
 	svg = TextUtils::mergeSvg(newSvg, svg, "", false);
 }
 
+void MainWindow::exportBOM_CSV() {
+	QList <ItemBase*> partList;
+	std::map<QString, int> descrs;
+
+	QString separator = ";";
+	std::list<QString> properties({"mn", "mpn", "part number"});
+
+	m_currentGraphicsView->collectParts(partList);
+	std::sort(partList.begin(), partList.end(), sortPartList);
+
+	QString propertiess;
+	for ( const QString & property: properties) {
+		propertiess += property + separator;
+	}
+	propertiess += "\n";
+
+	QString assembly = "Label" + separator + "Part Type" + separator + propertiess;
+
+	for (auto&& itemBase: partList) {
+		if (itemBase->itemType() != ModelPart::Part) continue;
+		QStringList keys;
+		QString desc = itemBase->title() + separator;
+		for ( const QString & property: properties) {
+			desc += itemBase->prop(property) + separator;
+		}
+		++descrs[desc];
+		assembly += itemBase->instanceTitle() + separator + desc + "\n";
+	}
+
+	QString shopping = "Amount" + separator + "Part Type" + separator + propertiess;
+
+	for(const auto & [key, value] : descrs) {
+		shopping += QString::number(value) + separator + key + "\n";
+	}
+
+	QString bom = assembly + "\n" + shopping;
+
+	save_text_file(
+				bom,
+				bomCsvActionType,
+				tr("Export Bill of Materials (BoM) as CSV"), "bom_csv",
+				tr("Unable to save BOM file, but the text is on the clipboard.")
+				   );
+
+	return;
+}
+
 void MainWindow::exportBOM() {
 
 	// bail out if something is wrong
@@ -1214,7 +1273,7 @@ void MainWindow::exportBOM() {
 	Q_FOREACH (ItemBase * itemBase, partList) {
 		if (itemBase->itemType() != ModelPart::Part) continue;
 		QStringList keys;
-		QHash<QString, QString> properties = HtmlInfoView::getPartProperties(itemBase->modelPart(), itemBase, false, keys);
+//		QHash<QString, QString> properties = HtmlInfoView::getPartProperties(itemBase->modelPart(), itemBase, false, keys);
 		QString desc = itemBase->prop("mn") + "%%%%%" + itemBase->prop("mpn") + "%%%%%" + itemBase->title() + "%%%%%" + getBomProps(itemBase);  // keeps different parts separate if there are no properties
 		descrs.insert(desc, itemBase);
 		if (!descrList.contains(desc)) {
@@ -1226,7 +1285,7 @@ void MainWindow::exportBOM() {
 	Q_FOREACH (ItemBase * itemBase, partList) {
 		if (itemBase->itemType() != ModelPart::Part) continue;
 		QStringList keys;
-		QHash<QString, QString> properties = HtmlInfoView::getPartProperties(itemBase->modelPart(), itemBase, false, keys);
+//		QHash<QString, QString> properties = HtmlInfoView::getPartProperties(itemBase->modelPart(), itemBase, false, keys);
 		assemblyString += bomRowTemplate.arg(itemBase->instanceTitle()).arg(itemBase->prop("mn")).arg(itemBase->prop("mpn")).arg(itemBase->title()).arg(getBomProps(itemBase));
 	}
 
@@ -1246,16 +1305,28 @@ void MainWindow::exportBOM() {
 	              .arg(shoppingListString)
 	              .arg(QString("%1.%2.%3").arg(Version::majorVersion()).arg(Version::minorVersion()).arg(Version::minorSubVersion()));
 
+	save_text_file(
+				bom,
+				bomActionType,
+				tr("Export Bill of Materials (BoM)..."), "bom",
+				tr("Unable to save BOM file, but the text is on the clipboard.")
+				   );
+
+	return;
+}
+
+void MainWindow::save_text_file(QString text, QString actionType, QString dialogTitle, QString differentiator, QString errorMessage)
+{
 
 	QString path = defaultSaveFolder();
 
 	QString fileExt;
-	QString extFmt = fileExtFormats.value(bomActionType);
-	QString fname = path+"/"+constructFileName("bom", bomActionType);
+	QString extFmt = fileExtFormats.value(actionType);
+	QString fname = path+"/"+constructFileName(differentiator, actionType);
 	DebugDialog::debug(QString("fname %1\n%2").arg(fname).arg(extFmt));
 
 	QString fileName = FolderUtils::getSaveFileName(this,
-	                   tr("Export Bill of Materials (BoM)..."),
+					   dialogTitle,
 	                   fname,
 	                   extFmt,
 	                   &fileExt
@@ -1267,12 +1338,12 @@ void MainWindow::exportBOM() {
 
 	FileProgressDialog * fileProgressDialog = exportProgress();
 	DebugDialog::debug(fileExt+" selected to export");
-	if(!alreadyHasExtension(fileName, bomActionType)) {
-		fileName += bomActionType;
+	if(!alreadyHasExtension(fileName, actionType)) {
+		fileName += actionType;
 	}
 
-	if (!TextUtils::writeUtf8(fileName, bom)) {
-		QMessageBox::warning(this, tr("Fritzing"), tr("Unable to save BOM file, but the text is on the clipboard."));
+	if (!TextUtils::writeUtf8(fileName, text)) {
+		QMessageBox::warning(this, tr("Fritzing"), errorMessage);
 	}
 
 	QFileInfo info(fileName);
@@ -1282,7 +1353,7 @@ void MainWindow::exportBOM() {
 
 	QClipboard *clipboard = QApplication::clipboard();
 	if (clipboard) {
-		clipboard->setText(bom);
+		clipboard->setText(text);
 	}
 	delete fileProgressDialog;
 }
@@ -1636,40 +1707,15 @@ void MainWindow::exportNetlist() {
 	}
 	netList.clear();
 
-	QString path = defaultSaveFolder();
+	save_text_file(
+				doc.toString(),
+				netlistActionType,
+				tr("Export Netlist..."),
+				"netlist",
+				tr("Unable to save netlist file.") + tr("But the content was copied to the clipboard.")
+				);
 
-	QString fileExt;
-	QString extFmt = fileExtFormats.value(netlistActionType);
-	QString fname = path + "/" +constructFileName("netlist", netlistActionType);
-	//DebugDialog::debug(QString("fname %1\n%2").arg(fname).arg(extFmt));
-
-	QString fileName = FolderUtils::getSaveFileName(this,
-	                   tr("Export Netlist..."),
-	                   fname,
-	                   extFmt,
-	                   &fileExt
-	                                               );
-
-	if (fileName.isEmpty()) {
-		return; //Cancel pressed
-	}
-
-	FileProgressDialog * fileProgressDialog = exportProgress();
-	//DebugDialog::debug(fileExt + " selected to export");
-	if(!alreadyHasExtension(fileName, netlistActionType)) {
-		fileName += netlistActionType;
-	}
-
-	QFile fp( fileName );
-	fp.open(QIODevice::WriteOnly);
-	fp.write(doc.toByteArray());
-	fp.close();
-
-	QClipboard *clipboard = QApplication::clipboard();
-	if (clipboard) {
-		clipboard->setText(doc.toByteArray());
-	}
-	delete fileProgressDialog;
+	return;
 }
 
 FileProgressDialog * MainWindow::exportProgress() {

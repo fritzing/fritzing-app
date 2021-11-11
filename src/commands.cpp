@@ -984,15 +984,15 @@ void SelectItemCommand::setSelectItemType(SelectItemType type) {
 
 void SelectItemCommand::copyUndo(SelectItemCommand * sother) {
 	this->m_undoIDs.clear();
-	for (int i = 0; i < sother->m_undoIDs.size(); i++) {
-		this->m_undoIDs.append(sother->m_undoIDs[i]);
+	for (long m_undoID : sother->m_undoIDs) {
+		this->m_undoIDs.append(m_undoID);
 	}
 }
 
 void SelectItemCommand::copyRedo(SelectItemCommand * sother) {
 	this->m_redoIDs.clear();
-	for (int i = 0; i < sother->m_redoIDs.size(); i++) {
-		this->m_redoIDs.append(sother->m_redoIDs[i]);
+	for (long m_redoID : sother->m_redoIDs) {
+		this->m_redoIDs.append(m_redoID);
 	}
 }
 
@@ -1016,8 +1016,8 @@ bool SelectItemCommand::mergeWith(const QUndoCommand *other)
 	}
 
 	this->m_redoIDs.clear();
-	for (int i = 0; i < sother->m_redoIDs.size(); i++) {
-		this->m_redoIDs.append(sother->m_redoIDs[i]);
+	for (long m_redoID : sother->m_redoIDs) {
+		this->m_redoIDs.append(m_redoID);
 	}
 
 	this->setText(sother->text());
@@ -1051,8 +1051,8 @@ void SelectItemCommand::redo()
 
 void SelectItemCommand::selectAllFromStack(QList<long> & stack, bool select, bool updateInfoView) {
 	m_sketchWidget->clearSelection();
-	for (int i = 0; i < stack.size(); i++) {
-		m_sketchWidget->selectItem(stack[i], select, updateInfoView, m_crossViewType == BaseCommand::CrossView);
+	for (long i : stack) {
+		m_sketchWidget->selectItem(i, select, updateInfoView, m_crossViewType == BaseCommand::CrossView);
 	}
 }
 

@@ -166,9 +166,8 @@ void PaletteModel::countParts(QDir & dir, QStringList & nameFilters, int & partC
 void PaletteModel::loadPartsAux(QDir & dir, QStringList & nameFilters, int & loadingPart, int totalPartCount) {
 	//QString temp = dir.absolutePath();
 	QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	for (int i = 0; i < list.size(); ++i) {
-		QFileInfo fileInfo = list.at(i);
-		QString path = fileInfo.absoluteFilePath ();
+	for (auto fileInfo : list) {
+			QString path = fileInfo.absoluteFilePath ();
 		//DebugDialog::debug(QString("part path:%1 core? %2").arg(path).arg(m_loadingCore? "true" : "false"));
 		PaletteModel::loadPart(path, false);
 		Q_EMIT loadedPart(++loadingPart, totalPartCount);

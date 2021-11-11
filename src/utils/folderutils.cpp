@@ -556,8 +556,8 @@ bool FolderUtils::unzipTo(const QString &filepath, const QString &dirToDecompres
 				if (name[i].unicode() < 32) {
 					name.replace(i, 1, &underscore, 1);
 				}
-				else for (unsigned int j = 0; j < (sizeof(badCharacters) / sizeof(QChar)); j++) {
-						if (name[i] == badCharacters[j]) {
+				else for (auto badCharacter : badCharacters) {
+						if (name[i] == badCharacter) {
 							name.replace(i, 1, &underscore, 1);
 							break;
 						}

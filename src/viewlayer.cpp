@@ -231,7 +231,7 @@ bool ViewLayer::visible() {
 
 void ViewLayer::setVisible(bool visible) {
 	m_visible = visible;
-	if (m_action) {
+	if (m_action != nullptr) {
 		m_action->setChecked(visible);
 	}
 }
@@ -278,7 +278,7 @@ ViewLayer * ViewLayer::parentLayer() {
 
 void ViewLayer::setParentLayer(ViewLayer * parent) {
 	m_parentLayer = parent;
-	if (parent) {
+	if (parent != nullptr) {
 		parent->m_childLayers.append(this);
 	}
 }

@@ -376,8 +376,8 @@ const QList< QPointer<ConnectorShared> > ModelPartShared::connectorsShared() {
 }
 
 void ModelPartShared::setConnectorsShared(QList< QPointer<ConnectorShared> > connectors) {
-	for (int i = 0; i < connectors.size(); i++) {
-		ConnectorShared* cs = connectors[i];
+	for (auto & connector : connectors) {
+		ConnectorShared* cs = connector;
 		m_connectorSharedHash[cs->id()] = cs;
 	}
 }

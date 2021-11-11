@@ -788,15 +788,15 @@ void MainWindow::populateMenuFromFolderContent(QMenu * parentMenu, const QString
 void MainWindow::createOpenRecentMenu() {
 	m_openRecentFileMenu = new QMenu(tr("&Open Recent Files"), this);
 
-	for (int i = 0; i < MaxRecentFiles; ++i) {
-		m_openRecentFileActs[i] = new QAction(this);
-		m_openRecentFileActs[i]->setVisible(false);
-		connect(m_openRecentFileActs[i], SIGNAL(triggered()),this, SLOT(openRecentOrExampleFile()));
+	for (auto & m_openRecentFileAct : m_openRecentFileActs) {
+		m_openRecentFileAct = new QAction(this);
+		m_openRecentFileAct->setVisible(false);
+		connect(m_openRecentFileAct, SIGNAL(triggered()),this, SLOT(openRecentOrExampleFile()));
 	}
 
 
-	for (int i = 0; i < MaxRecentFiles; ++i) {
-		m_openRecentFileMenu->addAction(m_openRecentFileActs[i]);
+	for (auto & m_openRecentFileAct : m_openRecentFileActs) {
+		m_openRecentFileMenu->addAction(m_openRecentFileAct);
 	}
 	updateRecentFileActions();
 }

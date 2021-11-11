@@ -380,8 +380,8 @@ void ModelPart::saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument) 
 		if (startDocument) {
 			streamWriter.writeStartElement("views");
 		}
-		for (int i = 0; i < m_viewItems.size(); i++) {
-			ItemBase * item = m_viewItems[i];
+		for (auto & m_viewItem : m_viewItems) {
+			ItemBase * item = m_viewItem;
 			item->writeXml(streamWriter);
 		}
 

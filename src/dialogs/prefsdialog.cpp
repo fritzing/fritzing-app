@@ -183,9 +183,9 @@ QWidget * PrefsDialog::createZoomerForm() {
 	vLayout->setSpacing(0);
 	vLayout->setContentsMargins(0, 0, 0, 0);
 
-	for (int i = 0; i < 3; i++) {
-		m_wheelLabel[i] = new QLabel();
-		vLayout->addWidget(m_wheelLabel[i]);
+	for (auto & i : m_wheelLabel) {
+		i = new QLabel();
+		vLayout->addWidget(i);
 	}
 
 	updateWheelText();

@@ -728,8 +728,8 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 		QPolygon poly;
 
 		// left side
-		for (int i = 0; i < piece->length(); i++) {
-			QRect r = rects.at(piece->at(i));
+		for (int i : *piece) {
+			QRect r = rects.at(i);
 			if ((poly.count() > 0) && (poly.last().x() == r.left())) {
 				poly.pop_back();
 			}

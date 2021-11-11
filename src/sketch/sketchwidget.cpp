@@ -2125,8 +2125,8 @@ SelectItemCommand* SketchWidget::stackSelectionState(bool pushIt, QUndoCommand *
 	// DebugDialog::debug(QString("stack selection state %1 %2").arg(pushIt).arg((long) parentCommand));
 	auto* selectItemCommand = new SelectItemCommand(this, SelectItemCommand::NormalSelect, parentCommand);
 	const QList<QGraphicsItem *> sitems = scene()->selectedItems();
-	for (int i = 0; i < sitems.size(); ++i) {
-		ItemBase * base = ItemBase::extractTopLevelItemBase(sitems.at(i));
+	for (auto sitem : sitems) {
+		ItemBase * base = ItemBase::extractTopLevelItemBase(sitem);
 		if (!base) continue;
 
 		selectItemCommand->addUndo(base->id());
@@ -4391,10 +4391,10 @@ void SketchWidget::continueZChangeAux(QList<ItemBase *> & bases, const QString &
 
 	ViewLayer::ViewLayerID lastViewLayerID = ViewLayer::UnknownLayer;
 	double z = 0;
-	for (int i = 0; i < bases.size(); i++) {
-		double oldZ = bases[i]->getViewGeometry().z();
-		if (bases[i]->viewLayerID() != lastViewLayerID) {
-			lastViewLayerID = bases[i]->viewLayerID();
+	for (auto & base : bases) {
+		double oldZ = base->getViewGeometry().z();
+		if (base->viewLayerID() != lastViewLayerID) {
+			lastViewLayerID = base->viewLayerID();
 			z = lastViewLayerID;
 		}
 		else {
@@ -4406,7 +4406,7 @@ void SketchWidget::continueZChangeAux(QList<ItemBase *> & bases, const QString &
 
 		// optimize this by only adding z's that must change
 		// rather than changing all of them
-		changeZCommand->addTriplet(bases[i]->id(), oldZ, z);
+		changeZCommand->addTriplet(base->id(), oldZ, z);
 	}
 
 	changeZCommand->setText(text);
@@ -4414,8 +4414,8 @@ void SketchWidget::continueZChangeAux(QList<ItemBase *> & bases, const QString &
 }
 
 void SketchWidget::sortAnyByZ(const QList<QGraphicsItem *> & items, QList<ItemBase *> & bases) {
-	for (int i = 0; i < items.size(); i++) {
-		auto * base = dynamic_cast<ItemBase *>(items[i]);
+	for (auto item : items) {
+		auto * base = dynamic_cast<ItemBase *>(item);
 		if (base) {
 			bases.append(base);
 			base->saveGeometry();
@@ -4443,9 +4443,9 @@ void SketchWidget::changeZ(QHash<long, RealPair * > triplets, double (*pairAcces
 
 	// TODO: replace scene->items
 	const QList<QGraphicsItem *> items = scene()->items();
-	for (int i = 0; i < items.size(); i++) {
+	for (auto item : items) {
 		// want all items, not just topLevel
-		auto * itemBase = dynamic_cast<ItemBase *>(items[i]);
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (!itemBase) continue;
 
 		RealPair * pair = triplets[itemBase->id()];
@@ -4457,7 +4457,7 @@ void SketchWidget::changeZ(QHash<long, RealPair * > triplets, double (*pairAcces
 			newZ = viewLayer->getZFromBelow(newZ, this->viewFromBelow());
 		}
 		//DebugDialog::debug(QString("change z %1 %2 %3 %4").arg(itemBase->instanceTitle()).arg(itemBase->id()).arg(newZ).arg(itemBase->viewLayerID()));
-		items[i]->setZValue(newZ);
+		item->setZValue(newZ);
 
 	}
 }
@@ -4722,9 +4722,9 @@ void SketchWidget::flipX(Qt::Orientations orientation, bool rubberBandLegEnabled
 	QList <QGraphicsItem *> items = scene()->selectedItems();
 	QList <ItemBase *> targets;
 
-	for (int i = 0; i < items.size(); i++) {
+	for (auto & item : items) {
 		// can't flip layerkin (layerkin flipped indirectly)
-		ItemBase *itemBase = ItemBase::extractTopLevelItemBase(items[i]);
+		ItemBase *itemBase = ItemBase::extractTopLevelItemBase(item);
 		if (!itemBase) continue;
 
 		if (Board::isBoard(itemBase)) continue;

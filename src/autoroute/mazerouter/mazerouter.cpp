@@ -440,8 +440,8 @@ void Score::setOrdering(const NetOrdering & _ordering) {
 
 static const long IDs[] = { 1452191, 9781580, 9781600, 9781620, 9781640, 9781660, 9781680, 9781700 };
 static inline bool hasID(ConnectorItem * s) {
-	for (unsigned int i = 0; i < sizeof(IDs) / sizeof(long); i++) {
-		if (s->attachedToID() == IDs[i]) return true;
+	for (long ID : IDs) {
+		if (s->attachedToID() == ID) return true;
 	}
 
 	return false;

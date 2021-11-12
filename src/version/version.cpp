@@ -185,7 +185,7 @@ void Version::toVersionThing(const QString & candidate, VersionThing & versionTh
 }
 
 void Version::cleanup() {
-	if (m_singleton) {
+	if (m_singleton != nullptr) {
 		delete m_singleton;
 		m_singleton = nullptr;
 	}

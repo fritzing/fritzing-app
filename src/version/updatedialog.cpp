@@ -84,7 +84,7 @@ UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
 }
 
 UpdateDialog::~UpdateDialog() {
-	if (m_versionChecker) {
+	if (m_versionChecker != nullptr) {
 		delete m_versionChecker;
 	}
 }
@@ -104,7 +104,7 @@ bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 			continue;
 		}
 
-		if (mainRelease && interimRelease) break;
+		if ((mainRelease != nullptr) && (interimRelease != nullptr)) break;
 	}
 
 	if (mainRelease == nullptr && interimRelease == nullptr) {
@@ -125,12 +125,12 @@ bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 
 	QSettings settings;
 	m_updateUrl = "";
-	if (mainRelease) {
+	if (mainRelease != nullptr) {
 		text += genTable(tr("A new main release is available for downloading:"), mainRelease);
 		settings.setValue("lastMainVersionChecked", mainRelease->versionString);
 		m_updateUrl = mainRelease->link;
 	}
-	if (interimRelease) {
+	if (interimRelease != nullptr) {
 		text += genTable(tr("A new interim release is available for downloading:"), interimRelease);
 		settings.setValue("lastInterimVersionChecked", interimRelease->versionString);
 		if (m_updateUrl.isEmpty()) {
@@ -148,7 +148,7 @@ bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 
 void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 {
-	if (m_versionChecker) {
+	if (m_versionChecker != nullptr) {
 		m_versionChecker->stop();
 		delete m_versionChecker;
 		m_versionChecker = nullptr;

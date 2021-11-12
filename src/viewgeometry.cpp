@@ -189,11 +189,11 @@ void ViewGeometry::setWireFlags(WireFlags wireFlags) {
 }
 
 bool ViewGeometry::hasFlag(ViewGeometry::WireFlag flag) {
-	return (m_wireFlags & flag) ? true : false;
+	return (m_wireFlags & flag) != 0u ? true : false;
 }
 
 bool ViewGeometry::hasAnyFlag(ViewGeometry::WireFlags flags) {
-	return (m_wireFlags & flags) ? true : false;
+	return (m_wireFlags & flags) != 0u ? true : false;
 }
 
 

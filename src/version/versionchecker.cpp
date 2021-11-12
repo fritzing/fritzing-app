@@ -164,7 +164,7 @@ void VersionChecker::parseXml()
 			}
 		}
 	}
-	if (m_xml.error() && m_xml.error() != QXmlStreamReader::PrematureEndOfDocumentError) {
+	if ((m_xml.error() != 0u) && m_xml.error() != QXmlStreamReader::PrematureEndOfDocumentError) {
 		Q_EMIT xmlError(m_xml.error());
 		return;
 	}
@@ -224,7 +224,7 @@ const QList<AvailableRelease *> & VersionChecker::availableReleases()
 
 void VersionChecker::stop() {
 	if (m_networkReplyLock.tryLock(1)) {
-		if (m_networkReply) {
+		if (m_networkReply != nullptr) {
 			m_networkReply = nullptr;
 		}
 		m_networkReplyLock.unlock();

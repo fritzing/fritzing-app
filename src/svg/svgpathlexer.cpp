@@ -71,10 +71,15 @@ int SVGPathLexer::lex()
 		// Do this first, to prevent infinite loop when last content of the path data is a number
 		return SVGPathGrammar::EOF_SYMBOL;
 	}
-	QRegularExpressionMatch match;
-	if (m_source.indexOf(TextUtils::floatingPointMatcher, m_pos - 1, &match) == m_pos - 1) {
+
+	QRegularExpressionMatch match(
+		TextUtils::floatingPointMatcher.match(
+			m_source, m_pos - 1, QRegularExpression::NormalMatch, QRegularExpression::AnchoredMatchOption
+		)
+	);
+	if (match.hasMatch()) {
 		// sitting at the start of a number: collect and advance past it
-		m_currentNumber = m_source.mid(m_pos - 1, match.capturedLength()).toDouble();
+		m_currentNumber = match.captured(0).toDouble();
 		m_pos += match.capturedLength() - 1;
 		next();
 		return SVGPathGrammar::NUMBER;

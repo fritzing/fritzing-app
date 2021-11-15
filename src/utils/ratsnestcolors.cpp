@@ -244,7 +244,7 @@ QString RatsnestColors::wireColor(ViewLayer::ViewID viewID, QString & string)
 	if (ratsnestColors == nullptr) return ___emptyString___;
 
 	RatsnestColor * ratsnestColor = ratsnestColors->m_ratsnestColorHash.value(string.toLower(), NULL);
-	if (ratsnestColor) {
+	if (ratsnestColor != nullptr) {
 		QString w = ratsnestColor->m_wire;
 		if (!w.isEmpty()) return w;
 	}

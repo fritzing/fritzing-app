@@ -301,11 +301,11 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	svg += "<g id='schematic'>\n";
 	qreal rectLeft = rectThickness / 2;
 	qreal rectMinus = 0;
-	if (lefts.count()) {
+	if (lefts.count() != 0) {
 		rectLeft = pinLength;
 		rectMinus += pinLength;
 	}
-	if (rights.count()) {
+	if (rights.count() != 0) {
 		rectMinus += pinLength;
 	}
 

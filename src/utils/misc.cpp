@@ -57,7 +57,7 @@ const QStringList & fritzingBundleExtensions() {
 
 bool isParent(QObject * candidateParent, QObject * candidateChild) {
 	QObject * parent = candidateChild->parent();
-	while (parent) {
+	while (parent != nullptr) {
 		if (parent == candidateParent) return true;
 
 		parent = parent->parent();

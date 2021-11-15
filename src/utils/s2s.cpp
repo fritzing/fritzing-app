@@ -333,15 +333,15 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 
 	double minPinV = 0;
 	double maxPinV = 0;
-	if (m_lefts.count() && m_rights.count()) {
+	if ((m_lefts.count() != 0) && (m_rights.count() != 0)) {
 		minPinV = qMin(m_lefts.first()->terminalPoint.y(), m_rights.first()->terminalPoint.y());
 		maxPinV = qMax(m_lefts.last()->terminalPoint.y(), m_rights.last()->terminalPoint.y());
 	}
-	else if (m_rights.count()) {
+	else if (m_rights.count() != 0) {
 		minPinV = m_rights.first()->terminalPoint.y();
 		maxPinV = m_rights.last()->terminalPoint.y();
 	}
-	else if (m_lefts.count()) {
+	else if (m_lefts.count() != 0) {
 		minPinV = m_lefts.first()->terminalPoint.y();
 		maxPinV = m_lefts.last()->terminalPoint.y();
 	}
@@ -350,15 +350,15 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 
 	double minPinH = 0;
 	double maxPinH = 0;
-	if (m_bottoms.count() && m_tops.count()) {
+	if ((m_bottoms.count() != 0) && (m_tops.count() != 0)) {
 		minPinH = qMin(m_bottoms.first()->terminalPoint.x(), m_tops.first()->terminalPoint.x());
 		maxPinH = qMax(m_bottoms.last()->terminalPoint.x(), m_tops.last()->terminalPoint.x());
 	}
-	else if (m_bottoms.count()) {
+	else if (m_bottoms.count() != 0) {
 		minPinH = m_bottoms.first()->terminalPoint.x();
 		maxPinH = m_bottoms.last()->terminalPoint.x();
 	}
-	else if (m_tops.count()) {
+	else if (m_tops.count() != 0) {
 		minPinH = m_tops.first()->terminalPoint.x();
 		maxPinH = m_tops.last()->terminalPoint.x();
 	}
@@ -405,11 +405,11 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 	vUnits += bottomTextUnits;
 
 	double fullWidth = hUnits;
-	if (m_lefts.count()) fullWidth += 2;
-	if (m_rights.count()) fullWidth += 2;
+	if (m_lefts.count() != 0) fullWidth += 2;
+	if (m_rights.count() != 0) fullWidth += 2;
 	double fullHeight = vUnits;
-	if (m_tops.count()) fullHeight += 2;
-	if (m_bottoms.count()) fullHeight += 2;
+	if (m_tops.count() != 0) fullHeight += 2;
+	if (m_bottoms.count() != 0) fullHeight += 2;
 
 
 
@@ -418,8 +418,8 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 	QString svg = TextUtils::makeSVGHeader(25.4, 25.4, fullWidth * SchematicRectConstants::NewUnit, fullHeight * SchematicRectConstants::NewUnit);
 	double rectL = SchematicRectConstants::RectStrokeWidth / 2;
 	double rectT = rectL;
-	if (m_lefts.count()) rectL += 2 * SchematicRectConstants::NewUnit;
-	if (m_tops.count()) rectT += 2 * SchematicRectConstants::NewUnit;
+	if (m_lefts.count() != 0) rectL += 2 * SchematicRectConstants::NewUnit;
+	if (m_tops.count() != 0) rectT += 2 * SchematicRectConstants::NewUnit;
 	svg += "<g id='schematic'>\n";
 	svg += QString("<rect class='interior rect' x='%1' y='%2' width='%3' height='%4' fill='%5' stroke='%6' stroke-width='%7' stroke-linecap='round' />\n")
 	       .arg(rectL)
@@ -432,7 +432,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 	       ;
 
 	double vPinOffset = 0;
-	if (m_tops.count()) vPinOffset = 2 * SchematicRectConstants::NewUnit;
+	if (m_tops.count() != 0) vPinOffset = 2 * SchematicRectConstants::NewUnit;
 	vPinOffset += topTextUnits * SchematicRectConstants::NewUnit;
 	int space = vUnits - vPinUnits - topTextUnits - bottomTextUnits;
 	if (space > 1) {
@@ -462,7 +462,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 	}
 
 	double hPinOffset = 0;
-	if (m_lefts.count()) hPinOffset = 2 * SchematicRectConstants::NewUnit;
+	if (m_lefts.count() != 0) hPinOffset = 2 * SchematicRectConstants::NewUnit;
 	space = hUnits - hPinUnits;
 	if (space > 1) {
 		hPinOffset += (space / 2) * SchematicRectConstants::NewUnit;

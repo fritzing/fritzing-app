@@ -66,7 +66,7 @@ QVariant ResizeHandle::itemChange(GraphicsItemChange change, const QVariant &val
 	case QGraphicsItem::ItemSceneHasChanged:
 		if (scaling()) {
 			auto *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
-			if (sw) {
+			if (sw != nullptr) {
 				connect(sw, SIGNAL(zoomChanged(double)), this, SLOT(zoomChangedSlot(double)));
 			}
 
@@ -86,7 +86,7 @@ void ResizeHandle::zoomChangedSlot(double scale) {
 double ResizeHandle::currentScale() {
 	if (scaling()) {
 		auto *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
-		if(sw) {
+		if(sw != nullptr) {
 			return sw->currentZoom()/100;
 		}
 	}
@@ -95,14 +95,14 @@ double ResizeHandle::currentScale() {
 
 void ResizeHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-	if(scene()) {
+	if(scene() != nullptr) {
 		auto * fscene = qobject_cast<FGraphicsScene *>(scene());
-		if (fscene && fscene->displayHandles()) {
+		if ((fscene != nullptr) && fscene->displayHandles()) {
 			QGraphicsPixmapItem::paint(painter, option, widget);
 		}
 	}
 }
 
 bool ResizeHandle::scaling() {
-	return (this->flags() & QGraphicsItem::ItemIgnoresTransformations) && (scene());
+	return ((this->flags() & QGraphicsItem::ItemIgnoresTransformations) != 0u) && ((scene()) != nullptr);
 }

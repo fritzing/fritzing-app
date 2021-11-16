@@ -144,7 +144,7 @@ void GerberGenerator::exportToGerber(const QString & prefix, const QString & exp
 
 	doDrill(board, sketchWidget, prefix, exportDir, displayMessageBoxes);
 
-	if (outlineInvalidCount > 0 || silkInvalidCount > 0 || copperInvalidCount > 0 || maskInvalidCount || pasteMaskInvalidCount) {
+	if (outlineInvalidCount > 0 || silkInvalidCount > 0 || copperInvalidCount > 0 || (maskInvalidCount != 0) || (pasteMaskInvalidCount != 0)) {
 		QString s;
 		if (outlineInvalidCount > 0) s += QObject::tr("the board outline layer, ");
 		if (silkInvalidCount > 0) s += QObject::tr("silkscreen layer(s), ");
@@ -570,7 +570,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		}
 	}
 
-	if (clipImage) {
+	if (clipImage != nullptr) {
 		QImage another(imgSize, QImage::Format_Mono);
 		another.fill(0xffffffff);
 		another.setDotsPerMeterX(res * GraphicsUtils::InchesPerMeter);
@@ -714,7 +714,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		}
 	}
 
-	if (clipImage) delete clipImage;
+	if (clipImage != nullptr) delete clipImage;
 
 	return QString(svgString);
 }
@@ -1016,7 +1016,7 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
 					}
 				}
 
-				if (connectorItem) break;
+				if (connectorItem != nullptr) break;
 			}
 			if (connectorItem == nullptr) continue;
 

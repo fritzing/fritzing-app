@@ -38,7 +38,7 @@ InfoGraphicsView::InfoGraphicsView( QWidget * parent )
 void InfoGraphicsView::viewItemInfo(ItemBase * item) {
 	if (m_infoView == nullptr) return;
 
-	m_infoView->viewItemInfo(this, item ? item->layerKinChief() : item, swappingEnabled(item));
+	m_infoView->viewItemInfo(this, item != nullptr ? item->layerKinChief() : item, swappingEnabled(item));
 }
 
 void InfoGraphicsView::hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase * itemBase) {
@@ -46,7 +46,7 @@ void InfoGraphicsView::hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase
 
 	if (event->modifiers() & Qt::ShiftModifier || itemBase->viewID() == ViewLayer::IconView) {
 		m_hoverEnterMode = true;
-		m_infoView->hoverEnterItem(this, event, itemBase ? itemBase->layerKinChief() : itemBase, swappingEnabled(itemBase));
+		m_infoView->hoverEnterItem(this, event, itemBase != nullptr ? itemBase->layerKinChief() : itemBase, swappingEnabled(itemBase));
 	}
 }
 
@@ -55,7 +55,7 @@ void InfoGraphicsView::hoverLeaveItem(QGraphicsSceneHoverEvent * event, ItemBase
 
 	if (m_hoverEnterMode) {
 		m_hoverEnterMode = false;
-		m_infoView->hoverLeaveItem(this, event, itemBase ? itemBase->layerKinChief() : itemBase);
+		m_infoView->hoverLeaveItem(this, event, itemBase != nullptr ? itemBase->layerKinChief() : itemBase);
 	}
 }
 
@@ -395,11 +395,11 @@ void InfoGraphicsView::newWire(Wire * wire)
 	                         Qt::DirectConnection); // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
 	bool succeeded = connect(wire, SIGNAL(wireChangedCurveSignal(Wire*, const Bezier *, const Bezier *, bool)),
 	                    this, SLOT(wireChangedCurveSlot(Wire*, const Bezier *, const Bezier *, bool)),
-	                    Qt::DirectConnection); // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
-	succeeded = succeeded && connect(wire, SIGNAL(wireSplitSignal(Wire*, QPointF, QPointF, const QLineF & )),
-	                                 this, SLOT(wireSplitSlot(Wire*, QPointF, QPointF, const QLineF & )));
-	succeeded = succeeded && connect(wire, SIGNAL(wireJoinSignal(Wire*, ConnectorItem *)),
-	                                 this, SLOT(wireJoinSlot(Wire*, ConnectorItem*)));
+	                    Qt::DirectConnection) != nullptr; // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
+	succeeded = succeeded && (connect(wire, SIGNAL(wireSplitSignal(Wire*, QPointF, QPointF, const QLineF & )),
+	                                 this, SLOT(wireSplitSlot(Wire*, QPointF, QPointF, const QLineF & ))) != nullptr);
+	succeeded = succeeded && (connect(wire, SIGNAL(wireJoinSignal(Wire*, ConnectorItem *)),
+	                                 this, SLOT(wireJoinSlot(Wire*, ConnectorItem*))) != nullptr);
 	if (!succeeded) {
 		DebugDialog::debug("wire signal connect failed");
 	}
@@ -421,7 +421,7 @@ void InfoGraphicsView::moveItem(ItemBase *, double x, double y) {
 }
 
 void InfoGraphicsView::updateRotation(ItemBase * itemBase) {
-	if (m_infoView) m_infoView->updateRotation(itemBase);
+	if (m_infoView != nullptr) m_infoView->updateRotation(itemBase);
 }
 
 void InfoGraphicsView::rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem)

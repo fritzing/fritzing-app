@@ -40,7 +40,7 @@ SketchToolButton::SketchToolButton(const QString &imageName, QWidget *parent, QA
 	//.arg(m_disabledImage.width()).arg(m_disabledImage.height())
 	//.arg(m_pressedImage.width()).arg(m_pressedImage.height()));
 
-	if(defaultAction) {
+	if(defaultAction != nullptr) {
 		setDefaultAction(defaultAction);
 		setText(defaultAction->text());
 	}

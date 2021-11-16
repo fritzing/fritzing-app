@@ -504,7 +504,7 @@ KicadModule2Svg::PadLayer KicadModule2Svg::convertPad(QTextStream & stream, QStr
 		padLayer = ToCopper1;
 	}
 	else if (padType == "CONN") {
-		if (layerMask & 1) {
+		if ((layerMask & 1) != 0) {
 			padLayer = ToCopper0;
 		}
 		else {

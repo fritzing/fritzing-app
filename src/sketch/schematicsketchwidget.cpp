@@ -239,7 +239,7 @@ void SchematicSketchWidget::setInstanceTitle(long itemID, const QString & oldTex
 
 	if (isUndoable) {
 		auto * sitem = qobject_cast<SymbolPaletteItem *>(findItem(itemID));
-		if (sitem && sitem->isOnlyNetLabel()) {
+		if ((sitem != nullptr) && sitem->isOnlyNetLabel()) {
 			setProp(sitem, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
 			return;
 		}
@@ -252,7 +252,7 @@ void SchematicSketchWidget::setProp(ItemBase * itemBase, const QString & prop, c
 {
 	if (prop =="label") {
 		auto * sitem = qobject_cast<SymbolPaletteItem *>(itemBase);
-		if (sitem && sitem->isOnlyNetLabel()) {
+		if ((sitem != nullptr) && sitem->isOnlyNetLabel()) {
 			if (sitem->getLabel() == newValue) {
 				return;
 			}
@@ -415,7 +415,7 @@ Wire * SchematicSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPa
 {
 	viewGeometry.setSchematicTrace(true);
 	Wire * wire =  SketchWidget::createTempWireForDragging(fromWire, wireModel, connectorItem, viewGeometry, spec);
-	if (fromWire) {
+	if (fromWire != nullptr) {
 		wire->setColorString(fromWire->colorString(), fromWire->opacity(), false);
 	}
 	else {
@@ -469,7 +469,7 @@ QSizeF SchematicSketchWidget::jumperItemSize() {
 		ViewGeometry viewGeometry;
 		viewGeometry.setLoc(QPointF(0, 0));
 		ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(nullptr), BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
-		if (itemBase) {
+		if (itemBase != nullptr) {
 			auto * netLabel = qobject_cast<SymbolPaletteItem *>(itemBase);
 			netLabel->setLabel("00");
 			SchematicSketchWidget::m_jumperItemSize = netLabel->boundingRect().size();
@@ -548,7 +548,7 @@ void SchematicSketchWidget::resizeLabels() {
 		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 
-		if (itemBase->hasPartLabel() && itemBase->partLabel()) {
+		if (itemBase->hasPartLabel() && (itemBase->partLabel() != nullptr)) {
 			itemBase->partLabel()->setFontPointSize(fontSize);
 		}
 	}

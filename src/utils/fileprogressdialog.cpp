@@ -43,7 +43,7 @@ FileProgressDialog::FileProgressDialog(const QString & title, int initialMaximum
 	QSplashScreen *splash = nullptr;
 	Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 		splash = qobject_cast<QSplashScreen *>(widget);
-		if (splash) {
+		if (splash != nullptr) {
 			break;
 		}
 	}
@@ -52,7 +52,7 @@ FileProgressDialog::FileProgressDialog(const QString & title, int initialMaximum
 	setModal(splash == nullptr);			// OS X Lion doesn't seem to like modal dialogs during splash time
 
 	show();
-	if (splash) {
+	if (splash != nullptr) {
 		QRect sr = splash->geometry();
 		QRect r = this->geometry();
 		QRect fr = this->frameGeometry();
@@ -213,7 +213,7 @@ void FileProgressDialog::setIndeterminate() {
 }
 
 void FileProgressDialog::updateIndeterminate() {
-	if (m_progressBar) {
+	if (m_progressBar != nullptr) {
 		m_progressBar->setValue(0);
 	}
 }

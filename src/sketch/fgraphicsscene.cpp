@@ -43,7 +43,7 @@ void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 	auto * itemBase = dynamic_cast<ItemBase *>(item);
 	if (itemBase == nullptr) {
 		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem) {
+		if (connectorItem != nullptr) {
 			connectorItem->updateTooltip();
 		}
 

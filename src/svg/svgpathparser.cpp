@@ -274,7 +274,7 @@ bool SVGPathParser::parse(SVGPathLexer& lexer)
 					continue;
 				else if (k < 0)
 					++reduces;
-				else if (spell[tk]) {
+				else if (spell[tk] != nullptr) {
 					if (shifts < 3)
 						expected_tokens[shifts] = tk;
 					++shifts;
@@ -282,7 +282,7 @@ bool SVGPathParser::parse(SVGPathLexer& lexer)
 			}
 
 			m_errorMessage.clear();
-			if (shifts && shifts < 3) {
+			if ((shifts != 0) && shifts < 3) {
 				bool first = true;
 
 				for (int s = 0; s < shifts; ++s) {

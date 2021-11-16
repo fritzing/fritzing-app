@@ -162,14 +162,14 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	// make cross-view connections
 	QList<ConnectorEdge *> foreignEdges;
 	Q_FOREACH (ConnectorEdge * ce, edges) {
-		if (ce->wire && !ce->wire->isEverVisible()) {
+		if ((ce->wire != nullptr) && !ce->wire->isEverVisible()) {
 			ce->visible = false;
 			Q_FOREACH (SketchWidget * foreignSketchWidget, foreignSketchWidgets) {
 				ItemBase * foreignItemBase = foreignSketchWidget->findItem(ce->wire->id());
-				if (foreignItemBase && foreignItemBase->isEverVisible()) {
+				if ((foreignItemBase != nullptr) && foreignItemBase->isEverVisible()) {
 					ConnectorItem * fc0 = foreignSketchWidget->findConnectorItem(ce->c0);
 					ConnectorItem * fc1 = foreignSketchWidget->findConnectorItem(ce->c1);
-					if (fc0 && fc1) {
+					if ((fc0 != nullptr) && (fc1 != nullptr)) {
 						appendVertIf(fc0, vertices, verts);
 						int ix = LastVertex;
 						appendVertIf(fc1, vertices, verts);
@@ -188,7 +188,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 				}
 			}
 		}
-		if (ce->wire) continue;
+		if (ce->wire != nullptr) continue;
 
 		if (!ce->c0->attachedTo()->isEverVisible()) {
 			ce->visible = false;
@@ -201,7 +201,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 				if (!fc0->attachedTo()->isEverVisible()) continue;
 
 				ConnectorItem * fc1 = foreignSketchWidget->findConnectorItem(ce->c1);
-				if (fc0 && fc1) {
+				if ((fc0 != nullptr) && (fc1 != nullptr)) {
 					appendVertIf(fc0, vertices, verts);
 					int ix = LastVertex;
 					appendVertIf(fc1, vertices, verts);
@@ -336,7 +336,7 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 		ConnectorItem * connectorItem = temp[tix++];
 		//connectorItem->debugInfo("check cross");
 		ConnectorItem * crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
-		if (crossConnectorItem) {
+		if (crossConnectorItem != nullptr) {
 			// it doesn't matter which one  on which layer we remove
 			// when we check equal potential both of them will be returned
 			//crossConnectorItem->debugInfo("\tremove cross");
@@ -364,7 +364,7 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 			edges[ix].first = i;
 			edges[ix].second = j;
 			ConnectorItem * c2 = temp.at(j);
-			if ((c1->attachedTo() == c2->attachedTo()) && (c1->bus()) && (c1->bus() == c2->bus())) {
+			if ((c1->attachedTo() == c2->attachedTo()) && ((c1->bus()) != nullptr) && (c1->bus() == c2->bus())) {
 				weights[ix++] = 0;
 				continue;
 			}
@@ -490,7 +490,7 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 				continue;
 			}
 
-			if ((to->bus()) && (to->bus() == from->bus())) {
+			if (((to->bus()) != nullptr) && (to->bus() == from->bus())) {
 				add_edge_d(i, j, G);
 				add_edge_d(j, i, G);
 				continue;
@@ -519,7 +519,7 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 				break;
 			case ModelPart::Part:
 				//Only the breadboard view allows part to part connections
-				if (toConnectorItem->attachedTo()->isEverVisible() && (myTrace & ViewGeometry::NormalFlag)) {
+				if (toConnectorItem->attachedTo()->isEverVisible() && ((myTrace & ViewGeometry::NormalFlag) != 0u)) {
 					int j = partConnectorItems.indexOf(toConnectorItem);
 					if (j >= 0) {
 						add_edge_d(i, j, G);
@@ -620,7 +620,7 @@ void GraphUtils::collectBreadboard(ConnectorItem * connectorItem, QList<Connecto
 		}
 
 		Bus * bus = candidate->bus();
-		if (bus) {
+		if (bus != nullptr) {
 			QList<ConnectorItem *> busConnectorItems;
 			candidate->attachedTo()->busConnectorItems(bus, candidate, busConnectorItems);
 			Q_FOREACH (ConnectorItem * bci, busConnectorItems) {

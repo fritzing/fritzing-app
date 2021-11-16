@@ -66,7 +66,7 @@ bool FocusOutComboBox::eventFilter( QObject *target, QEvent *event ) {
 }
 
 void FocusOutComboBox::checkSelectAll() {
-	if(lineEdit() && !lineEdit()->hasSelectedText() && isEnabled()) {
+	if((lineEdit() != nullptr) && !lineEdit()->hasSelectedText() && isEnabled()) {
 		lineEdit()->selectAll();
 	}
 }

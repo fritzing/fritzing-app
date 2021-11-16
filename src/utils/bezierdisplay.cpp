@@ -37,11 +37,11 @@ BezierDisplay::BezierDisplay()
 BezierDisplay::~BezierDisplay()
 {
 	//DebugDialog::debug("removing bezier display");
-	if (m_itemL0) {
+	if (m_itemL0 != nullptr) {
 		m_itemL0->scene()->removeItem(m_itemL0);
 		delete m_itemL0;
 	}
-	if (m_itemL1) {
+	if (m_itemL1 != nullptr) {
 		m_itemL1->scene()->removeItem(m_itemL1);
 		delete m_itemL1;
 	}
@@ -66,7 +66,7 @@ void BezierDisplay::initDisplay(QGraphicsItem * master, Bezier *bezier)
 	pen.setWidth(0);
 
 	QGraphicsItem * parent = master;
-	while (parent->parentItem()) {
+	while (parent->parentItem() != nullptr) {
 		parent = master->parentItem();
 	}
 

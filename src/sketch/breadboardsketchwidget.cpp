@@ -222,7 +222,7 @@ void BreadboardSketchWidget::addDefaultParts() {
 
 void BreadboardSketchWidget::showEvent(QShowEvent * event) {
 	SketchWidget::showEvent(event);
-	if (m_addDefaultParts && (m_addedDefaultPart)) {
+	if (m_addDefaultParts && ((m_addedDefaultPart) != nullptr)) {
 		m_addDefaultParts = false;
 		QSizeF partSize = m_addedDefaultPart->size();
 		QSizeF vpSize = this->viewport()->size();
@@ -270,10 +270,10 @@ bool BreadboardSketchWidget::coloringWiresByLength() {
 
 bool BreadboardSketchWidget::canCreateWire(Wire * dragWire, ConnectorItem * from, ConnectorItem * to)
 {
-	if ((from) && (to)) {
+	if (((from) != nullptr) && ((to) != nullptr)) {
 		return true;
 	}
-	if (!dragWire) {
+	if (dragWire == nullptr) {
 		return false;
 	}
 	qreal length = dragWire->getPaintLine().length();
@@ -283,7 +283,7 @@ bool BreadboardSketchWidget::canCreateWire(Wire * dragWire, ConnectorItem * from
 Wire * BreadboardSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec)
 {
 	Wire * wire = SketchWidget::createTempWireForDragging(fromWire, wireModel, connectorItem, viewGeometry, spec);
-	if (fromWire && wire) {
+	if ((fromWire != nullptr) && (wire != nullptr)) {
 		wire->setColorString(fromWire->colorString(), fromWire->opacity(), false);
 	}
 	return wire;

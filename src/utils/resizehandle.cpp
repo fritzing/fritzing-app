@@ -104,5 +104,5 @@ void ResizeHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
 }
 
 bool ResizeHandle::scaling() {
-	return ((this->flags() & QGraphicsItem::ItemIgnoresTransformations) != 0u) && ((scene()) != nullptr);
+	return (this->flags() & QGraphicsItem::ItemIgnoresTransformations) && (scene());
 }

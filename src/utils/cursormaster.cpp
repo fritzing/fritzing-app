@@ -218,7 +218,7 @@ bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 	{
 		auto *keyEvent = static_cast<QKeyEvent*>(event);
 		Q_FOREACH (QObject * listener, Listeners) {
-			if (listener) {
+			if (listener != nullptr) {
 				dynamic_cast<CursorKeyListener *>(listener)->cursorKeyEvent(keyEvent->modifiers());
 				break;
 			}

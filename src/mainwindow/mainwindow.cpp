@@ -2691,7 +2691,7 @@ void MainWindow::updateActiveLayerButtons() {
 			m_viewFromBelowToggleAct->setChecked(viewFromBelow);
 
 			m_viewFromBelowAct->setChecked(viewFromBelow);
-			m_viewFromAboveAct->setChecked(viewFromBelow);
+			m_viewFromAboveAct->setChecked(!viewFromBelow);
 
 			m_viewFromBelowToggleAct->setEnabled(true);
 			m_viewFromBelowAct->setEnabled(true);

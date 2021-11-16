@@ -62,14 +62,14 @@ LockManager::LockManager() : QObject()
 LockManager::~LockManager()
 {
 	Q_FOREACH (QTimer * timer, TheTimers) {
-		if (timer) timer->stop();
+		if (timer != nullptr) timer->stop();
 	}
 	TheTimers.clear();
 }
 
 void LockManager::cleanup() {
 	Q_FOREACH (QTimer * timer, TheTimers) {
-		if (timer) {
+		if (timer != nullptr) {
 			timer->stop();
 			delete timer;
 		}

@@ -325,7 +325,7 @@ QString SvgFlattener::flipSMDElement(QDomDocument & domDocument, QDomElement & e
 	TextUtils::ensureViewBox(domDocument, 1, bounds, false, w, h, false);
 	m.translate(bounds.center().x(), bounds.center().y());
 	QTransform mMinus = m.inverted();
-	QTransform cm = mMinus * ((orientation & Qt::Vertical) ? QTransform().scale(-1, 1) : QTransform().scale(1, -1)) * m;
+	QTransform cm = mMinus * ((orientation & Qt::Vertical) != 0u ? QTransform().scale(-1, 1) : QTransform().scale(1, -1)) * m;
 	QDomElement newElement = element.cloneNode(true).toElement();
 
 #ifndef QT_NODEBUG
@@ -337,7 +337,7 @@ QString SvgFlattener::flipSMDElement(QDomDocument & domDocument, QDomElement & e
 	newElement.removeAttribute("id");
 	QDomElement pElement = domDocument.createElement("g");
 	pElement.setAttribute("id", altAtt);
-	pElement.setAttribute("flipped", true);
+	pElement.setAttribute("flipped", 1);
 	QDomElement mElement = domDocument.createElement("g");
 	TextUtils::setSVGTransform(mElement, cm);
 	pElement.appendChild(mElement);

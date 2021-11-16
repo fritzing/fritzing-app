@@ -7,7 +7,7 @@ QList<QGraphicsItem *> RenderThing::getItems(QGraphicsScene * scene) {
 	if (selectedItems) {
 		items = scene->selectedItems();
 	}
-	else if (!m_board) {
+	else if (m_board == nullptr) {
 		items = scene->items();
 	}
 	else {
@@ -19,7 +19,7 @@ QList<QGraphicsItem *> RenderThing::getItems(QGraphicsScene * scene) {
 
 void RenderThing::setBoard(QGraphicsItem *board) {
 	m_board = board;
-	if (board) {
+	if (board != nullptr) {
 		offsetRect = m_board->sceneBoundingRect();
 	}
 }

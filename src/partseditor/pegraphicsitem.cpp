@@ -99,7 +99,7 @@ void PEGraphicsItem::wheelEvent(QGraphicsSceneWheelEvent * event) {
 	QList<PEGraphicsItem *> items;
 	Q_FOREACH (QGraphicsItem * item, scene()->items(event->scenePos())) {
 		auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
-		if (pegi) items.append(pegi);
+		if (pegi != nullptr) items.append(pegi);
 	}
 
 	if (items.count() < 2) return;
@@ -291,13 +291,13 @@ void PEGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 		return;
 	}
 
-	if (!event->buttons() && Qt::LeftButton) {
+	if (!event->buttons() && (Qt::LeftButton != 0u)) {
 		event->ignore();
 		return;
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView && infoGraphicsView->spaceBarIsPressed()) {
+	if ((infoGraphicsView != nullptr) && infoGraphicsView->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}

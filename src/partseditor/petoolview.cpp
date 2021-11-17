@@ -198,17 +198,17 @@ PEToolView::~PEToolView()
 
 void PEToolView::enableConnectorChanges(bool enableTerminalPointDrag, bool enableTerminalPointControls, bool enableInfo, bool enableAssign)
 {
-	if (m_assignButton) {
+	if (m_assignButton != nullptr) {
 		m_assignButton->setEnabled(enableAssign);
 	}
-	if (m_terminalPointGroupBox) {
+	if (m_terminalPointGroupBox != nullptr) {
 		m_terminalPointGroupBox->setEnabled(enableTerminalPointControls);
 	}
-	if (m_connectorInfoWidget) {
+	if (m_connectorInfoWidget != nullptr) {
 		m_connectorInfoWidget->setEnabled(enableInfo);
 	}
 
-	if (m_terminalPointDragState) {
+	if (m_terminalPointDragState != nullptr) {
 		if (enableTerminalPointDrag) {
 			m_terminalPointDragState->setText(tr("<font color='black'>Dragging enabled</font>"));
 			m_terminalPointDragState->setEnabled(true);
@@ -277,14 +277,14 @@ void PEToolView::switchConnector(QTreeWidgetItem * current, QTreeWidgetItem * pr
 	Q_UNUSED(previous);
 
 	QWidget * widget = QApplication::focusWidget();
-	if (widget) {
+	if (widget != nullptr) {
 		QList<QWidget *> children = m_connectorInfoWidget->findChildren<QWidget *>();
 		if (children.contains(widget)) {
 			widget->blockSignals(true);
 		}
 	}
 
-	if (m_connectorInfoWidget) {
+	if (m_connectorInfoWidget != nullptr) {
 		delete m_connectorInfoWidget;
 		m_connectorInfoWidget = nullptr;
 	}
@@ -425,7 +425,7 @@ void PEToolView::hideConnectorListStuff() {
 	for (int i = 0; i < m_connectorListWidget->topLevelItemCount(); i++) {
 		QTreeWidgetItem * item = m_connectorListWidget->topLevelItem(i);
 		QWidget * widget = m_connectorListWidget->itemWidget(item, 1);
-		if (qobject_cast<QPushButton *>(widget)) {
+		if (qobject_cast<QPushButton *>(widget) != nullptr) {
 			if (item == current) ;   // button is already there
 			else {
 				// remove the button and add the label

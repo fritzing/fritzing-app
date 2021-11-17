@@ -97,7 +97,7 @@ Syntaxer * Highlighter::syntaxer() {
 
 void Highlighter::highlightBlock(const QString &text)
 {
-	if (!m_syntaxer) return;
+	if (m_syntaxer == nullptr) return;
 
 	if (text.isEmpty()) {
 		setCurrentBlockState(previousBlockState());
@@ -134,7 +134,7 @@ void Highlighter::highlightBlock(const QString &text)
 		}
 		noComment.replace(startCommentIndex, commentLength, QString(commentLength, ' '));
 		QTextCharFormat * cf = m_styleFormats.value("Comment", NULL);
-		if (cf) {
+		if (cf != nullptr) {
 			setFormat(startCommentIndex, commentLength, *cf);
 		}
 		m_syntaxer->matchCommentStart(text, startCommentIndex + commentLength, startCommentIndex, currentCommentInfo);
@@ -180,7 +180,7 @@ void Highlighter::highlightStrings(int startStringIndex, QString & text) {
 		}
 		text.replace(startStringIndex, stringLength, QString(stringLength, ' '));
 		QTextCharFormat * sf = m_styleFormats.value("String", NULL);
-		if (sf) {
+		if (sf != nullptr) {
 			setFormat(startStringIndex, stringLength, *sf);
 		}
 		startStringIndex = m_syntaxer->matchStringStart(text, startStringIndex + stringLength);
@@ -200,10 +200,10 @@ void Highlighter::highlightTerms(const QString & text) {
 			TrieLeaf * leaf = nullptr;
 			if (m_syntaxer->matches(text.mid(lastWordBreak, b - lastWordBreak), leaf)) {
 				auto * stl = dynamic_cast<SyntaxerTrieLeaf *>(leaf);
-				if (stl) {
+				if (stl != nullptr) {
 					QString format = Syntaxer::formatFromList(stl->name());
 					QTextCharFormat * tcf = m_styleFormats.value(format, NULL);
-					if (tcf) {
+					if (tcf != nullptr) {
 						setFormat(lastWordBreak, b - lastWordBreak, *tcf);
 					}
 				}

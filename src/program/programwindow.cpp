@@ -70,11 +70,11 @@ void PTabWidget::tabChanged(int index) {
 	// Hide the close button on the old tab
 	if (m_lastTabIndex >= 0) {
 		auto *tabButton = qobject_cast<QAbstractButton *>(tabBar()->tabButton(m_lastTabIndex, QTabBar::LeftSide));
-		if (!tabButton) {
+		if (tabButton == nullptr) {
 			tabButton = qobject_cast<QAbstractButton *>(tabBar()->tabButton(m_lastTabIndex, QTabBar::RightSide));
 		}
 
-		if (tabButton) {
+		if (tabButton != nullptr) {
 			tabButton->hide();
 		}
 	}
@@ -84,10 +84,10 @@ void PTabWidget::tabChanged(int index) {
 	// Show the close button on the new tab
 	if (m_lastTabIndex >= 0) {
 		auto *tabButton = qobject_cast<QAbstractButton *>(tabBar()->tabButton(m_lastTabIndex, QTabBar::LeftSide));
-		if (!tabButton) {
+		if (tabButton == nullptr) {
 			tabButton = qobject_cast<QAbstractButton *>(tabBar()->tabButton(m_lastTabIndex, QTabBar::RightSide));
 		}
-		if (tabButton) {
+		if (tabButton != nullptr) {
 			tabButton->show();
 		}
 	}
@@ -311,7 +311,7 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 }
 
 void ProgramWindow::showMenus(bool show) {
-	if (m_editMenu) {
+	if (m_editMenu != nullptr) {
 		m_editMenu->menuAction()->setVisible(show);
 		m_editMenu->setEnabled(show);
 		m_undoAction->setEnabled(show);
@@ -326,11 +326,11 @@ void ProgramWindow::showMenus(bool show) {
 		m_editMenu->setTitle(tr("Edit"));
 	}
 	}
-	if (m_programMenu) {
+	if (m_programMenu != nullptr) {
 		m_programMenu->menuAction()->setVisible(show);
 		m_programMenu->setEnabled(show);
 	}
-	if (m_viewMenu) {
+	if (m_viewMenu != nullptr) {
 		m_viewMenu->menuAction()->setVisible(show);
 		m_viewMenu->setEnabled(show);
 	if (show) {
@@ -425,7 +425,7 @@ void ProgramWindow::cleanUp() {
 bool ProgramWindow::eventFilter(QObject * object, QEvent * event) {
 	if (object == this && event->type() == QEvent::ShortcutOverride) {
 		auto *keyEvent = dynamic_cast<QKeyEvent*>(event);
-		if(keyEvent && keyEvent->matches(QKeySequence::Close) && m_tabWidget->count() > 1 ) {
+		if((keyEvent != nullptr) && keyEvent->matches(QKeySequence::Close) && m_tabWidget->count() > 1 ) {
 			return true;
 		}
 	}
@@ -523,7 +523,7 @@ void ProgramWindow::closeCurrentTab() {
 
 void ProgramWindow::closeTab(int index) {
 	ProgramTab * pTab = indexWidget(index);
-	if (pTab) {
+	if (pTab != nullptr) {
 		Q_EMIT linkToProgramFile(pTab->filename(), nullptr, false, true);
 		pTab->deleteTab();
 	}
@@ -548,15 +548,15 @@ void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEna
 	m_copyAction->setEnabled(copyEnable);
 	m_pasteAction->setEnabled(pasteEnable);
 	QAction *lang = m_platformActions.value(platform);
-	if (lang) {
+	if (lang != nullptr) {
 		lang->setChecked(true);
 	}
 	QAction *portAction = m_portActions.value(port);
-	if (portAction) {
+	if (portAction != nullptr) {
 		portAction->setChecked(true);
 	}
 	QAction *boardAction = m_boardActions.value(board);
-	if (boardAction) {
+	if (boardAction != nullptr) {
 		boardAction->setChecked(true);
 	}
 
@@ -618,7 +618,7 @@ void ProgramWindow::print() {
 
 // overrides MainWindow::saveAsAux
 bool ProgramWindow::saveAsAux(const QString & fileName) {
-	if (!m_savingProgramTab) return false;
+	if (m_savingProgramTab == nullptr) return false;
 
 	bool result = m_savingProgramTab->save(fileName);
 	m_savingProgramTab = nullptr;
@@ -727,11 +727,11 @@ Platform * ProgramWindow::getPlatformByName(const QString & platformName) {
 }
 
 bool ProgramWindow::hasPlatform(const QString & platformName) {
-	return getPlatformByName(platformName);
+	return getPlatformByName(platformName) != nullptr;
 }
 
 const QMap<QString, QString> ProgramWindow::getBoards() {
-	if (currentWidget() && currentWidget()->platform())
+	if ((currentWidget() != nullptr) && (currentWidget()->platform() != nullptr))
 		return currentWidget()->platform()->getBoards();
 
 
@@ -776,7 +776,7 @@ void ProgramWindow::loadProgramFile() {
 
 void ProgramWindow::loadProgramFileNew() {
 	ProgramTab * programTab = addTab();
-	if (programTab) {
+	if (programTab != nullptr) {
 		if (!programTab->loadProgramFile()) {
 			delete programTab;
 		}

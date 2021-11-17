@@ -129,13 +129,13 @@ const QHash<QString,QString> &HashPopulateWidget::hash() {
 	for(int i=1 /*i==0 is title*/; i < gridLayout()->rowCount() /*last one is always an empty one*/; i++) {
 		QString label;
 		HashLineEdit *labelEdit = lineEditAt(i,0);
-		if(labelEdit) {
+		if(labelEdit != nullptr) {
 			label = labelEdit->textIfSetted();
 		}
 
 		QString value;
 		HashLineEdit *valueEdit = lineEditAt(i,1);
-		if(valueEdit) {
+		if(valueEdit != nullptr) {
 			value = valueEdit->textIfSetted();
 		}
 
@@ -148,7 +148,7 @@ const QHash<QString,QString> &HashPopulateWidget::hash() {
 
 HashLineEdit* HashPopulateWidget::lineEditAt(int row, int col) {
 	QLayoutItem *litem = gridLayout()->itemAtPosition(row,col);
-	return litem ? qobject_cast<HashLineEdit*>(litem->widget()) : NULL;
+	return litem != nullptr ? qobject_cast<HashLineEdit*>(litem->widget()) : NULL;
 }
 
 void HashPopulateWidget::addRow(QGridLayout *layout) {
@@ -156,11 +156,11 @@ void HashPopulateWidget::addRow(QGridLayout *layout) {
 		layout = gridLayout();
 	}
 
-	if(m_lastLabel) {
+	if(m_lastLabel != nullptr) {
 		disconnect(m_lastLabel,SIGNAL(editingFinished()),this,SLOT(lastRowEditionCompleted()));
 	}
 
-	if(m_lastValue) {
+	if(m_lastValue != nullptr) {
 		disconnect(m_lastValue,SIGNAL(editingFinished()),this,SLOT(lastRowEditionCompleted()));
 	}
 
@@ -183,7 +183,7 @@ QGridLayout * HashPopulateWidget::gridLayout() {
 }
 
 void HashPopulateWidget::lastRowEditionCompleted() {
-	if(	m_lastLabel && !m_lastLabel->text().isEmpty() && m_lastLabel->hasChanged()) {
+	if(	(m_lastLabel != nullptr) && !m_lastLabel->text().isEmpty() && m_lastLabel->hasChanged()) {
 		if(m_lastLabel->text().isEmpty() && m_lastValue->text().isEmpty()) {
 			// removeRow() ?;
 		} else {

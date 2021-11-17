@@ -339,7 +339,7 @@ void PEMainWindow::closeEvent(QCloseEvent *event)
 		// should only be one in-focus widget
 		Q_FOREACH (QWidget * widget, m_inFocusWidgets) {
 			auto * lineEdit = qobject_cast<QLineEdit *>(widget);
-			if (lineEdit) {
+			if (lineEdit != nullptr) {
 				if (lineEdit->isModified()) {
 					lineEdit->clearFocus();
 					lineEdit->setModified(false);
@@ -348,7 +348,7 @@ void PEMainWindow::closeEvent(QCloseEvent *event)
 			}
 			else {
 				auto * textEdit = qobject_cast<QTextEdit *>(widget);
-				if (textEdit) {
+				if (textEdit != nullptr) {
 					if (textEdit->document()->isModified()) {
 						textEdit->clearFocus();
 						textEdit->document()->setModified(false);
@@ -525,12 +525,12 @@ void PEMainWindow::moreInitDock()
 	makeDock(tr("SVG"), m_peSvgView, DockMinWidth, SvgDefaultHeight);
 	m_peSvgView->setMinimumSize(DockMinWidth, SvgDefaultHeight);
 
-	if (m_binManager) {
+	if (m_binManager != nullptr) {
 		QDockWidget * dockWidget = makeDock(BinManager::Title, m_binManager, DockMinWidth, BinMinHeight);
 		dockWidget->resize(0, 0);
 	}
 
-	if (m_infoView) {
+	if (m_infoView != nullptr) {
 		makeDock(tr("Inspector"), m_infoView, InfoViewMinHeight, InfoViewHeightDefault);
 		this -> setObjectName("PEInspector");
 	}
@@ -646,13 +646,13 @@ bool PEMainWindow::activeLayerWidgetAlwaysOn() {
 
 void PEMainWindow::connectPairs() {
 	bool succeeded = true;
-	succeeded =  succeeded && connect(qApp, SIGNAL(spaceBarIsPressedSignal(bool)), m_breadboardGraphicsView, SLOT(spaceBarIsPressedSlot(bool)));
-	succeeded =  succeeded && connect(qApp, SIGNAL(spaceBarIsPressedSignal(bool)), m_schematicGraphicsView, SLOT(spaceBarIsPressedSlot(bool)));
-	succeeded =  succeeded && connect(qApp, SIGNAL(spaceBarIsPressedSignal(bool)), m_pcbGraphicsView, SLOT(spaceBarIsPressedSlot(bool)));
+	succeeded =  succeeded && (connect(qApp, SIGNAL(spaceBarIsPressedSignal(bool)), m_breadboardGraphicsView, SLOT(spaceBarIsPressedSlot(bool))) != nullptr);
+	succeeded =  succeeded && (connect(qApp, SIGNAL(spaceBarIsPressedSignal(bool)), m_schematicGraphicsView, SLOT(spaceBarIsPressedSlot(bool))) != nullptr);
+	succeeded =  succeeded && (connect(qApp, SIGNAL(spaceBarIsPressedSignal(bool)), m_pcbGraphicsView, SLOT(spaceBarIsPressedSlot(bool))) != nullptr);
 
-	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(cursorLocationSignal(double, double, double, double)), this, SLOT(cursorLocationSlot(double, double, double, double)));
-	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(cursorLocationSignal(double, double, double, double)), this, SLOT(cursorLocationSlot(double, double, double, double)));
-	succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(cursorLocationSignal(double, double, double, double)), this, SLOT(cursorLocationSlot(double, double, double, double)));
+	succeeded =  succeeded && (connect(m_pcbGraphicsView, SIGNAL(cursorLocationSignal(double, double, double, double)), this, SLOT(cursorLocationSlot(double, double, double, double))) != nullptr);
+	succeeded =  succeeded && (connect(m_breadboardGraphicsView, SIGNAL(cursorLocationSignal(double, double, double, double)), this, SLOT(cursorLocationSlot(double, double, double, double))) != nullptr);
+	succeeded =  succeeded && (connect(m_schematicGraphicsView, SIGNAL(cursorLocationSignal(double, double, double, double)), this, SLOT(cursorLocationSlot(double, double, double, double))) != nullptr);
 
 	if (!succeeded) {
 		DebugDialog::debug("PEMainWindow::connectPairs connect partly failed.");
@@ -701,7 +701,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 	m_pcbGraphicsView->setLayerActive(ViewLayer::Silkscreen0, true);
 
 	ModelPart * originalModelPart = nullptr;
-	if (!paletteItem) {
+	if (paletteItem == nullptr) {
 		// this shouldn't happen
 		originalModelPart = m_referenceModel->retrieveModelPart("generic_ic_dip_8_300mil");
 	}
@@ -926,7 +926,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 	reload(true);
 
 	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
-		if (viewThing->itemBase) {
+		if (viewThing->itemBase != nullptr) {
 			viewThing->originalSvgPath = viewThing->itemBase->filename();
 		}
 		viewThing->svgChangeCount = 0;
@@ -957,7 +957,7 @@ void PEMainWindow::setTitle() {
 	QString partTitle = getPartTitle();
 
 	QString viewName;
-	if (m_currentGraphicsView) viewName = m_currentGraphicsView->viewName();
+	if (m_currentGraphicsView != nullptr) viewName = m_currentGraphicsView->viewName();
 	else if (currentTabIndex() == IconViewIndex) viewName = tr("Icon View");
 	else if (currentTabIndex() == MetadataViewIndex) viewName = tr("Metadata View");
 	else if (currentTabIndex() == ConnectorsViewIndex) viewName = tr("Connectors View");
@@ -1295,7 +1295,7 @@ void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase,
 	int errorColumn;
 
 	QDomDocument tempSvgDoc;
-	if (!itemBase) {
+	if (itemBase == nullptr) {
 		return;
 	}
 	QFile file(itemBase->filename());
@@ -1401,7 +1401,7 @@ void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase,
 			}
 			else {
 				QPointF terminalPoint = pegi->rect().center();
-				if (terminalItem) {
+				if (terminalItem != nullptr) {
 					terminalPoint = terminalItem->pos() - pegi->pos() + terminalItem->rect().center();
 				}
 				pegi->setTerminalPoint(terminalPoint);
@@ -1414,13 +1414,13 @@ void PEMainWindow::initSvgTree(SketchWidget * sketchWidget, ItemBase * itemBase,
 }
 
 void PEMainWindow::highlightSlot(PEGraphicsItem * pegi) {
-	if (m_peToolView) {
+	if (m_peToolView != nullptr) {
 		bool enableTerminalPointControls = anyMarquee();
 		bool vis = anyVisible();
 		m_peToolView->enableConnectorChanges(vis && pegi->showingMarquee(), vis && enableTerminalPointControls, m_connectorList.count() > 0, vis);
 	}
 
-	if (m_peSvgView) {
+	if (m_peSvgView != nullptr) {
 		m_peSvgView->highlightElement(pegi);
 	}
 }
@@ -1510,7 +1510,7 @@ void PEMainWindow::loadImage()
 	QString initialPath = FolderUtils::openSaveFolder();
 	ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
 	ItemBase * itemBase = viewThing->itemBase;
-	if (itemBase) {
+	if (itemBase != nullptr) {
 		initialPath = itemBase->filename();
 	}
 	QString origPath = FolderUtils::getOpenFileName(this,
@@ -1627,7 +1627,7 @@ void PEMainWindow::loadImage()
 	auto * parentCommand = new QUndoCommand(QString("Load '%1'").arg(info.fileName()));
 
 	QString oldPath;
-	if (itemBase) {
+	if (itemBase != nullptr) {
 		oldPath = itemBase->filename();
 	}
 	new ChangeSvgCommand(this, m_currentGraphicsView, oldPath, newPath, parentCommand);
@@ -1733,7 +1733,7 @@ void PEMainWindow::changeSvg(SketchWidget * sketchWidget, const QString & filena
 	setImageAttribute(fzpRoot, filename, sketchWidget->viewID());
 
 	Q_FOREACH (ViewThing * viewThing, m_viewThings.values()) {
-		if (viewThing->itemBase) {
+		if (viewThing->itemBase != nullptr) {
 			Q_FOREACH(ItemBase * lk, viewThing->itemBase->layerKin()) {
 				delete lk;
 			}
@@ -1775,7 +1775,7 @@ void PEMainWindow::reload(bool firstTime)
 
 		Q_FOREACH (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
 			auto * itemBase = dynamic_cast<ItemBase *>(item);
-			if (itemBase) toDelete << itemBase;
+			if (itemBase != nullptr) toDelete << itemBase;
 		}
 	}
 
@@ -1799,7 +1799,7 @@ void PEMainWindow::reload(bool firstTime)
 	itemBases <<  m_pcbGraphicsView->addItem(modelPart, m_pcbGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
 
 	Q_FOREACH (ItemBase * itemBase, itemBases) {
-		if (!itemBase) continue;
+		if (itemBase == nullptr) continue;
 		ViewThing * viewThing = m_viewThings.value(itemBase->viewID());
 		viewThing->itemBase = itemBase;
 		viewThing->referenceFile = getSvgReferenceFile(itemBase->filename());
@@ -1820,7 +1820,7 @@ void PEMainWindow::reload(bool firstTime)
 		}
 	}
 
-	if (m_currentGraphicsView) {
+	if (m_currentGraphicsView != nullptr) {
 		showing(m_currentGraphicsView);
 	}
 
@@ -1835,7 +1835,7 @@ void PEMainWindow::reload(bool firstTime)
 		// TODO: may have to revisit this and move all pegi items
 		//viewThing->itemBase->setMoveLock(true);
 		//viewThing->itemBase->setItemIsSelectable(false);
-		if (!viewThing->itemBase) { continue; }
+		if (viewThing->itemBase == nullptr) { continue; }
 		viewThing->itemBase->setAcceptsMousePressLegEvent(false);
 		viewThing->itemBase->setSwappable(false);
 		viewThing->sketchWidget->hideConnectors(true);
@@ -1915,7 +1915,7 @@ void PEMainWindow::pickModeChanged(bool state) {
 		QApplication::setOverrideCursor(Qt::PointingHandCursor);
 		Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
-			if (pegi) pegi->setPickAppearance(true);
+			if (pegi != nullptr) pegi->setPickAppearance(true);
 		}
 		qApp->installEventFilter(this);
 	}
@@ -2729,7 +2729,7 @@ QString PEMainWindow::getPartTitle() {
 
 	if (m_viewThings.count() > 0) {
 		ViewThing * viewThing = m_viewThings.values().at(0);
-		if (viewThing->itemBase) {
+		if (viewThing->itemBase != nullptr) {
 			candidate = viewThing->itemBase->title();
 			if (!candidate.isEmpty()) return candidate;
 		}
@@ -2744,7 +2744,7 @@ void PEMainWindow::killPegi() {
 
 		Q_FOREACH (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
 			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
-			if (pegi) delete pegi;
+			if (pegi != nullptr) delete pegi;
 		}
 	}
 }
@@ -2966,7 +2966,7 @@ void PEMainWindow::displayBuses() {
 			QList<ConnectorItem *> connectorItems;
 			Q_FOREACH (QString connectorID, connectorIDs) {
 				ConnectorItem * connectorItem = viewThing->itemBase->findConnectorItemWithSharedID(connectorID, viewThing->itemBase->viewLayerPlacement());
-				if (connectorItem) connectorItems.append(connectorItem);
+				if (connectorItem != nullptr) connectorItems.append(connectorItem);
 			}
 			for (int i = 0; i < connectorItems.count() - 1; i++) {
 				ConnectorItem * c1 = connectorItems.at(i);
@@ -3326,10 +3326,10 @@ void PEMainWindow::clearPickMode() {
 	qApp->removeEventFilter(this);
 	m_useNextPick = m_inPickMode = false;
 	QApplication::restoreOverrideCursor();
-	if (m_currentGraphicsView) {
+	if (m_currentGraphicsView != nullptr) {
 		Q_FOREACH (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
-			if (pegi) pegi->setPickAppearance(false);
+			if (pegi != nullptr) pegi->setPickAppearance(false);
 		}
 	}
 }
@@ -3396,7 +3396,7 @@ void PEMainWindow::connectorsTypeChanged(Connector::ConnectorType ct)
 		connector = connector.nextSiblingElement("connector");
 	}
 
-	if (parentCommand) {
+	if (parentCommand != nullptr) {
 		m_undoStack->waitPush(parentCommand, SketchWidget::PropChangeDelay);
 	}
 }
@@ -3745,7 +3745,7 @@ void PEMainWindow::updateAssignedConnectors() {
 	if (m_currentGraphicsView == nullptr) return;
 
 	QDomDocument * doc = m_viewThings.value(m_currentGraphicsView->viewID())->document;
-	if (doc) m_peToolView->showAssignedConnectors(doc, m_currentGraphicsView->viewID());
+	if (doc != nullptr) m_peToolView->showAssignedConnectors(doc, m_currentGraphicsView->viewID());
 }
 
 void PEMainWindow::connectorWarning() {
@@ -3926,7 +3926,7 @@ void PEMainWindow::setInitialView() {
 }
 
 void PEMainWindow::updateExportMenu() {
-	bool enabled = m_currentGraphicsView || currentTabIndex() == IconViewIndex;
+	bool enabled = (m_currentGraphicsView != nullptr) || currentTabIndex() == IconViewIndex;
 	Q_FOREACH (QAction * action, m_exportMenu->actions()) {
 		action->setEnabled(enabled);
 	}

@@ -160,8 +160,8 @@ void ConsoleSettings::fillPortsInfo()
 		     << (!manufacturer.isEmpty() ? manufacturer : blankString)
 		     << (!serialNumber.isEmpty() ? serialNumber : blankString)
 		     << info.systemLocation()
-		     << (info.vendorIdentifier() ? QString::number(info.vendorIdentifier(), 16) : blankString)
-		     << (info.productIdentifier() ? QString::number(info.productIdentifier(), 16) : blankString);
+		     << (info.vendorIdentifier() != 0u ? QString::number(info.vendorIdentifier(), 16) : blankString)
+		     << (info.productIdentifier() != 0u ? QString::number(info.productIdentifier(), 16) : blankString);
 
 		ui->serialPortInfoListBox->addItem(list.first(), list);
 	}

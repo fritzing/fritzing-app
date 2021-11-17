@@ -119,9 +119,9 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	}
 
 	m_tabWidget = nullptr;
-	while (parent) {
+	while (parent != nullptr) {
 		auto * tabWidget = qobject_cast<QTabWidget *>(parent);
-		if (tabWidget) {
+		if (tabWidget != nullptr) {
 			m_tabWidget = tabWidget;
 			break;
 		}
@@ -149,7 +149,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 
 	while (m_programWindow == nullptr) {
 		m_programWindow = qobject_cast<ProgramWindow *>(parent);
-		if (parent) {
+		if (parent != nullptr) {
 			parent = parent->parentWidget();
 		}
 	}
@@ -399,7 +399,7 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
 		m_programWindow->updateLink(m_filename, newPlatform, false, false);
 	}
 
-	if (m_platform) m_platform->disconnect(SIGNAL(commandLocationChanged()));
+	if (m_platform != nullptr) m_platform->disconnect(SIGNAL(commandLocationChanged()));
 	connect(newPlatform, SIGNAL(commandLocationChanged()), this, SLOT(enableProgramButton()));
 
 	m_platform = newPlatform;
@@ -535,7 +535,7 @@ void ProgramTab::textChanged() {
 	QIcon tabIcon = m_tabWidget->tabIcon(m_tabWidget->currentIndex());
 	bool modified = isModified();
 
-	if (m_saveButton) {
+	if (m_saveButton != nullptr) {
 		m_saveButton->setEnabled(modified);
 	}
 
@@ -623,7 +623,7 @@ void ProgramTab::deleteTab() {
 		deleteFile = deleteDialog.deleteFileChecked();
 	}
 
-	if (m_tabWidget) {
+	if (m_tabWidget != nullptr) {
 		Q_EMIT wantToDelete(m_tabWidget->currentIndex(), deleteFile);
 		this->deleteLater();
 	}
@@ -752,7 +752,7 @@ void ProgramTab::sendProgram() {
 		//return;
 		save();
 	}
-	if (m_monitorWindow) {
+	if (m_monitorWindow != nullptr) {
 		m_monitorWindow->closeSerialPort(m_portComboBox->currentText());
 	}
 
@@ -797,7 +797,7 @@ void ProgramTab::updateMenu() {
 	enableProgramButton();
 
 	// Emit a signal so that the ProgramWindow can update its own UI.
-	Q_EMIT programWindowUpdateRequest(m_programButton ? m_programButton->isEnabled() : false,
+	Q_EMIT programWindowUpdateRequest(m_programButton != nullptr ? m_programButton->isEnabled() : false,
 	                                m_canUndo, m_canRedo, m_canCut, m_canCopy, m_canPaste,
 	                                m_platform, m_port, m_board, m_filename);
 }

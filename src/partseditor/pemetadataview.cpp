@@ -132,14 +132,14 @@ void PEMetadataView::tagsEntry() {
 void PEMetadataView::initMetadata(const QDomDocument & doc)
 {
 	QWidget * widget = QApplication::focusWidget();
-	if (widget) {
+	if (widget != nullptr) {
 		QList<QWidget *> children = m_mainFrame->findChildren<QWidget *>();
 		if (children.contains(widget)) {
 			widget->blockSignals(true);
 		}
 	}
 
-	if (m_mainFrame) {
+	if (m_mainFrame != nullptr) {
 		this->setWidget(nullptr);
 		delete m_mainFrame;
 		m_mainFrame = nullptr;

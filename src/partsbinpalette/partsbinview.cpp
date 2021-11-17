@@ -83,7 +83,7 @@ void PartsBinView::doClear() {
 
 void PartsBinView::removePartReference(const QString & moduleID) {
 	ItemBase * itemBase = ItemBaseHash.value(moduleID);
-	if (itemBase) {
+	if (itemBase != nullptr) {
 		ItemBaseHash.remove(moduleID);
 		itemBase->deleteLater();
 	}
@@ -210,7 +210,7 @@ void PartsBinView::dropEventAux(QDropEvent* event, bool justAppend) {
 
 		ModelPart * mp = m_referenceModel->retrieveModelPart(moduleID);
 		m_parent->copyFilesToContrib(mp, ItemDrag::originator());
-		if(mp) {
+		if(mp != nullptr) {
 			if(m_parent->contains(moduleID)) {
 				QMessageBox::information(nullptr, QObject::tr("Part already in bin"), QObject::tr("The part that you have just added,\nis already there, we won't add it again, right?"));
 			} else {

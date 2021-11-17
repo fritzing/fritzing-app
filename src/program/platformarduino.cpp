@@ -80,7 +80,7 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
 	args.append(QDir::toNativeSeparators(tmpFilePath));
 
 	auto *tab = qobject_cast<ProgramTab *>(source);
-	if (tab)
+	if (tab != nullptr)
 		tab->appendToConsole(tr("Running %1 %2").arg(getCommandLocation()).arg(args.join(" ")));
 	process->start(getCommandLocation(), args);
 }

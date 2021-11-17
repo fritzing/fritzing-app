@@ -99,7 +99,7 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 
 	m_header = nullptr;
 	setupHeader();
-	if (m_header) {
+	if (m_header != nullptr) {
 		vbl->addWidget(m_header);
 
 		auto * separator = new QFrame();
@@ -130,7 +130,7 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 	connect(m_listView, SIGNAL(informItemMoved(int,int)), this, SLOT(itemMoved()));
 	connect(m_iconView, SIGNAL(informItemMoved(int,int)), this, SLOT(itemMoved()));
 
-	if (m_binLabel) m_binLabel->setText(m_title);
+	if (m_binLabel != nullptr) m_binLabel->setText(m_title);
 
 	m_addPartToMeAction = new QAction(m_title,this);
 	connect(m_addPartToMeAction, SIGNAL(triggered()),this, SLOT(addSketchPartToMe()));
@@ -139,13 +139,13 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 }
 
 PartsBinPaletteWidget::~PartsBinPaletteWidget() {
-	if (m_canDeleteModel && m_model) {
+	if (m_canDeleteModel && (m_model != nullptr)) {
 		delete m_model;
 		m_model = nullptr;
 	}
 
-	if (m_icon) delete m_icon;
-	if (m_monoIcon) delete m_monoIcon;
+	if (m_icon != nullptr) delete m_icon;
+	if (m_monoIcon != nullptr) delete m_monoIcon;
 }
 
 void PartsBinPaletteWidget::cleanup() {
@@ -167,7 +167,7 @@ QString PartsBinPaletteWidget::title() const {
 void PartsBinPaletteWidget::setTitle(const QString &title) {
 	if(m_title != title) {
 		m_title = title;
-		if (m_binLabel) m_binLabel->setText(title);
+		if (m_binLabel != nullptr) m_binLabel->setText(title);
 	}
 }
 
@@ -240,7 +240,7 @@ bool PartsBinPaletteWidget::saveAsAux(const QString &filename) {
 	QString title = this->title();
 	if(!title.isNull() && !title.isEmpty()) {
 		ModelPartSharedRoot * root = m_model->rootModelPartShared();
-		if (root) root->setTitle(title);
+		if (root != nullptr) root->setTitle(title);
 	}
 
 	if(m_orderHasChanged) {
@@ -295,20 +295,20 @@ void PartsBinPaletteWidget::afterModelSetted(PaletteModel *model) {
 
 void PartsBinPaletteWidget::grabTitle(PaletteModel *model) {
 	ModelPartSharedRoot * root = model->rootModelPartShared();
-	if (!root) return;
+	if (root == nullptr) return;
 
 	QString iconFilename = root->icon();
 	grabTitle(root->title(), iconFilename);
 	root->setIcon(iconFilename);
 
-	if (m_searchLineEdit) m_searchLineEdit->setText(root->searchTerm());
+	if (m_searchLineEdit != nullptr) m_searchLineEdit->setText(root->searchTerm());
 }
 
 void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilename)
 {
 	m_title = title;
 	m_addPartToMeAction->setText(m_title);
-	if (m_binLabel) m_binLabel->setText(m_title);
+	if (m_binLabel != nullptr) m_binLabel->setText(m_title);
 
 	QString temp = BinManager::StandardBinIcons.value(m_fileName, "");
 	if (!temp.isEmpty()) {
@@ -352,7 +352,7 @@ void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilen
 			}
 		}
 
-		if (m_icon) {
+		if (m_icon != nullptr) {
 			int ix = path.lastIndexOf(".");
 			path.insert(ix, "-mono");
 			QFile file3(path);
@@ -508,7 +508,7 @@ void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarg
 		if (name.isEmpty()) name = QFileInfo(filename).completeBaseName();
 
 		bool deleteWhenDone = false;
-		if (progressTarget) {
+		if (progressTarget != nullptr) {
 			//DebugDialog::debug("open progress " + filename);
 			deleteWhenDone = true;
 			progressTarget = m_loadingProgressDialog = new FileProgressDialog(tr("Loading..."), 200, progressTarget);
@@ -518,7 +518,7 @@ void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarg
 			m_loadingProgressDialog->show();
 		}
 
-		if (progressTarget) {
+		if (progressTarget != nullptr) {
 			connect(paletteBinModel, SIGNAL(loadingInstances(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstancesSlot(ModelBase *, QDomElement &)));
 			connect(paletteBinModel, SIGNAL(loadingInstance(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstanceSlot(ModelBase *, QDomElement &)));
 			connect(m_iconView, SIGNAL(settingItem()), progressTarget, SLOT(settingItemSlot()));
@@ -537,7 +537,7 @@ void PartsBinPaletteWidget::load(const QString &filename, QWidget * progressTarg
 			PaletteBinModels.insert(filename, paletteBinModel);
 		}
 
-		if (progressTarget) {
+		if (progressTarget != nullptr) {
 			//DebugDialog::debug("close progress " + filename);
 			disconnect(paletteBinModel, SIGNAL(loadingInstances(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstancesSlot(ModelBase *, QDomElement &)));
 			disconnect(paletteBinModel, SIGNAL(loadingInstance(ModelBase *, QDomElement &)), progressTarget, SLOT(loadingInstanceSlot(ModelBase *, QDomElement &)));
@@ -669,8 +669,8 @@ void PartsBinPaletteWidget::removeAlienParts() {
 }
 
 void PartsBinPaletteWidget::setInfoViewOnHover(bool infoViewOnHover) {
-	if(m_iconView) m_iconView->setInfoViewOnHover(infoViewOnHover);
-	if(m_listView) m_listView->setInfoViewOnHover(infoViewOnHover);
+	if(m_iconView != nullptr) m_iconView->setInfoViewOnHover(infoViewOnHover);
+	if(m_listView != nullptr) m_listView->setInfoViewOnHover(infoViewOnHover);
 }
 
 void PartsBinPaletteWidget::addPartCommand(const QString& moduleID) {
@@ -786,7 +786,7 @@ void PartsBinPaletteWidget::search(const QString& searchText) {
 	if (searchText.isEmpty()) return;
 
 	ModelPartSharedRoot * root = m_model->rootModelPartShared();
-	if (root) {
+	if (root != nullptr) {
 		root->setSearchTerm(searchText);
 	}
 
@@ -810,7 +810,7 @@ void PartsBinPaletteWidget::setReadOnly(bool readOnly) {
 }
 
 void PartsBinPaletteWidget::focusSearch() {
-	if (m_searchLineEdit) {
+	if (m_searchLineEdit != nullptr) {
 		QTimer::singleShot(20, this, SLOT(focusSearchAfter()));
 	}
 }
@@ -830,17 +830,17 @@ bool PartsBinPaletteWidget::currentViewIsIconView() {
 }
 
 QIcon PartsBinPaletteWidget::icon() {
-	if (m_icon) return *m_icon;
+	if (m_icon != nullptr) return *m_icon;
 
 	return EmptyIcon;
 }
 
 bool PartsBinPaletteWidget::hasMonoIcon() {
-	return m_monoIcon;
+	return m_monoIcon != nullptr;
 }
 
 QIcon PartsBinPaletteWidget::monoIcon() {
-	if (m_monoIcon) return *m_monoIcon;
+	if (m_monoIcon != nullptr) return *m_monoIcon;
 
 	return EmptyIcon;
 }
@@ -868,7 +868,7 @@ QMenu * PartsBinPaletteWidget::binContextMenu()
 	// TODO: need to enable/disable actions based on this bin
 
 	ModelPartSharedRoot * root = (m_model == nullptr) ? nullptr : m_model->rootModelPartShared();
-	if (root) {
+	if (root != nullptr) {
 		QString iconFilename = root->icon();
 		if (iconFilename.compare(CustomIconName) == 0 || isCustomSvg(iconFilename)) {
 			newMenu->addSeparator();
@@ -910,7 +910,7 @@ void PartsBinPaletteWidget::changeIconColor() {
 
 	ModelPartSharedRoot * root = m_model->rootModelPartShared();
 
-	if (root) {
+	if (root != nullptr) {
 		QSvgGenerator svgGenerator;
 		svgGenerator.setResolution(90);
 		svgGenerator.setTitle(CustomIconTitle);

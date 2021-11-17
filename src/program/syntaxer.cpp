@@ -31,7 +31,7 @@ Syntaxer::Syntaxer() : QObject() {
 }
 
 Syntaxer::~Syntaxer() {
-	if (m_trieRoot) {
+	if (m_trieRoot != nullptr) {
 		delete m_trieRoot;
 	}
 }

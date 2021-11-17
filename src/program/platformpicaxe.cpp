@@ -61,7 +61,7 @@ void PlatformPicaxe::upload(QWidget *source, const QString &port, const QString 
 	args.append(fileLocation);
 
 	auto *tab = qobject_cast<ProgramTab *>(source);
-	if (tab)
+	if (tab != nullptr)
 		tab->appendToConsole(tr("Running %1 %2").arg(cmd).arg(args.join(" ")));
 	process->start(cmd, args);
 }

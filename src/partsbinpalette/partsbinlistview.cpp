@@ -108,7 +108,7 @@ int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
 void PartsBinListView::mouseMoveEvent(QMouseEvent *event) {
 	if(m_infoViewOnHover) {
 		QListWidgetItem * item = itemAt(event->pos());
-		if (item) {
+		if (item != nullptr) {
 			showInfo(item);
 		}
 		else {
@@ -125,9 +125,9 @@ void PartsBinListView::showInfo(QListWidgetItem * item) {
 		return;
 	}
 
-	if (m_hoverItem && m_infoView) {
+	if ((m_hoverItem != nullptr) && (m_infoView != nullptr)) {
 		ItemBase * itemBase = itemItemBase(m_hoverItem);
-		if (itemBase) {
+		if (itemBase != nullptr) {
 			m_infoView->hoverLeaveItem(nullptr, nullptr, itemBase);
 		}
 	}
@@ -137,9 +137,9 @@ void PartsBinListView::showInfo(QListWidgetItem * item) {
 	}
 
 	m_hoverItem = item;
-	if (m_infoView) {
+	if (m_infoView != nullptr) {
 		ItemBase * itemBase = itemItemBase(item);
-		if (itemBase) {
+		if (itemBase != nullptr) {
 			m_infoView->hoverEnterItem(nullptr, nullptr, itemBase, swappingEnabled());
 		}
 	}
@@ -153,12 +153,12 @@ void PartsBinListView::mousePressEvent(QMouseEvent *event) {
 	QListWidgetItem * current = currentItem();
 	if (current == nullptr) {
 		m_hoverItem = nullptr;
-		if (m_infoView) m_infoView->viewItemInfo(nullptr, nullptr, false);
+		if (m_infoView != nullptr) m_infoView->viewItemInfo(nullptr, nullptr, false);
 		return;
 	}
 
 	showInfo(current);
-	if (m_infoView) m_infoView->viewItemInfo(nullptr, itemItemBase(current), false);
+	if (m_infoView != nullptr) m_infoView->viewItemInfo(nullptr, itemItemBase(current), false);
 }
 
 void PartsBinListView::setInfoView(HtmlInfoView * infoView) {
@@ -268,7 +268,7 @@ void PartsBinListView::itemMoved(int fromIndex, int toIndex) {
 int PartsBinListView::itemIndexAt(const QPoint& pos, bool &trustIt) {
 	trustIt = true;
 	QListWidgetItem *item = itemAt(pos);
-	if(item) {
+	if(item != nullptr) {
 		return row(item);
 	} else if(rect().contains(pos)) {
 		trustIt = false;
@@ -334,7 +334,7 @@ QList<QObject*> PartsBinListView::orderedChildren() {
 	QList<QObject*> result;
 	for(int i=0; i < count(); i++) {
 		ModelPart *mp = itemModelPart(item(i));
-		if(mp) {
+		if(mp != nullptr) {
 			result << mp;
 		}
 	}
@@ -345,7 +345,7 @@ void PartsBinListView::showContextMenu(const QPoint& pos) {
 	QListWidgetItem *it = itemAt(pos);
 
 	QMenu *menu;
-	if(it) {
+	if(it != nullptr) {
 		clearSelection();
 		it->setSelected(true);
 		menu = m_parent->partContextMenu();
@@ -380,8 +380,8 @@ void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, c
 		LayerAttributes layerAttributes;
 		itemBase->initLayerAttributes(layerAttributes, ViewLayer::IconView, ViewLayer::Icon, itemBase->viewLayerPlacement(), false, false);
 		FSvgRenderer * renderer = itemBase->setUpImage(modelPart, layerAttributes);
-		if (renderer) {
-			if (itemBase) {
+		if (renderer != nullptr) {
+			if (itemBase != nullptr) {
 				itemBase->setFilename(renderer->filename());
 			}
 			itemBase->setSharedRendererEx(renderer);

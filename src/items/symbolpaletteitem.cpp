@@ -114,25 +114,25 @@ SymbolPaletteItem::SymbolPaletteItem( ModelPart * modelPart, ViewLayer::ViewID v
 SymbolPaletteItem::~SymbolPaletteItem() {
 	if (m_isNetLabel) {
 		Q_FOREACH (QString key, LocalNetLabels.uniqueKeys()) {
-			if (m_connector0) {
+			if (m_connector0 != nullptr) {
 				LocalNetLabels.remove(key, m_connector0);
 			}
-			if (m_connector1) {
+			if (m_connector1 != nullptr) {
 				LocalNetLabels.remove(key, m_connector1);
 			}
 			LocalNetLabels.remove(key, nullptr);		// cleans null QPointers
 		}
 	}
 	else {
-		if (m_connector0) LocalGrounds.removeOne(m_connector0);
-		if (m_connector1) LocalGrounds.removeOne(m_connector1);
+		if (m_connector0 != nullptr) LocalGrounds.removeOne(m_connector0);
+		if (m_connector1 != nullptr) LocalGrounds.removeOne(m_connector1);
 		LocalGrounds.removeOne(QPointer<ConnectorItem>(nullptr));   // cleans null QPointers
 
 		Q_FOREACH (long key, LocalVoltages.uniqueKeys()) {
-			if (m_connector0) {
+			if (m_connector0 != nullptr) {
 				LocalVoltages.remove(key, m_connector0);
 			}
-			if (m_connector1) {
+			if (m_connector1 != nullptr) {
 				LocalVoltages.remove(key, m_connector1);
 			}
 			LocalVoltages.remove(key, nullptr);		// cleans null QPointers
@@ -303,7 +303,7 @@ void SymbolPaletteItem::setVoltage(double v) {
 
 			retransform(transform);
 
-			if (m_partLabel) m_partLabel->displayTextsIf();
+			if (m_partLabel != nullptr) m_partLabel->displayTextsIf();
 		}
 	}
 }
@@ -355,7 +355,7 @@ ConnectorItem * SymbolPaletteItem::connector1() {
 
 void SymbolPaletteItem::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setVoltage(m_voltage);
 	}
 
@@ -435,7 +435,7 @@ void SymbolPaletteItem::voltageEntry(int index) {
 	QString text = comboBox->itemText(index);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setVoltage(text.toDouble(), true);
 	}
 }
@@ -453,7 +453,7 @@ void SymbolPaletteItem::labelEntry() {
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "label", ItemBase::TranslatedPropertyNames.value("label"), current, edit->text(), true);
 	}
 }
@@ -621,7 +621,7 @@ QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
 
 void NetLabel::addedToScene(bool temporary)
 {
-	if (this->scene() && m_viewID == ViewLayer::SchematicView) {
+	if ((this->scene() != nullptr) && m_viewID == ViewLayer::SchematicView) {
 		// do not understand why plan setLabel() doesn't work the same as the Mystery Part setChipLabel() in addedToScene()
 
 		if (!this->transform().isIdentity()) {

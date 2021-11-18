@@ -3030,9 +3030,10 @@ void MainWindow::newAutoroute() {
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper0, copper0Active);
 	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen0, copper0Active);
 	updateActiveLayerButtons();
-	dynamic_cast<SketchAreaWidget *>(pcbSketchWidget->parent())->routingStatusLabel()->setText("");
-
 	ProcessEventBlocker::unblock();
+	RoutingStatus routingStatus;
+	routingStatus.zero();
+	Q_EMIT pcbSketchWidget->routingStatusSignal(pcbSketchWidget, routingStatus);
 }
 
 void MainWindow::createTrace() {

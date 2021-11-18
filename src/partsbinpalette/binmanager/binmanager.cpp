@@ -214,7 +214,7 @@ bool BinManager::beforeClosing() {
 
 	for(int j = 0; j < m_stackTabWidget->count(); j++) {
 		auto *bin = qobject_cast<PartsBinPaletteWidget*>(m_stackTabWidget->widget(j));
-		if (bin && !bin->fastLoaded()) {
+		if ((bin != nullptr) && !bin->fastLoaded()) {
 			setAsCurrentTab(bin);
 			retval = retval && bin->beforeClosing();
 			if(!retval) break;
@@ -255,7 +255,7 @@ PartsBinPaletteWidget* BinManager::getOrOpenMyPartsBin() {
 
 PartsBinPaletteWidget* BinManager::getOrOpenSearchBin() {
 	PartsBinPaletteWidget * bin = getOrOpenBin(SearchBinLocation, SearchBinTemplateLocation);
-	if (bin) {
+	if (bin != nullptr) {
 		bin->setSaveQuietly(true);
 	}
 	return bin;
@@ -265,11 +265,11 @@ PartsBinPaletteWidget* BinManager::getOrOpenBin(const QString & binLocation, con
 
 	PartsBinPaletteWidget* partsBin = findBin(binLocation);
 
-	if(!partsBin) {
+	if(partsBin == nullptr) {
 		QString fileToOpen = QFileInfo(binLocation).exists() ? binLocation : createIfBinNotExists(binLocation, binTemplateLocation);
 		partsBin = openBinIn(fileToOpen, false);
 	}
-	if (partsBin && partsBin->fastLoaded()) {
+	if ((partsBin != nullptr) && partsBin->fastLoaded()) {
 		partsBin->load(partsBin->fileName(), partsBin, false);
 	}
 
@@ -304,13 +304,13 @@ QString BinManager::createIfBinNotExists(const QString & dest, const QString & s
 }
 
 void BinManager::addPartToBin(ModelPart *modelPart, int position) {
-	PartsBinPaletteWidget *bin = m_currentBin? m_currentBin: getOrOpenMyPartsBin();
+	PartsBinPaletteWidget *bin = m_currentBin != nullptr? m_currentBin: getOrOpenMyPartsBin();
 	addPartToBinAux(bin,modelPart,position);
 }
 
 void BinManager::addToMyParts(ModelPart *modelPart) {
 	PartsBinPaletteWidget *bin = getOrOpenMyPartsBin();
-	if (bin) {
+	if (bin != nullptr) {
 		addPartToBinAux(bin,modelPart);
 		setAsCurrentTab(bin);
 	}
@@ -318,7 +318,7 @@ void BinManager::addToMyParts(ModelPart *modelPart) {
 
 void BinManager::addToTempPartsBin(ModelPart *modelPart) {
 	PartsBinPaletteWidget *bin = getOrOpenBin(m_tempPartsBinLocation, TempPartsBinTemplateLocation);
-	if (bin) {
+	if (bin != nullptr) {
 		addPartToBinAux(bin,modelPart);
 		setAsCurrentTab(bin);
 		bin->setDirty(false);
@@ -336,7 +336,7 @@ void BinManager::hideTempPartsBin() {
 }
 
 void BinManager::addPartToBinAux(PartsBinPaletteWidget *bin, ModelPart *modelPart, int position) {
-	if(bin) {
+	if(bin != nullptr) {
 		if (bin->fastLoaded()) {
 			bin->load(bin->fileName(), bin, false);
 		}
@@ -361,7 +361,7 @@ void BinManager::setDirtyTab(PartsBinPaletteWidget* w, bool dirty) {
 	}
 	*/
 	w->setWindowModified(dirty);
-	if(m_stackTabWidget) {
+	if(m_stackTabWidget != nullptr) {
 		int tabIdx = m_stackTabWidget->indexOf(w);
 		m_stackTabWidget->setTabText(tabIdx, w->title()+(dirty? " *": ""));
 	} else {
@@ -370,7 +370,7 @@ void BinManager::setDirtyTab(PartsBinPaletteWidget* w, bool dirty) {
 }
 
 void BinManager::updateTitle(PartsBinPaletteWidget* w, const QString& newTitle) {
-	if(m_stackTabWidget) {
+	if(m_stackTabWidget != nullptr) {
 		m_stackTabWidget->setTabText(m_stackTabWidget->indexOf(w), newTitle+" *");
 		setDirtyTab(w);
 	}
@@ -404,7 +404,7 @@ PartsBinPaletteWidget* BinManager::openBinIn(QString fileName, bool fastLoad) {
 	bool createNewOne = false;
 	if(m_openedBins.contains(fileName)) {
 		bin = m_openedBins[fileName];
-		if(m_stackTabWidget) {
+		if(m_stackTabWidget != nullptr) {
 			m_stackTabWidget->setCurrentWidget(bin);
 		} else {
 			m_openedBins.remove(fileName);
@@ -434,7 +434,7 @@ PartsBinPaletteWidget* BinManager::openBinIn(QString fileName, bool fastLoad) {
 
 PartsBinPaletteWidget* BinManager::openCoreBinIn() {
 	PartsBinPaletteWidget* bin = findBin(CorePartsBinLocation);
-	if (bin) {
+	if (bin != nullptr) {
 		setAsCurrentTab(bin);
 	}
 	else {
@@ -483,7 +483,7 @@ void BinManager::currentChanged(int index) {
 
 
 	PartsBinPaletteWidget *bin = getBin(index);
-	if (bin) setAsCurrentBin(bin);
+	if (bin != nullptr) setAsCurrentBin(bin);
 }
 
 void BinManager::setAsCurrentBin(PartsBinPaletteWidget* bin) {
@@ -530,7 +530,7 @@ void BinManager::closeBinIn(int index) {
 
 	int realIndex = index == -1? m_stackTabWidget->currentIndex(): index;
 	PartsBinPaletteWidget *w = getBin(realIndex);
-	if(w && w->beforeClosing()) {
+	if((w != nullptr) && w->beforeClosing()) {
 		m_stackTabWidget->removeTab(realIndex);
 		m_openedBins.remove(w->fileName());
 	}
@@ -556,7 +556,7 @@ void BinManager::saveStateAndGeometry() {
 
 	for(int j = m_stackTabWidget->count() - 1; j >= 0; j--) {
 		auto *bin = qobject_cast<PartsBinPaletteWidget*>(m_stackTabWidget->widget(j));
-		if (bin) {
+		if (bin != nullptr) {
 			settings.beginGroup(QString::number(j));
 			settings.setValue("location", BinLocation::toString(bin->location()));
 			settings.setValue("title", bin->title());
@@ -848,7 +848,7 @@ void BinManager::tabCloseRequested(int index) {
 }
 
 void BinManager::addPartTo(PartsBinPaletteWidget* bin, ModelPart* mp, bool setDirty) {
-	if(mp) {
+	if(mp != nullptr) {
 		bool alreadyIn = bin->contains(mp->moduleID());
 		bin->addPart(mp);
 		if(!alreadyIn && setDirty) {
@@ -974,7 +974,7 @@ void BinManager::updateBinCombinedMenu(PartsBinPaletteWidget * bin) {
 	m_closeBinAction->setEnabled(bin->canClose());
 	m_deleteBinAction->setEnabled(bin->canClose());
 	ItemBase *itemBase = bin->selectedItemBase();
-	bool enabled = (itemBase);
+	bool enabled = (itemBase) != nullptr;
 	m_editPartNewAction->setEnabled(enabled && itemBase->canEditPart());
 
 	bool enableAnyway = false;
@@ -1287,7 +1287,7 @@ void BinManager::saveBundledBin() {
 
 void BinManager::setTabIcon(PartsBinPaletteWidget* w, QIcon * icon)
 {
-	if (m_stackTabWidget) {
+	if (m_stackTabWidget != nullptr) {
 		int tabIdx = m_stackTabWidget->indexOf(w);
 		m_stackTabWidget->setTabIcon(tabIdx, *icon);
 	}
@@ -1381,7 +1381,7 @@ void BinManager::copyToSketch() {
 	QList<ModelPart *> modelParts = bin->getAllParts();
 	if (modelParts.count() == 0) return;
 
-	if (m_mainWindow) {
+	if (m_mainWindow != nullptr) {
 		m_mainWindow->addToSketch(modelParts);
 	}
 }
@@ -1389,7 +1389,7 @@ void BinManager::copyToSketch() {
 void BinManager::copyAllToSketch() {
 	QList<ModelPart *> modelParts;
 
-	if (m_mainWindow) {
+	if (m_mainWindow != nullptr) {
 		m_mainWindow->addToSketch(modelParts);
 	}
 }

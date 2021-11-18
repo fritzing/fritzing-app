@@ -83,7 +83,7 @@ void MainWindow::createDockWindows()
 }
 
 FDockWidget * MainWindow::makeDock(const QString & title, QWidget * widget, int dockMinHeight, int dockDefaultHeight, Qt::DockWidgetArea area, DockFactory dockFactory) {
-	FDockWidget * dock = ((dockFactory) ? dockFactory(title, this) : new FDockWidget(title, this));
+	FDockWidget * dock = ((dockFactory) != nullptr ? dockFactory(title, this) : new FDockWidget(title, this));
 	dock->setObjectName(title);
 	dock->setWidget(widget);
 	widget->setParent(dock);
@@ -99,7 +99,7 @@ FDockWidget * MainWindow::makeDock(const QString & title, QWidget * widget, int 
 FDockWidget *MainWindow::dockIt(FDockWidget* dock, int dockMinHeight, int dockDefaultHeight, Qt::DockWidgetArea area) {
 	dock->setAllowedAreas(area);
 	addDockWidget(area, dock);
-	if (m_windowMenu) {
+	if (m_windowMenu != nullptr) {
 		m_windowMenu->addAction(dock->toggleViewAction());
 	}
 
@@ -158,7 +158,7 @@ void MainWindow::keepMargins() {
 	if(m_bottomDock != newBottomWidget) {
 		removeMargin(m_bottomDock);
 		m_bottomDock = newBottomWidget;
-		if(m_bottomDock) m_oldBottomDockStyle = m_bottomDock->styleSheet();
+		if(m_bottomDock != nullptr) m_oldBottomDockStyle = m_bottomDock->styleSheet();
 		addBottomMargin(m_bottomDock);
 		m_sizeGrip->raise();
 	}
@@ -166,18 +166,18 @@ void MainWindow::keepMargins() {
 
 
 void MainWindow::removeMargin(FDockWidget* dock) {
-	if(dock) {
+	if(dock != nullptr) {
 		dockMarginAux(dock, "", m_oldBottomDockStyle);
 	}
 }
 
 void MainWindow::addTopMargin(FDockWidget* dock) {
-	if(dock) dockMarginAux(dock, "topMostDock", dock->widget()->styleSheet());
+	if(dock != nullptr) dockMarginAux(dock, "topMostDock", dock->widget()->styleSheet());
 }
 
 void MainWindow::addBottomMargin(FDockWidget* dock) {
-	if(dock) {
-		if(qobject_cast<BinManager*>(dock->widget())) {
+	if(dock != nullptr) {
+		if(qobject_cast<BinManager*>(dock->widget()) != nullptr) {
 			// already has enough space
 		} else {
 			dockMarginAux(dock, "bottomMostDock", dock->widget()->styleSheet());
@@ -187,7 +187,7 @@ void MainWindow::addBottomMargin(FDockWidget* dock) {
 
 
 void MainWindow::dockMarginAux(FDockWidget* dock, const QString &name, const QString &style) {
-	if(dock) {
+	if(dock != nullptr) {
 		dock->widget()->setObjectName(name);
 		dock->widget()->setStyleSheet(style);
 		dock->setStyleSheet(dock->styleSheet());
@@ -213,7 +213,7 @@ void MainWindow::initDock() {
 	m_binManager->initStandardBins();
 
 	//DebugDialog::debug("after creating bins");
-	if (m_fileProgressDialog) {
+	if (m_fileProgressDialog != nullptr) {
 		m_fileProgressDialog->setValue(89);
 	}
 }
@@ -223,7 +223,7 @@ void MainWindow::moreInitDock() {
 
 	createDockWindows();
 
-	if (m_fileProgressDialog) {
+	if (m_fileProgressDialog != nullptr) {
 		m_fileProgressDialog->setValue(93);
 	}
 }

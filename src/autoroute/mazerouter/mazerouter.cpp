@@ -217,7 +217,7 @@ bool byPinsWithin(Net * n1, Net * n2)
 	if (n1->pinsWithin < n2->pinsWithin) return true;
 	if (n1->pinsWithin > n2->pinsWithin) return false;
 
-	return n1->net->count() <= n2->net->count();
+	return n1->net->count() < n2->net->count();
 }
 
 bool byOrder(Trace & t1, Trace & t2) {

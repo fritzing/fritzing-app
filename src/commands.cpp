@@ -2050,12 +2050,12 @@ RenamePinsCommand::RenamePinsCommand(SketchWidget *sketchWidget, long id, const 
 }
 
 void RenamePinsCommand::undo() {
-	m_sketchWidget->renamePins(m_itemID, m_oldLabels, m_singleRow);
+	m_sketchWidget->renamePinsForCommand(m_itemID, m_oldLabels, m_singleRow);
 	BaseCommand::undo();
 }
 
 void RenamePinsCommand::redo() {
-	m_sketchWidget->renamePins(m_itemID, m_newLabels, m_singleRow);
+	m_sketchWidget->renamePinsForCommand(m_itemID, m_newLabels, m_singleRow);
 	BaseCommand::redo();
 }
 

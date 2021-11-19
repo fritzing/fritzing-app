@@ -9064,7 +9064,7 @@ void SketchWidget::renamePins(ItemBase * itemBase, const QStringList & oldLabels
 	m_undoStack->waitPush(command, 10);
 }
 
-void SketchWidget::renamePins(long id, const QStringList & labels, bool singleRow)
+void SketchWidget::renamePinsForCommand(long id, const QStringList & labels, bool singleRow)
 {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;

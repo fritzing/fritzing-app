@@ -61,7 +61,7 @@ static constexpr double InactiveOpacity = 0.4;
 
 bool numberValueLessThan(QString v1, QString v2)
 {
-	return NumberMatcherValues.value(v1, 0) <= NumberMatcherValues.value(v2, 0);
+	return NumberMatcherValues.value(v1, 0) < NumberMatcherValues.value(v2, 0);
 }
 
 static QSvgRenderer MoveLockRenderer;

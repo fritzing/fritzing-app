@@ -335,7 +335,7 @@ void Ruler::widthEntry() {
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		// get current object units
 		int units = (m_unitsEditor->objectName() == "cm") ? IndexCm : IndexIn;
 		DefaultWidth = edit->text() + m_unitsEditor->objectName();
@@ -406,7 +406,7 @@ ItemBase::PluralType Ruler::isPlural() {
 
 void Ruler::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		LayerHash viewLayers;
 		QString w = prop("width");
 		modelPart()->setLocalProp("width", "");							// makes sure resizeMM will do the work

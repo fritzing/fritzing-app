@@ -108,7 +108,7 @@ bool byID(Connector * c1, Connector * c2)
 		return true;
 	}
 
-	return i1 <= i2;
+	return i1 < i2;
 }
 
 /////////////////////////////////////////////////

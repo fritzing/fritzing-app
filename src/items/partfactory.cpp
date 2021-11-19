@@ -70,7 +70,7 @@ ItemBase * PartFactory::createPart( ModelPart * modelPart, ViewLayer::ViewLayerP
 {
 	modelPart->setModelIndexFromMultiplied(id);			// make sure the model index is synched with the id; this is not always the case when parts are first created.
 	ItemBase * itemBase = createPartAux(modelPart, viewID, viewGeometry, id, itemMenu, wireMenu, doLabel);
-	if (itemBase) {
+	if (itemBase != nullptr) {
 		itemBase->setViewLayerPlacement(viewLayerPlacement);
 	}
 	return itemBase;
@@ -271,7 +271,7 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
 		filename = PartFactory::getSvgFilename(baseName);
 	}
 
-	if (handleSubparts && modelPart->modelPartShared() && modelPart->modelPartShared()->hasSubparts())
+	if (handleSubparts && (modelPart->modelPartShared() != nullptr) && modelPart->modelPartShared()->hasSubparts())
 	{
 		ModelPartShared * superpart = modelPart->modelPartShared();
 		QString schematicName = superpart->imageFileName(ViewLayer::SchematicView);
@@ -537,7 +537,7 @@ ModelPart * PartFactory::fixObsoleteModuleID(QDomDocument & domDocument, QDomEle
 	// TODO: less hard-coding
 	if (moduleIDRef.startsWith("generic_male")) {
 		ModelPart * modelPart = referenceModel->retrieveModelPart(moduleIDRef);
-		if (modelPart) {
+		if (modelPart != nullptr) {
 			instance.setAttribute("moduleIdRef", moduleIDRef);
 			QDomElement prop = domDocument.createElement("property");
 			instance.appendChild(prop);
@@ -549,7 +549,7 @@ ModelPart * PartFactory::fixObsoleteModuleID(QDomDocument & domDocument, QDomEle
 
 	if (moduleIDRef.startsWith("generic_rounded_female")) {
 		ModelPart * modelPart = referenceModel->retrieveModelPart(moduleIDRef);
-		if (modelPart) {
+		if (modelPart != nullptr) {
 			instance.setAttribute("moduleIdRef", moduleIDRef);
 			QDomElement prop = domDocument.createElement("property");
 			instance.appendChild(prop);

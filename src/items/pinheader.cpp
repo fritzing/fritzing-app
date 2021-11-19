@@ -186,7 +186,7 @@ QString PinHeader::getProperty(const QString & key) {
 
 void PinHeader::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		//setForm(m_form, true);
 	}
 

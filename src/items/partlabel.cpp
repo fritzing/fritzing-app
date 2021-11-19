@@ -129,7 +129,7 @@ PartLabel::PartLabel(ItemBase * owner, QWidget *parentWidget, QGraphicsItem * pa
 PartLabel::~PartLabel()
 {
 	AllPartLabels.remove(m_owner->id(), this);
-	if (m_owner) {
+	if (m_owner != nullptr) {
 		m_owner->clearPartLabel();
 	}
 }
@@ -193,7 +193,7 @@ void PartLabel::mousePressEvent(QGraphicsSceneMouseEvent *event)
 	}
 
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics && infographics->spaceBarIsPressed()) {
+	if ((infographics != nullptr) && infographics->spaceBarIsPressed()) {
 		m_spaceBarWasPressed = true;
 		event->ignore();
 		return;
@@ -370,7 +370,7 @@ void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID
 	double fs = labelGeometry.attribute("fontSize").toDouble(&ok);
 	if (!ok) {
 		InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infographics) {
+		if (infographics != nullptr) {
 			fs = infographics->getLabelFontSizeMedium();
 			ok = true;
 		}
@@ -436,7 +436,7 @@ void PartLabel::initMenu()
 	QMenu * rlmenu = m_menu->addMenu(tr("Flip/Rotate"));
 	QMenu * fsmenu = m_menu->addMenu(tr("Font Size"));
 
-	bool include45 = (m_owner) && (m_owner->viewID() == ViewLayer::PCBView);
+	bool include45 = ((m_owner) != nullptr) && (m_owner->viewID() == ViewLayer::PCBView);
 
 	if (include45) {
 		QAction *rotate45cwAct = rlmenu->addAction(tr("Rotate 45° Clockwise"));
@@ -557,7 +557,7 @@ void PartLabel::transformLabel(QTransform currTransf)
 
 void PartLabel::setUpText() {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics) {
+	if (infographics != nullptr) {
 		infographics->getLabelFont(m_font, m_color, m_owner);
 	}
 }
@@ -566,7 +566,7 @@ QVariant PartLabel::itemChange(QGraphicsItem::GraphicsItemChange change, const Q
 {
 	switch (change) {
 	case QGraphicsItem::ItemSceneHasChanged:
-		if (this->scene()) {
+		if (this->scene() != nullptr) {
 		}
 		break;
 	default:
@@ -608,7 +608,7 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 	m_mediumAct->setChecked(false);
 	m_largeAct->setChecked(false);
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics) {
+	if (infographics != nullptr) {
 		int fs = m_font.pointSize();
 		if (fs == infographics->getLabelFontSizeTiny()) {
 			m_tinyAct->setChecked(true);
@@ -723,7 +723,7 @@ void PartLabel::partLabelEdit()
 	QString text = QInputDialog::getText((QGraphicsView *) this->scene()->parent(), tr("Set label for %1").arg(m_owner->title()),
 	                                     tr("Label text:"), QLineEdit::Normal, oldText, &ok);
 	if (ok && (oldText.compare(text) != 0)) {
-		if (m_owner) {
+		if (m_owner != nullptr) {
 			m_owner->partLabelChanged(text);
 			Q_FOREACH (PartLabel * p, AllPartLabels.values(m_owner->id())) {
 				p->setPlainText(text);

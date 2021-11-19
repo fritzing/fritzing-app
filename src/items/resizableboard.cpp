@@ -539,7 +539,7 @@ bool Board::canLoad(const QString & fileName, const QString & reason) {
 void Board::prepLoadImageAux(const QString & fileName, bool addName)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->loadLogoImage(this, "", QSizeF(0,0), "", fileName, addName);
 	}
 }
@@ -594,7 +594,7 @@ ResizableBoard::~ResizableBoard() {
 void ResizableBoard::addedToScene(bool temporary) {
 
 	loadTemplates();
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setInitialSize();
 	}
 
@@ -653,7 +653,7 @@ void ResizableBoard::mousePressEvent(QGraphicsSceneMouseEvent * event)
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		setInitialSize();
 		infoGraphicsView->viewItemInfo(this);
 	}
@@ -798,7 +798,7 @@ void ResizableBoard::mouseReleaseEvent(QGraphicsSceneMouseEvent * event) {
 	setKinCursor(Qt::ArrowCursor);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->viewItemInfo(this);
 	}
 }
@@ -1027,7 +1027,7 @@ bool ResizableBoard::collectExtraInfo(QWidget * parent, const QString & family, 
 			l2->setContentsMargins(0, 0, 0, 0);
 			l2->setObjectName("infoViewLabel");
 
-			if (returnWidget) vboxLayout->addWidget(qobject_cast<QWidget *>(returnWidget));
+			if (returnWidget != nullptr) vboxLayout->addWidget(qobject_cast<QWidget *>(returnWidget));
 			vboxLayout->addWidget(l1);
 			vboxLayout->addWidget(l2);
 
@@ -1057,7 +1057,7 @@ void ResizableBoard::paperSizeChanged(int index) {
 	QModelIndex modelIndex = comboBox->model()->index(index,0);
 	QSizeF size = comboBox->model()->data(modelIndex, Qt::UserRole).toSizeF();
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->resizeBoard(size.width(), size.height(), true);
 	}
 }
@@ -1073,7 +1073,7 @@ void ResizableBoard::widthEntry() {
 	double h =  m_modelPart->localProp("height").toDouble();
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->resizeBoard(w, h, true);
 	}
 }
@@ -1089,7 +1089,7 @@ void ResizableBoard::heightEntry() {
 	double w =  m_modelPart->localProp("width").toDouble();
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->resizeBoard(w, h, true);
 	}
 }
@@ -1314,7 +1314,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 
 	subframe1->setLayout(hboxLayout1);
 	subframe2->setLayout(hboxLayout2);
-	if (returnWidget) vboxLayout->addWidget(returnWidget);
+	if (returnWidget != nullptr) vboxLayout->addWidget(returnWidget);
 
 	connect(e1, SIGNAL(editingFinished()), this, SLOT(widthEntry()));
 	connect(e2, SIGNAL(editingFinished()), this, SLOT(heightEntry()));
@@ -1418,10 +1418,10 @@ void ResizableBoard::fixWH() {
 
 void ResizableBoard::setWidthAndHeight(double w, double h)
 {
-	if (m_widthEditor) {
+	if (m_widthEditor != nullptr) {
 		m_widthEditor->setText(QString::number(w));
 	}
-	if (m_heightEditor) {
+	if (m_heightEditor != nullptr) {
 		m_heightEditor->setText(QString::number(h));
 	}
 	updatePaperSizes(w, h);
@@ -1463,7 +1463,7 @@ void ResizableBoard::revertSize(bool) {
 	double oh = modelPart()->localProp("originalHeight").toDouble();
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->resizeBoard(ow, oh, true);
 		m_revertButton->setEnabled(false);
 	}

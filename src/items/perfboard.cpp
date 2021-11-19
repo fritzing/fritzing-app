@@ -87,7 +87,7 @@ void Perfboard::setProp(const QString & prop, const QString & value)
 	m_size = value;
 	modelPart()->setLocalProp("size", value);
 
-	if (m_partLabel) m_partLabel->displayTextsIf();
+	if (m_partLabel != nullptr) m_partLabel->displayTextsIf();
 }
 
 QString Perfboard::makeBreadboardSvg(const QString & size)
@@ -251,7 +251,7 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		subframe1->setLayout(hboxLayout1);
 		subframe2->setLayout(hboxLayout2);
 
-		if (returnWidget) vboxLayout->addWidget(qobject_cast<QWidget *>(returnWidget));
+		if (returnWidget != nullptr) vboxLayout->addWidget(qobject_cast<QWidget *>(returnWidget));
 		vboxLayout->addWidget(subframe1);
 		vboxLayout->addWidget(subframe2);
 
@@ -278,7 +278,7 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 
 void Perfboard::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		QString temp = m_size;
 		m_size = "";
 		setProp("size", temp);
@@ -335,7 +335,7 @@ void Perfboard::changeBoardSize()
 	// }
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->swap(family(), "size", m_propsMap, this);
 	}
 }

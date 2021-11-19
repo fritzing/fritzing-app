@@ -92,7 +92,7 @@ SchematicFrame::SchematicFrame( ModelPart * modelPart, ViewLayer::ViewID viewID,
 }
 
 SchematicFrame::~SchematicFrame() {
-	if (m_textEdit) {
+	if (m_textEdit != nullptr) {
 		delete m_textEdit;
 	}
 }
@@ -239,7 +239,7 @@ void SchematicFrame::addedToScene(bool temporary)
 {
 	if (prop("filename").isEmpty()) {
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infoGraphicsView) {
+		if (infoGraphicsView != nullptr) {
 			modelPart()->setLocalProp("filename", infoGraphicsView->filenameIf());
 		}
 	}
@@ -420,14 +420,14 @@ void SchematicFrame::propEntry() {
 	if (edit->text().compare(current) == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, propp, ItemBase::TranslatedPropertyNames.value(propp), current, edit->text(), true);
 	}
 }
 
 void SchematicFrame::dateTimeEntry(QDateTime dateTime) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "date", tr("date"), prop("date"), QString::number(dateTime.toSecsSinceEpoch()), true);
 	}
 }
@@ -449,7 +449,7 @@ void SchematicFrame::sheetEntry(int value) {
 	else return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "sheet", tr("sheet"), prop("sheet"), strings.at(0) + "/" + strings[1], true);
 	}
 }

@@ -148,7 +148,6 @@ protected:
 	bool canCreateWire(Wire * dragWire, ConnectorItem * from, ConnectorItem * to);
 	bool bothEndsConnected(Wire * wire, ViewGeometry::WireFlags, ConnectorItem * oneEnd, QList<Wire *> & wires, QList<ConnectorItem *> & partConnectorItems);
 	void setUpColor(ConnectorItem * fromConnectorItem, ConnectorItem * toConnectorItem, Wire * wire, QUndoCommand * parentCommand);
-	ConnectorItem * findNearestPartConnectorItem(ConnectorItem * fromConnectorItem);
 	bool bothEndsConnectedAux(Wire * wire, ViewGeometry::WireFlags flag, ConnectorItem * oneEnd, QList<Wire *> & wires, QList<ConnectorItem *> & partConnectorItems, QList<Wire *> & visited);
 	void getLabelFont(QFont &, QColor &, ItemBase *);
 	double defaultGridSizeInches();
@@ -192,12 +191,6 @@ Q_SIGNALS:
 	void boardDeletedSignal();
 	void groundFillSignal();
 	void copperFillSignal();
-
-protected:
-	static void calcDistances(Wire * wire, QList<ConnectorItem *> & ends);
-	static void clearDistances();
-	static int calcDistance(Wire * wire, ConnectorItem * end, int distance, QList<Wire *> & distanceWires, bool & fromConnector0);
-	static int calcDistanceAux(ConnectorItem * from, ConnectorItem * to, int distance, QList<Wire *> & distanceWires);
 
 protected Q_SLOTS:
 	void alignJumperItem(class JumperItem *, QPointF &);

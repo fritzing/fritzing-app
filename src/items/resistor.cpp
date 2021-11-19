@@ -170,7 +170,7 @@ void Resistor::setResistance(QString resistance, QString pinSpacing, bool force)
 	modelPart()->setLocalProp("tolerance", tolerance);
 
 	updateResistances(m_ohms);
-	if (m_partLabel) m_partLabel->displayTextsIf();
+	if (m_partLabel != nullptr) m_partLabel->displayTextsIf();
 }
 
 QString Resistor::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
@@ -312,7 +312,7 @@ QString Resistor::pinSpacing() {
 
 void Resistor::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setResistance(m_ohms, m_pinSpacing, true);
 	}
 
@@ -381,7 +381,7 @@ void Resistor::resistanceEntry(int index) {
 	QString text = comboBox->itemText(index);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setResistance(text, "");
 	}
 }

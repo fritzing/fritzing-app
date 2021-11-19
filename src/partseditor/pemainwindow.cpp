@@ -255,7 +255,7 @@ bool byID(QDomElement & c1, QDomElement & c2)
 
 	if (c1id == 0 || c2id == 0) GotZeroConnector = true;
 
-	return c1id <= c2id;
+	return c1id < c2id;
 }
 
 void removeID(QDomElement & root, const QString & value) {

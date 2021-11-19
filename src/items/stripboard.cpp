@@ -120,7 +120,7 @@ void Stripbit::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, 
 void Stripbit::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView && infoGraphicsView->spaceBarIsPressed()) {
+	if ((infoGraphicsView != nullptr) && infoGraphicsView->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
@@ -160,7 +160,7 @@ void Stripbit::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void Stripbit::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-	if (!event->buttons() && Qt::LeftButton) return;
+	if (!event->buttons() && (Qt::LeftButton != 0u)) return;
 
 	if (ShiftDown && !(event->modifiers() & Qt::ShiftModifier)) {
 		ShiftDown = false;
@@ -192,7 +192,7 @@ void Stripbit::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 	}
 
 
-	if (!ShiftDown && (event->modifiers() & Qt::ShiftModifier)) {
+	if (!ShiftDown && ((event->modifiers() & Qt::ShiftModifier) != 0u)) {
 		ShiftDown = true;
 		ShiftX = ShiftY = false;
 		OriginalShiftPos = event->scenePos();
@@ -200,10 +200,10 @@ void Stripbit::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 	Q_FOREACH (QGraphicsItem * item, scene()->items(p)) {
 		other = dynamic_cast<Stripbit *>(item);
-		if (other) break;
+		if (other != nullptr) break;
 	}
 
-	if (!other) return;
+	if (other == nullptr) return;
 
 	//DebugDialog::debug("got other");
 
@@ -223,7 +223,7 @@ void Stripbit::hoverEnterEvent( QGraphicsSceneHoverEvent * event )
 	if (dynamic_cast<ItemBase *>(this->parentItem())->moveLock()) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView && infoGraphicsView->spaceBarIsPressed()) {
+	if ((infoGraphicsView != nullptr) && infoGraphicsView->spaceBarIsPressed()) {
 		SpaceBarWasPressed = true;
 		return;
 	}
@@ -469,10 +469,10 @@ void Stripboard::addedToScene(bool temporary)
 			StripConnector * sc = getStripConnector(cx, cy);
 			bool vertical = name.contains("v");
 			if (vertical) {
-				if (sc->down) sc->down->setRemoved(true);
+				if (sc->down != nullptr) sc->down->setRemoved(true);
 			}
 			else {
-				if (sc->right) sc->right->setRemoved(true);
+				if (sc->right != nullptr) sc->right->setRemoved(true);
 			}
 		}
 	}
@@ -527,7 +527,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 		collectTo(affectedConnectors);
 
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infoGraphicsView) {
+		if (infoGraphicsView != nullptr) {
 			QString changeType = (connect) ? tr("Restored") : tr("Cut") ;
 			QString changeText = tr("%1 %n strip(s)", "", changeCount).arg(changeType);
 			QList<ConnectorItem *> affected = affectedConnectors.values();
@@ -597,21 +597,21 @@ void Stripboard::collectConnected(int ix, int iy, QList<ConnectorItem *> & conne
 
 	connected << sc->connectorItem;
 
-	if (sc->right && !sc->right->removed()) {
+	if ((sc->right != nullptr) && !sc->right->removed()) {
 		collectConnected(ix + 1, iy, connected);
 
 	}
-	if (sc->down && !sc->down->removed()) {
+	if ((sc->down != nullptr) && !sc->down->removed()) {
 		collectConnected(ix, iy + 1, connected);
 	}
 
 	StripConnector * left = ix > 0 ? getStripConnector(ix - 1, iy) : nullptr;
-	if (left && left->right && !left->right->removed()) {
+	if ((left != nullptr) && (left->right != nullptr) && !left->right->removed()) {
 		collectConnected(ix - 1, iy, connected);
 	}
 
 	StripConnector * up = iy > 0 ? getStripConnector(ix, iy - 1) : nullptr;
-	if (up && up->down && !up->down->removed()) {
+	if ((up != nullptr) && (up->down != nullptr) && !up->down->removed()) {
 		collectConnected(ix, iy - 1, connected);
 	}
 }
@@ -697,11 +697,11 @@ void Stripboard::makeInitialPath() {
 		getXY(cx, cy, ci->connectorSharedName());
 		if (cy == 0 && cx == 1) {
 			ciNextH = ci;
-			if (ciNextV) break;
+			if (ciNextV != nullptr) break;
 		}
 		else if (cy == 1 && cx == 0) {
 			ciNextV = ci;
-			if (ciNextH) break;
+			if (ciNextH != nullptr) break;
 		}
 	}
 
@@ -792,7 +792,7 @@ void Stripboard::swapEntry(const QString & text) {
 					propsMap.insert("buses", stripLayout.buses);
 					propsMap.insert("layout", text);
 					InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-					if (infoGraphicsView) {
+					if (infoGraphicsView != nullptr) {
 						infoGraphicsView->swap(family(), "size", propsMap, this);
 					}
 					return;
@@ -917,7 +917,7 @@ void Stripboard::changeBoardSize()
 	m_propsMap.insert("buses", buses + newBuses);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->swap(family(), "size", m_propsMap, this);
 	}
 }

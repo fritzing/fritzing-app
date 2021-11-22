@@ -120,7 +120,7 @@ void NoteGraphicsTextItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *) {
 
 void NoteGraphicsTextItem::focusInEvent(QFocusEvent * event) {
 	InfoGraphicsView * igv = InfoGraphicsView::getInfoGraphicsView(this);
-	if (igv) {
+	if (igv != nullptr) {
 		igv->setNoteFocus(this, true);
 	}
 	QApplication::instance()->installEventFilter((Note *) this->parentItem());
@@ -130,7 +130,7 @@ void NoteGraphicsTextItem::focusInEvent(QFocusEvent * event) {
 
 void NoteGraphicsTextItem::focusOutEvent(QFocusEvent * event) {
 	InfoGraphicsView * igv = InfoGraphicsView::getInfoGraphicsView(this);
-	if (igv) {
+	if (igv != nullptr) {
 		igv->setNoteFocus(this, false);
 	}
 	QApplication::instance()->removeEventFilter((Note *) this->parentItem());
@@ -345,7 +345,7 @@ void Note::positionGrip() {
 
 void Note::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics && infographics->spaceBarIsPressed()) {
+	if ((infographics != nullptr) && infographics->spaceBarIsPressed()) {
 		m_spaceBarWasPressed = true;
 		event->ignore();
 		return;
@@ -431,9 +431,9 @@ void Note::contentsChangedSlot() {
 	}
 
 	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		QString oldText;
-		if (m_modelPart) {
+		if (m_modelPart != nullptr) {
 			oldText = m_modelPart->instanceText();
 		}
 
@@ -443,7 +443,7 @@ void Note::contentsChangedSlot() {
 
 		infoGraphicsView->noteChanged(this, oldText, m_graphicsTextItem->document()->toHtml(), oldSize, newSize);
 	}
-	if (m_modelPart) {
+	if (m_modelPart != nullptr) {
 		m_modelPart->setInstanceText(m_graphicsTextItem->document()->toHtml());
 	}
 }
@@ -544,7 +544,7 @@ bool Note::eventFilter(QObject * object, QEvent * event)
 			event->accept();
 			return true;
 		}
-		if ((kevent->key() == Qt::Key_L) && (kevent->modifiers() & Qt::ControlModifier)) {
+		if ((kevent->key() == Qt::Key_L) && ((kevent->modifiers() & Qt::ControlModifier) != 0u)) {
 			QTimer::singleShot(75, this, SLOT(linkDialog()));
 			event->accept();
 			return true;
@@ -684,7 +684,7 @@ void Note::handleMousePressSlot(QGraphicsSceneMouseEvent * event, ResizeHandle *
 void Note::handleMouseMoveSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * resizeHandle) {
 	Q_UNUSED(resizeHandle);
 
-	if (!m_inResize) return;
+	if (m_inResize == nullptr) return;
 
 	double minWidth = emptyMinWidth;
 	double minHeight = emptyMinHeight;
@@ -718,11 +718,11 @@ void Note::handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, ResizeHandle
 	Q_UNUSED(resizeHandle);
 	Q_UNUSED(event);
 
-	if (!m_inResize) return;
+	if (m_inResize == nullptr) return;
 
 	m_inResize = nullptr;
 	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->noteSizeChanged(this, m_viewGeometry.rect().size(), m_rect.size());
 	}
 }

@@ -212,7 +212,7 @@ void PaletteItemBase::paintSelected(QPainter *painter, const QStyleOptionGraphic
 
 void PaletteItemBase::mousePressConnectorEvent(ConnectorItem * connectorItem, QGraphicsSceneMouseEvent * event) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->mousePressConnectorEvent(connectorItem, event);
 	}
 }
@@ -250,7 +250,7 @@ bool PaletteItemBase::mousePressEventK(PaletteItemBase * originalItem, QGraphics
 			*/
 		this->debugInfo("in rotation");
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infoGraphicsView) infoGraphicsView->setAnyInRotation();
+		if (infoGraphicsView != nullptr) infoGraphicsView->setAnyInRotation();
 		return false;
 	}
 
@@ -319,7 +319,7 @@ void PaletteItemBase::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 	chief->rotateItem(deltaAngle, true);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(chief);
-	if (infoGraphicsView) infoGraphicsView->updateRotation(chief);
+	if (infoGraphicsView != nullptr) infoGraphicsView->updateRotation(chief);
 }
 
 void PaletteItemBase::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -331,7 +331,7 @@ void PaletteItemBase::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 	setInRotation(false);
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		// TODO: doesn't account for scaling
 		// see: http://www.gamedev.net/topic/441695-transform-matrix-decomposition/
 		double originalAngle = atan2(OriginalTransform.m12(), OriginalTransform.m11()) * 180 / M_PI;
@@ -441,7 +441,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 	}
 
 	Q_FOREACH (Connector * connector, m_modelPart->connectors().values()) {
-		if (!connector) continue;
+		if (connector == nullptr) continue;
 
 		//DebugDialog::debug(QString("id:%1 vid:%2 vlid:%3")
 		//				   .arg(connector->connectorSharedID())
@@ -451,7 +451,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 
 
 		SvgIdLayer * svgIdLayer = connector->fullPinInfo(m_viewID, m_viewLayerID);
-		if (!svgIdLayer) {
+		if (svgIdLayer == nullptr) {
 			DebugDialog::debug(QString("svgidlayer fail %1 vid:%2 vlid:%3 %4")
 			                   .arg(connector->connectorSharedID())
 			                   .arg(m_viewID)
@@ -490,7 +490,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 	}
 
 	Q_FOREACH (SvgIdLayer * svgIdLayer, renderer->setUpNonConnectors(viewLayerPlacement())) {
-		if (!svgIdLayer) continue;
+		if (svgIdLayer == nullptr) continue;
 
 		auto * nonConnectorItem = new NonConnectorItem(this);
 
@@ -616,7 +616,7 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<Q
 
 	Qt::Orientations orientation = Qt::Vertical;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		orientation = infoGraphicsView->smdOrientation();
 	}
 
@@ -705,7 +705,7 @@ void PaletteItemBase::setLocalProp(const QString & prop, const QString & value, 
 {
 	if (prop.compare(propertyName) == 0) {
 		modelPart()->setLocalProp(propertyName, value);
-		if (m_partLabel) m_partLabel->displayTextsIf();
+		if (m_partLabel != nullptr) m_partLabel->displayTextsIf();
 		return;
 	}
 }
@@ -715,7 +715,7 @@ void PaletteItemBase::partPropertyEntry() {
 	if (lineEdit == nullptr) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		QString propertyName = lineEdit->property("property name for entry").toString();
 		infoGraphicsView->setProp(this, propertyName, "", m_modelPart->localProp(propertyName).toString(), lineEdit->text(), true);
 	}
@@ -725,7 +725,7 @@ void PaletteItemBase::partPropertyEntry() {
 const QCursor * PaletteItemBase::getCursor(Qt::KeyboardModifiers modifiers)
 {
 	if (hasRubberBandLeg()) {
-		if ((modifiers & altOrMetaModifier())) {
+		if ((modifiers & altOrMetaModifier()) != 0u) {
 			Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 				if (connectorItem->connectionsCount() > 0) {
 					return CursorMaster::RubberbandCursor;

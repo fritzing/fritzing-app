@@ -125,7 +125,8 @@ private:
 class AddDeleteItemCommand : public SimulationCommand
 {
 public:
-	AddDeleteItemCommand(SketchWidget * sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QUndoCommand *parent);
+	AddDeleteItemCommand(SketchWidget * sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QHash<QString, QString>* localConnectors, QUndoCommand *parent);
+	~AddDeleteItemCommand();
 
 	long itemID() const;
 	void setDropOrigin(SketchWidget *);
@@ -143,6 +144,7 @@ protected:
 	ViewLayer::ViewLayerPlacement m_viewLayerPlacement;
 	QPointF *m_labelPos;
 	QPointF *m_labelOffset;
+	QHash<QString, QString> * m_localConnectors;
 };
 
 /////////////////////////////////////////////
@@ -169,7 +171,7 @@ protected:
 class DeleteItemCommand : public AddDeleteItemCommand
 {
 public:
-	DeleteItemCommand(SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QUndoCommand *parent);
+	DeleteItemCommand(SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QHash<QString, QString>* localConnectors, QUndoCommand *parent);
 	void undo();
 	void redo();
 

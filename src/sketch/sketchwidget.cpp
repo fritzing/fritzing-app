@@ -5189,7 +5189,13 @@ void SketchWidget::makeDeleteItemCommandFinalSlot(ItemBase * itemBase, bool fore
 		labelPos = new QPointF(partLabel->pos());
 		labelOffset = new QPointF(partLabel->getOffset());
 	}
-	new DeleteItemCommand(this, BaseCommand::SingleView, mp->moduleID(), itemBase->viewLayerPlacement(), itemBase->getViewGeometry(), itemBase->id(), mp->modelIndex(), labelPos, labelOffset, parentCommand);
+	auto localConnectors = new QHash<QString, QString>;
+	Q_FOREACH (Connector * connector, mp->connectors()) {
+		if (!connector->connectorLocalName().isEmpty()) {
+			localConnectors->insert(connector->connectorSharedID(), connector->connectorLocalName());
+		}
+	}
+	new DeleteItemCommand(this, BaseCommand::SingleView, mp->moduleID(), itemBase->viewLayerPlacement(), itemBase->getViewGeometry(), itemBase->id(), mp->modelIndex(), labelPos, labelOffset, localConnectors, parentCommand);
 }
 
 void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString & newModuleID, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand)

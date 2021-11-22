@@ -184,7 +184,7 @@ int BaseCommand::totalChildCount(const QUndoCommand * command) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-AddDeleteItemCommand::AddDeleteItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QUndoCommand *parent)
+AddDeleteItemCommand::AddDeleteItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QHash<QString, QString> * localConnectors, QUndoCommand *parent)
 	: SimulationCommand(crossViewType, sketchWidget, parent),
 	m_moduleID(moduleID),
 	m_itemID(id),
@@ -193,8 +193,16 @@ AddDeleteItemCommand::AddDeleteItemCommand(SketchWidget* sketchWidget, BaseComma
 	m_dropOrigin(nullptr),
 	m_viewLayerPlacement(viewLayerPlacement),
 	m_labelPos(labelPos),
-	m_labelOffset(labelOffset)
+	m_labelOffset(labelOffset),
+	m_localConnectors(localConnectors)
 {
+}
+
+AddDeleteItemCommand::~AddDeleteItemCommand()
+{
+	if (m_localConnectors != nullptr) {
+		delete m_localConnectors;
+	}
 }
 
 QString AddDeleteItemCommand::getParamString() const {
@@ -243,7 +251,7 @@ void SimulationCommand::redo() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 AddItemCommand::AddItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossViewType crossViewType, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, bool updateInfoView, long modelIndex, QUndoCommand *parent)
-	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, nullptr, nullptr, parent),
+	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, nullptr, nullptr, nullptr, parent),
 	m_updateInfoView(updateInfoView),
 	m_module(false),
 	m_restoreIndexesCommand(nullptr)
@@ -276,18 +284,30 @@ QString AddItemCommand::getParamString() const {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-DeleteItemCommand::DeleteItemCommand(SketchWidget* sketchWidget,BaseCommand::CrossViewType crossViewType,  QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QUndoCommand *parent)
-	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, labelPos, labelOffset, parent)
+DeleteItemCommand::DeleteItemCommand(SketchWidget* sketchWidget,BaseCommand::CrossViewType crossViewType,  QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QHash<QString, QString>* localConnectors, QUndoCommand *parent)
+	: AddDeleteItemCommand(sketchWidget, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, modelIndex, labelPos, labelOffset, localConnectors, parent)
 {
 }
 
 void DeleteItemCommand::undo()
 {
-	m_sketchWidget->addItem(m_moduleID, m_viewLayerPlacement, m_crossViewType, m_viewGeometry, m_itemID, m_modelIndex, this);
+	auto * itemBase = m_sketchWidget->addItem(m_moduleID, m_viewLayerPlacement, m_crossViewType, m_viewGeometry, m_itemID, m_modelIndex, this);
 	SimulationCommand::undo();
 	if(m_labelPos && m_labelOffset) {
 		m_sketchWidget->movePartLabel(m_itemID, *m_labelPos, *m_labelOffset);
 	}
+	if (m_localConnectors != nullptr && itemBase != nullptr) {
+		auto * modelPart = itemBase->modelPart();
+		if (modelPart != nullptr) {
+			for (auto id : m_localConnectors->keys()) {
+				auto * connectorItem = itemBase->findConnectorItemWithSharedID(id);
+				if (connectorItem != nullptr) {
+					connectorItem->connector()->setConnectorLocalName(m_localConnectors->value(id));
+				}
+			}
+		}
+	}
+
 	BaseCommand::undo();
 }
 
@@ -1288,7 +1308,7 @@ void CleanUpWiresCommand::addTrace(SketchWidget * sketchWidget, Wire * wire)
 		              false, nullptr));
 	}
 
-	addSubCommand(new DeleteItemCommand(sketchWidget, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, wire->viewLayerPlacement(), wire->getViewGeometry(), wire->id(), wire->modelPart()->modelIndex(), nullptr, nullptr, nullptr));
+	addSubCommand(new DeleteItemCommand(sketchWidget, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, wire->viewLayerPlacement(), wire->getViewGeometry(), wire->id(), wire->modelPart()->modelIndex(), nullptr, nullptr, nullptr, nullptr));
 }
 
 bool CleanUpWiresCommand::hasTraces(SketchWidget * sketchWidget) {

@@ -80,7 +80,7 @@ void Hole::setHoleSize(QString newSize, bool force) {
 		setBoth(m_holeSettings.holeDiameter, m_holeSettings.ringThickness);
 		modelPart()->setLocalProp("hole size", newSize);
 
-		if (m_partLabel) m_partLabel->displayTextsIf();
+		if (m_partLabel != nullptr) m_partLabel->displayTextsIf();
 	}
 	//DebugDialog::debug(QString("new holesize %1 ").arg(viewID()) + holeSize(), sceneBoundingRect());
 	//foreach (QGraphicsItem * childItem, childItems()) {
@@ -110,7 +110,7 @@ void Hole::setBoth(const QString & holeDiameter, const QString & ringThickness) 
 		if (svgIdLayer == nullptr) continue;
 
 		setBothNonConnectors(this, svgIdLayer);
-		if (otherLayer) {
+		if (otherLayer != nullptr) {
 			setBothNonConnectors(otherLayer, svgIdLayer);
 		}
 
@@ -136,7 +136,7 @@ ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringTh
 		}
 	}
 
-	if (otherLayer) {
+	if (otherLayer != nullptr) {
 		osvg = makeSvg(holeDiameter, ringThickness, otherLayer->viewLayerID(), true);
 		//DebugDialog::debug(osvg);
 		otherLayer->resetRenderer(osvg);
@@ -223,7 +223,7 @@ QString Hole::getProperty(const QString & key) {
 
 void Hole::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setHoleSize(m_holeSettings.holeSize(), true);
 	}
 
@@ -273,7 +273,7 @@ bool Hole::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 
 void Hole::changeHoleSize(const QString & newSize) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		QRectF holeRect = getRect(holeSize());
 		QRectF newHoleRect = getRect(newSize);
 		infoGraphicsView->setHoleSize(this, "hole size", tr("hole size"), holeSize(), newSize, holeRect, newHoleRect, true);

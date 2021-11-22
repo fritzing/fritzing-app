@@ -62,7 +62,7 @@ QString LED::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QStr
 
 void LED::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setColor(prop("color"));
 	}
 

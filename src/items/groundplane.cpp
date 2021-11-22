@@ -126,7 +126,7 @@ void GroundPlane::setProp(const QString & prop, const QString & value) {
 void GroundPlane::addedToScene(bool temporary)
 {
 	if (m_viewLayerID == ViewLayer::GroundPlane0 || m_viewLayerID == ViewLayer::GroundPlane1) {
-		if (this->scene()) {
+		if (this->scene() != nullptr) {
 			QString svg;
 			if (temporary) {
 				loadIconSvg();
@@ -160,7 +160,7 @@ void GroundPlane::setSvgAux(const QString & svg) {
 	bool result = splitter.splitString(cpy, xmlName);
 	if (result) {
 		resetRenderer(svg);
-		if (m_connector0) {
+		if (m_connector0 != nullptr) {
 			QPainterPath painterPath = splitter.painterPath(GraphicsUtils::SVGDPI, GroundPlaneGenerator::ConnectorName);
 			m_connector0->setRect(painterPath.boundingRect());
 			m_connector0->setShape(painterPath);

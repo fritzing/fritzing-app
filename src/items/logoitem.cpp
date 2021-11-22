@@ -107,7 +107,7 @@ QString LogoItem::getShapeForRenderer(const QString & svg) {
 
 void LogoItem::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setInitialSize();
 		m_aspectRatio.setWidth(this->boundingRect().width());
 		m_aspectRatio.setHeight(this->boundingRect().height());
@@ -279,7 +279,7 @@ bool LogoItem::checkImage(const QString & filename) {
 void LogoItem::prepLoadImageAux(const QString & fileName, bool addName)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->loadLogoImage(this, prop("shape"), m_aspectRatio, prop("lastfilename"), fileName, addName);
 	}
 }
@@ -321,7 +321,7 @@ bool LogoItem::reloadImage(const QString & incomingSvg, const QSizeF & aspectRat
 		if (addName) {
 			if (!getNewImageNames().contains(fileName, Qt::CaseInsensitive)) {
 				getNewImageNames().append(fileName);
-				if (m_fileNameComboBox) {
+				if (m_fileNameComboBox != nullptr) {
 					bool wasBlocked = m_fileNameComboBox->blockSignals(true);
 					while (m_fileNameComboBox->count() > 0) {
 						m_fileNameComboBox->removeItem(0);
@@ -571,7 +571,7 @@ void LogoItem::setLogo(QString logo, bool force) {
 
 	QSizeF oldSize = m_size;
 	QXmlStreamReader streamReader(svg);
-	QSizeF oldSvgSize = fsvgRenderer() ? fsvgRenderer()->viewBoxF().size() : QSizeF(0, 0);
+	QSizeF oldSvgSize = fsvgRenderer() != nullptr ? fsvgRenderer()->viewBoxF().size() : QSizeF(0, 0);
 
 	DebugDialog::debug(QString("size %1 %2, %3 %4").arg(m_size.width()).arg(m_size.height()).arg(oldSvgSize.width()).arg(oldSvgSize.height()));
 
@@ -646,7 +646,7 @@ void LogoItem::logoEntryAux(const QString & text)
 	m_inLogoEntry = QTime::currentTime().addSecs(1);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "logo", tr("text"), this->logo(), text, true);
 	}
 }
@@ -727,7 +727,7 @@ void LogoItem::widthEntry() {
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->resizeBoard(w, h, true);
 	}
 }
@@ -753,7 +753,7 @@ void LogoItem::setHeight(double h)
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->resizeBoard(w, h, true);
 	}
 }
@@ -782,7 +782,7 @@ QString LogoItem::layerName()
 double LogoItem::minWidth() {
 	double zoom = 1;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		zoom = infoGraphicsView->currentZoom() / 100;
 		if (zoom == 0) zoom = 1;
 	}
@@ -793,7 +793,7 @@ double LogoItem::minWidth() {
 double LogoItem::minHeight() {
 	double zoom = 1;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		zoom = infoGraphicsView->currentZoom() / 100;
 		if (zoom == 0) zoom = 1;
 	}
@@ -956,7 +956,7 @@ void BreadboardLogoItem::changeTextColor() {
 	if (newColor.name().compare(m_color, Qt::CaseInsensitive) == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "color", tr("color"), m_color, newColor.name(), true);
 	}
 }

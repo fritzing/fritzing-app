@@ -202,7 +202,7 @@ bool JumperItem::mousePressEventK(PaletteItemBase * originalItem, QGraphicsScene
 {
 	m_originalClickItem = originalItem;
 	mousePressEvent(event);
-	return (m_dragItem);
+	return (m_dragItem) != nullptr;
 }
 
 void JumperItem::mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
@@ -222,7 +222,7 @@ void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 	PaletteItemBase * originalItem = m_originalClickItem;
 	m_originalClickItem = nullptr;
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics && infographics->spaceBarIsPressed()) {
+	if ((infographics != nullptr) && infographics->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
@@ -246,7 +246,7 @@ void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 			m_otherItem = m_connector0;
 		}
 		else {
-			if (originalItem) return ItemBase::mousePressEvent(event);
+			if (originalItem != nullptr) return ItemBase::mousePressEvent(event);
 			return PaletteItem::mousePressEvent(event);
 		}
 	}
@@ -274,14 +274,14 @@ void JumperItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 	r.moveTo(mapFromScene(m_otherPos));
 	m_otherItem->setRect(r);
 	ConnectorItem * cross = m_otherItem->getCrossLayerConnectorItem();
-	if (cross) cross->setRect(r);
+	if (cross != nullptr) cross->setRect(r);
 
 	r = m_dragItem->rect();
 	r.moveTo(mapFromScene(p));
 	m_dragItem->setRect(r);
 
 	cross = m_dragItem->getCrossLayerConnectorItem();
-	if (cross) cross->setRect(r);
+	if (cross != nullptr) cross->setRect(r);
 
 	resize();
 	QList<ConnectorItem *> already;
@@ -418,11 +418,11 @@ void JumperItem::resizeAux(double r0x, double r0y, double r1x, double r1y) {
 	m_connector0->setRect(r0);
 	m_connector1->setRect(r1);
 	ConnectorItem * cc0 = m_connector0->getCrossLayerConnectorItem();
-	if (cc0) {
+	if (cc0 != nullptr) {
 		cc0->setRect(r0);
 	}
 	ConnectorItem * cc1 = m_connector1->getCrossLayerConnectorItem();
-	if (cc1) {
+	if (cc1 != nullptr) {
 		cc1->setRect(r1);
 	}
 	resize();
@@ -480,7 +480,7 @@ bool JumperItem::hasCustomSVG() {
 }
 
 bool JumperItem::inDrag() {
-	return m_dragItem;
+	return m_dragItem != nullptr;
 }
 
 void JumperItem::loadLayerKin( const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
@@ -498,11 +498,11 @@ void JumperItem::addedToScene(bool temporary) {
 	if (m_connector1 == nullptr) return;
 
 	ConnectorItem * cc0 = m_connector0->getCrossLayerConnectorItem();
-	if (cc0) {
+	if (cc0 != nullptr) {
 		cc0->setRect(m_connector0->rect());
 	}
 	ConnectorItem * cc1 = m_connector1->getCrossLayerConnectorItem();
-	if (cc1) {
+	if (cc1 != nullptr) {
 		cc1->setRect(m_connector1->rect());
 	}
 

@@ -106,7 +106,7 @@ void MysteryPart::setChipLabel(QString chipLabel, bool force) {
 
 	modelPart()->setLocalProp("chip label", chipLabel);
 
-	if (m_partLabel) m_partLabel->displayTextsIf();
+	if (m_partLabel != nullptr) m_partLabel->displayTextsIf();
 }
 
 QString MysteryPart::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor)
@@ -243,7 +243,7 @@ QString MysteryPart::chipLabel() {
 
 void MysteryPart::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setChipLabel(m_chipLabel, true);
 	}
 
@@ -273,7 +273,7 @@ void MysteryPart::chipLabelEntry() {
 	if (edit->text().compare(this->chipLabel()) == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "chip label", tr("chip label"), this->chipLabel(), edit->text(), true);
 	}
 }

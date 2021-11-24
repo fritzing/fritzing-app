@@ -9067,14 +9067,14 @@ void SketchWidget::changePinLabels(ItemBase * itemBase, bool singleRow)
 	changePinLabelsSlot(itemBase, singleRow);
 }
 
-void SketchWidget::renamePins(ItemBase * itemBase, const QStringList & oldLabels, const QStringList & newLabels, bool singleRow)
+void SketchWidget::renamePins(ItemBase * itemBase, const QStringList & oldLabels, const QStringList & newLabels)
 {
-	QUndoCommand * command = new RenamePinsCommand(this, itemBase->id(), oldLabels, newLabels, singleRow, nullptr);
+	QUndoCommand * command = new RenamePinsCommand(this, itemBase->id(), oldLabels, newLabels, nullptr);
 	command->setText(tr("change pin labels"));
 	m_undoStack->waitPush(command, 10);
 }
 
-void SketchWidget::renamePinsForCommand(long id, const QStringList & labels, bool singleRow)
+void SketchWidget::renamePinsForCommand(long id, const QStringList & labels)
 {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;
@@ -9082,7 +9082,7 @@ void SketchWidget::renamePinsForCommand(long id, const QStringList & labels, boo
 	auto * paletteItem = qobject_cast<PaletteItem *>(itemBase->layerKinChief());
 	if (!paletteItem) return;
 
-	paletteItem->renamePins(labels, singleRow);
+	paletteItem->renamePins(labels);
 }
 
 bool SketchWidget::checkUpdateRatsnest(QList<ConnectorItem *> & connectorItems) {

@@ -293,8 +293,8 @@ public:
 	bool curvyWiresIndicated(Qt::KeyboardModifiers);
 	void triggerRotate(ItemBase *, double degrees);
 	void makeWiresChangeConnectionCommands(const QList<Wire *> & wires, QUndoCommand * parentCommand);
-	void renamePins(ItemBase *, const QStringList & oldLabels, const QStringList & newLabels, bool singleRow);
-	void renamePinsForCommand(long itemID, const QStringList & labels, bool singleRow);
+	void renamePins(ItemBase *, const QStringList & oldLabels, const QStringList & newLabels);
+	void renamePinsForCommand(long itemID, const QStringList & labels);
 	void getRatsnestColor(QColor &);
 	VirtualWire * makeOneRatsnestWire(ConnectorItem * source, ConnectorItem * dest, bool routed, QColor color, bool force);
 	double ratsnestOpacity();

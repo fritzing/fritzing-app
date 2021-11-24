@@ -1055,7 +1055,7 @@ protected:
 class RenamePinsCommand : public BaseCommand
 {
 public:
-	RenamePinsCommand(class SketchWidget *sketchWidget, long id, const QStringList & oldOnes, const QStringList & newOnes, bool singleRow, QUndoCommand *parent);
+	RenamePinsCommand(class SketchWidget *sketchWidget, long id, const QStringList & oldOnes, const QStringList & newOnes, QUndoCommand *parent);
 	void undo();
 	void redo();
 
@@ -1066,7 +1066,6 @@ protected:
 	long m_itemID;
 	QStringList m_oldLabels;
 	QStringList m_newLabels;
-	bool m_singleRow;
 };
 
 /////////////////////////////////////////////

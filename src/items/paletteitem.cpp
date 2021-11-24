@@ -637,11 +637,12 @@ void PaletteItem::openPinLabelDialog() {
 		return;
 	}
 
-	infoGraphicsView->renamePins(this, labels, newLabels, singleRow);
+	infoGraphicsView->renamePins(this, labels, newLabels);
 }
 
-void PaletteItem::renamePins(const QStringList & labels, bool singleRow)
+void PaletteItem::renamePins(const QStringList & labels)
 {
+	bool singleRow = isSingleRow(cachedConnectorItems());
 	QList<Connector *> sortedConnectors = sortConnectors();
 	for (int i = 0; i < labels.count(); i++) {
 		Connector * connector = sortedConnectors.at(i);

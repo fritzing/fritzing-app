@@ -107,7 +107,7 @@ public:
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 	virtual bool changePinLabels(bool singleRow, bool sip);
 	QStringList getPinLabels(bool & hasLocal);
-	void renamePins(const QStringList & labels, bool singleRow);
+	void renamePins(const QStringList & labels);
 	void resetConnectors();
 	void resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLayerRenderer);
 	void resetConnector(ItemBase * itemBase, SvgIdLayer * svgIdLayer);

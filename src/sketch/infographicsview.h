@@ -90,7 +90,7 @@ public:
 	virtual bool curvyWiresIndicated(Qt::KeyboardModifiers);
 	virtual void triggerRotate(ItemBase *, double degrees);
 	virtual void changePinLabels(ItemBase *, bool singleRow);
-	virtual void renamePins(ItemBase *, const QStringList & oldLabels, const QStringList & newLabels, bool singleRow);
+	virtual void renamePins(ItemBase *, const QStringList & oldLabels, const QStringList & newLabels);
 	virtual ViewGeometry::WireFlag getTraceFlag();
 	virtual void setAnyInRotation();
 

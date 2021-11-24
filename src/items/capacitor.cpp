@@ -188,7 +188,7 @@ void Capacitor::propertyEntry(int index) {
 			}
 
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView) {
+			if (infoGraphicsView != nullptr) {
 				infoGraphicsView->setProp(this, propertyDef->name, "", m_propertyDefs.value(propertyDef, ""), utext, true);
 			}
 			break;
@@ -201,7 +201,7 @@ void Capacitor::setProp(const QString & prop, const QString & value) {
 		if (prop.compare(propertyDef->name, Qt::CaseInsensitive) == 0) {
 			m_propertyDefs.insert(propertyDef, value);
 			modelPart()->setLocalProp(propertyDef->name, value);
-			if (m_partLabel) m_partLabel->displayTextsIf();
+			if (m_partLabel != nullptr) m_partLabel->displayTextsIf();
 			return;
 		}
 	}
@@ -218,7 +218,7 @@ void Capacitor::simplePropertyEntry(int index) {
 	Q_FOREACH (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView) {
+			if (infoGraphicsView != nullptr) {
 				infoGraphicsView->setProp(this, propertyDef->name, "", m_propertyDefs.value(propertyDef, ""), text, true);
 			}
 			break;

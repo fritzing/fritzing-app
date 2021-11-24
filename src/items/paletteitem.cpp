@@ -681,8 +681,12 @@ bool PaletteItem::isSingleRow(const QList<ConnectorItem *> & connectorItems) {
 }
 
 QList<Connector *> PaletteItem::sortConnectors() {
+	return sortConnectors(modelPart());
+}
+
+QList<Connector *> PaletteItem::sortConnectors(ModelPart * modelPart) {
 	QList<Connector *> sortedConnectors;
-	Q_FOREACH (Connector * connector, modelPart()->connectors().values()) {
+	Q_FOREACH (Connector * connector, modelPart->connectors().values()) {
 		sortedConnectors.append(connector);
 	}
 	ByIDParseSuccessful = true;

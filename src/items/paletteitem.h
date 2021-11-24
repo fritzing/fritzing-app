@@ -128,6 +128,8 @@ public:
 	static QString changeUnits(HoleSettings &);
 	static bool changeDiameter(HoleSettings & holeSettings, QObject * sender);
 	static bool changeThickness(HoleSettings & holeSettings, QObject * sender);
+	static QList<Connector *> sortConnectors(ModelPart * modelPart);
+	static bool isSingleRow(const QList<ConnectorItem *> & connectorItems);
 
 Q_SIGNALS:
 	void pinLabelSwap(ItemBase *, const QString & moduleID);
@@ -141,7 +143,6 @@ protected:
 	void updateConnections(bool includeRatsnest, QList<ConnectorItem *> & already);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	void figureHover();
-	bool isSingleRow(const QList<ConnectorItem *> & connectorItems);
 	QList<Connector *> sortConnectors();
 	QString hackSvgHoleSize(const QString & holeDiameter, const QString & ringThickness);
 	QString hackFzpHoleSize(const QString & moduleID, const QString & pcbFilename, const QString & holeSize);

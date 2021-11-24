@@ -5921,6 +5921,9 @@ void SketchWidget::updateInfoViewSlot() {
 
 long SketchWidget::setUpSwap(SwapThing & swapThing, bool master)
 {
+	// setUpSwap is performed once for each of the three views.
+
+	// Only perform this for the first of the three views.
 	if (swapThing.firstTime) {
 		swapThing.firstTime = false;
 		swapThing.newID = swapStart(swapThing, master);
@@ -5942,6 +5945,7 @@ long SketchWidget::setUpSwap(SwapThing & swapThing, bool master)
 		slc->add(swapThing.newID, true, true);
 	}
 
+	// Only perform this for the last of the three views.
 	if (master) {
 		auto * selectItemCommand = new SelectItemCommand(this, SelectItemCommand::NormalSelect, swapThing.parentCommand);
 		selectItemCommand->addRedo(swapThing.newID);
@@ -9297,6 +9301,7 @@ void SketchWidget::canConnect(Wire * from, ItemBase * to, bool & connect) {
 
 long SketchWidget::swapStart(SwapThing & swapThing, bool master) {
 	Q_UNUSED(master);
+	// This function is only called for the first of the three views.
 
 	long newID = ItemBase::getNextID(swapThing.newModelIndex);
 

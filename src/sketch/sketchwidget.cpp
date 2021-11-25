@@ -5977,9 +5977,50 @@ long SketchWidget::setUpSwap(SwapThing & swapThing, bool master)
 		prepDeleteProps(itemBase, swapThing.newID, swapThing.newModuleID, swapThing.propsMap, swapThing.parentCommand);
 		new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, swapThing.parentCommand);
 		new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, swapThing.parentCommand);
+		setUpSwapRenamePins(swapThing, itemBase);
 	}
 
 	return swapThing.newID;
+}
+
+void SketchWidget::setUpSwapRenamePins(SwapThing & swapThing, ItemBase * itemBase)
+{
+	if (itemBase == nullptr) return;
+
+	auto * oldModelPart = itemBase->modelPart();
+	if (oldModelPart == nullptr) return;
+
+	QString value = oldModelPart->properties().value("editable pin labels", "");
+	if (value.compare("true") != 0) return;
+
+	ModelPart * newModelPart = m_referenceModel->retrieveModelPart(swapThing.newModuleID);
+	if (newModelPart == nullptr) return;
+
+	newModelPart->initConnectors();
+
+	QList<Connector *> sortedConnectors = PaletteItem::sortConnectors(newModelPart);
+	if (sortedConnectors.count() == 0) return;
+
+	QHash<QString, QString> localConnectors;
+	Q_FOREACH (Connector * connector, oldModelPart->connectors()) {
+		if (!connector->connectorLocalName().isEmpty()) {
+			localConnectors.insert(connector->connectorSharedID(), connector->connectorLocalName());
+		}
+	}
+
+	QStringList oldLabels;
+	QStringList newLabels;
+
+	Q_FOREACH (Connector * connector, sortedConnectors) {
+		oldLabels.append(connector->connectorSharedName());
+		auto id = connector->connectorSharedID();
+		if (localConnectors.contains(id)) {
+			newLabels.append(localConnectors.value(id));
+		} else {
+			newLabels.append(connector->connectorSharedName());
+		}
+	}
+	new RenamePinsCommand(this, swapThing.newID, oldLabels, newLabels, swapThing.parentCommand);
 }
 
 void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase, long newID, bool master)

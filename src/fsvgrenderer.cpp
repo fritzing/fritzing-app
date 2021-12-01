@@ -55,7 +55,8 @@ FSvgRenderer::~FSvgRenderer()
 }
 
 void FSvgRenderer::initNames() {
-	VanillaConnectorInfo.gotPath = VanillaConnectorInfo.gotCircle = false;
+	VanillaConnectorInfo.gotPath = false;
+	VanillaConnectorInfo.gotCircle = false;
 }
 
 void FSvgRenderer::clearConnectorInfoHash(QHash<QString, ConnectorInfo *> & hash) {
@@ -403,8 +404,10 @@ void FSvgRenderer::initConnectorInfoAux(QDomElement & element, const LoadInfo & 
 
 ConnectorInfo * FSvgRenderer::initConnectorInfoStruct(QDomElement & connectorElement, const QString & filename, bool parsePaths) {
 	auto * connectorInfo = new ConnectorInfo();
-	connectorInfo->radius = connectorInfo->strokeWidth = 0;
-	connectorInfo->gotPath = connectorInfo->gotCircle = false;
+	connectorInfo->radius = 0;
+	connectorInfo->strokeWidth = 0;
+	connectorInfo->gotPath = false;
+	connectorInfo->gotCircle = false;
 
 	if (connectorElement.isNull()) return connectorInfo;
 
@@ -617,10 +620,6 @@ ConnectorInfo * FSvgRenderer::getConnectorInfo(const QString & connectorID) {
 bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPoint, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
 	if (svgIdLayer == nullptr) return false;
-
-	//if (svgIdLayer->m_viewID = ViewLayer::SchematicView) {
-	//    DebugDialog::debug("delete me please");
-	//}
 
 	if (svgIdLayer->processed(viewLayerPlacement)) {
 		// hybrids are not visible in some views

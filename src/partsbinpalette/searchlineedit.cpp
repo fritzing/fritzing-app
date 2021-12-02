@@ -23,7 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent)
 {
 	mTimer.setSingleShot(true);
-	mTimer.setInterval(500);
+	mTimer.setInterval(2000);
 
 	connect(&mTimer, &QTimer::timeout,
 			this, [=]() {

@@ -5940,6 +5940,12 @@ long SketchWidget::setUpSwap(SwapThing & swapThing, bool master)
 
 	setUpSwapReconnect(swapThing, itemBase, swapThing.newID, master);
 	new CheckStickyCommand(this, BaseCommand::SingleView, swapThing.newID, false, CheckStickyCommand::RemoveOnly, swapThing.parentCommand);
+
+	PartLabel * oldPartLabel = itemBase->partLabel();
+	if (oldPartLabel != nullptr) {
+		new MoveLabelCommand(this, swapThing.newID, oldPartLabel->pos(), oldPartLabel->getOffset(), oldPartLabel->pos(), oldPartLabel->getOffset(), swapThing.parentCommand);
+	}
+
 	if (itemBase->isPartLabelVisible()) {
 		auto * slc = new ShowLabelCommand(this, swapThing.parentCommand);
 		slc->add(swapThing.newID, true, true);

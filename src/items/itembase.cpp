@@ -2308,8 +2308,7 @@ void ItemBase::createShape(LayerAttributes & layerAttributes) {
 	int selectionExtra = layerAttributes.viewID == ViewLayer::SchematicView ? 20 : 10;
 	SvgFileSplitter::forceStrokeWidth(root, svgDPI * selectionExtra / GraphicsUtils::SVGDPI, "#000000", true, false);
 
-	double imageDPI = GraphicsUtils::SVGDPI;
-	QRectF sourceRes(0, 0, w * imageDPI, h * imageDPI);
+	QRectF sourceRes(0, 0, w * GraphicsUtils::SVGDPI, h * GraphicsUtils::SVGDPI);
 	QSize imgSize(qCeil(sourceRes.width()), qCeil(sourceRes.height()));
 	QImage image(imgSize, QImage::Format_Mono);
 	image.fill(0xffffffff);

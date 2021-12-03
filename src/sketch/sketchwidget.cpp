@@ -5630,6 +5630,16 @@ void SketchWidget::wireSplitSlot(Wire* wire, QPointF newPos, QPointF oldPos, con
 	m_undoStack->push(parentCommand);
 }
 
+void SketchWidget::getWireJoinCurves(Wire * wire1, Wire * wire2, QPointF * newPos, QLineF * newLine, Bezier * b0, Bezier * b1) {
+	*newPos = wire1->pos();
+	*newLine = QLineF(QPointF(0,0), wire2->pos() - wire1->pos() + wire2->line().p2());
+	b0->copy(wire1->curve());
+	b1->copy(wire2->curve());
+	b0->set_endpoints(wire1->line().p1(), wire1->line().p2());
+	b1->set_endpoints(wire2->line().p1(), wire2->line().p2());
+	b1->translate(wire2->pos() - wire1->pos());
+}
+
 void SketchWidget::wireJoinSlot(Wire* wire, ConnectorItem * clickedConnectorItem) {
 	// if (!canChainWire(wire)) return;  // can't join a wire in some views (for now)
 
@@ -5696,23 +5706,11 @@ void SketchWidget::wireJoinSlot(Wire* wire, ConnectorItem * clickedConnectorItem
 	QLineF newLine;
 	QPointF newPos;
 	if (otherConnector == toWire->connector1()) {
-		newPos = wire->pos();
-		newLine = QLineF(QPointF(0,0), toWire->pos() - wire->pos() + toWire->line().p2());
-		b0.copy(wire->curve());
-		b1.copy(toWire->curve());
-		b0.set_endpoints(wire->line().p1(), wire->line().p2());
-		b1.set_endpoints(toWire->line().p1(), toWire->line().p2());
-		b1.translate(toWire->pos() - wire->pos());
-
+		// toWire starts at the bendpoint
+		getWireJoinCurves(wire, toWire, &newPos, &newLine, &b0, &b1);
 	}
 	else {
-		newPos = toWire->pos();
-		newLine = QLineF(QPointF(0,0), wire->pos() - toWire->pos() + wire->line().p2());
-		b0.copy(toWire->curve());
-		b1.copy(wire->curve());
-		b0.set_endpoints(toWire->line().p1(), toWire->line().p2());
-		b1.set_endpoints(wire->line().p1(), wire->line().p2());
-		b1.translate(wire->pos() - toWire->pos());
+		getWireJoinCurves(toWire, wire, &newPos, &newLine, &b0, &b1);
 	}
 	new ChangeWireCommand(this, wire->id(), wire->line(), newLine, wire->pos(), newPos, true, false, parentCommand);
 	Bezier joinBezier = b0.join(&b1);

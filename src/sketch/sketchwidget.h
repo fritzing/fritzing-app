@@ -326,6 +326,7 @@ public:
 	void testConnectors();
 	void updateWires();
 	void checkForReversedWires();
+	void getWireJoinCurves(Wire * wire1, Wire * wire2, QPointF * newPos, QLineF * newLine, Bezier * b0, Bezier * b1);
 
 protected:
 	void dragEnterEvent(QDragEnterEvent *);

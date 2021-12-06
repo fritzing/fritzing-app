@@ -1828,8 +1828,10 @@ void MainWindow::massageOutput(QString & svg, bool doMask, bool doSilk, bool doP
 	}
 	else if (doSilk) {
 		QString use = (fileName.contains("bottom")) ? maskBottom : maskTop;
-		use = TextUtils::expandAndFill(use, "white", GerberGenerator::MaskClearanceMils * 2 * dpi / 1000);
-		svg = TextUtils::mergeSvg(svg, use, "", false);
+		if (!use.isEmpty()) {
+			use = TextUtils::expandAndFill(use, "white", GerberGenerator::MaskClearanceMils * 2 * dpi / 1000);
+			svg = TextUtils::mergeSvg(svg, use, "", false);
+		}
 	}
 	else if (doMask) {
 		if (fileName.contains("bottom")) maskBottom = svg;

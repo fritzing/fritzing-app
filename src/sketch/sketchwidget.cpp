@@ -5631,13 +5631,25 @@ void SketchWidget::wireSplitSlot(Wire* wire, QPointF newPos, QPointF oldPos, con
 }
 
 void SketchWidget::getWireJoinCurves(Wire * wire1, Wire * wire2, QPointF * newPos, QLineF * newLine, Bezier * b0, Bezier * b1) {
-	*newPos = wire1->pos();
-	*newLine = QLineF(QPointF(0,0), wire2->pos() - wire1->pos() + wire2->line().p2());
-	b0->copy(wire1->curve());
-	b1->copy(wire2->curve());
-	b0->set_endpoints(wire1->line().p1(), wire1->line().p2());
-	b1->set_endpoints(wire2->line().p1(), wire2->line().p2());
-	b1->translate(wire2->pos() - wire1->pos());
+	auto dx = qAbs(wire2->pos().x() - wire1->pos().x());
+	auto dy = qAbs(wire2->pos().y() - wire1->pos().y());
+	if (dx < 0.01 && dy < 0.01) {
+		*newPos = wire1->pos() + wire1->line().p2();
+		*newLine = QLineF(QPointF(0,0), -wire1->line().p2() + wire2->line().p2());
+		b0->copy(wire1->curve());
+		b1->copy(wire2->curve());
+		b0->set_endpoints(wire1->line().p1(), -wire1->line().p2());
+		b1->set_endpoints(wire2->line().p1(), wire2->line().p2());
+		b1->translate(-wire1->line().p2());
+	} else {
+		*newPos = wire1->pos();
+		*newLine = QLineF(QPointF(0,0), wire2->pos() - wire1->pos() + wire2->line().p2());
+		b0->copy(wire1->curve());
+		b1->copy(wire2->curve());
+		b0->set_endpoints(wire1->line().p1(), wire1->line().p2());
+		b1->set_endpoints(wire2->line().p1(), wire2->line().p2());
+		b1->translate(wire2->pos() - wire1->pos());
+	}
 }
 
 void SketchWidget::wireJoinSlot(Wire* wire, ConnectorItem * clickedConnectorItem) {

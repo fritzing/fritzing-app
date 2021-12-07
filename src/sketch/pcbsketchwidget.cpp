@@ -559,6 +559,11 @@ ViewLayer::ViewLayerID PCBSketchWidget::getLabelViewLayerID(ItemBase * itemBase)
 
 	if (boardLayers() == 2) {
 		if (itemBase->viewLayerPlacement() == ViewLayer::NewBottom) return ViewLayer::Silkscreen0Label;
+	} else {
+		auto modelPart = itemBase->modelPart();
+		if (modelPart != nullptr && modelPart->flippedSMD()) {
+			return ViewLayer::Silkscreen0Label;
+		}
 	}
 
 	return ViewLayer::Silkscreen1Label;

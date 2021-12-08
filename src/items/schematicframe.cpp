@@ -169,11 +169,13 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 
 	if (milsW < templateThing.size.width()) milsW = templateThing.size.width();
 	if (milsH < templateThing.size.height()) milsH = templateThing.size.height();
-	QString svg = templateThing.svgTemplate.arg(milsW / 1000).arg(milsH / 1000).arg(milsW).arg(milsH).arg(milsW - templateThing.strokeWidth).arg(milsH - templateThing.strokeWidth);
-	svg = TextUtils::incrementTemplateString(svg, 1, milsW - templateThing.size.width(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
+	double factor = milsW / templateThing.size.width();
+	double fontSize = 71.65 / factor;
+	QString svg = templateThing.svgTemplate.arg(milsW / 1000).arg(milsH / 1000).arg(milsW).arg(milsH).arg(factor).arg(factor).arg(milsW - templateThing.strokeWidth).arg(milsH - templateThing.strokeWidth).arg(fontSize);
 	svg.replace("{", "[");
 	svg.replace("}", "]");
-	svg = TextUtils::incrementTemplateString(svg, 1, milsH - templateThing.size.height(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
+	svg.replace("[", "");
+	svg.replace("]", "");
 	QHash<QString, QString> hash;
 	Q_FOREACH (QString propp, FrameProps.keys()) {
 		hash.insert(propp, prop(propp));

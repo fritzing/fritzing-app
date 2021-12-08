@@ -425,12 +425,9 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			return;
 		}
 
-		if (image.format() != QImage::Format_RGB32 && image.format() != QImage::Format_ARGB32) {
-			image = image.convertToFormat(QImage::Format_Mono);
-		}
-
-		double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
 		if (this->m_standardizeColors) {
+			image = image.convertToFormat(QImage::Format_Mono);
+			double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
 			GroundPlaneGenerator gpg;
 			gpg.setLayerName(layerName());
 			gpg.setMinRunSize(1, 1);
@@ -447,6 +444,7 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			svg = gpg.mergeSVGs("", layerName());
 		}
 		else {
+			double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
 			svg = TextUtils::makeSVGHeader(res, res, image.width(), image.height());
 			int ix = svg.lastIndexOf(">");
 			svg.replace(ix, 1, "xmlns:xlink='http://www.w3.org/1999/xlink'>");

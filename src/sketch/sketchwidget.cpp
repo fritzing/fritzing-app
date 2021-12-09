@@ -2190,6 +2190,10 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 		dy *= gridSizeInches() * GraphicsUtils::SVGDPI;
 	}
 
+	if (this->viewFromBelow()) {
+		dx *= -1;
+	}
+
 	m_arrowTotalX += dx;
 	m_arrowTotalY += dy;
 

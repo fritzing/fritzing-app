@@ -88,12 +88,12 @@ public:
 
 public:
 	static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QTransform &, QRectF & viewBox);
+	QString vflip(const QString & svg, bool isFlipped);
+	QString makeFlipTextSvg();
 
 protected:
-	QString makeFlipTextSvg();
 	void positionTexts(QList<QDomElement> & texts);
 	void initTextThings();
-	QString vflip(const QString & svg, bool isFlipped);
 	void setInitialTransform(const QTransform &);
 	void cacheLoaded(const LayerAttributes &);
 

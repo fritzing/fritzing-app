@@ -502,7 +502,7 @@ void MainWindow::pasteAux(bool pasteInPlace)
 	QList<ModelPart *> modelParts;
 	QHash<QString, QRectF> boundingRects;
 	if (m_sketchModel->paste(m_referenceModel, itemData, modelParts, boundingRects, false)) {
-		auto * parentCommand = new QUndoCommand("Paste");
+		auto * parentCommand = new QUndoCommand("Paste"); // if you translate "Paste", you must also do so for the check in sketchwidget.cpp.
 
 		QList<SketchWidget *> sketchWidgets;
 		sketchWidgets << m_breadboardGraphicsView << m_schematicGraphicsView << m_pcbGraphicsView;

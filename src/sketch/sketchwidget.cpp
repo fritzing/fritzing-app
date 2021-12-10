@@ -392,7 +392,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 				mp->setLocalProp("width", "");		// ResizeBoardCommand won't execute if the width property is already set
 			}
 
-			if (locked) {
+			if (locked && parentCommand->text() != QString("Paste")) {
 				new MoveLockCommand(this, newID, true, true, parentCommand);
 			}
 

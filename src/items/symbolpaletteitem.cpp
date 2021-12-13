@@ -632,6 +632,7 @@ QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
 			QTransform chiefTransform = layerKinChief()->transform();      // assume chief already has rotation
 			bool isFlipped = GraphicsUtils::isFlipped(chiefTransform, rotation);
 			if (isFlipped) {
+				// Attention: This probably means that the svgs for flipped and unflipped text are created in different ways.
 				svg = schemItem->makeFlipTextSvg();
 			}
 			if (rotation >= 135 && rotation <= 225) {

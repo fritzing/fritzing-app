@@ -51,7 +51,7 @@ constexpr auto AuthorRole = Qt::UserRole + 3;
 constexpr auto IconRole = Qt::UserRole + 4;
 constexpr auto RefRole = Qt::UserRole + 5;
 constexpr auto ImageSpace = 65;
-constexpr auto TopSpace = 5;
+constexpr auto TopSpace = 1;
 
 QString WelcomeView::m_activeHeaderLabelColor = "#333";
 QString WelcomeView::m_inactiveHeaderLabelColor = "#b1b1b1";

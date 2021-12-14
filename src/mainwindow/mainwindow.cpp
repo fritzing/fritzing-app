@@ -538,6 +538,8 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	}
 
 	setMinimumSize(0,0);
+	setMinimumHeight(800);
+	setMinimumHeight(0);
 	m_tabWidget->setMinimumWidth(500);
 	m_tabWidget->setMinimumWidth(0);
 

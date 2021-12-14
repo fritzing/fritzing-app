@@ -97,6 +97,9 @@ QString cleanData(const QString & data) {
 	QDomDocument doc;
 	QStringList listItems;
 	int pos = 0;
+	QString errorMsg;
+	int errorLine;
+	int errorColumn;
 	while (pos < data.count()) {
 		QRegularExpressionMatch match;
 		int ix = data.indexOf(ListItemMatcher, pos, &match);
@@ -104,8 +107,10 @@ QString cleanData(const QString & data) {
 
 		QString listItem = match.captured(0);
 		//DebugDialog::debug("ListItem " + listItem);
-		if (doc.setContent(listItem)) {
+		if (doc.setContent(listItem, &errorMsg, &errorLine, &errorColumn)) {
 			listItems << listItem;
+		} else {
+			DebugDialog::debug(QString("Error reading data %1 %2 %3").arg(errorMsg).arg(errorLine).arg(errorColumn));
 		}
 		pos += listItem.count();
 	}
@@ -718,7 +723,7 @@ void WelcomeView::clickRecent(const QString & url) {
 }
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
-	bool blog = networkReply->url().toString().contains("blog");
+	bool blog = networkReply->url().toString().contains("recent");
 	QString prefix = networkReply->url().scheme() + "://" + networkReply->url().authority();
 	QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();

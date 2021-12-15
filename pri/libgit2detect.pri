@@ -48,6 +48,13 @@ win32 {
     }
 
     LIBS += -L$$LIBGIT2LIB -lgit2
+
+    win32-msvc* {
+        MSVC_VER=$$(VisualStudioVersion)
+        equals(MSVC_VER, 16.0) {
+            LIBS += -lWinhttp -lAdvapi32 -lCrypt32 -lRpcrt4 -lOle32
+        }
+    }
 }
 
 unix {

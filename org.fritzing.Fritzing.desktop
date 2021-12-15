@@ -14,3 +14,4 @@ Categories=Development;IDE;Electronics;
 Keywords=EDA;PCB;prototype;circuit;schematic;
 StartupNotify=true
 MimeType=application/x-fritzing-fz;application/x-fritzing-fzz;application/x-fritzing-fzp;application/x-fritzing-fzpz;application/x-fritzing-fzb;application/x-fritzing-fzbz;application/x-fritzing-fzm;
+StartupWMClass=Fritzing

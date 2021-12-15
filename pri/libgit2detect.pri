@@ -68,5 +68,4 @@ unix {
         #message("Enabled dynamic linking of libgit2")
         PKGCONFIG += libgit2
     }
-    LIBS += -lz
 }

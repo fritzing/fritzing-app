@@ -2,6 +2,9 @@
 
 message("Using fritzing quazip detect script.")
 
+SOURCES += \
+    src/zlibdummy.c \
+
 exists($$absolute_path($$PWD/../../quazip_qt5)) {
         QUAZIPPATH = $$absolute_path($$PWD/../../quazip_qt5)
         message("found quazip in $${QUAZIPPATH}")
@@ -16,7 +19,6 @@ unix:!macx {
     INCLUDEPATH += $$absolute_path($${QUAZIPPATH}/include/quazip)
     LIBS += -L$$absolute_path($${QUAZIPPATH}/lib) -lquazip1-qt5
     QMAKE_RPATHDIR += $$absolute_path($${QUAZIPPATH}/lib)
-    LIBS += -lz
 }
 
 macx {

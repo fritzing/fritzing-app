@@ -33,6 +33,7 @@ public:
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	bool canSwitchLayers();
 	void setSchematic(bool schematic);
+	virtual bool stickyEnabled();
 
 public:
 	static TraceWire * getTrace(ConnectorItem *);

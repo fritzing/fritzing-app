@@ -88,7 +88,7 @@ public:
 	void findConnectorsUnder();
 	void collectChained(QList<Wire *> &, QList<ConnectorItem *> & ends);
 	void collectWires(QList<Wire *> & wires);
-	bool stickyEnabled();
+	virtual bool stickyEnabled();
 	void setPcbPenBrush(QBrush & brush);
 	bool getRouted();
 	void setRouted(bool);

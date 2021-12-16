@@ -185,6 +185,11 @@ void TraceWire::setSchematic(bool schematic) {
 	m_viewGeometry.setSchematicTrace(schematic);
 }
 
+bool TraceWire::stickyEnabled()
+{
+	return true;
+}
+
 QHash<QString, QString> TraceWire::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys)
 {
 	QHash<QString, QString> props = ClipableWire::prepareProps(modelPart, wantDebug, keys);

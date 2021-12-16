@@ -13,7 +13,7 @@
 
 #include <QString>
 #include <QMessageBox>
-#include <math.h>
+#include <qmath.h>
 
 
 // Forward declaration, currently unused

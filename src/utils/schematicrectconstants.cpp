@@ -122,7 +122,7 @@ QString schematicPinText(const QString & id, const QString & signal, qreal x, qr
 	text += QString("<text id='label%1' x='%5' y='%2' font-family=\"%7\" stroke='none' fill='%6' text-anchor='%8' font-size='%4' >%3</text>\n")
 	        .arg(id)
 	        .arg(y)
-	        .arg(TextUtils::escapeAnd(signal))
+		.arg(signal)
 	        .arg(bigPinFontSize)
 	        .arg(x)
 			.arg(SchematicRectConstants::PinTextColor
@@ -237,19 +237,19 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	pinTextFont.setPointSizeF(bigPinFontSize * 72 / 1000.0);
 	QFontMetricsF smallFontMetrics(pinTextFont);
 	Q_FOREACH (QDomElement element, lefts) {
-		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
+		qreal w = smallFontMetrics.horizontalAdvance(element.attribute("name"));
 		if (w > leftWidth) leftWidth = w;
 	}
 	Q_FOREACH (QDomElement element, rights) {
-		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
+		qreal w = smallFontMetrics.horizontalAdvance(element.attribute("name"));
 		if (w > rightWidth) rightWidth = w;
 	}
 	Q_FOREACH (QDomElement element, powers) {
-		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
+		qreal w = smallFontMetrics.horizontalAdvance(element.attribute("name"));
 		if (w > topWidth) topWidth = w;
 	}
 	Q_FOREACH (QDomElement element, grounds) {
-		qreal w = smallFontMetrics.horizontalAdvance(getConnectorName(element));
+		qreal w = smallFontMetrics.horizontalAdvance(element.attribute("name"));
 		if (w > bottomWidth) bottomWidth = w;
 	}
 

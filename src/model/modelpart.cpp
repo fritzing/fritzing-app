@@ -271,7 +271,7 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 			if (!connector->connectorLocalName().isEmpty()) {
 				streamWriter.writeStartElement("localConnector");
 				streamWriter.writeAttribute("id", connector->connectorSharedID());
-				streamWriter.writeAttribute("name", TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(connector->connectorLocalName())));
+				streamWriter.writeAttribute("name", TextUtils::stripNonValidXMLCharacters(connector->connectorLocalName()));
 				streamWriter.writeEndElement();
 			}
 		}

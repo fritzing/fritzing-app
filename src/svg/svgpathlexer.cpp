@@ -74,7 +74,10 @@ int SVGPathLexer::lex()
 
 	QRegularExpressionMatch match(
 		TextUtils::floatingPointMatcher.match(
-			m_source, m_pos - 1, QRegularExpression::NormalMatch, QRegularExpression::AnchoredMatchOption
+			m_source,
+			m_pos - 1,
+			QRegularExpression::NormalMatch,
+			QRegularExpression::AnchoredMatchOption | QRegularExpression::DontCheckSubjectStringMatchOption
 		)
 	);
 	if (match.hasMatch()) {

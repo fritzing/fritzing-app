@@ -306,6 +306,10 @@ void DeleteItemCommand::undo()
 				}
 			}
 		}
+		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(itemBase);
+		if (infoGraphicsView != nullptr) {
+			infoGraphicsView->changePinLabels(itemBase);
+		}
 	}
 
 	BaseCommand::undo();

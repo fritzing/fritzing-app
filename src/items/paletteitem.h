@@ -105,7 +105,7 @@ public:
 	void resetKinImage(ItemBase * layerKin, InfoGraphicsView * infoGraphicsView);
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
-	virtual bool changePinLabels(bool singleRow, bool sip);
+	virtual bool changePinLabels(bool sip);
 	QStringList getPinLabels(bool & hasLocal);
 	void renamePins(const QStringList & labels);
 	void resetConnectors();

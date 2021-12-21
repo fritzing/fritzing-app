@@ -47,7 +47,7 @@ public:
 	bool hasCustomSVG();
 	PluralType isPlural();
 	void addedToScene(bool temporary);
-	bool changePinLabels(bool singleRow, bool sip);
+	bool changePinLabels(bool sip);
 
 public Q_SLOTS:
 	void chipLabelEntry();

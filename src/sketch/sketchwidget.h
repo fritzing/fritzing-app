@@ -595,8 +595,8 @@ protected Q_SLOTS:
 	void makeDeleteItemCommandPrepSlot(ItemBase * itemBase, bool foreign, QUndoCommand * parentCommand);
 	void makeDeleteItemCommandFinalSlot(ItemBase * itemBase, bool foreign, QUndoCommand * parentCommand);
 	void updatePartLabelInstanceTitleSlot(long itemID);
-	void changePinLabelsSlot(ItemBase * itemBase, bool singleRow);
-	void changePinLabels(ItemBase *, bool singleRow);
+	void changePinLabelsSlot(ItemBase * itemBase);
+	void changePinLabels(ItemBase *);
 	void collectRatsnestSlot(QList<SketchWidget *> & foreignSketchWidgets);
 	void removeRatsnestSlot(QList<struct ConnectorEdge *> & cutSet, QUndoCommand * parentCommand);
 	void deleteTemporary();

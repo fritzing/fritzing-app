@@ -804,8 +804,8 @@ void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 	succeeded = succeeded && (connect(signaller, SIGNAL(updatePartLabelInstanceTitleSignal(long)),
 	                                 slotter, SLOT(updatePartLabelInstanceTitleSlot(long))) != nullptr);
 
-	succeeded = succeeded && (connect(signaller, SIGNAL(changePinLabelsSignal(ItemBase *, bool)),
-	                                 slotter, SLOT(changePinLabelsSlot(ItemBase *, bool))) != nullptr);
+	succeeded = succeeded && (connect(signaller, SIGNAL(changePinLabelsSignal(ItemBase *)),
+					 slotter, SLOT(changePinLabelsSlot(ItemBase *))) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(collectRatsnestSignal(QList<SketchWidget *> &)),
 	                                 slotter, SLOT(collectRatsnestSlot(QList<SketchWidget *> &)),

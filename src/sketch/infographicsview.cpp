@@ -351,10 +351,9 @@ void InfoGraphicsView::triggerRotate(ItemBase *, double degrees)
 	Q_UNUSED(degrees);
 }
 
-void InfoGraphicsView::changePinLabels(ItemBase * itemBase, bool singleRow)
+void InfoGraphicsView::changePinLabels(ItemBase * itemBase)
 {
 	Q_UNUSED(itemBase);
-	Q_UNUSED(singleRow);
 }
 
 void InfoGraphicsView::renamePins(ItemBase *, const QStringList & oldLabels, const QStringList & newLabels)

@@ -394,14 +394,14 @@ QString Dip::makeBreadboardDipSvg(const QString & expectedFileName)
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 2) / 100.0).arg(repeatTs, repeatBs);
 }
 
-bool Dip::changePinLabels(bool singleRow, bool sip) {
+bool Dip::changePinLabels(bool sip) {
 	if (m_viewID != ViewLayer::SchematicView) return true;
 
 	bool hasLocal = false;
 	QStringList labels = getPinLabels(hasLocal);
 	if (labels.count() == 0) return true;
 
-
+	bool singleRow = isSingleRow(cachedConnectorItems());
 	QString svg;
 	if (singleRow) {
 		svg = MysteryPart::makeSchematicSvg(labels, sip);

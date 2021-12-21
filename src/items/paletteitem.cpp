@@ -642,7 +642,6 @@ void PaletteItem::openPinLabelDialog() {
 
 void PaletteItem::renamePins(const QStringList & labels)
 {
-	bool singleRow = isSingleRow(cachedConnectorItems());
 	QList<Connector *> sortedConnectors = sortConnectors();
 	for (int i = 0; i < labels.count(); i++) {
 		Connector * connector = sortedConnectors.at(i);
@@ -650,7 +649,7 @@ void PaletteItem::renamePins(const QStringList & labels)
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	infoGraphicsView->changePinLabels(this, singleRow);
+	infoGraphicsView->changePinLabels(this);
 }
 
 bool PaletteItem::isSingleRow(const QList<ConnectorItem *> & connectorItems) {
@@ -699,8 +698,7 @@ QList<Connector *> PaletteItem::sortConnectors(ModelPart * modelPart) {
 	return sortedConnectors;
 }
 
-bool PaletteItem::changePinLabels(bool singleRow, bool sip) {
-	Q_UNUSED(singleRow);
+bool PaletteItem::changePinLabels(bool sip) {
 	Q_UNUSED(sip);
 	if (m_viewID != ViewLayer::SchematicView) return true;
 

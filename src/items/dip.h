@@ -34,7 +34,7 @@ public:
 
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
-	bool changePinLabels(bool singleRow, bool sip);
+	bool changePinLabels(bool sip);
 	void addedToScene(bool temporary);
 
 public:

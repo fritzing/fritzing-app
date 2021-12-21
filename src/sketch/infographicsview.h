@@ -89,7 +89,7 @@ public:
 	virtual double getWireStrokeWidth(Wire *, double wireWidth);
 	virtual bool curvyWiresIndicated(Qt::KeyboardModifiers);
 	virtual void triggerRotate(ItemBase *, double degrees);
-	virtual void changePinLabels(ItemBase *, bool singleRow);
+	virtual void changePinLabels(ItemBase *);
 	virtual void renamePins(ItemBase *, const QStringList & oldLabels, const QStringList & newLabels);
 	virtual ViewGeometry::WireFlag getTraceFlag();
 	virtual void setAnyInRotation();
@@ -120,7 +120,7 @@ public Q_SLOTS:
 Q_SIGNALS:
 	void setVoltageSignal(double, bool doEmit);
 	void swapSignal(const QString & family, const QString & prop, QMap<QString, QString> & propsMap, ItemBase *);
-	void changePinLabelsSignal(ItemBase *, bool singleRow);
+	void changePinLabelsSignal(ItemBase *);
 	void setActiveWireSignal(Wire *);
 	void setActiveConnectorItemSignal(ConnectorItem *);
 	void newWireSignal(Wire *);

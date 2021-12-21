@@ -598,8 +598,7 @@ QString MysteryPart::makeBreadboardSipSvg(const QString & expectedFileName)
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 2) / 100).arg(repeats);
 }
 
-bool MysteryPart::changePinLabels(bool singleRow, bool sip) {
-	Q_UNUSED(singleRow);
+bool MysteryPart::changePinLabels(bool sip) {
 
 	if (m_viewID != ViewLayer::SchematicView) return true;
 

@@ -9089,7 +9089,7 @@ void SketchWidget::makeWiresChangeConnectionCommands(const QList<Wire *> & wires
 	}
 }
 
-void SketchWidget::changePinLabelsSlot(ItemBase * itemBase, bool singleRow)
+void SketchWidget::changePinLabelsSlot(ItemBase * itemBase)
 {
 	itemBase = this->findItem(itemBase->id());
 	if (!itemBase) return;
@@ -9099,10 +9099,10 @@ void SketchWidget::changePinLabelsSlot(ItemBase * itemBase, bool singleRow)
 	if (!paletteItem) return;
 
 	if (qobject_cast<Dip *>(itemBase)) {
-		paletteItem->changePinLabels(singleRow, true);
+		paletteItem->changePinLabels(true);
 	}
 	else if (qobject_cast<MysteryPart *>(itemBase)) {
-		paletteItem->changePinLabels(singleRow, false);
+		paletteItem->changePinLabels(false);
 	}
 	else {
 		bool hasLayout, sip;
@@ -9122,10 +9122,10 @@ void SketchWidget::changePinLabelsSlot(ItemBase * itemBase, bool singleRow)
 
 }
 
-void SketchWidget::changePinLabels(ItemBase * itemBase, bool singleRow)
+void SketchWidget::changePinLabels(ItemBase * itemBase)
 {
-	Q_EMIT changePinLabelsSignal(itemBase, singleRow);
-	changePinLabelsSlot(itemBase, singleRow);
+	Q_EMIT changePinLabelsSignal(itemBase);
+	changePinLabelsSlot(itemBase);
 }
 
 void SketchWidget::renamePins(ItemBase * itemBase, const QStringList & oldLabels, const QStringList & newLabels)

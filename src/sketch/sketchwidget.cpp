@@ -10186,7 +10186,7 @@ void SketchWidget::checkForReversedWires() {
 		QLineF line = wire->line();
 		QPointF p2 = line.p2() + p;
 		QPointF p1 = line.p1() + p;
-		QLineF newLine(p2 - p2, p1 - p2);
+		QLineF newLine(QPointF(), p1 - p2);
 
 		double totalDistance = 0;
 		double totalReverseDistance = 0;

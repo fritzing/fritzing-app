@@ -108,7 +108,7 @@ void LayerPalette::updateLayerPalette(LayerHash & viewLayers, LayerList & keys)
 
 void LayerPalette::setLayerVisibility(bool) {
 	auto * cb = qobject_cast<ViewLayerCheckBox *>(sender());
-	if (!cb) return;
+	if (cb == nullptr) return;
 
 	// want to toggle layer individually in this case
 	cb->viewLayer()->setIncludeChildLayers(false);
@@ -128,12 +128,12 @@ void LayerPalette::setHideAllLayersAction(QAction * action)
 
 void LayerPalette::setAllLayersVisible(bool vis) {
 	if (vis) {
-		if (m_showAllLayersAct) {
+		if (m_showAllLayersAct != nullptr) {
 			m_showAllLayersAct->trigger();
 		}
 	}
 	else {
-		if (m_hideAllLayersAct) {
+		if (m_hideAllLayersAct != nullptr) {
 			m_hideAllLayersAct->trigger();
 		}
 	}

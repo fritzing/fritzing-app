@@ -128,7 +128,7 @@ void SetColorDialog::selectCustom() {
 }
 
 bool SetColorDialog::isPrefsColor() {
-	if (!m_prefsCheckBox) return false;
+	if (m_prefsCheckBox == nullptr) return false;
 
 	return m_prefsCheckBox->isChecked();
 }

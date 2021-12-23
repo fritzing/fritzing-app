@@ -37,7 +37,7 @@ void ItemDrag::__dragIsDone() {
 }
 
 void ItemDrag::cleanup() {
-	if (Singleton) {
+	if (Singleton != nullptr) {
 		delete Singleton;
 		Singleton = nullptr;
 	}

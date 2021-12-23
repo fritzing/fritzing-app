@@ -229,7 +229,7 @@ void AboutBox::initBuildType(const QString & buildType) {
 
 void AboutBox::hideAbout() {
 	//DebugDialog::debug("the AboutBox gets a hide action triggered");
-	if (Singleton) {
+	if (Singleton != nullptr) {
 		Singleton->hide();
 	}
 }
@@ -249,7 +249,7 @@ void AboutBox::showAbout() {
 void AboutBox::closeAbout() {
 	//DebugDialog::debug("the AboutBox gets a close action triggered");
 	// Note: not every close triggers this function. we better listen to closeEvent
-	if (Singleton) {
+	if (Singleton != nullptr) {
 		Singleton->close();
 	}
 }

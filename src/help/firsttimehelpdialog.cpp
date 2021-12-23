@@ -54,7 +54,7 @@ FirstTimeHelpDialog::~FirstTimeHelpDialog()
 
 void FirstTimeHelpDialog::setViewID(ViewLayer::ViewID viewID) {
 	TheViewID = viewID;
-	if (Singleton) {
+	if (Singleton != nullptr) {
 		Singleton->m_label->setText(TheTexts.value(TheViewID, ""));
 	}
 }
@@ -71,7 +71,7 @@ void FirstTimeHelpDialog::hideFirstTimeHelp() {
 }
 
 void FirstTimeHelpDialog::cleanup() {
-	if (Singleton) {
+	if (Singleton != nullptr) {
 		delete Singleton;
 		Singleton = nullptr;
 	}

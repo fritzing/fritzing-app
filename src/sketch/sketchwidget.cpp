@@ -10228,7 +10228,7 @@ void SketchWidget::checkForReversedWires() {
 			newBezier.set_cp0(cp1 - p2);
 			newBezier.set_cp1(cp0 - p2);
 		}
-		wire->setLineAnd(QLineF(p2 - p2, p1 - p2), p2, true);
+		wire->setLineAnd(QLineF(QPointF(), p1 - p2), p2, true);
 		wire->setConnector0Rect();
 		if (isCurved) {
 			wire->changeCurve(&newBezier);

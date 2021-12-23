@@ -27,8 +27,3 @@ void ExportParametersDialog::setValue(int value)
 {
     ui->dpiSpinBox->setValue(value);
 }
-
-void ExportParametersDialog::on_dpiSpinBox_valueChanged(int arg1)
-{
-    m_dpi = arg1;
-}

@@ -180,7 +180,7 @@ TipsAndTricks::~TipsAndTricks()
 }
 
 void TipsAndTricks::hideTipsAndTricks() {
-	if (Singleton) {
+	if (Singleton != nullptr) {
 		Singleton->hide();
 	}
 }
@@ -194,7 +194,7 @@ void TipsAndTricks::showTipsAndTricks() {
 }
 
 void TipsAndTricks::cleanup() {
-	if (Singleton) {
+	if (Singleton != nullptr) {
 		delete Singleton;
 		Singleton = nullptr;
 	}

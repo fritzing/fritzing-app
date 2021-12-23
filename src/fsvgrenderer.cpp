@@ -213,7 +213,7 @@ QPixmap * FSvgRenderer::getPixmap(QSvgRenderer * renderer, QSize size)
 	// preserve aspect ratio
 	QSizeF def = renderer->defaultSize();
 	auto * frenderer = qobject_cast<FSvgRenderer *>(renderer);
-	if (frenderer) {
+	if (frenderer != nullptr) {
 		def = frenderer->defaultSizeF();
 	}
 	double newW = size.width();
@@ -245,7 +245,7 @@ QSizeF FSvgRenderer::parseForWidthAndHeight(QXmlStreamReader & xml)
 	QIODevice * device = xml.device();
 	DebugDialog::debug("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	DebugDialog::debug("bad width and/or bad height in svg:");
-	if (device) {
+	if (device != nullptr) {
 		device->reset();
 		QString string(device->readAll());
 		DebugDialog::debug(string);
@@ -315,7 +315,7 @@ void FSvgRenderer::initLegInfoAux(QDomElement & element, const LoadInfo & loadIn
 			element.setTagName("g");			// don't want this element to actually be drawn
 			gotOne = true;
 			ConnectorInfo * connectorInfo = m_connectorInfoHash.value(loadInfo.connectorIDs.at(ix), NULL);
-			if (connectorInfo) {
+			if (connectorInfo != nullptr) {
 				//QString temp;
 				//QTextStream stream(&temp);
 				//element.save(stream, 0);
@@ -370,7 +370,7 @@ void FSvgRenderer::initTerminalInfoAux(QDomElement & element, const LoadInfo & l
 		int ix = loadInfo.terminalIDs.indexOf(id);
 		if (ix >= 0) {
 			ConnectorInfo * connectorInfo = m_connectorInfoHash.value(loadInfo.connectorIDs.at(ix), NULL);
-			if (connectorInfo) {
+			if (connectorInfo != nullptr) {
 				connectorInfo->terminalMatrix = TextUtils::elementToTransform(element);
 			}
 			// don't return here, might miss other terminal ids
@@ -672,7 +672,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 	QTransform elementMatrix = this->transformForElement(connectorID);
 	QRectF r1 = elementMatrix.mapRect(bounds);
 
-	if (connectorInfo) {
+	if (connectorInfo != nullptr) {
 		if (connectorInfo->gotCircle) {
 			QLineF l(0,0,connectorInfo->radius, 0);
 			QLineF lm = elementMatrix.map(l);
@@ -818,7 +818,7 @@ QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors(ViewLayer::ViewLayerPlaceme
 		QRectF viewBox = this->viewBoxF();
 
 		ConnectorInfo * connectorInfo = m_nonConnectorInfoHash.value(nonConnectorID, NULL);
-		if (connectorInfo && connectorInfo->gotCircle) {
+		if ((connectorInfo != nullptr) && connectorInfo->gotCircle) {
 			svgIdLayer->m_radius = connectorInfo->radius * defaultSizeF.width() / viewBox.width();
 			svgIdLayer->m_strokeWidth = connectorInfo->strokeWidth * defaultSizeF.width() / viewBox.width();
 			//bounds = connectorInfo->cbounds;

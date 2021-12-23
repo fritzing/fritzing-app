@@ -589,7 +589,7 @@ FApplication::~FApplication(void)
 
 	clearModels();
 
-	if (m_updateDialog) {
+	if (m_updateDialog != nullptr) {
 		delete m_updateDialog;
 	}
 
@@ -617,7 +617,7 @@ FApplication::~FApplication(void)
 }
 
 void FApplication::clearModels() {
-	if (m_referenceModel) {
+	if (m_referenceModel != nullptr) {
 		m_referenceModel->clearPartHash();
 		delete m_referenceModel;
 	}
@@ -721,7 +721,7 @@ bool FApplication::findTranslator(const QString & translationsPath) {
 	}
 
 	bool loaded = m_translator.load(QString("fritzing_") + suffix.toLower(), translationsPath);
-	DebugDialog::debug(QString("translation %1 loaded %2 from %3").arg(suffix).arg(loaded).arg(translationsPath));
+	DebugDialog::debug(QString("translation %1 loaded %2 from %3").arg(suffix).arg(static_cast<int>(loaded)).arg(translationsPath));
 	if (loaded) {
 		QApplication::installTranslator(&m_translator);
 	}
@@ -811,7 +811,7 @@ int FApplication::serviceStartup() {
 		initService();
 		{
 			MainWindow * sketch = MainWindow::newMainWindow(m_referenceModel, "", true, true, -1);
-			if (sketch) {
+			if (sketch != nullptr) {
 				sketch->show();
 				sketch->clearFileProgressDialog();
 			}
@@ -1356,7 +1356,7 @@ void FApplication::updatePrefs(PrefsDialog & prefsDialog)
 			MainWindow::setAutosavePeriod(hash.value(key).toInt());
 		}
 		else if (key.compare("autosaveEnabled") == 0) {
-			MainWindow::setAutosaveEnabled(hash.value(key).toInt());
+			MainWindow::setAutosaveEnabled(hash.value(key).toInt() != 0);
 		}
 		else if (key.contains("curvy", Qt::CaseInsensitive)) {
 			Q_FOREACH (MainWindow * mainWindow, mainWindows) {
@@ -1459,7 +1459,7 @@ void FApplication::enableCheckUpdates(bool enabled)
 	//DebugDialog::debug("before enable check updates");
 	Q_FOREACH (QWidget *widget, QApplication::topLevelWidgets()) {
 		auto *mainWindow = qobject_cast<MainWindow *>(widget);
-		if (mainWindow) {
+		if (mainWindow != nullptr) {
 			mainWindow->enableCheckUpdates(enabled);
 		}
 	}
@@ -1509,12 +1509,12 @@ void FApplication::updateActivation() {
 	//DebugDialog::debug(QString("last:%1, new:%2").arg((long) prior, 0, 16).arg((long) m_lastTopmostWindow.data(), 0, 16));
 
 	auto * priorMainWindow = qobject_cast<MainWindow *>(prior);
-	if (priorMainWindow) {
+	if (priorMainWindow != nullptr) {
 		priorMainWindow->saveDocks();
 	}
 
 	auto * lastTopmostMainWindow = qobject_cast<MainWindow *>(m_lastTopmostWindow);
-	if (lastTopmostMainWindow) {
+	if (lastTopmostMainWindow != nullptr) {
 		lastTopmostMainWindow->restoreDocks();
 		//DebugDialog::debug("restoring active window");
 	}
@@ -1525,7 +1525,7 @@ void FApplication::updateActivation() {
 
 void FApplication::topLevelWidgetDestroyed(QObject * object) {
 	QWidget * widget = qobject_cast<QWidget *>(object);
-	if (widget) {
+	if (widget != nullptr) {
 		m_orderedTopLevelWidgets.removeOne(widget);
 	}
 }
@@ -1553,7 +1553,7 @@ void FApplication::closeAllWindows2() {
 
 	bool did_close = true;
 	QWidget *w;
-	while((w = QApplication::activeModalWidget()) && did_close) {
+	while(((w = QApplication::activeModalWidget()) != nullptr) && did_close) {
 		if(!w->isVisible())
 			break;
 		did_close = w->close();
@@ -1684,7 +1684,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
 	if (sketchesToLoad.isEmpty()) {
 		DebugDialog::debug(QString("create empty sketch"));
 		newBlankSketch = MainWindow::newMainWindow(m_referenceModel, "", true, true, -1);
-		if (newBlankSketch) {
+		if (newBlankSketch != nullptr) {
 			// make sure to start an empty sketch with a board
 			newBlankSketch->addDefaultParts();   // do this before call to show()
 			sketchesToLoad << newBlankSketch;
@@ -1700,7 +1700,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
 		sketch->clearFileProgressDialog();
 	}
 
-	if (newBlankSketch) {
+	if (newBlankSketch != nullptr) {
 		newBlankSketch->hideTempPartsBin();
 		// new empty sketch defaults to welcome view
 		newBlankSketch->showWelcomeView();
@@ -1801,7 +1801,7 @@ QList<MainWindow *> FApplication::orderedTopLevelMainWindows() {
 	QList<MainWindow *> mainWindows;
 	Q_FOREACH (QWidget * widget, m_orderedTopLevelWidgets) {
 		auto * mainWindow = qobject_cast<MainWindow *>(widget);
-		if (mainWindow) mainWindows.append(mainWindow);
+		if (mainWindow != nullptr) mainWindows.append(mainWindow);
 	}
 	return mainWindows;
 }
@@ -2042,7 +2042,7 @@ void FApplication::regenerateDatabaseFinished() {
 			QMessageBox::warning(nullptr, QObject::tr("Regenerate database failed"), thread->error());
 		}
 
-		if (progressDialog) {
+		if (progressDialog != nullptr) {
 			thread->progressDialog()->close();
 			thread->progressDialog()->deleteLater();
 		}

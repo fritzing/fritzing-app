@@ -843,7 +843,7 @@ void SketchWidget::checkSticky(long id, bool doEmit, bool checkCurrent, CheckSti
 	}
 
 	if (doEmit) {
-		checkStickySignal(id, false, false, checkStickyCommand);
+		Q_EMIT checkStickySignal(id, false, false, checkStickyCommand);
 	}
 }
 

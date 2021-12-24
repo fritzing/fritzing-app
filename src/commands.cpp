@@ -299,16 +299,19 @@ void DeleteItemCommand::undo()
 	if (m_localConnectors != nullptr && itemBase != nullptr) {
 		auto * modelPart = itemBase->modelPart();
 		if (modelPart != nullptr) {
-			for (auto id : m_localConnectors->keys()) {
-				auto * connectorItem = itemBase->findConnectorItemWithSharedID(id);
-				if (connectorItem != nullptr) {
-					connectorItem->connector()->setConnectorLocalName(m_localConnectors->value(id));
+			QString value = modelPart->properties().value("editable pin labels", "");
+			if (value.compare("true") == 0) {
+				for (auto id : m_localConnectors->keys()) {
+					auto * connectorItem = itemBase->findConnectorItemWithSharedID(id);
+					if (connectorItem != nullptr) {
+						connectorItem->connector()->setConnectorLocalName(m_localConnectors->value(id));
+					}
+				}
+				InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(itemBase);
+				if (infoGraphicsView != nullptr) {
+					infoGraphicsView->changePinLabels(itemBase);
 				}
 			}
-		}
-		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(itemBase);
-		if (infoGraphicsView != nullptr) {
-			infoGraphicsView->changePinLabels(itemBase);
 		}
 	}
 

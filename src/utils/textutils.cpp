@@ -131,7 +131,7 @@ bool TextUtils::removeFontFamilySingleQuotes(QString &fileContent) {
 		fileContent.replace(wrongFF,fixedFF);
 	}
 
-	return wrongFontFamilies.size() > 0;
+	return !wrongFontFamilies.empty();
 }
 
 bool fixUnavailableFontFamilies(QString &fileContent, const QString & destFont) {
@@ -145,7 +145,7 @@ bool fixUnavailableFontFamilies(QString &fileContent, const QString & destFont) 
 		fileContent.replace(oldF,newF);
 	}
 
-	return fixedFonts.size() > 0;
+	return !fixedFonts.empty();
 }
 
 QString  makeDashString(bool dashed, const QVector<qreal> & pattern, double dpi, double printerScale)

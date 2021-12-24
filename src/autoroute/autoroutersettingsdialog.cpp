@@ -179,7 +179,7 @@ bool AutorouterSettingsDialog::initProductionType()
 			QRadioButton * button = nullptr;
 			if (name.contains("home", Qt::CaseInsensitive)) button = m_homebrewButton;
 			else if (name.contains("standard", Qt::CaseInsensitive)) button = m_professionalButton;
-			if (button) {
+			if (button != nullptr) {
 				button->setProperty("ringthickness", ringThickness);
 				button->setProperty("holesize", holeSize);
 				double krt = TextUtils::convertToInches(ringThickness);

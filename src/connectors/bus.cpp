@@ -34,7 +34,7 @@ Bus::Bus(BusShared * busShared, ModelPart * modelPart)
 }
 
 const QString & Bus::id() const noexcept {
-	if (!m_busShared) return ___emptyString___;
+	if (m_busShared == nullptr) return ___emptyString___;
 	return m_busShared->id();
 }
 

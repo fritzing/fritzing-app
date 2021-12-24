@@ -92,7 +92,7 @@ int Checker::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
 		if (connectorItem == NULL) continue;
 		if (!connectorItem->attachedTo()->isEverVisible()) continue;
 
-		if (connectorItem->isPath() && connectorItem->getCrossLayerConnectorItem()) {  // && connectorItem->radius() == 0
+		if (connectorItem->isPath() && (connectorItem->getCrossLayerConnectorItem() != nullptr)) {  // && connectorItem->radius() == 0
 			connectorItem->debugInfo("possible donut");
 			connectorItem->attachedTo()->debugInfo("\t");
 			donuts << connectorItem;

@@ -136,7 +136,7 @@ ZoomSlider::ZoomSlider(int maxValue, QWidget * parent) : QFrame(parent)
 	// because the status bar layout is privileged for the message text
 
 	m_firstTime = true;
-	if (ZoomFactors.size() == 0) {
+	if (ZoomFactors.empty()) {
 		loadFactors();
 	}
 

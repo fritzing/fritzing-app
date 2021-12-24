@@ -75,7 +75,7 @@ const QString & Connector::connectorNameFromType(ConnectorType type) {
 }
 
 Connector::ConnectorType Connector::connectorType() const {
-	if (m_connectorShared) {
+	if (m_connectorShared != nullptr) {
 		return m_connectorShared->connectorType();
 	}
 
@@ -191,13 +191,13 @@ bool Connector::connectionIsAllowed(Connector* that)
 }
 
 const QString & Connector::connectorSharedID() const {
-	if (!m_connectorShared) return ___emptyString___;
+	if (m_connectorShared == nullptr) return ___emptyString___;
 
 	return m_connectorShared->id();
 }
 
 const QString & Connector::connectorSharedName() const {
-	if (!m_connectorShared) return ___emptyString___;
+	if (m_connectorShared == nullptr) return ___emptyString___;
 
 	if (!m_connectorLocalName.isEmpty()) {
 		return m_connectorLocalName;
@@ -207,25 +207,25 @@ const QString & Connector::connectorSharedName() const {
 }
 
 const QString & Connector::connectorSharedDescription() const {
-	if (!m_connectorShared) return ___emptyString___;
+	if (m_connectorShared == nullptr) return ___emptyString___;
 
 	return m_connectorShared->description();
 }
 
 const QString & Connector::connectorSharedReplacedby() const {
-	if (!m_connectorShared) return ___emptyString___;
+	if (m_connectorShared == nullptr) return ___emptyString___;
 
 	return m_connectorShared->replacedby();
 }
 
 ErcData * Connector::connectorSharedErcData() {
-	if (!m_connectorShared) return nullptr;
+	if (m_connectorShared == nullptr) return nullptr;
 
 	return m_connectorShared->ercData();
 }
 
 const QString & Connector::busID() {
-	if (!m_bus) return ___emptyString___;
+	if (m_bus == nullptr) return ___emptyString___;
 
 	return m_bus->id();
 }
@@ -240,19 +240,19 @@ void Connector::setBus(Bus * bus) {
 
 void Connector::unprocess(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
 	SvgIdLayer * svgIdLayer = m_connectorShared->fullPinInfo(viewID, viewLayerID);
-	if (svgIdLayer) {
+	if (svgIdLayer != nullptr) {
 		svgIdLayer->unprocess();
 	}
 }
 
 SvgIdLayer * Connector::fullPinInfo(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
-	if (!m_connectorShared) return nullptr;
+	if (m_connectorShared == nullptr) return nullptr;
 
 	return m_connectorShared->fullPinInfo(viewID, viewLayerID);
 }
 
 long Connector::modelIndex() {
-	if (m_modelPart) return m_modelPart->modelIndex();
+	if (m_modelPart != nullptr) return m_modelPart->modelIndex();
 
 	DebugDialog::debug(QString("saving bus connector item: how is this supposed to work?"));
 	return 0;
@@ -272,13 +272,13 @@ QList< QPointer<ConnectorItem> > Connector::viewItems() {
 }
 
 const QString & Connector::legID(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
-	if (m_connectorShared) return m_connectorShared->legID(viewID, viewLayerID);
+	if (m_connectorShared != nullptr) return m_connectorShared->legID(viewID, viewLayerID);
 
 	return ___emptyString___;
 }
 
 void Connector::setConnectorLocalName(const QString & name) {
-	if (m_connectorShared && name.compare(m_connectorShared->sharedName()) == 0) {
+	if ((m_connectorShared != nullptr) && name.compare(m_connectorShared->sharedName()) == 0) {
 		m_connectorLocalName.clear();
 		return;
 	}
@@ -291,12 +291,12 @@ const QString & Connector::connectorLocalName() {
 }
 
 const QList<SvgIdLayer *> Connector::svgIdLayers() const {
-	if (m_connectorShared) return m_connectorShared->svgIdLayers();
+	if (m_connectorShared != nullptr) return m_connectorShared->svgIdLayers();
 
 	return EmptySvgIdLayerList;
 }
 
 void Connector::addPin(ViewLayer::ViewID viewID, const QString & svgId, ViewLayer::ViewLayerID viewLayerId, const QString & terminalId, const QString & legId, bool hybrid)
 {
-	if (m_connectorShared) m_connectorShared->addPin(viewID, svgId, viewLayerId, terminalId, legId, hybrid);
+	if (m_connectorShared != nullptr) m_connectorShared->addPin(viewID, svgId, viewLayerId, terminalId, legId, hybrid);
 }

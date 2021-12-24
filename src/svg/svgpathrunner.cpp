@@ -25,7 +25,7 @@ QHash<QChar, PathCommand *> SVGPathRunner::pathCommands;
 
 SVGPathRunner::SVGPathRunner()
 {
-	if (pathCommands.size() == 0) {
+	if (pathCommands.empty()) {
 		initStates();
 	}
 }

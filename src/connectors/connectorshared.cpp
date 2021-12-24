@@ -74,7 +74,7 @@ ConnectorShared::~ConnectorShared() {
 		delete svgIdLayer;
 	}
 	m_pins.clear();
-	if (m_ercData) {
+	if (m_ercData != nullptr) {
 		delete m_ercData;
 	}
 }

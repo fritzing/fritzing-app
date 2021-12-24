@@ -135,17 +135,17 @@ void NonConnectorItem::setInactive(bool inactivate) {
 }
 
 long NonConnectorItem::attachedToID() {
-	if (!attachedTo()) return -1;
+	if (attachedTo() == nullptr) return -1;
 	return attachedTo()->id();
 }
 
 const QString & NonConnectorItem::attachedToTitle() {
-	if (!attachedTo()) return ___emptyString___;
+	if (attachedTo() == nullptr) return ___emptyString___;
 	return attachedTo()->title();
 }
 
 const QString & NonConnectorItem::attachedToInstanceTitle() {
-	if (!attachedTo()) return ___emptyString___; 
+	if (attachedTo() == nullptr) return ___emptyString___; 
 	return attachedTo()->instanceTitle();
 }
 
@@ -183,6 +183,6 @@ void NonConnectorItem::setShape(QPainterPath & pp) {
 }
 
 int NonConnectorItem::attachedToItemType() {
-	if (!m_attachedTo) return ModelPart::Unknown;
+	if (m_attachedTo == nullptr) return ModelPart::Unknown;
 	return m_attachedTo->itemType();
 }

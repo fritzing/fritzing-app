@@ -82,7 +82,7 @@ DebugDialog::DebugDialog(QWidget *parent)
 
 DebugDialog::~DebugDialog()
 {
-	if (m_textEdit) {
+	if (m_textEdit != nullptr) {
 		delete m_textEdit;
 	}
 }
@@ -162,7 +162,7 @@ void DebugDialog::debug(QString message, DebugLevel debugLevel, QObject * ancest
 }
 
 void DebugDialog::hideDebug() {
-	if (singleton) {
+	if (singleton != nullptr) {
 		singleton->hide();
 	}
 }
@@ -176,7 +176,7 @@ void DebugDialog::showDebug() {
 }
 
 void DebugDialog::closeDebug() {
-	if (singleton) {
+	if (singleton != nullptr) {
 		singleton->close();
 	}
 }
@@ -193,7 +193,7 @@ bool DebugDialog::connectToBroadcast(QObject * receiver, const char* slot) {
 		new DebugDialog();
 	}
 
-	return connect(singleton, SIGNAL(debugBroadcast(const QString &, QObject *)), receiver, slot );
+	return connect(singleton, SIGNAL(debugBroadcast(const QString &, QObject *)), receiver, slot ) != nullptr;
 }
 
 void DebugDialog::setDebugLevel(DebugLevel debugLevel) {
@@ -206,7 +206,7 @@ void DebugDialog::setDebugLevel(DebugLevel debugLevel) {
 }
 
 void DebugDialog::cleanup() {
-	if (singleton) {
+	if (singleton != nullptr) {
 		delete singleton;
 		singleton = nullptr;
 	}

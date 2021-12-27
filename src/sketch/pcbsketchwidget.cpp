@@ -1274,7 +1274,7 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 			board->sceneBoundingRect().contains(newItem->sceneBoundingRect());
 
 			QPointF dir(1, 0);
-			while (getCollidingItems(newItem, board).size() > 0) {
+			while (!getCollidingItems(newItem, board).empty()) {
 				r.setX(r.x() + dir.x() * newWidth);
 				r.setY(r.y() + dir.y() * newHeight);
 				kinChief->setPos(r.topLeft());
@@ -1289,7 +1289,7 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 					}
 				}
 			}
-			if ((!board->sceneBoundingRect().contains(newItem->sceneBoundingRect())) || getCollidingItems(newItem, board).size() > 0) {
+			if ((!board->sceneBoundingRect().contains(newItem->sceneBoundingRect())) || !getCollidingItems(newItem, board).empty()) {
 				DebugDialog::debug(QString("reset because out of board"));
 				if (rotated) {
 					kinChief->rotateItem(-90, false);

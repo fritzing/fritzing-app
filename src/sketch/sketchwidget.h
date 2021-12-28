@@ -109,7 +109,7 @@ public:
 	void rotateItemForCommand(long id, double degrees);
 	void transformItem(long id, const QTransform &);
 	void flipItemForCommand(long id, Qt::Orientations orientation);
-	void selectItem(long id, bool state, bool updateInfoView, bool doEmit);
+	void selectItemForCommand(long id, bool state, bool updateInfoView, bool doEmit);
 	void selectItem(ItemBase * itemBase);
 	void selectItems(QList<ItemBase *>);
 	void selectItemsWithModuleID(ModelPart *);
@@ -118,7 +118,7 @@ public:
 	void changeWireForCommand(long fromID, QLineF line, QPointF pos, bool updateConnections, bool updateRatsnest);
 	void changeLegForCommand(long fromID, const QString & connectorID, const QPolygonF &, bool relative, const QString & why);
 	void recalcLegForCommand(long fromID, const QString & connectorID, const QPolygonF &, bool relative, bool active, const QString & why);
-	void rotateLeg(long fromID, const QString & connectorID, const QPolygonF &, bool active);
+	void rotateLegForCommand(long fromID, const QString & connectorID, const QPolygonF &, bool active);
 	void cut();
 	void copy();
 	void setReferenceModel(class ReferenceModel *referenceModel);
@@ -266,7 +266,7 @@ public:
 	virtual ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
 	void collectAllNets(QHash<class ConnectorItem *, int> & indexer, QList< QList<class ConnectorItem *>* > & allPartConnectorItems, bool includeSingletons, bool bothSides);
 	virtual bool routeBothSides();
-	virtual void changeLayer(long id, double z, ViewLayer::ViewLayerID viewLayerID);
+	virtual void changeLayerForCommand(long id, double z, ViewLayer::ViewLayerID viewLayerID);
 	void ratsnestConnect(ConnectorItem * connectorItem, bool connect);
 	void ratsnestConnect(ItemBase *, bool connect);
 	void ratsnestConnect(ConnectorItem * c1, ConnectorItem * c2, bool connect, bool wait);
@@ -284,10 +284,10 @@ public:
 	void prepLegBendpointChange(ConnectorItem * from, int oldCount, int newCount, int index, QPointF pos, const class Bezier *, const class Bezier *, const class Bezier *, bool triggerFirstTime);
 	void prepLegSelection(ItemBase *);
 	void changeWireCurveForCommand(long id, const Bezier *, bool autoroutable);
-	void changeLegCurve(long id, const QString & connectorID, int index, const Bezier *);
-	void addLegBendpoint(long id, const QString & connectorID, int index, QPointF, const class Bezier *, const class Bezier *);
-	void removeLegBendpoint(long id, const QString & connectorID, int index, const class Bezier *);
-	void moveLegBendpoint(long id, const QString & connectorID, int index, QPointF);
+	void changeLegCurveForCommand(long id, const QString & connectorID, int index, const Bezier *);
+	void addLegBendpointForCommand(long id, const QString & connectorID, int index, QPointF, const class Bezier *, const class Bezier *);
+	void removeLegBendpointForCommand(long id, const QString & connectorID, int index, const class Bezier *);
+	void moveLegBendpointForCommand(long id, const QString & connectorID, int index, QPointF);
 	bool curvyWires();
 	void setCurvyWires(bool);
 	bool curvyWiresIndicated(Qt::KeyboardModifiers);

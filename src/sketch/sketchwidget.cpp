@@ -561,7 +561,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 					new ChangeLegCurveCommand(this, id, fromConnectorID, bIndex, &bezier, &bezier, parentCommand);
 				}
 				else {
-					changeLegCurve(id, fromConnectorID, bIndex, &bezier);
+					changeLegCurveForCommand(id, fromConnectorID, bIndex, &bezier);
 				}
 			}
 			bElement = bElement.nextSiblingElement("bezier");
@@ -1473,7 +1473,7 @@ void SketchWidget::changeWireForCommand(long fromID, QLineF line, QPointF pos, b
 	}
 }
 
-void SketchWidget::rotateLeg(long fromID, const QString & fromConnectorID, const QPolygonF & leg, bool active)
+void SketchWidget::rotateLegForCommand(long fromID, const QString & fromConnectorID, const QPolygonF & leg, bool active)
 {
 	ItemBase * fromItem = findItem(fromID);
 	if (!fromItem) {
@@ -1526,7 +1526,7 @@ void SketchWidget::changeLegAux(long fromID, const QString & fromConnectorID, co
 	fromItem->updateConnections(fromConnectorItem, false, already);
 }
 
-void SketchWidget::selectItem(long id, bool state, bool updateInfoView, bool doEmit) {
+void SketchWidget::selectItemForCommand(long id, bool state, bool updateInfoView, bool doEmit) {
 	this->clearHoldingSelectItem();
 	ItemBase * item = findItem(id);
 	if (item) {
@@ -8627,7 +8627,7 @@ void SketchWidget::copyBoundingRectsSlot(QHash<QString, QRectF> & boundingRects)
 	boundingRects.insert(m_viewName, itemsBoundingRect);
 }
 
-void SketchWidget::changeLayer(long id, double z, ViewLayer::ViewLayerID viewLayerID) {
+void SketchWidget::changeLayerForCommand(long id, double z, ViewLayer::ViewLayerID viewLayerID) {
 	Q_UNUSED(id);
 	Q_UNUSED(z);
 	Q_UNUSED(viewLayerID);
@@ -8961,7 +8961,7 @@ void SketchWidget::changeWireCurveForCommand(long id, const Bezier * bezier, boo
 }
 
 
-void SketchWidget::changeLegCurve(long id, const QString & connectorID, int index, const Bezier * bezier) {
+void SketchWidget::changeLegCurveForCommand(long id, const QString & connectorID, int index, const Bezier * bezier) {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;
 
@@ -8971,7 +8971,7 @@ void SketchWidget::changeLegCurve(long id, const QString & connectorID, int inde
 	connectorItem->changeLegCurve(index, bezier);
 }
 
-void SketchWidget::addLegBendpoint(long id, const QString & connectorID, int index, QPointF p, const class Bezier * bezierLeft, const class Bezier * bezierRight)
+void SketchWidget::addLegBendpointForCommand(long id, const QString & connectorID, int index, QPointF p, const class Bezier * bezierLeft, const class Bezier * bezierRight)
 {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;
@@ -8982,7 +8982,7 @@ void SketchWidget::addLegBendpoint(long id, const QString & connectorID, int ind
 	connectorItem->addLegBendpoint(index, p, bezierLeft, bezierRight);
 }
 
-void SketchWidget::removeLegBendpoint(long id, const QString & connectorID, int index, const class Bezier * bezierCombined)
+void SketchWidget::removeLegBendpointForCommand(long id, const QString & connectorID, int index, const class Bezier * bezierCombined)
 {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;
@@ -8993,7 +8993,7 @@ void SketchWidget::removeLegBendpoint(long id, const QString & connectorID, int 
 	connectorItem->removeLegBendpoint(index, bezierCombined);
 }
 
-void SketchWidget::moveLegBendpoint(long id, const QString & connectorID, int index, QPointF p)
+void SketchWidget::moveLegBendpointForCommand(long id, const QString & connectorID, int index, QPointF p)
 {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;
@@ -9465,7 +9465,7 @@ void SketchWidget::removeDragWire() {
 	this->scene()->removeItem(m_connectorDragWire);
 }
 
-void SketchWidget::selectItem(ItemBase * itemBase) {
+void SketchWidget::selectItemForCommand(ItemBase * itemBase) {
 	QList<ItemBase *> itemBases;
 	itemBases << itemBase;
 	selectItems(itemBases);

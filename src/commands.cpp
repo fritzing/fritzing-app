@@ -757,7 +757,7 @@ MoveLegBendpointCommand::MoveLegBendpointCommand(SketchWidget* sketchWidget, lon
 void MoveLegBendpointCommand::undo()
 {
 	if (!m_redoOnly) {
-		m_sketchWidget->moveLegBendpoint(m_fromID, m_fromConnectorID, m_index, m_oldPos);
+		m_sketchWidget->moveLegBendpointForCommand(m_fromID, m_fromConnectorID, m_index, m_oldPos);
 	}
 	SimulationCommand::undo();
 }
@@ -765,7 +765,7 @@ void MoveLegBendpointCommand::undo()
 void MoveLegBendpointCommand::redo()
 {
 	if (!m_undoOnly) {
-		m_sketchWidget->moveLegBendpoint(m_fromID, m_fromConnectorID, m_index, m_newPos);
+		m_sketchWidget->moveLegBendpointForCommand(m_fromID, m_fromConnectorID, m_index, m_newPos);
 	}
 	SimulationCommand::redo();
 }
@@ -808,7 +808,7 @@ ChangeLegCurveCommand::ChangeLegCurveCommand(SketchWidget* sketchWidget, long fr
 
 void ChangeLegCurveCommand::undo()
 {
-	m_sketchWidget->changeLegCurve(m_fromID, m_fromConnectorID, m_index,  m_oldBezier);
+	m_sketchWidget->changeLegCurveForCommand(m_fromID, m_fromConnectorID, m_index,  m_oldBezier);
 	SimulationCommand::undo();
 }
 
@@ -818,7 +818,7 @@ void ChangeLegCurveCommand::redo()
 		m_skipFirstRedo = false;
 	}
 	else if (!m_undoOnly) {
-		m_sketchWidget->changeLegCurve(m_fromID, m_fromConnectorID, m_index, m_newBezier);
+		m_sketchWidget->changeLegCurveForCommand(m_fromID, m_fromConnectorID, m_index, m_newBezier);
 	}
 	SimulationCommand::redo();
 }
@@ -876,10 +876,10 @@ ChangeLegBendpointCommand::ChangeLegBendpointCommand(SketchWidget* sketchWidget,
 void ChangeLegBendpointCommand::undo()
 {
 	if (m_newCount < m_oldCount) {
-		m_sketchWidget->addLegBendpoint(m_fromID, m_fromConnectorID, m_index, m_pos, m_bezier0, m_bezier1);
+		m_sketchWidget->addLegBendpointForCommand(m_fromID, m_fromConnectorID, m_index, m_pos, m_bezier0, m_bezier1);
 	}
 	else {
-		m_sketchWidget->removeLegBendpoint(m_fromID, m_fromConnectorID, m_index, m_bezier0);
+		m_sketchWidget->removeLegBendpointForCommand(m_fromID, m_fromConnectorID, m_index, m_bezier0);
 	}
 	BaseCommand::undo();
 }
@@ -891,10 +891,10 @@ void ChangeLegBendpointCommand::redo()
 	}
 	else {
 		if (m_newCount > m_oldCount) {
-			m_sketchWidget->addLegBendpoint(m_fromID, m_fromConnectorID, m_index, m_pos, m_bezier1, m_bezier2);
+			m_sketchWidget->addLegBendpointForCommand(m_fromID, m_fromConnectorID, m_index, m_pos, m_bezier1, m_bezier2);
 		}
 		else {
-			m_sketchWidget->removeLegBendpoint(m_fromID, m_fromConnectorID, m_index, m_bezier2);
+			m_sketchWidget->removeLegBendpointForCommand(m_fromID, m_fromConnectorID, m_index, m_bezier2);
 		}
 	}
 	BaseCommand::redo();
@@ -934,7 +934,7 @@ void RotateLegCommand::undo()
 
 void RotateLegCommand::redo()
 {
-	m_sketchWidget->rotateLeg(m_fromID, m_fromConnectorID, m_oldLeg, m_active);
+	m_sketchWidget->rotateLegForCommand(m_fromID, m_fromConnectorID, m_oldLeg, m_active);
 	SimulationCommand::redo();
 }
 
@@ -970,13 +970,13 @@ ChangeLayerCommand::ChangeLayerCommand(SketchWidget *sketchWidget, long fromID,
 
 void ChangeLayerCommand::undo()
 {
-	m_sketchWidget->changeLayer(m_fromID, m_oldZ, m_oldLayer);
+	m_sketchWidget->changeLayerForCommand(m_fromID, m_oldZ, m_oldLayer);
 	BaseCommand::undo();
 }
 
 void ChangeLayerCommand::redo()
 {
-	m_sketchWidget->changeLayer(m_fromID, m_newZ, m_newLayer);
+	m_sketchWidget->changeLayerForCommand(m_fromID, m_newZ, m_newLayer);
 	BaseCommand::redo();
 }
 
@@ -1079,7 +1079,7 @@ void SelectItemCommand::redo()
 void SelectItemCommand::selectAllFromStack(QList<long> & stack, bool select, bool updateInfoView) {
 	m_sketchWidget->clearSelection();
 	for (long i : stack) {
-		m_sketchWidget->selectItem(i, select, updateInfoView, m_crossViewType == BaseCommand::CrossView);
+		m_sketchWidget->selectItemForCommand(i, select, updateInfoView, m_crossViewType == BaseCommand::CrossView);
 	}
 }
 

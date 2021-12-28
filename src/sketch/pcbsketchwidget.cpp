@@ -1019,7 +1019,7 @@ void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCom
 	}
 }
 
-void PCBSketchWidget::changeLayer(long id, double z, ViewLayer::ViewLayerID viewLayerID) {
+void PCBSketchWidget::changeLayerForCommand(long id, double z, ViewLayer::ViewLayerID viewLayerID) {
 	ItemBase * itemBase = findItem(id);
 	if (itemBase == nullptr) return;
 

@@ -691,7 +691,7 @@ QString SqliteReferenceModel::retrieveModuleId(const QString &family, const QMul
 {
 	QString propertyValue;
 
-	if(properties.size() > 0) {
+	if(!properties.empty()) {
 		QString queryStr =
 		    "SELECT moduleID FROM parts part \n"
 		    "WHERE part.family = :family AND (1=1 ";

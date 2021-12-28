@@ -260,14 +260,14 @@ AddItemCommand::AddItemCommand(SketchWidget* sketchWidget, BaseCommand::CrossVie
 
 void AddItemCommand::undo()
 {
-	m_sketchWidget->deleteItem(m_itemID, true, true, false);
+	m_sketchWidget->deleteItemForCommand(m_itemID, true, true, false);
 	SimulationCommand::undo();
 }
 
 void AddItemCommand::redo()
 {
 	if (!m_skipFirstRedo) {
-		m_sketchWidget->addItem(m_moduleID, m_viewLayerPlacement, m_crossViewType, m_viewGeometry, m_itemID, m_modelIndex, this);
+		m_sketchWidget->addItemForCommand(m_moduleID, m_viewLayerPlacement, m_crossViewType, m_viewGeometry, m_itemID, m_modelIndex, this);
 	}
 	m_skipFirstRedo = false;
 	SimulationCommand::redo();
@@ -291,7 +291,7 @@ DeleteItemCommand::DeleteItemCommand(SketchWidget* sketchWidget,BaseCommand::Cro
 
 void DeleteItemCommand::undo()
 {
-	auto * itemBase = m_sketchWidget->addItem(m_moduleID, m_viewLayerPlacement, m_crossViewType, m_viewGeometry, m_itemID, m_modelIndex, this);
+	auto * itemBase = m_sketchWidget->addItemForCommand(m_moduleID, m_viewLayerPlacement, m_crossViewType, m_viewGeometry, m_itemID, m_modelIndex, this);
 	SimulationCommand::undo();
 	if(m_labelPos && m_labelOffset) {
 		m_sketchWidget->movePartLabel(m_itemID, *m_labelPos, *m_labelOffset);
@@ -320,7 +320,7 @@ void DeleteItemCommand::undo()
 
 void DeleteItemCommand::redo()
 {
-	m_sketchWidget->deleteItem(m_itemID, true, m_crossViewType == BaseCommand::CrossView, false);
+	m_sketchWidget->deleteItemForCommand(m_itemID, true, m_crossViewType == BaseCommand::CrossView, false);
 	SimulationCommand::redo();
 }
 
@@ -341,13 +341,13 @@ MoveItemCommand::MoveItemCommand(SketchWidget* sketchWidget, long itemID, ViewGe
 
 void MoveItemCommand::undo()
 {
-	m_sketchWidget->moveItem(m_itemID, m_old, m_updateRatsnest);
+	m_sketchWidget->moveItemForCommand(m_itemID, m_old, m_updateRatsnest);
 	SimulationCommand::undo();
 }
 
 void MoveItemCommand::redo()
 {
-	m_sketchWidget->moveItem(m_itemID, m_new, m_updateRatsnest);
+	m_sketchWidget->moveItemForCommand(m_itemID, m_new, m_updateRatsnest);
 	SimulationCommand::redo();
 }
 
@@ -379,13 +379,13 @@ SimpleMoveItemCommand::SimpleMoveItemCommand(SketchWidget* sketchWidget, long it
 
 void SimpleMoveItemCommand::undo()
 {
-	m_sketchWidget->simpleMoveItem(m_itemID, m_old);
+	m_sketchWidget->simpleMoveItemForCommand(m_itemID, m_old);
 	SimulationCommand::undo();
 }
 
 void SimpleMoveItemCommand::redo()
 {
-	m_sketchWidget->simpleMoveItem(m_itemID, m_new);
+	m_sketchWidget->simpleMoveItemForCommand(m_itemID, m_new);
 	SimulationCommand::redo();
 }
 
@@ -415,7 +415,7 @@ void MoveItemsCommand::undo()
 		m_sketchWidget->moveItem(moveItemThing.id, moveItemThing.oldPos, m_updateRatsnest);
 	}
 	Q_FOREACH (long id, m_wires.keys()) {
-		m_sketchWidget->updateWire(id, m_wires.value(id), m_updateRatsnest);
+		m_sketchWidget->updateWireForCommand(id, m_wires.value(id), m_updateRatsnest);
 	}
 	SimulationCommand::undo();
 }
@@ -426,7 +426,7 @@ void MoveItemsCommand::redo()
 		m_sketchWidget->moveItem(moveItemThing.id, moveItemThing.newPos, m_updateRatsnest);
 	}
 	Q_FOREACH (long id, m_wires.keys()) {
-		m_sketchWidget->updateWire(id, m_wires.value(id), m_updateRatsnest);
+		m_sketchWidget->updateWireForCommand(id, m_wires.value(id), m_updateRatsnest);
 	}
 	SimulationCommand::redo();
 }
@@ -465,13 +465,13 @@ RotateItemCommand::RotateItemCommand(SketchWidget* sketchWidget, long itemID, do
 
 void RotateItemCommand::undo()
 {
-	m_sketchWidget->rotateItem(m_itemID, -m_degrees);
+	m_sketchWidget->rotateItemForCommand(m_itemID, -m_degrees);
 	SimulationCommand::undo();
 }
 
 void RotateItemCommand::redo()
 {
-	m_sketchWidget->rotateItem(m_itemID, m_degrees);
+	m_sketchWidget->rotateItemForCommand(m_itemID, m_degrees);
 	SimulationCommand::redo();
 }
 
@@ -500,7 +500,7 @@ void FlipItemCommand::undo()
 
 void FlipItemCommand::redo()
 {
-	m_sketchWidget->flipItem(m_itemID, m_orientation);
+	m_sketchWidget->flipItemForCommand(m_itemID, m_orientation);
 	BaseCommand::redo();
 }
 
@@ -590,7 +590,7 @@ ChangeWireCommand::ChangeWireCommand(SketchWidget* sketchWidget, long fromID,
 void ChangeWireCommand::undo()
 {
 	if (!m_redoOnly) {
-		m_sketchWidget->changeWire(m_fromID, m_oldLine, m_oldPos, m_updateConnections, m_updateRatsnest);
+		m_sketchWidget->changeWireForCommand(m_fromID, m_oldLine, m_oldPos, m_updateConnections, m_updateRatsnest);
 	}
 	SimulationCommand::undo();
 }
@@ -598,7 +598,7 @@ void ChangeWireCommand::undo()
 void ChangeWireCommand::redo()
 {
 	if (!m_undoOnly) {
-		m_sketchWidget->changeWire(m_fromID, m_newLine, m_newPos, m_updateConnections, m_updateRatsnest);
+		m_sketchWidget->changeWireForCommand(m_fromID, m_newLine, m_newPos, m_updateConnections, m_updateRatsnest);
 	}
 	SimulationCommand::redo();
 }
@@ -638,7 +638,7 @@ ChangeWireCurveCommand::ChangeWireCurveCommand(SketchWidget* sketchWidget, long 
 void ChangeWireCurveCommand::undo()
 {
 	if (!m_redoOnly) {
-		m_sketchWidget->changeWireCurve(m_fromID, m_oldBezier, m_wasAutoroutable);
+		m_sketchWidget->changeWireCurveForCommand(m_fromID, m_oldBezier, m_wasAutoroutable);
 	}
 	SimulationCommand::undo();
 }
@@ -650,7 +650,7 @@ void ChangeWireCurveCommand::redo()
 			m_skipFirstRedo = false;
 		}
 		else {
-			m_sketchWidget->changeWireCurve(m_fromID, m_newBezier, false);
+			m_sketchWidget->changeWireCurveForCommand(m_fromID, m_newBezier, false);
 		}
 	}
 	SimulationCommand::redo();
@@ -697,7 +697,7 @@ ChangeLegCommand::ChangeLegCommand(SketchWidget* sketchWidget, long fromID, cons
 void ChangeLegCommand::undo()
 {
 	if (!m_redoOnly) {
-		m_sketchWidget->changeLeg(m_fromID, m_fromConnectorID, m_oldLeg, m_relative, m_why);
+		m_sketchWidget->changeLegForCommand(m_fromID, m_fromConnectorID, m_oldLeg, m_relative, m_why);
 	}
 	SimulationCommand::undo();
 }
@@ -711,10 +711,10 @@ void ChangeLegCommand::redo()
 {
 	if (!m_undoOnly) {
 		if (m_simple) {
-			m_sketchWidget->changeLeg(m_fromID, m_fromConnectorID, m_newLeg, m_relative, m_why);
+			m_sketchWidget->changeLegForCommand(m_fromID, m_fromConnectorID, m_newLeg, m_relative, m_why);
 		}
 		else {
-			m_sketchWidget->recalcLeg(m_fromID, m_fromConnectorID, m_newLeg, m_relative, m_active, m_why);
+			m_sketchWidget->recalcLegForCommand(m_fromID, m_fromConnectorID, m_newLeg, m_relative, m_active, m_why);
 		}
 	}
 	SimulationCommand::redo();
@@ -1230,7 +1230,7 @@ CleanUpWiresCommand::CleanUpWiresCommand(SketchWidget* sketchWidget, CleanUpWire
 void CleanUpWiresCommand::undo()
 {
 	Q_FOREACH (RatsnestConnectThing rct, m_ratsnestConnectThings) {
-		m_sketchWidget->ratsnestConnect(rct.id, rct.connectorID, !rct.connect, true);
+		m_sketchWidget->ratsnestConnectForCommand(rct.id, rct.connectorID, !rct.connect, true);
 	}
 
 	if (m_sketchWidgets.count() > 0)  {
@@ -1246,7 +1246,7 @@ void CleanUpWiresCommand::undo()
 void CleanUpWiresCommand::redo()
 {
 	Q_FOREACH (RatsnestConnectThing rct, m_ratsnestConnectThings) {
-		m_sketchWidget->ratsnestConnect(rct.id, rct.connectorID, rct.connect, true);
+		m_sketchWidget->ratsnestConnectForCommand(rct.id, rct.connectorID, rct.connect, true);
 	}
 
 	if (m_sketchWidgets.count() > 0) {

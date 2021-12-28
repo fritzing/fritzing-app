@@ -549,7 +549,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 			clc->setSimple();
 		}
 		else {
-			changeLeg(id, fromConnectorID, poly, true, "load");
+			changeLegForCommand(id, fromConnectorID, poly, true, "load");
 		}
 
 		QDomElement bElement = leg.firstChildElement("bezier");
@@ -677,7 +677,7 @@ void SketchWidget::setWireExtras(long newID, QDomElement & extras)
 	wire->setExtras(extras, this);
 }
 
-ItemBase * SketchWidget::addItem(const QString & moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, BaseCommand::CrossViewType crossViewType, const ViewGeometry & viewGeometry, long id, long modelIndex,  AddDeleteItemCommand * originatingCommand) {
+ItemBase * SketchWidget::addItemForCommand(const QString & moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, BaseCommand::CrossViewType crossViewType, const ViewGeometry & viewGeometry, long id, long modelIndex,  AddDeleteItemCommand * originatingCommand) {
 	if (!m_referenceModel) return nullptr;
 
 	ItemBase * itemBase = nullptr;
@@ -955,7 +955,7 @@ ItemBase * SketchWidget::findItem(long id) {
 	return nullptr;
 }
 
-void SketchWidget::deleteItem(long id, bool deleteModelPart, bool doEmit, bool later) {
+void SketchWidget::deleteItemForCommand(long id, bool deleteModelPart, bool doEmit, bool later) {
 	ItemBase * pitem = findItem(id);
 	DebugDialog::debug(QString("delete item (1) %1 %2 %3 %4").arg(id).arg(doEmit).arg(m_viewID).arg((long) pitem, 0, 16) );
 	if (pitem) {
@@ -1359,7 +1359,7 @@ ViewLayer::ViewLayerPlacement SketchWidget::createWireViewLayerPlacement(Connect
 	return from->attachedToViewLayerPlacement();
 }
 
-void SketchWidget::moveItem(long id, ViewGeometry & viewGeometry, bool updateRatsnest) {
+void SketchWidget::moveItemForCommand(long id, ViewGeometry & viewGeometry, bool updateRatsnest) {
 	ItemBase * itemBase = findItem(id);
 	if (itemBase) {
 		if (updateRatsnest) {
@@ -1370,7 +1370,7 @@ void SketchWidget::moveItem(long id, ViewGeometry & viewGeometry, bool updateRat
 	}
 }
 
-void SketchWidget::simpleMoveItem(long id, QPointF p) {
+void SketchWidget::simpleMoveItemForCommand(long id, QPointF p) {
 	ItemBase * itemBase = findItem(id);
 	if (itemBase) {
 		itemBase->setItemPos(p);
@@ -1390,7 +1390,7 @@ void SketchWidget::moveItem(long id, const QPointF & p, bool updateRatsnest) {
 	}
 }
 
-void SketchWidget::updateWire(long id, const QString & connectorID, bool updateRatsnest) {
+void SketchWidget::updateWireForCommand(long id, const QString & connectorID, bool updateRatsnest) {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;
 
@@ -1407,7 +1407,7 @@ void SketchWidget::updateWire(long id, const QString & connectorID, bool updateR
 	wire->simpleConnectedMoved(connectorItem);
 }
 
-void SketchWidget::rotateItem(long id, double degrees) {
+void SketchWidget::rotateItemForCommand(long id, double degrees) {
 	//DebugDialog::debug(QString("rotating %1 %2").arg(id).arg(degrees) );
 
 	if (!isVisible()) return;
@@ -1427,7 +1427,7 @@ void SketchWidget::transformItem(long id, const QTransform & matrix) {
 	}
 }
 
-void SketchWidget::flipItem(long id, Qt::Orientations orientation) {
+void SketchWidget::flipItemForCommand(long id, Qt::Orientations orientation) {
 	//DebugDialog::debug(QString("flipping %1 %2").arg(id).arg(orientation) );
 
 	if (!isVisible()) return;
@@ -1440,7 +1440,7 @@ void SketchWidget::flipItem(long id, Qt::Orientations orientation) {
 	}
 }
 
-void SketchWidget::changeWire(long fromID, QLineF line, QPointF pos, bool updateConnections, bool updateRatsnest)
+void SketchWidget::changeWireForCommand(long fromID, QLineF line, QPointF pos, bool updateConnections, bool updateRatsnest)
 {
 	/*
 	DebugDialog::debug(QString("change wire %1; %2,%3,%4,%5; %6,%7; %8")
@@ -1491,12 +1491,12 @@ void SketchWidget::rotateLeg(long fromID, const QString & fromConnectorID, const
 }
 
 
-void SketchWidget::changeLeg(long fromID, const QString & fromConnectorID, const QPolygonF & leg, bool relative, const QString & why)
+void SketchWidget::changeLegForCommand(long fromID, const QString & fromConnectorID, const QPolygonF & leg, bool relative, const QString & why)
 {
 	changeLegAux(fromID, fromConnectorID, leg, false, relative, true, why);
 }
 
-void SketchWidget::recalcLeg(long fromID, const QString & fromConnectorID, const QPolygonF & leg, bool relative, bool active, const QString & why)
+void SketchWidget::recalcLegForCommand(long fromID, const QString & fromConnectorID, const QPolygonF & leg, bool relative, bool active, const QString & why)
 {
 	changeLegAux(fromID, fromConnectorID, leg, true, relative, active, why);
 }
@@ -3386,6 +3386,7 @@ bool SketchWidget::checkMoved(bool wait)
 		new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
 		cuw->setDirection(CleanUpWiresCommand::UndoOnly);
 	}
+
 	if (wait) {
 		m_undoStack->waitPush(parentCommand, PropChangeDelay);
 	}
@@ -8696,7 +8697,7 @@ void SketchWidget::ratsnestConnect(ItemBase * itemBase, bool connect) {
 	}
 }
 
-void SketchWidget::ratsnestConnect(long id, const QString & connectorID, bool connect, bool doEmit) {
+void SketchWidget::ratsnestConnectForCommand(long id, const QString & connectorID, bool connect, bool doEmit) {
 	if (doEmit) {
 		Q_EMIT ratsnestConnectSignal(id, connectorID, connect, false);
 	}
@@ -8951,7 +8952,7 @@ void SketchWidget::wireChangedCurveSlot(Wire* wire, const Bezier * oldB, const B
 	m_undoStack->push(cwcc);
 }
 
-void SketchWidget::changeWireCurve(long id, const Bezier * bezier, bool autoroutable) {
+void SketchWidget::changeWireCurveForCommand(long id, const Bezier * bezier, bool autoroutable) {
 	Wire * wire = qobject_cast<Wire *>(findItem(id));
 	if (!wire) return;
 
@@ -9297,7 +9298,7 @@ void SketchWidget::deleteTemporary() {
 
 	auto * itemBase = s->property("temporary").value<ItemBase *>();
 	if (itemBase) {
-		deleteItem(itemBase->id(), true, true, false);
+		deleteItemForCommand(itemBase->id(), true, true, false);
 	}
 
 	m_undoStack->deleteTemporary();

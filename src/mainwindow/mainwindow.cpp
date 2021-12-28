@@ -797,7 +797,7 @@ void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 	                                 Qt::DirectConnection) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(ratsnestConnectSignal(long, const QString &, bool, bool)),
-	                                 slotter, SLOT(ratsnestConnect(long, const QString &, bool, bool )),
+					 slotter, SLOT(ratsnestConnectForCommand(long, const QString &, bool, bool )),
 	                                 Qt::DirectConnection) != nullptr);
 
 

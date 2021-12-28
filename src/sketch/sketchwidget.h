@@ -128,7 +128,7 @@ public:
 	void clearSelection();
 	virtual void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand,
 	                                bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs);
-	void changeZ(QHash<long, RealPair * >, double (*pairAccessor)(RealPair *) );
+	void changeZForCommand(QHash<long, RealPair * >, double (*pairAccessor)(RealPair *) );
 	void sendToBack();
 	void sendBackward();
 	void bringForward();
@@ -170,14 +170,14 @@ public:
 
 	constexpr ViewLayer::ViewID viewID() const noexcept { return m_viewID; }
 	void setViewLayerIDs(ViewLayer::ViewLayerID part, ViewLayer::ViewLayerID wire, ViewLayer::ViewLayerID connector, ViewLayer::ViewLayerID ruler, ViewLayer::ViewLayerID note);
-	void stickem(long stickTargetID, long stickSourceID, bool stick);
+	void stickemForCommand(long stickTargetID, long stickSourceID, bool stick);
 	void stickyScoop(ItemBase * stickyOne, bool checkCurrent, CheckStickyCommand *);
 	void setChainDrag(bool);
 	void hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase * item);
 	void hoverLeaveItem(QGraphicsSceneHoverEvent * event, ItemBase * item);
 	void hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item);
 	void hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item);
-	void cleanUpWires(bool doEmit, class CleanUpWiresCommand *);
+	void cleanUpWiresForCommand(bool doEmit, class CleanUpWiresCommand *);
 
 	void partLabelChanged(ItemBase *, const QString & oldText, const QString &newtext);
 	void noteChanged(ItemBase *, const QString & oldText, const QString &newtext, QSizeF oldSize, QSizeF newSize);
@@ -190,8 +190,8 @@ public:
 
 	virtual void addViewLayers();
 
-	void changeWireColor(long wireId, const QString& color, double opacity);
-	void changeWireWidth(long wireId, double width);
+	void changeWireColorForCommand(long wireId, const QString& color, double opacity);
+	void changeWireWidthForCommand(long wireId, double width);
 	void changeWireFlags(long wireId, ViewGeometry::WireFlags wireFlags);
 	void setIgnoreSelectionChangeEvents(bool);
 	void hideConnectors(bool hide);
@@ -207,7 +207,7 @@ public:
 	virtual bool canCopyItem(QGraphicsItem * item, int count);
 	constexpr const QString & viewName() const noexcept { return m_viewName; }
 	void makeDeleteItemCommand(ItemBase * itemBase, BaseCommand::CrossViewType, QUndoCommand * parentCommand);
-	virtual void forwardRoutingStatus(const RoutingStatus &);
+	virtual void forwardRoutingStatusForCommand(const RoutingStatus &);
 
 	void collectParts(QList<ItemBase *> & partList);
 
@@ -612,7 +612,7 @@ public Q_SLOTS:
 	void setInstanceTitle(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit);
 	void incInstanceTitle(long id);
 	void showPartLabel(long id, bool showIt);
-	void checkSticky(long id, bool doEmit, bool checkCurrent, CheckStickyCommand *);
+	void checkStickyForCommand(long id, bool doEmit, bool checkCurrent, CheckStickyCommand *);
 	virtual ItemBase * resizeBoard(long id, double w, double h);
 	void resizeJumperItem(long id, QPointF pos, QPointF c0, QPointF c1);
 	void disconnectAllSlot(QList<ConnectorItem *>, QHash<ItemBase *, SketchWidget *> & itemsToDelete, QUndoCommand * parentCommand);
@@ -621,12 +621,12 @@ public Q_SLOTS:
 	void setProp(long itemID, const QString & prop, const QString & value, bool redraw, bool doEmit);
 	virtual void setProp(ItemBase *, const QString & propName, const QString & translatedPropName, const QString & oldValue, const QString & newValue, bool redraw);
 	void setHoleSize(ItemBase *, const QString & propName, const QString & translatedPropName, const QString & oldValue, const QString & newValue, QRectF & oldRect, QRectF & newRect, bool redraw);
-	virtual void showLabelFirstTime(long itemID, bool show, bool doEmit);
+	virtual void showLabelFirstTimeForCommand(long itemID, bool show, bool doEmit);
 	void resizeBoard(double w, double h, bool doEmit);
 	virtual void changeBoardLayers(int layers, bool doEmit);
 	void updateConnectors();
 	void ratsnestConnectForCommand(long id, const QString & connectorID, bool connect, bool doEmit);
-	void cleanupRatsnests(bool doEmit);
+	void cleanupRatsnestsForCommand(bool doEmit);
 	void addSubpart(long id, long subpartid, bool doEmit);
 	void packItems(int columns, const QList<long> & ids, QUndoCommand *parent, bool doEmit);
 

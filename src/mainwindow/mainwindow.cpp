@@ -762,10 +762,10 @@ void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 	                                 slotter, SLOT(cleanUpWiresSlot(CleanUpWiresCommand *)) ) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(cleanupRatsnestsSignal(bool)),
-	                                 slotter, SLOT(cleanupRatsnests(bool)) ) != nullptr);
+					 slotter, SLOT(cleanupRatsnestsForCommand(bool)) ) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(checkStickySignal(long, bool, bool, CheckStickyCommand *)),
-	                                 slotter, SLOT(checkSticky(long, bool, bool, CheckStickyCommand *)) ) != nullptr);
+					 slotter, SLOT(checkStickyForCommand(long, bool, bool, CheckStickyCommand *)) ) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(disconnectAllSignal(QList<ConnectorItem *>, QHash<ItemBase *, SketchWidget *> &, QUndoCommand *)),
 	                                 slotter, SLOT(disconnectAllSlot(QList<ConnectorItem *>, QHash<ItemBase *, SketchWidget *> &, QUndoCommand *)),
@@ -787,7 +787,7 @@ void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 	                                 slotter, SLOT(setVoltage(double, bool ))) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(showLabelFirstTimeSignal(long, bool, bool )),
-	                                 slotter, SLOT(showLabelFirstTime(long, bool, bool ))) != nullptr);
+					 slotter, SLOT(showLabelFirstTimeForCommand(long, bool, bool ))) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(changeBoardLayersSignal(int, bool )),
 	                                 slotter, SLOT(changeBoardLayers(int, bool ))) != nullptr);

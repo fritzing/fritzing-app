@@ -612,9 +612,9 @@ void PCBSketchWidget::resizeBoard(double mmW, double mmH, bool doEmit)
 	resizeWithHandle(item, mmW, mmH);
 }
 
-void PCBSketchWidget::showLabelFirstTime(long itemID, bool show, bool doEmit) {
+void PCBSketchWidget::showLabelFirstTimeForCommand(long itemID, bool show, bool doEmit) {
 	// called when new item is added, to decide whether to show part label
-	SketchWidget::showLabelFirstTime(itemID, show, doEmit);
+	SketchWidget::showLabelFirstTimeForCommand(itemID, show, doEmit);
 	ItemBase * itemBase = findItem(itemID);
 	if (itemBase == nullptr) return;
 	if (!canDropModelPart(itemBase->modelPart())) return;
@@ -680,10 +680,10 @@ QList<ItemBase *> PCBSketchWidget::findBoard() {
 	return boards.values();
 }
 
-void PCBSketchWidget::forwardRoutingStatus(const RoutingStatus & routingStatus)
+void PCBSketchWidget::forwardRoutingStatusForCommand(const RoutingStatus & routingStatus)
 {
 	m_routingStatus = routingStatus;
-	SketchWidget::forwardRoutingStatus(routingStatus);
+	SketchWidget::forwardRoutingStatusForCommand(routingStatus);
 }
 
 

@@ -581,7 +581,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 
 		m_pasteCount = 0;
 		this->scene()->clearSelection();
-		cleanUpWires(false, nullptr);
+		cleanUpWiresForCommand(false, nullptr);
 
 	}
 	else {
@@ -811,7 +811,7 @@ void SketchWidget::setNewPartVisible(ItemBase * itemBase) {
 	// defaults to visible, so do nothing
 }
 
-void SketchWidget::checkSticky(long id, bool doEmit, bool checkCurrent, CheckStickyCommand * checkStickyCommand)
+void SketchWidget::checkStickyForCommand(long id, bool doEmit, bool checkCurrent, CheckStickyCommand * checkStickyCommand)
 {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;
@@ -4444,7 +4444,7 @@ bool SketchWidget::greaterThan(int a, int b) {
 	return a > b;
 }
 
-void SketchWidget::changeZ(QHash<long, RealPair * > triplets, double (*pairAccessor)(RealPair *) ) {
+void SketchWidget::changeZForCommand(QHash<long, RealPair * > triplets, double (*pairAccessor)(RealPair *) ) {
 
 	// TODO: replace scene->items
 	const QList<QGraphicsItem *> items = scene()->items();
@@ -5499,7 +5499,7 @@ ItemBase * SketchWidget::overSticky(ItemBase * itemBase) {
 }
 
 
-void SketchWidget::stickem(long stickTargetID, long stickSourceID, bool stick) {
+void SketchWidget::stickemForCommand(long stickTargetID, long stickSourceID, bool stick) {
 	ItemBase * stickTarget = findItem(stickTargetID);
 	if (!stickTarget) return;
 
@@ -5864,7 +5864,7 @@ bool SketchWidget::currentlyInfoviewed(ItemBase *item) {
 	return false;
 }
 
-void SketchWidget::cleanUpWires(bool doEmit, CleanUpWiresCommand * command) {
+void SketchWidget::cleanUpWiresForCommand(bool doEmit, CleanUpWiresCommand * command) {
 	RoutingStatus routingStatus;
 	updateRoutingStatus(command, routingStatus, false);
 
@@ -6552,7 +6552,7 @@ void SketchWidget::changeWireWidthMils(const QString newWidthStr)
 	m_undoStack->waitPush(parentCommand, PropChangeDelay);
 }
 
-void SketchWidget::changeWireColor(long wireId, const QString& color, double opacity) {
+void SketchWidget::changeWireColorForCommand(long wireId, const QString& color, double opacity) {
 	ItemBase *item = findItem(wireId);
 	Wire* wire = qobject_cast<Wire*>(item);
 	if (wire) {
@@ -6561,7 +6561,7 @@ void SketchWidget::changeWireColor(long wireId, const QString& color, double opa
 	}
 }
 
-void SketchWidget::changeWireWidth(long wireId, double width) {
+void SketchWidget::changeWireWidthForCommand(long wireId, double width) {
 	ItemBase *item = findItem(wireId);
 	Wire* wire = qobject_cast<Wire*>(item);
 	if (wire) {
@@ -7069,7 +7069,7 @@ void SketchWidget::setWireVisible(Wire * wire) {
 	Q_UNUSED(wire);
 }
 
-void SketchWidget::forwardRoutingStatus(const RoutingStatus & routingStatus) {
+void SketchWidget::forwardRoutingStatusForCommand(const RoutingStatus & routingStatus) {
 
 	Q_EMIT routingStatusSignal(this, routingStatus);
 }
@@ -8300,7 +8300,7 @@ bool SketchWidget::partLabelsVisible() {
 	return false;
 }
 
-void SketchWidget::showLabelFirstTime(long itemID, bool show, bool doEmit) {
+void SketchWidget::showLabelFirstTimeForCommand(long itemID, bool show, bool doEmit) {
 	if (doEmit) {
 		Q_EMIT showLabelFirstTimeSignal(itemID, show, false);
 	}
@@ -9465,7 +9465,7 @@ void SketchWidget::removeDragWire() {
 	this->scene()->removeItem(m_connectorDragWire);
 }
 
-void SketchWidget::selectItemForCommand(ItemBase * itemBase) {
+void SketchWidget::selectItem(ItemBase * itemBase) {
 	QList<ItemBase *> itemBases;
 	itemBases << itemBase;
 	selectItems(itemBases);
@@ -9631,7 +9631,7 @@ void SketchWidget::hidePartLayer(ItemBase * itemBase, ViewLayer::ViewLayerID vie
 	}
 }
 
-void SketchWidget::cleanupRatsnests(bool doEmit) {
+void SketchWidget::cleanupRatsnestsForCommand(bool doEmit) {
 	cleanupRatsnests(m_ratsnestCacheConnect, true);
 	cleanupRatsnests(m_ratsnestCacheDisconnect, false);
 

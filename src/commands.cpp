@@ -1130,13 +1130,13 @@ void ChangeZCommand::addTriplet(long id, double oldZ, double newZ) {
 
 void ChangeZCommand::undo()
 {
-	m_sketchWidget->changeZ(m_triplets, first);
+	m_sketchWidget->changeZForCommand(m_triplets, first);
 	BaseCommand::undo();
 }
 
 void ChangeZCommand::redo()
 {
-	m_sketchWidget->changeZ(m_triplets, second);
+	m_sketchWidget->changeZForCommand(m_triplets, second);
 	BaseCommand::redo();
 }
 
@@ -1178,10 +1178,10 @@ void CheckStickyCommand::undo()
 
 	Q_FOREACH (StickyThing * stickyThing, m_stickyList) {
 		if (m_checkType == RemoveOnly) {
-			stickyThing->sketchWidget->stickem(stickyThing->fromID, stickyThing->toID, !stickyThing->stickem);
+			stickyThing->sketchWidget->stickemForCommand(stickyThing->fromID, stickyThing->toID, !stickyThing->stickem);
 		}
 		else {
-			stickyThing->sketchWidget->stickem(stickyThing->fromID, stickyThing->toID, stickyThing->stickem);
+			stickyThing->sketchWidget->stickemForCommand(stickyThing->fromID, stickyThing->toID, stickyThing->stickem);
 		}
 	}
 	BaseCommand::undo();
@@ -1192,12 +1192,12 @@ void CheckStickyCommand::redo()
 	if (m_checkType == UndoOnly) return;
 
 	if (m_skipFirstRedo) {
-		m_sketchWidget->checkSticky(m_itemID, m_crossViewType == BaseCommand::CrossView, m_checkCurrent, this);
+		m_sketchWidget->checkStickyForCommand(m_itemID, m_crossViewType == BaseCommand::CrossView, m_checkCurrent, this);
 		m_skipFirstRedo = false;
 	}
 	else {
 		Q_FOREACH (StickyThing * stickyThing, m_stickyList) {
-			stickyThing->sketchWidget->stickem(stickyThing->fromID, stickyThing->toID, stickyThing->stickem);
+			stickyThing->sketchWidget->stickemForCommand(stickyThing->fromID, stickyThing->toID, stickyThing->stickem);
 		}
 	}
 	BaseCommand::redo();
@@ -1238,7 +1238,7 @@ void CleanUpWiresCommand::undo()
 	}
 
 	if (m_direction == UndoOnly) {
-		m_sketchWidget->cleanUpWires(m_crossViewType == BaseCommand::CrossView, nullptr);
+		m_sketchWidget->cleanUpWiresForCommand(m_crossViewType == BaseCommand::CrossView, nullptr);
 	}
 	SimulationCommand::undo();
 }
@@ -1254,7 +1254,7 @@ void CleanUpWiresCommand::redo()
 	}
 
 	if (m_direction == RedoOnly) {
-		m_sketchWidget->cleanUpWires(m_crossViewType == BaseCommand::CrossView, this);
+		m_sketchWidget->cleanUpWiresForCommand(m_crossViewType == BaseCommand::CrossView, this);
 	}
 	SimulationCommand::redo();
 }
@@ -1340,7 +1340,7 @@ CleanUpRatsnestsCommand::CleanUpRatsnestsCommand(SketchWidget* sketchWidget, Cle
 void CleanUpRatsnestsCommand::undo()
 {
 	if (m_undoOnly) {
-		m_sketchWidget->cleanupRatsnests(true);
+		m_sketchWidget->cleanupRatsnestsForCommand(true);
 	}
 	SimulationCommand::undo();
 }
@@ -1348,7 +1348,7 @@ void CleanUpRatsnestsCommand::undo()
 void CleanUpRatsnestsCommand::redo()
 {
 	if (m_redoOnly) {
-		m_sketchWidget->cleanupRatsnests(true);
+		m_sketchWidget->cleanupRatsnestsForCommand(true);
 	}
 	SimulationCommand::redo();
 }
@@ -1372,12 +1372,12 @@ WireColorChangeCommand::WireColorChangeCommand(SketchWidget* sketchWidget, long 
 }
 
 void WireColorChangeCommand::undo() {
-	m_sketchWidget->changeWireColor(m_wireId, m_oldColor, m_oldOpacity);
+	m_sketchWidget->changeWireColorForCommand(m_wireId, m_oldColor, m_oldOpacity);
 	BaseCommand::undo();
 }
 
 void WireColorChangeCommand::redo() {
-	m_sketchWidget->changeWireColor(m_wireId, m_newColor, m_newOpacity);
+	m_sketchWidget->changeWireColorForCommand(m_wireId, m_newColor, m_newOpacity);
 	BaseCommand::redo();
 }
 
@@ -1400,12 +1400,12 @@ WireWidthChangeCommand::WireWidthChangeCommand(SketchWidget* sketchWidget, long 
 }
 
 void WireWidthChangeCommand::undo() {
-	m_sketchWidget->changeWireWidth(m_wireId, m_oldWidth);
+	m_sketchWidget->changeWireWidthForCommand(m_wireId, m_oldWidth);
 	BaseCommand::undo();
 }
 
 void WireWidthChangeCommand::redo() {
-	m_sketchWidget->changeWireWidth(m_wireId, m_newWidth);
+	m_sketchWidget->changeWireWidthForCommand(m_wireId, m_newWidth);
 	BaseCommand::redo();
 }
 
@@ -1428,12 +1428,12 @@ RoutingStatusCommand::RoutingStatusCommand(SketchWidget * sketchWidget, const Ro
 }
 
 void RoutingStatusCommand::undo() {
-	m_sketchWidget->forwardRoutingStatus(m_oldRoutingStatus);
+	m_sketchWidget->forwardRoutingStatusForCommand(m_oldRoutingStatus);
 	BaseCommand::undo();
 }
 
 void RoutingStatusCommand::redo() {
-	m_sketchWidget->forwardRoutingStatus(m_newRoutingStatus);
+	m_sketchWidget->forwardRoutingStatusForCommand(m_newRoutingStatus);
 	BaseCommand::redo();
 }
 
@@ -1463,7 +1463,7 @@ void ShowLabelFirstTimeCommand::undo()
 
 void ShowLabelFirstTimeCommand::redo()
 {
-	m_sketchWidget->showLabelFirstTime(m_itemID, m_newVis, true);
+	m_sketchWidget->showLabelFirstTimeForCommand(m_itemID, m_newVis, true);
 	BaseCommand::redo();
 }
 

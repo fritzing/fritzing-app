@@ -44,7 +44,7 @@ public:
 	void selectAllExcludedTraces();
 	void selectAllIncludedTraces();
 	bool hasAnyNets();
-	void forwardRoutingStatus(const RoutingStatus &);
+	void forwardRoutingStatusForCommand(const RoutingStatus &);
 	void addDefaultParts();
 	void showEvent(QShowEvent * event);
 	void initWire(Wire *, int penWidth);
@@ -122,7 +122,7 @@ public:
 
 public Q_SLOTS:
 	void resizeBoard(double w, double h, bool doEmit);
-	void showLabelFirstTime(long itemID, bool show, bool doEmit);
+	void showLabelFirstTimeForCommand(long itemID, bool show, bool doEmit);
 	void changeBoardLayers(int layers, bool doEmit);
 	ItemBase * resizeBoard(long id, double w, double h);
 

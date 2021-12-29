@@ -786,7 +786,7 @@ void PaletteItem::resetConnector(ItemBase * itemBase, SvgIdLayer * svgIdLayer)
 		connectorItem->setTerminalPoint(svgIdLayer->point(viewLayerPlacement()));
 		connectorItem->setRadius(svgIdLayer->m_radius, svgIdLayer->m_strokeWidth);
 		connectorItem->setIsPath(svgIdLayer->m_path);
-		connectorItem->attachedMoved(false, already);
+		connectorItem->attachedMoved(false, false, already);
 		break;
 	}
 }

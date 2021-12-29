@@ -786,6 +786,9 @@ void ConnectorItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
 		QList<ConnectorItem *> exclude;
 		findConnectorUnder(true, true, exclude, true, this);
 
+		QList<ConnectorItem *> already;
+		attachedMoved(true, true, already);
+
 		return;
 	}
 
@@ -845,7 +848,7 @@ int ConnectorItem::connectionsCount() {
 	return m_connectedTo.count();
 }
 
-void ConnectorItem::attachedMoved(bool includeRatsnest, QList<ConnectorItem *> & already) {
+void ConnectorItem::attachedMoved(bool includeRatsnest, bool includeOnlyRatsnest, QList<ConnectorItem *> & already) {
 	//DebugDialog::debug("attached moved");
 	if (!this->isVisible()) return;
 
@@ -866,8 +869,14 @@ void ConnectorItem::attachedMoved(bool includeRatsnest, QList<ConnectorItem *> &
 			//itemBase->debugInfo("    ");
 			continue;
 		}
-		if (itemBase->getRatsnest() && !includeRatsnest) {
-			continue;
+		if (itemBase->getRatsnest()) {
+			if (!includeRatsnest) {
+				continue;
+			}
+		} else {
+			if (includeOnlyRatsnest) {
+				continue;
+			}
 		}
 
 		toConnectorItem->attachedTo()->connectedMoved(this, toConnectorItem, already);

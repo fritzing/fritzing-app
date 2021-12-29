@@ -613,7 +613,7 @@ void ItemBase::updateConnections(bool /* includeRatsnest */, QList<ConnectorItem
 void ItemBase::updateConnections(ConnectorItem * connectorItem, bool includeRatsnest, QList<ConnectorItem *> & already) {
 	if (!already.contains(connectorItem)) {
 		already << connectorItem;
-		connectorItem->attachedMoved(includeRatsnest, already);
+		connectorItem->attachedMoved(includeRatsnest, false, already);
 	}
 	else {
 		connectorItem->debugInfo("already");

@@ -58,7 +58,7 @@ public:
 	void clearConnectorHover();
 	void connectTo(ConnectorItem *);
 	int connectionsCount();
-	void attachedMoved(bool includeRatsnest, QList<ConnectorItem *> & already);
+	void attachedMoved(bool includeRatsnest, bool includeOnlyRatsnest, QList<ConnectorItem *> & already);
 	ConnectorItem * removeConnection(ItemBase *);
 	void removeConnection(ConnectorItem *, bool emitChange);
 	ConnectorItem * firstConnectedToIsh();

@@ -54,7 +54,7 @@ public:
 
 	virtual void hidePartLabel(ItemBase * item);
 	virtual void partLabelMoved(ItemBase *, QPointF oldPos, QPointF oldOffset, QPointF newPos, QPointF newOffset);
-	virtual void rotateFlipPartLabel(ItemBase *, double degrees, Qt::Orientations flipDirection);
+	virtual void rotateFlipPartLabelForCommand(ItemBase *, double degrees, Qt::Orientations flipDirection);
 	virtual void noteSizeChanged(ItemBase * itemBase, const QSizeF & oldSize, const QSizeF & newSize);
 
 	virtual bool spaceBarIsPressed();
@@ -115,7 +115,7 @@ public:
 public Q_SLOTS:
 	virtual void setVoltage(double, bool doEmit);
 	virtual void resizeBoard(double w, double h, bool doEmit);
-	virtual void setInstanceTitle(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit);
+	virtual void setInstanceTitleForCommand(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit);
 
 Q_SIGNALS:
 	void setVoltageSignal(double, bool doEmit);

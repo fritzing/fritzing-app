@@ -107,7 +107,7 @@ public:
 	void updateWireForCommand(long id, const QString & connectorID, bool updateRatsnest);
 
 	void rotateItemForCommand(long id, double degrees);
-	void transformItem(long id, const QTransform &);
+	void transformItemForCommand(long id, const QTransform &);
 	void flipItemForCommand(long id, Qt::Orientations orientation);
 	void selectItemForCommand(long id, bool state, bool updateInfoView, bool doEmit);
 	void selectItem(ItemBase * itemBase);
@@ -211,17 +211,17 @@ public:
 
 	void collectParts(QList<ItemBase *> & partList);
 
-	void movePartLabel(long itemID, QPointF newPos, QPointF newOffset);
+	void movePartLabelForCommand(long itemID, QPointF newPos, QPointF newOffset);
 
 	void updateInfoView();
 	virtual void setCurrent(bool current);
 	void partLabelMoved(ItemBase *, QPointF oldPos, QPointF oldOffset, QPointF newPos, QPointF newOffset);
-	void rotateFlipPartLabel(ItemBase *, double degrees, Qt::Orientations flipDirection);
-	void rotateFlipPartLabel(long itemID, double degrees, Qt::Orientations flipDirection);
+	void rotateFlipPartLabelForCommand(ItemBase *, double degrees, Qt::Orientations flipDirection);
+	void rotateFlipPartLabelForCommand(long itemID, double degrees, Qt::Orientations flipDirection);
 	void showPartLabels(bool show);
 	void hidePartLabel(ItemBase * item);
 	void noteSizeChanged(ItemBase * itemBase, const QSizeF & oldSize, const QSizeF & newSize);
-	void resizeNote(long itemID, const QSizeF & );
+	void resizeNoteForCommand(long itemID, const QSizeF & );
 	class SelectItemCommand* stackSelectionState(bool pushIt, QUndoCommand * parentCommand);
 	QString renderToSVG(RenderThing &, QGraphicsItem * board, const LayerList &);
 	bool spaceBarIsPressed() noexcept;
@@ -244,9 +244,9 @@ public:
 	long createWire(ConnectorItem * from, ConnectorItem * to, ViewGeometry::WireFlags, bool dontUpdate, BaseCommand::CrossViewType, QUndoCommand * parentCommand);
 	QList<ItemBase *> selectAllObsolete();
 	int selectAllMoveLock();
-	void setMoveLock(long id, bool lock);
+	void setMoveLockForCommand(long id, bool lock);
 	bool partLabelsVisible();
-	void restorePartLabel(long itemID, QDomElement & element);
+	void restorePartLabelForCommand(long itemID, QDomElement & element);
 	void loadLogoImage(ItemBase *, const QString & oldSvg, const QSizeF oldAspectRatio, const QString & oldFilename, const QString & newFilename, bool addName);
 	void loadLogoImage(long itemID, const QString & oldSvg, const QSizeF oldAspectRatio, const QString & oldFilename);
 	void loadLogoImage(long itemID, const QString & newFilename, bool addName);
@@ -278,7 +278,7 @@ public:
 	ViewGeometry::WireFlag getTraceFlag();
 	void changeBus(ItemBase *, bool connec, const QString & oldBus, const QString & newBus, QList<ConnectorItem *> &, const QString & message, const QString & oldLayout, const QString & newLayout);
 	const QString & filenameIf();
-	void setItemDropOffset(long id, QPointF offset);
+	void setItemDropOffsetForCommand(long id, QPointF offset);
 	void prepLegBendpointMove(ConnectorItem * from, int index, QPointF oldPos, QPointF newPos, ConnectorItem * to, bool changeConnections);
 	void prepLegCurveChange(ConnectorItem * from, int index, const class Bezier * oldB, const class Bezier * newB, bool triggerFirstTime);
 	void prepLegBendpointChange(ConnectorItem * from, int oldCount, int newCount, int index, QPointF pos, const class Bezier *, const class Bezier *, const class Bezier *, bool triggerFirstTime);
@@ -303,8 +303,8 @@ public:
 	void setRatsnestWidth(double);
 	void setAnyInRotation();
 	ConnectorItem * findConnectorItem(ConnectorItem * foreignConnectorItem);
-	void setGroundFillSeed(long id, const QString & connectorID, bool seed);
-	void setWireExtras(long id, QDomElement &);
+	void setGroundFillSeedForCommand(long id, const QString & connectorID, bool seed);
+	void setWireExtrasForCommand(long id, QDomElement &);
 	void resolveTemporary(bool, ItemBase *);
 	virtual bool sameElectricalLayer2(ViewLayer::ViewLayerID, ViewLayer::ViewLayerID);
 	void deleteMiddle(QSet<ItemBase *> & deletedItems, QUndoCommand * parentCommand);
@@ -316,7 +316,7 @@ public:
 	void viewItemInfo(ItemBase * item);
 	virtual QHash<QString, QString> getAutorouterSettings();
 	virtual void setAutorouterSettings(QHash<QString, QString> &);
-	void hidePartLayer(long id, ViewLayer::ViewLayerID, bool hide);
+	void hidePartLayerForCommand(long id, ViewLayer::ViewLayerID, bool hide);
 	void hidePartLayer(ItemBase *, ViewLayer::ViewLayerID, bool hide);
 	void moveItem(ItemBase *, double x, double y);
 	constexpr const QColor& gridColor() const noexcept { return m_gridColor; }
@@ -327,6 +327,10 @@ public:
 	void updateWires();
 	void checkForReversedWires();
 	void getWireJoinCurves(Wire * wire1, Wire * wire2, QPointF * newPos, QLineF * newLine, Bezier * b0, Bezier * b1);
+	void setNoteTextForCommand(long itemID, const QString & newText);
+	void incInstanceTitleForCommand(long id);
+	void showPartLabelForCommand(long id, bool showIt);
+	void resizeJumperItem(long id, QPointF pos, QPointF c0, QPointF c1);
 
 protected:
 	void dragEnterEvent(QDragEnterEvent *);
@@ -608,13 +612,9 @@ public Q_SLOTS:
 	void changeWireColor(const QString newColor);
 	void changeWireWidthMils(const QString newWidth);
 	void selectAllItems(bool state, bool doEmit);
-	void setNoteText(long itemID, const QString & newText);
-	void setInstanceTitle(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit);
-	void incInstanceTitle(long id);
-	void showPartLabel(long id, bool showIt);
+	void setInstanceTitleForCommand(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit);
 	void checkStickyForCommand(long id, bool doEmit, bool checkCurrent, CheckStickyCommand *);
 	virtual ItemBase * resizeBoard(long id, double w, double h);
-	void resizeJumperItem(long id, QPointF pos, QPointF c0, QPointF c1);
 	void disconnectAllSlot(QList<ConnectorItem *>, QHash<ItemBase *, SketchWidget *> & itemsToDelete, QUndoCommand * parentCommand);
 	void setResistance(long itemID, QString resistance, QString pinSpacing, bool doEmit);
 	void setResistance(QString resistance, QString pinSpacing);
@@ -627,8 +627,8 @@ public Q_SLOTS:
 	void updateConnectors();
 	void ratsnestConnectForCommand(long id, const QString & connectorID, bool connect, bool doEmit);
 	void cleanupRatsnestsForCommand(bool doEmit);
-	void addSubpart(long id, long subpartid, bool doEmit);
-	void packItems(int columns, const QList<long> & ids, QUndoCommand *parent, bool doEmit);
+	void addSubpartForCommand(long id, long subpartid, bool doEmit);
+	void packItemsForCommand(int columns, const QList<long> & ids, QUndoCommand *parent, bool doEmit);
 
 protected:
 	enum StatusConnectStatus {

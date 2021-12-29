@@ -1152,7 +1152,7 @@ void ItemBase::rotateFlipPartLabel(double degrees, Qt::Orientations orientation)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != nullptr) {
-		infoGraphicsView->rotateFlipPartLabel(this, degrees, orientation);
+		infoGraphicsView->rotateFlipPartLabelForCommand(this, degrees, orientation);
 	}
 }
 
@@ -2380,7 +2380,7 @@ void ItemBase::setInspectorTitle(const QString & oldText, const QString & newTex
 	if (infoGraphicsView == nullptr) return;
 
 	DebugDialog::debug(QString("set instance title to %1").arg(newText));
-	infoGraphicsView->setInstanceTitle(id(), oldText, newText, true, false);
+	infoGraphicsView->setInstanceTitleForCommand(id(), oldText, newText, true, false);
 }
 
 void ItemBase::addSimulationGraphicsItem(QGraphicsObject * item) {

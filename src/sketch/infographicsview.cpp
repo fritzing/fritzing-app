@@ -124,7 +124,7 @@ void InfoGraphicsView::partLabelMoved(ItemBase * itemBase, QPointF oldPos, QPoin
 	Q_UNUSED(newOffset);
 }
 
-void InfoGraphicsView::rotateFlipPartLabel(ItemBase * itemBase, double degrees, Qt::Orientations flipDirection) {
+void InfoGraphicsView::rotateFlipPartLabelForCommand(ItemBase * itemBase, double degrees, Qt::Orientations flipDirection) {
 	Q_UNUSED(itemBase);
 	Q_UNUSED(degrees);
 	Q_UNUSED(flipDirection);
@@ -237,7 +237,7 @@ void InfoGraphicsView::swap(const QString & family, const QString & prop, QMap<Q
 	Q_EMIT swapSignal(family, prop, propsMap, itemBase);
 }
 
-void InfoGraphicsView::setInstanceTitle(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit) {
+void InfoGraphicsView::setInstanceTitleForCommand(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit) {
 	Q_UNUSED(id);
 	Q_UNUSED(newTitle);
 	Q_UNUSED(oldTitle);

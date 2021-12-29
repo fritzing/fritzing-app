@@ -234,7 +234,7 @@ void SchematicSketchWidget::changeConnection(long fromID, const QString & fromCo
 	m_updateDotsTimer.start();
 }
 
-void SchematicSketchWidget::setInstanceTitle(long itemID, const QString & oldText, const QString & newText, bool isUndoable, bool doEmit) {
+void SchematicSketchWidget::setInstanceTitleForCommand(long itemID, const QString & oldText, const QString & newText, bool isUndoable, bool doEmit) {
 	// isUndoable is true when setInstanceTitle is called from the infoview
 
 	if (isUndoable) {
@@ -245,7 +245,7 @@ void SchematicSketchWidget::setInstanceTitle(long itemID, const QString & oldTex
 		}
 	}
 
-	SketchWidget::setInstanceTitle(itemID, oldText, newText, isUndoable, doEmit);
+	SketchWidget::setInstanceTitleForCommand(itemID, oldText, newText, isUndoable, doEmit);
 }
 
 void SchematicSketchWidget::setProp(ItemBase * itemBase, const QString & prop, const QString & trProp, const QString & oldValue, const QString & newValue, bool redraw)

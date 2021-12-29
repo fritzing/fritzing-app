@@ -669,7 +669,7 @@ void SketchWidget::addWireExtras(long newID, QDomElement & view, QUndoCommand * 
 	new WireExtrasCommand(this, newID, copy, copy, parentCommand);
 }
 
-void SketchWidget::setWireExtras(long newID, QDomElement & extras)
+void SketchWidget::setWireExtrasForCommand(long newID, QDomElement & extras)
 {
 	Wire * wire = qobject_cast<Wire *>(findItem(newID));
 	if (!wire) return;
@@ -1419,7 +1419,7 @@ void SketchWidget::rotateItemForCommand(long id, double degrees) {
 	}
 
 }
-void SketchWidget::transformItem(long id, const QTransform & matrix) {
+void SketchWidget::transformItemForCommand(long id, const QTransform & matrix) {
 	ItemBase * itemBase = findItem(id);
 	if (itemBase) {
 		itemBase->transformItem2(matrix);
@@ -7084,7 +7084,7 @@ bool SketchWidget::matchesLayer(ModelPart * modelPart) {
 	return false;
 }
 
-void SketchWidget::setNoteText(long itemID, const QString & newText) {
+void SketchWidget::setNoteTextForCommand(long itemID, const QString & newText) {
 	ItemBase * itemBase = findItem(itemID);
 	if (!itemBase) return;
 
@@ -7094,7 +7094,7 @@ void SketchWidget::setNoteText(long itemID, const QString & newText) {
 	note->setText(newText, false);
 }
 
-void SketchWidget::incInstanceTitle(long itemID) {
+void SketchWidget::incInstanceTitleForCommand(long itemID) {
 	ItemBase * itemBase = findItem(itemID);
 	if (itemBase) {
 		itemBase->ensureUniqueTitle(itemBase->instanceTitle(), true);
@@ -7110,7 +7110,7 @@ void SketchWidget::updatePartLabelInstanceTitleSlot(long itemID) {
 	}
 }
 
-void SketchWidget::setInstanceTitle(long itemID, const QString & oldText, const QString & newText, bool isUndoable, bool doEmit) {
+void SketchWidget::setInstanceTitleForCommand(long itemID, const QString & oldText, const QString & newText, bool isUndoable, bool doEmit) {
 	// isUndoable is true when setInstanceTitle is called from the infoview
 
 	ItemBase * itemBase = findItem(itemID);
@@ -7146,7 +7146,7 @@ void SketchWidget::setInstanceTitle(long itemID, const QString & oldText, const 
 	}
 }
 
-void SketchWidget::showPartLabel(long itemID, bool showIt) {
+void SketchWidget::showPartLabelForCommand(long itemID, bool showIt) {
 
 	ItemBase * itemBase = findItem(itemID);
 	if (itemBase) {
@@ -7172,7 +7172,7 @@ void SketchWidget::collectParts(QList<ItemBase *> & partList) {
 	}
 }
 
-void SketchWidget::movePartLabel(long itemID, QPointF newPos, QPointF newOffset)
+void SketchWidget::movePartLabelForCommand(long itemID, QPointF newPos, QPointF newOffset)
 {
 	ItemBase * item = findItem(itemID);
 	if (!item) return;
@@ -7192,14 +7192,14 @@ void SketchWidget::partLabelMoved(ItemBase * itemBase, QPointF oldPos, QPointF o
 }
 
 
-void SketchWidget::rotateFlipPartLabel(ItemBase * itemBase, double degrees, Qt::Orientations flipDirection) {
+void SketchWidget::rotateFlipPartLabelForCommand(ItemBase * itemBase, double degrees, Qt::Orientations flipDirection) {
 	auto * command = new RotateFlipLabelCommand(this, itemBase->id(), degrees, flipDirection, nullptr);
 	command->setText(tr("%1 label '%2'").arg((degrees != 0) ? tr("Rotate") : tr("Flip")).arg(itemBase->title()));
 	m_undoStack->push(command);
 }
 
 
-void SketchWidget::rotateFlipPartLabel(long itemID, double degrees, Qt::Orientations flipDirection) {
+void SketchWidget::rotateFlipPartLabelForCommand(long itemID, double degrees, Qt::Orientations flipDirection) {
 	ItemBase * itemBase = findItem(itemID);
 	if (!itemBase) return;
 
@@ -7251,7 +7251,7 @@ void SketchWidget::noteSizeChanged(ItemBase * itemBase, const QSizeF & oldSize, 
 	clearHoldingSelectItem();
 }
 
-void SketchWidget::resizeNote(long itemID, const QSizeF & size)
+void SketchWidget::resizeNoteForCommand(long itemID, const QSizeF & size)
 {
 	Note * note = qobject_cast<Note *>(findItem(itemID));
 	if (!note) return;
@@ -8306,7 +8306,7 @@ void SketchWidget::showLabelFirstTimeForCommand(long itemID, bool show, bool doE
 	}
 }
 
-void SketchWidget::restorePartLabel(long itemID, QDomElement & element) {
+void SketchWidget::restorePartLabelForCommand(long itemID, QDomElement & element) {
 	ItemBase * itemBase = findItem(itemID);
 	if (!itemBase) return;
 
@@ -8919,7 +8919,7 @@ const QString & SketchWidget::filenameIf()
 	return filename;
 }
 
-void SketchWidget::setItemDropOffset(long id, QPointF offset)
+void SketchWidget::setItemDropOffsetForCommand(long id, QPointF offset)
 {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;
@@ -9048,7 +9048,7 @@ bool SketchWidget::curvyWiresIndicated(Qt::KeyboardModifiers modifiers)
 	return ((modifiers & Qt::ControlModifier) != 0);
 }
 
-void SketchWidget::setMoveLock(long id, bool lock)
+void SketchWidget::setMoveLockForCommand(long id, bool lock)
 {
 	ItemBase * itemBase = findItem(id);
 	if (itemBase) itemBase->setMoveLock(lock);
@@ -9261,7 +9261,7 @@ void SketchWidget::collectRatsnestSlot(QList<SketchWidget *> & foreignSketchWidg
 	foreignSketchWidgets << this;
 }
 
-void SketchWidget::setGroundFillSeed(long id, const QString & connectorID, bool seed)
+void SketchWidget::setGroundFillSeedForCommand(long id, const QString & connectorID, bool seed)
 {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;
@@ -9608,7 +9608,7 @@ QHash<QString, QString> SketchWidget::getAutorouterSettings() {
 void SketchWidget::setAutorouterSettings(QHash<QString, QString> &) {
 }
 
-void SketchWidget::hidePartLayer(long id, ViewLayer::ViewLayerID viewLayerID, bool hide) {
+void SketchWidget::hidePartLayerForCommand(long id, ViewLayer::ViewLayerID viewLayerID, bool hide) {
 	ItemBase * itemBase = findItem(id);
 	if (!itemBase) return;
 
@@ -9655,7 +9655,7 @@ void SketchWidget::cleanupRatsnests(QList< QPointer<ConnectorItem> > & connector
 	}
 }
 
-void SketchWidget::addSubpart(long id, long subpartID, bool doEmit) {
+void SketchWidget::addSubpartForCommand(long id, long subpartID, bool doEmit) {
 	ItemBase * super = findItem(id);
 	if (!super) return;
 
@@ -9994,7 +9994,7 @@ bool SketchWidget::viewportEvent(QEvent *event) {
 	return result;
 }
 
-void SketchWidget::packItems(int columns, const QList<long> & ids, QUndoCommand *parent, bool doEmit)
+void SketchWidget::packItemsForCommand(int columns, const QList<long> & ids, QUndoCommand *parent, bool doEmit)
 {
 	if (ids.count() < 2) return;
 

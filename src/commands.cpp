@@ -294,7 +294,7 @@ void DeleteItemCommand::undo()
 	auto * itemBase = m_sketchWidget->addItemForCommand(m_moduleID, m_viewLayerPlacement, m_crossViewType, m_viewGeometry, m_itemID, m_modelIndex, this);
 	SimulationCommand::undo();
 	if(m_labelPos && m_labelOffset) {
-		m_sketchWidget->movePartLabel(m_itemID, *m_labelPos, *m_labelOffset);
+		m_sketchWidget->movePartLabelForCommand(m_itemID, *m_labelPos, *m_labelOffset);
 	}
 	if (m_localConnectors != nullptr && itemBase != nullptr) {
 		auto * modelPart = itemBase->modelPart();
@@ -1492,7 +1492,7 @@ void RestoreLabelCommand::undo()
 
 void RestoreLabelCommand::redo()
 {
-	m_sketchWidget->restorePartLabel(m_itemID, m_element);
+	m_sketchWidget->restorePartLabelForCommand(m_itemID, m_element);
 	BaseCommand::redo();
 }
 
@@ -1518,13 +1518,13 @@ MoveLabelCommand::MoveLabelCommand(SketchWidget *sketchWidget, long id, QPointF 
 
 void MoveLabelCommand::undo()
 {
-	m_sketchWidget->movePartLabel(m_itemID, m_oldPos, m_oldOffset);
+	m_sketchWidget->movePartLabelForCommand(m_itemID, m_oldPos, m_oldOffset);
 	BaseCommand::undo();
 }
 
 void MoveLabelCommand::redo()
 {
-	m_sketchWidget->movePartLabel(m_itemID, m_newPos, m_newOffset);
+	m_sketchWidget->movePartLabelForCommand(m_itemID, m_newPos, m_newOffset);
 	BaseCommand::redo();
 }
 
@@ -1549,13 +1549,13 @@ MoveLockCommand::MoveLockCommand(SketchWidget *sketchWidget, long id, bool oldLo
 
 void MoveLockCommand::undo()
 {
-	m_sketchWidget->setMoveLock(m_itemID, m_oldLock);
+	m_sketchWidget->setMoveLockForCommand(m_itemID, m_oldLock);
 	BaseCommand::undo();
 }
 
 void MoveLockCommand::redo()
 {
-	m_sketchWidget->setMoveLock(m_itemID, m_newLock);
+	m_sketchWidget->setMoveLockForCommand(m_itemID, m_newLock);
 	BaseCommand::redo();
 }
 
@@ -1583,12 +1583,12 @@ ChangeLabelTextCommand::ChangeLabelTextCommand(SketchWidget *sketchWidget, long 
 }
 
 void ChangeLabelTextCommand::undo() {
-	m_sketchWidget->setInstanceTitle(m_itemID, m_newText, m_oldText, false, true);
+	m_sketchWidget->setInstanceTitleForCommand(m_itemID, m_newText, m_oldText, false, true);
 	BaseCommand::undo();
 }
 
 void ChangeLabelTextCommand::redo() {
-	m_sketchWidget->setInstanceTitle(m_itemID, m_oldText, m_newText, false, true);
+	m_sketchWidget->setInstanceTitleForCommand(m_itemID, m_oldText, m_newText, false, true);
 	BaseCommand::redo();
 }
 
@@ -1615,7 +1615,7 @@ void IncLabelTextCommand::undo() {
 
 void IncLabelTextCommand::redo() {
 	if (!m_skipFirstRedo) {
-		m_sketchWidget->incInstanceTitle(m_itemID);
+		m_sketchWidget->incInstanceTitleForCommand(m_itemID);
 	}
 	BaseCommand::redo();
 }
@@ -1641,9 +1641,9 @@ ChangeNoteTextCommand::ChangeNoteTextCommand(SketchWidget *sketchWidget, long id
 }
 
 void ChangeNoteTextCommand::undo() {
-	m_sketchWidget->setNoteText(m_itemID, m_oldText);
+	m_sketchWidget->setNoteTextForCommand(m_itemID, m_oldText);
 	if (m_oldSize != m_newSize) {
-		m_sketchWidget->resizeNote(m_itemID, m_oldSize);
+		m_sketchWidget->resizeNoteForCommand(m_itemID, m_oldSize);
 	}
 	BaseCommand::undo();
 }
@@ -1654,9 +1654,9 @@ void ChangeNoteTextCommand::redo() {
 		return;
 	}
 
-	m_sketchWidget->setNoteText(m_itemID, m_newText);
+	m_sketchWidget->setNoteTextForCommand(m_itemID, m_newText);
 	if (m_oldSize != m_newSize) {
-		m_sketchWidget->resizeNote(m_itemID, m_newSize);
+		m_sketchWidget->resizeNoteForCommand(m_itemID, m_newSize);
 	}
 	BaseCommand::redo();
 }
@@ -1706,13 +1706,13 @@ RotateFlipLabelCommand::RotateFlipLabelCommand(SketchWidget* sketchWidget, long 
 
 void RotateFlipLabelCommand::undo()
 {
-	m_sketchWidget->rotateFlipPartLabel(m_itemID, -m_degrees, m_orientation);
+	m_sketchWidget->rotateFlipPartLabelForCommand(m_itemID, -m_degrees, m_orientation);
 	BaseCommand::undo();
 }
 
 void RotateFlipLabelCommand::redo()
 {
-	m_sketchWidget->rotateFlipPartLabel(m_itemID, m_degrees, m_orientation);
+	m_sketchWidget->rotateFlipPartLabelForCommand(m_itemID, m_degrees, m_orientation);
 	BaseCommand::redo();
 }
 
@@ -1736,13 +1736,13 @@ ResizeNoteCommand::ResizeNoteCommand(SketchWidget* sketchWidget, long itemID, co
 
 void ResizeNoteCommand::undo()
 {
-	m_sketchWidget->resizeNote(m_itemID, m_oldSize);
+	m_sketchWidget->resizeNoteForCommand(m_itemID, m_oldSize);
 	BaseCommand::undo();
 }
 
 void ResizeNoteCommand::redo()
 {
-	m_sketchWidget->resizeNote(m_itemID, m_newSize);
+	m_sketchWidget->resizeNoteForCommand(m_itemID, m_newSize);
 	BaseCommand::redo();
 }
 
@@ -1805,13 +1805,13 @@ TransformItemCommand::TransformItemCommand(SketchWidget *sketchWidget, long id, 
 
 void TransformItemCommand::undo()
 {
-	m_sketchWidget->transformItem(m_itemID, m_oldMatrix);
+	m_sketchWidget->transformItemForCommand(m_itemID, m_oldMatrix);
 	SimulationCommand::undo();
 }
 
 void TransformItemCommand::redo()
 {
-	m_sketchWidget->transformItem(m_itemID, m_newMatrix);
+	m_sketchWidget->transformItemForCommand(m_itemID, m_newMatrix);
 	SimulationCommand::redo();
 }
 
@@ -1936,7 +1936,7 @@ ShowLabelCommand::ShowLabelCommand(SketchWidget *sketchWidget, QUndoCommand *par
 void ShowLabelCommand::undo()
 {
 	Q_FOREACH (long id, m_idStates.keys()) {
-		m_sketchWidget->showPartLabel(id, (m_idStates.value(id) & 2) != 0);
+		m_sketchWidget->showPartLabelForCommand(id, (m_idStates.value(id) & 2) != 0);
 	}
 	BaseCommand::undo();
 }
@@ -1944,7 +1944,7 @@ void ShowLabelCommand::undo()
 void ShowLabelCommand::redo()
 {
 	Q_FOREACH (long id, m_idStates.keys()) {
-		m_sketchWidget->showPartLabel(id, (m_idStates.value(id) & 1) != 0);
+		m_sketchWidget->showPartLabelForCommand(id, (m_idStates.value(id) & 1) != 0);
 	}
 	BaseCommand::redo();
 }
@@ -2052,7 +2052,7 @@ void SetDropOffsetCommand::undo() {
 }
 
 void SetDropOffsetCommand::redo() {
-	m_sketchWidget->setItemDropOffset(m_itemID, m_dropOffset);
+	m_sketchWidget->setItemDropOffsetForCommand(m_itemID, m_dropOffset);
 	BaseCommand::redo();
 
 }
@@ -2104,7 +2104,7 @@ GroundFillSeedCommand::GroundFillSeedCommand(SketchWidget* sketchWidget, QUndoCo
 void GroundFillSeedCommand::undo()
 {
 	Q_FOREACH(GFSThing gfsThing, m_items) {
-		m_sketchWidget->setGroundFillSeed(gfsThing.id, gfsThing.connectorID, !gfsThing.seed);
+		m_sketchWidget->setGroundFillSeedForCommand(gfsThing.id, gfsThing.connectorID, !gfsThing.seed);
 	}
 	BaseCommand::undo();
 }
@@ -2112,7 +2112,7 @@ void GroundFillSeedCommand::undo()
 void GroundFillSeedCommand::redo()
 {
 	Q_FOREACH(GFSThing gfsThing, m_items) {
-		m_sketchWidget->setGroundFillSeed(gfsThing.id, gfsThing.connectorID, gfsThing.seed);
+		m_sketchWidget->setGroundFillSeedForCommand(gfsThing.id, gfsThing.connectorID, gfsThing.seed);
 	}
 	BaseCommand::redo();
 }
@@ -2150,7 +2150,7 @@ WireExtrasCommand::WireExtrasCommand(SketchWidget* sketchWidget, long fromID,
 void WireExtrasCommand::undo()
 {
 	if (!m_redoOnly) {
-		m_sketchWidget->setWireExtras(m_fromID, m_oldExtras);
+		m_sketchWidget->setWireExtrasForCommand(m_fromID, m_oldExtras);
 	}
 	BaseCommand::undo();
 }
@@ -2158,7 +2158,7 @@ void WireExtrasCommand::undo()
 void WireExtrasCommand::redo()
 {
 	if (!m_undoOnly) {
-		m_sketchWidget->setWireExtras(m_fromID, m_newExtras);
+		m_sketchWidget->setWireExtrasForCommand(m_fromID, m_newExtras);
 	}
 	BaseCommand::redo();
 }
@@ -2187,13 +2187,13 @@ HidePartLayerCommand::HidePartLayerCommand(SketchWidget *sketchWidget, long from
 
 void HidePartLayerCommand::undo()
 {
-	m_sketchWidget->hidePartLayer(m_fromID, m_layerID, m_wasHidden);
+	m_sketchWidget->hidePartLayerForCommand(m_fromID, m_layerID, m_wasHidden);
 	BaseCommand::undo();
 }
 
 void HidePartLayerCommand::redo()
 {
-	m_sketchWidget->hidePartLayer(m_fromID, m_layerID, m_isHidden);
+	m_sketchWidget->hidePartLayerForCommand(m_fromID, m_layerID, m_isHidden);
 	BaseCommand::redo();
 }
 
@@ -2221,7 +2221,7 @@ AddSubpartCommand::AddSubpartCommand(SketchWidget *sketchWidget,  CrossViewType 
 void AddSubpartCommand::undo()
 {
 	if (!m_redoOnly) {
-		m_sketchWidget->addSubpart(m_itemID, m_subpartItemID, true);
+		m_sketchWidget->addSubpartForCommand(m_itemID, m_subpartItemID, true);
 	}
 	BaseCommand::undo();
 }
@@ -2229,7 +2229,7 @@ void AddSubpartCommand::undo()
 void AddSubpartCommand::redo()
 {
 	if (!m_undoOnly) {
-		m_sketchWidget->addSubpart(m_itemID, m_subpartItemID, true);
+		m_sketchWidget->addSubpartForCommand(m_itemID, m_subpartItemID, true);
 	}
 	BaseCommand::redo();
 }
@@ -2261,7 +2261,7 @@ void PackItemsCommand::undo()
 void PackItemsCommand::redo()
 {
 	if (m_firstTime) {
-		m_sketchWidget->packItems(m_columns, m_ids, m_parentCommand, true);
+		m_sketchWidget->packItemsForCommand(m_columns, m_ids, m_parentCommand, true);
 		m_firstTime = false;
 	}
 

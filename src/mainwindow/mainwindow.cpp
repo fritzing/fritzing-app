@@ -781,7 +781,7 @@ void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 	                                 slotter, SLOT(setProp(long,  const QString &,  const QString &, bool, bool))) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(setInstanceTitleSignal(long, const QString &, const QString &, bool, bool )),
-	                                 slotter, SLOT(setInstanceTitle(long, const QString &, const QString &, bool, bool ))) != nullptr);
+					 slotter, SLOT(setInstanceTitleForCommand(long, const QString &, const QString &, bool, bool ))) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(setVoltageSignal(double, bool )),
 	                                 slotter, SLOT(setVoltage(double, bool ))) != nullptr);
@@ -824,9 +824,9 @@ void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 	                                 Qt::DirectConnection) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(packItemsSignal(int, const QList<long> &, QUndoCommand *, bool)),
-	                                 slotter, SLOT(packItems(int, const QList<long> &, QUndoCommand *, bool))) != nullptr);
+					 slotter, SLOT(packItemsForCommand(int, const QList<long> &, QUndoCommand *, bool))) != nullptr);
 
-	succeeded = succeeded && (connect(signaller, SIGNAL(addSubpartSignal(long, long, bool)), slotter, SLOT(addSubpart(long, long, bool))) != nullptr);
+	succeeded = succeeded && (connect(signaller, SIGNAL(addSubpartSignal(long, long, bool)), slotter, SLOT(addSubpartForCommand(long, long, bool))) != nullptr);
 
 	if (!succeeded) {
 		DebugDialog::debug("connectPair failed");

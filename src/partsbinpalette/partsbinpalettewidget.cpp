@@ -631,7 +631,7 @@ bool PartsBinPaletteWidget::contains(const QString &moduleID) {
 }
 
 bool PartsBinPaletteWidget::hasAlienParts() {
-	return m_alienParts.size() > 0;
+	return !m_alienParts.empty();
 }
 
 void PartsBinPaletteWidget::addPart(const QString& moduleID, int position) {

@@ -1506,6 +1506,34 @@ QString RestoreLabelCommand::getParamString() const {
 
 ///////////////////////////////////////////////
 
+CheckPartLabelLayerVisibilityCommand::CheckPartLabelLayerVisibilityCommand(SketchWidget *sketchWidget,long id, QUndoCommand *parent)
+	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
+	m_itemID(id)
+{
+}
+
+void CheckPartLabelLayerVisibilityCommand::undo()
+{
+	m_sketchWidget->checkPartLabelLayerVisibilityForCommand(m_itemID);
+	BaseCommand::undo();
+}
+
+void CheckPartLabelLayerVisibilityCommand::redo()
+{
+	m_sketchWidget->checkPartLabelLayerVisibilityForCommand(m_itemID);
+	BaseCommand::redo();
+}
+
+QString CheckPartLabelLayerVisibilityCommand::getParamString() const {
+	return QString("CheckPartLabelLayerVisibilityCommand ")
+	       + BaseCommand::getParamString()
+	       + QString(" id:%1")
+	       .arg(m_itemID);
+
+}
+
+///////////////////////////////////////////////
+
 MoveLabelCommand::MoveLabelCommand(SketchWidget *sketchWidget, long id, QPointF oldPos, QPointF oldOffset, QPointF newPos, QPointF newOffset, QUndoCommand *parent)
 	: BaseCommand(BaseCommand::SingleView, sketchWidget, parent),
 	m_itemID(id),

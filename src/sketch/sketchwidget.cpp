@@ -5124,6 +5124,11 @@ void SketchWidget::makeDeleteItemCommandPrepSlot(ItemBase * itemBase, bool forei
 		if (!itemBase) return;
 	}
 
+	if (itemBase->hasPartLabel()) {
+		auto * checkPartLabelLayerVisibilityCommand = new CheckPartLabelLayerVisibilityCommand(this, itemBase->id(), parentCommand);
+		checkPartLabelLayerVisibilityCommand->setUndoOnly();
+	}
+
 	if (itemBase->isPartLabelVisible()) {
 		auto * slc = new ShowLabelCommand(this, parentCommand);
 		slc->add(itemBase->id(), true, true);
@@ -5964,6 +5969,11 @@ long SketchWidget::setUpSwap(SwapThing & swapThing, bool master)
 	if (itemBase->isPartLabelVisible()) {
 		auto * slc = new ShowLabelCommand(this, swapThing.parentCommand);
 		slc->add(swapThing.newID, true, true);
+	}
+
+	if(partLabel != nullptr) {
+		auto * checkPartLabelLayerVisibilityCommand = new CheckPartLabelLayerVisibilityCommand(this, swapThing.newID, swapThing.parentCommand);
+		checkPartLabelLayerVisibilityCommand->setRedoOnly();
 	}
 
 	// Only perform this for the last of the three views.
@@ -7151,6 +7161,14 @@ void SketchWidget::showPartLabelForCommand(long itemID, bool showIt) {
 	ItemBase * itemBase = findItem(itemID);
 	if (itemBase) {
 		itemBase->showPartLabel(showIt, m_viewLayers.value(getLabelViewLayerID(itemBase)));
+	}
+}
+
+void SketchWidget::checkPartLabelLayerVisibilityForCommand(long itemID) {
+	ItemBase * itemBase = findItem(itemID);
+	if (itemBase && itemBase->hasPartLabel()) {
+		ViewLayer * viewLayer = m_viewLayers.value(getLabelViewLayerID(itemBase));
+		itemBase->partLabelSetHidden(!viewLayer->visible());
 	}
 }
 

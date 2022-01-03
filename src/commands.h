@@ -746,6 +746,22 @@ protected:
 
 /////////////////////////////////////////////
 
+class CheckPartLabelLayerVisibilityCommand : public BaseCommand
+{
+public:
+	CheckPartLabelLayerVisibilityCommand(class SketchWidget *sketchWidget, long id, QUndoCommand *parent);
+	void undo();
+	void redo();
+
+protected:
+	QString getParamString() const;
+
+protected:
+	long m_itemID;
+};
+
+/////////////////////////////////////////////
+
 class ShowLabelFirstTimeCommand : public BaseCommand
 {
 public:

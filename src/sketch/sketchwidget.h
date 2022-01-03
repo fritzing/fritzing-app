@@ -330,6 +330,7 @@ public:
 	void setNoteTextForCommand(long itemID, const QString & newText);
 	void incInstanceTitleForCommand(long id);
 	void showPartLabelForCommand(long id, bool showIt);
+	void checkPartLabelLayerVisibilityForCommand(long itemID);
 	void resizeJumperItem(long id, QPointF pos, QPointF c0, QPointF c1);
 
 protected:

@@ -128,8 +128,9 @@ QString Dip::genModuleID(QMap<QString, QString> & currPropsMap)
 	}
 }
 
-QString Dip::retrieveSchematicSvg(QString & svg) {
+QString Dip::retrieveSchematicSvg(QString & svg, bool & normalized) {
 	bool hasLocal = false;
+	normalized = true;
 	QStringList labels = getPinLabels(hasLocal);
 
 	if (hasLocal) {
@@ -140,6 +141,7 @@ QString Dip::retrieveSchematicSvg(QString & svg) {
 		else {
 			svg = MysteryPart::makeSchematicSvg(labels, true);
 		}
+		normalized = false;
 	}
 
 	return TextUtils::replaceTextElement(svg, "label", m_chipLabel);

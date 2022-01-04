@@ -56,7 +56,7 @@ protected:
 	bool isDIP();
 	bool otherPropsChange(const QMap<QString, QString> & propsMap);
 	const QStringList & spacings();
-	QString retrieveSchematicSvg(QString & svg);
+	QString retrieveSchematicSvg(QString & svg, bool & normalized);
 };
 
 #endif

@@ -143,15 +143,11 @@ QString MysteryPart::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QStri
 }
 
 QString MysteryPart::retrieveSchematicSvg(QString & svg, bool & normalized) {
-
 	bool hasLocal = false;
-	normalized = true;
 	QStringList labels = getPinLabels(hasLocal);
 
-	if (hasLocal) {
-		svg = makeSchematicSvg(labels, false);
-		normalized = false;
-	}
+	svg = makeSchematicSvg(labels, false);
+	normalized = false;
 
 	return TextUtils::replaceTextElement(svg, "label", m_chipLabel);
 }

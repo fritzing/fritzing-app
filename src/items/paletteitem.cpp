@@ -289,6 +289,9 @@ void PaletteItem::rotateItem(double degrees, bool includeRatsnest) {
 	for (int i = 0; i < m_layerKin.count(); i++) {
 		m_layerKin[i]->rotateItem(degrees, includeRatsnest);
 	}
+
+	QList<ConnectorItem *> already;
+	updateConnections(true, already);
 }
 
 void PaletteItem::flipItem(Qt::Orientations orientation) {

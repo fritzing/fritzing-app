@@ -650,6 +650,9 @@ void PaletteItem::renamePins(const QStringList & labels)
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	infoGraphicsView->changePinLabels(this);
+
+	QList<ConnectorItem *> already;
+	updateConnections(true, already);
 }
 
 bool PaletteItem::isSingleRow(const QList<ConnectorItem *> & connectorItems) {

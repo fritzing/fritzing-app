@@ -2749,6 +2749,8 @@ void ConnectorItem::moveLegBendpoint(int index, QPointF p)
 {
 	m_legPolygon.replace(index, mapFromScene(p));
 	calcConnectorEnd();
+	QList<ConnectorItem *> already;
+	attachedMoved(true, true, already);
 	update();
 }
 

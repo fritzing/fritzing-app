@@ -27,7 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QRegularExpression>
 #include <qmath.h>
 
-constexpr double MaskClearance = 0.005;  // 5 mils clearance
+constexpr double MaskClearance = 0.0;  // 5 mils clearance
 
 bool fillNotStroke(QDomElement & element, SVG2gerber::ForWhy forWhy) {
 	if (forWhy == SVG2gerber::ForOutline) return false;

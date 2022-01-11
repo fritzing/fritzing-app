@@ -1353,6 +1353,14 @@ void PaletteItem::generateSwap(const QString & text, GenModuleID genModuleID, Ge
 		}
 	}
 
+	PaletteItem::generateSwapFzpSvg(newModuleID, genFzp, makeBreadboardSvg, makeSchematicSvg, makePcbSvg);
+
+	m_propsMap.insert("moduleID", newModuleID);
+
+}
+
+void PaletteItem::generateSwapFzpSvg(QString newModuleID, GenFzp genFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg)
+{
 	QString path;
 	if (!PartFactory::fzpFileExists(newModuleID, path)) {
 		QString fzp = genFzp(newModuleID);
@@ -1389,9 +1397,6 @@ void PaletteItem::generateSwap(const QString & text, GenModuleID genModuleID, Ge
 			TextUtils::writeUtf8(path, svg);
 		}
 	}
-
-	m_propsMap.insert("moduleID", newModuleID);
-
 }
 
 void PaletteItem::changeUnits(bool)

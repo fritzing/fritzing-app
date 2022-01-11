@@ -148,6 +148,7 @@ protected:
 	QString hackFzpHoleSize(const QString & moduleID, const QString & pcbFilename, const QString & holeSize);
 	QString appendHoleSize(const QString & moduleID, const QString & holeSize, const QString & ringThickness);
 	void generateSwap(const QString & text, GenModuleID, GenFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
+	void generateSwapFzpSvg(QString newModuleID, GenFzp genFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
 	bool makeLocalModifications(QByteArray & svg, const QString & filename);
 	void makeOneKin(qint64 & id, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, ViewGeometry &, const LayerHash &);
 

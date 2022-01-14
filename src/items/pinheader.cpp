@@ -821,10 +821,10 @@ QString PinHeader::makePcbShroudedSvg(int pins)
 	               "%3\n"
 	               "</g>\n"
 	               "</g>\n"
-	               "<g id='silkscreen' >\n"
-	               "<rect x='40' y='40' width='3462' height='[3872]' fill='none' stroke='#ffffff' stroke-width='80'/>\n"
-	               "<path d='m473,{1150} 0,-{677} 2596,0 0,[3076] -2596,0 0,-{677}' fill='none' stroke='#ffffff' stroke-width='80'/>\n"
-	               "<rect x='40' y='{1150}' width='550' height='1652' fill='none' stroke='#ffffff' stroke-width='80'/>\n"
+		       "<g id='silkscreen' >\n"
+		       "<rect x='40' y='40' width='3462' height='[3872]' fill='none' stroke='black' stroke-width='80'/>\n"
+		       "<path d='m473,{1150} 0,-{677} 2596,0 0,[3076] -2596,0 0,-{677}' fill='none' stroke='black' stroke-width='80'/>\n"
+		       "<rect x='40' y='{1150}' width='550' height='1652' fill='none' stroke='black' stroke-width='80'/>\n"
 	               "</g>\n"
 	               "</svg>\n"
 	              );
@@ -1008,7 +1008,7 @@ QString PinHeader::makePcbSMDSvg(const QString & expectedFileName)
 	               "xmlns='http://www.w3.org/2000/svg'  x='0in' y='0in' width='%1in' "
 	               "height='%4in' viewBox='0 0 %2 %5'>\n"
 	               "<g id='silkscreen' >\n"
-	               "<rect x='2' y='86.708672' width='%3' height='%6' fill='none' stroke='#ffffff' stroke-width='4' stroke-opacity='1'/>\n"
+		       "<rect x='2' y='86.708672' width='%3' height='%6' fill='none' stroke='black' stroke-width='4' stroke-opacity='1'/>\n"
 	               "</g>\n"
 	               "<g id='copper1'>\n");
 

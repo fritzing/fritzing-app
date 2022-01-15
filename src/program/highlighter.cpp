@@ -21,6 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "highlighter.h"
 #include "syntaxer.h"
 
+#include "../utils/textutils.h"
 #include "../debugdialog.h"
 
 #include <stdlib.h>
@@ -133,7 +134,7 @@ void Highlighter::highlightBlock(const QString &text)
 			commentLength = endIndex - startCommentIndex + currentCommentInfo->m_end.length();
 		}
 		noComment.replace(startCommentIndex, commentLength, QString(commentLength, ' '));
-		QTextCharFormat * cf = m_styleFormats.value("Comment", NULL);
+		QTextCharFormat * cf = m_styleFormats.value("Comment", nullptr);
 		if (cf != nullptr) {
 			setFormat(startCommentIndex, commentLength, *cf);
 		}
@@ -142,6 +143,11 @@ void Highlighter::highlightBlock(const QString &text)
 
 	highlightStrings(startStringIndex, noComment);
 	highlightTerms(noComment);
+	highlightNumbers(noComment);
+
+	// highlight single chars
+	applyRule(QRegularExpression(R"RX('.?')RX"), m_styleFormats.value("Constant", nullptr), text);
+
 }
 
 void Highlighter::highlightStrings(int startStringIndex, QString & text) {
@@ -211,6 +217,36 @@ void Highlighter::highlightTerms(const QString & text) {
 		}
 
 		lastWordBreak = b + 1;
+	}
+}
+
+void Highlighter::highlightNumbers(const QString &text) {
+
+	// Floats , but also Integers
+	auto * floatStyle(m_styleFormats.value("Float", nullptr));
+	applyRule(TextUtils::floatingPointMatcher, floatStyle, text);
+
+	// Hex
+	auto * hexStyle(m_styleFormats.value("Hex", nullptr));
+	QRegularExpression hexRule(R"RX((\b0x[\dA-F]+\b))RX", QRegularExpression::CaseInsensitiveOption);
+	applyRule(hexRule, hexStyle, text);
+
+	// Octal (use the hex style)
+	QRegularExpression octalRule(R"RX((\b0[0-7]+\b))RX");
+	applyRule(octalRule, hexStyle, text);
+
+	// Binary (use the hex style)
+	QRegularExpression binaryRule(R"RX((\b0b[01]+\b))RX", QRegularExpression::CaseInsensitiveOption);
+	applyRule(binaryRule, hexStyle, text);
+}
+
+void Highlighter::applyRule(const QRegularExpression & rule, QTextCharFormat * format, const QString & text) {
+	if (format) { // only apply style if it is present in the styles.xml
+		QRegularExpressionMatchIterator matchIterator = rule.globalMatch(text);
+		while (matchIterator.hasNext()) {
+			QRegularExpressionMatch match = matchIterator.next();
+			setFormat(match.capturedStart(), match.capturedLength(), *format);
+		}
 	}
 }
 

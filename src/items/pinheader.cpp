@@ -850,9 +850,9 @@ QString PinHeader::makePcbShroudedSvg(int pins)
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 3) / 10000.0).arg(repeatLs).arg(repeatRs);
 }
 
-QString PinHeader::makePcbLongPadSvg(int pins, bool lock, const QString & spacingString)
+QString PinHeader::makePcbLongPadSvg(int pins, bool isAlternating, const QString & spacingString)
 {
-	if (lock) return makePcbLongPadLockSvg(pins, spacingString);
+	if (isAlternating) return makePcbLongPadAlternatingSvg(pins, spacingString);
 
 	double dpi = 25.4;
 	double originalHeight = 0.108;           // inches
@@ -896,11 +896,14 @@ QString PinHeader::makePcbLongPadSvg(int pins, bool lock, const QString & spacin
 	return header.arg(totalHeight).arg(totalHeight * dpi).arg(repeats).arg(totalHeight * dpi - lineOffset);
 }
 
-QString PinHeader::makePcbLongPadLockSvg(int pins, const QString & spacingString)
+QString PinHeader::makePcbLongPadAlternatingSvg(int pins, const QString & spacingString)
 {
 	double dpi = 25.4;
 	double originalHeight = 0.108;           // inches
 	double increment = 0.1;                 // inches
+	bool ok;
+	double inc = TextUtils::convertToInches(spacingString, &ok, false);
+	if (ok) increment = inc;
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 	               "<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
 	               "x='0in' y='0in' width='0.13in' height='%1in' viewBox='0 0 3.302 %2'>\n"
@@ -928,9 +931,13 @@ QString PinHeader::makePcbLongPadLockSvg(int pins, const QString & spacingString
 	               "<line class='other' x1='0.6604' y1='[2.6416]' x2='0.381' y2='[2.3622]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n");
 	bottom = TextUtils::incrementTemplateString(bottom, 1, increment * dpi * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
-
-	QString between("<line class='other' x1='1.651' y1='[2.8956]' x2='1.651' y2='[2.3876]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n");
-	QString betweens = TextUtils::incrementTemplateString(between, pins - 1, increment * dpi, TextUtils::standardMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
+	QString between;
+	QString betweens;
+	double lineLength = 0.508 + increment * dpi - 0.1 * dpi;
+	if (lineLength > 0.0) {
+		between = QString("<line class='other' x1='1.651' y1='[%1]' x2='1.651' y2='[2.3876]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n").arg(2.3876 + lineLength);
+		betweens = TextUtils::incrementTemplateString(between, pins - 1, increment * dpi, TextUtils::standardMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
+	}
 
 	double ncy = 1.3716;
 	double ncx = 1.524;

@@ -64,7 +64,7 @@ public:
 	static QString makePcbSvg(const QString & expectedFileName);
 	static QString makePcbShroudedSvg(int pins);
 	static QString makePcbLongPadSvg(int pins, bool lock, const QString & spacingString);
-	static QString makePcbLongPadLockSvg(int pins, const QString & spacingString);
+	static QString makePcbLongPadAlternatingSvg(int pins, const QString & spacingString);
 	static QString makePcbMolexSvg(int pins, const QString & spacingString);
 	static QString makePcbSMDSvg(const QString & expectedFileName);
 	static QString makeSchematicSvg(const QString & expectedFileName);

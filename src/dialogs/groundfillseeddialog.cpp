@@ -66,7 +66,8 @@ GroundFillSeedDialog::GroundFillSeedDialog(PCBSketchWidget * sketchWidget, QList
 	int ix = 0;
 	Q_FOREACH (ConnectorItem * connectorItem, connectorItems) {
 		auto *item = new QListWidgetItem;
-		item->setData(Qt::DisplayRole, connectorItem->connectorSharedName());
+		QString name = QString("%1-%2").arg(connectorItem->attachedToInstanceTitle()).arg(connectorItem->connectorSharedName());
+		item->setData(Qt::DisplayRole, name);
 		item->setData(Qt::CheckStateRole, connectorItem->isGroundFillSeed() ? Qt::Checked : Qt::Unchecked);
 		item->setData(Qt::UserRole, ix++);
 		connectorItem->updateTooltip();

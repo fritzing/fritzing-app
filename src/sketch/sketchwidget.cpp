@@ -351,12 +351,12 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 				sceneCorner.setY(sceneCenter.y() - (boundingRect->height() / 2));
 			}
 			bool isOffsetZero = (m_pasteOffset.x() == 0 && m_pasteOffset.y() == 0);
-			bool doSceneBoundingRectCorrection = isOffsetZero && boundingRect;
+			bool doSceneBoundingRectCorrection = isOffsetZero && boundingRect && !boundingRect->isNull();
 			QPointF offset;
 			// offset pasted items so we can differentiate them from the originals
 			if (offsetPaste) {
 				offset = QPointF((20 * m_pasteCount) + m_pasteOffset.x(), (20 * m_pasteCount) + m_pasteOffset.y());
-				if (doSceneBoundingRectCorrection && !boundingRect->isNull()) {
+				if (doSceneBoundingRectCorrection) {
 					offset += QPointF(sceneCorner.x() - boundingRect->left(), sceneCorner.y() - boundingRect->top());
 				}
 				viewGeometry.offset(offset.x(), offset.y());
@@ -403,10 +403,6 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 			if (!labelGeometry.isNull()) {
 				QDomElement clone = labelGeometry.cloneNode(true).toElement();
 				if (offsetPaste) {
-					offset = QPointF((20 * m_pasteCount) + m_pasteOffset.x(), (20 * m_pasteCount) + m_pasteOffset.y());
-					if (doSceneBoundingRectCorrection) {
-						offset += QPointF(sceneCorner.x() - boundingRect->left(), sceneCorner.y() - boundingRect->top());
-					}
 					bool ok;
 					double x = clone.attribute("x").toDouble(&ok);
 					if (ok) {

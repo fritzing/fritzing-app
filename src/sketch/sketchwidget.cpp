@@ -350,12 +350,16 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 				sceneCorner.setX(sceneCenter.x() - (boundingRect->width() / 2));
 				sceneCorner.setY(sceneCenter.y() - (boundingRect->height() / 2));
 			}
+			bool isOffsetZero = (m_pasteOffset.x() == 0 && m_pasteOffset.y() == 0);
+			bool doSceneBoundingRectCorrection = isOffsetZero && boundingRect;
+			QPointF offset;
 			// offset pasted items so we can differentiate them from the originals
 			if (offsetPaste) {
-				if (boundingRect && !boundingRect->isNull() && m_pasteOffset.x() == 0 && m_pasteOffset.y() == 0) {
-					viewGeometry.offset(sceneCorner.x() - boundingRect->left(), sceneCorner.y() - boundingRect->top());
+				offset = QPointF((20 * m_pasteCount) + m_pasteOffset.x(), (20 * m_pasteCount) + m_pasteOffset.y());
+				if (doSceneBoundingRectCorrection && !boundingRect->isNull()) {
+					offset += QPointF(sceneCorner.x() - boundingRect->left(), sceneCorner.y() - boundingRect->top());
 				}
-				viewGeometry.offset((20 * m_pasteCount) + m_pasteOffset.x(), (20 * m_pasteCount) + m_pasteOffset.y());
+				viewGeometry.offset(offset.x(), offset.y());
 			}
 			newAddItemCommand(crossViewType, mp, mp->moduleID(), viewLayerPlacement, viewGeometry, newID, false, mp->modelIndex(), false, parentCommand);
 
@@ -398,22 +402,20 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 
 			if (!labelGeometry.isNull()) {
 				QDomElement clone = labelGeometry.cloneNode(true).toElement();
-				bool ok;
-				double x = clone.attribute("x").toDouble(&ok);
-				if (ok) {
-					if (boundingRect && m_pasteOffset.x() == 0 && m_pasteOffset.y() == 0) {
-						x += sceneCorner.x() - boundingRect->left();
+				if (offsetPaste) {
+					offset = QPointF((20 * m_pasteCount) + m_pasteOffset.x(), (20 * m_pasteCount) + m_pasteOffset.y());
+					if (doSceneBoundingRectCorrection) {
+						offset += QPointF(sceneCorner.x() - boundingRect->left(), sceneCorner.y() - boundingRect->top());
 					}
-					x += (20 * m_pasteCount) + m_pasteOffset.x();
-					clone.setAttribute("x", QString::number(x));
-				}
-				double y = clone.attribute("y").toDouble(&ok);
-				if (ok) {
-					if (boundingRect && m_pasteOffset.x() == 0 && m_pasteOffset.y() == 0) {
-						y += sceneCorner.y() - boundingRect->top();
+					bool ok;
+					double x = clone.attribute("x").toDouble(&ok);
+					if (ok) {
+						clone.setAttribute("x", QString::number(x + offset.x()));
 					}
-					y += (20 * m_pasteCount) + m_pasteOffset.y();
-					clone.setAttribute("y", QString::number(y));
+					double y = clone.attribute("y").toDouble(&ok);
+					if (ok) {
+						clone.setAttribute("y", QString::number(y + offset.y()));
+					}
 				}
 				new RestoreLabelCommand(this, newID, clone, parentCommand);
 			}

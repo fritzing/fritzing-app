@@ -32,7 +32,7 @@ class ConnectorItem;
 class Stripbit : public QGraphicsPathItem
 {
 public:
-	Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent);
+	explicit Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent);
 	~Stripbit();
 
 	bool horizontal();

@@ -54,7 +54,7 @@ class Wire : public ItemBase, public CursorKeyListener
 	Q_OBJECT
 
 public:
-	Wire(class ModelPart *, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu, bool initLabel);
+	explicit Wire(class ModelPart *, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu, bool initLabel);
 	virtual ~Wire();
 
 

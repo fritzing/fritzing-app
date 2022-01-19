@@ -51,7 +51,7 @@ class SymbolPaletteItem : public PaletteItem
 	Q_OBJECT
 
 public:
-	SymbolPaletteItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit SymbolPaletteItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~SymbolPaletteItem();
 
 	ConnectorItem* newConnectorItem(class Connector *connector);

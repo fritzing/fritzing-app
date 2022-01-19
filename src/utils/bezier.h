@@ -33,7 +33,7 @@ class Bezier
 public:
 	using SplitBezier = std::tuple<Bezier, Bezier>;
 public:
-	Bezier(QPointF cp1, QPointF cp2);
+	explicit Bezier(QPointF cp1, QPointF cp2);
 	Bezier();
 	Bezier(const Bezier&);
 	Bezier(QPointF endpoint0, QPointF endpoint1, QPointF cp0, QPointF cp1) noexcept;

@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class SVGPathLexer
 {
 public:
-	SVGPathLexer(const QString &source);
+	explicit SVGPathLexer(const QString &source);
 	~SVGPathLexer();
 	int lex();
 	QChar currentCommand();

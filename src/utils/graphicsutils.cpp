@@ -305,7 +305,7 @@ QPainterPath GraphicsUtils::shapeFromPath(const QPainterPath &path, const QPen &
 
 	// We unfortunately need this hack as QPainterPathStroker will set a width of 1.0
 	// if we pass a value of 0.0 to QPainterPathStroker::setWidth()
-	static const auto penWidthZero = double(0.00000001);
+	static constexpr auto penWidthZero = double(0.00000001);
 
 	if (path == QPainterPath())
 		return path;

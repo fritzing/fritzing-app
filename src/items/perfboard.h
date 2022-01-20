@@ -36,7 +36,7 @@ class Perfboard : public Capacitor
 
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
-	Perfboard(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit Perfboard(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~Perfboard();
 
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);

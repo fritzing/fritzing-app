@@ -45,7 +45,7 @@ class PartLabel : public QGraphicsSvgItem
 {
 	Q_OBJECT
 public:
-	PartLabel(ItemBase * owner, QWidget *parentWidget, QGraphicsItem * parent = 0 );   // itembase is not the parent
+	explicit PartLabel(ItemBase * owner, QWidget *parentWidget, QGraphicsItem * parent = 0 );   // itembase is not the parent
 	~PartLabel();
 
 	void setPlainText(const QString & text);

@@ -40,7 +40,7 @@ class Board : public PaletteItem
 
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
-	Board(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit Board(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~Board();
 
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);

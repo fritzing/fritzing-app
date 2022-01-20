@@ -39,7 +39,7 @@ class Note : public ItemBase
 	Q_OBJECT
 
 public:
-	Note(class ModelPart*, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu);
+	explicit Note(class ModelPart*, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu);
 
 	void saveGeometry();
 	bool itemMoved();

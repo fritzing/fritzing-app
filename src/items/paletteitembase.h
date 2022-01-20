@@ -41,7 +41,7 @@ class PaletteItemBase : public ItemBase, public CursorKeyListener
 	Q_OBJECT
 
 public:
-	PaletteItemBase(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
+	explicit PaletteItemBase(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
 
 	void saveGeometry();
 	bool itemMoved();

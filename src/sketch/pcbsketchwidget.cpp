@@ -64,8 +64,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 /////////////////////////////////////////////////////
 
-static const int MAX_INT = std::numeric_limits<int>::max();
-static const double StrokeWidthIncrement = 50;
+static constexpr double StrokeWidthIncrement = 50;
 
 static QString PCBTraceColor1 = "trace1";
 static QString PCBTraceColor = "trace";

@@ -36,9 +36,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 QSizeF SchematicSketchWidget::m_jumperItemSize = QSizeF(0, 0);
 
 static QString SchematicTraceColor = "black";
-static const double TraceHoverStrokeFactor = 3;
-static const double TraceWidthMils = 9.7222;
-static const double TraceWidthMilsOld = 33.3333;
+static constexpr double TraceHoverStrokeFactor = 3;
+static constexpr double TraceWidthMils = 9.7222;
+static constexpr double TraceWidthMilsOld = 33.3333;
 
 bool sameGround(ConnectorItem * c1, ConnectorItem * c2)
 {

@@ -198,12 +198,12 @@ static bool GotZeroConnector = false;
 
 static const QString ReferenceFileString("referenceFile");
 
-static const int IconViewIndex = 3;
-static const int MetadataViewIndex = 4;
-static const int ConnectorsViewIndex = 5;
+static constexpr int IconViewIndex = 3;
+static constexpr int MetadataViewIndex = 4;
+static constexpr int ConnectorsViewIndex = 5;
 
-const static int PegiZ = 5000;
-const static int RatZ = 6000;
+constexpr static int PegiZ = 5000;
+constexpr static int RatZ = 6000;
 
 static long FakeGornSiblingNumber = 0;
 

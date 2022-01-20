@@ -46,8 +46,8 @@ const int HtmlInfoView::STANDARD_ICON_IMG_WIDTH = 80;
 const int HtmlInfoView::STANDARD_ICON_IMG_HEIGHT = 80;
 constexpr int IconSpace = 0;
 
-static const int MaxSpinBoxWidth = 60;
-static const int AfterSpinBoxWidth = 5;
+static constexpr int MaxSpinBoxWidth = 60;
+static constexpr int AfterSpinBoxWidth = 5;
 
 /////////////////////////////////////
 

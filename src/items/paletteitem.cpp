@@ -908,7 +908,7 @@ void PaletteItem::setUpHoleSizesAux(HoleClassThing & holeThing, const QString & 
 }
 
 QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeSettings, bool swappingEnabled, const QString & currentHoleSize, bool advanced) {
-	static const int RowHeight = 21;
+	static constexpr int RowHeight = 21;
 
 	holeSettings.diameterEdit = nullptr;
 	holeSettings.thicknessEdit = nullptr;

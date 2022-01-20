@@ -89,7 +89,7 @@ static QHash<QString, QString> fileExtFormats;
 static QRegularExpression AaCc("[aAcC]");
 static QRegularExpression LabelNumber("([^\\d]+)(.*)");
 
-static const double InchesPerMeter = 39.3700787;
+static constexpr double InchesPerMeter = 39.3700787;
 
 ////////////////////////////////////////////////////////
 

@@ -31,8 +31,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 
-static const int MARGIN = 5;
-static const int BUTTON_WIDTH = 150;
+static constexpr int MARGIN = 5;
+static constexpr int BUTTON_WIDTH = 150;
 
 /////////////////////////////////////
 

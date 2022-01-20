@@ -31,13 +31,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 static QVector<qreal> Dashes;
-static const int DashLength = 3;
+static constexpr int DashLength = 3;
 
 static bool ShiftDown = false;
 static QPointF OriginalShiftPos;
 static bool ShiftX = false;
 static bool ShiftY = false;
-static const double MinMouseMove = 2;
+static constexpr double MinMouseMove = 2;
 static const QColor NormalColor(0, 0, 255);
 static const QColor PickColor(255, 0, 255);
 

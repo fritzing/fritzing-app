@@ -336,9 +336,9 @@ void GraphicsUtils::qt_graphicsItem_highlightSelected(QPainter *painter, const Q
 	if (qMin(mbrect.width(), mbrect.height()) < double(1.0))
 		return;
 
-	double itemPenWidth = 1.0;
-	const double pad = itemPenWidth / 2;
-	const double penWidth = 0; // cosmetic pen
+	constexpr double itemPenWidth = 1.0;
+	constexpr double pad = itemPenWidth / 2;
+	constexpr double penWidth = 0; // cosmetic pen
 
 	const QColor fgcolor = option->palette.windowText().color();
 	const QColor bgcolor( // ensure good contrast against fgcolor

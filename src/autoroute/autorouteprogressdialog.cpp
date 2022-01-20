@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGroupBox>
 #include <QScrollBar>
 
-static const int ScrollAmount = 40;
+static constexpr int ScrollAmount = 40;
 
 ArrowButton::ArrowButton(int scrollX, int scrollY, ZoomableGraphicsView * view, const QString & path) : QLabel() {
 	m_scrollX = scrollX;

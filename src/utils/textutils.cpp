@@ -115,7 +115,7 @@ FixedFontsHash fixFontsMapping(const QSet<QString> fontsTofix, const QString & d
 		tempFontsToFix.remove(fontFileName);
 	}
 
-	Q_FOREACH (QString broken, tempFontsToFix) {
+	for (const QString & broken: std::as_const(tempFontsToFix)) {
 		retval.insert(broken, destFont);
 	}
 
@@ -125,9 +125,10 @@ FixedFontsHash fixFontsMapping(const QSet<QString> fontsTofix, const QString & d
 bool TextUtils::removeFontFamilySingleQuotes(QString &fileContent) {
 	QSet<QString> wrongFontFamilies = TextUtils::getRegexpCaptures(fontFamilyQuotesPattern, fileContent);
 
-	Q_FOREACH(QString ff, wrongFontFamilies) {
+	for (const QString & ff: std::as_const(wrongFontFamilies)) {
 		QString wrongFF = ff;
-		QString fixedFF = ff.remove('\'');
+		QString fixedFF = ff;
+		fixedFF.remove('\'');
 		fileContent.replace(wrongFF,fixedFF);
 	}
 
@@ -153,7 +154,7 @@ QString  makeDashString(bool dashed, const QVector<qreal> & pattern, double dpi,
 	QString dash;
 	if (dashed && pattern.count() > 0) {
 		dash = "stroke-dasharray='";
-		Q_FOREACH (qreal p, pattern) {
+		for (const qreal p: std::as_const(pattern)) {
 			dash += QString::number(p * dpi / printerScale);
 			dash += ",";
 		}
@@ -701,7 +702,7 @@ QString TextUtils::escapeAnd(const QString & string) {
 QString TextUtils::convertExtendedChars(const QString & str)
 {
 	QString result;
-	Q_FOREACH (QChar c, str) {
+	for (const QChar c: std::as_const(str)) {
 		if (c < QChar(128)) {
 			result.append(c);
 		}
@@ -718,7 +719,7 @@ QString TextUtils::stripNonValidXMLCharacters(const QString & str)
 	QString result;
 	QChar hs;
 	bool in_hs = false;
-	Q_FOREACH (QChar c, str) {
+	for (const QChar c: std::as_const(str)) {
 		if (c.isHighSurrogate()) {
 			hs = c;
 			in_hs = true;
@@ -979,7 +980,7 @@ void TextUtils::gWrap(QDomDocument & domDocument, const QHash<QString, QString> 
 	}
 
 	domDocument.documentElement().appendChild(g);
-	Q_FOREACH (QDomNode node, nodes) {
+	for (const QDomNode & node: std::as_const(nodes)) {
 		g.appendChild(node);
 	}
 }
@@ -1066,7 +1067,7 @@ bool TextUtils::fixMuch(QString &svg, bool fixStrokeWidthFlag)
 
 	QStringList strings;
 	strings << "pattern" << "marker" << "clipPath";
-	Q_FOREACH (QString string, strings) {
+	for (const QString & string: std::as_const(strings)) {
 		if (svg.contains("<" + string)) {
 			result |= noPatternAux(svgDom, string);
 		}
@@ -1271,7 +1272,7 @@ bool TextUtils::noUseAux(QDomDocument & svgDom)
 
 	if (uses.count() == 0) return false;
 
-	Q_FOREACH (QDomElement use, uses) {
+	for (const QDomElement & use: std::as_const(uses)) {
 		QString transform = use.attribute("transform");
 		QString refid = use.attribute("href");
 		QString id = use.attribute("id");
@@ -1517,7 +1518,7 @@ QString TextUtils::makePolySVG(const QPolygonF & poly, QPointF offset, double wi
 {
 	QString polyString = QString("<polyline stroke-linecap='round' stroke-linejoin='round' fill='none' stroke='%1' stroke-width='%2' points='\n").arg(blackOnly ? "black" : colorString).arg(width);
 	int space = 0;
-	Q_FOREACH (QPointF p, poly) {
+	for (const QPointF & p: std::as_const(poly)) {
 		polyString += QString("%1,%2 %3")
 		              .arg((p.x() - offset.x()) * dpi / printerScale)
 		              .arg((p.y() - offset.y()) * dpi / printerScale)
@@ -1654,7 +1655,7 @@ int TextUtils::getPinsAndSpacing(const QString & expectedFileName, QString & spa
 {
 	QStringList pieces = expectedFileName.split("_");
 	int pix = 0;
-	Q_FOREACH (QString piece, pieces) {
+	for (const QString & piece: std::as_const(pieces)) {
 		bool ok;
 		piece.toInt(&ok);
 		if (ok) break;
@@ -2005,7 +2006,7 @@ void TextUtils::resplit(QStringList & names, const QString & split) {
 	QStringList result;
 	QString appender = split;
 	if (appender == " ") appender = "";
-	Q_FOREACH (QString name, names) {
+	for (const QString & name: std::as_const(names)) {
 		QStringList sub = name.split(split, Qt::SkipEmptyParts);
 		for (int i = 0; i < sub.count(); i++) {
 			QString s = sub.at(i);

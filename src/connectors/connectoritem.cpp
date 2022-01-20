@@ -231,8 +231,8 @@ parts editor support
 static Bezier UndoBezier;
 static BezierDisplay * TheBezierDisplay = nullptr;
 
-static const double StandardLegConnectorDrawEnabledLength = 5;  // pixels
-static const double StandardLegConnectorDetectLength = 9;       // pixels
+static constexpr double StandardLegConnectorDrawEnabledLength = 5;  // pixels
+static constexpr double StandardLegConnectorDetectLength = 9;       // pixels
 
 QList<ConnectorItem *> ConnectorItem::m_equalPotentialDisplayItems;
 

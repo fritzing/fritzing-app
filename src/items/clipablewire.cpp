@@ -258,14 +258,24 @@ QPointF ClipableWire::findIntersection(ConnectorItem * connectorItem, const QPoi
 	QRectF r = connectorItem->rect();
 	r.adjust(connectorRectClipInset, connectorRectClipInset, -connectorRectClipInset, -connectorRectClipInset);	// inset it a little bit so the wire touches
 	QPolygonF poly = this->mapFromScene(connectorItem->mapToScene(r));
-	QLineF l1 = this->line();
-	int count = poly.count();
+	QLineF wireLine = this->line();
+	int count = poly.count() - 1;
+	bool foundIntersection = false;
+	QPointF firstIntersectionPoint;
 	for (int i = 0; i < count; i++) {
 		QLineF l2(poly[i], poly[(i + 1) % count]);
 		QPointF intersectingPoint;
-		if (l1.intersects(l2, &intersectingPoint) == QLineF::BoundedIntersection) {
-			return intersectingPoint;
+		if (wireLine.intersects(l2, &intersectingPoint) == QLineF::BoundedIntersection) {
+			if (!foundIntersection) {
+				firstIntersectionPoint = intersectingPoint;
+				foundIntersection = true;
+			} else {
+				return std::max(firstIntersectionPoint, intersectingPoint, [p](const QPointF & a, const QPointF & b) { return QLineF(p, a).length() < QLineF(p, b).length();});
+			}
 		}
+	}
+	if (foundIntersection) {
+		return firstIntersectionPoint;
 	}
 
 	return this->mapFromScene(connectorItem->mapToScene(r.center()));

@@ -54,7 +54,6 @@ static QHash<QString, QString> XmlNamesToNames;
 static QHash<QString, QString> BoardLayerTemplates;
 static QHash<QString, QString> SilkscreenLayerTemplates;
 static QHash<QString, QString> Silkscreen0LayerTemplates;
-static const int LineThickness = 8;
 static const QRegularExpression HeightExpr("height=\\'\\d*px");
 static QString StandardCustomBoardExplanation;
 

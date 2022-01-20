@@ -459,7 +459,7 @@ bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * 
 	renderer.finalLoad(byteArray, filename);
 	QRectF bounds = renderer.boundsOnElement(id);
 
-	static const int dim = 101;
+	static constexpr int dim = 101;
 	int width = dim;
 	int height = dim;
 	if (bounds.width() - bounds.height() / (bounds.width() + bounds.height()) > .01) {

@@ -51,7 +51,7 @@ static QPointF OriginalShiftPos;
 static bool ShiftX = false;
 static bool ShiftY = false;
 static bool SpaceBarWasPressed = false;
-static const double MinMouseMove = 2;
+static constexpr double MinMouseMove = 2;
 
 static QPainterPath HPath;
 static QPainterPath VPath;

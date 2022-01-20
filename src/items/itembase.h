@@ -77,7 +77,7 @@ public:
 	};
 
 public:
-	ItemBase(ModelPart*, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu);
+	explicit ItemBase(ModelPart*, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu);
 	virtual ~ItemBase();
 
 	constexpr qint64 id() const noexcept { return m_id; }

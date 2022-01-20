@@ -28,7 +28,7 @@ class JumperItem : public PaletteItem
 	Q_OBJECT
 
 public:
-	JumperItem( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool doLabel);
+	explicit JumperItem( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool doLabel);
 	~JumperItem();
 
 	QPainterPath shape() const;

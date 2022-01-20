@@ -29,7 +29,7 @@ class LayerKinPaletteItem : public PaletteItemBase
 	Q_OBJECT
 
 public:
-	LayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
+	explicit LayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
 	void setOffset(double x, double y);
 	ItemBase * layerKinChief();
 	bool ok();

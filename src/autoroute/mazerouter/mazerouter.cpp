@@ -80,46 +80,46 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 //////////////////////////////////////
 
-static const int OptimizeFactor = 2;
+static constexpr int OptimizeFactor = 2;
 
 //static int routeNumber = 0;
 
 static QString CancelledMessage;
 
-static const int DefaultMaxCycles = 100;
+static constexpr int DefaultMaxCycles = 100;
 
-static const GridValue GridBoardObstacle = std::numeric_limits<GridValue>::max();
-static const GridValue GridPartObstacle = GridBoardObstacle - 1;
-static const GridValue GridSource = GridBoardObstacle - 2;
-static const GridValue GridTarget = GridBoardObstacle - 3;
-static const GridValue GridAvoid = GridBoardObstacle - 4;
-static const GridValue GridTempObstacle = GridBoardObstacle - 5;
-static const GridValue GridSourceFlag = (GridBoardObstacle / 2) + 1;
+static constexpr GridValue GridBoardObstacle = std::numeric_limits<GridValue>::max();
+static constexpr GridValue GridPartObstacle = GridBoardObstacle - 1;
+static constexpr GridValue GridSource = GridBoardObstacle - 2;
+static constexpr GridValue GridTarget = GridBoardObstacle - 3;
+static constexpr GridValue GridAvoid = GridBoardObstacle - 4;
+static constexpr GridValue GridTempObstacle = GridBoardObstacle - 5;
+static constexpr GridValue GridSourceFlag = (GridBoardObstacle / 2) + 1;
 
-static const uint Layer1Cost = 100;
-static const uint CrossLayerCost = 100;
-static const uint ViaCost = 2000;
-static const uint AvoidCost = 7;
+static constexpr uint Layer1Cost = 100;
+static constexpr uint CrossLayerCost = 100;
+static constexpr uint ViaCost = 2000;
+static constexpr uint AvoidCost = 7;
 
-static const uchar GridPointDone = 1;
-static const uchar GridPointStepYPlus = 2;
-static const uchar GridPointStepYMinus = 4;
-static const uchar GridPointStepXPlus = 8;
-static const uchar GridPointStepXMinus = 16;
-static const uchar GridPointStepStart = 32;
-static const uchar GridPointJumperLeft = 64;
-static const uchar GridPointJumperRight = 128;
-//static const uchar GridPointNorth = 2;
-//static const uchar GridPointEast = 4;
-//static const uchar GridPointSouth = 8;
-//static const uchar GridPointWest = 16;
+static constexpr uchar GridPointDone = 1;
+static constexpr uchar GridPointStepYPlus = 2;
+static constexpr uchar GridPointStepYMinus = 4;
+static constexpr uchar GridPointStepXPlus = 8;
+static constexpr uchar GridPointStepXMinus = 16;
+static constexpr uchar GridPointStepStart = 32;
+static constexpr uchar GridPointJumperLeft = 64;
+static constexpr uchar GridPointJumperRight = 128;
+//static constexpr uchar GridPointNorth = 2;
+//static constexpr uchar GridPointEast = 4;
+//static constexpr uchar GridPointSouth = 8;
+//static constexpr uchar GridPointWest = 16;
 
-static const uchar JumperStart = 1;
-static const uchar JumperEnd = 2;
-static const uchar JumperLeft = 4;
-static const uchar JumperRight = 8;
+static constexpr uchar JumperStart = 1;
+static constexpr uchar JumperEnd = 2;
+static constexpr uchar JumperLeft = 4;
+static constexpr uchar JumperRight = 8;
 
-static const double MinTraceManhattanLength = 0.1;  // pixels
+static constexpr double MinTraceManhattanLength = 0.1;  // pixels
 
 ////////////////////////////////////////////////////////////////////
 
@@ -438,16 +438,7 @@ void Score::setOrdering(const NetOrdering & _ordering) {
 
 ////////////////////////////////////////////////////////////////////
 
-static const long IDs[] = { 1452191, 9781580, 9781600, 9781620, 9781640, 9781660, 9781680, 9781700 };
-static inline bool hasID(ConnectorItem * s) {
-	for (long ID : IDs) {
-		if (s->attachedToID() == ID) return true;
-	}
-
-	return false;
-}
-
-
+static constexpr long IDs[] = { 1452191, 9781580, 9781600, 9781620, 9781640, 9781660, 9781680, 9781700 };
 
 void ConnectionThing::add(ConnectorItem * s, ConnectorItem * d) {
 	//if (hasID(s) || hasID(d)) {

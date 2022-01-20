@@ -278,7 +278,7 @@ QPointF ClipableWire::findIntersection(ConnectorItem * connectorItem, const QPoi
 		return firstIntersectionPoint;
 	}
 
-	return this->mapFromScene(connectorItem->mapToScene(r.center()));
+	return this->mapFromScene(connectorItem->mapToScene(connectorItem->terminalPoint()));
 }
 
 bool ClipableWire::filterMousePressConnectorEvent(ConnectorItem * connectorItem, QGraphicsSceneMouseEvent * event) {

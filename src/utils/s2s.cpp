@@ -93,8 +93,8 @@ void setHiddenAux(QList<ConnectorLocation *> & allConnectorLocations, QList<Conn
 /////////////////////////////////
 
 static QRegularExpression IntegerFinder("\\d+");
-static const double ImageFactor = 5;
-static const double FudgeDivisor = 300;
+static constexpr double ImageFactor = 5;
+static constexpr double FudgeDivisor = 300;
 
 ///////////////////////////////////////////////////////
 

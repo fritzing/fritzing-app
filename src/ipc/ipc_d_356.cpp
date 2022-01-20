@@ -147,7 +147,7 @@ QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<Con
 		netList.removeOne(net);
 	}
 
-	const double MM2IPC = 1000.0;
+	constexpr double MM2IPC = 1000.0;
 	int countNets = 0;
 
 	// Sorting so we get consistend export data, avoid random order

@@ -108,8 +108,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 #endif
 
-static const double LoadProgressStart = 0.085;
-static const double LoadProgressEnd = 0.6;
+static constexpr double LoadProgressStart = 0.085;
+static constexpr double LoadProgressEnd = 0.6;
 
 
 ////////////////////////////////////////////////////

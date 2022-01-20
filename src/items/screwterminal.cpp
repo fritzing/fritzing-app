@@ -34,8 +34,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QLineEdit>
 
 
-static const int MinPins = 2;
-static const int MaxPins = 20;
+static constexpr int MinPins = 2;
+static constexpr int MaxPins = 20;
 static QHash<QString, QString> Spacings;
 
 static HoleClassThing TheHoleThing;

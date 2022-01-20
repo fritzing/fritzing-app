@@ -111,8 +111,8 @@ int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, Fo
 	int invalidCount = allPaths2gerber(forWhy);
 
 	if (forWhy == ForDrill) {
-		static const int initialHoleIndex = 1;
-		static const int offset = 100;
+		static constexpr int initialHoleIndex = 1;
+		static constexpr int offset = 100;
 		int initialPlatedIndex = (((m_holeApertures.uniqueKeys().count() + initialHoleIndex - 1) / offset) + 1) * offset;
 		m_gerber_header = "";
 		m_gerber_header += QString("; NON-PLATED HOLES START AT T%1\n").arg(initialHoleIndex);

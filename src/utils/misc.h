@@ -89,10 +89,10 @@ Qt::KeyboardModifier altOrMetaModifier();
 
 static QRegularExpression IntegerFinder("\\d+");
 
-static const int PartsBinHeightDefault = 240;
-static const int InfoViewHeightDefault = 220;
-static const int InfoViewMinHeight = 100;
-static const int DockWidthDefault = 300;
+static constexpr int PartsBinHeightDefault = 240;
+static constexpr int InfoViewHeightDefault = 220;
+static constexpr int InfoViewMinHeight = 100;
+static constexpr int DockWidthDefault = 300;
 
 
 #endif

@@ -42,10 +42,10 @@ static QStringList Spacings;
 static QRegularExpression Digits("(\\d)+");
 static QRegularExpression DigitsMil("(\\d)+mil");
 
-static const int MinSipPins = 1;
-static const int MaxSipPins = 128;
-static const int MinDipPins = 4;
-static const int MaxDipPins = 128;
+static constexpr int MinSipPins = 1;
+static constexpr int MaxSipPins = 128;
+static constexpr int MinDipPins = 4;
+static constexpr int MaxDipPins = 128;
 
 static HoleClassThing TheHoleThing;
 

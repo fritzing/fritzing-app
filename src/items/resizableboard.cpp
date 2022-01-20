@@ -62,7 +62,7 @@ QStringList Board::NewBoardImageNames;
 
 const double ResizableBoard::CornerHandleSize = 7.0;
 
-static const double JND = (double) 0.01;
+static constexpr double JND = (double) 0.01;
 
 QString Board::OneLayerTranslated;
 QString Board::TwoLayersTranslated;

@@ -1817,7 +1817,7 @@ bool PCBSketchWidget::canConnectSeed(QRectF boardRect,
 									 ViewLayer::ViewLayerID viewLayerID,
 									 QRectF s)
 {
-	const double clear = 18.0; // aribtrary value, seems to work fine with keepouts from 2..30
+	constexpr double clear = 18.0; // aribtrary value, seems to work fine with keepouts from 2..30
 	// with larger keepouts >> 30, most seeds can not be automatically connected anymore
 	// so the workaround would be to set a manual wiretrace.
 

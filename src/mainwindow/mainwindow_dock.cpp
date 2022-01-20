@@ -34,9 +34,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 /////////////////////////////////////
 
-static const int PartsBinMinHeight = 100;
-static const int UndoHistoryDefaultHeight = 70;
-static const int UndoHistoryMinHeight = UndoHistoryDefaultHeight;
+static constexpr int PartsBinMinHeight = 100;
+static constexpr int UndoHistoryDefaultHeight = 70;
+static constexpr int UndoHistoryMinHeight = UndoHistoryDefaultHeight;
 const int MainWindow::DockMinWidth = 130;
 const int MainWindow::DockMinHeight = 30;
 

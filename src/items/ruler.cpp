@@ -109,8 +109,8 @@ QString Ruler::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QS
 }
 
 QString Ruler::makeSvg(double inches) {
-	const double cm = 1 / 2.54;
-	const double offset = 0.125;
+	constexpr double cm = 1 / 2.54;
+	constexpr double offset = 0.125;
 	const double mmW = inches * 25.4;// 1/10 centimeter constant
 	const double mmmW = inches * 254;// 1/100 centimeter constant
 

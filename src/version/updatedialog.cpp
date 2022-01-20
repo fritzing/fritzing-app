@@ -40,7 +40,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDesktopServices>
 
 
-static const int s_maxProgress = 1000;
+static constexpr int s_maxProgress = 1000;
 static QString sUpdatePartsMessage;
 
 UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)

@@ -44,7 +44,7 @@ QPixmap * NoIcon = nullptr;
 
 const int HtmlInfoView::STANDARD_ICON_IMG_WIDTH = 80;
 const int HtmlInfoView::STANDARD_ICON_IMG_HEIGHT = 80;
-const int IconSpace = 0;
+constexpr int IconSpace = 0;
 
 static const int MaxSpinBoxWidth = 60;
 static const int AfterSpinBoxWidth = 5;

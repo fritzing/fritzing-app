@@ -29,7 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QScrollBar>
 #include <QSettings>
 
-static const double WireHoverStrokeFactor = 4.0;
+static constexpr double WireHoverStrokeFactor = 4.0;
 
 BreadboardSketchWidget::BreadboardSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
 	: SketchWidget(viewID, parent)

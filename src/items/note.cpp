@@ -68,10 +68,10 @@ const int Note::emptyMinWidth = 40;
 const int Note::emptyMinHeight = 25;
 const int Note::initialMinWidth = 140;
 const int Note::initialMinHeight = 45;
-const int borderWidth = 7;
-const int TriangleOffset = 7;
+constexpr int borderWidth = 7;
+constexpr int TriangleOffset = 7;
 
-const double InactiveOpacity = 0.5;
+constexpr double InactiveOpacity = 0.5;
 
 QString Note::initialTextString;
 

@@ -80,7 +80,7 @@ protected:
 	static void initCounts();
 
 public:
-	static const int MessageCount = 4;
+	static constexpr int MessageCount = 4;
 
 protected Q_SLOTS:
 	void visitFritzingFab();

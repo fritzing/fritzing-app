@@ -38,12 +38,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtDebug>
 
 
-static const int ConnectorIDJump = 1000;
-static const int MaxXDimension = 199;
-static const int MinXDimension = 3;
-static const int MaxYDimension = 199;
-static const int MinYDimension = 3;
-static const int WarningSize = 2000;
+static constexpr int ConnectorIDJump = 1000;
+static constexpr int MaxXDimension = 199;
+static constexpr int MinXDimension = 3;
+static constexpr int MaxYDimension = 199;
+static constexpr int MinYDimension = 3;
+static constexpr int WarningSize = 2000;
 
 static const QString OneHole("M%1,%2a%3,%3 0 1 %5 %4,0 %3,%3 0 1 %5 -%4,0z\n");
 

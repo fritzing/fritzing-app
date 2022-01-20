@@ -34,8 +34,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QLineEdit>
 #include <qmath.h>
 
-static const int IndexCm = 0;
-static const int IndexIn = 1;
+static constexpr int IndexCm = 0;
+static constexpr int IndexIn = 1;
 
 static QString DefaultWidth = "";
 

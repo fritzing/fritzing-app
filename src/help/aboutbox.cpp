@@ -33,8 +33,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 AboutBox* AboutBox::Singleton = nullptr;
 
-static const int AboutWidth = 390;
-static const int AboutText = 220;
+static constexpr int AboutWidth = 390;
+static constexpr int AboutText = 220;
 QString AboutBox::BuildType;
 
 AboutBox::AboutBox(QWidget *parent)

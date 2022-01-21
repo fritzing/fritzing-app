@@ -311,7 +311,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	setAcceptDrops(true);
 	m_activeWire = NULL;
 	m_activeConnectorItem = NULL;
-	m_swapTimer.setInterval(30);
+	m_swapTimer.setInterval(300);
 	m_swapTimer.setParent(this);
 	m_swapTimer.setSingleShot(true);
 	connect(&m_swapTimer, SIGNAL(timeout()), this, SLOT(swapSelectedTimeout()));

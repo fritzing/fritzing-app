@@ -375,6 +375,14 @@ void SchematicSketchWidget::extraRenderSvgStep(ItemBase * itemBase, QPointF offs
 		if (connector->isBigDot()) {
 			double r = connector->rect().width();
 			outputSvg += makeCircleSVG(connector->sceneAdjustedTerminalPoint(nullptr), r, offset, dpi, printerScale);
+		} else if(connector->isCircular() && connector->forWire()) {
+			auto rect = connector->rect();
+			// This radius formula is a rough approximation based on the above big dot/bendpoint formula,
+			// as well as NonConnectorItem::paint, where the bendpoints are drawn if not for SVG.
+			// It is not fully understood, why it seems to work out.
+			// It is also not clear if the rect must be mapped to the scene for this calculation.
+			double r = rect.width() / 2;
+			outputSvg += makeCircleSVG(connector->mapToScene(rect.center()), r, offset, dpi, printerScale);
 		}
 	}
 }

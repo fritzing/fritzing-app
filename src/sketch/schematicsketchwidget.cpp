@@ -371,15 +371,12 @@ void SchematicSketchWidget::extraRenderSvgStep(ItemBase * itemBase, QPointF offs
 	auto * traceWire = qobject_cast<TraceWire *>(itemBase);
 	if (traceWire == nullptr) return;
 
-	if (traceWire->connector0()->isBigDot()) {
-		double r = traceWire->connector0()->rect().width();
-		outputSvg += makeCircleSVG(traceWire->connector0()->sceneAdjustedTerminalPoint(nullptr), r, offset, dpi, printerScale);
+	for (auto * connector : {traceWire->connector0(), traceWire->connector1()}) {
+		if (connector->isBigDot()) {
+			double r = connector->rect().width();
+			outputSvg += makeCircleSVG(connector->sceneAdjustedTerminalPoint(nullptr), r, offset, dpi, printerScale);
+		}
 	}
-	if (traceWire->connector1()->isBigDot()) {
-		double r = traceWire->connector0()->rect().width();
-		outputSvg += makeCircleSVG(traceWire->connector1()->sceneAdjustedTerminalPoint(nullptr), r, offset, dpi, printerScale);
-	}
-
 }
 
 QString SchematicSketchWidget::makeCircleSVG(QPointF p, double r, QPointF offset, double dpi, double printerScale)

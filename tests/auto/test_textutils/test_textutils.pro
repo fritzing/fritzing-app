@@ -13,6 +13,8 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
+CONFIG += c++17
+
 # specify absolute path so that unit test compiles will find the folder
 absolute_boost = 1
 include($$absolute_path(../../../pri/boostdetect.pri))

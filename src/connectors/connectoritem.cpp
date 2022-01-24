@@ -2187,11 +2187,29 @@ QString ConnectorItem::makeLegSvg(QPointF offset, double dpi, double printerScal
 		}
 	}
 
-	QString path = QString("<path stroke='%1' stroke-width='%2' stroke-linecap='round' stroke-linejoin='round' fill='none' d='%3' />\n")
+	QString svg = QString("<path stroke='%1' stroke-width='%2' stroke-linecap='round' stroke-linejoin='round' fill='none' d='%3' />\n")
 	               .arg(blackOnly ? "black" :  m_legColor.name())
 	               .arg(m_legStrokeWidth * dpi / printerScale)
 	               .arg(data);
-	return path;
+
+	if (m_legPolygon.count() > 2) {
+		// draw bendpoint indicators
+		double halfWidth = m_legStrokeWidth * dpi / (2.0 * printerScale);
+		QColor c =  addColor(m_legColor, (qGray(m_legColor.rgb()) < 64) ? 80 : -64);
+		for (int i = 1; i < m_legPolygon.count() - 1; i++) {
+			double cx = (mapToScene(m_legPolygon.at(i)).x() - offset.x()) * dpi / printerScale;
+			double cy = (mapToScene(m_legPolygon.at(i)).y() - offset.y()) * dpi / printerScale;
+
+			svg += QString("<circle  fill=\"%4\" cx=\"%1\" cy=\"%2\" r=\"%3\" stroke-width=\"0\" stroke=\"none\" />")
+			       .arg(cx)
+			       .arg(cy)
+			       .arg(halfWidth)
+			       .arg(c.name());
+		}
+	}
+
+	return svg;
+
 }
 
 QPolygonF ConnectorItem::sceneAdjustedLeg() {

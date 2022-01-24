@@ -2164,33 +2164,47 @@ bool ConnectorItem::isDraggingLeg() {
 	return m_draggingLeg;
 }
 
+QString ConnectorItem::pathMoveTo(QPointF p, QPointF offset, double dpi, double printerScale) {
+	QString data("M");
+	data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
+	return data;
+}
+
+QString ConnectorItem::pathCubicTo(Bezier * bezier, QPointF p, QPointF offset, double dpi, double printerScale) {
+	QString data;
+	if (!bezier || bezier->isEmpty()) {
+		data += "L";
+		data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
+	}
+	else {
+		data += "C";
+		data += TextUtils::pointToSvgString(mapToScene(bezier->cp0()), offset, dpi, printerScale);
+		data += " ";
+		data += TextUtils::pointToSvgString(mapToScene(bezier->cp1()), offset, dpi, printerScale);
+		data += " ";
+		data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
+	}
+	return data;
+}
+
+QString ConnectorItem::makePathSvg(QString color, double strokeWidth, double opacity, QString path) {
+	QString svg = QString("<path stroke='%1' stroke-width='%2' stroke-linecap='round' stroke-linejoin='round' fill='none' d='%3' opacity='%4' />\n")
+		       .arg(color)
+		       .arg(strokeWidth)
+		       .arg(path)
+		       .arg(opacity);
+	return svg;
+}
+
 QString ConnectorItem::makeLegSvg(QPointF offset, double dpi, double printerScale, bool blackOnly) {
 	if (!m_rubberBandLeg) return "";
 
-	QString data("M");
-	QPointF p = m_legPolygon.at(0);
-	data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
+	QString data = pathMoveTo(m_legPolygon.at(0), offset, dpi, printerScale);
 	for (int i = 1; i < m_legPolygon.count(); i++) {
-		QPointF p = m_legPolygon.at(i);
-		Bezier * bezier = m_legCurves.at(i - 1);
-		if (!bezier || bezier->isEmpty()) {
-			data += "L";
-			data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
-		}
-		else {
-			data += "C";
-			data += TextUtils::pointToSvgString(mapToScene(bezier->cp0()), offset, dpi, printerScale);
-			data += " ";
-			data += TextUtils::pointToSvgString(mapToScene(bezier->cp1()), offset, dpi, printerScale);
-			data += " ";
-			data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
-		}
+		data += pathCubicTo(m_legCurves.at(i - 1), m_legPolygon.at(i), offset, dpi, printerScale);
 	}
 
-	QString svg = QString("<path stroke='%1' stroke-width='%2' stroke-linecap='round' stroke-linejoin='round' fill='none' d='%3' />\n")
-	               .arg(blackOnly ? "black" :  m_legColor.name())
-	               .arg(m_legStrokeWidth * dpi / printerScale)
-	               .arg(data);
+	QString svg = makePathSvg(blackOnly ? "black" :  m_legColor.name(), m_legStrokeWidth * dpi / printerScale, 1.0, data);
 
 	if (m_legPolygon.count() > 2) {
 		// draw bendpoint indicators

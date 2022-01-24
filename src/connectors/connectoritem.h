@@ -24,6 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "nonconnectoritem.h"
 #include "connector.h"
 #include "../utils/cursormaster.h"
+#include "../utils/bezier.h"
 
 #include <QThread>
 #include <QGraphicsLineItem>
@@ -125,6 +126,9 @@ public:
 	void setLeg(const QPolygonF &, bool relative, const QString & why);
 	void resetLeg(const QPolygonF &, bool relative, bool active, const QString & why);
 	const QPolygonF & leg();
+	QString pathMoveTo(QPointF p, QPointF offset, double dpi, double printerScale);
+	QString pathCubicTo(Bezier * bezier, QPointF p, QPointF offset, double dpi, double printerScale);
+	QString makePathSvg(QString color, double strokeWidth, double opacity, QString path);
 	QString makeLegSvg(QPointF offset, double dpi, double printerScale, bool blackOnly);
 	QPolygonF sceneAdjustedLeg();
 	void prepareToStretch(bool activeStretch);

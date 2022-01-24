@@ -240,6 +240,8 @@ const QList<ConnectorItem *> ConnectorItem::emptyConnectorItemList;
 
 static double MAX_DOUBLE = std::numeric_limits<double>::max();
 
+const QColor LegConnectorUnderColor = QColor("#8c8c8c"); // TODO: don't hardcode color
+
 bool wireLessThan(ConnectorItem * c1, ConnectorItem * c2)
 {
 	if (c1->connectorType() == c2->connectorType()) {
@@ -1736,7 +1738,7 @@ void ConnectorItem::paintLeg(QPainter * painter)
 
 	if (!isGrey(m_legColor)) {
 		// draw an undercolor so the connectorColor will be visible on top of the leg color
-		lpen.setColor(0x8c8c8c);			// TODO: don't hardcode color
+		lpen.setColor(LegConnectorUnderColor);
 		painter->setOpacity(1);
 		painter->setPen(lpen);
 		if (connectorIsCurved) {
@@ -2221,6 +2223,33 @@ QString ConnectorItem::makeLegSvg(QPointF offset, double dpi, double printerScal
 			       .arg(c.name());
 		}
 	}
+
+	// now draw the connector
+	data = "";
+	Bezier * bezier = m_legCurves.at(m_legCurves.count() - 2);
+	bool connectorIsCurved = (bezier && !bezier->isEmpty());
+	Bezier left, right;
+	Bezier *rightPtr = nullptr;
+	QPointF start, end;
+	if (connectorIsCurved) {
+		bezier->split(m_connectorDrawT, left, right);
+		start = right.endpoint0();
+		end = right.endpoint1();
+		rightPtr = &right;
+	} else {
+		start = m_connectorDrawEnd;
+		end = m_legPolygon.last();
+	}
+
+	data += pathMoveTo(start, offset, dpi, printerScale);
+	data += pathCubicTo(rightPtr, end, offset, dpi, printerScale);
+
+	if (!isGrey(m_legColor)) {
+		// draw an undercolor so the connectorColor will be visible on top of the leg color
+		svg += makePathSvg(LegConnectorUnderColor.name(), m_legStrokeWidth * dpi / printerScale, 1.0, data);
+	}
+
+	svg += makePathSvg(this->pen().color().name(), m_legStrokeWidth * dpi / printerScale, m_opacity, data);
 
 	return svg;
 

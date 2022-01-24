@@ -187,7 +187,7 @@ protected:
 	void regeneratePartsDatabaseAux(QDialog * progressDialog);
 
 
-	enum ServiceType {
+	enum class ServiceType {
 		GerberService = 1,
 		GedaService,
 		KicadSchematicService,
@@ -218,7 +218,7 @@ protected:
 	QStringList m_externalProcessArgs;
 	QString m_externalProcessName;
 	QString m_externalProcessPath;
-	ServiceType m_serviceType = NoService;
+	ServiceType m_serviceType = ServiceType::NoService;
 	int m_progressIndex = 0;
 	class FSplashScreen * m_splash = nullptr;
 	QString m_outputFolder;

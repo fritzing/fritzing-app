@@ -347,7 +347,7 @@ int FApplication::init() {
 	//DebugDialog::debug(QString("argument %1").arg(argument));
 	//}
 
-	m_serviceType = NoService;
+	m_serviceType = ServiceType::NoService;
 
 	QList<int> toRemove;
 	for (int i = 0; i < m_arguments.length(); i++) {
@@ -369,7 +369,7 @@ int FApplication::init() {
 		        (m_arguments[i].compare("-examples", Qt::CaseInsensitive) == 0)||
 		        (m_arguments[i].compare("--examples", Qt::CaseInsensitive) == 0)) {
 			DebugDialog::setEnabled(true);
-			m_serviceType = ExampleService;
+			m_serviceType = ServiceType::ExampleService;
 			m_outputFolder = " ";					// otherwise program will bail out
 			toRemove << i;
 		}
@@ -419,14 +419,14 @@ int FApplication::init() {
 
 		if ((m_arguments[i].compare("-geda", Qt::CaseInsensitive) == 0) ||
 		        (m_arguments[i].compare("--geda", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = GedaService;
+			m_serviceType = ServiceType::GedaService;
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
 		}
 
 		//if ((m_arguments[i].compare("-drc", Qt::CaseInsensitive) == 0) ||
 		//	(m_arguments[i].compare("--drc", Qt::CaseInsensitive) == 0)) {
-		//	m_serviceType = DRCService;
+		//	m_serviceType = ServiceType::DRCService;
 		//	m_outputFolder = m_arguments[i + 1];
 		//	toRemove << i << i + 1;
 		//}
@@ -434,28 +434,28 @@ int FApplication::init() {
 		if ((m_arguments[i].compare("-db", Qt::CaseInsensitive) == 0) ||
 		        (m_arguments[i].compare("-database", Qt::CaseInsensitive) == 0) ||
 		        (m_arguments[i].compare("--database", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = DatabaseService;
+			m_serviceType = ServiceType::DatabaseService;
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
 		}
 
 		if ((m_arguments[i].compare("-kicad", Qt::CaseInsensitive) == 0) ||
 		        (m_arguments[i].compare("--kicad", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = KicadFootprintService;
+			m_serviceType = ServiceType::KicadFootprintService;
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
 		}
 
 		if ((m_arguments[i].compare("-kicadschematic", Qt::CaseInsensitive) == 0) ||
 		        (m_arguments[i].compare("--kicadschematic", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = KicadSchematicService;
+			m_serviceType = ServiceType::KicadSchematicService;
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
 		}
 
 		if ((m_arguments[i].compare("-svg", Qt::CaseInsensitive) == 0) ||
 		        (m_arguments[i].compare("--svg", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = SvgService;
+			m_serviceType = ServiceType::SvgService;
 			DebugDialog::setEnabled(true);
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
@@ -475,7 +475,7 @@ int FApplication::init() {
 			if (i + 2 < m_arguments.count()) {
 				if (ok) {
 					m_portRootFolder = m_arguments[i + 2];
-					m_serviceType = PortService;
+					m_serviceType = ServiceType::PortService;
 				}
 				toRemove << i + 2;
 			}
@@ -488,7 +488,7 @@ int FApplication::init() {
 		if ((m_arguments[i].compare("-g", Qt::CaseInsensitive) == 0) ||
 		        (m_arguments[i].compare("-gerber", Qt::CaseInsensitive) == 0)||
 		        (m_arguments[i].compare("--gerber", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = GerberService;
+			m_serviceType = ServiceType::GerberService;
 			DebugDialog::setEnabled(true);
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
@@ -497,7 +497,7 @@ int FApplication::init() {
 		if ((m_arguments[i].compare("-a", Qt::CaseInsensitive) == 0) ||
 			(m_arguments[i].compare("-all", Qt::CaseInsensitive) == 0)||
 			(m_arguments[i].compare("--all", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = ExportAllService;
+			m_serviceType = ServiceType::ExportAllService;
 			DebugDialog::setEnabled(true);
 			m_outputFolder = m_arguments[i + 1];
 			toRemove << i << i + 1;
@@ -569,7 +569,7 @@ int FApplication::init() {
 	PaletteModel::initNames();
 	SvgIconWidget::initNames();
 	PinHeader::initNames();
-	if (m_serviceType == NoService) {
+	if (m_serviceType == ServiceType::NoService) {
 		CursorMaster::initCursors();
 	}
 
@@ -807,7 +807,7 @@ int FApplication::serviceStartup() {
 	}
 
 	switch (m_serviceType) {
-	case PortService:
+	case ServiceType::PortService:
 		initService();
 		{
 			MainWindow * sketch = MainWindow::newMainWindow(m_referenceModel, "", true, true, -1);
@@ -818,39 +818,39 @@ int FApplication::serviceStartup() {
 		}
 		return 1;
 
-	case GedaService:
+	case ServiceType::GedaService:
 		runGedaService();
 		return 0;
 
-	case DRCService:
+	case ServiceType::DRCService:
 		runDRCService();
 		return 0;
 
-	case DatabaseService:
+	case ServiceType::DatabaseService:
 		runDatabaseService();
 		return 0;
 
-	case KicadFootprintService:
+	case ServiceType::KicadFootprintService:
 		runKicadFootprintService();
 		return 0;
 
-	case KicadSchematicService:
+	case ServiceType::KicadSchematicService:
 		runKicadSchematicService();
 		return 0;
 
-	case GerberService:
+	case ServiceType::GerberService:
 		runGerberService();
 		return 0;
 
-	case ExportAllService:
+	case ServiceType::ExportAllService:
 		runExportAllService();
 		return 0;
 
-	case SvgService:
+	case ServiceType::SvgService:
 		runSvgService();
 		return 0;
 
-	case ExampleService:
+	case ServiceType::ExampleService:
 		runExampleService();
 		return 0;
 
@@ -1587,13 +1587,13 @@ void FApplication::closeAllWindows2() {
 }
 
 bool FApplication::runAsService() {
-	if (m_serviceType == PortService) {
+	if (m_serviceType == ServiceType::PortService) {
 		DebugDialog::setEnabled(true);
 		initServer();
 		//return false;
 	}
 
-	return m_serviceType != NoService;
+	return m_serviceType != ServiceType::NoService;
 }
 
 void FApplication::loadedPart(int loaded, int total) {

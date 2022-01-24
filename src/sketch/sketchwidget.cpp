@@ -7366,6 +7366,7 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem
 
 			TextUtils::fixMuch(itemSvg, false);
 
+			QString legSvg;
 			QDomDocument doc;
 			QString errorStr;
 			int errorLine;
@@ -7396,7 +7397,7 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem
 					if (!ci->hasRubberBandLeg()) continue;
 
 					// at the moment, the legs don't get a partID, but since there are no legs in PCB view, we don't care
-					outputSVG.append(ci->makeLegSvg(offset, renderThing.dpi, renderThing.printerScale, renderThing.blackOnly));
+					legSvg.append(ci->makeLegSvg(offset, renderThing.dpi, renderThing.printerScale, renderThing.blackOnly));
 				}
 
 				if (changed) {
@@ -7409,6 +7410,7 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem
 			itemSvg = translateSVG(itemSvg, itemBase->scenePos() - offset, renderThing.dpi, renderThing.printerScale);
 			itemSvg =  QString("<g partID='%1'>%2</g>").arg(itemBase->id()).arg(itemSvg);
 			outputSVG.append(itemSvg);
+			outputSVG.append(legSvg);
 			renderThing.empty = false;
 
 			/*

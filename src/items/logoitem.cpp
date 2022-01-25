@@ -696,8 +696,7 @@ QString LogoItem::hackSvg(const QString & svg, const QString & logo)
 
 				modelPart()->setLocalProp("width", logo.length() * 0.1 * 25.4);
 				QString h = root.attribute("height");
-				bool ok;
-				modelPart()->setLocalProp("height", TextUtils::convertToInches(h, &ok, false) * 25.4);
+				modelPart()->setLocalProp("height", TextUtils::convertToInches(h) * 25.4);
 				if (!isBottom()) return  doc.toString();
 				return flipSvg(doc.toString());
 			}

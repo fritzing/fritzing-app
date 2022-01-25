@@ -857,9 +857,9 @@ QString PinHeader::makePcbLongPadSvg(int pins, bool isAlternating, const QString
 	double dpi = 25.4;
 	double originalHeight = 0.108;           // inches
 	double increment = 0.1;                 // inches
-	bool ok;
-	double inc = TextUtils::convertToInches(spacingString, &ok, false);
-	if (ok) increment = inc;
+	if (auto inc = TextUtils::convertToInches(spacingString, false)) {
+		increment = *inc;
+	}
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 	               "<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
 	               "x='0in' y='0in' width='0.148in' height='%1in' viewBox='0 0 3.7592 %2'>\n"
@@ -901,9 +901,9 @@ QString PinHeader::makePcbLongPadAlternatingSvg(int pins, const QString & spacin
 	double dpi = 25.4;
 	double originalHeight = 0.108;           // inches
 	double increment = 0.1;                 // inches
-	bool ok;
-	double inc = TextUtils::convertToInches(spacingString, &ok, false);
-	if (ok) increment = inc;
+	if (auto inc = TextUtils::convertToInches(spacingString, false)) {
+		increment = *inc;
+	}
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 	               "<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
 	               "x='0in' y='0in' width='0.13in' height='%1in' viewBox='0 0 3.302 %2'>\n"
@@ -968,9 +968,9 @@ QString PinHeader::makePcbMolexSvg(int pins, const QString & spacingString)
 	double dpi = 25.4;
 	double originalHeight = 0.105;           // inches
 	double increment = 0.1;                 // inches
-	bool ok;
-	double inc = TextUtils::convertToInches(spacingString, &ok, false);
-	if (ok) increment = inc;
+	if (auto inc = TextUtils::convertToInches(spacingString, false)) {
+		increment = *inc;
+	}
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 	               "<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
 	               "x='0in' y='0in' width='0.225in' height='%1in' viewBox='0 0 5.715 %2'>\n"

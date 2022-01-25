@@ -49,3 +49,20 @@ BOOST_AUTO_TEST_CASE( test_makeSVGHeader )
 	result = TextUtils::makeSVGHeader(1, 1000, 3333.33, 2222.22);
 	BOOST_CHECK_EQUAL(result.toStdString(), prefix + suffix3);
 }
+
+BOOST_AUTO_TEST_CASE( test_optToDouble )
+{
+	auto result = TextUtils::optToDouble("no number");
+	BOOST_REQUIRE(!result);
+
+	auto result2 = TextUtils::optToDouble("1.0");
+	BOOST_REQUIRE(result2);
+
+	if (auto result3 = TextUtils::optToDouble("nonsense")) {
+		BOOST_REQUIRE(false);
+	}
+
+	if (auto x = TextUtils::optToDouble("2.0")) {
+		BOOST_REQUIRE(*x > 1.0 && *x < 3.0);
+	}
+}

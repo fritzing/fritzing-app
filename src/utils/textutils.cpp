@@ -2029,3 +2029,13 @@ QString TextUtils::elementToString(const QDomElement & element) {
 	string +="/>";
 	return string;
 }
+
+std::optional<double> TextUtils::optToDouble(const QString & str)
+{
+	bool ok;
+	double result = str.toDouble(&ok);
+	if (ok) {
+		return result;
+	}
+	return std::nullopt;
+}

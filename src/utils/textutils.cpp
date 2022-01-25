@@ -244,15 +244,13 @@ double TextUtils::convertToInches(const QString & s, bool * ok, bool isIllustrat
 
 	if (chop) string.chop(chop);
 
-	bool fine;
-	double result = string.toDouble(&fine);
-	if (!fine) {
+	if (auto result = optToDouble(string)) {
+		if (ok) *ok = true;
+		return *result / divisor;
+	} else {
 		if (ok) *ok = false;
 		return 0;
 	}
-
-	if (ok) *ok = true;
-	return result / divisor;
 }
 
 void TextUtils::chopNotDigits(QString & string) {
@@ -1127,17 +1125,18 @@ bool TextUtils::fixViewBox(QDomElement & root) {
 
 double TextUtils::getStrokeWidth(QDomElement & element, double defaultValue)
 {
-	bool ok;
-	double sw = element.attribute("stroke-width").toDouble(&ok);
-	if (ok) return sw;
+	if (auto sw = optToDouble(element.attribute("stroke-width"))) {
+		return *sw;
+	}
 
 	QString stroke = element.attribute("stroke");
 	if (stroke == "none") return 0;
 
 	QDomElement parent = element.parentNode().toElement();
 	while (!parent.isNull()) {
-		sw = parent.attribute("stroke-width").toDouble(&ok);
-		if (ok) return sw;
+		if (auto sw = optToDouble(parent.attribute("stroke-width"))) {
+			return *sw;
+		}
 
 		stroke = parent.attribute("stroke");
 		if (stroke == "none") return 0;

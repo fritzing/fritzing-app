@@ -38,6 +38,7 @@ public:
 	static QDomElement findElementWithAttribute(QDomElement element, const QString & attributeName, const QString & attributeValue);
 	static void findElementsWithAttribute(QDomElement & element, const QString & att, QList<QDomElement> & elements);
 	static double convertToInches(const QString & string, bool * ok, bool isIllustrator);
+	static std::optional<double> convertToInches(const QString & string, bool isIllustrator);
 	static double convertToInches(const QString & string);
 	static QString convertToPowerPrefix(double, char f='g', int prec=6);
 	static double convertFromPowerPrefix(const QString & val, const QString & symbol);

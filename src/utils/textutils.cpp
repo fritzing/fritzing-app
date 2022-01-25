@@ -210,7 +210,18 @@ QSet<QString> TextUtils::getRegexpCaptures(const QString &pattern, const QString
 	return captures;
 }
 
-double TextUtils::convertToInches(const QString & s, bool * ok, bool isIllustrator) {
+double TextUtils::convertToInches(const QString & string, bool * ok, bool isIllustrator) {
+	if (auto temp = TextUtils::convertToInches(string, isIllustrator)) {
+		// Is this kind of chaining intended? It seems error prone.
+		if (ok) *ok = true;
+		return *temp;
+	} else {
+		if (ok) *ok = false;
+		return 0.0;
+	}
+}
+
+std::optional<double> TextUtils::convertToInches(const QString & s, bool isIllustrator) {
 	QString string = s;
 	double divisor = 1.0;
 	int chop = 2;
@@ -245,12 +256,9 @@ double TextUtils::convertToInches(const QString & s, bool * ok, bool isIllustrat
 	if (chop) string.chop(chop);
 
 	if (auto result = optToDouble(string)) {
-		if (ok) *ok = true;
 		return *result / divisor;
-	} else {
-		if (ok) *ok = false;
-		return 0;
 	}
+	return std::nullopt;
 }
 
 void TextUtils::chopNotDigits(QString & string) {
@@ -684,11 +692,11 @@ bool TextUtils::findText(const QDomNode & node, QString & text) {
 }
 
 double TextUtils::convertToInches(const QString & string) {
-	bool ok;
-	double retval = TextUtils::convertToInches(string, &ok, false);
-	if (!ok) return 0;
-
-	return retval;
+	if (auto retval = TextUtils::convertToInches(string, false)) {
+		return *retval;
+	} else {
+		return 0;
+	}
 }
 
 QString TextUtils::escapeAnd(const QString & string) {

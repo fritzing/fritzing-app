@@ -66,3 +66,32 @@ BOOST_AUTO_TEST_CASE( test_optToDouble )
 		BOOST_REQUIRE(*x > 1.0 && *x < 3.0);
 	}
 }
+
+BOOST_AUTO_TEST_CASE( test_convertToInches )
+{
+	auto result = TextUtils::convertToInches("no number", false);
+	BOOST_REQUIRE(!result);
+
+	auto result2 = TextUtils::convertToInches("", false);
+	BOOST_REQUIRE(!result2);
+
+	if (auto result3 = TextUtils::convertToInches("nonsense", false)) {
+		BOOST_REQUIRE(false);
+	}
+
+	constexpr double epsilon = 0.00001;
+	auto epsilonCheck {
+		[epsilon](double value, double expected) {
+			if (value > expected - epsilon && value < expected + epsilon) {
+				return true;
+			}
+			return false;
+		}
+	};
+
+	auto fromCm = TextUtils::convertToInches("10cm", false);
+	BOOST_REQUIRE(fromCm);
+	BOOST_REQUIRE(epsilonCheck(*fromCm, 10.0/2.54));
+
+	BOOST_REQUIRE(epsilonCheck(*TextUtils::convertToInches("90.0", false), 1.0));
+}

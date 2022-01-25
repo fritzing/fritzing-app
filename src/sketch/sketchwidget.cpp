@@ -404,14 +404,11 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 			if (!labelGeometry.isNull()) {
 				QDomElement clone = labelGeometry.cloneNode(true).toElement();
 				if (offsetPaste) {
-					bool ok;
-					double x = clone.attribute("x").toDouble(&ok);
-					if (ok) {
-						clone.setAttribute("x", QString::number(x + offset.x()));
+					if (auto x = TextUtils::optToDouble(clone.attribute("x"))) {
+						clone.setAttribute("x", QString::number(*x + offset.x()));
 					}
-					double y = clone.attribute("y").toDouble(&ok);
-					if (ok) {
-						clone.setAttribute("y", QString::number(y + offset.y()));
+					if (auto y = TextUtils::optToDouble(clone.attribute("y"))) {
+						clone.setAttribute("y", QString::number(*y + offset.y()));
 					}
 				}
 				new RestoreLabelCommand(this, newID, clone, parentCommand);

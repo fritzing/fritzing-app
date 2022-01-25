@@ -1101,26 +1101,24 @@ bool TextUtils::fixViewBox(QDomElement & root) {
 
 	if (coords[0] == "0" && coords[1] == "0") return false;
 
-	bool ok;
-	double x = coords.at(0).toDouble(&ok);
-	if (!ok) return false;
+	if (auto x = optToDouble(coords.at(0))) {
+		if (auto y = optToDouble(coords.at(1))) {
+			QString newValue = QString("0 0 %1 %2").arg(coords[2], coords[3]);
+			root.setAttribute("viewBox", newValue);
 
-	double y = coords.at(1).toDouble(&ok);
-	if (!ok) return false;
+			QDomElement transformElement = root.ownerDocument().createElement("g");
+			transformElement.setAttribute("transform", QString("translate(%1,%2)").arg(-*x).arg(-*y));
+			transformElement = root.insertBefore(transformElement, QDomElement()).toElement();
+			QDomElement nextElement = transformElement.nextSiblingElement();
+			while (!nextElement.isNull()) {
+				transformElement.appendChild(nextElement);
+				nextElement = transformElement.nextSiblingElement();
+			}
 
-	QString newValue = QString("0 0 %1 %2").arg(coords[2], coords[3]);
-	root.setAttribute("viewBox", newValue);
-
-	QDomElement transformElement = root.ownerDocument().createElement("g");
-	transformElement.setAttribute("transform", QString("translate(%1,%2)").arg(-x).arg(-y));
-	transformElement = root.insertBefore(transformElement, QDomElement()).toElement();
-	QDomElement nextElement = transformElement.nextSiblingElement();
-	while (!nextElement.isNull()) {
-		transformElement.appendChild(nextElement);
-		nextElement = transformElement.nextSiblingElement();
+			return true;
+		}
 	}
-
-	return true;
+	return false;
 }
 
 double TextUtils::getStrokeWidth(QDomElement & element, double defaultValue)

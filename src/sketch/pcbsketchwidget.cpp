@@ -2770,16 +2770,11 @@ double PCBSketchWidget::getKeepoutMils() {
 		keepoutString = settings.value(GroundPlaneGenerator::KeepoutSettingName, "").toString();
 	}
 
-	bool ok;
-	double mils = TextUtils::convertToInches(keepoutString, &ok, false);
-	if (ok) {
-		mils *= 1000;  // convert from inches
+	if (auto mils = TextUtils::convertToInches(keepoutString, false)) {
+		return *mils * 1000;  // convert from inches
+	} else {
+		return GroundPlaneGenerator::KeepoutDefaultMils;
 	}
-	else {
-		mils = GroundPlaneGenerator::KeepoutDefaultMils;
-	}
-
-	return mils;
 }
 
 void PCBSketchWidget::setGroundFillKeepout() {

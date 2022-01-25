@@ -8437,10 +8437,8 @@ void SketchWidget::initGrid() {
 	QSettings settings;
 	QString szString = settings.value(QString("%1GridSize").arg(viewName()), "").toString();
 	if (!szString.isEmpty()) {
-		bool ok;
-		double temp = TextUtils::convertToInches(szString, &ok, false);
-		if (ok) {
-			m_gridSizeInches = temp;
+		if (auto temp = TextUtils::convertToInches(szString, false)) {
+			m_gridSizeInches = *temp;
 			m_gridSizeText = szString;
 		}
 	}

@@ -589,10 +589,8 @@ bool TextUtils::pxToInches(QDomElement &elem, const QString &attrName, bool isIl
 
 	QString attrValue = elem.attribute(attrName);
 	if(attrValue.endsWith("px")) {
-		bool ok;
-		double value = TextUtils::convertToInches(attrValue, &ok, isIllustrator);
-		if(ok) {
-			QString newValue = QString("%1in").arg(value);
+		if (auto value = TextUtils::convertToInches(attrValue, isIllustrator)) {
+			QString newValue = QString("%1in").arg(*value);
 			elem.setAttribute(attrName,newValue);
 
 			return true;

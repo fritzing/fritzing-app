@@ -23,6 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../mainwindow/mainwindow.h"
 #include "../items/itembase.h"
+#include "../simulation/ngspice_simulator.h"
 
 enum TransistorLeg { BASE, COLLECTOR, EMITER };
 
@@ -77,6 +78,7 @@ protected:
 
 	bool m_simulating = false;
 	MainWindow *m_mainWindow;
+	std::shared_ptr<NgSpiceSimulator> m_simulator;
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;
 	QPointer<class SchematicSketchWidget> m_schematicGraphicsView;
 

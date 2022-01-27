@@ -73,6 +73,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../svg/gerbergenerator.h"
 #include "../processeventblocker.h"
 
+#include "../simulation/ngspice_simulator.h"
+
 #include "../items/led.h"
 #include "../items/resistor.h"
 #include "../items/wire.h"
@@ -81,6 +83,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/symbolpaletteitem.h"
 #include "../items/perfboard.h"
 #include "../items/partlabel.h"
+
+#include <ngspice/sharedspice.h>
 
 #include <iostream>
 
@@ -195,7 +199,8 @@ void Simulator::simulate() {
 		return;
 	}
 
-	if( !false )
+	m_simulator = NgSpiceSimulator::getInstance();
+	if( !m_simulator )
 	{
 		throw std::runtime_error( "Could not create simulator instance" );
 		return;
@@ -208,10 +213,20 @@ void Simulator::simulate() {
 	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
 
 	std::cout << "Netlist: " << spiceNetlist.toStdString() << std::endl;
+
+	//std::cout << "-----------------------------------" <<std::endl;
+	std::cout << "Running command(remcirc):" <<std::endl;
+	m_simulator->command("remcirc");
+	//std::cout << "-----------------------------------" <<std::endl;
+	std::cout << "Running m_simulator->command('reset'):" <<std::endl;
+	m_simulator->command("reset");
+
 	std::cout << "-----------------------------------" <<std::endl;
 	std::cout << "Running LoadNetlist:" <<std::endl;
 
+	m_simulator->loadCircuit(spiceNetlist.toStdString());
 	if (false) { // "warning, can't find model"
+
 		//Ngspice found an error, do not continue
 		std::cout << "Error loading the netlist. Probably some spice field is wrong, check them." <<std::endl;
 		removeSimItems();
@@ -225,6 +240,12 @@ void Simulator::simulate() {
 		delete tempWidget;
 		return;
 	}
+	std::cout << "-----------------------------------" <<std::endl;
+	std::cout << "Running command(listing):" <<std::endl;
+	m_simulator->command("listing");
+	std::cout << "-----------------------------------" <<std::endl;
+	std::cout << "Running m_simulator->command(bg_run):" <<std::endl;
+	m_simulator->command("bg_run");
 	std::cout << "-----------------------------------" <<std::endl;
 	std::cout << "Generating a hash table to find the net of specific connectors:" <<std::endl;
 	//While the spice simulator runs, we will perform some tasks:
@@ -270,11 +291,12 @@ void Simulator::simulate() {
 
 	std::cout << "Waiting for simulator thread to stop" <<std::endl;
 	int elapsedTime = 0, simTimeOut = 3000; // in ms
-	while (false && elapsedTime < simTimeOut) {
+	while (m_simulator->isBGThreadRunning() && elapsedTime < simTimeOut) {
 		QThread::usleep(1000);
 		elapsedTime++;
 	}
 	if (elapsedTime >= simTimeOut) {
+		m_simulator->command("bg_halt");
 		throw std::runtime_error( QString("The spice simulator did not finish after %1 ms. Aborting simulation.").arg(simTimeOut).toStdString() );
 		return;
 	} else {
@@ -282,7 +304,7 @@ void Simulator::simulate() {
 	}
 	std::cout << "-----------------------------------" <<std::endl;
 
-	if (true) {
+	if (m_simulator->errorOccured()) {
 		//Ngspice found an error, do not continue
 		std::cout << "Fatal error found, stopping the simulation." <<std::endl;
 		removeSimItems();
@@ -487,8 +509,8 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 	//std::cout << "net1str: " << net1str.toStdString() <<std::endl;
 
 	double volt0 = 0.0, volt1 = 0.0;
-	if (net0!=0) volt0 = 0.0;
-	if (net1!=0) volt1 = 0.0;
+	if (net0!=0) volt0 = m_simulator->getVecInfo(net0str.toStdString())[0];
+	if (net1!=0) volt1 = m_simulator->getVecInfo(net1str.toStdString())[0];
 	return volt0-volt1;
 }
 
@@ -569,7 +591,7 @@ double Simulator::getPower(ItemBase* part, QString subpartName) {
 	instanceStr.append(subpartName.toLower());
 	instanceStr.prepend("@");
 	instanceStr.append("[p]");
-	return 0.0;
+	return m_simulator->getVecInfo(instanceStr.toStdString())[0];
 }
 
 /**
@@ -616,7 +638,7 @@ double Simulator::getCurrent(ItemBase* part, QString subpartName) {
 		break;
 
 	}
-	return 0.0;
+	return m_simulator->getVecInfo(instanceStr.toStdString())[0];
 }
 
 /**
@@ -644,7 +666,7 @@ double Simulator::getTransistorCurrent(QString spicePartName, TransistorLeg leg)
 		throw QString("Error getting the current of a transistor. The transistor leg or property is not recognized. Leg: %1").arg(leg);
 	}
 
-	return 0.0;
+	return m_simulator->getVecInfo(spicePartName.toStdString())[0];
 }
 
 /**

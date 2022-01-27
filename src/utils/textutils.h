@@ -118,7 +118,15 @@ public:
 	static double getStrokeWidth(QDomElement &, double defaultValue);
 	static void resplit(QStringList & names, const QString & split);
 	static QString elementToString(const QDomElement &);
-	static std::optional<double> optToDouble(const QString & str);
+	template<typename T> static std::optional<double> optToDouble(const T & param)
+	{
+		bool ok;
+		double result = param.toDouble(&ok);
+		if (ok) {
+			return result;
+		}
+		return std::nullopt;
+	}
 
 public:
 	static const QRegularExpression FindWhitespace;

@@ -371,12 +371,9 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 			// TODO: all this part specific stuff should be in the PartFactory
 
 			if (Board::isBoard(mp) || mp->itemType() == ModelPart::Logo) {
-				bool ok;
-				double w = mp->localProp("width").toDouble(&ok);
-				if (ok) {
-					double h = mp->localProp("height").toDouble(&ok);
-					if (ok) {
-						new ResizeBoardCommand(this, newID, w, h, w, h, parentCommand);
+				if (auto w = TextUtils::optToDouble(mp->localProp("width"))) {
+					if (auto h = TextUtils::optToDouble(mp->localProp("height"))) {
+						new ResizeBoardCommand(this, newID, *w, *h, *w, *h, parentCommand);
 					}
 				}
 			}

@@ -52,17 +52,17 @@ BOOST_AUTO_TEST_CASE( test_makeSVGHeader )
 
 BOOST_AUTO_TEST_CASE( test_optToDouble )
 {
-	auto result = TextUtils::optToDouble("no number");
+	auto result = TextUtils::optToDouble(QString("no number"));
 	BOOST_REQUIRE(!result);
 
-	auto result2 = TextUtils::optToDouble("1.0");
+	auto result2 = TextUtils::optToDouble(QString("1.0"));
 	BOOST_REQUIRE(result2);
 
-	if (auto result3 = TextUtils::optToDouble("nonsense")) {
+	if (auto result3 = TextUtils::optToDouble(QString("nonsense"))) {
 		BOOST_REQUIRE(false);
 	}
 
-	if (auto x = TextUtils::optToDouble("2.0")) {
+	if (auto x = TextUtils::optToDouble(QString("2.0"))) {
 		BOOST_REQUIRE(*x > 1.0 && *x < 3.0);
 	}
 }

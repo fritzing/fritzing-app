@@ -73,10 +73,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../svg/gerbergenerator.h"
 #include "../processeventblocker.h"
 
-#include "../simulation/ngspice.h"
-#include "../simulation/spice_simulator.h"
-#include "../simulation/sim_types.h"
-
 #include "../items/led.h"
 #include "../items/resistor.h"
 #include "../items/wire.h"
@@ -199,37 +195,23 @@ void Simulator::simulate() {
 		return;
 	}
 
-	m_simulator = SPICE_SIMULATOR::CreateInstance( "ngspice" );
-	if( !m_simulator )
+	if( !false )
 	{
 		throw std::runtime_error( "Could not create simulator instance" );
 		return;
 	}
 
 	//Empty the stderr and stdout buffers
-	m_simulator->ResetStdOutErr();
 
 	QList< QList<ConnectorItem *>* > netList;
 	QSet<ItemBase *> itemBases;
 	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
 
 	std::cout << "Netlist: " << spiceNetlist.toStdString() << std::endl;
-
-	//std::cout << "-----------------------------------" <<std::endl;
-	std::cout << "Running Command(remcirc):" <<std::endl;
-	m_simulator->Command("remcirc");
-	//std::cout << "-----------------------------------" <<std::endl;
-	std::cout << "Running m_simulator->Init():" <<std::endl;
-	m_simulator->Init();
-	m_simulator->ResetStdOutErr();
-
 	std::cout << "-----------------------------------" <<std::endl;
 	std::cout << "Running LoadNetlist:" <<std::endl;
 
-	m_simulator->LoadNetlist( spiceNetlist.toStdString());
-	if (m_simulator->GetStdOut().toLower().contains("error") || // "error on line"
-			m_simulator->GetStdErr().toLower().contains("warning")) { // "warning, can't find model"
-
+	if (false) { // "warning, can't find model"
 		//Ngspice found an error, do not continue
 		std::cout << "Error loading the netlist. Probably some spice field is wrong, check them." <<std::endl;
 		removeSimItems();
@@ -239,18 +221,10 @@ void Simulator::simulate() {
 								 tr("The simulator gave an error when loading the netlist. "
 									"Probably some spice field is wrong, please, check them.\n"
 									"If the parts are from the simulation bin, report the bug in GitHub.\n\nErrors:\n") +
-								 m_simulator->GetStdErr() +
-								 m_simulator->GetStdOut() +
 								 "\n\nNetlist:\n" + spiceNetlist);
 		delete tempWidget;
 		return;
 	}
-	std::cout << "-----------------------------------" <<std::endl;
-	std::cout << "Running Command(listing):" <<std::endl;
-	m_simulator->Command("listing");
-	std::cout << "-----------------------------------" <<std::endl;
-	std::cout << "Running m_simulator->Run():" <<std::endl;
-	m_simulator->Run();
 	std::cout << "-----------------------------------" <<std::endl;
 	std::cout << "Generating a hash table to find the net of specific connectors:" <<std::endl;
 	//While the spice simulator runs, we will perform some tasks:
@@ -296,12 +270,11 @@ void Simulator::simulate() {
 
 	std::cout << "Waiting for simulator thread to stop" <<std::endl;
 	int elapsedTime = 0, simTimeOut = 3000; // in ms
-	while (m_simulator->IsRunning() && elapsedTime < simTimeOut) {
+	while (false && elapsedTime < simTimeOut) {
 		QThread::usleep(1000);
 		elapsedTime++;
 	}
 	if (elapsedTime >= simTimeOut) {
-		m_simulator->Stop();
 		throw std::runtime_error( QString("The spice simulator did not finish after %1 ms. Aborting simulation.").arg(simTimeOut).toStdString() );
 		return;
 	} else {
@@ -309,8 +282,7 @@ void Simulator::simulate() {
 	}
 	std::cout << "-----------------------------------" <<std::endl;
 
-	if (m_simulator->ErrorFound() ||
-			m_simulator->GetStdErr().toLower().contains("there aren't any circuits loaded")) {
+	if (true) {
 		//Ngspice found an error, do not continue
 		std::cout << "Fatal error found, stopping the simulation." <<std::endl;
 		removeSimItems();
@@ -318,8 +290,6 @@ void Simulator::simulate() {
 		QMessageBox::warning(tempWidget, tr("Simulator Error"),
 								 tr("The simulator gave an error when trying to simulate this circuit. "
 									"Please, check the wiring and try again. \n\nErrors:\n") +
-								 m_simulator->GetStdErr() +
-								 m_simulator->GetStdOut() +
 								 "\n\nNetlist:\n" + spiceNetlist);
 		delete tempWidget;
 		return;
@@ -517,8 +487,8 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 	//std::cout << "net1str: " << net1str.toStdString() <<std::endl;
 
 	double volt0 = 0.0, volt1 = 0.0;
-	if (net0!=0) volt0 = m_simulator->GetDataPoint(net0str.toStdString());
-	if (net1!=0) volt1 = m_simulator->GetDataPoint(net1str.toStdString());
+	if (net0!=0) volt0 = 0.0;
+	if (net1!=0) volt1 = 0.0;
 	return volt0-volt1;
 }
 
@@ -599,7 +569,7 @@ double Simulator::getPower(ItemBase* part, QString subpartName) {
 	instanceStr.append(subpartName.toLower());
 	instanceStr.prepend("@");
 	instanceStr.append("[p]");
-	return m_simulator->GetDataPoint(instanceStr.toStdString());
+	return 0.0;
 }
 
 /**
@@ -646,7 +616,7 @@ double Simulator::getCurrent(ItemBase* part, QString subpartName) {
 		break;
 
 	}
-	return m_simulator->GetDataPoint(instanceStr.toStdString());
+	return 0.0;
 }
 
 /**
@@ -674,7 +644,7 @@ double Simulator::getTransistorCurrent(QString spicePartName, TransistorLeg leg)
 		throw QString("Error getting the current of a transistor. The transistor leg or property is not recognized. Leg: %1").arg(leg);
 	}
 
-	return m_simulator->GetDataPoint(spicePartName.toStdString());
+	return 0.0;
 }
 
 /**

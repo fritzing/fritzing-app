@@ -23,7 +23,7 @@ lessThan(QT_MAJOR_VERSION, 5) {
 }
 
 CONFIG += debug_and_release
-CONFIG += c++17
+CONFIG += c++1z
 
 unix {
     QMAKE_CXXFLAGS += -O3 -fno-omit-frame-pointer

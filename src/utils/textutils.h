@@ -21,6 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef TEXTUTILS_H
 #define TEXTUTILS_H
 
+#include <optional>
 #include <QPointF>
 #include <QDomElement>
 #include <QSet>

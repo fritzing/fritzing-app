@@ -11,6 +11,11 @@ Copyright (c) 2021 Fritzing
 #include <sstream>
 #include <memory>
 #include <any>
+#include <stdexcept>
+
+#include <QCoreApplication>
+#include <QStandardPaths>
+#include "../debugdialog.h"
 
 #define STRFY(name) #name
 
@@ -39,6 +44,35 @@ void NgSpiceSimulator::init() {
 
 	m_library.setFileName("ngspice");
 	m_library.load();
+
+	QStringList libPaths = QStringList({ QCoreApplication::applicationDirPath()
+			})
+			// TODO Not sure if we can place the library there on macOS
+			+ QStandardPaths::standardLocations(QStandardPaths::DataLocation);
+
+	if( !m_library.isLoaded() ) {         // fallback custom paths
+	#ifdef Q_OS_LINUX
+		const QString libName = "libngspice.so";
+	#elif defined Q_OS_MAC
+		const QString libName = "ngspice.dylib";
+	#elif defined Q_OS_WIN
+		const QString libName = "ngspice-36.dll";
+	#endif
+		for( const auto& path : libPaths ) {
+			QFileInfo library(QString(path + "/" + libName));
+			DebugDialog::debug("Try path " + library.absoluteFilePath());
+			if(!library.canonicalFilePath().isEmpty()) {
+				m_library.setFileName(library.canonicalFilePath());
+				m_library.load();
+				if( m_library.isLoaded() ) {
+					break;
+				} else {
+					DebugDialog::debug("Couldn't load ngspice " + m_library.errorString());
+					throw std::runtime_error( "Error loading ngspice shared library" );
+				}
+			}
+		}
+	}
 
 	setErrorTitle(std::nullopt);
 

@@ -21,7 +21,6 @@ NgSpiceSimulator::NgSpiceSimulator()
 	: m_isInitialized(false)
 	, m_isBGThreadRunning(false)
 	, m_errorTitle(std::nullopt) {
-	init();
 }
 
 std::shared_ptr<NgSpiceSimulator> NgSpiceSimulator::getInstance() {

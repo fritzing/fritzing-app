@@ -200,6 +200,7 @@ void Simulator::simulate() {
 	}
 
 	m_simulator = NgSpiceSimulator::getInstance();
+	m_simulator->init();
 	if( !m_simulator )
 	{
 		throw std::runtime_error( "Could not create simulator instance" );

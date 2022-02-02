@@ -108,14 +108,34 @@ void NgSpiceSimulator::setErrorTitle(std::optional<const std::reference_wrapper<
 	m_errorTitle = errorTitle;
 }
 
+void NgSpiceSimulator::log(const std::string& logString, bool isStdErr) {
+	if (isStdErr) {
+		m_log.second += logString + "\n";
+	} else {
+		m_log.first += logString + "\n";
+	}
+}
+
+void NgSpiceSimulator::clearLog() {
+	m_log = std::make_pair<std::string, std::string>("", "");
+}
+
+std::string NgSpiceSimulator::getLog(bool isStdErr) {
+	if (isStdErr) {
+		return m_log.second;
+	}
+	return m_log.first;
+}
+
 int NgSpiceSimulator::SendCharFunc(char* output, int libId, void*) {
 	std::cout << "SendCharFunc (libId:" << libId << "): " << output << std::endl;
 	std::string outputStr(output);
-	if (outputStr.find("Fatal error") != std::string::npos ||
-	    outputStr.find("run simulation(s) aborted") != std::string::npos) {
-		auto simulator = getInstance();
+	auto simulator = getInstance();
+	if (outputStr.find("Fatal error") != std::string::npos
+		|| outputStr.find("run simulation(s) aborted") != std::string::npos) {
 		simulator->setErrorTitle(outputStr);
 	}
+	simulator->log(outputStr, outputStr.find("error") != std::string::npos);
 	return 0;
 }
 

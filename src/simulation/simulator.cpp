@@ -208,6 +208,7 @@ void Simulator::simulate() {
 	}
 
 	//Empty the stderr and stdout buffers
+	m_simulator->clearLog();
 
 	QList< QList<ConnectorItem *>* > netList;
 	QSet<ItemBase *> itemBases;
@@ -221,13 +222,15 @@ void Simulator::simulate() {
 	//std::cout << "-----------------------------------" <<std::endl;
 	std::cout << "Running m_simulator->command('reset'):" <<std::endl;
 	m_simulator->command("reset");
+	m_simulator->clearLog();
 
 	std::cout << "-----------------------------------" <<std::endl;
 	std::cout << "Running LoadNetlist:" <<std::endl;
 
 	m_simulator->loadCircuit(spiceNetlist.toStdString());
-	if (false) { // "warning, can't find model"
 
+	if (QString::fromStdString(m_simulator->getLog(false)).toLower().contains("error") || // "error on line"
+		QString::fromStdString(m_simulator->getLog(true)).toLower().contains("warning")) { // "warning, can't find model"
 		//Ngspice found an error, do not continue
 		std::cout << "Error loading the netlist. Probably some spice field is wrong, check them." <<std::endl;
 		removeSimItems();
@@ -237,6 +240,8 @@ void Simulator::simulate() {
 								 tr("The simulator gave an error when loading the netlist. "
 									"Probably some spice field is wrong, please, check them.\n"
 									"If the parts are from the simulation bin, report the bug in GitHub.\n\nErrors:\n") +
+								QString::fromStdString(m_simulator->getLog(false)) +
+								QString::fromStdString(m_simulator->getLog(true)) +
 								 "\n\nNetlist:\n" + spiceNetlist);
 		delete tempWidget;
 		return;
@@ -305,7 +310,8 @@ void Simulator::simulate() {
 	}
 	std::cout << "-----------------------------------" <<std::endl;
 
-	if (m_simulator->errorOccured()) {
+	if (m_simulator->errorOccured() ||
+			QString::fromStdString(m_simulator->getLog(true)).toLower().contains("there aren't any circuits loaded")) {
 		//Ngspice found an error, do not continue
 		std::cout << "Fatal error found, stopping the simulation." <<std::endl;
 		removeSimItems();
@@ -313,6 +319,8 @@ void Simulator::simulate() {
 		QMessageBox::warning(tempWidget, tr("Simulator Error"),
 								 tr("The simulator gave an error when trying to simulate this circuit. "
 									"Please, check the wiring and try again. \n\nErrors:\n") +
+								QString::fromStdString(m_simulator->getLog(false)) +
+								QString::fromStdString(m_simulator->getLog(true)) +
 								 "\n\nNetlist:\n" + spiceNetlist);
 		delete tempWidget;
 		return;

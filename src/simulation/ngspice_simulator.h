@@ -32,6 +32,9 @@ public:
 	std::vector<double> getVecInfo(const std::string& vecName);
 	std::optional<std::string> errorOccured();
 	void setErrorTitle(std::optional<const std::reference_wrapper<std::string>> errorTitle);
+	void log(const std::string& logString, bool isStdErr);
+	void clearLog();
+	std::string getLog(bool isStdErr);
 
 private:
 	static int SendCharFunc(char* output, int libId, void* userData);
@@ -46,5 +49,6 @@ private:
 	bool m_isInitialized;
 	bool m_isBGThreadRunning;
 	std::optional<std::string> m_errorTitle;
+	std::pair<std::string, std::string> m_log;
 };
 #endif // NGSPICE_SIMULATOR_H

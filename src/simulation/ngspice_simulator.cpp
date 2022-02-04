@@ -80,8 +80,7 @@ void NgSpiceSimulator::init() {
 	for (auto & symbol: symbols) {
 		m_handles[symbol] = (void *) m_library.resolve(symbol.c_str());
 	}
-
-	GET_FUNC(ngSpice_Init)(&SendCharFunc, &SendStatFunc, &ControlledExitFunc, &SendDataFunc, &SendInitDataFunc, &BGThreadRunningFunc, nullptr);
+	GET_FUNC(ngSpice_Init)(&SendCharFunc, &SendStatFunc, &ControlledExitFunc, nullptr, nullptr, &BGThreadRunningFunc, nullptr);
 
 	m_isBGThreadRunning = true;
 	m_isInitialized = true;

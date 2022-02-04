@@ -533,8 +533,12 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 	//std::cout << "net1str: " << net1str.toStdString() <<std::endl;
 
 	double volt0 = 0.0, volt1 = 0.0;
-	if (net0!=0) volt0 = m_simulator->getVecInfo(net0str.toStdString())[0];
-	if (net1!=0) volt1 = m_simulator->getVecInfo(net1str.toStdString())[0];
+	if (net0 != 0) {
+		volt0 = getVectorValueOrDefault(net0str.toStdString(), 0.0);
+	}
+	if (net1 != 0) {
+		volt1 = getVectorValueOrDefault(net1str.toStdString(), 0.0);
+	}
 	return volt0-volt1;
 }
 
@@ -615,7 +619,7 @@ double Simulator::getPower(ItemBase* part, QString subpartName) {
 	instanceStr.append(subpartName.toLower());
 	instanceStr.prepend("@");
 	instanceStr.append("[p]");
-	return m_simulator->getVecInfo(instanceStr.toStdString())[0];
+	return getVectorValueOrDefault(instanceStr.toStdString(), 0.0);
 }
 
 /**
@@ -662,7 +666,7 @@ double Simulator::getCurrent(ItemBase* part, QString subpartName) {
 		break;
 
 	}
-	return m_simulator->getVecInfo(instanceStr.toStdString())[0];
+	return getVectorValueOrDefault(instanceStr.toStdString(), 0.0);
 }
 
 /**
@@ -690,7 +694,7 @@ double Simulator::getTransistorCurrent(QString spicePartName, TransistorLeg leg)
 		throw QString("Error getting the current of a transistor. The transistor leg or property is not recognized. Leg: %1").arg(leg);
 	}
 
-	return m_simulator->getVecInfo(spicePartName.toStdString())[0];
+	return getVectorValueOrDefault(spicePartName.toStdString(), 0.0);
 }
 
 /**

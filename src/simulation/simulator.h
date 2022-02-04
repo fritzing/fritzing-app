@@ -60,6 +60,7 @@ protected:
 	QChar getDeviceType (ItemBase*);
 	double getMaxPropValue(ItemBase*, QString);
 	QString getSymbol(ItemBase*, QString);
+	double getVectorValueOrDefault(const std::string & vecName, double defaultValue);
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
 	double getCurrent(ItemBase*, QString subpartName="");
 	double getTransistorCurrent(QString spicePartName, TransistorLeg leg);

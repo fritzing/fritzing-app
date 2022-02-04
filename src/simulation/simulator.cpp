@@ -503,6 +503,21 @@ void Simulator::removeSimItems(QList<QGraphicsItem *> items) {
 }
 
 /**
+ * Returns the first element of ngspice vector or a default value.
+ * @param[in] vecName name of ngspice vector to get value from
+ * @param[in] defaultValue value to return on empty vector
+ * @returns the first vector element or the given default value
+ */
+double Simulator::getVectorValueOrDefault(const std::string & vecName, double defaultValue) {
+	auto vecInfo = m_simulator->getVecInfo(vecName);
+	if (vecInfo.empty()) {
+		return defaultValue;
+	} else {
+		return vecInfo[0];
+	}
+}
+
+/**
  * Returns the voltage between two connectors.
  * @param[in] c0 the first connector
  * @param[in] c1 the second connector

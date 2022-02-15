@@ -167,6 +167,7 @@ public:
 	QRectF partLabelSceneBoundingRect();
 	virtual bool isSwappable();
 	virtual void setSwappable(bool);
+	virtual bool allowSwapReconnectByDescription();
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	virtual void collectWireConnectees(QSet<Wire *> & wires);
 	virtual bool collectFemaleConnectees(QSet<ItemBase *> & items);

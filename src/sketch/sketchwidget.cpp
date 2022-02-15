@@ -6090,15 +6090,16 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 			QString toDescription = connector->connectorSharedDescription();
 			if (fromName.compare(toName, Qt::CaseInsensitive) == 0) {
 				gotOne = true;
-			}
-			else if (fromDescription.compare(toDescription, Qt::CaseInsensitive) == 0) {
-				gotOne = true;
-			}
-			else if (fromDescription.compare(toName, Qt::CaseInsensitive) == 0) {
-				gotOne = true;
-			}
-			else if (fromName.compare(toDescription, Qt::CaseInsensitive) == 0) {
-				gotOne = true;
+			} else if(itemBase->allowSwapReconnectByDescription()) {
+				if (fromDescription.compare(toDescription, Qt::CaseInsensitive) == 0) {
+					gotOne = true;
+				}
+				else if (fromDescription.compare(toName, Qt::CaseInsensitive) == 0) {
+					gotOne = true;
+				}
+				else if (fromName.compare(toDescription, Qt::CaseInsensitive) == 0) {
+					gotOne = true;
+				}
 			}
 
 			if (gotOne) {

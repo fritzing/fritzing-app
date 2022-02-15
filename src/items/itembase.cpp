@@ -1172,6 +1172,10 @@ void ItemBase::setSwappable(bool swappable) {
 	m_swappable = swappable;
 }
 
+bool ItemBase::allowSwapReconnectByDescription() {
+	return true;
+}
+
 void ItemBase::ensureUniqueTitle(const QString & title, bool force) {
 	if (force || instanceTitle().isEmpty() || instanceTitle().isNull()) {
 		setInstanceTitle(modelPart()->getNextTitle(title), true);

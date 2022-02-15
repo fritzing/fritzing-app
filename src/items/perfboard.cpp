@@ -385,6 +385,10 @@ bool Perfboard::rotation45Allowed() {
 	return false;
 }
 
+bool Perfboard::allowSwapReconnectByDescription() {
+	return false;
+}
+
 void Perfboard::hoverUpdate()
 {
 }

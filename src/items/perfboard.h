@@ -49,6 +49,7 @@ public:
 	bool stickyEnabled();
 	bool canFindConnectorsUnder();
 	bool rotation45Allowed();
+	virtual bool allowSwapReconnectByDescription();
 
 protected:
 	virtual QString getRowLabel();

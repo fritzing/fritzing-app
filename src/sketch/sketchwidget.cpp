@@ -6072,6 +6072,7 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 		QString fromName = fromConnectorItem->connectorSharedName();
 		QString fromDescription = fromConnectorItem->connectorSharedDescription();
 		QString fromReplacedby = fromConnectorItem->connectorSharedReplacedby();
+		QString fromID = fromConnectorItem->connectorSharedID();
 		//itemBase->debugInfo(QString("%1 %2").arg(fromName).arg(fromReplacedby));
 		Q_FOREACH (Connector * connector, newConnectors) {
 			QString toName = connector->connectorSharedName();
@@ -6111,8 +6112,9 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 			newConnector = candidates[0];
 			if (candidates.count() > 1) {
 				Q_FOREACH (Connector * connector, candidates) {
+					auto connectorID = connector->connectorSharedID();
 					// this gets an exact match, if there is one
-					if (fromConnectorItem->connectorSharedID().compare(connector->connectorSharedID(), Qt::CaseInsensitive) == 0) {
+					if (fromID.compare(connectorID, Qt::CaseInsensitive) == 0) {
 						newConnector = connector;
 						break;
 					}

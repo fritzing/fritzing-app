@@ -6053,6 +6053,12 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 	QHash<ConnectorItem *, Connector *> found;
 	QHash<ConnectorItem *, ConnectorItem *> m2f;
 
+	QHash<QString, Connector *> newConnectorsByName;
+	Q_FOREACH (Connector * connector, newConnectors) {
+		QString toName = connector->connectorSharedName();
+		newConnectorsByName.insert(toName, connector);
+	}
+
 	Q_FOREACH (ConnectorItem * fromConnectorItem, fromConnectorItems) {
 		QList<Connector *> candidates;
 		Connector * newConnector = nullptr;
@@ -6074,37 +6080,44 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 		QString fromReplacedby = fromConnectorItem->connectorSharedReplacedby();
 		QString fromID = fromConnectorItem->connectorSharedID();
 		//itemBase->debugInfo(QString("%1 %2").arg(fromName).arg(fromReplacedby));
-		Q_FOREACH (Connector * connector, newConnectors) {
-			QString toName = connector->connectorSharedName();
-			QString toID = connector->connectorSharedID();
-			if (checkReplacedby) {
-				if (fromReplacedby.compare(toName, Qt::CaseInsensitive) == 0 || fromReplacedby.compare(toID) == 0) {
-					candidates.clear();
+		if (!itemBase->allowSwapReconnectByDescription() && !checkReplacedby) {
+			auto candidate = newConnectorsByName.value(fromName, nullptr);
+			if (candidate != nullptr) {
+				candidates.append(candidate);
+			}
+		} else {
+			Q_FOREACH (Connector * connector, newConnectors) {
+				QString toName = connector->connectorSharedName();
+				QString toID = connector->connectorSharedID();
+				if (checkReplacedby) {
+					if (fromReplacedby.compare(toName, Qt::CaseInsensitive) == 0 || fromReplacedby.compare(toID) == 0) {
+						candidates.clear();
+						candidates.append(connector);
+						//fromConnectorItem->debugInfo(QString("matched %1 %2").arg(toName).arg(toID));
+						break;
+					}
+				}
+
+				bool gotOne = false;
+
+				QString toDescription = connector->connectorSharedDescription();
+				if (fromName.compare(toName, Qt::CaseInsensitive) == 0) {
+					gotOne = true;
+				} else if(itemBase->allowSwapReconnectByDescription()) {
+					if (fromDescription.compare(toDescription, Qt::CaseInsensitive) == 0) {
+						gotOne = true;
+					}
+					else if (fromDescription.compare(toName, Qt::CaseInsensitive) == 0) {
+						gotOne = true;
+					}
+					else if (fromName.compare(toDescription, Qt::CaseInsensitive) == 0) {
+						gotOne = true;
+					}
+				}
+
+				if (gotOne) {
 					candidates.append(connector);
-					//fromConnectorItem->debugInfo(QString("matched %1 %2").arg(toName).arg(toID));
-					break;
 				}
-			}
-
-			bool gotOne = false;
-
-			QString toDescription = connector->connectorSharedDescription();
-			if (fromName.compare(toName, Qt::CaseInsensitive) == 0) {
-				gotOne = true;
-			} else if(itemBase->allowSwapReconnectByDescription()) {
-				if (fromDescription.compare(toDescription, Qt::CaseInsensitive) == 0) {
-					gotOne = true;
-				}
-				else if (fromDescription.compare(toName, Qt::CaseInsensitive) == 0) {
-					gotOne = true;
-				}
-				else if (fromName.compare(toDescription, Qt::CaseInsensitive) == 0) {
-					gotOne = true;
-				}
-			}
-
-			if (gotOne) {
-				candidates.append(connector);
 			}
 		}
 

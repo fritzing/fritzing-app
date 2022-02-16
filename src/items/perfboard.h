@@ -54,6 +54,7 @@ public:
 protected:
 	virtual QString getRowLabel();
 	virtual QString getColumnLabel();
+	virtual void createShape(LayerAttributes & layerAttributes);
 
 public:
 	static QString genFZP(const QString & moduleID);

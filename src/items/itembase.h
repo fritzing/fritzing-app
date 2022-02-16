@@ -349,7 +349,7 @@ protected:
 	virtual ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 	virtual bool makeLocalModifications(QByteArray & svg, const QString & filename);
 	void updateHidden();
-	void createShape(LayerAttributes & layerAttributes);
+	virtual void createShape(LayerAttributes & layerAttributes);
 
 protected:
 	static bool getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement, QDomDocument &, Qt::Orientations);

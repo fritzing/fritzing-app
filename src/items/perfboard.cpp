@@ -415,3 +415,8 @@ QString Perfboard::getRowLabel() {
 QString Perfboard::getColumnLabel() {
 	return tr("columns");
 }
+
+void Perfboard::createShape(LayerAttributes & layerAttributes) {
+	Q_UNUSED(layerAttributes);
+	return;
+}

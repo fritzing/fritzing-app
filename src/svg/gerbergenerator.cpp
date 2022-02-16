@@ -391,9 +391,8 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		for (int i = 0; i < nodeList.count(); i++) {
 			QDomElement circle = nodeList.at(i).toElement();
 			if (circle.attribute("id").contains(FSvgRenderer::NonConnectorName)) {
-				QString strokeWidth = circle.attribute("stroke-width");
 				double sw = circle.attribute("stroke-width").toDouble();
-				if (sw == 0 && strokeWidth != "") {
+				if (sw == 0) {
 					justHoles << circle;
 				}
 			}

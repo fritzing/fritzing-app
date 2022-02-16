@@ -323,11 +323,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 		bool noDrill = (drillAttribute.compare("0") == 0 || drillAttribute.compare("no", Qt::CaseInsensitive) == 0 || drillAttribute.compare("false", Qt::CaseInsensitive) == 0);
 
 		double stroke_width = circle.attribute("stroke-width").toDouble();
-		QString strokeWidthString = circle.attribute("stroke-width");
 		double hole = ((2*r) - stroke_width) / 1000;  // convert mils (standard fritzing resolution) to inches
-		if (strokeWidthString == "") {
-			hole = 0.0;
-		}
 
 		if (forWhy == ForDrill) {
 			if (noDrill) continue;

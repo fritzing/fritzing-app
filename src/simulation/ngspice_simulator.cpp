@@ -158,11 +158,11 @@ std::vector<double> NgSpiceSimulator::getVecInfo(const std::string& vecName) {
 	return std::vector<double>();
 }
 
-std::optional<std::string> NgSpiceSimulator::errorOccured() {
+stdx::optional<std::string> NgSpiceSimulator::errorOccured() {
 	return m_errorTitle;
 }
 
-void NgSpiceSimulator::setErrorTitle(std::optional<const std::reference_wrapper<std::string>> errorTitle) {
+void NgSpiceSimulator::setErrorTitle(stdx::optional<const std::reference_wrapper<std::string>> errorTitle) {
 	m_errorTitle = errorTitle;
 }
 

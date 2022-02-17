@@ -27,6 +27,39 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <memory>
 #include <string>
 
+#pragma once
+
+#if __has_include(<optional>)
+
+#include <optional>
+namespace stdx {
+	using std::optional;
+	using std::nullopt_t;
+	using std::in_place_t;
+	using std::bad_optional_access;
+	using std::nullopt;
+	using std::in_place;
+	using std::make_optional;
+}
+
+#elif __has_include(<experimental/optional>)
+
+#include <experimental/optional>
+namespace stdx {
+	using std::experimental::optional;
+	using std::experimental::nullopt_t;
+	using std::experimental::in_place_t;
+	using std::experimental::bad_optional_access;
+	using std::experimental::nullopt;
+	using std::experimental::in_place;
+	using std::experimental::make_optional;
+}
+
+#else
+	#error "an implementation of optional is required!"
+#endif
+
+
 #include <QLibrary>
 
 class NgSpiceSimulator {
@@ -43,8 +76,8 @@ public:
 	void loadCircuit(const std::string& netList);
 	void command(const std::string& command);
 	std::vector<double> getVecInfo(const std::string& vecName);
-	std::optional<std::string> errorOccured();
-	void setErrorTitle(std::optional<const std::reference_wrapper<std::string>> errorTitle);
+	stdx::optional<std::string> errorOccured();
+	void setErrorTitle(stdx::optional<const std::reference_wrapper<std::string>> errorTitle);
 	void log(const std::string& logString, bool isStdErr);
 	void clearLog();
 	std::string getLog(bool isStdErr);
@@ -61,7 +94,7 @@ private:
 	QLibrary m_library;
 	bool m_isInitialized;
 	bool m_isBGThreadRunning;
-	std::optional<std::string> m_errorTitle;
+	stdx::optional<std::string> m_errorTitle;
 	std::pair<std::string, std::string> m_log;
 };
 #endif // NGSPICE_SIMULATOR_H

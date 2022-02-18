@@ -2354,8 +2354,12 @@ bool PEMainWindow::saveAs(bool overWrite)
 	ModelPart * modelPart = m_referenceModel->retrieveModelPart(m_originalModuleID);
 	if (modelPart == nullptr) {
 		modelPart = m_referenceModel->loadPart(fzpPath, true);
-		modelPart->setAlien(true);
-		emit addToMyPartsSignal(modelPart, peAlienFiles);
+		if (modelPart != nullptr) {
+			modelPart->setAlien(true);
+			Q_EMIT addToMyPartsSignal(modelPart, peAlienFiles);
+		} else {
+			QMessageBox::critical(nullptr, tr("Parts Editor"), tr("ERROR. File was not saved. prefix: %1 fzpPath: %2").arg(prefix).arg(fzpPath));
+		}
 	}
 	else {
 		m_referenceModel->reloadPart(fzpPath, m_originalModuleID);

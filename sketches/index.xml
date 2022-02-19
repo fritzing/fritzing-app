@@ -240,7 +240,7 @@
 			<language country="en" name="How To Measure Resistances" src="core/Simulator/EN/measure_resistance.fzz"/>
 		</sketch>
 		<sketch id="SimplePotentiometer" >
-			<language country="en" name="Button" src="core/Simulator/EN/simple_potentiometer.fzz"/>
+			<language country="en" name="Potentiometer" src="core/Simulator/EN/simple_potentiometer.fzz"/>
 		</sketch>
 </sketches>
 	<categories>

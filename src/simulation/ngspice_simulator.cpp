@@ -30,9 +30,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStandardPaths>
 #include "../debugdialog.h"
 
+// Macro for serializing variable/function name into a string.
 #define STRFY(name) #name
 
+// Macro for getting a std::function object for a ngspice library function from the map of function handlers.
 #define GET_FUNC(func) std::function<decltype(func)>((decltype(func)*) m_handles[STRFY(func)])
+
+// Macro for getting pointer to duplicated string for use in ngspice library function and automatically deleting the duplicate after the function call via unique_ptr.
 #define UNIQ(str) std::unique_ptr<char>(strdup(str.c_str())).get()
 
 NgSpiceSimulator::NgSpiceSimulator()

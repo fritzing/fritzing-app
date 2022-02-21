@@ -400,6 +400,8 @@ void Simulator::drawSmoke(ItemBase* part) {
 
 	schSmoke->setZValue(std::numeric_limits<double>::max());
 	bbSmoke->setZValue(std::numeric_limits<double>::max());
+	bbSmoke->setOpacity(0.7);
+	schSmoke->setOpacity(0.7);
 	part->addSimulationGraphicsItem(schSmoke);
 	m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbSmoke);
 }

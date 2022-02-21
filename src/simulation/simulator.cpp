@@ -862,11 +862,13 @@ void Simulator::updateLED(ItemBase * part) {
 
 		std::cout << "LED Current: " <<curr<<std::endl;
 		std::cout << "LED MaxCurrent: " <<maxCurr<<std::endl;
-		if (curr > maxCurr) {
-			drawSmoke(part);
-		}
+
 		LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(part));
 		bbLed->setBrightness(curr/maxCurr);
+		if (curr > maxCurr) {
+			drawSmoke(part);
+			bbLed->setBrightness(0);
+		}
 	} else {
 		//It is probably an LED display (LED matrix)
 		//TODO: Add spice lines to the part and handle this here

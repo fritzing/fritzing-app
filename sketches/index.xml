@@ -495,7 +495,7 @@
 				<sketch id="MeasureDcCurrent"/>
 			</category>
 			<category>
-				<language country="en" name="Basic Circits"/>
+				<language country="en" name="Basic Circuits"/>
 				<language country="es" name="Circuitos Básicos"/>
 				<sketch id="SimpleButton"/>
 				<sketch id="SimpleLED"/>

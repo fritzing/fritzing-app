@@ -558,7 +558,8 @@ protected:
 	class ExpandingLabel * createRoutingStatusLabel(SketchAreaWidget *);
 	SketchToolButton *createExportEtchableButton(SketchAreaWidget *parent);
 	SketchToolButton *createNoteButton(SketchAreaWidget *parent);
-	SketchToolButton *createSimulationButton(SketchAreaWidget *parent);
+	QToolButton *createSimulationButton(SketchAreaWidget *parent);
+
 	QWidget *createToolbarSpacer(SketchAreaWidget *parent);
 	SketchAreaWidget *currentSketchArea();
 	const QString fritzingTitle();
@@ -619,6 +620,7 @@ protected:
 	virtual QMenu * createRotateSubmenu(QMenu * parentMenu);
 	virtual QMenu * createZOrderSubmenu(QMenu * parentMenu);
 	//  virtual void createZOrderWireSubmenu(QMenu * parentMenu);
+
 	virtual QMenu * createAlignSubmenu(QMenu * parentMenu);
 	virtual QMenu * createAddToBinSubmenu(QMenu * parentMenu);
 	virtual void populateExportMenu();
@@ -909,7 +911,6 @@ protected:
 	QList<SketchToolButton*> m_flipButtons;
 	QStackedWidget * m_activeLayerButtonWidget = nullptr;
 	QStackedWidget * m_viewFromButtonWidget = nullptr;
-	QList<SketchToolButton*> m_simulationButtons;
 
 	bool m_comboboxChanged = false;
 	bool m_restarting = false;

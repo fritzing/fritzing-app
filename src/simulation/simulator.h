@@ -47,6 +47,10 @@ public slots:
 	void stopSimulation();
 	void startSimulation();
 
+signals:
+	void simulationStartedOrStopped(bool running);
+	void simulationEnabled(bool enabled);
+
 protected:	
 	void drawSmoke(ItemBase* part);
 	void updateMultimeterScreen(ItemBase *, QString);

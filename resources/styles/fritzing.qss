@@ -1170,6 +1170,7 @@ QRadioButton::indicator:checked:pressed  {
 	padding: 0px;
 }
 
+
 #exportButton,
 #viewFromButton,
 #activeLayerButton,
@@ -1283,6 +1284,39 @@ QRadioButton::indicator:checked:pressed  {
 	width:80px;
 	margin:5px 10px 5px 5px;
 }
+
+
+
+#sketchAreaToolbar #simulationButton{
+    color:#fff;
+	border-bottom: 5px solid #3a2e2a;
+	background:#ab7063;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:110px;
+	margin:5px 10px 5px 5px;
+}
+
+#sketchAreaToolbar #simulationButton:hover{
+    color:#fff;
+	border-bottom: 5px solid #784e45;
+	background:#bc8d82;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:110px;
+	margin:5px 10px 5px 5px;
+}
+
+#sketchAreaToolbar #simulationButton:pressed{
+    color:#fff;
+	border-bottom: 5px solid #3a2e2a;
+	background:#ab7063;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+}
+
 
 
 #sketchAreaToolbar #orderFabButton{

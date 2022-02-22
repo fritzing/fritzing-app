@@ -383,5 +383,6 @@
         <file>resources/images/rotateCCW.svg</file>
         <file>resources/fonts/Segment16/Segment16C Regular.ttf</file>
         <file>resources/fonts/Segment16/Segment16C Bold.ttf</file>
+        <file>resources/images/icons/toolbarStopSimulationEnabled_icon.png</file>
     </qresource>
 </RCC>

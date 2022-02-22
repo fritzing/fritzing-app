@@ -147,10 +147,13 @@ bool Simulator::isEnabled() {
  * @param[in] enable boolean to indicate if the simulator needs to be enabled or disabled.
  */
 void Simulator::enable(bool enable) {
+	if (m_enabled != enable) {
+		emit simulationEnabled(enable);
+	}
 	m_enabled = enable;
 	if (!m_enabled) {
 		removeSimItems();
-	}
+	}		
 }
 
 /**
@@ -161,6 +164,7 @@ void Simulator::enable(bool enable) {
 void Simulator::startSimulation()
 {
 	m_simulating = true;
+	emit simulationStartedOrStopped(m_simulating);
 	simulate();
 }
 
@@ -172,6 +176,7 @@ void Simulator::startSimulation()
 void Simulator::stopSimulation() {
 	m_simulating = false;
 	removeSimItems();
+	emit simulationStartedOrStopped(m_simulating);
 }
 
 /**

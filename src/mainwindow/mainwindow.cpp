@@ -1023,19 +1023,34 @@ SketchToolButton *MainWindow::createNoteButton(SketchAreaWidget *parent) {
 	return noteButton;
 }
 
-SketchToolButton *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
-	QList<QAction*> actions;
-	actions << m_startSimulatorAct << m_stopSimulatorAct;
-	SketchToolButton *simulationButton = new SketchToolButton("Simulation", parent, actions);
+
+QToolButton *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
+	DebugDialog::debug("create simulation button!");
+
+	QToolButton* simulationButton = new QToolButton(parent);
+
 	simulationButton->setObjectName("simulationButton");
-	simulationButton->setDefaultAction(m_startSimulatorAct);
-	simulationButton->setText(tr("Start\nSimulator"));
-	simulationButton->setEnabledIcon();				// seems to need this to display button icon first time
+	simulationButton->setIconSize(QSize(45,24));
+	simulationButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
-	if (!m_simulator->isEnabled())
-		simulationButton->hide();
+	connect(m_simulator, &Simulator::simulationStartedOrStopped, this, [=](bool running) {
+		if (running) {
+			simulationButton->setDefaultAction(m_stopSimulatorAct);
+			simulationButton->setText(tr("Stop simulation"));
+			simulationButton->setIcon(QIcon(QPixmap(":/resources/images/icons/toolbarStopSimulationEnabled_icon.png")));
+		} else {
+			simulationButton->setText(tr("Simulate"));
+			simulationButton->setDefaultAction(m_startSimulatorAct);
+			simulationButton->setIcon(QIcon(QPixmap(":/resources/images/icons/toolbarSimulationEnabled_icon.png")));
+		}
+	});
+	connect(m_simulator, &Simulator::simulationEnabled, this, [=](bool enabled) {
+		simulationButton->setVisible(enabled);
+	});
 
-	m_simulationButtons << simulationButton;
+	emit m_simulator->simulationStartedOrStopped(m_simulator->isSimulating());
+	emit m_simulator->simulationEnabled(m_simulator->isEnabled());
+
 	return simulationButton;
 }
 
@@ -1086,12 +1101,14 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
 	retval << createRotateButton(parent);
 	switch (viewId) {
 	case ViewLayer::BreadboardView:
-		retval << createFlipButton(parent) << createRoutingStatusLabel(parent);
+		retval << createFlipButton(parent) << createRoutingStatusLabel(parent)
+			   << createSimulationButton(parent);
 		break;
 	case ViewLayer::SchematicView:
 		retval << createFlipButton(parent)
 		       << createAutorouteButton(parent)
-		       << createRoutingStatusLabel(parent);
+			   << createRoutingStatusLabel(parent)
+			   << createSimulationButton(parent);
 		break;
 	case ViewLayer::PCBView:
 		retval << createViewFromButton(parent)
@@ -1110,7 +1127,6 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
 		break;
 	}
 
-	retval << createSimulationButton(parent);
 	retval << createShareButton(parent);
 	return retval;
 }
@@ -3340,14 +3356,5 @@ bool MainWindow::isSimulatorEnabled() {
 void MainWindow::enableSimulator(bool enable) {
 	if (m_simulator) {
 		m_simulator->enable(enable);
-	} else {
-		enable = false;
-	}
-
-	foreach(SketchToolButton* simButton, m_simulationButtons) {
-		if (simButton) {
-			m_startSimulatorAct->setVisible(enable);
-			simButton->setVisible(enable);
-		}
 	}
 }

@@ -145,6 +145,13 @@ public:
 	std::string getLog(bool isStdErr);
 
 private:
+	/*
+	 * The following are callback functions corresponding to the typedefs in the callback section
+	 * of the file sharedspice.h belonging to the ngspice library.
+	 *
+	 * Please refer to the parameter documentation given there.
+	 */
+
 	static int SendCharFunc(char* output, int libId, void* userData);
 	static int SendStatFunc(char* simulationStatus, int libId, void* userData);
 	static int ControlledExitFunc(int exitStatus, bool immediate, bool exitOnQuit, int libId, void* userData);

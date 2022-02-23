@@ -96,19 +96,19 @@ public:
 
 	/**
 	 * @brief Load a circuit given as a netlist into the ngspice library.
-	 * @param netList netlist that represents the circuit to be loaded into ngspice library
+	 * @param[in] netList netlist that represents the circuit to be loaded into ngspice library
 	 */
 	void loadCircuit(const std::string& netList);
 
 	/**
 	 * @brief Call the ngspice library ngSpice_Command function with the given command.
-	 * @param command command to call the ngspice library ngSpice_Command function with
+	 * @param[in] command command to call the ngspice library ngSpice_Command function with
 	 */
 	void command(const std::string& command);
 
 	/**
 	 * @brief Get vector information from the ngspice library ngGet_Vec_Info function for the given vector name.
-	 * @param vecName name of vector to get information for
+	 * @param[in] vecName name of vector to get information for
 	 * @return vector of values returned by ngspice library ngGet_Vec_Info function
 	 */
 	std::vector<double> getVecInfo(const std::string& vecName);
@@ -121,14 +121,14 @@ public:
 
 	/**
 	 * @brief Set the current optional error title.
-	 * @param errorTitle error title if an error occured, otherwise std::nullopt
+	 * @param[in] errorTitle error title if an error occured, otherwise std::nullopt
 	 */
 	void setErrorTitle(stdx::optional<const std::reference_wrapper<std::string>> errorTitle);
 
 	/**
 	 * @brief Write stderr or stdout text to log.
-	 * @param logString text to log
-	 * @param isStdErr true if stderr, otherwise stdout
+	 * @param[in] logString text to log
+	 * @param[in] isStdErr true if stderr, otherwise stdout
 	 */
 	void log(const std::string& logString, bool isStdErr);
 
@@ -139,7 +139,7 @@ public:
 
 	/**
 	 * @brief Returns accumulated stderr or stdout log.
-	 * @param isStdErr true if stderr, otherwise stdout
+	 * @param[in] isStdErr true if stderr, otherwise stdout
 	 * @return accumulated stderr or stdout log depending on isStdErr flag
 	 */
 	std::string getLog(bool isStdErr);

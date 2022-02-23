@@ -62,17 +62,42 @@ namespace stdx {
 
 #include <QLibrary>
 
+/**
+ * @brief The NgSpiceSimulator class is an interface for ngspice electronics simulation library.
+ *
+ * This class uses the singleton pattern.
+ */
 class NgSpiceSimulator {
 private:
+	/**
+	 * @brief Private constructor. Use getInstance to get the singleton instance.
+	 */
 	NgSpiceSimulator();
 
 public:
+	/**
+	 * @brief Return the singleton instance of NgSpiceSimulator.
+	 * @return singleton instance of NgSpiceSimulator
+	 */
 	static std::shared_ptr<NgSpiceSimulator> getInstance();
 
 	~NgSpiceSimulator();
 
+	/**
+	 * @brief Initialize ngspice simulator and load ngspice library.
+	 */
 	void init();
+
+	/**
+	 * @brief Return true if ngspice library background thread is running.
+	 * @return true if ngspice library background thread is running
+	 */
 	bool isBGThreadRunning();
+
+	/**
+	 * @brief Load a circuit given as a netlist into the ngspice library.
+	 * @param netlist that represents the circuit to be loaded into ngspice library
+	 */
 	void loadCircuit(const std::string& netList);
 	void command(const std::string& command);
 	std::vector<double> getVecInfo(const std::string& vecName);

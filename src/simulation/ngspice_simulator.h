@@ -96,15 +96,52 @@ public:
 
 	/**
 	 * @brief Load a circuit given as a netlist into the ngspice library.
-	 * @param netlist that represents the circuit to be loaded into ngspice library
+	 * @param netList netlist that represents the circuit to be loaded into ngspice library
 	 */
 	void loadCircuit(const std::string& netList);
+
+	/**
+	 * @brief Call the ngspice library ngSpice_Command function with the given command.
+	 * @param command command to call the ngspice library ngSpice_Command function with
+	 */
 	void command(const std::string& command);
+
+	/**
+	 * @brief Get vector information from the ngspice library ngGet_Vec_Info function for the given vector name.
+	 * @param vecName name of vector to get information for
+	 * @return vector of values returned by ngspice library ngGet_Vec_Info function
+	 */
 	std::vector<double> getVecInfo(const std::string& vecName);
+
+	/**
+	 * @brief Return optional error title if an error occurred.
+	 * @return optional error title if an error occurred
+	 */
 	stdx::optional<std::string> errorOccured();
+
+	/**
+	 * @brief Set the current optional error title.
+	 * @param errorTitle error title if an error occured, otherwise std::nullopt
+	 */
 	void setErrorTitle(stdx::optional<const std::reference_wrapper<std::string>> errorTitle);
+
+	/**
+	 * @brief Write stderr or stdout text to log.
+	 * @param logString text to log
+	 * @param isStdErr true if stderr, otherwise stdout
+	 */
 	void log(const std::string& logString, bool isStdErr);
+
+	/**
+	 * @brief Clear current stderr and stdout log.
+	 */
 	void clearLog();
+
+	/**
+	 * @brief Returns accumulated stderr or stdout log.
+	 * @param isStdErr true if stderr, otherwise stdout
+	 * @return accumulated stderr or stdout log depending on isStdErr flag
+	 */
 	std::string getLog(bool isStdErr);
 
 private:
@@ -115,11 +152,36 @@ private:
 	static int SendInitDataFunc(pvecinfoall allVecInitInfo, int libId, void* userData);
 	static int BGThreadRunningFunc(bool notRunning, int libId, void* userData);
 
+	/**
+	 * @brief Map for handles of ngspice library functions.
+	 *
+	 * To get a function handle from the map use STRFY of the function name as key.
+	 */
 	std::map<std::string, void *> m_handles;
+
+	/**
+	 * @brief Ngspice library object.
+	 */
 	QLibrary m_library;
+
+	/**
+	 * @brief Flag that indicates if init() was called successfully.
+	 */
 	bool m_isInitialized;
+
+	/**
+	 * @brief Flag that indicates if the ngspice library background thread is running.
+	 */
 	bool m_isBGThreadRunning;
+
+	/**
+	 * @brief Current error title if an error occurred and otherwise std::nullopt.
+	 */
 	stdx::optional<std::string> m_errorTitle;
+
+	/**
+	 * @brief Pair of accumulated stdout and stderr log strings.
+	 */
 	std::pair<std::string, std::string> m_log;
 };
 #endif // NGSPICE_SIMULATOR_H

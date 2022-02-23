@@ -558,7 +558,7 @@ protected:
 	class ExpandingLabel * createRoutingStatusLabel(SketchAreaWidget *);
 	SketchToolButton *createExportEtchableButton(SketchAreaWidget *parent);
 	SketchToolButton *createNoteButton(SketchAreaWidget *parent);
-	QToolButton *createSimulationButton(SketchAreaWidget *parent);
+	QWidget *createSimulationButton(SketchAreaWidget *parent);
 
 	QWidget *createToolbarSpacer(SketchAreaWidget *parent);
 	SketchAreaWidget *currentSketchArea();

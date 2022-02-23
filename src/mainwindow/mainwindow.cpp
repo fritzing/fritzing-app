@@ -1024,34 +1024,44 @@ SketchToolButton *MainWindow::createNoteButton(SketchAreaWidget *parent) {
 }
 
 
-QToolButton *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
-	DebugDialog::debug("create simulation button!");
+QWidget *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
+	QStackedWidget* widget = new QStackedWidget(parent);
+	widget->setObjectName("simulatorbuttonstackwidget");
+	widget->setSizePolicy(QSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum));
 
-	QToolButton* simulationButton = new QToolButton(parent);
-
+	QToolButton* simulationButton = new QToolButton(widget);
 	simulationButton->setObjectName("simulationButton");
 	simulationButton->setIconSize(QSize(45,24));
 	simulationButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+	simulationButton->setDefaultAction(m_startSimulatorAct);
+	simulationButton->setText(tr("Simulate"));
+	simulationButton->setIcon(QIcon(QPixmap(":/resources/images/icons/toolbarSimulationEnabled_icon.png")));
+	widget->addWidget(simulationButton);
+
+	QToolButton* stopSimulationButton = new QToolButton(widget);
+	stopSimulationButton->setObjectName("stopSimulationButton");
+	stopSimulationButton->setIconSize(QSize(45,24));
+	stopSimulationButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+	stopSimulationButton->setDefaultAction(m_stopSimulatorAct);
+	stopSimulationButton->setText(tr("Stop"));
+	stopSimulationButton->setIcon(QIcon(QPixmap(":/resources/images/icons/toolbarStopSimulationEnabled_icon.png")));
+	widget->addWidget(stopSimulationButton);
 
 	connect(m_simulator, &Simulator::simulationStartedOrStopped, this, [=](bool running) {
 		if (running) {
-			simulationButton->setDefaultAction(m_stopSimulatorAct);
-			simulationButton->setText(tr("Stop simulation"));
-			simulationButton->setIcon(QIcon(QPixmap(":/resources/images/icons/toolbarStopSimulationEnabled_icon.png")));
+			widget->setCurrentWidget(stopSimulationButton);
 		} else {
-			simulationButton->setText(tr("Simulate"));
-			simulationButton->setDefaultAction(m_startSimulatorAct);
-			simulationButton->setIcon(QIcon(QPixmap(":/resources/images/icons/toolbarSimulationEnabled_icon.png")));
+			widget->setCurrentWidget(simulationButton);
 		}
 	});
 	connect(m_simulator, &Simulator::simulationEnabled, this, [=](bool enabled) {
-		simulationButton->setVisible(enabled);
+		widget->setVisible(enabled);
 	});
 
-	emit m_simulator->simulationStartedOrStopped(m_simulator->isSimulating());
 	emit m_simulator->simulationEnabled(m_simulator->isEnabled());
+	emit m_simulator->simulationStartedOrStopped(m_simulator->isSimulating());
 
-	return simulationButton;
+	return widget;
 }
 
 SketchToolButton *MainWindow::createExportEtchableButton(SketchAreaWidget *parent) {
@@ -1098,7 +1108,7 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
 		break;
 	}
 
-	retval << createRotateButton(parent);
+	retval << createRotateButton(parent);	
 	switch (viewId) {
 	case ViewLayer::BreadboardView:
 		retval << createFlipButton(parent) << createRoutingStatusLabel(parent)

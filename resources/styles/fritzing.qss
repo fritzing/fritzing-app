@@ -1286,37 +1286,29 @@ QRadioButton::indicator:checked:pressed  {
 }
 
 
-#sketchAreaToolbar #stopSimulationButton{
-    color:#fff;
-	border-bottom: 5px solid #215c6a;
-	background:#3799b0;
-	padding: 3px 0px 0px 0px;
-	height: 55px;
-	width:110px;
-	margin:5px 10px 5px 5px;
-}
-
-
+#sketchAreaToolbar #stopSimulationButton,
 #sketchAreaToolbar #simulationButton{
     color:#fff;
 	border-bottom: 5px solid #215c6a;
 	background:#3799b0;
 	padding: 3px 0px 0px 0px;
 	height: 55px;
-	width:110px;
+	width:80px;
 	margin:5px 10px 5px 5px;
 }
 
+#sketchAreaToolbar #stopSimulationButton:hover,
 #sketchAreaToolbar #simulationButton:hover{
     color:#fff;
 	border-bottom: 5px solid #2f95b0;
 	background:#6db5c8;
 	padding: 3px 0px 0px 0px;
 	height: 55px;
-	width:110px;
+	width:80px;
 	margin:5px 10px 5px 5px;
 }
 
+#sketchAreaToolbar #stopSimulationButton:pressed,
 #sketchAreaToolbar #simulationButton:pressed{
     color:#fff;
 	border-bottom: 5px solid #184b58;

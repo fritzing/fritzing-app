@@ -219,10 +219,12 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 
 	m_editMenu->addSeparator();
 
+#ifndef Q_OS_MAC
 	m_preferencesAction = new QAction(tr("&Preferences..."), this);
-	m_preferencesAction->setStatusTip(tr("Show the application's about box"));
+	//m_preferencesAction->setStatusTip(tr("Show the application's about box"));
 	connect(m_preferencesAction, SIGNAL(triggered()), QApplication::instance(), SLOT(preferences()));
 	m_editMenu->addAction(m_preferencesAction);
+#endif
 
 	m_programMenu = menubar->addMenu(tr("&Code"));
 

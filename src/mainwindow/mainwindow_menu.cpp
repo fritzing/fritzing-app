@@ -907,7 +907,7 @@ void MainWindow::createEditMenuActions() {
 	connect(m_addNoteAct, SIGNAL(triggered()), this, SLOT(addNote()));
 
 	m_preferencesAct = new QAction(tr("&Preferences..."), this);
-	m_preferencesAct->setStatusTip(tr("Show the application's about box"));
+	m_preferencesAct->setStatusTip(tr("Edit the application's preferences"));
 	m_preferencesAct->setMenuRole(QAction::PreferencesRole);						// make sure this is added to the correct menu on mac
 	connect(m_preferencesAct, SIGNAL(triggered()), QApplication::instance(), SLOT(preferences()));
 }
@@ -1444,7 +1444,9 @@ void MainWindow::createEditMenu()
 	m_editMenu->addSeparator();
 	m_editMenu->addAction(m_addNoteAct);
 	m_editMenu->addSeparator();
+#ifndef Q_OS_MAC
 	m_editMenu->addAction(m_preferencesAct);
+#endif
 	updateEditMenu();
 	connect(m_editMenu, SIGNAL(aboutToShow()), this, SLOT(updateEditMenu()));
 }
@@ -1614,6 +1616,9 @@ void MainWindow::createHelpMenu()
 	m_helpMenu->addAction(m_firstTimeHelpAct);
 #ifndef QT_NO_DEBUG
 	m_helpMenu->addAction(m_aboutQtAct);
+#endif
+#ifdef Q_OS_MAC
+	m_helpMenu->addAction(m_preferencesAct);
 #endif
 }
 

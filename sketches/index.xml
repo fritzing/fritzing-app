@@ -225,7 +225,7 @@
 			<language country="en" name="How To Use A Multimeter" src="core/Simulator/EN/how_to_use_multimeter.fzz"/>
 		</sketch>
 		<sketch id="IrSensorTransistorMotor" >
-			<language country="en" name="IR Sensor Controlling a motor" src="core/Simulator/EN/ir_sensor_npn_transistor_dc_motor_.fzz"/>
+			<language country="en" name="IR Sensor Controlling a motor" src="core/Simulator/EN/ir_sensor_npn_transistor_dc_motor.fzz"/>
 		</sketch>
 		<sketch id="SimpleLED" >
 			<language country="en" name="LED" src="core/Simulator/EN/simple_led.fzz"/>
@@ -500,6 +500,7 @@
 				<sketch id="SimpleButton"/>
 				<sketch id="SimpleLED"/>
 				<sketch id="SimplePotentiometer"/>
+				<sketch id="IrSensorTransistorMotor"/>
 			</category>
 		</category>
 	</categories>

@@ -433,8 +433,8 @@
 			<sketch id="TwitterSaurus"/>
 			<separator />
 			<url>
-				<language country="en" name="Get your own Fritzing Creator Kit" href="http://fritzing.myshopify.com/products/fritzing-creator-kit" />
-				<language country="de" name="Erhalten Sie Ihre eigene Fritzing Creator Kit" href="http://fritzing.myshopify.com/products/fritzing-creator-kit" />
+				<language country="en" name="Get your own Fritzing Creator Kit" href="https://fritzing.org/link/fritzingcreatorkit" />
+				<language country="de" name="Erhalten Sie Ihr eigenes Fritzing Creator Kit" href="https://fritzing.org/link/fritzingcreatorkit" />
 			</url>
 		</category>
 		<category>
@@ -458,8 +458,8 @@
 			<sketch id="CosmicRayGun"/>
 			<separator />
 			<url>
-				<language country="en" name="Get your own Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
-				<language country="de" name="Erhalten Sie Ihre eigene Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
+				<language country="en" name="Get your own Fritzing Starter Kit" href="https://fritzing.org/link/frtzingstarterkit" />
+				<language country="de" name="Erhalten Sie Ihr eigenes Fritzing Starter Kit" href="https://fritzing.org/link/frtzingstarterkit" />
 			</url>
 		</category>
 		<category>

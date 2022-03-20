@@ -53,6 +53,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../sketch/pcbsketchwidget.h"
 #include "../partsbinpalette/binmanager/binmanager.h"
 #include "../utils/expandinglabel.h"
+#include "../utils/fmessagebox.h"
 #include "../infoview/htmlinfoview.h"
 #include "../utils/bendpointaction.h"
 #include "../sketch/fgraphicsscene.h"
@@ -205,7 +206,15 @@ void Simulator::simulate() {
 	}
 
 	m_simulator = NgSpiceSimulator::getInstance();
-	m_simulator->init();
+	try {
+		m_simulator->init();
+	}
+	catch (std::exception& e) {
+		FMessageBox::warning(nullptr, tr("Simulator Error"), tr("An error occurred when starting the simulation."));
+		stopSimulation();
+		return;
+	}
+
 	if( !m_simulator )
 	{
 		throw std::runtime_error( "Could not create simulator instance" );
@@ -238,17 +247,15 @@ void Simulator::simulate() {
 		QString::fromStdString(m_simulator->getLog(true)).toLower().contains("warning")) { // "warning, can't find model"
 		//Ngspice found an error, do not continue
 		std::cout << "Error loading the netlist. Probably some spice field is wrong, check them." <<std::endl;
-		removeSimItems();
-		QWidget * tempWidget = new QWidget();
 		//TODO: Create copy to clipboard button o make this selectable ans resizeable!
-		QMessageBox::warning(tempWidget, tr("Simulator Error"),
+		FMessageBox::warning(nullptr, tr("Simulator Error"),
 								 tr("The simulator gave an error when loading the netlist. "
 									"Probably some spice field is wrong, please, check them.\n"
 									"If the parts are from the simulation bin, report the bug in GitHub.\n\nErrors:\n") +
 								QString::fromStdString(m_simulator->getLog(false)) +
 								QString::fromStdString(m_simulator->getLog(true)) +
 								 "\n\nNetlist:\n" + spiceNetlist);
-		delete tempWidget;
+		stopSimulation();
 		return;
 	}
 	std::cout << "-----------------------------------" <<std::endl;

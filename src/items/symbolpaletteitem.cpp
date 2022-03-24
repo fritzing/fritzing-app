@@ -37,6 +37,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMultiHash>
 #include <QMessageBox>
 
+#include <cmath>
+
 #define VOLTAGE_HASH_CONVERSION 1000000
 #define FROMVOLTAGE(v) ((long) (v * VOLTAGE_HASH_CONVERSION))
 
@@ -151,7 +153,7 @@ void SymbolPaletteItem::removeMeFromBus(double v) {
 		}
 		else {
 			double nv = useVoltage(connectorItem);
-			if (nv == v) {
+			if (std::fabs(nv - v) < 0.00001 ) {
 				//connectorItem->debugInfo(QString("remove %1").arg(useVoltage(connectorItem)));
 
 				bool gotOne = LocalGrounds.removeOne(connectorItem);

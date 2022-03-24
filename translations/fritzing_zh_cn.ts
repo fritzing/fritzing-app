@@ -183,6 +183,10 @@
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>, Siti Aishah Abdul Raouf</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AutorouteProgressDialog</name>
@@ -628,6 +632,12 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <name>Capacitor</name>
     <message>
         <source>Select from the dropdown, or type in a %1 value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from the dropdown, or type in a %1 value
+Range: [%2 - %3] %4
+Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1317,6 +1327,14 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <source>degrees</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Spice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No spice info. This part will not be simulated.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ItemBase</name>
@@ -1502,6 +1520,14 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>silkscreen top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mpn</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3668,6 +3694,34 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>Edit</source>
         <translation type="unfinished">编辑</translation>
     </message>
+    <message>
+        <source>Simulate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit the application&apos;s preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starty Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starts the simulator (DC analysis)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stops the simulator and removes simulator data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -4516,6 +4570,10 @@ Go ahead and save?</source>
         <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>ERROR. File was not saved. prefix: %1 fzpPath: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PEMetadataView</name>
@@ -5248,6 +5306,22 @@ shift键转换滚动轴
         <source>%1</source>
         <translation type="unfinished">%1</translation>
     </message>
+    <message>
+        <source>Beta Features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The simulator is a beta feature and has not been tested extensively. This means that there are still bugs that need to be fixed and can cause to crash Fritzing. Backup your data and do not use it for production.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProgramTab</name>
@@ -5404,7 +5478,7 @@ shift键转换滚动轴
     </message>
     <message>
         <source>Show the application&apos;s about box</source>
-        <translation type="unfinished">显示程序关于对话框</translation>
+        <translation type="obsolete">显示程序关于对话框</translation>
     </message>
     <message>
         <source>&amp;New Tab</source>
@@ -6167,10 +6241,6 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <translation>元件%1&apos;%2&apos;</translation>
     </message>
     <message>
-        <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Autorouter Settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6180,10 +6250,6 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
     </message>
     <message>
         <source>Text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%2 ... %1 wires moved from their saved position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6336,7 +6402,7 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>PartLabel</source>
+        <source>Measuring Tools</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6489,7 +6555,9 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <translation>电阻</translation>
     </message>
     <message>
-        <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
+        <source>Select from the dropdown, or type in a %1 value
+Range: [%2 - %3] %4
+Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6708,6 +6776,32 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
     </message>
     <message>
         <source>Current color (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Simulator</name>
+    <message>
+        <source>Simulator Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An error occurred when starting the simulation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The simulator gave an error when loading the netlist. Probably some spice field is wrong, please, check them.
+If the parts are from the simulation bin, report the bug in GitHub.
+
+Errors:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The simulator gave an error when trying to simulate this circuit. Please, check the wiring and try again. 
+
+Errors:
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

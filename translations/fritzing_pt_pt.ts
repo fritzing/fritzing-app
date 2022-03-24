@@ -235,6 +235,10 @@
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>, Siti Aishah Abdul Raouf</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AutorouteProgressDialog</name>
@@ -680,6 +684,12 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <source>Select from the dropdown, or type in a %1 value</source>
         <translation>Selecione no menu dropdown ou digite um valor %1</translation>
+    </message>
+    <message>
+        <source>Select from the dropdown, or type in a %1 value
+Range: [%2 - %3] %4
+Background: Green = ok, Red = incorrect value, Grey = current value</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1378,6 +1388,14 @@ Também é possível escolher um conector como uma semente de aterramento clican
         <source>degrees</source>
         <translation>graus</translation>
     </message>
+    <message>
+        <source>Spice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No spice info. This part will not be simulated.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ItemBase</name>
@@ -1564,6 +1582,14 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <source>silkscreen top</source>
         <translation>serigrafia superior</translation>
+    </message>
+    <message>
+        <source>mn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mpn</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3738,6 +3764,34 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
         <source>Edit</source>
         <translation type="unfinished">Editar</translation>
     </message>
+    <message>
+        <source>Simulate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit the application&apos;s preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starty Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starts the simulator (DC analysis)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stops the simulator and removes simulator data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -4590,6 +4644,10 @@ Go ahead and save?</source>
         <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
         <translation>&lt;p&gt;Por favor introduza um prefixo para ajudá-lo a identificar os ficheiros dos componentes.&lt;br/&gt;Os nomes do ficheiro irão ter a forma &apos;PREFIX_%1&apos;.&lt;br/&gt;(Não é necessário mudar o prefixo proposto, desde que um sufixo único é sempre adicionado.)&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>ERROR. File was not saved. prefix: %1 fzpPath: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PEMetadataView</name>
@@ -5318,6 +5376,22 @@ tecla shift troca o eixo de scroll</translation>
         <source>%1</source>
         <translation>%1</translation>
     </message>
+    <message>
+        <source>Beta Features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The simulator is a beta feature and has not been tested extensively. This means that there are still bugs that need to be fixed and can cause to crash Fritzing. Backup your data and do not use it for production.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProgramTab</name>
@@ -5474,7 +5548,7 @@ tecla shift troca o eixo de scroll</translation>
     </message>
     <message>
         <source>Show the application&apos;s about box</source>
-        <translation>Mostrar a caixa acerca da aplicação</translation>
+        <translation type="vanished">Mostrar a caixa acerca da aplicação</translation>
     </message>
     <message>
         <source>&amp;New Tab</source>
@@ -6289,7 +6363,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     </message>
     <message>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
-        <translation>Incapaz de copiar ficheiro &apos;%1&apos; to &apos;%2&apos;.</translation>
+        <translation type="vanished">Incapaz de copiar ficheiro &apos;%1&apos; to &apos;%2&apos;.</translation>
     </message>
     <message>
         <source>Autorouter Settings</source>
@@ -6333,7 +6407,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     </message>
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
-        <translation>%2 ... %1 fios movidos da sua posição guardada</translation>
+        <translation type="vanished">%2 ... %1 fios movidos da sua posição guardada</translation>
     </message>
     <message>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
@@ -6426,7 +6500,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
         <translation>Não foi possível recuperar a referência da rede para &apos;%1&apos;#%2. %3</translation>
     </message>
     <message>
-        <source>PartLabel</source>
+        <source>Measuring Tools</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6597,7 +6671,13 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     </message>
     <message>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
-        <translation>Você pode introduzir um valor de resistência, ou selecionar um pelo menu suspenso. Formato nnn.dP onde P é um dos &apos;umkMG&apos;</translation>
+        <translation type="vanished">Você pode introduzir um valor de resistência, ou selecionar um pelo menu suspenso. Formato nnn.dP onde P é um dos &apos;umkMG&apos;</translation>
+    </message>
+    <message>
+        <source>Select from the dropdown, or type in a %1 value
+Range: [%2 - %3] %4
+Background: Green = ok, Red = incorrect value, Grey = current value</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6816,6 +6896,32 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     <message>
         <source>Current color (%1)</source>
         <translation>Cor atual (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Simulator</name>
+    <message>
+        <source>Simulator Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An error occurred when starting the simulation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The simulator gave an error when loading the netlist. Probably some spice field is wrong, please, check them.
+If the parts are from the simulation bin, report the bug in GitHub.
+
+Errors:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The simulator gave an error when trying to simulate this circuit. Please, check the wiring and try again. 
+
+Errors:
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

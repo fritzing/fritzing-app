@@ -179,6 +179,10 @@
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
         <translation>Fritzingは、MWFK Brandenburg、Bauhaus-University Weimarのデザイン部門のスポンサー、IxDS、匿名の寄付者、Parallax、Picaxe、Sparkfun、PCB Fab AISLERおよび各有料ダウンロードによりの提供で実現しています。</translation>
     </message>
+    <message>
+        <source>, Siti Aishah Abdul Raouf</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AutorouteProgressDialog</name>
@@ -626,6 +630,12 @@ svgのカスタムボード一般的に1～2枚のシルクスクリーンレイ
     <message>
         <source>Select from the dropdown, or type in a %1 value</source>
         <translation>ドロップダウンから選択する、又は%1を入力します</translation>
+    </message>
+    <message>
+        <source>Select from the dropdown, or type in a %1 value
+Range: [%2 - %3] %4
+Background: Green = ok, Red = incorrect value, Grey = current value</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1317,6 +1327,14 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <source>degrees</source>
         <translation>角度</translation>
     </message>
+    <message>
+        <source>Spice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No spice info. This part will not be simulated.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ItemBase</name>
@@ -1503,6 +1521,14 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <source>silkscreen top</source>
         <translation>上シルクスクリーン</translation>
+    </message>
+    <message>
+        <source>mn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mpn</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3482,7 +3508,7 @@ Do you want to update now?</source>
     </message>
     <message>
         <source>&amp;Show Welcome</source>
-        <translation>&amp;表示　ようこそ</translation>
+        <translation>&amp;表示&#x3000;ようこそ</translation>
     </message>
     <message>
         <source>Show the welcome view</source>
@@ -3659,6 +3685,34 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>Edit</source>
         <translation>編集</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit the application&apos;s preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starty Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starts the simulator (DC analysis)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stops the simulator and removes simulator data</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4511,6 +4565,10 @@ Go ahead and save?</source>
 
 %2</translation>
     </message>
+    <message>
+        <source>ERROR. File was not saved. prefix: %1 fzpPath: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PEMetadataView</name>
@@ -5173,17 +5231,17 @@ Note: this warning will not be repeated during this session.</source>
         <source>no keys down = scroll
 shift key swaps scroll axis
 Alt or %1 key = zoom</source>
-        <translation>マウスホイール　＝垂直スクロール
-マウスホイール+Shiftキー　＝水平スクロール
-マウスホイール+ Alt又は％1キー　＝ズーム</translation>
+        <translation>マウスホイール&#x3000;＝垂直スクロール
+マウスホイール+Shiftキー&#x3000;＝水平スクロール
+マウスホイール+ Alt又は％1キー&#x3000;＝ズーム</translation>
     </message>
     <message>
         <source>no keys down = zoom
 Alt or %1 key = scroll
 shift key swaps scroll axis</source>
-        <translation>マウスホイール　＝ズーム
-マウスホイール+ Alt又は％1キー　=垂直スクロール
-マウスホイール+ Alt + Shiftキー　=水平スクロール</translation>
+        <translation>マウスホイール&#x3000;＝ズーム
+マウスホイール+ Alt又は％1キー&#x3000;=垂直スクロール
+マウスホイール+ Alt + Shiftキー&#x3000;=水平スクロール</translation>
     </message>
     <message>
         <source>General</source>
@@ -5240,6 +5298,22 @@ shift key swaps scroll axis</source>
     <message>
         <source>%1</source>
         <translation>%1</translation>
+    </message>
+    <message>
+        <source>Beta Features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The simulator is a beta feature and has not been tested extensively. This means that there are still bugs that need to be fixed and can cause to crash Fritzing. Backup your data and do not use it for production.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable simulator</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5397,7 +5471,7 @@ shift key swaps scroll axis</source>
     </message>
     <message>
         <source>Show the application&apos;s about box</source>
-        <translation>Fritzing に関する情報を表示する</translation>
+        <translation type="vanished">Fritzing に関する情報を表示する</translation>
     </message>
     <message>
         <source>&amp;New Tab</source>
@@ -6160,7 +6234,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
-        <translation>ファイル &apos;%1&apos; を &apos;%2&apos; にコピーできませんでした。</translation>
+        <translation type="vanished">ファイル &apos;%1&apos; を &apos;%2&apos; にコピーできませんでした。</translation>
     </message>
     <message>
         <source>Autorouter Settings</source>
@@ -6176,7 +6250,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
-        <translation>%2 ... %1 のワイヤが保存された位置から移動しました</translation>
+        <translation type="vanished">%2 ... %1 のワイヤが保存された位置から移動しました</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -6330,7 +6404,11 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>PartLabel</source>
-        <translation>パーツラベル</translation>
+        <translation type="vanished">パーツラベル</translation>
+    </message>
+    <message>
+        <source>Measuring Tools</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6479,7 +6557,13 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
-        <translation>抵抗値を入力するか、ドロップダウンから選択することもできます。nnn.dP形式で、Pは「umkMG」の1つです</translation>
+        <translation type="vanished">抵抗値を入力するか、ドロップダウンから選択することもできます。nnn.dP形式で、Pは「umkMG」の1つです</translation>
+    </message>
+    <message>
+        <source>Select from the dropdown, or type in a %1 value
+Range: [%2 - %3] %4
+Background: Green = ok, Red = incorrect value, Grey = current value</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6698,6 +6782,32 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>Current color (%1)</source>
         <translation>現の色(%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Simulator</name>
+    <message>
+        <source>Simulator Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An error occurred when starting the simulation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The simulator gave an error when loading the netlist. Probably some spice field is wrong, please, check them.
+If the parts are from the simulation bin, report the bug in GitHub.
+
+Errors:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The simulator gave an error when trying to simulate this circuit. Please, check the wiring and try again. 
+
+Errors:
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

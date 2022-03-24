@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="308"/>
         <source>Via size</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe der Vias</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="97"/>
@@ -7801,7 +7801,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="198"/>
         <source>silk layer %1 export is empty</source>
-        <translation type="unfinished">silk layer %1 export is empty</translation>
+        <translation>Export der Farbschicht %1 ist leer</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="214"/>

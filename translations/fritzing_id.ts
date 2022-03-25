@@ -11,12 +11,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="101"/>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="112"/>
         <source>Fritzing is made by: </source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing dibuat oleh: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="113"/>
@@ -36,12 +36,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="116"/>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
-        <translation type="unfinished"></translation>
+        <translation>Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="117"/>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation type="unfinished"></translation>
+        <translation>Mariano Crowe, Johannes Landstorfer, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="118"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="133"/>
         <source>Thanks for the translations go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Terima kasih atas terjemahannya ke: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>

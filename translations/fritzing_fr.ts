@@ -237,7 +237,7 @@
     </message>
     <message>
         <source>, Siti Aishah Abdul Raouf</source>
-        <translation type="unfinished"></translation>
+        <translation>, Siti Aishah Abdul Raouf</translation>
     </message>
 </context>
 <context>
@@ -622,6 +622,7 @@ Utiliser le fichier ?</translation>
 
 </source>
         <translation>Jetez un œil sur le fichier circle_pcb.svg dans votre dossier d&apos;installation Fritzing composants/svg/core/pcb/.
+
 </translation>
     </message>
     <message>
@@ -693,7 +694,9 @@ Utiliser le fichier ?</translation>
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez dans la liste déroulante, ou tapez une valeur %1
+Plage : [%2 - %3] %4
+Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuelle</translation>
     </message>
 </context>
 <context>
@@ -1128,7 +1131,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     </message>
     <message>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir dans le navigateur</translation>
     </message>
 </context>
 <context>
@@ -1396,11 +1399,11 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>SPICE</source>
-        <translation type="unfinished"></translation>
+        <translation>SPICE</translation>
     </message>
     <message>
         <source>No SPICE information. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucune information SPICE. Cette pièce ne sera pas simulée.</translation>
     </message>
 </context>
 <context>
@@ -1591,11 +1594,11 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>mn</source>
-        <translation type="unfinished"></translation>
+        <translation>mn</translation>
     </message>
     <message>
         <source>mpn</source>
-        <translation type="unfinished"></translation>
+        <translation>mpn</translation>
     </message>
 </context>
 <context>
@@ -3781,31 +3784,31 @@ Remarque: si vous souhaitez mettre à jour plus tard, il y a des options dans le
     </message>
     <message>
         <source>Simulate</source>
-        <translation type="unfinished"></translation>
+        <translation>Simuler</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrêter</translation>
     </message>
     <message>
         <source>Edit the application&apos;s preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier les préférences de l&apos;application</translation>
     </message>
     <message>
         <source>Starts the simulator (DC analysis)</source>
-        <translation type="unfinished"></translation>
+        <translation>Démarre le simulateur (analyse DC)</translation>
     </message>
     <message>
         <source>Stop Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulateur d&apos;arrêt</translation>
     </message>
     <message>
         <source>Stops the simulator and removes simulator data</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrête le simulateur et supprime les données du simulateur</translation>
     </message>
     <message>
         <source>Start Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Démarrer le simulateur</translation>
     </message>
 </context>
 <context>
@@ -3894,7 +3897,8 @@ Remarque: si vous souhaitez mettre à jour plus tard, il y a des options dans le
     <message>
         <source>Couldn&apos;t overwrite file &apos;%1&apos;.
 Reason: %2 (errcode %3)</source>
-        <translation>Impossible de remplacer &quot;%1&quot;. Raison :%2 ( errcode%3)</translation>
+        <translation>Impossible de remplacer &quot;%1&quot;.
+Raison :%2 ( errcode%3)</translation>
     </message>
     <message numerus="yes">
         <source>Unable to find the following %n part(s):</source>
@@ -3947,7 +3951,9 @@ Reason: %2 (errcode %3)</source>
         <source>Please designate one or more ground fill seeds before doing a ground fill.
 
 </source>
-        <translation>Veuillez désigner un ou plusieurs masses avant d&apos;effectuer le remplissage des masses.</translation>
+        <translation>Veuillez désigner un ou plusieurs masses avant d&apos;effectuer le remplissage des masses.
+
+</translation>
     </message>
     <message>
         <source>%1 Fill: please select the board you want to apply fill to.</source>
@@ -4027,7 +4033,9 @@ Reason: %2 (errcode %3)</source>
         <source>10 mils is a good default choice.
 
 </source>
-        <translation>10 mm est un bon choix par défaut.</translation>
+        <translation>10 mm est un bon choix par défaut.
+
+</translation>
     </message>
     <message>
         <source>Enter keepout value:</source>
@@ -4070,6 +4078,7 @@ Reason: %2 (errcode %3)</source>
 
 </source>
         <translation>Positions interdites &gt; (0.0254 mm).
+
 </translation>
     </message>
     <message>
@@ -4663,11 +4672,11 @@ Poursuivre et sauvegarder?</translation>
     </message>
     <message>
         <source>Parts Editor Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur de l&apos;éditeur de pièces</translation>
     </message>
     <message>
         <source>The file %2 with prefix %1 was not saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fichier %2 avec le préfixe %1 n&apos;a pas été enregistré.</translation>
     </message>
 </context>
 <context>
@@ -5182,7 +5191,7 @@ Poursuivre et sauvegarder?</translation>
     </message>
     <message>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechercher...</translation>
     </message>
 </context>
 <context>
@@ -5401,19 +5410,19 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Beta Features</source>
-        <translation type="unfinished"></translation>
+        <translation>Caractéristiques de la version bêta</translation>
     </message>
     <message>
         <source>Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulateur</translation>
     </message>
     <message>
         <source>The simulator is a beta feature and has not been tested extensively. This means that there are still bugs that need to be fixed and can cause to crash Fritzing. Backup your data and do not use it for production.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le simulateur est une fonction bêta et n&apos;a pas été testé de manière approfondie. Cela signifie qu&apos;il y a encore des bogues qui doivent être corrigés et qui peuvent faire planter Fritzing. Sauvegardez vos données et ne les utilisez pas pour la production.</translation>
     </message>
     <message>
         <source>Enable simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Activer le simulateur</translation>
     </message>
 </context>
 <context>
@@ -5848,7 +5857,8 @@ Alt ou la touche %1 = zoom</translation>
         <source>Parse error (1) at line %1, column %2:
 %3
 %4</source>
-        <translation>Erreur de syntaxe (1) ligne %1, colonne %2 :%3
+        <translation>Erreur de syntaxe (1) ligne %1, colonne %2 :
+%3
 %4</translation>
     </message>
     <message>
@@ -5862,7 +5872,8 @@ Alt ou la touche %1 = zoom</translation>
     <message>
         <source>The part that you have just added,
 is already there, we won&apos;t add it again, right?</source>
-        <translation>Le composant que vous venez d&apos;ajouter étant déjà présent, nous ne l&apos;ajouterons pas une seconde fois, d&apos;accord ?</translation>
+        <translation>Le composant que vous venez d&apos;ajouter étant déjà présent,
+nous ne l&apos;ajouterons pas une seconde fois, d&apos;accord ?</translation>
     </message>
     <message>
         <source>No connections (on the PCB) to route.</source>
@@ -6502,7 +6513,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Measuring Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Outils de mesure</translation>
     </message>
 </context>
 <context>
@@ -6678,7 +6689,9 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez dans la liste déroulante, ou tapez une valeur %1
+Plage : [%2 - %3] %4
+Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuelle</translation>
     </message>
 </context>
 <context>
@@ -6907,18 +6920,21 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <name>Simulator</name>
     <message>
         <source>Simulator Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur du simulateur</translation>
     </message>
     <message>
         <source>An error occurred when starting the simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Une erreur s&apos;est produite lors du démarrage de la simulation.</translation>
     </message>
     <message>
         <source>The simulator gave an error when trying to simulate this circuit. Please, check the wiring and try again. 
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Le simulateur a donné une erreur en essayant de simuler ce circuit. Veuillez vérifier le câblage et réessayer.
+
+Erreurs :
+</translation>
     </message>
     <message>
         <source>The simulator gave an error when loading the netlist. Probably some SPICE field is wrong, please, check them.
@@ -6926,7 +6942,11 @@ If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Le simulateur a donné une erreur lors du chargement de la netlist. Il est probable qu&apos;un champ SPICE soit incorrect, veuillez les vérifier.
+Si les pièces proviennent du bac de simulation, rapportez le bug dans GitHub.
+
+Erreurs :
+</translation>
     </message>
 </context>
 <context>
@@ -7212,7 +7232,9 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
         <source>The swapping mechanism is disabled for:
 
 </source>
-        <translation>Le mécanisme de permutation est désactivé pour :</translation>
+        <translation>Le mécanisme de permutation est désactivé pour :
+
+</translation>
     </message>
     <message>
         <source>part &apos;%1&apos; with id &apos;%2&apos;; possibly because it has no &apos;family&apos; property.</source>

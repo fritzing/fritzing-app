@@ -2179,7 +2179,6 @@ void MainWindow::updateTraceMenu() {
 	m_clearGroundFillSeedsAct->setEnabled(traceMenuThing.gfsEnabled && traceMenuThing.boardCount >= 1);
 
 	m_newDesignRulesCheckAct->setEnabled(traceMenuThing.boardCount >= 1);
-	m_checkLoadedTracesAct->setEnabled(true);
 	m_autorouterSettingsAct->setEnabled(m_currentGraphicsView == m_pcbGraphicsView);
 	m_updateRoutingStatusAct->setEnabled(true);
 
@@ -2837,16 +2836,10 @@ void MainWindow::createTraceMenuActions() {
 	m_setGroundFillKeepoutAct->setStatusTip(tr("Set the minimum distance between ground fill and traces or connectors"));
 	connect(m_setGroundFillKeepoutAct, SIGNAL(triggered()), this, SLOT(setGroundFillKeepout()));
 
-
-
 	m_newDesignRulesCheckAct = new QAction(tr("Design Rules Check (DRC)"), this);
 	m_newDesignRulesCheckAct->setStatusTip(tr("Highlights any parts that are too close together for safe board production"));
 	m_newDesignRulesCheckAct->setShortcut(tr("Shift+Ctrl+D"));
 	connect(m_newDesignRulesCheckAct, SIGNAL(triggered()), this, SLOT(newDesignRulesCheck()));
-
-	m_checkLoadedTracesAct = new QAction(tr("Check Loaded Traces"), this);
-	m_checkLoadedTracesAct->setStatusTip(tr("Select any traces where the screen location doesn't match the actual location. Only needed for sketches autorouted with version 0.7.10 or earlier"));
-	connect(m_checkLoadedTracesAct, SIGNAL(triggered()), this, SLOT(checkLoadedTraces()));
 
 	m_autorouterSettingsAct = new QAction(tr("Autorouter/DRC settings..."), this);
 	m_autorouterSettingsAct->setStatusTip(tr("Set autorouting parameters including keepout..."));

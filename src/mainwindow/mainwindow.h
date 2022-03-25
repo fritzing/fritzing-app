@@ -896,7 +896,6 @@ protected:
 	QAction *m_autorouterSettingsAct = nullptr;
 	QAction *m_fabQuoteAct = nullptr;
 	QAction *m_tidyWiresAct = nullptr;
-	QAction *m_checkLoadedTracesAct = nullptr;
 
 	// Help Menu
 	QMenu *m_helpMenu = nullptr;

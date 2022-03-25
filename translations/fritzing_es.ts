@@ -353,7 +353,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="308"/>
         <source>Via size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño del Vias</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="97"/>
@@ -4078,7 +4078,7 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2850"/>
         <source>Check Loaded Traces</source>
         <translatorcomment>¿&quot;cargadas&quot; o &quot;con carga&quot;? | Context needed</translatorcomment>
-        <translation>Comprobar los rastros cargados</translation>
+        <translation>Comprobar las pistas cargadas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2909"/>
@@ -8727,7 +8727,11 @@ If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>El simulador dio un error al cargar el netlist. Probablemente algún campo SPICE está mal, por favor, compruébalo.
+Si las piezas son del contenedor de simulación, informa del error en GitHub.
+
+Errores:
+</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="332"/>
@@ -8735,7 +8739,10 @@ Errors:
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>El simulador dio un error al intentar simular este circuito. Por favor, compruebe el cableado y vuelva a intentarlo.
+
+Errores:
+</translation>
     </message>
 </context>
 <context>
@@ -9044,17 +9051,17 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message numerus="yes">
         <location filename="../src/sketch/sketchwidget.cpp" line="7170"/>
         <source>show %n part label(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>mostrar %n etiqueta de parte</numerusform>
+            <numerusform>mostrar %n étiquetas de parte</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/sketch/sketchwidget.cpp" line="7173"/>
         <source>hide %n part label(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>ocultar %n etiqueta de parte</numerusform>
+            <numerusform>ocultar %n etiquetas de parte</numerusform>
         </translation>
     </message>
     <message>
@@ -9121,9 +9128,9 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message numerus="yes">
         <location filename="../src/items/stripboard.cpp" line="531"/>
         <source>%1 %n strip(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%1 %n tira</numerusform>
+            <numerusform>%1 %n tiras</numerusform>
         </translation>
     </message>
     <message>
@@ -9224,7 +9231,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="99"/>
         <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation type="unfinished"></translation>
+        <translation>En la vista Breadboard o PCB, para añadir una curva a un cable o pata curvable, arrastra con la tecla Control (Mac: Comando) pulsada.  Puedes establecer si los cables curvos son los predeterminados en Preferencias.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
@@ -9362,27 +9369,27 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="69"/>
         <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing almacena los archivos para las piezas personalizadas, las piezas generadas, y para otros propósitos temporales y a largo plazo en una &apos;carpeta de almacenamiento local&apos;. En Mac y Linux esto suele ser ~/.config/Fritzing/. En Windows Vista y superior, es algo así como C:\Users[nombre de usuario]\AppData\Roaming\Fritzing\; en Windows XP es algo así como C:\Documents and Settings\[nombre de usuario]\Application Data\Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="82"/>
         <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Si no puedes encontrar una pieza en la Papelera de Recambios, el CI Genérico es tu amigo.  Arrástrelo a su boceto y utilice los widgets del Inspector para: elegir entre 25 paquetes diferentes de agujeros pasantes y SMD, cambiar la etiqueta de las patillas y, en el caso de los DIP y SIP, cambiar el número de patillas.  También puedes cambiar los nombres de los pines con el editor de etiquetas de pines</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="83"/>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un icono de la bandeja de piezas puede representar en realidad varias piezas relacionadas.  Así que cuando arrastre un icono de la papelera de piezas a un boceto, asegúrese de mirar el inspector.  El inspector mostrará la gama de opciones disponibles para modificar una pieza o cambiarla por otra relacionada. El icono de la papelera de piezas también será una pequeña &apos;pila&apos; y no sólo un icono plano.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="91"/>
         <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para mover con mayor precisión una selección de piezas, utilice las teclas de flecha.  La flecha Shift se mueve 10 unidades.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="92"/>
         <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Haga clic en el indicador de posición del ratón en la barra de estado (abajo) para cambiar las unidades entre pulgadas, mm y px.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="96"/>
@@ -9402,12 +9409,12 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down, and that corner will follow your mouse as you drag.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para girar libremente una pieza en la vista Breadboard o PCB, selecciónala y pasa el ratón cerca de una de las esquinas hasta que veas el cursor de rotación. Si bajas el ratón, esa esquina seguirá a tu ratón mientras la arrastras.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>
         <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para mostrar diferentes propiedades en una etiqueta de pieza, girarla o cambiar la fuente, haga clic con el botón derecho en la etiqueta.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="149"/>
@@ -9467,17 +9474,17 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="111"/>
         <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para cambiar la visibilidad de la capa en una vista, vaya al menú de la vista y elija uno de los elementos de la capa de la vista.  O abra la paleta &lt;b&gt;Capas&lt;/b&gt; del menú &lt;b&gt;Ventana&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="127"/>
         <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para arrastrar un segmento de cable (una sección de un cable entre dos puntos de flexión), arrástrelo con la tecla Alt (Linux: Meta) pulsada.  Si además mantienes pulsada la tecla Mayúsculas, el segmento de alambre se limitará al movimiento horizontal o vertical.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="128"/>
         <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilice la tecla Mayúsculas y arrastre un extremo de cable o un punto de flexión para restringir su segmento de cable a un ángulo de 45 grados (o algún múltiplo de 45 grados).  Si el segmento de cable está conectado a otros segmentos de cable, el segmento que está arrastrando se ajustará para hacer ángulos de 90 grados con el segmento de cable vecino.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="134"/>
@@ -9706,7 +9713,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/version/updatedialog.cpp" line="54"/>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;¡Hay una actualización de la biblioteca de piezas disponible!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;¿Quieres que Fritzing descargue e instale la actualización ahora?&lt;br/&gt;Consulta la &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;lista de cambios aquí.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Nota: la actualización puede tardar unos minutos y tendrás que reiniciar Fritzing.&lt;br/&gt;También puede actualizar más tarde a través del menú &lt;i&gt;Ayuda &amp;rarr; Buscar actualizaciones&lt;/i&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Close</source>
@@ -9715,12 +9722,12 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/version/updatedialog.cpp" line="251"/>
         <source>Update parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar piezas</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="112"/>
         <source>&lt;p&gt;No new versions found.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;No se encontraron nuevas versiones.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="129"/>
@@ -9735,27 +9742,27 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/version/updatedialog.cpp" line="161"/>
         <source>&lt;p&gt;Checking for new releases...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Buscando nuevos lanzamientos...&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="185"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="213"/>
         <source>&lt;p&gt;Fritzing is unable to check for--and update--new parts.&lt;br/&gt;If you want this functionality, please enable write permission on this folder:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;Fritzing no puede buscar -y actualizar- partes nuevas.&lt;br/&gt;Si desea esta funcionalidad, habilite el permiso de escritura en esta carpeta:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="226"/>
         <source>&lt;p&gt;Checking for new parts...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Buscando piezas nuevas...&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="235"/>
         <source>&lt;p&gt;No new releases or new parts found&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; No se han encontrado novedades ni piezas nuevas&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="264"/>
@@ -9770,22 +9777,22 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/version/updatedialog.cpp" line="295"/>
         <source>Fritzing was unable to clean the files, so the update cannot proceed.&lt;br/&gt;You may have to reinstall Fritzing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing no ha podido limpiar los archivos, por lo que la actualización no puede continuar.&lt;br/&gt; Es posible que tenga que volver a instalar Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="421"/>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Instalando nuevas piezas. Esto puede tardar unos minutos.&lt;br/&gt;Por favor, no interrumpa el proceso, ya que su carpeta de piezas podría resultar dañada.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="322"/>
         <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; Lo siento, no se pudo recuperar la información de actualización &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="339"/>
         <source>&lt;p&gt;Sorry, unable to retrieve parts update info&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; Lo siento, no se pudo recuperar la información de actualización de piezas &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="408"/>
@@ -9795,17 +9802,17 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/version/updatedialog.cpp" line="417"/>
         <source>&lt;p&gt;Sorry, unable to download new parts&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; Lo siento, no puedo descargar partes nuevas &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="437"/>
         <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;¡Las nuevas piezas se han instalado con éxito!&lt;/p&gt;&lt;p&gt;Hay que reiniciar Fritzing, por lo que el botón &apos;Cerrar&apos; cerrará Fritzing.&lt;br/&gt;Las nuevas piezas estarán disponibles cuando vuelva a ejecutar Fritzing.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="442"/>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Lo siento, no se han podido instalar nuevas piezas: %1&lt;br/&gt;No obstante, hay que reiniciar Fritzing, por lo que el botón &apos;Cerrar&apos; cerrará Fritzing.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -9905,7 +9912,7 @@ Nota: también puedes ver las conexiones faltantes en la barra de estado.</trans
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="742"/>
         <source>Unable to reach fritzing.org/projects</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede acceder a fritzing.org/projects</translation>
     </message>
     <message>
         <source>Unable to reach friting.org/projects</source>

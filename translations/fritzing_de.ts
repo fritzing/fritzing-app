@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>, Siti Aishah Abdul Raouf</source>
-        <translation type="unfinished"></translation>
+        <translation>, Siti Aishah Abdul Raouf</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
@@ -800,7 +800,9 @@ Trotzdem diese Datei benutzen?</translation>
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie aus der Dropdown-Liste oder geben Sie einen %1-Wert ein
+Bereich: [%2 - %3] %4
+Hintergrund: Grün = ok, Rot = falscher Wert, Grau = aktueller Wert</translation>
     </message>
 </context>
 <context>
@@ -1592,12 +1594,12 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
         <source>Spice</source>
-        <translation type="unfinished"></translation>
+        <translation>Spice</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
         <source>No spice info. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine SPICE-Daten. Dieses Bauteil wird nicht simuliert.</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="996"/>
@@ -1884,12 +1886,12 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/items/itembase.cpp" line="262"/>
         <source>mn</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">mn</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="263"/>
         <source>mpn</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">mpn</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="269"/>
@@ -2241,12 +2243,12 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1037"/>
         <source>Simulate</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulieren</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1046"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Stoppen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1480"/>
@@ -2861,7 +2863,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="910"/>
         <source>Edit the application&apos;s preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten Sie die Einstellungen der Anwendung</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="921"/>
@@ -3058,17 +3060,17 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1138"/>
         <source>Starts the simulator (DC analysis)</source>
-        <translation type="unfinished"></translation>
+        <translation>Startet den Simulator (DC-Analyse)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1141"/>
         <source>Stop Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulator anhalten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1142"/>
         <source>Stops the simulator and removes simulator data</source>
-        <translation type="unfinished"></translation>
+        <translation>Stoppt den Simulator und löscht die Simulatordaten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1159"/>
@@ -6642,7 +6644,7 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="85"/>
         <source>Beta Features</source>
-        <translation type="unfinished"></translation>
+        <translation>Beta-Funktionen</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="318"/>
@@ -6682,17 +6684,17 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="436"/>
         <source>Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulator</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="441"/>
         <source>The simulator is a beta feature and has not been tested extensively. This means that there are still bugs that need to be fixed and can cause to crash Fritzing. Backup your data and do not use it for production.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Simulator ist ein Beta-Feature und wurde noch nicht ausgiebig getestet. Das bedeutet, dass es noch Bugs gibt, die behoben werden müssen und Fritzing zum Absturz bringen können. Sichern Sie Ihre Daten und verwenden Sie ihn nicht für die Produktion.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="448"/>
         <source>Enable simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulator aktivieren</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
@@ -7610,7 +7612,7 @@ Versuche, Fritzing neu zu starten. Falls das Problem bestehen bleibt, wende Dich
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="55"/>
         <source>Measuring Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Messinstrumente</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="215"/>
@@ -8332,7 +8334,9 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie aus der Dropdown-Liste oder geben Sie einen %1-Wert ein
+Bereich: [%2 - %3] %4
+Hintergrund: Grün = ok, Rot = falscher Wert, Grau = aktueller Wert</translation>
     </message>
     <message>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
@@ -8616,12 +8620,12 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <location filename="../src/simulation/simulator.cpp" line="251"/>
         <location filename="../src/simulation/simulator.cpp" line="331"/>
         <source>Simulator Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulatorfehler</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="213"/>
         <source>An error occurred when starting the simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beim Starten der Simulation ist ein Fehler aufgetreten.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="252"/>
@@ -8630,7 +8634,11 @@ If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Der Simulator gab beim Laden der Netzliste einen Fehler aus. Wahrscheinlich sind einige Spice-Felder falsch, bitte überprüfen Sie diese.
+Wenn die Teile aus dem Simulations-Bin sind, melden Sie den Fehler in GitHub.
+
+Fehler:
+</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="332"/>
@@ -8638,7 +8646,10 @@ Errors:
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Der Simulator gab einen Fehler aus, als er versuchte, diese Schaltung zu simulieren. Bitte überprüfen Sie die Verdrahtung und versuchen Sie es erneut.
+
+Fehler:
+</translation>
     </message>
 </context>
 <context>

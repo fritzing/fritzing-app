@@ -45,7 +45,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="124"/>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="125"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>, Siti Aishah Abdul Raouf</source>
-        <translation type="unfinished"></translation>
+        <translation>, Siti Aishah Abdul Raouf</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="155"/>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing è reso possibile con il finanziamento del MWFK Brandenburg, la sponsorizzazione del Dipartimento di Design del Bauhaus-Università di Weimar, IxDS, un donatore anonimo, Parallax, Picaxe, Sparkfun, dal PCB Fab AISLER, e ogni download pagato.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="164"/>
@@ -331,7 +331,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="308"/>
         <source>Via size</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensione delle Vias</translation>
     </message>
 </context>
 <context>
@@ -530,7 +530,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1335"/>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
-        <translation type="unfinished"></translation>
+        <translation>File frizionanti (*%1 *%2 *%3);;Parte frittatrice (*%1);;Cestino frittatrice (*%2);;Cestino frizzatrice condivisibile (*%3)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1052"/>
@@ -561,22 +561,22 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1016"/>
         <source>Copy to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia su Sketch</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1017"/>
         <source>Copy all the parts in the bin to a sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiare tutte le parti nel cestino in uno schizzo</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1020"/>
         <source>Copy all to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia tutto in Sketch</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1021"/>
         <source>Copy all loaded parts to the sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiare tutte le parti caricate nello schizzo</translation>
     </message>
 </context>
 <context>
@@ -596,7 +596,9 @@
         <source>Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Date un&apos;occhiata al file circle_pcb.svg nella vostra cartella di installazione di Fritzing a parts/svg/core/pcb/.
+
+</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="209"/>
@@ -616,67 +618,67 @@
     <message>
         <location filename="../src/items/resizableboard.cpp" line="301"/>
         <source>Select an image file to load</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona un file immagine da caricare</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="323"/>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
-        <translation type="unfinished"></translation>
+        <translation>a causa di un problema xml: %1 linea:%2 colonna:%3</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="329"/>
         <source>because the xml is not correctly formatted</source>
-        <translation type="unfinished"></translation>
+        <translation>perché l&apos;xml non è formattato correttamente</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="361"/>
         <source>the &lt;board&gt; element contains no shape elements</source>
-        <translation type="unfinished"></translation>
+        <translation>l&apos;elemento &lt;board&gt; non contiene elementi di forma</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="371"/>
         <source>because there are multiple &lt;board&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>perché ci sono più strati &lt;board&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="376"/>
         <source>because there are multiple &lt;silkscreen&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>perché ci sono più strati di serigrafia</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="386"/>
         <source>because there is no &lt;board&gt; layer</source>
-        <translation type="unfinished"></translation>
+        <translation>perché non c&apos;è uno strato di bordo</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="391"/>
         <source>the svg contains no shape elements</source>
-        <translation type="unfinished"></translation>
+        <translation>l&apos;SVG non contiene elementi di forma</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="396"/>
         <source>but the pcb itself will have no silkscreen layer</source>
-        <translation type="unfinished"></translation>
+        <translation>ma il PCB stesso non avrà uno strato di serigrafia</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="401"/>
         <source>the svg doesn&apos;t fit the custom board format</source>
-        <translation type="unfinished"></translation>
+        <translation>l&apos;SVG non si adatta al formato della scheda personalizzata</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="517"/>
         <source>Unable to load</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile caricare</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="518"/>
         <source>Unable to load image from %1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile caricare l&apos;immagine da %1 %2</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="525"/>
         <source>Can load, but</source>
-        <translation type="unfinished"></translation>
+        <translation>Può caricare, ma</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="526"/>
@@ -695,7 +697,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <location filename="../src/items/resizableboard.cpp" line="381"/>
         <source>because there are multiple &lt;silkscreen0&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>perché ci sono più strati di serigrafia0</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="433"/>
@@ -710,40 +712,40 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <location filename="../src/items/resizableboard.cpp" line="435"/>
         <source>Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlla il file di contorno risultante con un&apos;applicazione Gerber-viewer per assicurarti che la forma sia venuta come previsto.&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="437"/>
         <source>The rest of this message concerns &apos;cutouts&apos;. </source>
-        <translation type="unfinished"></translation>
+        <translation>Il resto di questo messaggio riguarda &apos;ritagli&apos;. </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="438"/>
         <source>These are circular or irregularly-shaped holes that you can optionally incorporate into a custom PCB shape.&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Si tratta di fori circolari o di forma irregolare che è possibile incorporare opzionalmente in una forma di PCB personalizzata.&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="440"/>
         <source>&lt;b&gt;The custom shape has no cutouts.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;La forma personalizzata non ha ritagli.&lt;/b&gt;</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/items/resizableboard.cpp" line="443"/>
         <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>&lt;b&gt;La forma personalizzata ha %n ritagla.&lt;/b&gt;</numerusform>
+            <numerusform>&lt;b&gt;La forma personalizzata ha %n ritagli.&lt;/b&gt;</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="445"/>
         <source>&lt;br/&gt;However, the cutouts may not be formatted correctly.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br/&gt; Tuttavia, i ritagli potrebbero non essere formattati correttamente.</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="448"/>
         <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br/&gt;&lt;br/&gt;Se volevi che la tua forma personalizzata avesse dei ritagli e non hai ottenuto il risultato atteso, </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="449"/>

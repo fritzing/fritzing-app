@@ -6794,15 +6794,15 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The simulator gave an error when loading the netlist. Probably some spice field is wrong, please, check them.
-If the parts are from the simulation bin, report the bug in GitHub.
+        <source>The simulator gave an error when trying to simulate this circuit. Please, check the wiring and try again. 
 
 Errors:
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The simulator gave an error when trying to simulate this circuit. Please, check the wiring and try again. 
+        <source>The simulator gave an error when loading the netlist. Probably some SPICE field is wrong, please, check them.
+If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>

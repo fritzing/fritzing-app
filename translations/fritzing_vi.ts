@@ -8675,7 +8675,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="252"/>
-        <source>The simulator gave an error when loading the netlist. Probably some spice field is wrong, please, check them.
+        <source>The simulator gave an error when loading the netlist. Probably some SPICE field is wrong, please, check them.
 If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:

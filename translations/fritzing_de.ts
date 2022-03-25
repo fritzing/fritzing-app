@@ -8641,12 +8641,20 @@ Hintergrund: Grün = ok, Rot = falscher Wert, Grau = aktueller Wert</translation
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="252"/>
+        <source>The simulator gave an error when loading the netlist. Probably some SPICE field is wrong, please, check them.
+If the parts are from the simulation bin, report the bug in GitHub.
+
+Errors:
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The simulator gave an error when loading the netlist. Probably some spice field is wrong, please, check them.
 If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>
-        <translation>Der Simulator gab beim Laden der Netzliste einen Fehler aus. Wahrscheinlich sind einige Spice-Felder falsch, bitte überprüfen Sie diese.
+        <translation type="vanished">Der Simulator gab beim Laden der Netzliste einen Fehler aus. Wahrscheinlich sind einige Spice-Felder falsch, bitte überprüfen Sie diese.
 Wenn die Teile aus dem Simulations-Bin sind, melden Sie den Fehler in GitHub.
 
 Fehler:

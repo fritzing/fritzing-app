@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="112"/>
         <source>Fritzing is made by: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فريتزينج مصنوع بواسطة: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="113"/>

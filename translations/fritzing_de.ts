@@ -4475,7 +4475,7 @@ Bitte überprüfe alle Ansichten auf eventuelle Nebenwirkungen.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2475"/>
         <source>Sorry, &quot;%1&quot; has not been implemented yet</source>
-        <translation>Entschuldige bitte, &quot;%1&quot; haben wir noch nicht fertig.</translation>
+        <translation type="unfinished">Sorry, &quot;%1&quot; wurde noch nicht implementiert</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1722"/>
@@ -7806,7 +7806,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="589"/>
         <source>unable to handle pad shape %1</source>
-        <translation>Sorry, kann noch nicht mit Pad-Form %1 umgehen.</translation>
+        <translation type="unfinished">kann die Pad-Form %1 nicht verarbeiten</translation>
     </message>
     <message>
         <location filename="../src/svg/x2svg.cpp" line="68"/>
@@ -7893,7 +7893,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="155"/>
         <source>Unable to translate svg curves in %1</source>
-        <translation>SVG-Kurven in %1 können nicht  verschoben werden</translation>
+        <translation>SVG-Kurven in %1 können nicht verschoben werden</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="165"/>
@@ -8289,7 +8289,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Fritzing ist abgestürzt, aber einige Deiner letzten Änderungen an den folgenden Entwürfen könnten wiederhergestellt werden.&lt;/b&gt;&lt;/p&gt;&lt;p&gt; Das Datum und die Uhrzeit der letzten automatischen Sicherung werden hier angezeigt. Falls die Datei einmal gespeichert wurde, wird auch dieses Datum zum Vergleich angezeigt. Du kannst nach der Wiederherstellung noch wählen, ob Du die letzte gespeicherte Datei überschreiben willst.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Wähle alle Dateien, die Du von der Sicherung wiederherstellen möchtest:&lt;/b&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;Fritzing ist abgestürzt, aber einige Deiner letzten Änderungen an den folgenden Entwürfen könnten wiederhergestellt werden.&lt;/b&gt;&lt;/p&gt;&lt;p&gt; Das Datum und die Uhrzeit der letzten automatischen Sicherung werden hier angezeigt. Falls die Datei einmal gespeichert wurde, wird auch dieses Datum zum Vergleich angezeigt. &lt;/p&gt;&lt;p&gt;Du kannst nach der Wiederherstellung noch wählen, ob Du die letzte gespeicherte Datei überschreiben willst.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Wähle alle Dateien, die Du von der Sicherung wiederherstellen möchtest:&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
@@ -8646,7 +8646,11 @@ If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Der Simulator gab beim Laden der Netzliste einen Fehler aus. Wahrscheinlich sind einige Spice-Felder falsch, bitte überprüfen Sie diese.
+Wenn die Teile aus dem Simulations-Bin sind, melden Sie den Fehler in GitHub.
+
+Fehler:
+</translation>
     </message>
     <message>
         <source>The simulator gave an error when loading the netlist. Probably some spice field is wrong, please, check them.

@@ -97,47 +97,47 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="133"/>
         <source>Thanks for the translations go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Благодаря за преводите на: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Yuelin and Ninjia</source>
-        <translation type="unfinished"></translation>
+        <translation>Юелин и Нинджа</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="136"/>
         <source>Chinese (Traditional): </source>
-        <translation type="unfinished"></translation>
+        <translation>Китайски език (традиционен): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="136"/>
         <source>Robert Lee</source>
-        <translation type="unfinished"></translation>
+        <translation>Робърт Лий</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>Hiroshi Suzuki</source>
-        <translation type="unfinished"></translation>
+        <translation>Хироши Сузуки</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>, Siti Aishah Abdul Raouf</source>
-        <translation type="unfinished"></translation>
+        <translation>, Сити Айша Абдул Рауф</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
         <source>Jinbuhm Kim</source>
-        <translation type="unfinished"></translation>
+        <translation>Джинбум Ким</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="148"/>
         <source>Spanish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Испански език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="155"/>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing се осъществява с финансиране от MWFK Brandenburg, спонсорството на катедрата по дизайн на Bauhaus-University Weimar, IxDS, анонимен дарител, Parallax, Picaxe, Sparkfun, от PCB Fab AISLER и всяко платено изтегляне.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="164"/>
@@ -147,97 +147,97 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="141"/>
         <source>Italian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Италиански език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <translation>Португалски (европейски): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
+        <translation>Португалски (бразилски): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
+        <translation>Китайски (опростен): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>Japanese: </source>
-        <translation type="unfinished"></translation>
+        <translation>Японски език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="146"/>
         <source>Russian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Руски език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="138"/>
         <source>Dutch: </source>
-        <translation type="unfinished"></translation>
+        <translation>Холандски език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="119"/>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
-        <translation type="unfinished"></translation>
+        <translation>Брайънт Мейърс, Улешка Ашер, Даниел Цшентке и Кйел Моргенщерн</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="123"/>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Със специални благодарности на: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="137"/>
         <source>Czech: </source>
-        <translation type="unfinished"></translation>
+        <translation>Чешки език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
         <source>Korean: </source>
-        <translation type="unfinished"></translation>
+        <translation>Корейски език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="147"/>
         <source>Slovak: </source>
-        <translation type="unfinished"></translation>
+        <translation>Словашки: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="140"/>
         <source>Greek: </source>
-        <translation type="unfinished"></translation>
+        <translation>Гръцки език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="139"/>
         <source>French: </source>
-        <translation type="unfinished"></translation>
+        <translation>Френски език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>Turkish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Турски език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="134"/>
         <source>Bulgarian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Български език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="63"/>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Версия %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>Ukrainian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Украински език: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>Yelyzaveta Chyhryna</source>
-        <translation type="unfinished"></translation>
+        <translation>Елизавета Чихрина</translation>
     </message>
     <message>
         <source>Fritzing is made possible with funding from the </source>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="308"/>
         <source>Via size</source>
-        <translation type="unfinished"></translation>
+        <translation>Чрез размер</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="97"/>
@@ -590,7 +590,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1333"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Изберете файл на Fritzing, който да бъде отворен</translation>
     </message>
     <message>
         <source>Remove from bin</source>
@@ -1238,18 +1238,18 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Диалог</translation>
     </message>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="65"/>
         <location filename="../src/dialogs/exportparametersdialog.cpp" line="13"/>
         <source>Export parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортни параметри</translation>
     </message>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="131"/>
         <source>DPI</source>
-        <translation type="unfinished"></translation>
+        <translation>DPI</translation>
     </message>
 </context>
 <context>
@@ -1310,7 +1310,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/fapplication.cpp" line="1960"/>
         <source>This option is usefull if you modify the parts database on your own. If you want to recover from an error, you may be better off downloading the latest Fritzing release.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тази опция е полезна, ако сами променяте базата данни с части. Ако искате да се възстановите след грешка, може би е по-добре да изтеглите последната версия на Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1968"/>
@@ -1333,28 +1333,28 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="19"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab качване</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="70"/>
         <source>Get your board fabricated this week!</source>
-        <translation type="unfinished"></translation>
+        <translation>Изработете борда си тази седмица!</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="106"/>
         <source>Upload it now to get a preview rendered by AISLER. Review, and if you like it, order it and get it manufactured in two days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Качете го сега, за да получите предварителен преглед, изпълнен от AISLER. Прегледайте го и ако ви хареса, поръчайте го и ще го получите в рамките на два дни.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="163"/>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="327"/>
         <source>Cancel</source>
-        <translation type="unfinished">Отказ</translation>
+        <translation>Отказ</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="192"/>
         <source>Upload to Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Качване във Fab</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="251"/>
@@ -1369,12 +1369,12 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="356"/>
         <source>Uploading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Качване на...</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.cpp" line="33"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Отворете в браузъра</translation>
     </message>
 </context>
 <context>
@@ -1384,17 +1384,17 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="153"/>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="161"/>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="144"/>
         <source>Could not connect to Fritzing fab.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не може да се свърже с Fritzing fab.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="161"/>
         <source>Error processing the project. The factory says: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Грешка при обработката на проекта. Фабриката казва: %1</translation>
     </message>
 </context>
 <context>
@@ -1587,12 +1587,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
         <source>SPICE</source>
-        <translation type="unfinished"></translation>
+        <translation>SPICE</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
         <source>No SPICE information. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Няма информация за SPICE. Тази част няма да бъде симулирана.</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="996"/>
@@ -1924,12 +1924,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="262"/>
         <source>mn</source>
-        <translation type="unfinished"></translation>
+        <translation>mn</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="263"/>
         <source>mpn</source>
-        <translation type="unfinished"></translation>
+        <translation>mpn</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="269"/>
@@ -2047,12 +2047,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/logoitem.cpp" line="442"/>
         <source>Unable to display</source>
-        <translation type="unfinished"></translation>
+        <translation>Невъзможност за показване</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="443"/>
         <source>Unable to display image from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Невъзможно е да се покаже изображение от %1</translation>
     </message>
 </context>
 <context>
@@ -2183,12 +2183,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1037"/>
         <source>Simulate</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулирайте</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1046"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Спрете</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1356"/>
@@ -3170,12 +3170,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1132"/>
         <source>Color Breadboard Wires By Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Цветни проводници за платки по дължина</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1133"/>
         <source>Display breadboard wires using standard color coding by length</source>
-        <translation type="unfinished"></translation>
+        <translation>Показване на проводници за breadboard чрез стандартно цветово кодиране по дължина</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1159"/>
@@ -3205,12 +3205,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1257"/>
         <source>Visit fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Посетете fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1258"/>
         <source>fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1275"/>
@@ -3913,7 +3913,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="162"/>
         <source>Select a Fritzing file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Изберете файл на Fritzing, който да бъде отворен</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="863"/>
@@ -3923,7 +3923,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="910"/>
         <source>Edit the application&apos;s preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактирайте предпочитанията на приложението</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="951"/>
@@ -3953,17 +3953,17 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1138"/>
         <source>Starts the simulator (DC analysis)</source>
-        <translation type="unfinished"></translation>
+        <translation>Стартира симулатора (DC анализ)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1141"/>
         <source>Stop Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Стоп симулатор</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1142"/>
         <source>Stops the simulator and removes simulator data</source>
-        <translation type="unfinished"></translation>
+        <translation>Спиране на симулатора и премахване на данните на симулатора</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1342"/>
@@ -4081,19 +4081,19 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2692"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Изглед</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2710"/>
         <source>Edit</source>
-        <translation type="unfinished">Редактиране</translation>
+        <translation>Редактиране</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2722"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2730"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2738"/>
         <source>Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Опроводяване</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2746"/>
@@ -4254,12 +4254,12 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4364"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab качване</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4364"/>
         <source>Please first save your project in order to upload it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Моля, първо запазете проекта си, за да го качите.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4462"/>
@@ -4294,7 +4294,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
         <source>Start Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Стартирайте симулатора</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2745"/>
@@ -5527,12 +5527,12 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <source>Parts Editor Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Грешка на редактора на части</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <source>The file %2 with prefix %1 was not saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлът %2 с префикс %1 не е запазен.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/partseditor/pemainwindow.cpp" line="3811"/>
@@ -6445,7 +6445,7 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="189"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>Търсене...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="416"/>
@@ -6720,7 +6720,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="85"/>
         <source>Beta Features</source>
-        <translation type="unfinished"></translation>
+        <translation>Бета функции</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="318"/>
@@ -6760,17 +6760,17 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="436"/>
         <source>Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулатор</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="441"/>
         <source>The simulator is a beta feature and has not been tested extensively. This means that there are still bugs that need to be fixed and can cause to crash Fritzing. Backup your data and do not use it for production.</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулаторът е бета-функция и не е тестван обстойно. Това означава, че все още има грешки, които трябва да бъдат отстранени и могат да доведат до срив на Fritzing. Създайте резервно копие на данните си и не го използвайте за производство.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="448"/>
         <source>Enable simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Активиране на симулатора</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
@@ -7109,12 +7109,12 @@ SHIFT променя оста</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="327"/>
         <source>Edit</source>
-        <translation type="unfinished">Редактиране</translation>
+        <translation>Редактиране</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="340"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Изглед</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="485"/>
@@ -7417,7 +7417,7 @@ SHIFT променя оста</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="55"/>
         <source>Measuring Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Измервателни инструменти</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="215"/>
@@ -7469,7 +7469,8 @@ Fritzing все още работи ,но няма да можете да про
         <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="93"/>
         <source>Error %1
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Грешка %1
+</translation>
     </message>
     <message>
         <location filename="../src/sketch/breadboardsketchwidget.cpp" line="37"/>
@@ -7947,7 +7948,7 @@ Fritzing все още работи ,но няма да можете да про
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="149"/>
         <source>the board outline layer, </source>
-        <translation type="unfinished"></translation>
+        <translation>слоя с контур на дъската, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="150"/>
@@ -7957,32 +7958,32 @@ Fritzing все още работи ,но няма да можете да про
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="151"/>
         <source>copper layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>меден слой(и), </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="152"/>
         <source>mask layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>маскиран слой(и), </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="153"/>
         <source>paste mask layer(s), </source>
-        <translation type="unfinished"></translation>
+        <translation>поставяне на слой(и) маска, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="155"/>
         <source>Unable to translate svg curves in %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Невъзможност за превод на svg криви в %1</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="165"/>
         <source>%1 layer export is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортът на слой %1 е празен.</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="183"/>
         <source>%1 layer export is empty (case 2).</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортът на слой %1 е празен (случай 2).</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="198"/>
@@ -7997,53 +7998,53 @@ Fritzing все още работи ,но няма да можете да про
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="236"/>
         <source>exported drill file is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>експортираният файл с тренировки е празен</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="253"/>
         <source>drill export failure</source>
-        <translation type="unfinished"></translation>
+        <translation>неизправност при износ на бормашина</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="271"/>
         <source>exported mask layer %1 is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>експортираният слой маска %1 е празен</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="277"/>
         <source>%1 mask export failure (2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Неуспешен експорт на %1 маска (2)</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="285"/>
         <location filename="../src/svg/gerbergenerator.cpp" line="319"/>
         <source>mask export failure</source>
-        <translation type="unfinished"></translation>
+        <translation>неуспешен износ на маска</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="308"/>
         <source>exported paste mask layer is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>експортираният слой с маска на пастата е празен</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="344"/>
         <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 слой: не може да се запази в &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="858"/>
         <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing не може да обработва изрязаните елементи в тази потребителска форма на печатната платка. </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="859"/>
         <source>You may need to reload the shape SVG. </source>
-        <translation type="unfinished"></translation>
+        <translation>Може да се наложи да презаредите формата SVG. </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="860"/>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>то това е така, защото Fritzing изисква да контурите за изрязване да са зададени чрез функциите за „изваждане“ или „разлика“ на използваната от Вас програма за редактиране на векторни изображения.</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="915"/>
@@ -8171,7 +8172,7 @@ Fritzing все още работи ,но няма да можете да про
     <message>
         <location filename="../src/version/partschecker.cpp" line="74"/>
         <source>The parts folder &apos;%1&apos; has been changed--it is not in a supported branch (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Папката с части „%1“ е променена – тя не е в основния клон (%2). %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="75"/>
@@ -8221,7 +8222,7 @@ Fritzing все още работи ,но няма да можете да про
     <message>
         <location filename="../src/version/partschecker.cpp" line="199"/>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Мрежовите препратки за „%1“ не могат да бъдат получени. #%2 %3</translation>
     </message>
     <message>
         <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
@@ -8441,7 +8442,9 @@ Fritzing все още работи ,но няма да можете да про
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Изберете от падащото меню или въведете %1 стойност
+Диапазон: [%2 - %3] %4
+Фон: Зелено = добре, Червено = неправилна стойност, Сиво = текуща стойност</translation>
     </message>
     <message>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
@@ -8725,12 +8728,12 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <location filename="../src/simulation/simulator.cpp" line="251"/>
         <location filename="../src/simulation/simulator.cpp" line="331"/>
         <source>Simulator Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Грешка на симулатора</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="213"/>
         <source>An error occurred when starting the simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>При стартирането на симулацията е възникнала грешка.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="252"/>
@@ -8739,7 +8742,11 @@ If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Симулаторът дава грешка при зареждане на мрежовия списък. Вероятно някое поле на SPICE е грешно, моля, проверете го.
+Ако частите са от кошчето за симулации, докладвайте за грешката в GitHub.
+
+Грешки:
+</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="332"/>
@@ -8747,7 +8754,10 @@ Errors:
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Симулаторът даде грешка при опит за симулиране на тази схема. Моля, проверете окабеляването и опитайте отново.
+
+Грешки:
+</translation>
     </message>
 </context>
 <context>
@@ -9752,7 +9762,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/version/updatedialog.cpp" line="185"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Добре</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="213"/>
@@ -9917,7 +9927,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="742"/>
         <source>Unable to reach fritzing.org/projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Невъзможност за достигане до fritzing.org/projects</translation>
     </message>
     <message>
         <source>Unable to reach friting.org/projects</source>

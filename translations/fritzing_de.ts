@@ -1894,12 +1894,12 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/items/itembase.cpp" line="262"/>
         <source>mn</source>
-        <translation type="unfinished">mn</translation>
+        <translation>mn</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="263"/>
         <source>mpn</source>
-        <translation type="unfinished">mpn</translation>
+        <translation>mpn</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="269"/>

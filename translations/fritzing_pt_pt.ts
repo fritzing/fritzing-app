@@ -1389,11 +1389,11 @@ Também é possível escolher um conector como uma semente de aterramento clican
         <translation>graus</translation>
     </message>
     <message>
-        <source>Spice</source>
+        <source>SPICE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No spice info. This part will not be simulated.</source>
+        <source>No SPICE information. This part will not be simulated.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3777,10 +3777,6 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Starty Simulator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Starts the simulator (DC analysis)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3790,6 +3786,10 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     </message>
     <message>
         <source>Stops the simulator and removes simulator data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start Simulator</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4645,7 +4645,11 @@ Go ahead and save?</source>
         <translation>&lt;p&gt;Por favor introduza um prefixo para ajudá-lo a identificar os ficheiros dos componentes.&lt;br/&gt;Os nomes do ficheiro irão ter a forma &apos;PREFIX_%1&apos;.&lt;br/&gt;(Não é necessário mudar o prefixo proposto, desde que um sufixo único é sempre adicionado.)&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>ERROR. File was not saved. prefix: %1 fzpPath: %2</source>
+        <source>Parts Editor Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file %2 with prefix %1 was not saved.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

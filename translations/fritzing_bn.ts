@@ -1628,6 +1628,16 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation> যন্ত্র  সংষ্করণ সংখ্যা</translation>
     </message>
     <message>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
+        <source>SPICE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
+        <source>No SPICE information. This part will not be simulated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="996"/>
         <source>Locked</source>
         <translatorcomment>আটকানো</translatorcomment>
@@ -1664,11 +1674,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="239"/>
         <source>pcb layer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
-        <source>Spice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1725,11 +1730,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <source>Trace wire %1</source>
         <translatorcomment>ট্রেস  তার %1</translatorcomment>
         <translation>ট্র্যাক তার %1</translation>
-    </message>
-    <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
-        <source>No spice info. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="762"/>
@@ -3544,6 +3544,11 @@ Go ahead and revert?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
+        <source>Start Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1159"/>
         <source>Ctrl+5</source>
         <translation type="unfinished">Ctrl+5</translation>
@@ -4334,11 +4339,6 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1133"/>
         <source>Display breadboard wires using standard color coding by length</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
-        <source>Starty Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5274,7 +5274,6 @@ Reason: %2 (errcode %3)</source>
         <location filename="../src/partseditor/pemainwindow.cpp" line="873"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="940"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="947"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2788"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2843"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3049"/>
@@ -5834,7 +5833,12 @@ Go ahead and save?</source>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
-        <source>ERROR. File was not saved. prefix: %1 fzpPath: %2</source>
+        <source>Parts Editor Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
+        <source>The file %2 with prefix %1 was not saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -1585,6 +1585,16 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>Номер на версията на частта</translation>
     </message>
     <message>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
+        <source>SPICE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
+        <source>No SPICE information. This part will not be simulated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="996"/>
         <source>Locked</source>
         <translation>Заключена</translation>
@@ -1618,11 +1628,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/infoview/htmlinfoview.cpp" line="239"/>
         <source>pcb layer</source>
         <translation>слой печатна платка</translation>
-    </message>
-    <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
-        <source>Spice</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="290"/>
@@ -1676,11 +1681,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/infoview/htmlinfoview.cpp" line="440"/>
         <source>Trace wire %1</source>
         <translation>Писта %1</translation>
-    </message>
-    <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
-        <source>No spice info. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="762"/>
@@ -3951,11 +3951,6 @@ Go ahead and revert?</source>
         <translation>Завъртане на 45° обратно на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
-        <source>Starty Simulator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1138"/>
         <source>Starts the simulator (DC analysis)</source>
         <translation type="unfinished"></translation>
@@ -4295,6 +4290,11 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2761"/>
         <source>Do not autoroute</source>
         <translation>Без автоматично опроводяване</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
+        <source>Start Simulator</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2745"/>
@@ -5183,7 +5183,6 @@ Reason: %2 (errcode %3)</source>
         <location filename="../src/partseditor/pemainwindow.cpp" line="873"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="940"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="947"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2788"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2843"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3049"/>
@@ -5525,6 +5524,16 @@ Reason: %2 (errcode %3)</source>
         <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
         <translation>&lt;p&gt;Моля, въведете представка, която да Ви помогне да разпознавате файловете на частта.&lt;br/&gt;Имената на файловете ще имат следния вид: „ПРЕДСТАВКА_%1“.&lt;br/&gt;(Не е задължително да променяте предложената представка, тъй като винаги се добавя уникална наставка.)&lt;/p&gt;</translation>
     </message>
+    <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
+        <source>Parts Editor Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
+        <source>The file %2 with prefix %1 was not saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
         <location filename="../src/partseditor/pemainwindow.cpp" line="3811"/>
         <source>This part has %n unassigned connectors </source>
@@ -5793,11 +5802,6 @@ Go ahead and save?</source>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2205"/>
         <source>Cancel</source>
         <translation>Отказ</translation>
-    </message>
-    <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
-        <source>ERROR. File was not saved. prefix: %1 fzpPath: %2</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2460"/>

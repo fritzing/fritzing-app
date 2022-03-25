@@ -1368,11 +1368,11 @@ Também é possível escolher um conector como ponto de aterramento clicando com
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Spice</source>
+        <source>SPICE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No spice info. This part will not be simulated.</source>
+        <source>No SPICE information. This part will not be simulated.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3752,10 +3752,6 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Starty Simulator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Starts the simulator (DC analysis)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3765,6 +3761,10 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Stops the simulator and removes simulator data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start Simulator</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4625,7 +4625,11 @@ Vá em frente e salve?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>ERROR. File was not saved. prefix: %1 fzpPath: %2</source>
+        <source>Parts Editor Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file %2 with prefix %1 was not saved.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

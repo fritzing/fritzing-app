@@ -1573,6 +1573,16 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
         <translation>Parça sürüm numarası</translation>
     </message>
     <message>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
+        <source>SPICE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
+        <source>No SPICE information. This part will not be simulated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="996"/>
         <source>Locked</source>
         <translation>Kilitli</translation>
@@ -1606,11 +1616,6 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
         <location filename="../src/infoview/htmlinfoview.cpp" line="239"/>
         <source>pcb layer</source>
         <translation>baskılı devre katmanı</translation>
-    </message>
-    <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
-        <source>Spice</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="290"/>
@@ -1663,11 +1668,6 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
         <location filename="../src/infoview/htmlinfoview.cpp" line="440"/>
         <source>Trace wire %1</source>
         <translation>Hat kablosu %1</translation>
-    </message>
-    <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
-        <source>No spice info. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="762"/>
@@ -3435,6 +3435,11 @@ Bu mesajı engellemek için çalışıyoruz ve size varolan özelliklerden birin
         <translation>Nesneri sürüklerken ızgaraya göre hizala</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
+        <source>Start Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1159"/>
         <source>Ctrl+5</source>
         <translation>Ctrl+5</translation>
@@ -3998,11 +4003,6 @@ Devam et ve geri döndür?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1133"/>
         <source>Display breadboard wires using standard color coding by length</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
-        <source>Starty Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5161,7 +5161,6 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="873"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="940"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="947"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2788"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2843"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3049"/>
@@ -5502,6 +5501,16 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
         <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
+        <source>Parts Editor Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
+        <source>The file %2 with prefix %1 was not saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
         <location filename="../src/partseditor/pemainwindow.cpp" line="3811"/>
         <source>This part has %n unassigned connectors </source>
@@ -5768,11 +5777,6 @@ Devam edip kaydedilsin mi?</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2205"/>
         <source>Cancel</source>
         <translation>İptal</translation>
-    </message>
-    <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
-        <source>ERROR. File was not saved. prefix: %1 fzpPath: %2</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2460"/>

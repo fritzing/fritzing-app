@@ -1526,6 +1526,11 @@ E&apos; anche possibile scegliere un connettore come seme per il piano massa con
         <translation>nome</translation>
     </message>
     <message>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
+        <source>SPICE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="328"/>
         <source>type</source>
         <translation>tipo</translation>
@@ -1581,16 +1586,6 @@ E&apos; anche possibile scegliere un connettore come seme per il piano massa con
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
-        <source>Spice</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
-        <source>No spice info. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="996"/>
         <source>Locked</source>
         <translation>Bloccato</translation>
@@ -1634,6 +1629,11 @@ E&apos; anche possibile scegliere un connettore come seme per il piano massa con
         <location filename="../src/infoview/htmlinfoview.cpp" line="239"/>
         <source>pcb layer</source>
         <translation>livello pcb</translation>
+    </message>
+    <message>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
+        <source>No SPICE information. This part will not be simulated.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="1016"/>
@@ -2495,11 +2495,6 @@ Stiamo lavorando per evitare questo messaggio, quindi ti chiediamo di scegliere 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
-        <source>Starty Simulator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1138"/>
         <source>Starts the simulator (DC analysis)</source>
         <translation type="unfinished"></translation>
@@ -2618,6 +2613,11 @@ Stiamo lavorando per evitare questo messaggio, quindi ti chiediamo di scegliere 
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1005"/>
         <source>Send selected object(s) to the back of their layer</source>
         <translation>Manda l&apos;oggetto selezionato dietro sul suo livello</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
+        <source>Start Simulator</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1209"/>
@@ -5066,7 +5066,6 @@ Reason: %2 (errcode %3)</source>
         <location filename="../src/partseditor/pemainwindow.cpp" line="873"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="940"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="947"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2788"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2843"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3049"/>
@@ -5354,11 +5353,6 @@ Andare avanti e salvare?</translation>
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
-        <source>ERROR. File was not saved. prefix: %1 fzpPath: %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2460"/>
         <source>Move terminal point</source>
         <translation type="unfinished"></translation>
@@ -5518,6 +5512,16 @@ Andare avanti e salvare?</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1588"/>
         <source>Fritzing currently only supports OCRA and Droid fonts--these have been substituted in for the fonts in &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
+        <source>Parts Editor Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
+        <source>The file %2 with prefix %1 was not saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

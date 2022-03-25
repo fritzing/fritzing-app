@@ -2358,7 +2358,7 @@ bool PEMainWindow::saveAs(bool overWrite)
 			modelPart->setAlien(true);
 			Q_EMIT addToMyPartsSignal(modelPart, peAlienFiles);
 		} else {
-			QMessageBox::critical(nullptr, tr("Parts Editor"), tr("ERROR. File was not saved. prefix: %1 fzpPath: %2").arg(prefix).arg(fzpPath));
+			QMessageBox::critical(nullptr, tr("Parts Editor Error"), tr("The file %2 with prefix %1 was not saved.").arg(prefix).arg(fzpPath));
 		}
 	}
 	else {

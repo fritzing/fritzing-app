@@ -278,7 +278,7 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_propFrame->setLayout(m_propLayout);
 	vlo->addWidget(m_propFrame);
 
-	m_spiceLabel = new QLabel(tr("Spice"), NULL);
+	m_spiceLabel = new QLabel(tr("SPICE"), NULL);
 	m_spiceLabel->setObjectName("expandableViewLabel");
 	vlo->addWidget(m_spiceLabel);
 
@@ -713,13 +713,13 @@ void HtmlInfoView::addSpice(ModelPart * modelPart) {
 	}
 
 	if(modelPart->spice().isEmpty()) {
-		m_spiceTextLabel->setText(tr("No spice info. This part will not be simulated."));
+		m_spiceTextLabel->setText(tr("No SPICE information. This part will not be simulated."));
 		return;
 	}
 
 	QString spiceText = modelPart->spice().trimmed();
 	if(!modelPart->spiceModel().isEmpty())
-		spiceText.append("\nSpice model:\n" + modelPart->spiceModel().trimmed());
+		spiceText.append("\nSPICE model:\n" + modelPart->spiceModel().trimmed());
 	m_spiceTextLabel->setText(spiceText);
 }
 

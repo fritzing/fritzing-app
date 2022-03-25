@@ -2022,7 +2022,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/items/logoitem.cpp" line="443"/>
         <source>Unable to display image from %1</source>
-        <translation>Das Bild aus %1 kann nicht angezeigt werden.</translation>
+        <translation>Das Bild aus %1 kann nicht angezeigt werden</translation>
     </message>
 </context>
 <context>
@@ -2489,7 +2489,8 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="239"/>
         <source>Cannot read file  1 %1:
 %2.</source>
-        <translation>Der Entwurf %1 konnte nicht gelesen werden: %2.</translation>
+        <translation>Der Entwurf %1 konnte nicht gelesen werden:
+%2.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1023"/>
@@ -3213,7 +3214,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2836"/>
         <source>Clear ground fill seeds--enable copper fill only.</source>
-        <translation>Saat für Massefüllung zurücksetzen und normale Kupferfüllung aktivieren</translation>
+        <translation>Saat für Massefüllung zurücksetzen und normale Kupferfüllung aktivieren.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2839"/>
@@ -4475,7 +4476,7 @@ Bitte überprüfe alle Ansichten auf eventuelle Nebenwirkungen.</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2475"/>
         <source>Sorry, &quot;%1&quot; has not been implemented yet</source>
-        <translation type="unfinished">Sorry, &quot;%1&quot; wurde noch nicht implementiert</translation>
+        <translation>Sorry, &quot;%1&quot; wurde noch nicht implementiert</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1722"/>
@@ -7247,7 +7248,8 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <source>Parse error (1) at line %1, column %2:
 %3
 %4</source>
-        <translation>Der XML-Code für der Bauteil (1) %4 enthält einen Fehler bei Zeile %1, Spalte %2:%3</translation>
+        <translation>Der XML-Code für der Bauteil (1) %4 enthält einen Fehler bei Zeile %1, Spalte %2:
+%3</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="98"/>
@@ -7280,7 +7282,8 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <source>Parse error (2) at line %1, column %2:
 %3
 %4</source>
-        <translation>Der XML-Code für der Teil (2) %4 enthält einen Fehler bei Zeile %1, Spalte %2:%3</translation>
+        <translation>Der XML-Code für der Teil (2) %4 enthält einen Fehler bei Zeile %1, Spalte %2:
+%3</translation>
     </message>
     <message>
         <location filename="../src/model/palettemodel.cpp" line="336"/>
@@ -7806,7 +7809,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="589"/>
         <source>unable to handle pad shape %1</source>
-        <translation type="unfinished">kann die Pad-Form %1 nicht verarbeiten</translation>
+        <translation>kann die Pad-Form %1 nicht verarbeiten</translation>
     </message>
     <message>
         <location filename="../src/svg/x2svg.cpp" line="68"/>
@@ -8727,7 +8730,7 @@ Fehler:
         <location filename="../src/sketch/sketchwidget.cpp" line="3474"/>
         <location filename="../src/sketch/sketchwidget.cpp" line="9506"/>
         <source>Select %1</source>
-        <translation> %1 auswählen</translation>
+        <translation>%1 auswählen</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3477"/>

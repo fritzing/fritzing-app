@@ -4175,7 +4175,7 @@ Do you want to update now?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4364"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished">Fritzing Fab Upload</translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4364"/>
@@ -6786,7 +6786,7 @@ Nota: esta advertencia no se repetirá durante esta sesión.</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="489"/>
         <source>Unconnected Highlight</source>
-        <translation type="unfinished">Punto destacado inconexo</translation>
+        <translation>Punto destacado inconexo</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="529"/>
@@ -6814,12 +6814,12 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="559"/>
         <source>When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?</source>
-        <translation type="unfinished">Cuándo te ratón-abajo y arrastrar en un cable o la pierna de una componente (como *opposed a un conector o un dobles)   quieres cambiar la curvatura del cable (o pierna) o arrastrar fuera de un nuevo dobles?</translation>
+        <translation>Cuándo te ratón-abajo y arrastrar en un cable o la pierna de una componente (a diferencia de un conector o un dobles)  ¿desea cambiar la curvatura del cable (o pierna) o arrastrar fuera de un nuevo dobles?</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="564"/>
         <source>This checkbox sets the default behavior. You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag.</source>
-        <translation type="unfinished">Este *checkbox pone el *default comportamiento.  Puedes cambiar atrás al no-*default comportamiento por aguantar abajo la llave de Control (*Mac: llave de Orden) cuándo  arrastras.</translation>
+        <translation>Esta casilla establece el comportamiento predeterminado. Puede volver al comportamiento no predeterminado manteniendo pulsada la tecla Control (Mac: tecla Comando) al arrastrar.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="571"/>
@@ -6837,7 +6837,7 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="119"/>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
-        <translation type="unfinished">Mientras  es posible de leer y editar %1 programando archivos, no es todavía posible de utilizar Fritzing para compilar o cargar estos programas a un microcontrolador.</translation>
+        <translation>Mientras es posible de leer y editar %1 programando archivos, no es todavía posible de utilizar Fritzing para compilar o cargar estos programas a un microcontrolador.</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="241"/>
@@ -6902,22 +6902,22 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="727"/>
         <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
-        <translation type="unfinished">Ningún *uploader para %1 especificó. Va a Preferencias &gt; Vista de Código para configurarlo.</translation>
+        <translation>No se ha especificado un cargador para %1. Vaya a Preferencias &gt; Vista de código para configurarlo.</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="731"/>
         <source>Uploader configured, but not found at %1</source>
-        <translation type="unfinished">*Uploader Configuró, pero no encontrado en %1</translation>
+        <translation>Cargador configurado, pero no encontrado en %1</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="756"/>
         <source>Upload finished.</source>
-        <translation type="unfinished">Carga acabado.</translation>
+        <translation>Subida finalizada.</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="758"/>
         <source>Upload failed with exit code %1, %2</source>
-        <translation type="unfinished">Carga fallado con código de salida %1, %2</translation>
+        <translation>La carga falló con el código de salida %1, %2</translation>
     </message>
 </context>
 <context>
@@ -6925,7 +6925,7 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="740"/>
         <source>No boards available</source>
-        <translation type="unfinished">Ningún placa disponible</translation>
+        <translation>Ninguna placa disponible</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="175"/>
@@ -7085,7 +7085,7 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="292"/>
         <source>Serial Monitor</source>
-        <translation type="unfinished">Serial Monitor</translation>
+        <translation>Monitor Serie</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="293"/>
@@ -7115,7 +7115,7 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="327"/>
         <source>Edit</source>
-        <translation type="unfinished">Editar</translation>
+        <translation>Editar</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="340"/>
@@ -7151,7 +7151,7 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="370"/>
         <source>File &apos;%1&apos; was restored from the .fzz file; save a local copy to work with an external editor.</source>
-        <translation type="unfinished">Archivo &apos;%1&apos; estuvo restaurado del .fzz Archivo; salvar una copia local para trabajar con un editor externo.</translation>
+        <translation>Archivo &apos;%1&apos; estuvo restaurado del .fzz ; salvar una copia local para trabajar con un editor externo.</translation>
     </message>
 </context>
 <context>
@@ -7159,12 +7159,12 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="272"/>
         <source>Connected highlight color</source>
-        <translation type="unfinished">Color de punto destacado conectado</translation>
+        <translation>Resaltar el color de las conexiones</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="294"/>
         <source>Unconnected highlight color</source>
-        <translation type="unfinished">Color de punto destacado inconexo</translation>
+        <translation>Color de resaltado desconectado</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="323"/>

@@ -1134,7 +1134,7 @@ void MainWindow::createViewMenuActions(bool showWelcome) {
 	m_colorWiresByLengthAct->setCheckable(true);
 	connect(m_colorWiresByLengthAct, SIGNAL(triggered()), this, SLOT(colorWiresByLength()));
 
-	m_startSimulatorAct = new QAction(tr("Starty Simulator"), this);
+	m_startSimulatorAct = new QAction(tr("Start Simulator"), this);
 	m_startSimulatorAct->setStatusTip(tr("Starts the simulator (DC analysis)"));
 	connect(m_startSimulatorAct, SIGNAL(triggered()), m_simulator, SLOT(startSimulation()));
 

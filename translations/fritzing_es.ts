@@ -3945,7 +3945,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2710"/>
         <source>Edit</source>
-        <translation type="unfinished">Editar</translation>
+        <translation>Editar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2722"/>
@@ -4078,7 +4078,7 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2850"/>
         <source>Check Loaded Traces</source>
         <translatorcomment>¿&quot;cargadas&quot; o &quot;con carga&quot;? | Context needed</translatorcomment>
-        <translation type="unfinished">Comprobar las pistas cargadas</translation>
+        <translation>Comprobar los rastros cargados</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2909"/>

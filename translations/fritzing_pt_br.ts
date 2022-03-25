@@ -101,127 +101,127 @@
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
     </message>
     <message>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Thanks for the translations go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Obrigado pelas traduções: </translation>
     </message>
     <message>
         <source>Spanish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Espanhol: </translation>
     </message>
     <message>
         <source>Italian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Italiano: </translation>
     </message>
     <message>
         <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <translation>Português (Europeu): </translation>
     </message>
     <message>
         <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
+        <translation>Português (Brasileiro): </translation>
     </message>
     <message>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
+        <translation>Chinês (Simplificado): </translation>
     </message>
     <message>
         <source>Japanese: </source>
-        <translation type="unfinished"></translation>
+        <translation>Japonês: </translation>
     </message>
     <message>
         <source>Russian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Russo: </translation>
     </message>
     <message>
         <source>Dutch: </source>
-        <translation type="unfinished"></translation>
+        <translation>Holandês: </translation>
     </message>
     <message>
         <source>Czech: </source>
-        <translation type="unfinished"></translation>
+        <translation>Checo: </translation>
     </message>
     <message>
         <source>Korean: </source>
-        <translation type="unfinished"></translation>
+        <translation>Coreano: </translation>
     </message>
     <message>
         <source>Slovak: </source>
-        <translation type="unfinished"></translation>
+        <translation>Eslovaco: </translation>
     </message>
     <message>
         <source>Greek: </source>
-        <translation type="unfinished"></translation>
+        <translation>Grego: </translation>
     </message>
     <message>
         <source>French: </source>
-        <translation type="unfinished"></translation>
+        <translation>Francês: </translation>
     </message>
     <message>
         <source>Turkish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Turco: </translation>
     </message>
     <message>
         <source>Bulgarian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Búlgaro: </translation>
     </message>
     <message>
         <source>Yuelin and Ninjia</source>
-        <translation type="unfinished"></translation>
+        <translation>Yuelin e Ninjia</translation>
     </message>
     <message>
         <source>Chinese (Traditional): </source>
-        <translation type="unfinished"></translation>
+        <translation>Chinês (Tradicional): </translation>
     </message>
     <message>
         <source>Robert Lee</source>
-        <translation type="unfinished"></translation>
+        <translation>Robert Lee</translation>
     </message>
     <message>
         <source>Hiroshi Suzuki</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiroshi Suzuki</translation>
     </message>
     <message>
         <source>Jinbuhm Kim</source>
-        <translation type="unfinished"></translation>
+        <translation>Jinbuhm Kim</translation>
     </message>
     <message>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Versão %1,%2,%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <source>Ukrainian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ucraniano: </translation>
     </message>
     <message>
         <source>Yelyzaveta Chyhryna</source>
-        <translation type="unfinished"></translation>
+        <translation>Yelyzaveta Chyhryna</translation>
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
-        <translation type="unfinished"></translation>
+        <translation>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, e Kjell Morgenstern</translation>
     </message>
     <message>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Agradecimentos especiais para: </translation>
     </message>
     <message>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um agradecimento especial a todos os alunos e aos alunos que tiveram a coragem de dar um giro de teste ao Fritzing.</translation>
     </message>
     <message>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing é possível com o financiamento da MWFK Brandenburg, o patrocínio do Departamento de Design da Bauhaus-University Weimar, IxDS, um doador anónimo, Parallax, Picaxe, Sparkfun, da PCB Fab AISLER, e cada um deles pago para download.</translation>
     </message>
     <message>
         <source>, Siti Aishah Abdul Raouf</source>
-        <translation type="unfinished"></translation>
+        <translation>, Siti Aishah Abdul Raouf</translation>
     </message>
 </context>
 <context>
@@ -298,7 +298,7 @@
     </message>
     <message>
         <source>Via size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamanho de Vias</translation>
     </message>
 </context>
 <context>
@@ -485,19 +485,19 @@
     </message>
     <message>
         <source>Copy to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Copiar para Esboço</translation>
     </message>
     <message>
         <source>Copy all the parts in the bin to a sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copie todas as peças na caixa para um esboço</translation>
     </message>
     <message>
         <source>Copy all to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copie tudo para o Sketch</translation>
     </message>
     <message>
         <source>Copy all loaded parts to the sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar todas as peças carregadas para o esboço</translation>
     </message>
 </context>
 <context>

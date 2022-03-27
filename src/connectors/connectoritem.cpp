@@ -523,13 +523,14 @@ void ConnectorItem::restoreColor(QList<ConnectorItem *> & visited)
 
 	QList<ConnectorItem *> connectorItems;
 	connectorItems.append(this);
-	collectEqualPotential(connectorItems, true, getSkipFlags());
+	collectEqualPotential(connectorItems, true, getSkipFlags(), false);
 	visited.append(connectorItems);
-	QSet<ItemBase *> attachedTo;
+
+	QSet<ConnectorItem *> attachedTo;
 	foreach (ConnectorItem * connectorItem, connectorItems) {
 		if (connectorItem->isEverVisible()) {
 			if (connectorItem->attachedToItemType() != ModelPart::Wire) {
-				attachedTo.insert(connectorItem->attachedTo()->layerKinChief());
+				attachedTo.insert(connectorItem);
 			}
 		}
 	}
@@ -1315,7 +1316,7 @@ bool ConnectorItem::isConnectedToPart() {
  * @param[in] skipFlags filter for the types of wires that are not to be included
  */
 void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> &connectorItems,
-										  bool crossLayers, ViewGeometry::WireFlags skipFlags)
+										  bool crossLayers, ViewGeometry::WireFlags skipFlags, bool followBuses)
 {
 	// take a local (temporary working) copy of the supplied list, and wipe the original
 	QList<ConnectorItem *> tempItems = connectorItems;
@@ -1365,7 +1366,7 @@ void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> &connectorItems
 		// When the kept connector item is part of a bus, include all of the other
 		// connectors on the bus in the list being processed
 		Bus *bus = connectorItem->bus();
-		if (bus) {
+		if (bus && (followBuses||fromWire)) {
 			QList<ConnectorItem *> busConnectedItems;
 			connectorItem->attachedTo()->busConnectorItems(bus, connectorItem, busConnectedItems);
 #ifndef QT_NO_DEBUG

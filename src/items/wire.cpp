@@ -622,7 +622,7 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 		}
 	}
 
-	QSet<ConnectorItem *> allTo(allToList.begin(), allToList.end());;
+	QSet<ConnectorItem *> allTo(allToList.begin(), allToList.end());
 
 	// TODO: this could all be determined once at mouse press time
 	if (allTo.count() == 0) {

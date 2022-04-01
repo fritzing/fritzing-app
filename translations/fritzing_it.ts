@@ -684,7 +684,8 @@
         <location filename="../src/items/resizableboard.cpp" line="526"/>
         <source>The image from %1 can be loaded, but %2
 Use the file?</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;immagine da %1 può essere caricata, ma %2
+Utilizzare il file?</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="87"/>
@@ -692,7 +693,10 @@ Use the file?</source>
 
 A custom board svg typically has one or two silkscreen layers and one board layer.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Un svg di scheda personalizzata ha tipicamente uno o due strati di serigrafia e uno strato di scheda.
+</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="381"/>
@@ -702,7 +706,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <location filename="../src/items/resizableboard.cpp" line="433"/>
         <source>&lt;b&gt;The custom shape has been loaded, and you will see the new board shortly.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;La forma personalizzata è stata caricata, e vedrai la nuova scheda a breve.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="434"/>

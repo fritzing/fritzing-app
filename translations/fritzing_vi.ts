@@ -102,7 +102,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Yuelin and Ninjia</source>
-        <translation type="unfinished"></translation>
+        <translation>Yuelin và Ninjia</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="136"/>
@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>, Siti Aishah Abdul Raouf</source>
-        <translation type="unfinished"></translation>
+        <translation>, Siti Aishah Abdul Raouf</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
@@ -132,12 +132,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="148"/>
         <source>Spanish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Tây Ban Nha: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="155"/>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing có thể thực hiện được với sự tài trợ của MWFK Brandenburg, sự tài trợ của Phòng Thiết kế của Đại học Bauhaus-Đại học Weimar, IxDS, một nhà tài trợ ẩn danh, Parallax, Picaxe, Sparkfun, từ PCB Fab AISLER và mỗi bản tải xuống trả phí.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="164"/>
@@ -147,97 +147,97 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="141"/>
         <source>Italian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Ý: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Bồ Đào Nha (Châu Âu): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Bồ Đào Nha (Braxin): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Trung (giản thể): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>Japanese: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Nhật: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="146"/>
         <source>Russian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Nga: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="138"/>
         <source>Dutch: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Hà Lan: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="119"/>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
-        <translation type="unfinished"></translation>
+        <translation>Bryant Mairs, Uleshka Asher, Daniel Tzschentke và Kjell Morgenstern</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="123"/>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Đặc biệt gửi lời cảm ơn tới: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="137"/>
         <source>Czech: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Séc: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
         <source>Korean: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Hàn: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="147"/>
         <source>Slovak: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Slovak: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="140"/>
         <source>Greek: </source>
-        <translation type="unfinished"></translation>
+        <translation>Người Hy Lạp: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="139"/>
         <source>French: </source>
-        <translation type="unfinished"></translation>
+        <translation>Người Pháp: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>Turkish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Thổ Nhĩ Kỳ: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="134"/>
         <source>Bulgarian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Bungari: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="63"/>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Phiên bản% 1.% 2.% 3&lt;br&gt; &lt;small&gt;(% 4% 5% 6)% 7 [Qt% 8]&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>Ukrainian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tiếng Ukraina: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>Yelyzaveta Chyhryna</source>
-        <translation type="unfinished"></translation>
+        <translation>Yelyzaveta Chyhryna</translation>
     </message>
     <message>
         <source>Fritzing is made possible with funding from the </source>
@@ -332,22 +332,22 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="246"/>
         <source>Keepout</source>
-        <translation type="unfinished"></translation>
+        <translation>Tránh xa</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="249"/>
         <source>&lt;b&gt;Keepout&lt;/b&gt; is the minimum distance between copper elements on different nets.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt; Keepout &lt;/b&gt; là khoảng cách tối thiểu giữa các phần tử đồng trên các lưới khác nhau.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="253"/>
         <source>A keepout of 0.01 inch (0.254 mm) is a good default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách 0,01 inch (0,254 mm) là một mặc định tốt.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="256"/>
         <source>Note: the smaller the keepout, the slower the DRC and Autorouter will run.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lưu ý: Keepout càng nhỏ, DRC và Autorouter sẽ chạy càng chậm.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="295"/>
@@ -829,7 +829,9 @@ Sử dụng file này?</translation>
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn từ menu thả xuống hoặc nhập giá trị %1
+Phạm vi: [%2 -%3]%4
+Nền: Màu xanh lá cây = ok, Màu đỏ = giá trị không chính xác, Màu xám = giá trị hiện tại</translation>
     </message>
 </context>
 <context>
@@ -1310,7 +1312,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/fapplication.cpp" line="1969"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Hủy bỏ</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1974"/>
@@ -1323,7 +1325,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="19"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Tải lên Fritzing Fab</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="70"/>
@@ -1339,32 +1341,32 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="163"/>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="327"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Hủy bỏ</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="192"/>
         <source>Upload to Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Tải lên Fab</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="251"/>
         <source>Upload</source>
-        <translation type="unfinished">Tải lên</translation>
+        <translation>Tải lên</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="265"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhập khẩu</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="356"/>
         <source>Uploading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang tải lên ...</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.cpp" line="33"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Mở trong trình duyệt</translation>
     </message>
 </context>
 <context>
@@ -1374,17 +1376,17 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="153"/>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="161"/>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="144"/>
         <source>Could not connect to Fritzing fab.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể kết nối với Fritzing fab.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="161"/>
         <source>Error processing the project. The factory says: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lỗi khi xử lý dự án. Nhà máy cho biết:% 1</translation>
     </message>
 </context>
 <context>
@@ -1645,7 +1647,7 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
         <source>SPICE</source>
-        <translation type="unfinished"></translation>
+        <translation>SPICE</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="437"/>
@@ -1655,7 +1657,7 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
         <source>No SPICE information. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không có thông tin SPICE. Phần này sẽ không được mô phỏng.</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="762"/>
@@ -1909,12 +1911,12 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/items/itembase.cpp" line="262"/>
         <source>mn</source>
-        <translation type="unfinished"></translation>
+        <translation>mn</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="263"/>
         <source>mpn</source>
-        <translation type="unfinished"></translation>
+        <translation>mpn</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="269"/>
@@ -2032,12 +2034,12 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/items/logoitem.cpp" line="442"/>
         <source>Unable to display</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể hiển thị</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="443"/>
         <source>Unable to display image from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể hiển thị hình ảnh từ% 1</translation>
     </message>
 </context>
 <context>
@@ -2214,7 +2216,7 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="957"/>
         <source>Fabricate</source>
-        <translation type="unfinished"></translation>
+        <translation>Chế tạo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="977"/>
@@ -2244,12 +2246,12 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1037"/>
         <source>Simulate</source>
-        <translation type="unfinished"></translation>
+        <translation>Giả vờ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1046"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngừng lại</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1073"/>
@@ -2269,27 +2271,27 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1754"/>
         <source>Local part &apos;%1&apos; incomplete, only &apos;%2&apos; layers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Phần cục bộ &amp;#39;%1&amp;#39; chưa hoàn thành, chỉ có các lớp &amp;#39;%2&amp;#39;.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1770"/>
         <source>View &apos;%1&apos; should be prefixed with &apos;%2/&apos;. Trying to continue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chế độ xem &amp;#39;%1&amp;#39; phải có tiền tố là &amp;#39;%2/&amp;#39;. Đang cố gắng tiếp tục.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1790"/>
         <source>Could not copy subfile &apos;%1&apos; to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể sao chép tệp con &amp;#39;%1&amp;#39; sang &amp;#39;%2&amp;#39;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1798"/>
         <source>Local part &apos;%1&apos; incomplete, subfile not found &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Phần cục bộ &apos;%1&apos; không đầy đủ, subfile không tìm thấy &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1812"/>
         <source>Unable to open local part &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể mở phần cục bộ &apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1856"/>
@@ -2336,22 +2338,22 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2629"/>
         <source>Saving this sketch will convert it to the new schematic graphics standard. Go ahead and convert?</source>
-        <translation type="unfinished"></translation>
+        <translation>Lưu bản phác thảo này sẽ chuyển đổi nó sang tiêu chuẩn đồ họa giản đồ mới. Tiếp tục và chuyển đổi?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2835"/>
         <source>Fritzing uncompressed (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing không nén (*% 1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2890"/>
         <source>Unrouted connections</source>
-        <translation type="unfinished">Các đường nối chưa được đi dây</translation>
+        <translation>Kết nối chưa được định tuyến</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2891"/>
         <source>There are no unrouted connections in this view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không có kết nối nào chưa được định tuyến trong chế độ xem này.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2941"/>
@@ -2392,17 +2394,17 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2264"/>
         <source>No copper top layer</source>
-        <translation type="unfinished"></translation>
+        <translation>Không có lớp đồng trên cùng</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2265"/>
         <source>The copper top (copper 1) layer is not available on a one-sided board.  Please switch the board to double-sided or choose the copper bottom (copper 0) layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lớp đồng trên cùng (đồng 1) không có trên bảng một mặt. Vui lòng chuyển bảng sang hai mặt hoặc chọn lớp đồng đáy (đồng 0).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2356"/>
         <source>No exactly matching part found; Fritzing chose the closest match.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không tìm thấy phần phù hợp chính xác; Fritzing đã chọn trận đấu gần nhất.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2523"/>
@@ -2456,7 +2458,7 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="134"/>
         <source>BoM Text File (*.html)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp Văn bản BoM (* .html)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="153"/>
@@ -2678,37 +2680,37 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1003"/>
         <source>SPICE Netlist...</source>
-        <translation type="unfinished"></translation>
+        <translation>SPICE Netlist ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1005"/>
         <source>Save a netlist in SPICE format</source>
-        <translation type="unfinished"></translation>
+        <translation>Lưu danh sách mạng ở định dạng SPICE</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1010"/>
         <source>Export the current sketch to Eagle CAD</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất bản phác thảo hiện tại sang Eagle CAD</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1013"/>
         <source>Extended Gerber (RS-274X)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerber mở rộng (RS-274X) ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1015"/>
         <source>Export the current sketch to Extended Gerber format (RS-274X) for professional PCB production</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất bản phác thảo hiện tại sang định dạng Gerber mở rộng (RS-274X) để sản xuất PCB chuyên nghiệp</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1019"/>
         <source>Export the current sketch to PDF for DIY PCB production (photoresist)</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất bản phác thảo hiện tại sang PDF để sản xuất PCB tự làm (photoresist)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1024"/>
         <source>Export the current sketch to SVG for DIY PCB production (photoresist)</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất bản phác thảo hiện tại sang SVG để sản xuất PCB tự làm (photoresist)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1033"/>
@@ -2728,27 +2730,27 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1302"/>
         <source>Export SPICE Netlist...</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất danh sách SPICE Netlist ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1727"/>
         <source>Gerber export can only handle one board at a time--please select the board you want to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất Gerber chỉ có thể xử lý một bảng tại một thời điểm - vui lòng chọn bảng bạn muốn xuất.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1752"/>
         <source>Sketch exported to Gerber</source>
-        <translation type="unfinished"></translation>
+        <translation>Phác thảo đã xuất sang Gerber</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="640"/>
         <source>throw test exception</source>
-        <translation type="unfinished"></translation>
+        <translation>ném thử nghiệm ngoại lệ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="641"/>
         <source>throw a fake exception to see what happens</source>
-        <translation type="unfinished"></translation>
+        <translation>ném một ngoại lệ giả để xem điều gì sẽ xảy ra</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="645"/>
@@ -2927,12 +2929,12 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="940"/>
         <source>Dump all parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Bán phá giá tất cả các bộ phận</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="941"/>
         <source>Debug dump all parts in this view</source>
-        <translation type="unfinished"></translation>
+        <translation>Gỡ lỗi kết xuất tất cả các phần trong chế độ xem này</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="944"/>
@@ -3068,22 +3070,22 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1090"/>
         <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tạo lại cơ sở dữ liệu bộ phận (chỉ nên được sử dụng nếu cơ sở dữ liệu bộ phận của bạn bị hỏng)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1132"/>
         <source>Color Breadboard Wires By Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Dây bảng mạch màu theo chiều dài</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1133"/>
         <source>Display breadboard wires using standard color coding by length</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị dây breadboard sử dụng mã màu tiêu chuẩn theo chiều dài</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
         <source>Start Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Khởi động trình mô phỏng</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1159"/>
@@ -3113,17 +3115,17 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1200"/>
         <source>Display the parts bin in an icon view</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị thùng các bộ phận trong chế độ xem biểu tượng</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1204"/>
         <source>Show Parts Bin List View</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị Bin trong chế độ Xem Danh Sách</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1205"/>
         <source>Display the parts bin in a list view</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị thùng các bộ phận trong chế độ xem danh sách</translation>
     </message>
     <message>
         <source>Donate to Fritzing</source>
@@ -3231,7 +3233,7 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2840"/>
         <source>Set the minimum distance between ground fill and traces or connectors</source>
-        <translation type="unfinished"></translation>
+        <translation>Đặt khoảng cách tối thiểu giữa đất lấp đầy và các dấu vết hoặc đầu nối</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2845"/>
@@ -3242,12 +3244,12 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2846"/>
         <source>Highlights any parts that are too close together for safe board production</source>
-        <translation type="unfinished"></translation>
+        <translation>Đánh dấu bất kỳ bộ phận nào quá gần nhau để sản xuất bảng an toàn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2858"/>
         <source>Fritzing Fab Quote...</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab báo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2859"/>
@@ -3790,12 +3792,12 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2896"/>
         <source>Shift+Ctrl+1</source>
-        <translation type="unfinished">Shift+Ctrl+1</translation>
+        <translation>Shift + Ctrl + 1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2752"/>
         <source>&amp;Create trace from ratsnest</source>
-        <translation type="unfinished"></translation>
+        <translation>Tạo dấu vết từ Ratsnest</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="881"/>
@@ -3810,52 +3812,52 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="893"/>
         <source>Delete Wire up to bendpoints</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa dây đến điểm uốn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="910"/>
         <source>Edit the application&apos;s preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa tùy chọn của ứng dụng</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="951"/>
         <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Xoay 135 độ theo chiều kim đồng hồ {45°?}</translation>
+        <translation>Xoay 45 ° theo chiều kim đồng hồ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="955"/>
         <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Xoay 135 độ theo chiều kim đồng hồ {90°?}</translation>
+        <translation>Xoay 90 ° theo chiều kim đồng hồ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="960"/>
         <source>Rotate 180°</source>
-        <translation type="unfinished">Xoay 180 độ {180°?}</translation>
+        <translation>Xoay 180 °</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="964"/>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Xoay 45 độ ngược chiều kim đồng hồ {90°?}</translation>
+        <translation>Xoay 90 ° Ngược chiều kim đồng hồ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="969"/>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Xoay 45 độ ngược chiều kim đồng hồ {45°?}</translation>
+        <translation>Xoay 45 ° ngược chiều kim đồng hồ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1138"/>
         <source>Starts the simulator (DC analysis)</source>
-        <translation type="unfinished"></translation>
+        <translation>Khởi động trình mô phỏng (phân tích DC)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1141"/>
         <source>Stop Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Dừng trình mô phỏng</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1142"/>
         <source>Stops the simulator and removes simulator data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dừng trình mô phỏng và xóa dữ liệu trình mô phỏng</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1188"/>
@@ -3870,29 +3872,29 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1257"/>
         <source>Visit fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Truy cập fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1258"/>
         <source>fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2692"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Xem</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2710"/>
         <source>Edit</source>
-        <translation type="unfinished">Chỉnh sửa</translation>
+        <translation>Chỉnh sửa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2722"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2730"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2738"/>
         <source>Routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Đi dây</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2745"/>
@@ -3907,7 +3909,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2756"/>
         <source>&amp;Create wire from ratsnest</source>
-        <translation type="unfinished"></translation>
+        <translation>Tạo dây từ Ratsnest</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2757"/>
@@ -3977,17 +3979,17 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2794"/>
         <source>Select All &quot;Don&apos;t Autoroute&quot; Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn tất cả các dấu vết &apos;Không tự động đi dây&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2798"/>
         <source>Select All Autoroutable Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn tất cả các dấu vết có thể đi dây</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2799"/>
         <source>Select all trace wires that can be changed during autorouting</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn tất cả các dây theo dõi có thể được thay đổi trong quá trình tự động định tuyến</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2802"/>
@@ -3997,7 +3999,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2815"/>
         <source>Fill empty regions of the copper layer--fill will include all traces connected to a GROUND</source>
-        <translation type="unfinished"></translation>
+        <translation>Điền vào các vùng trống của lớp đồng - lấp đầy sẽ bao gồm tất cả các dấu vết được kết nối với GROUND</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2819"/>
@@ -4107,12 +4109,12 @@ Bạn có muốn cập nhật bây giờ không?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4230"/>
         <source>Your sketch does not have a board yet! DRC only works with a PCB.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bản phác thảo của bạn chưa có bảng! DRC chỉ hoạt động với PCB.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4236"/>
         <source>Please select a PCB. DRC only works on one board at a time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vui lòng chọn một PCB. DRC chỉ hoạt động trên một bảng tại một thời điểm.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4246"/>
@@ -4122,24 +4124,24 @@ Bạn có muốn cập nhật bây giờ không?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4364"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Tải lên Fritzing Fab</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4364"/>
         <source>Please first save your project in order to upload it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trước tiên hãy lưu dự án của bạn để tải lên.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4373"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4390"/>
         <source>Your sketch does not have a board yet! Please add a PCB in order to use copper fill operations.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sketch của bạn chưa có boarrd nào cả! Xin vui lòng thêm một PCB để sử dụng chức năng đổ đồng.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4378"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4395"/>
         <source>Please select a PCB. Copper fill operations only work on one board at a time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Xin chọn một mạch in--tính năng phủ đồng chỉ làm việc được cho một boarrd trong một thời điểm làm việc.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2921"/>
@@ -4318,7 +4320,7 @@ Hãy kiểm tra tất cả các kiểu xem để kiểm tra các tác dụng ph�
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1183"/>
         <source>Show the PCB view</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị chế độ xem PCB</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1220"/>
@@ -4333,12 +4335,12 @@ Hãy kiểm tra tất cả các kiểu xem để kiểm tra các tác dụng ph�
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1222"/>
         <source>Minimize current window</source>
-        <translation type="unfinished"></translation>
+        <translation>Thu nhỏ cửa sổ hiện tại</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1234"/>
         <source>Debugger Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Đầu ra trình gỡ lỗi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1245"/>
@@ -4383,7 +4385,7 @@ Hãy kiểm tra tất cả các kiểu xem để kiểm tra các tác dụng ph�
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1286"/>
         <source>Enable debugging log</source>
-        <translation type="unfinished"></translation>
+        <translation>Bật nhật ký gỡ lỗi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1363"/>
@@ -4398,28 +4400,28 @@ Hãy kiểm tra tất cả các kiểu xem để kiểm tra các tác dụng ph�
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1722"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to export to Gerber.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sketch của bạn chưa có một board nào cả! Vui lòng thêm PCB để xuất sang Gerber.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="210"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1731"/>
         <source>Choose a folder for exporting</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn một thư mục để xuất</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1107"/>
         <source>Export SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất SVG ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1273"/>
         <source>Unable to save BOM file, but the text is on the clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể lưu tệp BOM nhưng văn bản có trên khay nhớ tạm.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1645"/>
         <source>Export Netlist...</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất Netlist ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2810"/>
@@ -4434,22 +4436,22 @@ Hãy kiểm tra tất cả các kiểu xem để kiểm tra các tác dụng ph�
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3328"/>
         <source>Remove copper fill</source>
-        <translation type="unfinished"></translation>
+        <translation>Gỡ bỏ lớp phủ đồng</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3161"/>
         <source>Remove Bendpoint</source>
-        <translation type="unfinished"></translation>
+        <translation>Gỡ bỏ bendpoint</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2803"/>
         <source>Select all jumper item parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn tất cả các bộ phận của mục jumper</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2806"/>
         <source>Select All Vias</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn tất cả Vias</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2807"/>
@@ -4466,32 +4468,32 @@ Hãy kiểm tra tất cả các kiểu xem để kiểm tra các tác dụng ph�
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1430"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2708"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Chỉnh sửa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="973"/>
         <source>JPG...</source>
-        <translation type="unfinished"></translation>
+        <translation>JPG ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="978"/>
         <source>PNG...</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="983"/>
         <source>PDF...</source>
-        <translation type="unfinished"></translation>
+        <translation>PDF ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="988"/>
         <source>SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1008"/>
         <source>Eagle...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eagle...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1018"/>
@@ -4819,27 +4821,27 @@ Chúng tôi đang nỗ lực để tránh thông báo này, và chỉ cho phép 
     <message>
         <location filename="../src/version/modfiledialog.ui" line="14"/>
         <source>Modified files</source>
-        <translation type="unfinished"></translation>
+        <translation>Các tệp đã sửa đổi</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.ui" line="27"/>
         <source>decision</source>
-        <translation type="unfinished"></translation>
+        <translation>quyết định</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.cpp" line="11"/>
         <source>Fritzing can proceed with the update, but the set of files listed below must first be cleaned (removed or reset). It may take a few minutes. &lt;p&gt;Do you want to proceed with cleaning these files?&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing có thể tiếp tục cập nhật, nhưng tập hợp các tệp được liệt kê bên dưới trước tiên phải được làm sạch (xóa hoặc đặt lại). Có thể mất một vài phút. &lt;p&gt; Bạn có muốn tiếp tục xóa các tệp này không? &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.cpp" line="15"/>
         <source>Clean files</source>
-        <translation type="unfinished"></translation>
+        <translation>Tập tin sạch</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.cpp" line="42"/>
         <source>Now cleaning files. Please don&apos;t interrupt the process.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiện đang làm sạch tệp. Vui lòng không làm gián đoạn quá trình.</translation>
     </message>
 </context>
 <context>
@@ -5077,13 +5079,16 @@ Nguyên nhân: %2 (mã lỗi:%3)</translation>
         <source>Keepout is in mils (.001 inches).
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Keepout tính bằng mils (0,001 inch).
+
+</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2908"/>
         <source>Note that due to aliasing, distances may be too short by up to 2 mils
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Lưu ý rằng do răng cưa, khoảng cách có thể quá ngắn lên đến 2 mils
+</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2909"/>
@@ -5488,7 +5493,7 @@ Nguyên nhân: %2 (mã lỗi:%3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <source>The file %2 with prefix %1 was not saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp %2 với tiền tố %1 không được lưu.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/partseditor/pemainwindow.cpp" line="3811"/>
@@ -6226,7 +6231,7 @@ Tiếp tục và lưu lại?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="442"/>
         <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Xoay 135 độ theo chiều kim đồng hồ {45°?}</translation>
+        <translation>Xoay 45 ° theo chiều kim đồng hồ</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="444"/>
@@ -6236,7 +6241,7 @@ Tiếp tục và lưu lại?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="447"/>
         <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Xoay 135 độ theo chiều kim đồng hồ {90°?}</translation>
+        <translation>Xoay 90 ° theo chiều kim đồng hồ</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="449"/>
@@ -6246,7 +6251,7 @@ Tiếp tục và lưu lại?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
         <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">Xoay 135 độ theo chiều kim đồng hồ {135°?}</translation>
+        <translation>Xoay 135 ° theo chiều kim đồng hồ</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="454"/>
@@ -6256,7 +6261,7 @@ Tiếp tục và lưu lại?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="457"/>
         <source>Rotate 180°</source>
-        <translation type="unfinished">Xoay 180 độ {180°?}</translation>
+        <translation>Xoay 180 °</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="459"/>
@@ -6266,7 +6271,7 @@ Tiếp tục và lưu lại?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">Xoay 45 độ ngược chiều kim đồng hồ {135°?}</translation>
+        <translation>Xoay 135 ° ngược chiều kim đồng hồ</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="464"/>
@@ -6276,7 +6281,7 @@ Tiếp tục và lưu lại?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="467"/>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Xoay 45 độ ngược chiều kim đồng hồ {90°?}</translation>
+        <translation>Xoay 90 ° Ngược chiều kim đồng hồ</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="469"/>
@@ -6286,7 +6291,7 @@ Tiếp tục và lưu lại?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Xoay 45 độ ngược chiều kim đồng hồ {45°?}</translation>
+        <translation>Xoay 45 ° ngược chiều kim đồng hồ</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="474"/>
@@ -6422,7 +6427,7 @@ Tiếp tục và lưu lại?</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="189"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tìm kiếm...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="514"/>
@@ -6674,7 +6679,7 @@ Lưu ý: cảnh báo này sẽ không được lặp đi lặp lại trong phiê
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="85"/>
         <source>Beta Features</source>
-        <translation type="unfinished"></translation>
+        <translation>Tính năng Beta</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="318"/>
@@ -6714,17 +6719,17 @@ Lưu ý: cảnh báo này sẽ không được lặp đi lặp lại trong phiê
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="436"/>
         <source>Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Giả lập</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="441"/>
         <source>The simulator is a beta feature and has not been tested extensively. This means that there are still bugs that need to be fixed and can cause to crash Fritzing. Backup your data and do not use it for production.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trình mô phỏng là một tính năng beta và chưa được thử nghiệm rộng rãi. Điều này có nghĩa là vẫn còn những lỗi cần được sửa và có thể gây ra lỗi Fritzing. Sao lưu dữ liệu của bạn và không sử dụng nó để sản xuất.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="448"/>
         <source>Enable simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Bật trình mô phỏng</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
@@ -7356,7 +7361,8 @@ Fritzing vẫn hoạt động, nhưng bạn không thể thay đổi được th
         <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="93"/>
         <source>Error %1
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Lỗi %1
+</translation>
     </message>
     <message>
         <location filename="../src/sketch/schematicsketchwidget.cpp" line="57"/>
@@ -7653,7 +7659,7 @@ Fritzing vẫn hoạt động, nhưng bạn không thể thay đổi được th
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="55"/>
         <source>Measuring Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Dụng cụ đo lường</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="215"/>
@@ -7707,12 +7713,12 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="228"/>
         <source>bad pin argument count</source>
-        <translation type="unfinished"></translation>
+        <translation>số lượng đối số pin xấu</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="303"/>
         <source>bad pad argument count</source>
-        <translation type="unfinished"></translation>
+        <translation>số lượng đối số pad xấu</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="535"/>
@@ -7922,17 +7928,17 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="155"/>
         <source>Unable to translate svg curves in %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể dịch các đường cong SVG trong% 1</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="165"/>
         <source>%1 layer export is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất% 1 lớp trống.</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="183"/>
         <source>%1 layer export is empty (case 2).</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất %1 lớp trống (trường hợp 2).</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="198"/>
@@ -7947,17 +7953,17 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="236"/>
         <source>exported drill file is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>tệp khoan đã xuất trống</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="253"/>
         <source>drill export failure</source>
-        <translation type="unfinished"></translation>
+        <translation>khoan xuất thất bại</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="271"/>
         <source>exported mask layer %1 is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>lớp mặt nạ đã xuất %1 trống</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="277"/>
@@ -7983,17 +7989,17 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="858"/>
         <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing không thể xử lý các vết cắt trong hình dạng PCB tùy chỉnh này. </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="859"/>
         <source>You may need to reload the shape SVG. </source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn có thể cần tải lại hình dạng SVG. </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="860"/>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing yêu cầu bạn thực hiện các hình cắt bằng cách sử dụng phép toán &amp;quot;phép trừ&amp;quot; hoặc &amp;quot;chênh lệch&amp;quot; hình dạng trong trình chỉnh sửa đồ họa vectơ của bạn.</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="915"/>
@@ -8152,22 +8158,22 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/version/partschecker.cpp" line="113"/>
         <source>Unable to determine network site for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể xác định trang web mạng cho &apos;%1&apos;. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="130"/>
         <source>Unable to access network site for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể truy cập trang web mạng cho &apos;%1&apos;. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="140"/>
         <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể truy xuất các tham chiếu mạng cho &apos;%1&apos;. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="199"/>
         <source>Unable to retrieve the network reference for &apos;%1&apos;#%2. %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể truy xuất các tham chiếu mạng cho &apos;%1&apos;#%2. %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="469"/>
@@ -8178,7 +8184,7 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/version/partschecker.cpp" line="469"/>
         <source>Unable to find parts git repository</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể tìm thấy kho lưu trữ phần git</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="477"/>
@@ -8256,22 +8262,22 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="206"/>
         <source>&lt;b&gt;Shipping is free wordlwide&lt;/b&gt;.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt; Miễn phí vận chuyển trên toàn thế giới &lt;/b&gt;. &lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="207"/>
         <source>Documents for local customs control are included.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Các tài liệu để kiểm soát hải quan địa phương được bao gồm. &lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="208"/>
         <source>Some countries might charge additional import taxes or checking fees.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Một số quốc gia có thể tính thêm thuế nhập khẩu hoặc phí kiểm tra. &lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="209"/>
         <source>For more pricing information, see &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt;https://fab.fritzing.org/pricing&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Để biết thêm thông tin về giá, hãy xem &lt;a href=&apos;https://fab.fritzing.org/pricing&apos;&gt; https://fab.fritzing.org/pricing &lt;/a&gt;.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/dialogs/quotedialog.cpp" line="267"/>
@@ -8347,7 +8353,7 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/fapplication.cpp" line="312"/>
         <source>Unable to open temporary file</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể mở tệp tạm thời</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="318"/>
@@ -8382,7 +8388,9 @@ is already there, we won&apos;t add it again, right?</source>
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn từ menu thả xuống hoặc nhập giá trị %1
+Phạm vi: [%2 -%3]%4
+Nền: Màu xanh lá cây = ok, Màu đỏ = giá trị không chính xác, Màu xám = giá trị hiện tại</translation>
     </message>
     <message>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
@@ -8666,12 +8674,12 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <location filename="../src/simulation/simulator.cpp" line="251"/>
         <location filename="../src/simulation/simulator.cpp" line="331"/>
         <source>Simulator Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Lỗi trình mô phỏng</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="213"/>
         <source>An error occurred when starting the simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Đã xảy ra lỗi khi bắt đầu mô phỏng.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="252"/>
@@ -8680,7 +8688,11 @@ If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Trình mô phỏng đã xảy ra lỗi khi tải danh sách mạng. Có thể một số trường SPICE bị sai, vui lòng kiểm tra chúng.
+Nếu các bộ phận là từ thùng mô phỏng, hãy báo cáo lỗi trong GitHub.
+
+Các lỗi:
+</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="332"/>
@@ -8688,7 +8700,10 @@ Errors:
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Trình mô phỏng đã xảy ra lỗi khi cố gắng mô phỏng mạch này. Vui lòng kiểm tra hệ thống dây điện và thử lại.
+
+Các lỗi:
+</translation>
     </message>
 </context>
 <context>
@@ -9342,7 +9357,7 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="92"/>
         <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhấp vào chỉ báo vị trí chuột trên thanh trạng thái (bên dưới) để chuyển đổi đơn vị giữa inch, mm và px.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="96"/>
@@ -9372,7 +9387,7 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="118"/>
         <source>To display different properties in a part label, rotate it, or change the font, right-click the label.</source>
-        <translation type="unfinished"></translation>
+        <translation>Để hiển thị các thuộc tính khác nhau trong một nhãn linh kiện, cũng như xoay nó, hoặc thay đổi phông chữ, bấm chuột phải vào nhãn.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="149"/>
@@ -9670,7 +9685,7 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
     <message>
         <location filename="../src/version/updatedialog.cpp" line="112"/>
         <source>&lt;p&gt;No new versions found.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; Không tìm thấy phiên bản mới nào. &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="129"/>
@@ -9685,12 +9700,12 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
     <message>
         <location filename="../src/version/updatedialog.cpp" line="161"/>
         <source>&lt;p&gt;Checking for new releases...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; Đang kiểm tra các bản phát hành mới ... &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="185"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="213"/>
@@ -9710,27 +9725,27 @@ Lưu ý: bạn cũng có thể kích hoạt màn hình này bằng cách kéo ch
     <message>
         <location filename="../src/version/updatedialog.cpp" line="264"/>
         <source>New files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Các tệp mới:</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="265"/>
         <source>Modified Files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Các tệp đã sửa đổi:</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="295"/>
         <source>Fritzing was unable to clean the files, so the update cannot proceed.&lt;br/&gt;You may have to reinstall Fritzing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing không thể xóa các tệp, vì vậy không thể tiến hành cập nhật. &lt;br/&gt; Bạn có thể phải cài đặt lại Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="421"/>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; Đang cài đặt các bộ phận mới. Quá trình này có thể mất vài phút. &lt;br/&gt; Vui lòng không làm gián đoạn quá trình, vì thư mục bộ phận của bạn có thể bị hỏng. &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="322"/>
         <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt; Xin lỗi, không thể truy xuất thông tin cập nhật &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="339"/>

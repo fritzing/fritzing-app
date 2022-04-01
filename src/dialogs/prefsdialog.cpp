@@ -297,7 +297,7 @@ QWidget* PrefsDialog::createColorForm()
 	h2->addWidget(c2);
 
 	QColor unconnectedColor = ItemBase::unconnectedColor();
-	m_unconnectedColorLabel = new QLabel(tr("%1").arg(unconnectedColor.name()), this);
+	m_unconnectedColorLabel = new QLabel(QString("%1").arg(unconnectedColor.name()), this);
 	QPushButton * pb2 = new QPushButton(tr("%1 (click to change...)").arg(""), this);
 	connect(pb2, SIGNAL(clicked()), this, SLOT(setUnconnectedColor()));
 	m_unconnectedColorLabel->setPalette(QPalette(unconnectedColor));
@@ -356,7 +356,7 @@ QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
 	foreach (Platform * platform, platforms) {
 		QLabel *platformLb = new QLabel("");
 		platformLb->setTextFormat(Qt::RichText);
-		platformLb->setText(tr("<b>%1</b>").arg(platform->getName()));
+		platformLb->setText(QString("<b>%1</b>").arg(platform->getName()));
 		layout->addWidget(platformLb);
 
 		QFrame * locationFrame = new QFrame(formGroupBox);
@@ -478,7 +478,7 @@ void PrefsDialog::setConnectedColor() {
 	m_settings.insert("connectedColor", c.name());
 	if (m_connectedColorLabel) {
 		m_connectedColorLabel->setPalette(QPalette(c));
-		m_connectedColorLabel->setText(tr("%1").arg(c.name()));
+		m_connectedColorLabel->setText(QString("%1").arg(c.name()));
 	}
 }
 
@@ -494,7 +494,7 @@ void PrefsDialog::setUnconnectedColor() {
 	m_settings.insert("unconnectedColor", c.name());
 	if (m_unconnectedColorLabel) {
 		m_unconnectedColorLabel->setPalette(QPalette(c));
-		m_unconnectedColorLabel->setText(tr("%1").arg(c.name()));
+		m_unconnectedColorLabel->setText(QString("%1").arg(c.name()));
 	}
 }
 

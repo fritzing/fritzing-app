@@ -1,0 +1,112 @@
+name: Building Fritzing
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+env:
+  # Path to the solution file relative to the root of the project.
+  SOLUTION_FILE_PATH: .
+
+  # Configuration type to build.
+  # You can convert this to a build matrix if you need coverage of multiple configuration types.
+  # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+  BUILD_CONFIGURATION: Release
+  BOOST_ROOT: ${{env.GITHUB_WORKSPACE}}
+  BOOST_URL: https://sourceforge.net/projects/boost/files/boost/1.78.0/boost_1_78_0.7z/download
+  LIBGIT2_URL: https://github.com/libgit2/libgit2/archive/refs/tags/v0.28.4.zip
+  QT_VERSION: 5.15.2
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-2019
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: develop
+        submodules: recursive
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
+
+    #- name: Restore NuGet packages
+    #  working-directory: ${{env.GITHUB_WORKSPACE}}
+    #  run: nuget restore ${{env.SOLUTION_FILE_PATH}}
+
+    - name: Restore Boost cache
+      uses: actions/cache@v2
+      id: cache-boost
+      with:
+        path: ${{env.BOOST_ROOT}}
+        key: boost
+
+    - name: Install Boost
+      if: steps.cache-boost.outputs.cache-hit != 'true'
+      run: |
+        if [ "$OS" == "Windows_NT" ]; then
+          # fix up paths to be forward slashes consistently
+          BOOST_ROOT=$(echo $BOOST_ROOT | sed 's/\\/\//g')
+        fi
+        mkdir -p $BOOST_ROOT
+        curl --progress-bar --location --output $BOOST_ROOT/download.7z $BOOST_URL
+        7z -o$BOOST_ROOT x $BOOST_ROOT/download.7z -y -bd
+        rm download.7z
+      shell: bash
+
+    - name: ls for Boost
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: ls
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: ${{env.QT_VERSION}}
+        host: 'windows'
+        arch: 'win64_msvc2019_64'
+        dir: ${{env.GITHUB_WORKSPACE}}
+
+    - name: ls for Qt
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: ls
+
+    - name: Build libgit2
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        run: git clone --depth 1 https://github.com/libgit2/libgit2 -b v0.28.5
+        mkdir build64
+        cd build64
+        cmake .. -G "Visual Studio 16 2019" -A x64 -DBUILD_CLAR=OFF
+        cmake --build . --config Release
+      shell: bash
+
+    - name: ls for libgit2
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: ls
+
+    - name: Update the translations files
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        lupdate -noobsolete phoenix.pro
+        lrelease -removeidentical phoenix.pro
+      shell: bash
+
+    - name: Build
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: set QTBIN=${{env.GITHUB_WORKSPACE}}\${{env.QT_VERSION}}\msvc2019_64\bin;.\tools\release_fritzing.bat 64 2019
+
+    - name: ls for Build
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: ls
+
+    # Upload package: https://github.com/marketplace/actions/upload-artifact
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Fritzing build
+        path: fritzing.*.pc.zip

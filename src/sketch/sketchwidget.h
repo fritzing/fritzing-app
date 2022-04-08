@@ -223,7 +223,7 @@ public:
 	void noteSizeChanged(ItemBase * itemBase, const QSizeF & oldSize, const QSizeF & newSize);
 	void resizeNoteForCommand(long itemID, const QSizeF & );
 	class SelectItemCommand* stackSelectionState(bool pushIt, QUndoCommand * parentCommand);
-	QString renderToSVG(RenderThing &, QGraphicsItem * board, const LayerList &);
+	QString renderToSVG(RenderThing &, QGraphicsItem * board, const LayerList &, bool applyViewFromBelow = false);
 	bool spaceBarIsPressed() noexcept;
 	virtual long setUpSwap(SwapThing &, bool master);
 	ConnectorItem * lastHoverEnterConnectorItem();
@@ -504,7 +504,7 @@ protected:
 	void cleanupRatsnests(QList< QPointer<ConnectorItem> > & connectorItems, bool connect);
 	void rotateWire(Wire *, QTransform & rotation, QPointF center, bool undoOnly, QUndoCommand * parentCommand);
 	QList<QGraphicsItem *> getVisibleItemsAndLabels(RenderThing & renderThing, const LayerList & layers);
-	QString renderToSVG(RenderThing &, QList<QGraphicsItem *> & itemsAndLabels);
+	QString renderToSVG(RenderThing &, QList<QGraphicsItem *> & itemsAndLabels, bool applyViewFromBelow = false);
 	QList<ItemBase *> collectSuperSubs(ItemBase *);
 	void squashShapes(QPointF scenePos);
 	void unsquashShapes();

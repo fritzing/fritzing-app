@@ -7275,11 +7275,11 @@ void SketchWidget::resizeNoteForCommand(long itemID, const QSizeF & size)
 	note->setSize(size);
 }
 
-QString SketchWidget::renderToSVG(RenderThing & renderThing, QGraphicsItem * board, const LayerList & layers)
+QString SketchWidget::renderToSVG(RenderThing & renderThing, QGraphicsItem * board, const LayerList & layers, bool applyViewFromBelow)
 {
 	renderThing.setBoard(board);
 	QList<QGraphicsItem *> itemsAndLabels = getVisibleItemsAndLabels(renderThing, layers);
-	return renderToSVG(renderThing, itemsAndLabels);
+	return renderToSVG(renderThing, itemsAndLabels, applyViewFromBelow);
 }
 
 QList<QGraphicsItem *> SketchWidget::getVisibleItemsAndLabels(RenderThing & renderThing, const LayerList & layers)
@@ -7329,7 +7329,7 @@ QString translateSVG(QString & svg, QPointF loc, double dpi, double printerScale
 	return svg;
 }
 
-QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem *> & itemsAndLabels)
+QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem *> & itemsAndLabels, bool applyViewFromBelow)
 {
 	renderThing.empty = true;
 
@@ -7345,6 +7345,10 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem
 
 	renderThing.imageRect.setRect(offset.x(), offset.y(), width, height);
 	QString outputSVG = TextUtils::makeSVGHeader(renderThing.printerScale, renderThing.dpi, width, height);
+
+	if(applyViewFromBelow && this->viewFromBelow()) {
+		outputSVG = QString("%1 <g transform='translate(%2, 0) scale(-1, 1)' >").arg(outputSVG).arg(width * renderThing.dpi / renderThing.printerScale);
+	}
 
 	QHash<QString, QString> svgHash;
 
@@ -7451,6 +7455,10 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, QList<QGraphicsItem
 			renderThing.empty = false;
 		}
 		extraRenderSvgStep(itemBase, offset, renderThing.dpi, renderThing.printerScale, outputSVG);
+	}
+
+	if(applyViewFromBelow && this->viewFromBelow()) {
+		outputSVG.append("</g>");
 	}
 
 	outputSVG += "</svg>";

@@ -86,7 +86,7 @@ public:
 	ModelPartShared * modelPartShared();
 	ModelPartSharedRoot * modelPartSharedRoot();
 	void setModelPartShared(ModelPartShared *modelPartShared);
-	void saveInstances(const QString & fileName, QXmlStreamWriter & streamWriter, bool startDocument);
+	void saveInstances(const QString & fileName, QXmlStreamWriter & streamWriter, bool startDocument, bool flipAware);
 	void saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument);
 	void addViewItem(class ItemBase *);
 	void removeViewItem(class ItemBase *);
@@ -206,7 +206,7 @@ protected:
 	void writeNestedTag(QXmlStreamWriter & streamWriter, QString tagName, const QHash<QString,QString> &values, QString childTag, QString attrName);
 
 	void commonInit(ItemType type);
-	void saveInstance(QXmlStreamWriter & streamWriter);
+	void saveInstance(QXmlStreamWriter & streamWriter, bool flipAware);
 	QList< QPointer<ModelPart> > * ensureInstanceTitleIncrements(const QString & prefix);
 	void clearOldInstanceTitle(const QString & title);
 	bool setSubpartInstanceTitle();

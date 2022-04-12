@@ -1683,7 +1683,7 @@ void SketchWidget::copyHeart(QList<ItemBase *> & bases, bool saveBoundingRects, 
 	Q_FOREACH (ItemBase * base, bases) {
 		if (base->getRatsnest()) continue;
 
-		base->modelPart()->saveInstances("", streamWriter, false);
+		base->modelPart()->saveInstances("", streamWriter, false, true);
 		modelIndexes.append(base->modelPart()->modelIndex());
 	}
 	streamWriter.writeEndElement();

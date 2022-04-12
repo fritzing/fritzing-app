@@ -92,7 +92,7 @@ public:
 	void setModelPart(ModelPart *);
 	ModelPartShared * modelPartShared();
 	virtual void writeXml(QXmlStreamWriter &) {}
-	virtual void saveInstance(QXmlStreamWriter &);
+	virtual void saveInstance(QXmlStreamWriter &, bool flipAware);
 	virtual void saveInstanceLocation(QXmlStreamWriter &) = 0;
 	virtual void writeGeometry(QXmlStreamWriter &);
 	virtual void moveItem(ViewGeometry &) = 0;

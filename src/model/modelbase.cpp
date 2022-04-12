@@ -465,7 +465,7 @@ void ModelBase::save(const QString & fileName, QXmlStreamWriter & streamWriter, 
 	if(asPart) {
 		m_root->saveAsPart(streamWriter, true);
 	} else {
-		m_root->saveInstances(fileName, streamWriter, true);
+		m_root->saveInstances(fileName, streamWriter, true, false);
 	}
 }
 

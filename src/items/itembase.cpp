@@ -285,7 +285,7 @@ void ItemBase::initNames() {
 
 }
 
-void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
+void ItemBase::saveInstance(QXmlStreamWriter & streamWriter, bool flipAware) {
 	streamWriter.writeStartElement(ViewLayer::viewIDXmlName(m_viewID));
 	streamWriter.writeAttribute("layer", ViewLayer::viewLayerXmlNameFromID(m_viewLayerID));
 	if (m_moveLock) {
@@ -301,7 +301,7 @@ void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
 	this->saveGeometry();
 	writeGeometry(streamWriter);
 	if (m_partLabel != nullptr) {
-		m_partLabel->saveInstance(streamWriter, false);
+		m_partLabel->saveInstance(streamWriter, flipAware);
 	}
 
 	QList<ItemBase *> itemBases;

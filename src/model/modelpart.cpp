@@ -190,7 +190,7 @@ ItemBase * ModelPart::viewItem(ViewLayer::ViewID viewID) {
 	return nullptr;
 }
 
-void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & streamWriter, bool startDocument) {
+void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & streamWriter, bool startDocument, bool flipAware) {
 	if (startDocument) {
 		streamWriter.writeStartDocument();
 		streamWriter.writeStartElement("module");
@@ -215,7 +215,7 @@ void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & strea
 	}
 
 	if (parent() != nullptr) {  // m_viewItems.size() > 0
-		saveInstance(streamWriter);
+		saveInstance(streamWriter, flipAware);
 	}
 
 	QList<QObject *> children = this->children();
@@ -228,7 +228,7 @@ void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & strea
 		auto* mp = qobject_cast<ModelPart *>(*i);
 		if (mp == nullptr) continue;
 
-		mp->saveInstances(fileName, streamWriter, false);
+		mp->saveInstances(fileName, streamWriter, false, flipAware);
 	}
 
 
@@ -239,7 +239,7 @@ void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & strea
 	}
 }
 
-void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
+void ModelPart::saveInstance(QXmlStreamWriter & streamWriter, bool flipAware)
 {
 	if (localProp("ratsnest").toBool()) {
 		return;				// don't save virtual wires
@@ -300,7 +300,7 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 	// tell the views to write themselves out
 	streamWriter.writeStartElement("views");
 	Q_FOREACH (ItemBase * itemBase, m_viewItems) {
-		itemBase->saveInstance(streamWriter);
+		itemBase->saveInstance(streamWriter, flipAware);
 	}
 	streamWriter.writeEndElement();		// views
 	streamWriter.writeEndElement();		//instance

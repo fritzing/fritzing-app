@@ -125,7 +125,7 @@ private:
 class AddDeleteItemCommand : public SimulationCommand
 {
 public:
-	AddDeleteItemCommand(SketchWidget * sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QHash<QString, QString>* localConnectors, QUndoCommand *parent);
+	AddDeleteItemCommand(SketchWidget * sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QHash<QString, QString> * localConnectors, QUndoCommand *parent);
 	~AddDeleteItemCommand();
 
 	long itemID() const;
@@ -142,8 +142,6 @@ protected:
 	long m_modelIndex;
 	SketchWidget * m_dropOrigin;
 	ViewLayer::ViewLayerPlacement m_viewLayerPlacement;
-	QPointF *m_labelPos;
-	QPointF *m_labelOffset;
 	QHash<QString, QString> * m_localConnectors;
 };
 
@@ -171,7 +169,7 @@ protected:
 class DeleteItemCommand : public AddDeleteItemCommand
 {
 public:
-	DeleteItemCommand(SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QPointF *labelPos, QPointF *labelOffset, QHash<QString, QString>* localConnectors, QUndoCommand *parent);
+	DeleteItemCommand(SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QHash<QString, QString>* localConnectors, QUndoCommand *parent);
 	void undo();
 	void redo();
 
@@ -732,7 +730,7 @@ protected:
 class RestoreLabelCommand : public BaseCommand
 {
 public:
-	RestoreLabelCommand(class SketchWidget *sketchWidget, long id, QDomElement &, QUndoCommand *parent);
+	RestoreLabelCommand(class SketchWidget *sketchWidget, long id, QDomElement & oldLabelGeometry, QDomElement & newLabelGeometry, QUndoCommand *parent);
 	void undo();
 	void redo();
 
@@ -741,7 +739,8 @@ protected:
 
 protected:
 	long m_itemID;
-	QDomElement m_element;
+	QDomElement m_oldLabelGeometry;
+	QDomElement m_newLabelGeometry;
 };
 
 /////////////////////////////////////////////

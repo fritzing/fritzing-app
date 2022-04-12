@@ -408,7 +408,9 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 						clone.setAttribute("y", QString::number(*y + offset.y()));
 					}
 				}
-				new RestoreLabelCommand(this, newID, clone, parentCommand);
+				QDomElement empty;
+				auto * restoreLabelCommand = new RestoreLabelCommand(this, newID, empty, clone, parentCommand);
+				restoreLabelCommand->setRedoOnly();
 			}
 
 			newIDs << newID;
@@ -5174,20 +5176,23 @@ void SketchWidget::makeDeleteItemCommandFinalSlot(ItemBase * itemBase, bool fore
 
 	ModelPart * mp = itemBase->modelPart();
 	// single view because this is called for each view
-	PartLabel * partLabel = itemBase->partLabel();
-	QPointF *labelPos = nullptr;
-	QPointF *labelOffset = nullptr;
-	if(partLabel) {
-		labelPos = new QPointF(partLabel->pos());
-		labelOffset = new QPointF(partLabel->getOffset());
-	}
 	auto localConnectors = new QHash<QString, QString>;
 	Q_FOREACH (Connector * connector, mp->connectors()) {
 		if (!connector->connectorLocalName().isEmpty()) {
 			localConnectors->insert(connector->connectorSharedID(), connector->connectorLocalName());
 		}
 	}
-	new DeleteItemCommand(this, BaseCommand::SingleView, mp->moduleID(), itemBase->viewLayerPlacement(), itemBase->getViewGeometry(), itemBase->id(), mp->modelIndex(), labelPos, labelOffset, localConnectors, parentCommand);
+
+	PartLabel * partLabel = itemBase->partLabel();
+	if(partLabel != nullptr) {
+		QDomElement empty;
+		QDomElement labelGeometry;
+		partLabel->getLabelGeometry(labelGeometry);
+		auto * restoreLabelCommand = new RestoreLabelCommand(this, itemBase->id(), labelGeometry, empty, parentCommand);
+		restoreLabelCommand->setUndoOnly();
+	}
+
+	new DeleteItemCommand(this, BaseCommand::SingleView, mp->moduleID(), itemBase->viewLayerPlacement(), itemBase->getViewGeometry(), itemBase->id(), mp->modelIndex(), localConnectors, parentCommand);
 }
 
 void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString & newModuleID, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand)
@@ -5943,9 +5948,13 @@ long SketchWidget::setUpSwap(SwapThing & swapThing, bool master)
 	setUpSwapReconnect(swapThing, itemBase, swapThing.newID, master);
 	new CheckStickyCommand(this, BaseCommand::SingleView, swapThing.newID, false, CheckStickyCommand::RemoveOnly, swapThing.parentCommand);
 
-	PartLabel * oldPartLabel = itemBase->partLabel();
-	if (oldPartLabel != nullptr) {
-		new MoveLabelCommand(this, swapThing.newID, oldPartLabel->pos(), oldPartLabel->getOffset(), oldPartLabel->pos(), oldPartLabel->getOffset(), swapThing.parentCommand);
+	PartLabel * partLabel = itemBase->partLabel();
+	if(partLabel != nullptr) {
+		QDomElement empty;
+		QDomElement labelGeometry;
+		partLabel->getLabelGeometry(labelGeometry);
+		auto * restoreLabelCommand = new RestoreLabelCommand(this, swapThing.newID, empty, labelGeometry, swapThing.parentCommand);
+		restoreLabelCommand->setRedoOnly();
 	}
 
 	if (itemBase->isPartLabelVisible()) {
@@ -8336,7 +8345,7 @@ void SketchWidget::restorePartLabelForCommand(long itemID, QDomElement & element
 	ItemBase * itemBase = findItem(itemID);
 	if (!itemBase) return;
 
-	itemBase->restorePartLabel(element, getLabelViewLayerID(itemBase));
+	itemBase->restorePartLabel(element, getLabelViewLayerID(itemBase), true);
 }
 
 void SketchWidget::loadLogoImage(ItemBase * itemBase, const QString & oldSvg, const QSizeF oldAspectRatio, const QString & oldFilename, const QString & newFilename, bool addName) {

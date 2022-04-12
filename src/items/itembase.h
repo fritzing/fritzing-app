@@ -156,7 +156,7 @@ public:
 	ViewLayer::ViewLayerID partLabelViewLayerID();
 	void clearPartLabel();
 	bool isPartLabelVisible();
-	void restorePartLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID);				// on loading from a file
+	void restorePartLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID, bool flipAware = false);				// on loading from a file
 	void movePartLabel(QPointF newPos, QPointF newOffset);												// coming down from the command object
 	void partLabelMoved(QPointF oldPos, QPointF oldOffset, QPointF newPos, QPointF newOffset);			// coming up from the label
 	void partLabelSetHidden(bool hide);

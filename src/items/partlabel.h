@@ -58,8 +58,10 @@ public:
 	void setInactive(bool inactivate);
 	constexpr bool inactive() const noexcept { return m_inactive; }
 	constexpr ViewLayer::ViewLayerID viewLayerID() const noexcept { return m_viewLayerID; }
-	void saveInstance(QXmlStreamWriter & streamWriter);
-	void restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID);
+	bool isFlipped(ViewLayer::ViewLayerID viewLayerID);
+	void saveInstance(QXmlStreamWriter & streamWriter, bool flipAware);
+	void getLabelGeometry(QDomElement & labelGeometry);
+	void restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID, bool flipAware);
 	void moveLabel(QPointF newPos, QPointF newOffset);
 	QPointF getOffset();
 	ItemBase * owner();

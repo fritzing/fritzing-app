@@ -301,7 +301,7 @@ void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
 	this->saveGeometry();
 	writeGeometry(streamWriter);
 	if (m_partLabel != nullptr) {
-		m_partLabel->saveInstance(streamWriter);
+		m_partLabel->saveInstance(streamWriter, false);
 	}
 
 	QList<ItemBase *> itemBases;
@@ -1118,12 +1118,12 @@ void ItemBase::clearPartLabel() {
 	m_partLabel = nullptr;
 }
 
-void ItemBase::restorePartLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID viewLayerID)
+void ItemBase::restorePartLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID viewLayerID, bool flipAware)
 {
 	if (m_partLabel != nullptr) {
 		m_partLabel->setPlainText(instanceTitle());
 		if (!labelGeometry.isNull()) {
-			m_partLabel->restoreLabel(labelGeometry, viewLayerID);
+			m_partLabel->restoreLabel(labelGeometry, viewLayerID, flipAware);
 			//m_partLabel->setPlainText(instanceTitle());
 		}
 	}

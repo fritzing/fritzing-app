@@ -318,8 +318,18 @@ void PartLabel::setHiddenOrInactive() {
 	update();
 }
 
+bool PartLabel::isFlipped(ViewLayer::ViewLayerID viewLayerID) {
+	bool flipped = (viewLayerID == ViewLayer::Silkscreen0Label);
+	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infographics != nullptr) {
+		if (infographics->viewFromBelow()) {
+			flipped = !flipped;
+		}
+	}
+	return flipped;
+}
 
-void PartLabel::saveInstance(QXmlStreamWriter & streamWriter) {
+void PartLabel::saveInstance(QXmlStreamWriter & streamWriter, bool flipAware) {
 	if (!m_initialized) return;
 
 	streamWriter.writeStartElement("titleGeometry");
@@ -331,7 +341,13 @@ void PartLabel::saveInstance(QXmlStreamWriter & streamWriter) {
 	streamWriter.writeAttribute("yOffset", QString::number(m_offset.y()));
 	streamWriter.writeAttribute("textColor", m_color.name());
 	streamWriter.writeAttribute("fontSize", QString::number(m_font.pointSizeF()));
-	GraphicsUtils::saveTransform(streamWriter, transform());
+	QTransform transformation = transform();
+	if (flipAware && isFlipped(m_viewLayerID)) {
+		transformLabel(QTransform().scale(-1,1));
+		transformation = transform();
+		transformLabel(QTransform().scale(-1,1));
+	}
+	GraphicsUtils::saveTransform(streamWriter, transformation);
 	Q_FOREACH (QString key, m_displayKeys) {
 		streamWriter.writeStartElement("displayKey");
 		streamWriter.writeAttribute("key", key);
@@ -340,7 +356,19 @@ void PartLabel::saveInstance(QXmlStreamWriter & streamWriter) {
 	streamWriter.writeEndElement();
 }
 
-void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID viewLayerID)
+void PartLabel::getLabelGeometry(QDomElement & labelGeometry) {
+	if (!m_initialized) return;
+	QByteArray data;
+	QXmlStreamWriter streamWriter(&data);
+	saveInstance(streamWriter, true);
+
+	QDomDocument temporary;
+	if (temporary.setContent(data)) {
+		labelGeometry = temporary.documentElement();
+	}
+}
+
+void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID viewLayerID, bool flipAware)
 {
 	m_viewLayerID = viewLayerID;
 	m_initialized = true;
@@ -400,6 +428,10 @@ void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID
 	QTransform t;
 	if (GraphicsUtils::loadTransform(labelGeometry.firstChildElement("transform"), t)) {
 		setTransform(t);
+	}
+
+	if (flipAware && isFlipped(viewLayerID)) {
+		transformLabel(QTransform().scale(-1,1));
 	}
 }
 

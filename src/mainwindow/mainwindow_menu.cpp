@@ -515,6 +515,10 @@ void MainWindow::pasteAux(bool pasteInPlace)
 			QRectF r;
 			QRectF boundingRect = boundingRects.value(sketchWidget->viewName(), r);
 			sketchWidget->loadFromModelParts(modelParts, BaseCommand::SingleView, parentCommand, true, pasteInPlace ? &r : &boundingRect, false, newIDs);
+			Q_FOREACH (long id, newIDs) {
+				auto * checkPartLabelLayerVisibilityCommand = new CheckPartLabelLayerVisibilityCommand(sketchWidget, id, parentCommand);
+				checkPartLabelLayerVisibilityCommand->setRedoOnly();
+			}
 		}
 
 		Q_FOREACH (long id, newIDs) {

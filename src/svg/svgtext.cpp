@@ -46,11 +46,12 @@ void SvgText::renderText(QImage & image, QDomElement & text, int & minX, int & m
 	QPointF p(image.width() * mxy.x() / viewBox.width(), image.height() * mxy.y() / viewBox.height());
 	QPoint iq((int) p.x(), (int) p.y());
 
-	minX = p.x();
-	maxX = p.x();
-	minY = p.y();
-	maxY = p.y();
+	minX = image.width() + 1;
+	maxX = -1;
+	minY = image.height() + 1;
+	maxY = -1;
 
+	bool foundText = false;
 	// spiral around q
 	int limit = qMax(image.width(), image.height());
 	for (int lim = 0; lim < limit; lim++) {
@@ -61,21 +62,32 @@ void SvgText::renderText(QImage & image, QDomElement & text, int & minX, int & m
 
 		for (int iy = t; iy <= b; iy++) {
 			if (image.pixel(l, iy) == 0xff000000) {
+				foundText = true;
 				MINMAX(l, iy);
 			}
 			if (image.pixel(r, iy) == 0xff000000) {
+				foundText = true;
 				MINMAX(r, iy);
 			}
 		}
 
 		for (int ix = l + 1; ix < r; ix++) {
 			if (image.pixel(ix, t) == 0xff000000) {
+				foundText = true;
 				MINMAX(ix, t);
 			}
 			if (image.pixel(ix, b) == 0xff000000) {
+				foundText = true;
 				MINMAX(ix, b);
 			}
 		}
+	}
+
+	if (!foundText) {
+		minX = p.x();
+		maxX = p.x();
+		minY = p.y();
+		maxY = p.y();
 	}
 
 	text.setTagName("g");

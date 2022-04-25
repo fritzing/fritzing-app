@@ -224,7 +224,7 @@ QString SchematicTextLayerKinPaletteItem::getTransformedSvg(const QString & svgT
 	}
 
 	if (rotation >= 135 && rotation <= 225) {
-		svg = vflip(svg, isFlipped);
+		svg = rotate(svg, isFlipped);
 	}
 	return svg;
 }
@@ -353,7 +353,7 @@ void SchematicTextLayerKinPaletteItem::clearTextThings() {
 	m_textThings.clear();
 }
 
-QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlipped) {
+QString SchematicTextLayerKinPaletteItem::rotate(const QString & svg, bool isFlipped) {
 	Q_UNUSED(isFlipped);
 
 	QDomDocument doc;

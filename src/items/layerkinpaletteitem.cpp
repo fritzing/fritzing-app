@@ -273,11 +273,6 @@ void SchematicTextLayerKinPaletteItem::initTextThings() {
 	positionTexts(texts);
 }
 
-QString SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
-	QString textSvg = this->property("textSvg").toString();
-	return this->flipTextSvg(textSvg);
-}
-
 QString SchematicTextLayerKinPaletteItem::flipTextSvg(const QString & textSvg) {
 	QDomDocument doc;
 	QString errorStr;

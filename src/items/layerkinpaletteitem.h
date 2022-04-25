@@ -82,6 +82,7 @@ class SchematicTextLayerKinPaletteItem : public LayerKinPaletteItem
 public:
 	SchematicTextLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
 
+	QString getTransformedSvg(double & rotation);
 	void transformItem(const QTransform &, bool includeRatsnest);
 	void clearTextThings();
 	void setTransform2(const QTransform &);

@@ -215,15 +215,7 @@ void SchematicTextLayerKinPaletteItem::setTransform2(const QTransform & currTran
 	transformItem(currTransf, false);
 }
 
-void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTransf, bool includeRatsnest) {
-	Q_UNUSED(currTransf);
-	Q_UNUSED(includeRatsnest);
-
-	if (m_textThings.count() == 0) {
-		initTextThings();
-	}
-
-	double rotation;
+QString SchematicTextLayerKinPaletteItem::getTransformedSvg(double & rotation) {
 	QTransform chiefTransform = layerKinChief()->transform();      // assume chief already has rotation
 	bool isFlipped = GraphicsUtils::isFlipped(chiefTransform, rotation);
 	QString svg;
@@ -238,6 +230,19 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
 	if (rotation >= 135 && rotation <= 225) {
 		svg = vflip(svg, isFlipped);
 	}
+	return svg;
+}
+
+void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTransf, bool includeRatsnest) {
+	Q_UNUSED(currTransf);
+	Q_UNUSED(includeRatsnest);
+
+	if (m_textThings.count() == 0) {
+		initTextThings();
+	}
+
+	double rotation;
+	QString svg = getTransformedSvg(rotation);
 
 	reloadRenderer(svg, true);
 

@@ -619,8 +619,6 @@ QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
 	svg += "</g>\n</svg>\n";
 
 	if (viewLayerID == ViewLayer::SchematicText) {
-		double rotation;
-
 		SchematicTextLayerKinPaletteItem * schemItem = nullptr;
 		Q_FOREACH (ItemBase * lkpi, m_layerKin) {
 			auto * schemLayerItem = qobject_cast<SchematicTextLayerKinPaletteItem *>(lkpi);
@@ -631,14 +629,8 @@ QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
 		}
 
 		if (schemItem != nullptr) {
-			QTransform chiefTransform = layerKinChief()->transform();      // assume chief already has rotation
-			bool isFlipped = GraphicsUtils::isFlipped(chiefTransform, rotation);
-			if (isFlipped) {
-				svg = schemItem->flipTextSvg(svg);
-			}
-			if (rotation >= 135 && rotation <= 225) {
-				svg = schemItem->vflip(svg, isFlipped);
-			}
+			double rotation;
+			svg = schemItem->getTransformedSvg(svg, rotation);
 		}
 	}
 

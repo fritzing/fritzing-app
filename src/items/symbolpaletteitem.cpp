@@ -335,6 +335,24 @@ QString SymbolPaletteItem::replaceTextElement(QString svg) {
 	return TextUtils::replaceTextElement(svg, "label", QString::number(v) + "V");
 }
 
+QString SymbolPaletteItem::transformTextSvg(const QString & testSvg) {
+	QString svg = testSvg;
+	SchematicTextLayerKinPaletteItem * schemItem = nullptr;
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
+		auto * schemLayerItem = qobject_cast<SchematicTextLayerKinPaletteItem *>(lkpi);
+		if (schemLayerItem != nullptr) {
+			schemItem = schemLayerItem;
+			break;
+		}
+	}
+
+	if (schemItem != nullptr) {
+		double rotation;
+		svg = schemItem->getTransformedSvg(svg, rotation);
+	}
+	return svg;
+}
+
 QString SymbolPaletteItem::getProperty(const QString & key) {
 	if (key.compare("voltage", Qt::CaseInsensitive) == 0) {
 		return QString::number(m_voltage);
@@ -619,19 +637,7 @@ QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
 	svg += "</g>\n</svg>\n";
 
 	if (viewLayerID == ViewLayer::SchematicText) {
-		SchematicTextLayerKinPaletteItem * schemItem = nullptr;
-		Q_FOREACH (ItemBase * lkpi, m_layerKin) {
-			auto * schemLayerItem = qobject_cast<SchematicTextLayerKinPaletteItem *>(lkpi);
-			if (schemLayerItem != nullptr) {
-				schemItem = schemLayerItem;
-				break;
-			}
-		}
-
-		if (schemItem != nullptr) {
-			double rotation;
-			svg = schemItem->getTransformedSvg(svg, rotation);
-		}
+		svg = transformTextSvg(svg);
 	}
 
 	return svg;

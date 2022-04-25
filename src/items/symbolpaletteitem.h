@@ -87,6 +87,7 @@ protected:
 	double useVoltage(ConnectorItem * connectorItem);
 	virtual QString makeSvg(ViewLayer::ViewLayerID);
 	QString replaceTextElement(QString svg);
+	QString transformTextSvg(const QString & testSvg);
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 	void resetLayerKin();
 

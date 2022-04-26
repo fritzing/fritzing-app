@@ -243,6 +243,7 @@
         <file>resources/parts/svg/core/icon/schematic_frame_icon.svg</file>
         <file>resources/parts/svg/core/icon/groundplane.svg</file>
         <file>resources/parts/svg/core/icon/note.svg</file>
+        <file>resources/parts/svg/core/icon/power.svg</file>
         <file>resources/parts/svg/core/breadboard/ruler.svg</file>
         <file>resources/parts/svg/core/breadboard/wire.svg</file>
         <file>resources/parts/svg/core/breadboard/30.20perfboard.svg</file>
@@ -259,6 +260,7 @@
         <file>resources/parts/svg/core/pcb/pad.svg</file>
         <file>resources/parts/svg/core/pcb/pad0.svg</file>
         <file>resources/parts/svg/core/schematic/netlabel.svg</file>
+        <file>resources/parts/svg/core/schematic/power.svg</file>
         <file>resources/parts/svg/core/schematic/frame.svg</file>
         <file>resources/parts/svg/core/schematic/schematiclogo.svg</file>
         <file>resources/parts/svg/obsolete/schematic/0.3.schem.netlabel.svg</file>

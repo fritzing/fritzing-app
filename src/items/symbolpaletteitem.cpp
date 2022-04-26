@@ -388,7 +388,13 @@ QString SymbolPaletteItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash
 	if (m_voltageReference) {
 		switch (viewLayerID) {
 		case ViewLayer::Schematic:
-			return replaceTextElement(svg);
+			svg = replaceTextElement(svg); // So even the hidden text is consistent as is done for the netlabel.
+			return SvgFileSplitter::hideText3(svg);
+		case ViewLayer::SchematicText:
+			svg = replaceTextElement(svg);
+			bool hasText;
+			svg = SvgFileSplitter::showText3(svg, hasText);
+			return transformTextSvg(svg);
 		default:
 			break;
 		}

@@ -287,9 +287,13 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 			QString svg = m_pcbGraphicsView->renderToSVG(renderThing, board, viewLayerIDs);
 			massageOutput(svg, doMask, doSilk, doPaste, maskTop, maskBottom, fileName, board, GraphicsUtils::IllustratorDPI, viewLayerIDs);
 			QString merged = mergeBoardSvg(svg, board, GraphicsUtils::IllustratorDPI, false, viewLayerIDs);
-			TextUtils::writeUtf8(fileName.arg(""), merged);
+			if (!merged.isEmpty()) {
+				TextUtils::writeUtf8(fileName.arg(""), merged);
+			}
 			merged = mergeBoardSvg(svg, board, GraphicsUtils::IllustratorDPI, true, viewLayerIDs);
-			TextUtils::writeUtf8(fileName.arg("_mirror"), merged);
+			if (!merged.isEmpty()) {
+				TextUtils::writeUtf8(fileName.arg("_mirror"), merged);
+			}
 		}
 		else {
 			QString svg;

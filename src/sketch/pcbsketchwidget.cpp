@@ -1977,10 +1977,10 @@ void PCBSketchWidget::hideHoles(QList<ItemBase *> & holes)
 	}
 }
 
-void PCBSketchWidget::restoreCopperLogoItems(QList<ItemBase *> & copperLogoItems)
+void PCBSketchWidget::restoreItemVisibility(QList<ItemBase *> & items)
 {
-	Q_FOREACH (ItemBase * logoItem, copperLogoItems) {
-		logoItem->setVisible(true);
+	Q_FOREACH (ItemBase * item, items) {
+		item->setVisible(true);
 	}
 }
 

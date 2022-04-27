@@ -96,7 +96,7 @@ public:
 	QString characterizeGroundFill(ViewLayer::ViewLayerID);
 	ViewGeometry::WireFlag getTraceFlag();
 	void hideCopperLogoItems(QList<ItemBase *> &);
-	void restoreCopperLogoItems(QList<ItemBase *> &);
+	void restoreItemVisibility(QList<ItemBase *> &);
 	void hideHoles(QList<ItemBase *> &);
 	QString makePasteMask(const QString & svgMask, ItemBase * board, double dpi, const LayerList & maskLayerIDs);
 	int selectAllItemType(ModelPart::ItemType, const QString & typeName);

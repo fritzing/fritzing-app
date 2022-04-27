@@ -337,10 +337,10 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 			}
 		}
 		if (doMask) {
-			m_pcbGraphicsView->restoreCopperLogoItems(copperLogoItems);
+			m_pcbGraphicsView->restoreItemVisibility(copperLogoItems);
 		}
 		if (doPaste) {
-			m_pcbGraphicsView->restoreCopperLogoItems(holes);
+			m_pcbGraphicsView->restoreItemVisibility(holes);
 		}
 
 	}

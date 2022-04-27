@@ -265,7 +265,7 @@ int GerberGenerator::doMask(LayerList maskLayerIDs, const QString &maskName, con
 
 	bool empty;
 	QString svgMask = renderTo(maskLayerIDs, board, sketchWidget, empty);
-	sketchWidget->restoreCopperLogoItems(copperLogoItems);
+	sketchWidget->restoreItemVisibility(copperLogoItems);
 
 	if (empty || svgMask.isEmpty()) {
 		displayMessage(QObject::tr("exported mask layer %1 is empty").arg(maskName), displayMessageBoxes);
@@ -301,8 +301,8 @@ int GerberGenerator::doPasteMask(LayerList maskLayerIDs, const QString &maskName
 
 	bool empty;
 	QString svgMask = renderTo(maskLayerIDs, board, sketchWidget, empty);
-	sketchWidget->restoreCopperLogoItems(copperLogoItems);
-	sketchWidget->restoreCopperLogoItems(holes);
+	sketchWidget->restoreItemVisibility(copperLogoItems);
+	sketchWidget->restoreItemVisibility(holes);
 
 	if (empty || svgMask.isEmpty()) {
 		displayMessage(QObject::tr("exported paste mask layer is empty"), displayMessageBoxes);

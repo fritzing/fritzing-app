@@ -9138,22 +9138,6 @@ void SketchWidget::changePinLabelsSlot(ItemBase * itemBase)
 	else if (qobject_cast<MysteryPart *>(itemBase)) {
 		paletteItem->changePinLabels(false);
 	}
-	else {
-		bool hasLayout, sip;
-		QStringList labels = paletteItem->sipOrDipOrLabels(hasLayout, sip);
-		if (labels.count() == 0) return;
-
-		QTransform transform = paletteItem->untransform();
-
-		QString svg = PartFactory::makeSchematicSipOrDipOr(labels, hasLayout, sip);
-		paletteItem->resetLayerKin(svg);
-		if (!hasLayout && !sip) {
-			paletteItem->resetConnectors();
-		}
-
-		paletteItem->retransform(transform);
-	}
-
 }
 
 void SketchWidget::changePinLabels(ItemBase * itemBase)

@@ -30,6 +30,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../connectors/connectoritem.h"
 #include "../connectors/connector.h"
 #include "../connectors/svgidlayer.h"
+#include "../items/dip.h"
+#include "../items/mysterypart.h"
 #include "../layerattributes.h"
 #include "../dialogs/pinlabeldialog.h"
 #include "../utils/folderutils.h"
@@ -1499,7 +1501,9 @@ bool PaletteItem::makeLocalModifications(QByteArray & svg, const QString & filen
 	bool modified = false;
 	if (m_viewID == ViewLayer::SchematicView) {
 		QString value = modelPart()->properties().value("editable pin labels", "");
-		if (value.compare("true") == 0) {
+		auto mysteryPartItem = qobject_cast<MysteryPart *>(this);
+		auto dipItem = qobject_cast<Dip *>(this);
+		if (value.compare("true") == 0 && (mysteryPartItem != nullptr || dipItem != nullptr)) {
 			bool hasLayout, sip;
 			QStringList labels = sipOrDipOrLabels(hasLayout, sip);
 			if (labels.count() > 0) {

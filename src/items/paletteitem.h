@@ -88,6 +88,7 @@ public:
 	bool renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID, bool doConnectors, QString & error);
 
 	void setTransforms();
+	QString transformTextSvg(const QString & textSvg);
 	void syncKinMoved(QPointF offset, QPointF loc);
 
 	void setInstanceTitle(const QString&, bool initial);

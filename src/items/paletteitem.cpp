@@ -329,6 +329,24 @@ void PaletteItem::setTransforms() {
 	}
 }
 
+QString PaletteItem::transformTextSvg(const QString & textSvg) {
+	QString svg = textSvg;
+	SchematicTextLayerKinPaletteItem * schemItem = nullptr;
+	Q_FOREACH (ItemBase * lkpi, m_layerKin) {
+		auto * schemLayerItem = qobject_cast<SchematicTextLayerKinPaletteItem *>(lkpi);
+		if (schemLayerItem != nullptr) {
+			schemItem = schemLayerItem;
+			break;
+		}
+	}
+
+	if (schemItem != nullptr) {
+		double rotation;
+		svg = schemItem->getTransformedSvg(svg, rotation);
+	}
+	return svg;
+}
+
 void PaletteItem::moveItem(ViewGeometry & viewGeometry) {
 	PaletteItemBase::moveItem(viewGeometry);
 	for (int i = 0; i < m_layerKin.count(); i++) {

@@ -77,7 +77,7 @@ bool pixelsCollide(QImage * image1, QImage * image2, int x1, int y1, int x2, int
 void GerberGenerator::exportToGerber(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes)
 {
 	if (board == nullptr) {
-		int boardCount;
+		int boardCount = 0;
 		board = sketchWidget->findSelectedBoard(boardCount);
 		if (boardCount == 0) {
 			DebugDialog::debug("board not found");

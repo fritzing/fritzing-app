@@ -18,8 +18,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
-#include <QMessageBox>
 #include <QFileDialog>
+#include <QMessageBox>
 #include <QSvgRenderer>
 #include <qmath.h>
 

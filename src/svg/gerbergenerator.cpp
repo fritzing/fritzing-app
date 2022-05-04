@@ -24,18 +24,19 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <qmath.h>
 
 #include "gerbergenerator.h"
-#include "../debugdialog.h"
-#include "svgpathregex.h"
-#include "../fsvgrenderer.h"
-#include "../sketch/pcbsketchwidget.h"
+
 #include "../connectors/connectoritem.h"
 #include "../connectors/svgidlayer.h"
-#include "svgfilesplitter.h"
-#include "groundplanegenerator.h"
+#include "../debugdialog.h"
+#include "../fsvgrenderer.h"
+#include "../sketch/pcbsketchwidget.h"
+#include "../utils/folderutils.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
-#include "../utils/folderutils.h"
 #include "../version/version.h"
+#include "groundplanegenerator.h"
+#include "svgfilesplitter.h"
+#include "svgpathregex.h"
 
 const QString GerberGenerator::SilkTopSuffix = "_silkTop.gto";
 const QString GerberGenerator::SilkBottomSuffix = "_silkBottom.gbo";

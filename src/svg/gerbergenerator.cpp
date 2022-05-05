@@ -519,7 +519,8 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 			QTransform m = renderer.transformForElement(n);
 			QDomElement element = leaves1.at(i);
 			QRectF mBounds = m.mapRect(bounds);
-			if (mBounds.left() < sourceRes.left() - 0.1|| mBounds.top() < sourceRes.top() - 0.1 || mBounds.right() > sourceRes.right() + 0.1 || mBounds.bottom() > sourceRes.bottom() + 0.1) {
+			const double unknownMargin = 0.1;
+			if (mBounds.left() < sourceRes.left() - unknownMargin || mBounds.top() < sourceRes.top() - unknownMargin || mBounds.right() > sourceRes.right() + unknownMargin || mBounds.bottom() > sourceRes.bottom() + unknownMargin) {
 				if (element.tagName() == "circle") {
 					possibleHoles.append(element);
 				}

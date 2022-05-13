@@ -957,7 +957,8 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		QPointF loc = itemBase->sceneBoundingRect().center();
 		QTransform transform = itemBase->transform();
 		// doesn't account for scaling
-		double angle = atan2(transform.m12(), transform.m11()) * 180 / M_PI;
+		constexpr double halfCircleDegrees = 180;
+		double angle = atan2(transform.m12(), transform.m11()) * halfCircleDegrees / M_PI;
 		// No;Value;Package;X;Y;Rotation;Side;Name
 		QString string = QString("%1;%2;%3;%4;%5;%6;%7;%8\n")
 					.arg(ix++)

@@ -28,6 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <qmath.h>
 
 constexpr double MaskClearance = 0.0;  // 5 mils clearance
+constexpr double milsPerInch = 1000;  // used to convert mils (standard fritzing resolution) to inches
 
 bool fillNotStroke(QDomElement & element, SVG2gerber::ForWhy forWhy) {
 	if (forWhy == SVG2gerber::ForOutline) return false;
@@ -323,7 +324,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 		bool noDrill = (drillAttribute.compare("0") == 0 || drillAttribute.compare("no", Qt::CaseInsensitive) == 0 || drillAttribute.compare("false", Qt::CaseInsensitive) == 0);
 
 		double stroke_width = circle.attribute("stroke-width").toDouble();
-		double hole = ((2*r) - stroke_width) / 1000;  // convert mils (standard fritzing resolution) to inches
+		double hole = ((2*r) - stroke_width) / milsPerInch;  // convert mils (standard fritzing resolution) to inches
 
 		if (forWhy == ForDrill) {
 			if (noDrill) continue;
@@ -344,7 +345,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 
 		QString fill = circle.attribute("fill");
 
-		double diam = ((2*r) + stroke_width)/1000;
+		double diam = ((2*r) + stroke_width)/milsPerInch;
 		if (forWhy == ForMask) {
 			diam += 2 * MaskClearance;
 		}
@@ -421,10 +422,10 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 			QString fill = rect.attribute("fill");
 			double stroke_width = rect.attribute("stroke-width").toDouble();
 
-			double totalx = (width + stroke_width)/1000;
-			double totaly = (height + stroke_width)/1000;
-			double holex = (width - stroke_width)/1000;
-			double holey = (height - stroke_width)/1000;
+			double totalx = (width + stroke_width)/milsPerInch;
+			double totaly = (height + stroke_width)/milsPerInch;
+			double holex = (width - stroke_width)/milsPerInch;
+			double holey = (height - stroke_width)/milsPerInch;
 
 			if (forWhy == ForMask) {
 				totalx += 2 * MaskClearance;
@@ -562,7 +563,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 		if (path.attribute("stroke-linecap") == "square") {
 			double stroke_width = path.attribute("stroke-width").toDouble();
 			if (stroke_width != 0) {
-				QString aperture = QString("R,%1X%1").arg(stroke_width/1000, 0, 'f');
+				QString aperture = QString("R,%1X%1").arg(stroke_width/milsPerInch, 0, 'f');
 
 				// add aperture to defs if we don't have it yet
 				if (!apertureMap.contains(aperture)) {
@@ -602,7 +603,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 
 		if (forWhy == ForMask) {
 			// draw the outline, G36 only does the fill
-			standardAperture(path, apertureMap, current_dcode, dcode_index, path.attribute("stroke-width").toDouble() + (MaskClearance * 2 * 1000));
+			standardAperture(path, apertureMap, current_dcode, dcode_index, path.attribute("stroke-width").toDouble() + (MaskClearance * 2 * milsPerInch));
 			m_gerber_paths += pathUserData.string;
 		}
 
@@ -671,7 +672,7 @@ void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
 
 	if (forWhy == ForMask) {
 		// draw the outline, G36 only does the fill
-		standardAperture(polygon, apertureMap, current_dcode, dcode_index,  polygon.attribute("stroke-width").toDouble() + (MaskClearance * 2 * 1000));
+		standardAperture(polygon, apertureMap, current_dcode, dcode_index,  polygon.attribute("stroke-width").toDouble() + (MaskClearance * 2 * milsPerInch));
 		m_gerber_paths += pointString;
 	}
 
@@ -686,7 +687,7 @@ QString SVG2gerber::standardAperture(QDomElement & element, QHash<QString, QStri
 	}
 	if (stroke_width == 0) return "";
 
-	QString aperture = QString("C,%1").arg(stroke_width/1000, 0, 'f');
+	QString aperture = QString("C,%1").arg(stroke_width/milsPerInch, 0, 'f');
 
 	// add aperture to defs if we don't have it yet
 	if (!apertureMap.contains(aperture)) {
@@ -727,7 +728,7 @@ void SVG2gerber::handleOblongPath(QDomElement & path, int & dcode_index) {
 	double cx2 = nextLine.attribute("x2").toDouble();
 	double cy2 = nextLine.attribute("y2").toDouble();
 
-	QString drill_aperture = QString("C%1").arg(diameter / 1000, 0, 'f') + "\n";   // convert mils to inches
+	QString drill_aperture = QString("C%1").arg(diameter / milsPerInch, 0, 'f') + "\n";   // convert mils to inches
 	if (!m_gerber_header.contains(drill_aperture)) {
 		m_gerber_header += "T" + QString::number(dcode_index++) + drill_aperture;
 	}

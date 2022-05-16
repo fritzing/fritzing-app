@@ -65,7 +65,7 @@ void NgSpiceSimulator::init() {
 	QStringList libPaths = QStringList({ QCoreApplication::applicationDirPath()
 			})
 			// TODO Not sure if we can place the library there on macOS
-			+ QStandardPaths::standardLocations(QStandardPaths::DataLocation);
+			+ QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation);
 
 	if( !m_library.isLoaded() ) {         // fallback custom paths
 	#ifdef Q_OS_LINUX

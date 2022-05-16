@@ -804,7 +804,8 @@ QString GerberGenerator::makePath(QImage & image, double unit, const QString & c
 				// got black: close up this segment;
 				inWhite = false;
 				paths += QString("M%1,%2L%3,%2 ").arg(whiteStart + halfUnit).arg(y + halfUnit).arg(x - 1 + halfUnit);
-				if (++lineCount == 10) {
+				constexpr int unknownMaxLineCount = 10;
+				if (++lineCount == unknownMaxLineCount) {
 					lineCount = 0;
 					paths += "\n";
 				}

@@ -689,7 +689,7 @@ double Simulator::getCurrent(ItemBase* part, QString subpartName) {
  * @returns the current that the transistor is sinking/sourcing.
  */
 double Simulator::getTransistorCurrent(QString spicePartName, TransistorLeg leg) {
-	if(spicePartName.at(0).toLower()!="q") {
+	if(spicePartName.at(0).toLower()!=QChar('q')) {
 		//TODO: Add tr()
 		throw QString("Error getting the current of a transistor. The device is not a transistor, its first letter is not a Q. Name: %1").arg(spicePartName);
 	}

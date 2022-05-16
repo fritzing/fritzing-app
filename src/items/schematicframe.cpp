@@ -203,7 +203,7 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 	dt.setSecsSinceEpoch(modelPart()->localProp("date").toUInt());
 	hash.insert("date", dt.toString(DisplayFormat));
 
-	DebugDialog::debug("svg " + svg);
+	// DebugDialog::debug("svg " + svg);
 
 	return TextUtils::convertExtendedChars(TextUtils::replaceTextElements(svg, hash));
 }

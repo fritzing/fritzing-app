@@ -2181,9 +2181,7 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 	m_arrowTotalX += dx;
 	m_arrowTotalY += dy;
 
-	QPoint globalPos = mapFromScene(m_mousePressScenePos + QPointF(m_arrowTotalX, m_arrowTotalY));
-	globalPos = mapToGlobal(globalPos);
-	moveItems(globalPos, false, rubberBandLegEnabled);
+	moveItemsScene(m_mousePressScenePos + QPointF(m_arrowTotalX, m_arrowTotalY), false, rubberBandLegEnabled);
 	m_moveEventCount++;
 	return true;
 }
@@ -3073,13 +3071,25 @@ QString SketchWidget::makeMoveSVG(double printerScale, double dpi, QPointF & off
 
 void SketchWidget::moveItems(QPoint globalPos, bool checkAutoScrollFlag, bool rubberBandLegEnabled)
 {
+	QPoint q = mapFromGlobal(globalPos);
+	QPointF scenePos = mapToScene(q);
+	moveItemsAux(scenePos, globalPos, checkAutoScrollFlag, rubberBandLegEnabled);
+}
+
+
+void SketchWidget::moveItemsScene(QPointF scenePos, bool checkAutoScrollFlag, bool rubberBandLegEnabled)
+{
+	QPoint globalPos = mapFromScene(scenePos);
+	globalPos = mapToGlobal(globalPos);
+	moveItemsAux(scenePos, globalPos, checkAutoScrollFlag, rubberBandLegEnabled);
+}
+
+void SketchWidget::moveItemsAux(QPointF scenePos, QPoint globalPos, bool checkAutoScrollFlag, bool rubberBandLegEnabled)
+{
 	if (checkAutoScrollFlag) {
 		bool result = checkAutoscroll(globalPos);
 		if (!result) return;
 	}
-
-	QPoint q = mapFromGlobal(globalPos);
-	QPointF scenePos = mapToScene(q);
 
 	if (m_alignToGrid && (m_alignmentItem)) {
 		QPointF currentParentPos = m_alignmentItem->mapToParent(m_alignmentItem->mapFromScene(scenePos));

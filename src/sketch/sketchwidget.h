@@ -404,6 +404,8 @@ protected:
 	void clearDragWireTempCommand();
 	bool draggingWireEnd();
 	void moveItems(QPoint globalPos, bool checkAutoScroll, bool rubberBandLegEnabled);
+	void moveItemsScene(QPointF scenePos, bool checkAutoScrollFlag, bool rubberBandLegEnabled);
+	void moveItemsAux(QPointF scenePos, QPoint globalPos, bool checkAutoScrollFlag, bool rubberBandLegEnabled);
 	virtual ViewLayer::ViewLayerID multiLayerGetViewLayerID(ModelPart * modelPart, ViewLayer::ViewID, ViewLayer::ViewLayerPlacement, LayerList &);
 	virtual BaseCommand::CrossViewType wireSplitCrossView();
 	virtual bool canChainMultiple();

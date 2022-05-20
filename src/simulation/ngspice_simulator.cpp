@@ -59,7 +59,7 @@ NgSpiceSimulator::~NgSpiceSimulator() {
 void NgSpiceSimulator::init() {
 	if (m_isInitialized) return;
 
-	m_library.setFileName("ngspice");
+	m_library.setFileName("libngspice.0.dylib");
 	m_library.load();
 
 	QStringList libPaths = QStringList({ QCoreApplication::applicationDirPath()
@@ -71,25 +71,33 @@ void NgSpiceSimulator::init() {
 	#ifdef Q_OS_LINUX
 		const QString libName = "libngspice.so";
 	#elif defined Q_OS_MAC
-		const QString libName = "ngspice.dylib";
+		const QString libName = "libngspice.0.dylib";
 	#elif defined Q_OS_WIN
 		const QString libName = "ngspice-36.dll";
 	#endif
+		DebugDialog::debug("Couldn't load ngspice " + m_library.errorString());
 		for( const auto& path : libPaths ) {
 			QFileInfo library(QString(path + "/" + libName));
 			DebugDialog::debug("Try path " + library.absoluteFilePath());
 			if(!library.canonicalFilePath().isEmpty()) {
 				m_library.setFileName(library.canonicalFilePath());
 				m_library.load();
-				if( m_library.isLoaded() ) {
+				if( m_library.isLoaded() ) {		
 					break;
 				} else {
 					DebugDialog::debug("Couldn't load ngspice " + m_library.errorString());
-					throw std::runtime_error( "Error loading ngspice shared library" );
+					throw std::runtime_error( "Error loading ngspice shared library" );			
 				}
 			}
 		}
 	}
+
+	if (!m_library.isLoaded()) {
+		DebugDialog::debug("Could not find ngspice.");
+		return;
+	}
+	DebugDialog::debug("Loaded ngspice " + m_library.fileName());
+
 
 	setErrorTitle(std::nullopt);
 

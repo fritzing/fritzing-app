@@ -279,8 +279,8 @@ int MainWindow::UntitledSketchIndex = 1;
 int MainWindow::CascadeFactorX = 21;
 int MainWindow::CascadeFactorY = 19;
 
-static const int MainWindowDefaultWidth = 840;
-static const int MainWindowDefaultHeight = 600;
+static constexpr int MainWindowDefaultWidth = 1024;
+static constexpr int MainWindowDefaultHeight = 768;
 
 int MainWindow::AutosaveTimeoutMinutes = 10;   // in minutes
 bool MainWindow::AutosaveEnabled = true;

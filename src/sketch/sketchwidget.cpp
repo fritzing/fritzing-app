@@ -4318,15 +4318,6 @@ double SketchWidget::fitInWindow() {
 		m_scaleValue = (hRelation * 100);
 	}
 
-	QSize size = this->maximumViewportSize();
-	QPointF center = itemsRect.center();
-	QRectF sceneRect = this->sceneRect();
-	sceneRect.setLeft(fmin(center.x() - ceil(1.0 + size.width() / 2.0), sceneRect.left()));
-	sceneRect.setRight(fmax(center.x() + ceil(1.0 + size.width() / 2.0), sceneRect.right()));
-	sceneRect.setTop(fmin(center.y() - ceil(1.0 + size.height() / 2.0), sceneRect.top()));
-	sceneRect.setBottom(fmax(center.y() + ceil(1.0 + size.height() / 2.0), sceneRect.bottom()));
-	this->setSceneRect(sceneRect);
-
 	this->centerOn(itemsRect.center());
 	this->absoluteZoom(m_scaleValue);
 

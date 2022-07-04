@@ -163,6 +163,13 @@ double GraphicsUtils::getNearestOrdinate(double ordinate, double units) {
 
 void GraphicsUtils::shortenLine(QPointF & p1, QPointF & p2, double d1, double d2) {
 	double angle1 = atan2(p2.y() - p1.y(), p2.x() - p1.x());
+	double length = QLineF(p1, p2).length();
+	if (d1 > length) {
+		d1 = length;
+	}
+	if (d2 > length) {
+		d2 = length;
+	}
 	double angle2 = angle1 - M_PI;
 	double dx1 = d1 * cos(angle1);
 	double dy1 = d1 * sin(angle1);

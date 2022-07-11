@@ -192,7 +192,7 @@ void GroundPlanePaintEngine::drawPolygon(const QPointF *points, int pointCount, 
 	Path path;
 	Paths result;
 	for (int i = 0; i < pointCount; i++) {
-		const QPointF p2 = state->matrix().map(points[i]);
+		const QPointF p2 = state->transform().map(points[i]);
 		path << IntPoint((cInt) (p2.x()), (cInt) (p2.y()));
 	}
 	ClipperOffset co;

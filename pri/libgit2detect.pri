@@ -15,6 +15,7 @@
 
 
 packagesExist(libgit2) {
+    LIBGIT_STATIC = false
 } else {
     LIBGIT_STATIC = true
 }

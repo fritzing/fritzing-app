@@ -414,6 +414,44 @@ void Simulator::drawSmoke(ItemBase* part) {
 	bbSmoke->setZValue(std::numeric_limits<double>::max());
 	bbSmoke->setOpacity(0.7);
 	schSmoke->setOpacity(0.7);
+
+	//Scale the smoke images
+	QRectF bbPartBoundingBox = m_sch2bbItemHash.value(part)->boundingRectWithoutLegs();
+	QRectF schSmokeBoundingBox = schSmoke->boundingRect();
+	QRectF schPartBoundingBox = part->boundingRect();
+	QRectF bbSmokeBoundingBox = bbSmoke->boundingRect();
+	std::cout << "bbSmokeBoundingBox w and h: " << bbSmokeBoundingBox.width() << " " << bbSmokeBoundingBox.height() << std::endl;
+
+	double scaleWidth = bbPartBoundingBox.width()/schSmokeBoundingBox.width();
+	double scaleHeight = bbPartBoundingBox.height()/schSmokeBoundingBox.height();
+	double scale;
+	(scaleWidth < scaleHeight) ? scale = scaleWidth : scale = scaleHeight;
+	if (scale > 1) {
+		//we can scale the smoke
+		bbSmoke->setScale(scale);
+	}else{
+		scale = 1; //Do not scale down the smoke
+	}
+
+	//Center the smoke in bb (bottom right corner of the smoke at the center of the part)
+	bbSmoke->setPos(QPointF(bbPartBoundingBox.width()/2-bbSmokeBoundingBox.width()*scale,
+						 bbPartBoundingBox.height()/2-bbSmokeBoundingBox.height()*scale));
+
+	//Scale sch image
+	scaleWidth = schPartBoundingBox.width()/schSmokeBoundingBox.width();
+	scaleHeight = schPartBoundingBox.height()/schSmokeBoundingBox.height();
+	(scaleWidth < scaleHeight) ? scale = scaleWidth : scale = scaleHeight;
+	if (scale > 1) {
+		//we can scale the smoke
+		schSmoke->setScale(scale);
+	}else{
+		scale = 1; //Do not scale down the smoke
+	}
+
+	//Center the smoke in sch view (bottom right corner of the smoke at the center of the part)
+	schSmoke->setPos(QPointF(schPartBoundingBox.width()/2-schSmokeBoundingBox.width()*scale,
+							 schPartBoundingBox.height()/2-schSmokeBoundingBox.height()*scale));
+
 	part->addSimulationGraphicsItem(schSmoke);
 	m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbSmoke);
 }
@@ -472,7 +510,7 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 	bbScreen->setScale((0.8*bbMultBoundingBox.width())/bbBoundingBox.width());
 	schScreen->setScale((0.5*schMultBoundingBox.width())/schBoundingBox.width());
 
-	//Update the boundiong box after scaling them
+	//Update the bounding box after scaling them
 	bbBoundingBox = bbScreen->mapRectToParent(bbScreen->boundingRect());
 	schBoundingBox = schScreen->mapRectToParent(schScreen->boundingRect());
 

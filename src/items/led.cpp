@@ -183,9 +183,12 @@ void LED::setBrightness(double brightness){
 	if (brightness < 0) brightness = 0;
 
 	//Find the new color values
-	red = offColor*red + brightness*red;
-	green = offColor*green + brightness*green;
-	blue = offColor*blue + brightness*blue;
+	//The color achives maximum intensity when brightness = 0.25
+	double brightnessColor = brightness * 4.0;
+	if (brightnessColor > 1) brightnessColor = 1;
+	red = offColor*red + brightnessColor*red;
+	green = offColor*green + brightnessColor*green;
+	blue = offColor*blue + brightnessColor*blue;
 	if(red > 255) red = 255;
 	if(green > 255) green = 255;
 	if(blue > 255) blue = 255;

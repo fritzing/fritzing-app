@@ -88,6 +88,7 @@ public:
 	void setBrightness(double);
 	void setBrightnessRGB(double brightnessR, double brightnessG, double brightnessB);
 	void resetBrightness();
+	QHash<QString, QString> prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys);
 
 protected:
 	void setColor(const QString & color);

@@ -411,3 +411,18 @@ ViewLayer::ViewID Resistor::useViewIDForPixmap(ViewLayer::ViewID vid, bool swapp
 
 	return ItemBase::useViewIDForPixmap(vid, swappingEnabled);
 }
+
+QHash<QString, QString> Resistor::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys)
+{
+	QHash<QString, QString> props = ItemBase::prepareProps(modelPart, wantDebug, keys);
+
+	// ensure resistance and other properties are after family;
+	if (keys.removeOne("resistance"))
+		keys.insert(1, "resistance");
+	if (keys.removeOne("tolerance"))
+		keys.insert(2, "tolerance");
+	if (keys.removeOne("power"))
+		keys.insert(3, "power");
+
+	return props;
+}

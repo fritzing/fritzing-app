@@ -314,3 +314,14 @@ ViewLayer::ViewID LED::useViewIDForPixmap(ViewLayer::ViewID vid, bool swappingEn
 
 	return ItemBase::useViewIDForPixmap(vid, swappingEnabled);
 }
+
+QHash<QString, QString> LED::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys)
+{
+	QHash<QString, QString> props = ItemBase::prepareProps(modelPart, wantDebug, keys);
+
+	// ensure color and other properties are after family;
+	if (keys.removeOne("color")) keys.insert(1, "color");
+	if (keys.removeOne("current")) keys.insert(2, "current");
+
+	return props;
+}

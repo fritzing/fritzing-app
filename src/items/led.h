@@ -82,6 +82,7 @@ public:
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 	void setBrightness(double);
 	void resetBrightness();
+	QHash<QString, QString> prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys);
 
 protected:
 	void setColor(const QString & color);

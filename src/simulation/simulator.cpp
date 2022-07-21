@@ -1061,6 +1061,32 @@ void Simulator::updateDcMotor(ItemBase * part) {
 		schRotate = new QGraphicsSvgItem(image, part);
 		if (!bbRotate || !schRotate) return;
 
+		//Scale the smoke images
+		QRectF bbPartBoundingBox = m_sch2bbItemHash.value(part)->boundingRectWithoutLegs();
+		QRectF schRotateBoundingBox = schRotate->boundingRect();
+		QRectF schPartBoundingBox = part->boundingRect();
+		QRectF bbRotateBoundingBox = bbRotate->boundingRect();
+
+
+		double scaleWidth = bbPartBoundingBox.width()/bbRotateBoundingBox.width();
+		double scaleHeight = bbPartBoundingBox.height()/bbRotateBoundingBox.height();
+		double scale;
+		scale = std::max(scaleWidth, scaleHeight)*0.5;
+		bbRotate->setScale(scale);
+
+		//Center the arrow in bb
+		bbRotate->setPos(QPointF(bbPartBoundingBox.width()/2-bbRotateBoundingBox.width()*scale/2,
+							 bbPartBoundingBox.height()/2-bbRotateBoundingBox.height()*scale/2));
+
+		scaleWidth = schPartBoundingBox.width()/schRotateBoundingBox.width();
+		scaleHeight = schPartBoundingBox.height()/schRotateBoundingBox.height();
+		scale = std::max(scaleWidth, scaleHeight)*0.5;
+		schRotate->setScale(scale);
+
+		//Center the arrow in bb
+		schRotate->setPos(QPointF(schPartBoundingBox.width()/2-schRotateBoundingBox.width()*scale/2,
+							 schPartBoundingBox.height()/2-schRotateBoundingBox.height()*scale/2));
+
 		schRotate->setZValue(std::numeric_limits<double>::max());
 		bbRotate->setZValue(std::numeric_limits<double>::max());
 		part->addSimulationGraphicsItem(schRotate);

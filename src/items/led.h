@@ -37,7 +37,8 @@ public:
 	~LedLight() {
 	};
 	void setLight(double brightness, int red, int green, int blue){
-		if (brightness < 0.15)
+		//Only set light coming out if brightness is bigger than 0.25
+		if (brightness < 0.25)
 			brightness = 0.0;
 		Capacitor* led = dynamic_cast<Capacitor *>(parentItem());
 		if (led) {

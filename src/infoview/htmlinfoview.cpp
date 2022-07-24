@@ -285,6 +285,7 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_spiceTextLabel = new TagLabel(this);
 	m_spiceTextLabel->setWordWrap(true);
 	m_spiceTextLabel->setObjectName("tagsValue");
+	m_spiceTextLabel->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse);
 	vlo->addWidget(m_spiceTextLabel);
 
 	m_tagLabel = new QLabel(tr("Tags"), NULL);
@@ -295,6 +296,7 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_tagsTextLabel = new TagLabel(this);
 	m_tagsTextLabel->setWordWrap(true);
 	m_tagsTextLabel->setObjectName("tagsValue");
+	m_tagsTextLabel->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::LinksAccessibleByMouse);
 	vlo->addWidget(m_tagsTextLabel);
 	if (tinyMode) m_tagsTextLabel->setVisible(false);
 

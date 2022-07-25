@@ -875,17 +875,40 @@ void Simulator::updateDiode(ItemBase * diode) {
 void Simulator::updateLED(ItemBase * part) {
 	LED* led = dynamic_cast<LED *>(part);
 	if (led) {
-		double curr = getCurrent(part);
-		double maxCurr = getMaxPropValue(part, "current");
+		//Check if this an RGB led
+		QString rgbString = part->getProperty("rgb");
 
-		std::cout << "LED Current: " <<curr<<std::endl;
-		std::cout << "LED MaxCurrent: " <<maxCurr<<std::endl;
+		if (rgbString.isEmpty()) {
+			// Just one LED
+			double curr = getCurrent(part);
+			double maxCurr = getMaxPropValue(part, "current");
 
-		LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(part));
-		bbLed->setBrightness(curr/maxCurr);
-		if (curr > maxCurr) {
-			drawSmoke(part);
-			bbLed->setBrightness(0);
+			std::cout << "LED Current: " <<curr<<std::endl;
+			std::cout << "LED MaxCurrent: " <<maxCurr<<std::endl;
+
+			LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(part));
+			bbLed->setBrightness(curr/maxCurr);
+			if (curr > maxCurr) {
+				drawSmoke(part);
+				bbLed->setBrightness(0);
+			}
+		} else {
+				// The part is an RGB LED
+				double currR = getCurrent(part, "R");
+				double currG = getCurrent(part, "G");
+				double currB = getCurrent(part, "B");
+				double curr = std::max({currR, currG, currB});
+				double maxCurr = getMaxPropValue(part, "current");
+
+				std::cout << "LED Current (R, G, B): " << currR << " " << currG << " " << currB <<std::endl;
+				std::cout << "LED MaxCurrent: " << maxCurr << std::endl;
+
+				LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(part));
+				bbLed->setBrightnessRGB(currR/maxCurr, currG/maxCurr, currB/maxCurr);
+				if (curr > maxCurr) {
+					drawSmoke(part);
+					bbLed->setBrightness(0);
+			}
 		}
 	} else {
 		//It is probably an LED display (LED matrix)

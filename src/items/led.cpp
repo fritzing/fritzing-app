@@ -54,7 +54,10 @@ QString LED::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QStr
 
 void LED::addedToScene(bool temporary)
 {
-	if (this->scene() != nullptr) {
+	//Check if this an RGB led
+	QString rgbString = this->getProperty("rgb");
+	if (this->scene() && rgbString.isEmpty()) {
+		//Set the color for the LED, does not apply if is is an RGB led
 		setColor(prop("color"));
 	}
 
@@ -132,7 +135,7 @@ void LED::setColor(const QString & color)
  * @brief Restores the original brightness of an LED.
  */
 void LED::resetBrightness() {
-	setBrightness(1-offColor);
+	setBrightness((1-offColor)/brigtnessMultiplier);
 	if(m_ledLight && this->viewID()==ViewLayer::ViewID::BreadboardView) {
 		m_ledLight->hide();
 	}
@@ -147,7 +150,7 @@ void LED::resetBrightness() {
  * @brief Changes the brightness of an LED.
  * @param[in] brightness The brightness value, its range is from 0 (off) to 1 (on)
  */
-void LED::setBrightness(double brightness){
+void LED::setBrightness(double brightness) {
 	QString errorStr;
 	int errorLine;
 	int errorColumn;
@@ -158,14 +161,21 @@ void LED::setBrightness(double brightness){
 
 	//get the color of the LED
 	QString colorString;
-	QString color = prop("color");
-	foreach (PropertyDef * propertyDef, m_propertyDefs.keys()) {
-		if (propertyDef->name.compare("color") == 0) {
-			colorString = propertyDef->adjuncts.value(color, "");
-			break;
+	QString rgbString = this->getProperty("rgb");
+	if (rgbString.isEmpty()) {
+		//If it is just one LED, use color property
+		QString color = prop("color");
+		foreach (PropertyDef * propertyDef, m_propertyDefs.keys()) {
+			if (propertyDef->name.compare("color") == 0) {
+				colorString = propertyDef->adjuncts.value(color, "");
+				break;
+			}
 		}
+		if (colorString.isEmpty()) return;
+	} else {
+		// It is an RGB led, set color to grey
+		colorString = "#E6E6E6";
 	}
-	if (colorString.isEmpty()) return;
 
 	int red = colorString.mid(1,2).toInt(nullptr, 16);
 	int green = colorString.mid(3,2).toInt(nullptr, 16);
@@ -175,8 +185,8 @@ void LED::setBrightness(double brightness){
 	if (brightness < 0) brightness = 0;
 
 	//Find the new color values
-	//The color achives maximum intensity when brightness = 0.25
-	double brightnessColor = brightness * 4.0;
+	//The color achives maximum intensity when brightness = 1/brigtnessMultiplier
+	double brightnessColor = brightness * brigtnessMultiplier;
 	if (brightnessColor > 1) brightnessColor = 1;
 	red = offColor*red + brightnessColor*red;
 	green = offColor*green + brightnessColor*green;
@@ -184,6 +194,56 @@ void LED::setBrightness(double brightness){
 	if(red > 255) red = 255;
 	if(green > 255) green = 255;
 	if(blue > 255) blue = 255;
+
+	QString newColorStr = QString("#%1%2%3")
+			.arg(red, 2, 16)
+			.arg(green, 2, 16)
+			.arg(blue, 2, 16);
+	newColorStr.replace(' ', '0');
+
+	//Change the color of the LED
+	QDomElement root = domDocument.documentElement();
+	slamColor(root, newColorStr);
+	reloadRenderer(domDocument.toString(),true);
+
+	//Add light comming out of the LED in BreadboardView
+	if(this->viewID()==ViewLayer::ViewID::BreadboardView) {
+		if(!m_ledLight) {
+			m_ledLight = new LedLight(this);
+		}
+		m_ledLight->setLight(brightness, red, green, blue);
+	}
+}
+
+/**
+ * Changes the brightness of an RGB LED based on 3 brightness parameters.
+ * A brightness of 0 reduces scales the color to 30% of the color.
+ *
+ * @brief Changes the brightness of an RGB LED.
+ * @param[in] brightness The brightness values, its range is from 0 (off) to 1 (on)
+ */
+void LED::setBrightnessRGB(double brightnessR, double brightnessG, double brightnessB) {
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+	QDomDocument domDocument;
+	if (!domDocument.setContent( BreadboardSvg.value(m_filename), &errorStr, &errorLine, &errorColumn)) {
+		return;
+	}
+
+	//The color achives maximum intensity when brightness = 0.25
+	int red = 40 + (brightnessR  * brigtnessMultiplier * 200.0);
+	int green = 40 + (brightnessG * brigtnessMultiplier * 200.0);
+	int blue = 40 + (brightnessB * brigtnessMultiplier * 200.0);
+	double brightness = std::max({brightnessR, brightnessG, brightnessB});
+
+	int maxColor = 230; //Do not saturate the colors
+	if (red > 255) red = maxColor;
+	if (red < 0) red = 0;
+	if (green > 255) green = maxColor;
+	if (green < 0) green = 0;
+	if (blue > 255) blue = maxColor;
+	if (blue < 0) blue = 0;
 
 	QString newColorStr = QString("#%1%2%3")
 			.arg(red, 2, 16)

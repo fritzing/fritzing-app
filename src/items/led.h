@@ -66,6 +66,11 @@ class LED : public Capacitor
 	//The color that remains when the brightness is set to 0
 	static constexpr double offColor = 0.3;
 
+	//The maximum color is achived when brigtness*brigtnessMultiplier=1
+	//After that, more current increases the light comming out of the LED,
+	//but it does not change the color
+	static constexpr double brigtnessMultiplier = 4.0;
+
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
 	explicit LED(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
@@ -81,6 +86,7 @@ public:
 	const QString & title();
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 	void setBrightness(double);
+	void setBrightnessRGB(double brightnessR, double brightnessG, double brightnessB);
 	void resetBrightness();
 
 protected:

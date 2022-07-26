@@ -277,6 +277,7 @@
 
 <property name="power" symbol="W" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">
 	<suffix suffix="ResistorModuleID"/>
+	<suffix suffix="PhotocellModuleID"/>
 	<suffix suffix="PotentiometerModuleID"/>
 	<suffix suffix="alps-starter-pot9mm" />
 	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3MM-2"/>
@@ -314,6 +315,18 @@
 
 <property name="distance to obstacle" symbol="%" minValue="0" maxValue="100" defaultValue="50" numeric="yes" editable="yes">
 	<suffix suffix="beab33bd7feee277622ef76dd6e79e4d"/>
+</property>
+
+<property  name="dark resistance @0.01lx" symbol="&#937;" minValue="0" maxValue="1000000000000" defaultValue="300000" numeric="yes" editable="yes">
+	<suffix suffix="PhotocellModuleID"/>
+</property>
+
+<property  name="light resistance @100lx" symbol="&#937;" minValue="0" maxValue="1000000000000" defaultValue="400" numeric="yes" editable="yes">
+	<suffix suffix="PhotocellModuleID"/>
+</property>
+
+<property  name="luminance" symbol="lx" minValue="0.001" maxValue="10000" defaultValue="10" numeric="yes" editable="yes">
+	<suffix suffix="PhotocellModuleID"/>
 </property>
 
 </properties>

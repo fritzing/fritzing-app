@@ -1303,7 +1303,8 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 
 	//DebugDialog::debug(QString("set up image elapsed (1) %1").arg(t.elapsed()) );
-	QString filename = PartFactory::getSvgFilename(modelPart, modelPartShared->imageFileName(layerAttributes.viewID, layerAttributes.viewLayerID), true, true);
+	QString imageFilename = modelPartShared->imageFileName(layerAttributes.viewID, layerAttributes.viewLayerID);
+	QString filename = PartFactory::getSvgFilename(modelPart, imageFilename, true, true);
 
 //#ifndef QT_NO_DEBUG
 	//DebugDialog::debug(QString("set up image elapsed (2) %1").arg(t.elapsed()) );
@@ -1311,7 +1312,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 	if (filename.isEmpty()) {
 		//QString deleteme = modelPartShared->domDocument()->toString();
-		layerAttributes.error = tr("file for %1 %2 not found").arg(modelPartShared->title()).arg(modelPartShared->moduleID());
+		layerAttributes.error = tr("file %1 for  %2 not found").arg(imageFilename).arg(modelPartShared->moduleID());
 		return nullptr;
 	}
 

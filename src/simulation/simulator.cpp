@@ -761,11 +761,17 @@ void Simulator::greyOutNonSimParts(const QSet<ItemBase *>& simParts) {
 	QList<QGraphicsItem *> noSimSchParts = m_schematicGraphicsView->scene()->items();
 	QList<QGraphicsItem *> noSimBbParts = m_breadboardGraphicsView->scene()->items();
 
-
 	//Remove the parts that are going to be simulated and the wires connected to them
 	QList<ConnectorItem *> bbConnectors;
 	foreach (ItemBase * part, simParts) {
-		noSimSchParts.removeAll(part);
+		foreach (QGraphicsItem * schItem, noSimSchParts) {
+			ItemBase * schPart = dynamic_cast<ItemBase *>(schItem);
+			if (!schPart) continue;
+			if (part->instanceTitle().compare(schPart->instanceTitle()) == 0) {
+				noSimSchParts.removeAll(schItem);
+			}
+		}
+
 		noSimBbParts.removeAll(m_sch2bbItemHash.value(part));
 		bbConnectors.append(m_sch2bbItemHash.value(part)->cachedConnectorItems());
 
@@ -810,7 +816,8 @@ void Simulator::greyOutParts(const QList<QGraphicsItem*> & parts) {
 
 /**
  * Removes items that are being simulated but without spice lines. Basically, remove
- * the wires and the breadboards, which are part of the simulation and leave the rest.
+ * the wires, breadboards, power symbols, etc. (which are part of the simulation) and
+ * leave the rest.
  * @param[in/out] parts A list of parts which will be filtered to remove parts that
  * are being simulated
  */
@@ -883,6 +890,19 @@ void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 		if (ruler) {
 			parts.removeAll(part);
 			continue;
+		}
+
+		ItemBase* item = dynamic_cast<ItemBase *>(part);
+		if (!item) {
+			//We only remove the parts, we do not touch other elements of the scene (text of the net labels, etc.)
+			parts.removeAll(part);
+		} else {
+			if (item->family().compare("power label") == 0
+					|| item->family().compare("net label") == 0
+					|| item->family().compare("breadboard") == 0) //hack as half+ is not generated as breadboard object, see #3873
+			{
+				parts.removeAll(part);
+			}
 		}
 	}
 }

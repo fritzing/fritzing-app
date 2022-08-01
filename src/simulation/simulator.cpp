@@ -811,6 +811,42 @@ void Simulator::greyOutParts(const QList<QGraphicsItem*> & parts) {
 		QGraphicsColorizeEffect * schEffect = new QGraphicsColorizeEffect();
 		schEffect->setColor(QColor(100,100,100));
 		part->setGraphicsEffect(schEffect);
+
+		//Add a reason for not simulate them
+		ItemBase* item = dynamic_cast<ItemBase *>(part);
+		if (item) {
+			QString msg = "NOT SIMULATED:";
+			if (item->spice().isEmpty()) {
+				//There is no SPICE model
+				msg += "\nNO SPICE";
+			} else {
+				msg += "\nNOT CONNECTED";
+			}
+			QGraphicsTextItem * infoText = new QGraphicsTextItem(msg, part);
+			infoText->setZValue(std::numeric_limits<double>::max());
+			infoText->setDefaultTextColor(QColor("black"));
+			QFont font("OCRA", 4, QFont::Normal);
+			infoText->setFont(font);
+
+			//There are issues as the size of the text changes depending on the display settings in windows
+			//This hack scales the text to match the appropiate value
+			QRectF partBoundingBox = item->boundingRectWithoutLegs();
+			QRectF infoTextBoundingBox = infoText->boundingRect();
+
+			if (infoTextBoundingBox.width() > partBoundingBox.width()) {
+				//Scale down the text to 90% percent of the parts´s width
+				double scale = partBoundingBox.width()/infoTextBoundingBox.width()*0.9;
+				infoText->setScale(scale);
+			}
+
+			//Update the bounding box after scaling them
+			infoTextBoundingBox = infoText->mapRectToParent(infoText->boundingRect());
+
+			//Set text on top of part
+			infoText->setPos(QPointF(0,-infoTextBoundingBox.height()));
+
+			item->addSimulationGraphicsItem(infoText);
+		}
 	}
 }
 

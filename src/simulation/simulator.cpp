@@ -1001,7 +1001,7 @@ void Simulator::updateCapacitor(ItemBase * part) {
 		}
 	} else {
 		//This is an electrolytic o tantalum capacitor (polarized)
-		if (v > maxV/2 || v < 0) {
+		if (v > maxV/2 || v < HarmfulNegativeVoltage) {
 			drawSmoke(part);
 		}
 	}
@@ -1094,7 +1094,8 @@ void Simulator::updateIRSensor(ItemBase * part) {
 		i = getCurrent(part, "a"); //voltage applied to the motor
 	}
 	std::cout << "IR sensor Max Iout: " << maxIout << ", current Iout " << i << std::endl;
-	if (v > maxV || v < 0 || abs(i) > maxIout) {
+	std::cout << "IR sensor Max V: " << maxV << ", current V " << v << std::endl;
+	if (v > maxV || v < HarmfulNegativeVoltage || abs(i) > maxIout) {
 		drawSmoke(part);
 		return;
 	}

@@ -119,14 +119,11 @@ void SvgIconWidget::initNames() {
 }
 
 void SvgIconWidget::cleanup() {
-	if (PluralImage) {
-		delete PluralImage;
-		PluralImage = nullptr;
-	}
-	if (SingularImage) {
-		delete SingularImage;
-		SingularImage = nullptr;
-	}
+	delete PluralImage;
+	delete SingularImage;
+	
+	PluralImage = nullptr;
+	SingularImage = nullptr;
 }
 
 ItemBase *SvgIconWidget::itemBase() const noexcept {

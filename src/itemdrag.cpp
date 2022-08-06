@@ -37,10 +37,8 @@ void ItemDrag::__dragIsDone() {
 }
 
 void ItemDrag::cleanup() {
-	if (Singleton) {
-		delete Singleton;
-		Singleton = NULL;
-	}
+	delete Singleton;
+	Singleton = NULL;
 }
 
 QHash<QObject *, QObject *> & ItemDrag::cache() {

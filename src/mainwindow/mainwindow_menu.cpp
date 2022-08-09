@@ -161,13 +161,26 @@ void MainWindow::mainLoad() {
 	                       this,
 						   tr("Select a Fritzing file to open"),
 	                       path,
-	                       tr("Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)")
+						   tr("Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)")
 	                       .arg(FritzingSketchExtension)
 	                       .arg(FritzingBundleExtension)
 	                       .arg(FritzingBundledPartExtension)
 	                       .arg(FritzingBinExtension)
-	                       .arg(FritzingBundledBinExtension)
-	                   );
+						   .arg(FritzingBundledBinExtension)
+#ifndef QT_NO_DEBUG
+				// Loading an unbundled part is useful while creating a new part.
+				// However, unbundled parts should not be distributed,
+				// since this will lead to many errors (missing files, wrong files,
+				// unreliable version numbers, different parts with using the same ID,
+				// and many more. If you want to share a new part, you can export it
+				// with Fritzing once it is finished, or manually bundle it as fzpz .
+				// Note that loading unbundled parts is already possible in the release
+				// version, too, but only via drag and drop.
+							+
+						   tr(";;Fritzing Unbundled Part (*%1)")
+						   .arg(FritzingPartExtension)
+#endif
+					   );
 
 	if (fileName.isEmpty()) return;
 

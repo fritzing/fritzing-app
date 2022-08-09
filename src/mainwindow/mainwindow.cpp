@@ -1753,7 +1753,7 @@ QList<ModelPart*> MainWindow::loadPart(const QString &fzpFile, bool addToBin) {
 	QList<ModelPart*> mps;
 	QMap<QString, QString> map;
 
-	if ( QFileInfo(fzpFile).exists()) {
+	if ( QFileInfo::exists(fzpFile)) {
 		map = TextUtils::parseFileForViewImages(fzpFile);
 		if(map.count() != 4) {
 			FMessageBox::warning(
@@ -1784,13 +1784,13 @@ QList<ModelPart*> MainWindow::loadPart(const QString &fzpFile, bool addToBin) {
 				continue;
 			}
 
-			if(!QFileInfo(path.filePath(file)).exists()) {
+			if(!QFileInfo::exists(path.filePath(file))) {
 				//tr("File '%1' for view '%2' not found in subfolder, trying prefix instead of folder.").arg(file, key)
 				// e.g. "breadboard_whatever/image.svg" -> "breadboard.image.svg"
 				file = key + "." + QFileInfo(file).fileName();
 			}
 
-			if(QFileInfo(path.filePath(file)).exists()) {
+			if(QFileInfo::exists(path.filePath(file))) {
 				if (!QFile::copy(path.filePath(file), tmpDir.filePath("svg." + file))) {
 					FMessageBox::warning(
 						this,

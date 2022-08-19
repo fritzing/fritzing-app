@@ -793,8 +793,9 @@ void ItemBase::mouseMoveEvent(QGraphicsSceneMouseEvent *)
 {
 }
 
-void ItemBase::setItemPos(QPointF & loc) {
+void ItemBase::setItemPos(const QPointF & loc) {
 	setPos(loc);
+	m_viewGeometry.setLoc(loc);
 }
 
 bool ItemBase::stickyEnabled() {

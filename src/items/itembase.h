@@ -96,7 +96,7 @@ public:
 	virtual void saveInstanceLocation(QXmlStreamWriter &) = 0;
 	virtual void writeGeometry(QXmlStreamWriter &);
 	virtual void moveItem(ViewGeometry &) = 0;
-	virtual void setItemPos(QPointF & pos);
+	virtual void setItemPos(const QPointF & pos);
 	virtual void rotateItem(double degrees, bool includeRatsnest);
 	virtual void flipItem(Qt::Orientations orientation);
 	virtual void transformItem(const QTransform &, bool includeRatsnest);

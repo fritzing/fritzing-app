@@ -156,6 +156,7 @@
 	<menuItem value="2 MHz" />
 	<menuItem value="4 MHz" />
 	<menuItem value="8 MHz" />
+	<menuItem value="12 MHz" />
 	<menuItem value="16 MHz" />
 	<menuItem value="20 MHz" />
 	<menuItem value="25 MHz" />

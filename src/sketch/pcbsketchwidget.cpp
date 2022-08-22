@@ -1266,7 +1266,7 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 				rotated = true;
 			}
 			auto oldPos = kinChief->pos();
-			kinChief->setItemPos(r.topLeft());
+			kinChief->setLocation(r.topLeft());
 			QRectF r2 = r;
 			QList<QGraphicsItem *> onNewItem = getCollidingItems(newItem, board);
 			newItem->collidesWithItem(board);
@@ -1276,11 +1276,11 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 			while (!getCollidingItems(newItem, board).empty()) {
 				r.setX(r.x() + dir.x() * newWidth);
 				r.setY(r.y() + dir.y() * newHeight);
-				kinChief->setItemPos(r.topLeft());
+				kinChief->setLocation(r.topLeft());
 				if (!board->sceneBoundingRect().contains(newItem->sceneBoundingRect())) {
 					DebugDialog::debug(QString("change dir"));
 					r = r2;
-					kinChief->setItemPos(r.topLeft());
+					kinChief->setLocation(r.topLeft());
 					if (dir.x() > dir.y()) {
 						dir = QPointF(0, 1);
 					} else {
@@ -1293,7 +1293,7 @@ ItemBase * PCBSketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, V
 				if (rotated) {
 					kinChief->rotateItem(-90, false);
 				}
-				kinChief->setItemPos(oldPos);
+				kinChief->setLocation(oldPos);
 				rect.height = 0;
 			} else {
 				alignOneToGrid(newItem);

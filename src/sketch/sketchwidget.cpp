@@ -9418,6 +9418,11 @@ long SketchWidget::swapStart(SwapThing & swapThing, bool master) {
 		QTransform m(oldTransform.m11(), oldTransform.m12(), oldTransform.m21(), oldTransform.m22(), 0, 0);
 		new TransformItemCommand(this, newID, m, m, swapThing.parentCommand);
 	}
+	if (m_infoView) {
+		m_infoView->updateLocation(itemBase->layerKinChief());
+	}
+
+
 
 	return newID;
 }

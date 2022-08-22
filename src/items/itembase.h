@@ -97,6 +97,7 @@ public:
 	virtual void writeGeometry(QXmlStreamWriter &);
 	virtual void moveItem(ViewGeometry &) = 0;
 	virtual void setItemPos(const QPointF & pos);
+	virtual void setLocation(const QPointF & loc);
 	virtual void rotateItem(double degrees, bool includeRatsnest);
 	virtual void flipItem(Qt::Orientations orientation);
 	virtual void transformItem(const QTransform &, bool includeRatsnest);
@@ -419,7 +420,6 @@ public:
 	static QString translatePropertyName(const QString & key);
 	static void setReferenceModel(ReferenceModel *);
 	static void renderOne(QDomDocument *, QImage *, const QRectF & renderRect);
-
 
 
 };

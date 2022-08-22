@@ -35,22 +35,40 @@ FGraphicsScene::FGraphicsScene( QObject * parent) : QGraphicsScene(parent)
 void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 {
 	// TODO: how do we get a QTransform?
-	QGraphicsItem * item = this->itemAt(helpEvent->scenePos(), QTransform());
-	if (item == NULL) return;
+	QList<QGraphicsItem*> itemList = this->items(helpEvent->scenePos(), Qt::IntersectsItemShape, Qt::DescendingOrder, QTransform());
 
+	bool found = false;
 	QString text;
 	QPoint point;
-	ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-	if (itemBase == NULL) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem) {
-			connectorItem->updateTooltip();
-		}
+	QGraphicsItem * item = nullptr;
 
+	//Find connectors first
+	for (int i = 0; i < itemList.size(); i++) {
+		item = itemList.at(i);
+		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		if (itemBase == NULL) {
+			ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+			if (connectorItem && !connectorItem->isHybrid()) {
+				connectorItem->updateTooltip();
+				found = true;
+				break;
+			}
+		}
 	}
-	else {
-		itemBase->updateTooltip();
+
+	//If there are not connectors, find parts
+	if (!found){
+		for (int i = 0; i < itemList.size(); i++) {
+			item = itemList.at(i);
+			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+			if (itemBase) {
+				itemBase->updateTooltip();
+				break;
+			}
+		}
 	}
+
+	if(!item) return;
 
 	if (!item->toolTip().isEmpty()) {
 		text = item->toolTip();

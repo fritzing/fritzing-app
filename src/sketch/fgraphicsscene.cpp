@@ -40,7 +40,7 @@ void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 	bool found = false;
 	QString text;
 	QPoint point;
-	QGraphicsItem * item;
+	QGraphicsItem * item = nullptr;
 
 	//Find connectors first
 	for (int i = 0; i < itemList.size(); i++) {
@@ -68,6 +68,7 @@ void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 		}
 	}
 
+	if(!item) return;
 
 	if (!item->toolTip().isEmpty()) {
 		text = item->toolTip();

@@ -1228,7 +1228,8 @@ QString MainWindow::getExportBOM_CSV() {
 		QStringList keys;
 		QString desc = itemBase->title() + separator;
 		for ( const QString & property: properties) {
-			desc += itemBase->prop(property) + separator;
+			QString prop = itemBase->prop(property);
+			desc += prop.replace('\t', ' ') + separator;
 		}
 		++descrs[desc];
 		assembly += itemBase->instanceTitle() + separator + desc + "\n";

@@ -41,6 +41,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QLineEdit>
 #include <QApplication>
 #include <QEvent>
+#include <QRegularExpressionValidator>
 #include <qmath.h>
 
 static QPointF RotationCenter;
@@ -680,6 +681,8 @@ bool PaletteItemBase::collectExtraInfoPartNumber(const QString & propertyName, c
 		returnProp = TranslatedPropertyNames.value(prop);
 
 		auto * lineEdit = new QLineEdit();
+		QRegularExpressionValidator *validator = new QRegularExpressionValidator(QRegularExpression("([^ \t].*[^ \t]|[^ \t])"), this);
+		lineEdit->setValidator(validator);
 		lineEdit->setEnabled(swappingEnabled);
 		QString current = m_modelPart->localProp(propertyName).toString();
 		lineEdit->setText(current);

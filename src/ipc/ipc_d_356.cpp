@@ -67,9 +67,12 @@ QString electricalTestRecord(QString netLabel, QString partLabel, QString connec
 	QString pin = QString::number(TextUtils::getPositiveIntegers(connectorId).constFirst());
 	if (connectorName.contains("anode", Qt::CaseInsensitive)) pin = "A";
 	if (connectorName.contains("catho", Qt::CaseInsensitive)) pin = "C";
-	if (connectorName.contains("gnd", Qt::CaseInsensitive)) pin = "GND";
+	// Use the connector number instead of "GND" to avoid duplicate naming
+	//	if (connectorName.contains("gnd", Qt::CaseInsensitive)) pin = "GND";
 	if (connectorName == "-") pin = "-";
 	if (connectorName == "+") pin = "+";
+
+	int angle = (ccw_angle % 360 + 360) % 360;
 
 	const char setr[]{"%3d%-14.14s   %-6.6s-%4.4s%1.1s%1.1s%04d%1sA%02dX%+07dY%+07dX%04dY%04dR%03d S%1d     \n"};
 	QString s = QString::asprintf(setr,
@@ -86,7 +89,7 @@ QString electricalTestRecord(QString netLabel, QString partLabel, QString connec
 								  y,
 								  w,
 								  h,
-								  ccw_angle,
+								  angle,
 								  soldermask
 								  );
 	return s;

@@ -984,7 +984,9 @@ void Simulator::updateIRSensor(ItemBase * part) {
 	double minV = getMaxPropValue(part, "voltage (min)");
 	double maxIout = getMaxPropValue(part, "max output current");
 	std::cout << "IR sensor VCC range: " << maxV << " " << minV << std::endl;
-	ConnectorItem *gnd, *vcc, *out;
+	ConnectorItem *gnd(nullptr);
+	ConnectorItem *vcc(nullptr);
+	ConnectorItem *out(nullptr);
 	QList<ConnectorItem *> terminals = part->cachedConnectorItems();
 	foreach(ConnectorItem * ci, terminals) {
 		if(ci->connectorSharedDescription().toLower().compare("vcc") == 0 ||

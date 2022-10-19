@@ -210,7 +210,7 @@ void Simulator::simulate() {
 		m_simulator->init();
 	}
 	catch (std::exception& e) {
-		FMessageBox::warning(nullptr, tr("Simulator Error"), tr("An error occurred when starting the simulation."));
+		FMessageBox::warning(nullptr, tr("Simulator Error"), tr("An error occurred when starting the simulation:\n%1").arg(e.what()));
 		stopSimulation();
 		return;
 	}

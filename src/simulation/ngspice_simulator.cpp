@@ -82,6 +82,7 @@ void NgSpiceSimulator::init() {
 				m_library.setFileName(library.canonicalFilePath());
 				m_library.load();
 				if( m_library.isLoaded() ) {
+					DebugDialog::debug("Ngspice loaded from " + path);
 					break;
 				} else {
 					DebugDialog::debug("Couldn't load ngspice " + m_library.errorString());
@@ -89,6 +90,11 @@ void NgSpiceSimulator::init() {
 				}
 			}
 		}
+	}
+
+	if( !m_library.isLoaded() ) {
+		DebugDialog::debug("Couldn't load ngspice " + m_library.errorString());
+		throw std::runtime_error( "Error loading ngspice shared library: " + m_library.errorString().toStdString() );
 	}
 
 	setErrorTitle(std::nullopt);

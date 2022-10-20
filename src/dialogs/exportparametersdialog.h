@@ -18,6 +18,9 @@ public:
     int getDpi();
     void setValue(int value);
 
+private Q_SLOTS:
+    void on_dpiSpinBox_valueChanged(int arg1);
+
 private:
     Ui::ExportParametersDialog *ui;
     int m_dpi;

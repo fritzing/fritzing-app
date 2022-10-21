@@ -59,7 +59,7 @@ NgSpiceSimulator::~NgSpiceSimulator() {
 void NgSpiceSimulator::init() {
 	if (m_isInitialized) return;
 
-	m_library.setFileName("libngspice.0.dylib");
+	m_library.setFileName("ngspice");
 	m_library.load();
 
 	QStringList libPaths = QStringList({ QCoreApplication::applicationDirPath()

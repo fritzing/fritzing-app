@@ -847,7 +847,7 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 		if (!originalPath.contains(MultipleZs)) continue;
 
 		multipleContours = true;
-		QStringList subpaths = path.attribute("d").split("z", Qt::SkipEmptyParts);
+		QStringList subpaths = path.attribute("d").split("z", Qt::SkipEmptyParts, Qt::CaseInsensitive);
 		Q_FOREACH (QString subpath, subpaths) {
 			if (!subpath.trimmed().startsWith("m", Qt::CaseInsensitive)) {
 				contoursOK = false;

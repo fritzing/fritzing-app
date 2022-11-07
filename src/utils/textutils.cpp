@@ -1857,22 +1857,7 @@ QSizeF TextUtils::parseForWidthAndHeight(QXmlStreamReader & svg, QRectF & viewBo
 				size.setHeight(h);
 
 				if (getViewBox) {
-					bool gotViewBox = false;
-					QString vb = svg.attributes().value("viewBox").toString();
-					QStringList vbs = vb.split(QRegularExpression(",| "));
-					if (vbs.count() == 4) {
-						bool ok = false;
-						double d[4];
-						for (int i = 0; i < 4; i++) {
-							d[i] = vbs.at(i).toDouble(&ok);
-							if (!ok) break;
-						}
-						if (ok) {
-							gotViewBox = true;
-							viewBox.setRect(d[0], d[1], d[2], d[3]);
-						}
-					}
-
+					bool gotViewBox = extractViewBox(svg.attributes().value("viewBox").toString(), viewBox);
 					if (!gotViewBox) {
 						chopNotDigits(hs);
 						chopNotDigits(ws);

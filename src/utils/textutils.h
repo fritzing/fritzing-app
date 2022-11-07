@@ -104,6 +104,7 @@ public:
 	static bool writeUtf8(const QString & fileName, const QString & text);
 	static bool writeUtf8(const QString & fileName, const QByteArray & data);
 	static int getPinsAndSpacing(const QString & expectedFileName, QString & spacingString);
+	static bool extractViewBox(QString viewBoxString, QRectF & viewBox);
 	static QSizeF parseForWidthAndHeight(QXmlStreamReader &, QRectF & viewBox, bool getViewBox);
 	static QSizeF parseForWidthAndHeight(QXmlStreamReader &);
 	static QSizeF parseForWidthAndHeight(const QString & svg, QRectF & viewBox, bool getViewBox);

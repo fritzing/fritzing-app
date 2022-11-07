@@ -1704,6 +1704,24 @@ int TextUtils::getPinsAndSpacing(const QString & expectedFileName, QString & spa
 	return pins;
 }
 
+bool TextUtils::extractViewBox(QString viewBoxString, QRectF & viewBox) {
+	bool gotViewBox = false;
+	QStringList vbs = viewBoxString.split(QRegularExpression(",| "));
+	if (vbs.count() == 4) {
+		bool ok = false;
+		double d[4];
+		for (int i = 0; i < 4; i++) {
+			d[i] = vbs.at(i).toDouble(&ok);
+			if (!ok) break;
+		}
+		if (ok) {
+			gotViewBox = true;
+			viewBox.setRect(d[0], d[1], d[2], d[3]);
+		}
+	}
+	return gotViewBox;
+}
+
 QSizeF TextUtils::parseForWidthAndHeight(const QString & svg)
 {
 	QRectF viewBox;

@@ -102,6 +102,24 @@ bool SvgFileSplitter::splitString(QString & contents, const QString & elementID)
 	}
 
 	QStringList superTransforms;
+
+	if (root.hasAttribute("viewBox")) {
+		QString viewBoxString = root.attribute("viewBox");
+		QRectF viewBox;
+
+		bool ok = TextUtils::extractViewBox(viewBoxString, viewBox);
+
+		if (viewBox.topLeft().x() < 0)
+		DebugDialog::debug(QString("splitString: viewBox: %1").arg(viewBoxString));
+
+		if (viewBox.topLeft().x() < 0)
+			superTransforms.append(QString("translate(%1,%2)").arg(-viewBox.topLeft().x()).arg(-viewBox.topLeft().y()));
+
+		root.setAttribute("viewBox", QString("0 0 %1 %2")
+				  .arg(viewBox.width())
+				  .arg(viewBox.height()));
+	}
+
 	QDomNode parent = element.parentNode();
 	while (!parent.isNull()) {
 		QDomElement e = parent.toElement();

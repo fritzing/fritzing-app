@@ -102,7 +102,7 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 				focusOutComboBox->setCurrentIndex(ix);
 			}
 
-			if (propertyDef->editable) {
+			if (propertyDef->editable && propertyDef->numeric) {
 				BoundedRegExpValidator * validator = new BoundedRegExpValidator(focusOutComboBox);
 				validator->setSymbol(propertyDef->symbol);
 				validator->setConverter(TextUtils::convertFromPowerPrefix);

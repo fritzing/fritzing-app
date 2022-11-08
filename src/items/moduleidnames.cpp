@@ -78,3 +78,4 @@ const QString ModuleIDNames::SchematicFrameModuleIDName = "SchematicFrameModuleI
 const QString ModuleIDNames::CopperBlockerModuleIDName = "BlockerModuleID";
 const QString ModuleIDNames::Copper0BlockerModuleIDName = "Copper0BlockerModuleID";
 const QString ModuleIDNames::Copper1BlockerModuleIDName = "Copper1BlockerModuleID";
+const QString ModuleIDNames::CustomSpiceModuleIDName = "CustomSpiceModuleIDName";

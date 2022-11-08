@@ -315,4 +315,8 @@
 	<suffix suffix="beab33bd7feee277622ef76dd6e79e4d"/>
 </property>
 
+<property name="spice model" symbol="" minValue="" maxValue="" defaultValue="" numeric="no" editable="yes">
+	<suffix suffix="CustomSpiceModuleID"/>
+</property>
+
 </properties>

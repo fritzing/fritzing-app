@@ -80,6 +80,7 @@ public:
 	static const QString CopperBlockerModuleIDName;
 	static const QString Copper1BlockerModuleIDName;
 	static const QString Copper0BlockerModuleIDName;
+	static const QString CustomSpiceModuleIDName;
 };
 
 #endif

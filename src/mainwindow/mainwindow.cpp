@@ -85,6 +85,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../partseditor/pemainwindow.h"
 #include "../help/firsttimehelpdialog.h"
 #include "../simulation/simulator.h"
+#include "../simulation/FProbeStartSimulator.h"
 
 FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 {
@@ -553,6 +554,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 		m_fileProgressDialog->setValue(98);
 	}
 
+	new FProbeStartSimulator(m_simulator);
 }
 
 MainWindow::~MainWindow()

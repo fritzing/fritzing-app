@@ -46,6 +46,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/logoitem.h"
 #include "../dialogs/groundfillseeddialog.h"
 #include "../version/version.h"
+#include "../items/FProbeR1PosPCB.h"
+#include "../items/FProbeRPartLabel.h"
 
 #include <limits>
 #include <QApplication>
@@ -90,6 +92,9 @@ PCBSketchWidget::PCBSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
 
 	m_routingStatus.zero();
 	m_cleanType = noClean;
+
+	new FProbeR1PosPCB(this);
+	new FProbeRPartLabel(this);
 }
 
 void PCBSketchWidget::setWireVisible(Wire * wire)

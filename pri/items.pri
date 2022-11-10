@@ -48,6 +48,9 @@ HEADERS += \
     src/items/via.h \
     src/items/virtualwire.h \
     src/items/wire.h \
+    src/items/FProbeR1PosPCB.h \
+    src/items/FProbeRPartLabel.h \
+    src/items/FProbeSwitchPackage.h \
 
 
 SOURCES += \
@@ -85,3 +88,6 @@ SOURCES += \
     src/items/via.cpp \
     src/items/virtualwire.cpp \
     src/items/wire.cpp \
+    src/items/FProbeR1PosPCB.cpp \
+    src/items/FProbeRPartLabel.cpp \
+    src/items/FProbeSwitchPackage.cpp \

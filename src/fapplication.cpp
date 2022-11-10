@@ -62,6 +62,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "help/firsttimehelpdialog.h"
 #include "help/aboutbox.h"
 #include "version/partschecker.h"
+#include "testing/FTesting.h"
 
 // dependency injection :P
 #include "referencemodel/sqlitereferencemodel.h"
@@ -378,6 +379,14 @@ int FApplication::init() {
 		        (m_arguments[i].compare("-debug", Qt::CaseInsensitive) == 0)||
 		        (m_arguments[i].compare("--debug", Qt::CaseInsensitive) == 0)) {
 			DebugDialog::setEnabled(true);
+			toRemove << i;
+		}
+
+		if ((m_arguments[i].compare("-ftesting", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("--ftesting", Qt::CaseInsensitive) == 0)) {
+			DebugDialog::setEnabled(true);
+			std::shared_ptr<FTesting> fTesting = FTesting::getInstance();
+			fTesting->init();
 			toRemove << i;
 		}
 

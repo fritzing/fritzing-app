@@ -40,6 +40,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/clickablelabel.h"
 #include "../utils/familypropertycombobox.h"
 #include "../referencemodel/referencemodel.h"
+#include "../items/FProbeSwitchPackage.h"
 
 #include <QScrollBar>
 #include <QTimer>
@@ -1634,6 +1635,9 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 
 		returnWidget = comboBox;
 		m_propsMap.insert(prop, tempValue);
+		if (prop.compare("package", Qt::CaseInsensitive) == 0) {
+			new FProbeSwitchPackage(comboBox);
+		}
 		return true;
 	}
 

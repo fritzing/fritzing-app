@@ -51,7 +51,7 @@ static QDir ___emptyDir___;
 static QByteArray ___emptyByteArray___;
 
 static const QString OCRAFontName("OCRA");
-static const QString OCRFFontName("OCR-Fritzing mono");
+static const QString OCRFFontName("OCR-Fritzing-mono");
 
 static const QString ResourcePath(":/resources/");
 

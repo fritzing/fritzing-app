@@ -280,7 +280,7 @@
         <file>resources/fonts/DroidSans-Bold.ttf</file>
         <file>resources/fonts/NOTICE</file>
         <file>resources/fonts/OCRA.ttf</file>
-        <file>resources/fonts/OCR-Fritzing_mono.otf</file>
+        <file>resources/fonts/OCR-Fritzing-mono.otf</file>
         <file>resources/bins/my_parts.fzb</file>
         <file>resources/bins/search.fzb</file>
         <file>resources/bins/temp.fzb</file>

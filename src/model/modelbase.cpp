@@ -147,6 +147,15 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();
 
+	QDomElement projectProperties = root.firstChildElement("project_properties");
+	if (!projectProperties.isNull()) {
+		QDomElement partLabelFont = projectProperties.firstChildElement("part_label_font");
+		if (!partLabelFont.isNull()) {
+			QString font = partLabelFont.attribute("font");
+			DebugDialog::debug(QString("project properties font: %1").arg(font));
+		}
+	}
+
 	QDomElement title = root.firstChildElement("title");
 	if (!title.isNull()) {
 		if (modelPartSharedRoot != nullptr) {

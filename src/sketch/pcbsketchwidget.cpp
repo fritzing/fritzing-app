@@ -2200,8 +2200,8 @@ ViewLayer::ViewLayerPlacement PCBSketchWidget::defaultViewLayerPlacement(ModelPa
 	return SketchWidget::defaultViewLayerPlacement(modelPart);
 }
 
-void PCBSketchWidget::setPartLabelFont(QString font) {
-
+void PCBSketchWidget::setPartLabelFont(QString fontFamily) {
+	m_partLabelFontFamily = fontFamily;
 }
 
 QString PCBSketchWidget::checkDroppedModuleID(const QString & moduleID) {

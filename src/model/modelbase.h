@@ -53,6 +53,7 @@ public:
 	static bool onCoreList(const QString & moduleID);
 
 Q_SIGNALS:
+	void loadProperties(QString property, QString value);
 	void loadedViews(ModelBase *, QDomElement & views);
 	void loadedRoot(const QString & fileName, ModelBase *, QDomElement & root);
 	void loadingInstances(ModelBase *, QDomElement & instances);

@@ -2200,6 +2200,10 @@ ViewLayer::ViewLayerPlacement PCBSketchWidget::defaultViewLayerPlacement(ModelPa
 	return SketchWidget::defaultViewLayerPlacement(modelPart);
 }
 
+void PCBSketchWidget::setPartLabelFont(QString font) {
+
+}
+
 QString PCBSketchWidget::checkDroppedModuleID(const QString & moduleID) {
 	if (moduleID.endsWith(ModuleIDNames::CopperBlockerModuleIDName)) {
 		if (dropOnBottom()) return ModuleIDNames::Copper0BlockerModuleIDName;

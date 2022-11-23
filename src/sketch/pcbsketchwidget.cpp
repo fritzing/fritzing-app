@@ -92,6 +92,7 @@ PCBSketchWidget::PCBSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
 
 	m_routingStatus.zero();
 	m_cleanType = noClean;
+	m_partLabelFontFamily = OCRAFontName;
 
 	new FProbeR1PosPCB(this);
 	new FProbeRPartLabel(this);
@@ -543,7 +544,7 @@ void PCBSketchWidget::showGroundTraces(QList<ConnectorItem *> & connectorItems, 
 }
 
 void PCBSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase * itemBase) {
-	font.setFamily(OCRAFontName);
+	font.setFamily(m_partLabelFontFamily);
 	font.setPointSize(getLabelFontSizeSmall());
 	font.setBold(false);
 	font.setItalic(false);

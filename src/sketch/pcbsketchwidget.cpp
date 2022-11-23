@@ -92,7 +92,7 @@ PCBSketchWidget::PCBSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
 
 	m_routingStatus.zero();
 	m_cleanType = noClean;
-	m_partLabelFontFamily = OCRAFontName;
+	m_partLabelFontFamily = OCRFFontName;
 
 	new FProbeR1PosPCB(this);
 	new FProbeRPartLabel(this);

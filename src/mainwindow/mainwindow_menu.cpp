@@ -3780,6 +3780,13 @@ void MainWindow::loadedViewsSlot(ModelBase *, QDomElement & views) {
 	}
 }
 
+void MainWindow::loadPropertiesSlot(QString property, QString value) {
+	if (property.compare("pcb_part_label_font") == 0) {
+		m_pcbGraphicsView->setPartLabelFont(value);
+	}
+
+}
+
 void MainWindow::disconnectAll() {
 	m_currentGraphicsView->disconnectAll();
 }

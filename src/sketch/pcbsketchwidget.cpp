@@ -2205,6 +2205,10 @@ void PCBSketchWidget::setPartLabelFont(QString fontFamily) {
 	m_partLabelFontFamily = fontFamily;
 }
 
+QString PCBSketchWidget::getPartLabelFont() {
+	return m_partLabelFontFamily;
+}
+
 QString PCBSketchWidget::checkDroppedModuleID(const QString & moduleID) {
 	if (moduleID.endsWith(ModuleIDNames::CopperBlockerModuleIDName)) {
 		if (dropOnBottom()) return ModuleIDNames::Copper0BlockerModuleIDName;

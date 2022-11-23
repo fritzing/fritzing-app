@@ -120,6 +120,7 @@ public:
 	bool dropOnBottom();
 	ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
 	void setPartLabelFont(QString fontFamily);
+	QString getPartLabelFont();
 
 public Q_SLOTS:
 	void resizeBoard(double w, double h, bool doEmit);

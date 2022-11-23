@@ -3547,6 +3547,13 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
 	}
 
 	if (m_pcbGraphicsView) {
+		QString partLabelFont = m_pcbGraphicsView->getPartLabelFont();
+		streamWriter.writeStartElement("project_properties");
+		streamWriter.writeStartElement("pcb_part_label_font");
+		streamWriter.writeAttribute("font", partLabelFont);
+		streamWriter.writeEndElement();
+		streamWriter.writeEndElement();
+
 		QList<ItemBase *> boards = m_pcbGraphicsView->findBoard();
 		if (boards.count()) {
 			streamWriter.writeStartElement("boards");

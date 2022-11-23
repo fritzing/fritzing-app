@@ -209,12 +209,6 @@ void ModelPart::saveInstances(const QString & fileName, QXmlStreamWriter & strea
 			streamWriter.writeTextElement("title",title);
 		}
 
-		streamWriter.writeStartElement("project_properties");
-		streamWriter.writeStartElement("pcb_part_label_font");
-		streamWriter.writeAttribute("font", OCRFFontName);
-		streamWriter.writeEndElement();
-		streamWriter.writeEndElement();
-
 		Q_EMIT startSaveInstances(fileName, this, streamWriter);
 
 		streamWriter.writeStartElement("instances");

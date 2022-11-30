@@ -154,13 +154,13 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		if (!partLabelFont.isNull()) {
 			QString font = partLabelFont.attribute("font");
 			DebugDialog::debug(QString("project properties font: %1").arg(font));
-			Q_EMIT loadProperties("pcb_part_label_font", font);
+			Q_EMIT loadedProperties("pcb_part_label_font", font);
 			loadedPcbFont = true;
 		}
 	}
 	if (!loadedPcbFont) {
 		DebugDialog::debug(QString("Project properties font not found. Using OCRA for backwards compatiblity."));
-		Q_EMIT loadProperties("pcb_part_label_font", OCRAFontName);
+		Q_EMIT loadedProperties("pcb_part_label_font", OCRAFontName);
 	}
 
 	QDomElement title = root.firstChildElement("title");

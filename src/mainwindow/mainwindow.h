@@ -413,7 +413,7 @@ protected Q_SLOTS:
 	void startSaveInstancesSlot(const QString & fileName, ModelPart *, QXmlStreamWriter &);
 	void loadedViewsSlot(class ModelBase *, QDomElement & views);
 	void loadedRootSlot(const QString & filename, ModelBase *, QDomElement & views);
-	void loadPropertiesSlot(const QString & property, const QString & value);
+	void loadedPropertiesSlot(const QString & property, const QString & value);
 	void obsoleteSMDOrientationSlot();
 	void exportNormalizedSVG();
 	void exportNormalizedFlattenedSVG();

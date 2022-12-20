@@ -165,6 +165,14 @@ void InfoGraphicsView::getBendpointWidths(class Wire *, double w, double & w1, d
 void InfoGraphicsView::getLabelFont(QFont &, QColor &, ItemBase *) {
 }
 
+QSharedPointer<ProjectProperties> InfoGraphicsView::getProjectProperties() {
+	return QSharedPointer<ProjectProperties>();
+}
+
+void InfoGraphicsView::setProjectProperties(QSharedPointer<ProjectProperties> projectProperties) {
+	Q_UNUSED(projectProperties);
+}
+
 double InfoGraphicsView::getLabelFontSizeTiny() {
 	return 5;
 }

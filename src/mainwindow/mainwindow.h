@@ -43,6 +43,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "fritzingwindow.h"
 #include "sketchareawidget.h"
 #include "../viewlayer.h"
+#include "../project_properties.h"
 #include "../program/programwindow.h"
 #include "../svg/svg2gerber.h"
 #include "../routingstatus.h"
@@ -413,7 +414,7 @@ protected Q_SLOTS:
 	void startSaveInstancesSlot(const QString & fileName, ModelPart *, QXmlStreamWriter &);
 	void loadedViewsSlot(class ModelBase *, QDomElement & views);
 	void loadedRootSlot(const QString & filename, ModelBase *, QDomElement & views);
-	void loadedPropertiesSlot(const QString & property, const QString & value);
+	void loadedProjectPropertiesSlot(const QDomElement & projectProperties);
 	void obsoleteSMDOrientationSlot();
 	void exportNormalizedSVG();
 	void exportNormalizedFlattenedSVG();
@@ -985,6 +986,7 @@ protected:
 	QGraphicsItem * m_watermark;
 	QList<QGraphicsItem*> m_selectedItems;
 	QColor m_bgColor;
+	QSharedPointer<ProjectProperties> m_projectProperties;
 
 public:
 	static int AutosaveTimeoutMinutes;

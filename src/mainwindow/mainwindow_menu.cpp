@@ -385,15 +385,16 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	        this, SLOT(obsoleteSMDOrientationSlot()), Qt::DirectConnection);
 	connect(m_sketchModel, SIGNAL(oldSchematicsSignal(const QString &, bool &)),
 	        this, SLOT(oldSchematicsSlot(const QString &, bool &)), Qt::DirectConnection);
-	connect(m_sketchModel, SIGNAL(loadedProperties(const QString &, const QString &)),
-		this, SLOT(loadedPropertiesSlot(const QString &, const QString &)), Qt::DirectConnection);
+	connect(m_sketchModel, SIGNAL(loadedProjectProperties(const QDomElement &)),
+		this, SLOT(loadedProjectPropertiesSlot(const QDomElement &)), Qt::DirectConnection);
+
 	m_obsoleteSMDOrientation = false;
 
 	m_sketchModel->loadFromFile(fileName, m_referenceModel, modelParts, true);
 
 	//DebugDialog::debug("core loaded");
-	disconnect(m_sketchModel, SIGNAL(loadedProperties(const QString &, const QString &)),
-		   this, SLOT(loadedPropertiesSlot(const QString &, const QString &)));
+	disconnect(m_sketchModel, SIGNAL(loadedProjectProperties(const QDomElement &)),
+		this, SLOT(loadedProjectPropertiesSlot(const QDomElement &)));
 	disconnect(m_sketchModel, SIGNAL(loadedViews(ModelBase *, QDomElement &)),
 	           this, SLOT(loadedViewsSlot(ModelBase *, QDomElement &)));
 	disconnect(m_sketchModel, SIGNAL(loadedRoot(const QString &, ModelBase *, QDomElement &)),
@@ -3546,14 +3547,9 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
 		streamWriter.writeTextElement("originalFileName", m_fwFilename);
 	}
 
-	if (m_pcbGraphicsView) {
-		QString partLabelFont = m_pcbGraphicsView->getPartLabelFont();
-		streamWriter.writeStartElement("project_properties");
-		streamWriter.writeStartElement("pcb_part_label_font");
-		streamWriter.writeAttribute("font", partLabelFont);
-		streamWriter.writeEndElement();
-		streamWriter.writeEndElement();
+	m_projectProperties->saveProperties(streamWriter);
 
+	if (m_pcbGraphicsView) {
 		QList<ItemBase *> boards = m_pcbGraphicsView->findBoard();
 		if (boards.count()) {
 			streamWriter.writeStartElement("boards");
@@ -3791,11 +3787,8 @@ void MainWindow::loadedViewsSlot(ModelBase *, QDomElement & views) {
 	}
 }
 
-void MainWindow::loadedPropertiesSlot(const QString & property, const QString & value) {
-	if (property.compare("pcb_part_label_font") == 0) {
-		m_pcbGraphicsView->setPartLabelFont(value);
-	}
-
+void MainWindow::loadedProjectPropertiesSlot(const QDomElement & projectProperties) {
+	m_projectProperties->load(projectProperties);
 }
 
 void MainWindow::disconnectAll() {

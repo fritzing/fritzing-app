@@ -555,6 +555,11 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	}
 
 	new FProbeStartSimulator(m_simulator);
+
+	m_projectProperties = QSharedPointer<ProjectProperties>(new ProjectProperties());
+	m_breadboardGraphicsView->setProjectProperties(m_projectProperties);
+	m_schematicGraphicsView->setProjectProperties(m_projectProperties);
+	m_pcbGraphicsView->setProjectProperties(m_projectProperties);
 }
 
 MainWindow::~MainWindow()

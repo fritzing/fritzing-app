@@ -41,6 +41,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/misc.h"
 #include "../utils/graphutils.h"
 #include "../commands.h"
+#include "../project_properties.h"
 
 #include "renderthing.h"
 
@@ -332,6 +333,8 @@ public:
 	void showPartLabelForCommand(long id, bool showIt);
 	void checkPartLabelLayerVisibilityForCommand(long itemID);
 	void resizeJumperItem(long id, QPointF pos, QPointF c0, QPointF c1);
+	QSharedPointer<ProjectProperties> getProjectProperties();
+	void setProjectProperties(QSharedPointer<ProjectProperties> projectProperties);
 
 protected:
 	void dragEnterEvent(QDragEnterEvent *);
@@ -747,6 +750,8 @@ protected:
 	bool m_everZoomed = false;
 	double m_ratsnestOpacity = 0.0;
 	double m_ratsnestWidth = 0.0;
+	bool m_doPartLabelFontCutoffCorrectionFlag = true;
+	QSharedPointer<ProjectProperties> m_projectProperties;
 
 public:
 	static ViewLayer::ViewLayerID defaultConnectorLayer(ViewLayer::ViewID viewId);

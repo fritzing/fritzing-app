@@ -92,7 +92,6 @@ PCBSketchWidget::PCBSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
 
 	m_routingStatus.zero();
 	m_cleanType = noClean;
-	m_partLabelFontFamily = OCRFFontName;
 
 	new FProbeR1PosPCB(this);
 	new FProbeRPartLabel(this);
@@ -544,7 +543,7 @@ void PCBSketchWidget::showGroundTraces(QList<ConnectorItem *> & connectorItems, 
 }
 
 void PCBSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase * itemBase) {
-	font.setFamily(m_partLabelFontFamily);
+	font.setFamily(m_projectProperties->getProjectProperty(ProjectPropertyKeyPcbPartLabelFont));
 	font.setPointSize(getLabelFontSizeSmall());
 	font.setBold(false);
 	font.setItalic(false);
@@ -2199,14 +2198,6 @@ ViewLayer::ViewLayerPlacement PCBSketchWidget::defaultViewLayerPlacement(ModelPa
 	if (modelPart->moduleID() == ModuleIDNames::GroundPlaneModuleIDName) return ViewLayer::NewBottom;
 
 	return SketchWidget::defaultViewLayerPlacement(modelPart);
-}
-
-void PCBSketchWidget::setPartLabelFont(QString fontFamily) {
-	m_partLabelFontFamily = fontFamily;
-}
-
-QString PCBSketchWidget::getPartLabelFont() {
-	return m_partLabelFontFamily;
 }
 
 QString PCBSketchWidget::checkDroppedModuleID(const QString & moduleID) {

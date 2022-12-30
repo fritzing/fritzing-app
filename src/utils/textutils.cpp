@@ -1922,6 +1922,7 @@ void TextUtils::fixStyleAttribute(QDomElement & element)
 	fixStyleAttribute(element, style, "fill-opacity");
 	fixStyleAttribute(element, style, "stroke-opacity");
 	fixStyleAttribute(element, style, "font-size");
+	fixStyleAttribute(element, style, "stroke-dasharray");
 
 	if (style.trimmed().isEmpty()) {
 		element.removeAttribute("style");

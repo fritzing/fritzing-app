@@ -758,6 +758,7 @@ void FApplication::registerFonts() {
 	*/
 
 
+	QFont::insertSubstitution(OCRAFontName, OCRFFontName);
 }
 
 bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad) {

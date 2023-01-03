@@ -25,10 +25,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <utility>
 
 ProjectProperties::ProjectProperties() {
-	m_propertiesMap[ProjectPropertyKeyPcbPartLabelFont] = OCRFFontName;
 	m_propertiesMap[ProjectPropertyKeyPartLabelFontCutoffCorrection] = "yes";
 	m_keys = QStringList(m_propertiesMap.keys());
-	m_OldProjectValuePropertiesMap[ProjectPropertyKeyPcbPartLabelFont] = OCRAFontName;
 	m_OldProjectValuePropertiesMap[ProjectPropertyKeyPartLabelFontCutoffCorrection] = "no";
 }
 

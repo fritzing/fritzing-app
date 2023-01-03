@@ -543,7 +543,7 @@ void PCBSketchWidget::showGroundTraces(QList<ConnectorItem *> & connectorItems, 
 }
 
 void PCBSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase * itemBase) {
-	font.setFamily(m_projectProperties->getProjectProperty(ProjectPropertyKeyPcbPartLabelFont));
+	font.setFamily(OCRFFontName);
 	font.setPointSize(getLabelFontSizeSmall());
 	font.setBold(false);
 	font.setItalic(false);

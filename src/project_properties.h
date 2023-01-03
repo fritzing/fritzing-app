@@ -27,7 +27,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDomElement>
 
 const QString ProjectPropertyKeyPartLabelFontCutoffCorrection = "part_label_font_cutoff_correction";
-const QString ProjectPropertyKeyPcbPartLabelFont = "pcb_part_label_font";
 
 class ProjectProperties {
 public:

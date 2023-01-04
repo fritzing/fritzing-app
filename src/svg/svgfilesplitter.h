@@ -87,6 +87,7 @@ protected:
 	                    double sNewWidth, double sNewHeight,
 	                    double vbWidth, double vbHeight, bool blackOnly);
 	bool normalizeAttribute(QDomElement & element, const char * attributeName, double num, double denom);
+	bool normalizeArrayAttribute(QDomElement & element, const char * attributeName, double num, double denom);
 	bool normalizeFontSize(QDomElement & element, const char * attributeName, double num, double denom);
 	void painterPathChild(QDomElement & element, QPainterPath & ppath);			// note: only partially implemented
 	void normalizeTranslation(QDomElement & element,

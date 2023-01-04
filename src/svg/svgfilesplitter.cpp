@@ -508,6 +508,48 @@ bool SvgFileSplitter::normalizeAttribute(QDomElement & element, const char * att
 	return ok;
 }
 
+bool SvgFileSplitter::normalizeArrayAttribute(QDomElement & element, const char * attributeName, double num, double denom)
+{
+	QString attributeValue = element.attribute(attributeName);
+	QRegularExpression commaSpaceSeparator("(( *, *)|( +))");
+	if (attributeValue.isEmpty()) return true;
+
+	if (attributeValue.contains(commaSpaceSeparator)) {
+		QStringList subAttributes = attributeValue.split(commaSpaceSeparator, Qt::SkipEmptyParts);
+		QStringList normalizedSubAttributes;
+		bool allOk = true;
+		for (const QString & subAttribute: std::as_const(subAttributes)) {
+			bool ok;
+			double n = subAttribute.toDouble(&ok) * num / denom;
+			if (!ok) {
+				allOk = false;
+				QString string;
+				QTextStream stream(&string);
+				element.save(stream, 0);
+				DebugDialog::debug("bad attribute " + string);
+			}
+			normalizedSubAttributes.append(QString::number(n));
+		}
+		element.setAttribute(attributeName, normalizedSubAttributes.join(", "));
+		return allOk;
+	} else {
+		if (attributeValue.compare("none") == 0) {
+			return true;
+		}
+		bool ok;
+		double n = attributeValue.toDouble(&ok) * num / denom;
+		if (!ok) {
+			QString string;
+			QTextStream stream(&string);
+			element.save(stream, 0);
+			DebugDialog::debug("bad attribute " + string);
+		}
+
+		element.setAttribute(attributeName, QString::number(n));
+		return ok;
+	}
+}
+
 QString SvgFileSplitter::shift(double x, double y, const QString & elementID, bool shiftTransforms)
 {
 	QDomElement root = m_domDocument.documentElement();

@@ -372,6 +372,7 @@ void SvgFileSplitter::normalizeChild(QDomElement & element,
 		normalizeAttribute(element, "x", sNewWidth, vbWidth);
 		normalizeAttribute(element, "y", sNewHeight, vbHeight);
 		normalizeAttribute(element, "stroke-width", sNewWidth, vbWidth);
+		normalizeArrayAttribute(element, "stroke-dasharray", sNewWidth, vbWidth);
 
 		// rx, ry for rounded rects
 		if (!element.attribute("rx").isEmpty()) {

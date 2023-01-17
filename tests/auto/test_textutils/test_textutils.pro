@@ -20,6 +20,9 @@ absolute_boost = 1
 include($$absolute_path(../../../pri/boostdetect.pri))
 
 QT += core xml
+equals(QT_MAJOR_VERSION, 6) {
+  QT += core5compat svgwidgets
+}
 #concurrent core gui network printsupport serialport sql svg widgets xml
 
 HEADERS += $$files(*.h)

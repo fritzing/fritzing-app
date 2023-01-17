@@ -7,7 +7,6 @@
 #include <QDomDocument>
 #include <QList>
 #include <QImage>
-#include <QMatrix>
 
 BOOST_AUTO_TEST_CASE( svgtext_bounds )
 {

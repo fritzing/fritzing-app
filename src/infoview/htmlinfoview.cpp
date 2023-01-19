@@ -1154,7 +1154,7 @@ void HtmlInfoView::setLocation(ItemBase * itemBase) {
 	m_yEdit->setEnabled(!itemBase->moveLock());
 
 	QString units = m_unitsLabel->text();
-	QPointF loc = itemBase->pos();
+	QPointF loc = itemBase->mapToParent(itemBase->transform().map(itemBase->mapFromParent(itemBase->pos())));
 	if (units == "px") {
 	}
 	else if (units == "in") {
@@ -1223,7 +1223,8 @@ void HtmlInfoView::xyEntry() {
 	double x = TextUtils::convertToInches(m_xEdit->text() + m_unitsLabel->text());
 	double y = TextUtils::convertToInches(m_yEdit->text() + m_unitsLabel->text());
 	if ((infoGraphicsView != nullptr) && (m_lastItemBase != nullptr)) {
-		infoGraphicsView->moveItem(m_lastItemBase, x * 90, y * 90);
+		QPointF retransformed =m_lastItemBase->mapToParent(m_lastItemBase->transform().inverted().map(m_lastItemBase->mapFromParent(QPointF(x * 90, y * 90))));
+		infoGraphicsView->moveItem(m_lastItemBase, retransformed.x(), retransformed.y());
 	}
 }
 

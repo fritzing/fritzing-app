@@ -162,23 +162,10 @@ void PartLabel::showLabel(bool showIt, ViewLayer * viewLayer) {
 		QRectF ownerRect = m_owner->boundingRect();
 		QRectF svgRect = QGraphicsSvgItem::boundingRect();
 
-		// This variable is used to calculate the vertical offset of the label box
-		// in order to maintain the position of the font inside the box after
-		// the correction of the font offset is applied. This is done to 
-		// avoid cutting of the font at the top, while maintaining
-		// compatibility with versions of Fritzing released before 1.0.0.
-		double labelOffsetY = (1.0 - m_fontOffsetFactor) * m_font.pointSizeF() * GraphicsUtils::SVGDPI / 72.0;
-
-		if (!m_enableFontOffsetCorrection) {
-			// If the correction of the font offset is not enabled,
-			// the vertical offset should be set to 0.
-			labelOffsetY = 0.0;
-		}
-
 		// Calculate the initial position of the label box.
 		QPointF initial = (flipped)
-		? m_owner->pos() + QPointF(-svgRect.width(), -svgRect.height() - labelOffsetY)
-		: m_owner->pos() + QPointF(ownerRect.width(), -svgRect.height() - labelOffsetY);
+		? m_owner->pos() + QPointF(-svgRect.width(), -svgRect.height())
+		: m_owner->pos() + QPointF(ownerRect.width(), -svgRect.height());
 
 		if (!m_initializedPos) {
 			// Set the position of the label box to the initial position

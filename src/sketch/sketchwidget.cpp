@@ -1784,6 +1784,30 @@ void SketchWidget::dragEnterEvent(QDragEnterEvent *event)
 	}
 }
 
+bool SketchWidget::dragEnterEventAuxAux(const QPoint & pos, const QPointF & offset, ModelPart * modelPart) {
+	ViewGeometry viewGeometry;
+	QPointF p = QPointF(this->mapToScene(pos)) - offset;
+	viewGeometry.setLoc(p);
+
+	long fromID = ItemBase::getNextID();
+
+	bool doConnectors = true;
+
+	// create temporary item for dragging
+	m_droppingItem = addItemAuxTemp(modelPart, defaultViewLayerPlacement(modelPart), viewGeometry, fromID, doConnectors, m_viewID, true);
+	if (!m_droppingItem) {
+		return false;
+	}
+	QSizeF size = m_droppingItem->sceneBoundingRect().size();
+	m_droppingOffset = QPointF(size.width() / 2, size.height() / 2);
+
+	QHash<long, ItemBase *> savedItems;
+	QHash<Wire *, ConnectorItem *> savedWires;
+	findAlignmentAnchor(m_droppingItem, savedItems, savedWires);
+	return true;
+}
+
+
 bool SketchWidget::dragEnterEventAux(QDragEnterEvent *event) {
 	if (!event->mimeData()->hasFormat("application/x-dnditemdata")) return false;
 
@@ -1809,25 +1833,9 @@ bool SketchWidget::dragEnterEventAux(QDragEnterEvent *event) {
 		m_droppingItem->setVisible(true);
 	}
 	else {
-		ViewGeometry viewGeometry;
-		QPointF p = QPointF(this->mapToScene(event->pos())) - offset;
-		viewGeometry.setLoc(p);
-
-		long fromID = ItemBase::getNextID();
-
-		bool doConnectors = true;
-
-		// create temporary item for dragging
-		m_droppingItem = addItemAuxTemp(modelPart, defaultViewLayerPlacement(modelPart), viewGeometry, fromID, doConnectors, m_viewID, true);
-		if (!m_droppingItem) {
+		if (!dragEnterEventAuxAux(event->pos(), offset, modelPart)) {
 			return false;
 		}
-		QSizeF size = m_droppingItem->sceneBoundingRect().size();
-		m_droppingOffset = QPointF(size.width() / 2, size.height() / 2);
-
-		QHash<long, ItemBase *> savedItems;
-		QHash<Wire *, ConnectorItem *> savedWires;
-		findAlignmentAnchor(m_droppingItem, savedItems, savedWires);
 
 		ItemDrag::cache().insert(this, m_droppingItem);
 		//m_droppingItem->setCacheMode(QGraphicsItem::ItemCoordinateCache);

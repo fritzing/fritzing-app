@@ -119,7 +119,6 @@ protected:
 	QFont m_font;
 	QSvgRenderer * m_renderer = nullptr;
 	bool m_enableFontOffsetCorrection = true;
-	const double m_fontOffsetFactor = 0.75;
 };
 
 #endif

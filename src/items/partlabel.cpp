@@ -882,12 +882,13 @@ QString PartLabel::makeSvg(bool blackOnly, double dpi, double printerScale, bool
 
 QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, double & w, double & h)
 {
+	const double fontOffsetFactor = 0.75;
 	if (m_displayText.isEmpty()) return "";
 
 	double pixels = m_font.pointSizeF() * printerScale / 72.0;
 	double y = pixels;
 	if (!m_enableFontOffsetCorrection) {
-		y *= m_fontOffsetFactor;
+		y *= fontOffsetFactor;
 	}
 
 	//DebugDialog::debug(QString("initial y:%1").arg(y));
@@ -909,7 +910,7 @@ QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, d
 		       .arg(y * dpi / printerScale)
 		       .arg(t1);
 		y += pixels;
-		w = qMax(w, t.length() * pixels * m_fontOffsetFactor);
+		w = qMax(w, t.length() * pixels * fontOffsetFactor);
 		//  DebugDialog::debug(QString("\t%1, %2").arg(w).arg(y));
 	}
 
@@ -917,7 +918,7 @@ QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, d
 
 	h = y - (pixels / 2.0);
 	if (m_enableFontOffsetCorrection) {
-		h -= (1.0 - m_fontOffsetFactor) * pixels;
+		h -= (1.0 - fontOffsetFactor) * pixels;
 	}
 
 	//QFontInfo fontInfo(m_font);

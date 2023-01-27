@@ -335,6 +335,7 @@ public:
 	void resizeJumperItem(long id, QPointF pos, QPointF c0, QPointF c1);
 	QSharedPointer<ProjectProperties> getProjectProperties();
 	void setProjectProperties(QSharedPointer<ProjectProperties> projectProperties);
+	void putItemByModuleID(const QString & moduleID);
 
 protected:
 	void dragEnterEvent(QDragEnterEvent *);

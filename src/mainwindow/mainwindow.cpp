@@ -86,6 +86,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../help/firsttimehelpdialog.h"
 #include "../simulation/simulator.h"
 #include "../simulation/FProbeStartSimulator.h"
+#include "../mainwindow/FProbeDropByModuleID.h"
 
 FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 {
@@ -555,6 +556,9 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	}
 
 	new FProbeStartSimulator(m_simulator);
+	auto fProbe = new FProbeDropByModuleID();
+
+	connect(fProbe, SIGNAL(putItemByModuleID(const QString &)), this, SLOT(putItemByModuleID(const QString &)));
 
 	m_projectProperties = QSharedPointer<ProjectProperties>(new ProjectProperties());
 	m_breadboardGraphicsView->setProjectProperties(m_projectProperties);
@@ -3390,4 +3394,8 @@ void MainWindow::enableSimulator(bool enable) {
 	if (m_simulator) {
 		m_simulator->enable(enable);
 	}
+}
+
+void MainWindow::putItemByModuleID(const QString & moduleID) {
+	m_currentGraphicsView->putItemByModuleID(moduleID);
 }

@@ -280,6 +280,7 @@ public Q_SLOTS:
 	void setGroundFillKeepout();
 	void oldSchematicsSlot(const QString & filename, bool & useOldSchematics);
 	void showWelcomeView();
+	void putItemByModuleID(const QString & moduleID);
 
 protected Q_SLOTS:
 	void mainLoad();

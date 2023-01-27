@@ -2008,6 +2008,21 @@ void SketchWidget::dropEvent(QDropEvent *event)
 
 }
 
+void SketchWidget::putItemByModuleID(const QString  & moduleID) {
+	ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
+
+	QPointF pos;
+	QDropEvent * event = new QDropEvent(pos, Qt::IgnoreAction, nullptr, Qt::NoButton, Qt::NoModifier);
+	QPointF offset;
+
+	if (!dragEnterEventAuxAux(event->pos(), offset, modelPart)) {
+		delete event;
+		return;
+	}
+
+	dropItemEvent(event);
+}
+
 void SketchWidget::dropItemEvent(QDropEvent *event) {
 	if (!m_droppingItem) return;
 

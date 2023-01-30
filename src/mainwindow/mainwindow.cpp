@@ -3397,5 +3397,7 @@ void MainWindow::enableSimulator(bool enable) {
 }
 
 void MainWindow::putItemByModuleID(const QString & moduleID) {
-	m_currentGraphicsView->putItemByModuleID(moduleID);
+	if (m_currentGraphicsView != nullptr) {
+		m_currentGraphicsView->putItemByModuleID(moduleID);
+	}
 }

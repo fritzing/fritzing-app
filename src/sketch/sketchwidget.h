@@ -340,7 +340,7 @@ public:
 protected:
 	void dragEnterEvent(QDragEnterEvent *);
 	bool dragEnterEventAux(QDragEnterEvent *);
-	bool dragEnterEventAuxAux(const QPoint & pos, const QPointF & offset, ModelPart * modelPart);
+	bool setDroppingItemAndOffset(const QPoint & pos, const QPointF & offset, ModelPart * modelPart);
 	virtual bool canDropModelPart(ModelPart *);
 
 	void dragLeaveEvent(QDragLeaveEvent *);

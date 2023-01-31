@@ -1784,7 +1784,7 @@ void SketchWidget::dragEnterEvent(QDragEnterEvent *event)
 	}
 }
 
-bool SketchWidget::dragEnterEventAuxAux(const QPoint & pos, const QPointF & offset, ModelPart * modelPart) {
+bool SketchWidget::setDroppingItemAndOffset(const QPoint & pos, const QPointF & offset, ModelPart * modelPart) {
 	ViewGeometry viewGeometry;
 	QPointF p = QPointF(this->mapToScene(pos)) - offset;
 	viewGeometry.setLoc(p);
@@ -1833,7 +1833,7 @@ bool SketchWidget::dragEnterEventAux(QDragEnterEvent *event) {
 		m_droppingItem->setVisible(true);
 	}
 	else {
-		if (!dragEnterEventAuxAux(event->pos(), offset, modelPart)) {
+		if (!setDroppingItemAndOffset(event->pos(), offset, modelPart)) {
 			return false;
 		}
 
@@ -2015,7 +2015,7 @@ void SketchWidget::putItemByModuleID(const QString  & moduleID) {
 	QDropEvent * event = new QDropEvent(pos, Qt::IgnoreAction, nullptr, Qt::NoButton, Qt::NoModifier);
 	QPointF offset;
 
-	if (!dragEnterEventAuxAux(event->pos(), offset, modelPart)) {
+	if (!setDroppingItemAndOffset(event->pos(), offset, modelPart)) {
 		delete event;
 		return;
 	}

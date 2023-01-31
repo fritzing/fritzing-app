@@ -23,8 +23,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../testing/FProbe.h"
 
-// #include "../mainwindow/mainwindow.h"
-
 #include <QObject>
 #include <QVariant>
 

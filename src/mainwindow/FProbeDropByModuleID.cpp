@@ -26,16 +26,5 @@ FProbeDropByModuleID::FProbeDropByModuleID() :
 }
 
 void FProbeDropByModuleID::write(QVariant data) {
-	QString moduleID = data.toString();
-	Q_EMIT putItemByModuleID(moduleID);
-
-	/*
-	// find modulepart by moduleID
-	// from MainWindow::loadBundledSketch
-
-	ModelPart * mp = m_referenceModel->retrieveModelPart(moduleID);
-	// Add new item with undo command
-	AddItemCommand * addItemCommand = newAddItemCommand(crossViewType, modelPart, modelPart->moduleID(), viewLayerPlacement, viewGeometry, fromID, true, -1, true, parentCommand);
-	addItemCommand->setDropOrigin(this);
-	*/
+	Q_EMIT putItemByModuleID(data.toString());
 }

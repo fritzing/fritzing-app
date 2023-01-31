@@ -558,7 +558,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	new FProbeStartSimulator(m_simulator);
 	auto fProbe = new FProbeDropByModuleID();
 
-	connect(fProbe, SIGNAL(putItemByModuleID(const QString &)), this, SLOT(putItemByModuleID(const QString &)));
+	connect(fProbe, &FProbeDropByModuleID::putItemByModuleID, this, &MainWindow::putItemByModuleID);
 
 	m_projectProperties = QSharedPointer<ProjectProperties>(new ProjectProperties());
 	m_breadboardGraphicsView->setProjectProperties(m_projectProperties);

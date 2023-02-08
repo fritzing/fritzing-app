@@ -20,6 +20,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "FProbeStartSimulator.h"
 
+#include <QThread>
+
 FProbeStartSimulator::FProbeStartSimulator(Simulator * simulator) :
 	FProbe("StartSimulator"),
 	m_simulator(simulator)
@@ -31,4 +33,5 @@ void FProbeStartSimulator::write(QVariant data) {
 	(void) data;
 	m_simulator->enable(true);
 	Q_EMIT startSimulator();
+	QThread::usleep(300000);
 }

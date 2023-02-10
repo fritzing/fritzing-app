@@ -957,7 +957,7 @@ WelcomeView QFrame QLabel {
 #tip  {
 	background: #D5E1E9;
 	border: none;
-	font-family: "OCRA";
+	font-family: "OCR-Fritzing-mono";
 	color:#2e94af;
 	font-size:13px;
 	qproperty-wordWrap: true;

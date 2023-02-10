@@ -367,7 +367,7 @@ QString Dip::makeBreadboardDipSvg(const QString & expectedFileName)
 	         .arg(pins - 1)
 	         .arg((pins / 2) - 1)
 	         .arg(pins / 2)
-	         .arg(OCRAFontName);
+		 .arg(OCRFFontName);
 	header.replace("{{", "[");
 	header.replace("}}", "]");
 	header = TextUtils::incrementTemplateString(header, 1, (spacing - (increment * 3)) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);

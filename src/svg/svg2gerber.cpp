@@ -23,6 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "svgflattener.h"
 #include <QTextStream>
 #include <QSet>
+#include <QtDebug>
 #include <qmath.h>
 
 constexpr double MaskClearance = 0.005;  // 5 mils clearance
@@ -178,13 +179,13 @@ void SVG2gerber::normalizeSVG() {
 
 	//  get rid of transforms
 	SvgFlattener flattener;
-	flattener.flattenChildren(root);
+	flattener.flattenChildren(root, SvgAttributesMap());
 
 }
 
 void SVG2gerber::convertShapes2paths(QDomNode node) {
 	// I'm a leaf node.  make me a path
-	//TODO: this should strip svg: namspaces
+	//TODO: this should strip svg: namespaces
 	if(!node.hasChildNodes()) {
 		QString tag = node.nodeName().toLower();
 		QDomElement element = node.toElement();
@@ -374,12 +375,15 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 			standardAperture(circle, apertureMap, current_dcode, dcode_index, 0);
 
 			// create circle outline
-			m_gerber_paths += QString("G01X%1Y%2D02*\n"
-			                          "G75*\n"
-			                          "G03X%1Y%2I%3J0D01*\n")
-			                  .arg(QString::number(flipx(centerx + r)))
-			                  .arg(QString::number(flipy(centery)))
-			                  .arg(QString::number(qRound(-r)));
+			m_gerber_paths += QString(
+					"G01X%1Y%2D02*\n"
+					"G75*\n"
+					"G03X%1Y%2I%3J0D01*\n"
+				)
+				.arg(QString::number(flipx(centerx + r))
+					,QString::number(flipy(centery))
+					,QString::number(qRound(-r))
+				);
 			m_gerber_paths += "G01*\n";
 		}
 	}
@@ -615,13 +619,14 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
                         QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index)
 {
-
-	//QString temp;
-	//QTextStream tempStream(&temp);
-	//polygon.save(tempStream, 1);
-
 	QString points = polygon.attribute("points");
 	QStringList pointList = points.split(QRegExp("\\s+|,"), QString::SkipEmptyParts);
+
+	if (pointList.length() < 4) {
+		qDebug() << QString("Empty polyline %1").arg(points);
+		DebugDialog::debug(QString("Empty polyline %1").arg(points), DebugDialog::Error);
+		return;
+	}
 
 	QString aperture;
 

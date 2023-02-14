@@ -264,12 +264,14 @@ QWidget* PrefsDialog::createColorForm()
 	h1->addWidget(c1);
 
 	QColor connectedColor = ItemBase::connectedColor();
-	ClickableLabel * cl1 = new ClickableLabel(tr("%1 (click to change...)").arg(connectedColor.name()), this);
-	connect(cl1, SIGNAL(clicked()), this, SLOT(setConnectedColor()));
-	cl1->setPalette(QPalette(connectedColor));
-	cl1->setAutoFillBackground(true);
-	cl1->setMargin(MARGIN);
-	h1->addWidget(cl1);
+	m_connectedColorLabel = new QLabel(tr("%1").arg(connectedColor.name()), this);
+	QPushButton * pb1 = new QPushButton(tr("%1 (click to change...)").arg(""), this);
+	connect(pb1, SIGNAL(clicked()), this, SLOT(setConnectedColor()));
+	m_connectedColorLabel->setPalette(QPalette(connectedColor));
+	m_connectedColorLabel->setAutoFillBackground(true);
+	m_connectedColorLabel->setMargin(MARGIN);
+	h1->addWidget(m_connectedColorLabel);
+	h1->addWidget(pb1);
 
 	f1->setLayout(h1);
 	layout->addWidget(f1);
@@ -284,12 +286,14 @@ QWidget* PrefsDialog::createColorForm()
 	h2->addWidget(c2);
 
 	QColor unconnectedColor = ItemBase::unconnectedColor();
-	ClickableLabel * cl2 = new ClickableLabel(tr("%1 (click to change...)").arg(unconnectedColor.name()), this);
-	connect(cl2, SIGNAL(clicked()), this, SLOT(setUnconnectedColor()));
-	cl2->setPalette(QPalette(unconnectedColor));
-	cl2->setAutoFillBackground(true);
-	cl2->setMargin(MARGIN);
-	h2->addWidget(cl2);
+	m_unconnectedColorLabel = new QLabel(tr("%1").arg(unconnectedColor.name()), this);
+	QPushButton * pb2 = new QPushButton(tr("%1 (click to change...)").arg(""), this);
+	connect(pb2, SIGNAL(clicked()), this, SLOT(setUnconnectedColor()));
+	m_unconnectedColorLabel->setPalette(QPalette(unconnectedColor));
+	m_unconnectedColorLabel->setAutoFillBackground(true);
+	m_unconnectedColorLabel->setMargin(MARGIN);
+	h2->addWidget(m_unconnectedColorLabel);
+	h2->addWidget(pb2);
 
 	f2->setLayout(h2);
 	layout->addWidget(f2);
@@ -301,36 +305,28 @@ QWidget* PrefsDialog::createColorForm()
 QWidget* PrefsDialog::createOtherForm()
 {
 	QGroupBox * formGroupBox = new QGroupBox(tr("Clear Settings"));
-	QHBoxLayout *layout = new QHBoxLayout();
-	layout->setSpacing(SPACING);
-
-	QVBoxLayout * vlayout = new QVBoxLayout();
-	vlayout->setMargin(0);
-	vlayout->setSpacing(0);
+	QVBoxLayout *layout = new QVBoxLayout();
+	layout->setMargin(0);
+	layout->setSpacing(0);
 
 	QLabel * clearLabel = new QLabel(QObject::tr("Clear all saved settings and close this dialog immediately."));
 	clearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	clearLabel->setWordWrap(true);
-	clearLabel->setFixedWidth(FORMLABELWIDTH);
-	vlayout->addWidget(clearLabel);
+	layout->addWidget(clearLabel);
 
-	vlayout->addSpacing(SPACING);
+	layout->addSpacing(SPACING);
 
 	clearLabel = new QLabel(QObject::tr("This action does not delete any files; it restores settings to their default values."));
 	clearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	clearLabel->setWordWrap(true);
-	clearLabel->setFixedWidth(FORMLABELWIDTH);
-	vlayout->addWidget(clearLabel);
+	layout->addWidget(clearLabel);
 
-	vlayout->addSpacing(SPACING);
+	layout->addSpacing(SPACING);
 
 	clearLabel = new QLabel(QObject::tr("There is no undo for this action, and no further warning!!!!"));
 	clearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	clearLabel->setWordWrap(true);
-	clearLabel->setFixedWidth(FORMLABELWIDTH);
-	vlayout->addWidget(clearLabel);
-
-	layout->addLayout(vlayout);
+	layout->addWidget(clearLabel);
 
 	QPushButton * clear = new QPushButton(QObject::tr("Clear Settings"), this);
 	connect(clear, SIGNAL(clicked()), this, SLOT(clear()));
@@ -444,9 +440,9 @@ void PrefsDialog::setConnectedColor() {
 
 	QColor c = setColorDialog.selectedColor();
 	m_settings.insert("connectedColor", c.name());
-	ClickableLabel * cl = qobject_cast<ClickableLabel *>(sender());
-	if (cl) {
-		cl->setPalette(QPalette(c));
+	if (m_connectedColorLabel) {
+		m_connectedColorLabel->setPalette(QPalette(c));
+		m_connectedColorLabel->setText(tr("%1").arg(c.name()));
 	}
 }
 
@@ -460,9 +456,9 @@ void PrefsDialog::setUnconnectedColor() {
 
 	QColor c = setColorDialog.selectedColor();
 	m_settings.insert("unconnectedColor", c.name());
-	ClickableLabel * cl = qobject_cast<ClickableLabel *>(sender());
-	if (cl) {
-		cl->setPalette(QPalette(c));
+	if (m_unconnectedColorLabel) {
+		m_unconnectedColorLabel->setPalette(QPalette(c));
+		m_unconnectedColorLabel->setText(tr("%1").arg(c.name()));
 	}
 }
 

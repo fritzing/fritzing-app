@@ -127,7 +127,7 @@ void FTabBar::paintEvent(QPaintEvent * event) {
 		// TODO: how to append spaces from the language direction
 
 		for (int i = 0; i < this->count(); ++i) {
-			QStyleOptionTabV3 tab;
+			QStyleOptionTab tab;
 			initStyleOption(&tab, 0);
 			//DebugDialog::debug(QString("state %1").arg(tab.state));
 			QString text = tabText(i);
@@ -1167,6 +1167,8 @@ void MainWindow::tabWidget_currentChanged(int index) {
 		setActionsIcons(index, actions);
 	}
 
+	setTitle();
+
 	if (widget == NULL) {
 		m_firstTimeHelpAct->setEnabled(false);
 		return;
@@ -1198,8 +1200,6 @@ void MainWindow::tabWidget_currentChanged(int index) {
 	updateLayerMenu(true);
 	updateTraceMenu();
 	updateTransformationActions();
-
-	setTitle();
 
 	if (m_infoView) {
 		m_currentGraphicsView->updateInfoView();
@@ -1688,6 +1688,114 @@ void MainWindow::loadBundledPartFromWeb() {
 }
 */
 
+QList<ModelPart*> MainWindow::loadPart(const QString &fzpFile, bool addToBin) {
+	QDir destFolder = QDir::temp();
+
+	FolderUtils::createFolderAndCdIntoIt(destFolder, TextUtils::getRandText());
+	QString tmpDirPath = destFolder.path();
+
+	QDir tmpDir(tmpDirPath);
+
+	QList<ModelPart*> mps;
+	QMap<QString, QString> map;
+
+	if ( QFileInfo(fzpFile).exists()) {
+		map = TextUtils::parseFileForViewImages(fzpFile);
+		if(map.count() != 4) {
+			FMessageBox::warning(
+				this,
+				tr("Fritzing"),
+				tr("Local part '%1' incomplete, only '%2' layers.").arg(fzpFile).arg(map.count())
+			);
+		}
+		QDir path = QFileInfo(fzpFile).path();
+		foreach(QString key, map.keys()) {
+			QString file = map[key];
+			if(!file.startsWith(key + "/")) {
+				// We can add the missing "svg." prefix here.
+				// However, we can not add the view prefix, as we would have to modify the part file.
+				// Idea: Why not let Fritzing derive the folder from the view id or a real folder name
+				// instead of the using a filename prefix? Like we do it in the above call to
+				// parseFileForViewImages(). Doing this would require some
+				// changes and a lot of tests, but might simplify creating parts in the future.
+				FMessageBox::warning(
+					this,
+					tr("Fritzing"),
+					tr("View '%1' should be prefixed with '%2/'. Trying to continue.").arg(file, key)
+				);
+			}
+
+			if (key == "icon" && file.startsWith("breadboard")) {
+				// We make an exception for icon files, allow to reuse the breadboard view.
+				continue;
+			}
+
+			if(!QFileInfo(path.filePath(file)).exists()) {
+				//tr("File '%1' for view '%2' not found in subfolder, trying prefix instead of folder.").arg(file, key)
+				// e.g. "breadboard_whatever/image.svg" -> "breadboard.image.svg"
+				file = key + "." + QFileInfo(file).fileName();
+			}
+
+			if(QFileInfo(path.filePath(file)).exists()) {
+				if (!QFile::copy(path.filePath(file), tmpDir.filePath("svg." + file))) {
+					FMessageBox::warning(
+						this,
+						tr("Fritzing"),
+						tr("Could not copy subfile '%1' to '%2'").arg(path.filePath(file), tmpDir.filePath("svg." + file))
+					);
+					return QList<ModelPart*>();
+				}
+			} else {
+				FMessageBox::warning(
+					this,
+					tr("Fritzing"),
+					tr("Local part '%1' incomplete, subfile not found '%2'").arg(fzpFile, file)
+				);
+				return QList<ModelPart*>();
+			}
+		}
+		QString fzpTemp = QFileInfo(fzpFile).fileName();
+		if(!fzpTemp.startsWith("part.")) {
+			fzpTemp = "part." + fzpTemp;
+		}
+		QFile::copy(fzpFile, tmpDir.filePath(fzpTemp));
+	} else {
+		FMessageBox::warning(
+			this,
+			tr("Fritzing"),
+			tr("Unable to open local part '%1'").arg(fzpFile)
+		);
+		return QList<ModelPart*>();
+	}
+
+
+	try {
+		mps = moveToPartsFolder(tmpDir, this, addToBin, true, FolderUtils::getUserPartsPath(), "user", true);
+	}
+	catch (const QString & msg) {
+		FMessageBox::warning(
+			this,
+			tr("Fritzing"),
+			msg
+		);
+		return QList<ModelPart*>();
+	}
+
+	if (mps.count() < 1) {
+		// if this fails, that means that the bundling failed
+		FMessageBox::warning(
+			this,
+			tr("Fritzing"),
+			tr("Unable to load part from '%1'").arg(fzpFile)
+		);
+		return QList<ModelPart*>();
+	}
+
+	FolderUtils::rmdir(tmpDirPath);
+
+	return mps;
+}
+
 QList<ModelPart*> MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 	QDir destFolder = QDir::temp();
 
@@ -1855,7 +1963,7 @@ QList<ModelPart*> MainWindow::moveToPartsFolder(QDir &unzipDir, MainWindow* mw, 
 		//DebugDialog::debug("unzip part " + file.absoluteFilePath());
 		ModelPart * mp = mw->copyToPartsFolder(file, addToAlien, prefixFolder, destFolder);
 		retval << mp;
-		if (addToBin) {
+		if (addToBin && mp) {
 			// should only be here when adding single new part
 			m_binManager->addToMyParts(mp);
 		}

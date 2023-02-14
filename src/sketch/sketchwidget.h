@@ -41,6 +41,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/misc.h"
 #include "../commands.h"
 
+#include "renderthing.h"
+
 struct ItemCount {
 	int selCount;
 	int hasLabelCount;
@@ -70,20 +72,6 @@ struct SwapThing {
 	QHash<ConnectorItem *, Connector *> swappedGender;
 	SketchWidget * bbView;
 	QMap<QString, QString> propsMap;
-};
-
-struct RenderThing {
-	bool selectedItems;
-	double printerScale;
-	bool blackOnly;
-	QRectF imageRect;
-	QRectF offsetRect;
-	double dpi;
-	bool renderBlocker;
-	QRectF itemsBoundingRect;
-	QGraphicsItem * board;
-	bool empty;
-	bool hideTerminalPoints;
 };
 
 class SizeItem : public QObject, public QGraphicsLineItem

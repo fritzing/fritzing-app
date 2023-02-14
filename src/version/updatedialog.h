@@ -51,6 +51,7 @@ signals:
 
 protected slots:
 	void releasesAvailableSlot();
+	void partsAvailableSlot();
 	void xmlErrorSlot(QXmlStreamReader::Error errorCode);
 	void httpErrorSlot(QNetworkReply::NetworkError);
 	void jsonPartsErrorSlot(QString error);
@@ -58,6 +59,7 @@ protected slots:
 	void stopClose();
 	void updateParts();
 	void onCleanRepo(class ModFileDialog *modFileDialog);
+	void openInBrowser();
 
 protected:
 	bool setAvailableReleases(const QList<struct AvailableRelease *> & availableReleases);
@@ -72,12 +74,15 @@ protected:
 	QString m_repoPath;
 	QString m_shaFromDataBase;
 	QString m_remoteSha;
+	QString m_updateUrl;
 	QLabel * m_feedbackLabel = nullptr;
 	QDialogButtonBox * m_buttonBox = nullptr;
 	QProgressBar * m_progressBar = nullptr;
 	PartsCheckerResult m_partsCheckerResult;
 	bool m_doQuit = false;
 	bool m_doClose = false;
+
+
 };
 
 

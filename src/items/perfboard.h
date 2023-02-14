@@ -66,6 +66,7 @@ protected slots:
 
 protected:
 	static bool getXY(int & x, int & y, const QString & s);
+	bool boardSizeWarning();
 
 protected:
 	static bool m_gotWarning;

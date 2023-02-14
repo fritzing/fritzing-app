@@ -729,7 +729,6 @@ QString KicadModule2Svg::drawHorizontalOblong(int posX, int posY, double xSize, 
 	}
 
 	QString middle;
-	bool gotID = false;
 
 	if (padType == "SMD") {
 		middle = QString("<rect x='%1' y='%2' width='%3' height='%4' stroke-width='0' fill='%5' />")
@@ -741,7 +740,6 @@ QString KicadModule2Svg::drawHorizontalOblong(int posX, int posY, double xSize, 
 	}
 	else {
 		if (drillX == drillY) {
-			gotID = true;
 			middle = QString("<circle fill='none' cx='%1' cy='%2' r='%3' stroke-width='%4' stroke='%5' />")
 			         .arg(posX)
 			         .arg(posY)

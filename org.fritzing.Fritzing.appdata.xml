@@ -49,7 +49,7 @@
  <!-- <url type="donation">https://fritzing.org/shop/donations/</url> -->
  <url type="translate">https://fritzing.org/support-us/language-translation/</url>
  <releases>
-  <release version="0.9.6" date="2021-02-01"/>
+  <release version="0.9.9" date="2021-09-09"/>
  </releases>
  <provides>
   <binary>Fritzing</binary>

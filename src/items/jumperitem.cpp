@@ -37,12 +37,12 @@ static QHash<ViewLayer::ViewLayerID, QString> Colors;
 
 QString makeWireImage(double w, double h, double r0x, double r0y, double r1x, double r1y, const QString & layerName, const QString & color, double thickness) {
 	return JumperWireLayerTemplate
-	       .arg(w).arg(h)
-	       .arg(w * 1000).arg(h * 1000)
-	       .arg(r0x).arg(r0y).arg(r1x).arg(r1y)
-	       .arg(layerName)
-	       .arg(color)
-	       .arg(thickness);
+		.arg(w).arg(h)
+		.arg(w * 1000).arg(h * 1000)
+		.arg(r0x).arg(r0y).arg(r1x).arg(r1y)
+		.arg(layerName
+		,color)
+		.arg(thickness);
 }
 
 
@@ -319,11 +319,12 @@ QString JumperItem::makeSvg(ViewLayer::ViewLayerID viewLayerID)
 	case ViewLayer::Copper0:
 	case ViewLayer::Copper1:
 		return Copper0LayerTemplate
-		       .arg(w).arg(h)
-		       .arg(w * GraphicsUtils::StandardFritzingDPI).arg(h * GraphicsUtils::StandardFritzingDPI)
-		       .arg(r0x).arg(r0y).arg(r1x).arg(r1y)
-		       .arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID))
-		       .arg(Colors.value(viewLayerID));
+				.arg(w).arg(h)
+				.arg(w * GraphicsUtils::StandardFritzingDPI).arg(h * GraphicsUtils::StandardFritzingDPI)
+				.arg(r0x).arg(r0y).arg(r1x).arg(r1y)
+				.arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID)
+					,Colors.value(viewLayerID)
+				);
 
 	//case ViewLayer::Silkscreen0:
 	case ViewLayer::Silkscreen1:

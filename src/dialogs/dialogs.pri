@@ -13,18 +13,28 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
+INCLUDEPATH += $$PWD
+
 HEADERS += src/dialogs/prefsdialog.h \
-	src/dialogs/pinlabeldialog.h \
-	src/dialogs/groundfillseeddialog.h \
-	src/dialogs/quotedialog.h \
-	src/dialogs/recoverydialog.h \
-	src/dialogs/setcolordialog.h \
-	src/dialogs/translatorlistmodel.h
+        src/dialogs/pinlabeldialog.h \
+        src/dialogs/groundfillseeddialog.h \
+        src/dialogs/quotedialog.h \
+        src/dialogs/recoverydialog.h \
+        src/dialogs/setcolordialog.h \
+        src/dialogs/translatorlistmodel.h \
+        src/dialogs/fabuploaddialog.h \
+        src/dialogs/fabuploadprogress.h \
+        src/dialogs/networkhelper.h
 
 SOURCES += src/dialogs/prefsdialog.cpp \
-	src/dialogs/pinlabeldialog.cpp \
-	src/dialogs/groundfillseeddialog.cpp \
-	src/dialogs/quotedialog.cpp \
-	src/dialogs/recoverydialog.cpp \
-	src/dialogs/setcolordialog.cpp \
-	src/dialogs/translatorlistmodel.cpp
+        src/dialogs/pinlabeldialog.cpp \
+        src/dialogs/groundfillseeddialog.cpp \
+        src/dialogs/quotedialog.cpp \
+        src/dialogs/recoverydialog.cpp \
+        src/dialogs/setcolordialog.cpp \
+        src/dialogs/translatorlistmodel.cpp \
+        src/dialogs/fabuploaddialog.cpp \
+        src/dialogs/fabuploadprogress.cpp \
+        src/dialogs/networkhelper.cpp
+
+FORMS += src/dialogs/fabuploaddialog.ui

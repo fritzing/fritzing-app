@@ -2228,10 +2228,10 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
 
 	if (wantDebug) {
 		props.insert("id", QString("%1 %2 %3")
-		             .arg(QString::number(id()))
-		             .arg(modelPart->moduleID())
-		             .arg(ViewLayer::viewLayerNameFromID(viewLayerID()))
-		            );
+			.arg(QString::number(id())
+			,modelPart->moduleID()
+			,ViewLayer::viewLayerNameFromID(viewLayerID()))
+		);
 		keys.insert(1, "id");
 
 		int insertAt = 2;

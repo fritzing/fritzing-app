@@ -241,7 +241,7 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
 
 	reloadRenderer(svg, true);
 
-	QPointF p = layerKinChief()->sceneBoundingRect().topLeft();
+//	QPointF p = layerKinChief()->sceneBoundingRect().topLeft();
 	QTransform transform;
 	QRectF bounds = boundingRect();
 	transform.translate(bounds.width() / 2, bounds.height() / 2);

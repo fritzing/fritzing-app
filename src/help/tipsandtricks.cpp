@@ -115,7 +115,7 @@ void TipsAndTricks::initTipSets() {
 	ts = new TipSet;
 	ts->heading = tr("part labels");
 	ts->tips << tr("To edit a part label, double-click it, or use the text input widget in the inspector window.");
-	ts->tips << tr("To display different properties in a part label, as well as rotate it, or change the font, right-click the label.");
+	ts->tips << tr("To display different properties in a part label, rotate it, or change the font, right-click the label.");
 	ts->tips << tr("To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.");
 	TipSets.append(ts);
 

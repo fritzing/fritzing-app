@@ -38,7 +38,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QList>
 #include <QPointF>
 
-#define ALLMOUSEBUTTONS (Qt::LeftButton | Qt::MidButton | Qt::RightButton | Qt::XButton1 | Qt::XButton2)
+#define ALLMOUSEBUTTONS (Qt::LeftButton | Qt::MiddleButton | Qt::RightButton | Qt::XButton1 | Qt::XButton2)
 
 typedef QPair<double, double> RealPair;
 

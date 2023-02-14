@@ -1821,8 +1821,6 @@ bool SketchWidget::dragEnterEventAux(QDragEnterEvent *event) {
 	if (!canDropModelPart(modelPart)) return false;
 
 	m_droppingWire = (modelPart->itemType() == ModelPart::Wire);
-	m_droppingOffset = offset;
-
 	if (ItemDrag::cache().contains(this)) {
 		m_droppingItem->setVisible(true);
 	}
@@ -1841,9 +1839,7 @@ bool SketchWidget::dragEnterEventAux(QDragEnterEvent *event) {
 			return false;
 		}
 		QSizeF size = m_droppingItem->sceneBoundingRect().size();
-		if (size.width() < offset.x() || size.height() < offset.y()) {
-			offset = m_droppingOffset = QPointF(size.width() / 2, size.height() / 2);
-		}
+		m_droppingOffset = QPointF(size.width() / 2, size.height() / 2);
 
 		QHash<long, ItemBase *> savedItems;
 		QHash<Wire *, ConnectorItem *> savedWires;
@@ -3277,22 +3273,16 @@ bool SketchWidget::checkMoved(bool wait)
 		return false;
 	}
 
-	int moveCount = m_savedItems.count();
-	if (moveCount <= 0) {
+	if (m_savedItems.empty()) {
 		return false;
 	}
 
-	ItemBase * saveBase = nullptr;
-	foreach (ItemBase * item, m_savedItems) {
-		saveBase = item;
-		break;
-	}
-
+	int moveCount = m_savedItems.count();
+	ItemBase * saveBase = m_savedItems.begin().value();
 	clearHoldingSelectItem();
-
-	QString moveString;
 	QString viewName = ViewLayer::viewIDName(m_viewID);
 
+	QString moveString;
 	if (moveCount == 1) {
 		moveString = tr("Move %2 (%1)").arg(viewName).arg(saveBase->title());
 	}
@@ -5366,14 +5356,14 @@ void SketchWidget::prepDeleteOtherProps(ItemBase * itemBase, long id, const QStr
 		QString buses = itemBase->prop("buses");
 		QString newBuses = propsMap.value("buses");
 		if (newBuses.isEmpty()) newBuses = buses;
-		if (!buses.isEmpty()) {
+		if (!newBuses.isEmpty()) {
 			new SetPropCommand(this, id, "buses", buses, newBuses, true, parentCommand);
 		}
 
 		QString layout = itemBase->prop("layout");
 		QString newLayout = propsMap.value("layout");
 		if (newLayout.isEmpty()) newLayout = layout;
-		if (!layout.isEmpty()) {
+		if (!newLayout.isEmpty()) {
 			new SetPropCommand(this, id, "layout", layout, newLayout, true, parentCommand);
 		}
 	}
@@ -7173,10 +7163,7 @@ void SketchWidget::resizeNote(long itemID, const QSizeF & size)
 
 QString SketchWidget::renderToSVG(RenderThing & renderThing, QGraphicsItem * board, const LayerList & layers)
 {
-	renderThing.board = board;
-	if (board) {
-		renderThing.offsetRect = board->sceneBoundingRect();
-	}
+	renderThing.setBoard(board);
 	return renderToSVG(renderThing, layers);
 }
 
@@ -7186,17 +7173,8 @@ QString SketchWidget::renderToSVG(RenderThing & renderThing, const LayerList & l
 
 	QList<QGraphicsItem *> itemsAndLabels;
 	QRectF itemsBoundingRect;
-	QList<QGraphicsItem *> items;
-	if (renderThing.selectedItems) {
-		items = scene()->selectedItems();
-	}
-	else if (!renderThing.board) {
-		items = scene()->items();
-	}
-	else {
-		items = scene()->collidingItems(renderThing.board);
-		items << renderThing.board;
-	}
+	QList<QGraphicsItem *> items = renderThing.getItems(scene());
+
 	foreach (QGraphicsItem * item, items) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
 		if (!itemBase) continue;

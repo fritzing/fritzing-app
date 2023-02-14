@@ -295,7 +295,7 @@ QString GraphicsUtils::toHtmlImage(QPixmap *pixmap, const char* format) {
 	QBuffer buffer(&bytes);
 	buffer.open(QIODevice::WriteOnly);
 	pixmap->save(&buffer, format); // writes pixmap into bytes in PNG format
-	return QString("data:image/%1;base64,%2").arg(QString(format).toLower()).arg(QString(bytes.toBase64()));
+	return QString("data:image/%1;base64,%2").arg(QString(format).toLower(), QString(bytes.toBase64()));
 }
 
 QPainterPath GraphicsUtils::shapeFromPath(const QPainterPath &path, const QPen &pen, double shapeStrokeWidth, bool includeOriginalPath)

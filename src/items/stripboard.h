@@ -88,6 +88,9 @@ public:
 	void swapEntry(const QString & text);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 
+protected slots:
+	void changeBoardSize();
+
 protected:
 	void nextBus(QList<ConnectorItem *> & soFar);
 	QString getRowLabel();

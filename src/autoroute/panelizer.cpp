@@ -1414,14 +1414,12 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 
 	bool filled = false;
 	QList<ItemBase *> boards = mainWindow->pcbView()->findBoard();
-	bool wasOne = false;
 	foreach (ItemBase * boardItem, boards) {
 		mainWindow->pcbView()->selectAllItems(false, false);
 		boardItem->setSelected(true);
 		if (boardItem->prop("layers").compare("1") == 0) {
 			mainWindow->swapLayers(boardItem, 2, "", 0);
 			ProcessEventBlocker::processEvents();
-			wasOne = true;
 		}
 
 		LayerList groundLayers;

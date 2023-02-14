@@ -101,7 +101,7 @@ void GraphUtils::minCut(QList<ConnectorItem *> & connectorItems, QList<SketchWid
 	Traits::vertex_descriptor s, t;
 
 	QList<Wire *> visitedWires;
-	QList<int> indexes;
+//	QList<int> indexes;
 	QHash<ConnectorItem *, int> vertices;
 	QList<ConnectorEdge *> edges;
 	QVector<Traits::vertex_descriptor> verts;
@@ -407,7 +407,8 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 	bool retval = false;
 	try {
 		Graph g(edges, edges + num_edges, weights, num_nodes);
-		property_map<Graph, edge_weight_t>::type weightmap = get(edge_weight, g);
+		// Warning: weightmap not used?
+//		property_map<Graph, edge_weight_t>::type weightmap = get(edge_weight, g);
 
 		std::vector < graph_traits < Graph >::vertex_descriptor > p(num_vertices(g));
 
@@ -449,7 +450,6 @@ bool GraphUtils::scoreOneNet(QList<ConnectorItem *> & partConnectorItems, ViewGe
 	typedef property < vertex_index_t, std::size_t > Index;
 	typedef adjacency_list < listS, listS, directedS, Index > graph_t;
 	typedef graph_traits < graph_t >::vertex_descriptor vertex_t;
-	typedef graph_traits < graph_t >::edge_descriptor edge_t;
 
 	graph_t G;
 	std::vector < vertex_t > verts(num_nodes);

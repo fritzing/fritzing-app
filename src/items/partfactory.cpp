@@ -649,12 +649,10 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
 		texts.append(nodeList.at(i).toElement());
 	}
 
-	int ix = 0;
 	foreach (QDomElement text, texts) {
 		text.setTagName("g");
 	}
 
-	ix = 0;
 	foreach (QDomElement text, texts) {
 		int minX, minY, maxX, maxY;
 		QMatrix matrix;

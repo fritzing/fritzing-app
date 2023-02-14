@@ -185,7 +185,7 @@ class DeleteDialog : public QDialog {
 	Q_OBJECT
 
 public:
-	DeleteDialog(const QString & title, const QString & text, bool deleteFileCheckBox, QWidget * parent = 0, Qt::WindowFlags f = 0);
+	DeleteDialog(const QString & title, const QString & text, bool deleteFileCheckBox, QWidget * parent = 0, Qt::WindowFlags f = Qt::WindowFlags());
 
 	bool deleteFileChecked();
 

@@ -29,9 +29,9 @@ lessThan(QT_MINOR_VERSION, 9) {
 CONFIG += debug_and_release
 CONFIG += c++17
 
-# TODO: Omit frame pointers for release builds
-# TODO: Verify flags for clang and msvc builds
-QMAKE_CXXFLAGS += -O3 -fno-omit-frame-pointer
+unix {
+    QMAKE_CXXFLAGS += -O3 -fno-omit-frame-pointer
+}
 
 unix:!macx {
     CONFIG += link_pkgconfig
@@ -193,7 +193,7 @@ include(pri/utils.pri)
 include(pri/dock.pri)
 include(pri/items.pri)
 include(pri/autoroute.pri)
-include(pri/dialogs.pri)
+include(src/dialogs/dialogs.pri)
 include(pri/connectors.pri)
 include(pri/infoview.pri)
 include(pri/model.pri)

@@ -2712,7 +2712,7 @@ void PCBSketchWidget::fabQuote() {
 
 	m_quoteDialog->exec();
 	delete m_quoteDialog;
-	m_quoteDialog = NULL;
+	m_quoteDialog = nullptr;
 }
 
 void PCBSketchWidget::gotFabQuote(QNetworkReply * networkReply) {

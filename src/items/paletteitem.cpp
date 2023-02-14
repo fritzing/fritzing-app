@@ -683,7 +683,7 @@ QList<Connector *> PaletteItem::sortConnectors() {
 		sortedConnectors.append(connector);
 	}
 	ByIDParseSuccessful = true;
-	qSort(sortedConnectors.begin(), sortedConnectors.end(), byID);
+	std::sort(sortedConnectors.begin(), sortedConnectors.end(), byID);
 	if (!ByIDParseSuccessful || sortedConnectors.count() == 0) {
 		sortedConnectors.clear();
 	}

@@ -216,24 +216,24 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		                         .arg(errorColumn)
 		                         .arg(errorStr)
 		                         .arg(path));
-		return NULL;
+		return nullptr;
 	}
 
 	QDomElement root = domDocument.documentElement();
 	if (root.isNull()) {
 		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (8)."));
-		return NULL;
+		return nullptr;
 	}
 
 	if (root.tagName() != "module") {
 		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (9)."));
-		return NULL;
+		return nullptr;
 	}
 
 	moduleID = root.attribute("moduleId");
 	if (moduleID.isNull() || moduleID.isEmpty()) {
 		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (10)."));
-		return NULL;
+		return nullptr;
 	}
 
 	// check if it's a wire
@@ -310,7 +310,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	}
 
 	ModelPart * modelPart = new ModelPart(domDocument, path, type);
-	if (modelPart == NULL) return NULL;
+	if (!modelPart) return nullptr;
 
 	if (path.startsWith(ResourcePath)) {
 		modelPart->setCore(true);

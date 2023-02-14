@@ -133,6 +133,7 @@ public:
 	static const QString RegexFloatDetector;
 	static const QString AdobeIllustratorIdentifier;
 
+	static QMap<QString, QString> parseFileForViewImages(const QString &fzpPath);
 protected:
 	static bool pxToInches(QDomElement &elem, const QString &attrName, bool isIllustrator);
 	static void squashNotElement(QDomElement & element, const QString & elementName, const QString & attName, const QRegExp & matchContent, bool & result);

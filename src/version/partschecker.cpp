@@ -250,7 +250,7 @@ bool PartsChecker::checkIfClean(const QString & repoPath,
 	errorNumber++;
 	branchName = git_reference_shorthand(head);
 	// TODO: Remove this restriction, maybe limited to an 'expert mode'
-	if (branchName != "master" && branchName != "release_0.9.6") {
+	if (branchName != "master" && branchName != "release_0.9.8") {
 		partsCheckerResult.partsCheckerError = PARTS_CHECKER_ERROR_USED_GIT;
 		partsCheckerResult.errorMessage = sNotInMasterBranch.arg(repoPath).arg(errorNumber).arg(sBoilerPlate2);
 		goto cleanup;

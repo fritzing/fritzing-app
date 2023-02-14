@@ -19,7 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "autorouteprogressdialog.h"
-#include "../debugdialog.h"
 #include "zoomcontrols.h"
 
 #include <QLabel>

@@ -25,7 +25,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "fapplication.h"
 #include "version/version.h"
-#include "debugdialog.h"
 #include "utils/folderutils.h"
 
 #ifdef Q_OS_WIN

@@ -22,7 +22,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #include "sketchtoolbutton.h"
-#include "debugdialog.h"
 
 #include <QAction>
 #include <QActionEvent>

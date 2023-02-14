@@ -20,8 +20,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "bus.h"
 #include "busshared.h"
-#include "../debugdialog.h"
-#include "connectoritem.h"
+#include "src/utils/misc.h"
 #include "../model/modelpart.h"
 
 Bus::Bus(BusShared * busShared, ModelPart * modelPart) 

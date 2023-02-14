@@ -19,7 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "pinlabeldialog.h"
-#include "../debugdialog.h"
 
 #include <QDialogButtonBox>
 #include <QHBoxLayout>

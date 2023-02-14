@@ -22,7 +22,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 #include "../sketch/pcbsketchwidget.h"
 #include "../utils/graphicsutils.h"
-#include "../utils/folderutils.h"
 #include "../connectors/connectoritem.h"
 
 #include <QFile>

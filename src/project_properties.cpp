@@ -20,8 +20,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "project_properties.h"
 
-#include "utils/misc.h"
-
 #include <utility>
 
 ProjectProperties::ProjectProperties() {

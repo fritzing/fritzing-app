@@ -28,7 +28,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QHeaderView>
 
 #include "recoverydialog.h"
-#include "../utils/folderutils.h"
 #include "../debugdialog.h"
 
 CenteredTreeWidget::CenteredTreeWidget(QWidget * parent) : QTreeWidget(parent) {

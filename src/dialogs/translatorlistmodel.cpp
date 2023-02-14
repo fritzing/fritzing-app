@@ -19,7 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "translatorlistmodel.h"
-#include "../debugdialog.h"
 
 static QVariant emptyVariant;
 QHash<QString, QString> TranslatorListModel::m_languages;

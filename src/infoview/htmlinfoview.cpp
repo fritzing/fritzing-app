@@ -28,12 +28,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "htmlinfoview.h"
 #include "../sketch/infographicsview.h"
 #include "../debugdialog.h"
-#include "../connectors/connectorshared.h"
 #include "../connectors/connector.h"
-#include "../fsvgrenderer.h"
 #include "../utils/flineedit.h"
-#include "../items/moduleidnames.h"
-#include "../items/paletteitem.h"
 #include "../utils/clickablelabel.h"
 #include "../utils/textutils.h"
 

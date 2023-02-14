@@ -25,8 +25,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QColor>
 #include <limits>
 
-#include "../sketch/infographicsview.h"
-#include "../debugdialog.h"
 #include "../utils/graphicsutils.h"
 #include "../model/modelpart.h"
 

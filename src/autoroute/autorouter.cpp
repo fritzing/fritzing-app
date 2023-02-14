@@ -26,7 +26,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/tracewire.h"
 #include "../items/jumperitem.h"
 #include "../items/via.h"
-#include "../utils/graphicsutils.h"
 #include "../connectors/connectoritem.h"
 #include "../items/moduleidnames.h"
 #include "../processeventblocker.h"

@@ -39,8 +39,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "partsbinpalette/partsbinview.h"
 #include "partsbinpalette/svgiconwidget.h"
 #include "partsbinpalette/partsbinpalettewidget.h"
-#include "items/moduleidnames.h"
-#include "partsbinpalette/searchlineedit.h"
 #include "utils/ratsnestcolors.h"
 #include "utils/cursormaster.h"
 #include "utils/textutils.h"

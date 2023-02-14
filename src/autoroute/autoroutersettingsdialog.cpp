@@ -44,8 +44,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../items/tracewire.h"
 #include "../items/via.h"
-#include "../fsvgrenderer.h"
-#include "../sketch/pcbsketchwidget.h"
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
 #include "drc.h"

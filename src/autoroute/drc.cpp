@@ -22,18 +22,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../connectors/svgidlayer.h"
 #include "../sketch/pcbsketchwidget.h"
 #include "../debugdialog.h"
-#include "../items/virtualwire.h"
-#include "../items/tracewire.h"
-#include "../items/via.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/folderutils.h"
 #include "../utils/textutils.h"
 #include "../connectors/connectoritem.h"
-#include "../items/moduleidnames.h"
 #include "../processeventblocker.h"
 #include "../fsvgrenderer.h"
 #include "../viewlayer.h"
 #include "../processeventblocker.h"
+#include "src/items/wire.h"
 
 #include <qmath.h>
 #include <QApplication>

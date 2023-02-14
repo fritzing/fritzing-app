@@ -19,10 +19,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "prefsdialog.h"
-#include "../debugdialog.h"
 #include "translatorlistmodel.h"
 #include "../items/itembase.h"
-#include "../utils/clickablelabel.h"
 #include "setcolordialog.h"
 #include "../sketch/zoomablegraphicsview.h"
 #include "../mainwindow/mainwindow.h"

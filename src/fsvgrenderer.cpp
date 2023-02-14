@@ -23,7 +23,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "svg/svgfilesplitter.h"
 #include "utils/textutils.h"
 #include "utils/graphicsutils.h"
-#include "utils/folderutils.h"
 #include "connectors/svgidlayer.h"
 
 #include <QTextStream>

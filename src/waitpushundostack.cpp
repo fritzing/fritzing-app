@@ -19,7 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "waitpushundostack.h"
-#include "utils/misc.h"
 #include "utils/folderutils.h"
 #include "commands.h"
 

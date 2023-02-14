@@ -19,7 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "groundfillseeddialog.h"
-#include "../debugdialog.h"
 #include "../connectors/connectoritem.h"
 #include "../sketch/pcbsketchwidget.h"
 

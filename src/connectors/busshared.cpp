@@ -21,7 +21,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "busshared.h"
 #include "connectorshared.h"
 #include "../debugdialog.h"
-#include "connectoritem.h"
 #include "../utils/textutils.h"
 
 BusShared::BusShared(const QString & id)

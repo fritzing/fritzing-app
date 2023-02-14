@@ -24,7 +24,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 #include "../model/modelpart.h"
 #include "bus.h"
-#include "../fsvgrenderer.h"
 #include "ercdata.h"
 
 QHash <Connector::ConnectorType, QString > Connector::Names;

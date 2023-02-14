@@ -22,7 +22,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMenu>
 #include <QMimeData>
 
-#include "../debugdialog.h"
 #include "../infoview/htmlinfoview.h"
 #include "../items/itembase.h"
 #include "../fsvgrenderer.h"

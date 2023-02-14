@@ -30,8 +30,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "partsbiniconview.h"
 #include "graphicsflowlayout.h"
-#include "../items/paletteitem.h"
-#include "../debugdialog.h"
 #include "svgiconwidget.h"
 #include "../model/palettemodel.h"
 #include "../items/partfactory.h"

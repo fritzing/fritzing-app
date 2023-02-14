@@ -29,13 +29,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "programwindow.h"
 #include "highlighter.h"
-#include "syntaxer.h"
 #include "programtab.h"
 #include "platformarduino.h"
 #include "platformpicaxe.h"
 
 #include "../debugdialog.h"
-#include "../waitpushundostack.h"
 #include "../utils/folderutils.h"
 
 #include <QFileInfoList>

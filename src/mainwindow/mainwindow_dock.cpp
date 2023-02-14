@@ -30,7 +30,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../dock/layerpalette.h"
 #include "../mainwindow/fdockwidget.h"
 #include "../utils/fileprogressdialog.h"
-#include "../debugdialog.h"
 
 /////////////////////////////////////
 

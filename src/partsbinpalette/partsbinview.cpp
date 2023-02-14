@@ -27,7 +27,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "partsbinview.h"
 #include "partsbinpalettewidget.h"
 #include "../itemdrag.h"
-#include "../utils/misc.h"
 
 QHash<QString, QString> PartsBinView::TranslatedCategoryNames;
 QHash<QString, ItemBase *> PartsBinView::ItemBaseHash;

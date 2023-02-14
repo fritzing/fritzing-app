@@ -22,7 +22,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "stacktabwidget.h"
 #include "stacktabbar.h"
-#include "../../debugdialog.h"
 
 StackTabWidget::StackTabWidget(QWidget *parent) : QTabWidget(parent) {
 	setElideMode(Qt::ElideRight);

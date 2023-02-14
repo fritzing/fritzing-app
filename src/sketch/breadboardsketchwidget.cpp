@@ -19,12 +19,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "breadboardsketchwidget.h"
-#include "../debugdialog.h"
-#include "../items/virtualwire.h"
 #include "../items/resizableboard.h"
 #include "../connectors/connectoritem.h"
 #include "../items/moduleidnames.h"
-#include "../waitpushundostack.h"
+#include "src/items/wire.h"
+
 
 #include <QScrollBar>
 #include <QSettings>

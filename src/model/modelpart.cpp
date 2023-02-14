@@ -19,12 +19,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "modelpart.h"
-#include "../debugdialog.h"
 #include "../connectors/connectorshared.h"
 #include "../connectors/busshared.h"
 #include "../connectors/bus.h"
 #include "../version/version.h"
-#include "../utils/folderutils.h"
 #include "../utils/textutils.h"
 #include "../items/itembase.h"
 #include "../items/partfactory.h"

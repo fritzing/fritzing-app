@@ -31,7 +31,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSvgGenerator>
 
 #include "partsbinpalettewidget.h"
-#include "partsbincommands.h"
 #include "partsbiniconview.h"
 #include "partsbinlistview.h"
 #include "searchlineedit.h"

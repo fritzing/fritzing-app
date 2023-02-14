@@ -19,10 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "fgraphicsscene.h"
-#include "../items/paletteitembase.h"
-#include "../items/wire.h"
 #include "../connectors/connectoritem.h"
-#include "../sketch/infographicsview.h"
 
 #include <QToolTip>
 

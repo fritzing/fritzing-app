@@ -2428,7 +2428,17 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <translation>BoM-Liste (*.html)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="153"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="138"/>
+        <source>BoM CSV File (*.csv)</source>
+        <translation>BoM CSV-Datei (*.csv)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="139"/>
+        <source>IPC-D-356 File (*.txt)</source>
+        <translation>IPC-D-356 Datei (*.txt)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="158"/>
         <source>Printing...</source>
         <translation>Drucke...</translation>
     </message>
@@ -2636,7 +2646,27 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <translation>Stückliste (&amp;BoM)...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="998"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1014"/>
+        <source>Save a Bill of Materials (BoM)/Shopping List as html</source>
+        <translation>Einkaufs- bzw. Stückliste (BoM) als HTML speichern</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1017"/>
+        <source>List of parts (&amp;Bill of Materials) as CSV</source>
+        <translation>Stückliste (&amp;Bill of Materials) als CSV</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1022"/>
+        <source>IPC-D-356A netlist</source>
+        <translation>IPC-D-356A Netzliste</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1024"/>
+        <source>Save a netlist in IPC-D-356A format</source>
+        <translation>Speichern einer Netzliste im IPC-D-356A-Format</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1027"/>
         <source>XML Netlist...</source>
         <translation>XML-Netzliste...</translation>
     </message>
@@ -2706,12 +2736,48 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <translation>Aktuelle Ansicht drucken</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1302"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1252"/>
+        <source>Export Bill of Materials (BoM) as CSV</source>
+        <translation>Stückliste (BoM) als CSV exportieren</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1398"/>
         <source>Export SPICE Netlist...</source>
         <translation>SPICE-Netzliste exportieren...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1727"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1684"/>
+        <source>Your sketch does not have a board yet!  Please add a PCB in order to export to IPC netlist.</source>
+        <translation>Deinem Entwurf fehlt die Leiterplatte! Um eine IPC Datei zu exportieren, müssen die Bauteile auf einer Leiterplatte (PCB) angeordnet sein.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1689"/>
+        <source>IPC netlist export can only handle one board at a time--please select the board you want to export.</source>
+        <translation>Der IPC-Netzlistenexport kann jeweils nur eine Platine verarbeiten - bitte wählen Sie die Platine aus, die Sie exportieren möchten.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1697"/>
+        <source>Export IPC-D-356...</source>
+        <translation>IPC-D-356 exportieren...</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1699"/>
+        <source>Unable to save IPC file.</source>
+        <translation>IPC-Datei kann nicht gespeichert werden.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1699"/>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1782"/>
+        <source>But the content was copied to the clipboard.</source>
+        <translation>Der Inhalt wurde jedoch in die Zwischenablage kopiert.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1782"/>
+        <source>Unable to save netlist file.</source>
+        <translation type="unfinished">Netzlistendatei kann nicht gespeichert werden.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_export.cpp" line="1842"/>
         <source>Gerber export can only handle one board at a time--please select the board you want to export.</source>
         <translation>Es kann nur eine Leiterplatte gleichzeitig exportiert werden - bitte wähle die Leiterplatte aus, die Du exportieren möchtest.</translation>
     </message>
@@ -7952,22 +8018,22 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="344"/>
         <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation></translation>
+        <translation>%1 Ebene: Kann nicht unter &apos;%2&apos; gespeichert werden;</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="858"/>
         <source>Fritzing is unable to process the cutouts in this custom PCB shape. </source>
-        <translation></translation>
+        <translation>Fritzing ist nicht in der Lage, die Ausschnitte in dieser benutzerdefinierten PCB-Form zu verarbeiten. </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="859"/>
         <source>You may need to reload the shape SVG. </source>
-        <translation></translation>
+        <translation>Möglicherweise müssen Sie die SVG-Form neu laden. </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="860"/>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation></translation>
+        <translation>Fritzing erfordert, dass Sie Ausschnitte mit einer Form-„Subtraktions“- oder „Differenz“-Operation in Ihrem Vektorgrafik-Editor erstellen.</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="915"/>
@@ -9121,7 +9187,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="69"/>
         <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
-        <translation></translation>
+        <translation type="unfinished">Fritzing speichert Dateien für benutzerdefinierte Teile, generierte Teile und für andere temporäre und langfristige Zwecke in einem &apos;lokalen Speicherordner&apos;. Auf Mac und Linux ist dies normalerweise ~/.config/Fritzing/. Unter Windows Vista und höher ist es etwa C:\Benutzer\[Benutzername]\Anwendungsdaten\Roaming\Fritzing\; unter Windows XP ist es etwa C:\Dokumente und Einstellungen\[Benutzername]\Anwendungsdaten\Fritzing\.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="75"/>
@@ -9131,7 +9197,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="76"/>
         <source>Get a jump start by looking at the example circuits under File &gt; Examples.</source>
-        <translation></translation>
+        <translation>Starte mit einem Vorsprung, indem du dir die Beispiel-Schaltkreise unter Datei &gt; Beispiele ansiehst.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="80"/>
@@ -9141,22 +9207,22 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="81"/>
         <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords</source>
-        <translation></translation>
+        <translation>Kannst du das gesuchte Teil nicht finden? Klick auf das Lupensymbol unter &apos;Bauteile&apos; und gib ein paar Stichwörter ein, um es schnell zu finden.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="82"/>
         <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
-        <translation></translation>
+        <translation>Wenn Sie ein Bauteil im Bauteil-Regal nicht finden können, ist das Generische IC Ihr Freund. Ziehen Sie es einfach auf Ihre Zeichnung und nutzen Sie die Widgets im Inspector, um aus 25 verschiedenen Durchsteck- und SMD-Gehäusen auszuwählen, die Pin-Beschriftung zu ändern und - bei DIPs und SIPs - die Anzahl der Pins zu ändern. Sie können auch die Pin-Namen mit dem Pin-Beschriftungs-Editor ändern.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="83"/>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
-        <translation></translation>
+        <translation>Ein Symbol in der Teilebibliothek kann mehrere ähnliche Bauteile repräsentieren. Wenn Sie ein Symbol aus der Teilebibliothek in Ihre Zeichnung ziehen, ist es sinnvoll, einen Blick auf den Inspektor zu werfen. Dieser zeigt Ihnen die verfügbaren Optionen, um das Bauteil anzupassen oder gegen ein ähnliches Bauteil auszutauschen. Beachten Sie, dass das Symbol für die Teilebibliothek auch eine dreidimensionale Darstellung sein kann und nicht nur eine flache Abbildung.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="84"/>
         <source>The Inspector Window--which lets you change the properties of parts--is only enabled for parts that are in a sketch (not for parts still in a Parts Bin).</source>
-        <translation></translation>
+        <translation>Das Inspektorfenster, in dem Sie die Eigenschaften von Teilen ändern können, ist nur für Teile aktiviert, die sich in einer Skizze befinden. In der Bauteilebibliothek selbst können keine Teile konfiguriert werden.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="88"/>
@@ -9166,17 +9232,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="89"/>
         <source>To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.</source>
-        <translation></translation>
+        <translation>Um die Bewegung eines Teils auf die Horizontale oder Vertikale zu beschränken, halten Sie die Umschalttaste gedrückt, während Sie es ziehen.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="90"/>
         <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
-        <translation></translation>
+        <translation>Wenn Sie Schwierigkeiten haben, ein Teil oder einen Draht (Segment) auszuwählen, versuchen Sie, das Teil, das im Weg ist, auszuwählen und es nach hinten zu schicken: Verwenden Sie die Funktionen &quot;Nach vorne bringen&quot;  und &quot;Nach hinten senden&quot; im Menü Teil oder im Kontextmenü (Rechtsklickmenü).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="91"/>
         <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
-        <translation></translation>
+        <translation>Um eine Auswahl von Teilen präziser zu verschieben, verwenden Sie die Pfeiltasten. Shift-Pfeil bewegt um 10 Einheiten.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
@@ -9186,7 +9252,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
         <source>To free-rotate a logo text or image item in PCB view hold down the Alt (Linux: meta) key and free-rotate as usual.</source>
-        <translation></translation>
+        <translation>Um ein Logo-Text- oder Bildelement in der PCB-Ansicht frei zu drehen, halten Sie die Alt-Taste (Linux: meta) gedrückt und drehen Sie es wie gewohnt.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="109"/>
@@ -9196,17 +9262,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="110"/>
         <source>To drag the canvas, hold down the space bar and drag with the mouse.</source>
-        <translation></translation>
+        <translation>Um die Leinwand zu ziehen, halten Sie die Leertaste gedrückt und ziehen Sie mit der Maus.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="111"/>
         <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
-        <translation></translation>
+        <translation>Um die Sichtbarkeit einer Ebene in einer Ansicht umzuschalten, gehen Sie in das Menü &quot;Ansicht&quot; und wählen Sie eine der Ebenen.  Oder öffnen Sie die Palette &lt;b&gt;Ebenen&lt;/b&gt; aus dem Menü &lt;b&gt;Fenster&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="112"/>
         <source>When you export images from Fritzing, you can choose which layers are exported. Before you choose &apos;Export...&apos;, go into the &apos;View&apos; menu and hide the layers you don&apos;t want to be visible.</source>
-        <translation></translation>
+        <translation>Wenn Sie Bilder aus Fritzing exportieren, können Sie auswählen, welche Ebenen exportiert werden sollen. Bevor Sie &apos;Exportieren...&apos; wählen, gehen Sie in das Menü &apos;Ansicht&apos; und blenden Sie die Ebenen aus, die nicht sichtbar sein sollen.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="116"/>
@@ -9216,12 +9282,12 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
-        <translation></translation>
+        <translation>Um eine Bauteilbeschriftung zu bearbeiten, doppelklicken Sie darauf, oder verwenden Sie das Texteingabe-Widget im Inspektorfenster.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="119"/>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
-        <translation></translation>
+        <translation>Um eine Teilebeschriftung unabhängig von ihrem Teil zu verschieben, wählen Sie zuerst das Teil aus - sowohl das Teil als auch die Beschriftung werden hervorgehoben. Sobald das Etikett ausgewählt ist, können Sie es ziehen.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="123"/>
@@ -9231,7 +9297,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="124"/>
         <source>To add a bendpoint to a wire, double-click where you want the bendpoint.</source>
-        <translation></translation>
+        <translation>Um einen Biegepunkt zu einem Draht hinzuzufügen, doppelklicken Sie auf die Stelle, an der Sie den Biegepunkt haben möchten.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="125"/>
@@ -9241,17 +9307,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="126"/>
         <source>In Schematic or PCB view, if you drag from a bendpoint with the Alt (Linux: Meta) key down, you will drag out a new wire from that bendpoint.</source>
-        <translation></translation>
+        <translation>Wenn Sie in der Schaltplan- oder Leiterplattenansicht mit gedrückter Alt- (Linux: Meta-) Taste von einem Biegepunkt aus ziehen, ziehen Sie einen neuen Draht von diesem Biegepunkt aus.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="127"/>
         <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
-        <translation></translation>
+        <translation>Um ein Kabelsegment (einen Abschnitt eines Kabels zwischen zwei Biegepunkten) zu ziehen, ziehen Sie es mit gedrückter Alt-Taste (Linux: Meta). Wenn Sie auch die Umschalttaste gedrückt halten, wird das Drahtsegment auf horizontale oder vertikale Bewegung beschränkt.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="128"/>
         <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
-        <translation></translation>
+        <translation>Ziehen Sie bei gedrückter Umschalttaste auf ein Drahtende oder einen Biegepunkt, um das zugehörige Drahtsegment auf einen Winkel von 45 Grad (oder ein Vielfaches von 45 Grad) zu beschränken.  Wenn das Drahtsegment mit anderen Drahtsegmenten verbunden ist, rastet das Segment, das Sie ziehen, so ein, dass es einen 90-Grad-Winkel mit dem benachbarten Drahtsegment bildet.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="132"/>
@@ -9261,12 +9327,12 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="133"/>
         <source>To see all the connectors connected to a given connector, hold the mouse down on the connector--all the connections will be highlighted.</source>
-        <translation></translation>
+        <translation>Um alle Punkte zu sehen, die mit einem bestimmten Anschluss verbunden sind, halten Sie die Maus auf dem Anschluss gedrückt - alle Anschlüsse werden hervorgehoben.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="139"/>
         <source>Check out Parts Editor Help under the &lt;b&gt;Help&lt;/b&gt; Menu.</source>
-        <translation></translation>
+        <translation type="unfinished">Die Hilfe zum Teile-Editor finden Sie im Menü &lt;b&gt;Hilfe&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="140"/>
@@ -9276,27 +9342,27 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="141"/>
         <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
-        <translation></translation>
+        <translation type="unfinished">Um im Teile-Editor eine Grafik unterhalb einer anderen Grafik auszuwählen, verwenden Sie das Mausrad, während Sie die Umschalttaste gedrückt halten.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="142"/>
         <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
-        <translation></translation>
+        <translation type="unfinished">Sie können den Teile-Editor verwenden, um die SVG-Datei für das Bild eines Teils für eine bestimmte Ansicht zu finden. Klicken Sie im Teile-Editor auf die Registerkarte für diese Ansicht und verwenden Sie dann &lt;b&gt;In Ordner anzeigen&lt;/b&gt; unter dem Menü &lt;b&gt;Datei&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="144"/>
         <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
-        <translation></translation>
+        <translation type="unfinished">Speichern Sie Ihre benutzerdefinierten Teildateien nicht im Fritzing-Installationsordner. Wenn Sie Fritzing aktualisieren, werden diese Dateien wahrscheinlich gelöscht. Außerdem werden die Dateien im Fritzing-Installationsordner nicht in Skizzen-Dateien (.fzz) gespeichert, so dass Sie sie nicht weitergeben können.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="164"/>
         <source>Have your PCB quickly and easily produced with Fritzing Fab. Hover over the &apos;Fabricate&apos; button to get a quote.</source>
-        <translation></translation>
+        <translation>Lassen Sie Ihre Leiterplatte schnell und einfach vom Fritzing Fab fertigen. Bewegen Sie den Mauszeiger über die Schaltfläche &apos;Herstellen&apos;, um ein Angebot zu erhalten.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="165"/>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation></translation>
+        <translation>Wenn Sie den Fritzing Fab Service verwenden, wenn es leere Bereiche auf der Leiterplatte gibt, die Sie nicht mit Kupfer füllen möchten, verwenden Sie den Kupferblocker-Teil. Dieser in der Größe veränderbare Teil maskiert die Kupferfüllung in dem Rechteck, das er bedeckt.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="169"/>
@@ -9306,7 +9372,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="170"/>
         <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
-        <translation></translation>
+        <translation>Um eine anklickbare URL in eine Notiz einzufügen, markieren Sie einen Text in der Notiz und tippen Sie ctrl-l (Mac: command-l). (Das ist &apos;l&apos; wie der erste Buchstabe von &apos;link&apos;.) Um einen bestehenden Link zu ändern, markieren Sie den verlinkten Text und verwenden Sie erneut ctrl-l (command-l).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="174"/>
@@ -9331,17 +9397,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="97"/>
         <source>In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
-        <translation></translation>
+        <translation>Wenn Sie in der Breadboard-Ansicht ein Teil mit biegsamen Beinen ziehen möchten, während es mit dem Breadboard verbunden bleibt, halten Sie die Alt-Taste (Linux: Meta) gedrückt, wenn Sie mit dem Ziehen beginnen.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="98"/>
         <source>In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.</source>
-        <translation></translation>
+        <translation>Um in der Steckbrettansicht einen Draht aus dem Ende eines biegbaren Beins herauszuziehen, ziehen Sie bei gedrückter Alt-Taste (Linux: Meta).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="99"/>
         <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation></translation>
+        <translation type="unfinished">Um einem Draht oder einem biegbaren Bein in der Steckbrett- oder PCB-Ansicht eine Krümmung hinzuzufügen, ziehen Sie bei gedrückter Strg-Taste (Mac: Befehlstaste). Sie können in den Einstellungen festlegen, ob kurvige Drähte die Standardeinstellung sind.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
@@ -9356,22 +9422,22 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="149"/>
         <source>Always lead a trace straight out of a pin. This helps to prevent short circuits.</source>
-        <translation></translation>
+        <translation>Führen Sie eine Leiterbahn immer gerade aus einem Stift heraus. Dies hilft, Kurzschlüsse zu vermeiden.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="150"/>
         <source>Through-hole parts can be traced from either side of a PCB.</source>
-        <translation></translation>
+        <translation type="unfinished">Durchkontaktierte Teile können von beiden Seiten einer Leiterplatte aus verfolgt werden.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="151"/>
         <source>It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.</source>
-        <translation></translation>
+        <translation>Es erleichtert das Leben, Leiterbahnen horizontal auf einer Seite einer Leiterplatte und vertikal auf der anderen Seite zu führen.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="152"/>
         <source>Route traces in 45-degree angles to reduce noise.</source>
-        <translation></translation>
+        <translation>Verlegen Sie Leiterbahnen in 45-Grad-Winkeln, um Rauschen zu reduzieren.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="153"/>
@@ -9381,7 +9447,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="154"/>
         <source>You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.</source>
-        <translation></translation>
+        <translation>Sie können Ihr eigenes Logo in den Siebdruck Ihrer Leiterplatte einfügen. Verwenden Sie einfach den Logo-Teil der Kernbibliothek und wählen Sie Ihre eigene Datei. SVG ist das beste Format.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="157"/>
@@ -9406,12 +9472,12 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="155"/>
         <source>Use copper-blocker parts to mask out areas that you want free of copper fill.</source>
-        <translation></translation>
+        <translation type="unfinished">Verwenden Sie Kupferblocker-Teile, um die Bereiche abzudecken, die nicht mit Kupfer gefüllt werden sollen.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="134"/>
         <source>A ratsnest line (very thin &apos;wire&apos;) between connections in one view means that those connections are somehow connected in another view.</source>
-        <translation></translation>
+        <translation>Eine Ratsnest-Line (eine gestrichelte Linie) zwischen Verbindungen bedeutet, dass diese in einer anderen Ansicht verbunden sind.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="156"/>

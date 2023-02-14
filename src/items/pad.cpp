@@ -24,11 +24,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "pad.h"
 
 #include "../utils/graphicsutils.h"
-#include "../utils/folderutils.h"
-#include "../utils/textutils.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
 #include "moduleidnames.h"
 
 #include <QHBoxLayout>

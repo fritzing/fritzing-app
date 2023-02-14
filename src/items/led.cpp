@@ -19,15 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "led.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
-#include "../fsvgrenderer.h"
-#include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
-#include "../commands.h"
 #include "../layerattributes.h"
-#include "moduleidnames.h"
-#include "partlabel.h"
 
 static QHash<QString, QString> BreadboardSvg;
 static QHash<QString, QString> IconSvg;

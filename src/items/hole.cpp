@@ -22,8 +22,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/graphicsutils.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
-#include "../commands.h"
 #include "../utils/textutils.h"
 #include "../viewlayer.h"
 #include "partlabel.h"

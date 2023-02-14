@@ -26,7 +26,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/boundedregexpvalidator.h"
 #include "../sketch/infographicsview.h"
 #include "partlabel.h"
-#include "../sketch/sketchwidget.h"
 
 // TODO
 //	save into parts bin

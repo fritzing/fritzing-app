@@ -20,10 +20,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "jumperitem.h"
 #include "../connectors/connectoritem.h"
-#include "../fsvgrenderer.h"
 #include "../model/modelpart.h"
 #include "../utils/graphicsutils.h"
-#include "../svg/svgfilesplitter.h"
 #include "../sketch/infographicsview.h"
 #include "../debugdialog.h"
 #include "../layerattributes.h"

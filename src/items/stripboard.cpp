@@ -20,10 +20,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "stripboard.h"
 #include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
 #include "../utils/familypropertycombobox.h"
 #include "../svg/gerbergenerator.h"
-#include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
 #include "moduleidnames.h"
 #include "../connectors/connectoritem.h"

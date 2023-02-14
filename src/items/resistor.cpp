@@ -19,20 +19,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "resistor.h"
-#include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
 #include "../utils/focusoutcombobox.h"
 #include "../utils/boundedregexpvalidator.h"
-#include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
-#include "../commands.h"
 #include "../layerattributes.h"
-#include "moduleidnames.h"
 #include "partlabel.h"
 #include "../debugdialog.h"
-#include "../simulation/simulator.h"
-#include "../sketch/sketchwidget.h"
 
 #include <qmath.h>
 #include <QRegularExpressionValidator>

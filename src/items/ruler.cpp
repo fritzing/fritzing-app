@@ -20,12 +20,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ruler.h"
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
-#include "moduleidnames.h"
 #include "../utils/textutils.h"
-#include "../utils/boundedregexpvalidator.h"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>

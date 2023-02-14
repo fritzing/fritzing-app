@@ -29,7 +29,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../connectors/svgidlayer.h"
 #include "wire.h"
 #include "partlabel.h"
-#include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/cursormaster.h"
 

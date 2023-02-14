@@ -24,7 +24,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../viewlayer.h"
 #include "../connectors/connectoritem.h"
-#include "../connectors/svgidlayer.h"
 
 #include <QSettings>
 

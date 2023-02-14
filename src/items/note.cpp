@@ -25,7 +25,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/resizehandle.h"
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
 
 #include <QTextFrame>
 #include <QTextLayout>

@@ -327,7 +327,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	// TODO: blog network calls should only happen once, not for each window?
 	auto * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl(QString("%1://blog.fritzing.org/recent-posts-app/").arg(protocol))));
+	manager->get(QNetworkRequest(QUrl(QString("%1://staging.fritzing-jekyll.pages.dev/recent-posts-app/").arg(protocol))));
 
 	manager = new QNetworkAccessManager(this);
 

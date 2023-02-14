@@ -20,7 +20,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "groundplane.h"
 #include "../connectors/connectoritem.h"
-#include "../fsvgrenderer.h"
 #include "../model/modelpart.h"
 #include "../utils/graphicsutils.h"
 #include "../svg/svgfilesplitter.h"

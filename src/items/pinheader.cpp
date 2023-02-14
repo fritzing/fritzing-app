@@ -20,15 +20,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "pinheader.h"
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
-#include "../commands.h"
 #include "../utils/textutils.h"
-#include "partlabel.h"
+#include "../debugdialog.h"
 #include "partfactory.h"
-#include "../sketch/infographicsview.h"
-#include "../connectors/connectoritem.h"
-#include "../connectors/connector.h"
-#include "../utils/familypropertycombobox.h"
+
+
 
 #include <QDomNodeList>
 #include <QDomDocument>

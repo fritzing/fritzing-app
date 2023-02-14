@@ -19,14 +19,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "perfboard.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
-#include "../utils/boundedregexpvalidator.h"
-#include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
-#include "../commands.h"
-#include "../debugdialog.h"
+
 #include "moduleidnames.h"
 #include "partlabel.h"
 

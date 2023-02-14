@@ -50,7 +50,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "stripboard.h"
 #include "led.h"
 #include "schematicsubpart.h"
-#include "layerkinpaletteitem.h"
 #include "../utils/folderutils.h"
 #include "../utils/lockmanager.h"
 #include "../utils/textutils.h"

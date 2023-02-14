@@ -69,7 +69,6 @@ later:
 #include "partlabel.h"
 #include "../model/modelpart.h"
 #include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
 #include "../utils/bezier.h"
 #include "../utils/bezierdisplay.h"
 #include "../utils/cursormaster.h"

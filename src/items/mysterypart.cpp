@@ -22,15 +22,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/graphicsutils.h"
 #include "../utils/familypropertycombobox.h"
 #include "../utils/schematicrectconstants.h"
-#include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../commands.h"
 #include "../utils/textutils.h"
-#include "../layerattributes.h"
 #include "partlabel.h"
 #include "pinheader.h"
 #include "partfactory.h"
-#include "../connectors/connectoritem.h"
 #include "../svg/svgfilesplitter.h"
 
 #include <QDomNodeList>

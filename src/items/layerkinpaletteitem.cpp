@@ -19,13 +19,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "layerkinpaletteitem.h"
-#include "../sketch/infographicsview.h"
 #include "../debugdialog.h"
 #include "../layerattributes.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
-#include "../utils/folderutils.h"
-#include "../svg/svgfilesplitter.h"
 #include "../svg/svgtext.h"
 
 #include <qmath.h>

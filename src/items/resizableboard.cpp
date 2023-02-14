@@ -19,14 +19,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "resizableboard.h"
-#include "../utils/resizehandle.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/folderutils.h"
 #include "../utils/textutils.h"
-#include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
 #include "../svg/svgfilesplitter.h"
-#include "../commands.h"
 #include "../svg/svgpathregex.h"
 #include "moduleidnames.h"
 #include "../layerattributes.h"

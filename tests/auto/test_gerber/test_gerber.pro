@@ -19,7 +19,7 @@ CONFIG += c++17
 absolute_boost = 1
 include($$absolute_path(../../../pri/boostdetect.pri))
 
-QT += core xml svg
+QT += core xml svg widgets
 equals(QT_MAJOR_VERSION, 6) {
   QT += core5compat svgwidgets
 }

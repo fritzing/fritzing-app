@@ -18,14 +18,14 @@ CONFIG += c++17
 # specify absolute path so that unit test compiles will find the folder
 absolute_boost = 1
 include($$absolute_path(../../../pri/boostdetect.pri))
+include($$absolute_path(../../../pri/spicedetect.pri))
 
-QT += core xml svg
+QT += core xml svg widgets
 
 HEADERS += $$files(*.h)
 SOURCES += $$files(*.cpp)
 
 INCLUDEPATH += $$absolute_path(../../../src)
-INCLUDEPATH += $$absolute_path(../../../../ngspice/include)
 
 HEADERS += $$files(../../../src/simulation/ngspice_simulator.h)
 HEADERS += $$files(../../../src/debugdialog.h)

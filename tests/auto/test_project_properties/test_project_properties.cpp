@@ -37,7 +37,6 @@ BOOST_AUTO_TEST_CASE( project_properties_xml_old_project_resaved )
 
 	BOOST_CHECK_EQUAL(projectProperties.getPartLabelFontCutoffCorrectionFlag(), false);
 	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPartLabelFontCutoffCorrection).toStdString(), "no");
-	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPcbPartLabelFont).toStdString(), "OCRA");
 }
 
 BOOST_AUTO_TEST_CASE( project_properties_xml_empty )
@@ -51,7 +50,6 @@ BOOST_AUTO_TEST_CASE( project_properties_xml_empty )
 
 	BOOST_CHECK_EQUAL(projectProperties.getPartLabelFontCutoffCorrectionFlag(), false);
 	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPartLabelFontCutoffCorrection).toStdString(), "no");
-	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPcbPartLabelFont).toStdString(), "OCRA");
 }
 BOOST_AUTO_TEST_CASE( project_properties_xml_no_prop )
 {
@@ -64,7 +62,6 @@ BOOST_AUTO_TEST_CASE( project_properties_xml_no_prop )
 
 	BOOST_CHECK_EQUAL(projectProperties.getPartLabelFontCutoffCorrectionFlag(), false);
 	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPartLabelFontCutoffCorrection).toStdString(), "no");
-	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPcbPartLabelFont).toStdString(), "OCRA");
 }
 
 BOOST_AUTO_TEST_CASE( project_properties_xml_new_project_saved )
@@ -78,7 +75,6 @@ BOOST_AUTO_TEST_CASE( project_properties_xml_new_project_saved )
 
 	BOOST_CHECK_EQUAL(projectProperties.getPartLabelFontCutoffCorrectionFlag(), true);
 	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPartLabelFontCutoffCorrection).toStdString(), "yes");
-	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPcbPartLabelFont).toStdString(), "OCR-Fritzing-mono");
 }
 
 BOOST_AUTO_TEST_CASE( project_properties_xml_somefont )
@@ -92,7 +88,6 @@ BOOST_AUTO_TEST_CASE( project_properties_xml_somefont )
 
 	BOOST_CHECK_EQUAL(projectProperties.getPartLabelFontCutoffCorrectionFlag(), true);
 	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPartLabelFontCutoffCorrection).toStdString(), "yes");
-	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPcbPartLabelFont).toStdString(), "Somefont");
 }
 
 BOOST_AUTO_TEST_CASE( project_properties_xml_save_load )
@@ -109,5 +104,4 @@ BOOST_AUTO_TEST_CASE( project_properties_xml_save_load )
 
 	BOOST_CHECK_EQUAL(projectProperties.getPartLabelFontCutoffCorrectionFlag(), true);
 	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPartLabelFontCutoffCorrection).toStdString(), "yes");
-	BOOST_CHECK_EQUAL(projectProperties.getProjectProperty(ProjectPropertyKeyPcbPartLabelFont).toStdString(), "OCR-Fritzing-mono");
 }

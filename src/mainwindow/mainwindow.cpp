@@ -2246,6 +2246,21 @@ void MainWindow::enableCheckUpdates(bool enabled)
 	}
 }
 
+void MainWindow::migratePartLabelOffset(QList<ModelPart*> modelParts) {
+	QList<QString> migratedParts;
+
+	for (ModelPart* modelPart : modelParts) {
+		ItemBase * item = modelPart->viewItem(ViewLayer::ViewID::PCBView);
+		if (item) {
+			auto pair = item->migratePartLabel();
+			if (pair.second) {
+				migratedParts << pair.first;
+			}
+		}
+	}
+	DebugDialog::debug(QString("%1 part labels corrected").arg(migratedParts.size()));
+}
+
 void MainWindow::swapSelectedDelay(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase)
 {
 	//DebugDialog::debug("swap selected delay");
@@ -2435,6 +2450,7 @@ void MainWindow::swapLayers(ItemBase * itemBase, int layers, const QString & msg
 	// need to defer execution so the content of the info view doesn't change during an event that started in the info view
 	m_undoStack->waitPush(parentCommand, delay);
 }
+
 
 void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement overrideViewLayerPlacement,  QMap<QString, QString> & propsMap) {
 

@@ -73,6 +73,7 @@ public:
 	QString makeSvg(bool blackOnly, double dpi, double printerScale, bool includeTransform);
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	void setFontPointSize(double pointSize);
+	bool migrateLabelOffset();
 
 protected:
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);

@@ -1135,6 +1135,16 @@ void ItemBase::restorePartLabel(QDomElement & labelGeometry, ViewLayer::ViewLaye
 	}
 }
 
+std::pair<QString, bool> ItemBase::migratePartLabel()
+{
+	if (!m_partLabel) {
+		return { QString(), false };
+	}
+	debugInfo(QString("migrating item %1\n").arg(label()));
+	return { label(), m_partLabel->migrateLabelOffset() };
+}
+
+
 void ItemBase::movePartLabel(QPointF newPos, QPointF newOffset) {
 	if (m_partLabel != nullptr) {
 		m_partLabel->moveLabel(newPos, newOffset);

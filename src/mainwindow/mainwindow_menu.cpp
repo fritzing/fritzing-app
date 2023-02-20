@@ -370,6 +370,10 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 
 	QList<ModelPart *> modelParts;
 
+	connect(m_sketchModel, &ModelBase::migratePartLabelOffset, this, [this](){
+		m_migratePartLabelOffset = true;
+	});
+
 	connect(m_sketchModel, SIGNAL(loadedViews(ModelBase *, QDomElement &)),
 	        this, SLOT(loadedViewsSlot(ModelBase *, QDomElement &)), Qt::DirectConnection);
 	connect(m_sketchModel, SIGNAL(loadedRoot(const QString &, ModelBase *, QDomElement &)),
@@ -377,7 +381,7 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	connect(m_sketchModel, SIGNAL(obsoleteSMDOrientationSignal()),
 	        this, SLOT(obsoleteSMDOrientationSlot()), Qt::DirectConnection);
 	connect(m_sketchModel, SIGNAL(oldSchematicsSignal(const QString &, bool &)),
-	        this, SLOT(oldSchematicsSlot(const QString &, bool &)), Qt::DirectConnection);
+	        this, SLOT(oldSchematicsSlot(const QString &, bool &)), Qt::DirectConnection);	
 	connect(m_sketchModel, SIGNAL(loadedProjectProperties(const QDomElement &)),
 		this, SLOT(loadedProjectPropertiesSlot(const QDomElement &)), Qt::DirectConnection);
 
@@ -470,6 +474,10 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 				checkSwapObsolete(items, true);
 			}
 		}
+	}
+
+	if (m_migratePartLabelOffset) {
+		migratePartLabelOffset(modelParts);
 	}
 
 	initZoom();

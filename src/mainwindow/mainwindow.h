@@ -662,6 +662,7 @@ protected:
 	void checkSwapObsolete(QList<ItemBase *> &, bool includeUpdateLaterMessage);
 	QMessageBox::StandardButton oldSchematicMessage(const QString & filename);
 	MainWindow * revertAux();
+	void migratePartLabelOffset(QList<ModelPart*>);
 
 protected:
 	static void removeActionsStartingAt(QMenu *menu, int start=0);
@@ -970,6 +971,7 @@ protected:
 	bool m_convertedSchematic = false;
 	bool m_useOldSchematic = false;
 	bool m_noSchematicConversion = false;
+	bool m_migratePartLabelOffset = false;
 	int m_initialTab = 0;
 
 	// dock management

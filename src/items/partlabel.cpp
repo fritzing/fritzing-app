@@ -158,8 +158,8 @@ void PartLabel::showLabel(bool showIt, ViewLayer * viewLayer) {
 		QRectF obr = m_owner->boundingRect();
 		QRectF tbr = QGraphicsSvgItem::boundingRect();
 		QPointF initial = (flipped)
-		                  ? m_owner->pos() + QPointF(-tbr.width(), -tbr.height())
-		                  : m_owner->pos() + QPointF(obr.width(), -tbr.height());
+						  ? m_owner->pos() + QPointF(-tbr.width(), -tbr.height())
+						  : m_owner->pos() + QPointF(obr.width(), -tbr.height());
 		if (!m_initializedPos) {
 			this->setPos(initial);
 			m_offset = initial - m_owner->pos();
@@ -750,7 +750,7 @@ void PartLabel::partLabelEdit()
 	bool ok;
 	QString oldText = m_text;
 	QString text = QInputDialog::getText((QGraphicsView *) this->scene()->parent(), tr("Set label for %1").arg(m_owner->title()),
-	                                     tr("Label text:"), QLineEdit::Normal, oldText, &ok);
+										 tr("Label text:"), QLineEdit::Normal, oldText, &ok);
 	if (ok && (oldText.compare(text) != 0)) {
 		if (m_owner != nullptr) {
 			m_owner->partLabelChanged(text);
@@ -868,31 +868,45 @@ QString PartLabel::makeSvg(bool blackOnly, double dpi, double printerScale, bool
 	return svg;
 }
 
+bool PartLabel::migrateLabelOffset()
+{
+	const double fontOffsetFactor=0.25;
+	const double fontOffsetModifier = 0.5;
+	qreal dy = (m_font.pointSizeF() - fontOffsetModifier) * GraphicsUtils::SVGDPI / 72.0 * fontOffsetFactor;
+	QTransform t = sceneTransform();
+	QTransform labelTransform = QTransform(t.m11(), t.m12(), t.m13(), t.m21(), t.m22(), t.m23(), 0.0, 0.0, t.m33());
+
+	moveLabel(pos() + labelTransform.map(QPointF(0, -dy)), m_offset);
+	return true;
+}
+
+
 
 QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, double & w, double & h)
 {
 	if (m_displayText.isEmpty()) return "";
 
 	double pixels = m_font.pointSizeF() * printerScale / 72;
-	double y = pixels * 0.75;
+	double y = pixels;
+//	double y = pixels * 0.75;
 	//DebugDialog::debug(QString("initial y:%1").arg(y));
 
 	QString svg = QString("<g font-size='%1' font-style='%2' font-weight='%3' fill='%4' font-family=\"'%5'\" id='%6' fill-opacity='1' stroke='none' >")
-	              .arg(m_font.pointSizeF() * dpi / 72)
-	              .arg(mapToSVGStyle(m_font.style()))
-	              .arg(mapToSVGWeight(m_font.weight()))
-	              .arg(blackOnly ? "#000000" : m_color.name())
-	              .arg(InstalledFonts::InstalledFontsNameMapper.value(m_font.family()))
-	              .arg(ViewLayer::viewLayerXmlNameFromID(m_viewLayerID)
-	                  );
+				  .arg(m_font.pointSizeF() * dpi / 72.0)
+				  .arg(mapToSVGStyle(m_font.style()))
+				  .arg(mapToSVGWeight(m_font.weight()))
+				  .arg(blackOnly ? "#000000" : m_color.name())
+				  .arg(InstalledFonts::InstalledFontsNameMapper.value(m_font.family()))
+				  .arg(ViewLayer::viewLayerXmlNameFromID(m_viewLayerID)
+					  );
 
 	w = 0;
 	QStringList texts = m_displayText.split("\n");
 	Q_FOREACH (QString t, texts) {
 		QString t1 = TextUtils::convertExtendedChars(TextUtils::escapeAnd(t));
 		svg += QString("<text x='0' y='%1'>%2</text>")
-		       .arg(y * dpi / printerScale)
-		       .arg(t1);
+			   .arg(y * dpi / printerScale)
+			   .arg(t1);
 		y += pixels;
 		w = qMax(w, t.length() * pixels * 0.75);
 		//DebugDialog::debug(QString("\t%1, %2").arg(w).arg(y));
@@ -900,7 +914,10 @@ QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, d
 
 	svg += "</g>";
 
+	const double fontOffsetFactor=0.25;
 	h = y - (pixels / 2);
+	h -= fontOffsetFactor * pixels;
+
 
 	//QFontInfo fontInfo(m_font);
 	//DebugDialog::debug(QString("%1 match:%2 ps:%3 sty:%4 w:%5")

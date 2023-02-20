@@ -57,8 +57,8 @@ Q_SIGNALS:
 	void loadedRoot(const QString & fileName, ModelBase *, QDomElement & root);
 	void loadingInstances(ModelBase *, QDomElement & instances);
 	void loadingInstance(ModelBase *, QDomElement & instance);
-	void loadedInstances(ModelBase *, QDomElement & instances);
 	void obsoleteSMDOrientationSignal();
+	void migratePartLabelOffset();
 	void oldSchematicsSignal(const QString & filename, bool & useOldSchematics);
 
 protected:

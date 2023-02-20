@@ -316,6 +316,7 @@ public:
 
 	virtual void setInstanceTitle(const QString &title, bool initial);
 	void updatePartLabelInstanceTitle();
+	std::pair<QString, bool> migratePartLabel();
 
 public Q_SLOTS:
 	void showPartLabel(bool show, ViewLayer *);

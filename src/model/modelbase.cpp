@@ -111,6 +111,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	bool checkForTraces = true;
 	bool checkForMysteryParts = true;
 	bool checkForObsoleteSMDOrientation = true;
+	bool correctPartLabelOffset = false;
 	m_fritzingVersion = root.attribute("fritzingVersion");
 	DebugDialog::debug(QString("Project %1 was created with Fritzing %2").arg(fileName, m_fritzingVersion), DebugDialog::Info);
 	if (m_fritzingVersion.length() > 0) {
@@ -144,6 +145,13 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		versionThingRats.minorSubVersion = 2;
 		m_checkForReversedWires = !Version::greaterThan(versionThingRats, versionThingFz);
 
+		correctPartLabelOffset = Version::greaterThan(m_fritzingVersion, "1.0.0");
+		if (correctPartLabelOffset) {
+			DebugDialog::debug("Correct part labels");
+			Q_EMIT migratePartLabelOffset();
+		} else {
+			DebugDialog::debug("Do not correct part labels");
+		}
 	}
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();
 
@@ -242,7 +250,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	}
 
 	bool result = loadInstances(domDocument, instances, modelParts, checkViews);
-	Q_EMIT loadedInstances(this, instances);
+
 	return result;
 }
 

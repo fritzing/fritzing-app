@@ -119,6 +119,8 @@ public:
 	void setViewFromBelow(bool);
 	bool dropOnBottom();
 	ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
+	void setPartLabelFont(QString fontFamily);
+	QString getPartLabelFont();
 
 public Q_SLOTS:
 	void resizeBoard(double w, double h, bool doEmit);
@@ -210,6 +212,7 @@ protected:
 	QPointer<class QuoteDialog> m_quoteDialog;
 	QPointer<class QuoteDialog> m_rolloverQuoteDialog;
 	QTimer m_requestQuoteTimer;
+	QString m_partLabelFontFamily;
 
 protected:
 	static QSizeF m_jumperItemSize;

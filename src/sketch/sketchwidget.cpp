@@ -8283,14 +8283,6 @@ void SketchWidget::resizeJumperItem(long itemID, QPointF pos, QPointF c0, QPoint
 	qobject_cast<JumperItem *>(item)->resize(pos, c0, c1);
 }
 
-QSharedPointer<ProjectProperties> SketchWidget::getProjectProperties() {
-	return m_projectProperties;
-}
-
-void SketchWidget::setProjectProperties(QSharedPointer<ProjectProperties> projectProperties) {
-	m_projectProperties = projectProperties;
-}
-
 QList<ItemBase *> SketchWidget::selectAllObsolete()
 {
 	QSet<ItemBase *> itemBases;

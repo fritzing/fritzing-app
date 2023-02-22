@@ -118,7 +118,6 @@ protected:
 	QColor m_color;
 	QFont m_font;
 	QSvgRenderer * m_renderer = nullptr;
-	bool m_enableFontOffsetCorrection = true;
 };
 
 #endif

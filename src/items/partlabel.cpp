@@ -155,23 +155,16 @@ void PartLabel::showLabel(bool showIt, ViewLayer * viewLayer) {
 		setPlainText(m_owner->instanceTitle());
 		m_initialized = true;
 
-		// Get the bounding rectangles of the owner object and the SVG item.
-		QRectF ownerRect = m_owner->boundingRect();
-		QRectF svgRect = QGraphicsSvgItem::boundingRect();
-
-		// Calculate the initial position of the label box.
+		QRectF obr = m_owner->boundingRect();
+		QRectF tbr = QGraphicsSvgItem::boundingRect();
 		QPointF initial = (flipped)
-		? m_owner->pos() + QPointF(-svgRect.width(), -svgRect.height())
-		: m_owner->pos() + QPointF(ownerRect.width(), -svgRect.height());
-
+		                  ? m_owner->pos() + QPointF(-tbr.width(), -tbr.height())
+		                  : m_owner->pos() + QPointF(obr.width(), -tbr.height());
 		if (!m_initializedPos) {
-			// Set the position of the label box to the initial position
-			// and store the offset between the label box and the owner object.
 			this->setPos(initial);
 			m_offset = initial - m_owner->pos();
 			m_initializedPos = true;
 		}
-
 		if (flipped) {
 			transformLabel(QTransform().scale(-1,1));
 		}
@@ -595,7 +588,6 @@ void PartLabel::setUpText() {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infographics != nullptr) {
 		infographics->getLabelFont(m_font, m_color, m_owner);
-		m_enableFontOffsetCorrection = infographics->getProjectProperties()->getPartLabelFontCutoffCorrectionFlag();
 	}
 }
 
@@ -879,19 +871,14 @@ QString PartLabel::makeSvg(bool blackOnly, double dpi, double printerScale, bool
 
 QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, double & w, double & h)
 {
-	const double fontOffsetFactor = 0.75;
 	if (m_displayText.isEmpty()) return "";
 
-	double pixels = m_font.pointSizeF() * printerScale / 72.0;
-	double y = pixels;
-	if (!m_enableFontOffsetCorrection) {
-		y *= fontOffsetFactor;
-	}
-
+	double pixels = m_font.pointSizeF() * printerScale / 72;
+	double y = pixels * 0.75;
 	//DebugDialog::debug(QString("initial y:%1").arg(y));
 
 	QString svg = QString("<g font-size='%1' font-style='%2' font-weight='%3' fill='%4' font-family=\"'%5'\" id='%6' fill-opacity='1' stroke='none' >")
-	              .arg(m_font.pointSizeF() * dpi / 72.0)
+	              .arg(m_font.pointSizeF() * dpi / 72)
 	              .arg(mapToSVGStyle(m_font.style()))
 	              .arg(mapToSVGWeight(m_font.weight()))
 	              .arg(blackOnly ? "#000000" : m_color.name())
@@ -907,16 +894,13 @@ QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, d
 		       .arg(y * dpi / printerScale)
 		       .arg(t1);
 		y += pixels;
-		w = qMax(w, t.length() * pixels * fontOffsetFactor);
-		//  DebugDialog::debug(QString("\t%1, %2").arg(w).arg(y));
+		w = qMax(w, t.length() * pixels * 0.75);
+		//DebugDialog::debug(QString("\t%1, %2").arg(w).arg(y));
 	}
 
 	svg += "</g>";
 
-	h = y - (pixels / 2.0);
-	if (m_enableFontOffsetCorrection) {
-		h -= (1.0 - fontOffsetFactor) * pixels;
-	}
+	h = y - (pixels / 2);
 
 	//QFontInfo fontInfo(m_font);
 	//DebugDialog::debug(QString("%1 match:%2 ps:%3 sty:%4 w:%5")

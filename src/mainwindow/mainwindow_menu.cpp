@@ -3781,7 +3781,7 @@ void MainWindow::loadedViewsSlot(ModelBase *, QDomElement & views) {
 }
 
 void MainWindow::loadedProjectPropertiesSlot(const QDomElement & projectProperties) {
-	m_projectProperties->load(projectProperties);
+	   m_projectProperties->load(projectProperties);
 }
 
 void MainWindow::disconnectAll() {

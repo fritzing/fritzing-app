@@ -130,7 +130,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QTransform transform, co
 			float height = element.attribute("height").toFloat();
 			QRectF r(x, y, width, height);
 			QPolygonF poly = transform.map(r);
-			if (GraphicsUtils::isRect(poly)) {
+			if (GraphicsUtils::isFuzzyRect(poly)) {
 				QRectF rect = GraphicsUtils::getRect(poly);
 				element.setAttribute("x", QString::number(rect.left()));
 				element.setAttribute("y", QString::number(rect.top()));

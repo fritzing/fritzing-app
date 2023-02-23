@@ -147,10 +147,8 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
 		correctPartLabelOffset = Version::greaterThan(m_fritzingVersion, "1.0.0");
 		if (correctPartLabelOffset) {
-			DebugDialog::debug("Correct part labels");
+			DebugDialog::debug(QString("Migrate part labels for from %1 project to Fritzing 1.0.0").arg(m_fritzingVersion));
 			Q_EMIT migratePartLabelOffset();
-		} else {
-			DebugDialog::debug("Do not correct part labels");
 		}
 	}
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();

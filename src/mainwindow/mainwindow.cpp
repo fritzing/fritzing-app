@@ -2250,11 +2250,13 @@ void MainWindow::migratePartLabelOffset(QList<ModelPart*> modelParts) {
 	QList<QString> migratedParts;
 
 	for (ModelPart* modelPart : modelParts) {
-		ItemBase * item = modelPart->viewItem(ViewLayer::ViewID::PCBView);
-		if (item) {
-			auto pair = item->migratePartLabel();
-			if (pair.second) {
-				migratedParts << pair.first;
+		for(ViewLayer::ViewID id : { ViewLayer::ViewID::SchematicView, ViewLayer::ViewID::PCBView }) {
+			ItemBase *item = modelPart->viewItem(id);
+			if (item) {
+				auto pair = item->migratePartLabel();
+				if (pair.second) {
+					migratedParts << pair.first;
+				}
 			}
 		}
 	}

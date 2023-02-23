@@ -870,6 +870,11 @@ QString PartLabel::makeSvg(bool blackOnly, double dpi, double printerScale, bool
 
 bool PartLabel::migrateLabelOffset()
 {
+	// Fritzing before 1.0.0 moved labels by these arbitrary values,
+	// which resulted in text cut off at the top. With this migration
+	// we compensate for that when loading 0.9.10 projects or older.
+	// This way fonts are not cut anymore, but old projects still keep
+	// labels at the same position.
 	const double fontOffsetFactor=0.25;
 	const double fontOffsetModifier = 0.5;
 	qreal dy = (m_font.pointSizeF() - fontOffsetModifier) * GraphicsUtils::SVGDPI / 72.0 * fontOffsetFactor;
@@ -888,25 +893,23 @@ QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, d
 
 	double pixels = m_font.pointSizeF() * printerScale / 72;
 	double y = pixels;
-//	double y = pixels * 0.75;
-	//DebugDialog::debug(QString("initial y:%1").arg(y));
 
-	QString svg = QString("<g font-size='%1' font-style='%2' font-weight='%3' fill='%4' font-family=\"'%5'\" id='%6' fill-opacity='1' stroke='none' >")
-				  .arg(m_font.pointSizeF() * dpi / 72.0)
-				  .arg(mapToSVGStyle(m_font.style()))
-				  .arg(mapToSVGWeight(m_font.weight()))
-				  .arg(blackOnly ? "#000000" : m_color.name())
-				  .arg(InstalledFonts::InstalledFontsNameMapper.value(m_font.family()))
-				  .arg(ViewLayer::viewLayerXmlNameFromID(m_viewLayerID)
-					  );
+	QString svg =
+		QString("<g font-size='%1' font-style='%2' font-weight='%3' fill='%4' font-family=\"'%5'\" id='%6' fill-opacity='1' stroke='none' >")
+		.arg(QString::number(m_font.pointSizeF() * dpi / 72.0, 'f', 3),
+			mapToSVGStyle(m_font.style()),
+			mapToSVGWeight(m_font.weight()),
+			blackOnly ? "#000000" : m_color.name(),
+			InstalledFonts::InstalledFontsNameMapper.value(m_font.family()),
+			ViewLayer::viewLayerXmlNameFromID(m_viewLayerID)
+		);
 
 	w = 0;
 	QStringList texts = m_displayText.split("\n");
-	Q_FOREACH (QString t, texts) {
+	for (const QString& t : texts) {
 		QString t1 = TextUtils::convertExtendedChars(TextUtils::escapeAnd(t));
 		svg += QString("<text x='0' y='%1'>%2</text>")
-			   .arg(y * dpi / printerScale)
-			   .arg(t1);
+				.arg(QString::number(y * dpi / printerScale, 'f', 3), t1);
 		y += pixels;
 		w = qMax(w, t.length() * pixels * 0.75);
 		//DebugDialog::debug(QString("\t%1, %2").arg(w).arg(y));

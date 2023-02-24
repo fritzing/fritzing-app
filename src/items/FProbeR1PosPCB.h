@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef FPPROBER1POSPCB_H
 #define FPPROBER1POSPCB_H
 
-#include "../testing/FProbe.h"
+#include "testing/FProbe.h"
 
 #include "../sketch/sketchwidget.h"
 

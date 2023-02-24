@@ -21,10 +21,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef FPPROBETOGGLESIMULATOR_H
 #define FPPROBETOGGLESIMULATOR_H
 
-#include "../testing/FProbe.h"
+#include "testing/FProbe.h"
 
 #include "../simulation/simulator.h"
-#include "../utils/familypropertycombobox.h"
 
 #include <QObject>
 #include <QVariant>

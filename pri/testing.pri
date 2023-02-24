@@ -22,3 +22,6 @@ SOURCES += \
     src/testing/FTesting.cpp \
     src/testing/FProbe.cpp \
     src/testing/FTestingServer.cpp
+
+
+INCLUDEPATH += src

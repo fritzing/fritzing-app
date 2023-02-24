@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef FPPROBESWITCHPACKAGE_H
 #define FPPROBESWITCHPACKAGE_H
 
-#include "../testing/FProbe.h"
+#include "testing/FProbe.h"
 
 #include "../utils/familypropertycombobox.h"
 

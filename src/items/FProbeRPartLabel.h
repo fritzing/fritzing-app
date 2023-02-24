@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef FPPROBERPARTLABEL_H
 #define FPPROBERPARTLABEL_H
 
-#include "../testing/FProbe.h"
+#include "testing/FProbe.h"
 
 #include "../sketch/sketchwidget.h"
 

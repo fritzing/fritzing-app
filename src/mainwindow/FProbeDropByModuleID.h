@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef FPPROBEDROPBYMODULEID_H
 #define FPPROBEDROPBYMODULEID_H
 
-#include "../testing/FProbe.h"
+#include "testing/FProbe.h"
 
 #include <QObject>
 #include <QVariant>

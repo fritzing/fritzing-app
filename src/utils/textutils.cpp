@@ -959,7 +959,6 @@ QTransform TextUtils::transformStringToTransform(const QString & transform) {
 		if (floats.size() == 2) {
 			return QTransform().scale(floats[0], floats[1]);
 		} else {
-			Q_ASSERT(floats.size() == 1);
 			return QTransform().scale(floats[0], floats[0]);
 		}
 	}

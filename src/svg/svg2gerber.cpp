@@ -88,21 +88,31 @@ int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, Fo
 		m_gerber_header += QString("G04 HOLES%1PLATED*\n").arg(doubleSided ? " " : " NOT ");
 		m_gerber_header += "G04 CONTOUR ON CENTER OF CONTOUR VECTOR*\n";
 
-		// initialize axes
-		m_gerber_header += "%ASAXBY*%\n";
+		if (m_UcamcoChecker) {
 
-		// NOTE: this currently forces a 1 mil grid
-		// format coordinates to drop leading zeros with 2,3 digits
-		m_gerber_header += "%FSLAX23Y23*%\n";
+			m_gerber_header += "%FSLAX25Y25*%\n";
+			// set units to inches
+			m_gerber_header += "%MOIN*%\n";
 
-		// set units to inches
-		m_gerber_header += "%MOIN*%\n";
+			m_f2g = 100.0;
 
-		// no offset
-		m_gerber_header += "%OFA0B0*%\n";
+		} else {
+			// initialize axes
+			m_gerber_header += "%ASAXBY*%\n";
 
-		// scale factor 1x1
-		m_gerber_header += "%SFA1.0B1.0*%\n";
+			// NOTE: this currently forces a 1 mil grid
+			// format coordinates to drop leading zeros with 2,3 digits
+			m_gerber_header += "%FSLAX23Y23*%\n";
+
+			// set units to inches
+			m_gerber_header += "%MOIN*%\n";
+
+			// no offset
+			m_gerber_header += "%OFA0B0*%\n";
+
+			// scale factor 1x1
+			m_gerber_header += "%SFA1.0B1.0*%\n";
+		}
 	}
 	else {
 		// deal with header at the end
@@ -329,8 +339,8 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 		if (forWhy == ForDrill) {
 			if (noDrill) continue;
 
-			QString drill_cx = QString("%1").arg((int) (flipxNoRound(centerx) * 10), 6, 10, QChar('0'));				// drill file is in inches 00.0000, converting mils to 10000ths
-			QString drill_cy = QString("%1").arg((int) (flipyNoRound(centery) * 10), 6, 10, QChar('0'));				// drill file is in inches 00.0000, converting mils to 10000ths
+			QString drill_cx = QString("%1").arg((int) (centerx * 10), 6, 10, QChar('0'));				// drill file is in inches 00.0000, converting mils to 10000ths
+			QString drill_cy = QString("%1").arg((int) (flipy(centery) * 10), 6, 10, QChar('0'));				// drill file is in inches 00.0000, converting mils to 10000ths
 			QString aperture = QString("C%1").arg(hole, 0, 'f');
 			QString loc = "X" + drill_cx + "Y" + drill_cy;
 			if (stroke_width == 0) m_holeApertures.insert(aperture, loc);
@@ -340,8 +350,8 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 
 		QString aperture;
 
-		QString cx = QString::number(flipx(centerx));
-		QString cy = QString::number(flipy(centery));
+		QString cx = f2gerber(centerx);
+		QString cy = f2gerber(flipy(centery));
 
 		QString fill = circle.attribute("fill");
 
@@ -384,9 +394,9 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 					"G75*\n"
 					"G03X%1Y%2I%3J0D01*\n"
 				)
-				.arg(QString::number(flipx(centerx + r))
-					,QString::number(flipy(centery))
-					,QString::number(qRound(-r))
+				.arg(f2gerber(centerx + r)
+					,f2gerber(flipy(centery))
+					,f2gerber(-r)
 				);
 			m_gerber_paths += "G01*\n";
 		}
@@ -404,21 +414,22 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 
 			double rx = rect.attribute("rx", "0").toDouble();
 			double ry = rect.attribute("ry", "0").toDouble();
-			if (rx != 0 || ry != 0) {
+			if (!(qFuzzyIsNull(rx) && qFuzzyIsNull(ry))) {
 				// not sure how to do rounded rects in gerber
 				invalidPathsCount++;
 				continue;
 			}
 
-			if (width == 0) continue;
-			if (height == 0) continue;
+			if (qFuzzyIsNull(width)) continue;
+			if (qFuzzyIsNull(height)) continue;
 
 			double x = rect.attribute("x").toDouble();
 			double y = rect.attribute("y").toDouble();
-			double centerx = x + (width/2);
-			double centery = y + (height/2);
-			QString cx = QString::number(flipx(centerx));
-			QString cy = QString::number(flipy(centery));
+			double centerx = x + (width/2.0);
+			double centery = y + (height/2.0);
+			QString cx = f2gerber(centerx);
+			QString cy = f2gerber(flipy(centery));
+
 			QString fill = rect.attribute("fill");
 			double stroke_width = rect.attribute("stroke-width").toDouble();
 
@@ -428,8 +439,8 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 			double holey = (height - stroke_width)/milsPerInch;
 
 			if (forWhy == ForMask) {
-				totalx += 2 * MaskClearance;
-				totaly += 2 * MaskClearance;
+				totalx += 2.0 * MaskClearance;
+				totaly += 2.0 * MaskClearance;
 			}
 
 
@@ -465,11 +476,11 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 				// draw 4 lines
 
 				standardAperture(rect, apertureMap, current_dcode, dcode_index, 0);
-				m_gerber_paths += "X" + QString::number(flipx(x)) + "Y" + QString::number(flipy(y)) + "D02*\n";
-				m_gerber_paths += "X" + QString::number(flipx(x+width)) + "Y" + QString::number(flipy(y)) + "D01*\n";
-				m_gerber_paths += "X" + QString::number(flipx(x+width)) + "Y" + QString::number(flipy(y+height)) + "D01*\n";
-				m_gerber_paths += "X" + QString::number(flipx(x)) + "Y" + QString::number(flipy(y+height)) + "D01*\n";
-				m_gerber_paths += "X" + QString::number(flipx(x)) + "Y" + QString::number(flipy(y)) + "D01*\n";
+				m_gerber_paths += "X" + f2gerber(x) + "Y" + f2gerber(flipy(y)) + "D02*\n";
+				m_gerber_paths += "X" + f2gerber(x+width) + "Y" + f2gerber(flipy(y)) + "D01*\n";
+				m_gerber_paths += "X" + f2gerber(x+width) + "Y" + f2gerber(flipy(y+height)) + "D01*\n";
+				m_gerber_paths += "X" + f2gerber(x) + "Y" + f2gerber(flipy(y+height)) + "D01*\n";
+				m_gerber_paths += "X" + f2gerber(x) + "Y" + f2gerber(flipy(y)) + "D01*\n";
 				m_gerber_paths += "D02*\n";
 			}
 		}
@@ -496,9 +507,9 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 			}
 
 			//go to start - light off
-			m_gerber_paths += "X" + QString::number(flipx(x1)) + "Y" + QString::number(flipy(y1)) + "D02*\n";
+			m_gerber_paths += "X" + f2gerber(x1) + "Y" + f2gerber(flipy(y1)) + "D02*\n";
 			//go to end point - light on
-			m_gerber_paths += "X" + QString::number(flipx(x2)) + "Y" + QString::number(flipy(y2)) + "D01*\n";
+			m_gerber_paths += "X" + f2gerber(x2) + "Y" + f2gerber(flipy(y2)) + "D01*\n";
 			light_on = true;
 			currentx = x2;
 			currenty = y2;
@@ -639,18 +650,18 @@ void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
 	double startx = pointList.at(0).toDouble();
 	double starty = pointList.at(1).toDouble();
 	// move to start - light off
-	pointString += "X" + QString::number(flipx(startx)) + "Y" + QString::number(flipy(starty)) + "D02*\n";
+	pointString += "X" + f2gerber(startx) + "Y" + f2gerber(flipy(starty)) + "D02*\n";
 
 	// iterate through all other points - light on
 	for(int pt = 2; pt < pointList.length(); pt +=2) {
 		double ptx = pointList.at(pt).toDouble();
 		double pty = pointList.at(pt+1).toDouble();
-		pointString += "X" + QString::number(flipx(ptx)) + "Y" + QString::number(flipy(pty)) + "D01*\n";
+		pointString += "X" + f2gerber(ptx) + "Y" + f2gerber(flipy(pty)) + "D01*\n";
 	}
 
 	if (closedCurve) {
 		// move back to start point
-		pointString += "X" + QString::number(flipx(startx)) + "Y" + QString::number(flipy(starty)) + "D01*\n";
+		pointString += "X" + f2gerber(startx) + "Y" + f2gerber(flipy(starty)) + "D01*\n";
 	}
 
 	standardAperture(polygon, apertureMap, current_dcode, dcode_index, 0);
@@ -736,10 +747,10 @@ void SVG2gerber::handleOblongPath(QDomElement & path, int & dcode_index) {
 	int it = m_gerber_header.lastIndexOf("T", ix);
 	m_drill_slots += QString("%1\nX%2Y%3G85X%4Y%5\nG05\n")
 	                 .arg(m_gerber_header.mid(it, ix - it), 0, 'f')
-	                 .arg((int) (flipxNoRound(cx1) * 10), 6, 10, QChar('0'))
-	                 .arg((int) (flipyNoRound(cy1) * 10), 6, 10, QChar('0'))
-	                 .arg((int) (flipxNoRound(cx2) * 10), 6, 10, QChar('0'))
-	                 .arg((int) (flipyNoRound(cy2) * 10), 6, 10, QChar('0'));
+					 .arg((int) (cx1 * 10), 6, 10, QChar('0'))
+					 .arg((int) (flipy(cy1) * 10), 6, 10, QChar('0'))
+					 .arg((int) (cx2 * 10), 6, 10, QChar('0'))
+					 .arg((int) (flipy(cy2) * 10), 6, 10, QChar('0'));
 }
 
 QDomElement SVG2gerber::ellipse2path(QDomElement ellipseElement) {
@@ -761,7 +772,7 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 	auto * pathUserData = (PathUserData *) userData;
 
 	if (command.toLatin1() == 'z' || command.toLatin1() == 'Z') {
-		gerb_path = "X" + QString::number(flipx(m_pathstart_x)) + "Y" + QString::number(flipy(m_pathstart_y)) + "D01*\n";
+		gerb_path = "X" + f2gerber(m_pathstart_x) + "Y" + f2gerber(flipy(m_pathstart_y)) + "D01*\n";
 		gerb_path += "D02*\n";
 		pathUserData->x = m_pathstart_x;
 		pathUserData->y = m_pathstart_y;
@@ -800,12 +811,12 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 
 			if (argIndex == 0) {
 				// treat first 'm' arg pair as a move to
-				gerb_path = "X" + QString::number(flipx(x)) + "Y" + QString::number(flipy(y)) + "D02*\n";
+				gerb_path = "X" + f2gerber(x) + "Y" + f2gerber(flipy(y)) + "D02*\n";
 				m_pathstart_x = x;
 				m_pathstart_y = y;
 			} else {
 				// treat subsequent 'm' arg pair as line to
-				gerb_path = "X" + QString::number(flipx(x)) + "Y" + QString::number(flipy(y)) + "D01*\n";
+				gerb_path = "X" + f2gerber(x) + "Y" + f2gerber(flipy(y)) + "D01*\n";
 			}
 			pathUserData->pathStarting = false;
 			pathUserData->string.append(gerb_path);
@@ -828,7 +839,7 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 				pathUserData->x = args[argIndex];
 				pathUserData->y = args[argIndex+1];
 			}
-			gerb_path = "X" + QString::number(flipx(pathUserData->x)) + "Y" + QString::number(flipy(pathUserData->y)) + "D01*\n";
+			gerb_path = "X" + f2gerber(pathUserData->x) + "Y" + f2gerber(flipy(pathUserData->y)) + "D01*\n";
 			pathUserData->string.append(gerb_path);
 			argIndex += 2;
 			break;
@@ -840,23 +851,12 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 	}
 }
 
-
-int SVG2gerber::flipx(double x)
+QString SVG2gerber::f2gerber(double value)
 {
-	return qRound(x);
+	return QString::number(qRound(value * m_f2g));
 }
 
-int SVG2gerber::flipy(double y)
-{
-	return qRound(m_boardSize.height() - y);
-}
-
-double SVG2gerber::flipxNoRound(double x)
-{
-	return x;
-}
-
-double SVG2gerber::flipyNoRound(double y)
+double SVG2gerber::flipy(double y)
 {
 	return m_boardSize.height() - y;
 }

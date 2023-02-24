@@ -59,6 +59,9 @@ protected:
 	double m_pathstart_x = 0.0;
 	double m_pathstart_y = 0.0;
 
+	bool m_UcamcoChecker = true;
+	double m_f2g = 1.0;
+
 protected:
 
 	void normalizeSVG();
@@ -75,10 +78,9 @@ protected:
 	QString path2gerber(QDomElement);
 	void handleOblongPath(QDomElement & path, int & dcode_index);
 	QString standardAperture(QDomElement & element, QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index, double stroke_width);
-	int flipx(double x);
-	int flipy(double y);
-	double flipxNoRound(double x);
-	double flipyNoRound(double y);
+
+	double flipy(double y);
+	QString f2gerber(double value);
 	void doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
 	            QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index);
 

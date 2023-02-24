@@ -1,7 +1,6 @@
 #define BOOST_TEST_MODULE SVG Tests
 #include <boost/test/included/unit_test.hpp>
 
-#include "svg/svgpathparser.h"
 #include "svg/svgpathlexer.h"
 #include "svg/svgfilesplitter.h"
 #include "svg/svgflattener.h"

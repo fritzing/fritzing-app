@@ -64,7 +64,7 @@ void PrefsDialog::initViewInfo(int index, const QString & viewName, const QStrin
 	m_viewInfoThings[index].curvy = curvy;
 }
 
-void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platforms, bool en_simulator)
+void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platforms)
 {
 	m_tabWidget = new QTabWidget();
 	m_general = new QWidget();
@@ -94,7 +94,7 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 	initCode(m_code, platforms);
 	m_platforms = platforms;
 
-	initBetaFeatures(m_beta_features, en_simulator);
+	initBetaFeatures(m_beta_features);
 	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
@@ -161,10 +161,10 @@ void PrefsDialog::initCode(QWidget * widget, QList<Platform *> platforms)
 	widget->setLayout(vLayout);
 }
 
-void PrefsDialog::initBetaFeatures(QWidget * widget, bool en_simulator)
+void PrefsDialog::initBetaFeatures(QWidget * widget)
 {
 	QVBoxLayout * vLayout = new QVBoxLayout();
-	vLayout->addWidget(createBetaFeaturesForm(en_simulator));
+	vLayout->addWidget(createBetaFeaturesForm());
 	widget->setLayout(vLayout);
 }
 
@@ -434,8 +434,10 @@ void PrefsDialog::changeLanguage(int index)
 	}
 }
 
-QWidget * PrefsDialog::createBetaFeaturesForm(bool en_simulator) {
-	QGroupBox * simulator = new QGroupBox(tr("Simulator"), this );
+
+QWidget * PrefsDialog::createBetaFeaturesForm() {
+	QSettings settings;
+	QGroupBox * simulator = new QGroupBox(tr("Simulator"), this);
 
 	QVBoxLayout * layout = new QVBoxLayout();
 	layout->setSpacing(SPACING);
@@ -449,12 +451,30 @@ QWidget * PrefsDialog::createBetaFeaturesForm(bool en_simulator) {
 
 	QCheckBox * box = new QCheckBox(tr("Enable simulator"));
 	box->setFixedWidth(FORMLABELWIDTH);
-	box->setChecked(en_simulator);
+
+	box->setChecked(settings.value("simulatorEnabled", false).toBool()); // Initialize the value of box using m_settings
 	layout->addWidget(box);
+
+
+	QLabel * label2 = new QLabel(tr("Gerber files generated will use 5 decimal precision instead of 3."));
+	label2->setWordWrap(true);
+	layout->addWidget(label2);
+
+	QCheckBox * box2 = new QCheckBox(tr("Enable gerber export improvements"));
+	box2->setFixedWidth(FORMLABELWIDTH);
+	box2->setChecked(settings.value("gerberExportImprovementsEnabled", false).toBool()); // Initialize the value of box2 using m_settings
+	layout->addWidget(box2);
+
 
 	simulator->setLayout(layout);
 
-	connect(box, SIGNAL(clicked(bool)), this, SLOT(toggleSimulator(bool)));
+	connect(box, &QCheckBox::clicked, this, [this](bool checked) {
+		m_settings.insert("simulatorEnabled", QString::number(checked));
+	});
+
+	connect(box2, &QCheckBox::clicked, this, [this](bool checked) {
+		m_settings.insert("gerberExportImprovementsEnabled", QString::number(checked));
+	});
 
 	return simulator;
 }
@@ -543,10 +563,6 @@ void PrefsDialog::updateWheelText() {
 
 void PrefsDialog::toggleAutosave(bool checked) {
 	m_settings.insert("autosaveEnabled", QString("%1").arg(checked));
-}
-
-void PrefsDialog::toggleSimulator(bool checked) {
-	m_settings.insert("simulatorEnabled", QString("%1").arg(checked));
 }
 
 void PrefsDialog::changeAutosavePeriod(int value) {

@@ -54,7 +54,7 @@ public:
 	bool cleared();
 	QHash<QString, QString> & settings();
 	QHash<QString, QString> & tempSettings();
-	void initLayout(QFileInfoList & languages, QList<Platform *> platforms, bool);
+	void initLayout(QFileInfoList & languages, QList<Platform *> platforms);
 	void initViewInfo(int index, const QString & viewName, const QString & shortName, bool curvy);
 
 protected:
@@ -64,14 +64,14 @@ protected:
 	QWidget * createZoomerForm();
 	QWidget * createAutosaveForm();
 	QWidget *createProgrammerForm(QList<Platform *> platforms);
-	QWidget *createBetaFeaturesForm(bool);
+	QWidget *createBetaFeaturesForm();
 	void updateWheelText();
 	void initGeneral(QWidget * general, QFileInfoList & languages);
 	void initBreadboard(QWidget *, ViewInfoThing *);
 	void initSchematic(QWidget *, ViewInfoThing *);
 	void initPCB(QWidget *, ViewInfoThing *);
 	void initCode(QWidget *widget, QList<Platform *> platforms);
-	void initBetaFeatures(QWidget *widget, bool);
+	void initBetaFeatures(QWidget *widget);
 	QWidget * createCurvyForm(ViewInfoThing *);
 
 protected Q_SLOTS:
@@ -84,7 +84,6 @@ protected Q_SLOTS:
 	void changeAutosavePeriod(int);
 	void curvyChanged();
 	void chooseProgrammer();
-	void toggleSimulator(bool);
 
 protected:
 	QPointer<QTabWidget> m_tabWidget;

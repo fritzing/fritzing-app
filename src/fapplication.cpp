@@ -1327,7 +1327,7 @@ void FApplication::preferencesAfter()
 
 	QList<Platform *> platforms = mainWindow->programmingWidget()->getAvailablePlatforms();
 
-	prefsDialog.initLayout(languages, platforms, mainWindow->isSimulatorEnabled());
+	prefsDialog.initLayout(languages, platforms);
 	if (QDialog::Accepted == prefsDialog.exec()) {
 		updatePrefs(prefsDialog);
 	}

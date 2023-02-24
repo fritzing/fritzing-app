@@ -22,6 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 #include "svgflattener.h"
 #include <QTextStream>
+#include <QSettings>
 #include <QSet>
 #include <QtDebug>
 #include <QRegularExpression>
@@ -88,7 +89,7 @@ int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, Fo
 		m_gerber_header += QString("G04 HOLES%1PLATED*\n").arg(doubleSided ? " " : " NOT ");
 		m_gerber_header += "G04 CONTOUR ON CENTER OF CONTOUR VECTOR*\n";
 
-		if (m_UcamcoChecker) {
+		if (QSettings().value("gerberExportImprovementsEnabled").toBool()) {
 
 			m_gerber_header += "%FSLAX25Y25*%\n";
 			// set units to inches

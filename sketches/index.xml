@@ -242,6 +242,10 @@
 		<sketch id="SimplePotentiometer" >
 			<language country="en" name="Potentiometer" src="core/Simulator/EN/simple_potentiometer.fzz"/>
 		</sketch>
+		<sketch id="NANDGate" >
+			<language country="en" name="NAND Gate" src="core/Simulator/EN/nand_gate.fzz"/>
+			<language country="es" name="Puerta NAND" src="core/Simulator/EN/nand_gate.fzz"/>
+		</sketch>
 </sketches>
 	<categories>
 		<category>
@@ -501,6 +505,7 @@
 				<sketch id="SimpleLED"/>
 				<sketch id="SimplePotentiometer"/>
 				<sketch id="IrSensorTransistorMotor"/>
+				<sketch id="NANDGate"/>
 			</category>
 		</category>
 	</categories>

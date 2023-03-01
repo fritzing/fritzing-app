@@ -161,6 +161,7 @@ protected:
 
 protected:
 	static const double CornerHandleSize;
+	static constexpr int kDefaultDecimalsAfter = 1;
 
 	Corner m_corner;
 	QSizeF m_boardSize;
@@ -183,7 +184,6 @@ protected:
 	QPointF m_resizeStartTopRight;
 	QPointF m_resizeStartBottomLeft;
 	int m_decimalsAfter;
-
 };
 
 #endif

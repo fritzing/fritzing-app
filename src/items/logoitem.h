@@ -90,6 +90,7 @@ protected:
 	void logoEntryAux(const QString & newText);
 
 protected:
+	static constexpr int kDecimalsAfter = 2;
 	QString m_logo;
 	bool m_hasLogo;
 	QString m_originalFilename;

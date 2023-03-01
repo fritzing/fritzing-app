@@ -581,7 +581,7 @@ ResizableBoard::ResizableBoard( ModelPart * modelPart, ViewLayer::ViewID viewID,
 
 	m_corner = ResizableBoard::NO_CORNER;
 	m_currentScale = 1.0;
-	m_decimalsAfter = 1;
+	m_decimalsAfter = kDefaultDecimalsAfter;
 }
 
 ResizableBoard::~ResizableBoard() {
@@ -663,7 +663,6 @@ void ResizableBoard::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 
 	QPointF zero = mapToScene(0, 0);
 	QPointF ds = mapFromScene(zero + event->scenePos() - m_resizeMousePos);
-	QPointF newPos;
 	QSizeF size = m_resizeStartSize;
 
 	switch (m_corner) {
@@ -843,8 +842,10 @@ void ResizableBoard::resizeMMAux(double mmW, double mmH)
 		modelPart()->setLocalProp("width", mmW);
 		modelPart()->setLocalProp("height", mmH);
 
-		double tens = pow(10.0, m_decimalsAfter);
-		setWidthAndHeight(qRound(mmW * tens) / tens, qRound(mmH * tens) / tens);
+		setWidthAndHeight(
+			TextUtils::roundDecimal(mmW, m_decimalsAfter),
+			TextUtils::roundDecimal(mmH, m_decimalsAfter)
+		);
 	}
 	//	DebugDialog::debug(QString("fast load result %1 %2").arg(result).arg(s));
 
@@ -1011,14 +1012,12 @@ bool ResizableBoard::collectExtraInfo(QWidget * parent, const QString & family, 
 			vboxLayout->setContentsMargins(0, 0, 0, 0);
 			vboxLayout->setContentsMargins(0, 3, 0, 0);
 
-			double tens = pow(10.0, m_decimalsAfter);
 			QRectF r = this->boundingRect();
-			double w = qRound(GraphicsUtils::pixels2mm(r.width(), GraphicsUtils::SVGDPI) * tens) / tens;
+			double w = TextUtils::roundDecimal(GraphicsUtils::pixels2mm(r.width(), GraphicsUtils::SVGDPI), m_decimalsAfter);
 			auto * l1 = new QLabel(tr("width: %1mm").arg(w));
 			l1->setContentsMargins(0, 0, 0, 0);
 			l1->setObjectName("infoViewLabel");
-
-			double h = qRound(GraphicsUtils::pixels2mm(r.height(), GraphicsUtils::SVGDPI) * tens) / tens;
+			double h = TextUtils::roundDecimal(GraphicsUtils::pixels2mm(r.height(), GraphicsUtils::SVGDPI), m_decimalsAfter);
 			auto * l2 = new QLabel(tr("height: %1mm").arg(h));
 			l2->setContentsMargins(0, 0, 0, 0);
 			l2->setObjectName("infoViewLabel");
@@ -1254,9 +1253,8 @@ void ResizableBoard::setKinCursor(Qt::CursorShape cursor) {
 
 QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeRevert, bool includePaperSizes, QWidget * & returnWidget)
 {
-	double tens = pow(10.0, m_decimalsAfter);
-	double w = qRound(m_modelPart->localProp("width").toDouble() * tens) / tens;	// truncate to 1 decimal point
-	double h = qRound(m_modelPart->localProp("height").toDouble() * tens) / tens;  // truncate to 1 decimal point
+	double w = TextUtils::roundDecimal(m_modelPart->localProp("width").toDouble(), m_decimalsAfter);
+	double h = TextUtils::roundDecimal(m_modelPart->localProp("height").toDouble(), m_decimalsAfter);
 
 	auto * frame = new QFrame();
 	frame->setObjectName("infoViewPartFrame");

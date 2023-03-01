@@ -54,6 +54,8 @@ static QStringList Copper1ImageNames;
 LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: ResizableBoard(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
+	m_decimalsAfter = kDecimalsAfter;
+
 	if (LogoImageNames.count() == 0) {
 		// TODO: load these names from somewhere
 
@@ -170,8 +172,8 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 				return "";
 			}
 
-			double scaleX = 1;
-			double scaleY = 1;
+			double scaleX = 1.0;
+			double scaleY = 1.0;
 			if (m_hasLogo) {
 				QDomDocument doc = splitter.domDocument();
 				QDomElement root = doc.documentElement();
@@ -187,7 +189,7 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 				QStringList coords = viewBox.split(" ", Qt::SkipEmptyParts);
 				double sx = w / coords.at(2).toDouble();
 				double sy = h / coords.at(3).toDouble();
-				if (qAbs(sx - sy) > .001) {
+				if (qAbs(sx - sy) > .0001) {
 					// change vertical dpi to match horizontal dpi
 					// y coordinate is really intended in relation to font size so leave it be
 					scaleY = sy / sx;
@@ -202,7 +204,7 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 
 			QString string = splitter.elementString(xmlName);
 
-			if (scaleY == 1) return string;
+			if (qFuzzyIsNull(scaleY - 1.0)) return string;
 
 			QTransform t;
 			t.scale(scaleX, scaleY);
@@ -332,7 +334,10 @@ bool LogoItem::reloadImage(const QString & incomingSvg, const QSizeF & aspectRat
 		}
 		m_logo = "";
 
-		setWidthAndHeight(qRound(mmW * 10) / 10.0, qRound(mmH * 10) / 10.0);
+		setWidthAndHeight(
+			TextUtils::roundDecimal<kDecimalsAfter>(mmW),
+			TextUtils::roundDecimal<kDecimalsAfter>(mmH)
+		);
 		return true;
 	}
 	else {
@@ -464,7 +469,7 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			svg += QString("<image x='0' y='0' width='%1' height='%2' xlink:href='data:image/%3;base64,")
 			       .arg(image.width()).arg(image.height()).arg(type);
 
-			int remaining = bytes.count();
+			int remaining = bytes.size();
 			ix = 0;
 			while (remaining > 0) {
 				QByteArray sixty = bytes.mid(ix, qMin(remaining, 60));
@@ -538,7 +543,10 @@ bool LogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayers)
 		modelPart()->setLocalProp("height", mmH);
 	}
 
-	setWidthAndHeight(qRound(mmW * 10) / 10.0, qRound(mmH * 10) / 10.0);
+	setWidthAndHeight(
+		TextUtils::roundDecimal<kDecimalsAfter>(mmW),
+		TextUtils::roundDecimal<kDecimalsAfter>(mmH)
+	);
 	return true;
 }
 
@@ -715,7 +723,7 @@ void LogoItem::widthEntry() {
 
 	double w = edit->text().toDouble();
 	double oldW = m_modelPart->localProp("width").toDouble();
-	if (w == oldW) return;
+	if (qFuzzyIsNull(w - oldW)) return;
 
 	double h = m_modelPart->localProp("height").toDouble();
 	if (m_keepAspectRatio) {
@@ -736,7 +744,7 @@ void LogoItem::heightEntry() {
 
 	double h = edit->text().toDouble();
 	double oldH =  m_modelPart->localProp("height").toDouble();
-	if (h == oldH) return;
+	if (qFuzzyIsNull(h - oldH)) return;
 
 	setHeight(h);
 }

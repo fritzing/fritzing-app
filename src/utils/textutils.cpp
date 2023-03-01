@@ -39,6 +39,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QCryptographicHash>
 #include <QDebug>
 
+#include <array>
 #include <qmath.h>
 #include <qnumeric.h>
 
@@ -268,6 +269,48 @@ void TextUtils::chopNotDigits(QString & string) {
 		if (ch == '.') return;
 
 		string.chop(1);
+	}
+}
+
+// This is more of a MathUtil, not a TextUtil. But many of the unit converion
+// inch and mm conversion and number representation methods are grouped in TextUtils
+template <>
+double TextUtils::roundDecimal<1>(double value) {
+	return std::round(value * 10.0) / 10.0;
+}
+
+template <>
+double TextUtils::roundDecimal<2>(double value) {
+	return std::round(value * 100.0) / 100.0;
+}
+
+template <>
+double TextUtils::roundDecimal<3>(double value) {
+	return std::round(value * 1000.0) / 1000.0;
+}
+
+template <int DecimalPlaces>
+double TextUtils::roundDecimal(double value) {
+	constexpr double factor = std::pow(10.0, DecimalPlaces);
+	return std::round(value * factor) / factor;
+}
+
+double TextUtils::roundDecimal(double value, double decimal) {
+	double factor = std::pow(10.0, decimal);
+	return std::round(value * factor) / factor;
+}
+
+double TextUtils::roundDecimal(double value, int decimal) {
+	std::array<double (*)(double), 4> Decimals = {
+		std::round,
+		roundDecimal<1>,
+		roundDecimal<2>,
+		roundDecimal<3>
+	};
+	if (decimal < 4) {
+		return Decimals[decimal](value);
+	} else {
+		return roundDecimal(value, double(decimal));
 	}
 }
 

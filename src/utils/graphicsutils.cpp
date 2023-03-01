@@ -205,7 +205,6 @@ bool GraphicsUtils::isRect(const QPolygonF & poly) {
 
 bool GraphicsUtils::isFuzzyRect(const QPolygonF & poly) {
 	if (poly.count() != 5) return false;
-	if (poly.at(0) != poly.at(4)) return false;
 
 	// either we start running across top or running along side
 	const auto& poly0 = poly.at(0);
@@ -213,6 +212,9 @@ bool GraphicsUtils::isFuzzyRect(const QPolygonF & poly) {
 	const auto& poly2 = poly.at(2);
 	const auto& poly3 = poly.at(3);
 	const auto& poly4 = poly.at(4);
+	if (!qFuzzyIsNull(poly0.x() - poly4.x())) return false;
+	if (!qFuzzyIsNull(poly0.y() - poly4.y())) return false;
+
 	if (qFuzzyIsNull(poly0.x() - poly1.x()) &&
 	    qFuzzyIsNull(poly1.y() - poly2.y()) &&
 	    qFuzzyIsNull(poly2.x() - poly3.x()) &&

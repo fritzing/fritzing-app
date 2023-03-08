@@ -100,6 +100,7 @@ QString GetSpice::getSpice(ItemBase * itemBase, const QList< QList<class Connect
 			//Ngspice does not differenciate from m and M prefixes, u shuld be used for micro
 			replacement.replace("M", "Meg");
 			replacement.replace(TextUtils::MicroSymbol, "u");
+			replacement.replace(TextUtils::AltMicroSymbol, "u");
 			replacement.replace("μ", "u");
 			replacement.replace("Ω", "");
 		}

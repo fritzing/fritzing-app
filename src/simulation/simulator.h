@@ -66,6 +66,8 @@ protected:
 	QString getSymbol(ItemBase*, QString);
 	double getVectorValueOrDefault(const std::string & vecName, double defaultValue);
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
+	std::vector<double> voltageVector(ConnectorItem *);
+	QString generateSvgPath(std::vector<double>, std::vector<double>, QString, double, double);
 	double getCurrent(ItemBase*, QString subpartName="");
 	double getTransistorCurrent(QString spicePartName, TransistorLeg leg);
 	double getPower(ItemBase*, QString subpartName="");
@@ -75,6 +77,7 @@ protected:
 	void updateDiode(ItemBase *);
 	void updateLED(ItemBase *);
 	void updateMultimeter(ItemBase *);
+	void updateOscilloscope(ItemBase *);
 	void updateResistor(ItemBase *);
 	void updatePotentiometer(ItemBase *);
 	void updateDcMotor(ItemBase *);

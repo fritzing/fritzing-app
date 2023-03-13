@@ -69,7 +69,7 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 
 	QSettings settings;
 	int enabled = settings.value("simulatorEnabled", 0).toInt();
-	enable(enabled);
+	enable(true);
 	m_simulating = false;
 
 }
@@ -194,6 +194,21 @@ void Simulator::simulate() {
 	QSet<ItemBase *> itemBases;
 	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
 
+	//Select the type of analysis based on if there is an oscilloscope in the simulation
+	foreach (ItemBase * item, itemBases) {
+		if(item->family().toLower().contains("oscilloscope")) {
+			//TODO: Use TextUtils::convertFromPowerPrefixU function
+			double time_div = TextUtils::convertFromPowerPrefix(item->getProperty("time/div"), "s");
+			std::cout << "time/div: " << item->getProperty("time/div").toStdString() << " " << time_div << std::endl;
+			double maxSimTime = time_div * 10;
+			QString tranAnalysis = QString(".TRAN %1 %2").arg(maxSimTime/100).arg(maxSimTime);
+			spiceNetlist.replace(".OP", tranAnalysis);
+			//TODO: Handle several oscilloscopes
+			break;
+		}
+	}
+
+
 	std::cout << "Netlist: " << spiceNetlist.toStdString() << std::endl;
 
 	//std::cout << "-----------------------------------" <<std::endl;
@@ -307,6 +322,8 @@ void Simulator::simulate() {
 	}
 	std::cout << "No fatal error found, continuing..." <<std::endl;
 
+	m_simulator->command("bg_halt");
+
 	//The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
 	//This loops is in charge of:
 	// * update the multimeters screen
@@ -356,6 +373,10 @@ void Simulator::simulate() {
 		}
 		if (family.contains("potentiometer") || family.contains("sparkfun trimpot")) {
 			updatePotentiometer(part);
+			continue;
+		}
+		if (family.contains("oscilloscope")) {
+			updateOscilloscope(part);
 			continue;
 		}
 
@@ -566,6 +587,46 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 		volt1 = vecInfo[0];
 	}
 	return volt0-volt1;
+}
+
+std::vector<double> Simulator::voltageVector(ConnectorItem * c0) {
+	int net0 = m_connector2netHash.value(c0);
+	std::cout << "calculateVoltageVector: ";
+	QString net0str = QString("v(%1)").arg(net0);
+
+	auto timeInfo = m_simulator->getVecInfo(QString("time").toStdString());
+	if (net0 != 0) {
+		std::cout << "calculateVoltageVector: ";
+	}
+	return m_simulator->getVecInfo(net0str.toStdString());
+}
+
+QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<double> comVector, QString nameId, double v_div, double v_offset) {
+	std::cout << "VOLTAGE VALUES " << nameId.toStdString() << ": ";
+	QString svg;
+	if (!nameId.isEmpty())
+		svg += QString("<path id='%1' d='").arg(nameId);
+	else
+		svg += QString("<path d='");
+
+	double vScale = -12.5/v_div;
+	double y_0 = 50; // the center of the screen
+
+
+	for (int i = 0; std::min( proveVector.size(), comVector.size() ); i++) {
+		double voltage = proveVector[i] - comVector[i];
+		if (i == 0) {
+			svg.append("M 0 " + QString::number( (voltage + v_offset) * vScale + y_0, 'f', 3) + " ");
+		} else {
+			svg.append("L " + QString::number(i, 'f', 3) + " " + QString::number((voltage + v_offset) * vScale + y_0, 'f', 3) + " ");
+		}
+		std::cout << voltage << ' ';
+	}
+	svg += "' fill='red' stroke='black' stroke-width='10'/> \n";
+
+	std::cout << std::endl;
+	return svg;
+
 }
 
 /**
@@ -1205,4 +1266,87 @@ void Simulator::updateMultimeter(ItemBase * part) {
 		updateMultimeterScreen(part, r);
 		return;
 	}
+}
+
+/**
+ * Updates and checks a oscilloscope. If the ground connection is not connected, plots a noisy signal.
+ * Calculates the parameter to measure and updates the display of the multimeter.
+ * @param[in] part An oscilloscope that is going to be checked and updated.
+ */
+void Simulator::updateOscilloscope(ItemBase * part) {
+	std::cout << "updateOscilloscope: " << std::endl;
+	QString nChannels = part->getProperty("channels").toLower();
+	ConnectorItem * comProbe = nullptr, * v1Probe = nullptr, * v2Probe = nullptr, * v3Probe = nullptr, * v4Probe = nullptr;
+	QList<ConnectorItem *> probes = part->cachedConnectorItems();
+	foreach(ConnectorItem * ci, probes) {
+		if(ci->connectorSharedName().toLower().compare("com probe") == 0) comProbe = ci;
+		if(ci->connectorSharedName().toLower().compare("v1 probe") == 0) v1Probe = ci;
+		if(ci->connectorSharedName().toLower().compare("v2 probe") == 0) v2Probe = ci;
+		if(ci->connectorSharedName().toLower().compare("v3 probe") == 0) v3Probe = ci;
+		if(ci->connectorSharedName().toLower().compare("v4 probe") == 0) v4Probe = ci;
+	}
+	if(!comProbe || !v1Probe || !v2Probe || !v3Probe || !v4Probe)
+		return;
+
+	if(!v1Probe->connectedToWires() && !v2Probe->connectedToWires() && !v3Probe->connectedToWires() && !v4Probe->connectedToWires()) {
+		std::cout << "Oscilloscope does not have any wire connected to the probe terminals. " << std::endl;
+		return;
+	}
+
+
+	if(comProbe->connectedToWires() && v1Probe->connectedToWires()) {
+		std::cout << "Oscilloscope probe v1 connected. " << std::endl;
+		auto v1 = voltageVector(v1Probe);
+		//auto vCom = voltageVector(comProbe);
+		std::vector<double> vCom(v1.size(), 0.0);
+
+		//TODO: use convertFromPowerPrefixU
+		double vols_div = TextUtils::convertFromPowerPrefix(part->getProperty("volts/div"), "V");
+		double v1_offset = TextUtils::convertFromPowerPrefix(part->getProperty("v1 offset"), "V");
+
+		QString svg = QString("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n%5"
+				"<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' "
+				"version='1.2' baseProfile='tiny' "
+				"x='0in' y='0in' width='%1in' height='%2in' "
+				"viewBox='0 0 %3 %4' >\n"
+			   )
+		.arg(125)
+		.arg(100)
+		.arg(125)
+		.arg(100)
+		.arg(TextUtils::CreatedWithFritzingXmlComment);
+		svg += generateSvgPath(v1, vCom, "v1-path", vols_div, v1_offset);
+		svg += "</svg>";
+
+		QGraphicsSvgItem * graph = new QGraphicsSvgItem(part);
+		QSvgRenderer *graphRender = new QSvgRenderer(svg.toUtf8());
+		if(graphRender->isValid())
+			std::cout << "SVG Graph is VALID " << std::endl;
+		else
+			std::cout << "SVG Graph is NOT VALID " << std::endl;
+		std::cout << "SVG: " << svg.toStdString() << std::endl;
+		graph->setSharedRenderer(graphRender);
+		graph->setElementId("graph");
+		graph->setZValue(std::numeric_limits<double>::max());
+
+		//There are issues as the size of the text changes depending on the display settings in windows
+		//This hack scales the text to match the appropiate value
+		QRectF schOscilloscopeBoundingBox = part->boundingRect();
+		QRectF schBoundingBox = graph->boundingRect();
+
+		//Set the text to be a 80% percent of the multimeter´s width and 50% in sch view
+		//graph->setScale((0.5*schOscilloscopeBoundingBox.width())/schBoundingBox.width());
+
+		//Update the boundiong box after scaling them
+		//schBoundingBox = graph->mapRectToParent(graph->boundingRect());
+
+		//Center the text
+		//graph->setPos(QPointF((schOscilloscopeBoundingBox.width()-schBoundingBox.width())/2
+		//					  ,0.13*schOscilloscopeBoundingBox.height()));
+		graph->setPos(QPointF(5.0,5.0));
+
+		part->addSimulationGraphicsItem(graph);
+
+	}
+
 }

@@ -238,6 +238,7 @@ public:
 	void noSchematicConversion();
 	QString getExportBOM_CSV();
 	QString getSpiceNetlist(QString, QList< QList<class ConnectorItem *>* >&, QSet<class ItemBase *>& );
+	QString getSpice(ItemBase * itemBase, const QList< QList<class ConnectorItem *>* >& netList);
 	bool isSimulatorEnabled();
 	void enableSimulator(bool);
 	void triggerSimulator();

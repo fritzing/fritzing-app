@@ -1417,80 +1417,6 @@ QString MainWindow::getSpiceNetlist(QString simulationName) {
 	return spiceNetlist;
 }
 
-QString MainWindow::getSpice(ItemBase * itemBase, const QList< QList<class ConnectorItem *>* >& netList) {
-	static QRegularExpression curlies("\\{([^\\{\\}]*)\\}");
-	QString spice = itemBase->spice();
-	int pos = 0;
-	while (true) {
-		QRegularExpressionMatch match;
-		pos = spice.indexOf(curlies, pos, &match);
-		if (pos < 0) break;
-
-		QString token = match.captured(1).toLower();
-		QString replacement;
-		if (token == "instancetitle") {
-			replacement = itemBase->instanceTitle();
-			if (pos > 0 && replacement.at(0).toLower() == spice.at(pos - 1).toLower()) {
-				// if the type letter is repeated
-				replacement = replacement.mid(1);
-			}
-			replacement.replace(" ", "_");
-		}
-		else if (token.startsWith("net ")) {
-			QString cname = token.mid(4).trimmed();
-			Q_FOREACH (ConnectorItem * ci, itemBase->cachedConnectorItems()) {
-				if (ci->connectorSharedID().toLower() == cname) {
-					int ix = -1;
-					Q_FOREACH (QList<ConnectorItem *> * net, netList) {
-						ix++;
-						if (net->contains(ci)) break;
-					}
-
-					replacement = QString::number(ix);
-					break;
-				}
-			}
-		}
-		else {
-			//Find the symbol of this property
-			QString symbol;
-			QHash<PropertyDef *, QString> propertyDefs;
-			PropertyDefMaster::initPropertyDefs(itemBase->modelPart(), propertyDefs);
-			foreach (PropertyDef * propertyDef, propertyDefs.keys()) {
-				if (token.compare(propertyDef->name, Qt::CaseInsensitive) == 0) {
-					symbol = propertyDef->symbol;
-					break;
-				}
-			}
-			//Find the value of the property
-			QVariant variant = itemBase->modelPart()->localProp(token);
-			if (variant.isNull()) {
-				replacement = itemBase->modelPart()->properties().value(token, "");
-				if(replacement.isEmpty()) {
-					//Leave it, probably is a brace expresion for the spice simulator
-					replacement = match.captured(0);
-					continue;
-				}
-			}
-			else {
-				replacement = variant.toString();
-			}
-			//Remove the symbol, if any. It is not mandatory:
-			//(Ngspice ignores letters immediately following a number that are not scale factors)
-			if (!symbol.isEmpty()) {
-				replacement.replace(symbol, "");
-			}
-			//Ngspice does not differenciate from m and M prefixes, u shuld be used for micro
-			replacement.replace("M", "Meg");
-			replacement.replace(TextUtils::MicroSymbol, "u");
-		}
-
-		spice.replace(pos, match.captured(0).count(), replacement);
-		DebugDialog::debug("spice " + spice);
-	}
-	return spice;
-}
-
 /**
  * Build and return a circuit description in spice based on the current circuit.
  * Additionally, the netlist and the parts to simulate are returned by pointers.
@@ -1569,7 +1495,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 
 	Q_FOREACH (ItemBase * itemBase, itemBases) {
 		if (itemBase->spice().isEmpty()) continue;
-		output += getSpice(itemBase, netList);
+		output += GetSpice::getSpice(itemBase, netList);
 	}
 
 	output += "\n";

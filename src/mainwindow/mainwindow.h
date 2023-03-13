@@ -42,6 +42,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "fritzingwindow.h"
 #include "sketchareawidget.h"
+#include "getspice.h"
 #include "../viewlayer.h"
 #include "../project_properties.h"
 #include "../program/programwindow.h"
@@ -238,7 +239,6 @@ public:
 	void noSchematicConversion();
 	QString getExportBOM_CSV();
 	QString getSpiceNetlist(QString, QList< QList<class ConnectorItem *>* >&, QSet<class ItemBase *>& );
-	QString getSpice(ItemBase * itemBase, const QList< QList<class ConnectorItem *>* >& netList);
 	bool isSimulatorEnabled();
 	void enableSimulator(bool);
 	void triggerSimulator();

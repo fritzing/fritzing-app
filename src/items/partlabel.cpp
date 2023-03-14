@@ -876,7 +876,7 @@ bool PartLabel::migrateLabelOffset()
 	// This way fonts are not cut anymore, but old projects still keep
 	// labels at the same position.
 	const double fontOffsetFactor=0.25;
-	const double fontOffsetModifier = 0.5;
+	const double fontOffsetModifier = 0;
 	qreal dy = (m_font.pointSizeF() - fontOffsetModifier) * GraphicsUtils::SVGDPI / 72.0 * fontOffsetFactor;
 	QTransform t = sceneTransform();
 	QTransform labelTransform = QTransform(t.m11(), t.m12(), t.m13(), t.m21(), t.m22(), t.m23(), 0.0, 0.0, t.m33());

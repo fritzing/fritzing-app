@@ -72,12 +72,15 @@ QString GetSpice::getSpice(ItemBase * itemBase, const QList< QList<class Connect
 			}
 			//Find the value of the property
 			QVariant variant = itemBase->modelPart()->localProp(token);
+
 			if (variant.isNull()) {
 				auto prop = itemBase->modelPart()->properties();
 				replacement = prop.value(token, "");
+				QList<QString> knownTokens;
+				knownTokens << "inductance" << "resistance" << "current" << "tolerance" << "power" << "capacitance" << "voltage";
 				if(replacement.isEmpty()) {
-					if (prop.contains(token)) {
-						// Property exists but is empty. Just assume zero.
+					if (prop.contains(token) || knownTokens.contains(token)) {
+						// Property exists but is empty. Or it is one of a few known tokens. Just assume zero.
 						replacement = "0";
 					} else {
 						//Leave it, probably is a brace expresion for the spice simulator

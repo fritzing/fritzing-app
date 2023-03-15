@@ -901,7 +901,6 @@ bool ProgramWindow::hasPort(const QString & portName) {
 
 void ProgramWindow::updateLink(const QString & filename, Platform * platform, bool addlink, bool strong)
 {
-	DebugDialog::debug("updating link");
 	Q_EMIT linkToProgramFile(filename, platform, addlink, strong);
 }
 

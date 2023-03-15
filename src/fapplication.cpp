@@ -586,6 +586,7 @@ int FApplication::init() {
 	m_buildType = QString(PLATFORM_NAME).contains("64") ? "64" : "32";
 #endif
 	AboutBox::initBuildType(m_buildType);
+	DebugDialog::debug(QString("Starting Fritzing %1").arg(Version::versionString()));
 
 	return FInitResultNormal;
 }
@@ -1007,7 +1008,8 @@ void FApplication::runGedaService() {
 		DebugDialog::debug(msg);
 	}
 	catch (...) {
-		DebugDialog::debug("who knows");
+		// Not sure why this was originally added.
+		DebugDialog::debug("runGedaService: discarding exception");
 	}
 }
 
@@ -1063,7 +1065,8 @@ void FApplication::runDRCService() {
 		DebugDialog::debug(msg);
 	}
 	catch (...) {
-		DebugDialog::debug("who knows");
+		// Not sure why this was originally added.
+		DebugDialog::debug("runDRCService: discarding exception");
 	}
 }
 
@@ -1233,7 +1236,6 @@ int FApplication::startup()
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.65);
 	ProcessEventBlocker::processEvents();
 
-	DebugDialog::debug("load something");
 	loadSomething(prevVersion);
 	m_started = true;
 

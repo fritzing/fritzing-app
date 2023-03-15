@@ -206,55 +206,64 @@ const QString FolderUtils::libraryPath()
 }
 
 const QString FolderUtils::applicationDirPath() {
-	if (m_appPath.isEmpty()) {
-#ifdef Q_OS_WIN
-		m_appPath = QCoreApplication::applicationDirPath();
-#else
-		// look in standard Fritzing location (applicationDirPath and parent folders) then in standard linux locations
-		QStringList candidates;
-		candidates.append(QCoreApplication::applicationDirPath());
+	if (!m_appPath.isEmpty()) {
+		return m_appPath;
+	}
 
-		QDir dir(QCoreApplication::applicationDirPath());
-		if (dir.cdUp()) {
+
+#ifdef Q_OS_WIN
+	m_appPath = QCoreApplication::applicationDirPath();
+#else
+	// look in standard Fritzing location (applicationDirPath and parent folders) then in standard linux locations
+	QStringList candidates;
+	candidates.append(QCoreApplication::applicationDirPath());
+
+	QDir dir(QCoreApplication::applicationDirPath());
+	if (dir.cdUp()) {
 
 #ifdef Q_OS_MAC
-			candidates.append(dir.absolutePath() + "/Resources");
+		candidates.append(dir.absolutePath() + "/Resources");
 #endif
+		candidates.append(dir.absolutePath());
+		if (dir.cdUp()) {
 			candidates.append(dir.absolutePath());
 			if (dir.cdUp()) {
 				candidates.append(dir.absolutePath());
-				if (dir.cdUp()) {
-					candidates.append(dir.absolutePath());
-				}
 			}
 		}
-
-#ifdef PKGDATADIR
-		candidates.append(QLatin1String(PKGDATADIR));
-#else
-		candidates.append("/usr/share/fritzing");
-		candidates.append("/usr/local/share/fritzing");
-#endif
-		candidates.append(QDir::homePath() + "/.local/share/fritzing");
-		Q_FOREACH (QString candidate, candidates) {
-			DebugDialog::debug(QString("candidate:%1").arg(candidate));
-			QDir dir(candidate);
-			if (!dir.exists("translations")) continue;
-
-			if (dir.exists("help")) {
-				m_appPath = candidate;
-				DebugDialog::debug(QString("data folders found: %1").arg(candidate));
-				return m_appPath;
-			}
-
-		}
-
-		m_appPath = QCoreApplication::applicationDirPath();
-		DebugDialog::debug("data folders not found");
-
-#endif
 	}
 
+#ifdef PKGDATADIR
+	candidates.append(QLatin1String(PKGDATADIR));
+#else
+	candidates.append("/usr/share/fritzing");
+	candidates.append("/usr/local/share/fritzing");
+#endif
+	candidates.append(QDir::homePath() + "/.local/share/fritzing");
+	Q_FOREACH (QString candidate, candidates) {
+		QDir dir(candidate);
+		if (!dir.exists("translations")) {
+			continue;
+		}
+
+		if (dir.exists("help")) {
+			m_appPath = candidate;
+			break;
+		}
+
+	}
+
+	if (m_appPath.isEmpty()) {
+		m_appPath = QCoreApplication::applicationDirPath();
+		DebugDialog::debug("Data folder not found.", DebugDialog::Warning);
+		DebugDialog::debug(" Checked: ");
+		for (const QString& candidate : candidates) {
+			DebugDialog::debug(candidate);
+		}
+	}
+#endif
+
+	DebugDialog::debug(QString("Using data folder: %1").arg(m_appPath), DebugDialog::Info);
 	return m_appPath;
 }
 

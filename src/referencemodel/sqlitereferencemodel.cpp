@@ -540,7 +540,9 @@ bool SqliteReferenceModel::createDatabase(const QString & databaseName, bool ful
 	else {
 		m_keepGoing = false;
 		bool gotTransaction = m_database.transaction();
-		DebugDialog::debug(gotTransaction ? "got transaction" : "no transaction");
+		if(!gotTransaction) {
+			DebugDialog::debug("Database does not support transactions", DebugDialog::Warning);
+		}
 
 		bool result = createParts(m_database, fullLoad);
 

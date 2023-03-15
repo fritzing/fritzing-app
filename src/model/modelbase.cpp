@@ -112,6 +112,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	bool checkForMysteryParts = true;
 	bool checkForObsoleteSMDOrientation = true;
 	m_fritzingVersion = root.attribute("fritzingVersion");
+	DebugDialog::debug(QString("Project %1 was created with Fritzing %2").arg(fileName, m_fritzingVersion), DebugDialog::Info);
 	if (m_fritzingVersion.length() > 0) {
 		// with version 0.4.3 ratsnests in fz files are obsolete
 		VersionThing versionThingRats;

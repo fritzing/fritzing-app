@@ -106,6 +106,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		return false;
 	}
 
+	// QUESTION: Do these version checks make any sense for part bins?
 	bool checkForOldSchematics = true;
 	bool checkForRats = true;
 	bool checkForTraces = true;
@@ -113,7 +114,11 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	bool checkForObsoleteSMDOrientation = true;
 	bool correctPartLabelOffset = false;
 	m_fritzingVersion = root.attribute("fritzingVersion");
-	DebugDialog::debug(QString("Project %1 was created with Fritzing %2").arg(fileName, m_fritzingVersion), DebugDialog::Info);
+	if (checkViews) {
+		DebugDialog::debug(QString("Project %1 was created with Fritzing %2").arg(fileName, m_fritzingVersion), DebugDialog::Info);
+	} else {
+		DebugDialog::debug(QString("Parts Bin %1 was created with Fritzing %2").arg(fileName, m_fritzingVersion), DebugDialog::Info);
+	}
 	if (m_fritzingVersion.length() > 0) {
 		// with version 0.4.3 ratsnests in fz files are obsolete
 		VersionThing versionThingRats;
@@ -147,8 +152,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
 		correctPartLabelOffset = Version::greaterThan(m_fritzingVersion, "1.0.0");
 		if (correctPartLabelOffset) {
-			DebugDialog::debug(QString("Migrate part labels for from %1 project to Fritzing 1.0.0").arg(m_fritzingVersion));
-			Q_EMIT migratePartLabelOffset();
+			Q_EMIT migratePartLabelOffset(m_fritzingVersion);
 		}
 	}
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();

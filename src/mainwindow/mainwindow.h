@@ -971,7 +971,6 @@ protected:
 	bool m_convertedSchematic = false;
 	bool m_useOldSchematic = false;
 	bool m_noSchematicConversion = false;
-	bool m_migratePartLabelOffset = false;
 	int m_initialTab = 0;
 
 	// dock management

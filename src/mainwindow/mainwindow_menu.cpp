@@ -370,8 +370,11 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 
 	QList<ModelPart *> modelParts;
 
-	connect(m_sketchModel, &ModelBase::migratePartLabelOffset, this, [this](){
-		m_migratePartLabelOffset = true;
+	bool doMigratePartLabelOffset = false;
+	QMetaObject::Connection migratePartLabelOffsetConnection = connect(
+		m_sketchModel, &ModelBase::migratePartLabelOffset, this, [&doMigratePartLabelOffset](const QString &fritzingVersion){
+		DebugDialog::debug(QString("Migrate part labels for from %1 project to Fritzing 1.0.0").arg(fritzingVersion));
+		doMigratePartLabelOffset = true;
 	});
 
 	connect(m_sketchModel, SIGNAL(loadedViews(ModelBase *, QDomElement &)),
@@ -476,12 +479,12 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 		}
 	}
 
-	if (m_migratePartLabelOffset) {
+	if (doMigratePartLabelOffset) {
 		migratePartLabelOffset(modelParts);
 	}
+	disconnect(migratePartLabelOffsetConnection);
 
 	initZoom();
-
 }
 
 void MainWindow::copy() {

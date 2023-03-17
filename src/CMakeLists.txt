@@ -88,5 +88,25 @@ target_link_libraries(fritzing
 target_include_directories(fritzing PRIVATE ${FRITZING_INC_DIRS})
 
 # Git versioning
+find_package(Git)
 
-target_compile_definitions(fritzing PRIVATE GIT_VERSION="N/A" GIT_DATE="N/A" BUILD_TIME="N/A")
+set(GIT_VERSION "N/A")
+set(GIT_DATE "N/A")
+string(TIMESTAMP BUILD_TIME "%Y-%m-%d %H:%M")
+
+if(GIT_FOUND)
+  execute_process(
+    COMMAND ${GIT_EXECUTABLE} describe --tags --always
+    OUTPUT_VARIABLE GIT_VERSION)
+  string(STRIP ${GIT_VERSION} GIT_VERSION)
+  message(STATUS ${GIT_VERSION})
+  execute_process(
+    COMMAND ${GIT_EXECUTABLE} show --no-patch --no-notes --pretty='%cd' --date=iso-strict
+    OUTPUT_VARIABLE GIT_DATE)
+  string(STRIP ${GIT_DATE} GIT_DATE)
+  message(STATUS ${GIT_DATE})
+else()
+  message(WARN "Can't get git versioning")
+endif()
+
+target_compile_definitions(fritzing PRIVATE GIT_VERSION="${GIT_VERSION}" GIT_DATE="${GIT_DATE}" BUILD_TIME="${BUILD_TIME}")

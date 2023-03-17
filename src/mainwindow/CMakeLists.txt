@@ -1,6 +1,6 @@
 # /*******************************************************************
 # Part of the Fritzing project - http://fritzing.org
-# Copyright (c) 2007-08 Fritzing
+# Copyright (c) 2007-23 Fritzing
 # Fritzing is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -13,21 +13,19 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
-include(gitversion.pri)
+set(FRITZING_HDRS ${FRITZING_HDRS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/fdockwidget.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/fritzingwindow.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/sketchareawidget.h
+  PARENT_SCOPE)
 
-HEADERS += \
-	src/version/modfiledialog.h \
-	src/version/updatedialog.h \
-	src/version/version.h \
-	src/version/versionchecker.h \
-	src/version/partschecker.h
-
-SOURCES += \
-	src/version/modfiledialog.cpp \
-	src/version/updatedialog.cpp \
-	src/version/version.cpp \
-	src/version/versionchecker.cpp \
-	src/version/partschecker.cpp
-
-FORMS += \
-	src/version/modfiledialog.ui
+set(FRITZING_SRCS ${FRITZING_SRCS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/fdockwidget.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/fritzingwindow.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow_export.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow_menu.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow_dock.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/sketchareawidget.cpp
+  PARENT_SCOPE)

@@ -1,6 +1,6 @@
 # /*******************************************************************
 # Part of the Fritzing project - http://fritzing.org
-# Copyright (c) 2007-2019 Fritzing
+# Copyright (c) 2007-23 Fritzing
 # Fritzing is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -13,6 +13,10 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
+set(FRITZING_HDRS ${FRITZING_HDRS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/fritzing2eagle.h
+  PARENT_SCOPE)
 
-SOURCES += src/lib/qtsysteminfo/QtSystemInfo.cpp
-HEADERS += src/lib/qtsysteminfo/QtSystemInfo.h
+set(FRITZING_SRCS ${FRITZING_SRCS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/fritzing2eagle.cpp
+  PARENT_SCOPE)

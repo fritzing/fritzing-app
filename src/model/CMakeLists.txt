@@ -1,6 +1,6 @@
 # /*******************************************************************
 # Part of the Fritzing project - http://fritzing.org
-# Copyright (c) 2007-08 Fritzing
+# Copyright (c) 2007-23 Fritzing
 # Fritzing is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -13,6 +13,18 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
-HEADERS += src/eagle/fritzing2eagle.h
+set(FRITZING_HDRS ${FRITZING_HDRS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/modelbase.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/modelpart.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/modelpartshared.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/palettemodel.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/sketchmodel.h
+  PARENT_SCOPE)
 
-SOURCES += src/eagle/fritzing2eagle.cpp
+set(FRITZING_SRCS ${FRITZING_SRCS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/modelbase.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/modelpart.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/modelpartshared.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/palettemodel.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/sketchmodel.cpp
+  PARENT_SCOPE)

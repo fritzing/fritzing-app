@@ -233,11 +233,11 @@
     </message>
     <message>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing é possível graças ao financiamento do MWFK Brandenburg, ao patrocínio do departamento de design da Bauhaus-University Weimar, IxDS, u doador anónimo, Parallax, Picaxe, Sparkfun, do PCB Fab AISLER, e a cada download pago.</translation>
     </message>
     <message>
         <source>, Siti Aishah Abdul Raouf</source>
-        <translation type="unfinished"></translation>
+        <translation>, Siti Aishah Abdul Raouf</translation>
     </message>
 </context>
 <context>
@@ -252,7 +252,7 @@
     </message>
     <message>
         <source>zoom and pan controls</source>
-        <translation>zoom e comandos de pan</translation>
+        <translation>comandos de zoom e panorama</translation>
     </message>
     <message>
         <source>Best So Far</source>
@@ -278,11 +278,11 @@
     </message>
     <message>
         <source>professional</source>
-        <translation>professional</translation>
+        <translation>profissional</translation>
     </message>
     <message>
         <source>custom</source>
-        <translation>adaptar</translation>
+        <translation>personalizado</translation>
     </message>
     <message>
         <source>Trace width</source>
@@ -314,7 +314,7 @@
     </message>
     <message>
         <source>Via size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamanho via</translation>
     </message>
 </context>
 <context>
@@ -689,7 +689,9 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione da lista suspensa, ou coloque um valor %1
+Alcance: [%2 - %3] %4
+Fundo: Verde = ok, Vermelho = valor incorreto, Cinzento = valor atual</translation>
     </message>
 </context>
 <context>

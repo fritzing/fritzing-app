@@ -10,6 +10,10 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
-
+# Build application
 add_subdirectory(src)
+
+# Build parts library
+add_custom_target(fritzing_parts 
+  COMMAND fritzing -db "${CMAKE_CURRENT_BINARY_DIR}/parts.db" -pp ${CMAKE_SOURCE_DIR}/parts
+  BYPRODUCTS ${CMAKE_CURRENT_BINARY_DIR}/parts.db)

@@ -99,12 +99,10 @@ if(GIT_FOUND)
     COMMAND ${GIT_EXECUTABLE} describe --tags --always
     OUTPUT_VARIABLE GIT_VERSION)
   string(STRIP ${GIT_VERSION} GIT_VERSION)
-  message(STATUS ${GIT_VERSION})
   execute_process(
     COMMAND ${GIT_EXECUTABLE} show --no-patch --no-notes --pretty='%cd' --date=iso-strict
     OUTPUT_VARIABLE GIT_DATE)
   string(STRIP ${GIT_DATE} GIT_DATE)
-  message(STATUS ${GIT_DATE})
 else()
   message(WARN "Can't get git versioning")
 endif()

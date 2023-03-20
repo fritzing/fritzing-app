@@ -1,6 +1,6 @@
 # /*******************************************************************
 # Part of the Fritzing project - http://fritzing.org
-# Copyright (c) 2007-08 Fritzing
+# Copyright (c) 2007-23 Fritzing
 # Fritzing is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -12,25 +12,23 @@
 # You should have received a copy of the GNU General Public License
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
-HEADERS += \
-    $$PWD/../src/sketch/renderthing.h \
-    src/sketch/fgraphicsscene.h \
-    src/sketch/breadboardsketchwidget.h \
-    src/sketch/infographicsview.h \
-    src/sketch/pcbsketchwidget.h \
-    src/sketch/schematicsketchwidget.h \
-    src/sketch/sketchwidget.h \
-    src/sketch/welcomeview.h \
-    src/sketch/zoomablegraphicsview.h \
 
+set(FRITZING_HDRS ${FRITZING_HDRS}
+	${CMAKE_CURRENT_SOURCE_DIR}/modfiledialog.h
+	${CMAKE_CURRENT_SOURCE_DIR}/updatedialog.h
+	${CMAKE_CURRENT_SOURCE_DIR}/version.h
+	${CMAKE_CURRENT_SOURCE_DIR}/versionchecker.h
+	${CMAKE_CURRENT_SOURCE_DIR}/partschecker.h
+  PARENT_SCOPE)
 
-SOURCES += \
-    $$PWD/../src/sketch/renderthing.cpp \
-    src/sketch/fgraphicsscene.cpp \
-    src/sketch/breadboardsketchwidget.cpp \
-    src/sketch/infographicsview.cpp \
-    src/sketch/pcbsketchwidget.cpp \
-    src/sketch/schematicsketchwidget.cpp \
-    src/sketch/sketchwidget.cpp \
-    src/sketch/welcomeview.cpp \
-    src/sketch/zoomablegraphicsview.cpp \
+set(FRITZING_SRCS ${FRITZING_SRCS}
+	${CMAKE_CURRENT_SOURCE_DIR}/modfiledialog.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/updatedialog.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/version.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/versionchecker.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/partschecker.cpp
+  PARENT_SCOPE)
+
+set(FRITZING_FORMS ${FRITZING_FORMS}
+	${CMAKE_CURRENT_SOURCE_DIR}/modfiledialog.ui
+  PARENT_SCOPE)

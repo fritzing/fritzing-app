@@ -85,10 +85,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDir>
 #include <time.h>
 
-#ifdef LINUX_32
+#if defined Q_OS_LINUX && defined Q_PROCESSOR_X86_32
 #define PLATFORM_NAME "linux-32bit"
 #endif
-#ifdef LINUX_64
+#if defined Q_OS_LINUX && defined Q_PROCESSOR_X86_64
 #define PLATFORM_NAME "linux-64bit"
 #endif
 #ifdef Q_OS_WIN

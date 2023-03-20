@@ -1,6 +1,6 @@
 # /*******************************************************************
 # Part of the Fritzing project - http://fritzing.org
-# Copyright (c) 2007-08 Fritzing
+# Copyright (c) 2007-23 Fritzing
 # Fritzing is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -12,33 +12,11 @@
 # You should have received a copy of the GNU General Public License
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
-HEADERS += \
-    src/commands.h \
-    src/debugdialog.h \
-    src/fapplication.h \
-    src/fsplashscreen.h \
-    src/fsvgrenderer.h \
-    src/installedfonts.h \
-    src/itemdrag.h \
-    src/layerattributes.h \
-    src/processeventblocker.h \
-    src/routingstatus.h \
-    src/sketchtoolbutton.h \
-    src/viewgeometry.h \
-    src/viewlayer.h \
-    src/waitpushundostack.h
 
-SOURCES += \
-    src/commands.cpp \
-    src/debugdialog.cpp \
-    src/fapplication.cpp \
-    src/fsplashscreen.cpp \
-    src/fsvgrenderer.cpp \
-    src/itemdrag.cpp \
-    src/layerattributes.cpp \
-    src/main.cpp \
-    src/processeventblocker.cpp \
-    src/sketchtoolbutton.cpp \
-    src/viewgeometry.cpp \
-    src/viewlayer.cpp \
-    src/waitpushundostack.cpp
+set(FRITZING_HDRS ${FRITZING_HDRS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/layerpalette.h
+  PARENT_SCOPE)
+
+set(FRITZING_SRCS ${FRITZING_SRCS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/layerpalette.cpp
+  PARENT_SCOPE)

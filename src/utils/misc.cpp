@@ -67,10 +67,7 @@ bool isParent(QObject * candidateParent, QObject * candidateChild) {
 }
 
 Qt::KeyboardModifier altOrMetaModifier() {
-#ifdef LINUX_32
-	return Qt::MetaModifier;
-#endif
-#ifdef LINUX_64
+#ifdef Q_OS_LINUX
 	return Qt::MetaModifier;
 #endif
 	return Qt::AltModifier;

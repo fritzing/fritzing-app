@@ -64,7 +64,8 @@ protected:
 	QWidget * createZoomerForm();
 	QWidget * createAutosaveForm();
 	QWidget *createProgrammerForm(QList<Platform *> platforms);
-	QWidget *createBetaFeaturesForm();
+	QWidget *createSimulatorBetaFeaturesForm();
+	QWidget *createGerberBetaFeaturesForm();
 	void updateWheelText();
 	void initGeneral(QWidget * general, QFileInfoList & languages);
 	void initBreadboard(QWidget *, ViewInfoThing *);

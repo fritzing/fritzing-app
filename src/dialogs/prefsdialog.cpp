@@ -164,7 +164,8 @@ void PrefsDialog::initCode(QWidget * widget, QList<Platform *> platforms)
 void PrefsDialog::initBetaFeatures(QWidget * widget)
 {
 	QVBoxLayout * vLayout = new QVBoxLayout();
-	vLayout->addWidget(createBetaFeaturesForm());
+	vLayout->addWidget(createSimulatorBetaFeaturesForm());
+	vLayout->addWidget(createGerberBetaFeaturesForm());
 	widget->setLayout(vLayout);
 }
 
@@ -434,17 +435,43 @@ void PrefsDialog::changeLanguage(int index)
 	}
 }
 
+QWidget * PrefsDialog::createGerberBetaFeaturesForm() {
+	QSettings settings;
+	QGroupBox * gerberGroup = new QGroupBox(tr("Gerber"), this);
 
-QWidget * PrefsDialog::createBetaFeaturesForm() {
+	QVBoxLayout * layout = new QVBoxLayout();
+	layout->setSpacing(SPACING);
+
+	QLabel * label2 = new QLabel(tr("Gerber files generated will use 5 decimal precision instead of 3."));
+	label2->setWordWrap(true);
+	layout->addWidget(label2);
+	layout->addSpacing(10);
+
+
+	QCheckBox * box = new QCheckBox(tr("Enable gerber export improvements"));
+	box->setFixedWidth(FORMLABELWIDTH * 2);
+	box->setChecked(settings.value("gerberExportImprovementsEnabled", false).toBool()); // Initialize the value of box2 using m_settings
+	layout->addWidget(box);
+
+
+	gerberGroup->setLayout(layout);
+
+	connect(box, &QCheckBox::clicked, this, [this](bool checked) {
+		m_settings.insert("gerberExportImprovementsEnabled", QString::number(checked));
+	});
+
+	return gerberGroup;
+}
+
+QWidget * PrefsDialog::createSimulatorBetaFeaturesForm() {
 	QSettings settings;
 	QGroupBox * simulator = new QGroupBox(tr("Simulator"), this);
 
 	QVBoxLayout * layout = new QVBoxLayout();
 	layout->setSpacing(SPACING);
 
-	QLabel * label = new QLabel(tr("The simulator is a beta feature and has not been tested extensively. "
-								   "This means that there are still bugs that need to be fixed and can cause "
-								   "to crash Fritzing. Backup your data and do not use it for production."));
+	QLabel * label = new QLabel(tr("The simulator is now enabled by default."));
+
 	label->setWordWrap(true);
 	layout->addWidget(label);
 	layout->addSpacing(10);
@@ -455,25 +482,10 @@ QWidget * PrefsDialog::createBetaFeaturesForm() {
 	box->setChecked(settings.value("simulatorEnabled", false).toBool()); // Initialize the value of box using m_settings
 	layout->addWidget(box);
 
-
-	QLabel * label2 = new QLabel(tr("Gerber files generated will use 5 decimal precision instead of 3."));
-	label2->setWordWrap(true);
-	layout->addWidget(label2);
-
-	QCheckBox * box2 = new QCheckBox(tr("Enable gerber export improvements"));
-	box2->setFixedWidth(FORMLABELWIDTH);
-	box2->setChecked(settings.value("gerberExportImprovementsEnabled", false).toBool()); // Initialize the value of box2 using m_settings
-	layout->addWidget(box2);
-
-
 	simulator->setLayout(layout);
 
 	connect(box, &QCheckBox::clicked, this, [this](bool checked) {
 		m_settings.insert("simulatorEnabled", QString::number(checked));
-	});
-
-	connect(box2, &QCheckBox::clicked, this, [this](bool checked) {
-		m_settings.insert("gerberExportImprovementsEnabled", QString::number(checked));
 	});
 
 	return simulator;

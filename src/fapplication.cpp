@@ -1218,6 +1218,7 @@ int FApplication::startup()
 				settings.setValue("language", language);
 			}
 		}
+		settings.setValue("simulatorEnabled", true);
 	}
 
 	//bool fabEnabled = settings.value(ORDERFABENABLED, QVariant(false)).toBool();

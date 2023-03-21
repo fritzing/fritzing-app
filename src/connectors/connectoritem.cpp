@@ -1510,12 +1510,7 @@ void ConnectorItem::updateTooltip() {
 			id = "";
 		}
 		else {
-			if (attachedTo()->modelPart()->hasZeroConnector()) {
-				id = QString::number(match.captured(0).toInt() + 1);
-			}
-			else {
-				id = match.captured(0);
-			}
+			id = match.captured(0);
 			if (!id.isEmpty()) {
 				id = " <span style='color:#909090;'>(" + id + ")</span>";
 			}

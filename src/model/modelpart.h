@@ -186,8 +186,6 @@ public:
 	const QList<ViewImage *> viewImages();
 	void addConnector(Connector *);
 	void flipSMDAnd();
-	void lookForZeroConnector();
-	bool hasZeroConnector();
 	bool hasSubparts();
 	void setSubpartID(const QString &);
 

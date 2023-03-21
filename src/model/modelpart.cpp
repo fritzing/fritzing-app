@@ -1046,16 +1046,6 @@ void ModelPart::setImageFileName(ViewLayer::ViewID viewID, const QString & filen
 	if (m_modelPartShared) m_modelPartShared->setImageFileName(viewID, filename);
 }
 
-void ModelPart::lookForZeroConnector() {
-	if (m_modelPartShared) m_modelPartShared->lookForZeroConnector();
-}
-
-bool ModelPart::hasZeroConnector() {
-	if (m_modelPartShared) return m_modelPartShared->hasZeroConnector();
-
-	return false;
-}
-
 void ModelPart::killViewItems() {
 	Q_FOREACH (ItemBase * itemBase, m_viewItems) {
 		if (itemBase) delete itemBase;

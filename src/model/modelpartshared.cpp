@@ -96,7 +96,7 @@ void ModelPartShared::commonInit() {
 	m_moduleID = "";
 	m_dbid = 0;
 	m_ownerCount = 0;
-	m_hasZeroConnector = m_flippedSMD = m_connectorsInitialized = m_ignoreTerminalPoints = m_needsCopper1 = false;
+	m_flippedSMD = m_connectorsInitialized = m_ignoreTerminalPoints = m_needsCopper1 = false;
 	m_superpart = nullptr;
 }
 
@@ -420,7 +420,6 @@ void ModelPartShared::initConnectors() {
 
 		connector = connector.nextSiblingElement("connector");
 	}
-	lookForZeroConnector();
 
 	QDomElement buses = root.firstChildElement("buses");
 	if (!buses.isNull()) {
@@ -794,23 +793,6 @@ void ModelPartShared::copyPins(ViewLayer::ViewLayerID from, ViewLayer::ViewLayer
 
 void ModelPartShared::insertBus(BusShared * busShared) {
 	m_buses.insert(busShared->id(), busShared);
-}
-
-void ModelPartShared::lookForZeroConnector() {
-	Q_FOREACH (QString key, m_connectorSharedHash.keys()) {
-		QRegularExpressionMatch match;
-		int ix = key.indexOf(IntegerFinder, 0, &match);
-		if (ix >= 0) {
-			if (match.captured(0) == "0") {
-				m_hasZeroConnector = true;
-				return;
-			}
-		}
-	}
-}
-
-bool ModelPartShared::hasZeroConnector() {
-	return m_hasZeroConnector;
 }
 
 void ModelPartShared::addOwner(QObject * owner) {

@@ -512,7 +512,6 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 			modelPart->flipSMDAnd();
 			modelPart->initBuses();
 			modelPart->setParent(m_root);
-			modelPart->lookForZeroConnector();
 		}
 	}
 

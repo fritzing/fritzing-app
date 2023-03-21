@@ -165,10 +165,7 @@ QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<Con
 
 		auto * i1 = net->constFirst();
 		auto * i2 = net->constLast();
-		if (net->size() == 2) {
-			// Skip 'nets' that consist only of top and bottom layer of one THT.
-			if (i1->isCrossLayerConnectorItem(i2)) continue;
-		}
+
 		QString netLabel = "NET" + QString::number(++countNets) + i1->attachedToInstanceTitle() + i2->attachedToInstanceTitle();
 		Q_FOREACH (ConnectorItem * connectorItem, *net) {
 			if (connectorItem->connectorSharedName().contains("gnd", Qt::CaseInsensitive)) {

@@ -200,6 +200,8 @@ void TipsAndTricks::cleanup() {
 		delete Singleton;
 		Singleton = NULL;
 	}
+	while (!TipSets.isEmpty())
+    delete TipSets.takeFirst();
 }
 
 const QString & TipsAndTricks::randomTip() {

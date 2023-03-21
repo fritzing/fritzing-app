@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define COMMENTOFFSET 100
 static const QChar CEscapeChar('\\');
 
-QHash <QString, QTextCharFormat *> Highlighter::m_styleFormats;
+QHash <QString, QTextCharFormat > Highlighter::m_styleFormats;
 
 Highlighter::Highlighter(QTextEdit * textEdit) : QSyntaxHighlighter(textEdit)
 {
@@ -59,24 +59,24 @@ void Highlighter::loadStyles(const QString & filename) {
 
 	QDomElement style = root.firstChildElement("style");
 	while (!style.isNull()) {
-		QTextCharFormat * tcf = new QTextCharFormat();
+		QTextCharFormat tcf;
 		QColor color(Qt::black);
 		QString colorString = style.attribute("color");
 		if (!colorString.isEmpty()) {
 			color.setNamedColor(colorString);
-			tcf->setForeground(QBrush(color));
+			tcf.setForeground(QBrush(color));
 		}
 		QString italicString = style.attribute("italic");
 		if (italicString.compare("1") == 0) {
-			tcf->setFontItalic(true);
+			tcf.setFontItalic(true);
 		}
 		QString boldString = style.attribute("bold");
 		if (boldString.compare("1") == 0) {
-			tcf->setFontWeight(QFont::Bold);
+			tcf.setFontWeight(QFont::Bold);
 		}
 		QString underlineString = style.attribute("underline");
 		if (underlineString.compare("1") == 0) {
-			tcf->setFontUnderline(true);
+			tcf.setFontUnderline(true);
 		}
 
 		m_styleFormats.insert(style.attribute("name"), tcf);
@@ -131,9 +131,8 @@ void Highlighter::highlightBlock(const QString &text)
 			commentLength = endIndex - startCommentIndex + currentCommentInfo->m_end.length();
 		}
 		noComment.replace(startCommentIndex, commentLength, QString(commentLength, ' '));
-		QTextCharFormat * cf = m_styleFormats.value("Comment", NULL);
-		if (cf) {
-			setFormat(startCommentIndex, commentLength, *cf);
+		if (m_styleFormats.contains("Comment")) {
+			setFormat(startCommentIndex, commentLength, m_styleFormats.value("Comment"));
 		}
 		m_syntaxer->matchCommentStart(text, startCommentIndex + commentLength, startCommentIndex, currentCommentInfo);
 	}
@@ -177,9 +176,8 @@ void Highlighter::highlightStrings(int startStringIndex, QString & text) {
 			stringLength = endIndex - startStringIndex + 1;
 		}
 		text.replace(startStringIndex, stringLength, QString(stringLength, ' '));
-		QTextCharFormat * sf = m_styleFormats.value("String", NULL);
-		if (sf) {
-			setFormat(startStringIndex, stringLength, *sf);
+		if (m_styleFormats.contains("String")) {
+			setFormat(startStringIndex, stringLength, m_styleFormats.value("String"));
 		}
 		startStringIndex = m_syntaxer->matchStringStart(text, startStringIndex + stringLength);
 	}
@@ -200,9 +198,8 @@ void Highlighter::highlightTerms(const QString & text) {
 				SyntaxerTrieLeaf * stl = dynamic_cast<SyntaxerTrieLeaf *>(leaf);
 				if (stl) {
 					QString format = Syntaxer::formatFromList(stl->name());
-					QTextCharFormat * tcf = m_styleFormats.value(format, NULL);
-					if (tcf) {
-						setFormat(lastWordBreak, b - lastWordBreak, *tcf);
+					if (m_styleFormats.contains(format)) {
+						setFormat(lastWordBreak, b - lastWordBreak, m_styleFormats.value(format));
 					}
 				}
 			}

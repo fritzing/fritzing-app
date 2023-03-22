@@ -116,7 +116,6 @@ public:
 	}
 	static void saveTransform(QXmlStreamWriter & streamWriter, const QTransform & transform);
 	static bool loadTransform(const QDomElement & transformElement, QTransform & transform);
-	static bool isRect(const QPolygonF & poly);
 	static bool isFuzzyRect(const QPolygonF & poly);
 	static QRectF getRect(const QPolygonF & poly);
 	static void shortenLine(QPointF & p1, QPointF & p2, double d1, double d2);

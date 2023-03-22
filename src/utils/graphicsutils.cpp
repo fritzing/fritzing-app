@@ -182,27 +182,6 @@ void GraphicsUtils::shortenLine(QPointF & p1, QPointF & p2, double d1, double d2
 	p2.setY(p2.y() + dy2);
 }
 
-bool GraphicsUtils::isRect(const QPolygonF & poly) {
-	if (poly.count() != 5) return false;
-	if (poly.at(0) != poly.at(4)) return false;
-
-	// either we start running across top or running along side
-	const auto& poly0 = poly.at(0);
-	const auto& poly1 = poly.at(1);
-	const auto& poly2 = poly.at(2);
-	const auto& poly3 = poly.at(3);
-	const auto& poly4 = poly.at(4);
-	if (poly0.x() == poly1.x() &&
-	    poly1.y() == poly2.y() &&
-	    poly2.x() == poly3.x() &&
-	    poly3.y() == poly4.y()) return true;
-	if (poly0.y() == poly1.y() &&
-	    poly1.x() == poly2.x() &&
-	    poly2.y() == poly3.y() &&
-	    poly3.x() == poly4.x()) return true;
-	return false;
-}
-
 bool GraphicsUtils::isFuzzyRect(const QPolygonF & poly) {
 	if (poly.count() != 5) return false;
 

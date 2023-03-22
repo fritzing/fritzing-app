@@ -119,35 +119,11 @@ QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<Con
 	ipc += QString::asprintf(header, "TITLE", basename.toStdString().c_str());
 	ipc += QString::asprintf(header, "VER", "IPC-D-356");
 
-	QList< QList<ConnectorItem *>* > deleteNets;
 	Q_FOREACH (QList<ConnectorItem *> * net, netList) {
 		// Sorting so we get consistend export data, avoid random order
 		std::sort(net->begin(), net->end(), [](ConnectorItem * a, ConnectorItem * b){
 			return a->rect().center().x() + a->rect().center().y() > b->rect().center().x() + b->rect().center().y();
 		});
-		QList<ConnectorItem *> deleteItems;
-		Q_FOREACH (ConnectorItem * connectorItem, *net) {
-			ErcData * ercData = connectorItem->connectorSharedErcData();
-			if (ercData == nullptr) continue;
-
-			if (ercData->ignore() == ErcData::Always) {
-				deleteItems.append(connectorItem);
-			}
-			else if ((ercData->ignore() == ErcData::IfUnconnected) && (net->count() == 1)) {
-				deleteItems.append(connectorItem);
-			}
-		}
-
-		Q_FOREACH (ConnectorItem * connectorItem, deleteItems) {
-			net->removeOne(connectorItem);
-		}
-		if (net->count() < 2) {
-			deleteNets.append(net);
-		}
-	}
-
-	Q_FOREACH (QList<ConnectorItem *> * net, deleteNets) {
-		netList.removeOne(net);
 	}
 
 	constexpr double MM2IPC = 1000.0;

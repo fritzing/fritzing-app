@@ -904,6 +904,35 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 	return true;
 }
 
+// Helper to annotate SMD / THT, so it is clear when drilling or
+// a different pick and place method is required
+QString checkAndAddPackageSuffix(const QString &package)
+{
+	if (package.isEmpty()) {
+		return package;
+	}
+
+	if (package.contains("THT", Qt::CaseInsensitive)) {
+		return package;
+	}
+
+	if (package.contains("SMD", Qt::CaseInsensitive)) {
+		return package;
+	}
+
+	 // These packages require THT placement. Add more known THT packages as needed
+	QStringList knownTHTPackages = {"DIP", "TO-92", "TO92", "TO-220", "TO220"};
+
+	for (const QString &knownTHTPackage : knownTHTPackages)
+	{
+		if (package.contains(knownTHTPackage, Qt::CaseInsensitive))
+		{
+			return package + "[THT]";
+		}
+	}
+	return package + "[SMD]";
+}
+
 void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes)
 {
 	QPointF bottomLeft = board->sceneBoundingRect().bottomLeft();
@@ -972,11 +1001,14 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		constexpr double halfCircleDegrees = 180;
 		double angle = atan2(transform.m12(), transform.m11()) * halfCircleDegrees / M_PI;
 
+		QString package = itemBase->modelPart()->properties().value("package");
+		QString processedPackage = checkAndAddPackageSuffix(package);
+
 		// No;Value;Package;X;Y;Rotation;Side;Name
 		QString string = QString("%1;%2;%3;%4;%5;%6;%7;%8\n")
 					.arg(ix++)
 					.arg(value
-						,itemBase->modelPart()->properties().value("package")
+						,processedPackage
 					)
 					.arg(GraphicsUtils::pixels2mm(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI))
 					.arg(GraphicsUtils::pixels2mm(loc.y() - bottomLeft.y(), GraphicsUtils::SVGDPI))

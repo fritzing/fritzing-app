@@ -96,6 +96,16 @@ QString electricalTestRecord(QString netLabel, QString partLabel, QString connec
 }
 
 
+// Convert the svg resolution to ipc resolution. We want to use 1/1000mm
+int s2ipc(double valueInSvgResolution) {
+	constexpr double MM2IPC = 1000.0;
+
+	double valueInDpi = valueInSvgResolution / GraphicsUtils::SVGDPI;
+	double valueInMm = valueInDpi * 25.4;
+	double valueInIpc = valueInMm * MM2IPC;
+	return std::round(valueInIpc);
+}
+
 
 QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<ConnectorItem *>* > netList) {
 
@@ -126,7 +136,6 @@ QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<Con
 		});
 	}
 
-	constexpr double MM2IPC = 1000.0;
 	int countNets = 0;
 
 	// Sorting so we get consistend export data, avoid random order
@@ -171,22 +180,24 @@ QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<Con
 			QTransform transform = itemBase->transform();
 
 			bool isMiddle = connectorItem->connectionsCount() > 1;
-			bool isPlated = false;
+
+			double radius = connectorItem->radius();
+			double strokeWidth = connectorItem->strokeWidth();
+
 			// Using stroke width for isPlated is a wild guess based on svg2gerber line 336 and variable m_platedApertures.
-			if (connectorItem->strokeWidth() > 0.0000001) {
-				isPlated = true;
-			}
+			bool isPlated = strokeWidth > 0.0000001;
 			QString package = itemBase->modelPart()->properties().value("package");
 			bool isTHT = package.contains("THT");
-			int holeDiameter = round(MM2IPC  * GraphicsUtils::pixels2mm(2 * connectorItem->radius() - connectorItem->strokeWidth(), GraphicsUtils::SVGDPI));
-			int diameter = round(MM2IPC  * GraphicsUtils::pixels2mm(2 * connectorItem->radius() + connectorItem->strokeWidth(), GraphicsUtils::SVGDPI));
+
+			int holeDiameter = s2ipc(2 * radius - strokeWidth);
+			int diameter = s2ipc(2 * radius + strokeWidth);
 			bool isDrilled = (isTHT || (holeDiameter > 0));
-			int x = round(MM2IPC  * GraphicsUtils::pixels2mm(loc.x() - origin.x(), GraphicsUtils::SVGDPI)); // /from GerberGenerator::exportPickAndPlace
-			int y = round(MM2IPC  * GraphicsUtils::pixels2mm(origin.y() - loc.y() , GraphicsUtils::SVGDPI));
-			int widthOrDiameter = isDrilled ? diameter : round(MM2IPC  * GraphicsUtils::pixels2mm(width, GraphicsUtils::SVGDPI));
-			int heightOrZero = connectorItem->isEffectivelyCircular() ? 0 : round(MM2IPC  * GraphicsUtils::pixels2mm(height, GraphicsUtils::SVGDPI));
+			int x = s2ipc(loc.x() - origin.x()); // /from GerberGenerator::exportPickAndPlace
+			int y = s2ipc(origin.y() - loc.y()); // Gerber y direction is the opposite of SVG
+			int widthOrDiameter = isDrilled ? diameter : s2ipc(width);
+			int heightOrZero = connectorItem->isEffectivelyCircular() ? 0 : s2ipc(height);
 			int layer = connectorItem->attachedToViewLayerID();
-			int ccw_angle = round(atan2(transform.m12(), transform.m11()) * 180.0 / M_PI); // doesn't account for scaling. from GerberGenerator::exportPickAndPlace.
+			int ccw_angle = round(atan2(transform.m12(), transform.m11()) * 180.0 / M_PI);  // doesn't account for scaling. from GerberGenerator::exportPickAndPlace.
 
 			ipc += electricalTestRecord(netLabel, title, connectorName, connectorId, isTHT, isMiddle, isPlated, isDrilled, holeDiameter, x, y, widthOrDiameter, heightOrZero, layer, ccw_angle);
 		}

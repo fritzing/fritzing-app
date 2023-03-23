@@ -953,6 +953,10 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 
 	int ix = 1;
 	Q_FOREACH (ItemBase * itemBase, itemBases) {
+		if (!itemBase->hasConnectors()) {
+			// Skip items like logos, images, ...
+			continue;
+		}
 		QString value;
 		Q_FOREACH (QString valueKey, valueKeys) {
 			value = itemBase->modelPart()->localProp(valueKey).toString();
@@ -967,6 +971,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		// doesn't account for scaling
 		constexpr double halfCircleDegrees = 180;
 		double angle = atan2(transform.m12(), transform.m11()) * halfCircleDegrees / M_PI;
+
 		// No;Value;Package;X;Y;Rotation;Side;Name
 		QString string = QString("%1;%2;%3;%4;%5;%6;%7;%8\n")
 					.arg(ix++)

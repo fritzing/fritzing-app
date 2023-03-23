@@ -59,7 +59,7 @@ QString electricalTestRecord(QString netLabel, QString partLabel, QString connec
 	}
 
 	int cmd = 317;
-	if (!isTHT) {
+	if (!isTHT && !isDrilled) {
 		cmd = 327;
 	}
 	int soldermask = 0;

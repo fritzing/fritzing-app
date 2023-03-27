@@ -101,6 +101,7 @@ QString GetSpice::getSpice(ItemBase * itemBase, const QList< QList<class Connect
 			replacement.replace("M", "Meg");
 			replacement.replace(TextUtils::MicroSymbol, "u");
 			replacement.replace("μ", "u");
+			replacement.replace("Ω", "");
 		}
 
 		spice.replace(pos, match.captured(0).count(), replacement);

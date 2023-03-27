@@ -281,7 +281,8 @@ void Simulator::simulate() {
 	}
 	if (elapsedTime >= simTimeOut) {
 		m_simulator->command("bg_halt");
-		throw std::runtime_error( QString("The spice simulator did not finish after %1 ms. Aborting simulation.").arg(simTimeOut).toStdString() );
+		stopSimulation();
+		FMessageBox::warning(m_mainWindow, tr("Simulator Timeout"), tr("The spice simulator did not finish after %1 ms. Aborting simulation.").arg(simTimeOut));
 		return;
 	} else {
 		std::cout << "The spice simulator has finished." <<std::endl;

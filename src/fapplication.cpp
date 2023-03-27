@@ -927,7 +927,7 @@ void FApplication::runExportAllServiceAux()
 			TextUtils::writeUtf8(filepathCsv.replace(".fzz", "_bom.csv"), mainWindow->getExportBOM_CSV());
 
 			QString filepathIPC = filepath;
-			TextUtils::writeUtf8(filepathIPC.replace(".fzz", "_ipc.txt"), mainWindow->exportIPC_D_356A());
+			TextUtils::writeUtf8(filepathIPC.replace(".fzz", ".ipc"), mainWindow->exportIPC_D_356A());
 		}
 
 		mainWindow->setCloseSilently(true);

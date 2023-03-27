@@ -60,7 +60,7 @@ static QString pngActionType = ".png";
 static QString svgActionType = ".svg";
 static QString bomActionType = ".html";
 static QString bomCsvActionType = ".csv";
-static QString ipcActionType = ".txt";
+static QString ipcActionType = ".ipc";
 static QString netlistActionType = ".xml";
 static QString spiceNetlistActionType = ".cir";
 
@@ -118,7 +118,7 @@ void MainWindow::initNames()
 	fileExtFormats[svgActionType] = tr("SVG Image (*.svg)");
 	fileExtFormats[bomActionType] = tr("BoM Text File (*.html)");
 	fileExtFormats[bomCsvActionType] = tr("BoM CSV File (*.csv)");
-	fileExtFormats[ipcActionType] = tr("IPC-D-356 File (*.txt)");
+	fileExtFormats[ipcActionType] = tr("IPC-D-356 File (*.ipc)");
 
 	QSettings settings;
 	AutosaveEnabled = settings.value("autosaveEnabled", QString("%1").arg(AutosaveEnabled)).toBool();
@@ -1607,7 +1607,7 @@ void MainWindow::exportIPC_D_356A_interactive() {
 				ipc,
 				ipcActionType,
 				tr("Export IPC-D-356..."),
-				"ipc",
+				"d356a",
 				tr("Unable to save IPC file.") + tr("But the content was copied to the clipboard.")
 				);
 

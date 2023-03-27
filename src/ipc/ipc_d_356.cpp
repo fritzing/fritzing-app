@@ -51,10 +51,10 @@ QString electricalTestRecord(QString netLabel, QString partLabel, QString connec
 //			75-80  Optional test record. Commonly left blank.
 
 	int access = 0;
-	if (layer == ViewLayer::Copper0) {
+	if (layer == ViewLayer::Copper1) {
 		access = 1;
 	}
-	if (layer == ViewLayer::Copper1) {
+	if (layer == ViewLayer::Copper0) {
 		access = 16;
 	}
 

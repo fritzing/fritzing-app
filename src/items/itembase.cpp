@@ -1332,7 +1332,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 	if (filename.isEmpty()) {
 		//QString deleteme = modelPartShared->domDocument()->toString();
-		layerAttributes.error = tr("file '%1' for title:'%2' and moduleID:'%2' not found").arg(imageFilename).arg(modelPartShared->title()).arg(modelPartShared->moduleID());
+		layerAttributes.error = tr("file '%1' for title:'%2' and moduleID:'%3' not found").arg(imageFilename, modelPartShared->title(), modelPartShared->moduleID());
 		return nullptr;
 	}
 

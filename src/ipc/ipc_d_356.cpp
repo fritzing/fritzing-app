@@ -9,16 +9,24 @@
 #include "src/utils/graphicsutils.h"
 #include "src/connectors/nonconnectoritem.h"
 #include "src/connectors/connectoritem.h"
-#include "src/connectors/ercdata.h"
 
 #include <QString>
 #include <QMessageBox>
 #include <qmath.h>
 
+class IPCD356A {
+public:
+	enum OperationCodes {
+		ThroughHole = 317,
+		ThroughHoleContinuation = 17,
+		SurfaceMount = 327,
+		BlindVia = 307
+	};
+};
 
 // Forward declaration, currently unused
 // QString electricalTestRecord(QString netLabel, QString partLabel, QString connectorName, QString pin, bool isTHT, bool isMiddle, bool isPlated, bool isDrilled, int r, int x, int y, int w, int h, int layer, int ccw_angle);
-QString electricalTestRecord(QString netLabel, QString partLabel, QString connectorName, QString connectorId, bool isTHT, bool isMiddle, bool isPlated, bool isDrilled, int r, int x, int y, int w, int h, int layer, int ccw_angle) {
+QString electricalTestRecord(int cmd, QString netLabel, QString partLabel, QString connectorName, QString connectorId, bool isTHT, bool isMiddle, bool isPlated, bool isDrilled, int r, int x, int y, int w, int h, int layer, int ccw_angle) {
 // Standard electrical test record (setr)
 //		Column      Data            Description      Number      Meaning
 //			1 P,C,3  C=comment, P=parameter, 3=test record
@@ -58,10 +66,6 @@ QString electricalTestRecord(QString netLabel, QString partLabel, QString connec
 		access = 16;
 	}
 
-	int cmd = 317;
-	if (!isTHT && !isDrilled) {
-		cmd = 327;
-	}
 	int soldermask = 0;
 
 	QString pin = QString::number(TextUtils::getPositiveIntegers(connectorId).constFirst());
@@ -74,7 +78,7 @@ QString electricalTestRecord(QString netLabel, QString partLabel, QString connec
 
 	int angle = (ccw_angle % 360 + 360) % 360;
 
-	const char setr[]{"%3d%-14.14s   %-6.6s-%4.4s%1.1s%1.1s%04d%1sA%02dX%+07dY%+07dX%04dY%04dR%03d S%1d     \n"};
+	const char setr[]{"%03d%-14.14s   %-6.6s-%4.4s%1.1s%1.1s%04d%1sA%02dX%+07dY%+07dX%04dY%04dR%03d S%1d     \n"};
 	QString s = QString::asprintf(setr,
 								  cmd,
 								  netLabel.toStdString().c_str(),
@@ -104,6 +108,41 @@ int s2ipc(double valueInSvgResolution) {
 	double valueInMm = valueInDpi * 25.4;
 	double valueInIpc = valueInMm * MM2IPC;
 	return std::round(valueInIpc);
+}
+
+QString connectorToRecord(int cmd, ConnectorItem * connectorItem, ItemBase * itemBase, QPointF origin, QString netLabel)
+{
+	ViewLayer::ViewLayerID layer = connectorItem->attachedToViewLayerID();
+	QString title = itemBase->instanceTitle();
+	QString connectorName = connectorItem->connectorSharedName();
+	QString connectorId = connectorItem->connectorSharedID();
+	QPointF loc = connectorItem->mapToScene(connectorItem->rect().center());
+	double width = connectorItem->rect().width();
+	double height = connectorItem->rect().height();
+	QTransform transform = itemBase->transform();
+
+	bool isMiddle = connectorItem->connectionsCount() > 1;
+
+	double radius = connectorItem->radius();
+	double strokeWidth = connectorItem->strokeWidth();
+
+	// Using stroke width for isPlated is a wild guess based on svg2gerber line 336 and variable m_platedApertures.
+	bool isPlated = strokeWidth > 0.0000001;
+	QString package = itemBase->modelPart()->properties().value("package");
+	bool isTHT = (cmd == IPCD356A::ThroughHole || cmd == IPCD356A::ThroughHoleContinuation);
+
+	int holeDiameter = s2ipc(2 * radius - strokeWidth);
+	int diameter = s2ipc(2 * radius + strokeWidth);
+	bool isDrilled = (isTHT || (holeDiameter > 0));
+	int x = s2ipc(loc.x() - origin.x()); // /from GerberGenerator::exportPickAndPlace
+	int y = s2ipc(origin.y() - loc.y()); // Gerber y direction is the opposite of SVG
+	int widthOrDiameter = isDrilled ? diameter : s2ipc(width);
+	int heightOrZero = connectorItem->isEffectivelyCircular() ? 0 : s2ipc(height);
+
+	int ccw_angle = round(atan2(transform.m12(), transform.m11()) * 180.0 / M_PI);  // doesn't account for scaling. from GerberGenerator::exportPickAndPlace.
+
+	QString ipc = electricalTestRecord(cmd, netLabel, title, connectorName, connectorId, isTHT, isMiddle, isPlated, isDrilled, holeDiameter, x, y, widthOrDiameter, heightOrZero, layer, ccw_angle);
+	return ipc;
 }
 
 
@@ -159,11 +198,8 @@ QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<Con
 		}
 
 		Q_FOREACH (ConnectorItem * connectorItem, *net) {
-			QString connectorId = connectorItem->connectorSharedID();
-			QString connectorName = connectorItem->connectorSharedName();
-
+			ConnectorItem * crossLayerConnectorItem = connectorItem->getCrossLayerConnectorItem();
 			ItemBase * itemBase = connectorItem->attachedTo();
-			QString title = itemBase->instanceTitle();
 
 //			Q_FOREACH (QGraphicsItem * childItem, itemBase->childItems()) {
 //				NonConnectorItem * nonConnectorItem = dynamic_cast<NonConnectorItem *>(childItem);
@@ -174,32 +210,18 @@ QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<Con
 //				}
 //			}
 
-			QPointF loc = connectorItem->mapToScene(connectorItem->rect().center());
-			double width = connectorItem->rect().width();
-			double height = connectorItem->rect().height();
-			QTransform transform = itemBase->transform();
 
-			bool isMiddle = connectorItem->connectionsCount() > 1;
+			if (crossLayerConnectorItem) {
+				ViewLayer::ViewLayerPlacement placement = itemBase->viewLayerPlacement();
+				ViewLayer::ViewLayerID layer = connectorItem->attachedToViewLayerID();
+				bool isCrossLayer = ViewLayer::copperLayers(placement).contains(layer);
+				if (isCrossLayer) continue;
 
-			double radius = connectorItem->radius();
-			double strokeWidth = connectorItem->strokeWidth();
-
-			// Using stroke width for isPlated is a wild guess based on svg2gerber line 336 and variable m_platedApertures.
-			bool isPlated = strokeWidth > 0.0000001;
-			QString package = itemBase->modelPart()->properties().value("package");
-			bool isTHT = package.contains("THT");
-
-			int holeDiameter = s2ipc(2 * radius - strokeWidth);
-			int diameter = s2ipc(2 * radius + strokeWidth);
-			bool isDrilled = (isTHT || (holeDiameter > 0));
-			int x = s2ipc(loc.x() - origin.x()); // /from GerberGenerator::exportPickAndPlace
-			int y = s2ipc(origin.y() - loc.y()); // Gerber y direction is the opposite of SVG
-			int widthOrDiameter = isDrilled ? diameter : s2ipc(width);
-			int heightOrZero = connectorItem->isEffectivelyCircular() ? 0 : s2ipc(height);
-			int layer = connectorItem->attachedToViewLayerID();
-			int ccw_angle = round(atan2(transform.m12(), transform.m11()) * 180.0 / M_PI);  // doesn't account for scaling. from GerberGenerator::exportPickAndPlace.
-
-			ipc += electricalTestRecord(netLabel, title, connectorName, connectorId, isTHT, isMiddle, isPlated, isDrilled, holeDiameter, x, y, widthOrDiameter, heightOrZero, layer, ccw_angle);
+				ipc += connectorToRecord(IPCD356A::ThroughHole, crossLayerConnectorItem, itemBase, origin, netLabel);
+				ipc += connectorToRecord(IPCD356A::ThroughHoleContinuation, connectorItem, itemBase, origin, netLabel);
+			} else {
+				ipc += connectorToRecord(IPCD356A::SurfaceMount, connectorItem, itemBase, origin, netLabel);
+			}
 		}
 	}
 

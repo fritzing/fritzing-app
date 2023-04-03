@@ -87,11 +87,11 @@ int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, Fo
 
 		if (QSettings().value("gerberExportImprovementsEnabled").toBool()) {
 
-			m_gerber_header += "%FSLAX25Y25*%\n";
+			m_gerber_header += "%FSLAX26Y26*%\n";
 			// set units to inches
 			m_gerber_header += "%MOIN*%\n";
 
-			m_f2g = 100.0;
+			m_f2g = 1000.0;
 
 		} else {
 			// initialize axes

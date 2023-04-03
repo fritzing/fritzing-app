@@ -77,6 +77,7 @@ QString SVG2gerber::getGerber() {
 }
 
 int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, ForWhy forWhy) {
+	bool gerberExportImprovementsEnabled = QSettings().value("gerberExportImprovementsEnabled").toBool();
 	if (forWhy != ForDrill) {
 		// human readable description comments
 		m_gerber_header = "G04 MADE WITH FRITZING*\n";
@@ -85,7 +86,7 @@ int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, Fo
 		m_gerber_header += QString("G04 HOLES%1PLATED*\n").arg(doubleSided ? " " : " NOT ");
 		m_gerber_header += "G04 CONTOUR ON CENTER OF CONTOUR VECTOR*\n";
 
-		if (QSettings().value("gerberExportImprovementsEnabled").toBool()) {
+		if (gerberExportImprovementsEnabled) {
 
 			m_gerber_header += "%FSLAX26Y26*%\n";
 			// set units to inches
@@ -164,12 +165,24 @@ int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, Fo
 
 	}
 	else {
-		// label our layers
-		m_gerber_header += QString("%LN%1*%\n").arg(mainLayerName.toUpper());
+		if (gerberExportImprovementsEnabled) {
+			// label our layers
+			m_gerber_header += QString("%G04%1*%\n").arg(mainLayerName.toUpper());
 
+			// Not sure why we configure this at the end of the job again.
+			// Assuming the old "just to be safe" comment was intended to leave a
+			// reasonable default for the next job.
+			m_gerber_header += "%FSLAX26Y26*%\n";
+			// set units to inches
+			m_gerber_header += "%MOIN*%\n";
 
-		//just to be safe: G90 (absolute coords) and G70 (inches)
-		m_gerber_header += "G90*\nG70*\n";
+		} else {
+			// label our layers
+			m_gerber_header += QString("%LN%1*%\n").arg(mainLayerName.toUpper());
+
+			//just to be safe: G90 (absolute coords) and G70 (inches)
+			m_gerber_header += "G90*\nG70*\n";
+		}
 
 		// now write the footer
 		// comment to indicate end-of-sketch

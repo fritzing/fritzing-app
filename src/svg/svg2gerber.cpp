@@ -93,6 +93,7 @@ int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, Fo
 			m_gerber_header += "%MOIN*%\n";
 
 			m_f2g = 1000.0;
+			m_G54 = ""; // Deprecated since 2012 - omit G54 and simply write Dnn* to select aperture nn
 
 		} else {
 			// initialize axes
@@ -328,7 +329,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 		//DebugDialog::debug("drawing board outline");
 
 		// switch aperture to the only one used for contour: note this is the last one on the list: the aperture is added at the end of this function
-		m_gerber_paths += "G54D10*\n";
+		m_gerber_paths += m_G54 + "D10*\n";
 	}
 
 	// circles
@@ -389,7 +390,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 			QString dcode = apertureMap[aperture];
 			if(current_dcode != dcode) {
 				//switch to correct aperture
-				m_gerber_paths += "G54D" + dcode + "*\n";
+				m_gerber_paths += m_G54 + "D" + dcode + "*\n";
 				current_dcode = dcode;
 			}
 			//flash
@@ -476,7 +477,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 				QString dcode = apertureMap[aperture];
 				if(current_dcode != dcode) {
 					//switch to correct aperture
-					m_gerber_paths += "G54D" + dcode + "*\n";
+					m_gerber_paths += m_G54 + "D" + dcode + "*\n";
 					current_dcode = dcode;
 				}
 				//flash
@@ -615,7 +616,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 					QString dcode = apertureMap[aperture];
 					if (current_dcode != dcode) {
 						//switch to correct aperture
-						m_gerber_paths += "G54D" + dcode + "*\n";
+					m_gerber_paths += m_G54 + "D" + dcode + "*\n";
 						current_dcode = dcode;
 					}
 				}
@@ -641,7 +642,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 }
 
 void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
-                        QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index)
+						QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index)
 {
 	QString points = polygon.attribute("points");
 	QStringList pointList = points.split(QRegularExpression("\\s+|,"), Qt::SkipEmptyParts);
@@ -721,7 +722,7 @@ QString SVG2gerber::standardAperture(QDomElement & element, QHash<QString, QStri
 	QString dcode = apertureMap[aperture];
 	if (current_dcode != dcode) {
 		//switch to correct aperture
-		m_gerber_paths += "G54D" + dcode + "*\n";
+		m_gerber_paths += m_G54 + "D" + dcode + "*\n";
 		current_dcode = dcode;
 	}
 
@@ -757,7 +758,7 @@ void SVG2gerber::handleOblongPath(QDomElement & path, int & dcode_index) {
 	int ix = m_gerber_header.indexOf(drill_aperture);
 	int it = m_gerber_header.lastIndexOf("T", ix);
 	m_drill_slots += QString("%1\nX%2Y%3G85X%4Y%5\nG05\n")
-	                 .arg(m_gerber_header.mid(it, ix - it), 0, 'f')
+					 .arg(m_gerber_header.mid(it, ix - it), 0, 'f')
 					 .arg((int) (cx1 * 10), 6, 10, QChar('0'))
 					 .arg((int) (flipy(cy1) * 10), 6, 10, QChar('0'))
 					 .arg((int) (cx2 * 10), 6, 10, QChar('0'))

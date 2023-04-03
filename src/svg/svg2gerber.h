@@ -63,6 +63,7 @@ protected:
 	// legacy gerber export is 1000mil (3 decimals). For 6 decimal
 	// gerber export, this will be set to 1000.0
 	double m_f2g = 1.0;
+	QString m_G54 = "G54";
 
 protected:
 

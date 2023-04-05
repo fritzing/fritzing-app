@@ -281,7 +281,8 @@ int GerberGenerator::doMask(LayerList maskLayerIDs, const QString &maskName, con
 
 	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgMask);
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
-	svgMask = clipToBoard(svgMask, board, maskName, SVG2gerber::ForCopper, "", displayMessageBoxes, treatAsCircle);
+
+	svgMask = clipToBoard(svgMask, board, maskName, SVG2gerber::ForMask, "", displayMessageBoxes, treatAsCircle);
 	if (svgMask.isEmpty()) {
 		displayMessage(QObject::tr("mask export failure"), displayMessageBoxes);
 		return 0;
@@ -289,7 +290,7 @@ int GerberGenerator::doMask(LayerList maskLayerIDs, const QString &maskName, con
 
 	clipString = svgMask;
 
-	return doEnd(svgMask, sketchWidget->boardLayers(), maskName, SVG2gerber::ForCopper, svgSize * GraphicsUtils::StandardFritzingDPI, exportDir, filename, gerberSuffix, displayMessageBoxes);
+	return doEnd(svgMask, sketchWidget->boardLayers(), maskName, SVG2gerber::ForMask, svgSize * GraphicsUtils::StandardFritzingDPI, exportDir, filename, gerberSuffix, displayMessageBoxes);
 }
 
 int GerberGenerator::doPasteMask(LayerList maskLayerIDs, const QString &maskName, const QString & gerberSuffix, ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes)

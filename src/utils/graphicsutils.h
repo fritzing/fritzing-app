@@ -133,8 +133,8 @@ public:
 	static constexpr double IllustratorDPI = 72;
 	static constexpr double StandardFritzingDPI = 1000;
 	static constexpr double SVGDPI = 90;
-	static constexpr double InchesPerMeter = 39.370078;
-	static constexpr double StandardSchematicSeparationMils = 295.275591; // 7.5mm
+	static constexpr double InchesPerMeter = 1000.0 / 25.4;
+	static constexpr double StandardSchematicSeparationMils = 7.5 * 1000.0 / 25.4;
 	static constexpr double StandardSchematicSeparation10thinMils = 100;  // 0.1 inches
 
 

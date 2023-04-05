@@ -31,21 +31,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 constexpr double MaskClearance = 0.0;  // 5 mils clearance
 constexpr double milsPerInch = 1000;  // used to convert mils (standard fritzing resolution) to inches
 
-bool fillNotStroke(QDomElement & element, SVG2gerber::ForWhy forWhy) {
-	if (forWhy == SVG2gerber::ForOutline) return false;
-	if (forWhy == SVG2gerber::ForMask) return true;
-
+bool hasFill(QDomElement & element) {
 	QString fill = element.attribute("fill");
 	if (fill.isEmpty()) return false;
 	if (fill.compare("none") == 0) return false;
+	return true;
+}
 
+bool hasStroke(QDomElement & element) {
 	QString stroke = element.attribute("stroke");
-	if (stroke.isEmpty()) return true;
-	if (stroke.compare("none") == 0) return true;
-
-	// both fill and stroke
-
-	// note: this originally returned 'false' which suggests there may be some parts that will surprise us next time they are exported to gerber
+	if (stroke.isEmpty()) return false;
+	if (stroke.compare("none") == 0) return false;
 	return true;
 }
 
@@ -597,25 +593,22 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 		}
 
 		// set poly fill if this is actually a filled in shape
-		bool polyFill = fillNotStroke(path, forWhy);
-		if(polyFill) {
+		if (hasFill(path) && (forWhy != ForOutline)) {
 			// start poly fill
 			m_gerber_paths += "G36*\n";
-		}
-
-		m_gerber_paths += pathUserData.string;
-
-		//DebugDialog::debug("path id: " + path.attribute("id"));
-
-		// stop poly fill if this is actually a filled in shape
-		if(polyFill) {
+			m_gerber_paths += pathUserData.string;
+			//DebugDialog::debug("path id: " + path.attribute("id"));
 			// stop poly fill
 			m_gerber_paths += "G37*\n";
 		}
 
-		if (forWhy == ForMask) {
+		if (hasStroke(path) || (forWhy == ForMask)) {
+			double stroke_width = path.attribute("stroke-width").toDouble();
+			if (forWhy == ForMask) {
+				stroke_width += MaskClearance * 2 * milsPerInch;
+			}
 			// draw the outline, G36 only does the fill
-			standardAperture(path, apertureMap, current_dcode, dcode_index, path.attribute("stroke-width").toDouble() + (MaskClearance * 2 * milsPerInch));
+			standardAperture(path, apertureMap, current_dcode, dcode_index,  stroke_width);
 			m_gerber_paths += pathUserData.string;
 		}
 
@@ -665,32 +658,27 @@ void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
 		pointString += "X" + f2gerber(startx) + "Y" + f2gerber(flipy(starty)) + "D01*\n";
 	}
 
-	standardAperture(polygon, apertureMap, current_dcode, dcode_index, 0);
-
-	bool polyFill = fillNotStroke(polygon, forWhy);
-	// set poly fill if this is actually a filled in shape
-	if (polyFill) {
+	// add poly fill if this is actually a filled in shape
+	if (hasFill(polygon) && (forWhy != ForOutline)) {
 		// start poly fill
 		m_gerber_paths += "G36*\n";
-	}
-
-	m_gerber_paths += pointString;
-
-	// stop poly fill if this is actually a filled in shape
-	if(polyFill) {
+		m_gerber_paths += pointString;
 		// stop poly fill
 		m_gerber_paths += "G37*\n";
 	}
 
-	if (forWhy == ForMask) {
+	if (hasStroke(polygon) || (forWhy == ForMask)) {
+		double stroke_width = polygon.attribute("stroke-width").toDouble();
+		if (forWhy == ForMask) {
+			 stroke_width += (MaskClearance * 2 * milsPerInch);
+		}
 		// draw the outline, G36 only does the fill
-		standardAperture(polygon, apertureMap, current_dcode, dcode_index,  polygon.attribute("stroke-width").toDouble() + (MaskClearance * 2 * milsPerInch));
+		standardAperture(polygon, apertureMap, current_dcode, dcode_index,  stroke_width);
 		m_gerber_paths += pointString;
 	}
 
 	// light off
 	m_gerber_paths += "D02*\n";
-
 }
 
 QString SVG2gerber::standardAperture(QDomElement & element, QHash<QString, QString> & apertureMap, QString & current_dcode, int & dcode_index, double stroke_width) {

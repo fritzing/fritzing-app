@@ -578,7 +578,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 		}
 
 		// draw the outline, G36 only does the fill
-		if (hasStroke(path) || (forWhy == ForMask)) {
+		if (hasStroke(path) || (forWhy == ForMask) || (forWhy == ForOutline)) {
 			double stroke_width = path.attribute("stroke-width").toDouble();
 			if (forWhy == ForMask) {
 				stroke_width += MaskClearance * 2 * milsPerInch;
@@ -666,7 +666,7 @@ void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
 		m_gerber_paths += "G37*\n";
 	}
 
-	if (hasStroke(polygon) || (forWhy == ForMask)) {
+	if (hasStroke(polygon) || (forWhy == ForMask) || (forWhy == ForOutline)) {
 		double stroke_width = polygon.attribute("stroke-width").toDouble();
 		if (forWhy == ForMask) {
 			 stroke_width += (MaskClearance * 2 * milsPerInch);

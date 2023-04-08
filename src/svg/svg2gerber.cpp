@@ -562,34 +562,9 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 
 
 		// only add paths if they contained gerber-izable path commands (NO CURVES!)
-		// TODO: display some informative error for the user
 		if (invalid || pathUserData.string.contains("INVALID")) {
 			invalidPathsCount++;
 			continue;
-		}
-
-		if (path.attribute("stroke-linecap") == "square") {
-			double stroke_width = path.attribute("stroke-width").toDouble();
-			if (stroke_width != 0) {
-				QString aperture = QString("R,%1X%1").arg(stroke_width/milsPerInch, 0, 'f');
-
-				// add aperture to defs if we don't have it yet
-				if (!apertureMap.contains(aperture)) {
-					apertureMap[aperture] = QString::number(dcode_index);
-					m_gerber_header += "%ADD" + QString::number(dcode_index) + aperture + "*%\n";
-					dcode_index++;
-				}
-
-				QString dcode = apertureMap[aperture];
-				if (current_dcode != dcode) {
-					//switch to correct aperture
-					m_gerber_paths += "G54D" + dcode + "*\n";
-					current_dcode = dcode;
-				}
-			}
-		}
-		else {
-			standardAperture(path, apertureMap, current_dcode, dcode_index, 0);
 		}
 
 		// set poly fill if this is actually a filled in shape
@@ -602,13 +577,37 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 			m_gerber_paths += "G37*\n";
 		}
 
+		// draw the outline, G36 only does the fill
 		if (hasStroke(path) || (forWhy == ForMask)) {
 			double stroke_width = path.attribute("stroke-width").toDouble();
 			if (forWhy == ForMask) {
 				stroke_width += MaskClearance * 2 * milsPerInch;
 			}
-			// draw the outline, G36 only does the fill
-			standardAperture(path, apertureMap, current_dcode, dcode_index,  stroke_width);
+
+			if (path.attribute("stroke-linecap") == "square") {
+
+				if (stroke_width != 0) {
+					QString aperture = QString("R,%1X%1").arg(stroke_width/milsPerInch, 0, 'f');
+
+					// add aperture to defs if we don't have it yet
+					if (!apertureMap.contains(aperture)) {
+						apertureMap[aperture] = QString::number(dcode_index);
+						m_gerber_header += "%ADD" + QString::number(dcode_index) + aperture + "*%\n";
+						dcode_index++;
+					}
+
+					QString dcode = apertureMap[aperture];
+					if (current_dcode != dcode) {
+						//switch to correct aperture
+						m_gerber_paths += "G54D" + dcode + "*\n";
+						current_dcode = dcode;
+					}
+				}
+			}
+			else {
+				standardAperture(path, apertureMap, current_dcode, dcode_index,  stroke_width);
+			}
+
 			m_gerber_paths += pathUserData.string;
 		}
 

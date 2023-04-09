@@ -569,6 +569,9 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 
 		// set poly fill if this is actually a filled in shape
 		if (hasFill(path) && (forWhy != ForOutline)) {
+			// use a minimal aperture. gerbv seems to use the last used aperture for image size calculation
+			// the aperture should not matter for the fill, though
+			standardAperture(path, apertureMap, current_dcode, dcode_index,  0.1);
 			// start poly fill
 			m_gerber_paths += "G36*\n";
 			m_gerber_paths += pathUserData.string;
@@ -659,6 +662,8 @@ void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
 
 	// add poly fill if this is actually a filled in shape
 	if (hasFill(polygon) && (forWhy != ForOutline)) {
+		// use a minimal aperture. gerbv seems to use the last used aperture for image size calculation
+		standardAperture(polygon, apertureMap, current_dcode, dcode_index,  0.1);
 		// start poly fill
 		m_gerber_paths += "G36*\n";
 		m_gerber_paths += pointString;

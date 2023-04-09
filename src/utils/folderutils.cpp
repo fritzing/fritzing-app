@@ -133,8 +133,8 @@ QDir FolderUtils::getAppPartsSubFolder2(QString search) {
 }
 
 QString FolderUtils::getTopLevelUserDataStorePath() {
-	QString path = QSettings(QSettings::IniFormat,QSettings::UserScope,"Fritzing","Fritzing").fileName();
-	return QFileInfo(path).dir().absolutePath();
+	QDir dir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
+	return dir.absolutePath();
 }
 
 QString FolderUtils::getTopLevelDocumentsPath() {

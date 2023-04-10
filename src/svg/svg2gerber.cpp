@@ -33,7 +33,7 @@ constexpr double milsPerInch = 1000;  // used to convert mils (standard fritzing
 
 bool hasFill(QDomElement & element) {
 	QString fill = element.attribute("fill");
-	if (fill.isEmpty()) return false;
+	if (fill.isEmpty()) return true; // svg spec: default to black fill
 	if (fill.compare("none") == 0) return false;
 	return true;
 }
@@ -660,6 +660,8 @@ void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
 		pointString += "X" + f2gerber(startx) + "Y" + f2gerber(flipy(starty)) + "D01*\n";
 	}
 
+	double stroke_width = polygon.attribute("stroke-width").toDouble();
+
 	// add poly fill if this is actually a filled in shape
 	if (hasFill(polygon) && (forWhy != ForOutline)) {
 		// use a minimal aperture. gerbv seems to use the last used aperture for image size calculation
@@ -672,7 +674,10 @@ void SVG2gerber::doPoly(QDomElement & polygon, ForWhy forWhy, bool closedCurve,
 	}
 
 	if (hasStroke(polygon) || (forWhy == ForMask) || (forWhy == ForOutline)) {
-		double stroke_width = polygon.attribute("stroke-width").toDouble();
+		// Some elements are missing a stroke-width
+		// TinySVG 1.2 does not specify a default stroke-width, while SVG 2.0 specifies "1".
+		stroke_width = fmax(stroke_width, 0.005 * milsPerInch);
+
 		if (forWhy == ForMask) {
 			 stroke_width += (MaskClearance * 2 * milsPerInch);
 		}

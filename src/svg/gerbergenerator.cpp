@@ -959,23 +959,23 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 	}
 
 	QTextStream stream(&out);
-	stream << "*Pick And Place List\n"
-	       << "*Company=\n"
-	       << "*Author=\n"
+	stream << "# Pick And Place List\n"
+		   << "# Company=\n"
+		   << "# Author=\n"
 	       //*Tel=
 	       //*Fax=
-	       << "*eMail=\n"
-	       << "*\n"
-	       << QString("*Project=%1\n").arg(prefix)
+		   << "# eMail=\n"
+		   << "#\n"
+		   << QString("# Project=%1\n").arg(prefix)
 	       // *Variant=<alle Bauteile>
-	       << QString("*Date=%1\n").arg(QTime::currentTime().toString())
-	       << QString("*CreatedBy=Fritzing %1\n").arg(Version::versionString())
-	       << "*\n"
-	       << "*\n*Coordinates in mm, always center of component\n"
-	       << "*Origin 0/0=Lower left corner of PCB\n"
-	       << "*Rotation in degree (0-360, math. pos.)\n"
-	       << "*\n"
-	       << "*No;Value;Package;X;Y;Rotation;Side;Name\n"
+		   << QString("# Date=%1\n").arg(QTime::currentTime().toString())
+		   << QString("# CreatedBy=Fritzing %1\n").arg(Version::versionString())
+		   << "#\n"
+		   << "#\n# Coordinates in mils, always center of component\n"
+		   << "# Origin 0/0=Lower left corner of PCB\n"
+		   << "# Rotation in degree (0-360, math. pos.)\n"
+		   << "#\n"
+		   << "RefDes,Value,Package,X,Y,Rotation,Side\n"
 	       ;
 
 	QStringList valueKeys;
@@ -1005,18 +1005,14 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		QString package = itemBase->modelPart()->properties().value("package");
 		QString processedPackage = checkAndAddPackageSuffix(package);
 
-		// No;Value;Package;X;Y;Rotation;Side;Name
-		QString string = QString("%1;%2;%3;%4;%5;%6;%7;%8\n")
-					.arg(ix++)
-					.arg(value
-						,processedPackage
-					)
-					.arg(GraphicsUtils::pixels2mm(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI))
-					.arg(GraphicsUtils::pixels2mm(loc.y() - bottomLeft.y(), GraphicsUtils::SVGDPI))
-					.arg(angle)
-					.arg(itemBase->viewLayerID() == ViewLayer::Copper1 ? "Top" : "Bottom"
-						,itemBase->instanceTitle()
-					);
+		QString string = QString("%1,\"%2\",\"%3\",%4,%5,%6,%7\n")
+					.arg(itemBase->instanceTitle())
+					.arg(value)
+					.arg(processedPackage)
+					.arg(QString::number(GraphicsUtils::pixels2mils(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI)))
+					.arg(QString::number(GraphicsUtils::pixels2mils(bottomLeft.y() - loc.y(), GraphicsUtils::SVGDPI)))
+					.arg(QString::number(angle))
+					.arg(itemBase->viewLayerID() == ViewLayer::Copper1 ? "Top" : "Bottom");
 		stream << string;
 		stream.flush();
 	}

@@ -470,6 +470,11 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 		m_programView->linkFiles(m_linkedProgramFiles, fileInfo.absoluteDir().absolutePath());
 	}
 
+	if (doMigratePartLabelOffset) {
+		migratePartLabelOffset(modelParts);
+	}
+	disconnect(migratePartLabelOffsetConnection);
+
 	if (!m_useOldSchematic && checkObsolete) {
 		if (m_pcbGraphicsView) {
 			QList<ItemBase *> items = m_pcbGraphicsView->selectAllObsolete();
@@ -478,11 +483,6 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 			}
 		}
 	}
-
-	if (doMigratePartLabelOffset) {
-		migratePartLabelOffset(modelParts);
-	}
-	disconnect(migratePartLabelOffsetConnection);
 
 	initZoom();
 }

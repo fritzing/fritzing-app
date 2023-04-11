@@ -1012,7 +1012,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 					.arg(QString::number(GraphicsUtils::pixels2mils(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI)))
 					.arg(QString::number(GraphicsUtils::pixels2mils(bottomLeft.y() - loc.y(), GraphicsUtils::SVGDPI)))
 					.arg(QString::number(angle))
-					.arg(itemBase->viewLayerID() == ViewLayer::Copper1 ? "Top" : "Bottom");
+					.arg(itemBase->viewLayerPlacement() == ViewLayer::NewTop ? "Top" : "Bottom");
 		stream << string;
 		stream.flush();
 	}

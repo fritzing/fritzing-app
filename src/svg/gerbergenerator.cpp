@@ -905,33 +905,41 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 	return true;
 }
 
-// Helper to annotate SMD / THT, so it is clear when drilling or
+// Helper to annotate SMT / THT, so it is clear when drilling or
 // a different pick and place method is required
-QString checkAndAddPackageSuffix(const QString &package)
+QString checkMountTechnology(const QString &package)
 {
 	if (package.isEmpty()) {
-		return package;
+		return "MANUAL";
 	}
 
 	if (package.contains("THT", Qt::CaseInsensitive)) {
-		return package;
+		return "THT";
 	}
 
 	if (package.contains("SMD", Qt::CaseInsensitive)) {
-		return package;
+		return "SMT";
 	}
 
-	 // These packages require THT placement. Add more known THT packages as needed
-	QStringList knownTHTPackages = {"DIP", "TO-92", "TO92", "TO-220", "TO220"};
+	 // These packages require THT placement, unless leads a cut off ('leadless')
+	QStringList knownTHTPackages = {"DIP", "TO-3", "TO-5", "TO-8", "TO-18", "TO-66", "TO-72",
+									"TO-92", "TO92", "TO-99", "TO-100", "TO-126", "TO-218", "TO-220",
+									"TO220", "TO-247", "TO-252", "TO-257", "TO-258", "TO-264",
+									"PFM", "DIL", "ZIP", "SIP" };
 
 	for (const QString &knownTHTPackage : knownTHTPackages)
 	{
 		if (package.contains(knownTHTPackage, Qt::CaseInsensitive))
 		{
-			return package + "[THT]";
+			if (!package.contains("LEADLESS", Qt::CaseInsensitive))
+			{
+				return "THT";
+			} else {
+				return "SMT";
+			}
 		}
 	}
-	return package + "[SMD]";
+	return "SMT";
 }
 
 void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes)
@@ -975,7 +983,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		   << "# Origin 0/0=Lower left corner of PCB\n"
 		   << "# Rotation in degree (0-360, math. pos.)\n"
 		   << "#\n"
-		   << "RefDes,Value,Package,X,Y,Rotation,Side\n"
+		   << "RefDes,Value,Package,X,Y,Rotation,Side,Mount\n"
 	       ;
 
 	QStringList valueKeys;
@@ -1003,16 +1011,17 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		double angle = atan2(transform.m12(), transform.m11()) * halfCircleDegrees / M_PI;
 
 		QString package = itemBase->modelPart()->properties().value("package");
-		QString processedPackage = checkAndAddPackageSuffix(package);
+		QString mount = checkMountTechnology(package);
 
-		QString string = QString("%1,\"%2\",\"%3\",%4,%5,%6,%7\n")
+		QString string = QString("%1,\"%2\",\"%3\",%4,%5,%6,%7,%8\n")
 					.arg(itemBase->instanceTitle())
 					.arg(value)
-					.arg(processedPackage)
+					.arg(package)
 					.arg(QString::number(GraphicsUtils::pixels2mils(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI)))
 					.arg(QString::number(GraphicsUtils::pixels2mils(bottomLeft.y() - loc.y(), GraphicsUtils::SVGDPI)))
 					.arg(QString::number(angle))
-					.arg(itemBase->viewLayerPlacement() == ViewLayer::NewTop ? "Top" : "Bottom");
+					.arg(itemBase->viewLayerPlacement() == ViewLayer::NewTop ? "Top" : "Bottom")
+					.arg(mount);
 		stream << string;
 		stream.flush();
 	}

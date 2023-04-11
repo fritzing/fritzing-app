@@ -967,6 +967,9 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		return;
 	}
 
+	QStringList valueKeys;
+	valueKeys << "resistance" << "capacitance" << "inductance" << "voltage"  << "current" << "power" << "mpn" << "mn";
+
 	QTextStream stream(&out);
 	stream << "# Pick And Place List\n"
 		   << "# Company=\n"
@@ -984,11 +987,13 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		   << "# Origin 0/0=Lower left corner of PCB\n"
 		   << "# Rotation in degree (0-360, math. pos.)\n"
 		   << "#\n"
-		   << "RefDes,Value,Package,X,Y,Rotation,Side,Mount\n"
-	       ;
+		   << "RefDes,Description,Package,X,Y,Rotation,Side,Mount\n"
+		   << "Description: ";
 
-	QStringList valueKeys;
-	valueKeys << "resistance" << "capacitance" << "inductance" << "voltage"  << "current" << "power";
+	Q_FOREACH (QString valueKey, valueKeys) {
+			stream << valueKey << ";";
+	}
+	stream << "\n";
 
 	int ix = 1;
 	Q_FOREACH (ItemBase * itemBase, itemBases) {
@@ -996,14 +1001,15 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 			// Skip items like logos, images, ...
 			continue;
 		}
-		QString value;
+		QString description;
 		Q_FOREACH (QString valueKey, valueKeys) {
-			value = itemBase->modelPart()->localProp(valueKey).toString();
-			if (!value.isEmpty()) break;
-
-			value = itemBase->modelPart()->properties().value(valueKey);
-			if (!value.isEmpty()) break;
+			QString prop = itemBase->modelPart()->localProp(valueKey).toString();
+			if (prop.isEmpty()) {
+				prop = itemBase->modelPart()->properties().value(valueKey);
+			}
+			description += prop + ";";
 		}
+		description.replace(",","_");
 
 		QPointF loc = itemBase->sceneBoundingRect().center();
 		QTransform transform = itemBase->transform();
@@ -1016,7 +1022,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 
 		QString string = QString("%1,\"%2\",\"%3\",%4,%5,%6,%7,%8\n")
 					.arg(itemBase->instanceTitle())
-					.arg(value)
+					.arg(description)
 					.arg(package)
 					.arg(QString::number(GraphicsUtils::pixels2mils(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI)))
 					.arg(QString::number(GraphicsUtils::pixels2mils(bottomLeft.y() - loc.y(), GraphicsUtils::SVGDPI)))

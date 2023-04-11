@@ -40,6 +40,21 @@ SvgAttributesMap SvgFlattener::mergeSvgAttributes(const SvgAttributesMap & inher
 	return attributes;
 }
 
+void SvgFlattener::applyAttributes(QDomElement &element, QTransform transform, const SvgAttributesMap & attributes) {
+	try {
+		QString sw(attributes.at("stroke-width"));
+		bool ok;
+		double strokeWidth = sw.toDouble(&ok);
+		if (ok) {
+			QLineF line(0, 0, strokeWidth, 0);
+			QLineF newLine = transform.map(line);
+			element.setAttribute("stroke-width", QString::number(newLine.length()));
+		}
+	} catch (std::out_of_range const&) {
+		// Expected, sometimes there is no stroke-width
+	}
+}
+
 void SvgFlattener::flattenChildren(QDomElement &element, const SvgAttributesMap & inherited_attributes) {
 	const SvgAttributesMap attributes = mergeSvgAttributes(inherited_attributes, element);
 
@@ -51,6 +66,7 @@ void SvgFlattener::flattenChildren(QDomElement &element, const SvgAttributesMap 
 		flattenChildren(child, attributes);
 	}
 
+	bool didOtherTransform = false;
 	//do translate
 	if(hasTranslate(element)) {
 		QList<double> params = TextUtils::getTransformFloats(element);
@@ -70,10 +86,16 @@ void SvgFlattener::flattenChildren(QDomElement &element, const SvgAttributesMap 
 		}
 	}
 	else if(hasOtherTransform(element)) {
+		didOtherTransform = true;
 		QTransform transform = TextUtils::transformStringToTransform(element.attribute("transform"));
 
 		//DebugDialog::debug(QString("rotating %1 %2 %3 %4 %5 %6").arg(params.at(0)).arg(params.at(1)).arg(params.at(2)).arg(params.at(3)).arg(params.at(4)).arg(params.at(5)));
 		unRotateChild(element, transform, attributes);
+	}
+
+	if(didOtherTransform == false && !element.hasChildNodes()) {
+		QTransform transform = TextUtils::transformStringToTransform(element.attribute("transform"));
+		applyAttributes(element, transform, attributes);
 	}
 
 	// remove transform
@@ -85,18 +107,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QTransform transform, co
 	// TODO: missing ellipse element
 
 	if(!element.hasChildNodes()) {
-		try {
-			QString sw(attributes.at("stroke-width"));
-			bool ok;
-			double strokeWidth = sw.toDouble(&ok);
-			if (ok) {
-				QLineF line(0, 0, strokeWidth, 0);
-				QLineF newLine = transform.map(line);
-				element.setAttribute("stroke-width", QString::number(newLine.length()));
-			}
-		} catch (std::out_of_range const&) {
-			// Expected, sometimes there is no stroke-width
-		}
+		applyAttributes(element, transform, attributes);
 
 		// I'm a leaf node.
 		QString tag = element.nodeName().toLower();

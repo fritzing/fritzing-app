@@ -48,6 +48,7 @@ const QString GerberGenerator::PasteMaskTopSuffix = "_pasteMaskTop.gtp";
 const QString GerberGenerator::PasteMaskBottomSuffix = "_pasteMaskBottom.gbp";
 const QString GerberGenerator::DrillSuffix = "_drill.txt";
 const QString GerberGenerator::OutlineSuffix = "_contour.gm1";
+const QString GerberGenerator::PickAndPlaceSuffix = "_pnp.xy";
 const QString GerberGenerator::MagicBoardOutlineID = "boardoutline";
 
 const double GerberGenerator::MaskClearanceMils = 5;
@@ -959,7 +960,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		itemBases.insert(itemBase->layerKinChief());
 	}
 
-	QString outname = exportDir + "/" + prefix + "_pnp.txt";
+	QString outname = exportDir + "/" + prefix + GerberGenerator::PickAndPlaceSuffix;
 	QFile out(outname);
 	if (!out.open(QIODevice::WriteOnly | QIODevice::Text)) {
 		displayMessage(QObject::tr("Unable to save pick and place file: %2").arg(outname), displayMessageBoxes);

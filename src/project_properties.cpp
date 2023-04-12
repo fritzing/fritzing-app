@@ -23,9 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <utility>
 
 ProjectProperties::ProjectProperties() {
-	m_propertiesMap[ProjectPropertyKeyPartLabelFontCutoffCorrection] = "yes";
 	m_keys = QStringList(m_propertiesMap.keys());
-	m_OldProjectValuePropertiesMap[ProjectPropertyKeyPartLabelFontCutoffCorrection] = "no";
 }
 
 ProjectProperties::~ProjectProperties() {
@@ -68,6 +66,3 @@ QString ProjectProperties::getProjectProperty(const QString & key) {
 	return m_propertiesMap[key];
 }
 
-bool ProjectProperties::getPartLabelFontCutoffCorrectionFlag() {
-	return m_propertiesMap[ProjectPropertyKeyPartLabelFontCutoffCorrection] == "yes";
-}

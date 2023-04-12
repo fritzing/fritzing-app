@@ -26,8 +26,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QXmlStreamWriter>
 #include <QDomElement>
 
-const QString ProjectPropertyKeyPartLabelFontCutoffCorrection = "part_label_font_cutoff_correction";
-
 class ProjectProperties {
 public:
 	ProjectProperties();
@@ -35,12 +33,8 @@ public:
 	~ProjectProperties();
 
 	void saveProperties(QXmlStreamWriter & streamWriter);
-
 	void load(const QDomElement & projectProperties);
-
 	QString getProjectProperty(const QString & key);
-
-	bool getPartLabelFontCutoffCorrectionFlag();
 
 private:
 	QMap<QString, QString> m_propertiesMap;

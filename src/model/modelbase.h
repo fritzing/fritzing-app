@@ -54,6 +54,7 @@ public:
 
 Q_SIGNALS:
 	void loadedViews(ModelBase *, QDomElement & views);
+	void loadedProjectProperties(const QDomElement & projectProperties);
 	void loadedRoot(const QString & fileName, ModelBase *, QDomElement & root);
 	void loadingInstances(ModelBase *, QDomElement & instances);
 	void loadingInstance(ModelBase *, QDomElement & instance);

@@ -385,16 +385,16 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	        this, SLOT(obsoleteSMDOrientationSlot()), Qt::DirectConnection);
 	connect(m_sketchModel, SIGNAL(oldSchematicsSignal(const QString &, bool &)),
 	        this, SLOT(oldSchematicsSlot(const QString &, bool &)), Qt::DirectConnection);	
-	connect(m_sketchModel, SIGNAL(loadedProjectProperties(const QDomElement &)),
-		this, SLOT(loadedProjectPropertiesSlot(const QDomElement &)), Qt::DirectConnection);
+	connect(m_sketchModel, &SketchModel::loadedProjectProperties,
+			this, &MainWindow::loadedProjectPropertiesSlot, Qt::DirectConnection);
 
 	m_obsoleteSMDOrientation = false;
 
 	m_sketchModel->loadFromFile(fileName, m_referenceModel, modelParts, true);
 
 	//DebugDialog::debug("core loaded");
-	disconnect(m_sketchModel, SIGNAL(loadedProjectProperties(const QDomElement &)),
-		this, SLOT(loadedProjectPropertiesSlot(const QDomElement &)));
+	disconnect(m_sketchModel, &SketchModel::loadedProjectProperties,
+			   this, &MainWindow::loadedProjectPropertiesSlot);
 	disconnect(m_sketchModel, SIGNAL(loadedViews(ModelBase *, QDomElement &)),
 	           this, SLOT(loadedViewsSlot(ModelBase *, QDomElement &)));
 	disconnect(m_sketchModel, SIGNAL(loadedRoot(const QString &, ModelBase *, QDomElement &)),

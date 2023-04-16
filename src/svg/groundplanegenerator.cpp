@@ -325,7 +325,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	QDomDocument doc;
 	doc.setContent(params.svg, &errorStr, &errorLine, &errorColumn);
 	QDomElement root = doc.documentElement();
-	SvgFileSplitter::forceStrokeWidth(root, 2 * params.keepoutMils, "#000000", true, true);
+	SvgFileSplitter::forceStrokeWidth(root, 2 * params.keepoutMils, "#000000", true, false);
 	QByteArray copperByteArray = doc.toByteArray(0);
 
 	//QFile file1("testGroundFillCopper.svg");

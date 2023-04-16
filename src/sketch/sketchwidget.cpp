@@ -5088,7 +5088,6 @@ void SketchWidget::arrowTimerTimeout() {
 }
 
 void SketchWidget::keyPressEvent ( QKeyEvent * event ) {
-	//DebugDialog::debug("key press event");
 	if ((m_inFocus.length() == 0) && !m_movingByMouse) {
 		int dx = 0, dy = 0;
 		switch (event->key()) {
@@ -5109,7 +5108,6 @@ void SketchWidget::keyPressEvent ( QKeyEvent * event ) {
 		}
 		if (dx != 0 || dy != 0) {
 			m_arrowTimer.stop();
-			DebugDialog::debug("arrow press event");
 			ConnectorItem::clearEqualPotentialDisplay();
 			moveByArrow(dx, dy, event);
 			m_arrowTimer.start();

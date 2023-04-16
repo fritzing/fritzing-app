@@ -638,10 +638,7 @@ bool FApplication::spaceBarIsPressed() {
 
 bool FApplication::eventFilter(QObject *obj, QEvent *event)
 {
-	// check whether the space bar is down.
-	//qDebug() << "event" << event->type();
-
-	Q_UNUSED(obj);
+//	qDebug() << "event" << event->type();
 
 	switch (event->type()) {
 	case QEvent::MouseButtonPress:
@@ -656,9 +653,30 @@ bool FApplication::eventFilter(QObject *obj, QEvent *event)
 		// at least under Windows, the MouseButtonRelease event is not triggered if the Drop event is triggered
 		m_mousePressed = false;
 		break;
+	case QEvent::ShortcutOverride:
+	{
+		// Use the ShortcutOverride event for logging/debugging keypresses
+		// This is more verbose then logging "KeyPress" events, because these
+		// do net get triggered if the key represents a shortcut.
+		QKeyEvent *keyEvent = dynamic_cast<QKeyEvent*>(event);
+		QString dbgObjectClass = obj->metaObject()->className();
+		QString dbgObjectName = obj->objectName();
+		QString dbgFocusWidget = "";
+		QWidget* focusWidget = qApp->focusWidget();
+		if (focusWidget) {
+			dbgFocusWidget = focusWidget->metaObject()->className();
+		}
+		DebugDialog::debug(QString("press %1 for object ('%2','%3') focus '(%4)'").arg(
+							   DebugDialog::createKeyTag(keyEvent),
+							   dbgObjectClass,
+							   dbgObjectName,
+							   dbgFocusWidget));
+
+		//DebugDialog::debug(QString("mouse %1 %2").arg(m_mousePressed).arg(QApplication::mouseButtons()));
+	}
+	break;
 	case QEvent::KeyPress:
 	{
-		//DebugDialog::debug(QString("key pressed %1 %2").arg(m_mousePressed).arg(QApplication::mouseButtons()));
 		if (!m_mousePressed && !m_spaceBarIsPressed) {
 			auto * kevent = static_cast<QKeyEvent *>(event);
 			if (!kevent->isAutoRepeat() && (kevent->key() == Qt::Key_Space)) {
@@ -1629,8 +1647,13 @@ bool FApplication::notify(QObject *receiver, QEvent *e)
 		return QApplication::notify(receiver, e);
 	}
 	catch (char const *str) {
-		FMessageBox::critical(nullptr, tr("Fritzing failure"), tr("Fritzing caught an exception %1 from %2 in event %3")
-		                      .arg(str).arg(receiver->objectName()).arg(e->type()));
+		FMessageBox::critical(
+					nullptr,
+					tr("Fritzing failure"),
+					tr("Fritzing caught an exception %1 from %2 in event %3")
+					.arg(str)
+					.arg(receiver->objectName())
+					.arg(e->type()));
 	}
 	catch (std::exception& exp) {
 		qDebug() << QString("notify %1 %2").arg(receiver->metaObject()->className()).arg(e->type());

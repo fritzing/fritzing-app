@@ -62,6 +62,7 @@ public:
 	static void setEnabled(bool);
 	static bool enabled();
 
+	static QString createKeyTag(const QKeyEvent *event);
 protected:
 	bool event ( QEvent * e );
 	void resizeEvent ( QResizeEvent * event );

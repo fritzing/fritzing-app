@@ -21,6 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #include "debugdialog.h"
+#include "qevent.h"
 #ifndef QT_NO_DEBUG
 #include "utils/folderutils.h"
 #endif
@@ -218,4 +219,82 @@ bool DebugDialog::enabled() {
 
 void DebugDialog::setEnabled(bool enabled) {
 	m_enabled = enabled;
+}
+
+QString DebugDialog::createKeyTag(const QKeyEvent *event) {
+	static const QMap<int, QString> KeyNames = {
+		{ Qt::Key_Escape, "Esc" },
+		{ Qt::Key_Tab, "Tab" },
+		{ Qt::Key_Backspace, "Backspace" },
+		{ Qt::Key_Return, "Enter" },
+		{ Qt::Key_Insert, "Ins" },
+		{ Qt::Key_Delete, "Del" },
+		{ Qt::Key_Pause, "Pause" },
+		{ Qt::Key_Print, "Print" },
+		{ Qt::Key_SysReq, "SysRq" },
+		{ Qt::Key_Home, "Home" },
+		{ Qt::Key_End, "End" },
+		{ Qt::Key_Left, "←" },
+		{ Qt::Key_Up, "↑" },
+		{ Qt::Key_Right, "→" },
+		{ Qt::Key_Down, "↓" },
+		{ Qt::Key_PageUp, "PageUp" },
+		{ Qt::Key_PageDown, "PageDown" },
+		{ Qt::Key_Shift, "Shift" },
+		{ Qt::Key_Control, "Ctrl" },
+		{ Qt::Key_Meta, "Meta" },
+		{ Qt::Key_Alt, "Alt" },
+		{ Qt::Key_AltGr, "AltGr" },
+		{ Qt::Key_CapsLock, "CapsLock" },
+		{ Qt::Key_NumLock, "NumLock" },
+		{ Qt::Key_ScrollLock, "ScrollLock" },
+		{ Qt::Key_F1, "F1" },
+		{ Qt::Key_F2, "F2" },
+		{ Qt::Key_F3, "F3" },
+		{ Qt::Key_F4, "F4" },
+		{ Qt::Key_F5, "F5" },
+		{ Qt::Key_F6, "F6" },
+		{ Qt::Key_F7, "F7" },
+		{ Qt::Key_F8, "F8" },
+		{ Qt::Key_F9, "F9" },
+		{ Qt::Key_F10, "F10" },
+		{ Qt::Key_F11, "F11" },
+		{ Qt::Key_F12, "F12" },
+		{ Qt::Key_F13, "F13" },
+		{ Qt::Key_F14, "F14" },
+		{ Qt::Key_F15, "F15" },
+		{ Qt::Key_F16, "F16" },
+		{ Qt::Key_F17, "F17" },
+		{ Qt::Key_F18, "F18" },
+		{ Qt::Key_F19, "F19" },
+		{ Qt::Key_F20, "F20" },
+		{ Qt::Key_F21, "F21" },
+		{ Qt::Key_F22, "F22" },
+		{ Qt::Key_F23, "F23" },
+		{ Qt::Key_F24, "F24" }
+		// add more keys as needed
+	};
+
+	int key = event->key();
+	QString keyName = KeyNames.value(key, event->text().toHtmlEscaped());
+
+	QString modifierText;
+	if (event->modifiers() & Qt::ShiftModifier && key != Qt::Key_Shift) {
+		modifierText += "Shift+";
+	}
+	if (event->modifiers() & Qt::ControlModifier && key != Qt::Key_Control) {
+		modifierText += "Ctrl+";
+	}
+	if (event->modifiers() & Qt::AltModifier && key != Qt::Key_Alt) {
+		modifierText += "Alt+";
+	}
+	if (event->modifiers() & Qt::MetaModifier && key != Qt::Key_Meta) {
+		modifierText += "Meta+";
+	}
+
+	if (!modifierText.isEmpty()) {
+		keyName = QString("%1%2").arg(modifierText, keyName);
+	}
+
+	return QString("<kbd>%1</kbd>").arg(keyName);
 }

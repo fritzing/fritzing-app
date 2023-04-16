@@ -4574,6 +4574,7 @@ void MainWindow::findPartInSketch() {
 	}
 
 	m_currentGraphicsView->selectItems(matched);
+	m_currentGraphicsView->setFocus();
 }
 
 void MainWindow::setGroundFillKeepout() {

@@ -34,6 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
 #include "../version/version.h"
+#include "items/groundplane.h"
 #include "groundplanegenerator.h"
 #include "svgfilesplitter.h"
 #include "svgpathregex.h"
@@ -999,6 +1000,10 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 	Q_FOREACH (ItemBase * itemBase, itemBases) {
 		if (!itemBase->hasConnectors()) {
 			// Skip items like logos, images, ...
+			continue;
+		}
+		if (dynamic_cast<GroundPlane*>(itemBase) != nullptr) {
+			// Skip copper plane and ground plane items
 			continue;
 		}
 		QString description;

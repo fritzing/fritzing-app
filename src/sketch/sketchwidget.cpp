@@ -8552,7 +8552,13 @@ void SketchWidget::changeBoardLayers(int layers, bool doEmit) {
 	}
 }
 
-void SketchWidget::collectAllNets(QHash<ConnectorItem *, int> & indexer, QList< QList<class ConnectorItem *>* > & allPartConnectorItems, bool includeSingletons, bool bothSides)
+void SketchWidget::collectAllNets(
+		QHash<ConnectorItem *, int> & indexer,
+		QList< QList<class ConnectorItem *>* > & allPartConnectorItems,
+		bool includeSingletons,
+		bool bothSides,
+		ViewGeometry::WireFlags skipFlags,
+		bool skipBuses)
 {
 	// get the set of all connectors in the sketch
 	QList<ConnectorItem *> allConnectors;
@@ -8570,7 +8576,7 @@ void SketchWidget::collectAllNets(QHash<ConnectorItem *, int> & indexer, QList< 
 		ConnectorItem * connectorItem = allConnectors.takeFirst();
 		QList<ConnectorItem *> connectorItems;
 		connectorItems.append(connectorItem);
-		ConnectorItem::collectEqualPotential(connectorItems, bothSides, ViewGeometry::NoFlag);
+		ConnectorItem::collectEqualPotential(connectorItems, bothSides, skipFlags, skipBuses);
 		if (connectorItems.count() <= 0) {
 			continue;
 		}

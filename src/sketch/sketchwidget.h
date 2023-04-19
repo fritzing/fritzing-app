@@ -264,7 +264,13 @@ public:
 	virtual double defaultGridSizeInches();
 	void clearPasteOffset();
 	virtual ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
-	void collectAllNets(QHash<class ConnectorItem *, int> & indexer, QList< QList<class ConnectorItem *>* > & allPartConnectorItems, bool includeSingletons, bool bothSides);
+	void collectAllNets(
+			QHash<class ConnectorItem *, int> & indexer,
+			QList< QList<class ConnectorItem *>* > & allPartConnectorItems,
+			bool includeSingletons,
+			bool bothSides,
+			ViewGeometry::WireFlags skipFlag = ViewGeometry::NoFlag,
+			bool skipBuses = false);
 	virtual bool routeBothSides();
 	virtual void changeLayerForCommand(long id, double z, ViewLayer::ViewLayerID viewLayerID);
 	void ratsnestConnect(ConnectorItem * connectorItem, bool connect);

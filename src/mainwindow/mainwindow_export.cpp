@@ -1578,9 +1578,12 @@ QString MainWindow::exportIPC_D_356A() {
 
 	QString basename = QFileInfo(m_fwFilename).fileName();
 
+	ViewGeometry::WireFlags skipFlags = ViewGeometry::NoFlag;
+	const bool skipBuses = true;
+
 	QHash<ConnectorItem *, int> indexer;
 	QList< QList<ConnectorItem *>* > netList;
-	this->m_pcbGraphicsView->collectAllNets(indexer, netList, true, m_pcbGraphicsView->boardLayers() > 1);
+	this->m_pcbGraphicsView->collectAllNets(indexer, netList, true, m_pcbGraphicsView->boardLayers() > 1, skipFlags, skipBuses);
 
 	QString ipc = getExportIPC_D_356A(board, basename, netList);
 	return ipc;

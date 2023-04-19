@@ -310,7 +310,13 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 
 		QList<ConnectorItem *> equi;
 		equi.append(connectorItem);
-		ConnectorItem::collectEqualPotential(equi, bothSidesNow, (ViewGeometry::RatsnestFlag | ViewGeometry::NormalFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::SchematicTraceFlag) ^ m_sketchWidget->getTraceFlag());
+		ConnectorItem::collectEqualPotential(
+					equi,
+					bothSidesNow,
+					(ViewGeometry::RatsnestFlag |
+					 ViewGeometry::NormalFlag |
+					 ViewGeometry::PCBTraceFlag |
+					 ViewGeometry::SchematicTraceFlag) ^ m_sketchWidget->getTraceFlag());
 		visited.append(equi);
 
 		if (equi.count() == 1) {

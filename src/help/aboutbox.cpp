@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2019 Fritzing
+Copyright (c) 2007-2023 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -97,7 +97,7 @@ AboutBox::AboutBox(QWidget *parent)
 	CC->setGeometry(30, this->height() - cc.height(), cc.width(), cc.height());
 
 	auto *copyrightFritzing = new QLabel(this);
-	copyrightFritzing->setText(tr("<b>Copyright 2007-%1 Fritzing GmbH</b>").arg(Version::year()));
+	copyrightFritzing->setText(tr("<b>Copyright %1 Fritzing GmbH</b>").arg(Version::year()));
 	copyrightFritzing->setFont(extraSmallFont);
     copyrightFritzing->setGeometry(30, 426, AboutWidth - 30 - 30, 16);
 	copyrightFritzing->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);

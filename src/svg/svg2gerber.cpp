@@ -339,7 +339,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 		double centerx = circle.attribute("cx").toDouble();
 		double centery = circle.attribute("cy").toDouble();
 		double r = circle.attribute("r").toDouble();
-		if (qFuzzyIsNull(r) || r < 0) continue;
+		if (fabs(r) < 0.001) continue; // Ignore circles smaller then 1 micro inch
 
 		QString drillAttribute = circle.attribute("drill", "");
 		bool noDrill = (drillAttribute.compare("0") == 0 || drillAttribute.compare("no", Qt::CaseInsensitive) == 0 || drillAttribute.compare("false", Qt::CaseInsensitive) == 0);

@@ -339,13 +339,14 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 		double centerx = circle.attribute("cx").toDouble();
 		double centery = circle.attribute("cy").toDouble();
 		double r = circle.attribute("r").toDouble();
-		if (r == 0) continue;
+		if (qFuzzyIsNull(r) || r < 0) continue;
 
 		QString drillAttribute = circle.attribute("drill", "");
 		bool noDrill = (drillAttribute.compare("0") == 0 || drillAttribute.compare("no", Qt::CaseInsensitive) == 0 || drillAttribute.compare("false", Qt::CaseInsensitive) == 0);
 
 		double stroke_width = circle.attribute("stroke-width").toDouble();
 		double hole = ((2*r) - stroke_width) / milsPerInch;  // convert mils (standard fritzing resolution) to inches
+		noDrill |= (qFuzzyIsNull(hole) || hole < 0); // Don't drill holes with a radius <= 0
 
 		if (forWhy == ForDrill) {
 			if (noDrill) continue;

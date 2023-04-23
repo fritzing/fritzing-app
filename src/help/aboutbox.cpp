@@ -105,7 +105,7 @@ AboutBox::AboutBox(QWidget *parent)
 
 	// Scrolling Credits Text
 	QString data =
-		QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
+		QString("<br /><br /><br /><br /><br /><br />") +
 
 		"<p>" +
 		tr("Fritzing is made by: ") +
@@ -161,25 +161,58 @@ AboutBox::AboutBox(QWidget *parent)
 
 	    "<p>" +
 		tr("Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.") +
-	    "</p>" +
+		"</p>";
 
-	    "<br /><br /><br /><br /><br /><br /><br /><br />";
+	QString br = "<br/>";
+	QString lgplv3 = tr("LGPLv3");
+	QString lgplv2 = tr("GPLv2 with linking exception");
+	QString boost = tr("Boost License 1.0");
+	QString modifiedbsd = tr("Modified BSD License");
+	QString bsd = tr("BSD License");
+	QString pnglicense = tr("PNG Reference Library License version 2");
+	QString openssl = tr("Dual OpenSSL and SSLeay License");
+	QString zlib = tr("zlib License");
+
+
+	QString licensesTable = "<p>" + tr("The following libraries are used by Fritzing:") + br +
+						QString(
+							   "<table width='80%' border='0' cellspacing='0' cellpadding='0'>"
+							   "<tr><td align='left'>Qt</td><td align='left'>%1</td></tr>"
+							   "<tr><td align='left'>Boost</td><td align='left'>%2</td></tr>"
+							   "<tr><td align='left'>svgpp</td><td align='left'>%2</td></tr>"
+							   "<tr><td align='left'>libngspice</td><td align='left'>%3</td></tr>"
+							   "<tr><td align='left'>libquazip</td><td align='left'>%1</td></tr>"
+							   "<tr><td align='left'>libpng</td><td align='left'>%4</td></tr>"
+							   "<tr><td align='left'>libcrypto</td><td align='left'>%5</td></tr>"
+							   "<tr><td align='left'>libjpg</td><td align='left'>%6</td></tr>"
+							   "<tr><td align='left'>zlib</td><td align='left'>%7</td></tr>"
+							   "<tr><td align='left'>libgit2</td><td align='left'>%8</td></tr>"
+							   "</table>"
+							   "</p>"
+								"<br /><br /><br /><br /><br /><br /><br /><br />"
+								)
+			 .arg(lgplv3)
+			 .arg(boost)
+			 .arg(modifiedbsd)
+			 .arg(pnglicense)
+			 .arg(openssl)
+			 .arg(bsd)
+			 .arg(zlib)
+			 .arg(lgplv2);
 
 	QPixmap fadepixmap(":/resources/images/aboutbox_scrollfade.png");
+
+	data = "<div align='center'><table width='90%'><tr><td align='center'>" +
+				data +
+				"</td></td></table>" +
+				licensesTable +
+			"</div>";
 
 	m_expandingLabel = new ExpandingLabel(this, AboutWidth);
 	m_expandingLabel->setObjectName("aboutText");
 	m_expandingLabel->setLabelText(data);
 	m_expandingLabel->setFont(smallFont);
 	m_expandingLabel->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
-
-	// setAlignment only aligns the "current paragraph"
-	// the QTextCursor code aligns all paragraphs
-	QTextCursor cursor(m_expandingLabel->document());
-	cursor.select(QTextCursor::Document);
-	QTextBlockFormat fmt;
-	fmt.setAlignment(Qt::AlignCenter);
-	cursor.mergeBlockFormat(fmt);
 
 	// Add a fade out and a fade in the scrollArea
 	auto *scrollFade = new QLabel(this);

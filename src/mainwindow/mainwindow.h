@@ -93,26 +93,6 @@ protected:
 	bool m_firstTime;
 };
 
-//class SwapTimer : public QTimer
-//{
-//	Q_OBJECT
-
-//public:
-//	SwapTimer();
-
-//	void setAll(const QString & family, const QString & prop, QMap<QString, QString> &  propsMap, ItemBase *);
-//	const QString & family();
-//	const QString & prop();
-//	QMap<QString, QString> propsMap();
-//	ItemBase * itemBase();
-
-//protected:
-//	QString m_family;
-//	QString m_prop;
-//	QMap<QString, QString> m_propsMap;
-//	QPointer <ItemBase> m_itemBase;
-//};
-
 struct GridSizeThing
 {
 	QLineEdit * lineEdit;
@@ -213,7 +193,7 @@ public:
 	class PCBSketchWidget * pcbView();
 	void noBackup();
 	void swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement, QMap<QString, QString> & propsMap);
-	void swapLayers(ItemBase * itemBase, int layers, const QString & msg, int delay);
+	void swapLayers(ItemBase * itemBase, int layers, const QString & msg);
 	bool saveAsAux(const QString & fileName);
 	void swapObsolete(bool displayFeedback, QList<ItemBase *> &);
 	QList<ItemBase *> selectAllObsolete(bool displayFeedback);

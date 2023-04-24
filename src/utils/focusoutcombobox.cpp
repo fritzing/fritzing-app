@@ -22,6 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 
 FocusOutComboBox::FocusOutComboBox(QWidget * parent) : QComboBox(parent) {
+	this->setFocusPolicy(Qt::StrongFocus);
 	setEditable(true);
 	m_wasOut = true;
 	lineEdit()->installEventFilter( this );
@@ -49,6 +50,13 @@ void FocusOutComboBox::focusOutEvent(QFocusEvent * e) {
 			ix = count() - 1;
 		}
 		setCurrentIndex(ix);
+	}
+}
+
+void FocusOutComboBox::wheelEvent(QWheelEvent* e)
+{
+	if (!this->hasFocus()) {
+	  e->ignore();
 	}
 }
 

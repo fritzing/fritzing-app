@@ -681,11 +681,11 @@ void MainWindow::connectPairs() {
 	                                  this, SLOT(routingStatusSlot(SketchWidget *, const RoutingStatus &))) != nullptr);
 
 	succeeded =  succeeded && (connect(m_breadboardGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)),
-	                                  this, SLOT(swapSelectedDelay(const QString &, const QString &, QMap<QString, QString> &, ItemBase *))) != nullptr);
+									  this, SLOT(swapSelectedMap(const QString &, const QString &, QMap<QString, QString> &, ItemBase *))) != nullptr);
 	succeeded =  succeeded && (connect(m_schematicGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)),
-	                                  this, SLOT(swapSelectedDelay(const QString &, const QString &, QMap<QString, QString> &, ItemBase *))) != nullptr);
+									  this, SLOT(swapSelectedMap(const QString &, const QString &, QMap<QString, QString> &, ItemBase *))) != nullptr);
 	succeeded =  succeeded && (connect(m_pcbGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)),
-	                                  this, SLOT(swapSelectedDelay(const QString &, const QString &, QMap<QString, QString> &, ItemBase *))) != nullptr);
+									  this, SLOT(swapSelectedMap(const QString &, const QString &, QMap<QString, QString> &, ItemBase *))) != nullptr);
 
 	succeeded =  succeeded && (connect(m_breadboardGraphicsView, SIGNAL(dropPasteSignal(SketchWidget *)),
 	                                  this, SLOT(dropPaste(SketchWidget *))) != nullptr);
@@ -2443,13 +2443,12 @@ bool MainWindow::swapSpecial(const QString & theProp, QMap<QString, QString> & c
 	return false;
 }
 
-void MainWindow::swapLayers(ItemBase * itemBase, int layers, const QString & msg, int delay) {
+void MainWindow::swapLayers(ItemBase * itemBase, int layers, const QString & msg, int) {
 	auto* parentCommand = new QUndoCommand(msg);
 	new CleanUpWiresCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 	new CleanUpRatsnestsCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 	m_pcbGraphicsView->swapLayers(itemBase, layers, parentCommand);
-	// need to defer execution so the content of the info view doesn't change during an event that started in the info view
-	m_undoStack->waitPush(parentCommand, delay);
+	m_undoStack->push(parentCommand);
 }
 
 
@@ -2483,9 +2482,7 @@ void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, 
 
 	swapSelectedAuxAux(itemBase, moduleID, viewLayerPlacement, propsMap, parentCommand);
 
-	// need to defer execution so the content of the info view doesn't change during an event that started in the info view
-	m_undoStack->waitPush(parentCommand, SketchWidget::PropChangeDelay);
-
+	m_undoStack->push(parentCommand);
 }
 
 void MainWindow::swapBoardImageSlot(SketchWidget * sketchWidget, ItemBase * itemBase, const QString & filename, const QString & moduleID, bool addName) {

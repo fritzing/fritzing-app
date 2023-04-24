@@ -229,38 +229,62 @@ bool byConnectorCount(MissingSvgInfo & m1, MissingSvgInfo & m2)
 ///////////////////////////////////////////////
 
 // SwapTimer explained: http://code.google.com/p/fritzing/issues/detail?id=1431
+// From https://web.archive.org/web/20111015000218/http://code.google.com/p/fritzing/issues/detail?id=1431
 
-SwapTimer::SwapTimer() : QTimer()
-{
-}
+// Issue 1431:	Changing a part's properties very fast causes copies of the part
+//
+// What steps will reproduce the problem?
+// 1. Place a part (e.g., a transistor)
+// 2. Move your mouse cursor over a property that uses the swap mechanism (e.g. 'package').
+// 3. Use the mousewheel, scrolling up and down fast.
 
-void SwapTimer::setAll(const QString & family, const QString & prop, QMap<QString, QString> & propsMap, ItemBase * itemBase)
-{
-	m_family = family;
-	m_prop = prop;
-	m_propsMap = propsMap;
-	m_itemBase = itemBase;
-}
+// What is the expected output? What do you see instead?
+// The part gets copied multiple times (on top of one another). It seems like the swapping mechanism isn't catching up.
 
-const QString & SwapTimer::family()
-{
-	return  m_family;
-}
+// This is nasty if you're doing that in a breadboard and not noticing the copy. It will be quite confusing.
+// Comment 1 by project member irasc...@gmail.com, Jun 29, 2011
+// This issue opens up a can of worms.  The problem is that when you use the mouse wheel to scroll through the combobox choices, each intermediary result triggers a "combo box changed" event, so when you move the mouse wheel very quickly all those events pile up, with unpredictable results.
 
-const QString & SwapTimer::prop()
-{
-	return m_prop;
-}
+// The optimal solution would be to change the combobox so that the signals didn't pile up. Additionally, it would be good to block new swaps while a swap is currently taking place.
 
-QMap<QString, QString> SwapTimer::propsMap()
-{
-	return m_propsMap;
-}
+// However, there are a bunch of different combobox classes used all over the place, so at least for the moment I have bottlenecked the problem at the other end: when a combo box changed event tied to the swap function occurs, I set a timer, and if another event comes along within that time, the timer is restarted (the earlier event being essentially discarded).
 
-ItemBase * SwapTimer::itemBase()
-{
-	return m_itemBase;
-}
+// Another approach would be to disable the mouse wheel for these widgets...
+// Status: PartlyDone
+// Comment 2 by project member irasc...@gmail.com, Jun 29, 2011
+// the base combobox class would subscribe to its own change events, using a timer as above, then only on timeout would it emit external change signals.  All classes using current combo boxes would connect to this new set of signals instead of the original set.  For extra credit, the base combo box class could detect whether the change was due to a mouse wheel event, and if not could emit events directly with no delay.
+
+//SwapTimer::SwapTimer() : QTimer()
+//{
+//}
+
+//void SwapTimer::setAll(const QString & family, const QString & prop, QMap<QString, QString> & propsMap, ItemBase * itemBase)
+//{
+//	m_family = family;
+//	m_prop = prop;
+//	m_propsMap = propsMap;
+//	m_itemBase = itemBase;
+//}
+
+//const QString & SwapTimer::family()
+//{
+//	return  m_family;
+//}
+
+//const QString & SwapTimer::prop()
+//{
+//	return m_prop;
+//}
+
+//QMap<QString, QString> SwapTimer::propsMap()
+//{
+//	return m_propsMap;
+//}
+
+//ItemBase * SwapTimer::itemBase()
+//{
+//	return m_itemBase;
+//}
 
 ///////////////////////////////////////////////
 
@@ -302,10 +326,10 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	setAcceptDrops(true);
 	m_activeWire = nullptr;
 	m_activeConnectorItem = nullptr;
-	m_swapTimer.setInterval(30);
-	m_swapTimer.setParent(this);
-	m_swapTimer.setSingleShot(true);
-	connect(&m_swapTimer, SIGNAL(timeout()), this, SLOT(swapSelectedTimeout()));
+//	m_swapTimer.setInterval(30);
+//	m_swapTimer.setParent(this);
+//	m_swapTimer.setSingleShot(true);
+//	connect(&m_swapTimer, SIGNAL(timeout()), this, SLOT(swapSelectedTimeout()));
 
 	m_closeSilently = false;
 	m_orderFabAct = nullptr;
@@ -2260,22 +2284,6 @@ void MainWindow::migratePartLabelOffset(QList<ModelPart*> modelParts) {
 		}
 	}
 	DebugDialog::debug(QString("%1 part labels corrected").arg(migratedParts.size()));
-}
-
-void MainWindow::swapSelectedDelay(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase)
-{
-	//DebugDialog::debug("swap selected delay");
-	m_swapTimer.stop();
-	m_swapTimer.setAll(family, prop, currPropsMap, itemBase);
-	m_swapTimer.start();
-}
-
-void MainWindow::swapSelectedTimeout()
-{
-	if (sender() == &m_swapTimer) {
-		QMap<QString, QString> map =  m_swapTimer.propsMap();
-		swapSelectedMap(m_swapTimer.family(), m_swapTimer.prop(), map, m_swapTimer.itemBase());
-	}
 }
 
 void MainWindow::swapSelectedMap(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase)

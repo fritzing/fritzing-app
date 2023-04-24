@@ -93,25 +93,25 @@ protected:
 	bool m_firstTime;
 };
 
-class SwapTimer : public QTimer
-{
-	Q_OBJECT
+//class SwapTimer : public QTimer
+//{
+//	Q_OBJECT
 
-public:
-	SwapTimer();
+//public:
+//	SwapTimer();
 
-	void setAll(const QString & family, const QString & prop, QMap<QString, QString> &  propsMap, ItemBase *);
-	const QString & family();
-	const QString & prop();
-	QMap<QString, QString> propsMap();
-	ItemBase * itemBase();
+//	void setAll(const QString & family, const QString & prop, QMap<QString, QString> &  propsMap, ItemBase *);
+//	const QString & family();
+//	const QString & prop();
+//	QMap<QString, QString> propsMap();
+//	ItemBase * itemBase();
 
-protected:
-	QString m_family;
-	QString m_prop;
-	QMap<QString, QString> m_propsMap;
-	QPointer <ItemBase> m_itemBase;
-};
+//protected:
+//	QString m_family;
+//	QString m_prop;
+//	QMap<QString, QString> m_propsMap;
+//	QPointer <ItemBase> m_itemBase;
+//};
 
 struct GridSizeThing
 {
@@ -454,8 +454,6 @@ protected Q_SLOTS:
 	void cursorLocationSlot(double, double, double=0.0, double=0.0);
 	void locationLabelClicked();
 	void swapSelectedMap(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase *);
-	void swapSelectedDelay(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase *);
-	void swapSelectedTimeout();
 	void filenameIfSlot(QString & filename);
 	void openURL();
 	void setActiveWire(class Wire *);
@@ -963,7 +961,6 @@ protected:
 	bool m_closeSilently = false;
 	QString m_fzzFolder;
 	QHash<QString, struct LockedFile *> m_fzzFiles;
-	SwapTimer m_swapTimer;
 	QPointer<Wire> m_activeWire;
 	QPointer<ConnectorItem> m_activeConnectorItem;
 	bool m_addedToTemp = false;

@@ -137,6 +137,8 @@ void MainWindow::closeIfEmptySketch(MainWindow* mw) {
 	}
 	mw->move(x()+cascFactorX,y()+cascFactorY);
 	mw->show();
+	mw->activateWindow();
+	mw->raise();
 }
 
 void MainWindow::mainLoad() {

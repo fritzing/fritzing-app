@@ -19,6 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "FProbeSwitchPackage.h"
+#include "debugdialog.h"
 
 
 FProbeSwitchPackage::FProbeSwitchPackage(FamilyPropertyComboBox * familyPropertyComboBox) :

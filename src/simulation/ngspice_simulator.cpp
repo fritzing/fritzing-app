@@ -73,7 +73,7 @@ void NgSpiceSimulator::init() {
 	#elif defined Q_OS_MAC
 		const QString libName = "libngspice.0.dylib";
 	#elif defined Q_OS_WIN
-		const QString libName = "ngspice-36.dll";
+		const QString libName = "ngspice.dll";
 	#endif
 		DebugDialog::debug("Couldn't load ngspice " + m_library.errorString());
 		for( const auto& path : libPaths ) {

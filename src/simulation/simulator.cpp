@@ -470,6 +470,7 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, double number){
 	int indexPoint = textToDisplay.indexOf('.');
 	textToDisplay = TextUtils::convertToPowerPrefix(number, 'f', 4 - indexPoint);
 	textToDisplay.replace('k', 'K');
+	textToDisplay.replace("inf", "INF");
 	updateMultimeterScreen(multimeter, textToDisplay);
 }
 

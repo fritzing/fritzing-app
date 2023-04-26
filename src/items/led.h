@@ -37,21 +37,25 @@ public:
 	~LedLight() {
 	};
 	void setLight(double brightness, int red, int green, int blue){
-		if (brightness < 0.15)
+		//Only set light coming out if brightness is bigger than 0.25
+		if (brightness < 0.25)
 			brightness = 0.0;
-		double radious = std::min(parentItem()->boundingRect().width()/2,
-								  parentItem()->boundingRect().height()/2) * brightness * 4;
-		prepareGeometryChange();
-		setRect(-radious + parentItem()->boundingRect().width()/2,
-							-radious + parentItem()->boundingRect().width()/5,
-							radious*2, radious*2);
-		QRadialGradient gradient = QRadialGradient(0.5, 0.5, 0.5);
-		gradient.setCoordinateMode(QGradient::ObjectBoundingMode);
-		gradient.setColorAt(0, QColor(red, green, blue, 255));
-		gradient.setColorAt(0.3, QColor(red, green, blue, 230));
-		gradient.setColorAt(1, QColor(red, green, blue, 0));
-		setBrush(gradient);
-		this->show();
+		Capacitor* led = dynamic_cast<Capacitor *>(parentItem());
+		if (led) {
+			double radious = std::min(led->boundingRectWithoutLegs().width()/2,
+									  led->boundingRectWithoutLegs().height()/2) * brightness * 4;
+			prepareGeometryChange();
+			setRect(-radious + led->boundingRectWithoutLegs().width()/2,
+					-radious + led->boundingRectWithoutLegs().width()/2,
+					radious*2, radious*2);
+			QRadialGradient gradient = QRadialGradient(0.5, 0.5, 0.5);
+			gradient.setCoordinateMode(QGradient::ObjectBoundingMode);
+			gradient.setColorAt(0, QColor(red, green, blue, 255));
+			gradient.setColorAt(0.3, QColor(red, green, blue, 230));
+			gradient.setColorAt(1, QColor(red, green, blue, 0));
+			setBrush(gradient);
+			this->show();
+		}
 	};
 };
 
@@ -61,6 +65,11 @@ class LED : public Capacitor
 
 	//The color that remains when the brightness is set to 0
 	static constexpr double offColor = 0.3;
+
+	//The maximum color is achived when brigtness*brigtnessMultiplier=1
+	//After that, more current increases the light comming out of the LED,
+	//but it does not change the color
+	static constexpr double brigtnessMultiplier = 4.0;
 
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
@@ -77,7 +86,9 @@ public:
 	const QString & title();
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 	void setBrightness(double);
+	void setBrightnessRGB(double brightnessR, double brightnessG, double brightnessB);
 	void resetBrightness();
+	QHash<QString, QString> prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys);
 
 protected:
 	void setColor(const QString & color);

@@ -229,3 +229,16 @@ void Capacitor::getProperties(QHash<QString, QString> & hash) {
 		hash.insert(propertyDef->name, m_propertyDefs.value(propertyDef));
 	}
 }
+
+QHash<QString, QString> Capacitor::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys)
+{
+	QHash<QString, QString> props = ItemBase::prepareProps(modelPart, wantDebug, keys);
+
+	// ensure capacitance and other properties are after family, if it is a capacitor;
+	if (keys.removeOne("capacitance")) {
+		keys.insert(1, "capacitance");
+		if (keys.removeOne("voltage")) keys.insert(2, "voltage");
+	}
+
+	return props;
+}

@@ -61,9 +61,10 @@ public:
 	QValidator::State validate ( QString & input, int & pos ) const override {
 		QValidator::State state = QRegExpValidator::validate(input, pos);
 		input.replace(m_symbol, "");
+
+		state = QRegExpValidator::validate(input, pos);
 		if(!m_symbol.isEmpty())
 			input.append(m_symbol);
-		state = QRegExpValidator::validate(input, pos);
 
 		if ( state == QValidator::Acceptable ) {
 			double converted = m_converter(input, m_symbol);

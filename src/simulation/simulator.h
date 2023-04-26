@@ -94,7 +94,8 @@ protected:
 
 	QList<QString>* m_instanceTitleSim;
 	QTimer *m_simTimer;
-	static constexpr int SimDelay = 200;
+	static constexpr int SimDelay = 400;
+	static constexpr double HarmfulNegativeVoltage = -0.5;
 
 };
 

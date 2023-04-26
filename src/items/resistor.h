@@ -50,6 +50,7 @@ public:
 	void addedToScene(bool temporary);
 	void setProp(const QString & prop, const QString & value);
 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	QHash<QString, QString> prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys);
 
 protected:
 	QString makeSvg(const QString & ohms, ViewLayer::ViewLayerID viewLayerID);

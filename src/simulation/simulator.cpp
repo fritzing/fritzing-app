@@ -414,6 +414,44 @@ void Simulator::drawSmoke(ItemBase* part) {
 	bbSmoke->setZValue(std::numeric_limits<double>::max());
 	bbSmoke->setOpacity(0.7);
 	schSmoke->setOpacity(0.7);
+
+	//Scale the smoke images
+	QRectF bbPartBoundingBox = m_sch2bbItemHash.value(part)->boundingRectWithoutLegs();
+	QRectF schSmokeBoundingBox = schSmoke->boundingRect();
+	QRectF schPartBoundingBox = part->boundingRect();
+	QRectF bbSmokeBoundingBox = bbSmoke->boundingRect();
+	std::cout << "bbSmokeBoundingBox w and h: " << bbSmokeBoundingBox.width() << " " << bbSmokeBoundingBox.height() << std::endl;
+
+	double scaleWidth = bbPartBoundingBox.width()/schSmokeBoundingBox.width();
+	double scaleHeight = bbPartBoundingBox.height()/schSmokeBoundingBox.height();
+	double scale;
+	(scaleWidth < scaleHeight) ? scale = scaleWidth : scale = scaleHeight;
+	if (scale > 1) {
+		//we can scale the smoke
+		bbSmoke->setScale(scale);
+	}else{
+		scale = 1; //Do not scale down the smoke
+	}
+
+	//Center the smoke in bb (bottom right corner of the smoke at the center of the part)
+	bbSmoke->setPos(QPointF(bbPartBoundingBox.width()/2-bbSmokeBoundingBox.width()*scale,
+						 bbPartBoundingBox.height()/2-bbSmokeBoundingBox.height()*scale));
+
+	//Scale sch image
+	scaleWidth = schPartBoundingBox.width()/schSmokeBoundingBox.width();
+	scaleHeight = schPartBoundingBox.height()/schSmokeBoundingBox.height();
+	(scaleWidth < scaleHeight) ? scale = scaleWidth : scale = scaleHeight;
+	if (scale > 1) {
+		//we can scale the smoke
+		schSmoke->setScale(scale);
+	}else{
+		scale = 1; //Do not scale down the smoke
+	}
+
+	//Center the smoke in sch view (bottom right corner of the smoke at the center of the part)
+	schSmoke->setPos(QPointF(schPartBoundingBox.width()/2-schSmokeBoundingBox.width()*scale,
+							 schPartBoundingBox.height()/2-schSmokeBoundingBox.height()*scale));
+
 	part->addSimulationGraphicsItem(schSmoke);
 	m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbSmoke);
 }
@@ -432,6 +470,7 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, double number){
 	int indexPoint = textToDisplay.indexOf('.');
 	textToDisplay = TextUtils::convertToPowerPrefix(number, 'f', 4 - indexPoint);
 	textToDisplay.replace('k', 'K');
+	textToDisplay.replace("inf", "INF");
 	updateMultimeterScreen(multimeter, textToDisplay);
 }
 
@@ -457,8 +496,10 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 	QGraphicsTextItem * schScreen = new QGraphicsTextItem(msg, multimeter);
 	schScreen->setPos(QPointF(10,10));
 	schScreen->setZValue(std::numeric_limits<double>::max());
+	schScreen->setDefaultTextColor(QColor("black"));
 	QFont font("Segment16C", 10, QFont::Normal);
 	bbScreen->setFont(font);
+	bbScreen->setDefaultTextColor(QColor("black"));
 	//There are issues as the size of the text changes depending on the display settings in windows
 	//This hack scales the text to match the appropiate value
 	QRectF bbMultBoundingBox = m_sch2bbItemHash.value(multimeter)->boundingRect();
@@ -470,7 +511,7 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 	bbScreen->setScale((0.8*bbMultBoundingBox.width())/bbBoundingBox.width());
 	schScreen->setScale((0.5*schMultBoundingBox.width())/schBoundingBox.width());
 
-	//Update the boundiong box after scaling them
+	//Update the bounding box after scaling them
 	bbBoundingBox = bbScreen->mapRectToParent(bbScreen->boundingRect());
 	schBoundingBox = schScreen->mapRectToParent(schScreen->boundingRect());
 
@@ -721,11 +762,17 @@ void Simulator::greyOutNonSimParts(const QSet<ItemBase *>& simParts) {
 	QList<QGraphicsItem *> noSimSchParts = m_schematicGraphicsView->scene()->items();
 	QList<QGraphicsItem *> noSimBbParts = m_breadboardGraphicsView->scene()->items();
 
-
 	//Remove the parts that are going to be simulated and the wires connected to them
 	QList<ConnectorItem *> bbConnectors;
 	foreach (ItemBase * part, simParts) {
-		noSimSchParts.removeAll(part);
+		foreach (QGraphicsItem * schItem, noSimSchParts) {
+			ItemBase * schPart = dynamic_cast<ItemBase *>(schItem);
+			if (!schPart) continue;
+			if (part->instanceTitle().compare(schPart->instanceTitle()) == 0) {
+				noSimSchParts.removeAll(schItem);
+			}
+		}
+
 		noSimBbParts.removeAll(m_sch2bbItemHash.value(part));
 		bbConnectors.append(m_sch2bbItemHash.value(part)->cachedConnectorItems());
 
@@ -765,12 +812,49 @@ void Simulator::greyOutParts(const QList<QGraphicsItem*> & parts) {
 		QGraphicsColorizeEffect * schEffect = new QGraphicsColorizeEffect();
 		schEffect->setColor(QColor(100,100,100));
 		part->setGraphicsEffect(schEffect);
+
+		//Add a reason for not simulate them
+		ItemBase* item = dynamic_cast<ItemBase *>(part);
+		if (item) {
+			QString msg = "NOT SIMULATED:";
+			if (item->spice().isEmpty()) {
+				//There is no SPICE model
+				msg += "\nNO SPICE";
+			} else {
+				msg += "\nNOT CONNECTED";
+			}
+			QGraphicsTextItem * infoText = new QGraphicsTextItem(msg, part);
+			infoText->setZValue(std::numeric_limits<double>::max());
+			infoText->setDefaultTextColor(QColor("black"));
+			QFont font("OCRA", 4, QFont::Normal);
+			infoText->setFont(font);
+
+			//There are issues as the size of the text changes depending on the display settings in windows
+			//This hack scales the text to match the appropiate value
+			QRectF partBoundingBox = item->boundingRectWithoutLegs();
+			QRectF infoTextBoundingBox = infoText->boundingRect();
+
+			if (infoTextBoundingBox.width() > partBoundingBox.width()) {
+				//Scale down the text to 90% percent of the parts´s width
+				double scale = partBoundingBox.width()/infoTextBoundingBox.width()*0.9;
+				infoText->setScale(scale);
+			}
+
+			//Update the bounding box after scaling them
+			infoTextBoundingBox = infoText->mapRectToParent(infoText->boundingRect());
+
+			//Set text on top of part
+			infoText->setPos(QPointF(0,-infoTextBoundingBox.height()));
+
+			item->addSimulationGraphicsItem(infoText);
+		}
 	}
 }
 
 /**
  * Removes items that are being simulated but without spice lines. Basically, remove
- * the wires and the breadboards, which are part of the simulation and leave the rest.
+ * the wires, breadboards, power symbols, etc. (which are part of the simulation) and
+ * leave the rest.
  * @param[in/out] parts A list of parts which will be filtered to remove parts that
  * are being simulated
  */
@@ -844,6 +928,19 @@ void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
 			parts.removeAll(part);
 			continue;
 		}
+
+		ItemBase* item = dynamic_cast<ItemBase *>(part);
+		if (!item) {
+			//We only remove the parts, we do not touch other elements of the scene (text of the net labels, etc.)
+			parts.removeAll(part);
+		} else {
+			if (item->family().compare("power label") == 0
+					|| item->family().compare("net label") == 0
+					|| item->family().compare("breadboard") == 0) //hack as half+ is not generated as breadboard object, see #3873
+			{
+				parts.removeAll(part);
+			}
+		}
 	}
 }
 
@@ -871,17 +968,40 @@ void Simulator::updateDiode(ItemBase * diode) {
 void Simulator::updateLED(ItemBase * part) {
 	LED* led = dynamic_cast<LED *>(part);
 	if (led) {
-		double curr = getCurrent(part);
-		double maxCurr = getMaxPropValue(part, "current");
+		//Check if this an RGB led
+		QString rgbString = part->getProperty("rgb");
 
-		std::cout << "LED Current: " <<curr<<std::endl;
-		std::cout << "LED MaxCurrent: " <<maxCurr<<std::endl;
+		if (rgbString.isEmpty()) {
+			// Just one LED
+			double curr = getCurrent(part);
+			double maxCurr = getMaxPropValue(part, "current");
 
-		LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(part));
-		bbLed->setBrightness(curr/maxCurr);
-		if (curr > maxCurr) {
-			drawSmoke(part);
-			bbLed->setBrightness(0);
+			std::cout << "LED Current: " <<curr<<std::endl;
+			std::cout << "LED MaxCurrent: " <<maxCurr<<std::endl;
+
+			LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(part));
+			bbLed->setBrightness(curr/maxCurr);
+			if (curr > maxCurr) {
+				drawSmoke(part);
+				bbLed->setBrightness(0);
+			}
+		} else {
+				// The part is an RGB LED
+				double currR = getCurrent(part, "R");
+				double currG = getCurrent(part, "G");
+				double currB = getCurrent(part, "B");
+				double curr = std::max({currR, currG, currB});
+				double maxCurr = getMaxPropValue(part, "current");
+
+				std::cout << "LED Current (R, G, B): " << currR << " " << currG << " " << currB <<std::endl;
+				std::cout << "LED MaxCurrent: " << maxCurr << std::endl;
+
+				LED* bbLed = dynamic_cast<LED *>(m_sch2bbItemHash.value(part));
+				bbLed->setBrightnessRGB(currR/maxCurr, currG/maxCurr, currB/maxCurr);
+				if (curr > maxCurr) {
+					drawSmoke(part);
+					bbLed->setBrightness(0);
+			}
 		}
 	} else {
 		//It is probably an LED display (LED matrix)
@@ -918,7 +1038,7 @@ void Simulator::updateCapacitor(ItemBase * part) {
 		}
 	} else {
 		//This is an electrolytic o tantalum capacitor (polarized)
-		if (v > maxV/2 || v < 0) {
+		if (v > maxV/2 || v < HarmfulNegativeVoltage) {
 			drawSmoke(part);
 		}
 	}
@@ -1011,7 +1131,8 @@ void Simulator::updateIRSensor(ItemBase * part) {
 		i = getCurrent(part, "a"); //voltage applied to the motor
 	}
 	std::cout << "IR sensor Max Iout: " << maxIout << ", current Iout " << i << std::endl;
-	if (v > maxV || v < 0 || abs(i) > maxIout) {
+	std::cout << "IR sensor Max V: " << maxV << ", current V " << v << std::endl;
+	if (v > maxV || v < HarmfulNegativeVoltage || abs(i) > maxIout) {
 		drawSmoke(part);
 		return;
 	}
@@ -1054,6 +1175,32 @@ void Simulator::updateDcMotor(ItemBase * part) {
 		bbRotate = new QGraphicsSvgItem(image, m_sch2bbItemHash.value(part));
 		schRotate = new QGraphicsSvgItem(image, part);
 		if (!bbRotate || !schRotate) return;
+
+		//Scale the smoke images
+		QRectF bbPartBoundingBox = m_sch2bbItemHash.value(part)->boundingRectWithoutLegs();
+		QRectF schRotateBoundingBox = schRotate->boundingRect();
+		QRectF schPartBoundingBox = part->boundingRect();
+		QRectF bbRotateBoundingBox = bbRotate->boundingRect();
+
+
+		double scaleWidth = bbPartBoundingBox.width()/bbRotateBoundingBox.width();
+		double scaleHeight = bbPartBoundingBox.height()/bbRotateBoundingBox.height();
+		double scale;
+		scale = std::max(scaleWidth, scaleHeight)*0.5;
+		bbRotate->setScale(scale);
+
+		//Center the arrow in bb
+		bbRotate->setPos(QPointF(bbPartBoundingBox.width()/2-bbRotateBoundingBox.width()*scale/2,
+							 bbPartBoundingBox.height()/2-bbRotateBoundingBox.height()*scale/2));
+
+		scaleWidth = schPartBoundingBox.width()/schRotateBoundingBox.width();
+		scaleHeight = schPartBoundingBox.height()/schRotateBoundingBox.height();
+		scale = std::max(scaleWidth, scaleHeight)*0.5;
+		schRotate->setScale(scale);
+
+		//Center the arrow in bb
+		schRotate->setPos(QPointF(schPartBoundingBox.width()/2-schRotateBoundingBox.width()*scale/2,
+							 schPartBoundingBox.height()/2-schRotateBoundingBox.height()*scale/2));
 
 		schRotate->setZValue(std::numeric_limits<double>::max());
 		bbRotate->setZValue(std::numeric_limits<double>::max());

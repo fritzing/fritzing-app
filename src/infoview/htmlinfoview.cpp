@@ -190,21 +190,6 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_icon3 = addLabel(hboxLayout, NoIcon);
 	m_icon3->setToolTip(tr("Part pcb view image"));
 
-	auto * versionLayout = new QVBoxLayout();
-
-	auto * subVersionLayout = new QHBoxLayout();
-	m_partVersion = new QLabel();
-	m_partVersion->setObjectName("infoViewPartVersion");
-	m_partVersion->setToolTip(tr("Part version number"));
-	m_partVersion->setOpenExternalLinks(false);
-	m_partVersion->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-	connect(m_partVersion, SIGNAL(linkActivated(const QString &)), this, SLOT(clickObsolete(const QString &)));
-	subVersionLayout->addWidget(m_partVersion, 0, Qt::AlignLeft);
-	subVersionLayout->addStretch(1);
-	versionLayout->addLayout(subVersionLayout);
-
-	hboxLayout->addLayout(versionLayout);
-
 	hboxLayout->addSpacerItem(new QSpacerItem(IconSpace, 1, QSizePolicy::Expanding));
 	iconFrame->setLayout(hboxLayout);
 	vlo->addWidget(iconFrame);
@@ -294,6 +279,19 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_tagsTextLabel->setObjectName("tagsValue");
 	vlo->addWidget(m_tagsTextLabel);
 	if (tinyMode) m_tagsTextLabel->setVisible(false);
+
+	auto * versionFrame = new QFrame(this);
+	auto * versionLayout = new QHBoxLayout();
+	m_partVersion = new QLabel();
+	m_partVersion->setObjectName("infoViewPartVersion");
+	m_partVersion->setToolTip(tr("Part version number"));
+	m_partVersion->setOpenExternalLinks(false);
+	m_partVersion->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+	connect(m_partVersion, SIGNAL(linkActivated(const QString &)), this, SLOT(clickObsolete(const QString &)));
+	versionLayout->addWidget(m_partVersion, 0, Qt::AlignLeft);
+	versionLayout->addStretch(1);
+	versionFrame->setLayout(versionLayout);
+	vlo->addWidget(versionFrame);
 
 	m_connLabel = new QLabel(tr("Connections"), nullptr);
 	m_connLabel->setObjectName("expandableViewLabel");

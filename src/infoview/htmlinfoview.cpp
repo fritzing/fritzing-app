@@ -100,8 +100,6 @@ HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 {
 	this->setWidgetResizable(true);
 
-	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
 	m_lastTitleItemBase = nullptr;
 	m_lastSpiceModelPart = NULL;
 	m_lastTagsModelPart = nullptr;

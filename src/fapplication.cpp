@@ -614,7 +614,7 @@ FApplication::~FApplication(void)
 	TranslatorListModel::cleanup();
 	FolderUtils::cleanup();
 	RatsnestColors::cleanup();
-	HtmlInfoView::cleanup();
+//	HtmlInfoView::cleanup();
 	SvgIconWidget::cleanup();
 	PartFactory::cleanup();
 	PartsBinView::cleanup();

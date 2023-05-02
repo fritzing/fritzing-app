@@ -23,9 +23,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSettings>
 #include <QPalette>
 #include <QFontMetricsF>
+#include <QScrollBar>
 #include <qmath.h>
 
 #include "htmlinfoview.h"
+#include "scalediconframe.h"
 #include "../sketch/infographicsview.h"
 #include "../debugdialog.h"
 #include "../connectors/connector.h"
@@ -34,31 +36,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 
 
+
 #define HTML_EOF "</body>\n</html>"
-
-QPixmap * NoIcon = nullptr;
-
-const int HtmlInfoView::STANDARD_ICON_IMG_WIDTH = 80;
-const int HtmlInfoView::STANDARD_ICON_IMG_HEIGHT = 80;
-constexpr int IconSpace = 0;
 
 static constexpr int MaxSpinBoxWidth = 60;
 static constexpr int AfterSpinBoxWidth = 5;
 
 /////////////////////////////////////
-
-QLabel * addLabel(QHBoxLayout * hboxLayout, QPixmap * pixmap) {
-	auto * label = new QLabel();
-	label->setObjectName("iconLabel");
-	label->setAutoFillBackground(true);
-	label->setPixmap(*pixmap);
-	label->setFixedSize(pixmap->size());
-	hboxLayout->addWidget(label);
-	hboxLayout->addSpacing(IconSpace);
-
-	return label;
-}
-
 QString format3(double d) {
 	return QString("%1").arg(d, 0, 'f', 3);
 }
@@ -168,29 +152,8 @@ void HtmlInfoView::init(bool tinyMode) {
 	vlo->addWidget(m_titleEdit);
 	if (tinyMode) m_titleEdit->setVisible(false);
 
-	/* Part Icons */
-
-	if (NoIcon == nullptr) {
-		NoIcon = new QPixmap(STANDARD_ICON_IMG_WIDTH, STANDARD_ICON_IMG_HEIGHT);
-		NoIcon->fill(QColorConstants::White);
-	}
-
-	auto * iconFrame = new QFrame(mainFrame);
-	iconFrame->setObjectName("iconFrame");
-
-	auto * hboxLayout = new QHBoxLayout();
-	hboxLayout->setContentsMargins(0, 0, 0, 0);
-	hboxLayout->addSpacing(IconSpace);
-	m_icon1 = addLabel(hboxLayout, NoIcon);
-	m_icon1->setToolTip(tr("Part breadboard view image"));
-	m_icon2 = addLabel(hboxLayout, NoIcon);
-	m_icon2->setToolTip(tr("Part schematic view image"));
-	m_icon3 = addLabel(hboxLayout, NoIcon);
-	m_icon3->setToolTip(tr("Part pcb view image"));
-
-	hboxLayout->addSpacerItem(new QSpacerItem(IconSpace, 1, QSizePolicy::Expanding));
-	iconFrame->setLayout(hboxLayout);
-	vlo->addWidget(iconFrame);
+	m_iconFrame = new ScaledIconFrame(this);
+	vlo->addWidget(m_iconFrame);
 
 	m_partUrl = new TagLabel(this);
 	m_partUrl->setWordWrap(false);
@@ -336,13 +299,46 @@ void HtmlInfoView::init(bool tinyMode) {
 	this->setWidget(mainFrame);
 }
 
+void HtmlInfoView::resizeEvent(QResizeEvent *event)
+{
+	QSize newSize = event->size();
+	QSize previousSize = event->oldSize();
+	int widthDifference = newSize.width() - m_lastSizeWithScrollbarsAlwaysOn.width();
+	int heightDifference = newSize.height() - m_lastSizeWithScrollbarsAlwaysOn.height();
 
-void HtmlInfoView::cleanup() {
-	if (NoIcon != nullptr) {
-		delete NoIcon;
-		NoIcon = nullptr;
+	int verticalScrollbarWidth = verticalScrollBar()->sizeHint().width();
+	int horizontalScrollbarHeight = horizontalScrollBar()->sizeHint().height();
+	int safetyMargin = 5;
+
+	bool horizontalScrollBarVisible = horizontalScrollBar()->isVisible();
+	if (horizontalScrollBarPolicy() == Qt::ScrollBarAsNeeded &&
+			horizontalScrollBarVisible) {
+		setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+		m_lastSizeWithScrollbarsAlwaysOn.setWidth(newSize.width());
+		qDebug() << "Switched horizontal policy to AlwaysOn, newSize:" << newSize << ", previousSize:" << previousSize;
 	}
+	if (horizontalScrollBarPolicy() == Qt::ScrollBarAlwaysOn &&
+			widthDifference > verticalScrollbarWidth + safetyMargin) {
+		setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+		qDebug() << "Switched horizontal policy to AsNeeded, newSize:" << newSize << ", previousSize:" << previousSize;
+	}
+
+	bool verticalScrollBarVisible = verticalScrollBar()->isVisible();
+	if (verticalScrollBarPolicy() == Qt::ScrollBarAsNeeded &&
+			verticalScrollBarVisible) {
+		setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+		m_lastSizeWithScrollbarsAlwaysOn.setHeight(newSize.height());
+		qDebug() << "Switched vertical policy to AlwaysOn, newSize:" << newSize << ", previousSize:" << previousSize;
+	}
+	if (verticalScrollBarPolicy() == Qt::ScrollBarAlwaysOn &&
+			heightDifference > horizontalScrollbarHeight + safetyMargin) {
+		setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+		qDebug() << "Switched vertical policy to AsNeeded, newSize:" << newSize << ", previousSize:" << previousSize;
+	}
+
+	QScrollArea::resizeEvent(event);
 }
+
 
 void HtmlInfoView::viewItemInfo(InfoGraphicsView *, ItemBase* item, bool swappingEnabled)
 {
@@ -670,7 +666,7 @@ void HtmlInfoView::setUpIcons(ItemBase * itemBase, bool swappingEnabled) {
 	QPixmap *pixmap2 = nullptr;
 	QPixmap *pixmap3 = nullptr;
 
-	QSize size = NoIcon->size();
+	QSize size = QSize(ScaledIconFrame::STANDARD_ICON_IMG_WIDTH, ScaledIconFrame::STANDARD_ICON_IMG_HEIGHT);
 
 	if (itemBase != nullptr) {
 		itemBase->getPixmaps(pixmap1, pixmap2, pixmap3, swappingEnabled, size);
@@ -680,13 +676,7 @@ void HtmlInfoView::setUpIcons(ItemBase * itemBase, bool swappingEnabled) {
 	QPixmap* use2 = pixmap2;
 	QPixmap* use3 = pixmap3;
 
-	if (use1 == nullptr) use1 = NoIcon;
-	if (use2 == nullptr) use2 = NoIcon;
-	if (use3 == nullptr) use3 = NoIcon;
-
-	m_icon1->setPixmap(*use1);
-	m_icon2->setPixmap(*use2);
-	m_icon3->setPixmap(*use3);
+	m_iconFrame->setIcons(use1, use2, use3);
 
 	if (pixmap1 != nullptr) delete pixmap1;
 	if (pixmap2 != nullptr) delete pixmap2;

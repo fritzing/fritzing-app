@@ -13,6 +13,8 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 
-HEADERS += src/infoview/htmlinfoview.h
+HEADERS += src/infoview/htmlinfoview.h \
+        src/infoview/scalediconframe.h
 
-SOURCES += src/infoview/htmlinfoview.cpp
+SOURCES += src/infoview/htmlinfoview.cpp \
+        src/infoview/scalediconframe.cpp

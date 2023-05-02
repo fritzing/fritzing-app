@@ -37,6 +37,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #define ICON_SPACING 5
 
+const int PartsBinIconView::PARTSBIN_ICON_IMG_WIDTH = 80;
+const int PartsBinIconView::PARTSBIN_ICON_IMG_HEIGHT = 80;
+
 PartsBinIconView::PartsBinIconView(ReferenceModel* referenceModel, PartsBinPaletteWidget *parent)
 	: InfoGraphicsView((QWidget*)parent), PartsBinView(referenceModel, parent)
 {

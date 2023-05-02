@@ -55,6 +55,10 @@ public:
 	QList<QObject*> orderedChildren();
 	void reloadPart(const QString & moduleID);
 
+	static const int PARTSBIN_ICON_IMG_WIDTH;
+	static const int PARTSBIN_ICON_IMG_HEIGHT;
+
+
 protected:
 	void doClear();
 	void moveItem(int fromIndex, int toIndex);

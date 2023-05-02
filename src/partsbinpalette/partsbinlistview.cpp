@@ -31,6 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "partsbinpalettewidget.h"
 
 #include "partsbinlistview.h"
+#include "partsbiniconview.h"
 
 static const QColor SectionHeaderBackgroundColor(128, 128, 128);
 static const QColor SectionHeaderForegroundColor(32, 32, 32);
@@ -387,7 +388,8 @@ void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, c
 		}
 	}
 	lwi->setData(Qt::UserRole, QVariant::fromValue( itemBase ) );
-	QSize size(HtmlInfoView::STANDARD_ICON_IMG_WIDTH, HtmlInfoView::STANDARD_ICON_IMG_HEIGHT);
+	QSize size(PartsBinIconView::PARTSBIN_ICON_IMG_WIDTH,
+			   PartsBinIconView::PARTSBIN_ICON_IMG_HEIGHT);
 	QPixmap * pixmap = FSvgRenderer::getPixmap(itemBase->renderer(), size);
 	lwi->setIcon(QIcon(*pixmap));
 	delete pixmap;

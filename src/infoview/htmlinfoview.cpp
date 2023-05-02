@@ -315,12 +315,12 @@ void HtmlInfoView::resizeEvent(QResizeEvent *event)
 			horizontalScrollBarVisible) {
 		setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 		m_lastSizeWithScrollbarsAlwaysOn.setWidth(newSize.width());
-		qDebug() << "Switched horizontal policy to AlwaysOn, newSize:" << newSize << ", previousSize:" << previousSize;
+//		qDebug() << "Switched horizontal policy to AlwaysOn, newSize:" << newSize << ", previousSize:" << previousSize;
 	}
 	if (horizontalScrollBarPolicy() == Qt::ScrollBarAlwaysOn &&
 			widthDifference > verticalScrollbarWidth + safetyMargin) {
 		setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-		qDebug() << "Switched horizontal policy to AsNeeded, newSize:" << newSize << ", previousSize:" << previousSize;
+//		qDebug() << "Switched horizontal policy to AsNeeded, newSize:" << newSize << ", previousSize:" << previousSize;
 	}
 
 	bool verticalScrollBarVisible = verticalScrollBar()->isVisible();
@@ -328,12 +328,12 @@ void HtmlInfoView::resizeEvent(QResizeEvent *event)
 			verticalScrollBarVisible) {
 		setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 		m_lastSizeWithScrollbarsAlwaysOn.setHeight(newSize.height());
-		qDebug() << "Switched vertical policy to AlwaysOn, newSize:" << newSize << ", previousSize:" << previousSize;
+//		qDebug() << "Switched vertical policy to AlwaysOn, newSize:" << newSize << ", previousSize:" << previousSize;
 	}
 	if (verticalScrollBarPolicy() == Qt::ScrollBarAlwaysOn &&
 			heightDifference > horizontalScrollbarHeight + safetyMargin) {
 		setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-		qDebug() << "Switched vertical policy to AsNeeded, newSize:" << newSize << ", previousSize:" << previousSize;
+//		qDebug() << "Switched vertical policy to AsNeeded, newSize:" << newSize << ", previousSize:" << previousSize;
 	}
 
 	QScrollArea::resizeEvent(event);

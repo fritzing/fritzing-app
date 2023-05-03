@@ -1580,6 +1580,7 @@ HtmlInfoView QScrollBar:vertical {
 	font-size: 11px;
 	padding: 0px;
 	margin: 0px;
+	color: rgb(51,51,51);
 }
 
 
@@ -1876,7 +1877,20 @@ HtmlInfoView QScrollBar:vertical {
 SearchLineEdit,  #searchStackWidget {
 	max-height: 20px;
 	height: 20px;
+	color: rgb(0,0,0);
+	background: #fff;
 }
+
+#SearchLineEdit:hover {
+    background:#fff;
+	color: #153c46;
+}
+
+#SearchLineEdit:disabled {
+    background: #ececec;
+	color: #3c3c3c;
+}
+
 
 #partsBinLabel { /*the chosen libery-labelname and background*/
 	background-color: #d9d9d9;

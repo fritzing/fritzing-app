@@ -114,6 +114,10 @@ void NgSpiceSimulator::init() {
 	m_isInitialized = true;
 }
 
+void NgSpiceSimulator::resetIsBGThreadRunning() {
+	m_isBGThreadRunning = true;
+}
+
 bool NgSpiceSimulator::isBGThreadRunning() {
 	return m_isBGThreadRunning;
 }

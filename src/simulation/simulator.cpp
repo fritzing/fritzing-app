@@ -229,6 +229,7 @@ void Simulator::simulate() {
 	m_simulator->command("listing");
 	std::cout << "-----------------------------------" <<std::endl;
 	std::cout << "Running m_simulator->command(bg_run):" <<std::endl;
+	m_simulator->resetIsBGThreadRunning();
 	m_simulator->command("bg_run");
 	std::cout << "-----------------------------------" <<std::endl;
 	std::cout << "Generating a hash table to find the net of specific connectors:" <<std::endl;

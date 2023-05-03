@@ -95,6 +95,11 @@ public:
 	bool isBGThreadRunning();
 
 	/**
+	 * @brief Reset isBGThreadRunning to true.
+	 */
+	void resetIsBGThreadRunning();
+
+	/**
 	 * @brief Load a circuit given as a netlist into the ngspice library.
 	 * @param[in] netList netlist that represents the circuit to be loaded into ngspice library
 	 */

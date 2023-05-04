@@ -1225,9 +1225,10 @@ int FApplication::startup()
 		QSettings settings;
 		prevVersion = settings.value("version").toString();
 		QString currVersion = Version::versionString();
-		if(prevVersion != currVersion) {
+		if (prevVersion != currVersion) {
 			QVariant pid = settings.value("pid");
 			QVariant language = settings.value("language");
+			QVariant simulatorEnabled = settings.value("simulatorEnabled");
 			settings.clear();
 			if (!pid.isNull()) {
 				settings.setValue("pid", pid);
@@ -1235,8 +1236,15 @@ int FApplication::startup()
 			if (!language.isNull()) {
 				settings.setValue("language", language);
 			}
+			if (!simulatorEnabled.isNull()) {
+				settings.setValue("simulatorEnabled", simulatorEnabled);
+			}
+
+			// Check if prevVersion is smaller than "1.0.0" or not set (new install)
+			if (prevVersion.isEmpty() || Version::greaterThan(prevVersion, "1.0.0")) {
+				settings.setValue("simulatorEnabled", "1");
+			}
 		}
-		settings.setValue("simulatorEnabled", true);
 	}
 
 	//bool fabEnabled = settings.value(ORDERFABENABLED, QVariant(false)).toBool();

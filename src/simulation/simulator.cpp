@@ -486,6 +486,8 @@ void Simulator::updateMultimeterScreen(ItemBase * multimeter, QString msg){
 	schScreen->setPos(QPointF((schMultBoundingBox.width()-schBoundingBox.width())/2
 						 ,0.13*schMultBoundingBox.height()));
 
+	bbScreen->setDefaultTextColor(QColor(48, 48, 48));
+	schScreen->setDefaultTextColor(QColor(48, 48, 48));
 
 	bbScreen->setZValue(std::numeric_limits<double>::max());
 	schScreen->setZValue(std::numeric_limits<double>::max());

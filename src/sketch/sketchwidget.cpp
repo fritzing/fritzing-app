@@ -3588,7 +3588,7 @@ void SketchWidget::prepLegBendpointMove(ConnectorItem * from, int index, QPointF
 			suffix = tr("to %1").arg(to->attachedToInstanceTitle());
 		}
 
-		parentCommand->setText(QObject::tr("%1 %2,%3 %4")
+		parentCommand->setText(QString("%1 %2,%3 %4")
 		                       .arg(prefix)
 		                       .arg(from->attachedTo()->instanceTitle())
 		                       .arg(from->connectorSharedName())

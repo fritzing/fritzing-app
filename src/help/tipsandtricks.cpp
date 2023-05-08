@@ -64,10 +64,13 @@ TipsAndTricks::TipsAndTricks(QWidget *parent)
 void TipsAndTricks::initTipSets() {
 	if (TipSets.count() > 0) return;
 
-	QString localStorage = tr("Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a 'local storage folder'. "
-	                          "On Mac and Linux this is usually ~/.config/Fritzing/. "
-	                          "Under Windows Vista and above, it is something like C:\\Users\\[user name]\\AppData\\Roaming\\Fritzing\\; "
-	                          "under Windows XP is something like C:\\Documents and Settings\\[user name]\\Application Data\\Fritzing\\.");
+
+	QString localStorage = tr("The local storage folder is used for storing data that is specific to Fritzing, "
+							  "such as custom parts and settings, as well as temporary and long-term files "
+							  "that are created during the use of the software. On Linux systems, the default "
+							  "location for the Fritzing storage folder is usually ~/.config/Fritzing/. "
+							  "On Windows 11, the default location is typically C:\Users[user name]\AppData\Roaming\Fritzing, "
+							  "and on macOS Mojave or later, the default location is usually ~/Library/Application Support/Fritzing/.");
 
 	auto * ts = new TipSet;
 	ts->heading = tr("examples");

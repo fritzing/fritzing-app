@@ -151,13 +151,14 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 	label->setWordWrap(true);
 	vLayout->addWidget(label);
 
-	auto *listWidget = new QListWidget();
+	auto *listWidget = new QListWidget(this);
 	for (int ix = 0; ix < messages.count(); ix++) {
-		auto * item = new QListWidgetItem(messages.at(ix));
+		auto * item = new QListWidgetItem(messages.at(ix), listWidget);
 		item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 		item->setData(Qt::UserRole, ix);
 		listWidget->addItem(item);
 	}
+	listWidget->setObjectName("drcListWidget");
 	vLayout->addWidget(listWidget);
 	connect(listWidget, SIGNAL(itemPressed(QListWidgetItem *)), this, SLOT(pressedSlot(QListWidgetItem *)));
 	connect(listWidget, SIGNAL(itemClicked(QListWidgetItem *)), this, SLOT(releasedSlot(QListWidgetItem *)));

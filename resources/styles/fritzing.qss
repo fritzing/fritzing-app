@@ -1826,6 +1826,7 @@ HtmlInfoView QScrollBar:vertical {
 	margin-right: 2px;
 }
 
+
 /* Connections */
 #connectionsFrame {
 	margin: 0px;
@@ -2248,6 +2249,23 @@ SearchLineEdit {
 	border: 1px solid #8c8c8c;
 }
 
+
+#drcListWidget {
+    background-color:#d9d9d9;
+	color: #333;
+}
+
+#drcListWidget::item {
+    color:#333;
+	background-color:#ececec;
+}
+
+#drcListWidget::item::active {
+    color:#333;
+	background-color:#000010ff;
+}
+
+
 /*############# aboutbox ################*/
 
 
@@ -2263,11 +2281,6 @@ QDialog QTabWidget {
 	color:#333333;
 	}
 
-
-PCBSketchWidget QListWidget {
-
-	background-color:#0ff;
-}
 
 QDialog QFrame,
 QDialog QFrame QLabel {

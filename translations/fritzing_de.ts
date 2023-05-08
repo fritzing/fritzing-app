@@ -2774,7 +2774,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1782"/>
         <source>Unable to save netlist file.</source>
-        <translation type="unfinished">Netzlistendatei kann nicht gespeichert werden.</translation>
+        <translation>Netzlistendatei kann nicht gespeichert werden.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1842"/>
@@ -9332,7 +9332,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="139"/>
         <source>Check out Parts Editor Help under the &lt;b&gt;Help&lt;/b&gt; Menu.</source>
-        <translation type="unfinished">Die Hilfe zum Teile-Editor finden Sie im Menü &lt;b&gt;Hilfe&lt;/b&gt;.</translation>
+        <translation>Die Hilfe zum Teile-Editor finden Sie im Menü &lt;b&gt;Hilfe&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="140"/>
@@ -9342,17 +9342,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="141"/>
         <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
-        <translation type="unfinished">Um im Teile-Editor eine Grafik unterhalb einer anderen Grafik auszuwählen, verwenden Sie das Mausrad, während Sie die Umschalttaste gedrückt halten.</translation>
+        <translation>Um im Teile-Editor eine Grafik unterhalb einer anderen Grafik auszuwählen, verwenden Sie das Mausrad, während Sie die Umschalttaste gedrückt halten.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="142"/>
         <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
-        <translation type="unfinished">Sie können den Teile-Editor verwenden, um die SVG-Datei für das Bild eines Teils für eine bestimmte Ansicht zu finden. Klicken Sie im Teile-Editor auf die Registerkarte für diese Ansicht und verwenden Sie dann &lt;b&gt;In Ordner anzeigen&lt;/b&gt; unter dem Menü &lt;b&gt;Datei&lt;/b&gt;</translation>
+        <translation>Sie können den Teile-Editor verwenden, um die SVG-Datei für das Bild eines Teils für eine bestimmte Ansicht zu finden. Klicken Sie im Teile-Editor auf die Registerkarte für diese Ansicht und verwenden Sie dann &lt;b&gt;In Ordner anzeigen&lt;/b&gt; unter dem Menü &lt;b&gt;Datei&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="144"/>
         <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
-        <translation type="unfinished">Speichern Sie Ihre benutzerdefinierten Teildateien nicht im Fritzing-Installationsordner. Wenn Sie Fritzing aktualisieren, werden diese Dateien wahrscheinlich gelöscht. Außerdem werden die Dateien im Fritzing-Installationsordner nicht in Skizzen-Dateien (.fzz) gespeichert, so dass Sie sie nicht weitergeben können.</translation>
+        <translation>Speichern Sie Ihre benutzerdefinierten Teildateien nicht im Fritzing-Installationsordner. Wenn Sie Fritzing aktualisieren, werden diese Dateien wahrscheinlich gelöscht. Außerdem werden die Dateien im Fritzing-Installationsordner nicht in Skizzen-Dateien (.fzz) gespeichert, so dass Sie sie nicht weitergeben können.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="164"/>
@@ -9407,7 +9407,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="99"/>
         <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation type="unfinished">Um einem Draht oder einem biegbaren Bein in der Steckbrett- oder PCB-Ansicht eine Krümmung hinzuzufügen, ziehen Sie bei gedrückter Strg-Taste (Mac: Befehlstaste). Sie können in den Einstellungen festlegen, ob kurvige Drähte die Standardeinstellung sind.</translation>
+        <translation>Um einem Draht oder einem biegbaren Bein in der Steckbrett- oder PCB-Ansicht eine Krümmung hinzuzufügen, ziehen Sie bei gedrückter Strg-Taste (Mac: Befehlstaste). Sie können in den Einstellungen festlegen, ob kurvige Drähte die Standardeinstellung sind.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
@@ -9427,7 +9427,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="150"/>
         <source>Through-hole parts can be traced from either side of a PCB.</source>
-        <translation type="unfinished">Durchkontaktierte Teile können von beiden Seiten einer Leiterplatte aus verfolgt werden.</translation>
+        <translation>Durchkontaktierte Teile können von beiden Seiten einer Leiterplatte aus verfolgt werden.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="151"/>
@@ -9472,7 +9472,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="155"/>
         <source>Use copper-blocker parts to mask out areas that you want free of copper fill.</source>
-        <translation type="unfinished">Verwenden Sie Kupferblocker-Teile, um die Bereiche abzudecken, die nicht mit Kupfer gefüllt werden sollen.</translation>
+        <translation>Verwenden Sie Kupferblocker-Teile, um die Bereiche abzudecken, die nicht mit Kupfer gefüllt werden sollen.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="134"/>

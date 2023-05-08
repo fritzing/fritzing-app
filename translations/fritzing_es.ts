@@ -6793,7 +6793,7 @@ Nota: esta advertencia no se repetirá durante esta sesión.</translation>
         <source>no keys down = scroll
 shift key swaps scroll axis
 Alt or %1 key = zoom</source>
-        <translation type="unfinished">ninguna tecla abajo = desplazamiento
+        <translation>ninguna tecla abajo = desplazamiento
 tecla shift cambia el eje de desplazamiento
 Tecla Alt o %1 = zoom</translation>
     </message>
@@ -6971,7 +6971,7 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="207"/>
         <source>Paste clipboard contents</source>
-        <translation type="unfinished">Pegar contenido del portapapeles</translation>
+        <translation>Pegar contenido del portapapeles</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="214"/>
@@ -7169,37 +7169,37 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="323"/>
         <source>Clear all saved settings and close this dialog immediately.</source>
-        <translation type="unfinished">Claro todo salvó encuadres y cerrar este diálogo inmediatamente.</translation>
+        <translation>Borre todos los ajustes guardados y cierre este cuadro de diálogo inmediatamente.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="330"/>
         <source>This action does not delete any files; it restores settings to their default values.</source>
-        <translation type="unfinished">Esta acción no elimina cualesquier archivos;  restaura encuadres a su *default valores.</translation>
+        <translation>Esta acción no elimina cualesquier archivos; restaura encuadres a su *default valores.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="337"/>
         <source>There is no undo for this action, and no further warning!!!!</source>
-        <translation type="unfinished"> hay ningún deshacer para esta acción, y no aviso más lejano!!!!</translation>
+        <translation>¡Esta acción no se puede deshacer y no hay más advertencias!</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="342"/>
         <source>Clear Settings</source>
-        <translation type="unfinished">Encuadres claros</translation>
+        <translation>Borrar configuración</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="125"/>
         <source>pcb</source>
-        <translation type="unfinished">pcb</translation>
+        <translation>pcb</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="271"/>
         <source>Select all &apos;Don&apos;t autoroute&apos; traces</source>
-        <translation type="unfinished">Seleccionar todo &apos;Don&apos;*t autorutear&apos; caminos</translation>
+        <translation>Seleccionar todas las trazas &apos;No autorutar&apos;</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="276"/>
         <source>Select all autorouteable traces</source>
-        <translation type="unfinished">Seleccionar todo autorutearable caminos</translation>
+        <translation>Seleccionar todas las trazas autorouteables</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2349"/>
@@ -7248,7 +7248,7 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="615"/>
         <source>Cannot autoroute: no board (or multiple boards) found</source>
-        <translation type="unfinished">No puede autorutear: ningún placa (o placas múltiples) se encontró</translation>
+        <translation>No se puede realizar la ruta automática: no se ha encontrado ninguna placa (o varias placas)</translation>
     </message>
     <message>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="657"/>
@@ -7302,7 +7302,7 @@ la tecla shift cambia el eje de desplazamiento</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4040"/>
         <source>Set Grid Size</source>
-        <translation type="unfinished">Medida de Grilla del Set</translation>
+        <translation>Establecer tamaño de cuadrícula</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="75"/>
@@ -7416,7 +7416,7 @@ Fritzing Trabajos quietos, pero ganaste ser capaz de cambiar propiedades de comp
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="911"/>
         <source>Error reading file %1: %2.</source>
-        <translation type="unfinished">Archivo de lectura del error %1: %2.</translation>
+        <translation>Error al leer el archivo %1: %2.</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3577"/>
@@ -7426,7 +7426,7 @@ Fritzing Trabajos quietos, pero ganaste ser capaz de cambiar propiedades de comp
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3610"/>
         <source>Change leg of %1,%2</source>
-        <translation type="unfinished">Pierna de cambio de %1,%2</translation>
+        <translation>Cambiar tramo de %1,%2</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3768"/>
@@ -7467,7 +7467,7 @@ Fritzing Trabajos quietos, pero ganaste ser capaz de cambiar propiedades de comp
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="8190"/>
         <source>Select locked parts</source>
-        <translation type="unfinished">Selecciona cerró componentes</translation>
+        <translation>Selecciona componentes bloqueados</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="119"/>
@@ -7513,7 +7513,7 @@ Fritzing Trabajos quietos, pero ganaste ser capaz de cambiar propiedades de comp
     <message>
         <location filename="../src/viewlayer.cpp" line="130"/>
         <source>Text</source>
-        <translation type="unfinished">Texto</translation>
+        <translation>Texto</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="137"/>
@@ -7528,47 +7528,47 @@ Fritzing Trabajos quietos, pero ganaste ser capaz de cambiar propiedades de comp
     <message>
         <location filename="../src/viewlayer.cpp" line="139"/>
         <source>Silkscreen Top (Part Labels)</source>
-        <translation type="unfinished">Primera pantalla de serigrafía (Etiqueta de Componentes)</translation>
+        <translation>Serigrafía superior (etiquetas de componentes)</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="140"/>
         <source>Copper Fill Bottom</source>
-        <translation type="unfinished">Máximo cobre Inferior</translation>
+        <translation>Relleno Cobre Inferior</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="143"/>
         <source>Copper Fill Top</source>
-        <translation type="unfinished">Máximo cobre Superior</translation>
+        <translation>Relleno Cobre Superior</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="141"/>
         <source>Copper Bottom</source>
-        <translation type="unfinished">Fondo de Cobre</translation>
+        <translation>Cobre Inferior</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="142"/>
         <source>Copper Bottom Trace</source>
-        <translation type="unfinished">Fondo de Trazo de Cobre</translation>
+        <translation>Pista de cobre inferior</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="144"/>
         <source>Copper Top</source>
-        <translation type="unfinished">Superficie de Cobre</translation>
+        <translation>Superficie de Cobre</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="145"/>
         <source>Copper Top Trace</source>
-        <translation type="unfinished">Superficie de trazo de Cobre</translation>
+        <translation>Pista de cobre superior</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="147"/>
         <source>Silkscreen Bottom</source>
-        <translation type="unfinished">Fondo de serigrafía</translation>
+        <translation>Serigrafía Inferior</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="148"/>
         <source>Silkscreen Bottom (Part Labels)</source>
-        <translation type="unfinished">Fondo de serigrafía (Etiquetas de componentes)</translation>
+        <translation>Serigrafía inferior (etiquetas de componentes)</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="152"/>
@@ -7657,42 +7657,42 @@ Fritzing Trabajos quietos, pero ganaste ser capaz de cambiar propiedades de comp
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="44"/>
         <source>Power</source>
-        <translation type="unfinished">Potencia</translation>
+        <translation>Potencia</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="45"/>
         <source>Connection</source>
-        <translation type="unfinished">Conexión</translation>
+        <translation>Conexión</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="46"/>
         <source>Microcontroller</source>
-        <translation type="unfinished">Microcontrolador</translation>
+        <translation>Microcontrolador</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="50"/>
         <source>Tools</source>
-        <translation type="unfinished">Herramientas</translation>
+        <translation>Herramientas</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="51"/>
         <source>Shields</source>
-        <translation type="unfinished">Corazas</translation>
+        <translation>Escudos</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="52"/>
         <source>LilyPad</source>
-        <translation type="unfinished">LilyPad</translation>
+        <translation>LilyPad</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="53"/>
         <source>Other</source>
-        <translation type="unfinished">Otro</translation>
+        <translation>Otro</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="54"/>
         <source>Sensors</source>
-        <translation type="unfinished">Sensores</translation>
+        <translation>Sensores</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="55"/>
@@ -7714,59 +7714,59 @@ Es ya allí, no lo añadiremos otra vez, bien?</translation>
     <message>
         <location filename="../src/utils/fileprogressdialog.cpp" line="68"/>
         <source>File Progress...</source>
-        <translation type="unfinished">Archivo en Progreso...</translation>
+        <translation>Progreso del archivo...</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="8175"/>
         <source>Select outdated parts</source>
-        <translation type="unfinished">Seleccionar componentes obsoletas</translation>
+        <translation>Seleccionar componentes obsoletas</translation>
     </message>
     <message>
         <location filename="../src/program/syntaxer.cpp" line="86"/>
         <source>files</source>
-        <translation type="unfinished">archivos</translation>
+        <translation>archivos</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="51"/>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="97"/>
         <location filename="../src/svg/kicadschematic2svg.cpp" line="72"/>
         <source>unable to open %1</source>
-        <translation type="unfinished">Imposible abrir %1</translation>
+        <translation>no se puede abrir %1</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="63"/>
         <source>unable to parse %1</source>
-        <translation type="unfinished">Imposible analizar %1</translation>
+        <translation>no se puede analizar %1</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="142"/>
         <source>parse failure in %1</source>
-        <translation type="unfinished">fallo el analisis en %1</translation>
+        <translation>fallo de análisis en %1</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="147"/>
         <source>Sorry, Fritzing can&apos;t yet handle both pins and pads together (in %1)</source>
-        <translation type="unfinished">Una disculpa, Fritzing aún no puede manejar ambos pines y pads juntos (en %1)</translation>
+        <translation>Lo sentimos, Fritzing aún no puede manejar pines y pads juntos (en %1)</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="228"/>
         <source>bad pin argument count</source>
-        <translation type="unfinished">Mal conteo de argumentos en pines</translation>
+        <translation>Mal conteo de argumentos en pines</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="303"/>
         <source>bad pad argument count</source>
-        <translation type="unfinished">Mal conteo de argumentos en el pad</translation>
+        <translation>Mal conteo de argumentos en el pad</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="535"/>
         <source>Unable to parse copper: %1 %2 %3</source>
-        <translation type="unfinished">Incapaz a *parse cobrizo: %1 %2 %3</translation>
+        <translation>No se puede analizar el cobre: %1 %2 %3</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="120"/>
         <source>footprint %1 not found in %2</source>
-        <translation type="unfinished">huella %1 no encontrada en %2</translation>
+        <translation>No se encontró la huella %1 en %2</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="128"/>

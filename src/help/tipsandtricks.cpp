@@ -163,7 +163,7 @@ void TipsAndTricks::initTipSets() {
 	ts->heading = tr("pcb production");
 	ts->tips << tr("Smaller PCBs are more affortable than larger ones. Save space and money.");
 	ts->tips << tr("Have your PCB quickly and easily produced with Fritzing Fab. Hover over the 'Fabricate' button to get a quote.");
-	ts->tips << tr("When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.");
+	ts->tips << tr("When using the Fritzing Fab Service, if there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.");
 	TipSets.append(ts);
 
 	ts = new TipSet;

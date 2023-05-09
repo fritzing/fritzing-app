@@ -69,7 +69,7 @@ void TipsAndTricks::initTipSets() {
 							  "such as custom parts and settings, as well as temporary and long-term files "
 							  "that are created during the use of the software. On Linux systems, the default "
 							  "location for the Fritzing storage folder is usually ~/.config/Fritzing/. "
-							  "On Windows 11, the default location is typically C:\Users[user name]\AppData\Roaming\Fritzing, "
+							  "On Windows 11, the default location is typically C:\\Users[user name]\\AppData\\Roaming\\Fritzing, "
 							  "and on macOS Mojave or later, the default location is usually ~/Library/Application Support/Fritzing/.");
 
 	auto * ts = new TipSet;

@@ -166,6 +166,7 @@ void PrefsDialog::initBetaFeatures(QWidget * widget)
 	QVBoxLayout * vLayout = new QVBoxLayout();
 	vLayout->addWidget(createSimulatorBetaFeaturesForm());
 	vLayout->addWidget(createGerberBetaFeaturesForm());
+	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
 	widget->setLayout(vLayout);
 }
 
@@ -440,13 +441,15 @@ QWidget * PrefsDialog::createGerberBetaFeaturesForm() {
 	QGroupBox * gerberGroup = new QGroupBox(tr("Gerber"), this);
 
 	QVBoxLayout * layout = new QVBoxLayout();
-	layout->setSpacing(SPACING);
 
-	QLabel * label2 = new QLabel(tr("Gerber files generated will use 5 decimal precision instead of 3."));
+	QLabel * label2 = new QLabel(tr("The gerber file generator will use six decimals precision instead of three.\n"
+									"Some deprecated gerber commands are removed or replaced.\n"
+									"We recommend enabling this. Only to avoid surprises with processes that are "
+									"optimized for earlier Fritzing versions, this is currently off by default."
+									));
 	label2->setWordWrap(true);
 	layout->addWidget(label2);
 	layout->addSpacing(10);
-
 
 	QCheckBox * box = new QCheckBox(tr("Enable gerber export improvements"));
 	box->setFixedWidth(FORMLABELWIDTH * 2);
@@ -468,7 +471,6 @@ QWidget * PrefsDialog::createSimulatorBetaFeaturesForm() {
 	QGroupBox * simulator = new QGroupBox(tr("Simulator"), this);
 
 	QVBoxLayout * layout = new QVBoxLayout();
-	layout->setSpacing(SPACING);
 
 	QLabel * label = new QLabel(tr("The simulator is now enabled by default."));
 

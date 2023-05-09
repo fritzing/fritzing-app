@@ -658,21 +658,29 @@ bool FApplication::eventFilter(QObject *obj, QEvent *event)
 		// Use the ShortcutOverride event for logging/debugging keypresses
 		// This is more verbose then logging "KeyPress" events, because these
 		// do net get triggered if the key represents a shortcut.
-		QKeyEvent *keyEvent = dynamic_cast<QKeyEvent*>(event);
-		QString dbgObjectClass = obj->metaObject()->className();
-		QString dbgObjectName = obj->objectName();
-		QString dbgFocusWidget = "";
-		QWidget* focusWidget = qApp->focusWidget();
-		if (focusWidget) {
-			dbgFocusWidget = focusWidget->metaObject()->className();
-		}
-		DebugDialog::debug(QString("press %1 for object ('%2','%3') focus '(%4)'").arg(
-							   DebugDialog::createKeyTag(keyEvent),
-							   dbgObjectClass,
-							   dbgObjectName,
-							   dbgFocusWidget));
+		if (DebugDialog::enabled()) {
+			QKeyEvent *keyEvent = dynamic_cast<QKeyEvent*>(event);
+			QString dbgObjectClass = obj->metaObject()->className();
+			QString dbgObjectName = obj->objectName();
+			QString dbgFocusWidget = "";
+			QWidget* focusWidget = qApp->focusWidget();
+			if (focusWidget) {
+				dbgFocusWidget = focusWidget->metaObject()->className();
+			}
+			bool verbose = false;
+			#ifndef QT_NO_DEBUG
+				verbose = true;
+			#endif
+			if (verbose || (dbgObjectClass == dbgFocusWidget)) {
+				DebugDialog::debug(QString("press %1 for object ('%2','%3') focus '(%4)'").arg(
+									   DebugDialog::createKeyTag(keyEvent),
+									   dbgObjectClass,
+									   dbgObjectName,
+									   dbgFocusWidget));
 
-		//DebugDialog::debug(QString("mouse %1 %2").arg(m_mousePressed).arg(QApplication::mouseButtons()));
+				//DebugDialog::debug(QString("mouse %1 %2").arg(m_mousePressed).arg(QApplication::mouseButtons()));
+			}
+		}
 	}
 	break;
 	case QEvent::KeyPress:

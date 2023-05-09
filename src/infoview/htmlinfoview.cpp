@@ -763,7 +763,7 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 
 	bool wantDebug = false;
 #ifndef QT_NO_DEBUG
-	wantDebug = true;
+	wantDebug = DebugDialog::enabled();
 #endif
 
 	QStringList keys;

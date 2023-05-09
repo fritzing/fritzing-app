@@ -2364,12 +2364,13 @@ void MainWindow::partsEditorHelp() {
 
 
 void MainWindow::enableDebug() {
-	DebugDialog::setEnabled(m_enableDebugAct->isChecked());
+	bool enabled = m_enableDebugAct->isChecked();
+	DebugDialog::setEnabled(enabled);
 	if (!m_windowMenu->actions().contains(m_toggleDebuggerOutputAct)) {
 		m_windowMenu->insertSeparator(m_windowMenuSeparator);
 		m_windowMenu->insertAction(m_windowMenuSeparator, m_toggleDebuggerOutputAct);
-		toggleDebuggerOutput(true);
 	}
+	toggleDebuggerOutput(enabled);
 }
 
 
@@ -2473,6 +2474,7 @@ void MainWindow::toggleDebuggerOutput(bool toggle) {
 	}
 	else
 	{
+		DebugDialog::hideDebug();
 	}
 }
 

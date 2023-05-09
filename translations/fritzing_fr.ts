@@ -5,7 +5,7 @@
     <name>AboutBox</name>
     <message>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
-        <translation> Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
+        <translation>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
     </message>
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
@@ -21,7 +21,7 @@
     </message>
     <message>
         <source>Michaela Vieser and Julia Werner.</source>
-        <translation> Michaela Vieser et Julia Werner.</translation>
+        <translation>Michaela Vieser et Julia Werner.</translation>
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation> Mariano Crowe, Johannes Landstorfer, </translation>
+        <translation>Mariano Crowe, Johannes Landstorfer, </translation>
     </message>
     <message>
         <source>Special thanks goes out to: </source>
@@ -49,19 +49,19 @@
     </message>
     <message>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
-        <translation> Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir,</translation>
+        <translation>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </translation>
     </message>
     <message>
         <source>Durrell Bishop, David Cuartielles, Fabian Hemmert, </source>
-        <translation> Durrell Bishop, David Cuartielles, Fabian Hemmert,</translation>
+        <translation>Durrell Bishop, David Cuartielles, Fabian Hemmert, </translation>
     </message>
     <message>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
-        <translation> Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </translation>
+        <translation>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </translation>
     </message>
     <message>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
-        <translation> Gero Herkenrath, Jeff Hoefs, Tom Hulbert,</translation>
+        <translation>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </translation>
     </message>
     <message>
         <source>and alpha testers who were brave enough to give </source>
@@ -69,11 +69,11 @@
     </message>
     <message>
         <source>Fritzing is made by: </source>
-        <translation>Fritzing est réalisé par :</translation>
+        <translation>Fritzing est réalisé par : </translation>
     </message>
     <message>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
-        <translation> Zach Eveland, Dirk van Oosterbosch, </translation>
+        <translation>Zach Eveland, Dirk van Oosterbosch, </translation>
     </message>
     <message>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
@@ -81,7 +81,7 @@
     </message>
     <message>
         <source>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </source>
-        <translation> Tom Igoe, Hans-Peter Kadel, Till Savelkoul,</translation>
+        <translation>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </translation>
     </message>
     <message>
         <source>Fritzing is made possible with funding from the </source>
@@ -89,15 +89,15 @@
     </message>
     <message>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
-        <translation> Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
+        <translation>Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
     </message>
     <message>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation>Jan Sieber, Yaniv Steiner, Olaf Val,</translation>
+        <translation>Jan Sieber, Yaniv Steiner, Olaf Val, </translation>
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel,</translation>
+        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
     </message>
     <message>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
@@ -105,23 +105,23 @@
     </message>
     <message>
         <source>Thanks for the translations go out to: </source>
-        <translation>Merci pour les traductions à:</translation>
+        <translation>Merci pour les traductions à : </translation>
     </message>
     <message>
         <source>Spanish: </source>
-        <translation>Espanol:</translation>
+        <translation>Espanol : </translation>
     </message>
     <message>
         <source>Italian: </source>
-        <translation>Italien:</translation>
+        <translation>Italien : </translation>
     </message>
     <message>
         <source>Portuguese (European): </source>
-        <translation>Portugais (européen):</translation>
+        <translation>Portugais (européen) : </translation>
     </message>
     <message>
         <source>Portuguese (Brazilian): </source>
-        <translation>Portugais (Brésilien):</translation>
+        <translation>Portugais (Brésilien) : </translation>
     </message>
     <message>
         <source>Chinese (Simplified): </source>
@@ -141,7 +141,7 @@
     </message>
     <message>
         <source>Japanese: </source>
-        <translation>Japonais:</translation>
+        <translation>Japonais : </translation>
     </message>
     <message>
         <source>Hiroshi Suzuki </source>
@@ -149,19 +149,19 @@
     </message>
     <message>
         <source>Russian: </source>
-        <translation>Russe:</translation>
+        <translation>Russe : </translation>
     </message>
     <message>
         <source>Dutch: </source>
-        <translation>Néerlandais:</translation>
+        <translation>Néerlandais : </translation>
     </message>
     <message>
         <source>Czech: </source>
-        <translation>Tchèque:</translation>
+        <translation>Tchèque : </translation>
     </message>
     <message>
         <source>Korean: </source>
-        <translation>Coréen:</translation>
+        <translation>Coréen : </translation>
     </message>
     <message>
         <source>Jinbuhm Kim </source>
@@ -169,23 +169,23 @@
     </message>
     <message>
         <source>Slovak: </source>
-        <translation>Slovaque:</translation>
+        <translation>Slovaque : </translation>
     </message>
     <message>
         <source>Greek: </source>
-        <translation>Grec:</translation>
+        <translation>Grec : </translation>
     </message>
     <message>
         <source>French: </source>
-        <translation>Français:</translation>
+        <translation>Français : </translation>
     </message>
     <message>
         <source>Turkish: </source>
-        <translation>Turc:</translation>
+        <translation>Turc : </translation>
     </message>
     <message>
         <source>Bulgarian: </source>
-        <translation>Bulgare:</translation>
+        <translation>Bulgare : </translation>
     </message>
     <message>
         <source>Yuelin and Ninjia</source>
@@ -314,7 +314,7 @@
     </message>
     <message>
         <source>Via size</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille des vias</translation>
     </message>
 </context>
 <context>
@@ -453,7 +453,7 @@
     </message>
     <message>
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
-        <translation>Voullez-vous vraiment supprimer&apos;%1&apos;? Cette action est iréverssible!.</translation>
+        <translation>Voulez-vous vraiment retirer &apos;%1&apos; de la poubelle ? Cette opération ne peut être annulée.</translation>
     </message>
     <message>
         <source>Delete bin</source>
@@ -544,7 +544,7 @@
     </message>
     <message>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
-        <translation>Avant la production d&apos;un véritable circuit imprimé nous vous recommandons de tester votre forme personnalisée en utilisant l&apos;option &quot;Exporter &gt; pour la production &gt; Gerber étendu&quot;.</translation>
+        <translation>Avant la production de circuits imprimés, nous vous recommandons de tester votre forme personnalisée en utilisant l&apos;option &quot;Fichier &gt; Exporter pour la production &gt; Gerber étendu&quot;. </translation>
     </message>
     <message>
         <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
@@ -597,7 +597,7 @@ Une carte svg personnalisée a généralement un ou deux calques de sérigraphie
     </message>
     <message>
         <source>&lt;br/&gt;However, the cutouts may not be formatted correctly.</source>
-        <translation>Cependant, les découpes peuvent ne pas être formées correctement.</translation>
+        <translation>&lt;br/&gt;Cependant, les découpes peuvent ne pas être formatées correctement.</translation>
     </message>
     <message>
         <source>because there are multiple &lt;silkscreen&gt; layers</source>
@@ -627,7 +627,7 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>The rest of this message concerns &apos;cutouts&apos;. </source>
-        <translation>Le reste de ce message concerne les découpes.</translation>
+        <translation>Le reste de ce message concerne les découpes. </translation>
     </message>
     <message>
         <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, </source>
@@ -726,7 +726,7 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
     </message>
     <message>
         <source>BaudRate:</source>
-        <translation>Vitesse de transmission:</translation>
+        <translation>Vitesse en bauds:</translation>
     </message>
     <message>
         <source>Data bits:</source>
@@ -738,11 +738,11 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
     </message>
     <message>
         <source>Stop bits:</source>
-        <translation>Bits d&apos;arrêts:</translation>
+        <translation>Bits d&apos;arrêt :</translation>
     </message>
     <message>
         <source>Flow control:</source>
-        <translation>Contrôle du flux:</translation>
+        <translation>Contrôle de flux :</translation>
     </message>
     <message>
         <source>Select Serial Port</source>
@@ -750,27 +750,27 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
     </message>
     <message>
         <source>Description:</source>
-        <translation>Description:</translation>
+        <translation>Description :</translation>
     </message>
     <message>
         <source>Manufacturer:</source>
-        <translation>Fabricant:</translation>
+        <translation>Fabricant :</translation>
     </message>
     <message>
         <source>Serial number:</source>
-        <translation>Numéro de série:</translation>
+        <translation>Numéro de série :</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation>Emplacement:</translation>
+        <translation>Emplacement :</translation>
     </message>
     <message>
         <source>Vendor ID:</source>
-        <translation>ID fournisseur:</translation>
+        <translation>ID fournisseur :</translation>
     </message>
     <message>
         <source>Product ID:</source>
-        <translation>ID du produit:</translation>
+        <translation>ID du produit :</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -786,7 +786,7 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
     </message>
     <message>
         <source>Description: %1</source>
-        <translation>Description: %1</translation>
+        <translation>Description : %1</translation>
     </message>
     <message>
         <source>Manufacturer: %1</source>
@@ -798,7 +798,7 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
     </message>
     <message>
         <source>Location: %1</source>
-        <translation>Emplacement: %1</translation>
+        <translation>Emplacement : %1</translation>
     </message>
     <message>
         <source>Vendor Identifier: %1</source>
@@ -932,7 +932,7 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
     </message>
     <message>
         <source>The areas on your board highlighted in red are connectors and traces which may overlap or be too close together. </source>
-        <translation>Les zones sur votre carte surlignées en rouge sont des connecteurs ou des pistes qui peuvent se chevaucher ou être trop rapprochées.</translation>
+        <translation>Les zones sur votre carte surlignées en rouge sont des connecteurs ou des pistes qui peuvent se chevaucher ou être trop rapprochées. </translation>
     </message>
     <message>
         <source>DRC was cancelled.</source>
@@ -1099,7 +1099,7 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
     <name>FabUploadDialog</name>
     <message>
         <source>Fritzing Fab Upload</source>
-        <translation>Fritzing Fab Upload</translation>
+        <translation type="unfinished">Fritzing Fab Télécharger</translation>
     </message>
     <message>
         <source>Get your board fabricated this week!</source>
@@ -1195,7 +1195,7 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
     </message>
     <message>
         <source>Do you want to save the changes you made in the document &quot;%1&quot;?</source>
-        <translation>Voulez-vous enregistrer les modifications faites dans le document &quot;%1&quot;?</translation>
+        <translation>Voulez-vous enregistrer les modifications faites dans le document &quot;%1&quot; ?</translation>
     </message>
     <message>
         <source>Specify a file name</source>
@@ -1813,7 +1813,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>No exactly matching part found; Fritzing chose the closest match.</source>
-        <translation>Aucun composant correspondant exactement n&apos;a été trouvé; Fritzing va choisir le plus proche.</translation>
+        <translation>Aucun composant correspondant exactement n&apos;a été trouvé ; Fritzing va choisir le plus proche.</translation>
     </message>
     <message>
         <source>Fritzing Fab Quote...</source>
@@ -6335,7 +6335,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Pad</source>
-        <translation type="unfinished">Pad</translation>
+        <translation>Surface de soudure</translation>
     </message>
     <message>
         <source>ii</source>
@@ -6931,7 +6931,7 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
 
 Errors:
 </source>
-        <translation type="unfinished">Le simulateur a donné une erreur en essayant de simuler ce circuit. Veuillez vérifier le câblage et réessayer.
+        <translation>Le simulateur a donné une erreur en essayant de simuler ce circuit. Veuillez vérifier le câblage et réessayer. 
 
 Erreurs :
 </translation>

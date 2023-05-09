@@ -118,7 +118,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>, Siti Aishah Abdul Raouf</source>
-        <translation type="unfinished"></translation>
+        <translation>, Сіті Айша Абдул Рауф</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
@@ -178,7 +178,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="119"/>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Брайант Мейрс, Улешка Ашер, Даніель Цшенке та К&apos;єлл Моргенштерн</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="123"/>

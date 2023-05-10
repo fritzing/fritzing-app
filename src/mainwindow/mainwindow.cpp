@@ -3403,10 +3403,12 @@ void MainWindow::breadboardConnectionCheck() {
 						QSet<QString> schSet;
 						QSet<QString> bbSet;
 						Q_FOREACH (ConnectorItem * schToConnectorItem, schConnectorItem->connectedToItems()) {
-							schSet.insert(schToConnectorItem->connectorSharedID());
+							QString idString = schToConnectorItem->attachedToInstanceTitle() + ":" + schToConnectorItem->connectorSharedID();
+							schSet.insert(idString);
 						}
 						Q_FOREACH (ConnectorItem * bbToConnectorItem, bbConnectorItem->connectedToItems()) {
-							bbSet.insert(bbToConnectorItem->connectorSharedID());
+							QString idString = bbToConnectorItem->attachedToInstanceTitle() + ":" + bbToConnectorItem->connectorSharedID();
+							bbSet.insert(idString);
 						}
 
 						if (schSet != bbSet) {

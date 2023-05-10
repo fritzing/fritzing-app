@@ -85,7 +85,7 @@ HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 	this->setWidgetResizable(true);
 
 	m_lastTitleItemBase = nullptr;
-	m_lastSpiceModelPart = NULL;
+	m_lastSpiceModelPart = nullptr;
 	m_lastTagsModelPart = nullptr;
 	m_lastConnectorItem = nullptr;
 	m_lastIconItemBase = nullptr;
@@ -100,7 +100,7 @@ HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 	m_lockCheckbox = nullptr;
 	m_stickyCheckbox = nullptr;
 	m_connDescr = nullptr;
-	m_spiceTextLabel = NULL;
+	m_spiceTextLabel = nullptr;
 	m_tagsTextLabel = nullptr;
 	m_lastSwappingEnabled = false;
 	m_lastItemBase = nullptr;

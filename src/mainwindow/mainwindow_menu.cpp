@@ -487,6 +487,7 @@ bool MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	}
 
 	initZoom();
+	breadboardConnectionCheck();
 	return result;
 }
 

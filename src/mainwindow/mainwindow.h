@@ -220,6 +220,7 @@ public:
 	bool isSimulatorEnabled();
 	void enableSimulator(bool);
 	void triggerSimulator();
+	void breadboardConnectionCheck();
 
 public:
 	static void initNames();

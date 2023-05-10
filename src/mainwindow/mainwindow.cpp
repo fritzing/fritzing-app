@@ -69,6 +69,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/clickablelabel.h"
 #include "../items/resizableboard.h"
 #include "../items/resistor.h"
+#include "../items/breadboard.h"
 #include "../utils/zoomslider.h"
 #include "../partseditor/pemainwindow.h"
 #include "../help/firsttimehelpdialog.h"
@@ -3381,5 +3382,42 @@ void MainWindow::postKeyEvent(const QString & serializedKeys) {
 
 		QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyPress, keyCode, modFlags, key.at(0)));
 		QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyRelease, keyCode, modFlags, key.at(0)));
+	}
+}
+
+void MainWindow::breadboardConnectionCheck() {
+	Breadboard* breadboard = nullptr;
+	Breadboard* breadboardBB = nullptr;
+	QList<QGraphicsItem *> schParts = m_schematicGraphicsView->scene()->items();
+	QList<QGraphicsItem *> bbParts = m_breadboardGraphicsView->scene()->items();
+	Q_FOREACH (QGraphicsItem * schItem, schParts) {
+		breadboard = dynamic_cast<Breadboard *>(schItem);
+		if (breadboard) {
+			break;
+		}
+	}
+	Q_FOREACH (QGraphicsItem * bbItem, bbParts) {
+		breadboardBB = dynamic_cast<Breadboard *>(bbItem);
+		if (breadboardBB) {
+			break;
+		}
+	}
+	if (breadboard && breadboardBB) {
+		int bbSchViewConnections = 0;
+		int bbBBViewConnections = 0;
+		foreach (ConnectorItem * connectorItem, breadboard->cachedConnectorItems()) {
+			bbSchViewConnections += connectorItem->connectedToItems().length();
+		}
+		foreach (ConnectorItem * connectorItem, breadboardBB->cachedConnectorItems()) {
+			bbBBViewConnections += connectorItem->connectedToItems().length();
+		}
+		if (bbSchViewConnections != bbBBViewConnections) {
+			QColor newColor = QColor("red");
+			m_breadboardGraphicsView->setBackgroundColor(newColor, false);
+			DebugDialog::debug(QString("Warning!!! Breadboard part has %1 connections in schematic and %2 in breadboard view.").arg(bbSchViewConnections).arg(bbBBViewConnections));
+		} else {
+			QColor newColor = QColor("white");
+			m_breadboardGraphicsView->setBackgroundColor(newColor, false);
+		}
 	}
 }

@@ -262,41 +262,8 @@ void Simulator::simulate() {
 		}
 
 	}
-	Breadboard* breadboard = nullptr;
-	Breadboard* breadboardBB = nullptr;
-	QList<QGraphicsItem *> schParts = m_schematicGraphicsView->scene()->items();
-	QList<QGraphicsItem *> bbParts = m_breadboardGraphicsView->scene()->items();
-	Q_FOREACH (QGraphicsItem * schItem, schParts) {
-		breadboard = dynamic_cast<Breadboard *>(schItem);
-		if (breadboard) {
-			break;
-		}
-	}
-	Q_FOREACH (QGraphicsItem * bbItem, bbParts) {
-		breadboardBB = dynamic_cast<Breadboard *>(bbItem);
-		if (breadboardBB) {
-			break;
-		}
-	}
-	if (breadboard && breadboardBB) {
-		int bbSchViewConnections = 0;
-		int bbBBViewConnections = 0;
-		foreach (ConnectorItem * connectorItem, breadboard->cachedConnectorItems()) {
-			bbSchViewConnections += connectorItem->connectedToItems().length();
-		}
-		foreach (ConnectorItem * connectorItem, breadboardBB->cachedConnectorItems()) {
-			bbBBViewConnections += connectorItem->connectedToItems().length();
-		}
-		if (bbSchViewConnections != bbBBViewConnections) {
-			QColor newColor = QColor("red");
-			m_breadboardGraphicsView->setBackgroundColor(newColor, false);
-			DebugDialog::debug(QString("Warning!!! Breadboard part has %1 connections in schematic and %2 in breadboard view.").arg(bbSchViewConnections).arg(bbBBViewConnections));
-		} else {
-			QColor newColor = QColor("white");
-			m_breadboardGraphicsView->setBackgroundColor(newColor, false);
-		}
-	}
 
+	m_mainWindow->breadboardConnectionCheck();
 
 	std::cout << "-----------------------------------" <<std::endl;
 	std::cout << "Removing the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.):" <<std::endl;

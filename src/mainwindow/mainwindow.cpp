@@ -3398,49 +3398,48 @@ void MainWindow::breadboardConnectionCheck() {
 			if (schPart->instanceTitle().compare(bbPart->instanceTitle()) == 0) {
 				m_sch2bbItemHash.insert(schPart, bbPart);
 				Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
-					Q_FOREACH (ConnectorItem * bbConnectorItem, bbPart->cachedConnectorItems()) {
-						if (schConnectorItem->connectorSharedID().compare(bbConnectorItem->connectorSharedID()) == 0) {
-							QSet<QString> schSet;
-							QSet<QString> bbSet;
-							Q_FOREACH (ConnectorItem * schToConnectorItem, schConnectorItem->connectedToItems()) {
-								schSet.insert(schToConnectorItem->connectorSharedID());
-							}
-							Q_FOREACH (ConnectorItem * bbToConnectorItem, bbConnectorItem->connectedToItems()) {
-								bbSet.insert(bbToConnectorItem->connectorSharedID());
-							}
+					ConnectorItem * bbConnectorItem = bbPart->findConnectorItemWithSharedID(schConnectorItem->connectorSharedID());
+					if (bbConnectorItem != nullptr) {
+						QSet<QString> schSet;
+						QSet<QString> bbSet;
+						Q_FOREACH (ConnectorItem * schToConnectorItem, schConnectorItem->connectedToItems()) {
+							schSet.insert(schToConnectorItem->connectorSharedID());
+						}
+						Q_FOREACH (ConnectorItem * bbToConnectorItem, bbConnectorItem->connectedToItems()) {
+							bbSet.insert(bbToConnectorItem->connectorSharedID());
+						}
 
-							if (schSet != bbSet) {
-								bool first = true;
-								QString schSetString;
-								for (const QString &str : std::as_const(schSet))
-								{
-								    if (first)
-								    {
-									first = false;
-								    }
-								    else
-								    {
-									schSetString += ",";
-								    }
-								    schSetString += str;
-								}
-								first = true;
-								QString bbSetString;
-								for (const QString &str : std::as_const(bbSet))
-								{
-								    if (first)
-								    {
-									first = false;
-								    }
-								    else
-								    {
-									bbSetString += ",";
-								    }
-								    bbSetString += str;
-								}
-								DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 bb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(bbSetString));
-								foundError = true;
+						if (schSet != bbSet) {
+							bool first = true;
+							QString schSetString;
+							for (const QString &str : std::as_const(schSet))
+							{
+							    if (first)
+							    {
+								first = false;
+							    }
+							    else
+							    {
+								schSetString += ",";
+							    }
+							    schSetString += str;
 							}
+							first = true;
+							QString bbSetString;
+							for (const QString &str : std::as_const(bbSet))
+							{
+							    if (first)
+							    {
+								first = false;
+							    }
+							    else
+							    {
+								bbSetString += ",";
+							    }
+							    bbSetString += str;
+							}
+							DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 bb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(bbSetString));
+							foundError = true;
 						}
 					}
 				}

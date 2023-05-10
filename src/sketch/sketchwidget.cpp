@@ -3130,7 +3130,6 @@ void SketchWidget::moveItemsAux(QPointF scenePos, QPoint globalPos, bool checkAu
 
 	if (m_moveEventCount == 0) {
 		// first time
-		m_moveDisconnectedFromFemale.clear();
 		Q_FOREACH (ItemBase * item, m_savedItems) {
 			if (item->itemType() == ModelPart::Wire) continue;
 
@@ -3362,6 +3361,7 @@ bool SketchWidget::checkMoved(bool wait)
 			gotConnection = true;
 		}
 	}
+	m_moveDisconnectedFromFemale.clear();
 
 	QList<ConnectorItem *> restoreConnectorItems;
 	Q_FOREACH (ItemBase * item, m_savedItems) {

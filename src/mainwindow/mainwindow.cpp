@@ -38,6 +38,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStyle>
 #include <QFontMetrics>
 #include <QApplication>
+#include <QSet>
 
 
 #include "mainwindow.h"
@@ -3386,38 +3387,71 @@ void MainWindow::postKeyEvent(const QString & serializedKeys) {
 }
 
 void MainWindow::breadboardConnectionCheck() {
-	Breadboard* breadboard = nullptr;
-	Breadboard* breadboardBB = nullptr;
-	QList<QGraphicsItem *> schParts = m_schematicGraphicsView->scene()->items();
-	QList<QGraphicsItem *> bbParts = m_breadboardGraphicsView->scene()->items();
-	Q_FOREACH (QGraphicsItem * schItem, schParts) {
-		breadboard = dynamic_cast<Breadboard *>(schItem);
-		if (breadboard) {
-			break;
+	bool foundError = false;
+	QHash<ItemBase *, ItemBase *> m_sch2bbItemHash;
+	foreach (QGraphicsItem* schItem, m_schematicGraphicsView->scene()->items()) {
+		ItemBase * schPart = dynamic_cast<ItemBase *>(schItem);
+		if (!schPart) continue;
+		foreach (QGraphicsItem * bbItem, m_breadboardGraphicsView->scene()->items()) {
+			ItemBase * bbPart = dynamic_cast<ItemBase *>(bbItem);
+			if (!bbPart) continue;
+			if (schPart->instanceTitle().compare(bbPart->instanceTitle()) == 0) {
+				m_sch2bbItemHash.insert(schPart, bbPart);
+				Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
+					Q_FOREACH (ConnectorItem * bbConnectorItem, bbPart->cachedConnectorItems()) {
+						if (schConnectorItem->connectorSharedID().compare(bbConnectorItem->connectorSharedID()) == 0) {
+							QSet<QString> schSet;
+							QSet<QString> bbSet;
+							Q_FOREACH (ConnectorItem * schToConnectorItem, schConnectorItem->connectedToItems()) {
+								schSet.insert(schToConnectorItem->connectorSharedID());
+							}
+							Q_FOREACH (ConnectorItem * bbToConnectorItem, bbConnectorItem->connectedToItems()) {
+								bbSet.insert(bbToConnectorItem->connectorSharedID());
+							}
+
+							if (schSet != bbSet) {
+								bool first = true;
+								QString schSetString;
+								for (const QString &str : std::as_const(schSet))
+								{
+								    if (first)
+								    {
+									first = false;
+								    }
+								    else
+								    {
+									schSetString += ",";
+								    }
+								    schSetString += str;
+								}
+								first = true;
+								QString bbSetString;
+								for (const QString &str : std::as_const(bbSet))
+								{
+								    if (first)
+								    {
+									first = false;
+								    }
+								    else
+								    {
+									bbSetString += ",";
+								    }
+								    bbSetString += str;
+								}
+								DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 bb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(bbSetString));
+								foundError = true;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
-	Q_FOREACH (QGraphicsItem * bbItem, bbParts) {
-		breadboardBB = dynamic_cast<Breadboard *>(bbItem);
-		if (breadboardBB) {
-			break;
-		}
-	}
-	if (breadboard && breadboardBB) {
-		int bbSchViewConnections = 0;
-		int bbBBViewConnections = 0;
-		foreach (ConnectorItem * connectorItem, breadboard->cachedConnectorItems()) {
-			bbSchViewConnections += connectorItem->connectedToItems().length();
-		}
-		foreach (ConnectorItem * connectorItem, breadboardBB->cachedConnectorItems()) {
-			bbBBViewConnections += connectorItem->connectedToItems().length();
-		}
-		if (bbSchViewConnections != bbBBViewConnections) {
-			QColor newColor = QColor("red");
-			m_breadboardGraphicsView->setBackgroundColor(newColor, false);
-			DebugDialog::debug(QString("Warning!!! Breadboard part has %1 connections in schematic and %2 in breadboard view.").arg(bbSchViewConnections).arg(bbBBViewConnections));
-		} else {
-			QColor newColor = QColor("white");
-			m_breadboardGraphicsView->setBackgroundColor(newColor, false);
-		}
+	if (foundError) {
+		QColor newColor = QColor("red");
+		m_breadboardGraphicsView->setBackgroundColor(newColor, false);
+	} else {
+		QColor newColor = QColor("white");
+		m_breadboardGraphicsView->setBackgroundColor(newColor, false);
 	}
 }

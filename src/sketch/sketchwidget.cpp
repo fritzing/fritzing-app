@@ -5114,6 +5114,10 @@ void SketchWidget::arrowTimerTimeout() {
 }
 
 void SketchWidget::keyPressEvent ( QKeyEvent * event ) {
+	auto * mainWindow = qobject_cast<MainWindow *>(window());
+	if (mainWindow) mainWindow->breadboardConnectionCheck();
+	DebugDialog::debug(QString("SketchWidget::keyPressEvent: size of m_moveDisconnectedFromFemale: %1").arg(m_moveDisconnectedFromFemale.size()));
+
 	if ((m_inFocus.length() == 0) && !m_movingByMouse) {
 		int dx = 0, dy = 0;
 		switch (event->key()) {

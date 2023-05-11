@@ -648,6 +648,11 @@ void MainWindow::connectPairs() {
 	succeeded =  succeeded && (connect(m_breadboardGraphicsView, SIGNAL(routingStatusSignal(SketchWidget *, const RoutingStatus &)),
 	                                  this, SLOT(routingStatusSlot(SketchWidget *, const RoutingStatus &))) != nullptr);
 
+	succeeded = connect(m_pcbGraphicsView, &PCBSketchWidget::routingCheckSignal, this, &MainWindow::routingCheckSlot) != nullptr;
+	succeeded = succeeded && (connect(m_schematicGraphicsView, &SchematicSketchWidget::routingCheckSignal, this, &MainWindow::routingCheckSlot) != nullptr);
+	succeeded = succeeded && (connect(m_breadboardGraphicsView, &BreadboardSketchWidget::routingCheckSignal, this, &MainWindow::routingCheckSlot) != nullptr);
+
+
 	succeeded =  succeeded && (connect(m_breadboardGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)),
 									  this, SLOT(swapSelectedMap(const QString &, const QString &, QMap<QString, QString> &, ItemBase *))) != nullptr);
 	succeeded =  succeeded && (connect(m_schematicGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)),
@@ -3399,7 +3404,7 @@ QSet<QString> MainWindow::getItemConnectorSet(ConnectorItem * connectorItem) {
 	return set;
 }
 
-void MainWindow::breadboardConnectionCheck() {
+void MainWindow::routingCheckSlot() {
 	bool foundError = false;
 	QHash<QString, ItemBase *> bbTitle2ItemHash;
 	QHash<QString, ItemBase *> pcbTitle2ItemHash;

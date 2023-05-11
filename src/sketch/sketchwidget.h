@@ -545,6 +545,7 @@ Q_SIGNALS:
 	void resizeSignal();
 	void dropSignal(const QPoint &pos);
 	void routingStatusSignal(SketchWidget *, const RoutingStatus &);
+	void routingCheckSignal();
 	void movingSignal(SketchWidget *, QUndoCommand * parentCommand);
 	void selectAllItemsSignal(bool state, bool doEmit);
 	void checkStickySignal(long id, bool doEmit, bool checkCurrent, CheckStickyCommand *);

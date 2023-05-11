@@ -487,7 +487,7 @@ bool MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	}
 
 	initZoom();
-	breadboardConnectionCheck();
+	Q_EMIT m_pcbGraphicsView->routingCheckSignal();
 	return result;
 }
 
@@ -3078,6 +3078,7 @@ void MainWindow::newAutoroute() {
 	RoutingStatus routingStatus;
 	routingStatus.zero();
 	Q_EMIT pcbSketchWidget->routingStatusSignal(pcbSketchWidget, routingStatus);
+	Q_EMIT pcbSketchWidget->routingCheckSignal();
 }
 
 void MainWindow::createTrace() {

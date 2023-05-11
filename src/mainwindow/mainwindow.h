@@ -220,7 +220,6 @@ public:
 	bool isSimulatorEnabled();
 	void enableSimulator(bool);
 	void triggerSimulator();
-	void breadboardConnectionCheck();
 
 public:
 	static void initNames();
@@ -264,6 +263,7 @@ public Q_SLOTS:
 	void showWelcomeView();
 	void putItemByModuleID(const QString & moduleID);
 	void postKeyEvent(const QString & serializedKeys);
+	void routingCheckSlot();
 
 protected Q_SLOTS:
 	void mainLoad();

@@ -5114,8 +5114,7 @@ void SketchWidget::arrowTimerTimeout() {
 }
 
 void SketchWidget::keyPressEvent ( QKeyEvent * event ) {
-	auto * mainWindow = qobject_cast<MainWindow *>(window());
-	if (mainWindow) mainWindow->breadboardConnectionCheck();
+	Q_EMIT routingCheckSignal();
 	DebugDialog::debug(QString("SketchWidget::keyPressEvent: size of m_moveDisconnectedFromFemale: %1").arg(m_moveDisconnectedFromFemale.size()));
 
 	if ((m_inFocus.length() == 0) && !m_movingByMouse) {
@@ -6792,6 +6791,7 @@ void SketchWidget::updateRoutingStatus(CleanUpWiresCommand* command, RoutingStat
 		}
 
 		Q_EMIT routingStatusSignal(this, routingStatus);
+		Q_EMIT routingCheckSignal();
 
 		m_routingStatus = routingStatus;
 	}
@@ -7150,6 +7150,7 @@ void SketchWidget::setWireVisible(Wire * wire) {
 void SketchWidget::forwardRoutingStatusForCommand(const RoutingStatus & routingStatus) {
 
 	Q_EMIT routingStatusSignal(this, routingStatus);
+	Q_EMIT routingCheckSignal();
 }
 
 bool SketchWidget::matchesLayer(ModelPart * modelPart) {

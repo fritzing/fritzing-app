@@ -71,6 +71,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/resizableboard.h"
 #include "../items/resistor.h"
 #include "../items/breadboard.h"
+#include "../items/symbolpaletteitem.h"
 #include "../utils/zoomslider.h"
 #include "../partseditor/pemainwindow.h"
 #include "../help/firsttimehelpdialog.h"
@@ -3416,6 +3417,8 @@ void MainWindow::breadboardConnectionCheck() {
 	foreach (QGraphicsItem* schItem, m_schematicGraphicsView->scene()->items()) {
 		ItemBase * schPart = dynamic_cast<ItemBase *>(schItem);
 		if (!schPart) continue;
+		ItemBase * schNoNetLabelPart = dynamic_cast<NetLabel *>(schPart);
+		if (schNoNetLabelPart != nullptr) continue;
 		ItemBase * bbPart = bbTitle2ItemHash.value(schPart->instanceTitle());
 		ItemBase * pcbPart = pcbTitle2ItemHash.value(schPart->instanceTitle());
 		if (bbPart != nullptr) {

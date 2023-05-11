@@ -3448,10 +3448,21 @@ void MainWindow::routingCheckSlot() {
 					QSet<QString> schSet = getItemConnectorSet(schConnectorItem);
 					QSet<QString> pcbSet = getItemConnectorSet(pcbConnectorItem);
 					if (schSet != pcbSet) {
-						QString schSetString = TextUtils::setToString(schSet);
-						QString pcbSetString = TextUtils::setToString(pcbSet);
-						DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 pcb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(pcbSetString));
-						foundError = true;
+						QSet<QString> setSchMinusPcb = schSet - pcbSet;
+						bool nonWireError = false;
+						Q_FOREACH(QString str, setSchMinusPcb) {
+							if (!str.startsWith("Wire")) {
+								nonWireError = true;
+							} else {
+								schSet -= str;
+							}
+						}
+						if (nonWireError) {
+							QString schSetString = TextUtils::setToString(schSet);
+							QString pcbSetString = TextUtils::setToString(pcbSet);
+							DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 pcb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(pcbSetString));
+							foundError = true;
+						}
 					}
 				}
 			}

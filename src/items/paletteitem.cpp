@@ -1007,8 +1007,8 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 
 		label = new QLabel(tr("Ring Thickness"));
 		label->setMinimumHeight(RowHeight);
+		label->setObjectName("infoViewGroupBoxLabel");
 		gridLayout->addWidget(label, 1, 0);
-		label->setObjectName("infoViewLabel");
 
 		gridLayout->setContentsMargins(10, 2, 0, 2);
 		gridLayout->addItem(new QSpacerItem(1, 1, QSizePolicy::Expanding, QSizePolicy::Minimum), 0, 3);

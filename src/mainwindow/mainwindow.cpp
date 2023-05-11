@@ -3386,69 +3386,49 @@ void MainWindow::postKeyEvent(const QString & serializedKeys) {
 	}
 }
 
+QSet<QString> MainWindow::getItemConnectorSet(ConnectorItem * connectorItem) {
+	QSet<QString> set;
+	Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
+		VirtualWire * virtualWire = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
+		if (virtualWire == nullptr) {
+			QString idString = toConnectorItem->attachedToInstanceTitle() + ":" + toConnectorItem->connectorSharedID();
+			set.insert(idString);
+		}
+	}
+	return set;
+}
+
 void MainWindow::breadboardConnectionCheck() {
 	bool foundError = false;
-	QHash<ItemBase *, ItemBase *> m_sch2bbItemHash;
+	QHash<QString, ItemBase *> bbTitle2ItemHash;
+	QHash<QString, ItemBase *> pcbTitle2ItemHash;
+	foreach (QGraphicsItem * bbItem, m_breadboardGraphicsView->scene()->items()) {
+		ItemBase * bbPart = dynamic_cast<ItemBase *>(bbItem);
+		if (!bbPart) continue;
+		bbTitle2ItemHash.insert(bbPart->instanceTitle(), bbPart);
+	}
+	foreach (QGraphicsItem * pcbItem, m_pcbGraphicsView->scene()->items()) {
+		ItemBase * pcbPart = dynamic_cast<ItemBase *>(pcbItem);
+		if (!pcbPart) continue;
+		pcbTitle2ItemHash.insert(pcbPart->instanceTitle(), pcbPart);
+	}
+
 	foreach (QGraphicsItem* schItem, m_schematicGraphicsView->scene()->items()) {
 		ItemBase * schPart = dynamic_cast<ItemBase *>(schItem);
 		if (!schPart) continue;
-		foreach (QGraphicsItem * bbItem, m_breadboardGraphicsView->scene()->items()) {
-			ItemBase * bbPart = dynamic_cast<ItemBase *>(bbItem);
-			if (!bbPart) continue;
-			if (schPart->instanceTitle().compare(bbPart->instanceTitle()) == 0) {
-				m_sch2bbItemHash.insert(schPart, bbPart);
-				Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
-					ConnectorItem * bbConnectorItem = bbPart->findConnectorItemWithSharedID(schConnectorItem->connectorSharedID());
-					if (bbConnectorItem != nullptr) {
-						QSet<QString> schSet;
-						QSet<QString> bbSet;
-						Q_FOREACH (ConnectorItem * schToConnectorItem, schConnectorItem->connectedToItems()) {
-							VirtualWire * virtualWire = qobject_cast<VirtualWire *>(schToConnectorItem->attachedTo());
-							if (virtualWire == nullptr) {
-								QString idString = schToConnectorItem->attachedToInstanceTitle() + ":" + schToConnectorItem->connectorSharedID();
-								schSet.insert(idString);
-							}
-						}
-						Q_FOREACH (ConnectorItem * bbToConnectorItem, bbConnectorItem->connectedToItems()) {
-							VirtualWire * virtualWire = qobject_cast<VirtualWire *>(bbToConnectorItem->attachedTo());
-							if (virtualWire == nullptr) {
-								QString idString = bbToConnectorItem->attachedToInstanceTitle() + ":" + bbToConnectorItem->connectorSharedID();
-								bbSet.insert(idString);
-							}
-						}
-
-						if (schSet != bbSet) {
-							bool first = true;
-							QString schSetString;
-							for (const QString &str : std::as_const(schSet))
-							{
-							    if (first)
-							    {
-								first = false;
-							    }
-							    else
-							    {
-								schSetString += ",";
-							    }
-							    schSetString += str;
-							}
-							first = true;
-							QString bbSetString;
-							for (const QString &str : std::as_const(bbSet))
-							{
-							    if (first)
-							    {
-								first = false;
-							    }
-							    else
-							    {
-								bbSetString += ",";
-							    }
-							    bbSetString += str;
-							}
-							DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 bb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(bbSetString));
-							foundError = true;
-						}
+		ItemBase * bbPart = bbTitle2ItemHash.value(schPart->instanceTitle());
+		ItemBase * pcbPart = pcbTitle2ItemHash.value(schPart->instanceTitle());
+		if (bbPart != nullptr) {
+			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
+				ConnectorItem * bbConnectorItem = bbPart->findConnectorItemWithSharedID(schConnectorItem->connectorSharedID());
+				if (bbConnectorItem != nullptr) {
+					QSet<QString> schSet = getItemConnectorSet(schConnectorItem);
+					QSet<QString> bbSet = getItemConnectorSet(bbConnectorItem);
+					if (schSet != bbSet) {
+						QString schSetString = TextUtils::setToString(schSet);
+						QString bbSetString = TextUtils::setToString(bbSet);
+						DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 bb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(bbSetString));
+						foundError = true;
 					}
 				}
 			}

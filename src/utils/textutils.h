@@ -132,6 +132,7 @@ public:
 		}
 		return std::nullopt;
 	}
+	static QString setToString(const QSet<QString> & set);
 
 public:
 	static const QRegularExpression FindWhitespace;

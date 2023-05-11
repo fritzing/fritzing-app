@@ -2047,3 +2047,21 @@ QString TextUtils::elementToString(const QDomElement & element) {
 	string +="/>";
 	return string;
 }
+
+QString TextUtils::setToString(const QSet<QString> & set) {
+	bool first = true;
+	QString setString;
+	for (const QString &str : std::as_const(set))
+	{
+	    if (first)
+	    {
+		first = false;
+	    }
+	    else
+	    {
+		setString += ",";
+	    }
+	    setString += str;
+	}
+	return setString;
+}

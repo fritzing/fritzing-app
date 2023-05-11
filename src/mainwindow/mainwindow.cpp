@@ -3403,12 +3403,18 @@ void MainWindow::breadboardConnectionCheck() {
 						QSet<QString> schSet;
 						QSet<QString> bbSet;
 						Q_FOREACH (ConnectorItem * schToConnectorItem, schConnectorItem->connectedToItems()) {
-							QString idString = schToConnectorItem->attachedToInstanceTitle() + ":" + schToConnectorItem->connectorSharedID();
-							schSet.insert(idString);
+							VirtualWire * virtualWire = qobject_cast<VirtualWire *>(schToConnectorItem->attachedTo());
+							if (virtualWire == nullptr) {
+								QString idString = schToConnectorItem->attachedToInstanceTitle() + ":" + schToConnectorItem->connectorSharedID();
+								schSet.insert(idString);
+							}
 						}
 						Q_FOREACH (ConnectorItem * bbToConnectorItem, bbConnectorItem->connectedToItems()) {
-							QString idString = bbToConnectorItem->attachedToInstanceTitle() + ":" + bbToConnectorItem->connectorSharedID();
-							bbSet.insert(idString);
+							VirtualWire * virtualWire = qobject_cast<VirtualWire *>(bbToConnectorItem->attachedTo());
+							if (virtualWire == nullptr) {
+								QString idString = bbToConnectorItem->attachedToInstanceTitle() + ":" + bbToConnectorItem->connectorSharedID();
+								bbSet.insert(idString);
+							}
 						}
 
 						if (schSet != bbSet) {

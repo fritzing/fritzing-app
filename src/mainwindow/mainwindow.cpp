@@ -3447,9 +3447,13 @@ void MainWindow::routingCheckSlot() {
 		ItemBase * bbPart = bbID2ItemHash.value(schPart->id());
 		ItemBase * pcbPart = pcbID2ItemHash.value(schPart->id());
 		if (bbPart != nullptr) {
+			QHash<QString, ConnectorItem *> bbID2ConnectorHash;
+			Q_FOREACH (ConnectorItem * connectorItem, bbPart->cachedConnectorItems()) {
+				bbID2ConnectorHash.insert(connectorItem->connectorSharedID(), connectorItem);
+			}
 			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
-				Q_FOREACH (ConnectorItem * bbConnectorItem, bbPart->cachedConnectorItems()) {
-					if (bbConnectorItem->connectorSharedID() != schConnectorItem->connectorSharedID()) continue;
+				ConnectorItem * bbConnectorItem = bbID2ConnectorHash.value(schConnectorItem->connectorSharedID());
+				if (bbConnectorItem != nullptr) {
 					if (bbConnectorItem != nullptr) {
 						QSet<QString> schSet = getItemConnectorSet(schConnectorItem);
 						QSet<QString> bbSet = getItemConnectorSet(bbConnectorItem);
@@ -3464,9 +3468,13 @@ void MainWindow::routingCheckSlot() {
 			}
 		}
 		if (pcbPart != nullptr) {
+			QHash<QString, ConnectorItem *> pcbID2ConnectorHash;
+			Q_FOREACH (ConnectorItem * connectorItem, pcbPart->cachedConnectorItems()) {
+				pcbID2ConnectorHash.insert(connectorItem->connectorSharedID(), connectorItem);
+			}
 			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
-				Q_FOREACH (ConnectorItem * pcbConnectorItem, pcbPart->cachedConnectorItems()) {
-					if (pcbConnectorItem->connectorSharedID() != schConnectorItem->connectorSharedID()) continue;
+				ConnectorItem * pcbConnectorItem = pcbID2ConnectorHash.value(schConnectorItem->connectorSharedID());
+				if (pcbConnectorItem != nullptr) {
 					if (pcbConnectorItem != nullptr) {
 						QSet<QString> schSet = getItemConnectorSet(schConnectorItem);
 						QSet<QString> pcbSet = getItemConnectorSet(pcbConnectorItem);

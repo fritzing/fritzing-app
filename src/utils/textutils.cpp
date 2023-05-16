@@ -2051,7 +2051,12 @@ QString TextUtils::elementToString(const QDomElement & element) {
 QString TextUtils::setToString(const QSet<QString> & set) {
 	bool first = true;
 	QString setString;
-	for (const QString &str : std::as_const(set))
+	QList<QString> strList;
+	for (const QString &str : std::as_const(set)) {
+		strList.append(str);
+	}
+	std::sort(strList.begin(), strList.end(), [](QString a, QString b) { return a < b;});
+	for (const QString &str : std::as_const(strList))
 	{
 	    if (first)
 	    {

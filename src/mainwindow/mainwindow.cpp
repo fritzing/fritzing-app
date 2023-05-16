@@ -3395,7 +3395,7 @@ void MainWindow::postKeyEvent(const QString & serializedKeys) {
 QSet<QString> MainWindow::getItemConnectorSet(ConnectorItem * connectorItem) {
 	QSet<QString> set;
 	QRegularExpression re("^(AM|VM|OM)\\d+");
-	Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItemsSorted()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 		ItemBase * attachedToItem = toConnectorItem->attachedTo();
 		VirtualWire * virtualWire = qobject_cast<VirtualWire *>(attachedToItem);
 		if (virtualWire != nullptr) continue;
@@ -3423,7 +3423,9 @@ void MainWindow::routingCheckSlot() {
 	bool foundError = false;
 	QHash<QString, ItemBase *> bbTitle2ItemHash;
 	QHash<QString, ItemBase *> pcbTitle2ItemHash;
-	Q_FOREACH (ItemBase * part, toSortedItembases(m_breadboardGraphicsView->scene()->items())) {
+	QList<ItemBase *> bbList;
+	m_breadboardGraphicsView->collectParts(bbList);
+	Q_FOREACH (ItemBase * part, bbList) {
 		if (bbTitle2ItemHash.contains(part->instanceTitle())) {
 			ItemBase * firstPart = bbTitle2ItemHash.value(part->instanceTitle());
 			DebugDialog::debug(QString("!!!!!!!!!!Duplicate breadboard part found. title: %1 id1: %2 id2: %3 moduleID1: %4 moduleID2: %5 viewIDname: 1: %6 2: %7 viewLayerIDs: 1: %8 2: %9").arg(part->instanceTitle()).arg(firstPart->id()).arg(part->id()).arg(firstPart->moduleID()).arg(part->moduleID()).arg(firstPart->viewIDName()).arg(part->viewIDName()).arg(firstPart->viewLayerID()).arg(part->viewLayerID()));
@@ -3431,7 +3433,9 @@ void MainWindow::routingCheckSlot() {
 		bbTitle2ItemHash.insert(part->instanceTitle(), part);
 	}
 
-	Q_FOREACH (ItemBase * part, toSortedItembases(m_pcbGraphicsView->scene()->items())) {
+	QList<ItemBase *> pcbList;
+	m_pcbGraphicsView->collectParts(pcbList);
+	Q_FOREACH (ItemBase * part, pcbList) {
 		if (part->viewLayerID() == ViewLayer::ViewLayerID::Silkscreen0) continue;
 		if (part->viewLayerID() == ViewLayer::ViewLayerID::Silkscreen1) continue;
 		if (part->viewLayerID() == ViewLayer::ViewLayerID::Board) continue;
@@ -3446,13 +3450,15 @@ void MainWindow::routingCheckSlot() {
 			pcbTitle2ItemHash.insert(part->instanceTitle(), part);
 		}
 	}
-	Q_FOREACH (ItemBase* schPart, toSortedItembases(m_schematicGraphicsView->scene()->items())) {
+	QList<ItemBase *> schList;
+	m_schematicGraphicsView->collectParts(schList);
+	Q_FOREACH (ItemBase* schPart, schList) {
 		if (dynamic_cast<NetLabel *>(schPart) != nullptr) continue;
 		if (schPart->viewLayerID() == ViewLayer::ViewLayerID::SchematicText) continue;
 		ItemBase * bbPart = bbTitle2ItemHash.value(schPart->instanceTitle());
 		ItemBase * pcbPart = pcbTitle2ItemHash.value(schPart->instanceTitle());
 		if (bbPart != nullptr) {
-			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItemsSorted()) {
+			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
 				ConnectorItem * bbConnectorItem = bbPart->findConnectorItemWithSharedID(schConnectorItem->connectorSharedID());
 				if (bbConnectorItem != nullptr) {
 					QSet<QString> schSet = getItemConnectorSet(schConnectorItem);
@@ -3467,8 +3473,8 @@ void MainWindow::routingCheckSlot() {
 			}
 		}
 		if (pcbPart != nullptr) {
-			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItemsSorted()) {
-				Q_FOREACH (ConnectorItem * pcbConnectorItem, pcbPart->cachedConnectorItemsSorted()) {
+			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
+				Q_FOREACH (ConnectorItem * pcbConnectorItem, pcbPart->cachedConnectorItems()) {
 					if (pcbConnectorItem->connectorSharedID() != schConnectorItem->connectorSharedID()) continue;
 					if (pcbConnectorItem != nullptr) {
 						QSet<QString> schSet = getItemConnectorSet(schConnectorItem);

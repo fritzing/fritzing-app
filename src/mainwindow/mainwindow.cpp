@@ -3394,12 +3394,14 @@ void MainWindow::postKeyEvent(const QString & serializedKeys) {
 
 QSet<QString> MainWindow::getItemConnectorSet(ConnectorItem * connectorItem) {
 	QSet<QString> set;
+	QRegularExpression re("^(AM|VM|OM)\\d+");
 	Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItemsSorted()) {
-		VirtualWire * virtualWire = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
-		if (virtualWire == nullptr) {
-			QString idString = toConnectorItem->attachedToInstanceTitle() + ":" + toConnectorItem->connectorSharedID();
-			set.insert(idString);
-		}
+		ItemBase * attachedToItem = toConnectorItem->attachedTo();
+		VirtualWire * virtualWire = qobject_cast<VirtualWire *>(attachedToItem);
+		if (virtualWire != nullptr) continue;
+		if (re.match(attachedToItem->instanceTitle()).hasMatch()) continue; // Ignore Multimeter. It has no pcb connections.
+		QString idString = toConnectorItem->attachedToInstanceTitle() + ":" + toConnectorItem->connectorSharedID();
+		set.insert(idString);
 	}
 	return set;
 }

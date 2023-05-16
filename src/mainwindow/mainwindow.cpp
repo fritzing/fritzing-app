@@ -3421,16 +3421,12 @@ QList<ItemBase *> MainWindow::toSortedItembases(const QList<QGraphicsItem *> & g
 
 void MainWindow::routingCheckSlot() {
 	bool foundError = false;
-	QHash<QString, ItemBase *> bbTitle2ItemHash;
-	QHash<QString, ItemBase *> pcbTitle2ItemHash;
+	QHash<qint64, ItemBase *> bbID2ItemHash;
+	QHash<qint64, ItemBase *> pcbID2ItemHash;
 	QList<ItemBase *> bbList;
 	m_breadboardGraphicsView->collectParts(bbList);
 	Q_FOREACH (ItemBase * part, bbList) {
-		if (bbTitle2ItemHash.contains(part->instanceTitle())) {
-			ItemBase * firstPart = bbTitle2ItemHash.value(part->instanceTitle());
-			DebugDialog::debug(QString("!!!!!!!!!!Duplicate breadboard part found. title: %1 id1: %2 id2: %3 moduleID1: %4 moduleID2: %5 viewIDname: 1: %6 2: %7 viewLayerIDs: 1: %8 2: %9").arg(part->instanceTitle()).arg(firstPart->id()).arg(part->id()).arg(firstPart->moduleID()).arg(part->moduleID()).arg(firstPart->viewIDName()).arg(part->viewIDName()).arg(firstPart->viewLayerID()).arg(part->viewLayerID()));
-		}
-		bbTitle2ItemHash.insert(part->instanceTitle(), part);
+		bbID2ItemHash.insert(part->id(), part);
 	}
 
 	QList<ItemBase *> pcbList;
@@ -3440,23 +3436,16 @@ void MainWindow::routingCheckSlot() {
 		if (part->viewLayerID() == ViewLayer::ViewLayerID::Silkscreen1) continue;
 		if (part->viewLayerID() == ViewLayer::ViewLayerID::Board) continue;
 
-		if (pcbTitle2ItemHash.contains(part->instanceTitle())) {
-			ItemBase * firstPart = pcbTitle2ItemHash.value(part->instanceTitle());
-
-			if (part->id() < pcbTitle2ItemHash.value(part->instanceTitle())->id()) {
-				pcbTitle2ItemHash.insert(part->instanceTitle(), part);
-			}
-		} else {
-			pcbTitle2ItemHash.insert(part->instanceTitle(), part);
-		}
+		pcbID2ItemHash.insert(part->id(), part);
 	}
+
 	QList<ItemBase *> schList;
 	m_schematicGraphicsView->collectParts(schList);
 	Q_FOREACH (ItemBase* schPart, schList) {
 		if (dynamic_cast<NetLabel *>(schPart) != nullptr) continue;
 		if (schPart->viewLayerID() == ViewLayer::ViewLayerID::SchematicText) continue;
-		ItemBase * bbPart = bbTitle2ItemHash.value(schPart->instanceTitle());
-		ItemBase * pcbPart = pcbTitle2ItemHash.value(schPart->instanceTitle());
+		ItemBase * bbPart = bbID2ItemHash.value(schPart->id());
+		ItemBase * pcbPart = pcbID2ItemHash.value(schPart->id());
 		if (bbPart != nullptr) {
 			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
 				ConnectorItem * bbConnectorItem = bbPart->findConnectorItemWithSharedID(schConnectorItem->connectorSharedID());

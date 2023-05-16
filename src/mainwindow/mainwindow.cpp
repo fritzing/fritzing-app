@@ -3448,15 +3448,17 @@ void MainWindow::routingCheckSlot() {
 		ItemBase * pcbPart = pcbID2ItemHash.value(schPart->id());
 		if (bbPart != nullptr) {
 			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
-				ConnectorItem * bbConnectorItem = bbPart->findConnectorItemWithSharedID(schConnectorItem->connectorSharedID());
-				if (bbConnectorItem != nullptr) {
-					QSet<QString> schSet = getItemConnectorSet(schConnectorItem);
-					QSet<QString> bbSet = getItemConnectorSet(bbConnectorItem);
-					if (schSet != bbSet) {
-						QString schSetString = TextUtils::setToString(schSet);
-						QString bbSetString = TextUtils::setToString(bbSet);
-						DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 bb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(bbSetString));
-						foundError = true;
+				Q_FOREACH (ConnectorItem * bbConnectorItem, bbPart->cachedConnectorItems()) {
+					if (bbConnectorItem->connectorSharedID() != schConnectorItem->connectorSharedID()) continue;
+					if (bbConnectorItem != nullptr) {
+						QSet<QString> schSet = getItemConnectorSet(schConnectorItem);
+						QSet<QString> bbSet = getItemConnectorSet(bbConnectorItem);
+						if (schSet != bbSet) {
+							QString schSetString = TextUtils::setToString(schSet);
+							QString bbSetString = TextUtils::setToString(bbSet);
+							DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 bb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(bbSetString));
+							foundError = true;
+						}
 					}
 				}
 			}

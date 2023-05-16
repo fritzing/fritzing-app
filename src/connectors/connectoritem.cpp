@@ -973,6 +973,14 @@ const QList< QPointer<ConnectorItem> > & ConnectorItem::connectedToItems() {
 	return m_connectedTo;
 }
 
+QList< QPointer<ConnectorItem> > ConnectorItem::connectedToItemsSorted() {
+	QList< QPointer<ConnectorItem> > connectedTo = m_connectedTo;
+	std::sort(connectedTo.begin(), connectedTo.end(), [](ConnectorItem * c1, ConnectorItem * c2) {
+		return (c1->attachedToInstanceTitle() + c1->connectorSharedID()) < (c2->attachedToInstanceTitle() + c2->connectorSharedID());
+	});
+	return connectedTo;
+}
+
 void ConnectorItem::setHidden(bool hide) {
 	m_hidden = hide;
 

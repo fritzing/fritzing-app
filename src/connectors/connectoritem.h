@@ -69,6 +69,7 @@ public:
 	QPointF sceneAdjustedTerminalPoint(ConnectorItem * anchor);
 	bool connectedTo(ConnectorItem *);
 	const QList< QPointer<ConnectorItem> > & connectedToItems();
+	QList< QPointer<ConnectorItem> > connectedToItemsSorted();
 	void setHidden(bool hidden);
 	void setInactive(bool inactivate);
 	ConnectorItem * overConnectorItem();

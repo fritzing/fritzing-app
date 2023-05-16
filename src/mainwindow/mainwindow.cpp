@@ -3404,6 +3404,18 @@ QSet<QString> MainWindow::getItemConnectorSet(ConnectorItem * connectorItem) {
 	return set;
 }
 
+QList<ItemBase *> MainWindow::toSortedItembases(const QList<QGraphicsItem *> & graphicsItems) {
+	QList<ItemBase *> itembases;
+	foreach (QGraphicsItem* item, graphicsItems) {
+		ItemBase * part = dynamic_cast<ItemBase *>(item);
+		if (!part) continue;
+		itembases.append(part);
+	}
+	std::sort(itembases.begin(), itembases.end(), [](ItemBase * b1, ItemBase * b2) {
+	    return b1->id() < b2->id();
+	});
+}
+
 void MainWindow::routingCheckSlot() {
 	bool foundError = false;
 	QHash<QString, ItemBase *> bbTitle2ItemHash;

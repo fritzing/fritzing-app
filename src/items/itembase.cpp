@@ -1969,6 +1969,13 @@ const QList<ConnectorItem *> & ItemBase::cachedConnectorItems()
 	return m_cachedConnectorItems;
 }
 
+const QList<ConnectorItem *> ItemBase::cachedConnectorItemsSorted()
+{
+	QList<ConnectorItem *> connectorItems = cachedConnectorItems();
+	std::sort(connectorItems.begin(), connectorItems.end(), [](ConnectorItem * c1, ConnectorItem * c2) { return c1->connectorSharedID() < c2->connectorSharedID();});
+	return connectorItems;
+}
+
 const QList<ConnectorItem *> & ItemBase::cachedConnectorItemsConst() const
 {
 	return m_cachedConnectorItems;

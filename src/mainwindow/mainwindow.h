@@ -646,6 +646,7 @@ protected:
 
 	bool hasCopperFill();
 	QSet<QString> getItemConnectorSet(ConnectorItem * connectorItem);
+	QList<ItemBase *> toSortedItembases(const QList<QGraphicsItem *> & graphicsItems);
 
 protected:
 	static void removeActionsStartingAt(QMenu *menu, int start=0);

@@ -220,6 +220,7 @@ public:
 	void clearConnectorItemCache();
 	const QList<ConnectorItem *> & cachedConnectorItems();
 	const QList<ConnectorItem *> & cachedConnectorItemsConst() const;
+	const QList<ConnectorItem *> cachedConnectorItemsSorted();
 	bool inHover();
 	virtual QRectF boundingRectWithoutLegs() const;
 	QRectF boundingRect() const;

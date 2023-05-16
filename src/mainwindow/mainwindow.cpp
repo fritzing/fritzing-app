@@ -3500,13 +3500,11 @@ void MainWindow::routingCheckSlot() {
 			}
 		}
 	}
-	if (foundError) {
-		QColor newColor = QColor("red");
-		m_breadboardGraphicsView->setBackgroundColor(newColor, false);
-		m_schematicGraphicsView->setBackgroundColor(newColor, false);
-	} else {
-		QColor newColor = QColor("white");
-		m_breadboardGraphicsView->setBackgroundColor(newColor, false);
-		m_schematicGraphicsView->setBackgroundColor(newColor, false);
-	}
+
+
+	QColor newColor = foundError ? QColor("red") : QColor("white");
+	m_breadboardGraphicsView->setBackgroundColor(newColor, false);
+	m_schematicGraphicsView->setBackgroundColor(newColor, false);
+	m_pcbGraphicsView->setBackgroundColor(newColor, false);
+
 }

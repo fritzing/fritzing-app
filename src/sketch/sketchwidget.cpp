@@ -7583,21 +7583,23 @@ void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
 		painter->restore();
 	}
 
+
 	if (m_showGrid) {
 		double gridSize = m_gridSizeInches * GraphicsUtils::SVGDPI;
 		int intGridSize = static_cast<int>(gridSize * 10000);
-		if (intGridSize > 0) {
+
+		if (intGridSize > 0 && (rect.width() / gridSize < 1024) && (rect.height() / gridSize < 1024)) {
 			double left = static_cast<int>(rect.left() * 10000) - (static_cast<int>(rect.left() * 10000) % intGridSize);
 			left /= 10000;
 			double top = static_cast<int>(rect.top() * 10000) - (static_cast<int>(rect.top() * 10000) % intGridSize);
 			top /= 10000;
 
-			QVarLengthArray<QLineF, 100> linesX;
+			QVarLengthArray<QLineF, 256> linesX;
 			for (double x = left; x < rect.right(); x += gridSize) {
 				linesX.append(QLineF(x, rect.top(), x, rect.bottom()));
 			}
 
-			QVarLengthArray<QLineF, 100> linesY;
+			QVarLengthArray<QLineF, 256> linesY;
 			for (double  y = top; y < rect.bottom(); y += gridSize) {
 				linesY.append(QLineF(rect.left(), y, rect.right(), y));
 			}

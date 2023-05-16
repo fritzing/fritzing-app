@@ -2065,3 +2065,11 @@ QString TextUtils::setToString(const QSet<QString> & set) {
 	}
 	return setString;
 }
+
+QString TextUtils::setOfSetsToString(const QSet<QSet<QString>> & setOfSets) {
+	QString setOfSetsString;
+	Q_FOREACH(QSet<QString> set, setOfSets) {
+		setOfSetsString += setToString(set) + "\n";
+	}
+	return setOfSetsString;
+}

@@ -133,6 +133,7 @@ public:
 		return std::nullopt;
 	}
 	static QString setToString(const QSet<QString> & set);
+	static QString setOfSetsToString(const QSet<QSet<QString>> & setOfSets);
 
 public:
 	static const QRegularExpression FindWhitespace;

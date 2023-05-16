@@ -3414,6 +3414,7 @@ QList<ItemBase *> MainWindow::toSortedItembases(const QList<QGraphicsItem *> & g
 	std::sort(itembases.begin(), itembases.end(), [](ItemBase * b1, ItemBase * b2) {
 	    return b1->id() < b2->id();
 	});
+	return itembases;
 }
 
 void MainWindow::routingCheckSlot() {

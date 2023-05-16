@@ -3427,6 +3427,18 @@ void MainWindow::routingCheckSlot() {
 	m_breadboardGraphicsView->collectPartsForCheck(bbList);
 	Q_FOREACH (ItemBase * part, bbList) {
 		bbID2ItemHash.insert(part->id(), part);
+//						QString("!!!!!! Duplicate breadboard part found. title:"
+//								"%1 id1: %2 id2: %3 moduleID1: %4 moduleID2: %5 "
+//								"viewIDname: 1: %6 2: %7 viewLayerIDs: 1: %8 2: %9")
+//						.arg(part->instanceTitle())
+//						.arg(firstPart->id())
+//						.arg(part->id())
+//						.arg(firstPart->moduleID())
+//						.arg(part->moduleID())
+//						.arg(firstPart->viewIDName())
+//						.arg(part->viewIDName())
+//						.arg(firstPart->viewLayerID())
+//						.arg(part->viewLayerID()));
 	}
 
 	QList<ItemBase *> pcbList;
@@ -3460,7 +3472,11 @@ void MainWindow::routingCheckSlot() {
 						if (schSet != bbSet) {
 							QString schSetString = TextUtils::setToString(schSet);
 							QString bbSetString = TextUtils::setToString(bbSet);
-							DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 bb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(bbSetString));
+							DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. Schema{%3} BB{%4}").arg(
+										schConnectorItem->connectorSharedID(),
+										schPart->instanceTitle(),
+										schSetString,
+										bbSetString));
 							foundError = true;
 						}
 					}
@@ -3491,7 +3507,11 @@ void MainWindow::routingCheckSlot() {
 							if (nonWireError) {
 								QString schSetString = TextUtils::setToString(schSet);
 								QString pcbSetString = TextUtils::setToString(pcbSet);
-								DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. sch set: %3 pcb set: %4").arg(schConnectorItem->connectorSharedID()).arg(schPart->instanceTitle()).arg(schSetString).arg(pcbSetString));
+								DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. Schema{%3} PCB{%4}").arg(
+												schConnectorItem->connectorSharedID(),
+												schPart->instanceTitle(),
+												schSetString,
+												pcbSetString));
 								foundError = true;
 							}
 						}

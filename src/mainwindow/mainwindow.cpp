@@ -3438,10 +3438,8 @@ void MainWindow::routingCheckSlot() {
 
 		if (pcbTitle2ItemHash.contains(part->instanceTitle())) {
 			ItemBase * firstPart = pcbTitle2ItemHash.value(part->instanceTitle());
-			DebugDialog::debug(QString("!!!!!!!!!!Duplicate pcb found. title: %1 id1: %2 id2: %3 moduleID1: %4 moduleID2: %5 viewIDname: 1: %6 2: %7 viewLayerIDs: 1: %8 2: %9 visible: 1: %10 2: %11 # connectorItems: 1: %12 2: %13").arg(part->instanceTitle()).arg(firstPart->id()).arg(part->id()).arg(firstPart->moduleID()).arg(part->moduleID()).arg(firstPart->viewIDName()).arg(part->viewIDName()).arg(firstPart->viewLayerID()).arg(part->viewLayerID()).arg(firstPart->isVisible()).arg(part->isVisible()).arg(firstPart->cachedConnectorItems().size()).arg(part->cachedConnectorItems().size()));
 
 			if (part->id() < pcbTitle2ItemHash.value(part->instanceTitle())->id()) {
-				DebugDialog::debug(QString("!!!!!!!!!!Replacing duplicate pcb. title: %1 id1: %2 id2: %3 moduleID1: %4 moduleID2: %5 viewIDname: 1: %6 2: %7 viewLayerIDs: 1: %8 2: %9 visible: 1: %10 2: %11").arg(part->instanceTitle()).arg(firstPart->id()).arg(part->id()).arg(firstPart->moduleID()).arg(part->moduleID()).arg(firstPart->viewIDName()).arg(part->viewIDName()).arg(firstPart->viewLayerID()).arg(part->viewLayerID()).arg(firstPart->isVisible()).arg(part->isVisible()));
 				pcbTitle2ItemHash.insert(part->instanceTitle(), part);
 			}
 		} else {
@@ -3454,7 +3452,6 @@ void MainWindow::routingCheckSlot() {
 		ItemBase * bbPart = bbTitle2ItemHash.value(schPart->instanceTitle());
 		ItemBase * pcbPart = pcbTitle2ItemHash.value(schPart->instanceTitle());
 		if (bbPart != nullptr) {
-			DebugDialog::debug(QString("sch title: %1 sch id: %2 bb id: %3").arg(schPart->instanceTitle()).arg(schPart->id()).arg(bbPart->id()));
 			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItemsSorted()) {
 				ConnectorItem * bbConnectorItem = bbPart->findConnectorItemWithSharedID(schConnectorItem->connectorSharedID());
 				if (bbConnectorItem != nullptr) {
@@ -3470,7 +3467,6 @@ void MainWindow::routingCheckSlot() {
 			}
 		}
 		if (pcbPart != nullptr) {
-			DebugDialog::debug(QString("sch title: %1 sch id: %2 pcb: id %3").arg(schPart->instanceTitle()).arg(schPart->id()).arg(pcbPart->id()));
 			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItemsSorted()) {
 				Q_FOREACH (ConnectorItem * pcbConnectorItem, pcbPart->cachedConnectorItemsSorted()) {
 					if (pcbConnectorItem->connectorSharedID() != schConnectorItem->connectorSharedID()) continue;

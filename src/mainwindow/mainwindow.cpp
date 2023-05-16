@@ -3424,13 +3424,13 @@ void MainWindow::routingCheckSlot() {
 	QHash<qint64, ItemBase *> bbID2ItemHash;
 	QHash<qint64, ItemBase *> pcbID2ItemHash;
 	QList<ItemBase *> bbList;
-	m_breadboardGraphicsView->collectParts(bbList);
+	m_breadboardGraphicsView->collectPartsForCheck(bbList);
 	Q_FOREACH (ItemBase * part, bbList) {
 		bbID2ItemHash.insert(part->id(), part);
 	}
 
 	QList<ItemBase *> pcbList;
-	m_pcbGraphicsView->collectParts(pcbList);
+	m_pcbGraphicsView->collectPartsForCheck(pcbList);
 	Q_FOREACH (ItemBase * part, pcbList) {
 		if (part->viewLayerID() == ViewLayer::ViewLayerID::Silkscreen0) continue;
 		if (part->viewLayerID() == ViewLayer::ViewLayerID::Silkscreen1) continue;
@@ -3440,7 +3440,7 @@ void MainWindow::routingCheckSlot() {
 	}
 
 	QList<ItemBase *> schList;
-	m_schematicGraphicsView->collectParts(schList);
+	m_schematicGraphicsView->collectPartsForCheck(schList);
 	Q_FOREACH (ItemBase* schPart, schList) {
 		if (dynamic_cast<NetLabel *>(schPart) != nullptr) continue;
 		if (schPart->viewLayerID() == ViewLayer::ViewLayerID::SchematicText) continue;

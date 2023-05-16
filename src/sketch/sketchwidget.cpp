@@ -7259,6 +7259,16 @@ void SketchWidget::collectParts(QList<ItemBase *> & partList) {
 	}
 }
 
+void SketchWidget::collectPartsForCheck(QList<ItemBase *> & partList) {
+	Q_FOREACH (QGraphicsItem * item, scene()->items()) {
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
+		if (!itemBase) continue;
+		if (itemBase->layerKinChief() != itemBase) continue;
+
+		partList.append(itemBase);
+	}
+}
+
 void SketchWidget::movePartLabelForCommand(long itemID, QPointF newPos, QPointF newOffset)
 {
 	ItemBase * item = findItem(itemID);

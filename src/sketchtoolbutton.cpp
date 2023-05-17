@@ -52,16 +52,22 @@ SketchToolButton::SketchToolButton(const QString &imageName, QWidget *parent, QL
 	SketchToolButton::setupIcons(imageName);
 
 	auto *menu = new QMenu(this);
-	for(int i=0; i < menuActions.size(); i++) {
-		QAction* act = menuActions[i];
-		menu->addAction(act);
-		if(i==0) {
-			setDefaultAction(act);
+	for(QAction* act : menuActions) {
+		if(act != nullptr) {
+			menu->addAction(act);
+		} else {
+			DebugDialog::debug(QString("Refusing to add null action (%1)").arg(imageName));
 		}
 	}
-	setMenu(menu);
-	connect(menu,SIGNAL(aboutToHide()),this,SLOT(setEnabledIconAux()));
-	setPopupMode(QToolButton::MenuButtonPopup);
+	if(!menuActions.isEmpty() && menuActions.first() != nullptr) {
+		setDefaultAction(menuActions.first());
+	}
+
+	if (!menu->isEmpty()) {
+		setMenu(menu);
+		connect(menu,SIGNAL(aboutToHide()),this,SLOT(setEnabledIconAux()));
+		setPopupMode(QToolButton::MenuButtonPopup);
+	}
 }
 
 void SketchToolButton::setEnabledIconAux() {

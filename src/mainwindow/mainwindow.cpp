@@ -3525,6 +3525,8 @@ void MainWindow::routingCheckSlot() {
 	QColor newColor = foundError ? QColor("red") : QColor("white");
 	m_breadboardGraphicsView->setBackgroundColor(newColor, false);
 	m_schematicGraphicsView->setBackgroundColor(newColor, false);
-	m_pcbGraphicsView->setBackgroundColor(newColor, false);
+	if (foundError) {
+		m_pcbGraphicsView->setBackgroundColor(newColor, false);
+	}
 
 }

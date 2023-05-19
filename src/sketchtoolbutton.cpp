@@ -26,7 +26,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QAction>
 #include <QActionEvent>
 #include <QMenu>
-#include <QPaintEngine>
 
 SketchToolButton::SketchToolButton(const QString &imageName, QWidget *parent, QAction* defaultAction)
 	: QToolButton(parent)

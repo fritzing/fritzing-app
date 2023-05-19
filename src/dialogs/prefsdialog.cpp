@@ -177,20 +177,18 @@ QWidget * PrefsDialog::createZoomerForm() {
 	zhlayout->setSpacing(SPACING);
 
 	auto * frame = new QFrame();
-	frame->setFixedWidth(FORMLABELWIDTH);
+	frame->setFixedWidth(FORMLABELWIDTH * 1.4);
 
-	auto * vLayout = new QVBoxLayout();
+	auto * vLayout = new QVBoxLayout(frame);
 	vLayout->setSpacing(0);
 	vLayout->setContentsMargins(0, 0, 0, 0);
 
-	for (auto & i : m_wheelLabel) {
-		i = new QLabel();
-		vLayout->addWidget(i);
-	}
-
+	m_wheelLabel = new QLabel(frame);
+	m_wheelLabel->setWordWrap(true);
 	updateWheelText();
 
-	frame->setLayout(vLayout);
+	vLayout->addWidget(m_wheelLabel);
+
 	zhlayout->addWidget(frame);
 
 	auto * pushButton = new QPushButton(tr("Change Wheel Behavior"), this);
@@ -562,17 +560,32 @@ void PrefsDialog::updateWheelText() {
 	switch((ZoomableGraphicsView::WheelMapping) m_wheelMapping) {
 	case ZoomableGraphicsView::ScrollPrimary:
 	default:
-		text = tr("no keys down = scroll\nshift key swaps scroll axis\nAlt or %1 key = zoom").arg(cKey);
+		text = tr("<b>Scroll priority</b><br/>") + tr("no keys down = scroll<br/><kbd>Shift</kbd> key swaps scroll axis<br/><kbd>Alt</kbd> or <kbd>%1</kbd> = zoom").arg(cKey);
 		break;
 	case ZoomableGraphicsView::ZoomPrimary:
-		text = tr("no keys down = zoom\nAlt or %1 key = scroll\nshift key swaps scroll axis").arg(cKey);
+		text = tr("<b>Zoom priority</b><br/>") + tr("no keys down = zoom<br/><kbd>Alt</kbd> or <kbd>%1</kbd> = scroll<br/><kbd>Shift</kbd> key swaps scroll axis").arg(cKey);
 		break;
+	case ZoomableGraphicsView::Guess:
+		text = tr("<b>Guess</b><br/>") +
+				tr("Let Fritzing guess if the input is from a wheel or a touchpad. <kbd>Alt</kbd> or <kbd>%1</kbd> modify scrolling. <kbd>Shift</kbd> can modify the axis or the speed.").arg(cKey);
+		break;
+	case ZoomableGraphicsView::Pure:
+		text = tr("<b>Pure</b><br/>") + tr("Use system defaults to interpret the wheel input. Don't try anything fancy. Recommended when using a touchpad with pinch gestures.");
 	}
 
-	QStringList strings = text.split('\n');
-	for (int i = 0; i < 3; i++) {
-		m_wheelLabel[i]->setText(strings.at(i));
-	}
+	// border, border-radius and padding are not supported
+	QString css = "<style>"
+				  "kbd { "
+				  "    font-size:14; "
+				  "    color: black; "
+				  "    background-color: grey; "
+				  "    border: 1px solid black; "
+				  "    border-radius: 5px; "
+				  "    padding: 2px; "
+				  "}"
+				  "</style>";
+
+	m_wheelLabel->setText(css + text);
 }
 
 void PrefsDialog::toggleAutosave(bool checked) {

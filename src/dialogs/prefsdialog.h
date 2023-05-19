@@ -94,7 +94,7 @@ protected:
 	QPointer<QWidget> m_pcb;
 	QPointer<QWidget> m_code;
 	QPointer<QWidget> m_beta_features;
-	QPointer<QLabel> m_wheelLabel[3];
+	QPointer<QLabel> m_wheelLabel;
 	QPointer<QLabel> m_connectedColorLabel;
 	QPointer<QLabel> m_unconnectedColorLabel;
 	QList<Platform *> m_platforms;

@@ -530,14 +530,13 @@ void ConnectorItem::restoreColor(QList<ConnectorItem *> & visited)
 	foreach (ConnectorItem * connectorItem, connectorItems) {
 		if (connectorItem->isEverVisible()) {
 			if (connectorItem->attachedToItemType() != ModelPart::Wire) {
-				attachedTo.insert(connectorItem);
+				//For PCB pad stacks: Only add one connector to the attachedTo list (top or bottom copper)
+				if(!attachedTo.contains(connectorItem->getCrossLayerConnectorItem())) {
+					attachedTo.insert(connectorItem);
+				}
 			}
 		}
 	}
-
-	//In PCB view, there are two connectors on top of each other.
-	//This line removes the other one which is in the opposite layer.
-	attachedTo.remove(this->getCrossLayerConnectorItem());
 
 	foreach (ConnectorItem * connectorItem, connectorItems) {
 		if (connectorItem->isEverVisible()) {
@@ -559,7 +558,24 @@ void ConnectorItem::restoreColor(QList<ConnectorItem *> & visited)
 			}
 		}
 	}
-
+	if (this->attachedToViewID() == 3) {
+		DebugDialog::debug(QString("FAI restore color PCB equalPotential: %1 attachedTo: %2")
+			.arg(connectorItems.count())
+			.arg(attachedTo.count())
+		);
+		for(ConnectorItem * c : connectorItems)
+			DebugDialog::debug(QString("equalPotential conn, title: %1 %2 %3")
+				.arg(c->attachedToTitle())
+				.arg(c->attachedTo()->label())
+				.arg(c->attachedTo()->viewLayerID())
+			);
+		for(ConnectorItem * c : attachedTo)
+			DebugDialog::debug(QString("attachedTo conn, title: %1 %2 %3")
+				.arg(c->attachedToTitle())
+				.arg(c->attachedTo()->label())
+				.arg(c->attachedTo()->viewLayerID())
+			);
+	}
 
 	/*
 	DebugDialog::debug(QString("restore color dobus:%1 bccount:%2 docross:%3 cid:'%4' '%5' id:%6 '%7' vid:%8 vlid:%9 %10")

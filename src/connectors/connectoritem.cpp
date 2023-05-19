@@ -535,6 +535,10 @@ void ConnectorItem::restoreColor(QList<ConnectorItem *> & visited)
 		}
 	}
 
+	//In PCB view, there are two connectors on top of each other.
+	//This line removes the other one which is in the opposite layer.
+	attachedTo.remove(this->getCrossLayerConnectorItem());
+
 	foreach (ConnectorItem * connectorItem, connectorItems) {
 		if (connectorItem->isEverVisible()) {
 			//QString how;

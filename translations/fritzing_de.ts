@@ -7314,7 +7314,8 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <source>Parse error (1) at line %1, column %2:
 %3
 %4</source>
-        <translation>Der XML-Code für der Bauteil (1) %4 enthält einen Fehler bei Zeile %1, Spalte %2:
+        <translation>Der XML-Code für Bauteil %4
+enthält einen Fehler (1) bei Zeile %1, Spalte %2:
 %3</translation>
     </message>
     <message>
@@ -7348,7 +7349,8 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <source>Parse error (2) at line %1, column %2:
 %3
 %4</source>
-        <translation>Der XML-Code für der Teil (2) %4 enthält einen Fehler bei Zeile %1, Spalte %2:
+        <translation>Der XML-Code für Teil %4
+ enthält einen Fehler (2) bei Zeile %1, Spalte %2:
 %3</translation>
     </message>
     <message>
@@ -9187,7 +9189,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="69"/>
         <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
-        <translation type="unfinished">Fritzing speichert Dateien für benutzerdefinierte Teile, generierte Teile und für andere temporäre und langfristige Zwecke in einem &apos;lokalen Speicherordner&apos;. Auf Mac und Linux ist dies normalerweise ~/.config/Fritzing/. Unter Windows Vista und höher ist es etwa C:\Benutzer\[Benutzername]\Anwendungsdaten\Roaming\Fritzing\; unter Windows XP ist es etwa C:\Dokumente und Einstellungen\[Benutzername]\Anwendungsdaten\Fritzing\.</translation>
+        <translation>Fritzing speichert Dateien für benutzerdefinierte Teile, generierte Teile und für andere temporäre und langfristige Zwecke in einem &apos;lokalen Speicherordner&apos;. Auf Mac und Linux ist dies normalerweise ~/.config/Fritzing/. Unter Windows Vista und höher ist es etwa C:\Benutzer\[Benutzername]\Anwendungsdaten\Roaming\Fritzing\; unter Windows XP ist es etwa C:\Dokumente und Einstellungen\[Benutzername]\Anwendungsdaten\Fritzing\.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="75"/>
@@ -9237,7 +9239,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="90"/>
         <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
-        <translation>Wenn Sie Schwierigkeiten haben, ein Teil oder einen Draht (Segment) auszuwählen, versuchen Sie, das Teil, das im Weg ist, auszuwählen und es nach hinten zu schicken: Verwenden Sie die Funktionen &quot;Nach vorne bringen&quot;  und &quot;Nach hinten senden&quot; im Menü Teil oder im Kontextmenü (Rechtsklickmenü).</translation>
+        <translation>Wenn Sie Schwierigkeiten haben, ein Teil oder einen Draht (Segment) auszuwählen, versuchen Sie, das Teil, das im Weg ist, auszuwählen und es nach hinten zu schicken: Verwenden Sie die Funktionen &quot;Nach vorne bringen&quot; und &quot;Nach hinten senden&quot; im Menü Teil oder im Kontextmenü (Rechtsklickmenü).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="91"/>

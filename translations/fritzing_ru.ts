@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>, Siti Aishah Abdul Raouf</source>
-        <translation type="unfinished"></translation>
+        <translation>Сити Айша Абдул Рауф</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="155"/>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing стал возможным благодаря финансированию MWFK Brandenburg, спонсорской поддержке отдела дизайна Баухаус-Университета Веймара, IxDS, анонимного донора, Parallax, Picaxe, Sparkfun, от PCB Fab AISLER и каждой платной загрузке.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="164"/>
@@ -357,7 +357,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="308"/>
         <source>Via size</source>
-        <translation type="unfinished"></translation>
+        <translation>с помощью размера</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="97"/>
@@ -833,7 +833,9 @@ Use the file?</source>
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите из выпадающего списка или введите значение %1
+Диапазон: [%2 - %3] %4
+Фон: Зеленый = нормально, Красный = неправильное значение, Серый = текущее значение</translation>
     </message>
 </context>
 <context>
@@ -1371,7 +1373,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.cpp" line="33"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть в браузере</translation>
     </message>
 </context>
 <context>
@@ -1658,7 +1660,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="281"/>
         <source>SPICE</source>
-        <translation type="unfinished"></translation>
+        <translation>SPICE</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="437"/>
@@ -1668,7 +1670,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="716"/>
         <source>No SPICE information. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация о SPICE отсутствует. Эта деталь не будет смоделирована.</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="762"/>
@@ -1922,12 +1924,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="262"/>
         <source>mn</source>
-        <translation type="unfinished"></translation>
+        <translation>мн</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="263"/>
         <source>mpn</source>
-        <translation type="unfinished"></translation>
+        <translation>MPN</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="269"/>
@@ -2252,12 +2254,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1037"/>
         <source>Simulate</source>
-        <translation type="unfinished"></translation>
+        <translation>Имитация</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1046"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановить</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1073"/>
@@ -3101,7 +3103,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1137"/>
         <source>Start Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Запуск симулятора</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1159"/>
@@ -3836,7 +3838,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="910"/>
         <source>Edit the application&apos;s preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить настройки приложения</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="951"/>
@@ -3866,17 +3868,17 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1138"/>
         <source>Starts the simulator (DC analysis)</source>
-        <translation type="unfinished"></translation>
+        <translation>Запускает симулятор (анализ постоянного тока)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1141"/>
         <source>Stop Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановить симулятор</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1142"/>
         <source>Stops the simulator and removes simulator data</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановка симулятора и удаление данных симулятора</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1188"/>
@@ -5514,12 +5516,12 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <source>Parts Editor Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка редактора деталей</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <source>The file %2 with prefix %1 was not saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл %2 с префиксом %1 не сохранен.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/partseditor/pemainwindow.cpp" line="3811"/>
@@ -6457,7 +6459,7 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="189"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="514"/>
@@ -6698,7 +6700,7 @@ Note: this warning will not be repeated during this session.</source>
         <location filename="../src/dialogs/prefsdialog.cpp" line="481"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="497"/>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="279"/>
@@ -6709,7 +6711,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="85"/>
         <source>Beta Features</source>
-        <translation type="unfinished"></translation>
+        <translation>Бета-функции</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="318"/>
@@ -6749,17 +6751,17 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="436"/>
         <source>Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="441"/>
         <source>The simulator is a beta feature and has not been tested extensively. This means that there are still bugs that need to be fixed and can cause to crash Fritzing. Backup your data and do not use it for production.</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор находится в стадии бета-тестирования и не подвергался тщательному тестированию. Это означает, что все еще есть ошибки, которые необходимо исправить и которые могут привести к сбою Fritzing. Сделайте резервную копию ваших данных и не используйте их для производства.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="448"/>
         <source>Enable simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить симулятор</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
@@ -7098,7 +7100,7 @@ shift key swaps scroll axis</source>
     <message>
         <location filename="../src/program/programwindow.cpp" line="327"/>
         <source>Edit</source>
-        <translation type="unfinished">Правка</translation>
+        <translation>Правка</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="340"/>
@@ -7693,7 +7695,7 @@ Fritzing по-прежнему работает, но вы не сможете �
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="55"/>
         <source>Measuring Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Измерительные инструменты</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="215"/>
@@ -8375,7 +8377,7 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/dialogs/recoverydialog.cpp" line="97"/>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed up are displayed. If the file was saved, that date and time are also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;&lt;b&gt;Произошёл сбой Fritzing, но некоторые изменения в следующих файлах могут быть восстановлены.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Отображается дата и время резервного копирования каждого файла. Если файл был сохранён, эта дата и время также указаны для сравнения.&lt;/p&gt;&lt;p&gt;Исходные файлы всё ещё находятся на вашем диске, если они когда-либо были сохранены. Вы можете выбрать, следует ли перезаписать исходный файл после загрузки его файла восстановления.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Выберите файлы, которые следует восстановить, в списке ниже.&lt;/b&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;Возможно, произошел сбой Fritzing, но некоторые изменения в следующих файлах могут быть восстановлены.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Отображаются дата и время резервного копирования каждого файла. Если файл был сохранен, эта дата и время также указаны для сравнения.&lt;/p&gt;&lt;p&gt;Исходные файлы все еще находятся на вашем диске, если они когда-либо сохранялись. Вы можете выбрать, перезаписывать ли исходный файл после загрузки файла восстановления. &lt;/p&gt;&lt;p&gt;&lt;b&gt;Выберите любые файлы, которые вы хотите восстановить, из списка ниже.&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
@@ -8432,7 +8434,9 @@ is already there, we won&apos;t add it again, right?</source>
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите из выпадающего списка или введите значение %1
+Диапазон: [%2 - %3] %4
+Фон: Зеленый = нормально, Красный = неправильное значение, Серый = текущее значение</translation>
     </message>
     <message>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
@@ -8716,12 +8720,12 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <location filename="../src/simulation/simulator.cpp" line="251"/>
         <location filename="../src/simulation/simulator.cpp" line="331"/>
         <source>Simulator Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка симулятора</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="213"/>
         <source>An error occurred when starting the simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при запуске моделирования.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="252"/>
@@ -8730,7 +8734,8 @@ If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор выдал ошибку при загрузке нетлиста. Возможно какое-то поле SPICE неправильное, пожалуйста, проверьте их. Если части взяты из корзины моделирования, сообщите об ошибке на GitHub. Ошибки:
+</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="332"/>
@@ -8738,7 +8743,10 @@ Errors:
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>При попытке смоделировать эту схему симулятор выдал ошибку. Пожалуйста, проверьте проводку и повторите попытку. 
+
+Ошибки:
+</translation>
     </message>
 </context>
 <context>
@@ -9398,7 +9406,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="92"/>
         <source>Click on the mouse position indicator in the status bar (below) to switch the units between inch, mm and px.</source>
-        <translation type="unfinished">Нажмите на индикатор положения мыши в строке состояния (внизу), чтобы переключить единицы измерения с мм на пиксели.</translation>
+        <translation>Нажмите на индикатор положения мыши в строке состояния (внизу), чтобы переключить единицы измерения между дюймами, мм и px.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="96"/>

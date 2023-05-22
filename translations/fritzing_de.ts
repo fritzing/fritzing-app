@@ -20,7 +20,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="112"/>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
-        <translation>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </translation>
+        <translation>Prof. Reto Wettach, André Knörig, Myriel Milicevic, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="113"/>
@@ -50,7 +50,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="123"/>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
-        <translation>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </translation>
+        <translation>Jussi Ängeslevä, Massimo Banzi, Ayah Bdeir, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="124"/>
@@ -130,47 +130,47 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="167"/>
         <source>LGPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>LGPLv3</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="168"/>
         <source>GPLv2 with linking exception</source>
-        <translation type="unfinished"></translation>
+        <translation>GPLv2 with linking exception</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
         <source>Boost License 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Boost License 1.0</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="170"/>
         <source>Modified BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>Modified BSD License</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>BSD License</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="172"/>
         <source>PNG Reference Library License version 2</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG Reference Library License version 2</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>
         <source>Dual OpenSSL and SSLeay License</source>
-        <translation type="unfinished"></translation>
+        <translation>Dual OpenSSL and SSLeay License</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="174"/>
         <source>zlib License</source>
-        <translation type="unfinished"></translation>
+        <translation>zlib License</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>The following libraries are used by Fritzing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Die folgenden Bibliotheken werden von Fritzing verwendet:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="140"/>
@@ -210,7 +210,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="100"/>
         <source>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="118"/>
@@ -505,7 +505,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1025"/>
         <source>Copy to Sketch</source>
-        <translation>In Entwurf kopieren</translation>
+        <translation>In Skizze kopieren</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1026"/>
@@ -1960,7 +1960,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/items/itembase.cpp" line="1335"/>
         <source>file &apos;%1&apos; for title:&apos;%2&apos; and moduleID:&apos;%3&apos; not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei &apos;%1&apos; für Titel:&apos;%2&apos; und ModulID:&apos;%3&apos; nicht gefunden</translation>
     </message>
     <message>
         <source>file for %1 %2 not found</source>
@@ -2320,7 +2320,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1493"/>
         <source>unable to parse fzp in %1. line: %2 column: %3 error: %4</source>
-        <translation type="unfinished"></translation>
+        <translation>fzp in %1 kann nicht geparst werden. Zeile: %2 Spalte: %3 Fehler: %4</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1679"/>
@@ -2645,7 +2645,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="121"/>
         <source>IPC-D-356 File (*.ipc)</source>
-        <translation type="unfinished"></translation>
+        <translation>IPC-D-356 Datei (*.ipc)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="960"/>
@@ -3001,7 +3001,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="175"/>
         <source>;;Fritzing Unbundled Part (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>;;Fritzing unverpacktes Bauteil (*%1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="941"/>
@@ -3223,7 +3223,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1193"/>
         <source>&amp;Show Welcome</source>
-        <translation>Willkommen an&amp;zeigen</translation>
+        <translation>&amp;Willkommen anzeigen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1195"/>
@@ -6717,7 +6717,7 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
         <source>The simulator is now enabled by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Simulator ist nun standardmäßig aktiviert.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="555"/>
@@ -6782,42 +6782,42 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>&lt;b&gt;Scroll priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Scroll-Priorität&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>no keys down = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>keine Tasten gedrückt = Scrollen&lt;br/&gt;&lt;kbd&gt;Umschalttaste&lt;/kbd&gt; Taste wechselt die Scrollachse&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; oder &lt;kbd&gt;%1&lt;/kbd&gt; = Zoom</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>&lt;b&gt;Zoom priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Zoompriorität&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>no keys down = zoom&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis</source>
-        <translation type="unfinished"></translation>
+        <translation>keine Tasten gedrückt = Zoom&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; oder &lt;kbd&gt;%1&lt;/kbd&gt; = Scrollen&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; Taste wechselt Scroll-Achse</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="569"/>
         <source>&lt;b&gt;Guess&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Erraten:&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="570"/>
         <source>Let Fritzing guess if the input is from a wheel or a touchpad. &lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; modify scrolling. &lt;kbd&gt;Shift&lt;/kbd&gt; can modify the axis or the speed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lassen Sie Fritzing erraten, ob die Eingabe über ein Rad oder ein Touchpad erfolgt. &lt;kbd&gt;Alt&lt;/kbd&gt; oder &lt;kbd&gt;%1&lt;/kbd&gt; ändern den Bildlauf. &lt;kbd&gt;Shift&lt;/kbd&gt; kann die Achse oder die Geschwindigkeit ändern.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>&lt;b&gt;Pure&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Unmodifizert&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>Use system defaults to interpret the wheel input. Don&apos;t try anything fancy. Recommended when using a touchpad with pinch gestures.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwendet die Systemvorgaben zur Interpretation der Radeingabe, keine Experimente. Empfohlen bei Verwendung eines Touchpads mit Pinch-Gesten.</translation>
     </message>
     <message>
         <source>%1</source>
@@ -6871,19 +6871,21 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="439"/>
         <source>Gerber</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerber</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="443"/>
         <source>The gerber file generator will use six decimals precision instead of three.
 Some deprecated gerber commands are removed or replaced.
 We recommend enabling this. Only to avoid surprises with processes that are optimized for earlier Fritzing versions, this is currently off by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Gerberdateigenerator verwendet nun eine Genauigkeit von sechs statt drei Dezimalstellen.
+Einige veraltete Gerber-Befehle werden entfernt oder ersetzt.
+Wir empfehlen, dies zu aktivieren. Nur um Überraschungen bei Prozessen zu vermeiden, die für frühere Fritzing-Versionen optimiert sind, ist dies derzeit standardmäßig deaktiviert.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="452"/>
         <source>Enable gerber export improvements</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbesserungen beim Gerber-Export aktivieren</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="469"/>
@@ -8141,7 +8143,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="348"/>
         <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation>%1 Ebene: Kann nicht unter &apos;%2&apos; gespeichert werden;</translation>
+        <translation>%1 Ebene: Kann nicht unter &apos;%2&apos; gespeichert werden</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="871"/>
@@ -8847,12 +8849,12 @@ Fehler:
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>Simulator Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeitüberschreitung des Simulators</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>The spice simulator did not finish after %1 ms. Aborting simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Spice-Simulator wurde nach %1 ms nicht beendet. Abbruch der Simulation.</translation>
     </message>
     <message>
         <source>The simulator gave an error when loading the netlist. Probably some spice field is wrong, please, check them.
@@ -9344,7 +9346,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="83"/>
         <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
-        <translation>Wenn Sie ein Bauteil im Bauteil-Regal nicht finden können, ist das Generische IC Ihr Freund. Ziehen Sie es einfach auf Ihre Zeichnung und nutzen Sie die Widgets im Inspector, um aus 25 verschiedenen Durchsteck- und SMD-Gehäusen auszuwählen, die Pin-Beschriftung zu ändern und - bei DIPs und SIPs - die Anzahl der Pins zu ändern. Sie können auch die Pin-Namen mit dem Pin-Beschriftungs-Editor ändern.</translation>
+        <translation>Wenn Sie ein Bauteil im Bauteil-Regal nicht finden können, ist das generische IC Ihr Freund. Ziehen Sie es einfach auf Ihre Zeichnung und nutzen Sie die Widgets im Inspector, um aus 25 verschiedenen Durchsteck- und SMD-Gehäusen auszuwählen, die Pin-Beschriftung zu ändern und - bei DIPs und SIPs - die Anzahl der Pins zu ändern. Sie können auch die Pin-Namen mit dem Pin-Beschriftungs-Editor ändern.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="84"/>
@@ -9494,7 +9496,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="166"/>
         <source>When using the Fritzing Fab Service, if there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn Sie den Fritzing Fab Service nutzen und leere Bereiche auf der Leiterplatte haben, die nicht mit Kupfer gefüllt werden sollen, verwenden Sie das Kupferblocker-Teil. Dieses in der Größe veränderbare Teil maskiert die Kupferfüllung in dem von ihm abgedeckten Rechteck.</translation>
     </message>
     <message>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
@@ -9523,7 +9525,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="68"/>
         <source>The local storage folder is used for storing data that is specific to Fritzing, such as custom parts and settings, as well as temporary and long-term files that are created during the use of the software. On Linux systems, the default location for the Fritzing storage folder is usually ~/.config/Fritzing/. On Windows 11, the default location is typically C:\Users[user name]\AppData\Roaming\Fritzing, and on macOS Mojave or later, the default location is usually ~/Library/Application Support/Fritzing/.</source>
-        <translation type="unfinished"></translation>
+        <translation>Im lokalen Speicherordner werden Fritzing-spezifische Daten wie benutzerdefinierte Teile und Einstellungen sowie temporäre und langfristige Dateien, die während der Verwendung der Software erstellt werden, gespeichert. Auf Linux-Systemen ist der Standardspeicherort für den Fritzing-Speicherordner normalerweise ~/.config/Fritzing/. Unter Windows 11 ist der Standardspeicherort normalerweise C:\Benutzer[Benutzername]\AppData\Roaming\Fritzing, und unter macOS Mojave oder höher ist der Standardspeicherort normalerweise ~/Library/Application Support/Fritzing/.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="93"/>
@@ -9548,7 +9550,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="100"/>
         <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation>Um einem Draht oder einem biegbaren Bein in der Steckbrett- oder PCB-Ansicht eine Krümmung hinzuzufügen, ziehen Sie bei gedrückter Strg-Taste (Mac: Befehlstaste). Sie können in den Einstellungen festlegen, ob kurvige Drähte die Standardeinstellung sind.</translation>
+        <translation>Um einem Draht oder einem biegbaren Bein in der Steckbrett- oder PCB-Ansicht eine Krümmung hinzuzufügen, ziehen Sie bei gedrückter Strg-Taste (Mac: Befehlstaste). Sie können in den Einstellungen festlegen, ob kurvige Drähte die Standardeinstellung ist.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>

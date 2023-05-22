@@ -34,27 +34,27 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="114"/>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
-        <translation>Zach Eveland, Dirk van Oosterbosch, </translation>
+        <translation>Зак Эвеланд, Дирк ван Оостербош, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="115"/>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
-        <translation>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
+        <translation>Джонатан Коэн, Маркус Паэшке, Омер Йоша, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="116"/>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
-        <translation>Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
+        <translation>Трэвис Робертсон, Стефан Херманн, Брендан Хауэлл, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="117"/>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation>Mariano Crowe, Johannes Landstorfer, </translation>
+        <translation>Мариано Кроу, Йоханнес Ландсторфер, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="118"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
+        <translation>Дженни Чоудхури, Лайонел Мишель, Фабиан Альтхаус, Яннис Лейдель, </translation>
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
@@ -67,27 +67,27 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="124"/>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
-        <translation>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </translation>
+        <translation>Юсси Энгеслева, Массимо Банци, Ая Бдейр, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="125"/>
         <source>Durrell Bishop, David Cuartielles, Fabian Hemmert, </source>
-        <translation>Durrell Bishop, David Cuartielles, Fabian Hemmert, </translation>
+        <translation>Даррелл Бишоп, Дэвид Куартиэль, Фабиан Хеммерт, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
-        <translation>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </translation>
+        <translation>Геро Херкенрат, Джефф Хофс, Том Халберт, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="127"/>
         <source>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </source>
-        <translation>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </translation>
+        <translation>Том Иго, Ханс-Петер Кадель, Тилль Савелкоул, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="128"/>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation>Jan Sieber, Yaniv Steiner, Olaf Val, </translation>
+        <translation>Ян Зибер, Янив Штайнер, Олаф Валь, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="129"/>
@@ -112,12 +112,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="136"/>
         <source>Robert Lee</source>
-        <translation>Robert Lee</translation>
+        <translation>Роберт Ли</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>Hiroshi Suzuki</source>
-        <translation>Hiroshi Suzuki</translation>
+        <translation>Хироси Судзуки</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>

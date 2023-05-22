@@ -5652,12 +5652,12 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <source>Parts Editor Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка редактора деталей</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2361"/>
         <source>The file %2 with prefix %1 was not saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл %2 із префіксом %1 не збережено.</translation>
     </message>
     <message>
         <source>Unable to load image file &apos;%1&apos;: 
@@ -6460,7 +6460,7 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="189"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>Пошук...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="412"/>
@@ -6724,7 +6724,7 @@ Note: this warning will not be repeated during this session.</source>
         <location filename="../src/dialogs/prefsdialog.cpp" line="481"/>
         <location filename="../src/dialogs/prefsdialog.cpp" line="497"/>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="279"/>
@@ -6735,7 +6735,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="85"/>
         <source>Beta Features</source>
-        <translation type="unfinished"></translation>
+        <translation>Бета-функції</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="318"/>
@@ -6775,17 +6775,17 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="436"/>
         <source>Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="441"/>
         <source>The simulator is a beta feature and has not been tested extensively. This means that there are still bugs that need to be fixed and can cause to crash Fritzing. Backup your data and do not use it for production.</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор є бета-версією і ще не пройшов ретельного тестування. Це означає, що все ще існують помилки, які потрібно виправити і які можуть призвести до збою в роботі Fritzing. Створіть, будь ласка, резервні копії даних і не використовуйте їх у виробництві.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="448"/>
         <source>Enable simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнути симулятор</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
@@ -7140,7 +7140,7 @@ Shift = змінити вісь прокручування</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="327"/>
         <source>Edit</source>
-        <translation type="unfinished">Редагувати</translation>
+        <translation>Редагувати</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="340"/>
@@ -7491,7 +7491,7 @@ Shift = змінити вісь прокручування</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="55"/>
         <source>Measuring Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Вимірювальні інструменти</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="215"/>
@@ -8476,7 +8476,7 @@ Fritzing продовжує роботу, але ви не зможете змі
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть зі спадного меню або введіть значення %1 Діапазон: [%2 - %3] %4 Фон: зелений = добре, червоний = неправильне значення, сірий = поточне значення</translation>
     </message>
     <message>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
@@ -8760,12 +8760,12 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <location filename="../src/simulation/simulator.cpp" line="251"/>
         <location filename="../src/simulation/simulator.cpp" line="331"/>
         <source>Simulator Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка симулятора</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="213"/>
         <source>An error occurred when starting the simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час запуску моделювання сталася помилка.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="252"/>
@@ -8774,7 +8774,10 @@ If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор видав помилку під час завантаження списку мереж. Можливо, якісь поля SPICE неправильні, будь ласка, перевірте їх.
+ Якщо частини взяті з кошика симуляції, повідомте про помилку в GitHub.
+ Помилки:
+</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="332"/>
@@ -8782,7 +8785,10 @@ Errors:
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>При спробі змоделювати цю схему симулятор видав помилку. Будь ласка, перевірте підключення та повторіть спробу. 
+
+Помилки:
+</translation>
     </message>
 </context>
 <context>
@@ -9791,7 +9797,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/version/updatedialog.cpp" line="185"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Погодитись</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="213"/>

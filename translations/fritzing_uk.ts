@@ -142,42 +142,42 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="167"/>
         <source>LGPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>LGPLv3</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="168"/>
         <source>GPLv2 with linking exception</source>
-        <translation type="unfinished"></translation>
+        <translation>GPLv2 with linking exception</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
         <source>Boost License 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Boost License 1.0</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="170"/>
         <source>Modified BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>Modified BSD License</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>BSD License</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="172"/>
         <source>PNG Reference Library License version 2</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG Reference Library License version 2</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>
         <source>Dual OpenSSL and SSLeay License</source>
-        <translation type="unfinished"></translation>
+        <translation>Dual OpenSSL and SSLeay License</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="174"/>
         <source>zlib License</source>
-        <translation type="unfinished"></translation>
+        <translation>zlib License</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
@@ -222,7 +222,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="100"/>
         <source>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;b&gt;Авторське право %1 Fritzing GmbH&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="118"/>
@@ -2005,7 +2005,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="1335"/>
         <source>file &apos;%1&apos; for title:&apos;%2&apos; and moduleID:&apos;%3&apos; not found</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">файл &apos;%1&apos; для title:&apos;%2&apos; та moduleID:&apos;%3&apos; не знайдено</translation>
     </message>
     <message>
         <source>file for %1 %2 not found</source>
@@ -2340,7 +2340,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1493"/>
         <source>unable to parse fzp in %1. line: %2 column: %3 error: %4</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">не вдається розібрати fzp у %1. рядку: %2 стовпчику: %3 помилка: %4</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1679"/>
@@ -2622,12 +2622,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="120"/>
         <source>BoM CSV File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Файл CSV BoM (*.csv)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="121"/>
         <source>IPC-D-356 File (*.ipc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл IPC-D-356 (*.ipc)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="140"/>
@@ -2947,7 +2947,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1612"/>
         <source>Export IPC-D-356...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Експорт IPC-D-356...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
@@ -2958,7 +2958,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1697"/>
         <source>But the content was copied to the clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Але вміст було скопійовано в буфер обміну.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1695"/>
@@ -6853,7 +6853,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
         <source>The simulator is now enabled by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор тепер увімкнено за замовчуванням.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>

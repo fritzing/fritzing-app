@@ -846,7 +846,9 @@ Use the file?</source>
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <translation>Виберіть зі спадного меню або введіть значення %1
+
 Діапазон: [%2 - %3] %4
+
 Фон: зелений = добре, червоний = неправильне значення, сірий = поточне значення</translation>
     </message>
 </context>

@@ -757,15 +757,15 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <location filename="../src/items/resizableboard.cpp" line="440"/>
         <source>&lt;b&gt;The custom shape has no cutouts.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Розроблений обрис не містить вирізів.&lt;b&gt;</translation>
+        <translation>&lt;b&gt;Розроблений обрис не містить вирізів.&lt;/b&gt;</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/items/resizableboard.cpp" line="443"/>
         <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
         <translation>
-            <numerusform>&lt;/b&gt;Розроблений обрис містить %n виріз&lt;/b&gt;</numerusform>
-            <numerusform>&lt;/b&gt;Розроблений обрис містить %n вирізи&lt;/b&gt;</numerusform>
-            <numerusform>&lt;/b&gt;Розроблений обрис містить %n вирізів&lt;/b&gt;</numerusform>
+            <numerusform>&lt;b&gt;Розроблений обрис містить %n виріз&lt;/b&gt;</numerusform>
+            <numerusform>&lt;b&gt;Розроблений обрис містить %n вирізи&lt;/b&gt;</numerusform>
+            <numerusform>&lt;b&gt;Розроблений обрис містить %n вирізів&lt;/b&gt;</numerusform>
         </translation>
     </message>
     <message>
@@ -845,7 +845,9 @@ Use the file?</source>
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation>Виберіть зі спадного меню або введіть значення %1 Діапазон: [%2 - %3] %4 Фон: зелений = добре, червоний = неправильне значення, сірий = поточне значення</translation>
+        <translation>Виберіть зі спадного меню або введіть значення %1
+Діапазон: [%2 - %3] %4
+Фон: зелений = добре, червоний = неправильне значення, сірий = поточне значення</translation>
     </message>
 </context>
 <context>

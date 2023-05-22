@@ -220,7 +220,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="100"/>
         <source>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="134"/>
@@ -250,47 +250,47 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="167"/>
         <source>LGPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>LGPLv3</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="168"/>
         <source>GPLv2 with linking exception</source>
-        <translation type="unfinished"></translation>
+        <translation>GPLv2 avec exception de liaison</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
         <source>Boost License 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Licence Boost 1.0</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="170"/>
         <source>Modified BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licence BSD modifiée</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licence BSD</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="172"/>
         <source>PNG Reference Library License version 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Licence de la bibliothèque de référence PNG version 2</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>
         <source>Dual OpenSSL and SSLeay License</source>
-        <translation type="unfinished"></translation>
+        <translation>Double licence OpenSSL et SSLeay</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="174"/>
         <source>zlib License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licence zlib</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>The following libraries are used by Fritzing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Les bibliothèques suivantes sont utilisées par Fritzing :</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="62"/>
@@ -1388,7 +1388,7 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="19"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished">Fritzing Fab Télécharger</translation>
+        <translation>Fritzing Fab Télécharger</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="70"/>
@@ -1931,7 +1931,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     <message>
         <location filename="../src/items/itembase.cpp" line="1335"/>
         <source>file &apos;%1&apos; for title:&apos;%2&apos; and moduleID:&apos;%3&apos; not found</source>
-        <translation type="unfinished"></translation>
+        <translation>fichier &apos;%1&apos; pour title : &apos;%2&apos; et moduleID : &apos;%3&apos; introuvable</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="1438"/>
@@ -2275,7 +2275,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2331"/>
         <source>No exactly matching part found; Fritzing chose the closest match.</source>
-        <translation>Aucun composant correspondant exactement n&apos;a été trouvé&#x202f;; Fritzing va choisir le plus proche.</translation>
+        <translation>Aucun composant correspondant exactement n&apos;a été trouvé ; Fritzing va choisir le plus proche.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2878"/>
@@ -2829,12 +2829,12 @@ Continuer ou annuler?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="120"/>
         <source>BoM CSV File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier CSV BoM (*.csv)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="121"/>
         <source>IPC-D-356 File (*.ipc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier IPC-D-356 (*.ipc)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1011"/>
@@ -3128,7 +3128,7 @@ Voulez-vous mettre à jour maintenant ?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="175"/>
         <source>;;Fritzing Unbundled Part (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>;;Fritzing Pièce dégroupée (*%1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1219"/>
@@ -4419,7 +4419,7 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1493"/>
         <source>unable to parse fzp in %1. line: %2 column: %3 error: %4</source>
-        <translation type="unfinished"></translation>
+        <translation>impossible d&apos;analyser fzp dans %1. line : %2 column : %3 erreur : %4</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2132"/>
@@ -4498,22 +4498,22 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="996"/>
         <source>Save a Bill of Materials (BoM)/Shopping List as html</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer une nomenclature (BoM)/liste d&apos;achats au format html</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="999"/>
         <source>List of parts (&amp;Bill of Materials) as CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste des composants (&amp;Nomenclature et matériel)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1004"/>
         <source>IPC-D-356A netlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste d&apos;interconnexion IPC-D-356A</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1006"/>
         <source>Save a netlist in IPC-D-356A format</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegarder une liste de réseaux au format IPC-D-356A</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1014"/>
@@ -4533,38 +4533,38 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1235"/>
         <source>Export Bill of Materials (BoM) as CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter la nomenclature (BoM) au format CSV</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1599"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to export to IPC netlist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Votre esquisse n&apos;a pas encore de carte !  Veuillez ajouter un PCB afin d&apos;exporter vers la netlist IPC.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1604"/>
         <source>IPC netlist export can only handle one board at a time--please select the board you want to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;exportation de listes de réseaux IPC ne peut traiter qu&apos;une seule carte à la fois - veuillez sélectionner la carte que vous souhaitez exporter.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1612"/>
         <source>Export IPC-D-356...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter IPC-D-356...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
         <source>Unable to save IPC file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;enregistrer le fichier IPC.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1697"/>
         <source>But the content was copied to the clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mais le contenu a été copié dans le presse-papiers.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1697"/>
         <source>Unable to save netlist file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;enregistrer le fichier de la liste des réseaux.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="644"/>
@@ -6837,24 +6837,26 @@ Majuscule permute l&apos;axe de défilement</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="439"/>
         <source>Gerber</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gerber</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="443"/>
         <source>The gerber file generator will use six decimals precision instead of three.
 Some deprecated gerber commands are removed or replaced.
 We recommend enabling this. Only to avoid surprises with processes that are optimized for earlier Fritzing versions, this is currently off by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le générateur de fichiers gerber utilisera une précision de six décimales au lieu de trois.
+Certaines commandes gerber obsolètes sont supprimées ou remplacées.
+Nous recommandons d&apos;activer cette option. Pour éviter les surprises avec des processus optimisés pour des versions antérieures de Fritzing, cette option est actuellement désactivée par défaut.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="452"/>
         <source>Enable gerber export improvements</source>
-        <translation type="unfinished"></translation>
+        <translation>Amélioration de l&apos;exportation de gerber</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
         <source>The simulator is now enabled by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le simulateur est désormais activé par défaut.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="523"/>
@@ -6892,42 +6894,42 @@ Alt ou la touche %1 = zoom</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>&lt;b&gt;Scroll priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Priorité défilement&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>no keys down = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>aucune touche vers le bas = défilement&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; touche change l&apos;axe de défilement&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; ou &lt;kbd&gt;%1&lt;/kbd&gt; = zoom</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>&lt;b&gt;Zoom priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Priorité zoom&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>no keys down = zoom&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis</source>
-        <translation type="unfinished"></translation>
+        <translation>aucune touche vers le bas = zoom&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; ou &lt;kbd&gt;%1&lt;/kbd&gt; = défilement&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; la touche permute l&apos;axe de défilement</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="569"/>
         <source>&lt;b&gt;Guess&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;b&gt;Deviner&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="570"/>
         <source>Let Fritzing guess if the input is from a wheel or a touchpad. &lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; modify scrolling. &lt;kbd&gt;Shift&lt;/kbd&gt; can modify the axis or the speed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Laissez Fritzing deviner si l&apos;entrée provient d&apos;une molette ou d&apos;un pavé tactile. &lt;kbd&gt;Alt&lt;/kbd&gt; ou &lt;kbd&gt;%1&lt;/kbd&gt; modifie le défilement. &lt;kbd&gt;Shift&lt;/kbd&gt; peut modifier l&apos;axe ou la vitesse.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>&lt;b&gt;Pure&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Pur&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>Use system defaults to interpret the wheel input. Don&apos;t try anything fancy. Recommended when using a touchpad with pinch gestures.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing utilisera les valeurs par défaut du système pour interpréter l&apos;entrée de la roue. Il n&apos;essaiera rien d&apos;extraordinaire. Recommandé lors de l&apos;utilisation d&apos;un pavé tactile avec des gestes de pincement.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="601"/>
@@ -8906,12 +8908,12 @@ Fond d&apos;écran : Vert = ok, Rouge = valeur incorrecte, Gris = valeur actuell
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>Simulator Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Délai d&apos;attente du simulateur</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>The spice simulator did not finish after %1 ms. Aborting simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le simulateur d&apos;épices ne s&apos;est pas terminé après %1 ms. Abandon de la simulation.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="300"/>
@@ -9498,7 +9500,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="68"/>
         <source>The local storage folder is used for storing data that is specific to Fritzing, such as custom parts and settings, as well as temporary and long-term files that are created during the use of the software. On Linux systems, the default location for the Fritzing storage folder is usually ~/.config/Fritzing/. On Windows 11, the default location is typically C:\Users[user name]\AppData\Roaming\Fritzing, and on macOS Mojave or later, the default location is usually ~/Library/Application Support/Fritzing/.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le dossier de stockage local est utilisé pour stocker les données spécifiques à Fritzing, telles que les pièces et les paramètres personnalisés, ainsi que les fichiers temporaires et à long terme créés pendant l&apos;utilisation du logiciel. Sur les systèmes Linux, l&apos;emplacement par défaut du dossier de stockage de Fritzing est généralement ~/.config/Fritzing/. Sous Windows 11, l&apos;emplacement par défaut est généralement C:\Users[nom d&apos;utilisateur]\AppData\Roaming\Fritzing, et sous macOS Mojave ou ultérieur, l&apos;emplacement par défaut est généralement ~/Library/Application Support/Fritzing/.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
@@ -9578,7 +9580,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="166"/>
         <source>When using the Fritzing Fab Service, if there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lorsque vous utilisez le service Fritzing Fab, s&apos;il y a des zones vides du circuit imprimé que vous ne voulez pas remplir de cuivre, utilisez la pièce de blocage du cuivre. Cette pièce redimensionnable masquera le remplissage de cuivre dans le rectangle qu&apos;elle recouvre.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="175"/>

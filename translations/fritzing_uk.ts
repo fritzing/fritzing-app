@@ -182,7 +182,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>The following libraries are used by Fritzing:</source>
-        <translation type="unfinished"></translation>
+        <translation>У Fritzing використовуються наступні бібліотеки:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="140"/>
@@ -222,7 +222,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="100"/>
         <source>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Авторське право %1 Fritzing GmbH&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Авторське право %1 Fritzing GmbH&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="118"/>
@@ -2005,7 +2005,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="1335"/>
         <source>file &apos;%1&apos; for title:&apos;%2&apos; and moduleID:&apos;%3&apos; not found</source>
-        <translation type="unfinished">файл &apos;%1&apos; для title:&apos;%2&apos; та moduleID:&apos;%3&apos; не знайдено</translation>
+        <translation>файл &apos;%1&apos; для title:&apos;%2&apos; та moduleID:&apos;%3&apos; не знайдено</translation>
     </message>
     <message>
         <source>file for %1 %2 not found</source>
@@ -2340,7 +2340,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1493"/>
         <source>unable to parse fzp in %1. line: %2 column: %3 error: %4</source>
-        <translation type="unfinished">не вдається розібрати fzp у %1. рядку: %2 стовпчику: %3 помилка: %4</translation>
+        <translation>неможливо проаналізувати fzp у %1. рядок: %2 стовпець: %3 помилка: %4</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1679"/>
@@ -2622,7 +2622,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="120"/>
         <source>BoM CSV File (*.csv)</source>
-        <translation type="unfinished">Файл CSV BoM (*.csv)</translation>
+        <translation>Файл CSV BoM (*.csv)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="121"/>
@@ -2806,12 +2806,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="996"/>
         <source>Save a Bill of Materials (BoM)/Shopping List as html</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти список матеріалів (BoM)/список покупок у форматі html</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="999"/>
         <source>List of parts (&amp;Bill of Materials) as CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Перелік деталей (&amp;Відомість матеріалів) у форматі CSV</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1001"/>
@@ -2821,12 +2821,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1004"/>
         <source>IPC-D-356A netlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Список мереж IPC-D-356A</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1006"/>
         <source>Save a netlist in IPC-D-356A format</source>
-        <translation type="unfinished"></translation>
+        <translation>Збережіть список мереж у форматі IPC-D-356A</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1009"/>
@@ -2916,7 +2916,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1235"/>
         <source>Export Bill of Materials (BoM) as CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт специфікації матеріалів (ТМ) у форматі CSV</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1316"/>
@@ -2937,22 +2937,22 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1599"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to export to IPC netlist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваш ескіз ще не має плати!  Будь ласка, додайте друковану плату, щоб експортувати в список мереж IPC.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1604"/>
         <source>IPC netlist export can only handle one board at a time--please select the board you want to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт IPC-списків мереж може обробляти лише одну плату за раз - будь ласка, виберіть плату, яку ви хочете експортувати.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1612"/>
         <source>Export IPC-D-356...</source>
-        <translation type="unfinished">Експорт IPC-D-356...</translation>
+        <translation>Експорт IPC-D-356...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
         <source>Unable to save IPC file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося зберегти IPC-файл.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
@@ -2968,7 +2968,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1697"/>
         <source>Unable to save netlist file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося зберегти файл списку мереж.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1752"/>
@@ -4074,7 +4074,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="175"/>
         <source>;;Fritzing Unbundled Part (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>;;Відокремлена частина Fritzing (*%1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="894"/>
@@ -6858,42 +6858,42 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>&lt;b&gt;Scroll priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Пріоритет прокручування&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>no keys down = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>немає клавіш вниз = прокрутка&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; клавіші перемикають вісь прокрутки&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; або &lt;kbd&gt;%1&lt;/kbd&gt; = масштабування</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>&lt;b&gt;Zoom priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Пріоритет масштабування&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>no keys down = zoom&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis</source>
-        <translation type="unfinished"></translation>
+        <translation>немає клавіш вниз = збільшення &lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; або &lt;kbd&gt;%1&lt;/kbd&gt; = прокручування&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; клавіша змінює вісь прокручування</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="569"/>
         <source>&lt;b&gt;Guess&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Вгадай&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="570"/>
         <source>Let Fritzing guess if the input is from a wheel or a touchpad. &lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; modify scrolling. &lt;kbd&gt;Shift&lt;/kbd&gt; can modify the axis or the speed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дозвольте Fritzing вгадати, чи вводиться вхід із коліщатка чи сенсорної панелі. &lt;kbd&gt;Alt&lt;/kbd&gt; або &lt;kbd&gt;%1&lt;/kbd&gt; змінює прокручування. &lt;kbd&gt;Shift&lt;/kbd&gt; може змінювати вісь або швидкість.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>&lt;b&gt;Pure&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Чистий&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>Use system defaults to interpret the wheel input. Don&apos;t try anything fancy. Recommended when using a touchpad with pinch gestures.</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовуйте системні параметри за замовчуванням для інтерпретації введених даних колеса. Не пробуйте нічого незвичайного. Рекомендовано під час використання сенсорної панелі з жестами зведення.</translation>
     </message>
     <message>
         <source>%1</source>
@@ -6947,19 +6947,21 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="439"/>
         <source>Gerber</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerber</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="443"/>
         <source>The gerber file generator will use six decimals precision instead of three.
 Some deprecated gerber commands are removed or replaced.
 We recommend enabling this. Only to avoid surprises with processes that are optimized for earlier Fritzing versions, this is currently off by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Генератор gerber-файлів використовуватиме шість знаків після коми замість трьох.
+Деякі застарілі команди gerber буде вилучено або замінено.
+Ми рекомендуємо увімкнути їх. Щоб уникнути несподіванок з процесами, оптимізованими для попередніх версій Fritzing, наразі цей параметр вимкнено за замовчуванням.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="452"/>
         <source>Enable gerber export improvements</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнути покращення експорту Gerber</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="469"/>
@@ -8967,12 +8969,12 @@ Errors:
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>Simulator Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Час очікування симультора</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>The spice simulator did not finish after %1 ms. Aborting simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор spice не завершився через %1 мс. Переривання симуляції.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="300"/>
@@ -9562,7 +9564,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="68"/>
         <source>The local storage folder is used for storing data that is specific to Fritzing, such as custom parts and settings, as well as temporary and long-term files that are created during the use of the software. On Linux systems, the default location for the Fritzing storage folder is usually ~/.config/Fritzing/. On Windows 11, the default location is typically C:\Users[user name]\AppData\Roaming\Fritzing, and on macOS Mojave or later, the default location is usually ~/Library/Application Support/Fritzing/.</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка локального сховища використовується для зберігання даних, які є специфічними для Fritzing, таких як спеціальні частини та налаштування, а також тимчасові та довготривалі файли, які створюються під час використання програмного забезпечення. У системах Linux типовим розташуванням для папки зберігання Fritzing зазвичай є ~/.config/Fritzing/. У Windows 11 розташуванням за умовчанням зазвичай є C:\Users[ім’я користувача]\AppData\Roaming\Fritzing, а в macOS Mojave або пізніших версіях розташування за умовчанням зазвичай ~/Library/Application Support/Fritzing/.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="93"/>
@@ -9733,7 +9735,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="166"/>
         <source>When using the Fritzing Fab Service, if there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation>При використанні послуги Fab Service: використовуйте блокатори міді, якщо ви бажаєте залишити певні ділянки ДП без мідного заповнення. Це прямокутні деталі змінного розміру, що приховують мідне заповнення яке вони прикривають.</translation>
     </message>
     <message>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>

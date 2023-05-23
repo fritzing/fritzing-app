@@ -146,47 +146,47 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="167"/>
         <source>LGPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>LGPLv3</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="168"/>
         <source>GPLv2 with linking exception</source>
-        <translation type="unfinished"></translation>
+        <translation>GPLv2 с исключением ссылок</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
         <source>Boost License 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Boost License 1.0</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="170"/>
         <source>Modified BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>Модифицированная лицензия BSD</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>Лицензия BSD</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="172"/>
         <source>PNG Reference Library License version 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Лицензия на справочную библиотеку PNG, версия 2</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>
         <source>Dual OpenSSL and SSLeay License</source>
-        <translation type="unfinished"></translation>
+        <translation>Двойная лицензия OpenSSL и SSLeay</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="174"/>
         <source>zlib License</source>
-        <translation type="unfinished"></translation>
+        <translation>Лицензия zlib</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>The following libraries are used by Fritzing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing использует следующие библиотеки:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="140"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="100"/>
         <source>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Авторское право %1 Fritzing GmbH&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="118"/>
@@ -1990,7 +1990,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/itembase.cpp" line="1335"/>
         <source>file &apos;%1&apos; for title:&apos;%2&apos; and moduleID:&apos;%3&apos; not found</source>
-        <translation type="unfinished"></translation>
+        <translation>файл &apos;%1&apos; для названия:&apos;%2&apos; и moduleID:&apos;%3&apos; не найден</translation>
     </message>
     <message>
         <source>file for %1 %2 not found</source>
@@ -2328,7 +2328,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1493"/>
         <source>unable to parse fzp in %1. line: %2 column: %3 error: %4</source>
-        <translation type="unfinished"></translation>
+        <translation>не удалось разобрать fzp в %1. строка: %2 столбец: %3 ошибка: %4</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1679"/>
@@ -2540,12 +2540,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="120"/>
         <source>BoM CSV File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-файл BoM (*.csv)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="121"/>
         <source>IPC-D-356 File (*.ipc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл IPC-D-356 (*.ipc)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="140"/>
@@ -2757,22 +2757,22 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="996"/>
         <source>Save a Bill of Materials (BoM)/Shopping List as html</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить ведомость материалов (ВМ)/список покупок в формате html</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="999"/>
         <source>List of parts (&amp;Bill of Materials) as CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Список компонентов (&amp;Список материалов) в формате CSV</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1004"/>
         <source>IPC-D-356A netlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Список соединений IPC-D-356A</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1006"/>
         <source>Save a netlist in IPC-D-356A format</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранение списка соединений в формате IPC-D-356A</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1009"/>
@@ -2837,7 +2837,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1235"/>
         <source>Export Bill of Materials (BoM) as CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорт списка материалов (BoM) в формате CSV</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1381"/>
@@ -2847,33 +2847,33 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1599"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to export to IPC netlist.</source>
-        <translation type="unfinished"></translation>
+        <translation>В вашем скетче еще нет платы! Пожалуйста, добавьте плату для экспорта в список соединений IPC.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1604"/>
         <source>IPC netlist export can only handle one board at a time--please select the board you want to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорт списка соединений IPC может обрабатывать только одну плату за раз — пожалуйста, выберите плату, которую вы хотите экспортировать.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1612"/>
         <source>Export IPC-D-356...</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорт IPC-D-356...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
         <source>Unable to save IPC file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось сохранить файл IPC.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1697"/>
         <source>But the content was copied to the clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Но содержимое было скопировано в буфер обмена.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1697"/>
         <source>Unable to save netlist file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось сохранить файл списка соединений.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1757"/>
@@ -3037,7 +3037,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="175"/>
         <source>;;Fritzing Unbundled Part (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>;;Разделенная деталь Fritzing (*%1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="894"/>
@@ -6767,7 +6767,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
         <source>The simulator is now enabled by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Теперь симулятор включен по умолчанию.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="555"/>
@@ -6832,42 +6832,42 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>&lt;b&gt;Scroll priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Приоритет прокрутки&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>no keys down = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>нет клавиш вниз = клавиша прокрутки&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; меняет местами ось прокрутки&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; или &lt;kbd&gt;%1&lt;/kbd&gt; = масштабирование</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>&lt;b&gt;Zoom priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Приоритет масштабирования&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>no keys down = zoom&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis</source>
-        <translation type="unfinished"></translation>
+        <translation>нет клавиш вниз = масштабирование&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; или &lt;kbd&gt;%1&lt;/kbd&gt; = клавиша прокрутки&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; меняет местами ось прокрутки</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="569"/>
         <source>&lt;b&gt;Guess&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Угадай&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="570"/>
         <source>Let Fritzing guess if the input is from a wheel or a touchpad. &lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; modify scrolling. &lt;kbd&gt;Shift&lt;/kbd&gt; can modify the axis or the speed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Позвольте Fritzing угадать, осуществляется ли ввод с помощью колеса или сенсорной панели. &lt;kbd&gt;Alt&lt;/kbd&gt; или &lt;kbd&gt;%1&lt;/kbd&gt; изменяют прокрутку. &lt;kbd&gt;Shift&lt;/kbd&gt; может изменить ось или скорость.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>&lt;b&gt;Pure&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Чистый&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>Use system defaults to interpret the wheel input. Don&apos;t try anything fancy. Recommended when using a touchpad with pinch gestures.</source>
-        <translation type="unfinished"></translation>
+        <translation>Используйте системные значения по умолчанию для интерпретации ввода колеса. Не пробуйте ничего необычного. Рекомендуется при использовании сенсорной панели с жестами сжатия.</translation>
     </message>
     <message>
         <source>%1</source>
@@ -6921,19 +6921,21 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="439"/>
         <source>Gerber</source>
-        <translation type="unfinished"></translation>
+        <translation>Гербер</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="443"/>
         <source>The gerber file generator will use six decimals precision instead of three.
 Some deprecated gerber commands are removed or replaced.
 We recommend enabling this. Only to avoid surprises with processes that are optimized for earlier Fritzing versions, this is currently off by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Генератор файлов gerber будет использовать точность до шести знаков после запятой вместо трех.
+ Некоторые устаревшие команды gerber удалены или заменены.
+ Мы рекомендуем включить это. Только во избежание неожиданностей с процессами, оптимизированными для более ранних версий Fritzing, в настоящее время это отключено по умолчанию.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="452"/>
         <source>Enable gerber export improvements</source>
-        <translation type="unfinished"></translation>
+        <translation>Включение улучшений экспорта гербер</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="469"/>
@@ -8923,12 +8925,12 @@ Errors:
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>Simulator Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Время ожидания симулятора</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>The spice simulator did not finish after %1 ms. Aborting simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор spice не завершился через %1 мс. Прерывание симуляции.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="300"/>
@@ -9597,7 +9599,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="68"/>
         <source>The local storage folder is used for storing data that is specific to Fritzing, such as custom parts and settings, as well as temporary and long-term files that are created during the use of the software. On Linux systems, the default location for the Fritzing storage folder is usually ~/.config/Fritzing/. On Windows 11, the default location is typically C:\Users[user name]\AppData\Roaming\Fritzing, and on macOS Mojave or later, the default location is usually ~/Library/Application Support/Fritzing/.</source>
-        <translation type="unfinished"></translation>
+        <translation>Локальная папка хранения используется для хранения данных, специфичных для Fritzing, таких как пользовательские детали и настройки, а также временных и долгосрочных файлов, которые создаются во время использования программы. В системах Linux местоположение по умолчанию для папки хранения Fritzing обычно ~/.config/Fritzing/. В Windows 11 местоположение по умолчанию обычно C:\Users[имя пользователя]\AppData\Roaming\Fritzing, а в macOS Mojave или более поздней версии местоположение по умолчанию обычно ~/Library/Application Support/Fritzing/.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="93"/>
@@ -9687,7 +9689,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="166"/>
         <source>When using the Fritzing Fab Service, if there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation>При использовании сервиса Fritzing Fab, если есть пустые области печатной платы, которые не следует заполнять медью, используйте компонент медного блокатора. Этот компонент с изменяемым размером замаскирует заполнение медью в прямоугольник, который он покрывает.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="156"/>

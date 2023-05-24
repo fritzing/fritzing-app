@@ -150,7 +150,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		versionThingRats.minorSubVersion = 2;
 		m_checkForReversedWires = !Version::greaterThan(versionThingRats, versionThingFz);
 
-		correctPartLabelOffset = Version::greaterThan(m_fritzingVersion, "1.0.0");
+		correctPartLabelOffset = Version::greaterThan(m_fritzingVersion, "1.0.0a");
 		if (correctPartLabelOffset) {
 			Q_EMIT migratePartLabelOffset(m_fritzingVersion);
 		}

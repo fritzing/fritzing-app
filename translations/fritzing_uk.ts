@@ -424,7 +424,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="320"/>
         <source>Via size</source>
-        <translation>За розміром</translation>
+        <translation>Розмір Via (розмір перехідного отвору)</translation>
     </message>
 </context>
 <context>
@@ -895,9 +895,7 @@ Use the file?</source>
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <translation>Виберіть зі спадного меню або введіть значення %1
-
 Діапазон: [%2 - %3] %4
-
 Фон: зелений = добре, червоний = неправильне значення, сірий = поточне значення</translation>
     </message>
 </context>
@@ -2916,12 +2914,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1235"/>
         <source>Export Bill of Materials (BoM) as CSV</source>
-        <translation>Експорт специфікації матеріалів (ТМ) у форматі CSV</translation>
+        <translation>Експортуйте опис матеріалів (BoM) як CSV</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1316"/>
         <source>Export Bill of Materials (BoM)...</source>
-        <translation>Експорт опису матеріалів...</translation>
+        <translation>Експорт номенклатури матеріалів (BoM)...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1236"/>
@@ -6893,7 +6891,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>Use system defaults to interpret the wheel input. Don&apos;t try anything fancy. Recommended when using a touchpad with pinch gestures.</source>
-        <translation>Використовуйте системні параметри за замовчуванням для інтерпретації введених даних колеса. Не пробуйте нічого незвичайного. Рекомендовано під час використання сенсорної панелі з жестами зведення.</translation>
+        <translation>Fritzing використовує системні стандарти для інтерпретації вхідних даних колеса. Він не спробує нічого незвичайного. Рекомендовано під час використання сенсорної панелі з жестами зведення.</translation>
     </message>
     <message>
         <source>%1</source>

@@ -6864,7 +6864,7 @@ Nota: esta advertencia no se repetirá durante esta sesión.</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="569"/>
         <source>&lt;b&gt;Guess&lt;/b&gt;&lt;br/&gt;</source>
-        <translation>&lt;b&gt;Adivina&lt;/b&gt;&lt;br/&gt;</translation>
+        <translation>&lt;b&gt;Adivinar&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="570"/>

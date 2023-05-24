@@ -406,7 +406,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="320"/>
         <source>Via size</source>
-        <translation>с помощью размера</translation>
+        <translation>Размер Via (размер переходного отверстия)</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="95"/>
@@ -6867,7 +6867,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>Use system defaults to interpret the wheel input. Don&apos;t try anything fancy. Recommended when using a touchpad with pinch gestures.</source>
-        <translation>Используйте системные значения по умолчанию для интерпретации ввода колеса. Не пробуйте ничего необычного. Рекомендуется при использовании сенсорной панели с жестами сжатия.</translation>
+        <translation>Fritzing будет использовать значения по умолчанию системы для интерпретации ввода колеса. Он не будет пытаться делать ничего необычного. Рекомендуется при использовании сенсорной панели с жестами масштабирования.</translation>
     </message>
     <message>
         <source>%1</source>

@@ -6871,17 +6871,17 @@ shift troca eixo de scroll</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="570"/>
         <source>Let Fritzing guess if the input is from a wheel or a touchpad. &lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; modify scrolling. &lt;kbd&gt;Shift&lt;/kbd&gt; can modify the axis or the speed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deixe o Fritzing adivinhar se a entrada é de uma roda ou de um touchpad. &lt;kbd&gt;Alt&lt;/kbd&gt; ou &lt;kbd&gt;%1&lt;/kbd&gt; modificam a rolagem. &lt;kbd&gt;Shift&lt;/kbd&gt; pode modificar o eixo ou a velocidade.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>&lt;b&gt;Pure&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Puro&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>Use system defaults to interpret the wheel input. Don&apos;t try anything fancy. Recommended when using a touchpad with pinch gestures.</source>
-        <translation type="unfinished"></translation>
+        <translation>O Fritzing usará os valores padrão do sistema para interpretar a entrada da roda. Ele não tentará nada extraordinário. Recomendado ao usar um trackpad com gestos de pinça.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="604"/>

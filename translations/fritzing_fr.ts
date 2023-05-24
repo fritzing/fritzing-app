@@ -424,7 +424,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="320"/>
         <source>Via size</source>
-        <translation>Taille des vias</translation>
+        <translation>Taille des vias (taille des trous de transition)</translation>
     </message>
 </context>
 <context>
@@ -6837,7 +6837,7 @@ Majuscule permute l&apos;axe de défilement</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="439"/>
         <source>Gerber</source>
-        <translation type="unfinished">Gerber</translation>
+        <translation>Gerber</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="443"/>

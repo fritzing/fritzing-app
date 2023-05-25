@@ -3257,6 +3257,12 @@ void SketchWidget::mouseReleaseEvent(QMouseEvent *event) {
 		}
 
 		DebugDialog::debug("deleting connector drag wire");
+
+		ModelPart * modelPart = m_connectorDragWire->modelPart();
+		if (modelPart) {
+			m_sketchModel->removeModelPart(modelPart);
+			delete modelPart;
+		}
 		delete m_connectorDragWire;
 
 		m_bendpointWire = m_connectorDragWire = nullptr;

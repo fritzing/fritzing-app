@@ -25,12 +25,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="113"/>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
-        <translation type="unfinished">Zach Eveland, Dirk van Oosterbosch, </translation>
+        <translation>Zach Eveland, Dirk van Oosterbosch, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="114"/>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
-        <translation type="unfinished">Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
+        <translation>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="115"/>
@@ -40,7 +40,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="116"/>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation type="unfinished">Mariano Crowe, Johannes Landstorfer, </translation>
+        <translation>Mariano Crowe, Johannes Landstorfer, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="123"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="100"/>
         <source>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="132"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="167"/>
         <source>LGPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>LGPLv3</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="168"/>
@@ -236,7 +236,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
         <source>Boost License 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Boost License 1.0</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="170"/>
@@ -600,7 +600,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1238"/>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
-        <translation type="unfinished">Impossibile rimuovere la parte &apos;%1&apos;--è in uso in uno sketch</translation>
+        <translation>Impossibile rimuovere il componente &apos;%1&apos;--è in uso in uno schizzo</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1245"/>
@@ -760,7 +760,7 @@ Un svg di scheda personalizzata ha tipicamente uno o due strati di serigrafia e 
     <message>
         <location filename="../src/items/resizableboard.cpp" line="436"/>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
-        <translation type="unfinished"></translation>
+        <translation>Prima della produzione effettiva del PCB, si consiglia di testare la cornice personalizzata utilizzando l&apos;opzione &apos;File &gt; Esporta &gt; per la produzione &gt; Gerber esteso&apos;. </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="437"/>
@@ -798,12 +798,12 @@ Un svg di scheda personalizzata ha tipicamente uno o due strati di serigrafia e 
     <message>
         <location filename="../src/items/resizableboard.cpp" line="450"/>
         <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, </source>
-        <translation>&lt;br/&gt;&lt;br/&gt;Se volevi che la tua forma personalizzata avesse dei ritagli e non hai ottenuto il risultato atteso, </translation>
+        <translation>&lt;br/&gt;&lt;br/&gt;Se volevi che il tuo disegno personalizzato avesse delle parti tagliate e non hai ottenuto quello che ti aspettavi, </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="451"/>
         <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>è perché Fritzing richiede che tu crei questi tagli utilizzando una funzione chiamata &apos;sottrazione&apos; o &apos;differenza&apos; nel tuo programma di grafica vettoriale.</translation>
     </message>
 </context>
 <context>

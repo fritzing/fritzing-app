@@ -126,7 +126,6 @@ BinManager::BinManager(class ReferenceModel *referenceModel, class HtmlInfoView 
 
 	lo->setContentsMargins(0, 0, 0, 0);
 	lo->setSpacing(0);
-	setMaximumHeight(500);
 }
 
 BinManager::~BinManager() {

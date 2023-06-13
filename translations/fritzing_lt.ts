@@ -11,17 +11,17 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="111"/>
         <source>Fritzing is made by: </source>
-        <translation type="unfinished">فريتزينج مصنوع بواسطة: </translation>
+        <translation type="unfinished">Fritzing gamina: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="112"/>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
-        <translation type="unfinished"></translation>
+        <translation>Prof. Reto Wettach, André Knörig, Myriel Milicevic, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="113"/>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zachas Evelandas, Dirkas van Oosterboschas, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="114"/>

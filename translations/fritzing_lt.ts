@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="111"/>
         <source>Fritzing is made by: </source>
-        <translation type="unfinished">Fritzing gamina: </translation>
+        <translation>Fritzing sukurtas: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="112"/>
@@ -86,42 +86,42 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Chinese (Traditional): </source>
-        <translation type="unfinished"></translation>
+        <translation>Kinų kalba (Tradicinė): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Robert Lee</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Robert Lee</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="141"/>
         <source>Hiroshi Suzuki</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hiroshi Suzuki</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="141"/>
         <source>, Siti Aishah Abdul Raouf</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">, Siti Aishah Abdul Raouf</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>Jinbuhm Kim</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jinbuhm Kim</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="147"/>
         <source>Spanish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ispanų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="154"/>
         <source>Fritzing is made possible with funding from the MWFK Brandenburg, the sponsorship of the Design Department of Bauhaus-University Weimar, IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, from the PCB Fab AISLER, and each paid download.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing sukurti tapo įmanoma finansuojant MWFK Brandenburg, Bauhaus universiteto Veimaro dizaino katedros, IxDS, anoniminį rėmėją, Parallax, Picaxe, Sparkfun, iš PCB Fab AISLER ir kiekvieną mokamą atsisiuntimą.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="163"/>
         <source>Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ypatingai dėkojame visiems studentams ir alfa testuotojams, kurie buvo pakankamai drąsūs ir išbandė Fritzingą.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="167"/>
@@ -166,42 +166,42 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>The following libraries are used by Fritzing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing naudoja šias bibliotekas:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="140"/>
         <source>Italian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Italų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
         <source>Portuguese (European): </source>
-        <translation type="unfinished"></translation>
+        <translation>Portugalų kalba (Europos): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>Portuguese (Brazilian): </source>
-        <translation type="unfinished"></translation>
+        <translation>Portugalų kalba (Brazilijos): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="134"/>
         <source>Chinese (Simplified): </source>
-        <translation type="unfinished"></translation>
+        <translation>Kinų kalba (Supaprastinta): </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="141"/>
         <source>Japanese: </source>
-        <translation type="unfinished"></translation>
+        <translation>Japonų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Russian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Rusų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="137"/>
         <source>Dutch: </source>
-        <translation type="unfinished"></translation>
+        <translation>Olandų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="100"/>
@@ -216,42 +216,42 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="122"/>
         <source>Special thanks go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ypatingas ačiū: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="136"/>
         <source>Czech: </source>
-        <translation type="unfinished"></translation>
+        <translation>Čekų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="142"/>
         <source>Korean: </source>
-        <translation type="unfinished"></translation>
+        <translation>Korėjiečių kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="146"/>
         <source>Slovak: </source>
-        <translation type="unfinished"></translation>
+        <translation>Slovakų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="139"/>
         <source>Greek: </source>
-        <translation type="unfinished"></translation>
+        <translation>Graikų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="138"/>
         <source>French: </source>
-        <translation type="unfinished"></translation>
+        <translation>Prancūzų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="148"/>
         <source>Turkish: </source>
-        <translation type="unfinished"></translation>
+        <translation>Turkų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="133"/>
         <source>Bulgarian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Bulgarų kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="62"/>
@@ -261,12 +261,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>Ukrainian: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ukrainiečių kalba: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>Yelyzaveta Chyhryna</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yelyzaveta Chyhryna</translation>
     </message>
 </context>
 <context>
@@ -330,7 +330,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="261"/>
         <source>&lt;b&gt;Keepout&lt;/b&gt; is the minimum distance between copper elements on different nets.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Keepout&lt;/b&gt; yra mažiausias atstumas tarp varinių elementų ant skirtingų tinklų.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="265"/>
@@ -360,7 +360,7 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="96"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerai</translation>
     </message>
 </context>
 <context>

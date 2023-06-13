@@ -1145,9 +1145,6 @@ void SketchWidget::deleteAux(QSet<ItemBase *> & deletedItems, QUndoCommand * par
 
 	deleteMiddle(deletedItems, parentCommand);
 
-	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
-	new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
-
 	Q_FOREACH (ItemBase * itemBase, deletedItems) {
 		if (itemBase->superpart()) {
 			auto * asc = new AddSubpartCommand(this, BaseCommand::CrossView, itemBase->superpart()->id(), itemBase->id(), parentCommand);
@@ -1159,6 +1156,10 @@ void SketchWidget::deleteAux(QSet<ItemBase *> & deletedItems, QUndoCommand * par
 	Q_FOREACH (ItemBase * itemBase, deletedItems) {
 		this->makeDeleteItemCommand(itemBase, BaseCommand::CrossView, parentCommand);
 	}
+
+	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+	new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+
 	if (doPush) {
 		m_undoStack->waitPush(parentCommand, PropChangeDelay);
 	}

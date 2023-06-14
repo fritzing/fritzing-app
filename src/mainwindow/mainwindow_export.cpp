@@ -1564,11 +1564,6 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 	output += "* .AC DEC 100 100 1MEG\n";
 	output += ".END";
 
-	QClipboard *clipboard = QApplication::clipboard();
-	if (clipboard) {
-		clipboard->setText(output);
-	}
-
 	return output;
 }
 

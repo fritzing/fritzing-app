@@ -655,7 +655,6 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 				QList<ConnectorItem *> ends2;
 				QList<Wire *> wires2;
 				w->collectChained(wires2, ends2);
-				exclude.append(ends2);
 				Q_FOREACH (ConnectorItem * e2, ends2) {
 					Q_FOREACH (ConnectorItem * ci, e2->connectedToItems()) {
 						// if there is a wire growing out of one of the excluded ends, exclude that end of the wire

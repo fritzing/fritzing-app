@@ -824,7 +824,7 @@ void PCBSketchWidget::changeBoardLayers(int layers, bool doEmit) {
 }
 
 void PCBSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType crossViewType, QUndoCommand * parentCommand,
-        bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs) {
+	bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs, bool pasteInPlace) {
 
 	int layers = 1;
 	if (parentCommand == nullptr) {
@@ -874,7 +874,7 @@ void PCBSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCo
 		changeBoardLayers(layers, true);
 	}
 
-	SketchWidget::loadFromModelParts(modelParts, crossViewType, parentCommand, offsetPaste, boundingRect, seekOutsideConnections, newIDs);
+	SketchWidget::loadFromModelParts(modelParts, crossViewType, parentCommand, offsetPaste, boundingRect, seekOutsideConnections, newIDs, pasteInPlace);
 
 	if (parentCommand == nullptr) {
 		changeBoardLayers(layers, true);

@@ -222,7 +222,7 @@ void SketchWidget::setUndoStack(WaitPushUndoStack * undoStack) {
 	m_undoStack = undoStack;
 }
 
-void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType crossViewType, QUndoCommand * parentCommand, bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs) {
+void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType crossViewType, QUndoCommand * parentCommand, bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs, bool pasteInPlace) {
 	clearHoldingSelectItem();
 
 	if (parentCommand) {
@@ -355,7 +355,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 			bool doSceneBoundingRectCorrection = isOffsetZero && boundingRect && !boundingRect->isNull();
 			QPointF offset;
 			// offset pasted items so we can differentiate them from the originals
-			if (offsetPaste) {
+			if (offsetPaste && !pasteInPlace) {
 				offset = QPointF((20 * m_pasteCount) + m_pasteOffset.x(), (20 * m_pasteCount) + m_pasteOffset.y());
 				if (doSceneBoundingRectCorrection) {
 					offset += QPointF(sceneCorner.x() - boundingRect->left(), sceneCorner.y() - boundingRect->top());
@@ -400,7 +400,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 
 			if (!labelGeometry.isNull()) {
 				QDomElement clone = labelGeometry.cloneNode(true).toElement();
-				if (offsetPaste) {
+				if (offsetPaste && !pasteInPlace) {
 					if (auto x = TextUtils::optToDouble(clone.attribute("x"))) {
 						clone.setAttribute("x", QString::number(*x + offset.x()));
 					}
@@ -564,13 +564,15 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 		}
 
 		m_pasteCount = 0;
-		m_pasteOffset = QPointF(20.0, -20.0) + QPointF(QRandomGenerator::system()->generate() % 1000 / 100.0, QRandomGenerator::system()->generate() % 1000 / 100.0);
+		if (offsetPaste && !pasteInPlace) {
+			m_pasteOffset = QPointF(20.0, -20.0) + QPointF(QRandomGenerator::system()->generate() % 1000 / 100.0, QRandomGenerator::system()->generate() % 1000 / 100.0);
+		}
 		this->scene()->clearSelection();
 		cleanUpWiresForCommand(false, nullptr);
 
 	}
 	else {
-		if (offsetPaste) {
+		if (offsetPaste && !pasteInPlace) {
 			// m_pasteCount used for offsetting paste items, not a count of how many items are pasted
 			m_pasteCount++;
 		}

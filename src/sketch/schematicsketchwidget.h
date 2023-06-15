@@ -69,7 +69,7 @@ public:
 	Wire * createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 	void rotatePartLabels(double degrees, QTransform &, QPointF center, QUndoCommand * parentCommand);
 	void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand,
-	                        bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs);
+				bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs, bool pasteInPlace = false);
 	LayerList routingLayers(ViewLayer::ViewLayerPlacement);
 	bool attachedToTopLayer(ConnectorItem *);
 	bool attachedToBottomLayer(ConnectorItem *);

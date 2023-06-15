@@ -72,7 +72,7 @@ public:
 	void setBoardLayers(int, bool redraw);
 	void swapLayers(ItemBase * itemBase, int newLayers, QUndoCommand * parentCommand);
 	void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand,
-	                        bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs);
+				bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs, bool pasteInPlace = false);
 	virtual bool isInLayers(ConnectorItem *, ViewLayer::ViewLayerPlacement);
 	bool routeBothSides();
 	bool sameElectricalLayer2(ViewLayer::ViewLayerID, ViewLayer::ViewLayerID);

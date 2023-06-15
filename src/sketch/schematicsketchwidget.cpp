@@ -435,9 +435,9 @@ void SchematicSketchWidget::rotatePartLabels(double, QTransform &, QPointF, QUnd
 }
 
 void SchematicSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType crossViewType, QUndoCommand * parentCommand,
-        bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs)
+	bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs, bool pasteInPlace)
 {
-	SketchWidget::loadFromModelParts(modelParts, crossViewType, parentCommand, offsetPaste, boundingRect, seekOutsideConnections, newIDs);
+	SketchWidget::loadFromModelParts(modelParts, crossViewType, parentCommand, offsetPaste, boundingRect, seekOutsideConnections, newIDs, pasteInPlace);
 }
 
 void SchematicSketchWidget::selectAllWires(ViewGeometry::WireFlag flag)

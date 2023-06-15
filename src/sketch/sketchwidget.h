@@ -127,7 +127,7 @@ public:
 	void setUndoStack(class WaitPushUndoStack *);
 	void clearSelection();
 	virtual void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand,
-	                                bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs);
+					bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs, bool pasteInPlace = false);
 	void changeZForCommand(QHash<long, RealPair * >, double (*pairAccessor)(RealPair *) );
 	void sendToBack();
 	void sendBackward();

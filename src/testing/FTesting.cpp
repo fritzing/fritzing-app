@@ -26,6 +26,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../debugdialog.h"
 
+#include <QUrl>
+
 FTesting::FTesting() {
 }
 
@@ -138,9 +140,7 @@ void FTestingServerThread::run()
 			return;
 		}
 		param = params.takeFirst();
-		param = param.replace("%20", " ");
-		param = param.replace("%5B", "[");
-		param = param.replace("%5D", "]");
+		param = QUrl::fromPercentEncoding(param.toUtf8());
 	}
 
 	QString mimeType;

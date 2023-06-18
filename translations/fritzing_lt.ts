@@ -26,62 +26,62 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="114"/>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="115"/>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="116"/>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mariano Crowe, Johannes Landstorfer, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="117"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="123"/>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="124"/>
         <source>Durrell Bishop, David Cuartielles, Fabian Hemmert, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Durrell Bishop, David Cuartielles, Fabian Hemmert, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="125"/>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
         <source>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="127"/>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jan Sieber, Yaniv Steiner, Olaf Val, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="128"/>
         <source>Michaela Vieser and Julia Werner.</source>
-        <translation type="unfinished"></translation>
+        <translation>Michaela Vieser ir Julia Werner.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="132"/>
         <source>Thanks for the translations go out to: </source>
-        <translation type="unfinished"></translation>
+        <translation>Padėka už vertimus: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="134"/>
         <source>Yuelin and Ninjia</source>
-        <translation type="unfinished"></translation>
+        <translation>Yuelin ir Ninjia</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
@@ -126,42 +126,42 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="167"/>
         <source>LGPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LGPLv3</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="168"/>
         <source>GPLv2 with linking exception</source>
-        <translation type="unfinished"></translation>
+        <translation>GPLv2 su susiejimo išmimtimis</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
         <source>Boost License 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Boost License 1.0</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="170"/>
         <source>Modified BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Modifikuotos BSD licenzijos</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">BSD licenzijos</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="172"/>
         <source>PNG Reference Library License version 2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PNG Reference Library License version 2</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>
         <source>Dual OpenSSL and SSLeay License</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dual OpenSSL and SSLeay License</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="174"/>
         <source>zlib License</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">zlib License</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
@@ -206,12 +206,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="100"/>
         <source>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="118"/>
         <source>Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="122"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="62"/>
         <source>Version %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Versija %1.%2.%3 &lt;br&gt;&lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>

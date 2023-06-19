@@ -600,22 +600,31 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 	}
 	setConnector1Rect();
 
-
-	QSet<ConnectorItem *> allTo;
-	allTo.insert(whichConnectorItem);
+	QList<ConnectorItem *> allToList;
 	foreach (ConnectorItem * toConnectorItem, whichConnectorItem->connectedToItems()) {
 		Wire * chainedWire = qobject_cast<Wire *>(toConnectorItem->attachedTo());
 		if (chainedWire == NULL) continue;
 
-		allTo.insert(toConnectorItem);
-		foreach (ConnectorItem * subTo, toConnectorItem->connectedToItems()) {
-			allTo.insert(subTo);
+		if(!allToList.contains(toConnectorItem)) {
+			allToList.append(toConnectorItem);
 		}
 	}
-	allTo.remove(whichConnectorItem);
+
+	for (int i = 0; i < allToList.size(); i++) {
+		ConnectorItem * conItem = allToList.at(i);
+		foreach(ConnectorItem * toConnectorItem, conItem->connectedToItems()) {
+			Wire * chainedWire = qobject_cast<Wire *>(toConnectorItem->attachedTo());
+			if (chainedWire == NULL) continue;
+
+			if(!allToList.contains(toConnectorItem)) {
+				allToList.append(toConnectorItem);
+			}
+		}
+	}
+
+	QSet<ConnectorItem *> allTo(allToList.begin(), allToList.end());
 
 	// TODO: this could all be determined once at mouse press time
-
 	if (allTo.count() == 0) {
 		// dragging one end of the wire
 
@@ -684,9 +693,12 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 	}
 	else {
 		// dragging a bendpoint
+		DebugDialog::debug("dragging a bendpoint");
+		DebugDialog::debug(QString("CON0 %1 CON1 %2").arg(this->connector0()->connectedToItems().count()).arg(this->connector0()->connectedToItems().count()));
 		foreach (ConnectorItem * toConnectorItem, allTo) {
 			Wire * chained = qobject_cast<Wire *>(toConnectorItem->attachedTo());
 			if (chained) {
+				DebugDialog::debug("dragging a bendpoint123");
 				chained->simpleConnectedMoved(whichConnectorItem, toConnectorItem);
 			}
 		}

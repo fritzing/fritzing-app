@@ -144,8 +144,8 @@ PartsBinPaletteWidget::~PartsBinPaletteWidget() {
 		m_model = NULL;
 	}
 
-	if (m_icon) delete m_icon;
-	if (m_monoIcon) delete m_monoIcon;
+	delete m_icon;
+	delete m_monoIcon;
 }
 
 void PartsBinPaletteWidget::cleanup() {

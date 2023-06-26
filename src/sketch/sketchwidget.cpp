@@ -5165,10 +5165,10 @@ void SketchWidget::makeDeleteItemCommandPrepSlot(ItemBase * itemBase, bool forei
 		new ChangeLabelTextCommand(this, itemBase->id(), itemBase->instanceTitle(), itemBase->instanceTitle(), parentCommand);
 	}
 
-	if (!foreign) {
+//	if (!foreign) {
 		QMap<QString, QString> propsMap;
 		prepDeleteProps(itemBase, itemBase->id(), "", propsMap, parentCommand);
-	}
+//	}
 
 	rememberSticky(itemBase, parentCommand);
 

@@ -3354,34 +3354,30 @@ void MainWindow::putItemByModuleID(const QString & moduleID) {
 	}
 }
 
-void MainWindow::postKeyEvent(const QString & keyCombination) {
-	QString prefix = "stringA4T7UF9I";
-	if (keyCombination.startsWith(prefix)) {
-		QString text = keyCombination;
-		text.remove(0, prefix.length());
-		Q_FOREACH(QChar c, text) {
-			int keyCode = c.unicode();
-			QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyPress, keyCode, Qt::NoModifier, c));
-			QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyRelease, keyCode, Qt::NoModifier, c));
+void MainWindow::postKeyEvent(const QString & serializedKeys) {
+	QJsonDocument doc = QJsonDocument::fromJson(serializedKeys.toUtf8());
+	QJsonArray events = doc.array();
+
+	for (const QJsonValue &event_val : events) {
+		QJsonObject event_obj = event_val.toObject();
+		QString key = event_obj["key"].toString();
+		QJsonArray modifiers = event_obj["modifiers"].toArray();
+
+		int keyCode = key.at(0).unicode(); // Convert the key string to a Qt key code
+		Qt::KeyboardModifiers modFlags;
+
+		// Check for modifier keys
+		for (const QJsonValue &mod : modifiers) {
+			if (mod.toString() == "shift") {
+				modFlags |= Qt::ShiftModifier;
+			} else if (mod.toString() == "ctrl") {
+				modFlags |= Qt::ControlModifier;
+			} else if (mod.toString() == "alt") {
+				modFlags |= Qt::AltModifier;
+			}
 		}
-	} else {
-		QStringList keys = keyCombination.split("+", Qt::KeepEmptyParts, Qt::CaseInsensitive);
-		Qt::KeyboardModifiers modifiers = Qt::NoModifier;
 
-		for (const QString &key : keys)
-		{
-			if (key.trimmed().compare("ctrl", Qt::CaseInsensitive) == 0)
-				modifiers |= Qt::ControlModifier;
-			else if (key.trimmed().compare("alt", Qt::CaseInsensitive) == 0)
-				modifiers |= Qt::AltModifier;
-			else if (key.trimmed().compare("shift", Qt::CaseInsensitive) == 0)
-				modifiers |= Qt::ShiftModifier;
-		}
-
-		auto lastKey = keys.last().trimmed();
-		int keyCode = lastKey.at(0).unicode();
-
-		QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyPress, keyCode, modifiers, lastKey.at(0)));
-		QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyRelease, keyCode, modifiers, lastKey.at(0)));
+		QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyPress, keyCode, modFlags, key.at(0)));
+		QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyRelease, keyCode, modFlags, key.at(0)));
 	}
 }

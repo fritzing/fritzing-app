@@ -37,7 +37,7 @@ public:
 
 protected:
 Q_SIGNALS:
-	void postKeyEvent(const QString & keyCombination);
+	void postKeyEvent(const QString & serializedKeys);
 /*
 protected:
 	MainWindow * m_mainWindow;*/

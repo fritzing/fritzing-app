@@ -262,7 +262,7 @@ public Q_SLOTS:
 	void oldSchematicsSlot(const QString & filename, bool & useOldSchematics);
 	void showWelcomeView();
 	void putItemByModuleID(const QString & moduleID);
-	void postKeyEvent(const QString & keyCombination);
+	void postKeyEvent(const QString & serializedKeys);
 
 protected Q_SLOTS:
 	void mainLoad();

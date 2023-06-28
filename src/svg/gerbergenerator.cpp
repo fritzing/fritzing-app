@@ -18,6 +18,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
+#include <QBuffer>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QSvgRenderer>
@@ -679,14 +680,53 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 			}
 		}
 		else {
-			image.fill(0xffffffff);
 			QByteArray svg = TextUtils::removeXMLEntities(domDocument2.toString()).toUtf8();
-			QSvgRenderer renderer(svg);
-			QPainter painter;
-			painter.begin(&image);
-			renderer.render(&painter, target);
-			painter.end();
-			image.invertPixels();				// need white pixels on a black background for GroundPlaneGenerator
+
+			auto imageToHash = [](const QImage& image) -> QString {
+				QElapsedTimer timer;
+				timer.start();
+
+				QByteArray arr;
+				QBuffer buffer(&arr);
+				buffer.open(QIODevice::WriteOnly);
+				image.save(&buffer, "PNG"); // PNG is lossless and this turned out to be MUCH faster than a pixel loop.
+
+				QByteArray hash = QCryptographicHash::hash(arr, QCryptographicHash::Md5);
+				return hash.toHex();
+			};
+
+			QHash<QString, QImage> hashMap;
+			int counter = 0;
+			QString hash;
+
+			while (true) {
+				QImage tempImage(imgSize, QImage::Format_Mono);
+				tempImage.setDotsPerMeterX(res * GraphicsUtils::InchesPerMeter);
+				tempImage.setDotsPerMeterY(res * GraphicsUtils::InchesPerMeter);
+				tempImage.fill(0xffffffff);
+				QSvgRenderer renderer(svg);
+				QPainter painter;
+				painter.begin(&tempImage);
+				renderer.render(&painter, target);
+				painter.end();
+				tempImage.invertPixels(); // need white pixels on a black background for GroundPlaneGenerator
+				hash = imageToHash(tempImage);
+				if (hashMap.contains(hash)) {
+					break;
+				} else {
+					if (counter > 0) {
+						DebugDialog::debug(QString("Gerbergenerator: Image not in hash. count: %1 hash: %2").arg(counter).arg(hash));
+					}
+					hashMap.insert(hash, tempImage);
+					if (counter >= 5) {
+						DebugDialog::debug(QString("Gerbergenerator: Too many tries to find identical image. Aborting loop. count: %1 hash: %2").arg(counter).arg(hash));
+						break;
+					}
+					counter++;
+				}
+			}
+
+			image = hashMap.value(hash);
 
 #ifndef QT_NO_DEBUG
 			image.save(FolderUtils::getTopLevelUserDataStorePath() + "/preclip_output.png");

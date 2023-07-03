@@ -15,7 +15,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="100"/>
         <source>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Copyright %1 Fritzing GmbH&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="111"/>
@@ -50,47 +50,47 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="167"/>
         <source>LGPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>LGPLv3</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="168"/>
         <source>GPLv2 with linking exception</source>
-        <translation type="unfinished"></translation>
+        <translation>GPLv2 com exceção de ligação</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
         <source>Boost License 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Boost License 1.0</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="170"/>
         <source>Modified BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licença BSD modificada</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licença BSD</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="172"/>
         <source>PNG Reference Library License version 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Licença da biblioteca de referência PNG versão 2</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>
         <source>Dual OpenSSL and SSLeay License</source>
-        <translation type="unfinished"></translation>
+        <translation>Dupla Licença OpenSSL e SSLeay</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="174"/>
         <source>zlib License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licença zlib</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>The following libraries are used by Fritzing:</source>
-        <translation type="unfinished"></translation>
+        <translation>As bibliotecas seguintes são utilizadas por Fritzing:</translation>
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
@@ -1288,13 +1288,13 @@ Fundo: Verde = ok, Vermelho = valor incorreto, Cinzento = valor atual</translati
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="65"/>
         <location filename="../src/dialogs/exportparametersdialog.cpp" line="13"/>
         <source>Export parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Parâmetros de exportação</translation>
     </message>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="131"/>
@@ -1373,7 +1373,7 @@ Fundo: Verde = ok, Vermelho = valor incorreto, Cinzento = valor atual</translati
     <message>
         <location filename="../src/fapplication.cpp" line="2046"/>
         <source>This option is usefull if you modify the parts database on your own. If you want to recover from an error, you may be better off downloading the latest Fritzing release.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta opção é útil se você modificar a base de dados das peças para você mesmo. Se quiser recuperar de um erro, é preferível você descarregar a última versão do Fritzing.</translation>
     </message>
 </context>
 <context>
@@ -1381,7 +1381,7 @@ Fundo: Verde = ok, Vermelho = valor incorreto, Cinzento = valor atual</translati
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="19"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="70"/>
@@ -1422,7 +1422,7 @@ Fundo: Verde = ok, Vermelho = valor incorreto, Cinzento = valor atual</translati
     <message>
         <location filename="../src/dialogs/fabuploaddialog.cpp" line="33"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir no navegador</translation>
     </message>
 </context>
 <context>
@@ -1745,12 +1745,12 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="224"/>
         <source>SPICE</source>
-        <translation type="unfinished"></translation>
+        <translation>SPICE</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="699"/>
         <source>No SPICE information. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sem informação SPICE. Esta peça não será simulada.</translation>
     </message>
 </context>
 <context>
@@ -1944,7 +1944,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/items/itembase.cpp" line="1335"/>
         <source>file &apos;%1&apos; for title:&apos;%2&apos; and moduleID:&apos;%3&apos; not found</source>
-        <translation type="unfinished"></translation>
+        <translation>ficheiro &apos;%1&apos; para title:&apos;%2&apos; e moduleID:&apos;%3&apos; não encontrado</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="1438"/>
@@ -1993,12 +1993,12 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/items/itembase.cpp" line="262"/>
         <source>mn</source>
-        <translation type="unfinished"></translation>
+        <translation>mn</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="263"/>
         <source>mpn</source>
-        <translation type="unfinished"></translation>
+        <translation>mpn</translation>
     </message>
 </context>
 <context>
@@ -2143,7 +2143,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1493"/>
         <source>unable to parse fzp in %1. line: %2 column: %3 error: %4</source>
-        <translation type="unfinished"></translation>
+        <translation>impossível analisar fzp em %1. linha: %2 coluna: %3 erro: %4</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1884"/>
@@ -2275,12 +2275,12 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="120"/>
         <source>BoM CSV File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro BoM CSV (*.csv)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="121"/>
         <source>IPC-D-356 File (*.ipc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro IPC-D-356 (*.ipc)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="140"/>
@@ -2328,7 +2328,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1697"/>
         <source>Unable to save netlist file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossível guardar o ficheiro netlist.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="157"/>
@@ -2425,22 +2425,22 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="996"/>
         <source>Save a Bill of Materials (BoM)/Shopping List as html</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar um Bill of Materials (BoM)/Lista de Compras como html</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="999"/>
         <source>List of parts (&amp;Bill of Materials) as CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de componentes (&amp;Bill of Materials) como CSV</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1004"/>
         <source>IPC-D-356A netlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de ligação IPC-D-356A</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1006"/>
         <source>Save a netlist in IPC-D-356A format</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvaguardar uma lista de redes no formato IPC-D-356A</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1021"/>
@@ -2593,7 +2593,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="175"/>
         <source>;;Fritzing Unbundled Part (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>;;Fritzing Peça Desagrupada (*%1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
@@ -3191,17 +3191,17 @@ Estamos a trabalhar para evitar esta mensagem, e apenas deixar escolher entre pr
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1235"/>
         <source>Export Bill of Materials (BoM) as CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar a nomenclatura (BoM) como CSV</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1599"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to export to IPC netlist.</source>
-        <translation type="unfinished"></translation>
+        <translation>O seu esboço não tem uma placa ainda!  Por favor adicione um PCB para exportar para a netlist IPC.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1604"/>
         <source>IPC netlist export can only handle one board at a time--please select the board you want to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>A exportação de listas de redes IPC só pode tratar de uma placa de cada vez--por favor selecione a placa que quer exportar.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1612"/>

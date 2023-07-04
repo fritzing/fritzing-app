@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="168"/>
         <source>GPLv2 with linking exception</source>
-        <translation type="unfinished"></translation>
+        <translation>GPLv2 con un&apos;eccezione di collegamento</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
@@ -241,17 +241,17 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="170"/>
         <source>Modified BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licenza BSD modificata</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licenza BSD</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="172"/>
         <source>PNG Reference Library License version 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Versione 2 della Licenza per la libreria di riferimento PNG</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>
@@ -4203,7 +4203,7 @@ Procedere e ricaricare il file come salvato sul disco?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="553"/>
         <source>Breadboard</source>
-        <translation>Breadboard</translation>
+        <translation>Tagliere</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="562"/>

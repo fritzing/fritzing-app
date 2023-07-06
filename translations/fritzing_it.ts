@@ -256,17 +256,17 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>
         <source>Dual OpenSSL and SSLeay License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licenza doppia OpenSSL e SSLeay</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="174"/>
         <source>zlib License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licenza zlib</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>The following libraries are used by Fritzing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Da Fritzing vengono usate le seguenti librerie:</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
@@ -825,12 +825,12 @@ Un svg di scheda personalizzata ha tipicamente uno o due strati di serigrafia e 
     <message>
         <location filename="../src/items/logoitem.cpp" line="944"/>
         <source>Set text color</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta il colore del testo</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="958"/>
         <source>Select text color</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli il colore del testo</translation>
     </message>
 </context>
 <context>
@@ -838,14 +838,16 @@ Un svg di scheda personalizzata ha tipicamente uno o due strati di serigrafia e 
     <message>
         <location filename="../src/items/capacitor.cpp" line="65"/>
         <source>Select from the dropdown, or type in a %1 value</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli dal menu oppure digita un valore %1</translation>
     </message>
     <message>
         <location filename="../src/items/capacitor.cpp" line="69"/>
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli dal menu oppure digita un valore %1
+Area: [%2-%3] %4
+Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     </message>
 </context>
 <context>
@@ -876,22 +878,22 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.ui" line="20"/>
         <source>Select Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegliere i parametri</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="26"/>
         <source>BaudRate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Baud rate</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="36"/>
         <source>Data bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bit di dati:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="46"/>
         <source>Parity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parità:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="56"/>
@@ -911,7 +913,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.ui" line="88"/>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrizione</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="95"/>
@@ -921,7 +923,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.ui" line="102"/>
         <source>Serial number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero seriale</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="109"/>
@@ -946,7 +948,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.ui" line="157"/>
         <source>Additional options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opzioni aggiuntive</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="163"/>
@@ -956,7 +958,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="89"/>
         <source>Description: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrizione: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="90"/>
@@ -966,7 +968,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="91"/>
         <source>Serial number: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero seriale: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="92"/>
@@ -1009,12 +1011,12 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolewindow.ui" line="65"/>
         <source>About program</source>
-        <translation type="unfinished"></translation>
+        <translation>Sul programma</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="68"/>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="73"/>
@@ -1029,32 +1031,32 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolewindow.ui" line="81"/>
         <source>Connect to serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Connettersi alla porta seriale</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="84"/>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="89"/>
         <source>&amp;Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;disconnettersi</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="92"/>
         <source>Disconnect from serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Disconnettersi dalla porta seriale</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="95"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="100"/>
         <source>&amp;Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configurare</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="103"/>

@@ -699,6 +699,10 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 			int counter = 0;
 			QString hash;
 
+			// Tests show that the rendered images have sometimes gaps of one to roughly eight consecutive pixel on one scanline.
+			// This seems to happen more often on high CPU load.
+			// If we find two identical images, we assume the bug did not occure and continue.
+			// With large images (100 Megapixel) the likelihood increases, and 5 tries might not be enough, in which case we currently ignore the issue and just use one of the images.
 			while (true) {
 				QImage tempImage(imgSize, QImage::Format_Mono);
 				tempImage.setDotsPerMeterX(res * GraphicsUtils::InchesPerMeter);

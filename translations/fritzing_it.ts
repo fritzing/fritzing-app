@@ -908,7 +908,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolesettings.ui" line="79"/>
         <source>Select Serial Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Selezionare Porta Seriale</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="88"/>
@@ -943,7 +943,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolesettings.ui" line="148"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Applicare</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="157"/>
@@ -1026,7 +1026,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolewindow.ui" line="78"/>
         <source>C&amp;onnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Connettere</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="81"/>
@@ -1061,27 +1061,27 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolewindow.ui" line="103"/>
         <source>Configure serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurare Porta Seriale</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="106"/>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="111"/>
         <source>C&amp;lear</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancellare</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="114"/>
         <source>Clear data</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancellare dati</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="117"/>
         <source>Alt+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+L</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="126"/>
@@ -1091,17 +1091,17 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolewindow.ui" line="129"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="149"/>
         <source>Connected to %1 : %2, %3, %4, %5, %6</source>
-        <translation type="unfinished"></translation>
+        <translation>Connesso a %1 : %2, %3, %4, %5, %6</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="153"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="155"/>
@@ -1111,7 +1111,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="175"/>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Disconnesso</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="201"/>
@@ -1169,7 +1169,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="284"/>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="551"/>
@@ -1223,7 +1223,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="83"/>
         <source>Also delete the file</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancellare anche questo file</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="92"/>
@@ -1233,7 +1233,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="93"/>
         <source>Don&apos;t remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Non cancellare</translation>
     </message>
 </context>
 <context>
@@ -1249,13 +1249,13 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="65"/>
         <location filename="../src/dialogs/exportparametersdialog.cpp" line="13"/>
         <source>Export parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportare i parametri</translation>
     </message>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="131"/>
@@ -1270,7 +1270,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
         <location filename="../src/fapplication.cpp" line="1676"/>
         <location filename="../src/fapplication.cpp" line="1679"/>
         <source>Fritzing failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore di Fritzing</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1679"/>
@@ -1290,7 +1290,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="1807"/>
         <source>Fritzing (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing (*%1)</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1676"/>
@@ -1367,12 +1367,12 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="251"/>
         <source>Upload</source>
-        <translation type="unfinished">Carica</translation>
+        <translation>Caricare</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="265"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importare</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="356"/>
@@ -1382,7 +1382,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.cpp" line="33"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Aperto nel browser</translation>
     </message>
 </context>
 <context>
@@ -1392,7 +1392,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="153"/>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="161"/>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploadprogress.cpp" line="144"/>
@@ -1769,7 +1769,7 @@ E&apos; anche possibile scegliere un connettore come seme per il piano massa con
     <message>
         <location filename="../src/items/itembase.cpp" line="237"/>
         <source>form</source>
-        <translation type="unfinished"></translation>
+        <translation>forma</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="1312"/>
@@ -1854,7 +1854,7 @@ E&apos; anche possibile scegliere un connettore come seme per il piano massa con
     <message>
         <location filename="../src/items/itembase.cpp" line="249"/>
         <source>filename</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome del file</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="250"/>
@@ -1874,7 +1874,7 @@ E&apos; anche possibile scegliere un connettore come seme per il piano massa con
     <message>
         <location filename="../src/items/itembase.cpp" line="253"/>
         <source>sheet</source>
-        <translation type="unfinished"></translation>
+        <translation>Foglio</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="254"/>
@@ -2153,7 +2153,7 @@ E&apos; anche possibile scegliere un connettore come seme per il piano massa con
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="998"/>
         <source>Simulate</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulare</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1007"/>

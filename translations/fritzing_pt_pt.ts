@@ -3206,18 +3206,18 @@ Estamos a trabalhar para evitar esta mensagem, e apenas deixar escolher entre pr
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1612"/>
         <source>Export IPC-D-356...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar IPC-D-356...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
         <source>Unable to save IPC file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossível guardar o ficheiro IPC.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1697"/>
         <source>But the content was copied to the clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mas o conteúdo foi copiado para a área de transferência.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1695"/>
@@ -4840,7 +4840,7 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4406"/>
         <source>Fritzing Fab Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Upload</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4406"/>
@@ -4850,7 +4850,7 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2718"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2736"/>
@@ -4860,37 +4860,37 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="998"/>
         <source>Simulate</source>
-        <translation type="unfinished"></translation>
+        <translation>Simular</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1007"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Parar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="941"/>
         <source>Edit the application&apos;s preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar as preferências da aplicação</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1169"/>
         <source>Starts the simulator (DC analysis)</source>
-        <translation type="unfinished"></translation>
+        <translation>Inicia o simulador (análise DC)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1172"/>
         <source>Stop Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Parar Simulador</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1173"/>
         <source>Stops the simulator and removes simulator data</source>
-        <translation type="unfinished"></translation>
+        <translation>Para o simulador e remove os dados do simulador</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1168"/>
         <source>Start Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Parar o simulador</translation>
     </message>
 </context>
 <context>
@@ -5988,12 +5988,12 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2332"/>
         <source>Parts Editor Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro do Editor de Peças</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2332"/>
         <source>The file %2 with prefix %1 was not saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>O ficheiro %2 com o prefixo %1 não foi guardado.</translation>
     </message>
 </context>
 <context>
@@ -6635,7 +6635,7 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="187"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>Procurar...</translation>
     </message>
 </context>
 <context>
@@ -6768,24 +6768,26 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="439"/>
         <source>Gerber</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerber</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="443"/>
         <source>The gerber file generator will use six decimals precision instead of three.
 Some deprecated gerber commands are removed or replaced.
 We recommend enabling this. Only to avoid surprises with processes that are optimized for earlier Fritzing versions, this is currently off by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>O gerador de ficheiros gerber utilizará uma precisão de seis decimais ao invés de três.
+Certos comandos gerber obsoletos são removidos ou substituídos.
+Nós recomendamos ativar esta opção. Apenas para evitar surpresas com processos optimizados por versões anteriores do Fritzing, isto está desativado por padrão.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="452"/>
         <source>Enable gerber export improvements</source>
-        <translation type="unfinished"></translation>
+        <translation>Ativar melhoramentos de exportação gerber</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
         <source>The simulator is now enabled by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>O simulador está agora ativado por padrão.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="507"/>
@@ -6866,42 +6868,42 @@ tecla shift troca o eixo de scroll</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>&lt;b&gt;Scroll priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Prioridade deslocação&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>no keys down = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>sem teclas pressionadas = deslocar&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; troca de teclas muda deslocação&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; ou &lt;kbd&gt;%1&lt;/kbd&gt; = zoom</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>&lt;b&gt;Zoom priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Prioridade zoom&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>no keys down = zoom&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis</source>
-        <translation type="unfinished"></translation>
+        <translation>sem teclas pressionadas = zoom&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; ou &lt;kbd&gt;%1&lt;/kbd&gt; = deslocar&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; troca de teclas permite eixo de deslocação</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="569"/>
         <source>&lt;b&gt;Guess&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Adivinhar&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="570"/>
         <source>Let Fritzing guess if the input is from a wheel or a touchpad. &lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; modify scrolling. &lt;kbd&gt;Shift&lt;/kbd&gt; can modify the axis or the speed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deixar o Fritzing adivinhar se a entrada é de uma roda ou de um touchpad. &lt;kbd&gt;Alt&lt;/kbd&gt; ou &lt;kbd&gt;%1&lt;/kbd&gt; modifica a deslocação. &lt;kbd&gt;Shift&lt;/kbd&gt; pode modificar o eixo ou a velocidade.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>&lt;b&gt;Pure&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Puro&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>Use system defaults to interpret the wheel input. Don&apos;t try anything fancy. Recommended when using a touchpad with pinch gestures.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar os valores de sistema pré-definidos para a entrada da roda. Não tente nada extravagante. Recomendado quando utilizar um touchpad com gestos de pinça.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="604"/>
@@ -6959,17 +6961,17 @@ tecla shift troca o eixo de scroll</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="83"/>
         <source>Beta Features</source>
-        <translation type="unfinished"></translation>
+        <translation>Características da versão Beta</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="469"/>
         <source>Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulador</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="479"/>
         <source>Enable simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Ativar o simulador</translation>
     </message>
 </context>
 <context>
@@ -7296,7 +7298,7 @@ tecla shift troca o eixo de scroll</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="337"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver</translation>
     </message>
 </context>
 <context>
@@ -8392,7 +8394,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="54"/>
         <source>Measuring Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Ferramentas de Medição</translation>
     </message>
 </context>
 <context>
@@ -8600,7 +8602,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
         <source>Select from the dropdown, or type in a %1 value
 Range: [%2 - %3] %4
 Background: Green = ok, Red = incorrect value, Grey = current value</source>
-        <translation type="unfinished">Selecione da lista suspensa, ou coloque um valor %1
+        <translation>Selecione da lista suspensa, ou coloque um valor %1
 Alcance: [%2 - %3] %4
 Fundo: Verde = ok, Vermelho = valor incorreto, Cinzento = valor atual</translation>
     </message>
@@ -8882,22 +8884,22 @@ Fundo: Verde = ok, Vermelho = valor incorreto, Cinzento = valor atual</translati
         <location filename="../src/simulation/simulator.cpp" line="217"/>
         <location filename="../src/simulation/simulator.cpp" line="299"/>
         <source>Simulator Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro de simulador</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="179"/>
         <source>An error occurred when starting the simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um erro ocorreu ao iniciar a simulação.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>Simulator Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo esgotado do Simulador</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>The spice simulator did not finish after %1 ms. Aborting simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>O simulador de especiarias não acabou depois de %1 ms. Abortar simulação.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="300"/>
@@ -8905,7 +8907,10 @@ Fundo: Verde = ok, Vermelho = valor incorreto, Cinzento = valor atual</translati
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>O simulador deu um erro ao tentar simular este circuito. Por favor, verifique a fiação e tente de novo. 
+
+Erros:
+</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="218"/>
@@ -8914,7 +8919,11 @@ If the parts are from the simulation bin, report the bug in GitHub.
 
 Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>O simulador deu um erro ao carregar a netlist. Provavelmente algum campo SPICE está errado, por favor, verifique os.
+Se as peças provêm de uma caixa de simulação, reporte o bug no GitHub.
+
+Erros:
+</translation>
     </message>
 </context>
 <context>
@@ -9359,7 +9368,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="68"/>
         <source>The local storage folder is used for storing data that is specific to Fritzing, such as custom parts and settings, as well as temporary and long-term files that are created during the use of the software. On Linux systems, the default location for the Fritzing storage folder is usually ~/.config/Fritzing/. On Windows 11, the default location is typically C:\Users[user name]\AppData\Roaming\Fritzing, and on macOS Mojave or later, the default location is usually ~/Library/Application Support/Fritzing/.</source>
-        <translation type="unfinished"></translation>
+        <translation>A pasta de armazenamento local é usada para armazenar dados específicos do Fritzing, como peças e configurações personalizadas, bem como ficheiros temporários e de longo prazo criados durante o uso do software. Em sistemas Linux, o local padrão para a pasta de armazenamento Fritzing é geralmente ~/.config/Fritzing/. No Windows 11, o local padrão é normalmente C:\Users[nome de utilizador]\AppData\Roaming\Fritzing e, no macOS Mojave ou posterior, o local padrão geralmente é ~/Library/Application Support/Fritzing/.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="81"/>
@@ -9625,7 +9634,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="166"/>
         <source>When using the Fritzing Fab Service, if there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Quando utilizar o Fritzing Fab Service, se houver áreas vazias do PCB que voc^não quiser preenchidas com cobre, use a peça de bloqueio de cobre. A peça redimensionável irá mascarar o preenchimento de cobre no retângulo que ela cobre.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="170"/>

@@ -100,7 +100,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>BSD License</source>
-        <translation type="unfinished"></translation>
+        <translation>BSDライセンス</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="172"/>
@@ -115,12 +115,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="174"/>
         <source>zlib License</source>
-        <translation type="unfinished"></translation>
+        <translation>zlib ライセンス</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>The following libraries are used by Fritzing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing では次のライブラリが使用されます。</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="117"/>
@@ -1687,7 +1687,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="699"/>
         <source>No SPICE information. This part will not be simulated.</source>
-        <translation type="unfinished"></translation>
+        <translation>SPICE 情報はありません。この部品はシミュレーションされません。</translation>
     </message>
 </context>
 <context>
@@ -2205,12 +2205,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="120"/>
         <source>BoM CSV File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>BoM CSVファイル (*.csv)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="121"/>
         <source>IPC-D-356 File (*.ipc)</source>
-        <translation type="unfinished"></translation>
+        <translation>IPC-D-356 ファイル (*.ipc)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="140"/>
@@ -2355,12 +2355,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="996"/>
         <source>Save a Bill of Materials (BoM)/Shopping List as html</source>
-        <translation type="unfinished"></translation>
+        <translation>部品表(BoM)/買い物リストをhtmlとして保存する</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="999"/>
         <source>List of parts (&amp;Bill of Materials) as CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>部品リスト（および部品表）CSV</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1004"/>
@@ -3131,22 +3131,22 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1235"/>
         <source>Export Bill of Materials (BoM) as CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>部品表（BoM）をCSVでエクスポート</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1599"/>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to export to IPC netlist.</source>
-        <translation type="unfinished"></translation>
+        <translation>あなたのスケッチはまだボードを持っていません！  IPC ネットリストにエクスポートするには PCB を追加してください。</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1604"/>
         <source>IPC netlist export can only handle one board at a time--please select the board you want to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>IPCネットリストのエクスポートは一度に1つのボードしか扱えません。</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1612"/>
         <source>Export IPC-D-356...</source>
-        <translation type="unfinished"></translation>
+        <translation>IPC-D-356 をエクスポート...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
@@ -3157,7 +3157,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1614"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1697"/>
         <source>But the content was copied to the clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>しかし、内容はクリップボードにコピーされた。</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1695"/>
@@ -4556,7 +4556,7 @@ Do you want to update now?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1193"/>
         <source>&amp;Show Welcome</source>
-        <translation>&amp;表示&#x3000;ようこそ</translation>
+        <translation>&amp;表示　ようこそ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1195"/>
@@ -4780,37 +4780,37 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="998"/>
         <source>Simulate</source>
-        <translation type="unfinished"></translation>
+        <translation>シミュレート</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1007"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>ストップ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="941"/>
         <source>Edit the application&apos;s preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>アプリケーションの環境設定を編集する</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1169"/>
         <source>Starts the simulator (DC analysis)</source>
-        <translation type="unfinished"></translation>
+        <translation>シミュレータの起動（直流解析）</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1172"/>
         <source>Stop Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>停止シミュレーター</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1173"/>
         <source>Stops the simulator and removes simulator data</source>
-        <translation type="unfinished"></translation>
+        <translation>シミュレータを停止し、シミュレータ データを削除します</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1168"/>
         <source>Start Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>シミュレータ開始</translation>
     </message>
 </context>
 <context>
@@ -5907,12 +5907,12 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2332"/>
         <source>Parts Editor Error</source>
-        <translation type="unfinished"></translation>
+        <translation>パーツエディターエラー</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2332"/>
         <source>The file %2 with prefix %1 was not saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>接頭辞 %1 を持つファイル %2 は保存されませんでした。</translation>
     </message>
 </context>
 <context>
@@ -6696,17 +6696,19 @@ Note: this warning will not be repeated during this session.</source>
         <source>The gerber file generator will use six decimals precision instead of three.
 Some deprecated gerber commands are removed or replaced.
 We recommend enabling this. Only to avoid surprises with processes that are optimized for earlier Fritzing versions, this is currently off by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>ガーバー・ファイル・ジェネレーターは3桁ではなく6桁の精度を使用します。
+いくつかの非推奨ガーバー・コマンドが削除または置き換えられます。
+これを有効にすることをお勧めします。以前のFritzingバージョンに最適化されたプロセスでの驚きを避けるために、現在のところデフォルトではオフになっています。</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="452"/>
         <source>Enable gerber export improvements</source>
-        <translation type="unfinished"></translation>
+        <translation>ガーバー・エクスポートの改善</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="473"/>
         <source>The simulator is now enabled by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>シミュレーターはデフォルトで有効になっている。</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="507"/>
@@ -6757,17 +6759,17 @@ We recommend enabling this. Only to avoid surprises with processes that are opti
         <source>no keys down = scroll
 shift key swaps scroll axis
 Alt or %1 key = zoom</source>
-        <translation type="vanished">マウスホイール&#x3000;＝垂直スクロール
-マウスホイール+Shiftキー&#x3000;＝水平スクロール
-マウスホイール+ Alt又は％1キー&#x3000;＝ズーム</translation>
+        <translation type="vanished">マウスホイール　＝垂直スクロール
+マウスホイール+Shiftキー　＝水平スクロール
+マウスホイール+ Alt又は％1キー　＝ズーム</translation>
     </message>
     <message>
         <source>no keys down = zoom
 Alt or %1 key = scroll
 shift key swaps scroll axis</source>
-        <translation type="vanished">マウスホイール&#x3000;＝ズーム
-マウスホイール+ Alt又は％1キー&#x3000;=垂直スクロール
-マウスホイール+ Alt + Shiftキー&#x3000;=水平スクロール</translation>
+        <translation type="vanished">マウスホイール　＝ズーム
+マウスホイール+ Alt又は％1キー　=垂直スクロール
+マウスホイール+ Alt + Shiftキー　=水平スクロール</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="78"/>
@@ -6787,37 +6789,37 @@ shift key swaps scroll axis</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>&lt;b&gt;Scroll priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;スクロール優先&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="563"/>
         <source>no keys down = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>下キーなし = スクロール&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; キーはスクロール軸を切り替える&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; または &lt;kbd&gt;%1&lt;/kbd&gt; = ズーム</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>&lt;b&gt;Zoom priority&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;ズーム優先&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="566"/>
         <source>no keys down = zoom&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; = scroll&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; key swaps scroll axis</source>
-        <translation type="unfinished"></translation>
+        <translation>キーを押さない = ズーム&lt;br/&gt;&lt;kbd&gt;Alt&lt;/kbd&gt; または &lt;kbd&gt;%1&lt;/kbd&gt; = スクロール&lt;br/&gt;&lt;kbd&gt;Shift&lt;/kbd&gt; キーはスクロール軸を入れ替えます</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="569"/>
         <source>&lt;b&gt;Guess&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;推測&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="570"/>
         <source>Let Fritzing guess if the input is from a wheel or a touchpad. &lt;kbd&gt;Alt&lt;/kbd&gt; or &lt;kbd&gt;%1&lt;/kbd&gt; modify scrolling. &lt;kbd&gt;Shift&lt;/kbd&gt; can modify the axis or the speed.</source>
-        <translation type="unfinished"></translation>
+        <translation>入力がホイールかタッチパッドかをFritzingに推測させる。&lt;kbd&gt;Alt&lt;/kbd&gt; または&lt;kbd&gt;%1&lt;/kbd&gt; はスクロールを変更します。&lt;kbd&gt;Shift&lt;/kbd&gt; は軸や速度を変更することができます。</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
         <source>&lt;b&gt;Pure&lt;/b&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;ピュア&lt;/b&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="573"/>
@@ -6880,17 +6882,17 @@ shift key swaps scroll axis</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="83"/>
         <source>Beta Features</source>
-        <translation type="unfinished"></translation>
+        <translation>ベータ版の特徴</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="469"/>
         <source>Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>シミュレーター</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="479"/>
         <source>Enable simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>シミュレータを有効にする</translation>
     </message>
 </context>
 <context>
@@ -8297,7 +8299,7 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="54"/>
         <source>Measuring Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>測定ツール</translation>
     </message>
 </context>
 <context>
@@ -8764,17 +8766,17 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <location filename="../src/simulation/simulator.cpp" line="217"/>
         <location filename="../src/simulation/simulator.cpp" line="299"/>
         <source>Simulator Error</source>
-        <translation type="unfinished"></translation>
+        <translation>シミュレータエラー</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="179"/>
         <source>An error occurred when starting the simulation.</source>
-        <translation type="unfinished"></translation>
+        <translation>シミュレーションの開始時にエラーが発生しました。</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
         <source>Simulator Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>シミュレータタイムアウト</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="286"/>
@@ -9492,7 +9494,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="166"/>
         <source>When using the Fritzing Fab Service, if there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzingファブサービスを使用する際、PCBに銅を充填したくない空き領域がある場合は、銅ブロッカーパーツを使用してください。このサイズ変更可のパーツは、覆わされた範囲の銅フィルをマスクします。</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="170"/>

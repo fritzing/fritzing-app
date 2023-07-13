@@ -2491,6 +2491,8 @@ long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleI
 
 	// TODO:  z-order?
 
+	// Otherwise focus will be on the zoom slider (next in tab order after the deleted package combo box) and ctrl-z won't work.
+	this->setFocus();
 	return newID;
 }
 

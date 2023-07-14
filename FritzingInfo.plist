@@ -29,9 +29,9 @@ You should have received a copy of the GNU General Public License
         <key>CFBundleGetInfoString</key>
 		<string>Fritzing 1.0.0</string>
         <key>CFBundleShortVersionString</key>
-		<string>1.0.0</string>
+		<string>1.0.1</string>
         <key>CFBundleVersion</key>
-		<string>353be4</string>
+		<string>104347</string>
         <key>CFBundleIconFile</key>
         <string>fritzing_icon.icns</string>
         <key>CFBundleIdentifier</key>

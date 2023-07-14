@@ -24,7 +24,11 @@
   </ul>
   <p>
     The lively community on fritzing.org exchanges projects and tips, and there is also a PCB service "Fritzing Fab"
-    that produces user designs.
+	that produces user designs.
+  </p>
+  <p>
+    The project is made possible with the payments from our users. If you don't yet have it, please
+	consider downloading the offical, most up to date, version from our website, http://fritzing.org .
   </p>
  </description>
  <screenshots>
@@ -46,10 +50,9 @@
  <url type="faq">https://fritzing.org/faq/</url>
  <url type="help">https://fritzing.org/learning/</url>
  <url type="forum">https://forum.fritzing.org</url>
- <!-- <url type="donation">https://fritzing.org/shop/donations/</url> -->
  <url type="translate">https://fritzing.org/support-us/language-translation/</url>
  <releases>
-  <release version="1.0.0rc2" date="2023-05-24"/>
+  <release version="1.0.1rc" date="2023-07-15"/>
  </releases>
  <provides>
   <binary>Fritzing</binary>

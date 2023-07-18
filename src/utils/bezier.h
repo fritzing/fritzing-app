@@ -33,7 +33,6 @@ class Bezier
 public:
 	using SplitBezier = std::tuple<Bezier, Bezier>;
 public:
-	explicit Bezier(QPointF cp1, QPointF cp2);
 	Bezier();
 	Bezier(const Bezier&);
 	Bezier(QPointF endpoint0, QPointF endpoint1, QPointF cp0, QPointF cp1) noexcept;
@@ -69,6 +68,10 @@ public:
 protected:
 	double cubicF(double t) const noexcept;
 
+private:
+	// This is not used so far, and had misguiding parameter names.
+	// -> declare it private until there is a public use case.
+	explicit Bezier(QPointF, QPointF);
 
 public:
 	static Bezier fromElement(QDomElement & element);

@@ -42,6 +42,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/jumperitem.h"
 #include "../items/via.h"
 #include "../items/note.h"
+#include "../items/groundplane.h"
 #include "../sketch/breadboardsketchwidget.h"
 #include "../sketch/schematicsketchwidget.h"
 #include "../sketch/pcbsketchwidget.h"
@@ -4394,6 +4395,12 @@ void MainWindow::autorouterSettings() {
 }
 
 bool MainWindow::hasCopperFill() {
+	Q_FOREACH(QGraphicsItem* item, m_pcbGraphicsView->scene()->items()) {
+	    auto * base = dynamic_cast<GroundPlane *>(item);
+	    if (base) {
+		return true;
+	    }
+	}
 	return false;
 }
 

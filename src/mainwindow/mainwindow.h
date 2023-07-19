@@ -642,6 +642,7 @@ protected:
 	QMessageBox::StandardButton oldSchematicMessage(const QString & filename);
 	MainWindow * revertAux();
 	void migratePartLabelOffset(QList<ModelPart*>);
+	bool hasCopperFill();
 
 protected:
 	static void removeActionsStartingAt(QMenu *menu, int start=0);

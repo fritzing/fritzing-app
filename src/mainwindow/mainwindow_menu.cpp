@@ -4393,10 +4393,47 @@ void MainWindow::autorouterSettings() {
 	m_pcbGraphicsView->autorouterSettings();
 }
 
+bool MainWindow::hasCopperFill() {
+	return false;
+}
+
 void MainWindow::orderFab()
 {
-	// save project if not clean
+	// save project if not cleanMainWindow::
 	if (MainWindow::save()) {
+		if (!hasCopperFill()) {
+			const QString notShowAgain = QString("UploadCopperFillnotShowAgain");
+			QSettings settings;
+
+			QCheckBox *notAgain = new QCheckBox(tr("Don't show this again."));
+
+			QMessageBox box;
+			box.setText(tr("It is recommended to add copper/ground fill to your circuit to reduce acid usage during production.\n\nContinue upload?"));
+			box.setIcon(QMessageBox::Icon::Question);
+			QPushButton* cancelButton = box.addButton(QMessageBox::Cancel);
+			box.addButton(QMessageBox::Ok);
+			box.setDefaultButton(QMessageBox::Cancel);
+			box.setCheckBox(notAgain);
+
+			// Load the setting
+			notAgain->setChecked(settings.value(notShowAgain, false).toBool());
+
+			// If the checkbox is checked, don't show the message box
+			if (!notAgain->isChecked()) {
+				QObject::connect(notAgain, &QCheckBox::stateChanged, [&cancelButton](int state){
+				    cancelButton->setEnabled(state == Qt::Unchecked);
+				});
+
+				int ret = box.exec();
+
+				// Save the setting
+				settings.setValue(notShowAgain, notAgain->isChecked());
+
+				if (ret != QMessageBox::Ok) {
+				    return;
+				}
+			}
+		}
 		// upload
 		auto* manager = new QNetworkAccessManager();
 		FabUploadDialog upload(manager, m_fwFilename, this);

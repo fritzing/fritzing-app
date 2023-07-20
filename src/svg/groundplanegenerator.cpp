@@ -250,7 +250,7 @@ bool GroundPlaneGenerator::generateGroundPlane(const QString &boardSvg, QSizeF b
 	params.color = color;
 	params.seeds = seeds;
 	params.seedPoint = NULL;
-	QFuture<bool> future = QtConcurrent::run(this, &GroundPlaneGenerator::generateGroundPlaneFn, params);
+	QFuture<bool> future = QtConcurrent::run(&GroundPlaneGenerator::generateGroundPlaneFn, this, params);
 	while (!future.isFinished()) {
 		ProcessEventBlocker::processEvents(200);
 	}

@@ -170,7 +170,7 @@ void GroundPlanePaintEngine::drawPath(const QPainterPath &path) {
 	static int index = 0;
 	index++;
 	if (hasBrush) {
-		Paths paths = polygonsToClipper(polygons, state->matrix());
+		Paths paths = polygonsToClipper(polygons, state->transform());
 		Clipper cp;
 		cp.AddPaths(clipperPaths, ptSubject, true);
 		cp.AddPaths(paths, ptClip, true);
@@ -178,7 +178,7 @@ void GroundPlanePaintEngine::drawPath(const QPainterPath &path) {
 	}
 	if (hasPen && state->pen().widthF() != 0) {
 		QPainterPath stroke = QPainterPathStroker(state->pen()).createStroke(path);
-		Paths strokePath = polygonsToClipper(stroke.toFillPolygons(), state->matrix());
+		Paths strokePath = polygonsToClipper(stroke.toFillPolygons(), state->transform());
 		Clipper cp;
 		cp.AddPaths(clipperPaths, ptSubject, true);
 		cp.AddPaths(strokePath, ptClip, true);
@@ -321,14 +321,14 @@ bool GroundPlaneGenerator::generateGroundPlaneFn(GPGParams & params) {
 }
 
 void GroundPlaneGenerator::createGroundThermalPads(GPGParams &params, double clipperDPI, Paths &groundConnectorsZone, Paths &groundThermalConnectors) {
-	QMatrix seedInflater;
+	QTransform seedInflater;
 	QSizeF clipperSize = params.boardImageSize * clipperDPI / GraphicsUtils::SVGDPI;
 	seedInflater.scale(clipperSize.width(), clipperSize.height());
 	double keepout = params.keepoutMils / 1000.0 * clipperDPI;
 	for (int i = 0; i < params.seeds.size(); i++) {
 		GroundFillSeed seed = params.seeds[i];
 		QPolygonF scaledRect = seedInflater.map(seed.relativeRect);
-		groundConnectorsZone << polygonToClipper(scaledRect, QMatrix());
+		groundConnectorsZone << polygonToClipper(scaledRect, QTransform());
 		QRectF bounds = scaledRect.boundingRect();
 		QPointF center = bounds.center();
 		double cx = center.x();

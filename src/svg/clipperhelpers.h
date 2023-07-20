@@ -76,7 +76,7 @@ inline ClipperLib::PolyFillType qtToClipperFillType(QPaintEngine::PolygonDrawMod
 	return ClipperLib::pftNonZero;
 }
 
-inline ClipperLib::Path pointsToClipper(const QPointF *points, int pointCount, QMatrix matrix = QMatrix()) {
+inline ClipperLib::Path pointsToClipper(const QPointF *points, int pointCount, QTransform matrix = QTransform()) {
 	ClipperLib::Path clipperPath;
 	for (int i = 0; i < pointCount; i++) {
 		const QPointF p2 = matrix.map(points[i]);
@@ -85,11 +85,11 @@ inline ClipperLib::Path pointsToClipper(const QPointF *points, int pointCount, Q
 	return clipperPath;
 }
 
-inline ClipperLib::Path polygonToClipper(QPolygonF poly, const QMatrix &matrix = QMatrix()) {
+inline ClipperLib::Path polygonToClipper(QPolygonF poly, const QTransform &matrix = QTransform()) {
     return pointsToClipper(poly.data(), poly.size(), matrix);
 }
 
-inline ClipperLib::Paths polygonsToClipper(QList<QPolygonF> polys, const QMatrix &matrix = QMatrix()) {
+inline ClipperLib::Paths polygonsToClipper(QList<QPolygonF> polys, const QTransform &matrix = QTransform()) {
 	ClipperLib::Paths paths;
 	for (int i = 0; i < polys.size(); i++) {
 		paths << polygonToClipper(polys[i], matrix);

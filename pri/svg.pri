@@ -21,6 +21,7 @@ HEADERS += src/svg/svgfilesplitter.h \
     src/svg/svgflattener.h \
     src/svg/gerbergenerator.h \
     src/svg/groundplanegenerator.h \
+    src/svg/groundplanegeneratorold.h \
     src/svg/x2svg.h \
     src/svg/kicad2svg.h \
     src/svg/kicadmodule2svg.h \
@@ -41,6 +42,7 @@ SOURCES += src/svg/svgfilesplitter.cpp \
     src/svg/svgflattener.cpp \
     src/svg/gerbergenerator.cpp \
     src/svg/groundplanegenerator.cpp \
+    src/svg/groundplanegeneratorold.cpp \
     src/svg/x2svg.cpp \
     src/svg/kicad2svg.cpp \
     src/svg/kicadmodule2svg.cpp \

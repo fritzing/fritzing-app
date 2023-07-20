@@ -36,7 +36,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../version/version.h"
 #include "items/groundplane.h"
-#include "groundplanegenerator.h"
+#include "groundplanegeneratorold.h"
 #include "svgfilesplitter.h"
 #include "svgpathregex.h"
 
@@ -838,7 +838,7 @@ void GerberGenerator::mergeOutlineElement(QImage & image, QRectF & target, doubl
 	Q_UNUSED(ix);
 #endif
 
-	GroundPlaneGenerator gpg;
+	GroundPlaneGeneratorOld gpg;
 	gpg.setLayerName(layerName);
 	gpg.setMinRunSize(1, 1);
 	gpg.scanOutline(image, image.width(), image.height(), GraphicsUtils::StandardFritzingDPI / res, GraphicsUtils::StandardFritzingDPI, "#000000", false, false, QSizeF(0, 0), 0);

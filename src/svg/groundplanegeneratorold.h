@@ -18,8 +18,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
-#ifndef GROUNDPLANEGENERATOR_H
-#define GROUNDPLANEGENERATOR_H
+#ifndef GROUNDPLANEGENERATOROLD_H
+#define GROUNDPLANEGENERATOROLD_H
 
 #include <QImage>
 #include <QList>
@@ -42,12 +42,12 @@ struct GPGParams {
 	double keepoutMils;
 };
 
-class GroundPlaneGenerator : public QObject
+class GroundPlaneGeneratorOld : public QObject
 {
 	Q_OBJECT
 public:
-	GroundPlaneGenerator();
-	~GroundPlaneGenerator();
+	GroundPlaneGeneratorOld();
+	~GroundPlaneGeneratorOld();
 
 	bool generateGroundPlane(const QString & boardSvg, QSizeF boardImageSize, const QString & svg, QSizeF copperImageSize, QStringList & exceptions,
 	                         QGraphicsItem * board, double res, const QString & color, double keepoutMils);
@@ -72,7 +72,7 @@ public:
 	static QString ConnectorName;
 
 Q_SIGNALS:
-	void postImageSignal(GroundPlaneGenerator *, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> *);
+	void postImageSignal(GroundPlaneGeneratorOld *, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> *);
 
 protected:
 	void splitScanLines(QList<QRect> & rects, QList< QList<int> * > & pieces);

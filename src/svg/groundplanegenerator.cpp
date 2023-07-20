@@ -265,7 +265,8 @@ void saveClipperPathsToFile(Paths &paths, double clipperDPI, QString filename) {
 	f.close();
 }
 
-bool GroundPlaneGenerator::generateGroundPlaneFn(GPGParams & params) {
+bool GroundPlaneGenerator::generateGroundPlaneFn(const GPGParams & constParams) {
+	GPGParams params = constParams;
 	static int index = 0;
 	index++;
 	double bWidth, bHeight;

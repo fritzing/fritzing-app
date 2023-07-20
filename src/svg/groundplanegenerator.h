@@ -75,7 +75,7 @@ public:
 	static QString ConnectorName;
 
 protected:
-	bool generateGroundPlaneFn(GPGParams &);
+	bool generateGroundPlaneFn(const GPGParams &);
 	void makeCopperFillFromPolygons(QList<ClipperLib::Paths> &sortedPolygons, double res, const QString &colorString, bool makeConnectorFlag, QSizeF minAreaInches, double minDimensionInches);
 
 protected:

@@ -427,28 +427,26 @@ IntPoint findTopLeftMostPoint(Paths &paths) {
 }
 
 QList<Paths> convertCopperPolygonsToGroundPlane(Paths nonCopper, Paths thermalReliefPads, double clipperDPI, double keepoutMils, QPointF *seedPoint) {
-	Paths eroded, intermediate;
+	Paths keepoutArea;
 	PolyTree groundFill;
 	CleanPolygons(nonCopper);
-	ClipperOffset co;
-	co.AddPaths(nonCopper, jtRound, etClosedPolygon);
-	co.Execute(intermediate, -2 * keepoutMils / 1000 * clipperDPI);
-	co.Clear();
-	co.AddPaths(intermediate, jtRound, etClosedPolygon);
-	co.Execute(eroded, keepoutMils  / 1000 * clipperDPI);
-	CleanPolygons(eroded);
 	CleanPolygons(thermalReliefPads);
 
+	ClipperOffset co;
+	co.AddPaths(nonCopper, jtRound, etClosedPolygon);
+	co.Execute(keepoutArea, -keepoutMils / 1000 * clipperDPI);
+
 	Clipper clipper;
-	clipper.AddPaths(eroded, ptSubject, true);
+	clipper.AddPaths(keepoutArea, ptSubject, true);
 	clipper.AddPaths(thermalReliefPads, ptClip, true);
 	clipper.Execute(ctDifference, groundFill, pftPositive, pftPositive);
 
 	QList<Paths> sortedPolygons;
-	if (seedPoint == NULL)
+	if (seedPoint == NULL) {
 		sortPolygons(groundFill, sortedPolygons);
-	else
+	} else {
 		sortedPolygons.append(findPolygonForPoint(groundFill, IntPoint((cInt) seedPoint->x(), (cInt) seedPoint->y())));
+	}
 	return sortedPolygons;
 }
 

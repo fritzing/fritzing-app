@@ -427,27 +427,27 @@ IntPoint findTopLeftMostPoint(Paths &paths) {
 }
 
 QList<Paths> convertCopperPolygonsToGroundPlane(Paths nonCopper, Paths thermalReliefPads, double clipperDPI, double keepoutMils, QPointF *seedPoint) {
-	Paths eroded, intermediate, keepoutArea;
+	Paths eroded, intermediate, nonCopperMinusKeepout;
 	PolyTree groundFill;
 	CleanPolygons(nonCopper);
 	CleanPolygons(thermalReliefPads);
 
-	double cappedKeepoutMils = std::max(keepoutMils / 4.0, 1.0);
-
 	ClipperOffset co;
 	co.AddPaths(nonCopper, jtRound, etClosedPolygon);
-	co.Execute(intermediate, -2 * cappedKeepoutMils / 1000 * clipperDPI);
+	co.Execute(nonCopperMinusKeepout, -keepoutMils / 1000 * clipperDPI);
+
+	double cappedKeepoutMils = std::max(keepoutMils / 4.0, 1.0);
+
+	co.Clear();
+	co.AddPaths(nonCopperMinusKeepout, jtRound, etClosedPolygon);
+	co.Execute(intermediate, -cappedKeepoutMils / 1000 * clipperDPI);
 	co.Clear();
 	co.AddPaths(intermediate, jtRound, etClosedPolygon);
 	co.Execute(eroded, cappedKeepoutMils  / 1000 * clipperDPI);
 	CleanPolygons(eroded);
 
-	co.Clear();
-	co.AddPaths(eroded, jtRound, etClosedPolygon);
-	co.Execute(keepoutArea, -keepoutMils / 1000 * clipperDPI);
-
 	Clipper clipper;
-	clipper.AddPaths(keepoutArea, ptSubject, true);
+	clipper.AddPaths(eroded, ptSubject, true);
 	clipper.AddPaths(thermalReliefPads, ptClip, true);
 	clipper.Execute(ctDifference, groundFill, pftPositive, pftPositive);
 

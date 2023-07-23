@@ -903,7 +903,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolesettings.ui" line="66"/>
         <source>Flow control:</source>
-        <translation type="unfinished"></translation>
+        <translation>Controllo del flusso:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="79"/>
@@ -933,12 +933,12 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolesettings.ui" line="116"/>
         <source>Vendor ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>ID del fornitore:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="123"/>
         <source>Product ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codice prodotto:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="148"/>
@@ -953,7 +953,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolesettings.ui" line="163"/>
         <source>Local echo</source>
-        <translation type="unfinished"></translation>
+        <translation>Eco locale</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="89"/>
@@ -963,7 +963,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="90"/>
         <source>Manufacturer: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Produttore: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="91"/>
@@ -978,12 +978,12 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="93"/>
         <source>Vendor Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ID del fornitore: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="94"/>
         <source>Product Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ID prodotto: %1</translation>
     </message>
 </context>
 <context>
@@ -996,7 +996,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolewindow.ui" line="30"/>
         <source>Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Schermo</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="39"/>
@@ -1021,7 +1021,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolewindow.ui" line="73"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Maggiori informazioni su Qt</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="78"/>
@@ -1106,7 +1106,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="155"/>
         <source>Serial port open error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore d&apos;apertura della porta seriale</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="175"/>
@@ -1116,12 +1116,12 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="201"/>
         <source>Critical Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore critico</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="181"/>
         <source>About Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni sullo schermo seriale</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="182"/>
@@ -1134,12 +1134,12 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="235"/>
         <source>DRC was cancelled.</source>
-        <translation type="unfinished"></translation>
+        <translation>La regolazione automatica del livello d&apos;audio è stata cancellata.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="265"/>
         <source>Your sketch is ready for production: there are no connectors or traces that overlap or are too close together.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il tuo disegno è pronto per essere riprodotto: non ci sono collegamenti, né tracce sovrapposti o troppo vicini.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="268"/>
@@ -1154,12 +1154,12 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="373"/>
         <source>Fritzing error: unable to render board svg.</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore di Fritzing: impossibile creare il SVG della scheda.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="402"/>
         <source>No traces or connectors to check</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessuna traccia, né collegamenti da controllare</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="417"/>

@@ -441,6 +441,16 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		anyConverted = true;
 	}
 
+	// it seems that gerber might not be able to handle rects with dashed lines
+	if (TextUtils::squashElement(domDocument1, "circle", "stroke-dasharray", QRegularExpression("^(?!none).*$"))) {
+		anyConverted = true;
+	}
+
+	// it seems that gerber might not be able to handle rects with dashed lines
+	if (TextUtils::squashElement(domDocument1, "line", "stroke-dasharray", QRegularExpression("^(?!none).*$"))) {
+		anyConverted = true;
+	}
+
 	// gerber can't handle paths with curves
 	if (TextUtils::squashElement(domDocument1, "path", "d", AaCc)) {
 		anyConverted = true;

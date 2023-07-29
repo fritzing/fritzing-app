@@ -4245,7 +4245,7 @@ Procedere e ricaricare il file come salvato sul disco?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2869"/>
         <source>Design Rules Check (DRC)</source>
-        <translation type="unfinished"></translation>
+        <translation>Controllo delle norme di progettazione</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4288"/>

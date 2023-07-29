@@ -1134,7 +1134,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="235"/>
         <source>DRC was cancelled.</source>
-        <translation>La regolazione automatica del livello d&apos;audio è stata cancellata.</translation>
+        <translation>La DRC è stata annullata.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="265"/>

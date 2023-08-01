@@ -4,6 +4,7 @@
 # ********************************************************************/
 
 #include "src/items/itembase.h"
+#include "src/items/groundplane.h"
 #include "src/model/modelpart.h"
 #include "src/utils/textutils.h"
 #include "src/utils/graphicsutils.h"
@@ -207,6 +208,9 @@ QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<Con
 		Q_FOREACH (ConnectorItem * connectorItem, *net) {
 			ConnectorItem * crossLayerConnectorItem = connectorItem->getCrossLayerConnectorItem();
 			ItemBase * itemBase = connectorItem->attachedTo();
+			auto * groundPlane = dynamic_cast<GroundPlane *>(itemBase);
+			// Ignore copper fill connectors for ipc netlist
+			if (groundPlane) continue;
 
 //			Q_FOREACH (QGraphicsItem * childItem, itemBase->childItems()) {
 //				NonConnectorItem * nonConnectorItem = dynamic_cast<NonConnectorItem *>(childItem);

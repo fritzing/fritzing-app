@@ -1174,12 +1174,12 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="551"/>
         <source>%1 is overlapping (%2 layer)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 si sovrappone (strato %2)</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="441"/>
         <source>Too close to a border (%1 layer)</source>
-        <translation type="unfinished"></translation>
+        <translation>Troppo vicino a un bordo (%1 strato)</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="1025"/>
@@ -1197,7 +1197,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="138"/>
         <source>DRC Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Risultati del DRC</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="150"/>
@@ -1300,7 +1300,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="2042"/>
         <source>Regenerate parts database?</source>
-        <translation type="unfinished"></translation>
+        <translation>Rigenerare il database delle parti?</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2043"/>

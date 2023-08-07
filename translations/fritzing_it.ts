@@ -898,7 +898,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/program/consolesettings.ui" line="56"/>
         <source>Stop bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bit di arresto:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="66"/>
@@ -1144,12 +1144,12 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="268"/>
         <source>The areas on your board highlighted in red are connectors and traces which may overlap or be too close together. </source>
-        <translation type="unfinished"></translation>
+        <translation>Le aree sulla scheda evidenziate in rosso sono connettori e tracce che potrebbero sovrapporsi o essere troppo vicine tra loro. </translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="269"/>
         <source>Reposition them and run the DRC again to find more problems</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Riposizionateli ed eseguite nuovamente il DRC per trovare altri problemi.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="373"/>
@@ -1207,7 +1207,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="146"/>
         <source>Click on an item in the list to highlight of overlap it refers to.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fare clic su una voce dell&apos;elenco per evidenziare la sovrapposizione a cui si riferisce.</translation>
     </message>
 </context>
 <context>
@@ -1241,7 +1241,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/items/dip.cpp" line="53"/>
         <source>chip label</source>
-        <translation type="unfinished"></translation>
+        <translation>etichetta microchip</translation>
     </message>
 </context>
 <context>
@@ -1260,7 +1260,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/dialogs/exportparametersdialog.ui" line="131"/>
         <source>DPI</source>
-        <translation type="unfinished"></translation>
+        <translation>DPI</translation>
     </message>
 </context>
 <context>
@@ -1275,17 +1275,17 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="1679"/>
         <source>Fritzing caught an exception from %1 in event %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fritzing ha rilevato un&apos;eccezione da %1 nell&apos;evento %2</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1669"/>
         <source>Fritzing caught an exception %1 from %2 in event %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fritzing ha rilevato un&apos;eccezione %1 da %2 nell&apos;evento %3</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1807"/>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
-        <translation type="unfinished"></translation>
+        <translation>Stabilire un nome di file .fzz in cui salvare (l&apos;annullamento cancellerà il backup).</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1807"/>
@@ -1295,7 +1295,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="1676"/>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fritzing ha rilevato un&apos;eccezione da %1 nell&apos;evento %2: %3</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2042"/>
@@ -1307,23 +1307,26 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
         <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>La rigenerazione del database dei componenti richiederà alcuni minuti e sarà necessario riavviare Fritzing.
+
+</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2044"/>
         <source>Would you like to regenerate the parts database?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Volete rigenerare il database dei componenti?
+</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2046"/>
         <source>This option is usefull if you modify the parts database on your own. If you want to recover from an error, you may be better off downloading the latest Fritzing release.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questa opzione è utile se si modifica il database dei componenti da soli. Se si vuole recuperare un errore, è meglio scaricare l&apos;ultima versione di Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2054"/>
         <source>Regenerate</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rigenerare</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2055"/>
@@ -1333,7 +1336,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="2060"/>
         <source>Regenerating parts database...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rigenerazione del database dei componenti...</translation>
     </message>
 </context>
 <context>
@@ -1346,7 +1349,7 @@ Sfondo: Verde=ok, Rosso=valore errato, Grigio=valore corrente</translation>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="70"/>
         <source>Get your board fabricated this week!</source>
-        <translation type="unfinished"></translation>
+        <translation>Creare la scheda questa settimana!</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="106"/>

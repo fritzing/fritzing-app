@@ -1384,7 +1384,7 @@ void ConnectorItem::collectEqualPotential(
 		// When the kept connector item is part of a bus, include all of the other
 		// connectors on the bus in the list being processed
 		Bus *bus = connectorItem->bus();
-		if (!skipBuses && bus) {
+		if (bus && (connectorItem->attachedToItemType() == ModelPart::Wire || !skipBuses)) {
 			QList<ConnectorItem *> busConnectedItems;
 			connectorItem->attachedTo()->busConnectorItems(bus, connectorItem, busConnectedItems);
 #ifndef QT_NO_DEBUG

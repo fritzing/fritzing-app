@@ -9,6 +9,7 @@
 #include "src/utils/graphicsutils.h"
 #include "src/connectors/nonconnectoritem.h"
 #include "src/connectors/connectoritem.h"
+#include "version/version.h"
 
 #include <QString>
 #include <QMessageBox>
@@ -153,20 +154,25 @@ QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<Con
 	QString ipc; // IPC D 356A
 
 	const char comment[]{"C  %.66s\n"};
-	const char header[]{"P  %.4s  %.62s\n"};
+	const char header3[]{"P  %.3s   %.62s\n"};
+	const char header4[]{"P  %.4s  %.62s\n"};
+	const char header5[]{"P  %.5s %.62s\n"};
 	const char ende[]{"999\n"};
 
 	ipc += QString::asprintf(comment, TextUtils::CreatedWithFritzingString.toStdString().c_str());
+	ipc += QString::asprintf(comment, Version::versionString().toStdString().c_str());
 //	ipc += QString::asprintf(header, "JOB", "TEST");
-	ipc += QString::asprintf(header, "CODE", "00");
+	ipc += QString::asprintf(header4, "CODE", "00");
 
 	//	 SI Metric
 	//	 CUST 0 or CUST Inches and degrees
 	//	 CUST 1 Millimeters and degrees
 	//	 CUST 2 Inches and radians
-	ipc += QString::asprintf(header, "UNITS", "CUST 1");
-	ipc += QString::asprintf(header, "TITLE", basename.toStdString().c_str());
-	ipc += QString::asprintf(header, "VER", "IPC-D-356");
+	ipc += QString::asprintf(header5, "UNITS", "CUST 1");
+	ipc += QString::asprintf(header5, "TITLE", basename.toStdString().c_str());
+	//ipc += QString::asprintf(header3, "NUM", NA);
+	//ipc += QString::asprintf(header3, "REV", NA);
+	ipc += QString::asprintf(header3, "VER", "IPC-D-356A");
 
 	Q_FOREACH (QList<ConnectorItem *> * net, netList) {
 		// Sorting so we get consistend export data, avoid random order

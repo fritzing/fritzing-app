@@ -192,14 +192,15 @@ QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<Con
 	});
 
 	Q_FOREACH (QList<ConnectorItem *> * net, netList) {
+		countNets += 1;
 
 		auto * i1 = net->constFirst();
 		auto * i2 = net->constLast();
 
-		QString netLabel = "NET" + QString::number(++countNets) + i1->attachedToInstanceTitle() + i2->attachedToInstanceTitle();
+		QString netLabel = "NET" + QString::number(countNets) + i1->attachedToInstanceTitle() + i2->attachedToInstanceTitle();
 		Q_FOREACH (ConnectorItem * connectorItem, *net) {
 			if (connectorItem->connectorSharedName().contains("gnd", Qt::CaseInsensitive)) {
-				netLabel = "NET" + QString::number(++countNets) + "-GND";
+				netLabel = "NET" + QString::number(countNets) + "-GND";
 			}
 		}
 

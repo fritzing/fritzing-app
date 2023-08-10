@@ -201,6 +201,7 @@ include(pri/program.pri)
 include(pri/testing.pri)
 include(pri/simulation.pri)
 include(test/version.pri)
+include(pri/clipper1detect.pri)
 
 TARGET = Fritzing
 TEMPLATE = app

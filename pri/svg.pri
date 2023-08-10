@@ -29,6 +29,7 @@ HEADERS += src/svg/svgfilesplitter.h \
     src/svg/gedaelementparser.h \
     src/svg/gedaelementgrammar_p.h \
     src/svg/gedaelementlexer.h \
+    src/svg/clipperhelpers.h \
     $$PWD/../src/svg/svgtext.h
 
 SOURCES += src/svg/svgfilesplitter.cpp \

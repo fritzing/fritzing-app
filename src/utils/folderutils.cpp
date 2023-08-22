@@ -450,7 +450,7 @@ bool FolderUtils::createZipAndSaveTo(const QDir &dirToCompress, const QString &f
 	DebugDialog::debug("temp file: "+tempZipFile);
 	QuaZip zip(tempZipFile);
 	if(!zip.open(QuaZip::mdCreate)) {
-		qWarning("zip.open(): %d", zip.getZipError());
+		qWarning() << QString("zip.open(): %1").arg(zip.getZipError());
 		return false;
 	}
 
@@ -527,7 +527,7 @@ bool FolderUtils::unzipTo(const QString &filepath, const QString &dirToDecompres
 
 	QuaZip zip(filepath);
 	if(!zip.open(QuaZip::mdUnzip)) {
-		error = QString("zip.open(): %d").arg(zip.getZipError());
+		error = QString("zip.open(): %1").arg(zip.getZipError());
 		DebugDialog::debug(error);
 		return false;
 	}
@@ -541,19 +541,19 @@ bool FolderUtils::unzipTo(const QString &filepath, const QString &dirToDecompres
 	char c;
 	for(bool more=zip.goToFirstFile(); more; more=zip.goToNextFile()) {
 		if(!zip.getCurrentFileInfo(&info)) {
-			error = QString("getCurrentFileInfo(): %d\n").arg(zip.getZipError());
+			error = QString("getCurrentFileInfo(): %1\n").arg(zip.getZipError());
 			DebugDialog::debug(error);
 			return false;
 		}
 
 		if(!file.open(QIODevice::ReadOnly)) {
-			error = QString("file.open(): %d").arg(file.getZipError());
+			error = QString("file.open(): %1").arg(file.getZipError());
 			DebugDialog::debug(error);
 			return false;
 		}
 		name=file.getActualFileName();
 		if(file.getZipError()!=UNZ_OK) {
-			error = QString("file.getFileName(): %d").arg(file.getZipError());
+			error = QString("file.getFileName(): %1").arg(file.getZipError());
 			DebugDialog::debug(error);
 			return false;
 		}
@@ -574,7 +574,7 @@ bool FolderUtils::unzipTo(const QString &filepath, const QString &dirToDecompres
 			}
 			out.setFileName(dirToDecompress+"/"+name);
 			if(!out.open(QIODevice::WriteOnly)) {
-				error = QString("out.open(): %s").arg(out.errorString().toLocal8Bit().constData());
+				error = QString("out.open(): %1").arg(out.errorString().toLocal8Bit().constData());
 				DebugDialog::debug(error);
 				return false;
 			}
@@ -601,7 +601,7 @@ bool FolderUtils::unzipTo(const QString &filepath, const QString &dirToDecompres
 
 		out.close();
 		if(file.getZipError()!=UNZ_OK) {
-			error = QString("file.getFileName(): %d").arg(file.getZipError());
+			error = QString("file.getFileName(): %1").arg(file.getZipError());
 			DebugDialog::debug(error);
 			return false;
 		}
@@ -612,14 +612,14 @@ bool FolderUtils::unzipTo(const QString &filepath, const QString &dirToDecompres
 		}
 		file.close();
 		if(file.getZipError()!=UNZ_OK) {
-			error = QString("file.close(): %d").arg(file.getZipError());
+			error = QString("file.close(): %1").arg(file.getZipError());
 			DebugDialog::debug(error);
 			return false;
 		}
 	}
 	zip.close();
 	if(zip.getZipError()!=UNZ_OK) {
-		error = QString("zip.close(): %d").arg(zip.getZipError());
+		error = QString("zip.close(): %1").arg(zip.getZipError());
 		DebugDialog::debug(error);
 		return false;
 	}

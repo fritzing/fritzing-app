@@ -39,28 +39,6 @@
         <file>resources/images/splitterHandle.png</file>
         <file>resources/images/part_lock.svg</file>
         <file>resources/images/part_sticky.svg</file>
-        <file>resources/images/cursor/spot_face_cutter.bmp</file>
-        <file>resources/images/cursor/spot_face_cutter_mask.bmp</file>
-        <file>resources/images/cursor/curve.bmp</file>
-        <file>resources/images/cursor/curve_mask.bmp</file>
-        <file>resources/images/cursor/bendpoint.bmp</file>
-        <file>resources/images/cursor/bendpoint_mask.bmp</file>
-        <file>resources/images/cursor/bendleg.bmp</file>
-        <file>resources/images/cursor/bendleg_mask.bmp</file>
-        <file>resources/images/cursor/new_bendpoint.bmp</file>
-        <file>resources/images/cursor/new_bendpoint_mask.bmp</file>
-        <file>resources/images/cursor/magic_wand.bmp</file>
-        <file>resources/images/cursor/magic_wand_mask.bmp</file>
-        <file>resources/images/cursor/make_wire.bmp</file>
-        <file>resources/images/cursor/make_wire_mask.bmp</file>
-        <file>resources/images/cursor/part_move.bmp</file>
-        <file>resources/images/cursor/part_move_mask.bmp</file>
-        <file>resources/images/cursor/rubberband_move.bmp</file>
-        <file>resources/images/cursor/rubberband_move_mask.bmp</file>
-        <file>resources/images/cursor/rotate.bmp</file>
-        <file>resources/images/cursor/rotate_mask.bmp</file>
-        <file>resources/images/cursor/scale.bmp</file>
-        <file>resources/images/cursor/scale_mask.bmp</file>
         <file>resources/images/icons/Toolbar_Icon_Order.png</file>
         <file>resources/images/icons/check.png</file>
         <file>resources/images/icons/nocheck.png</file>
@@ -384,5 +362,16 @@
         <file>resources/fonts/Segment16/Segment16C Regular.ttf</file>
         <file>resources/fonts/Segment16/Segment16C Bold.ttf</file>
         <file>resources/images/icons/toolbarStopSimulationEnabled_icon.png</file>
+        <file>resources/images/cursor/bendleg.png</file>
+        <file>resources/images/cursor/bendpoint.png</file>
+        <file>resources/images/cursor/curve.png</file>
+        <file>resources/images/cursor/make_wire.png</file>
+        <file>resources/images/cursor/new_bendpoint.png</file>
+        <file>resources/images/cursor/part_move.png</file>
+        <file>resources/images/cursor/rotate.png</file>
+        <file>resources/images/cursor/rubberband_move.png</file>
+        <file>resources/images/cursor/scale.png</file>
+        <file>resources/images/cursor/magic_wand.png</file>
+        <file>resources/images/cursor/spot_face_cutter.png</file>
     </qresource>
 </RCC>

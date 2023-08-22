@@ -73,27 +73,16 @@ void CursorMaster::initCursors()
 		//connect(&timer, SIGNAL(timeout()), &TheCursorMaster, SLOT(moveCursor()));
 
 		QStringList names;
-		QStringList masks;
 
-		names << ":resources/images/cursor/bendpoint.bmp"
-		      << ":resources/images/cursor/new_bendpoint.bmp"
-		      << ":resources/images/cursor/make_wire.bmp"
-		      << ":resources/images/cursor/curve.bmp"
-		      << ":resources/images/cursor/rubberband_move.bmp"
-		      << ":resources/images/cursor/part_move.bmp"
-		      << ":resources/images/cursor/bendleg.bmp"
-		      << ":resources/images/cursor/rotate.bmp"
-		      << ":resources/images/cursor/scale.bmp";
-
-		masks << ":resources/images/cursor/bendpoint_mask.bmp"
-		      << ":resources/images/cursor/new_bendpoint_mask.bmp"
-		      << ":resources/images/cursor/make_wire_mask.bmp"
-		      << ":resources/images/cursor/curve_mask.bmp"
-		      << ":resources/images/cursor/rubberband_move_mask.bmp"
-		      << ":resources/images/cursor/part_move_mask.bmp"
-		      << ":resources/images/cursor/bendleg_mask.bmp"
-		      << ":resources/images/cursor/rotate_mask.bmp"
-		      << ":resources/images/cursor/scale_mask.bmp";
+		names << ":resources/images/cursor/bendpoint.png"
+			  << ":resources/images/cursor/new_bendpoint.png"
+			  << ":resources/images/cursor/make_wire.png"
+			  << ":resources/images/cursor/curve.png"
+			  << ":resources/images/cursor/rubberband_move.png"
+			  << ":resources/images/cursor/part_move.png"
+			  << ":resources/images/cursor/bendleg.png"
+			  << ":resources/images/cursor/rotate.png"
+			  << ":resources/images/cursor/scale.png";
 
 		Cursors << &BendpointCursor
 		        << &NewBendpointCursor
@@ -106,9 +95,8 @@ void CursorMaster::initCursors()
 		        << &ScaleCursor;
 
 		for (int i = 0; i < Cursors.count(); i++) {
-			QBitmap bitmap1(names.at(i));
-			QBitmap bitmap1m(masks.at(i));
-			*Cursors.at(i) = new QCursor(bitmap1, bitmap1m, 0, 0);
+			QPixmap pixmap(names.at(i));
+			*Cursors.at(i) = new QCursor(pixmap, 0, 0);
 		}
 
 		QApplication::instance()->installEventFilter(instance());

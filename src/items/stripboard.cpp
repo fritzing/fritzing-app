@@ -64,15 +64,13 @@ Stripbit::Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGr
 	: QGraphicsPathItem(path, parent)
 {
 	if (SpotFaceCutterCursor == nullptr) {
-		QBitmap bitmap(":resources/images/cursor/spot_face_cutter.bmp");
-		QBitmap bitmapm(":resources/images/cursor/spot_face_cutter_mask.bmp");
-		SpotFaceCutterCursor = new QCursor(bitmap, bitmapm, 0, 0);
+		QPixmap pixmap(":resources/images/cursor/spot_face_cutter.png");
+		SpotFaceCutterCursor = new QCursor(pixmap, 0, 0);
 	}
 
 	if (MagicWandCursor == nullptr) {
-		QBitmap bitmap(":resources/images/cursor/magic_wand.bmp");
-		QBitmap bitmapm(":resources/images/cursor/magic_wand_mask.bmp");
-		MagicWandCursor = new QCursor(bitmap, bitmapm, 0, 0);
+		QPixmap pixmap(":resources/images/cursor/magic_wand.png");
+		MagicWandCursor = new QCursor(pixmap, 0, 0);
 	}
 
 	setZValue(-999);			// beneath connectorItems

@@ -242,6 +242,9 @@
 		<sketch id="SimplePotentiometer" >
 			<language country="en" name="Potentiometer" src="core/Simulator/EN/simple_potentiometer.fzz"/>
 		</sketch>
+		<sketch id="ComposedArduinoR4WifiShield" >
+		    <language country="en" name="Composed Arduino R4 WIFI Shield" src="core/Shields/ComposedArduinoR4WifiShield.fzz"/>
+		</sketch>
 </sketches>
 	<categories>
 		<category>
@@ -502,6 +505,10 @@
 				<sketch id="SimplePotentiometer"/>
 				<sketch id="IrSensorTransistorMotor"/>
 			</category>
+		</category>
+		<category>
+		    <language country="en" name="Shields"/>
+			<sketch id="ComposedArduinoR4WifiShield"/>
 		</category>
 	</categories>
 </fritzing-sketches>

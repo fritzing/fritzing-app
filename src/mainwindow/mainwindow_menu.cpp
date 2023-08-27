@@ -158,11 +158,11 @@ void MainWindow::mainLoad() {
 						   tr("Select a Fritzing file to open"),
 	                       path,
 						   tr("Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)")
-	                       .arg(FritzingSketchExtension)
-	                       .arg(FritzingBundleExtension)
-	                       .arg(FritzingBundledPartExtension)
-	                       .arg(FritzingBinExtension)
-						   .arg(FritzingBundledBinExtension)
+						   .arg(FritzingSketchExtension
+						   , FritzingBundleExtension
+						   , FritzingBundledPartExtension
+						   , FritzingBinExtension
+						   , FritzingBundledBinExtension)
 #ifndef QT_NO_DEBUG
 				// Loading an unbundled part is useful while creating a new part.
 				// However, unbundled parts should not be distributed,
@@ -246,8 +246,7 @@ void MainWindow::mainLoadAux(const QString & fileName)
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
 		FMessageBox::warning(this, tr("Fritzing"),
 		                     tr("Cannot read file  1 %1:\n%2.")
-		                     .arg(fileName)
-		                     .arg(file.errorString()));
+							 .arg(fileName, file.errorString()));
 		return;
 	}
 

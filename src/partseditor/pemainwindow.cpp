@@ -2168,15 +2168,13 @@ bool PEMainWindow::saveAs(bool overWrite)
 			message += tr("\n\nGo ahead and save?");
 
 			messageBox.setText(message);
-			messageBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+			messageBox.setStandardButtons(QMessageBox::Save | QMessageBox::Cancel);
 			messageBox.setDefaultButton(QMessageBox::Cancel);
 			messageBox.setIcon(QMessageBox::Warning);
-			messageBox.setWindowModality(Qt::WindowModal);
-			messageBox.setButtonText(QMessageBox::Ok, tr("Save"));
-			messageBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
+			messageBox.setWindowModality(Qt::WindowModal);					
 			auto answer = (QMessageBox::StandardButton) messageBox.exec();
 
-			if (answer != QMessageBox::Ok) {
+			if (answer != QMessageBox::Save) {
 				return false;
 			}
 

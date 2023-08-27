@@ -131,7 +131,7 @@ void SketchToolButton::changeEvent(QEvent *event) {
 	QToolButton::changeEvent(event);
 }
 
-void SketchToolButton::enterEvent(QEvent *event) {
+void SketchToolButton::enterEvent(QEnterEvent *event) {
 	QToolButton::enterEvent((QEnterEvent *)event);
 	Q_EMIT entered();
 }

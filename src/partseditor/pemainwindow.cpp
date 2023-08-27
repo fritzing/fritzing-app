@@ -382,25 +382,26 @@ void PEMainWindow::closeEvent(QCloseEvent *event)
 		QMessageBox messageBox(this);
 		messageBox.setWindowTitle(tr("Close without saving?"));
 
-		QString message = tr("This part can not be saved as-is:\n\n");
-		Q_FOREACH (QString string, messages) {
+		QString message = tr("This part cannot be saved as-is:\n\n");
+		for (const QString &string : messages) {
 			message.append('\t');
 			message.append(string);
-			messages.append("\n\n");
+			message.append("\n\n");
 		}
 
 		message += tr("Do you want to keep working or close without saving?");
 
 		messageBox.setText(message);
-		messageBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-		messageBox.setDefaultButton(QMessageBox::Cancel);
 		messageBox.setIcon(QMessageBox::Warning);
 		messageBox.setWindowModality(Qt::WindowModal);
-		messageBox.setButtonText(QMessageBox::Ok, tr("Close without saving"));
-		messageBox.setButtonText(QMessageBox::Cancel, tr("Keep working"));
-		auto answer = (QMessageBox::StandardButton) messageBox.exec();
 
-		if (answer != QMessageBox::Ok) {
+		messageBox.addButton(tr("Close without saving"), QMessageBox::AcceptRole);
+		auto *keepWorkingButton = messageBox.addButton(tr("Keep working"), QMessageBox::RejectRole);
+
+		messageBox.setDefaultButton(keepWorkingButton);
+
+		messageBox.exec();
+		if (messageBox.clickedButton() != keepWorkingButton) {
 			event->ignore();
 			return;
 		}

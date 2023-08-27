@@ -2038,7 +2038,7 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 }
 
 void FApplication::regeneratePartsDatabase() {
-	QMessageBox messageBox(nullptr);
+	QMessageBox messageBox;
 	messageBox.setWindowTitle(tr("Regenerate parts database?"));
 	messageBox.setText(tr("Regenerating the parts database will take some minutes and you will have to restart Fritzing\n\n") +
 	                   tr("Would you like to regenerate the parts database?\n")
@@ -2047,21 +2047,22 @@ void FApplication::regeneratePartsDatabase() {
 									 "If you want to recover from an error, "
 								  "you may be better off downloading the latest Fritzing release."
 									 ));
-	messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-	messageBox.setDefaultButton(QMessageBox::Yes);
 	messageBox.setIcon(QMessageBox::Question);
 	messageBox.setWindowModality(Qt::WindowModal);
-	messageBox.setButtonText(QMessageBox::Yes, tr("Regenerate"));
-	messageBox.setButtonText(QMessageBox::No, tr("Cancel"));
-	if ((QMessageBox::StandardButton) messageBox.exec() != QMessageBox::Yes) {
+	QPushButton *regenerateButton = messageBox.addButton(tr("Regenerate"), QMessageBox::YesRole);
+	messageBox.addButton(QMessageBox::Cancel);
+	messageBox.setDefaultButton(regenerateButton);
+
+	messageBox.exec();
+	if (messageBox.clickedButton() != regenerateButton) {
 		return;
 	}
 
 	auto * fileProgressDialog = new FileProgressDialog(tr("Regenerating parts database..."), 0, nullptr);
 	// these don't seem very accurate (i.e. when progress is at 100%, there is still a lot of work pending)
 	// so we are leaving progress indeterminate at present
-	//connect(referenceModel, SIGNAL(partsToLoad(int)), fileProgressDialog, SLOT(setMaximum(int)));
-	//connect(referenceModel, SIGNAL(loadedPart(int,int)), fileProgressDialog, SLOT(setValue(int)));
+	//connect(m_referenceModel, SIGNAL(partsToLoad(int)), fileProgressDialog, SLOT(setMaximum(int)));
+	//connect(m_referenceModel, SIGNAL(loadedPart(int,int)), fileProgressDialog, SLOT(setValue(int)));
 
 	regeneratePartsDatabaseAux(fileProgressDialog);
 }

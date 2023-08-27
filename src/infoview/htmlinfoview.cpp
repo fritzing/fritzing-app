@@ -302,7 +302,6 @@ void HtmlInfoView::init(bool tinyMode) {
 void HtmlInfoView::resizeEvent(QResizeEvent *event)
 {
 	QSize newSize = event->size();
-	QSize previousSize = event->oldSize();
 	int widthDifference = newSize.width() - m_lastSizeWithScrollbarsAlwaysOn.width();
 	int heightDifference = newSize.height() - m_lastSizeWithScrollbarsAlwaysOn.height();
 

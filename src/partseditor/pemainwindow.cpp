@@ -717,9 +717,9 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 	int ix = basename.indexOf(GuidMatcher, 0);
 	if (ix > 1 && basename.at(ix - 1) == '_')  {
 		int dix = ix + 32 + 1;
-		if (basename.count() > dix) {
+		if (basename.size() > dix) {
 			bool gotPrefix = true;
-			for (int i = dix; i < basename.count(); i++) {
+			for (int i = dix; i < basename.size(); i++) {
 				if (!basename.at(i).isDigit()) {
 					gotPrefix = false;
 					break;

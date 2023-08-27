@@ -3643,7 +3643,7 @@ void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchemat
 QMessageBox::StandardButton MainWindow::oldSchematicMessage(const QString & filename)
 {
 	QFileInfo info(filename);
-	FMessageBox messageBox(nullptr);
+	FMessageBox messageBox;
 	messageBox.setWindowTitle(tr("Schematic view update"));
 	messageBox.setText(tr("There is a new graphics standard for schematic-view part images, beginning with version 0.8.6.\n\n") +
 	                   tr("Would you like to convert '%1' to the new standard now or open the file read-only?\n").arg(info.fileName())
@@ -3656,12 +3656,10 @@ QMessageBox::StandardButton MainWindow::oldSchematicMessage(const QString & file
 	                              tr("Note that any custom parts will not be converted. A tool for converting 'rectangular' schematic images is available in the Parts Editor.") +
 	                              + "</li></ul>"
 	                             );
-	messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-	messageBox.setDefaultButton(QMessageBox::Yes);
+	messageBox.setDefaultButton(messageBox.addButton(tr("Convert"), QMessageBox::YesRole));
+	messageBox.addButton(tr("Read-only"), QMessageBox::NoRole);
 	messageBox.setIcon(QMessageBox::Question);
 	messageBox.setWindowModality(Qt::WindowModal);
-	messageBox.setButtonText(QMessageBox::Yes, tr("Convert"));
-	messageBox.setButtonText(QMessageBox::No, tr("Read-only"));
 	return (QMessageBox::StandardButton) messageBox.exec();
 }
 

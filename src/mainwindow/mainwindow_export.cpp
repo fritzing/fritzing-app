@@ -772,8 +772,7 @@ bool MainWindow::saveAsAux(const QString & fileName) {
 	if (!file.open(QFile::WriteOnly | QFile::Text)) {
 		QMessageBox::warning(this, tr("Fritzing"),
 		                     tr("Cannot write file %1:\n%2.")
-		                     .arg(fileName)
-		                     .arg(file.errorString()));
+							 .arg(fileName, file.errorString()));
 		return false;
 	}
 
@@ -1301,14 +1300,14 @@ void MainWindow::exportBOM() {
 		shoppingListString += bomRowTemplate.arg(itemBases.count()).arg(split.at(0)).arg(split.at(1)).arg(split.at(2)).arg(split.at(3));
 	}
 
-	QString bom = bomTemplate
-	              .arg("Fritzing Bill of Materials")
-	              .arg(QFileInfo(m_fwFilename).fileName())
-	              .arg(m_fwFilename)
-	              .arg(QDateTime::currentDateTime().toString("dddd, MMMM d yyyy, hh:mm:ss"))
-	              .arg(assemblyString)
-	              .arg(shoppingListString)
-	              .arg(QString("%1.%2.%3").arg(Version::majorVersion()).arg(Version::minorVersion()).arg(Version::minorSubVersion()));
+	QString bom = bomTemplate.arg(
+				  "Fritzing Bill of Materials"
+				, QFileInfo(m_fwFilename).fileName()
+				, m_fwFilename
+				, QDateTime::currentDateTime().toString("dddd, MMMM d yyyy, hh:mm:ss")
+				, assemblyString
+				, shoppingListString
+				, QString("%1.%2.%3").arg(Version::majorVersion(), Version::minorVersion(), Version::minorSubVersion()));
 
 	save_text_file(
 				bom,
@@ -1328,7 +1327,7 @@ void MainWindow::save_text_file(QString text, QString actionType, QString dialog
 	QString fileExt;
 	QString extFmt = fileExtFormats.value(actionType);
 	QString fname = path+"/"+constructFileName(differentiator, actionType);
-	DebugDialog::debug(QString("fname %1\n%2").arg(fname).arg(extFmt));
+	DebugDialog::debug(QString("fname %1\n%2").arg(fname, extFmt));
 
 	QString fileName = FolderUtils::getSaveFileName(this,
 					   dialogTitle,

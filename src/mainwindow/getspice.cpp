@@ -104,7 +104,7 @@ QString GetSpice::getSpice(ItemBase * itemBase, const QList< QList<class Connect
 			replacement.replace("Ω", "");
 		}
 
-		spice.replace(pos, match.captured(0).count(), replacement);
+		spice.replace(pos, match.captured(0).size(), replacement);
 		DebugDialog::debug("spice " + spice);
 	}
 	return spice;

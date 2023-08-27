@@ -271,7 +271,7 @@ void FServerThread::writeResponse(QTcpSocket * socket, int code, const QString &
 	if (type.isEmpty()) type = "text/plain";
 	QString response = QString("HTTP/1.0 %1 %2\r\n").arg(code).arg(codeString);
 	response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type);
-	response += QString("Content-Length: %1\r\n").arg(message.count());
+	response += QString("Content-Length: %1\r\n").arg(message.size());
 	response += QString("\r\n%1").arg(message);
 
 	socket->write(response.toUtf8());

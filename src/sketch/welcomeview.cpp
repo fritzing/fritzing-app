@@ -100,7 +100,7 @@ QString cleanData(const QString & data) {
 	QString errorMsg;
 	int errorLine;
 	int errorColumn;
-	while (pos < data.count()) {
+	while (pos < data.size()) {
 		QRegularExpressionMatch match;
 		int ix = data.indexOf(ListItemMatcher, pos, &match);
 		if (ix < 0) break;
@@ -112,7 +112,7 @@ QString cleanData(const QString & data) {
 		} else {
 			DebugDialog::debug(QString("Error reading data %1 %2 %3").arg(errorMsg).arg(errorLine).arg(errorColumn));
 		}
-		pos += listItem.count();
+		pos += listItem.size();
 	}
 	return listItems.join("");
 }

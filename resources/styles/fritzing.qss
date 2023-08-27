@@ -2189,17 +2189,6 @@ QUndoView::item:hover	 {
 	font-weight: bold;
 }
 
-/************************ About Box ****************************/
-
-#aboutText {
-	border: 0px;
-	background-color: transparent;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-
-
-
 
 /**************** sketch widgets ****************/
 

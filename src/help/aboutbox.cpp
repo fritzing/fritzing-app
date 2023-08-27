@@ -29,6 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "aboutbox.h"
 #include "../version/version.h"
 #include "../utils/expandinglabel.h"
+#include "qboxlayout.h"
 
 AboutBox* AboutBox::Singleton = nullptr;
 
@@ -43,7 +44,7 @@ AboutBox::AboutBox(QWidget *parent)
 	// To make the application not quit when the window closes
 	this->setAttribute(Qt::WA_QuitOnClose, false);
 
-    setFixedSize(AboutWidth, 466);
+	setFixedWidth(AboutWidth);
 
 	setStyleSheet("background-color: #E8E8E8; color: #000");
 
@@ -52,56 +53,38 @@ AboutBox::AboutBox(QWidget *parent)
 	QFont extraSmallFont("Droid Sans", 9);
 	extraSmallFont.setLetterSpacing(QFont::PercentageSpacing, 92);
 
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	mainLayout->setContentsMargins(0, 10, 0, 10);
+
 	// Big Icon
-	auto *logoShield = new QLabel(this);
+	auto *logoShield = new QLabel();
 	logoShield->setPixmap(QPixmap(":/resources/images/AboutBoxLogoShield.png"));
-	logoShield->setGeometry(17, 8, 356, 128);
+	logoShield->setAlignment(Qt::AlignHCenter);
+	mainLayout->addWidget(logoShield);
 
 	// Version String
-	auto *versionMain = new QLabel(this);
-    versionMain->setText(tr("Version %1.%2.%3 <br><small>(%4%5 %6) %7 [Qt %8]</small>")
-	                     .arg(Version::majorVersion())
-	                     .arg(Version::minorVersion())
-	                     .arg(Version::minorSubVersion())
-	                     .arg(Version::modifier())
-                         .arg(Version::gitVersion())
-	                     .arg(Version::date())
-	                     .arg(BuildType)
-	                     .arg(QT_VERSION_STR) );
+	auto *versionMain = new QLabel();
+	versionMain->setText(tr("Version %1.%2.%3 <br><small>(%4%5 %6) %7 [Qt %8]</small>")
+						 .arg(Version::majorVersion())
+						 .arg(Version::minorVersion())
+						 .arg(Version::minorSubVersion())
+						 .arg(Version::modifier())
+						 .arg(Version::gitVersion())
+						 .arg(Version::date())
+						 .arg(BuildType)
+						 .arg(QT_VERSION_STR) );
 	versionMain->setFont(smallFont);
-    versionMain->setGeometry(45, 142, 300, 42);
-	versionMain->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
+	versionMain->setAlignment(Qt::AlignHCenter);
 	versionMain->setTextInteractionFlags(Qt::TextSelectableByMouse);
+	mainLayout->addWidget(versionMain);
 
 	// Link to website
-	auto *linkToFritzing = new QLabel(this);
+	auto *linkToFritzing = new QLabel();
 	linkToFritzing->setText("<a href=\"https://fritzing.org\">fritzing.org</a>");
 	linkToFritzing->setOpenExternalLinks(true);
 	linkToFritzing->setFont(smallFont);
-    linkToFritzing->setGeometry(45, 188, 300, 18);
-	linkToFritzing->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
-
-
-	// Copyright messages
-
-
-	QLabel *copyrightGNU = new QLabel(this);
-	copyrightGNU->setText(tr("<b>GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest"));
-	copyrightGNU->setFont(extraSmallFont);
-    copyrightGNU->setGeometry(0, 410, AboutWidth, 16);
-	copyrightGNU->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
-
-	auto *CC = new QLabel(this);
-	QPixmap cc(":/resources/images/aboutbox_CC.png");
-	CC->setPixmap(cc);
-	CC->setGeometry(30, this->height() - cc.height(), cc.width(), cc.height());
-
-	auto *copyrightFritzing = new QLabel(this);
-	copyrightFritzing->setText(tr("<b>Copyright %1 Fritzing GmbH</b>").arg(Version::year()));
-	copyrightFritzing->setFont(extraSmallFont);
-    copyrightFritzing->setGeometry(30, 426, AboutWidth - 30 - 30, 16);
-	copyrightFritzing->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
-
+	linkToFritzing->setAlignment(Qt::AlignHCenter);
+	mainLayout->addWidget(linkToFritzing);
 
 	// Scrolling Credits Text
 	QString data =
@@ -148,18 +131,18 @@ AboutBox::AboutBox(QWidget *parent)
 		tr("Turkish: ") + "Cihan Mete Bahad&#x0131;r" + "<br/>" +
 		tr("Ukrainian: ") + tr("Yelyzaveta Chyhryna") + "<br/>" +
 
-	    "</p>" +
+		"</p>" +
 
-	    "<p>" +
+		"<p>" +
 		tr("Fritzing is made possible with funding from the "
 		   "MWFK Brandenburg, "
 		   "the sponsorship of the Design Department of Bauhaus-University Weimar, "
 		   "IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, "
 		   "from the PCB Fab AISLER"
 		   ", and each paid download.") +
-	    "</p>" +
+		"</p>" +
 
-	    "<p>" +
+		"<p>" +
 		tr("Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.") +
 		"</p>";
 
@@ -208,17 +191,31 @@ AboutBox::AboutBox(QWidget *parent)
 				licensesTable +
 			"</div>";
 
-	m_expandingLabel = new ExpandingLabel(this, AboutWidth);
+	m_expandingLabel = new ExpandingLabel(nullptr);
 	m_expandingLabel->setObjectName("aboutText");
 	m_expandingLabel->setLabelText(data);
 	m_expandingLabel->setFont(smallFont);
-	m_expandingLabel->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
+	m_expandingLabel->setFixedSize(AboutWidth, fadepixmap.height());
+	mainLayout->addWidget(m_expandingLabel);
 
-	// Add a fade out and a fade in the scrollArea
-	auto *scrollFade = new QLabel(this);
-	scrollFade->setPixmap(fadepixmap);
-	scrollFade->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
-	scrollFade->setStyleSheet("background-color: none");
+	QLabel *copyrightGNU = new QLabel();
+	copyrightGNU->setText(tr("<b>GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest"));
+	copyrightGNU->setFont(extraSmallFont);
+	copyrightGNU->setAlignment(Qt::AlignHCenter);
+	mainLayout->addWidget(copyrightGNU);
+
+	auto *CC = new QLabel();
+	QPixmap cc(":/resources/images/aboutbox_CC.png");
+	CC->setPixmap(cc);
+	CC->setAlignment(Qt::AlignHCenter);
+	mainLayout->addWidget(CC);
+
+	auto *copyrightFritzing = new QLabel();
+	copyrightFritzing->setText(tr("<b>Copyright %1 Fritzing GmbH</b>").arg(Version::year()));
+	copyrightFritzing->setFont(extraSmallFont);
+	copyrightFritzing->setAlignment(Qt::AlignHCenter);
+	mainLayout->addWidget(copyrightFritzing);
+
 
 	// auto scroll timer initialization
 	m_restartAtTop = false;

@@ -3496,7 +3496,8 @@ void MainWindow::routingCheckSlot() {
 						QSet<QString> pcbSet = getItemConnectorSet(pcbConnectorItem);
 						if (schSet != pcbSet) {
 							QSet<QString> setSchMinusPcb = schSet - pcbSet;
-							bool nonWireError = false;
+							QSet<QString> setPcbMinusSch = pcbSet - schSet;
+							bool nonWireError = !setPcbMinusSch.isEmpty();
 							Q_FOREACH(QString str, setSchMinusPcb) {
 								if (!str.startsWith("Wire")) {
 									nonWireError = true;

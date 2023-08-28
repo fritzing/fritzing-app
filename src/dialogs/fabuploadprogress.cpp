@@ -1,8 +1,11 @@
 #include "fabuploadprogress.h"
 #include "networkhelper.h"
 
+#include "../version/version.h"
+
 #include <QTextStream>
 #include <QUrl>
+#include <QUrlQuery>
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QHttpMultiPart>
@@ -58,6 +61,13 @@ void FabUploadProgress::doUpload()
 		return;
 	}
 	QUrl new_url("https://fritzing.org/fab/upload");
+
+	QString fritzingVersion = Version::versionString();
+
+	QUrlQuery query;
+	query.addQueryItem("fritzing_version", fritzingVersion);
+	new_url.setQuery(query);
+
 	QNetworkRequest request(new_url);
 	QNetworkReply *reply = mManager->get(request);
 	connect(reply, SIGNAL(finished()), this, SLOT(onRequestUploadFinished()));

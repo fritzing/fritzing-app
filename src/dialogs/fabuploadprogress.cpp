@@ -99,6 +99,13 @@ void FabUploadProgress::onRequestUploadFinished()
 //			qDebug() << j["upload_url"].toString() << Qt::endl << Qt::flush;
 			QUrl upload_url(QUrl::fromUserInput(j["upload_url"].toString()));
 			QUrl project_url(j["project_url"].toString());
+
+			QString fabserver_url = j["fabserver_url"].toString();
+			QString fabserver_id = j["fabserver_id"].toString();
+			QString fabserver_version = j["fabserver_version"].toString();
+
+			qDebug() << "fabserver_url: " << fabserver_url << "fabserver_id: " << fabserver_id << "fabserver_version" << fabserver_version << Qt::endl << Qt::flush;
+
 			uploadMultipart(upload_url, mFilepath);
 			QSettings settings;
 			settings.setValue("aisler/" + mFilepath, j["upload_url"].toString());

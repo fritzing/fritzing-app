@@ -181,10 +181,20 @@ void FServerThread::run()
 	}
 	else if (command == "gerber") {
 	}
+	else if (command == "ipc") {
+	}
+	else if (command == "bom") {
+	}
 	else if (command == "svg-tcp") {
 		fixSubFolder = true;
 	}
 	else if (command == "gerber-tcp") {
+		fixSubFolder = true;
+	}
+	else if (command == "ipc-tcp") {
+		fixSubFolder = true;
+	}
+	else if (command == "bom-tcp") {
 		fixSubFolder = true;
 	}
 	else {
@@ -925,6 +935,53 @@ void FApplication::runGerberServiceAux()
 	}
 }
 
+void FApplication::runBomServiceAux()
+{
+    QDir dir(m_outputFolder);
+    QString s = dir.absolutePath();
+    QStringList filters;
+    filters << "*" + FritzingBundleExtension;
+    QStringList filenames = dir.entryList(filters, QDir::Files);
+    Q_FOREACH (QString filename, filenames) {
+	QString filepath = dir.absoluteFilePath(filename);
+	MainWindow * mainWindow = openWindowForService(false, 3);
+	m_started = true;
+
+	FolderUtils::setOpenSaveFolderAux(m_outputFolder);
+	if (mainWindow->loadWhich(filepath, false, false, false, "")) {
+	    QFileInfo info(filepath);
+	    QString filepathCsv = filepath;
+	    TextUtils::writeUtf8(filepathCsv.replace(".fzz", "_bom.csv"), mainWindow->getExportBOM_CSV());
+	}
+
+	mainWindow->setCloseSilently(true);
+	mainWindow->close();
+    }
+}
+
+void FApplication::runIpcServiceAux()
+{
+    QDir dir(m_outputFolder);
+    QString s = dir.absolutePath();
+    QStringList filters;
+    filters << "*" + FritzingBundleExtension;
+    QStringList filenames = dir.entryList(filters, QDir::Files);
+    Q_FOREACH (QString filename, filenames) {
+	QString filepath = dir.absoluteFilePath(filename);
+	MainWindow * mainWindow = openWindowForService(false, 3);
+	m_started = true;
+
+	FolderUtils::setOpenSaveFolderAux(m_outputFolder);
+	if (mainWindow->loadWhich(filepath, false, false, false, "")) {
+	    QFileInfo info(filepath);
+	    QString filepathIPC = filepath;
+	    TextUtils::writeUtf8(filepathIPC.replace(".fzz", ".ipc"), mainWindow->exportIPC_D_356A());
+	}
+
+	mainWindow->setCloseSilently(true);
+	mainWindow->close();
+    }
+}
 
 void FApplication::runExportAllService()
 {
@@ -2012,6 +2069,28 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 		runGerberServiceAux();
 		QStringList nameFilters;
 		nameFilters << ("*.txt");
+		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+		if (fileList.count() > 0) {
+			QFile file(fileList.at(0).absoluteFilePath());
+			if (file.open(QFile::ReadOnly)) {
+				result = file.readAll();
+			}
+		}
+	} else if (command.startsWith("bom")) {
+		runBomServiceAux();
+		QStringList nameFilters;
+		nameFilters << ("*.csv");
+		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+		if (fileList.count() > 0) {
+			QFile file(fileList.at(0).absoluteFilePath());
+			if (file.open(QFile::ReadOnly)) {
+				result = file.readAll();
+			}
+		}
+	} else if (command.startsWith("ipc")) {
+		runIpcServiceAux();
+		QStringList nameFilters;
+		nameFilters << ("*.ipc");
 		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
 		if (fileList.count() > 0) {
 			QFile file(fileList.at(0).absoluteFilePath());

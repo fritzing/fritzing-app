@@ -913,7 +913,6 @@ protected:
 	bool m_restarting = false;
 
 	QStringList m_alienFiles;
-	QString m_alienPartsMsg;
 	QStringList m_filesReplacedByAlienOnes;
 
 	QStringList m_openExampleActions;

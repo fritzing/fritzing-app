@@ -1319,11 +1319,11 @@ bool MainWindow::whatToDoWithAlienFiles() {
 	if (m_alienFiles.size() > 0) {
 		QString basename = QFileInfo(m_fwFilename).fileName();
 		QMessageBox::StandardButton reply;
+		QString	alienPartsMsg = tr("Do you want to keep the imported parts?");
 		reply = QMessageBox::question(this, tr("Save %1").arg(basename),
-		                              m_alienPartsMsg
-		                              .arg(basename),
+									  alienPartsMsg,
 		                              QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
-		// TODO: translate button text
+
 		if (reply == QMessageBox::Yes) {
 			return true;
 		} else if (reply == QMessageBox::No) {
@@ -2030,7 +2030,6 @@ ModelPart* MainWindow::copyToPartsFolder(const QFileInfo& file, bool addToAlien,
 	if(FolderUtils::slamCopy(partfile, destFilePath)) {
 		if (addToAlien) {
 			m_alienFiles << destFilePath;
-			m_alienPartsMsg = tr("Do you want to keep the imported parts?");
 		}
 	}
 	ModelPart *mp = m_referenceModel->loadPart(destFilePath, true);
@@ -3112,7 +3111,6 @@ void MainWindow::addToMyParts(ModelPart * modelPart, const QStringList & peAlien
 		// DebugDialog::debug(QString("addToMyParts adding  %1")
 		//.arg(pathToAddFromPe));
 		m_alienFiles << pathToAddFromPe;
-		m_alienPartsMsg = tr("Do you want to keep the imported parts?");
 	}
 	m_binManager->addToMyParts(modelPart);
 }

@@ -40,4 +40,5 @@ private:
 	void apiError(QString message);
 };
 
+
 #endif // FABUPLOADPROGRESS_H

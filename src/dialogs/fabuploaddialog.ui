@@ -57,17 +57,16 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="headline">
         <property name="font">
          <font>
           <family>Droid Sans</family>
           <pointsize>18</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
         <property name="text">
-         <string>Get your board fabricated this week!</string>
+         <string>Get your board fabricated effortlessly!</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -103,13 +102,56 @@
           </property>
           <widget class="QLabel" name="label_2">
            <property name="text">
-            <string>Upload it now to get a preview rendered by AISLER. Review, and if you like it, order it and get it manufactured in two days.</string>
+            <string>Upload your design now to see a preview. Review it, and once satisfied, proceed to order for manufacturing.</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
            </property>
+           <property name="margin">
+            <number>2</number>
+           </property>
           </widget>
          </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout4" stretch="1,5">
+          <item>
+           <widget class="QSplitter" name="splitter2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="fab_icon">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../../phoenixresources.qrc">:/resources/images/icons/Toolbar_Icon_Order.png</pixmap>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSplitter" name="splitter3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="fab_message">
+             <property name="text">
+              <string>Checking for fab...</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
          <spacer name="verticalSpacer_3">
@@ -160,7 +202,11 @@
              </font>
             </property>
             <property name="text">
-             <string>Cancel</string>
+             <string>&amp;Cancel</string>
+            </property>
+            <property name="icon">
+             <iconset theme="window-close">
+              <normaloff>.</normaloff>.</iconset>
             </property>
            </widget>
           </item>
@@ -182,7 +228,6 @@
              <font>
               <family>Droid Sans</family>
               <pointsize>11</pointsize>
-              <weight>50</weight>
               <italic>false</italic>
               <bold>false</bold>
               <kerning>true</kerning>
@@ -324,7 +369,11 @@
                </font>
               </property>
               <property name="text">
-               <string>Cancel</string>
+               <string>&amp;Cancel</string>
+              </property>
+              <property name="icon">
+               <iconset theme="window-close">
+                <normaloff>.</normaloff>.</iconset>
               </property>
              </widget>
             </item>
@@ -346,7 +395,6 @@
                <font>
                 <family>Droid Sans</family>
                 <pointsize>11</pointsize>
-                <weight>50</weight>
                 <italic>false</italic>
                 <bold>false</bold>
                 <kerning>true</kerning>
@@ -410,7 +458,9 @@
    </slots>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../../phoenixresources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>upload</sender>

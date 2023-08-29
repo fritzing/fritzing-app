@@ -42,7 +42,8 @@ src/utils/schematicrectconstants.h \
 src/utils/s2s.h \
 src/utils/textutils.h \
 src/utils/zoomslider.h \
-src/utils/FMessageLogProbe.h
+src/utils/FMessageLogProbe.h \
+src/utils/uploadpair.h
 
 SOURCES += \
 	$$PWD/../src/utils/ftooltip.cpp \
@@ -69,4 +70,5 @@ src/utils/schematicrectconstants.cpp \
 src/utils/s2s.cpp \
 src/utils/textutils.cpp \
 src/utils/zoomslider.cpp \
-src/utils/FMessageLogProbe.cpp
+src/utils/FMessageLogProbe.cpp \
+src/utils/uploadpair.cpp

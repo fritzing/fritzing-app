@@ -19,8 +19,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "welcomeview.h"
-#include "../debugdialog.h"
-#include "../help/tipsandtricks.h"
+#include "debugdialog.h"
+#include "help/tipsandtricks.h"
+#include "utils/uploadpair.h"
+#include "referencemodel/sqlitereferencemodel.h"
 
 #include <QTextEdit>
 #include <QGridLayout>
@@ -689,16 +691,26 @@ void WelcomeView::updateRecent() {
 		QListWidgetItem * itemLinks = nullptr;
 		item->setData(Qt::UserRole, finfo.absoluteFilePath());
 		item->setToolTip(finfo.absoluteFilePath());
-		QString link = settings.value("aisler/" + finfo.absoluteFilePath(), "").toString();
-		if (!link.isEmpty()) {
-			int pos = link.lastIndexOf(QChar('/'));
-			link = link.left(pos);
-			itemLinks = new QListWidgetItem(icon2, "Aisler Project");
+
+		settings.beginGroup("sketches");
+		QVariant settingValue = settings.value(finfo.absoluteFilePath());
+		settings.endGroup();
+
+		if (settingValue.isValid() && !settingValue.isNull()) {
+			auto [fabName, link] = settingValue.value<UploadPair>();
+			if (link.endsWith(QChar('/'))) {
+				link.chop(1);  // Remove the last character
+			}
+
+			auto pixmap = SqliteReferenceModel().retrieveIcon(fabName);
+			QIcon icon(pixmap);
+			itemLinks = new QListWidgetItem(icon, QString("%1 Project").arg(fabName));
 			itemLinks->setData(RefRole, link);
 			itemLinks->setToolTip(link);
 		} else {
 			itemLinks = new QListWidgetItem(QString(""));
 		}
+
 		m_recentListWidget->addItem(item);
 		m_recentLinksListWidget->addItem(itemLinks);
 	}

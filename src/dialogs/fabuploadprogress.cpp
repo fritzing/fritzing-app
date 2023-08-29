@@ -1,7 +1,7 @@
 #include "fabuploadprogress.h"
 #include "networkhelper.h"
 
-#include "../version/version.h"
+#include "version/version.h"
 
 #include <QTextStream>
 #include <QUrl>
@@ -18,11 +18,9 @@
 
 #include <QDebug>
 
-#include <src/utils/fmessagebox.h>
+#include "utils/fmessagebox.h"
+#include "utils/uploadpair.h"
 
-//TODO: Fix dialog layout, add image
-//TODO: Request upload url, logo + text at fritzing.org/fab/new
-//TODO: If fab not reachable: Show hint to Aisler and gerber export
 //TODO: remove qDebug
 
 // Happy flow
@@ -40,7 +38,6 @@
 // > 1. File not saved -> Show error, abort
 //
 
-
 FabUploadProgress::FabUploadProgress(QWidget *parent) : QWidget(parent)
 {
 }
@@ -55,25 +52,32 @@ void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename)
 void FabUploadProgress::doUpload()
 {
 	QSettings settings;
-	QString upload_url_str = settings.value("aisler/" + mFilepath, "").toString();
-	if (!upload_url_str.isEmpty()) {
-		uploadMultipart(QUrl(upload_url_str), mFilepath);
-		return;
-	}
-	QUrl new_url("https://fritzing.org/fab/upload");
+	QUrl new_sketch("https://fritzing.org/fab/upload");
 
-	QString fritzingVersion = Version::versionString();
+	QString fabName = settings.value("fab_name", "").toString();
 
 	QUrlQuery query;
-	query.addQueryItem("fritzing_version", fritzingVersion);
-	new_url.setQuery(query);
 
-	QNetworkRequest request(new_url);
+	QString fritzingVersion = Version::versionString();
+	query.addQueryItem("fritzing_version", fritzingVersion);
+
+	UploadPair data = {fabName, settings.value(mFilepath, "").toString()};
+	QString upload_url_str = data.link;
+	if (!upload_url_str.isEmpty()) {
+		query.addQueryItem("link", upload_url_str);
+	}
+
+	if (!fabName.isEmpty()) {
+		query.addQueryItem("fab_name", fabName);
+	}
+
+	new_sketch.setQuery(query);
+	mRedirect_url = QString();
+
+	QNetworkRequest request(new_sketch);
 	QNetworkReply *reply = mManager->get(request);
 	connect(reply, SIGNAL(finished()), this, SLOT(onRequestUploadFinished()));
-	// Note: When an error occures, finished() is signaled, and we can handle the
-	// error better in onRequestUploadFinished
-	//connect(reply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(onError(QNetworkReply::NetworkError)));
+	// Error handling is done in onRequestUploadFinished, too
 }
 
 
@@ -98,23 +102,7 @@ void FabUploadProgress::onRequestUploadFinished()
 			auto j = NetworkHelper::string_to_hash(d);
 //			qDebug() << j["upload_url"].toString() << Qt::endl << Qt::flush;
 			QUrl upload_url(QUrl::fromUserInput(j["upload_url"].toString()));
-			QUrl project_url(j["project_url"].toString());
-
-			QString fabserver_name = j["fabserver_name"].toString();
-			QString api_version = j["api_version"].toString();
-
-			QString fabName = "aisler";
-
-			if (!fabserver_name.isEmpty()) {
-				QRegularExpression regex("[^a-z0-9]");
-				fabName = fabserver_name.toLower().remove(regex);
-				if (fabName.isEmpty()) {
-					fabName = "emptyfab";
-				}
-			}
 			uploadMultipart(upload_url, mFilepath);
-			QSettings settings;
-			settings.setValue(fabName + "/" + mFilepath, j["upload_url"].toString());
 		}
 	} else {
 		httpError(reply);
@@ -191,9 +179,10 @@ void FabUploadProgress::uploadDone() {
 	qDebug() << "----------Finished--------------" << Qt::endl;
 	if (reply->error() == QNetworkReply::NoError) {
 		auto d = reply->readAll();
-//		qDebug() << d << Qt::endl << Qt::flush;
+		qDebug() << d << Qt::endl << Qt::flush;
 		auto j = NetworkHelper::string_to_hash(d);
-//		qDebug() << j["upload_url"].toString() << Qt::endl << Qt::flush;
+		qDebug() << "UP:" << j["upload_url"].toString() << Qt::endl << Qt::flush;
+		qDebug() << "RE:" << j["redirect"].toString() << Qt::endl << Qt::flush;
 		QUrl callback_url(QUrl::fromUserInput(j["callback"].toString()));
 		mRedirect_url = j["redirect"].toString();
 		mActivity = 0;
@@ -219,7 +208,7 @@ void FabUploadProgress::updateProcessingStatus()
 
 	if (reply->error() == QNetworkReply::NoError) {
 		auto d = reply->readAll();
-//		qDebug() << d << Qt::endl << Qt::flush;
+		qDebug() << d << Qt::endl << Qt::flush;
 		auto j = NetworkHelper::string_to_hash(d);
 		// Produce a funny number which is growing most of the time,
 		// and somewhat related to what is really happening. It should
@@ -233,6 +222,7 @@ void FabUploadProgress::updateProcessingStatus()
 			if (progress + mActivity > 90) {
 				mActivity = 0;
 				progress = j["progress"].toInt();
+
 			}
 			mActivity += 1;
 			findChild<QLabel*>("message")->setText(message);
@@ -243,7 +233,23 @@ void FabUploadProgress::updateProcessingStatus()
 					checkProcessingStatus(url);
 				});
 			} else {
-				Q_EMIT processingDone();
+				if (j.contains("fab_project")) {
+					mRedirect_url = j["fab_project"].toString();
+					qDebug() << "FU:" << mRedirect_url;
+				}
+				if (mRedirect_url.isEmpty()) {
+					QString error("Upload failed, no project url");
+					FMessageBox::critical(this, tr("Fritzing"), error);
+				} else {
+					QSettings settings;
+					QString fab_name = settings.value("fab_name", "").toString();
+					UploadPair data = {fab_name, mRedirect_url};
+					settings.beginGroup("sketches");
+					settings.setValue(mFilepath, QVariant::fromValue(data));
+					settings.endGroup();
+
+					Q_EMIT processingDone();
+				}
 			}
 		}
 	} else {

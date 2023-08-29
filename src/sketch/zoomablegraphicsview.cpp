@@ -133,7 +133,7 @@ void ZoomableGraphicsView::wheelEvent(QWheelEvent* event) {
 		// TODO: What about "wheels" with a left and right button?
 		// The 'buttons' are ignored, but maybe some special wheels report this as an axis?
 		if (event->angleDelta().x() != 0) {
-			DebugDialog::debug(QString("got lock on touchpad, it moved horizontal. %d").arg(systemId));
+			DebugDialog::debug(QString("got lock on touchpad, it moved horizontal. %1").arg(systemId));
 			m_guessTouchpadId = systemId;
 			break;
 		}

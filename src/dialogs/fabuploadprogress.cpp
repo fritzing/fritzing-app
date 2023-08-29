@@ -100,15 +100,21 @@ void FabUploadProgress::onRequestUploadFinished()
 			QUrl upload_url(QUrl::fromUserInput(j["upload_url"].toString()));
 			QUrl project_url(j["project_url"].toString());
 
-			QString fabserver_url = j["fabserver_url"].toString();
-			QString fabserver_id = j["fabserver_id"].toString();
-			QString fabserver_version = j["fabserver_version"].toString();
+			QString fabserver_name = j["fabserver_name"].toString();
+			QString api_version = j["api_version"].toString();
 
-			qDebug() << "fabserver_url: " << fabserver_url << "fabserver_id: " << fabserver_id << "fabserver_version" << fabserver_version << Qt::endl << Qt::flush;
+			QString fabName = "aisler";
 
+			if (!fabserver_name.isEmpty()) {
+				QRegularExpression regex("[^a-z0-9]");
+				fabName = fabserver_name.toLower().remove(regex);
+				if (fabName.isEmpty()) {
+					fabName = "emptyfab";
+				}
+			}
 			uploadMultipart(upload_url, mFilepath);
 			QSettings settings;
-			settings.setValue("aisler/" + mFilepath, j["upload_url"].toString());
+			settings.setValue(fabName + "/" + mFilepath, j["upload_url"].toString());
 		}
 	} else {
 		httpError(reply);

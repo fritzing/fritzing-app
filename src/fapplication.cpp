@@ -168,7 +168,7 @@ void FServerThread::run()
 
 	QStringList params = tokens.at(1).split("/", Qt::SplitBehaviorFlags::SkipEmptyParts);
 	QString command = params.takeFirst();
-	if (params.count() == 0) {
+	if (command != "shutdown" && params.count() == 0) {
 		writeResponse(socket, 400, "Bad Request", "", "");
 		return;
 	}

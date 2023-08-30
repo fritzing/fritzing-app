@@ -171,6 +171,7 @@ protected:
 	void runIpcServiceAux();
 	void runExportAllService();
 	void runExportAllServiceAux();
+	void runExportAllPlusSvgServiceAux();
 	void runSvgService();
 	void runSvgServiceAux();
 	void runExampleService();

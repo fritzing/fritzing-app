@@ -185,6 +185,8 @@ void FServerThread::run()
 	}
 	else if (command == "bom") {
 	}
+	else if (command == "all") {
+	}
 	else if (command == "svg-tcp") {
 		fixSubFolder = true;
 	}
@@ -195,6 +197,9 @@ void FServerThread::run()
 		fixSubFolder = true;
 	}
 	else if (command == "bom-tcp") {
+		fixSubFolder = true;
+	}
+	else if (command == "all-tcp") {
 		fixSubFolder = true;
 	}
 	else {
@@ -1011,6 +1016,43 @@ void FApplication::runExportAllServiceAux()
 
 			QString filepathIPC = filepath;
 			TextUtils::writeUtf8(filepathIPC.replace(".fzz", ".ipc"), mainWindow->exportIPC_D_356A());
+		}
+
+		mainWindow->setCloseSilently(true);
+		mainWindow->close();
+	}
+}
+
+void FApplication::runExportAllPlusSvgServiceAux()
+{
+	QDir dir(m_outputFolder);
+	QString s = dir.absolutePath();
+	QStringList filters;
+	filters << "*" + FritzingBundleExtension;
+	QStringList filenames = dir.entryList(filters, QDir::Files);
+	Q_FOREACH (QString filename, filenames) {
+		QString filepath = dir.absoluteFilePath(filename);
+		MainWindow * mainWindow = openWindowForService(false, 3);
+		m_started = true;
+
+		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
+		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
+			QFileInfo info(filepath);
+			GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, nullptr, mainWindow->pcbView(), false);
+
+			QString filepathCsv = filepath;
+			TextUtils::writeUtf8(filepathCsv.replace(".fzz", "_bom.csv"), mainWindow->getExportBOM_CSV());
+
+			QString filepathIPC = filepath;
+			TextUtils::writeUtf8(filepathIPC.replace(".fzz", ".ipc"), mainWindow->exportIPC_D_356A());
+			QList<ViewLayer::ViewID> ids;
+			ids << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
+			Q_FOREACH (ViewLayer::ViewID id, ids) {
+				QString fn = QString("%1_%2.svg").arg(info.completeBaseName()).arg(ViewLayer::viewIDNaturalName(id));
+				QString svgPath = dir.absoluteFilePath(fn);
+				mainWindow->setCurrentView(id);
+				mainWindow->exportSvg(GraphicsUtils::StandardFritzingDPI, false, false, svgPath);
+			}
 		}
 
 		mainWindow->setCloseSilently(true);
@@ -2089,6 +2131,17 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 		}
 	} else if (command.startsWith("ipc")) {
 		runIpcServiceAux();
+		QStringList nameFilters;
+		nameFilters << ("*.ipc");
+		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+		if (fileList.count() > 0) {
+			QFile file(fileList.at(0).absoluteFilePath());
+			if (file.open(QFile::ReadOnly)) {
+				result = file.readAll();
+			}
+		}
+	} else if (command.startsWith("all")) {
+		runExportAllPlusSvgServiceAux();
 		QStringList nameFilters;
 		nameFilters << ("*.ipc");
 		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);

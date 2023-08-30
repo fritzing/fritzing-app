@@ -187,6 +187,8 @@ void FServerThread::run()
 	}
 	else if (command == "all") {
 	}
+	else if (command == "shutdown") {
+	}
 	else if (command == "svg-tcp") {
 		fixSubFolder = true;
 	}
@@ -2095,7 +2097,10 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 		return;
 	}
 
-	if (command.startsWith("svg")) {
+	if (command == "shutdown") {
+		closeAllWindows2();
+	}
+	else if (command.startsWith("svg")) {
 		runSvgServiceAux();
 		QStringList nameFilters;
 		nameFilters << ("*.svg");

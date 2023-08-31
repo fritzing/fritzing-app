@@ -104,13 +104,7 @@ protected:
 
 class MainWindow;
 
-// Interface
-class IOperationStrategy {
-public:
-	virtual ~IOperationStrategy() {}
-	virtual void execute(MainWindow* mainWindow, const QString& filepath, const QDir& dir) = 0;
-	 virtual QString name() const = 0;
-};
+using ExportFunction = std::function<void(MainWindow*, const QString&, const QDir&)>;
 
 ////////////////////////////////////////////////////
 
@@ -200,7 +194,7 @@ protected:
 	void cleanFzzs();
 	void initServer();
 	void regeneratePartsDatabaseAux(QDialog * progressDialog);
-	QString runServiceAux(QSharedPointer<IOperationStrategy> operation, int mainWindowArg = 3);
+	QString runServiceAux(ExportFunction exportFunc, int mainWindowArg = 3);
 
 
 	enum class ServiceType {

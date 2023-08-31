@@ -348,7 +348,7 @@ bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool 
 	return result;
 }
 
-void MainWindow::mainLoad(const QString & fileName, const QString & displayName, bool checkObsolete) {
+bool MainWindow::mainLoad(const QString & fileName, const QString & displayName, bool checkObsolete) {
 
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setMaximum(200);
@@ -392,7 +392,7 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 
 	m_obsoleteSMDOrientation = false;
 
-	m_sketchModel->loadFromFile(fileName, m_referenceModel, modelParts, true);
+	bool result = m_sketchModel->loadFromFile(fileName, m_referenceModel, modelParts, true);
 
 	//DebugDialog::debug("core loaded");
 	disconnect(m_sketchModel, &SketchModel::loadedProjectProperties,
@@ -487,6 +487,7 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	}
 
 	initZoom();
+	return result;
 }
 
 void MainWindow::copy() {

@@ -1427,7 +1427,7 @@ QString MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent,
 		    tr("Unable to open '%1': %2").arg(fileName).arg(error)
 		);
 
-		return QString("Unable to open '%1': %2").arg(fileName).arg(error);
+		return QString("Unable to unzip '%1': %2").arg(fileName).arg(error);
 	}
 
 	QDir dir(m_fzzFolder);
@@ -1610,8 +1610,9 @@ QString MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent,
 	}
 
 	// the bundled itself
-	this->mainLoad(sketchName, "", checkObsolete);
+	bool result = this->mainLoad(sketchName, "", checkObsolete);
 	setCurrentFile(fileName, addToRecent, setAsLastOpened);
+	if (!result) return QString("Unable to load sketch: '%1' filename: %2").arg(sketchName).arg(fileName);
 	return "";
 }
 

@@ -154,7 +154,7 @@ public:
 	MainWindow(QFile & fileToLoad);
 	~MainWindow();
 
-	void mainLoad(const QString & fileName, const QString & displayName, bool checkObsolete);
+	bool mainLoad(const QString & fileName, const QString & displayName, bool checkObsolete);
 	bool loadWhich(const QString & fileName, bool setAsLastOpened, bool addToRecent, bool checkObsolete, const QString & displayName);
 	void notClosableForAWhile();
 	QAction *raiseWindowAction();

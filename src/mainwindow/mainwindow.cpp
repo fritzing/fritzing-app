@@ -1417,7 +1417,7 @@ void MainWindow::setInfoViewOnHover(bool infoViewOnHover) {
 	m_binManager->setInfoViewOnHover(infoViewOnHover);
 }
 
-void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bool setAsLastOpened, bool checkObsolete) {
+QString MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bool setAsLastOpened, bool checkObsolete) {
 
 	QString error;
 	if(!FolderUtils::unzipTo(fileName, m_fzzFolder, error)) {
@@ -1427,7 +1427,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 		    tr("Unable to open '%1': %2").arg(fileName).arg(error)
 		);
 
-		return;
+		return QString("Unable to open '%1': %2").arg(fileName).arg(error);
 	}
 
 	QDir dir(m_fzzFolder);
@@ -1445,7 +1445,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 		    tr("No Sketch found in '%1'").arg(fileName)
 		);
 
-		return;
+		return "";
 	}
 
 	QFileInfo sketchInfo = entryInfoList[0];
@@ -1612,6 +1612,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 	// the bundled itself
 	this->mainLoad(sketchName, "", checkObsolete);
 	setCurrentFile(fileName, addToRecent, setAsLastOpened);
+	return "";
 }
 
 bool MainWindow::copySvg(const QString & path, QFileInfoList & svgEntryInfoList)

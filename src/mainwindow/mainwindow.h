@@ -589,7 +589,7 @@ protected:
 	void groundFillAux(bool fillGroundTraces, ViewLayer::ViewLayerID viewLayerID);
 	void groundFillAux2(bool fillGroundTraces);
 	void connectStartSave(bool connect);
-	void loadBundledSketch(const QString &fileName, bool addToRecent, bool setAsLastOpened, bool checkObsolete);
+	QString loadBundledSketch(const QString &fileName, bool addToRecent, bool setAsLastOpened, bool checkObsolete);
 	void dropEvent(QDropEvent *event);
 	void dragEnterEvent(QDragEnterEvent *event);
 	void mainLoadAux(const QString & fileName);

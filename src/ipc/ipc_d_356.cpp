@@ -149,6 +149,7 @@ QString connectorToRecord(int cmd, ConnectorItem * connectorItem, ItemBase * ite
 
 
 QString getExportIPC_D_356A(ItemBase * board, QString basename, QList< QList<ConnectorItem *>* > netList) {
+	if (board == nullptr) return "";
 
 	QPointF origin = board->sceneBoundingRect().bottomLeft();
 

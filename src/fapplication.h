@@ -102,6 +102,17 @@ protected:
 
 ////////////////////////////////////////////////////
 
+class MainWindow;
+
+// Interface
+class IOperationStrategy {
+public:
+	virtual ~IOperationStrategy() {}
+	virtual void execute(MainWindow* mainWindow, const QString& filepath, const QDir& dir) = 0;
+};
+
+////////////////////////////////////////////////////
+
 
 class FApplication : public QApplication
 {
@@ -188,6 +199,7 @@ protected:
 	void cleanFzzs();
 	void initServer();
 	void regeneratePartsDatabaseAux(QDialog * progressDialog);
+	void runServiceAux(QSharedPointer<IOperationStrategy> operation, int mainWindowArg = 3);
 
 
 	enum class ServiceType {

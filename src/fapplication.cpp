@@ -919,22 +919,84 @@ void FApplication::runGerberService()
 	runGerberServiceAux();
 }
 
-void FApplication::runGerberServiceAux()
-{
+class GerberOperation : public IOperationStrategy {
+public:
+	void execute(MainWindow* mainWindow, const QString& filepath, const QDir& dir) override {
+		QFileInfo info(filepath);
+		GerberGenerator::exportToGerber(info.completeBaseName(), dir.absolutePath(), nullptr, mainWindow->pcbView(), false);
+	}
+};
+
+class BomOperation : public IOperationStrategy {
+public:
+	void execute(MainWindow* mainWindow, const QString& filepath, const QDir& dir) override {
+		QFileInfo info(filepath);
+		QString filepathCsv = filepath;
+		TextUtils::writeUtf8(filepathCsv.replace(".fzz", "_bom.csv"), mainWindow->getExportBOM_CSV());
+	}
+};
+
+class IpcOperation : public IOperationStrategy {
+public:
+	void execute(MainWindow* mainWindow, const QString& filepath, const QDir& dir) override {
+		QFileInfo info(filepath);
+		QString filepathIPC = filepath;
+		TextUtils::writeUtf8(filepathIPC.replace(".fzz", ".ipc"), mainWindow->exportIPC_D_356A());
+	}
+};
+
+class SvgOperation : public IOperationStrategy {
+public:
+	void execute(MainWindow* mainWindow, const QString& filepath, const QDir& dir) override {
+		QFileInfo info(filepath);
+		QList<ViewLayer::ViewID> ids;
+		ids << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
+		Q_FOREACH (ViewLayer::ViewID id, ids) {
+			QString fn = QString("%1_%2.svg").arg(info.completeBaseName()).arg(ViewLayer::viewIDNaturalName(id));
+			QString svgPath = dir.absoluteFilePath(fn);
+			mainWindow->setCurrentView(id);
+			mainWindow->exportSvg(GraphicsUtils::StandardFritzingDPI, false, false, svgPath);
+		}
+	}
+};
+
+class ExportAllOperation : public IOperationStrategy {
+public:
+	void execute(MainWindow* mainWindow, const QString& filepath, const QDir& dir) override {
+		QSharedPointer<IOperationStrategy> gerber(new GerberOperation());
+		QSharedPointer<IOperationStrategy> bom(new BomOperation());
+		QSharedPointer<IOperationStrategy> ipc(new IpcOperation());
+
+		gerber->execute(mainWindow, filepath, dir);
+		bom->execute(mainWindow, filepath, dir);
+		ipc->execute(mainWindow, filepath, dir);
+	}
+};
+
+class ExportAllPlusSvgOperation : public IOperationStrategy {
+public:
+	void execute(MainWindow* mainWindow, const QString& filepath, const QDir& dir) override {
+		QSharedPointer<IOperationStrategy> exportAll(new ExportAllOperation());
+		QSharedPointer<IOperationStrategy> svg(new SvgOperation());
+
+		exportAll->execute(mainWindow, filepath, dir);
+		svg->execute(mainWindow, filepath, dir);
+	}
+};
+
+void FApplication::runServiceAux(QSharedPointer<IOperationStrategy> operation, int mainWindowArg) {
 	QDir dir(m_outputFolder);
-	QString s = dir.absolutePath();
 	QStringList filters;
 	filters << "*" + FritzingBundleExtension;
 	QStringList filenames = dir.entryList(filters, QDir::Files);
 	Q_FOREACH (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
-		MainWindow * mainWindow = openWindowForService(false, 3);
+		MainWindow * mainWindow = openWindowForService(false, mainWindowArg);
 		m_started = true;
 
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
 		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
-			QFileInfo info(filepath);
-			GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, nullptr, mainWindow->pcbView(), false);
+			operation->execute(mainWindow, filepath, dir);
 		}
 
 		mainWindow->setCloseSilently(true);
@@ -942,124 +1004,34 @@ void FApplication::runGerberServiceAux()
 	}
 }
 
-void FApplication::runBomServiceAux()
-{
-    QDir dir(m_outputFolder);
-    QString s = dir.absolutePath();
-    QStringList filters;
-    filters << "*" + FritzingBundleExtension;
-    QStringList filenames = dir.entryList(filters, QDir::Files);
-    Q_FOREACH (QString filename, filenames) {
-	QString filepath = dir.absoluteFilePath(filename);
-	MainWindow * mainWindow = openWindowForService(false, 3);
-	m_started = true;
-
-	FolderUtils::setOpenSaveFolderAux(m_outputFolder);
-	if (mainWindow->loadWhich(filepath, false, false, false, "")) {
-	    QFileInfo info(filepath);
-	    QString filepathCsv = filepath;
-	    TextUtils::writeUtf8(filepathCsv.replace(".fzz", "_bom.csv"), mainWindow->getExportBOM_CSV());
-	}
-
-	mainWindow->setCloseSilently(true);
-	mainWindow->close();
-    }
+void FApplication::runGerberServiceAux() {
+	runServiceAux(QSharedPointer<IOperationStrategy>(new GerberOperation()));
 }
 
-void FApplication::runIpcServiceAux()
-{
-    QDir dir(m_outputFolder);
-    QString s = dir.absolutePath();
-    QStringList filters;
-    filters << "*" + FritzingBundleExtension;
-    QStringList filenames = dir.entryList(filters, QDir::Files);
-    Q_FOREACH (QString filename, filenames) {
-	QString filepath = dir.absoluteFilePath(filename);
-	MainWindow * mainWindow = openWindowForService(false, 3);
-	m_started = true;
+void FApplication::runBomServiceAux() {
+	runServiceAux(QSharedPointer<IOperationStrategy>(new BomOperation()));
+}
 
-	FolderUtils::setOpenSaveFolderAux(m_outputFolder);
-	if (mainWindow->loadWhich(filepath, false, false, false, "")) {
-	    QFileInfo info(filepath);
-	    QString filepathIPC = filepath;
-	    TextUtils::writeUtf8(filepathIPC.replace(".fzz", ".ipc"), mainWindow->exportIPC_D_356A());
-	}
+void FApplication::runIpcServiceAux() {
+	runServiceAux(QSharedPointer<IOperationStrategy>(new IpcOperation()));
+}
 
-	mainWindow->setCloseSilently(true);
-	mainWindow->close();
-    }
+void FApplication::runSvgServiceAux() {
+	runServiceAux(QSharedPointer<IOperationStrategy>(new SvgOperation()), -1);
+}
+
+void FApplication::runExportAllServiceAux() {
+	runServiceAux(QSharedPointer<IOperationStrategy>(new ExportAllOperation()));
+}
+
+void FApplication::runExportAllPlusSvgServiceAux() {
+	runServiceAux(QSharedPointer<IOperationStrategy>(new ExportAllPlusSvgOperation()));
 }
 
 void FApplication::runExportAllService()
 {
 	initService();
 	runExportAllServiceAux();
-}
-
-void FApplication::runExportAllServiceAux()
-{
-	QDir dir(m_outputFolder);
-	QString s = dir.absolutePath();
-	QStringList filters;
-	filters << "*" + FritzingBundleExtension;
-	QStringList filenames = dir.entryList(filters, QDir::Files);
-	Q_FOREACH (QString filename, filenames) {
-		QString filepath = dir.absoluteFilePath(filename);
-		MainWindow * mainWindow = openWindowForService(false, 3);
-		m_started = true;
-
-		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
-		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
-			QFileInfo info(filepath);
-			GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, nullptr, mainWindow->pcbView(), false);
-
-			QString filepathCsv = filepath;
-			TextUtils::writeUtf8(filepathCsv.replace(".fzz", "_bom.csv"), mainWindow->getExportBOM_CSV());
-
-			QString filepathIPC = filepath;
-			TextUtils::writeUtf8(filepathIPC.replace(".fzz", ".ipc"), mainWindow->exportIPC_D_356A());
-		}
-
-		mainWindow->setCloseSilently(true);
-		mainWindow->close();
-	}
-}
-
-void FApplication::runExportAllPlusSvgServiceAux()
-{
-	QDir dir(m_outputFolder);
-	QString s = dir.absolutePath();
-	QStringList filters;
-	filters << "*" + FritzingBundleExtension;
-	QStringList filenames = dir.entryList(filters, QDir::Files);
-	Q_FOREACH (QString filename, filenames) {
-		QString filepath = dir.absoluteFilePath(filename);
-		MainWindow * mainWindow = openWindowForService(false, 3);
-		m_started = true;
-
-		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
-		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
-			QFileInfo info(filepath);
-			GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, nullptr, mainWindow->pcbView(), false);
-
-			QString filepathCsv = filepath;
-			TextUtils::writeUtf8(filepathCsv.replace(".fzz", "_bom.csv"), mainWindow->getExportBOM_CSV());
-
-			QString filepathIPC = filepath;
-			TextUtils::writeUtf8(filepathIPC.replace(".fzz", ".ipc"), mainWindow->exportIPC_D_356A());
-			QList<ViewLayer::ViewID> ids;
-			ids << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
-			Q_FOREACH (ViewLayer::ViewID id, ids) {
-				QString fn = QString("%1_%2.svg").arg(info.completeBaseName()).arg(ViewLayer::viewIDNaturalName(id));
-				QString svgPath = dir.absoluteFilePath(fn);
-				mainWindow->setCurrentView(id);
-				mainWindow->exportSvg(GraphicsUtils::StandardFritzingDPI, false, false, svgPath);
-			}
-		}
-
-		mainWindow->setCloseSilently(true);
-		mainWindow->close();
-	}
 }
 
 void FApplication::initService()
@@ -1073,36 +1045,6 @@ void FApplication::runSvgService()
 {
 	initService();
 	runSvgServiceAux();
-}
-
-void FApplication::runSvgServiceAux()
-{
-	QDir dir(m_outputFolder);
-	QString s = dir.absolutePath();
-	QStringList filters;
-	filters << "*" + FritzingBundleExtension;
-	QStringList filenames = dir.entryList(filters, QDir::Files);
-	Q_FOREACH (QString filename, filenames) {
-		QString filepath = dir.absoluteFilePath(filename);
-		MainWindow * mainWindow = openWindowForService(false, -1);
-		m_started = true;
-
-		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
-		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
-			QFileInfo info(filepath);
-			QList<ViewLayer::ViewID> ids;
-			ids << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
-			Q_FOREACH (ViewLayer::ViewID id, ids) {
-				QString fn = QString("%1_%2.svg").arg(info.completeBaseName()).arg(ViewLayer::viewIDNaturalName(id));
-				QString svgPath = dir.absoluteFilePath(fn);
-				mainWindow->setCurrentView(id);
-				mainWindow->exportSvg(GraphicsUtils::StandardFritzingDPI, false, false, svgPath);
-			}
-		}
-
-		mainWindow->setCloseSilently(true);
-		mainWindow->close();
-	}
 }
 
 void FApplication::runDatabaseService()

@@ -109,6 +109,7 @@ class IOperationStrategy {
 public:
 	virtual ~IOperationStrategy() {}
 	virtual void execute(MainWindow* mainWindow, const QString& filepath, const QDir& dir) = 0;
+	 virtual QString name() const = 0;
 };
 
 ////////////////////////////////////////////////////

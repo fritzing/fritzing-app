@@ -925,6 +925,7 @@ public:
 		QFileInfo info(filepath);
 		GerberGenerator::exportToGerber(info.completeBaseName(), dir.absolutePath(), nullptr, mainWindow->pcbView(), false);
 	}
+	QString name() const override { return "GerberOperation"; }
 };
 
 class BomOperation : public IOperationStrategy {
@@ -934,6 +935,7 @@ public:
 		QString filepathCsv = filepath;
 		TextUtils::writeUtf8(filepathCsv.replace(".fzz", "_bom.csv"), mainWindow->getExportBOM_CSV());
 	}
+	QString name() const override { return "BomOperation"; }
 };
 
 class IpcOperation : public IOperationStrategy {
@@ -943,6 +945,7 @@ public:
 		QString filepathIPC = filepath;
 		TextUtils::writeUtf8(filepathIPC.replace(".fzz", ".ipc"), mainWindow->exportIPC_D_356A());
 	}
+	QString name() const override { return "IpcOperation"; }
 };
 
 class SvgOperation : public IOperationStrategy {
@@ -958,6 +961,7 @@ public:
 			mainWindow->exportSvg(GraphicsUtils::StandardFritzingDPI, false, false, svgPath);
 		}
 	}
+	QString name() const override { return "SvgOperation"; }
 };
 
 class ExportAllOperation : public IOperationStrategy {
@@ -971,6 +975,7 @@ public:
 		bom->execute(mainWindow, filepath, dir);
 		ipc->execute(mainWindow, filepath, dir);
 	}
+	QString name() const override { return "ExportAllOperation"; }
 };
 
 class ExportAllPlusSvgOperation : public IOperationStrategy {
@@ -982,6 +987,7 @@ public:
 		exportAll->execute(mainWindow, filepath, dir);
 		svg->execute(mainWindow, filepath, dir);
 	}
+	QString name() const override { return "ExportAllPlusSvgOperation"; }
 };
 
 void FApplication::runServiceAux(QSharedPointer<IOperationStrategy> operation, int mainWindowArg) {

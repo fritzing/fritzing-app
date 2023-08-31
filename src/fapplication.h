@@ -178,14 +178,14 @@ protected:
 	void runKicadFootprintService();
 	void runKicadSchematicService();
 	void runGerberService();
-	void runGerberServiceAux();
-	void runBomServiceAux();
-	void runIpcServiceAux();
+	QString runGerberServiceAux();
+	QString runBomServiceAux();
+	QString runIpcServiceAux();
 	void runExportAllService();
 	void runExportAllServiceAux();
-	void runExportAllPlusSvgServiceAux();
+	QString runExportAllPlusSvgServiceAux();
 	void runSvgService();
-	void runSvgServiceAux();
+	QString runSvgServiceAux();
 	void runExampleService();
 	void runExampleService(QDir &);
 	QList<class MainWindow *> recoverBackups();
@@ -200,7 +200,7 @@ protected:
 	void cleanFzzs();
 	void initServer();
 	void regeneratePartsDatabaseAux(QDialog * progressDialog);
-	void runServiceAux(QSharedPointer<IOperationStrategy> operation, int mainWindowArg = 3);
+	QString runServiceAux(QSharedPointer<IOperationStrategy> operation, int mainWindowArg = 3);
 
 
 	enum class ServiceType {

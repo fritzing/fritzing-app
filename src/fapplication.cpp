@@ -990,11 +990,13 @@ public:
 	QString name() const override { return "ExportAllPlusSvgOperation"; }
 };
 
-void FApplication::runServiceAux(QSharedPointer<IOperationStrategy> operation, int mainWindowArg) {
+QString FApplication::runServiceAux(QSharedPointer<IOperationStrategy> operation, int mainWindowArg) {
 	QDir dir(m_outputFolder);
 	QStringList filters;
 	filters << "*" + FritzingBundleExtension;
 	QStringList filenames = dir.entryList(filters, QDir::Files);
+	bool fail = false;
+	QStringList failedFiles;
 	Q_FOREACH (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
 		MainWindow * mainWindow = openWindowForService(false, mainWindowArg);
@@ -1003,35 +1005,43 @@ void FApplication::runServiceAux(QSharedPointer<IOperationStrategy> operation, i
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
 		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
 			operation->execute(mainWindow, filepath, dir);
+		} else {
+			fail = true;
+			failedFiles.append(filepath);
+			DebugDialog::debug(QString("FApplication: failed to load file: %1").arg(filepath));
 		}
 
 		mainWindow->setCloseSilently(true);
 		mainWindow->close();
 	}
+	if (fail) {
+		return "Loading failed for operation " + operation->name() + " for files: " + failedFiles.join(", ");
+	}
+	return "";
 }
 
-void FApplication::runGerberServiceAux() {
-	runServiceAux(QSharedPointer<IOperationStrategy>(new GerberOperation()));
+QString FApplication::runGerberServiceAux() {
+	return runServiceAux(QSharedPointer<IOperationStrategy>(new GerberOperation()));
 }
 
-void FApplication::runBomServiceAux() {
-	runServiceAux(QSharedPointer<IOperationStrategy>(new BomOperation()));
+QString FApplication::runBomServiceAux() {
+	return runServiceAux(QSharedPointer<IOperationStrategy>(new BomOperation()));
 }
 
-void FApplication::runIpcServiceAux() {
-	runServiceAux(QSharedPointer<IOperationStrategy>(new IpcOperation()));
+QString FApplication::runIpcServiceAux() {
+	return runServiceAux(QSharedPointer<IOperationStrategy>(new IpcOperation()));
 }
 
-void FApplication::runSvgServiceAux() {
-	runServiceAux(QSharedPointer<IOperationStrategy>(new SvgOperation()), -1);
+QString FApplication::runSvgServiceAux() {
+	return runServiceAux(QSharedPointer<IOperationStrategy>(new SvgOperation()), -1);
 }
 
 void FApplication::runExportAllServiceAux() {
 	runServiceAux(QSharedPointer<IOperationStrategy>(new ExportAllOperation()));
 }
 
-void FApplication::runExportAllPlusSvgServiceAux() {
-	runServiceAux(QSharedPointer<IOperationStrategy>(new ExportAllPlusSvgOperation()));
+QString FApplication::runExportAllPlusSvgServiceAux() {
+	return runServiceAux(QSharedPointer<IOperationStrategy>(new ExportAllPlusSvgOperation()));
 }
 
 void FApplication::runExportAllService()
@@ -2045,11 +2055,12 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 		return;
 	}
 
+	QString error;
 	if (command == "shutdown") {
 		closeAllWindows2();
 	}
 	else if (command.startsWith("svg")) {
-		runSvgServiceAux();
+		error = runSvgServiceAux();
 		QStringList nameFilters;
 		nameFilters << ("*.svg");
 		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
@@ -2061,7 +2072,7 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 		}
 	}
 	else if (command.startsWith("gerber")) {
-		runGerberServiceAux();
+		error = runGerberServiceAux();
 		QStringList nameFilters;
 		nameFilters << ("*.txt");
 		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
@@ -2072,7 +2083,7 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 			}
 		}
 	} else if (command.startsWith("bom")) {
-		runBomServiceAux();
+		error = runBomServiceAux();
 		QStringList nameFilters;
 		nameFilters << ("*.csv");
 		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
@@ -2083,7 +2094,7 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 			}
 		}
 	} else if (command.startsWith("ipc")) {
-		runIpcServiceAux();
+		error = runIpcServiceAux();
 		QStringList nameFilters;
 		nameFilters << ("*.ipc");
 		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
@@ -2094,7 +2105,7 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 			}
 		}
 	} else if (command.startsWith("all")) {
-		runExportAllPlusSvgServiceAux();
+		error = runExportAllPlusSvgServiceAux();
 		QStringList nameFilters;
 		nameFilters << ("*.ipc");
 		QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
@@ -2106,6 +2117,12 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 		}
 	}
 
+	if (!error.isEmpty()) {
+		status = 422;
+		result = error;
+		DebugDialog::debug(QString("FApplication::doCommand: error occurred. status: %1 error: %2").arg(status).arg(error));
+		return;
+	}
 
 	if (command.endsWith("tcp")) {
 		QStringList skipSuffixes(".zip");

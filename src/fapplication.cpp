@@ -2115,6 +2115,7 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 				result = file.readAll();
 			}
 		}
+		closeAllWindows2();
 	}
 
 	if (!error.isEmpty()) {

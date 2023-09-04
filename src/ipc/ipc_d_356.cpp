@@ -70,7 +70,18 @@ QString electricalTestRecord(int cmd, QString netLabel, QString partLabel, QStri
 
 	int soldermask = 0;
 
-	QString pin = QString::number(TextUtils::getPositiveIntegers(connectorId).constFirst());
+	QList<uint> numbers = TextUtils::getPositiveIntegers(connectorId);
+	QString pin;
+
+	if(connectorId.length() <= 4) {
+		pin = connectorId;
+	} else if(!numbers.isEmpty()) {
+		QString numberStr = QString::number(numbers.constFirst());
+		pin = numberStr.length() > 4 ? numberStr.left(4) : numberStr;
+	} else {
+		pin = connectorId.left(4);
+	}
+
 	if (connectorName.contains("anode", Qt::CaseInsensitive)) pin = "A";
 	if (connectorName.contains("catho", Qt::CaseInsensitive)) pin = "C";
 	// Use the connector number instead of "GND" to avoid duplicate naming

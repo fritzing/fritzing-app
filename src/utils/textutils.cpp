@@ -980,19 +980,6 @@ QList<double> TextUtils::getTransformFloats(const QString & transform) {
 
 	return list;
 }
-QList<uint> TextUtils::getPositiveIntegers(const QString & str) {
-	QList<uint> list;
-	int pos = 0;
-
-	QRegularExpressionMatch match;
-	while ((pos = str.indexOf(TextUtils::positiveIntegerMatcher, pos, &match)) != -1) {
-		list << str.mid(pos, match.capturedLength()).toDouble();
-		pos += match.capturedLength();
-		match = QRegularExpressionMatch();
-	}
-
-	return list;
-}
 
 void TextUtils::gWrap(QDomDocument & domDocument, const QHash<QString, QString> & attributes)
 {

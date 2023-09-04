@@ -149,7 +149,6 @@ public:
 	static const QString AdobeIllustratorIdentifier;
 
 	static QMap<QString, QString> parseFileForViewImages(const QString &fzpPath);
-	static QList<uint> getPositiveIntegers(const QString &str);
 protected:
 	static bool pxToInches(QDomElement &elem, const QString &attrName, bool isIllustrator);
 	static void squashNotElement(QDomElement & element, const QString & elementName, const QString & attName, const QRegularExpression & matchContent, bool & result);

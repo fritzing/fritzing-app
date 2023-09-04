@@ -26,6 +26,30 @@ public:
 	};
 };
 
+QString getPinNumberOrIdentifier(const QString & connectorId, const QString & connectorName) {
+	QString pin;
+
+	QRegularExpression matcher("\\d+"); // Matches one or more digits
+	QRegularExpressionMatch match = matcher.match(connectorId);
+
+	if(connectorId.length() <= 4) {
+		pin = connectorId;
+	} else if(match.hasMatch()) {
+		QString numberStr = match.captured(0);
+		pin = numberStr.length() > 4 ? numberStr.left(4) : numberStr;
+	} else {
+		pin = connectorId.left(4);
+	}
+
+	if (connectorName.contains("anode", Qt::CaseInsensitive)) pin = "A";
+	if (connectorName.contains("catho", Qt::CaseInsensitive)) pin = "C";
+	// Use the connector number instead of "GND" to avoid duplicate naming
+	//	if (connectorName.contains("gnd", Qt::CaseInsensitive)) pin = "GND";
+	if (connectorName == "-") pin = "-";
+	if (connectorName == "+") pin = "+";
+	return pin;
+}
+
 // Forward declaration, currently unused
 // QString electricalTestRecord(QString netLabel, QString partLabel, QString connectorName, QString pin, bool isTHT, bool isMiddle, bool isPlated, bool isDrilled, int r, int x, int y, int w, int h, int layer, int ccw_angle);
 QString electricalTestRecord(int cmd, QString netLabel, QString partLabel, QString connectorName, QString connectorId, bool isTHT, bool isMiddle, bool isPlated, bool isDrilled, int r, int x, int y, int w, int h, int layer, int ccw_angle) {
@@ -70,24 +94,7 @@ QString electricalTestRecord(int cmd, QString netLabel, QString partLabel, QStri
 
 	int soldermask = 0;
 
-	QList<uint> numbers = TextUtils::getPositiveIntegers(connectorId);
-	QString pin;
-
-	if(connectorId.length() <= 4) {
-		pin = connectorId;
-	} else if(!numbers.isEmpty()) {
-		QString numberStr = QString::number(numbers.constFirst());
-		pin = numberStr.length() > 4 ? numberStr.left(4) : numberStr;
-	} else {
-		pin = connectorId.left(4);
-	}
-
-	if (connectorName.contains("anode", Qt::CaseInsensitive)) pin = "A";
-	if (connectorName.contains("catho", Qt::CaseInsensitive)) pin = "C";
-	// Use the connector number instead of "GND" to avoid duplicate naming
-	//	if (connectorName.contains("gnd", Qt::CaseInsensitive)) pin = "GND";
-	if (connectorName == "-") pin = "-";
-	if (connectorName == "+") pin = "+";
+	QString pin = getPinNumberOrIdentifier(connectorId, connectorName);
 
 	int angle = (ccw_angle % 360 + 360) % 360;
 

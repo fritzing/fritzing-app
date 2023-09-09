@@ -52,7 +52,7 @@
  <url type="forum">https://forum.fritzing.org</url>
  <url type="translate">https://fritzing.org/support-us/language-translation/</url>
  <releases>
-  <release version="1.0.1rc" date="2023-07-15"/>
+  <release version="1.0.2b" date="2023-09-09"/>
  </releases>
  <provides>
   <binary>Fritzing</binary>

@@ -88,6 +88,7 @@ public:
 	void getBendpointWidths(class Wire *, double w, double & w1, double & w2, bool & negativeOffsetRect);
 	double getSmallerTraceWidth(double minDim);
 	bool groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID, QUndoCommand * parentCommand);
+	bool groundFillOld(bool fillGroundTraces, ViewLayer::ViewLayerID, QUndoCommand * parentCommand);
 	void setGroundFillSeeds();
 	void clearGroundFillSeeds();
 	QString generateCopperFillUnit(ItemBase * itemBase, QPointF whereToStart);
@@ -193,10 +194,13 @@ Q_SIGNALS:
 	void boardDeletedSignal();
 	void groundFillSignal();
 	void copperFillSignal();
+	void groundFillOldSignal();
+	void copperFillOldSignal();
 
 protected Q_SLOTS:
 	void alignJumperItem(class JumperItem *, QPointF &);
 	void wireSplitSlot(class Wire*, QPointF newPos, QPointF oldPos, const QLineF & oldLine);
+	void postImageSlot(class GroundPlaneGeneratorOld *, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> *);
 	void gotFabQuote(QNetworkReply *);
 	void requestQuoteNow();
 	void getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);

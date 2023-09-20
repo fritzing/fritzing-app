@@ -30,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGraphicsItem>
 
 
-struct GPGParams {
+struct GPGParamsOld {
 	QString boardSvg;
 	QSizeF boardImageSize;
 	QString svg;
@@ -85,12 +85,12 @@ protected:
 
 	QString makeOnePoly(const QPolygon & poly, const QString & colorString, const QString & id, int minX, int minY);
 	double calcArea(QPolygon & poly);
-	QImage * generateGroundPlaneAux(GPGParams &, double & bWidth, double & bHeight, QList<QRectF> &);
+	QImage * generateGroundPlaneAux(GPGParamsOld &, double & bWidth, double & bHeight, QList<QRectF> &);
 	void makeConnector(QList<QPolygon> & polygons, double res, double pixelFactor, const QString & colorString, int minX, int minY, QString & svg);
 	bool tryNextPoint(int x, int y, QImage & image, QList<QPoint> & points);
 	bool collectBorderPoints(QImage & image, QList<QPoint> & points);
 	bool try8(int x, int y, QImage & image, QList<QPoint> & points);
-	bool generateGroundPlaneFn(const GPGParams &);
+	bool generateGroundPlaneFn(const GPGParamsOld &);
 
 
 protected:

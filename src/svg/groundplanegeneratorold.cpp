@@ -159,7 +159,7 @@ bool GroundPlaneGeneratorOld::generateGroundPlaneUnit(const QString & boardSvg, 
 		QStringList & exceptions, QGraphicsItem * board, double res, const QString & color,
 		QPointF whereToStart, double keepoutMils)
 {
-	GPGParams params;
+	GPGParamsOld params;
 	params.boardSvg = boardSvg;
 	params.boardImageSize = boardImageSize;
 	params.svg = svg;
@@ -248,7 +248,7 @@ bool GroundPlaneGeneratorOld::generateGroundPlaneUnit(const QString & boardSvg, 
 bool GroundPlaneGeneratorOld::generateGroundPlane(const QString & boardSvg, QSizeF boardImageSize, const QString & svg, QSizeF copperImageSize,
 		QStringList & exceptions, QGraphicsItem * board, double res, const QString & color, double keepoutMils)
 {
-	GPGParams params;
+	GPGParamsOld params;
 	params.boardSvg = boardSvg;
 	params.keepoutMils = keepoutMils;
 	params.boardImageSize = boardImageSize;
@@ -269,9 +269,9 @@ bool GroundPlaneGeneratorOld::generateGroundPlane(const QString & boardSvg, QSiz
 	return future.result();
 }
 
-bool GroundPlaneGeneratorOld::generateGroundPlaneFn(const GPGParams &constParams)
+bool GroundPlaneGeneratorOld::generateGroundPlaneFn(const GPGParamsOld &constParams)
 {
-	GPGParams params = constParams;
+	GPGParamsOld params = constParams;
 	double bWidth, bHeight;
 	QList<QRectF> rects;
 	QImage * image = generateGroundPlaneAux(params, bWidth, bHeight, rects);
@@ -296,7 +296,7 @@ bool GroundPlaneGeneratorOld::generateGroundPlaneFn(const GPGParams &constParams
 	return true;
 }
 
-QImage * GroundPlaneGeneratorOld::generateGroundPlaneAux(GPGParams & params, double & bWidth, double & bHeight, QList<QRectF> & rects)
+QImage * GroundPlaneGeneratorOld::generateGroundPlaneAux(GPGParamsOld & params, double & bWidth, double & bHeight, QList<QRectF> & rects)
 {
 	QByteArray boardByteArray;
 	QString tempColor("#ffffff");

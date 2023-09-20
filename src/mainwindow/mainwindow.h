@@ -200,8 +200,6 @@ public:
 	void hideTempPartsBin();
 	const QString & fritzingVersion();
 	void removeGroundFill(ViewLayer::ViewLayerID, QUndoCommand * parentCommand);
-	void groundFill(ViewLayer::ViewLayerID);
-	void copperFill(ViewLayer::ViewLayerID);
 	bool hasAnyAlien();
 	void exportSvg(double res, bool selectedItems, bool flatten, const QString & filename);
 	void setCurrentView(ViewLayer::ViewID);
@@ -243,8 +241,10 @@ public Q_SLOTS:
 	void statusMessage(QString message, int timeout);
 	void showPCBView();
 	void groundFill();
+	void groundFillOld();
 	void removeGroundFill();
 	void copperFill();
+	void copperFillOld();
 	void setOneGroundFillSeed();
 	void setGroundFillSeeds();
 	void clearGroundFillSeeds();
@@ -586,8 +586,8 @@ protected:
 	class ConnectorItem * retrieveConnectorItem();
 	QString getBomProps(ItemBase *);
 	ModelPart * findReplacedby(ModelPart * originalModelPart);
-	void groundFillAux(bool fillGroundTraces, ViewLayer::ViewLayerID viewLayerID);
-	void groundFillAux2(bool fillGroundTraces);
+	void groundFillAux(bool fillGroundTraces, ViewLayer::ViewLayerID viewLayerID, bool useOldVersion);
+	void groundFillAux2(bool fillGroundTraces, bool useOldVersion);
 	void connectStartSave(bool connect);
 	QString loadBundledSketch(const QString &fileName, bool addToRecent, bool setAsLastOpened, bool checkObsolete);
 	void dropEvent(QDropEvent *event);
@@ -871,8 +871,10 @@ protected:
 	QAction *m_selectAllJumperItemsAct = nullptr;
 	QAction *m_selectAllViasAct = nullptr;
 	QAction *m_groundFillAct = nullptr;
+	QAction *m_groundFillOldAct = nullptr;
 	QAction *m_removeGroundFillAct = nullptr;
 	QAction *m_copperFillAct = nullptr;
+	QAction *m_copperFillOldAct = nullptr;
 	class ConnectorItemAction *m_setOneGroundFillSeedAct = nullptr;
 	QAction *m_setGroundFillSeedsAct = nullptr;
 	QAction *m_clearGroundFillSeedsAct = nullptr;

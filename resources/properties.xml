@@ -164,6 +164,9 @@
 <property name="fall time" symbol="s" minValue="0" maxValue="1" defaultValue="0.001" numeric="yes" editable="yes">
   <suffix suffix="PulsePowerSupplyModuleID"/>
 </property>
+<property name="number of cycles" symbol="" minValue="0" maxValue="1000000000000" defaultValue="0" numeric="yes" editable="yes">
+  <suffix suffix="PulsePowerSupplyModuleID"/>
+</property>
 
 <property name="frequency" symbol="Hz" minValue="0" maxValue="1000000" defaultValue="60" numeric="yes" editable="yes">
 	<suffix suffix="AC2PowerModuleID"/>

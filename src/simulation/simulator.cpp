@@ -613,14 +613,14 @@ QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<
 	double y_0 = 50; // the center of the screen
 
 
-	for (int i = 0; std::min( proveVector.size(), comVector.size() ); i++) {
+    for (int i = 0; i < std::min( proveVector.size(), comVector.size() ); i++) {
 		double voltage = proveVector[i] - comVector[i];
 		if (i == 0) {
 			svg.append("M 0 " + QString::number( (voltage + v_offset) * vScale + y_0, 'f', 3) + " ");
 		} else {
 			svg.append("L " + QString::number(i, 'f', 3) + " " + QString::number((voltage + v_offset) * vScale + y_0, 'f', 3) + " ");
-		}
-		std::cout << voltage << ' ';
+        }
+        std::cout <<" ("<< i << "): " << voltage << ' ';
 	}
 	svg += "' fill='red' stroke='black' stroke-width='10'/> \n";
 
@@ -1307,7 +1307,7 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 		QString svg = QString("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n%5"
 				"<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' "
 				"version='1.2' baseProfile='tiny' "
-				"x='0in' y='0in' width='%1in' height='%2in' "
+                "x='0in' y='0in' width='%1mm' height='%2mm' "
 				"viewBox='0 0 %3 %4' >\n"
 			   )
 		.arg(125)
@@ -1326,7 +1326,6 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 			std::cout << "SVG Graph is NOT VALID " << std::endl;
 		std::cout << "SVG: " << svg.toStdString() << std::endl;
 		graph->setSharedRenderer(graphRender);
-		graph->setElementId("graph");
 		graph->setZValue(std::numeric_limits<double>::max());
 
 		//There are issues as the size of the text changes depending on the display settings in windows

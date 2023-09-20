@@ -139,32 +139,35 @@
 <property name="voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">
   <suffix suffix="DC2PowerModuleID"/>
   <suffix suffix="AC2PowerModuleID"/>
+  <suffix suffix="ACPowerSupplyModuleID"/>
+  <suffix suffix="DCPowerSupplyModuleID"/>
   <menuItem value="3.3" />
 	<menuItem value="5" />
 	<menuItem value="12" />
 </property>
 
 <property name="initial voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="0" numeric="yes" editable="yes">
-  <suffix suffix="DCPulseSourceModuleID"/>
+  <suffix suffix="PulsePowerSupplyModuleID"/>
 </property>
 <property name="pulsed voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">
-  <suffix suffix="DCPulseSourceModuleID"/>
+  <suffix suffix="PulsePowerSupplyModuleID"/>
 </property>
 <property name="period" symbol="s" minValue="0" maxValue="1000000" defaultValue="0.1" numeric="yes" editable="yes">
-  <suffix suffix="DCPulseSourceModuleID"/>
+  <suffix suffix="PulsePowerSupplyModuleID"/>
 </property>
 <property name="pulse width" symbol="s" minValue="0" maxValue="1000000" defaultValue="0.05" numeric="yes" editable="yes">
-  <suffix suffix="DCPulseSourceModuleID"/>
+  <suffix suffix="PulsePowerSupplyModuleID"/>
 </property>
 <property name="rise time" symbol="s" minValue="0" maxValue="1" defaultValue="0.001" numeric="yes" editable="yes">
-  <suffix suffix="DCPulseSourceModuleID"/>
+  <suffix suffix="PulsePowerSupplyModuleID"/>
 </property>
 <property name="fall time" symbol="s" minValue="0" maxValue="1" defaultValue="0.001" numeric="yes" editable="yes">
-  <suffix suffix="DCPulseSourceModuleID"/>
+  <suffix suffix="PulsePowerSupplyModuleID"/>
 </property>
 
 <property name="frequency" symbol="Hz" minValue="0" maxValue="1000000" defaultValue="60" numeric="yes" editable="yes">
 	<suffix suffix="AC2PowerModuleID"/>
+	<suffix suffix="ACPowerSupplyModuleID"/>
 	<menuItem value="10" />
 	<menuItem value="20" />
 	<menuItem value="50" />
@@ -173,17 +176,17 @@
 </property>
 
 <property name="offset voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="0" numeric="yes" editable="yes">
-  <suffix suffix="AC2PowerModuleID"/>
+  <suffix suffix="ACPowerSupplyModuleID"/>
 </property>
 <property name="delay time" symbol="s" minValue="0" maxValue="100" defaultValue="0" numeric="yes" editable="yes">
-  <suffix suffix="AC2PowerModuleID"/>
-  <suffix suffix="DCPulseSourceModuleID"/>
+  <suffix suffix="ACPowerSupplyModuleID"/>
+  <suffix suffix="PulsePowerSupplyModuleID"/>
 </property>
 <property name="damping factor" symbol="s-1" minValue="0" maxValue="10" defaultValue="0" numeric="yes" editable="yes">
-  <suffix suffix="AC2PowerModuleID"/>
+  <suffix suffix="ACPowerSupplyModuleID"/>
 </property>
 <property name="phase" symbol="degrees" minValue="0" maxValue="360" defaultValue="0" numeric="yes" editable="yes">
-  <suffix suffix="AC2PowerModuleID"/>
+  <suffix suffix="ACPowerSupplyModuleID"/>
 </property>
 
 <property name="frequency" symbol="Hz" minValue="" maxValue="" defaultValue="16 MHz" numeric="no" editable="no">

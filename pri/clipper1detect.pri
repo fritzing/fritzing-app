@@ -3,7 +3,7 @@
 message("Using fritzing Clipper 1 detect script.")
 
 exists($$absolute_path($$PWD/../../Clipper1)) {
-            CLIPPER1 = $$absolute_path($$PWD/../../Clipper1)
+            CLIPPER1 = $$absolute_path($$PWD/../../Clipper1/6.4.2)
             message("found Clipper1 in $${CLIPPER1}")
         }
 

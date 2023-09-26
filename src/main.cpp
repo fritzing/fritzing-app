@@ -91,7 +91,6 @@ int main(int argc, char *argv[])
 	int result = 0;
 	try {
 		//QApplication::setGraphicsSystem("raster");
-		QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 		auto * app = new FApplication(argc, argv);
 		switch (app->init()) {
 		case FInitResultNormal: {

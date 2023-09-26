@@ -957,7 +957,7 @@ QString FApplication::runGerberServiceAux() {
 }
 
 QString FApplication::runBomServiceAux() {
-	return runServiceAux([](MainWindow* mainWindow, const QString& filepath, const QDir& dir) {
+    return runServiceAux([](MainWindow* mainWindow, const QString& filepath, const QDir& /*dir*/) {
 		QFileInfo info(filepath);
 		QString filepathCsv = filepath;
 		TextUtils::writeUtf8(filepathCsv.replace(".fzz", "_bom.csv"), mainWindow->getExportBOM_CSV());
@@ -965,7 +965,7 @@ QString FApplication::runBomServiceAux() {
 }
 
 QString FApplication::runIpcServiceAux() {
-	return runServiceAux([](MainWindow* mainWindow, const QString& filepath, const QDir& dir) {
+    return runServiceAux([](MainWindow* mainWindow, const QString& filepath, const QDir& /*dir*/) {
 		QFileInfo info(filepath);
 		QString filepathIPC = filepath;
 		TextUtils::writeUtf8(filepathIPC.replace(".fzz", ".ipc"), mainWindow->exportIPC_D_356A());

@@ -67,7 +67,7 @@ protected:
 	double getVectorValueOrDefault(const std::string & vecName, double defaultValue);
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
 	std::vector<double> voltageVector(ConnectorItem *);
-	QString generateSvgPath(std::vector<double>, std::vector<double>, QString, double, double);
+    QString generateSvgPath(std::vector<double>, std::vector<double>, QString, double, double, double, double, QString, QString);
 	double getCurrent(ItemBase*, QString subpartName="");
 	double getTransistorCurrent(QString spicePartName, TransistorLeg leg);
 	double getPower(ItemBase*, QString subpartName="");

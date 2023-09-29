@@ -601,28 +601,32 @@ std::vector<double> Simulator::voltageVector(ConnectorItem * c0) {
 	return m_simulator->getVecInfo(net0str.toStdString());
 }
 
-QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<double> comVector, QString nameId, double v_div, double v_offset) {
+QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<double> comVector, QString nameId, double verticalScale, double v_offset, double screenHeight, double screenWidth, QString color, QString strokeWidth ) {
 	std::cout << "VOLTAGE VALUES " << nameId.toStdString() << ": ";
 	QString svg;
+    double screenOffset = 132.87378;
+    svg += QString("<rect x='%1' y='%1' width='%2' height='%3' stroke='red' stroke-width='%4'/>\n").arg(screenOffset).arg(screenWidth).arg(screenHeight).arg(strokeWidth);
 	if (!nameId.isEmpty())
 		svg += QString("<path id='%1' d='").arg(nameId);
 	else
 		svg += QString("<path d='");
 
-	double vScale = -12.5/v_div;
-	double y_0 = 50; // the center of the screen
 
+    double vScale = -1*verticalScale;
+    double y_0 = screenOffset + screenHeight/2; // the center of the screen
 
-    for (int i = 0; i < std::min( proveVector.size(), comVector.size() ); i++) {
+    int points = std::min( proveVector.size(), comVector.size() );
+    double horScale = screenWidth/(points-1);
+    for (int i = 0; i <  points; i++) {
 		double voltage = proveVector[i] - comVector[i];
 		if (i == 0) {
-			svg.append("M 0 " + QString::number( (voltage + v_offset) * vScale + y_0, 'f', 3) + " ");
+            svg.append("M "+ QString::number(screenOffset, 'f', 3) +" " + QString::number( (voltage + v_offset) * vScale + y_0, 'f', 3) + " ");
 		} else {
-			svg.append("L " + QString::number(i, 'f', 3) + " " + QString::number((voltage + v_offset) * vScale + y_0, 'f', 3) + " ");
+            svg.append("L " + QString::number(i*horScale + screenOffset, 'f', 3) + " " + QString::number((voltage + v_offset) * vScale + y_0, 'f', 3) + " ");
         }
         std::cout <<" ("<< i << "): " << voltage << ' ';
 	}
-	svg += "' fill='red' stroke='black' stroke-width='10'/> \n";
+    svg += "' stroke='"+ color + "' stroke-width='"+ strokeWidth + "'/> \n"; //fill='red'
 
 	std::cout << std::endl;
 	return svg;
@@ -1304,34 +1308,40 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 		double vols_div = TextUtils::convertFromPowerPrefix(part->getProperty("volts/div"), "V");
 		double v1_offset = TextUtils::convertFromPowerPrefix(part->getProperty("v1 offset"), "V");
 
+        double screenWidth = 3690.9385, screenHeight = 2952.7507, screenStrokeWidth= 29.5275;
+        double screenOffset = 132.87378, verticalDivisions = 8, divisionSize = screenHeight/verticalDivisions;
 		QString svg = QString("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n%5"
 				"<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' "
 				"version='1.2' baseProfile='tiny' "
-                "x='0in' y='0in' width='%1mm' height='%2mm' "
+                "x='0in' y='0in' width='%1in' height='%2in' "
 				"viewBox='0 0 %3 %4' >\n"
 			   )
-		.arg(125)
-		.arg(100)
-		.arg(125)
-		.arg(100)
+        .arg(screenWidth/1000)
+        .arg(screenHeight/1000)
+        .arg(screenWidth)
+        .arg(screenHeight)
 		.arg(TextUtils::CreatedWithFritzingXmlComment);
-		svg += generateSvgPath(v1, vCom, "v1-path", vols_div, v1_offset);
+        svg += generateSvgPath(v1, vCom, "v1-path", divisionSize/vols_div, v1_offset, screenHeight, screenWidth, "yellow", "30");
 		svg += "</svg>";
 
-		QGraphicsSvgItem * graph = new QGraphicsSvgItem(part);
-		QSvgRenderer *graphRender = new QSvgRenderer(svg.toUtf8());
-		if(graphRender->isValid())
-			std::cout << "SVG Graph is VALID " << std::endl;
+        QGraphicsSvgItem * schGraph = new QGraphicsSvgItem(part);
+        QGraphicsSvgItem * bbGraph = new QGraphicsSvgItem(m_sch2bbItemHash.value(part));
+        QSvgRenderer *schGraphRender = new QSvgRenderer(svg.toUtf8());
+        QSvgRenderer *bbGraphRender = new QSvgRenderer(svg.toUtf8());
+        if(schGraphRender->isValid())
+            std::cout << "SCH SVG Graph is VALID " << std::endl;
 		else
-			std::cout << "SVG Graph is NOT VALID " << std::endl;
+            std::cout << "SCH SVG Graph is NOT VALID " << std::endl;
 		std::cout << "SVG: " << svg.toStdString() << std::endl;
-		graph->setSharedRenderer(graphRender);
-		graph->setZValue(std::numeric_limits<double>::max());
+        schGraph->setSharedRenderer(schGraphRender);
+        schGraph->setZValue(std::numeric_limits<double>::max());
+        bbGraph->setSharedRenderer(bbGraphRender);
+        bbGraph->setZValue(std::numeric_limits<double>::max());
 
 		//There are issues as the size of the text changes depending on the display settings in windows
 		//This hack scales the text to match the appropiate value
 		QRectF schOscilloscopeBoundingBox = part->boundingRect();
-		QRectF schBoundingBox = graph->boundingRect();
+        QRectF schBoundingBox = schGraph->boundingRect();
 
 		//Set the text to be a 80% percent of the multimeter´s width and 50% in sch view
 		//graph->setScale((0.5*schOscilloscopeBoundingBox.width())/schBoundingBox.width());
@@ -1342,9 +1352,12 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 		//Center the text
 		//graph->setPos(QPointF((schOscilloscopeBoundingBox.width()-schBoundingBox.width())/2
 		//					  ,0.13*schOscilloscopeBoundingBox.height()));
-		graph->setPos(QPointF(5.0,5.0));
+        //float offset_mm = screenOffset/1000*25.4*3;
+        //schGraph->setPos(QPointF(offset_mm,offset_mm));
+        //bbGraph->setPos(QPointF(offset_mm,offset_mm));
 
-		part->addSimulationGraphicsItem(graph);
+        part->addSimulationGraphicsItem(schGraph);
+        m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbGraph);
 
 	}
 

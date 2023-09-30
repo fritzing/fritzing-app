@@ -300,8 +300,8 @@ bool Perfboard::boardSizeWarning()
 			messageBox.setDefaultButton(QMessageBox::Cancel);
 			messageBox.setIcon(QMessageBox::Warning);
 			messageBox.setWindowModality(Qt::WindowModal);
-			messageBox.setButtonText(QMessageBox::Ok, tr("Set new size"));
-			messageBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
+			messageBox.button(QMessageBox::Ok)->setText(tr("Set new size"));
+
 			auto answer = (QMessageBox::StandardButton) messageBox.exec();
 
 			if (answer != QMessageBox::Ok) {

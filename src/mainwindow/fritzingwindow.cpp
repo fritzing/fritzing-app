@@ -204,7 +204,6 @@ bool FritzingWindow::beforeClosing(bool showCancel, bool & discard) {
 
 QMessageBox::StandardButton FritzingWindow::beforeClosingMessage(const QString & filename, bool showCancel)
 {
-
 	QMessageBox messageBox(this);
 	setBeforeClosingText(filename, messageBox);
 	QMessageBox::StandardButtons buttons = QMessageBox::Save | QMessageBox::Discard;
@@ -214,15 +213,12 @@ QMessageBox::StandardButton FritzingWindow::beforeClosingMessage(const QString &
 	messageBox.setStandardButtons(buttons);
 	messageBox.setDefaultButton(QMessageBox::Save);
 	if (m_fwFilename.startsWith(untitledFileName())) {
-		messageBox.setButtonText(QMessageBox::Save, tr("Save..."));
+		QAbstractButton *button = messageBox.button(QMessageBox::Save);
+		if (button) {
+			button->setText(tr("Save..."));
+		}
 	}
-	else {
-		messageBox.setButtonText(QMessageBox::Save, tr("Save"));
-	}
-	messageBox.setButtonText(QMessageBox::Discard, tr("Don't Save"));
-	if (showCancel) {
-		messageBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
-	}
+
 	messageBox.setIcon(QMessageBox::Warning);
 	messageBox.setWindowModality(Qt::WindowModal);
 	messageBox.button(QMessageBox::Discard)->setShortcut(tr("Ctrl+D"));

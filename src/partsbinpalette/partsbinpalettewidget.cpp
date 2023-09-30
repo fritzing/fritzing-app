@@ -587,11 +587,7 @@ bool PartsBinPaletteWidget::beforeClosing() {
 			messageBox.setDefaultButton(QMessageBox::Save);
 			messageBox.setIcon(QMessageBox::Warning);
 			messageBox.setWindowModality(Qt::WindowModal);
-			messageBox.setButtonText(QMessageBox::Save, tr("Save"));
-			messageBox.setButtonText(QMessageBox::Discard, tr("Don't Save"));
 			messageBox.button(QMessageBox::Discard)->setShortcut(tr("Ctrl+D"));
-			messageBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
-
 			reply = (QMessageBox::StandardButton)messageBox.exec();
 		}
 

@@ -34,6 +34,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTextStream>
 #include <QMessageBox>
 #include <QSplitter>
+#include <QApplication>
+#include <QStyle>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
@@ -48,6 +50,11 @@ SerialPortComboBox::SerialPortComboBox() : QComboBox() {
 void SerialPortComboBox::showPopup() {
 	Q_EMIT aboutToShow();
 	QComboBox::showPopup();
+}
+
+QPixmap getLargeStandardIcon(QStyle::StandardPixmap standardIcon) {
+	int largeIconSize = QApplication::style()->pixelMetric(QStyle::PM_LargeIconSize);
+	return QApplication::style()->standardIcon(standardIcon).pixmap(largeIconSize, largeIconSize);
 }
 
 /////////////////////////////////////////
@@ -66,7 +73,8 @@ DeleteDialog::DeleteDialog(const QString & title, const QString & text, bool del
 	auto * hlayout = new QHBoxLayout(frame);
 
 	auto * iconLabel = new QLabel;
-	iconLabel->setPixmap(QMessageBox::standardIcon(QMessageBox::Warning));
+
+	iconLabel->setPixmap(getLargeStandardIcon(QStyle::SP_MessageBoxWarning));
 	iconLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
 	auto * label = new QLabel;
@@ -509,7 +517,7 @@ bool ProgramTab::loadProgramFile(const QString & fileName, const QString & altFi
 	m_filename = file.fileName();
 	QString text = file.readAll();
 	// clean out 0x91, mostly due to picaxe files
-	for (int i = 0; i < text.count(); i++) {
+	for (int i = 0; i < text.size(); i++) {
 		if (text[i] == Quote91Char) {
 			text[i] = '\'';
 		}

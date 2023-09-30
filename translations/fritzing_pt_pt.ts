@@ -628,7 +628,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1061"/>
         <source>Edit Part (new parts editor)...</source>
-        <translation>Editar Componente (editor de novos componentes)</translation>
+        <translation>Editar Componente (editor de novos componentes)...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1064"/>
@@ -802,7 +802,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <location filename="../src/items/resizableboard.cpp" line="439"/>
         <source>The rest of this message concerns &apos;cutouts&apos;. </source>
-        <translation>O resto desta mensagem diz respeito a &apos;cutouts&apos;.</translation>
+        <translation>O resto desta mensagem diz respeito a &apos;cutouts&apos;. </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="440"/>
@@ -830,7 +830,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <location filename="../src/items/resizableboard.cpp" line="450"/>
         <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, </source>
-        <translation>&lt;br/&gt;&lt;br/&gt;Se você pretendia que o seu formato personalizado tivesse recortes e não obtivesse o resultado esperado,</translation>
+        <translation>&lt;br/&gt;&lt;br/&gt;Se você pretendia que o seu formato personalizado tivesse recortes e não obtivesse o resultado esperado, </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="451"/>
@@ -1469,7 +1469,7 @@ Fundo: Verde = ok, Vermelho = valor incorreto, Cinzento = valor atual</translati
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="107"/>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches the image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>A &lt;b&gt;Vista PCB&lt;/b&gt; é onde você etiqueta os componentes  numa PCB física (Placa de Circuito Impresso).&lt;br/&gt;&lt;br/&gt;PCBs podem ser feitos em casa ou num pequeno laboratório usando processos de gravura DIY. Eles podem também ser enviados para um fabricante de PCB para um fabrico preciso. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;A primeira coisa que irá precisar é uma placa para colocar os seus componentes. Lá poderá estar um no seu esboço, mas se não, arraste para o ícone da placa no Pacote de Componentes. O ícone encaixa na imagem na direita: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Para dispor o seu PCB, arrume todos os componenetes para que encaixem bem na placa. Depois tente movimentá-los para minimizar o comprimento e a confusão das ligações. Pode também redimensionar placas retangulares. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Assim que os componentes são postos, pode ligá-las com traços de cobre. Pode também arrastar um traço de ligações individuais ou utilizar o autorouter para gerá-las. O botão Autoroute está em baixo na janela. O botão corresponde à imagem na direita:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <translation>A &lt;b&gt;Vista PCB&lt;/b&gt; é onde você etiqueta os componentes numa PCB física (Placa de Circuito Impresso).&lt;br/&gt;&lt;br/&gt;PCBs podem ser feitos em casa ou num pequeno laboratório usando processos de gravura DIY. Eles podem também ser enviados para um fabricante de PCB para um fabrico preciso. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;A primeira coisa que irá precisar é uma placa para colocar os seus componentes. Lá poderá estar um no seu esboço, mas se não, arraste para o ícone da placa no Pacote de Componentes. O ícone encaixa na imagem na direita: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;Para dispor o seu PCB, arrume todos os componentes para que encaixem bem na placa. Depois tente movimentá-los para minimizar o comprimento e a confusão das ligações. Pode também redimensionar placas retangulares. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Assim que os componentes são postos, pode ligá-las com traços de cobre. Pode também arrastar um traço de ligações individuais ou utilizar o autorouter para gerá-las. O botão Autoroute está em baixo na janela. O botão corresponde à imagem na direita:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
@@ -1615,7 +1615,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="270"/>
         <source>connection</source>
-        <translation>conn.</translation>
+        <translation>conexão</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/infoview/htmlinfoview.cpp" line="385"/>
@@ -3664,7 +3664,7 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1236"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1317"/>
         <source>Unable to save BOM file, but the text is on the clipboard.</source>
-        <translation>Incapaz de gravar o ficheiro BOM, mas o texto está no clipboard</translation>
+        <translation>Incapaz de gravar o ficheiro BOM, mas o texto está no clipboard.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2787"/>
@@ -4117,9 +4117,9 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
         <source>This operation can not be undone--you will lose all of your changes.
 
 Go ahead and revert?</source>
-        <translation>Esta operação não pode ser desfeita--irá peder todas as suas alterações.
+        <translation>Esta operação não pode ser desfeita--irá perder todas as suas alterações.
 
-            Reverter na mesma?</translation>
+Continuar em reverter?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="645"/>
@@ -4686,7 +4686,7 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3655"/>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
-        <translation>Nota que alguns componentes não serão convertidas. Uma ferramenta para converter &apos;rectangular&apos; imagens esquemáticas está disponível no Editor de Componentes</translation>
+        <translation>Nota que alguns componentes não serão convertidas. Uma ferramenta para converter &apos;rectangular&apos; imagens esquemáticas está disponível no Editor de Componentes.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="894"/>
@@ -4701,7 +4701,7 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2919"/>
         <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
-        <translation>(x, y)=(%1, %2)  (width, height)=(%3, %4) %5</translation>
+        <translation>(x, y)=(%1, %2)	(largura, altura)=(%3, %4) %5</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="982"/>
@@ -4927,7 +4927,7 @@ Nota: se você deseja atualizar mais tarde, existem opções no menu &apos;Compo
     <message>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="815"/>
         <source>Routing reached maximum round %1.</source>
-        <translation>Roteamento atingiu </translation>
+        <translation>Roteamento atingiu a ronda máxima de %1.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="799"/>
@@ -5249,7 +5249,7 @@ Razão: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="253"/>
         <source>Your sketch does not have a board yet! Please add a PCB to use this selection operation.</source>
-        <translation>O seu esboço ainda não tem uma placa!  Por favor adicione um PCB em ordem de utilizar esta operação.</translation>
+        <translation>O seu esboço ainda não tem uma placa! Por favor adicione um PCB em ordem de utilizar esta operação.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2150"/>
@@ -5406,7 +5406,7 @@ Razão: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1495"/>
         <source>Image &amp; Footprint Files (%1 %2 %3 %4 %5);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;gEDA Footprint Files (%4);;Kicad Module Files (%5)</source>
-        <translation>Imagem e Ficheiros Footprint  (%1 %2 %3 %4 %5);;Ficheiros SVG (%1);;Ficheiros JPEG (%2);;Ficheiros PNG (%3);;Ficheiros Footprintg EDA (%4);;Ficheiros de Módulo Kicad (%5)</translation>
+        <translation>Imagem e Ficheiros Footprint (%1 %2 %3 %4 %5);;Ficheiros SVG (%1);;Ficheiros JPEG (%2);;Ficheiros PNG (%3);;Ficheiros gEDA Footprint (%4);;Ficheiros de Módulo Kicad (%5)</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1500"/>
@@ -5471,7 +5471,7 @@ Razão: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1606"/>
         <source>There are no copper layers defined in: %1. </source>
-        <translation>Não há camadas de cobre definidas em: %1.</translation>
+        <translation>Não há camadas de cobre definidas em: %1. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1607"/>
@@ -5710,7 +5710,7 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1540"/>
         <source>The SVG file &apos;%1&apos; appears to have been exported from CorelDRAW without the &apos;presentation attributes&apos; setting. </source>
-        <translation>O ficheiro SVG &apos;%1&apos; parece ter sido exportado do CorelDRAW sem a opção de &apos;atributos de apresentação&apos;.</translation>
+        <translation>O ficheiro SVG &apos;%1&apos; parece ter sido exportado do CorelDRAW sem a opção de &apos;atributos de apresentação&apos;. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1541"/>
@@ -5915,7 +5915,7 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="800"/>
         <source>If you make changes to breadboard view, or change connector metadata, the legs may no longer work. </source>
-        <translation>Se você fizer alterações na vista de breadboard, ou mudar metadados do conector, as pernas podem deixar de funcionar.</translation>
+        <translation>Se você fizer alterações na vista de breadboard, ou mudar metadados do conector, as pernas podem deixar de funcionar. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="801"/>
@@ -5978,7 +5978,7 @@ Go ahead and save?</source>
 %2</source>
         <translation>Incapaz de carregar ficheiro de imagem &apos;%1&apos;:
 
-            %2</translation>
+%2</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2122"/>
@@ -7958,7 +7958,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="154"/>
         <source>copper layer(s), </source>
-        <translation>camada(s) de cobre</translation>
+        <translation>camada(s) de cobre, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="155"/>
@@ -8045,9 +8045,9 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
 %2
 %3.</source>
         <translation>Não pode escrever ficheiro temp:
-            %1
-            %2
-            %3.</translation>
+%1
+%2
+%3.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="606"/>
@@ -8272,7 +8272,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="186"/>
         <source>%1 layer export is empty (case 2).</source>
-        <translation>%1 exportação de camada está vazia (caso 2)</translation>
+        <translation>%1 exportação de camada está vazia (caso 2).</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="201"/>
@@ -9211,7 +9211,7 @@ Erros:
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
         <translation>$1
 
-            Nota: você também pode acionar essa exibição, pressionando o texto de estado de roteamento na barra de estado.</translation>
+Nota: você também pode acionar essa exibição, pressionando o texto de estado de roteamento na barra de estado.</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9619"/>
@@ -9520,7 +9520,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="151"/>
         <source>Through-hole parts can be traced from either side of a PCB.</source>
-        <translation>Os componentes Through-hole de passagem podem ser rastreados de qualquer lado de um PCB.&gt;</translation>
+        <translation>Os componentes Through-hole podem ser traçados de qualquer lado do PCB.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="152"/>
@@ -9906,7 +9906,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/version/updatedialog.cpp" line="129"/>
         <source>A new main release is available for downloading:</source>
-        <translation>Uma nova versão do Fritzing  encontra-se disponível para download:</translation>
+        <translation>Uma nova versão do Fritzing encontra-se disponível para download:</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="134"/>

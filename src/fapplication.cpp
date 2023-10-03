@@ -1711,12 +1711,12 @@ void FApplication::loadSomething(const QString & prevVersion) {
 		Q_FOREACH (QString filename, m_filesToLoad) {
 			DebugDialog::debug(QString("Loading non-service file %1").arg(filename));
 			MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, filename, true, true, -1);
-			mainWindow->loadWhich(filename, true, true, true, "");
 			if (filename.endsWith(FritzingSketchExtension) || filename.endsWith(FritzingBundleExtension)) {
 			}
 			else {
 				mainWindow->addDefaultParts();
 			}
+			mainWindow->loadWhich(filename, true, true, true, "");
 			sketchesToLoad << mainWindow;
 		}
 	}

@@ -397,7 +397,7 @@
 	<menuItem value="10.0" />
 </property>
 
-<property name="v1 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
+<property name="ch1 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
 	<suffix suffix="OscilloscopeModuleID"/>
 	<menuItem value="0.001" />
 	<menuItem value="0.01" />
@@ -409,7 +409,7 @@
 	<menuItem value="50.0" />
 </property>
 
-<property name="v2 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
+<property name="ch2 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
 	<suffix suffix="OscilloscopeModuleID"/>
 	<menuItem value="0.001" />
 	<menuItem value="0.01" />
@@ -421,7 +421,7 @@
 	<menuItem value="50.0" />
 </property>
 
-<property name="v3 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
+<property name="ch3 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
 	<suffix suffix="OscilloscopeModuleID"/>
 	<menuItem value="0.001" />
 	<menuItem value="0.01" />
@@ -433,7 +433,7 @@
 	<menuItem value="50.0" />
 </property>
 
-<property name="v4 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
+<property name="ch4 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
 	<suffix suffix="OscilloscopeModuleID"/>
 	<menuItem value="0.001" />
 	<menuItem value="0.01" />
@@ -445,8 +445,55 @@
 	<menuItem value="50.0" />
 </property>
 
-<property name="volts/div" symbol="V" minValue="0" maxValue="100" defaultValue="1" numeric="yes" editable="yes">
+<property name="ch1 volts/div" symbol="V" minValue="0" maxValue="100" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="OscilloscopeModuleID"/>
+  <menuItem value="0.001" />
+  <menuItem value="0.01" />
+  <menuItem value="0.1" />
+  <menuItem value="1.0" />
+  <menuItem value="3.3" />
+  <menuItem value="5.0" />
+  <menuItem value="10.0" />
+  <menuItem value="50.0" />
+</property>
+
+<property name="ch2 volts/div" symbol="V" minValue="0" maxValue="100" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="OscilloscopeModuleID"/>
+  <menuItem value="0.001" />
+  <menuItem value="0.01" />
+  <menuItem value="0.1" />
+  <menuItem value="1.0" />
+  <menuItem value="3.3" />
+  <menuItem value="5.0" />
+  <menuItem value="10.0" />
+  <menuItem value="50.0" />
+</property>
+
+<property name="ch3 volts/div" symbol="V" minValue="0" maxValue="100" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="OscilloscopeModuleID"/>
+  <menuItem value="0.001" />
+  <menuItem value="0.01" />
+  <menuItem value="0.1" />
+  <menuItem value="1.0" />
+  <menuItem value="3.3" />
+  <menuItem value="5.0" />
+  <menuItem value="10.0" />
+  <menuItem value="50.0" />
+</property>
+
+<property name="ch4 volts/div" symbol="V" minValue="0" maxValue="100" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="OscilloscopeModuleID"/>
+  <menuItem value="0.001" />
+  <menuItem value="0.01" />
+  <menuItem value="0.1" />
+  <menuItem value="1.0" />
+  <menuItem value="3.3" />
+  <menuItem value="5.0" />
+  <menuItem value="10.0" />
+  <menuItem value="50.0" />
+</property>
+
+<property name="horizontal position" symbol="s" minValue="0" maxValue="1000" defaultValue="0" numeric="yes" editable="yes">
   <suffix suffix="OscilloscopeModuleID"/>
 </property>
-
 </properties>

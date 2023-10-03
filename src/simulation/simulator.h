@@ -99,6 +99,7 @@ protected:
 	QTimer *m_simTimer;
 	static constexpr int SimDelay = 200;
 	static constexpr double HarmfulNegativeVoltage = -0.5;
+    static constexpr double SimSteps = 100;
 
 };
 

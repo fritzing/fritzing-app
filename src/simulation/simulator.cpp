@@ -195,18 +195,23 @@ void Simulator::simulate() {
 	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
 
 	//Select the type of analysis based on if there is an oscilloscope in the simulation
+    double maxSimTime = -1;
 	foreach (ItemBase * item, itemBases) {
 		if(item->family().toLower().contains("oscilloscope")) {
 			//TODO: Use TextUtils::convertFromPowerPrefixU function
 			double time_div = TextUtils::convertFromPowerPrefix(item->getProperty("time/div"), "s");
-			std::cout << "time/div: " << item->getProperty("time/div").toStdString() << " " << time_div << std::endl;
-			double maxSimTime = time_div * 10;
-			QString tranAnalysis = QString(".TRAN %1 %2").arg(maxSimTime/100).arg(maxSimTime);
-			spiceNetlist.replace(".OP", tranAnalysis);
-			//TODO: Handle several oscilloscopes
-			break;
+            std::cout << "Found oscilloscope: time/div: " << item->getProperty("time/div").toStdString() << " " << time_div << std::endl;
+            double maxSimTimeOsc = time_div * 10;
+            if (maxSimTimeOsc > maxSimTime) {
+                maxSimTime = maxSimTimeOsc;
+            }
 		}
 	}
+    if (maxSimTime > 0) {
+        //We have found at least one oscilloscope
+        QString tranAnalysis = QString(".TRAN %1 %2").arg(maxSimTime/Simulator::SimSteps).arg(maxSimTime);
+        spiceNetlist.replace(".OP", tranAnalysis);
+    }
 
 
 	std::cout << "Netlist: " << spiceNetlist.toStdString() << std::endl;
@@ -605,7 +610,7 @@ QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<
 	std::cout << "VOLTAGE VALUES " << nameId.toStdString() << ": ";
 	QString svg;
     double screenOffset = 132.87378;
-    svg += QString("<rect x='%1' y='%1' width='%2' height='%3' stroke='red' stroke-width='%4'/>\n").arg(screenOffset).arg(screenWidth).arg(screenHeight).arg(strokeWidth);
+    //svg += QString("<rect x='%1' y='%1' width='%2' height='%3' stroke='red' stroke-width='%4'/>\n").arg(screenOffset).arg(screenWidth).arg(screenHeight).arg(strokeWidth);
 	if (!nameId.isEmpty())
 		svg += QString("<path id='%1' d='").arg(nameId);
 	else
@@ -619,10 +624,15 @@ QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<
     double horScale = screenWidth/(points-1);
     for (int i = 0; i <  points; i++) {
 		double voltage = proveVector[i] - comVector[i];
+        double vPos = (voltage + v_offset) * vScale + y_0;
+        //Do not go out of the screen
+        vPos = (vPos < screenOffset) ? screenOffset : vPos;
+        vPos = (vPos > (screenOffset+screenHeight)) ? screenOffset+screenHeight : vPos;
+
 		if (i == 0) {
-            svg.append("M "+ QString::number(screenOffset, 'f', 3) +" " + QString::number( (voltage + v_offset) * vScale + y_0, 'f', 3) + " ");
+            svg.append("M "+ QString::number(screenOffset, 'f', 3) +" " + QString::number( vPos, 'f', 3) + " ");
 		} else {
-            svg.append("L " + QString::number(i*horScale + screenOffset, 'f', 3) + " " + QString::number((voltage + v_offset) * vScale + y_0, 'f', 3) + " ");
+            svg.append("L " + QString::number(i*horScale + screenOffset, 'f', 3) + " " + QString::number(vPos, 'f', 3) + " ");
         }
         std::cout <<" ("<< i << "): " << voltage << ' ';
 	}
@@ -1296,7 +1306,7 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 		std::cout << "Oscilloscope does not have any wire connected to the probe terminals. " << std::endl;
 		return;
 	}
-
+    ConnectorItem * probesArray[4] = {v1Probe, v2Probe, v3Probe, v4Probe};
 
 	if(comProbe->connectedToWires() && v1Probe->connectedToWires()) {
 		std::cout << "Oscilloscope probe v1 connected. " << std::endl;
@@ -1305,8 +1315,20 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 		std::vector<double> vCom(v1.size(), 0.0);
 
 		//TODO: use convertFromPowerPrefixU
-		double vols_div = TextUtils::convertFromPowerPrefix(part->getProperty("volts/div"), "V");
-		double v1_offset = TextUtils::convertFromPowerPrefix(part->getProperty("v1 offset"), "V");
+        int nChannels = TextUtils::convertFromPowerPrefix(part->getProperty("channels"), "");
+        double timeDiv = TextUtils::convertFromPowerPrefix(part->getProperty("time/div"), "s");
+        double hPos = TextUtils::convertFromPowerPrefix(part->getProperty("horizontal position"), "s");
+        double ch1_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch1 volts/div"), "V");
+        double ch1_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch1 offset"), "V");
+        double ch2_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch2 volts/div"), "V");
+        double ch2_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch2 offset"), "V");
+        double ch3_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch3 volts/div"), "V");
+        double ch3_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch3 offset"), "V");
+        double ch4_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch4 volts/div"), "V");
+        double ch4_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch4 offset"), "V");
+        QString lineColor[4] = {"yellow", "lightgreen", "lightblue", "purple"};
+        double voltsDiv[4] ={ch1_volsDiv, ch2_volsDiv, ch3_volsDiv, ch4_volsDiv};
+        double offsets[4] ={ch1_offset, ch2_offset, ch3_offset, ch4_offset};
 
         double screenWidth = 3690.9385, screenHeight = 2952.7507, screenStrokeWidth= 29.5275;
         double screenOffset = 132.87378, verticalDivisions = 8, divisionSize = screenHeight/verticalDivisions;
@@ -1315,14 +1337,33 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 				"version='1.2' baseProfile='tiny' "
                 "x='0in' y='0in' width='%1in' height='%2in' "
 				"viewBox='0 0 %3 %4' >\n"
-			   )
-        .arg(screenWidth/1000)
-        .arg(screenHeight/1000)
-        .arg(screenWidth)
-        .arg(screenHeight)
-		.arg(TextUtils::CreatedWithFritzingXmlComment);
-        svg += generateSvgPath(v1, vCom, "v1-path", divisionSize/vols_div, v1_offset, screenHeight, screenWidth, "yellow", "30");
-		svg += "</svg>";
+               )
+                .arg((screenWidth+screenOffset)/1000)
+                .arg((screenHeight+screenOffset*2)/1000)
+                .arg(screenWidth+screenOffset)
+                .arg(screenHeight+screenOffset*2)
+                .arg(TextUtils::CreatedWithFritzingXmlComment);
+        svg += generateSvgPath(v1, vCom, "v1-path", divisionSize/ch1_volsDiv, ch1_offset, screenHeight, screenWidth, lineColor[0], "30");
+
+        // Add labels of voltage/div and arrows to indicate offsets for each channel
+        for (int channel = 0; channel < nChannels; channel++) {
+            if (!probesArray[channel]->connectedToWires()) continue;
+            svg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3'>CH%4: %5V</text>")
+                       .arg(screenOffset+divisionSize*channel).arg(screenHeight+screenOffset*1.7)
+                       .arg(lineColor[channel]).arg(channel+1).arg(TextUtils::convertToPowerPrefix(voltsDiv[channel]));
+            double arrowSize = 50;
+            double arrowPos = -1*offsets[channel]/ch1_volsDiv*divisionSize+screenHeight/2+screenOffset-arrowSize;
+            svg += QString("<polygon points='0,0 %1,%1, 0,%2' stroke='none' fill='%3' transform='translate(60,%4)'/>")
+                       .arg(arrowSize).arg(arrowSize*2).arg(lineColor[channel]).arg(arrowPos);
+        }
+
+
+        svg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='black'>time/div: %3s pos: %4</text>")
+                   .arg(screenOffset+screenWidth/2).arg(screenOffset*0.7)
+                   .arg(TextUtils::convertToPowerPrefix(timeDiv))
+                   .arg(TextUtils::convertToPowerPrefix(hPos));
+
+        svg += "</svg>";
 
         QGraphicsSvgItem * schGraph = new QGraphicsSvgItem(part);
         QGraphicsSvgItem * bbGraph = new QGraphicsSvgItem(m_sch2bbItemHash.value(part));
@@ -1337,24 +1378,6 @@ void Simulator::updateOscilloscope(ItemBase * part) {
         schGraph->setZValue(std::numeric_limits<double>::max());
         bbGraph->setSharedRenderer(bbGraphRender);
         bbGraph->setZValue(std::numeric_limits<double>::max());
-
-		//There are issues as the size of the text changes depending on the display settings in windows
-		//This hack scales the text to match the appropiate value
-		QRectF schOscilloscopeBoundingBox = part->boundingRect();
-        QRectF schBoundingBox = schGraph->boundingRect();
-
-		//Set the text to be a 80% percent of the multimeter´s width and 50% in sch view
-		//graph->setScale((0.5*schOscilloscopeBoundingBox.width())/schBoundingBox.width());
-
-		//Update the boundiong box after scaling them
-		//schBoundingBox = graph->mapRectToParent(graph->boundingRect());
-
-		//Center the text
-		//graph->setPos(QPointF((schOscilloscopeBoundingBox.width()-schBoundingBox.width())/2
-		//					  ,0.13*schOscilloscopeBoundingBox.height()));
-        //float offset_mm = screenOffset/1000*25.4*3;
-        //schGraph->setPos(QPointF(offset_mm,offset_mm));
-        //bbGraph->setPos(QPointF(offset_mm,offset_mm));
 
         part->addSimulationGraphicsItem(schGraph);
         m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbGraph);

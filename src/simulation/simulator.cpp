@@ -636,7 +636,7 @@ QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<
         }
         std::cout <<" ("<< i << "): " << voltage << ' ';
 	}
-    svg += "' stroke='"+ color + "' stroke-width='"+ strokeWidth + "'/> \n"; //fill='red'
+    svg += "' stroke='"+ color + "' stroke-width='"+ strokeWidth + "' fill='none' /> \n"; //
 
 	std::cout << std::endl;
 	return svg;
@@ -1289,7 +1289,6 @@ void Simulator::updateMultimeter(ItemBase * part) {
  */
 void Simulator::updateOscilloscope(ItemBase * part) {
 	std::cout << "updateOscilloscope: " << std::endl;
-	QString nChannels = part->getProperty("channels").toLower();
 	ConnectorItem * comProbe = nullptr, * v1Probe = nullptr, * v2Probe = nullptr, * v3Probe = nullptr, * v4Probe = nullptr;
 	QList<ConnectorItem *> probes = part->cachedConnectorItems();
 	foreach(ConnectorItem * ci, probes) {
@@ -1308,80 +1307,99 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 	}
     ConnectorItem * probesArray[4] = {v1Probe, v2Probe, v3Probe, v4Probe};
 
-	if(comProbe->connectedToWires() && v1Probe->connectedToWires()) {
-		std::cout << "Oscilloscope probe v1 connected. " << std::endl;
-		auto v1 = voltageVector(v1Probe);
-		//auto vCom = voltageVector(comProbe);
-		std::vector<double> vCom(v1.size(), 0.0);
 
-		//TODO: use convertFromPowerPrefixU
-        int nChannels = TextUtils::convertFromPowerPrefix(part->getProperty("channels"), "");
-        double timeDiv = TextUtils::convertFromPowerPrefix(part->getProperty("time/div"), "s");
-        double hPos = TextUtils::convertFromPowerPrefix(part->getProperty("horizontal position"), "s");
-        double ch1_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch1 volts/div"), "V");
-        double ch1_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch1 offset"), "V");
-        double ch2_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch2 volts/div"), "V");
-        double ch2_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch2 offset"), "V");
-        double ch3_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch3 volts/div"), "V");
-        double ch3_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch3 offset"), "V");
-        double ch4_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch4 volts/div"), "V");
-        double ch4_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch4 offset"), "V");
-        QString lineColor[4] = {"yellow", "lightgreen", "lightblue", "purple"};
-        double voltsDiv[4] ={ch1_volsDiv, ch2_volsDiv, ch3_volsDiv, ch4_volsDiv};
-        double offsets[4] ={ch1_offset, ch2_offset, ch3_offset, ch4_offset};
+    std::cout << "Oscilloscope probe v1 connected. " << std::endl;
 
-        double screenWidth = 3690.9385, screenHeight = 2952.7507, screenStrokeWidth= 29.5275;
-        double screenOffset = 132.87378, verticalDivisions = 8, divisionSize = screenHeight/verticalDivisions;
-		QString svg = QString("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n%5"
-				"<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' "
-				"version='1.2' baseProfile='tiny' "
-                "x='0in' y='0in' width='%1in' height='%2in' "
-				"viewBox='0 0 %3 %4' >\n"
-               )
-                .arg((screenWidth+screenOffset)/1000)
-                .arg((screenHeight+screenOffset*2)/1000)
-                .arg(screenWidth+screenOffset)
-                .arg(screenHeight+screenOffset*2)
-                .arg(TextUtils::CreatedWithFritzingXmlComment);
-        svg += generateSvgPath(v1, vCom, "v1-path", divisionSize/ch1_volsDiv, ch1_offset, screenHeight, screenWidth, lineColor[0], "30");
 
-        // Add labels of voltage/div and arrows to indicate offsets for each channel
-        for (int channel = 0; channel < nChannels; channel++) {
-            if (!probesArray[channel]->connectedToWires()) continue;
-            svg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3'>CH%4: %5V</text>")
-                       .arg(screenOffset+divisionSize*channel).arg(screenHeight+screenOffset*1.7)
-                       .arg(lineColor[channel]).arg(channel+1).arg(TextUtils::convertToPowerPrefix(voltsDiv[channel]));
-            double arrowSize = 50;
-            double arrowPos = -1*offsets[channel]/ch1_volsDiv*divisionSize+screenHeight/2+screenOffset-arrowSize;
-            svg += QString("<polygon points='0,0 %1,%1, 0,%2' stroke='none' fill='%3' transform='translate(60,%4)'/>")
-                       .arg(arrowSize).arg(arrowSize*2).arg(lineColor[channel]).arg(arrowPos);
+    //TODO: use convertFromPowerPrefixU
+    int nChannels = TextUtils::convertFromPowerPrefix(part->getProperty("channels"), "");
+    double timeDiv = TextUtils::convertFromPowerPrefix(part->getProperty("time/div"), "s");
+    double hPos = TextUtils::convertFromPowerPrefix(part->getProperty("horizontal position"), "s");
+    double ch1_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch1 volts/div"), "V");
+    double ch1_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch1 offset"), "V");
+    double ch2_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch2 volts/div"), "V");
+    double ch2_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch2 offset"), "V");
+    double ch3_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch3 volts/div"), "V");
+    double ch3_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch3 offset"), "V");
+    double ch4_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch4 volts/div"), "V");
+    double ch4_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch4 offset"), "V");
+    QString lineColor[4] = {"yellow", "lightgreen", "lightblue", "purple"};
+    double voltsDiv[4] ={ch1_volsDiv, ch2_volsDiv, ch3_volsDiv, ch4_volsDiv};
+    double offsets[4] ={ch1_offset, ch2_offset, ch3_offset, ch4_offset};
+
+    double screenWidth = 3690.9385, screenHeight = 2952.7507, screenStrokeWidth= 29.5275;
+    double screenOffset = 132.87378, verticalDivisions = 8, divisionSize = screenHeight/verticalDivisions;
+    QString svg = QString("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n%5"
+                          "<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' "
+                          "version='1.2' baseProfile='tiny' "
+                          "x='0in' y='0in' width='%1in' height='%2in' "
+                          "viewBox='0 0 %3 %4' >\n"
+                          )
+                      .arg((screenWidth+screenOffset)/1000)
+                      .arg((screenHeight+screenOffset*2)/1000)
+                      .arg(screenWidth+screenOffset)
+                      .arg(screenHeight+screenOffset*2)
+                      .arg(TextUtils::CreatedWithFritzingXmlComment);
+
+    // Generate the signal for each channel and the auxiliary marks (offsets, volts/div, etc.)
+    for (int channel = 0; channel < nChannels; channel++) {
+        if (!probesArray[channel]->connectedToWires()) continue;
+
+        //Get the signal and com voltages
+        auto v = voltageVector(probesArray[channel]);
+        std::vector<double> vCom(v.size(), 0.0);
+        if (!comProbe->connectedToWires()) {
+            //There is no com probe connected, we need to generate noise
+            std::random_device rd;
+            std::mt19937 gen(rd());
+            std::normal_distribution<> dist(0.0, voltsDiv[channel]);
+            // Generate random doubles and fill the vector
+            for(auto& val : vCom) {
+                    val = dist(gen);
+            }
         }
 
+        //Draw the signal
+        QString pathId = QString("ch%1-path").arg(channel+1);
+        svg += generateSvgPath(v, vCom, pathId, divisionSize/ch1_volsDiv, ch1_offset, screenHeight, screenWidth, lineColor[channel], "30");
 
-        svg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='black'>time/div: %3s pos: %4</text>")
-                   .arg(screenOffset+screenWidth/2).arg(screenOffset*0.7)
-                   .arg(TextUtils::convertToPowerPrefix(timeDiv))
-                   .arg(TextUtils::convertToPowerPrefix(hPos));
+        //Add text label about volts/div for each channel
+        svg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3'>CH%4: %5V</text>")
+                   .arg(screenOffset+divisionSize*channel).arg(screenHeight+screenOffset*1.7)
+                   .arg(lineColor[channel]).arg(channel+1).arg(TextUtils::convertToPowerPrefix(voltsDiv[channel]));
 
-        svg += "</svg>";
+        //Add triangle as a mark for the offset for each channel
+        double arrowSize = 50;
+        double arrowPos = -1*offsets[channel]/ch1_volsDiv*divisionSize+screenHeight/2+screenOffset-arrowSize;
+        svg += QString("<polygon points='0,0 %1,%1, 0,%2' stroke='none' fill='%3' transform='translate(60,%4)'/>")
+                   .arg(arrowSize).arg(arrowSize*2).arg(lineColor[channel]).arg(arrowPos);
+    }
 
-        QGraphicsSvgItem * schGraph = new QGraphicsSvgItem(part);
-        QGraphicsSvgItem * bbGraph = new QGraphicsSvgItem(m_sch2bbItemHash.value(part));
-        QSvgRenderer *schGraphRender = new QSvgRenderer(svg.toUtf8());
-        QSvgRenderer *bbGraphRender = new QSvgRenderer(svg.toUtf8());
-        if(schGraphRender->isValid())
-            std::cout << "SCH SVG Graph is VALID " << std::endl;
-		else
-            std::cout << "SCH SVG Graph is NOT VALID " << std::endl;
-		std::cout << "SVG: " << svg.toStdString() << std::endl;
-        schGraph->setSharedRenderer(schGraphRender);
-        schGraph->setZValue(std::numeric_limits<double>::max());
-        bbGraph->setSharedRenderer(bbGraphRender);
-        bbGraph->setZValue(std::numeric_limits<double>::max());
 
-        part->addSimulationGraphicsItem(schGraph);
-        m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbGraph);
+    svg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='black'>time/div: %3s pos: %4</text>")
+               .arg(screenOffset+screenWidth/2).arg(screenOffset*0.7)
+               .arg(TextUtils::convertToPowerPrefix(timeDiv))
+               .arg(TextUtils::convertToPowerPrefix(hPos));
 
-	}
+    svg += "</svg>";
+
+    QGraphicsSvgItem * schGraph = new QGraphicsSvgItem(part);
+    QGraphicsSvgItem * bbGraph = new QGraphicsSvgItem(m_sch2bbItemHash.value(part));
+    QSvgRenderer *schGraphRender = new QSvgRenderer(svg.toUtf8());
+    QSvgRenderer *bbGraphRender = new QSvgRenderer(svg.toUtf8());
+    if(schGraphRender->isValid())
+        std::cout << "SCH SVG Graph is VALID " << std::endl;
+    else
+        std::cout << "SCH SVG Graph is NOT VALID " << std::endl;
+    std::cout << "SVG: " << svg.toStdString() << std::endl;
+    schGraph->setSharedRenderer(schGraphRender);
+    schGraph->setZValue(std::numeric_limits<double>::max());
+    bbGraph->setSharedRenderer(bbGraphRender);
+    bbGraph->setZValue(std::numeric_limits<double>::max());
+
+    part->addSimulationGraphicsItem(schGraph);
+    m_sch2bbItemHash.value(part)->addSimulationGraphicsItem(bbGraph);
+
+
 
 }

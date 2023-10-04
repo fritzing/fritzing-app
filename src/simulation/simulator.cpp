@@ -609,7 +609,7 @@ std::vector<double> Simulator::voltageVector(ConnectorItem * c0) {
 QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<double> comVector, QString nameId, double verticalScale, double v_offset, double screenHeight, double screenWidth, QString color, QString strokeWidth ) {
 	std::cout << "VOLTAGE VALUES " << nameId.toStdString() << ": ";
 	QString svg;
-    double screenOffset = 132.87378;
+    double screenOffset = 0;//132.87378;
     //svg += QString("<rect x='%1' y='%1' width='%2' height='%3' stroke='red' stroke-width='%4'/>\n").arg(screenOffset).arg(screenWidth).arg(screenHeight).arg(strokeWidth);
 	if (!nameId.isEmpty())
 		svg += QString("<path id='%1' d='").arg(nameId);
@@ -636,7 +636,7 @@ QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<
         }
         std::cout <<" ("<< i << "): " << voltage << ' ';
 	}
-    svg += "' stroke='"+ color + "' stroke-width='"+ strokeWidth + "' fill='none' /> \n"; //
+    svg += "' transform='translate(%1,%2)' stroke='"+ color + "' stroke-width='"+ strokeWidth + "' fill='none' /> \n"; //
 
 	std::cout << std::endl;
 	return svg;
@@ -1328,18 +1328,25 @@ void Simulator::updateOscilloscope(ItemBase * part) {
     double offsets[4] ={ch1_offset, ch2_offset, ch3_offset, ch4_offset};
 
     double screenWidth = 3690.9385, screenHeight = 2952.7507, screenStrokeWidth= 29.5275;
-    double screenOffset = 132.87378, verticalDivisions = 8, divisionSize = screenHeight/verticalDivisions;
-    QString svg = QString("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n%5"
-                          "<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' "
-                          "version='1.2' baseProfile='tiny' "
-                          "x='0in' y='0in' width='%1in' height='%2in' "
-                          "viewBox='0 0 %3 %4' >\n"
-                          )
-                      .arg((screenWidth+screenOffset)/1000)
-                      .arg((screenHeight+screenOffset*2)/1000)
-                      .arg(screenWidth+screenOffset)
-                      .arg(screenHeight+screenOffset*2)
+    double verDivisions = 8, horDivisions = 10, divisionSize = screenHeight/verDivisions;
+    double bbScreenOffset = 132.87378, schScreenOffsetX = 607.41187, schScreenOffsetY = 229.091146;
+    QString svgHeader = "<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n%5"
+                        "<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' "
+                        "version='1.2' baseProfile='tiny' "
+                        "x='0in' y='0in' width='%1in' height='%2in' "
+                        "viewBox='0 0 %3 %4' >\n";
+    QString bbSvg = QString(svgHeader)
+                      .arg((screenWidth+bbScreenOffset)/1000)
+                      .arg((screenHeight+bbScreenOffset*2)/1000)
+                      .arg(screenWidth+bbScreenOffset)
+                      .arg(screenHeight+bbScreenOffset*2)
                       .arg(TextUtils::CreatedWithFritzingXmlComment);
+    QString schSvg = QString(svgHeader)
+                        .arg((screenWidth+schScreenOffsetX*2)/1000)
+                        .arg((screenHeight+schScreenOffsetY*2)/1000)
+                        .arg(screenWidth+schScreenOffsetX*2)
+                        .arg(screenHeight+schScreenOffsetY*2)
+                        .arg(TextUtils::CreatedWithFritzingXmlComment);
 
     // Generate the signal for each channel and the auxiliary marks (offsets, volts/div, etc.)
     for (int channel = 0; channel < nChannels; channel++) {
@@ -1361,37 +1368,70 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 
         //Draw the signal
         QString pathId = QString("ch%1-path").arg(channel+1);
-        svg += generateSvgPath(v, vCom, pathId, divisionSize/ch1_volsDiv, ch1_offset, screenHeight, screenWidth, lineColor[channel], "30");
+        QString signalPath = generateSvgPath(v, vCom, pathId, divisionSize/ch1_volsDiv, ch1_offset, screenHeight, screenWidth, lineColor[channel], "30");
+        bbSvg += signalPath.arg(bbScreenOffset).arg(bbScreenOffset);
+        schSvg += signalPath.arg(schScreenOffsetX).arg(schScreenOffsetY);
 
         //Add text label about volts/div for each channel
-        svg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3'>CH%4: %5V</text>")
-                   .arg(screenOffset+divisionSize*channel).arg(screenHeight+screenOffset*1.7)
+        bbSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3'>CH%4: %5V</text>")
+                   .arg(bbScreenOffset+divisionSize*channel).arg(screenHeight+bbScreenOffset*1.7)
                    .arg(lineColor[channel]).arg(channel+1).arg(TextUtils::convertToPowerPrefix(voltsDiv[channel]));
 
         //Add triangle as a mark for the offset for each channel
         double arrowSize = 50;
-        double arrowPos = -1*offsets[channel]/ch1_volsDiv*divisionSize+screenHeight/2+screenOffset-arrowSize;
-        svg += QString("<polygon points='0,0 %1,%1, 0,%2' stroke='none' fill='%3' transform='translate(60,%4)'/>")
+        double arrowPos = -1*offsets[channel]/ch1_volsDiv*divisionSize+screenHeight/2+bbScreenOffset-arrowSize;
+        bbSvg += QString("<polygon points='0,0 %1,%1, 0,%2' stroke='none' fill='%3' transform='translate(60,%4)'/>")
                    .arg(arrowSize).arg(arrowSize*2).arg(lineColor[channel]).arg(arrowPos);
+
+        //Add voltage scale axis in sch
+        double xOffset;
+        if (channel < 2)
+            xOffset = schScreenOffsetX*0.8/(channel+1);
+        if (channel >= 2)
+            xOffset = screenWidth + schScreenOffsetX*1.2*(channel-1);
+
+        for (int tick = 0; tick < (verDivisions+1); ++tick) {
+            double vTick = voltsDiv[channel]*(verDivisions/2-tick)-offsets[channel];
+            schSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3'>%4V</text>")
+                          .arg(xOffset).arg(schScreenOffsetY+divisionSize*tick+20)
+                          .arg(lineColor[channel]).arg(TextUtils::convertToPowerPrefix(vTick));
+        }
+
+
     }
 
-
-    svg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='black'>time/div: %3s pos: %4</text>")
-               .arg(screenOffset+screenWidth/2).arg(screenOffset*0.7)
+    //Add time scale axis in bb
+    bbSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='black'>time/div: %3s pos: %4</text>")
+               .arg(bbScreenOffset+screenWidth/2).arg(bbScreenOffset*0.7)
                .arg(TextUtils::convertToPowerPrefix(timeDiv))
                .arg(TextUtils::convertToPowerPrefix(hPos));
 
-    svg += "</svg>";
+    //Add time scale axis in sch
+    for (int tick = 0; tick < (horDivisions+1); ++tick) {
+        schSvg += QString("<text x='%1' y='%2' text-anchor='middle' font-family='Droid Sans' font-size='60' fill='%3'>%4s</text>")
+                      .arg(schScreenOffsetX+divisionSize*tick).arg(screenHeight+schScreenOffsetY*1.4)
+                      .arg("black").arg(TextUtils::convertToPowerPrefix(hPos + timeDiv*tick));
+    }
+
+    bbSvg += "</svg>";
+    schSvg += "</svg>";
 
     QGraphicsSvgItem * schGraph = new QGraphicsSvgItem(part);
     QGraphicsSvgItem * bbGraph = new QGraphicsSvgItem(m_sch2bbItemHash.value(part));
-    QSvgRenderer *schGraphRender = new QSvgRenderer(svg.toUtf8());
-    QSvgRenderer *bbGraphRender = new QSvgRenderer(svg.toUtf8());
+    QSvgRenderer *schGraphRender = new QSvgRenderer(schSvg.toUtf8());
+    QSvgRenderer *bbGraphRender = new QSvgRenderer(bbSvg.toUtf8());
     if(schGraphRender->isValid())
-        std::cout << "SCH SVG Graph is VALID " << std::endl;
+        std::cout << "SCH SVG Graph is VALID \n" << std::endl;
     else
-        std::cout << "SCH SVG Graph is NOT VALID " << std::endl;
-    std::cout << "SVG: " << svg.toStdString() << std::endl;
+        std::cout << "SCH SVG Graph is NOT VALID \n" << std::endl;
+    std::cout << "SCH SVG: " << schSvg.toStdString() << std::endl;
+
+    if(bbGraphRender->isValid())
+        std::cout << "BB SVG Graph is VALID \n" << std::endl;
+    else
+        std::cout << "BB SVG Graph is NOT VALID\n" << std::endl;
+    std::cout << "BB SVG: " << bbSvg.toStdString() << std::endl;
+
     schGraph->setSharedRenderer(schGraphRender);
     schGraph->setZValue(std::numeric_limits<double>::max());
     bbGraph->setSharedRenderer(bbGraphRender);

@@ -195,12 +195,16 @@ void Simulator::simulate() {
 	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
 
 	//Select the type of analysis based on if there is an oscilloscope in the simulation
-    double maxSimTime = -1;
+    double maxSimTime = -1, startTime = std::numeric_limits<double>::max();;
 	foreach (ItemBase * item, itemBases) {
 		if(item->family().toLower().contains("oscilloscope")) {
 			//TODO: Use TextUtils::convertFromPowerPrefixU function
 			double time_div = TextUtils::convertFromPowerPrefix(item->getProperty("time/div"), "s");
-            std::cout << "Found oscilloscope: time/div: " << item->getProperty("time/div").toStdString() << " " << time_div << std::endl;
+            double pos = TextUtils::convertFromPowerPrefix(item->getProperty("horizontal position"), "s");
+            std::cout << "Found oscilloscope: time/div: " << item->getProperty("time/div").toStdString() << " " << time_div << item->getProperty("horizontal position").toStdString() << " " << pos << std::endl;
+            if (pos < startTime) {
+                startTime = pos;
+            }
             double maxSimTimeOsc = time_div * 10;
             if (maxSimTimeOsc > maxSimTime) {
                 maxSimTime = maxSimTimeOsc;
@@ -209,7 +213,7 @@ void Simulator::simulate() {
 	}
     if (maxSimTime > 0) {
         //We have found at least one oscilloscope
-        QString tranAnalysis = QString(".TRAN %1 %2").arg(maxSimTime/Simulator::SimSteps).arg(maxSimTime);
+        QString tranAnalysis = QString(".TRAN %1 %2 %3").arg((maxSimTime-startTime)/Simulator::SimSteps).arg(maxSimTime).arg(startTime);
         spiceNetlist.replace(".OP", tranAnalysis);
     }
 

@@ -1368,33 +1368,49 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 
         //Draw the signal
         QString pathId = QString("ch%1-path").arg(channel+1);
-        QString signalPath = generateSvgPath(v, vCom, pathId, divisionSize/ch1_volsDiv, ch1_offset, screenHeight, screenWidth, lineColor[channel], "30");
+        QString signalPath = generateSvgPath(v, vCom, pathId, divisionSize/voltsDiv[channel], offsets[channel],
+                                             screenHeight, screenWidth, lineColor[channel], "20");
         bbSvg += signalPath.arg(bbScreenOffset).arg(bbScreenOffset);
         schSvg += signalPath.arg(schScreenOffsetX).arg(schScreenOffsetY);
 
         //Add text label about volts/div for each channel
-        bbSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3'>CH%4: %5V</text>")
+        bbSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3'>CH%4: %5V</text>\n")
                    .arg(bbScreenOffset+divisionSize*channel).arg(screenHeight+bbScreenOffset*1.7)
                    .arg(lineColor[channel]).arg(channel+1).arg(TextUtils::convertToPowerPrefix(voltsDiv[channel]));
 
         //Add triangle as a mark for the offset for each channel
         double arrowSize = 50;
         double arrowPos = -1*offsets[channel]/ch1_volsDiv*divisionSize+screenHeight/2+bbScreenOffset-arrowSize;
-        bbSvg += QString("<polygon points='0,0 %1,%1, 0,%2' stroke='none' fill='%3' transform='translate(60,%4)'/>")
+        bbSvg += QString("<polygon points='0,0 %1,%1, 0,%2' stroke='none' fill='%3' transform='translate(60,%4)'/>\n")
                    .arg(arrowSize).arg(arrowSize*2).arg(lineColor[channel]).arg(arrowPos);
 
         //Add voltage scale axis in sch
-        double xOffset;
-        if (channel < 2)
-            xOffset = schScreenOffsetX*0.8/(channel+1);
-        if (channel >= 2)
-            xOffset = screenWidth + schScreenOffsetX*1.2*(channel-1);
+        double xOffset[4] = {schScreenOffsetX*0.95, schScreenOffsetX*0.6,
+                             screenWidth + schScreenOffsetX*1.05, screenWidth + schScreenOffsetX*1.5};
+        schSvg += QString("<line x1='%1' y1='%2' x2='%1' y2='%3' stroke='%4' stroke-width='4' />\n")
+                      .arg(xOffset[channel])
+                      .arg(schScreenOffsetY)
+                      .arg(schScreenOffsetY+screenHeight)
+                      .arg(lineColor[channel]);
+
+        double tickSize = 10;
+        double tickPadding = channel>=(nChannels/2)? -tickSize: tickSize;
+        double textPadding = channel>=(nChannels/2)? 10 : -10;
+        QString alignment = channel>=(nChannels/2)? "start": "end";
 
         for (int tick = 0; tick < (verDivisions+1); ++tick) {
             double vTick = voltsDiv[channel]*(verDivisions/2-tick)-offsets[channel];
-            schSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3'>%4V</text>")
-                          .arg(xOffset).arg(schScreenOffsetY+divisionSize*tick+20)
-                          .arg(lineColor[channel]).arg(TextUtils::convertToPowerPrefix(vTick));
+            QString voltageText = TextUtils::convertToPowerPrefix(vTick);
+            schSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3' text-anchor='%4'>%5V</text>\n")
+                          .arg(xOffset[channel] + textPadding)
+                          .arg(schScreenOffsetY + divisionSize * tick + 20)
+                          .arg(lineColor[channel]).arg(alignment).arg(voltageText);
+
+            schSvg += QString("<line x1='%1' y1='%2' x2='%3' y2='%2' stroke='%4' stroke-width='4' />\n")
+                          .arg(xOffset[channel] - tickSize + tickPadding)
+                          .arg(schScreenOffsetY + divisionSize * tick)
+                          .arg(xOffset[channel] + tickSize + tickPadding)
+                          .arg(lineColor[channel]);
         }
 
 

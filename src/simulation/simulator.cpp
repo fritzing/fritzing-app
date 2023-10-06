@@ -195,25 +195,26 @@ void Simulator::simulate() {
 	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
 
 	//Select the type of analysis based on if there is an oscilloscope in the simulation
-    double maxSimTime = -1, startTime = std::numeric_limits<double>::max();;
+    m_simEndTime = -1, m_simStartTime = std::numeric_limits<double>::max();;
 	foreach (ItemBase * item, itemBases) {
 		if(item->family().toLower().contains("oscilloscope")) {
 			//TODO: Use TextUtils::convertFromPowerPrefixU function
 			double time_div = TextUtils::convertFromPowerPrefix(item->getProperty("time/div"), "s");
             double pos = TextUtils::convertFromPowerPrefix(item->getProperty("horizontal position"), "s");
             std::cout << "Found oscilloscope: time/div: " << item->getProperty("time/div").toStdString() << " " << time_div << item->getProperty("horizontal position").toStdString() << " " << pos << std::endl;
-            if (pos < startTime) {
-                startTime = pos;
+            if (pos < m_simStartTime) {
+                m_simStartTime = pos;
             }
-            double maxSimTimeOsc = time_div * 10;
-            if (maxSimTimeOsc > maxSimTime) {
-                maxSimTime = maxSimTimeOsc;
+            double maxSimTimeOsc = pos + time_div * 10;
+            if (maxSimTimeOsc > m_simEndTime) {
+                m_simEndTime = maxSimTimeOsc;
             }
 		}
 	}
-    if (maxSimTime > 0) {
+    if (m_simEndTime > 0) {
+        m_simStepTime = (m_simEndTime-m_simStartTime)/Simulator::SimSteps;
         //We have found at least one oscilloscope
-        QString tranAnalysis = QString(".TRAN %1 %2 %3").arg((maxSimTime-startTime)/Simulator::SimSteps).arg(maxSimTime).arg(startTime);
+        QString tranAnalysis = QString(".TRAN %1 %2 %3").arg(m_simStepTime).arg(m_simEndTime).arg(m_simStartTime);
         spiceNetlist.replace(".OP", tranAnalysis);
     }
 
@@ -610,8 +611,9 @@ std::vector<double> Simulator::voltageVector(ConnectorItem * c0) {
 	return m_simulator->getVecInfo(net0str.toStdString());
 }
 
-QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<double> comVector, QString nameId, double verticalScale, double v_offset, double screenHeight, double screenWidth, QString color, QString strokeWidth ) {
-	std::cout << "VOLTAGE VALUES " << nameId.toStdString() << ": ";
+QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<double> comVector, QString nameId, double simStartTime, double simTimeStep, double timePos, double timeScale, double verticalScale, double verOffset, double screenHeight, double screenWidth, QString color, QString strokeWidth ) {
+    std::cout << "OSCILLOSCOPE: pos " << timePos << ", timeScale: " << timeScale << std::endl;
+    std::cout << "OSCILLOSCOPE: VOLTAGE VALUES " << nameId.toStdString() << ": ";
 	QString svg;
     double screenOffset = 0;//132.87378;
     //svg += QString("<rect x='%1' y='%1' width='%2' height='%3' stroke='red' stroke-width='%4'/>\n").arg(screenOffset).arg(screenWidth).arg(screenHeight).arg(strokeWidth);
@@ -625,20 +627,31 @@ QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<
     double y_0 = screenOffset + screenHeight/2; // the center of the screen
 
     int points = std::min( proveVector.size(), comVector.size() );
-    double horScale = screenWidth/(points-1);
-    for (int i = 0; i <  points; i++) {
-		double voltage = proveVector[i] - comVector[i];
-        double vPos = (voltage + v_offset) * vScale + y_0;
+    double oscEndTime = timePos + timeScale * 10;
+    double nSampleInScreen = (oscEndTime - timePos)/simTimeStep + 1;
+    double horScale = screenWidth/(nSampleInScreen-1);
+    std::cout << "OSCILLOSCOPE: nSampleInScreen " << nSampleInScreen << std::endl;
+    int screenPoint = 0;
+    for (int vPoint = 0; vPoint <  points; vPoint++) {
+        double time = simStartTime + simTimeStep * vPoint;
+        if (time < timePos)
+            continue;
+        if (time > oscEndTime)
+            break;
+
+        double voltage = proveVector[vPoint] - comVector[vPoint];
+        double vPos = (voltage + verOffset) * vScale + y_0;
         //Do not go out of the screen
         vPos = (vPos < screenOffset) ? screenOffset : vPos;
         vPos = (vPos > (screenOffset+screenHeight)) ? screenOffset+screenHeight : vPos;
 
-		if (i == 0) {
+        if (screenPoint == 0) {
             svg.append("M "+ QString::number(screenOffset, 'f', 3) +" " + QString::number( vPos, 'f', 3) + " ");
 		} else {
-            svg.append("L " + QString::number(i*horScale + screenOffset, 'f', 3) + " " + QString::number(vPos, 'f', 3) + " ");
+            svg.append("L " + QString::number(screenPoint*horScale + screenOffset, 'f', 3) + " " + QString::number(vPos, 'f', 3) + " ");
         }
-        std::cout <<" ("<< i << "): " << voltage << ' ';
+        std::cout <<" ("<< time << "): " << voltage << ' ';
+        screenPoint++;
 	}
     svg += "' transform='translate(%1,%2)' stroke='"+ color + "' stroke-width='"+ strokeWidth + "' fill='none' /> \n"; //
 
@@ -1372,7 +1385,7 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 
         //Draw the signal
         QString pathId = QString("ch%1-path").arg(channel+1);
-        QString signalPath = generateSvgPath(v, vCom, pathId, divisionSize/voltsDiv[channel], offsets[channel],
+        QString signalPath = generateSvgPath(v, vCom, pathId, m_simStartTime, m_simStepTime, hPos, timeDiv, divisionSize/voltsDiv[channel], offsets[channel],
                                              screenHeight, screenWidth, lineColor[channel], "20");
         bbSvg += signalPath.arg(bbScreenOffset).arg(bbScreenOffset);
         schSvg += signalPath.arg(schScreenOffsetX).arg(schScreenOffsetY);
@@ -1444,13 +1457,13 @@ void Simulator::updateOscilloscope(ItemBase * part) {
         std::cout << "SCH SVG Graph is VALID \n" << std::endl;
     else
         std::cout << "SCH SVG Graph is NOT VALID \n" << std::endl;
-    std::cout << "SCH SVG: " << schSvg.toStdString() << std::endl;
+    //std::cout << "SCH SVG: " << schSvg.toStdString() << std::endl;
 
     if(bbGraphRender->isValid())
         std::cout << "BB SVG Graph is VALID \n" << std::endl;
     else
         std::cout << "BB SVG Graph is NOT VALID\n" << std::endl;
-    std::cout << "BB SVG: " << bbSvg.toStdString() << std::endl;
+    //std::cout << "BB SVG: " << bbSvg.toStdString() << std::endl;
 
     schGraph->setSharedRenderer(schGraphRender);
     schGraph->setZValue(std::numeric_limits<double>::max());

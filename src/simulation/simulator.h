@@ -67,7 +67,7 @@ protected:
 	double getVectorValueOrDefault(const std::string & vecName, double defaultValue);
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
 	std::vector<double> voltageVector(ConnectorItem *);
-    QString generateSvgPath(std::vector<double>, std::vector<double>, QString, double, double, double, double, QString, QString);
+    QString generateSvgPath(std::vector<double>, std::vector<double>, QString, double, double, double, double, double, double, double, double, QString, QString);
 	double getCurrent(ItemBase*, QString subpartName="");
 	double getTransistorCurrent(QString spicePartName, TransistorLeg leg);
 	double getPower(ItemBase*, QString subpartName="");
@@ -89,6 +89,7 @@ protected:
 	std::shared_ptr<NgSpiceSimulator> m_simulator;
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;
 	QPointer<class SchematicSketchWidget> m_schematicGraphicsView;
+    double m_simStartTime, m_simStepTime, m_simEndTime;
 
 	bool m_enabled = false;
 
@@ -99,7 +100,7 @@ protected:
 	QTimer *m_simTimer;
 	static constexpr int SimDelay = 200;
 	static constexpr double HarmfulNegativeVoltage = -0.5;
-    static constexpr double SimSteps = 100;
+    static constexpr double SimSteps = 400;
 
 };
 

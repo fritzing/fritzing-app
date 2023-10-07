@@ -565,8 +565,8 @@ double Simulator::getVectorValueOrDefault(const std::string & vecName, double de
 	auto vecInfo = m_simulator->getVecInfo(vecName);
 	if (vecInfo.empty()) {
 		return defaultValue;
-	} else {
-		return vecInfo[0];
+    } else {
+        return vecInfo[vecInfo.size()-1];
 	}
 }
 

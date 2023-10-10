@@ -650,7 +650,7 @@ QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<
 		} else {
             svg.append("L " + QString::number(screenPoint*horScale + screenOffset, 'f', 3) + " " + QString::number(vPos, 'f', 3) + " ");
         }
-        std::cout <<" ("<< time << "): " << voltage << ' ';
+        //std::cout <<" ("<< time << "): " << voltage << ' ';
         screenPoint++;
 	}
     svg += "' transform='translate(%1,%2)' stroke='"+ color + "' stroke-width='"+ strokeWidth + "' fill='none' /> \n"; //
@@ -1340,7 +1340,7 @@ void Simulator::updateOscilloscope(ItemBase * part) {
     double ch3_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch3 offset"), "V");
     double ch4_volsDiv = TextUtils::convertFromPowerPrefix(part->getProperty("ch4 volts/div"), "V");
     double ch4_offset = TextUtils::convertFromPowerPrefix(part->getProperty("ch4 offset"), "V");
-    QString lineColor[4] = {"yellow", "lightgreen", "lightblue", "purple"};
+    QString lineColor[4] = {"yellow", "green", "blue", "purple"};
     double voltsDiv[4] ={ch1_volsDiv, ch2_volsDiv, ch3_volsDiv, ch4_volsDiv};
     double offsets[4] ={ch1_offset, ch2_offset, ch3_offset, ch4_offset};
 
@@ -1404,6 +1404,12 @@ void Simulator::updateOscilloscope(ItemBase * part) {
         //Add voltage scale axis in sch
         double xOffset[4] = {schScreenOffsetX*0.95, schScreenOffsetX*0.6,
                              screenWidth + schScreenOffsetX*1.05, screenWidth + schScreenOffsetX*1.5};
+        if(!probesArray[0]->connectedToWires())
+            xOffset[1]=xOffset[0];
+        if(!probesArray[2]->connectedToWires())
+            xOffset[3]=xOffset[2];
+
+        //Add line of the scale axis
         schSvg += QString("<line x1='%1' y1='%2' x2='%1' y2='%3' stroke='%4' stroke-width='4' />\n")
                       .arg(xOffset[channel])
                       .arg(schScreenOffsetY)
@@ -1411,22 +1417,49 @@ void Simulator::updateOscilloscope(ItemBase * part) {
                       .arg(lineColor[channel]);
 
         double tickSize = 10;
-        double tickPadding = channel>=(nChannels/2)? -tickSize: tickSize;
-        double textPadding = channel>=(nChannels/2)? 10 : -10;
-        QString alignment = channel>=(nChannels/2)? "start": "end";
+        double paddingAlignment = channel>=(nChannels/2)? 1 : -1;
+        QString textAlignment = channel>=(nChannels/2)? "start": "end";
+
+        //Add name of the scale axis
+        QString netName = QString("Channel %1 (V)").arg(channel);
+        QList<ConnectorItem *> connectorItems;
+        connectorItems.append(probesArray[channel]);
+        ConnectorItem::collectEqualPotential(connectorItems, false, ViewGeometry::RatsnestFlag);
+
+        Q_FOREACH ( ConnectorItem * cItem, connectorItems) {
+            std::cout <<  "ConnectorItem connected to : " << cItem->modelPartShared()->title().toStdString() << std::endl;
+            SymbolPaletteItem* symbolItem = dynamic_cast<SymbolPaletteItem *>(cItem->attachedTo());
+            if (symbolItem)
+                    std::cout <<  "IS SYMBOL LABEL " << std::endl;
+            if(symbolItem && symbolItem->isOnlyNetLabel() ) {
+                    std::cout <<  "IS ONLY NET LABEL " << std::endl;
+                    netName = symbolItem->getLabel();
+                    netName += " (V)";
+                    break;
+            }
+        }
+
+        schSvg += QString("<text font-family='Droid Sans' font-size='60' fill='%3' "
+                          "text-anchor='middle' transform='translate(%1, %2) rotate(-90)'>%4</text>\n")
+                      .arg(xOffset[channel] + paddingAlignment * 140 + (1+paddingAlignment)*40)
+                      .arg(schScreenOffsetY + screenHeight/2)
+                      .arg(lineColor[channel])
+                      .arg(netName);
+
+
 
         for (int tick = 0; tick < (verDivisions+1); ++tick) {
             double vTick = voltsDiv[channel]*(verDivisions/2-tick)-offsets[channel];
             QString voltageText = TextUtils::convertToPowerPrefix(vTick);
-            schSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3' text-anchor='%4'>%5V</text>\n")
-                          .arg(xOffset[channel] + textPadding)
+            schSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' font-size='60' fill='%3' text-anchor='%4'>%5</text>\n")
+                          .arg(xOffset[channel] +  paddingAlignment * 10)
                           .arg(schScreenOffsetY + divisionSize * tick + 20)
-                          .arg(lineColor[channel]).arg(alignment).arg(voltageText);
+                          .arg(lineColor[channel]).arg(textAlignment).arg(voltageText);
 
             schSvg += QString("<line x1='%1' y1='%2' x2='%3' y2='%2' stroke='%4' stroke-width='4' />\n")
-                          .arg(xOffset[channel] - tickSize + tickPadding)
+                          .arg(xOffset[channel] - tickSize + paddingAlignment * tickSize * -1)
                           .arg(schScreenOffsetY + divisionSize * tick)
-                          .arg(xOffset[channel] + tickSize + tickPadding)
+                          .arg(xOffset[channel] + tickSize + paddingAlignment * tickSize * -1)
                           .arg(lineColor[channel]);
         }
 
@@ -1441,10 +1474,14 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 
     //Add time scale axis in sch
     for (int tick = 0; tick < (horDivisions+1); ++tick) {
-        schSvg += QString("<text x='%1' y='%2' text-anchor='middle' font-family='Droid Sans' font-size='60' fill='%3'>%4s</text>")
+        schSvg += QString("<text x='%1' y='%2' text-anchor='middle' font-family='Droid Sans' font-size='60' fill='%3'>%4</text>")
                       .arg(schScreenOffsetX+divisionSize*tick).arg(screenHeight+schScreenOffsetY*1.4)
                       .arg("black").arg(TextUtils::convertToPowerPrefix(hPos + timeDiv*tick));
     }
+    schSvg += QString("<text x='%1' y='%2' text-anchor='middle' font-family='Droid Sans' font-size='60' fill='%3'>Time (s)</text>")
+                  .arg(schScreenOffsetX + screenWidth / 2)
+                  .arg(screenHeight + schScreenOffsetY * 1.8)
+                  .arg("black");
 
     bbSvg += "</svg>";
     schSvg += "</svg>";

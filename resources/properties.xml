@@ -141,11 +141,19 @@
   <suffix suffix="AC2PowerModuleID"/>
   <suffix suffix="ACPowerSupplyModuleID"/>
   <suffix suffix="DCPowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
   <menuItem value="3.3" />
 	<menuItem value="5" />
 	<menuItem value="12" />
 </property>
 
+<property name="amplitude" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">
+  <suffix suffix="ACPowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
+  <menuItem value="3.3" />
+	<menuItem value="5" />
+	<menuItem value="12" />
+</property>
 <property name="initial voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="0" numeric="yes" editable="yes">
   <suffix suffix="PulsePowerSupplyModuleID"/>
 </property>
@@ -160,12 +168,15 @@
 </property>
 <property name="rise time" symbol="s" minValue="0" maxValue="1" defaultValue="0.001" numeric="yes" editable="yes">
   <suffix suffix="PulsePowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
 </property>
 <property name="fall time" symbol="s" minValue="0" maxValue="1" defaultValue="0.001" numeric="yes" editable="yes">
   <suffix suffix="PulsePowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
 </property>
 <property name="number of pulses" symbol="" minValue="0" maxValue="1000000000000" defaultValue="0" numeric="yes" editable="yes">
   <suffix suffix="PulsePowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
 </property>
 
 <property name="frequency" symbol="Hz" minValue="0" maxValue="1000000" defaultValue="60" numeric="yes" editable="yes">
@@ -180,10 +191,12 @@
 
 <property name="offset voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="0" numeric="yes" editable="yes">
   <suffix suffix="ACPowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
 </property>
 <property name="delay time" symbol="s" minValue="0" maxValue="100" defaultValue="0" numeric="yes" editable="yes">
   <suffix suffix="ACPowerSupplyModuleID"/>
   <suffix suffix="PulsePowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
 </property>
 <property name="damping factor" symbol="s-1" minValue="0" maxValue="10" defaultValue="0" numeric="yes" editable="yes">
   <suffix suffix="ACPowerSupplyModuleID"/>

@@ -18,8 +18,12 @@
 #
 # ********************************************************************
 
-lessThan(QT_MAJOR_VERSION, 5) {
-    error(Fritzing does not build with Qt 4 or earlier. 5.15 is recommended.)
+RECOMMENDED_QT_VERSION = 6.4.3
+
+greaterThan(QT_VERSION, RECOMMENDED_QT_VERSION) {
+	message("Warning: Your Qt version is greater than the recommended version " $$RECOMMENDED_QT_VERSION)
+} else:lessThan(QT_VERSION, RECOMMENDED_QT_VERSION) {
+	message("Warning: Your Qt version is less than the recommended version " $$RECOMMENDED_QT_VERSION)
 }
 
 CONFIG += debug_and_release

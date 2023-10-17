@@ -138,6 +138,8 @@ protected:
 				return (int) dpi;
 			case PdmDevicePixelRatio:
 				return 1;
+			case PdmDevicePixelRatioScaled:
+				return 1;
 			default:
 				qWarning("GroundPlanePaintDevice::metric() - metric %d unknown", metric);
 				return 0;

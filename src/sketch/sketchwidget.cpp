@@ -5055,6 +5055,23 @@ void SketchWidget::changeConnectionAux(long fromID, const QString & fromConnecto
 		}
 	}
 	else {
+		if (!fromConnectorItem->connectedTo(toConnectorItem)) {
+			DebugDialog::debug(QString("SketchWidget::changeConnectionAux: connector 'from' and connector 'to' to be disconnected are actually not connected")); // remove log message after Fritzing 1.0.3
+			auto * toCrossLayerConnectorItem = toConnectorItem->getCrossLayerConnectorItem();
+			auto * fromCrossLayerConnectorItem = fromConnectorItem->getCrossLayerConnectorItem();
+			if (toCrossLayerConnectorItem != nullptr) {
+				if (fromConnectorItem->connectedTo(toCrossLayerConnectorItem)) {
+					toConnectorItem = toCrossLayerConnectorItem;
+					DebugDialog::debug(QString("SketchWidget::changeConnectionAux substituting toConnectorItem from cross layer")); // remove log message after Fritzing 1.0.3
+				}
+			}
+			if (fromCrossLayerConnectorItem != nullptr) {
+				if (toConnectorItem->connectedTo(fromCrossLayerConnectorItem)) {
+					fromConnectorItem = fromCrossLayerConnectorItem;
+					DebugDialog::debug(QString("SketchWidget::changeConnectionAux substituting fromConnectorItem from cross layer")); // remove log message after Fritzing 1.0.3
+				}
+			}
+		}
 		fromConnectorItem->connector()->disconnectFrom(toConnectorItem->connector());
 		fromConnectorItem->removeConnection(toConnectorItem, true);
 		toConnectorItem->removeConnection(fromConnectorItem, true);

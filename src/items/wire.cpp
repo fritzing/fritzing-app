@@ -1264,13 +1264,15 @@ QString Wire::colorString() {
 	return m_colorName;
 }
 
-void Wire::initNames() {
+void Wire::initNames(bool solidRatsnest) {
 	if (colorNames.count() > 0) return;
 
 	TheDash.clear();
 	TheDash << 10 << 8;
 	RatDash.clear();
-	RatDash << 2 << 2;
+	if (!solidRatsnest) {
+		RatDash << 2 << 2;
+	}
 
 	widths << 8 << 12 << 16 << 24 << 32 << 48;
 	int i = 0;

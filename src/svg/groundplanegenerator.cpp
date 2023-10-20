@@ -44,11 +44,6 @@ using boost::math::epsilon_difference;
 
 using namespace ClipperLib;
 
-// factor for epsion to compare floating point numbers
-// 5 was arbitrary choosen
-static constexpr double reldif = 5.0;
-
-static constexpr double BORDERINCHES = 0.04;
 
 const QString GroundPlaneGenerator::KeepoutSettingName("GPG_Keepout");
 const double GroundPlaneGenerator::KeepoutDefaultMils = 10;

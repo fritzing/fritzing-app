@@ -35,14 +35,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 const QString FritzingWindow::QtFunkyPlaceholder = QLatin1String("[*]");  // this is some weird hack Qt uses in window titles as a placeholder to setr the modified state
 QString FritzingWindow::ReadOnlyPlaceholder(" [READ-ONLY] ");
-static QString ___fritzingTitle___;
 QStringList FritzingWindow::OtherKnownExtensions;
 
 FritzingWindow::FritzingWindow(const QString &untitledFileName, int &untitledFileCount, QString fileExt, QWidget * parent, Qt::WindowFlags f)
 	: QMainWindow(parent, f)
 {
-	___fritzingTitle___ = QObject::tr("Fritzing");
-
 	// Let's set the icon
 	this->setWindowIcon(QIcon(QPixmap(":resources/images/fritzing_icon.png")));
 
@@ -243,7 +240,7 @@ void FritzingWindow::setReadOnly(bool readOnly) {
 }
 
 const QString FritzingWindow::fritzingTitle() {
-	return ___fritzingTitle___;
+	return QObject::tr("Fritzing");
 }
 
 const QString &  FritzingWindow::fileName() {

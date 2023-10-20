@@ -19,16 +19,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "groundplanegenerator.h"
-#include "svgfilesplitter.h"
-#include "../fsvgrenderer.h"
-#include "../debugdialog.h"
-#include "../version/version.h"
-#include "../utils/folderutils.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
-#include "../items/wire.h"
 #include "../processeventblocker.h"
-#include "../autoroute/drc.h"
 #include "clipperhelpers.h"
 
 #include <clipper.hpp>

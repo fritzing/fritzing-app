@@ -149,14 +149,18 @@ inline QString imageToSVGPath(QImage &image, double res) {
 		int startIndex = 0;
 		for (int i = 0; i < image.width(); i++) {
 			bool pix = qGray(image.pixel(i, j)) != 0;
-			if (pix != previousPix || i == image.width() - 1) if (pix) {
-				ClipperLib::Path span;
-				span << ClipperLib::IntPoint(startIndex, j) << ClipperLib::IntPoint(i + 1, j)
-						<< ClipperLib::IntPoint(i + 1, j + 1) << ClipperLib::IntPoint(startIndex, j + 1);
-				lineSpans << span;
-				startIndex = 0;
-			} else {
-				startIndex = i;
+			if (pix != previousPix || i == image.width() - 1) {
+				if (pix) {
+					ClipperLib::Path span;
+					span << ClipperLib::IntPoint(startIndex, j)
+						 << ClipperLib::IntPoint(i + 1, j)
+						 << ClipperLib::IntPoint(i + 1, j + 1)
+						 << ClipperLib::IntPoint(startIndex, j + 1);
+					lineSpans << span;
+					startIndex = 0;
+				} else {
+					startIndex = i;
+				}
 			}
 			previousPix = pix;
 		}

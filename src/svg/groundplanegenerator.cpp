@@ -155,8 +155,6 @@ void GroundPlanePaintEngine::drawPath(const QPainterPath &path) {
 	bool hasPen = state->pen().style() != Qt::NoPen;
 	bool hasBrush = state->brush().style() != Qt::NoBrush;
 	QList<QPolygonF> polygons = path.toSubpathPolygons();
-	static int index = 0;
-	index++;
 	if (hasBrush) {
 		Paths paths = polygonsToClipper(polygons, state->transform());
 		Clipper cp;
@@ -272,8 +270,6 @@ void saveClipperPathsToFile(Paths &paths, double clipperDPI, QString filename) {
 
 bool GroundPlaneGenerator::generateGroundPlaneFn(const GPGParams & constParams) {
 	GPGParams params = constParams;
-	static int index = 0;
-	index++;
 	double bWidth, bHeight;
 	double clipperDPI = params.res;
 	Paths groundConnectorsZone;

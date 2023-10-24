@@ -623,7 +623,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1344"/>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
-        <translation>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</translation>
+        <translation>Ficheiros Fritzing (*%1 *%2 *%3);;Fritzing Componente (*%1);;Fritzing Bin (*%2);;Fritzing Bin Partilhável (*%3)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1061"/>
@@ -1909,7 +1909,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/items/itembase.cpp" line="248"/>
         <source>descr</source>
-        <translation>descr</translation>
+        <translation>descrição</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="249"/>
@@ -1929,7 +1929,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/items/itembase.cpp" line="252"/>
         <source>rev</source>
-        <translation>rev</translation>
+        <translation>inversor</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="253"/>
@@ -3653,7 +3653,7 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1024"/>
         <source>Extended Gerber (RS-274X)...</source>
-        <translation>Extended Gerber (RS-274X)...</translation>
+        <translation>Gerber Extendido (RS-274X)...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1026"/>
@@ -4023,7 +4023,7 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="159"/>
         <source>Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)</source>
-        <translation>Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)</translation>
+        <translation>Ficheiros Fritzing (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Partilhável (*%2);;Fritzing Componente (*%3);;Fritzing Caixa (*%4);;Fritzing Caixa Partilhável (*%5)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="163"/>
@@ -4223,7 +4223,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2869"/>
         <source>Design Rules Check (DRC)</source>
-        <translation>Design Rules Check (DRC)</translation>
+        <translation>Verificação de Regras de Design (DRC)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4288"/>
@@ -5272,7 +5272,7 @@ Razão: %2 (errcode %3)</translation>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="108"/>
         <source>Through-hole</source>
-        <translation>Through-hole</translation>
+        <translation>Através de orifício</translation>
     </message>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="113"/>
@@ -7999,7 +7999,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="50"/>
         <source>Shields</source>
-        <translation>Shields</translation>
+        <translation>Cartões</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="51"/>
@@ -8198,7 +8198,7 @@ já se encontrava lá, não vai adicionar outra vez, certo?!?</translation>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="94"/>
         <location filename="../src/partseditor/peutils.cpp" line="171"/>
         <source>Pad</source>
-        <translation>Pad</translation>
+        <translation>Superfície de Solda</translation>
     </message>
     <message>
         <location filename="../src/partseditor/peutils.cpp" line="149"/>

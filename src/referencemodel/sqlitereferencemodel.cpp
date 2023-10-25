@@ -30,6 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtGlobal>
 #include <limits>
 
+#include "qbuffer.h"
 #include "sqlitereferencemodel.h"
 #include "../debugdialog.h"
 #include "../connectors/svgidlayer.h"
@@ -620,6 +621,13 @@ bool SqliteReferenceModel::createDatabase(const QString & databaseName, bool ful
 		                    "tag TEXT NOT NULL,\n"
 		                    "part_id INTEGER NOT NULL"
 		                    ")");
+		debugError(result, query);
+
+		result = query.exec("CREATE TABLE icons (\n"
+							"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
+							"name TEXT UNIQUE,\n"
+							"data BLOB\n"
+							");");
 		debugError(result, query);
 
 		result = createProperties(m_database);
@@ -1387,6 +1395,45 @@ const QString SqliteReferenceModel::error() const {
 	}
 	return error;
 }
+
+QPixmap SqliteReferenceModel::retrieveIcon(const QString &name)
+{
+	QSqlQuery query;
+	query.prepare("SELECT data FROM icons WHERE name=:name");
+	query.bindValue(":name", name);
+	bool result = query.exec();
+
+	if (result && query.next()) {
+		QByteArray byteArray = query.value(0).toByteArray();
+		QPixmap retrievedPixmap;
+		retrievedPixmap.loadFromData(byteArray, "PNG");
+		//		retrievedIcon = QIcon(retrievedPixmap);
+		return retrievedPixmap;
+	}
+
+	debugError(result, query);
+	return QPixmap();
+}
+
+bool SqliteReferenceModel::insertIcon(const QString& name, const QPixmap &icon)
+{
+	QByteArray byteArray;
+	QBuffer buffer(&byteArray);
+	icon.save(&buffer, "PNG");
+
+	QSqlQuery query;
+	query.prepare("INSERT OR REPLACE INTO icons (name, data) VALUES (:name, :data)");
+	query.bindValue(":name", name);
+	query.bindValue(":data", byteArray);
+	bool result = query.exec();
+
+	if (!result) {
+		debugError(result, query);
+	}
+	return result;
+}
+
+
 
 bool SqliteReferenceModel::removeViewImages(qulonglong partId) {
 	return removex(partId, "viewimages", "part_id");

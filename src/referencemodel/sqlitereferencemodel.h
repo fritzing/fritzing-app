@@ -60,6 +60,9 @@ public:
 	const QString & sha() const;
 	const QString error() const;
 
+	QPixmap retrieveIcon(const QString &name);
+	bool insertIcon(const QString &name, const QPixmap &icon);
+
 protected:
 	void initParts(bool dbExists);
 	void killParts();
@@ -81,6 +84,7 @@ protected:
 	bool insertConnectorLayer(const class SvgIdLayer *, qulonglong id);  // connector db id
 	bool insertBus(const Bus *, qulonglong id);
 	bool insertBusMember(const Connector *, qulonglong id);
+
 	qulonglong partId(QString moduleID);
 	bool removePart(qulonglong partId);
 	bool removeProperties(qulonglong partId);

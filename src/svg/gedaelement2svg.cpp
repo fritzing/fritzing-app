@@ -93,7 +93,7 @@ QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins
 
 	for (int ix = 0; ix < stack.size(); ) {
 		QVariant var = stack[ix];
-		if (var.type() == QVariant::String) {
+		if (var.typeId() == QMetaType::QString) {
 			QString thing = var.toString();
 			int argCount = countArgs(stack, ix);
 			bool mils = stack[ix + argCount + 1].toChar() == ')';
@@ -133,7 +133,7 @@ QString GedaElement2Svg::convert(const QString & filename, bool allowPadsAndPins
 			}
 			ix += argCount + 2;
 		}
-		else if (var.type() == QVariant::Char) {
+		else if (var.typeId() == QMetaType::QChar) {
 			// will arrive here at the end of the element
 			// TODO: shouldn't happen otherwise
 			ix++;
@@ -185,7 +185,7 @@ int GedaElement2Svg::countArgs(QVector<QVariant> & stack, int ix) {
 	int argCount = 0;
 	for (int i = ix + 1; i < stack.size(); i++) {
 		QVariant var = stack[i];
-		if (var.type() == QVariant::Char) {
+		if (var.typeId() == QMetaType::QChar) {
 			QChar ch = var.toChar();
 			if (ch == ']' || ch == ')') {
 				break;

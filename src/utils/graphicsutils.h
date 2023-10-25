@@ -116,7 +116,7 @@ public:
 	}
 	static void saveTransform(QXmlStreamWriter & streamWriter, const QTransform & transform);
 	static bool loadTransform(const QDomElement & transformElement, QTransform & transform);
-	static bool isRect(const QPolygonF & poly);
+	static bool isFuzzyRect(const QPolygonF & poly);
 	static QRectF getRect(const QPolygonF & poly);
 	static void shortenLine(QPointF & p1, QPointF & p2, double d1, double d2);
 	static bool liangBarskyLineClip(double x1, double y1, double x2, double y2,
@@ -127,14 +127,14 @@ public:
 	static void qt_graphicsItem_highlightSelected(QPainter *painter, const QStyleOptionGraphicsItem *option, const QRectF & boundingRect, const QPainterPath & path);
 	static QPointF calcRotation(QTransform & rotation, QPointF rCenter, QPointF p, QPointF pCenter);
 	static void drawBorder(QImage * image, int border);
-	static bool isFlipped(const QMatrix & matrix, double & rotation);
+	static bool isFlipped(const QTransform & matrix, double & rotation);
 
 public:
 	static constexpr double IllustratorDPI = 72;
 	static constexpr double StandardFritzingDPI = 1000;
 	static constexpr double SVGDPI = 90;
-	static constexpr double InchesPerMeter = 39.370078;
-	static constexpr double StandardSchematicSeparationMils = 295.275591; // 7.5mm
+	static constexpr double InchesPerMeter = 1000.0 / 25.4;
+	static constexpr double StandardSchematicSeparationMils = 7.5 * 1000.0 / 25.4;
 	static constexpr double StandardSchematicSeparation10thinMils = 100;  // 0.1 inches
 
 

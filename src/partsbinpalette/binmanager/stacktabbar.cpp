@@ -23,7 +23,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMouseEvent>
 #include <QMenu>
 #include <QStylePainter>
+#include <QtGlobal>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QStyleOptionTabV2>
+#else
+#include <QStyleOptionTab>
+#endif
 #include <QMimeData>
 
 #include "stacktabbar.h"
@@ -55,7 +60,7 @@ StackTabBar::StackTabBar(StackTabWidget *parent) : QTabBar(parent) {
 }
 
 bool StackTabBar::mimeIsAction(const QMimeData* m, const QString& action) {
-	if(m) {
+	if(m != nullptr) {
 		QStringList formats = m->formats();
 		return formats.contains("action") && (m->data("action") == action);
 	} else {
@@ -80,8 +85,8 @@ void StackTabBar::dragMoveEvent(QDragMoveEvent* event) {
 	const QMimeData *m = event->mimeData();
 	int index = tabAt(event->pos());
 	if ((event->source() != this) && mimeIsAction(m,"part-reordering")) {
-		PartsBinPaletteWidget* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(index));
-		if(bin && bin->allowsChanges()) {
+		auto* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(index));
+		if((bin != nullptr) && bin->allowsChanges()) {
 			event->acceptProposedAction();
 			m_dragMoveTimer.setProperty("index", index);
 			if (!m_dragMoveTimer.isActive()) {
@@ -98,8 +103,8 @@ void StackTabBar::dropEvent(QDropEvent* event) {
 
 	const QMimeData *m = event->mimeData();
 	if(mimeIsAction(m, "part-reordering")) {
-		PartsBinPaletteWidget* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(toIndex));
-		if(bin && bin->allowsChanges()) {
+		auto* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(toIndex));
+		if((bin != nullptr) && bin->allowsChanges()) {
 			bin->currentView()->dropEventAux(event,true);
 		}
 	}
@@ -112,13 +117,13 @@ void StackTabBar::showContextMenu(const QPoint &point)
 	if (point.isNull()) return;
 
 	int tabIndex = this->tabAt(point);
-	PartsBinPaletteWidget* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(tabIndex));
-	if (bin == NULL) return;
+	auto* bin = qobject_cast<PartsBinPaletteWidget*>(m_parent->widget(tabIndex));
+	if (bin == nullptr) return;
 
 	setCurrentIndex(tabIndex);
 
 	QMenu * contextMenu = bin->binContextMenu();
-	if (contextMenu) {
+	if (contextMenu != nullptr) {
 		contextMenu->exec(this->mapToGlobal(point));
 	}
 	delete contextMenu;
@@ -133,7 +138,7 @@ void StackTabBar::paintEvent(QPaintEvent *event)
 
 	for(int i = 0; i < this->count(); ++i)
 	{
-		QStyleOptionTabV2 option;
+		QStyleOptionTab option;
 		initStyleOption(&option, i);
 		option.shape = RoundedNorth;
 		option.text = "";
@@ -142,7 +147,7 @@ void StackTabBar::paintEvent(QPaintEvent *event)
 }
 
 void StackTabBar::setIndex() {
-	if (sender() == NULL) return;
+	if (sender() == nullptr) return;
 
 	bool ok = false;
 	int index = sender()->property("index").toInt(&ok);

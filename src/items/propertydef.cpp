@@ -29,9 +29,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFile>
 
 QList <PropertyDef *> PropertyDefMaster::PropertyDefs;
+QList <QString> PropertyDefMaster::ModuleIDSuffixes;
 
 void PropertyDefMaster::loadPropertyDefs() {
 	QFile file(":/resources/properties.xml");
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(":/resources/properties.xml"));
+	}
 
 	QString errorStr;
 	int errorLine;
@@ -49,7 +53,7 @@ void PropertyDefMaster::loadPropertyDefs() {
 
 	QDomElement propertyElement = root.firstChildElement("property");
 	while (!propertyElement.isNull()) {
-		PropertyDef * propertyDef = new PropertyDef;
+		auto * propertyDef = new PropertyDef;
 		propertyDef->name = propertyElement.attribute("name");
 
 		PropertyDefs.append(propertyDef);
@@ -78,6 +82,8 @@ void PropertyDefMaster::loadPropertyDefs() {
 		while (!suffixElement.isNull()) {
 			QString suffix = suffixElement.attribute("suffix");
 			propertyDef->suffixes.append(suffix);
+			if (!ModuleIDSuffixes.contains(suffix))
+				ModuleIDSuffixes.append(suffix);
 			suffixElement = suffixElement.nextSiblingElement("suffix");
 		}
 
@@ -87,11 +93,12 @@ void PropertyDefMaster::loadPropertyDefs() {
 }
 
 void PropertyDefMaster::cleanup() {
-	foreach (PropertyDef * propertyDef, PropertyDefs) {
+	Q_FOREACH (PropertyDef * propertyDef, PropertyDefs) {
 		delete propertyDef;
 	}
 
 	PropertyDefs.clear();
+	ModuleIDSuffixes.clear();
 }
 
 void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDef *, QString> & propertyDefs)
@@ -100,8 +107,8 @@ void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDe
 		loadPropertyDefs();
 	}
 
-	foreach (PropertyDef * propertyDef, PropertyDefs) {
-		foreach (QString suffix, propertyDef->suffixes) {
+	Q_FOREACH (PropertyDef * propertyDef, PropertyDefs) {
+		Q_FOREACH (QString suffix, propertyDef->suffixes) {
 			if (!modelPart->moduleID().endsWith(suffix, Qt::CaseInsensitive)) continue;
 
 			//DebugDialog::debug(QString("%1 %2").arg(suffix).arg(modelPart->moduleID()));
@@ -125,4 +132,19 @@ void PropertyDefMaster::initPropertyDefs(ModelPart * modelPart, QHash<PropertyDe
 			propertyDefs.insert(propertyDef, savedValue);
 		}
 	}
+}
+
+/**
+ * Returns true if the moduleID of a part ends with any of the sufixxes listed in the properties.xml.
+ * Thus, the properties of the part can be changed in the Inspector pane.
+ * @param[in] moduleID The module ID of the part to check
+ * @returns true if the moduleID is listed in properties.xml, false otherwise .
+ */
+bool PropertyDefMaster::partPropertiesCanBeModified(QString moduleID){
+	foreach(QString suffix, ModuleIDSuffixes){
+		if(moduleID.endsWith(suffix)) {
+			return true;
+		}
+	}
+	return false;
 }

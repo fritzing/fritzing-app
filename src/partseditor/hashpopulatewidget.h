@@ -37,7 +37,7 @@ public:
 	bool hasChanged();
 	QString textIfSetted();
 
-protected slots:
+protected Q_SLOTS:
 	void updateObjectName();
 
 protected:
@@ -65,12 +65,12 @@ public:
 		return m_value;
 	}
 
-signals:
+Q_SIGNALS:
 	void clicked(HashRemoveButton*);
 
 protected:
 	void clicked() {
-		emit clicked(this);
+		Q_EMIT clicked(this);
 	}
 	QWidget *m_label;
 	QWidget *m_value;
@@ -83,12 +83,12 @@ public:
 	const QHash<QString,QString> & hash();
 	HashLineEdit* lineEditAt(int row, int col);
 
-protected slots:
+protected Q_SLOTS:
 	void lastRowEditionCompleted();
 	void removeRow(HashRemoveButton*);
 	void lineEditChanged();
 
-signals:
+Q_SIGNALS:
 	void editionStarted();
 	void changed();
 

@@ -32,7 +32,7 @@ void ModFileDialog::addList(const QString &header, const QStringList &list) {
 		ui->listWidget->addItem(" ");
 	}
 	ui->listWidget->addItem(header);
-	foreach (QString string, list) {
+	Q_FOREACH (QString string, list) {
 		ui->listWidget->addItem("  " + string);
 	}
 }
@@ -41,6 +41,6 @@ void ModFileDialog::accept() {
 	ui->buttonBox->setDisabled(true);
 	ui->label->setText(tr("Now cleaning files. Please don't interrupt the process."));
 	QApplication::processEvents();
-	emit cleanRepo(this);
+	Q_EMIT cleanRepo(this);
 
 }

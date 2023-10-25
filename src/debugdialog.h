@@ -62,6 +62,7 @@ public:
 	static void setEnabled(bool);
 	static bool enabled();
 
+	static QString createKeyTag(const QKeyEvent *event);
 protected:
 	bool event ( QEvent * e );
 	void resizeEvent ( QResizeEvent * event );
@@ -74,7 +75,7 @@ protected:
 	QPointer<QTextEdit> m_textEdit;
 	DebugLevel m_debugLevel;
 
-signals:
+Q_SIGNALS:
 	void debugBroadcast(const QString & message, DebugDialog::DebugLevel, QObject * ancestor);
 };
 

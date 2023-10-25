@@ -25,7 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSvgRenderer>
 #include <QXmlStreamReader>
 #include <QDomDocument>
-#include <QMatrix>
+#include <QTransform>
 #include <QStringList>
 
 #include "viewlayer.h"
@@ -34,10 +34,10 @@ struct ConnectorInfo {
 	bool gotCircle;
 	double radius;
 	double strokeWidth;
-	QMatrix matrix;
+	QTransform matrix;
 	//QRectF cbounds;
-	QMatrix terminalMatrix;
-	QMatrix legMatrix;
+	QTransform terminalMatrix;
+	QTransform legMatrix;
 	QString legColor;
 	QLineF legLine;
 	double legStrokeWidth;
@@ -99,7 +99,7 @@ protected:
 	void initTerminalInfoAux(QDomElement & element, const LoadInfo &);
 	void initLegInfoAux(QDomElement & element, const LoadInfo &, bool & gotOne);
 	void initConnectorInfoAux(QDomElement & element, const LoadInfo &);
-	QPointF calcTerminalPoint(const QString & terminalId, const QRectF & connectorRect, bool ignoreTerminalPoint, const QRectF & viewBox, QMatrix & terminalMatrix);
+	QPointF calcTerminalPoint(const QString & terminalId, const QRectF & connectorRect, bool ignoreTerminalPoint, const QRectF & viewBox, QTransform & terminalMatrix);
 	bool initLegInfoAux(QDomElement & element, ConnectorInfo * connectorInfo);
 	void calcLeg(SvgIdLayer *, const QRectF & viewBox, ConnectorInfo * connectorInfo);
 	ConnectorInfo * getConnectorInfo(const QString & connectorID);

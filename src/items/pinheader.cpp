@@ -20,21 +20,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "pinheader.h"
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
-#include "../commands.h"
 #include "../utils/textutils.h"
-#include "partlabel.h"
+#include "../debugdialog.h"
 #include "partfactory.h"
-#include "../sketch/infographicsview.h"
-#include "../connectors/connectoritem.h"
-#include "../connectors/connector.h"
-#include "../utils/familypropertycombobox.h"
+
+
 
 #include <QDomNodeList>
 #include <QDomDocument>
 #include <QDomElement>
 #include <QLineEdit>
-#include <QRegExp>
+#include <QRegularExpression>
 
 //////////////////////////////////////////////////
 
@@ -98,7 +94,7 @@ void PinHeader::initNames() {
 QStringList PinHeader::collectValues(const QString & family, const QString & prop, QString & value) {
 	if (prop.compare("form", Qt::CaseInsensitive) == 0) {
 		QStringList values;
-		foreach (QString f, forms()) {
+		Q_FOREACH (QString f, forms()) {
 			values.append(f);
 		}
 
@@ -164,7 +160,7 @@ QStringList PinHeader::collectValues(const QString & family, const QString & pro
 			values.append(value);
 		}
 		else {
-			foreach (QString key, Spacings.keys()) {
+			Q_FOREACH (QString key, Spacings.keys()) {
 				values.append(Spacings.value(key));
 			}
 		}
@@ -186,7 +182,7 @@ QString PinHeader::getProperty(const QString & key) {
 
 void PinHeader::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		//setForm(m_form, true);
 	}
 
@@ -429,7 +425,7 @@ QString PinHeader::genModuleID(QMap<QString, QString> & currPropsMap)
 		pins = QString::number(p + 1);
 	}
 
-	foreach (QString key, Spacings.keys()) {
+	Q_FOREACH (QString key, Spacings.keys()) {
 		if (Spacings.value(key).compare(spacing, Qt::CaseInsensitive) == 0) {
 			return QString("generic_%1_pin_header_%2_%3").arg(formWord).arg(pins).arg(key);
 		}
@@ -464,7 +460,7 @@ QString PinHeader::makePcbSvg(const QString & originalExpectedFileName)
 		svg = makePcbShroudedSvg(pins);
 	}
 	else if (expectedFileName.contains("longpad")) {
-		svg = makePcbLongPadSvg(pins, expectedFileName.contains("alternating"));
+		svg = makePcbLongPadSvg(pins, expectedFileName.contains("alternating"), spacingString);
 	}
 	else if (expectedFileName.contains("molex")) {
 		svg = makePcbMolexSvg(pins, spacingString);
@@ -652,14 +648,14 @@ QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
 	                       ;
 	if (sizeTenth) {
 		if (isDouble) {
-			svg += TextUtils::incrementTemplate(templateFile, pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, doubleCopyPinFunction, NULL);
+			svg += TextUtils::incrementTemplate(templateFile, pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, doubleCopyPinFunction, nullptr);
 		}
 		else {
-			svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, stdIncCopyPinFunction, NULL);
+			svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, stdIncCopyPinFunction, nullptr);
 		}
 	}
 	else {
-		svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+		svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 	}
 
 
@@ -707,7 +703,7 @@ QString PinHeader::makeBreadboardSvg(const QString & expectedFileName)
 
 	QString svg = header.arg(unitHeight * pins).arg(unitHeightPoints * pins);
 	svg += TextUtils::incrementTemplate(QString(":/resources/templates/generic_%1_pin_header_bread_template.txt").arg(fileForm),
-	                                    pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	                                    pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 
 	svg += "</g>\n</svg>";
 
@@ -745,7 +741,7 @@ QString PinHeader::makeBreadboardDoubleSvg(const QString & expectedFileName, int
 	                                    pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::negIncCopyPinFunction, userData);
 
 	svg += TextUtils::incrementTemplate(QString(":/resources/templates/generic_%1_pin_header_bread_2nd_template.txt").arg(fileForm),
-	                                    pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	                                    pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 
 	svg += "</g>\n</svg>";
 
@@ -795,16 +791,16 @@ QString PinHeader::makeBreadboardShroudedSvg(int pins)
 
 	double increment = 100;  // 0.1in
 
-	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 2) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 2) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	svg.replace("{", "[");
 	svg.replace("}", "]");
-	svg = TextUtils::incrementTemplateString(svg, 1, increment * (pins - 2) / 4, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	svg = TextUtils::incrementTemplateString(svg, 1, increment * (pins - 2) / 4, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
 	int userData[2];
 	userData[0] = pins;
 	userData[1] = 1;
 	QString repeatTs = TextUtils::incrementTemplateString(repeatT, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::negIncCopyPinFunction, userData);
-	QString repeatBs = TextUtils::incrementTemplateString(repeatB, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	QString repeatBs = TextUtils::incrementTemplateString(repeatB, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 2) / 1000.0).arg(repeatTs).arg(repeatBs);
 }
@@ -821,10 +817,10 @@ QString PinHeader::makePcbShroudedSvg(int pins)
 	               "%3\n"
 	               "</g>\n"
 	               "</g>\n"
-	               "<g id='silkscreen' >\n"
-	               "<rect x='40' y='40' width='3462' height='[3872]' fill='none' stroke='#ffffff' stroke-width='80'/>\n"
-	               "<path d='m473,{1150} 0,-{677} 2596,0 0,[3076] -2596,0 0,-{677}' fill='none' stroke='#ffffff' stroke-width='80'/>\n"
-	               "<rect x='40' y='{1150}' width='550' height='1652' fill='none' stroke='#ffffff' stroke-width='80'/>\n"
+		       "<g id='silkscreen' >\n"
+		       "<rect x='40' y='40' width='3462' height='[3872]' fill='none' stroke='black' stroke-width='80'/>\n"
+		       "<path d='m473,{1150} 0,-{677} 2596,0 0,[3076] -2596,0 0,-{677}' fill='none' stroke='black' stroke-width='80'/>\n"
+		       "<rect x='40' y='{1150}' width='550' height='1652' fill='none' stroke='black' stroke-width='80'/>\n"
 	               "</g>\n"
 	               "</svg>\n"
 	              );
@@ -836,27 +832,30 @@ QString PinHeader::makePcbShroudedSvg(int pins)
 
 	double increment = 1000;  // 0.1in
 
-	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 2) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header, 1, increment * (pins - 2) / 2, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	svg.replace("{", "[");
 	svg.replace("}", "]");
-	svg = TextUtils::incrementTemplateString(svg, 1, increment * (pins - 2) / 4, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	svg = TextUtils::incrementTemplateString(svg, 1, increment * (pins - 2) / 4, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
 	int userData[2];
 	userData[0] = pins;
 	userData[1] = 1;
 	QString repeatLs = TextUtils::incrementTemplateString(repeatR, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::negIncCopyPinFunction, userData);
-	QString repeatRs = TextUtils::incrementTemplateString(repeatL, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	QString repeatRs = TextUtils::incrementTemplateString(repeatL, pins / 2, increment, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 
 	return svg.arg(TextUtils::getViewBoxCoord(svg, 3) / 10000.0).arg(repeatLs).arg(repeatRs);
 }
 
-QString PinHeader::makePcbLongPadSvg(int pins, bool lock)
+QString PinHeader::makePcbLongPadSvg(int pins, bool isAlternating, const QString & spacingString)
 {
-	if (lock) return makePcbLongPadLockSvg(pins);
+	if (isAlternating) return makePcbLongPadAlternatingSvg(pins, spacingString);
 
 	double dpi = 25.4;
 	double originalHeight = 0.108;           // inches
 	double increment = 0.1;                 // inches
+	if (auto inc = TextUtils::convertToInches(spacingString, false)) {
+		increment = *inc;
+	}
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 	               "<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
 	               "x='0in' y='0in' width='0.148in' height='%1in' viewBox='0 0 3.7592 %2'>\n"
@@ -893,11 +892,14 @@ QString PinHeader::makePcbLongPadSvg(int pins, bool lock)
 	return header.arg(totalHeight).arg(totalHeight * dpi).arg(repeats).arg(totalHeight * dpi - lineOffset);
 }
 
-QString PinHeader::makePcbLongPadLockSvg(int pins)
+QString PinHeader::makePcbLongPadAlternatingSvg(int pins, const QString & spacingString)
 {
 	double dpi = 25.4;
 	double originalHeight = 0.108;           // inches
 	double increment = 0.1;                 // inches
+	if (auto inc = TextUtils::convertToInches(spacingString, false)) {
+		increment = *inc;
+	}
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 	               "<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
 	               "x='0in' y='0in' width='0.13in' height='%1in' viewBox='0 0 3.302 %2'>\n"
@@ -923,11 +925,15 @@ QString PinHeader::makePcbLongPadLockSvg(int pins)
 	               "<line class='other' x1='2.6416' y1='[2.6416]' x2='2.921' y2='[2.3622]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n"
 	               "<line class='other' x1='1.651' y1='[2.6416]' x2='0.6604' y2='[2.6416]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n"
 	               "<line class='other' x1='0.6604' y1='[2.6416]' x2='0.381' y2='[2.3622]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n");
-	bottom = TextUtils::incrementTemplateString(bottom, 1, increment * dpi * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	bottom = TextUtils::incrementTemplateString(bottom, 1, increment * dpi * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 
-
-	QString between("<line class='other' x1='1.651' y1='[2.8956]' x2='1.651' y2='[2.3876]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n");
-	QString betweens = TextUtils::incrementTemplateString(between, pins - 1, increment * dpi, TextUtils::standardMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString between;
+	QString betweens;
+	double lineLength = 0.508 + increment * dpi - 0.1 * dpi;
+	if (lineLength > 0.0) {
+		between = QString("<line class='other' x1='1.651' y1='[%1]' x2='1.651' y2='[2.3876]' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>\n").arg(2.3876 + lineLength);
+		betweens = TextUtils::incrementTemplateString(between, pins - 1, increment * dpi, TextUtils::standardMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
+	}
 
 	double ncy = 1.3716;
 	double ncx = 1.524;
@@ -958,9 +964,9 @@ QString PinHeader::makePcbMolexSvg(int pins, const QString & spacingString)
 	double dpi = 25.4;
 	double originalHeight = 0.105;           // inches
 	double increment = 0.1;                 // inches
-	bool ok;
-	double inc = TextUtils::convertToInches(spacingString, &ok, false);
-	if (ok) increment = inc;
+	if (auto inc = TextUtils::convertToInches(spacingString, false)) {
+		increment = *inc;
+	}
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 	               "<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
 	               "x='0in' y='0in' width='0.225in' height='%1in' viewBox='0 0 5.715 %2'>\n"
@@ -1008,7 +1014,7 @@ QString PinHeader::makePcbSMDSvg(const QString & expectedFileName)
 	               "xmlns='http://www.w3.org/2000/svg'  x='0in' y='0in' width='%1in' "
 	               "height='%4in' viewBox='0 0 %2 %5'>\n"
 	               "<g id='silkscreen' >\n"
-	               "<rect x='2' y='86.708672' width='%3' height='%6' fill='none' stroke='#ffffff' stroke-width='4' stroke-opacity='1'/>\n"
+		       "<rect x='2' y='86.708672' width='%3' height='%6' fill='none' stroke='black' stroke-width='4' stroke-opacity='1'/>\n"
 	               "</g>\n"
 	               "<g id='copper1'>\n");
 

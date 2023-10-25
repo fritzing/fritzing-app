@@ -55,6 +55,10 @@ public:
 	QList<QObject*> orderedChildren();
 	void reloadPart(const QString & moduleID);
 
+	static const int PARTSBIN_ICON_IMG_WIDTH;
+	static const int PARTSBIN_ICON_IMG_HEIGHT;
+
+
 protected:
 	void doClear();
 	void moveItem(int fromIndex, int toIndex);
@@ -78,15 +82,15 @@ protected:
 	SvgIconWidget * svgIconWidgetAt(int x, int y);
 	ItemBase * loadItemBase(const QString & moduleID, ItemBase::PluralType &);
 
-public slots:
+public Q_SLOTS:
 	void setSelected(int position, bool doEmit=false);
 	void informNewSelection();
 	void itemMoved(int fromIndex, int toIndex);
 
-protected slots:
+protected Q_SLOTS:
 	void showContextMenu(const QPoint& pos);
 
-signals:
+Q_SIGNALS:
 	void informItemMoved(int fromIndex, int toIndex);
 	void selectionChanged(int index);
 	void settingItem();

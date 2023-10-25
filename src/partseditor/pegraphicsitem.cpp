@@ -31,14 +31,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 static QVector<qreal> Dashes;
-static const int DashLength = 3;
+static constexpr int DashLength = 3;
 
 static bool ShiftDown = false;
 static QPointF OriginalShiftPos;
 static bool ShiftX = false;
 static bool ShiftY = false;
-static bool SpaceBarWasPressed = false;
-static const double MinMouseMove = 2;
+static constexpr double MinMouseMove = 2;
 static const QColor NormalColor(0, 0, 255);
 static const QColor PickColor(255, 0, 255);
 
@@ -98,9 +97,9 @@ void PEGraphicsItem::wheelEvent(QGraphicsSceneWheelEvent * event) {
 	m_wheelAccum = 0;
 
 	QList<PEGraphicsItem *> items;
-	foreach (QGraphicsItem * item, scene()->items(event->scenePos())) {
-		PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
-		if (pegi) items.append(pegi);
+	Q_FOREACH (QGraphicsItem * item, scene()->items(event->scenePos())) {
+		auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
+		if (pegi != nullptr) items.append(pegi);
 	}
 
 	if (items.count() < 2) return;
@@ -148,15 +147,15 @@ void PEGraphicsItem::setHighlighted(bool highlighted) {
 	if (highlighted) {
 		m_highlighted = true;
 		setOpacity(0.4);
-		foreach (QGraphicsItem * item, scene()->items()) {
-			PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
-			if (pegi == NULL) continue;
+		Q_FOREACH (QGraphicsItem * item, scene()->items()) {
+			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
+			if (pegi == nullptr) continue;
 			if (pegi == this) continue;
 			if (!pegi->highlighted()) continue;
 
 			pegi->setHighlighted(false);
 		}
-		emit highlightSignal(this);
+		Q_EMIT highlightSignal(this);
 	}
 	else {
 		m_highlighted = false;
@@ -248,9 +247,9 @@ bool PEGraphicsItem::showingTerminalPoint() {
 void PEGraphicsItem::showMarquee(bool show) {
 	if (show) {
 		m_showMarquee = true;
-		foreach (QGraphicsItem * item, scene()->items()) {
-			PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
-			if (pegi == NULL) continue;
+		Q_FOREACH (QGraphicsItem * item, scene()->items()) {
+			auto * pegi = dynamic_cast<PEGraphicsItem *>(item);
+			if (pegi == nullptr) continue;
 			if (pegi == this) continue;
 			if (!pegi->showingMarquee()) continue;
 
@@ -292,19 +291,19 @@ void PEGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 		return;
 	}
 
-	if (!event->buttons() && Qt::LeftButton) {
+	if (!event->buttons() && (Qt::LeftButton != 0u)) {
 		event->ignore();
 		return;
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView && infoGraphicsView->spaceBarIsPressed()) {
+	if ((infoGraphicsView != nullptr) && infoGraphicsView->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
 
 	bool ignore;
-	emit mousePressedSignal(this, ignore);
+	Q_EMIT mousePressedSignal(this, ignore);
 	if (ignore) {
 		event->ignore();
 		return;
@@ -370,7 +369,7 @@ void PEGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 	if (newTerminalPoint.y() < 0) newTerminalPoint.setY(0);
 	else if (newTerminalPoint.y() > rect().height()) newTerminalPoint.setY(rect().height());
 	m_terminalPoint = newTerminalPoint;
-	emit terminalPointMoved(this, newTerminalPoint);
+	Q_EMIT terminalPointMoved(this, newTerminalPoint);
 	update();
 }
 
@@ -379,12 +378,12 @@ void PEGraphicsItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *) {
 	if (m_dragTerminalPoint) {
 		m_dragTerminalPoint = false;
 		if (m_terminalPointOrigin != m_terminalPoint) {
-			emit terminalPointChanged(this, m_terminalPointOrigin, m_terminalPoint);
+			Q_EMIT terminalPointChanged(this, m_terminalPointOrigin, m_terminalPoint);
 		}
 	}
 	else {
 		// relocate the connector
-		emit mouseReleasedSignal(this);
+		Q_EMIT mouseReleasedSignal(this);
 	}
 }
 

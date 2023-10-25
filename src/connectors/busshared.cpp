@@ -21,7 +21,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "busshared.h"
 #include "connectorshared.h"
 #include "../debugdialog.h"
-#include "connectoritem.h"
 #include "../utils/textutils.h"
 
 BusShared::BusShared(const QString & id)
@@ -47,7 +46,7 @@ void BusShared::initConnector(QDomElement & connector, const QHash<QString, QPoi
 	if (id.isEmpty()) return;
 
 	ConnectorShared * connectorShared = connectorHash.value(id);
-	if (connectorShared == NULL) {
+	if (connectorShared == nullptr) {
 		QDomDocument document = connector.ownerDocument();
 		DebugDialog::debug(QString("no connector is found for bus nodeMember %1 in %2")
 		                   .arg(id)

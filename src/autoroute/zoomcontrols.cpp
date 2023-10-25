@@ -19,8 +19,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "zoomcontrols.h"
-#include "../debugdialog.h"
 #include "../utils/zoomslider.h"
+
+#include <QEnterEvent>
 
 ZoomButton::ZoomButton(QBoxLayout::Direction dir, ZoomButton::ZoomType type, ZoomableGraphicsView* view, QWidget *parent) : QLabel(parent)
 {
@@ -50,11 +51,11 @@ void ZoomButton::zoom() {
 void ZoomButton::mousePressEvent(QMouseEvent *event) {
 	//QLabel::mousePressEvent(event);
 	Q_UNUSED(event);
-	emit clicked();
+	Q_EMIT clicked();
 }
 
 void ZoomButton::enterEvent(QEvent *event) {
-	QLabel::enterEvent(event);
+	QLabel::enterEvent((QEnterEvent *)event);
 }
 
 void ZoomButton::leaveEvent(QEvent *event) {
@@ -74,7 +75,7 @@ ZoomControlsPrivate::ZoomControlsPrivate(ZoomableGraphicsView* view, QBoxLayout:
 	m_boxLayout = new QBoxLayout(dir,this);
 	m_boxLayout->addWidget(m_zoomInButton);
 	m_boxLayout->addWidget(m_zoomOutButton);
-	m_boxLayout->setMargin(2);
+	m_boxLayout->setContentsMargins(2, 2, 2, 2);
 	m_boxLayout->setSpacing(2);
 
 	setStyleSheet("background-color: transparent;");

@@ -48,6 +48,7 @@ public:
 	static const QString PasteMaskBottomSuffix;
 	static const QString DrillSuffix;
 	static const QString OutlineSuffix;
+	static const QString PickAndPlaceSuffix;
 	static const QString MagicBoardOutlineID;
 
 	static const double MaskClearanceMils;

@@ -35,6 +35,15 @@ class PointRect {
 			processed(_processed),
 			svgVisible(_svgVisible) { }
 		PointRect(const PointRect& other);
+		PointRect& operator=(const PointRect& pointRect) {
+			rect = pointRect.rect;
+			point = pointRect.point;
+			processed = pointRect.processed;
+			svgVisible = pointRect.svgVisible;
+			return *this;
+		}
+
+
 		void unprocess() noexcept;
 		void setInvisible() noexcept;
 		constexpr QPointF getPoint() const noexcept { return point; }

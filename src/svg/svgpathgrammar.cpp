@@ -2,8 +2,8 @@
 #include "svgpathgrammar_p.h"
 
 const char *const SVGPathGrammar::spell [] = {
-	"end of file", 0, 0, 0, 0, 0, 0, 0, 0, 0,
-	0, 0, 0, 0, 0,
+	"end of file", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+	nullptr, nullptr, nullptr, nullptr, nullptr,
 #ifndef QLALR_NO_SVGPATHGRAMMAR_DEBUG_INFO
 	"path_data", "moveto_drawto_command_groups", "moveto_drawto_command_group", "moveto", "drawto_commands",
 	"drawto_command", "fakeclosepath", "closepath", "lineto", "horizontal_lineto", "vertical_lineto", "curveto", "smooth_curveto", "quadratic_bezier_curveto", "smooth_quadratic_bezier_curveto",

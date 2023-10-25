@@ -20,12 +20,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "screwterminal.h"
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
-#include "../sketch/infographicsview.h"
-#include "../commands.h"
 #include "../utils/textutils.h"
 #include "../utils/schematicrectconstants.h"
-#include "partlabel.h"
 #include "partfactory.h"
 
 #include <QDomNodeList>
@@ -34,8 +30,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QLineEdit>
 
 
-static const int MinPins = 2;
-static const int MaxPins = 20;
+static constexpr int MinPins = 2;
+static constexpr int MaxPins = 20;
 static QHash<QString, QString> Spacings;
 
 static HoleClassThing TheHoleThing;
@@ -104,7 +100,7 @@ QString ScrewTerminal::genModuleID(QMap<QString, QString> & currPropsMap)
 	QString spacing = currPropsMap.value("pin spacing");
 	QString pins = currPropsMap.value("pins");
 
-	foreach (QString key, Spacings.keys()) {
+	Q_FOREACH (QString key, Spacings.keys()) {
 		if (Spacings.value(key).compare(spacing, Qt::CaseInsensitive) == 0) {
 			return QString("screw_terminal_%1_%2").arg(pins).arg(key);
 		}
@@ -139,9 +135,9 @@ QString ScrewTerminal::makeBreadboardSvg(const QString & expectedFileName)
 	               "<rect id='lowerrect' width='[96.012]' x='0' y='86.1147' fill='#123C66' height='71.4784' stroke-width='0' />\n");
 
 
-	QString svg = TextUtils::incrementTemplateString(header.arg(increment * pins), 1, incrementPoints * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header.arg(increment * pins), 1, incrementPoints * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	svg += TextUtils::incrementTemplate(":/resources/templates/screw_terminal_bread_template.txt",
-	                                    pins, incrementPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	                                    pins, incrementPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 	svg += "</g>\n</svg>";
 
 	return svg;
@@ -187,8 +183,8 @@ QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName)
 	         ;
 	repeat.replace("percent", "%");
 
-	QString svg = TextUtils::incrementTemplateString(header.arg(increment * pins).arg(incrementPoints), 1, incrementPoints * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
-	svg += TextUtils::incrementTemplateString(repeat, pins, incrementPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header.arg(increment * pins).arg(incrementPoints), 1, incrementPoints * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
+	svg += TextUtils::incrementTemplateString(repeat, pins, incrementPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 	svg += "</g>\n</svg>";
 
 	return svg;
@@ -213,8 +209,8 @@ QString ScrewTerminal::obsoleteMakeSchematicSvg(const QString & expectedFileName
 	               "<circle fill='none' stroke-width='2' stroke='#000000' cx='52.9215' cy='[9.723]' r='8.7195' />\n"
 	               "<line id='line' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' x1='43.202' y1='[9.723]' x2='16.452' y2='[9.723]'/>\n");
 
-	QString svg = TextUtils::incrementTemplateString(header.arg(increment * pins).arg(incrementPoints), 1, incrementPoints * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
-	svg += TextUtils::incrementTemplateString(repeat, pins, incrementPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header.arg(increment * pins).arg(incrementPoints), 1, incrementPoints * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
+	svg += TextUtils::incrementTemplateString(repeat, pins, incrementPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, nullptr);
 	svg += "</g>\n</svg>";
 
 	return svg;
@@ -244,11 +240,11 @@ QString ScrewTerminal::makePcbSvg(const QString & originalExpectedFileName)
 	QString header("<?xml version='1.0' encoding='UTF-8'?>\n"
 	               "<svg baseProfile='tiny' version='1.2' height='%3in' width='%1in' viewBox='0 0 %2 [40.0]' >\n"
 	               "<g id='silkscreen'>\n"
-	               "<line id='vertical-left' stroke='white' stroke-width='10' x1='20' x2='20' y1='20' y2='[30.0]'/>\n"
-	               "<line id='bottom' stroke='white' stroke-width='10' x1='20' x2='%4' y1='[30.0]' y2='[30.0]'/>\n"
-	               "<line id='vertical-right' stroke='white' stroke-width='10' x1='%4' x2='%4' y1='[30.0]' y2='20'/>\n"
-	               "<line id='top' stroke='white' stroke-width='10' x1='%4' x2='20' y1='20' y2='20'/>\n"
-	               "<line id='mid-vertical' stroke='white' stroke-width='5' x1='%5' x2='%5' y1='[30.0]' y2='20'/>\n"
+		       "<line id='vertical-left' stroke='black' stroke-width='10' x1='20' x2='20' y1='20' y2='[30.0]'/>\n"
+		       "<line id='bottom' stroke='black' stroke-width='10' x1='20' x2='%4' y1='[30.0]' y2='[30.0]'/>\n"
+		       "<line id='vertical-right' stroke='black' stroke-width='10' x1='%4' x2='%4' y1='[30.0]' y2='20'/>\n"
+		       "<line id='top' stroke='black' stroke-width='10' x1='%4' x2='20' y1='20' y2='20'/>\n"
+		       "<line id='mid-vertical' stroke='black' stroke-width='5' x1='%5' x2='%5' y1='[30.0]' y2='20'/>\n"
 	               "</g>\n"
 	               "<g id='copper1'>\n"
 	               "<g id='copper0'>\n"
@@ -263,7 +259,7 @@ QString ScrewTerminal::makePcbSvg(const QString & originalExpectedFileName)
 	         .arg(verticalX * dpi)
 	         .arg(centerX - 30)
 	         .arg(initialY - 30);
-	QString svg = TextUtils::incrementTemplateString(header, 1, pins * dpi * spacing, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	QString svg = TextUtils::incrementTemplateString(header, 1, pins * dpi * spacing, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, nullptr);
 	for (int i = 0; i < pins; i++) {
 		svg += repeat.arg(centerX).arg(initialY + (i * dpi * spacing)).arg(i);
 	}

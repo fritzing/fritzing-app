@@ -39,10 +39,10 @@ protected:
 
 	bool mimeIsAction(const class QMimeData* m, const QString& action);
 
-public slots:
+public Q_SLOTS:
 	void setIndex();
 
-protected slots:
+protected Q_SLOTS:
 	void showContextMenu(const QPoint &point);
 
 protected:

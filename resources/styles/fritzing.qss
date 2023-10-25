@@ -957,7 +957,7 @@ WelcomeView QFrame QLabel {
 #tip  {
 	background: #D5E1E9;
 	border: none;
-	font-family: "OCRA";
+	font-family: "OCR-Fritzing-mono";
 	color:#2e94af;
 	font-size:13px;
 	qproperty-wordWrap: true;
@@ -1170,6 +1170,7 @@ QRadioButton::indicator:checked:pressed  {
 	padding: 0px;
 }
 
+
 #exportButton,
 #viewFromButton,
 #activeLayerButton,
@@ -1283,6 +1284,41 @@ QRadioButton::indicator:checked:pressed  {
 	width:80px;
 	margin:5px 10px 5px 5px;
 }
+
+
+#sketchAreaToolbar #stopSimulationButton,
+#sketchAreaToolbar #simulationButton{
+    color:#fff;
+	border-bottom: 5px solid #215c6a;
+	background:#3799b0;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+}
+
+#sketchAreaToolbar #stopSimulationButton:hover,
+#sketchAreaToolbar #simulationButton:hover{
+    color:#fff;
+	border-bottom: 5px solid #2f95b0;
+	background:#6db5c8;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+}
+
+#sketchAreaToolbar #stopSimulationButton:pressed,
+#sketchAreaToolbar #simulationButton:pressed{
+    color:#fff;
+	border-bottom: 5px solid #184b58;
+	background:#2a869e;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+}
+
 
 
 #sketchAreaToolbar #orderFabButton{
@@ -1530,8 +1566,8 @@ HtmlInfoView QScrollBar:vertical {
 
 #iconFrame { /*background-color in the icon-row*/
 	background-color: #d9d9d9;
-	max-height: 34px;
-	min-height: 34px;
+	max-height: 82px;
+	min-height: 82px;
 	margin: 0px 0px 0px 5px;
 	padding: 0px;
 }
@@ -1544,6 +1580,7 @@ HtmlInfoView QScrollBar:vertical {
 	font-size: 11px;
 	padding: 0px;
 	margin: 0px;
+	color: rgb(51,51,51);
 }
 
 
@@ -1637,18 +1674,33 @@ HtmlInfoView QScrollBar:vertical {
 }
 #infoViewComboBox:!editable:disabled {
 	background: #d9d9d9;
+	color:#323232;
 }
 #infoViewComboBox:editable:disabled {
 	background: #d9d9d9;
+	color:#323232;
 }
 
+#infoViewComboBox:!editable:hover {
+    background: #fff;
+	color: rgb(0,0,0);
+}
 #infoViewComboBox:!editable {
 	background:#ececec;
+	color: rgb(0,0,0);
 }
 #infoViewComboBox:hover  {
-	background: #fff;
+    background: #fff;
+	color: #153c46;
 }
+#infoViewComboBox:editable:!hover {
+    background:#ececec;
+	color: rgb(0,0,0);
+}
+
 #infoViewComboBox:on  {
+    background:#fff;
+	color: #006737;
 }
 
 /* drop-down arrow of the combobox */
@@ -1699,18 +1751,23 @@ HtmlInfoView QScrollBar:vertical {
 }
 
 
+#infoViewDoubleSpinBox,
 #infoViewLineEdit {
 	font-size: 11px;
 	color: rgb(0,0,0);
-	background: #fff;
+	background: #ececec;
 	border: none;
 }
+
+#infoViewDoubleSpinBox:hover, #infoViewDoubleSpinBox:focus,
 #infoViewLineEdit:hover, #infoViewLineEdit:focus  {
 	background:#fff;
+	color: #153c46;
 }
 
+#infoViewDoubleSpinBox:disabled,
 #infoViewLineEdit:disabled {
-	background: #d9d9d9;
+    background: #ececec;
 	color: #3c3c3c;
 }
 
@@ -1769,6 +1826,7 @@ HtmlInfoView QScrollBar:vertical {
 	margin-right: 2px;
 }
 
+
 /* Connections */
 #connectionsFrame {
 	margin: 0px;
@@ -1820,7 +1878,20 @@ HtmlInfoView QScrollBar:vertical {
 SearchLineEdit,  #searchStackWidget {
 	max-height: 20px;
 	height: 20px;
+	color: rgb(0,0,0);
+	background: #fff;
 }
+
+#SearchLineEdit:hover {
+    background:#fff;
+	color: #153c46;
+}
+
+#SearchLineEdit:disabled {
+    background: #ececec;
+	color: #3c3c3c;
+}
+
 
 #partsBinLabel { /*the chosen libery-labelname and background*/
 	background-color: #d9d9d9;
@@ -2178,6 +2249,23 @@ SearchLineEdit {
 	border: 1px solid #8c8c8c;
 }
 
+
+#drcListWidget {
+    background-color:#d9d9d9;
+	color: #333;
+}
+
+#drcListWidget::item {
+    color:#333;
+	background-color:#ececec;
+}
+
+#drcListWidget::item::active {
+    color:#333;
+	background-color:#000010ff;
+}
+
+
 /*############# aboutbox ################*/
 
 
@@ -2193,11 +2281,6 @@ QDialog QTabWidget {
 	color:#333333;
 	}
 
-
-PCBSketchWidget QListWidget {
-
-	background-color:#0ff;
-}
 
 QDialog QFrame,
 QDialog QFrame QLabel {

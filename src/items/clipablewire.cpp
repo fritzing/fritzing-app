@@ -63,7 +63,7 @@ int CrossingsTest( double pgon[][2], int numverts, double point[2] )
 
 	vtx0 = pgon[numverts-1] ;
 	/* get test bit for above/below X axis */
-	yflag0 = ( vtx0[YCOORD] >= ty ) ;
+	yflag0 = static_cast<int>( vtx0[YCOORD] >= ty ) ;
 	vtx1 = pgon[0] ;
 
 #ifdef	WINDING
@@ -74,24 +74,24 @@ int CrossingsTest( double pgon[][2], int numverts, double point[2] )
 #ifdef	CONVEX
 	line_flag = 0 ;
 #endif
-	for ( j = numverts+1 ; --j ; ) {
+	for ( j = numverts+1 ; --j != 0 ; ) {
 
-		yflag1 = ( vtx1[YCOORD] >= ty ) ;
+		yflag1 = static_cast<int>( vtx1[YCOORD] >= ty ) ;
 		/* check if endpoints straddle (are on opposite sides) of X axis
 		 * (i.e. the Y's differ); if so, +X ray could intersect this edge.
 		 */
 		if ( yflag0 != yflag1 ) {
-			xflag0 = ( vtx0[XCOORD] >= tx ) ;
+			xflag0 = static_cast<int>( vtx0[XCOORD] >= tx ) ;
 			/* check if endpoints are on same side of the Y axis (i.e. X's
 			 * are the same); if so, it's easy to test if edge hits or misses.
 			 */
-			if ( xflag0 == ( vtx1[XCOORD] >= tx ) ) {
+			if ( xflag0 == static_cast<int>( vtx1[XCOORD] >= tx ) ) {
 
 				/* if edge's X values both right of the point, must hit */
 #ifdef	WINDING
 				if ( xflag0 ) crossings += ( yflag0 ? -1 : 1 ) ;
 #else
-				if ( xflag0 ) inside_flag = !inside_flag ;
+				if ( xflag0 != 0 ) inside_flag = static_cast<int>(inside_flag) == 0 ;
 #endif
 			} else {
 				/* compute intersection of pgon segment with +X ray, note
@@ -102,16 +102,16 @@ int CrossingsTest( double pgon[][2], int numverts, double point[2] )
 #ifdef	WINDING
 					crossings += ( yflag0 ? -1 : 1 ) ;
 #else
-					inside_flag = !inside_flag ;
+					inside_flag = static_cast<int>(inside_flag) == 0 ;
 #endif
 				}
 			}
 #ifdef	CONVEX
 			/* if this is second edge hit, then done testing */
-			if ( line_flag ) goto Exit ;
+			if ( line_flag != 0 ) goto Exit ;
 
 			/* note that one edge has been hit by the ray's line */
-			line_flag = true;
+			line_flag = 1;
 #endif
 		}
 
@@ -158,7 +158,7 @@ const QLineF & ClipableWire::getPaintLine() {
 
 	int t0c = 0;
 	ConnectorItem* to0 = nullptr;
-	foreach (ConnectorItem * toConnectorItem, m_connector0->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, m_connector0->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to0 = toConnectorItem;
 			break;
@@ -168,7 +168,7 @@ const QLineF & ClipableWire::getPaintLine() {
 
 	int t1c = 0;
 	ConnectorItem* to1 = nullptr;
-	foreach (ConnectorItem * toConnectorItem, m_connector1->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, m_connector1->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to1 = toConnectorItem;
 			break;
@@ -258,14 +258,24 @@ QPointF ClipableWire::findIntersection(ConnectorItem * connectorItem, const QPoi
 	QRectF r = connectorItem->rect();
 	r.adjust(connectorRectClipInset, connectorRectClipInset, -connectorRectClipInset, -connectorRectClipInset);	// inset it a little bit so the wire touches
 	QPolygonF poly = this->mapFromScene(connectorItem->mapToScene(r));
-	QLineF l1 = this->line();
-	int count = poly.count();
+	QLineF wireLine = this->line();
+	int count = poly.count() - 1;
+	bool foundIntersection = false;
+	QPointF firstIntersectionPoint;
 	for (int i = 0; i < count; i++) {
 		QLineF l2(poly[i], poly[(i + 1) % count]);
 		QPointF intersectingPoint;
-		if (l1.intersect(l2, &intersectingPoint) == QLineF::BoundedIntersection) {
-			return intersectingPoint;
+		if (wireLine.intersects(l2, &intersectingPoint) == QLineF::BoundedIntersection) {
+			if (!foundIntersection) {
+				firstIntersectionPoint = intersectingPoint;
+				foundIntersection = true;
+			} else {
+				return std::max(firstIntersectionPoint, intersectingPoint, [p](const QPointF & a, const QPointF & b) { return QLineF(p, a).length() < QLineF(p, b).length();});
+			}
 		}
+	}
+	if (foundIntersection) {
+		return firstIntersectionPoint;
 	}
 
 	return this->mapFromScene(connectorItem->mapToScene(r.center()));
@@ -278,7 +288,7 @@ bool ClipableWire::filterMousePressConnectorEvent(ConnectorItem * connectorItem,
 	if (m_viewID != ViewLayer::PCBView) return false;
 
 	ConnectorItem * to = nullptr;
-	foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to = toConnectorItem;
 			break;
@@ -312,14 +322,14 @@ void ClipableWire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, Con
 	// track mouse move events for hover redirecting
 
 	ConnectorItem * to = nullptr;
-	foreach (ConnectorItem * toConnectorItem, item->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, item->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			to = toConnectorItem;
 			break;
 		}
 	}
 
-	if (to) {
+	if (to != nullptr) {
 		m_trackHoverItem = to;
 		m_trackHoverLastWireItem = nullptr;
 		m_trackHoverLastItem = nullptr;
@@ -336,7 +346,7 @@ void ClipableWire::hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, Con
 }
 
 void ClipableWire::hoverMoveConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item) {
-	if (m_trackHoverItem) {
+	if (m_trackHoverItem != nullptr) {
 		dispatchHover(event->scenePos());
 	}
 
@@ -351,10 +361,10 @@ void ClipableWire::dispatchHover(QPointF scenePos) {
 		inInner = true;
 	}
 	else {
-		foreach (ConnectorItem * toConnectorItem, m_trackHoverItem->connectedToItems()) {
+		Q_FOREACH (ConnectorItem * toConnectorItem, m_trackHoverItem->connectedToItems()) {
 			if (toConnectorItem->attachedToItemType() != ModelPart::Wire) continue;
 
-			ClipableWire * w = dynamic_cast<ClipableWire *>(toConnectorItem->attachedTo());
+			auto * w = dynamic_cast<ClipableWire *>(toConnectorItem->attachedTo());
 			if (w == nullptr) continue;
 			if (w->getRatsnest()) continue;									// is there a better way to check this?
 
@@ -378,7 +388,7 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 			// no change
 			return;
 		}
-		if (m_trackHoverLastWireItem) {
+		if (m_trackHoverLastWireItem != nullptr) {
 			((ItemBase *) m_trackHoverLastWireItem)->hoverLeaveConnectorItem();
 			m_trackHoverLastWireItem = nullptr;
 		}
@@ -387,18 +397,18 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 		m_trackHoverLastItem->setHoverColor();
 		m_trackHoverLastItem->attachedTo()->hoverEnterConnectorItem();
 	}
-	else if (inWire) {
+	else if (inWire != nullptr) {
 		if (m_trackHoverLastWireItem == inWire) {
 			// no change
 			return;
 		}
-		if (m_trackHoverLastItem) {
+		if (m_trackHoverLastItem != nullptr) {
 			QList<ConnectorItem *> visited;
 			m_trackHoverLastItem->restoreColor(visited);
 			m_trackHoverLastItem->attachedTo()->hoverLeaveConnectorItem();
 			m_trackHoverLastItem = nullptr;
 		}
-		if (m_trackHoverLastWireItem) {
+		if (m_trackHoverLastWireItem != nullptr) {
 			((ItemBase *) m_trackHoverLastWireItem)->hoverLeaveConnectorItem();
 		}
 		m_trackHoverLastWireItem = inWire;
@@ -455,7 +465,7 @@ bool ClipableWire::insideSpoke(ClipableWire * wire, QPointF scenePos)
 	double point[2];
 	point[XCOORD] = mp.x();
 	point[YCOORD] = mp.y();
-	if (CrossingsTest(parallelogram, 4, point)) {
+	if (CrossingsTest(parallelogram, 4, point) != 0) {
 		return true;
 	}
 

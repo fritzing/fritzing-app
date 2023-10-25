@@ -156,6 +156,7 @@
 	<menuItem value="2 MHz" />
 	<menuItem value="4 MHz" />
 	<menuItem value="8 MHz" />
+	<menuItem value="12 MHz" />
 	<menuItem value="16 MHz" />
 	<menuItem value="20 MHz" />
 	<menuItem value="25 MHz" />
@@ -225,23 +226,107 @@
 	<menuItem value="12.1" />
 </property>
 
-<property  name="maximum resistance" symbol="&#937;" minValue="" maxValue="" defaultValue="" numeric="yes" editable="yes">
+<property  name="maximum resistance" symbol="&#937;" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">
 	<suffix suffix="PotentiometerModuleID"/>
 	<suffix suffix="alps-starter-pot9mm" />
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3MM-2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT-5MM"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT_PTH_S3_LOCK"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-SMD"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--PTH-KNOB"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-PTH"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3362U-2"/>
 </property>
 
-<property name="inductance" symbol="H" minValue="" maxValue="" defaultValue="" numeric="yes" editable="yes">
+<property name="inductance" symbol="H" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">
 	<suffix suffix="InductorModuleID"/>
 </property>
-
-  <property name="current" symbol="A" minValue="" maxValue="" defaultValue="" numeric="yes" editable="yes">
+<property  name="knob status" symbol="%" minValue="0" maxValue="100" defaultValue="50" numeric="yes" editable="yes">
+	<suffix suffix="PotentiometerModuleID"/>
+	<suffix suffix="alps-starter-pot9mm" />
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3MM-2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT-5MM"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT_PTH_S3_LOCK"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-SMD"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--PTH-KNOB"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-PTH"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3362U-2"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-MAM"/>
+	<suffix suffix="SparkFun-Electromechanical-POT_SWITCH-POT_PTH_SWITCH"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-TRIM"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-"/>
+	<suffix suffix="SparkFun-Electromechanical-SLIDER-"/>
+	<suffix suffix="SparkFun-Electromechanical-POT_SWITCH-POT_PTH"/>
+	<suffix suffix="SparkFun-Electromechanical-POT--RV16AF-20"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-100K_3362U"/>
+	<suffix suffix="ab15a34dfcf83e23a26e83fe8a5a4dac_2"/>
+	<suffix suffix="297c7ab01279c7b7f5c4ca77ec94554c"/>
+	<menuItem value="0" />
+	<menuItem value="25" />
+	<menuItem value="50" />
+	<menuItem value="75" />
+	<menuItem value="100" />
+</property>
+  <property name="current" symbol="A" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">
 	<suffix suffix="InductorModuleID"/>
 	<suffix suffix="LEDModuleID"/>
+	<suffix suffix="SuperfluxModuleID"/>
 </property>
 
-<property name="power" symbol="W" minValue="" maxValue="" defaultValue="" numeric="yes" editable="yes">
+<property name="power" symbol="W" minValue="0" maxValue="1000000000000" defaultValue="" numeric="yes" editable="yes">
 	<suffix suffix="ResistorModuleID"/>
+	<suffix suffix="PhotocellModuleID"/>
 	<suffix suffix="PotentiometerModuleID"/>
+	<suffix suffix="alps-starter-pot9mm" />
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3MM-2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--2"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT-5MM"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-TRIMPOT_PTH_S3_LOCK"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-SMD"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT--PTH-KNOB"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-PTH"/>
+	<suffix suffix="SparkFun-Electromechanical-TRIMPOT-3362U-2"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-MAM"/>
+	<suffix suffix="SparkFun-Electromechanical-POT_SWITCH-POT_PTH_SWITCH"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-TRIM"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-"/>
+	<suffix suffix="SparkFun-Electromechanical-SLIDER-"/>
+	<suffix suffix="SparkFun-Electromechanical-POT_SWITCH-POT_PTH"/>
+	<suffix suffix="SparkFun-Electromechanical-POT--RV16AF-20"/>
+	<suffix suffix="SparkFun-Electromechanical-POT-100K_3362U"/>
+	<suffix suffix="ab15a34dfcf83e23a26e83fe8a5a4dac_2"/>
+	<suffix suffix="297c7ab01279c7b7f5c4ca77ec94554c"/>
+
+</property>
+
+<property name="voltage (max)" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">
+	<suffix suffix="1000FADF10011leg"/>
+	<menuItem value="3.3" />
+	<menuItem value="5" />
+	<menuItem value="12" />
+	<menuItem value="24" />
+</property>
+
+<property name="voltage (min)" symbol="V" minValue="0" maxValue="1000" defaultValue="2.5" numeric="yes" editable="yes">
+	<suffix suffix="1000FADF10011leg"/>
+</property>
+
+<property name="distance to obstacle" symbol="%" minValue="0" maxValue="100" defaultValue="50" numeric="yes" editable="yes">
+	<suffix suffix="beab33bd7feee277622ef76dd6e79e4d"/>
+</property>
+
+<property  name="dark resistance @0.01lx" symbol="&#937;" minValue="0" maxValue="1000000000000" defaultValue="300000" numeric="yes" editable="yes">
+	<suffix suffix="PhotocellModuleID"/>
+</property>
+
+<property  name="light resistance @100lx" symbol="&#937;" minValue="0" maxValue="1000000000000" defaultValue="400" numeric="yes" editable="yes">
+	<suffix suffix="PhotocellModuleID"/>
+</property>
+
+<property  name="luminance" symbol="lx" minValue="0.001" maxValue="10000" defaultValue="10" numeric="yes" editable="yes">
+	<suffix suffix="PhotocellModuleID"/>
 </property>
 
 </properties>

@@ -29,7 +29,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QFileInfoList>
 #include <QFileInfo>
-#include <QRegExp>
 #include <QSettings>
 #include <QFontMetrics>
 #include <QTextStream>
@@ -47,7 +46,7 @@ SerialPortComboBox::SerialPortComboBox() : QComboBox() {
 }
 
 void SerialPortComboBox::showPopup() {
-	emit aboutToShow();
+	Q_EMIT aboutToShow();
 	QComboBox::showPopup();
 }
 
@@ -61,16 +60,16 @@ DeleteDialog::DeleteDialog(const QString & title, const QString & text, bool del
 	this->setWindowTitle(title);
 	this->setWindowFlags(Qt::MSWindowsFixedSizeDialogHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint |  Qt::WindowCloseButtonHint);
 
-	QVBoxLayout * vlayout = new QVBoxLayout(this);
+	auto * vlayout = new QVBoxLayout(this);
 
-	QFrame * frame  = new QFrame(this);
-	QHBoxLayout * hlayout = new QHBoxLayout(frame);
+	auto * frame  = new QFrame(this);
+	auto * hlayout = new QHBoxLayout(frame);
 
-	QLabel * iconLabel = new QLabel;
+	auto * iconLabel = new QLabel;
 	iconLabel->setPixmap(QMessageBox::standardIcon(QMessageBox::Warning));
 	iconLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
-	QLabel * label = new QLabel;
+	auto * label = new QLabel;
 	label->setWordWrap(true);
 	label->setText(text);
 
@@ -79,7 +78,7 @@ DeleteDialog::DeleteDialog(const QString & title, const QString & text, bool del
 
 	vlayout->addWidget(frame);
 
-	m_checkBox = NULL;
+	m_checkBox = nullptr;
 	if (deleteFileCheckBox) {
 		m_checkBox = new QCheckBox(tr("Also delete the file"));
 		vlayout->addSpacing(7);
@@ -104,14 +103,14 @@ void DeleteDialog::buttonClicked(QAbstractButton * button) {
 }
 
 bool DeleteDialog::deleteFileChecked() {
-	if (m_checkBox == NULL) return false;
+	if (m_checkBox == nullptr) return false;
 
 	return m_checkBox->isChecked();
 }
 
 /////////////////////////////////////////////
 
-QIcon * AsteriskIcon = NULL;
+QIcon * AsteriskIcon = nullptr;
 
 ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 {
@@ -119,17 +118,17 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 		UnableToProgramMessage = tr("While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.");
 	}
 
-	m_tabWidget = NULL;
-	while (parent) {
-		QTabWidget * tabWidget = qobject_cast<QTabWidget *>(parent);
-		if (tabWidget) {
+	m_tabWidget = nullptr;
+	while (parent != nullptr) {
+		auto * tabWidget = qobject_cast<QTabWidget *>(parent);
+		if (tabWidget != nullptr) {
 			m_tabWidget = tabWidget;
 			break;
 		}
 		parent = parent->parentWidget();
 	}
 
-	if (AsteriskIcon == NULL) {
+	if (AsteriskIcon == nullptr) {
 		AsteriskIcon = new QIcon(":/resources/images/icons/asterisk.png");
 	}
 
@@ -144,13 +143,15 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	m_filename = filename;
 
 	m_updateEnabled = false;
-	QGridLayout *editLayout = new QGridLayout(this);
-	editLayout->setMargin(0);
+	auto *editLayout = new QGridLayout(this);
+	editLayout->setContentsMargins(0, 0, 0, 0);
 	editLayout->setSpacing(0);
 
-	while (m_programWindow == NULL) {
+	while (m_programWindow == nullptr) {
 		m_programWindow = qobject_cast<ProgramWindow *>(parent);
-		parent = parent->parentWidget();
+		if (parent != nullptr) {
+			parent = parent->parentWidget();
+		}
 	}
 
 	// m_textEdit needs to be initialized before createFooter so
@@ -160,7 +161,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	m_textEdit->setFontFamily("Droid Sans Mono");
 	m_textEdit->setLineWrapMode(QTextEdit::NoWrap);
 	QFontMetrics fm(m_textEdit->currentFont());
-	m_textEdit->setTabStopWidth(fm.averageCharWidth() * 2);
+	m_textEdit->setTabStopDistance(fm.averageCharWidth() * 2);
 	m_textEdit->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 	m_textEdit->setUndoRedoEnabled(true);
 	connect(m_textEdit, SIGNAL(textChanged()), this, SLOT(textChanged()));
@@ -170,7 +171,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	connect(m_textEdit, SIGNAL(copyAvailable(bool)), this, SLOT(enableCut(bool))); // Reuse copy signal for cut
 	m_highlighter = new Highlighter(m_textEdit);
 
-	QSplitter * splitter = new QSplitter;
+	auto * splitter = new QSplitter;
 	splitter->setObjectName("splitter");
 	splitter->setOrientation(Qt::Vertical);
 	editLayout->addWidget(splitter, 1, 0);
@@ -193,24 +194,24 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	m_toolbar->setObjectName("sketchAreaToolbar");
 	m_toolbar->setFixedHeight(66);
 
-	QFrame *leftButtons = new QFrame(m_toolbar);
+	auto *leftButtons = new QFrame(m_toolbar);
 	m_leftButtonsContainer = new QHBoxLayout(leftButtons);
-	m_leftButtonsContainer->setMargin(0);
+	m_leftButtonsContainer->setContentsMargins(0, 0, 0, 0);
 	m_leftButtonsContainer->setSpacing(0);
 
-	QFrame *middleButtons = new QFrame(m_toolbar);
+	auto *middleButtons = new QFrame(m_toolbar);
 	middleButtons->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::MinimumExpanding);
 	m_middleButtonsContainer = new QHBoxLayout(middleButtons);
 	m_middleButtonsContainer->setSpacing(0);
-	m_middleButtonsContainer->setMargin(0);
+	m_middleButtonsContainer->setContentsMargins(0, 0, 0, 0);
 
-	QFrame *rightButtons = new QFrame(m_toolbar);
+	auto *rightButtons = new QFrame(m_toolbar);
 	m_rightButtonsContainer = new QHBoxLayout(rightButtons);
-	m_rightButtonsContainer->setMargin(0);
+	m_rightButtonsContainer->setContentsMargins(0, 0, 0, 0);
 	m_rightButtonsContainer->setSpacing(0);
 
-	QHBoxLayout *toolbarLayout = new QHBoxLayout(m_toolbar);
-	toolbarLayout->setMargin(0);
+	auto *toolbarLayout = new QHBoxLayout(m_toolbar);
+	toolbarLayout->setContentsMargins(0, 0, 0, 0);
 	toolbarLayout->setSpacing(0);
 	toolbarLayout->addWidget(leftButtons);
 	toolbarLayout->addWidget(middleButtons);
@@ -257,18 +258,18 @@ void ProgramTab::initMenus() {
 
 	// Platform selection
 
-	QFrame *platformSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+	auto *platformSelector = new QFrame(m_middleButtonsContainer->parentWidget());
 	platformSelector->setObjectName("toolbarSelector");
-	QVBoxLayout *platformSelectionContainer = new QVBoxLayout(platformSelector);
+	auto *platformSelectionContainer = new QVBoxLayout(platformSelector);
 	platformSelectionContainer->setSpacing(0);
-	platformSelectionContainer->setMargin(0);
+	platformSelectionContainer->setContentsMargins(0, 0, 0, 0);
 
-	QLabel * platformLabel = new QLabel(tr("Platform"), this);
+	auto * platformLabel = new QLabel(tr("Platform"), this);
 	m_platformComboBox = new QComboBox();
 	m_platformComboBox->setObjectName("toolBarComboBox");
 	m_platformComboBox->setEditable(false);
 	m_platformComboBox->setEnabled(true);
-	foreach (Platform * platform, m_programWindow->getAvailablePlatforms()) {
+	Q_FOREACH (Platform * platform, m_programWindow->getAvailablePlatforms()) {
 		m_platformComboBox->addItem(platform->getName());
 	}
 
@@ -281,13 +282,13 @@ void ProgramTab::initMenus() {
 
 	// Board selection
 
-	QFrame *boardSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+	auto *boardSelector = new QFrame(m_middleButtonsContainer->parentWidget());
 	boardSelector->setObjectName("toolbarSelector");
-	QVBoxLayout *boardSelectionContainer = new QVBoxLayout(boardSelector);
+	auto *boardSelectionContainer = new QVBoxLayout(boardSelector);
 	boardSelectionContainer->setSpacing(0);
-	boardSelectionContainer->setMargin(0);
+	boardSelectionContainer->setContentsMargins(0, 0, 0, 0);
 
-	QLabel * boardLabel = new QLabel(tr("Board"), this);
+	auto * boardLabel = new QLabel(tr("Board"), this);
 	m_boardComboBox = new QComboBox();
 	m_boardComboBox->setObjectName("toolBarComboBox");
 	m_boardComboBox->setEditable(false);
@@ -299,19 +300,19 @@ void ProgramTab::initMenus() {
 
 	// Port selection
 
-	QFrame *portSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+	auto *portSelector = new QFrame(m_middleButtonsContainer->parentWidget());
 	portSelector->setObjectName("toolbarSelector");
-	QVBoxLayout *portSelectionContainer = new QVBoxLayout(portSelector);
+	auto *portSelectionContainer = new QVBoxLayout(portSelector);
 	portSelectionContainer->setSpacing(0);
-	portSelectionContainer->setMargin(0);
+	portSelectionContainer->setContentsMargins(0, 0, 0, 0);
 
-	QLabel * portLabel = new QLabel(tr("Port"), this);
+	auto * portLabel = new QLabel(tr("Port"), this);
 	m_portComboBox = new SerialPortComboBox();
 	m_portComboBox->setObjectName("toolBarComboBox");
 	m_portComboBox->setEditable(false);
 	m_portComboBox->setEnabled(true);
 	QList<QSerialPortInfo> ports = m_programWindow->getSerialPorts();
-	foreach (const QSerialPortInfo port, ports)
+	Q_FOREACH (const QSerialPortInfo port, ports)
 		m_portComboBox->addItem(port.portName(), port.systemLocation());
 
 
@@ -320,10 +321,10 @@ void ProgramTab::initMenus() {
 	m_rightButtonsContainer->addWidget(portSelector);
 
 	// connect last so these signals aren't triggered during initialization
-	connect(m_platformComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setPlatform(const QString &)));
-	connect(m_portComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setPort(const QString &)));
+	connect(m_platformComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setPlatform(int)));
+	connect(m_portComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setPort(int)));
 	connect(m_portComboBox, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
-	connect(m_boardComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setBoard(const QString &)));
+	connect(m_boardComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setBoard(int)));
 
 	m_monitorButton = new SketchToolButton("MonitorCode", this, m_programWindow->m_monitorAction);
 	m_monitorButton->setText(tr("Serial Monitor"));
@@ -340,7 +341,7 @@ void ProgramTab::initMenus() {
 
 	//    QFrame * superFrame = new QFrame();
 	//    QVBoxLayout * superLayout = new QVBoxLayout();
-	//	  superLayout->setMargin(0);
+	//	  superLayout->setContentsMargins(0, 0, 0, 0);
 	//	  superLayout->setSpacing(0);
 	//    m_unableToProgramLabel = new QLabel(UnableToProgramMessage.arg(""));
 	//    m_unableToProgramLabel->setObjectName("unableToProgramLabel");
@@ -374,6 +375,11 @@ void ProgramTab::initWithSettings() {
 	setPort(currentPort);
 }
 
+void ProgramTab::setPlatform(int index) {
+	QString newPlatform = m_platformComboBox->itemText(index);
+	setPlatform(newPlatform);
+}
+
 void ProgramTab::setPlatform(const QString & newPlatformName) {
 	setPlatform(m_programWindow->getPlatformByName(newPlatformName), true);
 }
@@ -393,7 +399,7 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
 		m_programWindow->updateLink(m_filename, newPlatform, false, false);
 	}
 
-	if (m_platform) m_platform->disconnect(SIGNAL(commandLocationChanged()));
+	if (m_platform != nullptr) m_platform->disconnect(SIGNAL(commandLocationChanged()));
 	connect(newPlatform, SIGNAL(commandLocationChanged()), this, SLOT(enableProgramButton()));
 
 	m_platform = newPlatform;
@@ -410,7 +416,7 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
 	//m_unableToProgramLabel->setText(UnableToProgramMessage.arg(newPlatform.getName()));
 
 	if (updateLink && isPlatformChanged)
-		emit platformChanged(newPlatform);
+		Q_EMIT platformChanged(newPlatform);
 }
 
 void ProgramTab::setPort(const QString & newPort) {
@@ -426,6 +432,11 @@ void ProgramTab::setPort(const QString & newPort) {
 	}
 }
 
+void ProgramTab::setPort(int index) {
+	QString newPort = m_portComboBox->itemText(index);
+	setPort(newPort);
+}
+
 void ProgramTab::setBoard(const QString & newBoard) {
 	DebugDialog::debug(QString("Setting board to %1").arg(newBoard));
 	int ix = m_boardComboBox->findText(newBoard);
@@ -437,6 +448,11 @@ void ProgramTab::setBoard(const QString & newBoard) {
 		QSettings settings;
 		settings.setValue("programwindow/board", newBoard);
 	}
+}
+
+void ProgramTab::setBoard(int index) {
+	QString newBoard = m_boardComboBox->itemText(index);
+	setBoard(newBoard);
 }
 
 bool ProgramTab::loadProgramFile() {
@@ -473,7 +489,7 @@ bool ProgramTab::loadProgramFile(const QString & fileName, const QString & altFi
 			if (!file.open(QFile::ReadOnly)) {
 				QFileInfo fileInfo(fileName);
 				QString fn = FolderUtils::getOpenFileName(
-				                 NULL,
+				                 nullptr,
 				                 tr("Fritzing is unable to find '%1', please locate it").arg(fileInfo.fileName()),
 				                 FolderUtils::openSaveFolder(),
 				                 tr("Code (*.%1)").arg(fileInfo.suffix())
@@ -519,7 +535,7 @@ void ProgramTab::textChanged() {
 	QIcon tabIcon = m_tabWidget->tabIcon(m_tabWidget->currentIndex());
 	bool modified = isModified();
 
-	if (m_saveButton) {
+	if (m_saveButton != nullptr) {
 		m_saveButton->setEnabled(modified);
 	}
 
@@ -598,7 +614,7 @@ void ProgramTab::deleteTab() {
 		DeleteDialog deleteDialog(tr("Remove \"%1\"?").arg(name),
 		                          tr("Are you sure you want to remove \"%1\" from the sketch?").arg(name),
 		                          !FolderUtils::isEmptyFileName(m_filename, "Untitled"),
-		                          NULL, 0);
+		                          nullptr, QFlags<Qt::WindowType>());
 		int reply = deleteDialog.exec();
 		if (reply != QMessageBox::Yes) {
 			return;
@@ -607,8 +623,8 @@ void ProgramTab::deleteTab() {
 		deleteFile = deleteDialog.deleteFileChecked();
 	}
 
-	if (m_tabWidget) {
-		emit wantToDelete(m_tabWidget->currentIndex(), deleteFile);
+	if (m_tabWidget != nullptr) {
+		Q_EMIT wantToDelete(m_tabWidget->currentIndex(), deleteFile);
 		this->deleteLater();
 	}
 }
@@ -638,19 +654,19 @@ void ProgramTab::setFilename(const QString & name) {
 }
 
 const QStringList & ProgramTab::extensions() {
-	if (m_highlighter == NULL) return ___emptyStringList___;
+	if (m_highlighter == nullptr) return ___emptyStringList___;
 
 	Syntaxer * syntaxer = m_highlighter->syntaxer();
-	if (syntaxer == NULL) return ___emptyStringList___;
+	if (syntaxer == nullptr) return ___emptyStringList___;
 
 	return syntaxer->extensions();
 }
 
 const QString & ProgramTab::extensionString() {
-	if (m_highlighter == NULL) return ___emptyString___;
+	if (m_highlighter == nullptr) return ___emptyString___;
 
 	Syntaxer * syntaxer = m_highlighter->syntaxer();
-	if (syntaxer == NULL) return ___emptyString___;
+	if (syntaxer == nullptr) return ___emptyString___;
 
 	return syntaxer->extensionString();
 }
@@ -667,15 +683,15 @@ void ProgramTab::setDirty() {
 }
 
 void ProgramTab::save() {
-	emit wantToSave(m_tabWidget->currentIndex());
+	Q_EMIT wantToSave(m_tabWidget->currentIndex());
 }
 
 void ProgramTab::saveAs() {
-	emit wantToSaveAs(m_tabWidget->currentIndex());
+	Q_EMIT wantToSaveAs(m_tabWidget->currentIndex());
 }
 
 void ProgramTab::rename() {
-	emit wantToRename(m_tabWidget->currentIndex());
+	Q_EMIT wantToRename(m_tabWidget->currentIndex());
 }
 
 void ProgramTab::print(QPrinter &printer) {
@@ -712,7 +728,7 @@ bool ProgramTab::save(const QString & filename) {
 }
 
 void ProgramTab::serialMonitor() {
-	if (m_monitorWindow == NULL) {
+	if (m_monitorWindow == nullptr) {
 		m_monitorWindow = new ConsoleWindow(this);
 	}
 	m_monitorWindow->show();
@@ -736,7 +752,7 @@ void ProgramTab::sendProgram() {
 		//return;
 		save();
 	}
-	if (m_monitorWindow) {
+	if (m_monitorWindow != nullptr) {
 		m_monitorWindow->closeSerialPort(m_portComboBox->currentText());
 	}
 
@@ -781,7 +797,7 @@ void ProgramTab::updateMenu() {
 	enableProgramButton();
 
 	// Emit a signal so that the ProgramWindow can update its own UI.
-	emit programWindowUpdateRequest(m_programButton ? m_programButton->isEnabled() : false,
+	Q_EMIT programWindowUpdateRequest(m_programButton != nullptr ? m_programButton->isEnabled() : false,
 	                                m_canUndo, m_canRedo, m_canCut, m_canCopy, m_canPaste,
 	                                m_platform, m_port, m_board, m_filename);
 }
@@ -799,7 +815,7 @@ void ProgramTab::updateBoards() {
 	}
 
 	QMap<QString, QString> boardNames = m_programWindow->getBoards();
-	foreach (QString name, boardNames.keys()) {
+	Q_FOREACH (QString name, boardNames.keys()) {
 		m_boardComboBox->addItem(name, boardNames.value(name));
 	}
 
@@ -814,7 +830,7 @@ void ProgramTab::updateSerialPorts() {
 	QList<QSerialPortInfo> ports = m_programWindow->getSerialPorts();
 
 	QList<QSerialPortInfo> newPorts;
-	foreach (QSerialPortInfo port, ports) {
+	Q_FOREACH (QSerialPortInfo port, ports) {
 		if (m_portComboBox->findText(port.portName()) < 0) {
 			newPorts.append(port);
 		}
@@ -833,7 +849,7 @@ void ProgramTab::updateSerialPorts() {
 	for (int i = obsoletePorts.count() - 1; i >= 0; i--) {
 		m_portComboBox->removeItem(obsoletePorts.at(i));
 	}
-	foreach (QSerialPortInfo port, newPorts) {
+	Q_FOREACH (QSerialPortInfo port, newPorts) {
 		m_portComboBox->addItem(port.portName(), port.systemLocation());
 	}
 
@@ -846,7 +862,7 @@ Platform * ProgramTab::platform() {
 }
 
 void ProgramTab::enableMonitorButton() {
-	if (m_monitorButton == NULL) return;
+	if (m_monitorButton == nullptr) return;
 
 	bool enabled = true;
 	if (m_portComboBox->count() == 0) {
@@ -857,7 +873,7 @@ void ProgramTab::enableMonitorButton() {
 }
 
 void ProgramTab::enableProgramButton() {
-	if (m_programButton == NULL) return;
+	if (m_programButton == nullptr) return;
 
 	bool enabled = true;
 	// always enable, to show helpful error message if no programmer is set up

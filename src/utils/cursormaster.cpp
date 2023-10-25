@@ -34,15 +34,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGraphicsSceneMouseEvent>
 #include <QTimer>
 
-QCursor * CursorMaster::BendpointCursor = NULL;
-QCursor * CursorMaster::NewBendpointCursor = NULL;
-QCursor * CursorMaster::MakeWireCursor = NULL;
-QCursor * CursorMaster::MakeCurveCursor = NULL;
-QCursor * CursorMaster::RubberbandCursor = NULL;
-QCursor * CursorMaster::MoveCursor = NULL;
-QCursor * CursorMaster::BendlegCursor = NULL;
-QCursor * CursorMaster::RotateCursor = NULL;
-QCursor * CursorMaster::ScaleCursor = NULL;
+QCursor * CursorMaster::BendpointCursor = nullptr;
+QCursor * CursorMaster::NewBendpointCursor = nullptr;
+QCursor * CursorMaster::MakeWireCursor = nullptr;
+QCursor * CursorMaster::MakeCurveCursor = nullptr;
+QCursor * CursorMaster::RubberbandCursor = nullptr;
+QCursor * CursorMaster::MoveCursor = nullptr;
+QCursor * CursorMaster::BendlegCursor = nullptr;
+QCursor * CursorMaster::RotateCursor = nullptr;
+QCursor * CursorMaster::ScaleCursor = nullptr;
 
 //static QTimer timer;
 
@@ -59,7 +59,7 @@ CursorMaster::CursorMaster() : QObject()
 }
 
 void CursorMaster::cleanup() {
-	foreach (QCursor ** cursor, Cursors) {
+	Q_FOREACH (QCursor ** cursor, Cursors) {
 		delete *cursor;
 	}
 	Cursors.clear();
@@ -67,7 +67,7 @@ void CursorMaster::cleanup() {
 
 void CursorMaster::initCursors()
 {
-	if (BendpointCursor == NULL) {
+	if (BendpointCursor == nullptr) {
 		//timer.setSingleShot(true);
 		//timer.setInterval(0);
 		//connect(&timer, SIGNAL(timeout()), &TheCursorMaster, SLOT(moveCursor()));
@@ -124,7 +124,7 @@ void CursorMaster::addCursor(QObject * object, const QCursor & cursor)
 {
 	if (m_blocked) return;
 
-	if (object == NULL) return;
+	if (object == nullptr) return;
 
 
 	/*
@@ -175,7 +175,7 @@ void CursorMaster::addCursor(QObject * object, const QCursor & cursor)
 
 void CursorMaster::removeCursor(QObject * object)
 {
-	if (object == NULL) return;
+	if (object == nullptr) return;
 
 	if (Listeners.contains(object)) {
 		disconnect(object, SIGNAL(destroyed(QObject *)), this, SLOT(deleteCursor(QObject *)));
@@ -216,9 +216,9 @@ bool CursorMaster::eventFilter(QObject * object, QEvent * event)
 		//DebugDialog::debug(QString("event filter %1").arg(object->metaObject()->className()));
 		//if (scene)
 	{
-		QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
-		foreach (QObject * listener, Listeners) {
-			if (listener) {
+		auto *keyEvent = static_cast<QKeyEvent*>(event);
+		Q_FOREACH (QObject * listener, Listeners) {
+			if (listener != nullptr) {
 				dynamic_cast<CursorKeyListener *>(listener)->cursorKeyEvent(keyEvent->modifiers());
 				break;
 			}

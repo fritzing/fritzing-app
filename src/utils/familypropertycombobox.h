@@ -22,7 +22,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define FAMILYPROPERTYCOMBOBOX_H
 
 #include <QComboBox>
-#include "../debugdialog.h"
 #include "focusoutcombobox.h"
 
 class FamilyPropertyComboBox : public FocusOutComboBox
@@ -30,7 +29,9 @@ class FamilyPropertyComboBox : public FocusOutComboBox
 	Q_OBJECT
 
 public:
-	FamilyPropertyComboBox(const QString & family, const QString & prop, QWidget * parent = 0) : FocusOutComboBox(parent) {
+	FamilyPropertyComboBox(const QString & family, const QString & prop, QWidget * parent = 0)
+		: FocusOutComboBox(parent)
+	{
 		m_family = family;
 		m_prop = prop;
 		setEditable(false);

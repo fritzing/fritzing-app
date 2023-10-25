@@ -37,8 +37,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPair>
 #include <QList>
 #include <QPointF>
+#include <QRegularExpression>
 
-#define ALLMOUSEBUTTONS (Qt::LeftButton | Qt::MidButton | Qt::RightButton | Qt::XButton1 | Qt::XButton2)
+#define ALLMOUSEBUTTONS (Qt::LeftButton | Qt::MiddleButton | Qt::RightButton | Qt::XButton1 | Qt::XButton2)
 
 typedef QPair<double, double> RealPair;
 
@@ -50,6 +51,7 @@ static QDir ___emptyDir___;
 static QByteArray ___emptyByteArray___;
 
 static const QString OCRAFontName("OCRA");
+static const QString OCRFFontName("OCR-Fritzing-mono");
 
 static const QString ResourcePath(":/resources/");
 
@@ -86,12 +88,12 @@ static const QString MaleSymbolString = QString("%1").arg(QChar(0x2642));
 
 Qt::KeyboardModifier altOrMetaModifier();
 
-static QRegExp IntegerFinder("\\d+");
+static QRegularExpression IntegerFinder("\\d+");
 
-static const int PartsBinHeightDefault = 240;
-static const int InfoViewHeightDefault = 220;
-static const int InfoViewMinHeight = 50;
-static const int DockWidthDefault = 300;
-static const int DockHeightDefault = 50;
+static constexpr int PartsBinHeightDefault = 240;
+static constexpr int InfoViewHeightDefault = 220;
+static constexpr int InfoViewMinHeight = 100;
+static constexpr int DockWidthDefault = 300;
+
 
 #endif

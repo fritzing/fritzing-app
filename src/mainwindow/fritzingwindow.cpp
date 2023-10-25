@@ -56,7 +56,7 @@ FritzingWindow::FritzingWindow(const QString &untitledFileName, int &untitledFil
 
 	untitledFileCount++;
 
-	setTitle();
+	FritzingWindow::setTitle();
 
 	m_undoStack = new WaitPushUndoStack(this);
 	connect(m_undoStack, SIGNAL(cleanChanged(bool)), this, SLOT(undoStackCleanChanged(bool)) );
@@ -72,7 +72,7 @@ void FritzingWindow::createCloseAction() {
 void FritzingWindow::setTitle() {
 	setWindowTitle(tr("%1 - %2")
 	               .arg(QFileInfo(m_fwFilename).fileName()+(m_readOnly?ReadOnlyPlaceholder:"")+QtFunkyPlaceholder)
-	               .arg(fritzingTitle()));
+		       .arg(fritzingTitle()));
 }
 
 // returns true if the user wanted to save the file
@@ -133,7 +133,7 @@ bool FritzingWindow::saveAs(const QString & filename, bool readOnly) {
 	if (newFilename.isEmpty()) return false; // Cancel pressed
 
 	if (readOnly && (newFilename.compare(filename, Qt::CaseInsensitive) == 0)) {
-		QMessageBox::warning(NULL, QObject::tr("Fritzing"),
+		QMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 		                     QObject::tr("The file '%1' is read-only; please use a different filename.")
 		                     .arg(newFilename) );
 		return false;
@@ -144,7 +144,7 @@ bool FritzingWindow::saveAs(const QString & filename, bool readOnly) {
 
 	QStringList extensions = getExtensions();
 	bool hasExtension = false;
-	foreach (QString extension, extensions) {
+	Q_FOREACH (QString extension, extensions) {
 		if(alreadyHasExtension(newFilename, extension)) {
 			hasExtension = true;
 			break;
@@ -167,10 +167,10 @@ bool FritzingWindow::alreadyHasExtension(const QString &fileName, const QString 
 	if(!fileExt.isEmpty()) {
 		return fileName.endsWith(fileExt);
 	} else {
-		foreach (QString extension, fritzingExtensions()) {
+		Q_FOREACH (QString extension, fritzingExtensions()) {
 			if (fileName.endsWith(extension)) return true;
 		}
-		foreach (QString extension, OtherKnownExtensions) {
+		Q_FOREACH (QString extension, OtherKnownExtensions) {
 			if (fileName.endsWith(extension)) return true;
 		}
 
@@ -242,7 +242,7 @@ void FritzingWindow::setReadOnly(bool readOnly) {
 	bool hasChanged = m_readOnly != readOnly;
 	m_readOnly = readOnly;
 	if(hasChanged) {
-		emit readOnlyChanged(readOnly);
+		Q_EMIT readOnlyChanged(readOnly);
 	}
 }
 

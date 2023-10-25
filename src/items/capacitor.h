@@ -30,17 +30,19 @@ class Capacitor : public PaletteItem
 
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
-	Capacitor(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit Capacitor(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~Capacitor();
 
 	PluralType isPlural();
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	void setProp(const QString & prop, const QString & value);
 	void getProperties(QHash<QString, QString> &);
+	QHash<QString, QString> prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys);
 
-public slots:
-	void propertyEntry(const QString & text);
-	void simplePropertyEntry(const QString & text);
+public Q_SLOTS:
+	void textModified(QValidator::State state);
+	void propertyEntry(int index);
+	void simplePropertyEntry(int index);
 
 protected:
 	QHash<PropertyDef *, QString> m_propertyDefs;

@@ -18,13 +18,13 @@ public:
 	void setText(const QString & text);
 	void addList(const QString & header, const QStringList & list);
 
-protected slots:
+protected Q_SLOTS:
 	/**
 	 * override the default closing behavior to send the cleanRepo signal
 	 */
 	void accept();
 
-signals:
+Q_SIGNALS:
 	void cleanRepo(ModFileDialog * modFileDialog);
 
 private:

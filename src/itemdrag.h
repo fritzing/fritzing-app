@@ -48,7 +48,7 @@ public:
 	static bool originatorIsTempBin();
 	static void setOriginatorIsTempBin(bool);
 
-signals:
+Q_SIGNALS:
 	void dragIsDoneSignal(ItemDrag *);
 
 protected:

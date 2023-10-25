@@ -27,7 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 PEBaseCommand::PEBaseCommand(PEMainWindow * peMainWindow, QUndoCommand *parent)
-	: BaseCommand(BaseCommand::CrossView, NULL, parent)
+	: BaseCommand(BaseCommand::CrossView, nullptr, parent)
 {
 	m_peMainWindow = peMainWindow;
 }
@@ -331,7 +331,7 @@ QString RemoveBusConnectorCommand::getParamString() const {
 	       QString(" busID:%1, connectorID:%2 inv:%3")
 	       .arg(m_busID)
 	       .arg(m_connectorID)
-	       .arg(m_inverted);
+	       .arg(static_cast<int>(m_inverted));
 	;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////

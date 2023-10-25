@@ -29,12 +29,12 @@ class Dip : public MysteryPart
 	Q_OBJECT
 
 public:
-	Dip(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit Dip(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~Dip();
 
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
-	bool changePinLabels(bool singleRow, bool sip);
+	bool changePinLabels(bool sip);
 	void addedToScene(bool temporary);
 
 public:
@@ -49,14 +49,14 @@ public:
 
 	static QString obsoleteMakeSchematicSvg(const QStringList & labels);
 
-public slots:
+public Q_SLOTS:
 	void swapEntry(const QString & text);
 
 protected:
 	bool isDIP();
 	bool otherPropsChange(const QMap<QString, QString> & propsMap);
 	const QStringList & spacings();
-	QString retrieveSchematicSvg(QString & svg);
+	QString retrieveSchematicSvg(QString & svg, bool & normalized);
 };
 
 #endif

@@ -34,10 +34,10 @@ public:
 	ExpandingLabel(QWidget *parent, int minSize=100);
 	void setLabelText(const QString& theText);
 
-public slots:
+public Q_SLOTS:
 	void allTextVisible();
 
-signals:
+Q_SIGNALS:
 	void mousePressSignal(QMouseEvent *event);
 	void mouseReleaseSignal(QMouseEvent *event);
 

@@ -144,8 +144,6 @@ public:
 	void setViewImage(ViewImage *);
 	void addConnector(ConnectorShared *);
 	void insertBus(class BusShared *);
-	void lookForZeroConnector();
-	bool hasZeroConnector();
 	void addOwner(QObject *);
 	void setSubpartOffset(QPointF);
 	QPointF subpartOffset() const;
@@ -162,10 +160,12 @@ protected:
 	void addSchematicText(ViewImage *);
 	bool setDomDocument(QDomDocument &);
 
-protected slots:
+protected Q_SLOTS:
 	void removeOwner();
 
 public:
+	static const QString MNPropertyName;
+	static const QString MPNPropertyName;
 	static const QString PartNumberPropertyName;
 
 protected:
@@ -203,7 +203,6 @@ protected:
 	bool m_flippedSMD;
 	bool m_needsCopper1;				// for converting pre-two-layer parts
 	qulonglong m_dbid;
-	bool m_hasZeroConnector;
 	int m_ownerCount;
 	QList< QPointer<ModelPartShared> > m_subparts;
 	QPointer<ModelPartShared> m_superpart;

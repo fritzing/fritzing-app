@@ -25,7 +25,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/resizehandle.h"
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
 
 #include <QTextFrame>
 #include <QTextLayout>
@@ -68,14 +67,14 @@ const int Note::emptyMinWidth = 40;
 const int Note::emptyMinHeight = 25;
 const int Note::initialMinWidth = 140;
 const int Note::initialMinHeight = 45;
-const int borderWidth = 7;
-const int TriangleOffset = 7;
+constexpr int borderWidth = 7;
+constexpr int TriangleOffset = 7;
 
-const double InactiveOpacity = 0.5;
+constexpr double InactiveOpacity = 0.5;
 
 QString Note::initialTextString;
 
-QRegExp UrlTag("<a.*href=[\"']([^\"]+[.\\s]*)[\"'].*>");
+QRegularExpression UrlTag("<a.*href=[\"']([^\"]+[.\\s]*)[\"'].*>");
 
 ///////////////////////////////////////
 
@@ -107,16 +106,6 @@ QString addText(const QString & text, bool inUrl)
 
 ///////////////////////////////////////
 
-class NoteGraphicsTextItem : public QGraphicsTextItem
-{
-public:
-	NoteGraphicsTextItem(QGraphicsItem * parent = NULL);
-
-protected:
-	void focusInEvent(QFocusEvent *);
-	void focusOutEvent(QFocusEvent *);
-};
-
 NoteGraphicsTextItem::NoteGraphicsTextItem(QGraphicsItem * parent) : QGraphicsTextItem(parent)
 {
 	const QTextFrameFormat format = document()->rootFrame()->frameFormat();
@@ -125,9 +114,12 @@ NoteGraphicsTextItem::NoteGraphicsTextItem(QGraphicsItem * parent) : QGraphicsTe
 	document()->rootFrame()->setFrameFormat(altFormat);
 }
 
+void NoteGraphicsTextItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *) {
+}
+
 void NoteGraphicsTextItem::focusInEvent(QFocusEvent * event) {
 	InfoGraphicsView * igv = InfoGraphicsView::getInfoGraphicsView(this);
-	if (igv) {
+	if (igv != nullptr) {
 		igv->setNoteFocus(this, true);
 	}
 	QApplication::instance()->installEventFilter((Note *) this->parentItem());
@@ -137,7 +129,7 @@ void NoteGraphicsTextItem::focusInEvent(QFocusEvent * event) {
 
 void NoteGraphicsTextItem::focusOutEvent(QFocusEvent * event) {
 	InfoGraphicsView * igv = InfoGraphicsView::getInfoGraphicsView(this);
-	if (igv) {
+	if (igv != nullptr) {
 		igv->setNoteFocus(this, false);
 	}
 	QApplication::instance()->removeEventFilter((Note *) this->parentItem());
@@ -151,11 +143,11 @@ LinkDialog::LinkDialog(QWidget *parent) : QDialog(parent)
 {
 	this->setWindowTitle(QObject::tr("Edit link"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
-	QGroupBox * formGroupBox = new QGroupBox(this);
+	auto * formGroupBox = new QGroupBox(this);
 
-	QFormLayout * formLayout = new QFormLayout();
+	auto * formLayout = new QFormLayout();
 
 	m_urlEdit = new QLineEdit(this);
 	m_urlEdit->setFixedHeight(25);
@@ -171,7 +163,7 @@ LinkDialog::LinkDialog(QWidget *parent) : QDialog(parent)
 
 	vLayout->addWidget(formGroupBox);
 
-	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 	buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 
@@ -212,7 +204,7 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 		initialTextString = tr("[write your note here]");
 	}
 
-	m_inResize = NULL;
+	m_inResize = nullptr;
 	this->setCursor(Qt::ArrowCursor);
 
 	setFlag(QGraphicsItem::ItemIsSelectable, true);
@@ -343,7 +335,7 @@ QPainterPath Note::shape() const
 
 void Note::positionGrip() {
 	QSizeF gripSize = m_resizeGrip->boundingRect().size();
-	QSizeF sz = this->boundingRect().size();
+	QSizeF sz = Note::boundingRect().size();
 	QPointF p(sz.width() - gripSize.width(), sz.height() - gripSize.height());
 	m_resizeGrip->setPos(p);
 	m_graphicsTextItem->setPos(TriangleOffset / 2, TriangleOffset / 2);
@@ -352,14 +344,14 @@ void Note::positionGrip() {
 
 void Note::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics && infographics->spaceBarIsPressed()) {
+	if ((infographics != nullptr) && infographics->spaceBarIsPressed()) {
 		m_spaceBarWasPressed = true;
 		event->ignore();
 		return;
 	}
 
 	m_spaceBarWasPressed = false;
-	m_inResize = NULL;
+	m_inResize = nullptr;
 	ItemBase::mousePressEvent(event);
 }
 
@@ -438,9 +430,9 @@ void Note::contentsChangedSlot() {
 	}
 
 	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		QString oldText;
-		if (m_modelPart) {
+		if (m_modelPart != nullptr) {
 			oldText = m_modelPart->instanceText();
 		}
 
@@ -450,7 +442,7 @@ void Note::contentsChangedSlot() {
 
 		infoGraphicsView->noteChanged(this, oldText, m_graphicsTextItem->document()->toHtml(), oldSize, newSize);
 	}
-	if (m_modelPart) {
+	if (m_modelPart != nullptr) {
 		m_modelPart->setInstanceText(m_graphicsTextItem->document()->toHtml());
 	}
 }
@@ -531,7 +523,7 @@ bool Note::eventFilter(QObject * object, QEvent * event)
 	}
 
 	if (event->type() == QEvent::KeyPress) {
-		QKeyEvent * kevent = static_cast<QKeyEvent *>(event);
+		auto * kevent = static_cast<QKeyEvent *>(event);
 		if (kevent->matches(QKeySequence::Bold)) {
 			QTextCursor textCursor = m_graphicsTextItem->textCursor();
 			QTextCharFormat cf = textCursor.charFormat();
@@ -551,7 +543,7 @@ bool Note::eventFilter(QObject * object, QEvent * event)
 			event->accept();
 			return true;
 		}
-		if ((kevent->key() == Qt::Key_L) && (kevent->modifiers() & Qt::ControlModifier)) {
+		if ((kevent->key() == Qt::Key_L) && ((kevent->modifiers() & Qt::ControlModifier) != 0u)) {
 			QTimer::singleShot(75, this, SLOT(linkDialog()));
 			event->accept();
 			return true;
@@ -564,6 +556,7 @@ bool Note::eventFilter(QObject * object, QEvent * event)
 void Note::linkDialog() {
 	QTextCursor textCursor = m_graphicsTextItem->textCursor();
 	bool gotUrl = false;
+	QRegularExpressionMatch match;
 	if (textCursor.anchor() == textCursor.selectionStart()) {
 		// the selection returns empty since we're between characters
 		// so select one character forward or one character backward
@@ -574,14 +567,16 @@ void Note::linkDialog() {
 		if (!atStart) {
 			textCursor.setPosition(wasAnchor - 1, QTextCursor::KeepAnchor);
 			QString html = textCursor.selection().toHtml();
-			if (UrlTag.indexIn(html) >= 0) {
+			if (html.contains(UrlTag, &match)) {
 				gotUrl = true;
+			} else {
+				match = QRegularExpressionMatch();
 			}
 		}
 		if (!gotUrl && !atEnd) {
 			textCursor.setPosition(wasAnchor + 1, QTextCursor::KeepAnchor);
 			QString html = textCursor.selection().toHtml();
-			if (UrlTag.indexIn(html) >= 0) {
+			if (html.contains(UrlTag, &match)) {
 				gotUrl = true;
 			}
 		}
@@ -590,7 +585,7 @@ void Note::linkDialog() {
 	else {
 		QString html = textCursor.selection().toHtml();
 		DebugDialog::debug(html);
-		if (UrlTag.indexIn(html) >= 0) {
+		if (html.contains(UrlTag, &match)) {
 			gotUrl = true;
 		}
 	}
@@ -599,7 +594,7 @@ void Note::linkDialog() {
 	QString originalText;
 	QString originalUrl;
 	if (gotUrl) {
-		originalUrl = UrlTag.cap(1);
+		originalUrl = match.captured(1);
 		ld.setUrl(originalUrl);
 		QString html = m_graphicsTextItem->toHtml();
 
@@ -625,7 +620,7 @@ void Note::linkDialog() {
 		DebugDialog::debug(html);
 		QList<QDomElement> aElements;
 		findA(root, aElements);
-		foreach (QDomElement a, aElements) {
+		Q_FOREACH (QDomElement a, aElements) {
 			// TODO: if multiple hrefs point to the same url this will only find the first one
 			QString href = a.attribute("href");
 			if (href.isEmpty()) {
@@ -688,7 +683,7 @@ void Note::handleMousePressSlot(QGraphicsSceneMouseEvent * event, ResizeHandle *
 void Note::handleMouseMoveSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * resizeHandle) {
 	Q_UNUSED(resizeHandle);
 
-	if (!m_inResize) return;
+	if (m_inResize == nullptr) return;
 
 	double minWidth = emptyMinWidth;
 	double minHeight = emptyMinHeight;
@@ -722,11 +717,11 @@ void Note::handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, ResizeHandle
 	Q_UNUSED(resizeHandle);
 	Q_UNUSED(event);
 
-	if (!m_inResize) return;
+	if (m_inResize == nullptr) return;
 
-	m_inResize = NULL;
+	m_inResize = nullptr;
 	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->noteSizeChanged(this, m_viewGeometry.rect().size(), m_rect.size());
 	}
 }
@@ -816,7 +811,7 @@ QString Note::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 				textCursor.setPosition(i + start + block.position(), QTextCursor::MoveAnchor);
 				textCursor.setPosition(i + start + block.position() + 1, QTextCursor::KeepAnchor);
 				QString html = textCursor.selection().toHtml();
-				if (UrlTag.indexIn(html) >= 0) {
+				if (html.contains(UrlTag)) {
 					if (inUrl) {
 						soFar += block.text().mid(start + i, 1);
 						continue;

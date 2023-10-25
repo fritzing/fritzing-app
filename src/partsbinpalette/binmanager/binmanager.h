@@ -109,17 +109,17 @@ public:
 	void hideTabBar();
 	void reloadPart(const QString & moduleID);
 
-signals:
+Q_SIGNALS:
 	void savePartAsBundled(const QString &moduleId);
 
 
-public slots:
+public Q_SLOTS:
 	void updateBinCombinedMenuCurrent();
 	void toIconView();
 	void toListView();
 	void setAsCurrentBin(PartsBinPaletteWidget* bin);
 
-protected slots:
+protected Q_SLOTS:
 	void updateFileName(PartsBinPaletteWidget* bin, const QString &newFileName, const QString &oldFilename);
 	void currentChanged(int);
 	void tabCloseRequested(int);

@@ -20,14 +20,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "partlabel.h"
 #include "../items/itembase.h"
-#include "../viewgeometry.h"
-#include "../debugdialog.h"
 #include "../sketch/infographicsview.h"
 #include "../model/modelpart.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
 #include "../installedfonts.h"
-#include "../fsvgrenderer.h"
 
 #include <QGraphicsScene>
 #include <QMenu>
@@ -102,14 +99,17 @@ static constexpr double InactiveOpacity = 0.4;
 
 ///////////////////////////////////////////
 
-PartLabel::PartLabel(ItemBase * owner, QGraphicsItem * parent)
+PartLabel::PartLabel(ItemBase * owner, QWidget *parentWidget, QGraphicsItem * parent)
 	: QGraphicsSvgItem(parent),
-	  m_owner(owner)
+	  m_owner(owner),
+	  m_parentWidget(parentWidget)
 
 {
 	m_displayKeys.append(LabelTextKey);
 	if (m_owner->hasPartNumberProperty() && m_owner->viewID() != ViewLayer::PCBView) {
-		m_displayKeys.append(ModelPartShared::PartNumberPropertyName);
+		for (auto&& propertyName : {ModelPartShared::MNPropertyName, ModelPartShared::MPNPropertyName, ModelPartShared::PartNumberPropertyName}) {
+			m_displayKeys.append(propertyName);
+		}
 	}
 
 	setFlag(QGraphicsItem::ItemIsSelectable, false);
@@ -117,12 +117,16 @@ PartLabel::PartLabel(ItemBase * owner, QGraphicsItem * parent)
 	setVisible(false);
 	setAcceptHoverEvents(true);
 	AllPartLabels.insert(m_owner->id(), this);
+	// No translation needed, the menu title is only shown if the menu is added
+	// to a menu bar
+	//	m_menu = new QMenu(QObject::tr("PartLabel"), m_parentWidget);
+	m_menu = new QMenu("PartLabel", m_parentWidget);
 }
 
 PartLabel::~PartLabel()
 {
 	AllPartLabels.remove(m_owner->id(), this);
-	if (m_owner) {
+	if (m_owner != nullptr) {
 		m_owner->clearPartLabel();
 	}
 }
@@ -131,13 +135,13 @@ void PartLabel::showLabel(bool showIt, ViewLayer * viewLayer) {
 	if (showIt == this->isVisible()) return;
 
 	if (showIt && !m_initialized) {
-		if (m_owner == NULL) return;
-		if (m_owner->scene() == NULL) return;
+		if (m_owner == nullptr) return;
+		if (m_owner->scene() == nullptr) return;
 
 		bool flipped = (viewLayer->viewLayerID() == ViewLayer::Silkscreen0Label);
 
 		if (m_owner->viewID() != ViewLayer::PCBView) {
-			foreach (QString dk, m_owner->modelPart()->displayKeys()) {
+			Q_FOREACH (QString dk, m_owner->modelPart()->displayKeys()) {
 				if (!m_displayKeys.contains(dk)) {
 					m_displayKeys.append(dk);
 				}
@@ -154,10 +158,13 @@ void PartLabel::showLabel(bool showIt, ViewLayer * viewLayer) {
 		QRectF obr = m_owner->boundingRect();
 		QRectF tbr = QGraphicsSvgItem::boundingRect();
 		QPointF initial = (flipped)
-		                  ? m_owner->pos() + QPointF(-tbr.width(), -tbr.height())
-		                  : m_owner->pos() + QPointF(obr.width(), -tbr.height());
-		this->setPos(initial);
-		m_offset = initial - m_owner->pos();
+						  ? m_owner->pos() + QPointF(-tbr.width(), -tbr.height())
+						  : m_owner->pos() + QPointF(obr.width(), -tbr.height());
+		if (!m_initializedPos) {
+			this->setPos(initial);
+			m_offset = initial - m_owner->pos();
+			m_initializedPos = true;
+		}
 		if (flipped) {
 			transformLabel(QTransform().scale(-1,1));
 		}
@@ -183,7 +190,7 @@ void PartLabel::mousePressEvent(QGraphicsSceneMouseEvent *event)
 	}
 
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics && infographics->spaceBarIsPressed()) {
+	if ((infographics != nullptr) && infographics->spaceBarIsPressed()) {
 		m_spaceBarWasPressed = true;
 		event->ignore();
 		return;
@@ -261,7 +268,7 @@ void PartLabel::displayTextsIf() {
 void PartLabel::displayTexts() {
 	QStringList texts;
 
-	foreach (QString key, m_displayKeys) {
+	Q_FOREACH (QString key, m_displayKeys) {
 		QString t;
 		if (key.compare(LabelTextKey) == 0) {
 			t = m_text;
@@ -308,8 +315,18 @@ void PartLabel::setHiddenOrInactive() {
 	update();
 }
 
+bool PartLabel::isFlipped(ViewLayer::ViewLayerID viewLayerID) {
+	bool flipped = (viewLayerID == ViewLayer::Silkscreen0Label);
+	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infographics != nullptr) {
+		if (infographics->viewFromBelow()) {
+			flipped = !flipped;
+		}
+	}
+	return flipped;
+}
 
-void PartLabel::saveInstance(QXmlStreamWriter & streamWriter) {
+void PartLabel::saveInstance(QXmlStreamWriter & streamWriter, bool flipAware) {
 	if (!m_initialized) return;
 
 	streamWriter.writeStartElement("titleGeometry");
@@ -321,8 +338,14 @@ void PartLabel::saveInstance(QXmlStreamWriter & streamWriter) {
 	streamWriter.writeAttribute("yOffset", QString::number(m_offset.y()));
 	streamWriter.writeAttribute("textColor", m_color.name());
 	streamWriter.writeAttribute("fontSize", QString::number(m_font.pointSizeF()));
-	GraphicsUtils::saveTransform(streamWriter, transform());
-	foreach (QString key, m_displayKeys) {
+	QTransform transformation = transform();
+	if (flipAware && isFlipped(m_viewLayerID)) {
+		transformLabel(QTransform().scale(-1,1));
+		transformation = transform();
+		transformLabel(QTransform().scale(-1,1));
+	}
+	GraphicsUtils::saveTransform(streamWriter, transformation);
+	Q_FOREACH (QString key, m_displayKeys) {
 		streamWriter.writeStartElement("displayKey");
 		streamWriter.writeAttribute("key", key);
 		streamWriter.writeEndElement();
@@ -330,7 +353,19 @@ void PartLabel::saveInstance(QXmlStreamWriter & streamWriter) {
 	streamWriter.writeEndElement();
 }
 
-void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID viewLayerID)
+void PartLabel::getLabelGeometry(QDomElement & labelGeometry) {
+	if (!m_initialized) return;
+	QByteArray data;
+	QXmlStreamWriter streamWriter(&data);
+	saveInstance(streamWriter, true);
+
+	QDomDocument temporary;
+	if (temporary.setContent(data)) {
+		labelGeometry = temporary.documentElement();
+	}
+}
+
+void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID viewLayerID, bool flipAware)
 {
 	m_viewLayerID = viewLayerID;
 	m_initialized = true;
@@ -360,7 +395,7 @@ void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID
 	double fs = labelGeometry.attribute("fontSize").toDouble(&ok);
 	if (!ok) {
 		InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infographics) {
+		if (infographics != nullptr) {
 			fs = infographics->getLabelFontSizeMedium();
 			ok = true;
 		}
@@ -378,7 +413,11 @@ void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID
 
 	if (m_displayKeys.length() == 0) {
 		m_displayKeys.append(LabelTextKey);
-		if (m_owner->hasPartNumberProperty()) m_displayKeys.append(ModelPartShared::PartNumberPropertyName);
+		if (m_owner->hasPartNumberProperty()) {
+			for (auto&& propertyName : {ModelPartShared::MNPropertyName, ModelPartShared::MPNPropertyName, ModelPartShared::PartNumberPropertyName}) {
+				m_displayKeys.append(propertyName);
+			}
+		}
 	}
 
 	displayTexts();
@@ -387,12 +426,22 @@ void PartLabel::restoreLabel(QDomElement & labelGeometry, ViewLayer::ViewLayerID
 	if (GraphicsUtils::loadTransform(labelGeometry.firstChildElement("transform"), t)) {
 		setTransform(t);
 	}
+
+	if (flipAware && isFlipped(viewLayerID)) {
+		transformLabel(QTransform().scale(-1,1));
+	}
 }
 
 void PartLabel::moveLabel(QPointF newPos, QPointF newOffset)
 {
 	this->setPos(newPos);
+	m_initializedPos = true;
 	m_offset = newOffset;
+}
+
+QPointF PartLabel::getOffset()
+{
+	return m_offset;
 }
 
 ItemBase * PartLabel::owner() {
@@ -402,22 +451,21 @@ ItemBase * PartLabel::owner() {
 void PartLabel::initMenu()
 {
 	// todo: make this a static var?
-
-	QAction *editAct = m_menu.addAction(tr("Edit"));
+	QAction *editAct = m_menu->addAction(tr("Edit"));
 	editAct->setData(QVariant(PartLabelEdit));
 	editAct->setStatusTip(tr("Edit label text"));
 
-	QAction *hideAct = m_menu.addAction(tr("Hide"));
+	QAction *hideAct = m_menu->addAction(tr("Hide"));
 	hideAct->setData(QVariant(PartLabelHide));
 	hideAct->setStatusTip(tr("Hide part label"));
 
-	m_menu.addSeparator();
+	m_menu->addSeparator();
 
-	QMenu * dvmenu = m_menu.addMenu(tr("Display Values"));
-	QMenu * rlmenu = m_menu.addMenu(tr("Flip/Rotate"));
-	QMenu * fsmenu = m_menu.addMenu(tr("Font Size"));
+	QMenu * dvmenu = m_menu->addMenu(tr("Display Values"));
+	QMenu * rlmenu = m_menu->addMenu(tr("Flip/Rotate"));
+	QMenu * fsmenu = m_menu->addMenu(tr("Font Size"));
 
-	bool include45 = (m_owner) && (m_owner->viewID() == ViewLayer::PCBView);
+	bool include45 = ((m_owner) != nullptr) && (m_owner->viewID() == ViewLayer::PCBView);
 
 	if (include45) {
 		QAction *rotate45cwAct = rlmenu->addAction(tr("Rotate 45° Clockwise"));
@@ -496,7 +544,7 @@ void PartLabel::initMenu()
 	dvmenu->addSeparator();
 
 	QHash<QString,QString> properties = m_owner->modelPart()->properties();
-	foreach (QString key, properties.keys()) {
+	Q_FOREACH (QString key, properties.keys()) {
 		QString translatedName = ItemBase::translatePropertyName(key);
 		QAction * action = dvmenu->addAction(translatedName);
 		action->setData(QVariant(key));
@@ -538,7 +586,7 @@ void PartLabel::transformLabel(QTransform currTransf)
 
 void PartLabel::setUpText() {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics) {
+	if (infographics != nullptr) {
 		infographics->getLabelFont(m_font, m_color, m_owner);
 	}
 }
@@ -547,7 +595,7 @@ QVariant PartLabel::itemChange(QGraphicsItem::GraphicsItemChange change, const Q
 {
 	switch (change) {
 	case QGraphicsItem::ItemSceneHasChanged:
-		if (this->scene()) {
+		if (this->scene() != nullptr) {
 		}
 		break;
 	default:
@@ -574,12 +622,12 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 		return;
 	}
 
-	if (m_menu.isEmpty()) {
+	if (m_menu->isEmpty()) {
 		initMenu();
 	}
 
 	m_labelAct->setChecked(m_displayKeys.contains(LabelTextKey));
-	foreach (QAction * displayAct, m_displayActs) {
+	Q_FOREACH (QAction * displayAct, m_displayActs) {
 		QString data = displayAct->data().toString();
 		displayAct->setChecked(m_displayKeys.contains(data));
 	}
@@ -589,7 +637,7 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 	m_mediumAct->setChecked(false);
 	m_largeAct->setChecked(false);
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics) {
+	if (infographics != nullptr) {
 		int fs = m_font.pointSize();
 		if (fs == infographics->getLabelFontSizeTiny()) {
 			m_tinyAct->setChecked(true);
@@ -605,8 +653,8 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 		}
 	}
 
-	QAction *selectedAction = m_menu.exec(event->screenPos());
-	if (selectedAction == NULL) return;
+	QAction *selectedAction = m_menu->exec(event->screenPos());
+	if (selectedAction == nullptr) return;
 
 	PartLabelAction action = (PartLabelAction) selectedAction->data().toInt();
 	switch (action) {
@@ -645,7 +693,7 @@ void PartLabel::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
 void PartLabel::rotateFlip(int action) {
 	double degrees = 0;
-	Qt::Orientations orientation = 0;
+	Qt::Orientations orientation = QFlags<Qt::Orientation>();
 	switch (action) {
 	case PartLabelRotate45CW:
 		degrees = 45;
@@ -702,11 +750,11 @@ void PartLabel::partLabelEdit()
 	bool ok;
 	QString oldText = m_text;
 	QString text = QInputDialog::getText((QGraphicsView *) this->scene()->parent(), tr("Set label for %1").arg(m_owner->title()),
-	                                     tr("Label text:"), QLineEdit::Normal, oldText, &ok);
+										 tr("Label text:"), QLineEdit::Normal, oldText, &ok);
 	if (ok && (oldText.compare(text) != 0)) {
-		if (m_owner) {
+		if (m_owner != nullptr) {
 			m_owner->partLabelChanged(text);
-			foreach (PartLabel * p, AllPartLabels.values(m_owner->id())) {
+			Q_FOREACH (PartLabel * p, AllPartLabels.values(m_owner->id())) {
 				p->setPlainText(text);
 			}
 		}
@@ -735,7 +783,7 @@ void PartLabel::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
 void PartLabel::setFontSize(int action) {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics == NULL) return;
+	if (infographics == nullptr) return;
 
 	double fs = 0;
 	switch (action) {
@@ -820,31 +868,46 @@ QString PartLabel::makeSvg(bool blackOnly, double dpi, double printerScale, bool
 	return svg;
 }
 
+bool PartLabel::migrateLabelOffset()
+{
+	// Fritzing before 1.0.0 moved labels by these arbitrary values,
+	// which resulted in text cut off at the top. With this migration
+	// we compensate for that when loading 0.9.10 projects or older.
+	// This way fonts are not cut anymore, but old projects still keep
+	// labels at the same position.
+	const double fontOffsetFactor=0.25;
+	qreal dy = m_font.pointSizeF()  * GraphicsUtils::SVGDPI / 72.0 * fontOffsetFactor;
+	QTransform t = sceneTransform();
+	QTransform labelTransform = QTransform(t.m11(), t.m12(), t.m13(), t.m21(), t.m22(), t.m23(), 0.0, 0.0, t.m33());
+	moveLabel(pos() + labelTransform.map(QPointF(0, -dy)), m_offset);
+	return true;
+}
+
+
 
 QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, double & w, double & h)
 {
 	if (m_displayText.isEmpty()) return "";
 
 	double pixels = m_font.pointSizeF() * printerScale / 72;
-	double y = pixels * 0.75;
-	//DebugDialog::debug(QString("initial y:%1").arg(y));
+	double y = pixels;
 
-	QString svg = QString("<g font-size='%1' font-style='%2' font-weight='%3' fill='%4' font-family=\"'%5'\" id='%6' fill-opacity='1' stroke='none' >")
-	              .arg(m_font.pointSizeF() * dpi / 72)
-	              .arg(mapToSVGStyle(m_font.style()))
-	              .arg(mapToSVGWeight(m_font.weight()))
-	              .arg(blackOnly ? "#000000" : m_color.name())
-	              .arg(InstalledFonts::InstalledFontsNameMapper.value(m_font.family()))
-	              .arg(ViewLayer::viewLayerXmlNameFromID(m_viewLayerID)
-	                  );
+	QString svg =
+		QString("<g font-size='%1' font-style='%2' font-weight='%3' fill='%4' font-family=\"'%5'\" id='%6' fill-opacity='1' stroke='none' >")
+		.arg(QString::number(m_font.pointSizeF() * dpi / 72.0, 'f', 3),
+			mapToSVGStyle(m_font.style()),
+			mapToSVGWeight(m_font.weight()),
+			blackOnly ? "#000000" : m_color.name(),
+			InstalledFonts::InstalledFontsNameMapper.value(m_font.family()),
+			ViewLayer::viewLayerXmlNameFromID(m_viewLayerID)
+		);
 
 	w = 0;
 	QStringList texts = m_displayText.split("\n");
-	foreach (QString t, texts) {
+	for (const QString& t : texts) {
 		QString t1 = TextUtils::convertExtendedChars(TextUtils::escapeAnd(t));
 		svg += QString("<text x='0' y='%1'>%2</text>")
-		       .arg(y * dpi / printerScale)
-		       .arg(t1);
+				.arg(QString::number(y * dpi / printerScale, 'f', 3), t1);
 		y += pixels;
 		w = qMax(w, t.length() * pixels * 0.75);
 		//DebugDialog::debug(QString("\t%1, %2").arg(w).arg(y));
@@ -852,7 +915,10 @@ QString PartLabel::makeSvgAux(bool blackOnly, double dpi, double printerScale, d
 
 	svg += "</g>";
 
+	const double fontOffsetFactor=0.25;
 	h = y - (pixels / 2);
+	h -= fontOffsetFactor * pixels;
+
 
 	//QFontInfo fontInfo(m_font);
 	//DebugDialog::debug(QString("%1 match:%2 ps:%3 sty:%4 w:%5")
@@ -878,7 +944,7 @@ void PartLabel::resetSvg()
 
 	QString svg = TextUtils::makeSVGHeader(GraphicsUtils::SVGDPI, GraphicsUtils::StandardFritzingDPI, w, h) + innerSvg + "\n</svg>";
 
-	if (m_renderer == NULL) {
+	if (m_renderer == nullptr) {
 		m_renderer = new QSvgRenderer(this);
 	}
 

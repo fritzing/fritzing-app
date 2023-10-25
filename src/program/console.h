@@ -49,7 +49,7 @@ class Console : public QPlainTextEdit
 {
 	Q_OBJECT
 
-signals:
+Q_SIGNALS:
 	void getData(const QByteArray &data);
 
 public:

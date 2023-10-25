@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2019 Fritzing
+Copyright (c) 2007-2023 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -27,14 +27,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QScrollBar>
 
 #include "aboutbox.h"
-#include "../debugdialog.h"
 #include "../version/version.h"
 #include "../utils/expandinglabel.h"
 
-AboutBox* AboutBox::Singleton = NULL;
+AboutBox* AboutBox::Singleton = nullptr;
 
-static const int AboutWidth = 390;
-static const int AboutText = 220;
+static constexpr int AboutWidth = 390;
+static constexpr int AboutText = 220;
 QString AboutBox::BuildType;
 
 AboutBox::AboutBox(QWidget *parent)
@@ -46,8 +45,7 @@ AboutBox::AboutBox(QWidget *parent)
 
     setFixedSize(AboutWidth, 466);
 
-	// the background color
-	setStyleSheet("background-color: #E8E8E8");
+	setStyleSheet("background-color: #E8E8E8; color: #000");
 
 	// the new Default Font
 	QFont smallFont("Droid Sans", 11);
@@ -55,12 +53,12 @@ AboutBox::AboutBox(QWidget *parent)
 	extraSmallFont.setLetterSpacing(QFont::PercentageSpacing, 92);
 
 	// Big Icon
-	QLabel *logoShield = new QLabel(this);
+	auto *logoShield = new QLabel(this);
 	logoShield->setPixmap(QPixmap(":/resources/images/AboutBoxLogoShield.png"));
 	logoShield->setGeometry(17, 8, 356, 128);
 
 	// Version String
-	QLabel *versionMain = new QLabel(this);
+	auto *versionMain = new QLabel(this);
     versionMain->setText(tr("Version %1.%2.%3 <br><small>(%4%5 %6) %7 [Qt %8]</small>")
 	                     .arg(Version::majorVersion())
 	                     .arg(Version::minorVersion())
@@ -76,7 +74,7 @@ AboutBox::AboutBox(QWidget *parent)
 	versionMain->setTextInteractionFlags(Qt::TextSelectableByMouse);
 
 	// Link to website
-	QLabel *linkToFritzing = new QLabel(this);
+	auto *linkToFritzing = new QLabel(this);
 	linkToFritzing->setText("<a href=\"https://fritzing.org\">fritzing.org</a>");
 	linkToFritzing->setOpenExternalLinks(true);
 	linkToFritzing->setFont(smallFont);
@@ -93,85 +91,122 @@ AboutBox::AboutBox(QWidget *parent)
     copyrightGNU->setGeometry(0, 410, AboutWidth, 16);
 	copyrightGNU->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
 
-	QLabel *CC = new QLabel(this);
+	auto *CC = new QLabel(this);
 	QPixmap cc(":/resources/images/aboutbox_CC.png");
 	CC->setPixmap(cc);
 	CC->setGeometry(30, this->height() - cc.height(), cc.width(), cc.height());
 
-	QLabel *copyrightFritzing = new QLabel(this);
-	copyrightFritzing->setText(tr("<b>2007-%1 Fritzing</b>").arg(Version::year()));
+	auto *copyrightFritzing = new QLabel(this);
+	copyrightFritzing->setText(tr("<b>Copyright %1 Fritzing GmbH</b>").arg(Version::year()));
 	copyrightFritzing->setFont(extraSmallFont);
     copyrightFritzing->setGeometry(30, 426, AboutWidth - 30 - 30, 16);
 	copyrightFritzing->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
 
 
 	// Scrolling Credits Text
-
-	// moved data out of credits.txt so we could apply translation
 	QString data =
-	    QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
+		QString("<br /><br /><br /><br /><br /><br />") +
 
-	    "<p>" +
-	    tr("Fritzing is made by: ") +
-	    tr("Prof. Reto Wettach, Andr&eacute; Kn&ouml;rig, Myriel Milicevic, ") +
-	    tr("Zach Eveland, Dirk van Oosterbosch, ") +
-	    tr("Jonathan Cohen, Marcus Paeschke, Omer Yosha, ") +
-	    tr("Travis Robertson, Stefan Hermann, Brendan Howell, ") +
-	    tr("Mariano Crowe, Johannes Landstorfer, ") +
-	    tr("Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, ") +
-	    tr("Bryant Mairs, Uleshka Asher, Daniel Tzschentke, ") +
-	    tr("and Kjell Morgenstern ") +
+		"<p>" +
+		tr("Fritzing is made by: ") +
+		tr("Prof. Reto Wettach, Andr&eacute; Kn&ouml;rig, Myriel Milicevic, ") +
+		tr("Zach Eveland, Dirk van Oosterbosch, ") +
+		tr("Jonathan Cohen, Marcus Paeschke, Omer Yosha, ") +
+		tr("Travis Robertson, Stefan Hermann, Brendan Howell, ") +
+		tr("Mariano Crowe, Johannes Landstorfer, ") +
+		tr("Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, ") +
+		tr("Bryant Mairs, Uleshka Asher, Daniel Tzschentke, and Kjell Morgenstern") +
+		"</p>" +
+
+		"<p>" +
+		tr("Special thanks go out to: ") +
+		tr("Jussi &Auml;ngeslev&auml;, Massimo Banzi, Ayah Bdeir, ") +
+		tr("Durrell Bishop, David Cuartielles, Fabian Hemmert, ") +
+		tr("Gero Herkenrath, Jeff Hoefs, Tom Hulbert, ") +
+		tr("Tom Igoe, Hans-Peter Kadel, Till Savelkoul, ") +
+		tr("Jan Sieber, Yaniv Steiner, Olaf Val, ") +
+		tr("Michaela Vieser and Julia Werner.") +
+		"</p>" +
+
+		"<p>" +
+		tr("Thanks for the translations go out to: ") + "<br/>" +
+		tr("Bulgarian: ") + "Nikolay Stankov, Lyubomir Vasilev" + "<br/>" +
+		tr("Chinese (Simplified): ") + tr("Yuelin and Ninjia") + "<br/>" +
+		tr("Chinese (Traditional): ") + tr("Robert Lee") + "<br/>" +
+		tr("Czech: ") + "Josef Dustira" + "<br/>" +
+		tr("Dutch: ") + "Steven Noppe, Davy Uittenbogerd" + "<br/>" +
+		tr("French: ") + "Lionel Michel, Yvan Kloster, Alexandre Dussart, Roald Baudoux" + "<br/>" +
+		tr("Greek: ") + "Alexander Kaltsas" + "<br/>" +
+		tr("Italian: ") + "Gianluca Urgese" + "<br/>" +
+		tr("Japanese: ") + tr("Hiroshi Suzuki") + tr(", Siti Aishah Abdul Raouf") + "<br/>" +
+		tr("Korean: ") + tr("Jinbuhm Kim") + "<br/>" +
+		tr("Portuguese (European): ") + "Nuno Pessanha Santos, Bruno Ramalhete" + "<br/>" +
+		tr("Portuguese (Brazilian): ") + " Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, Gabriel Ferreira" + "<br/>" +
+		tr("Russian: ") + "Vladimir Savinov" + "<br/>" +
+		tr("Slovak: ") + " &#313;ubom&iacute;r Ducho&#328;" + "<br/>" +
+		tr("Spanish: ") + "Kurt Badelt, Miguel Solis" + "<br/>" +
+		tr("Turkish: ") + "Cihan Mete Bahad&#x0131;r" + "<br/>" +
+		tr("Ukrainian: ") + tr("Yelyzaveta Chyhryna") + "<br/>" +
+
 	    "</p>" +
 
 	    "<p>" +
-	    tr("Special thanks goes out to: ") +
-	    tr("Jussi &Auml;ngeslev&auml;, Massimo Banzi, Ayah Bdeir, ") +
-	    tr("Durrell Bishop, David Cuartielles, Fabian Hemmert, ") +
-	    tr("Gero Herkenrath, Jeff Hoefs, Tom Hulbert, ") +
-	    tr("Tom Igoe, Hans-Peter Kadel, Till Savelkoul, ") +
-	    tr("Jan Sieber, Yaniv Steiner, Olaf Val, ") +
-	    tr("Michaela Vieser and Julia Werner.") +
+		tr("Fritzing is made possible with funding from the "
+		   "MWFK Brandenburg, "
+		   "the sponsorship of the Design Department of Bauhaus-University Weimar, "
+		   "IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, "
+		   "from the PCB Fab AISLER"
+		   ", and each paid download.") +
 	    "</p>" +
 
 	    "<p>" +
-	    tr("Thanks for the translations go out to: ") + "<br/>" +
-	    tr("Bulgarian: ") + "Nikolay Stankov, Lyubomir Vasilev" + "<br/>" +
-	    tr("Chinese (Simplified): ") + tr("Yuelin and Ninjia") + "<br/>" +
-	    tr("Chinese (Traditional): ") + tr("Robert Lee") + "<br/>" +
-	    tr("Czech: ") + "Josef Dustira" + "<br/>" +
-	    tr("Dutch: ") + "Steven Noppe, Davy Uittenbogerd" + "<br/>" +
-	    tr("French: ") + "Lionel Michel, Yvan Kloster, Alexandre Dussart, Roald Baudoux" + "<br/>" +
-	    tr("Greek: ") + "Alexander Kaltsas" + "<br/>" +
-	    tr("Italian: ") + "Gianluca Urgese" + "<br/>" +
-	    tr("Japanese: ") + tr("Hiroshi Suzuki") + "<br/>" +
-	    tr("Korean: ") + tr("Jinbuhm Kim") + "<br/>" +
-	    tr("Portuguese (European): ") + "Nuno Pessanha Santos, Bruno Ramalhete" + "<br/>" +
-	    tr("Portuguese (Brazilian): ") + " Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, Gabriel Ferreira" + "<br/>" +
-	    tr("Russian: ") + "Vladimir Savinov" + "<br/>" +
-	    tr("Slovak: ") + " &#313;ubom&iacute;r Ducho&#328;" + "<br/>" +
-	    tr("Spanish: ") + "Kurt Badelt, Miguel Solis" + "<br/>" +
-	    tr("Turkish: ") + "Cihan Mete Bahad&#x0131;r" + "<br/>" +
-	    tr("Ukrainian: ") + tr("Yelyzaveta Chyhryna") + "<br/>" +
+		tr("Special thanks go out to all the students and alpha testers who were brave enough to give Fritzing a test spin.") +
+		"</p>";
 
-	    "</p>" +
+	QString br = "<br/>";
+	QString lgplv3 = tr("LGPLv3");
+	QString lgplv2 = tr("GPLv2 with linking exception");
+	QString boost = tr("Boost License 1.0");
+	QString modifiedbsd = tr("Modified BSD License");
+	QString bsd = tr("BSD License");
+	QString pnglicense = tr("PNG Reference Library License version 2");
+	QString openssl = tr("Dual OpenSSL and SSLeay License");
+	QString zlib = tr("zlib License");
 
-	    "<p>" +
-	    tr("Fritzing is made possible with funding from the ") +
-	    tr("MWFK Brandenburg, the sponsorship of the Design ") +
-	    tr("Department of Bauhaus-University Weimar, ") +
-	    tr("IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, ") +
-	    tr("and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.") +
-	    "</p>" +
 
-	    "<p>" +
-	    tr("Special thanks goes out as well to all the students ") +
-	    tr("and alpha testers who were brave enough to give ") +
-	    tr("Fritzing a test spin. ") +
-	    "</p>" +
-
-	    "<br /><br /><br /><br /><br /><br /><br /><br />";
+	QString licensesTable = "<p>" + tr("The following libraries are used by Fritzing:") + br +
+						QString(
+							   "<table width='80%' border='0' cellspacing='0' cellpadding='0'>"
+							   "<tr><td align='left'>Qt</td><td align='left'>%1</td></tr>"
+							   "<tr><td align='left'>Boost</td><td align='left'>%2</td></tr>"
+							   "<tr><td align='left'>svgpp</td><td align='left'>%2</td></tr>"
+							   "<tr><td align='left'>libngspice</td><td align='left'>%3</td></tr>"
+							   "<tr><td align='left'>libquazip</td><td align='left'>%1</td></tr>"
+							   "<tr><td align='left'>libpng</td><td align='left'>%4</td></tr>"
+							   "<tr><td align='left'>libcrypto</td><td align='left'>%5</td></tr>"
+							   "<tr><td align='left'>libjpg</td><td align='left'>%6</td></tr>"
+							   "<tr><td align='left'>zlib</td><td align='left'>%7</td></tr>"
+							   "<tr><td align='left'>libgit2</td><td align='left'>%8</td></tr>"
+							   "</table>"
+							   "</p>"
+								"<br /><br /><br /><br /><br /><br /><br /><br />"
+								)
+			 .arg(lgplv3)
+			 .arg(boost)
+			 .arg(modifiedbsd)
+			 .arg(pnglicense)
+			 .arg(openssl)
+			 .arg(bsd)
+			 .arg(zlib)
+			 .arg(lgplv2);
 
 	QPixmap fadepixmap(":/resources/images/aboutbox_scrollfade.png");
+
+	data = "<div align='center'><table width='90%'><tr><td align='center'>" +
+				data +
+				"</td></td></table>" +
+				licensesTable +
+			"</div>";
 
 	m_expandingLabel = new ExpandingLabel(this, AboutWidth);
 	m_expandingLabel->setObjectName("aboutText");
@@ -179,24 +214,14 @@ AboutBox::AboutBox(QWidget *parent)
 	m_expandingLabel->setFont(smallFont);
 	m_expandingLabel->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
 
-	// setAlignment only aligns the "current paragraph"
-	// the QTextCursor code aligns all paragraphs
-	QTextCursor cursor(m_expandingLabel->document());
-	cursor.select(QTextCursor::Document);
-	QTextBlockFormat fmt;
-	fmt.setAlignment(Qt::AlignCenter);
-	cursor.mergeBlockFormat(fmt);
-
 	// Add a fade out and a fade in the scrollArea
-	QLabel *scrollFade = new QLabel(this);
+	auto *scrollFade = new QLabel(this);
 	scrollFade->setPixmap(fadepixmap);
 	scrollFade->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
 	scrollFade->setStyleSheet("background-color: none");
 
-
 	// auto scroll timer initialization
 	m_restartAtTop = false;
-	m_startTime = QTime::currentTime();
 	m_autoScrollTimer = new QTimer(this);
 	m_autoScrollTimer->setTimerType(Qt::PreciseTimer);
 
@@ -236,14 +261,14 @@ void AboutBox::initBuildType(const QString & buildType) {
 
 void AboutBox::hideAbout() {
 	//DebugDialog::debug("the AboutBox gets a hide action triggered");
-	if (Singleton) {
+	if (Singleton != nullptr) {
 		Singleton->hide();
 	}
 }
 
 void AboutBox::showAbout() {
 	//DebugDialog::debug("the AboutBox gets a show action triggered");
-	if (Singleton == NULL) {
+	if (Singleton == nullptr) {
 		new AboutBox();
 	}
 
@@ -256,7 +281,7 @@ void AboutBox::showAbout() {
 void AboutBox::closeAbout() {
 	//DebugDialog::debug("the AboutBox gets a close action triggered");
 	// Note: not every close triggers this function. we better listen to closeEvent
-	if (Singleton) {
+	if (Singleton != nullptr) {
 		Singleton->close();
 	}
 }

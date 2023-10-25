@@ -26,14 +26,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QByteArray>
 #include <QDomElement>
 #include <QObject>
-#include <QMatrix>
+#include <QTransform>
 #include <QPainterPath>
-#include <QRegExp>
 #include <QFile>
 
 struct PathUserData {
 	QString string;
-	QMatrix transform;
+	QTransform transform;
 	double sNewWidth;
 	double sNewHeight;
 	double vbWidth;
@@ -88,6 +87,7 @@ protected:
 	                    double sNewWidth, double sNewHeight,
 	                    double vbWidth, double vbHeight, bool blackOnly);
 	bool normalizeAttribute(QDomElement & element, const char * attributeName, double num, double denom);
+	bool normalizeArrayAttribute(QDomElement & element, const char * attributeName, double num, double denom);
 	bool normalizeFontSize(QDomElement & element, const char * attributeName, double num, double denom);
 	void painterPathChild(QDomElement & element, QPainterPath & ppath);			// note: only partially implemented
 	void normalizeTranslation(QDomElement & element,
@@ -102,7 +102,7 @@ protected:
 	static void hideTextAux(QDomElement & parent, bool hideChildren);
 	static void showTextAux(QDomElement & parent, bool & hasText, bool root);
 
-protected slots:
+protected Q_SLOTS:
 	void normalizeCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
 	void shiftCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
 	virtual void rotateCommandSlot(QChar, bool, QList<double> &, void *) {}

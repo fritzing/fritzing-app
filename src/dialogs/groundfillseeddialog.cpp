@@ -19,7 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "groundfillseeddialog.h"
-#include "../debugdialog.h"
 #include "../connectors/connectoritem.h"
 #include "../sketch/pcbsketchwidget.h"
 
@@ -39,15 +38,15 @@ GroundFillSeedDialog::GroundFillSeedDialog(PCBSketchWidget * sketchWidget, QList
 
 	this->setWindowTitle(QObject::tr("Ground Fill Seed Editor"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
 	if (!intro.isEmpty()) {
-		QLabel * label = new QLabel(intro);
+		auto * label = new QLabel(intro);
 		label->setWordWrap(true);
 		vLayout->addWidget(label);
 	}
 
-	QLabel * label = new QLabel(tr("The difference between a 'ground fill' and plain 'copper fill' is that in a ground fill, "
+	auto * label = new QLabel(tr("The difference between a 'ground fill' and plain 'copper fill' is that in a ground fill, "
 	                               "the flooded area includes traces and connectors that are connected to 'ground' connectors. "
 	                               "Ground connectors are usually labeled 'GND' or 'ground' but sometimes this is not the case. "
 	                               "It also may be that there are multiple nets with a ground connector, "
@@ -64,9 +63,10 @@ GroundFillSeedDialog::GroundFillSeedDialog(PCBSketchWidget * sketchWidget, QList
 
 	m_listWidget = new QListWidget(this);
 	int ix = 0;
-	foreach (ConnectorItem * connectorItem, connectorItems) {
-		QListWidgetItem *item = new QListWidgetItem;
-		item->setData(Qt::DisplayRole, connectorItem->connectorSharedName());
+	Q_FOREACH (ConnectorItem * connectorItem, connectorItems) {
+		auto *item = new QListWidgetItem;
+		QString name = QString("%1-%2").arg(connectorItem->attachedToInstanceTitle()).arg(connectorItem->connectorSharedName());
+		item->setData(Qt::DisplayRole, name);
 		item->setData(Qt::CheckStateRole, connectorItem->isGroundFillSeed() ? Qt::Checked : Qt::Unchecked);
 		item->setData(Qt::UserRole, ix++);
 		connectorItem->updateTooltip();
@@ -78,7 +78,7 @@ GroundFillSeedDialog::GroundFillSeedDialog(PCBSketchWidget * sketchWidget, QList
 	connect(m_listWidget, SIGNAL(itemChanged(QListWidgetItem *)), this, SLOT(changedSlot(QListWidgetItem *)));
 	vLayout->addWidget(m_listWidget);
 
-	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Yes | QDialogButtonBox::Cancel);
+	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Yes | QDialogButtonBox::Cancel);
 
 	QPushButton * cancelButton = buttonBox->button(QDialogButtonBox::Cancel);
 	cancelButton->setText(tr("Cancel"));
@@ -129,7 +129,7 @@ void GroundFillSeedDialog::clickedSlot(QListWidgetItem * item) {
 	showEqualPotential(m_activeConnectorItem, false);
 
 	int ix = -1;
-	if (item) {
+	if (item != nullptr) {
 		ix = item->data(Qt::UserRole).toInt();
 		m_activeConnectorItem = m_connectorItems.value(ix, nullptr);
 		showEqualPotential(m_activeConnectorItem, item->checkState() == Qt::Checked);
@@ -140,12 +140,12 @@ void GroundFillSeedDialog::clickedSlot(QListWidgetItem * item) {
 
 void GroundFillSeedDialog::showEqualPotential(ConnectorItem * connectorItem, bool show)
 {
-	if (connectorItem) {
+	if (connectorItem != nullptr) {
 		QList<ConnectorItem *> connectorItems;
 		connectorItems.append(connectorItem);
 		ConnectorItem::collectEqualPotential(connectorItems, true, ViewGeometry::NoFlag);
 		QList<ConnectorItem *> visited;
-		foreach (ConnectorItem * ci, connectorItems) {
+		Q_FOREACH (ConnectorItem * ci, connectorItems) {
 			ci->showEqualPotential(show, visited);
 		}
 	}

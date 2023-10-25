@@ -18,7 +18,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "fsplashscreen.h"
-#include "utils/misc.h"
 #include "debugdialog.h"
 
 #include <QTextDocument>
@@ -60,7 +59,7 @@ FSplashScreen::FSplashScreen(const QPixmap & pixmap, Qt::WindowFlags f ) : QSpla
 			int width = item.attribute("width", "0").toInt();
 			int height = item.attribute("height", "0").toInt();
 			QString colorName = item.attribute("color");
-			MessageThing * messageThing = new MessageThing();
+			auto * messageThing = new MessageThing();
 			messageThing->rect.setCoords(x, y, x + width, y + height);
 			if (colorName.isEmpty()) {
 				messageThing->color = QColor(0, 0, 0);
@@ -75,13 +74,13 @@ FSplashScreen::FSplashScreen(const QPixmap & pixmap, Qt::WindowFlags f ) : QSpla
 }
 
 FSplashScreen::~FSplashScreen() {
-	foreach (MessageThing * messageThing, m_messages) {
+	Q_FOREACH (MessageThing * messageThing, m_messages) {
 		delete messageThing;
 	}
-	foreach (MessageThing * messageThing, m_items) {
+	Q_FOREACH (MessageThing * messageThing, m_items) {
 		delete messageThing;
 	}
-	foreach (PixmapThing * pixmapThing, m_pixmaps) {
+	Q_FOREACH (PixmapThing * pixmapThing, m_pixmaps) {
 		delete pixmapThing;
 	}
 }
@@ -90,9 +89,9 @@ FSplashScreen::~FSplashScreen() {
 void FSplashScreen::showMessage(const QString &message, const QString & id, int alignment)
 {
 	MessageThing * itemMessageThing = m_items.value(id);
-	if (itemMessageThing == NULL) return;
+	if (itemMessageThing == nullptr) return;
 
-	MessageThing * messageThing = new MessageThing;
+	auto * messageThing = new MessageThing;
 	messageThing->alignment = alignment;
 	messageThing->color = itemMessageThing->color;
 	messageThing->rect = itemMessageThing->rect;;
@@ -105,9 +104,9 @@ void FSplashScreen::showMessage(const QString &message, const QString & id, int 
 int FSplashScreen::showPixmap(const QPixmap & pixmap, const QString & id)
 {
 	MessageThing * itemMessageThing = m_items.value(id);
-	if (itemMessageThing == NULL) return -1;
+	if (itemMessageThing == nullptr) return -1;
 
-	PixmapThing * pixmapThing = new PixmapThing;
+	auto * pixmapThing = new PixmapThing;
 	pixmapThing->rect = QRect(itemMessageThing->rect.topLeft(), pixmap.size());
 	pixmapThing->pixmap = pixmap;
 	m_pixmaps.append(pixmapThing);
@@ -133,12 +132,12 @@ void FSplashScreen::drawContents ( QPainter * painter )
 	painter->setRenderHint ( QPainter::Antialiasing, true );				// TODO: might need to be in the stylesheet?
 
 	// pixmaps first, since they go beneath text
-	foreach (PixmapThing * pixmapThing, m_pixmaps) {
+	Q_FOREACH (PixmapThing * pixmapThing, m_pixmaps) {
 		painter->drawPixmap(pixmapThing->rect, pixmapThing->pixmap);
 		//DebugDialog::debug(QString("pixmapthing %1 %2").arg(pixmapThing->pixmap.width()).arg(pixmapThing->pixmap.height()), pixmapThing->rect);
 	}
 
-	foreach (MessageThing * messageThing, m_messages) {
+	Q_FOREACH (MessageThing * messageThing, m_messages) {
 		painter->setPen(messageThing->color);
 		if (Qt::mightBeRichText(messageThing->message)) {
 			QTextDocument doc;
@@ -180,7 +179,7 @@ void FSplashScreen::displaySlice()
 	QPixmap bar(":/resources/images/splash/fab_logo_bar.png");
 	if (bar.isNull()) return;
 
-	srand ( time(NULL) );
+	srand ( time(nullptr) ); 	   // flawfinder: ignore
 	int ix = (rand() % highest) + 1;
 
 	QPixmap slice(fname.arg(ix));

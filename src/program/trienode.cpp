@@ -23,7 +23,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "trienode.h"
 #include "../debugdialog.h"
 
-#include <QRegExp>
 #include <QXmlStreamReader>
 
 
@@ -38,14 +37,14 @@ TrieLeaf::~TrieLeaf()
 TrieNode::TrieNode(QChar c)
 {
 	m_char = c;
-	m_leafData = NULL;
+	m_leafData = nullptr;
 	m_isLeaf = false;
 	m_caseInsensitive = false;
 }
 
 TrieNode::~TrieNode()
 {
-	foreach (TrieNode * node, m_children) {
+	Q_FOREACH (TrieNode * node, m_children) {
 		delete node;
 	}
 	m_children.clear();
@@ -78,7 +77,7 @@ void TrieNode::addString(QString & string, bool caseInsensitive, TrieLeaf * leaf
 
 void TrieNode::addStringAux(QChar c, QString & next, bool caseInsensitive, TrieLeaf * leaf) {
 	bool gotc = false;
-	foreach (TrieNode * node, m_children) {
+	Q_FOREACH (TrieNode * node, m_children) {
 		if (node->matchesChar(c)) {
 			node->addString(next, caseInsensitive, leaf);
 			gotc = true;
@@ -86,7 +85,7 @@ void TrieNode::addStringAux(QChar c, QString & next, bool caseInsensitive, TrieL
 	}
 
 	if (!gotc) {
-		TrieNode * child = new TrieNode(c);
+		auto * child = new TrieNode(c);
 		m_children.append(child);
 		child->addString(next, caseInsensitive, leaf);
 	}
@@ -108,7 +107,7 @@ bool TrieNode::matches(QString & string, TrieLeaf * & leaf)
 	}
 
 	QChar in(string.at(0));
-	foreach (TrieNode * node, m_children) {
+	Q_FOREACH (TrieNode * node, m_children) {
 		if (node->matchesChar(in)) {
 			return node->matches(string.remove(0, 1), leaf);
 		}

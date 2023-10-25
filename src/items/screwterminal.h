@@ -29,14 +29,14 @@ class ScrewTerminal : public PaletteItem
 
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
-	ScrewTerminal(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit ScrewTerminal(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~ScrewTerminal();
 
 	PluralType isPlural();
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 
-public slots:
+public Q_SLOTS:
 	void swapEntry(const QString & text);
 
 public:

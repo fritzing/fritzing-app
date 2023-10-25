@@ -30,13 +30,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../dock/layerpalette.h"
 #include "../mainwindow/fdockwidget.h"
 #include "../utils/fileprogressdialog.h"
-#include "../debugdialog.h"
 
 /////////////////////////////////////
 
-static const int PartsBinMinHeight = 100;
-static const int UndoHistoryDefaultHeight = 70;
-static const int UndoHistoryMinHeight = UndoHistoryDefaultHeight;
+static constexpr int PartsBinMinHeight = 100;
+static constexpr int UndoHistoryDefaultHeight = 70;
+static constexpr int UndoHistoryMinHeight = UndoHistoryDefaultHeight;
 const int MainWindow::DockMinWidth = 130;
 const int MainWindow::DockMinHeight = 30;
 
@@ -53,7 +52,7 @@ void MainWindow::dockChangeActivation(bool activate, QWidget * originator) {
 
 void MainWindow::createDockWindows()
 {
-	QWidget * widget = new QWidget();
+	auto * widget = new QWidget();
 	widget->setMinimumHeight(0);
 	widget->setMaximumHeight(0);
 
@@ -69,7 +68,7 @@ void MainWindow::createDockWindows()
 	m_layerPalette->setShowAllLayersAction(m_showAllLayersAct);
 	m_layerPalette->setHideAllLayersAction(m_hideAllLayersAct);
 
-	if (m_programView == NULL) {
+	if (m_programView == nullptr) {
 		m_windowMenu->addSeparator();
 		m_windowMenu->addAction(m_openProgramWindowAct);
 	}
@@ -83,7 +82,7 @@ void MainWindow::createDockWindows()
 }
 
 FDockWidget * MainWindow::makeDock(const QString & title, QWidget * widget, int dockMinHeight, int dockDefaultHeight, Qt::DockWidgetArea area, DockFactory dockFactory) {
-	FDockWidget * dock = ((dockFactory) ? dockFactory(title, this) : new FDockWidget(title, this));
+	FDockWidget * dock = ((dockFactory) != nullptr ? dockFactory(title, this) : new FDockWidget(title, this));
 	dock->setObjectName(title);
 	dock->setWidget(widget);
 	widget->setParent(dock);
@@ -99,7 +98,7 @@ FDockWidget * MainWindow::makeDock(const QString & title, QWidget * widget, int 
 FDockWidget *MainWindow::dockIt(FDockWidget* dock, int dockMinHeight, int dockDefaultHeight, Qt::DockWidgetArea area) {
 	dock->setAllowedAreas(area);
 	addDockWidget(area, dock);
-	if (m_windowMenu) {
+	if (m_windowMenu != nullptr) {
 		m_windowMenu->addAction(dock->toggleViewAction());
 	}
 
@@ -117,8 +116,8 @@ FDockWidget *MainWindow::dockIt(FDockWidget* dock, int dockMinHeight, int dockDe
 
 FDockWidget *MainWindow::newTopWidget() {
 	int topMostY = 10000;
-	FDockWidget *topWidget = NULL;
-	foreach(FDockWidget* dock, m_docks) {
+	FDockWidget *topWidget = nullptr;
+	Q_FOREACH(FDockWidget* dock, m_docks) {
 		if(/*!dock->isFloating() && dock->isVisible() &&*/
 		    dockWidgetArea(dock) == Qt::RightDockWidgetArea
 		    && dock->pos().y() < topMostY) {
@@ -131,8 +130,8 @@ FDockWidget *MainWindow::newTopWidget() {
 
 FDockWidget *MainWindow::newBottomWidget() {
 	int bottomMostY = -1;
-	FDockWidget *bottomWidget = NULL;
-	foreach(FDockWidget* dock, m_docks) {
+	FDockWidget *bottomWidget = nullptr;
+	Q_FOREACH(FDockWidget* dock, m_docks) {
 		if(!dock->isFloating() && dock->isVisible() &&
 		        dockWidgetArea(dock) == Qt::RightDockWidgetArea
 		        && dock->pos().y() > bottomMostY) {
@@ -158,7 +157,7 @@ void MainWindow::keepMargins() {
 	if(m_bottomDock != newBottomWidget) {
 		removeMargin(m_bottomDock);
 		m_bottomDock = newBottomWidget;
-		if(m_bottomDock) m_oldBottomDockStyle = m_bottomDock->styleSheet();
+		if(m_bottomDock != nullptr) m_oldBottomDockStyle = m_bottomDock->styleSheet();
 		addBottomMargin(m_bottomDock);
 		m_sizeGrip->raise();
 	}
@@ -166,18 +165,18 @@ void MainWindow::keepMargins() {
 
 
 void MainWindow::removeMargin(FDockWidget* dock) {
-	if(dock) {
+	if(dock != nullptr) {
 		dockMarginAux(dock, "", m_oldBottomDockStyle);
 	}
 }
 
 void MainWindow::addTopMargin(FDockWidget* dock) {
-	if(dock) dockMarginAux(dock, "topMostDock", dock->widget()->styleSheet());
+	if(dock != nullptr) dockMarginAux(dock, "topMostDock", dock->widget()->styleSheet());
 }
 
 void MainWindow::addBottomMargin(FDockWidget* dock) {
-	if(dock) {
-		if(qobject_cast<BinManager*>(dock->widget())) {
+	if(dock != nullptr) {
+		if(qobject_cast<BinManager*>(dock->widget()) != nullptr) {
 			// already has enough space
 		} else {
 			dockMarginAux(dock, "bottomMostDock", dock->widget()->styleSheet());
@@ -187,7 +186,7 @@ void MainWindow::addBottomMargin(FDockWidget* dock) {
 
 
 void MainWindow::dockMarginAux(FDockWidget* dock, const QString &name, const QString &style) {
-	if(dock) {
+	if(dock != nullptr) {
 		dock->widget()->setObjectName(name);
 		dock->widget()->setStyleSheet(style);
 		dock->setStyleSheet(dock->styleSheet());
@@ -213,7 +212,7 @@ void MainWindow::initDock() {
 	m_binManager->initStandardBins();
 
 	//DebugDialog::debug("after creating bins");
-	if (m_fileProgressDialog) {
+	if (m_fileProgressDialog != nullptr) {
 		m_fileProgressDialog->setValue(89);
 	}
 }
@@ -223,7 +222,7 @@ void MainWindow::moreInitDock() {
 
 	createDockWindows();
 
-	if (m_fileProgressDialog) {
+	if (m_fileProgressDialog != nullptr) {
 		m_fileProgressDialog->setValue(93);
 	}
 }
@@ -232,8 +231,8 @@ void MainWindow::moreInitDock() {
 void MainWindow::saveDocks()
 {
 	for (int i = 0; i < children().count(); i++) {
-		FDockWidget * dock = qobject_cast<FDockWidget *>(children()[i]);
-		if (dock == NULL) continue;
+		auto * dock = qobject_cast<FDockWidget *>(children()[i]);
+		if (dock == nullptr) continue;
 
 		//DebugDialog::debug(QString("saving dock %1").arg(dock->windowTitle()));
 		dock->saveState();
@@ -247,8 +246,8 @@ void MainWindow::saveDocks()
 
 void MainWindow::restoreDocks() {
 	for (int i = 0; i < children().count(); i++) {
-		FDockWidget * dock = qobject_cast<FDockWidget *>(children()[i]);
-		if (dock == NULL) continue;
+		auto * dock = qobject_cast<FDockWidget *>(children()[i]);
+		if (dock == nullptr) continue;
 
 		// DebugDialog::debug(QString("restoring dock %1").arg(dock->windowTitle()));
 		dock->restoreState();

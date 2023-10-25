@@ -34,7 +34,7 @@ class PinHeader : public PaletteItem
 
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
-	PinHeader(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit PinHeader(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~PinHeader();
 
 	QString getProperty(const QString & key);
@@ -47,7 +47,7 @@ protected:
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 
 
-public slots:
+public Q_SLOTS:
 	void swapEntry(const QString & text);
 
 public:
@@ -63,8 +63,8 @@ public:
 	static QString genFZP(const QString & moduleid);
 	static QString makePcbSvg(const QString & expectedFileName);
 	static QString makePcbShroudedSvg(int pins);
-	static QString makePcbLongPadSvg(int pins, bool lock);
-	static QString makePcbLongPadLockSvg(int pins);
+	static QString makePcbLongPadSvg(int pins, bool lock, const QString & spacingString);
+	static QString makePcbLongPadAlternatingSvg(int pins, const QString & spacingString);
 	static QString makePcbMolexSvg(int pins, const QString & spacingString);
 	static QString makePcbSMDSvg(const QString & expectedFileName);
 	static QString makeSchematicSvg(const QString & expectedFileName);

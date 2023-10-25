@@ -39,17 +39,17 @@ PESvgView::PESvgView(QWidget * parent) : QFrame(parent)
 {
 	this->setObjectName("peSVG");
 
-	m_pegi = NULL;
+	m_pegi = nullptr;
 
-	QVBoxLayout * mainLayout = new QVBoxLayout;
+	auto * mainLayout = new QVBoxLayout;
 
 	m_filename = new QLabel();
 	mainLayout->addWidget(m_filename);
 
-	QFrame * boundsFrame = new QFrame;
-	QHBoxLayout * boundsLayout = new QHBoxLayout;
+	auto * boundsFrame = new QFrame;
+	auto * boundsLayout = new QHBoxLayout;
 
-	QLabel * label = new QLabel("x:");
+	auto * label = new QLabel("x:");
 	boundsLayout->addWidget(label);
 	m_x = new QLabel;
 	boundsLayout->addWidget(m_x);
@@ -100,7 +100,7 @@ PESvgView::~PESvgView()
 
 void PESvgView::highlightElement(PEGraphicsItem * pegi) {
 	m_pegi = pegi;
-	if (pegi == NULL) {
+	if (pegi == nullptr) {
 		m_svgElement->setText("");
 		m_x->setText("");
 		m_y->setText("");
@@ -140,7 +140,7 @@ void PESvgView::highlightElement(PEGraphicsItem * pegi) {
 
 void PESvgView::setChildrenVisible(bool vis)
 {
-	foreach (QWidget * widget, findChildren<QWidget *>()) {
+	Q_FOREACH (QWidget * widget, findChildren<QWidget *>()) {
 		widget->setVisible(vis);
 	}
 }

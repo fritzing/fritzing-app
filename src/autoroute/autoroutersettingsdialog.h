@@ -40,11 +40,11 @@ public:
 
 	QHash<QString, QString> getSettings();
 
-protected slots:
+protected Q_SLOTS:
 	void production(bool);
-	void widthEntry(const QString &);
+	void widthEntry(int index);
 	void changeUnits(bool);
-	void changeHoleSize(const QString &);
+	void changeHoleSize(int index);
 	void changeDiameter();
 	void changeThickness();
 	void toInches();
@@ -60,6 +60,8 @@ protected:
 	QWidget * createKeepoutWidget(const QString & keepoutString);
 	QString getKeepoutString();
 	void setDefaultKeepout();
+	void widthEntry(const QString &);
+	void changeHoleSize(const QString &);
 
 protected:
 	QRadioButton * m_homebrewButton;

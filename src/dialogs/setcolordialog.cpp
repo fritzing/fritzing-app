@@ -19,7 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "setcolordialog.h"
-#include "../debugdialog.h"
 #include "../utils/clickablelabel.h"
 
 #include <QLabel>
@@ -31,8 +30,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 
-static const int MARGIN = 5;
-static const int BUTTON_WIDTH = 150;
+static constexpr int MARGIN = 5;
+static constexpr int BUTTON_WIDTH = 150;
 
 /////////////////////////////////////
 
@@ -49,22 +48,22 @@ SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, Q
 {
 	this->setWindowTitle(tr("%1 Color...").arg(message));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
-	QLabel * label = new QLabel(tr("Choose %1 color:").arg(message.toLower()));
+	auto * label = new QLabel(tr("Choose %1 color:").arg(message.toLower()));
 	vLayout->addWidget(label);
 
-	QFrame * f4 = new QFrame();
-	QHBoxLayout * hLayout4 = new QHBoxLayout(f4);
+	auto * f4 = new QFrame();
+	auto * hLayout4 = new QHBoxLayout(f4);
 	m_selectedColorLabel = new QLabel();
 	setColor(currentColor);
 	hLayout4->addWidget(m_selectedColorLabel);
-	m_selectedColorLabel->setMargin(MARGIN);
+	m_selectedColorLabel->setContentsMargins(MARGIN, MARGIN, MARGIN, MARGIN);
 	vLayout->addWidget(f4);
 
-	QFrame * f2 = new QFrame();
-	QHBoxLayout * hLayout2 = new QHBoxLayout(f2);
-	QPushButton *button2 = new QPushButton(tr("Reset to default"));
+	auto * f2 = new QFrame();
+	auto * hLayout2 = new QHBoxLayout(f2);
+	auto *button2 = new QPushButton(tr("Reset to default"));
 	button2->setFixedWidth(BUTTON_WIDTH);
 	connect(button2, SIGNAL(clicked()), this, SLOT(selectStandard()));
 	hLayout2->addWidget(button2);
@@ -72,31 +71,31 @@ SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, Q
 	connect(m_standardColorLabel, SIGNAL(clicked()), this, SLOT(selectStandard()));
 	m_standardColorLabel->setPalette(QPalette(standardColor));
 	m_standardColorLabel->setAutoFillBackground(true);
-	m_standardColorLabel->setMargin(MARGIN);
+	m_standardColorLabel->setContentsMargins(MARGIN, MARGIN, MARGIN, MARGIN);
 	hLayout2->addWidget(m_standardColorLabel);
 	vLayout->addWidget(f2);
 
-	QFrame * f3 = new QFrame();
-	QHBoxLayout * hLayout3 = new QHBoxLayout(f3);
-	QPushButton *button3 = new QPushButton(tr("Pick custom color ..."));
+	auto * f3 = new QFrame();
+	auto * hLayout3 = new QHBoxLayout(f3);
+	auto *button3 = new QPushButton(tr("Pick custom color ..."));
 	connect(button3, SIGNAL(clicked()), this, SLOT(selectCustom()));
 	hLayout3->addWidget(button3);
 	setCustomColor(currentColor);
 	vLayout->addWidget(f3);
 
-	QSpacerItem * spacerItem = new QSpacerItem( 0, 10 );
+	auto * spacerItem = new QSpacerItem( 0, 10 );
 	vLayout->addSpacerItem(spacerItem);
 
 
 	if (askPrefs) {
-		QFrame * f5 = new QFrame();
-		QHBoxLayout * hLayout5 = new QHBoxLayout(f5);
+		auto * f5 = new QFrame();
+		auto * hLayout5 = new QHBoxLayout(f5);
 		m_prefsCheckBox = new QCheckBox(tr("Make this the default %1 color").arg(message.toLower()));
 		hLayout5->addWidget(m_prefsCheckBox);
 		vLayout->addWidget(f5);
 	}
 
-	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 	buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
@@ -128,7 +127,7 @@ void SetColorDialog::selectCustom() {
 }
 
 bool SetColorDialog::isPrefsColor() {
-	if (!m_prefsCheckBox) return false;
+	if (m_prefsCheckBox == nullptr) return false;
 
 	return m_prefsCheckBox->isChecked();
 }

@@ -36,12 +36,12 @@ protected:
 	void enterEvent( QEvent *);
 	void leaveEvent( QEvent *);
 
-signals:
+Q_SIGNALS:
 	void mouseEnter();
 	void mouseLeave();
 	void editable(bool);
 
-protected slots:
+protected Q_SLOTS:
 	void editingFinishedSlot();
 
 protected:

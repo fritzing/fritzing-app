@@ -112,6 +112,9 @@
         <file>resources/images/icons/toolbarNotesEnabled_icon.png</file>
         <file>resources/images/icons/toolbarNotesDisabled_icon.png</file>
         <file>resources/images/icons/toolbarNotesPressed_icon.png</file>
+        <file>resources/images/icons/toolbarSimulationEnabled_icon.png</file>
+        <file>resources/images/icons/toolbarSimulationDisabled_icon.png</file>
+        <file>resources/images/icons/toolbarSimulationPressed_icon.png</file>
         <file>resources/images/icons/toolbarRotateEnabled_icon.png</file>
         <file>resources/images/icons/toolbarRotateDisabled_icon.png</file>
         <file>resources/images/icons/toolbarRotatePressed_icon.png</file>
@@ -158,9 +161,6 @@
         <file>resources/images/icons/zoomSliderPlus.png</file>
         <file>resources/images/icons/zoomSliderPlusPressed.png</file>
         <file>resources/images/icons/searchField.png</file>
-        <file>resources/images/icons/noicon.png</file>
-        <file>resources/images/icons/parts_plural_v3_plur.png</file>
-        <file>resources/images/icons/parts_plural_v3_sing.png</file>
         <file>resources/images/icons/asterisk.png</file>
         <file>resources/images/icons/partsBinCombinedMenu_icon.png</file>
         <file>resources/images/icons/partsBinCombinedMenuPressed_icon.png</file>
@@ -243,6 +243,7 @@
         <file>resources/parts/svg/core/icon/schematic_frame_icon.svg</file>
         <file>resources/parts/svg/core/icon/groundplane.svg</file>
         <file>resources/parts/svg/core/icon/note.svg</file>
+        <file>resources/parts/svg/core/icon/power.svg</file>
         <file>resources/parts/svg/core/breadboard/ruler.svg</file>
         <file>resources/parts/svg/core/breadboard/wire.svg</file>
         <file>resources/parts/svg/core/breadboard/30.20perfboard.svg</file>
@@ -259,6 +260,7 @@
         <file>resources/parts/svg/core/pcb/pad.svg</file>
         <file>resources/parts/svg/core/pcb/pad0.svg</file>
         <file>resources/parts/svg/core/schematic/netlabel.svg</file>
+        <file>resources/parts/svg/core/schematic/power.svg</file>
         <file>resources/parts/svg/core/schematic/frame.svg</file>
         <file>resources/parts/svg/core/schematic/schematiclogo.svg</file>
         <file>resources/parts/svg/obsolete/schematic/0.3.schem.netlabel.svg</file>
@@ -278,6 +280,7 @@
         <file>resources/fonts/DroidSans-Bold.ttf</file>
         <file>resources/fonts/NOTICE</file>
         <file>resources/fonts/OCRA.ttf</file>
+        <file>resources/fonts/OCR-Fritzing-mono.otf</file>
         <file>resources/bins/my_parts.fzb</file>
         <file>resources/bins/search.fzb</file>
         <file>resources/bins/temp.fzb</file>
@@ -296,8 +299,6 @@
         <file>resources/bins/icons/Search.png</file>
         <file>resources/bins/icons/Lilypad.png</file>
         <file>resources/bins/icons/Lilypad-mono.png</file>
-        <file>resources/bins/icons/Snootlab.png</file>
-        <file>resources/bins/icons/Snootlab-mono.png</file>
         <file>resources/bins/icons/SparkFun.png</file>
         <file>resources/bins/icons/SparkFun-mono.png</file>
         <file>resources/bins/icons/Contrib.png</file>
@@ -376,5 +377,12 @@
         <file>resources/images/icons/toolbarSaveCodeDisabled_icon.png</file>
         <file>resources/images/icons/toolbarSaveCodeEnabled_icon.png</file>
         <file>resources/images/icons/toolbarSaveCodePressed_icon.png</file>
+        <file>resources/images/icons/aisler_donut-cloud_logo_icon.png</file>
+        <file>resources/images/smoke.svg</file>
+        <file>resources/images/rotateCW.svg</file>
+        <file>resources/images/rotateCCW.svg</file>
+        <file>resources/fonts/Segment16/Segment16C Regular.ttf</file>
+        <file>resources/fonts/Segment16/Segment16C Bold.ttf</file>
+        <file>resources/images/icons/toolbarStopSimulationEnabled_icon.png</file>
     </qresource>
 </RCC>

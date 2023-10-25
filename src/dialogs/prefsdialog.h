@@ -64,15 +64,18 @@ protected:
 	QWidget * createZoomerForm();
 	QWidget * createAutosaveForm();
 	QWidget *createProgrammerForm(QList<Platform *> platforms);
+	QWidget *createSimulatorBetaFeaturesForm();
+	QWidget *createGerberBetaFeaturesForm();
 	void updateWheelText();
 	void initGeneral(QWidget * general, QFileInfoList & languages);
 	void initBreadboard(QWidget *, ViewInfoThing *);
 	void initSchematic(QWidget *, ViewInfoThing *);
 	void initPCB(QWidget *, ViewInfoThing *);
 	void initCode(QWidget *widget, QList<Platform *> platforms);
+	void initBetaFeatures(QWidget *widget);
 	QWidget * createCurvyForm(ViewInfoThing *);
 
-protected slots:
+protected Q_SLOTS:
 	void changeLanguage(int);
 	void clear();
 	void setConnectedColor();
@@ -90,7 +93,10 @@ protected:
 	QPointer<QWidget> m_schematic;
 	QPointer<QWidget> m_pcb;
 	QPointer<QWidget> m_code;
-	QPointer<QLabel> m_wheelLabel[3];
+	QPointer<QWidget> m_beta_features;
+	QPointer<QLabel> m_wheelLabel;
+	QPointer<QLabel> m_connectedColorLabel;
+	QPointer<QLabel> m_unconnectedColorLabel;
 	QList<Platform *> m_platforms;
 	QHash<QString, QLineEdit *> m_programmerLEs;
 	QHash<QString, QString> m_settings;

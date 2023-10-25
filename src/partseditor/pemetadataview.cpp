@@ -45,7 +45,7 @@ FocusOutTextEdit::~FocusOutTextEdit()
 void FocusOutTextEdit::focusOutEvent(QFocusEvent * e) {
 	QTextEdit::focusOutEvent(e);
 	if (document()->isModified()) {
-		emit focusOut();
+		Q_EMIT focusOut();
 		document()->setModified(false);
 	}
 }
@@ -54,7 +54,7 @@ void FocusOutTextEdit::focusOutEvent(QFocusEvent * e) {
 
 PEMetadataView::PEMetadataView(QWidget * parent) : QScrollArea(parent)
 {
-	m_mainFrame = NULL;
+	m_mainFrame = nullptr;
 	this->setWidgetResizable(true);
 	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
@@ -65,49 +65,49 @@ PEMetadataView::~PEMetadataView() {
 
 void PEMetadataView::titleEntry() {
 	if (m_titleEdit->isModified()) {
-		emit metadataChanged("title", m_titleEdit->text());
+		Q_EMIT metadataChanged("title", m_titleEdit->text());
 		m_titleEdit->setModified(false);
 	}
 }
 
 void PEMetadataView::authorEntry() {
 	if (m_authorEdit->isModified()) {
-		emit metadataChanged("author", m_authorEdit->text());
+		Q_EMIT metadataChanged("author", m_authorEdit->text());
 		m_authorEdit->setModified(false);
 	}
 }
 
 void PEMetadataView::descriptionEntry() {
 	if (m_descriptionEdit->document()->isModified()) {
-		emit metadataChanged("description", m_descriptionEdit->toHtml());
+		Q_EMIT metadataChanged("description", m_descriptionEdit->toHtml());
 		m_descriptionEdit->document()->setModified(false);
 	}
 }
 
 void PEMetadataView::urlEntry() {
 	if (m_urlEdit->isModified()) {
-		emit metadataChanged("url", m_urlEdit->text());
+		Q_EMIT metadataChanged("url", m_urlEdit->text());
 		m_urlEdit->setModified(false);
 	}
 }
 
 void PEMetadataView::labelEntry() {
 	if (m_labelEdit->isModified()) {
-		emit metadataChanged("label", m_labelEdit->text());
+		Q_EMIT metadataChanged("label", m_labelEdit->text());
 		m_labelEdit->setModified(false);
 	}
 }
 
 void PEMetadataView::familyEntry() {
 	if (m_familyEdit->isModified()) {
-		emit metadataChanged("family", m_familyEdit->text());
+		Q_EMIT metadataChanged("family", m_familyEdit->text());
 		m_familyEdit->setModified(false);
 	}
 }
 
 void PEMetadataView::variantEntry() {
 	if (m_variantEdit->isModified()) {
-		emit metadataChanged("variant", m_variantEdit->text());
+		Q_EMIT metadataChanged("variant", m_variantEdit->text());
 		m_variantEdit->setModified(false);
 	}
 }
@@ -116,7 +116,7 @@ void PEMetadataView::dateEntry() {
 }
 
 void PEMetadataView::propertiesEntry() {
-	emit propertiesChanged(m_propertiesEdit->hash());
+	Q_EMIT propertiesChanged(m_propertiesEdit->hash());
 }
 
 const QHash<QString, QString> & PEMetadataView::properties() {
@@ -126,13 +126,13 @@ const QHash<QString, QString> & PEMetadataView::properties() {
 void PEMetadataView::tagsEntry() {
 	static QStringList keys;
 	keys = m_tagsEdit->hash().keys();
-	emit tagsChanged(keys);
+	Q_EMIT tagsChanged(keys);
 }
 
 void PEMetadataView::initMetadata(const QDomDocument & doc)
 {
 	QWidget * widget = QApplication::focusWidget();
-	if (widget) {
+	if (widget && m_mainFrame) {
 		QList<QWidget *> children = m_mainFrame->findChildren<QWidget *>();
 		if (children.contains(widget)) {
 			widget->blockSignals(true);
@@ -140,9 +140,9 @@ void PEMetadataView::initMetadata(const QDomDocument & doc)
 	}
 
 	if (m_mainFrame) {
-		this->setWidget(NULL);
+		this->setWidget(nullptr);
 		delete m_mainFrame;
-		m_mainFrame = NULL;
+		m_mainFrame = nullptr;
 	}
 
 	QDomElement root = doc.documentElement();
@@ -187,14 +187,14 @@ void PEMetadataView::initMetadata(const QDomDocument & doc)
 
 	m_mainFrame = new QFrame(this);
 	m_mainFrame->setObjectName("metadataMainFrame");
-	QVBoxLayout *mainLayout = new QVBoxLayout(m_mainFrame);
+	auto *mainLayout = new QVBoxLayout(m_mainFrame);
 	mainLayout->setSizeConstraint( QLayout::SetMinAndMaxSize );
 
-	QLabel *explanation = new QLabel(tr("This is where you edit the metadata for the part ..."));
+	auto *explanation = new QLabel(tr("This is where you edit the metadata for the part ..."));
 	mainLayout->addWidget(explanation);
 
-	QFormLayout * formLayout = new QFormLayout();
-	QFrame * formFrame = new QFrame;
+	auto * formLayout = new QFormLayout();
+	auto * formFrame = new QFrame;
 	mainLayout->addWidget(formFrame);
 
 	m_titleEdit = new QLineEdit();

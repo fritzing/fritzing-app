@@ -7,7 +7,6 @@
 #include <QDomDocument>
 #include <QList>
 #include <QImage>
-#include <QMatrix>
 
 BOOST_AUTO_TEST_CASE( svgtext_bounds )
 {
@@ -101,7 +100,7 @@ R"x(
     foreach (QDomElement text, texts) {
         // TextThing textThing;
         QRectF viewBox;
-        QMatrix matrix;
+        QTransform matrix;
 		int minX=1;
 		int minY=1;
 		int maxX=0;

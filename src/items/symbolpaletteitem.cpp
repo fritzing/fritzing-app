@@ -37,6 +37,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMultiHash>
 #include <QMessageBox>
 
+#include <cmath>
+
 #define VOLTAGE_HASH_CONVERSION 1000000
 #define FROMVOLTAGE(v) ((long) (v * VOLTAGE_HASH_CONVERSION))
 
@@ -84,7 +86,7 @@ SymbolPaletteItem::SymbolPaletteItem( ModelPart * modelPart, ViewLayer::ViewID v
 		Voltages.append(12.0);
 	}
 
-	m_connector0 = m_connector1 = NULL;
+	m_connector0 = m_connector1 = nullptr;
 	m_voltage = 0;
 	m_voltageReference = (modelPart->properties().value("type").compare("voltage reference") == 0);
 
@@ -100,7 +102,6 @@ SymbolPaletteItem::SymbolPaletteItem( ModelPart * modelPart, ViewLayer::ViewID v
 			m_voltage = temp;
 		}
 		else {
-			temp = modelPart->properties().value("voltage").toDouble(&ok);
 			if (ok) {
 				m_voltage = SymbolPaletteItem::DefaultVoltage;
 			}
@@ -114,46 +115,50 @@ SymbolPaletteItem::SymbolPaletteItem( ModelPart * modelPart, ViewLayer::ViewID v
 
 SymbolPaletteItem::~SymbolPaletteItem() {
 	if (m_isNetLabel) {
-		foreach (QString key, LocalNetLabels.uniqueKeys()) {
-			if (m_connector0) {
+		Q_FOREACH (QString key, LocalNetLabels.uniqueKeys()) {
+			if (m_connector0 != nullptr) {
 				LocalNetLabels.remove(key, m_connector0);
 			}
-			if (m_connector1) {
+			if (m_connector1 != nullptr) {
 				LocalNetLabels.remove(key, m_connector1);
 			}
-			LocalNetLabels.remove(key, NULL);		// cleans null QPointers
+			LocalNetLabels.remove(key, nullptr);		// cleans null QPointers
 		}
 	}
 	else {
-		if (m_connector0) LocalGrounds.removeOne(m_connector0);
-		if (m_connector1) LocalGrounds.removeOne(m_connector1);
-		LocalGrounds.removeOne(NULL);   // cleans null QPointers
+		if (m_connector0 != nullptr) LocalGrounds.removeOne(m_connector0);
+		if (m_connector1 != nullptr) LocalGrounds.removeOne(m_connector1);
+		LocalGrounds.removeOne(QPointer<ConnectorItem>(nullptr));   // cleans null QPointers
 
-		foreach (long key, LocalVoltages.uniqueKeys()) {
-			if (m_connector0) {
+		Q_FOREACH (long key, LocalVoltages.uniqueKeys()) {
+			if (m_connector0 != nullptr) {
 				LocalVoltages.remove(key, m_connector0);
 			}
-			if (m_connector1) {
+			if (m_connector1 != nullptr) {
 				LocalVoltages.remove(key, m_connector1);
 			}
-			LocalVoltages.remove(key, NULL);		// cleans null QPointers
+			LocalVoltages.remove(key, nullptr);		// cleans null QPointers
 		}
 	}
 }
 
 void SymbolPaletteItem::removeMeFromBus(double v) {
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		if (m_isNetLabel) {
-			LocalNetLabels.remove(m_label, connectorItem);
+			if (m_voltageReference) {
+				LocalNetLabels.remove(getLabel(), connectorItem);
+			} else {
+				LocalNetLabels.remove(m_label, connectorItem);
+			}
 		}
 		else {
 			double nv = useVoltage(connectorItem);
-			if (nv == v) {
+			if (std::fabs(nv - v) < 0.00001 ) {
 				//connectorItem->debugInfo(QString("remove %1").arg(useVoltage(connectorItem)));
 
 				bool gotOne = LocalGrounds.removeOne(connectorItem);
 				int count = LocalVoltages.remove(FROMVOLTAGE(v), connectorItem);
-				LocalVoltages.remove(FROMVOLTAGE(v), NULL);
+				LocalVoltages.remove(FROMVOLTAGE(v), nullptr);
 
 
 				if (count == 0 && !gotOne) {
@@ -165,7 +170,7 @@ void SymbolPaletteItem::removeMeFromBus(double v) {
 			}
 		}
 	}
-	LocalGrounds.removeOne(NULL);  // keep cleaning these out
+	LocalGrounds.removeOne(QPointer<ConnectorItem>(nullptr));  // keep cleaning these out
 }
 
 ConnectorItem* SymbolPaletteItem::newConnectorItem(Connector *connector)
@@ -197,7 +202,7 @@ ConnectorItem* SymbolPaletteItem::newConnectorItem(Connector *connector)
 }
 
 void SymbolPaletteItem::busConnectorItems(Bus * bus, ConnectorItem * fromConnectorItem, QList<class ConnectorItem *> & items) {
-	if (bus == NULL) return;
+	if (bus == nullptr) return;
 
 	PaletteItem::busConnectorItems(bus, fromConnectorItem, items);
 
@@ -215,8 +220,8 @@ void SymbolPaletteItem::busConnectorItems(Bus * bus, ConnectorItem * fromConnect
 	else {
 		mitems.append(LocalVoltages.values(FROMVOLTAGE(m_voltage)));
 	}
-	foreach (ConnectorItem * connectorItem, mitems) {
-		if (connectorItem == NULL) continue;
+	Q_FOREACH (ConnectorItem * connectorItem, mitems) {
+		if (connectorItem == nullptr) continue;
 
 		if (connectorItem->scene() == this->scene()) {
 			items.append(connectorItem);
@@ -248,7 +253,7 @@ void SymbolPaletteItem::setLabel(const QString & label) {
 	m_modelPart->setLocalProp("label", label); //This line modifies the property label in the bb, sch and pcb items
 
 	//Add the conectors of the item to the new net label
-	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		LocalNetLabels.insert(label, connectorItem);
 	}
 
@@ -257,7 +262,7 @@ void SymbolPaletteItem::setLabel(const QString & label) {
 	QString svg = makeSvg(this->viewLayerID());
 	resetRenderer(svg);
 	resetLayerKin();
-	resetConnectors(NULL, NULL);
+	resetConnectors(nullptr, nullptr);
 
 	retransform(transform);
 }
@@ -272,12 +277,12 @@ void SymbolPaletteItem::setVoltage(double v) {
 	}
 
 	if (m_isNetLabel) {
-		foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 			LocalNetLabels.insert(QString::number(m_voltage), connectorItem);
 		}
 	}
 	else {
-		foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * connectorItem, cachedConnectorItems()) {
 			if (connectorItem->isGrounded()) {
 				LocalGrounds.append(connectorItem);
 				//connectorItem->debugInfo("ground insert");
@@ -300,7 +305,7 @@ void SymbolPaletteItem::setVoltage(double v) {
 
 			retransform(transform);
 
-			if (m_partLabel) m_partLabel->displayTextsIf();
+			if (m_partLabel != nullptr) m_partLabel->displayTextsIf();
 		}
 	}
 }
@@ -352,7 +357,7 @@ ConnectorItem * SymbolPaletteItem::connector1() {
 
 void SymbolPaletteItem::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setVoltage(m_voltage);
 	}
 
@@ -365,7 +370,13 @@ QString SymbolPaletteItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash
 	if (m_voltageReference) {
 		switch (viewLayerID) {
 		case ViewLayer::Schematic:
-			return replaceTextElement(svg);
+			svg = replaceTextElement(svg); // So even the hidden text is consistent as is done for the netlabel.
+			return SvgFileSplitter::hideText3(svg);
+		case ViewLayer::SchematicText:
+			svg = replaceTextElement(svg);
+			bool hasText;
+			svg = SvgFileSplitter::showText3(svg, hasText);
+			return transformTextSvg(svg);
 		default:
 			break;
 		}
@@ -379,10 +390,10 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 	if ((prop.compare("voltage", Qt::CaseInsensitive) == 0) &&
 	        (moduleID().compare(ModuleIDNames::GroundModuleIDName) != 0))
 	{
-		FocusOutComboBox * edit = new FocusOutComboBox(parent);
+		auto * edit = new FocusOutComboBox(parent);
 		edit->setEnabled(swappingEnabled);
 		int ix = 0;
-		foreach (double v, Voltages) {
+		Q_FOREACH (double v, Voltages) {
 			edit->addItem(QString::number(v));
 			if (v == m_voltage) {
 				edit->setCurrentIndex(ix);
@@ -390,7 +401,7 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 			ix++;
 		}
 
-		QDoubleValidator * validator = new QDoubleValidator(edit);
+		auto * validator = new QDoubleValidator(edit);
 		validator->setRange(-9999.99, 9999.99, 2);
 		validator->setLocale(QLocale::C);
 		validator->setNotation(QDoubleValidator::StandardNotation);
@@ -400,17 +411,17 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 		edit->setObjectName("infoViewComboBox");
 
 
-		connect(edit, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(voltageEntry(const QString &)));
+		connect(edit, SIGNAL(currentIndexChanged(int)), this, SLOT(voltageEntry(int)));
 		returnWidget = edit;
 
-		returnValue = m_voltage;
+		returnValue = QString("%1").arg(m_voltage);
 		returnProp = tr("voltage");
 		return true;
 	}
 
 	if (prop.compare("label", Qt::CaseInsensitive) == 0 && m_isNetLabel)
 	{
-		QLineEdit * edit = new QLineEdit(parent);
+		auto * edit = new QLineEdit(parent);
 		edit->setEnabled(swappingEnabled);
 		edit->setText(getLabel());
 		edit->setObjectName("infoViewLineEdit");
@@ -426,27 +437,31 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 	return PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 }
 
-void SymbolPaletteItem::voltageEntry(const QString & text) {
+void SymbolPaletteItem::voltageEntry(int index) {
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
+	if (comboBox == nullptr) return;
+	QString text = comboBox->itemText(index);
+
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setVoltage(text.toDouble(), true);
 	}
 }
 
 void SymbolPaletteItem::labelEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	auto * edit = qobject_cast<QLineEdit *>(sender());
+	if (edit == nullptr) return;
 
 	QString current = getLabel();
 	if (edit->text().compare(current) == 0) return;
 
 	if (edit->text().isEmpty()) {
-		QMessageBox::warning(NULL, tr("Net labels"), tr("Net labels cannot be blank"));
+		QMessageBox::warning(nullptr, tr("Net labels"), tr("Net labels cannot be blank"));
 		return;
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "label", ItemBase::TranslatedPropertyNames.value("label"), current, edit->text(), true);
 	}
 }
@@ -498,7 +513,7 @@ bool SymbolPaletteItem::getAutoroutable() {
 
 void SymbolPaletteItem::resetLayerKin() {
 
-	foreach (ItemBase * lkpi, layerKin()) {
+	Q_FOREACH (ItemBase * lkpi, layerKin()) {
 		if (lkpi->viewLayerID() == ViewLayer::SchematicText) {
 			QString svg = makeSvg(lkpi->viewLayerID());
 			lkpi->resetRenderer(svg);
@@ -554,7 +569,7 @@ QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
 
 	QFont font("Droid Sans", labelFontSize * 72 / GraphicsUtils::StandardFritzingDPI, QFont::Normal);
 	QFontMetricsF fm(font);
-	double textWidth = fm.width(getLabel()) * GraphicsUtils::StandardFritzingDPI / 72;
+	double textWidth = fm.horizontalAdvance(getLabel()) * GraphicsUtils::StandardFritzingDPI / 72;
 	double totalWidth = textWidth + arrowWidth + labelOffset;
 
 	QString header("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n"
@@ -609,12 +624,16 @@ QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
 
 	svg += "</g>\n</svg>\n";
 
+	if (viewLayerID == ViewLayer::SchematicText) {
+		svg = transformTextSvg(svg);
+	}
+
 	return svg;
 }
 
 void NetLabel::addedToScene(bool temporary)
 {
-	if (this->scene() && m_viewID == ViewLayer::SchematicView) {
+	if ((this->scene() != nullptr) && m_viewID == ViewLayer::SchematicView) {
 		// do not understand why plan setLabel() doesn't work the same as the Mystery Part setChipLabel() in addedToScene()
 
 		if (!this->transform().isIdentity()) {
@@ -671,7 +690,7 @@ QString NetLabel::getInspectorTitle() {
 
 void NetLabel::setInspectorTitle(const QString & oldText, const QString & newText) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) return;
+	if (infoGraphicsView == nullptr) return;
 
 	infoGraphicsView->setProp(this, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
 }

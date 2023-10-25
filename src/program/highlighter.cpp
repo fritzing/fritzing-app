@@ -21,9 +21,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "highlighter.h"
 #include "syntaxer.h"
 
+#include "../utils/textutils.h"
 #include "../debugdialog.h"
 
-#include <QRegExp>
 #include <stdlib.h>
 
 #define STRINGOFFSET 10
@@ -34,7 +34,7 @@ QHash <QString, QTextCharFormat *> Highlighter::m_styleFormats;
 
 Highlighter::Highlighter(QTextEdit * textEdit) : QSyntaxHighlighter(textEdit)
 {
-	m_syntaxer = NULL;
+	m_syntaxer = nullptr;
 }
 
 Highlighter::~Highlighter()
@@ -43,6 +43,9 @@ Highlighter::~Highlighter()
 
 void Highlighter::loadStyles(const QString & filename) {
 	QFile file(filename);
+	if (!file.open(QIODevice::ReadOnly)) {
+		DebugDialog::debug(QString("Unable to open :%1").arg(filename));
+	}
 
 	QString errorStr;
 	int errorLine;
@@ -59,7 +62,7 @@ void Highlighter::loadStyles(const QString & filename) {
 
 	QDomElement style = root.firstChildElement("style");
 	while (!style.isNull()) {
-		QTextCharFormat * tcf = new QTextCharFormat();
+		auto * tcf = new QTextCharFormat();
 		QColor color(Qt::black);
 		QString colorString = style.attribute("color");
 		if (!colorString.isEmpty()) {
@@ -95,7 +98,7 @@ Syntaxer * Highlighter::syntaxer() {
 
 void Highlighter::highlightBlock(const QString &text)
 {
-	if (!m_syntaxer) return;
+	if (m_syntaxer == nullptr) return;
 
 	if (text.isEmpty()) {
 		setCurrentBlockState(previousBlockState());
@@ -105,7 +108,7 @@ void Highlighter::highlightBlock(const QString &text)
 	setCurrentBlockState(0);
 	int startCommentIndex = -1;
 	int startStringIndex = -1;
-	const CommentInfo * currentCommentInfo = NULL;
+	const CommentInfo * currentCommentInfo = nullptr;
 	int pbs = previousBlockState();
 	if (pbs <= 0) {
 		m_syntaxer->matchCommentStart(text, 0, startCommentIndex, currentCommentInfo);
@@ -131,8 +134,8 @@ void Highlighter::highlightBlock(const QString &text)
 			commentLength = endIndex - startCommentIndex + currentCommentInfo->m_end.length();
 		}
 		noComment.replace(startCommentIndex, commentLength, QString(commentLength, ' '));
-		QTextCharFormat * cf = m_styleFormats.value("Comment", NULL);
-		if (cf) {
+		QTextCharFormat * cf = m_styleFormats.value("Comment", nullptr);
+		if (cf != nullptr) {
 			setFormat(startCommentIndex, commentLength, *cf);
 		}
 		m_syntaxer->matchCommentStart(text, startCommentIndex + commentLength, startCommentIndex, currentCommentInfo);
@@ -140,6 +143,11 @@ void Highlighter::highlightBlock(const QString &text)
 
 	highlightStrings(startStringIndex, noComment);
 	highlightTerms(noComment);
+	highlightNumbers(noComment);
+
+	// highlight single chars
+	applyRule(QRegularExpression(R"RX('.?')RX"), m_styleFormats.value("Constant", nullptr), text);
+
 }
 
 void Highlighter::highlightStrings(int startStringIndex, QString & text) {
@@ -178,7 +186,7 @@ void Highlighter::highlightStrings(int startStringIndex, QString & text) {
 		}
 		text.replace(startStringIndex, stringLength, QString(stringLength, ' '));
 		QTextCharFormat * sf = m_styleFormats.value("String", NULL);
-		if (sf) {
+		if (sf != nullptr) {
 			setFormat(startStringIndex, stringLength, *sf);
 		}
 		startStringIndex = m_syntaxer->matchStringStart(text, startStringIndex + stringLength);
@@ -195,13 +203,13 @@ void Highlighter::highlightTerms(const QString & text) {
 		}
 
 		if (b > lastWordBreak) {
-			TrieLeaf * leaf = NULL;
+			TrieLeaf * leaf = nullptr;
 			if (m_syntaxer->matches(text.mid(lastWordBreak, b - lastWordBreak), leaf)) {
-				SyntaxerTrieLeaf * stl = dynamic_cast<SyntaxerTrieLeaf *>(leaf);
-				if (stl) {
+				auto * stl = dynamic_cast<SyntaxerTrieLeaf *>(leaf);
+				if (stl != nullptr) {
 					QString format = Syntaxer::formatFromList(stl->name());
 					QTextCharFormat * tcf = m_styleFormats.value(format, NULL);
-					if (tcf) {
+					if (tcf != nullptr) {
 						setFormat(lastWordBreak, b - lastWordBreak, *tcf);
 					}
 				}
@@ -209,6 +217,36 @@ void Highlighter::highlightTerms(const QString & text) {
 		}
 
 		lastWordBreak = b + 1;
+	}
+}
+
+void Highlighter::highlightNumbers(const QString &text) {
+
+	// Floats , but also Integers
+	auto * floatStyle(m_styleFormats.value("Float", nullptr));
+	applyRule(TextUtils::floatingPointMatcher, floatStyle, text);
+
+	// Hex
+	auto * hexStyle(m_styleFormats.value("Hex", nullptr));
+	QRegularExpression hexRule(R"RX((\b0x[\dA-F]+\b))RX", QRegularExpression::CaseInsensitiveOption);
+	applyRule(hexRule, hexStyle, text);
+
+	// Octal (use the hex style)
+	QRegularExpression octalRule(R"RX((\b0[0-7]+\b))RX");
+	applyRule(octalRule, hexStyle, text);
+
+	// Binary (use the hex style)
+	QRegularExpression binaryRule(R"RX((\b0b[01]+\b))RX", QRegularExpression::CaseInsensitiveOption);
+	applyRule(binaryRule, hexStyle, text);
+}
+
+void Highlighter::applyRule(const QRegularExpression & rule, QTextCharFormat * format, const QString & text) {
+	if (format) { // only apply style if it is present in the styles.xml
+		QRegularExpressionMatchIterator matchIterator = rule.globalMatch(text);
+		while (matchIterator.hasNext()) {
+			QRegularExpressionMatch match = matchIterator.next();
+			setFormat(match.capturedStart(), match.capturedLength(), *format);
+		}
 	}
 }
 

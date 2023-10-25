@@ -8,7 +8,7 @@
       <style name="Constant"  color="#77acc2" /> <!-- e.g. HIGH, LOW -->
       <style name="Number"  color="#d77b0e" /> <!-- e.g. 255 -->
       <style name="Decimal"  color="#d77b0e" /> <!-- e.g. 1.0 -->
-      <style name="Hex"  color="#d77b0e" /> <!-- e.g. 0xFF -->
+      <style name="Hex" color="#00dddd" /> <!-- e.g. 0xFF -->
       <style name="Float"  color="#d77b0e" /> <!-- e.g. 1.0 -->
       <style name="String"  color="#d77b0e" /> <!-- e.g. "text in quotes" -->
       <style name="Comment"  color="#808080" italic="1" /> <!-- e.g. this  -->

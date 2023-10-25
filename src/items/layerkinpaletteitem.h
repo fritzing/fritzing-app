@@ -29,7 +29,7 @@ class LayerKinPaletteItem : public PaletteItemBase
 	Q_OBJECT
 
 public:
-	LayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
+	explicit LayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
 	void setOffset(double x, double y);
 	ItemBase * layerKinChief();
 	bool ok();
@@ -72,7 +72,7 @@ struct TextThing {
 	int minY;
 	int maxY;
 	QRectF newRect;
-	QMatrix flipMatrix;
+	QTransform flipMatrix;
 };
 
 class SchematicTextLayerKinPaletteItem : public LayerKinPaletteItem
@@ -82,18 +82,19 @@ class SchematicTextLayerKinPaletteItem : public LayerKinPaletteItem
 public:
 	SchematicTextLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu);
 
+	QString getTransformedSvg(const QString & svgToTransform, double & rotation);
 	void transformItem(const QTransform &, bool includeRatsnest);
 	void clearTextThings();
 	void setTransform2(const QTransform &);
 
 public:
-	static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix &, QRectF & viewBox);
+	static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QTransform &, QRectF & viewBox);
 
 protected:
-	QString makeFlipTextSvg();
+	QString rotate(const QString & svg, bool isFlipped);
+	QString flipTextSvg(const QString & textSvg);
 	void positionTexts(QList<QDomElement> & texts);
 	void initTextThings();
-	QString vflip(const QString & svg, bool isFlipped);
 	void setInitialTransform(const QTransform &);
 	void cacheLoaded(const LayerAttributes &);
 

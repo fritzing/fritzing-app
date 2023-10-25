@@ -41,7 +41,7 @@ public:
 public:
 	bool runPath(QVector<QVariant> & pathData, void * userData);
 
-signals:
+Q_SIGNALS:
 	// note: must connect to this signal via Qt::DirectConnection since args is modified immediately after the signal
 	void commandSignal(QChar command, bool relative, QList<double> & args, void * userData);
 

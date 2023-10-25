@@ -25,6 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTimer>
 #include <QTime>
 #include <QScrollArea>
+#include <QElapsedTimer>
 
 class AboutBox : public QWidget {
 	Q_OBJECT
@@ -37,7 +38,7 @@ private:
 	//QScrollArea *m_scrollArea;
 	class ExpandingLabel * m_expandingLabel;
 	bool m_restartAtTop;
-	QTime m_startTime;
+	QElapsedTimer m_startTime;
 	QTimer *m_autoScrollTimer;
 
 public:
@@ -46,7 +47,7 @@ public:
 	static void closeAbout(); // Maybe we don't need close as a public method (we only want to hide)
 	static void initBuildType(const QString &);
 
-public slots:
+public Q_SLOTS:
 	void scrollCredits();
 
 protected:

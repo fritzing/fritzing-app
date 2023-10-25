@@ -51,7 +51,7 @@ protected:
 	QPushButton *m_recover;
 	QPushButton *m_ignore;
 
-protected slots:
+protected Q_SLOTS:
 	void updateRecoverButton();
 };
 

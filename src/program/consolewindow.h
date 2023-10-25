@@ -73,7 +73,7 @@ public:
 protected:
 	void closeEvent(QCloseEvent *event);
 
-private slots:
+private Q_SLOTS:
 	void openSerialPort();
 	void closeSerialPort();
 	void about();

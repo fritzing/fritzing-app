@@ -21,10 +21,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef TEXTUTILS_H
 #define TEXTUTILS_H
 
+#include <optional>
 #include <QPointF>
 #include <QDomElement>
 #include <QSet>
-#include <QMatrix>
 #include <QTransform>
 #include <QXmlStreamReader>
 
@@ -39,15 +39,19 @@ public:
 	static QDomElement findElementWithAttribute(QDomElement element, const QString & attributeName, const QString & attributeValue);
 	static void findElementsWithAttribute(QDomElement & element, const QString & att, QList<QDomElement> & elements);
 	static double convertToInches(const QString & string, bool * ok, bool isIllustrator);
+	static std::optional<double> convertToInches(const QString & string, bool isIllustrator);
 	static double convertToInches(const QString & string);
-	static QString convertToPowerPrefix(double);
+	template <int DecimalPlaces> static double roundDecimal(double value);
+	static double roundDecimal(double value, int decimal);
+	static double roundDecimal(double value, double decimal);
+	static QString convertToPowerPrefix(double, char f='g', int prec=6);
 	static double convertFromPowerPrefix(const QString & val, const QString & symbol);
 	static double convertFromPowerPrefixU(QString & val, const QString & symbol);
 
 	static QString replaceTextElement(const QString & svg, const QString & id, const QString &  newValue);
 	static QByteArray replaceTextElement(const QByteArray & svg, const QString & id, const QString &  newValue);
 	static QString replaceTextElements(const QString & svg, const QHash<QString, QString> &);
-	static bool squashElement(QDomDocument &, const QString & elementName, const QString & attName, const QRegExp & matchContent);
+	static bool squashElement(QDomDocument &, const QString & elementName, const QString & attName, const QRegularExpression & matchContent);
 	static QString mergeSvg(const QString & svg1, const QString & svg2, const QString & id, bool flip);
 	static QString mergeSvgFinish(QDomDocument & doc);
 	static bool mergeSvg(QDomDocument & doc1, const QString & svg, const QString & id);
@@ -59,8 +63,7 @@ public:
 	static bool cleanSodipodi(QString &bytes);
 	static bool fixPixelDimensionsIn(QString &fileContent);
 	static bool addCopper1(const QString & filename, QDomDocument & doc, const QString & srcAtt, const QString & destAtt);
-	static void setSVGTransform(QDomElement &, QMatrix &);
-	static QString svgMatrix(const QMatrix &);
+	static void setSVGTransform(QDomElement &, QTransform &);
 	static QString svgMatrix(const QTransform &);
 	static QString svgTransform(const QString & svg, QTransform & transform, bool translate, const QString extra);
 	static bool getSvgSizes(QDomDocument & doc, double & sWidth, double & sHeight, double & vbWidth, double & vbHeight);
@@ -68,8 +71,8 @@ public:
 	static QString stripNonValidXMLCharacters(const QString & str);
 	static QString convertExtendedChars(const QString & str);
 	static QString escapeAnd(const QString &);
-	static QMatrix elementToMatrix(QDomElement & element);
-	static QMatrix transformStringToMatrix(const QString & transform);
+	static QTransform elementToTransform(QDomElement & element);
+	static QTransform transformStringToTransform(const QString & transform);
 	static QList<double> getTransformFloats(QDomElement & element);
 	static QList<double> getTransformFloats(const QString & transform);
 	static QString svgNSOnly(QString svgContent);
@@ -99,6 +102,7 @@ public:
 	static QString expandAndFill(const QString & svg, const QString & color, double expandBy);
 	static void expandAndFillAux(QDomElement &, const QString & color, double expandBy);
 	static bool writeUtf8(const QString & fileName, const QString & text);
+	static bool writeUtf8(const QString & fileName, const QByteArray & data);
 	static int getPinsAndSpacing(const QString & expectedFileName, QString & spacingString);
 	static QSizeF parseForWidthAndHeight(QXmlStreamReader &, QRectF & viewBox, bool getViewBox);
 	static QSizeF parseForWidthAndHeight(QXmlStreamReader &);
@@ -118,9 +122,18 @@ public:
 	static double getStrokeWidth(QDomElement &, double defaultValue);
 	static void resplit(QStringList & names, const QString & split);
 	static QString elementToString(const QDomElement &);
+	template<typename T> static std::optional<double> optToDouble(const T & param)
+	{
+		bool ok;
+		double result = param.toDouble(&ok);
+		if (ok) {
+			return result;
+		}
+		return std::nullopt;
+	}
 
 public:
-	static const QRegExp FindWhitespace;
+	static const QRegularExpression FindWhitespace;
 	static const QString SMDFlipSuffix;
 	static const QString MicroSymbol;
 	static const ushort MicroSymbolCode;
@@ -129,13 +142,16 @@ public:
 	static const QString CreatedWithFritzingXmlComment;
 	static void collectLeaves(QDomElement & element, int & index, QVector<QDomElement> & leaves);
 	static void collectLeaves(QDomElement & element, QList<QDomElement> & leaves);
-	static const QRegExp floatingPointMatcher;
+	static const QRegularExpression floatingPointMatcher;
+	static const QRegularExpression positiveIntegerMatcher;
 	static const QString RegexFloatDetector;
 	static const QString AdobeIllustratorIdentifier;
 
+	static QMap<QString, QString> parseFileForViewImages(const QString &fzpPath);
+	static QList<uint> getPositiveIntegers(const QString &str);
 protected:
 	static bool pxToInches(QDomElement &elem, const QString &attrName, bool isIllustrator);
-	static void squashNotElement(QDomElement & element, const QString & elementName, const QString & attName, const QRegExp & matchContent, bool & result);
+	static void squashNotElement(QDomElement & element, const QString & elementName, const QString & attName, const QRegularExpression & matchContent, bool & result);
 	static void initPowerPrefixes();
 	static QDomElement copyText(QDomDocument & svgDom, QDomElement & parent, QDomElement & text, const QString & defaultX, const QString & defaultY, bool copyAttributes);
 	static void gornTreeAux(QDomElement &);

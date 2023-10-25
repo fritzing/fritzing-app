@@ -25,8 +25,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QColor>
 #include <limits>
 
-#include "../sketch/infographicsview.h"
-#include "../debugdialog.h"
 #include "../utils/graphicsutils.h"
 #include "../model/modelpart.h"
 
@@ -44,6 +42,12 @@ NonConnectorItem::NonConnectorItem(ItemBase * attachedTo)
 	setFlag(QGraphicsItem::ItemIsMovable, false);
 	setFlag(QGraphicsItem::ItemIsSelectable, false);
 	setFlag(QGraphicsItem::ItemIsFocusable, false);
+}
+
+bool NonConnectorItem::forWire() {
+	// This function is not fully understood and was derived based on a comment in the paint() function.
+	// Refer to SchematicSketchWidget::getBendpointWidths, Wire::getConnectedColor and Wire::setPenWidth to try to understand this better.
+	return (m_negativePenWidth < 0);
 }
 
 void NonConnectorItem::paint( QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget ) {
@@ -68,13 +72,13 @@ void NonConnectorItem::paint( QPainter * painter, const QStyleOptionGraphicsItem
 
 	if (m_circular) {
 		painter->setBrush(brush());
-		if (m_negativePenWidth < 0) {
-			// for wires
+		if (forWire()) {
 			painter->setPen(Qt::NoPen);
 			if (!m_negativeOffsetRect) {
 				painter->drawEllipse(rect().center(), m_negativePenWidth, m_negativePenWidth);
 			}
 			else {
+				// This seems to be where normal schematic wire bendpoints are drawn.
 				int pw = m_negativePenWidth + 1;
 				painter->drawEllipse(rect().adjusted(-pw, -pw, pw, pw));
 			}
@@ -135,22 +139,26 @@ void NonConnectorItem::setInactive(bool inactivate) {
 }
 
 long NonConnectorItem::attachedToID() {
-	if (!attachedTo()) return -1;
+	if (attachedTo() == nullptr) return -1;
 	return attachedTo()->id();
 }
 
 const QString & NonConnectorItem::attachedToTitle() {
-	if (!attachedTo()) return ___emptyString___;
+	if (attachedTo() == nullptr) return ___emptyString___;
 	return attachedTo()->title();
 }
 
 const QString & NonConnectorItem::attachedToInstanceTitle() {
-	if (!attachedTo()) return ___emptyString___; 
+	if (attachedTo() == nullptr) return ___emptyString___; 
 	return attachedTo()->instanceTitle();
 }
 
 void NonConnectorItem::setCircular(bool circular) {
 	m_circular = circular;
+}
+
+bool NonConnectorItem::isCircular() {
+	return m_circular;
 }
 
 void NonConnectorItem::setRadius(double radius, double strokeWidth) {
@@ -183,6 +191,6 @@ void NonConnectorItem::setShape(QPainterPath & pp) {
 }
 
 int NonConnectorItem::attachedToItemType() {
-	if (!m_attachedTo) return ModelPart::Unknown;
+	if (m_attachedTo == nullptr) return ModelPart::Unknown;
 	return m_attachedTo->itemType();
 }

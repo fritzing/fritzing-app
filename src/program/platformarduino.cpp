@@ -48,7 +48,7 @@ PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
 
 void PlatformArduino::upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation)
 {
-	QProcess * process = new QProcess(this);
+	auto * process = new QProcess(this);
 	process->setProcessChannelMode(QProcess::MergedChannels);
 	process->setReadChannel(QProcess::StandardOutput);
 	connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), source, SLOT(programProcessFinished(int, QProcess::ExitStatus)));
@@ -79,8 +79,8 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
 	args.append(QString("--upload"));
 	args.append(QDir::toNativeSeparators(tmpFilePath));
 
-	ProgramTab *tab = qobject_cast<ProgramTab *>(source);
-	if (tab)
+	auto *tab = qobject_cast<ProgramTab *>(source);
+	if (tab != nullptr)
 		tab->appendToConsole(tr("Running %1 %2").arg(getCommandLocation()).arg(args.join(" ")));
 	process->start(getCommandLocation(), args);
 }

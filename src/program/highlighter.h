@@ -45,8 +45,10 @@ public:
 protected:
 	void highlightBlock(const QString & text);
 	bool isWordChar(QChar c);
+	void applyRule(const QRegularExpression & rule, QTextCharFormat * format, const QString & text);
 	void highlightTerms(const QString & text);
 	void highlightStrings(int startStringIndex, QString & text);
+	void highlightNumbers(const QString & text);
 
 protected:
 	QPointer<class Syntaxer> m_syntaxer;

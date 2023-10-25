@@ -38,17 +38,17 @@ ResizeHandle::~ResizeHandle() {
 
 void ResizeHandle::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	event->accept();
-	emit mousePressSignal(event, this);
+	Q_EMIT mousePressSignal(event, this);
 }
 
 void ResizeHandle::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 	event->accept();
-	emit mouseMoveSignal(event, this);
+	Q_EMIT mouseMoveSignal(event, this);
 }
 
 void ResizeHandle::mouseReleaseEvent(QGraphicsSceneMouseEvent * event) {
 	event->accept();
-	emit mouseReleaseSignal(event, this);
+	Q_EMIT mouseReleaseSignal(event, this);
 }
 
 void ResizeHandle::setResizeOffset(QPointF p) {
@@ -65,8 +65,8 @@ QVariant ResizeHandle::itemChange(GraphicsItemChange change, const QVariant &val
 	switch (change) {
 	case QGraphicsItem::ItemSceneHasChanged:
 		if (scaling()) {
-			ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
-			if (sw) {
+			auto *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
+			if (sw != nullptr) {
 				connect(sw, SIGNAL(zoomChanged(double)), this, SLOT(zoomChangedSlot(double)));
 			}
 
@@ -80,13 +80,13 @@ QVariant ResizeHandle::itemChange(GraphicsItemChange change, const QVariant &val
 }
 
 void ResizeHandle::zoomChangedSlot(double scale) {
-	emit zoomChangedSignal(scale);
+	Q_EMIT zoomChangedSignal(scale);
 }
 
 double ResizeHandle::currentScale() {
 	if (scaling()) {
-		ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
-		if(sw) {
+		auto *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
+		if(sw != nullptr) {
 			return sw->currentZoom()/100;
 		}
 	}
@@ -95,9 +95,9 @@ double ResizeHandle::currentScale() {
 
 void ResizeHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-	if(scene()) {
-		FGraphicsScene * fscene = qobject_cast<FGraphicsScene *>(scene());
-		if (fscene && fscene->displayHandles()) {
+	if(scene() != nullptr) {
+		auto * fscene = qobject_cast<FGraphicsScene *>(scene());
+		if ((fscene != nullptr) && fscene->displayHandles()) {
 			QGraphicsPixmapItem::paint(painter, option, widget);
 		}
 	}

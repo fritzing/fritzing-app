@@ -46,7 +46,7 @@ class FServer : public QTcpServer
 public:
 	FServer(QObject *parent = 0);
 
-signals:
+Q_SIGNALS:
 	void newConnection(qintptr socketDescriptor);
 
 protected:
@@ -63,7 +63,7 @@ public:
 	void run();
 	void setDone();
 
-signals:
+Q_SIGNALS:
 	void error(QTcpSocket::SocketError socketError);
 	void doCommand(const QString & command, const QString & params, QString & result, int & status);
 
@@ -125,10 +125,10 @@ public:
 public:
 	static bool spaceBarIsPressed();
 
-signals:
+Q_SIGNALS:
 	void spaceBarIsPressedSignal(bool);
 
-public slots:
+public Q_SLOTS:
 	void preferences();
 	void preferencesAfter();
 	void checkForUpdates();
@@ -167,10 +167,10 @@ protected:
 	void runKicadSchematicService();
 	void runGerberService();
 	void runGerberServiceAux();
+	void runExportAllService();
+	void runExportAllServiceAux();
 	void runSvgService();
 	void runSvgServiceAux();
-	void runPanelizerService();
-	void runInscriptionService();
 	void runExampleService();
 	void runExampleService(QDir &);
 	QList<class MainWindow *> recoverBackups();
@@ -187,10 +187,8 @@ protected:
 	void regeneratePartsDatabaseAux(QDialog * progressDialog);
 
 
-	enum ServiceType {
-		PanelizerService = 1,
-		InscriptionService,
-		GerberService,
+	enum class ServiceType {
+		GerberService = 1,
 		GedaService,
 		KicadSchematicService,
 		KicadFootprintService,
@@ -199,6 +197,7 @@ protected:
 		SvgService,
 		PortService,
 		DRCService,
+		ExportAllService,
 		NoService
 	};
 
@@ -219,14 +218,13 @@ protected:
 	QStringList m_externalProcessArgs;
 	QString m_externalProcessName;
 	QString m_externalProcessPath;
-	ServiceType m_serviceType = NoService;
+	ServiceType m_serviceType = ServiceType::NoService;
 	int m_progressIndex = 0;
 	class FSplashScreen * m_splash = nullptr;
 	QString m_outputFolder;
 	QString m_portRootFolder;
 	QString m_panelFilename;
 	QHash<QString, struct LockedFile *> m_lockedFiles;
-	bool m_panelizerCustom = false;
 	int m_portNumber = 0;
 	FServer * m_fServer = nullptr;
 	QString m_buildType;

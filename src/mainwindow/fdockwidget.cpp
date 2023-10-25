@@ -21,7 +21,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTimer>
 
 #include "fdockwidget.h"
-#include "../debugdialog.h"
 
 FDockWidget::FDockWidget( const QString & title, QWidget * parent)
 	: QDockWidget(title, parent)
@@ -47,10 +46,10 @@ void FDockWidget::restoreState() {
 bool FDockWidget::event(QEvent * e) {
 	switch (e->type()) {
 	case QEvent::WindowActivate:
-		emit dockChangeActivationSignal(true, this);
+		Q_EMIT dockChangeActivationSignal(true, this);
 		break;
 	case QEvent::WindowDeactivate:
-		emit dockChangeActivationSignal(false, this);
+		Q_EMIT dockChangeActivationSignal(false, this);
 		break;
 	default:
 		break;
@@ -60,5 +59,5 @@ bool FDockWidget::event(QEvent * e) {
 
 void FDockWidget::moveEvent(QMoveEvent *event) {
 	QDockWidget::moveEvent(event);
-	emit positionChanged();
+	Q_EMIT positionChanged();
 }

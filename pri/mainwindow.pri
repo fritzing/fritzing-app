@@ -17,6 +17,8 @@ HEADERS += \
     src/mainwindow/fritzingwindow.h \
     src/mainwindow/mainwindow.h \
     src/mainwindow/sketchareawidget.h \
+    src/mainwindow/FProbeDropByModuleID.h \
+    src/mainwindow/getspice.h \
 
 SOURCES += \
     src/mainwindow/fdockwidget.cpp \
@@ -26,3 +28,5 @@ SOURCES += \
     src/mainwindow/mainwindow_menu.cpp \
     src/mainwindow/mainwindow_dock.cpp \
     src/mainwindow/sketchareawidget.cpp \
+    src/mainwindow/FProbeDropByModuleID.cpp \
+    src/mainwindow/getspice.cpp \

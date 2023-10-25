@@ -54,7 +54,7 @@ class Wire : public ItemBase, public CursorKeyListener
 	Q_OBJECT
 
 public:
-	Wire(class ModelPart *, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu, bool initLabel);
+	explicit Wire(class ModelPart *, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu, bool initLabel);
 	virtual ~Wire();
 
 
@@ -88,7 +88,7 @@ public:
 	void findConnectorsUnder();
 	void collectChained(QList<Wire *> &, QList<ConnectorItem *> & ends);
 	void collectWires(QList<Wire *> & wires);
-	bool stickyEnabled();
+	virtual bool stickyEnabled();
 	void setPcbPenBrush(QBrush & brush);
 	bool getRouted();
 	void setRouted(bool);
@@ -159,12 +159,12 @@ public:
 	void setProp(const QString & prop, const QString & value);
 	void setConnector0Rect();
 	void setConnector1Rect();
-	QRectF connector0Rect(const QLineF & line);
+	QRectF connector0Rect();
 	QRectF connector1Rect(const QLineF & line);
 	void colorByLength(bool);
 
-protected slots:
-	void colorEntry(const QString & text);
+protected Q_SLOTS:
+	void colorEntry(int index);
 	void setBandedProp(bool);
 
 public:
@@ -255,7 +255,7 @@ public:
 	static QList<int> widths;
 	static QList<QColor> lengthColorTrans;
 
-signals:
+Q_SIGNALS:
 	void wireChangedSignal(Wire* me, const QLineF & oldLine, const QLineF & newLine, QPointF oldPos, QPointF newPos, ConnectorItem * from, ConnectorItem * to);
 	void wireChangedCurveSignal(Wire* me, const Bezier * oldB, const Bezier * newB, bool triggerFirstTime);
 	void wireSplitSignal(Wire* me, QPointF newPos, QPointF oldPos, const QLineF & oldLine);

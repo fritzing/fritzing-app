@@ -2,6 +2,7 @@
 
 Part of the Fritzing project - http://fritzing.org
 Copyright (c) 2007-2019 Fritzing
+Copyright (c) 2020-2021 Fritzing GmbH
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -53,12 +54,12 @@ public:
 	void stop();
 	void ignore(const QString & version, bool interim);
 
-signals:
+Q_SIGNALS:
 	void httpError(QNetworkReply::NetworkError);
 	void xmlError(QXmlStreamReader::Error errorCode);
 	void releasesAvailable();
 
-public slots:
+public Q_SLOTS:
 	void fetch();
 	void finished(QNetworkReply *);
 

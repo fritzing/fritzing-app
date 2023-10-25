@@ -52,13 +52,14 @@ public:
 public:
 	static bool onCoreList(const QString & moduleID);
 
-signals:
+Q_SIGNALS:
 	void loadedViews(ModelBase *, QDomElement & views);
+	void loadedProjectProperties(const QDomElement & projectProperties);
 	void loadedRoot(const QString & fileName, ModelBase *, QDomElement & root);
 	void loadingInstances(ModelBase *, QDomElement & instances);
 	void loadingInstance(ModelBase *, QDomElement & instance);
-	void loadedInstances(ModelBase *, QDomElement & instances);
 	void obsoleteSMDOrientationSignal();
+	void migratePartLabelOffset(const QString &fritzingVersion);
 	void oldSchematicsSignal(const QString & filename, bool & useOldSchematics);
 
 protected:

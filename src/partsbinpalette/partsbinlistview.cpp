@@ -22,7 +22,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMenu>
 #include <QMimeData>
 
-#include "../debugdialog.h"
 #include "../infoview/htmlinfoview.h"
 #include "../items/itembase.h"
 #include "../fsvgrenderer.h"
@@ -32,6 +31,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "partsbinpalettewidget.h"
 
 #include "partsbinlistview.h"
+#include "partsbiniconview.h"
 
 static const QColor SectionHeaderBackgroundColor(128, 128, 128);
 static const QColor SectionHeaderForegroundColor(32, 32, 32);
@@ -39,8 +39,8 @@ static const QColor SectionHeaderForegroundColor(32, 32, 32);
 PartsBinListView::PartsBinListView(ReferenceModel* referenceModel, PartsBinPaletteWidget *parent)
 	: QListWidget((QWidget *) parent), PartsBinView(referenceModel, parent)
 {
-	m_infoView = NULL;
-	m_hoverItem = NULL;
+	m_infoView = nullptr;
+	m_hoverItem = nullptr;
 	m_infoViewOnHover = true;
 	setMouseTracking(true);
 	setSpacing(2);
@@ -64,25 +64,25 @@ PartsBinListView::~PartsBinListView() {
 }
 
 void PartsBinListView::doClear() {
-	m_hoverItem = NULL;
+	m_hoverItem = nullptr;
 	PartsBinView::doClear();
 	clear();
 }
 
 int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
-	if (modelPart->modelPartShared() == NULL) return position;
+	if (modelPart->modelPartShared() == nullptr) return position;
 	if (modelPart->itemType() == ModelPart::Unknown) {
 		// don't want the empty root to appear in the view
 		return position;
 	}
 
-	emit settingItem();
+	Q_EMIT settingItem();
 	QString moduleID = modelPart->moduleID();
 	if (contains(moduleID)) {
 		return position;
 	}
 
-	QListWidgetItem * lwi = new QListWidgetItem(modelPart->title());
+	auto * lwi = new QListWidgetItem(modelPart->title());
 	if (modelPart->itemType() == ModelPart::Space) {
 		lwi->setBackground(QBrush(SectionHeaderBackgroundColor));
 		lwi->setForeground(QBrush(SectionHeaderForegroundColor));
@@ -108,11 +108,11 @@ int PartsBinListView::setItemAux(ModelPart * modelPart, int position) {
 void PartsBinListView::mouseMoveEvent(QMouseEvent *event) {
 	if(m_infoViewOnHover) {
 		QListWidgetItem * item = itemAt(event->pos());
-		if (item) {
+		if (item != nullptr) {
 			showInfo(item);
 		}
 		else {
-			m_hoverItem = NULL;
+			m_hoverItem = nullptr;
 		}
 	}
 
@@ -125,22 +125,22 @@ void PartsBinListView::showInfo(QListWidgetItem * item) {
 		return;
 	}
 
-	if (m_hoverItem && m_infoView) {
+	if ((m_hoverItem != nullptr) && (m_infoView != nullptr)) {
 		ItemBase * itemBase = itemItemBase(m_hoverItem);
-		if (itemBase) {
-			m_infoView->hoverLeaveItem(NULL, NULL, itemBase);
+		if (itemBase != nullptr) {
+			m_infoView->hoverLeaveItem(nullptr, nullptr, itemBase);
 		}
 	}
 
-	if (item == NULL) {
+	if (item == nullptr) {
 		return;
 	}
 
 	m_hoverItem = item;
-	if (m_infoView) {
+	if (m_infoView != nullptr) {
 		ItemBase * itemBase = itemItemBase(item);
-		if (itemBase) {
-			m_infoView->hoverEnterItem(NULL, NULL, itemBase, swappingEnabled());
+		if (itemBase != nullptr) {
+			m_infoView->hoverEnterItem(nullptr, nullptr, itemBase, swappingEnabled());
 		}
 	}
 }
@@ -151,14 +151,14 @@ void PartsBinListView::mousePressEvent(QMouseEvent *event) {
 	QListWidget::mousePressEvent(event);
 
 	QListWidgetItem * current = currentItem();
-	if (current == NULL) {
-		m_hoverItem = NULL;
-		if (m_infoView) m_infoView->viewItemInfo(NULL, NULL, false);
+	if (current == nullptr) {
+		m_hoverItem = nullptr;
+		if (m_infoView != nullptr) m_infoView->viewItemInfo(nullptr, nullptr, false);
 		return;
 	}
 
 	showInfo(current);
-	if (m_infoView) m_infoView->viewItemInfo(NULL, itemItemBase(current), false);
+	if (m_infoView != nullptr) m_infoView->viewItemInfo(nullptr, itemItemBase(current), false);
 }
 
 void PartsBinListView::setInfoView(HtmlInfoView * infoView) {
@@ -166,7 +166,7 @@ void PartsBinListView::setInfoView(HtmlInfoView * infoView) {
 }
 
 void PartsBinListView::removePart(const QString &moduleID) {
-	m_hoverItem = NULL;
+	m_hoverItem = nullptr;
 	int idxToRemove = position(moduleID);
 	if(idxToRemove > -1) {
 		m_itemBaseHash.remove(moduleID);
@@ -175,7 +175,7 @@ void PartsBinListView::removePart(const QString &moduleID) {
 }
 
 void PartsBinListView::removeParts() {
-	m_hoverItem = NULL;
+	m_hoverItem = nullptr;
 	m_itemBaseHash.clear();
 	while (count() > 0) {
 		delete takeItem(0);
@@ -197,14 +197,14 @@ ItemBase * PartsBinListView::itemItemBase(const QListWidgetItem *item) const {
 
 ModelPart *PartsBinListView::itemModelPart(const QListWidgetItem *item) const {
 	ItemBase * itemBase = itemItemBase(item);
-	if (itemBase == NULL) return NULL;
+	if (itemBase == nullptr) return nullptr;
 
 	return itemBase->modelPart();
 }
 
 const QString &PartsBinListView::itemModuleID(const QListWidgetItem *item) {
 	ModelPart *modelPart = itemModelPart(item);
-	if (modelPart == NULL) {
+	if (modelPart == nullptr) {
 		// this shouldn't happen?
 		return ___emptyString___;
 	}
@@ -216,14 +216,14 @@ ItemBase *PartsBinListView::selectedItemBase() {
 	if(selectedItems().size()==1) {
 		return itemItemBase(selectedItems()[0]);
 	}
-	return NULL;
+	return nullptr;
 }
 
 ModelPart *PartsBinListView::selectedModelPart() {
 	if(selectedItems().size()==1) {
 		return itemModelPart(selectedItems()[0]);
 	}
-	return NULL;
+	return nullptr;
 }
 
 bool PartsBinListView::swappingEnabled() {
@@ -255,7 +255,7 @@ void PartsBinListView::startDrag(Qt::DropActions supportedActions) {
 
 void PartsBinListView::moveItem(int fromIndex, int toIndex) {
 	itemMoved(fromIndex,toIndex);
-	emit informItemMoved(fromIndex, toIndex);
+	Q_EMIT informItemMoved(fromIndex, toIndex);
 }
 
 void PartsBinListView::itemMoved(int fromIndex, int toIndex) {
@@ -268,7 +268,7 @@ void PartsBinListView::itemMoved(int fromIndex, int toIndex) {
 int PartsBinListView::itemIndexAt(const QPoint& pos, bool &trustIt) {
 	trustIt = true;
 	QListWidgetItem *item = itemAt(pos);
-	if(item) {
+	if(item != nullptr) {
 		return row(item);
 	} else if(rect().contains(pos)) {
 		trustIt = false;
@@ -314,7 +314,7 @@ QMimeData * PartsBinListView::mimeData(const QList<QListWidgetItem *> items) con
 
 		dataStream << modelPart->moduleID() << QPointF(0,0);
 
-		QMimeData *mimeData = new QMimeData;
+		auto *mimeData = new QMimeData;
 		mimeData->setData("application/x-dnditemdata", itemData);
 		mimeData->setData("action", "part-reordering");
 
@@ -334,7 +334,7 @@ QList<QObject*> PartsBinListView::orderedChildren() {
 	QList<QObject*> result;
 	for(int i=0; i < count(); i++) {
 		ModelPart *mp = itemModelPart(item(i));
-		if(mp) {
+		if(mp != nullptr) {
 			result << mp;
 		}
 	}
@@ -345,7 +345,7 @@ void PartsBinListView::showContextMenu(const QPoint& pos) {
 	QListWidgetItem *it = itemAt(pos);
 
 	QMenu *menu;
-	if(it) {
+	if(it != nullptr) {
 		clearSelection();
 		it->setSelected(true);
 		menu = m_parent->partContextMenu();
@@ -361,7 +361,7 @@ void PartsBinListView::reloadPart(const QString & moduleID) {
 	for(int i = 0; i < count(); i++) {
 		QListWidgetItem * lwi = item(i);
 		ItemBase * itemBase = itemItemBase(lwi);
-		if (itemBase == NULL) continue;
+		if (itemBase == nullptr) continue;
 
 		if (itemBase->moduleID().compare(moduleID) == 0) {
 			lwi->setText(itemBase->title());
@@ -374,21 +374,22 @@ void PartsBinListView::reloadPart(const QString & moduleID) {
 void PartsBinListView::loadImage(ModelPart * modelPart, QListWidgetItem * lwi, const QString & moduleID)
 {
 	ItemBase * itemBase = ItemBaseHash.value(moduleID);
-	if (itemBase == NULL) {
-		itemBase = PartFactory::createPart(modelPart, ViewLayer::NewTop, ViewLayer::IconView, ViewGeometry(), ItemBase::getNextID(), NULL, NULL, false);
+	if (itemBase == nullptr) {
+		itemBase = PartFactory::createPart(modelPart, ViewLayer::NewTop, ViewLayer::IconView, ViewGeometry(), ItemBase::getNextID(), nullptr, nullptr, false);
 		ItemBaseHash.insert(moduleID, itemBase);
 		LayerAttributes layerAttributes;
 		itemBase->initLayerAttributes(layerAttributes, ViewLayer::IconView, ViewLayer::Icon, itemBase->viewLayerPlacement(), false, false);
 		FSvgRenderer * renderer = itemBase->setUpImage(modelPart, layerAttributes);
-		if (renderer) {
-			if (itemBase) {
+		if (renderer != nullptr) {
+			if (itemBase != nullptr) {
 				itemBase->setFilename(renderer->filename());
 			}
 			itemBase->setSharedRendererEx(renderer);
 		}
 	}
 	lwi->setData(Qt::UserRole, QVariant::fromValue( itemBase ) );
-	QSize size(HtmlInfoView::STANDARD_ICON_IMG_WIDTH, HtmlInfoView::STANDARD_ICON_IMG_HEIGHT);
+	QSize size(PartsBinIconView::PARTSBIN_ICON_IMG_WIDTH,
+			   PartsBinIconView::PARTSBIN_ICON_IMG_HEIGHT);
 	QPixmap * pixmap = FSvgRenderer::getPixmap(itemBase->renderer(), size);
 	lwi->setIcon(QIcon(*pixmap));
 	delete pixmap;

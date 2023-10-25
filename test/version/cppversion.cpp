@@ -14,6 +14,9 @@ void testCppVersion() {
     decltype(r) dr = r;                         // int& C++11/14
     decltype(auto) dra = r;                     // int& C++14
 
+    (void)ar; // prevent unused variable warnings
+    (void)dr;
+    (void)dra;
 
     std::cout << 0b0001'0000'0001;
 }

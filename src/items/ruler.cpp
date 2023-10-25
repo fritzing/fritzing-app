@@ -20,32 +20,27 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ruler.h"
 #include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
-#include "moduleidnames.h"
 #include "../utils/textutils.h"
-#include "../utils/boundedregexpvalidator.h"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QFrame>
 #include <QLabel>
 #include <QLineEdit>
-#include <QRegExp>
 #include <qmath.h>
 
-static const int IndexCm = 0;
-static const int IndexIn = 1;
+static constexpr int IndexCm = 0;
+static constexpr int IndexIn = 1;
 
 static QString DefaultWidth = "";
 
 Ruler::Ruler( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: PaletteItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
-	m_widthEditor = NULL;
-	m_unitsEditor = NULL;
-	m_widthValidator = NULL;
+	m_widthEditor = nullptr;
+	m_unitsEditor = nullptr;
+	m_widthValidator = nullptr;
 	QString w = modelPart->localProp("width").toString();
 	if (w.isEmpty()) {
 		if (DefaultWidth.isEmpty()) {
@@ -110,8 +105,8 @@ QString Ruler::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QS
 }
 
 QString Ruler::makeSvg(double inches) {
-	const double cm = 1 / 2.54;
-	const double offset = 0.125;
+	constexpr double cm = 1 / 2.54;
+	constexpr double offset = 0.125;
 	const double mmW = inches * 25.4;// 1/10 centimeter constant
 	const double mmmW = inches * 254;// 1/100 centimeter constant
 
@@ -122,13 +117,11 @@ QString Ruler::makeSvg(double inches) {
 	int counter;
 
 	if (units == IndexCm) {
-		counter = 0;
 		svg += "<g font-family='Droid Sans' text-anchor='middle' font-size='100' stroke-width='1' style='stroke: rgb(100,100,100)'>";
 
 		// 1/100 centimeter spacing
 		for (int i = 0; i <= qCeil(mmmW); i++) {
 			double h = cm / 12;
-			double h2 = h - (cm / 12);
 			double x = (offset + ((double)i / 254)) * GraphicsUtils::StandardFritzingDPI;
 			if (i % 5 == 0) {
 				h = cm / 6;
@@ -261,8 +254,8 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 		returnProp = tr("width");
 
 		int units = m_modelPart->localProp("width").toString().contains("cm") ? IndexCm : IndexIn;
-		QLineEdit * e1 = new QLineEdit();
-		QDoubleValidator * validator = new QDoubleValidator(e1);
+		auto * e1 = new QLineEdit();
+		auto * validator = new QDoubleValidator(e1);
 		validator->setRange(1.0, 20 * ((units == IndexCm) ? 2.54 : 1), 2);
 		validator->setNotation(QDoubleValidator::StandardNotation);
 		validator->setLocale(QLocale::C);
@@ -278,8 +271,8 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 		m_widthValidator = validator;
 
 		// Radio Buttons
-		QRadioButton *radioCm = new QRadioButton(tr("&cm"));
-		QRadioButton *radioIn = new QRadioButton(tr("&in"));
+		auto *radioCm = new QRadioButton(tr("&cm"));
+		auto *radioIn = new QRadioButton(tr("&in"));
 
 		// set radio button object names
 		radioCm->setObjectName("cm");
@@ -296,20 +289,20 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 		}
 
 		// spacer to keep radio buttons together when resizing Inspector Window
-		QSpacerItem *item = new QSpacerItem(1,1, QSizePolicy::Expanding, QSizePolicy::Fixed);
+		auto *item = new QSpacerItem(1,1, QSizePolicy::Expanding, QSizePolicy::Fixed);
 
-		QHBoxLayout * hboxLayout = new QHBoxLayout();
+		auto * hboxLayout = new QHBoxLayout();
 		hboxLayout->setAlignment(Qt::AlignRight);
 		hboxLayout->setContentsMargins(0, 0, 0, 0);
 		hboxLayout->setSpacing(5);
-		hboxLayout->setMargin(0);
+		hboxLayout->setContentsMargins(0, 0, 0, 0);
 
 		hboxLayout->addWidget(e1);
 		hboxLayout->addWidget(radioCm);
 		hboxLayout->addWidget(radioIn);
 		hboxLayout->addSpacerItem(item);
 
-		QFrame * frame = new QFrame();
+		auto * frame = new QFrame();
 		frame->setLayout(hboxLayout);
 		frame->setObjectName("infoViewPartFrame");
 
@@ -327,8 +320,8 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 }
 
 void Ruler::widthEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	auto * edit = qobject_cast<QLineEdit *>(sender());
+	if (edit == nullptr) return;
 
 	QString t = edit->text();
 	QString w = prop("width");
@@ -338,7 +331,7 @@ void Ruler::widthEntry() {
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		// get current object units
 		int units = (m_unitsEditor->objectName() == "cm") ? IndexCm : IndexIn;
 		DefaultWidth = edit->text() + m_unitsEditor->objectName();
@@ -348,8 +341,8 @@ void Ruler::widthEntry() {
 
 void Ruler::unitsEntry() {
 	// get clicked object
-	QRadioButton * obj = qobject_cast<QRadioButton *>(sender());
-	if (obj == NULL) return;
+	auto * obj = qobject_cast<QRadioButton *>(sender());
+	if (obj == nullptr) return;
 
 	// update pointer
 	m_unitsEditor = obj;
@@ -409,7 +402,7 @@ ItemBase::PluralType Ruler::isPlural() {
 
 void Ruler::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		LayerHash viewLayers;
 		QString w = prop("width");
 		modelPart()->setLocalProp("width", "");							// makes sure resizeMM will do the work

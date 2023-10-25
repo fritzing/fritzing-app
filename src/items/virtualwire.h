@@ -28,7 +28,7 @@ class VirtualWire : public ClipableWire
 	Q_OBJECT
 
 public:
-	VirtualWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu  );
+	explicit VirtualWire( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu  );
 	~VirtualWire();
 
 	void setHidden(bool hidden);

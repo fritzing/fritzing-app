@@ -28,7 +28,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QHeaderView>
 
 #include "recoverydialog.h"
-#include "../utils/folderutils.h"
 #include "../debugdialog.h"
 
 CenteredTreeWidget::CenteredTreeWidget(QWidget * parent) : QTreeWidget(parent) {
@@ -38,7 +37,12 @@ CenteredTreeWidget::CenteredTreeWidget(QWidget * parent) : QTreeWidget(parent) {
 
 QStyleOptionViewItem CenteredTreeWidget::viewOptions() const {
 	// alignment not possible from a stylesheet
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QStyleOptionViewItem styleOptionViewItem = QTreeWidget::viewOptions();
+#else
+	QStyleOptionViewItem styleOptionViewItem;
+	QTreeWidget::initViewItemOption(&styleOptionViewItem);
+#endif
 	styleOptionViewItem.displayAlignment = Qt::AlignCenter;
 	return styleOptionViewItem;
 }
@@ -67,7 +71,7 @@ RecoveryDialog::RecoveryDialog(QFileInfoList fileInfoList, QWidget *parent, Qt::
 	connect(m_recoveryList, SIGNAL(itemSelectionChanged()), this, SLOT(updateRecoverButton()));
 
 	QTreeWidgetItem *item;
-	foreach (QFileInfo fileInfo, fileInfoList) {
+	Q_FOREACH (QFileInfo fileInfo, fileInfoList) {
 		item = new QTreeWidgetItem;
 		QString originalFileName = getOriginalFileName(fileInfo.absoluteFilePath());
 		DebugDialog::debug(QString("Creating option for recoveryDialog file %1").arg(originalFileName));
@@ -90,14 +94,14 @@ RecoveryDialog::RecoveryDialog(QFileInfoList fileInfoList, QWidget *parent, Qt::
 		m_fileList << item;
 	}
 
-	QVBoxLayout *layout = new QVBoxLayout();
+	auto *layout = new QVBoxLayout();
 
-	QLabel * label = new QLabel;
+	auto * label = new QLabel;
 	label->setWordWrap(true);
 	label->setText(tr("<p><b>Fritzing may have crashed, but some of the changes to the following files may be recovered.</b></p>"
-	                  "<p>The date and time each file was backed-up is displayed. "
-	                  "If the file was saved, that date and time is also listed for comparison.</p>"
-	                  "<p>The original files are still on your disk, if they were ever saved. "
+	                  "<p>The date and time each file was backed up are displayed. "
+	                  "If the file was saved, that date and time are also listed for comparison.</p>"
+	                  "<p>The original files are still on your disk if they were ever saved. "
 	                  "You can choose whether to overwrite the original file after you load its recovery file.</p>"
 	                  "<p><b>Select any files you want to recover from the list below.</b></p>"
 	                 ));
@@ -105,7 +109,7 @@ RecoveryDialog::RecoveryDialog(QFileInfoList fileInfoList, QWidget *parent, Qt::
 	layout->addWidget(label);
 	layout->addWidget(m_recoveryList);
 
-	QHBoxLayout *buttonLayout = new QHBoxLayout();
+	auto *buttonLayout = new QHBoxLayout();
 	layout->addLayout(buttonLayout);
 
 	m_recover = new QPushButton(tr("&Recover"));

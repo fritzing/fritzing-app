@@ -19,7 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "graphicsflowlayout.h"
-#include "../utils/misc.h"
 
 constexpr auto SpaceBefore = 5;
 constexpr auto SpaceAfter = 3;
@@ -87,7 +86,7 @@ void GraphicsFlowLayout::clear() {
 		itemsToRemove << itemAt(i);
 	}
 
-	foreach(QGraphicsLayoutItem* iToR, itemsToRemove) {
+	Q_FOREACH(QGraphicsLayoutItem* iToR, itemsToRemove) {
 		removeItem(iToR);
 	}
 }

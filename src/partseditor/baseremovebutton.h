@@ -21,8 +21,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define BASEREMOVEBUTTON_H_
 
 #include <QLabel>
+#include <QEnterEvent>
 
 class BaseRemoveButton : public QLabel {
+	Q_OBJECT
 public:
 	BaseRemoveButton(QWidget *parent) : QLabel(parent) {
 		m_enterIcon = QPixmap(":/resources/images/remove_prop_enter.png");
@@ -40,7 +42,7 @@ protected:
 
 	void enterEvent(QEvent * event) {
 		setPixmap(m_enterIcon);
-		QLabel::enterEvent(event);
+		QLabel::enterEvent((QEnterEvent *)event);
 	}
 
 	void leaveEvent(QEvent * event) {

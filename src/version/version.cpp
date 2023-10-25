@@ -25,16 +25,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStringList>
 #include <QSettings>
 #include <QUrl>
+#include <QSysInfo>
+#include <QRegularExpression>
 
 #include "../debugdialog.h"
 #include "../utils/textutils.h"
-#include "../lib/qtsysteminfo/QtSystemInfo.h"
 
 
-QString Version::m_majorVersion("0");
-QString Version::m_minorVersion("9");
-QString Version::m_minorSubVersion("6");
-QString Version::m_modifier("b");
+QString Version::m_majorVersion("1");
+QString Version::m_minorVersion("0");
+QString Version::m_minorSubVersion("0");
+QString Version::m_modifier("rc");
 QString Version::m_gitVersion(GIT_VERSION);
 QString Version::m_gitDate(GIT_DATE);  // want standard ISO form
 QString Version::m_date;
@@ -53,10 +54,10 @@ Version::Version() {
 	}
 
 	QStringList strings;
-	strings = m_gitDate.split("T", QString::SkipEmptyParts);
+	strings = m_gitDate.split("T", Qt::SkipEmptyParts);
 	if (strings.size() >= 2) {
 		m_date = strings[0];
-		strings = m_date.split("-", QString::SkipEmptyParts);
+		strings = m_date.split("-", Qt::SkipEmptyParts);
 		if (strings.size() >= 3) {
 			m_shortDate = strings[1] + "." + strings[2];
 			m_year = strings[0];
@@ -161,31 +162,32 @@ void Version::toVersionThing(const QString & candidate, VersionThing & versionTh
 {
 	versionThing.ok = false;
 	QString modString;
-	foreach (QString s, m_modifiers) {
+	Q_FOREACH (QString s, m_modifiers) {
 		modString += s + "|";
 	}
 	modString.chop(1);
-	QRegExp sw(QString("([\\d]+)\\.([\\d]+)\\.([\\d]+)[\\.]{0,1}(%1)").arg(modString));
-	if (sw.indexIn(candidate) != 0) {
+	QRegularExpression sw(QString("([\\d]+)\\.([\\d]+)\\.([\\d]+)[\\.]{0,1}(%1)").arg(modString));
+	QRegularExpressionMatch match;
+	if (candidate.indexOf(sw, 0, &match) != 0) {
 		return;
 	}
 
-	versionThing.majorVersion = sw.cap(1).toInt(&versionThing.ok);
+	versionThing.majorVersion = match.captured(1).toInt(&versionThing.ok);
 	if (!versionThing.ok) return;
 
-	versionThing.minorVersion = sw.cap(2).toInt(&versionThing.ok);
+	versionThing.minorVersion = match.captured(2).toInt(&versionThing.ok);
 	if (!versionThing.ok) return;
 
-	versionThing.minorSubVersion = sw.cap(3).toInt(&versionThing.ok);
+	versionThing.minorSubVersion = match.captured(3).toInt(&versionThing.ok);
 	if (!versionThing.ok) return;
 
-	versionThing.releaseModifier = sw.cap(4);
+	versionThing.releaseModifier = match.captured(4);
 }
 
 void Version::cleanup() {
-	if (m_singleton) {
+	if (m_singleton != nullptr) {
 		delete m_singleton;
-		m_singleton = NULL;
+		m_singleton = nullptr;
 	}
 }
 
@@ -197,13 +199,12 @@ QString Version::makeRequestParamsString(bool withID) {
 
 	QString id;
 	if (withID) id = QString("&pid=%1").arg(settings.value("pid").toString());
-	QtSystemInfo systemInfo(NULL);
 	QString siVersion(QUrl::toPercentEncoding(Version::versionString()));
-	QString siSystemName(QUrl::toPercentEncoding(systemInfo.systemName()));
-	QString siSystemVersion(QUrl::toPercentEncoding(systemInfo.systemVersion()));
-	QString siKernelName(QUrl::toPercentEncoding(systemInfo.kernelName()));
-	QString siKernelVersion(QUrl::toPercentEncoding(systemInfo.kernelVersion()));
-	QString siArchitecture(QUrl::toPercentEncoding(systemInfo.architectureName()));
+	QString siSystemName(QUrl::toPercentEncoding(QSysInfo::productType()));
+	QString siSystemVersion(QUrl::toPercentEncoding(QSysInfo::productVersion()));
+	QString siKernelName(QUrl::toPercentEncoding(QSysInfo::kernelType()));
+	QString siKernelVersion(QUrl::toPercentEncoding(QSysInfo::kernelVersion()));
+	QString siArchitecture(QUrl::toPercentEncoding(QSysInfo::currentCpuArchitecture()));
 	QString string = QString("?version=%2&sysname=%3&kernname=%4&kernversion=%5&arch=%6&sysversion=%7%8")
 	                 .arg(siVersion)
 	                 .arg(siSystemName)

@@ -19,7 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "autorouteprogressdialog.h"
-#include "../debugdialog.h"
 #include "zoomcontrols.h"
 
 #include <QLabel>
@@ -29,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGroupBox>
 #include <QScrollBar>
 
-static const int ScrollAmount = 40;
+static constexpr int ScrollAmount = 40;
 
 ArrowButton::ArrowButton(int scrollX, int scrollY, ZoomableGraphicsView * view, const QString & path) : QLabel() {
 	m_scrollX = scrollX;
@@ -61,22 +60,22 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 
 	this->setWindowTitle(title);
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto *vLayout = new QVBoxLayout(this);
 
 	m_progressBar = new QProgressBar(this);
 	vLayout->addWidget(m_progressBar);
 
-	m_spinLabel = NULL;
-	m_spinBox = NULL;
+	m_spinLabel = nullptr;
+	m_spinBox = nullptr;
 
 	if (spin) {
-		QFrame * frame = new QFrame(this);
+		auto * frame = new QFrame(this);
 		m_spinLabel = new QLabel(this);
 		m_spinBox = new QSpinBox(this);
 		m_spinBox->setMinimum(1);
 		m_spinBox->setMaximum(99999);
 		connect(m_spinBox, SIGNAL(valueChanged(int)), this, SLOT(internalSpinChange(int)));
-		QHBoxLayout * hBoxLayout = new QHBoxLayout(frame);
+		auto * hBoxLayout = new QHBoxLayout(frame);
 		hBoxLayout->addStretch();
 		hBoxLayout->addWidget(m_spinLabel);
 		hBoxLayout->addWidget(m_spinBox);
@@ -89,21 +88,21 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 	vLayout->addWidget(m_message2);
 
 	if (zoomAndPan) {
-		QGroupBox * groupBox = new QGroupBox(tr("zoom and pan controls"));
-		QHBoxLayout *lo2 = new QHBoxLayout(groupBox);
+		auto * groupBox = new QGroupBox(tr("zoom and pan controls"));
+		auto *lo2 = new QHBoxLayout(groupBox);
 		lo2->setSpacing(1);
-		lo2->setMargin(0);
+		lo2->setContentsMargins(0, 0, 0, 0);
 
 		//TODO: use the zoom slider instead
 		lo2->addWidget(new ZoomControls(view, groupBox));
 
 		lo2->addSpacerItem(new QSpacerItem ( 10, 0, QSizePolicy::Expanding));
 
-		QFrame * frame = new QFrame();
-		QGridLayout *gridLayout = new QGridLayout(frame);
+		auto * frame = new QFrame();
+		auto *gridLayout = new QGridLayout(frame);
 
 		QString imgPath = ":/resources/images/icons/arrowButton%1.png";
-		ArrowButton * label = new ArrowButton(0, -ScrollAmount, view, imgPath.arg("Up"));
+		auto * label = new ArrowButton(0, -ScrollAmount, view, imgPath.arg("Up"));
 		gridLayout->addWidget(label, 0, 1);
 
 		label = new ArrowButton(0, ScrollAmount, view, imgPath.arg("Down"));
@@ -133,7 +132,7 @@ AutorouteProgressDialog::AutorouteProgressDialog(const QString & title, bool zoo
 		connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(sendStop()));
 	}
 	if (bestButton) {
-		QPushButton * best = new QPushButton(tr("Best So Far"));
+		auto * best = new QPushButton(tr("Best So Far"));
 		m_buttonBox->addButton(best, QDialogButtonBox::ActionRole);
 		connect(best, SIGNAL(clicked()), this, SLOT(sendBest()));
 	}
@@ -163,19 +162,19 @@ void AutorouteProgressDialog::setValue(int value) {
 }
 
 void AutorouteProgressDialog::sendSkip() {
-	emit skip();
+	Q_EMIT skip();
 }
 
 void AutorouteProgressDialog::sendCancel() {
-	emit cancel();
+	Q_EMIT cancel();
 }
 
 void AutorouteProgressDialog::sendStop() {
-	emit stop();
+	Q_EMIT stop();
 }
 
 void AutorouteProgressDialog::sendBest() {
-	emit best();
+	Q_EMIT best();
 }
 
 void AutorouteProgressDialog::closeEvent(QCloseEvent *event)
@@ -205,7 +204,7 @@ void AutorouteProgressDialog::setSpinValue(int value)
 }
 
 void AutorouteProgressDialog::internalSpinChange(int value) {
-	emit spinChange(value);
+	Q_EMIT spinChange(value);
 }
 
 void AutorouteProgressDialog::disableButtons() {

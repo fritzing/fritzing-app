@@ -19,10 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "fgraphicsscene.h"
-#include "../items/paletteitembase.h"
-#include "../items/wire.h"
 #include "../connectors/connectoritem.h"
-#include "../sketch/infographicsview.h"
 
 #include <QToolTip>
 
@@ -36,14 +33,14 @@ void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 {
 	// TODO: how do we get a QTransform?
 	QGraphicsItem * item = this->itemAt(helpEvent->scenePos(), QTransform());
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	QString text;
 	QPoint point;
-	ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-	if (itemBase == NULL) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem) {
+	auto * itemBase = dynamic_cast<ItemBase *>(item);
+	if (itemBase == nullptr) {
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		if (connectorItem != nullptr) {
 			connectorItem->updateTooltip();
 		}
 
@@ -81,9 +78,9 @@ bool FGraphicsScene::displayHandles() {
 
 QList<ItemBase *> FGraphicsScene::lockedSelectedItems() {
 	QList<ItemBase *> items;
-	foreach (QGraphicsItem * gitem,  this->selectedItems()) {
-		ItemBase *itemBase = dynamic_cast<ItemBase *>(gitem);
-		if (itemBase == NULL) continue;
+	Q_FOREACH (QGraphicsItem * gitem,  this->selectedItems()) {
+		auto *itemBase = dynamic_cast<ItemBase *>(gitem);
+		if (itemBase == nullptr) continue;
 		if (itemBase->moveLock()) {
 			items.append(itemBase);
 		}

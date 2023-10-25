@@ -19,17 +19,16 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "breadboardsketchwidget.h"
-#include "../debugdialog.h"
-#include "../items/virtualwire.h"
 #include "../items/resizableboard.h"
 #include "../connectors/connectoritem.h"
 #include "../items/moduleidnames.h"
-#include "../waitpushundostack.h"
+#include "src/items/wire.h"
+
 
 #include <QScrollBar>
 #include <QSettings>
 
-static const double WireHoverStrokeFactor = 4.0;
+static constexpr double WireHoverStrokeFactor = 4.0;
 
 BreadboardSketchWidget::BreadboardSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
 	: SketchWidget(viewID, parent)
@@ -78,10 +77,10 @@ bool BreadboardSketchWidget::disconnectFromFemale(ItemBase * item, QHash<long, I
 	// at the moment, I think this doesn't apply to other views
 
 	bool result = false;
-	foreach (ConnectorItem * fromConnectorItem, item->cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * fromConnectorItem, item->cachedConnectorItems()) {
 		if (rubberBandLegEnabled && fromConnectorItem->hasRubberBandLeg()) continue;
 
-		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems())  {
+		Q_FOREACH (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems())  {
 			if (rubberBandLegEnabled && toConnectorItem->hasRubberBandLeg()) continue;
 
 			if (toConnectorItem->connectorType() == Connector::Female) {
@@ -215,14 +214,14 @@ void BreadboardSketchWidget::addDefaultParts() {
 	ViewGeometry viewGeometry;
 	viewGeometry.setLoc(QPointF(0, 0));
 	ModelPart * modelPart = referenceModel()->retrieveModelPart(ModuleIDNames::FullPlusBreadboardModuleIDName);
-	m_addedDefaultPart = addItem(modelPart, defaultViewLayerPlacement(modelPart), BaseCommand::CrossView, viewGeometry, newID, -1, NULL);
+	m_addedDefaultPart = addItem(modelPart, defaultViewLayerPlacement(modelPart), BaseCommand::CrossView, viewGeometry, newID, -1, nullptr);
 	m_addDefaultParts = true;
 	// have to put this off until later, because positioning the item doesn't work correctly until the view is visible
 }
 
 void BreadboardSketchWidget::showEvent(QShowEvent * event) {
 	SketchWidget::showEvent(event);
-	if (m_addDefaultParts && (m_addedDefaultPart)) {
+	if (m_addDefaultParts && ((m_addedDefaultPart) != nullptr)) {
 		m_addDefaultParts = false;
 		QSizeF partSize = m_addedDefaultPart->size();
 		QSizeF vpSize = this->viewport()->size();
@@ -257,15 +256,34 @@ void BreadboardSketchWidget::colorWiresByLength(bool colorByLength) {
 	QSettings settings;
 	settings.setValue(QString("%1ColorWiresByLength").arg(viewName()), colorByLength);
 
-	QList<Wire *> wires;
-	QList<Wire *> visited;
-	foreach (QGraphicsItem * item, scene()->items()) {
+	Q_FOREACH (QGraphicsItem * item, scene()->items()) {
 		Wire * wire = dynamic_cast<Wire *>(item);
-		if (wire == NULL) continue;
+		if (wire == nullptr) continue;
 		wire->colorByLength(colorByLength);
 	}
 }
 
 bool BreadboardSketchWidget::coloringWiresByLength() {
 	return m_colorWiresByLength;
+}
+
+bool BreadboardSketchWidget::canCreateWire(Wire * dragWire, ConnectorItem * from, ConnectorItem * to)
+{
+	if (((from) != nullptr) && ((to) != nullptr)) {
+		return true;
+	}
+	if (dragWire == nullptr) {
+		return false;
+	}
+	qreal length = dragWire->getPaintLine().length();
+	return ( length > WireMinLength);
+}
+
+Wire * BreadboardSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec)
+{
+	Wire * wire = SketchWidget::createTempWireForDragging(fromWire, wireModel, connectorItem, viewGeometry, spec);
+	if ((fromWire != nullptr) && (wire != nullptr)) {
+		wire->setColorString(fromWire->colorString(), fromWire->opacity(), false);
+	}
+	return wire;
 }

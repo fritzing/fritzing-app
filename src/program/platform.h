@@ -64,7 +64,7 @@ public:
 	QString getIdeName() const;
 	void setIdeName(const QString &ideName);
 
-signals:
+Q_SIGNALS:
 	void commandLocationChanged();
 
 protected:

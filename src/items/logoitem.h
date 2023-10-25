@@ -36,7 +36,7 @@ class LogoItem : public ResizableBoard
 	Q_OBJECT
 
 public:
-	LogoItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit LogoItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~LogoItem();
 
 	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
@@ -60,7 +60,7 @@ public:
 	QString getInspectorTitle();
 	void setInspectorTitle(const QString & oldText, const QString & newText);
 
-protected slots:
+protected Q_SLOTS:
 	void logoEntry();
 	void widthEntry();
 	void heightEntry();
@@ -90,6 +90,7 @@ protected:
 	void logoEntryAux(const QString & newText);
 
 protected:
+	static constexpr int kDecimalsAfter = 2;
 	QString m_logo;
 	bool m_hasLogo;
 	QString m_originalFilename;
@@ -137,7 +138,7 @@ public:
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	void setProp(const QString & prop, const QString & value);
 
-public slots:
+public Q_SLOTS:
 	void changeTextColor();
 
 protected:

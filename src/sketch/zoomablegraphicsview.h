@@ -25,6 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMenu>
 #include <QHash>
 #include <QList>
+#include <QPinchGesture>
 
 
 class ZoomableGraphicsView : public QGraphicsView
@@ -48,25 +49,30 @@ public:
 	enum WheelMapping {
 		ScrollPrimary,
 		ZoomPrimary,
+		Guess,
+		Pure,
 		WheelMappingCount
 	};
 
 	static WheelMapping wheelMapping();
 	static void setWheelMapping(WheelMapping);
+	bool event(QEvent *event);
 
-signals:
+Q_SIGNALS:
 	void zoomChanged(double zoom);
 	void zoomOutOfRange(double zoom);
-	void wheelSignal();
 
 protected:
 	virtual void wheelEvent(QWheelEvent* event);
+	bool gestureEvent(QGestureEvent *event);
+	void pinchTriggered(QPinchGesture *gesture);
 
 protected:
 	double m_scaleValue;
 	int m_maxScaleValue;
 	int m_minScaleValue;
 	bool m_acceptWheelEvents;
+	qint64 m_guessTouchpadId;
 	bool m_viewFromBelow;
 
 protected:

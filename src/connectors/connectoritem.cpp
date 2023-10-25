@@ -231,14 +231,16 @@ parts editor support
 static Bezier UndoBezier;
 static BezierDisplay * TheBezierDisplay = nullptr;
 
-static const double StandardLegConnectorDrawEnabledLength = 5;  // pixels
-static const double StandardLegConnectorDetectLength = 9;       // pixels
+static constexpr double StandardLegConnectorDrawEnabledLength = 5;  // pixels
+static constexpr double StandardLegConnectorDetectLength = 9;       // pixels
 
 QList<ConnectorItem *> ConnectorItem::m_equalPotentialDisplayItems;
 
 const QList<ConnectorItem *> ConnectorItem::emptyConnectorItemList;
 
 static double MAX_DOUBLE = std::numeric_limits<double>::max();
+
+const QColor LegConnectorUnderColor = QColor("#8c8c8c"); // TODO: don't hardcode color
 
 bool wireLessThan(ConnectorItem * c1, ConnectorItem * c2)
 {
@@ -328,7 +330,7 @@ ConnectorItem::ConnectorItem( Connector * connector, ItemBase * attachedTo )
 ConnectorItem::~ConnectorItem() {
 	m_equalPotentialDisplayItems.removeOne(this);
 	//DebugDialog::debug(QString("deleting connectorItem %1").arg((long) this, 0, 16));
-	foreach (ConnectorItem * connectorItem, m_connectedTo) {
+	Q_FOREACH (ConnectorItem * connectorItem, m_connectedTo) {
 		if (connectorItem) {
 			//DebugDialog::debug(QString("temp remove %1 %2").arg(this->attachedToID()).arg(connectorItem->attachedToID()));
 			connectorItem->tempRemove(this, this->attachedToID() != connectorItem->attachedToID());
@@ -474,10 +476,12 @@ ConnectorItem * ConnectorItem::removeConnection(ItemBase * itemBase) {
 				m_attachedTo->connectionChange(this, removed, false);
 			}
 			restoreColor(visited);
-			DebugDialog::debug(QString("remove from:%1 to:%2 count%3")
-			                   .arg((long) this, 0, 16)
-			                   .arg(itemBase->modelPartShared()->title())
-			                   .arg(m_connectedTo.count()) );
+			if (itemBase) {
+				DebugDialog::debug(QString("remove from:%1 to:%2 count%3")
+						   .arg((long) this, 0, 16)
+						   .arg(itemBase->modelPartShared()->title())
+						   .arg(m_connectedTo.count()) );
+			}
 			return removed;
 		}
 	}
@@ -526,7 +530,7 @@ void ConnectorItem::restoreColor(QList<ConnectorItem *> & visited)
 	collectEqualPotential(connectorItems, true, getSkipFlags());
 	visited.append(connectorItems);
 	QSet<ItemBase *> attachedTo;
-	foreach (ConnectorItem * connectorItem, connectorItems) {
+	Q_FOREACH (ConnectorItem * connectorItem, connectorItems) {
 		if (connectorItem->isEverVisible()) {
 			if (connectorItem->attachedToItemType() != ModelPart::Wire) {
 				attachedTo.insert(connectorItem->attachedTo()->layerKinChief());
@@ -534,7 +538,7 @@ void ConnectorItem::restoreColor(QList<ConnectorItem *> & visited)
 		}
 	}
 
-	foreach (ConnectorItem * connectorItem, connectorItems) {
+	Q_FOREACH (ConnectorItem * connectorItem, connectorItems) {
 		if (connectorItem->isEverVisible()) {
 			//QString how;
 			if (attachedTo.count() <= 1) {
@@ -784,6 +788,9 @@ void ConnectorItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
 		QList<ConnectorItem *> exclude;
 		findConnectorUnder(true, true, exclude, true, this);
 
+		QList<ConnectorItem *> already;
+		attachedMoved(true, true, already);
+
 		return;
 	}
 
@@ -822,7 +829,7 @@ void ConnectorItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
 	//m_equalPotentialDisplayItems.removeAt(0);    // not sure whether to leave the clicked one in or out of the list
 	QList<ConnectorItem *> visited;
 	//DebugDialog::debug("_______________________");
-	foreach (ConnectorItem * connectorItem, m_equalPotentialDisplayItems) {
+	Q_FOREACH (ConnectorItem * connectorItem, m_equalPotentialDisplayItems) {
 		connectorItem->showEqualPotential(true, visited);
 		//connectorItem->debugInfo("display eqp");
 	}
@@ -843,20 +850,20 @@ int ConnectorItem::connectionsCount() {
 	return m_connectedTo.count();
 }
 
-void ConnectorItem::attachedMoved(bool includeRatsnest, QList<ConnectorItem *> & already) {
+void ConnectorItem::attachedMoved(bool includeRatsnest, bool includeOnlyRatsnest, QList<ConnectorItem *> & already) {
 	//DebugDialog::debug("attached moved");
 	if (!this->isVisible()) return;
 
 	QSet<ConnectorItem *> allTo;
 	allTo.insert(this);
-	foreach (ConnectorItem * toConnectorItem, m_connectedTo) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, m_connectedTo) {
 		allTo.insert(toConnectorItem);
-		foreach (ConnectorItem * subTo, toConnectorItem->connectedToItems()) {
+		Q_FOREACH (ConnectorItem * subTo, toConnectorItem->connectedToItems()) {
 			allTo.insert(subTo);
 		}
 	}
 	allTo.remove(this);
-	foreach (ConnectorItem * toConnectorItem, allTo) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, allTo) {
 		ItemBase * itemBase = toConnectorItem->attachedTo();
 		if (!itemBase) continue;
 		if (!itemBase->isVisible()) {
@@ -864,8 +871,14 @@ void ConnectorItem::attachedMoved(bool includeRatsnest, QList<ConnectorItem *> &
 			//itemBase->debugInfo("    ");
 			continue;
 		}
-		if (itemBase->getRatsnest() && !includeRatsnest) {
-			continue;
+		if (itemBase->getRatsnest()) {
+			if (!includeRatsnest) {
+				continue;
+			}
+		} else {
+			if (includeOnlyRatsnest) {
+				continue;
+			}
 		}
 
 		toConnectorItem->attachedTo()->connectedMoved(this, toConnectorItem, already);
@@ -875,7 +888,7 @@ void ConnectorItem::attachedMoved(bool includeRatsnest, QList<ConnectorItem *> &
 ConnectorItem * ConnectorItem::firstConnectedToIsh() {
 	if (m_connectedTo.count() <= 0) return nullptr;
 
-	foreach (ConnectorItem * connectorItem, m_connectedTo) {
+	Q_FOREACH (ConnectorItem * connectorItem, m_connectedTo) {
 		if (connectorItem->attachedTo()->getRatsnest()) continue;
 		if (!connectorItem->isVisible()) continue;
 
@@ -885,7 +898,7 @@ ConnectorItem * ConnectorItem::firstConnectedToIsh() {
 	// TODO: not sure whether to return invisible connectors
 	// TODO: get rid of this function?
 
-	foreach (ConnectorItem * connectorItem, m_connectedTo) {
+	Q_FOREACH (ConnectorItem * connectorItem, m_connectedTo) {
 		if (connectorItem->attachedTo()->getRatsnest()) continue;
 
 		return connectorItem;
@@ -1094,7 +1107,7 @@ Connector::ConnectorType ConnectorItem::connectorType() {
 }
 
 bool ConnectorItem::chained() {
-	foreach (ConnectorItem * toConnectorItem, m_connectedTo) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, m_connectedTo) {
 		if (toConnectorItem->attachedToItemType() == ModelPart::Wire) {
 			return true;
 		}
@@ -1145,7 +1158,7 @@ void ConnectorItem::saveInstance(QXmlStreamWriter & writer) {
 
 	if (m_connectedTo.count() > 0) {
 		writer.writeStartElement("connects");
-		foreach (ConnectorItem * connectorItem, this->m_connectedTo) {
+		Q_FOREACH (ConnectorItem * connectorItem, this->m_connectedTo) {
 			if (connectorItem->attachedTo()->getRatsnest()) continue;
 
 			connectorItem->writeConnector(writer, "connect");
@@ -1200,8 +1213,8 @@ Wire * ConnectorItem::directlyWiredToAux(ConnectorItem * source, ConnectorItem *
 
 	visited.append(equals);
 
-	foreach (ConnectorItem * fromItem, equals) {
-		foreach (ConnectorItem * toConnectorItem, fromItem->m_connectedTo) {
+	Q_FOREACH (ConnectorItem * fromItem, equals) {
+		Q_FOREACH (ConnectorItem * toConnectorItem, fromItem->m_connectedTo) {
 			ItemBase * toItem = toConnectorItem->attachedTo();
 			if (!toItem) {
 				continue;  // shouldn't happen
@@ -1214,7 +1227,7 @@ Wire * ConnectorItem::directlyWiredToAux(ConnectorItem * source, ConnectorItem *
 
 			ConnectorItem * otherEnd = wire->otherConnector(toConnectorItem);
 			bool isChained = false;
-			foreach (ConnectorItem * otherConnectorItem, otherEnd->m_connectedTo) {
+			Q_FOREACH (ConnectorItem * otherConnectorItem, otherEnd->m_connectedTo) {
 				if (target == otherConnectorItem) {
 					return wire;
 				}
@@ -1276,14 +1289,17 @@ bool ConnectorItem::isConnectedToPart() {
 			}
 		}
 
-		ConnectorItem * crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
+		ConnectorItem * crossConnectorItem = nullptr;
+		if (connectorItem != nullptr) {
+			crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
+		}
 		if (crossConnectorItem) {
 			if (!tempItems.contains(crossConnectorItem)) {
 				tempItems.append(crossConnectorItem);
 			}
 		}
 
-		foreach (ConnectorItem * cto, connectorItem->connectedToItems()) {
+		Q_FOREACH (ConnectorItem * cto, connectorItem->connectedToItems()) {
 			if (tempItems.contains(cto)) continue;
 
 			tempItems.append(cto);
@@ -1293,7 +1309,7 @@ bool ConnectorItem::isConnectedToPart() {
 		if (bus) {
 			QList<ConnectorItem *> busConnectedItems;
 			connectorItem->attachedTo()->busConnectorItems(bus, connectorItem, busConnectedItems);
-			foreach (ConnectorItem * busConnectedItem, busConnectedItems) {
+			Q_FOREACH (ConnectorItem * busConnectedItem, busConnectedItems) {
 				if (!tempItems.contains(busConnectedItem)) {
 					tempItems.append(busConnectedItem);
 				}
@@ -1314,8 +1330,11 @@ bool ConnectorItem::isConnectedToPart() {
  * @param[in] crossLayers follow connections accross layers
  * @param[in] skipFlags filter for the types of wires that are not to be included
  */
-void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> &connectorItems,
-										  bool crossLayers, ViewGeometry::WireFlags skipFlags)
+void ConnectorItem::collectEqualPotential(
+		QList<ConnectorItem *> &connectorItems,
+		bool crossLayers,
+		ViewGeometry::WireFlags skipFlags,
+		bool skipBuses)
 {
 	// take a local (temporary working) copy of the supplied list, and wipe the original
 	QList<ConnectorItem *> tempItems = connectorItems;
@@ -1346,7 +1365,7 @@ void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> &connectorItems
 		// this one's a keeper
 		connectorItems.append(connectorItem);
 
-		foreach (ConnectorItem *cto, connectorItem->connectedToItems()) {
+		Q_FOREACH (ConnectorItem *cto, connectorItem->connectedToItems()) {
 			if (tempItems.contains(cto)) {
 				continue;
 			}
@@ -1365,7 +1384,7 @@ void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> &connectorItems
 		// When the kept connector item is part of a bus, include all of the other
 		// connectors on the bus in the list being processed
 		Bus *bus = connectorItem->bus();
-		if (bus) {
+		if (!skipBuses && bus) {
 			QList<ConnectorItem *> busConnectedItems;
 			connectorItem->attachedTo()->busConnectorItems(bus, connectorItem, busConnectedItems);
 #ifndef QT_NO_DEBUG
@@ -1375,7 +1394,7 @@ void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> &connectorItems
 				//connectorItem->attachedTo()->busConnectorItems(bus, busConnectedItems);
 			}
 #endif
-			foreach (ConnectorItem *busConnectedItem, busConnectedItems) {
+			Q_FOREACH (ConnectorItem *busConnectedItem, busConnectedItems) {
 				if (!tempItems.contains(busConnectedItem)) {
 					tempItems.append(busConnectedItem);
 				}
@@ -1400,7 +1419,7 @@ void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<
 		break;
 	}
 
-	foreach (ConnectorItem * connectorItem, connectorItems) {
+	Q_FOREACH (ConnectorItem * connectorItem, connectorItems) {
 		if (connectorItem->isHybrid()) {
 			continue;
 		}
@@ -1488,17 +1507,13 @@ void ConnectorItem::updateTooltip() {
 			descr = ":" + descr;
 		}
 		QString id = connectorSharedID();
-		int ix = IntegerFinder.indexIn(id);
+		QRegularExpressionMatch match;
+		int ix = id.indexOf(IntegerFinder, 0, &match);
 		if (ix < 0 || isInt) {
 			id = "";
 		}
 		else {
-			if (attachedTo()->modelPart()->hasZeroConnector()) {
-				id = QString::number(IntegerFinder.cap(0).toInt() + 1);
-			}
-			else {
-				id = IntegerFinder.cap(0);
-			}
+			id = match.captured(0);
 			if (!id.isEmpty()) {
 				id = " <span style='color:#909090;'>(" + id + ")</span>";
 			}
@@ -1514,7 +1529,7 @@ void ConnectorItem::updateTooltip() {
 	}
 
 	QList<ConnectorItem *> connectors;
-	foreach(ConnectorItem * toConnectorItem, m_connectedTo) {
+	Q_FOREACH(ConnectorItem * toConnectorItem, m_connectedTo) {
 		if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			connectors.append(toConnectorItem);
 		}
@@ -1527,7 +1542,7 @@ void ConnectorItem::updateTooltip() {
 
 
 	QString connections = QString("<ul style='margin-left:0;padding-left:0;'>");
-	foreach(ConnectorItem * connectorItem, connectors) {
+	Q_FOREACH(ConnectorItem * connectorItem, connectors) {
 		connections += QString("<li style='margin-left:0;padding-left:0;'>") + "<b>" + connectorItem->attachedTo()->label() + "</b> " + connectorItem->connectorSharedName() + "</li>";
 	}
 	connections += "</ul>";
@@ -1544,7 +1559,7 @@ void ConnectorItem::clearConnector() {
 bool ConnectorItem::connectionIsAllowed(ConnectorItem * other) {
 	if (!connector()->connectionIsAllowed(other->connector())) return false;
 	if (!m_attachedTo->connectionIsAllowed(other)) return false;
-	foreach (ConnectorItem * toConnectorItem, connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, connectedToItems()) {
 		if (!toConnectorItem->attachedTo()->connectionIsAllowed(other)) {
 			return false;
 		}
@@ -1570,7 +1585,7 @@ void ConnectorItem::showEqualPotential(bool show, QList<ConnectorItem *> & visit
 void ConnectorItem::clearEqualPotentialDisplay() {
 	//DebugDialog::debug(QString("clear eqp3"));
 	QList<ConnectorItem *> visited;
-	foreach (ConnectorItem * connectorItem, m_equalPotentialDisplayItems) {
+	Q_FOREACH (ConnectorItem * connectorItem, m_equalPotentialDisplayItems) {
 		connectorItem->restoreColor(visited);
 	}
 	m_equalPotentialDisplayItems.clear();
@@ -1590,7 +1605,7 @@ bool ConnectorItem::isGrounded(ConnectorItem * c1, ConnectorItem * c2) {
 	}
 	collectEqualPotential(connectorItems, true, ViewGeometry::NoFlag);
 
-	foreach (ConnectorItem * end, connectorItems) {
+	Q_FOREACH (ConnectorItem * end, connectorItems) {
 		if (end->isGrounded()) return true;
 
 	}
@@ -1677,7 +1692,7 @@ void ConnectorItem::paintLeg(QPainter * painter)
 	painter->setPen(lpen);
 
 	bool hasCurves = false;
-	foreach (Bezier * bezier, m_legCurves) {
+	Q_FOREACH (Bezier * bezier, m_legCurves) {
 		if (bezier && !bezier->isEmpty()) {
 			hasCurves = true;
 			break;
@@ -1721,7 +1736,7 @@ void ConnectorItem::paintLeg(QPainter * painter)
 
 	if (!isGrey(m_legColor)) {
 		// draw an undercolor so the connectorColor will be visible on top of the leg color
-		lpen.setColor(0x8c8c8c);			// TODO: don't hardcode color
+		lpen.setColor(LegConnectorUnderColor);
 		painter->setOpacity(1);
 		painter->setPen(lpen);
 		if (connectorIsCurved) {
@@ -1795,7 +1810,7 @@ ConnectorItem * ConnectorItem::chooseFromSpec(ViewLayer::ViewLayerPlacement view
 }
 
 bool ConnectorItem::connectedToWires() {
-	foreach (ConnectorItem * toConnectorItem, connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() == ModelPart::Wire) {
 			return true;
 		}
@@ -1804,7 +1819,7 @@ bool ConnectorItem::connectedToWires() {
 	ConnectorItem * crossConnectorItem = getCrossLayerConnectorItem();
 	if (!crossConnectorItem) return false;
 
-	foreach (ConnectorItem * toConnectorItem, crossConnectorItem->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * toConnectorItem, crossConnectorItem->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() == ModelPart::Wire) {
 			return true;
 		}
@@ -1819,8 +1834,8 @@ void ConnectorItem::displayRatsnest(QList<ConnectorItem *> & partConnectorItems,
 	QColor formerColor;
 
 	VirtualWire * vw = nullptr;
-	foreach (ConnectorItem * fromConnectorItem, partConnectorItems) {
-		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
+	Q_FOREACH (ConnectorItem * fromConnectorItem, partConnectorItems) {
+		Q_FOREACH (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
 			vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
 			if (vw) break;
 		}
@@ -1855,8 +1870,8 @@ void ConnectorItem::displayRatsnest(QList<ConnectorItem *> & partConnectorItems,
 	ConnectorPairHash result;
 	GraphUtils::chooseRatsnestGraph(&partConnectorItems, (ViewGeometry::RatsnestFlag | ViewGeometry::NormalFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::SchematicTraceFlag) ^ myFlag, result);
 
-	foreach (ConnectorItem * key, result.uniqueKeys()) {
-		foreach (ConnectorItem * value, result.values(key)) {
+	Q_FOREACH (ConnectorItem * key, result.uniqueKeys()) {
+		Q_FOREACH (ConnectorItem * value, result.values(key)) {
 			VirtualWire * vw = infoGraphicsView->makeOneRatsnestWire(key, value, false, color, false);
 			if (vw) {
 				vw->setColorWasNamed(colorWasNamed);
@@ -1868,18 +1883,18 @@ void ConnectorItem::displayRatsnest(QList<ConnectorItem *> & partConnectorItems,
 void ConnectorItem::clearRatsnestDisplay(QList<ConnectorItem *> & connectorItems) {
 
 	QSet<VirtualWire *> ratsnests;
-	foreach (ConnectorItem * fromConnectorItem, connectorItems) {
+	Q_FOREACH (ConnectorItem * fromConnectorItem, connectorItems) {
 		if (!fromConnectorItem) continue;
 
-		foreach (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
-			VirtualWire * vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
+		Q_FOREACH (ConnectorItem * toConnectorItem, fromConnectorItem->connectedToItems()) {
+			auto * vw = qobject_cast<VirtualWire *>(toConnectorItem->attachedTo());
 			if (vw) {
 				ratsnests.insert(vw);
 			}
 		}
 	}
 
-	foreach (VirtualWire * vw, ratsnests.values()) {
+	Q_FOREACH (VirtualWire * vw, ratsnests.values()) {
 		ConnectorItem * c1 = vw->connector0()->firstConnectedToIsh();
 		if (c1) {
 			vw->connector0()->tempRemove(c1, false);
@@ -1901,7 +1916,7 @@ void ConnectorItem::clearRatsnestDisplay(QList<ConnectorItem *> & connectorItems
 
 void ConnectorItem::collectConnectorNames(QList<ConnectorItem *> & connectorItems, QStringList & connectorNames)
 {
-	foreach(ConnectorItem * connectorItem, connectorItems) {
+	Q_FOREACH(ConnectorItem * connectorItem, connectorItems) {
 		if (!connectorNames.contains(connectorItem->connectorSharedName())) {
 			connectorNames.append(connectorItem->connectorSharedName());
 			//DebugDialog::debug("name " + connectorItem->connectorSharedName());
@@ -1969,8 +1984,8 @@ ConnectorItem * ConnectorItem::findConnectorUnder(bool useTerminalPoint, bool al
 	                               : this->scene()->items(mapToScene(this->rect()));  // only wires use rect
 	QList<ConnectorItem *> candidates;
 	// for the moment, take the topmost ConnectorItem that doesn't belong to me
-	foreach (QGraphicsItem * item, items) {
-		ConnectorItem * connectorItemUnder = dynamic_cast<ConnectorItem *>(item);
+	Q_FOREACH (QGraphicsItem * item, items) {
+		auto * connectorItemUnder = dynamic_cast<ConnectorItem *>(item);
 		if (!connectorItemUnder) continue;
 		if (!connectorItemUnder->connector()) continue;  // shouldn't happen
 		if (attachedTo()->childItems().contains(connectorItemUnder)) continue;  // don't use own connectors
@@ -1993,7 +2008,7 @@ ConnectorItem * ConnectorItem::findConnectorUnder(bool useTerminalPoint, bool al
 		candidate = candidates[0];
 	}
 	else if (candidates.count() > 0) {
-		qSort(candidates.begin(), candidates.end(), wireLessThan);
+		std::sort(candidates.begin(), candidates.end(), wireLessThan);
 		candidate = candidates[0];
 	}
 
@@ -2091,7 +2106,7 @@ void ConnectorItem::resetLeg(const QPolygonF & poly, bool relative, bool active,
 	if (!m_rubberBandLeg) return;
 
 	ConnectorItem * target = nullptr;
-	foreach (ConnectorItem * connectorItem, this->m_connectedTo) {
+	Q_FOREACH (ConnectorItem * connectorItem, this->m_connectedTo) {
 		if (connectorItem->connectorType() == Connector::Female) {
 			target = connectorItem;
 			break;
@@ -2149,41 +2164,100 @@ bool ConnectorItem::isDraggingLeg() {
 	return m_draggingLeg;
 }
 
+QString ConnectorItem::pathMoveTo(QPointF p, QPointF offset, double dpi, double printerScale) {
+	QString data("M");
+	data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
+	return data;
+}
+
+QString ConnectorItem::pathCubicTo(Bezier * bezier, QPointF p, QPointF offset, double dpi, double printerScale) {
+	QString data;
+	if (!bezier || bezier->isEmpty()) {
+		data += "L";
+		data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
+	}
+	else {
+		data += "C";
+		data += TextUtils::pointToSvgString(mapToScene(bezier->cp0()), offset, dpi, printerScale);
+		data += " ";
+		data += TextUtils::pointToSvgString(mapToScene(bezier->cp1()), offset, dpi, printerScale);
+		data += " ";
+		data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
+	}
+	return data;
+}
+
+QString ConnectorItem::makePathSvg(QString color, double strokeWidth, double opacity, QString path) {
+	QString svg = QString("<path stroke='%1' stroke-width='%2' stroke-linecap='round' stroke-linejoin='round' fill='none' d='%3' opacity='%4' />\n")
+		       .arg(color)
+		       .arg(strokeWidth)
+		       .arg(path)
+		       .arg(opacity);
+	return svg;
+}
+
 QString ConnectorItem::makeLegSvg(QPointF offset, double dpi, double printerScale, bool blackOnly) {
 	if (!m_rubberBandLeg) return "";
 
-	QString data("M");
-	QPointF p = m_legPolygon.at(0);
-	data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
+	QString data = pathMoveTo(m_legPolygon.at(0), offset, dpi, printerScale);
 	for (int i = 1; i < m_legPolygon.count(); i++) {
-		QPointF p = m_legPolygon.at(i);
-		Bezier * bezier = m_legCurves.at(i - 1);
-		if (!bezier || bezier->isEmpty()) {
-			data += "L";
-			data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
-		}
-		else {
-			data += "C";
-			data += TextUtils::pointToSvgString(mapToScene(bezier->cp0()), offset, dpi, printerScale);
-			data += " ";
-			data += TextUtils::pointToSvgString(mapToScene(bezier->cp1()), offset, dpi, printerScale);
-			data += " ";
-			data += TextUtils::pointToSvgString(mapToScene(p), offset, dpi, printerScale);
+		data += pathCubicTo(m_legCurves.at(i - 1), m_legPolygon.at(i), offset, dpi, printerScale);
+	}
+
+	QString svg = makePathSvg(blackOnly ? "black" :  m_legColor.name(), m_legStrokeWidth * dpi / printerScale, 1.0, data);
+
+	if (m_legPolygon.count() > 2) {
+		// draw bendpoint indicators
+		double halfWidth = m_legStrokeWidth * dpi / (2.0 * printerScale);
+		QColor c =  addColor(m_legColor, (qGray(m_legColor.rgb()) < 64) ? 80 : -64);
+		for (int i = 1; i < m_legPolygon.count() - 1; i++) {
+			double cx = (mapToScene(m_legPolygon.at(i)).x() - offset.x()) * dpi / printerScale;
+			double cy = (mapToScene(m_legPolygon.at(i)).y() - offset.y()) * dpi / printerScale;
+
+			svg += QString("<circle  fill=\"%4\" cx=\"%1\" cy=\"%2\" r=\"%3\" stroke-width=\"0\" stroke=\"none\" />")
+			       .arg(cx)
+			       .arg(cy)
+			       .arg(halfWidth)
+			       .arg(c.name());
 		}
 	}
 
-	QString path = QString("<path stroke='%1' stroke-width='%2' stroke-linecap='round' stroke-linejoin='round' fill='none' d='%3' />\n")
-	               .arg(blackOnly ? "black" :  m_legColor.name())
-	               .arg(m_legStrokeWidth * dpi / printerScale)
-	               .arg(data);
-	return path;
+	// now draw the connector
+	data = "";
+	Bezier * bezier = m_legCurves.at(m_legCurves.count() - 2);
+	bool connectorIsCurved = (bezier && !bezier->isEmpty());
+	Bezier left, right;
+	Bezier *rightPtr = nullptr;
+	QPointF start, end;
+	if (connectorIsCurved) {
+		bezier->split(m_connectorDrawT, left, right);
+		start = right.endpoint0();
+		end = right.endpoint1();
+		rightPtr = &right;
+	} else {
+		start = m_connectorDrawEnd;
+		end = m_legPolygon.last();
+	}
+
+	data += pathMoveTo(start, offset, dpi, printerScale);
+	data += pathCubicTo(rightPtr, end, offset, dpi, printerScale);
+
+	if (!isGrey(m_legColor)) {
+		// draw an undercolor so the connectorColor will be visible on top of the leg color
+		svg += makePathSvg(LegConnectorUnderColor.name(), m_legStrokeWidth * dpi / printerScale, 1.0, data);
+	}
+
+	svg += makePathSvg(this->pen().color().name(), m_legStrokeWidth * dpi / printerScale, m_opacity, data);
+
+	return svg;
+
 }
 
 QPolygonF ConnectorItem::sceneAdjustedLeg() {
 	if (!m_rubberBandLeg) return QPolygonF();
 
 	QPolygonF poly;
-	foreach (QPointF p, m_legPolygon) {
+	Q_FOREACH (QPointF p, m_legPolygon) {
 		poly.append(mapToScene(p));
 	}
 
@@ -2263,7 +2337,7 @@ QPainterPath ConnectorItem::shapeAux(double width) const
 void ConnectorItem::repositionTarget()
 {
 	// this connector is connected to another part which is being dragged
-	foreach (ConnectorItem * connectorItem, this->m_connectedTo) {
+	Q_FOREACH (ConnectorItem * connectorItem, this->m_connectedTo) {
 		if (connectorItem->connectorType() == Connector::Female) {
 			reposition(connectorItem->sceneAdjustedTerminalPoint(nullptr), m_legPolygon.count() - 1);
 			break;
@@ -2291,7 +2365,7 @@ void ConnectorItem::repoly(const QPolygonF & poly, bool relative)
 	m_legPolygon.clear();
 	clearCurves();
 
-	foreach (QPointF p, poly) {
+	Q_FOREACH (QPointF p, poly) {
 		m_legPolygon.append(relative ? p : mapFromScene(p));
 		m_legCurves.append(nullptr);
 	}
@@ -2689,7 +2763,7 @@ void ConnectorItem::removeBendpoint(int bendpointIndex)
 
 void ConnectorItem::clearCurves()
 {
-	foreach (Bezier * bezier, m_legCurves) {
+	Q_FOREACH (Bezier * bezier, m_legCurves) {
 		if (bezier) delete bezier;
 	}
 	m_legCurves.clear();
@@ -2734,6 +2808,8 @@ void ConnectorItem::moveLegBendpoint(int index, QPointF p)
 {
 	m_legPolygon.replace(index, mapFromScene(p));
 	calcConnectorEnd();
+	QList<ConnectorItem *> already;
+	attachedMoved(true, true, already);
 	update();
 }
 
@@ -2834,7 +2910,7 @@ bool ConnectorItem::isBendpoint()
 {
 	if (connectionsCount() == 0) return false;
 
-	foreach (ConnectorItem * ci, connectedToItems()) {
+	Q_FOREACH (ConnectorItem * ci, connectedToItems()) {
 		if (ci->attachedToItemType() != ModelPart::Wire) {
 			return false;
 		}

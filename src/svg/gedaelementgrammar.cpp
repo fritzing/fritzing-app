@@ -2,8 +2,8 @@
 #include "gedaelementgrammar_p.h"
 
 const char *const GedaElementGrammar::spell [] = {
-	"end of file", 0, 0, 0, 0, 0, 0, 0, 0, 0,
-	0, 0, 0, 0, 0,
+	"end of file", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr,
+	nullptr, nullptr, nullptr, nullptr, nullptr,
 #ifndef QLALR_NO_GEDAELEMENTGRAMMAR_DEBUG_INFO
 	"geda_element", "element_command", "element_command_sequence", "sub_element_sequence", "sub_element_sequence_paren",
 	"sub_element_sequence_bracket", "sub_element_groups", "element_command_sequence_paren", "element_command_sequence_bracket", "element_arguments", "SFlags", "description", "pcb_name", "value", "mark_x",

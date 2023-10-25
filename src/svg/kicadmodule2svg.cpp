@@ -421,7 +421,7 @@ KicadModule2Svg::PadLayer KicadModule2Svg::convertPad(QTextStream & stream, QStr
 	QString attributes;
 	QString position;
 
-	foreach (QString string, padStrings) {
+	Q_FOREACH (QString string, padStrings) {
 		if (string.startsWith("Sh")) {
 			shape = string;
 		}
@@ -504,7 +504,7 @@ KicadModule2Svg::PadLayer KicadModule2Svg::convertPad(QTextStream & stream, QStr
 		padLayer = ToCopper1;
 	}
 	else if (padType == "CONN") {
-		if (layerMask & 1) {
+		if ((layerMask & 1) != 0) {
 			padLayer = ToCopper0;
 		}
 		else {
@@ -729,7 +729,6 @@ QString KicadModule2Svg::drawHorizontalOblong(int posX, int posY, double xSize, 
 	}
 
 	QString middle;
-	bool gotID = false;
 
 	if (padType == "SMD") {
 		middle = QString("<rect x='%1' y='%2' width='%3' height='%4' stroke-width='0' fill='%5' />")
@@ -741,7 +740,6 @@ QString KicadModule2Svg::drawHorizontalOblong(int posX, int posY, double xSize, 
 	}
 	else {
 		if (drillX == drillY) {
-			gotID = true;
 			middle = QString("<circle fill='none' cx='%1' cy='%2' r='%3' stroke-width='%4' stroke='%5' />")
 			         .arg(posX)
 			         .arg(posY)

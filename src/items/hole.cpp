@@ -22,8 +22,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/graphicsutils.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
-#include "../commands.h"
 #include "../utils/textutils.h"
 #include "../viewlayer.h"
 #include "partlabel.h"
@@ -80,7 +78,7 @@ void Hole::setHoleSize(QString newSize, bool force) {
 		setBoth(m_holeSettings.holeDiameter, m_holeSettings.ringThickness);
 		modelPart()->setLocalProp("hole size", newSize);
 
-		if (m_partLabel) m_partLabel->displayTextsIf();
+		if (m_partLabel != nullptr) m_partLabel->displayTextsIf();
 	}
 	//DebugDialog::debug(QString("new holesize %1 ").arg(viewID()) + holeSize(), sceneBoundingRect());
 	//foreach (QGraphicsItem * childItem, childItems()) {
@@ -106,11 +104,11 @@ void Hole::setBoth(const QString & holeDiameter, const QString & ringThickness) 
 	ItemBase * otherLayer = setBothSvg(holeDiameter, ringThickness);
 
 	// there's only one NonConnectorItem
-	foreach (SvgIdLayer * svgIdLayer, fsvgRenderer()->setUpNonConnectors(viewLayerPlacement())) {
-		if (svgIdLayer == NULL) continue;
+	Q_FOREACH (SvgIdLayer * svgIdLayer, fsvgRenderer()->setUpNonConnectors(viewLayerPlacement())) {
+		if (svgIdLayer == nullptr) continue;
 
 		setBothNonConnectors(this, svgIdLayer);
-		if (otherLayer) {
+		if (otherLayer != nullptr) {
 			setBothNonConnectors(otherLayer, svgIdLayer);
 		}
 
@@ -120,25 +118,24 @@ void Hole::setBoth(const QString & holeDiameter, const QString & ringThickness) 
 
 ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringThickness)
 {
-	QString svg = makeSvg(holeDiameter, ringThickness, m_viewLayerID, true);
+	QString svg = makeSvg(holeDiameter, ringThickness, m_viewLayerID, true, false);
 	resetRenderer(svg);
 	//DebugDialog::debug("both");
 	//DebugDialog::debug(svg);
 
-	QString setColor;
 	QStringList noIDs;
 
 	QString osvg;
-	ItemBase * otherLayer = NULL;
-	foreach (ItemBase * layerKin, m_layerKin) {
+	ItemBase * otherLayer = nullptr;
+	Q_FOREACH (ItemBase * layerKin, m_layerKin) {
 		if (layerKin->hasNonConnectors()) {
 			otherLayer = layerKin;
 			break;
 		}
 	}
 
-	if (otherLayer) {
-		osvg = makeSvg(holeDiameter, ringThickness, otherLayer->viewLayerID(), true);
+	if (otherLayer != nullptr) {
+		osvg = makeSvg(holeDiameter, ringThickness, otherLayer->viewLayerID(), true, false);
 		//DebugDialog::debug(osvg);
 		otherLayer->resetRenderer(osvg);
 	}
@@ -149,9 +146,9 @@ ItemBase * Hole::setBothSvg(const QString & holeDiameter, const QString & ringTh
 }
 
 void Hole::setBothNonConnectors(ItemBase * itemBase, SvgIdLayer * svgIdLayer) {
-	foreach (QGraphicsItem * child, itemBase->childItems()) {
-		NonConnectorItem * nonConnectorItem = dynamic_cast<NonConnectorItem *>(child);
-		if (nonConnectorItem == NULL) continue;
+	Q_FOREACH (QGraphicsItem * child, itemBase->childItems()) {
+		auto * nonConnectorItem = dynamic_cast<NonConnectorItem *>(child);
+		if (nonConnectorItem == nullptr) continue;
 
 		//DebugDialog::debug(QString("hole set rect %1").arg(m_viewID), svgIdLayer->m_rect);
 		nonConnectorItem->setRect(svgIdLayer->rect(viewLayerPlacement()));
@@ -161,7 +158,7 @@ void Hole::setBothNonConnectors(ItemBase * itemBase, SvgIdLayer * svgIdLayer) {
 }
 
 
-QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThickness, ViewLayer::ViewLayerID viewLayerID, bool includeHole)
+QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThickness, ViewLayer::ViewLayerID viewLayerID, bool includeHole, bool blackOnly)
 {
 	double offsetDPI = OffsetPixels / GraphicsUtils::SVGDPI;
 	double hd = TextUtils::convertToInches(holeDiameter);
@@ -187,19 +184,20 @@ QString Hole::makeSvg(const QString & holeDiameter, const QString & ringThicknes
 	QString id = makeID();
 	if (hd == 0) {
 		svg += QString("<circle cx='%1' cy='%1' r='%2' fill='%3' id='%4' />")
-		       .arg(rt + offsetDPI)
-		       .arg(rt)
-		       .arg(setColor)
-		       .arg(id);
-	}
+					.arg(rt + offsetDPI)
+					.arg(rt)
+					.arg(setColor, id);
+}
 	else {
+		QString ringCircleColor = rt == 0 ? "black" : "none";
+		if (blackOnly) {
+			ringCircleColor = "none";
+		}
 		svg += QString("<circle fill='%6' cx='%1' cy='%1' r='%2' stroke-width='%3' stroke='%4' id='%5' />")
-		       .arg((hd / 2) + rt + offsetDPI)
-		       .arg((hd / 2) + (rt / 2))
-		       .arg(rt)
-		       .arg(setColor)
-		       .arg(id)
-		       .arg(rt == 0 ? "black" : "none")
+					.arg((hd / 2) + rt + offsetDPI)
+					.arg((hd / 2) + (rt / 2))
+					.arg(rt)
+					.arg(setColor, id, ringCircleColor)
 		       ;
 		if (includeHole) {
 			svg += QString("<circle drill='0' fill='black' cx='%1' cy='%1' r='%2' stroke-width='0'  />")   // set the drill attribute to 0 for gerber translation
@@ -227,7 +225,7 @@ QString Hole::getProperty(const QString & key) {
 
 void Hole::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setHoleSize(m_holeSettings.holeSize(), true);
 	}
 
@@ -257,7 +255,7 @@ QString Hole::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 
 	QStringList holeSize = m_modelPart->localProp("hole size").toString().split(",");
 	if (holeSize.length() == 2) {
-		QString svg = makeSvg(holeSize.at(0), holeSize.at(1), viewLayerID, false);
+		QString svg = makeSvg(holeSize.at(0), holeSize.at(1), viewLayerID, false, blackOnly);
 		if (!svg.isEmpty()) {
 			return PaletteItemBase::normalizeSvg(svg, viewLayerID, blackOnly, dpi, factor);
 		}
@@ -277,7 +275,7 @@ bool Hole::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 
 void Hole::changeHoleSize(const QString & newSize) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		QRectF holeRect = getRect(holeSize());
 		QRectF newHoleRect = getRect(newSize);
 		infoGraphicsView->setHoleSize(this, "hole size", tr("hole size"), holeSize(), newSize, holeRect, newHoleRect, true);

@@ -5,6 +5,7 @@
 
 class PlatformLaunchpad : public Platform
 {
+	Q_OBJECT
 public:
 	PlatformLaunchpad();
 

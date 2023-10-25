@@ -22,6 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 
 FocusOutComboBox::FocusOutComboBox(QWidget * parent) : QComboBox(parent) {
+	this->setFocusPolicy(Qt::StrongFocus);
 	setEditable(true);
 	m_wasOut = true;
 	lineEdit()->installEventFilter( this );
@@ -52,6 +53,13 @@ void FocusOutComboBox::focusOutEvent(QFocusEvent * e) {
 	}
 }
 
+void FocusOutComboBox::wheelEvent(QWheelEvent* e)
+{
+	if (!this->hasFocus()) {
+	  e->ignore();
+	}
+}
+
 bool FocusOutComboBox::eventFilter( QObject *target, QEvent *event ) {
 	// subclassing mouseReleaseEvent doesn't seem to work so use eventfilter instead
 	if( target == lineEdit() && event->type() == QEvent::MouseButtonRelease ) {
@@ -66,7 +74,7 @@ bool FocusOutComboBox::eventFilter( QObject *target, QEvent *event ) {
 }
 
 void FocusOutComboBox::checkSelectAll() {
-	if(lineEdit() && !lineEdit()->hasSelectedText() && isEnabled()) {
+	if((lineEdit() != nullptr) && !lineEdit()->hasSelectedText() && isEnabled()) {
 		lineEdit()->selectAll();
 	}
 }

@@ -32,29 +32,29 @@ FLineEdit::~FLineEdit()
 
 void FLineEdit::editingFinishedSlot() {
 	m_readOnly = true;
-	emit editable(false);
+	Q_EMIT editable(false);
 	setCursor(Qt::IBeamCursor);
 }
 
 void FLineEdit::mousePressEvent ( QMouseEvent * event ) {
 	if (m_readOnly) {
 		m_readOnly = false;
-		emit editable(true);
+		Q_EMIT editable(true);
 	}
 
 	QLineEdit::mousePressEvent(event);
 }
 
 void FLineEdit::enterEvent(QEvent * event) {
-	QLineEdit::enterEvent(event);
+	QLineEdit::enterEvent((QEnterEvent *)event);
 	if (m_readOnly) {
-		emit mouseEnter();
+		Q_EMIT mouseEnter();
 	}
 }
 
 void FLineEdit::leaveEvent(QEvent * event) {
 	QLineEdit::leaveEvent(event);
 	if (m_readOnly) {
-		emit mouseLeave();
+		Q_EMIT mouseLeave();
 	}
 }

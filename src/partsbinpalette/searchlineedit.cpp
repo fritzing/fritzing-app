@@ -19,75 +19,23 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "searchlineedit.h"
-#include "../debugdialog.h"
 
-#include <QPainter>
-#include <QImage>
-#include <QPixmap>
-#include <memory>
-std::unique_ptr<QPixmap> SearchFieldPixmap;
-
-SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent), m_decoy(true)
+SearchLineEdit::SearchLineEdit(QWidget * parent) : QLineEdit(parent)
 {
-	SearchFieldPixmap.reset();
+	mTimer.setSingleShot(true);
+	mTimer.setInterval(2000);
+
+	connect(&mTimer, &QTimer::timeout,
+			this, [=]() {
+		Q_EMIT updateSearch(this->text());
+	});
+
+	connect(this, &QLineEdit::returnPressed,
+			this, [=]() {
+		mTimer.stop();
+		Q_EMIT updateSearch(this->text());
+	});
+
+	connect(this, &QLineEdit::textEdited,
+		   &mTimer, QOverload<>::of(&QTimer::start));
 }
-
-
-void SearchLineEdit::cleanup() {
-	SearchFieldPixmap.reset();
-}
-
-void SearchLineEdit::mousePressEvent(QMouseEvent * event) {
-	QLineEdit::mousePressEvent(event);
-	emit clicked();
-}
-
-void SearchLineEdit::paintEvent(QPaintEvent * event) {
-	QLineEdit::paintEvent(event);
-	if (!SearchFieldPixmap) {
-		SearchFieldPixmap.reset(new QPixmap(":/resources/images/icons/searchField.png"));
-	}
-	if (SearchFieldPixmap == NULL) return;
-	if (SearchFieldPixmap->isNull()) return;
-
-	QPainter painter(this);
-	QSize sz = size();
-	int x = sz.width() - SearchFieldPixmap->width() - 2;
-	int y = (sz.height() - SearchFieldPixmap->height()) / 2;
-	painter.drawPixmap(x, y, SearchFieldPixmap->width(), SearchFieldPixmap->height(), *SearchFieldPixmap);
-
-}
-
-void SearchLineEdit::enterEvent(QEvent * event) {
-	QLineEdit::enterEvent(event);
-	if (m_decoy) {
-		setColors(QColor(0xc8, 0xc8, 0xc8), QColor(0x57, 0x57, 0x57));
-	}
-}
-
-void SearchLineEdit::leaveEvent(QEvent * event) {
-	QLineEdit::leaveEvent(event);
-	if (m_decoy) {
-		setColors(QColor(0xb3, 0xb3, 0xb3), QColor(0x57, 0x57, 0x57));
-	}
-}
-
-void SearchLineEdit::setColors(const QColor & base, const QColor & text) {
-	setStyleSheet(QString("background: rgb(%1,%2,%3); color: rgb(%4,%5,%6);")
-	              .arg(base.red()).arg(base.green()).arg(base.blue())
-	              .arg(text.red()).arg(text.green()).arg(text.blue()) );
-}
-
-void SearchLineEdit::setDecoy(bool d) {
-	m_decoy = d;
-	if (m_decoy) {
-		setReadOnly(true);
-		setColors(QColor(0xb3, 0xb3, 0xb3), QColor(0x57, 0x57, 0x57));
-	}
-	else {
-		setReadOnly(false);
-		setColors(QColor(0xfc, 0xfc, 0xfc), QColor(0x00, 0x00, 0x00));
-	}
-	setCursor(Qt::IBeamCursor);
-}
-

@@ -20,7 +20,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "groundplane.h"
 #include "../connectors/connectoritem.h"
-#include "../fsvgrenderer.h"
 #include "../model/modelpart.h"
 #include "../utils/graphicsutils.h"
 #include "../svg/svgfilesplitter.h"
@@ -63,7 +62,7 @@ void loadIconSvg()
 GroundPlane::GroundPlane( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: PaletteItem(modelPart, viewID,  viewGeometry,  id, itemMenu, doLabel)
 {
-	m_connector0 = NULL;
+	m_connector0 = nullptr;
 }
 
 bool GroundPlane::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers, LayerAttributes & layerAttributes)
@@ -71,7 +70,7 @@ bool GroundPlane::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers
 	bool result = PaletteItem::setUpImage(modelPart, viewLayers, layerAttributes);
 
 	if (layerAttributes.doConnectors) {
-		foreach (ConnectorItem * item, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * item, cachedConnectorItems()) {
 			// there is only one
 			m_connector0 = item;
 			break;
@@ -126,7 +125,7 @@ void GroundPlane::setProp(const QString & prop, const QString & value) {
 void GroundPlane::addedToScene(bool temporary)
 {
 	if (m_viewLayerID == ViewLayer::GroundPlane0 || m_viewLayerID == ViewLayer::GroundPlane1) {
-		if (this->scene()) {
+		if (this->scene() != nullptr) {
 			QString svg;
 			if (temporary) {
 				loadIconSvg();
@@ -160,7 +159,7 @@ void GroundPlane::setSvgAux(const QString & svg) {
 	bool result = splitter.splitString(cpy, xmlName);
 	if (result) {
 		resetRenderer(svg);
-		if (m_connector0) {
+		if (m_connector0 != nullptr) {
 			QPainterPath painterPath = splitter.painterPath(GraphicsUtils::SVGDPI, GroundPlaneGenerator::ConnectorName);
 			m_connector0->setRect(painterPath.boundingRect());
 			m_connector0->setShape(painterPath);
@@ -208,7 +207,7 @@ bool GroundPlane::canEditPart() {
 
 QString GroundPlane::generateSvg() {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) return "";
+	if (infoGraphicsView == nullptr) return "";
 
 	QPointF q = this->boundingRect().center() + this->pos();
 	//QPointF r = this->pos() + m_dropOffset;
@@ -218,7 +217,7 @@ QString GroundPlane::generateSvg() {
 void GroundPlane::setDropOffset(QPointF offset)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) return;
+	if (infoGraphicsView == nullptr) return;
 
 	m_dropOffset = offset;
 	modelPart()->setLocalProp("fillType", fillTypeIndividual);

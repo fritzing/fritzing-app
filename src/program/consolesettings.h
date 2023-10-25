@@ -84,7 +84,7 @@ public:
 	Settings settings() const;
 	void selectPortName(const QString portName);
 
-private slots:
+private Q_SLOTS:
 	void showPortInfo(int idx);
 	void apply();
 	void checkCustomBaudRatePolicy(int idx);

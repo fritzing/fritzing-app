@@ -33,10 +33,12 @@ public:
 	FocusOutComboBox(QWidget * parent = NULL);
 	~FocusOutComboBox();
 
+	void wheelEvent(QWheelEvent* e) override;
+
 protected:
-	void focusInEvent(QFocusEvent *);
-	void focusOutEvent(QFocusEvent *);
-	bool eventFilter( QObject *target, QEvent *event );
+	void focusInEvent(QFocusEvent *) override;
+	void focusOutEvent(QFocusEvent *) override;
+	bool eventFilter( QObject *target, QEvent *event ) override;
 	void checkSelectAll();
 
 protected:

@@ -54,7 +54,7 @@ public:
 
 	virtual void hidePartLabel(ItemBase * item);
 	virtual void partLabelMoved(ItemBase *, QPointF oldPos, QPointF oldOffset, QPointF newPos, QPointF newOffset);
-	virtual void rotateFlipPartLabel(ItemBase *, double degrees, Qt::Orientations flipDirection);
+	virtual void rotateFlipPartLabelForCommand(ItemBase *, double degrees, Qt::Orientations flipDirection);
 	virtual void noteSizeChanged(ItemBase * itemBase, const QSizeF & oldSize, const QSizeF & newSize);
 
 	virtual bool spaceBarIsPressed();
@@ -89,8 +89,8 @@ public:
 	virtual double getWireStrokeWidth(Wire *, double wireWidth);
 	virtual bool curvyWiresIndicated(Qt::KeyboardModifiers);
 	virtual void triggerRotate(ItemBase *, double degrees);
-	virtual void changePinLabels(ItemBase *, bool singleRow);
-	virtual void renamePins(ItemBase *, const QStringList & oldLabels, const QStringList & newLabels, bool singleRow);
+	virtual void changePinLabels(ItemBase *);
+	virtual void renamePins(ItemBase *, const QStringList & oldLabels, const QStringList & newLabels);
 	virtual ViewGeometry::WireFlag getTraceFlag();
 	virtual void setAnyInRotation();
 
@@ -112,15 +112,15 @@ public:
 	virtual void moveItem(ItemBase *, double x, double y);
 	virtual void rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem);
 
-public slots:
+public Q_SLOTS:
 	virtual void setVoltage(double, bool doEmit);
 	virtual void resizeBoard(double w, double h, bool doEmit);
-	virtual void setInstanceTitle(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit);
+	virtual void setInstanceTitleForCommand(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit);
 
-signals:
+Q_SIGNALS:
 	void setVoltageSignal(double, bool doEmit);
 	void swapSignal(const QString & family, const QString & prop, QMap<QString, QString> & propsMap, ItemBase *);
-	void changePinLabelsSignal(ItemBase *, bool singleRow);
+	void changePinLabelsSignal(ItemBase *);
 	void setActiveWireSignal(Wire *);
 	void setActiveConnectorItemSignal(ConnectorItem *);
 	void newWireSignal(Wire *);

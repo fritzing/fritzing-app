@@ -25,7 +25,7 @@ QHash<QChar, PathCommand *> SVGPathRunner::pathCommands;
 
 SVGPathRunner::SVGPathRunner()
 {
-	if (pathCommands.size() == 0) {
+	if (pathCommands.empty()) {
 		initStates();
 	}
 }
@@ -38,7 +38,7 @@ bool SVGPathRunner::runPath(QVector<QVariant> & pathData, void * userData) {
 	PathCommand * currentCommand = nullptr;
 	QList<double> args;
 
-	foreach (QVariant variant, pathData) {
+	Q_FOREACH (QVariant variant, pathData) {
 		if (variant.type() == QVariant::Char) {
 			PathCommand * newCommand = pathCommands.value(variant.toChar(), nullptr);
 			if (newCommand == nullptr) return false;
@@ -49,7 +49,7 @@ bool SVGPathRunner::runPath(QVector<QVariant> & pathData, void * userData) {
 				}
 				else if (args.count() % currentCommand->argCount != 0) return false;
 
-				emit commandSignal(currentCommand->command, currentCommand->relative, args, userData);
+				Q_EMIT commandSignal(currentCommand->command, currentCommand->relative, args, userData);
 			}
 
 			args.clear();
@@ -67,7 +67,7 @@ bool SVGPathRunner::runPath(QVector<QVariant> & pathData, void * userData) {
 		}
 		else if (args.count() % currentCommand->argCount != 0) return false;
 
-		emit commandSignal(currentCommand->command, currentCommand->relative, args, userData);
+		Q_EMIT commandSignal(currentCommand->command, currentCommand->relative, args, userData);
 	}
 
 	return true;
@@ -76,7 +76,7 @@ bool SVGPathRunner::runPath(QVector<QVariant> & pathData, void * userData) {
 void SVGPathRunner::initStates() {
 	pathCommands.clear();
 
-	PathCommand * pathCommand = new PathCommand;
+	auto * pathCommand = new PathCommand;
 	pathCommand->command = 'M';
 	pathCommand->relative = false;
 	pathCommand->argCount = 2;

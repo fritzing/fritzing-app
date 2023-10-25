@@ -43,7 +43,7 @@ Platform::Platform(const QString &name)
 	initSyntaxer();
 }
 
-void Platform::upload(QWidget * source, const QString &port, const QString &board, const QString &fileLocation)
+void Platform::upload(QWidget *, const QString &, const QString &, const QString &)
 {
 	// stub
 }
@@ -55,7 +55,7 @@ void Platform::initSyntaxer()
 	QStringList nameFilters;
 	nameFilters << "*.xml";
 	QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	foreach (QFileInfo fileInfo, list) {
+	Q_FOREACH (QFileInfo fileInfo, list) {
 		if (fileInfo.completeBaseName().compare(getName(), Qt::CaseInsensitive) == 0) {
 			m_syntaxer->loadSyntax(fileInfo.absoluteFilePath());
 			break;
@@ -70,7 +70,7 @@ void Platform::setCommandLocation(const QString &commandLocation)
 	QSettings settings;
 	settings.setValue(QString("programwindow/programmer.%1").arg(getName()), commandLocation);
 
-	emit commandLocationChanged();
+	Q_EMIT commandLocationChanged();
 }
 
 void Platform::setExtensions(const QStringList &suffixes)

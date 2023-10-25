@@ -35,8 +35,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 //////////////////////////////////////
 
-static QPixmap * CheckImage = NULL;
-static QPixmap * NoCheckImage = NULL;
+static QPixmap * CheckImage = nullptr;
+static QPixmap * NoCheckImage = nullptr;
 
 //////////////////////////////////////
 
@@ -47,7 +47,7 @@ PEDoubleSpinBox::PEDoubleSpinBox(QWidget * parent) : QDoubleSpinBox(parent)
 void PEDoubleSpinBox::stepBy(int steps)
 {
 	double amount;
-	emit getSpinAmount(amount);
+	Q_EMIT getSpinAmount(amount);
 	setSingleStep(amount);
 	QDoubleSpinBox::stepBy(steps);
 }
@@ -56,10 +56,10 @@ void PEDoubleSpinBox::stepBy(int steps)
 
 PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 {
-	m_assignButton = NULL;
+	m_assignButton = nullptr;
 
-	if (CheckImage == NULL) CheckImage = new QPixmap(":/resources/images/icons/check.png");
-	if (NoCheckImage == NULL) NoCheckImage = new QPixmap(":/resources/images/icons/nocheck.png");
+	if (CheckImage == nullptr) CheckImage = new QPixmap(":/resources/images/icons/check.png");
+	if (NoCheckImage == nullptr) NoCheckImage = new QPixmap(":/resources/images/icons/nocheck.png");
 
 	this->setObjectName("PEToolView");
 	/*
@@ -71,18 +71,18 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 	this->setStyleSheet(styleSheet.readAll());
 	}
 	*/
-	m_pegi = NULL;
+	m_pegi = nullptr;
 
-	QVBoxLayout * mainLayout = new QVBoxLayout;
+	auto * mainLayout = new QVBoxLayout;
 	mainLayout -> setObjectName("connectorFrame");
-	QSplitter * splitter = new QSplitter(Qt::Vertical);
+	auto * splitter = new QSplitter(Qt::Vertical);
 	mainLayout->addWidget(splitter);
 
-	QFrame * connectorsFrame = new QFrame;
+	auto * connectorsFrame = new QFrame;
 
-	QVBoxLayout * connectorsLayout = new QVBoxLayout;
+	auto * connectorsLayout = new QVBoxLayout;
 
-	QLabel * label = new QLabel(tr("Connector List (a checkmark means the graphic was selected)"));
+	auto * label = new QLabel(tr("Connector List (a checkmark means the graphic was selected)"));
 	connectorsLayout->addWidget(label);
 
 
@@ -108,10 +108,10 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 
 	m_terminalPointGroupBox = new QGroupBox("Terminal point");
 	m_terminalPointGroupBox->setToolTip(tr("Controls for setting the terminal point for a connector. The terminal point is where a wire will attach to the connector. You can also drag the crosshair of the current connector"));
-	QVBoxLayout * anchorGroupLayout = new QVBoxLayout;
+	auto * anchorGroupLayout = new QVBoxLayout;
 
-	QFrame * posRadioFrame = new QFrame;
-	QHBoxLayout * posRadioLayout = new QHBoxLayout;
+	auto * posRadioFrame = new QFrame;
+	auto * posRadioLayout = new QHBoxLayout;
 
 	QList<QString> positionNames;
 	positionNames << "Center"  << "W" << "N" << "S" << "E";
@@ -120,7 +120,7 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 	QList<QString> trLongNames;
 	trLongNames << tr("center") << tr("west") << tr("north") << tr("south") << tr("east");
 	for (int i = 0; i < positionNames.count(); i++) {
-		QPushButton * button = new QPushButton(trPositionNames.at(i));
+		auto * button = new QPushButton(trPositionNames.at(i));
 		button->setProperty("how", positionNames.at(i));
 		button->setToolTip(tr("Sets the connector's terminal point to %1.").arg(trLongNames.at(i)));
 		connect(button, SIGNAL(clicked()), this, SLOT(buttonChangeTerminalPoint()));
@@ -133,8 +133,8 @@ PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 	posRadioFrame->setLayout(posRadioLayout);
 	anchorGroupLayout->addWidget(posRadioFrame);
 
-	QFrame * posNumberFrame = new QFrame;
-	QHBoxLayout * posNumberLayout = new QHBoxLayout;
+	auto * posNumberFrame = new QFrame;
+	auto * posNumberLayout = new QHBoxLayout;
 
 	label = new QLabel("x");
 	posNumberLayout->addWidget(label);
@@ -198,17 +198,17 @@ PEToolView::~PEToolView()
 
 void PEToolView::enableConnectorChanges(bool enableTerminalPointDrag, bool enableTerminalPointControls, bool enableInfo, bool enableAssign)
 {
-	if (m_assignButton) {
+	if (m_assignButton != nullptr) {
 		m_assignButton->setEnabled(enableAssign);
 	}
-	if (m_terminalPointGroupBox) {
+	if (m_terminalPointGroupBox != nullptr) {
 		m_terminalPointGroupBox->setEnabled(enableTerminalPointControls);
 	}
-	if (m_connectorInfoWidget) {
+	if (m_connectorInfoWidget != nullptr) {
 		m_connectorInfoWidget->setEnabled(enableInfo);
 	}
 
-	if (m_terminalPointDragState) {
+	if (m_terminalPointDragState != nullptr) {
 		if (enableTerminalPointDrag) {
 			m_terminalPointDragState->setText(tr("<font color='black'>Dragging enabled</font>"));
 			m_terminalPointDragState->setEnabled(true);
@@ -228,20 +228,20 @@ void PEToolView::initConnectors(QList<QDomElement> * connectorList) {
 
 	for (int ix = 0; ix < connectorList->count(); ix++) {
 		QDomElement connector = connectorList->at(ix);
-		QTreeWidgetItem *item = new QTreeWidgetItem;
+		auto *item = new QTreeWidgetItem;
 		item->setData(0, Qt::DisplayRole, connector.attribute("name"));
 		item->setData(0, Qt::UserRole, ix);
 		item->setData(1, Qt::UserRole, ix);
 		item->setData(0, Qt::DecorationRole, *NoCheckImage);
 		m_connectorListWidget->addTopLevelItem(item);
-		QLabel * label = new QLabel("");
+		auto * label = new QLabel("");
 		//label->setPixmap(*NoCheckImage);
 		m_connectorListWidget->setItemWidget(item, 1, label);
 	}
 
 	if (connectorList->count() > 0) {
 		m_connectorListWidget->setCurrentItem(m_connectorListWidget->topLevelItem(0));
-		switchConnector(m_connectorListWidget->currentItem(), NULL);
+		switchConnector(m_connectorListWidget->currentItem(), nullptr);
 	}
 
 	m_connectorListWidget->blockSignals(false);
@@ -277,19 +277,19 @@ void PEToolView::switchConnector(QTreeWidgetItem * current, QTreeWidgetItem * pr
 	Q_UNUSED(previous);
 
 	QWidget * widget = QApplication::focusWidget();
-	if (widget) {
+	if (widget != nullptr) {
 		QList<QWidget *> children = m_connectorInfoWidget->findChildren<QWidget *>();
 		if (children.contains(widget)) {
 			widget->blockSignals(true);
 		}
 	}
 
-	if (m_connectorInfoWidget) {
+	if (m_connectorInfoWidget != nullptr) {
 		delete m_connectorInfoWidget;
-		m_connectorInfoWidget = NULL;
+		m_connectorInfoWidget = nullptr;
 	}
 
-	if (current == NULL) return;
+	if (current == nullptr) return;
 
 	int index = current->data(0, Qt::UserRole).toInt();
 	QDomElement element = m_connectorList->at(index);
@@ -310,12 +310,12 @@ void PEToolView::switchConnector(QTreeWidgetItem * current, QTreeWidgetItem * pr
 
 	hideConnectorListStuff();
 
-	emit switchedConnector(index);
+	Q_EMIT switchedConnector(index);
 }
 
 void PEToolView::busModeChangedSlot(bool state)
 {
-	emit busModeChanged(state);
+	Q_EMIT busModeChanged(state);
 }
 
 void PEToolView::nameEntry() {
@@ -332,14 +332,14 @@ void PEToolView::descriptionEntry() {
 
 void PEToolView::changeConnector() {
 	QTreeWidgetItem * item = m_connectorListWidget->currentItem();
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	int index = item->data(0, Qt::UserRole).toInt();
 
 	ConnectorMetadata cmd;
 	if (!PEUtils::fillInMetadata(index, this, cmd)) return;
 
-	emit connectorMetadataChanged(&cmd);
+	Q_EMIT connectorMetadataChanged(&cmd);
 }
 
 void PEToolView::setCurrentConnector(const QDomElement & newConnector) {
@@ -357,7 +357,7 @@ void PEToolView::setCurrentConnector(const QDomElement & newConnector) {
 
 int PEToolView::currentConnectorIndex() {
 	QTreeWidgetItem * item = m_connectorListWidget->currentItem();
-	if (item == NULL) return -1;
+	if (item == nullptr) return -1;
 
 	int index = item->data(0, Qt::UserRole).toInt();
 	return index;
@@ -379,43 +379,43 @@ void PEToolView::setTerminalPointLimits(QSizeF sz) {
 
 void PEToolView::buttonChangeTerminalPoint() {
 	QString how = sender()->property("how").toString();
-	emit terminalPointChanged(how);
+	Q_EMIT terminalPointChanged(how);
 }
 
 void PEToolView::terminalPointEntry()
 {
 	if (sender() == m_terminalPointX) {
-		emit terminalPointChanged("x", PEUtils::unconvertUnits(m_terminalPointX->value()));
+		Q_EMIT terminalPointChanged("x", PEUtils::unconvertUnits(m_terminalPointX->value()));
 	}
 	else if (sender() == m_terminalPointY) {
-		emit terminalPointChanged("y", PEUtils::unconvertUnits(m_terminalPointY->value()));
+		Q_EMIT terminalPointChanged("y", PEUtils::unconvertUnits(m_terminalPointY->value()));
 	}
 }
 
 void PEToolView::getSpinAmountSlot(double & d) {
-	emit getSpinAmount(d);
+	Q_EMIT getSpinAmount(d);
 }
 
 
 void PEToolView::removeConnector() {
 	QTreeWidgetItem * item = m_connectorListWidget->currentItem();
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	int index = item->data(0, Qt::UserRole).toInt();
 	QDomElement element = m_connectorList->at(index);
-	emit removedConnector(element);
+	Q_EMIT removedConnector(element);
 
 }
 
 void PEToolView::setChildrenVisible(bool vis)
 {
-	foreach (QWidget * widget, findChildren<QWidget *>()) {
+	Q_FOREACH (QWidget * widget, findChildren<QWidget *>()) {
 		widget->setVisible(vis);
 	}
 }
 
 void PEToolView::pickModeChangedSlot() {
-	emit pickModeChanged(true);
+	Q_EMIT pickModeChanged(true);
 }
 
 void PEToolView::hideConnectorListStuff() {
@@ -425,12 +425,12 @@ void PEToolView::hideConnectorListStuff() {
 	for (int i = 0; i < m_connectorListWidget->topLevelItemCount(); i++) {
 		QTreeWidgetItem * item = m_connectorListWidget->topLevelItem(i);
 		QWidget * widget = m_connectorListWidget->itemWidget(item, 1);
-		if (qobject_cast<QPushButton *>(widget)) {
+		if (qobject_cast<QPushButton *>(widget) != nullptr) {
 			if (item == current) ;   // button is already there
 			else {
 				// remove the button and add the label
 				m_connectorListWidget->removeItemWidget(item, 1);
-				QLabel * label = new QLabel();
+				auto * label = new QLabel();
 				//label->setPixmap(*NoCheckImage);
 				m_connectorListWidget->setItemWidget(item, 1, label);
 			}
@@ -450,5 +450,5 @@ void PEToolView::hideConnectorListStuff() {
 
 void PEToolView::setCurrentConnector(int ix) {
 	m_connectorListWidget->setCurrentItem(m_connectorListWidget->topLevelItem(ix));
-	switchConnector(m_connectorListWidget->currentItem(), NULL);
+	switchConnector(m_connectorListWidget->currentItem(), nullptr);
 }

@@ -25,10 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDir>
 #include <QDomElement>
 
-#include "../debugdialog.h"
 #include "modelpart.h"
-#include "../version/version.h"
-#include "../layerattributes.h"
 #include "../utils/folderutils.h"
 #include "../utils/fmessagebox.h"
 #include "../utils/textutils.h"
@@ -69,21 +66,21 @@ PaletteModel::PaletteModel(bool makeRoot, bool doInit) : ModelBase( makeRoot ) {
 	m_fullLoad = false;
 
 	if (doInit) {
-		initParts(false);
+		PaletteModel::initParts(false);
 	}
 }
 
 PaletteModel::~PaletteModel()
 {
-	foreach (ModelPart * modelPart, m_partHash.values()) {
+	Q_FOREACH (ModelPart * modelPart, m_partHash.values()) {
 		delete modelPart;
 	}
 }
 
 void PaletteModel::initParts(bool dbExists) {
 	loadParts(dbExists);
-	if (m_root == NULL) {
-		FMessageBox::information(NULL, QObject::tr("Fritzing"),
+	if (m_root == nullptr) {
+		FMessageBox::information(nullptr, QObject::tr("Fritzing"),
 		                         QObject::tr("No parts found.") );
 	}
 }
@@ -99,7 +96,7 @@ ModelPart * PaletteModel::retrieveModelPart(const QString & moduleID) {
 		return m_referenceModel->retrieveModelPart(moduleID);
 	}
 
-	return NULL;
+	return nullptr;
 }
 
 bool PaletteModel::containsModelPart(const QString & moduleID) {
@@ -111,7 +108,7 @@ void PaletteModel::loadParts(bool dbExists) {
 	nameFilters << "*" + FritzingPartExtension;
 
 	int totalPartCount = 0;
-	emit loadedPart(0, totalPartCount);
+	Q_EMIT loadedPart(0, totalPartCount);
 
 	QDir dir1 = FolderUtils::getAppPartsSubFolder("");
 	QDir dir2(FolderUtils::getUserPartsPath());
@@ -132,7 +129,7 @@ void PaletteModel::loadParts(bool dbExists) {
 		}
 	}
 
-	emit partsToLoad(totalPartCount);
+	Q_EMIT partsToLoad(totalPartCount);
 
 	int loadingPart = 0;
 	if (m_fullLoad || !dbExists) {
@@ -166,12 +163,11 @@ void PaletteModel::countParts(QDir & dir, QStringList & nameFilters, int & partC
 void PaletteModel::loadPartsAux(QDir & dir, QStringList & nameFilters, int & loadingPart, int totalPartCount) {
 	//QString temp = dir.absolutePath();
 	QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	for (int i = 0; i < list.size(); ++i) {
-		QFileInfo fileInfo = list.at(i);
-		QString path = fileInfo.absoluteFilePath ();
+	for (auto fileInfo : list) {
+			QString path = fileInfo.absoluteFilePath ();
 		//DebugDialog::debug(QString("part path:%1 core? %2").arg(path).arg(m_loadingCore? "true" : "false"));
-		loadPart(path, false);
-		emit loadedPart(++loadingPart, totalPartCount);
+		PaletteModel::loadPart(path, false);
+		Q_EMIT loadedPart(++loadingPart, totalPartCount);
 		//DebugDialog::debug("loadedok");
 	}
 
@@ -191,11 +187,11 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 
 	QFile file(path);
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
-		FMessageBox::warning(NULL, QObject::tr("Fritzing"),
+		FMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 		                     QObject::tr("Cannot read file %1:\n%2.")
 		                     .arg(path)
 		                     .arg(file.errorString()));
-		return NULL;
+		return nullptr;
 	}
 
 	//DebugDialog::debug(QString("loading %2 %1").arg(path).arg(QTime::currentTime().toString("HH:mm:ss.zzz")));
@@ -210,30 +206,30 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	int errorColumn;
 	QDomDocument domDocument;
 	if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		FMessageBox::information(NULL, QObject::tr("Fritzing"),
+		FMessageBox::information(nullptr, QObject::tr("Fritzing"),
 		                         QObject::tr("Parse error (2) at line %1, column %2:\n%3\n%4")
 		                         .arg(errorLine)
 		                         .arg(errorColumn)
 		                         .arg(errorStr)
 		                         .arg(path));
-		return NULL;
+		return nullptr;
 	}
 
 	QDomElement root = domDocument.documentElement();
 	if (root.isNull()) {
 		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (8)."));
-		return NULL;
+		return nullptr;
 	}
 
 	if (root.tagName() != "module") {
 		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (9)."));
-		return NULL;
+		return nullptr;
 	}
 
 	moduleID = root.attribute("moduleId");
 	if (moduleID.isNull() || moduleID.isEmpty()) {
 		//QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file is not a Fritzing file (10)."));
-		return NULL;
+		return nullptr;
 	}
 
 	// check if it's a wire
@@ -309,8 +305,8 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		}
 	}
 
-	ModelPart * modelPart = new ModelPart(domDocument, path, type);
-	if (modelPart == NULL) return NULL;
+	auto * modelPart = new ModelPart(domDocument, path, type);
+	if (!modelPart) return nullptr;
 
 	if (path.startsWith(ResourcePath)) {
 		modelPart->setCore(true);
@@ -332,12 +328,12 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 
 	if (m_partHash.value(moduleID, NULL)) {
 		if(!update) {
-			FMessageBox::warning(NULL, QObject::tr("Fritzing"),
+			FMessageBox::warning(nullptr, QObject::tr("Fritzing"),
 			                     QObject::tr("The part '%1' at '%2' does not have a unique module id '%3'.")
 			                     .arg(modelPart->title())
 			                     .arg(path)
 			                     .arg(moduleID));
-			return NULL;
+			return nullptr;
 		} else {
 			m_partHash[moduleID]->copyStuff(modelPart);
 		}
@@ -345,7 +341,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 		m_partHash.insert(moduleID, modelPart);
 	}
 
-	if (m_root == NULL) {
+	if (m_root == nullptr) {
 		m_root = modelPart;
 	}
 	else {
@@ -395,11 +391,11 @@ ModelPart * PaletteModel::addPart(QString newPartPath, bool addToReference, bool
 }
 
 void PaletteModel::removePart(const QString &moduleID) {
-	ModelPart *mpToRemove = NULL;
+	ModelPart *mpToRemove = nullptr;
 	QList<QObject *>::const_iterator i;
 	for (i = m_root->children().constBegin(); i != m_root->children().constEnd(); ++i) {
-		ModelPart* mp = qobject_cast<ModelPart *>(*i);
-		if (mp == NULL) continue;
+		auto* mp = qobject_cast<ModelPart *>(*i);
+		if (mp == nullptr) continue;
 
 		//DebugDialog::debug(QString("remove part %1").arg(mp->moduleID()));
 		if(mp->moduleID() == moduleID) {
@@ -408,7 +404,7 @@ void PaletteModel::removePart(const QString &moduleID) {
 		}
 	}
 	if(mpToRemove) {
-		mpToRemove->setParent(NULL);
+		mpToRemove->setParent(nullptr);
 
 		delete mpToRemove;
 	}
@@ -419,25 +415,25 @@ void PaletteModel::removePart(const QString &moduleID) {
 
 void PaletteModel::removeParts() {
 	QList<ModelPart *> modelParts;
-	foreach (QObject * child, m_root->children()) {
-		ModelPart * modelPart = qobject_cast<ModelPart *>(child);
-		if (modelPart == NULL) continue;
+	Q_FOREACH (QObject * child, m_root->children()) {
+		auto * modelPart = qobject_cast<ModelPart *>(child);
+		if (modelPart == nullptr) continue;
 
 		modelParts.append(modelPart);
 	}
 
-	foreach(ModelPart * modelPart, modelParts) {
-		modelPart->setParent(NULL);
+	Q_FOREACH(ModelPart * modelPart, modelParts) {
+		modelPart->setParent(nullptr);
 		m_partHash.remove(modelPart->moduleID());
 		delete modelPart;
 	}
 }
 
 void PaletteModel::clearPartHash() {
-	foreach (ModelPart * modelPart, m_partHash.values()) {
+	Q_FOREACH (ModelPart * modelPart, m_partHash.values()) {
 		ModelPartShared * modelPartShared = modelPart->modelPartShared();
 		if (modelPartShared) {
-			modelPart->setModelPartShared(NULL);
+			modelPart->setModelPartShared(nullptr);
 			delete modelPartShared;
 		}
 
@@ -464,7 +460,7 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 	// or google search api
 
 	int count = 0;
-	foreach (QString searchString, searchStrings) {
+	Q_FOREACH (QString searchString, searchStrings) {
 		bool gotOne = false;
 		if (modelPart->title().contains(searchString, Qt::CaseInsensitive)) {
 			gotOne = true;
@@ -482,7 +478,7 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 			gotOne = true;
 		}
 		else {
-			foreach (QString string, modelPart->tags()) {
+			Q_FOREACH (QString string, modelPart->tags()) {
 				if (string.contains(searchString, Qt::CaseInsensitive)) {
 					gotOne = true;
 					break;
@@ -490,7 +486,7 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 			}
 		}
 		if (!gotOne) {
-			foreach (QString string, modelPart->properties().values()) {
+			Q_FOREACH (QString string, modelPart->properties().values()) {
 				if (string.contains(searchString, Qt::CaseInsensitive)) {
 					gotOne = true;
 					break;
@@ -498,7 +494,7 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 			}
 		}
 		if (!gotOne) {
-			foreach (QString string, modelPart->properties().keys()) {
+			Q_FOREACH (QString string, modelPart->properties().keys()) {
 				if (string.contains(searchString, Qt::CaseInsensitive)) {
 					gotOne = true;
 					break;
@@ -516,24 +512,24 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 		else
 		{
 			modelParts.append(modelPart);
-			emit addSearchMaximum(1);
+			Q_EMIT addSearchMaximum(1);
 		}
 	}
 
-	emit addSearchMaximum(modelPart->children().count());
+	Q_EMIT addSearchMaximum(modelPart->children().count());
 
-	foreach(QObject * child, modelPart->children()) {
-		ModelPart * mp = qobject_cast<ModelPart *>(child);
-		if (mp == NULL) continue;
+	Q_FOREACH(QObject * child, modelPart->children()) {
+		auto * mp = qobject_cast<ModelPart *>(child);
+		if (mp == nullptr) continue;
 
 		search(mp, searchStrings, modelParts, allowObsolete);
-		emit incSearch();
+		Q_EMIT incSearch();
 	}
 }
 
 QList<ModelPart *> PaletteModel::findContribNoBin() {
 	QList<ModelPart *> modelParts;
-	foreach (ModelPart * modelPart, m_partHash.values()) {
+	Q_FOREACH (ModelPart * modelPart, m_partHash.values()) {
 		if (modelPart->isContrib()) {
 			if (!modelPart->isInBin()) {
 				modelParts << modelPart;
@@ -630,7 +626,7 @@ ModelPart * PaletteModel::makeSubpart(ModelPart * originalModelPart, const QDomE
 
 QList<ModelPart *> PaletteModel::allParts() {
 	QList<ModelPart *> modelParts;
-	foreach (ModelPart * modelPart, m_partHash.values()) {
+	Q_FOREACH (ModelPart * modelPart, m_partHash.values()) {
 		if (!modelPart->isObsolete()) modelParts.append(modelPart);
 	}
 	return modelParts;

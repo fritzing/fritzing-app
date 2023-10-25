@@ -22,18 +22,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../connectors/svgidlayer.h"
 #include "../sketch/pcbsketchwidget.h"
 #include "../debugdialog.h"
-#include "../items/virtualwire.h"
-#include "../items/tracewire.h"
-#include "../items/via.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/folderutils.h"
 #include "../utils/textutils.h"
 #include "../connectors/connectoritem.h"
-#include "../items/moduleidnames.h"
 #include "../processeventblocker.h"
 #include "../fsvgrenderer.h"
 #include "../viewlayer.h"
 #include "../processeventblocker.h"
+#include "src/items/wire.h"
 
 #include <qmath.h>
 #include <QApplication>
@@ -81,8 +78,8 @@ bool pixelsCollide(QImage * image1, QImage * image2, QImage * image3, int x1, in
 			int byteOffset = (x >> 3) + offset;
 			uchar mask = DRC::BitTable[x & 7];
 
-			if (*(bits1 + byteOffset) & mask) continue;
-			if (*(bits2 + byteOffset) & mask) continue;
+			if ((*(bits1 + byteOffset) & mask) != 0) continue;
+			if ((*(bits2 + byteOffset) & mask) != 0) continue;
 
 			image3->setPixel(x, y, clr);
 			//DebugDialog::debug(QString("p1:%1 p2:%2").arg(p1, 0, 16).arg(p2, 0, 16));
@@ -99,11 +96,11 @@ bool pixelsCollide(QImage * image1, QImage * image2, QImage * image3, int x1, in
 QStringList getNames(CollidingThing * collidingThing) {
 	QStringList names;
 	QList<ItemBase *> itemBases;
-	if (collidingThing->nonConnectorItem) {
+	if (collidingThing->nonConnectorItem != nullptr) {
 		itemBases << collidingThing->nonConnectorItem->attachedTo();
 	}
-	foreach (ItemBase * itemBase, itemBases) {
-		if (itemBase) {
+	Q_FOREACH (ItemBase * itemBase, itemBases) {
+		if (itemBase != nullptr) {
 			itemBase = itemBase->layerKinChief();
 			QString name = QObject::tr("Part %1 '%2'").arg(itemBase->title()) .arg(itemBase->instanceTitle());
 			names << name;
@@ -132,17 +129,17 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 	m_messages = messages;
 	m_sketchWidget = sketchWidget;
 	m_displayItem = displayItem;
-	if (m_displayItem) {
-		m_displayItem->setFlags(0);
+	if (m_displayItem != nullptr) {
+		m_displayItem->setFlags(QFlags<QGraphicsItem::GraphicsItemFlag>());
 	}
 	m_displayImage = displayImage;
 	m_collidingThings = collidingThings;
 
 	this->setWindowTitle(tr("DRC Results"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
-	QLabel * label = new QLabel(message);
+	auto * label = new QLabel(message);
 	label->setWordWrap(true);
 	vLayout->addWidget(label);
 
@@ -154,18 +151,19 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 	label->setWordWrap(true);
 	vLayout->addWidget(label);
 
-	QListWidget *listWidget = new QListWidget();
+	auto *listWidget = new QListWidget(this);
 	for (int ix = 0; ix < messages.count(); ix++) {
-		QListWidgetItem * item = new QListWidgetItem(messages.at(ix));
+		auto * item = new QListWidgetItem(messages.at(ix), listWidget);
 		item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 		item->setData(Qt::UserRole, ix);
 		listWidget->addItem(item);
 	}
+	listWidget->setObjectName("drcListWidget");
 	vLayout->addWidget(listWidget);
 	connect(listWidget, SIGNAL(itemPressed(QListWidgetItem *)), this, SLOT(pressedSlot(QListWidgetItem *)));
 	connect(listWidget, SIGNAL(itemClicked(QListWidgetItem *)), this, SLOT(releasedSlot(QListWidgetItem *)));
 
-	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok);
+	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok);
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(close()));
 
 	vLayout->addWidget(buttonBox);
@@ -173,39 +171,39 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 }
 
 DRCResultsDialog::~DRCResultsDialog() {
-	if (m_displayItem && m_sketchWidget) {
+	if ((m_displayItem != nullptr) && (m_sketchWidget != nullptr)) {
 		delete m_displayItem;
 	}
-	if (m_displayImage) {
+	if (m_displayImage != nullptr) {
 		delete m_displayImage;
 	}
-	foreach (CollidingThing * collidingThing, m_collidingThings) {
+	Q_FOREACH (CollidingThing * collidingThing, m_collidingThings) {
 		delete collidingThing;
 	}
 	m_collidingThings.clear();
 }
 
 void DRCResultsDialog::pressedSlot(QListWidgetItem * item) {
-	if (!item) return;
+	if (item == nullptr) return;
 
 	int ix = item->data(Qt::UserRole).toInt();
 	CollidingThing * collidingThing = m_collidingThings.at(ix);
-	foreach (QPointF p, collidingThing->atPixels) {
+	Q_FOREACH (QPointF p, collidingThing->atPixels) {
 		m_displayImage->setPixel(p.x(), p.y(), 2 /* 0xffffff00 */);
 	}
 	QPixmap pixmap = QPixmap::fromImage(*m_displayImage);
 	m_displayItem->setPixmap(pixmap);
-	if (collidingThing->nonConnectorItem) {
+	if (collidingThing->nonConnectorItem != nullptr) {
 		m_sketchWidget->selectItem(collidingThing->nonConnectorItem->attachedTo());
 	}
 }
 
 void DRCResultsDialog::releasedSlot(QListWidgetItem * item) {
-	if (!item) return;
+	if (item == nullptr) return;
 
 	int ix = item->data(Qt::UserRole).toInt();
 	CollidingThing * collidingThing = m_collidingThings.at(ix);
-	foreach (QPointF p, collidingThing->atPixels) {
+	Q_FOREACH (QPointF p, collidingThing->atPixels) {
 		m_displayImage->setPixel(p.x(), p.y(), 1 /* 0x80ff0000 */);
 	}
 	QPixmap pixmap = QPixmap::fromImage(*m_displayImage);
@@ -239,19 +237,19 @@ DRC::DRC(PCBSketchWidget * sketchWidget, ItemBase * board) :
 
 DRC::~DRC()
 {
-	if (m_displayItem) {
+	if (m_displayItem != nullptr) {
 		delete m_displayItem;
 	}
-	if (m_plusImage) {
+	if (m_plusImage != nullptr) {
 		delete m_plusImage;
 	}
-	if (m_minusImage) {
+	if (m_minusImage != nullptr) {
 		delete m_minusImage;
 	}
-	if (m_displayImage) {
+	if (m_displayImage != nullptr) {
 		delete m_displayImage;
 	}
-	foreach (QDomDocument * doc, m_masterDocs) {
+	Q_FOREACH (QDomDocument * doc, m_masterDocs) {
 		delete doc;
 	}
 }
@@ -276,9 +274,9 @@ QStringList DRC::start(bool showOkMessage, double keepoutMils) {
 	m_displayImage->save(FolderUtils::getTopLevelUserDataStorePath() + "/testDRCDisplay.png");
 #endif
 
-	emit wantBothVisible();
-	emit setProgressValue(m_maxProgress);
-	emit hideProgress();
+	Q_EMIT wantBothVisible();
+	Q_EMIT setProgressValue(m_maxProgress);
+	Q_EMIT hideProgress();
 
 
 	if (showOkMessage) {
@@ -286,7 +284,7 @@ QStringList DRC::start(bool showOkMessage, double keepoutMils) {
 			QMessageBox::information(m_sketchWidget->window(), tr("Fritzing"), message);
 		}
 		else {
-			DRCResultsDialog * dialog = new DRCResultsDialog(message, messages, collidingThings, m_displayItem, m_displayImage, m_sketchWidget, m_sketchWidget->window());
+			auto * dialog = new DRCResultsDialog(message, messages, collidingThings, m_displayItem, m_displayImage, m_sketchWidget, m_sketchWidget->window());
 			dialog->show();
 		}
 	}
@@ -304,16 +302,22 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 	QList<ConnectorItem *> visited;
 	QList< QList<ConnectorItem *> > equis;
 	QList< QList<ConnectorItem *> > singletons;
-	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (!connectorItem) continue;
+	Q_FOREACH (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		if (connectorItem == nullptr) continue;
 		if (!connectorItem->attachedTo()->isEverVisible()) continue;
 		if (connectorItem->attachedTo()->getRatsnest()) continue;
 		if (visited.contains(connectorItem)) continue;
 
 		QList<ConnectorItem *> equi;
 		equi.append(connectorItem);
-		ConnectorItem::collectEqualPotential(equi, bothSidesNow, (ViewGeometry::RatsnestFlag | ViewGeometry::NormalFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::SchematicTraceFlag) ^ m_sketchWidget->getTraceFlag());
+		ConnectorItem::collectEqualPotential(
+					equi,
+					bothSidesNow,
+					(ViewGeometry::RatsnestFlag |
+					 ViewGeometry::NormalFlag |
+					 ViewGeometry::PCBTraceFlag |
+					 ViewGeometry::SchematicTraceFlag) ^ m_sketchWidget->getTraceFlag());
 		visited.append(equi);
 
 		if (equi.count() == 1) {
@@ -323,7 +327,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 
 		ItemBase * firstPart = connectorItem->attachedTo()->layerKinChief();
 		bool gotTwo = false;
-		foreach (ConnectorItem * equ, equi) {
+		Q_FOREACH (ConnectorItem * equ, equi) {
 			if (equ->attachedTo()->layerKinChief() != firstPart) {
 				gotTwo = true;
 				break;
@@ -339,9 +343,9 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 
 	m_maxProgress = equis.count() + singletons.count() + 1;
 	if (bothSidesNow) m_maxProgress *= 2;
-	emit setMaximumProgress(m_maxProgress);
+	Q_EMIT setMaximumProgress(m_maxProgress);
 	int progress = 1;
-	emit setProgressValue(progress);
+	Q_EMIT setProgressValue(progress);
 
 	ProcessEventBlocker::processEvents();
 
@@ -377,12 +381,12 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 	if (bothSidesNow) layerSpecs << ViewLayer::NewTop;
 
 	int emptyMasterCount = 0;
-	foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {
+	Q_FOREACH (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {
 		if (viewLayerPlacement == ViewLayer::NewTop) {
-			emit wantTopVisible();
+			Q_EMIT wantTopVisible();
 			m_plusImage->fill(0xffffffff);
 		}
-		else emit wantBottomVisible();
+		else Q_EMIT wantBottomVisible();
 
 		LayerList viewLayerIDs = ViewLayer::copperLayers(viewLayerPlacement);
 		viewLayerIDs.removeOne(ViewLayer::GroundPlane0);
@@ -403,7 +407,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 			continue;
 		}
 
-		QDomDocument * masterDoc = new QDomDocument();
+		auto * masterDoc = new QDomDocument();
 		m_masterDocs.insert(viewLayerPlacement, masterDoc);
 
 		QString errorStr;
@@ -437,13 +441,13 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 			QString msg = tr("Too close to a border (%1 layer)")
 						  .arg(viewLayerPlacement == ViewLayer::NewTop ? ItemBase::TranslatedPropertyNames.value("top") : ItemBase::TranslatedPropertyNames.value("bottom"))
 						  ;
-			emit setProgressMessage(msg);
+			Q_EMIT setProgressMessage(msg);
 			messages << msg;
 			collidingThings << collidingThing;
 			updateDisplay();
 		}
 
-		emit setProgressValue(progress++);
+		Q_EMIT setProgressValue(progress++);
 
 		ProcessEventBlocker::processEvents();
 		if (m_cancelled) {
@@ -473,9 +477,9 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 	}
 
 	int index = 0;
-	foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {
-		if (viewLayerPlacement == ViewLayer::NewTop) emit wantTopVisible();
-		else emit wantBottomVisible();
+	Q_FOREACH (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {
+		if (viewLayerPlacement == ViewLayer::NewTop) Q_EMIT wantTopVisible();
+		else Q_EMIT wantBottomVisible();
 
 		QDomDocument * masterDoc = m_masterDocs.value(viewLayerPlacement, nullptr);
 		if (masterDoc == nullptr) continue;
@@ -484,9 +488,9 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 		viewLayerIDs.removeOne(ViewLayer::GroundPlane0);
 		viewLayerIDs.removeOne(ViewLayer::GroundPlane1);
 
-		foreach (QList<ConnectorItem *> equi, equis) {
+		Q_FOREACH (QList<ConnectorItem *> equi, equis) {
 			bool inLayer = false;
-			foreach (ConnectorItem * equ, equi) {
+			Q_FOREACH (ConnectorItem * equ, equi) {
 				if (viewLayerIDs.contains(equ->attachedToViewLayerID())) {
 					inLayer = true;
 					break;
@@ -504,7 +508,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 
 			QHash<ConnectorItem *, QRectF> rects;
 			QList<Wire *> wires;
-			foreach (ConnectorItem * equ, equi) {
+			Q_FOREACH (ConnectorItem * equ, equi) {
 				if (viewLayerIDs.contains(equ->attachedToViewLayerID())) {
 					if (equ->attachedToItemType() == ModelPart::Wire) {
 						Wire * wire = qobject_cast<Wire *>(equ->attachedTo());
@@ -526,7 +530,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 				return false;
 			}
 
-			foreach (ConnectorItem * equ, rects.keys()) {
+			Q_FOREACH (ConnectorItem * equ, rects.keys()) {
 				QRectF rect = rects.value(equ).intersected(boardRect);
 				double l = (rect.left() - boardRect.left()) * dpi / GraphicsUtils::SVGDPI;
 				double t = (rect.top() - boardRect.top()) * dpi / GraphicsUtils::SVGDPI;
@@ -550,12 +554,12 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 								  ;
 					messages << msg;
 					collidingThings << collidingThing;
-					emit setProgressMessage(msg);
+					Q_EMIT setProgressMessage(msg);
 					updateDisplay();
 				}
 			}
 
-			emit setProgressValue(progress++);
+			Q_EMIT setProgressValue(progress++);
 
 			ProcessEventBlocker::processEvents();
 			if (m_cancelled) {
@@ -618,16 +622,16 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
 	markers.outID = AlsoNet;
 	markers.inTerminalID = markers.inSvgID = markers.inSvgAndID = markers.inNoID = Net;
 	splitNetPrep(masterDoc, equi, markers, net, alsoNet, notNet, true);
-	foreach (QDomElement element, notNet) element.setTagName("g");
-	foreach (QDomElement element, alsoNet) element.setTagName("g");
-	foreach (QDomElement element, net) {
+	Q_FOREACH (QDomElement element, notNet) element.setTagName("g");
+	Q_FOREACH (QDomElement element, alsoNet) element.setTagName("g");
+	Q_FOREACH (QDomElement element, net) {
 		// want the normal size
 		SvgFileSplitter::forceStrokeWidth(element, -2 * keepoutMils, "#000000", false, false);
 	}
 
 	ItemBase::renderOne(masterDoc, plusImage, sourceRes);
 
-	foreach (QDomElement element, net) {
+	Q_FOREACH (QDomElement element, net) {
 		// restore to keepout size
 		SvgFileSplitter::forceStrokeWidth(element, 2 * keepoutMils, "#000000", false, false);
 	}
@@ -640,15 +644,15 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
 #endif
 
 	// now want notnet
-	foreach (QDomElement element, net) {
+	Q_FOREACH (QDomElement element, net) {
 		element.removeAttribute("net");
 		element.setTagName("g");
 	}
-	foreach (QDomElement element, alsoNet) {
+	Q_FOREACH (QDomElement element, alsoNet) {
 		element.setTagName(element.attribute("former"));
 		element.removeAttribute("net");
 	}
-	foreach (QDomElement element, notNet) {
+	Q_FOREACH (QDomElement element, notNet) {
 		element.setTagName(element.attribute("former"));
 		element.removeAttribute("net");
 	}
@@ -659,7 +663,7 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
 #endif
 
 	// master doc restored to original state
-	foreach (QDomElement element, net) {
+	Q_FOREACH (QDomElement element, net) {
 		element.setTagName(element.attribute("former"));
 	}
 
@@ -672,15 +676,15 @@ void DRC::splitNetPrep(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, 
 	QHash<QString, QString> bothIDs;
 	QMultiHash<QString, ItemBase *> itemBases;
 	QSet<QString> wireIDs;
-	foreach (ConnectorItem * equ, equi) {
+	Q_FOREACH (ConnectorItem * equ, equi) {
 		ItemBase * itemBase = equ->attachedTo();
-		if (!itemBase) continue;
+		if (itemBase == nullptr) continue;
 
 		if (itemBase->itemType() == ModelPart::Wire) {
 			wireIDs.insert(QString::number(itemBase->id()));
 		}
 
-		if (!equ->connector()) {
+		if (equ->connector() == nullptr) {
 			// this shouldn't happen
 			itemBase->debugInfo("!!!!!!!!!!!!!!!!!!!!!!!!!!!!! missing connector !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			equ->debugInfo("missing connector");
@@ -775,7 +779,7 @@ void DRC::splitSubs(QDomDocument * doc, QDomElement & root, const QString & part
 	QStringList notTerminalIDs;
 	if (checkIntersection && itemBases.count() > 0) {
 		ItemBase * itemBase = itemBases.at(0);
-		foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
 			SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(itemBase->viewID(), itemBase->viewLayerID());
 			if (!svgIDs.contains(svgIdLayer->m_svgId)) {
 				notSvgIDs.append(svgIdLayer->m_svgId);
@@ -872,15 +876,15 @@ void DRC::splitSubs(QDomDocument * doc, QDomElement & root, const QString & part
 		QSvgRenderer renderer;
 		renderer.load(svg.toUtf8());
 		QList<QRectF> netRects;
-		foreach (QDomElement element, netElements) {
+		Q_FOREACH (QDomElement element, netElements) {
 			QString id = element.attribute("id");
-			QRectF r = renderer.matrixForElement(id).mapRect(renderer.boundsOnElement(id));
+			QRectF r = renderer.transformForElement(id).mapRect(renderer.boundsOnElement(id));
 			netRects << r;
 		}
 		QList<QRectF> checkRects;
-		foreach (QDomElement element, toCheck) {
+		Q_FOREACH (QDomElement element, toCheck) {
 			QString id = element.attribute("id");
-			QRectF r = renderer.matrixForElement(id).mapRect(renderer.boundsOnElement(id));
+			QRectF r = renderer.transformForElement(id).mapRect(renderer.boundsOnElement(id));
 			checkRects << r;
 			element.setAttribute("id", element.attribute("oldid"));
 		}
@@ -889,7 +893,7 @@ void DRC::splitSubs(QDomDocument * doc, QDomElement & root, const QString & part
 			QDomElement checkElement = toCheck.at(i);
 			bool gotOne = false;
 			double carea = checkr.width() * checkr.height();
-			foreach (QRectF netr, netRects) {
+			Q_FOREACH (QRectF netr, netRects) {
 				QRectF sect = netr.intersected(checkr);
 				if (sect.isEmpty()) continue;
 
@@ -910,7 +914,7 @@ void DRC::splitSubs(QDomDocument * doc, QDomElement & root, const QString & part
 
 void DRC::updateDisplay() {
 	QPixmap pixmap = QPixmap::fromImage(*m_displayImage);
-	if (!m_displayItem) {
+	if (m_displayItem == nullptr) {
 		m_displayItem = new QGraphicsPixmapItem(pixmap);
 		m_displayItem->setPos(m_board->sceneBoundingRect().topLeft());
 		m_sketchWidget->scene()->addItem(m_displayItem);
@@ -935,7 +939,7 @@ CollidingThing * DRC::findItemsAt(QList<QPointF> & atPixels, ItemBase * board, c
 	Q_UNUSED(dpi);
 	Q_UNUSED(skipHoles);
 
-	CollidingThing * collidingThing = new CollidingThing;
+	auto * collidingThing = new CollidingThing;
 	collidingThing->nonConnectorItem = already;
 	collidingThing->atPixels = atPixels;
 
@@ -953,7 +957,7 @@ void DRC::extendBorder(const double keepout, QImage * image) {
 	for (int y = 0; y < h; y++) {
 		uchar * s = copy.scanLine(y);
 		for (int x = 0; x < w; x++) {
-			if ((*(s + (x >> 3)) >> (~x & 7)) & 1) {  // if (copy.pixel(x, y) != 1)
+			if (((*(s + (x >> 3)) >> (~x & 7)) & 1) != 0) {  // if (copy.pixel(x, y) != 1)
 				continue;
 			}
 
@@ -985,9 +989,9 @@ void DRC::extendBorder(const double keepout, QImage * image) {
 
 void DRC::checkHoles(QStringList & messages, QList<CollidingThing *> & collidingThings, double dpi) {
 	QRectF boardRect = m_board->sceneBoundingRect();
-	foreach (QGraphicsItem * item, m_sketchWidget->scene()->collidingItems(m_board)) {
-		NonConnectorItem * nci = dynamic_cast<NonConnectorItem *>(item);
-		if (!nci) continue;
+	Q_FOREACH (QGraphicsItem * item, m_sketchWidget->scene()->collidingItems(m_board)) {
+		auto * nci = dynamic_cast<NonConnectorItem *>(item);
+		if (nci == nullptr) continue;
 
 		QRectF ncibr = nci->sceneBoundingRect();
 		if (boardRect.contains(ncibr)) continue;
@@ -1007,7 +1011,7 @@ void DRC::checkHoles(QStringList & messages, QList<CollidingThing *> & colliding
 		int h = qCeil(ir.height() * dpi / GraphicsUtils::SVGDPI);
 		if (y + h > m_displayImage->height()) h = m_displayImage->height() - y;
 
-		CollidingThing * collidingThing = new CollidingThing;
+		auto * collidingThing = new CollidingThing;
 		collidingThing->nonConnectorItem = nci;
 		for (int iy = 0; iy < h; iy++) {
 			for (int ix = 0; ix < w; ix++) {
@@ -1023,7 +1027,7 @@ void DRC::checkHoles(QStringList & messages, QList<CollidingThing *> & colliding
 					  ;
 		messages << msg;
 		collidingThings << collidingThing;
-		emit setProgressMessage(msg);
+		Q_EMIT setProgressMessage(msg);
 		updateDisplay();
 	}
 }
@@ -1031,9 +1035,9 @@ void DRC::checkHoles(QStringList & messages, QList<CollidingThing *> & colliding
 void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & collidingThings, double dpi) {
 	QRectF boardRect = m_board->sceneBoundingRect();
 	QList<ItemBase *> visited;
-	foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (!itemBase) continue;
+	Q_FOREACH (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
+		if (itemBase == nullptr) continue;
 		if (!itemBase->isEverVisible()) continue;
 		if (itemBase->modelPart()->isCore()) continue;
 
@@ -1082,18 +1086,18 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 		QDomElement root = doc.documentElement();
 
 		if (copper1) {
-			foreach(ConnectorItem * ci, missingCopper("copper1", ViewLayer::Copper1, itemBase, root)) {
+			Q_FOREACH(ConnectorItem * ci, missingCopper("copper1", ViewLayer::Copper1, itemBase, root)) {
 				missing << ci;
 			}
 		}
 
 		if (copper0) {
-			foreach (ConnectorItem * ci, missingCopper("copper0", ViewLayer::Copper0, itemBase, root)) {
+			Q_FOREACH (ConnectorItem * ci, missingCopper("copper0", ViewLayer::Copper0, itemBase, root)) {
 				missing << ci;
 			}
 		}
 
-		foreach (ConnectorItem * ci, missing) {
+		Q_FOREACH (ConnectorItem * ci, missing) {
 			QRectF ir = boardRect.intersected(ci->sceneBoundingRect());
 			int x = qFloor((ir.left() - boardRect.left()) * dpi / GraphicsUtils::SVGDPI);
 			if (x < 0) x = 0;
@@ -1104,7 +1108,7 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 			int h = qCeil(ir.height() * dpi / GraphicsUtils::SVGDPI);
 			if (y + h > m_displayImage->height()) h = m_displayImage->height() - y;
 
-			CollidingThing * collidingThing = new CollidingThing;
+			auto * collidingThing = new CollidingThing;
 			collidingThing->nonConnectorItem = ci;
 			for (int iy = 0; iy < h; iy++) {
 				for (int ix = 0; ix < w; ix++) {
@@ -1121,7 +1125,7 @@ void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & coll
 						  ;
 			messages << msg;
 			collidingThings << collidingThing;
-			emit setProgressMessage(msg);
+			Q_EMIT setProgressMessage(msg);
 			updateDisplay();
 		}
 	}
@@ -1133,9 +1137,9 @@ QList<ConnectorItem *> DRC::missingCopper(const QString & layerName, ViewLayer::
 	QDomElement copperElement = TextUtils::findElementWithAttribute(root, "id", layerName);
 	QList<ConnectorItem *> missing;
 
-	foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
+	Q_FOREACH (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
 		SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(itemBase->viewID(), viewLayerID);
-		if (!svgIdLayer) {
+		if (svgIdLayer == nullptr) {
 			DebugDialog::debug(QString("missing pin info for %1").arg(itemBase->id()));
 			missing << connectorItem;
 			continue;

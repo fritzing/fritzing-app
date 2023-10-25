@@ -36,7 +36,7 @@ class Perfboard : public Capacitor
 
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
-	Perfboard(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit Perfboard(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~Perfboard();
 
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
@@ -49,10 +49,12 @@ public:
 	bool stickyEnabled();
 	bool canFindConnectorsUnder();
 	bool rotation45Allowed();
+	virtual bool allowSwapReconnectByDescription();
 
 protected:
 	virtual QString getRowLabel();
 	virtual QString getColumnLabel();
+	virtual void createShape(LayerAttributes & layerAttributes);
 
 public:
 	static QString genFZP(const QString & moduleID);
@@ -60,12 +62,13 @@ public:
 	static QString genModuleID(QMap<QString, QString> & currPropsMap);
 
 
-protected slots:
+protected Q_SLOTS:
 	void changeBoardSize();
 	void enableSetButton();
 
 protected:
 	static bool getXY(int & x, int & y, const QString & s);
+	bool boardSizeWarning();
 
 protected:
 	static bool m_gotWarning;

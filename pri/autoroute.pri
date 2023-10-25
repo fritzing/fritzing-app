@@ -15,26 +15,22 @@
 
 HEADERS += \
 src/autoroute/autorouter.h \
-src/autoroute/cmrouter/cmrouter.h \
 src/autoroute/autorouteprogressdialog.h \
 src/autoroute/autoroutersettingsdialog.h \
-src/autoroute/panelizer.h  \
-src/autoroute/cmrouter/tile.h  \
-src/autoroute/cmrouter/tileutils.h  \
+src/autoroute/checker.h  \
+src/autoroute/binpacking/Rect.h  \
+src/autoroute/binpacking/GuillotineBinPack.h  \
 src/autoroute/mazerouter/mazerouter.h  \
 src/autoroute/zoomcontrols.h \
 src/autoroute/drc.h \
 
 SOURCES += \
 src/autoroute/autorouter.cpp \
-src/autoroute/cmrouter/cmrouter.cpp \
 src/autoroute/autorouteprogressdialog.cpp \
 src/autoroute/autoroutersettingsdialog.cpp \
-src/autoroute/panelizer.cpp  \
-src/autoroute/cmrouter/tile.cpp \
-src/autoroute/cmrouter/DBcell.cpp \
-src/autoroute/cmrouter/search.cpp \
-src/autoroute/cmrouter/search2.cpp   \
+src/autoroute/checker.cpp  \
+src/autoroute/binpacking/Rect.cpp  \
+src/autoroute/binpacking/GuillotineBinPack.cpp  \
 src/autoroute/mazerouter/mazerouter.cpp  \
 src/autoroute/zoomcontrols.cpp \
 src/autoroute/drc.cpp \

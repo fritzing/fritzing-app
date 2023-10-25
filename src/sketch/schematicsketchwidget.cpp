@@ -36,9 +36,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 QSizeF SchematicSketchWidget::m_jumperItemSize = QSizeF(0, 0);
 
 static QString SchematicTraceColor = "black";
-static const double TraceHoverStrokeFactor = 3;
-static const double TraceWidthMils = 9.7222;
-static const double TraceWidthMilsOld = 33.3333;
+static constexpr double TraceHoverStrokeFactor = 3;
+static constexpr double TraceWidthMils = 9.7222;
+static constexpr double TraceWidthMilsOld = 33.3333;
 
 bool sameGround(ConnectorItem * c1, ConnectorItem * c2)
 {
@@ -103,9 +103,9 @@ bool SchematicSketchWidget::autorouteTypePCB() {
 void SchematicSketchWidget::tidyWires() {
 	QList<Wire *> wires;
 	QList<Wire *> visited;
-	foreach (QGraphicsItem * item, scene()->selectedItems()) {
+	Q_FOREACH (QGraphicsItem * item, scene()->selectedItems()) {
 		Wire * wire = dynamic_cast<Wire *>(item);
-		if (wire == NULL) continue;
+		if (wire == nullptr) continue;
 		if ((wire->getViewGeometry().wireFlags() & ViewGeometry::SchematicTraceFlag) == 0) continue;
 		if (visited.contains(wire)) continue;
 	}
@@ -205,13 +205,13 @@ bool SchematicSketchWidget::hasBigDots() {
 void SchematicSketchWidget::updateBigDots()
 {
 	QList<ConnectorItem *> connectorItems;
-	foreach (QGraphicsItem * item, scene()->items()) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem == NULL) continue;
+	Q_FOREACH (QGraphicsItem * item, scene()->items()) {
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		if (connectorItem == nullptr) continue;
 		if (connectorItem->attachedToItemType() != ModelPart::Wire) continue;
 
-		TraceWire * traceWire = qobject_cast<TraceWire *>(connectorItem->attachedTo());
-		if (traceWire == NULL) continue;
+		auto * traceWire = qobject_cast<TraceWire *>(connectorItem->attachedTo());
+		if (traceWire == nullptr) continue;
 
 		//DebugDialog::debug(QString("update big dot %1 %2").arg(traceWire->id()).arg(connectorItem->connectorSharedID()));
 
@@ -219,7 +219,7 @@ void SchematicSketchWidget::updateBigDots()
 	}
 
 	QList<ConnectorItem *> visited;
-	foreach (ConnectorItem * connectorItem, connectorItems) {
+	Q_FOREACH (ConnectorItem * connectorItem, connectorItems) {
 		connectorItem->restoreColor(visited);
 	}
 }
@@ -234,50 +234,42 @@ void SchematicSketchWidget::changeConnection(long fromID, const QString & fromCo
 	m_updateDotsTimer.start();
 }
 
-void SchematicSketchWidget::setInstanceTitle(long itemID, const QString & oldText, const QString & newText, bool isUndoable, bool doEmit) {
+void SchematicSketchWidget::setInstanceTitleForCommand(long itemID, const QString & oldText, const QString & newText, bool isUndoable, bool doEmit) {
 	// isUndoable is true when setInstanceTitle is called from the infoview
 
 	if (isUndoable) {
-		SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(findItem(itemID));
-		if (sitem && sitem->isOnlyNetLabel()) {
+		auto * sitem = qobject_cast<SymbolPaletteItem *>(findItem(itemID));
+		if ((sitem != nullptr) && sitem->isOnlyNetLabel()) {
 			setProp(sitem, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
 			return;
 		}
 	}
 
-	SketchWidget::setInstanceTitle(itemID, oldText, newText, isUndoable, doEmit);
+	SketchWidget::setInstanceTitleForCommand(itemID, oldText, newText, isUndoable, doEmit);
 }
 
 void SchematicSketchWidget::setProp(ItemBase * itemBase, const QString & prop, const QString & trProp, const QString & oldValue, const QString & newValue, bool redraw)
 {
 	if (prop =="label") {
-		SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(itemBase);
-		if (sitem && sitem->isOnlyNetLabel()) {
+		auto * sitem = qobject_cast<SymbolPaletteItem *>(itemBase);
+		if ((sitem != nullptr) && sitem->isOnlyNetLabel()) {
 			if (sitem->getLabel() == newValue) {
 				return;
 			}
 
-			QUndoCommand * parentCommand =  new QUndoCommand();
+			auto * parentCommand =  new QUndoCommand();
 			parentCommand->setText(tr("Change label from %1 to %2").arg(oldValue).arg(newValue));
 
-			new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+			CleanUpWiresCommand * cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+			cuwc->addRatsnestConnect(itemBase->id(), itemBase->cachedConnectorItems().at(0)->connectorSharedID(), true);
 			new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
-
-			QList<Wire *> done;
-			foreach (ConnectorItem * toConnectorItem, sitem->connector0()->connectedToItems()) {
-				Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-				if (w == NULL) continue;
-				if (done.contains(w)) continue;
-
-				QList<ConnectorItem *> ends;
-				removeWire(w, ends, done, parentCommand);
-			}
 
 			new SetPropCommand(this, itemBase->id(), "label", oldValue, newValue, true, parentCommand);
 			new ChangeLabelTextCommand(this, itemBase->id(), oldValue, newValue, parentCommand);
 
 			new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
-			new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+			cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+			cuwc->addRatsnestConnect(itemBase->id(), itemBase->cachedConnectorItems().at(0)->connectorSharedID(), true);
 
 			m_undoStack->waitPush(parentCommand, PropChangeDelay);
 			return;
@@ -292,37 +284,28 @@ void SchematicSketchWidget::setVoltage(double v, bool doEmit)
 	Q_UNUSED(doEmit);
 
 	PaletteItem * item = getSelectedPart();
-	if (item == NULL) return;
+	if (item == nullptr) return;
 
 	if (item->itemType() != ModelPart::Symbol) return;
 
-	SymbolPaletteItem * sitem = qobject_cast<SymbolPaletteItem *>(item);
-	if (sitem == NULL) return;
+	auto * sitem = qobject_cast<SymbolPaletteItem *>(item);
+	if (sitem == nullptr) return;
 
 	if (sitem->moduleID().compare("ground symbol", Qt::CaseInsensitive) == 0) return;
 	if (v == sitem->voltage()) return;
 
-	QUndoCommand * parentCommand =  new QUndoCommand();
+	auto * parentCommand =  new QUndoCommand();
 	parentCommand->setText(tr("Change voltage from %1 to %2").arg(sitem->voltage()).arg(v));
 
-	new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+	CleanUpWiresCommand * cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+	cuwc->addRatsnestConnect(item->id(), item->cachedConnectorItems().at(0)->connectorSharedID(), true);
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
-
-	QList<Wire *> done;
-	foreach (ConnectorItem * toConnectorItem, sitem->connector0()->connectedToItems()) {
-		Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-		if (w == NULL) continue;
-		if (done.contains(w)) continue;
-
-		QList<ConnectorItem *> ends;
-		removeWire(w, ends, done, parentCommand);
-	}
 
 	new SetPropCommand(this, item->id(), "voltage", QString::number(sitem->voltage()), QString::number(v), true, parentCommand);
 
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
-	new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
-
+	cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+	cuwc->addRatsnestConnect(item->id(), item->cachedConnectorItems().at(0)->connectorSharedID(), true);
 	m_undoStack->waitPush(parentCommand, PropChangeDelay);
 }
 
@@ -385,18 +368,23 @@ double SchematicSketchWidget::getAutorouterTraceWidth() {
 
 void SchematicSketchWidget::extraRenderSvgStep(ItemBase * itemBase, QPointF offset, double dpi, double printerScale, QString & outputSvg)
 {
-	TraceWire * traceWire = qobject_cast<TraceWire *>(itemBase);
-	if (traceWire == NULL) return;
+	auto * traceWire = qobject_cast<TraceWire *>(itemBase);
+	if (traceWire == nullptr) return;
 
-	if (traceWire->connector0()->isBigDot()) {
-		double r = traceWire->connector0()->rect().width();
-		outputSvg += makeCircleSVG(traceWire->connector0()->sceneAdjustedTerminalPoint(NULL), r, offset, dpi, printerScale);
+	for (auto * connector : {traceWire->connector0(), traceWire->connector1()}) {
+		if (connector->isBigDot()) {
+			double r = connector->rect().width();
+			outputSvg += makeCircleSVG(connector->sceneAdjustedTerminalPoint(nullptr), r, offset, dpi, printerScale);
+		} else if(connector->isCircular() && connector->forWire()) {
+			auto rect = connector->rect();
+			// This radius formula is a rough approximation based on the above big dot/bendpoint formula,
+			// as well as NonConnectorItem::paint, where the bendpoints are drawn if not for SVG.
+			// It is not fully understood, why it seems to work out.
+			// It is also not clear if the rect must be mapped to the scene for this calculation.
+			double r = rect.width() / 2;
+			outputSvg += makeCircleSVG(connector->mapToScene(rect.center()), r, offset, dpi, printerScale);
+		}
 	}
-	if (traceWire->connector1()->isBigDot()) {
-		double r = traceWire->connector0()->rect().width();
-		outputSvg += makeCircleSVG(traceWire->connector1()->sceneAdjustedTerminalPoint(NULL), r, offset, dpi, printerScale);
-	}
-
 }
 
 QString SchematicSketchWidget::makeCircleSVG(QPointF p, double r, QPointF offset, double dpi, double printerScale)
@@ -432,7 +420,7 @@ Wire * SchematicSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPa
 {
 	viewGeometry.setSchematicTrace(true);
 	Wire * wire =  SketchWidget::createTempWireForDragging(fromWire, wireModel, connectorItem, viewGeometry, spec);
-	if (fromWire) {
+	if (fromWire != nullptr) {
 		wire->setColorString(fromWire->colorString(), fromWire->opacity(), false);
 	}
 	else {
@@ -442,9 +430,8 @@ Wire * SchematicSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPa
 	return wire;
 }
 
-void SchematicSketchWidget::rotatePartLabels(double degrees, QTransform & transform, QPointF center, QUndoCommand * parentCommand)
+void SchematicSketchWidget::rotatePartLabels(double, QTransform &, QPointF, QUndoCommand *)
 {
-	PCBSketchWidget::rotatePartLabels(degrees, transform, center, parentCommand);
 }
 
 void SchematicSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType crossViewType, QUndoCommand * parentCommand,
@@ -486,9 +473,9 @@ QSizeF SchematicSketchWidget::jumperItemSize() {
 		long newID = ItemBase::getNextID();
 		ViewGeometry viewGeometry;
 		viewGeometry.setLoc(QPointF(0, 0));
-		ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(NULL), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
-		if (itemBase) {
-			SymbolPaletteItem * netLabel = qobject_cast<SymbolPaletteItem *>(itemBase);
+		ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(nullptr), BaseCommand::SingleView, viewGeometry, newID, -1, nullptr);
+		if (itemBase != nullptr) {
+			auto * netLabel = qobject_cast<SymbolPaletteItem *>(itemBase);
 			netLabel->setLabel("00");
 			SchematicSketchWidget::m_jumperItemSize = netLabel->boundingRect().size();
 			deleteItem(itemBase, true, false, false);
@@ -524,14 +511,14 @@ void SchematicSketchWidget::viewGeometryConversionHack(ViewGeometry & viewGeomet
 	ViewGeometry vg;
 	ItemBase * itemBase = addItemAuxTemp(modelPart, ViewLayer::NewTop, vg, 0, true, viewID(), true);
 	double rotation;
-	if (GraphicsUtils::isFlipped(viewGeometry.transform().toAffine(), rotation)) {
+	if (GraphicsUtils::isFlipped(viewGeometry.transform(), rotation)) {
 		itemBase->flipItem(Qt::Horizontal);
 	}
 	itemBase->rotateItem(rotation, false);
 	itemBase->saveGeometry();
 	viewGeometry.setTransform(itemBase->getViewGeometry().transform());
 
-	foreach (ItemBase * kin, itemBase->layerKin()) delete kin;
+	Q_FOREACH (ItemBase * kin, itemBase->layerKin()) delete kin;
 	delete itemBase;
 }
 
@@ -549,10 +536,10 @@ void SchematicSketchWidget::setConvertSchematic(bool convert) {
 
 void SchematicSketchWidget::resizeWires() {
 	double tw = getTraceWidth();
-	double sw = getWireStrokeWidth(NULL, tw);
-	foreach (QGraphicsItem * item, scene()->items()) {
+	double sw = getWireStrokeWidth(nullptr, tw);
+	Q_FOREACH (QGraphicsItem * item, scene()->items()) {
 		Wire * wire = dynamic_cast<Wire *>(item);
-		if (wire == NULL) continue;
+		if (wire == nullptr) continue;
 		if (!wire->isTraceType(getTraceFlag())) continue;
 
 		wire->setWireWidth(tw, this, sw);
@@ -562,11 +549,11 @@ void SchematicSketchWidget::resizeWires() {
 void SchematicSketchWidget::resizeLabels() {
 
 	double fontSize = getLabelFontSizeSmall();
-	foreach (QGraphicsItem * item, scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
+	Q_FOREACH (QGraphicsItem * item, scene()->items()) {
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
+		if (itemBase == nullptr) continue;
 
-		if (itemBase->hasPartLabel() && itemBase->partLabel()) {
+		if (itemBase->hasPartLabel() && (itemBase->partLabel() != nullptr)) {
 			itemBase->partLabel()->setFontPointSize(fontSize);
 		}
 	}

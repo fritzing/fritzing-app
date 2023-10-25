@@ -40,7 +40,7 @@ protected:
 	void mousePressEvent(QMouseEvent *);
 	void prepMoveBack();
 
-protected slots:
+protected Q_SLOTS:
 	void moveOut();
 	void moveBack();
 	void wait();

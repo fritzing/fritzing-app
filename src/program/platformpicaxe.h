@@ -7,6 +7,7 @@
 
 class PlatformPicaxe : public Platform
 {
+	Q_OBJECT
 public:
 	PlatformPicaxe();
 

@@ -29,38 +29,38 @@ static LayerHash ViewLayers;
 InfoGraphicsView::InfoGraphicsView( QWidget * parent )
 	: ZoomableGraphicsView(parent)
 {
-	m_infoView = NULL;
+	m_infoView = nullptr;
 	m_boardLayers = 1;
 	m_hoverEnterMode = m_hoverEnterConnectorMode = false;
 	m_smdOrientation = Qt::Vertical;
 }
 
 void InfoGraphicsView::viewItemInfo(ItemBase * item) {
-	if (m_infoView == NULL) return;
+	if (m_infoView == nullptr) return;
 
-	m_infoView->viewItemInfo(this, item ? item->layerKinChief() : item, swappingEnabled(item));
+	m_infoView->viewItemInfo(this, item != nullptr ? item->layerKinChief() : item, swappingEnabled(item));
 }
 
 void InfoGraphicsView::hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase * itemBase) {
-	if (m_infoView == NULL) return;
+	if (m_infoView == nullptr) return;
 
 	if (event->modifiers() & Qt::ShiftModifier || itemBase->viewID() == ViewLayer::IconView) {
 		m_hoverEnterMode = true;
-		m_infoView->hoverEnterItem(this, event, itemBase ? itemBase->layerKinChief() : itemBase, swappingEnabled(itemBase));
+		m_infoView->hoverEnterItem(this, event, itemBase != nullptr ? itemBase->layerKinChief() : itemBase, swappingEnabled(itemBase));
 	}
 }
 
 void InfoGraphicsView::hoverLeaveItem(QGraphicsSceneHoverEvent * event, ItemBase * itemBase) {
-	if (m_infoView == NULL) return;
+	if (m_infoView == nullptr) return;
 
 	if (m_hoverEnterMode) {
 		m_hoverEnterMode = false;
-		m_infoView->hoverLeaveItem(this, event, itemBase ? itemBase->layerKinChief() : itemBase);
+		m_infoView->hoverLeaveItem(this, event, itemBase != nullptr ? itemBase->layerKinChief() : itemBase);
 	}
 }
 
 void InfoGraphicsView::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item) {
-	if (m_infoView == NULL) return;
+	if (m_infoView == nullptr) return;
 
 	if (event->modifiers() & Qt::ShiftModifier) {
 		m_hoverEnterConnectorMode = true;
@@ -69,7 +69,7 @@ void InfoGraphicsView::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event,
 }
 
 void InfoGraphicsView::hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item) {
-	if (m_infoView == NULL) return;
+	if (m_infoView == nullptr) return;
 
 	if (m_hoverEnterConnectorMode) {
 		m_hoverEnterConnectorMode = false;
@@ -109,7 +109,7 @@ void InfoGraphicsView::noteChanged(ItemBase * item, const QString &oldText, cons
 QGraphicsItem *InfoGraphicsView::selectedAux() {
 	QList<QGraphicsItem*> selItems = scene()->selectedItems();
 	if(selItems.size() != 1) {
-		return NULL;
+		return nullptr;
 	} else {
 		return selItems[0];
 	}
@@ -124,7 +124,7 @@ void InfoGraphicsView::partLabelMoved(ItemBase * itemBase, QPointF oldPos, QPoin
 	Q_UNUSED(newOffset);
 }
 
-void InfoGraphicsView::rotateFlipPartLabel(ItemBase * itemBase, double degrees, Qt::Orientations flipDirection) {
+void InfoGraphicsView::rotateFlipPartLabelForCommand(ItemBase * itemBase, double degrees, Qt::Orientations flipDirection) {
 	Q_UNUSED(itemBase);
 	Q_UNUSED(degrees);
 	Q_UNUSED(flipDirection);
@@ -142,10 +142,10 @@ bool InfoGraphicsView::spaceBarIsPressed() {
 
 InfoGraphicsView * InfoGraphicsView::getInfoGraphicsView(QGraphicsItem * item)
 {
-	if (item == NULL) return NULL;
+	if (item == nullptr) return nullptr;
 
 	QGraphicsScene * scene = item->scene();
-	if (scene == NULL) return NULL;
+	if (scene == nullptr) return nullptr;
 
 	return dynamic_cast<InfoGraphicsView *>(scene->parent());
 }
@@ -187,7 +187,7 @@ bool InfoGraphicsView::hasBigDots() {
 
 void InfoGraphicsView::setVoltage(double v, bool doEmit) {
 	if (doEmit) {
-		emit setVoltageSignal(v, false);
+		Q_EMIT setVoltageSignal(v, false);
 	}
 }
 
@@ -234,10 +234,10 @@ void InfoGraphicsView::changeWireColor(const QString newColor) {
 }
 
 void InfoGraphicsView::swap(const QString & family, const QString & prop, QMap<QString, QString> & propsMap, ItemBase * itemBase) {
-	emit swapSignal(family, prop, propsMap, itemBase);
+	Q_EMIT swapSignal(family, prop, propsMap, itemBase);
 }
 
-void InfoGraphicsView::setInstanceTitle(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit) {
+void InfoGraphicsView::setInstanceTitleForCommand(long id, const QString & oldTitle, const QString & newTitle, bool isUndoable, bool doEmit) {
 	Q_UNUSED(id);
 	Q_UNUSED(newTitle);
 	Q_UNUSED(oldTitle);
@@ -277,7 +277,7 @@ VirtualWire * InfoGraphicsView::makeOneRatsnestWire(ConnectorItem * source, Conn
 	Q_UNUSED(routed);
 	Q_UNUSED(color);
 	Q_UNUSED(force);
-	return NULL;
+	return nullptr;
 }
 
 void InfoGraphicsView::getRatsnestColor(QColor & color)
@@ -351,17 +351,15 @@ void InfoGraphicsView::triggerRotate(ItemBase *, double degrees)
 	Q_UNUSED(degrees);
 }
 
-void InfoGraphicsView::changePinLabels(ItemBase * itemBase, bool singleRow)
+void InfoGraphicsView::changePinLabels(ItemBase * itemBase)
 {
 	Q_UNUSED(itemBase);
-	Q_UNUSED(singleRow);
 }
 
-void InfoGraphicsView::renamePins(ItemBase *, const QStringList & oldLabels, const QStringList & newLabels, bool singleRow)
+void InfoGraphicsView::renamePins(ItemBase *, const QStringList & oldLabels, const QStringList & newLabels)
 {
 	Q_UNUSED(oldLabels);
 	Q_UNUSED(newLabels);
-	Q_UNUSED(singleRow);
 }
 
 ViewGeometry::WireFlag InfoGraphicsView::getTraceFlag()
@@ -375,12 +373,12 @@ void InfoGraphicsView::setAnyInRotation()
 
 void InfoGraphicsView::setActiveWire(Wire * wire)
 {
-	emit setActiveWireSignal(wire);
+	Q_EMIT setActiveWireSignal(wire);
 }
 
 void InfoGraphicsView::setActiveConnectorItem(ConnectorItem * connectorItem)
 {
-	emit setActiveConnectorItemSignal(connectorItem);
+	Q_EMIT setActiveConnectorItemSignal(connectorItem);
 }
 
 void InfoGraphicsView::resolveTemporary(bool, ItemBase *)
@@ -388,21 +386,23 @@ void InfoGraphicsView::resolveTemporary(bool, ItemBase *)
 }
 void InfoGraphicsView::newWire(Wire * wire)
 {
-	bool succeeded = connect(wire, SIGNAL(wireChangedSignal(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
+	// Bool 'succeeded' was removed from this line because its result was overwritten in the next line.
+	// If there are any problems related to this code you might try to add a 'succeeded &&' instead.
+	connect(wire, SIGNAL(wireChangedSignal(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
 	                         this, SLOT(wireChangedSlot(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
 	                         Qt::DirectConnection); // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
-	succeeded = connect(wire, SIGNAL(wireChangedCurveSignal(Wire*, const Bezier *, const Bezier *, bool)),
+	bool succeeded = connect(wire, SIGNAL(wireChangedCurveSignal(Wire*, const Bezier *, const Bezier *, bool)),
 	                    this, SLOT(wireChangedCurveSlot(Wire*, const Bezier *, const Bezier *, bool)),
-	                    Qt::DirectConnection); // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
-	succeeded = succeeded && connect(wire, SIGNAL(wireSplitSignal(Wire*, QPointF, QPointF, const QLineF & )),
-	                                 this, SLOT(wireSplitSlot(Wire*, QPointF, QPointF, const QLineF & )));
-	succeeded = succeeded && connect(wire, SIGNAL(wireJoinSignal(Wire*, ConnectorItem *)),
-	                                 this, SLOT(wireJoinSlot(Wire*, ConnectorItem*)));
+	                    Qt::DirectConnection) != nullptr; // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
+	succeeded = succeeded && (connect(wire, SIGNAL(wireSplitSignal(Wire*, QPointF, QPointF, const QLineF & )),
+	                                 this, SLOT(wireSplitSlot(Wire*, QPointF, QPointF, const QLineF & ))) != nullptr);
+	succeeded = succeeded && (connect(wire, SIGNAL(wireJoinSignal(Wire*, ConnectorItem *)),
+	                                 this, SLOT(wireJoinSlot(Wire*, ConnectorItem*))) != nullptr);
 	if (!succeeded) {
 		DebugDialog::debug("wire signal connect failed");
 	}
 
-	emit newWireSignal(wire);
+	Q_EMIT newWireSignal(wire);
 }
 
 void InfoGraphicsView::setSMDOrientation(Qt::Orientations orientation) {
@@ -419,7 +419,7 @@ void InfoGraphicsView::moveItem(ItemBase *, double x, double y) {
 }
 
 void InfoGraphicsView::updateRotation(ItemBase * itemBase) {
-	if (m_infoView) m_infoView->updateRotation(itemBase);
+	if (m_infoView != nullptr) m_infoView->updateRotation(itemBase);
 }
 
 void InfoGraphicsView::rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem)

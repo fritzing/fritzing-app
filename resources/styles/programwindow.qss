@@ -219,8 +219,7 @@
 
 /* drop-down list of the combobox */
 #toolBarComboBox QAbstractItemView {
-		color: #000;
-		background-color: #ececec;
+        background-color: #333333;
 }
 
 #toolBarComboBox QAbstractItemView::item {

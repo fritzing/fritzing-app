@@ -22,25 +22,23 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #include "sketchtoolbutton.h"
-#include "debugdialog.h"
 
 #include <QAction>
 #include <QActionEvent>
 #include <QMenu>
-#include <QPaintEngine>
 
 SketchToolButton::SketchToolButton(const QString &imageName, QWidget *parent, QAction* defaultAction)
 	: QToolButton(parent)
 {
 	m_imageName = imageName;			// nice to have for debugging
-	setupIcons(imageName);
+	SketchToolButton::setupIcons(imageName);
 
 	//DebugDialog::debug(QString("%1 %2 %3 %4 %5 %6 %7").arg(imageName)
 	//.arg(m_enabledImage.width()).arg(m_enabledImage.height())
 	//.arg(m_disabledImage.width()).arg(m_disabledImage.height())
 	//.arg(m_pressedImage.width()).arg(m_pressedImage.height()));
 
-	if(defaultAction) {
+	if(defaultAction != nullptr) {
 		setDefaultAction(defaultAction);
 		setText(defaultAction->text());
 	}
@@ -50,19 +48,25 @@ SketchToolButton::SketchToolButton(const QString &imageName, QWidget *parent, QL
 	: QToolButton(parent)
 {
 	m_imageName = imageName;			// nice to have for debugging
-	setupIcons(imageName);
+	SketchToolButton::setupIcons(imageName);
 
-	QMenu *menu = new QMenu(this);
-	for(int i=0; i < menuActions.size(); i++) {
-		QAction* act = menuActions[i];
-		menu->addAction(act);
-		if(i==0) {
-			setDefaultAction(act);
+	auto *menu = new QMenu(this);
+	for(QAction* act : menuActions) {
+		if(act != nullptr) {
+			menu->addAction(act);
+		} else {
+			DebugDialog::debug(QString("Refusing to add null action (%1)").arg(imageName));
 		}
 	}
-	setMenu(menu);
-	connect(menu,SIGNAL(aboutToHide()),this,SLOT(setEnabledIconAux()));
-	setPopupMode(QToolButton::MenuButtonPopup);
+	if(!menuActions.isEmpty() && menuActions.first() != nullptr) {
+		setDefaultAction(menuActions.first());
+	}
+
+	if (!menu->isEmpty()) {
+		setMenu(menu);
+		connect(menu,SIGNAL(aboutToHide()),this,SLOT(setEnabledIconAux()));
+		setPopupMode(QToolButton::MenuButtonPopup);
+	}
 }
 
 void SketchToolButton::setEnabledIconAux() {
@@ -85,7 +89,7 @@ void SketchToolButton::setupIcons(const QString &imageName, bool hasStates) {
 
 void SketchToolButton::updateEnabledState() {
 	bool enabled = false;
-	foreach(QAction *act, actions()) {
+	Q_FOREACH(QAction *act, actions()) {
 		if(act->isEnabled()) {
 			enabled = true;
 			break;
@@ -128,11 +132,11 @@ void SketchToolButton::changeEvent(QEvent *event) {
 }
 
 void SketchToolButton::enterEvent(QEvent *event) {
-	QToolButton::enterEvent(event);
-	emit entered();
+	QToolButton::enterEvent((QEnterEvent *)event);
+	Q_EMIT entered();
 }
 
 void SketchToolButton::leaveEvent(QEvent *event) {
 	QToolButton::leaveEvent(event);
-	emit left();
+	Q_EMIT left();
 }

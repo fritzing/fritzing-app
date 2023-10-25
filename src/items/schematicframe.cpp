@@ -25,20 +25,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "schematicframe.h"
 #include "partfactory.h"
 #include "../utils/graphicsutils.h"
-#include "../utils/folderutils.h"
 #include "../utils/textutils.h"
-#include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
-#include "../debugdialog.h"
-#include "moduleidnames.h"
 
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QFrame>
 #include <QLabel>
-#include <QRegExp>
 #include <QPushButton>
 #include <QImageReader>
 #include <QMessageBox>
@@ -70,7 +64,7 @@ SchematicFrame::SchematicFrame( ModelPart * modelPart, ViewLayer::ViewID viewID,
 		FrameProps.insert("rev", tr("Rev"));
 	}
 
-	foreach (QString prop, FrameProps.keys()) {
+	Q_FOREACH (QString prop, FrameProps.keys()) {
 		if (modelPart->localProp(prop).toString().isEmpty()) {
 			modelPart->setLocalProp(prop, modelPart->properties().value(prop));
 		}
@@ -78,7 +72,7 @@ SchematicFrame::SchematicFrame( ModelPart * modelPart, ViewLayer::ViewID viewID,
 
 	if (modelPart->localProp("date").toString().isEmpty()) {
 		QDateTime dt = QDateTime::currentDateTime();
-		modelPart->setLocalProp("date", QString::number(dt.toTime_t()));
+		modelPart->setLocalProp("date", QString::number(dt.toSecsSinceEpoch()));
 	}
 
 	if (modelPart->localProp("sheet").toString().isEmpty()) {
@@ -93,7 +87,7 @@ SchematicFrame::SchematicFrame( ModelPart * modelPart, ViewLayer::ViewID viewID,
 }
 
 SchematicFrame::~SchematicFrame() {
-	if (m_textEdit) {
+	if (m_textEdit != nullptr) {
 		delete m_textEdit;
 	}
 }
@@ -117,32 +111,6 @@ void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, 
 	file.open(QFile::ReadOnly);
 	templateThing.svgTemplate = file.readAll();
 	file.close();
-
-
-	/*
-
-	static QRegExp NumberFinder("(=['\"][\\[\\{]{0,1})(\\d+(\\.\\d){0,1})[\\]\\}]{0,1}['\"]");
-	SchematicTemplate = OldSchematicTemplate;
-	int pos = 0;
-	while (true) {
-	    int ix = NumberFinder.indexIn(SchematicTemplate, pos);
-	    if (ix < 0) break;
-
-	    double d = NumberFinder.cap(2).toDouble();
-	    QString d3 = QString("%1").arg(d / 3, 0, 'g', 5);
-	    int offset = NumberFinder.cap(0).count();
-	    if (SchematicTemplate.indexOf("version", ix - 7) < 0) {
-	        SchematicTemplate.replace(ix + NumberFinder.cap(1).count(), NumberFinder.cap(2).count(), d3);
-	        offset += d3.count() - NumberFinder.cap(2).count();
-	    }
-
-	    pos = ix + offset;
-	}
-
-	DebugDialog::debug("schematic template " + SchematicTemplate);
-
-	*/
-
 
 	QString errorStr;
 	int errorLine;
@@ -196,13 +164,15 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 
 	if (milsW < templateThing.size.width()) milsW = templateThing.size.width();
 	if (milsH < templateThing.size.height()) milsH = templateThing.size.height();
-	QString svg = templateThing.svgTemplate.arg(milsW / 1000).arg(milsH / 1000).arg(milsW).arg(milsH).arg(milsW - templateThing.strokeWidth).arg(milsH - templateThing.strokeWidth);
-	svg = TextUtils::incrementTemplateString(svg, 1, milsW - templateThing.size.width(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	double factor = milsW / templateThing.size.width();
+	double fontSize = 71.65 / factor;
+	QString svg = templateThing.svgTemplate.arg(milsW / 1000).arg(milsH / 1000).arg(milsW).arg(milsH).arg(factor).arg(factor).arg(milsW - templateThing.strokeWidth).arg(milsH - templateThing.strokeWidth).arg(fontSize);
 	svg.replace("{", "[");
 	svg.replace("}", "]");
-	svg = TextUtils::incrementTemplateString(svg, 1, milsH - templateThing.size.height(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	svg.replace("[", "");
+	svg.replace("]", "");
 	QHash<QString, QString> hash;
-	foreach (QString propp, FrameProps.keys()) {
+	Q_FOREACH (QString propp, FrameProps.keys()) {
 		hash.insert(propp, prop(propp));
 		QString label = FrameProps.value(propp);
 		if (!label.isEmpty()) {
@@ -225,10 +195,10 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 	}
 
 	QDateTime dt;
-	dt.setTime_t(modelPart()->localProp("date").toUInt());
+	dt.setSecsSinceEpoch(modelPart()->localProp("date").toUInt());
 	hash.insert("date", dt.toString(DisplayFormat));
 
-	DebugDialog::debug("svg " + svg);
+	// DebugDialog::debug("svg " + svg);
 
 	return TextUtils::convertExtendedChars(TextUtils::replaceTextElements(svg, hash));
 }
@@ -266,7 +236,7 @@ void SchematicFrame::addedToScene(bool temporary)
 {
 	if (prop("filename").isEmpty()) {
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infoGraphicsView) {
+		if (infoGraphicsView != nullptr) {
 			modelPart()->setLocalProp("filename", infoGraphicsView->filenameIf());
 		}
 	}
@@ -288,7 +258,7 @@ bool SchematicFrame::makeLineEdit(QWidget * parent, const QString & family, cons
 	returnProp = ItemBase::TranslatedPropertyNames.value(propp.toLower());
 	returnValue = prop(propp);
 
-	QLineEdit * e1 = new QLineEdit(parent);
+	auto * e1 = new QLineEdit(parent);
 	e1->setObjectName("infoViewLineEdit");
 
 	e1->setProperty("prop", QVariant(propp));
@@ -311,11 +281,11 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 	}
 
 	if (propp.compare("date", Qt::CaseInsensitive) == 0) {
-		QDateTimeEdit * dateTimeEdit = new QDateTimeEdit(QDateTime::currentDateTime(), parent);
+		auto * dateTimeEdit = new QDateTimeEdit(QDateTime::currentDateTime(), parent);
 		QString d = prop("date");
 		if (!d.isEmpty()) {
 			QDateTime dateTime;
-			dateTime.setTime_t(d.toUInt());
+			dateTime.setSecsSinceEpoch(d.toUInt());
 			dateTimeEdit->setDateTime(dateTime);
 		}
 		//dateTimeEdit->setCalendarPopup(true);
@@ -338,8 +308,8 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 			strings.clear();
 			strings << "1" << "1";
 		}
-		QFrame * frame = new QFrame(parent);
-		QSpinBox * spin1 = new QSpinBox(frame);
+		auto * frame = new QFrame(parent);
+		auto * spin1 = new QSpinBox(frame);
 		spin1->setMinimum(1);
 		spin1->setMaximum(999);
 		spin1->setValue(strings[0].toInt());
@@ -348,7 +318,7 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 		spin1->setProperty("role", "numerator");
 		spin1->setEnabled(swappingEnabled);
 
-		QSpinBox * spin2 = new QSpinBox(frame);
+		auto * spin2 = new QSpinBox(frame);
 		spin2->setMinimum(1);
 		spin2->setMaximum(999);
 		spin2->setValue(strings[1].toInt());
@@ -357,12 +327,12 @@ bool SchematicFrame::collectExtraInfo(QWidget * parent, const QString & family, 
 		spin2->setProperty("role", "denominator");
 		spin2->setEnabled(swappingEnabled);
 
-		QLabel * label = new QLabel(parent);
+		auto * label = new QLabel(parent);
 		label->setText(tr("of"));
 		label->setObjectName("infoViewOfLabel");
 		label->setAlignment(Qt::AlignCenter);
 
-		QHBoxLayout * hBoxLayout = new QHBoxLayout(frame);
+		auto * hBoxLayout = new QHBoxLayout(frame);
 		hBoxLayout->addWidget(spin1);
 		hBoxLayout->addWidget(label);
 		hBoxLayout->addWidget(spin2);
@@ -436,8 +406,8 @@ void SchematicFrame::setInitialSize() {
 }
 
 void SchematicFrame::propEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	auto * edit = qobject_cast<QLineEdit *>(sender());
+	if (edit == nullptr) return;
 
 	QString propp = edit->property("prop").toString();
 	if (propp.isEmpty()) return;
@@ -447,15 +417,15 @@ void SchematicFrame::propEntry() {
 	if (edit->text().compare(current) == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, propp, ItemBase::TranslatedPropertyNames.value(propp), current, edit->text(), true);
 	}
 }
 
 void SchematicFrame::dateTimeEntry(QDateTime dateTime) {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
-		infoGraphicsView->setProp(this, "date", tr("date"), prop("date"), QString::number(dateTime.toTime_t()), true);
+	if (infoGraphicsView != nullptr) {
+		infoGraphicsView->setProp(this, "date", tr("date"), prop("date"), QString::number(dateTime.toSecsSinceEpoch()), true);
 	}
 }
 
@@ -476,7 +446,7 @@ void SchematicFrame::sheetEntry(int value) {
 	else return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "sheet", tr("sheet"), prop("sheet"), strings.at(0) + "/" + strings[1], true);
 	}
 }

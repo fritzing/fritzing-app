@@ -20,7 +20,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "logoitem.h"
 #include "../utils/graphicsutils.h"
-#include "../utils/folderutils.h"
 #include "../utils/textutils.h"
 #include "../utils/fmessagebox.h"
 #include "../fsvgrenderer.h"
@@ -36,7 +35,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVBoxLayout>
 #include <QFrame>
 #include <QLabel>
-#include <QRegExp>
 #include <QPushButton>
 #include <QImageReader>
 #include <QMessageBox>
@@ -56,6 +54,8 @@ static QStringList Copper1ImageNames;
 LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: ResizableBoard(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
+	m_decimalsAfter = kDecimalsAfter;
+
 	if (LogoImageNames.count() == 0) {
 		// TODO: load these names from somewhere
 
@@ -66,7 +66,7 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 	m_svgOnly = false;
 	m_standardizeColors = true;
 	m_inLogoEntry = QTime::currentTime().addSecs(-10);
-	m_aspectRatioCheck = NULL;
+	m_aspectRatioCheck = nullptr;
 	m_keepAspectRatio = true;
 	m_hasLogo = (modelPart->moduleID().endsWith(ModuleIDNames::LogoTextModuleIDName));
 	m_logo = modelPart->localProp("logo").toString();
@@ -108,7 +108,7 @@ QString LogoItem::getShapeForRenderer(const QString & svg) {
 
 void LogoItem::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setInitialSize();
 		m_aspectRatio.setWidth(this->boundingRect().width());
 		m_aspectRatio.setHeight(this->boundingRect().height());
@@ -172,8 +172,8 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 				return "";
 			}
 
-			double scaleX = 1;
-			double scaleY = 1;
+			double scaleX = 1.0;
+			double scaleY = 1.0;
 			if (m_hasLogo) {
 				QDomDocument doc = splitter.domDocument();
 				QDomElement root = doc.documentElement();
@@ -186,10 +186,10 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 				QString viewBox = root.attribute("viewBox");
 				double w = TextUtils::convertToInches(root.attribute("width"));
 				double h = TextUtils::convertToInches(root.attribute("height"));
-				QStringList coords = viewBox.split(" ", QString::SkipEmptyParts);
+				QStringList coords = viewBox.split(" ", Qt::SkipEmptyParts);
 				double sx = w / coords.at(2).toDouble();
 				double sy = h / coords.at(3).toDouble();
-				if (qAbs(sx - sy) > .001) {
+				if (qAbs(sx - sy) > .0001) {
 					// change vertical dpi to match horizontal dpi
 					// y coordinate is really intended in relation to font size so leave it be
 					scaleY = sy / sx;
@@ -204,7 +204,7 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 
 			QString string = splitter.elementString(xmlName);
 
-			if (scaleY == 1) return string;
+			if (qFuzzyIsNull(scaleY - 1.0)) return string;
 
 			QTransform t;
 			t.scale(scaleX, scaleY);
@@ -220,12 +220,12 @@ QStringList LogoItem::collectValues(const QString & family, const QString & prop
 
 	bool copperTopOK = true;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == NULL) copperTopOK = false;
+	if (infoGraphicsView == nullptr) copperTopOK = false;
 	else if (infoGraphicsView->boardLayers() == 1) copperTopOK = false;
 
 	QStringList newValues;
 	if (prop.compare("layer", Qt::CaseInsensitive) == 0) {
-		foreach (QString xmlName, values) {
+		Q_FOREACH (QString xmlName, values) {
 			if (xmlName == ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1) && copperTopOK == false) continue;
 
 			newValues << Board::convertFromXmlName(xmlName);
@@ -244,7 +244,7 @@ bool LogoItem::collectExtraInfo(QWidget * parent, const QString & family, const 
 			returnProp = tr("text");
 			returnValue = m_logo;
 
-			QLineEdit * edit = new QLineEdit(parent);
+			auto * edit = new QLineEdit(parent);
 			edit->setObjectName("infoViewLineEdit");
 
 			edit->setText(m_logo);
@@ -280,7 +280,7 @@ bool LogoItem::checkImage(const QString & filename) {
 void LogoItem::prepLoadImageAux(const QString & fileName, bool addName)
 {
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->loadLogoImage(this, prop("shape"), m_aspectRatio, prop("lastfilename"), fileName, addName);
 	}
 }
@@ -322,7 +322,7 @@ bool LogoItem::reloadImage(const QString & incomingSvg, const QSizeF & aspectRat
 		if (addName) {
 			if (!getNewImageNames().contains(fileName, Qt::CaseInsensitive)) {
 				getNewImageNames().append(fileName);
-				if (m_fileNameComboBox) {
+				if (m_fileNameComboBox != nullptr) {
 					bool wasBlocked = m_fileNameComboBox->blockSignals(true);
 					while (m_fileNameComboBox->count() > 0) {
 						m_fileNameComboBox->removeItem(0);
@@ -334,7 +334,10 @@ bool LogoItem::reloadImage(const QString & incomingSvg, const QSizeF & aspectRat
 		}
 		m_logo = "";
 
-		setWidthAndHeight(qRound(mmW * 10) / 10.0, qRound(mmH * 10) / 10.0);
+		setWidthAndHeight(
+			TextUtils::roundDecimal<kDecimalsAfter>(mmW),
+			TextUtils::roundDecimal<kDecimalsAfter>(mmH)
+		);
 		return true;
 	}
 	else {
@@ -412,7 +415,7 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			QDomElement topG = domDocument.createElement("g");
 			topG.setAttribute("id", layerName());
 			root.appendChild(topG);
-			foreach (QDomNode node, rootChildren) {
+			Q_FOREACH (QDomNode node, rootChildren) {
 				topG.appendChild(node);
 			}
 		}
@@ -426,19 +429,16 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			return;
 		}
 
-		if (image.format() != QImage::Format_RGB32 && image.format() != QImage::Format_ARGB32) {
-			image = image.convertToFormat(QImage::Format_Mono);
-		}
-
-		double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
 		if (this->m_standardizeColors) {
+			image = image.convertToFormat(QImage::Format_Mono);
+			double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
 			GroundPlaneGenerator gpg;
 			gpg.setLayerName(layerName());
 			gpg.setMinRunSize(1, 1);
 			gpg.scanImage(image, image.width(), image.height(), 1, res, colorString(), false, false, QSizeF(0, 0), 0, QPointF(0, 0));
 			if (gpg.newSVGs().count() < 1) {
 				FMessageBox::information(
-				    NULL,
+				    nullptr,
 				    tr("Unable to display"),
 				    tr("Unable to display image from %1").arg(fileName)
 				);
@@ -448,6 +448,7 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			svg = gpg.mergeSVGs("", layerName());
 		}
 		else {
+			double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
 			svg = TextUtils::makeSVGHeader(res, res, image.width(), image.height());
 			int ix = svg.lastIndexOf(">");
 			svg.replace(ix, 1, "xmlns:xlink='http://www.w3.org/1999/xlink'>");
@@ -468,7 +469,7 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 			svg += QString("<image x='0' y='0' width='%1' height='%2' xlink:href='data:image/%3;base64,")
 			       .arg(image.width()).arg(image.height()).arg(type);
 
-			int remaining = bytes.count();
+			int remaining = bytes.size();
 			ix = 0;
 			while (remaining > 0) {
 				QByteArray sixty = bytes.mid(ix, qMin(remaining, 60));
@@ -542,7 +543,10 @@ bool LogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayers)
 		modelPart()->setLocalProp("height", mmH);
 	}
 
-	setWidthAndHeight(qRound(mmW * 10) / 10.0, qRound(mmH * 10) / 10.0);
+	setWidthAndHeight(
+		TextUtils::roundDecimal<kDecimalsAfter>(mmW),
+		TextUtils::roundDecimal<kDecimalsAfter>(mmH)
+	);
 	return true;
 }
 
@@ -572,7 +576,7 @@ void LogoItem::setLogo(QString logo, bool force) {
 
 	QSizeF oldSize = m_size;
 	QXmlStreamReader streamReader(svg);
-	QSizeF oldSvgSize = fsvgRenderer() ? fsvgRenderer()->viewBoxF().size() : QSizeF(0, 0);
+	QSizeF oldSvgSize = fsvgRenderer() != nullptr ? fsvgRenderer()->viewBoxF().size() : QSizeF(0, 0);
 
 	DebugDialog::debug(QString("size %1 %2, %3 %4").arg(m_size.width()).arg(m_size.height()).arg(oldSvgSize.width()).arg(oldSvgSize.height()));
 
@@ -632,8 +636,8 @@ bool LogoItem::hasPartLabel() {
 }
 
 void LogoItem::logoEntry() {
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	auto * edit = qobject_cast<QLineEdit *>(sender());
+	if (edit == nullptr) return;
 
 	logoEntryAux(edit->text());
 }
@@ -647,7 +651,7 @@ void LogoItem::logoEntryAux(const QString & text)
 	m_inLogoEntry = QTime::currentTime().addSecs(1);
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "logo", tr("text"), this->logo(), text, true);
 	}
 }
@@ -673,7 +677,7 @@ QString LogoItem::hackSvg(const QString & svg, const QString & logo)
 	root.setAttribute("width", QString::number(logo.length() * 0.1) + "in");
 
 	QString viewBox = root.attribute("viewBox");
-	QStringList coords = viewBox.split(" ", QString::SkipEmptyParts);
+	QStringList coords = viewBox.split(" ", Qt::SkipEmptyParts);
 	coords[2] = QString::number(logo.length() * 10);
 	root.setAttribute("viewBox", coords.join(" "));
 
@@ -699,8 +703,7 @@ QString LogoItem::hackSvg(const QString & svg, const QString & logo)
 
 				modelPart()->setLocalProp("width", logo.length() * 0.1 * 25.4);
 				QString h = root.attribute("height");
-				bool ok;
-				modelPart()->setLocalProp("height", TextUtils::convertToInches(h, &ok, false) * 25.4);
+				modelPart()->setLocalProp("height", TextUtils::convertToInches(h) * 25.4);
 				if (!isBottom()) return  doc.toString();
 				return flipSvg(doc.toString());
 			}
@@ -715,12 +718,12 @@ QString LogoItem::hackSvg(const QString & svg, const QString & logo)
 void LogoItem::widthEntry() {
 	if (QTime::currentTime() < m_inLogoEntry) return;
 
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	auto * edit = qobject_cast<QLineEdit *>(sender());
+	if (edit == nullptr) return;
 
 	double w = edit->text().toDouble();
 	double oldW = m_modelPart->localProp("width").toDouble();
-	if (w == oldW) return;
+	if (qFuzzyIsNull(w - oldW)) return;
 
 	double h = m_modelPart->localProp("height").toDouble();
 	if (m_keepAspectRatio) {
@@ -728,7 +731,7 @@ void LogoItem::widthEntry() {
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->resizeBoard(w, h, true);
 	}
 }
@@ -736,12 +739,12 @@ void LogoItem::widthEntry() {
 void LogoItem::heightEntry() {
 	if (QTime::currentTime() < m_inLogoEntry) return;
 
-	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
-	if (edit == NULL) return;
+	auto * edit = qobject_cast<QLineEdit *>(sender());
+	if (edit == nullptr) return;
 
 	double h = edit->text().toDouble();
 	double oldH =  m_modelPart->localProp("height").toDouble();
-	if (h == oldH) return;
+	if (qFuzzyIsNull(h - oldH)) return;
 
 	setHeight(h);
 }
@@ -754,7 +757,7 @@ void LogoItem::setHeight(double h)
 	}
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->resizeBoard(w, h, true);
 	}
 }
@@ -783,7 +786,7 @@ QString LogoItem::layerName()
 double LogoItem::minWidth() {
 	double zoom = 1;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		zoom = infoGraphicsView->currentZoom() / 100;
 		if (zoom == 0) zoom = 1;
 	}
@@ -794,7 +797,7 @@ double LogoItem::minWidth() {
 double LogoItem::minHeight() {
 	double zoom = 1;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		zoom = infoGraphicsView->currentZoom() / 100;
 		if (zoom == 0) zoom = 1;
 	}
@@ -849,12 +852,12 @@ QString LogoItem::flipSvg(const QString & svg)
 
 QString LogoItem::flipSvgAux(QString & newSvg)
 {
-	QMatrix m;
+	QTransform m;
 	QSvgRenderer renderer(newSvg.toUtf8());
 	QRectF bounds = renderer.viewBoxF();
 	m.translate(bounds.center().x(), bounds.center().y());
-	QMatrix mMinus = m.inverted();
-	QMatrix cm = mMinus * QMatrix().scale(-1, 1) * m;
+	QTransform mMinus = m.inverted();
+	QTransform cm = mMinus * QTransform().scale(-1, 1) * m;
 	int gix = newSvg.indexOf("<g");
 	newSvg.replace(gix, 2, "<g _flipped_='1' transform='" + TextUtils::svgMatrix(cm) + "'");
 	return newSvg;
@@ -938,7 +941,7 @@ bool BreadboardLogoItem::collectExtraInfo(QWidget * parent, const QString & fami
 			returnProp = tr("color");
 			returnValue = m_color;
 
-			QPushButton * button = new QPushButton(tr("Set text color"));
+			auto * button = new QPushButton(tr("Set text color"));
 			button->setObjectName("infoViewButton");
 			connect(button, SIGNAL(pressed()), this, SLOT(changeTextColor()));
 
@@ -952,12 +955,12 @@ bool BreadboardLogoItem::collectExtraInfo(QWidget * parent, const QString & fami
 
 void BreadboardLogoItem::changeTextColor() {
 	QColor color(m_color);
-	QColor newColor = QColorDialog::getColor(color, NULL, tr("Select text color"));
+	QColor newColor = QColorDialog::getColor(color, nullptr, tr("Select text color"));
 	if (!newColor.isValid()) return;
 	if (newColor.name().compare(m_color, Qt::CaseInsensitive) == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "color", tr("color"), m_color, newColor.name(), true);
 	}
 }
@@ -1075,7 +1078,7 @@ bool BoardLogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayer
 
 void BoardLogoItem::reloadLayerKin(double mmW, double mmH)
 {
-	foreach (ItemBase * itemBase, m_layerKin) {
+	Q_FOREACH (ItemBase * itemBase, m_layerKin) {
 		if (itemBase->viewLayerID() == ViewLayer::Silkscreen1 || itemBase->viewLayerID() == ViewLayer::Silkscreen0) {
 			QString svg = ResizableBoard::getShapeForRenderer(prop("shape"), itemBase->viewLayerID());
 			if (!svg.isEmpty()) {

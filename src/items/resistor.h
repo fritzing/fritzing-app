@@ -34,7 +34,7 @@ class Resistor : public Capacitor
 
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
-	Resistor(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit Resistor(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~Resistor() = default;
 
 	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
@@ -50,6 +50,7 @@ public:
 	void addedToScene(bool temporary);
 	void setProp(const QString & prop, const QString & value);
 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
+	QHash<QString, QString> prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys);
 
 protected:
 	QString makeSvg(const QString & ohms, ViewLayer::ViewLayerID viewLayerID);
@@ -60,11 +61,13 @@ protected:
 	void setBands(QDomElement & element, int firstband, int secondband, int thirdband, int multiplier, const QString & tolerance);
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
-public slots:
-	void resistanceEntry(const QString & text);
+public Q_SLOTS:
+	void resistanceEntry(int);
 
 public:
 	static double toOhms(const QString & ohmsString, void * data);
+	static constexpr double MIN_RESISTANCE = 0.0;
+	static constexpr double MAX_RESISTANCE = 9900000000.0;
 
 protected:
 	QString m_ohms;
@@ -73,6 +76,7 @@ protected:
 	bool m_changingPinSpacing = false;
 	QString m_iconSvgFile;
 	QString m_breadboardSvgFile;
+
 };
 
 #endif

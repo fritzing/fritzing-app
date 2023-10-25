@@ -22,10 +22,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "svgpathgrammar_p.h"
 #include "../utils/textutils.h"
 
-static const QRegExp findWhitespaceBefore(" ([AaCcMmVvTtQqSsLlVvHhZzx,])");
-static const QRegExp findWhitespaceAfter("([AaCcMmVvTtQqSsLlVvHhZz,]) ");
-static const QRegExp findWhitespaceAtEnd(" $");
-static const QRegExp findMinus("-");
+static const QRegularExpression findWhitespaceBefore(" ([AaCcEeMmVvTtQqSsLlVvHhZzx,])");
+static const QRegularExpression findWhitespaceAfter("([AaCcEeMmVvTtQqSsLlVvHhZz,]) ");
+static const QRegularExpression findWhitespaceAtEnd(" $");
+static const QRegularExpression findMinus("-");
 
 SVGPathLexer::SVGPathLexer(const QString &source)
 {
@@ -71,10 +71,19 @@ int SVGPathLexer::lex()
 		// Do this first, to prevent infinite loop when last content of the path data is a number
 		return SVGPathGrammar::EOF_SYMBOL;
 	}
-	if (TextUtils::floatingPointMatcher.indexIn(m_source, m_pos - 1) == m_pos - 1) {
+
+	QRegularExpressionMatch match(
+		TextUtils::floatingPointMatcher.match(
+			m_source,
+			m_pos - 1,
+			QRegularExpression::NormalMatch,
+			QRegularExpression::AnchoredMatchOption | QRegularExpression::DontCheckSubjectStringMatchOption
+		)
+	);
+	if (match.hasMatch()) {
 		// sitting at the start of a number: collect and advance past it
-		m_currentNumber = m_source.mid(m_pos - 1, TextUtils::floatingPointMatcher.matchedLength()).toDouble();
-		m_pos += TextUtils::floatingPointMatcher.matchedLength() - 1;
+		m_currentNumber = match.captured(0).toDouble();
+		m_pos += match.capturedLength() - 1;
 		next();
 		return SVGPathGrammar::NUMBER;
 	}

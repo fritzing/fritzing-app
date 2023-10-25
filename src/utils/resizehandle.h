@@ -39,7 +39,7 @@ public:
 	double currentScale();
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = 0);
 
-public slots:
+public Q_SLOTS:
 	void zoomChangedSlot(double scale);
 
 protected:
@@ -49,7 +49,7 @@ protected:
 	QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 	bool scaling();
 
-signals:
+Q_SIGNALS:
 	void mousePressSignal(QGraphicsSceneMouseEvent * event, ResizeHandle *);
 	void mouseMoveSignal(QGraphicsSceneMouseEvent * event, ResizeHandle *);
 	void mouseReleaseSignal(QGraphicsSceneMouseEvent * event, ResizeHandle *);

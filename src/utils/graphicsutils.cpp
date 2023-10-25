@@ -23,6 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QList>
 #include <QLineF>
 #include <QBuffer>
+#include <QtGlobal>
 #include <qmath.h>
 #include <QtDebug>
 #include <vector>
@@ -163,6 +164,13 @@ double GraphicsUtils::getNearestOrdinate(double ordinate, double units) {
 
 void GraphicsUtils::shortenLine(QPointF & p1, QPointF & p2, double d1, double d2) {
 	double angle1 = atan2(p2.y() - p1.y(), p2.x() - p1.x());
+	double length = QLineF(p1, p2).length();
+	if (d1 > length) {
+		d1 = length;
+	}
+	if (d2 > length) {
+		d2 = length;
+	}
 	double angle2 = angle1 - M_PI;
 	double dx1 = d1 * cos(angle1);
 	double dy1 = d1 * sin(angle1);
@@ -174,9 +182,8 @@ void GraphicsUtils::shortenLine(QPointF & p1, QPointF & p2, double d1, double d2
 	p2.setY(p2.y() + dy2);
 }
 
-bool GraphicsUtils::isRect(const QPolygonF & poly) {
+bool GraphicsUtils::isFuzzyRect(const QPolygonF & poly) {
 	if (poly.count() != 5) return false;
-	if (poly.at(0) != poly.at(4)) return false;
 
 	// either we start running across top or running along side
 	const auto& poly0 = poly.at(0);
@@ -184,14 +191,17 @@ bool GraphicsUtils::isRect(const QPolygonF & poly) {
 	const auto& poly2 = poly.at(2);
 	const auto& poly3 = poly.at(3);
 	const auto& poly4 = poly.at(4);
-	if (poly0.x() == poly1.x() &&
-	    poly1.y() == poly2.y() &&
-	    poly2.x() == poly3.x() &&
-	    poly3.y() == poly4.y()) return true;
-	if (poly0.y() == poly1.y() &&
-	    poly1.x() == poly2.x() &&
-	    poly2.y() == poly3.y() &&
-	    poly3.x() == poly4.x()) return true;
+	if (!qFuzzyIsNull(poly0.x() - poly4.x())) return false;
+	if (!qFuzzyIsNull(poly0.y() - poly4.y())) return false;
+
+	if (qFuzzyIsNull(poly0.x() - poly1.x()) &&
+	    qFuzzyIsNull(poly1.y() - poly2.y()) &&
+	    qFuzzyIsNull(poly2.x() - poly3.x()) &&
+	    qFuzzyIsNull(poly3.y() - poly4.y())) return true;
+	if (qFuzzyIsNull(poly0.y() - poly1.y()) &&
+	    qFuzzyIsNull(poly1.x() - poly2.x()) &&
+	    qFuzzyIsNull(poly2.y() - poly3.y()) &&
+	    qFuzzyIsNull(poly3.x() - poly4.x())) return true;
 	return false;
 }
 
@@ -295,7 +305,7 @@ QString GraphicsUtils::toHtmlImage(QPixmap *pixmap, const char* format) {
 	QBuffer buffer(&bytes);
 	buffer.open(QIODevice::WriteOnly);
 	pixmap->save(&buffer, format); // writes pixmap into bytes in PNG format
-	return QString("data:image/%1;base64,%2").arg(QString(format).toLower()).arg(QString(bytes.toBase64()));
+	return QString("data:image/%1;base64,%2").arg(QString(format).toLower(), QString(bytes.toBase64()));
 }
 
 QPainterPath GraphicsUtils::shapeFromPath(const QPainterPath &path, const QPen &pen, double shapeStrokeWidth, bool includeOriginalPath)
@@ -305,7 +315,7 @@ QPainterPath GraphicsUtils::shapeFromPath(const QPainterPath &path, const QPen &
 
 	// We unfortunately need this hack as QPainterPathStroker will set a width of 1.0
 	// if we pass a value of 0.0 to QPainterPathStroker::setWidth()
-	static const double penWidthZero = double(0.00000001);
+	static constexpr auto penWidthZero = double(0.00000001);
 
 	if (path == QPainterPath())
 		return path;
@@ -336,9 +346,9 @@ void GraphicsUtils::qt_graphicsItem_highlightSelected(QPainter *painter, const Q
 	if (qMin(mbrect.width(), mbrect.height()) < double(1.0))
 		return;
 
-	double itemPenWidth = 1.0;
-	const double pad = itemPenWidth / 2;
-	const double penWidth = 0; // cosmetic pen
+	constexpr double itemPenWidth = 1.0;
+	constexpr double pad = itemPenWidth / 2;
+	constexpr double penWidth = 0; // cosmetic pen
 
 	const QColor fgcolor = option->palette.windowText().color();
 	const QColor bgcolor( // ensure good contrast against fgcolor
@@ -396,7 +406,7 @@ bool almostEqual(qreal a, qreal b) {
 	return (qAbs(a - b) < nearly);
 }
 
-bool GraphicsUtils::isFlipped(const QMatrix & matrix, double & rotation) {
+bool GraphicsUtils::isFlipped(const QTransform & matrix, double & rotation) {
 	static qreal halfSqrt2 = 0.7071;
 
 	// flipped means flipped horizontally (around the vertical axis)

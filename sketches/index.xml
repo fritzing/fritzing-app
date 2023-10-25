@@ -218,6 +218,30 @@
 		<sketch id="Workshop07" >
 			<language country="en" name="07 Servo" src="core/Fritzing Workshop/Workshop_07_Servo.fzz"/>
 		</sketch>
+		<sketch id="SimpleButton" >
+			<language country="en" name="Button" src="core/Simulator/EN/simple_button.fzz"/>
+		</sketch>
+		<sketch id="HowToUseMultimeter" >
+			<language country="en" name="How To Use A Multimeter" src="core/Simulator/EN/how_to_use_multimeter.fzz"/>
+		</sketch>
+		<sketch id="IrSensorTransistorMotor" >
+			<language country="en" name="IR Sensor Controlling a motor" src="core/Simulator/EN/ir_sensor_npn_transistor_dc_motor.fzz"/>
+		</sketch>
+		<sketch id="SimpleLED" >
+			<language country="en" name="LED" src="core/Simulator/EN/simple_led.fzz"/>
+		</sketch>
+		<sketch id="MeasureDcCurrent" >
+			<language country="en" name="How To Measure DC Currents" src="core/Simulator/EN/measure_dc_current.fzz"/>
+		</sketch>
+		<sketch id="MeasureDcVoltage" >
+			<language country="en" name="How To Measure DC Voltages" src="core/Simulator/EN/measure_dc_voltage.fzz"/>
+		</sketch>
+		<sketch id="MeasureResistance" >
+			<language country="en" name="How To Measure Resistances" src="core/Simulator/EN/measure_resistance.fzz"/>
+		</sketch>
+		<sketch id="SimplePotentiometer" >
+			<language country="en" name="Potentiometer" src="core/Simulator/EN/simple_potentiometer.fzz"/>
+		</sketch>
 </sketches>
 	<categories>
 		<category>
@@ -409,8 +433,8 @@
 			<sketch id="TwitterSaurus"/>
 			<separator />
 			<url>
-				<language country="en" name="Get your own Fritzing Creator Kit" href="http://fritzing.myshopify.com/products/fritzing-creator-kit" />
-				<language country="de" name="Erhalten Sie Ihre eigene Fritzing Creator Kit" href="http://fritzing.myshopify.com/products/fritzing-creator-kit" />
+				<language country="en" name="Get your own Fritzing Creator Kit" href="https://fritzing.org/link/fritzingcreatorkit" />
+				<language country="de" name="Erhalten Sie Ihr eigenes Fritzing Creator Kit" href="https://fritzing.org/link/fritzingcreatorkit" />
 			</url>
 		</category>
 		<category>
@@ -434,8 +458,8 @@
 			<sketch id="CosmicRayGun"/>
 			<separator />
 			<url>
-				<language country="en" name="Get your own Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
-				<language country="de" name="Erhalten Sie Ihre eigene Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
+				<language country="en" name="Get your own Fritzing Starter Kit" href="https://fritzing.org/link/frtzingstarterkit" />
+				<language country="de" name="Erhalten Sie Ihr eigenes Fritzing Starter Kit" href="https://fritzing.org/link/frtzingstarterkit" />
 			</url>
 		</category>
 		<category>
@@ -459,5 +483,25 @@
 			<sketch id="EDGY-motor-control_stepper"/>
 		</category>
 		-->
+		<category>
+			<language country="en" name="Simulator"/>
+			<language country="es" name="Simulador"/>
+			<category>
+				<language country="en" name="Multimeter"/>
+				<language country="es" name="Multimetro"/>
+				<sketch id="HowToUseMultimeter"/>
+				<sketch id="MeasureResistance"/>
+				<sketch id="MeasureDcVoltage"/>
+				<sketch id="MeasureDcCurrent"/>
+			</category>
+			<category>
+				<language country="en" name="Basic Circuits"/>
+				<language country="es" name="Circuitos Básicos"/>
+				<sketch id="SimpleButton"/>
+				<sketch id="SimpleLED"/>
+				<sketch id="SimplePotentiometer"/>
+				<sketch id="IrSensorTransistorMotor"/>
+			</category>
+		</category>
 	</categories>
 </fritzing-sketches>

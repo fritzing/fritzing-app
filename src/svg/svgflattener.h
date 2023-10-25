@@ -22,20 +22,25 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define SVGFLATTENER_H
 
 #include "svgfilesplitter.h"
-#include <QMatrix>
+#include <QTransform>
 #include <QSvgRenderer>
+
+typedef std::map<QString, QString> SvgAttributesMap;
 
 class SvgFlattener : public SvgFileSplitter
 {
+	Q_OBJECT
 public:
 	SvgFlattener();
 
-	void flattenChildren(QDomElement & element);
-	void unRotateChild(QDomElement & element,QMatrix transform);
+	void flattenChildren(QDomElement &element, const SvgAttributesMap &attributes);
+	void unRotateChild(QDomElement &element, QTransform transform, const SvgAttributesMap & attributes);
+	void applyAttributes(QDomElement &element, QTransform transform, const SvgAttributesMap & attributes);
 
-public:
 	static void flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID, double printerScale, Qt::Orientations);
 	static void replaceElementID(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID);
+	static SvgAttributesMap mergeSvgAttributes(const SvgAttributesMap &inherited_attributes, QDomElement &element);
+
 
 protected:
 	static QString flipSMDElement(QDomDocument & domDocument, QDomElement & element, const QString & att, QDomElement altAtt, const QString & altElementID, double printerScale, Qt::Orientations);
@@ -44,7 +49,7 @@ protected:
 	static bool loadDocIf(const QString & filename, const QString & svg, QDomDocument & domDocument);
 
 
-protected slots:
+protected Q_SLOTS:
 	void rotateCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);
 
 };

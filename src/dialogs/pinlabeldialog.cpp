@@ -19,7 +19,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "pinlabeldialog.h"
-#include "../debugdialog.h"
 
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
@@ -64,20 +63,20 @@ PinLabelDialog::PinLabelDialog(const QStringList & labels, bool singleRow, const
 	m_doSaveAs = true;
 	this->setWindowTitle(QObject::tr("Pin Label Editor"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
-	QScrollArea * scrollArea = new QScrollArea(this);
+	auto * scrollArea = new QScrollArea(this);
 	scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-	QFrame * frame = new QFrame(this);
-	QHBoxLayout * hLayout = new QHBoxLayout(frame);
+	auto * frame = new QFrame(this);
+	auto * hLayout = new QHBoxLayout(frame);
 
 	QFrame * labelsFrame = initLabels(labels, singleRow, chipLabel);
 
-	QFrame * textFrame = new QFrame();
-	QVBoxLayout * textLayout = new QVBoxLayout(frame);
+	auto * textFrame = new QFrame();
+	auto * textLayout = new QVBoxLayout(frame);
 
-	QLabel * label = new QLabel("<html><body>" +
+	auto * label = new QLabel("<html><body>" +
 	                            tr("<p><h2>Pin Label Editor</h2></p>") +
 	                            tr("<p>Click on a label next to a pin number to rename that pin.") + " " +
 	                            tr("You can use the tab key to move through the labels in order.</p>") +
@@ -96,7 +95,7 @@ PinLabelDialog::PinLabelDialog(const QStringList & labels, bool singleRow, const
 
 	scrollArea->setWidget(frame);
 
-	QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Save | QDialogButtonBox::Cancel);
+	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Save | QDialogButtonBox::Cancel);
 
 	QPushButton * cancelButton = buttonBox->button(QDialogButtonBox::Cancel);
 	cancelButton->setText(tr("Cancel"));
@@ -138,16 +137,16 @@ PinLabelDialog::~PinLabelDialog()
 
 QFrame * PinLabelDialog::initLabels(const QStringList & labels, bool singleRow, const QString & chipLabel)
 {
-	QFrame * frame = new QFrame();
-	QVBoxLayout * vLayout = new QVBoxLayout();
+	auto * frame = new QFrame();
+	auto * vLayout = new QVBoxLayout();
 
-	QLabel * label = new QLabel("<h2>" + chipLabel + "</h2>");
+	auto * label = new QLabel("<h2>" + chipLabel + "</h2>");
 	label->setAlignment(Qt::AlignCenter);
 
-	QFrame * subFrame = new QFrame();
+	auto * subFrame = new QFrame();
 	if (singleRow) {
-		QGridLayout * gridLayout = new QGridLayout();
-		gridLayout->setMargin(0);
+		auto * gridLayout = new QGridLayout();
+		gridLayout->setContentsMargins(0, 0, 0, 0);
 		gridLayout->setSpacing(3);
 
 		for (int i = 0; i < labels.count(); i++) {
@@ -157,20 +156,20 @@ QFrame * PinLabelDialog::initLabels(const QStringList & labels, bool singleRow, 
 		subFrame->setLayout(gridLayout);
 	}
 	else {
-		QHBoxLayout * hLayout = new QHBoxLayout();
+		auto * hLayout = new QHBoxLayout();
 
-		QFrame * lFrame = new QFrame();
-		QGridLayout * lLayout = new QGridLayout;
-		lLayout->setMargin(0);
+		auto * lFrame = new QFrame();
+		auto * lLayout = new QGridLayout;
+		lLayout->setContentsMargins(0, 0, 0, 0);
 		lLayout->setSpacing(3);
 		for (int i = 0; i < labels.count() / 2; i++) {
 			makeOnePinEntry(i, labels.at(i), Qt::AlignLeft, i, lLayout);
 		}
 		lFrame->setLayout(lLayout);
 
-		QFrame * rFrame = new QFrame();
-		QGridLayout * rLayout = new QGridLayout;
-		rLayout->setMargin(0);
+		auto * rFrame = new QFrame();
+		auto * rLayout = new QGridLayout;
+		rLayout->setContentsMargins(0, 0, 0, 0);
 		rLayout->setSpacing(3);
 		int row = labels.count() - 1;
 		for (int i = labels.count() / 2; i < labels.count(); i++) {
@@ -194,14 +193,14 @@ QFrame * PinLabelDialog::initLabels(const QStringList & labels, bool singleRow, 
 
 void PinLabelDialog::makeOnePinEntry(int index, const QString & text, Qt::Alignment alignment, int row, QGridLayout * gridLayout)
 {
-	QLineEdit * label = new QLineEdit();
+	auto * label = new QLineEdit();
 	label->setText(QString::number(index + 1));
 	label->setMaximumWidth(20);
 	label->setMinimumWidth(20);
 	label->setFrame(false);
 	label->setEnabled(false);
 
-	QLineEdit * lEdit = new QLineEdit();
+	auto * lEdit = new QLineEdit();
 	lEdit->setMaximumWidth(65);
 	lEdit->setAlignment(alignment);
 	lEdit->setText(text);
@@ -223,8 +222,8 @@ void PinLabelDialog::makeOnePinEntry(int index, const QString & text, Qt::Alignm
 }
 
 void PinLabelDialog::labelChanged() {
-	QLineEdit * lineEdit = qobject_cast<QLineEdit *>(sender());
-	if (lineEdit == NULL) return;
+	auto * lineEdit = qobject_cast<QLineEdit *>(sender());
+	if (lineEdit == nullptr) return;
 
 	bool ok;
 	int index = lineEdit->property("index").toInt(&ok);
@@ -233,7 +232,7 @@ void PinLabelDialog::labelChanged() {
 	if (index < 0) return;
 	if (index >= m_labels.count()) return;
 
-	PinLabelUndoCommand * pluc = new PinLabelUndoCommand(this, index, lineEdit, lineEdit->property("prev").toString(), lineEdit->text());
+	auto * pluc = new PinLabelUndoCommand(this, index, lineEdit, lineEdit->property("prev").toString(), lineEdit->text());
 	lineEdit->setProperty("prev", lineEdit->text());
 
 	m_undoStack.push(pluc);

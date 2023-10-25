@@ -24,18 +24,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "pad.h"
 
 #include "../utils/graphicsutils.h"
-#include "../utils/folderutils.h"
-#include "../utils/textutils.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
-#include "../svg/svgfilesplitter.h"
 #include "moduleidnames.h"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QFrame>
 #include <QLabel>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QPushButton>
 #include <QImageReader>
 #include <QMessageBox>
@@ -189,7 +186,7 @@ QStringList Pad::collectValues(const QString & family, const QString & prop, QSt
 
 	QStringList newValues;
 	if (prop.compare("layer", Qt::CaseInsensitive) == 0) {
-		foreach (QString xmlName, values) {
+		Q_FOREACH (QString xmlName, values) {
 			newValues << Board::convertFromXmlName(xmlName);
 		}
 		value = Board::convertFromXmlName(value);
@@ -210,7 +207,7 @@ bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QStri
 
 	if (!copperBlocker()) {
 		if (prop.compare("connect to", Qt::CaseInsensitive) == 0) {
-			QComboBox * comboBox = new QComboBox();
+			auto * comboBox = new QComboBox();
 			comboBox->setObjectName("infoViewComboBox");
 			comboBox->setEditable(false);
 			comboBox->setEnabled(swappingEnabled);
@@ -227,7 +224,7 @@ bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QStri
 				}
 			}
 
-			connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(terminalPointEntry(const QString &)));
+			connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(terminalPointEntry(int)));
 
 			returnWidget = comboBox;
 			returnProp = tr("connect to");
@@ -237,10 +234,10 @@ bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QStri
 
 	bool result = PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 
-	if (prop.compare("layer") == 0 && returnWidget) {
+	if (prop.compare("layer") == 0 && (returnWidget != nullptr)) {
 		bool disabled = true;
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infoGraphicsView && infoGraphicsView->boardLayers() == 2) disabled = false;
+		if ((infoGraphicsView != nullptr) && infoGraphicsView->boardLayers() == 2) disabled = false;
 		returnWidget->setDisabled(disabled);
 	}
 
@@ -310,12 +307,12 @@ void Pad::setInitialSize() {
 
 void Pad::resizeMMAux(double mmW, double mmH) {
 	ResizableBoard::resizeMMAux(mmW, mmH);
-	resetConnectors(NULL, NULL);
+	resetConnectors(nullptr, nullptr);
 }
 
 void Pad::addedToScene(bool temporary)
 {
-	if (this->scene()) {
+	if (this->scene() != nullptr) {
 		setInitialSize();
 		resizeMMAux(m_modelPart->localProp("width").toDouble(), m_modelPart->localProp("height").toDouble());
 	}
@@ -323,16 +320,16 @@ void Pad::addedToScene(bool temporary)
 	return PaletteItem::addedToScene(temporary);
 }
 
-void Pad::terminalPointEntry(const QString &) {
-	QComboBox * comboBox = qobject_cast<QComboBox *>(sender());
-	if (comboBox == NULL) return;
+void Pad::terminalPointEntry(int) {
+	auto * comboBox = qobject_cast<QComboBox *>(sender());
+	if (comboBox == nullptr) return;
 
 	QString value = comboBox->itemData(comboBox->currentIndex()).toString();
 	QString connectAt = m_modelPart->localProp("connect").toString();
 	if (connectAt.compare(value) == 0) return;
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView) {
+	if (infoGraphicsView != nullptr) {
 		infoGraphicsView->setProp(this, "connect to", tr("connect to"), connectAt, value, true);
 	}
 }

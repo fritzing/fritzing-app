@@ -1,0 +1,128 @@
+Segment16 font families                         (72 characters per line)
+========================================================================
+The Segment16 font families were created and assigned CC0 Public Domain
+by Daniel Wikholm in 2017. No rights reserved. No attribution required.
+While claiming you own them would be untrue, and selling them for profit 
+unfriendly, they're your fonts as much as anybody elses. Enjoy.
+
+Segment16A, B and C are three font families, each containing a regular,
+bold, italic and bold italic, based on sixteen segment displays. They
+are also loosely related to Segment8, a more experimental eight segment
+alphanumeric display font family released on December 31, 2015.
+
+The main reason for creating Segment16 is that many free segment display 
+fonts tends to have quality issues, while those of better quality tends
+to have restrictive licensing. While the Segment16 fonts aren't perfect
+either, they were created with quality in mind, and since they are CC0
+Public Domain, you are free to try fixing whatever issues you may find.
+
+Some segment fonts changes the shape of some segments from one character 
+to another, and/or has segments that would overlap, were they all active 
+at once. The Segment16 fonts, much like actual segmented displays would, 
+has a fixed set of continuous, non-overlapping segments per font.
+
+In Segment 16A, like in Segment8, the diagonal segments extends both to
+the center and the outer corners of the character, which might resemble
+some, mainly older, LCD sixteen segment alphanumeric displays.
+
+In Segment 16B, the diagonal segments still extends to the center, but
+stops inside the outer segments. This may resemble some newer LCD or LED 
+displays. In Segment 16C, the diagonal segments are not extending to the 
+center either. This may resemble some smaller LED or VFD type displays.
+
+In the following, the U+ numbers are hexadecimal Unicode code points,
+while character numbers refers to decimal ASCII-type codes.
+
+Segment16 covers the "Windows western" code page 1252, the basic Greek
+(U+0390 to U+03C9) and Russian (U+0410 to U+044F) alphabets. U+E000 to
+U+E011 contains each segment individually, with zero width, such that
+any combination of segments may be created.
+ 
+As with many "n-segment" displays, optional dots and separators aren't
+included in the official segment count. In the Segment16 fonts, there
+are, in addition to the sixteen main segments, a lower right "decimal
+point" dot and an upper left "digit group separator" dot.
+
+Character 46 "Period" uses the decimal dot instead of any main segment.
+To avoid a space before the next digit, when used as a decimal sign, it
+has zero width, and is aligned to combine with the previous character.
+This works as expected when using it as a single full stop, but multiple 
+full stops without spaces inbetween, will collapse to a single dot.
+
+While character 166 "Broken bar", differs from 124 "Pipe", it rarely has 
+a different meaning. As both would be "broken" in the Segment16 fonts,
+character 166 has been used for an upper left dot, available even if the 
+Unicode Private use area isn't accessible. It, too, has zero width.
+
+Spacing modifier letters do NOT have zero width, as "correctly" putting
+them onto the characters to be modified, likely yields a less readable
+result than putting the modifier before or after letter to be modified.
+
+Character 149 "Bullet" consists of the 16 main segments, which may work
+as a background for emulating the look of certain display types. As both 
+character 46 "Period" and 166 "Broken bar" has zero width, they can be
+added. A full set of all 18 segments, is also available as U+E012.
+
+U+2588 "Full block" is a block with the width of the character pitch and
+the height of the intended line spacing. It's mainly a hack, as the tool
+used (CorelDRAW) to create the Segment fonts, seems to cause the line
+spacing to be derived from the tallest character in the font.
+
+Due to technical limitations in CorelDRAW, character 160 "Non breaking
+space", while empty, and all undefined code points, while rendering as
+all 18 segments, do not have the correct width.
+ 
+All Segment16 (and 8) fonts were designed with the same line spacing and 
+monospaced character pitch (5/9 of the point size), so changing from one 
+Segment font to another, shouldn't cause any characters to move around.
+
+The space between segments is 1/5 the width of a bold segment. This was
+chosen to look reasonable across a range of different font sizes. While
+real displays may have their segments closer, segment fonts tends to be
+used for aesthetic reasons, were each segment should be clearly visible.
+
+Rather than optimizing for the different segment shapes, all Segment16
+fonts uses the same set of segments for the same character, so changing
+from one Segment16 font to another does not change which segments are
+used to represent each character. This is a comproimise for consistency.
+
+The set of segments used for each character is based on the most common
+designs, as long as they don't hurt readability. The square design of
+uppercase B, may for example not be the very "best" design possible, but
+is, by far, the most common, and is thus what most users would expect.
+
+Some characters deliberately deviates slightly from their most common
+designs, to make it possible to tell them apart from other characters.
+For example, as the most common design for the letter S, is identical to 
+that of the digit 5, it would be impossible to tell them apart, when the 
+context doesn't say whether the character is a digit or a letter. Thus
+the design of the 5 and, for consistency, 2 has been slightly altered.
+
+For the same reason, the Cyrillic letters Ze and Be are designed to not
+look exactly like the digits 3 and 6. The Greek and Cyrillic letters are 
+in general, though, NOT designed to look different than Latin letters. A 
+Greek uppercase Eta does look exactly like a Cyrillic En and a latin H.
+
+This is partly because distinct designs wouldn't really be feasible, as
+for example a Greek Chi is supposed to look exactly like a Cyrillic Kha
+or a Latin X. Also, some of the identical-looking letters ARE basically
+the same. A Greek Beta, a Cyrillic Be and a Latin B, are all the second
+letter of their respective alphabets, and are pronounced the same.
+
+For characters where no consensus seems to exist, the Segment16 fonts
+tries to optimize readability and consistency. For accented characters,
+base character redability has been given priority over accent fidelity.
+
+The letter Ã may for example emphasize the ~ at the expense of colliding 
+with the A, perhaps resulting in a confusing set of segments, or it may
+simplify the ~ to just the two upper horizontal segments, at the expense 
+of becoming indistinguishable from Â and Ä. Hopefully, readers will be
+able to derive the correct accent from the context.
+
+All in all, including space, the Segment16 fonts defines 350 code points 
+each, summing up to 4200 in total, though the number of unique designs
+is closer to 250 per font, or 3000 in total.
+
+December 29, 2017
+Sandviken, Sweden
+/Daniel Wikholm

@@ -48,7 +48,7 @@ public:
 protected:
 	bool eventFilter(QObject *obj, QEvent *event);
 
-protected slots:
+protected Q_SLOTS:
 	void deleteCursor(QObject *);
 	void moveCursor();
 

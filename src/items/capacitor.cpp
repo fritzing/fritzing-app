@@ -45,14 +45,14 @@ ItemBase::PluralType Capacitor::isPlural() {
 
 bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide)
 {
-	foreach (PropertyDef * propertyDef, m_propertyDefs.keys()) {
+	Q_FOREACH (PropertyDef * propertyDef, m_propertyDefs.keys()) {
 		if (prop.compare(propertyDef->name, Qt::CaseInsensitive) == 0) {
 			returnProp = TranslatedPropertyNames.value(prop);
 			if (returnProp.isEmpty()) {
 				returnProp = propertyDef->name;
 			}
 
-			FocusOutComboBox * focusOutComboBox = new FocusOutComboBox();
+			auto * focusOutComboBox = new FocusOutComboBox();
 			focusOutComboBox->setEnabled(swappingEnabled);
 			focusOutComboBox->setEditable(propertyDef->editable);
 			focusOutComboBox->setObjectName("infoViewComboBox");
@@ -66,13 +66,20 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 			}
 
 			if (propertyDef->numeric) {
+				focusOutComboBox->setToolTip(tr("Select from the dropdown, or type in a %1 value\n"
+												"Range: [%2 - %3] %4\n"
+												"Background: Green = ok, Red = incorrect value, Grey = current value").
+											 arg(returnProp).
+											 arg(TextUtils::convertToPowerPrefix(propertyDef->minValue)).
+											 arg(TextUtils::convertToPowerPrefix(propertyDef->maxValue)).
+											 arg(propertyDef->symbol));
 				if (!current.isEmpty()) {
 					double val = TextUtils::convertFromPowerPrefixU(current, propertyDef->symbol);
 					if (!propertyDef->menuItems.contains(val)) {
 						propertyDef->menuItems.append(val);
 					}
 				}
-				foreach(double q, propertyDef->menuItems) {
+				Q_FOREACH(double q, propertyDef->menuItems) {
 					QString s = TextUtils::convertToPowerPrefix(q) + propertyDef->symbol;
 					focusOutComboBox->addItem(s);
 				}
@@ -95,21 +102,25 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 			}
 
 			if (propertyDef->editable) {
-				BoundedRegExpValidator * validator = new BoundedRegExpValidator(focusOutComboBox);
+				auto * validator = new BoundedRegExpValidator(focusOutComboBox);
 				validator->setSymbol(propertyDef->symbol);
 				validator->setConverter(TextUtils::convertFromPowerPrefix);
 				if (propertyDef->maxValue > propertyDef->minValue) {
 					validator->setBounds(propertyDef->minValue, propertyDef->maxValue);
 				}
-				QString pattern = QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d{1,2}))[%1]{0,1}[%2]{0,1}")
-				                  .arg(TextUtils::PowerPrefixesString)
-				                  .arg(propertyDef->symbol);
-				validator->setRegExp(QRegExp(pattern));
+	//			QString pattern = QString("((\\d{0,10})|(\\d{0,10}\\.)|(\\d{0,10}\\.\\d{1,10}))[%1]{0,1}[%2]{0,1}")
+				QString pattern = QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d{1,2}))[%1]{0,1}[%2]{0,1}").arg(
+	//			QString pattern = QString("((\\d{0,3})|(\\d{0,3}\\.)|(\\d{0,3}\\.\\d{1,3}))[%1]{0,1}[%2]{0,1}")
+					TextUtils::PowerPrefixesString, 
+					propertyDef->symbol
+				);
+				validator->setRegularExpression(QRegularExpression(pattern));
 				focusOutComboBox->setValidator(validator);
-				connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(propertyEntry(const QString &)));
+				connect(focusOutComboBox->validator(), SIGNAL(sendState(QValidator::State)), this, SLOT(textModified(QValidator::State)));
+				connect(focusOutComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(propertyEntry(int)));
 			}
 			else {
-				connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(simplePropertyEntry(const QString &)));
+				connect(focusOutComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(simplePropertyEntry(int)));
 			}
 
 			this->m_comboBoxes.insert(propertyDef, focusOutComboBox);
@@ -124,11 +135,41 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 	return PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 }
 
-void Capacitor::propertyEntry(const QString & text) {
-	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
+/**
+ * Sets the appropriate background colour in the combo box when the text is modified. When a user changes the text of an editable
+ * property in a combo box, this function is called. The function checks the validator of the combo box and sets a red background if the
+ * state is Intermediate (the value does is not within the limits of the property) or green if the state is Acceptable. Invalid states
+ * are not possible as the characters that make the string invalid are deleted if introduced.
+ * not changed in this function.
+ * @param[in] text The new string in the combo box.
+ */
+void Capacitor::textModified(QValidator::State state) {
+	BoundedRegExpValidator * validator = qobject_cast<BoundedRegExpValidator *>(sender());
+	if (validator == NULL) return;
+	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(validator->parent());
 	if (focusOutComboBox == NULL) return;
 
-	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
+	if (state == QValidator::Acceptable) {
+		QColor backColor = QColor(210, 246, 210);
+		QLineEdit *lineEditor = focusOutComboBox->lineEdit();
+		QPalette pal = lineEditor->palette();
+		pal.setColor(QPalette::Base, backColor);
+		lineEditor->setPalette(pal);
+	} else if (state == QValidator::Intermediate) {
+		QColor backColor = QColor(246, 210, 210);
+		QLineEdit *lineEditor = focusOutComboBox->lineEdit();
+		QPalette pal = lineEditor->palette();
+		pal.setColor(QPalette::Base, backColor);
+		lineEditor->setPalette(pal);
+	}
+}
+
+void Capacitor::propertyEntry(int index) {
+	auto * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
+	if (focusOutComboBox == nullptr) return;
+	QString text = focusOutComboBox->itemText(index);
+
+	Q_FOREACH (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {
 			QString utext = text;
 			if (propertyDef->numeric) {
@@ -146,7 +187,7 @@ void Capacitor::propertyEntry(const QString & text) {
 			}
 
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView) {
+			if (infoGraphicsView != nullptr) {
 				infoGraphicsView->setProp(this, propertyDef->name, "", m_propertyDefs.value(propertyDef, ""), utext, true);
 			}
 			break;
@@ -155,11 +196,11 @@ void Capacitor::propertyEntry(const QString & text) {
 }
 
 void Capacitor::setProp(const QString & prop, const QString & value) {
-	foreach (PropertyDef * propertyDef, m_propertyDefs.keys()) {
+	Q_FOREACH (PropertyDef * propertyDef, m_propertyDefs.keys()) {
 		if (prop.compare(propertyDef->name, Qt::CaseInsensitive) == 0) {
 			m_propertyDefs.insert(propertyDef, value);
 			modelPart()->setLocalProp(propertyDef->name, value);
-			if (m_partLabel) m_partLabel->displayTextsIf();
+			if (m_partLabel != nullptr) m_partLabel->displayTextsIf();
 			return;
 		}
 	}
@@ -167,15 +208,16 @@ void Capacitor::setProp(const QString & prop, const QString & value) {
 	PaletteItem::setProp(prop, value);
 }
 
-void Capacitor::simplePropertyEntry(const QString & text) {
+void Capacitor::simplePropertyEntry(int index) {
 
-	FocusOutComboBox * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
-	if (focusOutComboBox == NULL) return;
+	auto * focusOutComboBox = qobject_cast<FocusOutComboBox *>(sender());
+	if (focusOutComboBox == nullptr) return;
+	QString text = focusOutComboBox->itemText(index);
 
-	foreach (PropertyDef * propertyDef, m_comboBoxes.keys()) {
+	Q_FOREACH (PropertyDef * propertyDef, m_comboBoxes.keys()) {
 		if (m_comboBoxes.value(propertyDef) == focusOutComboBox) {
 			InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-			if (infoGraphicsView) {
+			if (infoGraphicsView != nullptr) {
 				infoGraphicsView->setProp(this, propertyDef->name, "", m_propertyDefs.value(propertyDef, ""), text, true);
 			}
 			break;
@@ -184,7 +226,20 @@ void Capacitor::simplePropertyEntry(const QString & text) {
 }
 
 void Capacitor::getProperties(QHash<QString, QString> & hash) {
-	foreach (PropertyDef * propertyDef, m_propertyDefs.keys()) {
+	Q_FOREACH (PropertyDef * propertyDef, m_propertyDefs.keys()) {
 		hash.insert(propertyDef->name, m_propertyDefs.value(propertyDef));
 	}
+}
+
+QHash<QString, QString> Capacitor::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys)
+{
+	QHash<QString, QString> props = ItemBase::prepareProps(modelPart, wantDebug, keys);
+
+	// ensure capacitance and other properties are after family, if it is a capacitor;
+	if (keys.removeOne("capacitance")) {
+		keys.insert(1, "capacitance");
+		if (keys.removeOne("voltage")) keys.insert(2, "voltage");
+	}
+
+	return props;
 }

@@ -23,14 +23,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QtCore/QString>
 #include <QtCore/QHash>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QDomElement>
-#include <QMatrix>
+#include <QTransform>
 
 class SVGPathLexer
 {
 public:
-	SVGPathLexer(const QString &source);
+	explicit SVGPathLexer(const QString &source);
 	~SVGPathLexer();
 	int lex();
 	QChar currentCommand();
@@ -48,8 +48,8 @@ protected:
 	const QChar *m_chars = nullptr;
 	int m_size = 0;
 	int m_pos = 0;
-	QChar m_current = 0;
-	QChar m_currentCommand = 0;
+	QChar m_current = QChar();
+	QChar m_currentCommand = QChar();
 	double m_currentNumber = 0.0;
 };
 

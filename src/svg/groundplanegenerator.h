@@ -71,7 +71,7 @@ public:
 public:
 	static QString ConnectorName;
 
-signals:
+Q_SIGNALS:
 	void postImageSignal(GroundPlaneGenerator *, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> *);
 
 protected:
@@ -90,7 +90,7 @@ protected:
 	bool tryNextPoint(int x, int y, QImage & image, QList<QPoint> & points);
 	bool collectBorderPoints(QImage & image, QList<QPoint> & points);
 	bool try8(int x, int y, QImage & image, QList<QPoint> & points);
-	bool generateGroundPlaneFn(GPGParams &);
+	bool generateGroundPlaneFn(const GPGParams &);
 
 
 protected:

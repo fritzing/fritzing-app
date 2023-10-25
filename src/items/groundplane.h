@@ -25,9 +25,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 class GroundPlane : public PaletteItem
 {
+	Q_OBJECT
 
 public:
-	GroundPlane( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool doLabel);
+	explicit GroundPlane( ModelPart * modelPart, ViewLayer::ViewID,  const ViewGeometry &, long id, QMenu* itemMenu, bool doLabel);
 
 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	void saveParams();

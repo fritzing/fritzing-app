@@ -19,13 +19,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "layerkinpaletteitem.h"
-#include "../sketch/infographicsview.h"
 #include "../debugdialog.h"
 #include "../layerattributes.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
-#include "../utils/folderutils.h"
-#include "../svg/svgfilesplitter.h"
 #include "../svg/svgtext.h"
 
 #include <qmath.h>
@@ -49,7 +46,7 @@ void LayerKinPaletteItem::initLKPI(LayerAttributes & layerAttributes, const Laye
 QVariant LayerKinPaletteItem::itemChange(GraphicsItemChange change, const QVariant &value)
 {
 	//DebugDialog::debug(QString("lk item change %1 %2").arg(this->id()).arg(change));
-	if (m_layerKinChief) {
+	if (m_layerKinChief != nullptr) {
 		if (change == ItemSelectedChange) {
 			bool selected = value.toBool();
 			if (m_blockItemSelectedChange && m_blockItemSelectedValue == selected) {
@@ -85,7 +82,7 @@ bool LayerKinPaletteItem::ok() {
 }
 
 void LayerKinPaletteItem::updateConnections(bool includeRatsnest, QList<ConnectorItem *> & already) {
-	if (m_layerKinChief) {
+	if (m_layerKinChief != nullptr) {
 		m_layerKinChief->updateConnections(includeRatsnest, already);
 	}
 	else {
@@ -215,6 +212,20 @@ void SchematicTextLayerKinPaletteItem::setTransform2(const QTransform & currTran
 	transformItem(currTransf, false);
 }
 
+QString SchematicTextLayerKinPaletteItem::getTransformedSvg(const QString & svgToTransform, double & rotation) {
+	QTransform chiefTransform = layerKinChief()->transform();      // assume chief already has rotation
+	bool isFlipped = GraphicsUtils::isFlipped(chiefTransform, rotation);
+	QString svg = svgToTransform;
+	if (isFlipped) {
+		svg = flipTextSvg(svg);
+	}
+
+	if (rotation >= 135 && rotation <= 225) {
+		svg = rotate(svg, isFlipped);
+	}
+	return svg;
+}
+
 void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTransf, bool includeRatsnest) {
 	Q_UNUSED(currTransf);
 	Q_UNUSED(includeRatsnest);
@@ -224,36 +235,17 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
 	}
 
 	double rotation;
-	QTransform chiefTransform = layerKinChief()->transform();      // assume chief already has rotation
-	bool isFlipped = GraphicsUtils::isFlipped(chiefTransform.toAffine(), rotation);
-	QString svg;
-	if (isFlipped) {
-		svg = makeFlipTextSvg();
-	}
-
-	if (svg.isEmpty()) {
-		svg = this->property("textSvg").toByteArray();
-	}
-
-	if (rotation >= 135 && rotation <= 225) {
-		svg = vflip(svg, isFlipped);
-	}
+	QString svg = this->property("textSvg").toString();
+	svg = getTransformedSvg(svg, rotation);
 
 	reloadRenderer(svg, true);
 
-	QPointF p = layerKinChief()->sceneBoundingRect().topLeft();
 	QTransform transform;
 	QRectF bounds = boundingRect();
 	transform.translate(bounds.width() / 2, bounds.height() / 2);
 	transform.rotate(rotation);
 	transform.translate(bounds.width() / -2, bounds.height() / -2);
 	this->setTransform(transform);
-
-	//QMatrix m1 = chiefTransform.toAffine();
-	//layerKinChief()->debugInfo("chief " + TextUtils::svgMatrix(m1));
-
-	//m1 = transform.toAffine();
-	//debugInfo("\t " + TextUtils::svgMatrix(m1));
 }
 
 void SchematicTextLayerKinPaletteItem::initTextThings() {
@@ -278,9 +270,7 @@ void SchematicTextLayerKinPaletteItem::initTextThings() {
 	positionTexts(texts);
 }
 
-QString SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
-	QByteArray textSvg = this->property("textSvg").toByteArray();
-
+QString SchematicTextLayerKinPaletteItem::flipTextSvg(const QString & textSvg) {
 	QDomDocument doc;
 	QString errorStr;
 	int errorLine;
@@ -298,11 +288,11 @@ QString SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
 	}
 
 	int ix = 0;
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		QDomElement g = text.ownerDocument().createElement("g");
 		text.parentNode().insertAfter(g, text);
 		g.appendChild(text);
-		QMatrix m = m_textThings[ix++].flipMatrix;
+		QTransform m = m_textThings[ix++].flipMatrix;
 		TextUtils::setSVGTransform(g, m);
 	}
 
@@ -319,24 +309,24 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
 
 	m_textThings.clear();
 
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		text.setTagName("g");
 	}
 
 	QRectF br = boundingRect();
 	QImage image(qCeil(br.width()) * 2, qCeil(br.height()) * 2, QImage::Format_Mono);  // schematic text is so small it doesn't render unless bitmap is double-sized
 
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		TextThing textThing;
 		QRectF viewBox;
-		QMatrix matrix;
+		QTransform matrix;
 		SvgText::renderText(image, text, textThing.minX, textThing.minY, textThing.maxX, textThing.maxY, matrix, viewBox);
 
 		double newX = (image.width() - textThing.maxX) * viewBox.width() / image.width();
 		double oldX = textThing.minX * viewBox.width() / image.width();
 
-		QMatrix inv = matrix.inverted();
-		QMatrix t = QMatrix().translate(newX - oldX, 0);
+		QTransform inv = matrix.inverted();
+		QTransform t = QTransform().translate(newX - oldX, 0);
 		textThing.flipMatrix = matrix * t * inv;
 
 		QRectF r(textThing.minX * viewBox.width() / image.width(),
@@ -350,7 +340,7 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
 		m_textThings.append(textThing);
 	}
 
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		text.setTagName("text");
 	}
 
@@ -360,7 +350,7 @@ void SchematicTextLayerKinPaletteItem::clearTextThings() {
 	m_textThings.clear();
 }
 
-QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlipped) {
+QString SchematicTextLayerKinPaletteItem::rotate(const QString & svg, bool isFlipped) {
 	Q_UNUSED(isFlipped);
 
 	QDomDocument doc;
@@ -380,16 +370,16 @@ QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlip
 	}
 
 	int ix = 0;
-	foreach (QDomElement text, texts) {
+	Q_FOREACH (QDomElement text, texts) {
 		QDomElement g = text.ownerDocument().createElement("g");
 		text.parentNode().insertAfter(g, text);
 		g.appendChild(text);
 		QRectF r = m_textThings[ix].newRect;
 		ix++;
-		QMatrix m;
+		QTransform m;
 		m.translate(r.center().x(), r.center().y());
-		QMatrix inv = m.inverted();
-		QMatrix matrix = inv * QMatrix().rotate(180) * m;
+		QTransform inv = m.inverted();
+		QTransform matrix = inv * QTransform().rotate(180) * m;
 		TextUtils::setSVGTransform(g, matrix);
 	}
 

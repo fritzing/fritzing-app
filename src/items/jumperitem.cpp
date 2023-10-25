@@ -20,10 +20,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "jumperitem.h"
 #include "../connectors/connectoritem.h"
-#include "../fsvgrenderer.h"
 #include "../model/modelpart.h"
 #include "../utils/graphicsutils.h"
-#include "../svg/svgfilesplitter.h"
 #include "../sketch/infographicsview.h"
 #include "../debugdialog.h"
 #include "../layerattributes.h"
@@ -37,12 +35,12 @@ static QHash<ViewLayer::ViewLayerID, QString> Colors;
 
 QString makeWireImage(double w, double h, double r0x, double r0y, double r1x, double r1y, const QString & layerName, const QString & color, double thickness) {
 	return JumperWireLayerTemplate
-	       .arg(w).arg(h)
-	       .arg(w * 1000).arg(h * 1000)
-	       .arg(r0x).arg(r0y).arg(r1x).arg(r1y)
-	       .arg(layerName)
-	       .arg(color)
-	       .arg(thickness);
+		.arg(w).arg(h)
+		.arg(w * 1000).arg(h * 1000)
+		.arg(r0x).arg(r0y).arg(r1x).arg(r1y)
+		.arg(layerName
+		,color)
+		.arg(thickness);
 }
 
 
@@ -67,7 +65,7 @@ void shorten(QRectF r0, QPointF r0c, QPointF r1c, double & r0x, double & r0y, do
 JumperItem::JumperItem( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: PaletteItem(modelPart, viewID,  viewGeometry,  id, itemMenu, doLabel)
 {
-	m_originalClickItem = NULL;
+	m_originalClickItem = nullptr;
 	if (Colors.isEmpty()) {
 		Colors.insert(ViewLayer::Copper0, ViewLayer::Copper0Color);
 		Colors.insert(ViewLayer::Copper1, ViewLayer::Copper1Color);
@@ -75,7 +73,7 @@ JumperItem::JumperItem( ModelPart * modelPart, ViewLayer::ViewID viewID,  const 
 		Colors.insert(ViewLayer::Silkscreen1, ViewLayer::Silkscreen1Color);
 	}
 
-	m_otherItem = m_connector0 = m_connector1 = m_dragItem = NULL;
+	m_otherItem = m_connector0 = m_connector1 = m_dragItem = nullptr;
 	if (Copper0LayerTemplate.isEmpty()) {
 		QFile file(":/resources/templates/jumper_copper0LayerTemplate.txt");
 		if (file.open(QFile::ReadOnly)) {
@@ -156,7 +154,7 @@ bool JumperItem::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers,
 	bool result = PaletteItem::setUpImage(modelPart, viewLayers, layerAttributes);
 
 	if (layerAttributes.doConnectors) {
-		foreach (ConnectorItem * item, cachedConnectorItems()) {
+		Q_FOREACH (ConnectorItem * item, cachedConnectorItems()) {
 			item->setCircular(true);
 			if (item->connectorSharedName().contains('0')) {
 				m_connector0 = item;
@@ -202,7 +200,7 @@ bool JumperItem::mousePressEventK(PaletteItemBase * originalItem, QGraphicsScene
 {
 	m_originalClickItem = originalItem;
 	mousePressEvent(event);
-	return (m_dragItem);
+	return (m_dragItem) != nullptr;
 }
 
 void JumperItem::mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
@@ -220,14 +218,14 @@ void JumperItem::mouseReleaseEventK(PaletteItemBase * originalItem, QGraphicsSce
 void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
 	PaletteItemBase * originalItem = m_originalClickItem;
-	m_originalClickItem = NULL;
+	m_originalClickItem = nullptr;
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infographics && infographics->spaceBarIsPressed()) {
+	if ((infographics != nullptr) && infographics->spaceBarIsPressed()) {
 		event->ignore();
 		return;
 	}
 
-	m_dragItem = NULL;
+	m_dragItem = nullptr;
 	QRectF rect = m_connector0->rect();
 	double dx = m_connectorTL.x();
 	double dy = m_connectorTL.y();
@@ -246,7 +244,7 @@ void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 			m_otherItem = m_connector0;
 		}
 		else {
-			if (originalItem) return ItemBase::mousePressEvent(event);
+			if (originalItem != nullptr) return ItemBase::mousePressEvent(event);
 			return PaletteItem::mousePressEvent(event);
 		}
 	}
@@ -260,13 +258,13 @@ void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void JumperItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-	if (m_dragItem == NULL) return;
+	if (m_dragItem == nullptr) return;
 
 	// TODO: make sure the two connectors don't overlap
 
 	QPointF d = event->scenePos() - m_dragStartScenePos;
 	QPointF p = m_dragStartConnectorPos + d;
-	emit alignMe(this, p);
+	Q_EMIT alignMe(this, p);
 	QPointF myPos(qMin(p.x(), m_otherPos.x()) - m_connectorTL.x(),
 	              qMin(p.y(), m_otherPos.y()) - m_connectorTL.y());
 	this->setPos(myPos);
@@ -274,14 +272,14 @@ void JumperItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 	r.moveTo(mapFromScene(m_otherPos));
 	m_otherItem->setRect(r);
 	ConnectorItem * cross = m_otherItem->getCrossLayerConnectorItem();
-	if (cross) cross->setRect(r);
+	if (cross != nullptr) cross->setRect(r);
 
 	r = m_dragItem->rect();
 	r.moveTo(mapFromScene(p));
 	m_dragItem->setRect(r);
 
 	cross = m_dragItem->getCrossLayerConnectorItem();
-	if (cross) cross->setRect(r);
+	if (cross != nullptr) cross->setRect(r);
 
 	resize();
 	QList<ConnectorItem *> already;
@@ -290,7 +288,7 @@ void JumperItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 void JumperItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-	m_dragItem = NULL;
+	m_dragItem = nullptr;
 	PaletteItem::mouseReleaseEvent(event);
 }
 
@@ -319,11 +317,12 @@ QString JumperItem::makeSvg(ViewLayer::ViewLayerID viewLayerID)
 	case ViewLayer::Copper0:
 	case ViewLayer::Copper1:
 		return Copper0LayerTemplate
-		       .arg(w).arg(h)
-		       .arg(w * GraphicsUtils::StandardFritzingDPI).arg(h * GraphicsUtils::StandardFritzingDPI)
-		       .arg(r0x).arg(r0y).arg(r1x).arg(r1y)
-		       .arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID))
-		       .arg(Colors.value(viewLayerID));
+				.arg(w).arg(h)
+				.arg(w * GraphicsUtils::StandardFritzingDPI).arg(h * GraphicsUtils::StandardFritzingDPI)
+				.arg(r0x).arg(r0y).arg(r1x).arg(r1y)
+				.arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID)
+					,Colors.value(viewLayerID)
+				);
 
 	//case ViewLayer::Silkscreen0:
 	case ViewLayer::Silkscreen1:
@@ -358,8 +357,8 @@ void JumperItem::resize(QPointF p0, QPointF p1) {
 void JumperItem::resize() {
 	if (m_viewID != ViewLayer::PCBView) return;
 
-	if (m_connector0 == NULL) return;
-	if (m_connector1 == NULL) return;
+	if (m_connector0 == nullptr) return;
+	if (m_connector1 == nullptr) return;
 
 	prepareGeometryChange();
 
@@ -367,7 +366,7 @@ void JumperItem::resize() {
 	//DebugDialog::debug(s);
 	resetRenderer(s);
 
-	foreach (ItemBase * itemBase, m_layerKin) {
+	Q_FOREACH (ItemBase * itemBase, m_layerKin) {
 		switch(itemBase->viewLayerID()) {
 		case ViewLayer::PartImage:
 		case ViewLayer::Copper1:
@@ -417,11 +416,11 @@ void JumperItem::resizeAux(double r0x, double r0y, double r1x, double r1y) {
 	m_connector0->setRect(r0);
 	m_connector1->setRect(r1);
 	ConnectorItem * cc0 = m_connector0->getCrossLayerConnectorItem();
-	if (cc0) {
+	if (cc0 != nullptr) {
 		cc0->setRect(r0);
 	}
 	ConnectorItem * cc1 = m_connector1->getCrossLayerConnectorItem();
-	if (cc1) {
+	if (cc1 != nullptr) {
 		cc1->setRect(r1);
 	}
 	resize();
@@ -479,7 +478,7 @@ bool JumperItem::hasCustomSVG() {
 }
 
 bool JumperItem::inDrag() {
-	return m_dragItem;
+	return m_dragItem != nullptr;
 }
 
 void JumperItem::loadLayerKin( const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
@@ -493,15 +492,15 @@ ItemBase::PluralType JumperItem::isPlural() {
 
 void JumperItem::addedToScene(bool temporary) {
 
-	if (m_connector0 == NULL) return;
-	if (m_connector1 == NULL) return;
+	if (m_connector0 == nullptr) return;
+	if (m_connector1 == nullptr) return;
 
 	ConnectorItem * cc0 = m_connector0->getCrossLayerConnectorItem();
-	if (cc0) {
+	if (cc0 != nullptr) {
 		cc0->setRect(m_connector0->rect());
 	}
 	ConnectorItem * cc1 = m_connector1->getCrossLayerConnectorItem();
-	if (cc1) {
+	if (cc1 != nullptr) {
 		cc1->setRect(m_connector1->rect());
 	}
 

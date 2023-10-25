@@ -47,6 +47,8 @@ struct PropThing {
 	QPointer<QVBoxLayout> m_layout;
 };
 
+class ScaledIconFrame;
+
 class TagLabel : public QLabel {
 	Q_OBJECT
 
@@ -64,7 +66,9 @@ public:
 	HtmlInfoView(QWidget * parent = 0);
 	~HtmlInfoView();
 
-	QSize sizeHint() const;
+	void resizeEvent(QResizeEvent *event) override;
+
+	QSize sizeHint() const override;
 	void setContent(const QString& html);
 
 	ItemBase *currentItem();
@@ -86,16 +90,12 @@ public:
 	void init(bool tinyMode);
 
 public:
-	static const int STANDARD_ICON_IMG_WIDTH;
-	static const int STANDARD_ICON_IMG_HEIGHT;
-
-	static void cleanup();
 	static QHash<QString, QString> getPartProperties(ModelPart * modelPart, ItemBase * itemBase, bool wantDebug, QStringList & keys);
 
-signals:
+Q_SIGNALS:
 	void clickObsoleteSignal();
 
-protected slots:
+protected Q_SLOTS:
 	void setContent();
 	void setInstanceTitle();
 	void instanceTitleEnter();
@@ -120,6 +120,7 @@ protected:
 	void setNullContent();
 	void setUpTitle(ItemBase *);
 	void setUpIcons(ItemBase *, bool swappingEnabled);
+	void addSpice(ModelPart * modelPart);
 	void addTags(ModelPart * modelPart);
 	void partTitle(const QString & title, const QString & version, const QString & url, bool obsolete);
 	void displayProps(ModelPart * modelPart, ItemBase * itemBase, bool swappingEnabled);
@@ -141,18 +142,17 @@ protected:
 	QPointer<ItemBase> m_lastItemBase;
 	bool m_lastSwappingEnabled;						// previous item (selected)
 	class FLineEdit * m_titleEdit;
-	QLabel * m_icon1;
-	QLabel * m_icon2;
-	QLabel * m_icon3;
 	QLabel * m_partTitle;
 	QLabel * m_partUrl;
 	QLabel * m_partVersion;
+	QLabel * m_spiceTextLabel;
 	QLabel * m_tagsTextLabel;
 	QLabel * m_connDescr;
 	QLabel * m_connName;
 	QLabel * m_connType;
 	QLabel * m_propLabel;
 	QLabel * m_placementLabel;
+	QLabel * m_spiceLabel;
 	QLabel * m_tagLabel;
 	QLabel * m_connLabel;
 	QLabel * m_layerLabel;
@@ -184,6 +184,7 @@ protected:
 	ItemBase * m_lastTitleItemBase;
 	QString m_lastPartTitle;
 	QString m_lastPartVersion;
+	ModelPart * m_lastSpiceModelPart;
 	ModelPart * m_lastTagsModelPart;
 	int m_lastConnectorItemCount;
 	ConnectorItem * m_lastConnectorItem;
@@ -192,6 +193,11 @@ protected:
 	ItemBase * m_lastPropsItemBase;
 	bool m_lastPropsSwappingEnabled;
 	bool m_tinyMode;
+
+private:
+	ScaledIconFrame * m_iconFrame;
+	QSize m_lastSizeWithScrollbarsAlwaysOn;
+
 };
 
 #endif

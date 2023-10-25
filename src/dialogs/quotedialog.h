@@ -50,7 +50,7 @@ public:
 		HOVER
 	};
 
-signals:
+Q_SIGNALS:
 	void clicked();
 
 protected:
@@ -80,9 +80,9 @@ protected:
 	static void initCounts();
 
 public:
-	static const int MessageCount = 4;
+	static constexpr int MessageCount = 4;
 
-protected slots:
+protected Q_SLOTS:
 	void visitFritzingFab();
 
 protected:

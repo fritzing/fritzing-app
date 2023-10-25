@@ -39,7 +39,7 @@ class Note : public ItemBase
 	Q_OBJECT
 
 public:
-	Note(class ModelPart*, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu);
+	explicit Note(class ModelPart*, ViewLayer::ViewID, const ViewGeometry &, long id, QMenu * itemMenu);
 
 	void saveGeometry();
 	bool itemMoved();
@@ -74,7 +74,7 @@ protected:
 	QString retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
-protected slots:
+protected Q_SLOTS:
 	void contentsChangeSlot(int position, int charsAdded, int charsRemoved);
 	void contentsChangedSlot();
 	void linkDialog();
@@ -100,6 +100,18 @@ protected:
 	int m_charsAdded;
 	int m_charsPosition;
 
+};
+
+class NoteGraphicsTextItem : public QGraphicsTextItem
+{
+	Q_OBJECT
+public:
+	NoteGraphicsTextItem(QGraphicsItem * parent = NULL);
+	void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
+
+protected:
+	void focusInEvent(QFocusEvent *);
+	void focusOutEvent(QFocusEvent *);
 };
 
 class LinkDialog : public QDialog

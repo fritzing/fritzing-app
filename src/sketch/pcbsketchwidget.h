@@ -44,7 +44,7 @@ public:
 	void selectAllExcludedTraces();
 	void selectAllIncludedTraces();
 	bool hasAnyNets();
-	void forwardRoutingStatus(const RoutingStatus &);
+	void forwardRoutingStatusForCommand(const RoutingStatus &);
 	void addDefaultParts();
 	void showEvent(QShowEvent * event);
 	void initWire(Wire *, int penWidth);
@@ -77,7 +77,7 @@ public:
 	bool routeBothSides();
 	bool sameElectricalLayer2(ViewLayer::ViewLayerID, ViewLayer::ViewLayerID);
 	void changeTraceLayer(ItemBase *, bool force, QUndoCommand * parentCommand);
-	void changeLayer(long id, double z, ViewLayer::ViewLayerID viewLayerID);
+	void changeLayerForCommand(long id, double z, ViewLayer::ViewLayerID viewLayerID);
 	bool acceptsTrace(const ViewGeometry & viewGeometry);
 	ItemBase * placePartDroppedInOtherView(ModelPart *, ViewLayer::ViewLayerPlacement, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin);
 	void autorouterSettings();
@@ -96,7 +96,7 @@ public:
 	QString characterizeGroundFill(ViewLayer::ViewLayerID);
 	ViewGeometry::WireFlag getTraceFlag();
 	void hideCopperLogoItems(QList<ItemBase *> &);
-	void restoreCopperLogoItems(QList<ItemBase *> &);
+	void restoreItemVisibility(QList<ItemBase *> &);
 	void hideHoles(QList<ItemBase *> &);
 	QString makePasteMask(const QString & svgMask, ItemBase * board, double dpi, const LayerList & maskLayerIDs);
 	int selectAllItemType(ModelPart::ItemType, const QString & typeName);
@@ -119,10 +119,12 @@ public:
 	void setViewFromBelow(bool);
 	bool dropOnBottom();
 	ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
+	void setPartLabelFont(QString fontFamily);
+	QString getPartLabelFont();
 
-public slots:
+public Q_SLOTS:
 	void resizeBoard(double w, double h, bool doEmit);
-	void showLabelFirstTime(long itemID, bool show, bool doEmit);
+	void showLabelFirstTimeForCommand(long itemID, bool show, bool doEmit);
 	void changeBoardLayers(int layers, bool doEmit);
 	ItemBase * resizeBoard(long id, double w, double h);
 
@@ -148,7 +150,6 @@ protected:
 	bool canCreateWire(Wire * dragWire, ConnectorItem * from, ConnectorItem * to);
 	bool bothEndsConnected(Wire * wire, ViewGeometry::WireFlags, ConnectorItem * oneEnd, QList<Wire *> & wires, QList<ConnectorItem *> & partConnectorItems);
 	void setUpColor(ConnectorItem * fromConnectorItem, ConnectorItem * toConnectorItem, Wire * wire, QUndoCommand * parentCommand);
-	ConnectorItem * findNearestPartConnectorItem(ConnectorItem * fromConnectorItem);
 	bool bothEndsConnectedAux(Wire * wire, ViewGeometry::WireFlags flag, ConnectorItem * oneEnd, QList<Wire *> & wires, QList<ConnectorItem *> & partConnectorItems, QList<Wire *> & visited);
 	void getLabelFont(QFont &, QColor &, ItemBase *);
 	double defaultGridSizeInches();
@@ -185,20 +186,15 @@ protected:
 	void requestQuoteSoon();
 	double getKeepoutMils();
 	bool updateOK(ConnectorItem *, ConnectorItem *);
+	QList<QGraphicsItem *> getCollidingItems(QGraphicsItem *target, QGraphicsItem *other);
 
-signals:
+Q_SIGNALS:
 	void subSwapSignal(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerPlacement, long & newID, QUndoCommand * parentCommand);
 	void boardDeletedSignal();
 	void groundFillSignal();
 	void copperFillSignal();
 
-protected:
-	static void calcDistances(Wire * wire, QList<ConnectorItem *> & ends);
-	static void clearDistances();
-	static int calcDistance(Wire * wire, ConnectorItem * end, int distance, QList<Wire *> & distanceWires, bool & fromConnector0);
-	static int calcDistanceAux(ConnectorItem * from, ConnectorItem * to, int distance, QList<Wire *> & distanceWires);
-
-protected slots:
+protected Q_SLOTS:
 	void alignJumperItem(class JumperItem *, QPointF &);
 	void wireSplitSlot(class Wire*, QPointF newPos, QPointF oldPos, const QLineF & oldLine);
 	void postImageSlot(class GroundPlaneGenerator *, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> *);
@@ -216,6 +212,7 @@ protected:
 	QPointer<class QuoteDialog> m_quoteDialog;
 	QPointer<class QuoteDialog> m_rolloverQuoteDialog;
 	QTimer m_requestQuoteTimer;
+	QString m_partLabelFontFamily;
 
 protected:
 	static QSizeF m_jumperItemSize;

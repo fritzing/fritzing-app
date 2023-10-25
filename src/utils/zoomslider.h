@@ -44,10 +44,10 @@ public:
 	void mouseMoveEvent(QMouseEvent *);
 	void mouseReleaseEvent(QMouseEvent *);
 
-signals:
+Q_SIGNALS:
 	void clicked();
 
-protected slots:
+protected Q_SLOTS:
 	void repeat();
 
 protected:
@@ -72,7 +72,7 @@ public:
 	void zoomOut();
 	void zoomIn();
 
-protected slots:
+protected Q_SLOTS:
 	//void emitZoomChanged();
 	//void updateBackupFieldsIfOptionSelected(int index);
 	void sliderValueChanged(int newValue);
@@ -104,7 +104,7 @@ protected:
 public:
 	static double ZoomStep;
 
-signals:
+Q_SIGNALS:
 	void zoomChanged(double newZoom);
 };
 

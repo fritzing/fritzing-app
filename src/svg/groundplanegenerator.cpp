@@ -35,6 +35,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSvgRenderer>
 #include <QDate>
 #include <QTextStream>
+#include <QtGlobal>
 #include <qmath.h>
 
 #include <boost/math/special_functions/relative_difference.hpp>
@@ -45,9 +46,9 @@ using boost::math::epsilon_difference;
 
 // factor for epsion to compare floating point numbers
 // 5 was arbitrary choosen
-static const double reldif = 5.0;
+static constexpr double reldif = 5.0;
 
-static const double BORDERINCHES = 0.04;
+static constexpr double BORDERINCHES = 0.04;
 
 const QString GroundPlaneGenerator::KeepoutSettingName("GPG_Keepout");
 const double GroundPlaneGenerator::KeepoutDefaultMils = 10;
@@ -257,16 +258,20 @@ bool GroundPlaneGenerator::generateGroundPlane(const QString & boardSvg, QSizeF 
 	params.board = board;
 	params.res = res;
 	params.color = color;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QFuture<bool> future = QtConcurrent::run(this, &GroundPlaneGenerator::generateGroundPlaneFn, params);
+#else
+	QFuture<bool> future = QtConcurrent::run(&GroundPlaneGenerator::generateGroundPlaneFn, this, params);
+#endif
 	while (!future.isFinished()) {
 		ProcessEventBlocker::processEvents(200);
 	}
 	return future.result();
 }
 
-bool GroundPlaneGenerator::generateGroundPlaneFn(GPGParams & params)
+bool GroundPlaneGenerator::generateGroundPlaneFn(const GPGParams &constParams)
 {
-
+	GPGParams params = constParams;
 	double bWidth, bHeight;
 	QList<QRectF> rects;
 	QImage * image = generateGroundPlaneAux(params, bWidth, bHeight, rects);
@@ -275,7 +280,7 @@ bool GroundPlaneGenerator::generateGroundPlaneFn(GPGParams & params)
 	double pixelFactor = GraphicsUtils::StandardFritzingDPI / params.res;
 	scanImage(*image, bWidth, bHeight, pixelFactor, params.res, params.color, true, true, QSizeF(.05, .05), 1 / GraphicsUtils::SVGDPI, QPointF(0,0));
 
-	foreach (QRectF r, rects) {
+	Q_FOREACH (QRectF r, rects) {
 		// add the rects separately as tiny SVGs which don't get clipped (since they are connected)
 		QList<QPolygon> polygons;
 		QPolygon polygon;
@@ -320,7 +325,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	QDomDocument doc;
 	doc.setContent(params.svg, &errorStr, &errorLine, &errorColumn);
 	QDomElement root = doc.documentElement();
-	SvgFileSplitter::forceStrokeWidth(root, 2 * params.keepoutMils, "#000000", true, true);
+	SvgFileSplitter::forceStrokeWidth(root, 2 * params.keepoutMils, "#000000", true, false);
 	QByteArray copperByteArray = doc.toByteArray(0);
 
 	//QFile file1("testGroundFillCopper.svg");
@@ -336,7 +341,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	QRectF br =  params.board->sceneBoundingRect();
 	bWidth = params.res * br.width() / GraphicsUtils::SVGDPI;
 	bHeight = params.res * br.height() / GraphicsUtils::SVGDPI;
-	QImage * image = new QImage(qMax(svgWidth, bWidth), qMax(svgHeight, bHeight), QImage::Format_Mono); //
+	auto * image = new QImage(qMax(svgWidth, bWidth), qMax(svgHeight, bHeight), QImage::Format_Mono); //
 	image->setDotsPerMeterX(params.res * GraphicsUtils::InchesPerMeter);
 	image->setDotsPerMeterY(params.res * GraphicsUtils::InchesPerMeter);
 	image->fill(0x0);
@@ -401,7 +406,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	image->save(FolderUtils::getTopLevelUserDataStorePath() + "/testGroundFillCopper.png");
 #endif
 
-	emit postImageSignal(this, image, &boardImage, params.board, &rects);
+	Q_EMIT postImageSignal(this, image, &boardImage, params.board, &rects);
 
 	return image;
 }
@@ -414,10 +419,10 @@ void GroundPlaneGenerator::scanImage(QImage & image, double bWidth, double bHeig
 	scanLines(image, bWidth, bHeight, rects);
 	QList< QList<int> * > pieces;
 	splitScanLines(rects, pieces);
-	foreach (QList<int> * piece, pieces) {
+	Q_FOREACH (QList<int> * piece, pieces) {
 		QList<QPolygon> polygons;
 		QList<QRect> newRects;
-		foreach (int i, *piece) {
+		Q_FOREACH (int i, *piece) {
 			QRect r = rects.at(i);
 			newRects.append(QRect(r.x() * pixelFactor, r.y() * pixelFactor, (r.width() * pixelFactor) + 1, pixelFactor + 1));    // + 1 is for off-by-one converting rects to polys
 		}
@@ -561,13 +566,13 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 					if (++gotCount > 1) {
 						QList<int> * piecei = nullptr;
 						QList<int> * piecej = nullptr;
-						foreach (QList<int> * piece, pieces) {
+						Q_FOREACH (QList<int> * piece, pieces) {
 							if (piece->contains(j)) {
 								piecej = piece;
 								break;
 							}
 						}
-						foreach (QList<int> * piece, pieces) {
+						Q_FOREACH (QList<int> * piece, pieces) {
 							if (piece->contains(i)) {
 								piecei = piece;
 								break;
@@ -575,7 +580,7 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 						}
 						if (piecei != nullptr && piecej != nullptr) {
 							if (piecei != piecej) {
-								foreach (int b, *piecej) {
+								Q_FOREACH (int b, *piecej) {
 									piecei->append(b);
 								}
 								piecej->clear();
@@ -590,7 +595,7 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 					}
 					else {
 						// put the candidate (i) in j's piece
-						foreach (QList<int> * piece, pieces) {
+						Q_FOREACH (QList<int> * piece, pieces) {
 							if (piece->contains(j)) {
 								piece->append(i);
 								break;
@@ -601,7 +606,7 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 
 				if (gotCount == 0) {
 					// candidate is an orphan line at this point
-					QList<int> * piece = new QList<int>;
+					auto * piece = new QList<int>;
 					piece->append(i);
 					pieces.append(piece);
 				}
@@ -610,7 +615,7 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 		}
 		else {
 			for (int i = first; i <= last; i++) {
-				QList<int> * piece = new QList<int>;
+				auto * piece = new QList<int>;
 				piece->append(i);
 				pieces.append(piece);
 			}
@@ -620,8 +625,8 @@ void GroundPlaneGenerator::splitScanLines(QList<QRect> & rects, QList< QList<int
 		prevLast = last;
 	}
 
-	foreach (QList<int> * piece, pieces) {
-		qSort(*piece);
+	Q_FOREACH (QList<int> * piece, pieces) {
+		std::sort(piece->begin(), piece->end());
 	}
 }
 
@@ -681,7 +686,7 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 					if (unique) {
 						// add this to the previous chunk
 						gotOne = true;
-						foreach (QList<int> * piece, pieces) {
+						Q_FOREACH (QList<int> * piece, pieces) {
 							if (piece->contains(holdPrevs[index])) {
 								piece->append(i);
 								break;
@@ -693,7 +698,7 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 				if (!gotOne) {
 					// start a new chunk
 					holdPrevs[index] = -1;						// allow others to capture the prev
-					QList<int> * piece = new QList<int>;
+					auto * piece = new QList<int>;
 					piece->append(i);
 					pieces.append(piece);
 				}
@@ -701,7 +706,7 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 		}
 		else {
 			for (int i = first; i <= last; i++) {
-				QList<int> * piece = new QList<int>;
+				auto * piece = new QList<int>;
 				piece->append(i);
 				pieces.append(piece);
 			}
@@ -711,7 +716,7 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 		prevLast = last;
 	}
 
-	foreach (QList<int> * piece, pieces) {
+	Q_FOREACH (QList<int> * piece, pieces) {
 		//QPolygon poly(rects.at(piece->at(0)), true);
 		//for (int i = 1; i < piece->length(); i++) {
 		//QPolygon temp(rects.at(piece->at(i)), true);
@@ -723,8 +728,8 @@ void GroundPlaneGenerator::joinScanLines(QList<QRect> & rects, QList<QPolygon> &
 		QPolygon poly;
 
 		// left side
-		for (int i = 0; i < piece->length(); i++) {
-			QRect r = rects.at(piece->at(i));
+		for (int i : *piece) {
+			QRect r = rects.at(i);
 			if ((poly.count() > 0) && (poly.last().x() == r.left())) {
 				poly.pop_back();
 			}
@@ -788,8 +793,8 @@ QString GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res
 		minX = minY;
 		int maxX = maxY;
 
-		foreach (QPolygon polygon, polygons) {
-			foreach (QPoint p, polygon) {
+		Q_FOREACH (QPolygon polygon, polygons) {
+			Q_FOREACH (QPoint p, polygon) {
 				if (p.x() > maxX) maxX = p.x();
 				if (p.x() < minX) minX = p.x();
 				if (p.y() > maxY) maxY = p.y();
@@ -825,7 +830,7 @@ QString GroundPlaneGenerator::makePolySvg(QList<QPolygon> & polygons, double res
 		makeConnector(polygons, res, pixelFactor, colorString, minX, minY, pSvg);
 	}
 	else {
-		foreach (QPolygon poly, polygons) {
+		Q_FOREACH (QPolygon poly, polygons) {
 			pSvg += makeOnePoly(poly, colorString, "", minX, minY);
 		}
 	}
@@ -850,7 +855,7 @@ void GroundPlaneGenerator::makeConnector(QList<QPolygon> & polygons, double res,
 	double targetRadius = targetDiameter / 2;
 	double targetRadiusAnd = targetDiameterAnd / 2;
 	double targetRadiusAndSquared = targetRadiusAnd * targetRadiusAnd;
-	foreach (QPolygon poly, polygons) {
+	Q_FOREACH (QPolygon poly, polygons) {
 		QRect boundingRect = poly.boundingRect();
 		if (boundingRect.width() < targetDiameterAnd) continue;
 		if (boundingRect.height() < targetDiameterAnd) continue;
@@ -877,7 +882,7 @@ void GroundPlaneGenerator::makeConnector(QList<QPolygon> & polygons, double res,
 				if (!poly.containsPoint(QPoint(qRound(x), qRound(y)), Qt::OddEvenFill)) continue;
 
 				bool gotOne = true;
-				foreach (QLineF line, polyLines) {
+				Q_FOREACH (QLineF line, polyLines) {
 					double distance, dx, dy;
 					bool atEndpoint;
 					GraphicsUtils::distanceFromLine(x, y, line.p1().x(), line.p1().y(), line.p2().x(), line.p2().y(),
@@ -890,7 +895,7 @@ void GroundPlaneGenerator::makeConnector(QList<QPolygon> & polygons, double res,
 
 				if (!gotOne) continue;
 
-				foreach (QPolygon poly, polygons) {
+				Q_FOREACH (QPolygon poly, polygons) {
 					pSvg += makeOnePoly(poly, colorString, "", minX, minY);
 				}
 
@@ -912,7 +917,7 @@ void GroundPlaneGenerator::makeConnector(QList<QPolygon> & polygons, double res,
 	int useIndex = -1;
 	QList<double> areas;
 	double divisor = res * pixelFactor * res * pixelFactor;
-	foreach (QPolygon poly, polygons) {
+	Q_FOREACH (QPolygon poly, polygons) {
 		areas.append(calcArea(poly) / divisor);
 	}
 
@@ -932,7 +937,7 @@ void GroundPlaneGenerator::makeConnector(QList<QPolygon> & polygons, double res,
 	}
 	if (useIndex < 0) {
 		pSvg += QString("<g id='%1'>\n").arg(ConnectorName);
-		foreach (QPolygon poly, polygons) {
+		Q_FOREACH (QPolygon poly, polygons) {
 			pSvg += makeOnePoly(poly, colorString, "", minX, minY);
 		}
 		pSvg += "</g>";
@@ -970,7 +975,7 @@ QString GroundPlaneGenerator::makeOnePoly(const QPolygon & poly, const QString &
 	}
 	QString polyString = QString("<polygon fill='%1' stroke='none' stroke-width='0' %2 points='\n").arg(colorString, idString);
 	int space = 0;
-	foreach (QPoint p, poly) {
+	Q_FOREACH (QPoint p, poly) {
 		polyString += QString("%1,%2 %3").arg(p.x() - minX).arg(p.y() - minY).arg((++space % 8 == 0) ?  "\n" : "");
 	}
 	polyString += "'/>\n";
@@ -1084,7 +1089,7 @@ void GroundPlaneGenerator::scanOutline(QImage & image, double bWidth, double bHe
 	removeRedundant(points);
 
 	QPolygon polygon;
-	foreach(QPoint p, points) {
+	Q_FOREACH(QPoint p, points) {
 		polygon.append(QPoint(p.x() * pixelFactor, p.y() * pixelFactor));
 	}
 
@@ -1121,7 +1126,7 @@ bool GroundPlaneGenerator::tryNextPoint(int x, int y, QImage & image, QList<QPoi
 	if (x >= image.width()) return false;
 	if (y >= image.height()) return false;
 
-	foreach (QPoint p, points) {
+	Q_FOREACH (QPoint p, points) {
 		if (p.x() == x && p.y() == y) {
 			// already visited
 			return false;
@@ -1223,7 +1228,7 @@ QString GroundPlaneGenerator::mergeSVGs(const QString & initialSVG, const QStrin
 	if (!initialSVG.isEmpty()) {
 		TextUtils::mergeSvg(doc, initialSVG, layerName);
 	}
-	foreach (QString newSvg, m_newSVGs) {
+	Q_FOREACH (QString newSvg, m_newSVGs) {
 		TextUtils::mergeSvg(doc, newSvg, layerName);
 	}
 	return TextUtils::mergeSvgFinish(doc);

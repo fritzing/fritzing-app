@@ -33,18 +33,24 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QProcess>
 #include <QDockWidget>
 #include <QXmlStreamWriter>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QProxyStyle>
 #include <QStyle>
 #include <QStylePainter>
 #include <QPrinter>
+#include <QNetworkAccessManager>
 
 #include "fritzingwindow.h"
 #include "sketchareawidget.h"
+#include "getspice.h"
 #include "../viewlayer.h"
+#include "../project_properties.h"
 #include "../program/programwindow.h"
 #include "../svg/svg2gerber.h"
 #include "../routingstatus.h"
+#include "../simulation/simulator.h"
+#include "../model/modelpart.h"
+#include "../partseditor/peutils.h"
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -67,7 +73,7 @@ public:
 
 	//int addTab(QWidget * page, const QIcon & icon, const QIcon & hoverIcon, const QIcon & inactiveIcon, const QString & label);
 
-protected slots:
+protected Q_SLOTS:
 	//void tabIndexChanged(int index);
 
 protected:
@@ -85,26 +91,6 @@ public:
 
 protected:
 	bool m_firstTime;
-};
-
-class SwapTimer : public QTimer
-{
-	Q_OBJECT
-
-public:
-	SwapTimer();
-
-	void setAll(const QString & family, const QString & prop, QMap<QString, QString> &  propsMap, ItemBase *);
-	const QString & family();
-	const QString & prop();
-	QMap<QString, QString> propsMap();
-	ItemBase * itemBase();
-
-protected:
-	QString m_family;
-	QString m_prop;
-	QMap<QString, QString> m_propsMap;
-	QPointer <ItemBase> m_itemBase;
 };
 
 struct GridSizeThing
@@ -160,6 +146,9 @@ class MainWindow : public FritzingWindow
 	Q_OBJECT
 	Q_PROPERTY(int fireQuoteDelay READ fireQuoteDelay WRITE setFireQuoteDelay DESIGNABLE true)
 
+	void setEnableSubmenu(QMenu *menu, bool value);
+	void save_text_file(QString text, QString actionType, QString dialogTitle, QString differentiator, QString errorMessage);
+
 public:
 	MainWindow(class ReferenceModel *referenceModel, QWidget * parent);
 	MainWindow(QFile & fileToLoad);
@@ -204,7 +193,7 @@ public:
 	class PCBSketchWidget * pcbView();
 	void noBackup();
 	void swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement, QMap<QString, QString> & propsMap);
-	void swapLayers(ItemBase * itemBase, int layers, const QString & msg, int delay);
+	void swapLayers(ItemBase * itemBase, int layers, const QString & msg);
 	bool saveAsAux(const QString & fileName);
 	void swapObsolete(bool displayFeedback, QList<ItemBase *> &);
 	QList<ItemBase *> selectAllObsolete(bool displayFeedback);
@@ -228,6 +217,11 @@ public:
 	void setFireQuoteDelay(int);
 	void setInitialTab(int);
 	void noSchematicConversion();
+	QString getExportBOM_CSV();
+	QString getSpiceNetlist(QString, QList< QList<class ConnectorItem *>* >&, QSet<class ItemBase *>& );
+	bool isSimulatorEnabled();
+	void enableSimulator(bool);
+	void triggerSimulator();
 
 public:
 	static void initNames();
@@ -235,15 +229,16 @@ public:
 	static void setAutosavePeriod(int);
 	static void setAutosaveEnabled(bool);
 
-signals:
+Q_SIGNALS:
 	void alienPartsDismissed();
 	void mainWindowMoved(QWidget *);
 	void changeActivationSignal(bool activate, QWidget * originator);
 	void externalProcessSignal(QString & name, QString & path, QStringList & args);
 
-public slots:
+public Q_SLOTS:
 	void ensureClosable();
 	QList<ModelPart*> loadBundledPart(const QString &fileName, bool addToBin);
+	QList<ModelPart *> loadPart(const QString &fileName, bool addToBin);
 	void acceptAlienFiles();
 	void statusMessage(QString message, int timeout);
 	void showPCBView();
@@ -266,8 +261,9 @@ public slots:
 	void setGroundFillKeepout();
 	void oldSchematicsSlot(const QString & filename, bool & useOldSchematics);
 	void showWelcomeView();
+	void putItemByModuleID(const QString & moduleID);
 
-protected slots:
+protected Q_SLOTS:
 	void mainLoad();
 	void revert();
 	void openRecentOrExampleFile();
@@ -400,6 +396,7 @@ protected slots:
 	void startSaveInstancesSlot(const QString & fileName, ModelPart *, QXmlStreamWriter &);
 	void loadedViewsSlot(class ModelBase *, QDomElement & views);
 	void loadedRootSlot(const QString & filename, ModelBase *, QDomElement & views);
+	void loadedProjectPropertiesSlot(const QDomElement & projectProperties);
 	void obsoleteSMDOrientationSlot();
 	void exportNormalizedSVG();
 	void exportNormalizedFlattenedSVG();
@@ -437,8 +434,6 @@ protected slots:
 	void cursorLocationSlot(double, double, double=0.0, double=0.0);
 	void locationLabelClicked();
 	void swapSelectedMap(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase *);
-	void swapSelectedDelay(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase *);
-	void swapSelectedTimeout();
 	void filenameIfSlot(QString & filename);
 	void openURL();
 	void setActiveWire(class Wire *);
@@ -459,6 +454,7 @@ protected slots:
 	void setViewFromAbove();
 	void updateWelcomeViewRecentList(bool doEmit = true);
 	virtual void initZoom();
+	void onShareOnlineFinished();
 
 protected:
 	void initSketchWidget(SketchWidget *);
@@ -489,17 +485,24 @@ protected:
 	void saveAsAuxAux(const QString & fileName);
 	void printAux(QPrinter &printer, bool removeBackground, bool paginate);
 	void exportAux(QString fileName, QImage::Format format, int quality, bool removeBackground);
+	QRectF prepareExport(bool removeBackground);
+	void transformPainter(QPainter &painter, qreal width);
+	void afterExport(bool removeBackground);
 	void notYetImplemented(QString action);
 	bool eventFilter(QObject *obj, QEvent *event);
 	void setActionsIcons(int index, QList<QAction *> &);
 	void exportToEagle();
 	void exportToGerber();
 	void exportBOM();
+	void exportBOM_CSV();	
 	void exportNetlist();
 	void exportSpiceNetlist();
 	void exportSvg(double res, bool selectedItems, bool flatten);
 	void exportSvgWatermark(QString & svg, double res);
 	void exportEtchable(bool wantPDF, bool wantSVG);
+
+	QString getSpiceNetlist(QString simulationName);
+	void saveTextFile(QString text, QString action, QString dialogTitle, QString differentiator, QString errorMessage);
 
 	virtual QList<QWidget*> getButtonsForView(ViewLayer::ViewID viewId);
 	const QString untitledFileName();
@@ -546,6 +549,8 @@ protected:
 	class ExpandingLabel * createRoutingStatusLabel(SketchAreaWidget *);
 	SketchToolButton *createExportEtchableButton(SketchAreaWidget *parent);
 	SketchToolButton *createNoteButton(SketchAreaWidget *parent);
+	QWidget *createSimulationButton(SketchAreaWidget *parent);
+
 	QWidget *createToolbarSpacer(SketchAreaWidget *parent);
 	SketchAreaWidget *currentSketchArea();
 	const QString fritzingTitle();
@@ -603,11 +608,12 @@ protected:
 	virtual void createWindowMenu();
 	virtual void createTraceMenus();
 	virtual void createHelpMenu();
-	virtual void createRotateSubmenu(QMenu * parentMenu);
-	virtual void createZOrderSubmenu(QMenu * parentMenu);
+	virtual QMenu * createRotateSubmenu(QMenu * parentMenu);
+	virtual QMenu * createZOrderSubmenu(QMenu * parentMenu);
 	//  virtual void createZOrderWireSubmenu(QMenu * parentMenu);
-	virtual void createAlignSubmenu(QMenu * parentMenu);
-	virtual void createAddToBinSubmenu(QMenu * parentMenu);
+
+	virtual QMenu * createAlignSubmenu(QMenu * parentMenu);
+	virtual QMenu * createAddToBinSubmenu(QMenu * parentMenu);
 	virtual void populateExportMenu();
 
 	// dock management
@@ -634,6 +640,7 @@ protected:
 	void checkSwapObsolete(QList<ItemBase *> &, bool includeUpdateLaterMessage);
 	QMessageBox::StandardButton oldSchematicMessage(const QString & filename);
 	MainWindow * revertAux();
+	void migratePartLabelOffset(QList<ModelPart*>);
 
 protected:
 	static void removeActionsStartingAt(QMenu *menu, int start=0);
@@ -663,6 +670,8 @@ protected:
 	QPointer<class HtmlInfoView> m_infoView;
 	QPointer<QToolBar> m_toolbar;
 
+	class Simulator *m_simulator;
+
 	bool m_closing = false;
 	bool m_dontClose = false;
 	bool m_firstOpen = false;
@@ -674,6 +683,8 @@ protected:
 	//QToolBar *m_editToolBar;
 
 	QAction *m_raiseWindowAct = nullptr;
+
+	QNetworkAccessManager m_manager;
 
 	// Fritzing Menu
 	QMenu *m_fritzingMenu = nullptr;
@@ -729,6 +740,8 @@ protected:
 	QAction *m_exportEtchablePdfAct = nullptr;
 	QAction *m_exportEtchableSvgAct = nullptr;
 	QAction *m_exportBomAct = nullptr;
+	QAction *m_exportBomCsvAct = nullptr;
+	QAction *m_exportIpcAct = nullptr;
 	QAction *m_exportNetlistAct = nullptr;
 	QAction *m_exportSpiceNetlistAct = nullptr;
 	QAction *m_exportSvgAct = nullptr;
@@ -749,6 +762,8 @@ protected:
 	QAction *m_selectAllAct = nullptr;
 	QAction *m_deselectAct = nullptr;
 	QAction *m_addNoteAct = nullptr;
+	QAction *m_startSimulatorAct = nullptr;
+	QAction *m_stopSimulatorAct = nullptr;
 
 	// Part Menu
 	QMenu *m_partMenu = nullptr;
@@ -864,7 +879,6 @@ protected:
 	QAction *m_autorouterSettingsAct = nullptr;
 	QAction *m_fabQuoteAct = nullptr;
 	QAction *m_tidyWiresAct = nullptr;
-	QAction *m_checkLoadedTracesAct = nullptr;
 
 	// Help Menu
 	QMenu *m_helpMenu = nullptr;
@@ -927,7 +941,6 @@ protected:
 	bool m_closeSilently = false;
 	QString m_fzzFolder;
 	QHash<QString, struct LockedFile *> m_fzzFiles;
-	SwapTimer m_swapTimer;
 	QPointer<Wire> m_activeWire;
 	QPointer<ConnectorItem> m_activeConnectorItem;
 	bool m_addedToTemp = false;
@@ -949,6 +962,12 @@ protected:
 	QWidget * m_orderFabButton = nullptr;
 	int m_fireQuoteDelay = 0;
 
+	// exporting
+	QGraphicsItem * m_watermark;
+	QList<QGraphicsItem*> m_selectedItems;
+	QColor m_bgColor;
+	QSharedPointer<ProjectProperties> m_projectProperties;
+
 public:
 	static int AutosaveTimeoutMinutes;
 	static bool AutosaveEnabled;
@@ -956,12 +975,14 @@ public:
 	static const int DockMinWidth;
 	static const int DockMinHeight;
 
+	QString exportIPC_D_356A();
 protected:
 	static const QString UntitledSketchName;
 	static int UntitledSketchIndex;
 	static int CascadeFactorX;
 	static int CascadeFactorY;
-	static QRegExp GuidMatcher;
+	static QRegularExpression GuidMatcher;
+	void exportIPC_D_356A_interactive();
 };
 
 #endif

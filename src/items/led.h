@@ -28,13 +28,52 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "capacitor.h"
 
+class LedLight : public QGraphicsEllipseItem {
+public:
+	LedLight(QGraphicsItem *parent = nullptr) : QGraphicsEllipseItem(parent) {
+		setFlag(QGraphicsItem::ItemStacksBehindParent);
+		setPen(Qt::NoPen);
+	};
+	~LedLight() {
+	};
+	void setLight(double brightness, int red, int green, int blue){
+		//Only set light coming out if brightness is bigger than 0.25
+		if (brightness < 0.25)
+			brightness = 0.0;
+		Capacitor* led = dynamic_cast<Capacitor *>(parentItem());
+		if (led) {
+			double radious = std::min(led->boundingRectWithoutLegs().width()/2,
+									  led->boundingRectWithoutLegs().height()/2) * brightness * 4;
+			prepareGeometryChange();
+			setRect(-radious + led->boundingRectWithoutLegs().width()/2,
+					-radious + led->boundingRectWithoutLegs().width()/2,
+					radious*2, radious*2);
+			QRadialGradient gradient = QRadialGradient(0.5, 0.5, 0.5);
+			gradient.setCoordinateMode(QGradient::ObjectBoundingMode);
+			gradient.setColorAt(0, QColor(red, green, blue, 255));
+			gradient.setColorAt(0.3, QColor(red, green, blue, 230));
+			gradient.setColorAt(1, QColor(red, green, blue, 0));
+			setBrush(gradient);
+			this->show();
+		}
+	};
+};
+
 class LED : public Capacitor
 {
 	Q_OBJECT
 
+	//The color that remains when the brightness is set to 0
+	static constexpr double offColor = 0.3;
+
+	//The maximum color is achived when brigtness*brigtnessMultiplier=1
+	//After that, more current increases the light comming out of the LED,
+	//but it does not change the color
+	static constexpr double brigtnessMultiplier = 4.0;
+
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
-	LED(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit LED(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~LED();
 
 	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
@@ -46,6 +85,10 @@ public:
 	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 	const QString & title();
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
+	void setBrightness(double);
+	void setBrightnessRGB(double brightnessR, double brightnessG, double brightnessB);
+	void resetBrightness();
+	QHash<QString, QString> prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys);
 
 protected:
 	void setColor(const QString & color);
@@ -54,6 +97,8 @@ protected:
 
 protected:
 	QString m_title;
+	LedLight  * m_ledLight = nullptr;
+
 
 };
 

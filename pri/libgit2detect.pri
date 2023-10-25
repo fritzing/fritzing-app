@@ -47,7 +47,6 @@ win32 {
     }
 
     LIBS += -L$$LIBGIT2LIB -lgit2
-    message($$PKGCONFIG)
 }
 
 unix {
@@ -62,7 +61,7 @@ unix {
             error("static libgit2 library not found in $$LIBGIT2LIB")
         }
         macx {
-            LIBS += $$LIBGIT2LIB/libgit2.a /System/Library/Frameworks/Security.framework/Versions/A/Security
+            LIBS += $$LIBGIT2LIB/libgit2.a -framework Security
         } else {
             # Ubuntu Bionic
             if(contains(LSB_INFO, bionic)) {

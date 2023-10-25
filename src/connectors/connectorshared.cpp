@@ -19,10 +19,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "connectorshared.h"
-#include "../debugdialog.h"
 #include "connector.h"
 #include "busshared.h"
 #include "ercdata.h"
+#include "src/utils/misc.h"
 
 #include <QTextStream>
 
@@ -34,13 +34,13 @@ ConnectorShared::ConnectorShared()
 	m_typeString = "";
 	m_type = Connector::Unknown;
 	m_description = "";
-	m_bus = NULL;
-	m_ercData = NULL;
+	m_bus = nullptr;
+	m_ercData = nullptr;
 }
 
 ConnectorShared::ConnectorShared( const QDomElement & domElement )
 {
-	m_ercData = NULL;
+	m_ercData = nullptr;
 	m_id = domElement.attribute("id", "");
 	m_name = domElement.attribute("name", "");
 	m_replacedby = domElement.attribute("replacedby", "");
@@ -56,7 +56,7 @@ ConnectorShared::ConnectorShared( const QDomElement & domElement )
 	loadPins(domElement);
 
 	if (m_type == Connector::Unknown) {
-		foreach (SvgIdLayer * svgIdLayer, m_pins.values()) {
+		Q_FOREACH (SvgIdLayer * svgIdLayer, m_pins.values()) {
 			if (svgIdLayer->m_svgId.endsWith("pad")) {
 				m_type = Connector::Pad;
 				m_typeString = Connector::connectorNameFromType(m_type);
@@ -66,15 +66,15 @@ ConnectorShared::ConnectorShared( const QDomElement & domElement )
 
 	}
 
-	m_bus = NULL;
+	m_bus = nullptr;
 }
 
 ConnectorShared::~ConnectorShared() {
-	foreach (SvgIdLayer * svgIdLayer, m_pins.values()) {
+	Q_FOREACH (SvgIdLayer * svgIdLayer, m_pins.values()) {
 		delete svgIdLayer;
 	}
 	m_pins.clear();
-	if (m_ercData) {
+	if (m_ercData != nullptr) {
 		delete m_ercData;
 	}
 }
@@ -139,7 +139,7 @@ void ConnectorShared::insertPin(ViewLayer::ViewID layer, SvgIdLayer * svgIdLayer
 }
 
 void ConnectorShared::addPin(ViewLayer::ViewID viewID, const QString & svgId, ViewLayer::ViewLayerID viewLayerID, const QString & terminalId, const QString & legId, bool hybrid) {
-	SvgIdLayer * svgIdLayer = new SvgIdLayer(viewID);
+	auto * svgIdLayer = new SvgIdLayer(viewID);
 	svgIdLayer->m_svgViewLayerID = viewLayerID;
 	svgIdLayer->m_svgId = svgId;
 	svgIdLayer->m_terminalId = terminalId;
@@ -162,7 +162,7 @@ void ConnectorShared::removePin(ViewLayer::ViewID layer, SvgIdLayer * svgIdLayer
 
 SvgIdLayer * ConnectorShared::fullPinInfo(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID) {
 	QList<SvgIdLayer *> svgLayers = m_pins.values(viewId);
-	foreach ( SvgIdLayer * svgIdLayer, svgLayers) {
+	Q_FOREACH ( SvgIdLayer * svgIdLayer, svgLayers) {
 		if (svgIdLayer->m_svgViewLayerID == viewLayerID) {
 			return svgIdLayer;
 		}
@@ -173,7 +173,7 @@ SvgIdLayer * ConnectorShared::fullPinInfo(ViewLayer::ViewID viewId, ViewLayer::V
 
 const QString & ConnectorShared::legID(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID) {
 	QList<SvgIdLayer *> svgLayers = m_pins.values(viewId);
-	foreach ( SvgIdLayer * svgIdLayer, svgLayers) {
+	Q_FOREACH ( SvgIdLayer * svgIdLayer, svgLayers) {
 		if (svgIdLayer->m_svgViewLayerID == viewLayerID) {
 			return svgIdLayer->m_legId;
 		}
@@ -201,9 +201,8 @@ void ConnectorShared::loadPin(QDomElement elem, ViewLayer::ViewID viewID) {
 		//pinElem.save(stream, 0);
 		//stream.flush();
 		QString svgId = pinElem.attribute("svgId");
-		//svgId = svgId.left(svgId.lastIndexOf(QRegExp("\\d"))+1);
 		QString layer = pinElem.attribute("layer");
-		SvgIdLayer * svgIdLayer = new SvgIdLayer(viewID);
+		auto * svgIdLayer = new SvgIdLayer(viewID);
 		svgIdLayer->m_hybrid = (pinElem.attribute("hybrid").compare("yes") == 0);
 		svgIdLayer->m_legId = pinElem.attribute("legId");
 		svgIdLayer->m_svgId = svgId;
@@ -230,7 +229,7 @@ BusShared * ConnectorShared::bus() {
 }
 
 const QString & ConnectorShared::busID() {
-	if (m_bus == NULL) return ___emptyString___;
+	if (m_bus == nullptr) return ___emptyString___;
 	return m_bus->id();
 }
 

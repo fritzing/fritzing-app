@@ -18,24 +18,26 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
-#include <QMessageBox>
 #include <QFileDialog>
+#include <QMessageBox>
 #include <QSvgRenderer>
 #include <qmath.h>
 
 #include "gerbergenerator.h"
-#include "../debugdialog.h"
-#include "svgpathregex.h"
-#include "../fsvgrenderer.h"
-#include "../sketch/pcbsketchwidget.h"
+
 #include "../connectors/connectoritem.h"
 #include "../connectors/svgidlayer.h"
-#include "svgfilesplitter.h"
-#include "groundplanegenerator.h"
+#include "../debugdialog.h"
+#include "../fsvgrenderer.h"
+#include "../sketch/pcbsketchwidget.h"
+#include "../utils/folderutils.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
-#include "../utils/folderutils.h"
 #include "../version/version.h"
+#include "items/groundplane.h"
+#include "groundplanegenerator.h"
+#include "svgfilesplitter.h"
+#include "svgpathregex.h"
 
 const QString GerberGenerator::SilkTopSuffix = "_silkTop.gto";
 const QString GerberGenerator::SilkBottomSuffix = "_silkBottom.gbo";
@@ -47,6 +49,7 @@ const QString GerberGenerator::PasteMaskTopSuffix = "_pasteMaskTop.gtp";
 const QString GerberGenerator::PasteMaskBottomSuffix = "_pasteMaskBottom.gbp";
 const QString GerberGenerator::DrillSuffix = "_drill.txt";
 const QString GerberGenerator::OutlineSuffix = "_contour.gm1";
+const QString GerberGenerator::PickAndPlaceSuffix = "_pnp.xy";
 const QString GerberGenerator::MagicBoardOutlineID = "boardoutline";
 
 const double GerberGenerator::MaskClearanceMils = 5;
@@ -76,7 +79,7 @@ bool pixelsCollide(QImage * image1, QImage * image2, int x1, int y1, int x2, int
 void GerberGenerator::exportToGerber(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes)
 {
 	if (board == nullptr) {
-		int boardCount;
+		int boardCount = 0;
 		board = sketchWidget->findSelectedBoard(boardCount);
 		if (boardCount == 0) {
 			DebugDialog::debug("board not found");
@@ -144,7 +147,7 @@ void GerberGenerator::exportToGerber(const QString & prefix, const QString & exp
 
 	doDrill(board, sketchWidget, prefix, exportDir, displayMessageBoxes);
 
-	if (outlineInvalidCount > 0 || silkInvalidCount > 0 || copperInvalidCount > 0 || maskInvalidCount || pasteMaskInvalidCount) {
+	if (outlineInvalidCount > 0 || silkInvalidCount > 0 || copperInvalidCount > 0 || (maskInvalidCount != 0) || (pasteMaskInvalidCount != 0)) {
 		QString s;
 		if (outlineInvalidCount > 0) s += QObject::tr("the board outline layer, ");
 		if (silkInvalidCount > 0) s += QObject::tr("silkscreen layer(s), ");
@@ -167,8 +170,8 @@ int GerberGenerator::doCopper(ItemBase * board, PCBSketchWidget * sketchWidget, 
 	}
 
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
-	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+	Q_FOREACH (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (!connectorItem->isPath()) continue;
 		if (connectorItem->radius() == 0) continue;
@@ -239,8 +242,8 @@ int GerberGenerator::doDrill(ItemBase * board, PCBSketchWidget * sketchWidget, c
 
 	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgDrill);
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
-	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+	Q_FOREACH (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
+		auto * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == nullptr) continue;
 		if (!connectorItem->isPath()) continue;
 		if (connectorItem->radius() == 0) continue;
@@ -265,7 +268,7 @@ int GerberGenerator::doMask(LayerList maskLayerIDs, const QString &maskName, con
 
 	bool empty;
 	QString svgMask = renderTo(maskLayerIDs, board, sketchWidget, empty);
-	sketchWidget->restoreCopperLogoItems(copperLogoItems);
+	sketchWidget->restoreItemVisibility(copperLogoItems);
 
 	if (empty || svgMask.isEmpty()) {
 		displayMessage(QObject::tr("exported mask layer %1 is empty").arg(maskName), displayMessageBoxes);
@@ -280,7 +283,8 @@ int GerberGenerator::doMask(LayerList maskLayerIDs, const QString &maskName, con
 
 	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgMask);
 	QMultiHash<long, ConnectorItem *> treatAsCircle;
-	svgMask = clipToBoard(svgMask, board, maskName, SVG2gerber::ForCopper, "", displayMessageBoxes, treatAsCircle);
+
+	svgMask = clipToBoard(svgMask, board, maskName, SVG2gerber::ForMask, "", displayMessageBoxes, treatAsCircle);
 	if (svgMask.isEmpty()) {
 		displayMessage(QObject::tr("mask export failure"), displayMessageBoxes);
 		return 0;
@@ -288,7 +292,7 @@ int GerberGenerator::doMask(LayerList maskLayerIDs, const QString &maskName, con
 
 	clipString = svgMask;
 
-	return doEnd(svgMask, sketchWidget->boardLayers(), maskName, SVG2gerber::ForCopper, svgSize * GraphicsUtils::StandardFritzingDPI, exportDir, filename, gerberSuffix, displayMessageBoxes);
+	return doEnd(svgMask, sketchWidget->boardLayers(), maskName, SVG2gerber::ForMask, svgSize * GraphicsUtils::StandardFritzingDPI, exportDir, filename, gerberSuffix, displayMessageBoxes);
 }
 
 int GerberGenerator::doPasteMask(LayerList maskLayerIDs, const QString &maskName, const QString & gerberSuffix, ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes)
@@ -301,8 +305,8 @@ int GerberGenerator::doPasteMask(LayerList maskLayerIDs, const QString &maskName
 
 	bool empty;
 	QString svgMask = renderTo(maskLayerIDs, board, sketchWidget, empty);
-	sketchWidget->restoreCopperLogoItems(copperLogoItems);
-	sketchWidget->restoreCopperLogoItems(holes);
+	sketchWidget->restoreItemVisibility(copperLogoItems);
+	sketchWidget->restoreItemVisibility(holes);
 
 	if (empty || svgMask.isEmpty()) {
 		displayMessage(QObject::tr("exported paste mask layer is empty"), displayMessageBoxes);
@@ -397,7 +401,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 				}
 			}
 		}
-		foreach (QDomElement circle, justHoles) {
+		Q_FOREACH (QDomElement circle, justHoles) {
 			circle.setTagName("g");
 		}
 	}
@@ -408,25 +412,31 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 	if (forWhy == SVG2gerber::ForOutline) {
 		multipleContours = dealWithMultipleContours(root1, displayMessageBoxes);
 	}
+	(void)multipleContours;
 
 	// document 2 will contain svg that must be rasterized for gerber conversion
 	QDomDocument domDocument2 = domDocument1.cloneNode(true).toDocument();
 
 	bool anyConverted = false;
-	if (TextUtils::squashElement(domDocument1, "text", "", QRegExp())) {
+	if (TextUtils::squashElement(domDocument1, "text", "", QRegularExpression())) {
 		anyConverted = true;
 	}
 
 	// gerber can't handle ellipses that are rotated, so cull them all
-	if (TextUtils::squashElement(domDocument1, "ellipse", "", QRegExp())) {
+	if (TextUtils::squashElement(domDocument1, "ellipse", "", QRegularExpression())) {
 		anyConverted = true;
 	}
 
-	if (TextUtils::squashElement(domDocument1, "rect", "rx", QRegExp())) {
+	if (TextUtils::squashElement(domDocument1, "rect", "rx", QRegularExpression())) {
 		anyConverted = true;
 	}
 
-	if (TextUtils::squashElement(domDocument1, "rect", "ry", QRegExp())) {
+	if (TextUtils::squashElement(domDocument1, "rect", "ry", QRegularExpression())) {
+		anyConverted = true;
+	}
+
+	// it seems that gerber might not be able to handle rects with dashed lines
+	if (TextUtils::squashElement(domDocument1, "rect", "stroke-dasharray", QRegularExpression("^(?!none).*$"))) {
 		anyConverted = true;
 	}
 
@@ -440,7 +450,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		anyConverted = true;
 	}
 
-	if (TextUtils::squashElement(domDocument1, "image", "", QRegExp())) {
+	if (TextUtils::squashElement(domDocument1, "image", "", QRegularExpression())) {
 		anyConverted = true;
 	}
 
@@ -452,8 +462,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		while (!parent.isNull()) {
 			QString transformString = parent.toElement().attribute("transform");
 			if (!transformString.isNull()) {
-				QMatrix matrix = TextUtils::transformStringToMatrix(transformString);
-				QTransform transform(matrix);
+				QTransform transform = TextUtils::transformStringToTransform(transformString);
 				if (transform.isScaling()) {
 					nodeList.at(i).toElement().setTagName("g");
 					anyConverted = true;
@@ -515,10 +524,11 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		for (int i = 0; i < transformCount1; i++) {
 			QString n = QString::number(i);
 			QRectF bounds = renderer.boundsOnElement(n);
-			QMatrix m = renderer.matrixForElement(n);
+			QTransform m = renderer.transformForElement(n);
 			QDomElement element = leaves1.at(i);
 			QRectF mBounds = m.mapRect(bounds);
-			if (mBounds.left() < sourceRes.left() - 0.1|| mBounds.top() < sourceRes.top() - 0.1 || mBounds.right() > sourceRes.right() + 0.1 || mBounds.bottom() > sourceRes.bottom() + 0.1) {
+			const double unknownMargin = 0.1;
+			if (mBounds.left() < sourceRes.left() - unknownMargin || mBounds.top() < sourceRes.top() - unknownMargin || mBounds.right() > sourceRes.right() + unknownMargin || mBounds.bottom() > sourceRes.bottom() + unknownMargin) {
 				if (element.tagName() == "circle") {
 					possibleHoles.append(element);
 				}
@@ -536,7 +546,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 	if (possibleHoles.count() > 0) {
 		QList<QDomElement> newHoles;
 		int ix = 0;
-		foreach (QDomElement element, possibleHoles) {
+		Q_FOREACH (QDomElement element, possibleHoles) {
 			QDomElement newElement = element.cloneNode(false).toElement();
 			double radius = element.attribute("r").toDouble();
 			double sw = element.attribute("stroke-width").toDouble();
@@ -552,10 +562,11 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		for (int i = newHoles.count() - 1; i >= 0; i--) {
 			QString id = QString("__%1__").arg(i);
 			QRectF bounds = renderer.boundsOnElement(id);
-			QMatrix m = renderer.matrixForElement(id);
+			QTransform m = renderer.transformForElement(id);
 			QDomElement newElement = newHoles.at(i);
 			QRectF mBounds = m.mapRect(bounds);
-			if (mBounds.left() < sourceRes.left() - 0.1 || mBounds.top() < sourceRes.top() - 0.1 || mBounds.right() > sourceRes.right() + 0.1 || mBounds.bottom() > sourceRes.bottom() + 0.1) {
+			constexpr double unknownMargin = 0.1;
+			if (mBounds.left() < sourceRes.left() - unknownMargin || mBounds.top() < sourceRes.top() - unknownMargin || mBounds.right() > sourceRes.right() + unknownMargin || mBounds.bottom() > sourceRes.bottom() + unknownMargin) {
 				// hole is still clipped
 				newHoles.removeAt(i);
 				newElement.parentNode().removeChild(newElement);
@@ -570,7 +581,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		}
 	}
 
-	if (clipImage) {
+	if (clipImage != nullptr) {
 		QImage another(imgSize, QImage::Format_Mono);
 		another.fill(0xffffffff);
 		another.setDotsPerMeterX(res * GraphicsUtils::InchesPerMeter);
@@ -593,7 +604,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 
 			QString n = QString::number(i);
 			QRectF bounds = renderer.boundsOnElement(n);
-			QMatrix m = renderer.matrixForElement(n);
+			QTransform m = renderer.transformForElement(n);
 			QRectF mBounds = m.mapRect(bounds);
 
 			int x1 = qFloor(qMax(0.0, mBounds.left() - sourceRes.left()));          // atmel compiler fails without cast
@@ -631,7 +642,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		root2.setAttribute("height", QString("%1px").arg(theight));
 		if (boardRect.x() != 0 || boardRect.y() != 0) {
 			QString viewBox = root2.attribute("viewBox");
-			QStringList coords = viewBox.split(" ", QString::SkipEmptyParts);
+			QStringList coords = viewBox.split(" ", Qt::SkipEmptyParts);
 			coords[0] = QString::number(sourceRes.left());
 			coords[1] = QString::number(sourceRes.top());
 			root2.setAttribute("viewBox", coords.join(" "));
@@ -714,7 +725,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		}
 	}
 
-	if (clipImage) delete clipImage;
+	if (clipImage != nullptr) delete clipImage;
 
 	return QString(svgString);
 }
@@ -801,7 +812,8 @@ QString GerberGenerator::makePath(QImage & image, double unit, const QString & c
 				// got black: close up this segment;
 				inWhite = false;
 				paths += QString("M%1,%2L%3,%2 ").arg(whiteStart + halfUnit).arg(y + halfUnit).arg(x - 1 + halfUnit);
-				if (++lineCount == 10) {
+				constexpr int unknownMaxLineCount = 10;
+				if (++lineCount == unknownMaxLineCount) {
 					lineCount = 0;
 					paths += "\n";
 				}
@@ -814,6 +826,14 @@ QString GerberGenerator::makePath(QImage & image, double unit, const QString & c
 
 				inWhite = true;
 				whiteStart = x;
+			}
+		}
+		if (inWhite) {
+			paths += QString("M%1,%2L%3,%2 ").arg(whiteStart + halfUnit).arg(y + halfUnit).arg(image.width() - 1 + halfUnit);
+			constexpr int unknownMaxLineCount = 10;
+			if (++lineCount == unknownMaxLineCount) {
+				lineCount = 0;
+				paths += "\n";
 			}
 		}
 	}
@@ -832,11 +852,11 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 	for (int p = 0; p < paths.count() && contoursOK; p++) {
 		QDomElement path = paths.at(p).toElement();
 		QString originalPath = path.attribute("d", "").trimmed();
-		if (MultipleZs.indexIn(originalPath) < 0) continue;
+		if (!originalPath.contains(MultipleZs)) continue;
 
 		multipleContours = true;
-		QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts);
-		foreach (QString subpath, subpaths) {
+		QStringList subpaths = path.attribute("d").split("z", Qt::SkipEmptyParts, Qt::CaseInsensitive);
+		Q_FOREACH (QString subpath, subpaths) {
 			if (!subpath.trimmed().startsWith("m", Qt::CaseInsensitive)) {
 				contoursOK = false;
 				break;
@@ -858,22 +878,24 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 	for (int p = 0; p < paths.count(); p++) {
 		QDomElement path = paths.at(p).toElement();
 		QString originalPath = path.attribute("d", "").trimmed();
-		if (MultipleZs.indexIn(originalPath) >= 0) {
-			QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts, Qt::CaseInsensitive);
-			MFinder.indexIn(subpaths.at(0).trimmed());
-			QString priorM = MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+		if (originalPath.contains(MultipleZs)) {
+			QStringList subpaths = path.attribute("d").split("z", Qt::SkipEmptyParts, Qt::CaseInsensitive);
+			QRegularExpressionMatch match;
+			subpaths.at(0).trimmed().indexOf(MFinder, 0, &match);
+			QString priorM = match.captured(1) + match.captured(2) + "," + match.captured(3) + " ";
 			for (int i = 1; i < subpaths.count(); i++) {
 				QDomElement newPath = path.cloneNode(true).toElement();
 				QString z = ((i < subpaths.count() - 1) || originalPath.endsWith("z", Qt::CaseInsensitive)) ? "z" : "";
 				QString d = subpaths.at(i).trimmed() + z;
-				MFinder.indexIn(d);
+				match = QRegularExpressionMatch();
+				d.indexOf(MFinder, 0, &match);
 				if (d.startsWith("m", Qt::CaseSensitive)) {
 					d = priorM + d;
 				}
-				if (MFinder.cap(1) == "M") {
-					priorM = MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+				if (match.captured(1) == "M") {
+					priorM = match.captured(1) + match.captured(2) + "," + match.captured(3) + " ";
 				} else {
-					priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
+					priorM += match.captured(1) + match.captured(2) + "," + match.captured(3) + " ";
 				}
 				newPath.setAttribute("d",  d);
 				path.parentNode().appendChild(newPath);
@@ -885,12 +907,49 @@ bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayM
 	return true;
 }
 
+// Helper to annotate SMT / THT, so it is clear when drilling or
+// a different pick and place method is required
+QString checkMountTechnology(const QString &package)
+{
+	if (package.isEmpty()) {
+		return "MANUAL";
+	}
+
+	if (package.contains("THT", Qt::CaseInsensitive)) {
+		return "THT";
+	}
+
+	if (package.contains("SMD", Qt::CaseInsensitive)) {
+		return "SMT";
+	}
+
+	 // These packages require THT placement, unless leads a cut off ('leadless')
+	QStringList knownTHTPackages = {"DIP", "TO-3", "TO-5", "TO-8", "TO-18", "TO-66", "TO-72",
+									"TO-92", "TO92", "TO-99", "TO-100", "TO-126", "TO-218", "TO-220",
+									"TO220", "TO-247", "TO-252", "TO-257", "TO-258", "TO-264",
+									"PFM", "DIL", "ZIP", "SIP" };
+
+	for (const QString &knownTHTPackage : knownTHTPackages)
+	{
+		if (package.contains(knownTHTPackage, Qt::CaseInsensitive))
+		{
+			if (!package.contains("LEADLESS", Qt::CaseInsensitive))
+			{
+				return "THT";
+			} else {
+				return "SMT";
+			}
+		}
+	}
+	return "SMT";
+}
+
 void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes)
 {
 	QPointF bottomLeft = board->sceneBoundingRect().bottomLeft();
 	QSet<ItemBase *> itemBases;
-	foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+	Q_FOREACH (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
+		auto * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == nullptr) continue;
 		if (itemBase == board) continue;
 		if (itemBase->itemType() == ModelPart::Wire) continue;
@@ -902,62 +961,79 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 		itemBases.insert(itemBase->layerKinChief());
 	}
 
-	QString outname = exportDir + "/" + prefix + "_pnp.txt";
+	QString outname = exportDir + "/" + prefix + GerberGenerator::PickAndPlaceSuffix;
 	QFile out(outname);
 	if (!out.open(QIODevice::WriteOnly | QIODevice::Text)) {
 		displayMessage(QObject::tr("Unable to save pick and place file: %2").arg(outname), displayMessageBoxes);
 		return;
 	}
 
+	QStringList valueKeys;
+	valueKeys << "resistance" << "capacitance" << "inductance" << "voltage"  << "current" << "power" << "mpn" << "mn";
+
 	QTextStream stream(&out);
-	stream << "*Pick And Place List\n"
-	       << "*Company=\n"
-	       << "*Author=\n"
+	stream << "# Pick And Place List\n"
+		   << "# Company=\n"
+		   << "# Author=\n"
 	       //*Tel=
 	       //*Fax=
-	       << "*eMail=\n"
-	       << "*\n"
-	       << QString("*Project=%1\n").arg(prefix)
+		   << "# eMail=\n"
+		   << "#\n"
+		   << QString("# Project=%1\n").arg(prefix)
 	       // *Variant=<alle Bauteile>
-	       << QString("*Date=%1\n").arg(QTime::currentTime().toString())
-	       << QString("*CreatedBy=Fritzing %1\n").arg(Version::versionString())
-	       << "*\n"
-	       << "*\n*Coordinates in mm, always center of component\n"
-	       << "*Origin 0/0=Lower left corner of PCB\n"
-	       << "*Rotation in degree (0-360, math. pos.)\n"
-	       << "*\n"
-	       << "*No;Value;Package;X;Y;Rotation;Side;Name\n"
-	       ;
+		   << QString("# Date=%1\n").arg(QTime::currentTime().toString())
+		   << QString("# CreatedBy=Fritzing %1\n").arg(Version::versionString())
+		   << "#\n"
+		   << "#\n# Coordinates in mils, always center of component\n"
+		   << "# Origin 0/0=Lower left corner of PCB\n"
+		   << "# Rotation in degree (0-360, math. pos.)\n"
+		   << "#\n"
+		   << "RefDes,Description,Package,X,Y,Rotation,Side,Mount\n"
+		   << "Description: ";
 
-	QStringList valueKeys;
-	valueKeys << "resistance" << "capacitance" << "inductance" << "voltage"  << "current" << "power";
+	Q_FOREACH (QString valueKey, valueKeys) {
+			stream << valueKey << ";";
+	}
+	stream << "\n";
 
 	int ix = 1;
-	foreach (ItemBase * itemBase, itemBases) {
-		QString value;
-		foreach (QString valueKey, valueKeys) {
-			value = itemBase->modelPart()->localProp(valueKey).toString();
-			if (!value.isEmpty()) break;
-
-			value = itemBase->modelPart()->properties().value(valueKey);
-			if (!value.isEmpty()) break;
+	Q_FOREACH (ItemBase * itemBase, itemBases) {
+		if (!itemBase->hasConnectors()) {
+			// Skip items like logos, images, ...
+			continue;
 		}
+		if (dynamic_cast<GroundPlane*>(itemBase) != nullptr) {
+			// Skip copper plane and ground plane items
+			continue;
+		}
+		QString description;
+		Q_FOREACH (QString valueKey, valueKeys) {
+			QString prop = itemBase->modelPart()->localProp(valueKey).toString();
+			if (prop.isEmpty()) {
+				prop = itemBase->modelPart()->properties().value(valueKey);
+			}
+			description += prop + ";";
+		}
+		description.replace(",","_");
 
 		QPointF loc = itemBase->sceneBoundingRect().center();
 		QTransform transform = itemBase->transform();
 		// doesn't account for scaling
-		double angle = atan2(transform.m12(), transform.m11()) * 180 / M_PI;
-		// No;Value;Package;X;Y;Rotation;Side;Name
-		QString string = QString("%1;%2;%3;%4;%5;%6;%7;%8\n")
-		                 .arg(ix++)
-						 .arg(value
-						 , itemBase->modelPart()->properties().value("package"))
-		                 .arg(GraphicsUtils::pixels2mm(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI))
-		                 .arg(GraphicsUtils::pixels2mm(loc.y() - bottomLeft.y(), GraphicsUtils::SVGDPI))
-		                 .arg(angle)
-		                 .arg(itemBase->viewLayerID() == ViewLayer::Copper1 ? "Top" : "Bottom")
-		                 .arg(itemBase->instanceTitle())
-		                 ;
+		constexpr double halfCircleDegrees = 180;
+		double angle = atan2(transform.m12(), transform.m11()) * halfCircleDegrees / M_PI;
+
+		QString package = itemBase->modelPart()->properties().value("package");
+		QString mount = checkMountTechnology(package);
+
+		QString string = QString("%1,\"%2\",\"%3\",%4,%5,%6,%7,%8\n")
+					.arg(itemBase->instanceTitle())
+					.arg(description)
+					.arg(package)
+					.arg(QString::number(GraphicsUtils::pixels2mils(loc.x() - bottomLeft.x(), GraphicsUtils::SVGDPI)))
+					.arg(QString::number(GraphicsUtils::pixels2mils(bottomLeft.y() - loc.y(), GraphicsUtils::SVGDPI)))
+					.arg(QString::number(angle))
+					.arg(itemBase->viewLayerPlacement() == ViewLayer::NewTop ? "Top" : "Bottom")
+					.arg(mount);
 		stream << string;
 		stream.flush();
 	}
@@ -973,7 +1049,7 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
 	QDomNodeList nodeList = root1.elementsByTagName("path");
 	if (treatAsCircle.count() > 0) {
 		QStringList ids;
-		foreach (ConnectorItem * connectorItem, treatAsCircle.values()) {
+		Q_FOREACH (ConnectorItem * connectorItem, treatAsCircle.values()) {
 			ItemBase * itemBase = connectorItem->attachedTo();
 			SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(itemBase->viewID(), itemBase->viewLayerID());
 			DebugDialog::debug(QString("treat as circle %1").arg(svgIdLayer->m_svgId));
@@ -997,7 +1073,7 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
 				QList<ConnectorItem *> connectorItems = treatAsCircle.values(pid.toLong());
 				if (connectorItems.count() == 0) break;
 
-				foreach (ConnectorItem * candidate, connectorItems) {
+				Q_FOREACH (ConnectorItem * candidate, connectorItems) {
 					ItemBase * itemBase = candidate->attachedTo();
 					SvgIdLayer * svgIdLayer = candidate->connector()->fullPinInfo(itemBase->viewID(), itemBase->viewLayerID());
 					if (svgIdLayer->m_svgId == id) {
@@ -1006,7 +1082,7 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
 					}
 				}
 
-				if (connectorItem) break;
+				if (connectorItem != nullptr) break;
 			}
 			if (connectorItem == nullptr) continue;
 

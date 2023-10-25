@@ -53,7 +53,7 @@ QStringList KicadSchematic2Svg::listDefs(const QString & filename) {
 		if (line.isNull()) break;
 
 		if (line.startsWith("DEF")) {
-			QStringList linedefs = line.split(" ", QString::SkipEmptyParts);
+			QStringList linedefs = line.split(" ", Qt::SkipEmptyParts);
 			if (linedefs.count() > 1) {
 				defs.append(linedefs[1]);
 			}
@@ -142,7 +142,6 @@ QString KicadSchematic2Svg::convert(const QString & filename, const QString & de
 		}
 
 		if (fline.startsWith("$ENDFPLIST")) {
-			inFPLIST = false;
 			break;
 		}
 
@@ -246,9 +245,9 @@ QString KicadSchematic2Svg::convertField(const QString & xString, const QString 
 
 	bool rotate = (orientation == "V");
 	QString rotation;
-	QMatrix m;
+	QTransform m;
 	if (rotate) {
-		m = QMatrix().translate(-x, -y) * QMatrix().rotate(-90) * QMatrix().translate(x, y);
+		m = QTransform().translate(-x, -y) * QTransform().rotate(-90) * QTransform().translate(x, y);
 		// store x, y, and r so they can be shifted correctly later
 		rotation = QString("transform='%1' _x='%2' _y='%3' _r='-90'").arg(TextUtils::svgMatrix(m)).arg(x).arg(y);
 	}
@@ -674,7 +673,7 @@ QString KicadSchematic2Svg::addFill(const QString & line, const QString & NF, co
 
 QStringList KicadSchematic2Svg::splitLine(const QString & line) {
 	// doesn't handle escaped quotes next to spaces
-	QStringList strs = line.split(" ", QString::SkipEmptyParts);
+	QStringList strs = line.split(" ", Qt::SkipEmptyParts);
 	for (int i = strs.count() - 1; i > 0; i--) {
 		QString s = strs[i];
 		if (s[s.length() - 1] != '"') continue;

@@ -48,8 +48,8 @@ void SketchAreaWidget::init(QWidget *contentView, QMainWindow *parent, bool hasT
 
 	createLayout();
 
-	QVBoxLayout *layout = new QVBoxLayout(this);
-	layout->setMargin(0);
+	auto *layout = new QVBoxLayout(this);
+	layout->setContentsMargins(0, 0, 0, 0);
 	layout->setSpacing(0);
 	layout->addWidget(contentView);
 	layout->addWidget(m_toolbar);
@@ -68,24 +68,24 @@ void SketchAreaWidget::createLayout() {
 	m_toolbar->setObjectName("sketchAreaToolbar");
 	m_toolbar->setFixedHeight(66);
 
-	QFrame *leftButtons = new QFrame(m_toolbar);
+	auto *leftButtons = new QFrame(m_toolbar);
 	m_leftButtonsContainer = new QHBoxLayout(leftButtons);
-	m_leftButtonsContainer->setMargin(0);
+	m_leftButtonsContainer->setContentsMargins(0, 0, 0, 0);
 	m_leftButtonsContainer->setSpacing(0);
 
-	QFrame *middleButtons = new QFrame(m_toolbar);
+	auto *middleButtons = new QFrame(m_toolbar);
 	middleButtons->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::MinimumExpanding);
 	m_middleButtonsContainer = new QVBoxLayout(middleButtons);
 	m_middleButtonsContainer->setSpacing(0);
-	m_middleButtonsContainer->setMargin(0);
+	m_middleButtonsContainer->setContentsMargins(0, 0, 0, 0);
 
-	QFrame *rightButtons = new QFrame(m_toolbar);
+	auto *rightButtons = new QFrame(m_toolbar);
 	m_rightButtonsContainer = new QHBoxLayout(rightButtons);
-	m_rightButtonsContainer->setMargin(0);
+	m_rightButtonsContainer->setContentsMargins(0, 0, 0, 0);
 	m_rightButtonsContainer->setSpacing(0);
 
-	QHBoxLayout *toolbarLayout = new QHBoxLayout(m_toolbar);
-	toolbarLayout->setMargin(0);
+	auto *toolbarLayout = new QHBoxLayout(m_toolbar);
+	toolbarLayout->setContentsMargins(0, 0, 0, 0);
 	toolbarLayout->setSpacing(0);
 	toolbarLayout->addWidget(leftButtons);
 	toolbarLayout->addWidget(middleButtons);
@@ -93,14 +93,14 @@ void SketchAreaWidget::createLayout() {
 
 	m_statusBarArea = new QFrame(this);
 	m_statusBarArea->setObjectName("statusBarContainer");
-	QVBoxLayout *statusbarlayout = new QVBoxLayout(m_statusBarArea);
-	statusbarlayout->setMargin(0);
+	auto *statusbarlayout = new QVBoxLayout(m_statusBarArea);
+	statusbarlayout->setContentsMargins(0, 0, 0, 0);
 	statusbarlayout->setSpacing(0);
 }
 
 void SketchAreaWidget::setToolbarWidgets(QList<QWidget*> widgets) {
 	bool goLeft = true;
-	foreach(QWidget* widget, widgets) {
+	Q_FOREACH(QWidget* widget, widgets) {
 		if(widget->objectName() != RoutingStateLabelName) {
 			if (goLeft) m_leftButtonsContainer->addWidget(widget);
 			else m_rightButtonsContainer->addWidget(widget);
@@ -118,7 +118,7 @@ void SketchAreaWidget::addStatusBar(QStatusBar *statusBar) {
 }
 
 QWidget *SketchAreaWidget::separator(QWidget* parent) {
-	QLabel *separator = new QLabel(parent);
+	auto *separator = new QLabel(parent);
 	separator->setPixmap(QPixmap(":/resources/images/toolbar_icons/toolbar_separator.png"));
 	separator->setStyleSheet("margin-left: 1px; margin-right: 1px;");
 	separator->setObjectName("ToolBarSeparator");

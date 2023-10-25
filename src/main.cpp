@@ -25,7 +25,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "fapplication.h"
 #include "version/version.h"
-#include "debugdialog.h"
 #include "utils/folderutils.h"
 
 #ifdef Q_OS_WIN
@@ -93,7 +92,7 @@ int main(int argc, char *argv[])
 	try {
 		//QApplication::setGraphicsSystem("raster");
 		QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-		FApplication * app = new FApplication(argc, argv);
+		auto * app = new FApplication(argc, argv);
 		switch (app->init()) {
 		case FInitResultNormal: {
 			//DebugDialog::setDebugLevel(DebugDialog::Error);

@@ -72,7 +72,7 @@ class PaletteItem : public PaletteItemBase
 
 public:
 	// after calling this constructor if you want to render the loaded svg (either from model or from file), MUST call <renderImage>
-	PaletteItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	explicit PaletteItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~PaletteItem();
 
 	void removeLayerKin();
@@ -82,12 +82,13 @@ public:
 	void rotateItem(double degrees, bool includeRatsnest);
 	void flipItem(Qt::Orientations orientation);
 	void moveItem(ViewGeometry & viewGeometry);
-	void transformItem2(const QMatrix &);
+	void transformItem2(const QTransform &);
 	void setItemPos(QPointF & pos);
 
 	bool renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID, bool doConnectors, QString & error);
 
 	void setTransforms();
+	QString transformTextSvg(const QString & textSvg);
 	void syncKinMoved(QPointF offset, QPointF loc);
 
 	void setInstanceTitle(const QString&, bool initial);
@@ -105,9 +106,9 @@ public:
 	void resetKinImage(ItemBase * layerKin, InfoGraphicsView * infoGraphicsView);
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
-	virtual bool changePinLabels(bool singleRow, bool sip);
+	virtual bool changePinLabels(bool sip);
 	QStringList getPinLabels(bool & hasLocal);
-	void renamePins(const QStringList & labels, bool singleRow);
+	void renamePins(const QStringList & labels);
 	void resetConnectors();
 	void resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLayerRenderer);
 	void resetConnector(ItemBase * itemBase, SvgIdLayer * svgIdLayer);
@@ -128,11 +129,13 @@ public:
 	static QString changeUnits(HoleSettings &);
 	static bool changeDiameter(HoleSettings & holeSettings, QObject * sender);
 	static bool changeThickness(HoleSettings & holeSettings, QObject * sender);
+	static QList<Connector *> sortConnectors(ModelPart * modelPart);
+	static bool isSingleRow(const QList<ConnectorItem *> & connectorItems);
 
-signals:
+Q_SIGNALS:
 	void pinLabelSwap(ItemBase *, const QString & moduleID);
 
-protected slots:
+protected Q_SLOTS:
 	void openPinLabelDialog();
 
 protected:
@@ -141,12 +144,12 @@ protected:
 	void updateConnections(bool includeRatsnest, QList<ConnectorItem *> & already);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	void figureHover();
-	bool isSingleRow(const QList<ConnectorItem *> & connectorItems);
 	QList<Connector *> sortConnectors();
 	QString hackSvgHoleSize(const QString & holeDiameter, const QString & ringThickness);
 	QString hackFzpHoleSize(const QString & moduleID, const QString & pcbFilename, const QString & holeSize);
 	QString appendHoleSize(const QString & moduleID, const QString & holeSize, const QString & ringThickness);
 	void generateSwap(const QString & text, GenModuleID, GenFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
+	void generateSwapFzpSvg(QString newModuleID, GenFzp genFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
 	bool makeLocalModifications(QByteArray & svg, const QString & filename);
 	void makeOneKin(qint64 & id, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, ViewGeometry &, const LayerHash &);
 
@@ -159,9 +162,10 @@ protected:
 	static QString hackFzpHoleSize(const QString & fzp, const QString & moduleid, int hsix);
 	static QString hackSvgHoleSize(QDomDocument & domDocument, const QString & holeDiameter, const QString & ringThickness);
 	static QString hackSvgHoleSizeAux(const QString & svg, const QString & expectedFileName);
-
-protected slots:
 	virtual void changeHoleSize(const QString &);
+
+protected Q_SLOTS:
+	virtual void changeHoleSize(int);
 	virtual void changeUnits(bool);
 	void changeDiameter();
 	void changeThickness();

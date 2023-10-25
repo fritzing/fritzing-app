@@ -33,6 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFile>
 #include <QUrl>
 #include <QFrame>
+#include <QEnterEvent>
 
 //////////////////////////////////////////////////////
 
@@ -66,13 +67,13 @@ LabelThing::LabelThing(const QString & text, const QString & released, const QSt
 void LabelThing::enterEvent(QEvent * event) {
 	m_state = HOVER;
 	update();
-	QLabel::enterEvent(event);
+	QLabel::enterEvent((QEnterEvent *)event);
 }
 
 void LabelThing::leaveEvent(QEvent * event) {
 	m_state = RELEASED;
 	update();
-	QLabel::enterEvent(event);
+	QLabel::enterEvent((QEnterEvent *)event);
 }
 
 void LabelThing::mousePressEvent(QMouseEvent * event) {
@@ -85,12 +86,12 @@ void LabelThing::mouseReleaseEvent(QMouseEvent * event) {
 	m_state = RELEASED;
 	update();
 	QLabel::mouseReleaseEvent(event);
-	emit clicked();
+	Q_EMIT clicked();
 }
 
 void LabelThing::paintEvent(QPaintEvent * event) {
 	// use 'new QPainter()' so that delete is invoked before the QLabel::paintEvent call, otherwise the label isn't painted on mac
-	QPainter * painter = new QPainter(this);
+	auto * painter = new QPainter(this);
 	switch (m_state) {
 	case PRESSED:
 		painter->drawPixmap(0, 0, m_pressedImage);
@@ -130,7 +131,7 @@ private:
 CustomDelegate::CustomDelegate(QTableView* tableView)
 {
 	// create grid pen
-	int gridHint = tableView->style()->styleHint(QStyle::SH_Table_GridLineColor, new QStyleOptionViewItemV4());
+	int gridHint = tableView->style()->styleHint(QStyle::SH_Table_GridLineColor, new QStyleOptionViewItem());
 	QColor gridColor(gridHint);
 	_gridPen = QPen(gridColor, 0, tableView->gridStyle());
 }
@@ -167,9 +168,9 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 
 	setWindowTitle(tr("Fritzing Fab Quote"));
 
-	QVBoxLayout * vLayout = new QVBoxLayout(this);
+	auto * vLayout = new QVBoxLayout(this);
 
-	QLabel * label = new QLabel(tr("Order your PCB from Fritzing Fab"));
+	auto * label = new QLabel(tr("Order your PCB from Fritzing Fab"));
 	label->setObjectName("quoteOrder");
 	vLayout->addWidget(label);
 
@@ -194,9 +195,9 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 	QStringList labels;
 	labels << tr("Copies") << tr("Price per board") << tr("Price");
 	int ix = 0;
-	foreach (QString labl, labels) {
-		QTableWidgetItem * item = new QTableWidgetItem(labl);
-		item->setFlags(0);
+	Q_FOREACH (QString labl, labels) {
+		auto * item = new QTableWidgetItem(labl);
+		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(ix, 0, item);
 		ix += 1;
 	}
@@ -206,17 +207,17 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
 	QString additional = tr("<b>Shipping is free wordlwide</b>.<br />");
 	additional += tr("Documents for local customs control are included.<br />");
 	additional += tr("Some countries might charge additional import taxes or checking fees.<br />");
-	additional += tr("For more information on pricing see <a href='https://fab.fritzing.org/pricing'>https://fab.fritzing.org/pricing</a>.");
+	additional += tr("For more pricing information, see <a href='https://fab.fritzing.org/pricing'>https://fab.fritzing.org/pricing</a>.");
 	label = new QLabel(additional);
 	label->setObjectName("quoteAdditional");
 	label->setOpenExternalLinks(true);
 	vLayout->addWidget(label);
 	if (!full) label->setVisible(false);
 
-	QFrame * frame = new QFrame;
-	QHBoxLayout * buttonLayout = new QHBoxLayout();
+	auto * frame = new QFrame;
+	auto * buttonLayout = new QHBoxLayout();
 
-	LabelThing * labelThing = new LabelThing(tr("Visit Fritzing Fab"),
+	auto * labelThing = new LabelThing(tr("Visit Fritzing Fab"),
 	        ":/resources/images/icons/fabquote_button_release.png",
 	        ":/resources/images/icons/fabquote_button_press.png",
 	        ":/resources/images/icons/fabquote_button_hover.png"
@@ -280,20 +281,20 @@ void QuoteDialog::setText() {
 		if (count == 0) continue;
 		if (cost == 0) continue;
 
-		QTableWidgetItem * item = new QTableWidgetItem(QString::number(count));
+		auto * item = new QTableWidgetItem(QString::number(count));
 		item->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
-		item->setFlags(0);
+		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(0, i + 1, item);
 		item = new QTableWidgetItem(QString("%1%2%3").arg(hundredths(cost/count), 13, 'F', 2).arg(ThinSpaceSymbol).arg(EuroSymbol));
 		item->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
-		item->setFlags(0);
+		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(1, i + 1, item);
 		item = new QTableWidgetItem(QString("%1%2%3").arg(hundredths(cost), 13, 'F', 2).arg(ThinSpaceSymbol).arg(EuroSymbol));
 		item->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
 		QFont font = item->font();
 		font.setBold(true);
 		item->setFont(font);
-		item->setFlags(0);
+		item->setFlags(Qt::ItemFlags());
 		m_tableWidget->setItem(2, i + 1, item);
 
 	}
@@ -317,7 +318,7 @@ QString QuoteDialog::countArgs() {
 	initCounts();
 
 	QString countArgs;
-	foreach (int c, Counts) {
+	Q_FOREACH (int c, Counts) {
 		countArgs += QString::number(c) + ",";
 	}
 	countArgs.chop(1);

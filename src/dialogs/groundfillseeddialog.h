@@ -39,7 +39,7 @@ public:
 	void getResults(QList<bool> & results);
 	bool getFill();
 
-public slots:
+public Q_SLOTS:
 	void clickedSlot(QListWidgetItem *);
 	void changedSlot(QListWidgetItem *);
 	void accept();

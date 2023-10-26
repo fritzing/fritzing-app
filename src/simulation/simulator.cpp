@@ -50,7 +50,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/symbolpaletteitem.h"
 #include "../items/perfboard.h"
 #include "../items/partlabel.h"
-#include "../debugdialog.h"
 
 #include <ngspice/sharedspice.h>
 

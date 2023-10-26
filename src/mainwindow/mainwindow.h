@@ -60,6 +60,8 @@ QT_END_NAMESPACE
 
 class FSizeGrip;
 
+class DebugConnectors;
+
 typedef class FDockWidget * (*DockFactory)(const QString & title, QWidget * parent);
 
 bool sortPartList(class ItemBase * b1, class ItemBase * b2);
@@ -263,7 +265,6 @@ public Q_SLOTS:
 	void showWelcomeView();
 	void putItemByModuleID(const QString & moduleID);
 	void postKeyEvent(const QString & serializedKeys);
-	void routingCheckSlot();
 
 protected Q_SLOTS:
 	void mainLoad();
@@ -974,6 +975,7 @@ protected:
 	QList<QGraphicsItem*> m_selectedItems;
 	QColor m_bgColor;
 	QSharedPointer<ProjectProperties> m_projectProperties;
+	QPointer<DebugConnectors> m_debugConnectors;
 
 public:
 	static int AutosaveTimeoutMinutes;

@@ -210,7 +210,6 @@ public:
 	virtual void forwardRoutingStatusForCommand(const RoutingStatus &);
 
 	void collectParts(QList<ItemBase *> & partList);
-	void collectPartsForCheck(QList<ItemBase *> & partList);
 
 	void movePartLabelForCommand(long itemID, QPointF newPos, QPointF newOffset);
 

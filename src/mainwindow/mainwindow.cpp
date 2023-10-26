@@ -38,7 +38,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStyle>
 #include <QFontMetrics>
 #include <QApplication>
-#include <QSet>
 
 
 #include "mainwindow.h"
@@ -70,8 +69,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/clickablelabel.h"
 #include "../items/resizableboard.h"
 #include "../items/resistor.h"
-#include "../items/breadboard.h"
-#include "../items/symbolpaletteitem.h"
 #include "../utils/zoomslider.h"
 #include "../partseditor/pemainwindow.h"
 #include "../help/firsttimehelpdialog.h"
@@ -79,6 +76,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../simulation/FProbeStartSimulator.h"
 #include "../mainwindow/FProbeDropByModuleID.h"
 #include "../mainwindow/FProbeKeyPressEvents.h"
+#include "../connectors/debugconnectors.h"
 
 FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 {
@@ -516,6 +514,8 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 
 	connect(fProbeKey, &FProbeKeyPressEvents::postKeyEvent, this, &MainWindow::postKeyEvent);
 
+	m_debugConnectors = QPointer(new DebugConnectors(m_breadboardGraphicsView, m_schematicGraphicsView, m_pcbGraphicsView));
+
 	m_projectProperties = QSharedPointer<ProjectProperties>(new ProjectProperties());
 //	m_breadboardGraphicsView->setProjectProperties(m_projectProperties);
 //	m_schematicGraphicsView->setProjectProperties(m_projectProperties);
@@ -647,11 +647,6 @@ void MainWindow::connectPairs() {
 	                                  this, SLOT(routingStatusSlot(SketchWidget *, const RoutingStatus &))) != nullptr);
 	succeeded =  succeeded && (connect(m_breadboardGraphicsView, SIGNAL(routingStatusSignal(SketchWidget *, const RoutingStatus &)),
 	                                  this, SLOT(routingStatusSlot(SketchWidget *, const RoutingStatus &))) != nullptr);
-
-	succeeded = connect(m_pcbGraphicsView, &PCBSketchWidget::routingCheckSignal, this, &MainWindow::routingCheckSlot) != nullptr;
-	succeeded = succeeded && (connect(m_schematicGraphicsView, &SchematicSketchWidget::routingCheckSignal, this, &MainWindow::routingCheckSlot) != nullptr);
-	succeeded = succeeded && (connect(m_breadboardGraphicsView, &BreadboardSketchWidget::routingCheckSignal, this, &MainWindow::routingCheckSlot) != nullptr);
-
 
 	succeeded =  succeeded && (connect(m_breadboardGraphicsView, SIGNAL(swapSignal(const QString &, const QString &, QMap<QString, QString> &, ItemBase *)),
 									  this, SLOT(swapSelectedMap(const QString &, const QString &, QMap<QString, QString> &, ItemBase *))) != nullptr);
@@ -3390,144 +3385,4 @@ void MainWindow::postKeyEvent(const QString & serializedKeys) {
 		QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyPress, keyCode, modFlags, key.at(0)));
 		QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyRelease, keyCode, modFlags, key.at(0)));
 	}
-}
-
-QSet<QString> MainWindow::getItemConnectorSet(ConnectorItem * connectorItem) {
-	QSet<QString> set;
-	QRegularExpression re("^(AM|VM|OM)\\d+");
-	Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
-		ItemBase * attachedToItem = toConnectorItem->attachedTo();
-		VirtualWire * virtualWire = qobject_cast<VirtualWire *>(attachedToItem);
-		if (virtualWire != nullptr) continue;
-		if (re.match(attachedToItem->instanceTitle()).hasMatch()) continue; // Ignore Multimeter. It has no pcb connections.
-		QString idString = toConnectorItem->attachedToInstanceTitle() + ":" + toConnectorItem->connectorSharedID();
-		set.insert(idString);
-	}
-	return set;
-}
-
-QList<ItemBase *> MainWindow::toSortedItembases(const QList<QGraphicsItem *> & graphicsItems) {
-	QList<ItemBase *> itembases;
-	foreach (QGraphicsItem* item, graphicsItems) {
-		ItemBase * part = dynamic_cast<ItemBase *>(item);
-		if (!part) continue;
-		itembases.append(part);
-	}
-	std::sort(itembases.begin(), itembases.end(), [](ItemBase * b1, ItemBase * b2) {
-	    return b1->id() < b2->id();
-	});
-	return itembases;
-}
-
-void MainWindow::routingCheckSlot() {
-	bool foundError = false;
-	QHash<qint64, ItemBase *> bbID2ItemHash;
-	QHash<qint64, ItemBase *> pcbID2ItemHash;
-	QList<ItemBase *> bbList;
-	m_breadboardGraphicsView->collectPartsForCheck(bbList);
-	Q_FOREACH (ItemBase * part, bbList) {
-		bbID2ItemHash.insert(part->id(), part);
-//						QString("!!!!!! Duplicate breadboard part found. title:"
-//								"%1 id1: %2 id2: %3 moduleID1: %4 moduleID2: %5 "
-//								"viewIDname: 1: %6 2: %7 viewLayerIDs: 1: %8 2: %9")
-//						.arg(part->instanceTitle())
-//						.arg(firstPart->id())
-//						.arg(part->id())
-//						.arg(firstPart->moduleID())
-//						.arg(part->moduleID())
-//						.arg(firstPart->viewIDName())
-//						.arg(part->viewIDName())
-//						.arg(firstPart->viewLayerID())
-//						.arg(part->viewLayerID()));
-	}
-
-	QList<ItemBase *> pcbList;
-	m_pcbGraphicsView->collectPartsForCheck(pcbList);
-	Q_FOREACH (ItemBase * part, pcbList) {
-		if (part->viewLayerID() == ViewLayer::ViewLayerID::Silkscreen0) continue;
-		if (part->viewLayerID() == ViewLayer::ViewLayerID::Silkscreen1) continue;
-		if (part->viewLayerID() == ViewLayer::ViewLayerID::Board) continue;
-
-		pcbID2ItemHash.insert(part->id(), part);
-	}
-
-	QList<ItemBase *> schList;
-	m_schematicGraphicsView->collectPartsForCheck(schList);
-	Q_FOREACH (ItemBase* schPart, schList) {
-		if (dynamic_cast<NetLabel *>(schPart) != nullptr) continue;
-		if (schPart->viewLayerID() == ViewLayer::ViewLayerID::SchematicText) continue;
-		ItemBase * bbPart = bbID2ItemHash.value(schPart->id());
-		ItemBase * pcbPart = pcbID2ItemHash.value(schPart->id());
-		if (bbPart != nullptr) {
-			QHash<QString, ConnectorItem *> bbID2ConnectorHash;
-			Q_FOREACH (ConnectorItem * connectorItem, bbPart->cachedConnectorItems()) {
-				bbID2ConnectorHash.insert(connectorItem->connectorSharedID(), connectorItem);
-			}
-			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
-				ConnectorItem * bbConnectorItem = bbID2ConnectorHash.value(schConnectorItem->connectorSharedID());
-				if (bbConnectorItem != nullptr) {
-					if (bbConnectorItem != nullptr) {
-						QSet<QString> schSet = getItemConnectorSet(schConnectorItem);
-						QSet<QString> bbSet = getItemConnectorSet(bbConnectorItem);
-						if (schSet != bbSet) {
-							QString schSetString = TextUtils::setToString(schSet);
-							QString bbSetString = TextUtils::setToString(bbSet);
-							DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. Schema{%3} BB{%4}").arg(
-										schConnectorItem->connectorSharedID(),
-										schPart->instanceTitle(),
-										schSetString,
-										bbSetString));
-							foundError = true;
-						}
-					}
-				}
-			}
-		}
-		if (pcbPart != nullptr) {
-			QHash<QString, ConnectorItem *> pcbID2ConnectorHash;
-			Q_FOREACH (ConnectorItem * connectorItem, pcbPart->cachedConnectorItems()) {
-				pcbID2ConnectorHash.insert(connectorItem->connectorSharedID(), connectorItem);
-			}
-			Q_FOREACH (ConnectorItem * schConnectorItem, schPart->cachedConnectorItems()) {
-				ConnectorItem * pcbConnectorItem = pcbID2ConnectorHash.value(schConnectorItem->connectorSharedID());
-				if (pcbConnectorItem != nullptr) {
-					if (pcbConnectorItem != nullptr) {
-						QSet<QString> schSet = getItemConnectorSet(schConnectorItem);
-						QSet<QString> pcbSet = getItemConnectorSet(pcbConnectorItem);
-						if (schSet != pcbSet) {
-							QSet<QString> setSchMinusPcb = schSet - pcbSet;
-							QSet<QString> setPcbMinusSch = pcbSet - schSet;
-							bool nonWireError = !setPcbMinusSch.isEmpty();
-							Q_FOREACH(QString str, setSchMinusPcb) {
-								if (!str.startsWith("Wire")) {
-									nonWireError = true;
-								} else {
-									schSet -= str;
-								}
-							}
-							if (nonWireError) {
-								QString schSetString = TextUtils::setToString(schSet);
-								QString pcbSetString = TextUtils::setToString(pcbSet);
-								DebugDialog::debug(QString("Connectors with id: %1 for item: %2 have differing QSets. Schema{%3} PCB{%4}").arg(
-												schConnectorItem->connectorSharedID(),
-												schPart->instanceTitle(),
-												schSetString,
-												pcbSetString));
-								foundError = true;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-
-	QColor newColor = foundError ? QColor("red") : QColor("white");
-	m_breadboardGraphicsView->setBackgroundColor(newColor, false);
-	m_schematicGraphicsView->setBackgroundColor(newColor, false);
-	if (foundError) {
-		m_pcbGraphicsView->setBackgroundColor(newColor, false);
-	}
-
 }

@@ -5115,7 +5115,6 @@ void SketchWidget::arrowTimerTimeout() {
 
 void SketchWidget::keyPressEvent ( QKeyEvent * event ) {
 	Q_EMIT routingCheckSignal();
-	DebugDialog::debug(QString("SketchWidget::keyPressEvent: size of m_moveDisconnectedFromFemale: %1").arg(m_moveDisconnectedFromFemale.size()));
 
 	if ((m_inFocus.length() == 0) && !m_movingByMouse) {
 		int dx = 0, dy = 0;
@@ -7256,16 +7255,6 @@ void SketchWidget::collectParts(QList<ItemBase *> & partList) {
 		if (pitem->itemType() == ModelPart::Symbol) continue;
 
 		partList.append(pitem);
-	}
-}
-
-void SketchWidget::collectPartsForCheck(QList<ItemBase *> & partList) {
-	Q_FOREACH (QGraphicsItem * item, scene()->items()) {
-		auto * itemBase = dynamic_cast<ItemBase *>(item);
-		if (!itemBase) continue;
-		if (itemBase->layerKinChief() != itemBase) continue;
-
-		partList.append(itemBase);
 	}
 }
 

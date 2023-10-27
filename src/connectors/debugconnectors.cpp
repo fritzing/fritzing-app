@@ -30,7 +30,8 @@ DebugConnectors::DebugConnectors(SketchWidget *breadboardGraphicsView, SketchWid
 	  m_schematicGraphicsView(schematicGraphicsView),
 	  m_pcbGraphicsView(pcbGraphicsView),
 	  timer(new QTimer(this)),
-	  firstCall(true)
+	  firstCall(true),
+	  colorChanged(false)
 {
 	timer->setSingleShot(true);
 	connect(timer, &QTimer::timeout, this, &DebugConnectors::routingCheckSlot);
@@ -196,11 +197,22 @@ void DebugConnectors::doRoutingCheck() {
 		}
 	}
 
-
-	QColor newColor = foundError ? QColor("red") : QColor("white");
-	m_breadboardGraphicsView->setBackgroundColor(newColor, false);
-	m_schematicGraphicsView->setBackgroundColor(newColor, false);
 	if (foundError) {
-		m_pcbGraphicsView->setBackgroundColor(newColor, false);
+		if (!colorChanged) {
+			breadboardBackgroundColor = m_breadboardGraphicsView->background();
+			schematicBackgroundColor = m_schematicGraphicsView->background();
+			pcbBackgroundColor = m_pcbGraphicsView->background();
+		}
+		m_breadboardGraphicsView->setBackgroundColor(QColor("red"), false);
+		m_schematicGraphicsView->setBackgroundColor(QColor("red"), false);
+		m_pcbGraphicsView->setBackgroundColor(QColor("red"), false);
+		colorChanged = true;
+	} else {
+		if (colorChanged) {
+			m_breadboardGraphicsView->setBackgroundColor(breadboardBackgroundColor, false);
+			m_schematicGraphicsView->setBackgroundColor(schematicBackgroundColor, false);
+			m_pcbGraphicsView->setBackgroundColor(pcbBackgroundColor, false);
+			colorChanged = false;
+		}
 	}
 }

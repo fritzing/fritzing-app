@@ -23,6 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QSet>
 #include <QString>
+#include <QColor>
 #include "../sketch/sketchwidget.h"
 #include "../utils/textutils.h"
 
@@ -49,7 +50,11 @@ private:
 	QTimer *timer;
 	QElapsedTimer lastExecution;
 	bool firstCall;
+	bool colorChanged;
 	static constexpr qint64 minimumInterval = 300;
+	QColor breadboardBackgroundColor;
+	QColor schematicBackgroundColor;
+	QColor pcbBackgroundColor;
 };
 
 #endif // DEBUGCONNECTORS_H

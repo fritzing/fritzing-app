@@ -5084,6 +5084,7 @@ void SketchWidget::changeConnectionAux(long fromID, const QString & fromConnecto
 			toConnectorItem->attachedTo()->updateConnections(toConnectorItem, false, already);
 		}
 	}
+	Q_EMIT routingCheckSignal();
 }
 
 void SketchWidget::changeConnectionSlot(long fromID, QString fromConnectorID,
@@ -6790,7 +6791,6 @@ void SketchWidget::updateRoutingStatus(CleanUpWiresCommand* command, RoutingStat
 		}
 
 		Q_EMIT routingStatusSignal(this, routingStatus);
-		Q_EMIT routingCheckSignal();
 
 		m_routingStatus = routingStatus;
 	}
@@ -7149,7 +7149,6 @@ void SketchWidget::setWireVisible(Wire * wire) {
 void SketchWidget::forwardRoutingStatusForCommand(const RoutingStatus & routingStatus) {
 
 	Q_EMIT routingStatusSignal(this, routingStatus);
-	Q_EMIT routingCheckSignal();
 }
 
 bool SketchWidget::matchesLayer(ModelPart * modelPart) {

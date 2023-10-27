@@ -5115,8 +5115,6 @@ void SketchWidget::arrowTimerTimeout() {
 }
 
 void SketchWidget::keyPressEvent ( QKeyEvent * event ) {
-	Q_EMIT routingCheckSignal();
-
 	if ((m_inFocus.length() == 0) && !m_movingByMouse) {
 		int dx = 0, dy = 0;
 		switch (event->key()) {

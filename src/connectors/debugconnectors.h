@@ -29,18 +29,27 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 class DebugConnectors : public QObject {
 	Q_OBJECT
 public:
-    DebugConnectors(SketchWidget *breadboardGraphicsView, SketchWidget *schematicGraphicsView, SketchWidget *pcbGraphicsView);
+	DebugConnectors(SketchWidget *breadboardGraphicsView, SketchWidget *schematicGraphicsView, SketchWidget *pcbGraphicsView);
 
-    void routingCheckSlot();
+public slots:
+	void routingCheckSlot();
+
+private slots:
+	void doRoutingCheck();
 
 private:
-    SketchWidget *m_breadboardGraphicsView;
-    SketchWidget *m_schematicGraphicsView;
-    SketchWidget *m_pcbGraphicsView;
+	SketchWidget *m_breadboardGraphicsView;
+	SketchWidget *m_schematicGraphicsView;
+	SketchWidget *m_pcbGraphicsView;
 
-    QSet<QString> getItemConnectorSet(ConnectorItem *connectorItem);
-    QList<ItemBase *> toSortedItembases(const QList<QGraphicsItem *> &graphicsItems);
-    void collectPartsForCheck(QList<ItemBase *> &partList, QGraphicsScene *scene);
+	QSet<QString> getItemConnectorSet(ConnectorItem *connectorItem);
+	QList<ItemBase *> toSortedItembases(const QList<QGraphicsItem *> &graphicsItems);
+	void collectPartsForCheck(QList<ItemBase *> &partList, QGraphicsScene *scene);
+
+	QTimer *timer;
+	QElapsedTimer lastExecution;
+	bool firstCall;
+	static constexpr qint64 minimumInterval = 300;
 };
 
 #endif // DEBUGCONNECTORS_H

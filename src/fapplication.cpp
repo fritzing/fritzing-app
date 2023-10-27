@@ -365,6 +365,7 @@ int FApplication::init() {
 
 	m_serviceType = ServiceType::NoService;
 	bool solidRatsnest = false;
+	bool routingCheck = false;
 
 	QList<int> toRemove;
 	for (int i = 0; i < m_arguments.length(); i++) {
@@ -404,6 +405,12 @@ int FApplication::init() {
 			std::shared_ptr<FTesting> fTesting = FTesting::getInstance();
 			fTesting->init();
 			solidRatsnest = true;
+			toRemove << i;
+		}
+		if ((m_arguments[i].compare("-routingcheck", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("--routingcheck", Qt::CaseInsensitive) == 0)) {
+			DebugDialog::setEnabled(true);
+			routingCheck = true;
 			toRemove << i;
 		}
 
@@ -583,7 +590,7 @@ int FApplication::init() {
 
 	Q_INIT_RESOURCE(phoenixresources);
 
-	MainWindow::initNames();
+	MainWindow::initNames(routingCheck);
 	FSvgRenderer::initNames();
 	ViewLayer::initNames();
 	RatsnestColors::initNames();

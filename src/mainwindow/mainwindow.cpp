@@ -514,7 +514,9 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 
 	connect(fProbeKey, &FProbeKeyPressEvents::postKeyEvent, this, &MainWindow::postKeyEvent);
 
-	m_debugConnectors = new DebugConnectors(m_breadboardGraphicsView, m_schematicGraphicsView, m_pcbGraphicsView);
+	if (m_routingCheck) {
+		m_debugConnectors = new DebugConnectors(m_breadboardGraphicsView, m_schematicGraphicsView, m_pcbGraphicsView);
+	}
 
 	m_projectProperties = QSharedPointer<ProjectProperties>(new ProjectProperties());
 //	m_breadboardGraphicsView->setProjectProperties(m_projectProperties);

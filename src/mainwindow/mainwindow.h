@@ -224,7 +224,7 @@ public:
 	void triggerSimulator();
 
 public:
-	static void initNames();
+	static void initNames(bool routingCheck);
 	static MainWindow * newMainWindow(ReferenceModel *referenceModel, const QString & displayPath, bool showProgress, bool lockFiles, int initialTab);
 	static void setAutosavePeriod(int);
 	static void setAutosaveEnabled(bool);
@@ -989,6 +989,7 @@ protected:
 	static int CascadeFactorX;
 	static int CascadeFactorY;
 	static QRegularExpression GuidMatcher;
+	static bool m_routingCheck;
 	void exportIPC_D_356A_interactive();
 };
 

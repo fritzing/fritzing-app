@@ -36,7 +36,8 @@ const long LockManager::SlowTime = 240000;
 static LockManager TheLockManager;
 static QHash<long, QPointer<QTimer> > TheTimers;
 static QMultiHash<long, LockedFile *> TheLockedFiles;
-static QMutex TheMutex;
+static QMutex LockedFilesMutex;
+static QMutex TimersMutex;
 
 LockedFile::LockedFile(const QString & filename, long freq) {
 	file.setFileName(filename);
@@ -61,13 +62,12 @@ LockManager::LockManager() : QObject()
 
 LockManager::~LockManager()
 {
-	Q_FOREACH (QTimer * timer, TheTimers) {
-		if (timer != nullptr) timer->stop();
-	}
-	TheTimers.clear();
+	cleanup();
 }
 
 void LockManager::cleanup() {
+	QMutexLocker locker(&TimersMutex);
+
 	Q_FOREACH (QTimer * timer, TheTimers) {
 		if (timer != nullptr) {
 			timer->stop();
@@ -81,7 +81,7 @@ void LockManager::touchFiles() {
 	auto * timer = qobject_cast<QTimer *>(sender());
 	if (timer == nullptr) return;
 
-	QMutexLocker locker(&TheMutex);
+	QMutexLocker locker(&LockedFilesMutex);
 	Q_FOREACH (LockedFile * lockedFile, TheLockedFiles.values(timer->interval())) {
 		lockedFile->touch();
 	}
@@ -103,9 +103,11 @@ void LockManager::initLockedFiles(const QString & prefix, QString & folder, QHas
 LockedFile * LockManager::makeLockedFile(const QString & path, long touchFrequency) {
 	auto * lockedFile = new LockedFile(path, touchFrequency);
 	lockedFile->touch();
-	TheMutex.lock();
+	LockedFilesMutex.lock();
 	TheLockedFiles.insert(touchFrequency, lockedFile);
-	TheMutex.unlock();
+	LockedFilesMutex.unlock();
+
+	QMutexLocker locker(&TimersMutex);
 	QTimer * timer = TheTimers.value(touchFrequency, nullptr);
 	if (timer == nullptr) {
 		timer = new QTimer();
@@ -135,9 +137,9 @@ void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, Lock
 
 	Q_FOREACH (QString sub, lockedFiles.keys()) {
 		LockedFile * lockedFile = lockedFiles.value(sub);
-		TheMutex.lock();
+		LockedFilesMutex.lock();
 		TheLockedFiles.remove(lockedFile->frequency, lockedFile);
-		TheMutex.unlock();
+		LockedFilesMutex.unlock();
 		if (remove) {
 			FolderUtils::rmdir(backupDir.absoluteFilePath(sub));
 		}

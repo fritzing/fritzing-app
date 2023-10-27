@@ -259,11 +259,7 @@ void Simulator::simulate() {
 				m_sch2bbItemHash.insert(schPart, bbPart);
 			}
 		}
-
 	}
-
-	Q_EMIT m_schematicGraphicsView->routingCheckSignal();
-
 	std::cout << "-----------------------------------" <<std::endl;
 	std::cout << "Removing the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.):" <<std::endl;
 

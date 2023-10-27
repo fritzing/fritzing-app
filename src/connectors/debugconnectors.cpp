@@ -21,6 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "debugconnectors.h"
 #include "../items/itembase.h"
 #include "../items/symbolpaletteitem.h"
+#include "../items/virtualwire.h"
 #include "../connectors/connectoritem.h"
 #include "../debugdialog.h"
 

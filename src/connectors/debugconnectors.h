@@ -26,7 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../sketch/sketchwidget.h"
 #include "../utils/textutils.h"
 
-class DebugConnectors : QObject {
+class DebugConnectors : public QObject {
 	Q_OBJECT
 public:
     DebugConnectors(SketchWidget *breadboardGraphicsView, SketchWidget *schematicGraphicsView, SketchWidget *pcbGraphicsView);

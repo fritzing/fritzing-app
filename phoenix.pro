@@ -18,13 +18,10 @@
 #
 # ********************************************************************
 
-RECOMMENDED_QT_VERSION = 6.5.3
-
-greaterThan(QT_VERSION, RECOMMENDED_QT_VERSION) {
-	error("Warning: Your Qt version is greater than the recommended version " $$RECOMMENDED_QT_VERSION)
-} else:lessThan(QT_VERSION, RECOMMENDED_QT_VERSION) {
-	error("Warning: Your Qt version is less than the recommended version " $$RECOMMENDED_QT_VERSION)
-}
+QT_LEAST=6.5.3
+QT_MOST=6.5.10
+!versionAtLeast(QT_VERSION, $${QT_LEAST}):error("Use at least Qt version $${QT_LEAST}")
+!versionAtMost(QT_VERSION, $${QT_MOST}):error("Use at most Qt version $${QT_MOST}")
 
 CONFIG += debug_and_release
 CONFIG += c++17

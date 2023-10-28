@@ -854,10 +854,10 @@ ModelPart * ModelBase::createOldSchematicPartAux(ModelPart * modelPart, const QS
 		DebugDialog::debug(QString("Unable to open :%1").arg(modelPart->path()));
 	}
 	QDomDocument oldDoc;
-	bool ok = oldDoc.setContent(&newFzp);
-	if (!ok) {
-		// this shouldn't happen
-		return nullptr;
+	QDomDocument::ParseResult parseResult = oldDoc.setContent(&newFzp);
+	if (!parseResult.operator bool()) {
+    	// Handle the error, perhaps using parseResult.errorMessage() for details
+    	return nullptr;
 	}
 
 	QDomElement root = oldDoc.documentElement();

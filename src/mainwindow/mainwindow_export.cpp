@@ -52,8 +52,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/propertydef.h"
 #include "src/ipc/ipc_d_356.h"
 
-bool MainWindow::m_routingCheck = false;
-
 static QString eagleActionType = ".eagle";
 static QString gerberActionType = ".gerber";
 static QString jpgActionType = ".jpg";
@@ -105,7 +103,7 @@ bool sortPartList(ItemBase * b1, ItemBase * b2) {
 
 /////////////////////////////////////////////////////////
 
-void MainWindow::initNames(bool routingCheck)
+void MainWindow::initNames()
 {
 	OtherKnownExtensions << jpgActionType << pdfActionType << pngActionType << svgActionType << bomActionType << bomCsvActionType << ipcActionType << netlistActionType << spiceNetlistActionType;
 
@@ -125,8 +123,6 @@ void MainWindow::initNames(bool routingCheck)
 	QSettings settings;
 	AutosaveEnabled = settings.value("autosaveEnabled", QString("%1").arg(AutosaveEnabled)).toBool();
 	AutosaveTimeoutMinutes = settings.value("autosavePeriod", QString("%1").arg(AutosaveTimeoutMinutes)).toInt();
-	m_routingCheck = routingCheck;
-
 }
 
 void MainWindow::print() {

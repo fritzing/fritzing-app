@@ -224,7 +224,7 @@ public:
 	void triggerSimulator();
 
 public:
-	static void initNames(bool routingCheck);
+	static void initNames();
 	static MainWindow * newMainWindow(ReferenceModel *referenceModel, const QString & displayPath, bool showProgress, bool lockFiles, int initialTab);
 	static void setAutosavePeriod(int);
 	static void setAutosaveEnabled(bool);
@@ -972,8 +972,7 @@ protected:
 	QGraphicsItem * m_watermark;
 	QList<QGraphicsItem*> m_selectedItems;
 	QColor m_bgColor;
-	QSharedPointer<ProjectProperties> m_projectProperties;
-	QPointer<DebugConnectors> m_debugConnectors;
+	QSharedPointer<ProjectProperties> m_projectProperties;	
 
 public:
 	static int AutosaveTimeoutMinutes;
@@ -989,7 +988,6 @@ protected:
 	static int CascadeFactorX;
 	static int CascadeFactorY;
 	static QRegularExpression GuidMatcher;
-	static bool m_routingCheck;
 	void exportIPC_D_356A_interactive();
 };
 

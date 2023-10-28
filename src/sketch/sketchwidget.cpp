@@ -5084,7 +5084,6 @@ void SketchWidget::changeConnectionAux(long fromID, const QString & fromConnecto
 			toConnectorItem->attachedTo()->updateConnections(toConnectorItem, false, already);
 		}
 	}
-	Q_EMIT routingCheckSignal();
 }
 
 void SketchWidget::changeConnectionSlot(long fromID, QString fromConnectorID,
@@ -8056,9 +8055,6 @@ void SketchWidget::selectAllWiresFrom(ViewGeometry::WireFlag flag, QList<QGraphi
 
 	scene()->clearSelection();
 	m_undoStack->push(parentCommand);
-}
-
-void SketchWidget::tidyWires() {
 }
 
 void SketchWidget::updateConnectors() {

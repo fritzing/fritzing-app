@@ -25,20 +25,23 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QString>
 #include <QColor>
 #include "../sketch/sketchwidget.h"
-#include "../utils/textutils.h"
 
 class DebugConnectors : public QObject {
 	Q_OBJECT
 public:
 	DebugConnectors(SketchWidget *breadboardGraphicsView, SketchWidget *schematicGraphicsView, SketchWidget *pcbGraphicsView);
 
+
 public slots:
-	void routingCheckSlot();
+	void onRoutingCheck();
+	void monitorConnections(bool enabled);
+	void onChangeConnection();
 
-private slots:
-	void doRoutingCheck();
-
+	void onSelectErrors();
+	void onRepairErrors();
 private:
+	QList<ItemBase *> doRoutingCheck();
+
 	SketchWidget *m_breadboardGraphicsView;
 	SketchWidget *m_schematicGraphicsView;
 	SketchWidget *m_pcbGraphicsView;
@@ -55,6 +58,8 @@ private:
 	QColor breadboardBackgroundColor;
 	QColor schematicBackgroundColor;
 	QColor pcbBackgroundColor;
+
+	bool m_monitorEnabled;
 };
 
 #endif // DEBUGCONNECTORS_H

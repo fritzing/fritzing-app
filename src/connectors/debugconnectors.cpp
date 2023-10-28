@@ -24,6 +24,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../items/virtualwire.h"
 #include "../connectors/connectoritem.h"
 #include "../debugdialog.h"
+#include "utils/textutils.h"
+
+#include <QEventLoop>
 
 DebugConnectors::DebugConnectors(SketchWidget *breadboardGraphicsView, SketchWidget *schematicGraphicsView, SketchWidget *pcbGraphicsView)
 	: m_breadboardGraphicsView(breadboardGraphicsView),
@@ -33,11 +36,28 @@ DebugConnectors::DebugConnectors(SketchWidget *breadboardGraphicsView, SketchWid
 	  firstCall(true),
 	  colorChanged(false)
 {
+	monitorConnections(false);
 	timer->setSingleShot(true);
-	connect(timer, &QTimer::timeout, this, &DebugConnectors::routingCheckSlot);
-	connect(m_breadboardGraphicsView, &SketchWidget::routingCheckSignal, this, &DebugConnectors::routingCheckSlot);
-	connect(m_schematicGraphicsView, &SketchWidget::routingCheckSignal, this, &DebugConnectors::routingCheckSlot);
-	connect(m_pcbGraphicsView, &SketchWidget::routingCheckSignal, this, &DebugConnectors::routingCheckSlot);
+	connect(timer, &QTimer::timeout, this, &DebugConnectors::onRoutingCheck);
+	connect(m_breadboardGraphicsView,
+			&SketchWidget::changeConnectionSignal,
+			this,
+			&DebugConnectors::onRoutingCheck);
+	connect(m_schematicGraphicsView,
+			&SketchWidget::changeConnectionSignal,
+			this,
+			&DebugConnectors::onRoutingCheck);
+	connect(m_pcbGraphicsView,
+			&SketchWidget::changeConnectionSignal,
+			this,
+			&DebugConnectors::onRoutingCheck);
+
+	monitorConnections(true);
+}
+
+void DebugConnectors::monitorConnections(bool enabled)
+{
+	m_monitorEnabled = enabled;
 }
 
 QSet<QString> DebugConnectors::getItemConnectorSet(ConnectorItem *connectorItem) {
@@ -77,15 +97,20 @@ void DebugConnectors::collectPartsForCheck(QList<ItemBase *> &partList, QGraphic
 	}
 }
 
-void DebugConnectors::routingCheckSlot() {
-	if(firstCall) {
-	    doRoutingCheck();
-	    firstCall = false;
-	    return;
+void DebugConnectors::onChangeConnection()
+{
+	if (!m_monitorEnabled) {
+		return;
+	}
+
+	if (firstCall) {
+		doRoutingCheck();
+		firstCall = false;
+		return;
 	}
 	qint64 elapsed = lastExecution.elapsed();
 	if (elapsed < minimumInterval) {
-		if(!timer->isActive()){
+		if (!timer->isActive()) {
 			timer->start(minimumInterval - elapsed);
 		}
 	} else {
@@ -93,7 +118,56 @@ void DebugConnectors::routingCheckSlot() {
 	}
 }
 
-void DebugConnectors::doRoutingCheck() {
+void DebugConnectors::onSelectErrors()
+{
+	QList<ItemBase *> errorList = doRoutingCheck();
+	if (!errorList.isEmpty()) {
+		m_schematicGraphicsView->selectItems(errorList);
+	}
+}
+
+void nonBlockingDelay(int milliseconds) {
+	QEventLoop loop;
+	QTimer::singleShot(milliseconds, &loop, &QEventLoop::quit);
+	loop.exec();
+}
+
+
+void DebugConnectors::onRepairErrors()
+{
+	bool tmp = m_monitorEnabled;
+	monitorConnections(false);
+
+	QList<ItemBase *> errorList = doRoutingCheck();
+	if (!errorList.isEmpty()) {
+		auto stack = m_schematicGraphicsView->undoStack();
+		while (stack->hasTimers()) {
+			nonBlockingDelay(100);
+		}
+		int index = stack->index();
+		m_schematicGraphicsView->selectItems(errorList);
+		m_schematicGraphicsView->deleteSelected(nullptr, false);
+		m_breadboardGraphicsView->selectItems(errorList);
+		m_breadboardGraphicsView->deleteSelected(nullptr, false);
+		m_pcbGraphicsView->selectItems(errorList);
+		m_pcbGraphicsView->deleteSelected(nullptr, false);
+
+		while (stack->hasTimers()) {
+			nonBlockingDelay(100);
+		}
+
+		stack->setIndex(index);
+		doRoutingCheck();
+	}
+	monitorConnections(tmp);
+}
+
+void DebugConnectors::onRoutingCheck() {
+	doRoutingCheck();
+}
+
+QList<ItemBase *> DebugConnectors::doRoutingCheck() {
+	DebugDialog::debug("debug connectors do");
 	lastExecution.restart();
 	bool foundError = false;
 	QHash<qint64, ItemBase *> bbID2ItemHash;
@@ -126,6 +200,8 @@ void DebugConnectors::doRoutingCheck() {
 		pcbID2ItemHash.insert(part->id(), part);
 	}
 
+	QList<ItemBase *> errorList;
+
 	QList<ItemBase *> schList;
 	collectPartsForCheck(schList, m_schematicGraphicsView->scene());
 	Q_FOREACH (ItemBase* schPart, schList) {
@@ -153,6 +229,8 @@ void DebugConnectors::doRoutingCheck() {
 										   schSetString,
 										   bbSetString));
 							foundError = true;
+							errorList << schPart;
+							errorList << bbPart;
 						}
 					}
 				}
@@ -189,6 +267,8 @@ void DebugConnectors::doRoutingCheck() {
 											   schSetString,
 											   pcbSetString));
 								foundError = true;
+								errorList << schPart;
+								errorList << pcbPart;
 							}
 						}
 					}
@@ -215,4 +295,6 @@ void DebugConnectors::doRoutingCheck() {
 			colorChanged = false;
 		}
 	}
+
+	return errorList;
 }

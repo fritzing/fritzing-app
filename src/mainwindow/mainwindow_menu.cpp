@@ -67,6 +67,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../processeventblocker.h"
 #include "../sketchtoolbutton.h"
 #include "../help/firsttimehelpdialog.h"
+#include "../connectors/debugconnectors.h"
 
 ////////////////////////////////////////////////////////
 
@@ -487,7 +488,6 @@ bool MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	}
 
 	initZoom();
-	Q_EMIT m_pcbGraphicsView->routingCheckSignal();
 	return result;
 }
 
@@ -3256,8 +3256,11 @@ void MainWindow::flattenCurve()
 	                                    bendpointAction->lastLocation());
 }
 
-void MainWindow::tidyWires() {
-	m_currentGraphicsView->tidyWires();
+void MainWindow::tidyWires()
+{
+#ifndef QT_NO_DEBUG
+	m_debugConnectors->onRepairErrors();
+#endif
 }
 
 void MainWindow::copperFill() {

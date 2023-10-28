@@ -76,7 +76,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../simulation/FProbeStartSimulator.h"
 #include "../mainwindow/FProbeDropByModuleID.h"
 #include "../mainwindow/FProbeKeyPressEvents.h"
-#include "../connectors/debugconnectors.h"
+#include "connectors/debugconnectors.h"
 
 FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 {
@@ -515,7 +515,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	connect(fProbeKey, &FProbeKeyPressEvents::postKeyEvent, this, &MainWindow::postKeyEvent);
 
 #ifndef QT_NO_DEBUG
-	new DebugConnectors(m_breadboardGraphicsView, m_schematicGraphicsView, m_pcbGraphicsView);
+	m_debugConnectors = new DebugConnectors(m_breadboardGraphicsView, m_schematicGraphicsView, m_pcbGraphicsView);
 #endif
 
 	m_projectProperties = QSharedPointer<ProjectProperties>(new ProjectProperties());
@@ -1616,6 +1616,11 @@ QString MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent,
 
 	// the bundled itself
 	bool result = this->mainLoad(sketchName, "", checkObsolete);
+
+#ifndef QT_NO_DEBUG
+	m_debugConnectors->onRoutingCheck();
+#endif
+
 	setCurrentFile(fileName, addToRecent, setAsLastOpened);
 	if (!result) return QString("Unable to load sketch: '%1' filename: %2").arg(sketchName).arg(fileName);
 	return "";

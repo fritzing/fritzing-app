@@ -967,6 +967,7 @@ protected:
 	bool m_obsoleteSMDOrientation = false;
 	QWidget * m_orderFabButton = nullptr;
 	int m_fireQuoteDelay = 0;
+	QPointer<DebugConnectors> m_debugConnectors;
 
 	// exporting
 	QGraphicsItem * m_watermark;

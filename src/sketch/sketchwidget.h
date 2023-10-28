@@ -231,7 +231,6 @@ public:
 	LayerHash & viewLayers();
 	virtual void createTrace(Wire*, bool useLastWireColor);
 	virtual void selectAllWires(ViewGeometry::WireFlag);
-	virtual void tidyWires();
 	const QString & getShortName();
 	virtual void setClipEnds(class ClipableWire *, bool);
 	void getBendpointWidths(class Wire *, double w, double & w1, double & w2, bool & negativeOffsetRect);
@@ -545,7 +544,6 @@ Q_SIGNALS:
 	void resizeSignal();
 	void dropSignal(const QPoint &pos);
 	void routingStatusSignal(SketchWidget *, const RoutingStatus &);
-	void routingCheckSignal();
 	void movingSignal(SketchWidget *, QUndoCommand * parentCommand);
 	void selectAllItemsSignal(bool state, bool doEmit);
 	void checkStickySignal(long id, bool doEmit, bool checkCurrent, CheckStickyCommand *);

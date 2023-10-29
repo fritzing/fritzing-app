@@ -21,8 +21,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "FTesting.h"
 #include "FTestingServer.h"
 
-#include "../utils/fmessagebox.h"
-#include "../debugdialog.h"
+#include "utils/fmessagebox.h"
+#include "debugdialog.h"
 
 #include <QUrl>
 
@@ -30,40 +30,40 @@ FTesting::FTesting() {
 }
 
 std::shared_ptr<FTesting> FTesting::getInstance() {
-    static std::shared_ptr<FTesting> instance;
-    if (!instance) {
-	    instance.reset(new FTesting);
-    }
-    return instance;
+	static std::shared_ptr<FTesting> instance;
+	if (!instance) {
+		instance.reset(new FTesting);
+	}
+	return instance;
 }
 
 FTesting::~FTesting() {
 }
 
 void FTesting::init() {
-    if(m_initialized) return;
-    initServer();
-    m_initialized = true;
+	if(m_initialized) return;
+	initServer();
+	m_initialized = true;
 }
 
 void FTesting::addProbe(FProbe * probe)
 {
-    m_probeMap[probe->name()] = probe;
+	m_probeMap[probe->name()] = probe;
 }
 
 stdx::optional<QVariant> FTesting::readProbe(std::string name)
 {
-    if(m_probeMap.find(name) != m_probeMap.end()) {
+	if(m_probeMap.find(name) != m_probeMap.end()) {
 	return m_probeMap[name]->read();
-    }
-    return std::nullopt;
+	}
+	return std::nullopt;
 }
 
 void FTesting::writeProbe(std::string name, QVariant param)
 {
-    if(m_probeMap.find(name) != m_probeMap.end()) {
+	if(m_probeMap.find(name) != m_probeMap.end()) {
 	m_probeMap[name]->write(param);
-    }
+	}
 }
 
 void FTesting::initServer() {

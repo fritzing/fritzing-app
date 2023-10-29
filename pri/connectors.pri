@@ -14,6 +14,7 @@
 # ********************************************************************/
 
 HEADERS += \
+	$$PWD/../src/connectors/debugconnectorsprobe.h \
 src/connectors/bus.h \
 src/connectors/busshared.h \
 src/connectors/connector.h \
@@ -25,6 +26,7 @@ src/connectors/svgidlayer.h \
 src/connectors/debugconnectors.h
 
 SOURCES += \
+	$$PWD/../src/connectors/debugconnectorsprobe.cpp \
 src/connectors/bus.cpp \
 src/connectors/busshared.cpp \
 src/connectors/connector.cpp \

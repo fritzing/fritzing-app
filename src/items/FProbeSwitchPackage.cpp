@@ -31,7 +31,9 @@ FProbeSwitchPackage::FProbeSwitchPackage(FamilyPropertyComboBox * familyProperty
 void FProbeSwitchPackage::write(QVariant data) {
 	int index = m_familyPropertyComboBox->findText(data.toString());
 	DebugDialog::debug(QString("FProbeSwitchPackage index old: %1 index new: %2").arg(m_familyPropertyComboBox->currentIndex()).arg(index));
-	DebugDialog::debug(QString("FProbeSwitchPackage text old: %1 text new: %2").arg(m_familyPropertyComboBox->itemText(m_familyPropertyComboBox->currentIndex())).arg(m_familyPropertyComboBox->itemText(index)));
+	DebugDialog::debug(QString("FProbeSwitchPackage text old: %1 text new: %2")
+						   .arg(m_familyPropertyComboBox->itemText(m_familyPropertyComboBox->currentIndex())
+						   , m_familyPropertyComboBox->itemText(index)));
 	if (index != -1) {
 		m_familyPropertyComboBox->setCurrentIndex(index);
 	}

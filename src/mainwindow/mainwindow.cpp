@@ -77,6 +77,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../mainwindow/FProbeDropByModuleID.h"
 #include "../mainwindow/FProbeKeyPressEvents.h"
 #include "connectors/debugconnectors.h"
+#include "connectors/debugconnectorsprobe.h"
 
 FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 {
@@ -517,6 +518,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 #ifndef QT_NO_DEBUG
 	m_debugConnectors = new DebugConnectors(m_breadboardGraphicsView, m_schematicGraphicsView, m_pcbGraphicsView);
 #endif
+	auto fProbeDebugConnectors = new DebugConnectorsProbe(m_breadboardGraphicsView, m_schematicGraphicsView, m_pcbGraphicsView);
 
 	m_projectProperties = QSharedPointer<ProjectProperties>(new ProjectProperties());
 //	m_breadboardGraphicsView->setProjectProperties(m_projectProperties);

@@ -40,6 +40,7 @@ public slots:
 	void onSelectErrors();
 	void onRepairErrors();
 private:
+	friend class DebugConnectorsProbe;
 	QList<ItemBase *> doRoutingCheck();
 
 	SketchWidget *m_breadboardGraphicsView;

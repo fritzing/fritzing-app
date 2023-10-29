@@ -1956,10 +1956,13 @@ void PEMainWindow::pegiMousePressed(PEGraphicsItem * pegi, bool & ignore)
 	QString id = pegi->element().attribute("id");
 	if (id.isEmpty()) return;
 
-	QDomElement current = m_connectorList.at(m_peToolView->currentConnectorIndex());
-	if (current.attribute("id").compare(id) == 0) {
-		// already there
-		return;
+	int index = m_peToolView->currentConnectorIndex();
+	if (index >= 0) {
+		QDomElement current = m_connectorList.at(index);
+		if (current.attribute("id").compare(id) == 0) {
+			// already there
+			return;
+		}
 	}
 
 	// if a connector has been clicked, make it the current connector

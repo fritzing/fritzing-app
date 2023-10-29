@@ -194,7 +194,7 @@ bool DebugDialog::connectToBroadcast(QObject * receiver, const char* slot) {
 		new DebugDialog();
 	}
 
-	return connect(singleton, SIGNAL(debugBroadcast(const QString &, QObject *)), receiver, slot ) != nullptr;
+	return connect(singleton, SIGNAL(debugBroadcast(QString,QObject*)), receiver, slot ) != nullptr;
 }
 
 void DebugDialog::setDebugLevel(DebugLevel debugLevel) {

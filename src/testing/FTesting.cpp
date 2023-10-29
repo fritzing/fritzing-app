@@ -25,6 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "debugdialog.h"
 
 #include <QUrl>
+#include <QStringBuilder>
 
 FTesting::FTesting() {
 }
@@ -169,10 +170,11 @@ void FTestingServerThread::run()
 	std::shared_ptr<FTesting> fTesting = FTesting::getInstance();
 	if (result != "") {
 		QString type = "text/plain";
-		QString response = QString("HTTP/1.0 %1 %2\r\n").arg(status).arg("response");
-		response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type);
-		response += QString("Content-Length: %1\r\n").arg(result.length());
-		response += QString("\r\n%1").arg(result);
+		QString response =
+			QString("HTTP/1.0 %1 %2\r\n").arg(status).arg("response") %
+			QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type) %
+			QString("Content-Length: %1\r\n").arg(result.length()) %
+			QString("\r\n%1").arg(result);
 		socket->write(response.toUtf8());
 	}
 	if (readOrWrite.compare("write") == 0 ) {
@@ -196,10 +198,11 @@ void FTestingServerThread::run()
 
 		if (result != "") {
 			QString type = "text/plain";
-			QString response = QString("HTTP/1.0 %1 %2\r\n").arg(status).arg("response");
-			response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type);
-			response += QString("Content-Length: %1\r\n").arg(result.length());
-			response += QString("\r\n%1").arg(result);
+			QString response =
+				QString("HTTP/1.0 %1 %2\r\n").arg(status).arg("response") %
+				QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type) %
+				QString("Content-Length: %1\r\n").arg(result.length()) %
+				QString("\r\n%1").arg(result);
 			socket->write(response.toUtf8());
 		}
 	}
@@ -217,10 +220,10 @@ void FTestingServerThread::writeResponse(QTcpSocket * socket, int code, const QS
 {
 	QString type = mimeType;
 	if (type.isEmpty()) type = "text/plain";
-	QString response = QString("HTTP/1.0 %1 %2\r\n").arg(code).arg(codeString);
-	response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type);
-	response += QString("Content-Length: %1\r\n").arg(message.length());
-	response += QString("\r\n%1").arg(message);
+	QString response = QString("HTTP/1.0 %1 %2\r\n").arg(code).arg(codeString) %
+					   QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type) %
+					   QString("Content-Length: %1\r\n").arg(message.length()) %
+					   QString("\r\n%1").arg(message);
 
 	socket->write(response.toUtf8());
 	socket->disconnectFromHost();

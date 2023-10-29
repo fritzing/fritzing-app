@@ -22,8 +22,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "FTestingServer.h"
 
 #include "../utils/fmessagebox.h"
-#include "../utils/folderutils.h"
-#include "../utils/textutils.h"
 #include "../debugdialog.h"
 
 #include <QUrl>
@@ -108,7 +106,8 @@ void FTestingServerThread::run()
 
 	DebugDialog::debug("header " + header);
 
-	QStringList tokens = header.split(QRegularExpression("[ \r\n][ \r\n]*"), Qt::SplitBehaviorFlags::SkipEmptyParts);
+	static auto line_end(QRegularExpression("[ \r\n][ \r\n]*"));
+	QStringList tokens = header.split(line_end, Qt::SplitBehaviorFlags::SkipEmptyParts);
 	if (tokens.count() <= 0) {
 		writeResponse(socket, 400, "Bad Request", "", "");
 		return;
@@ -172,12 +171,12 @@ void FTestingServerThread::run()
 		QString type = "text/plain";
 		QString response = QString("HTTP/1.0 %1 %2\r\n").arg(status).arg("response");
 		response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type);
-		response += QString("Content-Length: %1\r\n").arg(result.count());
+		response += QString("Content-Length: %1\r\n").arg(result.length());
 		response += QString("\r\n%1").arg(result);
 		socket->write(response.toUtf8());
 	}
 	if (readOrWrite.compare("write") == 0 ) {
-		DebugDialog::debug(QString("FTesting write command %1 %2").arg(command).arg(param));
+		DebugDialog::debug(QString("FTesting write command %1 %2").arg(command, param));
 		fTesting->writeProbe(command.toStdString(), QVariant(param));
 	} else {
 		stdx::optional<QVariant> probeResult = fTesting->readProbe(command.toStdString());
@@ -186,7 +185,7 @@ void FTestingServerThread::run()
 			DebugDialog::debug(QString("Reading probe failed."));
 		} else {
 
-			if (probeResult->type() == QMetaType::QPointF) {
+			if (probeResult->typeId() == QMetaType::QPointF) {
 				DebugDialog::debug(QString("QPointF probe read: %1 %2").arg(probeResult->toPointF().x()).arg(probeResult->toPointF().y()));
 				result = QString("%1 %2").arg(probeResult->toPointF().x()).arg(probeResult->toPointF().y());
 			} else {
@@ -199,7 +198,7 @@ void FTestingServerThread::run()
 			QString type = "text/plain";
 			QString response = QString("HTTP/1.0 %1 %2\r\n").arg(status).arg("response");
 			response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type);
-			response += QString("Content-Length: %1\r\n").arg(result.count());
+			response += QString("Content-Length: %1\r\n").arg(result.length());
 			response += QString("\r\n%1").arg(result);
 			socket->write(response.toUtf8());
 		}
@@ -220,7 +219,7 @@ void FTestingServerThread::writeResponse(QTcpSocket * socket, int code, const QS
 	if (type.isEmpty()) type = "text/plain";
 	QString response = QString("HTTP/1.0 %1 %2\r\n").arg(code).arg(codeString);
 	response += QString("Content-Type: %1; charset=\"utf-8\"\r\n").arg(type);
-	response += QString("Content-Length: %1\r\n").arg(message.count());
+	response += QString("Content-Length: %1\r\n").arg(message.length());
 	response += QString("\r\n%1").arg(message);
 
 	socket->write(response.toUtf8());

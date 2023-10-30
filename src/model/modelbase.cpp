@@ -88,8 +88,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		                         QObject::tr("Parse error (1) at line %1, column %2:\n%3\n%4")
 		                         .arg(errorLine)
 		                         .arg(errorColumn)
-		                         .arg(errorStr)
-		                         .arg(fileName));
+								 .arg(errorStr, fileName));
 		return false;
 	}
 
@@ -849,15 +848,21 @@ ModelPart * ModelBase::createOldSchematicPartAux(ModelPart * modelPart, const QS
 	if (!QFile::exists(oldSvgPath)) return nullptr;
 
 	// create oldModelPart, set up the new image file name, add it to refmodel
-	QFile newFzp(modelPart->path());
+	QString path = modelPart->path();
+	QFile newFzp(path);
 	if (!newFzp.open(QIODevice::ReadOnly)) {
-		DebugDialog::debug(QString("Unable to open :%1").arg(modelPart->path()));
+		DebugDialog::debug(QString("Unable to open :%1").arg(path));
 	}
 	QDomDocument oldDoc;
 	QDomDocument::ParseResult parseResult = oldDoc.setContent(&newFzp);
 	if (!parseResult.operator bool()) {
-    	// Handle the error, perhaps using parseResult.errorMessage() for details
-    	return nullptr;
+		QString logMessage = QString("Parse Error: %1 at line %2, column %3 in %4")
+								 .arg(parseResult.errorMessage)
+								 .arg(parseResult.errorLine)
+								 .arg(parseResult.errorColumn)
+								 .arg(path);
+		DebugDialog::debug(logMessage);
+		return nullptr;
 	}
 
 	QDomElement root = oldDoc.documentElement();
@@ -866,7 +871,7 @@ ModelPart * ModelBase::createOldSchematicPartAux(ModelPart * modelPart, const QS
 	QDomElement schematicView = views.firstChildElement("schematicView");
 	QDomElement layers = schematicView.firstChildElement("layers");
 	if (layers.isNull()) {
-		// this shouldn't happen
+		DebugDialog::debug(QString("Could not find layers in old schematic of %1").arg(oldModuleIDRef));
 		return nullptr;
 	}
 
@@ -874,7 +879,7 @@ ModelPart * ModelBase::createOldSchematicPartAux(ModelPart * modelPart, const QS
 
 	QString oldFzpPath = PartFactory::fzpPath() + oldModuleIDRef + ".fzp";
 	if (!TextUtils::writeUtf8(oldFzpPath, oldDoc.toString())) {
-		// this shouldn't happen
+		DebugDialog::debug(QString("Error writing part to %1 .").arg(oldFzpPath));
 		return nullptr;
 	}
 

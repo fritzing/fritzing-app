@@ -1647,9 +1647,6 @@ bool TextUtils::writeUtf8(const QString & fileName, const QString & text)
 	QFile file(fileName);
 	if (file.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
 		QTextStream out(&file);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-		out.setCodec("UTF-8");
-#endif
 		out << text;
 		file.close();
 		return true;

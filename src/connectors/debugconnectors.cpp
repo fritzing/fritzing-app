@@ -166,6 +166,16 @@ void DebugConnectors::onRoutingCheck() {
 	doRoutingCheck();
 }
 
+void DebugConnectors::fixColor() {
+	QList<SketchWidget *> views;
+	views << m_breadboardGraphicsView << m_schematicGraphicsView << m_pcbGraphicsView;
+	Q_FOREACH(SketchWidget * view, views) {
+		if (view->background() == QColor("red")) {
+			view->setBackgroundColor(view->standardBackground(), false);
+		}
+	}
+}
+
 QList<ItemBase *> DebugConnectors::doRoutingCheck() {
 	DebugDialog::debug("debug connectors do");
 	lastExecution.restart();
@@ -279,6 +289,7 @@ QList<ItemBase *> DebugConnectors::doRoutingCheck() {
 
 	if (foundError) {
 		if (!colorChanged) {
+			fixColor();
 			breadboardBackgroundColor = m_breadboardGraphicsView->background();
 			schematicBackgroundColor = m_schematicGraphicsView->background();
 			pcbBackgroundColor = m_pcbGraphicsView->background();
@@ -293,6 +304,8 @@ QList<ItemBase *> DebugConnectors::doRoutingCheck() {
 			m_schematicGraphicsView->setBackgroundColor(schematicBackgroundColor, false);
 			m_pcbGraphicsView->setBackgroundColor(pcbBackgroundColor, false);
 			colorChanged = false;
+		} else {
+			fixColor();
 		}
 	}
 

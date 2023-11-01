@@ -50,6 +50,7 @@ private:
 	QSet<QString> getItemConnectorSet(ConnectorItem *connectorItem);
 	QList<ItemBase *> toSortedItembases(const QList<QGraphicsItem *> &graphicsItems);
 	void collectPartsForCheck(QList<ItemBase *> &partList, QGraphicsScene *scene);
+	void fixColor();
 
 	QTimer *timer;
 	QElapsedTimer lastExecution;

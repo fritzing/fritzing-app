@@ -1002,7 +1002,9 @@ void SketchWidget::deleteItem(ItemBase * itemBase, bool deleteModelPart, bool do
 		Q_EMIT itemDeletedSignal(id);
 	}
 
+#ifndef QT_NO_DEBUG
 	Q_EMIT routingCheckSignal();
+#endif
 }
 
 void SketchWidget::deleteSelected(Wire * wire, bool minus) {
@@ -5085,7 +5087,9 @@ void SketchWidget::changeConnectionAux(long fromID, const QString & fromConnecto
 			toConnectorItem->attachedTo()->updateConnections(toConnectorItem, false, already);
 		}
 	}
+#ifndef QT_NO_DEBUG
 	Q_EMIT routingCheckSignal();
+#endif
 }
 
 void SketchWidget::changeConnectionSlot(long fromID, QString fromConnectorID,

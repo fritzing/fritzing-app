@@ -40,15 +40,15 @@ DebugConnectors::DebugConnectors(SketchWidget *breadboardGraphicsView, SketchWid
 	timer->setSingleShot(true);
 	connect(timer, &QTimer::timeout, this, &DebugConnectors::onRoutingCheck);
 	connect(m_breadboardGraphicsView,
-			&SketchWidget::changeConnectionSignal,
+			&SketchWidget::routingCheckSignal,
 			this,
 			&DebugConnectors::onRoutingCheck);
 	connect(m_schematicGraphicsView,
-			&SketchWidget::changeConnectionSignal,
+			&SketchWidget::routingCheckSignal,
 			this,
 			&DebugConnectors::onRoutingCheck);
 	connect(m_pcbGraphicsView,
-			&SketchWidget::changeConnectionSignal,
+			&SketchWidget::routingCheckSignal,
 			this,
 			&DebugConnectors::onRoutingCheck);
 

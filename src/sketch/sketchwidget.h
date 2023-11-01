@@ -575,6 +575,7 @@ Q_SIGNALS:
 	void addSubpartSignal(long id, long subpartID, bool doEmit);
 	void getDroppedItemViewLayerPlacementSignal(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);
 	void packItemsSignal(int columns, const QList<long> & ids, QUndoCommand *parent, bool doEmit);
+	void routingCheckSignal();
 
 protected Q_SLOTS:
 	void itemAddedSlot(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long id, SketchWidget * dropOrigin);

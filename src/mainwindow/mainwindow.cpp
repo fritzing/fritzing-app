@@ -1619,9 +1619,6 @@ QString MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent,
 	// the bundled itself
 	bool result = this->mainLoad(sketchName, "", checkObsolete);
 
-#ifndef QT_NO_DEBUG
-	m_debugConnectors->onRoutingCheck();
-#endif
 
 	setCurrentFile(fileName, addToRecent, setAsLastOpened);
 	if (!result) return QString("Unable to load sketch: '%1' filename: %2").arg(sketchName).arg(fileName);

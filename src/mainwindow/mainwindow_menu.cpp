@@ -2131,7 +2131,7 @@ void MainWindow::updateTraceMenu() {
 	if (m_pcbTraceMenu == nullptr) return;
 
 	bool tEnabled = false;
-	bool twEnabled = false;
+	bool twEnabled = true;
 	bool ctlEnabled = false;
 
 	TraceMenuThing traceMenuThing;

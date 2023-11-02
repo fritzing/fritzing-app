@@ -38,19 +38,19 @@ DebugConnectors::DebugConnectors(SketchWidget *breadboardGraphicsView, SketchWid
 {
 	monitorConnections(false);
 	timer->setSingleShot(true);
-	connect(timer, &QTimer::timeout, this, &DebugConnectors::onRoutingCheck);
+	connect(timer, &QTimer::timeout, this, &DebugConnectors::onChangeConnection);
 	connect(m_breadboardGraphicsView,
 			&SketchWidget::routingCheckSignal,
 			this,
-			&DebugConnectors::onRoutingCheck);
+			&DebugConnectors::onChangeConnection);
 	connect(m_schematicGraphicsView,
 			&SketchWidget::routingCheckSignal,
 			this,
-			&DebugConnectors::onRoutingCheck);
+			&DebugConnectors::onChangeConnection);
 	connect(m_pcbGraphicsView,
 			&SketchWidget::routingCheckSignal,
 			this,
-			&DebugConnectors::onRoutingCheck);
+			&DebugConnectors::onChangeConnection);
 
 	monitorConnections(true);
 }
@@ -164,9 +164,6 @@ void DebugConnectors::onRepairErrors()
 	monitorConnections(tmp);
 }
 
-void DebugConnectors::onRoutingCheck() {
-	doRoutingCheck();
-}
 
 void DebugConnectors::fixColor() {
 	QList<SketchWidget *> views;

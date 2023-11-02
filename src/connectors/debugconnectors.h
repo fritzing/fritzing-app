@@ -33,7 +33,6 @@ public:
 
 
 public slots:
-	void onRoutingCheck();
 	void monitorConnections(bool enabled);
 	void onChangeConnection();
 

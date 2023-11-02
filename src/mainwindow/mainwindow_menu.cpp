@@ -489,7 +489,7 @@ bool MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 
 	initZoom();
 #ifndef QT_NO_DEBUG
-	m_debugConnectors->onRoutingCheck();
+	m_debugConnectors->onChangeConnection();
 #endif
 	return result;
 }

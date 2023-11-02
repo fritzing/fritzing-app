@@ -46,12 +46,28 @@ DebugConnectorsProbe::DebugConnectorsProbe(
  */
 QVariant DebugConnectorsProbe::read()
 {
+	initDebugConnector();
+
+	auto errorList = m_debugConnectors->doRoutingCheck();
+	return errorList.size();
+}
+
+void DebugConnectorsProbe::write(QVariant)
+{
+	initDebugConnector();
+
+	emit requestRepairErrors();
+}
+
+void DebugConnectorsProbe::initDebugConnector()
+{
 	if (!m_debugConnectors) {
 		m_debugConnectors = new DebugConnectors(m_breadboardGraphicsView,
 												m_schematicGraphicsView,
 												m_pcbGraphicsView);
 	}
 
-	auto errorList = m_debugConnectors->doRoutingCheck();
-	return errorList.size();
+	connect(this, &DebugConnectorsProbe::requestRepairErrors,
+			m_debugConnectors, &DebugConnectors::onRepairErrors,
+			Qt::QueuedConnection);
 }

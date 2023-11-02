@@ -25,20 +25,30 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "connectors/debugconnectors.h"
 
+#include <QObject>
+
 class SketchWidget;
 
-class DebugConnectorsProbe : public FProbe
+class DebugConnectorsProbe : public QObject, public FProbe
 {
+	Q_OBJECT
+
 public:
 	DebugConnectorsProbe(SketchWidget *,SketchWidget *,SketchWidget *);
-	void write(QVariant) {};
+	~DebugConnectorsProbe(){};
+	void write(QVariant);
 	QVariant read();
 
 private:
+	void initDebugConnector();
+
 	SketchWidget *m_breadboardGraphicsView;
 	SketchWidget *m_schematicGraphicsView;
 	SketchWidget *m_pcbGraphicsView;
 	QPointer<DebugConnectors> m_debugConnectors;
+
+signals:
+	void requestRepairErrors();
 };
 
 #endif // DEBUGCONNECTORSPROBE_H

@@ -139,8 +139,11 @@ void DebugConnectors::onRepairErrors()
 	Q_FOREACH(SketchWidget * view, views) {
 		stack->waitForTimers();
 		QList<ItemBase *> errorList = doRoutingCheck();
-		view->selectItems(errorList);
-		view->deleteSelected(nullptr, false);
+		if (!errorList.empty()) {
+			DebugDialog::debug(QString("Repair %1 errors.").arg(errorList.size()));
+			view->selectItems(errorList);
+			view->deleteSelected(nullptr, false);
+		}
 	}
 	stack->waitForTimers();
 	stack->setIndex(index);

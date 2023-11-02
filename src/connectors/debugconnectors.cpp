@@ -126,13 +126,6 @@ void DebugConnectors::onSelectErrors()
 	}
 }
 
-void nonBlockingDelay(int milliseconds) {
-	QEventLoop loop;
-	QTimer::singleShot(milliseconds, &loop, &QEventLoop::quit);
-	loop.exec();
-}
-
-
 void DebugConnectors::onRepairErrors()
 {
 	bool tmp = m_monitorEnabled;
@@ -141,22 +134,17 @@ void DebugConnectors::onRepairErrors()
 	QList<SketchWidget *> views;
 	auto stack = m_schematicGraphicsView->undoStack();
 	views << m_breadboardGraphicsView << m_schematicGraphicsView << m_pcbGraphicsView;
+	stack->waitForTimers();
 	int index = stack->index();
 	Q_FOREACH(SketchWidget * view, views) {
-		while (stack->hasTimers()) {
-			nonBlockingDelay(100);
-		}
+		stack->waitForTimers();
 		QList<ItemBase *> errorList = doRoutingCheck();
 		view->selectItems(errorList);
 		view->deleteSelected(nullptr, false);
 	}
-	while (stack->hasTimers()) {
-		nonBlockingDelay(100);
-	}
+	stack->waitForTimers();
 	stack->setIndex(index);
-	while (stack->hasTimers()) {
-		nonBlockingDelay(100);
-	}
+	stack->waitForTimers();
 	doRoutingCheck();
 
 	monitorConnections(tmp);

@@ -101,6 +101,18 @@ void WaitPushUndoStack::clearLiveTimers() {
 	clearTimers(m_liveTimers);
 }
 
+void nonBlockingDelay(int milliseconds) {
+	QEventLoop loop;
+	QTimer::singleShot(milliseconds, &loop, &QEventLoop::quit);
+	loop.exec();
+}
+
+void WaitPushUndoStack::waitForTimers() {
+	while (hasTimers()) {
+		nonBlockingDelay(100);
+	}
+}
+
 void WaitPushUndoStack::clearTimers(QList<QTimer *> & timers) {
 	QMutexLocker locker(&m_mutex);
 	Q_FOREACH (QTimer * timer, timers) {

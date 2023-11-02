@@ -42,6 +42,7 @@ public:
 	void addTimer(QTimer *);
 	void push(QUndoCommand *);
 	bool hasTimers();
+	void waitForTimers();
 
 #ifndef QT_NO_DEBUG
 public:

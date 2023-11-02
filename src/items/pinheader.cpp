@@ -102,7 +102,7 @@ QStringList PinHeader::collectValues(const QString & family, const QString & pro
 		return values;
 	}
 
-	if (prop.compare("rows", Qt::CaseInsensitive) == 0) {
+	if (prop.compare("row", Qt::CaseInsensitive) == 0) {
 		QStringList values;
 		values.append("single");
 		values.append("double");

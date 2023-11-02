@@ -209,7 +209,7 @@ QList<ItemBase *> DebugConnectors::doRoutingCheck() {
 		pcbID2ItemHash.insert(part->id(), part);
 	}
 
-	QList<ItemBase *> errorList;
+	QSet<ItemBase *> errorList;
 
 	QList<ItemBase *> schList;
 	collectPartsForCheck(schList, m_schematicGraphicsView->scene());
@@ -308,5 +308,5 @@ QList<ItemBase *> DebugConnectors::doRoutingCheck() {
 		}
 	}
 
-	return errorList;
+	return errorList.values();
 }

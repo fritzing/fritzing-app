@@ -151,8 +151,8 @@ void DebugConnectors::onRepairErrors()
 	doRoutingCheck();
 
 	monitorConnections(tmp);
+	emit repairErrorsCompleted();
 }
-
 
 void DebugConnectors::fixColor() {
 	QList<SketchWidget *> views;

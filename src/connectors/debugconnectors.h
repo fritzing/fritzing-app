@@ -38,6 +38,10 @@ public slots:
 
 	void onSelectErrors();
 	void onRepairErrors();
+
+signals:
+	void repairErrorsCompleted();
+
 private:
 	friend class DebugConnectorsProbe;
 	QList<ItemBase *> doRoutingCheck();

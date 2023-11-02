@@ -22,6 +22,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "debugconnectorsprobe.h"
 #include "sketch/sketchwidget.h"
 
+#include <QApplication>
+#include <QEventLoop>
+
 DebugConnectorsProbe::DebugConnectorsProbe(
 	SketchWidget *breadboardGraphicsView,
 	SketchWidget *schematicGraphicsView,
@@ -56,7 +59,12 @@ void DebugConnectorsProbe::write(QVariant)
 {
 	initDebugConnector();
 
+	QEventLoop loop;
+	QObject::connect(m_debugConnectors, &DebugConnectors::repairErrorsCompleted,
+					 &loop, &QEventLoop::quit);
 	emit requestRepairErrors();
+	loop.exec();
+
 }
 
 void DebugConnectorsProbe::initDebugConnector()
@@ -67,7 +75,9 @@ void DebugConnectorsProbe::initDebugConnector()
 												m_pcbGraphicsView);
 	}
 
+	m_debugConnectors->moveToThread(QApplication::instance()->thread());
+
 	connect(this, &DebugConnectorsProbe::requestRepairErrors,
 			m_debugConnectors, &DebugConnectors::onRepairErrors,
-			Qt::QueuedConnection);
+			Qt::AutoConnection);
 }

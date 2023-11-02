@@ -138,29 +138,27 @@ void DebugConnectors::onRepairErrors()
 	bool tmp = m_monitorEnabled;
 	monitorConnections(false);
 
-	QList<ItemBase *> errorList = doRoutingCheck();
-	if (!errorList.isEmpty()) {
-		QList<SketchWidget *> views;
-		views << m_breadboardGraphicsView << m_schematicGraphicsView << m_pcbGraphicsView;
-		Q_FOREACH(SketchWidget * view, views) {
-			errorList = doRoutingCheck();
-			auto stack = view->undoStack();
-			while (stack->hasTimers()) {
-				nonBlockingDelay(100);
-			}
-			int index = stack->index();
-			view->selectItems(errorList);
-			view->deleteSelected(nullptr, false);
-
-			while (stack->hasTimers()) {
-				nonBlockingDelay(100);
-			}
-
-			stack->setIndex(index);
+	QList<SketchWidget *> views;
+	auto stack = m_schematicGraphicsView->undoStack();
+	views << m_breadboardGraphicsView << m_schematicGraphicsView << m_pcbGraphicsView;
+	int index = stack->index();
+	Q_FOREACH(SketchWidget * view, views) {
+		while (stack->hasTimers()) {
+			nonBlockingDelay(100);
 		}
-
-		doRoutingCheck();
+		QList<ItemBase *> errorList = doRoutingCheck();
+		view->selectItems(errorList);
+		view->deleteSelected(nullptr, false);
 	}
+	while (stack->hasTimers()) {
+		nonBlockingDelay(100);
+	}
+	stack->setIndex(index);
+	while (stack->hasTimers()) {
+		nonBlockingDelay(100);
+	}
+	doRoutingCheck();
+
 	monitorConnections(tmp);
 }
 

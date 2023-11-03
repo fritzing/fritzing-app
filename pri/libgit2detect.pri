@@ -13,7 +13,6 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************
 
-
 packagesExist(libgit2) {
 } else {
     LIBGIT_STATIC = true
@@ -51,6 +50,9 @@ win32 {
 }
 
 unix {
+    # Look up Ubuntu distribution (codename)
+    LSB_INFO = $$system(lsb_release -sc 2> /dev/null)
+
     if ($$LIBGIT_STATIC) {
         LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
         exists($$LIBGIT2LIB/libgit2.a) {
@@ -61,7 +63,39 @@ unix {
         macx {
             LIBS += $$LIBGIT2LIB/libgit2.a -framework Security
         } else {
-            LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
+            # Ubuntu Bionic
+            if(contains(LSB_INFO, bionic)) {
+                message("we are on Ubuntu bionic.")
+                # Check if the http_parser library is installed
+                exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
+                    message("Using system-wide installed http-parser lib.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssl -lcrypto
+                } else {
+                    message("Using http-parser bundled with libgit2.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
+                }
+            # Ubuntu Focal
+            } else:contains(LSB_INFO, focal) {
+                message("we are on Ubuntu focal.")
+                # Check if the http_parser library is installed
+                exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
+                    message("Using system-wide installed http-parser lib.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssh2 -lssl -lcrypto
+                } else {
+                    message("Using http-parser bundled with libgit2.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lssh2 -lssl -lcrypto
+                }
+            # Other Linux OS (tested on Fedora-30)
+            } else {
+                message("we are neither on Ubuntu focal nor on Ubuntu bionic.")
+                exists($$[QT_INSTALL_LIBS]/libhttp_parser.a) {
+                    message("Using system-wide installed http-parser lib.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lhttp_parser -lssl -lcrypto
+                } else {
+                    message("Using http-parser bundled with libgit2.")
+                    LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
+                }
+            }
         }
     } else {
         !build_pass:warning("Using dynamic linking for libgit2.")

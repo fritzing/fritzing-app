@@ -170,8 +170,12 @@ equals(QT_MAJOR_VERSION, 6) {
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
 
-# Disable this if you have (and want) libgit2 dynamically
-LIBGIT_STATIC = true
+# If you have installed libgit2 (dynamic version)
+# pass the LIBGIT_STATIC variable to qmake during building:
+# $ qmake LIBGIT_STATIC=false
+# If you do not pass the variable, it will automatically set
+# to true.
+!defined(LIBGIT_STATIC, var): LIBGIT_STATIC = true
 include(pri/libgit2detect.pri)
 include(pri/boostdetect.pri)
 include(pri/spicedetect.pri)

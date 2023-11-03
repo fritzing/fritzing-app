@@ -8,6 +8,7 @@ phoenix.pro.user
 /phoenix-build-*
 /release*
 /build*
+/config.tests/build*
 /debug*
 *.user
 *.user*

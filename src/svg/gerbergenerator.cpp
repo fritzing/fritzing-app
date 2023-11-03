@@ -827,12 +827,7 @@ void GerberGenerator::mergeOutlineElement(QImage & image, QRectF & target, doubl
 	image.fill(0xffffffff);
 	QByteArray svg = TextUtils::removeXMLEntities(document.toString()).toUtf8();
 
-	QSvgRenderer renderer(svg);
-	QPainter painter;
-	painter.begin(&image);
-	renderer.render(&painter, target);
-	painter.end();
-	image.invertPixels();				// need white pixels on a black background for GroundPlaneGenerator
+	repeatedImageRender(image, svg, target);		// need white pixels on a black background for GroundPlaneGenerator
 
 #ifndef QT_NO_DEBUG
 	image.save(QString("%2/output%1.png").arg(ix).arg(FolderUtils::getTopLevelUserDataStorePath()));

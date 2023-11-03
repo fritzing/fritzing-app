@@ -368,6 +368,55 @@ void GerberGenerator::displayMessage(const QString & message, bool displayMessag
 	DebugDialog::debug(message);
 }
 
+QString GerberGenerator::imageToHash(const QImage& image) {
+	QElapsedTimer timer;
+	timer.start();
+
+	QByteArray arr;
+	QBuffer buffer(&arr);
+	buffer.open(QIODevice::WriteOnly);
+	image.save(&buffer, "PNG"); // PNG is lossless and this turned out to be MUCH faster than a pixel loop.
+
+	QByteArray hash = QCryptographicHash::hash(arr, QCryptographicHash::Md5);
+	return hash.toHex();
+};
+
+void GerberGenerator::repeatedImageRender(QImage & image, const QByteArray& svg, QRectF & target) {
+	QHash<QString, QImage> hashMap;
+	int counter = 0;
+	QString hash;
+
+	// Tests show that the rendered images have sometimes gaps of one to roughly eight consecutive pixel on one scanline.
+	// This seems to happen more often on high CPU load.
+	// If we find two identical images, we assume the bug did not occure and continue.
+	// With large images (100 Megapixel) the likelihood increases, and 5 tries might not be enough, in which case we currently ignore the issue and just use one of the images.
+	while (true) {
+		QImage tempImage = image;
+		QSvgRenderer renderer(svg);
+		QPainter painter;
+		painter.begin(&tempImage);
+		renderer.render(&painter, target);
+		painter.end();
+		tempImage.invertPixels(); // need white pixels on a black background for GroundPlaneGenerator
+		hash = imageToHash(tempImage);
+		if (hashMap.contains(hash)) {
+			break;
+		} else {
+			if (counter > 0) {
+				DebugDialog::debug(QString("Gerbergenerator: Image not in hash. count: %1 hash: %2").arg(counter).arg(hash));
+			}
+			hashMap.insert(hash, tempImage);
+			if (counter >= 5) {
+				DebugDialog::debug(QString("Gerbergenerator: Too many tries to find identical image. Aborting loop. count: %1 hash: %2").arg(counter).arg(hash));
+				break;
+			}
+			counter++;
+		}
+	}
+
+	image = hashMap.value(hash);
+}
+
 QString GerberGenerator::clipToBoard(QString svgString, ItemBase * board, const QString & layerName, SVG2gerber::ForWhy forWhy, const QString & clipString, bool displayMessageBoxes, QMultiHash<long, ConnectorItem *> & treatAsCircle) {
 	QRectF source = board->sceneBoundingRect();
 	source.moveTo(0, 0);
@@ -691,56 +740,9 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		}
 		else {
 			QByteArray svg = TextUtils::removeXMLEntities(domDocument2.toString()).toUtf8();
+			image.fill(0xffffffff);
 
-			auto imageToHash = [](const QImage& image) -> QString {
-				QElapsedTimer timer;
-				timer.start();
-
-				QByteArray arr;
-				QBuffer buffer(&arr);
-				buffer.open(QIODevice::WriteOnly);
-				image.save(&buffer, "PNG"); // PNG is lossless and this turned out to be MUCH faster than a pixel loop.
-
-				QByteArray hash = QCryptographicHash::hash(arr, QCryptographicHash::Md5);
-				return hash.toHex();
-			};
-
-			QHash<QString, QImage> hashMap;
-			int counter = 0;
-			QString hash;
-
-			// Tests show that the rendered images have sometimes gaps of one to roughly eight consecutive pixel on one scanline.
-			// This seems to happen more often on high CPU load.
-			// If we find two identical images, we assume the bug did not occure and continue.
-			// With large images (100 Megapixel) the likelihood increases, and 5 tries might not be enough, in which case we currently ignore the issue and just use one of the images.
-			while (true) {
-				QImage tempImage(imgSize, QImage::Format_Mono);
-				tempImage.setDotsPerMeterX(res * GraphicsUtils::InchesPerMeter);
-				tempImage.setDotsPerMeterY(res * GraphicsUtils::InchesPerMeter);
-				tempImage.fill(0xffffffff);
-				QSvgRenderer renderer(svg);
-				QPainter painter;
-				painter.begin(&tempImage);
-				renderer.render(&painter, target);
-				painter.end();
-				tempImage.invertPixels(); // need white pixels on a black background for GroundPlaneGenerator
-				hash = imageToHash(tempImage);
-				if (hashMap.contains(hash)) {
-					break;
-				} else {
-					if (counter > 0) {
-						DebugDialog::debug(QString("Gerbergenerator: Image not in hash. count: %1 hash: %2").arg(counter).arg(hash));
-					}
-					hashMap.insert(hash, tempImage);
-					if (counter >= 5) {
-						DebugDialog::debug(QString("Gerbergenerator: Too many tries to find identical image. Aborting loop. count: %1 hash: %2").arg(counter).arg(hash));
-						break;
-					}
-					counter++;
-				}
-			}
-
-			image = hashMap.value(hash);
+			repeatedImageRender(image, svg, target);
 
 #ifndef QT_NO_DEBUG
 			image.save(FolderUtils::getTopLevelUserDataStorePath() + "/preclip_output.png");

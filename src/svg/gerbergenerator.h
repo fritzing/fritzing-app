@@ -67,6 +67,8 @@ protected:
 	static void exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes);
 	static void handleDonuts(QDomElement & root1, QMultiHash<long, ConnectorItem *> & treatAsCircle);
 	static QString renderTo(const LayerList &, ItemBase * board, PCBSketchWidget * sketchWidget, bool & empty);
+	static QString imageToHash(const QImage& image);
+	static void repeatedImageRender(QImage & image, const QByteArray& svg, QRectF & target);
 
 };
 

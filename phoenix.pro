@@ -173,6 +173,7 @@ RESOURCES += phoenixresources.qrc
 
 # Disable this if you have (and want) libgit2 dynamically
 LIBGIT_STATIC = true
+include(pri/openssl3.pri)
 include(pri/libgit2detect.pri)
 include(pri/boostdetect.pri)
 include(pri/spicedetect.pri)

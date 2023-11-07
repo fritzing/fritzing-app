@@ -405,6 +405,8 @@ protected:
 
 public:
 	static const QString ITEMBASE_FONT_PREFIX;
+	static const QString ITEMBASE_FONT_COLOR_PREFIX;
+	static const QString ITEMBASE_TOOLTIP_FONT_COLOR;
 	static const QString ITEMBASE_FONT_SUFFIX;
 	static QHash<QString, QString> TranslatedPropertyNames;
 	static QString PartInstanceDefaultTitle;

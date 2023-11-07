@@ -69,7 +69,9 @@ static QSvgRenderer StickyRenderer;
 
 /////////////////////////////////
 
-const QString ItemBase::ITEMBASE_FONT_PREFIX = "<font size='2'>";
+const QString ItemBase::ITEMBASE_TOOLTIP_FONT_COLOR = "#363636";
+const QString ItemBase::ITEMBASE_FONT_COLOR_PREFIX = "<font color='" + ITEMBASE_TOOLTIP_FONT_COLOR + "'>";
+const QString ItemBase::ITEMBASE_FONT_PREFIX = "<font size='2' color='" + ITEMBASE_TOOLTIP_FONT_COLOR + "'>";
 const QString ItemBase::ITEMBASE_FONT_SUFFIX = "</font>";
 
 QHash<QString, QString> ItemBase::TranslatedPropertyNames;
@@ -974,7 +976,7 @@ void ItemBase::updateTooltip() {
 }
 
 void ItemBase::setInstanceTitleTooltip(const QString &text) {
-	setToolTip("<b>"+text+"</b><br></br>" + ITEMBASE_FONT_PREFIX + title()+ ITEMBASE_FONT_SUFFIX);
+	setToolTip("<b>"+ITEMBASE_FONT_COLOR_PREFIX+text+ITEMBASE_FONT_SUFFIX+"</b><br></br>" + ITEMBASE_FONT_PREFIX + title()+ ITEMBASE_FONT_SUFFIX);
 }
 
 void ItemBase::setDefaultTooltip() {

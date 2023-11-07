@@ -228,6 +228,9 @@ parts editor support
 
 /////////////////////////////////////////////////////////
 
+const QString ConnectorItem::HOVER_TEXT_COLOR = "#363636";
+const QString ConnectorItem::HOVER_ID_TEXT_COLOR = "#909090";
+
 static Bezier UndoBezier;
 static BezierDisplay * TheBezierDisplay = nullptr;
 
@@ -1515,15 +1518,15 @@ void ConnectorItem::updateTooltip() {
 		else {
 			id = match.captured(0);
 			if (!id.isEmpty()) {
-				id = " <span style='color:#909090;'>(" + id + ")</span>";
+				id = " <span style='color:" + HOVER_ID_TEXT_COLOR + ";'>(" + id + ")</span>";
 			}
 		}
 
-		QString tt = QString("<b>%2</b>%3%1<br /><span style='font-size:small;'>%4</span>")
-		             .arg(id)
-		             .arg(name)
-		             .arg(descr)
-		             .arg(attachedToTitle());
+		QString tt = QString("<span style='color:" + HOVER_TEXT_COLOR + ";'><b>%2</b>%3%1<br /><span style='font-size:small;'>%4</span></span>")
+			     .arg(id)
+			     .arg(name)
+			     .arg(descr)
+			     .arg(attachedToTitle());
 		setToolTip(tt);
 		return;
 	}

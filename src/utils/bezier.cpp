@@ -219,8 +219,8 @@ bool Bezier::operator==(const Bezier & other) const
 
 bool Bezier::operator!=(const Bezier & other) const
 {
-	return (m_isEmpty != other.isEmpty()) &&
-	       (m_cp0 != other.cp0()) &&
+	return (m_isEmpty != other.isEmpty()) ||
+	       (m_cp0 != other.cp0()) ||
 	       (m_cp1 != other.cp1());
 }
 

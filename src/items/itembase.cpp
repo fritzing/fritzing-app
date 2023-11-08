@@ -40,6 +40,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/familypropertycombobox.h"
 #include "../referencemodel/referencemodel.h"
 #include "../items/FProbeSwitchPackage.h"
+#include "utils/ftooltip.h"
 
 #include <QScrollBar>
 #include <QTimer>
@@ -68,11 +69,6 @@ static QSvgRenderer MoveLockRenderer;
 static QSvgRenderer StickyRenderer;
 
 /////////////////////////////////
-
-const QString ItemBase::ITEMBASE_TOOLTIP_FONT_COLOR = "#363636";
-const QString ItemBase::ITEMBASE_FONT_COLOR_PREFIX = "<font color='" + ITEMBASE_TOOLTIP_FONT_COLOR + "'>";
-const QString ItemBase::ITEMBASE_FONT_PREFIX = "<font size='2' color='" + ITEMBASE_TOOLTIP_FONT_COLOR + "'>";
-const QString ItemBase::ITEMBASE_FONT_SUFFIX = "</font>";
 
 QHash<QString, QString> ItemBase::TranslatedPropertyNames;
 
@@ -975,34 +971,27 @@ void ItemBase::updateTooltip() {
 	setInstanceTitleTooltip(instanceTitle());
 }
 
+
 void ItemBase::setInstanceTitleTooltip(const QString &text) {
-	setToolTip("<b>"+ITEMBASE_FONT_COLOR_PREFIX+text+ITEMBASE_FONT_SUFFIX+"</b><br></br>" + ITEMBASE_FONT_PREFIX + title()+ ITEMBASE_FONT_SUFFIX);
+	QString tooltip = FToolTip::createTooltipHtml(text, title());
+	setToolTip(tooltip);
 }
 
-void ItemBase::setDefaultTooltip() {
+void ItemBase::setDefaultTooltip()
+{
 	if (m_modelPart != nullptr) {
-		if (m_viewID == ViewLayer::IconView) {
-			QString base = ITEMBASE_FONT_PREFIX + "%1" + ITEMBASE_FONT_SUFFIX;
-			if(m_modelPart->itemType() != ModelPart::Wire) {
-				this->setToolTip(base.arg(m_modelPart->title()));
-			} else {
-				this->setToolTip(base.arg(m_modelPart->title() + " (" + m_modelPart->moduleID() + ")"));
-			}
-			return;
+		QString tooltipText = m_modelPart->title();
+		if (m_viewID == ViewLayer::IconView && m_modelPart->itemType() == ModelPart::Wire) {
+			tooltipText += " (" + m_modelPart->moduleID() + ")";
 		}
-
-		QString title = ItemBase::PartInstanceDefaultTitle;
-		QString inst = instanceTitle();
-		if(!inst.isNull() && !inst.isEmpty()) {
-			title = inst;
-		} else {
-			QString defaultTitle = label();
-			if(!defaultTitle.isNull() && !defaultTitle.isEmpty()) {
-				title = defaultTitle;
-			}
+		QString tooltip = FToolTip::createTooltipHtml(tooltipText, title());
+		if (m_viewID != ViewLayer::IconView) {
+			QString title = (!instanceTitle().isEmpty()) ? instanceTitle() :
+								(!label().isEmpty()) ? label() : ItemBase::PartInstanceDefaultTitle;
+			ensureUniqueTitle(title, false);
+			tooltip = FToolTip::createTooltipHtml(instanceTitle(), title);
 		}
-		ensureUniqueTitle(title, false);
-		setInstanceTitleTooltip(instanceTitle());
+		setToolTip(tooltip);
 	}
 }
 

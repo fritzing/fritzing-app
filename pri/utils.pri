@@ -14,6 +14,7 @@
 # ********************************************************************/
 
 HEADERS += \
+	$$PWD/../src/utils/ftooltip.h \
 src/utils/abstractstatesbutton.h \
 src/utils/autoclosemessagebox.h \
 src/utils/bendpointaction.h \
@@ -43,6 +44,7 @@ src/utils/textutils.h \
 src/utils/zoomslider.h
 
 SOURCES += \
+	$$PWD/../src/utils/ftooltip.cpp \
 src/utils/autoclosemessagebox.cpp \
 src/utils/bendpointaction.cpp \
 src/utils/bezier.cpp \

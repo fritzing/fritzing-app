@@ -225,11 +225,9 @@ parts editor support
 #include "../utils/bezierdisplay.h"
 #include "../utils/cursormaster.h"
 #include "ercdata.h"
+#include "utils/ftooltip.h"
 
 /////////////////////////////////////////////////////////
-
-const QString ConnectorItem::HOVER_TEXT_COLOR = "#363636";
-const QString ConnectorItem::HOVER_ID_TEXT_COLOR = "#909090";
 
 static Bezier UndoBezier;
 static BezierDisplay * TheBezierDisplay = nullptr;
@@ -1497,6 +1495,8 @@ void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorIt
 	partsConnectors.append(connectorItem);
 }
 
+
+
 void ConnectorItem::updateTooltip() {
 	if (attachedToItemType() != ModelPart::Wire) {
 		QString name = connectorSharedName();
@@ -1506,28 +1506,15 @@ void ConnectorItem::updateTooltip() {
 		if (name.compare(descr, Qt::CaseInsensitive) == 0) {
 			descr = "";
 		}
-		else {
-			descr = ":" + descr;
-		}
 		QString id = connectorSharedID();
 		QRegularExpressionMatch match;
 		int ix = id.indexOf(IntegerFinder, 0, &match);
 		if (ix < 0 || isInt) {
 			id = "";
-		}
-		else {
+		} else {
 			id = match.captured(0);
-			if (!id.isEmpty()) {
-				id = " <span style='color:" + HOVER_ID_TEXT_COLOR + ";'>(" + id + ")</span>";
-			}
 		}
-
-		QString tt = QString("<span style='color:" + HOVER_TEXT_COLOR + ";'><b>%2</b>%3%1<br /><span style='font-size:small;'>%4</span></span>")
-			     .arg(id)
-			     .arg(name)
-			     .arg(descr)
-			     .arg(attachedToTitle());
-		setToolTip(tt);
+		setToolTip(FToolTip::createNonWireItemTooltipHtml(name, descr, id, attachedToTitle()));
 		return;
 	}
 
@@ -1543,15 +1530,8 @@ void ConnectorItem::updateTooltip() {
 		return;
 	}
 
-
-	QString connections = QString("<ul style='margin-left:0;padding-left:0;'>");
-	Q_FOREACH(ConnectorItem * connectorItem, connectors) {
-		connections += QString("<li style='margin-left:0;padding-left:0;'>") + "<b>" + connectorItem->attachedTo()->label() + "</b> " + connectorItem->connectorSharedName() + "</li>";
-	}
-	connections += "</ul>";
-
-	setToolTip(ItemBase::ITEMBASE_FONT_PREFIX + connections + ItemBase::ITEMBASE_FONT_SUFFIX);
-
+	QString connectionsHtml = FToolTip::createConnectionHtmlList(connectors);
+	setToolTip(FToolTip::createTooltipHtml(connectionsHtml, ""));
 }
 
 void ConnectorItem::clearConnector() {

@@ -234,8 +234,6 @@ protected:
 
 protected:
 	static QList<ConnectorItem *>  m_equalPotentialDisplayItems;
-	static const QString HOVER_TEXT_COLOR;
-	static const QString HOVER_ID_TEXT_COLOR;
 
 protected:
 	static void collectPart(ConnectorItem * connectorItem, QList<ConnectorItem *> & partsConnectors, ViewLayer::ViewLayerPlacement);

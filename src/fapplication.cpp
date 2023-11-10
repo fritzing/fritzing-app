@@ -35,6 +35,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "utils/folderutils.h"
 #include "utils/lockmanager.h"
 #include "utils/fmessagebox.h"
+#include "utils/FMessageLogProbe.h"
 #include "dialogs/translatorlistmodel.h"
 #include "partsbinpalette/partsbinview.h"
 #include "partsbinpalette/svgiconwidget.h"
@@ -553,6 +554,8 @@ int FApplication::init() {
 
 	m_started = false;
 	m_lastTopmostWindow = nullptr;
+
+	new FMessageLogProbe();
 
 	connect(&m_activationTimer, SIGNAL(timeout()), this, SLOT(updateActivation()));
 	m_activationTimer.setInterval(10);

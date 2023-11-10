@@ -37,9 +37,14 @@ public:
 	static QMessageBox::StandardButton information ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
 	static QMessageBox::StandardButton question ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
 	static QMessageBox::StandardButton warning ( QWidget * parent, const QString & title, const QString & text, StandardButtons buttons = Ok, StandardButton defaultButton = NoButton );
+	static QList<QPair<QString, QString>> getLoggedMessages();
 
 public:
 	static bool BlockMessages;
+
+protected:
+	static void logMessage(const QString &title, const QString &text);
+	static QList<QPair<QString, QString>> messageLog;
 };
 
 

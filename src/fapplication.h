@@ -166,6 +166,7 @@ protected:
 	void clearModels();
 	bool notify(QObject *receiver, QEvent *e);
 	void initService();
+	void runPortService();
 	void runDRCService();
 	void runGedaService();
 	void runDatabaseService();
@@ -192,7 +193,6 @@ protected:
 	void updatePrefs(class PrefsDialog & prefsDialog);
 	QList<MainWindow *> orderedTopLevelMainWindows();
 	void cleanFzzs();
-	void initServer();
 	void regeneratePartsDatabaseAux(QDialog * progressDialog);
 	QString runServiceAux(ExportFunction exportFunc, int mainWindowArg = 3);
 

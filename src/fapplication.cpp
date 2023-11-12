@@ -866,14 +866,7 @@ int FApplication::serviceStartup() {
 
 	switch (m_serviceType) {
 	case ServiceType::PortService:
-		initService();
-		{
-			MainWindow * sketch = MainWindow::newMainWindow(m_referenceModel, "", true, true, -1);
-			if (sketch != nullptr) {
-				sketch->show();
-				sketch->clearFileProgressDialog();
-			}
-		}
+		runPortService();
 		return 1;
 
 	case ServiceType::GedaService:
@@ -1043,6 +1036,27 @@ void FApplication::runSvgService()
 {
 	initService();
 	runSvgServiceAux();
+}
+
+void FApplication::runPortService()
+{
+	DebugDialog::setEnabled(true);
+	FMessageBox::BlockMessages = true;
+
+	initService();
+	{
+		MainWindow * sketch = MainWindow::newMainWindow(m_referenceModel, "", true, true, -1);
+		if (sketch != nullptr) {
+			sketch->show();
+			sketch->clearFileProgressDialog();
+		}
+	}
+
+
+	m_fServer = new FServer(this);
+	connect(m_fServer, &FServer::newConnection, this, &FApplication::newConnection);
+	DebugDialog::debug("Server active");
+	m_fServer->listen(QHostAddress::Any, m_portNumber);
 }
 
 void FApplication::runDatabaseService()
@@ -1674,12 +1688,6 @@ void FApplication::closeAllWindows2() {
 }
 
 bool FApplication::runAsService() {
-	if (m_serviceType == ServiceType::PortService) {
-		DebugDialog::setEnabled(true);
-		initServer();
-		//return false;
-	}
-
 	return m_serviceType != ServiceType::NoService;
 }
 
@@ -1949,14 +1957,6 @@ void FApplication::cleanFzzs() {
 	QFileInfoList backupList;
 	LockManager::checkLockedFiles("fzz", backupList, lockedFiles, true, LockManager::SlowTime);
 	LockManager::releaseLockedFiles(folder, lockedFiles);
-}
-
-void FApplication::initServer() {
-	FMessageBox::BlockMessages = true;
-	m_fServer = new FServer(this);
-	connect(m_fServer, SIGNAL(newConnection(qintptr)), this, SLOT(newConnection(qintptr)));
-	DebugDialog::debug("Server active");
-	m_fServer->listen(QHostAddress::Any, m_portNumber);
 }
 
 void FApplication::newConnection(qintptr socketDescription) {

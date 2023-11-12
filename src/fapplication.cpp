@@ -1648,7 +1648,6 @@ void FApplication::closeAllWindows2() {
 	(SvgIconWidget has been rewritten)
 	*/
 
-
 // this code modified from QApplication::closeAllWindows()
 
 
@@ -2039,6 +2038,9 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 
 	QString error;
 	if (command == "shutdown") {
+		if (m_fServer) {
+			m_fServer->close();
+		}
 		closeAllWindows2();
 	}
 	else if (command.startsWith("svg")) {
@@ -2087,6 +2089,9 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 			}
 		}
 	} else if (command.startsWith("all")) {
+		if (m_fServer) {
+			m_fServer->close();
+		}
 		error = runExportAllPlusSvgServiceAux();
 		QStringList nameFilters;
 		nameFilters << ("*.ipc");

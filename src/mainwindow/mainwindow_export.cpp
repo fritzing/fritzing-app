@@ -1451,11 +1451,25 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 	}
 
 	//If the circuit is built in the BB view, there is no ground. Then, try to find a negative terminal from a power supply as ground
+	//First we are only looking for negative power supply terminals that are connected to something else.
 	if (!ground){
 		DebugDialog::debug("Netlist exporter: Trying to identify the negative connection of a power supply as ground");
 		foreach (QList<ConnectorItem *> * net, netList) {
 			if (ground) break;
 			if (net->count() < 2) continue;
+			foreach (ConnectorItem * ci, *net) {
+				if (ci->connectorSharedName().compare("-", Qt::CaseInsensitive) == 0) {
+					ground = net;
+					break;
+				}
+			}
+		}
+	}
+	// If we found no negative power supply terminals that are connected to something else, we will also check for those that are not connected.
+	if (!ground){
+		DebugDialog::debug("Netlist exporter: Trying to identify unconnected negative power supply terminals as ground");
+		foreach (QList<ConnectorItem *> * net, netList) {
+			if (ground) break;
 			foreach (ConnectorItem * ci, *net) {
 				if (ci->connectorSharedName().compare("-", Qt::CaseInsensitive) == 0) {
 					ground = net;

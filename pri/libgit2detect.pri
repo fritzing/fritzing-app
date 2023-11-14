@@ -13,25 +13,26 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************
 
+# Windows and Linux still use the old variant, libgit 0.28, static linked
+# macOS uses already uses the 1.7.1 version
+# Use libgit2 1.7.1 ( https://github.com/libgit2/libgit2/pull/6471 )
+LIBGIT_VERSION=1.7.1
+LIBGITPATH = $$absolute_path($$_PRO_FILE_PWD_/../libgit2-$$LIBGIT_VERSION)
 
-packagesExist(libgit2) {
-} else {
-    LIBGIT_STATIC = true
-}
+!macx {
+	if ($$LIBGIT_STATIC) {
+		LIBGIT2INCLUDE = "$$_PRO_FILE_PWD_/../libgit2/include"
 
-if ($$LIBGIT_STATIC) {
-    LIBGIT2INCLUDE = "$$_PRO_FILE_PWD_/../libgit2/include"
-    exists($$LIBGIT2INCLUDE/git2.h) {
-        message("found libgit2 include path at $$LIBGIT2INCLUDE")
-    } else {
-        message("Fritzing requires libgit2")
-        message("Build it from the repo at https://github.com/libgit2")
-        message("See https://github.com/fritzing/fritzing-app/wiki for details.")
+		exists($$LIBGIT2INCLUDE/git2.h) {
+			message("found libgit2 include path at $$LIBGIT2INCLUDE")
+		} else {
+			message("Fritzing requires libgit2")
+			message("Build it from the repo at https://github.com/libgit2")
+			message("See https://github.com/fritzing/fritzing-app/wiki for details.")
 
-        error("libgit2 include path not found in $$LIBGIT2INCLUDE")
-    }
-
-    INCLUDEPATH += $$LIBGIT2INCLUDE
+			error("libgit2 include path not found in $$LIBGIT2INCLUDE")
+		}
+	}
 }
 
 win32 {
@@ -47,10 +48,11 @@ win32 {
         error("libgit2 library not found in $$LIBGIT2LIB")
     }
 
+	INCLUDEPATH += $$LIBGIT2INCLUDE
     LIBS += -L$$LIBGIT2LIB -lgit2
 }
 
-unix {
+unix:!macx {
     if ($$LIBGIT_STATIC) {
         LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
         exists($$LIBGIT2LIB/libgit2.a) {
@@ -58,14 +60,31 @@ unix {
         } else {
             error("static libgit2 library not found in $$LIBGIT2LIB")
         }
-        macx {
-            LIBS += $$LIBGIT2LIB/libgit2.a -framework Security
-        } else {
-            LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
-        }
+		INCLUDEPATH += $$LIBGIT2INCLUDE
+		LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
     } else {
-        !build_pass:warning("Using dynamic linking for libgit2.")
+		QMAKE_PKG_CONFIG_PATH += $$LIBGITPATH/pkgconfig
+		!build_pass:warning("Using dynamic linking for libgit2. This is not tested on macos, probably doesn't work.")
         #message("Enabled dynamic linking of libgit2")
         PKGCONFIG += libgit2
     }
 }
+
+macx {
+	if ($$LIBGIT_STATIC) {
+		LIBGIT2LIB = $$LIBGITPATH/lib
+		exists($$LIBGIT2LIB/libgit2.a) {
+			message("found libgit2 library in $$LIBGIT2LIB")
+		} else {
+			error("static libgit2 library not found in $$LIBGIT2LIB")
+		}
+		INCLUDEPATH += $$LIBGITPATH/include
+		LIBS += $$LIBGIT2LIB/libgit2.a -framework Security
+	} else {
+		QMAKE_PKG_CONFIG_PATH += $$LIBGITPATH/pkgconfig
+		!build_pass:warning("Using dynamic linking for libgit2. This is not tested on macos, probably doesn't work")
+		#message("Enabled dynamic linking of libgit2")
+		PKGCONFIG += libgit2
+	}
+}
+

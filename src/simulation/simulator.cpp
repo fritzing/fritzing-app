@@ -556,10 +556,14 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 
 	double volt0 = 0.0, volt1 = 0.0;
 	if (net0 != 0) {
-		volt0 = getVectorValueOrDefault(net0str.toStdString(), 0.0);
+		auto vecInfo = m_simulator->getVecInfo(net0str.toStdString());
+		if (vecInfo.empty()) return 0.0;
+		volt0 = vecInfo[0];
 	}
 	if (net1 != 0) {
-		volt1 = getVectorValueOrDefault(net1str.toStdString(), 0.0);
+		auto vecInfo = m_simulator->getVecInfo(net1str.toStdString());
+		if (vecInfo.empty()) return 0.0;
+		volt1 = vecInfo[0];
 	}
 	return volt0-volt1;
 }

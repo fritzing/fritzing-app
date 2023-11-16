@@ -46,7 +46,6 @@ void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename)
 {
 	mManager = manager;
 	mFilepath = filename;
-	mActivity = 0;
 }
 
 void FabUploadProgress::doUpload()
@@ -185,7 +184,6 @@ void FabUploadProgress::uploadDone() {
 		qDebug() << "RE:" << j["redirect"].toString() << Qt::endl << Qt::flush;
 		QUrl callback_url(QUrl::fromUserInput(j["callback"].toString()));
 		mRedirect_url = j["redirect"].toString();
-		mActivity = 0;
 		checkProcessingStatus(callback_url);
 	} else {
 		httpError(reply);
@@ -219,14 +217,8 @@ void FabUploadProgress::updateProcessingStatus()
 		if (progress < 0) {
 			apiError(message);
 		} else {
-			if (progress + mActivity > 90) {
-				mActivity = 0;
-				progress = j["progress"].toInt();
-
-			}
-			mActivity += 1;
 			findChild<QLabel*>("message")->setText(message);
-			Q_EMIT processProgressChanged(std::min(progress + mActivity, 100));
+			Q_EMIT processProgressChanged(std::min(progress, 100));
 			if(progress < 100) {
 				QUrl url = reply->url();
 				QTimer::singleShot(1000, this, [this, url](){

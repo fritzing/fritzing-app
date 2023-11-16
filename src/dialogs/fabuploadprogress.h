@@ -31,7 +31,6 @@ Q_SIGNALS:
 private:
 	QNetworkAccessManager *mManager;
 	QString mFilepath;
-	int mActivity;
 	QString mRedirect_url;
 
 	void uploadMultipart(const QUrl &url, const QString &file_path);

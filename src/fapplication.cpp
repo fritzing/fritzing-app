@@ -44,6 +44,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "utils/cursormaster.h"
 #include "utils/textutils.h"
 #include "utils/graphicsutils.h"
+#include "utils/uploadpair.h"
 #include "infoview/htmlinfoview.h"
 #include "svg/gedaelement2svg.h"
 #include "svg/kicadmodule2svg.h"
@@ -83,6 +84,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMultiHash>
 #include <QTemporaryFile>
 #include <QDir>
+#include <QMetaType>
 #include <time.h>
 
 #ifdef LINUX_32
@@ -564,6 +566,8 @@ int FApplication::init() {
 	QCoreApplication::setOrganizationName("Fritzing");
 	QCoreApplication::setOrganizationDomain("fritzing.org");
 	QCoreApplication::setApplicationName("Fritzing");
+
+	qRegisterMetaType<UploadPair>("UploadPair");
 
 	installEventFilter(this);
 

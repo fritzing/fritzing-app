@@ -680,7 +680,6 @@ void WelcomeView::updateRecent() {
 	auto gotOne = false;
 
 	QIcon icon(":/resources/images/icons/WS-fzz-icon.png");
-	QIcon icon2(":/resources/images/icons/aisler_donut-cloud_logo_icon.png");
 
 	for (int i = 0; i < files.size(); ++i) {
 		QFileInfo finfo(files[i]);
@@ -702,9 +701,12 @@ void WelcomeView::updateRecent() {
 				link.chop(1);  // Remove the last character
 			}
 
+			QFontMetrics fm(m_recentLinksListWidget->font());
+			int textHeight = fm.height();
 			auto pixmap = SqliteReferenceModel().retrieveIcon(fabName);
-			QIcon icon(pixmap);
-			itemLinks = new QListWidgetItem(icon, QString("%1 Project").arg(fabName));
+			QPixmap scaledPixmap = pixmap.scaledToHeight(textHeight, Qt::SmoothTransformation);
+			QIcon fabIcon(scaledPixmap);
+			itemLinks = new QListWidgetItem(fabIcon, QString("%1 Project").arg(fabName));
 			itemLinks->setData(RefRole, link);
 			itemLinks->setToolTip(link);
 		} else {

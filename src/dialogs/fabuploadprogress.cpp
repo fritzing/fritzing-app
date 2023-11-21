@@ -60,8 +60,17 @@ void FabUploadProgress::doUpload()
 	QString fritzingVersion = Version::versionString();
 	query.addQueryItem("fritzing_version", fritzingVersion);
 
-	UploadPair data = {fabName, settings.value(mFilepath, "").toString()};
-	QString upload_url_str = data.link;
+	QString upload_url_str;
+
+	settings.beginGroup("sketches");
+	QVariant settingValue = settings.value(mFilepath);
+	settings.endGroup();
+	if (settingValue.isValid() && !settingValue.isNull()) {
+		auto [fab, link] = settingValue.value<UploadPair>();
+		upload_url_str = link;
+		fabName = fab;
+	}
+
 	if (!upload_url_str.isEmpty()) {
 		query.addQueryItem("link", upload_url_str);
 	}

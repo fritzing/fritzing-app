@@ -2784,8 +2784,9 @@ void PCBSketchWidget::hidePartSilkscreen() {
 
 void PCBSketchWidget::fabQuote() {
 	int boardCount = 0;
-	double area = calcBoardArea(boardCount);
-	QuoteDialog::setArea(area, boardCount);
+	double width, height;
+	calcBoardDimensions(boardCount, width, height);
+	QuoteDialog::setDimensions(width, height, boardCount);
 	if (boardCount == 0) {
 		QMessageBox::information(this, tr("Fritzing Fab Quote"),
 		                         tr("Your sketch does not have a board yet. You cannot fabricate this sketch without a PCB part."));
@@ -2843,8 +2844,9 @@ void PCBSketchWidget::gotFabQuote(QNetworkReply * networkReply) {
 
 void PCBSketchWidget::requestQuote(bool byUser) {
 	int boardCount;
-	double area = calcBoardArea(boardCount);
-	QuoteDialog::setArea(area, boardCount);
+	double width, height;
+	calcBoardDimensions(boardCount, width, height);
+	QuoteDialog::setDimensions(width, height, boardCount);
 
 	QString paramString = Version::makeRequestParamsString(false);
 	auto * manager = new QNetworkAccessManager(this);
@@ -2864,16 +2866,30 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	manager->setProperty("count", countArgs);
 	QString filename = QUrl::toPercentEncoding(filenameIf());
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotFabQuote(QNetworkReply *)));
-	QString string = QString("%6://fab.fritzing.org/fritzing-fab/quote%1&area=%2&count=%3&filename=%4&byuser=%5")
-	                 .arg(paramString)
-	                 .arg(area)
-	                 .arg(countArgs)
-	                 .arg(filename)
-	                 .arg(static_cast<int>(byUser))
-	                 .arg(protocol)
-	                 ;
+	QString string = QString("%7://fab.fritzing.org/fritzing-fab/quote%1&area=0&width=%2&height=%3&count=%4&filename=%5&byuser=%6")
+			 .arg(paramString)
+			 .arg(width)
+			 .arg(height)
+			 .arg(countArgs)
+			 .arg(filename)
+			 .arg(static_cast<int>(byUser))
+			 .arg(protocol)
+			;
 	QuoteDialog::setQuoteSucceeded(false);
 	manager->get(QNetworkRequest(QUrl(string)));
+}
+
+void PCBSketchWidget::calcBoardDimensions(int & boardCount, double & width, double & height) {
+
+
+	ItemBase * board = findSelectedBoard(boardCount);
+	if (boardCount == 0 || board == nullptr) {
+		width = height = 0.0;
+		return;
+	}
+
+	width = GraphicsUtils::pixels2mm(board->boundingRect().width(), GraphicsUtils::SVGDPI) / 10;
+	height = GraphicsUtils::pixels2mm(board->boundingRect().height(), GraphicsUtils::SVGDPI) / 10;
 }
 
 double PCBSketchWidget::calcBoardArea(int & boardCount) {

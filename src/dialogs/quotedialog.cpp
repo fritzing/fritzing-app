@@ -38,7 +38,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////
 
 static CountCost TheCountCost[QuoteDialog::MessageCount];
-static double TheArea;
+static double TheWidth;
+static double TheHeight;
 static int TheBoardCount;
 static QList<int> Counts;
 static bool QuoteSucceeded = false;
@@ -258,18 +259,20 @@ void QuoteDialog::setCountCost(int index, int count, double cost) {
 	TheCountCost[index].cost = cost;
 }
 
-void QuoteDialog::setArea(double area, int boardCount) {
-	TheBoardCount = boardCount;
-	TheArea = area;
+void QuoteDialog::setDimensions(double width, double height, int boardCount) {
+    TheBoardCount = boardCount;
+    TheWidth = width;
+    TheHeight = height;
 }
 
 void QuoteDialog::setText() {
 	//DebugDialog::debug("quote dialog set text");
-	QString msg = tr("The total area of the %n PCB(s) in this sketch is", "", TheBoardCount);
-	msg += tr(" %1 cm%3 (%2 in%3).<br />")
-	       .arg(hundredths(TheArea))
-	       .arg(hundredths(TheArea / (2.54 * 2.54)))
-	       .arg(QChar(178))
+	const double cmToInchesFactor = 2.54;
+	QString msg = tr("The dimensions of the selected PCB are %1 cm x %2 cm (%3 in x %4 in).<br />")
+		      .arg(hundredths(TheWidth))
+		      .arg(hundredths(TheHeight))
+		      .arg(hundredths(TheWidth / cmToInchesFactor))
+		      .arg(hundredths(TheHeight / cmToInchesFactor));
 	       ;
 	msg += tr("Use Fritzing Fab to produce a PCB from your sketch.<br />");
 	msg += tr("Take advantage of our quantity discount:");

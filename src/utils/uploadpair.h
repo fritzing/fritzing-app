@@ -24,7 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVariant>
 
 struct UploadPair {
-	QString fab_name;
+	QString service;
 	QString link;
 };
 

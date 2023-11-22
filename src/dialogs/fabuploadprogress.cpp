@@ -51,38 +51,30 @@ void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename)
 void FabUploadProgress::doUpload()
 {
 	QSettings settings;
-	QUrl new_sketch("https://fritzing.org/fab/upload");
-
-	QString fabName = settings.value("fab_name", "").toString();
-
-	QUrlQuery query;
-
-	QString fritzingVersion = Version::versionString();
-	query.addQueryItem("fritzing_version", fritzingVersion);
-
-	QString upload_url_str;
-
-	settings.beginGroup("sketches");
+	QString service = settings.value("service", "fritzing").toString();
+	QUrl upload_url("https://fritzing.org/fab/upload");	
 	QVariant settingValue = settings.value(mFilepath);
 	settings.endGroup();
-	if (settingValue.isValid() && !settingValue.isNull()) {
-		auto [fab, link] = settingValue.value<UploadPair>();
-		upload_url_str = link;
-		fabName = fab;
+
+	if (auto opt = settingValue.value<UploadPair>(); settingValue.isValid() && !settingValue.isNull()) {
+		service = std::move(opt.service);
+		if (!opt.link.isEmpty()) {
+			QUrl potential_url(opt.link);
+			if (potential_url.isValid()) {
+				upload_url = potential_url;
+			}
+			// Otherwise, keep using the default URL
+		}
 	}
 
-	if (!upload_url_str.isEmpty()) {
-		query.addQueryItem("link", upload_url_str);
-	}
-
-	if (!fabName.isEmpty()) {
-		query.addQueryItem("fab_name", fabName);
-	}
-
-	new_sketch.setQuery(query);
+	QUrlQuery query;
+	QString fritzingVersion = Version::versionString();
+	query.addQueryItem("fritzing_version", fritzingVersion);
+	query.addQueryItem("fab_name", service);
+	upload_url.setQuery(query);
 	mRedirect_url = QString();
 
-	QNetworkRequest request(new_sketch);
+	QNetworkRequest request(upload_url);
 	QNetworkReply *reply = mManager->get(request);
 	connect(reply, SIGNAL(finished()), this, SLOT(onRequestUploadFinished()));
 	// Error handling is done in onRequestUploadFinished, too
@@ -243,8 +235,8 @@ void FabUploadProgress::updateProcessingStatus()
 					FMessageBox::critical(this, tr("Fritzing"), error);
 				} else {
 					QSettings settings;
-					QString fab_name = settings.value("fab_name", "").toString();
-					UploadPair data = {fab_name, mRedirect_url};
+					QString service = settings.value("service", "").toString();
+					UploadPair data = {service, mRedirect_url};
 					settings.beginGroup("sketches");
 					settings.setValue(mFilepath, QVariant::fromValue(data));
 					settings.endGroup();

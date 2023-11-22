@@ -65,7 +65,7 @@ void FabUploadDialog::onUploadReady()
 void FabUploadDialog::requestFabInfo()
 {
 	QSettings settings;
-	QString fabName = settings.value("fab_name", "").toString();
+	QString fabName = settings.value("service", "").toString();
 
 	QUrl get_fab("https://service.fritzing.org/fab/show");
 
@@ -138,7 +138,7 @@ void FabUploadDialog::handleError(QNetworkReply *reply, const QString &message)
 void FabUploadDialog::setFabName(QString fabName)
 {
 	QSettings settings;
-	settings.setValue("fab_name", fabName);
+	settings.setValue("service", fabName);
 	m_fabName = fabName;
 }
 

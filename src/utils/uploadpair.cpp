@@ -21,12 +21,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "uploadpair.h"
 
 QDataStream &operator<<(QDataStream &out, const UploadPair &data) {
-	out << data.fab_name << data.link;
+	out << data.service << data.link;
 	return out;
 }
 
 QDataStream &operator>>(QDataStream &in, UploadPair &data) {
-	in >> data.fab_name >> data.link;
+	in >> data.service >> data.link;
 	return in;
 }
 

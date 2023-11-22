@@ -2847,6 +2847,7 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	double width, height;
 	calcBoardDimensions(boardCount, width, height);
 	QuoteDialog::setDimensions(width, height, boardCount);
+	double area = width * height;
 
 	QString paramString = Version::makeRequestParamsString(false);
 	auto * manager = new QNetworkAccessManager(this);
@@ -2866,8 +2867,9 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	manager->setProperty("count", countArgs);
 	QString filename = QUrl::toPercentEncoding(filenameIf());
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotFabQuote(QNetworkReply *)));
-	QString string = QString("%7://fab.fritzing.org/fritzing-fab/quote%1&area=0&width=%2&height=%3&count=%4&filename=%5&byuser=%6")
+	QString string = QString("%8://fab.fritzing.org/fritzing-fab/quote%1&area=%2&width=%3&height=%4&count=%5&filename=%6&byuser=%7")
 			 .arg(paramString)
+			 .arg(area)
 			 .arg(width)
 			 .arg(height)
 			 .arg(countArgs)

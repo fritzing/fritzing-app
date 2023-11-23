@@ -121,6 +121,66 @@ QString cleanData(const QString & data) {
 
 ////////////////////////////////////////////////////////////////////////////////
 
+CustomListItem::CustomListItem(const QString &leftText, const QIcon &leftIcon, const QString &leftData,
+			       const QString &rightText, const QIcon &rightIcon, const QString &rightData,
+			       int listWidgetWidth, QWidget *parent)
+	: QWidget(parent), leftData(leftData), rightData(rightData) {
+	QHBoxLayout *layout = new QHBoxLayout(this);
+	layout->setContentsMargins(0, 0, 0, 0); // Remove layout margins
+	layout->setSpacing(0); // Remove spacing between buttons
+
+	leftButton = new QPushButton(leftIcon, "", this);
+	rightButton = new QPushButton(rightIcon, "", this);
+
+	leftButton->setFlat(true);
+	rightButton->setFlat(true);
+
+	QPalette buttonPalette = leftButton->palette();
+	buttonPalette.setColor(QPalette::ButtonText, Qt::black);
+	leftButton->setPalette(buttonPalette);
+	rightButton->setPalette(buttonPalette);
+
+	// Calculate button width taking into account the scrollbar width
+	int scrollbarWidth = this->style()->pixelMetric(QStyle::PM_ScrollBarExtent);
+	int leftButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.6);
+	int rightButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.4);
+
+	// Set fixed width for buttons
+	leftButton->setFixedWidth(leftButtonWidth);
+	rightButton->setFixedWidth(rightButtonWidth);
+
+	// Use QFontMetrics to elide text
+	QFontMetrics metrics(leftButton->font());
+	QString elidedLeftText = metrics.elidedText(leftText, Qt::ElideRight, leftButtonWidth);
+	QString elidedRightText = metrics.elidedText(rightText, Qt::ElideRight, rightButtonWidth);
+
+	// Set the elided text and tooltips
+	leftButton->setText(elidedLeftText);
+	leftButton->setToolTip(leftData);
+	rightButton->setText(elidedRightText);
+	rightButton->setToolTip(rightData);
+
+	// Add buttons to layout
+	layout->addWidget(leftButton);
+	layout->addWidget(rightButton);
+
+	// Connect button signals to slots
+	connect(leftButton, &QPushButton::clicked, this, &CustomListItem::onLeftButtonClicked);
+	connect(rightButton, &QPushButton::clicked, this, &CustomListItem::onRightButtonClicked);
+
+	setLayout(layout);
+}
+
+void CustomListItem::onLeftButtonClicked() {
+    emit leftItemClicked(leftData);
+}
+
+void CustomListItem::onRightButtonClicked() {
+    emit rightItemClicked(rightData);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
 BlogListWidget::BlogListWidget(QWidget * parent) : QListWidget(parent)
 {
 	connect(this, SIGNAL(itemEntered(QListWidgetItem *)), this, SLOT(itemEnteredSlot(QListWidgetItem *)));
@@ -384,20 +444,13 @@ QWidget * WelcomeView::initRecent() {
 	frameLayout->addWidget(titleFrame);
 
 	m_recentListWidget = new QListWidget();
-	m_recentLinksListWidget = new QListWidget();
 	m_recentListWidget->setObjectName("recentList");
-	m_recentLinksListWidget->setObjectName("recentList");
 	m_recentListWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-	m_recentLinksListWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-	connect(m_recentListWidget, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(recentItemClicked(QListWidgetItem *)));
-	connect(m_recentLinksListWidget, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(blogItemClicked(QListWidgetItem *)));
-
 
 	auto * listsFrame = new QFrame;
 	auto * listsFrameLayout = new QHBoxLayout;
 	zeroMargin(listsFrameLayout);
 	listsFrameLayout->addWidget(m_recentListWidget);
-	listsFrameLayout->addWidget(m_recentLinksListWidget);
 	listsFrame ->setLayout(listsFrameLayout);
 	frameLayout->addWidget(listsFrame);
 
@@ -670,58 +723,67 @@ void WelcomeView::showEvent(QShowEvent * event) {
 
 void WelcomeView::updateRecent() {
 	if (!m_recentListWidget) return;
-	if (!m_recentLinksListWidget) return;
 
 	QSettings settings;
 	auto files = settings.value("recentFileList").toStringList();
 	m_recentListWidget->clear();
-	m_recentLinksListWidget->clear();
+	int listWidgetWidth = m_recentListWidget->width();
 
 	auto gotOne = false;
 
-	QIcon icon(":/resources/images/icons/WS-fzz-icon.png");
+	QIcon defaultIcon(":/resources/images/icons/WS-fzz-icon.png");
+	QIcon aislerIcon(":/resources/images/icons/aisler_donut-cloud_logo_icon.png");
 
 	for (int i = 0; i < files.size(); ++i) {
 		QFileInfo finfo(files[i]);
 		if (!finfo.exists()) continue;
 
 		gotOne = true;
-		auto *item = new QListWidgetItem(icon, finfo.fileName());
-		QListWidgetItem * itemLinks = nullptr;
-		item->setData(Qt::UserRole, finfo.absoluteFilePath());
-		item->setToolTip(finfo.absoluteFilePath());
+		QString leftText = finfo.fileName();
+		QString leftData = finfo.absoluteFilePath();
 
 		settings.beginGroup("sketches");
 		QVariant settingValue = settings.value(finfo.absoluteFilePath());
 		settings.endGroup();
+
+		QString rightText;
+		QIcon rightIcon;
+		QString rightData;
 
 		if (settingValue.isValid() && !settingValue.isNull()) {
 			auto [fabName, link] = settingValue.value<UploadPair>();
 			if (link.endsWith(QChar('/'))) {
 				link.chop(1);  // Remove the last character
 			}
-
-			QFontMetrics fm(m_recentLinksListWidget->font());
-			int textHeight = fm.height();
-			auto pixmap = SqliteReferenceModel().retrieveIcon(fabName);
-			QPixmap scaledPixmap = pixmap.scaledToHeight(textHeight, Qt::SmoothTransformation);
-			QIcon fabIcon(scaledPixmap);
-			itemLinks = new QListWidgetItem(fabIcon, QString("%1 Project").arg(fabName));
-			itemLinks->setData(RefRole, link);
-			itemLinks->setToolTip(link);
-		} else {
-			itemLinks = new QListWidgetItem(QString(""));
+			rightText = QString("%1 Project").arg(fabName);
+			rightData = link; // Data for the right button click
+			QPixmap pixmap = SqliteReferenceModel().retrieveIcon(fabName);
+			if (!pixmap.isNull()) {
+				rightIcon = QIcon(pixmap);
+			} else {
+				if (fabName.compare("Aisler", Qt::CaseInsensitive) == 0) {
+					rightIcon = aislerIcon;
+				}
+			}
 		}
 
-		m_recentListWidget->addItem(item);
-		m_recentLinksListWidget->addItem(itemLinks);
+		CustomListItem *customItem = new CustomListItem(leftText, defaultIcon, leftData,
+								rightText, rightIcon, rightData, listWidgetWidth);
+		connect(customItem, &CustomListItem::leftItemClicked, this, &WelcomeView::recentSketchClicked);
+		connect(customItem, &CustomListItem::rightItemClicked, this, &WelcomeView::uploadLinkClicked);
+
+		QListWidgetItem *item = new QListWidgetItem(m_recentListWidget);
+		item->setSizeHint(customItem->sizeHint());
+		m_recentListWidget->setItemWidget(item, customItem);
 	}
 
 	if (!gotOne) {
 		// put in a placeholder if there are no recent files
-		auto *item = new QListWidgetItem(icon, tr("No recent sketches found"));
-		item->setData(Qt::UserRole, "");
-		m_recentListWidget->addItem(item);
+		CustomListItem *emptyItem = new CustomListItem(tr("No recent sketches found"), defaultIcon, QString(),
+								       QString(), QIcon(), QString(), listWidgetWidth);
+		QListWidgetItem *item = new QListWidgetItem(m_recentListWidget);
+		item->setSizeHint(emptyItem->sizeHint());
+		m_recentListWidget->setItemWidget(item, emptyItem);
 	}
 }
 
@@ -1033,13 +1095,17 @@ void WelcomeView::nextTip() {
 	m_tip->setText(QString("<a href='tip' style='text-decoration:none; color:#2e94af;'>%1</a>").arg(TipsAndTricks::randomTip()));
 }
 
-void WelcomeView::recentItemClicked(QListWidgetItem * item) {
-	QString data = item->data(Qt::UserRole).toString();
-	if (data.isEmpty()) return;
-
+void WelcomeView::recentSketchClicked(const QString &data) {
+    if (!data.isEmpty()) {
 	Q_EMIT recentSketch(data, data);
+    }
 }
 
+void WelcomeView::uploadLinkClicked(const QString &data) {
+    if (!data.isEmpty()) {
+	QDesktopServices::openUrl(QUrl(data));
+    }
+}
 
 void WelcomeView::blogItemClicked(QListWidgetItem * item) {
 	QString url = item->data(RefRole).toString();

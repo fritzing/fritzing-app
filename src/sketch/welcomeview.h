@@ -33,6 +33,31 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QListWidget>
 #include <QPainter>
 #include <QAbstractItemDelegate>
+#include <QPushButton>
+#include <QHBoxLayout>
+
+class CustomListItem : public QWidget {
+    Q_OBJECT
+
+public:
+    explicit CustomListItem(const QString &leftText, const QIcon &leftIcon, const QString &leftData,
+			    const QString &rightText, const QIcon &rightIcon, const QString &rightData,
+			    int listWidgetWidth, QWidget *parent = nullptr);
+
+signals:
+    void leftItemClicked(const QString &data);
+    void rightItemClicked(const QString &data);
+
+private slots:
+    void onLeftButtonClicked();
+    void onRightButtonClicked();
+
+private:
+    QPushButton *leftButton;
+    QPushButton *rightButton;
+    QString leftData;
+    QString rightData;
+};
 
 class BlogListWidget : public QListWidget
 {
@@ -142,7 +167,8 @@ protected Q_SLOTS:
 	void gotBlogSnippet(QNetworkReply *);
 	void gotBlogImage(QNetworkReply *);
 	void clickBlog(const QString &);
-	void recentItemClicked(QListWidgetItem *);
+	void recentSketchClicked(const QString &data);
+	void uploadLinkClicked(const QString &data);
 	void blogItemClicked(QListWidgetItem *);
 	void nextTip();
 
@@ -153,7 +179,6 @@ protected:
 	QWidget * m_projectsUberFrame = nullptr;
 	QLabel * m_tip = nullptr;
 	QListWidget * m_recentListWidget = nullptr;
-	QListWidget * m_recentLinksListWidget = nullptr;
 	QWidget * m_fabUberFrame = nullptr;
 	QWidget * m_shopUberFrame = nullptr;
 	QLabel * m_projectsLabel = nullptr;

@@ -171,8 +171,6 @@ equals(QT_MAJOR_VERSION, 6) {
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
 
-# Disable this if you have (and want) libgit2 dynamically
-LIBGIT_STATIC = true
 include(pri/openssl3.pri)
 include(pri/libgit2detect.pri)
 include(pri/boostdetect.pri)

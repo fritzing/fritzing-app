@@ -13,13 +13,22 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************
 
-# Windows and Linux still use the old variant, libgit 0.28, static linked
-# macOS uses already uses the 1.7.1 version
+# Windows still uses the old variant, libgit 0.28, static linked
+# Linux uses 1.7.1 dynamic linked (for working with openssl 3)
+# macOS uses 1.7.1 static linked
+
 # Use libgit2 1.7.1 ( https://github.com/libgit2/libgit2/pull/6471 )
 LIBGIT_VERSION=1.7.1
 LIBGITPATH = $$absolute_path($$_PRO_FILE_PWD_/../libgit2-$$LIBGIT_VERSION)
 
-!macx {
+unix:!macx {
+	LIBGIT_STATIC = false
+} else {
+	LIBGIT_STATIC = true
+}
+
+
+win32 {
 	if ($$LIBGIT_STATIC) {
 		LIBGIT2INCLUDE = "$$_PRO_FILE_PWD_/../libgit2/include"
 
@@ -33,9 +42,7 @@ LIBGITPATH = $$absolute_path($$_PRO_FILE_PWD_/../libgit2-$$LIBGIT_VERSION)
 			error("libgit2 include path not found in $$LIBGIT2INCLUDE")
 		}
 	}
-}
 
-win32 {
     contains(QMAKE_TARGET.arch, x86_64) {
         LIBGIT2LIB = "$$_PRO_FILE_PWD_/../libgit2/build64/Release"
     } else {
@@ -52,39 +59,30 @@ win32 {
     LIBS += -L$$LIBGIT2LIB -lgit2
 }
 
-unix:!macx {
-    if ($$LIBGIT_STATIC) {
-        LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
-        exists($$LIBGIT2LIB/libgit2.a) {
-            message("found libgit2 library in $$LIBGIT2LIB")
-        } else {
-            error("static libgit2 library not found in $$LIBGIT2LIB")
-        }
-		INCLUDEPATH += $$LIBGIT2INCLUDE
-		LIBS += $$LIBGIT2LIB/libgit2.a  -lssl -lcrypto
-    } else {
-		QMAKE_PKG_CONFIG_PATH += $$LIBGITPATH/pkgconfig
-		!build_pass:warning("Using dynamic linking for libgit2. This is not tested on macos, probably doesn't work.")
-        #message("Enabled dynamic linking of libgit2")
-        PKGCONFIG += libgit2
-    }
-}
-
-macx {
+unix {
+	LIBGIT2LIB = $$LIBGITPATH/lib
 	if ($$LIBGIT_STATIC) {
-		LIBGIT2LIB = $$LIBGITPATH/lib
+
 		exists($$LIBGIT2LIB/libgit2.a) {
 			message("found libgit2 library in $$LIBGIT2LIB")
 		} else {
 			error("static libgit2 library not found in $$LIBGIT2LIB")
 		}
 		INCLUDEPATH += $$LIBGITPATH/include
-		LIBS += $$LIBGIT2LIB/libgit2.a -framework Security
+		macx {
+			LIBS += $$LIBGIT2LIB/libgit2.a -framework Security
+		} else {
+			LIBS += $$LIBGIT2LIB/libgit2.a -lssl -lcrypto
+		}
 	} else {
-		QMAKE_PKG_CONFIG_PATH += $$LIBGITPATH/pkgconfig
-		!build_pass:warning("Using dynamic linking for libgit2. This is not tested on macos, probably doesn't work")
-		#message("Enabled dynamic linking of libgit2")
-		PKGCONFIG += libgit2
+		message("Enabled dynamic linking of libgit2 $$LIBGIT_VERSION")
+		INCLUDEPATH += $$LIBGITPATH/include
+		LIBS += -L$$LIBGIT2LIB -lgit2
+		!macx {
+			QMAKE_RPATHDIR += $$LIBGIT2LIB
+		}
+		#PKG_CONFIG_PATH=$$LIBGITPATH/lib/pkgconfig:$$PKG_CONFIG_PATH
+		#PKGCONFIG += libgit2
 	}
 }
 

@@ -2894,23 +2894,6 @@ void PCBSketchWidget::calcBoardDimensions(int & boardCount, double & width, doub
 	height = GraphicsUtils::pixels2mm(board->boundingRect().height(), GraphicsUtils::SVGDPI) / 10;
 }
 
-double PCBSketchWidget::calcBoardArea(int & boardCount) {
-	QList<ItemBase *> boards = findBoard();
-	boardCount = boards.count();
-	if (boardCount == 0) {
-		return 0;
-	}
-
-	double area = 0;
-	Q_FOREACH (ItemBase * board, boards) {
-		area += GraphicsUtils::pixels2mm(board->boundingRect().width(), GraphicsUtils::SVGDPI) *
-		        GraphicsUtils::pixels2mm(board->boundingRect().height(), GraphicsUtils::SVGDPI) /
-		        100;
-	}
-
-	return area;
-}
-
 PaletteItem* PCBSketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID viewID, bool temporary) {
 	if (viewID == ViewLayer::PCBView && Board::isBoard(modelPart)) {
 		requestQuoteSoon();

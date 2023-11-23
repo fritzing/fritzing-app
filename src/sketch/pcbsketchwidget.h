@@ -182,7 +182,6 @@ protected:
 	void collectThroughHole(QList<ConnectorItem *> & th, QList<ConnectorItem *> & pads, const LayerList &);
 	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
 	void requestQuote(bool byUser);
-	double calcBoardArea(int & boardCount);
 	void calcBoardDimensions(int & boardCount, double & width, double & height);
 	PaletteItem* addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);
 	void requestQuoteSoon();

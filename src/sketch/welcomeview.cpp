@@ -126,45 +126,56 @@ CustomListItem::CustomListItem(const QString &leftText, const QIcon &leftIcon, c
 			       int listWidgetWidth, QWidget *parent)
 	: QWidget(parent), leftData(leftData), rightData(rightData) {
 	QHBoxLayout *layout = new QHBoxLayout(this);
-	layout->setContentsMargins(0, 0, 0, 0); // Remove layout margins
-	layout->setSpacing(0); // Remove spacing between buttons
+	int padding = 5;
+	layout->setContentsMargins(2, 2, 2, 2);
+	layout->setSpacing(0);
 
 	leftButton = new QPushButton(leftIcon, "", this);
 	rightButton = new QPushButton(rightIcon, "", this);
 
-	leftButton->setFlat(true);
-	rightButton->setFlat(true);
+	QString buttonStyle = QString("QPushButton { "
+			      "text-align: left; "
+			      "background-color: transparent; "
+			      "border: none; "
+			      "padding: %1px; "
+			      "}"
+			      "QPushButton:pressed { "
+			      "color: #555; "
+			      "}").arg(padding);
+	leftButton->setStyleSheet(buttonStyle);
+	rightButton->setStyleSheet(buttonStyle);
 
 	QPalette buttonPalette = leftButton->palette();
 	buttonPalette.setColor(QPalette::ButtonText, Qt::black);
 	leftButton->setPalette(buttonPalette);
 	rightButton->setPalette(buttonPalette);
 
-	// Calculate button width taking into account the scrollbar width
 	int scrollbarWidth = this->style()->pixelMetric(QStyle::PM_ScrollBarExtent);
-	int leftButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.6);
-	int rightButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.4);
+	int leftButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.5);
+	int rightButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.5);
 
-	// Set fixed width for buttons
 	leftButton->setFixedWidth(leftButtonWidth);
 	rightButton->setFixedWidth(rightButtonWidth);
 
-	// Use QFontMetrics to elide text
 	QFontMetrics metrics(leftButton->font());
-	QString elidedLeftText = metrics.elidedText(leftText, Qt::ElideRight, leftButtonWidth);
-	QString elidedRightText = metrics.elidedText(rightText, Qt::ElideRight, rightButtonWidth);
+	int buttonHeight = metrics.height() + 2 * padding;
 
-	// Set the elided text and tooltips
+	leftButton->setMinimumHeight(buttonHeight);
+	rightButton->setMinimumHeight(buttonHeight);
+
+	auto leftIconSizes = leftIcon.availableSizes();
+	int leftIconWidth = leftIconSizes.isEmpty() ? 0 : leftIconSizes.first().width();
+	QString elidedLeftText = metrics.elidedText(leftText, Qt::ElideRight, leftButtonWidth - leftIconWidth - 3 * padding);
+	QString elidedRightText = metrics.elidedText(rightText, Qt::ElideRight, rightButtonWidth - leftIconWidth - 3 * padding);
+
 	leftButton->setText(elidedLeftText);
 	leftButton->setToolTip(leftData);
 	rightButton->setText(elidedRightText);
 	rightButton->setToolTip(rightData);
 
-	// Add buttons to layout
 	layout->addWidget(leftButton);
 	layout->addWidget(rightButton);
 
-	// Connect button signals to slots
 	connect(leftButton, &QPushButton::clicked, this, &CustomListItem::onLeftButtonClicked);
 	connect(rightButton, &QPushButton::clicked, this, &CustomListItem::onRightButtonClicked);
 

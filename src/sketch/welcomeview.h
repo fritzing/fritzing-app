@@ -37,26 +37,28 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QHBoxLayout>
 
 class CustomListItem : public QWidget {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit CustomListItem(const QString &leftText, const QIcon &leftIcon, const QString &leftData,
-			    const QString &rightText, const QIcon &rightIcon, const QString &rightData,
-			    int listWidgetWidth, QWidget *parent = nullptr);
+	explicit CustomListItem(const QString &leftText, const QIcon &leftIcon, const QString &leftData,
+				const QString &rightText, const QIcon &rightIcon, const QString &rightData,
+				int listWidgetWidth, QWidget *parent = nullptr);
+	QSize sizeHint() const;
 
 signals:
-    void leftItemClicked(const QString &data);
-    void rightItemClicked(const QString &data);
+	void leftItemClicked(const QString &data);
+	void rightItemClicked(const QString &data);
 
 private slots:
-    void onLeftButtonClicked();
-    void onRightButtonClicked();
+	void onLeftButtonClicked();
+	void onRightButtonClicked();
 
 private:
-    QPushButton *leftButton;
-    QPushButton *rightButton;
-    QString leftData;
-    QString rightData;
+	QPushButton *leftButton;
+	QPushButton *rightButton;
+	QString leftData;
+	QString rightData;
+	QSize m_iconSize;
 };
 
 class BlogListWidget : public QListWidget

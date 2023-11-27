@@ -126,18 +126,25 @@ CustomListItem::CustomListItem(const QString &leftText, const QIcon &leftIcon, c
 			       int listWidgetWidth, QWidget *parent)
 	: QWidget(parent), leftData(leftData), rightData(rightData) {
 	QHBoxLayout *layout = new QHBoxLayout(this);
-	int padding = 5;
+	int padding = 3;
 	layout->setContentsMargins(2, 2, 2, 2);
 	layout->setSpacing(0);
 
+	QList<QSize> availableIconSizes = leftIcon.availableSizes();
+	m_iconSize = availableIconSizes.isEmpty() ? QSize(16, 16) : availableIconSizes.first();
+
 	leftButton = new QPushButton(leftIcon, "", this);
 	rightButton = new QPushButton(rightIcon, "", this);
+
+	leftButton->setFlat(true);
+	rightButton->setFlat(true);
 
 	QString buttonStyle = QString("QPushButton { "
 			      "text-align: left; "
 			      "background-color: transparent; "
 			      "border: none; "
-			      "padding: %1px; "
+			      "padding-left: %1px; "
+			      "padding-right: %1px; "
 			      "}"
 			      "QPushButton:pressed { "
 			      "color: #555; "
@@ -145,28 +152,26 @@ CustomListItem::CustomListItem(const QString &leftText, const QIcon &leftIcon, c
 	leftButton->setStyleSheet(buttonStyle);
 	rightButton->setStyleSheet(buttonStyle);
 
+	QFont buttonFont = leftButton->font();
+	buttonFont.setPointSize(buttonFont.pointSize() - 2);
+	leftButton->setFont(buttonFont);
+	rightButton->setFont(buttonFont);
+
 	QPalette buttonPalette = leftButton->palette();
 	buttonPalette.setColor(QPalette::ButtonText, Qt::black);
 	leftButton->setPalette(buttonPalette);
 	rightButton->setPalette(buttonPalette);
 
 	int scrollbarWidth = this->style()->pixelMetric(QStyle::PM_ScrollBarExtent);
-	int leftButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.5);
-	int rightButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.5);
+	int leftButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.75);
+	int rightButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.25);
 
 	leftButton->setFixedWidth(leftButtonWidth);
 	rightButton->setFixedWidth(rightButtonWidth);
 
 	QFontMetrics metrics(leftButton->font());
-	int buttonHeight = metrics.height() + 2 * padding;
-
-	leftButton->setMinimumHeight(buttonHeight);
-	rightButton->setMinimumHeight(buttonHeight);
-
-	auto leftIconSizes = leftIcon.availableSizes();
-	int leftIconWidth = leftIconSizes.isEmpty() ? 0 : leftIconSizes.first().width();
-	QString elidedLeftText = metrics.elidedText(leftText, Qt::ElideRight, leftButtonWidth - leftIconWidth - 3 * padding);
-	QString elidedRightText = metrics.elidedText(rightText, Qt::ElideRight, rightButtonWidth - leftIconWidth - 3 * padding);
+	QString elidedLeftText = metrics.elidedText(leftText, Qt::ElideRight, leftButtonWidth - m_iconSize.width() - 3 * padding);
+	QString elidedRightText = metrics.elidedText(rightText, Qt::ElideRight, rightButtonWidth - m_iconSize.width() - 3 * padding);
 
 	leftButton->setText(elidedLeftText);
 	leftButton->setToolTip(leftData);
@@ -180,6 +185,20 @@ CustomListItem::CustomListItem(const QString &leftText, const QIcon &leftIcon, c
 	connect(rightButton, &QPushButton::clicked, this, &CustomListItem::onRightButtonClicked);
 
 	setLayout(layout);
+}
+
+QSize CustomListItem::sizeHint() const {
+	QFontMetrics metrics(font());
+	int textHeight = metrics.height();
+
+	int verticalPadding = 10;
+	int totalHeight = qMax(textHeight, m_iconSize.height()) + verticalPadding;
+
+	// Width is based on the list widget's width
+	int listWidgetWidth = parentWidget() ? parentWidget()->width() : 100;
+	int totalWidth = listWidgetWidth - layout()->contentsMargins().left() - layout()->contentsMargins().right();
+
+	return QSize(totalWidth, totalHeight);
 }
 
 void CustomListItem::onLeftButtonClicked() {
@@ -766,7 +785,7 @@ void WelcomeView::updateRecent() {
 			if (link.endsWith(QChar('/'))) {
 				link.chop(1);  // Remove the last character
 			}
-			rightText = QString("%1 Project").arg(fabName);
+			rightText = QString("%1").arg(fabName);
 			rightData = link; // Data for the right button click
 			QPixmap pixmap = SqliteReferenceModel().retrieveIcon(fabName);
 			if (!pixmap.isNull()) {

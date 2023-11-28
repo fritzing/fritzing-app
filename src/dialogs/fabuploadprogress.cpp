@@ -52,7 +52,9 @@ void FabUploadProgress::doUpload()
 {
 	QSettings settings;
 	QString service = settings.value("service", "fritzing").toString();
-	QUrl upload_url("https://fritzing.org/fab/upload");	
+	QUrl upload_url("https://service.fritzing.org/fab/upload");
+
+	settings.beginGroup("sketches");
 	QVariant settingValue = settings.value(mFilepath);
 	settings.endGroup();
 

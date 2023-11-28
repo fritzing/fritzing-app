@@ -239,7 +239,10 @@ void FabUploadProgress::updateProcessingStatus()
 					FMessageBox::critical(this, tr("Fritzing"), error);
 				} else {
 					QSettings settings;
-					QString service = settings.value("service", "").toString();
+					QString service = j["service"].toString();
+					if (service.isEmpty()) {
+						service = settings.value("service", "").toString();
+					}
 					UploadPair data = {service, mRedirect_url};
 					settings.beginGroup("sketches");
 					settings.setValue(mFilepath, QVariant::fromValue(data));

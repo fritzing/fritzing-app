@@ -64,6 +64,8 @@ void FabUploadProgress::doUpload()
 			QUrl potential_url(opt.link);
 			if (potential_url.isValid()) {
 				upload_url = potential_url;
+				uploadMultipart(upload_url, mFilepath);
+				return;
 			}
 			// Otherwise, keep using the default URL
 		}

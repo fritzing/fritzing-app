@@ -54,6 +54,10 @@ void FabUploadProgress::doUpload()
 	QString service = settings.value("service", "fritzing").toString();
 	QUrl upload_url("https://service.fritzing.org/fab/upload");
 
+	QUrlQuery query;
+	QString fritzingVersion = Version::versionString();
+	query.addQueryItem("fritzing_version", fritzingVersion);
+
 	settings.beginGroup("sketches");
 	QVariant settingValue = settings.value(mFilepath);
 	settings.endGroup();
@@ -64,6 +68,7 @@ void FabUploadProgress::doUpload()
 			QUrl potential_url(opt.link);
 			if (potential_url.isValid()) {
 				upload_url = potential_url;
+				upload_url.setQuery(query);
 				uploadMultipart(upload_url, mFilepath);
 				return;
 			}
@@ -71,10 +76,7 @@ void FabUploadProgress::doUpload()
 		}
 	}
 
-	QUrlQuery query;
-	QString fritzingVersion = Version::versionString();
-	query.addQueryItem("fritzing_version", fritzingVersion);
-	query.addQueryItem("fab_name", service);
+	query.addQueryItem("service", service);
 	upload_url.setQuery(query);
 	mRedirect_url = QString();
 

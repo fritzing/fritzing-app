@@ -163,8 +163,8 @@ CustomListItem::CustomListItem(const QString &leftText, const QIcon &leftIcon, c
 	rightButton->setPalette(buttonPalette);
 
 	int scrollbarWidth = this->style()->pixelMetric(QStyle::PM_ScrollBarExtent);
-	int leftButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.75);
-	int rightButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.25);
+	int leftButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.7);
+	int rightButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.3);
 
 	leftButton->setFixedWidth(leftButtonWidth);
 	rightButton->setFixedWidth(rightButtonWidth);

@@ -230,6 +230,8 @@ void FabUploadProgress::updateProcessingStatus()
 					QString service = j["service"].toString();
 					if (service.isEmpty()) {
 						service = settings.value("service", "").toString();
+					} else {
+						settings.setValue("service", service);
 					}
 					UploadPair data = {service, mRedirect_url};
 					settings.beginGroup("sketches");

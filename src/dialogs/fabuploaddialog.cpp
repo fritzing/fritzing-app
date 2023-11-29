@@ -4,6 +4,7 @@
 #include "qurlquery.h"
 #include "referencemodel/sqlitereferencemodel.h"
 #include "ui_fabuploaddialog.h"
+#include "utils/fmessagebox.h"
 
 #include <QFile>
 #include <QSettings>
@@ -133,6 +134,8 @@ void FabUploadDialog::handleError(QNetworkReply *reply, const QString &message)
 	setUploadButtonEnabled(false);
 	if (reply)
 		reply->deleteLater();
+	close();
+	FMessageBox::critical(this, tr("Fritzing"), tr("Error: ") + message);
 }
 
 void FabUploadDialog::setFabName(QString fabName)

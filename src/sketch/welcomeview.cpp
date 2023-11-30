@@ -170,8 +170,8 @@ CustomListItem::CustomListItem(const QString &leftText, const QIcon &leftIcon, c
 	rightButton->setFixedWidth(rightButtonWidth);
 
 	QFontMetrics metrics(leftButton->font());
-	QString elidedLeftText = metrics.elidedText(leftText, Qt::ElideRight, leftButtonWidth - m_iconSize.width() - 3 * padding);
-	QString elidedRightText = metrics.elidedText(rightText, Qt::ElideRight, rightButtonWidth - m_iconSize.width() - 3 * padding);
+	QString elidedLeftText = metrics.elidedText(leftText, Qt::ElideRight, leftButtonWidth - m_iconSize.width() - 4 * padding);
+	QString elidedRightText = metrics.elidedText(rightText, Qt::ElideRight, rightButtonWidth - m_iconSize.width() - 4 * padding);
 
 	leftButton->setText(elidedLeftText);
 	leftButton->setToolTip(leftData);

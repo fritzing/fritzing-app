@@ -1,4 +1,5 @@
 #include "fabuploadprogress.h"
+#include "fabuploadprogressprobe.h"
 #include "networkhelper.h"
 
 #include "version/version.h"
@@ -38,6 +39,12 @@
 
 FabUploadProgress::FabUploadProgress(QWidget *parent) : QWidget(parent)
 {
+	mFabUploadProgressProbe = new FabUploadProgressProbe(this);
+}
+
+FabUploadProgress::~FabUploadProgress()
+{
+	delete mFabUploadProgressProbe;
 }
 
 void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename,

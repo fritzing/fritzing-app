@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2022 Fritzing GmbH
+Copyright (c) 2023 Fritzing GmbH
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,22 +18,19 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
-#ifndef FPROBE_H
-#define FPROBE_H
+#ifndef FABUPLOADPROGRESSPROBE_H
+#define FABUPLOADPROGRESSPROBE_H
 
-#include <QString>
-#include <QVariant>
+#include "testing/FProbe.h"
+#include "dialogs/fabuploadprogress.h"
 
-class FProbe {
-	public:
-		FProbe(std::string name);
-		~FProbe();
-
-	virtual QVariant read() = 0;
-	virtual void write(QVariant) = 0;
-	virtual std::string name();
-protected:
-	std::string m_name;
+class FabUploadProgressProbe : public FProbe {
+public:
+	FabUploadProgressProbe(FabUploadProgress *fabUploadProgress);
+	QVariant read() override;
+	void write(QVariant) override {}
+private:
+	FabUploadProgress *m_fabUploadProgress;
 };
 
-#endif
+#endif // FABUPLOADPROGRESSPROBE_H

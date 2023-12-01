@@ -24,11 +24,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QWidget>
 #include <QNetworkReply>
 
+class FabUploadProgressProbe;
+
 class FabUploadProgress : public QWidget
 {
 	Q_OBJECT
 public:
 	explicit FabUploadProgress(QWidget *parent = nullptr);
+	~FabUploadProgress();
 	void init(QNetworkAccessManager *manager, QString filename, double width, double height, int boardCount);
 
 public Q_SLOTS:
@@ -49,6 +52,8 @@ Q_SIGNALS:
 	void closeUploadError();
 
 private:
+	friend class FabUploadProgressProbe;
+	FabUploadProgressProbe *mFabUploadProgressProbe;
 	QNetworkAccessManager *mManager;
 	QString mFilepath;
 	QString mRedirect_url;

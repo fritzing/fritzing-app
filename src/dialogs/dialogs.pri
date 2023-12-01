@@ -25,7 +25,8 @@ HEADERS += src/dialogs/prefsdialog.h \
         src/dialogs/translatorlistmodel.h \
         src/dialogs/fabuploaddialog.h \
         src/dialogs/fabuploadprogress.h \
-        src/dialogs/networkhelper.h
+        src/dialogs/networkhelper.h \
+        src/dialogs/fabuploadprogressprobe.h
 
 SOURCES += src/dialogs/prefsdialog.cpp \
         $$PWD/exportparametersdialog.cpp \
@@ -37,7 +38,8 @@ SOURCES += src/dialogs/prefsdialog.cpp \
         src/dialogs/translatorlistmodel.cpp \
         src/dialogs/fabuploaddialog.cpp \
         src/dialogs/fabuploadprogress.cpp \
-        src/dialogs/networkhelper.cpp
+        src/dialogs/networkhelper.cpp \
+        src/dialogs/fabuploadprogressprobe.cpp
 
 FORMS += src/dialogs/fabuploaddialog.ui \
     $$PWD/exportparametersdialog.ui

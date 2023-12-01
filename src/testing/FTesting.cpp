@@ -52,6 +52,14 @@ void FTesting::addProbe(FProbe * probe)
 	m_probeMap[probe->name()] = probe;
 }
 
+void FTesting::removeProbe(FProbe * probe)
+{
+	auto it = m_probeMap.find(probe->name());
+	if (it != m_probeMap.end()) {
+		m_probeMap.erase(it);
+	}
+}
+
 stdx::optional<QVariant> FTesting::readProbe(std::string name)
 {
 	if(m_probeMap.find(name) != m_probeMap.end()) {

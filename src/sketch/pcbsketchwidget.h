@@ -122,6 +122,7 @@ public:
 	ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
 	void setPartLabelFont(QString fontFamily);
 	QString getPartLabelFont();
+	void requestQuote(bool byUser);
 
 public Q_SLOTS:
 	void resizeBoard(double w, double h, bool doEmit);
@@ -181,10 +182,8 @@ protected:
 	bool canConnect(Wire * from, ItemBase * to);
 	void collectThroughHole(QList<ConnectorItem *> & th, QList<ConnectorItem *> & pads, const LayerList &);
 	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
-	void requestQuote(bool byUser);
 	void calcBoardDimensions(int & boardCount, double & width, double & height);
 	PaletteItem* addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);
-	void requestQuoteSoon();
 	double getKeepoutMils();
 	bool updateOK(ConnectorItem *, ConnectorItem *);
 	QList<QGraphicsItem *> getCollidingItems(QGraphicsItem *target, QGraphicsItem *other);
@@ -196,13 +195,13 @@ Q_SIGNALS:
 	void copperFillSignal();
 	void groundFillOldSignal();
 	void copperFillOldSignal();
+	void fabQuoteFinishedSignal();
 
 protected Q_SLOTS:
 	void alignJumperItem(class JumperItem *, QPointF &);
 	void wireSplitSlot(class Wire*, QPointF newPos, QPointF oldPos, const QLineF & oldLine);
 	void postImageSlot(class GroundPlaneGeneratorOld *, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> *);
 	void gotFabQuote(QNetworkReply *);
-	void requestQuoteNow();
 	void getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);
 
 
@@ -214,7 +213,6 @@ protected:
 	QHash<QString, QString> m_autorouterSettings;
 	QPointer<class QuoteDialog> m_quoteDialog;
 	QPointer<class QuoteDialog> m_rolloverQuoteDialog;
-	QTimer m_requestQuoteTimer;
 	QString m_partLabelFontFamily;
 
 protected:

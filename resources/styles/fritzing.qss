@@ -2193,7 +2193,6 @@ QUndoView::item:hover	 {
 /**************** sketch widgets ****************/
 
 MainWindow {
-	qproperty-fireQuoteDelay: 250;  /* milliseconds */
 	background:#aaa;
 }
 

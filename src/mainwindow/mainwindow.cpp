@@ -287,9 +287,6 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	connect(&m_autosaveTimer, SIGNAL(timeout()), this, SLOT(backupSketch()));
 	m_autosaveTimer.start(AutosaveTimeoutMinutes * 60 * 1000);
 
-	m_fireQuoteTimer.setSingleShot(true);
-	connect(&m_fireQuoteTimer, SIGNAL(timeout()), this, SLOT(fireQuote()));
-
 	resize(MainWindowDefaultWidth, MainWindowDefaultHeight);
 
 	m_backupFileNameAndPath = MainWindow::BackupFolder + "/" + TextUtils::getRandText() + FritzingSketchExtension;
@@ -3227,16 +3224,13 @@ ProgramWindow *MainWindow::programmingWidget() {
 }
 
 void MainWindow::orderFabHoverEnter() {
-	m_fireQuoteTimer.stop();
-	if (!QuoteDialog::quoteSucceeded()) return;
 	if ((m_rolloverQuoteDialog != nullptr) && m_rolloverQuoteDialog->isVisible()) return;
-
-	m_fireQuoteTimer.setInterval(fireQuoteDelay());
-	m_fireQuoteTimer.start();
+	QuoteDialog::setQuoteSucceeded(false);
+	QObject::connect(m_pcbGraphicsView, &PCBSketchWidget::fabQuoteFinishedSignal, this, &MainWindow::fireQuote);
+	m_pcbGraphicsView->requestQuote(true);
 }
 
 void MainWindow::fireQuote() {
-	m_fireQuoteTimer.stop();
 	if (!QuoteDialog::quoteSucceeded()) return;
 
 	m_rolloverQuoteDialog = m_pcbGraphicsView->quoteDialog(m_pcbWidget);
@@ -3267,8 +3261,7 @@ void MainWindow::fireQuote() {
 }
 
 void MainWindow::orderFabHoverLeave() {
-	m_fireQuoteTimer.stop();
-	//DebugDialog::debug("leave fab button");
+	QObject::disconnect(m_pcbGraphicsView, &PCBSketchWidget::fabQuoteFinishedSignal, this, &MainWindow::fireQuote);
 	if (m_rolloverQuoteDialog != nullptr) {
 		m_rolloverQuoteDialog->hide();
 	}
@@ -3326,14 +3319,6 @@ void MainWindow::initZoom() {
 	}
 
 	m_currentGraphicsView->setEverZoomed(true);
-}
-
-int MainWindow::fireQuoteDelay() {
-	return m_fireQuoteDelay;
-}
-
-void MainWindow::setFireQuoteDelay(int delay) {
-	m_fireQuoteDelay = delay;
 }
 
 void MainWindow::noSchematicConversion() {

@@ -78,9 +78,6 @@ PCBSketchWidget::PCBSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
 	: SketchWidget(viewID, parent)
 {
 	m_rolloverQuoteDialog = nullptr;
-	m_requestQuoteTimer.setSingleShot(true);
-	m_requestQuoteTimer.setInterval(100);
-	connect(&m_requestQuoteTimer, SIGNAL(timeout()), this, SLOT(requestQuoteNow()));
 	m_resizingBoard = nullptr;
 	m_resizingJumperItem = nullptr;
 	m_viewName = QObject::tr("PCB View");
@@ -1362,7 +1359,6 @@ void PCBSketchWidget::deleteItem(ItemBase * itemBase, bool deleteModelPart, bool
 		if (findBoard().count() == 0) {
 			Q_EMIT boardDeletedSignal();
 		}
-		requestQuoteSoon();
 	}
 }
 
@@ -2786,23 +2782,27 @@ void PCBSketchWidget::fabQuote() {
 	int boardCount = 0;
 	double width, height;
 	calcBoardDimensions(boardCount, width, height);
-	QuoteDialog::setDimensions(width, height, boardCount);
+	QuoteDialog::setQuoteSucceeded(false);
+
 	if (boardCount == 0) {
 		QMessageBox::information(this, tr("Fritzing Fab Quote"),
 		                         tr("Your sketch does not have a board yet. You cannot fabricate this sketch without a PCB part."));
 		return;
 	}
+	QEventLoop waitLoop;
+	QObject::connect(this, &PCBSketchWidget::fabQuoteFinishedSignal, &waitLoop, &QEventLoop::quit);
+	QTimer::singleShot(1000, &waitLoop, &QEventLoop::quit);
+	requestQuote(true);
+	waitLoop.exec();
 
 	if (!QuoteDialog::quoteSucceeded()) {
 		QMessageBox::information(this, tr("Fritzing Fab Quote"),
 		                         tr("Sorry, http://fab.fritzing.org is not responding to the quote request. Please check your network connection and/or try again later."));
-		requestQuote(true);
 		return;
 	}
 
 	m_quoteDialog = new QuoteDialog(true, this);
-	requestQuote(true);
-
+	m_quoteDialog->setText();
 	m_quoteDialog->exec();
 	delete m_quoteDialog;
 	m_quoteDialog = nullptr;
@@ -2831,12 +2831,10 @@ void PCBSketchWidget::gotFabQuote(QNetworkReply * networkReply) {
 			}
 			QuoteDialog::setQuoteSucceeded(true);
 		}
-
-		if (m_quoteDialog != nullptr) m_quoteDialog->setText();
-		if (m_rolloverQuoteDialog != nullptr) m_rolloverQuoteDialog->setText();
 	}
 	else {
 	}
+	Q_EMIT fabQuoteFinishedSignal();
 
 	manager->deleteLater();
 	networkReply->deleteLater();
@@ -2895,25 +2893,11 @@ void PCBSketchWidget::calcBoardDimensions(int & boardCount, double & width, doub
 }
 
 PaletteItem* PCBSketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID viewID, bool temporary) {
-	if (viewID == ViewLayer::PCBView && Board::isBoard(modelPart)) {
-		requestQuoteSoon();
-	}
 	return SketchWidget::addPartItem(modelPart, viewLayerPlacement, paletteItem, doConnectors, ok, viewID, temporary);
-}
-
-void PCBSketchWidget::requestQuoteSoon() {
-	m_requestQuoteTimer.stop();
-	m_requestQuoteTimer.start();
-}
-
-void PCBSketchWidget::requestQuoteNow() {
-	m_requestQuoteTimer.stop();
-	requestQuote(false);
 }
 
 ItemBase * PCBSketchWidget::resizeBoard(long itemID, double mmW, double mmH) {
 	ItemBase * itemBase = SketchWidget::resizeBoard(itemID, mmW, mmH);
-	if ((itemBase != nullptr) && Board::isBoard(itemBase)) requestQuoteSoon();
 	return itemBase;
 }
 

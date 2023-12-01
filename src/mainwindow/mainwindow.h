@@ -146,7 +146,6 @@ struct TraceMenuThing {
 class MainWindow : public FritzingWindow
 {
 	Q_OBJECT
-	Q_PROPERTY(int fireQuoteDelay READ fireQuoteDelay WRITE setFireQuoteDelay DESIGNABLE true)
 
 	void setEnableSubmenu(QMenu *menu, bool value);
 	void save_text_file(QString text, QString actionType, QString dialogTitle, QString differentiator, QString errorMessage);
@@ -213,8 +212,6 @@ public:
 	void selectPartsWithModuleID(ModelPart *);
 	void addToSketch(QList<ModelPart *> &);
 	QStringList newDesignRulesCheck(bool showOkMessage);
-	int fireQuoteDelay();
-	void setFireQuoteDelay(int);
 	void setInitialTab(int);
 	void noSchematicConversion();
 	QString getExportBOM_CSV();
@@ -938,7 +935,6 @@ protected:
 	QList<LinkedFile *>  m_linkedProgramFiles;
 	QString m_backupFileNameAndPath;
 	QTimer m_autosaveTimer;
-	QTimer m_fireQuoteTimer;
 	bool m_autosaveNeeded = false;
 	bool m_backingUp = false;
 	QString m_bundledSketchName;
@@ -966,7 +962,6 @@ protected:
 	QPointer<QDialog> m_rolloverQuoteDialog;
 	bool m_obsoleteSMDOrientation = false;
 	QWidget * m_orderFabButton = nullptr;
-	int m_fireQuoteDelay = 0;
 	QPointer<DebugConnectors> m_debugConnectors;
 
 	// exporting

@@ -40,10 +40,14 @@ FabUploadProgress::FabUploadProgress(QWidget *parent) : QWidget(parent)
 {
 }
 
-void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename)
+void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename,
+			     double width, double height, int boardCount)
 {
 	mManager = manager;
 	mFilepath = filename;
+	mWidth = width;
+	mHeight = height;
+	mBoardCount = boardCount;
 }
 
 void FabUploadProgress::doUpload()
@@ -55,6 +59,9 @@ void FabUploadProgress::doUpload()
 	QUrlQuery query;
 	QString fritzingVersion = Version::versionString();
 	query.addQueryItem("fritzing_version", fritzingVersion);
+	query.addQueryItem("width", QString::number(mWidth));
+	query.addQueryItem("height", QString::number(mHeight));
+	query.addQueryItem("board_count", QString::number(mBoardCount));
 
 	settings.beginGroup("sketches");
 	QVariant settingValue = settings.value(mFilepath);

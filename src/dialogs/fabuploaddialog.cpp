@@ -1,3 +1,23 @@
+/*******************************************************************
+
+Part of the Fritzing project - http://fritzing.org
+Copyright (c) 2023 Fritzing GmbH
+
+Fritzing is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Fritzing is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
+
+********************************************************************/
+
 #include "fabuploaddialog.h"
 #include "networkhelper.h"
 #include "qstyle.h"
@@ -12,6 +32,9 @@
 
 FabUploadDialog::FabUploadDialog(QNetworkAccessManager *manager,
 								 QString filename,
+								 double width,
+								 double height,
+								 int boardCount,
 								 QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::FabUploadDialog),
@@ -21,7 +44,7 @@ FabUploadDialog::FabUploadDialog(QNetworkAccessManager *manager,
 	ui->setupUi(this);	
 	setWindowFlags(Qt::Dialog | windowFlags());
 	ui->stackedWidget->setCurrentIndex(0);
-	ui->upload->init(manager, filename);
+	ui->upload->init(manager, filename, width, height, boardCount);
 	ui->uploadButton_2->setEnabled(false);
 
 	requestFabInfo();

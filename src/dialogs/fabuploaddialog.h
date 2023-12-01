@@ -16,8 +16,9 @@ class FabUploadDialog : public QDialog
 public:
 	explicit FabUploadDialog(QNetworkAccessManager* manager,
 							 QString filename,
-//							 double area,
-//							 double boardCount,
+							 double width,
+							 double height,
+							 int boardCount,
 							 QWidget *parent = nullptr);
 	~FabUploadDialog();
 

@@ -2863,7 +2863,7 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2879"/>
-        <source>How much would it could to produce a PCB from this sketch with Fritzing Fab</source>
+        <source>How much would it cost to produce a PCB from this sketch with Fritzing Fab</source>
         <translation>Combien cela pourrait coûter de produire un CI à partir de cette esquisse avec Fritzing Fab</translation>
     </message>
     <message>

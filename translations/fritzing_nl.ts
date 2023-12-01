@@ -4334,7 +4334,7 @@ Doorgaan en terug naar vorige versie?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2879"/>
-        <source>How much would it could to produce a PCB from this sketch with Fritzing Fab</source>
+        <source>How much would it cost to produce a PCB from this sketch with Fritzing Fab</source>
         <translation>Wat zullen de kosten zijn om een PCB te laten produceren van deze sketch met Fritzing Fab</translation>
     </message>
     <message>

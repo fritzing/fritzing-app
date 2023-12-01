@@ -3379,7 +3379,7 @@ Cũng có thể chọn một kết nối như là một đổ mát bằng cách 
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2879"/>
-        <source>How much would it could to produce a PCB from this sketch with Fritzing Fab</source>
+        <source>How much would it cost to produce a PCB from this sketch with Fritzing Fab</source>
         <translation>Để sản xuất một PCB từ sketch này với Fritzing Fab sẽ mất bao nhiêu tiền</translation>
     </message>
     <message>

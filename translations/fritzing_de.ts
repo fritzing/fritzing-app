@@ -3377,7 +3377,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2879"/>
-        <source>How much would it could to produce a PCB from this sketch with Fritzing Fab</source>
+        <source>How much would it cost to produce a PCB from this sketch with Fritzing Fab</source>
         <translation>Ermittelt einen Kostenvoranschlag für die Produktion mit &quot;Fritzing Fab&quot;</translation>
     </message>
     <message>

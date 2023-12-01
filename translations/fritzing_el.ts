@@ -4410,7 +4410,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2879"/>
-        <source>How much would it could to produce a PCB from this sketch with Fritzing Fab</source>
+        <source>How much would it cost to produce a PCB from this sketch with Fritzing Fab</source>
         <translation>Πόσο θα στοίχιζε η παραγωγή ενός τυπωμένου (PCB) από αυτό το σχέδιο με το Fritzing Fab</translation>
     </message>
     <message>

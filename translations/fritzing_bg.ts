@@ -4260,7 +4260,7 @@ Go ahead and revert?</source>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2879"/>
-        <source>How much would it could to produce a PCB from this sketch with Fritzing Fab</source>
+        <source>How much would it cost to produce a PCB from this sketch with Fritzing Fab</source>
         <translation>Проверка колко ще струва да се изработи печатна платка по тази схема във фабриката на Fritzing</translation>
     </message>
     <message>

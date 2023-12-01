@@ -2899,7 +2899,7 @@ void MainWindow::createTraceMenuActions() {
 	connect(m_autorouterSettingsAct, SIGNAL(triggered()), this, SLOT(autorouterSettings()));
 
 	m_fabQuoteAct = new QAction(tr("Fritzing Fab Quote..."), this);
-	m_fabQuoteAct->setStatusTip(tr("How much would it could to produce a PCB from this sketch with Fritzing Fab"));
+	m_fabQuoteAct->setStatusTip(tr("How much would it cost to produce a PCB from this sketch with Fritzing Fab"));
 	connect(m_fabQuoteAct, SIGNAL(triggered()), this, SLOT(fabQuote()));
 
 }

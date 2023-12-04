@@ -376,6 +376,10 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 						new ResizeBoardCommand(this, newID, *w, *h, *w, *h, parentCommand);
 					}
 				}
+				if (mp->itemType() == ModelPart::Logo) {
+							       auto * cmd = new SetPropCommand(this, newID, "logo", "logo", mp->localProp("logo").toString(), true, parentCommand);
+							       cmd->setText(tr("Change %1 from %2 to %3").arg("logo").arg("logo").arg(mp->localProp("logo").toString()));
+				}
 			}
 			else if (mp->itemType() == ModelPart::Note) {
 				new ChangeNoteTextCommand(this, newID, mp->instanceText(), mp->instanceText(), viewGeometry.rect().size(), viewGeometry.rect().size(), parentCommand);

@@ -2789,6 +2789,11 @@ void PCBSketchWidget::fabQuote() {
 		                         tr("Your sketch does not have a board yet. You cannot fabricate this sketch without a PCB part."));
 		return;
 	}
+	if (qFuzzyIsNull(width) && qFuzzyIsNull(height)) {
+		QMessageBox::information(this, tr("Fritzing Fab Quote"),
+					 tr("You need to select one board if you have multiple PCB boards."));
+		return;
+	}
 	QEventLoop waitLoop;
 	QObject::connect(this, &PCBSketchWidget::fabQuoteFinishedSignal, &waitLoop, &QEventLoop::quit);
 	QTimer::singleShot(1000, &waitLoop, &QEventLoop::quit);
@@ -2846,6 +2851,7 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	calcBoardDimensions(boardCount, width, height);
 	QuoteDialog::setDimensions(width, height, boardCount);
 	double area = width * height;
+	if (boardCount == 0 || (qFuzzyIsNull(width) && qFuzzyIsNull(height))) return;
 
 	QString paramString = Version::makeRequestParamsString(false);
 	auto * manager = new QNetworkAccessManager(this);
@@ -2880,8 +2886,6 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 }
 
 void PCBSketchWidget::calcBoardDimensions(int & boardCount, double & width, double & height) {
-
-
 	ItemBase * board = findSelectedBoard(boardCount);
 	if (boardCount == 0 || board == nullptr) {
 		width = height = 0.0;

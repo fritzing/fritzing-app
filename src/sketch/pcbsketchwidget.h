@@ -122,7 +122,7 @@ public:
 	ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
 	void setPartLabelFont(QString fontFamily);
 	QString getPartLabelFont();
-	void requestQuote(bool byUser);
+	void requestQuote();
 
 public Q_SLOTS:
 	void resizeBoard(double w, double h, bool doEmit);

@@ -3227,7 +3227,7 @@ void MainWindow::orderFabHoverEnter() {
 	if ((m_rolloverQuoteDialog != nullptr) && m_rolloverQuoteDialog->isVisible()) return;
 	QuoteDialog::setQuoteSucceeded(false);
 	QObject::connect(m_pcbGraphicsView, &PCBSketchWidget::fabQuoteFinishedSignal, this, &MainWindow::fireQuote);
-	m_pcbGraphicsView->requestQuote(true);
+	m_pcbGraphicsView->requestQuote();
 }
 
 void MainWindow::fireQuote() {

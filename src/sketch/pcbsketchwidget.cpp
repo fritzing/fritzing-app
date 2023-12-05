@@ -2797,7 +2797,7 @@ void PCBSketchWidget::fabQuote() {
 	QEventLoop waitLoop;
 	QObject::connect(this, &PCBSketchWidget::fabQuoteFinishedSignal, &waitLoop, &QEventLoop::quit);
 	QTimer::singleShot(1000, &waitLoop, &QEventLoop::quit);
-	requestQuote(true);
+	requestQuote();
 	waitLoop.exec();
 
 	if (!QuoteDialog::quoteSucceeded()) {
@@ -2845,7 +2845,7 @@ void PCBSketchWidget::gotFabQuote(QNetworkReply * networkReply) {
 	networkReply->deleteLater();
 }
 
-void PCBSketchWidget::requestQuote(bool byUser) {
+void PCBSketchWidget::requestQuote() {
 	int boardCount;
 	double width, height;
 	calcBoardDimensions(boardCount, width, height);
@@ -2870,6 +2870,7 @@ void PCBSketchWidget::requestQuote(bool byUser) {
 	QString countArgs = QuoteDialog::countArgs();
 	manager->setProperty("count", countArgs);
 	QString filename = QUrl::toPercentEncoding(filenameIf());
+	bool byUser = true;
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotFabQuote(QNetworkReply *)));
 	QString string = QString("%8://fab.fritzing.org/fritzing-fab/quote%1&area=%2&width=%3&height=%4&count=%5&filename=%6&byuser=%7")
 			 .arg(paramString)

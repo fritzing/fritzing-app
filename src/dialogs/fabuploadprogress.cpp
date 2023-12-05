@@ -44,7 +44,10 @@ FabUploadProgress::FabUploadProgress(QWidget *parent) : QWidget(parent)
 
 FabUploadProgress::~FabUploadProgress()
 {
-	delete mFabUploadProgressProbe;
+	Q_EMIT destructorCalled();
+	if (mFabUploadProgressProbe) {
+		mFabUploadProgressProbe->deleteLater();
+	}
 }
 
 void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename,

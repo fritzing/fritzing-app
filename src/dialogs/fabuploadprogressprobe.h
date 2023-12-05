@@ -24,13 +24,20 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "testing/FProbe.h"
 #include "dialogs/fabuploadprogress.h"
 
-class FabUploadProgressProbe : public FProbe {
+#include <QObject>
+
+class FabUploadProgressProbe : public QObject, public FProbe
+{
+	Q_OBJECT
 public:
 	FabUploadProgressProbe(FabUploadProgress *fabUploadProgress);
+	~FabUploadProgressProbe() {}
 	QVariant read() override;
 	void write(QVariant) override {}
+
 private:
 	FabUploadProgress *m_fabUploadProgress;
+	QString m_reason;
 };
 
 #endif // FABUPLOADPROGRESSPROBE_H

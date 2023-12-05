@@ -50,6 +50,7 @@ Q_SIGNALS:
 	void processProgressChanged(int);
 	void processingDone();
 	void closeUploadError();
+	void destructorCalled();
 
 private:
 	friend class FabUploadProgressProbe;

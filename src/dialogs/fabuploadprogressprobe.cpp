@@ -28,23 +28,30 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 FabUploadProgressProbe::FabUploadProgressProbe(FabUploadProgress *fabUploadProgress) : FProbe("FabUploadProgressProbe"), m_fabUploadProgress(fabUploadProgress) {}
 
 QVariant FabUploadProgressProbe::read() {
-	QEventLoop loop;
-	bool timeout = false;
-	bool error = false;
-	QObject::connect(m_fabUploadProgress, &FabUploadProgress::processingDone,
-					&loop, &QEventLoop::quit);
-	QObject::connect(m_fabUploadProgress, &FabUploadProgress::closeUploadError,
-					&loop, [&loop, &error](){
-		error = true;
-		loop.quit();
-	});
+	QTimer timer;
+	timer.setSingleShot(true);
+	QList<QMetaObject::Connection> connections;
+	QSharedPointer<QEventLoop> loop = QSharedPointer<QEventLoop>::create();
+
+	auto handleEvent = [this, loop](const QString& reason) {
+	    if (!loop.isNull()) {
+		m_reason = reason;
+		loop->quit();
+	    }
+	};
+	connections << QObject::connect(m_fabUploadProgress, &FabUploadProgress::processingDone,
+			 this, [handleEvent]{ handleEvent("success"); });
+	connections << QObject::connect(m_fabUploadProgress, &FabUploadProgress::closeUploadError,
+			 this, [handleEvent]{ handleEvent("error"); });
+	connections << QObject::connect(m_fabUploadProgress, &FabUploadProgress::destructorCalled,
+			 this, [handleEvent]{ handleEvent("cancel"); });
+	QObject::connect(&timer, &QTimer::timeout, this, [handleEvent]{ handleEvent("timeout"); });
 
 	constexpr int timeoutSeconds = 300;
-	QTimer::singleShot(timeoutSeconds * 1000, &loop, [&loop, &timeout](){
-		timeout = true;
-		loop.quit();
-	});
-	loop.exec();
-	if (error) return QVariant("error");
-	return QVariant(timeout ? "timeout" : "success");
+	timer.start(timeoutSeconds * 1000);
+	loop->exec();
+	for (auto &connection : qAsConst(connections)) {
+		QObject::disconnect(connection);
+	}
+	return QVariant(m_reason);
 }

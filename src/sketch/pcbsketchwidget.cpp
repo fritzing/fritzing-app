@@ -2908,7 +2908,6 @@ ItemBase * PCBSketchWidget::resizeBoard(long itemID, double mmW, double mmH) {
 QDialog * PCBSketchWidget::quoteDialog(QWidget * parent) {
 	if (m_rolloverQuoteDialog == nullptr) {
 		m_rolloverQuoteDialog = new QuoteDialog(false, parent);
-		requestQuote(false);
 	}
 	m_rolloverQuoteDialog->setText();
 	return m_rolloverQuoteDialog;

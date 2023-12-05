@@ -245,6 +245,12 @@
 		<sketch id="ComposedArduinoR4WifiShield" >
 		    <language country="en" name="Composed Arduino R4 WIFI Shield" src="core/Shields/ComposedArduinoR4WifiShield.fzz"/>
 		</sketch>
+		<sketch id="555ICastable" >
+			<language country="en" name="555 IC astable" src="core/Simulator/EN/trans/555_IC_astable.fzz"/>
+		</sketch>
+		<sketch id="flipFlopLedFlashingCircuit" >
+			<language country="en" name="FlipFlop Led Flashing" src="core/Simulator/EN/trans/flipflop_led_flashing_circuit.fzz"/>
+		</sketch>
 </sketches>
 	<categories>
 		<category>
@@ -504,6 +510,12 @@
 				<sketch id="SimpleLED"/>
 				<sketch id="SimplePotentiometer"/>
 				<sketch id="IrSensorTransistorMotor"/>
+			</category>
+			<category>
+				<language country="en" name="Transient Simulation"/>
+				<language country="es" name="Simulacion Transitoria"/>
+				<sketch id="flipFlopLedFlashingCircuit"/>
+				<sketch id="555ICastable"/>
 			</category>
 		</category>
 		<category>

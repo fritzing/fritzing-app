@@ -123,6 +123,7 @@ public:
 	void setPartLabelFont(QString fontFamily);
 	QString getPartLabelFont();
 	void requestQuote();
+	void calcBoardDimensions(int & boardCount, double & width, double & height);
 
 public Q_SLOTS:
 	void resizeBoard(double w, double h, bool doEmit);
@@ -182,7 +183,6 @@ protected:
 	bool canConnect(Wire * from, ItemBase * to);
 	void collectThroughHole(QList<ConnectorItem *> & th, QList<ConnectorItem *> & pads, const LayerList &);
 	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
-	void calcBoardDimensions(int & boardCount, double & width, double & height);
 	PaletteItem* addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);
 	double getKeepoutMils();
 	bool updateOK(ConnectorItem *, ConnectorItem *);

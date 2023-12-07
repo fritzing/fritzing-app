@@ -1471,13 +1471,11 @@ void Simulator::updateOscilloscope(ItemBase * part) {
     //Add time scale axis in bb
     bbSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' text-anchor='end' font-size='60' fill='white' xml:space='preserve'>time/div: %3s </text>")
                .arg(bbScreenOffsetX + screenWidth / 2)
-                .arg(bbScreenOffsetY * 0.85)
-               .arg(TextUtils::convertToPowerPrefix(timeDiv))
-               .arg(TextUtils::convertToPowerPrefix(hPos));
+               .arg(bbScreenOffsetY * 0.85)
+               .arg(TextUtils::convertToPowerPrefix(timeDiv));
     bbSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' text-anchor='start' font-size='60' fill='white' xml:space='preserve'> pos: %4s</text>")
                  .arg(bbScreenOffsetX + screenWidth/2)
                  .arg(bbScreenOffsetY * 0.85)
-                 .arg(TextUtils::convertToPowerPrefix(timeDiv))
                  .arg(TextUtils::convertToPowerPrefix(hPos));
 
     //Add time scale axis in sch

@@ -1431,7 +1431,7 @@ void Simulator::updateOscilloscope(ItemBase * part) {
         QString textAlignment = channel>=(nChannels/2)? "start": "end";
 
         //Add name of the scale axis
-        QString netName = QString("Channel %1 (V)").arg(channel);
+        QString netName = QString("Channel %1 (V)").arg(channel + 1);
         QList<ConnectorItem *> connectorItems;
         connectorItems.append(probesArray[channel]);
         ConnectorItem::collectEqualPotential(connectorItems, false, ViewGeometry::RatsnestFlag);

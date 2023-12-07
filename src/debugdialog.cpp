@@ -134,6 +134,10 @@ void DebugDialog::debug(QString prefix, const QRect &rect, DebugLevel debug, QOb
 	DebugDialog::debug(msg,debug,ancestor);
 }
 
+void DebugDialog::debug_ts(QString message, DebugLevel debugLevel, QObject * ancestor) {
+	DebugDialog::debug(QString("[%1] %2").arg(QTime::currentTime().toString("HH:mm:ss.zzz"), message), debugLevel, ancestor);
+}
+
 void DebugDialog::debug(QString message, DebugLevel debugLevel, QObject * ancestor) {
 
 	if (!m_enabled) return;

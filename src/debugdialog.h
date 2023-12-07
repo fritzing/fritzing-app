@@ -51,6 +51,7 @@ public:
 	static void debug(QString, const QRectF &rect, DebugLevel = Debug, QObject * ancestor = 0);
 	static void debug(QString, const QPoint &point, DebugLevel = Debug, QObject * ancestor = 0);
 	static void debug(QString, const QRect &rect, DebugLevel = Debug, QObject * ancestor = 0);
+	static void debug_ts(QString, const DebugLevel = Debug, QObject * ancestor = 0);
 	static void debug(QString, DebugLevel = Debug, QObject * ancestor = 0);
 	static void hideDebug();
 	static void showDebug();

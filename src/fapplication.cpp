@@ -123,7 +123,6 @@ FServer::FServer(QObject *parent)
 
 void FServer::incomingConnection(qintptr socketDescriptor)
 {
-	DebugDialog::debug("incomingConnection called");
 	Q_EMIT newConnection(socketDescriptor);
 }
 
@@ -140,7 +139,7 @@ void FServerThread::run()
 	auto * socket = new QTcpSocket();
 	if (!socket->setSocketDescriptor(m_socketDescriptor)) {
 		Q_EMIT error(socket->error());
-		DebugDialog::debug(QString("Socket error %1 %2").arg(socket->error()).arg(socket->errorString()));
+		DebugDialog::debug_ts(QString("Socket error %1 %2").arg(socket->error()).arg(socket->errorString()));
 		socket->deleteLater();
 		return;
 	}
@@ -151,7 +150,7 @@ void FServerThread::run()
 		header += socket->readLine();
 	}
 
-	DebugDialog::debug("header " + header);
+	DebugDialog::debug_ts(header);
 
 	QStringList tokens = header.split(QRegularExpression("[ \r\n][ \r\n]*"), Qt::SplitBehaviorFlags::SkipEmptyParts);
 	if (tokens.count() <= 0) {
@@ -236,7 +235,7 @@ void FServerThread::run()
 		return;
 	}
 
-	DebugDialog::debug(QString("emitting do command %1 %2").arg(command).arg(subFolder));
+	DebugDialog::debug(QString("emitting command %1 %2").arg(command).arg(subFolder));
 	QString result;
 	int status;
 	Q_EMIT doCommand(command, subFolder, result, status);
@@ -287,6 +286,11 @@ void FServerThread::run()
 
 void FServerThread::writeResponse(QTcpSocket * socket, int code, const QString & codeString, const QString & mimeType, const QString & message)
 {
+	if (code == 200) {
+		DebugDialog::debug_ts(QString("%1 %2").arg(code).arg(codeString));
+	} else {
+		DebugDialog::debug_ts(QString("%1 %2 - %3").arg(code).arg(codeString, message));
+	}
 	QString type = mimeType;
 	if (type.isEmpty()) type = "text/plain";
 	QString response = QString("HTTP/1.0 %1 %2\r\n").arg(code).arg(codeString);
@@ -1059,7 +1063,7 @@ void FApplication::runPortService()
 
 	m_fServer = new FServer(this);
 	connect(m_fServer, &FServer::newConnection, this, &FApplication::newConnection);
-	DebugDialog::debug("Server active");
+	DebugDialog::debug_ts("Server active");
 	m_fServer->listen(QHostAddress::Any, m_portNumber);
 }
 

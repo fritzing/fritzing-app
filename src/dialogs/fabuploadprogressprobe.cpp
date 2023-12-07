@@ -25,7 +25,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QEventLoop>
 #include <QTimer>
 
-FabUploadProgressProbe::FabUploadProgressProbe(FabUploadProgress *fabUploadProgress) : FProbe("FabUploadProgressProbe"), m_fabUploadProgress(fabUploadProgress) {}
+FabUploadProgressProbe::FabUploadProgressProbe(FabUploadProgress *fabUploadProgress)
+	: QObject(fabUploadProgress)
+	, FProbe("FabUploadProgressProbe")
+	, m_fabUploadProgress(fabUploadProgress) {}
 
 QVariant FabUploadProgressProbe::read() {
 	QTimer timer;
@@ -34,16 +37,16 @@ QVariant FabUploadProgressProbe::read() {
 	QSharedPointer<QEventLoop> loop = QSharedPointer<QEventLoop>::create();
 
 	auto handleEvent = [this, loop](const QString& reason) {
-	    if (!loop.isNull()) {
-		m_reason = reason;
-		loop->quit();
-	    }
+		if (!loop.isNull()) {
+			m_reason = reason;
+			loop->quit();
+		}
 	};
 	connections << QObject::connect(m_fabUploadProgress, &FabUploadProgress::processingDone,
 			 this, [handleEvent]{ handleEvent("success"); });
 	connections << QObject::connect(m_fabUploadProgress, &FabUploadProgress::closeUploadError,
 			 this, [handleEvent]{ handleEvent("error"); });
-	connections << QObject::connect(m_fabUploadProgress, &FabUploadProgress::destructorCalled,
+	connections << QObject::connect(m_fabUploadProgress, &QObject::destroyed,
 			 this, [handleEvent]{ handleEvent("cancel"); });
 	QObject::connect(&timer, &QTimer::timeout, this, [handleEvent]{ handleEvent("timeout"); });
 

@@ -31,7 +31,7 @@ class FabUploadProgress : public QWidget
 	Q_OBJECT
 public:
 	explicit FabUploadProgress(QWidget *parent = nullptr);
-	~FabUploadProgress();
+	~FabUploadProgress(){};
 	void init(QNetworkAccessManager *manager, QString filename, double width, double height, int boardCount);
 
 public Q_SLOTS:
@@ -50,7 +50,6 @@ Q_SIGNALS:
 	void processProgressChanged(int);
 	void processingDone();
 	void closeUploadError();
-	void destructorCalled();
 
 private:
 	friend class FabUploadProgressProbe;

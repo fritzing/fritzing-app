@@ -52,9 +52,9 @@ void FTesting::addProbe(FProbe * probe)
 	m_probeMap[probe->name()] = probe;
 }
 
-void FTesting::removeProbe(FProbe * probe)
+void FTesting::removeProbe(std::string name)
 {
-	auto it = m_probeMap.find(probe->name());
+	auto it = m_probeMap.find(name);
 	if (it != m_probeMap.end()) {
 		m_probeMap.erase(it);
 	}

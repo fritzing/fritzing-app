@@ -105,7 +105,7 @@ public:
 
 	void addProbe(FProbe * probe);
 
-	void removeProbe(FProbe * probe);
+	void removeProbe(std::string name);
 
 	stdx::optional<QVariant> readProbe(std::string name);
 

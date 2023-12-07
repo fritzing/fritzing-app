@@ -42,14 +42,6 @@ FabUploadProgress::FabUploadProgress(QWidget *parent) : QWidget(parent)
 	mFabUploadProgressProbe = new FabUploadProgressProbe(this);
 }
 
-FabUploadProgress::~FabUploadProgress()
-{
-	Q_EMIT destructorCalled();
-	if (mFabUploadProgressProbe) {
-		mFabUploadProgressProbe->deleteLater();
-	}
-}
-
 void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename,
 			     double width, double height, int boardCount)
 {

@@ -79,7 +79,7 @@ QString GetSpice::getSpice(ItemBase * itemBase, const QList< QList<class Connect
 				QList<QString> knownTokens;
 				knownTokens << "inductance" << "resistance" << "current" << "tolerance" << "power" << "capacitance" << "voltage";
 				if(replacement.isEmpty()) {
-                    if (prop.contains(token) || prop.contains(token.toLower()) || knownTokens.contains(token)) {
+                    if (prop.contains(token) || knownTokens.contains(token.toLower())) {
 						// Property exists but is empty. Or it is one of a few known tokens. Just assume zero.
 						replacement = "0";
 					} else {

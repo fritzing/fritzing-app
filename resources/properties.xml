@@ -509,4 +509,22 @@
 <property name="horizontal position" symbol="s" minValue="0" maxValue="1000" defaultValue="0" numeric="yes" editable="yes">
   <suffix suffix="OscilloscopeModuleID"/>
 </property>
+
+<property name="input inductance" symbol="H" minValue="0" maxValue="1000000" defaultValue="0.001" numeric="yes" editable="yes">
+  <suffix suffix="TRANSFORMER-PTH"/>
+  <suffix suffix="TRANSFORMER-SMD"/>
+</property>
+<property name="output inductance" symbol="H" minValue="0" maxValue="1000000" defaultValue="0.001" numeric="yes" editable="yes">
+  <suffix suffix="TRANSFORMER-PTH"/>
+  <suffix suffix="TRANSFORMER-SMD"/>
+</property>
+<property name="input resistance" symbol="&#937;" minValue="0" maxValue="1000000000000" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="TRANSFORMER-PTH"/>
+  <suffix suffix="TRANSFORMER-SMD"/>
+</property>
+<property name="output resistance" symbol="&#937;" minValue="0" maxValue="1000000000000" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="TRANSFORMER-PTH"/>
+  <suffix suffix="TRANSFORMER-SMD"/>
+</property>
+
 </properties>

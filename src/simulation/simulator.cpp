@@ -605,14 +605,16 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 
 std::vector<double> Simulator::voltageVector(ConnectorItem * c0) {
 	int net0 = m_connector2netHash.value(c0);
-	std::cout << "calculateVoltageVector: ";
 	QString net0str = QString("v(%1)").arg(net0);
 
-	auto timeInfo = m_simulator->getVecInfo(QString("time").toStdString());
 	if (net0 != 0) {
-		std::cout << "calculateVoltageVector: ";
+        return m_simulator->getVecInfo(net0str.toStdString());
 	}
-	return m_simulator->getVecInfo(net0str.toStdString());
+
+    //This is the ground (node 0), return a vector with 0s, same size as the time vector
+    auto timeInfo = m_simulator->getVecInfo(QString("time").toStdString());
+    std::vector<double> voltageVector(timeInfo.size(), 0.0);
+    return voltageVector;
 }
 
 QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<double> comVector, QString nameId, double simStartTime, double simTimeStep, double timePos, double timeScale, double verticalScale, double verOffset, double screenHeight, double screenWidth, QString color, QString strokeWidth ) {
@@ -1385,6 +1387,8 @@ void Simulator::updateOscilloscope(ItemBase * part) {
             for(auto& val : vCom) {
                     val = dist(gen);
             }
+        } else {
+            vCom = voltageVector(comProbe);
         }
 
         //Draw the signal

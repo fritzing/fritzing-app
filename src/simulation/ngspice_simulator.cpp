@@ -167,7 +167,6 @@ std::vector<double> NgSpiceSimulator::getVecInfo(const std::string& vecName) {
 
 	std::vector<double> realValues;
 	if (vecInfo->v_realdata) {
-		std::cout << "getVecInfo: data" << vecInfo->v_length << std::endl;
 		for(int i=0; i<vecInfo->v_length; i++)
 			realValues.push_back(vecInfo->v_realdata[i]);
 		return realValues;

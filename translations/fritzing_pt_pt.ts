@@ -2633,7 +2633,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1013"/>
         <source>Bring to Front</source>
-        <translation>Trazer para a frente</translation>
+        <translation>Trazer para a Frente</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1014"/>
@@ -2648,7 +2648,7 @@ Também é possível escolher um conector como uma semente de aterramento clican
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1020"/>
         <source>Bring Forward</source>
-        <translation>Trazer para a frente</translation>
+        <translation>Avançar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1021"/>
@@ -7493,7 +7493,7 @@ O Fritzing ainda trabalha, mas não vai poder modificar as propriedades dos comp
         <location filename="../src/sketch/sketchwidget.cpp" line="4272"/>
         <location filename="../src/sketch/sketchwidget.cpp" line="4289"/>
         <source>Bring forward</source>
-        <translation>Trazer para a frente</translation>
+        <translation>Avançar para frente</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="4281"/>
@@ -7503,7 +7503,7 @@ O Fritzing ainda trabalha, mas não vai poder modificar as propriedades dos comp
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="4298"/>
         <source>Bring to front</source>
-        <translation>Trazer para a frente</translation>
+        <translation>Trazer para primeiro plano</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="5592"/>

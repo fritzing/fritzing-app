@@ -67,6 +67,11 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 	m_simTimer->setSingleShot(true);
 	connect(m_simTimer, &QTimer::timeout, this, &Simulator::simulate);
 
+    // Configure the timer to show the simulation results
+    m_showResultsTimer = new QTimer(this);
+    m_showResultsTimer->setInterval(50);
+    connect(m_showResultsTimer, &QTimer::timeout, this, &Simulator::showSimulationResults);
+
 	QSettings settings;
 	int enabled = settings.value("simulatorEnabled", 0).toInt();
 	enable(true);
@@ -141,7 +146,8 @@ void Simulator::startSimulation()
  * simulated, the smoke images, and the messages on the multimeter.
  */
 void Simulator::stopSimulation() {
-	m_simulating = false;
+    m_showResultsTimer->stop();
+    m_simulating = false;
 	removeSimItems();
 	emit simulationStartedOrStopped(m_simulating);
 }
@@ -191,7 +197,7 @@ void Simulator::simulate() {
 	m_simulator->clearLog();
 
 	QList< QList<ConnectorItem *>* > netList;
-	QSet<ItemBase *> itemBases;
+    itemBases.clear();
 	QString spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, itemBases);
 
 	//Select the type of analysis based on if there is an oscilloscope in the simulation
@@ -338,70 +344,92 @@ void Simulator::simulate() {
 
 	m_simulator->command("bg_halt");
 
+    //Delete the pointers
+    foreach (QList<ConnectorItem *> * net, netList) {
+        delete net;
+    }
+    netList.clear();
+
+
 	//The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
-	//This loops is in charge of:
-	// * update the multimeters screen
-	// * add smoke to a part if something is out of its specifications
-	// * update the brightness of the LEDs
-	foreach (ItemBase * part, itemBases){
-		//Remove the effects, if any
-		part->setGraphicsEffect(nullptr);
-		m_sch2bbItemHash.value(part)->setGraphicsEffect(nullptr);
+    currSimStep = 1;
+    m_showResultsTimer->start();
+    removeSimItems();
+    updateParts(itemBases, 0);
 
-		std::cout << "-----------------------------------" <<std::endl;
-		std::cout << "Instance Title: " << part->instanceTitle().toStdString() << std::endl;
+}
 
-		QString family = part->family().toLower();
+void Simulator::showSimulationResults() {
+    if (currSimStep < Simulator::SimSteps) {
+        removeSimItems();
+        updateParts(itemBases, currSimStep);
+        currSimStep++;
+    } else {
+        m_showResultsTimer->stop();
+    }
 
-		if (family.contains("capacitor")) {
-			updateCapacitor(part);
-			continue;
-		}
-		if (family.contains("diode")) {
-			updateDiode(part);
-			continue;
-		}
-		if (family.contains("led")) {
-			updateLED(part);
-			continue;
-		}
-		if (family.contains("resistor")) {
-			updateResistor(part);
-			continue;
-		}
-		if (family.contains("multimeter")) {
-			updateMultimeter(part);
-			continue;
-		}
-		if (family.contains("dc motor")) {
-			updateDcMotor(part);
-			continue;
-		}
-		if (family.contains("line sensor") || family.contains("distance sensor")) {
-			updateIRSensor(part);
-			continue;
-		}
-		if (family.contains("battery") || family.contains("voltage source")) {
-			updateBattery(part);
-			continue;
-		}
-		if (family.contains("potentiometer") || family.contains("sparkfun trimpot")) {
-			updatePotentiometer(part);
-			continue;
-		}
-		if (family.contains("oscilloscope")) {
-			updateOscilloscope(part);
-			continue;
-		}
+}
 
+/**
+ * Update the parts with the vidual effects. E.g:
+ * * update the multimeters screen
+ * * add smoke to a part if something is out of its specifications
+ * * update the brightness of the LEDs
+ * @param[in] itemBases A set of parts to be updated
+ * @param[in] time The simulation time to be used for getting the voltages and currents
+ */
+void Simulator::updateParts(QSet<ItemBase *> itemBases, int timeStep) {
+    foreach (ItemBase * part, itemBases){
+        //Remove the effects, if any
+        part->setGraphicsEffect(nullptr);
+        m_sch2bbItemHash.value(part)->setGraphicsEffect(nullptr);
 
-	}
+        std::cout << "-----------------------------------" <<std::endl;
+        std::cout << "Instance Title: " << part->instanceTitle().toStdString() << std::endl;
 
-	//Delete the pointers
-	foreach (QList<ConnectorItem *> * net, netList) {
-		delete net;
-	}
-	netList.clear();
+        QString family = part->family().toLower();
+
+        if (family.contains("capacitor")) {
+            updateCapacitor(part);
+            continue;
+        }
+        if (family.contains("diode")) {
+            updateDiode(part);
+            continue;
+        }
+        if (family.contains("led")) {
+            updateLED(part);
+            continue;
+        }
+        if (family.contains("resistor")) {
+            updateResistor(part);
+            continue;
+        }
+        if (family.contains("multimeter")) {
+            updateMultimeter(part);
+            continue;
+        }
+        if (family.contains("dc motor")) {
+            updateDcMotor(part);
+            continue;
+        }
+        if (family.contains("line sensor") || family.contains("distance sensor")) {
+            updateIRSensor(part);
+            continue;
+        }
+        if (family.contains("battery") || family.contains("voltage source")) {
+            updateBattery(part);
+            continue;
+        }
+        if (family.contains("potentiometer") || family.contains("sparkfun trimpot")) {
+            updatePotentiometer(part);
+            continue;
+        }
+        if (family.contains("oscilloscope")) {
+            updateOscilloscope(part, timeStep);
+            continue;
+        }
+    }
 }
 
 /**
@@ -617,7 +645,7 @@ std::vector<double> Simulator::voltageVector(ConnectorItem * c0) {
     return voltageVector;
 }
 
-QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<double> comVector, QString nameId, double simStartTime, double simTimeStep, double timePos, double timeScale, double verticalScale, double verOffset, double screenHeight, double screenWidth, QString color, QString strokeWidth ) {
+QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<double> comVector, int currTimeStep, QString nameId, double simStartTime, double simTimeStep, double timePos, double timeScale, double verticalScale, double verOffset, double screenHeight, double screenWidth, QString color, QString strokeWidth ) {
     std::cout << "OSCILLOSCOPE: pos " << timePos << ", timeScale: " << timeScale << std::endl;
     std::cout << "OSCILLOSCOPE: VOLTAGE VALUES " << nameId.toStdString() << ": ";
 	QString svg;
@@ -639,6 +667,8 @@ QString Simulator::generateSvgPath(std::vector<double> proveVector, std::vector<
     std::cout << "OSCILLOSCOPE: nSampleInScreen " << nSampleInScreen << std::endl;
     int screenPoint = 0;
     for (int vPoint = 0; vPoint <  points; vPoint++) {
+        if (currTimeStep < vPoint)
+            break;
         double time = simStartTime + simTimeStep * vPoint;
         if (time < timePos)
             continue;
@@ -1310,7 +1340,7 @@ void Simulator::updateMultimeter(ItemBase * part) {
  * Calculates the parameter to measure and updates the display of the multimeter.
  * @param[in] part An oscilloscope that is going to be checked and updated.
  */
-void Simulator::updateOscilloscope(ItemBase * part) {
+void Simulator::updateOscilloscope(ItemBase * part, int currTimeStep) {
 	std::cout << "updateOscilloscope: " << std::endl;
 	ConnectorItem * comProbe = nullptr, * v1Probe = nullptr, * v2Probe = nullptr, * v3Probe = nullptr, * v4Probe = nullptr;
 	QList<ConnectorItem *> probes = part->cachedConnectorItems();
@@ -1393,7 +1423,7 @@ void Simulator::updateOscilloscope(ItemBase * part) {
 
         //Draw the signal
         QString pathId = QString("ch%1-path").arg(channel+1);
-        QString signalPath = generateSvgPath(v, vCom, pathId, m_simStartTime, m_simStepTime, hPos, timeDiv, divisionSize/voltsDiv[channel], chOffsets[channel],
+        QString signalPath = generateSvgPath(v, vCom, currTimeStep, pathId, m_simStartTime, m_simStepTime, hPos, timeDiv, divisionSize/voltsDiv[channel], chOffsets[channel],
                                              screenHeight, screenWidth, lineColor[channel], "20");
         bbSvg += signalPath.arg(bbScreenOffsetX).arg(bbScreenOffsetY);
         schSvg += signalPath.arg(schScreenOffsetX).arg(schScreenOffsetY);
@@ -1474,7 +1504,7 @@ void Simulator::updateOscilloscope(ItemBase * part) {
         }
 
 
-    }
+    } //End of for each channel
 
     //Add time scale axis in bb
     bbSvg += QString("<text x='%1' y='%2' font-family='Droid Sans' text-anchor='end' font-size='60' fill='white' xml:space='preserve'>time/div: %3s </text>")

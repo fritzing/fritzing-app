@@ -46,12 +46,15 @@ public slots:
 	void enable(bool);
 	void stopSimulation();
 	void startSimulation();
+    void showSimulationResults();
+
 
 signals:
 	void simulationStartedOrStopped(bool running);
 	void simulationEnabled(bool enabled);
 
-protected:	
+protected:
+    void updateParts(QSet<ItemBase *>, int);
 	void drawSmoke(ItemBase* part);
 	void updateMultimeterScreen(ItemBase *, QString);
 	void updateMultimeterScreen(ItemBase *, double);
@@ -67,7 +70,7 @@ protected:
 	double getVectorValueOrDefault(const std::string & vecName, double defaultValue);
 	double calculateVoltage(ConnectorItem *, ConnectorItem *);
 	std::vector<double> voltageVector(ConnectorItem *);
-    QString generateSvgPath(std::vector<double>, std::vector<double>, QString, double, double, double, double, double, double, double, double, QString, QString);
+    QString generateSvgPath(std::vector<double>, std::vector<double>, int, QString, double, double, double, double, double, double, double, double, QString, QString);
 	double getCurrent(ItemBase*, QString subpartName="");
 	double getTransistorCurrent(QString spicePartName, TransistorLeg leg);
 	double getPower(ItemBase*, QString subpartName="");
@@ -77,7 +80,7 @@ protected:
 	void updateDiode(ItemBase *);
 	void updateLED(ItemBase *);
 	void updateMultimeter(ItemBase *);
-	void updateOscilloscope(ItemBase *);
+    void updateOscilloscope(ItemBase *, int);
 	void updateResistor(ItemBase *);
 	void updatePotentiometer(ItemBase *);
 	void updateDcMotor(ItemBase *);
@@ -93,11 +96,13 @@ protected:
 
 	bool m_enabled = false;
 
+    QSet<ItemBase *> itemBases;
 	QHash<ItemBase *, ItemBase *> m_sch2bbItemHash;
 	QHash<ConnectorItem *, int> m_connector2netHash;
 
 	QList<QString>* m_instanceTitleSim;
-	QTimer *m_simTimer;
+    QTimer *m_simTimer, *m_showResultsTimer;
+    int currSimStep;
 	static constexpr int SimDelay = 200;
 	static constexpr double HarmfulNegativeVoltage = -0.5;
     static constexpr double SimSteps = 400;

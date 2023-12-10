@@ -390,43 +390,43 @@ void Simulator::updateParts(QSet<ItemBase *> itemBases, int timeStep) {
         QString family = part->family().toLower();
 
         if (family.contains("capacitor")) {
-            updateCapacitor(part);
+            updateCapacitor(timeStep, part);
             continue;
         }
         if (family.contains("diode")) {
-            updateDiode(part);
+            updateDiode(timeStep, part);
             continue;
         }
         if (family.contains("led")) {
-            updateLED(part);
+            updateLED(timeStep, part);
             continue;
         }
         if (family.contains("resistor")) {
-            updateResistor(part);
+            updateResistor(timeStep, part);
             continue;
         }
         if (family.contains("multimeter")) {
-            updateMultimeter(part);
+            updateMultimeter(timeStep, part);
             continue;
         }
         if (family.contains("dc motor")) {
-            updateDcMotor(part);
+            updateDcMotor(timeStep, part);
             continue;
         }
         if (family.contains("line sensor") || family.contains("distance sensor")) {
-            updateIRSensor(part);
+            updateIRSensor(timeStep, part);
             continue;
         }
         if (family.contains("battery") || family.contains("voltage source")) {
-            updateBattery(part);
+            updateBattery(timeStep, part);
             continue;
         }
         if (family.contains("potentiometer") || family.contains("sparkfun trimpot")) {
-            updatePotentiometer(part);
+            updatePotentiometer(timeStep, part);
             continue;
         }
         if (family.contains("oscilloscope")) {
-            updateOscilloscope(part, timeStep);
+            updateOscilloscope(timeStep, part);
             continue;
         }
     }
@@ -593,12 +593,14 @@ void Simulator::removeSimItems(QList<QGraphicsItem *> items) {
  * @param[in] defaultValue value to return on empty vector
  * @returns the first vector element or the given default value
  */
-double Simulator::getVectorValueOrDefault(const std::string & vecName, double defaultValue) {
+double Simulator::getVectorValueOrDefault(unsigned long timeStep, const std::string & vecName, double defaultValue) {
 	auto vecInfo = m_simulator->getVecInfo(vecName);
-	if (vecInfo.empty()) {
+    if (vecInfo.empty()) {
 		return defaultValue;
     } else {
-        return vecInfo[vecInfo.size()-1];
+        if (timeStep < 0 || timeStep >= vecInfo.size())
+            return defaultValue;
+        return vecInfo[timeStep];
 	}
 }
 
@@ -608,7 +610,7 @@ double Simulator::getVectorValueOrDefault(const std::string & vecName, double de
  * @param[in] c1 the second connector
  * @returns the voltage between the connector c0 and c1
  */
-double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
+double Simulator::calculateVoltage(unsigned long timeStep, ConnectorItem * c0, ConnectorItem * c1) {
 	int net0 = m_connector2netHash.value(c0);
 	int net1 = m_connector2netHash.value(c1);
 
@@ -621,12 +623,12 @@ double Simulator::calculateVoltage(ConnectorItem * c0, ConnectorItem * c1) {
 	if (net0 != 0) {
 		auto vecInfo = m_simulator->getVecInfo(net0str.toStdString());
 		if (vecInfo.empty()) return 0.0;
-		volt0 = vecInfo[0];
+        volt0 = vecInfo[timeStep];
 	}
 	if (net1 != 0) {
 		auto vecInfo = m_simulator->getVecInfo(net1str.toStdString());
 		if (vecInfo.empty()) return 0.0;
-		volt1 = vecInfo[0];
+        volt1 = vecInfo[timeStep];
 	}
 	return volt0-volt1;
 }
@@ -767,13 +769,13 @@ double Simulator::getMaxPropValue(ItemBase *part, QString property) {
  * @param[in] subpartName The name of the subpart. Leave it empty if there is only one spice line for the device. Otherwise, give the suffix of the subpart.
  * @returns the power that a part is consuming/producing.
  */
-double Simulator::getPower(ItemBase* part, QString subpartName) {
+double Simulator::getPower(unsigned long timeStep, ItemBase* part, QString subpartName) {
 	//TODO: Handle devices that do not return the power
 	QString instanceStr = part->instanceTitle().toLower();
 	instanceStr.append(subpartName.toLower());
 	instanceStr.prepend("@");
 	instanceStr.append("[p]");
-	return getVectorValueOrDefault(instanceStr.toStdString(), 0.0);
+    return getVectorValueOrDefault(timeStep, instanceStr.toStdString(), 0.0);
 }
 
 /**
@@ -787,7 +789,7 @@ double Simulator::getPower(ItemBase* part, QString subpartName) {
  * @param[in] subpartName The name of the subpart. Leave it empty if there is only one spice line for the device. Otherwise, give the suffix of the subpart.
  * @returns the current that a part is consuming/producing.
  */
-double Simulator::getCurrent(ItemBase* part, QString subpartName) {
+double Simulator::getCurrent(unsigned long timeStep, ItemBase* part, QString subpartName) {
 	QString instanceStr = part->instanceTitle().toLower();
 	instanceStr.append(subpartName.toLower());
 
@@ -820,7 +822,7 @@ double Simulator::getCurrent(ItemBase* part, QString subpartName) {
 		break;
 
 	}
-	return getVectorValueOrDefault(instanceStr.toStdString(), 0.0);
+    return getVectorValueOrDefault(timeStep, instanceStr.toStdString(), 0.0);
 }
 
 /**
@@ -828,7 +830,7 @@ double Simulator::getCurrent(ItemBase* part, QString subpartName) {
  * @param[in] spicePartName The name of the spice transistor.
  * @returns the current that the transistor is sinking/sourcing.
  */
-double Simulator::getTransistorCurrent(QString spicePartName, TransistorLeg leg) {
+double Simulator::getTransistorCurrent(unsigned long timeStep, QString spicePartName, TransistorLeg leg) {
 	if(spicePartName.at(0).toLower()!=QChar('q')) {
 		//TODO: Add tr()
 		throw QString("Error getting the current of a transistor. The device is not a transistor, its first letter is not a Q. Name: %1").arg(spicePartName);
@@ -848,7 +850,7 @@ double Simulator::getTransistorCurrent(QString spicePartName, TransistorLeg leg)
 		throw QString("Error getting the current of a transistor. The transistor leg or property is not recognized. Leg: %1").arg(leg);
 	}
 
-	return getVectorValueOrDefault(spicePartName.toStdString(), 0.0);
+    return getVectorValueOrDefault(timeStep, spicePartName.toStdString(), 0.0);
 }
 
 /**
@@ -1015,9 +1017,9 @@ void Simulator::removeItemsToBeSimulated(QList<QGraphicsItem*> & parts) {
  * Updates and checks a diode. Checks that the power is less than the maximum power.
  * @param[in] diode A part that is going to be checked and updated.
  */
-void Simulator::updateDiode(ItemBase * diode) {
+void Simulator::updateDiode(unsigned long timeStep, ItemBase * diode) {
 	double maxPower = getMaxPropValue(diode, "power");
-	double power = getPower(diode);
+    double power = getPower(timeStep, diode);
 	if (power > maxPower) {
 		drawSmoke(diode);
 	}
@@ -1028,7 +1030,7 @@ void Simulator::updateDiode(ItemBase * diode) {
  * and updates the brightness of the LED in the breadboard view.
  * @param[in] part An LED that is going to be checked and updated.
  */
-void Simulator::updateLED(ItemBase * part) {
+void Simulator::updateLED(unsigned long timeStep, ItemBase * part) {
 	LED* led = dynamic_cast<LED *>(part);
 	if (led) {
 		//Check if this an RGB led
@@ -1036,7 +1038,7 @@ void Simulator::updateLED(ItemBase * part) {
 
 		if (rgbString.isEmpty()) {
 			// Just one LED
-			double curr = getCurrent(part);
+            double curr = getCurrent(timeStep, part);
 			double maxCurr = getMaxPropValue(part, "current");
 
 			std::cout << "LED Current: " <<curr<<std::endl;
@@ -1050,9 +1052,9 @@ void Simulator::updateLED(ItemBase * part) {
 			}
 		} else {
 				// The part is an RGB LED
-				double currR = getCurrent(part, "R");
-				double currG = getCurrent(part, "G");
-				double currB = getCurrent(part, "B");
+                double currR = getCurrent(timeStep, part, "R");
+                double currG = getCurrent(timeStep, part, "G");
+                double currB = getCurrent(timeStep, part, "B");
 				double curr = std::max({currR, currG, currB});
 				double maxCurr = getMaxPropValue(part, "current");
 
@@ -1077,7 +1079,7 @@ void Simulator::updateLED(ItemBase * part) {
  * and reverse voltage in electrolytic and tantalum capacitors (unidirectional capacitors).
  * @param[in] part A capacitor that is going to be checked and updated.
  */
-void Simulator::updateCapacitor(ItemBase * part) {
+void Simulator::updateCapacitor(unsigned long timeStep, ItemBase * part) {
 	QString family = part->getProperty("family").toLower();
 
 	ConnectorItem * negLeg, * posLeg;
@@ -1090,7 +1092,7 @@ void Simulator::updateCapacitor(ItemBase * part) {
 		return;
 
 	double maxV = getMaxPropValue(part, "voltage");
-	double v = calculateVoltage(posLeg, negLeg);
+    double v = calculateVoltage(timeStep, posLeg, negLeg);
 	std::cout << "MaxVoltage of the capacitor: " << maxV << std::endl;
 	std::cout << "Capacitor voltage is : " << QString("%1").arg(v).toStdString() << std::endl;
 
@@ -1111,9 +1113,9 @@ void Simulator::updateCapacitor(ItemBase * part) {
  * Updates and checks a resistor. Checks that the power is less than the maximum power.
  * @param[in] part A resistor that is going to be checked and updated.
  */
-void Simulator::updateResistor(ItemBase * part) {
+void Simulator::updateResistor(unsigned long timeStep, ItemBase * part) {
 	double maxPower = getMaxPropValue(part, "power");
-	double power = getPower(part);
+    double power = getPower(timeStep, part);
 	std::cout << "Power: " << power <<std::endl;
 	if (power > maxPower) {
 		drawSmoke(part);
@@ -1125,10 +1127,10 @@ void Simulator::updateResistor(ItemBase * part) {
  * for the two resistors "A" and "B".
  * @param[in] part A potentiometer that is going to be checked and updated.
  */
-void Simulator::updatePotentiometer(ItemBase * part) {
+void Simulator::updatePotentiometer(unsigned long timeStep, ItemBase * part) {
 	double maxPower = getMaxPropValue(part, "power");
-	double powerA = getPower(part, "A"); //power through resistor A
-	double powerB = getPower(part, "B"); //power through resistor B
+    double powerA = getPower(timeStep, part, "A"); //power through resistor A
+    double powerB = getPower(timeStep, part, "B"); //power through resistor B
 	double power = powerA + powerB;
 	if (power > maxPower) {
 		drawSmoke(part);
@@ -1139,12 +1141,12 @@ void Simulator::updatePotentiometer(ItemBase * part) {
  * Updates and checks a battery. Checks that there are no short circuits.
  * @param[in] part A battery that is going to be checked and updated.
  */
-void Simulator::updateBattery(ItemBase * part) {
+void Simulator::updateBattery(unsigned long timeStep, ItemBase * part) {
 	double voltage = getMaxPropValue(part, "voltage");
 	double resistance = getMaxPropValue(part, "internal resistance");
 	double safetyMargin = 0.1; //TODO: This should be adjusted
 	double maxCurrent = voltage/resistance * safetyMargin;
-	double current = getCurrent(part); //current that the battery delivers
+    double current = getCurrent(timeStep, part); //current that the battery delivers
 	std::cout << "Battery: voltage=" << voltage << ", resistance=" << resistance  <<std::endl;
 	std::cout << "Battery: MaxCurr=" << maxCurrent << ", Curr=" << current  <<std::endl;
 	if (abs(current) > maxCurrent) {
@@ -1162,7 +1164,7 @@ bool Simulator::isSimulating()
  * and that the current of the output is less than  the maximum.
  * @param[in] part A IR sensor that is going to be checked and updated.
  */
-void Simulator::updateIRSensor(ItemBase * part) {
+void Simulator::updateIRSensor(unsigned long timeStep, ItemBase * part) {
 	double maxV = getMaxPropValue(part, "voltage (max)");
 	double minV = getMaxPropValue(part, "voltage (min)");
 	double maxIout = getMaxPropValue(part, "max output current");
@@ -1184,16 +1186,16 @@ void Simulator::updateIRSensor(ItemBase * part) {
 	if(!gnd || !vcc || !out )
 		return;
 
-	double v = calculateVoltage(vcc, gnd); //voltage applied to the motor
+    double v = calculateVoltage(timeStep, vcc, gnd); //voltage applied to the motor
 	double i;
 	if (part->family().contains("line sensor")) {
 		//digital sensor (push-pull output)
 		QString spicename = part->instanceTitle().toLower();
 		spicename.prepend("q");
-		i = getTransistorCurrent(spicename, COLLECTOR); //voltage applied to the motor
+        i = getTransistorCurrent(timeStep, spicename, COLLECTOR); //voltage applied to the motor
 	} else {
 		//analogue sensor (modelled by a voltage source and a resistor)
-		i = getCurrent(part, "a"); //voltage applied to the motor
+        i = getCurrent(timeStep, part, "a"); //voltage applied to the motor
 	}
 	std::cout << "IR sensor Max Iout: " << maxIout << ", current Iout " << i << std::endl;
 	std::cout << "IR sensor Max V: " << maxV << ", current V " << v << std::endl;
@@ -1209,7 +1211,7 @@ void Simulator::updateIRSensor(ItemBase * part) {
  * TODO: The number of arrows are proportional to the voltage applied.
  * @param[in] part A DC motor that is going to be checked and updated.
  */
-void Simulator::updateDcMotor(ItemBase * part) {
+void Simulator::updateDcMotor(unsigned long timeStep, ItemBase * part) {
 	double maxV = getMaxPropValue(part, "voltage (max)");
 	double minV = getMaxPropValue(part, "voltage (min)");
 	std::cout << "Motor1: " << std::endl;
@@ -1222,7 +1224,7 @@ void Simulator::updateDcMotor(ItemBase * part) {
 	if(!terminal1 || !terminal2 )
 		return;
 
-	double v = calculateVoltage(terminal1, terminal2); //voltage applied to the motor
+    double v = calculateVoltage(timeStep, terminal1, terminal2); //voltage applied to the motor
 	if (abs(v) > maxV) {
 		drawSmoke(part);
 		return;
@@ -1279,7 +1281,7 @@ void Simulator::updateDcMotor(ItemBase * part) {
  * Calculates the parameter to measure and updates the display of the multimeter.
  * @param[in] part A multimeter that is going to be checked and updated.
  */
-void Simulator::updateMultimeter(ItemBase * part) {
+void Simulator::updateMultimeter(unsigned long timeStep, ItemBase * part) {
 	QString variant = part->getProperty("variant").toLower();
 	ConnectorItem * comProbe = nullptr, * vProbe = nullptr, * aProbe = nullptr;
 	QList<ConnectorItem *> probes = part->cachedConnectorItems();
@@ -1306,7 +1308,7 @@ void Simulator::updateMultimeter(ItemBase * part) {
 		}
 		if(comProbe->connectedToWires() && vProbe->connectedToWires()) {
 			std::cout << "Multimeter (v_dc) connected with two terminals. " << std::endl;
-			double v = calculateVoltage(vProbe, comProbe);
+            double v = calculateVoltage(timeStep, vProbe, comProbe);
 			updateMultimeterScreen(part, v);
 		}
 		return;
@@ -1317,7 +1319,7 @@ void Simulator::updateMultimeter(ItemBase * part) {
 			updateMultimeterScreen(part, "ERR");
 			return;
 		}
-		updateMultimeterScreen(part, getCurrent(part));
+        updateMultimeterScreen(part, getCurrent(timeStep, part));
 		return;
 	} else if (variant.compare("ohmmeter") == 0) {
 		std::cout << "Ohmmeter found. " << std::endl;
@@ -1326,8 +1328,8 @@ void Simulator::updateMultimeter(ItemBase * part) {
 			updateMultimeterScreen(part, "ERR");
 			return;
 		}
-		double v = calculateVoltage(vProbe, comProbe);
-		double a = getCurrent(part);
+        double v = calculateVoltage(timeStep, vProbe, comProbe);
+        double a = getCurrent(timeStep, part);
 		double r = abs(v/a);
 		std::cout << "Ohmmeter: Volt: " << v <<", Curr: " << a <<", Ohm: " << r << std::endl;
 		updateMultimeterScreen(part, r);
@@ -1340,7 +1342,7 @@ void Simulator::updateMultimeter(ItemBase * part) {
  * Calculates the parameter to measure and updates the display of the multimeter.
  * @param[in] part An oscilloscope that is going to be checked and updated.
  */
-void Simulator::updateOscilloscope(ItemBase * part, int currTimeStep) {
+void Simulator::updateOscilloscope(unsigned long timeStep, ItemBase * part) {
 	std::cout << "updateOscilloscope: " << std::endl;
 	ConnectorItem * comProbe = nullptr, * v1Probe = nullptr, * v2Probe = nullptr, * v3Probe = nullptr, * v4Probe = nullptr;
 	QList<ConnectorItem *> probes = part->cachedConnectorItems();
@@ -1423,7 +1425,7 @@ void Simulator::updateOscilloscope(ItemBase * part, int currTimeStep) {
 
         //Draw the signal
         QString pathId = QString("ch%1-path").arg(channel+1);
-        QString signalPath = generateSvgPath(v, vCom, currTimeStep, pathId, m_simStartTime, m_simStepTime, hPos, timeDiv, divisionSize/voltsDiv[channel], chOffsets[channel],
+        QString signalPath = generateSvgPath(v, vCom, timeStep, pathId, m_simStartTime, m_simStepTime, hPos, timeDiv, divisionSize/voltsDiv[channel], chOffsets[channel],
                                              screenHeight, screenWidth, lineColor[channel], "20");
         bbSvg += signalPath.arg(bbScreenOffsetX).arg(bbScreenOffsetY);
         schSvg += signalPath.arg(schScreenOffsetX).arg(schScreenOffsetY);

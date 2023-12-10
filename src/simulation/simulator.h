@@ -67,25 +67,25 @@ protected:
 	QChar getDeviceType (ItemBase*);
 	double getMaxPropValue(ItemBase*, QString);
 	QString getSymbol(ItemBase*, QString);
-	double getVectorValueOrDefault(const std::string & vecName, double defaultValue);
-	double calculateVoltage(ConnectorItem *, ConnectorItem *);
+    double getVectorValueOrDefault(unsigned long timeStep, const std::string & vecName,  double defaultValue);
+    double calculateVoltage(unsigned long, ConnectorItem *, ConnectorItem *);
 	std::vector<double> voltageVector(ConnectorItem *);
     QString generateSvgPath(std::vector<double>, std::vector<double>, int, QString, double, double, double, double, double, double, double, double, QString, QString);
-	double getCurrent(ItemBase*, QString subpartName="");
-	double getTransistorCurrent(QString spicePartName, TransistorLeg leg);
-	double getPower(ItemBase*, QString subpartName="");
+    double getCurrent(unsigned long, ItemBase*, QString subpartName="");
+    double getTransistorCurrent(unsigned long timeStep, QString spicePartName, TransistorLeg leg);
+    double getPower(unsigned long, ItemBase*, QString subpartName="");
 
 	//Functions to update the parts
-	void updateCapacitor(ItemBase *);
-	void updateDiode(ItemBase *);
-	void updateLED(ItemBase *);
-	void updateMultimeter(ItemBase *);
-    void updateOscilloscope(ItemBase *, int);
-	void updateResistor(ItemBase *);
-	void updatePotentiometer(ItemBase *);
-	void updateDcMotor(ItemBase *);
-	void updateIRSensor(ItemBase *);
-	void updateBattery(ItemBase *);
+    void updateCapacitor(unsigned long, ItemBase *);
+    void updateDiode(unsigned long, ItemBase *);
+    void updateLED(unsigned long, ItemBase *);
+    void updateMultimeter(unsigned long, ItemBase *);
+    void updateOscilloscope(unsigned long, ItemBase *);
+    void updateResistor(unsigned long, ItemBase *);
+    void updatePotentiometer(unsigned long, ItemBase *);
+    void updateDcMotor(unsigned long, ItemBase *);
+    void updateIRSensor(unsigned long, ItemBase *);
+    void updateBattery(unsigned long, ItemBase *);
 
 	bool m_simulating = false;
 	MainWindow *m_mainWindow;

@@ -37,7 +37,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QUrl>
 #include <QUuid>
 #include <QCryptographicHash>
-#include <QDebug>
 
 #include <array>
 #include <qmath.h>

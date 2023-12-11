@@ -15,13 +15,11 @@
 #include <QLabel>
 #include <QDesktopServices>
 #include <QSettings>
-
-#include <QDebug>
+#include <QMetaEnum>
 
 #include "utils/fmessagebox.h"
 #include "utils/uploadpair.h"
-
-//TODO: remove qDebug
+#include "debugdialog.h"
 
 // Happy flow
 // 0. Save file
@@ -96,17 +94,13 @@ void FabUploadProgress::onRequestUploadFinished()
 		int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 		if(statusCode == 301 || statusCode==302) {
 			QUrl redirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
-//			qDebug() << redirectUrl.toString();
 			QNetworkRequest request(redirectUrl);
 			QNetworkReply *r = mManager->get(request);
 			connect(r, SIGNAL(finished()), this, SLOT(onRequestUploadFinished()));
 			connect(r, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(onError(QNetworkReply::NetworkError)));
 		} else {
-//			qDebug() << statusCode << Qt::endl;
 			auto d = reply->readAll();
-//			qDebug() << d << Qt::endl << Qt::flush;
 			auto j = NetworkHelper::string_to_hash(d);
-//			qDebug() << j["upload_url"].toString() << Qt::endl << Qt::flush;
 			QUrl upload_url(QUrl::fromUserInput(j["upload_url"].toString()));
 			uploadMultipart(upload_url, mFilepath);
 		}
@@ -119,14 +113,11 @@ void FabUploadProgress::onRequestUploadFinished()
 
 void FabUploadProgress::uploadMultipart(const QUrl &url, const QString &file_path)
 {
-//	qDebug() << url.toString() << Qt::endl << Qt::flush;
-
 	auto *httpMultiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 	auto *file = new QFile(file_path);
 	QHttpPart imagePart;
 	imagePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"upload[file]\"; filename=\"" + QFileInfo(*file).fileName() + "\""));
 	imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("application/octet-stream"));
-//	qDebug() << httpMultiPart->boundary();
 
 	file->open(QIODevice::ReadOnly);
 	imagePart.setBodyDevice(file);
@@ -143,22 +134,27 @@ void FabUploadProgress::uploadMultipart(const QUrl &url, const QString &file_pat
 	connect(reply, SIGNAL(uploadProgress(qint64, qint64)), this, SLOT  (uploadProgress(qint64, qint64)));
 
 	auto r = reply->request();
-//	qDebug() << NetworkHelper::debugRequest(r);
 }
 
 void FabUploadProgress::uploadProgress(qint64 bytesSent, qint64 bytesTotal) {
-	qDebug() << "---------Uploaded--------------" << bytesSent<< "of" <<bytesTotal;
 	if (bytesSent > 0) {
 		Q_EMIT uploadProgressChanged(100 * bytesTotal / bytesSent);
 	}
 }
 
-//// Handle errors from NetworkManager
+// Handle errors from NetworkManager
 void FabUploadProgress::onError(QNetworkReply::NetworkError code)
 {
 	auto *reply = qobject_cast<QNetworkReply*>(sender());
-	qDebug() << "onError" << code << Qt::endl << Qt::flush;
-	FMessageBox::critical(this, tr("Fritzing"), tr("Could not connect to Fritzing fab.") + "Error: " + reply->errorString());
+	FMessageBox::critical(this,
+						  tr("Fritzing"),
+						  tr("Could not connect to Fritzing fab.")
+							  + "Error: " + reply->errorString());
+	QMetaEnum metaEnum = QMetaEnum::fromType<QNetworkReply::NetworkError>();
+	const char *errorString = metaEnum.valueToKey(code);
+
+	DebugDialog::debug(
+		QString("Error connecting to fab %1 %2").arg(reply->errorString()).arg(errorString));
 	Q_EMIT closeUploadError();
 }
 
@@ -166,7 +162,7 @@ void FabUploadProgress::onError(QNetworkReply::NetworkError code)
 void FabUploadProgress::httpError(QNetworkReply* reply)
 {
 	QString error(reply->errorString() + reply->attribute( QNetworkRequest::HttpStatusCodeAttribute).toString());
-	qDebug() << error;
+	DebugDialog::debug(reply->errorString());
 	FMessageBox::critical(this, tr("Fritzing"), error);
 	Q_EMIT closeUploadError();
 }
@@ -174,7 +170,7 @@ void FabUploadProgress::httpError(QNetworkReply* reply)
 // Handle errors reported by remote server
 void FabUploadProgress::apiError(QString message)
 {
-	qDebug() << message;
+	DebugDialog::debug(message);
 	FMessageBox::critical(this, tr("Fritzing"), tr("Error processing the project. The factory says: %1").arg(message));
 	Q_EMIT closeUploadError();
 }
@@ -182,13 +178,10 @@ void FabUploadProgress::apiError(QString message)
 
 void FabUploadProgress::uploadDone() {
 	auto *reply = qobject_cast<QNetworkReply*>(sender());
-	qDebug() << "----------Finished--------------" << Qt::endl;
+	DebugDialog::debug("Upload finished.");
 	if (reply->error() == QNetworkReply::NoError) {
 		auto d = reply->readAll();
-		qDebug() << d << Qt::endl << Qt::flush;
 		auto j = NetworkHelper::string_to_hash(d);
-		qDebug() << "UP:" << j["upload_url"].toString() << Qt::endl << Qt::flush;
-		qDebug() << "RE:" << j["redirect"].toString() << Qt::endl << Qt::flush;
 		QUrl callback_url(QUrl::fromUserInput(j["callback"].toString()));
 		mRedirect_url = j["redirect"].toString();
 		checkProcessingStatus(callback_url);
@@ -200,7 +193,6 @@ void FabUploadProgress::uploadDone() {
 
 void FabUploadProgress::checkProcessingStatus(QUrl url)
 {
-//	qDebug() << url.toString() << Qt::endl << Qt::flush;
 	QNetworkRequest request(url);
 	QNetworkReply *reply = mManager->get(request);
 	connect(reply, SIGNAL(finished()), this, SLOT(updateProcessingStatus()));
@@ -213,13 +205,8 @@ void FabUploadProgress::updateProcessingStatus()
 
 	if (reply->error() == QNetworkReply::NoError) {
 		auto d = reply->readAll();
-		qDebug() << d << Qt::endl << Qt::flush;
 		auto j = NetworkHelper::string_to_hash(d);
-		// Produce a funny number which is growing most of the time,
-		// and somewhat related to what is really happening. It should
-		// change on every signal, so if it stops, there is a problem.
 		int progress = j["progress"].toInt();
-//		qDebug() << progress;
 		QString message(j["message"].toString());
 		if (progress < 0) {
 			apiError(message);
@@ -234,7 +221,6 @@ void FabUploadProgress::updateProcessingStatus()
 			} else {
 				if (j.contains("fab_project")) {
 					mRedirect_url = j["fab_project"].toString();
-					qDebug() << "FU:" << mRedirect_url;
 				}
 				if (mRedirect_url.isEmpty()) {
 					QString error("Upload failed, no project url");

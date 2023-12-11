@@ -19,9 +19,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "partschecker.h"
-#include "version.h"
-#include "../debugdialog.h"
-#include "../utils/fmessagebox.h"
+#include "debugdialog.h"
+#include "utils/fmessagebox.h"
 
 #include <QJsonDocument>
 #include <QJsonParseError>
@@ -30,7 +29,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QNetworkReply>
 #include <QSettings>
 #include <QTimer>
-#include <QDebug>
 #include <QSettings>
 #include <time.h>
 

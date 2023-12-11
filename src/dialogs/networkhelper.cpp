@@ -3,10 +3,10 @@
 #include <QJsonDocument>
 #include <QTextStream>
 
-NetworkHelper::NetworkHelper()
-{
+#include "debugdialog.h"
 
-}
+NetworkHelper::NetworkHelper()
+{}
 
 const QString NetworkHelper::debugRequest(QNetworkRequest request)
 {
@@ -23,25 +23,15 @@ QJsonObject NetworkHelper::string_to_hash(QString str)
 	QJsonObject obj;
 	QJsonDocument doc = QJsonDocument::fromJson(str.toUtf8());
 	// check validity of the document
-	if(!doc.isNull())
-	{
-		if(doc.isObject())
-		{
+	if(!doc.isNull()) {
+		if(doc.isObject()) {
 			obj = doc.object();
+		} else {
+			DebugDialog::debug("Document is not an object");
 		}
-		else
-		{
-			qDebug() << "Document is not an object" << Qt::endl;
-		}
-	}
-	else
-	{
-		qDebug() << "Invalid JSON...\n" << str << Qt::endl;
+	} else {
+			DebugDialog::debug("Invalid JSON.");
 	}
 
 	return obj;
 }
-
-
-
-

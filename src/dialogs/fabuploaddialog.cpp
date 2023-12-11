@@ -129,7 +129,6 @@ void FabUploadDialog::onRequestFabInfoFinished()
 
 void FabUploadDialog::handleError(QNetworkReply *reply, const QString &message)
 {
-	qDebug() << "Error: " << message;
 	setFabMessage(message);
 	setUploadButtonEnabled(false);
 	if (reply)

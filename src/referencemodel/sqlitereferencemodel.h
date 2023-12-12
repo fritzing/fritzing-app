@@ -105,10 +105,10 @@ protected:
 	bool removePartFromDataBase(const QString & moduleId);
 
 protected:
-	volatile bool m_swappingEnabled;
-	volatile bool m_lastWasExactMatch;
-	volatile bool m_keepGoing;
-	bool m_init;
+	volatile bool m_swappingEnabled = false;
+	volatile bool m_lastWasExactMatch = true;
+	volatile bool m_keepGoing = false;
+	bool m_init = false;
 	QSqlDatabase m_database;
 	QMultiHash<QString /*name*/, QString /*value*/> m_recordedProperties;
 	QString m_sha;

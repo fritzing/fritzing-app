@@ -136,11 +136,11 @@ protected:
 
 protected:
 	QPointer<ItemBase> m_currentItem;
-	bool m_currentSwappingEnabled;					// previous item (possibly hovered over)
+	bool m_currentSwappingEnabled = false;					// previous item (possibly hovered over)
 
 	QTimer m_setContentTimer;
 	QPointer<ItemBase> m_lastItemBase;
-	bool m_lastSwappingEnabled;						// previous item (selected)
+	bool m_lastSwappingEnabled = false;						// previous item (selected)
 	class FLineEdit * m_titleEdit;
 	QLabel * m_partTitle;
 	QLabel * m_partUrl;
@@ -173,7 +173,7 @@ protected:
 	QVBoxLayout * m_layerLayout;
 	QList <PropThing *> m_propThings;
 	QPointer<ItemBase> m_pendingItemBase;
-	bool m_pendingSwappingEnabled;
+	bool m_pendingSwappingEnabled = false;
 	QWidget * m_layerWidget;
 	QDoubleSpinBox * m_xEdit;
 	QDoubleSpinBox * m_yEdit;
@@ -186,13 +186,13 @@ protected:
 	QString m_lastPartVersion;
 	ModelPart * m_lastSpiceModelPart;
 	ModelPart * m_lastTagsModelPart;
-	int m_lastConnectorItemCount;
+	int m_lastConnectorItemCount = 0;
 	ConnectorItem * m_lastConnectorItem;
 	ItemBase * m_lastIconItemBase;
 	ModelPart * m_lastPropsModelPart;
 	ItemBase * m_lastPropsItemBase;
-	bool m_lastPropsSwappingEnabled;
-	bool m_tinyMode;
+	bool m_lastPropsSwappingEnabled = false;
+	bool m_tinyMode = false;
 
 private:
 	ScaledIconFrame * m_iconFrame;

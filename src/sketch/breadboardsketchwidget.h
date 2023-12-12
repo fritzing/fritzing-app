@@ -60,7 +60,7 @@ protected:
 	bool canCreateWire(Wire * dragWire, ConnectorItem * from, ConnectorItem * to);
 	Wire * createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 
-	bool m_colorWiresByLength;
+	bool m_colorWiresByLength = false;
 
 	//Only applies to wires that are connected to one connector
 	static constexpr int WireMinLength = 6;

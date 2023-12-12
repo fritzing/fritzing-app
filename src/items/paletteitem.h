@@ -177,7 +177,7 @@ public:
 protected:
 	QList<class ItemBase *> m_layerKin;
 	HoleSettings m_holeSettings;
-	int m_flipCount;
+	int m_flipCount = 0;
 
 };
 

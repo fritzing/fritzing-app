@@ -2317,7 +2317,8 @@ void ItemBase::createShape(LayerAttributes & layerAttributes) {
 	QDomElement root = doc.documentElement();
 
 	QRectF viewBox;
-	double w, h;
+	double w = 0.0;
+	double h = 0.0;
 	TextUtils::ensureViewBox(doc, 1, viewBox, true, w, h, true);
 	double svgDPI = viewBox.width() / w;
 	int selectionExtra = layerAttributes.viewID == ViewLayer::SchematicView ? 20 : 10;

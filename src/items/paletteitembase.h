@@ -110,12 +110,12 @@ protected Q_SLOTS:
 	void partPropertyEntry();
 
 protected:
-	bool m_blockItemSelectedChange;
-	bool m_blockItemSelectedValue;
+	bool m_blockItemSelectedChange = 0;
+	bool m_blockItemSelectedValue = 0;
 	QPointF m_offset;
-	bool m_syncSelected;
+	bool m_syncSelected = 0;
 	QPointF m_syncMoved;
-	bool m_svg;
+	bool m_svg = 0;
 };
 
 

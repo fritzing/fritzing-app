@@ -39,7 +39,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../connectors/busshared.h"
 #include "../utils/folderutils.h"
 #include "../utils/fmessagebox.h"
-#include "../utils/textutils.h"
 
 
 #define MAX_CONN_TRIES 3
@@ -50,7 +49,7 @@ void debugError(bool result, QSqlQuery & query) {
 	if (result) return;
 
 	QSqlError error = query.lastError();
-	DebugDialog::debug(QString("%1 %2 %3").arg(error.text()).arg(error.nativeErrorCode()).arg(error.type()));
+	DebugDialog::debug(QString("%1 %2 %3").arg(error.text(), error.nativeErrorCode()).arg(error.type()));
 }
 
 static ModelPart * DebugModelPart = nullptr;
@@ -257,7 +256,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 
 		if (!path.startsWith(ResourcePath)) {        // not the resources path
 			path = partsDir.absoluteFilePath(path);
-			if (QFileInfo(path).exists()) {
+			if (QFileInfo::exists(path)) {
 				CoreList << moduleID;
 			}
 		}
@@ -919,7 +918,7 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 		fields =  " core";
 		values = " :core";
 	}
-	query.prepare(QString("INSERT INTO parts(moduleID, family, %1) VALUES (:moduleID, :family, %2)").arg(fields).arg(values));
+	query.prepare(QString("INSERT INTO parts(moduleID, family, %1) VALUES (:moduleID, :family, %2)").arg(fields, values));
 	query.bindValue(":moduleID", modelPart->moduleID());
 	query.bindValue(":family", properties.value("family").toLower().trimmed());
 	if (fullLoad) {
@@ -929,7 +928,7 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 		if (path.startsWith(ResourcePath)) {
 		}
 		else if (path.startsWith(prefix)) {
-			path = path.mid(prefix.count() + 1);  // + 1 to remove the beginning "/"
+			path = path.mid(prefix.length() + 1);  // + 1 to remove the beginning "/"
 		}
 		else {
 			bool bail = true;
@@ -941,7 +940,7 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 			}
 
 			if (bail) {
-				DebugDialog::debug(QString("part path not in parts:%1 %2 %3").arg(path).arg(prefix).arg(static_cast<int>(fullLoad)));
+				DebugDialog::debug(QString("part path not in parts:%1 %2 %3").arg(path, prefix).arg(static_cast<int>(fullLoad)));
 				return true;
 			}
 		}
@@ -979,7 +978,7 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 			}
 			if (!result) {
 				FailurePropertyMessages << tr("property '%1' in part '%2' with id '%3'.")
-				                        .arg(prop).arg(modelPart->path()).arg(modelPart->moduleID());
+										.arg(prop, modelPart->path(), modelPart->moduleID());
 			}
 		}
 
@@ -1010,7 +1009,7 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 	} else {
 		debugExec("couldn't insert part", query);
 		FailurePartMessages << tr("part '%1' with id '%2'; possibly because it has no 'family' property.")
-		                    .arg(modelPart->path()).arg(modelPart->moduleID());
+							.arg(modelPart->path(), modelPart->moduleID());
 	}
 
 	DebugModelPart = nullptr;
@@ -1211,7 +1210,7 @@ QMultiHash<QString, QString> SqliteReferenceModel::allPropValues(const QString &
 }
 
 void SqliteReferenceModel::recordProperty(const QString &name, const QString &value) {
-	DebugDialog::debug(QString("RECORDING PROPERTY %1:%2").arg(name).arg(value));
+	DebugDialog::debug(QString("RECORDING PROPERTY %1:%2").arg(name, value));
 	m_recordedProperties.insert(name,value);
 }
 
@@ -1481,7 +1480,7 @@ bool SqliteReferenceModel::removex(qulonglong id, const QString & tableName, con
 	bool result = true;
 
 	QSqlQuery query;
-	query.prepare(QString("DELETE FROM %1 WHERE %2 = :id").arg(tableName).arg(idName));
+	query.prepare(QString("DELETE FROM %1 WHERE %2 = :id").arg(tableName, idName));
 	query.bindValue(":id", id);
 
 	if(query.exec()) {

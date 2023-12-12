@@ -380,9 +380,9 @@ QString Stripboard::genFZP(const QString & moduleid)
 	QString findString("<properties>");
 	int ix = fzp.indexOf(findString);
 	if (ix > 0) {
-		fzp.insert(ix + findString.count(), "<property name='layout'></property>");
+		fzp.insert(ix + findString.length(), "<property name='layout'></property>");
 		if (moduleid.endsWith(ModuleIDNames::StripboardModuleIDName)) {
-			fzp.insert(ix + findString.count(), "<property name='oldstyle'>yes</property>");
+			fzp.insert(ix + findString.length(), "<property name='oldstyle'>yes</property>");
 		}
 	}
 	return fzp;

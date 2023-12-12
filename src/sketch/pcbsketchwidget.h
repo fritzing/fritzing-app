@@ -123,7 +123,7 @@ public:
 	void setPartLabelFont(QString fontFamily);
 	QString getPartLabelFont();
 	void requestQuote();
-	void calcBoardDimensions(int & boardCount, double & width, double & height);
+	void calcBoardDimensions(int & boardCount, double & width, double & height, QString & boardTitle);
 
 public Q_SLOTS:
 	void resizeBoard(double w, double h, bool doEmit);

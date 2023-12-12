@@ -43,13 +43,14 @@ FabUploadProgress::FabUploadProgress(QWidget *parent) : QWidget(parent)
 }
 
 void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename,
-			     double width, double height, int boardCount)
+			     double width, double height, int boardCount, const QString & boardTitle)
 {
 	mManager = manager;
 	mFilepath = filename;
 	mWidth = width;
 	mHeight = height;
 	mBoardCount = boardCount;
+	mBoardTitle = boardTitle;
 }
 
 void FabUploadProgress::doUpload()
@@ -64,6 +65,7 @@ void FabUploadProgress::doUpload()
 	query.addQueryItem("width", QString::number(mWidth));
 	query.addQueryItem("height", QString::number(mHeight));
 	query.addQueryItem("board_count", QString::number(mBoardCount));
+	query.addQueryItem("board_title", QString::fromUtf8(mBoardTitle.toUtf8().toBase64()));
 
 	settings.beginGroup("sketches");
 	QVariant settingValue = settings.value(mFilepath);

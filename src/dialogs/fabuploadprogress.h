@@ -32,7 +32,7 @@ class FabUploadProgress : public QWidget
 public:
 	explicit FabUploadProgress(QWidget *parent = nullptr);
 	~FabUploadProgress(){};
-	void init(QNetworkAccessManager *manager, QString filename, double width, double height, int boardCount);
+	void init(QNetworkAccessManager *manager, QString filename, double width, double height, int boardCount, const QString & boardTitle);
 
 public Q_SLOTS:
 	void doUpload();
@@ -60,6 +60,7 @@ private:
 	double mWidth;
 	double mHeight;
 	int mBoardCount;
+	QString mBoardTitle;
 
 	void uploadMultipart(const QUrl &url, const QString &file_path);
 	void checkProcessingStatus(QUrl url);

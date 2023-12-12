@@ -35,6 +35,7 @@ FabUploadDialog::FabUploadDialog(QNetworkAccessManager *manager,
 								 double width,
 								 double height,
 								 int boardCount,
+								 const QString & boardTitle,
 								 QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::FabUploadDialog),
@@ -44,7 +45,7 @@ FabUploadDialog::FabUploadDialog(QNetworkAccessManager *manager,
 	ui->setupUi(this);	
 	setWindowFlags(Qt::Dialog | windowFlags());
 	ui->stackedWidget->setCurrentIndex(0);
-	ui->upload->init(manager, filename, width, height, boardCount);
+	ui->upload->init(manager, filename, width, height, boardCount, boardTitle);
 	ui->uploadButton_2->setEnabled(false);
 
 	requestFabInfo();

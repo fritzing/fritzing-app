@@ -4475,8 +4475,9 @@ void MainWindow::orderFab()
 		auto* manager = new QNetworkAccessManager();
 		int boardCount;
 		double width, height;
-		m_pcbGraphicsView->calcBoardDimensions(boardCount, width, height);
-		FabUploadDialog upload(manager, m_fwFilename, width, height, boardCount, this);
+		QString boardTitle;
+		m_pcbGraphicsView->calcBoardDimensions(boardCount, width, height, boardTitle);
+		FabUploadDialog upload(manager, m_fwFilename, width, height, boardCount, boardTitle, this);
 		upload.exec();
 		delete manager;
 	} else {

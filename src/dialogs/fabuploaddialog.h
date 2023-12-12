@@ -19,6 +19,7 @@ public:
 							 double width,
 							 double height,
 							 int boardCount,
+							 const QString & boardTitle,
 							 QWidget *parent = nullptr);
 	~FabUploadDialog();
 

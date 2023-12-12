@@ -2886,13 +2886,15 @@ void PCBSketchWidget::requestQuote() {
 	manager->get(QNetworkRequest(QUrl(string)));
 }
 
-void PCBSketchWidget::calcBoardDimensions(int & boardCount, double & width, double & height) {
+void PCBSketchWidget::calcBoardDimensions(int & boardCount, double & width, double & height, QString & boardTitle) {
 	ItemBase * board = findSelectedBoard(boardCount);
 	if (boardCount == 0 || board == nullptr) {
+		boardTitle = "";
 		width = height = 0.0;
 		return;
 	}
 
+	boardTitle = board->instanceTitle();
 	width = GraphicsUtils::pixels2mm(board->boundingRect().width(), GraphicsUtils::SVGDPI) / 10;
 	height = GraphicsUtils::pixels2mm(board->boundingRect().height(), GraphicsUtils::SVGDPI) / 10;
 }

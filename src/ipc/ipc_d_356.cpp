@@ -51,8 +51,8 @@ QString getPinNumberOrIdentifier(const QString & connectorId, const QString & co
 }
 
 // Forward declaration, currently unused
-// QString electricalTestRecord(QString netLabel, QString partLabel, QString connectorName, QString pin, bool isTHT, bool isMiddle, bool isPlated, bool isDrilled, int r, int x, int y, int w, int h, int layer, int ccw_angle);
-QString electricalTestRecord(int cmd, QString netLabel, QString partLabel, QString connectorName, QString connectorId, bool isTHT, bool isMiddle, bool isPlated, bool isDrilled, int r, int x, int y, int w, int h, int layer, int ccw_angle) {
+// QString electricalTestRecord(QString netLabel, QString partLabel, QString connectorName, QString pin, bool isMiddle, bool isPlated, bool isDrilled, int r, int x, int y, int w, int h, int layer, int ccw_angle);
+QString electricalTestRecord(int cmd, QString netLabel, QString partLabel, QString connectorName, QString connectorId, bool isMiddle, bool isPlated, bool isDrilled, int r, int x, int y, int w, int h, int layer, int ccw_angle) {
 // Standard electrical test record (setr)
 //		Column      Data            Description      Number      Meaning
 //			1 P,C,3  C=comment, P=parameter, 3=test record
@@ -161,7 +161,7 @@ QString connectorToRecord(int cmd, ConnectorItem * connectorItem, ItemBase * ite
 
 	int ccw_angle = round(atan2(transform.m12(), transform.m11()) * 180.0 / M_PI);  // doesn't account for scaling. from GerberGenerator::exportPickAndPlace.
 
-	QString ipc = electricalTestRecord(cmd, netLabel, title, connectorName, connectorId, isTHT, isMiddle, isPlated, isDrilled, holeDiameter, x, y, widthOrDiameter, heightOrZero, layer, ccw_angle);
+	QString ipc = electricalTestRecord(cmd, netLabel, title, connectorName, connectorId, isMiddle, isPlated, isDrilled, holeDiameter, x, y, widthOrDiameter, heightOrZero, layer, ccw_angle);
 	return ipc;
 }
 

@@ -41,6 +41,7 @@ static CountCost TheCountCost[QuoteDialog::MessageCount];
 static double TheWidth;
 static double TheHeight;
 static int TheBoardCount;
+static QString TheBoardTitle;
 static QList<int> Counts;
 static bool QuoteSucceeded = false;
 
@@ -259,8 +260,9 @@ void QuoteDialog::setCountCost(int index, int count, double cost) {
 	TheCountCost[index].cost = cost;
 }
 
-void QuoteDialog::setDimensions(double width, double height, int boardCount) {
+void QuoteDialog::setDimensions(double width, double height, int boardCount, const QString & boardTitle) {
     TheBoardCount = boardCount;
+    TheBoardTitle = boardTitle;
     TheWidth = width;
     TheHeight = height;
 }
@@ -268,7 +270,8 @@ void QuoteDialog::setDimensions(double width, double height, int boardCount) {
 void QuoteDialog::setText() {
 	//DebugDialog::debug("quote dialog set text");
 	const double cmToInchesFactor = 2.54;
-	QString msg = tr("The dimensions of the selected PCB are %1 cm x %2 cm (%3 in x %4 in).<br />")
+	QString msg = tr("The dimensions of the selected PCB (title: %1) are %2 cm x %3 cm (%4 in x %5 in).<br />")
+		      .arg(TheBoardTitle)
 		      .arg(hundredths(TheWidth))
 		      .arg(hundredths(TheHeight))
 		      .arg(hundredths(TheWidth / cmToInchesFactor))

@@ -70,7 +70,7 @@ public:
 	void setText();
 
 public:
-	static void setDimensions(double width, double height, int boardCount);
+	static void setDimensions(double width, double height, int boardCount, const QString & boardTitle);
 	static void setCountCost(int index, int count, double cost);
 	static QString countArgs();
 	static void setQuoteSucceeded(bool);

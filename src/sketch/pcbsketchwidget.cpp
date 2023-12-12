@@ -2781,7 +2781,8 @@ void PCBSketchWidget::hidePartSilkscreen() {
 void PCBSketchWidget::fabQuote() {
 	int boardCount = 0;
 	double width, height;
-	calcBoardDimensions(boardCount, width, height);
+	QString boardTitle;
+	calcBoardDimensions(boardCount, width, height, boardTitle);
 	QuoteDialog::setQuoteSucceeded(false);
 
 	if (boardCount == 0) {
@@ -2848,8 +2849,9 @@ void PCBSketchWidget::gotFabQuote(QNetworkReply * networkReply) {
 void PCBSketchWidget::requestQuote() {
 	int boardCount;
 	double width, height;
-	calcBoardDimensions(boardCount, width, height);
-	QuoteDialog::setDimensions(width, height, boardCount);
+	QString boardTitle;
+	calcBoardDimensions(boardCount, width, height, boardTitle);
+	QuoteDialog::setDimensions(width, height, boardCount, boardTitle);
 	double area = width * height;
 	if (boardCount == 0 || (qFuzzyIsNull(width) && qFuzzyIsNull(height))) return;
 

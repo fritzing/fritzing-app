@@ -61,8 +61,9 @@ private:
 	double mHeight;
 	int mBoardCount;
 	QString mBoardTitle;
+	QString mService;
 
-	void uploadMultipart(const QUrl &url, const QString &file_path);
+	void uploadMultipart(const QString &url, const QString &file_path);
 	void checkProcessingStatus(QUrl url);
 	void httpError(QNetworkReply *reply);
 	void apiError(QString message);

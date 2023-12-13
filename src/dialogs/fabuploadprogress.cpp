@@ -56,36 +56,30 @@ void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename,
 void FabUploadProgress::doUpload()
 {
 	QSettings settings;
-	QString service = settings.value("service", "fritzing").toString();
+	mService = settings.value("service", "fritzing").toString();
 	QUrl upload_url("https://service.fritzing.org/fab/upload");
-
-	QUrlQuery query;
-	QString fritzingVersion = Version::versionString();
-	query.addQueryItem("fritzing_version", fritzingVersion);
-	query.addQueryItem("width", QString::number(mWidth));
-	query.addQueryItem("height", QString::number(mHeight));
-	query.addQueryItem("board_count", QString::number(mBoardCount));
-	query.addQueryItem("board_title", QString::fromUtf8(mBoardTitle.toUtf8().toBase64()));
 
 	settings.beginGroup("sketches");
 	QVariant settingValue = settings.value(mFilepath);
 	settings.endGroup();
 
 	if (auto opt = settingValue.value<UploadPair>(); settingValue.isValid() && !settingValue.isNull()) {
-		service = std::move(opt.service);
+		mService = std::move(opt.service);
 		if (!opt.link.isEmpty()) {
 			QUrl potential_url(opt.link);
 			if (potential_url.isValid()) {
 				upload_url = potential_url;
-				upload_url.setQuery(query);
-				uploadMultipart(upload_url, mFilepath);
+				uploadMultipart(upload_url.toString(), mFilepath);
 				return;
 			}
 			// Otherwise, keep using the default URL
 		}
 	}
 
-	query.addQueryItem("service", service);
+	QUrlQuery query;
+	QString fritzingVersion = Version::versionString();
+	query.addQueryItem("fritzing_version", fritzingVersion);
+	query.addQueryItem("service", mService);
 	upload_url.setQuery(query);
 	mRedirect_url = QString();
 
@@ -113,7 +107,7 @@ void FabUploadProgress::onRequestUploadFinished()
 			auto d = reply->readAll();
 			auto j = NetworkHelper::string_to_hash(d);
 			QUrl upload_url(QUrl::fromUserInput(j["upload_url"].toString()));
-			uploadMultipart(upload_url, mFilepath);
+			uploadMultipart(upload_url.toString(), mFilepath);
 		}
 	} else {
 		httpError(reply);
@@ -122,9 +116,25 @@ void FabUploadProgress::onRequestUploadFinished()
 }
 
 
-void FabUploadProgress::uploadMultipart(const QUrl &url, const QString &file_path)
+void FabUploadProgress::uploadMultipart(const QString &urlStr, const QString &file_path)
 {
 	auto *httpMultiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+
+	QVector<QPair<QString, QString>> params;
+	params.append(qMakePair("fritzing_version", Version::versionString()));
+	params.append(qMakePair("service", mService));
+	params.append(qMakePair("width", QString::number(mWidth)));
+	params.append(qMakePair("height", QString::number(mHeight)));
+	params.append(qMakePair("board_count", QString::number(mBoardCount)));
+	params.append(qMakePair("board_title", QString::fromUtf8(mBoardTitle.toUtf8().toBase64())));
+
+	for (const QPair<QString, QString> &param : params) {
+	    QHttpPart textPart;
+	    textPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"" + param.first + "\""));
+	    textPart.setBody(param.second.toUtf8());
+	    httpMultiPart->append(textPart);
+	}
+
 	auto *file = new QFile(file_path);
 	QHttpPart imagePart;
 	imagePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"upload[file]\"; filename=\"" + QFileInfo(*file).fileName() + "\""));
@@ -136,7 +146,7 @@ void FabUploadProgress::uploadMultipart(const QUrl &url, const QString &file_pat
 
 	httpMultiPart->append(imagePart);
 
-	QNetworkRequest request(url);
+	QNetworkRequest request((QUrl(urlStr)));
 	QNetworkReply *reply = mManager->post(request, httpMultiPart);
 
 	httpMultiPart->setParent(reply); // delete the multiPart with the reply

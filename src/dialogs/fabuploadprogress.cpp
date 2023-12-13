@@ -120,27 +120,31 @@ void FabUploadProgress::uploadMultipart(const QString &urlStr, const QString &fi
 {
 	auto *httpMultiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 
-	QVector<QPair<QString, QString>> params;
-	params.append(qMakePair("fritzing_version", Version::versionString()));
-	params.append(qMakePair("service", mService));
-	params.append(qMakePair("width", QString::number(mWidth)));
-	params.append(qMakePair("height", QString::number(mHeight)));
-	params.append(qMakePair("board_count", QString::number(mBoardCount)));
-	params.append(qMakePair("board_title", QString::fromUtf8(mBoardTitle.toUtf8().toBase64())));
+	std::map<QString, QString> params {
+		{"fritzing_version", Version::versionString()},
+		{"service", mService},
+		{"width", QString::number(mWidth)},
+		{"height", QString::number(mHeight)},
+		{"board_count", QString::number(mBoardCount)},
+		{"board_title", mBoardTitle} // Assuming mBoardTitle is a UTF-8 encoded QString
+	};
 
-	for (const QPair<QString, QString> &param : params) {
-	    QHttpPart textPart;
-	    textPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"" + param.first + "\""));
-	    textPart.setBody(param.second.toUtf8());
-	    httpMultiPart->append(textPart);
+	for (const auto& [key, value] : params) {
+		QHttpPart textPart;
+		textPart.setHeader(QNetworkRequest::ContentDispositionHeader,
+						   QVariant("form-data; name=\"" + key + "\""));
+		textPart.setBody(value.toUtf8());
+		httpMultiPart->append(textPart);
 	}
 
 	auto *file = new QFile(file_path);
-	QHttpPart imagePart;
-	imagePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"upload[file]\"; filename=\"" + QFileInfo(*file).fileName() + "\""));
-	imagePart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("application/octet-stream"));
-
 	file->open(QIODevice::ReadOnly);
+
+	QHttpPart imagePart;
+	imagePart.setHeader(QNetworkRequest::ContentDispositionHeader,
+						QVariant("form-data; name=\"upload[file]\"; filename=\"" + QFileInfo(*file).fileName() + "\""));
+	imagePart.setHeader(QNetworkRequest::ContentTypeHeader,
+						QVariant("application/octet-stream"));
 	imagePart.setBodyDevice(file);
 	file->setParent(httpMultiPart); // we cannot delete the file object now, so delete it with the multiPart
 
@@ -152,9 +156,9 @@ void FabUploadProgress::uploadMultipart(const QString &urlStr, const QString &fi
 	httpMultiPart->setParent(reply); // delete the multiPart with the reply
 
 	connect(reply, SIGNAL(finished()), this, SLOT(uploadDone()));
-	connect(reply, SIGNAL(uploadProgress(qint64, qint64)), this, SLOT  (uploadProgress(qint64, qint64)));
+	connect(reply, SIGNAL(uploadProgress(qint64,qint64)), this, SLOT  (uploadProgress(qint64,qint64)));
 
-	auto r = reply->request();
+	reply->request();
 }
 
 void FabUploadProgress::uploadProgress(qint64 bytesSent, qint64 bytesTotal) {
@@ -166,16 +170,17 @@ void FabUploadProgress::uploadProgress(qint64 bytesSent, qint64 bytesTotal) {
 // Handle errors from NetworkManager
 void FabUploadProgress::onError(QNetworkReply::NetworkError code)
 {
+	QMetaEnum metaEnum = QMetaEnum::fromType<QNetworkReply::NetworkError>();
+	const char *errorString = metaEnum.valueToKey(code);
+
 	auto *reply = qobject_cast<QNetworkReply*>(sender());
 	FMessageBox::critical(this,
 						  tr("Fritzing"),
 						  tr("Could not connect to Fritzing fab.")
-							  + "Error: " + reply->errorString());
-	QMetaEnum metaEnum = QMetaEnum::fromType<QNetworkReply::NetworkError>();
-	const char *errorString = metaEnum.valueToKey(code);
+							  + "Error: " + reply->errorString() + " " + errorString);
 
 	DebugDialog::debug(
-		QString("Error connecting to fab %1 %2").arg(reply->errorString()).arg(errorString));
+		QString("Error connecting to fab %1 %2").arg(reply->errorString(), errorString));
 	Q_EMIT closeUploadError();
 }
 

@@ -17,6 +17,9 @@
 #include <QDesktopServices>
 #include <QSettings>
 #include <QMetaEnum>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 
 #include "utils/fmessagebox.h"
 #include "utils/uploadpair.h"
@@ -187,9 +190,27 @@ void FabUploadProgress::onError(QNetworkReply::NetworkError code)
 // Handle http errors detected
 void FabUploadProgress::httpError(QNetworkReply* reply)
 {
-	QString error(reply->errorString() + reply->attribute( QNetworkRequest::HttpStatusCodeAttribute).toString());
-	DebugDialog::debug(reply->errorString());
-	FMessageBox::critical(this, tr("Fritzing"), error);
+	QString statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toString();
+	QByteArray responseData = reply->readAll();
+
+	QJsonDocument jsonDoc = QJsonDocument::fromJson(responseData);
+	QString jsonErrors;
+	if (!jsonDoc.isNull() && jsonDoc.isObject()) {
+		QJsonObject jsonObj = jsonDoc.object();
+		QJsonArray errorsArray = jsonObj["errors"].toArray();
+		foreach (const QJsonValue &value, errorsArray) {
+			jsonErrors += (jsonErrors.isEmpty() ? "" : ", ") + value.toString();
+		}
+	}
+
+	QString errorMessage = reply->errorString() + " " + statusCode;
+	if (!jsonErrors.isEmpty()) {
+		errorMessage += QString(" - %1").arg(jsonErrors);
+	}
+
+	FMessageBox::critical(this, tr("Fritzing"), errorMessage);
+	DebugDialog::debug(errorMessage);
+
 	Q_EMIT closeUploadError();
 }
 

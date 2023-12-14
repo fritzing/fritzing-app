@@ -3810,7 +3810,7 @@ void SketchWidget::wireChangedSlot(Wire* wire, const QLineF & oldLine, const QLi
 
 		}
 		if (to) {
-			extendChangeConnectionCommand(BaseCommand::CrossView, from, to, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
+			extendChangeConnectionCommand(BaseCommand::CrossView, to, from, ViewLayer::specFromID(wire->viewLayerID()), true, parentCommand);
 		}
 	}
 

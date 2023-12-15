@@ -3333,6 +3333,10 @@ void MainWindow::triggerSimulator() {
 	m_simulator->triggerSimulation();
 }
 
+QSharedPointer<ProjectProperties> MainWindow::getProjectProperties() {
+	return m_projectProperties;
+}
+
 bool MainWindow::isSimulatorEnabled() {
 	return m_simulator->isEnabled();
 }

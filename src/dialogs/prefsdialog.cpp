@@ -37,6 +37,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSpinBox>
 #include <QSettings>
 #include <QLineEdit>
+#include <QString>
 
 #define MARGIN 5
 #define FORMLABELWIDTH 195
@@ -64,8 +65,10 @@ void PrefsDialog::initViewInfo(int index, const QString & viewName, const QStrin
 	m_viewInfoThings[index].curvy = curvy;
 }
 
-void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platforms)
+void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platforms, MainWindow * mainWindow)
 {
+	m_mainWindow = mainWindow;
+	m_projectProperties = mainWindow->getProjectProperties();
 	m_tabWidget = new QTabWidget();
 	m_general = new QWidget();
 	m_breadboard = new QWidget();
@@ -166,6 +169,7 @@ void PrefsDialog::initBetaFeatures(QWidget * widget)
 	QVBoxLayout * vLayout = new QVBoxLayout();
 	vLayout->addWidget(createSimulatorBetaFeaturesForm());
 	vLayout->addWidget(createGerberBetaFeaturesForm());
+	vLayout->addWidget(createProjectPropertiesForm());
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
 	widget->setLayout(vLayout);
 }
@@ -489,6 +493,38 @@ QWidget * PrefsDialog::createSimulatorBetaFeaturesForm() {
 	});
 
 	return simulator;
+}
+
+QWidget *PrefsDialog::createProjectPropertiesForm() {
+	QGroupBox * projectPropertiesBox = new QGroupBox(tr("Project properties"), this );
+
+	QVBoxLayout * layout = new QVBoxLayout();
+	layout->setSpacing(SPACING);
+
+	QLabel * label = new QLabel(tr("Here you can set some settings that will be saved with the project"));
+	label->setWordWrap(true);
+	layout->addWidget(label);
+	layout->addSpacing(10);
+
+	QLabel *simFrequencyLabel = new QLabel(tr("Simulation Frequency (Hz):"));
+	layout->addWidget(simFrequencyLabel);
+
+	QLineEdit *simFrequencyEdit = new QLineEdit();
+
+	simFrequencyEdit->setText(m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorFrequencyHz));
+	simFrequencyEdit->setFixedWidth(FORMLABELWIDTH * 2);
+	layout->addWidget(simFrequencyEdit);
+
+	projectPropertiesBox->setLayout(layout);
+
+	connect(simFrequencyEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationFrequency(QString)));
+
+	return projectPropertiesBox;
+
+}
+
+void PrefsDialog::setSimulationFrequency(const QString &frequency) {
+	m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorFrequencyHz, frequency);
 }
 
 void PrefsDialog::clear() {

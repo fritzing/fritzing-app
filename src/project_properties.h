@@ -26,6 +26,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QXmlStreamWriter>
 #include <QDomElement>
 
+const QString ProjectPropertyKeySimulatorFrequencyHz = "simulator_frequency_hz";
+
 class ProjectProperties {
 public:
 	ProjectProperties();
@@ -35,6 +37,7 @@ public:
 	void saveProperties(QXmlStreamWriter & streamWriter);
 	void load(const QDomElement & projectProperties);
 	QString getProjectProperty(const QString & key);
+	void setProjectProperty(const QString & key, QString value);
 
 private:
 	QMap<QString, QString> m_propertiesMap;

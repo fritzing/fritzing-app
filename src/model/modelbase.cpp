@@ -156,6 +156,8 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	}
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();
 
+	Q_EMIT loadedProjectProperties(root.firstChildElement("project_properties"));
+
 	QDomElement title = root.firstChildElement("title");
 	if (!title.isNull()) {
 		if (modelPartSharedRoot != nullptr) {

@@ -219,6 +219,7 @@ public:
 	bool isSimulatorEnabled();
 	void enableSimulator(bool);
 	void triggerSimulator();
+	QSharedPointer<ProjectProperties> getProjectProperties();
 
 public:
 	static void initNames();

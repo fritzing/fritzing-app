@@ -305,6 +305,17 @@ bool GroundPlaneGenerator::generateGroundPlaneFn(const GPGParams & constParams) 
 	cp.Clear();
 	Paths nonCopper;
 	cp.AddPaths(board, ptSubject, true);
+
+	double BORDERMILS = 30;
+	double extraOutlineClearance = BORDERMILS - params.keepoutMils;
+	if (extraOutlineClearance > 0) {
+		ClipperOffset co;
+		Paths copperOutlineClearance;
+		co.AddPaths(board, jtRound, ClipperLib::etClosedLine);
+		co.Execute(copperOutlineClearance, extraOutlineClearance / 1000.0 * clipperDPI);
+		cp.AddPaths(copperOutlineClearance, ptClip, true);
+	}
+
 	cp.AddPaths(copperWithoutGroundConnectors, ptClip, true);
 	cp.Execute(ctDifference, nonCopper, pftNonZero, pftNonZero);
 

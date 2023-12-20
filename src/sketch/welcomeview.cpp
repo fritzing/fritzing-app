@@ -140,27 +140,23 @@ CustomListItem::CustomListItem(const QString &leftText, const QIcon &leftIcon, c
 	rightButton->setFlat(true);
 
 	QString buttonStyle = QString("QPushButton { "
-			      "text-align: left; "
-			      "background-color: transparent; "
-			      "border: none; "
-			      "padding-left: %1px; "
-			      "padding-right: %1px; "
-			      "}"
-			      "QPushButton:pressed { "
-			      "color: #555; "
-			      "}").arg(padding);
+								  "text-align: left; "
+								  "background-color: transparent; "
+								  "border: none; "
+								  "padding-left: %1px; "
+								  "padding-right: %1px; "
+								  "color: #333;"
+								  "}"
+								  "QPushButton:pressed { "
+								  "color: #005; "
+								  "}")
+							  .arg(padding);
 	leftButton->setStyleSheet(buttonStyle);
 	rightButton->setStyleSheet(buttonStyle);
 
-	QFont buttonFont = leftButton->font();
-	buttonFont.setPointSize(buttonFont.pointSize() - 2);
+	QFont buttonFont("Droid Sans", 10, QFont::Normal);
 	leftButton->setFont(buttonFont);
 	rightButton->setFont(buttonFont);
-
-	QPalette buttonPalette = leftButton->palette();
-	buttonPalette.setColor(QPalette::ButtonText, Qt::black);
-	leftButton->setPalette(buttonPalette);
-	rightButton->setPalette(buttonPalette);
 
 	int scrollbarWidth = this->style()->pixelMetric(QStyle::PM_ScrollBarExtent);
 	int leftButtonWidth = static_cast<int>((listWidgetWidth - scrollbarWidth) * 0.7);

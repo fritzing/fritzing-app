@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'consolewindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.2.1
+** Created by: Qt User Interface Compiler version 6.6.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,15 +10,8 @@
 #define UI_CONSOLEWINDOW_H
 
 #include <QtCore/QVariant>
-#include <QtGlobal>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QtWidgets/QAction>
-#else
 #include <QtGui/QAction>
-#endif
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -50,45 +43,45 @@ public:
     void setupUi(QMainWindow *ConsoleWindow)
     {
         if (ConsoleWindow->objectName().isEmpty())
-            ConsoleWindow->setObjectName(QStringLiteral("ConsoleWindow"));
+            ConsoleWindow->setObjectName("ConsoleWindow");
         ConsoleWindow->resize(400, 300);
         actionAbout = new QAction(ConsoleWindow);
-        actionAbout->setObjectName(QStringLiteral("actionAbout"));
+        actionAbout->setObjectName("actionAbout");
         actionAboutQt = new QAction(ConsoleWindow);
-        actionAboutQt->setObjectName(QStringLiteral("actionAboutQt"));
+        actionAboutQt->setObjectName("actionAboutQt");
         actionConnect = new QAction(ConsoleWindow);
-        actionConnect->setObjectName(QStringLiteral("actionConnect"));
+        actionConnect->setObjectName("actionConnect");
         actionDisconnect = new QAction(ConsoleWindow);
-        actionDisconnect->setObjectName(QStringLiteral("actionDisconnect"));
+        actionDisconnect->setObjectName("actionDisconnect");
         actionConfigure = new QAction(ConsoleWindow);
-        actionConfigure->setObjectName(QStringLiteral("actionConfigure"));
+        actionConfigure->setObjectName("actionConfigure");
         actionClear = new QAction(ConsoleWindow);
-        actionClear->setObjectName(QStringLiteral("actionClear"));
+        actionClear->setObjectName("actionClear");
         actionQuit = new QAction(ConsoleWindow);
-        actionQuit->setObjectName(QStringLiteral("actionQuit"));
+        actionQuit->setObjectName("actionQuit");
         QIcon icon;
-        icon.addFile(QStringLiteral(":/images/application-exit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/images/application-exit.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionQuit->setIcon(icon);
         centralWidget = new QWidget(ConsoleWindow);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        centralWidget->setObjectName("centralWidget");
         verticalLayout = new QVBoxLayout(centralWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setObjectName("verticalLayout");
         ConsoleWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ConsoleWindow);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setObjectName("menuBar");
         menuBar->setGeometry(QRect(0, 0, 400, 22));
         menuCalls = new QMenu(menuBar);
-        menuCalls->setObjectName(QStringLiteral("menuCalls"));
+        menuCalls->setObjectName("menuCalls");
         menuTools = new QMenu(menuBar);
-        menuTools->setObjectName(QStringLiteral("menuTools"));
+        menuTools->setObjectName("menuTools");
         ConsoleWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(ConsoleWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
+        mainToolBar->setObjectName("mainToolBar");
         ConsoleWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(ConsoleWindow);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
+        statusBar->setObjectName("statusBar");
         ConsoleWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuCalls->menuAction());
@@ -111,37 +104,49 @@ public:
 
     void retranslateUi(QMainWindow *ConsoleWindow)
     {
-        ConsoleWindow->setWindowTitle(QApplication::translate("ConsoleWindow", "Serial Monitor", 0));
-        actionAbout->setText(QApplication::translate("ConsoleWindow", "&About", 0));
-#ifndef QT_NO_TOOLTIP
-        actionAbout->setToolTip(QApplication::translate("ConsoleWindow", "About program", 0));
-#endif // QT_NO_TOOLTIP
-        actionAbout->setShortcut(QApplication::translate("ConsoleWindow", "Alt+A", 0));
-        actionAboutQt->setText(QApplication::translate("ConsoleWindow", "About Qt", 0));
-        actionConnect->setText(QApplication::translate("ConsoleWindow", "C&onnect", 0));
-#ifndef QT_NO_TOOLTIP
-        actionConnect->setToolTip(QApplication::translate("ConsoleWindow", "Connect to serial port", 0));
-#endif // QT_NO_TOOLTIP
-        actionConnect->setShortcut(QApplication::translate("ConsoleWindow", "Ctrl+O", 0));
-        actionDisconnect->setText(QApplication::translate("ConsoleWindow", "&Disconnect", 0));
-#ifndef QT_NO_TOOLTIP
-        actionDisconnect->setToolTip(QApplication::translate("ConsoleWindow", "Disconnect from serial port", 0));
-#endif // QT_NO_TOOLTIP
-        actionDisconnect->setShortcut(QApplication::translate("ConsoleWindow", "Ctrl+D", 0));
-        actionConfigure->setText(QApplication::translate("ConsoleWindow", "&Configure", 0));
-#ifndef QT_NO_TOOLTIP
-        actionConfigure->setToolTip(QApplication::translate("ConsoleWindow", "Configure serial port", 0));
-#endif // QT_NO_TOOLTIP
-        actionConfigure->setShortcut(QApplication::translate("ConsoleWindow", "Alt+C", 0));
-        actionClear->setText(QApplication::translate("ConsoleWindow", "C&lear", 0));
-#ifndef QT_NO_TOOLTIP
-        actionClear->setToolTip(QApplication::translate("ConsoleWindow", "Clear data", 0));
-#endif // QT_NO_TOOLTIP
-        actionClear->setShortcut(QApplication::translate("ConsoleWindow", "Alt+L", 0));
-        actionQuit->setText(QApplication::translate("ConsoleWindow", "&Quit", 0));
-        actionQuit->setShortcut(QApplication::translate("ConsoleWindow", "Ctrl+Q", 0));
-        menuCalls->setTitle(QApplication::translate("ConsoleWindow", "Monitor", 0));
-        menuTools->setTitle(QApplication::translate("ConsoleWindow", "Tools", 0));
+        ConsoleWindow->setWindowTitle(QCoreApplication::translate("ConsoleWindow", "Serial Monitor", nullptr));
+        actionAbout->setText(QCoreApplication::translate("ConsoleWindow", "&About", nullptr));
+#if QT_CONFIG(tooltip)
+        actionAbout->setToolTip(QCoreApplication::translate("ConsoleWindow", "About program", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(shortcut)
+        actionAbout->setShortcut(QCoreApplication::translate("ConsoleWindow", "Alt+A", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionAboutQt->setText(QCoreApplication::translate("ConsoleWindow", "About Qt", nullptr));
+        actionConnect->setText(QCoreApplication::translate("ConsoleWindow", "C&onnect", nullptr));
+#if QT_CONFIG(tooltip)
+        actionConnect->setToolTip(QCoreApplication::translate("ConsoleWindow", "Connect to serial port", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(shortcut)
+        actionConnect->setShortcut(QCoreApplication::translate("ConsoleWindow", "Ctrl+O", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionDisconnect->setText(QCoreApplication::translate("ConsoleWindow", "&Disconnect", nullptr));
+#if QT_CONFIG(tooltip)
+        actionDisconnect->setToolTip(QCoreApplication::translate("ConsoleWindow", "Disconnect from serial port", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(shortcut)
+        actionDisconnect->setShortcut(QCoreApplication::translate("ConsoleWindow", "Ctrl+D", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionConfigure->setText(QCoreApplication::translate("ConsoleWindow", "&Configure", nullptr));
+#if QT_CONFIG(tooltip)
+        actionConfigure->setToolTip(QCoreApplication::translate("ConsoleWindow", "Configure serial port", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(shortcut)
+        actionConfigure->setShortcut(QCoreApplication::translate("ConsoleWindow", "Alt+C", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionClear->setText(QCoreApplication::translate("ConsoleWindow", "C&lear", nullptr));
+#if QT_CONFIG(tooltip)
+        actionClear->setToolTip(QCoreApplication::translate("ConsoleWindow", "Clear data", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(shortcut)
+        actionClear->setShortcut(QCoreApplication::translate("ConsoleWindow", "Alt+L", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionQuit->setText(QCoreApplication::translate("ConsoleWindow", "&Quit", nullptr));
+#if QT_CONFIG(shortcut)
+        actionQuit->setShortcut(QCoreApplication::translate("ConsoleWindow", "Ctrl+Q", nullptr));
+#endif // QT_CONFIG(shortcut)
+        menuCalls->setTitle(QCoreApplication::translate("ConsoleWindow", "Monitor", nullptr));
+        menuTools->setTitle(QCoreApplication::translate("ConsoleWindow", "Tools", nullptr));
     } // retranslateUi
 
 };

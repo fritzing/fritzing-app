@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'modfiledialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.6.0
+** Created by: Qt User Interface Compiler version 6.6.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,17 +10,10 @@
 #define UI_MODFILEDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtGlobal>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QtWidgets/QAction>
-#else
-#include <QtGui/QAction>
-#endif
+#include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -39,27 +32,27 @@ public:
     void setupUi(QDialog *ModFileDialog)
     {
         if (ModFileDialog->objectName().isEmpty())
-            ModFileDialog->setObjectName(QStringLiteral("ModFileDialog"));
+            ModFileDialog->setObjectName("ModFileDialog");
         ModFileDialog->resize(400, 300);
         verticalLayout = new QVBoxLayout(ModFileDialog);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setObjectName("verticalLayout");
         label = new QLabel(ModFileDialog);
-        label->setObjectName(QStringLiteral("label"));
+        label->setObjectName("label");
 
         verticalLayout->addWidget(label);
 
         decision = new QLabel(ModFileDialog);
-        decision->setObjectName(QStringLiteral("decision"));
+        decision->setObjectName("decision");
 
         verticalLayout->addWidget(decision);
 
         listWidget = new QListWidget(ModFileDialog);
-        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setObjectName("listWidget");
 
         verticalLayout->addWidget(listWidget);
 
         buttonBox = new QDialogButtonBox(ModFileDialog);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setObjectName("buttonBox");
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 
@@ -67,17 +60,17 @@ public:
 
 
         retranslateUi(ModFileDialog);
-        QObject::connect(buttonBox, SIGNAL(accepted()), ModFileDialog, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), ModFileDialog, SLOT(reject()));
+        QObject::connect(buttonBox, &QDialogButtonBox::accepted, ModFileDialog, qOverload<>(&QDialog::accept));
+        QObject::connect(buttonBox, &QDialogButtonBox::rejected, ModFileDialog, qOverload<>(&QDialog::reject));
 
         QMetaObject::connectSlotsByName(ModFileDialog);
     } // setupUi
 
     void retranslateUi(QDialog *ModFileDialog)
     {
-        ModFileDialog->setWindowTitle(QApplication::translate("ModFileDialog", "Modified files", 0));
+        ModFileDialog->setWindowTitle(QCoreApplication::translate("ModFileDialog", "Modified files", nullptr));
         label->setText(QString());
-        decision->setText(QApplication::translate("ModFileDialog", "decision", 0));
+        decision->setText(QCoreApplication::translate("ModFileDialog", "decision", nullptr));
     } // retranslateUi
 
 };

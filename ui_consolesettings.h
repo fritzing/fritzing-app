@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'consolesettings.ui'
 **
-** Created by: Qt User Interface Compiler version 5.2.1
+** Created by: Qt User Interface Compiler version 6.6.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,21 +10,13 @@
 #define UI_CONSOLESETTINGS_H
 
 #include <QtCore/QVariant>
-#include <QtGlobal>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QtWidgets/QAction>
-#else
-#include <QtGui/QAction>
-#endif
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -67,61 +59,61 @@ public:
     void setupUi(QDialog *ConsoleSettings)
     {
         if (ConsoleSettings->objectName().isEmpty())
-            ConsoleSettings->setObjectName(QStringLiteral("ConsoleSettings"));
+            ConsoleSettings->setObjectName("ConsoleSettings");
         ConsoleSettings->resize(400, 336);
         gridLayout_3 = new QGridLayout(ConsoleSettings);
-        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setObjectName("gridLayout_3");
         parametersBox = new QGroupBox(ConsoleSettings);
-        parametersBox->setObjectName(QStringLiteral("parametersBox"));
+        parametersBox->setObjectName("parametersBox");
         gridLayout_2 = new QGridLayout(parametersBox);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setObjectName("gridLayout_2");
         baudRateLabel = new QLabel(parametersBox);
-        baudRateLabel->setObjectName(QStringLiteral("baudRateLabel"));
+        baudRateLabel->setObjectName("baudRateLabel");
 
         gridLayout_2->addWidget(baudRateLabel, 0, 0, 1, 1);
 
         baudRateBox = new QComboBox(parametersBox);
-        baudRateBox->setObjectName(QStringLiteral("baudRateBox"));
+        baudRateBox->setObjectName("baudRateBox");
 
         gridLayout_2->addWidget(baudRateBox, 0, 1, 1, 1);
 
         dataBitsLabel = new QLabel(parametersBox);
-        dataBitsLabel->setObjectName(QStringLiteral("dataBitsLabel"));
+        dataBitsLabel->setObjectName("dataBitsLabel");
 
         gridLayout_2->addWidget(dataBitsLabel, 1, 0, 1, 1);
 
         dataBitsBox = new QComboBox(parametersBox);
-        dataBitsBox->setObjectName(QStringLiteral("dataBitsBox"));
+        dataBitsBox->setObjectName("dataBitsBox");
 
         gridLayout_2->addWidget(dataBitsBox, 1, 1, 1, 1);
 
         parityLabel = new QLabel(parametersBox);
-        parityLabel->setObjectName(QStringLiteral("parityLabel"));
+        parityLabel->setObjectName("parityLabel");
 
         gridLayout_2->addWidget(parityLabel, 2, 0, 1, 1);
 
         parityBox = new QComboBox(parametersBox);
-        parityBox->setObjectName(QStringLiteral("parityBox"));
+        parityBox->setObjectName("parityBox");
 
         gridLayout_2->addWidget(parityBox, 2, 1, 1, 1);
 
         stopBitsLabel = new QLabel(parametersBox);
-        stopBitsLabel->setObjectName(QStringLiteral("stopBitsLabel"));
+        stopBitsLabel->setObjectName("stopBitsLabel");
 
         gridLayout_2->addWidget(stopBitsLabel, 3, 0, 1, 1);
 
         stopBitsBox = new QComboBox(parametersBox);
-        stopBitsBox->setObjectName(QStringLiteral("stopBitsBox"));
+        stopBitsBox->setObjectName("stopBitsBox");
 
         gridLayout_2->addWidget(stopBitsBox, 3, 1, 1, 1);
 
         flowControlLabel = new QLabel(parametersBox);
-        flowControlLabel->setObjectName(QStringLiteral("flowControlLabel"));
+        flowControlLabel->setObjectName("flowControlLabel");
 
         gridLayout_2->addWidget(flowControlLabel, 4, 0, 1, 1);
 
         flowControlBox = new QComboBox(parametersBox);
-        flowControlBox->setObjectName(QStringLiteral("flowControlBox"));
+        flowControlBox->setObjectName("flowControlBox");
 
         gridLayout_2->addWidget(flowControlBox, 4, 1, 1, 1);
 
@@ -129,41 +121,41 @@ public:
         gridLayout_3->addWidget(parametersBox, 0, 1, 1, 1);
 
         selectBox = new QGroupBox(ConsoleSettings);
-        selectBox->setObjectName(QStringLiteral("selectBox"));
+        selectBox->setObjectName("selectBox");
         gridLayout = new QGridLayout(selectBox);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setObjectName("gridLayout");
         serialPortInfoListBox = new QComboBox(selectBox);
-        serialPortInfoListBox->setObjectName(QStringLiteral("serialPortInfoListBox"));
+        serialPortInfoListBox->setObjectName("serialPortInfoListBox");
 
         gridLayout->addWidget(serialPortInfoListBox, 0, 0, 1, 1);
 
         descriptionLabel = new QLabel(selectBox);
-        descriptionLabel->setObjectName(QStringLiteral("descriptionLabel"));
+        descriptionLabel->setObjectName("descriptionLabel");
 
         gridLayout->addWidget(descriptionLabel, 1, 0, 1, 1);
 
         manufacturerLabel = new QLabel(selectBox);
-        manufacturerLabel->setObjectName(QStringLiteral("manufacturerLabel"));
+        manufacturerLabel->setObjectName("manufacturerLabel");
 
         gridLayout->addWidget(manufacturerLabel, 2, 0, 1, 1);
 
         serialNumberLabel = new QLabel(selectBox);
-        serialNumberLabel->setObjectName(QStringLiteral("serialNumberLabel"));
+        serialNumberLabel->setObjectName("serialNumberLabel");
 
         gridLayout->addWidget(serialNumberLabel, 3, 0, 1, 1);
 
         locationLabel = new QLabel(selectBox);
-        locationLabel->setObjectName(QStringLiteral("locationLabel"));
+        locationLabel->setObjectName("locationLabel");
 
         gridLayout->addWidget(locationLabel, 4, 0, 1, 1);
 
         vidLabel = new QLabel(selectBox);
-        vidLabel->setObjectName(QStringLiteral("vidLabel"));
+        vidLabel->setObjectName("vidLabel");
 
         gridLayout->addWidget(vidLabel, 5, 0, 1, 1);
 
         pidLabel = new QLabel(selectBox);
-        pidLabel->setObjectName(QStringLiteral("pidLabel"));
+        pidLabel->setObjectName("pidLabel");
 
         gridLayout->addWidget(pidLabel, 6, 0, 1, 1);
 
@@ -171,13 +163,13 @@ public:
         gridLayout_3->addWidget(selectBox, 0, 0, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setObjectName("horizontalLayout");
         horizontalSpacer = new QSpacerItem(96, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
 
         applyButton = new QPushButton(ConsoleSettings);
-        applyButton->setObjectName(QStringLiteral("applyButton"));
+        applyButton->setObjectName("applyButton");
 
         horizontalLayout->addWidget(applyButton);
 
@@ -185,11 +177,11 @@ public:
         gridLayout_3->addLayout(horizontalLayout, 2, 0, 1, 2);
 
         additionalOptionsGroupBox = new QGroupBox(ConsoleSettings);
-        additionalOptionsGroupBox->setObjectName(QStringLiteral("additionalOptionsGroupBox"));
+        additionalOptionsGroupBox->setObjectName("additionalOptionsGroupBox");
         verticalLayout = new QVBoxLayout(additionalOptionsGroupBox);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setObjectName("verticalLayout");
         localEchoCheckBox = new QCheckBox(additionalOptionsGroupBox);
-        localEchoCheckBox->setObjectName(QStringLiteral("localEchoCheckBox"));
+        localEchoCheckBox->setObjectName("localEchoCheckBox");
         localEchoCheckBox->setChecked(true);
 
         verticalLayout->addWidget(localEchoCheckBox);
@@ -205,23 +197,23 @@ public:
 
     void retranslateUi(QDialog *ConsoleSettings)
     {
-        ConsoleSettings->setWindowTitle(QApplication::translate("ConsoleSettings", "Settings", 0));
-        parametersBox->setTitle(QApplication::translate("ConsoleSettings", "Select Parameters", 0));
-        baudRateLabel->setText(QApplication::translate("ConsoleSettings", "BaudRate:", 0));
-        dataBitsLabel->setText(QApplication::translate("ConsoleSettings", "Data bits:", 0));
-        parityLabel->setText(QApplication::translate("ConsoleSettings", "Parity:", 0));
-        stopBitsLabel->setText(QApplication::translate("ConsoleSettings", "Stop bits:", 0));
-        flowControlLabel->setText(QApplication::translate("ConsoleSettings", "Flow control:", 0));
-        selectBox->setTitle(QApplication::translate("ConsoleSettings", "Select Serial Port", 0));
-        descriptionLabel->setText(QApplication::translate("ConsoleSettings", "Description:", 0));
-        manufacturerLabel->setText(QApplication::translate("ConsoleSettings", "Manufacturer:", 0));
-        serialNumberLabel->setText(QApplication::translate("ConsoleSettings", "Serial number:", 0));
-        locationLabel->setText(QApplication::translate("ConsoleSettings", "Location:", 0));
-        vidLabel->setText(QApplication::translate("ConsoleSettings", "Vendor ID:", 0));
-        pidLabel->setText(QApplication::translate("ConsoleSettings", "Product ID:", 0));
-        applyButton->setText(QApplication::translate("ConsoleSettings", "Apply", 0));
-        additionalOptionsGroupBox->setTitle(QApplication::translate("ConsoleSettings", "Additional options", 0));
-        localEchoCheckBox->setText(QApplication::translate("ConsoleSettings", "Local echo", 0));
+        ConsoleSettings->setWindowTitle(QCoreApplication::translate("ConsoleSettings", "Settings", nullptr));
+        parametersBox->setTitle(QCoreApplication::translate("ConsoleSettings", "Select Parameters", nullptr));
+        baudRateLabel->setText(QCoreApplication::translate("ConsoleSettings", "BaudRate:", nullptr));
+        dataBitsLabel->setText(QCoreApplication::translate("ConsoleSettings", "Data bits:", nullptr));
+        parityLabel->setText(QCoreApplication::translate("ConsoleSettings", "Parity:", nullptr));
+        stopBitsLabel->setText(QCoreApplication::translate("ConsoleSettings", "Stop bits:", nullptr));
+        flowControlLabel->setText(QCoreApplication::translate("ConsoleSettings", "Flow control:", nullptr));
+        selectBox->setTitle(QCoreApplication::translate("ConsoleSettings", "Select Serial Port", nullptr));
+        descriptionLabel->setText(QCoreApplication::translate("ConsoleSettings", "Description:", nullptr));
+        manufacturerLabel->setText(QCoreApplication::translate("ConsoleSettings", "Manufacturer:", nullptr));
+        serialNumberLabel->setText(QCoreApplication::translate("ConsoleSettings", "Serial number:", nullptr));
+        locationLabel->setText(QCoreApplication::translate("ConsoleSettings", "Location:", nullptr));
+        vidLabel->setText(QCoreApplication::translate("ConsoleSettings", "Vendor ID:", nullptr));
+        pidLabel->setText(QCoreApplication::translate("ConsoleSettings", "Product ID:", nullptr));
+        applyButton->setText(QCoreApplication::translate("ConsoleSettings", "Apply", nullptr));
+        additionalOptionsGroupBox->setTitle(QCoreApplication::translate("ConsoleSettings", "Additional options", nullptr));
+        localEchoCheckBox->setText(QCoreApplication::translate("ConsoleSettings", "Local echo", nullptr));
     } // retranslateUi
 
 };

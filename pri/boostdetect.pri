@@ -32,7 +32,7 @@ defined(boost_root, var) {
     message("Using fritzing boost detect script.")
 
     # boost_1_54_0 is buggy
-	BOOSTS = 81
+	BOOSTS = 83
     for(boost, BOOSTS) {
         exists(../../boost_1_$${boost}_0) {
             LATESTBOOST = $$boost

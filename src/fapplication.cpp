@@ -100,7 +100,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define PLATFORM_NAME "windows"
 #endif
 #endif
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 #define PLATFORM_NAME "mac-os-x-105"
 #endif
 
@@ -610,7 +610,7 @@ int FApplication::init() {
 		CursorMaster::initCursors();
 	}
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	m_buildType = " Cocoa";
 #else
 	m_buildType = QString(PLATFORM_NAME).contains("64") ? "64" : "32";
@@ -1510,7 +1510,7 @@ void FApplication::initSplash(FSplashScreen & splash) {
 	               .arg(m_buildType);
 	splash.showMessage(msg2, "versionText", Qt::AlignRight | Qt::AlignTop);
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	// remove the splash screen flag on OS-X as workaround for the reported bug
 	// https://bugreports.qt.io/browse/QTBUG-49576
 	splash.setWindowFlags(splash.windowFlags() & (~Qt::SplashScreen));

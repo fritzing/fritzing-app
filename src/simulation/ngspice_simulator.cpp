@@ -70,7 +70,7 @@ void NgSpiceSimulator::init() {
 	if( !m_library.isLoaded() ) {         // fallback custom paths
 	#ifdef Q_OS_LINUX
 		const QString libName = "libngspice.so";
-	#elif defined Q_OS_MAC
+	#elif defined Q_OS_MACOS
 		const QString libName = "libngspice.0.dylib";
 	#elif defined Q_OS_WIN
 		const QString libName = "ngspice.dll";

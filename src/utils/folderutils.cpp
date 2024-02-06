@@ -197,7 +197,7 @@ const QString FolderUtils::getLibraryPath()
 
 const QString FolderUtils::libraryPath()
 {
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	// mac plugins are always in the bundle
 	return QDir::cleanPath(QCoreApplication::applicationDirPath() + "/../lib");
 #endif
@@ -221,7 +221,7 @@ const QString FolderUtils::applicationDirPath() {
 	QDir dir(QCoreApplication::applicationDirPath());
 	if (dir.cdUp()) {
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 		candidates.append(dir.absolutePath() + "/Resources");
 #endif
 		candidates.append(dir.absolutePath());
@@ -713,7 +713,7 @@ void FolderUtils::showInFolder(const QString & path)
 	QString param = QLatin1String("/e,/select,");
 	param += QDir::toNativeSeparators(path);
 	QProcess::startDetached(explorer, QStringList(param));
-#elif defined(Q_OS_MAC)
+#elif defined(Q_OS_MACOS)
 	QStringList scriptArgs;
 	scriptArgs << QLatin1String("-e")
 	           << QString::fromLatin1("tell application \"Finder\" to reveal POSIX file \"%1\"")

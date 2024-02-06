@@ -323,7 +323,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 
 	setAttribute(Qt::WA_DeleteOnClose, true);
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	//setAttribute(Qt::WA_QuitOnClose, false);					// restoring this temporarily (2008.12.19)
 #endif
 	m_dontClose = m_closing = false;
@@ -1368,7 +1368,7 @@ bool MainWindow::eventFilter(QObject *object, QEvent *event) {
 		ProcessEventBlocker::processEvents();
 	}
 
-#if defined(Q_OS_MAC)
+#if defined(Q_OS_MACOS)
 
 	// Need to process Backspace on Mac to workaround bug in Qt5
 	// See http://qt-project.org/forums/viewthread/36174
@@ -3093,7 +3093,7 @@ void MainWindow::initStyleSheet()
 		platformDependantStylePath = QString(":/resources/styles/linux-%1.qss").arg(suffix);
 #endif
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 		platformDependantStylePath = QString(":/resources/styles/mac-%1.qss").arg(suffix);
 #endif
 

@@ -908,7 +908,7 @@ void MainWindow::createEditMenuActions() {
 	m_deleteAct = new QAction(tr("&Delete"), this);
 	m_deleteAct->setStatusTip(tr("Delete selection"));
 	connect(m_deleteAct, SIGNAL(triggered()), this, SLOT(doDelete()));
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	m_deleteAct->setShortcut(Qt::Key_Backspace);
 #else
 	m_deleteAct->setShortcut(QKeySequence::Delete);
@@ -917,7 +917,7 @@ void MainWindow::createEditMenuActions() {
 	m_deleteMinusAct = new QAction(tr("Delete Minus"), this);
 	m_deleteMinusAct->setStatusTip(tr("Delete selection without attached wires"));
 	connect(m_deleteMinusAct, SIGNAL(triggered()), this, SLOT(doDeleteMinus()));
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	m_deleteMinusAct->setShortcut(Qt::Key_Backspace | Qt::AltModifier);
 #endif
 
@@ -1482,7 +1482,7 @@ void MainWindow::createEditMenu()
 	m_editMenu->addSeparator();
 	m_editMenu->addAction(m_addNoteAct);
 	m_editMenu->addSeparator();
-#ifndef Q_OS_MAC
+#ifndef Q_OS_MACOS
 	m_editMenu->addAction(m_preferencesAct);
 #endif
 	updateEditMenu();
@@ -1657,7 +1657,7 @@ void MainWindow::createHelpMenu()
 #ifndef QT_NO_DEBUG
 	m_helpMenu->addAction(m_aboutQtAct);
 #endif
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	m_helpMenu->addAction(m_preferencesAct);
 #endif
 }

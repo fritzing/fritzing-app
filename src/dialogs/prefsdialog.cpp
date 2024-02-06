@@ -551,7 +551,7 @@ void PrefsDialog::changeWheelBehavior() {
 
 void PrefsDialog::updateWheelText() {
 	QString text;
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	QString cKey = tr("Command");
 #else
 	QString cKey = tr("Control");

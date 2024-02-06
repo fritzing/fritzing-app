@@ -112,9 +112,7 @@ QString Ruler::makeSvg(double inches) {
 
 	// get units
 	int units = m_modelPart->localProp("width").toString().contains("cm") ? IndexCm : IndexIn;
-
 	QString svg = TextUtils::makeSVGHeader(GraphicsUtils::SVGDPI, GraphicsUtils::StandardFritzingDPI, (inches + offset + offset) * GraphicsUtils::SVGDPI, GraphicsUtils::SVGDPI/2);
-	int counter;
 
 	if (units == IndexCm) {
 		svg += "<g font-family='Droid Sans' text-anchor='middle' font-size='100' stroke-width='1' style='stroke: rgb(100,100,100)'>";
@@ -184,9 +182,7 @@ QString Ruler::makeSvg(double inches) {
 			double x = (offset + (i / 16.0)) * GraphicsUtils::StandardFritzingDPI;
 			if (i % 16 == 0) {
 
-				// I wonder if QT compiler would see that this is just a constant, and not perform the runtime math?
-				// If not calculating out the value could save some cycles:)
-				h = 0.196875;//.125 + (1.15 / 16);
+				h = .125 + (1.15 / 16);
 
 				double y = (GraphicsUtils::StandardFritzingDPI/4)+35;//(h + .101) * GraphicsUtils::StandardFritzingDPI;
 				svg += QString("<text x='%1' y='%2'>%3</text>")
@@ -198,10 +194,10 @@ QString Ruler::makeSvg(double inches) {
 				}
 			}
 			else if (i % 8 == 0) {
-				h = 0.17812;//.125 +  (.85 / 16);
+				h = .125 +  (.85 / 16);
 			}
 			else if (i % 4 == 0) {
-				h = 0.14062;//.125 +  (.25 / 16);
+				h = .125 +  (.25 / 16);
 			}
 
 			svg += QString("<line x1='%1' y1='0' x2='%1' y2='%2' />\n")

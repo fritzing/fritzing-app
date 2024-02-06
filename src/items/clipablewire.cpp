@@ -50,7 +50,7 @@ static double connectorRectClipInset = 0.5;
 int CrossingsTest( double pgon[][2], int numverts, double point[2] )
 {
 #ifdef	WINDING
-	register int	crossings ;
+	int	crossings ;
 #endif
 	int	j, yflag0, yflag1, inside_flag, xflag0 ;
 	double ty, tx, *vtx0, *vtx1 ;

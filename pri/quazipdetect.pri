@@ -10,6 +10,12 @@ QUAZIP_LIB_PATH=$$QUAZIP_PATH/lib
 SOURCES += \
 	src/zlibdummy.c \
 
+packagesExist(quazip1-qt$$QT_MAJOR_VERSION) {
+    PKGCONFIG += quazip1-qt$$QT_MAJOR_VERSION
+    message("found quazip using pkg-config")
+    return()
+}
+
 exists($$QUAZIP_PATH) {
 		message("found quazip in $${QUAZIP_PATH}")
 	} else {

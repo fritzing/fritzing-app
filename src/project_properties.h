@@ -26,7 +26,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QXmlStreamWriter>
 #include <QDomElement>
 
-const QString ProjectPropertyKeySimulatorFrequencyHz = "simulator_frequency_hz";
+const QString ProjectPropertyKeySimulatorTimeStepS = "simulator_time_step_s";
+const QString ProjectPropertyKeySimulatorNumberOfSteps = "simulator_number_of_steps";
+const QString ProjectPropertyKeySimulatorTimeStepMode = "simulator_time_step_mode";
+const QString ProjectPropertyKeySimulatorAnimationTimeS = "simulator_animation_time_s";
 
 class ProjectProperties {
 public:

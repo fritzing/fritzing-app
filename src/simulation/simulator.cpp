@@ -34,6 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QRegularExpression>
 #include <QMessageBox>
 #include <QTimer>
+#include <iostream>
 
 #include "../mainwindow/mainwindow.h"
 #include "../items/note.h"
@@ -69,7 +70,6 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 
     // Configure the timer to show the simulation results
     m_showResultsTimer = new QTimer(this);
-    m_showResultsTimer->setInterval(50);
     connect(m_showResultsTimer, &QTimer::timeout, this, &Simulator::showSimulationResults);
 
 	QSettings settings;
@@ -217,8 +217,27 @@ void Simulator::simulate() {
             }
 		}
 	}
+
+    //Read the project properties
+    QString timeStepModeStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorTimeStepMode);
+    QString numStepsStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorNumberOfSteps);
+    QString timeStepStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorTimeStepS);
+    QString animationTimeStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorAnimationTimeS);
+
+    std::cout << "" << timeStepModeStr.toStdString() << " " << numStepsStr.toStdString() << " " << timeStepStr.toStdString()
+              << " " << animationTimeStr.toStdString() << std::endl;
     if (m_simEndTime > 0) {
-        m_simStepTime = (m_simEndTime-m_simStartTime)/Simulator::SimSteps;
+        if (timeStepModeStr.contains("true", Qt::CaseInsensitive)) {
+            m_simStepTime = TextUtils::convertFromPowerPrefixU(timeStepStr, "s");
+            m_simNumberOfSteps = (m_simEndTime-m_simStartTime)/m_simStepTime;
+        } else {
+            m_simNumberOfSteps = TextUtils::convertFromPowerPrefixU(numStepsStr, "");
+            m_simStepTime = (m_simEndTime-m_simStartTime)/m_simNumberOfSteps;
+        }
+
+        int timerInterval = TextUtils::convertFromPowerPrefixU(animationTimeStr, "")/m_simNumberOfSteps*1000;
+        m_showResultsTimer->setInterval(timerInterval);
+
         //We have found at least one oscilloscope
         QString tranAnalysis = QString(".TRAN %1 %2 %3").arg(m_simStepTime).arg(m_simEndTime).arg(m_simStartTime);
         spiceNetlist.replace(".OP", tranAnalysis);
@@ -360,7 +379,7 @@ void Simulator::simulate() {
 }
 
 void Simulator::showSimulationResults() {
-    if (currSimStep < Simulator::SimSteps) {
+    if (currSimStep < m_simNumberOfSteps) {
         removeSimItems();
         updateParts(itemBases, currSimStep);
         currSimStep++;

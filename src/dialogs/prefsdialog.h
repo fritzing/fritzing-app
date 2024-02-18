@@ -88,7 +88,10 @@ protected Q_SLOTS:
 	void changeAutosavePeriod(int);
 	void curvyChanged();
 	void chooseProgrammer();
-	void setSimulationFrequency(const QString &frequency);
+    void setSimulationTimeStepMode(const bool &timeStepMode);
+    void setSimulationNumberOfSteps(const QString &numberOfSteps);
+    void setSimulationTimeStep(const QString &timeStep);
+    void setSimulationAnimationTime(const QString &animationTime);
 
 protected:
 	QPointer<QTabWidget> m_tabWidget;

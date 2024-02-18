@@ -506,25 +506,78 @@ QWidget *PrefsDialog::createProjectPropertiesForm() {
 	layout->addWidget(label);
 	layout->addSpacing(10);
 
-	QLabel *simFrequencyLabel = new QLabel(tr("Simulation Frequency (Hz):"));
-	layout->addWidget(simFrequencyLabel);
+    bool timeStepMode = m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorTimeStepMode).toLower().contains("true");
+    QLabel *simTimeStepModeLabel = new QLabel(tr("Select the way to define the time step: (1) "
+                                                 "Number of points (max simulation time divided by the number of points) "
+                                                 "or (2) fixed time step."));
+    simTimeStepModeLabel->setWordWrap(true);
+    layout->addWidget(simTimeStepModeLabel);
+    QHBoxLayout * simStepslayout = new QHBoxLayout();
+    QRadioButton *simPointsRB = new QRadioButton("Number of Points (recommended)");
+    simPointsRB->setChecked(!timeStepMode);
+    simStepslayout->addWidget(simPointsRB);
+    simStepslayout->addSpacing(1);
+    QLabel * numPointslabel = new QLabel(tr("Number of points: "));
+    simStepslayout->addWidget(numPointslabel);
+    QLineEdit *simNumStepsEdit = new QLineEdit();
+    simNumStepsEdit->setToolTip("The time step is calculated as the simulation time divided by the numper of steps\n"
+                                 "Low number of steps could cause inestabilities in the simulation and render artifacts in the oscilloscope.");
+    simStepslayout->addWidget(simNumStepsEdit);
+    simNumStepsEdit->setText(m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorNumberOfSteps));
 
-	QLineEdit *simFrequencyEdit = new QLineEdit();
+    layout->addLayout(simStepslayout);
 
-	simFrequencyEdit->setText(m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorFrequencyHz));
-	simFrequencyEdit->setFixedWidth(FORMLABELWIDTH * 2);
-	layout->addWidget(simFrequencyEdit);
+    QHBoxLayout * simTimeSteplayout = new QHBoxLayout();
+    QRadioButton *simTimeStepRB = new QRadioButton("Fixed Time Step");
+    simTimeStepRB->setChecked(timeStepMode);
+    simTimeSteplayout->addWidget(simTimeStepRB);
+    simTimeSteplayout->addSpacing(10);
+    QLabel *simTimeStepLabel = new QLabel(tr("Time Step (s):"));
+    simTimeSteplayout->addWidget(simTimeStepLabel);
+    QLineEdit *simTimeStepEdit = new QLineEdit();
 
-	projectPropertiesBox->setLayout(layout);
+    simTimeStepEdit->setText(m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorTimeStepS));
+    simTimeStepEdit->setToolTip("The time step to be used in transitory simulations.\n"
+                                "Small time steps and long simulations could cause prformance issues.");
+    simTimeSteplayout->addWidget(simTimeStepEdit);
 
-	connect(simFrequencyEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationFrequency(QString)));
+    layout->addLayout(simTimeSteplayout);
+
+    QLabel * simAnimationTimelabel = new QLabel(tr("Animation time for the transitory simulation (s): "));
+    layout->addWidget(simAnimationTimelabel);
+    QLineEdit *simAnimationTimeEdit = new QLineEdit();
+    simAnimationTimeEdit->setText(m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorAnimationTimeS));
+    simAnimationTimeEdit->setFixedWidth(FORMLABELWIDTH * 2);
+    simAnimationTimeEdit->setToolTip("This is the time used to animate the effects of a transitory simulation.\n"
+                                     "Set it to 0 if you do not want an animation.");
+    layout->addWidget(simAnimationTimeEdit);
+
+    projectPropertiesBox->setLayout(layout);
+
+    connect(simTimeStepRB, SIGNAL(toggled(bool)), this, SLOT(setSimulationTimeStepMode(bool)));
+    connect(simNumStepsEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationNumberOfSteps(QString)));
+    connect(simTimeStepEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationTimeStep(QString)));
+    connect(simAnimationTimeEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationAnimationTime(QString)));
 
 	return projectPropertiesBox;
 
 }
 
-void PrefsDialog::setSimulationFrequency(const QString &frequency) {
-	m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorFrequencyHz, frequency);
+void PrefsDialog::setSimulationTimeStepMode(const bool &timeStepMode) {
+    QString mode = timeStepMode ? "true" : "false";
+    m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorTimeStepMode, mode);
+}
+
+void PrefsDialog::setSimulationNumberOfSteps(const QString &numberOfSteps) {
+    m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorNumberOfSteps, numberOfSteps);
+}
+
+void PrefsDialog::setSimulationTimeStep(const QString &timeStep) {
+    m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorTimeStepS, timeStep);
+}
+
+void PrefsDialog::setSimulationAnimationTime(const QString &animationTime) {
+    m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorAnimationTimeS, animationTime);
 }
 
 void PrefsDialog::clear() {

@@ -92,7 +92,7 @@ protected:
 	std::shared_ptr<NgSpiceSimulator> m_simulator;
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;
 	QPointer<class SchematicSketchWidget> m_schematicGraphicsView;
-    double m_simStartTime, m_simStepTime, m_simEndTime;
+    double m_simStartTime, m_simStepTime, m_simEndTime, m_simNumberOfSteps;
 
 	bool m_enabled = false;
 
@@ -105,7 +105,6 @@ protected:
     int currSimStep;
 	static constexpr int SimDelay = 200;
 	static constexpr double HarmfulNegativeVoltage = -0.5;
-    static constexpr double SimSteps = 400;
 
 };
 

@@ -1465,6 +1465,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 			}
 		}
 	}
+
 	// If we found no negative power supply terminals that are connected to something else, we will also check for those that are not connected.
 	if (!ground){
 		DebugDialog::debug("Netlist exporter: Trying to identify unconnected negative power supply terminals as ground");
@@ -1571,7 +1572,8 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 		output = output2;
 	}
 
-	output += ".options savecurrents\n";
+	output += ".option savecurrents\n";
+	output += ".option interp\n";
 	output += ".OP\n";
 	output += "*.TRAN 1ms 100ms\n";
 	output += "* .AC DEC 100 100 1MEG\n";

@@ -261,6 +261,7 @@ public:
 	double retrieveZoom();
 	void initGrid();
 	virtual double defaultGridSizeInches();
+    void setSimulatorMessage(QString);
 	void clearPasteOffset();
 	virtual ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
 	void collectAllNets(
@@ -433,6 +434,7 @@ protected:
 	virtual const QString & hoverEnterPartConnectorMessage(QGraphicsSceneHoverEvent * event, ConnectorItem * item);
 	void partLabelChangedAux(ItemBase * pitem,const QString & oldText, const QString &newText);
 	void drawBackground( QPainter * painter, const QRectF & rect );
+    void drawForeground( QPainter * painter, const QRectF & rect );
 	void handleConnect(QDomElement & connect, ModelPart *, const QString & fromConnectorID, ViewLayer::ViewLayerID, QStringList & alreadyConnected,
 	                   QHash<long, ItemBase *> & newItems, QUndoCommand * parentCommand, bool seekOutsideConnections);
 	void setUpSwapReconnect(SwapThing &, ItemBase * itemBase, long newID, bool master);
@@ -755,6 +757,7 @@ protected:
 	bool m_everZoomed = false;
 	double m_ratsnestOpacity = 0.0;
 	double m_ratsnestWidth = 0.0;
+    QString m_simMessage = "";
 
 public:
 	static ViewLayer::ViewLayerID defaultConnectorLayer(ViewLayer::ViewID viewId);

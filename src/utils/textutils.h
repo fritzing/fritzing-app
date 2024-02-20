@@ -140,6 +140,8 @@ public:
 	static const QString SMDFlipSuffix;
 	static const QString MicroSymbol;
 	static const ushort MicroSymbolCode;
+	static const QString AltMicroSymbol;
+	static const ushort AltMicroSymbolCode;
 	static const QString PowerPrefixesString;
 	static const QString CreatedWithFritzingString;
 	static const QString CreatedWithFritzingXmlComment;

@@ -7657,9 +7657,37 @@ void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
 			painter->restore();
 		}
 	}
+}
 
+void SketchWidget::drawForeground ( QPainter * painter, const QRectF & rect ) {
+    if(!m_simMessage.isEmpty()) {
+        //Set the font size based on the zoom
+        QFont font = painter->font();
+        qreal baseFontSize = 18; // Base font size at zoom level 1
+        font.setPointSizeF(baseFontSize);
+        painter->setFont(font);
 
+        int margin = 0; // Margin from the top and right edges
+        QFontMetrics metrics = painter->fontMetrics();
+        int textWidth = metrics.horizontalAdvance(m_simMessage);
 
+        // 2. Get the View's Top-Right Corner in View Coordinates
+        QPointF viewTopRight = this->viewport()->rect().topRight();
+        QPointF viewTexPos = viewTopRight - QPointF(textWidth, -1*metrics.ascent()); // Adjust for the width of the text item
+
+        //save current transformations, remove them temporaly, draw the text in the view and restore the transformations
+        painter->save();
+        painter->resetTransform();
+        painter->drawText(viewTexPos.x(), viewTexPos.y(), m_simMessage);
+        painter->restore();
+    }
+}
+
+void SketchWidget::setSimulatorMessage(QString message) {
+    m_simMessage = message;
+    if (isVisible()) {
+        update();
+    }
 }
 
 /*

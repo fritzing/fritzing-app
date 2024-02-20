@@ -34,9 +34,9 @@ QString GetSpice::getSpice(ItemBase * itemBase, const QList< QList<class Connect
 		pos = spice.indexOf(curlies, pos, &match);
 		if (pos < 0) break;
 
-		QString token = match.captured(1).toLower();
+        QString token = match.captured(1);
 		QString replacement;
-		if (token == "instancetitle") {
+        if (token.toLower() == "instancetitle") {
 			replacement = itemBase->instanceTitle();
 			if (pos > 0 && replacement.at(0).toLower() == spice.at(pos - 1).toLower()) {
 				// if the type letter is repeated
@@ -44,7 +44,7 @@ QString GetSpice::getSpice(ItemBase * itemBase, const QList< QList<class Connect
 			}
 			replacement.replace(" ", "_");
 		}
-		else if (token.startsWith("net ")) {
+        else if (token.toLower().startsWith("net ")) {
 			QString cname = token.mid(4).trimmed();
 			Q_FOREACH (ConnectorItem * ci, itemBase->cachedConnectorItems()) {
 				if (ci->connectorSharedID().toLower() == cname) {
@@ -79,7 +79,7 @@ QString GetSpice::getSpice(ItemBase * itemBase, const QList< QList<class Connect
 				QList<QString> knownTokens;
 				knownTokens << "inductance" << "resistance" << "current" << "tolerance" << "power" << "capacitance" << "voltage";
 				if(replacement.isEmpty()) {
-					if (prop.contains(token) || knownTokens.contains(token)) {
+                    if (prop.contains(token) || knownTokens.contains(token.toLower())) {
 						// Property exists but is empty. Or it is one of a few known tokens. Just assume zero.
 						replacement = "0";
 					} else {
@@ -100,6 +100,7 @@ QString GetSpice::getSpice(ItemBase * itemBase, const QList< QList<class Connect
 			//Ngspice does not differenciate from m and M prefixes, u shuld be used for micro
 			replacement.replace("M", "Meg");
 			replacement.replace(TextUtils::MicroSymbol, "u");
+			replacement.replace(TextUtils::AltMicroSymbol, "u");
 			replacement.replace("μ", "u");
 			replacement.replace("Ω", "");
 		}

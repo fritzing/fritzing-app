@@ -77,6 +77,7 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 	enable(true);
 	m_simulating = false;
 
+
 }
 
 Simulator::~Simulator() {
@@ -149,7 +150,9 @@ void Simulator::stopSimulation() {
     m_showResultsTimer->stop();
     m_simulating = false;
 	removeSimItems();
-	emit simulationStartedOrStopped(m_simulating);
+    emit simulationStartedOrStopped(m_simulating);
+    m_breadboardGraphicsView->setSimulatorMessage("");
+    m_schematicGraphicsView->setSimulatorMessage("");
 }
 
 /**
@@ -370,19 +373,35 @@ void Simulator::simulate() {
     netList.clear();
 
 
-	//The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
-    currSimStep = 1;
-    m_showResultsTimer->start();
+
+    //The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
     removeSimItems();
     updateParts(itemBases, 0);
+
+    //If this a transitory simulation, set the timer for the animation
+    if (m_simEndTime > 0) {
+        m_currSimStep = 1;
+        m_showResultsTimer->start();
+    }
 
 }
 
 void Simulator::showSimulationResults() {
-    if (currSimStep < m_simNumberOfSteps) {
+    if (m_currSimStep < m_simNumberOfSteps) {
         removeSimItems();
-        updateParts(itemBases, currSimStep);
-        currSimStep++;
+        updateParts(itemBases, m_currSimStep);
+
+        double simTime = m_simStartTime + m_currSimStep * m_simStepTime;
+
+        QString simMessage = QString::number(simTime, 'f', 3) + " s";
+
+        m_breadboardGraphicsView->setSimulatorMessage(simMessage);
+        m_schematicGraphicsView->setSimulatorMessage(simMessage);
+
+
+
+
+        m_currSimStep++;
     } else {
         m_showResultsTimer->stop();
     }

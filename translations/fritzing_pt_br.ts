@@ -9441,7 +9441,7 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>rotação</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="106"/>
@@ -9516,7 +9516,7 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="133"/>
         <source>connections</source>
-        <translation type="unfinished"></translation>
+        <translations>conexões</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="134"/>
@@ -9581,7 +9581,7 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="76"/>
         <source>examples</source>
-        <translation type="unfinished"></translation>
+        <translation>exemplos</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="77"/>
@@ -10092,7 +10092,7 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="1066"/>
         <source>Tip of the Day:</source>
-        <translation>Dicas do Dia</translation>
+        <translation>Dicas do Dia:</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="1093"/>

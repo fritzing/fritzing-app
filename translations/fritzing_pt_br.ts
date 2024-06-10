@@ -90,7 +90,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>The following libraries are used by Fritzing:</source>
-        <translation type="unfinished"></translation>
+        <translation>As seguintes bibliotecas são usadas pelo Fritzing:</translation>
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
@@ -782,7 +782,7 @@ Um svg de placa personalizada tipicamente tem uma ou mais camadas de impressão 
     <message>
         <location filename="../src/items/resizableboard.cpp" line="435"/>
         <source>&lt;b&gt;The custom shape has been loaded, and you will see the new board shortly.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;O formato personalizado foi carregado e você verá o novo quadro em breve&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="436"/>
@@ -807,7 +807,7 @@ Um svg de placa personalizada tipicamente tem uma ou mais camadas de impressão 
     <message>
         <location filename="../src/items/resizableboard.cpp" line="442"/>
         <source>&lt;b&gt;The custom shape has no cutouts.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;O formato personalizado não possuí recortes.&lt;/b&gt;</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/items/resizableboard.cpp" line="445"/>
@@ -898,27 +898,27 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.ui" line="14"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurações</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="20"/>
         <source>Select Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar Parâmetros</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="26"/>
         <source>BaudRate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taxa de Transmissão:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="36"/>
         <source>Data bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bits de dados:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="46"/>
         <source>Parity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Paridade:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="56"/>
@@ -933,12 +933,12 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.ui" line="79"/>
         <source>Select Serial Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar Porta Serial</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="88"/>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrição:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="95"/>
@@ -953,7 +953,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.ui" line="109"/>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Localização:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="116"/>
@@ -968,7 +968,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.ui" line="148"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplicar</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="157"/>
@@ -983,7 +983,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="89"/>
         <source>Description: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrição: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="90"/>
@@ -1126,7 +1126,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="153"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="155"/>
@@ -4657,7 +4657,7 @@ Do you want to update now?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1198"/>
         <source>&amp;Show Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mostrar boas-vindas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1200"/>
@@ -7007,7 +7007,7 @@ shift troca eixo de scroll</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="469"/>
         <source>Simulator</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulador</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="479"/>
@@ -10017,17 +10017,17 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="468"/>
         <source>Recent Sketches</source>
-        <translation type="unfinished"></translation>
+        <translation>Esboços Recentes</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="504"/>
         <source>New Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo Esboço</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="512"/>
         <source>Open Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir Esboço</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="557"/>
@@ -10037,17 +10037,17 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="562"/>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab é um serviço fácil e acessível para produzir PCBs profissionais a partir de seus esboços Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="564"/>
         <source>produce your first pcb now &gt;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">produza sua primeira PCB agora &gt;&gt;</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="565"/>
         <source>Order your PCB now.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Peça Sua PCB agora.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="641"/>
@@ -10057,7 +10057,7 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="660"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Projetos</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="660"/>
@@ -10067,12 +10067,12 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="663"/>
         <source>Fritzing News.</source>
-        <translation type="unfinished"></translation>
+        <translation>Notícias do Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="668"/>
         <source>Fritzing Projects.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projetos Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="735"/>
@@ -10082,7 +10082,7 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="812"/>
         <source>No recent sketches found</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi encontrado esboços recentes.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="853"/>
@@ -10092,17 +10092,17 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="1066"/>
         <source>Tip of the Day:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dicas do Dia</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="1093"/>
         <source>All Tips</source>
-        <translation type="unfinished"></translation>
+        <translation>Todas Dicas</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="1101"/>
         <source>Next Tip</source>
-        <translation type="unfinished"></translation>
+        <translation>Próxima Dica</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="561"/>

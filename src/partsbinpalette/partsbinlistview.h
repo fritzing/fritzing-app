@@ -76,7 +76,7 @@ protected:
 	void showInfo(QListWidgetItem * item);
 
 	bool dropMimeData(int index, const QMimeData *data, Qt::DropAction action);
-	QMimeData * mimeData(const QList<QListWidgetItem *> items) const;
+	virtual QMimeData * mimeData(const QList<QListWidgetItem *> & items) const;
 	QStringList mimeTypes() const;
 	void loadImage(ModelPart *, QListWidgetItem * lwi, const QString & moduleID);
 

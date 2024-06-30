@@ -21,6 +21,10 @@
 HEADERS += \
     src/referencemodel/sqlitereferencemodel.h \
     src/referencemodel/referencemodel.h \
+    src/referencemodel/serviceiconfetcher.h \
+
 
 SOURCES += \
     src/referencemodel/sqlitereferencemodel.cpp \
+    src/referencemodel/serviceiconfetcher.cpp \
+

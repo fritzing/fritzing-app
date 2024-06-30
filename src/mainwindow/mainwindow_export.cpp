@@ -31,26 +31,28 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QApplication>
 
 #include "mainwindow.h"
-#include "../debugdialog.h"
-#include "../waitpushundostack.h"
-#include "../items/partfactory.h"
-#include "../eagle/fritzing2eagle.h"
-#include "../sketch/schematicsketchwidget.h"
-#include "../sketch/pcbsketchwidget.h"
-#include "../infoview/htmlinfoview.h"
-#include "../utils/fileprogressdialog.h"
-#include "../svg/svgfilesplitter.h"
-#include "../version/version.h"
-#include "../dialogs/exportparametersdialog.h"
-#include "../utils/folderutils.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
-#include "../connectors/ercdata.h"
-#include "../program/programwindow.h"
-#include "../svg/gerbergenerator.h"
-#include "../processeventblocker.h"
-#include "../items/propertydef.h"
-#include "src/ipc/ipc_d_356.h"
+#include "debugdialog.h"
+#include "waitpushundostack.h"
+#include "processeventblocker.h"
+
+#include "connectors/ercdata.h"
+#include "dialogs/exportparametersdialog.h"
+#include "eagle/fritzing2eagle.h"
+#include "items/partfactory.h"
+#include "infoview/htmlinfoview.h"
+#include "ipc/ipc_d_356.h"
+#include "program/programwindow.h"
+#include "sketch/schematicsketchwidget.h"
+#include "sketch/pcbsketchwidget.h"
+#include "svg/svgfilesplitter.h"
+#include "svg/gerbergenerator.h"
+#include "utils/fileprogressdialog.h"
+#include "utils/folderutils.h"
+#include "utils/graphicsutils.h"
+#include "utils/textutils.h"
+#include "utils/fmessagebox.h"
+#include "version/version.h"
+
 
 static QString eagleActionType = ".eagle";
 static QString gerberActionType = ".gerber";
@@ -768,15 +770,26 @@ void MainWindow::afterExport(bool removeBackground)
 
 
 bool MainWindow::saveAsAux(const QString & fileName) {
-	QFile file(fileName);
-	if (!file.open(QFile::WriteOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Fritzing"),
-		                     tr("Cannot write file %1:\n%2.")
-							 .arg(fileName, file.errorString()));
-		return false;
-	}
+	QFileInfo fileInfo(fileName);
 
-	file.close();
+	if (fileInfo.exists()) {
+		if (!fileInfo.isWritable()) {
+			FMessageBox::warning(this, tr("Fritzing"),
+					     tr("Cannot write file %1:\n%2.")
+									 .arg(fileName, tr("File is not writable")));
+			return false;
+		}
+	} else {
+		// If the file does not exist, check if we can create it
+		QFile file(fileName);
+		if (!file.open(QFile::WriteOnly | QFile::Text)) {
+			FMessageBox::warning(this, tr("Fritzing"),
+					     tr("Cannot write file %1:\n%2.")
+					     .arg(fileName, file.errorString()));
+			return false;
+		}
+		file.close();
+	}
 
 	setReadOnly(false);
 	//FritzingWindow::saveAsAux(fileName);
@@ -1144,7 +1157,7 @@ void MainWindow::exportSvg(double res, bool selectedItems, bool flatten, const Q
 	renderThing.selectedItems = selectedItems;
 	renderThing.hideTerminalPoints = true;
 	renderThing.renderBlocker = false;
-	QString svg = m_currentGraphicsView->renderToSVG(renderThing, nullptr, viewLayerIDs, true);
+	QString svg = m_currentGraphicsView->renderToSVGForSVGExport(renderThing, nullptr, viewLayerIDs);
 	if (svg.isEmpty()) {
 		// tell the user something reasonable
 		delete fileProgressDialog;
@@ -1430,7 +1443,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName) {
 QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class ConnectorItem *>* >& netList, QSet<class ItemBase *>& itemBases) {
 	QString output = simulationName + "\n";
 	QHash<ConnectorItem *, int> indexer;
-	this->m_schematicGraphicsView->collectAllNets(indexer, netList, true, false);
+	this->m_schematicGraphicsView->collectAllNets(indexer, netList, true, false, true);
 
 
 	//DebugDialog::debug("_______________");
@@ -1465,6 +1478,7 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 			}
 		}
 	}
+
 	// If we found no negative power supply terminals that are connected to something else, we will also check for those that are not connected.
 	if (!ground){
 		DebugDialog::debug("Netlist exporter: Trying to identify unconnected negative power supply terminals as ground");
@@ -1478,6 +1492,20 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 			}
 		}
 	}
+    //If we have still not found a ground, it is because the negative power supply pin is not connected
+    //Repeat the same loop as before, but without forcing to be connected to other elements
+    if (!ground){
+        DebugDialog::debug("Netlist exporter: Trying to identify an isolated negative connection of a power supply as ground");
+        foreach (QList<ConnectorItem *> * net, netList) {
+            if (ground) break;
+            foreach (ConnectorItem * ci, *net) {
+                if (ci->connectorSharedName().compare("-", Qt::CaseInsensitive) == 0) {
+                    ground = net;
+                    break;
+                }
+            }
+        }
+    }
 
 	if (ground) {
 		DebugDialog::debug("Netlist exporter: ground found");
@@ -1571,7 +1599,8 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 		output = output2;
 	}
 
-	output += ".options savecurrents\n";
+	output += ".option savecurrents\n";
+	output += ".option interp\n";
 	output += ".OP\n";
 	output += "*.TRAN 1ms 100ms\n";
 	output += "* .AC DEC 100 100 1MEG\n";
@@ -1591,7 +1620,7 @@ QString MainWindow::exportIPC_D_356A() {
 
 	QHash<ConnectorItem *, int> indexer;
 	QList< QList<ConnectorItem *>* > netList;
-	this->m_pcbGraphicsView->collectAllNets(indexer, netList, true, m_pcbGraphicsView->boardLayers() > 1, skipFlags, skipBuses);
+	this->m_pcbGraphicsView->collectAllNets(indexer, netList, true, m_pcbGraphicsView->boardLayers() > 1, false, skipFlags, skipBuses);
 
 	QString ipc = getExportIPC_D_356A(board, basename, netList);
 	return ipc;
@@ -1630,7 +1659,7 @@ void MainWindow::exportIPC_D_356A_interactive() {
 void MainWindow::exportNetlist() {
 	QHash<ConnectorItem *, int> indexer;
 	QList< QList<ConnectorItem *>* > netList;
-	this->m_currentGraphicsView->collectAllNets(indexer, netList, true, m_currentGraphicsView->boardLayers() > 1);
+	this->m_currentGraphicsView->collectAllNets(indexer, netList, true, m_currentGraphicsView->boardLayers() > 1, false);
 
 	QDomDocument doc;
 	doc.setContent(QString("<?xml version='1.0' encoding='UTF-8'?>\n") + TextUtils::CreatedWithFritzingXmlComment);
@@ -1776,8 +1805,6 @@ void MainWindow::exportToGerber() {
 	FileProgressDialog * fileProgressDialog = exportProgress();
 
 	FolderUtils::setOpenSaveFolder(exportDir);
-	m_pcbGraphicsView->saveLayerVisibility();
-	m_pcbGraphicsView->setAllLayersVisible(true);
 
 	QFileInfo info(m_fwFilename);
 	QString prefix = info.completeBaseName();
@@ -1786,7 +1813,6 @@ void MainWindow::exportToGerber() {
 	}
 	GerberGenerator::exportToGerber(prefix, exportDir, board, m_pcbGraphicsView, true);
 
-	m_pcbGraphicsView->restoreLayerVisibility();
 	m_statusBar->showMessage(tr("Sketch exported to Gerber"), 2000);
 
 	delete fileProgressDialog;

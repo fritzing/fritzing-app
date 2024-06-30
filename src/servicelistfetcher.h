@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2022 Fritzing GmbH
+Copyright (c) 2024 Fritzing GmbH
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,26 +18,27 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
-#ifndef FPPROBESWITCHPACKAGE_H
-#define FPPROBESWITCHPACKAGE_H
-
-#include "testing/FProbe.h"
-
-#include "../utils/familypropertycombobox.h"
+#ifndef SERVICELISTFETCHER_H
+#define SERVICELISTFETCHER_H
 
 #include <QObject>
-#include <QVariant>
+#include <QNetworkAccessManager>
+#include <QString>
 
-class FProbeSwitchPackage : public FProbe {
+class ServiceListFetcher : public QObject {
+	Q_OBJECT
 public:
-		FProbeSwitchPackage(FamilyPropertyComboBox * familyPropertyComboBox);
-		~FProbeSwitchPackage() {};
+	explicit ServiceListFetcher(QObject* parent = nullptr);
+	void fetchServices();
 
-	QVariant read() { return QVariant(); };
-	void write(QVariant);
+signals:
+	void servicesFetched(const QStringList& services);
 
-protected:
-	FamilyPropertyComboBox * m_familyPropertyComboBox;
+private slots:
+	void onRequestFinished();
+
+private:
+	QNetworkAccessManager* m_manager;
 };
 
-#endif
+#endif // SERVICELISTFETCHER_H

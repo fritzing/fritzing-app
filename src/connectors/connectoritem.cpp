@@ -226,6 +226,7 @@ parts editor support
 #include "../utils/cursormaster.h"
 #include "ercdata.h"
 #include "utils/ftooltip.h"
+#include "utils/misc.h"
 
 /////////////////////////////////////////////////////////
 
@@ -315,8 +316,6 @@ ConnectorItem::ConnectorItem( Connector * connector, ItemBase * attachedTo )
     m_connector(connector),
     m_overConnectorItem(nullptr)
 {
-	// initialize m_connectorT, otherwise will trigger qWarning("QLine::unitVector: New line does not have unit length");
-	// TODO: figure out why paint is being called with m_connectorT not initialized
 	if (connector) {
 		connector->addViewItem(this);
 	}
@@ -330,17 +329,29 @@ ConnectorItem::ConnectorItem( Connector * connector, ItemBase * attachedTo )
 
 ConnectorItem::~ConnectorItem() {
 	m_equalPotentialDisplayItems.removeOne(this);
-	//DebugDialog::debug(QString("deleting connectorItem %1").arg((long) this, 0, 16));
+	// DebugDialog::debug(QString("deleting connectorItem %1").arg((long) this, 0, 16));
 	Q_FOREACH (ConnectorItem * connectorItem, m_connectedTo) {
 		if (connectorItem) {
 			//DebugDialog::debug(QString("temp remove %1 %2").arg(this->attachedToID()).arg(connectorItem->attachedToID()));
 			connectorItem->tempRemove(this, this->attachedToID() != connectorItem->attachedToID());
 		}
 	}
-	if (this->connector()) {
-		this->connector()->removeViewItem(this);
-	}
+
+	detach();
 	clearCurves();
+}
+
+void ConnectorItem::detach()
+{
+	if (!m_attachedTo) {
+		// DebugDialog::debug(QString("already detached connectorItem %1").arg((long) this, 0, 16));
+		return;
+	}
+	// DebugDialog::debug(QString("detaching connectorItem %1").arg((long) this, 0, 16));
+	if (this->connector()) {
+		connector()->removeViewItem(this);
+	}
+	m_attachedTo = nullptr;
 }
 
 void ConnectorItem::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) {
@@ -1495,8 +1506,6 @@ void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorIt
 	partsConnectors.append(connectorItem);
 }
 
-
-
 void ConnectorItem::updateTooltip() {
 	if (attachedToItemType() != ModelPart::Wire) {
 		QString name = connectorSharedName();
@@ -1514,7 +1523,12 @@ void ConnectorItem::updateTooltip() {
 		} else {
 			id = match.captured(0);
 		}
-		setToolTip(FToolTip::createNonWireItemTooltipHtml(name, descr, id, attachedToTitle()));
+        DebugDialog::debug(QString("Name: %1, Description: %2, ID: %3, Attached To: %4")
+                               .arg(name,
+                                    descr.isEmpty() ? "N/A" : descr,
+                                    id.isEmpty() ? "N/A" : id,
+                                    attachedToTitle()));
+        setToolTip(FToolTip::createNonWireItemTooltipHtml(name, descr, attachedToTitle()));
 		return;
 	}
 

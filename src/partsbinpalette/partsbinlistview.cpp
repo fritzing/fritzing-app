@@ -22,16 +22,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMenu>
 #include <QMimeData>
 
-#include "../infoview/htmlinfoview.h"
-#include "../items/itembase.h"
-#include "../fsvgrenderer.h"
-#include "../itemdrag.h"
-#include "../items/partfactory.h"
-#include "../layerattributes.h"
+#include "infoview/htmlinfoview.h"
+#include "items/itembase.h"
+#include "fsvgrenderer.h"
+#include "itemdrag.h"
+#include "items/partfactory.h"
+#include "layerattributes.h"
 #include "partsbinpalettewidget.h"
 
 #include "partsbinlistview.h"
 #include "partsbiniconview.h"
+#include "utils/misc.h"
 
 static const QColor SectionHeaderBackgroundColor(128, 128, 128);
 static const QColor SectionHeaderForegroundColor(32, 32, 32);
@@ -301,7 +302,7 @@ bool PartsBinListView::dropMimeData(int index, const QMimeData *data, Qt::DropAc
 	return true;
 }
 
-QMimeData * PartsBinListView::mimeData(const QList<QListWidgetItem *> items) const {
+QMimeData * PartsBinListView::mimeData(const QList<QListWidgetItem *> & items) const {
 	if (items.count()>1) {
 		throw "PartsBinListView::mimeData too many items";
 	}

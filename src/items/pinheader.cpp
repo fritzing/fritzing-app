@@ -23,6 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../debugdialog.h"
 #include "partfactory.h"
+#include "utils/misc.h"
 
 
 

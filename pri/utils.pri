@@ -14,6 +14,7 @@
 # ********************************************************************/
 
 HEADERS += \
+	$$PWD/../src/utils/duplicatetracker.h \
 	$$PWD/../src/utils/ftooltip.h \
 src/utils/abstractstatesbutton.h \
 src/utils/autoclosemessagebox.h \

@@ -20,6 +20,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ratsnestcolors.h"
 #include "../debugdialog.h"
+#include "utils/misc.h"
+#include "testing/FTesting.h"
 
 #include <QFile>
 
@@ -27,12 +29,15 @@ QHash<ViewLayer::ViewID, RatsnestColors *> RatsnestColors::m_viewList;
 QHash<QString, class RatsnestColor *> RatsnestColors::m_allNames;
 
 QColor ErrorColor(0, 0, 0);
+QColor TestColor(0, 96, 96);
 
 //////////////////////////////////////////////////////
 
 class RatsnestColor {
 	RatsnestColor(const QDomElement &);
 	~RatsnestColor();
+
+	static void setTesting(bool isTestingEnabled);
 
 	bool matchColor(const QString &);
 
@@ -46,9 +51,13 @@ protected:
 	QString m_shadow;
 	QStringList m_connectorNames;
 	QList<RatsnestColor *> m_obsoleteList;
+
+	static bool m_isTestingEnabled;
 };
 
 //////////////////////////////////////////////////////
+
+bool RatsnestColor::m_isTestingEnabled = false;
 
 RatsnestColor::RatsnestColor(const QDomElement & color) {
 	m_name = color.attribute("name");
@@ -58,7 +67,9 @@ RatsnestColor::RatsnestColor(const QDomElement & color) {
 	m_shadow = color.attribute("shadow");
 	QDomElement connector = color.firstChildElement("connector");
 	while (!connector.isNull()) {
-		m_connectorNames.append(connector.attribute("name"));
+		// Ratsnest lines are drawn in random order. We use the same color for all lines to avoid random test results.
+		if (!m_isTestingEnabled)
+			m_connectorNames.append(connector.attribute("name"));
 		connector = connector.nextSiblingElement("connector");
 	}
 	QDomElement obsolete = color.firstChildElement("obsolete");
@@ -75,6 +86,9 @@ RatsnestColor::~RatsnestColor() {
 	m_obsoleteList.clear();
 }
 
+void RatsnestColor::setTesting(bool isTestingEnabled) {
+	m_isTestingEnabled = isTestingEnabled;
+}
 bool RatsnestColor::matchColor(const QString & string) {
 	if (m_wire.compare(string, Qt::CaseInsensitive) == 0) return true;
 
@@ -114,6 +128,8 @@ RatsnestColors::~RatsnestColors()
 }
 
 void RatsnestColors::initNames() {
+	RatsnestColor::setTesting(FTesting::getInstance()->enabled());
+
 	QFile file(":/resources/ratsnestcolors.xml");
 	if (!file.open(QIODevice::ReadOnly)) {
 		DebugDialog::debug("Unable to open :/resources/ratsnestcolors.xml");
@@ -160,6 +176,7 @@ const QColor & RatsnestColors::netColor(ViewLayer::ViewID viewID) {
 
 const QColor & RatsnestColors::getNextColor() {
 	if (m_ratsnestColorList.count() <= 0) return ErrorColor;
+	if (RatsnestColor::m_isTestingEnabled) return TestColor;
 
 	int resetCount = 0;
 	while (true) {

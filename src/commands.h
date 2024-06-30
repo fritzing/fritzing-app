@@ -1185,6 +1185,23 @@ protected:
 
 /////////////////////////////////////////////
 
+class RemoveSubpartCommand : public BaseCommand
+{
+public:
+	RemoveSubpartCommand(class SketchWidget *sketchWidget, CrossViewType crossView, long id, long subpartID, QUndoCommand *parent);
+	void undo();
+	void redo();
+
+protected:
+	QString getParamString() const;
+
+protected:
+	long m_itemID;
+	long m_subpartItemID;
+};
+
+/////////////////////////////////////////////
+
 class PackItemsCommand : public BaseCommand
 {
 public:

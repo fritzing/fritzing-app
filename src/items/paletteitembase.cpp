@@ -27,6 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "layerkinpaletteitem.h"
 #include "../connectors/connectoritem.h"
 #include "../connectors/svgidlayer.h"
+#include "utils/misc.h"
 #include "wire.h"
 #include "partlabel.h"
 #include "../utils/graphicsutils.h"

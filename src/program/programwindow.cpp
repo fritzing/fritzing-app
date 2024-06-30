@@ -97,8 +97,12 @@ static int UntitledIndex = 1;
 QList<Platform *> ProgramWindow::m_platforms;
 
 ProgramWindow::ProgramWindow(QWidget *parent)
-	: FritzingWindow("", ProgramWindow::untitledFileCount(), "", parent)
+	: FritzingWindow(parent)
 {
+	this->initializeTitle("",
+						  ProgramWindow::untitledFileCount(),
+						  "");
+
 	QFile styleSheet(":/resources/styles/programwindow.qss");
 
 	this->setObjectName("programmingWindow");
@@ -106,7 +110,7 @@ ProgramWindow::ProgramWindow(QWidget *parent)
 		qWarning("Unable to open :/resources/styles/programwindow.qss");
 	} else {
 		QString ss = styleSheet.readAll();
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 		int paneLoc = 4;
 		int tabBarLoc = 0;
 #else
@@ -216,7 +220,7 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 
 	m_editMenu->addSeparator();
 
-#ifndef Q_OS_MAC
+#ifndef Q_OS_MACOS
 	m_preferencesAction = new QAction(tr("&Preferences..."), this);
 	//m_preferencesAction->setStatusTip(tr("Show the application's about box"));
 	connect(m_preferencesAction, SIGNAL(triggered()), QApplication::instance(), SLOT(preferences()));

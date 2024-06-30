@@ -33,6 +33,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPointer>
 
 #include "../program/platform.h"
+#include "../mainwindow/mainwindow.h"
+#include "../project_properties.h"
 
 struct ViewInfoThing
 {
@@ -54,7 +56,7 @@ public:
 	bool cleared();
 	QHash<QString, QString> & settings();
 	QHash<QString, QString> & tempSettings();
-	void initLayout(QFileInfoList & languages, QList<Platform *> platforms);
+	void initLayout(QFileInfoList & languages, QList<Platform *> platforms, MainWindow * mainWindow);
 	void initViewInfo(int index, const QString & viewName, const QString & shortName, bool curvy);
 
 protected:
@@ -64,8 +66,8 @@ protected:
 	QWidget * createZoomerForm();
 	QWidget * createAutosaveForm();
 	QWidget *createProgrammerForm(QList<Platform *> platforms);
-	QWidget *createSimulatorBetaFeaturesForm();
 	QWidget *createGerberBetaFeaturesForm();
+	QWidget *createProjectPropertiesForm();
 	void updateWheelText();
 	void initGeneral(QWidget * general, QFileInfoList & languages);
 	void initBreadboard(QWidget *, ViewInfoThing *);
@@ -85,6 +87,10 @@ protected Q_SLOTS:
 	void changeAutosavePeriod(int);
 	void curvyChanged();
 	void chooseProgrammer();
+    void setSimulationTimeStepMode(const bool &timeStepMode);
+    void setSimulationNumberOfSteps(const QString &numberOfSteps);
+    void setSimulationTimeStep(const QString &timeStep);
+    void setSimulationAnimationTime(const QString &animationTime);
 
 protected:
 	QPointer<QTabWidget> m_tabWidget;
@@ -106,6 +112,8 @@ protected:
 	bool m_cleared = false;
 	int m_wheelMapping = 0;
 	ViewInfoThing m_viewInfoThings[3];
+	MainWindow * m_mainWindow;
+	QSharedPointer<ProjectProperties> m_projectProperties;
 };
 
 #endif

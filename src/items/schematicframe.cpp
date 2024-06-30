@@ -24,13 +24,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "schematicframe.h"
 #include "partfactory.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
-#include "../sketch/infographicsview.h"
+#include "utils/graphicsutils.h"
+#include "utils/textutils.h"
+#include "sketch/infographicsview.h"
 
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QFile>
 #include <QFrame>
 #include <QLabel>
 #include <QPushButton>

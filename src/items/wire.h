@@ -33,7 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMenu>
 
 #include "itembase.h"
-#include "../utils/cursormaster.h"
+#include "utils/cursormaster.h"
 
 class WireAction : public QAction {
 	Q_OBJECT
@@ -136,7 +136,6 @@ public:
 	bool hasPartNumberProperty();
 	bool rotationAllowed();
 	bool rotation45Allowed();
-	void addedToScene(bool temporary);
 	void setConnectorDimensions(double width, double height);
 	void originalConnectorDimensions(double & width, double & height);
 	double hoverStrokeWidth();
@@ -173,7 +172,7 @@ public:
 	static double THIN_TRACE_WIDTH;
 
 public:
-	static void initNames(bool solidRatsnest);
+	static void initNames();
 	static void cleanup();
 	static QVector<qreal> TheDash;
 

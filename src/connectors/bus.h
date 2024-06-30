@@ -45,6 +45,7 @@ public:
 	const QList<Connector *> & connectors() const noexcept;
 	Connector * subConnector() const noexcept;
 	void addSubConnector(Connector *);
+	void removeSubConnector();
 
 protected:
 	QList<Connector *> m_connectors;

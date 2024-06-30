@@ -18,23 +18,31 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
-#include "FProbeSwitchPackage.h"
-#include "debugdialog.h"
+#ifndef FPPROBESWITCHPROPERTY_H
+#define FPPROBESWITCHPROPERTY_H
+
+#include "testing/FProbe.h"
+
+#include "utils/familypropertycombobox.h"
+
+#include <QObject>
+#include <QVariant>
+
+class FProbeSwitchProperty : public FProbe {
+public:
+	FProbeSwitchProperty(FamilyPropertyComboBox * familyPropertyComboBox, std::string property);
+	~FProbeSwitchProperty() {};
+
+	QVariant read() { return QVariant(); };
+	void write(QVariant);
+
+	static void insertIf(QString property,
+						 FamilyPropertyComboBox *comboBox,
+						 std::string propertyList);
 
 
-FProbeSwitchPackage::FProbeSwitchPackage(FamilyPropertyComboBox * familyPropertyComboBox) :
-	FProbe("SwitchPackage"),
-	m_familyPropertyComboBox(familyPropertyComboBox)
-{
-}
+protected:
+	FamilyPropertyComboBox * m_familyPropertyComboBox;
+};
 
-void FProbeSwitchPackage::write(QVariant data) {
-	int index = m_familyPropertyComboBox->findText(data.toString());
-	DebugDialog::debug(QString("FProbeSwitchPackage index old: %1 index new: %2").arg(m_familyPropertyComboBox->currentIndex()).arg(index));
-	DebugDialog::debug(QString("FProbeSwitchPackage text old: %1 text new: %2")
-						   .arg(m_familyPropertyComboBox->itemText(m_familyPropertyComboBox->currentIndex())
-						   , m_familyPropertyComboBox->itemText(index)));
-	if (index != -1) {
-		m_familyPropertyComboBox->setCurrentIndex(index);
-	}
-}
+#endif

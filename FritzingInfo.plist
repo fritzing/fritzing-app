@@ -3,7 +3,7 @@
 <!--
 *************************************************
 Part of the Fritzing project - https://fritzing.org
-Copyright (c) 2007-23 Fritzing
+Copyright (c) 2007-24 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -27,9 +27,9 @@ You should have received a copy of the GNU General Public License
         <key>CFBundleExecutable</key>
         <string>Fritzing</string>
         <key>CFBundleGetInfoString</key>
-		<string>Fritzing 1.0.2</string>
+		<string>Fritzing 1.0.3</string>
         <key>CFBundleShortVersionString</key>
-		<string>1.0.2</string>
+		<string>1.0.3</string>
         <key>CFBundleVersion</key>
 		<string>104347</string>
         <key>CFBundleIconFile</key>

@@ -28,7 +28,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QCoreApplication>
 #include <QStandardPaths>
-#include "../debugdialog.h"
+#include <QFileInfo>
+#include "debugdialog.h"
 
 // Macro for serializing variable/function name into a string.
 #define STRFY(name) #name
@@ -70,7 +71,7 @@ void NgSpiceSimulator::init() {
 	if( !m_library.isLoaded() ) {         // fallback custom paths
 	#ifdef Q_OS_LINUX
 		const QString libName = "libngspice.so";
-	#elif defined Q_OS_MAC
+	#elif defined Q_OS_MACOS
 		const QString libName = "libngspice.0.dylib";
 	#elif defined Q_OS_WIN
 		const QString libName = "ngspice.dll";
@@ -167,7 +168,8 @@ std::vector<double> NgSpiceSimulator::getVecInfo(const std::string& vecName) {
 
 	std::vector<double> realValues;
 	if (vecInfo->v_realdata) {
-		realValues.push_back(vecInfo->v_realdata[0]);
+		for(int i=0; i<vecInfo->v_length; i++)
+			realValues.push_back(vecInfo->v_realdata[i]);
 		return realValues;
 	}
 

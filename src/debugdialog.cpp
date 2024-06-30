@@ -112,6 +112,28 @@ void DebugDialog::resizeEvent(QResizeEvent *e) {
 
 }
 
+void DebugDialog::debug(QString prefix, const QSettings::Status &status, QObject *ancestor) {
+	if (status == QSettings::NoError) {
+		return;
+	}
+
+	QString statusMessage;
+	switch (status) {
+	case QSettings::AccessError:
+		statusMessage = "AccessError: The application does not have permission to read or write the specified settings.";
+		break;
+	case QSettings::FormatError:
+		statusMessage = "FormatError: The settings data is corrupted.";
+		break;
+	default:
+		statusMessage = "Unknown error.";
+		break;
+	}
+	QString msg = prefix + ": " + statusMessage;
+
+	debug(msg, Debug, ancestor);
+}
+
 void DebugDialog::debug(QString prefix, const QPointF &point, DebugLevel debug, QObject *ancestor) {
 	QString msg = prefix+QString(" point: x=%1 y=%2").arg(point.x()).arg(point.y());
 	DebugDialog::debug(msg,debug,ancestor);

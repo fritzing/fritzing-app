@@ -108,12 +108,14 @@ bool Capacitor::collectExtraInfo(QWidget * parent, const QString & family, const
 				if (propertyDef->maxValue > propertyDef->minValue) {
 					validator->setBounds(propertyDef->minValue, propertyDef->maxValue);
 				}
-	//			QString pattern = QString("((\\d{0,10})|(\\d{0,10}\\.)|(\\d{0,10}\\.\\d{1,10}))[%1]{0,1}[%2]{0,1}")
-				QString pattern = QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d{1,2}))[%1]{0,1}[%2]{0,1}").arg(
-	//			QString pattern = QString("((\\d{0,3})|(\\d{0,3}\\.)|(\\d{0,3}\\.\\d{1,3}))[%1]{0,1}[%2]{0,1}")
+                QString symbolRegExp = propertyDef->symbol.isEmpty() ? "" : QString("[%1]{0,1}").arg(propertyDef->symbol);
+
+    //			QString pattern = QString("((\\d{0,10})|(\\d{0,10}\\.)|(\\d{0,10}\\.\\d{1,10}))[%1]{0,1}%2")
+                QString pattern = QString("((-?\\d{1,3})|(-?\\d{1,3}\\.)|(-?\\d{1,3}\\.\\d{1,2}))[%1]{0,1}%2").arg(
+    //			QString pattern = QString("((\\d{0,3})|(\\d{0,3}\\.)|(\\d{0,3}\\.\\d{1,3}))[%1]{0,1}%2")
 					TextUtils::PowerPrefixesString, 
-					propertyDef->symbol
-				);
+                    symbolRegExp
+                );
 				validator->setRegularExpression(QRegularExpression(pattern));
 				focusOutComboBox->setValidator(validator);
 				connect(focusOutComboBox->validator(), SIGNAL(sendState(QValidator::State)), this, SLOT(textModified(QValidator::State)));

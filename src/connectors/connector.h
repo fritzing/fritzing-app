@@ -66,6 +66,8 @@ public:
 	const QString & busID();
 	class Bus * bus();
 	void setBus(class Bus *);
+	void setSubBus(class Bus *);
+	void removeSubBus();
 	long modelIndex();
 	ModelPart * modelPart();
 	int connectorItemCount();
@@ -95,6 +97,7 @@ protected:
 	QPointer<class ModelPart> m_modelPart;
 	QPointer<class Bus> m_bus;
 	QString m_connectorLocalName;
+	bool m_isSubBus;
 
 protected:
 	static QHash<ConnectorType, QString> Names;

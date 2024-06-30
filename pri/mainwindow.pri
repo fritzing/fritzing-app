@@ -13,6 +13,7 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 HEADERS += \
+	src/mainwindow/fprobeactions.h \
     src/mainwindow/fdockwidget.h \
     src/mainwindow/fritzingwindow.h \
     src/mainwindow/mainwindow.h \
@@ -22,6 +23,7 @@ HEADERS += \
     src/mainwindow/getspice.h \
 
 SOURCES += \
+	src/mainwindow/fprobeactions.cpp \
     src/mainwindow/fdockwidget.cpp \
     src/mainwindow/fritzingwindow.cpp \
     src/mainwindow/mainwindow.cpp \

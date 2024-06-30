@@ -640,7 +640,7 @@ void MazeRouter::start()
 	m_sketchWidget->ensureTraceLayersVisible();
 
 	QHash<ConnectorItem *, int> indexer;
-	m_sketchWidget->collectAllNets(indexer, m_allPartConnectorItems, false, m_bothSidesNow);
+	m_sketchWidget->collectAllNets(indexer, m_allPartConnectorItems, false, m_bothSidesNow, false);
 
 	removeOffBoardAnd(m_pcbType, true, m_bothSidesNow);
 

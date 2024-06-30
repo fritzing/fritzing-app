@@ -22,11 +22,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPainter>
 
 #include "svgiconwidget.h"
-#include "../sketch/infographicsview.h"
-#include "../debugdialog.h"
-#include "../fsvgrenderer.h"
-#include "../items/moduleidnames.h"
-#include "../layerattributes.h"
+#include "sketch/infographicsview.h"
+#include "debugdialog.h"
+#include "fsvgrenderer.h"
+#include "items/moduleidnames.h"
+#include "layerattributes.h"
 
 #include "partsbinview.h"
 

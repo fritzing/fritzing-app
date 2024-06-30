@@ -103,6 +103,8 @@ public:
 
 	void init();
 
+	bool enabled();
+
 	void addProbe(FProbe * probe);
 
 	void removeProbe(std::string name);

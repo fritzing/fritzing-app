@@ -27,7 +27,8 @@ HEADERS += \
     src/viewgeometry.h \
     src/viewlayer.h \
     src/waitpushundostack.h \
-    src/project_properties.h
+    src/project_properties.h \
+    src/servicelistfetcher.h
 
 
 SOURCES += \
@@ -44,4 +45,5 @@ SOURCES += \
     src/viewgeometry.cpp \
     src/viewlayer.cpp \
     src/waitpushundostack.cpp \
-    src/project_properties.cpp
+    src/project_properties.cpp \
+    src/servicelistfetcher.cpp

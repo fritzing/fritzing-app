@@ -18,6 +18,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
+#include <QRegularExpression>
+
 #include "highlighter.h"
 #include "syntaxer.h"
 

@@ -153,10 +153,10 @@
 }
 
 /* the dropdowns */
-#programmingWindow QComboBox,
-#programmingWindow QPushButton,
-#programmingWindow QPushButton:enabled,
-#programmingWindow QPushButton:active{
+#toolbarSelector QComboBox,
+#toolbarSelector QPushButton,
+#toolbarSelector QPushButton:enabled,
+#toolbarSelector QPushButton:active{
 	color: #fff;
 	background:#821f09;
 	font-size:12px;
@@ -164,7 +164,7 @@
 	height: 34px;
 	padding-left:8px;
 	padding-right:4px;
-	}
+}
 
 
 #programmingWindow QComboBox:hover,
@@ -218,16 +218,40 @@
 
 
 /* drop-down list of the combobox */
-#toolBarComboBox QAbstractItemView {
-        background-color: #333333;
+QComboBox QAbstractItemView {
+	border: none;
+        color: #d9d9d9;
+        height: 1.5em;
+	background-color: #333333;
+        selection-background-color: green;
+        /* looks like this is not working:
+        selection-background-color:#821f09;
+        selection-color: #fff; */
 }
 
-#toolBarComboBox QAbstractItemView::item {
-		color: #000;
-	border-bottom: 5px solid white; margin:3px;
+/* does nothing on windows */
+QComboBox::item {
+        color: #d9d9d9;
+        padding-left: 0em;
+        height: 1.5em;
 }
-#toolBarComboBox QAbstractItemView::item:selected {
-	border-bottom: 5px solid black; margin:3px;
+
+QComboBox QAbstractItemView::item:selected, /* windows */
+QComboBox::item:selected {   /* linux */
+	color: #fff;
+	background:#821f09;
+	border: none;
+}
+
+/* does nothing on windows */
+QComboBox::item:checked {
+	color: #fff;
+	background: #444;
+}
+
+/* linux: only with fusion style? transparency and colors work, padding apparently has no effect */
+QComboBox::indicator {
+    padding-right: 0.5em;
 }
 
 

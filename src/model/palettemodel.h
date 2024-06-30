@@ -74,9 +74,11 @@ protected:
 	void loadParts(bool dbExists);
 	void loadPartsAux(QDir & dir, QStringList & nameFilters, int & loadedPart, int totalParts);
 	void countParts(QDir & dir, QStringList & nameFilters, int & partCount);
-	ModelPart * makeSubpart(ModelPart * originalModelPart, const QDomElement & originalSubparth);
+	ModelPart * makeSubpart(ModelPart * originalModelPart, const QString & newSubID, const QDomDocument & superpartDoc);
 
 public:
+	static QString createSubpartModuleID(const QString & superPartModuleID, const QString & subpartID);
+	static QDomDocument makeSubpartDoc(const QString & newSubID, const QDomDocument & superpartDoc);
 	static void initNames();
 	static void setFzpOverrideFolder(const QString &);
 

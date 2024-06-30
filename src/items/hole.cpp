@@ -19,14 +19,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "hole.h"
-#include "../utils/graphicsutils.h"
-#include "../fsvgrenderer.h"
-#include "../sketch/infographicsview.h"
-#include "../utils/textutils.h"
-#include "../viewlayer.h"
+#include "utils/graphicsutils.h"
+#include "fsvgrenderer.h"
+#include "sketch/infographicsview.h"
+#include "utils/textutils.h"
+#include "viewlayer.h"
 #include "partlabel.h"
-#include "../connectors/nonconnectoritem.h"
-#include "../connectors/svgidlayer.h"
+#include "connectors/nonconnectoritem.h"
+#include "connectors/svgidlayer.h"
 
 #include <QDomNodeList>
 #include <QDomDocument>

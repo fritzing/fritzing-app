@@ -22,6 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "hashpopulatewidget.h"
 #include "../debugdialog.h"
 #include "../utils/graphicsutils.h"
+#include "utils/misc.h"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>

@@ -21,6 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "infographicsview.h"
 #include "../debugdialog.h"
 #include "../infoview/htmlinfoview.h"
+#include "utils/misc.h"
 
 #include <QMessageBox>
 
@@ -383,26 +384,6 @@ void InfoGraphicsView::setActiveConnectorItem(ConnectorItem * connectorItem)
 
 void InfoGraphicsView::resolveTemporary(bool, ItemBase *)
 {
-}
-void InfoGraphicsView::newWire(Wire * wire)
-{
-	// Bool 'succeeded' was removed from this line because its result was overwritten in the next line.
-	// If there are any problems related to this code you might try to add a 'succeeded &&' instead.
-	connect(wire, SIGNAL(wireChangedSignal(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
-	                         this, SLOT(wireChangedSlot(Wire*, const QLineF &, const QLineF &, QPointF, QPointF, ConnectorItem *, ConnectorItem *)),
-	                         Qt::DirectConnection); // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
-	bool succeeded = connect(wire, SIGNAL(wireChangedCurveSignal(Wire*, const Bezier *, const Bezier *, bool)),
-	                    this, SLOT(wireChangedCurveSlot(Wire*, const Bezier *, const Bezier *, bool)),
-	                    Qt::DirectConnection) != nullptr; // DirectConnection means call the slot directly like a subroutine, without waiting for a thread or queue
-	succeeded = succeeded && (connect(wire, SIGNAL(wireSplitSignal(Wire*, QPointF, QPointF, const QLineF & )),
-	                                 this, SLOT(wireSplitSlot(Wire*, QPointF, QPointF, const QLineF & ))) != nullptr);
-	succeeded = succeeded && (connect(wire, SIGNAL(wireJoinSignal(Wire*, ConnectorItem *)),
-	                                 this, SLOT(wireJoinSlot(Wire*, ConnectorItem*))) != nullptr);
-	if (!succeeded) {
-		DebugDialog::debug("wire signal connect failed");
-	}
-
-	Q_EMIT newWireSignal(wire);
 }
 
 void InfoGraphicsView::setSMDOrientation(Qt::Orientations orientation) {

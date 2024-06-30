@@ -21,32 +21,32 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <qmath.h>
 
 #include "pcbsketchwidget.h"
-#include "../debugdialog.h"
-#include "../items/tracewire.h"
-#include "../items/virtualwire.h"
-#include "../items/resizableboard.h"
-#include "../items/pad.h"
-#include "../waitpushundostack.h"
-#include "../connectors/connectoritem.h"
-#include "../items/moduleidnames.h"
-#include "../items/partlabel.h"
-#include "../autoroute/drc.h"
-#include "../autoroute/binpacking/GuillotineBinPack.h"
-#include "../items/groundplane.h"
-#include "../items/jumperitem.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
-#include "../processeventblocker.h"
-#include "../autoroute/autoroutersettingsdialog.h"
-#include "../svg/groundplanegenerator.h"
-#include "../svg/groundplanegeneratorold.h"
-#include "../items/logoitem.h"
-#include "../dialogs/groundfillseeddialog.h"
-#include "../version/version.h"
-#include "../items/FProbeR1PosPCB.h"
-#include "../items/FProbeRPartLabel.h"
+#include "debugdialog.h"
+#include "items/tracewire.h"
+#include "items/virtualwire.h"
+#include "items/resizableboard.h"
+#include "items/pad.h"
+#include "waitpushundostack.h"
+#include "connectors/connectoritem.h"
+#include "items/moduleidnames.h"
+#include "items/partlabel.h"
+#include "autoroute/drc.h"
+#include "autoroute/binpacking/GuillotineBinPack.h"
+#include "items/groundplane.h"
+#include "items/jumperitem.h"
+#include "utils/graphicsutils.h"
+#include "utils/textutils.h"
+#include "processeventblocker.h"
+#include "autoroute/autoroutersettingsdialog.h"
+#include "svg/groundplanegenerator.h"
+#include "svg/groundplanegeneratorold.h"
+#include "items/logoitem.h"
+#include "dialogs/groundfillseeddialog.h"
+#include "version/version.h"
+#include "items/FProbeR1PosPCB.h"
+#include "items/FProbeRPartLabel.h"
+#include "installedfonts.h"
 
-#include <limits>
 #include <QApplication>
 #include <QScrollBar>
 #include <QDialog>
@@ -1462,6 +1462,7 @@ bool PCBSketchWidget::groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID v
 
 	boardImageRect = renderThing.imageRect;
 	renderThing.renderBlocker = true;
+	renderThing.blackOnly = false;
 
 	QString svg0;
 	if (viewLayerID == ViewLayer::UnknownLayer || viewLayerID == ViewLayer::GroundPlane0) {
@@ -1502,7 +1503,8 @@ bool PCBSketchWidget::groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID v
 		gpg0.setLayerName("groundplane");
 		gpg0.setStrokeWidthIncrement(StrokeWidthIncrement);
 		gpg0.setMinRunSize(10, 10);
-		bool result = gpg0.generateGroundPlane(boardSvg, boardImageRect.size(), svg0, copperImageRect.size(), exceptions, board, GraphicsUtils::StandardFritzingDPI * 30,
+		bool result = gpg0.generateGroundPlane(boardSvg, boardImageRect.size(), svg0, copperImageRect.size(), exceptions, board,
+											   GraphicsUtils::StandardFritzingDPI * 30,
 												ViewLayer::Copper0Color, getKeepoutMils(), groundSeedsCopper0);
 		if (result == false) {
 			QMessageBox::critical(this, tr("Fritzing"), tr("Fritzing error: unable to write copper fill (1)."));
@@ -1515,7 +1517,9 @@ bool PCBSketchWidget::groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID v
 		gpg1.setLayerName("groundplane1");
 		gpg1.setStrokeWidthIncrement(StrokeWidthIncrement);
 		gpg1.setMinRunSize(10, 10);
-		bool result = gpg1.generateGroundPlane(boardSvg, boardImageRect.size(), svg1, copperImageRect.size(), exceptions, board, GraphicsUtils::StandardFritzingDPI * 30, ViewLayer::Copper1Color, getKeepoutMils(), groundSeedsCopper1);
+		bool result = gpg1.generateGroundPlane(boardSvg, boardImageRect.size(), svg1, copperImageRect.size(), exceptions, board,
+											   GraphicsUtils::StandardFritzingDPI * 30,
+											   ViewLayer::Copper1Color, getKeepoutMils(), groundSeedsCopper1);
 		if (result == false) {
 			QMessageBox::critical(this, tr("Fritzing"), tr("Fritzing error: unable to write copper fill (2)."));
 			return false;
@@ -2847,6 +2851,13 @@ void PCBSketchWidget::gotFabQuote(QNetworkReply * networkReply) {
 }
 
 void PCBSketchWidget::requestQuote() {
+	QSettings settings;
+	QString fabName = settings.value("service", "").toString();
+	if (fabName != "Aisler") {
+		qDebug() << fabName;
+		return;
+	}
+
 	int boardCount;
 	double width, height;
 	QString boardTitle;

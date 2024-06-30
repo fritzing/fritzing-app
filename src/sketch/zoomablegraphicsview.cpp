@@ -57,7 +57,7 @@ ZoomableGraphicsView::ZoomableGraphicsView( QWidget * parent )
 #ifdef Q_OS_LINUX
 			m_wheelMapping = Guess;
 #endif
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 			m_wheelMapping = Pure;
 #endif
 #ifdef Q_OS_WINDOWS

@@ -62,3 +62,5 @@ Thumbs.db
 .bash_history
 saved_state
 *.qm
+index
+/.qtc_clangd/compile_commands.json

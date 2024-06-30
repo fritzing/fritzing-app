@@ -243,17 +243,41 @@
 			<language country="en" name="Potentiometer" src="core/Simulator/EN/simple_potentiometer.fzz"/>
 		</sketch>
 		<sketch id="ComposedArduinoR4WifiShield" >
-		    <language country="en" name="Composed Arduino R4 WIFI Shield" src="core/Shields/ComposedArduinoR4WifiShield.fzz"/>
+			<language country="en" name="Composed Arduino R4 WIFI Shield" src="core/Shields/ComposedArduinoR4WifiShield.fzz"/>
 		</sketch>
-</sketches>
+		<sketch id="555ICastable" >
+			<language country="en" name="555 IC astable" src="core/Simulator/EN/trans/555_IC_astable.fzz"/>
+		</sketch>
+		<sketch id="flipFlopLedFlashingCircuit" >
+			<language country="en" name="FlipFlop Led Flashing" src="core/Simulator/EN/trans/flipflop_led_flashing_circuit.fzz"/>
+		</sketch>
+	</sketches>
 	<categories>
 		<category>
 			<language country="en" name="Arduino"/>
 			<category>
 				<language country="en" name="Digital"/>
+				<language country="fr" name="Numérique"/>
+				<language country="es" name="Digital"/>
+				<language country="pl" name="Cyfrowy"/> <!-- Digital -->
+				<language country="zh" name="数字"/> <!-- Digital -->
+				<language country="it" name="Digitale"/> <!-- Digital -->
+				<language country="ja" name="デジタル"/> <!-- Digital -->
+				<language country="pt" name="Digital"/> <!-- Digital -->
+				<language country="ko" name="디지털"/> <!-- Digital -->
+				<language country="id" name="Digital"/> <!-- Digital -->
 				<category>
 					<language country="en" name="Output" />
-					<language country="de" name="Aus" />
+					<language country="de" name="Ausgabe" />
+					<language country="fr" name="Sortie"/>
+					<language country="es" name="Salida"/>
+					<language country="pl" name="Wyjście"/> <!-- Output -->
+					<language country="zh" name="输出"/> <!-- Output -->
+					<language country="it" name="Uscita"/> <!-- Output -->
+					<language country="ja" name="出力"/> <!-- Output -->
+					<language country="pt" name="Saída"/> <!-- Output -->
+					<language country="ko" name="출력"/> <!-- Output -->
+					<language country="id" name="Keluaran"/> <!-- Output -->
 					<sketch id="Blink"/>
 					<sketch id="Loop"/>
 					<sketch id="TrafficLight"/>
@@ -266,16 +290,43 @@
 				</category>
 				<category>
 					<language country="en" name="Input"/>
-					<language country="de" name="In"/>
+					<language country="de" name="Eingabe"/>
+					<language country="fr" name="Entrée"/>
+					<language country="es" name="Entrada"/>
+					<language country="pl" name="Wejście"/> <!-- Input -->
+					<language country="zh" name="输入"/> <!-- Input -->
+					<language country="it" name="Ingresso"/> <!-- Input -->
+					<language country="ja" name="入力"/> <!-- Input -->
+					<language country="pt" name="Entrada"/> <!-- Input -->
+					<language country="ko" name="입력"/> <!-- Input -->
+					<language country="id" name="Masukan"/> <!-- Input -->
 					<sketch id="Button"/>
 					<sketch id="TiltSwitch"/>
 				</category>
 			</category>
 			<category>
 				<language country="en" name="Analog"/>
+				<language country="fr" name="Analogique"/>
+				<language country="es" name="Analógico"/>
+				<language country="pl" name="Analogowy"/> <!-- Analog -->
+				<language country="zh" name="模拟"/> <!-- Analog -->
+				<language country="it" name="Analogico"/> <!-- Analog -->
+				<language country="ja" name="アナログ"/> <!-- Analog -->
+				<language country="pt" name="Analógico"/> <!-- Analog -->
+				<language country="ko" name="아날로그"/> <!-- Analog -->
+				<language country="id" name="Analog"/> <!-- Analog -->
 				<category>
 					<language country="en" name="Input"/>
-					<language country="de" name="In"/>
+					<language country="de" name="Eingabe"/>
+					<language country="fr" name="Entrée"/>
+					<language country="es" name="Entrada"/>
+					<language country="pl" name="Wejście"/> <!-- Input -->
+					<language country="zh" name="输入"/> <!-- Input -->
+					<language country="it" name="Ingresso"/> <!-- Input -->
+					<language country="ja" name="入力"/> <!-- Input -->
+					<language country="pt" name="Entrada"/> <!-- Input -->
+					<language country="ko" name="입력"/> <!-- Input -->
+					<language country="id" name="Masukan"/> <!-- Input -->
 					<sketch id="AnalogInputPot"/>
 					<sketch id="AnalogInputFSR"/>
 					<sketch id="Knock"/>
@@ -288,8 +339,17 @@
 					<sketch id="AnalogInputOutput"/>
 				</category>
 				<category>
-					<language country="en" name="Output"/>
-					<language country="de" name="Aus"/>
+					<language country="en" name="Output" />
+					<language country="de" name="Ausgabe" />
+					<language country="fr" name="Sortie"/>
+					<language country="es" name="Salida"/>
+					<language country="pl" name="Wyjście"/> <!-- Output -->
+					<language country="zh" name="输出"/> <!-- Output -->
+					<language country="it" name="Uscita"/> <!-- Output -->
+					<language country="ja" name="出力"/> <!-- Output -->
+					<language country="pt" name="Saída"/> <!-- Output -->
+					<language country="ko" name="출력"/> <!-- Output -->
+					<language country="id" name="Keluaran"/> <!-- Output -->
 					<sketch id="AnalogInputOutput"/>
 					<sketch id="Melody"/>
 					<sketch id="Window_Alarm"/>
@@ -299,26 +359,72 @@
 			</category>
 			<category>
 				<language country="en" name="Sensors"/>
+				<language country="de" name="Sensoren"/>
+				<language country="fr" name="Capteurs"/>
+				<language country="es" name="Sensores"/>
+				<language country="pl" name="Czujniki"/> <!-- Sensors -->
+				<language country="it" name="Sensori"/>
+				<language country="zh" name="传感器"/> <!-- Sensor -->
+				<language country="ja" name="センサー"/> <!-- Sensors -->
+				<language country="pt" name="Sensores"/> <!-- Sensors -->
+				<language country="ko" name="센서"/> <!-- Sensors -->
+				<language country="id" name="Sensor"/> <!-- Sensors -->
 				<category>
 					<language country="en" name="Force"/>
-					<language country="de" name="Energie"/>
+					<language country="de" name="Kraft"/>
+					<language country="fr" name="Force"/>
+					<language country="es" name="Fuerza"/>
+					<language country="pl" name="Siła"/> <!-- Strength/Force -->
+					<language country="it" name="Forza"/>
+					<language country="zh" name="力"/> <!-- Force -->
+					<language country="ja" name="力"/> <!-- Force -->
+					<language country="pt" name="Força"/> <!-- Force -->
+					<language country="ko" name="힘"/> <!-- Force -->
+					<language country="id" name="Gaya"/> <!-- Force -->
 					<sketch id="AnalogInputFSR"/>
 					<sketch id="Knock"/>
 				</category>
 				<category>
 					<language country="en" name="Light"/>
 					<language country="de" name="Licht"/>
+					<language country="fr" name="Lumière"/>
+					<language country="es" name="Luz"/>
+					<language country="pl" name="Światło"/> <!-- Light -->
+					<language country="it" name="Luce"/>
+					<language country="zh" name="光"/> <!-- Light -->
+					<language country="ja" name="光"/> <!-- Light -->
+					<language country="pt" name="Luz"/> <!-- Light -->
+					<language country="ko" name="빛"/> <!-- Light -->
+					<language country="id" name="Cahaya"/> <!-- Light -->
 					<sketch id="Photocell"/>
 				</category>
 				<category>
 					<language country="en" name="Motion"/>
-					<language country="de" name="Motion"/>
+					<language country="de" name="Bewegung"/>
+					<language country="fr" name="Mouvement"/>
+					<language country="es" name="Movimiento"/>
+					<language country="pl" name="Ruch"/> <!-- Movement -->
+					<language country="it" name="Movimento"/>
+					<language country="zh" name="运动"/> <!-- Motion -->
+					<language country="ja" name="動き"/> <!-- Motion -->
+					<language country="pt" name="Movimento"/> <!-- Motion -->
+					<language country="ko" name="동작"/> <!-- Motion -->
+					<language country="id" name="Gerakan"/> <!-- Motion -->
 					<sketch id="TiltSwitch"/>
 					<sketch id="Sabotage-Detection"/>
 				</category>
 				<category>
 					<language country="en" name="Proximity"/>
-					<language country="de" name="Lage"/>
+					<language country="de" name="Distanz"/>
+					<language country="fr" name="Proximité"/>
+					<language country="es" name="Proximidad"/>
+					<language country="pl" name="Bliskość"/> <!-- Proximity -->
+					<language country="it" name="Prossimità"/>
+					<language country="zh" name="接近"/> <!-- Proximity -->
+					<language country="ja" name="近接"/> <!-- Proximity -->
+					<language country="pt" name="Proximidade"/> <!-- Proximity -->
+					<language country="ko" name="근접"/> <!-- Proximity -->
+					<language country="id" name="Kedekatan"/> <!-- Proximity -->
 					<sketch id="Parking"/>
 					<!-- <sketch id="CurvyParking"/> -->
 					<sketch id="Photocell"/>
@@ -326,11 +432,29 @@
 				<category>
 					<language country="en" name="Rotary"/>
 					<language country="de" name="Rotary"/>
+					<language country="fr" name="Rotatif"/>
+					<language country="es" name="Rotativo"/>
+					<language country="pl" name="Obrotowy"/> <!-- Rotary -->
+					<language country="it" name="Rotativo"/>
+					<language country="zh" name="旋转"/> <!-- Rotation -->
+					<language country="ja" name="回転"/> <!-- Rotary -->
+					<language country="pt" name="Rotativo"/> <!-- Rotary -->
+					<language country="ko" name="회전"/> <!-- Rotary -->
+					<language country="id" name="Rotari"/> <!-- Rotary -->
 					<sketch id="AnalogInputPot"/>
 				</category>
 				<category>
 					<language country="en" name="Sound"/>
 					<language country="de" name="Sound"/>
+					<language country="fr" name="Son"/>
+					<language country="es" name="Sonido"/>
+					<language country="pl" name="Dźwięk"/> <!-- Sound -->
+					<language country="it" name="Suono"/>
+					<language country="zh" name="声音"/> <!-- Sound -->
+					<language country="ja" name="音"/> <!-- Sound -->
+					<language country="pt" name="Som"/> <!-- Sound -->
+					<language country="ko" name="소리"/> <!-- Sound -->
+					<language country="id" name="Suara"/> <!-- Sound -->
 					<sketch id="Knock"/>
 					<sketch id="MidiDrumKit"/>
 					<sketch id="CosmicRayGun"/>
@@ -338,12 +462,30 @@
 				<category>
 					<language country="en" name="Temperature"/>
 					<language country="de" name="Temperatur"/>
+					<language country="fr" name="Température"/>
+					<language country="es" name="Temperatura"/>
+					<language country="pl" name="Temperatura"/> <!-- Temperature -->
+					<language country="it" name="Temperatura"/>
+					<language country="ja" name="温度"/> <!-- Temperature -->
+					<language country="zh" name="温度"/> <!-- Temperature -->
+					<language country="pt" name="Temperatura"/> <!-- Temperature -->
+					<language country="ko" name="온도"/> <!-- Temperature -->
+					<language country="id" name="Suhu"/> <!-- Temperature -->
 					<sketch id="AnalogInputThermistor"/>
 					<sketch id="TemperaturSensorLM35"/>
 				</category>
 				<category>
 					<language country="en" name="Touch"/>
 					<language country="de" name="Touch"/>
+					<language country="fr" name="Tactile"/>
+					<language country="es" name="Táctil"/>
+					<language country="pl" name="Dotyk"/> <!-- Touch -->
+					<language country="it" name="Tocco"/>
+					<language country="zh" name="触摸"/> <!-- Touch -->
+					<language country="ja" name="タッチ"/> <!-- Touch -->
+					<language country="pt" name="Toque"/> <!-- Touch -->
+					<language country="ko" name="터치"/> <!-- Touch -->
+					<language country="id" name="Sentuhan"/> <!-- Touch -->
 					<sketch id="555TouchSwitch"/>
 					<sketch id="Touch_Switch"/>
 					<sketch id="MidiDrumKit"/>
@@ -352,8 +494,20 @@
 			<category>
 				<language country="en" name="Light"/>
 				<language country="de" name="Licht"/>
+				<language country="fr" name="Lumière"/>
+				<language country="es" name="Luz"/>
+				<language country="pl" name="Światło"/> <!-- Light -->
+				<language country="it" name="Luce"/>
+				<language country="zh" name="光"/> <!-- Light -->
 				<category>
 					<language country="en" name="LED"/>
+					<language country="es" name="LED"/>
+					<language country="pl" name="LED"/> <!-- LED -->
+					<language country="ja" name="LED"/> <!-- LED -->
+					<language country="zh" name="LED"/> <!-- LED -->
+					<language country="pt" name="LED"/> <!-- LED -->
+					<language country="ko" name="LED"/> <!-- LED -->
+					<language country="id" name="LED"/> <!-- LED -->
 					<sketch id="Blink"/>
 					<sketch id="Loop"/>
 					<sketch id="Parking"/>
@@ -367,15 +521,39 @@
 				</category>
 				<category>
 					<language country="en" name="Display"/>
-					<language country="de" name="Blick"/>
+					<language country="de" name="Anzeige"/>
+					<language country="fr" name="Affichage"/>
+					<language country="es" name="Pantalla"/>
+					<language country="pl" name="Wyświetlacz"/> <!-- Display -->
+					<language country="it" name="Display"/>
+					<language country="zh" name="显示"/> <!-- Display -->
+					<language country="ja" name="ディスプレイ"/> <!-- Display -->
+					<language country="pt" name="Display"/> <!-- Display -->
+					<language country="ko" name="디스플레이"/> <!-- Display -->
+					<language country="id" name="Tampilan"/> <!-- Display -->
 					<sketch id="LCD"/>
 				</category>
 			</category>
 			<category>
 				<language country="en" name="Motion"/>
-				<language country="de" name="Motion"/>
+				<language country="de" name="Bewegung"/>
+				<language country="fr" name="Mouvement"/>
+				<language country="es" name="Movimiento"/>
+				<language country="pl" name="Ruch"/> <!-- Movement -->
+				<language country="it" name="Movimento"/>
+				<language country="zh" name="运动"/> <!-- Motion -->
 				<category>
 					<language country="en" name="Motors"/>
+					<language country="de" name="Motoren"/>
+					<language country="fr" name="Moteurs"/>
+					<language country="es" name="Motores"/>
+					<language country="pl" name="Silniki"/> <!-- Motors -->
+					<language country="it" name="Motori"/>
+					<language country="zh" name="马达"/> <!-- Motor -->
+					<language country="ja" name="モーター"/> <!-- Motors -->
+					<language country="pt" name="Motores"/> <!-- Motors -->
+					<language country="ko" name="모터"/> <!-- Motors -->
+					<language country="id" name="Motor"/> <!-- Motors -->
 					<sketch id="AnalogInputToServo"/>
 					<sketch id="DC_motor_control"/>
 					<sketch id="Stepper_Motor"/>
@@ -385,6 +563,10 @@
 			<category>
 				<language country="en" name="Sound"/>
 				<language country="de" name="Sound"/>
+				<language country="es" name="Sonido"/>
+				<language country="pl" name="Dźwięk"/> <!-- Sound -->
+				<language country="it" name="Suono"/>
+				<language country="zh" name="声音"/> <!-- Sound -->
 				<sketch id="MidiDrumKit"/>
 				<sketch id="Melody"/>
 				<sketch id="Window_Alarm"/>
@@ -392,12 +574,30 @@
 			<category>
 				<language country="en" name="Communication"/>
 				<language country="de" name="Kommunikation"/>
+				<language country="fr" name="Communication"/>
+				<language country="es" name="Comunicación"/>
+				<language country="pl" name="Komunikacja"/> <!-- Communication -->
+				<language country="it" name="Comunicazione"/>
+				<language country="zh" name="通信"/> <!-- Communication -->
+				<language country="ja" name="コミュニケーション"/> <!-- Communication -->
+				<language country="pt" name="Comunicação"/> <!-- Communication -->
+				<language country="ko" name="통신"/> <!-- Communication -->
+				<language country="id" name="Komunikasi"/> <!-- Communication -->
 				<sketch id="MidiDrumKit"/>
 				<sketch id="VirtualColorMixer"/>
 			</category>
 			<category>
 				<language country="en" name="Power"/>
 				<language country="de" name="Power"/>
+				<language country="fr" name="Puissance"/>
+				<language country="es" name="Potencia"/>
+				<language country="pl" name="Moc"/> <!-- Power -->
+				<language country="it" name="Energia"/>
+				<language country="zh" name="电源"/> <!-- Power -->
+				<language country="ja" name="電源"/> <!-- Power -->
+				<language country="pt" name="Energia"/> <!-- Power -->
+				<language country="ko" name="전원"/> <!-- Power -->
+				<language country="id" name="Daya"/> <!-- Power -->
 				<sketch id="npnPowerTransistor"/>
 				<sketch id="Op_Amp"/>
 				<sketch id="Relay"/>
@@ -417,6 +617,8 @@
 		</category>
 		<category>
 			<language country="en" name="Fritzing Creator Kit"/>
+			<language country="ja" name="フリッツィング クリエーターキット"/> <!-- Fritzing Creator Kit -->
+			<language country="ko" name="프리츠잉 크리에이터 키트"/> <!-- Fritzing Creator Kit -->
 			<sketch id="Amplification"/>
 			<sketch id="AutomaticLightingSystem"/>
 			<sketch id="Blink"/>
@@ -443,6 +645,8 @@
 		<category>
 			<language country="en" name="Fritzing Starter Kit"/>
 			<language country="de" name="Fritzing Starter Kit"/>
+			<language country="ja" name="フリッツィング スターターキット"/> <!-- Fritzing Starter Kit -->
+			<language country="ko" name="프리츠잉 스타터 키트"/> <!-- Fritzing Starter Kit -->
 			<sketch id="Blink"/>
 			<sketch id="Loop"/>
 			<sketch id="Button"/>
@@ -468,6 +672,8 @@
 		<category>
 			<language country="en" name="Fritzing Workshop"/>
 			<language country="de" name="Fritzing Workshop"/>
+			<language country="ja" name="フリッツィング ワークショップ"/> <!-- Fritzing Workshop -->
+			<language country="ko" name="프리츠잉 워크샵"/> <!-- Fritzing Workshop -->
 			<sketch id="Workshop01"/>
 			<sketch id="Workshop02"/>
 			<sketch id="Workshop03"/>
@@ -476,39 +682,76 @@
 			<sketch id="Workshop06"/>
 			<sketch id="Workshop07"/>
 		</category>
-
 		<!--
 		<category>
 			<language country="en" name="Fritzing EDGY"/>
 			<language country="de" name="Fritzing EDGY"/>
+			<language country="ja" name="フリッツィング エッジィ"/>
+			<language country="pt" name="Fritzing EDGY"/>
+			<language country="ko" name="프리츠잉 에지"/>
 			<sketch id="EDGY-motor-control"/>
 			<sketch id="EDGY-motor-control_two_motors"/>
 			<sketch id="EDGY-motor-control_stepper"/>
 		</category>
-		-->
+	-->
+	<category>
+		<language country="en" name="Simulator"/>
+		<language country="es" name="Simulador"/>
+		<language country="fr" name="Simulateur"/>
+		<language country="pl" name="Symulator"/> <!-- Simulator -->
+		<language country="ja" name="シミュレータ"/> <!-- Simulator -->
+		<language country="pt" name="Simulador"/> <!-- Simulator -->
+		<language country="ko" name="시뮬레이터"/> <!-- Simulator -->
+		<language country="id" name="Simulator"/> <!-- Simulator -->
 		<category>
-			<language country="en" name="Simulator"/>
-			<language country="es" name="Simulador"/>
-			<category>
-				<language country="en" name="Multimeter"/>
-				<language country="es" name="Multimetro"/>
-				<sketch id="HowToUseMultimeter"/>
-				<sketch id="MeasureResistance"/>
-				<sketch id="MeasureDcVoltage"/>
-				<sketch id="MeasureDcCurrent"/>
-			</category>
-			<category>
-				<language country="en" name="Basic Circuits"/>
-				<language country="es" name="Circuitos Básicos"/>
-				<sketch id="SimpleButton"/>
-				<sketch id="SimpleLED"/>
-				<sketch id="SimplePotentiometer"/>
-				<sketch id="IrSensorTransistorMotor"/>
-			</category>
+			<language country="en" name="Multimeter"/>
+			<language country="es" name="Multímetro"/>
+			<language country="fr" name="Multimètre"/>
+			<language country="pl" name="Multimetr"/> <!-- Multimeter -->
+			<language country="zh" name="万用表"/> <!-- Multimeter -->
+			<language country="ja" name="マルチメーター"/> <!-- Multimeter -->
+			<language country="pt" name="Multímetro"/> <!-- Multimeter -->
+			<language country="ko" name="멀티미터"/> <!-- Multimeter -->
+			<language country="id" name="Multimeter"/> <!-- Multimeter -->
+			<sketch id="HowToUseMultimeter"/>
+			<sketch id="MeasureResistance"/>
+			<sketch id="MeasureDcVoltage"/>
+			<sketch id="MeasureDcCurrent"/>
 		</category>
 		<category>
-		    <language country="en" name="Shields"/>
-			<sketch id="ComposedArduinoR4WifiShield"/>
-		</category>
-	</categories>
+			<language country="en" name="Basic Circuits"/>
+			<language country="es" name="Circuitos Básicos"/>
+			<language country="fr" name="Circuits de Base"/>
+			<language country="pl" name="Podstawowe obwody"/> <!-- Basic Circuits -->
+			<language country="zh" name="基础电路"/> <!-- Basic Circuits -->
+			<language country="ja" name="基本回路"/> <!-- Basic Circuits -->
+			<language country="pt" name="Circuitos Básicos"/> <!-- Basic Circuits -->
+			<language country="ko" name="기본 회로"/> <!-- Basic Circuits -->
+			<language country="id" name="Rangkaian Dasar"/> <!-- Basic Circuits -->
+			<sketch id="SimpleButton"/>
+			<sketch id="SimpleLED"/>
+			<sketch id="SimplePotentiometer"/>
+			<sketch id="IrSensorTransistorMotor"/>
+			</category>
+			<!--
+			<category>
+				<language country="en" name="Transient Simulation"/>
+				<language country="es" name="Simulacion Transitoria"/>
+				<sketch id="flipFlopLedFlashingCircuit"/>
+				<sketch id="555ICastable"/>
+			</category>
+			-->
+	</category>
+	<category>
+		<language country="en" name="Shields"/>
+		<language country="es" name="Escudos"/>
+		<language country="pl" name="Tarcze"/> <!-- Shields -->
+		<language country="zh" name="扩展板"/> <!-- Shields -->
+		<language country="ja" name="シールド"/> <!-- Shields -->
+		<language country="pt" name="Shields"/> <!-- Shields -->
+		<language country="ko" name="실드"/> <!-- Shields -->
+		<language country="id" name="Shield"/>
+		<sketch id="ComposedArduinoR4WifiShield"/>
+	</category>
+</categories>
 </fritzing-sketches>

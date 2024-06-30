@@ -188,6 +188,7 @@ public:
 	void flipSMDAnd();
 	bool hasSubparts();
 	void setSubpartID(const QString &);
+	QString subpartID() const;
 
 public:
 	static long nextIndex();

@@ -22,11 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define PARTLABEL_H
 
 #include <QtGlobal>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QGraphicsSvgItem>
-#else
 #include <QtSvgWidgets/QGraphicsSvgItem>
-#endif
 #include <QPainter>
 #include <QStyleOptionGraphicsItem>
 #include <QWidget>
@@ -38,7 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTimer>
 #include <QMenu>
 
-#include "../viewlayer.h"
+#include "viewlayer.h"
 
 class ItemBase;
 class PartLabel : public QGraphicsSvgItem

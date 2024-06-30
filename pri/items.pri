@@ -50,7 +50,7 @@ HEADERS += \
     src/items/wire.h \
     src/items/FProbeR1PosPCB.h \
     src/items/FProbeRPartLabel.h \
-    src/items/FProbeSwitchPackage.h \
+	src/items/FProbeSwitchProperty.h \
 
 
 SOURCES += \
@@ -90,4 +90,4 @@ SOURCES += \
     src/items/wire.cpp \
     src/items/FProbeR1PosPCB.cpp \
     src/items/FProbeRPartLabel.cpp \
-    src/items/FProbeSwitchPackage.cpp \
+	src/items/FProbeSwitchProperty.cpp \

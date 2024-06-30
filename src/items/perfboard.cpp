@@ -30,6 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QLabel>
 #include <QMessageBox>
 #include <QtDebug>
+#include <QFile>
 
 
 static constexpr int ConnectorIDJump = 1000;

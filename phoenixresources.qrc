@@ -328,6 +328,9 @@
         <file>resources/images/icons/smalToolarrow-inactive.png</file>
         <file>resources/images/icons/smalToolarrow-normal.png</file>
         <file>resources/images/icons/smalToolarrow-pressed.png</file>
+        <file>resources/images/icons/smalToolarrowSimulation-inactive.svg</file>
+        <file>resources/images/icons/smalToolarrowSimulation-normal.svg</file>
+        <file>resources/images/icons/smalToolarrowSimulation-pressed.svg</file>
         <file>resources/images/icons/spinArrowButtonUpNormal.png</file>
         <file>resources/images/icons/spinArrowButtonUpPressed.png</file>
         <file>resources/images/icons/spinArrowButtonDownNormal.png</file>
@@ -373,5 +376,11 @@
         <file>resources/images/cursor/scale.png</file>
         <file>resources/images/cursor/magic_wand.png</file>
         <file>resources/images/cursor/spot_face_cutter.png</file>
+        <file>resources/images/icons/smalToolarrow-inactive.svg</file>
+        <file>resources/images/icons/smalToolarrow-pressed.svg</file>
+        <file>resources/images/icons/smalToolarrow-normal.svg</file>
+        <file>resources/images/icons/smalToolarrowFab-inactive.svg</file>
+        <file>resources/images/icons/smalToolarrowFab-pressed.svg</file>
+        <file>resources/images/icons/smalToolarrowFab-normal.svg</file>
     </qresource>
 </RCC>

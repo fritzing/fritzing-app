@@ -1210,6 +1210,7 @@ QRadioButton::indicator:checked:pressed  {
 	height:66px;
 }
 
+
 #sketchAreaToolbar QToolButton:disabled {   /* disabled toolbar buttons */
 	border: none;
 	color: #ececec;
@@ -1221,38 +1222,47 @@ QRadioButton::indicator:checked:pressed  {
 
 #sketchAreaToolbar QToolButton::menu-button { /*the little arrow to open the submenu*/
 	border: none;
-	/* background-image: none; */
-	margin-top: 28px;
-	margin-right:20px;
+	margin-top: 12px;
+	margin-right:12px;
 	background:transparent;
-	width:10px;
-	height:10px;
+	width:8px;
+	height:8px;
 	float:right;
 }
 
 #sketchAreaToolbar QToolButton::menu-arrow {
-	image: url(:/resources/images/icons/smalToolarrow-normal.png);
-	border: none;
-	padding: 4px;
-	background:transparent;
+	image: url(:/resources/images/icons/smalToolarrow-normal.svg);
+	margin: 0px;
+	padding: 2px;
+	width:12px;
+	height:12px;
+
 }
 
 #sketchAreaToolbar QToolButton::menu-arrow:open {
-	border: none;
-	image: url(:/resources/images/icons/smalToolarrow-pressed.png);
-	padding: 4px;
-	background:transparent;
+	image: url(:/resources/images/icons/smalToolarrow-pressed.svg);
 }
 
 #sketchAreaToolbar QToolButton::menu-arrow:disabled{
-	border: none;
-	image: url(:/resources/images/icons/smalToolarrow-inactive.png);
-	padding-top: 0px;
-	padding-right:0px;
-	margin: 2px;
-	background:none;
+	image: url(:/resources/images/icons/smalToolarrow-inactive.svg);
 }
 
+#sketchAreaToolbar #simulationButton::menu-button { /*the little arrow to open the submenu*/
+	margin-top: 10px;
+	margin-right:10px;
+}
+
+#sketchAreaToolbar #simulationButton::menu-arrow {
+	image: url(:/resources/images/icons/smalToolarrowSimulation-normal.svg);
+}
+
+#sketchAreaToolbar #simulationButton::menu-arrow:open {
+	image: url(:/resources/images/icons/smalToolarrowSimulation-pressed.svg);
+}
+
+#sketchAreaToolbar #simulationButton::menu-arrow:disabled{
+	image: url(:/resources/images/icons/smalToolarrowSimulation-inactive.svg);
+}
 
 #sketchAreaToolbar #shareProjectButton{
 	color:#fff;
@@ -1349,6 +1359,23 @@ QRadioButton::indicator:checked:pressed  {
 	height: 55px;
 	width:80px;
 	margin:5px 10px 5px 5px;
+}
+
+#sketchAreaToolbar #orderFabButton::menu-button { /*the little arrow to open the submenu*/
+	margin-top: 10px;
+	margin-right:10px;
+}
+
+#sketchAreaToolbar #orderFabButton::menu-arrow {
+	image: url(:/resources/images/icons/smalToolarrowFab-normal.svg);
+}
+
+#sketchAreaToolbar #orderFabButton::menu-arrow:open {
+	image: url(:/resources/images/icons/smalToolarrowFab-pressed.svg);
+}
+
+#sketchAreaToolbar #orderFabButton::menu-arrow:disabled{
+	image: url(:/resources/images/icons/smalToolarrowFab-inactive.svg);
 }
 
 /* ################### zoomslider #################### */
@@ -2333,4 +2360,41 @@ QDialog QPushButton:on
 	background-color:#0ff;
 
 
+}
+
+QPrintDialog {
+    background-color: #d9d9d9;
+    color: #333333;
+}
+
+QPrintDialog QWidget {
+    background-color: #d9d9d9;
+    color: #333333;
+}
+
+QPrintDialog QLabel {
+    color: #333333;
+}
+
+QPrintDialog QComboBox {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+QPrintDialog QCheckBox {
+    color: #333333;
+}
+
+QPrintDialog QPushButton {
+    background-color: #ececec;
+    color: #323232;
+}
+
+QPrintDialog QPushButton:hover {
+    background-color: #ffffff;
+}
+
+QPrintDialog QPushButton:pressed {
+    background-color: #666666;
+    color: #ffffff;
 }

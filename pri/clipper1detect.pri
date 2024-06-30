@@ -14,10 +14,10 @@ unix {
 win32 {
     message("including Clipper1 library on windows")
 
-    exists($$absolute_path($$PWD/../../Clipper1)) {
-	            CLIPPER1 = $$absolute_path($$PWD/../../clipper1/6.4.2)
-				message("found Clipper1 in $${CLIPPER1}")
-			}
+    exists($$absolute_path($$PWD/../../Clipper1-6.4.2)) {
+        CLIPPER1 = $$absolute_path($$PWD/../../Clipper1-6.4.2)
+                    message("found Clipper1 in $${CLIPPER1}")
+            }
 }
 
 message("including $$absolute_path($${CLIPPER1}/include)")

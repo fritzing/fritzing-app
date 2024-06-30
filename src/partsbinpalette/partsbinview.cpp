@@ -24,9 +24,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDragEnterEvent>
 #include <QMessageBox>
 
+#include "itemdrag.h"
+#include "items/itembase.h"
 #include "partsbinview.h"
 #include "partsbinpalettewidget.h"
-#include "../itemdrag.h"
+
 
 QHash<QString, QString> PartsBinView::TranslatedCategoryNames;
 QHash<QString, ItemBase *> PartsBinView::ItemBaseHash;

@@ -26,6 +26,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QXmlStreamWriter>
 #include <QDomElement>
 
+const QString ProjectPropertyKeySimulatorTimeStepS = "simulator_time_step_s";
+const QString ProjectPropertyKeySimulatorNumberOfSteps = "simulator_number_of_steps";
+const QString ProjectPropertyKeySimulatorTimeStepMode = "simulator_time_step_mode";
+const QString ProjectPropertyKeySimulatorAnimationTimeS = "simulator_animation_time_s";
+
 class ProjectProperties {
 public:
 	ProjectProperties();
@@ -33,13 +38,13 @@ public:
 	~ProjectProperties();
 
 	void saveProperties(QXmlStreamWriter & streamWriter);
+	// Only the elements defaulted in the constructor will be loaded.
 	void load(const QDomElement & projectProperties);
 	QString getProjectProperty(const QString & key);
+	void setProjectProperty(const QString & key, QString value);
 
 private:
 	QMap<QString, QString> m_propertiesMap;
-	QMap<QString, QString> m_OldProjectValuePropertiesMap;
-	QStringList m_keys;
 };
 
 #endif // PROJECT_PROPERTIES_H

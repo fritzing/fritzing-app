@@ -39,9 +39,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTimer>
 #include <QCursor>
 
-#include "../viewgeometry.h"
-#include "../viewlayer.h"
-#include "../utils/misc.h"
+#include "viewgeometry.h"
+#include "viewlayer.h"
 
 class ConnectorItem;
 class ModelPart;
@@ -81,6 +80,7 @@ public:
 	virtual ~ItemBase();
 
 	constexpr qint64 id() const noexcept { return m_id; }
+	QString subpartID() const;
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	double z();
 	virtual void saveGeometry() = 0;
@@ -216,7 +216,6 @@ public:
 	virtual void setDropOffset(QPointF offset);
 	bool hasRubberBandLeg() const;
 	void killRubberBandLeg();
-	bool sceneEvent(QEvent *event);
 	void clearConnectorItemCache();
 	const QList<ConnectorItem *> & cachedConnectorItems();
 	const QList<ConnectorItem *> & cachedConnectorItemsConst() const;
@@ -243,6 +242,7 @@ public:
 	const QString & spice() const;
 	const QString & spiceModel() const;
 	void addSubpart(ItemBase *);
+	void removeSubpart(ItemBase *);
 	void setSuperpart(ItemBase *);
 	ItemBase * superpart();
 	ItemBase * findSubpart(const QString & connectorID, ViewLayer::ViewLayerPlacement);
@@ -342,6 +342,9 @@ protected:
 	QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant & value);
 
 	virtual QStringList collectValues(const QString & family, const QString & prop, QString & value);
+	virtual QList<QPair<QString, QString> > collectPartsOfFamilyWithProp(const QString &family,
+													 const QString &prop);
+
 
 	void setInstanceTitleTooltip(const QString& text);
 	virtual void setDefaultTooltip();

@@ -87,9 +87,6 @@ public:
 	void clearTextThings();
 	void setTransform2(const QTransform &);
 
-public:
-	static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QTransform &, QRectF & viewBox);
-
 protected:
 	QString rotate(const QString & svg, bool isFlipped);
 	QString flipTextSvg(const QString & textSvg);

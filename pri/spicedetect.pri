@@ -1,6 +1,6 @@
 # /*******************************************************************
 # Part of the Fritzing project - http://fritzing.org
-# Copyright (c) 2021,2023 Fritzing GmbH
+# Copyright (c) 2021,2023,2024 Fritzing GmbH
 # Fritzing is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -15,11 +15,11 @@
 
 
 message("Using fritzing ngspice detect script.")
-NGSPICEPATH = ../../ngspice-40
+NGSPICEPATH = ../../ngspice-42
 NGSPICEPATH = $$absolute_path($${NGSPICEPATH})
 
 exists($$NGSPICEPATH) {
-    message("using $${NGSPICEPATH}")
+	message("found $${NGSPICEPATH}")
 	INCLUDEPATH += $$NGSPICEPATH/include
 } else {
     error("ngspice not found in $${NGSPICEPATH}")

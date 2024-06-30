@@ -42,13 +42,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "mainwindow.h"
 #include "../debugdialog.h"
-#include "fdockwidget.h"
 #include "../infoview/htmlinfoview.h"
 #include "../waitpushundostack.h"
 #include "../sketch/breadboardsketchwidget.h"
 #include "../sketch/schematicsketchwidget.h"
 #include "../sketch/pcbsketchwidget.h"
 #include "../sketch/welcomeview.h"
+#include "../sketch/subpartswapmanager.h"
 #include "../utils/folderutils.h"
 #include "../utils/fmessagebox.h"
 #include "../utils/lockmanager.h"
@@ -78,6 +78,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../mainwindow/FProbeKeyPressEvents.h"
 #include "connectors/debugconnectors.h"
 #include "connectors/debugconnectorsprobe.h"
+#include "testing/FTesting.h"
+#include "servicelistfetcher.h"
+#include "utils/uploadpair.h"
 
 FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 {
@@ -248,8 +251,11 @@ QRegularExpression MainWindow::GuidMatcher = QRegularExpression("[A-Fa-f0-9]{32}
 /////////////////////////////////////////////
 
 MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
-	FritzingWindow(MainWindow::untitledFileName(), MainWindow::untitledFileCount(), MainWindow::fileExtension(), parent)
+	FritzingWindow(parent)
 {
+	this->initializeTitle(MainWindow::untitledFileName(),
+						 MainWindow::untitledFileCount(),
+						 MainWindow::fileExtension());
 	m_noSchematicConversion = m_useOldSchematic = m_convertedSchematic = false;
 	m_initialTab = 1;
 	m_rolloverQuoteDialog = nullptr;
@@ -323,7 +329,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 
 	setAttribute(Qt::WA_DeleteOnClose, true);
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	//setAttribute(Qt::WA_QuitOnClose, false);					// restoring this temporarily (2008.12.19)
 #endif
 	m_dontClose = m_closing = false;
@@ -428,7 +434,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 
 
 	initWelcomeView();
-	initSketchWidgets(true);
+	initSketchWidgets(true); // 14%
 	initProgrammingWidget();
 
 	m_simulator = new Simulator(this);
@@ -439,12 +445,18 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	m_undoGroup->setActiveStack(m_undoStack);
 
 	initDock();
-	initMenus();
+	initMenus(); // 44%
 	moreInitDock();
 
 	createZoomOptions(m_breadboardWidget);
 	createZoomOptions(m_schematicWidget);
 	createZoomOptions(m_pcbWidget);
+
+	QSettings settings;
+
+	if(!settings.value("servicesList").isNull()) {
+		m_services = settings.value("servicesList").toStringList();
+	}
 
 	m_breadboardWidget->setToolbarWidgets(getButtonsForView(ViewLayer::BreadboardView));
 	m_schematicWidget->setToolbarWidgets(getButtonsForView(ViewLayer::SchematicView));
@@ -479,8 +491,6 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	if (m_fileProgressDialog != nullptr) {
 		m_fileProgressDialog->setValue(95);
 	}
-
-	QSettings settings;
 
 	if(!settings.value(m_settingsPrefix + "state").isNull()) {
 		restoreState(settings.value(m_settingsPrefix + "state").toByteArray());
@@ -518,6 +528,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	auto fProbeDebugConnectors = new DebugConnectorsProbe(m_breadboardGraphicsView, m_schematicGraphicsView, m_pcbGraphicsView);
 
 	m_projectProperties = QSharedPointer<ProjectProperties>(new ProjectProperties());
+	m_serviceListFetcher = QSharedPointer<ServiceListFetcher>(new ServiceListFetcher());
 //	m_breadboardGraphicsView->setProjectProperties(m_projectProperties);
 //	m_schematicGraphicsView->setProjectProperties(m_projectProperties);
 //	m_pcbGraphicsView->setProjectProperties(m_projectProperties);
@@ -562,7 +573,7 @@ void MainWindow::initSketchWidgets(bool withIcons) {
 	addTab(m_breadboardWidget, ":/resources/images/icons/TabWidgetBreadboardActive_icon.png", tr("Breadboard"), withIcons);
 
 	if (m_fileProgressDialog != nullptr) {
-		m_fileProgressDialog->setValue(11);
+		m_fileProgressDialog->setValue(11); // 5%
 	}
 
 	m_schematicGraphicsView = new SchematicSketchWidget(ViewLayer::SchematicView, this);
@@ -571,7 +582,7 @@ void MainWindow::initSketchWidgets(bool withIcons) {
 	addTab(m_schematicWidget, ":/resources/images/icons/TabWidgetSchematicActive_icon.png", tr("Schematic"), withIcons);
 
 	if (m_fileProgressDialog != nullptr) {
-		m_fileProgressDialog->setValue(20);
+		m_fileProgressDialog->setValue(20); // 10%
 	}
 
 	m_pcbGraphicsView = new PCBSketchWidget(ViewLayer::PCBView, this);
@@ -581,7 +592,7 @@ void MainWindow::initSketchWidgets(bool withIcons) {
 
 
 	if (m_fileProgressDialog != nullptr) {
-		m_fileProgressDialog->setValue(29);
+		m_fileProgressDialog->setValue(29); // 14%
 	}
 }
 
@@ -795,6 +806,7 @@ void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 					 slotter, SLOT(packItemsForCommand(int, const QList<long> &, QUndoCommand *, bool))) != nullptr);
 
 	succeeded = succeeded && (connect(signaller, SIGNAL(addSubpartSignal(long, long, bool)), slotter, SLOT(addSubpartForCommand(long, long, bool))) != nullptr);
+	succeeded = succeeded && (connect(signaller, SIGNAL(removeSubpartSignal(long, long, bool)), slotter, SLOT(removeSubpartForCommand(long, long, bool))) != nullptr);
 
 	if (!succeeded) {
 		DebugDialog::debug("connectPair failed");
@@ -922,13 +934,76 @@ SketchToolButton *MainWindow::createAutorouteButton(SketchAreaWidget *parent) {
 	return autorouteButton;
 }
 
+void MainWindow::updateOrderFabMenu(SketchToolButton* orderFabButton) {
+	if (!orderFabButton) return;
+
+	QStringList serviceNames = m_services;
+	serviceNames.sort();
+	serviceNames.removeIf([](const QString &serviceName) {
+		return serviceName.contains("Fritzing", Qt::CaseInsensitive);
+	});
+	QStringList backupServices{"Aisler"};
+
+	if (serviceNames.isEmpty()) {
+		serviceNames = backupServices;
+	}
+
+	QSettings settings;
+
+	QString currentService = settings.value("service").toString();
+
+	settings.beginGroup("sketches");
+	QVariant settingValue = settings.value(m_fwFilename);
+	settings.endGroup();
+	if (auto opt = settingValue.value<UploadPair>();
+		settingValue.isValid() && !settingValue.isNull()) {
+		currentService = std::move(opt.service);
+	}
+
+	if (!serviceNames.contains(currentService, Qt::CaseSensitive)) {
+		currentService.clear();
+		settings.remove("service");
+	}
+
+	QMenu* serviceMenu = orderFabButton->menu();
+	serviceMenu->clear();
+
+	QActionGroup* serviceActionGroup = new QActionGroup(this);
+	foreach(const QString &serviceName, serviceNames) {
+		QAction *serviceAction = new QAction(serviceName, this);
+		serviceAction->setCheckable(true);
+		if (currentService == serviceName) {
+			serviceAction->setChecked(true);
+		}
+		serviceMenu->addAction(serviceAction);
+		serviceActionGroup->addAction(serviceAction);
+
+		connect(serviceAction, &QAction::triggered, this, [serviceName]() {
+			QSettings settings;
+			settings.setValue("service", serviceName);
+		});
+	}
+
+	connect(serviceActionGroup, &QActionGroup::triggered, this, [](QAction* action) {
+		if (!action->isChecked()) {
+			QSettings settings;
+			settings.remove("service");
+		}
+	});
+}
+
 SketchToolButton *MainWindow::createOrderFabButton(SketchAreaWidget *parent) {
-	auto *orderFabButton = new SketchToolButton("Order",parent, m_orderFabAct);
+	auto *orderFabButton = new SketchToolButton("Order", parent, m_orderFabAct);
 	orderFabButton->setText(tr("Fabricate"));
 	orderFabButton->setObjectName("orderFabButton");
-	orderFabButton->setEnabledIcon();// seems to need this to display button icon first time
-	connect(orderFabButton, SIGNAL(entered()), this, SLOT(orderFabHoverEnter()));
-	connect(orderFabButton, SIGNAL(left()), this, SLOT(orderFabHoverLeave()));
+	orderFabButton->setEnabledIcon();
+	orderFabButton->setMenu(new QMenu(orderFabButton)); // Initialize the menu
+	orderFabButton->setPopupMode(QToolButton::MenuButtonPopup);
+
+	updateOrderFabMenu(orderFabButton);
+
+	connect(orderFabButton, &SketchToolButton::entered, this, &MainWindow::orderFabHoverEnter);
+	connect(orderFabButton, &SketchToolButton::left, this, &MainWindow::orderFabHoverLeave);
 
 	return orderFabButton;
 }
@@ -1006,6 +1081,23 @@ QWidget *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
 	simulationButton->setDefaultAction(m_startSimulatorAct);
 	simulationButton->setText(tr("Simulate"));
 	simulationButton->setIcon(QIcon(QPixmap(":/resources/images/icons/toolbarSimulationEnabled_icon.png")));
+
+	auto *menu = new QMenu(this);
+	QAction* normalModeAct = new QAction(tr("Normal Mode"), this);
+	QAction* transientModeAct = new QAction(tr("Transient Mode"), this);
+	normalModeAct->setCheckable(true);
+	transientModeAct->setCheckable(true);
+	QActionGroup* modeActionGroup = new QActionGroup(this);
+	modeActionGroup->addAction(normalModeAct);
+	modeActionGroup->addAction(transientModeAct);
+	normalModeAct->setChecked(true);
+	transientModeAct->setEnabled(isTransientSimulationEnabled());
+	menu->addAction(normalModeAct);
+	menu->addAction(transientModeAct);
+	simulationButton->setMenu(menu);
+	// connect(menu,SIGNAL(aboutToHide()),this,SLOT(setEnabledIconAux()));
+	simulationButton->setPopupMode(QToolButton::MenuButtonPopup);
+
 	widget->addWidget(simulationButton);
 
 	QToolButton* stopSimulationButton = new QToolButton(widget);
@@ -1016,6 +1108,21 @@ QWidget *MainWindow::createSimulationButton(SketchAreaWidget *parent) {
 	stopSimulationButton->setText(tr("Stop"));
 	stopSimulationButton->setIcon(QIcon(QPixmap(":/resources/images/icons/toolbarStopSimulationEnabled_icon.png")));
 	widget->addWidget(stopSimulationButton);
+
+	connect(normalModeAct, &QAction::triggered, this, [=]() {
+		m_simulator->enableTransientSimulation(false);
+	});
+	connect(transientModeAct, &QAction::triggered, this, [=]() {
+		m_simulator->enableTransientSimulation(true);
+	});
+	connect(transientModeAct, &QAction::triggered, this, [=]() {
+		m_simulator->enableTransientSimulation(true);
+		FMessageBox::warning(
+					this,
+					tr("Simulation Mode"),
+					tr("Transient simulation mode is a beta feature.")
+					);
+	});
 
 	connect(m_simulator, &Simulator::simulationStartedOrStopped, this, [=](bool running) {
 		if (running) {
@@ -1368,7 +1475,7 @@ bool MainWindow::eventFilter(QObject *object, QEvent *event) {
 		ProcessEventBlocker::processEvents();
 	}
 
-#if defined(Q_OS_MAC)
+#if defined(Q_OS_MACOS)
 
 	// Need to process Backspace on Mac to workaround bug in Qt5
 	// See http://qt-project.org/forums/viewthread/36174
@@ -2410,7 +2517,7 @@ void MainWindow::swapLayers(ItemBase * itemBase, int layers, const QString & msg
 
 void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement overrideViewLayerPlacement,  QMap<QString, QString> & propsMap) {
 
-	auto* parentCommand = new QUndoCommand(tr("Swapped %1 with module %2").arg(itemBase->instanceTitle()).arg(moduleID));
+	auto* parentCommand = new QUndoCommand(tr("Swapped %1 with module %2").arg(itemBase->instanceTitle(), moduleID));
 	new CleanUpWiresCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 	new CleanUpRatsnestsCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 
@@ -2489,6 +2596,7 @@ long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleI
 	swapThing.parentCommand = parentCommand;
 	swapThing.propsMap = propsMap;
 	swapThing.bbView = m_breadboardGraphicsView;
+	swapThing.subpartSwapManager = QSharedPointer<SubpartSwapManager>(new SubpartSwapManager());
 
 	long newID = 0;
 	for (int i = 0; i < 3; i++) {
@@ -3093,7 +3201,7 @@ void MainWindow::initStyleSheet()
 		platformDependantStylePath = QString(":/resources/styles/linux-%1.qss").arg(suffix);
 #endif
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 		platformDependantStylePath = QString(":/resources/styles/mac-%1.qss").arg(suffix);
 #endif
 
@@ -3217,6 +3325,10 @@ void MainWindow::initProgrammingWidget() {
 
 	auto * sketchAreaWidget = new SketchAreaWidget(m_programView, this, false, true);
 	addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetCodeActive_icon.png", tr("Code"), true);
+
+	if (m_fileProgressDialog != nullptr) {
+		m_fileProgressDialog->setValue(39);
+	}
 }
 
 ProgramWindow *MainWindow::programmingWidget() {
@@ -3224,6 +3336,14 @@ ProgramWindow *MainWindow::programmingWidget() {
 }
 
 void MainWindow::orderFabHoverEnter() {
+	QSettings settings;
+	QVariant timestampVariant = settings.value("servicesListTimestamp");
+
+	if (!timestampVariant.isValid() || timestampVariant.toDateTime().addDays(14) < QDateTime::currentDateTime()) {
+		QObject::connect(m_serviceListFetcher.data(), &ServiceListFetcher::servicesFetched, this, &MainWindow::onServicesFetched);
+		m_serviceListFetcher->fetchServices();
+	}
+
 	if ((m_rolloverQuoteDialog != nullptr) && m_rolloverQuoteDialog->isVisible()) return;
 	QuoteDialog::setQuoteSucceeded(false);
 	QObject::connect(m_pcbGraphicsView, &PCBSketchWidget::fabQuoteFinishedSignal, this, &MainWindow::fireQuote);
@@ -3265,6 +3385,15 @@ void MainWindow::orderFabHoverLeave() {
 	if (m_rolloverQuoteDialog != nullptr) {
 		m_rolloverQuoteDialog->hide();
 	}
+}
+
+void MainWindow::onServicesFetched(const QList<QString>& services) {
+	if (services.isEmpty()) return;
+	m_services = services;
+	QSettings settings;
+	settings.setValue("servicesList", m_services);
+	settings.setValue("servicesListTimestamp", QDateTime::currentDateTime());
+	updateOrderFabMenu(m_orderFabButton);
 }
 
 void MainWindow::initWelcomeView() {
@@ -3315,7 +3444,8 @@ void MainWindow::initZoom() {
 	}
 
 	if (parts) {
-		m_currentGraphicsView->fitInWindow();
+		double newZoom = m_currentGraphicsView->fitInWindow();
+		m_zoomSlider->setValue(newZoom);
 	}
 
 	m_currentGraphicsView->setEverZoomed(true);
@@ -3331,6 +3461,10 @@ void MainWindow::setInitialTab(int tab) {
 
 void MainWindow::triggerSimulator() {
 	m_simulator->triggerSimulation();
+}
+
+QSharedPointer<ProjectProperties> MainWindow::getProjectProperties() {
+	return m_projectProperties;
 }
 
 bool MainWindow::isSimulatorEnabled() {
@@ -3376,4 +3510,8 @@ void MainWindow::postKeyEvent(const QString & serializedKeys) {
 		QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyPress, keyCode, modFlags, key.at(0)));
 		QApplication::postEvent(QApplication::focusWidget(), new QKeyEvent(QEvent::KeyRelease, keyCode, modFlags, key.at(0)));
 	}
+}
+
+bool MainWindow::isTransientSimulationEnabled() {
+	return FTesting::getInstance()->enabled() || DebugDialog::enabled();
 }

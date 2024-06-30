@@ -36,6 +36,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/textutils.h"
 #include "../utils/familypropertycombobox.h"
 #include "../svg/svgfilesplitter.h"
+#include "utils/misc.h"
 #include "wire.h"
 
 #include <QGraphicsSceneMouseEvent>
@@ -988,6 +989,7 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 		holeSettings.diameterEdit->setMinimumHeight(RowHeight);
 		holeSettings.diameterValidator = new QDoubleValidator(holeSettings.diameterEdit);
 		holeSettings.diameterValidator->setNotation(QDoubleValidator::StandardNotation);
+		holeSettings.diameterValidator->setLocale(getLocale());
 		holeSettings.diameterEdit->setValidator(holeSettings.diameterValidator);
 		gridLayout->addWidget(holeSettings.diameterEdit, 0, 1);
 		holeSettings.diameterEdit->setObjectName("infoViewLineEdit");
@@ -1001,6 +1003,7 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 		holeSettings.thicknessEdit->setMinimumHeight(RowHeight);
 		holeSettings.thicknessValidator = new QDoubleValidator(holeSettings.thicknessEdit);
 		holeSettings.thicknessValidator->setNotation(QDoubleValidator::StandardNotation);
+		holeSettings.thicknessValidator->setLocale(getLocale());
 		holeSettings.thicknessEdit->setValidator(holeSettings.thicknessValidator);
 		gridLayout->addWidget(holeSettings.thicknessEdit, 1, 1);
 		holeSettings.thicknessEdit->setObjectName("infoViewLineEdit");
@@ -1449,8 +1452,7 @@ void PaletteItem::changeThickness()
 {
 	if (changeThickness(m_holeSettings, sender())) {
 		auto * edit = qobject_cast<QLineEdit *>(sender());
-		QLocale locale;
-		changeHoleSize(m_holeSettings.holeDiameter + "," + QString::number(locale.toDouble(edit->text())) + m_holeSettings.currentUnits());
+		changeHoleSize(m_holeSettings.holeDiameter + "," + QString::number(getLocale().toDouble(edit->text())) + m_holeSettings.currentUnits());
 	}
 }
 
@@ -1459,8 +1461,7 @@ bool PaletteItem::changeThickness(HoleSettings & holeSettings, QObject * sender)
 	auto * edit = qobject_cast<QLineEdit *>(sender);
 	if (edit == nullptr) return false;
 
-	QLocale locale;
-	double newValue = locale.toDouble(edit->text());
+	double newValue = getLocale().toDouble(edit->text());
 	QString temp = holeSettings.ringThickness;
 	temp.chop(2);
 	double oldValue = temp.toDouble();
@@ -1471,8 +1472,7 @@ void PaletteItem::changeDiameter()
 {
 	if (changeDiameter(m_holeSettings, sender())) {
 		auto * edit = qobject_cast<QLineEdit *>(sender());
-		QLocale locale;
-		changeHoleSize(QString::number(locale.toDouble(edit->text())) + m_holeSettings.currentUnits() + "," + m_holeSettings.ringThickness);
+		changeHoleSize(QString::number(getLocale().toDouble(edit->text())) + m_holeSettings.currentUnits() + "," + m_holeSettings.ringThickness);
 
 	}
 }
@@ -1482,8 +1482,7 @@ bool PaletteItem::changeDiameter(HoleSettings & holeSettings, QObject * sender)
 	auto * edit = qobject_cast<QLineEdit *>(sender);
 	if (edit == nullptr) return false;
 
-	QLocale locale;
-	double newValue = locale.toDouble(edit->text());
+	double newValue = getLocale().toDouble(edit->text());
 	QString temp = holeSettings.holeDiameter;
 	temp.chop(2);
 	double oldValue = temp.toDouble();
@@ -1617,4 +1616,11 @@ void PaletteItem::retransform(const QTransform & chiefTransform) {
 			lkpi->transformItem(chiefTransform, false);
 		}
 	}
+}
+
+QLocale PaletteItem::getLocale()
+{
+	QSettings settings;
+	QString localeName = settings.value("locale", "C").toString();
+	return QLocale(localeName);
 }

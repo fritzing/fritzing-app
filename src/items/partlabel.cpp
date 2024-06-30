@@ -19,12 +19,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "partlabel.h"
-#include "../items/itembase.h"
-#include "../sketch/infographicsview.h"
-#include "../model/modelpart.h"
-#include "../utils/graphicsutils.h"
-#include "../utils/textutils.h"
-#include "../installedfonts.h"
+#include "items/itembase.h"
+#include "sketch/infographicsview.h"
+#include "model/modelpart.h"
+#include "utils/graphicsutils.h"
+#include "utils/textutils.h"
+#include "installedfonts.h"
+#include "utils/misc.h"
 
 #include <QGraphicsScene>
 #include <QMenu>
@@ -189,6 +190,11 @@ void PartLabel::mousePressEvent(QGraphicsSceneMouseEvent *event)
 		return;
 	}
 
+	if(event->button() == Qt::RightButton) {
+		//Return but do not ignore the event (we will handle the context menu event)
+		return;
+	}
+
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
 	if ((infographics != nullptr) && infographics->spaceBarIsPressed()) {
 		m_spaceBarWasPressed = true;
@@ -245,6 +251,7 @@ void PartLabel::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 	if (m_doDrag) {
 		m_owner->partLabelMoved(m_initialPosition, m_initialOffset, pos(), m_offset);
+		m_doDrag = false;
 	}
 
 	QGraphicsSvgItem::mouseReleaseEvent(event);

@@ -131,6 +131,7 @@ copy %QTBIN%\Qt5SerialPort.dll %DESTDIR%\deploy\Qt5SerialPort.dll
 xcopy /q %QTBIN%\icu*.dll %DESTDIR%\deploy /E  /I
 
 copy %QTBIN%\..\plugins\imageformats\qjpeg.dll %DESTDIR%\deploy\lib\imageformats\qjpeg.dll
+copy %QTBIN%\..\plugins\imageformats\qsvg.dll %DESTDIR%\deploy\lib\imageformats\qsvg.dll
 copy %QTBIN%\..\plugins\sqldrivers\qsqlite.dll %DESTDIR%\deploy\lib\sqldrivers\qsqlite.dll
 copy %QTBIN%\..\plugins\platforms\qwindows.dll %DESTDIR%\deploy\platforms\qwindows.dll
 copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy\lib\printsupport\windowsprintersupport.dll

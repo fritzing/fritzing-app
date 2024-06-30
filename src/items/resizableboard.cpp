@@ -29,6 +29,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../layerattributes.h"
 #include "../debugdialog.h"
 #include "../svg/gerbergenerator.h"
+#include "utils/misc.h"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>

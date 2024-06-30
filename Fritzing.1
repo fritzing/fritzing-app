@@ -1,17 +1,81 @@
-.TH FRITZING 1 "October 03, 2010" "Fritzing"
+.TH FRITZING 1 "May 23, 2024" "Fritzing 1.0.3" "User Commands"
 
 .SH NAME
-fritzing \- from prototype to product
+Fritzing - electronics made easy
+
 .SH SYNOPSIS
 .B fritzing
+.RI [ options ]
+
 .SH DESCRIPTION
+Fritzing is an open-source software tool to support designers, artists, researchers,
+and hobbyists to work creatively with interactive electronics. It allows you to document
+your prototypes, share them with others, teach electronics in a classroom, and create a
+PCB layout for professional manufacturing. The fundamental idea behind Fritzing is
+"sketching in hardware," making it easy to move from prototype to product.
+
 .PP
-Fritzing is an open-source initiative to support designers, artists, researchers
-and hobbyists to work creatively with interactive electronics. We are creating a
-software and website in the spirit of Processing and Arduino, developing a tool
-that allows users to document their prototypes, share them with others, teach
-electronics in a classroom, and to create a pcb layout for professional
-manufacturing.
-.SH AUTHOR
-This manual page was written by Enrique Hernández Bello <ehbello@gmail.com>,
-for the Debian project (and may be used by others).
+Fritzing is primarily funded by payments from the community. To support
+Fritzing, visit our
+.UR https://fritzing.org/download
+download page
+.UE
+, where you will also
+get the latest official release.
+
+.PP
+One of the main features of Fritzing is its user-friendly interface, which facilitates the creation of electronic circuits. Users can document circuits, convert them into PCB designs, and order professional manufacturing. Additionally, Fritzing includes a basic circuit simulator for testing simple circuits.
+
+.SH OPTIONS
+.TP
+.B -h, --help
+Display help information and exit.
+.TP
+.B -v, --version
+Output version information and exit.
+.TP
+.B --debug
+Start Fritzing with debug output enabled.
+
+.SH USAGE
+Fritzing provides a graphical interface to design and simulate electronic circuits. It has three main views:
+.TP
+.B Breadboard View
+This view is used to create a virtual breadboard layout of your circuit.
+.TP
+.B Schematic View
+This view is used to create a schematic representation of your circuit.
+.TP
+.B PCB View
+This view is used to design the printed circuit board (PCB) layout for your project.
+.PP
+All views are synced. If you add a connection in the schematic, the PCB view will indicate it, and the other way around.
+All three views have equal priority, so you may choose the design approach that fits your work style.
+
+.SH FILES
+.TP
+.I ~/.config/Fritzing
+User-specific configuration files for Fritzing.
+.TP
+.I ~/Documents/Fritzing
+User-specific data files for Fritzing. Your projects and parts are stored here.
+
+.SH BUGS
+Report bugs to the Fritzing GitHub issues page:
+.UR https://github.com/fritzing/fritzing-app/issues
+\z https://github.com/fritzing/fritzing-app/issues
+.UE
+
+.SH SEE ALSO
+Official website:
+.UR https://fritzing.org
+\z https://fritzing.org
+.UE
+.br
+Documentation:
+.UR https://fritzing.org/learning
+\z https://fritzing.org/learning
+.UE
+
+.SH DEVELOPMENT
+Fritzing is developed by Fritzing GmbH and contributors worldwide. It was started in August 2007 by the Interaction Design Lab at the University of Applied Sciences Potsdam, Germany.

@@ -66,6 +66,8 @@ static const QRegularExpression Xmlns("xmlns=([\"|'])[^\"']*\\1");
 
 const ushort TextUtils::MicroSymbolCode = 181;
 const QString TextUtils::MicroSymbol = QString::fromUtf16(&MicroSymbolCode, 1);
+const ushort TextUtils::AltMicroSymbolCode = 956;
+const QString TextUtils::AltMicroSymbol = QString::fromUtf16(&AltMicroSymbolCode, 1);
 
 const QString TextUtils::AdobeIllustratorIdentifier = "Generator: Adobe Illustrator";
 

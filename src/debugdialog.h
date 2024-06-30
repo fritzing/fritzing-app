@@ -27,8 +27,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTextEdit>
 #include <QFile>
 #include <QPointer>
+#include <QSettings>
 
-#include "utils/misc.h"
 
 class DebugDialog : public QDialog
 {
@@ -52,6 +52,7 @@ public:
 	static void debug(QString, const QPoint &point, DebugLevel = Debug, QObject * ancestor = 0);
 	static void debug(QString, const QRect &rect, DebugLevel = Debug, QObject * ancestor = 0);
 	static void debug_ts(QString, const DebugLevel = Debug, QObject * ancestor = 0);
+	static void debug(QString, const QSettings::Status &, QObject * ancestor = 0);
 	static void debug(QString, DebugLevel = Debug, QObject * ancestor = 0);
 	static void hideDebug();
 	static void showDebug();

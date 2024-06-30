@@ -34,6 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/flineedit.h"
 #include "../utils/clickablelabel.h"
 #include "../utils/textutils.h"
+#include "utils/misc.h"
 
 
 

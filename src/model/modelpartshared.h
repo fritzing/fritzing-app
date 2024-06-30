@@ -204,7 +204,7 @@ protected:
 	bool m_needsCopper1;				// for converting pre-two-layer parts
 	qulonglong m_dbid;
 	int m_ownerCount;
-	QList< QPointer<ModelPartShared> > m_subparts;
+	QList<QPointer<ModelPartShared> > m_subparts{};
 	QPointer<ModelPartShared> m_superpart;
 	QString m_subpartID;
 	QPointF m_subpartOffset;

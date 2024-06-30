@@ -19,13 +19,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "kicadschematic2svg.h"
-#include "../utils/textutils.h"
-#include "../utils/graphicsutils.h"
-#include "../version/version.h"
-#include "../debugdialog.h"
-#include "../viewlayer.h"
-#include "../fsvgrenderer.h"
-#include "../utils/misc.h"
+#include "utils/textutils.h"
+#include "utils/graphicsutils.h"
+#include "debugdialog.h"
+#include "installedfonts.h"
 
 #include <QFile>
 #include <QTextStream>
@@ -33,7 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDomDocument>
 #include <QDomElement>
 #include <qmath.h>
-#include <limits>
+
 
 // TODO:
 //		pin shape: invert, etc.

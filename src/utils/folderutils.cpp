@@ -21,7 +21,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "folderutils.h"
 #include "lockmanager.h"
 #include "textutils.h"
-#include "fmessagebox.h"
 #include <QDesktopServices>
 #include <QCoreApplication>
 #include <QSettings>
@@ -35,6 +34,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStandardPaths>
 
 #include "../debugdialog.h"
+#include "utils/misc.h"
+#include "fmessagebox.h"
 #include <quazip/quazip.h>
 #include <quazip/quazipfile.h>
 
@@ -197,7 +198,7 @@ const QString FolderUtils::getLibraryPath()
 
 const QString FolderUtils::libraryPath()
 {
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	// mac plugins are always in the bundle
 	return QDir::cleanPath(QCoreApplication::applicationDirPath() + "/../lib");
 #endif
@@ -221,7 +222,7 @@ const QString FolderUtils::applicationDirPath() {
 	QDir dir(QCoreApplication::applicationDirPath());
 	if (dir.cdUp()) {
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 		candidates.append(dir.absolutePath() + "/Resources");
 #endif
 		candidates.append(dir.absolutePath());
@@ -385,7 +386,7 @@ void FolderUtils::rmdir(const QString &dirPath) {
 }
 
 void FolderUtils::rmdir(QDir & dir) {
-	//DebugDialog::debug(QString("removing folder: %1").arg(dir.path()));
+	DebugDialog::debug(QString("removing folder: %1").arg(dir.path()));
 
 	QStringList files = dir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot);
 	for(int i=0; i < files.size(); i++) {
@@ -713,7 +714,7 @@ void FolderUtils::showInFolder(const QString & path)
 	QString param = QLatin1String("/e,/select,");
 	param += QDir::toNativeSeparators(path);
 	QProcess::startDetached(explorer, QStringList(param));
-#elif defined(Q_OS_MAC)
+#elif defined(Q_OS_MACOS)
 	QStringList scriptArgs;
 	scriptArgs << QLatin1String("-e")
 	           << QString::fromLatin1("tell application \"Finder\" to reveal POSIX file \"%1\"")
@@ -728,60 +729,42 @@ void FolderUtils::showInFolder(const QString & path)
 #endif
 }
 
+// make sure that the folder structure for parts and bins, exists
 void FolderUtils::createUserDataStoreFolders() {
-	// make sure that the folder structure for parts and bins, exists
-
 	if (singleton == nullptr) {
 		singleton = new FolderUtils();
 	}
 
 	QDir userDataStore(getTopLevelUserDataStorePath());
-	Q_FOREACH(QString folder, singleton->m_userFolders) {
+	for (const QString &folder : singleton->m_userFolders) {
 		QString path = userDataStore.absoluteFilePath(folder);
-		if(!QFileInfo(path).exists()) {
+		if (!QFileInfo::exists(path)) {
 			userDataStore.mkpath(folder);
 		}
 	}
 
 	QDir documents(getTopLevelDocumentsPath());
-	QStringList documentFolders(singleton->m_documentFolders);
-	Q_FOREACH(QString folder, documentFolders) {
+	for (const QString &folder : singleton->m_documentFolders) {
 		QString path = documents.absoluteFilePath(folder);
-		if(!QFileInfo(path).exists()) {
+		if (!QFileInfo::exists(path)) {
 			documents.mkpath(folder);
 		}
 	}
 
 	// in older versions of Fritzing, local parts and bins were in userDataStore
-	QList<QDir> toRemove;
-	QStringList folders;
-	folders << "bins" << "parts";
-	bool foundOld = false;
-	Q_FOREACH(QString folder, folders ) {
-		foundOld || QFileInfo(userDataStore.absoluteFilePath(folder)).exists();
-	}
+	// "older" refers to Fritzing versions before 2013.
+	for (const QString folder : {"bins", "parts"}) {
+		QDir oldDir(userDataStore.absoluteFilePath(folder));
+		if (oldDir.exists()) {
+			QString oldLocation(oldDir.absolutePath());
+			QString newLocation(documents.absoluteFilePath(folder));
 
-	if (foundOld) {
-		// inform user about the move
-		FMessageBox::information(nullptr, QCoreApplication::translate("FolderUtils", "Moving your custom parts"),
-		                         QCoreApplication::translate("FolderUtils", "<p>Your custom-made parts and bins are moved from the hidden "
-		                                 "app data folder to your fritzing documents folder at <br/><br/><em>%1</em><br/><br/>"
-		                                 "This way, we hope to make it easier for you to find and edit them manually.</p>")
-		                         .arg(documents.absolutePath()));
-
-		// copy these into the new locations
-		Q_FOREACH(QString folder, folders ) {
-			QDir source(userDataStore.absoluteFilePath(folder));
-			QDir target(documents.absoluteFilePath(folder));
-			if (source.exists()) {
-				replicateDir(source, target);
-				toRemove << source;
-			}
-		}
-
-		// now remove the obsolete locations
-		Q_FOREACH (QDir dir, toRemove) {
-			rmdir(dir);
+			FMessageBox::information(nullptr,
+									 QCoreApplication::translate("Legacy", "Move Your Custom Parts"),
+									 QCoreApplication::translate("Legacy", "<p>Please move your custom-made parts and bins from the old location:<br/><br/><em>%1</em><br/><br/>"
+																		   "to the new Fritzing documents folder at:<br/><br/><em>%2</em><br/><br/>")
+										 .arg(oldLocation, newLocation));
+			break;
 		}
 	}
 }

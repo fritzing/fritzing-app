@@ -33,12 +33,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QUndoCommand>
 #include <QPointer>
 
-#include <limits>
 #include <queue>
 
-#include "../../viewgeometry.h"
 #include "../../viewlayer.h"
-#include "../../commands.h"
 #include "../autorouter.h"
 
 typedef quint64 GridValue;

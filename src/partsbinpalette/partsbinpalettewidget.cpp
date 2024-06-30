@@ -34,13 +34,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "partsbiniconview.h"
 #include "partsbinlistview.h"
 #include "searchlineedit.h"
-#include "../utils/misc.h"
-#include "../debugdialog.h"
-#include "../infoview/htmlinfoview.h"
-#include "../utils/fileprogressdialog.h"
-#include "../utils/folderutils.h"
-#include "../utils/textutils.h"
-#include "../mainwindow/mainwindow.h"          // TODO: PartsBinPaletteWidget should not call MainWindow functions
+#include "utils/misc.h"
+#include "debugdialog.h"
+#include "infoview/htmlinfoview.h"
+#include "utils/fileprogressdialog.h"
+#include "utils/folderutils.h"
+#include "utils/textutils.h"
+#include "mainwindow/mainwindow.h"          // TODO: PartsBinPaletteWidget should not call MainWindow functions
 
 
 static QString CustomIconName = "Custom1.png";

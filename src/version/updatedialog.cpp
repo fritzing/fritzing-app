@@ -25,11 +25,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 
 #include "updatedialog.h"
-#include "version.h"
 #include "versionchecker.h"
 #include "modfiledialog.h"
 #include "../debugdialog.h"
 
+#include <QDir>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QSettings>

@@ -23,13 +23,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QApplication>
 
 #include "mainwindow.h"
-#include "../utils/fsizegrip.h"
-#include "../utils/misc.h"
-#include "../partsbinpalette/binmanager/binmanager.h"
-#include "../infoview/htmlinfoview.h"
-#include "../dock/layerpalette.h"
-#include "../mainwindow/fdockwidget.h"
-#include "../utils/fileprogressdialog.h"
+#include "fdockwidget.h"
+
+#include "dock/layerpalette.h"
+#include "infoview/htmlinfoview.h"
+#include "partsbinpalette/binmanager/binmanager.h"
+#include "utils/fileprogressdialog.h"
+#include "utils/fsizegrip.h"
+#include "utils/misc.h"
+
 
 /////////////////////////////////////
 
@@ -206,6 +208,11 @@ void MainWindow::initDock() {
 	m_infoView = new HtmlInfoView();
 	m_infoView->init(false);
 	connect(m_infoView, SIGNAL(clickObsoleteSignal()), this, SLOT(selectAllObsolete()));
+
+	if (m_fileProgressDialog != nullptr) {
+		m_fileProgressDialog->setValue(49);
+	}
+
 	//DebugDialog::debug("after html view");
 
 	m_binManager = new BinManager(m_referenceModel, m_infoView, m_undoStack, this);

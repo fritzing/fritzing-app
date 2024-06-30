@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014-2019 Fritzing Team <info_AT_fritzing.org> -->
-<!-- Copyright 2020-2023 Fritzing GmbH <info_AT_fritzing.org> -->
+<!-- Copyright 2020-2024 Fritzing GmbH <info_AT_fritzing.org> -->
 <component type="desktop">
  <id>org.fritzing.Fritzing.desktop</id>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
@@ -9,6 +9,9 @@
   <content_attribute id="social-info">mild</content_attribute>
  </content_rating>
  <name>Fritzing</name>
+ <developer id="org.fritzing">
+  <name>Fritzing GmbH</name>
+</developer>
  <summary>Electronic Design Tool</summary>
  <description>
   <p>
@@ -28,7 +31,7 @@
   </p>
   <p>
     The project is made possible with the payments from our users. If you don't yet have it, please
-	consider downloading the offical, most up to date, version from our website, http://fritzing.org .
+	consider downloading the offical, most up to date, version from our website https://fritzing.org .
   </p>
  </description>
  <screenshots>
@@ -50,9 +53,9 @@
  <url type="faq">https://fritzing.org/faq/</url>
  <url type="help">https://fritzing.org/learning/</url>
  <url type="forum">https://forum.fritzing.org</url>
- <url type="translate">https://fritzing.org/support-us/language-translation/</url>
+ <url type="translate">https://weblate.fritzing.org</url>
  <releases>
-  <release version="1.0.2b" date="2023-09-09"/>
+  <release version="1.0.3" date="2024-02-28"/>
  </releases>
  <provides>
   <binary>Fritzing</binary>

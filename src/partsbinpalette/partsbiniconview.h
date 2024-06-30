@@ -22,16 +22,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef ICONVIEW_H_
 #define ICONVIEW_H_
 
+#include "partsbinview.h"
+#include "sketch/infographicsview.h"
+
 #include <QFrame>
 #include <QGraphicsView>
+#include <QDragEnterEvent>
+#include <QDropEvent>
 
-#include "partsbinview.h"
-#include "../sketch/infographicsview.h"
 
-QT_BEGIN_NAMESPACE
-class QDragEnterEvent;
-class QDropEvent;
-QT_END_NAMESPACE
 class PaletteModel;
 class SvgIconWidget;
 class GraphicsFlowLayout;

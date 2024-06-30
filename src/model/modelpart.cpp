@@ -19,13 +19,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "modelpart.h"
-#include "../connectors/connectorshared.h"
-#include "../connectors/busshared.h"
-#include "../connectors/bus.h"
-#include "../version/version.h"
-#include "../utils/textutils.h"
-#include "../items/itembase.h"
-#include "../items/partfactory.h"
+#include "connectors/connectorshared.h"
+#include "connectors/busshared.h"
+#include "connectors/bus.h"
+#include "utils/misc.h"
+#include "version/version.h"
+#include "utils/textutils.h"
+#include "items/itembase.h"
+#include "items/partfactory.h"
 
 #include <QDomElement>
 #include <QBitArray>
@@ -1062,4 +1063,9 @@ bool ModelPart::hasSubparts() {
 
 void ModelPart::setSubpartID(const QString & id) {
 	if (m_modelPartShared) m_modelPartShared->setSubpartID(id);
+}
+
+QString ModelPart::subpartID() const {
+	if (m_modelPartShared) return m_modelPartShared->subpartID();
+	return QString();
 }

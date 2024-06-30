@@ -30,6 +30,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSettings>
 #include <QTimer>
 #include <QSettings>
+#include <QDir>
 #include <time.h>
 
 #include <git2.h>

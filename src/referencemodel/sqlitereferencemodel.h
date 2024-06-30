@@ -51,6 +51,9 @@ public:
 
 	QString partTitle(const QString & moduleID);
 	QStringList propValues(const QString &family, const QString &propName, bool distinct);
+	QList<QPair<QString, QString> > allPartsOfFamilyWithProp(const QString &family,
+																		 const QString &propName);
+
 	QMultiHash<QString, QString> allPropValues(const QString &family, const QString &propName);
 	void recordProperty(const QString &name, const QString &value);
 	QString retrieveModuleIdWith(const QString &family, const QString &propertyName, bool closestMatch);
@@ -62,6 +65,8 @@ public:
 
 	QPixmap retrieveIcon(const QString &name);
 	bool insertIcon(const QString &name, const QPixmap &icon);
+	QStringList getAllServiceIconNames() const;
+
 
 protected:
 	void initParts(bool dbExists);

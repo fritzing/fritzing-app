@@ -46,7 +46,7 @@ FabUploadProgress::FabUploadProgress(QWidget *parent) : QWidget(parent)
 }
 
 void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename,
-			     double width, double height, int boardCount, const QString & boardTitle)
+				 double width, double height, int boardCount, const QString & boardTitle)
 {
 	mManager = manager;
 	mFilepath = filename;
@@ -59,7 +59,7 @@ void FabUploadProgress::init(QNetworkAccessManager *manager, QString filename,
 void FabUploadProgress::doUpload()
 {
 	QSettings settings;
-	mService = settings.value("service", "fritzing").toString();
+	mService = settings.value("service", "").toString();
 	QUrl upload_url("https://service.fritzing.org/fab/upload");
 
 	settings.beginGroup("sketches");
@@ -67,15 +67,15 @@ void FabUploadProgress::doUpload()
 	settings.endGroup();
 
 	if (auto opt = settingValue.value<UploadPair>(); settingValue.isValid() && !settingValue.isNull()) {
-		mService = std::move(opt.service);
-		if (!opt.link.isEmpty()) {
+		if (!opt.link.isEmpty() && mService == opt.service) {
+			// Already uploaded before, reuse the url so we get a project update
 			QUrl potential_url(opt.link);
 			if (potential_url.isValid()) {
 				upload_url = potential_url;
 				uploadMultipart(upload_url.toString(), mFilepath);
 				return;
 			}
-			// Otherwise, keep using the default URL
+			// Otherwise, use the default URL
 		}
 	}
 
@@ -198,7 +198,7 @@ void FabUploadProgress::httpError(QNetworkReply* reply)
 	if (!jsonDoc.isNull() && jsonDoc.isObject()) {
 		QJsonObject jsonObj = jsonDoc.object();
 		QJsonArray errorsArray = jsonObj["errors"].toArray();
-		foreach (const QJsonValue &value, errorsArray) {
+		for (const QJsonValue &value : errorsArray) {
 			jsonErrors += (jsonErrors.isEmpty() ? "" : ", ") + value.toString();
 		}
 	}

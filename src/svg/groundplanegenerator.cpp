@@ -27,6 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <clipper.hpp>
 
 #include <QBitArray>
+#include <QFile>
 #include <QPainter>
 #include <QPaintDevice>
 #include <QPaintEngine>
@@ -192,7 +193,6 @@ void GroundPlanePaintEngine::drawPolygon(const QPointF *points, int pointCount, 
 	cp.Execute(ctUnion, clipperPaths, pftNonZero, qtToClipperFillType(mode));
 }
 
-// http://imgur.com/a/N4Q8k
 GroundPlaneGenerator::GroundPlaneGenerator() {
 	m_strokeWidthIncrement = 0;
 	m_minRiseSize = m_minRunSize = 1;
@@ -226,28 +226,12 @@ bool GroundPlaneGenerator::generateGroundPlaneUnit(const QString &boardSvg, QSiz
 
 bool GroundPlaneGenerator::generateGroundPlane(const QString &boardSvg, QSizeF boardImageSize, const QString &svg, QSizeF copperImageSize,
 		QStringList &exceptions, QGraphicsItem *board, double res, const QString &color, double keepoutMils, QList<GroundFillSeed> seeds) {
-	QDomDocument doc;
-	doc.setContent(svg);
-
-	QDomNodeList circles = doc.elementsByTagName("circle");
-
-	for (int i = 0; i < circles.count(); i++) {
-		QDomElement circle = circles.at(i).toElement();
-
-		// Make sure that hole without copper ring get keepout, too.
-		if (circle.attribute("stroke-width").toDouble() == 0) {
-			const double FIXED_KEEPOUT_WIDTH = 0.05;
-			circle.setAttribute("stroke-width", FIXED_KEEPOUT_WIDTH);
-		}
-	}
-
-	QString modifiedSvg = doc.toString();
 
 	GPGParams params;
 	params.boardSvg = boardSvg;
 	params.keepoutMils = keepoutMils;
 	params.boardImageSize = boardImageSize;
-	params.svg = modifiedSvg;
+	params.svg = svg;
 	params.copperImageSize = copperImageSize;
 	params.exceptions = exceptions;
 	params.board = board;

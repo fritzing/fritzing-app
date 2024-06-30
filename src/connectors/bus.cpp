@@ -57,3 +57,8 @@ void Bus::addSubConnector(Connector * subConnector) {
 Connector * Bus::subConnector() const noexcept {
 	return m_subConnector;
 }
+
+void Bus::removeSubConnector() {
+	delete m_subConnector;
+	m_subConnector = nullptr;
+}

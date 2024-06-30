@@ -37,6 +37,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSpinBox>
 #include <QSettings>
 #include <QLineEdit>
+#include <QString>
 
 #define MARGIN 5
 #define FORMLABELWIDTH 195
@@ -64,8 +65,10 @@ void PrefsDialog::initViewInfo(int index, const QString & viewName, const QStrin
 	m_viewInfoThings[index].curvy = curvy;
 }
 
-void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platforms)
+void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platforms, MainWindow * mainWindow)
 {
+	m_mainWindow = mainWindow;
+	m_projectProperties = mainWindow->getProjectProperties();
 	m_tabWidget = new QTabWidget();
 	m_general = new QWidget();
 	m_breadboard = new QWidget();
@@ -164,8 +167,8 @@ void PrefsDialog::initCode(QWidget * widget, QList<Platform *> platforms)
 void PrefsDialog::initBetaFeatures(QWidget * widget)
 {
 	QVBoxLayout * vLayout = new QVBoxLayout();
-	vLayout->addWidget(createSimulatorBetaFeaturesForm());
 	vLayout->addWidget(createGerberBetaFeaturesForm());
+	vLayout->addWidget(createProjectPropertiesForm());
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
 	widget->setLayout(vLayout);
 }
@@ -464,31 +467,89 @@ QWidget * PrefsDialog::createGerberBetaFeaturesForm() {
 	return gerberGroup;
 }
 
-QWidget * PrefsDialog::createSimulatorBetaFeaturesForm() {
-	QSettings settings;
-	QGroupBox * simulator = new QGroupBox(tr("Simulator"), this);
+QWidget *PrefsDialog::createProjectPropertiesForm() {
+	QGroupBox * projectPropertiesBox = new QGroupBox(tr("Project properties"), this );
 
 	QVBoxLayout * layout = new QVBoxLayout();
+	layout->setSpacing(SPACING);
 
-	QLabel * label = new QLabel(tr("The simulator is now enabled by default."));
-
+	QLabel * label = new QLabel(tr("Here you can set some settings that will be saved with the project"));
 	label->setWordWrap(true);
 	layout->addWidget(label);
 	layout->addSpacing(10);
 
-	QCheckBox * box = new QCheckBox(tr("Enable simulator"));
-	box->setFixedWidth(FORMLABELWIDTH);
+    bool timeStepMode = m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorTimeStepMode).toLower().contains("true");
+    QLabel *simTimeStepModeLabel = new QLabel(tr("Select the way to define the time step: (1) "
+                                                 "Number of points (max simulation time divided by the number of points) "
+                                                 "or (2) fixed time step."));
+    simTimeStepModeLabel->setWordWrap(true);
+    layout->addWidget(simTimeStepModeLabel);
+    QHBoxLayout * simStepslayout = new QHBoxLayout();
+    QRadioButton *simPointsRB = new QRadioButton("Number of Points (recommended)");
+    simPointsRB->setChecked(!timeStepMode);
+    simStepslayout->addWidget(simPointsRB);
+    simStepslayout->addSpacing(1);
+    QLabel * numPointslabel = new QLabel(tr("Number of points: "));
+    simStepslayout->addWidget(numPointslabel);
+    QLineEdit *simNumStepsEdit = new QLineEdit();
+    simNumStepsEdit->setToolTip("The time step is calculated as the simulation time divided by the numper of steps\n"
+                                 "Low number of steps could cause inestabilities in the simulation and render artifacts in the oscilloscope.");
+    simStepslayout->addWidget(simNumStepsEdit);
+    simNumStepsEdit->setText(m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorNumberOfSteps));
 
-	box->setChecked(settings.value("simulatorEnabled", false).toBool()); // Initialize the value of box using m_settings
-	layout->addWidget(box);
+    layout->addLayout(simStepslayout);
 
-	simulator->setLayout(layout);
+    QHBoxLayout * simTimeSteplayout = new QHBoxLayout();
+    QRadioButton *simTimeStepRB = new QRadioButton("Fixed Time Step");
+    simTimeStepRB->setChecked(timeStepMode);
+    simTimeSteplayout->addWidget(simTimeStepRB);
+    simTimeSteplayout->addSpacing(10);
+    QLabel *simTimeStepLabel = new QLabel(tr("Time Step (s):"));
+    simTimeSteplayout->addWidget(simTimeStepLabel);
+    QLineEdit *simTimeStepEdit = new QLineEdit();
 
-	connect(box, &QCheckBox::clicked, this, [this](bool checked) {
-		m_settings.insert("simulatorEnabled", QString::number(checked));
-	});
+    simTimeStepEdit->setText(m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorTimeStepS));
+    simTimeStepEdit->setToolTip("The time step to be used in transitory simulations.\n"
+                                "Small time steps and long simulations could cause prformance issues.");
+    simTimeSteplayout->addWidget(simTimeStepEdit);
 
-	return simulator;
+    layout->addLayout(simTimeSteplayout);
+
+    QLabel * simAnimationTimelabel = new QLabel(tr("Animation time for the transitory simulation (s): "));
+    layout->addWidget(simAnimationTimelabel);
+    QLineEdit *simAnimationTimeEdit = new QLineEdit();
+    simAnimationTimeEdit->setText(m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorAnimationTimeS));
+    simAnimationTimeEdit->setFixedWidth(FORMLABELWIDTH * 2);
+    simAnimationTimeEdit->setToolTip("This is the time used to animate the effects of a transitory simulation.\n"
+                                     "Set it to 0 if you do not want an animation.");
+    layout->addWidget(simAnimationTimeEdit);
+
+    projectPropertiesBox->setLayout(layout);
+
+    connect(simTimeStepRB, SIGNAL(toggled(bool)), this, SLOT(setSimulationTimeStepMode(bool)));
+    connect(simNumStepsEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationNumberOfSteps(QString)));
+    connect(simTimeStepEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationTimeStep(QString)));
+    connect(simAnimationTimeEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationAnimationTime(QString)));
+
+	return projectPropertiesBox;
+
+}
+
+void PrefsDialog::setSimulationTimeStepMode(const bool &timeStepMode) {
+    QString mode = timeStepMode ? "true" : "false";
+    m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorTimeStepMode, mode);
+}
+
+void PrefsDialog::setSimulationNumberOfSteps(const QString &numberOfSteps) {
+    m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorNumberOfSteps, numberOfSteps);
+}
+
+void PrefsDialog::setSimulationTimeStep(const QString &timeStep) {
+    m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorTimeStepS, timeStep);
+}
+
+void PrefsDialog::setSimulationAnimationTime(const QString &animationTime) {
+    m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorAnimationTimeS, animationTime);
 }
 
 void PrefsDialog::clear() {
@@ -551,7 +612,7 @@ void PrefsDialog::changeWheelBehavior() {
 
 void PrefsDialog::updateWheelText() {
 	QString text;
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	QString cKey = tr("Command");
 #else
 	QString cKey = tr("Control");

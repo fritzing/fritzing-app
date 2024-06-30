@@ -20,10 +20,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "project_properties.h"
 
-#include <utility>
-
 ProjectProperties::ProjectProperties() {
-	m_keys = QStringList(m_propertiesMap.keys());
+	m_propertiesMap[ProjectPropertyKeySimulatorTimeStepMode] = "false";
+	m_propertiesMap[ProjectPropertyKeySimulatorNumberOfSteps] = "400";
+	m_propertiesMap[ProjectPropertyKeySimulatorTimeStepS] = "1us";
+	m_propertiesMap[ProjectPropertyKeySimulatorAnimationTimeS] = "5s";
 }
 
 ProjectProperties::~ProjectProperties() {
@@ -32,9 +33,9 @@ ProjectProperties::~ProjectProperties() {
 void ProjectProperties::saveProperties(QXmlStreamWriter & streamWriter) {
 	streamWriter.writeStartElement("project_properties");
 
-	for (const QString & key: std::as_const(m_keys)) {
-		streamWriter.writeStartElement(key);
-		streamWriter.writeAttribute("value", m_propertiesMap[key]);
+	for (auto it = m_propertiesMap.constBegin(); it != m_propertiesMap.constEnd(); ++it) {
+		streamWriter.writeStartElement(it.key());
+		streamWriter.writeAttribute("value", it.value());
 		streamWriter.writeEndElement();
 	}
 
@@ -42,22 +43,12 @@ void ProjectProperties::saveProperties(QXmlStreamWriter & streamWriter) {
 }
 
 void ProjectProperties::load(const QDomElement & projectProperties) {
-	QMap<QString, bool> loadedValueMap;
-	for (const QString & key: std::as_const(m_keys)) {
-		loadedValueMap[key] = false;
-	}
-	if (!projectProperties.isNull()) {
-		for (const QString & key: std::as_const(m_keys)) {
-			QDomElement element = projectProperties.firstChildElement(key);
-			if (!element.isNull()) {
-				m_propertiesMap[key] = element.attribute("value");
-				loadedValueMap[key] = true;
-			}
-		}
-	}
-	for (const QString & key: std::as_const(m_keys)) {
-		if (!loadedValueMap[key]) {
-			m_propertiesMap[key] = m_OldProjectValuePropertiesMap[key];
+	// If required set differing legacy project defaults after this line.
+	if (projectProperties.isNull()) return;
+	for (auto it = m_propertiesMap.begin(); it != m_propertiesMap.end(); ++it) {
+		QDomElement element = projectProperties.firstChildElement(it.key());
+		if (!element.isNull()) {
+			it.value() = element.attribute("value");
 		}
 	}
 }
@@ -66,3 +57,6 @@ QString ProjectProperties::getProjectProperty(const QString & key) {
 	return m_propertiesMap[key];
 }
 
+void ProjectProperties::setProjectProperty(const QString & key, QString value) {
+	m_propertiesMap[key] = value;
+}

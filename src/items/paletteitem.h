@@ -163,6 +163,8 @@ protected:
 	static QString hackSvgHoleSize(QDomDocument & domDocument, const QString & holeDiameter, const QString & ringThickness);
 	static QString hackSvgHoleSizeAux(const QString & svg, const QString & expectedFileName);
 	virtual void changeHoleSize(const QString &);
+	static QLocale getLocale();
+
 
 protected Q_SLOTS:
 	virtual void changeHoleSize(int);

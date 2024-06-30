@@ -23,8 +23,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTextDocument>
 #include <QTextCursor>
 #include <QTimer>
+#include <QDomComment>
+#include <QFileInfo>
 
 #include <time.h>
+// #include <misc.h>
 
 FSplashScreen::FSplashScreen(const QPixmap & pixmap, Qt::WindowFlags f ) : QSplashScreen(pixmap, f)
 {

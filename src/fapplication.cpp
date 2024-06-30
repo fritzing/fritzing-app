@@ -45,7 +45,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "utils/textutils.h"
 #include "utils/graphicsutils.h"
 #include "utils/uploadpair.h"
-#include "infoview/htmlinfoview.h"
 #include "svg/gedaelement2svg.h"
 #include "svg/kicadmodule2svg.h"
 #include "svg/kicadschematic2svg.h"
@@ -85,7 +84,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QTemporaryFile>
 #include <QDir>
 #include <QMetaType>
-#include <time.h>
 
 #ifdef LINUX_32
 #define PLATFORM_NAME "linux-32bit"
@@ -100,7 +98,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define PLATFORM_NAME "windows"
 #endif
 #endif
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 #define PLATFORM_NAME "mac-os-x-105"
 #endif
 
@@ -371,7 +369,6 @@ int FApplication::init() {
 	//}
 
 	m_serviceType = ServiceType::NoService;
-	bool solidRatsnest = false;
 
 	QList<int> toRemove;
 	for (int i = 0; i < m_arguments.length(); i++) {
@@ -410,7 +407,6 @@ int FApplication::init() {
 			DebugDialog::setEnabled(true);
 			std::shared_ptr<FTesting> fTesting = FTesting::getInstance();
 			fTesting->init();
-			solidRatsnest = true;
 			toRemove << i;
 		}
 
@@ -598,7 +594,7 @@ int FApplication::init() {
 	FSvgRenderer::initNames();
 	ViewLayer::initNames();
 	RatsnestColors::initNames();
-	Wire::initNames(solidRatsnest);
+	Wire::initNames();
 	ItemBase::initNames();
 	ViewLayer::initNames();
 	Connector::initNames();
@@ -610,7 +606,7 @@ int FApplication::init() {
 		CursorMaster::initCursors();
 	}
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	m_buildType = " Cocoa";
 #else
 	m_buildType = QString(PLATFORM_NAME).contains("64") ? "64" : "32";
@@ -1299,21 +1295,12 @@ int FApplication::startup()
 		if (prevVersion != currVersion) {
 			QVariant pid = settings.value("pid");
 			QVariant language = settings.value("language");
-			QVariant simulatorEnabled = settings.value("simulatorEnabled");
 			settings.clear();
 			if (!pid.isNull()) {
 				settings.setValue("pid", pid);
 			}
 			if (!language.isNull()) {
 				settings.setValue("language", language);
-			}
-			if (!simulatorEnabled.isNull()) {
-				settings.setValue("simulatorEnabled", simulatorEnabled);
-			}
-
-			// Check if prevVersion is smaller than "1.0.0" or not set (new install)
-			if (prevVersion.isEmpty() || Version::greaterThan(prevVersion, "1.0.0")) {
-				settings.setValue("simulatorEnabled", "1");
 			}
 		}
 	}
@@ -1425,7 +1412,7 @@ void FApplication::preferencesAfter()
 
 	QList<Platform *> platforms = mainWindow->programmingWidget()->getAvailablePlatforms();
 
-	prefsDialog.initLayout(languages, platforms);
+	prefsDialog.initLayout(languages, platforms, mainWindow);
 	if (QDialog::Accepted == prefsDialog.exec()) {
 		updatePrefs(prefsDialog);
 	}
@@ -1476,11 +1463,6 @@ void FApplication::updatePrefs(PrefsDialog & prefsDialog)
 				}
 			}
 		}
-		else if (key.compare("simulatorEnabled") == 0) {
-			foreach (MainWindow * mainWindow, mainWindows) {
-				mainWindow->enableSimulator(hash.value(key).toInt());
-			}
-		}
 	}
 
 }
@@ -1510,7 +1492,7 @@ void FApplication::initSplash(FSplashScreen & splash) {
 	               .arg(m_buildType);
 	splash.showMessage(msg2, "versionText", Qt::AlignRight | Qt::AlignTop);
 
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	// remove the splash screen flag on OS-X as workaround for the reported bug
 	// https://bugreports.qt.io/browse/QTBUG-49576
 	splash.setWindowFlags(splash.windowFlags() & (~Qt::SplashScreen));

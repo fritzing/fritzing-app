@@ -19,14 +19,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "modelpartshared.h"
+#include "palettemodel.h"
 #include "../connectors/connectorshared.h"
 #include "../debugdialog.h"
 #include "../connectors/busshared.h"
+#include "utils/misc.h"
 
 
 #include <QHash>
 #include <QMessageBox>
-#include <math.h>
 
 void copyPinAttributes(QDomElement & from, QDomElement & to)
 {
@@ -390,9 +391,12 @@ void ModelPartShared::initConnectors() {
 	if (m_connectorsInitialized)
 		return;
 
-	QFile file(m_path);
+	bool isSubpart = !m_subpartID.isEmpty() && m_superpart;
+
+	QString pathToUse = isSubpart ? m_superpart->path() : m_path;
+	QFile file(pathToUse);
 	if (!file.open(QIODevice::ReadOnly)) {
-		DebugDialog::debug(QString("Unable to open :%1").arg(m_path));
+		DebugDialog::debug(QString("Unable to open :%1").arg(pathToUse));
 	}
 	QString errorStr;
 	int errorLine;
@@ -401,6 +405,16 @@ void ModelPartShared::initConnectors() {
 	doc.setContent(&file, &errorStr, &errorLine, &errorColumn);
 
 	m_connectorsInitialized = true;
+
+	if (isSubpart) {
+		// Replace the superpart document with the subpart document
+		doc = PaletteModel::makeSubpartDoc(m_subpartID, doc);
+		if (doc.isNull()) {
+			DebugDialog::debug(QString("Failed to create subpart document for subpart ID %1").arg(m_subpartID));
+			return;
+		}
+	}
+
 	QDomElement root = doc.documentElement();
 	if (root.isNull()) {
 		return;

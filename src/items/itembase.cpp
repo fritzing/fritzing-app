@@ -39,8 +39,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/clickablelabel.h"
 #include "../utils/familypropertycombobox.h"
 #include "../referencemodel/referencemodel.h"
-#include "../items/FProbeSwitchPackage.h"
+#include "../items/FProbeSwitchProperty.h"
 #include "utils/ftooltip.h"
+#include "utils/misc.h"
 
 #include <QScrollBar>
 #include <QTimer>
@@ -121,7 +122,8 @@ ItemBase::ItemBase( ModelPart* modelPart, ViewLayer::ViewID viewID, const ViewGe
 }
 
 ItemBase::~ItemBase() {
-	//DebugDialog::debug(QString("deleting itembase %1 %2 %3").arg((long) this, 0, 16).arg(m_id).arg((long) m_modelPart, 0, 16));
+	// DebugDialog::debug(QString("deleting itembase %1").arg((qintptr)this, 0, 16));
+	// DebugDialog::debug(QString("deleting itembase %1 %2 %3").arg((qintptr) this, 0, 16).arg(m_id).arg((long) m_modelPart, 0, 16));
 	if (m_partLabel != nullptr) {
 		delete m_partLabel;
 		m_partLabel = nullptr;
@@ -131,6 +133,7 @@ ItemBase::~ItemBase() {
 		Q_FOREACH (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 			toConnectorItem->tempRemove(connectorItem, true);
 		}
+		connectorItem->detach();
 	}
 
 	Q_FOREACH (ItemBase * itemBase, m_stickyList) {
@@ -147,7 +150,7 @@ ItemBase::~ItemBase() {
 
 	//m_simItem is a child of this object, it gets delated by the destructor
 	m_simItem = nullptr;
-
+	// DebugDialog::debug(QString("deleted itembase %1").arg((qintptr)this, 0, 16));
 }
 
 void ItemBase::setTooltip() {
@@ -1241,7 +1244,7 @@ void ItemBase::flipItem(Qt::Orientations orientation) {
 void ItemBase::transformItem(const QTransform & currTransf, bool includeRatsnest) {
 	//debugInfo("transform item " + TextUtils::svgMatrix(currTransf));
 
-	QTransform trns = getViewGeometry().transform();
+	//QTransform trns = getViewGeometry().transform();
 	//debugInfo("\t" + TextUtils::svgMatrix(trns));
 
 
@@ -1262,7 +1265,7 @@ void ItemBase::transformItem(const QTransform & currTransf, bool includeRatsnest
 		updateConnections(includeRatsnest, already);
 	}
 
-	trns = getViewGeometry().transform();
+	//trns = getViewGeometry().transform();
 	//debugInfo("\t" + TextUtils::svgMatrix(trns));
 
 	update();
@@ -1623,25 +1626,63 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 #endif
 
 	QString tempValue = value;
-	QStringList values = collectValues(family, prop, tempValue);
-	if (values.count() > 1) {
-		auto * comboBox = new FamilyPropertyComboBox(family, prop, parent);
-		comboBox->setObjectName("infoViewComboBox");
+	QList<QPair<QString, QString>> collection;
+	ItemBase * targetItem(this);
 
-		comboBox->addItems(values);
-		comboBox->setCurrentIndex(comboBox->findText(tempValue));
-		comboBox->setEnabled(swappingEnabled);
-		comboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-		connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(swapEntry(int)));
-
-		returnWidget = comboBox;
-		m_propsMap.insert(prop, tempValue);
-		if (prop.compare("package", Qt::CaseInsensitive) == 0) {
-			new FProbeSwitchPackage(comboBox);
+	if (prop.compare("chip label", Qt::CaseInsensitive) == 0 || prop.compare("variant", Qt::CaseInsensitive) == 0) {
+		// Get a list of ModuleIDs with their associated values for the property 'prop'
+		// This should be the prefered method for all parts that get fully swapped.
+		// for now, we only do this for 'chip label' and 'variant'
+		collection = collectPartsOfFamilyWithProp(family, prop);
+		if (superpart()) {
+			targetItem = superpart();
 		}
-		return true;
+		tempValue = targetItem->moduleID();
+	} else {
+		// Original method. Only look at the property text. This does not work well
+		// with translations, and often requires difficult (buggy) reverse lookups
+		// to identify the part with that property.
+		QStringList values = collectValues(family, prop, tempValue);
+		for (const QString &value : values) {
+			collection.append(qMakePair(QString(), value));
+		}
+
 	}
 
+	if (collection.count() > 1) {
+		auto *comboBox = new FamilyPropertyComboBox(family, prop, parent);
+		comboBox->setObjectName("infoViewComboBox");
+
+		int currentIndex = collection.count() - 1;
+		for (const auto &kv : collection) {
+			comboBox->addItem(kv.second, kv.first);
+			if (kv.first.isEmpty() && kv.second == tempValue) {
+				currentIndex = comboBox->count() - 1;
+			} else if (!kv.first.isEmpty() && kv.first == tempValue) {
+				currentIndex = comboBox->count() - 1;
+			}
+		}
+		comboBox->setCurrentIndex(currentIndex);
+		comboBox->setEnabled(swappingEnabled);
+		comboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+
+		connect(comboBox,
+				&QComboBox::currentIndexChanged,
+				targetItem,
+				QOverload<int>::of(&ItemBase::swapEntry));
+
+		returnWidget = comboBox;
+
+		// Fixme: Does this still work when using item data? tempValue will be a moduleID then.
+		// Also, swapEntry will overwrite prop (see ~ 30 lines below) , probably before it ever gets used.
+		// Remove ?
+		m_propsMap.insert(prop, tempValue);
+		FProbeSwitchProperty::insertIf(prop,
+									   comboBox,
+									   "Package, Layer, Variant, Pins, Form, Position, Row, Stepper type, Chip label"
+									   );
+		return true;
+	}
 	return true;
 }
 
@@ -1649,6 +1690,13 @@ void ItemBase::swapEntry(int index) {
 	auto * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
 	if (comboBox == nullptr) return;
 
+	QVariant data = comboBox->itemData(index);
+	if (data.isValid() && data.typeId() == QMetaType::QString) {
+		QString moduleID = data.toString();
+		// swapSelectMap will pick this up, and can directly retrieve the model part,
+		// instead of searching for matching properties
+		m_propsMap.insert("moduleID", moduleID);
+	}
 	swapEntry(comboBox->itemText(index));
 }
 
@@ -1666,6 +1714,36 @@ void ItemBase::swapEntry(const QString & text) {
 
 void ItemBase::setReferenceModel(ReferenceModel * rm) {
 	TheReferenceModel = rm;
+}
+
+QList<QPair<QString, QString>> ItemBase::collectPartsOfFamilyWithProp(const QString &family,
+																	  const QString &prop)
+{
+	if (TheReferenceModel == nullptr)
+		return {};
+
+	QList<QPair<QString, QString>> collection =
+		TheReferenceModel->allPartsOfFamilyWithProp(family, prop);
+
+	// Convert values to numeric values if all values match numbers
+	QHash<QPair<QString, QString>, double> numericValues;
+	bool ok = std::all_of(collection.begin(), collection.end(), [&](const auto &pair) {
+		QRegularExpressionMatch match;
+		if (pair.second.contains(NumberMatcher, &match)) {
+			double n = TextUtils::convertFromPowerPrefix(match.captured(1) + match.captured(5), "");
+			numericValues[pair] = n;
+			return true;
+		}
+		return false;
+	});
+
+	if (ok) {
+		std::sort(collection.begin(), collection.end(), [&](const auto &a, const auto &b) {
+			return numericValues[a] < numericValues[b];
+		});
+	}
+
+	return collection;
 }
 
 QStringList ItemBase::collectValues(const QString & family, const QString & prop, QString & /* value */) {
@@ -1943,11 +2021,6 @@ bool ItemBase::hasRubberBandLeg() const
 	return m_hasRubberBandLeg;
 }
 
-bool ItemBase::sceneEvent(QEvent *event)
-{
-	return QGraphicsSvgItem::sceneEvent(event);
-}
-
 const QList<ConnectorItem *> & ItemBase::cachedConnectorItems()
 {
 	if (m_cachedConnectorItems.isEmpty()) {
@@ -2197,7 +2270,7 @@ void ItemBase::addSubpart(ItemBase * sub)
 			subconnector = connectorItem->connector();
 			if (subconnector != nullptr) {
 				subbus = new Bus(nullptr, nullptr);
-				subconnector->setBus(subbus);
+				subconnector->setSubBus(subbus);
 			}
 		}
 
@@ -2208,10 +2281,35 @@ void ItemBase::addSubpart(ItemBase * sub)
 				Bus * bus = connector->bus();
 				if (bus == nullptr) {
 					bus = new Bus(nullptr, nullptr);
-					connector->setBus(bus);
+					connector->setSubBus(bus);
 				}
 
 				bus->addSubConnector(subconnector);
+			}
+		}
+	}
+}
+
+void ItemBase::removeSubpart(ItemBase * sub)
+{
+	this->debugInfo("remove_super");
+	sub->debugInfo("\t");
+	m_subparts.removeAll(sub);
+	sub->setSuperpart(nullptr);
+	Q_FOREACH (ConnectorItem * connectorItem, sub->cachedConnectorItems()) {
+		Connector * subconnector = nullptr;
+		subconnector = connectorItem->connector();
+		if (subconnector != nullptr) {
+			subconnector->removeSubBus();
+		}
+
+		auto * mp = modelPart();
+		if (mp != nullptr) {
+			Connector * connector = modelPart()->getConnector(connectorItem->connectorSharedID());
+			if (connector != nullptr) {
+				if (subconnector != nullptr) {
+					connector->removeSubBus();
+				}
 			}
 		}
 	}
@@ -2239,13 +2337,19 @@ const QList< QPointer<ItemBase> > & ItemBase::subparts()
 	return m_subparts;
 }
 
+QString ItemBase::subpartID() const {
+	if (m_modelPart)
+		return m_modelPart->subpartID();
+	return QString();
+}
+
 QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys)
 {
 	m_propsMap.clear();
 
 	// TODO: someday get local props
 	QHash<QString, QString> props = modelPart->properties();
-	QString family = props.value("family", "").toLower();
+	// QString family = props.value("family", "").toLower();
 
 	// ensure family is first;
 	keys = props.keys();
@@ -2253,7 +2357,7 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
 	keys.push_front("family");
 
 	// ensure part number  is last
-	QString partNumber = props.value(ModelPartShared::PartNumberPropertyName, "").toLower();
+	// QString partNumber = props.value(ModelPartShared::PartNumberPropertyName, "").toLower();
 	for (auto&& propertyName : {ModelPartShared::MNPropertyName, ModelPartShared::MPNPropertyName, ModelPartShared::PartNumberPropertyName}) {
 		keys.removeOne(propertyName);
 	}

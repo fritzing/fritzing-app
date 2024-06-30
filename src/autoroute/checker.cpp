@@ -29,7 +29,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDomElement>
 #include <QDir>
 #include <qmath.h>
-#include <limits>
 
 static QString CheckerOutputPath;
 static QSet<QString> CheckerFileNames;

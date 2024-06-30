@@ -68,6 +68,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../sketchtoolbutton.h"
 #include "../help/firsttimehelpdialog.h"
 #include "../connectors/debugconnectors.h"
+#include "mainwindow/fprobeactions.h"
 
 ////////////////////////////////////////////////////////
 
@@ -908,7 +909,7 @@ void MainWindow::createEditMenuActions() {
 	m_deleteAct = new QAction(tr("&Delete"), this);
 	m_deleteAct->setStatusTip(tr("Delete selection"));
 	connect(m_deleteAct, SIGNAL(triggered()), this, SLOT(doDelete()));
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	m_deleteAct->setShortcut(Qt::Key_Backspace);
 #else
 	m_deleteAct->setShortcut(QKeySequence::Delete);
@@ -917,7 +918,7 @@ void MainWindow::createEditMenuActions() {
 	m_deleteMinusAct = new QAction(tr("Delete Minus"), this);
 	m_deleteMinusAct->setStatusTip(tr("Delete selection without attached wires"));
 	connect(m_deleteMinusAct, SIGNAL(triggered()), this, SLOT(doDeleteMinus()));
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	m_deleteMinusAct->setShortcut(Qt::Key_Backspace | Qt::AltModifier);
 #endif
 
@@ -976,13 +977,10 @@ void MainWindow::createPartMenuActions() {
 	m_dumpAllPartsAction = new QAction(tr("Dump all parts"), this);
 	m_dumpAllPartsAction->setStatusTip(tr("Debug dump all parts in this view"));
 	connect(m_dumpAllPartsAction, SIGNAL(triggered()), this, SLOT(dumpAllParts()));
-
+#endif
 	m_testConnectorsAction = new QAction(tr("Test Connectors"), this);
 	m_testConnectorsAction->setStatusTip(tr("Connect all connectors to a single test part"));
-	connect(m_testConnectorsAction, SIGNAL(triggered()), this, SLOT(testConnectors()));
-
-#endif
-
+	connect(m_testConnectorsAction, &QAction::triggered, this, &MainWindow::testConnectors);
 
 	m_rotate45cwAct = new QAction(tr("Rotate 45° Clockwise"), this);
 	m_rotate45cwAct->setStatusTip(tr("Rotate current selection 45 degrees clockwise"));
@@ -1342,6 +1340,8 @@ void MainWindow::createMenus()
 	createWindowMenu();
 	createTraceMenus();
 	createHelpMenu();
+
+	auto * actionProbe = new FProbeActions("MenuBar", menuBar());
 }
 
 QMenu * MainWindow::createRotateSubmenu(QMenu * parentMenu) {
@@ -1482,7 +1482,7 @@ void MainWindow::createEditMenu()
 	m_editMenu->addSeparator();
 	m_editMenu->addAction(m_addNoteAct);
 	m_editMenu->addSeparator();
-#ifndef Q_OS_MAC
+#ifndef Q_OS_MACOS
 	m_editMenu->addAction(m_preferencesAct);
 #endif
 	updateEditMenu();
@@ -1657,7 +1657,7 @@ void MainWindow::createHelpMenu()
 #ifndef QT_NO_DEBUG
 	m_helpMenu->addAction(m_aboutQtAct);
 #endif
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 	m_helpMenu->addAction(m_preferencesAct);
 #endif
 }
@@ -3413,7 +3413,9 @@ bool MainWindow::isGroundFill(ItemBase * itemBase) {
 QMenu *MainWindow::breadboardItemMenu() {
 	auto *menu = new QMenu(QObject::tr("Part"), this);
 	createRotateSubmenu(menu);
-	return viewItemMenuAux(menu);
+	viewItemMenuAux(menu);
+	auto * probe = new FProbeActions("BreadboardItem", menu);
+	return menu;
 }
 
 QMenu *MainWindow::schematicItemMenu() {
@@ -3421,7 +3423,10 @@ QMenu *MainWindow::schematicItemMenu() {
 	createRotateSubmenu(menu);
 	menu->addAction(m_flipHorizontalAct);
 	menu->addAction(m_flipVerticalAct);
-	return viewItemMenuAux(menu);
+	viewItemMenuAux(menu);
+	auto * probe = new FProbeActions("SchematicItem", menu);
+	return menu;
+
 }
 
 QMenu *MainWindow::pcbItemMenu() {
@@ -3434,6 +3439,7 @@ QMenu *MainWindow::pcbItemMenu() {
 	m_convertToBendpointSeparator = menu->addSeparator();
 	menu->addAction(m_setOneGroundFillSeedAct);
 	menu->addAction(m_clearGroundFillSeedsAct);
+	auto * probe = new FProbeActions("PCBItem", menu);
 	return menu;
 }
 
@@ -3466,7 +3472,7 @@ QMenu *MainWindow::breadboardWireMenu() {
 #endif
 
 	connect( menu, SIGNAL(aboutToShow()), this, SLOT(updateWireMenu()));
-
+	auto * probe = new FProbeActions("BreadboardWire", menu);
 	return menu;
 }
 
@@ -3492,7 +3498,7 @@ QMenu *MainWindow::pcbWireMenu() {
 #endif
 
 	connect(menu, SIGNAL(aboutToShow()), this, SLOT(updateWireMenu()));
-
+	auto * probe = new FProbeActions("PCBWire", menu);
 	return menu;
 }
 
@@ -3524,7 +3530,7 @@ QMenu *MainWindow::schematicWireMenu() {
 #endif
 
 	connect( menu, SIGNAL(aboutToShow()), this, SLOT(updateWireMenu()));
-
+	auto * probe = new FProbeActions("SchematicWire", menu);
 	return menu;
 }
 
@@ -3538,10 +3544,7 @@ QMenu *MainWindow::viewItemMenuAux(QMenu* menu) {
 	menu->addAction(m_duplicateAct);
 	menu->addAction(m_deleteAct);
 	menu->addAction(m_deleteMinusAct);
-#ifndef QT_NO_DEBUG
-	menu->addSeparator();
-	menu->addAction(m_disconnectAllAct);
-#endif
+
 	menu->addSeparator();
 	menu->addAction(m_openInPartsEditorNewAct);
 	createAddToBinSubmenu(menu);
@@ -3552,8 +3555,12 @@ QMenu *MainWindow::viewItemMenuAux(QMenu* menu) {
 	menu->addAction(m_infoViewOnHoverAction);
 	menu->addAction(m_exportNormalizedSvgAction);
 	menu->addAction(m_exportNormalizedFlattenedSvgAction);
-	menu->addAction(m_testConnectorsAction);
 #endif
+	if (DebugDialog::enabled()) {
+		menu->addSeparator();
+		menu->addAction(m_testConnectorsAction);
+		menu->addAction(m_disconnectAllAct);
+	}
 
 	connect(
 	    menu,
@@ -4628,29 +4635,37 @@ void MainWindow::findPartInSketch() {
 
 	QStringList strings;
 	strings << text;
-	QList<ItemBase *> matched;
-	Q_FOREACH (ItemBase * itemBase, itemBases) {
+	QList<ItemBase *> exactMatched;
+	QList<ItemBase *> partialMatched;
 
-#ifndef QT_NO_DEBUG
-		if (QString::number(itemBase->id()).contains(text)) {
-			matched << itemBase;
-			continue;
+	// Iterate through all item bases to find matches.
+	Q_FOREACH (ItemBase *itemBase, itemBases) {
+		if (DebugDialog::enabled()) {
+			if (QString::number(itemBase->id()).contains(text)) {
+				partialMatched << itemBase;
+				continue;
+			}
 		}
-#endif
 
-		if (itemBase->instanceTitle().contains(text, Qt::CaseInsensitive)) {
-			matched << itemBase;
+		// Prioritize exact matches on title
+		if (itemBase->instanceTitle().compare(text, Qt::CaseInsensitive) == 0) {
+			exactMatched << itemBase;
+			continue;
+		} else if (itemBase->instanceTitle().contains(text, Qt::CaseInsensitive)) {
+			partialMatched << itemBase;
 			continue;
 		}
 
 		QList<ModelPart *> modelParts;
 		m_referenceModel->search(itemBase->modelPart(), strings, modelParts, true);
-		if (modelParts.count() > 0) {
-			matched << itemBase;
+		if (!modelParts.isEmpty()) {
+			partialMatched << itemBase;
 		}
 	}
 
-	if (matched.count() == 0) {
+	QList<ItemBase *> matched = partialMatched + exactMatched;
+
+	if (matched.isEmpty()) {
 		QMessageBox::information(this, tr("Search"), tr("No parts matched search term '%1'.").arg(text));
 		return;
 	}

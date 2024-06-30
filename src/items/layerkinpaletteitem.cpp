@@ -230,6 +230,8 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
 	Q_UNUSED(currTransf);
 	Q_UNUSED(includeRatsnest);
 
+	QTransform chiefTransform = layerKinChief()->transform();
+
 	if (m_textThings.count() == 0) {
 		initTextThings();
 	}
@@ -237,15 +239,9 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
 	double rotation;
 	QString svg = this->property("textSvg").toString();
 	svg = getTransformedSvg(svg, rotation);
-
 	reloadRenderer(svg, true);
 
-	QTransform transform;
-	QRectF bounds = boundingRect();
-	transform.translate(bounds.width() / 2, bounds.height() / 2);
-	transform.rotate(rotation);
-	transform.translate(bounds.width() / -2, bounds.height() / -2);
-	this->setTransform(transform);
+	setTransform(chiefTransform);
 }
 
 void SchematicTextLayerKinPaletteItem::initTextThings() {
@@ -299,51 +295,35 @@ QString SchematicTextLayerKinPaletteItem::flipTextSvg(const QString & textSvg) {
 	return doc.toString();
 }
 
-void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts) {
-	// TODO: reuse these values unless the pin labels have changed
-	//QString id = IDString.arg(0);
-	//if (this->property(id.toUtf8().constData()).isValid()) {
-	//    // calculated this already
-	//    return;
-	//}
-
+void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> &texts)
+{
+	// TODO: Render all texts at once
+	// TODO: Reuse values if labels did not change. We might even hash them
+	// by ModuleID + ID attribute globally.
 	m_textThings.clear();
 
-	Q_FOREACH (QDomElement text, texts) {
-		text.setTagName("g");
-	}
-
-	QRectF br = boundingRect();
-	QImage image(qCeil(br.width()) * 2, qCeil(br.height()) * 2, QImage::Format_Mono);  // schematic text is so small it doesn't render unless bitmap is double-sized
-
-	Q_FOREACH (QDomElement text, texts) {
+	for (QDomElement &text : texts) {
 		TextThing textThing;
-		QRectF viewBox;
-		QTransform matrix;
-		SvgText::renderText(image, text, textThing.minX, textThing.minY, textThing.maxX, textThing.maxY, matrix, viewBox);
 
-		double newX = (image.width() - textThing.maxX) * viewBox.width() / image.width();
-		double oldX = textThing.minX * viewBox.width() / image.width();
+		QString id = text.attribute("id");
+		if (id.isEmpty()) {
+			id = "123";
+			text.setAttribute("id", id);
+		}
 
-		QTransform inv = matrix.inverted();
-		QTransform t = QTransform().translate(newX - oldX, 0);
-		textThing.flipMatrix = matrix * t * inv;
+		QGraphicsSvgItem tempSvgItem;
+		tempSvgItem.setSharedRenderer(new QSvgRenderer(text.toElement().ownerDocument().toByteArray()));
+		QRectF boundingBox = tempSvgItem.renderer()->boundsOnElement(id);
 
-		QRectF r(textThing.minX * viewBox.width() / image.width(),
-		         textThing.minY * viewBox.height() / image.height(),
-		         (textThing.maxX - textThing.minX) * viewBox.width() / image.width(),
-		         (textThing.maxY - textThing.minY) * viewBox.height() / image.height());
+		QTransform flipHorizontal;
+		flipHorizontal.translate(boundingBox.center().x(), 0);
+		flipHorizontal.scale(-1, 1);
+		flipHorizontal.translate(-boundingBox.center().x(), 0);
 
-		textThing.newRect = inv.mapRect(r);
-
-
+		textThing.flipMatrix = flipHorizontal;
+		textThing.newRect = boundingBox;
 		m_textThings.append(textThing);
 	}
-
-	Q_FOREACH (QDomElement text, texts) {
-		text.setTagName("text");
-	}
-
 }
 
 void SchematicTextLayerKinPaletteItem::clearTextThings() {

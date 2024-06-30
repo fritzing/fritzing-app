@@ -25,6 +25,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QString>
 #include <QMultiHash>
 
+static const QString OCRAFontName("OCRA");
+static const QString OCRFFontName("OCR-Fritzing-mono");
+
 class InstalledFonts
 {
 
@@ -32,6 +35,7 @@ public:
 	static QSet<QString> InstalledFontsList;
 	static QMultiHash<QString, QString> InstalledFontsNameMapper;   // family name to filename; SVG files seem to have to use filename
 	// note: these static variables are initialized in fapplication.cpp
+
 };
 
 #endif

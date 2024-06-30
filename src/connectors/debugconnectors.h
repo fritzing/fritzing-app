@@ -32,6 +32,7 @@ public:
 	DebugConnectors(SketchWidget *breadboardGraphicsView, SketchWidget *schematicGraphicsView, SketchWidget *pcbGraphicsView);
 
 
+
 public slots:
 	void monitorConnections(bool enabled);
 	void onChangeConnection();
@@ -44,7 +45,8 @@ signals:
 
 private:
 	friend class DebugConnectorsProbe;
-	QList<ItemBase *> doRoutingCheck();
+	QSet<ItemBase *> doRoutingCheck();
+	QSet<ItemBase *> doWireCheck();
 
 	SketchWidget *m_breadboardGraphicsView;
 	SketchWidget *m_schematicGraphicsView;
@@ -53,6 +55,7 @@ private:
 	QSet<QString> getItemConnectorSet(ConnectorItem *connectorItem);
 	QList<ItemBase *> toSortedItembases(const QList<QGraphicsItem *> &graphicsItems);
 	void collectPartsForCheck(QList<ItemBase *> &partList, QGraphicsScene *scene);
+	QList<Wire *> collectWiresForCheck(ViewGeometry::WireFlag flag, QGraphicsScene *scene);
 	void fixColor();
 
 	QTimer *timer;
@@ -65,6 +68,9 @@ private:
 	QColor pcbBackgroundColor;
 
 	bool m_monitorEnabled;
+
+	QSet<ItemBase *> findConnectors(ConnectorItem *c1);
+	void reportErrors(QSet<ItemBase *> errors);
 };
 
 #endif // DEBUGCONNECTORS_H

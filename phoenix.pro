@@ -164,8 +164,9 @@ macx {
 }
 
 QT += concurrent core gui network printsupport serialport sql svg widgets xml
+
 equals(QT_MAJOR_VERSION, 6) {
-  QT += core5compat svgwidgets
+  QT += core5compat svgwidgets openglwidgets
 }
 
 RC_FILE = fritzing.rc

@@ -24,6 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../utils/familypropertycombobox.h"
 #include "../utils/schematicrectconstants.h"
 #include "../connectors/connectoritem.h"
+#include "installedfonts.h"
 #include "pinheader.h"
 #include "partfactory.h"
 

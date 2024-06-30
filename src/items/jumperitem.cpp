@@ -25,6 +25,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../sketch/infographicsview.h"
 #include "../debugdialog.h"
 #include "../layerattributes.h"
+#include "utils/misc.h"
 
 static QString Copper0LayerTemplate = "";
 static QString JumperWireLayerTemplate = "";

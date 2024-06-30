@@ -32,6 +32,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QUrl>
 #include <QNetworkAccessManager>
 #include <QMutexLocker>
+#include <QRegularExpression>
 
 VersionChecker::VersionChecker() : QObject()
 {

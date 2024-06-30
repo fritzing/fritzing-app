@@ -114,7 +114,8 @@ protected:
 public:
 	static QString NonConnectorName;
 
+private:
+	QPointF autoTerminalPoint(const QRectF &);
 };
-
 
 #endif

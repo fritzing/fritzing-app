@@ -21,6 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "fsvgrenderer.h"
 #include "debugdialog.h"
 #include "svg/svgfilesplitter.h"
+#include "utils/fmessagebox.h"
 #include "utils/textutils.h"
 #include "utils/graphicsutils.h"
 #include "connectors/svgidlayer.h"
@@ -29,11 +30,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPainter>
 #include <QCoreApplication>
 #include <QtGlobal>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QGraphicsSvgItem>
-#else
+#include <QFileInfo>
 #include <QtSvgWidgets/QGraphicsSvgItem>
-#endif
+
 #include <qnumeric.h>
 
 /////////////////////////////////////////////
@@ -131,38 +130,36 @@ QByteArray FSvgRenderer::loadAux(const QByteArray & theContents, const LoadInfo 
 		cleanContents = string.toUtf8();
 	}
 
-	if (loadInfo.connectorIDs.count() > 0 || !loadInfo.setColor.isEmpty() || loadInfo.findNonConnectors) {
-		QString errorStr;
-		int errorLine;
-		int errorColumn;
-		QDomDocument doc;
-		if (!doc.setContent(cleanContents, &errorStr, &errorLine, &errorColumn)) {
-			DebugDialog::debug(QString("renderer loadAux failed %1 %2 %3 %4").arg(loadInfo.filename).arg(errorStr).arg(errorLine).arg(errorColumn));
-		}
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+	QDomDocument doc;
+	if (!doc.setContent(cleanContents, &errorStr, &errorLine, &errorColumn)) {
+		DebugDialog::debug(QString("renderer loadAux failed %1 %2 %3 %4").arg(loadInfo.filename).arg(errorStr).arg(errorLine).arg(errorColumn));
+	}
 
-		bool resetContents = false;
+	bool resetContents = false;
 
-		QDomElement root = doc.documentElement();
-		if (!loadInfo.setColor.isEmpty()) {
-			QDomElement element = TextUtils::findElementWithAttribute(root, "id", loadInfo.colorElementID);
-			if (!element.isNull()) {
-				QStringList exceptions;
-				exceptions << "black" << "#000000";
-				SvgFileSplitter::fixColorRecurse(element, loadInfo.setColor, exceptions);
-				resetContents = true;
-			}
+	QDomElement root = doc.documentElement();
+	if (!loadInfo.setColor.isEmpty()) {
+		QDomElement element = TextUtils::findElementWithAttribute(root, "id", loadInfo.colorElementID);
+		if (!element.isNull()) {
+			QStringList exceptions;
+			exceptions << "black" << "#000000";
+			SvgFileSplitter::fixColorRecurse(element, loadInfo.setColor, exceptions);
+			resetContents = true;
 		}
-		if (loadInfo.connectorIDs.count() > 0) {
-			bool init =  initConnectorInfo(doc, loadInfo);
-			resetContents = resetContents || init;
-		}
-		if (loadInfo.findNonConnectors) {
-			initNonConnectorInfo(doc, loadInfo.filename);
-		}
+	}
+	if (loadInfo.connectorIDs.count() > 0) {
+		bool init =  initConnectorInfo(doc, loadInfo);
+		resetContents = resetContents || init;
+	}
+	if (loadInfo.findNonConnectors) {
+		initNonConnectorInfo(doc, loadInfo.filename);
+	}
 
-		if (resetContents) {
-			cleanContents = TextUtils::removeXMLEntities(doc.toString()).toUtf8();
-		}
+	if (resetContents) {
+		cleanContents = TextUtils::removeXMLEntities(doc.toString()).toUtf8();
 	}
 
 
@@ -671,22 +668,19 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 	QTransform elementMatrix = this->transformForElement(connectorID);
 	QRectF r1 = elementMatrix.mapRect(bounds);
 
-	if (connectorInfo != nullptr) {
-		if (connectorInfo->gotCircle) {
-			QLineF l(0,0,connectorInfo->radius, 0);
-			QLineF lm = elementMatrix.map(l);
-			svgIdLayer->m_radius = lm.length() * defaultSizeF.width() / viewBox.width();
+	if (connectorInfo->gotCircle) {
+		QLineF l(0,0,connectorInfo->radius, 0);
+		QLineF lm = elementMatrix.map(l);
+		svgIdLayer->m_radius = lm.length() * defaultSizeF.width() / viewBox.width();
 
-			QLineF k(0,0,connectorInfo->strokeWidth, 0);
-			QLineF km = elementMatrix.map(k);
-			svgIdLayer->m_strokeWidth = km.length() * defaultSizeF.width() / viewBox.width();
-			//bounds = connectorInfo->cbounds;
-		}
-		if (connectorInfo->gotPath) {
-			svgIdLayer->m_path = true;
-		}
+		QLineF k(0,0,connectorInfo->strokeWidth, 0);
+		QLineF km = elementMatrix.map(k);
+		svgIdLayer->m_strokeWidth = km.length() * defaultSizeF.width() / viewBox.width();
+		//bounds = connectorInfo->cbounds;
 	}
-
+	if (connectorInfo->gotPath) {
+		svgIdLayer->m_path = true;
+	}
 
 	/*
 	svgIdLayer->m_rect.setRect(r1.x() * defaultSize.width() / viewBox.width(),
@@ -703,7 +697,16 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 	//if (!svgIdLayer->m_svgVisible) {
 	//DebugDialog::debug("not vis");
 	//}
-	QPointF terminal = calcTerminalPoint(svgIdLayer->m_terminalId, svgRect, ignoreTerminalPoint, viewBox, connectorInfo->terminalMatrix);
+	QPointF terminal;
+	if (svgIdLayer->m_viewID == ViewLayer::SchematicView && svgIdLayer->m_terminalId.isEmpty()) {
+		terminal = autoTerminalPoint(svgRect);
+	} else {
+		terminal = calcTerminalPoint(svgIdLayer->m_terminalId,
+									 svgRect,
+									 ignoreTerminalPoint,
+									 viewBox,
+									 connectorInfo->terminalMatrix);
+	}
 
 	svgIdLayer->setPointRect(viewLayerPlacement, terminal, svgRect, !bounds.isNull());
 	calcLeg(svgIdLayer, viewBox, connectorInfo);
@@ -757,12 +760,13 @@ QPointF FSvgRenderer::calcTerminalPoint(const QString & terminalId, const QRectF
 	if (ignoreTerminalPoint) {
 		return terminalPoint;
 	}
-	if (terminalId.isNull() || terminalId.isEmpty()) {
+	if (terminalId.isEmpty()) {
 		return terminalPoint;
 	}
 
 	if (!this->elementExists(terminalId)) {
-		DebugDialog::debug(QString("missing expected terminal point element %1").arg(terminalId));
+		DebugDialog::debug(
+			QString("missing expected terminal point element %1 in %2").arg(terminalId, m_filename));
 		return terminalPoint;
 	}
 
@@ -791,6 +795,41 @@ QPointF FSvgRenderer::calcTerminalPoint(const QString & terminalId, const QRectF
 	//arg(terminalID) );
 
 	return terminalPoint;
+}
+
+QPointF FSvgRenderer::autoTerminalPoint(const QRectF & connectorRect)
+{
+	const double epsilon = 0.001;
+	// Directly return the center if width or height is near zero, treating as almost quadratic
+	bool widthNearZero = std::abs(connectorRect.width()) < epsilon;
+	bool heightNearZero = std::abs(connectorRect.height()) < epsilon;
+	if (widthNearZero && heightNearZero) {
+		return connectorRect.center() - connectorRect.topLeft();
+	}
+
+	if (!heightNearZero) {
+		double widthHeightRatio = connectorRect.width() / connectorRect.height();
+		if (widthHeightRatio >= 0.9 && widthHeightRatio <= 1.1) {
+			// connectorRect is almost quadratic (within +- 10 percent)
+			return connectorRect.center() - connectorRect.topLeft();
+		}
+	}
+
+	QSizeF defaultSizeF = this->defaultSize();
+	QPointF defaultCenter(defaultSizeF.width() / 2, defaultSizeF.height() / 2);
+	if (connectorRect.width() > connectorRect.height()) {
+		if (connectorRect.center().x() < defaultCenter.x()) {
+			return QPointF(connectorRect.left(), connectorRect.center().y()) - connectorRect.topLeft();
+		} else {
+			return QPointF(connectorRect.right(), connectorRect.center().y()) - connectorRect.topLeft();
+		}
+	} else {
+		if (connectorRect.center().y() < defaultCenter.y()) {
+			return QPointF(connectorRect.center().x(), connectorRect.top()) - connectorRect.topLeft();
+		} else {
+			return QPointF(connectorRect.center().x(), connectorRect.bottom()) - connectorRect.topLeft();
+		}
+	}
 }
 
 QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors(ViewLayer::ViewLayerPlacement viewLayerPlacement) {

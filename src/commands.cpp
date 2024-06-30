@@ -2244,7 +2244,7 @@ AddSubpartCommand::AddSubpartCommand(SketchWidget *sketchWidget,  CrossViewType 
 void AddSubpartCommand::undo()
 {
 	if (!m_redoOnly) {
-		m_sketchWidget->addSubpartForCommand(m_itemID, m_subpartItemID, true);
+		m_sketchWidget->removeSubpartForCommand(m_itemID, m_subpartItemID, crossViewType() == BaseCommand::CrossView);
 	}
 	BaseCommand::undo();
 }
@@ -2252,13 +2252,48 @@ void AddSubpartCommand::undo()
 void AddSubpartCommand::redo()
 {
 	if (!m_undoOnly) {
-		m_sketchWidget->addSubpartForCommand(m_itemID, m_subpartItemID, true);
+		m_sketchWidget->addSubpartForCommand(m_itemID, m_subpartItemID, crossViewType() == BaseCommand::CrossView);
 	}
 	BaseCommand::redo();
 }
 
 QString AddSubpartCommand::getParamString() const {
 	return QString("AddSubpartCommand ")
+	       + BaseCommand::getParamString() +
+	       QString(" id:%1 subpart id:%2")
+	       .arg(m_itemID)
+	       .arg(m_subpartItemID)
+	       ;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+RemoveSubpartCommand::RemoveSubpartCommand(SketchWidget *sketchWidget,  CrossViewType crossView, long id, long subpartID, QUndoCommand *parent)
+	: BaseCommand(crossView, sketchWidget, parent),
+    m_itemID(id),
+    m_subpartItemID(subpartID)
+{
+
+}
+
+void RemoveSubpartCommand::undo()
+{
+	if (!m_redoOnly) {
+		m_sketchWidget->addSubpartForCommand(m_itemID, m_subpartItemID, crossViewType() == BaseCommand::CrossView);
+	}
+	BaseCommand::undo();
+}
+
+void RemoveSubpartCommand::redo()
+{
+	if (!m_undoOnly) {
+		m_sketchWidget->removeSubpartForCommand(m_itemID, m_subpartItemID, crossViewType() == BaseCommand::CrossView);
+	}
+	BaseCommand::redo();
+}
+
+QString RemoveSubpartCommand::getParamString() const {
+	return QString("RemoveSubpartCommand ")
 	       + BaseCommand::getParamString() +
 	       QString(" id:%1 subpart id:%2")
 	       .arg(m_itemID)

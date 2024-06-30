@@ -58,6 +58,8 @@ class QListWidget;
 class QMenu;
 QT_END_NAMESPACE
 
+class ServiceListFetcher;
+
 class FSizeGrip;
 
 class DebugConnectors;
@@ -219,6 +221,8 @@ public:
 	bool isSimulatorEnabled();
 	void enableSimulator(bool);
 	void triggerSimulator();
+	QSharedPointer<ProjectProperties> getProjectProperties();
+	bool isTransientSimulationEnabled();
 
 public:
 	static void initNames();
@@ -262,6 +266,7 @@ public Q_SLOTS:
 	void showWelcomeView();
 	void putItemByModuleID(const QString & moduleID);
 	void postKeyEvent(const QString & serializedKeys);
+	void onServicesFetched(const QStringList& services);
 
 protected Q_SLOTS:
 	void mainLoad();
@@ -544,6 +549,7 @@ protected:
 	SketchToolButton *createFlipButton(SketchAreaWidget *parent);
 	SketchToolButton *createAutorouteButton(SketchAreaWidget *parent);
 	SketchToolButton *createOrderFabButton(SketchAreaWidget *parent);
+	void updateOrderFabMenu(SketchToolButton* orderFabButton);
 	QWidget *createActiveLayerButton(SketchAreaWidget *parent);
 	QWidget *createViewFromButton(SketchAreaWidget *parent);
 	class ExpandingLabel * createRoutingStatusLabel(SketchAreaWidget *);
@@ -961,14 +967,16 @@ protected:
 	bool m_dontKeepMargins = false;
 	QPointer<QDialog> m_rolloverQuoteDialog;
 	bool m_obsoleteSMDOrientation = false;
-	QWidget * m_orderFabButton = nullptr;
+	SketchToolButton * m_orderFabButton = nullptr;
 	QPointer<DebugConnectors> m_debugConnectors;
 
 	// exporting
 	QGraphicsItem * m_watermark;
 	QList<QGraphicsItem*> m_selectedItems;
 	QColor m_bgColor;
-	QSharedPointer<ProjectProperties> m_projectProperties;	
+	QSharedPointer<ProjectProperties> m_projectProperties;
+	QSharedPointer<ServiceListFetcher> m_serviceListFetcher;
+	QStringList m_services;
 
 public:
 	static int AutosaveTimeoutMinutes;

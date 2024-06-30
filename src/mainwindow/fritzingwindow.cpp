@@ -28,21 +28,32 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QAbstractButton>
 
 #include "fritzingwindow.h"
-#include "../debugdialog.h"
-#include "../utils/misc.h"
-#include "../utils/folderutils.h"
-#include "../utils/fileprogressdialog.h"
+#include "debugdialog.h"
+#include "utils/misc.h"
+#include "utils/folderutils.h"
+#include "utils/fileprogressdialog.h"
 
 const QString FritzingWindow::QtFunkyPlaceholder = QLatin1String("[*]");  // this is some weird hack Qt uses in window titles as a placeholder to setr the modified state
 QString FritzingWindow::ReadOnlyPlaceholder(" [READ-ONLY] ");
 QStringList FritzingWindow::OtherKnownExtensions;
 
-FritzingWindow::FritzingWindow(const QString &untitledFileName, int &untitledFileCount, QString fileExt, QWidget * parent, Qt::WindowFlags f)
+FritzingWindow::FritzingWindow(QWidget * parent, Qt::WindowFlags f)
 	: QMainWindow(parent, f)
 {
 	// Let's set the icon
 	this->setWindowIcon(QIcon(QPixmap(":resources/images/fritzing_icon.png")));
 
+	m_undoStack = new WaitPushUndoStack(this);
+	connect(m_undoStack, &WaitPushUndoStack::cleanChanged, this, &FritzingWindow::undoStackCleanChanged);
+}
+
+FritzingWindow::~FritzingWindow() {
+	disconnect(m_undoStack, &WaitPushUndoStack::cleanChanged, this, &FritzingWindow::undoStackCleanChanged);
+	if (m_closeAct)
+		disconnect(m_closeAct, &QAction::triggered, this, &FritzingWindow::close);
+}
+
+void FritzingWindow::initializeTitle(const QString &untitledFileName, int &untitledFileCount, QString fileExt) {
 	QString fn = untitledFileName;
 
 	if(untitledFileCount > 1) {
@@ -54,16 +65,13 @@ FritzingWindow::FritzingWindow(const QString &untitledFileName, int &untitledFil
 	untitledFileCount++;
 
 	FritzingWindow::setTitle();
-
-	m_undoStack = new WaitPushUndoStack(this);
-	connect(m_undoStack, SIGNAL(cleanChanged(bool)), this, SLOT(undoStackCleanChanged(bool)) );
 }
 
 void FritzingWindow::createCloseAction() {
 	m_closeAct = new QAction(tr("&Close Window"), this);
 	m_closeAct->setShortcut(tr("Ctrl+W"));
 	m_closeAct->setStatusTip(tr("Close the current sketch"));
-	connect(m_closeAct, SIGNAL(triggered()), this, SLOT(close()));
+	connect(m_closeAct, &QAction::triggered, this, &FritzingWindow::close);
 }
 
 void FritzingWindow::setTitle() {
@@ -141,8 +149,8 @@ bool FritzingWindow::saveAs(const QString & filename, bool readOnly) {
 
 	QStringList extensions = getExtensions();
 	bool hasExtension = false;
-	Q_FOREACH (QString extension, extensions) {
-		if(alreadyHasExtension(newFilename, extension)) {
+	for (const QString &extension : extensions) {
+		if (alreadyHasExtension(newFilename, extension)) {
 			hasExtension = true;
 			break;
 		}
@@ -164,10 +172,10 @@ bool FritzingWindow::alreadyHasExtension(const QString &fileName, const QString 
 	if(!fileExt.isEmpty()) {
 		return fileName.endsWith(fileExt);
 	} else {
-		Q_FOREACH (QString extension, fritzingExtensions()) {
+		for (const QString &extension : fritzingExtensions()) {
 			if (fileName.endsWith(extension)) return true;
 		}
-		Q_FOREACH (QString extension, OtherKnownExtensions) {
+		for (const QString &extension : OtherKnownExtensions) {
 			if (fileName.endsWith(extension)) return true;
 		}
 

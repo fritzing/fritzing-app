@@ -74,6 +74,8 @@ later:
 #include "../utils/cursormaster.h"
 #include "../utils/ratsnestcolors.h"
 #include "../layerattributes.h"
+#include "utils/misc.h"
+#include "testing/FTesting.h"
 
 #include <stdlib.h>
 
@@ -1264,13 +1266,13 @@ QString Wire::colorString() {
 	return m_colorName;
 }
 
-void Wire::initNames(bool solidRatsnest) {
+void Wire::initNames() {
 	if (colorNames.count() > 0) return;
 
 	TheDash.clear();
 	TheDash << 10 << 8;
 	RatDash.clear();
-	if (!solidRatsnest) {
+	if (!FTesting::getInstance()->enabled()) {
 		RatDash << 2 << 2;
 	}
 
@@ -1731,15 +1733,6 @@ bool Wire::rotationAllowed() {
 
 bool Wire::rotation45Allowed() {
 	return false;
-}
-
-void Wire::addedToScene(bool temporary) {
-	ItemBase::addedToScene(temporary);
-
-	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView == nullptr) return;
-
-	infoGraphicsView->newWire(this);
 }
 
 void Wire::setConnectorDimensions(double width, double height)

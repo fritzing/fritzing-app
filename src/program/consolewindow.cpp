@@ -61,7 +61,7 @@ ConsoleWindow::ConsoleWindow(QWidget *parent) :
 		qWarning("Unable to open :/resources/styles/programwindow.qss");
 	} else {
 		QString ss = styleSheet.readAll();
-#ifdef Q_OS_MAC
+#ifdef Q_OS_MACOS
 		int paneLoc = 4;
 		int tabBarLoc = 0;
 #else

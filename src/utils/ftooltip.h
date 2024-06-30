@@ -9,7 +9,6 @@ QString createConnectionHtmlList(const QList<ConnectorItem*>& connectors);
 QString createTooltipHtml(const QString& text, const QString& title);
 QString createNonWireItemTooltipHtml(const QString& name,
 									 const QString& descr,
-									 const QString& id,
 									 const QString& title);
 
 }

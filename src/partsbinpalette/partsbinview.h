@@ -19,13 +19,14 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 
-
 #ifndef PARTSBINVIEW_H_
 #define PARTSBINVIEW_H_
 
-#include "../model/palettemodel.h"
-#include "../items/paletteitem.h"
-#include "../referencemodel/referencemodel.h"
+#include "model/palettemodel.h"
+#include "referencemodel/referencemodel.h"
+
+#include <QDropEvent>
+
 
 class PartsBinPaletteWidget;
 

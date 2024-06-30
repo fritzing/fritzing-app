@@ -36,9 +36,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtSerialPort/qserialport.h>
 
 #include "platform.h"
-#include "syntaxer.h"
 
-#include "../mainwindow/fritzingwindow.h"
+#include "mainwindow/fritzingwindow.h"
 
 struct LinkedFile {
 	enum FileFlag {

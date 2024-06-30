@@ -29,9 +29,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPointer>
 #include <QPixmap>
 
-#include "../model/modelpart.h"
-#include "../items/itembase.h"
+#include "viewlayer.h"
 
+class ItemBase;
+class ModelPart;
 
 class SvgIconPixmapItem : public QGraphicsPixmapItem {
 

@@ -26,15 +26,13 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QUrl>
 #include <QStringBuilder>
+#include <QRegularExpression>
 
 FTesting::FTesting() {
 }
 
 std::shared_ptr<FTesting> FTesting::getInstance() {
-	static std::shared_ptr<FTesting> instance;
-	if (!instance) {
-		instance.reset(new FTesting);
-	}
+	static std::shared_ptr<FTesting> instance(new FTesting);
 	return instance;
 }
 
@@ -47,6 +45,10 @@ void FTesting::init() {
 	m_initialized = true;
 }
 
+bool FTesting::enabled() {
+	return m_initialized;
+}
+
 void FTesting::addProbe(FProbe * probe)
 {
 	m_probeMap[probe->name()] = probe;
@@ -54,31 +56,30 @@ void FTesting::addProbe(FProbe * probe)
 
 void FTesting::removeProbe(std::string name)
 {
-	auto it = m_probeMap.find(name);
-	if (it != m_probeMap.end()) {
-		m_probeMap.erase(it);
-	}
+	m_probeMap.erase(name);
 }
 
-stdx::optional<QVariant> FTesting::readProbe(std::string name)
+std::optional<QVariant> FTesting::readProbe(std::string name)
 {
-	if(m_probeMap.find(name) != m_probeMap.end()) {
-	return m_probeMap[name]->read();
+	auto it = m_probeMap.find(name);
+	if(it != m_probeMap.end()) {
+		return it->second->read();
 	}
 	return std::nullopt;
 }
 
 void FTesting::writeProbe(std::string name, QVariant param)
 {
-	if(m_probeMap.find(name) != m_probeMap.end()) {
-	m_probeMap[name]->write(param);
+	auto it = m_probeMap.find(name);
+	if(it != m_probeMap.end()) {
+		it->second->write(param);
 	}
 }
 
 void FTesting::initServer() {
 	FMessageBox::BlockMessages = true;
 	m_server = new FTestingServer(this);
-	connect(m_server, SIGNAL(newConnection(qintptr)), this, SLOT(newConnection(qintptr)));
+	connect(m_server, &FTestingServer::newConnection, this, &FTesting::newConnection);
 	DebugDialog::debug("FTestingServer active");
 	m_server->listen(QHostAddress::Any, m_portNumber);
 }
@@ -89,7 +90,6 @@ void FTesting::newConnection(qintptr socketDescription) {
 	thread->start();
 }
 
-////////////////////////////////////////////////////
 
 QMutex FTestingServerThread::m_busy;
 
@@ -133,7 +133,11 @@ void FTestingServerThread::run()
 	}
 
 	QStringList params = tokens.at(1).split("/", Qt::SplitBehaviorFlags::SkipEmptyParts);
-	QString command = params.takeFirst();
+	if (params.empty()) {
+		writeResponse(socket, 400, "Bad Request", "", "");
+		return;
+	}
+	QString command = QUrl::fromPercentEncoding(params.takeFirst().toUtf8());
 	if (params.count() == 0) {
 		writeResponse(socket, 400, "Bad Request", "", "");
 		return;
@@ -189,7 +193,7 @@ void FTestingServerThread::run()
 		DebugDialog::debug(QString("FTesting write command %1 %2").arg(command, param));
 		fTesting->writeProbe(command.toStdString(), QVariant(param));
 	} else {
-		stdx::optional<QVariant> probeResult = fTesting->readProbe(command.toStdString());
+		std::optional<QVariant> probeResult = fTesting->readProbe(command.toStdString());
 
 		if (probeResult == std::nullopt) {
 			DebugDialog::debug(QString("Reading probe failed."));
@@ -239,5 +243,4 @@ void FTestingServerThread::writeResponse(QTcpSocket * socket, int code, const QS
 	socket->deleteLater();
 }
 
-////////////////////////////////////////////////////
 

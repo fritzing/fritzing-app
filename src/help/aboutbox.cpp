@@ -27,14 +27,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QScrollBar>
 
 #include "aboutbox.h"
-#include "../version/version.h"
-#include "../utils/expandinglabel.h"
+#include "version/version.h"
+#include "utils/expandinglabel.h"
 #include "qboxlayout.h"
 
 AboutBox* AboutBox::Singleton = nullptr;
 
 static constexpr int AboutWidth = 390;
-static constexpr int AboutText = 220;
+// static constexpr int AboutText = 220;
+
 QString AboutBox::BuildType;
 
 AboutBox::AboutBox(QWidget *parent)

@@ -139,17 +139,88 @@
 <property name="voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">
   <suffix suffix="DC2PowerModuleID"/>
   <suffix suffix="AC2PowerModuleID"/>
+  <suffix suffix="SinePowerSupplyModuleID"/>
+  <suffix suffix="DCPowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
+  <suffix suffix="SawtoothPowerSupplyModuleID"/>
   <menuItem value="3.3" />
 	<menuItem value="5" />
 	<menuItem value="12" />
 </property>
 
-<property name="frequency" symbol="Hz" minValue="0" maxValue="1000" defaultValue="60" numeric="yes" editable="yes">
-	<suffix suffix="AC2PowerModuleID"/>
-	<menuItem value="60" />
+<property name="amplitude" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">
+  <suffix suffix="SinePowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
+  <suffix suffix="SawtoothPowerSupplyModuleID"/>
+  <menuItem value="3.3" />
+	<menuItem value="5" />
+	<menuItem value="12" />
+</property>
+<property name="initial voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="0" numeric="yes" editable="yes">
+  <suffix suffix="PulsePowerSupplyModuleID"/>
+</property>
+<property name="pulsed voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">
+  <suffix suffix="PulsePowerSupplyModuleID"/>
+</property>
+<property name="period" symbol="s" minValue="0" maxValue="1000000" defaultValue="0.1" numeric="yes" editable="yes">
+  <suffix suffix="PulsePowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
+  <suffix suffix="SawtoothPowerSupplyModuleID"/>
+</property>
+<property name="pulse width" symbol="s" minValue="0" maxValue="1000000" defaultValue="0.05" numeric="yes" editable="yes">
+  <suffix suffix="PulsePowerSupplyModuleID"/>
+</property>
+<property name="duty cycle" symbol="%" minValue="0" maxValue="100" defaultValue="25" numeric="yes" editable="yes">
+  <suffix suffix="PWMPulsePowerSupplyModuleID"/>
+</property>
+<property name="rise time" symbol="s" minValue="0" maxValue="1" defaultValue="0.001" numeric="yes" editable="yes">
+  <suffix suffix="GenericPulsePowerSupplyModuleID"/>
+</property>
+<property name="fall time" symbol="s" minValue="0" maxValue="1" defaultValue="0.001" numeric="yes" editable="yes">
+  <suffix suffix="GenericPulsePowerSupplyModuleID"/>
+</property>
+<property name="number of pulses" symbol="" minValue="0" maxValue="1000000000000" defaultValue="0" numeric="yes" editable="yes">
+  <suffix suffix="PulsePowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
+  <suffix suffix="SawtoothPowerSupplyModuleID"/>
 </property>
 
-<property name="frequency" symbol="" minValue="" maxValue="" defaultValue="16 MHz" numeric="no" editable="no">
+<property name="frequency" symbol="Hz" minValue="0" maxValue="1000000" defaultValue="60" numeric="yes" editable="yes">
+	<suffix suffix="AC2PowerModuleID"/>
+	<suffix suffix="SinePowerSupplyModuleID"/>
+	<suffix suffix="PulseGenericPowerSupplyModuleIDwerSupplyModuleID"/>
+	<menuItem value="10" />
+	<menuItem value="20" />
+	<menuItem value="50" />
+	<menuItem value="60" />
+	<menuItem value="100" />
+</property>
+
+<property name="offset voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="0" numeric="yes" editable="yes">
+  <suffix suffix="SinePowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
+  <suffix suffix="SawtoothPowerSupplyModuleID"/>
+</property>
+<property name="delay time" symbol="s" minValue="0" maxValue="100" defaultValue="0" numeric="yes" editable="yes">
+  <suffix suffix="SinePowerSupplyModuleID"/>
+  <suffix suffix="PulsePowerSupplyModuleID"/>
+  <suffix suffix="TriangularPowerSupplyModuleID"/>
+  <suffix suffix="SawtoothPowerSupplyModuleID"/>
+</property>
+<property name="damping factor" symbol="s-1" minValue="0" maxValue="10" defaultValue="0" numeric="yes" editable="yes">
+  <suffix suffix="SinePowerSupplyModuleID"/>
+</property>
+<property name="phase" symbol="degrees" minValue="0" maxValue="360" defaultValue="0" numeric="yes" editable="yes">
+  <suffix suffix="SinePowerSupplyModuleID"/>
+</property>
+<property name="internal resistance" symbol="&#937;" minValue="0" maxValue="1000000" defaultValue="0.1" numeric="yes" editable="yes">
+  <suffix suffix="PowerSupplyModuleID"/>
+  <suffix suffix="77c36646df552e9fe72f360837f556ccleg"/>
+  <suffix suffix="1000AFDF10011leg"/>
+  <suffix suffix="c7c8e292b3beec531de0c51f2576d329"/>
+</property>
+
+<property name="frequency" symbol="Hz" minValue="" maxValue="" defaultValue="16 MHz" numeric="no" editable="no">
 	<suffix suffix="CrystalModuleID"/>
 	<menuItem value="32 kHz" />
 	<menuItem value="1 MHz" />
@@ -327,6 +398,148 @@
 
 <property  name="luminance" symbol="lx" minValue="0.001" maxValue="10000" defaultValue="10" numeric="yes" editable="yes">
 	<suffix suffix="PhotocellModuleID"/>
+</property>
+
+<property name="volts/div" symbol="V" minValue="0" maxValue="100" defaultValue="1" numeric="yes" editable="yes">
+	<suffix suffix="OscilloscopeModuleID"/>
+	<menuItem value="0.001" />
+	<menuItem value="0.01" />
+	<menuItem value="0.1" />
+	<menuItem value="1.0" />
+	<menuItem value="3.3" />
+	<menuItem value="5.0" />
+	<menuItem value="10.0" />
+	<menuItem value="50.0" />
+</property>
+
+<property name="time/div" symbol="s" minValue="0" maxValue="100" defaultValue="0.01" numeric="yes" editable="yes">
+	<suffix suffix="OscilloscopeModuleID"/>
+	<menuItem value="0.000001" />
+	<menuItem value="0.00001" />
+	<menuItem value="0.0001" />
+	<menuItem value="0.001" />
+	<menuItem value="0.01" />
+	<menuItem value="0.1" />
+	<menuItem value="1.0" />
+	<menuItem value="5.0" />
+	<menuItem value="10.0" />
+</property>
+
+<property name="ch1 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
+	<suffix suffix="OscilloscopeModuleID"/>
+	<menuItem value="0.001" />
+	<menuItem value="0.01" />
+	<menuItem value="0.1" />
+	<menuItem value="1.0" />
+	<menuItem value="3.3" />
+	<menuItem value="5.0" />
+	<menuItem value="10.0" />
+	<menuItem value="50.0" />
+</property>
+
+<property name="ch2 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
+	<suffix suffix="OscilloscopeModuleID"/>
+	<menuItem value="0.001" />
+	<menuItem value="0.01" />
+	<menuItem value="0.1" />
+	<menuItem value="1.0" />
+	<menuItem value="3.3" />
+	<menuItem value="5.0" />
+	<menuItem value="10.0" />
+	<menuItem value="50.0" />
+</property>
+
+<property name="ch3 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
+	<suffix suffix="OscilloscopeModuleID"/>
+	<menuItem value="0.001" />
+	<menuItem value="0.01" />
+	<menuItem value="0.1" />
+	<menuItem value="1.0" />
+	<menuItem value="3.3" />
+	<menuItem value="5.0" />
+	<menuItem value="10.0" />
+	<menuItem value="50.0" />
+</property>
+
+<property name="ch4 offset" symbol="V" minValue="-300" maxValue="300" defaultValue="0" numeric="yes" editable="yes">
+	<suffix suffix="OscilloscopeModuleID"/>
+	<menuItem value="0.001" />
+	<menuItem value="0.01" />
+	<menuItem value="0.1" />
+	<menuItem value="1.0" />
+	<menuItem value="3.3" />
+	<menuItem value="5.0" />
+	<menuItem value="10.0" />
+	<menuItem value="50.0" />
+</property>
+
+<property name="ch1 volts/div" symbol="V" minValue="0" maxValue="100" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="OscilloscopeModuleID"/>
+  <menuItem value="0.001" />
+  <menuItem value="0.01" />
+  <menuItem value="0.1" />
+  <menuItem value="1.0" />
+  <menuItem value="3.3" />
+  <menuItem value="5.0" />
+  <menuItem value="10.0" />
+  <menuItem value="50.0" />
+</property>
+
+<property name="ch2 volts/div" symbol="V" minValue="0" maxValue="100" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="OscilloscopeModuleID"/>
+  <menuItem value="0.001" />
+  <menuItem value="0.01" />
+  <menuItem value="0.1" />
+  <menuItem value="1.0" />
+  <menuItem value="3.3" />
+  <menuItem value="5.0" />
+  <menuItem value="10.0" />
+  <menuItem value="50.0" />
+</property>
+
+<property name="ch3 volts/div" symbol="V" minValue="0" maxValue="100" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="OscilloscopeModuleID"/>
+  <menuItem value="0.001" />
+  <menuItem value="0.01" />
+  <menuItem value="0.1" />
+  <menuItem value="1.0" />
+  <menuItem value="3.3" />
+  <menuItem value="5.0" />
+  <menuItem value="10.0" />
+  <menuItem value="50.0" />
+</property>
+
+<property name="ch4 volts/div" symbol="V" minValue="0" maxValue="100" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="OscilloscopeModuleID"/>
+  <menuItem value="0.001" />
+  <menuItem value="0.01" />
+  <menuItem value="0.1" />
+  <menuItem value="1.0" />
+  <menuItem value="3.3" />
+  <menuItem value="5.0" />
+  <menuItem value="10.0" />
+  <menuItem value="50.0" />
+</property>
+
+<property name="horizontal position" symbol="s" minValue="0" maxValue="1000" defaultValue="0" numeric="yes" editable="yes">
+  <suffix suffix="OscilloscopeModuleID"/>
+</property>
+
+<property name="input inductance" symbol="H" minValue="0" maxValue="1000000" defaultValue="0.001" numeric="yes" editable="yes">
+  <suffix suffix="TRANSFORMER-PTH"/>
+  <suffix suffix="TRANSFORMER-SMD"/>
+</property>
+<property name="output inductance" symbol="H" minValue="0" maxValue="1000000" defaultValue="0.001" numeric="yes" editable="yes">
+  <suffix suffix="TRANSFORMER-PTH"/>
+  <suffix suffix="TRANSFORMER-SMD"/>
+</property>
+<property name="input resistance" symbol="&#937;" minValue="0" maxValue="1000000000000" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="TRANSFORMER-PTH"/>
+  <suffix suffix="TRANSFORMER-SMD"/>
+</property>
+<property name="output resistance" symbol="&#937;" minValue="0" maxValue="1000000000000" defaultValue="1" numeric="yes" editable="yes">
+  <suffix suffix="TRANSFORMER-PTH"/>
+  <suffix suffix="TRANSFORMER-SMD"/>
 </property>
 
 </properties>

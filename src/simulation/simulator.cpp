@@ -81,13 +81,14 @@ Simulator::~Simulator() {
 
 /**
  * This function triggers a simulation if the simulator has been created, and the
- * the simulator is sumulating. is Simulating is controlled by "Start Simulation" and
- * "Stop Simulator" buttons. Of corse, to be able to simulate, the simulator needs to
- * be enabled. This function can be called from everywhere in the code as it is a static.
+ * the simulator is simulating. m_simulating is controlled by "Start Simulation" and
+ * "Stop Simulator" buttons. Of cuorse, to be able to simulate, the simulator needs to
+ * be enabled. In transitory simulations, we do not trigguer a new simulation.
+ * This function can be called from everywhere in the code as it is a static.
  */
 void Simulator::triggerSimulation()
 {
-	if(m_simulating) {
+	if(m_simulating && !m_transientSimulationEnabled) {
 		resetTimer();
 	}
 }
@@ -215,6 +216,7 @@ void Simulator::simulate() {
 			double time_div = TextUtils::convertFromPowerPrefix(item->getProperty("time/div"), "s");
 			double pos = TextUtils::convertFromPowerPrefix(item->getProperty("horizontal position"), "s");
 			DebugDialog::stream() << "Found oscilloscope: time/div: " << item->getProperty("time/div").toStdString() << " " << time_div << item->getProperty("horizontal position").toStdString() << " " << pos;
+			m_transientSimulationEnabled = true;
 			if (pos < m_simStartTime) {
 				m_simStartTime = pos;
 			}
@@ -236,10 +238,10 @@ void Simulator::simulate() {
 	QString timeStepStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorTimeStepS);
 	QString animationTimeStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorAnimationTimeS);
 
-		DebugDialog::stream() << "timeStepModeStr: " << timeStepModeStr.toStdString() << ", numStepsStr: " << numStepsStr.toStdString()
-			<< ", timeStepStr: " << timeStepStr.toStdString()
-			<< ", animationTimeStr: " << animationTimeStr.toStdString() << std::endl;
-	if (m_simEndTime > 0 && m_mainWindow->isTransientSimulationEnabled()) {
+	DebugDialog::stream() << "timeStepModeStr: " << timeStepModeStr.toStdString() << ", numStepsStr: "
+						  << numStepsStr.toStdString() << ", timeStepStr: " << timeStepStr.toStdString()
+						  << ", animationTimeStr: " << animationTimeStr.toStdString();
+	if (m_transientSimulationEnabled && m_mainWindow->isTransientSimulationEnabled()) {
 		if (timeStepModeStr.contains("true", Qt::CaseInsensitive)) {
 			m_simStepTime = TextUtils::convertFromPowerPrefixU(timeStepStr, "s");
 			m_simNumberOfSteps = (m_simEndTime-m_simStartTime)/m_simStepTime;

@@ -51,6 +51,7 @@ public slots:
 	void stopSimulation();
 	void startSimulation();
 	void showSimulationResults();
+	std::vector<double> voltageVector(ConnectorItem *);
 
 
 signals:
@@ -74,7 +75,6 @@ protected:
 	QString getSymbol(ItemBase*, QString);
 	double getVectorValueOrDefault(unsigned long timeStep, const std::string & vecName,  double defaultValue);
 	double calculateVoltage(unsigned long, ConnectorItem *, ConnectorItem *);
-	std::vector<double> voltageVector(ConnectorItem *);
 	QString generateSvgPath(std::vector<double>, std::vector<double>, int, QString, double, double, double, double, double, double, double, double, QString, QString);
 	double getCurrent(unsigned long, ItemBase*, QString subpartName="");
 	double getTransistorCurrent(unsigned long timeStep, QString spicePartName, TransistorLeg leg);

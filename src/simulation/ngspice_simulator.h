@@ -119,6 +119,32 @@ public:
 	std::vector<double> getVecInfo(const std::string& vecName);
 
 	/**
+	 * @brief Get the name of the current plot from the ngspice library ngSpice_CurPlot function.
+	 * @return name of the current plot returned by ngspice library ngSpice_CurPlot function
+	 */
+	QString getCurrPlot(void);
+
+	/**
+	 * @brief Get the name of all the plot from the ngspice library ngSpice_AllPlots function.
+	 * @return name a list with all the plot names returned by ngspice library ngSpice_AllPlots function
+	 */
+	QList<QString> getAllPlots(void);
+
+	/**
+	 * @brief Get the name of all the vectors from the ngspice library ngSpice_AllVecs function for the specified plot.
+	 * @param[in] plotName name of plot to get the vector names
+	 * @return name a list with all the vector names returned by ngspice library ngSpice_AllPlots function for that plot
+	 */
+	QList<QString> getAllVecs(const std::string& plotName);
+
+	/**
+	 * @brief Set a breakpoint to the ngspice simulator.
+	 * @param[in] time for the breakpoint
+	 * @return true if the breakpoint has been set and false if not
+	 */
+	bool setBreakPoint(const double& breakPointTime);
+
+	/**
 	 * @brief Return optional error title if an error occurred.
 	 * @return optional error title if an error occurred
 	 */
@@ -163,6 +189,11 @@ private:
 	static int SendDataFunc(pvecvaluesall allVecValues, int numStructs, int libId, void* userData);
 	static int SendInitDataFunc(pvecinfoall allVecInitInfo, int libId, void* userData);
 	static int BGThreadRunningFunc(bool notRunning, int libId, void* userData);
+	static int SyncData(double acttime, double* deltatime, double olddeltatime,
+						   int redostep, int ident, int location, void* userdata);
+	static int ThreadRuns(bool noruns, int ident, void* userdata);
+	static int VSRCData(double* retvoltval, double acttime, char* vinstancename, int ident, void* userdata);
+	static int ISRCData(double* retcurrval, double acttime, char* nodename, int ident, void* userdata);
 
 	/**
 	 * @brief Map for handles of ngspice library functions.

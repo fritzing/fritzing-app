@@ -29,8 +29,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QCoreApplication>
 #include <QStandardPaths>
 #include <QFileInfo>
-#include <QDir>
-
 #include "debugdialog.h"
 
 // Macro for serializing variable/function name into a string.
@@ -40,15 +38,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define GET_FUNC(func) std::function<decltype(func)>((decltype(func)*) m_handles[STRFY(func)])
 
 // Macro for getting pointer to duplicated string for use in ngspice library function and automatically deleting the duplicate after the function call via unique_ptr.
-#include <memory>
-#include <string>
-#include <cstring>
-
-#define UNIQ(str) ([&]() {\
-	auto ptr = std::make_unique<char[]>(str.size() + 1);\
-	std::strcpy(ptr.get(), str.c_str());\
-	return ptr.release();\
-})()
+#define UNIQ(str) std::unique_ptr<char>(strdup(str.c_str())).get()
 
 NgSpiceSimulator::NgSpiceSimulator()
 	: m_isInitialized(false)
@@ -67,87 +57,86 @@ std::shared_ptr<NgSpiceSimulator> NgSpiceSimulator::getInstance() {
 NgSpiceSimulator::~NgSpiceSimulator() {
 }
 
-void NgSpiceSimulator::init()
-{
-	if (m_isInitialized)
-		return;
+void NgSpiceSimulator::init() {
+	if (m_isInitialized) return;
 
-	QString ngspiceDir("invalid");
-	if (!m_library.isLoaded()) {
-		QStringList libPaths = QCoreApplication::libraryPaths();
+	m_library.setFileName("ngspice");
+	m_library.load();
 
-#ifdef Q_OS_LINUX
-		QString appDir = QCoreApplication::applicationDirPath();
+	QStringList libPaths = QStringList({ QCoreApplication::applicationDirPath()
+			})
+			// TODO Not sure if we can place the library there on macOS
+			+ QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation);
 
-		if (appDir.endsWith("/usr/bin")) {
-			QString libPath = appDir.left(appDir.length() - 4) + "/lib";
-			if (QDir(libPath).exists()) {
-				libPaths.prepend(libPath);
-			}
-		}
-#endif // Q_OS_LINUX
-
-
-		if (DebugDialog::enabled()) {
-			DebugDialog::debug("Searching for ngspice in the following directories:");
-			for (const auto& path : libPaths) {
-				DebugDialog::debug("  " + path);
-			}
-		}
-#ifdef Q_OS_LINUX
+	if( !m_library.isLoaded() ) {         // fallback custom paths
+	#ifdef Q_OS_LINUX
 		const QString libName = "libngspice.so";
-#elif defined Q_OS_MACOS
+	#elif defined Q_OS_MACOS
 		const QString libName = "libngspice.0.dylib";
-#elif defined Q_OS_WIN
+	#elif defined Q_OS_WIN
 		const QString libName = "ngspice.dll";
-#endif
-		for (const auto& path : libPaths) {
-			QFileInfo library(path + "/" + libName);
-			if (!library.canonicalFilePath().isEmpty()) {
+	#endif
+		DebugDialog::debug("Couldn't load ngspice " + m_library.errorString());
+		for( const auto& path : libPaths ) {
+			QFileInfo library(QString(path + "/" + libName));
+			DebugDialog::debug("Try path " + library.absoluteFilePath());
+			if(!library.canonicalFilePath().isEmpty()) {
 				m_library.setFileName(library.canonicalFilePath());
 				m_library.load();
-				if (m_library.isLoaded()) {
-					ngspiceDir = library.absolutePath();
+				if( m_library.isLoaded() ) {		
 					break;
+				} else {
+					DebugDialog::debug("Couldn't load ngspice " + m_library.errorString());
+					throw std::runtime_error( "Error loading ngspice shared library" );			
 				}
 			}
 		}
-		if (!m_library.isLoaded()) {
-			DebugDialog::debug("Error loading ngspice shared library: " + m_library.errorString());
-			throw std::runtime_error("Error loading ngspice shared library: "
-									 + m_library.errorString().toStdString());
-		}
-	} else {
-		QFileInfo loadedLibrary(m_library.fileName());
-		ngspiceDir = loadedLibrary.absolutePath();
-		DebugDialog::debug("ngspice already loaded: " + loadedLibrary.absoluteFilePath());
 	}
+
+	if (!m_library.isLoaded()) {
+		DebugDialog::debug("Could not find ngspice.");
+		return;
+	}
+	DebugDialog::debug("Loaded ngspice " + m_library.fileName());
+
 
 	setErrorTitle(std::nullopt);
 
-	std::vector<std::string> symbols{STRFY(ngSpice_Command), STRFY(ngSpice_Init), STRFY(ngSpice_Circ), STRFY(ngGet_Vec_Info)};
+	std::vector<std::string> symbols{STRFY(ngSpice_Command), STRFY(ngSpice_Init), STRFY(ngSpice_Circ), STRFY(ngGet_Vec_Info),
+									 STRFY(ngSpice_SetBkpt), STRFY(ngSpice_Init_Sync), STRFY(ngSpice_CurPlot), STRFY(ngSpice_AllPlots), STRFY(ngSpice_AllVecs)};
 	for (auto & symbol: symbols) {
 		m_handles[symbol] = (void *) m_library.resolve(symbol.c_str());
 	}
-
 	std::string previousLocale = setlocale(LC_NUMERIC, nullptr);
 	setlocale(LC_NUMERIC, "C");
-	GET_FUNC(ngSpice_Init)(&SendCharFunc, &SendStatFunc, &ControlledExitFunc, nullptr, nullptr, &BGThreadRunningFunc, nullptr);
+	GET_FUNC(ngSpice_Init)(&SendCharFunc, &SendStatFunc, &ControlledExitFunc, &SendDataFunc, &SendInitDataFunc, &BGThreadRunningFunc, nullptr);
+	//For now we do not use the external voltages or currents.
+	//int dll1 = 1;
+	//GET_FUNC(ngSpice_Init_Sync)(&VSRCData, &ISRCData, &SyncData, &dll1, nullptr);
 	setlocale(LC_NUMERIC, previousLocale.c_str());
 
 	m_isBGThreadRunning = true;
 	m_isInitialized = true;
-
-	QString analogCmPath = ngspiceDir + "/ngspice/analog.cm";
-	if (QFileInfo::exists(analogCmPath)) {
-		DebugDialog::stream() << "Loading codemodel analog.cm from: " << analogCmPath;
-		command("codemodel " + analogCmPath.toStdString());
-	} else {
-		DebugDialog::stream() << "Warning: analog.cm not found at " << analogCmPath;
-	}
-
 }
 
+/* Callback. Set the input voltages for the external voltage sources. */
+int NgSpiceSimulator::VSRCData(double* retvoltval, double acttime, char* vinstancename, int ident, void* userdata)
+{
+	return 0;
+}
+
+/* Callback. Set the input currents for the external current sources. */
+int NgSpiceSimulator::ISRCData(double* retcurrval, double acttime, char* nodename, int ident, void* userdata)
+{
+	return 0;
+}
+
+/* Callback to synchronize the diiferent ngspice threads. */
+int NgSpiceSimulator::SyncData(double acttime, double* deltatime, double olddeltatime,
+				int redostep, int ident, int location, void* userdata)
+{
+	return 0;
+}
 
 void NgSpiceSimulator::resetIsBGThreadRunning() {
 	m_isBGThreadRunning = true;
@@ -161,33 +150,27 @@ void NgSpiceSimulator::loadCircuit(const std::string& netList) {
 	std::stringstream stream(netList);
 	std::string component;
 	std::vector<char *> components;
-	std::vector<std::shared_ptr<char>> garbageCollector;
+	std::vector<std::any> garbageCollector;
 
 	while(std::getline(stream, component)) {
-		auto shared = std::shared_ptr<char>(new char[component.size() + 1],
-											std::default_delete<char[]>());
-		std::strncpy(shared.get(), component.c_str(), component.size());
-		shared.get()[component.size()] = '\0';  // Ensure null termination
+		std::shared_ptr<char> shared(strdup(component.c_str()));
 		components.push_back(shared.get());
 		garbageCollector.push_back(shared);
 	}
 	components.push_back(nullptr);
-
 	std::string previousLocale = setlocale(LC_NUMERIC, nullptr);
 	setlocale(LC_NUMERIC, "C");
 	GET_FUNC(ngSpice_Circ)(components.data());
 	setlocale(LC_NUMERIC, previousLocale.c_str());
 }
 
-
-
 void NgSpiceSimulator::command(const std::string& command) {
-	// if (!m_isInitialized) {
-	// 	init();
-	// }
-	// if (!m_isInitialized) {
-	// 	return;
-	// }
+	if (!m_isInitialized) {
+		init();
+	}
+	if (!m_isInitialized) {
+		return;
+	}
 	m_isInitialized = !errorOccured();
 	if (!m_isInitialized) {
 		init();
@@ -214,6 +197,15 @@ std::vector<double> NgSpiceSimulator::getVecInfo(const std::string& vecName) {
 	}
 
 	return std::vector<double>();
+}
+
+bool NgSpiceSimulator::setBreakPoint(const double& breakPointTime) {
+	std::string previousLocale = setlocale(LC_NUMERIC, nullptr);
+	setlocale(LC_NUMERIC, "C");
+	std::function<bool(double)> setBkptFunc = GET_FUNC(ngSpice_SetBkpt);
+	bool b = setBkptFunc(breakPointTime);
+	setlocale(LC_NUMERIC, previousLocale.c_str());
+	return b;
 }
 
 stdx::optional<std::string> NgSpiceSimulator::errorOccured() {
@@ -283,4 +275,32 @@ int NgSpiceSimulator::BGThreadRunningFunc(bool notRunning, int libId, void*) {
 	auto simulator = getInstance();
 	simulator->m_isBGThreadRunning = !notRunning;
 	return 0;
+}
+
+QString NgSpiceSimulator::getCurrPlot(void) {
+	char * name = GET_FUNC(ngSpice_CurPlot)();
+	return QString(name);
+}
+
+QList<QString> NgSpiceSimulator::getAllPlots(void) {
+	char ** plots = GET_FUNC(ngSpice_AllPlots)();
+	QList<QString> plotList;
+	while (*plots) {
+		plotList.append(QString(*plots));
+		plots++;
+	}
+	return plotList;
+}
+
+QList<QString> NgSpiceSimulator::getAllVecs(const std::string& plotName) {
+	std::string previousLocale = setlocale(LC_NUMERIC, nullptr);
+	setlocale(LC_NUMERIC, "C");
+	char ** vecs = GET_FUNC(ngSpice_AllVecs)(UNIQ(plotName));
+	setlocale(LC_NUMERIC, previousLocale.c_str());
+	QList<QString> vecList;
+	while (*vecs) {
+		vecList.append(QString(*vecs));
+		vecs++;
+	}
+	return vecList;
 }

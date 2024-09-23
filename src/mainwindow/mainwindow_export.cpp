@@ -1613,7 +1613,6 @@ QString MainWindow::getSpiceNetlist(QString simulationName, QList< QList<class C
 
 	output += ".option savecurrents\n";
 	output += ".option interp\n";
-	output += ".option reltol=0.01\n";
 	output += ".OP\n";
 	output += "*.TRAN 1ms 100ms\n";
 	output += "* .AC DEC 100 100 1MEG\n";

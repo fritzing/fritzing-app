@@ -261,7 +261,7 @@ int NgSpiceSimulator::ControlledExitFunc(int exitStatus, bool, bool, int libId, 
 }
 
 int NgSpiceSimulator::SendDataFunc(pvecvaluesall, int numStructs, int libId, void*) {
-	std::cout << "SendDataFunc numStructs (libId:" << libId << "): " << numStructs << std::endl;
+	//std::cout << "SendDataFunc numStructs (libId:" << libId << "): " << numStructs << std::endl;
 	return 0;
 }
 

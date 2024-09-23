@@ -191,7 +191,6 @@ private:
 	static int BGThreadRunningFunc(bool notRunning, int libId, void* userData);
 	static int SyncData(double acttime, double* deltatime, double olddeltatime,
 						   int redostep, int ident, int location, void* userdata);
-	static int ThreadRuns(bool noruns, int ident, void* userdata);
 	static int VSRCData(double* retvoltval, double acttime, char* vinstancename, int ident, void* userdata);
 	static int ISRCData(double* retcurrval, double acttime, char* nodename, int ident, void* userdata);
 

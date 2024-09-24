@@ -280,7 +280,7 @@ void Simulator::simulate() {
 				return;
 
 			DebugDialog::stream() << "INTERACTION! interactionStep: " <<m_interactionStep;
-			endTimePartialSim -= (m_interactionStep * m_showResultsTimerInterval/1000);
+			endTimePartialSim -= m_interactionStep * m_simStepTime;
 			startTimePartialSim = 0;
 
 			//Wait in case ngspice has not finished calculating that time

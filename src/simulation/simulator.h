@@ -97,8 +97,8 @@ protected:
 	std::shared_ptr<NgSpiceSimulator> m_simulator;
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;
 	QPointer<class SchematicSketchWidget> m_schematicGraphicsView;
-	double m_simStartTime, m_simStepTime, m_simEndTime, m_simNumberOfSteps;
-	unsigned long m_interactionStep = 0, m_previousInteractionStep = 0;
+	double m_simStartTime, m_simStepTime, m_simEndTime;
+	unsigned long m_interactionStep = 0, m_previousInteractionStep = 0, m_simNumberOfSteps;
 	QHash<QString, std::vector<double>> m_previousVoltages;
 
 	bool m_enabled = false;

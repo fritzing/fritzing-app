@@ -525,12 +525,26 @@ QWidget *PrefsDialog::createProjectPropertiesForm() {
                                      "Set a negative number for real time.");
     layout->addWidget(simAnimationTimeEdit);
 
+	QLabel * simSpiceOptionsLabel = new QLabel(tr("Specific options for the SPICE simulator: "));
+	layout->addWidget(simSpiceOptionsLabel);
+	QTextEdit *simSpiceOptionsEdit = new QTextEdit();
+	simSpiceOptionsEdit->setText(m_projectProperties->getProjectProperty(ProjectPropertyKeySimulatorSpiceOptions));
+	simSpiceOptionsEdit->setFixedWidth(FORMLABELWIDTH * 2);
+	simSpiceOptionsEdit->setFixedHeight(FORMLABELWIDTH * 0.5);
+	simSpiceOptionsEdit->setToolTip("These are the SPICE options for the simulation.\n"
+									 "Check the ngSpice manual for the options.");
+	layout->addWidget(simSpiceOptionsEdit);
+
     projectPropertiesBox->setLayout(layout);
 
     connect(simTimeStepRB, SIGNAL(toggled(bool)), this, SLOT(setSimulationTimeStepMode(bool)));
     connect(simNumStepsEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationNumberOfSteps(QString)));
     connect(simTimeStepEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationTimeStep(QString)));
     connect(simAnimationTimeEdit, SIGNAL(textChanged(QString)), this, SLOT(setSimulationAnimationTime(QString)));
+	connect(simSpiceOptionsEdit, &QTextEdit::textChanged, this, [this, simSpiceOptionsEdit]() {
+		QString currentText = simSpiceOptionsEdit->toPlainText();
+		setSimulationSpiceOptions(currentText);
+	});
 
 	return projectPropertiesBox;
 
@@ -551,6 +565,10 @@ void PrefsDialog::setSimulationTimeStep(const QString &timeStep) {
 
 void PrefsDialog::setSimulationAnimationTime(const QString &animationTime) {
     m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorAnimationTimeS, animationTime);
+}
+
+void PrefsDialog::setSimulationSpiceOptions(const QString &spiceOptions) {
+	m_projectProperties->setProjectProperty(ProjectPropertyKeySimulatorSpiceOptions, spiceOptions);
 }
 
 void PrefsDialog::clear() {

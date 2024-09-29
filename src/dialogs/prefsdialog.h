@@ -91,6 +91,7 @@ protected Q_SLOTS:
     void setSimulationNumberOfSteps(const QString &numberOfSteps);
     void setSimulationTimeStep(const QString &timeStep);
     void setSimulationAnimationTime(const QString &animationTime);
+	void setSimulationSpiceOptions(const QString &spiceOptions);
 
 protected:
 	QPointer<QTabWidget> m_tabWidget;

@@ -243,6 +243,10 @@ void Simulator::simulate() {
 	QString numStepsStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorNumberOfSteps);
 	QString timeStepStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorTimeStepS);
 	QString animationTimeStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorAnimationTimeS);
+	QString spiceOptionsStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorSpiceOptions);
+
+	//Add spice options to the netlist
+	m_spiceNetlist.replace(".OP", spiceOptionsStr.append("\n.OP"));
 
 	DebugDialog::stream() << "timeStepModeStr: " << timeStepModeStr.toStdString() << ", numStepsStr: "
 						  << numStepsStr.toStdString() << ", timeStepStr: " << timeStepStr.toStdString()
@@ -291,7 +295,7 @@ void Simulator::simulate() {
 			m_simulator->command("bg_halt");
 
 			//Save previous voltages and prepare init conditions
-			initConditions = QString(".ic ");
+			initConditions.append(".ic ");
 			auto vecs = m_simulator->getAllVecs(m_simulator->getCurrPlot().toStdString());
 			for (QString vec: vecs) {
 				//Do not use saved currents from components (@r1[i]) or currents from voltage sources (vcc1#branch)

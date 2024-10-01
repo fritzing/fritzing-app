@@ -70,9 +70,16 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
 	}
 
 	QStringList args;
-	// see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc
-	//args.append(QString("--verbose"));
-	args.append(QString("--board"));
+	if (!usingArduinoCLI()) {
+		// see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc
+		//args.append(QString("--verbose"));
+		args.append(QString("--board"));
+	}else {
+		// see https://github.com/arduino/arduino-cli
+		//args.append(QString("--verbose"));
+		args.append(QString("compile"));
+		args.append(QString("-b"));
+	}
 	args.append(getBoards().value(board));
 	args.append(QString("--port"));
 	args.append(port);
@@ -83,4 +90,19 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
 	if (tab != nullptr)
 		tab->appendToConsole(tr("Running %1 %2").arg(getCommandLocation()).arg(args.join(" ")));
 	process->start(getCommandLocation(), args);
+
+}
+
+bool PlatformArduino::usingArduinoCLI() {
+	//We make an error and analize if we are using the arduino-cli or not
+	auto * process = new QProcess(this);
+	QStringList args;
+	args.append(QString("--board"));
+	args.append(QString(" sssssss"));
+
+	process->start(getCommandLocation(), args);
+	process->waitForFinished(500);
+	QString version = process->readAllStandardError();
+
+	return version.contains("arduino-cli");
 }

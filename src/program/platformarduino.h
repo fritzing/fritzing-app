@@ -12,6 +12,7 @@ public:
 	PlatformArduino();
 
 	void upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation);
+	bool usingArduinoCLI();
 };
 
 #endif // PLATFORMARDUINO_H

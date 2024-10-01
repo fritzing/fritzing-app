@@ -8,9 +8,9 @@
 PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
 {
 	setReferenceUrl(QUrl(QString("http://arduino.cc/en/Reference/")));
-	setIdeName("Arduino IDE");
-	setDownloadUrl(QUrl("http://arduino.cc/en/Main/Software"));
-	setMinVersion("1.5.2");
+	setIdeName("Arduino CLI");
+	setDownloadUrl(QUrl("https://github.com/arduino/arduino-cli"));
+	setMinVersion("1.0.0");
 	setCanProgram(true);
 	setExtensions(QStringList() << ".ino" << ".pde");
 

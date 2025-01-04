@@ -423,12 +423,14 @@ void Simulator::simulate() {
 	DebugDialog::stream() << "Waiting for simulator thread to stop";
 	int elapsedTime = 0, simTimeOut = 3000; // in ms
 	while (m_simulator->isBGThreadRunning() && elapsedTime < simTimeOut) {
-		auto timeInfo = m_simulator->getVecInfo(QString("time").toStdString());
 		QThread::usleep(100);
 		elapsedTime++;
 		//If this a transitory simulation and we have partial results, start the animation
-		if (m_simEndTime > 0 && timeInfo.size() > 0)
-			break;
+		if (m_simEndTime > 0) {
+			auto timeInfo = m_simulator->getVecInfo(QString("time").toStdString());
+			if(timeInfo.size() > 0)
+				break;
+		}
 	}
 	DebugDialog::stream() << "-------- SIM END or TRANS SIM WITH PARTIAL RESULTS ------------";
 

@@ -57,8 +57,8 @@ std::shared_ptr<NgSpiceSimulator> NgSpiceSimulator::getInstance() {
 NgSpiceSimulator::~NgSpiceSimulator() {
 }
 
-void NgSpiceSimulator::init() {
-	if (m_isInitialized) return;
+bool NgSpiceSimulator::init() {
+	if (m_isInitialized) return m_isInitialized;
 
 	m_library.setFileName("ngspice");
 	m_library.load();
@@ -95,7 +95,7 @@ void NgSpiceSimulator::init() {
 
 	if (!m_library.isLoaded()) {
 		DebugDialog::debug("Could not find ngspice.");
-		return;
+		return false;
 	}
 	DebugDialog::debug("Loaded ngspice " + m_library.fileName());
 
@@ -117,6 +117,7 @@ void NgSpiceSimulator::init() {
 
 	m_isBGThreadRunning = true;
 	m_isInitialized = true;
+	return m_isInitialized;
 }
 
 /* Callback. Set the input voltages for the external voltage sources. */

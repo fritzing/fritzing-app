@@ -189,8 +189,9 @@ void Simulator::simulate() {
 	}
 
 	m_simulator = NgSpiceSimulator::getInstance();
+	bool simInitOK;
 	try {
-		m_simulator->init();
+		simInitOK = m_simulator->init();
 	}
 	catch (std::exception& e) {
 		FMessageBox::warning(nullptr, tr("Simulator Error"), tr("An error occurred when starting the simulation."));
@@ -201,6 +202,14 @@ void Simulator::simulate() {
 	if( !m_simulator )
 	{
 		throw std::runtime_error( "Could not create simulator instance" );
+		return;
+	}
+
+	if (!simInitOK) {
+		FMessageBox::warning(nullptr, tr("Unable to load the NgSpice library"), tr("Fritzing could not load the ngspice library (not found or wrong version). "
+																			   "This is usually a problem found in third party binaries. Please, use the "
+																			   "official binary or notify the mantainers of the packaging."));
+		stopSimulation();
 		return;
 	}
 

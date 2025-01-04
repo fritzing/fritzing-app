@@ -85,8 +85,9 @@ public:
 
 	/**
 	 * @brief Initialize ngspice simulator and load ngspice library.
+	 * @return true if ngspice has been initialized succesfully.
 	 */
-	void init();
+	bool init();
 
 	/**
 	 * @brief Return true if ngspice library background thread is running.

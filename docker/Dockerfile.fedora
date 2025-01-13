@@ -23,6 +23,10 @@ WORKDIR /home/conan
 USER conan
 
 # No SHA verification for now. Will be automated by Conan in the future.
+RUN set -xe && \
+    curl -fsSL -o boost_1_70_0.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.70.0/boost_1_70_0.tar.bz2/download && \
+    tar xjf boost_1_70_0.tar.bz2
+
 RUN set -xe \
     && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj
 

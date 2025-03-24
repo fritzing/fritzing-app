@@ -30,6 +30,7 @@ const QString ProjectPropertyKeySimulatorTimeStepS = "simulator_time_step_s";
 const QString ProjectPropertyKeySimulatorNumberOfSteps = "simulator_number_of_steps";
 const QString ProjectPropertyKeySimulatorTimeStepMode = "simulator_time_step_mode";
 const QString ProjectPropertyKeySimulatorAnimationTimeS = "simulator_animation_time_s";
+const QString ProjectPropertyKeySimulatorSpiceOptions = "simulator_spice_options";
 
 class ProjectProperties {
 public:

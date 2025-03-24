@@ -25,6 +25,7 @@ ProjectProperties::ProjectProperties() {
 	m_propertiesMap[ProjectPropertyKeySimulatorNumberOfSteps] = "400";
 	m_propertiesMap[ProjectPropertyKeySimulatorTimeStepS] = "1us";
 	m_propertiesMap[ProjectPropertyKeySimulatorAnimationTimeS] = "5s";
+	m_propertiesMap[ProjectPropertyKeySimulatorSpiceOptions] = "";
 }
 
 ProjectProperties::~ProjectProperties() {

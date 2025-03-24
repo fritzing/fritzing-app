@@ -51,6 +51,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "stripboard.h"
 #include "led.h"
 #include "schematicsubpart.h"
+#include "oscilloscope.h"
 #include "../utils/folderutils.h"
 #include "../utils/lockmanager.h"
 #include "../utils/textutils.h"
@@ -184,6 +185,9 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 			}
 			if (moduleID.endsWith(ModuleIDNames::CopperBlockerModuleIDName)) {
 				return new CopperBlocker(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
+			}
+			if (moduleID.endsWith(ModuleIDNames::OscilloscopeModuleIDName)) {
+				return new Oscilloscope(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 			}
 			// must get the subclasses first
 			if (modelPart->itemType() == ModelPart::Breadboard) {

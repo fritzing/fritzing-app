@@ -44,13 +44,14 @@ public:
 private:
 	void resetTimer();
 
-	void showSimulatorError(QWidget *parent, const QString &errorHint, const QString &spiceNetlist, const std::shared_ptr<NgSpiceSimulator>& simulator);
+    void showSimulatorError(QWidget *parent, const QString &errorHint, const QString &spiceNetlist, const std::shared_ptr<NgSpiceSimulator>& simulator);
 public slots:
 	void enable(bool);
 	void enableTransientSimulation(bool);
 	void stopSimulation();
 	void startSimulation();
 	void showSimulationResults();
+	std::vector<double> voltageVector(ConnectorItem *);
 
 
 signals:
@@ -61,8 +62,8 @@ protected:
 	void updateParts(QSet<ItemBase *>, int);
 	void drawSmoke(ItemBase* part);
 	void updateMultimeterScreen(ItemBase *, QString);
-	void updateLabPowerSupplyScreen(ItemBase *, double, double);
-	QString create7SegmentNumber(double);
+    void updateLabPowerSupplyScreen(ItemBase *, double, double);
+    QString create7SegmentNumber(double);
 	void removeSimItems();
 	void removeSimItems(QList<QGraphicsItem *>);
 	void greyOutNonSimParts(const QSet<class ItemBase *>&);
@@ -74,7 +75,6 @@ protected:
 	QString getSymbol(ItemBase*, QString);
 	double getVectorValueOrDefault(unsigned long timeStep, const std::string & vecName,  double defaultValue);
 	double calculateVoltage(unsigned long, ConnectorItem *, ConnectorItem *);
-	std::vector<double> voltageVector(ConnectorItem *);
 	QString generateSvgPath(std::vector<double>, std::vector<double>, int, QString, double, double, double, double, double, double, double, double, QString, QString);
 	double getCurrent(unsigned long, ItemBase*, QString subpartName="");
 	double getTransistorCurrent(unsigned long timeStep, QString spicePartName, TransistorLeg leg);
@@ -97,21 +97,27 @@ protected:
 	std::shared_ptr<NgSpiceSimulator> m_simulator;
 	QPointer<class BreadboardSketchWidget> m_breadboardGraphicsView;
 	QPointer<class SchematicSketchWidget> m_schematicGraphicsView;
-	double m_simStartTime, m_simStepTime, m_simEndTime, m_simNumberOfSteps;
+	double m_simStartTime, m_simStepTime, m_simEndTime;
+	unsigned long m_interactionStep = 0, m_previousInteractionStep = 0, m_simNumberOfSteps;
+	QHash<QString, std::vector<double>> m_previousVoltages;
 
 	bool m_enabled = false;
 	bool m_transientSimulationEnabled = false;
-	bool m_debugSimResult = false;
+	bool m_transitorySimRunning = false;
+	unsigned long m_previousSimTime = 0;
+    bool m_debugSimResult = false;
 
 	QSet<ItemBase *> itemBases;
 	QHash<ItemBase *, ItemBase *> m_sch2bbItemHash;
 	QHash<ConnectorItem *, int> m_connector2netHash;
 
 	QTimer *m_simTimer, *m_showResultsTimer;
-	unsigned long m_currSimStep, m_previousRenderedStep;
-	double m_showResultsTimerInterval;
-	QElapsedTimer m_elapsedAnimationTimer;
-	QElapsedTimer m_elapsedSimTotalTimer;
+    unsigned long m_currSimStep, m_previousRenderedStep;
+    double m_showResultsTimerInterval;
+    QElapsedTimer m_elapsedAnimationTimer;
+    QElapsedTimer m_elapsedSimTotalTimer;
+
+	QString m_spiceNetlist;
 
 	static constexpr int SimDelay = 200;
 	static constexpr double HarmfulNegativeVoltage = -0.5;

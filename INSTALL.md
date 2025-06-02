@@ -19,21 +19,25 @@ using 7zip.
 To start Fritzing on Windows: Wait until unzipping is finished. Then open the destination folder and double-click fritzing.exe
 
 ## Notes on Linux
+
 To start Fritzing double-click Fritzing, or try ./Fritzing in your shell window
 
 Fritzing uses the Qt5 libraries. On Ubuntu, they can be installed like this:
 
-"sudo apt install libqt5printsupport5 libqt5xml5 libqt5sql5 libqt5serialport5 libqt5sql5-sqlite".
+    sudo apt install  libqt5printsupport5 libqt5xml5 libqt5sql5 libqt5serialport5 libqt5sql5-sqlite
 
 ## Notes on macOS
+
 To start Fritzing on macOS double-click the Fritzing application
 
 Recent versions of macOS do not allow "unverified" software to be launched directly. In order to run Fritzing, you will need to either:
 
-1a. right-click the Fritzing icon and select "Open"
-2a. in the warning dialog, click "Open"
-or, to get rid of the warning permanently:
-1b. go to the System Preferences
-2b. open the Security & Privacy page
-3b. unlock it by clicking the lock in the lower left corner
-4b. set it to allow app downloads from anywhere
+1. right-click the Fritzing icon and select "Open"
+2. in the warning dialog, click "Open" or, to get rid of the warning permanently:
+
+---
+   
+1. go to the System Preferences
+2. open the Security & Privacy page
+3. unlock it by clicking the lock in the lower left corner
+4. set it to allow app downloads from anywhere

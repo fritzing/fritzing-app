@@ -15,12 +15,12 @@
 
 
 message("Using fritzing ngspice detect script.")
-NGSPICEPATH = ../../ngspice-42
+NGSPICEPATH = ../ngspice-42
 NGSPICEPATH = $$absolute_path($${NGSPICEPATH})
 
 exists($$NGSPICEPATH) {
 	message("found $${NGSPICEPATH}")
-	INCLUDEPATH += $$NGSPICEPATH/include
+	INCLUDEPATH += $$NGSPICEPATH/src/include
 } else {
     error("ngspice not found in $${NGSPICEPATH}")
 }

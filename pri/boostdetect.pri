@@ -34,9 +34,9 @@ defined(boost_root, var) {
     # boost_1_54_0 is buggy
 	BOOSTS = 85
     for(boost, BOOSTS) {
-        exists(../../boost_1_$${boost}_0) {
+        exists(../boost_1_$${boost}_0) {
             LATESTBOOST = $$boost
-            BOOSTPATH = ../boost_1_$${boost}_0
+            BOOSTPATH = boost_1_$${boost}_0
         }
     }
 }
@@ -54,7 +54,7 @@ contains(LATESTBOOST, 0) {
 } else {
     defined(BOOSTPATH, var) {
         defined(absolute_boost, var) {
-            BOOSTPATH = $$absolute_path(../$${BOOSTPATH})
+            BOOSTPATH = $$absolute_path(/$${BOOSTPATH})
         }
         message("using $${BOOSTPATH} boost environment")
         INCLUDEPATH += $$BOOSTPATH

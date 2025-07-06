@@ -19,7 +19,7 @@
 # ********************************************************************
 
 QT_LEAST=6.5.3
-QT_MOST=6.5.10
+QT_MOST=6.9.10
 !versionAtLeast(QT_VERSION, $${QT_LEAST}):error("Use at least Qt version $${QT_LEAST}")
 !versionAtMost(QT_VERSION, $${QT_MOST}):error("Use at most Qt version $${QT_MOST}")
 
@@ -46,7 +46,7 @@ win32 {
     RELEASE_SCRIPT = $$(RELEASE_SCRIPT)    # environment variable set from release script
 
     message("target arch: $${QMAKE_TARGET.arch}")
-    contains(QMAKE_TARGET.arch, x86_64) {
+    contains(QMAKE_TARGET.arch, x64) {
         RELDIR = ../release64
         DEBDIR = ../debug64
         DEFINES += WIN64
@@ -100,7 +100,7 @@ unix {
         } else {
             DEFINES += LINUX_32
         }
-        LIBS += -lz
+        LIBS += -Lz
     }
 
     isEmpty(PREFIX) {
@@ -165,6 +165,10 @@ macx {
 
 QT += concurrent core gui network printsupport serialport sql svg widgets xml svgwidgets openglwidgets
 
+equals(QT_MAJOR_VERSION, 6) {
+  QT += core5compat svgwidgets openglwidgets
+}
+
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
 
@@ -199,8 +203,11 @@ include(pri/testing.pri)
 include(pri/simulation.pri)
 include(test/version.pri)
 include(pri/clipper1detect.pri)
+include(pri/zlibdetect.pri)
 
 TARGET = Fritzing
 TEMPLATE = app
 
 !build_pass:message("libs $$LIBS")
+#Linux Search Launch For Libs
+#QMAKE_RPATHDIR += lib

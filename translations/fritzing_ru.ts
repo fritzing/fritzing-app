@@ -383,17 +383,17 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="716"/>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Подтверждение</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="717"/>
         <source>The &apos;Contributed Parts&apos; bin has been replaced with &apos;My Parts&apos; since Fritzing 0.7.12.</source>
-        <translation type="unfinished"></translation>
+        <translation>С версии Fritzing 0.7.12 каталог «Добавленные компоненты» был заменён на «Мои компоненты».</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="718"/>
         <source>Would you like Fritzing to move the parts over?</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить компоненты?</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="938"/>
@@ -717,12 +717,12 @@ SVG пользовательской платы обычно имеет один
     <message>
         <location filename="../src/items/resizableboard.cpp" line="438"/>
         <source>Before ordering PCB manufacturing, we recommend validating your design by exporting it as Gerber files (File → Export → for Production → Extended Gerber).</source>
-        <translation type="unfinished"></translation>
+        <translation>Перед заказом изготовления печатной платы рекомендуется проверить ваш проект, экспортировав его в формат Gerber (Файл → Экспорт → для производства → Расширенный Gerber).</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="460"/>
         <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, it is likely because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br/&gt;&lt;br/&gt;Если вы хотели, чтобы ваша пользовательская форма имела вырезы, но не получили ожидаемого результата, вероятно, это связано с тем, что Fritzing требует, чтобы вы делали вырезы с помощью операции «вычитание» или «разница» в редакторе векторной графики.</translation>
     </message>
     <message>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
@@ -1326,7 +1326,7 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/utils/fmessagebox.cpp" line="134"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Копировать в буфер обмена</translation>
     </message>
 </context>
 <context>
@@ -1339,23 +1339,23 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="69"/>
         <source>Get your board fabricated effortlessly!</source>
-        <translation type="unfinished"></translation>
+        <translation>Закажите изготовление вашей платы без лишних усилий!</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="105"/>
         <source>Upload your design now to see a preview. Review it, and once satisfied, proceed to order for manufacturing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузите свой проект сейчас, чтобы увидеть предварительный просмотр. Проверьте его, и если всё устраивает, приступайте к заказу на изготовление.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="146"/>
         <source>Checking for fab...</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверка изготовления…</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="205"/>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="372"/>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Отменить</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.ui" line="237"/>
@@ -1385,12 +1385,12 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.cpp" line="161"/>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <location filename="../src/dialogs/fabuploaddialog.cpp" line="161"/>
         <source>Error: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка: </translation>
     </message>
 </context>
 <context>
@@ -1598,13 +1598,13 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/infoview/htmlinfoview.cpp" line="426"/>
         <source>Ratsnest line</source>
         <comment>A virtual wire, a planned connection that does not yet have a layout.</comment>
-        <translation type="unfinished">Исключённый провод</translation>
+        <translation>Исключённый провод</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="429"/>
         <source>Trace wire %1</source>
         <comment>A wire routed on a PCB</comment>
-        <translation type="unfinished">Провод трассировки %1</translation>
+        <translation>Провод трассировки %1</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="977"/>
@@ -1753,19 +1753,19 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/items/itembase.cpp" line="221"/>
         <source>family</source>
         <comment>component family, interchangebable</comment>
-        <translation type="unfinished">семейство</translation>
+        <translation>семейство</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="226"/>
         <source>resistance</source>
         <comment>electrical resistance of a component</comment>
-        <translation type="unfinished">сопротивление</translation>
+        <translation>сопротивление</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="233"/>
         <source>rated power</source>
         <comment>maximum power rating</comment>
-        <translation type="unfinished">номинальная мощность</translation>
+        <translation>номинальная мощность</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="234"/>
@@ -1821,7 +1821,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/items/itembase.cpp" line="244"/>
         <source>pin spacing</source>
         <comment>distance between pins</comment>
-        <translation type="unfinished">расстояние между выводами</translation>
+        <translation>расстояние между выводами</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="245"/>
@@ -1887,49 +1887,49 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/items/itembase.cpp" line="257"/>
         <source>banded</source>
         <comment>wire color bands, for example red/white or green/white</comment>
-        <translation type="unfinished">окантовка</translation>
+        <translation>окантовка</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="258"/>
         <source>top</source>
         <comment>placed on the top side of the board</comment>
-        <translation type="unfinished"></translation>
+        <translation>верхний</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="259"/>
         <source>bottom</source>
         <comment>placed on the bottom side of the board</comment>
-        <translation type="unfinished"></translation>
+        <translation>нижний</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="260"/>
         <source>copper bottom</source>
         <comment>bottom copper PCB layer</comment>
-        <translation type="unfinished">нижний слой меди</translation>
+        <translation>нижний слой меди</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="261"/>
         <source>copper top</source>
         <comment>top copper PCB layer</comment>
-        <translation type="unfinished">верхний слой меди</translation>
+        <translation>верхний слой меди</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="264"/>
         <source>mn</source>
         <comment>Manufacturer Number</comment>
-        <translation type="unfinished">мн</translation>
+        <translation>номер производителя</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="265"/>
         <source>mpn</source>
         <comment>Manufacturer Parts Number</comment>
-        <translation type="unfinished">MPN</translation>
+        <translation>номер компонентов производителя</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="271"/>
         <source>Part</source>
         <comment>electronic component</comment>
-        <translation type="unfinished">Компонент</translation>
+        <translation>Компонент</translation>
     </message>
     <message>
         <source>banded</source>
@@ -2015,12 +2015,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/utils/folderutils.cpp" line="776"/>
         <source>Move Your Custom Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместите пользовательские компоненты</translation>
     </message>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="777"/>
         <source>&lt;p&gt;Please move your custom-made parts and bins from the old location:&lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;to the new Fritzing documents folder at:&lt;br/&gt;&lt;br/&gt;&lt;em&gt;%2&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Переместите пользовательские компоненты и каталоги со старого места:&lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;в новую папку с документами Fritzing по адресу:&lt;br/&gt;&lt;br/&gt;&lt;em&gt;%2&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
 </context>
 <context>
@@ -2097,7 +2097,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/logoitem.cpp" line="475"/>
         <source>failed to convert image format</source>
-        <translation type="unfinished"></translation>
+        <translation>не удалось преобразовать формат изображения</translation>
     </message>
 </context>
 <context>
@@ -2304,12 +2304,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1111"/>
         <source>Normal Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Обычный режим</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1112"/>
         <source>Transient Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Переходный режим</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1133"/>
@@ -2319,12 +2319,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1147"/>
         <source>Simulation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим моделирования</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1148"/>
         <source>Transient simulation mode is a beta feature.</source>
-        <translation type="unfinished"></translation>
+        <translation>Переходный режим моделирования является бета-функцией.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1175"/>
@@ -2379,27 +2379,27 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2111"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation type="unfinished"></translation>
+        <translation>В Fritzing уже загружен компонент с идентификатором «%1».</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2119"/>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2120"/>
         <source>Failed to process part file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось обработать файл компонента: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2129"/>
         <source>Critical Issues</source>
-        <translation type="unfinished"></translation>
+        <translation>Критические проблемы</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2140"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2289"/>
@@ -2499,21 +2499,25 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2110"/>
         <source>Part module ID must be unique.</source>
-        <translation type="unfinished"></translation>
+        <translation>Идентификатор модуля компонента должен быть уникальным.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2130"/>
         <source>Part &apos;%1&apos; has critical issues that prevent it from loading:
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Компонент «%1» имеет критические проблемы, которые препятствуют его загрузке:
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2141"/>
         <source>Part &apos;%1&apos; was loaded with warnings:
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Компонент «%1» был загружен с предупреждениями:
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2426"/>
@@ -2642,7 +2646,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="779"/>
         <source>File is not writable</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл не доступен для записи</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="806"/>
@@ -2761,12 +2765,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="971"/>
         <source>Unable to export %1 as shareable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось экспортировать %1 как разделяемый.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="972"/>
         <source>Saving failed. Please check if home and destionation directory are writeable and not full.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось выполнить сохранение. Проверьте, доступны ли для записи и не переполнены ли домашний и целевой каталоги.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="985"/>
@@ -3576,19 +3580,21 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4443"/>
         <source>Don&apos;t show this again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не показывать это снова.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4446"/>
         <source>Missing copper fill</source>
-        <translation type="unfinished"></translation>
+        <translation>Отсутствует заполнение медью</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4447"/>
         <source>It is recommended to add copper/ground fill to your circuit to reduce acid usage during production.
 
 Continue upload?</source>
-        <translation type="unfinished"></translation>
+        <translation>Рекомендуется добавить заполнение медью/заземляющую плоскость в вашу схему, чтобы уменьшить расход кислоты во время производства.
+
+Продолжить отправку?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4581"/>
@@ -5281,7 +5287,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2816"/>
         <source>You need to select one board if you have multiple PCB boards.</source>
-        <translation type="unfinished"></translation>
+        <translation>Если у вас есть несколько печатных плат, необходимо выбрать одну из них.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2827"/>
@@ -5422,7 +5428,7 @@ Reason: %2 (errcode %3)</source>
         <source>This part cannot be saved as-is:
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Этот компонент не может быть сохранён как есть:</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="475"/>
@@ -6857,32 +6863,32 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="471"/>
         <source>Project properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Свойства проекта</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="476"/>
         <source>Here you can set some settings that will be saved with the project</source>
-        <translation type="unfinished"></translation>
+        <translation>Здесь можно установить некоторые параметры, которые будут сохранены вместе с проектом</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="482"/>
         <source>Select the way to define the time step: (1) Number of points (max simulation time divided by the number of points) or (2) fixed time step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите способ определения временного шага: (1) количество точек (максимальное время моделирования, разделённое на количество точек) или (2) фиксированный временной шаг.</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="492"/>
         <source>Number of points: </source>
-        <translation type="unfinished"></translation>
+        <translation>Количество точек: </translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="507"/>
         <source>Time Step (s):</source>
-        <translation type="unfinished"></translation>
+        <translation>Временной шаг (с):</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="518"/>
         <source>Animation time for the transitory simulation (s): </source>
-        <translation type="unfinished"></translation>
+        <translation>Время анимации для переходного моделирования (с): </translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="625"/>
@@ -7514,31 +7520,35 @@ We recommend enabling this. Only to avoid surprises with processes that are opti
     <message>
         <location filename="../src/model/modelbase.cpp" line="164"/>
         <source>Missing Version Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Отсутствует атрибут версии</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="165"/>
         <source>The loaded sketch is missing its &apos;fritzingVersion&apos; attribute.
 
 File: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>В загруженном эскизе отсутствует атрибут «fritzingVersion».
+
+Файл: %1</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="171"/>
         <source>Invalid Version Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Недопустимый формат версии</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="172"/>
         <source>The loaded sketch&apos;s &apos;fritzingVersion&apos; attribute &apos;%1&apos; is not formatted correctly.
 
 File: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибут «fritzingVersion» загруженного эскиза «%1» отформатирован неверно.
+
+Файл: %2</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="182"/>
         <source>Version Mismatch</source>
-        <translation type="unfinished"></translation>
+        <translation>Несоответствие версий</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="183"/>
@@ -7548,7 +7558,12 @@ Your current version is %2.
 Please update Fritzing to ensure proper functionality.
 
 File: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Этот эскиз был создан в более новой версии Fritzing (%1).
+Ваша текущая версия — %2.
+
+Обновите Fritzing, чтобы обеспечить правильную работу.
+
+Файл: %3</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="222"/>
@@ -7564,7 +7579,13 @@ error: %1
 temp file: %2
 
 target file: %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось записать временный файл. Сохранение прервано.
+
+ошибка: %1
+
+временный файл: %2
+
+целевой файл: %3.</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="491"/>
@@ -7575,7 +7596,13 @@ error: %1
 temp file: %2
 
 target file: %3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка при записи временного файла. Сохранение прервано.
+
+ошибка: %1
+
+временный файл: %2
+
+целевой файл: %3.</translation>
     </message>
     <message>
         <location filename="../src/model/palettemodel.cpp" line="85"/>
@@ -8196,8 +8223,8 @@ is already there, we won&apos;t add it again, right?</source>
     <message numerus="yes">
         <location filename="../src/svg/gerbergenerator.cpp" line="152"/>
         <source>%n path(s) in board outline layer</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Путей в слое контура платы: %n</numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
@@ -8205,8 +8232,8 @@ is already there, we won&apos;t add it again, right?</source>
     <message numerus="yes">
         <location filename="../src/svg/gerbergenerator.cpp" line="153"/>
         <source>%n path(s) in silkscreen layers</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Путей в слоях шелкографии: %n</numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
@@ -8214,8 +8241,8 @@ is already there, we won&apos;t add it again, right?</source>
     <message numerus="yes">
         <location filename="../src/svg/gerbergenerator.cpp" line="154"/>
         <source>%n path(s) in copper layers</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Путей в слоях меди: %n</numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
@@ -8223,8 +8250,8 @@ is already there, we won&apos;t add it again, right?</source>
     <message numerus="yes">
         <location filename="../src/svg/gerbergenerator.cpp" line="155"/>
         <source>%n path(s) in mask layers</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Путей в слоях маски: %n</numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
@@ -8232,8 +8259,8 @@ is already there, we won&apos;t add it again, right?</source>
     <message numerus="yes">
         <location filename="../src/svg/gerbergenerator.cpp" line="156"/>
         <source>%n path(s) in paste mask layers</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Путей в слоях маски пасты: %n</numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
@@ -8241,12 +8268,12 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="159"/>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>, </translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="160"/>
         <source>Some SVG paths could not be transformed into Gerber format: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Некоторые пути SVG не удалось преобразовать в формат Gerber: %1.</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="169"/>
@@ -8579,7 +8606,7 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="273"/>
         <source>The dimensions of the selected PCB (title: %1) are %2 cm x %3 cm (%4 in x %5 in).&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Размеры выбранной печатной платы (название: %1) составляют %2 см x %3 см (в дюймах: %4 x %5 ).&lt;br /&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/quotedialog.cpp" line="171"/>
@@ -8793,12 +8820,12 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/items/ruler.cpp" line="198"/>
         <source>inch</source>
-        <translation type="unfinished"></translation>
+        <translation>дюйм</translation>
     </message>
     <message>
         <location filename="../src/items/ruler.cpp" line="257"/>
         <source>length</source>
-        <translation type="unfinished"></translation>
+        <translation>длина</translation>
     </message>
     <message>
         <location filename="../src/items/ruler.cpp" line="280"/>
@@ -8850,17 +8877,17 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
     <message>
         <location filename="../src/infoview/scalediconframe.cpp" line="61"/>
         <source>Part breadboard view image</source>
-        <translation type="unfinished">Изображение компонента в режиме макетной платы</translation>
+        <translation>Изображение компонента в режиме макетной платы</translation>
     </message>
     <message>
         <location filename="../src/infoview/scalediconframe.cpp" line="62"/>
         <source>Part schematic view image</source>
-        <translation type="unfinished">Изображение компонента в режиме схемы</translation>
+        <translation>Изображение компонента в режиме схемы</translation>
     </message>
     <message>
         <location filename="../src/infoview/scalediconframe.cpp" line="63"/>
         <source>Part pcb view image</source>
-        <translation type="unfinished">Изображение компонента в режиме печатной платы</translation>
+        <translation>Изображение компонента в режиме печатной платы</translation>
     </message>
 </context>
 <context>
@@ -8994,18 +9021,20 @@ Background: Green = ok, Red = incorrect value, Grey = current value</source>
         <location filename="../src/simulation/simulator.cpp" line="285"/>
         <source>The simulator gave an error when loading the netlist. Probably some SPICE field is wrong, please, check them.
 If the parts are from the simulation bin, report the bug in GitHub.</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор выдал ошибку при загрузке списка соединений. Вероятно, некоторые поля SPICE указаны неверно, проверьте их.
+Если компоненты взяты из папки моделирования, сообщите об ошибке в GitHub.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="370"/>
         <source>The simulator gave an error when trying to simulate this circuit. Please, check the wiring and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулятор выдал ошибку при попытке моделирования этой схемы. Проверьте подключение и повторите попытку.</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="409"/>
         <source>Errors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибки:
+</translation>
     </message>
     <message>
         <location filename="../src/simulation/simulator.cpp" line="358"/>
@@ -9256,14 +9285,16 @@ If the parts are from the simulation bin, report the bug in GitHub.</source>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9081"/>
         <source>We need to move these parts.</source>
-        <translation type="unfinished"></translation>
+        <translation>Необходимо переместить эти компоненты.</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9082"/>
         <source>To delete this connection, some parts need to be moved from their current positions.
 The parts will be moved automatically. You can use the Undo History to review these changes.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Чтобы удалить это соединение, некоторые компоненты необходимо переместить из их текущих положений.
+Компоненты будут перемещены автоматически. Вы можете использовать историю отмены действий, чтобы просмотреть эти изменения.
+</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9397"/>
@@ -9398,7 +9429,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="1058"/>
         <source>part &apos;%1&apos; with id &apos;%2&apos; error &apos;%3&apos;; possibly because it has no &apos;family&apos; property.</source>
-        <translation type="unfinished"></translation>
+        <translation>компонент «%1» с идентификатором «%2» ошибка «%3»; возможно, потому что у неё нет свойства «семейство».</translation>
     </message>
 </context>
 <context>
@@ -9613,7 +9644,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="137"/>
         <source>Therefore, virtual wires are sometimes also called &apos;Ratsnest lines&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Поэтому виртуальные провода иногда также называют «исключёнными линиями».</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="143"/>
@@ -9642,17 +9673,17 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="156"/>
         <source>Route traces in 45-degree angles instead of 90-degrees to reduce noise.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выполняйте трассировку дорожек с 45-градусными углами вместо 90-градусных для уменьшения шума.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="162"/>
         <source>To make a stylish Arduino shield in no time, switch the shape of the PCB from a rectangle to the Arduino.</source>
-        <translation type="unfinished"></translation>
+        <translation>Чтобы сделать стильный щит Arduino в мгновение ока, переключите форму печатной платы с прямоугольника на Arduino.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="167"/>
         <source>Smaller PCBs are more affordable than larger ones. Save space and money.</source>
-        <translation type="unfinished"></translation>
+        <translation>Маленькие печатные платы являются более доступными, чем более крупные. Экономия места и денег.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="168"/>
@@ -9687,17 +9718,17 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="82"/>
         <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можете найти свой компонент? Щёлкните по значку лупы в каталоге компонентов и введите несколько ключевых слов.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="83"/>
         <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Если вы не можете найти компонент в каталоге компонентов, то используйте Generic IC. Перетащите его на свой эскиз, затем используйте виджеты в инспекторе, чтобы: выбрать один из 25 различных пакетов сквозных отверстий и SMD; изменить метку вывода; и — для микросхем DIP и SIP — изменить количество выводов. Вы также можете изменить имена выводов с помощью редактора меток.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="84"/>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part.</source>
-        <translation type="unfinished"></translation>
+        <translation>Значок в каталоге компонентов может на самом деле представлять несколько связанных компонентов. Поэтому, когда вы перетаскиваете значок из каталога компонентов в эскиз, обязательно посмотрите на инспектор. Инспектор отобразит диапазон доступных вариантов для изменения компонента или его замены на связанный компонент.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="93"/>
@@ -9737,17 +9768,17 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="135"/>
         <source>A virtual wire between connections in one view indicates that there is already a corresponding connection in another view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виртуальный провод между соединениями в одном представлении означает, что эти соединения каким-то образом соединены в другом представлении.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="136"/>
         <source>They are displayed as dotted lines. When wires haven&apos;t been routed yet and all connections are virtual, the sketch can look quite chaotic.</source>
-        <translation type="unfinished"></translation>
+        <translation>Они отображаются в виде пунктирных линий. Когда провода ещё не проложены и все соединения являются виртуальными, эскиз может выглядеть довольно хаотично.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="146"/>
         <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы можете использовать редактор компонентов, чтобы найти SVG-файл для изображения компонента для данного представления. Щёлкните в редакторе компонентов по вкладке данного представления, затем выберите в меню &lt;b&gt;Файл&lt;/b&gt; пункт &lt;b&gt;Показать в папке&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="153"/>

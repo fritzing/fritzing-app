@@ -22,6 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "debugdialog.h"
 #include "utils/misc.h"
 #include "mainwindow/mainwindow.h"
+#include "program/programwindow.h"
 #include "fsplashscreen.h"
 #include "version/version.h"
 #include "dialogs/prefsdialog.h"
@@ -1508,8 +1509,25 @@ void FApplication::preferencesAfter()
 	QList<Platform *> platforms = mainWindow->programmingWidget()->getAvailablePlatforms();
 
 	prefsDialog.initLayout(languages, platforms, mainWindow);
+	
+	// Connect blocklyInstalled signal to update all ProgramTabs
+	connect(&prefsDialog, SIGNAL(blocklyInstalled()), this, SLOT(updateAllBlocksButtons()));
+	
 	if (QDialog::Accepted == prefsDialog.exec()) {
 		updatePrefs(prefsDialog);
+	}
+}
+
+void FApplication::updateAllBlocksButtons() {
+	// Iterate through all MainWindows and update their ProgramWindows
+	QList<MainWindow *> mainWindows = orderedTopLevelMainWindows();
+	Q_FOREACH (MainWindow *mainWindow, mainWindows) {
+		if (mainWindow != nullptr) {
+			ProgramWindow *programWindow = mainWindow->programmingWidget();
+			if (programWindow != nullptr) {
+				programWindow->updateAllBlocksButtons();
+			}
+		}
 	}
 }
 
@@ -1526,7 +1544,9 @@ void FApplication::updatePrefs(PrefsDialog & prefsDialog)
 	QList<MainWindow *> mainWindows = orderedTopLevelMainWindows();
 	Q_FOREACH (QString key, hash.keys()) {
 		settings.setValue(key, hash.value(key));
-		if (key.compare("connectedColor") == 0) {
+		if (key.compare("language") == 0) {
+		}
+		else if (key.compare("connectedColor") == 0) {
 			QColor c(hash.value(key));
 			ItemBase::setConnectedColor(c);
 			Q_FOREACH (MainWindow * mainWindow, mainWindows) {

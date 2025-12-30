@@ -38,11 +38,31 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QLabel>
 #include <QPrinter>
 #include <QHBoxLayout>
+#include <QMouseEvent>
+#include <QAction>
+#include <QWidget>
 
 #include "programwindow.h"
 #include "consolewindow.h"
 
 #include "../sketchtoolbutton.h"
+
+class BlocksToolButton : public SketchToolButton
+{
+	Q_OBJECT
+public:
+	BlocksToolButton(QWidget *parent, QAction* defaultAction);
+	void updateBlocklyInstallationState();
+	
+protected:
+	void setupIcons(const QString &imageName, bool hasStates=true) override;
+	void mousePressEvent(QMouseEvent *event) override;
+	void mouseReleaseEvent(QMouseEvent *event) override;
+	
+private:
+	void updateIconState();
+	bool m_blocklyInstalled;
+};
 
 class SerialPortComboBox : public QComboBox
 {
@@ -89,6 +109,7 @@ public:
 	void setPlatform(const QString & newPlatformName);
 	void setPort(const QString &);
 	void setBoard(const QString &);
+	QString board() const;
 	void appendToConsole(const QString &);
 	void initMenus();
 public Q_SLOTS:
@@ -120,6 +141,7 @@ public Q_SLOTS:
 	void updateMenu();
 	void updateSerialPorts();
 	void updateBoards();
+	void updateBlocksButtonState();
 
 Q_SIGNALS:
 	// TODO: since ProgramTab has m_programWindow most/all of these signals could be replaced by direct
@@ -144,6 +166,7 @@ protected:
 	QPointer<SketchToolButton> m_newButton;
 	QPointer<SketchToolButton> m_openButton;
 	QPointer<SketchToolButton> m_saveButton;
+	QPointer<BlocksToolButton> m_blocksButton;
 	QPointer<QPushButton> m_cancelCloseButton;
 	QPointer<SketchToolButton> m_monitorButton;
 	QPointer<SketchToolButton> m_programButton;

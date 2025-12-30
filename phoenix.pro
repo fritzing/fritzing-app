@@ -163,7 +163,7 @@ macx {
     QMAKE_BUNDLE_DATA += FILE_ICONS
 }
 
-QT += concurrent core gui network printsupport serialport sql svg widgets xml svgwidgets openglwidgets
+QT += concurrent core gui network printsupport serialport sql svg widgets xml svgwidgets openglwidgets webenginewidgets
 
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc

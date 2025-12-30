@@ -94,6 +94,9 @@ public:
 	void showMenus(bool);
 	void createViewMenuActions(QList<QAction *> &);
 	void print();
+	void updateAllBlocksButtons();
+	void insertCodeIntoCurrentTab(const QString &code);
+	class ProgramTab *getCurrentTab();
 
 public Q_SLOTS:
 	void saveAll();
@@ -136,6 +139,8 @@ protected Q_SLOTS:
 	void selectAll();
 	void serialMonitor();
 	void sendProgram();
+	void openBlocksEditor();
+	void blocksWindowClosed();
 
 protected:
 	bool event(QEvent * event);
@@ -163,6 +168,7 @@ protected:
 	QStringList getExtensions();
 	bool beforeClosing(bool showCancel, bool & discard); // returns true if close, false if cancel
 	QStringList getSerialPortsAux();
+	bool checkBlocklyInstalled() const;
 
 protected:
 	static void initPlatforms();
@@ -172,6 +178,7 @@ public:
 	QAction *m_newAction;
 	QAction *m_openAction;
 	QAction *m_saveAction;
+	QAction *m_blocksAction;
 	QAction *m_monitorAction;
 	QAction *m_programAction;
 
@@ -182,6 +189,7 @@ protected:
 	QPointer<PTabWidget> m_tabWidget;
 	QPointer<QPushButton> m_addButton;
 	QPointer<class ProgramTab> m_savingProgramTab;
+	QPointer<class BlocksWindow> m_blocksWindow;
 	QAction *m_undoAction;
 	QAction *m_redoAction;
 	QAction *m_cutAction;

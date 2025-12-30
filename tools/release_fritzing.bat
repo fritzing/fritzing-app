@@ -40,25 +40,28 @@ set PATH=%PATH%;"C:\Program Files (x86)\Git\bin";
 echo set the path to the qt sdk bin folder
 IF %2==64 (
 	IF %3==2012 (
-	set QTBIN=C:\Qt\5.6\msvc2012_64\bin
+	set QTBIN=C:\Qt\6.5.3\msvc2012_64\bin
     ) ELSE IF %3==2013 (
-	set QTBIN=C:\Qt\5.6\msvc2013_64\bin
+	set QTBIN=C:\Qt\6.5.3\msvc2013_64\bin
     ) ELSE IF %3==2015 (
-	set QTBIN=C:\Qt\5.6\msvc2015_64\bin
+	set QTBIN=C:\Qt\6.5.3\msvc2015_64\bin
     ) ELSE IF %3==2017 (
-        set QTBIN=C:\Qt\5.12.7\msvc2017_64\bin
+        set QTBIN=C:\Qt\6.5.3\msvc2017_64\bin
+    )
+    ) ELSE IF %3==2019 (
+        set QTBIN=C:\Qt\6.5.3\msvc2019_64\bin
     )
 	set arch=""QMAKE_TARGET.arch=x86_64""
 ) ELSE (
 	IF %2==32 (
 		IF %3==2012 (
-		set QTBIN=C:\Qt\5.6\msvc2012\bin
+		set QTBIN=C:\Qt\6.5.3\msvc2012\bin
 	    ) ELSE IF %3==2013 (
-		set QTBIN=C:\Qt\5.6\msvc2013\bin
+		set QTBIN=C:\Qt\6.5.3\msvc2013\bin
 	    ) ELSE IF %3==2015 (
-		set QTBIN=C:\Qt\5.6\msvc2015\bin
+		set QTBIN=C:\Qt\6.5.3\msvc2015\bin
 	    ) ELSE IF %3==2017 (
-		set QTBIN=C:\Qt\5.12.3\msvc2017\bin
+		set QTBIN=C:\Qt\6.5.3\msvc2017\bin
 	    )
 		set arch=.
 	) ELSE (

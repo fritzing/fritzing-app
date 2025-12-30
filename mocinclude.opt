@@ -1,0 +1,41 @@
+-IC:/Qt/6.5.3/msvc2019_64/mkspecs/win32-msvc
+-IC:/00_fritzing/fritzing-app
+-IC:/00_fritzing/ngspice-42/src/include
+-IC:/Qt/6.5.3/msvc2019_64/include/QtZlib
+-IC:/00_fritzing/libgit2/include
+-IC:/00_fritzing/boost_1_85_0
+-IC:/00_fritzing/ngspice-42/include
+-IC:/00_fritzing/quazip-6.5.3-1.4intuisphere/include/QuaZip-Qt6-1.4
+-IC:/00_fritzing/svgpp-1.3.1/include
+-IC:/00_fritzing/fritzing-app/src/dialogs
+-IC:/00_fritzing/fritzing-app/src/ipc
+-IC:/00_fritzing/fritzing-app/src
+-IC:/00_fritzing/Clipper1-6.4.2/include/polyclipping
+-IC:/Qt/6.5.3/msvc2019_64/include
+-IC:/Qt/6.5.3/msvc2019_64/include/QtWebEngineWidgets
+-IC:/Qt/6.5.3/msvc2019_64/include/QtPrintSupport
+-IC:/Qt/6.5.3/msvc2019_64/include/QtSvgWidgets
+-IC:/Qt/6.5.3/msvc2019_64/include/QtOpenGLWidgets
+-IC:/Qt/6.5.3/msvc2019_64/include/QtWidgets
+-IC:/Qt/6.5.3/msvc2019_64/include/QtSvg
+-IC:/Qt/6.5.3/msvc2019_64/include/QtWebEngineCore
+-IC:/Qt/6.5.3/msvc2019_64/include/QtQuick
+-IC:/Qt/6.5.3/msvc2019_64/include/QtOpenGL
+-IC:/Qt/6.5.3/msvc2019_64/include/QtGui
+-IC:/Qt/6.5.3/msvc2019_64/include/QtConcurrent
+-IC:/Qt/6.5.3/msvc2019_64/include/QtQmlModels
+-IC:/Qt/6.5.3/msvc2019_64/include/QtWebChannel
+-IC:/Qt/6.5.3/msvc2019_64/include/QtQml
+-IC:/Qt/6.5.3/msvc2019_64/include/QtNetwork
+-IC:/Qt/6.5.3/msvc2019_64/include/QtSerialPort
+-IC:/Qt/6.5.3/msvc2019_64/include/QtSql
+-IC:/Qt/6.5.3/msvc2019_64/include/QtXml
+-IC:/Qt/6.5.3/msvc2019_64/include/QtQmlIntegration
+-IC:/Qt/6.5.3/msvc2019_64/include/QtPositioning
+-IC:/Qt/6.5.3/msvc2019_64/include/QtCore
+-IC:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include
+-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt
+-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared
+-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um
+-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt
+-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt

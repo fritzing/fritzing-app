@@ -57,6 +57,9 @@
         <file>resources/images/icons/TabWidgetPcbActive_icon.png</file>
         <file>resources/images/icons/TabWidgetPcbInactive_icon.png</file>
         <file>resources/images/icons/TabWidgetPcbHover_icon.png</file>
+        <file>resources/images/icons/TabWidgetBlocksActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetBlocksInactive_icon.png</file>
+        <file>resources/images/icons/TabWidgetBlocksPressed_icon.png</file>
         <file>resources/images/icons/toolbarExport_gbr_icon.png</file>
         <file>resources/images/icons/toolbarExport_gbx_icon.png</file>
         <file>resources/images/icons/toolbarExport_jpeg_icon.png</file>

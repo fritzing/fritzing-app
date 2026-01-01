@@ -38,6 +38,23 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QSettings>
 #include <QLineEdit>
 #include <QString>
+#include <QProcess>
+#include <QMessageBox>
+#include <QDir>
+#include <QStandardPaths>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QFile>
+#include <QEventLoop>
+#include <QRegularExpression>
+#include <quazip/quazip.h>
+#include <quazip/quazipfile.h>
+#include <quazip/quazipfileinfo.h>
+#include <QCoreApplication>
+#include <QApplication>
 
 #define MARGIN 5
 #define FORMLABELWIDTH 195
@@ -75,6 +92,7 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 	m_schematic = new QWidget();
 	m_pcb = new QWidget();
 	m_code = new QWidget();
+	m_blockly = new QWidget();
 	m_beta_features = new QWidget();
 	m_tabWidget->setObjectName("preDia_tabs");
 
@@ -83,6 +101,7 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 	m_tabWidget->addTab(m_schematic, m_viewInfoThings[1].viewName);
 	m_tabWidget->addTab(m_pcb, m_viewInfoThings[2].viewName);
 	m_tabWidget->addTab(m_code, tr("Code View"));
+	m_tabWidget->addTab(m_blockly, tr("Blockly@rduino"));
 	m_tabWidget->addTab(m_beta_features, tr("Beta Features"));
 
 	auto * vLayout = new QVBoxLayout();
@@ -96,6 +115,7 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 
 	initCode(m_code, platforms);
 	m_platforms = platforms;
+	initBlockly(m_blockly);
 
 	initBetaFeatures(m_beta_features);
 	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
@@ -162,6 +182,438 @@ void PrefsDialog::initCode(QWidget * widget, QList<Platform *> platforms)
 	vLayout->addWidget(createProgrammerForm(platforms));
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
 	widget->setLayout(vLayout);
+}
+
+void PrefsDialog::initBlockly(QWidget * widget)
+{
+	auto * vLayout = new QVBoxLayout();
+	vLayout->addWidget(createBlocklyForm());
+	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
+	widget->setLayout(vLayout);
+}
+
+QWidget * PrefsDialog::createBlocklyForm() {
+	auto * formGroupBox = new QGroupBox(tr("Blockly@rduino Installation"));
+	auto *layout = new QVBoxLayout();
+	layout->setSpacing(SPACING);
+
+	auto * label = new QLabel(tr("Blockly@rduino is a JavaScript library for creating visual block-based programs,\n"
+	                              "based on <a href='https://developers.google.com/blockly'>Blockly</a>. To use this feature, you must click the button below\n"
+								  "to download and install Blockly@rduino in a 'blockly' subfolder\n"
+	                              "from <a href='https://github.com/technologiescollege/Blockly-at-rduino'>Github</a>.\n"));
+	label->setOpenExternalLinks(true);
+	label->setWordWrap(true);
+	label->setTextFormat(Qt::RichText);
+	label->setOpenExternalLinks(true);
+	layout->addWidget(label);
+	layout->addSpacing(SPACING);
+
+	auto * installButton = new QPushButton(tr("Download and install Blockly@rduino"), this);
+	connect(installButton, SIGNAL(clicked()), this, SLOT(installBlockly()));
+	layout->addWidget(installButton);
+
+	formGroupBox->setLayout(layout);
+	return formGroupBox;
+}
+
+QString PrefsDialog::getLocalBlocklyVersion(const QString & blocklyPath) {
+	QString packageJsonPath = QDir(blocklyPath).absoluteFilePath("package.json");
+	if (!QFile::exists(packageJsonPath)) {
+		return "0.0.0.0";
+	}
+	
+	QFile file(packageJsonPath);
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+		return "0.0.0.0";
+	}
+	
+	QByteArray jsonData = file.readAll();
+	file.close();
+	
+	return parseVersionFromPackageJson(jsonData);
+}
+
+QString PrefsDialog::parseVersionFromPackageJson(const QByteArray & jsonData) {
+	QJsonParseError error;
+	QJsonDocument doc = QJsonDocument::fromJson(jsonData, &error);
+	if (error.error != QJsonParseError::NoError || !doc.isObject()) {
+		return "0.0.0.0";
+	}
+	
+	QJsonObject obj = doc.object();
+	if (!obj.contains("version")) {
+		return "0.0.0.0";
+	}
+	
+	QString version = obj["version"].toString();
+	return version.isEmpty() ? "0.0.0.0" : version;
+}
+
+bool PrefsDialog::compareVersions(const QString & version1, const QString & version2) {
+	// Version comparison in semantic format x.y.z (or x.y.z.w)
+	// Returns true if version2 > version1
+	
+	QStringList parts1 = version1.split('.');
+	QStringList parts2 = version2.split('.');
+	
+	// Compare part by part (up to 4 parts max)
+	int maxParts = qMax(parts1.size(), parts2.size());
+	for (int i = 0; i < maxParts; i++) {
+		int v1 = (i < parts1.size()) ? parts1[i].toInt() : 0;
+		int v2 = (i < parts2.size()) ? parts2[i].toInt() : 0;
+		if (v2 > v1) return true;
+		if (v2 < v1) return false;
+	}
+	return false; // Versions equal
+}
+
+void PrefsDialog::copyDirectoryRecursive(const QDir & srcDir, const QDir & dstDir) {
+	QStringList entries = srcDir.entryList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
+	foreach (const QString &entry, entries) {
+		QString srcPath = srcDir.absoluteFilePath(entry);
+		QString dstPath = dstDir.absoluteFilePath(entry);
+		QFileInfo srcInfo(srcPath);
+		
+		if (srcInfo.isDir()) {
+			// Create destination directory
+			QDir dstSubDir(dstPath);
+			if (!dstSubDir.exists()) {
+				QDir().mkpath(dstPath);
+			}
+			// Recursively copy content
+			copyDirectoryRecursive(QDir(srcPath), QDir(dstPath));
+		} else {
+			// For files, create parent directory if necessary
+			QFileInfo dstInfo(dstPath);
+			QDir dstParent = dstInfo.dir();
+			if (!dstParent.exists()) {
+				dstParent.mkpath(".");
+			}
+			// Remove destination file if it already exists
+			if (QFile::exists(dstPath)) {
+				QFile::remove(dstPath);
+			}
+			// Copy file
+			if (!QFile::copy(srcPath, dstPath)) {
+				QMessageBox::warning(this, tr("Error"), tr("Unable to copy file %1 to %2").arg(srcPath).arg(dstPath));
+			}
+		}
+	}
+}
+
+void PrefsDialog::installBlockly() {
+	// Get the path of the folder where the executable is located
+	QString appDirPath = QCoreApplication::applicationDirPath();
+	QDir appDir(appDirPath);
+	
+	// Create 'blockly' subfolder if it doesn't exist (use mkpath to create recursively)
+	QString blocklyPath = appDir.absoluteFilePath("blockly");
+	QDir blocklyDir(blocklyPath);
+	
+	if (!blocklyDir.exists()) {
+		if (!appDir.mkpath("blockly")) {
+			QMessageBox::warning(this, tr("Error"), tr("Unable to create 'blockly' folder in %1").arg(appDirPath));
+			return;
+		}
+	}
+
+	m_blocklyTargetPath = blocklyDir.absolutePath();
+	
+	// Verify that the folder was created successfully
+	if (!QFileInfo::exists(m_blocklyTargetPath)) {
+		QMessageBox::warning(this, tr("Error"), tr("The 'blockly' folder could not be created in %1").arg(appDirPath));
+		return;
+	}
+	
+	// 1. Check local version
+	QString localVersion = getLocalBlocklyVersion(m_blocklyTargetPath);
+	
+	// 2. Download package.json from GitHub to get the latest version
+	m_blocklyNetworkManager = new QNetworkAccessManager(this);
+	QUrl url("https://raw.githubusercontent.com/technologiescollege/Blockly-at-rduino/refs/heads/gh-pages/package.json");
+	QNetworkRequest request(url);
+	m_blocklyPackageJsonReply = m_blocklyNetworkManager->get(request);
+	
+	connect(m_blocklyPackageJsonReply, SIGNAL(finished()), this, SLOT(blocklyPackageJsonDownloaded()));
+}
+
+void PrefsDialog::blocklyPackageJsonDownloaded() {
+	if (m_blocklyPackageJsonReply->error() != QNetworkReply::NoError) {
+		QMessageBox::warning(this, tr("Error"), 
+		                     tr("Unable to download version information from GitHub.\n"
+		                        "Error: %1").arg(m_blocklyPackageJsonReply->errorString()));
+		m_blocklyPackageJsonReply->deleteLater();
+		m_blocklyNetworkManager->deleteLater();
+		return;
+	}
+	
+	QByteArray jsonData = m_blocklyPackageJsonReply->readAll();
+	m_blocklyPackageJsonReply->deleteLater();
+	
+	QString remoteVersion = parseVersionFromPackageJson(jsonData);
+	if (remoteVersion == "0.0.0.0") {
+		QMessageBox::warning(this, tr("Error"), tr("Unable to parse version from GitHub."));
+		m_blocklyNetworkManager->deleteLater();
+		return;
+	}
+	
+	// 3. Compare versions
+	QString localVersion = getLocalBlocklyVersion(m_blocklyTargetPath);
+	
+	if (!compareVersions(localVersion, remoteVersion)) {
+		// No update needed
+		QMessageBox::information(this, tr("Version Check"), 
+		                         tr("Blockly@rduino is already up to date.\n"
+		                            "Local version: %1\n"
+		                            "Remote version: %2").arg(localVersion).arg(remoteVersion));
+		m_blocklyNetworkManager->deleteLater();
+		return;
+	}
+	
+	// 4. Download latest release
+	QUrl downloadUrl("https://github.com/technologiescollege/Blockly-at-rduino/archive/refs/heads/gh-pages.zip");
+	QNetworkRequest downloadRequest(downloadUrl);
+	m_blocklyDownloadReply = m_blocklyNetworkManager->get(downloadRequest);
+	
+	QDir targetDirObj(m_blocklyTargetPath);
+	QString downloadFileName = targetDirObj.absoluteFilePath("blockly-main.zip");
+	m_blocklyDownloadPath = downloadFileName;
+	
+	connect(m_blocklyDownloadReply, SIGNAL(finished()), this, SLOT(blocklyReleaseDownloaded()));
+	
+	// Create a custom QMessageBox for download
+	m_blocklyDownloadProgressDialog = new QMessageBox(this);
+	m_blocklyDownloadProgressDialog->setWindowTitle(tr("Download in progress"));
+	m_blocklyDownloadProgressDialog->setText(tr("Downloading Blockly@rduino %1...\n"
+	                                            "Please wait.").arg(remoteVersion));
+	m_blocklyDownloadProgressDialog->setIcon(QMessageBox::Information);
+	m_blocklyDownloadProgressDialog->setStandardButtons(QMessageBox::Ok);
+	QAbstractButton *okButton = m_blocklyDownloadProgressDialog->button(QMessageBox::Ok);
+	if (okButton != nullptr) {
+		okButton->setText("...");
+		okButton->setEnabled(false);
+	}
+	m_blocklyDownloadProgressDialog->show();
+	qApp->processEvents(); // Allow window to display
+}
+
+void PrefsDialog::blocklyReleaseDownloaded() {
+	if (m_blocklyDownloadReply->error() != QNetworkReply::NoError) {
+		// Close download dialog if it exists
+		if (m_blocklyDownloadProgressDialog != nullptr) {
+			m_blocklyDownloadProgressDialog->close();
+			m_blocklyDownloadProgressDialog->deleteLater();
+			m_blocklyDownloadProgressDialog = nullptr;
+		}
+		QMessageBox::warning(this, tr("Error"), 
+		                     tr("Error downloading Blockly@rduino.\n"
+		                        "Error: %1").arg(m_blocklyDownloadReply->errorString()));
+		m_blocklyDownloadReply->deleteLater();
+		m_blocklyNetworkManager->deleteLater();
+		return;
+	}
+	
+	// Save downloaded file
+	QFile downloadFile(m_blocklyDownloadPath);
+	if (!downloadFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+		// Close download dialog if it exists
+		if (m_blocklyDownloadProgressDialog != nullptr) {
+			m_blocklyDownloadProgressDialog->close();
+			m_blocklyDownloadProgressDialog->deleteLater();
+			m_blocklyDownloadProgressDialog = nullptr;
+		}
+		QMessageBox::warning(this, tr("Error"), tr("Unable to create download file."));
+		m_blocklyDownloadReply->deleteLater();
+		m_blocklyNetworkManager->deleteLater();
+		return;
+	}
+	
+	QByteArray data = m_blocklyDownloadReply->readAll();
+	downloadFile.write(data);
+	downloadFile.close();
+	
+	m_blocklyDownloadReply->deleteLater();
+	
+	// 5. Extract file with directory creation
+	QString error;
+	// Extract to temporary folder, then move content
+	QDir targetDir(m_blocklyTargetPath);
+	QString tempDir = targetDir.absoluteFilePath("temp_extract");
+	targetDir.mkpath("temp_extract");
+	
+	// Use QuaZip directly to create directories manually
+	QuaZip zip(m_blocklyDownloadPath);
+	if (!zip.open(QuaZip::mdUnzip)) {
+		error = QString("zip.open(): %1").arg(zip.getZipError());
+		// Close download dialog if it exists
+		if (m_blocklyDownloadProgressDialog != nullptr) {
+			m_blocklyDownloadProgressDialog->close();
+			m_blocklyDownloadProgressDialog->deleteLater();
+			m_blocklyDownloadProgressDialog = nullptr;
+		}
+		QMessageBox::warning(this, tr("Error"), tr("Error opening ZIP file:\n%1").arg(error));
+		QFile::remove(m_blocklyDownloadPath);
+		m_blocklyNetworkManager->deleteLater();
+		return;
+	}
+	
+	zip.setFileNameCodec("IBM866");
+	QuaZipFile zipFile(&zip);
+	
+	QuaZipFileInfo zipFileInfo;
+	for (bool more = zip.goToFirstFile(); more; more = zip.goToNextFile()) {
+		if (!zip.getCurrentFileInfo(&zipFileInfo)) {
+			error = QString("getCurrentFileInfo(): %1").arg(zip.getZipError());
+			QMessageBox::warning(this, tr("Error"), tr("Error reading ZIP file information:\n%1").arg(error));
+			zip.close();
+			QFile::remove(m_blocklyDownloadPath);
+			FolderUtils::rmdir(tempDir);
+			m_blocklyNetworkManager->deleteLater();
+			return;
+		}
+		
+		QString fileName = zipFileInfo.name;
+		
+		// Ignore entries that are only directories (end with /)
+		if (fileName.endsWith("/")) {
+			continue;
+		}
+		
+		if (!zipFile.open(QIODevice::ReadOnly)) {
+			error = QString("zipFile.open(): %1").arg(zipFile.getZipError());
+			// Close download dialog if it exists
+			if (m_blocklyDownloadProgressDialog != nullptr) {
+				m_blocklyDownloadProgressDialog->close();
+				m_blocklyDownloadProgressDialog->deleteLater();
+				m_blocklyDownloadProgressDialog = nullptr;
+			}
+			QMessageBox::warning(this, tr("Error"), tr("Error reading ZIP file:\n%1").arg(error));
+			zip.close();
+			QFile::remove(m_blocklyDownloadPath);
+			FolderUtils::rmdir(tempDir);
+			m_blocklyNetworkManager->deleteLater();
+			return;
+		}
+		
+		QDir tempDirObj(tempDir);
+		QString filePath = tempDirObj.absoluteFilePath(fileName);
+		
+		// Create parent directory if necessary
+		QFileInfo outFileInfo(filePath);
+		QDir parentDir = outFileInfo.dir();
+		if (!parentDir.exists()) {
+			parentDir.mkpath(".");
+		}
+		
+		// Write file
+		QFile outFile(filePath);
+		if (!outFile.open(QIODevice::WriteOnly)) {
+			error = QString("outFile.open(): %1").arg(outFile.errorString());
+			// Close download dialog if it exists
+			if (m_blocklyDownloadProgressDialog != nullptr) {
+				m_blocklyDownloadProgressDialog->close();
+				m_blocklyDownloadProgressDialog->deleteLater();
+				m_blocklyDownloadProgressDialog = nullptr;
+			}
+			zipFile.close();
+			zip.close();
+			QMessageBox::warning(this, tr("Error"), tr("Error writing file %1:\n%2").arg(filePath).arg(error));
+			QFile::remove(m_blocklyDownloadPath);
+			FolderUtils::rmdir(tempDir);
+			m_blocklyNetworkManager->deleteLater();
+			return;
+		}
+		
+		char buffer[8192];
+		qint64 bytesRead;
+		while ((bytesRead = zipFile.read(buffer, sizeof(buffer))) > 0) {
+			outFile.write(buffer, bytesRead);
+		}
+		
+		outFile.close();
+		zipFile.close();
+	}
+	
+	zip.close();
+	
+	// 6. Move content from blockly-main subfolder to blockly
+	QDir extractDir(tempDir);
+	QString blocklyMainPath = extractDir.absoluteFilePath("blockly-main");
+	
+	// Check if blockly-main folder exists
+	if (!QFileInfo::exists(blocklyMainPath)) {
+		// Search for first subfolder that could be blockly-main
+		QStringList entries = extractDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+		if (entries.isEmpty()) {
+			// Close download dialog if it exists
+			if (m_blocklyDownloadProgressDialog != nullptr) {
+				m_blocklyDownloadProgressDialog->close();
+				m_blocklyDownloadProgressDialog->deleteLater();
+				m_blocklyDownloadProgressDialog = nullptr;
+			}
+			QMessageBox::warning(this, tr("Error"), tr("ZIP file does not contain a folder. Verify that extraction completed successfully."));
+			FolderUtils::rmdir(tempDir);
+			QFile::remove(m_blocklyDownloadPath);
+			m_blocklyNetworkManager->deleteLater();
+			return;
+		}
+		// Use first folder found
+		blocklyMainPath = extractDir.absoluteFilePath(entries.first());
+	}
+	
+	if (QFileInfo::exists(blocklyMainPath)) {
+		QDir blocklyMainDir(blocklyMainPath);
+		QDir targetDir(m_blocklyTargetPath);
+		
+		// Remove old files (except temp_extract and zip)
+		QStringList entries = targetDir.entryList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
+		foreach (const QString &entry, entries) {
+			if (entry != "temp_extract" && entry != "blockly-main.zip") {
+				QString entryPath = targetDir.absoluteFilePath(entry);
+				QFileInfo fileInfo(entryPath);
+				if (fileInfo.isDir()) {
+					FolderUtils::rmdir(entryPath);
+				} else {
+					QFile::remove(entryPath);
+				}
+			}
+		}
+		
+		// Recursively copy content using custom copy function
+		copyDirectoryRecursive(blocklyMainDir, targetDir);
+	} else {
+		// Close download dialog if it exists
+		if (m_blocklyDownloadProgressDialog != nullptr) {
+			m_blocklyDownloadProgressDialog->close();
+			m_blocklyDownloadProgressDialog->deleteLater();
+			m_blocklyDownloadProgressDialog = nullptr;
+		}
+		QMessageBox::warning(this, tr("Error"), tr("Unable to find folder in ZIP file."));
+		FolderUtils::rmdir(tempDir);
+		QFile::remove(m_blocklyDownloadPath);
+		m_blocklyNetworkManager->deleteLater();
+		return;
+	}
+	
+	// 7. Cleanup
+	FolderUtils::rmdir(tempDir);
+	QFile::remove(m_blocklyDownloadPath);
+	
+	// 8. Close download dialog if it exists
+	if (m_blocklyDownloadProgressDialog != nullptr) {
+		m_blocklyDownloadProgressDialog->close();
+		m_blocklyDownloadProgressDialog->deleteLater();
+		m_blocklyDownloadProgressDialog = nullptr;
+	}
+	
+	// 9. Show success message
+	QMessageBox::information(this, tr("Installation Successful"), 
+	                         tr("Blockly@rduino has been successfully installed in the 'blockly' folder."));
+	
+	// Emit signal to notify that Blockly has been installed
+	Q_EMIT blocklyInstalled();
+	
+	m_blocklyNetworkManager->deleteLater();
 }
 
 void PrefsDialog::initBetaFeatures(QWidget * widget)

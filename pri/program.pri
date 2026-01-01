@@ -27,6 +27,7 @@ HEADERS += \
     src/program/console.h \
     src/program/consolewindow.h \
     src/program/consolesettings.h \
+    src/program/blockswindow.h \
     src/program/platform.h \
     src/program/platformarduino.h \
     src/program/platformpicaxe.h \
@@ -41,6 +42,7 @@ SOURCES += \
     src/program/console.cpp \
     src/program/consolewindow.cpp \
     src/program/consolesettings.cpp \
+    src/program/blockswindow.cpp \
     src/program/platform.cpp \
     src/program/platformarduino.cpp \
     src/program/platformpicaxe.cpp \

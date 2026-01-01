@@ -32,12 +32,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "programtab.h"
 #include "platformarduino.h"
 #include "platformpicaxe.h"
+#include "blockswindow.h"
 
 #include "../debugdialog.h"
 #include "../utils/folderutils.h"
 
 #include <QFileInfoList>
 #include <QFileInfo>
+#include <QDir>
+#include <QCoreApplication>
 #include <QSettings>
 #include <QFontMetrics>
 #include <QTextStream>
@@ -247,6 +250,15 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 	connect(m_saveAction, SIGNAL(triggered()), this, SLOT(saveCurrentTab()));
 	m_programMenu->addAction(m_saveAction);
 
+	m_blocksAction = new QAction(tr("&Blocks"), this);
+	m_blocksAction->setShortcut(tr("Alt+Ctrl+B"));
+	m_blocksAction->setStatusTip(tr("Open Blocks editor"));
+	// Initial state will be updated by BlocksToolButton upon its creation
+	// For now, set it to false by default (will be updated by button's updateIconState)
+	m_blocksAction->setEnabled(false);
+	connect(m_blocksAction, SIGNAL(triggered()), this, SLOT(openBlocksEditor()));
+	m_programMenu->addAction(m_blocksAction);
+
 	currentAction = new QAction(tr("&Rename Tab"), this);
 	currentAction->setShortcut(tr("Alt+Ctrl+R"));
 	currentAction->setStatusTip(tr("Rename the current program tab"));
@@ -310,6 +322,9 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 	}
 
 	addTab(); // the initial ProgramTab must be created after all actions are set up
+	
+	// Update Blocks button and menu action state after initial tab creation
+	updateAllBlocksButtons();
 }
 
 void ProgramWindow::showMenus(bool show) {
@@ -542,6 +557,7 @@ void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEna
 {
 	ProgramTab * programTab = currentWidget();
 	m_saveAction->setEnabled(programTab->isModified());
+	m_blocksAction->setEnabled(checkBlocklyInstalled());
 	m_monitorAction->setEnabled(!port.isEmpty());
 	m_programAction->setEnabled(programEnable);
 	m_undoAction->setEnabled(undoEnable);
@@ -829,6 +845,21 @@ ProgramTab * ProgramWindow::indexWidget(int index) {
 	return qobject_cast<ProgramTab *>(m_tabWidget->widget(index));
 }
 
+void ProgramWindow::updateAllBlocksButtons() {
+	// Update menu action state
+	if (m_blocksAction != nullptr) {
+		m_blocksAction->setEnabled(checkBlocklyInstalled());
+	}
+	
+	// Iterate through all tabs and update their Blocks button
+	for (int i = 0; i < m_tabWidget->count(); i++) {
+		ProgramTab *tab = indexWidget(i);
+		if (tab != nullptr) {
+			tab->updateBlocksButtonState();
+		}
+	}
+}
+
 bool ProgramWindow::alreadyHasProgram(const QString & filename) {
 	DebugDialog::debug("already has program");
 	for (int i = 0; i < m_tabWidget->count(); i++) {
@@ -936,4 +967,59 @@ void ProgramWindow::portProcessReadyRead() {
 			}
 		}
 	}
+}
+
+bool ProgramWindow::checkBlocklyInstalled() const {
+	QString appDirPath = QCoreApplication::applicationDirPath();
+	QDir appDir(appDirPath);
+	QString blocklyPath = appDir.absoluteFilePath("blockly");
+	QString indexHtmlPath = QDir(blocklyPath).absoluteFilePath("index.html");
+	QFileInfo fileInfo(indexHtmlPath);
+	return fileInfo.exists() && fileInfo.isFile();
+}
+
+void ProgramWindow::openBlocksEditor() {
+	// If window already exists and is visible, bring it to foreground
+	if (m_blocksWindow != nullptr && m_blocksWindow->isVisible()) {
+		m_blocksWindow->raise();
+		m_blocksWindow->activateWindow();
+		return;
+	}
+	
+	// Create new window if it doesn't exist or has been closed
+	if (m_blocksWindow == nullptr) {
+		m_blocksWindow = new BlocksWindow(this);
+		// Connect close signal to release the reference
+		connect(m_blocksWindow, SIGNAL(finished(int)), this, SLOT(blocksWindowClosed()));
+	}
+	
+	m_blocksWindow->show();
+	m_blocksWindow->raise();
+	m_blocksWindow->activateWindow();
+}
+
+void ProgramWindow::blocksWindowClosed() {
+	// Window has been closed, release the reference
+	m_blocksWindow = nullptr;
+}
+
+void ProgramWindow::insertCodeIntoCurrentTab(const QString &code)
+{
+	DebugDialog::debug(QString("ProgramWindow::insertCodeIntoCurrentTab called with code length: %1").arg(code.length()));
+	ProgramTab *currentTab = currentWidget();
+	if (currentTab != nullptr) {
+		DebugDialog::debug(QString("ProgramWindow::insertCodeIntoCurrentTab - currentTab found, setting text. Code preview (first 100 chars): %1").arg(code.left(100)));
+		// Use setText() directly as in loadProgramFile (line 628) which uses m_textEdit->setText(text)
+		// ProgramTab::setText() uses setPlainText() but loadProgramFile() uses setText() directly
+		currentTab->setText(code);
+		currentTab->setDirty();
+		DebugDialog::debug("ProgramWindow::insertCodeIntoCurrentTab - text set, tab marked as dirty");
+	} else {
+		DebugDialog::debug("ProgramWindow::insertCodeIntoCurrentTab - currentTab is nullptr!");
+	}
+}
+
+ProgramTab *ProgramWindow::getCurrentTab()
+{
+	return currentWidget();
 }

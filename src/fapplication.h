@@ -137,6 +137,7 @@ Q_SIGNALS:
 public Q_SLOTS:
 	void preferences();
 	void preferencesAfter();
+	void updateAllBlocksButtons();
 	void checkForUpdates();
 	void checkForUpdates(bool atUserRequest);
 	void enableCheckUpdates(bool enabled);

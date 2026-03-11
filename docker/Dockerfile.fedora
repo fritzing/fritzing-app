@@ -1,13 +1,12 @@
-FROM fedora:30
+FROM fedora:39
 
 RUN dnf -y install cmake wget git flex bison libudev-devel
 RUN dnf -y install make gcc gcc-c++ kernel-devel ncurses-devel
 
 RUN dnf -y install openssl-devel zlib-devel libjpeg-devel libpng-devel bzip2 libgit2-devel boost-devel
-RUN dnf -y install xorg-x11-server-Xvfb qt-creator qt5-devel
+RUN dnf -y install xorg-x11-server-Xvfb qt-creator qt6-qtbase-devel qt6-qtserialport-devel qt6-qtsvg-devel
 
-RUN ln -s /usr/bin/qmake-qt5 /usr/bin/qmake
-RUN ln -s /usr/bin/lrelease-qt5 /usr/bin/lrelease
+RUN ln -s /usr/bin/lrelease-qt6 /usr/bin/lrelease
 
 RUN dnf clean all
 
@@ -23,8 +22,8 @@ WORKDIR /home/conan
 USER conan
 
 # No SHA verification for now. Will be automated by Conan in the future.
-RUN set -xe \
-    && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj
+# RUN set -xe \
+#     && wget -q -O - https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.bz2 | tar xj
 
 RUN set -xe \
     && wget -q -O - https://github.com/libgit2/libgit2/archive/v0.28.1.tar.gz | tar xz \

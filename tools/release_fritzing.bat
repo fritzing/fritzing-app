@@ -118,15 +118,15 @@ echo.
 echo copy qt libraries
 copy %QTBIN%\libEGL.dll %DESTDIR%\deploy\libEGL.dll
 copy %QTBIN%\libGLESv2.dll %DESTDIR%\deploy\libGLESv2.dll
-copy %QTBIN%\Qt5Core.dll %DESTDIR%\deploy\Qt5Core.dll
-copy %QTBIN%\Qt5Gui.dll %DESTDIR%\deploy\Qt5Gui.dll
-copy %QTBIN%\Qt5Network.dll %DESTDIR%\deploy\Qt5Network.dll
-copy %QTBIN%\Qt5PrintSupport.dll %DESTDIR%\deploy\Qt5PrintSupport.dll
-copy %QTBIN%\Qt5Sql.dll %DESTDIR%\deploy\Qt5Sql.dll
-copy %QTBIN%\Qt5Svg.dll %DESTDIR%\deploy\Qt5Svg.dll
-copy %QTBIN%\Qt5Widgets.dll %DESTDIR%\deploy\Qt5Widgets.dll
-copy %QTBIN%\Qt5Xml.dll %DESTDIR%\deploy\Qt5Xml.dll
-copy %QTBIN%\Qt5SerialPort.dll %DESTDIR%\deploy\Qt5SerialPort.dll
+copy %QTBIN%\Qt6Core.dll %DESTDIR%\deploy\Qt6Core.dll
+copy %QTBIN%\Qt6Gui.dll %DESTDIR%\deploy\Qt6Gui.dll
+copy %QTBIN%\Qt6Network.dll %DESTDIR%\deploy\Qt6Network.dll
+copy %QTBIN%\Qt6PrintSupport.dll %DESTDIR%\deploy\Qt6PrintSupport.dll
+copy %QTBIN%\Qt6Sql.dll %DESTDIR%\deploy\Qt6Sql.dll
+copy %QTBIN%\Qt6Svg.dll %DESTDIR%\deploy\Qt6Svg.dll
+copy %QTBIN%\Qt6Widgets.dll %DESTDIR%\deploy\Qt6Widgets.dll
+copy %QTBIN%\Qt6Xml.dll %DESTDIR%\deploy\Qt6Xml.dll
+copy %QTBIN%\Qt6SerialPort.dll %DESTDIR%\deploy\Qt6SerialPort.dll
 
 xcopy /q %QTBIN%\icu*.dll %DESTDIR%\deploy /E  /I
 

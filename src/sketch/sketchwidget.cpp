@@ -5959,7 +5959,7 @@ long SketchWidget::setUpSwap(SwapThing & swapThing, bool master)
 		slc->add(swapThing.newID, true, true);
 	}
 
-	if(partLabel != nullptr) {
+	if (oldPartLabel != nullptr) {
 		auto * checkPartLabelLayerVisibilityCommand = new CheckPartLabelLayerVisibilityCommand(this, swapThing.newID, swapThing.parentCommand);
 		checkPartLabelLayerVisibilityCommand->setRedoOnly();
 	}

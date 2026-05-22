@@ -37,7 +37,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #define GET_FUNC(func) std::function<decltype(func)>((decltype(func)*) m_handles[STRFY(func)])
 
 // Macro for getting pointer to duplicated string for use in ngspice library function and automatically deleting the duplicate after the function call via unique_ptr.
-#define UNIQ(str) std::unique_ptr<char>(strdup(str.c_str())).get()
+// NOTE: strdup() returns malloc-allocated memory, so the smart pointer must
+// destroy it with std::free, not the default delete (which would be UB and
+// trips -Wmismatched-new-delete on GCC). The temporary unique_ptr lives until
+// the end of the enclosing full-expression, so the raw pointer remains valid
+// for the duration of the synchronous ngSpice_* call it is passed to.
+#define UNIQ(str) std::unique_ptr<char, decltype(&std::free)>(strdup(str.c_str()), std::free).get()
 
 NgSpiceSimulator::NgSpiceSimulator()
 	: m_isInitialized(false)
@@ -117,7 +122,9 @@ void NgSpiceSimulator::loadCircuit(const std::string& netList) {
 	std::vector<std::any> garbageCollector;
 
 	while(std::getline(stream, component)) {
-		std::shared_ptr<char> shared(strdup(component.c_str()));
+		// NOTE: strdup() uses malloc, so the shared_ptr needs std::free as its
+		// deleter to avoid -Wmismatched-new-delete / heap corruption.
+		std::shared_ptr<char> shared(strdup(component.c_str()), std::free);
 		components.push_back(shared.get());
 		garbageCollector.push_back(shared);
 	}

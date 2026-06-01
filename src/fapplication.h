@@ -198,6 +198,9 @@ protected:
 		PortService,
 		DRCService,
 		ExportAllService,
+		PanelizerService,			// -p <panel.xml>: run legacy Panelizer::panelize() in batch mode
+		PanelizerCustomService,		// -pc <panel.xml>: panelize using only custom (user) parts
+		PanelizerInscribeService,	// -i <panel.xml>: run Panelizer::inscribe() (DRC + recompute board outlines)
 		NoService
 	};
 

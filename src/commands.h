@@ -3,7 +3,7 @@
 Part of the Fritzing project - http://fritzing.org
 Copyright (c) 2007-2019 Fritzing
 
-Fritzing is free software: you can redistribute it and/or modify\
+Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
@@ -31,6 +31,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "utils/misc.h"
 #include "items/itembase.h"
 #include "mainwindow/mainwindow.h"
+
+// Forward declarations
+class PanelBoardItem;
+
+#include "items/panelboarditem.h"
 
 /////////////////////////////////////////////
 
@@ -1204,4 +1209,56 @@ protected:
 
 /////////////////////////////////////////////
 
-#endif // COMMANDS_H
+/**
+ * @brief Macro-command that materializes a panelized PCB layout.
+ *
+ * Composes one AddItemCommand per placed board (and one for the synthetic
+ * PanelBoardItem container) into a single user-visible undo step. Owns no
+ * direct scene mutation logic - all state changes flow through the child
+ * commands so undo() is by construction the exact inverse of redo()
+ * (AGENTS.md sec 5.6).
+ */
+class PanelizeCommand : public BaseCommand
+{
+public:
+	PanelizeCommand(class SketchWidget *sketchWidget, QUndoCommand *parent);
+	void undo() override;
+	void redo() override;
+
+	/**
+	 * @brief Append an AddItemCommand for a source board placed at @p vg.
+	 * @param moduleID The source board's moduleID (must exist in ReferenceModel).
+	 * @param placement Which copper layer the part lives on (typically NewTop).
+	 * @param vg Final ViewGeometry of the placed board (position + rotation baked in).
+	 * @param id Pre-allocated ItemBase::getNextID() value for the new item.
+	 */
+	void addPlacedBoard(const QString &moduleID,
+	                    ViewLayer::ViewLayerPlacement placement,
+	                    ViewGeometry &vg,
+	                    long id);
+
+	/**
+	 * @brief Append an AddItemCommand for the synthetic PanelBoardItem.
+	 * @param vg ViewGeometry sized to the full panel outline.
+	 * @param id Pre-allocated ItemBase::getNextID() value.
+	 *
+	 * Must be called at most once; setting twice silently overwrites the
+	 * cached panel-board ID but leaves both AddItemCommands in the chain.
+	 */
+	void setPanelBoardItem(ViewGeometry &vg, long id);
+
+	long panelBoardID() const { return m_panelBoardID; }
+	int placedBoardCount() const { return m_placedCount; }
+
+protected:
+	QString getParamString() const override;
+
+protected:
+	int m_placedCount = 0;
+	long m_panelBoardID = -1;
+};
+
+/////////////////////////////////////////////
+
+#endif
+

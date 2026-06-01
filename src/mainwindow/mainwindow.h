@@ -288,6 +288,7 @@ protected Q_SLOTS:
 	void print();
 	void doExport();
 	void exportEtchable();
+	void showPanelizerWizard();
 	void about();
 	void tipsAndTricks();
 	void firstTimeHelp();
@@ -756,6 +757,7 @@ protected:
 	QAction *m_exportGerberAct = nullptr;
 	QAction *m_exportEtchablePdfAct = nullptr;
 	QAction *m_exportEtchableSvgAct = nullptr;
+	QAction *m_exportPanelAct = nullptr;  // Panelize wizard
 	QAction *m_exportBomAct = nullptr;
 	QAction *m_exportBomCsvAct = nullptr;
 	QAction *m_exportIpcAct = nullptr;

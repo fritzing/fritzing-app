@@ -844,7 +844,9 @@ ModelPart * ModelBase::createOldSchematicPartAux(ModelPart * modelPart, const QS
 		DebugDialog::debug(QString("Unable to open :%1").arg(modelPart->path()));
 	}
 	QDomDocument oldDoc;
-	bool ok = oldDoc.setContent(&newFzp);
+	// NOTE: Qt 6 changed QDomDocument::setContent() to return a ParseResult (explicitly
+	// convertible to bool); auto keeps this compiling on both Qt 5 (bool) and Qt 6.
+	auto ok = oldDoc.setContent(&newFzp);
 	if (!ok) {
 		// this shouldn't happen
 		return nullptr;

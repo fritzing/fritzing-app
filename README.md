@@ -46,6 +46,15 @@ Since 2019, the project is maintained by Kjell Morgenstern, with great support f
 
 The Fritzing app is written on top of the [Qt cross-platform framework](http://qt-project.org).
 
+## Qt 6 Support
+
+Fritzing now supports Qt 6 as an alternative to Qt 5. The application can be built and run with either Qt 5.15 or Qt 6.5+.
+
+* Qt 5.15 is the recommended version for stable builds
+* Qt 6.5+ is the recommended version for new development and future-proofing
+
+The Qt 6 migration is a work in progress and is being tracked in the [Qt 6 migration roadmap](docs/design/qt6-migration-roadmap.md).
+
 ## Licensing
 
 The source code of Fritzing is under GNU GPL v3, the documentation and part designs under Creative Commons Attribution-ShareALike 3.0 Unported. The full texts of these licenses are shipped with this download.

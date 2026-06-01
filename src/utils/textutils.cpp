@@ -707,7 +707,7 @@ QString TextUtils::convertExtendedChars(const QString & str)
 			result.append(c);
 		}
 		else {
-			result.append(QString("&#x%1;").arg(c.unicode(), 0, 16));
+			result.append(QString("&#x%1;").arg(static_cast<uint>(c.unicode()), 0, 16));
 		}
 	}
 
@@ -1647,7 +1647,12 @@ bool TextUtils::writeUtf8(const QString & fileName, const QString & text)
 bool TextUtils::writeUtf8(const QString & fileName, const QByteArray & data)
 {
 	QByteArray data2 = data;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QString text = QTextCodec::codecForMib(106)->toUnicode(data2);
+#else
+	// In Qt 6, we can use QString::fromUtf8 directly
+	QString text = QString::fromUtf8(data2);
+#endif
 	return TextUtils::writeUtf8(fileName, text);
 }
 

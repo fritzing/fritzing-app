@@ -1318,7 +1318,8 @@ long SketchWidget::createWire(ConnectorItem * from, ConnectorItem * to,
 	                   .arg(newID)
 	                   .arg(fromPos.x()).arg(fromPos.y())
 	                   .arg(toPos.x()).arg(toPos.y())
-	                   .arg(wireFlags)
+	                   // NOTE: Qt 6 removed the implicit QFlags->int conversion in QString::arg().
+	                   .arg(static_cast<int>(wireFlags))
 	                   .arg(from->attachedToTitle()).arg(from->connectorSharedID())
 	                   .arg(to->attachedToTitle()).arg(to->connectorSharedID())
 	                   .arg(m_viewID)

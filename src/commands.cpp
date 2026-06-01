@@ -510,7 +510,8 @@ QString FlipItemCommand::getParamString() const {
 	       + BaseCommand::getParamString() +
 	       QString(" id:%1 by:%2")
 	       .arg(m_itemID)
-	       .arg(m_orientation);
+	       // NOTE: Qt 6 removed the implicit QFlags->int conversion in QString::arg().
+	       .arg(static_cast<int>(m_orientation));
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1748,7 +1749,8 @@ QString RotateFlipLabelCommand::getParamString() const {
 	return QString("RotateFlipLabelCommand ")
 	       + BaseCommand::getParamString()
 	       + QString(" id:%1 degrees:%2 orientation:%3")
-	       .arg(m_itemID).arg(m_degrees).arg(m_orientation);
+	       // NOTE: Qt 6 removed the implicit QFlags->int conversion in QString::arg().
+	       .arg(m_itemID).arg(m_degrees).arg(static_cast<int>(m_orientation));
 
 }
 
@@ -2319,4 +2321,56 @@ void TemporaryCommand::redo() {
 	if (m_enabled) {
 		QUndoCommand::redo();
 	}
+}
+/////////////////////////////////////////////
+
+PanelizeCommand::PanelizeCommand(class SketchWidget *sketchWidget, QUndoCommand *parent)
+	: BaseCommand(BaseCommand::CrossViewType::SingleView, sketchWidget, parent)
+{
+	setText(QObject::tr("Panelize PCB"));
+}
+
+void PanelizeCommand::undo()
+{
+	// All scene mutation lives in the child AddItemCommand instances;
+	// running them in reverse is the exact inverse of redo() per the
+	// BaseCommand contract (see commands.cpp BaseCommand::subUndo).
+	BaseCommand::undo();
+	subUndo();
+}
+
+void PanelizeCommand::redo()
+{
+	BaseCommand::redo();
+	subRedo();
+}
+
+void PanelizeCommand::addPlacedBoard(const QString &moduleID,
+                                     ViewLayer::ViewLayerPlacement placement,
+                                     ViewGeometry &vg,
+                                     long id)
+{
+	// SingleView: panelization only affects PCB view; breadboard / schematic
+	// must not gain a copy of the placed boards.
+	addSubCommand(new AddItemCommand(BaseCommand::sketchWidget(),
+	                                 BaseCommand::CrossViewType::SingleView,
+	                                 moduleID, placement, vg, id,
+	                                 false, -1, nullptr));
+	++m_placedCount;
+}
+
+void PanelizeCommand::setPanelBoardItem(ViewGeometry &vg, long id)
+{
+	addSubCommand(new AddItemCommand(BaseCommand::sketchWidget(),
+	                                 BaseCommand::CrossViewType::SingleView,
+	                                 ModuleIDNames::PanelBoardModuleIDName,
+	                                 ViewLayer::NewTop, vg, id,
+	                                 false, -1, nullptr));
+	m_panelBoardID = id;
+}
+
+QString PanelizeCommand::getParamString() const
+{
+	return QString("PanelizeCommand placed:%1 panelID:%2")
+	       .arg(m_placedCount).arg(m_panelBoardID);
 }

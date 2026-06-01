@@ -35,6 +35,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../waitpushundostack.h"
 #include "../help/aboutbox.h"
 #include "../autoroute/autorouteprogressdialog.h"
+#include "../autoroute/panelizerstartdialog.h"
+#include "../autoroute/panelizerinteractivedialog.h"
+#include "../gerberpreview/gerberpreviewdialog.h"
 #include "../items/virtualwire.h"
 #include "../items/jumperitem.h"
 #include "../items/via.h"
@@ -571,6 +574,29 @@ void MainWindow::doExport() {
 #endif
 }
 
+void MainWindow::showPanelizerWizard()
+{
+	// Two-step panelizer UX (replaces the old multi-page wizard):
+	//   1. A small start dialog asks only quantity + whether to blend in
+	//      other boards.
+	//   2. One big interactive window holds *everything* else — panel
+	//      size, separation, extras, the drag-to-arrange surface with
+	//      alignment guides, and an embedded Gerber preview — with a
+	//      Generate button that overwrites the output and refreshes the
+	//      preview in place so the user can iterate without re-opening
+	//      anything.
+	PanelizerStartDialog start(this, QFileInfo(m_fwFilename).completeBaseName());
+	if (start.exec() != QDialog::Accepted) return;
+
+	PanelizerInteractiveDialog interactive(
+		this,
+		m_fwFilename,
+		start.copies(),
+		start.allowRotate(),
+		start.blendPaths());
+	interactive.exec();
+}
+
 void MainWindow::exportAux(QString fileName, QImage::Format format, int quality, bool removeBackground)
 {
 	if (m_currentGraphicsView == nullptr) return;
@@ -1039,6 +1065,10 @@ void MainWindow::createExportActions() {
 	m_exportGerberAct->setData(gerberActionType);
 	m_exportGerberAct->setStatusTip(tr("Export the current sketch to Extended Gerber format (RS-274X) for professional PCB production"));
 	connect(m_exportGerberAct, SIGNAL(triggered()), this, SLOT(doExport()));
+
+	m_exportPanelAct = new QAction(tr("Panelize..."), this);
+	m_exportPanelAct->setStatusTip(tr("Open the panelizer wizard to create a panel from your PCB"));
+	connect(m_exportPanelAct, SIGNAL(triggered()), this, SLOT(showPanelizerWizard()));
 
 	m_exportEtchablePdfAct = new QAction(tr("Etchable (PDF)..."), this);
 	m_exportEtchablePdfAct->setStatusTip(tr("Export the current sketch to PDF for DIY PCB production (photoresist)"));
@@ -1863,6 +1893,17 @@ void MainWindow::exportToGerber() {
 	m_statusBar->showMessage(tr("Sketch exported to Gerber"), 2000);
 
 	delete fileProgressDialog;
+
+	// Pop the standalone preview window so the user can verify the
+	// freshly written artifacts before shipping them to a fab house.
+	// Non-modal so they can keep editing while reviewing; the dialog
+	// deletes itself on close (WA_DeleteOnClose) so we don't leak it
+	// across repeated exports.
+	auto * preview = new GerberPreviewDialog(this);
+	preview->setAttribute(Qt::WA_DeleteOnClose);
+	preview->openDirectory(exportDir, prefix);
+	preview->show();
+	preview->raise();
 }
 
 void MainWindow::connectStartSave(bool doConnect) {

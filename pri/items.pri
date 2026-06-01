@@ -38,6 +38,7 @@ HEADERS += \
     src/items/propertydef.h \
     src/items/resistor.h \
     src/items/resizableboard.h \
+    src/items/panelboarditem.h \
     src/items/ruler.h \
     src/items/schematicframe.h \
     src/items/schematicsubpart.h \
@@ -75,6 +76,7 @@ SOURCES += \
     src/items/propertydef.cpp \
     src/items/resistor.cpp \
     src/items/resizableboard.cpp \
+    src/items/panelboarditem.cpp \
     src/items/ruler.cpp \
     src/items/schematicframe.cpp \
     src/items/schematicsubpart.cpp \

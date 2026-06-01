@@ -21,9 +21,10 @@ To start Fritzing on Windows: Wait until unzipping is finished. Then open the de
 ## Notes on Linux
 To start Fritzing double-click Fritzing, or try ./Fritzing in your shell window
 
-Fritzing uses the Qt5 libraries. On Ubuntu, they can be installed like this:
+Fritzing uses the Qt5 or Qt6 libraries. On Ubuntu, they can be installed like this:
 
-"sudo apt install libqt5printsupport5 libqt5xml5 libqt5sql5 libqt5serialport5 libqt5sql5-sqlite".
+For Qt 5: "sudo apt install libqt5printsupport5 libqt5xml5 libqt5sql5 libqt5serialport5 libqt5sql5-sqlite"
+For Qt 6: "sudo apt install libqt6printsupport6 libqt6xml6 libqt6sql6 libqt6serialport6 libqt6sql6-sqlite"
 
 ## Notes on macOS
 To start Fritzing on macOS double-click the Fritzing application

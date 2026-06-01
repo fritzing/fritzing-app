@@ -43,13 +43,20 @@ defined(boost_root, var) {
 
 # do the common configuration after all detection is finished
 contains(LATESTBOOST, 0) {
-    boost = 99
-    qtCompileTest(boost)
-    config_boost {
+    # Try to detect installed Boost via pkg-config
+    packagesExist(boost) {
         !build_pass:message("using installed Boost library")
+        # Boost detected via pkg-config, use system headers
+        # INCLUDEPATH will be set by pkg-config
     } else {
-        message("Boost 1.54 has a bug in a function that Fritzing uses, so download or install some other version")
-        error("Easiest to copy the Boost library to ..., so that you have .../boost_1_xx_0")
+        # Check for system Boost in /usr/include/boost
+        exists(/usr/include/boost) {
+            !build_pass:message("using system Boost in /usr/include/boost")
+            INCLUDEPATH += /usr/include
+        } else {
+            message("Boost 1.54 has a bug in a function that Fritzing uses, so download or install some other version")
+            error("Easiest to copy the Boost library to ..., so that you have .../boost_1_xx_0")
+        }
     }
 } else {
     defined(BOOSTPATH, var) {

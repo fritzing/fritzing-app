@@ -1,0 +1,81 @@
+# Reference Qt 6 Linux build environment for Fritzing.
+#
+# This image is fully self-contained: it builds the two sibling
+# dependencies Fritzing's qmake scripts expect (libgit2 as a static lib,
+# and QuaZip built against Qt 6), clones the companion fritzing-parts
+# repository, and then builds the application with qmake6.
+#
+# Layout created inside the image (mirrors a developer checkout):
+#   /work/libgit2        -> static libgit2 (../libgit2/build/libgit2.a)
+#   /work/quazip_qt6     -> QuaZip built for Qt 6 (sibling of fritzing-app)
+#   /work/fritzing-app   -> this repository (with parts/ cloned in)
+#
+# Build:   docker build -f docker/Dockerfile.qt6 -t fritzing/build:qt6 .
+# Run app: docker run --rm fritzing/build:qt6 ./Fritzing --version
+
+FROM ubuntu:24.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential cmake git pkg-config ca-certificates \
+        qmake6 qt6-base-dev qt6-base-dev-tools \
+        qt6-svg-dev qt6-tools-dev qt6-tools-dev-tools \
+        qt6-serialport-dev qt6-5compat-dev \
+        libqt6sql6-sqlite libqt6printsupport6 \
+        libboost-dev zlib1g-dev libssl-dev libbz2-dev libudev-dev \
+        libjpeg-dev libpng-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /work
+
+# --- Dependency 1: libgit2 (static) ------------------------------------
+# Built against the image's system OpenSSL so the static archive resolves
+# the correct OpenSSL 3 symbols at link time.
+RUN git clone --depth 1 --branch v1.8.1 https://github.com/libgit2/libgit2.git \
+    && mkdir -p libgit2/build \
+    && cd libgit2/build \
+    && cmake .. \
+        -DBUILD_SHARED_LIBS=OFF \
+        -DUSE_SSH=OFF \
+        -DBUILD_TESTS=OFF \
+        -DBUILD_CLI=OFF \
+        -DUSE_HTTPS=OpenSSL \
+        -DCMAKE_BUILD_TYPE=Release \
+    && cmake --build . -j"$(nproc)"
+
+# --- Dependency 2: QuaZip for Qt 6 -------------------------------------
+# Fritzing's pri/quazipdetect.pri looks for a sibling directory named
+# quazip_qt6 exposing include/quazip/*.h and lib/libquazip1-qt6.so.
+RUN git clone --depth 1 --branch v1.5 https://github.com/stachenov/quazip.git quazip_qt6 \
+    && cd quazip_qt6 \
+    && cmake -S . -B build \
+        -DQUAZIP_QT_MAJOR_VERSION=6 \
+        -DCMAKE_INSTALL_PREFIX="$(pwd)/install" \
+        -DCMAKE_INSTALL_LIBDIR=lib64 \
+        -DCMAKE_BUILD_TYPE=Release \
+    && cmake --build build -j"$(nproc)" \
+    && cmake --install build \
+    && ln -sfn install/lib64 lib \
+    && mkdir -p include \
+    && ln -sfn ../quazip include/quazip
+
+# --- Fritzing application ----------------------------------------------
+WORKDIR /work/fritzing-app
+COPY . .
+
+# The app refuses to start without the companion parts library.
+RUN git clone --depth 1 https://github.com/fritzing/fritzing-parts.git parts
+
+RUN mkdir -p build \
+    && cd build \
+    && qmake6 ../phoenix.pro CONFIG+=debug \
+    && make -j"$(nproc)"
+
+# On Linux qmake sets no DESTDIR, so the binary is left in the build dir.
+WORKDIR /work/fritzing-app/build
+
+# Smoke-test the produced binary.
+RUN QT_QPA_PLATFORM=offscreen ./Fritzing --version
+
+CMD ["./Fritzing"]

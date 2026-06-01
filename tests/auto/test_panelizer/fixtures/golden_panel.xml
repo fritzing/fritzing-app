@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panelizer prefix="golden" spacing="2mm" border="5mm">
+    <panels>
+        <panel name="100x100mm" width="100mm" height="100mm" c1="1.0" c2="0.5"/>
+    </panels>
+    <paths>
+        <path>../../sketches/core</path>
+    </paths>
+    <boards>
+        <board name="Button" path="Button.fzz" required="1"/>
+    </boards>
+</panelizer>

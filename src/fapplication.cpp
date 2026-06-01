@@ -57,6 +57,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "dialogs/recoverydialog.h"
 #include "processeventblocker.h"
 #include "autoroute/checker.h"
+#include "autoroute/panelizer.h"
 #include "sketch/sketchwidget.h"
 #include "sketch/pcbsketchwidget.h"
 #include "help/firsttimehelpdialog.h"
@@ -503,6 +504,37 @@ int FApplication::init() {
 			toRemove << i << i + 1;
 		}
 
+		// -p / -pc / -i: batch Panelizer entry points. Argument is the panel XML
+		// description file; output paths are encoded inside that file, so we
+		// stash it in m_panelFilename and leave m_outputFolder empty (the
+		// serviceStartup() empty-folder guard treats a non-empty panel filename
+		// as equivalent).
+		if ((m_arguments[i].compare("-p", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("-panel", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("--panel", Qt::CaseInsensitive) == 0)) {
+			m_serviceType = ServiceType::PanelizerService;
+			DebugDialog::setEnabled(true);
+			m_panelFilename = m_arguments[i + 1];
+			toRemove << i << i + 1;
+		}
+
+		if ((m_arguments[i].compare("-pc", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("--panelcustom", Qt::CaseInsensitive) == 0)) {
+			m_serviceType = ServiceType::PanelizerCustomService;
+			DebugDialog::setEnabled(true);
+			m_panelFilename = m_arguments[i + 1];
+			toRemove << i << i + 1;
+		}
+
+		if ((m_arguments[i].compare("-i", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("-inscribe", Qt::CaseInsensitive) == 0) ||
+			(m_arguments[i].compare("--inscribe", Qt::CaseInsensitive) == 0)) {
+			m_serviceType = ServiceType::PanelizerInscribeService;
+			DebugDialog::setEnabled(true);
+			m_panelFilename = m_arguments[i + 1];
+			toRemove << i << i + 1;
+		}
+
 		if (m_arguments[i].compare("-ep", Qt::CaseInsensitive) == 0) {
 			m_externalProcessPath = m_arguments[i + 1];
 			toRemove << i << i + 1;
@@ -802,7 +834,10 @@ MainWindow * FApplication::openWindowForService(bool lockFiles, int initialTab) 
 
 int FApplication::serviceStartup() {
 
-	if (m_outputFolder.isEmpty()) {
+	// Panelizer services drive everything off m_panelFilename and write to
+	// directories declared inside the panel XML, so they do not require
+	// m_outputFolder to be set.
+	if (m_outputFolder.isEmpty() && m_panelFilename.isEmpty()) {
 		return -1;
 	}
 
@@ -852,6 +887,24 @@ int FApplication::serviceStartup() {
 
 	case ServiceType::ExampleService:
 		runExampleService();
+		return 0;
+
+	case ServiceType::PanelizerService:
+		// Legacy Panelizer entry point (corner-stitching layout + Gerber).
+		initService();
+		Panelizer::panelize(this, m_panelFilename, false);
+		return 0;
+
+	case ServiceType::PanelizerCustomService:
+		// Same as PanelizerService but restricts the source bin to user/custom parts.
+		initService();
+		Panelizer::panelize(this, m_panelFilename, true);
+		return 0;
+
+	case ServiceType::PanelizerInscribeService:
+		// DRC + recompute board outlines for every board referenced in the panel XML.
+		initService();
+		Panelizer::inscribe(this, m_panelFilename, true, false);
 		return 0;
 
 	default:

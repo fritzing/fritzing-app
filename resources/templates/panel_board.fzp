@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="PanelBoardModuleID" >
+ <version>1</version>
+ <author>Panelizer v2</author>
+ <title>Panel Board</title>
+ <date>2026-05-22</date>
+ <label>Panel</label>
+ <tags>
+  <tag>panel</tag>
+  <tag>production</tag>
+ </tags>
+ <properties>
+  <property name="layers">2</property>
+  <property name="Shape" >Rectangle</property>
+  <property name="family" >Panel</property>
+  <property name="filename" ></property>
+  <property name="isPanel" >true</property>
+ </properties>
+ <taxonomy>production.panel</taxonomy>
+ <description>Panelized PCB for production</description>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="icon/panel_board.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="icon/panel_board.svg" >
+    <layer layerId="unknown" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="icon/panel_board.svg" >
+    <layer layerId="unknown" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/panel_board.svg" >
+    <layer layerId="board" sticky="true" />
+    <layer layerId="silkscreen" sticky="true" />
+    <layer layerId="silkscreen0" sticky="true" />
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>

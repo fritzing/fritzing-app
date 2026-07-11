@@ -12,6 +12,10 @@ message("Using Fritzing quazip detect script.")
 # and check https://github.com/stachenov/quazip/issues/185
 QUAZIP_VERSION=1.4
 QUAZIP_PATH=$$absolute_path($$PWD/../../quazip-$$QT_VERSION-$$QUAZIP_VERSION)intuisphere
+QUAZIP_DEBUG_PATH=$$absolute_path($$PWD/../../quazip-$$QT_VERSION-$$QUAZIP_VERSION)intuisphere-debug
+win32:CONFIG(debug, debug|release):exists($$QUAZIP_DEBUG_PATH) {
+	QUAZIP_PATH=$$QUAZIP_DEBUG_PATH
+}
 QUAZIP_INCLUDE_PATH=$$QUAZIP_PATH/include/QuaZip-Qt6-$$QUAZIP_VERSION
 QUAZIP_LIB_PATH=$$QUAZIP_PATH/lib
 
@@ -25,7 +29,11 @@ exists($$QUAZIP_PATH) {
 	}
 
 INCLUDEPATH += $$QUAZIP_INCLUDE_PATH
-LIBS += -L$$QUAZIP_LIB_PATH -lquazip1-qt$$QT_MAJOR_VERSION
+win32:CONFIG(debug, debug|release):exists($$QUAZIP_LIB_PATH/quazip1-qt$${QT_MAJOR_VERSION}d.lib) {
+	LIBS += $$QUAZIP_LIB_PATH/quazip1-qt$${QT_MAJOR_VERSION}d.lib
+} else {
+	LIBS += -L$$QUAZIP_LIB_PATH -lquazip1-qt$$QT_MAJOR_VERSION
+}
 
 unix {
 	message("set rpath for quazip")

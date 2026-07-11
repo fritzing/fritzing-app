@@ -1221,7 +1221,9 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
 	retval << createRotateButton(parent);
 	switch (viewId) {
 	case ViewLayer::BreadboardView:
-		retval << createFlipButton(parent) << createRoutingStatusLabel(parent)
+		retval << createFlipButton(parent)
+			   << createAutorouteButton(parent)
+			   << createRoutingStatusLabel(parent)
 			   << createSimulationButton(parent);
 		break;
 	case ViewLayer::SchematicView:

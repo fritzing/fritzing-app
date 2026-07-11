@@ -36,6 +36,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../partseditor/pemainwindow.h"
 #include "../help/aboutbox.h"
 #include "../autoroute/mazerouter/mazerouter.h"
+#include "../autoroute/breadboardautorouter.h"
 #include "../autoroute/autorouteprogressdialog.h"
 #include "../autoroute/drc.h"
 #include "../items/resizableboard.h"
@@ -3006,6 +3007,38 @@ void MainWindow::createOrderFabAct() {
 
 
 void MainWindow::newAutoroute() {
+	auto * breadboardSketchWidget = qobject_cast<BreadboardSketchWidget *>(m_currentGraphicsView);
+	if (breadboardSketchWidget != nullptr) {
+		dynamic_cast<SketchAreaWidget *>(breadboardSketchWidget->parent())->routingStatusLabel()->setText(tr("Autorouting..."));
+
+		AutorouteProgressDialog progress(tr("Breadboard Autorouting Progress..."), true, false, false, false, breadboardSketchWidget, this);
+		progress.setModal(true);
+		progress.show();
+		QRect pr = progress.frameGeometry();
+		QRect wr = this->frameGeometry();
+		progress.move(wr.right() - pr.width(), pr.top());
+
+		breadboardSketchWidget->setIgnoreSelectionChangeEvents(true);
+
+		BreadboardAutorouter autorouter(breadboardSketchWidget);
+		connect(&autorouter, SIGNAL(setMaximumProgress(int)), &progress, SLOT(setMaximum(int)), Qt::DirectConnection);
+		connect(&autorouter, SIGNAL(setProgressValue(int)), &progress, SLOT(setValue(int)), Qt::DirectConnection);
+		connect(&autorouter, SIGNAL(setProgressMessage(const QString &)), &progress, SLOT(setMessage(const QString &)));
+		connect(&autorouter, SIGNAL(setProgressMessage2(const QString &)), &progress, SLOT(setMessage2(const QString &)));
+
+		ProcessEventBlocker::processEvents();
+		ProcessEventBlocker::block();
+
+		autorouter.start();
+		breadboardSketchWidget->setIgnoreSelectionChangeEvents(false);
+
+		ProcessEventBlocker::unblock();
+		RoutingStatus routingStatus;
+		routingStatus.zero();
+		Q_EMIT breadboardSketchWidget->routingStatusSignal(breadboardSketchWidget, routingStatus);
+		return;
+	}
+
 	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == nullptr) return;
 

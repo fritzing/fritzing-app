@@ -15,6 +15,11 @@
 
 HEADERS += \
 src/autoroute/autorouter.h \
+src/autoroute/breadboardautorouter.h \
+src/autoroute/breadboardpartpolicy.h \
+src/autoroute/breadboardroutegraph.h \
+src/autoroute/breadboardroutingscore.h \
+src/autoroute/breadboardtopology.h \
 src/autoroute/autorouteprogressdialog.h \
 src/autoroute/autoroutersettingsdialog.h \
 src/autoroute/checker.h  \
@@ -26,6 +31,11 @@ src/autoroute/drc.h \
 
 SOURCES += \
 src/autoroute/autorouter.cpp \
+src/autoroute/breadboardautorouter.cpp \
+src/autoroute/breadboardpartpolicy.cpp \
+src/autoroute/breadboardroutegraph.cpp \
+src/autoroute/breadboardroutingscore.cpp \
+src/autoroute/breadboardtopology.cpp \
 src/autoroute/autorouteprogressdialog.cpp \
 src/autoroute/autoroutersettingsdialog.cpp \
 src/autoroute/checker.cpp  \

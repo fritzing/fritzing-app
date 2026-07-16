@@ -88,7 +88,7 @@ private:
 	void buildStaticEdges();
 	QList<Edge> bestStaticJumpers(const QString & fromBus, const QString & toBus) const;
 	bool edgeAvailable(const Edge & edge, ConnectorItem * start, ConnectorItem * target) const;
-	bool holeAvailable(ConnectorItem * hole, ConnectorItem * start, ConnectorItem * target) const;
+	bool holeAvailable(ConnectorItem * hole, const ConnectorItem * start, const ConnectorItem * target) const;
 	static double manhattan(ConnectorItem * first, ConnectorItem * second);
 	double segmentPenalty(ConnectorItem * first, ConnectorItem * second) const;
 	static bool sharesEndpoint(const QLineF & first, const QLineF & second);

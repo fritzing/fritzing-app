@@ -44,7 +44,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QElapsedTimer>
 #include <QUndoCommand>
 #include <algorithm>
+#include <array>
 #include <limits>
+#include <numeric>
 
 #include "../commands.h"
 #include "../items/itembase.h"
@@ -330,8 +332,10 @@ namespace
 			if (!bounds.valid)
 			{
 				bounds.valid = true;
-				bounds.minX = bounds.maxX = point.x();
-				bounds.minY = bounds.maxY = point.y();
+				bounds.minX = point.x();
+				bounds.maxX = point.x();
+				bounds.minY = point.y();
+				bounds.maxY = point.y();
 				continue;
 			}
 			bounds.minX = qMin(bounds.minX, point.x());
@@ -944,7 +948,7 @@ struct BreadboardAutorouter::PlacementPass
 	{
 		for (int netIndex = 0; netIndex < self->m_allPartConnectorItems.count(); netIndex++)
 		{
-			QList<ConnectorItem *> *net = self->m_allPartConnectorItems.at(netIndex);
+			const QList<ConnectorItem *> *net = self->m_allPartConnectorItems.at(netIndex);
 			if (net == nullptr)
 				continue;
 			Q_FOREACH (ConnectorItem *connectorItem, *net)
@@ -1657,7 +1661,7 @@ struct BreadboardAutorouter::PlacementPass
 								+ (candidate.firstHolePos.y() - baseFirstPin.y()) * candidate.pinAxisDir.y();
 		const double secondAxial = (candidate.secondHolePos.x() - baseSecondPin.x()) * candidate.pinAxisDir.x()
 								 + (candidate.secondHolePos.y() - baseSecondPin.y()) * candidate.pinAxisDir.y();
-		const double axialShifts[] = {(firstAxial + secondAxial) / 2.0, firstAxial, secondAxial};
+		const std::array<double, 3> axialShifts = {(firstAxial + secondAxial) / 2.0, firstAxial, secondAxial};
 		for (double axialShift : axialShifts)
 		{
 			profile.shiftIterations++;
@@ -1703,9 +1707,9 @@ struct BreadboardAutorouter::PlacementPass
 			qAbs(unflippedSecondPinPos.x() - unflippedFirstPinPos.x())
 			>= qAbs(unflippedSecondPinPos.y() - unflippedFirstPinPos.y());
 		const Qt::Orientations flipOrientation = axisMostlyHorizontal ? Qt::Horizontal : Qt::Vertical;
-		const PinSwap swapMode = part->canFlip(flipOrientation)
-			? (axisMostlyHorizontal ? PinSwap::FlipHorizontal : PinSwap::FlipVertical)
-			: PinSwap::Rotate180;
+		PinSwap swapMode = PinSwap::Rotate180;
+		if (part->canFlip(flipOrientation))
+			swapMode = axisMostlyHorizontal ? PinSwap::FlipHorizontal : PinSwap::FlipVertical;
 
 		for (int flip = 0; flip <= 1; flip++)
 		{
@@ -2351,7 +2355,7 @@ struct BreadboardAutorouter::NetRoutingPass
 		QHash<int, double> difficultyForNet;
 		Q_FOREACH (int index, routeOrder)
 		{
-			QList<ConnectorItem *> *net = self->m_allPartConnectorItems.value(index);
+			const QList<ConnectorItem *> *net = self->m_allPartConnectorItems.value(index);
 			if (net == nullptr)
 			{
 				difficultyForNet.insert(index, 0.0);
@@ -2395,8 +2399,7 @@ struct BreadboardAutorouter::NetRoutingPass
 			if (!self->isPlaceablePin(connectorItem) && connectorItem->connectorType() != Connector::Female)
 				continue;
 
-			ConnectorItem *connectedHole = self->connectedBreadboardHoleFor(connectorItem);
-			if (connectedHole != nullptr)
+			if (ConnectorItem *connectedHole = self->connectedBreadboardHoleFor(connectorItem); connectedHole != nullptr)
 			{
 				if (!breadboardAnchors.contains(connectedHole))
 					breadboardAnchors.append(connectedHole);
@@ -2741,7 +2744,7 @@ struct BreadboardAutorouter::NetRoutingPass
 
 	// Route one net: log its electrical groups, split terminals into
 	// anchors and off-board peripherals, then run the three wiring phases.
-	void routeNet(int index, QList<ConnectorItem *> *net)
+	void routeNet(int index, const QList<ConnectorItem *> *net)
 	{
 		netIndex = index;
 		const QList<ConnectorItem *> candidates = self->routingCandidatesForSubnet(*net);
@@ -2805,7 +2808,7 @@ int BreadboardAutorouter::routeCollectedNets(QUndoCommand *parentCommand)
 						   + ((RoutingProgressEnd - PlacementProgressSpan) * orderIndex) / qMax(1, routeOrder.count()),
 					   QObject::tr("Routing net %1 of %2...").arg(orderIndex + 1).arg(routeOrder.count()));
 		const int netIndex = routeOrder.at(orderIndex);
-		QList<ConnectorItem *> *net = m_allPartConnectorItems.at(netIndex);
+		const QList<ConnectorItem *> *net = m_allPartConnectorItems.at(netIndex);
 		if (net == nullptr)
 			continue;
 		pass.routeNet(netIndex, net);
@@ -2825,7 +2828,7 @@ QList<QList<ConnectorItem *>> BreadboardAutorouter::collectCandidateGroups(const
 	}
 
 	QVector<int> parents(validCandidates.count());
-	for (int i = 0; i < parents.count(); i++) parents[i] = i;
+	std::iota(parents.begin(), parents.end(), 0);
 	auto findRoot = [&parents](int value) {
 		int root = value;
 		while (parents[root] != root) root = parents[root];
@@ -2948,15 +2951,13 @@ bool BreadboardAutorouter::connectorsShareBreadboardBus(ConnectorItem *first, Co
 
 int BreadboardAutorouter::busGroupFor(ConnectorItem *connectorItem) const
 {
-	auto found = m_busGroupForConnector.constFind(connectorItem);
-	if (found != m_busGroupForConnector.constEnd())
+	if (auto found = m_busGroupForConnector.constFind(connectorItem); found != m_busGroupForConnector.constEnd())
 		return found.value();
 
 	const int groupId = m_busGroupCount++;
 	m_busGroupForConnector.insert(connectorItem, groupId);
 	ItemBase *item = connectorItem->attachedTo();
-	QList<ConnectorItem *> busSiblings;
-	if (item != nullptr && item->busConnectorItems(connectorItem, busSiblings))
+	if (QList<ConnectorItem *> busSiblings; item != nullptr && item->busConnectorItems(connectorItem, busSiblings))
 	{
 		Q_FOREACH (ConnectorItem *sibling, busSiblings)
 		{
@@ -3027,7 +3028,7 @@ void BreadboardAutorouter::seedBusOwnership()
 	m_netForConnector.clear();
 	for (int netIndex = 0; netIndex < m_allPartConnectorItems.count(); netIndex++)
 	{
-		QList<ConnectorItem *> *net = m_allPartConnectorItems.at(netIndex);
+		const QList<ConnectorItem *> *net = m_allPartConnectorItems.at(netIndex);
 		if (net == nullptr)
 			continue;
 		Q_FOREACH (ConnectorItem *connectorItem, *net)
@@ -3404,7 +3405,7 @@ ConnectorItem *BreadboardAutorouter::routingConnectorFor(ConnectorItem *wireConn
 	return breadboardHole == nullptr ? partConnector : breadboardHole;
 }
 
-QList<QList<ConnectorItem *>> BreadboardAutorouter::collectRoutableSubnets(QList<ConnectorItem *> *net) const
+QList<QList<ConnectorItem *>> BreadboardAutorouter::collectRoutableSubnets(const QList<ConnectorItem *> *net) const
 {
 	QList<QList<ConnectorItem *>> subnets;
 	if (net == nullptr)
@@ -3531,9 +3532,8 @@ double BreadboardAutorouter::routeScore(ConnectorItem *from, ConnectorItem *to) 
 	QPointF toPos = to->sceneAdjustedTerminalPoint(nullptr);
 	double score = qAbs(fromPos.x() - toPos.x()) + qAbs(fromPos.y() - toPos.y());
 
-	bool fromBreadboard = from->connectorType() == Connector::Female;
-	bool toBreadboard = to->connectorType() == Connector::Female;
-	if (fromBreadboard && toBreadboard)
+	const bool fromBreadboard = from->connectorType() == Connector::Female;
+	if (const bool toBreadboard = to->connectorType() == Connector::Female; fromBreadboard && toBreadboard)
 		score *= 0.5;
 	else if (!fromBreadboard && !toBreadboard)
 		score *= 4.0;

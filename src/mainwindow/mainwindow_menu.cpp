@@ -1910,7 +1910,8 @@ void MainWindow::updatePartMenu() {
 	bool zenable = true;
 
 	if (itemCount.selCount <= 0) {
-		zenable = enable = false;
+		zenable = false;
+		enable = false;
 	}
 	else {
 		if (itemCount.itemsCount == itemCount.selCount) {
@@ -3238,7 +3239,8 @@ void MainWindow::enableAddBendpointAct(QGraphicsItem * graphicsItem) {
 		bendpointAction->setLastHoverEnterItem(nullptr);
 		convertToViaAction->setLastHoverEnterConnectorItem(m_currentGraphicsView->lastHoverEnterConnectorItem());
 		convertToViaAction->setLastHoverEnterItem(nullptr);
-		ctvEnabled = enabled = true;
+		enabled = true;
+		ctvEnabled = true;
 	}
 	else if (m_currentGraphicsView->lastHoverEnterItem()) {
 		bendpointAction->setText(tr("Add Bendpoint"));
@@ -3686,17 +3688,21 @@ void MainWindow::obsoleteSMDOrientationSlot() {
 }
 
 void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchematics) {
-	useOldSchematics = m_convertedSchematic = m_useOldSchematic = false;
+	m_convertedSchematic = false;
+	m_useOldSchematic = false;
+	useOldSchematics = false;
 	if (m_noSchematicConversion) return;
 
 	if (m_readOnly) {
-		useOldSchematics = m_useOldSchematic = true;
+		m_useOldSchematic = true;
+		useOldSchematics = true;
 		return;
 	}
 
 	QMessageBox::StandardButton answer = oldSchematicMessage(filename);
 	if (answer == QMessageBox::No) {
-		useOldSchematics = m_useOldSchematic = true;
+		m_useOldSchematic = true;
+		useOldSchematics = true;
 		this->setReadOnly(true);
 	}
 	else {

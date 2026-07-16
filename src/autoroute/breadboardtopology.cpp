@@ -32,7 +32,7 @@ namespace {
 constexpr int MinimumBreadboardHoleCount = 10;
 }
 
-bool BreadboardTopology::discover(QGraphicsScene * scene, const QList<QGraphicsItem *> & selectedItems)
+bool BreadboardTopology::discover(const QGraphicsScene * scene, const QList<QGraphicsItem *> & selectedItems)
 {
 	clear();
 	if (scene == nullptr) return false;
@@ -82,7 +82,7 @@ bool BreadboardTopology::discover(QGraphicsScene * scene, const QList<QGraphicsI
 		// owners in stable id order - hash iteration follows the per-process
 		// seed, and board order decides hole enumeration order downstream.
 		QList<ItemBase *> owners = holesByOwner.keys();
-		std::sort(owners.begin(), owners.end(), [](ItemBase * a, ItemBase * b) { return a->id() < b->id(); });
+		std::sort(owners.begin(), owners.end(), [](const ItemBase * a, const ItemBase * b) { return a->id() < b->id(); });
 
 		ItemBase * bestOwner = nullptr;
 		int bestHoleCount = 0;
@@ -241,11 +241,8 @@ bool BreadboardTopology::connectorsShareBus(ConnectorItem * first, ConnectorItem
 	ItemBase * secondItem = second->attachedTo();
 	if (firstItem == nullptr || secondItem == nullptr) return false;
 
-	QList<ConnectorItem *> firstBusHoles;
-	if (firstItem->busConnectorItems(first, firstBusHoles) && firstBusHoles.contains(second)) return true;
-
-	QList<ConnectorItem *> secondBusHoles;
-	if (secondItem->busConnectorItems(second, secondBusHoles) && secondBusHoles.contains(first)) return true;
+	if (QList<ConnectorItem *> firstBusHoles; firstItem->busConnectorItems(first, firstBusHoles) && firstBusHoles.contains(second)) return true;
+	if (QList<ConnectorItem *> secondBusHoles; secondItem->busConnectorItems(second, secondBusHoles) && secondBusHoles.contains(first)) return true;
 
 	return false;
 }
@@ -262,7 +259,7 @@ void BreadboardTopology::clear()
 	m_diagnosticLines.clear();
 }
 
-ItemBase * BreadboardTopology::ownerChief(ConnectorItem * connectorItem)
+ItemBase * BreadboardTopology::ownerChief(const ConnectorItem * connectorItem)
 {
 	if (connectorItem == nullptr) return nullptr;
 	ItemBase * owner = connectorItem->attachedTo();
@@ -332,8 +329,7 @@ void BreadboardTopology::buildBusIndex()
 		if (hole == nullptr || visited.contains(hole)) continue;
 
 		QList<ConnectorItem *> busHoles;
-		ItemBase * owner = hole->attachedTo();
-		if (owner != nullptr) owner->busConnectorItems(hole, busHoles);
+		if (ItemBase * owner = hole->attachedTo(); owner != nullptr) owner->busConnectorItems(hole, busHoles);
 		if (busHoles.isEmpty()) busHoles.append(hole);
 
 		QList<ConnectorItem *> filtered;

@@ -5,6 +5,7 @@
 #include "autoroute/breadboardplacementkernel.h"
 
 #include <algorithm>
+#include <array>
 
 // Fixture: a tiny synthetic board. Three vertical 3-hole "column" buses at
 // x = 0, 30, 300 (bus 0, 1, 2), holes 9 apart vertically. Bus 2 is out of
@@ -18,7 +19,7 @@ struct TinyBoard
 
 	TinyBoard()
 	{
-		const double columnsX[3] = {0.0, 30.0, 300.0};
+		const std::array<double, 3> columnsX = {0.0, 30.0, 300.0};
 		for (int bus = 0; bus < 3; bus++)
 			for (int row = 0; row < 3; row++)
 			{
@@ -51,8 +52,8 @@ BOOST_AUTO_TEST_CASE(spatial_index_matches_brute_force_and_preserves_order)
 	}
 
 	BreadboardPlacementKernel::HoleSpatialIndex index(positions, boardIds, 36.0);
-	const QPointF centers[] = {QPointF(-12.0, 0.0), QPointF(240.0, 18.0), QPointF(0.0, -27.0)};
-	const double radii[] = {0.0, 9.0, 40.5, 100.0};
+	const std::array<QPointF, 3> centers = {QPointF(-12.0, 0.0), QPointF(240.0, 18.0), QPointF(0.0, -27.0)};
+	const std::array<double, 4> radii = {0.0, 9.0, 40.5, 100.0};
 	for (const QPointF &center : centers)
 	{
 		for (double radius : radii)
@@ -77,10 +78,10 @@ BOOST_AUTO_TEST_CASE(spatial_index_matches_brute_force_and_preserves_order)
 
 BOOST_AUTO_TEST_CASE(spatial_index_includes_radius_boundary_and_handles_bad_board_vector)
 {
-	const QVector<QPointF> positions = {QPointF(0, 0), QPointF(3, 4), QPointF(6, 8), QPointF(-3, -4)};
+	const QList positions = {QPointF(0, 0), QPointF(3, 4), QPointF(6, 8), QPointF(-3, -4)};
 	BreadboardPlacementKernel::HoleSpatialIndex index(positions, {}, 3.0);
 	const QVector<int> actual = index.withinRadius(QPointF(0, 0), 5.0);
-	const QVector<int> expected = {0, 1, 3};
+	const QList expected = {0, 1, 3};
 	BOOST_CHECK_EQUAL_COLLECTIONS(actual.begin(), actual.end(), expected.begin(), expected.end());
 	BOOST_CHECK(index.withinRadius(QPointF(), -1.0).isEmpty());
 }

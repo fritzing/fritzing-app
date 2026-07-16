@@ -233,7 +233,8 @@ struct MissingSvgInfo {
 bool byConnectorCount(MissingSvgInfo & m1, MissingSvgInfo & m2)
 {
 	if (m1.connectorSvgIds.count() == m2.connectorSvgIds.count() && m1.modelPart != m2.modelPart) {
-		m1.equal = m2.equal = true;
+		m1.equal = true;
+		m2.equal = true;
 	}
 
 	return (m1.connectorSvgIds.count() > m2.connectorSvgIds.count());
@@ -268,7 +269,9 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	this->initializeTitle(MainWindow::untitledFileName(),
 						 MainWindow::untitledFileCount(),
 						 MainWindow::fileExtension());
-	m_noSchematicConversion = m_useOldSchematic = m_convertedSchematic = false;
+	m_noSchematicConversion = false;
+	m_useOldSchematic = false;
+	m_convertedSchematic = false;
 	m_initialTab = 1;
 	m_rolloverQuoteDialog = nullptr;
 	setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
@@ -280,8 +283,24 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_dontKeepMargins = true;
 
 	m_settingsPrefix = "main/";
-	m_showWelcomeAct = m_showProgramAct = m_raiseWindowAct = m_showPartsBinIconViewAct = m_showAllLayersAct = m_hideAllLayersAct = m_rotate90cwAct = m_showBreadboardAct = m_showSchematicAct = m_showPCBAct = nullptr;
-	m_fileMenu = m_editMenu = m_partMenu = m_windowMenu = m_pcbTraceMenu = m_schematicTraceMenu = m_breadboardTraceMenu = m_viewMenu = nullptr;
+	m_showWelcomeAct = nullptr;
+	m_showProgramAct = nullptr;
+	m_raiseWindowAct = nullptr;
+	m_showPartsBinIconViewAct = nullptr;
+	m_showAllLayersAct = nullptr;
+	m_hideAllLayersAct = nullptr;
+	m_rotate90cwAct = nullptr;
+	m_showBreadboardAct = nullptr;
+	m_showSchematicAct = nullptr;
+	m_showPCBAct = nullptr;
+	m_fileMenu = nullptr;
+	m_editMenu = nullptr;
+	m_partMenu = nullptr;
+	m_windowMenu = nullptr;
+	m_pcbTraceMenu = nullptr;
+	m_schematicTraceMenu = nullptr;
+	m_breadboardTraceMenu = nullptr;
+	m_viewMenu = nullptr;
 	m_infoView = nullptr;
 	m_addedToTemp = false;
 	setAcceptDrops(true);
@@ -290,18 +309,22 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 
 	m_closeSilently = false;
 	m_orderFabAct = nullptr;
-	m_viewFromButtonWidget = m_activeLayerButtonWidget = nullptr;
-	m_programView = m_programWindow = nullptr;
+	m_viewFromButtonWidget = nullptr;
+	m_activeLayerButtonWidget = nullptr;
+	m_programView = nullptr;
+	m_programWindow = nullptr;
 	m_welcomeView = nullptr;
 	m_windowMenuSeparator = nullptr;
-	m_schematicWireColorMenu = m_breadboardWireColorMenu = nullptr;
+	m_schematicWireColorMenu = nullptr;
+	m_breadboardWireColorMenu = nullptr;
 	m_checkForUpdatesAct = nullptr;
 	m_fileProgressDialog = nullptr;
 	m_currentGraphicsView = nullptr;
 	m_comboboxChanged = false;
 
 	// Add a timer for autosaving
-	m_backingUp = m_autosaveNeeded = false;
+	m_backingUp = false;
+	m_autosaveNeeded = false;
 	connect(&m_autosaveTimer, SIGNAL(timeout()), this, SLOT(backupSketch()));
 	m_autosaveTimer.start(AutosaveTimeoutMinutes * 60 * 1000);
 
@@ -344,7 +367,8 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 #ifdef Q_OS_MACOS
 	//setAttribute(Qt::WA_QuitOnClose, false);					// restoring this temporarily (2008.12.19)
 #endif
-	m_dontClose = m_closing = false;
+	m_dontClose = false;
+	m_closing = false;
 
 	m_referenceModel = referenceModel;
 	m_sketchModel = new SketchModel(true);

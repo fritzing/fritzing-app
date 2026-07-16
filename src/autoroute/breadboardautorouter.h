@@ -100,7 +100,7 @@ private:
 	ConnectorItem * breadboardHoleFor(ConnectorItem * partConnector) const;
 	ConnectorItem * nearestFreeBusHole(ConnectorItem * breadboardHole) const;
 	ConnectorItem * routingConnectorFor(ConnectorItem * wireConnector) const;
-	QList< QList<ConnectorItem *> > collectRoutableSubnets(QList<ConnectorItem *> * net) const;
+	QList< QList<ConnectorItem *> > collectRoutableSubnets(const QList<ConnectorItem *> * net) const;
 	QList<ConnectorItem *> routingCandidatesForSubnet(const QList<ConnectorItem *> & subnet) const;
 	ConnectorItem * chooseRepresentative(const QList<ConnectorItem *> & subnet) const;
 	double partConnectivityScore(ItemBase * part, const QHash<ConnectorItem *, int> & netForConnector, const QHash<int, QList<ConnectorItem *> > & connectorsForNet) const;

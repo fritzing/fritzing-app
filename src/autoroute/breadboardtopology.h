@@ -44,7 +44,7 @@ public:
 		int itemConnectorCount = 0;
 	};
 
-	bool discover(QGraphicsScene * scene, const QList<QGraphicsItem *> & selectedItems);
+	bool discover(const QGraphicsScene * scene, const QList<QGraphicsItem *> & selectedItems);
 
 	bool isValid() const;
 	const QList<Board> & boards() const;
@@ -64,7 +64,7 @@ public:
 
 private:
 	void clear();
-	static ItemBase * ownerChief(ConnectorItem * connectorItem);
+	static ItemBase * ownerChief(const ConnectorItem * connectorItem);
 	static ItemBase * itemChief(QGraphicsItem * graphicsItem);
 	static QString itemSummary(ItemBase * itemBase);
 	static QString connectorSummary(ConnectorItem * connectorItem);

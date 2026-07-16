@@ -92,8 +92,7 @@ BreadboardRouteGraph::Result BreadboardRouteGraph::route(ConnectorItem * start, 
 			}
 		}
 
-		if (currentBus.isEmpty()) break;
-		if (currentBus == targetBus) break;
+		if (currentBus.isEmpty() || currentBus == targetBus) break;
 		settled.insert(currentBus);
 
 		Q_FOREACH (const Edge & edge, m_edgesByBus.value(currentBus)) {
@@ -139,8 +138,7 @@ BreadboardRouteGraph::Result BreadboardRouteGraph::route(ConnectorItem * start, 
 QString BreadboardRouteGraph::busId(ConnectorItem * connectorItem) const
 {
 	if (connectorItem == nullptr) return QString();
-	QString id = connectorItem->busID();
-	if (!id.isEmpty()) return id;
+	if (QString id = connectorItem->busID(); !id.isEmpty()) return id;
 	return fallbackBusId(connectorItem);
 }
 
@@ -227,7 +225,7 @@ bool BreadboardRouteGraph::edgeAvailable(const Edge & edge, ConnectorItem * star
 	    && holeAvailable(edge.toHole, start, target);
 }
 
-bool BreadboardRouteGraph::holeAvailable(ConnectorItem * hole, ConnectorItem * start, ConnectorItem * target) const
+bool BreadboardRouteGraph::holeAvailable(ConnectorItem * hole, const ConnectorItem * start, const ConnectorItem * target) const
 {
 	if (hole == nullptr) return false;
 	if (hole == start || hole == target) return true;
@@ -286,8 +284,7 @@ bool BreadboardRouteGraph::collinearOverlap(const QLineF & first, const QLineF &
 	const QPointF b = second.p1() - first.p1();
 	const QPointF c = second.p2() - first.p1();
 	const double crossB = a.x() * b.y() - a.y() * b.x();
-	const double crossC = a.x() * c.y() - a.y() * c.x();
-	if (qAbs(crossB) > 0.5 || qAbs(crossC) > 0.5) return false;
+	if (const double crossC = a.x() * c.y() - a.y() * c.x(); qAbs(crossB) > 0.5 || qAbs(crossC) > 0.5) return false;
 	const QRectF firstBounds = QRectF(first.p1(), first.p2()).normalized().adjusted(-0.5, -0.5, 0.5, 0.5);
 	const QRectF secondBounds = QRectF(second.p1(), second.p2()).normalized();
 	return firstBounds.intersects(secondBounds);

@@ -359,8 +359,7 @@ bool BreadboardRouteGraphCore::collinearOverlap(const QLineF & first, const QLin
 	const QPointF b = second.p1() - first.p1();
 	const QPointF c = second.p2() - first.p1();
 	const double crossB = a.x() * b.y() - a.y() * b.x();
-	const double crossC = a.x() * c.y() - a.y() * c.x();
-	if (qAbs(crossB) > 0.5 || qAbs(crossC) > 0.5) return false;
+	if (const double crossC = a.x() * c.y() - a.y() * c.x(); qAbs(crossB) > 0.5 || qAbs(crossC) > 0.5) return false;
 	// Inflate BOTH boxes: axis-aligned segments make zero-area rects, and Qt
 	// treats empty rects as never intersecting (this silently disabled the
 	// overlap penalty for horizontal/vertical wires in the original code).

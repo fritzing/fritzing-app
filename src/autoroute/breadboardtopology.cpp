@@ -23,6 +23,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QGraphicsItem>
 #include <QGraphicsScene>
 
+#include <algorithm>
+
 #include "../items/itembase.h"
 #include "../items/moduleidnames.h"
 
@@ -75,22 +77,38 @@ bool BreadboardTopology::discover(QGraphicsScene * scene, const QList<QGraphicsI
 	}
 
 	if (m_boards.isEmpty()) {
+		// Accept EVERY whitelisted breadboard with enough holes: multi-board
+		// sketches place parts on all of them and jumper between them. Visit
+		// owners in stable id order - hash iteration follows the per-process
+		// seed, and board order decides hole enumeration order downstream.
+		QList<ItemBase *> owners = holesByOwner.keys();
+		std::sort(owners.begin(), owners.end(), [](ItemBase * a, ItemBase * b) { return a->id() < b->id(); });
+
 		ItemBase * bestOwner = nullptr;
 		int bestHoleCount = 0;
-		for (auto it = holesByOwner.constBegin(); it != holesByOwner.constEnd(); ++it) {
-			ItemBase * owner = it.key();
-			int holeCount = it.value().count();
+		Q_FOREACH (ItemBase * owner, owners) {
+			int holeCount = holesByOwner.value(owner).count();
 			m_diagnosticLines << QString("topology owner candidate: holes=%1 connectors=%2 owner=%3")
 			                     .arg(holeCount)
 			                     .arg(connectorCountsByOwner.value(owner))
 			                     .arg(itemSummary(owner));
+			if (holeCount < MinimumBreadboardHoleCount) continue;
 			if (holeCount > bestHoleCount) {
 				bestOwner = owner;
 				bestHoleCount = holeCount;
 			}
+			if (!isBreadboardItem(owner)) continue;
+			addBoard(owner, holesByOwner.value(owner));
+			acceptedOwners.insert(owner);
+			m_diagnosticLines << QString("topology accepted board: holes=%1 owner=%2")
+			                     .arg(holeCount)
+			                     .arg(itemSummary(owner));
 		}
 
-		if (bestOwner != nullptr && bestHoleCount >= MinimumBreadboardHoleCount) {
+		// No whitelisted breadboard found: fall back to the single largest
+		// female-hole owner (the pre-multi-board behaviour), which keeps
+		// third-party boards with unrecognised moduleIDs routable.
+		if (m_boards.isEmpty() && bestOwner != nullptr) {
 			addBoard(bestOwner, holesByOwner.value(bestOwner));
 			acceptedOwners.insert(bestOwner);
 			m_diagnosticLines << QString("topology selected largest connector owner: holes=%1 owner=%2")

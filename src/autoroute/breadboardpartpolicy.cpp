@@ -86,8 +86,13 @@ BreadboardPartPolicy::Decision BreadboardPartPolicy::classify(ItemBase * itemBas
 		return decision;
 	}
 
+	int femaleSockets = 0;
 	Q_FOREACH (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
 		if (connectorItem == nullptr) continue;
+		if (connectorItem->connectorType() == Connector::Female) {
+			femaleSockets++;
+			continue;
+		}
 		if (!isPlaceablePin(connectorItem)) continue;
 		decision.placeablePins++;
 		if (connectorItem->hasRubberBandLeg() || !connectorItem->legID(itemBase->viewID(), itemBase->viewLayerID()).isEmpty()) {
@@ -96,6 +101,17 @@ BreadboardPartPolicy::Decision BreadboardPartPolicy::classify(ItemBase * itemBas
 	}
 
 	if (decision.placeablePins <= 0) {
+		if (femaleSockets > 0) {
+			// Breakout boards and socketed modules with female headers: never
+			// seated into a breadboard, but their sockets are legitimate wire
+			// terminals - jumper them from off-board, like all breakouts.
+			// (Future exception per user: dual-row male headers at breadboard
+			// pitch could seat like a DIP; that variant has placeable pins
+			// and does not reach this branch.)
+			decision.classification = Classification::Peripheral;
+			decision.reason = "female-socket breakout (jumper wiring only)";
+			return decision;
+		}
 		decision.reason = "no placeable pins";
 		return decision;
 	}

@@ -21,6 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "drc.h"
 #include "../connectors/svgidlayer.h"
 #include "../sketch/pcbsketchwidget.h"
+#include "../mainwindow/mainwindow.h"
 #include "../debugdialog.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/folderutils.h"
@@ -165,6 +166,12 @@ DRCResultsDialog::DRCResultsDialog(const QString & message, const QStringList & 
 
 	auto * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok);
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(close()));
+	
+	QAbstractButton * redoButton = buttonBox->addButton(tr("Redo DRC"), QDialogButtonBox::ActionRole);
+	connect(redoButton, &QAbstractButton::clicked, this, [this]() {
+		Q_EMIT redoRequested();
+		close();
+	});
 
 	vLayout->addWidget(buttonBox);
 	this->setLayout(vLayout);
@@ -285,7 +292,16 @@ QStringList DRC::start(bool showOkMessage, double keepoutMils) {
 		}
 		else {
 			auto * dialog = new DRCResultsDialog(message, messages, collidingThings, m_displayItem, m_displayImage, m_sketchWidget, m_sketchWidget->window());
-			dialog->show();
+            QPointer<PCBSketchWidget> sketchWidgetPtr = m_sketchWidget;
+            connect(dialog, &DRCResultsDialog::redoRequested, dialog, [sketchWidgetPtr]() {
+                if (sketchWidgetPtr.isNull()) return;
+                auto * mw = qobject_cast<MainWindow *>(sketchWidgetPtr->window());
+                if (mw != nullptr) {
+                    mw->newDesignRulesCheck(true);
+                }
+            });
+
+            dialog->show();
 		}
 	}
 	else {}

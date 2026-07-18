@@ -119,6 +119,9 @@ class DRCResultsDialog : public QDialog
 public:
 	DRCResultsDialog(const QString & message, const QStringList & messages, const QList<CollidingThing *> &, QGraphicsPixmapItem * displayItem,  QImage * displayImage, class PCBSketchWidget * sketchWidget, QWidget *parent = 0);
 	~DRCResultsDialog();
+	
+Q_SIGNALS:
+	void redoRequested();
 
 protected Q_SLOTS:
 	void pressedSlot(QListWidgetItem *);

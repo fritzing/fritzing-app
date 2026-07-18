@@ -4506,7 +4506,7 @@ void MainWindow::orderFab()
 			box.setWindowTitle(tr("Missing copper fill"));
 			box.setText(tr("It is recommended to add copper/ground fill to your circuit to reduce acid usage during production.\n\nContinue upload?"));
 			box.setIcon(QMessageBox::Icon::Question);
-			QPushButton* cancelButton = box.addButton(QMessageBox::Cancel);
+			box.addButton(QMessageBox::Cancel);
 			box.addButton(QMessageBox::Ok);
 			box.setDefaultButton(QMessageBox::Cancel);
 			box.setCheckBox(notAgain);

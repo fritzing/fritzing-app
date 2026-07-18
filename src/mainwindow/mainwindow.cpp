@@ -39,6 +39,11 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFontMetrics>
 #include <QApplication>
 #include <QStyleFactory>
+#include <QSlider>
+#include <QToolButton>
+#include <QFrame>
+#include <QVBoxLayout>
+#include <functional>
 
 
 #include "mainwindow.h"
@@ -228,7 +233,8 @@ struct MissingSvgInfo {
 bool byConnectorCount(MissingSvgInfo & m1, MissingSvgInfo & m2)
 {
 	if (m1.connectorSvgIds.count() == m2.connectorSvgIds.count() && m1.modelPart != m2.modelPart) {
-		m1.equal = m2.equal = true;
+		m1.equal = true;
+		m2.equal = true;
 	}
 
 	return (m1.connectorSvgIds.count() > m2.connectorSvgIds.count());
@@ -263,7 +269,9 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	this->initializeTitle(MainWindow::untitledFileName(),
 						 MainWindow::untitledFileCount(),
 						 MainWindow::fileExtension());
-	m_noSchematicConversion = m_useOldSchematic = m_convertedSchematic = false;
+	m_noSchematicConversion = false;
+	m_useOldSchematic = false;
+	m_convertedSchematic = false;
 	m_initialTab = 1;
 	m_rolloverQuoteDialog = nullptr;
 	setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
@@ -275,8 +283,24 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_dontKeepMargins = true;
 
 	m_settingsPrefix = "main/";
-	m_showWelcomeAct = m_showProgramAct = m_raiseWindowAct = m_showPartsBinIconViewAct = m_showAllLayersAct = m_hideAllLayersAct = m_rotate90cwAct = m_showBreadboardAct = m_showSchematicAct = m_showPCBAct = nullptr;
-	m_fileMenu = m_editMenu = m_partMenu = m_windowMenu = m_pcbTraceMenu = m_schematicTraceMenu = m_breadboardTraceMenu = m_viewMenu = nullptr;
+	m_showWelcomeAct = nullptr;
+	m_showProgramAct = nullptr;
+	m_raiseWindowAct = nullptr;
+	m_showPartsBinIconViewAct = nullptr;
+	m_showAllLayersAct = nullptr;
+	m_hideAllLayersAct = nullptr;
+	m_rotate90cwAct = nullptr;
+	m_showBreadboardAct = nullptr;
+	m_showSchematicAct = nullptr;
+	m_showPCBAct = nullptr;
+	m_fileMenu = nullptr;
+	m_editMenu = nullptr;
+	m_partMenu = nullptr;
+	m_windowMenu = nullptr;
+	m_pcbTraceMenu = nullptr;
+	m_schematicTraceMenu = nullptr;
+	m_breadboardTraceMenu = nullptr;
+	m_viewMenu = nullptr;
 	m_infoView = nullptr;
 	m_addedToTemp = false;
 	setAcceptDrops(true);
@@ -285,18 +309,22 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 
 	m_closeSilently = false;
 	m_orderFabAct = nullptr;
-	m_viewFromButtonWidget = m_activeLayerButtonWidget = nullptr;
-	m_programView = m_programWindow = nullptr;
+	m_viewFromButtonWidget = nullptr;
+	m_activeLayerButtonWidget = nullptr;
+	m_programView = nullptr;
+	m_programWindow = nullptr;
 	m_welcomeView = nullptr;
 	m_windowMenuSeparator = nullptr;
-	m_schematicWireColorMenu = m_breadboardWireColorMenu = nullptr;
+	m_schematicWireColorMenu = nullptr;
+	m_breadboardWireColorMenu = nullptr;
 	m_checkForUpdatesAct = nullptr;
 	m_fileProgressDialog = nullptr;
 	m_currentGraphicsView = nullptr;
 	m_comboboxChanged = false;
 
 	// Add a timer for autosaving
-	m_backingUp = m_autosaveNeeded = false;
+	m_backingUp = false;
+	m_autosaveNeeded = false;
 	connect(&m_autosaveTimer, SIGNAL(timeout()), this, SLOT(backupSketch()));
 	m_autosaveTimer.start(AutosaveTimeoutMinutes * 60 * 1000);
 
@@ -339,7 +367,8 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 #ifdef Q_OS_MACOS
 	//setAttribute(Qt::WA_QuitOnClose, false);					// restoring this temporarily (2008.12.19)
 #endif
-	m_dontClose = m_closing = false;
+	m_dontClose = false;
+	m_closing = false;
 
 	m_referenceModel = referenceModel;
 	m_sketchModel = new SketchModel(true);
@@ -967,6 +996,159 @@ SketchToolButton *MainWindow::createAutorouteButton(SketchAreaWidget *parent) {
 	return autorouteButton;
 }
 
+QWidget *MainWindow::createBreadboardRouterTuning(SketchAreaWidget *parent) {
+	struct Knob {
+		const char * settingsKey;
+		QString label;
+		QString toolTip;
+		int minimum;
+		int maximum;
+		double defaultValue;
+		double factor;   // real value = slider value * factor
+	};
+
+	const QList<Knob> knobs = {
+		{ "breadboardAutorouter/leadStretchLimit",
+		  tr("Stretch"),
+		  tr("<b>Lead stretch limit</b><br>"
+		     "How far a component leg may stretch from the body to reach a hole "
+		     "(scene units; one breadboard pitch is 9).<br>"
+		     "Lower values keep parts compact but may force extra jumpers."),
+		  18, 180, 120.0, 1.0 },
+		{ "breadboardAutorouter/jumperPenalty",
+		  tr("Jumpers"),
+		  tr("<b>Jumper penalty</b><br>"
+		     "Cost of landing a net on a bus that needs one more jumper wire.<br>"
+		     "High: avoid jumpers even if leads stretch and bend. "
+		     "Low: spend jumpers freely to keep component leads short and tidy."),
+		  0, 200, 100000.0, 1000.0 },
+		{ "breadboardAutorouter/leadLengthWeight",
+		  tr("Length"),
+		  tr("<b>Lead length weight</b><br>"
+		     "How strongly shorter component leads are preferred.<br>"
+		     "Raise to pull parts tight against their holes; lower to let other "
+		     "goals (fewer jumpers, straighter leads) win."),
+		  0, 50, 1.0, 0.1 },
+		{ "breadboardAutorouter/leadAngleWeight",
+		  tr("Angle"),
+		  tr("<b>Lead angle penalty</b><br>"
+		     "Penalty for leads leaving the body diagonally instead of along "
+		     "its axis.<br>Raise for straight, readable leads; lower to allow "
+		     "diagonal reaches."),
+		  0, 40, 4.0, 0.5 },
+		{ "breadboardAutorouter/foldbackWeight",
+		  tr("Foldback"),
+		  tr("<b>Fold-back penalty</b><br>"
+		     "Penalty for hole pairs closer together than the part's pins, "
+		     "which folds the leads back under the body.<br>"
+		     "Raise to forbid folded leads; lower to allow very compact placements."),
+		  0, 40, 6.0, 0.5 },
+	};
+
+	auto *container = new QFrame(parent);
+	container->setObjectName("breadboardRouterTuning");
+	container->setStyleSheet(
+		"#breadboardRouterTuning QLabel {"
+		"    color: white; font-size: 10px; font-weight: bold; background: transparent;"
+		"}"
+		"#breadboardRouterTuning QSlider {"
+		"    min-height: 24px; background: transparent;"
+		"}"
+		// No sub-page/add-page styling: their rects don't reliably track the
+		// groove and render as full-height blocks. A plain trench + handle
+		// stays crisp.
+		"#breadboardRouterTuning QSlider::groove:horizontal {"
+		"    height: 6px; background: rgba(0, 0, 0, 90); border-radius: 3px;"
+		"}"
+		// Handle height derives from groove height plus the negative margins
+		// (6 + 3 + 3 = 12); an explicit height is ignored for horizontal
+		// handles. A compact near-square avoids Qt's border-radius clipping
+		// quirks entirely.
+		"#breadboardRouterTuning QSlider::handle:horizontal {"
+		"    background: white; border: none;"
+		"    width: 10px; margin: -3px 0; border-radius: 2px;"
+		"}"
+		"#breadboardRouterTuning QToolButton {"
+		"    color: white; font-size: 11px;"
+		"    border: 1px solid rgba(255, 255, 255, 170); border-radius: 3px;"
+		"    padding: 4px 10px; background: transparent;"
+		"}"
+		"#breadboardRouterTuning QToolButton:hover {"
+		"    background: rgba(255, 255, 255, 40);"
+		"}");
+	auto *containerLayout = new QHBoxLayout(container);
+	containerLayout->setContentsMargins(6, 0, 6, 0);
+	containerLayout->setSpacing(10);
+
+	QSettings settings;
+	QList<std::function<void()>> resetters;
+
+	Q_FOREACH (const Knob &knob, knobs) {
+		auto *knobWidget = new QWidget(container);
+		// Fixed height keeps label and slider packed together and vertically
+		// centered in the toolbar instead of spread to its edges. Tall enough
+		// that the round handle is not clipped.
+		knobWidget->setFixedHeight(50);
+		auto *knobLayout = new QVBoxLayout(knobWidget);
+		knobLayout->setContentsMargins(0, 0, 0, 0);
+		knobLayout->setSpacing(3);
+
+		auto *label = new QLabel(knobWidget);
+		label->setAlignment(Qt::AlignHCenter);
+
+		auto *slider = new QSlider(Qt::Horizontal, knobWidget);
+		slider->setRange(knob.minimum, knob.maximum);
+		slider->setFixedWidth(72);
+		// QSlider's vertical size policy is Fixed, so the stylesheet
+		// min-height loses to its native sizeHint and the 16px handle gets
+		// clipped inside the slider's own rect. Force the height in code.
+		slider->setFixedHeight(26);
+		// Keep keyboard focus on the sketch so shortcuts (Ctrl+Z, Ctrl+Shift+A)
+		// are not swallowed by a focused slider.
+		slider->setFocusPolicy(Qt::NoFocus);
+		slider->setToolTip(knob.toolTip);
+		label->setToolTip(knob.toolTip);
+
+		const QString settingsKey = QLatin1String(knob.settingsKey);
+		const QString labelText = knob.label;
+		const double factor = knob.factor;
+		auto updateLabel = [label, labelText, factor](int value) {
+			label->setText(QString("%1 %2").arg(labelText).arg(value * factor));
+		};
+
+		const double storedValue = settings.value(settingsKey, knob.defaultValue).toDouble();
+		slider->setValue(qRound(storedValue / knob.factor));
+		updateLabel(slider->value());
+
+		connect(slider, &QSlider::valueChanged, this, [settingsKey, factor, updateLabel](int value) {
+			QSettings settings;
+			settings.setValue(settingsKey, value * factor);
+			updateLabel(value);
+		});
+
+		const int defaultSliderValue = qRound(knob.defaultValue / knob.factor);
+		resetters.append([slider, defaultSliderValue]() {
+			slider->setValue(defaultSliderValue);
+		});
+
+		knobLayout->addWidget(label);
+		knobLayout->addWidget(slider);
+		containerLayout->addWidget(knobWidget);
+	}
+
+	auto *resetButton = new QToolButton(container);
+	resetButton->setText(tr("Reset"));
+	resetButton->setToolTip(tr("Reset all router tuning sliders to their default values."));
+	resetButton->setFocusPolicy(Qt::NoFocus);
+	resetButton->setFixedHeight(26);
+	connect(resetButton, &QToolButton::clicked, this, [resetters]() {
+		Q_FOREACH (const auto &reset, resetters) reset();
+	});
+	containerLayout->addWidget(resetButton);
+
+	return container;
+}
+
 void MainWindow::updateOrderFabMenu(SketchToolButton* orderFabButton) {
 	if (!orderFabButton) return;
 
@@ -1221,7 +1403,10 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
 	retval << createRotateButton(parent);
 	switch (viewId) {
 	case ViewLayer::BreadboardView:
-		retval << createFlipButton(parent) << createRoutingStatusLabel(parent)
+		retval << createFlipButton(parent)
+			   << createAutorouteButton(parent)
+			   << createBreadboardRouterTuning(parent)
+			   << createRoutingStatusLabel(parent)
 			   << createSimulationButton(parent);
 		break;
 	case ViewLayer::SchematicView:

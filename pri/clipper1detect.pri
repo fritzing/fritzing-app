@@ -23,5 +23,15 @@ win32 {
 message("including $$absolute_path($${CLIPPER1}/include)")
 INCLUDEPATH += $$absolute_path($${CLIPPER1}/include/polyclipping)
 
-LIBS += -L$$absolute_path($${CLIPPER1}/lib) -lpolyclipping
-QMAKE_RPATHDIR += $$absolute_path($${CLIPPER1}/lib)
+win32 {
+    CONFIG(debug, debug|release):exists($$absolute_path($${CLIPPER1}/lib/debug/polyclipping.lib)) {
+        LIBS += $$absolute_path($${CLIPPER1}/lib/debug/polyclipping.lib)
+        QMAKE_RPATHDIR += $$absolute_path($${CLIPPER1}/lib/debug)
+    } else {
+        LIBS += $$absolute_path($${CLIPPER1}/lib/polyclipping.lib)
+        QMAKE_RPATHDIR += $$absolute_path($${CLIPPER1}/lib)
+    }
+} else {
+    LIBS += -L$$absolute_path($${CLIPPER1}/lib) -lpolyclipping
+    QMAKE_RPATHDIR += $$absolute_path($${CLIPPER1}/lib)
+}

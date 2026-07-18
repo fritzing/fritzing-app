@@ -64,3 +64,8 @@ saved_state
 *.qm
 index
 /.qtc_clangd/compile_commands.json
+
+experiments/**/node_modules/
+experiments/netlist-to-fzz/bigmuff.fz
+artifacts/
+.vscode/

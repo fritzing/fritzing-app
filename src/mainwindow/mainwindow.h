@@ -553,6 +553,7 @@ protected:
 	SketchToolButton *createShareButton(SketchAreaWidget *parent);
 	SketchToolButton *createFlipButton(SketchAreaWidget *parent);
 	SketchToolButton *createAutorouteButton(SketchAreaWidget *parent);
+	QWidget *createBreadboardRouterTuning(SketchAreaWidget *parent);
 	SketchToolButton *createOrderFabButton(SketchAreaWidget *parent);
 	void updateOrderFabMenu(SketchToolButton* orderFabButton);
 	QWidget *createActiveLayerButton(SketchAreaWidget *parent);

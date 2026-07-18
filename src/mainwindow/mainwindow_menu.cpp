@@ -36,6 +36,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../partseditor/pemainwindow.h"
 #include "../help/aboutbox.h"
 #include "../autoroute/mazerouter/mazerouter.h"
+#include "../autoroute/breadboardautorouter.h"
 #include "../autoroute/autorouteprogressdialog.h"
 #include "../autoroute/drc.h"
 #include "../items/resizableboard.h"
@@ -1909,7 +1910,8 @@ void MainWindow::updatePartMenu() {
 	bool zenable = true;
 
 	if (itemCount.selCount <= 0) {
-		zenable = enable = false;
+		zenable = false;
+		enable = false;
 	}
 	else {
 		if (itemCount.itemsCount == itemCount.selCount) {
@@ -3006,6 +3008,38 @@ void MainWindow::createOrderFabAct() {
 
 
 void MainWindow::newAutoroute() {
+	auto * breadboardSketchWidget = qobject_cast<BreadboardSketchWidget *>(m_currentGraphicsView);
+	if (breadboardSketchWidget != nullptr) {
+		dynamic_cast<SketchAreaWidget *>(breadboardSketchWidget->parent())->routingStatusLabel()->setText(tr("Autorouting..."));
+
+		AutorouteProgressDialog progress(tr("Breadboard Autorouting Progress..."), true, false, false, false, breadboardSketchWidget, this);
+		progress.setModal(true);
+		progress.show();
+		QRect pr = progress.frameGeometry();
+		QRect wr = this->frameGeometry();
+		progress.move(wr.right() - pr.width(), pr.top());
+
+		breadboardSketchWidget->setIgnoreSelectionChangeEvents(true);
+
+		BreadboardAutorouter autorouter(breadboardSketchWidget);
+		connect(&autorouter, SIGNAL(setMaximumProgress(int)), &progress, SLOT(setMaximum(int)), Qt::DirectConnection);
+		connect(&autorouter, SIGNAL(setProgressValue(int)), &progress, SLOT(setValue(int)), Qt::DirectConnection);
+		connect(&autorouter, SIGNAL(setProgressMessage(const QString &)), &progress, SLOT(setMessage(const QString &)));
+		connect(&autorouter, SIGNAL(setProgressMessage2(const QString &)), &progress, SLOT(setMessage2(const QString &)));
+
+		ProcessEventBlocker::processEvents();
+		ProcessEventBlocker::block();
+
+		autorouter.start();
+		breadboardSketchWidget->setIgnoreSelectionChangeEvents(false);
+
+		ProcessEventBlocker::unblock();
+		RoutingStatus routingStatus;
+		routingStatus.zero();
+		Q_EMIT breadboardSketchWidget->routingStatusSignal(breadboardSketchWidget, routingStatus);
+		return;
+	}
+
 	auto * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
 	if (pcbSketchWidget == nullptr) return;
 
@@ -3205,7 +3239,8 @@ void MainWindow::enableAddBendpointAct(QGraphicsItem * graphicsItem) {
 		bendpointAction->setLastHoverEnterItem(nullptr);
 		convertToViaAction->setLastHoverEnterConnectorItem(m_currentGraphicsView->lastHoverEnterConnectorItem());
 		convertToViaAction->setLastHoverEnterItem(nullptr);
-		ctvEnabled = enabled = true;
+		enabled = true;
+		ctvEnabled = true;
 	}
 	else if (m_currentGraphicsView->lastHoverEnterItem()) {
 		bendpointAction->setText(tr("Add Bendpoint"));
@@ -3653,17 +3688,21 @@ void MainWindow::obsoleteSMDOrientationSlot() {
 }
 
 void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchematics) {
-	useOldSchematics = m_convertedSchematic = m_useOldSchematic = false;
+	m_convertedSchematic = false;
+	m_useOldSchematic = false;
+	useOldSchematics = false;
 	if (m_noSchematicConversion) return;
 
 	if (m_readOnly) {
-		useOldSchematics = m_useOldSchematic = true;
+		m_useOldSchematic = true;
+		useOldSchematics = true;
 		return;
 	}
 
 	QMessageBox::StandardButton answer = oldSchematicMessage(filename);
 	if (answer == QMessageBox::No) {
-		useOldSchematics = m_useOldSchematic = true;
+		m_useOldSchematic = true;
+		useOldSchematics = true;
 		this->setReadOnly(true);
 	}
 	else {
@@ -4467,7 +4506,7 @@ void MainWindow::orderFab()
 			box.setWindowTitle(tr("Missing copper fill"));
 			box.setText(tr("It is recommended to add copper/ground fill to your circuit to reduce acid usage during production.\n\nContinue upload?"));
 			box.setIcon(QMessageBox::Icon::Question);
-			QPushButton* cancelButton = box.addButton(QMessageBox::Cancel);
+			box.addButton(QMessageBox::Cancel);
 			box.addButton(QMessageBox::Ok);
 			box.setDefaultButton(QMessageBox::Cancel);
 			box.setCheckBox(notAgain);

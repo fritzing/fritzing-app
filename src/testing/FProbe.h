@@ -33,6 +33,8 @@ class FProbe {
 		friend class FTesting;  // Only FTesting may use the probes.
 		virtual QVariant read() = 0;
 		virtual void write(QVariant) = 0;
+		// Optional verb for probes that take parameters and return a result.
+		virtual QVariant call(QVariant params) { Q_UNUSED(params); return QVariant(); }
 		virtual std::string name();
 
 		std::string m_name;

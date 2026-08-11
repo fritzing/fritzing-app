@@ -253,7 +253,9 @@ void DebugDialog::debug(QString message, DebugLevel debugLevel, QObject * ancest
 
 	if (m_file.fileName().isEmpty()) {
 		QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-		// path += "/debug.txt";
+		// Write the log INTO the app data folder, not onto its path: a file at
+		// the folder's own path blocks the folder from ever being created.
+		path += "/debug.txt";
 		m_file.setFileName(path);
 	}
 	

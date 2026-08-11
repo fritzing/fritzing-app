@@ -574,6 +574,19 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
         }
         dpi = parameters.getDpi();
 
+	QString error;
+	if (!exportImageHeadless(fileName, dpi, format, quality, removeBackground, &error)) {
+		QMessageBox::warning(this, tr("Fritzing"), tr("Unable to save %1").arg(fileName) );
+	}
+}
+
+bool MainWindow::exportImageHeadless(const QString & fileName, int dpi, QImage::Format format, int quality, bool removeBackground, QString * error)
+{
+	if (m_currentGraphicsView == nullptr) {
+		if (error) *error = "no current sketch view";
+		return false;
+	}
+
 	QRectF source = prepareExport(removeBackground);
 
 	double resMultiplier = dpi / GraphicsUtils::SVGDPI;
@@ -603,9 +616,10 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 	}
 	imageWriter.setQuality(quality);
 	bool result = imageWriter.write(image);
-	if (!result) {
-		QMessageBox::warning(this, tr("Fritzing"), tr("Unable to save %1").arg(fileName) );
+	if (!result && error) {
+		*error = imageWriter.errorString();
 	}
+	return result;
 }
 
 void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginate) {

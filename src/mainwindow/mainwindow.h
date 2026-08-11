@@ -208,6 +208,7 @@ public:
 	void removeGroundFill(ViewLayer::ViewLayerID, QUndoCommand * parentCommand);
 	bool hasAnyAlien();
 	void exportSvg(double res, bool selectedItems, bool flatten, const QString & filename);
+	bool exportImageHeadless(const QString & fileName, int dpi, QImage::Format format, int quality, bool removeBackground, QString * error);
 	void setCurrentView(ViewLayer::ViewID);
 	bool usesPart(const QString & moduleID);
 	bool anyUsePart(const QString & moduleID);

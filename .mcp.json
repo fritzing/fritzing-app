@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "fritzing": {
+      "command": "uv",
+      "args": ["run", "--script", "tools/mcp/fritzing_mcp.py"]
+    }
+  }
+}

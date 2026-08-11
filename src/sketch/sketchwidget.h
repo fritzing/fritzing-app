@@ -339,6 +339,7 @@ public:
 	void checkPartLabelLayerVisibilityForCommand(long itemID);
 	void resizeJumperItem(long id, QPointF pos, QPointF c0, QPointF c1);
 	void putItemByModuleID(const QString & moduleID);
+	long putItemByModuleID(const QString & moduleID, QPointF scenePos);
 
 protected:
 	void adjustSceneRect(double zoomFactor, const QRectF &targetRect);

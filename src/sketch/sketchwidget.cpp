@@ -2113,6 +2113,31 @@ void SketchWidget::putItemByModuleID(const QString  & moduleID) {
 	dropItemEvent(event);
 }
 
+long SketchWidget::putItemByModuleID(const QString & moduleID, QPointF scenePos) {
+	ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
+	if (!modelPart) return -1;
+	if (!canDropModelPart(modelPart)) return -1;
+
+	QPoint viewPos = mapFromScene(scenePos);
+	QDropEvent event(QPointF(viewPos), Qt::IgnoreAction, nullptr, Qt::NoButton, Qt::NoModifier);
+	QPointF offset;
+	if (!setDroppingItemAndOffset(viewPos, offset, modelPart)) return -1;
+
+	// Mimic dragEnterEventAux/dragMoveEvent so connectors under the dropped
+	// part are detected and auto-connected, just like an interactive drop.
+	// Centers the part on scenePos (m_droppingOffset is the item center).
+	m_checkUnder.clear();
+	if (checkUnder()) {
+		m_checkUnder.append(m_droppingItem);
+	}
+	dragMoveHighlightConnector(QPointF(viewPos));
+	turnOffAutoscroll();
+
+	long id = m_droppingItem->id();
+	dropItemEvent(&event);
+	return id;
+}
+
 void SketchWidget::dropItemEvent(QDropEvent *event) {
 	if (!m_droppingItem) return;
 

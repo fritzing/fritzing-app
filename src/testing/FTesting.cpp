@@ -78,12 +78,26 @@ bool FTesting::writeProbe(std::string name, QVariant param)
 	return false;
 }
 
+stdx::optional<QVariant> FTesting::callProbe(std::string name, QVariant params)
+{
+	auto it = m_probeMap.find(name);
+	if(it != m_probeMap.end()) {
+		return it->second->call(params);
+	}
+	return stdx::nullopt;
+}
+
 void FTesting::initServer() {
 	FMessageBox::BlockMessages = true;
 	m_server = new FTestingServer(this);
 	connect(m_server, &FTestingServer::newConnection, this, &FTesting::newConnection);
 	DebugDialog::debug("FTestingServer active");
-	m_server->listen(QHostAddress::Any, m_portNumber);
+	// The server is unauthenticated, so only listen on loopback unless the
+	// legacy any-interface behavior is explicitly requested (isolated CI networks).
+	QHostAddress bindAddress = qEnvironmentVariableIsSet("FTESTING_BIND_ANY")
+		? QHostAddress(QHostAddress::Any)
+		: QHostAddress(QHostAddress::LocalHost);
+	m_server->listen(bindAddress, m_portNumber);
 }
 
 void FTesting::newConnection(qintptr socketDescription) {
@@ -143,10 +157,11 @@ void FTestingServerThread::run()
 		return;
 	}
 
-	QString readOrWrite = params.takeFirst();
+	QString verb = params.takeFirst();
 
 	QString param = "";
-	if (readOrWrite.compare("write") == 0 ) {
+	bool verbTakesParam = (verb.compare("write") == 0) || (verb.compare("call") == 0);
+	if (verbTakesParam) {
 		if (params.count() == 0) {
 			writeResponse(socket, 400, "Bad Request", "", "");
 			return;
@@ -154,9 +169,9 @@ void FTestingServerThread::run()
 		param = params.takeFirst();
 		param = QUrl::fromPercentEncoding(param.toUtf8());
 	}
-	
-	if (readOrWrite.compare("write") == 0) {
-		DebugDialog::debug(QString("FTesting write %1 %2").arg(command, param));
+
+	if (verbTakesParam) {
+		DebugDialog::debug(QString("FTesting %1 %2 %3").arg(verb, command, param));
 	} else {
 		DebugDialog::debug(QString("FTesting read %1").arg(command));
 	}
@@ -179,7 +194,7 @@ void FTestingServerThread::run()
 
 	std::shared_ptr<FTesting> fTesting = FTesting::getInstance();
 
-	if (readOrWrite.compare("write") == 0) {
+	if (verb.compare("write") == 0) {
 		bool success = fTesting->writeProbe(command.toStdString(), QVariant(param));
 		if (success) {
 			writeResponse(socket, 200, "OK", "text/plain", "");
@@ -187,7 +202,9 @@ void FTestingServerThread::run()
 			writeResponse(socket, 404, "Not Found", "text/plain", "Probe not found");
 		}
 	} else {
-		std::optional<QVariant> probeResult = fTesting->readProbe(command.toStdString());
+		std::optional<QVariant> probeResult = (verb.compare("call") == 0)
+			? fTesting->callProbe(command.toStdString(), QVariant(param))
+			: fTesting->readProbe(command.toStdString());
 
 		if (probeResult == std::nullopt) {
 			DebugDialog::debug(QString("Reading probe failed."));

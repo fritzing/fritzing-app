@@ -32,20 +32,27 @@ mcp = FastMCP(
     "fritzing",
     instructions="""Draw and inspect breadboard circuit diagrams in a live Fritzing window.
 
-Typical workflow:
-1. search_parts to find module_ids (e.g. "breadboard", "LED", "resistor", "Arduino Uno").
-   Well-known core parts: full+ breadboard "Breadboard-RSR03MB102-ModuleID",
-   red 5mm LED "5mmColorLEDModuleID", 220 ohm resistor "ResistorModuleID".
-2. add_part to place parts. Coordinates are breadboard-view scene units (~90 per inch);
-   the part is centered on (x, y). Place parts on clear free spots, roughly 100-400 units
-   apart, and keep the sketch compact.
-3. get_connectors on each placed part to find connector ids and names for wiring
-   (e.g. an LED's anode/cathode, an Arduino's "D13/SCK" and "GND"). Prefer it over
-   get_part_info for wiring: some connectors listed in the part definition exist
-   only in the schematic/pcb views and cannot be wired on the breadboard.
-4. connect_parts to wire connectors together. Wires are straight lines; electrical
-   correctness matters more than hole-perfect placement.
-5. get_sketch_state to verify parts and connections, export_image to see the result.
+Typical workflow (coordinates are breadboard-view scene units, ~90 per inch,
++x right, +y down; add_part centers the part on (x, y)):
+
+1. search_parts to find module_ids. Well-known core parts: full+ breadboard
+   "Breadboard-RSR03MB102-ModuleID", red 5mm LED "5mmColorLEDModuleID",
+   220 ohm resistor "ResistorModuleID".
+2. Place the breadboard first. get_connectors with an id_prefix reveals hole
+   names and positions (e.g. "pin25E"; adjacent columns are 9 units apart;
+   holes A-E of a column share one bus, as do F-J).
+3. SEAT small parts (LEDs, resistors, chips) IN breadboard holes - do not
+   scatter them in empty space. Recipe: add_part at a trial spot, call
+   get_connectors on it to measure each pin's offset from the part's returned
+   center, delete_item it, then re-add at (target_hole - pin_offset). Pins
+   that land on holes connect automatically; confirm via get_sketch_state
+   (the part's "connections" will list breadboard pins, no wires involved).
+4. Boards like Arduinos do not plug into breadboards: place them on free
+   space below the breadboard and use connect_parts to run jumper wires from
+   their pins (find ids via get_connectors, e.g. "D13/SCK", "GND") to
+   breadboard holes on the same columns as the seated parts' legs.
+5. get_sketch_state to verify connectivity, export_image to inspect the
+   drawing visually before declaring it done.
 
 Prefer delete_item + add_part over move_part when repositioning a part that is
 plugged into breadboard holes: move does not re-form hole connections.""",
@@ -105,9 +112,10 @@ def get_part_info(module_id: str) -> str:
 def add_part(module_id: str, x: float, y: float, rotation: float = 0) -> str:
     """Add a part to the breadboard view, centered on scene coordinates (x, y)
     (~90 units per inch; +x right, +y down). Returns the new item_id used by all
-    other tools. If a part's pins land exactly on breadboard holes they connect
-    automatically, but the simpler robust approach is to place parts on free
-    space and wire them with connect_parts."""
+    other tools. Pins that land exactly on breadboard holes connect automatically
+    - use this to seat LEDs/resistors/chips in the breadboard (see the server
+    instructions for the trial-place/measure/re-add recipe). Reserve free-space
+    placement for boards like Arduinos that do not plug into breadboards."""
     return json.dumps(_call("add_part", {"module_id": module_id, "x": x, "y": y, "rotation": rotation}))
 
 

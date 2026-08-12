@@ -210,5 +210,16 @@ def open_sketch(path: str) -> str:
     return json.dumps(_call("open_sketch", {"path": path}))
 
 
+@mcp.tool()
+def import_part(path: str) -> str:
+    """Import a Fritzing part bundle (.fzpz) at the given absolute path into the
+    parts library. Use this to bring in parts that are not in the stock library
+    (e.g. a specific dev board, module, or MCU) downloaded from the Fritzing
+    forum or a vendor. The part is installed into the user parts folder and
+    registered, so search_parts and add_part can find it afterwards. Returns the
+    imported part's module_id(s), which add_part then uses to place it."""
+    return json.dumps(_call("import_part", {"path": path}))
+
+
 if __name__ == "__main__":
     mcp.run()

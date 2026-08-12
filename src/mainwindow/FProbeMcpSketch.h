@@ -63,6 +63,7 @@ private:
 	QJsonObject toolExportImage(const QJsonObject & args);
 	QJsonObject toolSaveSketch(const QJsonObject & args);
 	QJsonObject toolOpenSketch(const QJsonObject & args);
+	QJsonObject toolImportPart(const QJsonObject & args);
 
 	SketchWidget * breadboardView();
 	ItemBase * findItemOrError(long id, QJsonObject & error);

@@ -76,7 +76,8 @@ QVariant FProbeMcpSketch::read() {
 	QJsonArray tools;
 	for (const QString & tool : { "search_parts", "get_part_info", "add_part", "connect",
 	                              "move", "rotate", "delete", "get_sketch_state",
-	                              "get_connectors", "export_image", "save_sketch", "open_sketch" }) {
+	                              "get_connectors", "export_image", "save_sketch", "open_sketch",
+	                              "import_part" }) {
 		tools.append(tool);
 	}
 	obj.insert("tools", tools);
@@ -123,6 +124,7 @@ QJsonObject FProbeMcpSketch::dispatch(const QJsonObject & request) {
 	if (tool == "export_image") return toolExportImage(args);
 	if (tool == "save_sketch") return toolSaveSketch(args);
 	if (tool == "open_sketch") return toolOpenSketch(args);
+	if (tool == "import_part") return toolImportPart(args);
 
 	return mcpError("bad_args", QString("unknown tool '%1'").arg(tool));
 }
@@ -575,5 +577,36 @@ QJsonObject FProbeMcpSketch::toolOpenSketch(const QJsonObject & args) {
 	}
 	QJsonObject obj;
 	obj.insert("ok", true);
+	return obj;
+}
+
+QJsonObject FProbeMcpSketch::toolImportPart(const QJsonObject & args) {
+	if (!m_mainWindow) return mcpError("no_sketch", "main window is gone");
+	QString path = args.value("path").toString();
+	if (path.isEmpty()) return mcpError("bad_args", "missing 'path'");
+	if (!QFile::exists(path)) return mcpError("bad_args", QString("no such file: %1").arg(path));
+
+	// Installs the .fzpz into the user parts folder and registers it in the
+	// reference model, so search_parts and add_part can find it afterwards.
+	QList<ModelPart *> modelParts = m_mainWindow->loadBundledPart(path, true);
+	if (modelParts.isEmpty()) {
+		return mcpError("import_failed", QString("no parts loaded from '%1' (not a valid .fzpz bundle?)").arg(path));
+	}
+
+	QJsonArray parts;
+	QString firstModuleID;
+	Q_FOREACH (ModelPart * modelPart, modelParts) {
+		if (!modelPart) continue;
+		if (firstModuleID.isEmpty()) firstModuleID = modelPart->moduleID();
+		QJsonObject part;
+		part.insert("module_id", modelPart->moduleID());
+		part.insert("title", modelPart->title());
+		parts.append(part);
+	}
+
+	QJsonObject obj;
+	obj.insert("ok", true);
+	obj.insert("module_id", firstModuleID);
+	obj.insert("parts", parts);
 	return obj;
 }

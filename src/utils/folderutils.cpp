@@ -875,7 +875,7 @@ bool FolderUtils::checkFileLoadability(QWidget* parent, const QString& filePath)
 		}
 
 		QString errorDetail = errorDetails.isEmpty() ?
-			"" : "\n\nPossible issues:\n• " + errorDetails.join("\n• ");
+			QString("") : "\n\nPossible issues:\n• " + errorDetails.join("\n• ");
 
 		FMessageBox::warning(
 			parent,

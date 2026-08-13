@@ -56,6 +56,16 @@ publish your works under the same license.  A credit can be as simple as "this i
 
 Lookup [our FAQs](http://fritzing.org/faq/) for more details on licensing.
 
+### Additional Licensing
+
+- Additional third-party components and dependencies are licensed under permissive or compatible terms.
+  See the [`LICENSES/`](./LICENSES) directory for full texts:
+  - Boost Software License 1.0
+  - LGPL 3.0 (used by Qt)
+  - Modified BSD License
+  - OpenSSL License and Original SSLeay License
+  - Creative Commons BY 3.0 and BY-SA 3.0 (for parts, docs, or assets)
+
 [~help wanted]: https://img.shields.io/badge/-help%20wanted-%23159818
 [~easy start]: https://img.shields.io/badge/-easy%20start-%2333AAFF
 [~challenging start]: https://img.shields.io/badge/-challenging%20start-%235500EE

@@ -205,6 +205,21 @@ void MainWindow::mainLoad() {
 	mainLoadAux(fileName);
 }
 
+
+void MainWindow::importBreadboardWiringCsv()
+{
+	QString fileName = FolderUtils::getOpenFileName(
+		this,
+		tr("Import Breadboard Wiring CSV"),
+		"",
+		tr("CSV Files (*.csv);;All Files (*)")
+	);
+
+	if (fileName.isEmpty()) return;
+
+	// CSV parsing and sketch modification will be implemented separately.
+}
+
 void MainWindow::mainLoadAux(const QString & fileName)
 {
 	if (fileName.isNull()) return;
@@ -672,6 +687,10 @@ void MainWindow::createFileMenuActions() {
 	m_openAct->setShortcut(tr("Ctrl+O"));
 	m_openAct->setStatusTip(tr("Open a Fritzing sketch (.fzz, .fz), or load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)"));
 	connect(m_openAct, SIGNAL(triggered()), this, SLOT(mainLoad()));
+
+	m_importBreadboardWiringCsvAct = new QAction(tr("Breadboard Wiring CSV..."), this);
+	m_importBreadboardWiringCsvAct->setStatusTip(tr("Import breadboard wiring and placement data from a CSV file"));
+	connect(m_importBreadboardWiringCsvAct, SIGNAL(triggered()), this, SLOT(importBreadboardWiringCsv()));
 
 	m_revertAct = new QAction(tr("Revert"), this);
 	m_revertAct->setStatusTip(tr("Reload the sketch"));
@@ -1440,6 +1459,9 @@ void MainWindow::createFileMenu() {
 	m_fileMenu->addAction(m_revertAct);
 	m_fileMenu->addMenu(m_openRecentFileMenu);
 	m_fileMenu->addMenu(m_openExampleMenu);
+
+	QMenu *importMenu = m_fileMenu->addMenu(tr("&Import"));
+	importMenu->addAction(m_importBreadboardWiringCsvAct);
 
 	m_fileMenu->addSeparator();
 	m_fileMenu->addAction(m_closeAct);

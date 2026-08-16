@@ -33,6 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "mainwindow.h"
 #include "breadboardwiringcsvparser.h"
+#include "breadboardcoordinate.h"
 #include "../debugdialog.h"
 #include "../waitpushundostack.h"
 #include "../commands.h"
@@ -231,28 +232,132 @@ void MainWindow::importBreadboardWiringCsv()
 	}
 
 	int jumperRows = 0;
+	int coordinateReferences = 0;
+	int validCoordinateReferences = 0;
+	int invalidCoordinateReferences = 0;
+	QStringList invalidExamples;
+
+	auto validateCoordinate =
+		[&](
+			const BreadboardWiringCsvRow &row,
+			const QString &side,
+			const QString &text
+		) {
+			const QString coordinateText = text.trimmed();
+
+			const bool isBreadboardCoordinate =
+				coordinateText.startsWith("B1-") ||
+				coordinateText.startsWith("B2-") ||
+				coordinateText.startsWith("B3-");
+
+			if (!isBreadboardCoordinate) {
+				return;
+			}
+
+			++coordinateReferences;
+
+			const BreadboardCoordinate coordinate =
+				BreadboardCoordinateParser::parse(coordinateText);
+
+			if (coordinate.kind == BreadboardCoordinate::Kind::Invalid) {
+				++invalidCoordinateReferences;
+
+				if (invalidExamples.size() < 10) {
+					invalidExamples.append(
+						tr("%1 %2: %3 — %4")
+							.arg(row.wireId)
+							.arg(side)
+							.arg(coordinateText)
+							.arg(coordinate.error)
+					);
+				}
+
+				return;
+			}
+
+			++validCoordinateReferences;
+		};
 
 	for (const BreadboardWiringCsvRow &row : result.rows) {
 		if (row.wireId.startsWith('J')) {
 			++jumperRows;
 		}
+
+		validateCoordinate(
+			row,
+			tr("FROM"),
+			row.fromTerminal
+		);
+
+		validateCoordinate(
+			row,
+			tr("TO"),
+			row.toTerminal
+		);
 	}
 
-	const int totalRows = result.rows.size();
+	const int totalRows = static_cast<int>(result.rows.size());
+
+	if (invalidCoordinateReferences > 0) {
+		QString details = invalidExamples.join("\n");
+
+		const int remaining =
+			invalidCoordinateReferences -
+			static_cast<int>(invalidExamples.size());
+
+		if (remaining > 0) {
+			details +=
+				tr("\n... and %1 more invalid coordinate(s).")
+					.arg(remaining);
+		}
+
+		FMessageBox::warning(
+			this,
+			tr("Breadboard Wiring CSV"),
+			tr(
+				"CSV parsed successfully, but breadboard coordinate "
+				"validation found problems.\n\n"
+				"Records: %1\n"
+				"Jumper rows: %2\n"
+				"Other rows: %3\n\n"
+				"Breadboard coordinate references: %4\n"
+				"Valid coordinates: %5\n"
+				"Invalid coordinates: %6\n\n"
+				"No sketch changes were made.\n\n"
+				"First problems:\n%7"
+			)
+				.arg(totalRows)
+				.arg(jumperRows)
+				.arg(totalRows - jumperRows)
+				.arg(coordinateReferences)
+				.arg(validCoordinateReferences)
+				.arg(invalidCoordinateReferences)
+				.arg(details)
+		);
+
+		return;
+	}
 
 	FMessageBox::information(
 		this,
 		tr("Breadboard Wiring CSV"),
 		tr(
-			"CSV parsed successfully.\n\n"
+			"CSV and breadboard coordinates validated successfully.\n\n"
 			"Records: %1\n"
 			"Jumper rows: %2\n"
-			"Other rows: %3"
+			"Other rows: %3\n\n"
+			"Breadboard coordinate references: %4\n"
+			"Valid coordinates: %5\n"
+			"Invalid coordinates: 0\n\n"
+			"No sketch changes were made."
 		)
 			.arg(totalRows)
 			.arg(jumperRows)
 			.arg(totalRows - jumperRows)
+			.arg(coordinateReferences)
+			.arg(validCoordinateReferences)
 	);
+
 }
 
 void MainWindow::mainLoadAux(const QString & fileName)

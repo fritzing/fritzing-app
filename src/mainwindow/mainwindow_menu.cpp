@@ -34,6 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "mainwindow.h"
 #include "breadboardwiringcsvparser.h"
 #include "breadboardcoordinate.h"
+#include "breadboardcsvsketchbuilder.h"
 #include <QHash>
 #include "../debugdialog.h"
 #include "../waitpushundostack.h"
@@ -434,9 +435,7 @@ void MainWindow::importBreadboardWiringCsv()
 		return;
 	}
 
-	FMessageBox::information(
-		this,
-		tr("Breadboard Wiring CSV"),
+	const QString validationSummary =
 		tr(
 			"CSV, breadboard coordinates, and connector IDs "
 			"validated successfully.\n\n"
@@ -447,15 +446,105 @@ void MainWindow::importBreadboardWiringCsv()
 			"Valid coordinates: %5\n"
 			"Invalid coordinates: 0\n"
 			"Resolved connector references: %6\n"
-			"Duplicate physical endpoints: 0\n\n"
-			"No sketch changes were made."
+			"Duplicate physical endpoints: 0"
 		)
 			.arg(totalRows)
 			.arg(jumperRows)
 			.arg(totalRows - jumperRows)
 			.arg(coordinateReferences)
 			.arg(validCoordinateReferences)
-			.arg(resolvedConnectorReferences)
+			.arg(resolvedConnectorReferences);
+
+	const FMessageBox::StandardButton placeBoards =
+		FMessageBox::question(
+			this,
+			tr("Breadboard Wiring CSV"),
+			validationSummary +
+				tr(
+					"\n\n"
+					"Place three empty RSR 03MB102 "
+					"breadboards now?"
+				),
+			FMessageBox::Yes | FMessageBox::No,
+			FMessageBox::No
+		);
+
+	if (placeBoards != FMessageBox::Yes) {
+		return;
+	}
+
+	SketchWidget *breadboardView =
+		sketchWidgetForView(
+			ViewLayer::BreadboardView
+		);
+
+	const BreadboardCsvPlacementResult placementResult =
+		BreadboardCsvSketchBuilder::placeThreeBreadboards(
+			breadboardView
+		);
+
+	if (!placementResult.ok) {
+		FMessageBox::warning(
+			this,
+			tr("Breadboard Wiring CSV"),
+			validationSummary +
+				tr(
+					"\n\n"
+					"Breadboards were not placed.\n\n%1"
+				)
+					.arg(placementResult.error)
+		);
+
+		return;
+	}
+
+	QStringList boardIdLines;
+
+	for (
+		int index = 0;
+		index < placementResult.boardIds.size();
+		++index
+	) {
+		boardIdLines.append(
+			tr("B%1 item ID: %2")
+				.arg(index + 1)
+				.arg(placementResult.boardIds.at(index))
+		);
+	}
+
+	showBreadboardView();
+
+	QString placementMessage;
+
+	if (placementResult.reusedExistingBoard) {
+		placementMessage =
+			tr(
+				"\n\n"
+				"The existing Fritzing breadboard was assigned as B1.\n"
+				"B2 and B3 were added successfully.\n\n"
+				"%1\n\n"
+				"One Undo action should remove B2 and B3 "
+				"and leave the original B1 breadboard."
+			)
+				.arg(boardIdLines.join("\n"));
+	}
+	else {
+		placementMessage =
+			tr(
+				"\n\n"
+				"Three empty RSR 03MB102 breadboards "
+				"were placed successfully.\n\n"
+				"%1\n\n"
+				"One Undo action should remove all three boards."
+			)
+				.arg(boardIdLines.join("\n"));
+	}
+
+	FMessageBox::information(
+		this,
+		tr("Breadboard Wiring CSV"),
+		validationSummary +
+			placementMessage
 	);
 
 }

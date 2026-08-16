@@ -14,6 +14,7 @@
 # ********************************************************************/
 HEADERS += \
 	src/mainwindow/breadboardcoordinate.h \
+	src/mainwindow/breadboardcsvsketchbuilder.h \
 	src/mainwindow/breadboardwiringcsvparser.h \
 	src/mainwindow/fprobeactions.h \
     src/mainwindow/fdockwidget.h \
@@ -28,6 +29,7 @@ HEADERS += \
 
 SOURCES += \
 	src/mainwindow/breadboardcoordinate.cpp \
+	src/mainwindow/breadboardcsvsketchbuilder.cpp \
 	src/mainwindow/breadboardwiringcsvparser.cpp \
 	src/mainwindow/fprobeactions.cpp \
     src/mainwindow/fdockwidget.cpp \

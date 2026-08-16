@@ -32,6 +32,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMimeData>
 
 #include "mainwindow.h"
+#include "breadboardwiringcsvparser.h"
 #include "../debugdialog.h"
 #include "../waitpushundostack.h"
 #include "../commands.h"
@@ -217,7 +218,41 @@ void MainWindow::importBreadboardWiringCsv()
 
 	if (fileName.isEmpty()) return;
 
-	// CSV parsing and sketch modification will be implemented separately.
+	const BreadboardWiringCsvResult result =
+		BreadboardWiringCsvParser::parseFile(fileName);
+
+	if (!result.ok) {
+		FMessageBox::warning(
+			this,
+			tr("Breadboard Wiring CSV"),
+			tr("Unable to import CSV:\n\n%1").arg(result.error)
+		);
+		return;
+	}
+
+	int jumperRows = 0;
+
+	for (const BreadboardWiringCsvRow &row : result.rows) {
+		if (row.wireId.startsWith('J')) {
+			++jumperRows;
+		}
+	}
+
+	const int totalRows = result.rows.size();
+
+	FMessageBox::information(
+		this,
+		tr("Breadboard Wiring CSV"),
+		tr(
+			"CSV parsed successfully.\n\n"
+			"Records: %1\n"
+			"Jumper rows: %2\n"
+			"Other rows: %3"
+		)
+			.arg(totalRows)
+			.arg(jumperRows)
+			.arg(totalRows - jumperRows)
+	);
 }
 
 void MainWindow::mainLoadAux(const QString & fileName)

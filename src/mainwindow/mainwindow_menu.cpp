@@ -455,6 +455,250 @@ void MainWindow::importBreadboardWiringCsv()
 			.arg(validCoordinateReferences)
 			.arg(resolvedConnectorReferences);
 
+	BreadboardCoordinate cpuPin20Coordinate;
+	BreadboardCoordinate cpuPin21Coordinate;
+	bool cpuPin20Found = false;
+	bool cpuPin21Found = false;
+	QString cpuFootprintError;
+
+	auto w65c02PinNumber =
+		[](const QString &endpoint) -> int {
+			const QString prefix = "W65C02 pin ";
+			const QString text = endpoint.trimmed();
+
+			if (!text.startsWith(prefix)) {
+				return -1;
+			}
+
+			qsizetype end = prefix.size();
+
+			while (
+				end < text.size() &&
+				text.at(end).isDigit()
+			) {
+				++end;
+			}
+
+			if (end == prefix.size()) {
+				return -1;
+			}
+
+			bool ok = false;
+			const int pin =
+				text.mid(prefix.size(), end - prefix.size())
+					.toInt(&ok);
+
+			return ok ? pin : -1;
+		};
+
+	auto captureCpuAnchor =
+		[&](
+			const QString &endpoint,
+			const QString &terminal
+		) {
+			if (!cpuFootprintError.isEmpty()) {
+				return;
+			}
+
+			const int pin = w65c02PinNumber(endpoint);
+
+			if (pin != 20 && pin != 21) {
+				return;
+			}
+
+			const QString coordinateText = terminal.trimmed();
+
+			const bool isBreadboardCoordinate =
+				coordinateText.startsWith("B1-") ||
+				coordinateText.startsWith("B2-") ||
+				coordinateText.startsWith("B3-");
+
+			if (!isBreadboardCoordinate) {
+				return;
+			}
+
+			const BreadboardCoordinate coordinate =
+				BreadboardCoordinateParser::parse(coordinateText);
+
+			if (
+				coordinate.kind !=
+				BreadboardCoordinate::Kind::TerminalStrip ||
+				coordinate.connectorId.isEmpty()
+			) {
+				cpuFootprintError =
+					tr(
+						"W65C02 pin %1 has an invalid "
+						"breadboard coordinate: %2"
+					)
+						.arg(pin)
+						.arg(coordinateText);
+				return;
+			}
+
+			BreadboardCoordinate *stored =
+				pin == 20
+					? &cpuPin20Coordinate
+					: &cpuPin21Coordinate;
+
+			bool *found =
+				pin == 20
+					? &cpuPin20Found
+					: &cpuPin21Found;
+
+			if (!*found) {
+				*stored = coordinate;
+				*found = true;
+				return;
+			}
+
+			if (
+				stored->board != coordinate.board ||
+				stored->row != coordinate.row ||
+				stored->column != coordinate.column
+			) {
+				cpuFootprintError =
+					tr(
+						"W65C02 pin %1 has multiple "
+						"breadboard footprint candidates."
+					)
+						.arg(pin);
+			}
+		};
+
+	for (const BreadboardWiringCsvRow &row : result.rows) {
+		captureCpuAnchor(
+			row.from,
+			row.fromTerminal
+		);
+
+		captureCpuAnchor(
+			row.to,
+			row.toTerminal
+		);
+	}
+
+	if (
+		cpuFootprintError.isEmpty() &&
+		(!cpuPin20Found || !cpuPin21Found)
+	) {
+		cpuFootprintError =
+			tr(
+				"Could not find unique breadboard references "
+				"for W65C02 pins 20 and 21."
+			);
+	}
+
+	if (
+		cpuFootprintError.isEmpty() &&
+		cpuPin20Coordinate.board != cpuPin21Coordinate.board
+	) {
+		cpuFootprintError =
+			tr(
+				"W65C02 pins 20 and 21 resolve to "
+				"different breadboards."
+			);
+	}
+
+	if (
+		cpuFootprintError.isEmpty() &&
+		cpuPin20Coordinate.board != 1
+	) {
+		cpuFootprintError =
+			tr(
+				"Milestone 4C currently expects the W65C02 "
+				"footprint on breadboard B1."
+			);
+	}
+
+	if (
+		cpuFootprintError.isEmpty() &&
+		cpuPin20Coordinate.column != cpuPin21Coordinate.column
+	) {
+		cpuFootprintError =
+			tr(
+				"W65C02 pins 20 and 21 must occupy the "
+				"same breadboard column."
+			);
+	}
+
+	if (
+		cpuFootprintError.isEmpty() &&
+		cpuPin20Coordinate.row == cpuPin21Coordinate.row
+	) {
+		cpuFootprintError =
+			tr(
+				"W65C02 pins 20 and 21 must occupy "
+				"opposite DIP rows."
+			);
+	}
+
+	const int cpuFirstColumn =
+		cpuPin20Found
+			? cpuPin20Coordinate.column - 19
+			: -1;
+
+	if (
+		cpuFootprintError.isEmpty() &&
+		cpuFirstColumn < 1
+	) {
+		cpuFootprintError =
+			tr(
+				"W65C02 pin 20 does not leave room for "
+				"a 20-position DIP row."
+			);
+	}
+
+	BreadboardCoordinate cpuPin1Coordinate;
+	BreadboardCoordinate cpuPin40Coordinate;
+
+	if (cpuFootprintError.isEmpty()) {
+		const QString cpuPin1Text =
+			QString("B%1-%2%3")
+				.arg(cpuPin20Coordinate.board)
+				.arg(QString(1, cpuPin20Coordinate.row))
+				.arg(cpuFirstColumn);
+
+		const QString cpuPin40Text =
+			QString("B%1-%2%3")
+				.arg(cpuPin21Coordinate.board)
+				.arg(QString(1, cpuPin21Coordinate.row))
+				.arg(cpuFirstColumn);
+
+		cpuPin1Coordinate =
+			BreadboardCoordinateParser::parse(cpuPin1Text);
+
+		cpuPin40Coordinate =
+			BreadboardCoordinateParser::parse(cpuPin40Text);
+
+		if (
+			cpuPin1Coordinate.kind !=
+			BreadboardCoordinate::Kind::TerminalStrip ||
+			cpuPin40Coordinate.kind !=
+			BreadboardCoordinate::Kind::TerminalStrip ||
+			cpuPin1Coordinate.connectorId.isEmpty() ||
+			cpuPin40Coordinate.connectorId.isEmpty()
+		) {
+			cpuFootprintError =
+				tr(
+					"Could not infer valid W65C02 "
+					"pin 1 / pin 40 footprint coordinates."
+				);
+		}
+	}
+
+	if (!cpuFootprintError.isEmpty()) {
+		FMessageBox::warning(
+			this,
+			tr("Breadboard Wiring CSV"),
+			tr(
+				"Cannot derive the W65C02 footprint "
+				"from the CSV.\n\n%1"
+			)
+				.arg(cpuFootprintError)
+		);
+		return;
+	}
+
 	const FMessageBox::StandardButton placeBoards =
 		FMessageBox::question(
 			this,
@@ -513,7 +757,11 @@ void MainWindow::importBreadboardWiringCsv()
 	const BreadboardCsvCpuProbeResult cpuProbeResult =
 		BreadboardCsvSketchBuilder::placeCpuAlignmentProbe(
 			breadboardView,
-			placementResult.boardIds.first()
+			placementResult.boardIds.first(),
+			cpuPin1Coordinate.connectorId,
+			cpuPin20Coordinate.connectorId,
+			cpuPin21Coordinate.connectorId,
+			cpuPin40Coordinate.connectorId
 		);
 
 	if (!cpuProbeResult.ok) {

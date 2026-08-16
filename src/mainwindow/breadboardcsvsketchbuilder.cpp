@@ -210,7 +210,11 @@ BreadboardCsvSketchBuilder::placeThreeBreadboards(
 BreadboardCsvCpuProbeResult
 BreadboardCsvSketchBuilder::placeCpuAlignmentProbe(
 	SketchWidget *breadboardView,
-	long boardId
+	long boardId,
+	const QString &pin1ConnectorId,
+	const QString &pin20ConnectorId,
+	const QString &pin21ConnectorId,
+	const QString &pin40ConnectorId
 )
 {
 	BreadboardCsvCpuProbeResult result;
@@ -300,22 +304,22 @@ BreadboardCsvSketchBuilder::placeCpuAlignmentProbe(
 
 	ConnectorItem *targetPin1 =
 		board->findConnectorItemWithSharedID(
-			"pin1C"
+			pin1ConnectorId
 		);
 
 	ConnectorItem *targetPin20 =
 		board->findConnectorItemWithSharedID(
-			"pin20C"
+			pin20ConnectorId
 		);
 
 	ConnectorItem *targetPin21 =
 		board->findConnectorItemWithSharedID(
-			"pin20G"
+			pin21ConnectorId
 		);
 
 	ConnectorItem *targetPin40 =
 		board->findConnectorItemWithSharedID(
-			"pin1G"
+			pin40ConnectorId
 		);
 
 	if (
@@ -325,8 +329,8 @@ BreadboardCsvSketchBuilder::placeCpuAlignmentProbe(
 		targetPin40 == nullptr
 	) {
 		result.error =
-			"Could not resolve one or more B1 CPU "
-			"corner coordinates.";
+			"Could not resolve one or more CSV-derived "
+			"CPU footprint connector IDs.";
 
 		return result;
 	}

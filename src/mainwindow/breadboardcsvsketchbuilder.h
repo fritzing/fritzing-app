@@ -37,7 +37,11 @@ public:
 
 	static BreadboardCsvCpuProbeResult placeCpuAlignmentProbe(
 		SketchWidget *breadboardView,
-		long boardId
+		long boardId,
+		const QString &pin1ConnectorId,
+		const QString &pin20ConnectorId,
+		const QString &pin21ConnectorId,
+		const QString &pin40ConnectorId
 	);
 };
 

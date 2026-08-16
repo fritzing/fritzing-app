@@ -13,6 +13,19 @@ struct BreadboardCsvPlacementResult
 	bool reusedExistingBoard = false;
 };
 
+struct BreadboardCsvCpuProbeResult
+{
+	bool ok = false;
+	bool aligned = false;
+	QString error;
+	long cpuId = -1;
+
+	double pin1Error = 0.0;
+	double pin20Error = 0.0;
+	double pin21Error = 0.0;
+	double pin40Error = 0.0;
+};
+
 class SketchWidget;
 
 class BreadboardCsvSketchBuilder
@@ -20,6 +33,11 @@ class BreadboardCsvSketchBuilder
 public:
 	static BreadboardCsvPlacementResult placeThreeBreadboards(
 		SketchWidget *breadboardView
+	);
+
+	static BreadboardCsvCpuProbeResult placeCpuAlignmentProbe(
+		SketchWidget *breadboardView,
+		long boardId
 	);
 };
 

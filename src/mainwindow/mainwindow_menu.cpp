@@ -498,6 +498,60 @@ void MainWindow::importBreadboardWiringCsv()
 		return;
 	}
 
+	if (placementResult.boardIds.isEmpty()) {
+		FMessageBox::warning(
+			this,
+			tr("Breadboard Wiring CSV"),
+			tr(
+				"Breadboard placement succeeded but no B1 "
+				"item ID was returned."
+			)
+		);
+		return;
+	}
+
+	const BreadboardCsvCpuProbeResult cpuProbeResult =
+		BreadboardCsvSketchBuilder::placeCpuAlignmentProbe(
+			breadboardView,
+			placementResult.boardIds.first()
+		);
+
+	if (!cpuProbeResult.ok) {
+		showBreadboardView();
+
+		FMessageBox::warning(
+			this,
+			tr("CPU Alignment Probe"),
+			tr(
+				"The three breadboards were placed, but the "
+				"CPU alignment probe failed.\n\n%1"
+			)
+				.arg(cpuProbeResult.error)
+		);
+		return;
+	}
+
+	if (!cpuProbeResult.aligned) {
+		showBreadboardView();
+
+		FMessageBox::warning(
+			this,
+			tr("CPU Alignment Probe"),
+			tr(
+				"CPU placement did not meet the alignment tolerance.\n\n"
+				"Pin 1 error: %1\n"
+				"Pin 20 error: %2\n"
+				"Pin 21 error: %3\n"
+				"Pin 40 error: %4"
+			)
+				.arg(cpuProbeResult.pin1Error, 0, 'f', 3)
+				.arg(cpuProbeResult.pin20Error, 0, 'f', 3)
+				.arg(cpuProbeResult.pin21Error, 0, 'f', 3)
+				.arg(cpuProbeResult.pin40Error, 0, 'f', 3)
+		);
+		return;
+	}
+
 	QStringList boardIdLines;
 
 	for (
@@ -521,23 +575,29 @@ void MainWindow::importBreadboardWiringCsv()
 			tr(
 				"\n\n"
 				"The existing Fritzing breadboard was assigned as B1.\n"
-				"B2 and B3 were added successfully.\n\n"
-				"%1\n\n"
-				"One Undo action should remove B2 and B3 "
-				"and leave the original B1 breadboard."
+				"B2 and B3 were added successfully.\n"
+				"The 40-pin CPU alignment probe was placed on B1.\n\n"
+				"%1\n"
+				"CPU probe item ID: %2\n\n"
+				"Undo once to remove the CPU alignment probe.\n"
+				"Undo again to remove B2 and B3 and leave the original B1 breadboard."
 			)
-				.arg(boardIdLines.join("\n"));
+				.arg(boardIdLines.join("\n"))
+				.arg(cpuProbeResult.cpuId);
 	}
 	else {
 		placementMessage =
 			tr(
 				"\n\n"
-				"Three empty RSR 03MB102 breadboards "
-				"were placed successfully.\n\n"
-				"%1\n\n"
-				"One Undo action should remove all three boards."
+				"Three empty RSR 03MB102 breadboards were placed successfully.\n"
+				"The 40-pin CPU alignment probe was placed on B1.\n\n"
+				"%1\n"
+				"CPU probe item ID: %2\n\n"
+				"Undo once to remove the CPU alignment probe.\n"
+				"Undo again to remove all three breadboards."
 			)
-				.arg(boardIdLines.join("\n"));
+				.arg(boardIdLines.join("\n"))
+				.arg(cpuProbeResult.cpuId);
 	}
 
 	FMessageBox::information(

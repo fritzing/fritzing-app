@@ -1,15 +1,19 @@
 #include "breadboardcsvsketchbuilder.h"
 
 #include "../commands.h"
+#include "../connectors/connectoritem.h"
 #include "../items/itembase.h"
+#include "../items/partfactory.h"
 #include "../model/modelpart.h"
 #include "../referencemodel/referencemodel.h"
 #include "../sketch/sketchwidget.h"
 
 #include <QGraphicsItem>
+#include <QLineF>
 #include <QPointF>
 #include <QSet>
 #include <QUndoCommand>
+#include <QUndoStack>
 
 BreadboardCsvPlacementResult
 BreadboardCsvSketchBuilder::placeThreeBreadboards(
@@ -198,6 +202,311 @@ BreadboardCsvSketchBuilder::placeThreeBreadboards(
 			)
 				.arg(result.boardIds.size());
 	}
+
+	return result;
+}
+
+
+BreadboardCsvCpuProbeResult
+BreadboardCsvSketchBuilder::placeCpuAlignmentProbe(
+	SketchWidget *breadboardView,
+	long boardId
+)
+{
+	BreadboardCsvCpuProbeResult result;
+
+	if (breadboardView == nullptr) {
+		result.error =
+			"Breadboard view is not available.";
+
+		return result;
+	}
+
+	ItemBase *board =
+		breadboardView->findItem(boardId);
+
+	if (board == nullptr) {
+		result.error =
+			QString(
+				"B1 breadboard item %1 was not found."
+			)
+				.arg(boardId);
+
+		return result;
+	}
+
+	if (
+		board->moduleID() !=
+		"Breadboard-RSR03MB102-ModuleID"
+	) {
+		result.error =
+			QString(
+				"Item %1 is not the expected "
+				"RSR 03MB102 breadboard."
+			)
+				.arg(boardId);
+
+		return result;
+	}
+
+	const QString moduleId =
+		"generic_ic_dip_v2_40_600mil";
+
+	ReferenceModel *referenceModel =
+		breadboardView->referenceModel();
+
+	if (referenceModel == nullptr) {
+		result.error =
+			"Fritzing reference model is not available.";
+
+		return result;
+	}
+
+	ModelPart *modelPart =
+		referenceModel->retrieveModelPart(moduleId);
+
+	if (modelPart == nullptr) {
+		const QString generatedFzp =
+			PartFactory::getFzpFilename(moduleId);
+
+		if (generatedFzp.isEmpty()) {
+			result.error =
+				QString(
+					"Fritzing could not generate the dynamic "
+					"DIP FZP: %1"
+				)
+					.arg(moduleId);
+
+			return result;
+		}
+
+		modelPart =
+			referenceModel->loadPart(
+				generatedFzp,
+				false
+			);
+	}
+
+	if (modelPart == nullptr) {
+		result.error =
+			QString(
+				"The dynamic DIP FZP was generated, but "
+				"Fritzing could not load it: %1"
+			)
+				.arg(moduleId);
+
+		return result;
+	}
+
+	ConnectorItem *targetPin1 =
+		board->findConnectorItemWithSharedID(
+			"pin1C"
+		);
+
+	ConnectorItem *targetPin20 =
+		board->findConnectorItemWithSharedID(
+			"pin20C"
+		);
+
+	ConnectorItem *targetPin21 =
+		board->findConnectorItemWithSharedID(
+			"pin20G"
+		);
+
+	ConnectorItem *targetPin40 =
+		board->findConnectorItemWithSharedID(
+			"pin1G"
+		);
+
+	if (
+		targetPin1 == nullptr ||
+		targetPin20 == nullptr ||
+		targetPin21 == nullptr ||
+		targetPin40 == nullptr
+	) {
+		result.error =
+			"Could not resolve one or more B1 CPU "
+			"corner coordinates.";
+
+		return result;
+	}
+
+	const ViewLayer::ViewLayerPlacement placement =
+		breadboardView->defaultViewLayerPlacement(
+			modelPart
+		);
+
+	ViewGeometry initialGeometry;
+
+	initialGeometry.setLoc(
+		board->getViewGeometry().loc()
+	);
+
+	const long cpuId =
+		ItemBase::getNextID();
+
+	QUndoStack *stack =
+		breadboardView->undoStack();
+
+	stack->beginMacro(
+		QObject::tr(
+			"Place W65C02 CPU alignment probe"
+		)
+	);
+
+	stack->push(
+		new AddItemCommand(
+			breadboardView,
+			BaseCommand::CrossView,
+			moduleId,
+			placement,
+			initialGeometry,
+			cpuId,
+			false,
+			-1,
+			nullptr
+		)
+	);
+
+	ItemBase *cpu =
+		breadboardView->findItem(cpuId);
+
+	if (cpu == nullptr) {
+		stack->endMacro();
+		stack->undo();
+
+		result.error =
+			"Dynamic 40-pin DIP was generated but "
+			"could not be found in the breadboard view.";
+
+		return result;
+	}
+
+	ConnectorItem *cpuPin1 =
+		cpu->findConnectorItemWithSharedID(
+			"connector0"
+		);
+
+	ConnectorItem *cpuPin20 =
+		cpu->findConnectorItemWithSharedID(
+			"connector19"
+		);
+
+	ConnectorItem *cpuPin21 =
+		cpu->findConnectorItemWithSharedID(
+			"connector20"
+		);
+
+	ConnectorItem *cpuPin40 =
+		cpu->findConnectorItemWithSharedID(
+			"connector39"
+		);
+
+	if (
+		cpuPin1 == nullptr ||
+		cpuPin20 == nullptr ||
+		cpuPin21 == nullptr ||
+		cpuPin40 == nullptr
+	) {
+		stack->endMacro();
+		stack->undo();
+
+		result.error =
+			"Generated 40-pin DIP does not expose "
+			"the expected connector0..connector39 IDs.";
+
+		return result;
+	}
+
+	const QPointF pin1Delta =
+		targetPin1->scenePinPoint() -
+		cpuPin1->scenePinPoint();
+
+	const QPointF pin20Delta =
+		targetPin20->scenePinPoint() -
+		cpuPin20->scenePinPoint();
+
+	const QPointF pin21Delta =
+		targetPin21->scenePinPoint() -
+		cpuPin21->scenePinPoint();
+
+	const QPointF pin40Delta =
+		targetPin40->scenePinPoint() -
+		cpuPin40->scenePinPoint();
+
+	const QPointF delta(
+		(
+			pin1Delta.x() +
+			pin20Delta.x() +
+			pin21Delta.x() +
+			pin40Delta.x()
+		) / 4.0,
+		(
+			pin1Delta.y() +
+			pin20Delta.y() +
+			pin21Delta.y() +
+			pin40Delta.y()
+		) / 4.0
+	);
+
+	ViewGeometry oldGeometry =
+		cpu->getViewGeometry();
+
+	ViewGeometry newGeometry =
+		oldGeometry;
+
+	newGeometry.setLoc(
+		oldGeometry.loc() + delta
+	);
+
+	stack->push(
+		new MoveItemCommand(
+			breadboardView,
+			cpuId,
+			oldGeometry,
+			newGeometry,
+			false,
+			nullptr
+		)
+	);
+
+	result.cpuId = cpuId;
+
+	result.pin1Error =
+		QLineF(
+			cpuPin1->scenePinPoint(),
+			targetPin1->scenePinPoint()
+		).length();
+
+	result.pin20Error =
+		QLineF(
+			cpuPin20->scenePinPoint(),
+			targetPin20->scenePinPoint()
+		).length();
+
+	result.pin21Error =
+		QLineF(
+			cpuPin21->scenePinPoint(),
+			targetPin21->scenePinPoint()
+		).length();
+
+	result.pin40Error =
+		QLineF(
+			cpuPin40->scenePinPoint(),
+			targetPin40->scenePinPoint()
+		).length();
+
+	stack->endMacro();
+
+	const double tolerance = 1.0;
+
+	result.aligned =
+		result.pin1Error <= tolerance &&
+		result.pin20Error <= tolerance &&
+		result.pin21Error <= tolerance &&
+		result.pin40Error <= tolerance;
+
+	result.ok = true;
 
 	return result;
 }

@@ -34,6 +34,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "mainwindow.h"
 #include "breadboardwiringcsvparser.h"
 #include "breadboardcoordinate.h"
+#include <QHash>
 #include "../debugdialog.h"
 #include "../waitpushundostack.h"
 #include "../commands.h"
@@ -235,7 +236,11 @@ void MainWindow::importBreadboardWiringCsv()
 	int coordinateReferences = 0;
 	int validCoordinateReferences = 0;
 	int invalidCoordinateReferences = 0;
+	int resolvedConnectorReferences = 0;
+	int duplicateEndpointReferences = 0;
 	QStringList invalidExamples;
+	QStringList duplicateExamples;
+	QHash<QString, QString> endpointOwners;
 
 	auto validateCoordinate =
 		[&](
@@ -275,7 +280,51 @@ void MainWindow::importBreadboardWiringCsv()
 				return;
 			}
 
+			if (coordinate.connectorId.isEmpty()) {
+				++invalidCoordinateReferences;
+
+				if (invalidExamples.size() < 10) {
+					invalidExamples.append(
+						tr("%1 %2: %3 — coordinate did not resolve to a connector ID")
+							.arg(row.wireId)
+							.arg(side)
+							.arg(coordinateText)
+					);
+				}
+
+				return;
+			}
+
 			++validCoordinateReferences;
+			++resolvedConnectorReferences;
+
+			const QString endpointKey =
+				QString("B%1/%2")
+					.arg(coordinate.board)
+					.arg(coordinate.connectorId);
+
+			const QString owner =
+				QString("%1 %2")
+					.arg(row.wireId)
+					.arg(side);
+
+			if (endpointOwners.contains(endpointKey)) {
+				++duplicateEndpointReferences;
+
+				if (duplicateExamples.size() < 10) {
+					duplicateExamples.append(
+						tr("%1: %2 -> %3 already used by %4")
+							.arg(owner)
+							.arg(coordinateText)
+							.arg(endpointKey)
+							.arg(endpointOwners.value(endpointKey))
+					);
+				}
+
+				return;
+			}
+
+			endpointOwners.insert(endpointKey, owner);
 		};
 
 	for (const BreadboardWiringCsvRow &row : result.rows) {
@@ -322,9 +371,11 @@ void MainWindow::importBreadboardWiringCsv()
 				"Other rows: %3\n\n"
 				"Breadboard coordinate references: %4\n"
 				"Valid coordinates: %5\n"
-				"Invalid coordinates: %6\n\n"
+				"Invalid coordinates: %6\n"
+				"Resolved connector references: %7\n"
+				"Duplicate physical endpoints: %8\n\n"
 				"No sketch changes were made.\n\n"
-				"First problems:\n%7"
+				"First problems:\n%9"
 			)
 				.arg(totalRows)
 				.arg(jumperRows)
@@ -332,6 +383,51 @@ void MainWindow::importBreadboardWiringCsv()
 				.arg(coordinateReferences)
 				.arg(validCoordinateReferences)
 				.arg(invalidCoordinateReferences)
+				.arg(resolvedConnectorReferences)
+				.arg(duplicateEndpointReferences)
+				.arg(details)
+		);
+
+		return;
+	}
+
+	if (duplicateEndpointReferences > 0) {
+		QString details = duplicateExamples.join("\n");
+
+		const int remaining =
+			duplicateEndpointReferences -
+			static_cast<int>(duplicateExamples.size());
+
+		if (remaining > 0) {
+			details +=
+				tr("\n... and %1 more duplicate endpoint(s).")
+					.arg(remaining);
+		}
+
+		FMessageBox::warning(
+			this,
+			tr("Breadboard Wiring CSV"),
+			tr(
+				"CSV coordinates resolved successfully, but duplicate "
+				"physical breadboard endpoints were found.\n\n"
+				"Records: %1\n"
+				"Jumper rows: %2\n"
+				"Other rows: %3\n\n"
+				"Breadboard coordinate references: %4\n"
+				"Valid coordinates: %5\n"
+				"Invalid coordinates: 0\n"
+				"Resolved connector references: %6\n"
+				"Duplicate physical endpoints: %7\n\n"
+				"No sketch changes were made.\n\n"
+				"First duplicates:\n%8"
+			)
+				.arg(totalRows)
+				.arg(jumperRows)
+				.arg(totalRows - jumperRows)
+				.arg(coordinateReferences)
+				.arg(validCoordinateReferences)
+				.arg(resolvedConnectorReferences)
+				.arg(duplicateEndpointReferences)
 				.arg(details)
 		);
 
@@ -342,13 +438,16 @@ void MainWindow::importBreadboardWiringCsv()
 		this,
 		tr("Breadboard Wiring CSV"),
 		tr(
-			"CSV and breadboard coordinates validated successfully.\n\n"
+			"CSV, breadboard coordinates, and connector IDs "
+			"validated successfully.\n\n"
 			"Records: %1\n"
 			"Jumper rows: %2\n"
 			"Other rows: %3\n\n"
 			"Breadboard coordinate references: %4\n"
 			"Valid coordinates: %5\n"
-			"Invalid coordinates: 0\n\n"
+			"Invalid coordinates: 0\n"
+			"Resolved connector references: %6\n"
+			"Duplicate physical endpoints: 0\n\n"
 			"No sketch changes were made."
 		)
 			.arg(totalRows)
@@ -356,6 +455,7 @@ void MainWindow::importBreadboardWiringCsv()
 			.arg(totalRows - jumperRows)
 			.arg(coordinateReferences)
 			.arg(validCoordinateReferences)
+			.arg(resolvedConnectorReferences)
 	);
 
 }

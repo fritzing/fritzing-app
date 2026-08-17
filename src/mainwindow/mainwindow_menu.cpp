@@ -475,8 +475,6 @@ void MainWindow::importBreadboardWiringCsv()
 		return;
 	}
 
-	BreadboardCsvDipFootprint cpuFootprint;
-	bool cpuFootprintFound = false;
 	QStringList dipFootprintLines;
 
 	for (
@@ -498,24 +496,6 @@ void MainWindow::importBreadboardWiringCsv()
 				.arg(footprint.observedPins)
 				.arg(footprint.spacingMil)
 		);
-
-		if (footprint.component == "W65C02") {
-			cpuFootprint = footprint;
-			cpuFootprintFound = true;
-		}
-	}
-
-	if (!cpuFootprintFound) {
-		FMessageBox::warning(
-			this,
-			tr("Breadboard Wiring CSV"),
-			tr(
-				"The generic DIP resolver succeeded, but "
-				"did not return a W65C02 footprint."
-			)
-		);
-
-		return;
 	}
 
 	const QString dipFootprintSummary =
@@ -533,8 +513,8 @@ void MainWindow::importBreadboardWiringCsv()
 				dipFootprintSummary +
 				tr(
 					"\n\n"
-					"Place three empty RSR 03MB102 "
-					"breadboards now?"
+					"Place the three RSR 03MB102 breadboards "
+					"and all 14 resolved DIP parts now?"
 				),
 			FMessageBox::Yes | FMessageBox::No,
 			FMessageBox::No
@@ -581,49 +561,50 @@ void MainWindow::importBreadboardWiringCsv()
 		return;
 	}
 
-	const BreadboardCsvCpuProbeResult cpuProbeResult =
-		BreadboardCsvSketchBuilder::placeCpuAlignmentProbe(
+	const BreadboardCsvDipPlacementResult dipPlacementResult =
+		BreadboardCsvSketchBuilder::placeDipFootprints(
 			breadboardView,
-			placementResult.boardIds.first(),
-			cpuFootprint.pin1ConnectorId,
-			cpuFootprint.pinHalfConnectorId,
-			cpuFootprint.pinHalfPlus1ConnectorId,
-			cpuFootprint.pinLastConnectorId
+			placementResult.boardIds,
+			dipFootprintResult.footprints
 		);
 
-	if (!cpuProbeResult.ok) {
+	if (!dipPlacementResult.ok) {
 		showBreadboardView();
 
 		FMessageBox::warning(
 			this,
-			tr("CPU Alignment Probe"),
+			tr("DIP Placement"),
 			tr(
-				"The three breadboards were placed, but the "
-				"CPU alignment probe failed.\n\n%1"
+				"The breadboards were placed, but "
+				"DIP placement failed.\n\n%1"
 			)
-				.arg(cpuProbeResult.error)
+				.arg(dipPlacementResult.error)
 		);
+
 		return;
 	}
 
-	if (!cpuProbeResult.aligned) {
+	if (!dipPlacementResult.aligned) {
 		showBreadboardView();
 
 		FMessageBox::warning(
 			this,
-			tr("CPU Alignment Probe"),
+			tr("DIP Placement"),
 			tr(
-				"CPU placement did not meet the alignment tolerance.\n\n"
-				"Pin 1 error: %1\n"
-				"Pin 20 error: %2\n"
-				"Pin 21 error: %3\n"
-				"Pin 40 error: %4"
+				"One or more DIP parts exceeded the "
+				"alignment tolerance.\n\n"
+				"Worst component: %1\n"
+				"Maximum corner error: %2"
 			)
-				.arg(cpuProbeResult.pin1Error, 0, 'f', 3)
-				.arg(cpuProbeResult.pin20Error, 0, 'f', 3)
-				.arg(cpuProbeResult.pin21Error, 0, 'f', 3)
-				.arg(cpuProbeResult.pin40Error, 0, 'f', 3)
+				.arg(dipPlacementResult.worstComponent)
+				.arg(
+					dipPlacementResult.maxCornerError,
+					0,
+					'f',
+					3
+				)
 		);
+
 		return;
 	}
 
@@ -643,6 +624,30 @@ void MainWindow::importBreadboardWiringCsv()
 
 	showBreadboardView();
 
+	QStringList dipItemIdLines;
+
+	for (
+		int index = 0;
+		index < dipPlacementResult.itemIds.size() &&
+		index < dipFootprintResult.footprints.size();
+		++index
+	) {
+		dipItemIdLines.append(
+			tr("%1 item ID: %2")
+				.arg(
+					dipFootprintResult
+						.footprints
+						.at(index)
+						.component
+				)
+				.arg(
+					dipPlacementResult
+						.itemIds
+						.at(index)
+				)
+		);
+	}
+
 	QString placementMessage;
 
 	if (placementResult.reusedExistingBoard) {
@@ -651,28 +656,33 @@ void MainWindow::importBreadboardWiringCsv()
 				"\n\n"
 				"The existing Fritzing breadboard was assigned as B1.\n"
 				"B2 and B3 were added successfully.\n"
-				"The 40-pin CPU alignment probe was placed on B1.\n\n"
-				"%1\n"
-				"CPU probe item ID: %2\n\n"
-				"Undo once to remove the CPU alignment probe.\n"
-				"Undo again to remove B2 and B3 and leave the original B1 breadboard."
+				"%1 generic DIP parts were placed from the resolved "
+				"CSV footprints.\n\n"
+				"%2\n\n"
+				"%3\n\n"
+				"Undo once to remove all placed DIP parts.\n"
+				"Undo again to remove B2 and B3 and leave the "
+				"original B1 breadboard."
 			)
+				.arg(dipPlacementResult.partsPlaced)
 				.arg(boardIdLines.join("\n"))
-				.arg(cpuProbeResult.cpuId);
+				.arg(dipItemIdLines.join("\n"));
 	}
 	else {
 		placementMessage =
 			tr(
 				"\n\n"
-				"Three empty RSR 03MB102 breadboards were placed successfully.\n"
-				"The 40-pin CPU alignment probe was placed on B1.\n\n"
-				"%1\n"
-				"CPU probe item ID: %2\n\n"
-				"Undo once to remove the CPU alignment probe.\n"
+				"Three RSR 03MB102 breadboards were placed successfully.\n"
+				"%1 generic DIP parts were placed from the resolved "
+				"CSV footprints.\n\n"
+				"%2\n\n"
+				"%3\n\n"
+				"Undo once to remove all placed DIP parts.\n"
 				"Undo again to remove all three breadboards."
 			)
+				.arg(dipPlacementResult.partsPlaced)
 				.arg(boardIdLines.join("\n"))
-				.arg(cpuProbeResult.cpuId);
+				.arg(dipItemIdLines.join("\n"));
 	}
 
 	FMessageBox::information(

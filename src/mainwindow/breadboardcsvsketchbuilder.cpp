@@ -207,17 +207,14 @@ BreadboardCsvSketchBuilder::placeThreeBreadboards(
 }
 
 
-BreadboardCsvCpuProbeResult
-BreadboardCsvSketchBuilder::placeCpuAlignmentProbe(
+BreadboardCsvDipPlacementResult
+BreadboardCsvSketchBuilder::placeDipFootprints(
 	SketchWidget *breadboardView,
-	long boardId,
-	const QString &pin1ConnectorId,
-	const QString &pin20ConnectorId,
-	const QString &pin21ConnectorId,
-	const QString &pin40ConnectorId
+	const QList<long> &boardIds,
+	const QList<BreadboardCsvDipFootprint> &footprints
 )
 {
-	BreadboardCsvCpuProbeResult result;
+	BreadboardCsvDipPlacementResult result;
 
 	if (breadboardView == nullptr) {
 		result.error =
@@ -226,35 +223,23 @@ BreadboardCsvSketchBuilder::placeCpuAlignmentProbe(
 		return result;
 	}
 
-	ItemBase *board =
-		breadboardView->findItem(boardId);
-
-	if (board == nullptr) {
+	if (boardIds.size() < 3) {
 		result.error =
 			QString(
-				"B1 breadboard item %1 was not found."
+				"Expected three breadboard item IDs, "
+				"but received %1."
 			)
-				.arg(boardId);
+				.arg(boardIds.size());
 
 		return result;
 	}
 
-	if (
-		board->moduleID() !=
-		"Breadboard-RSR03MB102-ModuleID"
-	) {
+	if (footprints.isEmpty()) {
 		result.error =
-			QString(
-				"Item %1 is not the expected "
-				"RSR 03MB102 breadboard."
-			)
-				.arg(boardId);
+			"No resolved DIP footprints were supplied.";
 
 		return result;
 	}
-
-	const QString moduleId =
-		"generic_ic_dip_v2_40_600mil";
 
 	ReferenceModel *referenceModel =
 		breadboardView->referenceModel();
@@ -266,249 +251,469 @@ BreadboardCsvSketchBuilder::placeCpuAlignmentProbe(
 		return result;
 	}
 
-	ModelPart *modelPart =
-		referenceModel->retrieveModelPart(moduleId);
+	QUndoStack *stack =
+		breadboardView->undoStack();
 
-	if (modelPart == nullptr) {
-		const QString generatedFzp =
-			PartFactory::getFzpFilename(moduleId);
+	if (stack == nullptr) {
+		result.error =
+			"Fritzing undo stack is not available.";
 
-		if (generatedFzp.isEmpty()) {
+		return result;
+	}
+
+	struct PreparedDip
+	{
+		BreadboardCsvDipFootprint footprint;
+
+		ItemBase *board = nullptr;
+		ModelPart *modelPart = nullptr;
+
+		ConnectorItem *targetPin1 = nullptr;
+		ConnectorItem *targetPinHalf = nullptr;
+		ConnectorItem *targetPinHalfPlus1 = nullptr;
+		ConnectorItem *targetPinLast = nullptr;
+
+		QString moduleId;
+	};
+
+	QList<PreparedDip> preparedDips;
+
+	// --------------------------------------------------------
+	// PRE-FLIGHT EVERYTHING BEFORE MUTATING THE SKETCH.
+	// --------------------------------------------------------
+
+	for (
+		const BreadboardCsvDipFootprint &footprint :
+		footprints
+	) {
+		if (!footprint.ok) {
 			result.error =
 				QString(
-					"Fritzing could not generate the dynamic "
-					"DIP FZP: %1"
+					"%1 does not contain a valid "
+					"resolved DIP footprint."
 				)
-					.arg(moduleId);
+					.arg(footprint.component);
 
 			return result;
 		}
 
-		modelPart =
-			referenceModel->loadPart(
-				generatedFzp,
-				false
-			);
-	}
+		if (
+			footprint.board < 1 ||
+			footprint.board > boardIds.size()
+		) {
+			result.error =
+				QString(
+					"%1 resolved to invalid breadboard B%2."
+				)
+					.arg(footprint.component)
+					.arg(footprint.board);
 
-	if (modelPart == nullptr) {
-		result.error =
+			return result;
+		}
+
+		if (
+			footprint.pinCount < 2 ||
+			(footprint.pinCount % 2) != 0
+		) {
+			result.error =
+				QString(
+					"%1 has invalid DIP pin count %2."
+				)
+					.arg(footprint.component)
+					.arg(footprint.pinCount);
+
+			return result;
+		}
+
+		if (
+			footprint.spacingMil != 300 &&
+			footprint.spacingMil != 600
+		) {
+			result.error =
+				QString(
+					"%1 has unsupported DIP spacing %2 mil."
+				)
+					.arg(footprint.component)
+					.arg(footprint.spacingMil);
+
+			return result;
+		}
+
+		const long boardId =
+			boardIds.at(footprint.board - 1);
+
+		ItemBase *board =
+			breadboardView->findItem(boardId);
+
+		if (board == nullptr) {
+			result.error =
+				QString(
+					"%1 requires B%2, but breadboard "
+					"item %3 was not found."
+				)
+					.arg(footprint.component)
+					.arg(footprint.board)
+					.arg(boardId);
+
+			return result;
+		}
+
+		if (
+			board->moduleID() !=
+			"Breadboard-RSR03MB102-ModuleID"
+		) {
+			result.error =
+				QString(
+					"%1 requires B%2, but item %3 is "
+					"not the expected RSR 03MB102 breadboard."
+				)
+					.arg(footprint.component)
+					.arg(footprint.board)
+					.arg(boardId);
+
+			return result;
+		}
+
+		const QString moduleId =
 			QString(
-				"The dynamic DIP FZP was generated, but "
-				"Fritzing could not load it: %1"
+				"generic_ic_dip_v2_%1_%2mil"
 			)
-				.arg(moduleId);
+				.arg(footprint.pinCount)
+				.arg(footprint.spacingMil);
 
-		return result;
+		ModelPart *modelPart =
+			referenceModel->retrieveModelPart(
+				moduleId
+			);
+
+		if (modelPart == nullptr) {
+			const QString generatedFzp =
+				PartFactory::getFzpFilename(
+					moduleId
+				);
+
+			if (generatedFzp.isEmpty()) {
+				result.error =
+					QString(
+						"Fritzing could not generate "
+						"%1 for %2."
+					)
+						.arg(moduleId)
+						.arg(footprint.component);
+
+				return result;
+			}
+
+			modelPart =
+				referenceModel->loadPart(
+					generatedFzp,
+					false
+				);
+		}
+
+		if (modelPart == nullptr) {
+			result.error =
+				QString(
+					"Fritzing generated but could not "
+					"load %1 for %2."
+				)
+					.arg(moduleId)
+					.arg(footprint.component);
+
+			return result;
+		}
+
+		ConnectorItem *targetPin1 =
+			board->findConnectorItemWithSharedID(
+				footprint.pin1ConnectorId
+			);
+
+		ConnectorItem *targetPinHalf =
+			board->findConnectorItemWithSharedID(
+				footprint.pinHalfConnectorId
+			);
+
+		ConnectorItem *targetPinHalfPlus1 =
+			board->findConnectorItemWithSharedID(
+				footprint.pinHalfPlus1ConnectorId
+			);
+
+		ConnectorItem *targetPinLast =
+			board->findConnectorItemWithSharedID(
+				footprint.pinLastConnectorId
+			);
+
+		if (
+			targetPin1 == nullptr ||
+			targetPinHalf == nullptr ||
+			targetPinHalfPlus1 == nullptr ||
+			targetPinLast == nullptr
+		) {
+			result.error =
+				QString(
+					"Could not resolve one or more "
+					"breadboard corner connectors for %1."
+				)
+					.arg(footprint.component);
+
+			return result;
+		}
+
+		PreparedDip prepared;
+
+		prepared.footprint =
+			footprint;
+
+		prepared.board =
+			board;
+
+		prepared.modelPart =
+			modelPart;
+
+		prepared.targetPin1 =
+			targetPin1;
+
+		prepared.targetPinHalf =
+			targetPinHalf;
+
+		prepared.targetPinHalfPlus1 =
+			targetPinHalfPlus1;
+
+		prepared.targetPinLast =
+			targetPinLast;
+
+		prepared.moduleId =
+			moduleId;
+
+		preparedDips.append(
+			prepared
+		);
 	}
 
-	ConnectorItem *targetPin1 =
-		board->findConnectorItemWithSharedID(
-			pin1ConnectorId
-		);
-
-	ConnectorItem *targetPin20 =
-		board->findConnectorItemWithSharedID(
-			pin20ConnectorId
-		);
-
-	ConnectorItem *targetPin21 =
-		board->findConnectorItemWithSharedID(
-			pin21ConnectorId
-		);
-
-	ConnectorItem *targetPin40 =
-		board->findConnectorItemWithSharedID(
-			pin40ConnectorId
-		);
-
-	if (
-		targetPin1 == nullptr ||
-		targetPin20 == nullptr ||
-		targetPin21 == nullptr ||
-		targetPin40 == nullptr
-	) {
-		result.error =
-			"Could not resolve one or more CSV-derived "
-			"CPU footprint connector IDs.";
-
-		return result;
-	}
-
-	const ViewLayer::ViewLayerPlacement placement =
-		breadboardView->defaultViewLayerPlacement(
-			modelPart
-		);
-
-	ViewGeometry initialGeometry;
-
-	initialGeometry.setLoc(
-		board->getViewGeometry().loc()
-	);
-
-	const long cpuId =
-		ItemBase::getNextID();
-
-	QUndoStack *stack =
-		breadboardView->undoStack();
+	// --------------------------------------------------------
+	// ALL PREFLIGHT CHECKS PASSED.
+	// PLACE EVERY DIP AS ONE UNDO TRANSACTION.
+	// --------------------------------------------------------
 
 	stack->beginMacro(
 		QObject::tr(
-			"Place W65C02 CPU alignment probe"
+			"Place DIP parts from wiring CSV"
 		)
 	);
 
-	stack->push(
-		new AddItemCommand(
-			breadboardView,
-			BaseCommand::CrossView,
-			moduleId,
-			placement,
-			initialGeometry,
-			cpuId,
-			false,
-			-1,
-			nullptr
-		)
-	);
+	for (const PreparedDip &prepared : preparedDips) {
+		const BreadboardCsvDipFootprint &footprint =
+			prepared.footprint;
 
-	ItemBase *cpu =
-		breadboardView->findItem(cpuId);
+		const ViewLayer::ViewLayerPlacement placement =
+			breadboardView->defaultViewLayerPlacement(
+				prepared.modelPart
+			);
 
-	if (cpu == nullptr) {
-		stack->endMacro();
-		stack->undo();
+		ViewGeometry initialGeometry;
 
-		result.error =
-			"Dynamic 40-pin DIP was generated but "
-			"could not be found in the breadboard view.";
+		initialGeometry.setLoc(
+			prepared.board->getViewGeometry().loc()
+		);
 
-		return result;
+		const long itemId =
+			ItemBase::getNextID();
+
+		stack->push(
+			new AddItemCommand(
+				breadboardView,
+				BaseCommand::CrossView,
+				prepared.moduleId,
+				placement,
+				initialGeometry,
+				itemId,
+				false,
+				-1,
+				nullptr
+			)
+		);
+
+		ItemBase *dip =
+			breadboardView->findItem(itemId);
+
+		if (dip == nullptr) {
+			stack->endMacro();
+			stack->undo();
+
+			result.error =
+				QString(
+					"%1 was added but could not be "
+					"found in the breadboard view."
+				)
+					.arg(footprint.component);
+
+			return result;
+		}
+
+		const int halfPins =
+			footprint.pinCount / 2;
+
+		const QString dipPin1Id =
+			"connector0";
+
+		const QString dipPinHalfId =
+			QString("connector%1")
+				.arg(halfPins - 1);
+
+		const QString dipPinHalfPlus1Id =
+			QString("connector%1")
+				.arg(halfPins);
+
+		const QString dipPinLastId =
+			QString("connector%1")
+				.arg(footprint.pinCount - 1);
+
+		ConnectorItem *dipPin1 =
+			dip->findConnectorItemWithSharedID(
+				dipPin1Id
+			);
+
+		ConnectorItem *dipPinHalf =
+			dip->findConnectorItemWithSharedID(
+				dipPinHalfId
+			);
+
+		ConnectorItem *dipPinHalfPlus1 =
+			dip->findConnectorItemWithSharedID(
+				dipPinHalfPlus1Id
+			);
+
+		ConnectorItem *dipPinLast =
+			dip->findConnectorItemWithSharedID(
+				dipPinLastId
+			);
+
+		if (
+			dipPin1 == nullptr ||
+			dipPinHalf == nullptr ||
+			dipPinHalfPlus1 == nullptr ||
+			dipPinLast == nullptr
+		) {
+			stack->endMacro();
+			stack->undo();
+
+			result.error =
+				QString(
+					"%1 does not expose the expected "
+					"DIP connector IDs."
+				)
+					.arg(footprint.component);
+
+			return result;
+		}
+
+		const QPointF pin1Delta =
+			prepared.targetPin1->scenePinPoint() -
+			dipPin1->scenePinPoint();
+
+		const QPointF pinHalfDelta =
+			prepared.targetPinHalf->scenePinPoint() -
+			dipPinHalf->scenePinPoint();
+
+		const QPointF pinHalfPlus1Delta =
+			prepared.targetPinHalfPlus1->scenePinPoint() -
+			dipPinHalfPlus1->scenePinPoint();
+
+		const QPointF pinLastDelta =
+			prepared.targetPinLast->scenePinPoint() -
+			dipPinLast->scenePinPoint();
+
+		const QPointF delta(
+			(
+				pin1Delta.x() +
+				pinHalfDelta.x() +
+				pinHalfPlus1Delta.x() +
+				pinLastDelta.x()
+			) / 4.0,
+			(
+				pin1Delta.y() +
+				pinHalfDelta.y() +
+				pinHalfPlus1Delta.y() +
+				pinLastDelta.y()
+			) / 4.0
+		);
+
+		ViewGeometry oldGeometry =
+			dip->getViewGeometry();
+
+		ViewGeometry newGeometry =
+			oldGeometry;
+
+		newGeometry.setLoc(
+			oldGeometry.loc() + delta
+		);
+
+		stack->push(
+			new MoveItemCommand(
+				breadboardView,
+				itemId,
+				oldGeometry,
+				newGeometry,
+				false,
+				nullptr
+			)
+		);
+
+		const double pin1Error =
+			QLineF(
+				dipPin1->scenePinPoint(),
+				prepared.targetPin1->scenePinPoint()
+			).length();
+
+		const double pinHalfError =
+			QLineF(
+				dipPinHalf->scenePinPoint(),
+				prepared.targetPinHalf->scenePinPoint()
+			).length();
+
+		const double pinHalfPlus1Error =
+			QLineF(
+				dipPinHalfPlus1->scenePinPoint(),
+				prepared.targetPinHalfPlus1->scenePinPoint()
+			).length();
+
+		const double pinLastError =
+			QLineF(
+				dipPinLast->scenePinPoint(),
+				prepared.targetPinLast->scenePinPoint()
+			).length();
+
+		const double errors[] = {
+			pin1Error,
+			pinHalfError,
+			pinHalfPlus1Error,
+			pinLastError
+		};
+
+		for (double error : errors) {
+			if (error > result.maxCornerError) {
+				result.maxCornerError =
+					error;
+
+				result.worstComponent =
+					footprint.component;
+			}
+		}
+
+		result.itemIds.append(
+			itemId
+		);
 	}
-
-	ConnectorItem *cpuPin1 =
-		cpu->findConnectorItemWithSharedID(
-			"connector0"
-		);
-
-	ConnectorItem *cpuPin20 =
-		cpu->findConnectorItemWithSharedID(
-			"connector19"
-		);
-
-	ConnectorItem *cpuPin21 =
-		cpu->findConnectorItemWithSharedID(
-			"connector20"
-		);
-
-	ConnectorItem *cpuPin40 =
-		cpu->findConnectorItemWithSharedID(
-			"connector39"
-		);
-
-	if (
-		cpuPin1 == nullptr ||
-		cpuPin20 == nullptr ||
-		cpuPin21 == nullptr ||
-		cpuPin40 == nullptr
-	) {
-		stack->endMacro();
-		stack->undo();
-
-		result.error =
-			"Generated 40-pin DIP does not expose "
-			"the expected connector0..connector39 IDs.";
-
-		return result;
-	}
-
-	const QPointF pin1Delta =
-		targetPin1->scenePinPoint() -
-		cpuPin1->scenePinPoint();
-
-	const QPointF pin20Delta =
-		targetPin20->scenePinPoint() -
-		cpuPin20->scenePinPoint();
-
-	const QPointF pin21Delta =
-		targetPin21->scenePinPoint() -
-		cpuPin21->scenePinPoint();
-
-	const QPointF pin40Delta =
-		targetPin40->scenePinPoint() -
-		cpuPin40->scenePinPoint();
-
-	const QPointF delta(
-		(
-			pin1Delta.x() +
-			pin20Delta.x() +
-			pin21Delta.x() +
-			pin40Delta.x()
-		) / 4.0,
-		(
-			pin1Delta.y() +
-			pin20Delta.y() +
-			pin21Delta.y() +
-			pin40Delta.y()
-		) / 4.0
-	);
-
-	ViewGeometry oldGeometry =
-		cpu->getViewGeometry();
-
-	ViewGeometry newGeometry =
-		oldGeometry;
-
-	newGeometry.setLoc(
-		oldGeometry.loc() + delta
-	);
-
-	stack->push(
-		new MoveItemCommand(
-			breadboardView,
-			cpuId,
-			oldGeometry,
-			newGeometry,
-			false,
-			nullptr
-		)
-	);
-
-	result.cpuId = cpuId;
-
-	result.pin1Error =
-		QLineF(
-			cpuPin1->scenePinPoint(),
-			targetPin1->scenePinPoint()
-		).length();
-
-	result.pin20Error =
-		QLineF(
-			cpuPin20->scenePinPoint(),
-			targetPin20->scenePinPoint()
-		).length();
-
-	result.pin21Error =
-		QLineF(
-			cpuPin21->scenePinPoint(),
-			targetPin21->scenePinPoint()
-		).length();
-
-	result.pin40Error =
-		QLineF(
-			cpuPin40->scenePinPoint(),
-			targetPin40->scenePinPoint()
-		).length();
 
 	stack->endMacro();
+
+	result.partsPlaced =
+		result.itemIds.size();
 
 	const double tolerance = 1.0;
 
 	result.aligned =
-		result.pin1Error <= tolerance &&
-		result.pin20Error <= tolerance &&
-		result.pin21Error <= tolerance &&
-		result.pin40Error <= tolerance;
+		result.maxCornerError <= tolerance;
 
 	result.ok = true;
 

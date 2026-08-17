@@ -355,6 +355,24 @@ BreadboardCsvDipFootprintResolver::resolveAll(
 			return result;
 		}
 
+		/*
+		 * CSV component endpoints identify electrically equivalent
+		 * breadboard-strip holes, not necessarily the physical hole
+		 * occupied by the DIP leg.
+		 *
+		 * On the BB830, the resolved 300 mil devices consistently
+		 * reference D/G strip holes. A physical 300 mil DIP spans
+		 * the center trench on E/F. Preserve the CSV-derived board
+		 * and columns, but normalize the actual package leg rows.
+		 *
+		 * 600 mil footprints retain their CSV-derived rows; their
+		 * B/F geometry has already been validated experimentally.
+		 */
+		if (definition.spacingMil == 300) {
+			bestPin1Row = QChar('E');
+			bestOppositeRow = QChar('F');
+		}
+
 		footprint.board =
 			bestBoard;
 

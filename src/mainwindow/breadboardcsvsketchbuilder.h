@@ -1,6 +1,8 @@
 #ifndef BREADBOARDCSVSKETCHBUILDER_H
 #define BREADBOARDCSVSKETCHBUILDER_H
 
+#include "breadboardcsvdipfootprintresolver.h"
+
 #include <QList>
 #include <QString>
 
@@ -13,17 +15,17 @@ struct BreadboardCsvPlacementResult
 	bool reusedExistingBoard = false;
 };
 
-struct BreadboardCsvCpuProbeResult
+struct BreadboardCsvDipPlacementResult
 {
 	bool ok = false;
 	bool aligned = false;
 	QString error;
-	long cpuId = -1;
 
-	double pin1Error = 0.0;
-	double pin20Error = 0.0;
-	double pin21Error = 0.0;
-	double pin40Error = 0.0;
+	QList<long> itemIds;
+	int partsPlaced = 0;
+
+	double maxCornerError = 0.0;
+	QString worstComponent;
 };
 
 class SketchWidget;
@@ -35,13 +37,10 @@ public:
 		SketchWidget *breadboardView
 	);
 
-	static BreadboardCsvCpuProbeResult placeCpuAlignmentProbe(
+	static BreadboardCsvDipPlacementResult placeDipFootprints(
 		SketchWidget *breadboardView,
-		long boardId,
-		const QString &pin1ConnectorId,
-		const QString &pin20ConnectorId,
-		const QString &pin21ConnectorId,
-		const QString &pin40ConnectorId
+		const QList<long> &boardIds,
+		const QList<BreadboardCsvDipFootprint> &footprints
 	);
 };
 

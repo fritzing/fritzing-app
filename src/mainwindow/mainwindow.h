@@ -304,6 +304,7 @@ public Q_SLOTS:
 
 protected Q_SLOTS:
 	void mainLoad();
+	void importBreadboardWiringCsv();
 	void revert();
 	void openRecentOrExampleFile();
 	void openRecentOrExampleFile(const QString & filename, const QString & actionText);
@@ -761,6 +762,7 @@ protected:
 	QMenu *m_fileMenu = nullptr;
 	QAction *m_newAct = nullptr;
 	QAction *m_openAct = nullptr;
+	QAction *m_importBreadboardWiringCsvAct = nullptr;
 	QAction *m_revertAct = nullptr;
 	QMenu *m_openRecentFileMenu = nullptr;
 	QAction *m_openRecentFileActs[MaxRecentFiles] = { nullptr };

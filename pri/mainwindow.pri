@@ -13,6 +13,14 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************/
 HEADERS += \
+	src/mainwindow/breadboardcoordinate.h \
+	src/mainwindow/breadboardcsvimportdialog.h \
+	src/mainwindow/breadboardcsvdipfootprintresolver.h \
+	src/mainwindow/breadboardcsvdipphysicalresolver.h \
+	src/mainwindow/breadboardcsvcomponentresolver.h \
+	src/mainwindow/breadboardcsvlibrepcbprovider.h \
+	src/mainwindow/breadboardcsvsketchbuilder.h \
+	src/mainwindow/breadboardwiringcsvparser.h \
 	src/mainwindow/fprobeactions.h \
     src/mainwindow/fdockwidget.h \
     src/mainwindow/fritzingwindow.h \
@@ -25,6 +33,14 @@ HEADERS += \
     src/mainwindow/fprobefocuswidget.h \
 
 SOURCES += \
+	src/mainwindow/breadboardcoordinate.cpp \
+	src/mainwindow/breadboardcsvimportdialog.cpp \
+	src/mainwindow/breadboardcsvdipfootprintresolver.cpp \
+	src/mainwindow/breadboardcsvdipphysicalresolver.cpp \
+	src/mainwindow/breadboardcsvcomponentresolver.cpp \
+	src/mainwindow/breadboardcsvlibrepcbprovider.cpp \
+	src/mainwindow/breadboardcsvsketchbuilder.cpp \
+	src/mainwindow/breadboardwiringcsvparser.cpp \
 	src/mainwindow/fprobeactions.cpp \
     src/mainwindow/fdockwidget.cpp \
     src/mainwindow/fritzingwindow.cpp \

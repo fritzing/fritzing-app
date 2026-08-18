@@ -35,6 +35,7 @@ DEFINES += BREADBOARDCSV_TEST_LIBRARIES_ROOT=\\\"$$absolute_path(../../../resour
 
 SOURCES += test_breadboardcsv.cpp \
     ../../../src/mainwindow/breadboardcoordinate.cpp \
+    ../../../src/mainwindow/breadboardwiringcsvparser.cpp \
     ../../../src/mainwindow/breadboardcsvdipfootprintresolver.cpp \
     ../../../src/mainwindow/breadboardcsvdipphysicalresolver.cpp \
     ../../../src/mainwindow/breadboardcsvlibrepcbprovider.cpp

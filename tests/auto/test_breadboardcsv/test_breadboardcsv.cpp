@@ -4,6 +4,7 @@
 #include "mainwindow/breadboardcsvdipfootprintresolver.h"
 #include "mainwindow/breadboardcsvdipphysicalresolver.h"
 #include "mainwindow/breadboardcsvlibrepcbprovider.h"
+#include "mainwindow/breadboardwiringcsvparser.h"
 
 #include <QCoreApplication>
 #include <QDir>
@@ -190,7 +191,349 @@ bool copyDirectoryTree(
         return true;
 }
 
+QString writeTemporaryCsv(
+        QTemporaryDir &directory,
+        const QByteArray &data,
+        const QString &name = QStringLiteral("wiring.csv")
+)
+{
+        const QString path =
+                QDir(directory.path()).filePath(name);
+
+        QFile file(path);
+
+        if (!file.open(QIODevice::WriteOnly)) {
+                return QString();
+        }
+
+        if (file.write(data) != data.size()) {
+                return QString();
+        }
+
+        file.close();
+        return path;
+}
+
 } // namespace
+
+BOOST_AUTO_TEST_CASE(csv_mapping_accepts_reordered_alias_columns)
+{
+        QTemporaryDir directory;
+
+        BOOST_REQUIRE(directory.isValid());
+
+        QByteArray data(
+                "Destination Pin,Net Name,Source Component,"
+                "Wire Colour,Destination Component,Source Pin,"
+                "Comments,Connection ID\n"
+                "B1-A1,CLK,W65C02 pin 1,Red,Clock Rail,"
+                "B1-F1,CPU clock,J42\n"
+        );
+
+        data.prepend(QByteArray::fromHex("efbbbf"));
+
+        const QString path =
+                writeTemporaryCsv(
+                        directory,
+                        data
+                );
+
+        BOOST_REQUIRE(!path.isEmpty());
+
+        const BreadboardWiringCsvSource source =
+                BreadboardWiringCsvParser::parseSource(path);
+
+        BOOST_REQUIRE_MESSAGE(source.ok, printable(source.error));
+        BOOST_CHECK(source.delimiter == QChar(','));
+        BOOST_CHECK_EQUAL(printable(source.encoding), "UTF-8 with BOM");
+        BOOST_CHECK_EQUAL(source.columnCount, 8);
+
+        const BreadboardWiringCsvColumnMapping mapping =
+                BreadboardWiringCsvParser::suggestMapping(
+                        source,
+                        true
+                );
+
+        BOOST_CHECK_EQUAL(mapping.wireIdColumn, 7);
+        BOOST_CHECK_EQUAL(mapping.signalColumn, 1);
+        BOOST_CHECK_EQUAL(mapping.colorColumn, 3);
+        BOOST_CHECK_EQUAL(mapping.fromColumn, 2);
+        BOOST_CHECK_EQUAL(mapping.fromTerminalColumn, 5);
+        BOOST_CHECK_EQUAL(mapping.toColumn, 4);
+        BOOST_CHECK_EQUAL(mapping.toTerminalColumn, 0);
+        BOOST_CHECK_EQUAL(mapping.noteColumn, 6);
+
+        const BreadboardWiringCsvResult result =
+                BreadboardWiringCsvParser::applyMapping(
+                        source,
+                        mapping
+                );
+
+        BOOST_REQUIRE_MESSAGE(result.ok, printable(result.error));
+        BOOST_REQUIRE_EQUAL(result.rows.size(), 1);
+        BOOST_CHECK_EQUAL(printable(result.rows.first().wireId), "J42");
+        BOOST_CHECK_EQUAL(printable(result.rows.first().signal), "CLK");
+        BOOST_CHECK_EQUAL(printable(result.rows.first().color), "Red");
+        BOOST_CHECK_EQUAL(printable(result.rows.first().from), "W65C02 pin 1");
+        BOOST_CHECK_EQUAL(printable(result.rows.first().fromTerminal), "B1-F1");
+        BOOST_CHECK_EQUAL(printable(result.rows.first().to), "Clock Rail");
+        BOOST_CHECK_EQUAL(printable(result.rows.first().toTerminal), "B1-A1");
+        BOOST_CHECK_EQUAL(printable(result.rows.first().note), "CPU clock");
+}
+
+BOOST_AUTO_TEST_CASE(csv_mapping_detects_semicolon_and_multiline_quotes)
+{
+        QTemporaryDir directory;
+
+        BOOST_REQUIRE(directory.isValid());
+
+        const QString path =
+                writeTemporaryCsv(
+                        directory,
+                        QByteArray(
+                                "Wire ID;Signal;Color;From;From terminal;To;"
+                                "To terminal;Note\n"
+                                "J1;CLK;Blue;CPU pin 1;B1-F1;Clock Rail;B1-A1;"
+                                "\"first; note\nsecond line\"\n"
+                        )
+                );
+
+        BOOST_REQUIRE(!path.isEmpty());
+
+        const BreadboardWiringCsvSource source =
+                BreadboardWiringCsvParser::parseSource(path);
+
+        BOOST_REQUIRE_MESSAGE(source.ok, printable(source.error));
+        BOOST_CHECK(source.delimiter == QChar(';'));
+        BOOST_CHECK_EQUAL(printable(source.encoding), "UTF-8");
+        BOOST_REQUIRE_EQUAL(source.records.size(), 2);
+        BOOST_CHECK_EQUAL(source.records.at(1).size(), 8);
+
+        const BreadboardWiringCsvColumnMapping mapping =
+                BreadboardWiringCsvParser::suggestMapping(
+                        source,
+                        true
+                );
+
+        const BreadboardWiringCsvResult result =
+                BreadboardWiringCsvParser::applyMapping(
+                        source,
+                        mapping
+                );
+
+        BOOST_REQUIRE_MESSAGE(result.ok, printable(result.error));
+        BOOST_REQUIRE_EQUAL(result.rows.size(), 1);
+        BOOST_CHECK_EQUAL(
+                printable(result.rows.first().note),
+                "first; note\nsecond line"
+        );
+}
+
+BOOST_AUTO_TEST_CASE(csv_mapping_supports_headerless_files)
+{
+        QTemporaryDir directory;
+
+        BOOST_REQUIRE(directory.isValid());
+
+        const QString path =
+                writeTemporaryCsv(
+                        directory,
+                        QByteArray(
+                                "J9,DATA,Green,CPU pin 2,B1-F2,Data Rail,B1-A2,test\n"
+                        )
+                );
+
+        BOOST_REQUIRE(!path.isEmpty());
+
+        const BreadboardWiringCsvSource source =
+                BreadboardWiringCsvParser::parseSource(path);
+
+        BOOST_REQUIRE_MESSAGE(source.ok, printable(source.error));
+        BOOST_CHECK(!source.firstRowLikelyHeader);
+
+        BreadboardWiringCsvColumnMapping mapping;
+        mapping.firstRowIsHeader = false;
+        mapping.wireIdColumn = 0;
+        mapping.signalColumn = 1;
+        mapping.colorColumn = 2;
+        mapping.fromColumn = 3;
+        mapping.fromTerminalColumn = 4;
+        mapping.toColumn = 5;
+        mapping.toTerminalColumn = 6;
+        mapping.noteColumn = 7;
+
+        const BreadboardWiringCsvResult result =
+                BreadboardWiringCsvParser::applyMapping(
+                        source,
+                        mapping
+                );
+
+        BOOST_REQUIRE_MESSAGE(result.ok, printable(result.error));
+        BOOST_REQUIRE_EQUAL(result.rows.size(), 1);
+        BOOST_CHECK_EQUAL(printable(result.rows.first().wireId), "J9");
+        BOOST_CHECK_EQUAL(printable(result.rows.first().fromTerminal), "B1-F2");
+        BOOST_CHECK_EQUAL(printable(result.rows.first().toTerminal), "B1-A2");
+}
+
+BOOST_AUTO_TEST_CASE(csv_mapping_preserves_component_rows_with_empty_to_side)
+{
+        QTemporaryDir directory;
+
+        BOOST_REQUIRE(directory.isValid());
+
+        const QString path =
+                writeTemporaryCsv(
+                        directory,
+                        QByteArray(
+                                "Wire ID,Signal,Color,From,From hole/terminal,"
+                                "To,To hole/terminal,Note\n"
+                                "J1,CLK,Blue,CPU pin 1,B1-F1,Clock Rail,B1-A1,jumper\n"
+                                "IC1,CPU,data,W65C02 pin 1,B1-F2,,,component evidence\n"
+                        )
+                );
+
+        BOOST_REQUIRE(!path.isEmpty());
+
+        const BreadboardWiringCsvSource source =
+                BreadboardWiringCsvParser::parseSource(path);
+
+        BOOST_REQUIRE_MESSAGE(source.ok, printable(source.error));
+
+        const BreadboardWiringCsvColumnMapping mapping =
+                BreadboardWiringCsvParser::suggestMapping(
+                        source,
+                        true
+                );
+
+        const BreadboardWiringCsvResult result =
+                BreadboardWiringCsvParser::applyMapping(
+                        source,
+                        mapping
+                );
+
+        BOOST_REQUIRE_MESSAGE(result.ok, printable(result.error));
+        BOOST_REQUIRE_EQUAL(result.rows.size(), 2);
+        BOOST_CHECK_EQUAL(printable(result.rows.at(1).wireId), "IC1");
+        BOOST_CHECK_EQUAL(printable(result.rows.at(1).fromTerminal), "B1-F2");
+        BOOST_CHECK(result.rows.at(1).to.isEmpty());
+        BOOST_CHECK(result.rows.at(1).toTerminal.isEmpty());
+        BOOST_CHECK_EQUAL(
+                printable(result.rows.at(1).note),
+                "component evidence"
+        );
+}
+
+BOOST_AUTO_TEST_CASE(csv_mapping_rejects_missing_and_duplicate_assignments)
+{
+        QTemporaryDir directory;
+
+        BOOST_REQUIRE(directory.isValid());
+
+        const QString path =
+                writeTemporaryCsv(
+                        directory,
+                        QByteArray(
+                                "From,From terminal,To,To terminal\n"
+                                "CPU pin 1,B1-F1,Clock Rail,B1-A1\n"
+                        )
+                );
+
+        BOOST_REQUIRE(!path.isEmpty());
+
+        const BreadboardWiringCsvSource source =
+                BreadboardWiringCsvParser::parseSource(path);
+
+        BOOST_REQUIRE_MESSAGE(source.ok, printable(source.error));
+
+        BreadboardWiringCsvColumnMapping mapping =
+                BreadboardWiringCsvParser::suggestMapping(
+                        source,
+                        true
+                );
+
+        mapping.toColumn = mapping.fromColumn;
+
+        BreadboardWiringCsvResult result =
+                BreadboardWiringCsvParser::applyMapping(
+                        source,
+                        mapping
+                );
+
+        BOOST_CHECK(!result.ok);
+        BOOST_CHECK(
+                result.error.contains(
+                        QStringLiteral("more than one import field")
+                )
+        );
+
+        mapping.toColumn = 2;
+        mapping.toTerminalColumn = -1;
+
+        result =
+                BreadboardWiringCsvParser::applyMapping(
+                        source,
+                        mapping
+                );
+
+        BOOST_CHECK(!result.ok);
+        BOOST_CHECK(
+                result.error.contains(
+                        QStringLiteral("Required field is not mapped")
+                )
+        );
+}
+
+BOOST_AUTO_TEST_CASE(csv_legacy_parser_remains_strict)
+{
+        QTemporaryDir directory;
+
+        BOOST_REQUIRE(directory.isValid());
+
+        const QString path =
+                writeTemporaryCsv(
+                        directory,
+                        QByteArray(
+                                "Signal,Wire ID,Color,From,From hole/terminal,"
+                                "To,To hole/terminal,Note\n"
+                                "CLK,J1,Blue,CPU pin 1,B1-F1,Clock Rail,B1-A1,test\n"
+                        )
+                );
+
+        BOOST_REQUIRE(!path.isEmpty());
+
+        const BreadboardWiringCsvResult result =
+                BreadboardWiringCsvParser::parseFile(path);
+
+        BOOST_CHECK(!result.ok);
+        BOOST_CHECK(
+                result.error.contains(
+                        QStringLiteral("Unexpected CSV header")
+                )
+        );
+
+        const QString raggedPath =
+                writeTemporaryCsv(
+                        directory,
+                        QByteArray(
+                                "Wire ID,Signal,Color,From,From hole/terminal,"
+                                "To,To hole/terminal,Note\n"
+                                "J1,CLK,Blue,CPU pin 1,B1-F1,Clock Rail,B1-A1\n"
+                        ),
+                        QStringLiteral("ragged.csv")
+                );
+
+        BOOST_REQUIRE(!raggedPath.isEmpty());
+
+        const BreadboardWiringCsvResult raggedResult =
+                BreadboardWiringCsvParser::parseFile(raggedPath);
+
+        BOOST_CHECK(!raggedResult.ok);
+        BOOST_CHECK(
+                raggedResult.error.contains(
+                        QStringLiteral("has 7 fields; expected 8")
+                )
+        );
+}
 
 BOOST_AUTO_TEST_CASE(geometry_infers_opaque_component_name)
 {

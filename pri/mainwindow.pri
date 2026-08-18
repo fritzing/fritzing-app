@@ -14,6 +14,7 @@
 # ********************************************************************/
 HEADERS += \
 	src/mainwindow/breadboardcoordinate.h \
+	src/mainwindow/breadboardcsvimportdialog.h \
 	src/mainwindow/breadboardcsvdipfootprintresolver.h \
 	src/mainwindow/breadboardcsvdipphysicalresolver.h \
 	src/mainwindow/breadboardcsvcomponentresolver.h \
@@ -33,6 +34,7 @@ HEADERS += \
 
 SOURCES += \
 	src/mainwindow/breadboardcoordinate.cpp \
+	src/mainwindow/breadboardcsvimportdialog.cpp \
 	src/mainwindow/breadboardcsvdipfootprintresolver.cpp \
 	src/mainwindow/breadboardcsvdipphysicalresolver.cpp \
 	src/mainwindow/breadboardcsvcomponentresolver.cpp \

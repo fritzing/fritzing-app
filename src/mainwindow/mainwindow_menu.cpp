@@ -35,6 +35,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMimeData>
 
 #include "mainwindow.h"
+#include "breadboardcsvimportdialog.h"
 #include "breadboardwiringcsvparser.h"
 #include "breadboardcoordinate.h"
 #include "breadboardcsvsketchbuilder.h"
@@ -228,14 +229,36 @@ void MainWindow::importBreadboardWiringCsv()
 
 	if (fileName.isEmpty()) return;
 
+	const BreadboardWiringCsvSource source =
+		BreadboardWiringCsvParser::parseSource(fileName);
+
+	if (!source.ok) {
+		FMessageBox::warning(
+			this,
+			tr("Breadboard Wiring CSV"),
+			tr("Unable to read CSV:\n\n%1").arg(source.error)
+		);
+		return;
+	}
+
+	BreadboardCsvImportDialog importDialog(
+		fileName,
+		source,
+		this
+	);
+
+	if (importDialog.exec() != QDialog::Accepted) {
+		return;
+	}
+
 	const BreadboardWiringCsvResult result =
-		BreadboardWiringCsvParser::parseFile(fileName);
+		importDialog.mappedResult();
 
 	if (!result.ok) {
 		FMessageBox::warning(
 			this,
 			tr("Breadboard Wiring CSV"),
-			tr("Unable to import CSV:\n\n%1").arg(result.error)
+			tr("Unable to map CSV:\n\n%1").arg(result.error)
 		);
 		return;
 	}

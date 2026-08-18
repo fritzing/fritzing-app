@@ -28,6 +28,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QClipboard>
 #include <QDebug>
 #include <QSettings>
+#include <QCoreApplication>
+#include <QDir>
+#include <QFileInfo>
 #include <QDesktopServices>
 #include <QMimeData>
 
@@ -36,6 +39,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "breadboardcoordinate.h"
 #include "breadboardcsvsketchbuilder.h"
 #include "breadboardcsvdipfootprintresolver.h"
+#include "breadboardcsvcomponentresolver.h"
+#include "breadboardcsvdipphysicalresolver.h"
+#include "breadboardcsvlibrepcbprovider.h"
 #include <QHash>
 #include "../debugdialog.h"
 #include "../waitpushundostack.h"
@@ -456,7 +462,7 @@ void MainWindow::importBreadboardWiringCsv()
 			.arg(validCoordinateReferences)
 			.arg(resolvedConnectorReferences);
 
-	const BreadboardCsvDipFootprintResult dipFootprintResult =
+	BreadboardCsvDipFootprintResult dipFootprintResult =
 		BreadboardCsvDipFootprintResolver::resolveAll(
 			result.rows
 		);
@@ -467,12 +473,590 @@ void MainWindow::importBreadboardWiringCsv()
 			tr("Breadboard Wiring CSV"),
 			tr(
 				"CSV validation succeeded, but DIP footprint "
-				"resolution failed.\n\n%1"
+				"geometry resolution failed.\n\n%1"
 			)
 				.arg(dipFootprintResult.error)
 		);
 
 		return;
+	}
+
+	/*
+	 * Resolve component identity and physical package separately
+	 * from CSV electrical-hole geometry.
+	 */
+	SketchWidget *csvBreadboardView =
+		sketchWidgetForView(
+			ViewLayer::BreadboardView
+		);
+
+	if (csvBreadboardView == nullptr) {
+		FMessageBox::warning(
+			this,
+			tr("Breadboard Wiring CSV"),
+			tr(
+				"CSV geometry resolved successfully, but the "
+				"breadboard view is not available."
+			)
+		);
+
+		return;
+	}
+
+	ReferenceModel *csvReferenceModel =
+		csvBreadboardView->referenceModel();
+
+	if (csvReferenceModel == nullptr) {
+		FMessageBox::warning(
+			this,
+			tr("Breadboard Wiring CSV"),
+			tr(
+				"CSV geometry resolved successfully, but the "
+				"Fritzing reference model is not available."
+			)
+		);
+
+		return;
+	}
+
+	const auto csvComponentSettingsToken =
+		[](const QString &component) -> QString {
+			return QString::fromLatin1(
+				component
+					.trimmed()
+					.toCaseFolded()
+					.toUtf8()
+					.toHex()
+			);
+		};
+
+	const auto csvLibrePcbRootFromCandidate =
+		[](const QString &candidate) -> QString {
+			const QFileInfo rootInfo(candidate);
+
+			if (!rootInfo.isDir()) {
+				return QString();
+			}
+
+			const QString canonicalRoot =
+				rootInfo.canonicalFilePath();
+
+			if (canonicalRoot.isEmpty()) {
+				return QString();
+			}
+
+			const QDir rootDir(canonicalRoot);
+
+			const QStringList cacheFiles =
+				rootDir.entryList(
+					QStringList()
+						<< QStringLiteral(
+							   "cache_v*.sqlite"
+						   ),
+					QDir::Files,
+					QDir::Name
+				);
+
+			if (cacheFiles.size() != 1) {
+				return QString();
+			}
+
+			return rootDir.canonicalPath();
+		};
+
+	const QStringList csvLibrePcbRootCandidates = {
+		QDir(
+			QCoreApplication::applicationDirPath()
+		).absoluteFilePath(
+			QStringLiteral(
+				"../Resources/breadboardcsv/librepcb"
+			)
+		),
+		QDir(
+			QStringLiteral(PKGDATADIR)
+		).absoluteFilePath(
+			QStringLiteral(
+				"breadboardcsv/librepcb"
+			)
+		),
+		QDir(
+			QCoreApplication::applicationDirPath()
+		).absoluteFilePath(
+			QStringLiteral(
+				"breadboardcsv/librepcb"
+			)
+		)
+	};
+
+	QString csvLibrePcbRoot;
+
+	for (
+		const QString &candidate :
+		csvLibrePcbRootCandidates
+	) {
+		const QString resolvedRoot =
+			csvLibrePcbRootFromCandidate(
+				candidate
+			);
+
+		if (!resolvedRoot.isEmpty()) {
+			csvLibrePcbRoot =
+				resolvedRoot;
+
+			break;
+		}
+	}
+
+	QSettings csvPackageSettings;
+
+	for (
+		BreadboardCsvDipFootprint &footprint :
+		dipFootprintResult.footprints
+	) {
+		BreadboardCsvComponentResolution resolution =
+			BreadboardCsvComponentResolver::resolveNative(
+				csvReferenceModel,
+				footprint.component,
+				footprint.pinCount
+			);
+
+		/*
+		 * Exact-name lookup can produce unrelated candidates for generic CSV
+		 * labels such as "SRAM". Keep rejected native candidates rejected,
+		 * but continue to the explicit LibrePCB or user-confirmed DIP fallback.
+		 */
+		if (!resolution.matched) {
+			BreadboardCsvLibrePcbResolution librePcbResolution;
+
+			const QString componentToken =
+				csvComponentSettingsToken(
+					footprint.component
+				);
+
+			const QString associationKey =
+				QStringLiteral(
+					"breadboardCsvImport/librepcbDevice/v1/"
+				) +
+				componentToken +
+				QStringLiteral("/") +
+				QString::number(
+					footprint.pinCount
+				);
+
+			QString selectedMpn =
+				csvPackageSettings.value(
+					associationKey
+				).toString().trimmed();
+
+			/*
+			 * A remembered association is an exact MPN, never an
+			 * inferred package width.
+			 */
+			if (
+				!csvLibrePcbRoot.isEmpty() &&
+				!selectedMpn.isEmpty()
+			) {
+				librePcbResolution =
+					BreadboardCsvLibrePcbProvider::resolveExactMpn(
+						csvLibrePcbRoot,
+						selectedMpn,
+						footprint.pinCount
+					);
+
+				if (!librePcbResolution.matched) {
+					if (!librePcbResolution.error.isEmpty()) {
+						FMessageBox::warning(
+							this,
+							tr("Breadboard Wiring CSV"),
+							tr(
+								"The remembered LibrePCB device "
+								"association for %1 could not be "
+								"validated safely.\n\n"
+								"MPN: %2\n\n%3"
+							)
+								.arg(footprint.component)
+								.arg(selectedMpn)
+								.arg(
+									librePcbResolution.error
+								)
+						);
+
+						return;
+					}
+
+					csvPackageSettings.remove(
+						associationKey
+					);
+
+					selectedMpn.clear();
+				}
+			}
+
+			if (
+				!csvLibrePcbRoot.isEmpty() &&
+				selectedMpn.isEmpty()
+			) {
+				QString candidateError;
+
+				const QList<BreadboardCsvLibrePcbCandidate> candidates =
+					BreadboardCsvLibrePcbProvider::findMpnCandidates(
+						csvLibrePcbRoot,
+						footprint.component,
+						candidateError,
+						50
+					);
+
+				if (!candidateError.isEmpty()) {
+					FMessageBox::warning(
+						this,
+						tr("Breadboard Wiring CSV"),
+						tr(
+							"LibrePCB device discovery failed for "
+							"%1.\n\n%2"
+						)
+							.arg(footprint.component)
+							.arg(candidateError)
+					);
+
+					return;
+				}
+
+				if (candidates.size() == 1) {
+					const BreadboardCsvLibrePcbCandidate &candidate =
+						candidates.first();
+
+					const QString manufacturer =
+						candidate.manufacturer.trimmed().isEmpty()
+							? tr("manufacturer not specified")
+							: candidate.manufacturer;
+
+					if (
+						FMessageBox::question(
+							this,
+							tr("Resolve Component Device"),
+							tr(
+								"%1 (%2 pins) was not matched to a "
+								"compatible native Fritzing part.\n\n"
+								"LibrePCB contains this exact device "
+								"candidate:\n\n"
+								"MPN: %3\n"
+								"Manufacturer: %4\n\n"
+								"Associate this CSV label with this exact "
+								"device? If confirmed, the association "
+								"will be remembered."
+							)
+								.arg(footprint.component)
+								.arg(footprint.pinCount)
+								.arg(candidate.mpn)
+								.arg(manufacturer),
+							FMessageBox::Yes |
+								FMessageBox::No,
+							FMessageBox::No
+						) == FMessageBox::Yes
+					) {
+						selectedMpn =
+							candidate.mpn;
+					}
+				}
+				else if (candidates.size() > 1) {
+					QStringList choices;
+
+					for (
+						const BreadboardCsvLibrePcbCandidate &candidate :
+						candidates
+					) {
+						const QString manufacturer =
+							candidate.manufacturer.trimmed().isEmpty()
+								? tr("manufacturer not specified")
+								: candidate.manufacturer;
+
+						choices.append(
+							QStringLiteral(
+								"%1 — %2 [%3]"
+							)
+								.arg(candidate.mpn)
+								.arg(manufacturer)
+								.arg(
+									candidate.deviceUuid.left(8)
+								)
+						);
+					}
+
+					choices.append(
+						tr(
+							"None of these — use manual package resolution"
+						)
+					);
+
+					bool accepted = false;
+
+					const QString choice =
+						QInputDialog::getItem(
+							this,
+							tr("Resolve Component Device"),
+							tr(
+								"%1 (%2 pins) was not matched to a "
+								"compatible native Fritzing part.\n\n"
+								"Select the exact LibrePCB device, or "
+								"continue to manual package resolution."
+							)
+								.arg(footprint.component)
+								.arg(footprint.pinCount),
+							choices,
+							0,
+							false,
+							&accepted
+						);
+
+					if (!accepted) {
+						return;
+					}
+
+					const qsizetype selectedIndex =
+						choices.indexOf(
+							choice
+						);
+
+					if (
+						selectedIndex >= 0 &&
+						selectedIndex < candidates.size()
+					) {
+						selectedMpn =
+							candidates.at(
+								selectedIndex
+							).mpn;
+					}
+				}
+			}
+
+			if (
+				!csvLibrePcbRoot.isEmpty() &&
+				!selectedMpn.isEmpty() &&
+				!librePcbResolution.matched
+			) {
+				librePcbResolution =
+					BreadboardCsvLibrePcbProvider::resolveExactMpn(
+						csvLibrePcbRoot,
+						selectedMpn,
+						footprint.pinCount
+					);
+
+				if (!librePcbResolution.matched) {
+					const QString detail =
+						librePcbResolution.error.isEmpty()
+							? tr(
+								"No exact LibrePCB device matched the "
+								"selected MPN and pin count."
+							)
+							: librePcbResolution.error;
+
+					FMessageBox::warning(
+						this,
+						tr("Breadboard Wiring CSV"),
+						tr(
+							"The selected LibrePCB device for %1 could "
+							"not be resolved safely.\n\n"
+							"MPN: %2\n\n%3"
+						)
+							.arg(footprint.component)
+							.arg(selectedMpn)
+							.arg(detail)
+					);
+
+					return;
+				}
+
+				/*
+				 * Persist only after exact Device, Component and
+				 * Package data has been resolved and validated.
+				 */
+				csvPackageSettings.setValue(
+					associationKey,
+					selectedMpn
+				);
+			}
+
+			if (librePcbResolution.matched) {
+				resolution =
+					BreadboardCsvComponentResolver::resolveGeneric(
+						footprint.component,
+						footprint.pinCount,
+						librePcbResolution.spacingMil
+					);
+
+				if (!resolution.matched) {
+					FMessageBox::warning(
+						this,
+						tr("Breadboard Wiring CSV"),
+						resolution.error
+					);
+
+					return;
+				}
+
+				resolution.source =
+					tr(
+						"LibrePCB device: %1; package: %2; %3"
+					)
+						.arg(librePcbResolution.mpn)
+						.arg(librePcbResolution.packageName)
+						.arg(resolution.source);
+			}
+		}
+
+		if (!resolution.matched) {
+			/*
+			 * The CSV's insertion-hole rows are electrical
+			 * observations, not authoritative package width.
+			 *
+			 * Keep package association in user settings instead
+			 * of creating a component-name catalog in C++.
+			 */
+			const QString settingsKey =
+				QStringLiteral(
+					"breadboardCsvImport/packageSpacing/v2/"
+				) +
+				csvComponentSettingsToken(
+					footprint.component
+				) +
+				QStringLiteral("/") +
+				QString::number(footprint.pinCount);
+
+			int spacingMil =
+				csvPackageSettings.value(
+					settingsKey,
+					0
+				).toInt();
+
+			QString packageSource;
+
+			if (
+				spacingMil == 300 ||
+				spacingMil == 600
+			) {
+				packageSource =
+					tr("remembered package choice");
+			}
+			else {
+				const QStringList choices = {
+					tr("300 mil"),
+					tr("600 mil")
+				};
+
+				bool accepted = false;
+
+				const QString choice =
+					QInputDialog::getItem(
+						this,
+						tr("Resolve DIP Package"),
+						tr(
+							"%1 (%2 pins) was not matched to a "
+							"compatible native Fritzing part.\n\n"
+							"The CSV contains electrically equivalent "
+							"breadboard insertion holes; those holes "
+							"do not safely determine the physical DIP "
+							"package width.\n\n"
+							"CSV geometry: B%3, reference rows %4/%5, "
+							"columns %6-%7.\n\n"
+							"Choose the actual DIP width. This choice "
+							"will be remembered for this component "
+							"name and pin count."
+						)
+							.arg(footprint.component)
+							.arg(footprint.pinCount)
+							.arg(footprint.board)
+							.arg(
+								QString(
+									1,
+									footprint.referencePin1Row
+								)
+							)
+							.arg(
+								QString(
+									1,
+									footprint.referenceOppositeRow
+								)
+							)
+							.arg(footprint.firstColumn)
+							.arg(footprint.lastColumn),
+						choices,
+						0,
+						false,
+						&accepted
+					);
+
+				if (!accepted) {
+					return;
+				}
+
+				spacingMil =
+					choice == tr("300 mil")
+						? 300
+						: 600;
+
+				csvPackageSettings.setValue(
+					settingsKey,
+					spacingMil
+				);
+
+				packageSource =
+					tr("user package choice");
+			}
+
+			resolution =
+				BreadboardCsvComponentResolver::resolveGeneric(
+					footprint.component,
+					footprint.pinCount,
+					spacingMil
+				);
+
+			if (!resolution.matched) {
+				FMessageBox::warning(
+					this,
+					tr("Breadboard Wiring CSV"),
+					resolution.error
+				);
+
+				return;
+			}
+
+			resolution.source =
+				QString("%1; %2")
+					.arg(
+						resolution.source,
+						packageSource
+					);
+		}
+
+		footprint.nativePart =
+			resolution.nativePart;
+
+		footprint.moduleId =
+			resolution.moduleId;
+
+		footprint.resolutionSource =
+			resolution.source;
+
+		footprint.pinConnectorIds =
+			resolution.pinConnectorIds;
+
+		QString physicalError;
+
+		if (
+			!BreadboardCsvDipPhysicalResolver::apply(
+				footprint,
+				resolution.spacingMil,
+				physicalError
+			)
+		) {
+			FMessageBox::warning(
+				this,
+				tr("Breadboard Wiring CSV"),
+				physicalError
+			);
+
+			return;
+		}
 	}
 
 	QStringList dipFootprintLines;
@@ -514,8 +1098,11 @@ void MainWindow::importBreadboardWiringCsv()
 				tr(
 					"\n\n"
 					"Place the three RSR 03MB102 breadboards "
-					"and all 14 resolved DIP parts now?"
-				),
+					"and all %1 resolved DIP parts now?"
+				)
+					.arg(
+						dipFootprintResult.footprints.size()
+					),
 			FMessageBox::Yes | FMessageBox::No,
 			FMessageBox::No
 		);

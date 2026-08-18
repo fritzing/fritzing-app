@@ -3,492 +3,684 @@
 #include "breadboardcoordinate.h"
 
 #include <QHash>
+#include <QRegularExpression>
 #include <QSet>
+#include <QStringList>
+
+#include <algorithm>
 
 namespace {
 
-struct DipDefinition
-{
-	QString component;
-	int pinCount;
-	int spacingMil;
-};
-
 using PinCoordinates = QHash<int, QSet<QString>>;
 
-const QList<DipDefinition> &dipCatalog()
+struct ComponentObservation
 {
-	static const QList<DipDefinition> definitions = {
-		{ "W65C02", 40, 600 },
-		{ "HCT245", 20, 300 },
-		{ "HCT14", 14, 300 },
-		{ "HCT157", 16, 300 },
-		{ "HCT00", 14, 300 },
+        QString component;
+        PinCoordinates pins;
+};
 
-		{ "SRAM", 28, 600 },
-		{ "EEPROM", 28, 600 },
-		{ "HCT138", 16, 300 },
-		{ "HCT08", 14, 300 },
-		{ "HCT573", 20, 300 },
-
-		{ "VIA1", 40, 600 },
-		{ "VIA2", 40, 600 },
-		{ "ACIA", 28, 600 },
-		{ "LM386", 8, 300 }
-	};
-
-	return definitions;
-}
-
-int pinNumberForEndpoint(
-	const QString &endpoint,
-	const DipDefinition &definition
-)
+struct EndpointPinReference
 {
-	const QString prefix =
-		definition.component + " pin ";
+        bool ok = false;
+        QString component;
+        int pin = 0;
+};
 
-	const QString text = endpoint.trimmed();
+struct DipCandidate
+{
+        int pinCount = 0;
+        int board = 0;
+        QChar pin1Row;
+        QChar oppositeRow;
+        int firstColumn = 0;
+        int score = 0;
+};
 
-	if (!text.startsWith(prefix)) {
-		return -1;
-	}
+EndpointPinReference parseEndpointPin(const QString &endpoint)
+{
+        EndpointPinReference result;
 
-	qsizetype end = prefix.size();
+        /*
+         * Component names are deliberately opaque here.
+         *
+         * Examples:
+         *
+         *   CPU_A pin 12
+         *   U1 pin 12
+         *   My Custom CPU pin 12
+         *
+         * No component names or semiconductor families belong in
+         * this parser.
+         */
+        static const QRegularExpression pattern(
+                R"(^\s*(.+?)\s+pin\s+([1-9][0-9]*)\b)",
+                QRegularExpression::CaseInsensitiveOption
+        );
 
-	while (
-		end < text.size() &&
-		text.at(end).isDigit()
-	) {
-		++end;
-	}
+        const QRegularExpressionMatch match =
+                pattern.match(endpoint);
 
-	if (end == prefix.size()) {
-		return -1;
-	}
+        if (!match.hasMatch()) {
+                return result;
+        }
 
-	bool ok = false;
+        const QString component =
+                match.captured(1).trimmed();
 
-	const int pin =
-		text.mid(
-			prefix.size(),
-			end - prefix.size()
-		).toInt(&ok);
+        bool pinOk = false;
 
-	if (
-		!ok ||
-		pin < 1 ||
-		pin > definition.pinCount
-	) {
-		return -1;
-	}
+        const int pin =
+                match.captured(2).toInt(&pinOk);
 
-	return pin;
+        if (
+                component.isEmpty() ||
+                !pinOk ||
+                pin < 1
+        ) {
+                return result;
+        }
+
+        result.ok = true;
+        result.component = component;
+        result.pin = pin;
+
+        return result;
 }
 
 QString terminalCoordinate(
-	int board,
-	QChar row,
-	int column
+        int board,
+        QChar row,
+        int column
 )
 {
-	return QString("B%1-%2%3")
-		.arg(board)
-		.arg(QString(1, row))
-		.arg(column);
+        return QString("B%1-%2%3")
+                .arg(board)
+                .arg(QString(1, row))
+                .arg(column);
 }
 
-BreadboardCoordinate parsedTerminal(
-	int board,
-	QChar row,
-	int column
+
+bool hasBothDipSides(const PinCoordinates &pinCoordinates)
+{
+        bool top = false;
+        bool bottom = false;
+
+        for (auto pinIt = pinCoordinates.constBegin();
+             pinIt != pinCoordinates.constEnd();
+             ++pinIt) {
+
+                for (const QString &coordinateText : pinIt.value()) {
+                        const BreadboardCoordinate coordinate =
+                                BreadboardCoordinateParser::parse(
+                                        coordinateText
+                                );
+
+                        if (
+                                coordinate.kind !=
+                                BreadboardCoordinate::Kind::TerminalStrip
+                        ) {
+                                continue;
+                        }
+
+                        if (
+                                coordinate.row >= QChar('A') &&
+                                coordinate.row <= QChar('E')
+                        ) {
+                                top = true;
+                        }
+
+                        if (
+                                coordinate.row >= QChar('F') &&
+                                coordinate.row <= QChar('J')
+                        ) {
+                                bottom = true;
+                        }
+                }
+        }
+
+        return top && bottom;
+}
+
+QList<int> observedBoards(
+        const PinCoordinates &pinCoordinates
 )
 {
-	return BreadboardCoordinateParser::parse(
-		terminalCoordinate(
-			board,
-			row,
-			column
-		)
-	);
+        QSet<int> boardSet;
+
+        for (auto pinIt = pinCoordinates.constBegin();
+             pinIt != pinCoordinates.constEnd();
+             ++pinIt) {
+
+                for (const QString &coordinateText : pinIt.value()) {
+                        const BreadboardCoordinate coordinate =
+                                BreadboardCoordinateParser::parse(
+                                        coordinateText
+                                );
+
+                        if (
+                                coordinate.kind ==
+                                BreadboardCoordinate::Kind::TerminalStrip
+                        ) {
+                                boardSet.insert(coordinate.board);
+                        }
+                }
+        }
+
+        QList<int> boards =
+                boardSet.values();
+
+        std::sort(
+                boards.begin(),
+                boards.end()
+        );
+
+        return boards;
 }
+
+int scoreCandidate(
+        const PinCoordinates &pinCoordinates,
+        const DipCandidate &candidate
+)
+{
+        const int halfPins =
+                candidate.pinCount / 2;
+
+        int score = 0;
+
+        for (auto pinIt = pinCoordinates.constBegin();
+             pinIt != pinCoordinates.constEnd();
+             ++pinIt) {
+
+                const int pin =
+                        pinIt.key();
+
+                if (
+                        pin < 1 ||
+                        pin > candidate.pinCount
+                ) {
+                        continue;
+                }
+
+                QChar expectedRow;
+                int expectedColumn = 0;
+
+                if (pin <= halfPins) {
+                        expectedRow =
+                                candidate.pin1Row;
+
+                        expectedColumn =
+                                candidate.firstColumn +
+                                pin - 1;
+                }
+                else {
+                        expectedRow =
+                                candidate.oppositeRow;
+
+                        expectedColumn =
+                                candidate.firstColumn +
+                                candidate.pinCount -
+                                pin;
+                }
+
+                const QString expected =
+                        terminalCoordinate(
+                                candidate.board,
+                                expectedRow,
+                                expectedColumn
+                        );
+
+                if (pinIt.value().contains(expected)) {
+                        ++score;
+                }
+        }
+
+        return score;
+}
+
+QString candidateDescription(
+        const DipCandidate &candidate
+)
+{
+        return QString(
+                "%1-pin B%2 %3/%4 cols %5-%6"
+        )
+                .arg(candidate.pinCount)
+                .arg(candidate.board)
+                .arg(candidate.pin1Row)
+                .arg(candidate.oppositeRow)
+                .arg(candidate.firstColumn)
+                .arg(
+                        candidate.firstColumn +
+                        candidate.pinCount / 2 -
+                        1
+                );
+}
+
+/*
+ * Translate the hole rows found in the wiring CSV into the physical
+ * DIP leg rows used by Fritzing.
+ *
+ * A CSV endpoint identifies an electrically equivalent hole on a
+ * BB830 strip. It is not guaranteed to be the exact hole occupied
+ * by the component leg.
+ *
+ * Therefore this is BB830 geometry knowledge, not semiconductor
+ * knowledge.
+ */
 
 } // namespace
 
 BreadboardCsvDipFootprintResult
 BreadboardCsvDipFootprintResolver::resolveAll(
-	const QList<BreadboardWiringCsvRow> &rows
+        const QList<BreadboardWiringCsvRow> &rows
 )
 {
-	BreadboardCsvDipFootprintResult result;
-
-	QHash<QString, PinCoordinates> observations;
-
-	auto capture =
-		[&](
-			const QString &endpoint,
-			const QString &terminal
-		) {
-			const QString coordinateText =
-				terminal.trimmed();
-
-			const BreadboardCoordinate coordinate =
-				BreadboardCoordinateParser::parse(
-					coordinateText
-				);
-
-			if (
-				coordinate.kind !=
-				BreadboardCoordinate::Kind::TerminalStrip
-			) {
-				return;
-			}
-
-			for (
-				const DipDefinition &definition :
-				dipCatalog()
-			) {
-				const int pin =
-					pinNumberForEndpoint(
-						endpoint,
-						definition
-					);
-
-				if (pin < 1) {
-					continue;
-				}
-
-				observations[definition.component][pin]
-					.insert(coordinateText);
-
-				return;
-			}
-		};
-
-	for (const BreadboardWiringCsvRow &row : rows) {
-		capture(
-			row.from,
-			row.fromTerminal
-		);
-
-		capture(
-			row.to,
-			row.toTerminal
-		);
-	}
-
-	for (
-		const DipDefinition &definition :
-		dipCatalog()
-	) {
-		BreadboardCsvDipFootprint footprint;
-
-		footprint.component =
-			definition.component;
-
-		footprint.pinCount =
-			definition.pinCount;
-
-		footprint.spacingMil =
-			definition.spacingMil;
-
-		const PinCoordinates pinCoordinates =
-			observations.value(
-				definition.component
-			);
-
-		footprint.observedPins =
-			pinCoordinates.size();
-
-		if (footprint.observedPins == 0) {
-			result.error =
-				QString(
-					"%1 has no terminal-strip pin "
-					"references in the CSV."
-				)
-					.arg(definition.component);
-
-			return result;
-		}
-
-		const int halfPins =
-			definition.pinCount / 2;
-
-		int bestScore = -1;
-		int bestCandidateCount = 0;
-
-		int bestBoard = 0;
-		QChar bestPin1Row;
-		QChar bestOppositeRow;
-		int bestFirstColumn = 0;
-
-		const int maximumFirstColumn =
-			63 - halfPins + 1;
-
-		for (int board = 1; board <= 3; ++board) {
-			for (
-				char topLetter = 'A';
-				topLetter <= 'E';
-				++topLetter
-			) {
-				const QChar pin1Row =
-					QChar::fromLatin1(topLetter);
-
-				for (
-					char bottomLetter = 'F';
-					bottomLetter <= 'J';
-					++bottomLetter
-				) {
-					const QChar oppositeRow =
-						QChar::fromLatin1(
-							bottomLetter
-						);
-
-					for (
-						int firstColumn = 1;
-						firstColumn <=
-							maximumFirstColumn;
-						++firstColumn
-					) {
-						int score = 0;
-
-						for (
-							auto pinIt =
-								pinCoordinates.constBegin();
-							pinIt !=
-								pinCoordinates.constEnd();
-							++pinIt
-						) {
-							const int pin =
-								pinIt.key();
-
-							QChar expectedRow;
-							int expectedColumn = 0;
-
-							if (pin <= halfPins) {
-								expectedRow =
-									pin1Row;
-
-								expectedColumn =
-									firstColumn +
-									pin - 1;
-							}
-							else {
-								expectedRow =
-									oppositeRow;
-
-								expectedColumn =
-									firstColumn +
-									definition.pinCount -
-									pin;
-							}
-
-							const QString expected =
-								terminalCoordinate(
-									board,
-									expectedRow,
-									expectedColumn
-								);
-
-							if (
-								pinIt.value().contains(
-									expected
-								)
-							) {
-								++score;
-							}
-						}
-
-						if (score > bestScore) {
-							bestScore = score;
-							bestCandidateCount = 1;
-
-							bestBoard = board;
-							bestPin1Row =
-								pin1Row;
-
-							bestOppositeRow =
-								oppositeRow;
-
-							bestFirstColumn =
-								firstColumn;
-						}
-						else if (
-							score == bestScore
-						) {
-							++bestCandidateCount;
-						}
-					}
-				}
-			}
-		}
-
-		footprint.matchedPins =
-			bestScore;
-
-		if (
-			bestScore != footprint.observedPins
-		) {
-			result.error =
-				QString(
-					"%1 DIP footprint matched only "
-					"%2 of %3 observed pins."
-				)
-					.arg(definition.component)
-					.arg(bestScore)
-					.arg(footprint.observedPins);
-
-			return result;
-		}
-
-		if (bestCandidateCount != 1) {
-			result.error =
-				QString(
-					"%1 DIP footprint is ambiguous: "
-					"%2 candidates matched all "
-					"%3 observed pins."
-				)
-					.arg(definition.component)
-					.arg(bestCandidateCount)
-					.arg(footprint.observedPins);
-
-			return result;
-		}
-
-		/*
-		 * CSV component endpoints identify electrically equivalent
-		 * breadboard-strip holes, not necessarily the physical hole
-		 * occupied by the DIP leg.
-		 *
-		 * On the BB830, the resolved 300 mil devices consistently
-		 * reference D/G strip holes. A physical 300 mil DIP spans
-		 * the center trench on E/F. Preserve the CSV-derived board
-		 * and columns, but normalize the actual package leg rows.
-		 *
-		 * 600 mil footprints retain their CSV-derived rows; their
-		 * B/F geometry has already been validated experimentally.
-		 */
-		if (definition.spacingMil == 300) {
-			bestPin1Row = QChar('E');
-			bestOppositeRow = QChar('F');
-		}
-
-		footprint.board =
-			bestBoard;
-
-		footprint.pin1Row =
-			bestPin1Row;
-
-		footprint.oppositeRow =
-			bestOppositeRow;
-
-		footprint.firstColumn =
-			bestFirstColumn;
-
-		footprint.lastColumn =
-			bestFirstColumn +
-			halfPins - 1;
-
-		const BreadboardCoordinate pin1 =
-			parsedTerminal(
-				bestBoard,
-				bestPin1Row,
-				footprint.firstColumn
-			);
-
-		const BreadboardCoordinate pinHalf =
-			parsedTerminal(
-				bestBoard,
-				bestPin1Row,
-				footprint.lastColumn
-			);
-
-		const BreadboardCoordinate pinHalfPlus1 =
-			parsedTerminal(
-				bestBoard,
-				bestOppositeRow,
-				footprint.lastColumn
-			);
-
-		const BreadboardCoordinate pinLast =
-			parsedTerminal(
-				bestBoard,
-				bestOppositeRow,
-				footprint.firstColumn
-			);
-
-		if (
-			pin1.kind !=
-				BreadboardCoordinate::Kind::TerminalStrip ||
-			pinHalf.kind !=
-				BreadboardCoordinate::Kind::TerminalStrip ||
-			pinHalfPlus1.kind !=
-				BreadboardCoordinate::Kind::TerminalStrip ||
-			pinLast.kind !=
-				BreadboardCoordinate::Kind::TerminalStrip ||
-			pin1.connectorId.isEmpty() ||
-			pinHalf.connectorId.isEmpty() ||
-			pinHalfPlus1.connectorId.isEmpty() ||
-			pinLast.connectorId.isEmpty()
-		) {
-			result.error =
-				QString(
-					"%1 resolved to an invalid "
-					"terminal-strip footprint."
-				)
-					.arg(definition.component);
-
-			return result;
-		}
-
-		footprint.pin1Coordinate =
-			terminalCoordinate(
-				bestBoard,
-				bestPin1Row,
-				footprint.firstColumn
-			);
-
-		footprint.pinHalfCoordinate =
-			terminalCoordinate(
-				bestBoard,
-				bestPin1Row,
-				footprint.lastColumn
-			);
-
-		footprint.pinHalfPlus1Coordinate =
-			terminalCoordinate(
-				bestBoard,
-				bestOppositeRow,
-				footprint.lastColumn
-			);
-
-		footprint.pinLastCoordinate =
-			terminalCoordinate(
-				bestBoard,
-				bestOppositeRow,
-				footprint.firstColumn
-			);
-
-		footprint.pin1ConnectorId =
-			pin1.connectorId;
-
-		footprint.pinHalfConnectorId =
-			pinHalf.connectorId;
-
-		footprint.pinHalfPlus1ConnectorId =
-			pinHalfPlus1.connectorId;
-
-		footprint.pinLastConnectorId =
-			pinLast.connectorId;
-
-		footprint.ok = true;
-
-		result.footprints.append(
-			footprint
-		);
-	}
-
-	result.ok = true;
-
-	return result;
+        BreadboardCsvDipFootprintResult result;
+
+        /*
+         * Keyed case-insensitively so cosmetic capitalization
+         * differences do not create separate physical components.
+         * The first spelling seen is preserved for display.
+         */
+        QHash<QString, ComponentObservation> observations;
+
+        auto capture =
+                [&](
+                        const QString &endpoint,
+                        const QString &terminal
+                ) {
+                        const BreadboardCoordinate coordinate =
+                                BreadboardCoordinateParser::parse(
+                                        terminal.trimmed()
+                                );
+
+                        if (
+                                coordinate.kind !=
+                                BreadboardCoordinate::Kind::TerminalStrip
+                        ) {
+                                return;
+                        }
+
+                        const EndpointPinReference endpointPin =
+                                parseEndpointPin(endpoint);
+
+                        if (!endpointPin.ok) {
+                                return;
+                        }
+
+                        const QString key =
+                                endpointPin.component.toCaseFolded();
+
+                        ComponentObservation &observation =
+                                observations[key];
+
+                        if (observation.component.isEmpty()) {
+                                observation.component =
+                                        endpointPin.component;
+                        }
+
+                        /*
+                         * Normalize the coordinate string before
+                         * storing it so comparison does not depend on
+                         * how the CSV happened to format the text.
+                         */
+                        observation.pins[endpointPin.pin].insert(
+                                terminalCoordinate(
+                                        coordinate.board,
+                                        coordinate.row,
+                                        coordinate.column
+                                )
+                        );
+                };
+
+        for (const BreadboardWiringCsvRow &row : rows) {
+                capture(
+                        row.from,
+                        row.fromTerminal
+                );
+
+                capture(
+                        row.to,
+                        row.toTerminal
+                );
+        }
+
+        if (observations.isEmpty()) {
+                result.error =
+                        "No component pin references were found in the CSV.";
+
+                return result;
+        }
+
+        QStringList componentKeys =
+                observations.keys();
+
+        std::sort(
+                componentKeys.begin(),
+                componentKeys.end(),
+                [](const QString &left, const QString &right) {
+                        return left.compare(
+                                right,
+                                Qt::CaseInsensitive
+                        ) < 0;
+                }
+        );
+
+        for (const QString &key : componentKeys) {
+                const ComponentObservation observation =
+                        observations.value(key);
+
+                const PinCoordinates &pinCoordinates =
+                        observation.pins;
+
+                /*
+                 * Geometry-only inference needs evidence from both
+                 * sides of a DIP and several independent pins.
+                 *
+                 * Sparse or non-DIP parts are not force-fit here.
+                 * They will be handled by the native/custom part
+                 * resolver layer.
+                 */
+                if (
+                        pinCoordinates.size() < 4 ||
+                        !hasBothDipSides(pinCoordinates)
+                ) {
+                        continue;
+                }
+
+                int maximumObservedPin = 0;
+
+                for (auto pinIt = pinCoordinates.constBegin();
+                     pinIt != pinCoordinates.constEnd();
+                     ++pinIt) {
+                        maximumObservedPin =
+                                std::max(
+                                        maximumObservedPin,
+                                        pinIt.key()
+                                );
+                }
+
+                int firstPinCount =
+                        std::max(
+                                4,
+                                maximumObservedPin
+                        );
+
+                if ((firstPinCount % 2) != 0) {
+                        ++firstPinCount;
+                }
+
+                /*
+                 * A BB830 has 63 columns. A DIP has half its pins on
+                 * each side, so 126 is the largest package that can
+                 * possibly fit this board model.
+                 *
+                 * This is a board-geometry limit, not a component
+                 * catalog.
+                 */
+                constexpr int maximumPinCount = 126;
+
+                const QList<int> boards =
+                        observedBoards(pinCoordinates);
+
+                int bestScore = -1;
+                QList<DipCandidate> bestCandidates;
+
+                for (
+                        int pinCount = firstPinCount;
+                        pinCount <= maximumPinCount;
+                        pinCount += 2
+                ) {
+                        const int halfPins =
+                                pinCount / 2;
+
+                        const int maximumFirstColumn =
+                                63 - halfPins + 1;
+
+                        if (maximumFirstColumn < 1) {
+                                continue;
+                        }
+
+                        for (int board : boards) {
+                                for (
+                                        char topLetter = 'A';
+                                        topLetter <= 'E';
+                                        ++topLetter
+                                ) {
+                                        const QChar pin1Row =
+                                                QChar::fromLatin1(
+                                                        topLetter
+                                                );
+
+                                        for (
+                                                char bottomLetter = 'F';
+                                                bottomLetter <= 'J';
+                                                ++bottomLetter
+                                        ) {
+                                                const QChar oppositeRow =
+                                                        QChar::fromLatin1(
+                                                                bottomLetter
+                                                        );
+
+                                                for (
+                                                        int firstColumn = 1;
+                                                        firstColumn <=
+                                                        maximumFirstColumn;
+                                                        ++firstColumn
+                                                ) {
+                                                        DipCandidate candidate;
+
+                                                        candidate.pinCount =
+                                                                pinCount;
+
+                                                        candidate.board =
+                                                                board;
+
+                                                        candidate.pin1Row =
+                                                                pin1Row;
+
+                                                        candidate.oppositeRow =
+                                                                oppositeRow;
+
+                                                        candidate.firstColumn =
+                                                                firstColumn;
+
+                                                        candidate.score =
+                                                                scoreCandidate(
+                                                                        pinCoordinates,
+                                                                        candidate
+                                                                );
+
+                                                        if (
+                                                                candidate.score >
+                                                                bestScore
+                                                        ) {
+                                                                bestScore =
+                                                                        candidate.score;
+
+                                                                bestCandidates.clear();
+                                                                bestCandidates.append(
+                                                                        candidate
+                                                                );
+                                                        }
+                                                        else if (
+                                                                candidate.score ==
+                                                                bestScore
+                                                        ) {
+                                                                bestCandidates.append(
+                                                                        candidate
+                                                                );
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                }
+
+                const int observedPins =
+                        pinCoordinates.size();
+
+                if (
+                        bestScore != observedPins ||
+                        bestCandidates.isEmpty()
+                ) {
+                        QStringList candidates;
+
+                        const int count =
+                                std::min(
+                                        6,
+                                        static_cast<int>(
+                                                bestCandidates.size()
+                                        )
+                                );
+
+                        for (int i = 0; i < count; ++i) {
+                                candidates.append(
+                                        candidateDescription(
+                                                bestCandidates.at(i)
+                                        )
+                                );
+                        }
+
+                        result.error =
+                                QString(
+                                        "%1 could not be resolved as a DIP "
+                                        "without component-specific rules.\n\n"
+                                        "Observed pins: %2\n"
+                                        "Best geometric score: %3/%2"
+                                )
+                                        .arg(observation.component)
+                                        .arg(observedPins)
+                                        .arg(bestScore);
+
+                        if (!candidates.isEmpty()) {
+                                result.error +=
+                                        "\nBest candidates:\n" +
+                                        candidates.join("\n");
+                        }
+
+                        return result;
+                }
+
+                if (bestCandidates.size() != 1) {
+                        QStringList candidates;
+
+                        const int count =
+                                std::min(
+                                        8,
+                                        static_cast<int>(
+                                                bestCandidates.size()
+                                        )
+                                );
+
+                        for (int i = 0; i < count; ++i) {
+                                candidates.append(
+                                        candidateDescription(
+                                                bestCandidates.at(i)
+                                        )
+                                );
+                        }
+
+                        result.error =
+                                QString(
+                                        "%1 has %2 equally valid DIP "
+                                        "footprints. The importer will not "
+                                        "guess.\n\n%3"
+                                )
+                                        .arg(observation.component)
+                                        .arg(bestCandidates.size())
+                                        .arg(candidates.join("\n"));
+
+                        return result;
+                }
+
+                const DipCandidate best =
+                        bestCandidates.first();
+
+                BreadboardCsvDipFootprint footprint;
+
+                footprint.component =
+                        observation.component;
+
+                footprint.pinCount =
+                        best.pinCount;
+
+                footprint.board =
+                        best.board;
+
+                footprint.firstColumn =
+                        best.firstColumn;
+
+                footprint.lastColumn =
+                        best.firstColumn +
+                        best.pinCount / 2 -
+                        1;
+
+                footprint.observedPins =
+                        observedPins;
+
+                footprint.matchedPins =
+                        best.score;
+
+                /*
+                 * Stop here at geometry.
+                 *
+                 * The CSV tells us which electrical strips best fit
+                 * the observed pin numbering. It does NOT establish
+                 * the physical DIP package width.
+                 */
+                footprint.referencePin1Row =
+                        best.pin1Row;
+
+                footprint.referenceOppositeRow =
+                        best.oppositeRow;
+
+                footprint.ok = true;
+
+                result.footprints.append(
+                        footprint
+                );
+        }
+
+        if (result.footprints.isEmpty()) {
+                result.error =
+                        "No DIP footprints could be inferred from the CSV.";
+
+                return result;
+        }
+
+        /*
+         * QHash discovery order is intentionally irrelevant.
+         * Placement order must instead be deterministic and physical.
+         */
+        std::sort(
+                result.footprints.begin(),
+                result.footprints.end(),
+                [](
+                        const BreadboardCsvDipFootprint &left,
+                        const BreadboardCsvDipFootprint &right
+                ) {
+                        if (left.board != right.board) {
+                                return left.board < right.board;
+                        }
+
+                        if (
+                                left.firstColumn !=
+                                right.firstColumn
+                        ) {
+                                return
+                                        left.firstColumn <
+                                        right.firstColumn;
+                        }
+
+                        return left.component.compare(
+                                right.component,
+                                Qt::CaseInsensitive
+                        ) < 0;
+                }
+        );
+
+        result.ok = true;
+
+        return result;
 }

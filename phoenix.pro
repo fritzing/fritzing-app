@@ -144,6 +144,9 @@ unix {
     bins.path = $$PKGDATADIR
     bins.files += bins
 
+    breadboardcsv.path = $$PKGDATADIR
+    breadboardcsv.files += resources/breadboardcsv
+
     translations.path = $$PKGDATADIR/translations
     isEmpty(LINGUAS) {
         translations.files += $$system(find $$PWD/translations -name "*.qm" -size +128c)
@@ -155,7 +158,7 @@ unix {
     syntax.path = $$PKGDATADIR/translations/syntax
     syntax.files += translations/syntax/*.xml
 
-    INSTALLS += target desktop appdata mimedb manpage icon parts sketches bins translations syntax help
+    INSTALLS += target desktop appdata mimedb manpage icon parts sketches bins breadboardcsv translations syntax help
 }
 
 ICON = resources/system_icons/macosx/fritzing_icon.icns
@@ -164,6 +167,22 @@ macx {
     FILE_ICONS.files = resources/system_icons/macosx/mac_fz_icon.icns resources/system_icons/macosx/mac_fzz_icon.icns resources/system_icons/macosx/mac_fzb_icon.icns resources/system_icons/macosx/mac_fzp_icon.icns resources/system_icons/macosx/mac_fzm_icon.icns resources/system_icons/macosx/mac_fzpz_icon.icns
     FILE_ICONS.path = Contents/Resources
     QMAKE_BUNDLE_DATA += FILE_ICONS
+
+    BREADBOARDCSV_LIBREPCB_CACHE.files = resources/breadboardcsv/librepcb/cache_v7.sqlite
+    BREADBOARDCSV_LIBREPCB_CACHE.path = Contents/Resources/breadboardcsv/librepcb
+    QMAKE_BUNDLE_DATA += BREADBOARDCSV_LIBREPCB_CACHE
+
+    BREADBOARDCSV_LIBREPCB_DEVICE.files = resources/breadboardcsv/librepcb/remote/6d6ab4d4-2f58-4c99-b389-f8407d51c753.lplib/dev/413e7c69-1e79-44fe-90ca-28692049e422/device.lp
+    BREADBOARDCSV_LIBREPCB_DEVICE.path = Contents/Resources/breadboardcsv/librepcb/remote/6d6ab4d4-2f58-4c99-b389-f8407d51c753.lplib/dev/413e7c69-1e79-44fe-90ca-28692049e422
+    QMAKE_BUNDLE_DATA += BREADBOARDCSV_LIBREPCB_DEVICE
+
+    BREADBOARDCSV_LIBREPCB_COMPONENT.files = resources/breadboardcsv/librepcb/remote/6d6ab4d4-2f58-4c99-b389-f8407d51c753.lplib/cmp/df2ae25c-2280-49ea-8e1d-c352a5fde4bb/component.lp
+    BREADBOARDCSV_LIBREPCB_COMPONENT.path = Contents/Resources/breadboardcsv/librepcb/remote/6d6ab4d4-2f58-4c99-b389-f8407d51c753.lplib/cmp/df2ae25c-2280-49ea-8e1d-c352a5fde4bb
+    QMAKE_BUNDLE_DATA += BREADBOARDCSV_LIBREPCB_COMPONENT
+
+    BREADBOARDCSV_LIBREPCB_PACKAGE.files = resources/breadboardcsv/librepcb/remote/a9ddf0c6-9b1c-4730-b300-01b4f192ad40.lplib/pkg/b988e922-f199-445b-ad28-2c57022b1b5d/package.lp
+    BREADBOARDCSV_LIBREPCB_PACKAGE.path = Contents/Resources/breadboardcsv/librepcb/remote/a9ddf0c6-9b1c-4730-b300-01b4f192ad40.lplib/pkg/b988e922-f199-445b-ad28-2c57022b1b5d
+    QMAKE_BUNDLE_DATA += BREADBOARDCSV_LIBREPCB_PACKAGE
 }
 
 QT += concurrent core gui network printsupport serialport sql svg widgets xml svgwidgets openglwidgets

@@ -15,6 +15,9 @@
 HEADERS += \
 	src/mainwindow/breadboardcoordinate.h \
 	src/mainwindow/breadboardcsvdipfootprintresolver.h \
+	src/mainwindow/breadboardcsvdipphysicalresolver.h \
+	src/mainwindow/breadboardcsvcomponentresolver.h \
+	src/mainwindow/breadboardcsvlibrepcbprovider.h \
 	src/mainwindow/breadboardcsvsketchbuilder.h \
 	src/mainwindow/breadboardwiringcsvparser.h \
 	src/mainwindow/fprobeactions.h \
@@ -31,6 +34,9 @@ HEADERS += \
 SOURCES += \
 	src/mainwindow/breadboardcoordinate.cpp \
 	src/mainwindow/breadboardcsvdipfootprintresolver.cpp \
+	src/mainwindow/breadboardcsvdipphysicalresolver.cpp \
+	src/mainwindow/breadboardcsvcomponentresolver.cpp \
+	src/mainwindow/breadboardcsvlibrepcbprovider.cpp \
 	src/mainwindow/breadboardcsvsketchbuilder.cpp \
 	src/mainwindow/breadboardwiringcsvparser.cpp \
 	src/mainwindow/fprobeactions.cpp \

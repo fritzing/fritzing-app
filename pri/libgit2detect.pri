@@ -52,6 +52,7 @@ win32 {
 
 	INCLUDEPATH += $$LIBGIT2INCLUDE
     LIBS += -L$$LIBGIT2LIB -lgit2
+    LIBS += -lwinhttp -lrpcrt4 -lcrypt32 -lole32 -lsecur32 -lws2_32 -ladvapi32
 }
 
 unix {

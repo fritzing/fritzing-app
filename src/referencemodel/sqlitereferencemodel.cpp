@@ -1004,6 +1004,8 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 				ModelPartShared * mps = modelPart->modelPartShared();
 				if ((mps != nullptr) && (mps->superpart() != nullptr) && mps->superpart()->path().startsWith(prefix)) {
 					bail = false;
+					// drop the random per-session PartFactory folder so parts.db is reproducible
+					path = QFileInfo(path).fileName();
 				}
 			}
 

@@ -4652,7 +4652,7 @@ double SketchWidget::fitInWindow() {
 		QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
 	}
 
-	double scaleFactor = this->transform().m11();
+	double scaleFactor = qAbs(this->transform().m11());
 	m_scaleValue = scaleFactor * 100; // Convert scale factor to percentage
 
 
@@ -11316,7 +11316,7 @@ void SketchWidget::showUndoHistoryWidget() {
 
 void SketchWidget::updateZoomFromCurrentTransform() {
 	// Update both zoom tracking variables based on current transform
-	double scaleFactor = this->transform().m11();
+	double scaleFactor = qAbs(this->transform().m11());
 	m_scaleValue = scaleFactor * 100; // Convert scale factor to percentage (for ZoomableGraphicsView)
 	m_zoom = scaleFactor * 100; // Also update m_zoom for consistency
 	

@@ -11,7 +11,7 @@ message("Using Fritzing quazip detect script.")
 # If you are well versed in # Qt and C/C++ please start helping around
 # and check https://github.com/stachenov/quazip/issues/185
 QUAZIP_VERSION=1.4
-QUAZIP_PATH=$$absolute_path($$PWD/../../quazip-$$QT_VERSION-$$QUAZIP_VERSION)intuisphere
+QUAZIP_PATH=$$absolute_path($$PWD/../../quazip-$$QT_VERSION-$$QUAZIP_VERSION)
 QUAZIP_INCLUDE_PATH=$$QUAZIP_PATH/include/QuaZip-Qt6-$$QUAZIP_VERSION
 QUAZIP_LIB_PATH=$$QUAZIP_PATH/lib
 

@@ -1,3 +1,6 @@
 release
 debug
 core
+docker/wasm/Dockerfile
+docker/wasm/README.md
+build-*

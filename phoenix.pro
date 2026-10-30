@@ -95,7 +95,7 @@ macx {
     LIBS += -liconv
     QMAKE_APPLE_DEVICE_ARCHS = x86_64 arm64
 }
-unix {
+unix:!wasm { # unix is also defined for the WebAssembly mkspec
     !macx { # unix is defined on mac
         HARDWARE_PLATFORM = $$system(uname -m)
         contains(HARDWARE_PLATFORM, x86_64)|contains(HARDWARE_PLATFORM, aarch64) {
@@ -167,16 +167,19 @@ macx {
 }
 
 QT += concurrent core gui network printsupport serialport sql svg widgets xml svgwidgets openglwidgets
+wasm: QT -= concurrent serialport
 
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
 
+!wasm {
 include(pri/openssl3.pri)
 include(pri/libgit2detect.pri)
 include(pri/boostdetect.pri)
 include(pri/spicedetect.pri)
 include(pri/quazipdetect.pri)
 include(pri/svgppdetect.pri)
+}
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)
 include(pri/partsbinpalette.pri)
@@ -201,7 +204,8 @@ include(pri/program.pri)
 include(pri/testing.pri)
 include(pri/simulation.pri)
 include(test/version.pri)
-include(pri/clipper1detect.pri)
+!wasm: include(pri/clipper1detect.pri)
+wasm: include(pri/wasm.pri)
 
 TARGET = Fritzing
 TEMPLATE = app

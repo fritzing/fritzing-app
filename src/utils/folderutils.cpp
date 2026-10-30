@@ -45,6 +45,15 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 FolderUtils* FolderUtils::singleton = nullptr;
 QString FolderUtils::m_openSaveFolder = "";
 
+#ifdef Q_OS_WASM
+// The browser build has no access to the user's file system. Application data is preloaded
+// into the in-memory file system, uploads are copied into it, and files written there are
+// handed back to the browser as downloads.
+static const QString WasmAppPath("/fritzing");
+static const QString WasmUploadFolder("/tmp/uploads");
+static const QString WasmDownloadFolder("/tmp/downloads");
+#endif
+
 FolderUtils::FolderUtils() {
 	m_openSaveFolder = ___emptyString___;
 	m_userFolders
@@ -218,7 +227,9 @@ const QString FolderUtils::applicationDirPath() {
 	}
 
 
-#ifdef Q_OS_WIN
+#if defined(Q_OS_WASM)
+	m_appPath = WasmAppPath;
+#elif defined(Q_OS_WIN)
 	m_appPath = QCoreApplication::applicationDirPath();
 #else
 	// look in standard Fritzing location (applicationDirPath and parent folders) then in standard linux locations
@@ -334,31 +345,112 @@ const QString FolderUtils::openSaveFolder() {
 
 QString FolderUtils::getOpenFileName( QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter, QFileDialog::Options options )
 {
+#ifdef Q_OS_WASM
+	// The browser delivers file contents asynchronously, and not at all while a nested
+	// event loop is waiting, so a blocking file dialog behaves as if cancelled.
+	// Callers that support the browser build use uploadFile() instead.
+	Q_UNUSED(parent);
+	Q_UNUSED(caption);
+	Q_UNUSED(dir);
+	Q_UNUSED(filter);
+	Q_UNUSED(selectedFilter);
+	Q_UNUSED(options);
+	return QString();
+#else
 	QString result = QFileDialog::getOpenFileName(parent, caption, dir, filter, selectedFilter, options);
 	if (!result.isNull()) {
 		setOpenSaveFolder(result);
 	}
 	return result;
+#endif
 }
 
 QStringList FolderUtils::getOpenFileNames( QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter, QFileDialog::Options options )
 {
+#ifdef Q_OS_WASM
+	QString result = getOpenFileName(parent, caption, dir, filter, selectedFilter, options);
+	return result.isEmpty() ? QStringList() : QStringList(result);
+#else
 	QStringList result = QFileDialog::getOpenFileNames(parent, caption, dir, filter, selectedFilter, options);
 	if (result.count() > 0) {
 		setOpenSaveFolder(result.at(0));
 	}
 	return result;
+#endif
 }
 
 QString FolderUtils::getSaveFileName( QWidget * parent, const QString & caption, const QString & dir, const QString & filter, QString * selectedFilter, QFileDialog::Options options )
 {
+#ifdef Q_OS_WASM
+	// No save dialog: the file is written to a scratch folder, and the caller passes
+	// the finished file to offerDownload()
+	Q_UNUSED(parent);
+	Q_UNUSED(caption);
+	Q_UNUSED(filter);
+	Q_UNUSED(selectedFilter);
+	Q_UNUSED(options);
+	QString name = QFileInfo(dir).fileName();
+	if (name.isEmpty()) {
+		name = "untitled";
+	}
+	QDir().mkpath(WasmDownloadFolder);
+	return WasmDownloadFolder + "/" + name;
+#else
 	//DebugDialog::debug(QString("getopenfilename %1 %2 %3 %4").arg(caption).arg(dir).arg(filter).arg(*selectedFilter));
 	QString result = QFileDialog::getSaveFileName(parent, caption, dir, filter, selectedFilter, options);
 	if (!result.isNull()) {
 		setOpenSaveFolder(result);
 	}
 	return result;
+#endif
 }
+
+void FolderUtils::offerDownload(const QString & path)
+{
+#ifdef Q_OS_WASM
+	QFile file(path);
+	if (file.open(QIODevice::ReadOnly)) {
+		QFileDialog::saveFileContent(file.readAll(), QFileInfo(path).fileName());
+	}
+#else
+	Q_UNUSED(path);
+#endif
+}
+
+#ifdef Q_OS_WASM
+void FolderUtils::uploadFile(const QString & filter, const std::function<void(const QString &)> & fileUploaded)
+{
+	QFileDialog::getOpenFileContent(filter, [fileUploaded](const QString & fileName, const QByteArray & content) {
+		if (fileName.isEmpty()) return;		// cancelled
+
+		QDir().mkpath(WasmUploadFolder);
+		QString path = WasmUploadFolder + "/" + QFileInfo(fileName).fileName();
+		QFile file(path);
+		if (!file.open(QIODevice::WriteOnly)) return;
+
+		file.write(content);
+		file.close();
+		fileUploaded(path);
+	});
+}
+
+QString FolderUtils::newExportFolder()
+{
+	QDir dir(WasmDownloadFolder);
+	dir.mkpath(".");
+	createFolderAndCdIntoIt(dir, TextUtils::getRandText());
+	return dir.absolutePath();
+}
+
+void FolderUtils::offerFolderDownload(const QString & folderPath, const QString & zipName)
+{
+	QString zipPath = WasmDownloadFolder + "/" + zipName;
+	if (createZipAndSaveTo(QDir(folderPath), zipPath, QStringList())) {
+		offerDownload(zipPath);
+	}
+	rmdir(folderPath);
+}
+#endif
 
 bool FolderUtils::isEmptyFileName(const QString &fileName, const QString &untitledFileName) {
 	return (fileName.isEmpty() || fileName.isNull() || fileName.startsWith(untitledFileName));

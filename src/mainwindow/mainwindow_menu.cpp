@@ -159,11 +159,7 @@ void MainWindow::mainLoad() {
 		path = "";
 	}
 
-	QString fileName = FolderUtils::getOpenFileName(
-	                       this,
-						   tr("Select a Fritzing file to open"),
-	                       path,
-						   tr("Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)")
+	QString filter = tr("Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)")
 						   .arg(FritzingSketchExtension
 						   , FritzingBundleExtension
 						   , FritzingBundledPartExtension
@@ -182,8 +178,26 @@ void MainWindow::mainLoad() {
 						   tr(";;Fritzing Unbundled Part (*%1)")
 						   .arg(FritzingPartExtension)
 #endif
-					   );
+					   ;
 
+#ifdef Q_OS_WASM
+	// the browser hands over the file asynchronously
+	Q_UNUSED(path);
+	FolderUtils::uploadFile(filter, [this](const QString & fileName) {
+		mainLoadChosenFile(fileName);
+	});
+#else
+	QString fileName = FolderUtils::getOpenFileName(
+	                       this,
+						   tr("Select a Fritzing file to open"),
+	                       path,
+	                       filter);
+
+	mainLoadChosenFile(fileName);
+#endif
+}
+
+void MainWindow::mainLoadChosenFile(const QString & fileName) {
 	if (fileName.isEmpty()) return;
 
 	if (fileName.endsWith(FritzingSketchExtension) || fileName.endsWith(FritzingBundleExtension)) {
@@ -3908,6 +3922,7 @@ void MainWindow::launchExternalProcess() {
 	args.append(fileName());
 	m_externalProcessOutput.clear();
 
+#if QT_CONFIG(process)
 	QFileInfo f = QFileInfo(path);
 	auto * process = new QProcess(this);
 	process->setWorkingDirectory(f.dir().absolutePath());
@@ -3920,9 +3935,10 @@ void MainWindow::launchExternalProcess() {
 	connect(process, SIGNAL(stateChanged(QProcess::ProcessState)), this, SLOT(processStateChanged(QProcess::ProcessState)));
 
 	process->start(path, args);
+#endif
 }
 
-
+#if QT_CONFIG(process)
 void MainWindow::processError(QProcess::ProcessError processError) {
 	DebugDialog::debug(QString("process error %1").arg(processError));
 }
@@ -3958,6 +3974,7 @@ void MainWindow::processStateChanged(QProcess::ProcessState newState) {
 		break;
 	}
 }
+#endif
 
 void MainWindow::shareOnline() {
 	QUrl new_url(QString("https://fritzing.org/projects/create/"));

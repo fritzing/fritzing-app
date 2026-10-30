@@ -47,6 +47,12 @@ public:
 	static QString getOpenFileName( QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFileDialog::Options options = {} );
 	static QStringList getOpenFileNames( QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFileDialog::Options options = {} );
 	static QString getSaveFileName( QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFileDialog::Options options = {} );
+	static void offerDownload(const QString & path);		// no-op except in the WebAssembly build
+#ifdef Q_OS_WASM
+	static void uploadFile(const QString & filter, const std::function<void(const QString &)> & fileUploaded);
+	static QString newExportFolder();
+	static void offerFolderDownload(const QString & folderPath, const QString & zipName);
+#endif
 	static void setOpenSaveFolder(const QString& path);
 	static void setOpenSaveFolderAux(const QString& path);
 	static const QString openSaveFolder();

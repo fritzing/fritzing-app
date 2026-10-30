@@ -2075,6 +2075,8 @@ void MainWindow::saveBundledPart(const QString &moduleId) {
 		    tr("Fritzing"),
 		    tr("Unable to export %1 to shareable sketch").arg(bundledFileName)
 		);
+	} else {
+		FolderUtils::offerDownload(bundledFileName);
 	}
 
 	FolderUtils::rmdir(dirToRemove);

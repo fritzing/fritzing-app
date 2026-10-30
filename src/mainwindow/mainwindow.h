@@ -30,7 +30,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStackedWidget>
 #include <QSizeGrip>
 #include <QPointer>
+#if QT_CONFIG(process)
 #include <QProcess>
+#endif
 #include <QDockWidget>
 #include <QXmlStreamWriter>
 #include <QRegularExpression>
@@ -445,10 +447,12 @@ protected Q_SLOTS:
 
 	void launchExternalProcess();
 	bool externalProcess(QString & name, QString & path, QStringList & args);
+#if QT_CONFIG(process)
 	void processError(QProcess::ProcessError processError);
 	void processFinished(int exitCode, QProcess::ExitStatus exitStatus);
 	void processReadyRead();
 	void processStateChanged(QProcess::ProcessState newState);
+#endif
 	void throwFakeException();
 
 	void dropPaste(SketchWidget *);
@@ -638,6 +642,7 @@ protected:
 	void dropEvent(QDropEvent *event);
 	void dragEnterEvent(QDragEnterEvent *event);
 	void mainLoadAux(const QString & fileName);
+	void mainLoadChosenFile(const QString & fileName);
 	QWidget * createGridSizeForm(GridSizeThing *);
 	void massageOutput(QString & svg, bool doMask, bool doSilk, bool doPaste, QString & maskTop, QString & maskBottom, const QString & fileName, ItemBase * board, int dpi, const LayerList &);
 	virtual void initLockedFiles(bool lockFiles);

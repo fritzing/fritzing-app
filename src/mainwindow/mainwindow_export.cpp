@@ -219,6 +219,9 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 		prefix = QString("%1_%2_").arg(board->instanceTitle()).arg(board->id());
 	}
 
+#ifdef Q_OS_WASM
+	QString exportDir = FolderUtils::newExportFolder();
+#else
 	QString exportDir = QFileDialog::getExistingDirectory(this, tr("Choose a folder for exporting", "dialog title"),
 	                    defaultSaveFolder(),
 	                    QFileDialog::ShowDirsOnly
@@ -226,6 +229,7 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 	if (exportDir.isEmpty()) return;
 
 	FolderUtils::setOpenSaveFolder(exportDir);
+#endif
 	FileProgressDialog * fileProgressDialog = exportProgress();
 
 	QRectF r = board->sceneBoundingRect();
@@ -358,6 +362,9 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 
 	statusMessage(tr("Sketch exported"), StatusMessageTimeout);
 	delete fileProgressDialog;
+#ifdef Q_OS_WASM
+	FolderUtils::offerFolderDownload(exportDir, QFileInfo(m_fwFilename).completeBaseName() + "_etchable.zip");
+#endif
 
 	/*
 
@@ -582,6 +589,7 @@ void MainWindow::doExport() {
 			exportAux(fileName,fileExportFormats[actionType], quality, true);
 		}
 		delete fileProgressDialog;
+		FolderUtils::offerDownload(fileName);
 
 	}
 #endif
@@ -845,6 +853,7 @@ bool MainWindow::saveAsAux(const QString & fileName) {
 		setReadOnly(readOnly);
 		return false;
 	}
+	FolderUtils::offerDownload(fileName);
 	m_autosaveNeeded = false;
 	undoStackCleanChanged(true);
 
@@ -1028,6 +1037,9 @@ bool MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 
 	if (!dirToRemove.isEmpty()) {
 		FolderUtils::rmdir(dirToRemove);
+	}
+	if (result && askForFilename) {
+		FolderUtils::offerDownload(bundledFileName);
 	}
 	return result;
 }
@@ -1241,6 +1253,7 @@ void MainWindow::exportSvg(double res, bool selectedItems, bool flatten, const Q
 
 	TextUtils::writeUtf8(fileName, TextUtils::convertExtendedChars(svg));
 	delete fileProgressDialog;
+	FolderUtils::offerDownload(fileName);
 }
 
 void MainWindow::exportSvgWatermark(QString & svg, double res)
@@ -1348,6 +1361,8 @@ void MainWindow::exportBOM_PDF() {
 	if (!ok) {
 		FMessageBox::warning(this, tr("Fritzing"),
 		                     tr("Unable to write PDF to %1").arg(fileName));
+	} else {
+		FolderUtils::offerDownload(fileName);
 	}
 }
 
@@ -1475,7 +1490,11 @@ void MainWindow::save_text_file(QString text, QString actionType, QString dialog
 
 	QFileInfo info(fileName);
 	if (info.exists()) {
+#ifdef Q_OS_WASM
+		FolderUtils::offerDownload(fileName);
+#else
 		QDesktopServices::openUrl(QString("file:///%1").arg(fileName));
+#endif
 	}
 
 	QClipboard *clipboard = QApplication::clipboard();
@@ -1518,6 +1537,7 @@ void MainWindow::exportSpiceNetlist() {
 	}
 
 	TextUtils::writeUtf8(fileName, spiceNetlist);
+	FolderUtils::offerDownload(fileName);
 }
 
 /**
@@ -1907,6 +1927,10 @@ void MainWindow::exportToGerber() {
 		return;
 	}
 
+#ifdef Q_OS_WASM
+	QString exportDir = FolderUtils::newExportFolder();
+	FileProgressDialog * fileProgressDialog = exportProgress();
+#else
 	QString exportDir = QFileDialog::getExistingDirectory(this, tr("Choose a folder for exporting", "dialog title"),
 	                    defaultSaveFolder(),
 	                    QFileDialog::ShowDirsOnly
@@ -1917,6 +1941,7 @@ void MainWindow::exportToGerber() {
 	FileProgressDialog * fileProgressDialog = exportProgress();
 
 	FolderUtils::setOpenSaveFolder(exportDir);
+#endif
 
 	QFileInfo info(m_fwFilename);
 	QString prefix = info.completeBaseName();
@@ -1928,6 +1953,9 @@ void MainWindow::exportToGerber() {
 	statusMessage(tr("Sketch exported to Gerber"), StatusMessageTimeout);
 
 	delete fileProgressDialog;
+#ifdef Q_OS_WASM
+	FolderUtils::offerFolderDownload(exportDir, prefix + "_gerber.zip");
+#endif
 }
 
 void MainWindow::connectStartSave(bool doConnect) {

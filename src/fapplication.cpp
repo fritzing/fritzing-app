@@ -103,6 +103,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef Q_OS_MACOS
 #define PLATFORM_NAME "mac-os-x-105"
 #endif
+#ifdef Q_OS_WASM
+#define PLATFORM_NAME "wasm"
+#endif
 
 #ifdef Q_OS_WIN
 #ifndef QT_NO_DEBUG
@@ -382,7 +385,11 @@ int FApplication::init() {
 
 	m_serviceType = ServiceType::NoService;
 
+#ifdef Q_OS_WASM
+	bool useOpenGL = false;		// the raster viewport is more reliable than QOpenGLWidget on WebGL
+#else
 	bool useOpenGL = true;
+#endif
 	bool showFPS = false;
 
 	QList<int> toRemove;
@@ -1464,11 +1471,13 @@ int FApplication::startup()
 	//bool fabEnabled = settings.value(ORDERFABENABLED, QVariant(false)).toBool();
 	//if (!fabEnabled) {
 
+#ifndef Q_OS_WASM	// cross-origin requests from the browser build would be blocked
 	auto * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotOrderFab(QNetworkReply *)));
 	manager->get(QNetworkRequest(QUrl(QString("http%2://fab.fritzing.org/launched%1")
 									  .arg(Version::makeRequestParamsString(true))
 									  .arg(QSslSocket::supportsSsl() ? "s" : ""))));
+#endif
 	//}
 
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, LoadProgressEnd);
@@ -1491,7 +1500,9 @@ int FApplication::startup()
 	m_updateDialog->setRepoPath(FolderUtils::getAppPartsSubFolderPath(""), m_referenceModel->sha());
 	connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
 	connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
+#ifndef Q_OS_WASM
 	checkForUpdates(false);
+#endif
 
 	return 0;
 }
@@ -1702,7 +1713,11 @@ void FApplication::checkForUpdates(bool atUserRequest)
 	QString atom = QString("http%3://fritzing.org/download/feed/atom/%1/%2")
 	               .arg(PLATFORM_NAME)
 				   .arg(Version::makeRequestParamsString(true))
+#if QT_CONFIG(ssl)
 				   .arg(QSslSocket::supportsSsl() ? "s" : "");
+#else
+				   .arg("s");	// the browser handles TLS for the WebAssembly build
+#endif
 	DebugDialog::debug(atom);
 	versionChecker->setUrl(atom);
 	m_updateDialog->setAtUserRequest(atUserRequest);

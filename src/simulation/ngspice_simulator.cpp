@@ -100,6 +100,8 @@ bool NgSpiceSimulator::init()
 		const QString libName = "libngspice.0.dylib";
 #elif defined Q_OS_WIN
 		const QString libName = "ngspice.dll";
+#elif defined Q_OS_WASM
+		const QString libName = "libngspice.so";	// never found in the browser; init() reports the error
 #endif
 		for (const auto& path : libPaths) {
 			QFileInfo library(path + "/" + libName);

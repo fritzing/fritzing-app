@@ -409,6 +409,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	connect(this, SIGNAL(openSketch()), this->window(), SLOT(mainLoad()));
 	connect(this, SIGNAL(recentSketch(const QString &, const QString &)), this->window(), SLOT(openRecentOrExampleFile(const QString &, const QString &)));
 
+#ifndef Q_OS_WASM	// cross-origin requests from the browser build would be blocked
 	QString protocol = QSslSocket::supportsSsl() ? "https" : "http";
 	// TODO: blog network calls should only happen once, not for each window?
 	auto * manager = new QNetworkAccessManager(this);
@@ -419,6 +420,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
 	manager->get(QNetworkRequest(QUrl(QString("%1://fritzing.org/projects/snippet/").arg(protocol))));
+#endif
 
 	TipsAndTricks::initTipSets();
 	nextTip();

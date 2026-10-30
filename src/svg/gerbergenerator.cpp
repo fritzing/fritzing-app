@@ -19,6 +19,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include <QBuffer>
+#include <QCryptographicHash>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QSvgRenderer>

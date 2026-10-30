@@ -49,8 +49,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QCloseEvent>
 #include <QPrinter>
 #include <QPrintDialog>
+#ifndef FRITZING_NO_SERIAL
 #include <QtSerialPort/qserialportinfo.h>
 #include <QtSerialPort/qserialport.h>
+#endif
 
 ///////////////////////////////////////////////
 
@@ -908,6 +910,7 @@ void ProgramWindow::updateLink(const QString & filename, Platform * platform, bo
 	Q_EMIT linkToProgramFile(filename, platform, addlink, strong);
 }
 
+#ifndef FRITZING_NO_SERIAL
 void ProgramWindow::portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus) {
 	DebugDialog::debug(QString("process finished %1 %2").arg(exitCode).arg(exitStatus));
 
@@ -937,3 +940,4 @@ void ProgramWindow::portProcessReadyRead() {
 		}
 	}
 }
+#endif

@@ -3,7 +3,9 @@
 
 #include <QDir>
 #include <QFileInfo>
+#ifndef FRITZING_NO_SERIAL
 #include <QProcess>
+#endif
 
 PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
 {
@@ -48,6 +50,9 @@ PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
 
 void PlatformArduino::upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation)
 {
+#ifdef FRITZING_NO_SERIAL
+	Platform::upload(source, port, board, fileLocation);
+#else
 	auto * process = new QProcess(this);
 	process->setProcessChannelMode(QProcess::MergedChannels);
 	process->setReadChannel(QProcess::StandardOutput);
@@ -91,8 +96,10 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
 		tab->appendToConsole(tr("Running %1 %2").arg(getCommandLocation()).arg(args.join(" ")));
 	process->start(getCommandLocation(), args);
 
+#endif
 }
 
+#ifndef FRITZING_NO_SERIAL
 bool PlatformArduino::usingArduinoCLI() {
 	//We make an error and analize if we are using the arduino-cli or not
 	auto * process = new QProcess(this);
@@ -106,3 +113,4 @@ bool PlatformArduino::usingArduinoCLI() {
 
 	return version.contains("arduino-cli");
 }
+#endif

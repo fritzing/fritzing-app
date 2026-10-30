@@ -41,7 +41,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 using boost::math::epsilon_difference;
 
 #include <limits>
+#if QT_CONFIG(concurrent)
 #include <QtConcurrentRun>
+#endif
 
 using namespace ClipperLib;
 
@@ -242,11 +244,15 @@ bool GroundPlaneGenerator::generateGroundPlane(const QString &boardSvg, QSizeF b
 	params.color = color;
 	params.seeds = seeds;
 	params.seedPoint = NULL;
+#if QT_CONFIG(concurrent)
 	QFuture<bool> future = QtConcurrent::run(&GroundPlaneGenerator::generateGroundPlaneFn, this, params);
 	while (!future.isFinished()) {
 		ProcessEventBlocker::processEvents(200);
 	}
 	return future.result();
+#else
+	return generateGroundPlaneFn(params);	// no worker threads in the WebAssembly build
+#endif
 }
 
 void saveClipperPathsToFile(Paths &paths, double clipperDPI, QString filename) {

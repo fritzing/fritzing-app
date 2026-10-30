@@ -42,7 +42,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 using boost::math::epsilon_difference;
 
 #include <limits>
+#if QT_CONFIG(concurrent)
 #include <QtConcurrentRun>
+#endif
 
 // factor for epsion to compare floating point numbers
 // 5 was arbitrary choosen
@@ -258,6 +260,7 @@ bool GroundPlaneGeneratorOld::generateGroundPlane(const QString & boardSvg, QSiz
 	params.board = board;
 	params.res = res;
 	params.color = color;
+#if QT_CONFIG(concurrent)
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QFuture<bool> future = QtConcurrent::run(this, &GroundPlaneGeneratorOld::generateGroundPlaneFn, params);
 #else
@@ -267,6 +270,9 @@ bool GroundPlaneGeneratorOld::generateGroundPlane(const QString & boardSvg, QSiz
 		ProcessEventBlocker::processEvents(200);
 	}
 	return future.result();
+#else
+	return generateGroundPlaneFn(params);	// no worker threads in the WebAssembly build
+#endif
 }
 
 bool GroundPlaneGeneratorOld::generateGroundPlaneFn(const GPGParamsOld &constParams)

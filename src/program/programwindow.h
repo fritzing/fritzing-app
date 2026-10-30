@@ -27,13 +27,17 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPushButton>
 #include <QFrame>
 #include <QTextEdit>
-#include <QProcess>
 #include <QTabWidget>
 #include <QComboBox>
 #include <QActionGroup>
+#ifdef FRITZING_NO_SERIAL
+#include "serialportinfostub.h"
+#else
+#include <QProcess>
 // #include <QSerialPort>
 #include <QtSerialPort/qserialportinfo.h>
 #include <QtSerialPort/qserialport.h>
+#endif
 
 #include "platform.h"
 
@@ -119,8 +123,10 @@ protected Q_SLOTS:
 	                bool cutEnable, bool copyEnable, bool pasteEnable,
 	                Platform * platform, const QString & port, const QString & board, const QString & filename);
 	void updateSerialPorts();
+#ifndef FRITZING_NO_SERIAL
 	void portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 	void portProcessReadyRead();
+#endif
 	void updateBoards();
 
 	// The following methods just forward events on to the current tab

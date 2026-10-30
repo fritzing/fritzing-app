@@ -21,7 +21,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "programtab.h"
 #include "highlighter.h"
 #include "syntaxer.h"
+#ifndef FRITZING_NO_SERIAL
 #include "consolewindow.h"
+#endif
 #include "../debugdialog.h"
 #include "../utils/folderutils.h"
 #include "../sketchtoolbutton.h"
@@ -736,6 +738,7 @@ bool ProgramTab::save(const QString & filename) {
 }
 
 void ProgramTab::serialMonitor() {
+#ifndef FRITZING_NO_SERIAL
 	if (m_monitorWindow == nullptr) {
 		m_monitorWindow = new ConsoleWindow(this);
 	}
@@ -743,6 +746,7 @@ void ProgramTab::serialMonitor() {
 	m_monitorWindow->activateWindow();
 	m_monitorWindow->raise();
 	m_monitorWindow->openSerialPort(m_port);
+#endif
 }
 
 void ProgramTab::sendProgram() {
@@ -760,9 +764,11 @@ void ProgramTab::sendProgram() {
 		//return;
 		save();
 	}
+#ifndef FRITZING_NO_SERIAL
 	if (m_monitorWindow != nullptr) {
 		m_monitorWindow->closeSerialPort(m_portComboBox->currentText());
 	}
+#endif
 
 	m_programButton->setEnabled(false);
 	m_console->setPlainText("");
@@ -772,6 +778,7 @@ void ProgramTab::sendProgram() {
 	                   m_filename);
 }
 
+#ifndef FRITZING_NO_SERIAL
 void ProgramTab::programProcessFinished(int exitCode, QProcess::ExitStatus exitStatus) {
 	DebugDialog::debug(QString("program process finished %1 %2").arg(exitCode).arg(exitStatus));
 	m_programButton->setEnabled(true);
@@ -787,6 +794,7 @@ void ProgramTab::programProcessReadyRead() {
 	QByteArray byteArray = qobject_cast<QProcess *>(sender())->readAllStandardOutput();
 	m_console->appendPlainText(byteArray);
 }
+#endif
 
 /**
  * This function emits all the required signals to update the menu of its owning ProgramWindow.

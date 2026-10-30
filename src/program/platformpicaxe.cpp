@@ -1,6 +1,8 @@
 #include "platformpicaxe.h"
 
+#ifndef FRITZING_NO_SERIAL
 #include <QProcess>
+#endif
 #include <QFileInfo>
 #include <QSettings>
 
@@ -45,6 +47,9 @@ PlatformPicaxe::PlatformPicaxe() : Platform(QString("PICAXE"))
 
 void PlatformPicaxe::upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation)
 {
+#ifdef FRITZING_NO_SERIAL
+	Platform::upload(source, port, board, fileLocation);
+#else
 	// see http://www.picaxe.com/docs/beta_compiler.pdf
 	auto * process = new QProcess(this);
 	process->setProcessChannelMode(QProcess::MergedChannels);
@@ -64,4 +69,5 @@ void PlatformPicaxe::upload(QWidget *source, const QString &port, const QString 
 	if (tab != nullptr)
 		tab->appendToConsole(tr("Running %1 %2").arg(cmd).arg(args.join(" ")));
 	process->start(cmd, args);
+#endif
 }

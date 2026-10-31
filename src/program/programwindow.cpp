@@ -49,10 +49,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QCloseEvent>
 #include <QPrinter>
 #include <QPrintDialog>
-#ifndef FRITZING_NO_SERIAL
 #include <QtSerialPort/qserialportinfo.h>
 #include <QtSerialPort/qserialport.h>
-#endif
 
 ///////////////////////////////////////////////
 
@@ -626,6 +624,9 @@ bool ProgramWindow::saveAsAux(const QString & fileName) {
 
 	bool result = m_savingProgramTab->save(fileName);
 	m_savingProgramTab = nullptr;
+	if (result) {
+		FolderUtils::offerDownload(fileName);
+	}
 	return result;
 }
 
@@ -861,6 +862,10 @@ QStringList ProgramWindow::getExtensions() {
 QList<QSerialPortInfo> ProgramWindow::getSerialPorts() {
 	QList<QSerialPortInfo> ports;
 	ports = QSerialPortInfo::availablePorts();
+#ifdef Q_OS_WASM
+	// the browser only lists ports the user has picked; this entry asks for another one
+	ports.append(WebSerial::choosePortEntry());
+#endif
 
 	/*
 	// on the pc, handy for testing the UI when there are no serial ports
@@ -910,7 +915,7 @@ void ProgramWindow::updateLink(const QString & filename, Platform * platform, bo
 	Q_EMIT linkToProgramFile(filename, platform, addlink, strong);
 }
 
-#ifndef FRITZING_NO_SERIAL
+#if QT_CONFIG(process)
 void ProgramWindow::portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus) {
 	DebugDialog::debug(QString("process finished %1 %2").arg(exitCode).arg(exitStatus));
 

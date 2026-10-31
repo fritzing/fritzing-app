@@ -26,6 +26,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "fapplication.h"
 #include "version/version.h"
 #include "utils/folderutils.h"
+#ifdef Q_OS_WASM
+#include "utils/wasmstorage.h"
+#endif
 
 #ifdef Q_OS_WIN
 #ifndef QT_NO_DEBUG
@@ -90,6 +93,10 @@ int main(int argc, char *argv[])
 
 #ifdef Q_OS_WIN
 	qputenv("QT_QPA_PLATFORM", "windows:darkmode=0");
+#endif
+
+#ifdef Q_OS_WASM
+	WasmStorage::mount();
 #endif
 
 	int result = 0;

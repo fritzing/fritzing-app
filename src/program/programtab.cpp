@@ -21,8 +21,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "programtab.h"
 #include "highlighter.h"
 #include "syntaxer.h"
-#ifndef FRITZING_NO_SERIAL
 #include "consolewindow.h"
+#ifdef Q_OS_WASM
+#include "webserialport_wasm.h"
 #endif
 #include "../debugdialog.h"
 #include "../utils/folderutils.h"
@@ -324,6 +325,11 @@ void ProgramTab::initMenus() {
 	QList<QSerialPortInfo> ports = m_programWindow->getSerialPorts();
 	Q_FOREACH (const QSerialPortInfo port, ports)
 		m_portComboBox->addItem(port.portName(), port.systemLocation());
+#ifdef Q_OS_WASM
+	if (m_portComboBox->currentData().toString() == WebSerial::ChoosePortLocation) {
+		m_portComboBox->setCurrentIndex(-1);	// so that choosing the entry asks for a port
+	}
+#endif
 
 
 	portSelectionContainer->addWidget(m_portComboBox);
@@ -443,6 +449,12 @@ void ProgramTab::setPort(const QString & newPort) {
 }
 
 void ProgramTab::setPort(int index) {
+#ifdef Q_OS_WASM
+	if (m_portComboBox->itemData(index).toString() == WebSerial::ChoosePortLocation) {
+		chooseWebSerialPort();
+		return;
+	}
+#endif
 	QString newPort = m_portComboBox->itemText(index);
 	setPort(newPort);
 }
@@ -471,6 +483,15 @@ bool ProgramTab::loadProgramFile() {
 		return false;
 	}
 
+#ifdef Q_OS_WASM
+	// The browser hands over the file asynchronously and does not report a cancel,
+	// so the (empty) tab stays open either way
+	QPointer<ProgramTab> tab(this);
+	FolderUtils::uploadFile(m_highlighter->syntaxer()->extensionString(), [tab](const QString & fileName) {
+		if (tab) tab->loadProgramFile(fileName, "", true);
+	});
+	return true;
+#else
 	QString fileName = FolderUtils::getOpenFileName(
 	                       this,
 	                       tr("Select a program file to load"),
@@ -481,6 +502,7 @@ bool ProgramTab::loadProgramFile() {
 	if (fileName.isEmpty()) return false;
 
 	return loadProgramFile(fileName, "", true);
+#endif
 }
 
 bool ProgramTab::loadProgramFile(const QString & fileName, const QString & altFileName, bool updateLink) {
@@ -738,7 +760,6 @@ bool ProgramTab::save(const QString & filename) {
 }
 
 void ProgramTab::serialMonitor() {
-#ifndef FRITZING_NO_SERIAL
 	if (m_monitorWindow == nullptr) {
 		m_monitorWindow = new ConsoleWindow(this);
 	}
@@ -746,10 +767,29 @@ void ProgramTab::serialMonitor() {
 	m_monitorWindow->activateWindow();
 	m_monitorWindow->raise();
 	m_monitorWindow->openSerialPort(m_port);
-#endif
 }
 
 void ProgramTab::sendProgram() {
+#ifdef Q_OS_WASM
+	// The browser build compiles on the Fritzing server and uploads over Web Serial
+	// (see PlatformArduino::upload), so it needs no programmer, and it sends the code
+	// as it is in the editor instead of saving (and downloading) the file first
+	if (m_monitorWindow != nullptr) {
+		m_monitorWindow->closeSerialPort(m_portComboBox->currentText());
+	}
+	QString baseName = QFileInfo(m_filename).completeBaseName();
+	QString path = QDir::temp().absoluteFilePath(QString("upload/%1/%1.ino").arg(baseName.isEmpty() ? QString("sketch") : baseName));
+	QDir().mkpath(QFileInfo(path).absolutePath());
+	QFile file(path);
+	if (!file.open(QFile::WriteOnly)) return;
+	file.write(m_textEdit->toPlainText().toUtf8());
+	file.close();
+
+	m_programButton->setEnabled(false);
+	m_console->setPlainText("");
+	m_platform->upload(this, m_portComboBox->currentData().toString(), m_boardComboBox->currentText(), path);
+	return;
+#endif
 	const QString commandLoc = m_platform->getCommandLocation();
 	if (commandLoc.isEmpty()) {
 		m_console->setPlainText(tr("No uploader for %1 specified. Go to Preferences > Code View to configure it.").arg(m_platform->getName()));
@@ -764,11 +804,9 @@ void ProgramTab::sendProgram() {
 		//return;
 		save();
 	}
-#ifndef FRITZING_NO_SERIAL
 	if (m_monitorWindow != nullptr) {
 		m_monitorWindow->closeSerialPort(m_portComboBox->currentText());
 	}
-#endif
 
 	m_programButton->setEnabled(false);
 	m_console->setPlainText("");
@@ -778,7 +816,31 @@ void ProgramTab::sendProgram() {
 	                   m_filename);
 }
 
-#ifndef FRITZING_NO_SERIAL
+#ifdef Q_OS_WASM
+void ProgramTab::uploadFinished(bool ok, const QString & message) {
+	DebugDialog::debug(QString("upload finished %1 %2").arg(ok).arg(message));
+	m_programButton->setEnabled(true);
+	m_console->appendPlainText(message);
+}
+
+void ProgramTab::chooseWebSerialPort() {
+	QPointer<ProgramTab> tab(this);
+	WebSerial::requestPort(this, [tab](const QString & portName) {
+		if (!tab) return;
+
+		tab->updateSerialPorts();
+		if (!portName.isEmpty()) {
+			tab->setPort(portName);
+		} else if (!tab->m_port.isEmpty()) {
+			tab->setPort(tab->m_port);
+		} else {
+			tab->m_portComboBox->setCurrentIndex(-1);
+		}
+	});
+}
+#endif
+
+#if QT_CONFIG(process)
 void ProgramTab::programProcessFinished(int exitCode, QProcess::ExitStatus exitStatus) {
 	DebugDialog::debug(QString("program process finished %1 %2").arg(exitCode).arg(exitStatus));
 	m_programButton->setEnabled(true);

@@ -101,6 +101,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "servicelistfetcher.h"
 #include "utils/uploadpair.h"
 #include "version/version.h"
+#ifdef Q_OS_WASM
+#include "utils/wasmstorage.h"
+#endif
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -3317,6 +3320,9 @@ void  MainWindow::backupSketch() {
 			statusMessage(tr("Backup of '%1' failed").arg(m_fwFilename), StatusMessageTimeout);
 			m_autosaveNeeded = true;
 		}
+#ifdef Q_OS_WASM
+		WasmStorage::scheduleSync();
+#endif
 	}
 }
 

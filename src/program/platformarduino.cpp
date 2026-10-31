@@ -3,8 +3,18 @@
 
 #include <QDir>
 #include <QFileInfo>
-#ifndef FRITZING_NO_SERIAL
+#if QT_CONFIG(process)
 #include <QProcess>
+#endif
+#ifdef Q_OS_WASM
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QPointer>
+#include "../utils/folderutils.h"
+#include "webserialport_wasm.h"
 #endif
 
 PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
@@ -50,7 +60,79 @@ PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
 
 void PlatformArduino::upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation)
 {
-#ifdef FRITZING_NO_SERIAL
+#ifdef Q_OS_WASM
+	// The browser cannot run arduino-cli: the Fritzing server compiles the sketch
+	// (docker/wasm/compile-service) and the browser uploads it over Web Serial
+	auto *tab = qobject_cast<ProgramTab *>(source);
+	if (tab == nullptr) return;
+
+	QFile file(fileLocation);
+	if (!file.open(QIODevice::ReadOnly)) {
+		tab->uploadFinished(false, tr("Unable to read %1").arg(fileLocation));
+		return;
+	}
+	QJsonObject body;
+	body["fqbn"] = getBoards().value(board);
+	body["sketch"] = QString::fromUtf8(file.readAll());
+	file.close();
+
+	tab->appendToConsole(tr("Compiling for %1 on the Fritzing server...").arg(board));
+	QNetworkRequest request{QUrl(WebSerial::compileServiceUrl())};
+	request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+	auto * manager = new QNetworkAccessManager(this);
+	QNetworkReply * reply = manager->post(request, QJsonDocument(body).toJson(QJsonDocument::Compact));
+	QPointer<ProgramTab> tabPointer(tab);
+	QString sketchName = QFileInfo(fileLocation).completeBaseName();
+	connect(reply, &QNetworkReply::finished, this, [this, reply, manager, tabPointer, port, board, sketchName]() {
+		reply->deleteLater();
+		manager->deleteLater();
+		if (!tabPointer) return;
+
+		int status = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+		QJsonObject result = QJsonDocument::fromJson(reply->readAll()).object();
+		if (result.isEmpty()) {
+			tabPointer->uploadFinished(false, (status == 502 || status == 504 || status == 404)
+			                           ? tr("The compile service is not available. Start the Fritzing web app with "
+			                                "docker/wasm/compose.yaml to upload code.")
+			                           : tr("Compiling failed: %1").arg(reply->errorString()));
+			return;
+		}
+		QString log = result["log"].toString().trimmed();
+		if (!log.isEmpty()) tabPointer->appendToConsole(log);
+		if (!result["ok"].toBool()) {
+			tabPointer->uploadFinished(false, tr("Compiling failed."));
+			return;
+		}
+
+		QString hex = result["hex"].toString();
+		if (!WebSerial::canFlash(board)) {
+			QString path = FolderUtils::getSaveFileName(nullptr, QString(), sketchName + ".hex");
+			QFile hexFile(path);
+			if (hexFile.open(QIODevice::WriteOnly)) {
+				hexFile.write(hex.toLatin1());
+				hexFile.close();
+				FolderUtils::offerDownload(path);
+			}
+			tabPointer->uploadFinished(true, tr("The browser cannot upload to %1, so the compiled sketch was downloaded as %2. "
+			                                    "Upload it with a programming tool.").arg(board, QFileInfo(path).fileName()));
+			return;
+		}
+		if (port.isEmpty() || port == WebSerial::ChoosePortLocation) {
+			tabPointer->uploadFinished(false, tr("Compiled. Choose a port to upload to the board."));
+			return;
+		}
+
+		tabPointer->appendToConsole(tr("Uploading to %1 on %2...").arg(board, port));
+		WebSerial::flash(tabPointer, port, board, hex,
+		                 [tabPointer](const QString & message) {
+		                     if (tabPointer) tabPointer->appendToConsole(message);
+		                 },
+		                 [tabPointer](bool ok, const QString & message) {
+		                     if (!tabPointer) return;
+		                     tabPointer->uploadFinished(ok, ok ? tr("Upload finished.") : tr("Upload failed: %1").arg(message));
+		                 });
+	});
+#elif !QT_CONFIG(process)
 	Platform::upload(source, port, board, fileLocation);
 #else
 	auto * process = new QProcess(this);
@@ -99,7 +181,7 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
 #endif
 }
 
-#ifndef FRITZING_NO_SERIAL
+#if QT_CONFIG(process)
 bool PlatformArduino::usingArduinoCLI() {
 	//We make an error and analize if we are using the arduino-cli or not
 	auto * process = new QProcess(this);

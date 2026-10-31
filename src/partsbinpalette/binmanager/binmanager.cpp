@@ -414,14 +414,23 @@ PartsBinPaletteWidget* BinManager::newBinIn() {
 
 PartsBinPaletteWidget* BinManager::openBinIn(QString fileName, bool fastLoad) {
 	if(fileName.isNull() || fileName.isEmpty()) {
+		QString filter = tr("Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)")
+		                 .arg(FritzingBinExtension).arg(FritzingBundledBinExtension);
+#ifdef Q_OS_WASM
+		// the browser hands over the file asynchronously, and the bin opens then
+		FolderUtils::uploadFile(filter, [this, fastLoad](const QString & uploadedName) {
+			openBinIn(uploadedName, fastLoad);
+		});
+		return nullptr;
+#else
 		fileName = QFileDialog::getOpenFileName(
 		               this,
 		               tr("Select a Fritzing Parts Bin file to open"),
 		               m_defaultSaveFolder,
-		               tr("Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)")
-		               .arg(FritzingBinExtension).arg(FritzingBundledBinExtension)
+		               filter
 		           );
 		if (fileName.isNull()) return nullptr;
+#endif
 	}
 	PartsBinPaletteWidget* bin = nullptr;
 	bool createNewOne = false;
@@ -1394,17 +1403,30 @@ void BinManager::setTempPartsBinLocation(const QString & name) {
 
 void BinManager::mainLoad() {
 	QString path = m_defaultSaveFolder;
+	QString filter = tr("Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)")
+	                 .arg(FritzingBundledPartExtension)
+	                 .arg(FritzingBinExtension)
+	                 .arg(FritzingBundledBinExtension);
 
+#ifdef Q_OS_WASM
+	// the browser hands over the file asynchronously
+	Q_UNUSED(path);
+	FolderUtils::uploadFile(filter, [this](const QString & fileName) {
+		mainLoadChosenFile(fileName);
+	});
+#else
 	QString fileName = FolderUtils::getOpenFileName(
 	                       this,
 						   tr("Select a Fritzing file to open"),
 	                       path,
-	                       tr("Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)")
-	                       .arg(FritzingBundledPartExtension)
-	                       .arg(FritzingBinExtension)
-	                       .arg(FritzingBundledBinExtension)
+	                       filter
 	                   );
 
+	mainLoadChosenFile(fileName);
+#endif
+}
+
+void BinManager::mainLoadChosenFile(const QString & fileName) {
 	if (fileName.isEmpty()) return;
 
 	if (fileName.endsWith(FritzingBundledPartExtension)) {

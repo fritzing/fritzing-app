@@ -1,0 +1,132 @@
+2026-10-29 20:31:53,934 - aqt.main - INFO - installer 8785023744 aqtinstall(aqt) v3.3.0 on Python 3.14.0 [CPython Clang 17.0.0 (clang-1700.0.13.3)]
+2026-10-29 20:31:53,935 - aqt.helper - DEBUG - helper 8785023744 Attempt to download checksum at https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/Updates.xml.sha256
+2026-10-29 20:31:55,203 - aqt.helper - DEBUG - helper 8785023744 Attempt to download checksum at https://download.qt.io/online/qtsdkrepository/mac_x64/extensions/qtwebengine/6103/clang_64/Updates.xml.sha256
+2026-10-29 20:31:56,485 - aqt.archives - INFO - archives 8785023744 Found extension qtwebengine
+2026-10-29 20:31:56,486 - aqt.helper - DEBUG - helper 8785023744 Attempt to download checksum at https://download.qt.io/online/qtsdkrepository/mac_x64/extensions/qtpdf/6103/clang_64/Updates.xml.sha256
+2026-10-29 20:31:57,694 - aqt.archives - INFO - archives 8785023744 Found extension qtpdf
+2026-10-29 20:31:58,132 - aqt.helper - DEBUG - helper 8785023744 Attempt to download checksum at https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.addons.qt5compat.clang_64/6.10.3-0-202603310405qt5compat-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z.sha256
+2026-10-29 20:31:58,132 - aqt.helper - DEBUG - helper 8785023744 Attempt to download checksum at https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qtbase-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z.sha256
+2026-10-29 20:31:58,133 - aqt.helper - DEBUG - helper 8785023744 Attempt to download checksum at https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qtdeclarative-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z.sha256
+2026-10-29 20:31:58,133 - aqt.helper - DEBUG - helper 8785023744 Attempt to download checksum at https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qtsvg-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z.sha256
+2026-10-29 20:31:58,753 - aqt.helper - INFO - helper 8785023744 Downloading qt5compat...
+2026-10-29 20:31:58,753 - aqt.installer - DEBUG - installer 8785023744 Download URL: https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.addons.qt5compat.clang_64/6.10.3-0-202603310405qt5compat-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:31:58,758 - aqt.helper - INFO - helper 8785023744 Downloading qtbase...
+2026-10-29 20:31:58,759 - aqt.installer - DEBUG - installer 8785023744 Download URL: https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qtbase-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:31:58,760 - aqt.helper - INFO - helper 8785023744 Downloading qtdeclarative...
+2026-10-29 20:31:58,760 - aqt.installer - DEBUG - installer 8785023744 Download URL: https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qtdeclarative-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:31:58,820 - aqt.helper - INFO - helper 8785023744 Downloading qtsvg...
+2026-10-29 20:31:58,820 - aqt.installer - DEBUG - installer 8785023744 Download URL: https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qtsvg-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:31:59,375 - aqt.helper - DEBUG - helper 8785023744 Asked to redirect(302) to: https://qt.mirror.constant.com/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.addons.qt5compat.clang_64/6.10.3-0-202603310405qt5compat-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:31:59,376 - aqt.helper - INFO - helper 8785023744 Redirected: qt.mirror.constant.com
+2026-10-29 20:31:59,380 - aqt.helper - DEBUG - helper 8785023744 Asked to redirect(302) to: https://qt.mirror.constant.com/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qtbase-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:31:59,380 - aqt.helper - INFO - helper 8785023744 Redirected: qt.mirror.constant.com
+2026-10-29 20:31:59,440 - aqt.helper - DEBUG - helper 8785023744 Asked to redirect(302) to: https://qt.mirror.constant.com/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qtdeclarative-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:31:59,441 - aqt.helper - INFO - helper 8785023744 Redirected: qt.mirror.constant.com
+2026-10-29 20:31:59,476 - aqt.helper - DEBUG - helper 8785023744 Asked to redirect(302) to: https://qt.mirror.constant.com/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qtsvg-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:31:59,477 - aqt.helper - INFO - helper 8785023744 Redirected: qt.mirror.constant.com
+2026-10-29 20:31:59,998 - aqt.installer - INFO - installer 8785023744 Finished installation of qtsvg-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z in 1.86689983
+2026-10-29 20:32:00,009 - aqt.helper - DEBUG - helper 8785023744 Attempt to download checksum at https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qttools-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z.sha256
+2026-10-29 20:32:00,575 - aqt.installer - INFO - installer 8785023744 Finished installation of qt5compat-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z in 2.44414004
+2026-10-29 20:32:00,583 - aqt.helper - DEBUG - helper 8785023744 Attempt to download checksum at https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qttranslations-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z.sha256
+2026-10-29 20:32:00,627 - aqt.helper - INFO - helper 8785023744 Downloading qttools...
+2026-10-29 20:32:00,627 - aqt.installer - DEBUG - installer 8785023744 Download URL: https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qttools-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:32:01,212 - aqt.helper - INFO - helper 8785023744 Downloading qttranslations...
+2026-10-29 20:32:01,212 - aqt.installer - DEBUG - installer 8785023744 Download URL: https://download.qt.io/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qttranslations-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:32:01,223 - aqt.helper - DEBUG - helper 8785023744 Asked to redirect(302) to: https://qt.mirror.constant.com/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qttools-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:32:01,223 - aqt.helper - INFO - helper 8785023744 Redirected: qt.mirror.constant.com
+2026-10-29 20:32:01,790 - aqt.helper - DEBUG - helper 8785023744 Asked to redirect(302) to: https://qt.mirror.constant.com/online/qtsdkrepository/mac_x64/desktop/qt6_6103/qt6_6103/qt.qt6.6103.clang_64/6.10.3-0-202603310405qttranslations-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z
+2026-10-29 20:32:01,790 - aqt.helper - INFO - helper 8785023744 Redirected: qt.mirror.constant.com
+2026-10-29 20:32:02,619 - aqt.installer - INFO - installer 8785023744 Finished installation of qttranslations-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z in 2.03723450
+2026-10-29 20:32:03,774 - aqt.installer - INFO - installer 8785023744 Finished installation of qtbase-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z in 5.64270846
+2026-10-29 20:32:04,771 - aqt.installer - INFO - installer 8785023744 Finished installation of qttools-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z in 4.76329933
+2026-10-29 20:32:09,891 - aqt.installer - INFO - installer 8785023744 Finished installation of qtdeclarative-MacOS-MacOS_15-Clang-MacOS-MacOS_15-X86_64-ARM64.7z in 11.76012012
+2026-10-29 20:32:10,139 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/bin/qmake
+2026-10-29 20:32:10,144 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2.pc
+2026-10-29 20:32:10,144 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6LabsWavefrontMesh.pc
+2026-10-29 20:32:10,144 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2FusionStyleImpl.pc
+2026-10-29 20:32:10,144 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Platform.pc
+2026-10-29 20:32:10,145 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6LabsFolderListModel.pc
+2026-10-29 20:32:10,145 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickVectorImageHelpers.pc
+2026-10-29 20:32:10,145 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QmlCore.pc
+2026-10-29 20:32:10,145 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6MultimediaWidgets.pc
+2026-10-29 20:32:10,148 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Concurrent.pc
+2026-10-29 20:32:10,148 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6LabsQmlModels.pc
+2026-10-29 20:32:10,148 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickEffects.pc
+2026-10-29 20:32:10,148 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QmlWorkerScript.pc
+2026-10-29 20:32:10,149 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2MacOSStyleImpl.pc
+2026-10-29 20:32:10,149 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Designer.pc
+2026-10-29 20:32:10,149 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2Impl.pc
+2026-10-29 20:32:10,149 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QmlIntegration.pc
+2026-10-29 20:32:10,150 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2IOSStyleImpl.pc
+2026-10-29 20:32:10,150 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Xml.pc
+2026-10-29 20:32:10,150 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2Universal.pc
+2026-10-29 20:32:10,150 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6SerialPort.pc
+2026-10-29 20:32:10,151 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickDialogs2QuickImpl.pc
+2026-10-29 20:32:10,151 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6SvgWidgets.pc
+2026-10-29 20:32:10,151 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6LabsAnimation.pc
+2026-10-29 20:32:10,152 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6UiTools.pc
+2026-10-29 20:32:10,152 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6ShaderTools.pc
+2026-10-29 20:32:10,152 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickDialogs2Utils.pc
+2026-10-29 20:32:10,152 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickTest.pc
+2026-10-29 20:32:10,152 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickDialogs2.pc
+2026-10-29 20:32:10,153 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QmlXmlListModel.pc
+2026-10-29 20:32:10,153 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2FluentWinUI3StyleImpl.pc
+2026-10-29 20:32:10,153 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Help.pc
+2026-10-29 20:32:10,153 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6OpenGLWidgets.pc
+2026-10-29 20:32:10,153 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6UiPlugin.pc
+2026-10-29 20:32:10,154 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Quick.pc
+2026-10-29 20:32:10,154 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Core5Compat.pc
+2026-10-29 20:32:10,154 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2Imagine.pc
+2026-10-29 20:32:10,154 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6LabsSharedImage.pc
+2026-10-29 20:32:10,154 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Linguist.pc
+2026-10-29 20:32:10,155 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6PrintSupport.pc
+2026-10-29 20:32:10,155 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2Fusion.pc
+2026-10-29 20:32:10,155 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2BasicStyleImpl.pc
+2026-10-29 20:32:10,155 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickVectorImage.pc
+2026-10-29 20:32:10,155 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2ImagineStyleImpl.pc
+2026-10-29 20:32:10,156 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6LabsSynchronizer.pc
+2026-10-29 20:32:10,156 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickWidgets.pc
+2026-10-29 20:32:10,156 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Svg.pc
+2026-10-29 20:32:10,156 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickTemplates2.pc
+2026-10-29 20:32:10,156 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QmlMeta.pc
+2026-10-29 20:32:10,157 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QmlNetwork.pc
+2026-10-29 20:32:10,157 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2Basic.pc
+2026-10-29 20:32:10,157 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Core.pc
+2026-10-29 20:32:10,157 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Gui.pc
+2026-10-29 20:32:10,158 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2MaterialStyleImpl.pc
+2026-10-29 20:32:10,158 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QmlAssetDownloader.pc
+2026-10-29 20:32:10,158 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2Material.pc
+2026-10-29 20:32:10,158 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6SpatialAudio.pc
+2026-10-29 20:32:10,160 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Multimedia.pc
+2026-10-29 20:32:10,162 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6OpenGL.pc
+2026-10-29 20:32:10,163 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QmlLocalStorage.pc
+2026-10-29 20:32:10,163 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6LabsSettings.pc
+2026-10-29 20:32:10,163 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Test.pc
+2026-10-29 20:32:10,163 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Network.pc
+2026-10-29 20:32:10,163 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Sql.pc
+2026-10-29 20:32:10,164 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6LabsPlatform.pc
+2026-10-29 20:32:10,164 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickLayouts.pc
+2026-10-29 20:32:10,164 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6DBus.pc
+2026-10-29 20:32:10,164 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QmlCompiler.pc
+2026-10-29 20:32:10,164 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Widgets.pc
+2026-10-29 20:32:10,165 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6Qml.pc
+2026-10-29 20:32:10,165 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QuickControls2UniversalStyleImpl.pc
+2026-10-29 20:32:10,165 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/pkgconfig/Qt6QmlModels.pc
+2026-10-29 20:32:10,166 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6QmlLS.prl
+2026-10-29 20:32:10,166 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6FbSupport.prl
+2026-10-29 20:32:10,166 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6FFmpegMediaPluginImpl.prl
+2026-10-29 20:32:10,166 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6QmlDebug.prl
+2026-10-29 20:32:10,166 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6QmlTypeRegistrar.prl
+2026-10-29 20:32:10,166 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6QuickTestUtils.prl
+2026-10-29 20:32:10,166 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6ExampleIcons.prl
+2026-10-29 20:32:10,166 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6QuickControlsTestUtils.prl
+2026-10-29 20:32:10,167 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6DeviceDiscoverySupport.prl
+2026-10-29 20:32:10,167 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6MultimediaTestLib.prl
+2026-10-29 20:32:10,167 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6QmlDom.prl
+2026-10-29 20:32:10,167 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6ExamplesAssetDownloader.prl
+2026-10-29 20:32:10,167 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6QmlAssetDownloader.prl
+2026-10-29 20:32:10,167 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6PacketProtocol.prl
+2026-10-29 20:32:10,167 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6QmlFormat.prl
+2026-10-29 20:32:10,168 - aqt.updater - INFO - updater 8785023744 Patching /Users/aidanpetti/Qt/6.10.3/macos/lib/libQt6QmlToolingSettings.prl
+2026-10-29 20:32:10,168 - aqt.main - INFO - installer 8785023744 Finished installation
+2026-10-29 20:32:10,168 - aqt.main - INFO - installer 8785023744 Time elapsed: 16.23415075 second

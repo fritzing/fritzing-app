@@ -302,6 +302,13 @@ void Board::prepLoadImage() {
 		imagesStr += "*.svg";
 	}
 	imagesStr += ")";
+#ifdef Q_OS_WASM
+	// the browser hands over the file asynchronously
+	QPointer<Board> board(this);
+	FolderUtils::uploadFile(imagesStr, [board](const QString & fileName) {
+		if (board) board->loadChosenImage(fileName);
+	});
+#else
 	QString fileName = FolderUtils::getOpenFileName(
 	                       nullptr,
 	                       tr("Select an image file to load"),
@@ -309,6 +316,11 @@ void Board::prepLoadImage() {
 	                       imagesStr
 	                   );
 
+	loadChosenImage(fileName);
+#endif
+}
+
+void Board::loadChosenImage(const QString & fileName) {
 	if (fileName.isEmpty()) return;
 
 	if (!checkImage(fileName)) return;

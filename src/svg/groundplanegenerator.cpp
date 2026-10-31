@@ -251,7 +251,10 @@ bool GroundPlaneGenerator::generateGroundPlane(const QString &boardSvg, QSizeF b
 	}
 	return future.result();
 #else
-	return generateGroundPlaneFn(params);	// no worker threads in the WebAssembly build
+	// no worker threads in the WebAssembly build: let the page show the progress
+	// before the (blocking) calculation starts
+	ProcessEventBlocker::processEvents();
+	return generateGroundPlaneFn(params);
 #endif
 }
 

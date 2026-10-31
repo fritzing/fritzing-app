@@ -48,10 +48,14 @@ QString FolderUtils::m_openSaveFolder = "";
 #ifdef Q_OS_WASM
 // The browser build has no access to the user's file system. Application data is preloaded
 // into the in-memory file system, uploads are copied into it, and files written there are
-// handed back to the browser as downloads.
+// handed back to the browser as downloads. Uploads are kept in the documents folder, which
+// is stored in the browser (see WasmStorage), so recent files still open after a reload.
 static const QString WasmAppPath("/fritzing");
-static const QString WasmUploadFolder("/tmp/uploads");
 static const QString WasmDownloadFolder("/tmp/downloads");
+
+static QString wasmUploadFolder() {
+	return FolderUtils::getTopLevelDocumentsPath() + "/uploads";
+}
 #endif
 
 FolderUtils::FolderUtils() {
@@ -423,8 +427,9 @@ void FolderUtils::uploadFile(const QString & filter, const std::function<void(co
 	QFileDialog::getOpenFileContent(filter, [fileUploaded](const QString & fileName, const QByteArray & content) {
 		if (fileName.isEmpty()) return;		// cancelled
 
-		QDir().mkpath(WasmUploadFolder);
-		QString path = WasmUploadFolder + "/" + QFileInfo(fileName).fileName();
+		QString folder = wasmUploadFolder();
+		QDir().mkpath(folder);
+		QString path = folder + "/" + QFileInfo(fileName).fileName();
 		QFile file(path);
 		if (!file.open(QIODevice::WriteOnly)) return;
 

@@ -24,6 +24,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "partschecker.h"
 
+#include <QObject>
+
 void PartsCheckerResult::reset() {
 	partsCheckerError = PARTS_CHECKER_ERROR_NONE;
 	errorMessage.clear();
@@ -42,6 +44,10 @@ QString PartsChecker::getSha(const QString &)
 bool PartsChecker::newPartsAvailable(const QString &, const QString &, bool, QString &, PartsCheckerResult & partsCheckerResult)
 {
 	partsCheckerResult.reset();
+	// shown by the update dialog instead of "no new parts"
+	partsCheckerResult.errorMessage = QObject::tr("<p>No new releases found.</p>"
+	                                              "<p>The parts library is part of the Fritzing web app. To get newer parts, "
+	                                              "rebuild the Docker image with <code>--build-arg PARTS_COMMIT=latest</code>.</p>");
 	return false;
 }
 

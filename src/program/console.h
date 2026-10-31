@@ -64,6 +64,9 @@ protected:
 	virtual void mousePressEvent(QMouseEvent *e);
 	virtual void mouseDoubleClickEvent(QMouseEvent *e);
 	virtual void contextMenuEvent(QContextMenuEvent *e);
+#ifdef Q_OS_WASM
+	void inputMethodEvent(QInputMethodEvent *e) override;
+#endif
 
 private:
 	bool localEchoEnabled;

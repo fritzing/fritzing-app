@@ -41,6 +41,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "utils/folderutils.h"
 #include "utils/textutils.h"
 #include "mainwindow/mainwindow.h"          // TODO: PartsBinPaletteWidget should not call MainWindow functions
+#ifdef Q_OS_WASM
+#include "utils/wasmstorage.h"
+#endif
 
 
 static QString CustomIconName = "Custom1.png";
@@ -268,6 +271,10 @@ bool PartsBinPaletteWidget::saveAsAux(const QString &filename) {
 	}
 	m_removed.clear();
 
+#ifdef Q_OS_WASM
+	WasmStorage::scheduleSync();
+#endif
+
 	return true;
 }
 
@@ -386,7 +393,17 @@ QToolButton* PartsBinPaletteWidget::newToolButton(const QString& btnObjName, con
 		toolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 		toolBtn->setText(text);
 	}
+#ifdef Q_OS_WASM
+	// InstantPopup runs the menu in its own event loop, and in the browser only one loop can
+	// run nested in the main one (Asyncify): a dialog opened from the menu would get no input
+	connect(toolBtn, &QToolButton::clicked, toolBtn, [toolBtn]() {
+		if (toolBtn->menu() != nullptr) {
+			toolBtn->menu()->popup(toolBtn->mapToGlobal(QPoint(0, toolBtn->height())));
+		}
+	});
+#else
 	toolBtn->setPopupMode(QToolButton::InstantPopup);
+#endif
 	if (!imgPath.isEmpty()) {
 		toolBtn->setIcon(QIcon(imgPath));
 	}
@@ -405,6 +422,14 @@ bool PartsBinPaletteWidget::save() {
 }
 
 bool PartsBinPaletteWidget::saveAs() {
+#ifdef Q_OS_WASM
+	// No save dialog in the browser: the bin goes into the user bins folder, which is
+	// stored in the browser, under a name that does not replace another bin
+	QString fileName = m_defaultSaveFolder + "/" + title() + FritzingBinExtension;
+	for (int i = 2; QFile::exists(fileName) && fileName != m_fileName; i++) {
+		fileName = m_defaultSaveFolder + "/" + QString("%1 %2").arg(title()).arg(i) + FritzingBinExtension;
+	}
+#else
 	QString fileExt;
 	QString fileName = QFileDialog::getSaveFileName(
 	                       this,
@@ -415,6 +440,7 @@ bool PartsBinPaletteWidget::saveAs() {
 	                       tr("Fritzing Bin (*%1)").arg(FritzingBinExtension),
 	                       &fileExt
 	                   );
+#endif
 
 	if (fileName.isEmpty()) return false; // Cancel pressed
 

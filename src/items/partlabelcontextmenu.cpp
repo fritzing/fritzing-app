@@ -216,7 +216,13 @@ void PartLabelContextMenu::prepare()
 void PartLabelContextMenu::popup(const QPoint & screenPos)
 {
 	if (selectedLabel() == nullptr) return;
+#ifdef Q_OS_WASM
+	// In the browser only one event loop can run nested in the main one (Asyncify),
+	// so a modal dialog opened from a menu running its own loop (exec()) gets no input
+	m_menu->popup(screenPos);    // aboutToShow -> prepare()
+#else
 	m_menu->exec(screenPos);    // aboutToShow -> prepare()
+#endif
 }
 
 QStringList PartLabelContextMenu::rotateFlipActionNames() const

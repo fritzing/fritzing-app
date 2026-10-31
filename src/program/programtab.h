@@ -28,7 +28,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFrame>
 #include <QTextEdit>
 #include <QPlainTextEdit>
-#ifndef FRITZING_NO_SERIAL
+#if QT_CONFIG(process)
 #include <QProcess>
 #endif
 #include <QTabWidget>
@@ -42,9 +42,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QHBoxLayout>
 
 #include "programwindow.h"
-#ifndef FRITZING_NO_SERIAL
 #include "consolewindow.h"
-#endif
 
 #include "../sketchtoolbutton.h"
 
@@ -119,9 +117,13 @@ public Q_SLOTS:
 	void rename();
 	void serialMonitor();
 	void sendProgram();
-#ifndef FRITZING_NO_SERIAL
+#if QT_CONFIG(process)
 	void programProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 	void programProcessReadyRead();
+#endif
+#ifdef Q_OS_WASM
+	void uploadFinished(bool ok, const QString & message);
+	void chooseWebSerialPort();
 #endif
 	void updateMenu();
 	void updateSerialPorts();
@@ -166,9 +168,7 @@ protected:
 	QHBoxLayout *m_rightButtonsContainer;
 	bool m_updateEnabled;
 
-#ifndef FRITZING_NO_SERIAL
 	QPointer<ConsoleWindow> m_monitorWindow;
-#endif
 	QPointer<ProgramWindow> m_programWindow;
 
 	// Store the status of selected text, undo, and redo actions

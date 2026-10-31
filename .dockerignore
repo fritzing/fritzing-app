@@ -4,3 +4,5 @@ core
 docker/wasm/Dockerfile
 docker/wasm/README.md
 build-*
+docker/wasm/compile-service
+docker/wasm/compose.yaml

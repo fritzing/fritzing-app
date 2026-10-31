@@ -23,6 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "help/tipsandtricks.h"
 #include "utils/uploadpair.h"
 #include "referencemodel/sqlitereferencemodel.h"
+#include "utils/proxyurl.h"
 
 #include <QTextEdit>
 #include <QGridLayout>
@@ -409,18 +410,20 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	connect(this, SIGNAL(openSketch()), this->window(), SLOT(mainLoad()));
 	connect(this, SIGNAL(recentSketch(const QString &, const QString &)), this->window(), SLOT(openRecentOrExampleFile(const QString &, const QString &)));
 
-#ifndef Q_OS_WASM	// cross-origin requests from the browser build would be blocked
+#if QT_CONFIG(ssl)
 	QString protocol = QSslSocket::supportsSsl() ? "https" : "http";
+#else
+	QString protocol = "https";	// the browser handles TLS for the WebAssembly build
+#endif
 	// TODO: blog network calls should only happen once, not for each window?
 	auto * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl(QString("%1://blog.fritzing.org/recent-posts-app/").arg(protocol))));
+	manager->get(QNetworkRequest(browserReachableUrl(QUrl(QString("%1://blog.fritzing.org/recent-posts-app/").arg(protocol)))));
 
 	manager = new QNetworkAccessManager(this);
 
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl(QString("%1://fritzing.org/projects/snippet/").arg(protocol))));
-#endif
+	manager->get(QNetworkRequest(browserReachableUrl(QUrl(QString("%1://fritzing.org/projects/snippet/").arg(protocol)))));
 
 	TipsAndTricks::initTipSets();
 	nextTip();
@@ -1020,7 +1023,7 @@ void WelcomeView::getNextBlogImage(int ix, bool blog) {
 		manager->setProperty("index", i);
 		manager->setProperty("blog", blog);
 		connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
-		manager->get(QNetworkRequest(QUrl(image)));
+		manager->get(QNetworkRequest(browserReachableUrl(QUrl(image))));
 	}
 }
 

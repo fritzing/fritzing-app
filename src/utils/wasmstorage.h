@@ -1,7 +1,7 @@
 /*******************************************************************
 
-Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2026 Fritzing
+Part of the Fritzing project - https://fritzing.org
+Copyright (c) 2026 Fritzing GmbH
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,27 +18,22 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
-// Stand-in for QSerialPortInfo on platforms without the QtSerialPort module
-// (the WebAssembly build). It never reports any ports, so the port menus stay empty.
+#ifndef WASMSTORAGE_H
+#define WASMSTORAGE_H
 
-#ifndef SERIALPORTINFOSTUB_H_
-#define SERIALPORTINFOSTUB_H_
+// Persistent storage for the WebAssembly build (only compiled by pri/wasm.pri).
+// The home folder, which holds the user data store and the Fritzing documents
+// folder (user parts, bins, autosave backups), lives in IndexedDB.
+namespace WasmStorage {
 
-#include <QList>
-#include <QString>
+// Mounts the home folder and loads its contents from IndexedDB.
+// Call before the application object is created.
+void mount();
 
-class QSerialPortInfo
-{
-public:
-	static QList<QSerialPortInfo> availablePorts() {
-		return {};
-	}
-	QString portName() const {
-		return {};
-	}
-	QString systemLocation() const {
-		return {};
-	}
-};
+// Writes changes in the home folder back to IndexedDB soon. Changes are also
+// written every few seconds and when the page is hidden or closed.
+void scheduleSync();
+
+}
 
 #endif

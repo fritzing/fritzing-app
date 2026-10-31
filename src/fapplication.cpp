@@ -33,6 +33,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "partsbinpalette/binmanager/binmanager.h"
 #include "help/tipsandtricks.h"
 #include "utils/folderutils.h"
+#include "utils/proxyurl.h"
 #include "utils/lockmanager.h"
 #include "utils/fmessagebox.h"
 #include "utils/FMessageLogProbe.h"
@@ -1471,12 +1472,14 @@ int FApplication::startup()
 	//bool fabEnabled = settings.value(ORDERFABENABLED, QVariant(false)).toBool();
 	//if (!fabEnabled) {
 
-#ifndef Q_OS_WASM	// cross-origin requests from the browser build would be blocked
 	auto * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotOrderFab(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl(QString("http%2://fab.fritzing.org/launched%1")
+	manager->get(QNetworkRequest(browserReachableUrl(QUrl(QString("http%2://fab.fritzing.org/launched%1")
 									  .arg(Version::makeRequestParamsString(true))
-									  .arg(QSslSocket::supportsSsl() ? "s" : ""))));
+#if QT_CONFIG(ssl)
+									  .arg(QSslSocket::supportsSsl() ? "s" : "")))));
+#else
+									  .arg("s")))));	// the browser handles TLS for the WebAssembly build
 #endif
 	//}
 
@@ -1500,9 +1503,7 @@ int FApplication::startup()
 	m_updateDialog->setRepoPath(FolderUtils::getAppPartsSubFolderPath(""), m_referenceModel->sha());
 	connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
 	connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
-#ifndef Q_OS_WASM
 	checkForUpdates(false);
-#endif
 
 	return 0;
 }

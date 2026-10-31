@@ -5,6 +5,8 @@
 #   docker build -f docker/wasm/Dockerfile -t fritzing-wasm .
 #   docker run --rm -p 8080:80 fritzing-wasm      # then open http://localhost:8080
 #
+# For Arduino upload, start it together with the compile service: docker/wasm/compose.yaml
+#
 # Stages:
 #   sources  downloads and verifies the third-party sources and the parts library
 #   native   builds the regular desktop app, only to generate parts.db (as tools/linux_release_script does)
@@ -14,6 +16,8 @@
 ARG QT_VERSION=6.8.3
 # The Emscripten version the Qt release was built with (see QT_EMCC_VERSION in Qt's mkspecs/qconfig.pri)
 ARG EMSDK_VERSION=3.1.56
+# A fritzing-parts commit, or "latest" for the newest one (parts are updated by rebuilding;
+# add --no-cache-filter sources to fetch again)
 ARG PARTS_COMMIT=27535f2fd02097be9bed229b75aa8e9be282a4a0
 
 ############################################################################
@@ -54,11 +58,19 @@ RUN curl -fsSL -o quazip.tar.gz https://github.com/stachenov/quazip/archive/b694
     && mv quazip-b6943c314188873f410dfaf8a21fc765adf17825 quazip \
     && rm quazip.tar.gz
 
+RUN curl -fsSL -o ngspice.tar.gz "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/old-releases/42/ngspice-42.tar.gz/download" \
+    && echo "737fe3846ab2333a250dfadf1ed6ebe1860af1d8a5ff5e7803c772cc4256e50a  ngspice.tar.gz" | sha256sum -c - \
+    && tar xzf ngspice.tar.gz \
+    && rm ngspice.tar.gz
+
 # A git checkout, because generating parts.db reads the commit hash with libgit2
 ARG PARTS_COMMIT
-RUN git init -q fritzing-parts \
-    && git -C fritzing-parts fetch -q --depth 1 https://github.com/fritzing/fritzing-parts.git "$PARTS_COMMIT" \
-    && git -C fritzing-parts checkout -q FETCH_HEAD
+RUN ref="$PARTS_COMMIT" \
+    && if [ "$ref" = latest ]; then ref=HEAD; fi \
+    && git init -q fritzing-parts \
+    && git -C fritzing-parts fetch -q --depth 1 https://github.com/fritzing/fritzing-parts.git "$ref" \
+    && git -C fritzing-parts checkout -q FETCH_HEAD \
+    && echo "fritzing-parts $(git -C fritzing-parts rev-parse HEAD)"
 
 ############################################################################
 FROM --platform=$BUILDPLATFORM ubuntu:24.04 AS native
@@ -107,7 +119,7 @@ RUN cmake -S /src/quazip -B /tmp/quazip-build -DCMAKE_BUILD_TYPE=Release -DQUAZI
     && cmake --install /tmp/quazip-build \
     && rm -rf /tmp/quazip-build
 
-COPY . /build/fritzing-app
+COPY --exclude=docker/wasm . /build/fritzing-app
 WORKDIR /build/fritzing-app/build-native
 RUN qmake ../phoenix.pro CONFIG+=release \
     && make -j"$(nproc)"
@@ -144,9 +156,32 @@ RUN python3 -m venv /opt/aqt \
 WORKDIR /deps
 COPY --from=sources /src/boost_1_85_0 boost_1_85_0
 COPY --from=sources /src/svgpp-1.3.1 svgpp-1.3.1
-COPY --from=native /build/ngspice-42 ngspice-42
 COPY --from=sources /src/clipper /src/clipper
 COPY --from=sources /src/quazip /src/quazip
+COPY --from=sources /src/ngspice-42 /src/ngspice-42
+
+# ngspice as a static library with its shared-library API (sharedspice.h), linked into the
+# app. Overriding STATIC and the libngspice_la flags stops the build from adding -shared,
+# which libtool refuses for Emscripten (gcc builds the XSPICE code model preprocessor, which
+# runs during the build). getrusage() is switched off: Emscripten 3.1.56 clears more memory
+# than its struct rusage has, which overwrites ngspice's stack (operating point results got
+# lost); ngspice then uses times().
+# getpwuid() returns NULL in the browser, which ngspice does not check when it looks for
+# ~/.spiceinit, so that read gets a guard.
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends bison flex gcc libc6-dev \
+    && rm -rf /var/lib/apt/lists/* \
+    && sed -i 's|pw->pw_dir, INITSTR|pw ? pw->pw_dir : ".", INITSTR|' /src/ngspice-42/src/sharedspice.c \
+    && grep -q 'pw ? pw->pw_dir : "."' /src/ngspice-42/src/sharedspice.c \
+    && mkdir /tmp/ngspice-build && cd /tmp/ngspice-build \
+    && emconfigure /src/ngspice-42/configure --host=wasm32-unknown-emscripten --build=x86_64-linux-gnu \
+       --with-ngshared --disable-shared --enable-static --disable-openmp --disable-debug --without-x \
+       --enable-xspice --disable-osdi --prefix=/deps/ngspice-42 CFLAGS="-O2" \
+       ac_cv_func_getrusage=no > configure.log \
+    && emmake make -j"$(nproc)" STATIC= libngspice_la_CFLAGS= libngspice_la_LDFLAGS= > make.log \
+    && emmake make install STATIC= libngspice_la_CFLAGS= libngspice_la_LDFLAGS= > install.log \
+    && test -f /deps/ngspice-42/lib/libngspice.a \
+    && cd / && rm -rf /tmp/ngspice-build
 
 RUN mkdir -p Clipper1-6.4.2/include/polyclipping Clipper1-6.4.2/lib \
     && cp /src/clipper/cpp/clipper.hpp Clipper1-6.4.2/include/polyclipping/ \
@@ -165,7 +200,7 @@ RUN embuilder build zlib \
     && test -f /deps/quazip/include/QuaZip-Qt6-1.4/quazip/quazip.h \
     && rm -rf /tmp/quazip-build
 
-COPY . /build/fritzing-app
+COPY --exclude=docker/wasm . /build/fritzing-app
 
 # Application data, preloaded into the in-memory file system as /fritzing
 RUN mkdir -p /data/fritzing \
@@ -183,15 +218,19 @@ WORKDIR /build/fritzing-app/build-wasm
 RUN /opt/Qt/wasm/bin/qmake ../phoenix.pro \
     && make -j"$(nproc)"
 
-RUN mkdir -p /out \
-    && cp Fritzing.html Fritzing.js Fritzing.wasm Fritzing.data qtloader.js qtlogo.svg /out/ \
-    && cp Fritzing.html /out/index.html \
-    && gzip -9 -k /out/Fritzing.js /out/Fritzing.wasm /out/Fritzing.data /out/qtloader.js
+# index.html also loads the browser services (Web Serial, Arduino upload)
+COPY docker/wasm/web/fritzing-web.js /out/
+RUN cp Fritzing.html Fritzing.js Fritzing.wasm Fritzing.data qtloader.js qtlogo.svg /out/ \
+    && sed 's|<script type="text/javascript" src="qtloader.js"></script>|<script type="text/javascript" src="fritzing-web.js"></script>\n&|' Fritzing.html > /out/index.html \
+    && grep -q 'src="fritzing-web.js"' /out/index.html \
+    && gzip -9 -k /out/Fritzing.js /out/Fritzing.wasm /out/Fritzing.data /out/qtloader.js /out/fritzing-web.js
 
 ############################################################################
 FROM nginx:1.27-alpine
 
-COPY docker/wasm/nginx.conf /etc/nginx/conf.d/default.conf
+# the entrypoint renders templates/ into conf.d, with the container's DNS servers as resolver
+ENV NGINX_ENTRYPOINT_LOCAL_RESOLVERS=1
+COPY docker/wasm/templates/ /etc/nginx/templates/
 COPY --from=wasm /out/ /usr/share/nginx/html/
 
 EXPOSE 80

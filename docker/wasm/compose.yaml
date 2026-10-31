@@ -1,0 +1,41 @@
+# Fritzing web app with Arduino upload support. From the repository root:
+#
+#   docker compose -f docker/wasm/compose.yaml up --build
+#
+# then open http://localhost:8080 in Chrome or Edge. Without the compile service
+# (docker run of the web image only) everything except Arduino upload works.
+
+services:
+  web:
+    build:
+      context: ../..
+      dockerfile: docker/wasm/Dockerfile
+    image: fritzing-wasm
+    ports:
+      - "8080:80"
+    networks:
+      - default
+      - compile
+    depends_on:
+      - compile
+
+  compile:
+    build: compile-service
+    image: fritzing-compile
+    # runs compilers on code sent by the browser: no network access, read-only file
+    # system apart from /tmp, no extra privileges
+    networks:
+      - compile
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 256
+    mem_limit: 1g
+
+networks:
+  compile:
+    internal: true

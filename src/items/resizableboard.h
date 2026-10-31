@@ -61,6 +61,7 @@ protected:
 	void unableToLoad(const QString & fileName, const QString & reason);
 	bool canLoad(const QString & fileName, const QString & reason);
 	virtual void prepLoadImageAux(const QString & fileName, bool addName);
+	void loadChosenImage(const QString & fileName);
 	ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
 
 protected:

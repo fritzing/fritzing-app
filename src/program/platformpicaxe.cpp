@@ -1,6 +1,6 @@
 #include "platformpicaxe.h"
 
-#ifndef FRITZING_NO_SERIAL
+#if QT_CONFIG(process)
 #include <QProcess>
 #endif
 #include <QFileInfo>
@@ -47,8 +47,13 @@ PlatformPicaxe::PlatformPicaxe() : Platform(QString("PICAXE"))
 
 void PlatformPicaxe::upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation)
 {
-#ifdef FRITZING_NO_SERIAL
-	Platform::upload(source, port, board, fileLocation);
+#if !QT_CONFIG(process)
+	Q_UNUSED(port);
+	Q_UNUSED(board);
+	Q_UNUSED(fileLocation);
+	auto *tab = qobject_cast<ProgramTab *>(source);
+	if (tab != nullptr)
+		tab->uploadFinished(false, tr("Uploading PICAXE code is not supported in the browser."));
 #else
 	// see http://www.picaxe.com/docs/beta_compiler.pdf
 	auto * process = new QProcess(this);

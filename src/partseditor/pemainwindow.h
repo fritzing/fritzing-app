@@ -213,6 +213,7 @@ protected Q_SLOTS:
 	void showConnectorsView();
 	void showIconView();
 	void loadImage();
+	void loadChosenImage(const QString & origPath);
 	bool save();
 	bool saveAs();
 	void showInOS();

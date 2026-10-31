@@ -73,11 +73,7 @@ Simulator::Simulator(MainWindow *mainWindow) : QObject(mainWindow) {
 	m_showResultsTimer = new QTimer(this);
 	connect(m_showResultsTimer, &QTimer::timeout, this, &Simulator::showSimulationResults);
 
-#ifdef Q_OS_WASM
-	enable(false);	// ngspice cannot be loaded in the browser build
-#else
 	enable(true);
-#endif
 	m_simulating = false;
 }
 

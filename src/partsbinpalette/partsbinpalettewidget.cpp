@@ -29,6 +29,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QColorDialog>
 #include <QBuffer>
 #include <QSvgGenerator>
+#ifdef Q_OS_WASM
+#include <QElapsedTimer>
+#endif
 
 #include "partsbinpalettewidget.h"
 #include "partsbiniconview.h"
@@ -374,10 +377,23 @@ void PartsBinPaletteWidget::addPart(ModelPart *modelPart, int position) {
 		return;
 	}
 
+#ifdef Q_OS_WASM
+	QElapsedTimer timer;
+	timer.start();
+#endif
 	ModelPart *mp = m_model->addModelPart(m_model->root(),modelPart);
+#ifdef Q_OS_WASM
+	BinAddTiming::model += timer.restart();
+#endif
 
 	m_iconView->addPart(mp, position);
+#ifdef Q_OS_WASM
+	BinAddTiming::iconView += timer.restart();
+#endif
 	m_listView->addPart(mp, position);
+#ifdef Q_OS_WASM
+	BinAddTiming::listView += timer.elapsed();
+#endif
 
 	if(modelPart->isAlien()) {
 		m_alienParts << mp->moduleID();

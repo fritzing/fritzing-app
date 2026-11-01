@@ -29,7 +29,7 @@ read [the compile service](#the-compile-service) first.
 |---|---|
 | `sources` | Downloads boost 1.85, svgpp 1.3.1, Clipper 6.4.2, libgit2 1.7.1, QuaZip (stachenov/quazip#199), ngspice 42 and the `fritzing-parts` library. All archives are checked against SHA-256 sums. |
 | `native` | Builds the regular desktop app (Qt 6.8.3 from aqtinstall) and runs `Fritzing -db` to generate `parts.db`, just like `tools/linux_release_script/release.sh`. This stage also shows that the desktop build still works. |
-| `wasm` | Installs emsdk 3.1.56 and Qt 6.8.3 `wasm_singlethread`, builds Clipper, QuaZip and ngspice with Emscripten, and builds Fritzing with `pri/wasm.pri`. Translations, help, example sketches and the parts library (with `parts.db`) are packed into `Fritzing.data` and preloaded as `/fritzing`. |
+| `wasm` | Installs emsdk 3.1.56 and Qt 6.8.3 `wasm_singlethread`, rebuilds QtSvg with a backported fix (see below), builds Clipper, QuaZip and ngspice with Emscripten, and builds Fritzing with `pri/wasm.pri`. Translations, help, example sketches and the parts library (with `parts.db`) are packed into `Fritzing.data` and preloaded as `/fritzing`. |
 | final | `nginx:alpine` serving `index.html`, `Fritzing.{js,wasm,data}`, `qtloader.js` and `web/fritzing-web.js`, with pre-gzipped copies. |
 
 Build arguments: `QT_VERSION` (default `6.8.3`), `EMSDK_VERSION` (must match the Emscripten
@@ -165,3 +165,8 @@ Facts about Qt 6.8.3 `wasm_singlethread` that shaped `pri/wasm.pri` and the guar
   (`src/utils/wasmstorage.cpp`) and written back every few seconds, after saves, and when
   the page is hidden.
 - Fritzing relies on C++ exceptions, so everything is compiled and linked with `-fexceptions`.
+- QtSvg 6.8.3 checks the whole SVG tree for reference cycles after every start tag, so
+  loading an SVG takes time quadratic in its size. In the browser this made part search
+  take about 27 s for 115 results, nearly all of it loading the icons' SVGs. Qt 6.9.3 and
+  6.8.5 replace the check (QTBUG-137553); `docker/wasm/qtsvg` backports that change and the
+  `wasm` stage rebuilds QtSvg with it.

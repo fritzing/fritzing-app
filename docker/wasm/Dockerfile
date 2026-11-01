@@ -72,6 +72,10 @@ RUN ref="$PARTS_COMMIT" \
     && git -C fritzing-parts checkout -q FETCH_HEAD \
     && echo "fritzing-parts $(git -C fritzing-parts rev-parse HEAD)"
 
+# QtSvg sources, rebuilt for the browser with a backported fix (extracted in the wasm stage)
+RUN curl --proto '=https' --tlsv1.2 -fsSL -o qtsvg.tar.xz https://download.qt.io/archive/qt/6.8/6.8.3/submodules/qtsvg-everywhere-src-6.8.3.tar.xz \
+    && echo "35eb516460f00f264eb504baa253432384351cf23fb9980a5857190e8deef438  qtsvg.tar.xz" | sha256sum -c -
+
 ############################################################################
 FROM --platform=$BUILDPLATFORM ubuntu:24.04 AS native
 
@@ -152,6 +156,25 @@ RUN python3 -m venv /opt/aqt \
     && ln -s /opt/Qt/"$QT_VERSION"/wasm_singlethread /opt/Qt/wasm \
     && ln -s /opt/Qt/"$QT_VERSION"/gcc_64 /opt/Qt/host \
     && chmod +x /opt/Qt/wasm/bin/*    # the all_os package ships its scripts without the executable bit
+
+# Qt 6.8.3 checks the whole SVG tree for reference cycles after every start tag, so loading an
+# SVG takes time quadratic in its size (part search took about 27 s for 115 results). QtSvg
+# is rebuilt with the fix from Qt 6.9.3/6.8.5 (docker/wasm/qtsvg) and replaces the prebuilt one.
+COPY --from=sources /src/qtsvg.tar.xz /tmp/qtsvg.tar.xz
+COPY docker/wasm/qtsvg /src/fritzing-qtsvg
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ninja-build patch \
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir /src/qtsvg && tar xJf /tmp/qtsvg.tar.xz -C /src/qtsvg --strip-components=1 && rm /tmp/qtsvg.tar.xz \
+    && patch -d /src/qtsvg -p1 < /src/fritzing-qtsvg/QTBUG-137553.patch \
+    && test "$(grep -c 'detectCyclesAndWarn(m_doc)' /src/qtsvg/src/svg/qsvghandler.cpp)" = 1 \
+    && chmod +x /opt/Qt/wasm/libexec/* \
+    && mkdir /tmp/qtsvg-build && cd /tmp/qtsvg-build \
+    && { /opt/Qt/wasm/bin/qt-configure-module /src/qtsvg -- -DQT_HOST_PATH=/opt/Qt/host -DCMAKE_BUILD_TYPE=Release > configure.log 2>&1 \
+         || { tail -n 40 configure.log; false; }; } \
+    && { cmake --build . -j"$(nproc)" > build.log 2>&1 || { tail -n 40 build.log; false; }; } \
+    && cmake --install . > install.log \
+    && cd / && rm -rf /tmp/qtsvg-build /src/qtsvg
 
 WORKDIR /deps
 COPY --from=sources /src/boost_1_85_0 boost_1_85_0

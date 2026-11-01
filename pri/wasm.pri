@@ -59,6 +59,7 @@ QMAKE_LFLAGS += \
 	-sASYNCIFY_STACK_SIZE=131072 \
 	-sALLOW_MEMORY_GROWTH=1 \
 	-sMAXIMUM_MEMORY=4GB \
+	--profiling-funcs \
 	-lidbfs.js \
 	--preload-file $$WASM_DATA@/fritzing \
 	--use-preload-cache

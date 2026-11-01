@@ -27,13 +27,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QDropEvent>
 
-#ifdef Q_OS_WASM
-// Milliseconds spent in each step of adding parts to a bin (browser build only)
-struct BinAddTiming {
-	static inline qint64 model = 0, itemBase = 0, plural = 0, icon = 0, layout = 0, iconView = 0, listView = 0;
-	static void reset() { model = itemBase = plural = icon = layout = iconView = listView = 0; }
-};
-#endif
 
 class PartsBinPaletteWidget;
 

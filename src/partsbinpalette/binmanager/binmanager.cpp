@@ -27,9 +27,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QInputDialog>
 #include <QDropEvent>
 #include <QMimeData>
-#ifdef Q_OS_WASM
-#include <QElapsedTimer>
-#endif
 
 #include "binmanager.h"
 #include "stacktabwidget.h"
@@ -989,21 +986,10 @@ void BinManager::search(const QString & searchText) {
 			effectiveSearchText = stripped;
 		}
 	}
-#ifdef Q_OS_WASM
-	QElapsedTimer searchTimer;
-	searchTimer.start();
-#endif
 	QList<ModelPart *> modelParts = m_referenceModel->search(effectiveSearchText, allowObsolete);
-#ifdef Q_OS_WASM
-	qint64 matchMs = searchTimer.restart();
-#endif
 
 	progress.setIncValueMod(1);
 	searchBin->removeParts();
-#ifdef Q_OS_WASM
-	qint64 removeMs = searchTimer.restart();
-	BinAddTiming::reset();
-#endif
 	Q_FOREACH (ModelPart * modelPart, modelParts) {
 		//DebugDialog::debug(modelPart->title());
 		if (modelPart->itemType() == ModelPart::SchematicSubpart) {
@@ -1015,21 +1001,8 @@ void BinManager::search(const QString & searchText) {
 		}
 		progress.incValue();
 	}
-#ifdef Q_OS_WASM
-	qint64 addMs = searchTimer.restart();
-#endif
 
 	setDirtyTab(searchBin);
-#ifdef Q_OS_WASM
-	qInfo("Fritzing search '%s': %lld results, matching %lld ms, clearing %lld ms, adding %lld ms",
-	      qPrintable(effectiveSearchText), static_cast<long long>(modelParts.count()),
-	      static_cast<long long>(matchMs), static_cast<long long>(removeMs), static_cast<long long>(addMs));
-	qInfo("Fritzing search adding: model %lld ms, icon view %lld ms (part objects %lld, plural check %lld, icons %lld, layout %lld), list view %lld ms",
-	      static_cast<long long>(BinAddTiming::model), static_cast<long long>(BinAddTiming::iconView),
-	      static_cast<long long>(BinAddTiming::itemBase), static_cast<long long>(BinAddTiming::plural),
-	      static_cast<long long>(BinAddTiming::icon), static_cast<long long>(BinAddTiming::layout),
-	      static_cast<long long>(BinAddTiming::listView));
-#endif
 }
 
 bool BinManager::currentViewIsIconView() {

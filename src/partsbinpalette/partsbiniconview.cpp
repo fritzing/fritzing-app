@@ -29,9 +29,6 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPoint>
 #include <QSet>
 #include <QtGlobal>
-#ifdef Q_OS_WASM
-#include <QElapsedTimer>
-#endif
 
 #define ICON_SPACING 5
 
@@ -137,14 +134,7 @@ void PartsBinIconView::doClear() {
 
 void PartsBinIconView::addPart(ModelPart * model, int position) {
 	PartsBinView::addPart(model, position);
-#ifdef Q_OS_WASM
-	QElapsedTimer layoutTimer;
-	layoutTimer.start();
-#endif
 	updateSize();
-#ifdef Q_OS_WASM
-	BinAddTiming::layout += layoutTimer.elapsed();
-#endif
 }
 
 void PartsBinIconView::removePart(const QString &moduleID) {
@@ -204,32 +194,20 @@ int PartsBinIconView::setItemAux(ModelPart * modelPart, int position) {
 	if (modelPart->itemType() != ModelPart::Space) {
 		ItemBase::PluralType plural;
 		ItemBase * itemBase = loadItemBase(moduleID, plural);
-#ifdef Q_OS_WASM
-		QElapsedTimer iconTimer;
-		iconTimer.start();
-#endif
 		svgicon = new SvgIconWidget(modelPart, ViewLayer::IconView, itemBase, plural == ItemBase::Plural, m_referenceModel);
-#ifdef Q_OS_WASM
-		BinAddTiming::icon += iconTimer.elapsed();
-#endif
 	}
 	else {
 		svgicon = new SvgIconWidget(modelPart, ViewLayer::IconView, nullptr, false, m_referenceModel);
 	}
 
-#ifdef Q_OS_WASM
-	QElapsedTimer layoutTimer;
-	layoutTimer.start();
-#endif
+
 	if(position > -1) {
 		m_layout->insertItem(position, svgicon);
 	} else {
 		m_layout->addItem(svgicon);
 		position = m_layout->count() - 1;
 	}
-#ifdef Q_OS_WASM
-	BinAddTiming::layout += layoutTimer.elapsed();
-#endif
+
 
 	return position;
 }
@@ -469,10 +447,6 @@ void PartsBinIconView::reloadPart(const QString & moduleID) {
 }
 
 ItemBase * PartsBinIconView::loadItemBase(const QString & moduleID, ItemBase::PluralType & plural) {
-#ifdef Q_OS_WASM
-	QElapsedTimer timer;
-	timer.start();
-#endif
 	ItemBase * itemBase = ItemBaseHash.value(moduleID);
 	ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
     if (itemBase == nullptr) {
@@ -480,9 +454,6 @@ ItemBase * PartsBinIconView::loadItemBase(const QString & moduleID, ItemBase::Pl
 		ItemBaseHash.insert(moduleID, itemBase);
 	}
 	m_itemBaseHash.insert(moduleID, itemBase);
-#ifdef Q_OS_WASM
-	BinAddTiming::itemBase += timer.restart();
-#endif
 
 	plural = itemBase->isPlural();
 	if (plural == ItemBase::NotSure) {
@@ -496,9 +467,6 @@ ItemBase * PartsBinIconView::loadItemBase(const QString & moduleID, ItemBase::Pl
 			}
 		}
 	}
-#ifdef Q_OS_WASM
-	BinAddTiming::plural += timer.elapsed();
-#endif
 
 	return itemBase;
 }

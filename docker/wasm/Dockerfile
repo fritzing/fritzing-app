@@ -160,6 +160,9 @@ RUN python3 -m venv /opt/aqt \
 # Qt 6.8.3 checks the whole SVG tree for reference cycles after every start tag, so loading an
 # SVG takes time quadratic in its size (part search took about 27 s for 115 results). QtSvg
 # is rebuilt with the fix from Qt 6.9.3/6.8.5 (docker/wasm/qtsvg) and replaces the prebuilt one.
+# The prebuilt Qt was built on Windows: its scripts lack the executable bit, qt-configure-module
+# fails on a Windows path (so qt-cmake-private is called directly), and its CMake files install
+# to the original C:/Qt prefix unless CMAKE_INSTALL_PREFIX is given.
 COPY --from=sources /src/qtsvg.tar.xz /tmp/qtsvg.tar.xz
 COPY docker/wasm/qtsvg /src/fritzing-qtsvg
 RUN apt-get update \
@@ -170,7 +173,8 @@ RUN apt-get update \
     && test "$(grep -c 'detectCyclesAndWarn(m_doc)' /src/qtsvg/src/svg/qsvghandler.cpp)" = 1 \
     && chmod +x /opt/Qt/wasm/libexec/* \
     && mkdir /tmp/qtsvg-build && cd /tmp/qtsvg-build \
-    && { /opt/Qt/wasm/bin/qt-configure-module /src/qtsvg -- -DQT_HOST_PATH=/opt/Qt/host -DCMAKE_BUILD_TYPE=Release > configure.log 2>&1 \
+    && { /opt/Qt/wasm/libexec/qt-cmake-private -G Ninja -DQT_HOST_PATH=/opt/Qt/host -DCMAKE_BUILD_TYPE=Release \
+           -DCMAKE_INSTALL_PREFIX="$(readlink -f /opt/Qt/wasm)" /src/qtsvg > configure.log 2>&1 \
          || { tail -n 40 configure.log; false; }; } \
     && { cmake --build . -j"$(nproc)" > build.log 2>&1 || { tail -n 40 build.log; false; }; } \
     && cmake --install . > install.log \

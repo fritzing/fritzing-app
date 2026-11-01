@@ -1,0 +1,61 @@
+Backport of qtsvg commit ea44b50c6e61 (QTBUG-137553, "Replace check for endless
+recursion when loading") to Qt 6.8.3, for the WebAssembly build only.
+
+Qt 6.8.3 checks the whole SVG tree for reference cycles after every start tag,
+which makes loading an SVG quadratic in its number of elements. In the browser
+this made part search take about 27 s for 115 results. The fix is in Qt 6.9.3
+and 6.8.5; the prebuilt Qt 6.8.3 for wasm_singlethread does not have it.
+Upstream: https://github.com/qt/qtsvg/commit/ea44b50c6e61 (test change left out)
+
+diff --git a/src/svg/qsvghandler.cpp b/src/svg/qsvghandler.cpp
+index 48f9f0b2..c871a20c 100644
+--- a/src/svg/qsvghandler.cpp
++++ b/src/svg/qsvghandler.cpp
+@@ -4647,8 +4647,7 @@ void QSvgHandler::parse()
+             // this point is to do what everyone else seems to do and
+             // ignore the reported namespaceUri completely.
+             if (remainingUnfinishedElements
+-                    && startElement(xml->name().toString(), xml->attributes())
+-                    && !detectCyclesAndWarn(m_doc)) {
++                    && startElement(xml->name().toString(), xml->attributes())) {
+                 --remainingUnfinishedElements;
+             } else {
+                 delete m_doc;
+diff --git a/src/svg/qsvgstructure.cpp b/src/svg/qsvgstructure.cpp
+index e08f1bc1..d073b1c4 100644
+--- a/src/svg/qsvgstructure.cpp
++++ b/src/svg/qsvgstructure.cpp
+@@ -800,6 +800,7 @@ QSvgPattern::QSvgPattern(QSvgNode *parent, QSvgRectF bounds, QRectF viewBox,
+     m_rect(bounds),
+     m_viewBox(viewBox),
+     m_contentUnits(contentUnits),
++    m_isRendering(false),
+     m_transform(transform)
+ 
+ {
+@@ -885,6 +886,13 @@ QImage QSvgPattern::renderPattern(QSize size, qreal contentScaleX, qreal content
+     }
+     pattern.fill(Qt::transparent);
+ 
++    if (m_isRendering) {
++        qCWarning(lcSvgDraw) << "The pattern is trying to render itself recursively. "
++                                "Returning a transparent QImage of the right size.";
++        return pattern;
++    }
++    QScopedValueRollback<bool> guard(m_isRendering, true);
++
+     // Draw the pattern using our QPainter.
+     QPainter patternPainter(&pattern);
+     QSvgExtraStates patternStates;
+diff --git a/src/svg/qsvgstructure_p.h b/src/svg/qsvgstructure_p.h
+index 63a83964..f95508f4 100644
+--- a/src/svg/qsvgstructure_p.h
++++ b/src/svg/qsvgstructure_p.h
+@@ -241,6 +241,7 @@ class Q_SVG_EXPORT QSvgPattern : public QSvgStructureNode
+     QSvgRectF m_rect;
+     QRectF m_viewBox;
+     QtSvg::UnitTypes m_contentUnits;
++    mutable bool m_isRendering;
+     QTransform m_transform;
+ };
+ 

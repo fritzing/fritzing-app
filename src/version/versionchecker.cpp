@@ -30,6 +30,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "../debugdialog.h"
 
 #include <QUrl>
+
+#include "../utils/proxyurl.h"
 #include <QNetworkAccessManager>
 #include <QMutexLocker>
 #include <QRegularExpression>
@@ -55,7 +57,7 @@ void VersionChecker::fetch()
 {
 	DebugDialog::debug("https check new version");
 	m_xml.clear();
-	QUrl url(m_urlString);
+	QUrl url = browserReachableUrl(QUrl(m_urlString));
 
 	auto * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(finished(QNetworkReply *)));

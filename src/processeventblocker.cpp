@@ -21,6 +21,25 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "processeventblocker.h"
 #include <QApplication>
 #include <QEventLoop>
+#ifdef Q_OS_WASM
+#include <QElapsedTimer>
+#include <QTimer>
+
+// The browser build is single-threaded: the page only repaints and takes input once
+// control goes back to the browser, which processEvents() alone does not do. Long
+// operations call processEvents() regularly, so at most every 50 ms also wait in a short
+// event loop, which suspends (Asyncify) and lets the browser run.
+static void yieldToBrowser() {
+	static QElapsedTimer sinceLastYield;
+	if (sinceLastYield.isValid() && sinceLastYield.elapsed() < 50) return;
+
+	// a 0 ms timer would already be due, so the loop would quit without waiting
+	QEventLoop loop;
+	QTimer::singleShot(1, &loop, &QEventLoop::quit);
+	loop.exec();
+	sinceLastYield.restart();
+}
+#endif
 
 ProcessEventBlocker * ProcessEventBlocker::m_singleton = new ProcessEventBlocker();
 
@@ -54,6 +73,9 @@ void ProcessEventBlocker::_processEvents() {
 	m_count++;
 	m_mutex.unlock();
 	QApplication::processEvents();
+#ifdef Q_OS_WASM
+	yieldToBrowser();
+#endif
 	m_mutex.lock();
 	m_count--;
 	m_mutex.unlock();
@@ -64,6 +86,9 @@ void ProcessEventBlocker::_processEvents(int maxTime) {
 	m_count++;
 	m_mutex.unlock();
 	QApplication::processEvents(QEventLoop::AllEvents, maxTime);
+#ifdef Q_OS_WASM
+	yieldToBrowser();
+#endif
 	m_mutex.lock();
 	m_count--;
 	m_mutex.unlock();

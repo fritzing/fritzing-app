@@ -72,6 +72,20 @@ bool NgSpiceSimulator::init()
 	if (m_isInitialized)
 		return m_isInitialized;
 
+#ifdef Q_OS_WASM
+	// ngspice is linked statically into the browser build (see pri/wasm.pri)
+	QString ngspiceDir("invalid");
+	setErrorTitle(std::nullopt);
+	m_handles[STRFY(ngSpice_Command)] = (void *) &ngSpice_Command;
+	m_handles[STRFY(ngSpice_Init)] = (void *) &ngSpice_Init;
+	m_handles[STRFY(ngSpice_Circ)] = (void *) &ngSpice_Circ;
+	m_handles[STRFY(ngGet_Vec_Info)] = (void *) &ngGet_Vec_Info;
+	m_handles[STRFY(ngSpice_SetBkpt)] = (void *) &ngSpice_SetBkpt;
+	m_handles[STRFY(ngSpice_Init_Sync)] = (void *) &ngSpice_Init_Sync;
+	m_handles[STRFY(ngSpice_CurPlot)] = (void *) &ngSpice_CurPlot;
+	m_handles[STRFY(ngSpice_AllPlots)] = (void *) &ngSpice_AllPlots;
+	m_handles[STRFY(ngSpice_AllVecs)] = (void *) &ngSpice_AllVecs;
+#else
 	QString ngspiceDir("invalid");
 	if (!m_library.isLoaded()) {
 		QStringList libPaths = QCoreApplication::libraryPaths();
@@ -130,6 +144,7 @@ bool NgSpiceSimulator::init()
 	for (auto & symbol: symbols) {
 		m_handles[symbol] = (void *) m_library.resolve(symbol.c_str());
 	}
+#endif
 
 	if (localeconv()->decimal_point[0] != '.') {
 		QString errorMsg = "Error: Locale for LC_NUMERIC is not set to 'C'. Current decimal point: " +
@@ -143,6 +158,11 @@ bool NgSpiceSimulator::init()
 	m_isBGThreadRunning = true;
 	m_isInitialized = true;
 
+#ifdef Q_OS_WASM
+	// the analog code models are linked into the app (docker/wasm/ngspice/static_codemodels.c)
+	command("codemodel analog.cm");
+	return m_isInitialized;
+#endif
 	QString analogCmPath = ngspiceDir + "/ngspice/analog.cm";
 	if (QFileInfo::exists(analogCmPath)) {
 		DebugDialog::stream() << "Loading codemodel analog.cm from: " << analogCmPath;
@@ -213,6 +233,19 @@ void NgSpiceSimulator::command(const std::string& command) {
 	if (!m_isInitialized) {
 		init();
 	}
+
+#ifdef Q_OS_WASM
+	// No threads in the browser build: simulations run in the foreground and have
+	// finished when the command returns
+	if (command == "bg_run") {
+		GET_FUNC(ngSpice_Command)(UNIQ(std::string("run")));
+		m_isBGThreadRunning = false;
+		return;
+	}
+	if (command == "bg_halt") {
+		return;
+	}
+#endif
 
 	GET_FUNC(ngSpice_Command)(UNIQ(command));
 

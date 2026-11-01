@@ -1,0 +1,84 @@
+# nginx configuration for the Fritzing web app. The nginx image's entrypoint fills in
+# ${NGINX_LOCAL_RESOLVERS} (the container's DNS servers, see NGINX_ENTRYPOINT_LOCAL_RESOLVERS
+# in the Dockerfile); nginx's own $variables are left alone.
+
+# Compiling costs the server CPU time: allow each client a compile every 10 s, with a burst
+# of 3 (a few Upload clicks in a row)
+limit_req_zone $binary_remote_addr zone=compile:1m rate=6r/m;
+
+server {
+    listen 8080;
+    server_name _;
+    root /usr/share/nginx/html;
+    index index.html;
+    # keep redirects relative: behind docker's port mapping nginx does not know the public port
+    absolute_redirect off;
+
+    # Host names below are resolved per request, so nginx also starts without network
+    # access or without the compile service
+    resolver ${NGINX_LOCAL_RESOLVERS} valid=300s ipv6=off;
+    resolver_timeout 5s;
+
+    # Optional password for the whole site: mount a folder with auth.conf (auth_basic and
+    # auth_basic_user_file directives) and an htpasswd file on /etc/nginx/auth (README)
+    include /etc/nginx/auth/*.conf;
+
+    # Serve the .gz files produced at build time; compress anything else on the fly
+    gzip_static on;
+    gzip on;
+    gzip_types application/javascript application/wasm application/octet-stream image/svg+xml application/json;
+
+    types {
+        text/html html;
+        application/javascript js;
+        application/wasm wasm;
+        application/octet-stream data;
+        image/svg+xml svg;
+    }
+
+    # File names are not versioned, so let browsers revalidate with the ETag
+    add_header Cache-Control "no-cache" always;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # The browser blocks the app's requests to other sites, so the app requests
+    # /proxy/<host>/<path> instead (src/utils/proxyurl.h). Only these hosts are forwarded
+    # (fab.fritzing.org redirects to aisler.net, the PCB fab partner).
+    location ~ ^/proxy/(fritzing\.org|blog\.fritzing\.org|fab\.fritzing\.org|aisler\.net)(/.*)$ {
+        set $proxy_host_name $1;
+        set $proxy_path $2;
+        proxy_pass https://$proxy_host_name$proxy_path$is_args$args;
+        proxy_ssl_server_name on;
+        proxy_ssl_name $proxy_host_name;
+        proxy_set_header Host $proxy_host_name;
+        proxy_set_header Cookie "";
+        proxy_set_header Authorization "";
+        proxy_hide_header Set-Cookie;
+        proxy_hide_header Link;		# preload hints for the other site's pages
+        proxy_redirect ~^https?://(fritzing\.org|blog\.fritzing\.org|fab\.fritzing\.org|aisler\.net)(/.*)$ /proxy/$1$2;
+    }
+
+    location /proxy/ {
+        return 404;
+    }
+
+    # Arduino compile service (docker/wasm/compile-service), present when started with
+    # docker/wasm/compose.yaml; without it this returns 502 and the app says so
+    location = /api/compile {
+        set $compile_service http://compile:8000;
+        proxy_pass $compile_service/compile;
+        client_max_body_size 300k;
+        proxy_read_timeout 180s;
+        limit_req zone=compile burst=3 nodelay;
+        limit_req_status 429;
+        error_page 429 = @compile_rate_limited;
+    }
+
+    # in the compile service's response format, so the app shows the message
+    location @compile_rate_limited {
+        default_type application/json;
+        return 429 '{"ok": false, "log": "Too many compile requests. Please wait a minute and try again.", "hex": null}';
+    }
+}

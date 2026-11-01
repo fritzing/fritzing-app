@@ -23,6 +23,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "help/tipsandtricks.h"
 #include "utils/uploadpair.h"
 #include "referencemodel/sqlitereferencemodel.h"
+#include "utils/proxyurl.h"
 
 #include <QTextEdit>
 #include <QGridLayout>
@@ -409,16 +410,20 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	connect(this, SIGNAL(openSketch()), this->window(), SLOT(mainLoad()));
 	connect(this, SIGNAL(recentSketch(const QString &, const QString &)), this->window(), SLOT(openRecentOrExampleFile(const QString &, const QString &)));
 
+#if QT_CONFIG(ssl)
 	QString protocol = QSslSocket::supportsSsl() ? "https" : "http";
+#else
+	QString protocol = "https";	// the browser handles TLS for the WebAssembly build
+#endif
 	// TODO: blog network calls should only happen once, not for each window?
 	auto * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl(QString("%1://blog.fritzing.org/recent-posts-app/").arg(protocol))));
+	manager->get(QNetworkRequest(browserReachableUrl(QUrl(QString("%1://blog.fritzing.org/recent-posts-app/").arg(protocol)))));
 
 	manager = new QNetworkAccessManager(this);
 
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl(QString("%1://fritzing.org/projects/snippet/").arg(protocol))));
+	manager->get(QNetworkRequest(browserReachableUrl(QUrl(QString("%1://fritzing.org/projects/snippet/").arg(protocol)))));
 
 	TipsAndTricks::initTipSets();
 	nextTip();
@@ -823,8 +828,9 @@ void WelcomeView::clickRecent(const QString & url) {
 }
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
-	bool blog = networkReply->url().toString().contains("recent");
-	QString prefix = networkReply->url().scheme() + "://" + networkReply->url().authority();
+	QUrl url = originalUrl(networkReply->url());
+	bool blog = url.toString().contains("recent");
+	QString prefix = url.scheme() + "://" + url.authority();
 	QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
@@ -842,8 +848,17 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	}
 
 	if (!goodBlog) {
+#ifdef Q_OS_WASM
+		// fritzing.org's bot protection may refuse the server's requests (docker/wasm/README.md),
+		// so offer the page itself, which the browser opens in a new tab
+		QString message = (blog) ? tr("Couldn't load the news. Click to read them on blog.fritzing.org")
+		                         : tr("Couldn't load the projects. Click to browse them on fritzing.org");
+		QString href = (blog) ? "https://blog.fritzing.org/" : "https://fritzing.org/projects/";
+		QString placeHolder = QString("<li><a class=\"title\" href=\"%2\" title=\"%1\"></a></li>").arg(message.toHtmlEscaped(), href);
+#else
 		QString message = (blog) ? tr("Unable to reach blog.fritzing.org") : tr("Unable to reach fritzing.org/projects") ;
 		QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
+#endif
 		QDomDocument::ParseResult parseResult = doc.setContent(placeHolder);
 		if (parseResult) {
 			readBlog(doc, true, blog, "");
@@ -1018,7 +1033,7 @@ void WelcomeView::getNextBlogImage(int ix, bool blog) {
 		manager->setProperty("index", i);
 		manager->setProperty("blog", blog);
 		connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
-		manager->get(QNetworkRequest(QUrl(image)));
+		manager->get(QNetworkRequest(browserReachableUrl(QUrl(image))));
 	}
 }
 

@@ -122,7 +122,13 @@ void StackTabBar::showContextMenu(const QPoint &point)
 
 	QMenu * contextMenu = bin->binContextMenu();
 	if (contextMenu != nullptr) {
+#ifdef Q_OS_WASM
+		// In the browser only one event loop can run nested in the main one (Asyncify),
+		// so a modal dialog opened from a menu running its own loop (exec()) gets no input
+		contextMenu->popup(this->mapToGlobal(point));
+#else
 		contextMenu->exec(this->mapToGlobal(point));
+#endif
 	}
 	delete contextMenu;
 }

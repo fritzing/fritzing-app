@@ -1,0 +1,21 @@
+Fritzing web app (docker/wasm): ngspice loads code models from the static table in
+static_codemodels.c instead of with dlopen().
+
+--- a/src/spicelib/devices/dev.c
++++ b/src/spicelib/devices/dev.c
+@@ -42,6 +42,15 @@
+ #include <string.h> /* for strcpy, strcat*/
+ #if (!defined HAS_WINGUI) && (!defined __MINGW32__) && (!defined _MSC_VER)
+ #include <dlfcn.h> /* to load libraries*/
++#ifdef __EMSCRIPTEN__
++/* Fritzing web app: the code models are linked in (docker/wasm/ngspice/static_codemodels.c) */
++void *static_cm_dlopen(const char *name, int mode);
++void *static_cm_dlsym(void *library, const char *name);
++char *static_cm_dlerror(void);
++#define dlopen static_cm_dlopen
++#define dlsym static_cm_dlsym
++#define dlerror static_cm_dlerror
++#endif
+ typedef void * funptr_t;
+ #define FREE_DLERR_MSG(msg)
+ #else /* ifdef HAS_WINGUI */

@@ -350,7 +350,13 @@ void PartsBinListView::showContextMenu(const QPoint& pos) {
 	} else {
 		menu = m_parent->combinedMenu();
 	}
+#ifdef Q_OS_WASM
+	// In the browser only one event loop can run nested in the main one (Asyncify),
+	// so a modal dialog opened from a menu running its own loop (exec()) gets no input
+	menu->popup(mapToGlobal(pos));
+#else
 	menu->exec(mapToGlobal(pos));
+#endif
 }
 
 void PartsBinListView::reloadPart(const QString & moduleID) {

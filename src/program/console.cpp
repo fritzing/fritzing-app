@@ -43,6 +43,9 @@
 #include "console.h"
 
 #include <QScrollBar>
+#ifdef Q_OS_WASM
+#include <QInputMethodEvent>
+#endif
 
 #include <QtCore/QDebug>
 
@@ -80,11 +83,35 @@ void Console::keyPressEvent(QKeyEvent *e)
 	case Qt::Key_Down:
 		break;
 	default:
+#ifdef Q_OS_WASM
+		// Typed text arrives through inputMethodEvent(); these key presses carry no text
+		if (e->text().isEmpty()) {
+			if (e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter) {
+				if (localEchoEnabled)
+					QPlainTextEdit::keyPressEvent(e);
+				Q_EMIT getData("\r");
+			}
+			break;
+		}
+#endif
 		if (localEchoEnabled)
 			QPlainTextEdit::keyPressEvent(e);
 		Q_EMIT getData(e->text().toLocal8Bit());
 	}
 }
+
+#ifdef Q_OS_WASM
+// The browser hands typed text over as input method events; the key press events
+// that come with it carry no text (see keyPressEvent())
+void Console::inputMethodEvent(QInputMethodEvent *e)
+{
+	if (e->commitString().isEmpty()) return;
+
+	if (localEchoEnabled)
+		QPlainTextEdit::inputMethodEvent(e);
+	Q_EMIT getData(e->commitString().toLocal8Bit());
+}
+#endif
 
 void Console::mousePressEvent(QMouseEvent *e)
 {

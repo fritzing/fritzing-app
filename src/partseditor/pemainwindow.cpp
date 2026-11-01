@@ -191,6 +191,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QClipboard>
 #include <limits>
 
+#ifdef Q_OS_WASM
+#include "../utils/wasmstorage.h"
+#endif
+
 ////////////////////////////////////////////////////
 
 static bool RubberBandLegWarning = false;
@@ -1607,21 +1611,37 @@ void PEMainWindow::loadImage()
 	}
 	*/
 
+	QString filter = imageFiles.arg("*.svg").arg("*.jpg *.jpeg").arg("*.png").arg(extras[0]).arg(extras[1]);
+#ifdef Q_OS_WASM
+	// the browser hands over the file asynchronously
+	FolderUtils::uploadFile(filter, [this](const QString & origPath) {
+		loadChosenImage(origPath);
+	});
+#else
 	QString initialPath = FolderUtils::openSaveFolder();
-	ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
-	ItemBase * itemBase = viewThing->itemBase;
+	ItemBase * itemBase = m_viewThings.value(m_currentGraphicsView->viewID())->itemBase;
 	if (itemBase != nullptr) {
 		initialPath = itemBase->filename();
 	}
 	QString origPath = FolderUtils::getOpenFileName(this,
 	                   tr("Open Image"),
 	                   initialPath,
-	                   imageFiles.arg("*.svg").arg("*.jpg *.jpeg").arg("*.png").arg(extras[0]).arg(extras[1])
+	                   filter
 	                                               );
 
+	loadChosenImage(origPath);
+#endif
+}
+
+void PEMainWindow::loadChosenImage(const QString & origPath)
+{
 	if (origPath.isEmpty()) {
 		return; // Cancel pressed
 	}
+
+	if (m_currentGraphicsView == nullptr) return;
+
+	ItemBase * itemBase = m_viewThings.value(m_currentGraphicsView->viewID())->itemBase;
 
 	QString newReferenceFile;
 	QString svg;
@@ -2552,6 +2572,10 @@ bool PEMainWindow::saveAs(bool overWrite)
 	}
 
 	setWindowModified(false);
+
+#ifdef Q_OS_WASM
+	WasmStorage::scheduleSync();
+#endif
 
 	return result;
 }

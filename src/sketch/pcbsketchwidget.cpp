@@ -2980,6 +2980,7 @@ void PCBSketchWidget::requestQuote() {
 	QString paramString = Version::makeRequestParamsString(false);
 	auto * manager = new QNetworkAccessManager(this);
 
+#if QT_CONFIG(ssl)
 	QString protocol = "http";
 	if (QSslSocket::supportsSsl()) {
 		protocol = "https";
@@ -2990,6 +2991,9 @@ void PCBSketchWidget::requestQuote() {
 	msg += " Want: " + QSslSocket::sslLibraryBuildVersionString();
 	msg += " Found: " + QSslSocket::sslLibraryVersionString();
 	DebugDialog::debug(msg);
+#else
+	QString protocol = "https";	// the browser handles TLS for the WebAssembly build
+#endif
 
 	QString countArgs = QuoteDialog::countArgs();
 	manager->setProperty("count", countArgs);

@@ -164,7 +164,13 @@ void PrefsDialog::initPCB(QWidget * widget, ViewInfoThing * viewInfoThing)
 void PrefsDialog::initCode(QWidget * widget, QList<Platform *> platforms)
 {
 	auto * vLayout = new QVBoxLayout();
+#ifdef Q_OS_WASM
+	// the browser build compiles and uploads through the compile service, not a local programmer
+	Q_UNUSED(platforms);
+	vLayout->addWidget(new QLabel(tr("In the browser, Arduino code is compiled by the Fritzing server and uploaded over Web Serial.")));
+#else
 	vLayout->addWidget(createProgrammerForm(platforms));
+#endif
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
 	widget->setLayout(vLayout);
 }

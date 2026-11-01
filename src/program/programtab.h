@@ -28,7 +28,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QFrame>
 #include <QTextEdit>
 #include <QPlainTextEdit>
+#if QT_CONFIG(process)
 #include <QProcess>
+#endif
 #include <QTabWidget>
 #include <QComboBox>
 #include <QTabWidget>
@@ -115,8 +117,14 @@ public Q_SLOTS:
 	void rename();
 	void serialMonitor();
 	void sendProgram();
+#if QT_CONFIG(process)
 	void programProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 	void programProcessReadyRead();
+#endif
+#ifdef Q_OS_WASM
+	void uploadFinished(bool ok, const QString & message);
+	void chooseWebSerialPort();
+#endif
 	void updateMenu();
 	void updateSerialPorts();
 	void updateBoards();

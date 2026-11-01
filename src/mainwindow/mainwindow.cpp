@@ -101,6 +101,9 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "servicelistfetcher.h"
 #include "utils/uploadpair.h"
 #include "version/version.h"
+#ifdef Q_OS_WASM
+#include "utils/wasmstorage.h"
+#endif
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -2075,6 +2078,8 @@ void MainWindow::saveBundledPart(const QString &moduleId) {
 		    tr("Fritzing"),
 		    tr("Unable to export %1 to shareable sketch").arg(bundledFileName)
 		);
+	} else {
+		FolderUtils::offerDownload(bundledFileName);
 	}
 
 	FolderUtils::rmdir(dirToRemove);
@@ -3315,6 +3320,9 @@ void  MainWindow::backupSketch() {
 			statusMessage(tr("Backup of '%1' failed").arg(m_fwFilename), StatusMessageTimeout);
 			m_autosaveNeeded = true;
 		}
+#ifdef Q_OS_WASM
+		WasmStorage::scheduleSync();
+#endif
 	}
 }
 

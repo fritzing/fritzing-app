@@ -141,6 +141,7 @@ protected Q_SLOTS:
 	void findSelected();
 	void saveBundledBin();
 	void mainLoad();
+	void mainLoadChosenFile(const QString & fileName);
 
 protected:
 	void createMenu();

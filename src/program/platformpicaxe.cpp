@@ -1,6 +1,8 @@
 #include "platformpicaxe.h"
 
+#if QT_CONFIG(process)
 #include <QProcess>
+#endif
 #include <QFileInfo>
 #include <QSettings>
 
@@ -45,6 +47,14 @@ PlatformPicaxe::PlatformPicaxe() : Platform(QString("PICAXE"))
 
 void PlatformPicaxe::upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation)
 {
+#if !QT_CONFIG(process)
+	Q_UNUSED(port);
+	Q_UNUSED(board);
+	Q_UNUSED(fileLocation);
+	auto *tab = qobject_cast<ProgramTab *>(source);
+	if (tab != nullptr)
+		tab->uploadFinished(false, tr("Uploading PICAXE code is not supported in the browser."));
+#else
 	// see http://www.picaxe.com/docs/beta_compiler.pdf
 	auto * process = new QProcess(this);
 	process->setProcessChannelMode(QProcess::MergedChannels);
@@ -64,4 +74,5 @@ void PlatformPicaxe::upload(QWidget *source, const QString &port, const QString 
 	if (tab != nullptr)
 		tab->appendToConsole(tr("Running %1 %2").arg(cmd).arg(args.join(" ")));
 	process->start(cmd, args);
+#endif
 }

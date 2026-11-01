@@ -319,7 +319,14 @@ void UpdateDialog::xmlErrorSlot(QXmlStreamReader::Error  errorCode) {
 void UpdateDialog::handleError()
 {
 	DebugDialog::debug("handle error");
+#ifdef Q_OS_WASM
+	// fritzing.org's bot protection may refuse the server's requests (docker/wasm/README.md)
+	m_feedbackLabel->setText(tr("<p>Sorry, unable to retrieve update info from fritzing.org.</p>"
+	                            "<p>This web version is updated by rebuilding its Docker image.<br>"
+	                            "The latest release is listed at <a href=\"https://fritzing.org/download/\">fritzing.org/download</a>.</p>"));
+#else
 	m_feedbackLabel->setText(tr("<p>Sorry, unable to retrieve update info</p>"));
+#endif
 	m_buttonBox->button(QDialogButtonBox::Cancel)->setVisible(true);
 	Q_EMIT enableAgainSignal(true);
 	DebugDialog::debug("handle error done");

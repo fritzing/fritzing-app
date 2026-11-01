@@ -14,6 +14,7 @@
 
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -48,12 +49,18 @@ ALLOWED_FQBNS = frozenset([
 MAX_BODY_BYTES = 256 * 1024
 COMPILE_TIMEOUT_SECONDS = 120
 MAX_LOG_CHARS = 64 * 1024
+# the largest AVR board (Mega, 256 KB flash) gives a .hex of about 700 KB
+MAX_HEX_BYTES = 1024 * 1024
 MAX_CONCURRENT_COMPILES = 2
 QUEUE_WAIT_SECONDS = 30
 
 ARDUINO_CLI = os.environ.get("ARDUINO_CLI", "arduino-cli")
 
 _compile_slots = threading.BoundedSemaphore(MAX_CONCURRENT_COMPILES)
+
+# #include of an absolute path or one that leaves the sketch folder, e.g. "/etc/passwd" or
+# <../../x>. The container holds nothing secret; this only stops the obvious cases.
+_OUTSIDE_INCLUDE = re.compile(r'^\s*#\s*include\s*[<"]\s*(?:/|\\|[A-Za-z]:|[^>"]*\.\.)', re.MULTILINE)
 
 
 class RequestError(Exception):
@@ -77,6 +84,8 @@ def parse_request(body):
         raise RequestError(400, "Unsupported board: %s" % (fqbn,))
     if not isinstance(sketch, str) or not sketch.strip():
         raise RequestError(400, "The sketch is empty.")
+    if _OUTSIDE_INCLUDE.search(sketch):
+        raise RequestError(400, "#include of files outside the sketch is not allowed.")
     return fqbn, sketch
 
 
@@ -105,6 +114,8 @@ def compile_sketch(fqbn, sketch):
         hex_path = os.path.join(out_dir, "sketch.ino.hex")
         if result.returncode != 0 or not os.path.exists(hex_path):
             return {"ok": False, "log": log, "hex": None}
+        if os.path.getsize(hex_path) > MAX_HEX_BYTES:
+            return {"ok": False, "log": log + "\nThe compiled program is too large.", "hex": None}
         with open(hex_path, "r", encoding="ascii") as f:
             return {"ok": True, "log": log, "hex": f.read()}
 

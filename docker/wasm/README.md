@@ -19,6 +19,10 @@ Use Chrome or Edge for serial ports and Arduino upload (Web Serial), and for cho
 downloads are saved. Browsers only allow these on `localhost` or over HTTPS, so to use the
 app from other machines, put a TLS-terminating proxy in front of it.
 
+`compose.yaml` publishes the app on 127.0.0.1 only. To publish it on all network
+interfaces, set `FRITZING_BIND=0.0.0.0` (and `FRITZING_PORT` for another port than 8080);
+read [the compile service](#the-compile-service) first.
+
 ## How it is built
 
 | Stage | Purpose |
@@ -56,7 +60,28 @@ concurrency (2), and in `compose.yaml` runs without network access, as a non-roo
 a read-only file system.
 
 It runs a compiler on code sent by anyone who can reach the app, so only expose it to
-people you trust.
+people you trust. The safeguards:
+
+- `compose.yaml`: no network access (internal network), read-only file system with a
+  512 MB `/tmp`, no capabilities or privilege changes, a non-root user, and limits on
+  memory (1 GB), CPUs (2), processes (256), open files and file size. The app itself is
+  only published on 127.0.0.1 unless `FRITZING_BIND` says otherwise.
+- `server.py`: only the listed AVR boards, requests up to 256 KB, 120 s per compile, 2
+  compiles at a time, compiler output up to 64 KB, `.hex` up to 1 MB, and no `#include`
+  of absolute paths or paths with `..`. That check only stops the obvious cases; the
+  container holds nothing secret.
+- nginx: each client may start a compile every 10 s, with a burst of 3; further requests
+  get HTTP 429, which the app shows as "Too many compile requests".
+
+To require a password for the whole site, create a folder with an `htpasswd` file (for
+example `htpasswd -c auth/htpasswd me`) and an `auth.conf`:
+
+```nginx
+auth_basic "Fritzing";
+auth_basic_user_file /etc/nginx/auth/htpasswd;
+```
+
+and mount it on `/etc/nginx/auth` in the `web` service (`volumes: ["./auth:/etc/nginx/auth:ro"]`).
 
 Tests: `docker run --rm --network none fritzing-compile python3 -m unittest -v test_server`.
 
@@ -79,18 +104,43 @@ All source changes are behind `#ifdef Q_OS_WASM` or `QT_CONFIG(...)`, or are fil
   use a board. The serial monitor uses Web Serial too (7 or 8 data bits, no XON/XOFF).
   PICAXE upload is not available.
 - **Simulator.** ngspice is compiled into the app. Simulations run in the foreground, so
-  the page pauses until a simulation step is finished. XSPICE code models (`analog.cm`)
-  cannot be loaded in the browser, so circuits with the "DC Power Supply" (lab power
-  supply) part, whose model uses one, do not simulate.
+  the page pauses until a simulation step is finished. ngspice loads XSPICE code models
+  with `dlopen()`, which the browser build does not have, so the analog code models
+  (`analog.cm`, used by the "DC Power Supply" part) are linked into the app instead
+  (`ngspice/`: `build-codemodels.sh`, `static_codemodels.c` and a patch for ngspice's
+  loader). The other code model libraries (digital, table, ...) are not included; the
+  DC Power Supply is the only part in fritzing-parts that uses a code model.
 - **Online information.** The welcome page news and the update check go through nginx
   (`/proxy/<host>/...`, only for fritzing.org, blog.fritzing.org, fab.fritzing.org and aisler.net),
-  because the browser blocks requests to other sites. fritzing.org's bot protection may
-  refuse the server's requests (HTTP 403), in which case the projects list stays empty and
-  the update check reports that it could not get update information.
+  because the browser blocks requests to other sites. fritzing.org's bot protection refuses
+  some requests (HTTP 403), also from the desktop app. Then the projects list shows "Couldn't
+  load the projects", which opens fritzing.org/projects in a new tab, and Help > Check for
+  Updates says it could not get update information and links to fritzing.org/download.
 - **Long operations.** The app is single-threaded. Autorouting and DRC keep the page
   responsive (their progress dialogs and Cancel work); ground fill shows its progress
   dialog but the page pauses while the fill is calculated.
 - Rendering uses the raster viewport instead of OpenGL.
+
+## Testing with a board
+
+The automated tests use a simulated bootloader (`web/stk500.test.mjs`). To check a real
+Arduino UNO:
+
+1. `docker compose -f docker/wasm/compose.yaml up --build`, then open http://localhost:8080
+   in Chrome or Edge and plug in the board.
+2. Switch to the Code tab and enter Blink:
+   `void setup() { pinMode(LED_BUILTIN, OUTPUT); } void loop() { digitalWrite(LED_BUILTIN, HIGH); delay(1000); digitalWrite(LED_BUILTIN, LOW); delay(1000); }`
+3. Choose the board "Arduino UNO", then Port > "Choose a port..." and pick the board in the
+   browser's list.
+4. Click Upload. The console shows the compiler output, "Connecting at 115200 baud",
+   "Device signature 1e 95 0f", the write progress and "Upload finished.", and the LED
+   blinks once a second.
+5. Upload a sketch that echoes serial input, for example
+   `void setup() { Serial.begin(9600); } void loop() { if (Serial.available()) Serial.write(Serial.read()); }`,
+   open the Serial Monitor at 9600 baud, type some text and press Enter: it comes back.
+
+If an upload fails, the console says why. Open DevTools, set the console level to
+include "Verbose", and the `[Fritzing upload]` messages show each step.
 
 ## Notes on the Qt WebAssembly build
 

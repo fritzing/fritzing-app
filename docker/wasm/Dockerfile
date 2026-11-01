@@ -168,9 +168,14 @@ COPY --from=sources /src/ngspice-42 /src/ngspice-42
 # lost); ngspice then uses times().
 # getpwuid() returns NULL in the browser, which ngspice does not check when it looks for
 # ~/.spiceinit, so that read gets a guard.
+# The analog XSPICE code models (analog.cm, used by the DC Power Supply part) cannot be
+# loaded with dlopen() in the browser, so they are linked in as libngspice_analog.a
+# (docker/wasm/ngspice).
+COPY docker/wasm/ngspice /src/fritzing-ngspice
 RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends bison flex gcc libc6-dev \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends bison flex gcc libc6-dev patch \
     && rm -rf /var/lib/apt/lists/* \
+    && patch -d /src/ngspice-42 -p1 < /src/fritzing-ngspice/dev-static-codemodels.patch \
     && sed -i 's|pw->pw_dir, INITSTR|pw ? pw->pw_dir : ".", INITSTR|' /src/ngspice-42/src/sharedspice.c \
     && grep -q 'pw ? pw->pw_dir : "."' /src/ngspice-42/src/sharedspice.c \
     && mkdir /tmp/ngspice-build && cd /tmp/ngspice-build \
@@ -181,6 +186,7 @@ RUN apt-get update \
     && emmake make -j"$(nproc)" STATIC= libngspice_la_CFLAGS= libngspice_la_LDFLAGS= > make.log \
     && emmake make install STATIC= libngspice_la_CFLAGS= libngspice_la_LDFLAGS= > install.log \
     && test -f /deps/ngspice-42/lib/libngspice.a \
+    && sh /src/fritzing-ngspice/build-codemodels.sh /src/ngspice-42 /tmp/ngspice-build /deps/ngspice-42/lib/libngspice_analog.a \
     && cd / && rm -rf /tmp/ngspice-build
 
 RUN mkdir -p Clipper1-6.4.2/include/polyclipping Clipper1-6.4.2/lib \
@@ -231,6 +237,7 @@ FROM nginx:1.27-alpine
 # the entrypoint renders templates/ into conf.d, with the container's DNS servers as resolver
 ENV NGINX_ENTRYPOINT_LOCAL_RESOLVERS=1
 COPY docker/wasm/templates/ /etc/nginx/templates/
+RUN mkdir -p /etc/nginx/auth
 COPY --from=wasm /out/ /usr/share/nginx/html/
 
 EXPOSE 80

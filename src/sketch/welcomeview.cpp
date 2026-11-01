@@ -828,8 +828,9 @@ void WelcomeView::clickRecent(const QString & url) {
 }
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
-	bool blog = networkReply->url().toString().contains("recent");
-	QString prefix = networkReply->url().scheme() + "://" + networkReply->url().authority();
+	QUrl url = originalUrl(networkReply->url());
+	bool blog = url.toString().contains("recent");
+	QString prefix = url.scheme() + "://" + url.authority();
 	QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
@@ -847,8 +848,17 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	}
 
 	if (!goodBlog) {
+#ifdef Q_OS_WASM
+		// fritzing.org's bot protection may refuse the server's requests (docker/wasm/README.md),
+		// so offer the page itself, which the browser opens in a new tab
+		QString message = (blog) ? tr("Couldn't load the news. Click to read them on blog.fritzing.org")
+		                         : tr("Couldn't load the projects. Click to browse them on fritzing.org");
+		QString href = (blog) ? "https://blog.fritzing.org/" : "https://fritzing.org/projects/";
+		QString placeHolder = QString("<li><a class=\"title\" href=\"%2\" title=\"%1\"></a></li>").arg(message.toHtmlEscaped(), href);
+#else
 		QString message = (blog) ? tr("Unable to reach blog.fritzing.org") : tr("Unable to reach fritzing.org/projects") ;
 		QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
+#endif
 		QDomDocument::ParseResult parseResult = doc.setContent(placeHolder);
 		if (parseResult) {
 			readBlog(doc, true, blog, "");

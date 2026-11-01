@@ -158,6 +158,11 @@ bool NgSpiceSimulator::init()
 	m_isBGThreadRunning = true;
 	m_isInitialized = true;
 
+#ifdef Q_OS_WASM
+	// the analog code models are linked into the app (docker/wasm/ngspice/static_codemodels.c)
+	command("codemodel analog.cm");
+	return m_isInitialized;
+#endif
 	QString analogCmPath = ngspiceDir + "/ngspice/analog.cm";
 	if (QFileInfo::exists(analogCmPath)) {
 		DebugDialog::stream() << "Loading codemodel analog.cm from: " << analogCmPath;

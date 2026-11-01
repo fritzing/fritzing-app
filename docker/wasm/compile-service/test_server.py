@@ -51,6 +51,18 @@ class ParseRequestTest(unittest.TestCase):
         with self.assertRaises(server.RequestError):
             server.parse_request(body)
 
+    def test_rejects_includes_outside_the_sketch(self):
+        for line in ['#include "/etc/passwd"', '  #  include </proc/self/environ>',
+                     '#include "../../server.py"', '#include <a/../../b.h>', '#include "C:/x.h"']:
+            body = json.dumps({"fqbn": "arduino:avr:uno", "sketch": line + "\n" + BLINK}).encode()
+            with self.assertRaises(server.RequestError, msg=line):
+                server.parse_request(body)
+
+    def test_allows_library_includes(self):
+        sketch = "#include <Servo.h>\n#include \"config.h\"\n" + BLINK
+        body = json.dumps({"fqbn": "arduino:avr:uno", "sketch": sketch}).encode()
+        self.assertEqual(server.parse_request(body)[1], sketch)
+
     def test_rejects_invalid_json(self):
         for body in [b"not json", b"[1, 2]", b"\xff\xfe"]:
             with self.assertRaises(server.RequestError):

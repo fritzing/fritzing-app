@@ -30,7 +30,8 @@ INCLUDEPATH += \
 LIBS += \
 	$$WASM_DEPS/quazip/lib/libquazip1-qt6.a \
 	$$WASM_DEPS/Clipper1-6.4.2/lib/libpolyclipping.a \
-	$$WASM_DEPS/ngspice-42/lib/libngspice.a
+	$$WASM_DEPS/ngspice-42/lib/libngspice.a \
+	$$WASM_DEPS/ngspice-42/lib/libngspice_analog.a	# XSPICE analog code models (docker/wasm/ngspice)
 
 QTPLUGIN += qsqlite qsvg qsvgicon qjpeg qgif
 

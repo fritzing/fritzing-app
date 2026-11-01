@@ -78,6 +78,8 @@
 	};
 
 	const hex2 = (b) => b.toString(16).padStart(2, '0');
+	// details for diagnosing uploads; shown in the browser console with "Verbose" messages
+	const debug = (...args) => console.debug('[Fritzing upload]', ...args);
 
 	// transport: { write(Uint8Array), read(count, timeoutMs) -> Uint8Array, drain(), setSignals(signals) }
 	async function command(transport, bytes, answerLength, timeoutMs) {
@@ -105,9 +107,10 @@
 				return;
 			} catch (e) {
 				// the bootloader may still be starting
+				debug('sync attempt ' + (i + 1) + ' of ' + attempts + ':', e.message);
 			}
 		}
-		const error = new Error('No answer from the bootloader. Check the port and the board type.');
+		const error = new Error('No answer from the bootloader.');
 		error.noSync = true;
 		throw error;
 	}
@@ -122,8 +125,10 @@
 		const pageSize = options.pageSize || 128;
 		const progress = options.progress || (() => {});
 
+		debug('resetting the board');
 		await resetBoard(transport);
 		await sync(transport, options.syncAttempts || 10);
+		debug('in sync');
 
 		const signature = await command(transport, [STK.READ_SIGN], 3);
 		progress('Device signature ' + Array.from(signature, hex2).join(' '));
@@ -133,6 +138,7 @@
 
 		await command(transport, [STK.ENTER_PROGMODE], 0);
 		const pages = Math.ceil(image.length / pageSize);
+		debug('writing ' + image.length + ' bytes in ' + pages + ' pages of ' + pageSize);
 		for (let page = 0; page < pages; page++) {
 			const address = page * pageSize;
 			const data = image.subarray(address, Math.min(address + pageSize, image.length));
@@ -153,6 +159,7 @@
 		}
 		progress('Verified ' + image.length + ' bytes');
 		await command(transport, [STK.LEAVE_PROGMODE], 0);
+		debug('done');
 	}
 
 	// ---------------------------------------------------------------- Web Serial
@@ -343,7 +350,13 @@
 			let lastError = null;
 			for (const baudRate of settings.baudRates) {
 				const connection = new Connection(port);
-				await connection.open({ baudRate });
+				try {
+					await connection.open({ baudRate });
+				} catch (e) {
+					debug('opening ' + name + ' failed:', e);
+					throw new Error('Could not open ' + name + ' (' + e.message + '). Close other programs that use the port, ' +
+					                'such as the Arduino IDE or another browser tab, and try again.');
+				}
 				try {
 					progress('Connecting at ' + baudRate + ' baud');
 					await flashStk500(connection, image, { pageSize: settings.pageSize, signature: settings.signature, progress });
@@ -355,6 +368,8 @@
 					await connection.close();
 				}
 			}
+			lastError.message += ' Tried ' + settings.baudRates.join(' and ') + ' baud. Check that the board type matches ' +
+				'the board, that ' + name + ' is the board\'s port, and that the board has an Arduino bootloader.';
 			throw lastError;
 		},
 	};

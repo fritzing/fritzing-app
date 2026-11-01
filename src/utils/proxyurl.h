@@ -46,4 +46,24 @@ inline QUrl browserReachableUrl(const QUrl & url)
 #endif
 }
 
+// The reverse of browserReachableUrl(): the URL on the original site, for example to
+// resolve links in a page fetched through the proxy.
+inline QUrl originalUrl(const QUrl & url)
+{
+#ifdef Q_OS_WASM
+	static const QString prefix("/proxy/");
+	QString path = url.path(QUrl::FullyEncoded);
+	if (path.startsWith(prefix)) {
+		int hostEnd = path.indexOf('/', prefix.length());
+		QString host = path.mid(prefix.length(), hostEnd < 0 ? -1 : hostEnd - prefix.length());
+		QUrl original("https://" + host + (hostEnd < 0 ? QString("/") : path.mid(hostEnd)));
+		if (url.hasQuery()) {
+			original.setQuery(url.query(QUrl::FullyEncoded));
+		}
+		return original;
+	}
+#endif
+	return url;
+}
+
 #endif

@@ -15,7 +15,7 @@ services:
       dockerfile: docker/wasm/Dockerfile
     image: fritzing-wasm
     ports:
-      - "${FRITZING_BIND:-127.0.0.1}:${FRITZING_PORT:-8080}:80"
+      - "${FRITZING_BIND:-127.0.0.1}:${FRITZING_PORT:-8080}:8080"
     networks:
       - default
       - compile

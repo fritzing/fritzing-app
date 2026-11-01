@@ -9,7 +9,7 @@ docker compose -f docker/wasm/compose.yaml up --build
 
 # or only the app (everything except Arduino upload)
 docker build -f docker/wasm/Dockerfile -t fritzing-wasm .
-docker run --rm -p 8080:80 fritzing-wasm
+docker run --rm -p 8080:8080 fritzing-wasm
 ```
 
 Then open http://localhost:8080. Run the commands from the repository root (the build

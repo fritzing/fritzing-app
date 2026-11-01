@@ -60,7 +60,15 @@ _compile_slots = threading.BoundedSemaphore(MAX_CONCURRENT_COMPILES)
 
 # #include of an absolute path or one that leaves the sketch folder, e.g. "/etc/passwd" or
 # <../../x>. The container holds nothing secret; this only stops the obvious cases.
-_OUTSIDE_INCLUDE = re.compile(r'^\s*#\s*include\s*[<"]\s*(?:/|\\|[A-Za-z]:|[^>"]*\.\.)', re.MULTILINE)
+_INCLUDE = re.compile(r'^[ \t]*#[ \t]*include[ \t]*[<"]([^>"\n]*)', re.MULTILINE)
+
+
+def _includes_outside_sketch(sketch):
+    for match in _INCLUDE.finditer(sketch):
+        path = match.group(1).strip()
+        if path.startswith(("/", "\\")) or re.match(r"[A-Za-z]:", path) or ".." in path:
+            return True
+    return False
 
 
 class RequestError(Exception):
@@ -84,7 +92,7 @@ def parse_request(body):
         raise RequestError(400, "Unsupported board: %s" % (fqbn,))
     if not isinstance(sketch, str) or not sketch.strip():
         raise RequestError(400, "The sketch is empty.")
-    if _OUTSIDE_INCLUDE.search(sketch):
+    if _includes_outside_sketch(sketch):
         raise RequestError(400, "#include of files outside the sketch is not allowed.")
     return fqbn, sketch
 
@@ -168,7 +176,8 @@ def main():
     if shutil.which(ARDUINO_CLI) is None:
         sys.exit("arduino-cli not found")
     port = int(os.environ.get("PORT", "8000"))
-    ThreadingHTTPServer(("0.0.0.0", port), Handler).serve_forever()
+    # plain HTTP: only nginx reaches it, over the internal compose network
+    ThreadingHTTPServer(("0.0.0.0", port), Handler).serve_forever()  # NOSONAR
 
 
 if __name__ == "__main__":

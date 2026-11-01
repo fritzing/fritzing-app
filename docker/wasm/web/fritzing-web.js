@@ -29,7 +29,7 @@
 			}
 			const bytes = [];
 			for (let j = 1; j < line.length; j += 2) {
-				const value = parseInt(line.substr(j, 2), 16);
+				const value = Number.parseInt(line.substr(j, 2), 16);
 				if (Number.isNaN(value)) throw new Error('Invalid HEX record on line ' + (i + 1));
 				bytes.push(value);
 			}
@@ -288,7 +288,7 @@
 			if (FritzingWeb.serialSupported()) {
 				navigator.serial.addEventListener('connect', refreshPorts);
 				navigator.serial.addEventListener('disconnect', refreshPorts);
-				refreshPorts();
+				refreshPorts().catch((e) => console.warn('Fritzing: could not list serial ports', e));
 			}
 		},
 

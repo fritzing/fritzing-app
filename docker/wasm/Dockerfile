@@ -3,7 +3,7 @@
 # Builds Fritzing for the browser (Qt for WebAssembly) and serves it with nginx.
 #
 #   docker build -f docker/wasm/Dockerfile -t fritzing-wasm .
-#   docker run --rm -p 8080:80 fritzing-wasm      # then open http://localhost:8080
+#   docker run --rm -p 8080:8080 fritzing-wasm      # then open http://localhost:8080
 #
 # For Arduino upload, start it together with the compile service: docker/wasm/compose.yaml
 #
@@ -30,35 +30,35 @@ RUN apt-get update \
 
 WORKDIR /src
 
-RUN curl -fsSL -o boost.tar.bz2 https://archives.boost.io/release/1.85.0/source/boost_1_85_0.tar.bz2 \
+RUN curl --proto '=https' --tlsv1.2 -fsSL -o boost.tar.bz2 https://archives.boost.io/release/1.85.0/source/boost_1_85_0.tar.bz2 \
     && echo "7009fe1faa1697476bdc7027703a2badb84e849b7b0baad5086b087b971f8617  boost.tar.bz2" | sha256sum -c - \
     && tar xjf boost.tar.bz2 boost_1_85_0/boost \
     && rm boost.tar.bz2
 
-RUN curl -fsSL -o svgpp.tar.gz https://github.com/svgpp/svgpp/archive/refs/tags/v1.3.1.tar.gz \
+RUN curl --proto '=https' --tlsv1.2 -fsSL -o svgpp.tar.gz https://github.com/svgpp/svgpp/archive/refs/tags/v1.3.1.tar.gz \
     && echo "be8a89df72d01cf062cc9815dd64c9576b4d20910d6d7aee7f0ea26484dc5e76  svgpp.tar.gz" | sha256sum -c - \
     && tar xzf svgpp.tar.gz \
     && rm svgpp.tar.gz
 
-RUN curl -fsSL -o clipper.zip "https://sourceforge.net/projects/polyclipping/files/clipper_ver6.4.2.zip/download" \
+RUN curl --proto '=https' --tlsv1.2 -fsSL -o clipper.zip "https://sourceforge.net/projects/polyclipping/files/clipper_ver6.4.2.zip/download" \
     && echo "a14320d82194807c4480ce59c98aa71cd4175a5156645c4e2b3edd330b930627  clipper.zip" | sha256sum -c - \
     && unzip -q clipper.zip 'cpp/clipper.*' -d clipper \
     && rm clipper.zip
 
-RUN curl -fsSL -o libgit2.tar.gz https://github.com/libgit2/libgit2/archive/refs/tags/v1.7.1.tar.gz \
+RUN curl --proto '=https' --tlsv1.2 -fsSL -o libgit2.tar.gz https://github.com/libgit2/libgit2/archive/refs/tags/v1.7.1.tar.gz \
     && echo "17d2b292f21be3892b704dddff29327b3564f96099a1c53b00edc23160c71327  libgit2.tar.gz" | sha256sum -c - \
     && tar xzf libgit2.tar.gz \
     && mv libgit2-1.7.1 libgit2 \
     && rm libgit2.tar.gz
 
 # QuaZip with Qt 6 support from https://github.com/stachenov/quazip/pull/199 (see pri/quazipdetect.pri)
-RUN curl -fsSL -o quazip.tar.gz https://github.com/stachenov/quazip/archive/b6943c314188873f410dfaf8a21fc765adf17825.tar.gz \
+RUN curl --proto '=https' --tlsv1.2 -fsSL -o quazip.tar.gz https://github.com/stachenov/quazip/archive/b6943c314188873f410dfaf8a21fc765adf17825.tar.gz \
     && echo "ed34abb9732eb7f8ac97db38ff74553f9ef63f80c3866ff4127727a98d02c64b  quazip.tar.gz" | sha256sum -c - \
     && tar xzf quazip.tar.gz \
     && mv quazip-b6943c314188873f410dfaf8a21fc765adf17825 quazip \
     && rm quazip.tar.gz
 
-RUN curl -fsSL -o ngspice.tar.gz "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/old-releases/42/ngspice-42.tar.gz/download" \
+RUN curl --proto '=https' --tlsv1.2 -fsSL -o ngspice.tar.gz "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/old-releases/42/ngspice-42.tar.gz/download" \
     && echo "737fe3846ab2333a250dfadf1ed6ebe1860af1d8a5ff5e7803c772cc4256e50a  ngspice.tar.gz" | sha256sum -c - \
     && tar xzf ngspice.tar.gz \
     && rm ngspice.tar.gz
@@ -232,12 +232,15 @@ RUN cp Fritzing.html Fritzing.js Fritzing.wasm Fritzing.data qtloader.js qtlogo.
     && gzip -9 -k /out/Fritzing.js /out/Fritzing.wasm /out/Fritzing.data /out/qtloader.js /out/fritzing-web.js
 
 ############################################################################
-FROM nginx:1.27-alpine
+# nginx as a non-root user, listening on 8080
+FROM nginxinc/nginx-unprivileged:1.27-alpine
 
 # the entrypoint renders templates/ into conf.d, with the container's DNS servers as resolver
 ENV NGINX_ENTRYPOINT_LOCAL_RESOLVERS=1
 COPY docker/wasm/templates/ /etc/nginx/templates/
+USER root
 RUN mkdir -p /etc/nginx/auth
+USER nginx
 COPY --from=wasm /out/ /usr/share/nginx/html/
 
-EXPOSE 80
+EXPOSE 8080

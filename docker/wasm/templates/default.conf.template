@@ -7,7 +7,7 @@
 limit_req_zone $binary_remote_addr zone=compile:1m rate=6r/m;
 
 server {
-    listen 80;
+    listen 8080;
     server_name _;
     root /usr/share/nginx/html;
     index index.html;

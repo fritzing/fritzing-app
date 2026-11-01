@@ -19,7 +19,7 @@ RUN case "$TARGETARCH" in \
          amd64) asset=Linux_64bit; sum=2b807add5c3a518861bfd4d3e78de9e02b0a2723df3d90386df2200a767349c4 ;; \
          *) echo "unsupported architecture $TARGETARCH" >&2; exit 1 ;; \
        esac \
-    && curl -fsSL -o /tmp/arduino-cli.tar.gz \
+    && curl --proto '=https' --tlsv1.2 -fsSL -o /tmp/arduino-cli.tar.gz \
        "https://github.com/arduino/arduino-cli/releases/download/v${ARDUINO_CLI_VERSION}/arduino-cli_${ARDUINO_CLI_VERSION}_${asset}.tar.gz" \
     && echo "$sum  /tmp/arduino-cli.tar.gz" | sha256sum -c - \
     && tar xzf /tmp/arduino-cli.tar.gz -C /usr/local/bin arduino-cli \

@@ -222,6 +222,15 @@ void Simulator::simulate() {
 	m_itemBases.clear();
 	for (ItemBase * it : rawItemBases) m_itemBases.append(it);
 
+	if (rawItemBases.isEmpty()) {
+		// Nothing to simulate. Do not run ngspice: with an empty circuit and
+		// ".option interp" it crashes ("There are no vectors currently active").
+		DebugDialog::stream() << "No parts to simulate, skipping ngspice";
+		removeSimItems();
+		greyOutNonSimParts(rawItemBases);
+		return;
+	}
+
 	//TODO: Fix this in the parts
 	m_spiceNetlist.replace("IC=0", "");
 
